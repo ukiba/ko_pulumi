@@ -1,0 +1,107 @@
+package jp.ukiba.ko_pulumi
+package aws
+
+import com.pulumi.resources.CustomResourceOptions
+
+object ecrpublic:
+  object EcrpublicFunctions:
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
+    /**
+     * The Public ECR Authorization Token data source allows the authorization token, token expiration date, user name, and password to be retrieved for a Public ECR repository.
+     * 
+     * &gt; **NOTE:** This data source can only be used in the `us-east-1` region.
+     */
+    inline def getAuthorizationToken(args: Endofunction[com.pulumi.aws.ecrpublic.inputs.GetAuthorizationTokenArgs.Builder] = scala.Predef.identity):
+        com.pulumi.core.Output[com.pulumi.aws.ecrpublic.outputs.GetAuthorizationTokenResult] =
+      val argsBuilder = com.pulumi.aws.ecrpublic.inputs.GetAuthorizationTokenArgs.builder
+      com.pulumi.aws.ecrpublic.EcrpublicFunctions.getAuthorizationToken(args(argsBuilder).build)
+
+    /**
+     * The Public ECR Authorization Token data source allows the authorization token, token expiration date, user name, and password to be retrieved for a Public ECR repository.
+     * 
+     * &gt; **NOTE:** This data source can only be used in the `us-east-1` region.
+     */
+    inline def getAuthorizationTokenPlain(args: Endofunction[com.pulumi.aws.ecrpublic.inputs.GetAuthorizationTokenPlainArgs.Builder] = scala.Predef.identity):
+        java.util.concurrent.CompletableFuture[com.pulumi.aws.ecrpublic.outputs.GetAuthorizationTokenResult] =
+      val argsBuilder = com.pulumi.aws.ecrpublic.inputs.GetAuthorizationTokenPlainArgs.builder
+      com.pulumi.aws.ecrpublic.EcrpublicFunctions.getAuthorizationTokenPlain(args(argsBuilder).build)
+
+    /** The ECR Public Images data source allows the list of images in a specified public repository to be retrieved. */
+    inline def getImages(args: Endofunction[com.pulumi.aws.ecrpublic.inputs.GetImagesArgs.Builder] = scala.Predef.identity):
+        com.pulumi.core.Output[com.pulumi.aws.ecrpublic.outputs.GetImagesResult] =
+      val argsBuilder = com.pulumi.aws.ecrpublic.inputs.GetImagesArgs.builder
+      com.pulumi.aws.ecrpublic.EcrpublicFunctions.getImages(args(argsBuilder).build)
+
+    /** The ECR Public Images data source allows the list of images in a specified public repository to be retrieved. */
+    inline def getImagesPlain(args: Endofunction[com.pulumi.aws.ecrpublic.inputs.GetImagesPlainArgs.Builder] = scala.Predef.identity):
+        java.util.concurrent.CompletableFuture[com.pulumi.aws.ecrpublic.outputs.GetImagesResult] =
+      val argsBuilder = com.pulumi.aws.ecrpublic.inputs.GetImagesPlainArgs.builder
+      com.pulumi.aws.ecrpublic.EcrpublicFunctions.getImagesPlain(args(argsBuilder).build)
+
+  /**
+   * Provides a Public Elastic Container Registry Repository.
+   * 
+   * &gt; **NOTE:** This resource can only be used in the `us-east-1` region.
+   */
+  def Repository(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+      (args: Endofunction[com.pulumi.aws.ecrpublic.RepositoryArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+    var argsBuilder = com.pulumi.aws.ecrpublic.RepositoryArgs.builder
+    argsBuilder = args(argsBuilder)
+    conf.logicalName2tagName(name) match
+      case Some(tagName) =>
+        argsBuilder = argsBuilder.tags:
+          transformOptOutputMap(argsBuilder.build.tags, map =>
+              if map.contains("Name") then map else map + ("Name" -> tagName))
+      case None =>
+    com.pulumi.aws.ecrpublic.Repository(name,
+        argsBuilder.build,
+        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+
+  extension (builder: com.pulumi.aws.ecrpublic.RepositoryArgs.Builder)
+    /**
+     * @param catalogData Catalog data configuration for the repository. See below for schema.
+     * @return builder
+     */
+    def catalogData(args: Endofunction[com.pulumi.aws.ecrpublic.inputs.RepositoryCatalogDataArgs.Builder]):
+        com.pulumi.aws.ecrpublic.RepositoryArgs.Builder =
+      val argsBuilder = com.pulumi.aws.ecrpublic.inputs.RepositoryCatalogDataArgs.builder
+      builder.catalogData(args(argsBuilder).build)
+
+  /**
+   * Provides an Elastic Container Registry Public Repository Policy.
+   * 
+   * Note that currently only one policy may be applied to a repository.
+   * 
+   * &gt; **NOTE:** This resource can only be used in the `us-east-1` region.
+   */
+  def RepositoryPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+      (args: Endofunction[com.pulumi.aws.ecrpublic.RepositoryPolicyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+    val argsBuilder = com.pulumi.aws.ecrpublic.RepositoryPolicyArgs.builder
+    com.pulumi.aws.ecrpublic.RepositoryPolicy(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+
+  extension (builder: com.pulumi.aws.ecrpublic.inputs.GetImagesArgs.Builder)
+    /**
+     * @param imageIds One or more image ID filters. Each image ID can use either a tag or digest (or both). Each object has the following attributes:
+     * @return builder
+     */
+    def imageIds(args: Endofunction[com.pulumi.aws.ecrpublic.inputs.GetImagesImageIdArgs.Builder]*):
+        com.pulumi.aws.ecrpublic.inputs.GetImagesArgs.Builder =
+      def argsBuilder = com.pulumi.aws.ecrpublic.inputs.GetImagesImageIdArgs.builder
+      builder.imageIds(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.aws.ecrpublic.inputs.RepositoryState.Builder)
+    /**
+     * @param catalogData Catalog data configuration for the repository. See below for schema.
+     * @return builder
+     */
+    def catalogData(args: Endofunction[com.pulumi.aws.ecrpublic.inputs.RepositoryCatalogDataArgs.Builder]):
+        com.pulumi.aws.ecrpublic.inputs.RepositoryState.Builder =
+      val argsBuilder = com.pulumi.aws.ecrpublic.inputs.RepositoryCatalogDataArgs.builder
+      builder.catalogData(args(argsBuilder).build)

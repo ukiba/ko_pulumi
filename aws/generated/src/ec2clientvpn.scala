@@ -1,0 +1,195 @@
+package jp.ukiba.ko_pulumi
+package aws
+
+import com.pulumi.resources.CustomResourceOptions
+
+object ec2clientvpn:
+  /**
+   * Provides authorization rules for AWS Client VPN endpoints. For more information on usage, please see the
+   * [AWS Client VPN Administrator&#39;s Guide](https://docs.aws.amazon.com/vpn/latest/clientvpn-admin/what-is.html).
+   */
+  def AuthorizationRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+      (args: Endofunction[com.pulumi.aws.ec2clientvpn.AuthorizationRuleArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+    val argsBuilder = com.pulumi.aws.ec2clientvpn.AuthorizationRuleArgs.builder
+    com.pulumi.aws.ec2clientvpn.AuthorizationRule(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+
+  object Ec2clientvpnFunctions:
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
+    /** Get information on an EC2 Client VPN endpoint. */
+    inline def getEndpoint(args: Endofunction[com.pulumi.aws.ec2clientvpn.inputs.GetEndpointArgs.Builder] = scala.Predef.identity):
+        com.pulumi.core.Output[com.pulumi.aws.ec2clientvpn.outputs.GetEndpointResult] =
+      val argsBuilder = com.pulumi.aws.ec2clientvpn.inputs.GetEndpointArgs.builder
+      com.pulumi.aws.ec2clientvpn.Ec2clientvpnFunctions.getEndpoint(args(argsBuilder).build)
+
+    /** Get information on an EC2 Client VPN endpoint. */
+    inline def getEndpointPlain(args: Endofunction[com.pulumi.aws.ec2clientvpn.inputs.GetEndpointPlainArgs.Builder] = scala.Predef.identity):
+        java.util.concurrent.CompletableFuture[com.pulumi.aws.ec2clientvpn.outputs.GetEndpointResult] =
+      val argsBuilder = com.pulumi.aws.ec2clientvpn.inputs.GetEndpointPlainArgs.builder
+      com.pulumi.aws.ec2clientvpn.Ec2clientvpnFunctions.getEndpointPlain(args(argsBuilder).build)
+
+  /**
+   * Provides an AWS Client VPN endpoint for OpenVPN clients. For more information on usage, please see the
+   * [AWS Client VPN Administrator&#39;s Guide](https://docs.aws.amazon.com/vpn/latest/clientvpn-admin/what-is.html).
+   */
+  def Endpoint(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+      (args: Endofunction[com.pulumi.aws.ec2clientvpn.EndpointArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+    var argsBuilder = com.pulumi.aws.ec2clientvpn.EndpointArgs.builder
+    argsBuilder = args(argsBuilder)
+    conf.logicalName2tagName(name) match
+      case Some(tagName) =>
+        argsBuilder = argsBuilder.tags:
+          transformOptOutputMap(argsBuilder.build.tags, map =>
+              if map.contains("Name") then map else map + ("Name" -> tagName))
+      case None =>
+    com.pulumi.aws.ec2clientvpn.Endpoint(name,
+        argsBuilder.build,
+        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+
+  extension (builder: com.pulumi.aws.ec2clientvpn.EndpointArgs.Builder)
+    /**
+     * @param authenticationOptions Information about the authentication method to be used to authenticate clients. See `authenticationOptions` Block Reference below for details.
+     * @return builder
+     */
+    def authenticationOptions(args: Endofunction[com.pulumi.aws.ec2clientvpn.inputs.EndpointAuthenticationOptionArgs.Builder]*):
+        com.pulumi.aws.ec2clientvpn.EndpointArgs.Builder =
+      def argsBuilder = com.pulumi.aws.ec2clientvpn.inputs.EndpointAuthenticationOptionArgs.builder
+      builder.authenticationOptions(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param clientConnectOptions The options for managing connection authorization for new client connections. See `clientConnectOptions` Block Reference below for details.
+     * @return builder
+     */
+    def clientConnectOptions(args: Endofunction[com.pulumi.aws.ec2clientvpn.inputs.EndpointClientConnectOptionsArgs.Builder]):
+        com.pulumi.aws.ec2clientvpn.EndpointArgs.Builder =
+      val argsBuilder = com.pulumi.aws.ec2clientvpn.inputs.EndpointClientConnectOptionsArgs.builder
+      builder.clientConnectOptions(args(argsBuilder).build)
+
+    /**
+     * @param clientLoginBannerOptions Options for enabling a customizable text banner that will be displayed on AWS provided clients when a VPN session is established. See `clientLoginBannerOptions` Block Reference below for details.
+     * @return builder
+     */
+    def clientLoginBannerOptions(args: Endofunction[com.pulumi.aws.ec2clientvpn.inputs.EndpointClientLoginBannerOptionsArgs.Builder]):
+        com.pulumi.aws.ec2clientvpn.EndpointArgs.Builder =
+      val argsBuilder = com.pulumi.aws.ec2clientvpn.inputs.EndpointClientLoginBannerOptionsArgs.builder
+      builder.clientLoginBannerOptions(args(argsBuilder).build)
+
+    /**
+     * @param clientRouteEnforcementOptions Options for enforce administrator defined routes on devices connected through the VPN. See `clientRouteEnforcementOptions` Block Reference below for details.
+     * @return builder
+     */
+    def clientRouteEnforcementOptions(args: Endofunction[com.pulumi.aws.ec2clientvpn.inputs.EndpointClientRouteEnforcementOptionsArgs.Builder]):
+        com.pulumi.aws.ec2clientvpn.EndpointArgs.Builder =
+      val argsBuilder = com.pulumi.aws.ec2clientvpn.inputs.EndpointClientRouteEnforcementOptionsArgs.builder
+      builder.clientRouteEnforcementOptions(args(argsBuilder).build)
+
+    /**
+     * @param connectionLogOptions Information about the client connection logging options. See `connectionLogOptions` Block Reference below for details.
+     * @return builder
+     */
+    def connectionLogOptions(args: Endofunction[com.pulumi.aws.ec2clientvpn.inputs.EndpointConnectionLogOptionsArgs.Builder]):
+        com.pulumi.aws.ec2clientvpn.EndpointArgs.Builder =
+      val argsBuilder = com.pulumi.aws.ec2clientvpn.inputs.EndpointConnectionLogOptionsArgs.builder
+      builder.connectionLogOptions(args(argsBuilder).build)
+
+    /**
+     * @param transitGatewayConfiguration Configuration block for associating the Client VPN endpoint with a Transit Gateway. Conflicts with `vpcId` and `securityGroupIds`. See `transitGatewayConfiguration` Block Reference below for details.
+     * @return builder
+     */
+    def transitGatewayConfiguration(args: Endofunction[com.pulumi.aws.ec2clientvpn.inputs.EndpointTransitGatewayConfigurationArgs.Builder]):
+        com.pulumi.aws.ec2clientvpn.EndpointArgs.Builder =
+      val argsBuilder = com.pulumi.aws.ec2clientvpn.inputs.EndpointTransitGatewayConfigurationArgs.builder
+      builder.transitGatewayConfiguration(args(argsBuilder).build)
+
+  /**
+   * Provides network associations for AWS Client VPN endpoints. For more information on usage, please see the
+   * [AWS Client VPN Administrator&#39;s Guide](https://docs.aws.amazon.com/vpn/latest/clientvpn-admin/what-is.html).
+   */
+  def NetworkAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+      (args: Endofunction[com.pulumi.aws.ec2clientvpn.NetworkAssociationArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+    val argsBuilder = com.pulumi.aws.ec2clientvpn.NetworkAssociationArgs.builder
+    com.pulumi.aws.ec2clientvpn.NetworkAssociation(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+
+  /**
+   * Provides additional routes for AWS Client VPN endpoints. For more information on usage, please see the
+   * [AWS Client VPN Administrator&#39;s Guide](https://docs.aws.amazon.com/vpn/latest/clientvpn-admin/what-is.html).
+   */
+  def Route(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+      (args: Endofunction[com.pulumi.aws.ec2clientvpn.RouteArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+    val argsBuilder = com.pulumi.aws.ec2clientvpn.RouteArgs.builder
+    com.pulumi.aws.ec2clientvpn.Route(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+
+  extension (builder: com.pulumi.aws.ec2clientvpn.inputs.EndpointState.Builder)
+    /**
+     * @param authenticationOptions Information about the authentication method to be used to authenticate clients. See `authenticationOptions` Block Reference below for details.
+     * @return builder
+     */
+    def authenticationOptions(args: Endofunction[com.pulumi.aws.ec2clientvpn.inputs.EndpointAuthenticationOptionArgs.Builder]*):
+        com.pulumi.aws.ec2clientvpn.inputs.EndpointState.Builder =
+      def argsBuilder = com.pulumi.aws.ec2clientvpn.inputs.EndpointAuthenticationOptionArgs.builder
+      builder.authenticationOptions(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param clientConnectOptions The options for managing connection authorization for new client connections. See `clientConnectOptions` Block Reference below for details.
+     * @return builder
+     */
+    def clientConnectOptions(args: Endofunction[com.pulumi.aws.ec2clientvpn.inputs.EndpointClientConnectOptionsArgs.Builder]):
+        com.pulumi.aws.ec2clientvpn.inputs.EndpointState.Builder =
+      val argsBuilder = com.pulumi.aws.ec2clientvpn.inputs.EndpointClientConnectOptionsArgs.builder
+      builder.clientConnectOptions(args(argsBuilder).build)
+
+    /**
+     * @param clientLoginBannerOptions Options for enabling a customizable text banner that will be displayed on AWS provided clients when a VPN session is established. See `clientLoginBannerOptions` Block Reference below for details.
+     * @return builder
+     */
+    def clientLoginBannerOptions(args: Endofunction[com.pulumi.aws.ec2clientvpn.inputs.EndpointClientLoginBannerOptionsArgs.Builder]):
+        com.pulumi.aws.ec2clientvpn.inputs.EndpointState.Builder =
+      val argsBuilder = com.pulumi.aws.ec2clientvpn.inputs.EndpointClientLoginBannerOptionsArgs.builder
+      builder.clientLoginBannerOptions(args(argsBuilder).build)
+
+    /**
+     * @param clientRouteEnforcementOptions Options for enforce administrator defined routes on devices connected through the VPN. See `clientRouteEnforcementOptions` Block Reference below for details.
+     * @return builder
+     */
+    def clientRouteEnforcementOptions(args: Endofunction[com.pulumi.aws.ec2clientvpn.inputs.EndpointClientRouteEnforcementOptionsArgs.Builder]):
+        com.pulumi.aws.ec2clientvpn.inputs.EndpointState.Builder =
+      val argsBuilder = com.pulumi.aws.ec2clientvpn.inputs.EndpointClientRouteEnforcementOptionsArgs.builder
+      builder.clientRouteEnforcementOptions(args(argsBuilder).build)
+
+    /**
+     * @param connectionLogOptions Information about the client connection logging options. See `connectionLogOptions` Block Reference below for details.
+     * @return builder
+     */
+    def connectionLogOptions(args: Endofunction[com.pulumi.aws.ec2clientvpn.inputs.EndpointConnectionLogOptionsArgs.Builder]):
+        com.pulumi.aws.ec2clientvpn.inputs.EndpointState.Builder =
+      val argsBuilder = com.pulumi.aws.ec2clientvpn.inputs.EndpointConnectionLogOptionsArgs.builder
+      builder.connectionLogOptions(args(argsBuilder).build)
+
+    /**
+     * @param transitGatewayConfiguration Configuration block for associating the Client VPN endpoint with a Transit Gateway. Conflicts with `vpcId` and `securityGroupIds`. See `transitGatewayConfiguration` Block Reference below for details.
+     * @return builder
+     */
+    def transitGatewayConfiguration(args: Endofunction[com.pulumi.aws.ec2clientvpn.inputs.EndpointTransitGatewayConfigurationArgs.Builder]):
+        com.pulumi.aws.ec2clientvpn.inputs.EndpointState.Builder =
+      val argsBuilder = com.pulumi.aws.ec2clientvpn.inputs.EndpointTransitGatewayConfigurationArgs.builder
+      builder.transitGatewayConfiguration(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.ec2clientvpn.inputs.GetEndpointArgs.Builder)
+    /**
+     * @param filters One or more configuration blocks containing name-values filters. Detailed below.
+     * @return builder
+     */
+    def filters(args: Endofunction[com.pulumi.aws.ec2clientvpn.inputs.GetEndpointFilterArgs.Builder]*):
+        com.pulumi.aws.ec2clientvpn.inputs.GetEndpointArgs.Builder =
+      def argsBuilder = com.pulumi.aws.ec2clientvpn.inputs.GetEndpointFilterArgs.builder
+      builder.filters(args.map(_(argsBuilder).build)*)

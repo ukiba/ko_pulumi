@@ -1,0 +1,120 @@
+package jp.ukiba.ko_pulumi
+package aws
+
+import com.pulumi.resources.CustomResourceOptions
+
+object codeartifact:
+  object CodeartifactFunctions:
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
+    /** The CodeArtifact Authorization Token data source generates a temporary authentication token for accessing repositories in a CodeArtifact domain. */
+    inline def getAuthorizationToken(args: Endofunction[com.pulumi.aws.codeartifact.inputs.GetAuthorizationTokenArgs.Builder] = scala.Predef.identity):
+        com.pulumi.core.Output[com.pulumi.aws.codeartifact.outputs.GetAuthorizationTokenResult] =
+      val argsBuilder = com.pulumi.aws.codeartifact.inputs.GetAuthorizationTokenArgs.builder
+      com.pulumi.aws.codeartifact.CodeartifactFunctions.getAuthorizationToken(args(argsBuilder).build)
+
+    /** The CodeArtifact Authorization Token data source generates a temporary authentication token for accessing repositories in a CodeArtifact domain. */
+    inline def getAuthorizationTokenPlain(args: Endofunction[com.pulumi.aws.codeartifact.inputs.GetAuthorizationTokenPlainArgs.Builder] = scala.Predef.identity):
+        java.util.concurrent.CompletableFuture[com.pulumi.aws.codeartifact.outputs.GetAuthorizationTokenResult] =
+      val argsBuilder = com.pulumi.aws.codeartifact.inputs.GetAuthorizationTokenPlainArgs.builder
+      com.pulumi.aws.codeartifact.CodeartifactFunctions.getAuthorizationTokenPlain(args(argsBuilder).build)
+
+    /** The CodeArtifact Repository Endpoint data source returns the endpoint of a repository for a specific package format. */
+    inline def getRepositoryEndpoint(args: Endofunction[com.pulumi.aws.codeartifact.inputs.GetRepositoryEndpointArgs.Builder] = scala.Predef.identity):
+        com.pulumi.core.Output[com.pulumi.aws.codeartifact.outputs.GetRepositoryEndpointResult] =
+      val argsBuilder = com.pulumi.aws.codeartifact.inputs.GetRepositoryEndpointArgs.builder
+      com.pulumi.aws.codeartifact.CodeartifactFunctions.getRepositoryEndpoint(args(argsBuilder).build)
+
+    /** The CodeArtifact Repository Endpoint data source returns the endpoint of a repository for a specific package format. */
+    inline def getRepositoryEndpointPlain(args: Endofunction[com.pulumi.aws.codeartifact.inputs.GetRepositoryEndpointPlainArgs.Builder] = scala.Predef.identity):
+        java.util.concurrent.CompletableFuture[com.pulumi.aws.codeartifact.outputs.GetRepositoryEndpointResult] =
+      val argsBuilder = com.pulumi.aws.codeartifact.inputs.GetRepositoryEndpointPlainArgs.builder
+      com.pulumi.aws.codeartifact.CodeartifactFunctions.getRepositoryEndpointPlain(args(argsBuilder).build)
+
+  /** Provides a CodeArtifact Domain Resource. */
+  def Domain(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+      (args: Endofunction[com.pulumi.aws.codeartifact.DomainArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+    var argsBuilder = com.pulumi.aws.codeartifact.DomainArgs.builder
+    argsBuilder = args(argsBuilder)
+    conf.logicalName2tagName(name) match
+      case Some(tagName) =>
+        argsBuilder = argsBuilder.tags:
+          transformOptOutputMap(argsBuilder.build.tags, map =>
+              if map.contains("Name") then map else map + ("Name" -> tagName))
+      case None =>
+    com.pulumi.aws.codeartifact.Domain(name,
+        argsBuilder.build,
+        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+
+  /** Provides a CodeArtifact Domains Permissions Policy Resource. */
+  def DomainPermissions(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+      (args: Endofunction[com.pulumi.aws.codeartifact.DomainPermissionsArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+    val argsBuilder = com.pulumi.aws.codeartifact.DomainPermissionsArgs.builder
+    com.pulumi.aws.codeartifact.DomainPermissions(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+
+  /** Provides a CodeArtifact Repository Resource. */
+  def Repository(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+      (args: Endofunction[com.pulumi.aws.codeartifact.RepositoryArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+    var argsBuilder = com.pulumi.aws.codeartifact.RepositoryArgs.builder
+    argsBuilder = args(argsBuilder)
+    conf.logicalName2tagName(name) match
+      case Some(tagName) =>
+        argsBuilder = argsBuilder.tags:
+          transformOptOutputMap(argsBuilder.build.tags, map =>
+              if map.contains("Name") then map else map + ("Name" -> tagName))
+      case None =>
+    com.pulumi.aws.codeartifact.Repository(name,
+        argsBuilder.build,
+        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+
+  extension (builder: com.pulumi.aws.codeartifact.RepositoryArgs.Builder)
+    /**
+     * @param externalConnections An array of external connections associated with the repository. Only one external connection can be set per repository. see External Connections.
+     * @return builder
+     */
+    def externalConnections(args: Endofunction[com.pulumi.aws.codeartifact.inputs.RepositoryExternalConnectionsArgs.Builder]):
+        com.pulumi.aws.codeartifact.RepositoryArgs.Builder =
+      val argsBuilder = com.pulumi.aws.codeartifact.inputs.RepositoryExternalConnectionsArgs.builder
+      builder.externalConnections(args(argsBuilder).build)
+
+    /**
+     * @param upstreams A list of upstream repositories to associate with the repository. The order of the upstream repositories in the list determines their priority order when AWS CodeArtifact looks for a requested package version. see Upstream
+     * @return builder
+     */
+    def upstreams(args: Endofunction[com.pulumi.aws.codeartifact.inputs.RepositoryUpstreamArgs.Builder]*):
+        com.pulumi.aws.codeartifact.RepositoryArgs.Builder =
+      def argsBuilder = com.pulumi.aws.codeartifact.inputs.RepositoryUpstreamArgs.builder
+      builder.upstreams(args.map(_(argsBuilder).build)*)
+
+  /** Provides a CodeArtifact Repostory Permissions Policy Resource. */
+  def RepositoryPermissionsPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+      (args: Endofunction[com.pulumi.aws.codeartifact.RepositoryPermissionsPolicyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+    val argsBuilder = com.pulumi.aws.codeartifact.RepositoryPermissionsPolicyArgs.builder
+    com.pulumi.aws.codeartifact.RepositoryPermissionsPolicy(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+
+  extension (builder: com.pulumi.aws.codeartifact.inputs.RepositoryState.Builder)
+    /**
+     * @param externalConnections An array of external connections associated with the repository. Only one external connection can be set per repository. see External Connections.
+     * @return builder
+     */
+    def externalConnections(args: Endofunction[com.pulumi.aws.codeartifact.inputs.RepositoryExternalConnectionsArgs.Builder]):
+        com.pulumi.aws.codeartifact.inputs.RepositoryState.Builder =
+      val argsBuilder = com.pulumi.aws.codeartifact.inputs.RepositoryExternalConnectionsArgs.builder
+      builder.externalConnections(args(argsBuilder).build)
+
+    /**
+     * @param upstreams A list of upstream repositories to associate with the repository. The order of the upstream repositories in the list determines their priority order when AWS CodeArtifact looks for a requested package version. see Upstream
+     * @return builder
+     */
+    def upstreams(args: Endofunction[com.pulumi.aws.codeartifact.inputs.RepositoryUpstreamArgs.Builder]*):
+        com.pulumi.aws.codeartifact.inputs.RepositoryState.Builder =
+      def argsBuilder = com.pulumi.aws.codeartifact.inputs.RepositoryUpstreamArgs.builder
+      builder.upstreams(args.map(_(argsBuilder).build)*)

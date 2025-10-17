@@ -1,0 +1,144 @@
+package jp.ukiba.ko_pulumi
+package aws
+
+import com.pulumi.resources.CustomResourceOptions
+
+object grafana:
+  object GrafanaFunctions:
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
+    /** Provides an Amazon Managed Grafana workspace data source. */
+    inline def getWorkspace(args: Endofunction[com.pulumi.aws.grafana.inputs.GetWorkspaceArgs.Builder] = scala.Predef.identity):
+        com.pulumi.core.Output[com.pulumi.aws.grafana.outputs.GetWorkspaceResult] =
+      val argsBuilder = com.pulumi.aws.grafana.inputs.GetWorkspaceArgs.builder
+      com.pulumi.aws.grafana.GrafanaFunctions.getWorkspace(args(argsBuilder).build)
+
+    /** Provides an Amazon Managed Grafana workspace data source. */
+    inline def getWorkspacePlain(args: Endofunction[com.pulumi.aws.grafana.inputs.GetWorkspacePlainArgs.Builder] = scala.Predef.identity):
+        java.util.concurrent.CompletableFuture[com.pulumi.aws.grafana.outputs.GetWorkspaceResult] =
+      val argsBuilder = com.pulumi.aws.grafana.inputs.GetWorkspacePlainArgs.builder
+      com.pulumi.aws.grafana.GrafanaFunctions.getWorkspacePlain(args(argsBuilder).build)
+
+  /** Provides an Amazon Managed Grafana workspace license association resource. */
+  def LicenseAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+      (args: Endofunction[com.pulumi.aws.grafana.LicenseAssociationArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+    val argsBuilder = com.pulumi.aws.grafana.LicenseAssociationArgs.builder
+    com.pulumi.aws.grafana.LicenseAssociation(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+
+  /** Provides an Amazon Managed Grafana workspace role association resource. */
+  def RoleAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+      (args: Endofunction[com.pulumi.aws.grafana.RoleAssociationArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+    val argsBuilder = com.pulumi.aws.grafana.RoleAssociationArgs.builder
+    com.pulumi.aws.grafana.RoleAssociation(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+
+  /** Provides an Amazon Managed Grafana workspace resource. */
+  def Workspace(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+      (args: Endofunction[com.pulumi.aws.grafana.WorkspaceArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+    var argsBuilder = com.pulumi.aws.grafana.WorkspaceArgs.builder
+    conf.logicalName2physicalName(name) match
+      case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
+      case None               =>
+    argsBuilder = args(argsBuilder)
+    conf.logicalName2tagName(name) match
+      case Some(tagName) =>
+        argsBuilder = argsBuilder.tags:
+          transformOptOutputMap(argsBuilder.build.tags, map =>
+              if map.contains("Name") then map else map + ("Name" -> tagName))
+      case None =>
+    com.pulumi.aws.grafana.Workspace(name,
+        argsBuilder.build,
+        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+
+  /** Provides an Amazon Managed Grafana workspace API Key resource. */
+  def WorkspaceApiKey(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+      (args: Endofunction[com.pulumi.aws.grafana.WorkspaceApiKeyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+    val argsBuilder = com.pulumi.aws.grafana.WorkspaceApiKeyArgs.builder
+    com.pulumi.aws.grafana.WorkspaceApiKey(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+
+  extension (builder: com.pulumi.aws.grafana.WorkspaceArgs.Builder)
+    /**
+     * @param networkAccessControl Configuration for network access to your workspace.See Network Access Control below.
+     * @return builder
+     */
+    def networkAccessControl(args: Endofunction[com.pulumi.aws.grafana.inputs.WorkspaceNetworkAccessControlArgs.Builder]):
+        com.pulumi.aws.grafana.WorkspaceArgs.Builder =
+      val argsBuilder = com.pulumi.aws.grafana.inputs.WorkspaceNetworkAccessControlArgs.builder
+      builder.networkAccessControl(args(argsBuilder).build)
+
+    /**
+     * @param vpcConfiguration The configuration settings for an Amazon VPC that contains data sources for your Grafana workspace to connect to. See VPC Configuration below.
+     * @return builder
+     */
+    def vpcConfiguration(args: Endofunction[com.pulumi.aws.grafana.inputs.WorkspaceVpcConfigurationArgs.Builder]):
+        com.pulumi.aws.grafana.WorkspaceArgs.Builder =
+      val argsBuilder = com.pulumi.aws.grafana.inputs.WorkspaceVpcConfigurationArgs.builder
+      builder.vpcConfiguration(args(argsBuilder).build)
+
+  /** Provides an Amazon Managed Grafana workspace SAML configuration resource. */
+  def WorkspaceSamlConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+      (args: Endofunction[com.pulumi.aws.grafana.WorkspaceSamlConfigurationArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+    val argsBuilder = com.pulumi.aws.grafana.WorkspaceSamlConfigurationArgs.builder
+    com.pulumi.aws.grafana.WorkspaceSamlConfiguration(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+
+  /**
+   * &gt; **Note:** You cannot update a service account. If you change any attribute, Terraform
+   * will delete the current and create a new one.
+   * 
+   * Read about Service Accounts in the [Amazon Managed Grafana user guide](https://docs.aws.amazon.com/grafana/latest/userguide/service-accounts.html).
+   */
+  def WorkspaceServiceAccount(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+      (args: Endofunction[com.pulumi.aws.grafana.WorkspaceServiceAccountArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+    var argsBuilder = com.pulumi.aws.grafana.WorkspaceServiceAccountArgs.builder
+    conf.logicalName2physicalName(name) match
+      case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
+      case None               =>
+    com.pulumi.aws.grafana.WorkspaceServiceAccount(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+
+  /**
+   * &gt; **Note:** You cannot update a service account token. If you change any attribute, Terraform
+   * will delete the current and create a new one.
+   * 
+   * Read about Service Accounts Tokens in the [Amazon Managed Grafana user guide](https://docs.aws.amazon.com/grafana/latest/userguide/service-accounts.html#service-account-tokens).
+   */
+  def WorkspaceServiceAccountToken(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+      (args: Endofunction[com.pulumi.aws.grafana.WorkspaceServiceAccountTokenArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+    var argsBuilder = com.pulumi.aws.grafana.WorkspaceServiceAccountTokenArgs.builder
+    conf.logicalName2physicalName(name) match
+      case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
+      case None               =>
+    com.pulumi.aws.grafana.WorkspaceServiceAccountToken(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+
+  extension (builder: com.pulumi.aws.grafana.inputs.WorkspaceState.Builder)
+    /**
+     * @param networkAccessControl Configuration for network access to your workspace.See Network Access Control below.
+     * @return builder
+     */
+    def networkAccessControl(args: Endofunction[com.pulumi.aws.grafana.inputs.WorkspaceNetworkAccessControlArgs.Builder]):
+        com.pulumi.aws.grafana.inputs.WorkspaceState.Builder =
+      val argsBuilder = com.pulumi.aws.grafana.inputs.WorkspaceNetworkAccessControlArgs.builder
+      builder.networkAccessControl(args(argsBuilder).build)
+
+    /**
+     * @param vpcConfiguration The configuration settings for an Amazon VPC that contains data sources for your Grafana workspace to connect to. See VPC Configuration below.
+     * @return builder
+     */
+    def vpcConfiguration(args: Endofunction[com.pulumi.aws.grafana.inputs.WorkspaceVpcConfigurationArgs.Builder]):
+        com.pulumi.aws.grafana.inputs.WorkspaceState.Builder =
+      val argsBuilder = com.pulumi.aws.grafana.inputs.WorkspaceVpcConfigurationArgs.builder
+      builder.vpcConfiguration(args(argsBuilder).build)

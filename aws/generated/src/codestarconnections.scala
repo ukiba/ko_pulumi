@@ -1,0 +1,81 @@
+package jp.ukiba.ko_pulumi
+package aws
+
+import com.pulumi.resources.CustomResourceOptions
+
+object codestarconnections:
+  object CodestarconnectionsFunctions:
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
+    /** Provides details about CodeStar Connection. */
+    inline def getConnection(args: Endofunction[com.pulumi.aws.codestarconnections.inputs.GetConnectionArgs.Builder] = scala.Predef.identity):
+        com.pulumi.core.Output[com.pulumi.aws.codestarconnections.outputs.GetConnectionResult] =
+      val argsBuilder = com.pulumi.aws.codestarconnections.inputs.GetConnectionArgs.builder
+      com.pulumi.aws.codestarconnections.CodestarconnectionsFunctions.getConnection(args(argsBuilder).build)
+
+    /** Provides details about CodeStar Connection. */
+    inline def getConnectionPlain(args: Endofunction[com.pulumi.aws.codestarconnections.inputs.GetConnectionPlainArgs.Builder] = scala.Predef.identity):
+        java.util.concurrent.CompletableFuture[com.pulumi.aws.codestarconnections.outputs.GetConnectionResult] =
+      val argsBuilder = com.pulumi.aws.codestarconnections.inputs.GetConnectionPlainArgs.builder
+      com.pulumi.aws.codestarconnections.CodestarconnectionsFunctions.getConnectionPlain(args(argsBuilder).build)
+
+  /**
+   * Provides a CodeStar Connection.
+   * 
+   * &gt; **NOTE:** The `aws.codestarconnections.Connection` resource is created in the state `PENDING`. Authentication with the connection provider must be completed in the AWS Console. See the [AWS documentation](https://docs.aws.amazon.com/dtconsole/latest/userguide/connections-update.html) for details.
+   */
+  def Connection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+      (args: Endofunction[com.pulumi.aws.codestarconnections.ConnectionArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+    var argsBuilder = com.pulumi.aws.codestarconnections.ConnectionArgs.builder
+    conf.logicalName2physicalName(name) match
+      case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
+      case None               =>
+    argsBuilder = args(argsBuilder)
+    conf.logicalName2tagName(name) match
+      case Some(tagName) =>
+        argsBuilder = argsBuilder.tags:
+          transformOptOutputMap(argsBuilder.build.tags, map =>
+              if map.contains("Name") then map else map + ("Name" -> tagName))
+      case None =>
+    com.pulumi.aws.codestarconnections.Connection(name,
+        argsBuilder.build,
+        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+
+  /**
+   * Provides a CodeStar Host.
+   * 
+   * &gt; **NOTE:** The `aws.codestarconnections.Host` resource is created in the state `PENDING`. Authentication with the host provider must be completed in the AWS Console. For more information visit [Set up a pending host](https://docs.aws.amazon.com/dtconsole/latest/userguide/connections-host-setup.html).
+   */
+  def Host(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+      (args: Endofunction[com.pulumi.aws.codestarconnections.HostArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+    var argsBuilder = com.pulumi.aws.codestarconnections.HostArgs.builder
+    conf.logicalName2physicalName(name) match
+      case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
+      case None               =>
+    com.pulumi.aws.codestarconnections.Host(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+
+  extension (builder: com.pulumi.aws.codestarconnections.HostArgs.Builder)
+    /**
+     * @param vpcConfiguration The VPC configuration to be provisioned for the host. A VPC must be configured, and the infrastructure to be represented by the host must already be connected to the VPC.
+     * @return builder
+     */
+    def vpcConfiguration(args: Endofunction[com.pulumi.aws.codestarconnections.inputs.HostVpcConfigurationArgs.Builder]):
+        com.pulumi.aws.codestarconnections.HostArgs.Builder =
+      val argsBuilder = com.pulumi.aws.codestarconnections.inputs.HostVpcConfigurationArgs.builder
+      builder.vpcConfiguration(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.codestarconnections.inputs.HostState.Builder)
+    /**
+     * @param vpcConfiguration The VPC configuration to be provisioned for the host. A VPC must be configured, and the infrastructure to be represented by the host must already be connected to the VPC.
+     * @return builder
+     */
+    def vpcConfiguration(args: Endofunction[com.pulumi.aws.codestarconnections.inputs.HostVpcConfigurationArgs.Builder]):
+        com.pulumi.aws.codestarconnections.inputs.HostState.Builder =
+      val argsBuilder = com.pulumi.aws.codestarconnections.inputs.HostVpcConfigurationArgs.builder
+      builder.vpcConfiguration(args(argsBuilder).build)

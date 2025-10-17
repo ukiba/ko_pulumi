@@ -1,0 +1,143 @@
+//| mill-version: 1.1.6
+//| mill-jvm-version: temurin:25
+
+package build
+
+import mill.*, scalalib.*, publish.*
+
+val pulumiAwsVersion        = "7.32.0"
+val pulumiGcpVersion        = "9.25.0"
+val pulumiAzureVersion      = "6.38.0"
+
+val pulumiPostgresqlVersion = "3.17.0"
+
+val pulumiJavaVersion       = "1.28.0"
+
+val repoName = "ko_pulumi"
+
+def pomSettingsBase = PomSettings(
+  description    = "Scala adapters",
+  organization   = "jp.ukiba",
+  url            = s"https://github.com/ukiba/$repoName/",
+  licenses       = Seq(License.`Apache-2.0`),
+  versionControl = VersionControl.github("ukiba", repoName),
+  developers     = Nil,
+)
+
+trait ScalaModuleEx extends ScalaModule:
+  def scalaVersion = "3.8.3"
+  def scalacOptions = Seq(
+    "-Yexplicit-nulls",          // make `AnyRef` non-nullable; null safety
+    "-Wsafe-init",               // avoid the type system to be unsound with respect to null
+    "-language:strictEquality",  // disable cross-type `==` unless CanEqual evidence exists
+    "-preview",        // enable language features and APIs that will be standardized in future minor release
+    "-source:future",  // forward source-compatibility (proactive breakage detector)
+
+    "-Wnonunit-statement",       // enable `A pure expression does nothing in statement position` warning
+
+    // the default settings from https://scastie.scala-lang.org
+    "-deprecation",
+    "-feature",
+    "-unchecked",
+    "-encoding", "UTF-8",
+  )
+
+  def artifactName = (repoName +: moduleSegments.parts).mkString("-")
+
+trait PulumiProviderModule extends ScalaModuleEx with PublishModule:
+  // Since we want to commit the generated files for easier review,
+  // they are stored outside `out/` thus `generatedSources` is not used
+  def generatedDir = moduleDir / "generated" / "src"
+  def generate() = Task.Command:
+    PulumiProviderAdapterGenerator(generatedDir.toNIO,
+        moduleSegments.parts.last,
+        pulumiProviderJars().map(_.toString))
+        .processDirectory(pulumiProviderSrc().toNIO)
+  def generatedDirAsSrc = Task.Source(generatedDir)
+  override def sources = Task:
+    super.sources() :+ generatedDirAsSrc()
+
+  def pulumiProviderSrc = Task:
+    os.unzip(pulumiProviderSrcJar().path, Task.dest)
+
+  def pulumiProviderSrcJar = Task:
+    defaultResolver().classpath(
+      Seq(pulumiProviderDep().exclude("*" -> "*")),  // exclude transitive dependencies
+      sources = true,
+    ).head
+
+  def pulumiProviderJars = Task:
+    defaultResolver().classpath(Seq(pulumiProviderDep()))  // include transitive dependencies
+
+  def pulumiProviderDep = Task:
+    mvnDeps().find: dep =>
+      import dep.dep.module.{organization, name}
+      organization.value == "com.pulumi" && name.value == moduleSegments.parts.last
+    .getOrElse:
+      throw IllegalStateException(s"pulumi-${moduleSegments.parts.last} dependency is not found")
+
+  def pomSettings = pomSettingsBase.copy(description = s"${
+      pomSettingsBase.description} for pulumi-${moduleSegments.parts.last}")
+
+  /*
+    1. We don't use `publishLocal` (that outputs to `~/.ivy2/local`)
+       because coursier's 24-hour SNAPSHOT cache and local-repo precedence
+       cause stale-artifact problems during iterative development.
+        1. [The local ivy2 repository is searched before Maven Central by default](https://get-coursier.io/docs/other-repositories), but
+        1. [SNAPSHOT versions are cached for 24 hours by default](https://get-coursier.io/docs/ttl)
+  */
+
+  def moduleDeps = Seq(core)
+
+val versionSuffix = ".0"  // "-SNAPSHOT" can be appended
+
+object aws extends PulumiProviderModule:
+  def mvnDeps = Seq(mvn"com.pulumi:aws:$pulumiAwsVersion")
+  def publishVersion =               s"$pulumiAwsVersion$versionSuffix"
+
+object gcp extends PulumiProviderModule:
+  def mvnDeps = Seq(mvn"com.pulumi:gcp:$pulumiGcpVersion")
+  def publishVersion =               s"$pulumiGcpVersion$versionSuffix"
+
+object azure extends PulumiProviderModule:
+  def mvnDeps = Seq(mvn"com.pulumi:azure:$pulumiAzureVersion")
+  def publishVersion =                 s"$pulumiAzureVersion$versionSuffix"
+
+object postgresql extends PulumiProviderModule:
+  def mvnDeps = Seq(mvn"com.pulumi:postgresql:$pulumiPostgresqlVersion")
+  def publishVersion                      = s"$pulumiPostgresqlVersion$versionSuffix"
+
+object core extends ScalaModuleEx with PublishModule:
+  def mvnDeps = Seq(mvn"com.pulumi:pulumi:$pulumiJavaVersion")
+  def publishVersion                  = s"$pulumiJavaVersion$versionSuffix"
+  def pomSettings = pomSettingsBase.copy(description = s"Helpers for Pulumi ${pomSettingsBase.description}")
+
+  object test extends ScalaTests with TestModule.Munit:
+    def mvnDeps = Seq(mvn"org.scalameta::munit::1.3.2")
+
+    // "/resources.index" is generated since protectionDomain.getCodeSource returns null in mill, unlike sbt.
+    // https://mill-build.org/mill/scalalib/module-config.html says
+    // "classpath resources are useful when you want to fetch individual files" ...
+    // "But they do not allow you to list folders or perform other filesystem operations"
+    override def resources = Task:
+      super.resources() ++ resourcesIndex()
+    def resourcesIndex = Task:
+      val entries = super.resources().map(_.path).filter(os.isDir).flatMap: root =>
+          os.walk(root).filter(os.isFile).map(_.subRelativeTo(root).toString)  // SubPath.toString uses '/'
+        .distinct.sorted
+      os.write.over(Task.dest / "resources.index", entries.map(_ + "\n").mkString)
+      Seq(PathRef(Task.dest))
+
+// Avoid `com.google.protobuf.InvalidProtocolBufferException: Protocol message had too many levels of nesting.  May be malicious.  Use setRecursionLimit() to increase the recursion depth limit` for wafv2.WebAcl rules.
+object pulumifix extends ScalaModuleEx with ScalaModule:
+  def mvnDeps = Seq(
+    mvn"net.bytebuddy:byte-buddy:1.18.10",
+    mvn"net.bytebuddy:byte-buddy-agent:1.18.10",
+  )
+
+  override def manifest = Task:
+    super.manifest().add(
+      "Premain-Class"           -> "pulumifix.ProtobufRecursionLimitAgent",
+      "Can-Retransform-Classes" -> "true",
+      "Can-Redefine-Classes"    -> "true",
+    )
