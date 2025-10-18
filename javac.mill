@@ -1,0 +1,84 @@
+package build
+
+import com.sun.source.tree.{ClassTree, MethodTree, VariableTree,
+                            ExpressionTree, AnnotationTree, ModifiersTree, Tree}
+
+import scala.jdk.CollectionConverters.*
+
+import javax.lang.model.element.{Name, Element, ExecutableElement, VariableElement, Modifier, AnnotationMirror}
+import javax.lang.model.`type`.{TypeMirror, ArrayType, DeclaredType}
+
+object JavacSyntax:
+  extension (cls: ClassTree)
+    def simpleName: Name = cls.getSimpleName
+    def extendsClause: Option[Tree] = Option(cls.getExtendsClause)
+
+    def modifiers: ModifiersTree = cls.getModifiers
+    def annotations: collection.Seq[AnnotationTree] = modifiers.annotations
+
+    def members: collection.Seq[Tree] = cls.getMembers.asScala
+    def constructors: collection.Seq[MethodTree] = members.flatMap: member =>
+      member match
+        case method: MethodTree if method.returnType == null => Some(method)
+        case _ => None
+    def methods: collection.Seq[MethodTree] = members.flatMap: member =>
+      member match
+        case method: MethodTree if method.returnType != null => Some(method)
+        case _ => None
+/*
+    def enclosedClasses: collection.Seq[ClassTree] = members.flatMap: member =>
+      member match
+        case cls: ClassTree => Some(cls)
+        case _ => None
+*/
+
+  extension (method: MethodTree)
+    def name: Name = method.getName
+    def modifiers: ModifiersTree = method.getModifiers
+    def parameters: collection.Seq[VariableTree] = method.getParameters.asScala
+    def returnType: Tree = method.getReturnType
+
+  extension (anno: AnnotationTree)
+    def annotationType: Tree = anno.getAnnotationType
+    def arguments: collection.Seq[ExpressionTree] = anno.getArguments.asScala
+
+  extension (mods: ModifiersTree)
+    def annotations: collection.Seq[AnnotationTree] = mods.getAnnotations.asScala
+    def flags: collection.Set[Modifier] = mods.getFlags.asScala
+    def isPublic: Boolean = flags.contains(Modifier.PUBLIC)
+    def isStatic: Boolean = flags.contains(Modifier.STATIC)
+
+  extension (elem: Element)
+    def simpleName: Name = elem.getSimpleName
+    def annotationMirrors: collection.Seq[AnnotationMirror] = elem.getAnnotationMirrors.asScala
+    def enclosedElements: collection.Seq[Element] = elem.getEnclosedElements.asScala
+    def parameters: Option[collection.Seq[VariableElement]] = elem match
+      case exe: ExecutableElement => Some(exe.parameters)
+      case _                      => None
+
+  extension (elem: ExecutableElement)
+    def parameters: collection.Seq[VariableElement] = elem.getParameters.asScala
+
+  extension (typ: ArrayType)
+    def componentType: TypeMirror = typ.getComponentType
+
+  extension (anno: AnnotationMirror)
+    def annotationType: DeclaredType = anno.getAnnotationType
+
+
+// TODO the following don't belong here
+extension (str: String)
+  def withUpperCaseHead: String = s"${str.take(1).toUpperCase}${str.drop(1)}"
+
+import scala.annotation.tailrec
+
+extension [A](seq: Seq[A])
+  def countRight(pred: A => Boolean): Int =
+    @tailrec def loop(count: Int, lastIndex: Int): Int =
+      if (lastIndex >= 0 && pred(seq(lastIndex)))
+        loop(count + 1, lastIndex - 1)
+      else
+        count
+    loop(0, seq.length - 1)
+
+  def dropRightWhile(pred: A => Boolean): Seq[A] = seq.dropRight(seq.countRight(pred))

@@ -1,0 +1,83 @@
+//| mill-version: 1.0.6
+
+package build
+
+import mill.*, scalalib.*, publish.*
+
+val pulumiJavaVersion = "1.16.2"
+val pulumiAwsVersion = "7.8.0"
+
+val repoName = "ko_pulumi"
+
+def pomSettingsBase = PomSettings(
+  description    = "Scala adapters",
+  organization   = "jp.ukiba",
+  url            = s"https://github.com/ukiba/$repoName/",
+  licenses       = Seq(License.`Apache-2.0`),
+  versionControl = VersionControl.github("ukiba", repoName),
+  developers     = Nil,
+)
+
+trait ScalaModuleEx extends ScalaModule:
+  def scalaVersion = "3.7.3"
+  def scalacOptions = Seq(
+    "-Yexplicit-nulls",          // make `AnyRef` non-nullable; null safety
+    "-language:strictEquality",  // disable cross-type == unless CanEqual evidence exists
+    "-Wnonunit-statement",  // enable `A pure expression does nothing in statement position` warning
+    "-Wsafe-init",          // enable `Access non-initialized field` warning
+    "-preview",        // enable language features and APIs that will be standardized in future minor release
+    "-source:future",  // forward compatibility, like `import renaming `a => b` is no longer supported`
+
+    "-Wunused:imports,privates,locals,params,implicits",
+    //"-Xfatal-warnings",
+
+    // the default settings from https://scastie.scala-lang.org
+    "-deprecation",
+    "-feature",
+    "-unchecked",
+    "-encoding", "UTF-8",
+  )
+
+  def artifactName = (repoName +: moduleSegments.parts).mkString("-")
+
+object java extends ScalaModuleEx with PublishModule:
+  def mvnDeps = Seq(
+    mvn"com.pulumi:pulumi:$pulumiJavaVersion",
+  )
+  def publishVersion = s"$pulumiJavaVersion.0-SNAPSHOT"
+
+  def pomSettings = pomSettingsBase.copy(description = s"Helpers for Pulumi ${pomSettingsBase.description}")
+
+object aws extends ScalaModuleEx with PublishModule:
+  def moduleDeps = Seq(java)
+
+  def mvnDeps = Seq(
+    mvn"com.pulumi:aws:$pulumiAwsVersion",
+  )
+  def publishVersion = s"$pulumiAwsVersion.0-SNAPSHOT"
+
+  def generatedSources = Task:
+    val generatedFiles = PulumiAwsAdapterGenerator(Task.dest.toNIO, pulumiAwsJars().map(_.toString))
+        .processDirectory(pulumiAwsSrc().toNIO)
+    Seq(PathRef(Task.dest))
+
+  def pulumiAwsSrc = Task:
+    os.unzip(pulumiAwsSrcJar().path, Task.dest)
+
+  def pulumiAwsSrcJar = Task:
+    defaultResolver().classpath(
+      Seq(pulumiAwsDep().exclude("*" -> "*")),  // exclude transitive dependencies
+      sources = true,
+    ).head
+
+  def pulumiAwsJars = Task:
+    defaultResolver().classpath(Seq(pulumiAwsDep()))  // include transitive dependencies
+
+  def pulumiAwsDep = Task:
+    mvnDeps().find: dep =>
+      import dep.dep.module.{organization, name}
+      organization.value == "com.pulumi" && name.value == "aws"
+    .getOrElse:
+      throw IllegalStateException("pulumi-aws dependency is not found")
+
+  def pomSettings = pomSettingsBase.copy(description = s"${pomSettingsBase.description} for pulumi-aws")
