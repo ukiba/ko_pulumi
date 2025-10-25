@@ -35,6 +35,7 @@ object JavacSyntax:
   extension (method: MethodTree)
     def name: Name = method.getName
     def modifiers: ModifiersTree = method.getModifiers
+    //def annotations: collection.Seq[AnnotationTree] = modifiers.getAnnotations.asScala
     def parameters: collection.Seq[VariableTree] = method.getParameters.asScala
     def returnType: Tree = method.getReturnType
 

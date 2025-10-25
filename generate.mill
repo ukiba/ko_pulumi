@@ -170,8 +170,8 @@ class PulumiAwsAdapterGenerator(dstRoot: Path, classpath: Seq[String]):
                 val argsBuilderHasName = argsBuilderMembers.exists(isMethod("name", `java.lang.String`))
                 val argsBuilderHasTags = argsBuilderMembers.exists(isMethod("tags", `java.util.Map<java.lang.String,java.lang.String>`))
 
-                val clsDoc = Option(trees.getDocCommentTree(currentPath)).map: clsDoc =>
-                  val lines = clsDoc.toString.split('\n').toSeq
+                val clsDoc = Option(trees.getDocCommentTree(currentPath)).map: docTree =>
+                  val lines = docTree.toString.split('\n').toSeq
                       .takeWhile(_.trim != "## Example Usage")  // the exmaples are long and not very useful
                   scaladoc(lines, "  ")
                 .mkString
@@ -271,8 +271,8 @@ class PulumiAwsAdapterGenerator(dstRoot: Path, classpath: Seq[String]):
                           argsBuilderMethodsWithType.map: (method, argsType, arrayArgs) =>
                             val methodName = escapeScalaKeyword(method.simpleName.toString)
 
-                            val methodDoc = Option(trees.getDocCommentTree(method)).map: clsDoc =>
-                              scaladoc(clsDoc.toString.split('\n').toSeq, "    ")
+                            val methodDoc = Option(trees.getDocCommentTree(method)).map: docTree =>
+                              scaladoc(docTree.toString.split('\n').toSeq, "    ")
                             .mkString
 
                             // annotation is needed since @deprecated tag in scaladoc does not suppress the deprecated warnings
@@ -334,13 +334,27 @@ class PulumiAwsAdapterGenerator(dstRoot: Path, classpath: Seq[String]):
                 |    export $pkg.$clsName.*
                 |  extension (self: $clsName.type)
                 |    ${
-                        functionMethods.map: method =>
-                          val params = method.parameters
+                        functionMethods.map: methodTree =>
+                          val method = trees.getElement(TreePath(currentPath, methodTree))
+                          val methodName = escapeScalaKeyword(method.simpleName.toString)
+
+                          val methodDoc = Option(trees.getDocCommentTree(method)).map: docTree =>
+                            val lines = docTree.toString.split('\n').toSeq
+                                .takeWhile(_.trim != "## Example Usage")  // the exmaples are long and not very useful
+                            scaladoc(lines, "    ")
+                          .mkString
+
+                          // annotation is needed since @deprecated tag in scaladoc does not suppress the deprecated warnings
+                          val deprecated = method.annotationMirrors.find(_.annotationType == `java.lang.Deprecated`).map: anno =>
+                            s"@deprecated "  // TODO annotation values
+                          .mkString
+
+                          val params = methodTree.parameters
                           val argsType = s"$pkg.inputs.${params(0).getType}"
                           s"""
-                            |    def ${method.name}(args: Endofunction[$argsType.Builder] = identity) =
+                            |    ${methodDoc}${deprecated}def $methodName(args: Endofunction[$argsType.Builder] = identity) =
                             |      val argsBuilder = $argsType.builder
-                            |      $pkg.$clsName.${method.name}(args(argsBuilder).build)
+                            |      $pkg.$clsName.$methodName(args(argsBuilder).build)
                             |""".stripMargin
                         .mkString.dropWhile(_.isWhitespace)
                      }""".stripMargin

@@ -5,7 +5,7 @@ package build
 import mill.*, scalalib.*, publish.*
 
 val pulumiJavaVersion = "1.16.2"
-val pulumiAwsVersion = "7.8.0"
+val pulumiAwsVersion = "7.10.0"
 
 val repoName = "ko_pulumi"
 
