@@ -19,7 +19,7 @@ def pomSettingsBase = PomSettings(
 )
 
 trait ScalaModuleEx extends ScalaModule:
-  def scalaVersion = "3.7.3"
+  def scalaVersion = "3.7.4"
   def scalacOptions = Seq(
     "-Yexplicit-nulls",          // make `AnyRef` non-nullable; null safety
     "-language:strictEquality",  // disable cross-type == unless CanEqual evidence exists
