@@ -4,8 +4,8 @@ package build
 
 import mill.*, scalalib.*, publish.*
 
-val pulumiJavaVersion = "1.16.2"
-val pulumiAwsVersion = "7.10.0"
+val pulumiAwsVersion  = "7.12.0"
+val pulumiJavaVersion = "1.17.0"
 
 val repoName = "ko_pulumi"
 
@@ -40,14 +40,6 @@ trait ScalaModuleEx extends ScalaModule:
 
   def artifactName = (repoName +: moduleSegments.parts).mkString("-")
 
-object java extends ScalaModuleEx with PublishModule:
-  def mvnDeps = Seq(
-    mvn"com.pulumi:pulumi:$pulumiJavaVersion",
-  )
-  def publishVersion = s"$pulumiJavaVersion.0-SNAPSHOT"
-
-  def pomSettings = pomSettingsBase.copy(description = s"Helpers for Pulumi ${pomSettingsBase.description}")
-
 object aws extends ScalaModuleEx with PublishModule:
   def moduleDeps = Seq(java)
 
@@ -81,3 +73,11 @@ object aws extends ScalaModuleEx with PublishModule:
       throw IllegalStateException("pulumi-aws dependency is not found")
 
   def pomSettings = pomSettingsBase.copy(description = s"${pomSettingsBase.description} for pulumi-aws")
+
+object java extends ScalaModuleEx with PublishModule:
+  def mvnDeps = Seq(
+    mvn"com.pulumi:pulumi:$pulumiJavaVersion",
+  )
+  def publishVersion = s"$pulumiJavaVersion.0-SNAPSHOT"
+
+  def pomSettings = pomSettingsBase.copy(description = s"Helpers for Pulumi ${pomSettingsBase.description}")
