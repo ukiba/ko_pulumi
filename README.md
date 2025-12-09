@@ -6,7 +6,7 @@
     1. [pulumi-java](https://github.com/pulumi/pulumi-java) requires Java 11, but
        [scala 3.8](https://github.com/scala/scala3) requires Java 17
 
-1. Plumi 3.208.0 or later
+1. Plumi 3.210.0 or later
     1. Mac: `brew install pulumi/tap/pulumi`
 
 ## Build environment
