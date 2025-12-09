@@ -53,12 +53,16 @@ object JavacSyntax:
     def simpleName: Name = elem.getSimpleName
     def annotationMirrors: collection.Seq[AnnotationMirror] = elem.getAnnotationMirrors.asScala
     def enclosedElements: collection.Seq[Element] = elem.getEnclosedElements.asScala
-    def parameters: Option[collection.Seq[VariableElement]] = elem match
+
+    def asExecutableElement: ExecutableElement = elem.asInstanceOf[ExecutableElement]
+
+    def parametersOpt: Option[collection.Seq[VariableElement]] = elem match
       case exe: ExecutableElement => Some(exe.parameters)
       case _                      => None
 
   extension (elem: ExecutableElement)
     def parameters: collection.Seq[VariableElement] = elem.getParameters.asScala
+    def returnType: TypeMirror = elem.getReturnType
 
   extension (typ: ArrayType)
     def componentType: TypeMirror = typ.getComponentType

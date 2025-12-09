@@ -163,7 +163,7 @@ class PulumiAwsAdapterGenerator(dstRoot: Path, classpath: Seq[String]):
                 def isMethod(name: String, paramTypes: TypeMirror*)(elem: Element): Boolean =
                   elem.getKind == ElementKind.METHOD &&
                   elem.simpleName.contentEquals(name) &&
-                  elem.parameters.exists: params =>
+                  elem.parametersOpt.exists: params =>
                     params.length == paramTypes.length
                     params.zip(paramTypes).forall: pair =>
                       types.isSameType(pair._1.asType, pair._2)
@@ -248,16 +248,17 @@ class PulumiAwsAdapterGenerator(dstRoot: Path, classpath: Seq[String]):
             val argsBuilderMembers = argsBuilderType.enclosedElements  // directly declared and mandated
             val argsBuilderMethodsWithType = argsBuilderMembers.flatMap: elem =>
               Option.when(elem.getKind == ElementKind.METHOD):
-                elem.parameters match
-                  case Some(params) if params.length == 1 => Some((elem, params.head.asType))
-                  case _                                  => None
+                val method = elem.asExecutableElement
+                val params = method.parameters
+                Option.when(params.length == 1):
+                  (method, params.head.asType)
               .flatten
-              .flatMap: (elem, paramType) =>
+              .flatMap: (method, paramType) =>
                 paramType match
                   case arrayType: ArrayType if arrayType.componentType.toString.endsWith("Args") =>
-                    Some((elem, arrayType.componentType, true))
+                    Some((method, arrayType.componentType, true))
                   case paramType if paramType.toString.endsWith("Args") =>
-                    Some((elem, paramType, false))
+                    Some((method, paramType, false))
                   case _ =>
                     None
 
@@ -282,13 +283,15 @@ class PulumiAwsAdapterGenerator(dstRoot: Path, classpath: Seq[String]):
 
                             if !arrayArgs then
                               s"""
-                                |    ${methodDoc}${deprecated}def $methodName(args: Endofunction[$argsType.Builder]) =
+                                |    ${methodDoc}${deprecated}def $methodName(args: Endofunction[$argsType.Builder]):
+                                |        ${renderScalaType(method.returnType)} =
                                 |      val argsBuilder = $argsType.builder
                                 |      builder.$methodName(args(argsBuilder).build)
                                 |""".stripMargin
                             else
                               s"""
-                                |    ${methodDoc}${deprecated}def $methodName(args: Endofunction[$argsType.Builder]*) =
+                                |    ${methodDoc}${deprecated}def $methodName(args: Endofunction[$argsType.Builder]*):
+                                |        ${renderScalaType(method.returnType)} =
                                 |      def argsBuilder = $argsType.builder
                                 |      builder.$methodName(args.map(_(argsBuilder).build)*)
                                 |""".stripMargin
@@ -335,7 +338,7 @@ class PulumiAwsAdapterGenerator(dstRoot: Path, classpath: Seq[String]):
                 |  extension (self: $clsName.type)
                 |    ${
                         functionMethods.map: methodTree =>
-                          val method = trees.getElement(TreePath(currentPath, methodTree))
+                          val method = trees.getElement(TreePath(currentPath, methodTree)).asExecutableElement
                           val methodName = escapeScalaKeyword(method.simpleName.toString)
 
                           val methodDoc = Option(trees.getDocCommentTree(method)).map: docTree =>
@@ -352,7 +355,8 @@ class PulumiAwsAdapterGenerator(dstRoot: Path, classpath: Seq[String]):
                           val params = methodTree.parameters
                           val argsType = s"$pkg.inputs.${params(0).getType}"
                           s"""
-                            |    ${methodDoc}${deprecated}def $methodName(args: Endofunction[$argsType.Builder] = identity) =
+                            |    ${methodDoc}${deprecated}def $methodName(args: Endofunction[$argsType.Builder] = identity):
+                            |        ${renderScalaType(method.returnType)} =
                             |      val argsBuilder = $argsType.builder
                             |      $pkg.$clsName.$methodName(args(argsBuilder).build)
                             |""".stripMargin
@@ -360,6 +364,10 @@ class PulumiAwsAdapterGenerator(dstRoot: Path, classpath: Seq[String]):
                      }""".stripMargin
 
         case _ =>  // INTERFACE, ENUM, RECORD, or annotation type declaration
+
+  def renderScalaType(typeMirror: TypeMirror): String =
+    val text = typeMirror.toString
+    text.replace('<', '[').replace('>', ']')
 
   def escapeScalaKeyword(ident: String): String =
     if hardKeywords.contains(ident) then
