@@ -22,11 +22,11 @@ trait ScalaModuleEx extends ScalaModule:
   def scalaVersion = "3.8.1"
   def scalacOptions = Seq(
     "-Yexplicit-nulls",          // make `AnyRef` non-nullable; null safety
-    "-language:strictEquality",  // disable cross-type == unless CanEqual evidence exists
-    "-Wnonunit-statement",  // enable `A pure expression does nothing in statement position` warning
-    "-Wsafe-init",          // enable `Access non-initialized field` warning
+    "-Wsafe-init",               // avoid the type system to be unsound with respect to null
+    "-language:strictEquality",  // disable cross-type `==` unless CanEqual evidence exists
+    "-Wnonunit-statement",       // enable `A pure expression does nothing in statement position` warning
     "-preview",        // enable language features and APIs that will be standardized in future minor release
-    "-source:future",  // forward compatibility, like `import renaming `a => b` is no longer supported`
+    "-source:future",  // forward source-compatibility (proactive breakage detector)
 
     "-Wunused:imports,privates,locals,params,implicits",
     //"-Xfatal-warnings",
