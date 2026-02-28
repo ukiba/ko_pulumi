@@ -31,6 +31,7 @@
 
 ## Generate the Scala wrappers
 
+    ./mill _.generate
     ./mill _.compile
 
 1. `publishLocal` that outputs to `~/.ivy2/local` is unreliable

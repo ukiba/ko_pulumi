@@ -48,10 +48,15 @@ object aws extends ScalaModuleEx with PublishModule:
   )
   def publishVersion = s"$pulumiAwsVersion.0-SNAPSHOT"
 
-  def generatedSources = Task:
-    val generatedFiles = PulumiAwsAdapterGenerator(Task.dest.toNIO, pulumiAwsJars().map(_.toString))
+  // Since we want to commit the generated files for easier review,
+  // they are stored outside `out/` thus `generatedSources` is not used
+  def generatedDir = moduleDir / "generated" / "src"
+  def generate() = Task.Command:
+    PulumiAwsAdapterGenerator(generatedDir.toNIO, pulumiAwsJars().map(_.toString))
         .processDirectory(pulumiAwsSrc().toNIO)
-    Seq(PathRef(Task.dest))
+  def generatedDirAsSrc = Task.Source(generatedDir)
+  override def sources = Task:
+    super.sources() :+ generatedDirAsSrc()
 
   def pulumiAwsSrc = Task:
     os.unzip(pulumiAwsSrcJar().path, Task.dest)
