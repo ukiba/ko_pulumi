@@ -24,12 +24,10 @@ trait ScalaModuleEx extends ScalaModule:
     "-Yexplicit-nulls",          // make `AnyRef` non-nullable; null safety
     "-Wsafe-init",               // avoid the type system to be unsound with respect to null
     "-language:strictEquality",  // disable cross-type `==` unless CanEqual evidence exists
-    "-Wnonunit-statement",       // enable `A pure expression does nothing in statement position` warning
     "-preview",        // enable language features and APIs that will be standardized in future minor release
     "-source:future",  // forward source-compatibility (proactive breakage detector)
 
-    "-Wunused:imports,privates,locals,params,implicits",
-    //"-Xfatal-warnings",
+    "-Wnonunit-statement",       // enable `A pure expression does nothing in statement position` warning
 
     // the default settings from https://scastie.scala-lang.org
     "-deprecation",
