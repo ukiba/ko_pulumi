@@ -41,7 +41,7 @@ trait ScalaModuleEx extends ScalaModule:
   def artifactName = (repoName +: moduleSegments.parts).mkString("-")
 
 object aws extends ScalaModuleEx with PublishModule:
-  def moduleDeps = Seq(java)
+  def moduleDeps = Seq(core)
 
   def mvnDeps = Seq(
     mvn"com.pulumi:aws:$pulumiAwsVersion",
@@ -79,7 +79,7 @@ object aws extends ScalaModuleEx with PublishModule:
 
   def pomSettings = pomSettingsBase.copy(description = s"${pomSettingsBase.description} for pulumi-aws")
 
-object java extends ScalaModuleEx with PublishModule:
+object core extends ScalaModuleEx with PublishModule:
   def mvnDeps = Seq(
     mvn"com.pulumi:pulumi:$pulumiJavaVersion",
   )
