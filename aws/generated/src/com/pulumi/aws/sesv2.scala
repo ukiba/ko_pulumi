@@ -176,6 +176,15 @@ object sesv2:
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
+  /** Manages an AWS SESv2 (Simple Email V2) Tenant Resource Association. */
+  def TenantResourceAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.sesv2.TenantResourceAssociationArgs.Builder]) =
+    val argsBuilder = com.pulumi.aws.sesv2.TenantResourceAssociationArgs.builder
+    
+    com.pulumi.aws.sesv2.TenantResourceAssociation(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder).build)
+
   type Sesv2Functions = com.pulumi.aws.sesv2.Sesv2Functions
   object Sesv2Functions:
     // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
@@ -268,6 +277,18 @@ object sesv2:
         com.pulumi.aws.sesv2.AccountVdmAttributesArgs.Builder =
       val argsBuilder = com.pulumi.aws.sesv2.inputs.AccountVdmAttributesGuardianAttributesArgs.builder
       builder.guardianAttributes(args(argsBuilder).build)
+
+  /** Manages an AWS SESv2 (Simple Email V2) Tenant. */
+  def Tenant(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.sesv2.TenantArgs.Builder])(using conf: KoPulumiConf) =
+    var argsBuilder = com.pulumi.aws.sesv2.TenantArgs.builder
+    conf.logicalName2tagName(name) match
+      case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
+      case None          =>
+    
+    com.pulumi.aws.sesv2.Tenant(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder).build)
 
   /** Resource for managing an AWS SESv2 (Simple Email V2) Account VDM Attributes. */
   def AccountVdmAttributes(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)

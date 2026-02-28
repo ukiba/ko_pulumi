@@ -27,7 +27,9 @@ object bedrock:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /**
-   * 
+   * Manages an AWS Bedrock AgentCore API Key Credential Provider. API Key credential providers enable secure authentication with external services that use API key-based authentication for agent runtimes.
+   *  
+   *  &gt; **Note:** Write-Only argument `apiKeyWo` is available to use in place of `apiKey`. Write-Only arguments are supported in HashiCorp Terraform 1.11.0 and later. Learn more.
    */
   def AgentcoreApiKeyCredentialProvider(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.bedrock.AgentcoreApiKeyCredentialProviderArgs.Builder])(using conf: KoPulumiConf) =
@@ -235,6 +237,15 @@ object bedrock:
         com.pulumi.aws.bedrock.AgentcoreGatewayArgs.Builder =
       val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreGatewayAuthorizerConfigurationArgs.builder
       builder.authorizerConfiguration(args(argsBuilder).build)
+
+    /**
+     * @param interceptorConfigurations List of interceptor configurations for the gateway. Minimum of 1, maximum of 2. See `interceptorConfiguration` below.
+     * @return builder
+     */
+    def interceptorConfigurations(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreGatewayInterceptorConfigurationArgs.Builder]*):
+        com.pulumi.aws.bedrock.AgentcoreGatewayArgs.Builder =
+      def argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreGatewayInterceptorConfigurationArgs.builder
+      builder.interceptorConfigurations(args.map(_(argsBuilder).build)*)
 
     /**
      * @param protocolConfiguration Protocol-specific configuration for the gateway. See `protocolConfiguration` below.
@@ -673,8 +684,6 @@ object bedrock:
 
     /**
      * @param storageConfiguration Details about the storage configuration of the knowledge base. See `storageConfiguration` block for details.
-     *  
-     *  The following arguments are optional:
      * @return builder
      */
     def storageConfiguration(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseStorageConfigurationArgs.Builder]):
@@ -847,7 +856,9 @@ object bedrock:
       builder.timeouts(args(argsBuilder).build)
 
   /**
-   * 
+   * Manages an AWS Bedrock AgentCore OAuth2 Credential Provider. OAuth2 credential providers enable secure authentication with external OAuth2/OpenID Connect identity providers for agent runtimes.
+   *  
+   *  &gt; **Note:** Write-Only arguments `clientIdWo` and `clientSecretWo` are available to use in place of `clientId` and `clientSecret`. Write-Only arguments are supported in HashiCorp Terraform 1.11.0 and later. Learn more.
    */
   def AgentcoreOauth2CredentialProvider(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.bedrock.AgentcoreOauth2CredentialProviderArgs.Builder])(using conf: KoPulumiConf) =
@@ -1040,6 +1051,16 @@ object bedrock:
         com.pulumi.aws.bedrock.inputs.AgentDataSourceDataSourceConfigurationSharePointConfigurationArgs.Builder =
       val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentDataSourceDataSourceConfigurationSharePointConfigurationSourceConfigurationArgs.builder
       builder.sourceConfiguration(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseKnowledgeBaseConfigurationSqlKnowledgeBaseConfigurationRedshiftConfigurationQueryEngineConfigurationServerlessConfigurationArgs.Builder)
+    /**
+     * @param authConfiguration Configurations for authentication to a Redshift Serverless. See `authConfiguration` block for details.
+     * @return builder
+     */
+    def authConfiguration(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseKnowledgeBaseConfigurationSqlKnowledgeBaseConfigurationRedshiftConfigurationQueryEngineConfigurationServerlessConfigurationAuthConfigurationArgs.Builder]):
+        com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseKnowledgeBaseConfigurationSqlKnowledgeBaseConfigurationRedshiftConfigurationQueryEngineConfigurationServerlessConfigurationArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseKnowledgeBaseConfigurationSqlKnowledgeBaseConfigurationRedshiftConfigurationQueryEngineConfigurationServerlessConfigurationAuthConfigurationArgs.builder
+      builder.authConfiguration(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentDataSourceDataSourceConfigurationWebConfigurationSourceConfigurationArgs.Builder)
     /**
@@ -1235,6 +1256,16 @@ object bedrock:
       val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentAgentActionGroupApiSchemaS3Args.builder
       builder.s3(args(argsBuilder).build)
 
+  extension (builder: com.pulumi.aws.bedrock.inputs.AgentcoreGatewayInterceptorConfigurationInterceptorArgs.Builder)
+    /**
+     * @param lambda Lambda function configuration for the interceptor. See `lambda` below.
+     * @return builder
+     */
+    def lambda(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreGatewayInterceptorConfigurationInterceptorLambdaArgs.Builder]):
+        com.pulumi.aws.bedrock.inputs.AgentcoreGatewayInterceptorConfigurationInterceptorArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreGatewayInterceptorConfigurationInterceptorLambdaArgs.builder
+      builder.lambda(args(argsBuilder).build)
+
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentDataSourceVectorIngestionConfigurationCustomTransformationConfigurationTransformationTransformationFunctionArgs.Builder)
     /**
      * @param transformationLambdaConfiguration The configuration of the lambda function.
@@ -1421,8 +1452,6 @@ object bedrock:
 
     /**
      * @param storageConfiguration Details about the storage configuration of the knowledge base. See `storageConfiguration` block for details.
-     *  
-     *  The following arguments are optional:
      * @return builder
      */
     def storageConfiguration(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseStorageConfigurationArgs.Builder]):
@@ -1521,7 +1550,16 @@ object bedrock:
 
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentcoreAgentRuntimeAgentRuntimeArtifactArgs.Builder)
     /**
-     * @param containerConfiguration Container configuration block. See `containerConfiguration` below.
+     * @param codeConfiguration Code configuration block for the agent runtime artifact, including the source code location and execution settings. Exactly one of `codeConfiguration` or `containerConfiguration` must be specified. See `codeConfiguration` below.
+     * @return builder
+     */
+    def codeConfiguration(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreAgentRuntimeAgentRuntimeArtifactCodeConfigurationArgs.Builder]):
+        com.pulumi.aws.bedrock.inputs.AgentcoreAgentRuntimeAgentRuntimeArtifactArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreAgentRuntimeAgentRuntimeArtifactCodeConfigurationArgs.builder
+      builder.codeConfiguration(args(argsBuilder).build)
+
+    /**
+     * @param containerConfiguration Container configuration block for the agent artifact. Exactly one of `codeConfiguration` or `containerConfiguration` must be specified. See `containerConfiguration` below.
      * @return builder
      */
     def containerConfiguration(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreAgentRuntimeAgentRuntimeArtifactContainerConfigurationArgs.Builder]):
@@ -1584,6 +1622,16 @@ object bedrock:
         com.pulumi.aws.bedrock.inputs.AgentcoreBrowserRecordingArgs.Builder =
       val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreBrowserRecordingS3LocationArgs.builder
       builder.s3Location(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseKnowledgeBaseConfigurationSqlKnowledgeBaseConfigurationRedshiftConfigurationQueryEngineConfigurationProvisionedConfigurationArgs.Builder)
+    /**
+     * @param authConfiguration Configurations for authentication to Amazon Redshift. See `authConfiguration` block for details.
+     * @return builder
+     */
+    def authConfiguration(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseKnowledgeBaseConfigurationSqlKnowledgeBaseConfigurationRedshiftConfigurationQueryEngineConfigurationProvisionedConfigurationAuthConfigurationArgs.Builder]):
+        com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseKnowledgeBaseConfigurationSqlKnowledgeBaseConfigurationRedshiftConfigurationQueryEngineConfigurationProvisionedConfigurationArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseKnowledgeBaseConfigurationSqlKnowledgeBaseConfigurationRedshiftConfigurationQueryEngineConfigurationProvisionedConfigurationAuthConfigurationArgs.builder
+      builder.authConfiguration(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentcoreMemoryStrategyState.Builder)
     /**
@@ -1958,6 +2006,34 @@ object bedrock:
       val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentPromptVariantTemplateConfigurationChatMessageContentArgs.builder
       builder.content(args(argsBuilder).build)
 
+  extension (builder: com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseKnowledgeBaseConfigurationSqlKnowledgeBaseConfigurationRedshiftConfigurationArgs.Builder)
+    /**
+     * @param queryEngineConfiguration Configurations for an Amazon Redshift query engine. See `queryEngineConfiguration` block for details.
+     * @return builder
+     */
+    def queryEngineConfiguration(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseKnowledgeBaseConfigurationSqlKnowledgeBaseConfigurationRedshiftConfigurationQueryEngineConfigurationArgs.Builder]):
+        com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseKnowledgeBaseConfigurationSqlKnowledgeBaseConfigurationRedshiftConfigurationArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseKnowledgeBaseConfigurationSqlKnowledgeBaseConfigurationRedshiftConfigurationQueryEngineConfigurationArgs.builder
+      builder.queryEngineConfiguration(args(argsBuilder).build)
+
+    /**
+     * @param queryGenerationConfiguration Configurations for generating queries. See `queryGenerationConfiguration` block for details.
+     * @return builder
+     */
+    def queryGenerationConfiguration(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseKnowledgeBaseConfigurationSqlKnowledgeBaseConfigurationRedshiftConfigurationQueryGenerationConfigurationArgs.Builder]):
+        com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseKnowledgeBaseConfigurationSqlKnowledgeBaseConfigurationRedshiftConfigurationArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseKnowledgeBaseConfigurationSqlKnowledgeBaseConfigurationRedshiftConfigurationQueryGenerationConfigurationArgs.builder
+      builder.queryGenerationConfiguration(args(argsBuilder).build)
+
+    /**
+     * @param storageConfiguration Configurations for Amazon Redshift database storage. See `storageConfiguration` block for details.
+     * @return builder
+     */
+    def storageConfiguration(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseKnowledgeBaseConfigurationSqlKnowledgeBaseConfigurationRedshiftConfigurationStorageConfigurationArgs.Builder]):
+        com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseKnowledgeBaseConfigurationSqlKnowledgeBaseConfigurationRedshiftConfigurationArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseKnowledgeBaseConfigurationSqlKnowledgeBaseConfigurationRedshiftConfigurationStorageConfigurationArgs.builder
+      builder.storageConfiguration(args(argsBuilder).build)
+
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetTargetConfigurationMcpArgs.Builder)
     /**
      * @param lambda Lambda function target configuration. See `lambda` below.
@@ -2024,6 +2100,16 @@ object bedrock:
       def argsBuilder = com.pulumi.aws.bedrock.inputs.GuardrailContextualGroundingPolicyConfigFiltersConfigArgs.builder
       builder.filtersConfigs(args.map(_(argsBuilder).build)*)
 
+  extension (builder: com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseKnowledgeBaseConfigurationSqlKnowledgeBaseConfigurationRedshiftConfigurationQueryGenerationConfigurationGenerationContextTableArgs.Builder)
+    /**
+     * @param columns Information about a column in the table. See `column` block for details.
+     * @return builder
+     */
+    def columns(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseKnowledgeBaseConfigurationSqlKnowledgeBaseConfigurationRedshiftConfigurationQueryGenerationConfigurationGenerationContextTableColumnArgs.Builder]*):
+        com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseKnowledgeBaseConfigurationSqlKnowledgeBaseConfigurationRedshiftConfigurationQueryGenerationConfigurationGenerationContextTableArgs.Builder =
+      def argsBuilder = com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseKnowledgeBaseConfigurationSqlKnowledgeBaseConfigurationRedshiftConfigurationQueryGenerationConfigurationGenerationContextTableColumnArgs.builder
+      builder.columns(args.map(_(argsBuilder).build)*)
+
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentFlowDefinitionNodeConfigurationPromptSourceConfigurationInlineTemplateConfigurationTextArgs.Builder)
     def cachePoint(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentFlowDefinitionNodeConfigurationPromptSourceConfigurationInlineTemplateConfigurationTextCachePointArgs.Builder]):
         com.pulumi.aws.bedrock.inputs.AgentFlowDefinitionNodeConfigurationPromptSourceConfigurationInlineTemplateConfigurationTextArgs.Builder =
@@ -2041,9 +2127,46 @@ object bedrock:
       val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentFlowDefinitionNodeConfigurationKnowledgeBaseInferenceConfigurationTextArgs.builder
       builder.text(args(argsBuilder).build)
 
+  extension (builder: com.pulumi.aws.bedrock.inputs.AgentcoreAgentRuntimeAgentRuntimeArtifactCodeConfigurationArgs.Builder)
+    /**
+     * @param code Configuration block for the source code location and configuration details. See `code` below.
+     * @return builder
+     */
+    def code(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreAgentRuntimeAgentRuntimeArtifactCodeConfigurationCodeArgs.Builder]):
+        com.pulumi.aws.bedrock.inputs.AgentcoreAgentRuntimeAgentRuntimeArtifactCodeConfigurationArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreAgentRuntimeAgentRuntimeArtifactCodeConfigurationCodeArgs.builder
+      builder.code(args(argsBuilder).build)
+
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseStorageConfigurationArgs.Builder)
     /**
-     * @param opensearchServerlessConfiguration The storage configuration of the knowledge base in Amazon OpenSearch Service. See `opensearchServerlessConfiguration` block for details.
+     * @param mongoDbAtlasConfiguration The storage configuration of the knowledge base in MongoDB Atlas. See `mongoDbAtlasConfiguration` block for details.
+     * @return builder
+     */
+    def mongoDbAtlasConfiguration(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseStorageConfigurationMongoDbAtlasConfigurationArgs.Builder]):
+        com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseStorageConfigurationArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseStorageConfigurationMongoDbAtlasConfigurationArgs.builder
+      builder.mongoDbAtlasConfiguration(args(argsBuilder).build)
+
+    /**
+     * @param neptuneAnalyticsConfiguration The storage configuration of the knowledge base in Amazon Neptune Analytics. See `neptuneAnalyticsConfiguration` block for details.
+     * @return builder
+     */
+    def neptuneAnalyticsConfiguration(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseStorageConfigurationNeptuneAnalyticsConfigurationArgs.Builder]):
+        com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseStorageConfigurationArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseStorageConfigurationNeptuneAnalyticsConfigurationArgs.builder
+      builder.neptuneAnalyticsConfiguration(args(argsBuilder).build)
+
+    /**
+     * @param opensearchManagedClusterConfiguration The storage configuration of the knowledge base in Amazon OpenSearch Service Managed Cluster. See `opensearchManagedClusterConfiguration` block for details.
+     * @return builder
+     */
+    def opensearchManagedClusterConfiguration(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseStorageConfigurationOpensearchManagedClusterConfigurationArgs.Builder]):
+        com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseStorageConfigurationArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseStorageConfigurationOpensearchManagedClusterConfigurationArgs.builder
+      builder.opensearchManagedClusterConfiguration(args(argsBuilder).build)
+
+    /**
+     * @param opensearchServerlessConfiguration The storage configuration of the knowledge base in Amazon OpenSearch Service Serverless. See `opensearchServerlessConfiguration` block for details.
      * @return builder
      */
     def opensearchServerlessConfiguration(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseStorageConfigurationOpensearchServerlessConfigurationArgs.Builder]):
@@ -2077,6 +2200,15 @@ object bedrock:
         com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseStorageConfigurationArgs.Builder =
       val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseStorageConfigurationRedisEnterpriseCloudConfigurationArgs.builder
       builder.redisEnterpriseCloudConfiguration(args(argsBuilder).build)
+
+    /**
+     * @param s3VectorsConfiguration The storage configuration of the knowledge base in Amazon S3 Vectors. See `s3VectorsConfiguration` block for details.
+     * @return builder
+     */
+    def s3VectorsConfiguration(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseStorageConfigurationS3VectorsConfigurationArgs.Builder]):
+        com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseStorageConfigurationArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseStorageConfigurationS3VectorsConfigurationArgs.builder
+      builder.s3VectorsConfiguration(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentDataSourceState.Builder)
     /**
@@ -2251,6 +2383,15 @@ object bedrock:
       builder.properties(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentDataSourceVectorIngestionConfigurationParsingConfigurationArgs.Builder)
+    /**
+     * @param bedrockDataAutomationConfiguration Settings for using Amazon Bedrock Data Automation to parse documents. See `bedrockDataAutomationConfiguration` block for details.
+     * @return builder
+     */
+    def bedrockDataAutomationConfiguration(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentDataSourceVectorIngestionConfigurationParsingConfigurationBedrockDataAutomationConfigurationArgs.Builder]):
+        com.pulumi.aws.bedrock.inputs.AgentDataSourceVectorIngestionConfigurationParsingConfigurationArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentDataSourceVectorIngestionConfigurationParsingConfigurationBedrockDataAutomationConfigurationArgs.builder
+      builder.bedrockDataAutomationConfiguration(args(argsBuilder).build)
+
     /**
      * @param bedrockFoundationModelConfiguration Settings for a foundation model used to parse documents in a data source. See `bedrockFoundationModelConfiguration` block for details.
      * @return builder
@@ -2447,6 +2588,25 @@ object bedrock:
       val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetCredentialProviderConfigurationOauthArgs.builder
       builder.oauth(args(argsBuilder).build)
 
+  extension (builder: com.pulumi.aws.bedrock.inputs.AgentcoreGatewayInterceptorConfigurationArgs.Builder)
+    /**
+     * @param inputConfiguration Input configuration for the interceptor. See `inputConfiguration` below.
+     * @return builder
+     */
+    def inputConfiguration(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreGatewayInterceptorConfigurationInputConfigurationArgs.Builder]):
+        com.pulumi.aws.bedrock.inputs.AgentcoreGatewayInterceptorConfigurationArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreGatewayInterceptorConfigurationInputConfigurationArgs.builder
+      builder.inputConfiguration(args(argsBuilder).build)
+
+    /**
+     * @param interceptor Interceptor infrastructure configuration. See `interceptor` below.
+     * @return builder
+     */
+    def interceptor(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreGatewayInterceptorConfigurationInterceptorArgs.Builder]):
+        com.pulumi.aws.bedrock.inputs.AgentcoreGatewayInterceptorConfigurationArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreGatewayInterceptorConfigurationInterceptorArgs.builder
+      builder.interceptor(args(argsBuilder).build)
+
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetTargetConfigurationMcpLambdaToolSchemaInlinePayloadInputSchemaArgs.Builder)
     def items(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetTargetConfigurationMcpLambdaToolSchemaInlinePayloadInputSchemaItemsArgs.Builder]):
         com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetTargetConfigurationMcpLambdaToolSchemaInlinePayloadInputSchemaArgs.Builder =
@@ -2578,6 +2738,16 @@ object bedrock:
       val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentDataSourceVectorIngestionConfigurationChunkingConfigurationSemanticChunkingConfigurationArgs.builder
       builder.semanticChunkingConfiguration(args(argsBuilder).build)
 
+  extension (builder: com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseStorageConfigurationOpensearchManagedClusterConfigurationArgs.Builder)
+    /**
+     * @param fieldMapping The names of the fields to which to map information about the vector store. This block supports the following arguments:
+     * @return builder
+     */
+    def fieldMapping(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseStorageConfigurationOpensearchManagedClusterConfigurationFieldMappingArgs.Builder]):
+        com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseStorageConfigurationOpensearchManagedClusterConfigurationArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseStorageConfigurationOpensearchManagedClusterConfigurationFieldMappingArgs.builder
+      builder.fieldMapping(args(argsBuilder).build)
+
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentcoreOauth2CredentialProviderOauth2ProviderConfigMicrosoftOauth2ProviderConfigArgs.Builder)
     /**
      * @param oauthDiscoveries OAuth discovery configuration. See `oauthDiscovery` below.
@@ -2598,6 +2768,16 @@ object bedrock:
         com.pulumi.aws.bedrock.inputs.AgentPromptVariantTemplateConfigurationTextArgs.Builder =
       def argsBuilder = com.pulumi.aws.bedrock.inputs.AgentPromptVariantTemplateConfigurationTextInputVariableArgs.builder
       builder.inputVariables(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseKnowledgeBaseConfigurationSqlKnowledgeBaseConfigurationRedshiftConfigurationQueryGenerationConfigurationArgs.Builder)
+    /**
+     * @param generationContext Configurations for context to use during query generation. See `generationContext` block for details.
+     * @return builder
+     */
+    def generationContext(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseKnowledgeBaseConfigurationSqlKnowledgeBaseConfigurationRedshiftConfigurationQueryGenerationConfigurationGenerationContextArgs.Builder]):
+        com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseKnowledgeBaseConfigurationSqlKnowledgeBaseConfigurationRedshiftConfigurationQueryGenerationConfigurationArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseKnowledgeBaseConfigurationSqlKnowledgeBaseConfigurationRedshiftConfigurationQueryGenerationConfigurationGenerationContextArgs.builder
+      builder.generationContext(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentFlowDefinitionConnectionConfigurationArgs.Builder)
     /**
@@ -2626,7 +2806,25 @@ object bedrock:
 
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseKnowledgeBaseConfigurationArgs.Builder)
     /**
-     * @param vectorKnowledgeBaseConfiguration Details about the embeddings model that&#39;sused to convert the data source. See `vectorKnowledgeBaseConfiguration` block for details.
+     * @param kendraKnowledgeBaseConfiguration Settings for an Amazon Kendra knowledge base. See `kendraKnowledgeBaseConfiguration` block for details.
+     * @return builder
+     */
+    def kendraKnowledgeBaseConfiguration(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseKnowledgeBaseConfigurationKendraKnowledgeBaseConfigurationArgs.Builder]):
+        com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseKnowledgeBaseConfigurationArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseKnowledgeBaseConfigurationKendraKnowledgeBaseConfigurationArgs.builder
+      builder.kendraKnowledgeBaseConfiguration(args(argsBuilder).build)
+
+    /**
+     * @param sqlKnowledgeBaseConfiguration Configurations for a knowledge base connected to an SQL database. See `sqlKnowledgeBaseConfiguration` block for details.
+     * @return builder
+     */
+    def sqlKnowledgeBaseConfiguration(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseKnowledgeBaseConfigurationSqlKnowledgeBaseConfigurationArgs.Builder]):
+        com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseKnowledgeBaseConfigurationArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseKnowledgeBaseConfigurationSqlKnowledgeBaseConfigurationArgs.builder
+      builder.sqlKnowledgeBaseConfiguration(args(argsBuilder).build)
+
+    /**
+     * @param vectorKnowledgeBaseConfiguration Details about the model that&#39;s used to convert the data source into vector embeddings. See `vectorKnowledgeBaseConfiguration` block for details.
      * @return builder
      */
     def vectorKnowledgeBaseConfiguration(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseKnowledgeBaseConfigurationVectorKnowledgeBaseConfigurationArgs.Builder]):
@@ -2742,6 +2940,16 @@ object bedrock:
       val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentPromptVariantTemplateConfigurationChatToolConfigurationToolToolSpecArgs.builder
       builder.toolSpec(args(argsBuilder).build)
 
+  extension (builder: com.pulumi.aws.bedrock.inputs.AgentcoreAgentRuntimeAgentRuntimeArtifactCodeConfigurationCodeArgs.Builder)
+    /**
+     * @param s3 Configuration block for the Amazon S3 object that contains the source code for the agent runtime. See `s3` below.
+     * @return builder
+     */
+    def s3(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreAgentRuntimeAgentRuntimeArtifactCodeConfigurationCodeS3Args.Builder]):
+        com.pulumi.aws.bedrock.inputs.AgentcoreAgentRuntimeAgentRuntimeArtifactCodeConfigurationCodeArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreAgentRuntimeAgentRuntimeArtifactCodeConfigurationCodeS3Args.builder
+      builder.s3(args(argsBuilder).build)
+
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentDataSourceDataSourceConfigurationSalesforceConfigurationArgs.Builder)
     def crawlerConfiguration(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentDataSourceDataSourceConfigurationSalesforceConfigurationCrawlerConfigurationArgs.Builder]):
         com.pulumi.aws.bedrock.inputs.AgentDataSourceDataSourceConfigurationSalesforceConfigurationArgs.Builder =
@@ -2834,6 +3042,35 @@ object bedrock:
       val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentFlowDefinitionConnectionConfigurationArgs.builder
       builder.configuration(args(argsBuilder).build)
 
+  extension (builder: com.pulumi.aws.bedrock.inputs.AgentAgentMemoryConfigurationArgs.Builder)
+    /**
+     * @param sessionSummaryConfigurations Configuration block for `SESSION_SUMMARY` memory type enabled for the agent. See `sessionSummaryConfiguration` Block for details.
+     * @return builder
+     */
+    def sessionSummaryConfigurations(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentAgentMemoryConfigurationSessionSummaryConfigurationArgs.Builder]*):
+        com.pulumi.aws.bedrock.inputs.AgentAgentMemoryConfigurationArgs.Builder =
+      def argsBuilder = com.pulumi.aws.bedrock.inputs.AgentAgentMemoryConfigurationSessionSummaryConfigurationArgs.builder
+      builder.sessionSummaryConfigurations(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseKnowledgeBaseConfigurationSqlKnowledgeBaseConfigurationRedshiftConfigurationStorageConfigurationArgs.Builder)
+    /**
+     * @param awsDataCatalogConfiguration Configurations for storage in AWS Glue Data Catalog. See `awsDataCatalogConfiguration` block for details.
+     * @return builder
+     */
+    def awsDataCatalogConfiguration(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseKnowledgeBaseConfigurationSqlKnowledgeBaseConfigurationRedshiftConfigurationStorageConfigurationAwsDataCatalogConfigurationArgs.Builder]):
+        com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseKnowledgeBaseConfigurationSqlKnowledgeBaseConfigurationRedshiftConfigurationStorageConfigurationArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseKnowledgeBaseConfigurationSqlKnowledgeBaseConfigurationRedshiftConfigurationStorageConfigurationAwsDataCatalogConfigurationArgs.builder
+      builder.awsDataCatalogConfiguration(args(argsBuilder).build)
+
+    /**
+     * @param redshiftConfiguration Configurations for storage in Amazon Redshift. See `redshiftConfiguration` block for details.
+     * @return builder
+     */
+    def redshiftConfiguration(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseKnowledgeBaseConfigurationSqlKnowledgeBaseConfigurationRedshiftConfigurationStorageConfigurationRedshiftConfigurationArgs.Builder]):
+        com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseKnowledgeBaseConfigurationSqlKnowledgeBaseConfigurationRedshiftConfigurationStorageConfigurationArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseKnowledgeBaseConfigurationSqlKnowledgeBaseConfigurationRedshiftConfigurationStorageConfigurationRedshiftConfigurationArgs.builder
+      builder.redshiftConfiguration(args(argsBuilder).build)
+
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentPromptVariantTemplateConfigurationArgs.Builder)
     /**
      * @param chat Contains configurations to use the prompt in a conversational format. See Chat Template Configuration for more information.
@@ -2862,6 +3099,16 @@ object bedrock:
         com.pulumi.aws.bedrock.inputs.AgentPromptVariantGenAiResourceArgs.Builder =
       val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentPromptVariantGenAiResourceAgentArgs.builder
       builder.agent(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseKnowledgeBaseConfigurationSqlKnowledgeBaseConfigurationArgs.Builder)
+    /**
+     * @param redshiftConfiguration Configurations for a knowledge base connected to an Amazon Redshift database. See `redshiftConfiguration` block for details.
+     * @return builder
+     */
+    def redshiftConfiguration(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseKnowledgeBaseConfigurationSqlKnowledgeBaseConfigurationRedshiftConfigurationArgs.Builder]):
+        com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseKnowledgeBaseConfigurationSqlKnowledgeBaseConfigurationArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseKnowledgeBaseConfigurationSqlKnowledgeBaseConfigurationRedshiftConfigurationArgs.builder
+      builder.redshiftConfiguration(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentPromptVariantArgs.Builder)
     /**
@@ -2900,6 +3147,25 @@ object bedrock:
       val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentPromptVariantTemplateConfigurationArgs.builder
       builder.templateConfiguration(args(argsBuilder).build)
 
+  extension (builder: com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseKnowledgeBaseConfigurationSqlKnowledgeBaseConfigurationRedshiftConfigurationQueryGenerationConfigurationGenerationContextArgs.Builder)
+    /**
+     * @param curatedQueries Information about example queries to help the query engine generate appropriate SQL queries. See `curatedQuery` block for details.
+     * @return builder
+     */
+    def curatedQueries(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseKnowledgeBaseConfigurationSqlKnowledgeBaseConfigurationRedshiftConfigurationQueryGenerationConfigurationGenerationContextCuratedQueryArgs.Builder]*):
+        com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseKnowledgeBaseConfigurationSqlKnowledgeBaseConfigurationRedshiftConfigurationQueryGenerationConfigurationGenerationContextArgs.Builder =
+      def argsBuilder = com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseKnowledgeBaseConfigurationSqlKnowledgeBaseConfigurationRedshiftConfigurationQueryGenerationConfigurationGenerationContextCuratedQueryArgs.builder
+      builder.curatedQueries(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param tables Information about a table in the database. See `table` block for details.
+     * @return builder
+     */
+    def tables(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseKnowledgeBaseConfigurationSqlKnowledgeBaseConfigurationRedshiftConfigurationQueryGenerationConfigurationGenerationContextTableArgs.Builder]*):
+        com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseKnowledgeBaseConfigurationSqlKnowledgeBaseConfigurationRedshiftConfigurationQueryGenerationConfigurationGenerationContextArgs.Builder =
+      def argsBuilder = com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseKnowledgeBaseConfigurationSqlKnowledgeBaseConfigurationRedshiftConfigurationQueryGenerationConfigurationGenerationContextTableArgs.builder
+      builder.tables(args.map(_(argsBuilder).build)*)
+
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentFlowDefinitionNodeConfigurationPromptSourceConfigurationInlineTemplateConfigurationChatSystemArgs.Builder)
     /**
      * @param cachePoint Creates a cache checkpoint within a tool designation. See Cache Point for more information.
@@ -2929,6 +3195,15 @@ object bedrock:
         com.pulumi.aws.bedrock.inputs.AgentcoreGatewayState.Builder =
       val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreGatewayAuthorizerConfigurationArgs.builder
       builder.authorizerConfiguration(args(argsBuilder).build)
+
+    /**
+     * @param interceptorConfigurations List of interceptor configurations for the gateway. Minimum of 1, maximum of 2. See `interceptorConfiguration` below.
+     * @return builder
+     */
+    def interceptorConfigurations(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreGatewayInterceptorConfigurationArgs.Builder]*):
+        com.pulumi.aws.bedrock.inputs.AgentcoreGatewayState.Builder =
+      def argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreGatewayInterceptorConfigurationArgs.builder
+      builder.interceptorConfigurations(args.map(_(argsBuilder).build)*)
 
     /**
      * @param protocolConfiguration Protocol-specific configuration for the gateway. See `protocolConfiguration` below.
@@ -3220,6 +3495,16 @@ object bedrock:
       def argsBuilder = com.pulumi.aws.bedrock.inputs.GetAgentAgentVersionsAgentVersionSummaryArgs.builder
       builder.agentVersionSummaries(args.map(_(argsBuilder).build)*)
 
+  extension (builder: com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseStorageConfigurationNeptuneAnalyticsConfigurationArgs.Builder)
+    /**
+     * @param fieldMapping The names of the fields to which to map information about the vector store. This block supports the following arguments:
+     * @return builder
+     */
+    def fieldMapping(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseStorageConfigurationNeptuneAnalyticsConfigurationFieldMappingArgs.Builder]):
+        com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseStorageConfigurationNeptuneAnalyticsConfigurationArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseStorageConfigurationNeptuneAnalyticsConfigurationFieldMappingArgs.builder
+      builder.fieldMapping(args(argsBuilder).build)
+
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetTargetConfigurationMcpLambdaToolSchemaArgs.Builder)
     /**
      * @param inlinePayloads Inline tool definition. See `inlinePayload` below.
@@ -3268,6 +3553,35 @@ object bedrock:
         com.pulumi.aws.bedrock.inputs.AgentFlowDefinitionNodeConfigurationPromptSourceConfigurationInlineTemplateConfigurationArgs.Builder =
       val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentFlowDefinitionNodeConfigurationPromptSourceConfigurationInlineTemplateConfigurationTextArgs.builder
       builder.text(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseStorageConfigurationMongoDbAtlasConfigurationArgs.Builder)
+    /**
+     * @param fieldMapping Contains the names of the fields to which to map information about the vector store.
+     * @return builder
+     */
+    def fieldMapping(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseStorageConfigurationMongoDbAtlasConfigurationFieldMappingArgs.Builder]):
+        com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseStorageConfigurationMongoDbAtlasConfigurationArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseStorageConfigurationMongoDbAtlasConfigurationFieldMappingArgs.builder
+      builder.fieldMapping(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseKnowledgeBaseConfigurationSqlKnowledgeBaseConfigurationRedshiftConfigurationQueryEngineConfigurationArgs.Builder)
+    /**
+     * @param provisionedConfiguration Configurations for a provisioned Amazon Redshift query engine. See `provisionedConfiguration` block for details.
+     * @return builder
+     */
+    def provisionedConfiguration(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseKnowledgeBaseConfigurationSqlKnowledgeBaseConfigurationRedshiftConfigurationQueryEngineConfigurationProvisionedConfigurationArgs.Builder]):
+        com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseKnowledgeBaseConfigurationSqlKnowledgeBaseConfigurationRedshiftConfigurationQueryEngineConfigurationArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseKnowledgeBaseConfigurationSqlKnowledgeBaseConfigurationRedshiftConfigurationQueryEngineConfigurationProvisionedConfigurationArgs.builder
+      builder.provisionedConfiguration(args(argsBuilder).build)
+
+    /**
+     * @param serverlessConfiguration Configurations for a serverless Amazon Redshift query engine. See `serverlessConfiguration` block for details.
+     * @return builder
+     */
+    def serverlessConfiguration(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseKnowledgeBaseConfigurationSqlKnowledgeBaseConfigurationRedshiftConfigurationQueryEngineConfigurationServerlessConfigurationArgs.Builder]):
+        com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseKnowledgeBaseConfigurationSqlKnowledgeBaseConfigurationRedshiftConfigurationQueryEngineConfigurationArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseKnowledgeBaseConfigurationSqlKnowledgeBaseConfigurationRedshiftConfigurationQueryEngineConfigurationServerlessConfigurationArgs.builder
+      builder.serverlessConfiguration(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentFlowDefinitionNodeConfigurationConditionArgs.Builder)
     def conditions(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentFlowDefinitionNodeConfigurationConditionConditionArgs.Builder]*):
@@ -3366,7 +3680,20 @@ object bedrock:
       builder.inferenceConfigurations(args.map(_(argsBuilder).build)*)
 
   /**
-   * 
+   * Manages an Amazon Bedrock custom model.
+   *  Model customization is the process of providing training data to a base model in order to improve its performance for specific use-cases.
+   *  
+   *  This Terraform resource interacts with two Amazon Bedrock entities:
+   *  
+   *  1. A Continued Pre-training or Fine-tuning job which is started when the Terraform resource is created. The customization job can take several hours to run to completion. The duration of the job depends on the size of the training data (number of records, input tokens, and output tokens), and [hyperparameters](https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models-hp.html) (number of epochs, and batch size).
+   *  2. The custom model output on successful completion of the customization job.
+   *  
+   *  This resource&#39;s behaviors correspond to operations on these Amazon Bedrock entities:
+   *  
+   *  * _Create_ starts the customization job and immediately returns.
+   *  * _Read_ returns the status and results of the customization job. If the customization job has completed, the output model&#39;s properties are returned.
+   *  * _Update_ updates the customization job&#39;s [tags](https://docs.aws.amazon.com/bedrock/latest/userguide/tagging.html).
+   *  * _Delete_ stops the customization job if it is still active. If the customization job has completed, the custom model output by the job is deleted.
    */
   def CustomModel(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.bedrock.CustomModelArgs.Builder])(using conf: KoPulumiConf) =

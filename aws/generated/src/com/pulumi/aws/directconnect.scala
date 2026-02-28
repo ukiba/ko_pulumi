@@ -110,6 +110,9 @@ object directconnect:
     conf.logicalName2pysicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
       case None               =>
+    conf.logicalName2tagName(name) match
+      case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
+      case None          =>
     
     com.pulumi.aws.directconnect.Gateway(name,
         args(argsBuilder).build,

@@ -34,6 +34,21 @@ object ram:
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
+  /** Manages an AWS RAM (Resource Access Manager) Permission. */
+  def Permission(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.ram.PermissionArgs.Builder])(using conf: KoPulumiConf) =
+    var argsBuilder = com.pulumi.aws.ram.PermissionArgs.builder
+    conf.logicalName2pysicalName(name) match
+      case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
+      case None               =>
+    conf.logicalName2tagName(name) match
+      case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
+      case None          =>
+    
+    com.pulumi.aws.ram.Permission(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder).build)
+
   /**
    * Provides a Resource Access Manager (RAM) principal association. Depending if [RAM Sharing with AWS Organizations is enabled](https://docs.aws.amazon.com/ram/latest/userguide/getting-started-sharing.html#getting-started-sharing-orgs), the RAM behavior with different principal types changes.
    *  
@@ -56,6 +71,23 @@ object ram:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /**
+   * Resource for maintaining exclusive management of principal and resource associations for an AWS RAM (Resource Access Manager) Resource Share.
+   *  
+   *  !&gt; This resource takes exclusive ownership over principal and resource associations for a resource share. This includes removal of principals and resources which are not explicitly configured.
+   *  
+   *  &gt; Destruction of this resource will disassociate all configured principals and resources from the resource share.
+   *  
+   *  &gt; **NOTE:** This resource cannot be used in conjunction with `aws.ram.PrincipalAssociation` or `aws.ram.ResourceAssociation` for the same resource share. Using them together will cause persistent drift and conflicts.
+   */
+  def ResourceShareAssociationsExclusive(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.ram.ResourceShareAssociationsExclusiveArgs.Builder]) =
+    val argsBuilder = com.pulumi.aws.ram.ResourceShareAssociationsExclusiveArgs.builder
+    
+    com.pulumi.aws.ram.ResourceShareAssociationsExclusive(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder).build)
+
+  /**
    * Manages a Resource Access Manager (RAM) Resource Association.
    *  
    *  &gt; *NOTE:* Certain AWS resources (e.g., EC2 Subnets) can only be shared in an AWS account that is a member of an AWS Organizations organization with organization-wide Resource Access Manager functionality enabled. See the [Resource Access Manager User Guide](https://docs.aws.amazon.com/ram/latest/userguide/what-is.html) and AWS service specific documentation for additional information.
@@ -67,6 +99,12 @@ object ram:
     com.pulumi.aws.ram.ResourceAssociation(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
+
+  extension (builder: com.pulumi.aws.ram.PermissionArgs.Builder)
+    def timeouts(args: Endofunction[com.pulumi.aws.ram.inputs.PermissionTimeoutsArgs.Builder]):
+        com.pulumi.aws.ram.PermissionArgs.Builder =
+      val argsBuilder = com.pulumi.aws.ram.inputs.PermissionTimeoutsArgs.builder
+      builder.timeouts(args(argsBuilder).build)
 
   type RamFunctions = com.pulumi.aws.ram.RamFunctions
   object RamFunctions:
@@ -97,6 +135,12 @@ object ram:
     com.pulumi.aws.ram.ResourceShareAccepter(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
+
+  extension (builder: com.pulumi.aws.ram.inputs.PermissionState.Builder)
+    def timeouts(args: Endofunction[com.pulumi.aws.ram.inputs.PermissionTimeoutsArgs.Builder]):
+        com.pulumi.aws.ram.inputs.PermissionState.Builder =
+      val argsBuilder = com.pulumi.aws.ram.inputs.PermissionTimeoutsArgs.builder
+      builder.timeouts(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.ram.inputs.GetResourceShareArgs.Builder)
     /**

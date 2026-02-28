@@ -28,7 +28,9 @@ object redshiftserverless:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /**
-   * 
+   * Creates a new Amazon Redshift Serverless Namespace.
+   *  
+   *  &gt; **Note:** Write-Only argument `adminPasswordWo` is available to use in place of `adminPassword`. Write-Only arguments are supported in HashiCorp Terraform 1.11.0 and later. Learn more.
    */
   def Namespace(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.redshiftserverless.NamespaceArgs.Builder])(using conf: KoPulumiConf) =

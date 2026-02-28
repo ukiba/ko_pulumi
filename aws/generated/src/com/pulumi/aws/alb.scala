@@ -251,6 +251,15 @@ object alb:
       builder.connectionLogs(args(argsBuilder).build)
 
     /**
+     * @param healthCheckLogs Health Check Logs block. See below. Only valid for Load Balancers of type `application`.
+     * @return builder
+     */
+    def healthCheckLogs(args: Endofunction[com.pulumi.aws.alb.inputs.LoadBalancerHealthCheckLogsArgs.Builder]):
+        com.pulumi.aws.alb.LoadBalancerArgs.Builder =
+      val argsBuilder = com.pulumi.aws.alb.inputs.LoadBalancerHealthCheckLogsArgs.builder
+      builder.healthCheckLogs(args(argsBuilder).build)
+
+    /**
      * @param ipamPools . The IPAM pools to use with the load balancer.  Only valid for Load Balancers of type `application`. See ipamPools for more information.
      * @return builder
      */
@@ -369,6 +378,16 @@ object alb:
       def argsBuilder = com.pulumi.aws.alb.inputs.ListenerRuleActionForwardTargetGroupArgs.builder
       builder.targetGroups(args.map(_(argsBuilder).build)*)
 
+  extension (builder: com.pulumi.aws.alb.inputs.ListenerDefaultActionJwtValidationArgs.Builder)
+    /**
+     * @param additionalClaims Repeatable configuration block for additional claims to validate.
+     * @return builder
+     */
+    def additionalClaims(args: Endofunction[com.pulumi.aws.alb.inputs.ListenerDefaultActionJwtValidationAdditionalClaimArgs.Builder]*):
+        com.pulumi.aws.alb.inputs.ListenerDefaultActionJwtValidationArgs.Builder =
+      def argsBuilder = com.pulumi.aws.alb.inputs.ListenerDefaultActionJwtValidationAdditionalClaimArgs.builder
+      builder.additionalClaims(args.map(_(argsBuilder).build)*)
+
   extension (builder: com.pulumi.aws.alb.inputs.LoadBalancerState.Builder)
     /**
      * @param accessLogs Access Logs block. See below.
@@ -387,6 +406,15 @@ object alb:
         com.pulumi.aws.alb.inputs.LoadBalancerState.Builder =
       val argsBuilder = com.pulumi.aws.alb.inputs.LoadBalancerConnectionLogsArgs.builder
       builder.connectionLogs(args(argsBuilder).build)
+
+    /**
+     * @param healthCheckLogs Health Check Logs block. See below. Only valid for Load Balancers of type `application`.
+     * @return builder
+     */
+    def healthCheckLogs(args: Endofunction[com.pulumi.aws.alb.inputs.LoadBalancerHealthCheckLogsArgs.Builder]):
+        com.pulumi.aws.alb.inputs.LoadBalancerState.Builder =
+      val argsBuilder = com.pulumi.aws.alb.inputs.LoadBalancerHealthCheckLogsArgs.builder
+      builder.healthCheckLogs(args(argsBuilder).build)
 
     /**
      * @param ipamPools . The IPAM pools to use with the load balancer.  Only valid for Load Balancers of type `application`. See ipamPools for more information.
@@ -461,6 +489,16 @@ object alb:
       def argsBuilder = com.pulumi.aws.alb.inputs.TargetGroupTargetHealthStateArgs.builder
       builder.targetHealthStates(args.map(_(argsBuilder).build)*)
 
+  extension (builder: com.pulumi.aws.alb.inputs.ListenerRuleActionJwtValidationArgs.Builder)
+    /**
+     * @param additionalClaims Repeatable configuration block for additional claims to validate.
+     * @return builder
+     */
+    def additionalClaims(args: Endofunction[com.pulumi.aws.alb.inputs.ListenerRuleActionJwtValidationAdditionalClaimArgs.Builder]*):
+        com.pulumi.aws.alb.inputs.ListenerRuleActionJwtValidationArgs.Builder =
+      def argsBuilder = com.pulumi.aws.alb.inputs.ListenerRuleActionJwtValidationAdditionalClaimArgs.builder
+      builder.additionalClaims(args.map(_(argsBuilder).build)*)
+
   extension (builder: com.pulumi.aws.alb.inputs.ListenerDefaultActionArgs.Builder)
     /**
      * @param authenticateCognito Configuration block for using Amazon Cognito to authenticate users. Specify only when `type` is `authenticate-cognito`. See below.
@@ -497,6 +535,15 @@ object alb:
         com.pulumi.aws.alb.inputs.ListenerDefaultActionArgs.Builder =
       val argsBuilder = com.pulumi.aws.alb.inputs.ListenerDefaultActionForwardArgs.builder
       builder.forward(args(argsBuilder).build)
+
+    /**
+     * @param jwtValidation Configuration block for creating a JWT validation action. Required if `type` is `jwt-validation`.
+     * @return builder
+     */
+    def jwtValidation(args: Endofunction[com.pulumi.aws.alb.inputs.ListenerDefaultActionJwtValidationArgs.Builder]):
+        com.pulumi.aws.alb.inputs.ListenerDefaultActionArgs.Builder =
+      val argsBuilder = com.pulumi.aws.alb.inputs.ListenerDefaultActionJwtValidationArgs.builder
+      builder.jwtValidation(args(argsBuilder).build)
 
     /**
      * @param redirect Configuration block for creating a redirect action. Required if `type` is `redirect`. See below.
@@ -604,6 +651,15 @@ object alb:
       builder.forward(args(argsBuilder).build)
 
     /**
+     * @param jwtValidation Information for creating a JWT validation action. Required if `type` is `jwt-validation`.
+     * @return builder
+     */
+    def jwtValidation(args: Endofunction[com.pulumi.aws.alb.inputs.ListenerRuleActionJwtValidationArgs.Builder]):
+        com.pulumi.aws.alb.inputs.ListenerRuleActionArgs.Builder =
+      val argsBuilder = com.pulumi.aws.alb.inputs.ListenerRuleActionJwtValidationArgs.builder
+      builder.jwtValidation(args(argsBuilder).build)
+
+    /**
      * @param redirect Information for creating a redirect action. Required if `type` is `redirect`.
      * @return builder
      */
@@ -704,6 +760,16 @@ object alb:
    * Provides a Load Balancer Listener Rule resource.
    *  
    *  &gt; **Note:** `aws.alb.ListenerRule` is known as `aws.lb.ListenerRule`. The functionality is identical.
+   *  
+   *  #### Required
+   *  
+   *  - `arn` (String) Amazon Resource Name (ARN) of the load balancer listener rule.
+   *  
+   *  Using `pulumi import`, import rules using their ARN. For example:
+   *  
+   *  ```sh
+   *  $ pulumi import aws:alb/listenerRule:ListenerRule front_end arn:aws:elasticloadbalancing:us-west-2:187416307283:listener-rule/app/test/8e4497da625e2d8a/9ab28ade35828f96/67b3d2d36dd7c26b
+   *  ```
    */
   def ListenerRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.alb.ListenerRuleArgs.Builder])(using conf: KoPulumiConf) =

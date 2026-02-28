@@ -100,7 +100,9 @@ object ssm:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /**
-   * 
+   * Provides a Terraform resource for managing a Contacts Rotation in AWS Systems Manager Incident Manager.
+   *  
+   *  &gt; **NOTE:** A rotation implicitly depends on a replication set. If you configured your replication set in Terraform, we recommend you add it to the `dependsOn` argument for the Terraform Contact Resource.
    */
   def ContactsRotation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ssm.ContactsRotationArgs.Builder])(using conf: KoPulumiConf) =
@@ -140,17 +142,13 @@ object ssm:
     // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
     export com.pulumi.aws.ssm.SsmFunctions.*
   extension (self: SsmFunctions.type)
-    /**
-     * 
-     */
+    /** Provides a Terraform data source for managing a Contacts Rotation in AWS Systems Manager Incident Manager */
     def getContactsRotation(args: Endofunction[com.pulumi.aws.ssm.inputs.GetContactsRotationArgs.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.aws.ssm.outputs.GetContactsRotationResult] =
       val argsBuilder = com.pulumi.aws.ssm.inputs.GetContactsRotationArgs.builder
       com.pulumi.aws.ssm.SsmFunctions.getContactsRotation(args(argsBuilder).build)
 
-    /**
-     * 
-     */
+    /** Provides a Terraform data source for managing a Contacts Rotation in AWS Systems Manager Incident Manager */
     def getContactsRotationPlain(args: Endofunction[com.pulumi.aws.ssm.inputs.GetContactsRotationPlainArgs.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.ssm.outputs.GetContactsRotationResult] =
       val argsBuilder = com.pulumi.aws.ssm.inputs.GetContactsRotationPlainArgs.builder
@@ -204,11 +202,13 @@ object ssm:
       val argsBuilder = com.pulumi.aws.ssm.inputs.GetParameterPlainArgs.builder
       com.pulumi.aws.ssm.SsmFunctions.getParameterPlain(args(argsBuilder).build)
 
+    /** Use this data source to get information about one or more System Manager parameters in a specific hierarchy. */
     def getParametersByPath(args: Endofunction[com.pulumi.aws.ssm.inputs.GetParametersByPathArgs.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.aws.ssm.outputs.GetParametersByPathResult] =
       val argsBuilder = com.pulumi.aws.ssm.inputs.GetParametersByPathArgs.builder
       com.pulumi.aws.ssm.SsmFunctions.getParametersByPath(args(argsBuilder).build)
 
+    /** Use this data source to get information about one or more System Manager parameters in a specific hierarchy. */
     def getParametersByPathPlain(args: Endofunction[com.pulumi.aws.ssm.inputs.GetParametersByPathPlainArgs.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.ssm.outputs.GetParametersByPathResult] =
       val argsBuilder = com.pulumi.aws.ssm.inputs.GetParametersByPathPlainArgs.builder

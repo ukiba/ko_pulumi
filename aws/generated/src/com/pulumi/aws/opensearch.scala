@@ -48,6 +48,21 @@ object opensearch:
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
+  /** Provides an AWS OpenSearch Application resource. OpenSearch Applications provide a user interface for interacting with OpenSearch data and managing OpenSearch resources. */
+  def Application(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.opensearch.ApplicationArgs.Builder])(using conf: KoPulumiConf) =
+    var argsBuilder = com.pulumi.aws.opensearch.ApplicationArgs.builder
+    conf.logicalName2pysicalName(name) match
+      case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
+      case None               =>
+    conf.logicalName2tagName(name) match
+      case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
+      case None          =>
+    
+    com.pulumi.aws.opensearch.Application(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder).build)
+
   extension (builder: com.pulumi.aws.opensearch.ServerlessCollectionArgs.Builder)
     def timeouts(args: Endofunction[com.pulumi.aws.opensearch.inputs.ServerlessCollectionTimeoutsArgs.Builder]):
         com.pulumi.aws.opensearch.ServerlessCollectionArgs.Builder =
@@ -344,6 +359,39 @@ object opensearch:
     com.pulumi.aws.opensearch.ServerlessVpcEndpoint(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
+
+  extension (builder: com.pulumi.aws.opensearch.ApplicationArgs.Builder)
+    /**
+     * @param appConfigs Configuration block(s) for OpenSearch application settings. See App Config below.
+     * @return builder
+     */
+    def appConfigs(args: Endofunction[com.pulumi.aws.opensearch.inputs.ApplicationAppConfigArgs.Builder]*):
+        com.pulumi.aws.opensearch.ApplicationArgs.Builder =
+      def argsBuilder = com.pulumi.aws.opensearch.inputs.ApplicationAppConfigArgs.builder
+      builder.appConfigs(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param dataSources Configuration block(s) for data sources to link to the OpenSearch application. See Data Source below.
+     * @return builder
+     */
+    def dataSources(args: Endofunction[com.pulumi.aws.opensearch.inputs.ApplicationDataSourceArgs.Builder]*):
+        com.pulumi.aws.opensearch.ApplicationArgs.Builder =
+      def argsBuilder = com.pulumi.aws.opensearch.inputs.ApplicationDataSourceArgs.builder
+      builder.dataSources(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param iamIdentityCenterOptions Configuration block for integrating AWS IAM Identity Center with the OpenSearch application. See IAM Identity Center Options below.
+     * @return builder
+     */
+    def iamIdentityCenterOptions(args: Endofunction[com.pulumi.aws.opensearch.inputs.ApplicationIamIdentityCenterOptionsArgs.Builder]):
+        com.pulumi.aws.opensearch.ApplicationArgs.Builder =
+      val argsBuilder = com.pulumi.aws.opensearch.inputs.ApplicationIamIdentityCenterOptionsArgs.builder
+      builder.iamIdentityCenterOptions(args(argsBuilder).build)
+
+    def timeouts(args: Endofunction[com.pulumi.aws.opensearch.inputs.ApplicationTimeoutsArgs.Builder]):
+        com.pulumi.aws.opensearch.ApplicationArgs.Builder =
+      val argsBuilder = com.pulumi.aws.opensearch.inputs.ApplicationTimeoutsArgs.builder
+      builder.timeouts(args(argsBuilder).build)
 
   /** Manages SAML authentication options for an AWS OpenSearch Domain. */
   def DomainSamlOptions(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
@@ -657,6 +705,15 @@ object opensearch:
       val argsBuilder = com.pulumi.aws.opensearch.inputs.DomainAimlOptionsS3VectorsEngineArgs.builder
       builder.s3VectorsEngine(args(argsBuilder).build)
 
+    /**
+     * @param serverlessVectorAcceleration Configuration block for parameters required to enable GPU-accelerated vector search on the specified domain.
+     * @return builder
+     */
+    def serverlessVectorAcceleration(args: Endofunction[com.pulumi.aws.opensearch.inputs.DomainAimlOptionsServerlessVectorAccelerationArgs.Builder]):
+        com.pulumi.aws.opensearch.inputs.DomainAimlOptionsArgs.Builder =
+      val argsBuilder = com.pulumi.aws.opensearch.inputs.DomainAimlOptionsServerlessVectorAccelerationArgs.builder
+      builder.serverlessVectorAcceleration(args(argsBuilder).build)
+
   extension (builder: com.pulumi.aws.opensearch.inputs.DomainOffPeakWindowOptionsOffPeakWindowArgs.Builder)
     /**
      * @param windowStartTime 10h window for updates
@@ -718,6 +775,39 @@ object opensearch:
         com.pulumi.aws.opensearch.inputs.DomainAutoTuneOptionsMaintenanceScheduleArgs.Builder =
       val argsBuilder = com.pulumi.aws.opensearch.inputs.DomainAutoTuneOptionsMaintenanceScheduleDurationArgs.builder
       builder.duration(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.opensearch.inputs.ApplicationState.Builder)
+    /**
+     * @param appConfigs Configuration block(s) for OpenSearch application settings. See App Config below.
+     * @return builder
+     */
+    def appConfigs(args: Endofunction[com.pulumi.aws.opensearch.inputs.ApplicationAppConfigArgs.Builder]*):
+        com.pulumi.aws.opensearch.inputs.ApplicationState.Builder =
+      def argsBuilder = com.pulumi.aws.opensearch.inputs.ApplicationAppConfigArgs.builder
+      builder.appConfigs(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param dataSources Configuration block(s) for data sources to link to the OpenSearch application. See Data Source below.
+     * @return builder
+     */
+    def dataSources(args: Endofunction[com.pulumi.aws.opensearch.inputs.ApplicationDataSourceArgs.Builder]*):
+        com.pulumi.aws.opensearch.inputs.ApplicationState.Builder =
+      def argsBuilder = com.pulumi.aws.opensearch.inputs.ApplicationDataSourceArgs.builder
+      builder.dataSources(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param iamIdentityCenterOptions Configuration block for integrating AWS IAM Identity Center with the OpenSearch application. See IAM Identity Center Options below.
+     * @return builder
+     */
+    def iamIdentityCenterOptions(args: Endofunction[com.pulumi.aws.opensearch.inputs.ApplicationIamIdentityCenterOptionsArgs.Builder]):
+        com.pulumi.aws.opensearch.inputs.ApplicationState.Builder =
+      val argsBuilder = com.pulumi.aws.opensearch.inputs.ApplicationIamIdentityCenterOptionsArgs.builder
+      builder.iamIdentityCenterOptions(args(argsBuilder).build)
+
+    def timeouts(args: Endofunction[com.pulumi.aws.opensearch.inputs.ApplicationTimeoutsArgs.Builder]):
+        com.pulumi.aws.opensearch.inputs.ApplicationState.Builder =
+      val argsBuilder = com.pulumi.aws.opensearch.inputs.ApplicationTimeoutsArgs.builder
+      builder.timeouts(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.opensearch.inputs.DomainClusterConfigNodeOptionArgs.Builder)
     /**

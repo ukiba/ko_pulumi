@@ -171,7 +171,7 @@ object ecr:
       def argsBuilder = com.pulumi.aws.ecr.inputs.RepositoryCreationTemplateImageTagMutabilityExclusionFilterArgs.builder
       builder.imageTagMutabilityExclusionFilters(args.map(_(argsBuilder).build)*)
 
-  /** Provides a resource to manage AWS ECR Basic Scan Type */
+  /** Provides a resource to manage AWS ECR account settings */
   def AccountSetting(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ecr.AccountSettingArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.ecr.AccountSettingArgs.builder
@@ -230,6 +230,15 @@ object ecr:
         com.pulumi.aws.ecr.LifecyclePolicyArgs.Builder =
       val argsBuilder = com.pulumi.aws.ecr.inputs.LifecyclePolicyDocumentArgs.builder
       builder.policy(args(argsBuilder).build)
+
+  /** Manages an AWS ECR (Elastic Container Registry) Pull Time Update Exclusion. */
+  def PullTimeUpdateExclusion(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.ecr.PullTimeUpdateExclusionArgs.Builder]) =
+    val argsBuilder = com.pulumi.aws.ecr.PullTimeUpdateExclusionArgs.builder
+    
+    com.pulumi.aws.ecr.PullTimeUpdateExclusion(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder).build)
 
   /** Provides an Elastic Container Registry Repository. */
   def Repository(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
@@ -388,7 +397,7 @@ object ecr:
 
   extension (builder: com.pulumi.aws.ecr.inputs.GetLifecyclePolicyDocumentRuleArgs.Builder)
     /**
-     * @param action Specifies the action type.
+     * @param action Specifies the action to take.
      * @return builder
      */
     def action(args: Endofunction[com.pulumi.aws.ecr.inputs.GetLifecyclePolicyDocumentRuleActionArgs.Builder]):

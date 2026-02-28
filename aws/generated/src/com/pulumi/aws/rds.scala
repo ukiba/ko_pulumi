@@ -313,13 +313,17 @@ object rds:
       builder.auths(args.map(_(argsBuilder).build)*)
 
   /**
-   * ## Import
+   * Provides an RDS DB parameter group resource. Documentation of the available parameters for various RDS engines can be found at:
    *  
-   *  Using `pulumi import`, import DB Parameter groups using the `name`. For example:
+   *  * [Aurora MySQL Parameters](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AuroraMySQL.Reference.html)
+   *  * [Aurora PostgreSQL Parameters](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AuroraPostgreSQL.Reference.html)
+   *  * [MariaDB Parameters](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Appendix.MariaDB.Parameters.html)
+   *  * [Oracle Parameters](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ModifyInstance.Oracle.html#USER_ModifyInstance.Oracle.sqlnet)
+   *  * [PostgreSQL Parameters](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Appendix.PostgreSQL.CommonDBATasks.html#Appendix.PostgreSQL.CommonDBATasks.Parameters)
    *  
-   *  ```sh
-   *  $ pulumi import aws:rds/parameterGroup:ParameterGroup rds_pg rds-pg
-   *  ```
+   *  &gt; **Hands-on:** For an example of the `aws.rds.ParameterGroup` in use, follow the Manage AWS RDS Instances tutorial on HashiCorp Learn.
+   *  
+   *  &gt; **NOTE:** If you encounter a pulumi preview showing parameter changes after an apply (_i.e._, _perpetual diffs_), see the Problematic Plan Changes example below for additional guidance.
    */
   def ParameterGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.rds.ParameterGroupArgs.Builder])(using conf: KoPulumiConf) =
@@ -395,6 +399,16 @@ object rds:
    * Provides a resource to manage an RDS DB proxy default target group resource.
    *  
    *  The `aws.rds.ProxyDefaultTargetGroup` behaves differently from normal resources, in that the provider does not _create_ or _destroy_ this resource, since it implicitly exists as part of an RDS DB Proxy. On the provider resource creation it is automatically imported and on resource destruction, the provider performs no actions in RDS.
+   *  
+   *  &gt; **NOTE:** When the associated `aws.rds.Proxy` resource is replaced, Terraform will lose track of this resource, causing unexpected differences on the next apply. To ensure proper dependency management, add a `lifecycle` block with `replaceTriggeredBy` referencing the `aws.rds.Proxy` resource&#39;s `id` attribute.
+   *  
+   *  ## Import
+   *  
+   *  Using `pulumi import`, import DB proxy default target groups using the `dbProxyName`. For example:
+   *  
+   *  ```sh
+   *  $ pulumi import aws:rds/proxyDefaultTargetGroup:ProxyDefaultTargetGroup example example
+   *  ```
    */
   def ProxyDefaultTargetGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.rds.ProxyDefaultTargetGroupArgs.Builder]) =
@@ -471,7 +485,9 @@ object rds:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /**
-   * 
+   * Provides a resource to override the system-default Secure Sockets Layer/Transport Layer Security (SSL/TLS) certificate for Amazon RDS for new DB instances in the current AWS region.
+   *  
+   *  &gt; **NOTE:** Removing this Terraform resource removes the override. New DB instances will use the system-default certificate for the current AWS region.
    */
   def Certificate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.rds.CertificateArgs.Builder]) =
@@ -494,7 +510,29 @@ object rds:
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
-  /** Provides an RDS DB proxy target resource. */
+  /**
+   * Provides an RDS DB proxy target resource.
+   *  
+   *  &gt; **NOTE:** When the associated `aws.rds.Proxy` resource is replaced, Terraform will lose track of this resource, causing unexpected differences on the next apply. To ensure proper dependency management, add a `lifecycle` block with `replaceTriggeredBy` referencing the `aws.rds.Proxy` resource&#39;s `id` attribute.
+   *  
+   *  ## Import
+   *  
+   *  Provisioned Clusters:
+   *  
+   *  **Using `pulumi import` to import** RDS DB Proxy Targets using the `dbProxyName`, `targetGroupName`, target type (such as `RDS_INSTANCE` or `TRACKED_CLUSTER`), and resource identifier separated by forward slashes (`/`). For example:
+   *  
+   *  Instances:
+   *  
+   *  ```sh
+   *  $ pulumi import aws:rds/proxyTarget:ProxyTarget example example-proxy/default/RDS_INSTANCE/example-instance
+   *  ```
+   *  
+   *  Provisioned Clusters:
+   *  
+   *  ```sh
+   *  $ pulumi import aws:rds/proxyTarget:ProxyTarget example example-proxy/default/TRACKED_CLUSTER/example-cluster
+   *  ```
+   */
   def ProxyTarget(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.rds.ProxyTargetArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.rds.ProxyTargetArgs.builder
@@ -697,13 +735,9 @@ object rds:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /**
-   * ## Import
+   * Provides an RDS DB proxy resource. For additional information, see the [RDS User Guide](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-proxy.html).
    *  
-   *  Using `pulumi import`, import DB proxies using the `name`. For example:
-   *  
-   *  ```sh
-   *  $ pulumi import aws:rds/proxy:Proxy example example
-   *  ```
+   *  &gt; **Note:** Not all Availability Zones (AZs) support DB proxies. Specifying `vpcSubnetIds` for AZs that do not support proxies will not trigger an error as long as at least one `vpcSubnetId` is valid. However, this will cause Terraform to continuously detect differences between the configuration and the actual infrastructure. Refer to the Unsupported Availability Zones section below for potential workarounds.
    */
   def Proxy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.rds.ProxyArgs.Builder])(using conf: KoPulumiConf) =
@@ -729,7 +763,7 @@ object rds:
    *  
    *  ## Import
    *  
-   *  Using `pulumi import`, import `aws_db_instance_role_association` using the DB Instance Identifier and IAM Role ARN separated by a comma (`,`). For example:
+   *  Using `pulumi import`, import `aws.rds.RoleAssociation` using the DB Instance Identifier and IAM Role ARN separated by a comma (`,`). For example:
    *  
    *  ```sh
    *  $ pulumi import aws:rds/roleAssociation:RoleAssociation example my-db-instance,arn:aws:iam::123456789012:role/my-role

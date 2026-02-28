@@ -56,7 +56,7 @@ object kinesis:
     /**
      * Provides details about a Kinesis Stream Consumer.
      *  
-     *  For more details, see the [Amazon Kinesis Stream Consumer Documentation](https://docs.aws.amazon.com/streams/latest/dev/amazon-kinesis-consumers.html).
+     *  For more details, see the [Amazon Kinesis Stream Consumer Documentation](https://docs.aws.amazon.com/streams/latest/dev/enhanced-consumers.html).
      */
     def getStreamConsumer(args: Endofunction[com.pulumi.aws.kinesis.inputs.GetStreamConsumerArgs.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.aws.kinesis.outputs.GetStreamConsumerResult] =
@@ -66,7 +66,7 @@ object kinesis:
     /**
      * Provides details about a Kinesis Stream Consumer.
      *  
-     *  For more details, see the [Amazon Kinesis Stream Consumer Documentation](https://docs.aws.amazon.com/streams/latest/dev/amazon-kinesis-consumers.html).
+     *  For more details, see the [Amazon Kinesis Stream Consumer Documentation](https://docs.aws.amazon.com/streams/latest/dev/enhanced-consumers.html).
      */
     def getStreamConsumerPlain(args: Endofunction[com.pulumi.aws.kinesis.inputs.GetStreamConsumerPlainArgs.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.kinesis.outputs.GetStreamConsumerResult] =
@@ -144,7 +144,7 @@ object kinesis:
    *  
    *  &gt; **Note:** You can register up to 20 consumers per stream. A given consumer can only be registered with one stream at a time.
    *  
-   *  For more details, see the [Amazon Kinesis Stream Consumer Documentation](https://docs.aws.amazon.com/streams/latest/dev/amazon-kinesis-consumers.html).
+   *  For more details, see the [Amazon Kinesis Stream Consumer Documentation](https://docs.aws.amazon.com/streams/latest/dev/enhanced-consumers.html).
    */
   def StreamConsumer(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.kinesis.StreamConsumerArgs.Builder])(using conf: KoPulumiConf) =

@@ -52,3 +52,23 @@ object account:
         java.util.concurrent.CompletableFuture[com.pulumi.aws.account.outputs.GetPrimaryContactResult] =
       val argsBuilder = com.pulumi.aws.account.inputs.GetPrimaryContactPlainArgs.builder
       com.pulumi.aws.account.AccountFunctions.getPrimaryContactPlain(args(argsBuilder).build)
+
+    /**
+     * The `aws.account.getRegions` data source lets you query AWS region information for any account in your AWS Organization. It uses the AWS Account REST Service to show all regions, including those that are enabled, disabled, or in the process of being enabled or disabled. You can list regions for any organization account, see all possible region opt-in statuses (`ENABLED`, `ENABLING`, `DISABLING`, `DISABLED`, `ENABLED_BY_DEFAULT`), and check which regions are being enabled or disabled.
+     *  
+     *  This is more comprehensive than the aws.getRegions data source, which only uses the EC2 REST service and is limited to the current account and a subset of region statuses.
+     */
+    def getRegions(args: Endofunction[com.pulumi.aws.account.inputs.GetRegionsArgs.Builder] = identity):
+        com.pulumi.core.Output[com.pulumi.aws.account.outputs.GetRegionsResult] =
+      val argsBuilder = com.pulumi.aws.account.inputs.GetRegionsArgs.builder
+      com.pulumi.aws.account.AccountFunctions.getRegions(args(argsBuilder).build)
+
+    /**
+     * The `aws.account.getRegions` data source lets you query AWS region information for any account in your AWS Organization. It uses the AWS Account REST Service to show all regions, including those that are enabled, disabled, or in the process of being enabled or disabled. You can list regions for any organization account, see all possible region opt-in statuses (`ENABLED`, `ENABLING`, `DISABLING`, `DISABLED`, `ENABLED_BY_DEFAULT`), and check which regions are being enabled or disabled.
+     *  
+     *  This is more comprehensive than the aws.getRegions data source, which only uses the EC2 REST service and is limited to the current account and a subset of region statuses.
+     */
+    def getRegionsPlain(args: Endofunction[com.pulumi.aws.account.inputs.GetRegionsPlainArgs.Builder] = identity):
+        java.util.concurrent.CompletableFuture[com.pulumi.aws.account.outputs.GetRegionsResult] =
+      val argsBuilder = com.pulumi.aws.account.inputs.GetRegionsPlainArgs.builder
+      com.pulumi.aws.account.AccountFunctions.getRegionsPlain(args(argsBuilder).build)

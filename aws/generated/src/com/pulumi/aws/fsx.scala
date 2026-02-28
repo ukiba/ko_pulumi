@@ -348,6 +348,15 @@ object fsx:
       builder.diskIopsConfiguration(args(argsBuilder).build)
 
     /**
+     * @param readCacheConfiguration Configuration block for optional provisioned SSD read cache on file systems that use the Intelligent-Tiering storage class. Required when `storageType` is set to `INTELLIGENT_TIERING`. See `readCacheConfiguration` Block for details.
+     * @return builder
+     */
+    def readCacheConfiguration(args: Endofunction[com.pulumi.aws.fsx.inputs.OpenZfsFileSystemReadCacheConfigurationArgs.Builder]):
+        com.pulumi.aws.fsx.OpenZfsFileSystemArgs.Builder =
+      val argsBuilder = com.pulumi.aws.fsx.inputs.OpenZfsFileSystemReadCacheConfigurationArgs.builder
+      builder.readCacheConfiguration(args(argsBuilder).build)
+
+    /**
      * @param rootVolumeConfiguration The configuration for the root volume of the file system. All other volumes are children or the root volume. See `rootVolumeConfiguration` Block for details.
      * @return builder
      */
@@ -991,6 +1000,15 @@ object fsx:
         com.pulumi.aws.fsx.inputs.OpenZfsFileSystemState.Builder =
       val argsBuilder = com.pulumi.aws.fsx.inputs.OpenZfsFileSystemDiskIopsConfigurationArgs.builder
       builder.diskIopsConfiguration(args(argsBuilder).build)
+
+    /**
+     * @param readCacheConfiguration Configuration block for optional provisioned SSD read cache on file systems that use the Intelligent-Tiering storage class. Required when `storageType` is set to `INTELLIGENT_TIERING`. See `readCacheConfiguration` Block for details.
+     * @return builder
+     */
+    def readCacheConfiguration(args: Endofunction[com.pulumi.aws.fsx.inputs.OpenZfsFileSystemReadCacheConfigurationArgs.Builder]):
+        com.pulumi.aws.fsx.inputs.OpenZfsFileSystemState.Builder =
+      val argsBuilder = com.pulumi.aws.fsx.inputs.OpenZfsFileSystemReadCacheConfigurationArgs.builder
+      builder.readCacheConfiguration(args(argsBuilder).build)
 
     /**
      * @param rootVolumeConfiguration The configuration for the root volume of the file system. All other volumes are children or the root volume. See `rootVolumeConfiguration` Block for details.

@@ -199,6 +199,21 @@ object lambda:
       val argsBuilder = com.pulumi.aws.lambda.inputs.FunctionUrlCorsArgs.builder
       builder.cors(args(argsBuilder).build)
 
+  /** Manages an AWS Lambda Capacity Provider. */
+  def CapacityProvider(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.lambda.CapacityProviderArgs.Builder])(using conf: KoPulumiConf) =
+    var argsBuilder = com.pulumi.aws.lambda.CapacityProviderArgs.builder
+    conf.logicalName2pysicalName(name) match
+      case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
+      case None               =>
+    conf.logicalName2tagName(name) match
+      case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
+      case None          =>
+    
+    com.pulumi.aws.lambda.CapacityProvider(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder).build)
+
   extension (builder: com.pulumi.aws.lambda.CodeSigningConfigArgs.Builder)
     /**
      * @param allowedPublishers Configuration block of allowed publishers as signing profiles for this code signing configuration. See below.
@@ -275,6 +290,15 @@ object lambda:
 
   extension (builder: com.pulumi.aws.lambda.FunctionArgs.Builder)
     /**
+     * @param capacityProviderConfig Configuration block for Lambda Capacity Provider. See below.
+     * @return builder
+     */
+    def capacityProviderConfig(args: Endofunction[com.pulumi.aws.lambda.inputs.FunctionCapacityProviderConfigArgs.Builder]):
+        com.pulumi.aws.lambda.FunctionArgs.Builder =
+      val argsBuilder = com.pulumi.aws.lambda.inputs.FunctionCapacityProviderConfigArgs.builder
+      builder.capacityProviderConfig(args(argsBuilder).build)
+
+    /**
      * @param deadLetterConfig Configuration block for dead letter queue. See below.
      * @return builder
      */
@@ -282,6 +306,15 @@ object lambda:
         com.pulumi.aws.lambda.FunctionArgs.Builder =
       val argsBuilder = com.pulumi.aws.lambda.inputs.FunctionDeadLetterConfigArgs.builder
       builder.deadLetterConfig(args(argsBuilder).build)
+
+    /**
+     * @param durableConfig Configuration block for durable function settings. See below. `durableConfig` may only be available in [limited regions](https://builder.aws.com/build/capabilities), including `us-east-2`.
+     * @return builder
+     */
+    def durableConfig(args: Endofunction[com.pulumi.aws.lambda.inputs.FunctionDurableConfigArgs.Builder]):
+        com.pulumi.aws.lambda.FunctionArgs.Builder =
+      val argsBuilder = com.pulumi.aws.lambda.inputs.FunctionDurableConfigArgs.builder
+      builder.durableConfig(args(argsBuilder).build)
 
     /**
      * @param environment Configuration block for environment variables. See below.
@@ -338,6 +371,15 @@ object lambda:
       builder.snapStart(args(argsBuilder).build)
 
     /**
+     * @param tenancyConfig Configuration block for Tenancy. See below.
+     * @return builder
+     */
+    def tenancyConfig(args: Endofunction[com.pulumi.aws.lambda.inputs.FunctionTenancyConfigArgs.Builder]):
+        com.pulumi.aws.lambda.FunctionArgs.Builder =
+      val argsBuilder = com.pulumi.aws.lambda.inputs.FunctionTenancyConfigArgs.builder
+      builder.tenancyConfig(args(argsBuilder).build)
+
+    /**
      * @param tracingConfig Configuration block for X-Ray tracing. See below.
      * @return builder
      */
@@ -390,6 +432,50 @@ object lambda:
       val argsBuilder = com.pulumi.aws.lambda.inputs.AliasRoutingConfigArgs.builder
       builder.routingConfig(args(argsBuilder).build)
 
+  extension (builder: com.pulumi.aws.lambda.CapacityProviderArgs.Builder)
+    /**
+     * @param capacityProviderScalingConfigs Configuration block for scaling policy settings. See Capacity Provider Scaling Config below.
+     * @return builder
+     */
+    def capacityProviderScalingConfigs(args: Endofunction[com.pulumi.aws.lambda.inputs.CapacityProviderCapacityProviderScalingConfigArgs.Builder]*):
+        com.pulumi.aws.lambda.CapacityProviderArgs.Builder =
+      def argsBuilder = com.pulumi.aws.lambda.inputs.CapacityProviderCapacityProviderScalingConfigArgs.builder
+      builder.capacityProviderScalingConfigs(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param instanceRequirements Configuration block for instance requirements settings. See Instance Requirements below.
+     * @return builder
+     */
+    def instanceRequirements(args: Endofunction[com.pulumi.aws.lambda.inputs.CapacityProviderInstanceRequirementArgs.Builder]*):
+        com.pulumi.aws.lambda.CapacityProviderArgs.Builder =
+      def argsBuilder = com.pulumi.aws.lambda.inputs.CapacityProviderInstanceRequirementArgs.builder
+      builder.instanceRequirements(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param permissionsConfig Configuration block for permissions settings. See Permissions Config below.
+     *  
+     *  The following arguments are optional:
+     * @return builder
+     */
+    def permissionsConfig(args: Endofunction[com.pulumi.aws.lambda.inputs.CapacityProviderPermissionsConfigArgs.Builder]):
+        com.pulumi.aws.lambda.CapacityProviderArgs.Builder =
+      val argsBuilder = com.pulumi.aws.lambda.inputs.CapacityProviderPermissionsConfigArgs.builder
+      builder.permissionsConfig(args(argsBuilder).build)
+
+    def timeouts(args: Endofunction[com.pulumi.aws.lambda.inputs.CapacityProviderTimeoutsArgs.Builder]):
+        com.pulumi.aws.lambda.CapacityProviderArgs.Builder =
+      val argsBuilder = com.pulumi.aws.lambda.inputs.CapacityProviderTimeoutsArgs.builder
+      builder.timeouts(args(argsBuilder).build)
+
+    /**
+     * @param vpcConfig Configuration block for VPC settings. See VPC Config below.
+     * @return builder
+     */
+    def vpcConfig(args: Endofunction[com.pulumi.aws.lambda.inputs.CapacityProviderVpcConfigArgs.Builder]):
+        com.pulumi.aws.lambda.CapacityProviderArgs.Builder =
+      val argsBuilder = com.pulumi.aws.lambda.inputs.CapacityProviderVpcConfigArgs.builder
+      builder.vpcConfig(args(argsBuilder).build)
+
   /**
    * Manages an AWS Lambda Function Event Invoke Config. Use this resource to configure error handling and destinations for asynchronous Lambda function invocations.
    *  
@@ -403,7 +489,11 @@ object lambda:
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
-  /** Manages a Lambda function URL. Creates a dedicated HTTP(S) endpoint for a Lambda function to enable direct invocation via HTTP requests. */
+  /**
+   * Manages a Lambda function URL. Creates a dedicated HTTP(S) endpoint for a Lambda function to enable direct invocation via HTTP requests.
+   *  
+   *  &gt; **NOTE:** When [`authorizationType` is `&#34;NONE&#34;`](https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html#urls-auth-none) the `lambda:InvokeFunctionUrl` permission allowing a public endpoint and `lambda:InvokeFunction` permission with the `InvokedViaFunctionUrl` flag set to `true` are automatically added to the Lambda function on creation. These policies are NOT removed from AWS when the resource is destroyed.
+   */
   def FunctionUrl(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.lambda.FunctionUrlArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.lambda.FunctionUrlArgs.builder
@@ -577,6 +667,50 @@ object lambda:
       def argsBuilder = com.pulumi.aws.lambda.inputs.EventSourceMappingSourceAccessConfigurationArgs.builder
       builder.sourceAccessConfigurations(args.map(_(argsBuilder).build)*)
 
+  extension (builder: com.pulumi.aws.lambda.inputs.CapacityProviderState.Builder)
+    /**
+     * @param capacityProviderScalingConfigs Configuration block for scaling policy settings. See Capacity Provider Scaling Config below.
+     * @return builder
+     */
+    def capacityProviderScalingConfigs(args: Endofunction[com.pulumi.aws.lambda.inputs.CapacityProviderCapacityProviderScalingConfigArgs.Builder]*):
+        com.pulumi.aws.lambda.inputs.CapacityProviderState.Builder =
+      def argsBuilder = com.pulumi.aws.lambda.inputs.CapacityProviderCapacityProviderScalingConfigArgs.builder
+      builder.capacityProviderScalingConfigs(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param instanceRequirements Configuration block for instance requirements settings. See Instance Requirements below.
+     * @return builder
+     */
+    def instanceRequirements(args: Endofunction[com.pulumi.aws.lambda.inputs.CapacityProviderInstanceRequirementArgs.Builder]*):
+        com.pulumi.aws.lambda.inputs.CapacityProviderState.Builder =
+      def argsBuilder = com.pulumi.aws.lambda.inputs.CapacityProviderInstanceRequirementArgs.builder
+      builder.instanceRequirements(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param permissionsConfig Configuration block for permissions settings. See Permissions Config below.
+     *  
+     *  The following arguments are optional:
+     * @return builder
+     */
+    def permissionsConfig(args: Endofunction[com.pulumi.aws.lambda.inputs.CapacityProviderPermissionsConfigArgs.Builder]):
+        com.pulumi.aws.lambda.inputs.CapacityProviderState.Builder =
+      val argsBuilder = com.pulumi.aws.lambda.inputs.CapacityProviderPermissionsConfigArgs.builder
+      builder.permissionsConfig(args(argsBuilder).build)
+
+    def timeouts(args: Endofunction[com.pulumi.aws.lambda.inputs.CapacityProviderTimeoutsArgs.Builder]):
+        com.pulumi.aws.lambda.inputs.CapacityProviderState.Builder =
+      val argsBuilder = com.pulumi.aws.lambda.inputs.CapacityProviderTimeoutsArgs.builder
+      builder.timeouts(args(argsBuilder).build)
+
+    /**
+     * @param vpcConfig Configuration block for VPC settings. See VPC Config below.
+     * @return builder
+     */
+    def vpcConfig(args: Endofunction[com.pulumi.aws.lambda.inputs.CapacityProviderVpcConfigArgs.Builder]):
+        com.pulumi.aws.lambda.inputs.CapacityProviderState.Builder =
+      val argsBuilder = com.pulumi.aws.lambda.inputs.CapacityProviderVpcConfigArgs.builder
+      builder.vpcConfig(args(argsBuilder).build)
+
   extension (builder: com.pulumi.aws.lambda.inputs.FunctionEventInvokeConfigState.Builder)
     /**
      * @param destinationConfig Configuration block with destination configuration. See below.
@@ -637,6 +771,15 @@ object lambda:
 
   extension (builder: com.pulumi.aws.lambda.inputs.FunctionState.Builder)
     /**
+     * @param capacityProviderConfig Configuration block for Lambda Capacity Provider. See below.
+     * @return builder
+     */
+    def capacityProviderConfig(args: Endofunction[com.pulumi.aws.lambda.inputs.FunctionCapacityProviderConfigArgs.Builder]):
+        com.pulumi.aws.lambda.inputs.FunctionState.Builder =
+      val argsBuilder = com.pulumi.aws.lambda.inputs.FunctionCapacityProviderConfigArgs.builder
+      builder.capacityProviderConfig(args(argsBuilder).build)
+
+    /**
      * @param deadLetterConfig Configuration block for dead letter queue. See below.
      * @return builder
      */
@@ -644,6 +787,15 @@ object lambda:
         com.pulumi.aws.lambda.inputs.FunctionState.Builder =
       val argsBuilder = com.pulumi.aws.lambda.inputs.FunctionDeadLetterConfigArgs.builder
       builder.deadLetterConfig(args(argsBuilder).build)
+
+    /**
+     * @param durableConfig Configuration block for durable function settings. See below. `durableConfig` may only be available in [limited regions](https://builder.aws.com/build/capabilities), including `us-east-2`.
+     * @return builder
+     */
+    def durableConfig(args: Endofunction[com.pulumi.aws.lambda.inputs.FunctionDurableConfigArgs.Builder]):
+        com.pulumi.aws.lambda.inputs.FunctionState.Builder =
+      val argsBuilder = com.pulumi.aws.lambda.inputs.FunctionDurableConfigArgs.builder
+      builder.durableConfig(args(argsBuilder).build)
 
     /**
      * @param environment Configuration block for environment variables. See below.
@@ -700,6 +852,15 @@ object lambda:
       builder.snapStart(args(argsBuilder).build)
 
     /**
+     * @param tenancyConfig Configuration block for Tenancy. See below.
+     * @return builder
+     */
+    def tenancyConfig(args: Endofunction[com.pulumi.aws.lambda.inputs.FunctionTenancyConfigArgs.Builder]):
+        com.pulumi.aws.lambda.inputs.FunctionState.Builder =
+      val argsBuilder = com.pulumi.aws.lambda.inputs.FunctionTenancyConfigArgs.builder
+      builder.tenancyConfig(args(argsBuilder).build)
+
+    /**
      * @param tracingConfig Configuration block for X-Ray tracing. See below.
      * @return builder
      */
@@ -727,6 +888,16 @@ object lambda:
       val argsBuilder = com.pulumi.aws.lambda.inputs.EventSourceMappingDestinationConfigOnFailureArgs.builder
       builder.onFailure(args(argsBuilder).build)
 
+  extension (builder: com.pulumi.aws.lambda.inputs.FunctionCapacityProviderConfigArgs.Builder)
+    /**
+     * @param lambdaManagedInstancesCapacityProviderConfig Configuration block for Lambda Managed Instances Capacity Provider. See below.
+     * @return builder
+     */
+    def lambdaManagedInstancesCapacityProviderConfig(args: Endofunction[com.pulumi.aws.lambda.inputs.FunctionCapacityProviderConfigLambdaManagedInstancesCapacityProviderConfigArgs.Builder]):
+        com.pulumi.aws.lambda.inputs.FunctionCapacityProviderConfigArgs.Builder =
+      val argsBuilder = com.pulumi.aws.lambda.inputs.FunctionCapacityProviderConfigLambdaManagedInstancesCapacityProviderConfigArgs.builder
+      builder.lambdaManagedInstancesCapacityProviderConfig(args(argsBuilder).build)
+
   extension (builder: com.pulumi.aws.lambda.inputs.EventSourceMappingAmazonManagedKafkaEventSourceConfigArgs.Builder)
     /**
      * @param schemaRegistryConfig Block for a Kafka schema registry setting. See below.
@@ -736,6 +907,16 @@ object lambda:
         com.pulumi.aws.lambda.inputs.EventSourceMappingAmazonManagedKafkaEventSourceConfigArgs.Builder =
       val argsBuilder = com.pulumi.aws.lambda.inputs.EventSourceMappingAmazonManagedKafkaEventSourceConfigSchemaRegistryConfigArgs.builder
       builder.schemaRegistryConfig(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.lambda.inputs.CapacityProviderCapacityProviderScalingConfigArgs.Builder)
+    /**
+     * @param scalingPolicies List of scaling policies. Only required if `scalingMode` is set to `&#34;Manual&#34;`. See Scaling Policies below.
+     * @return builder
+     */
+    def scalingPolicies(args: Endofunction[com.pulumi.aws.lambda.inputs.CapacityProviderCapacityProviderScalingConfigScalingPolicyArgs.Builder]*):
+        com.pulumi.aws.lambda.inputs.CapacityProviderCapacityProviderScalingConfigArgs.Builder =
+      def argsBuilder = com.pulumi.aws.lambda.inputs.CapacityProviderCapacityProviderScalingConfigScalingPolicyArgs.builder
+      builder.scalingPolicies(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.aws.lambda.inputs.CodeSigningConfigState.Builder)
     /**

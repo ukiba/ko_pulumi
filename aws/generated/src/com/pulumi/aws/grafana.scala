@@ -35,7 +35,10 @@ object grafana:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /**
-   * 
+   * &gt; **Note:** You cannot update a service account token. If you change any attribute, Terraform
+   *  will delete the current and create a new one.
+   *  
+   *  Read about Service Accounts Tokens in the [Amazon Managed Grafana user guide](https://docs.aws.amazon.com/grafana/latest/userguide/service-accounts.html#service-account-tokens).
    */
   def WorkspaceServiceAccountToken(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.grafana.WorkspaceServiceAccountTokenArgs.Builder])(using conf: KoPulumiConf) =
@@ -49,7 +52,10 @@ object grafana:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /**
-   * 
+   * &gt; **Note:** You cannot update a service account. If you change any attribute, Terraform
+   *  will delete the current and create a new one.
+   *  
+   *  Read about Service Accounts in the [Amazon Managed Grafana user guide](https://docs.aws.amazon.com/grafana/latest/userguide/service-accounts.html).
    */
   def WorkspaceServiceAccount(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.grafana.WorkspaceServiceAccountArgs.Builder])(using conf: KoPulumiConf) =

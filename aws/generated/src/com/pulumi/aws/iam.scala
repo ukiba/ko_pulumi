@@ -224,13 +224,11 @@ object iam:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /**
-   * ## Import
+   * Resource for maintaining exclusive management of managed IAM policies assigned to an AWS IAM (Identity &amp; Access Management) group.
    *  
-   *  Using `pulumi import`, import exclusive management of managed IAM policy assignments using the `group_name`. For example:
+   *  !&gt; This resource takes exclusive ownership over managed IAM policies attached to a group. This includes removal of managed IAM policies which are not explicitly configured. To prevent persistent drift, ensure any `aws.iam.GroupPolicyAttachment` resources managed alongside this resource are included in the `policyArns` argument.
    *  
-   *  ```sh
-   *  $ pulumi import aws:iam/groupPolicyAttachmentsExclusive:GroupPolicyAttachmentsExclusive example MyGroup
-   *  ```
+   *  &gt; Destruction of this resource means Terraform will no longer manage reconciliation of the configured policy attachments. It **will not** detach the configured policies from the group.
    */
   def GroupPolicyAttachmentsExclusive(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.iam.GroupPolicyAttachmentsExclusiveArgs.Builder]) =
@@ -285,13 +283,11 @@ object iam:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /**
-   * ## Import
+   * Resource for maintaining exclusive management of inline policies assigned to an AWS IAM (Identity &amp; Access Management) user.
    *  
-   *  Using `pulumi import`, import exclusive management of inline policy assignments using the `user_name`. For example:
+   *  !&gt; This resource takes exclusive ownership over inline policies assigned to a user. This includes removal of inline policies which are not explicitly configured. To prevent persistent drift, ensure any `aws.iam.UserPolicy` resources managed alongside this resource are included in the `policyNames` argument.
    *  
-   *  ```sh
-   *  $ pulumi import aws:iam/userPoliciesExclusive:UserPoliciesExclusive example MyUser
-   *  ```
+   *  &gt; Destruction of this resource means Terraform will no longer manage reconciliation of the configured inline policy assignments. It __will not__ delete the configured policies from the user.
    */
   def UserPoliciesExclusive(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.iam.UserPoliciesExclusiveArgs.Builder]) =
@@ -382,13 +378,11 @@ object iam:
       builder.inlinePolicies(args.map(_(argsBuilder).build)*)
 
   /**
-   * ## Import
+   * Resource for maintaining exclusive management of managed IAM policies assigned to an AWS IAM (Identity &amp; Access Management) user.
    *  
-   *  Using `pulumi import`, import exclusive management of managed IAM policy assignments using the `user_name`. For example:
+   *  !&gt; This resource takes exclusive ownership over managed IAM policies attached to a user. This includes removal of managed IAM policies which are not explicitly configured. To prevent persistent drift, ensure any `aws.iam.UserPolicyAttachment` resources managed alongside this resource are included in the `policyArns` argument.
    *  
-   *  ```sh
-   *  $ pulumi import aws:iam/userPolicyAttachmentsExclusive:UserPolicyAttachmentsExclusive example MyUser
-   *  ```
+   *  &gt; Destruction of this resource means Terraform will no longer manage reconciliation of the configured policy attachments. It **will not** detach the configured policies from the user.
    */
   def UserPolicyAttachmentsExclusive(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.iam.UserPolicyAttachmentsExclusiveArgs.Builder]) =
@@ -412,13 +406,11 @@ object iam:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /**
-   * ## Import
+   * Resource for maintaining exclusive management of inline policies assigned to an AWS IAM (Identity &amp; Access Management) group.
    *  
-   *  Using `pulumi import`, import exclusive management of inline policy assignments using the `group_name`. For example:
+   *  !&gt; This resource takes exclusive ownership over inline policies assigned to a group. This includes removal of inline policies which are not explicitly configured. To prevent persistent drift, ensure any `aws.iam.GroupPolicy` resources managed alongside this resource are included in the `policyNames` argument.
    *  
-   *  ```sh
-   *  $ pulumi import aws:iam/groupPoliciesExclusive:GroupPoliciesExclusive example MyGroup
-   *  ```
+   *  &gt; Destruction of this resource means Terraform will no longer manage reconciliation of the configured inline policy assignments. It __will not__ delete the configured policies from the group.
    */
   def GroupPoliciesExclusive(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.iam.GroupPoliciesExclusiveArgs.Builder]) =
@@ -1005,6 +997,19 @@ object iam:
         com.pulumi.aws.iam.inputs.GroupPolicyState.Builder =
       val argsBuilder = com.pulumi.aws.iam.inputs.PolicyDocumentArgs.builder
       builder.policy(args(argsBuilder).build)
+
+  /**
+   * Manages an AWS IAM (Identity &amp; Access Management) Outbound Web Identity Federation.
+   *  
+   *  &gt; **NOTE:** Creating this Terraform resource enables IAM Outbound Web Identity Federation and deleting this Terraform resource disables IAM Outbound Web Identity Federation.
+   */
+  def OutboundWebIdentityFederation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.iam.OutboundWebIdentityFederationArgs.Builder]) =
+    val argsBuilder = com.pulumi.aws.iam.OutboundWebIdentityFederationArgs.builder
+    
+    com.pulumi.aws.iam.OutboundWebIdentityFederation(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder).build)
 
   /**
    * Provides an IAM policy attached to a group.

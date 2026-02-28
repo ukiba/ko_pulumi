@@ -125,7 +125,9 @@ object transfer:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /**
-   * 
+   * Provides a AWS Transfer User resource. Managing SSH keys can be accomplished with the `aws.transfer.SshKey` resource.
+   *  
+   *  &gt; **NOTE:** We suggest using `jsonencode()` or `aws.iam.getPolicyDocument` when assigning a value to `policy`. They seamlessly translate Terraform language into JSON, enabling you to maintain consistency within your configuration without the need for context switches. Also, you can sidestep potential complications arising from formatting discrepancies, whitespace inconsistencies, and other nuances inherent to JSON.
    */
   def User(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.transfer.UserArgs.Builder])(using conf: KoPulumiConf) =
@@ -265,6 +267,15 @@ object transfer:
       builder.as2Config(args(argsBuilder).build)
 
     /**
+     * @param egressConfig Specifies the egress configuration for the connector. When set, enables routing through customer VPCs using VPC Lattice for private connectivity. Fields documented below.
+     * @return builder
+     */
+    def egressConfig(args: Endofunction[com.pulumi.aws.transfer.inputs.ConnectorEgressConfigArgs.Builder]):
+        com.pulumi.aws.transfer.ConnectorArgs.Builder =
+      val argsBuilder = com.pulumi.aws.transfer.inputs.ConnectorEgressConfigArgs.builder
+      builder.egressConfig(args(argsBuilder).build)
+
+    /**
      * @param sftpConfig Either SFTP or AS2 is configured.The parameters to configure for the connector object. Fields documented below.
      * @return builder
      */
@@ -305,6 +316,15 @@ object transfer:
         resourceOptions(CustomResourceOptions.builder).build)
 
   extension (builder: com.pulumi.aws.transfer.WebAppArgs.Builder)
+    /**
+     * @param endpointDetails Block for the endpoint configuration for the web app. If not specified, the web app will be created with a public endpoint.
+     * @return builder
+     */
+    def endpointDetails(args: Endofunction[com.pulumi.aws.transfer.inputs.WebAppEndpointDetailsArgs.Builder]):
+        com.pulumi.aws.transfer.WebAppArgs.Builder =
+      val argsBuilder = com.pulumi.aws.transfer.inputs.WebAppEndpointDetailsArgs.builder
+      builder.endpointDetails(args(argsBuilder).build)
+
     /**
      * @param identityProviderDetails Block for details of the identity provider to use with the web app. See Identity provider details below.
      *  
@@ -466,6 +486,15 @@ object transfer:
 
   extension (builder: com.pulumi.aws.transfer.inputs.WebAppState.Builder)
     /**
+     * @param endpointDetails Block for the endpoint configuration for the web app. If not specified, the web app will be created with a public endpoint.
+     * @return builder
+     */
+    def endpointDetails(args: Endofunction[com.pulumi.aws.transfer.inputs.WebAppEndpointDetailsArgs.Builder]):
+        com.pulumi.aws.transfer.inputs.WebAppState.Builder =
+      val argsBuilder = com.pulumi.aws.transfer.inputs.WebAppEndpointDetailsArgs.builder
+      builder.endpointDetails(args(argsBuilder).build)
+
+    /**
      * @param identityProviderDetails Block for details of the identity provider to use with the web app. See Identity provider details below.
      *  
      *  The following arguments are optional:
@@ -485,6 +514,26 @@ object transfer:
         com.pulumi.aws.transfer.inputs.WebAppState.Builder =
       def argsBuilder = com.pulumi.aws.transfer.inputs.WebAppWebAppUnitArgs.builder
       builder.webAppUnits(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.aws.transfer.inputs.ConnectorEgressConfigArgs.Builder)
+    /**
+     * @param vpcLattice VPC Lattice configuration for routing connector traffic through customer VPCs. Fields documented below.
+     * @return builder
+     */
+    def vpcLattice(args: Endofunction[com.pulumi.aws.transfer.inputs.ConnectorEgressConfigVpcLatticeArgs.Builder]):
+        com.pulumi.aws.transfer.inputs.ConnectorEgressConfigArgs.Builder =
+      val argsBuilder = com.pulumi.aws.transfer.inputs.ConnectorEgressConfigVpcLatticeArgs.builder
+      builder.vpcLattice(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.transfer.inputs.WebAppEndpointDetailsArgs.Builder)
+    /**
+     * @param vpc Block defining VPC configuration for hosting the web app endpoint within a VPC. See Vpc below.
+     * @return builder
+     */
+    def vpc(args: Endofunction[com.pulumi.aws.transfer.inputs.WebAppEndpointDetailsVpcArgs.Builder]):
+        com.pulumi.aws.transfer.inputs.WebAppEndpointDetailsArgs.Builder =
+      val argsBuilder = com.pulumi.aws.transfer.inputs.WebAppEndpointDetailsVpcArgs.builder
+      builder.vpc(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.transfer.inputs.ServerState.Builder)
     /**
@@ -674,6 +723,15 @@ object transfer:
         com.pulumi.aws.transfer.inputs.ConnectorState.Builder =
       val argsBuilder = com.pulumi.aws.transfer.inputs.ConnectorAs2ConfigArgs.builder
       builder.as2Config(args(argsBuilder).build)
+
+    /**
+     * @param egressConfig Specifies the egress configuration for the connector. When set, enables routing through customer VPCs using VPC Lattice for private connectivity. Fields documented below.
+     * @return builder
+     */
+    def egressConfig(args: Endofunction[com.pulumi.aws.transfer.inputs.ConnectorEgressConfigArgs.Builder]):
+        com.pulumi.aws.transfer.inputs.ConnectorState.Builder =
+      val argsBuilder = com.pulumi.aws.transfer.inputs.ConnectorEgressConfigArgs.builder
+      builder.egressConfig(args(argsBuilder).build)
 
     /**
      * @param sftpConfig Either SFTP or AS2 is configured.The parameters to configure for the connector object. Fields documented below.

@@ -81,6 +81,22 @@ object vpclattice:
       val argsBuilder = com.pulumi.aws.vpclattice.inputs.GetServiceNetworkPlainArgs.builder
       com.pulumi.aws.vpclattice.VpclatticeFunctions.getServiceNetworkPlain(args(argsBuilder).build)
 
+  /**
+   * Resource for managing an AWS VPC Lattice Domain Verification.
+   *  
+   *  Starts the domain verification process for a custom domain name. Use this resource to verify ownership of a domain before associating it with VPC Lattice resources.
+   */
+  def DomainVerification(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.vpclattice.DomainVerificationArgs.Builder])(using conf: KoPulumiConf) =
+    var argsBuilder = com.pulumi.aws.vpclattice.DomainVerificationArgs.builder
+    conf.logicalName2tagName(name) match
+      case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
+      case None          =>
+    
+    com.pulumi.aws.vpclattice.DomainVerification(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder).build)
+
   /** Resource for managing an AWS VPC Lattice Resource Configuration. */
   def ResourceConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.vpclattice.ResourceConfigurationArgs.Builder])(using conf: KoPulumiConf) =
@@ -214,6 +230,16 @@ object vpclattice:
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
+  extension (builder: com.pulumi.aws.vpclattice.ServiceNetworkVpcAssociationArgs.Builder)
+    /**
+     * @param dnsOptions Configuration block for DNS option. See `dnsOptions` block below for details.
+     * @return builder
+     */
+    def dnsOptions(args: Endofunction[com.pulumi.aws.vpclattice.inputs.ServiceNetworkVpcAssociationDnsOptionsArgs.Builder]):
+        com.pulumi.aws.vpclattice.ServiceNetworkVpcAssociationArgs.Builder =
+      val argsBuilder = com.pulumi.aws.vpclattice.inputs.ServiceNetworkVpcAssociationDnsOptionsArgs.builder
+      builder.dnsOptions(args(argsBuilder).build)
+
   /** Resource for managing an AWS VPC Lattice Service Network VPC Association. */
   def ServiceNetworkVpcAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.vpclattice.ServiceNetworkVpcAssociationArgs.Builder])(using conf: KoPulumiConf) =
@@ -330,6 +356,16 @@ object vpclattice:
         com.pulumi.aws.vpclattice.inputs.ServiceNetworkResourceAssociationState.Builder =
       val argsBuilder = com.pulumi.aws.vpclattice.inputs.ServiceNetworkResourceAssociationTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.vpclattice.inputs.ServiceNetworkVpcAssociationState.Builder)
+    /**
+     * @param dnsOptions Configuration block for DNS option. See `dnsOptions` block below for details.
+     * @return builder
+     */
+    def dnsOptions(args: Endofunction[com.pulumi.aws.vpclattice.inputs.ServiceNetworkVpcAssociationDnsOptionsArgs.Builder]):
+        com.pulumi.aws.vpclattice.inputs.ServiceNetworkVpcAssociationState.Builder =
+      val argsBuilder = com.pulumi.aws.vpclattice.inputs.ServiceNetworkVpcAssociationDnsOptionsArgs.builder
+      builder.dnsOptions(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.vpclattice.inputs.ListenerState.Builder)
     /**

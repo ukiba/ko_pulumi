@@ -173,6 +173,15 @@ object kinesisanalyticsv2:
       builder.applicationCodeConfiguration(args(argsBuilder).build)
 
     /**
+     * @param applicationEncryptionConfiguration The encryption configuration for the application. This can be used to encrypt data at rest in the application.
+     * @return builder
+     */
+    def applicationEncryptionConfiguration(args: Endofunction[com.pulumi.aws.kinesisanalyticsv2.inputs.ApplicationApplicationConfigurationApplicationEncryptionConfigurationArgs.Builder]):
+        com.pulumi.aws.kinesisanalyticsv2.inputs.ApplicationApplicationConfigurationArgs.Builder =
+      val argsBuilder = com.pulumi.aws.kinesisanalyticsv2.inputs.ApplicationApplicationConfigurationApplicationEncryptionConfigurationArgs.builder
+      builder.applicationEncryptionConfiguration(args(argsBuilder).build)
+
+    /**
      * @param applicationSnapshotConfiguration Describes whether snapshots are enabled for a Flink-based application.
      * @return builder
      */

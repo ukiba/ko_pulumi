@@ -270,7 +270,7 @@ object kms:
 
   extension (builder: com.pulumi.aws.kms.inputs.GrantState.Builder)
     /**
-     * @param constraints A structure that you can use to allow certain operations in the grant only when the desired encryption context is present. For more information about encryption context, see [Encryption Context](http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html).
+     * @param constraints A structure that you can use to allow certain operations in the grant only when the desired encryption context is present. For more information about encryption context, see [Encryption Context](https://docs.aws.amazon.com/kms/latest/developerguide/encrypt_context.html).
      * @return builder
      */
     def constraints(args: Endofunction[com.pulumi.aws.kms.inputs.GrantConstraintArgs.Builder]*):
@@ -302,7 +302,7 @@ object kms:
 
   extension (builder: com.pulumi.aws.kms.GrantArgs.Builder)
     /**
-     * @param constraints A structure that you can use to allow certain operations in the grant only when the desired encryption context is present. For more information about encryption context, see [Encryption Context](http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html).
+     * @param constraints A structure that you can use to allow certain operations in the grant only when the desired encryption context is present. For more information about encryption context, see [Encryption Context](https://docs.aws.amazon.com/kms/latest/developerguide/encrypt_context.html).
      * @return builder
      */
     def constraints(args: Endofunction[com.pulumi.aws.kms.inputs.GrantConstraintArgs.Builder]*):

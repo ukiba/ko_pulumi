@@ -41,6 +41,15 @@ object imagebuilder:
       builder.imageTestsConfiguration(args(argsBuilder).build)
 
     /**
+     * @param loggingConfiguration Configuration block with logging configuration. Detailed below.
+     * @return builder
+     */
+    def loggingConfiguration(args: Endofunction[com.pulumi.aws.imagebuilder.inputs.ImageLoggingConfigurationArgs.Builder]):
+        com.pulumi.aws.imagebuilder.ImageArgs.Builder =
+      val argsBuilder = com.pulumi.aws.imagebuilder.inputs.ImageLoggingConfigurationArgs.builder
+      builder.loggingConfiguration(args(argsBuilder).build)
+
+    /**
      * @param workflows Configuration block with the workflow configuration. Detailed below.
      * @return builder
      */
@@ -77,6 +86,16 @@ object imagebuilder:
    * Manages an Image Builder Image Pipeline.
    *  
    *  &gt; **NOTE:** Starting with version `5.74.0`, lifecycle meta-argument `replaceTriggeredBy` must be used in order to prevent a dependency error on destroy.
+   *  
+   *  #### Required
+   *  
+   *  - `arn` (String) Amazon Resource Name (ARN) of the Image Builder image pipeline.
+   *  
+   *  Using `pulumi import`, import `aws.imagebuilder.ImagePipeline` resources using the Amazon Resource Name (ARN). For example:
+   *  
+   *  ```sh
+   *  $ pulumi import aws:imagebuilder/imagePipeline:ImagePipeline example arn:aws:imagebuilder:us-east-1:123456789012:image-pipeline/example
+   *  ```
    */
   def ImagePipeline(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.imagebuilder.ImagePipelineArgs.Builder])(using conf: KoPulumiConf) =
@@ -408,6 +427,15 @@ object imagebuilder:
       builder.imageTestsConfiguration(args(argsBuilder).build)
 
     /**
+     * @param loggingConfiguration Configuration block with logging configuration. Detailed below.
+     * @return builder
+     */
+    def loggingConfiguration(args: Endofunction[com.pulumi.aws.imagebuilder.inputs.ImagePipelineLoggingConfigurationArgs.Builder]):
+        com.pulumi.aws.imagebuilder.ImagePipelineArgs.Builder =
+      val argsBuilder = com.pulumi.aws.imagebuilder.inputs.ImagePipelineLoggingConfigurationArgs.builder
+      builder.loggingConfiguration(args(argsBuilder).build)
+
+    /**
      * @param schedule Configuration block with schedule settings. Detailed below.
      * @return builder
      */
@@ -545,6 +573,15 @@ object imagebuilder:
         com.pulumi.aws.imagebuilder.inputs.ImageState.Builder =
       val argsBuilder = com.pulumi.aws.imagebuilder.inputs.ImageImageTestsConfigurationArgs.builder
       builder.imageTestsConfiguration(args(argsBuilder).build)
+
+    /**
+     * @param loggingConfiguration Configuration block with logging configuration. Detailed below.
+     * @return builder
+     */
+    def loggingConfiguration(args: Endofunction[com.pulumi.aws.imagebuilder.inputs.ImageLoggingConfigurationArgs.Builder]):
+        com.pulumi.aws.imagebuilder.inputs.ImageState.Builder =
+      val argsBuilder = com.pulumi.aws.imagebuilder.inputs.ImageLoggingConfigurationArgs.builder
+      builder.loggingConfiguration(args(argsBuilder).build)
 
     /**
      * @param outputResources List of objects with resources created by the image.
@@ -779,6 +816,15 @@ object imagebuilder:
         com.pulumi.aws.imagebuilder.inputs.ImagePipelineState.Builder =
       val argsBuilder = com.pulumi.aws.imagebuilder.inputs.ImagePipelineImageTestsConfigurationArgs.builder
       builder.imageTestsConfiguration(args(argsBuilder).build)
+
+    /**
+     * @param loggingConfiguration Configuration block with logging configuration. Detailed below.
+     * @return builder
+     */
+    def loggingConfiguration(args: Endofunction[com.pulumi.aws.imagebuilder.inputs.ImagePipelineLoggingConfigurationArgs.Builder]):
+        com.pulumi.aws.imagebuilder.inputs.ImagePipelineState.Builder =
+      val argsBuilder = com.pulumi.aws.imagebuilder.inputs.ImagePipelineLoggingConfigurationArgs.builder
+      builder.loggingConfiguration(args(argsBuilder).build)
 
     /**
      * @param schedule Configuration block with schedule settings. Detailed below.

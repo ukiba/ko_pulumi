@@ -86,14 +86,13 @@ object amp:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /**
-   * ## Import
+   * &gt; **Note:** If you change a Scraper&#39;s source (EKS cluster), Terraform
+   *  will delete the current Scraper and create a new one.
    *  
-   *  Using `pulumi import`, import the Managed Scraper using its identifier.
-   *  For example:
+   *  Provides an Amazon Managed Service for Prometheus fully managed collector
+   *  (scraper).
    *  
-   *  ```sh
-   *  $ pulumi import aws:amp/scraper:Scraper example s-0123abc-0000-0123-a000-000000000000
-   *  ```
+   *  Read more in the [Amazon Managed Service for Prometheus user guide](https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-collector.html).
    */
   def Scraper(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.amp.ScraperArgs.Builder])(using conf: KoPulumiConf) =

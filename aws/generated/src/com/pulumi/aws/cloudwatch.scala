@@ -841,6 +841,16 @@ object cloudwatch:
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
+  extension (builder: com.pulumi.aws.cloudwatch.LogTransformerArgs.Builder)
+    /**
+     * @param transformerConfigs Specifies the configuration of the transformer. You must include at least one configuration, and 20 at most. See `transformerConfig` below for details.
+     * @return builder
+     */
+    def transformerConfigs(args: Endofunction[com.pulumi.aws.cloudwatch.inputs.LogTransformerTransformerConfigArgs.Builder]*):
+        com.pulumi.aws.cloudwatch.LogTransformerArgs.Builder =
+      def argsBuilder = com.pulumi.aws.cloudwatch.inputs.LogTransformerTransformerConfigArgs.builder
+      builder.transformerConfigs(args.map(_(argsBuilder).build)*)
+
   extension (builder: com.pulumi.aws.cloudwatch.EventPermissionArgs.Builder)
     /**
      * @param condition Configuration block to limit the event bus permissions you are granting to only accounts that fulfill the condition. Specified below.
@@ -850,6 +860,15 @@ object cloudwatch:
         com.pulumi.aws.cloudwatch.EventPermissionArgs.Builder =
       val argsBuilder = com.pulumi.aws.cloudwatch.inputs.EventPermissionConditionArgs.builder
       builder.condition(args(argsBuilder).build)
+
+  /** Resource for managing an AWS CloudWatch Logs Transformer. */
+  def LogTransformer(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.cloudwatch.LogTransformerArgs.Builder]) =
+    val argsBuilder = com.pulumi.aws.cloudwatch.LogTransformerArgs.builder
+    
+    com.pulumi.aws.cloudwatch.LogTransformer(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder).build)
 
   /** Resource for managing an AWS CloudWatch Contributor Managed Insight Rule. */
   def ContributorManagedInsightRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
@@ -901,6 +920,16 @@ object cloudwatch:
       val argsBuilder = com.pulumi.aws.cloudwatch.inputs.LogMetricFilterMetricTransformationArgs.builder
       builder.metricTransformation(args(argsBuilder).build)
 
+  extension (builder: com.pulumi.aws.cloudwatch.inputs.LogTransformerTransformerConfigSubstituteStringArgs.Builder)
+    /**
+     * @param entries Objects containing the information about the fields to substitute. You must include at least one entry, and ten at most. See `substituteString` `entry` below for details.
+     * @return builder
+     */
+    def entries(args: Endofunction[com.pulumi.aws.cloudwatch.inputs.LogTransformerTransformerConfigSubstituteStringEntryArgs.Builder]*):
+        com.pulumi.aws.cloudwatch.inputs.LogTransformerTransformerConfigSubstituteStringArgs.Builder =
+      def argsBuilder = com.pulumi.aws.cloudwatch.inputs.LogTransformerTransformerConfigSubstituteStringEntryArgs.builder
+      builder.entries(args.map(_(argsBuilder).build)*)
+
   extension (builder: com.pulumi.aws.cloudwatch.inputs.EventPermissionState.Builder)
     /**
      * @param condition Configuration block to limit the event bus permissions you are granting to only accounts that fulfill the condition. Specified below.
@@ -920,6 +949,214 @@ object cloudwatch:
         com.pulumi.aws.cloudwatch.inputs.GetLogDataProtectionPolicyDocumentStatementOperationDeidentifyArgs.Builder =
       val argsBuilder = com.pulumi.aws.cloudwatch.inputs.GetLogDataProtectionPolicyDocumentStatementOperationDeidentifyMaskConfigArgs.builder
       builder.maskConfig(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.cloudwatch.inputs.LogTransformerTransformerConfigArgs.Builder)
+    /**
+     * @param addKeys Adds new key-value pairs to the log event. See `addKeys` below for details.
+     * @return builder
+     */
+    def addKeys(args: Endofunction[com.pulumi.aws.cloudwatch.inputs.LogTransformerTransformerConfigAddKeysArgs.Builder]):
+        com.pulumi.aws.cloudwatch.inputs.LogTransformerTransformerConfigArgs.Builder =
+      val argsBuilder = com.pulumi.aws.cloudwatch.inputs.LogTransformerTransformerConfigAddKeysArgs.builder
+      builder.addKeys(args(argsBuilder).build)
+
+    /**
+     * @param copyValue Copies values within a log event. See `copyValue` below for details.
+     * @return builder
+     */
+    def copyValue(args: Endofunction[com.pulumi.aws.cloudwatch.inputs.LogTransformerTransformerConfigCopyValueArgs.Builder]):
+        com.pulumi.aws.cloudwatch.inputs.LogTransformerTransformerConfigArgs.Builder =
+      val argsBuilder = com.pulumi.aws.cloudwatch.inputs.LogTransformerTransformerConfigCopyValueArgs.builder
+      builder.copyValue(args(argsBuilder).build)
+
+    /**
+     * @param csvs Parses comma-separated values (CSV) from the log events into columns. See `csv` below for details.
+     * @return builder
+     */
+    def csvs(args: Endofunction[com.pulumi.aws.cloudwatch.inputs.LogTransformerTransformerConfigCsvArgs.Builder]*):
+        com.pulumi.aws.cloudwatch.inputs.LogTransformerTransformerConfigArgs.Builder =
+      def argsBuilder = com.pulumi.aws.cloudwatch.inputs.LogTransformerTransformerConfigCsvArgs.builder
+      builder.csvs(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param dateTimeConverters Converts a datetime string into a format that you specify. See `dateTimeConverter` below for details.
+     * @return builder
+     */
+    def dateTimeConverters(args: Endofunction[com.pulumi.aws.cloudwatch.inputs.LogTransformerTransformerConfigDateTimeConverterArgs.Builder]*):
+        com.pulumi.aws.cloudwatch.inputs.LogTransformerTransformerConfigArgs.Builder =
+      def argsBuilder = com.pulumi.aws.cloudwatch.inputs.LogTransformerTransformerConfigDateTimeConverterArgs.builder
+      builder.dateTimeConverters(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param deleteKeys Deletes entry from a log event. See `deleteKeys` below for details.
+     * @return builder
+     */
+    def deleteKeys(args: Endofunction[com.pulumi.aws.cloudwatch.inputs.LogTransformerTransformerConfigDeleteKeyArgs.Builder]*):
+        com.pulumi.aws.cloudwatch.inputs.LogTransformerTransformerConfigArgs.Builder =
+      def argsBuilder = com.pulumi.aws.cloudwatch.inputs.LogTransformerTransformerConfigDeleteKeyArgs.builder
+      builder.deleteKeys(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param grok Parses and structures unstructured data by using pattern matching. See `grok` below for details.
+     * @return builder
+     */
+    def grok(args: Endofunction[com.pulumi.aws.cloudwatch.inputs.LogTransformerTransformerConfigGrokArgs.Builder]):
+        com.pulumi.aws.cloudwatch.inputs.LogTransformerTransformerConfigArgs.Builder =
+      val argsBuilder = com.pulumi.aws.cloudwatch.inputs.LogTransformerTransformerConfigGrokArgs.builder
+      builder.grok(args(argsBuilder).build)
+
+    /**
+     * @param listToMaps Converts list of objects that contain key fields into a map of target keys. See `listToMap` below for details.
+     * @return builder
+     */
+    def listToMaps(args: Endofunction[com.pulumi.aws.cloudwatch.inputs.LogTransformerTransformerConfigListToMapArgs.Builder]*):
+        com.pulumi.aws.cloudwatch.inputs.LogTransformerTransformerConfigArgs.Builder =
+      def argsBuilder = com.pulumi.aws.cloudwatch.inputs.LogTransformerTransformerConfigListToMapArgs.builder
+      builder.listToMaps(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param lowerCaseStrings Converts a string to lowercase. See `lowerCaseString` below for details.
+     * @return builder
+     */
+    def lowerCaseStrings(args: Endofunction[com.pulumi.aws.cloudwatch.inputs.LogTransformerTransformerConfigLowerCaseStringArgs.Builder]*):
+        com.pulumi.aws.cloudwatch.inputs.LogTransformerTransformerConfigArgs.Builder =
+      def argsBuilder = com.pulumi.aws.cloudwatch.inputs.LogTransformerTransformerConfigLowerCaseStringArgs.builder
+      builder.lowerCaseStrings(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param moveKeys Moves a key from one field to another. See `moveKeys` below for details.
+     * @return builder
+     */
+    def moveKeys(args: Endofunction[com.pulumi.aws.cloudwatch.inputs.LogTransformerTransformerConfigMoveKeyArgs.Builder]*):
+        com.pulumi.aws.cloudwatch.inputs.LogTransformerTransformerConfigArgs.Builder =
+      def argsBuilder = com.pulumi.aws.cloudwatch.inputs.LogTransformerTransformerConfigMoveKeyArgs.builder
+      builder.moveKeys(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param parseCloudfront Parses CloudFront vended logs, extracts fields, and converts them into JSON format. See `parseCloudfront` below for details.
+     * @return builder
+     */
+    def parseCloudfront(args: Endofunction[com.pulumi.aws.cloudwatch.inputs.LogTransformerTransformerConfigParseCloudfrontArgs.Builder]):
+        com.pulumi.aws.cloudwatch.inputs.LogTransformerTransformerConfigArgs.Builder =
+      val argsBuilder = com.pulumi.aws.cloudwatch.inputs.LogTransformerTransformerConfigParseCloudfrontArgs.builder
+      builder.parseCloudfront(args(argsBuilder).build)
+
+    /**
+     * @param parseJsons Parses log events that are in JSON format. See `parseJson` below for details.
+     * @return builder
+     */
+    def parseJsons(args: Endofunction[com.pulumi.aws.cloudwatch.inputs.LogTransformerTransformerConfigParseJsonArgs.Builder]*):
+        com.pulumi.aws.cloudwatch.inputs.LogTransformerTransformerConfigArgs.Builder =
+      def argsBuilder = com.pulumi.aws.cloudwatch.inputs.LogTransformerTransformerConfigParseJsonArgs.builder
+      builder.parseJsons(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param parseKeyValues Parses a specified field in the original log event into key-value pairs. See `parseKeyValue` below for details.
+     * @return builder
+     */
+    def parseKeyValues(args: Endofunction[com.pulumi.aws.cloudwatch.inputs.LogTransformerTransformerConfigParseKeyValueArgs.Builder]*):
+        com.pulumi.aws.cloudwatch.inputs.LogTransformerTransformerConfigArgs.Builder =
+      def argsBuilder = com.pulumi.aws.cloudwatch.inputs.LogTransformerTransformerConfigParseKeyValueArgs.builder
+      builder.parseKeyValues(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param parsePostgres Parses RDS for PostgreSQL vended logs, extracts fields, and and convert them into a JSON format. See `parsePostgres` below for details.
+     * @return builder
+     */
+    def parsePostgres(args: Endofunction[com.pulumi.aws.cloudwatch.inputs.LogTransformerTransformerConfigParsePostgresArgs.Builder]):
+        com.pulumi.aws.cloudwatch.inputs.LogTransformerTransformerConfigArgs.Builder =
+      val argsBuilder = com.pulumi.aws.cloudwatch.inputs.LogTransformerTransformerConfigParsePostgresArgs.builder
+      builder.parsePostgres(args(argsBuilder).build)
+
+    /**
+     * @param parseRoute53 Parses Route 53 vended logs, extracts fields, and converts them into JSON format. See `parseRoute53` below for details.
+     * @return builder
+     */
+    def parseRoute53(args: Endofunction[com.pulumi.aws.cloudwatch.inputs.LogTransformerTransformerConfigParseRoute53Args.Builder]):
+        com.pulumi.aws.cloudwatch.inputs.LogTransformerTransformerConfigArgs.Builder =
+      val argsBuilder = com.pulumi.aws.cloudwatch.inputs.LogTransformerTransformerConfigParseRoute53Args.builder
+      builder.parseRoute53(args(argsBuilder).build)
+
+    /**
+     * @param parseToOcsf Parses logs events and converts them into Open Cybersecurity Schema Framework (OCSF) events. See `parseToOcsf` below for details.
+     * @return builder
+     */
+    def parseToOcsf(args: Endofunction[com.pulumi.aws.cloudwatch.inputs.LogTransformerTransformerConfigParseToOcsfArgs.Builder]):
+        com.pulumi.aws.cloudwatch.inputs.LogTransformerTransformerConfigArgs.Builder =
+      val argsBuilder = com.pulumi.aws.cloudwatch.inputs.LogTransformerTransformerConfigParseToOcsfArgs.builder
+      builder.parseToOcsf(args(argsBuilder).build)
+
+    /**
+     * @param parseVpc Parses Amazon VPC vended logs, extracts fields, and converts them into JSON format. See `parseVpc` below for details.
+     * @return builder
+     */
+    def parseVpc(args: Endofunction[com.pulumi.aws.cloudwatch.inputs.LogTransformerTransformerConfigParseVpcArgs.Builder]):
+        com.pulumi.aws.cloudwatch.inputs.LogTransformerTransformerConfigArgs.Builder =
+      val argsBuilder = com.pulumi.aws.cloudwatch.inputs.LogTransformerTransformerConfigParseVpcArgs.builder
+      builder.parseVpc(args(argsBuilder).build)
+
+    /**
+     * @param parseWaf Parses AWS WAF vended logs, extracts fields, and converts them into JSON format. See `parseWaf` below for details.
+     * @return builder
+     */
+    def parseWaf(args: Endofunction[com.pulumi.aws.cloudwatch.inputs.LogTransformerTransformerConfigParseWafArgs.Builder]):
+        com.pulumi.aws.cloudwatch.inputs.LogTransformerTransformerConfigArgs.Builder =
+      val argsBuilder = com.pulumi.aws.cloudwatch.inputs.LogTransformerTransformerConfigParseWafArgs.builder
+      builder.parseWaf(args(argsBuilder).build)
+
+    /**
+     * @param renameKeys Renames keys in a log event. See `renameKeys` below for details.
+     * @return builder
+     */
+    def renameKeys(args: Endofunction[com.pulumi.aws.cloudwatch.inputs.LogTransformerTransformerConfigRenameKeyArgs.Builder]*):
+        com.pulumi.aws.cloudwatch.inputs.LogTransformerTransformerConfigArgs.Builder =
+      def argsBuilder = com.pulumi.aws.cloudwatch.inputs.LogTransformerTransformerConfigRenameKeyArgs.builder
+      builder.renameKeys(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param splitStrings Splits a field into an array of strings using a delimiting character. See `splitString` below for details.
+     * @return builder
+     */
+    def splitStrings(args: Endofunction[com.pulumi.aws.cloudwatch.inputs.LogTransformerTransformerConfigSplitStringArgs.Builder]*):
+        com.pulumi.aws.cloudwatch.inputs.LogTransformerTransformerConfigArgs.Builder =
+      def argsBuilder = com.pulumi.aws.cloudwatch.inputs.LogTransformerTransformerConfigSplitStringArgs.builder
+      builder.splitStrings(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param substituteStrings Matches a key\u2019s value against a regular expression and replaces all matches with a replacement string. See `substituteString` below for details.
+     * @return builder
+     */
+    def substituteStrings(args: Endofunction[com.pulumi.aws.cloudwatch.inputs.LogTransformerTransformerConfigSubstituteStringArgs.Builder]*):
+        com.pulumi.aws.cloudwatch.inputs.LogTransformerTransformerConfigArgs.Builder =
+      def argsBuilder = com.pulumi.aws.cloudwatch.inputs.LogTransformerTransformerConfigSubstituteStringArgs.builder
+      builder.substituteStrings(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param trimStrings Removes leading and trailing whitespace from a string. See `trimString` below for details.
+     * @return builder
+     */
+    def trimStrings(args: Endofunction[com.pulumi.aws.cloudwatch.inputs.LogTransformerTransformerConfigTrimStringArgs.Builder]*):
+        com.pulumi.aws.cloudwatch.inputs.LogTransformerTransformerConfigArgs.Builder =
+      def argsBuilder = com.pulumi.aws.cloudwatch.inputs.LogTransformerTransformerConfigTrimStringArgs.builder
+      builder.trimStrings(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param typeConverters Converts a value type associated with the specified key to the specified type. See `typeConverter` below for details.
+     * @return builder
+     */
+    def typeConverters(args: Endofunction[com.pulumi.aws.cloudwatch.inputs.LogTransformerTransformerConfigTypeConverterArgs.Builder]*):
+        com.pulumi.aws.cloudwatch.inputs.LogTransformerTransformerConfigArgs.Builder =
+      def argsBuilder = com.pulumi.aws.cloudwatch.inputs.LogTransformerTransformerConfigTypeConverterArgs.builder
+      builder.typeConverters(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param upperCaseStrings Converts a string to uppercase. See `upperCaseString` below for details.
+     * @return builder
+     */
+    def upperCaseStrings(args: Endofunction[com.pulumi.aws.cloudwatch.inputs.LogTransformerTransformerConfigUpperCaseStringArgs.Builder]*):
+        com.pulumi.aws.cloudwatch.inputs.LogTransformerTransformerConfigArgs.Builder =
+      def argsBuilder = com.pulumi.aws.cloudwatch.inputs.LogTransformerTransformerConfigUpperCaseStringArgs.builder
+      builder.upperCaseStrings(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.aws.cloudwatch.inputs.EventTargetSagemakerPipelineTargetArgs.Builder)
     /**
@@ -1113,6 +1350,26 @@ object cloudwatch:
       def argsBuilder = com.pulumi.aws.cloudwatch.inputs.EventTargetEcsTargetPlacementConstraintArgs.builder
       builder.placementConstraints(args.map(_(argsBuilder).build)*)
 
+  extension (builder: com.pulumi.aws.cloudwatch.inputs.LogTransformerTransformerConfigAddKeysArgs.Builder)
+    /**
+     * @param entries Objects containing the information about the keys to add to the log event. You must include at least one entry, and five at most. See `addKeys` `entry` below for details.
+     * @return builder
+     */
+    def entries(args: Endofunction[com.pulumi.aws.cloudwatch.inputs.LogTransformerTransformerConfigAddKeysEntryArgs.Builder]*):
+        com.pulumi.aws.cloudwatch.inputs.LogTransformerTransformerConfigAddKeysArgs.Builder =
+      def argsBuilder = com.pulumi.aws.cloudwatch.inputs.LogTransformerTransformerConfigAddKeysEntryArgs.builder
+      builder.entries(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.aws.cloudwatch.inputs.LogTransformerTransformerConfigRenameKeyArgs.Builder)
+    /**
+     * @param entries Objects containing the information about the keys to rename. You must include at least one entry, and five at most. See `renameKeys` `entry` below for details.
+     * @return builder
+     */
+    def entries(args: Endofunction[com.pulumi.aws.cloudwatch.inputs.LogTransformerTransformerConfigRenameKeyEntryArgs.Builder]*):
+        com.pulumi.aws.cloudwatch.inputs.LogTransformerTransformerConfigRenameKeyArgs.Builder =
+      def argsBuilder = com.pulumi.aws.cloudwatch.inputs.LogTransformerTransformerConfigRenameKeyEntryArgs.builder
+      builder.entries(args.map(_(argsBuilder).build)*)
+
   extension (builder: com.pulumi.aws.cloudwatch.inputs.GetLogDataProtectionPolicyDocumentStatementOperationAuditArgs.Builder)
     /**
      * @param findingsDestination Configures destinations to send audit findings to.
@@ -1122,6 +1379,26 @@ object cloudwatch:
         com.pulumi.aws.cloudwatch.inputs.GetLogDataProtectionPolicyDocumentStatementOperationAuditArgs.Builder =
       val argsBuilder = com.pulumi.aws.cloudwatch.inputs.GetLogDataProtectionPolicyDocumentStatementOperationAuditFindingsDestinationArgs.builder
       builder.findingsDestination(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.cloudwatch.inputs.LogTransformerTransformerConfigCopyValueArgs.Builder)
+    /**
+     * @param entries Objects containing the information about the values to copy to the log event. You must include at least one entry, and five at most. See `copyValue` `entry` below for details.
+     * @return builder
+     */
+    def entries(args: Endofunction[com.pulumi.aws.cloudwatch.inputs.LogTransformerTransformerConfigCopyValueEntryArgs.Builder]*):
+        com.pulumi.aws.cloudwatch.inputs.LogTransformerTransformerConfigCopyValueArgs.Builder =
+      def argsBuilder = com.pulumi.aws.cloudwatch.inputs.LogTransformerTransformerConfigCopyValueEntryArgs.builder
+      builder.entries(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.aws.cloudwatch.inputs.LogTransformerTransformerConfigMoveKeyArgs.Builder)
+    /**
+     * @param entries Objects containing the information about the keys to move to the log event. You must include at least one entry, and five at most. See `moveKeys` `entry` below for details.
+     * @return builder
+     */
+    def entries(args: Endofunction[com.pulumi.aws.cloudwatch.inputs.LogTransformerTransformerConfigMoveKeyEntryArgs.Builder]*):
+        com.pulumi.aws.cloudwatch.inputs.LogTransformerTransformerConfigMoveKeyArgs.Builder =
+      def argsBuilder = com.pulumi.aws.cloudwatch.inputs.LogTransformerTransformerConfigMoveKeyEntryArgs.builder
+      builder.entries(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.aws.cloudwatch.inputs.LogResourcePolicyState.Builder)
     /**
@@ -1209,6 +1486,16 @@ object cloudwatch:
         com.pulumi.aws.cloudwatch.inputs.MetricStreamState.Builder =
       def argsBuilder = com.pulumi.aws.cloudwatch.inputs.MetricStreamStatisticsConfigurationArgs.builder
       builder.statisticsConfigurations(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.aws.cloudwatch.inputs.LogTransformerState.Builder)
+    /**
+     * @param transformerConfigs Specifies the configuration of the transformer. You must include at least one configuration, and 20 at most. See `transformerConfig` below for details.
+     * @return builder
+     */
+    def transformerConfigs(args: Endofunction[com.pulumi.aws.cloudwatch.inputs.LogTransformerTransformerConfigArgs.Builder]*):
+        com.pulumi.aws.cloudwatch.inputs.LogTransformerState.Builder =
+      def argsBuilder = com.pulumi.aws.cloudwatch.inputs.LogTransformerTransformerConfigArgs.builder
+      builder.transformerConfigs(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.aws.cloudwatch.inputs.EventEndpointRoutingConfigFailoverConfigArgs.Builder)
     /**
@@ -1454,6 +1741,16 @@ object cloudwatch:
       def argsBuilder = com.pulumi.aws.iam.inputs.PolicyStatementArgs.builder
       builder.Statement(args.map(_(argsBuilder).build)*)
 
+  extension (builder: com.pulumi.aws.cloudwatch.inputs.LogTransformerTransformerConfigSplitStringArgs.Builder)
+    /**
+     * @param entries Objects containing the information about the fields to split. You must include at least one entry, and ten at most. See `splitString` `entry` below for details.
+     * @return builder
+     */
+    def entries(args: Endofunction[com.pulumi.aws.cloudwatch.inputs.LogTransformerTransformerConfigSplitStringEntryArgs.Builder]*):
+        com.pulumi.aws.cloudwatch.inputs.LogTransformerTransformerConfigSplitStringArgs.Builder =
+      def argsBuilder = com.pulumi.aws.cloudwatch.inputs.LogTransformerTransformerConfigSplitStringEntryArgs.builder
+      builder.entries(args.map(_(argsBuilder).build)*)
+
   extension (builder: com.pulumi.aws.cloudwatch.inputs.MetricAlarmMetricQueryArgs.Builder)
     /**
      * @param metric The metric to be returned, along with statistics, period, and units. Use this parameter only if this object is retrieving a metric and not performing a math expression on returned data.
@@ -1463,6 +1760,16 @@ object cloudwatch:
         com.pulumi.aws.cloudwatch.inputs.MetricAlarmMetricQueryArgs.Builder =
       val argsBuilder = com.pulumi.aws.cloudwatch.inputs.MetricAlarmMetricQueryMetricArgs.builder
       builder.metric(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.cloudwatch.inputs.LogTransformerTransformerConfigTypeConverterArgs.Builder)
+    /**
+     * @param entries Objects containing the information about the fields to change the type of. You must include at least one entry, and five at most. See `typeConverter` `entry` below for details.
+     * @return builder
+     */
+    def entries(args: Endofunction[com.pulumi.aws.cloudwatch.inputs.LogTransformerTransformerConfigTypeConverterEntryArgs.Builder]*):
+        com.pulumi.aws.cloudwatch.inputs.LogTransformerTransformerConfigTypeConverterArgs.Builder =
+      def argsBuilder = com.pulumi.aws.cloudwatch.inputs.LogTransformerTransformerConfigTypeConverterEntryArgs.builder
+      builder.entries(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.aws.cloudwatch.inputs.GetLogDataProtectionPolicyDocumentStatementArgs.Builder)
     /**

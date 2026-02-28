@@ -115,6 +115,15 @@ object networkmanager:
       val argsBuilder = com.pulumi.aws.networkmanager.inputs.ConnectPeerBgpOptionsArgs.builder
       builder.bgpOptions(args(argsBuilder).build)
 
+  /** Associates a routing policy label to a Network Manager Cloud WAN&#39;s attachment outside of the attachment creation. This is useful in multi-account environments where only the Cloud WAN core network owner account can apply a routing policy label. */
+  def AttachmentRoutingPolicyLabel(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.networkmanager.AttachmentRoutingPolicyLabelArgs.Builder]) =
+    val argsBuilder = com.pulumi.aws.networkmanager.AttachmentRoutingPolicyLabelArgs.builder
+    
+    com.pulumi.aws.networkmanager.AttachmentRoutingPolicyLabel(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder).build)
+
   /** Manages a Network Manager site-to-site VPN attachment. */
   def SiteToSiteVpnAttachment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.networkmanager.SiteToSiteVpnAttachmentArgs.Builder])(using conf: KoPulumiConf) =
@@ -488,6 +497,25 @@ object networkmanager:
       val argsBuilder = com.pulumi.aws.networkmanager.inputs.LinkBandwidthArgs.builder
       builder.bandwidth(args(argsBuilder).build)
 
+  extension (builder: com.pulumi.aws.networkmanager.inputs.GetCoreNetworkPolicyDocumentRoutingPolicyRoutingPolicyRuleRuleDefinitionArgs.Builder)
+    /**
+     * @param action Block defining the action to take when conditions match. Detailed below.
+     * @return builder
+     */
+    def action(args: Endofunction[com.pulumi.aws.networkmanager.inputs.GetCoreNetworkPolicyDocumentRoutingPolicyRoutingPolicyRuleRuleDefinitionActionArgs.Builder]):
+        com.pulumi.aws.networkmanager.inputs.GetCoreNetworkPolicyDocumentRoutingPolicyRoutingPolicyRuleRuleDefinitionArgs.Builder =
+      val argsBuilder = com.pulumi.aws.networkmanager.inputs.GetCoreNetworkPolicyDocumentRoutingPolicyRoutingPolicyRuleRuleDefinitionActionArgs.builder
+      builder.action(args(argsBuilder).build)
+
+    /**
+     * @param matchConditions List of conditions to match against routes. Detailed below.
+     * @return builder
+     */
+    def matchConditions(args: Endofunction[com.pulumi.aws.networkmanager.inputs.GetCoreNetworkPolicyDocumentRoutingPolicyRoutingPolicyRuleRuleDefinitionMatchConditionArgs.Builder]*):
+        com.pulumi.aws.networkmanager.inputs.GetCoreNetworkPolicyDocumentRoutingPolicyRoutingPolicyRuleRuleDefinitionArgs.Builder =
+      def argsBuilder = com.pulumi.aws.networkmanager.inputs.GetCoreNetworkPolicyDocumentRoutingPolicyRoutingPolicyRuleRuleDefinitionMatchConditionArgs.builder
+      builder.matchConditions(args.map(_(argsBuilder).build)*)
+
   extension (builder: com.pulumi.aws.networkmanager.inputs.DeviceState.Builder)
     /**
      * @param awsLocation AWS location of the device. Documented below.
@@ -579,6 +607,15 @@ object networkmanager:
 
   extension (builder: com.pulumi.aws.networkmanager.inputs.GetCoreNetworkPolicyDocumentSegmentActionArgs.Builder)
     /**
+     * @param edgeLocationAssociation Associates routing policies with specific edge location pairs. Available in policy version `2025.11` and later. Detailed below.
+     * @return builder
+     */
+    def edgeLocationAssociation(args: Endofunction[com.pulumi.aws.networkmanager.inputs.GetCoreNetworkPolicyDocumentSegmentActionEdgeLocationAssociationArgs.Builder]):
+        com.pulumi.aws.networkmanager.inputs.GetCoreNetworkPolicyDocumentSegmentActionArgs.Builder =
+      val argsBuilder = com.pulumi.aws.networkmanager.inputs.GetCoreNetworkPolicyDocumentSegmentActionEdgeLocationAssociationArgs.builder
+      builder.edgeLocationAssociation(args(argsBuilder).build)
+
+    /**
      * @param via The network function groups and any edge overrides associated with the action.
      * @return builder
      */
@@ -625,6 +662,16 @@ object networkmanager:
       def argsBuilder = com.pulumi.aws.networkmanager.inputs.GetCoreNetworkPolicyDocumentSegmentActionViaWithEdgeOverrideArgs.builder
       builder.withEdgeOverrides(args.map(_(argsBuilder).build)*)
 
+  extension (builder: com.pulumi.aws.networkmanager.inputs.GetCoreNetworkPolicyDocumentRoutingPolicyArgs.Builder)
+    /**
+     * @param routingPolicyRules List of routing policy rules. Each rule defines match conditions and actions. Detailed below.
+     * @return builder
+     */
+    def routingPolicyRules(args: Endofunction[com.pulumi.aws.networkmanager.inputs.GetCoreNetworkPolicyDocumentRoutingPolicyRoutingPolicyRuleArgs.Builder]*):
+        com.pulumi.aws.networkmanager.inputs.GetCoreNetworkPolicyDocumentRoutingPolicyArgs.Builder =
+      def argsBuilder = com.pulumi.aws.networkmanager.inputs.GetCoreNetworkPolicyDocumentRoutingPolicyRoutingPolicyRuleArgs.builder
+      builder.routingPolicyRules(args.map(_(argsBuilder).build)*)
+
   extension (builder: com.pulumi.aws.networkmanager.inputs.VpcAttachmentState.Builder)
     /**
      * @param options Options for the VPC attachment. See below.
@@ -634,6 +681,25 @@ object networkmanager:
         com.pulumi.aws.networkmanager.inputs.VpcAttachmentState.Builder =
       val argsBuilder = com.pulumi.aws.networkmanager.inputs.VpcAttachmentOptionsArgs.builder
       builder.options(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.networkmanager.inputs.GetCoreNetworkPolicyDocumentAttachmentRoutingPolicyRuleArgs.Builder)
+    /**
+     * @param action Block defining the action to take when conditions match. Detailed below.
+     * @return builder
+     */
+    def action(args: Endofunction[com.pulumi.aws.networkmanager.inputs.GetCoreNetworkPolicyDocumentAttachmentRoutingPolicyRuleActionArgs.Builder]):
+        com.pulumi.aws.networkmanager.inputs.GetCoreNetworkPolicyDocumentAttachmentRoutingPolicyRuleArgs.Builder =
+      val argsBuilder = com.pulumi.aws.networkmanager.inputs.GetCoreNetworkPolicyDocumentAttachmentRoutingPolicyRuleActionArgs.builder
+      builder.action(args(argsBuilder).build)
+
+    /**
+     * @param conditions A block argument. Detailed below.
+     * @return builder
+     */
+    def conditions(args: Endofunction[com.pulumi.aws.networkmanager.inputs.GetCoreNetworkPolicyDocumentAttachmentRoutingPolicyRuleConditionArgs.Builder]*):
+        com.pulumi.aws.networkmanager.inputs.GetCoreNetworkPolicyDocumentAttachmentRoutingPolicyRuleArgs.Builder =
+      def argsBuilder = com.pulumi.aws.networkmanager.inputs.GetCoreNetworkPolicyDocumentAttachmentRoutingPolicyRuleConditionArgs.builder
+      builder.conditions(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.aws.networkmanager.inputs.GetCoreNetworkPolicyDocumentCoreNetworkConfigurationArgs.Builder)
     /**
@@ -656,6 +722,15 @@ object networkmanager:
       builder.attachmentPolicies(args.map(_(argsBuilder).build)*)
 
     /**
+     * @param attachmentRoutingPolicyRules Block argument that applies routing policies to attachments. Available in policy version `2025.11` and later. Detailed below.
+     * @return builder
+     */
+    def attachmentRoutingPolicyRules(args: Endofunction[com.pulumi.aws.networkmanager.inputs.GetCoreNetworkPolicyDocumentAttachmentRoutingPolicyRuleArgs.Builder]*):
+        com.pulumi.aws.networkmanager.inputs.GetCoreNetworkPolicyDocumentArgs.Builder =
+      def argsBuilder = com.pulumi.aws.networkmanager.inputs.GetCoreNetworkPolicyDocumentAttachmentRoutingPolicyRuleArgs.builder
+      builder.attachmentRoutingPolicyRules(args.map(_(argsBuilder).build)*)
+
+    /**
      * @param coreNetworkConfigurations The core network configuration section defines the Regions where a core network should operate. For AWS Regions that are defined in the policy, the core network creates a Core Network Edge where you can connect attachments. After it&#39;s created, each Core Network Edge is peered with every other defined Region and is configured with consistent segment and routing across all Regions. Regions cannot be removed until the associated attachments are deleted. Detailed below.
      * @return builder
      */
@@ -674,6 +749,15 @@ object networkmanager:
       builder.networkFunctionGroups(args.map(_(argsBuilder).build)*)
 
     /**
+     * @param routingPolicies Block argument that defines routing policies for controlling route propagation. Routing policies allow you to filter, modify, and control BGP routes advertised to and from your core network. Available in policy version `2025.11` and later. Detailed below.
+     * @return builder
+     */
+    def routingPolicies(args: Endofunction[com.pulumi.aws.networkmanager.inputs.GetCoreNetworkPolicyDocumentRoutingPolicyArgs.Builder]*):
+        com.pulumi.aws.networkmanager.inputs.GetCoreNetworkPolicyDocumentArgs.Builder =
+      def argsBuilder = com.pulumi.aws.networkmanager.inputs.GetCoreNetworkPolicyDocumentRoutingPolicyArgs.builder
+      builder.routingPolicies(args.map(_(argsBuilder).build)*)
+
+    /**
      * @param segmentActions A block argument, `segmentActions` define how routing works between segments. By default, attachments can only communicate with other attachments in the same segment. Detailed below.
      * @return builder
      */
@@ -690,3 +774,13 @@ object networkmanager:
         com.pulumi.aws.networkmanager.inputs.GetCoreNetworkPolicyDocumentArgs.Builder =
       def argsBuilder = com.pulumi.aws.networkmanager.inputs.GetCoreNetworkPolicyDocumentSegmentArgs.builder
       builder.segments(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.aws.networkmanager.inputs.GetCoreNetworkPolicyDocumentRoutingPolicyRoutingPolicyRuleArgs.Builder)
+    /**
+     * @param ruleDefinition Defines the match conditions and actions for the rule. Detailed below.
+     * @return builder
+     */
+    def ruleDefinition(args: Endofunction[com.pulumi.aws.networkmanager.inputs.GetCoreNetworkPolicyDocumentRoutingPolicyRoutingPolicyRuleRuleDefinitionArgs.Builder]):
+        com.pulumi.aws.networkmanager.inputs.GetCoreNetworkPolicyDocumentRoutingPolicyRoutingPolicyRuleArgs.Builder =
+      val argsBuilder = com.pulumi.aws.networkmanager.inputs.GetCoreNetworkPolicyDocumentRoutingPolicyRoutingPolicyRuleRuleDefinitionArgs.builder
+      builder.ruleDefinition(args(argsBuilder).build)

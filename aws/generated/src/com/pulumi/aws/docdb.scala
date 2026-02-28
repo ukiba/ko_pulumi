@@ -167,14 +167,9 @@ object docdb:
       builder.parameters(args.map(_(argsBuilder).build)*)
 
   /**
-   * Provides an DocumentDB Cluster Resource Instance. A Cluster Instance Resource defines
-   *  attributes that are specific to a single instance in a [DocumentDB Cluster][1].
+   * Provides an DocumentDB Cluster Resource Instance. A Cluster Instance Resource defines attributes that are specific to a single instance in a DocumentDB Cluster.
    *  
-   *  You do not designate a primary and subsequent replicas. Instead, you simply add DocumentDB
-   *  Instances and DocumentDB manages the replication. You can use the [count][3]
-   *  meta-parameter to make multiple instances and join them all to the same DocumentDB
-   *  Cluster, or you may specify different Cluster Instance resources with various
-   *  `instanceClass` sizes.
+   *  You do not designate a primary and subsequent replicas. Instead, you simply add DocumentDB Instances and DocumentDB manages the replication. You can use the count meta-parameter to make multiple instances and join them all to the same DocumentDB Cluster, or you may specify different Cluster Instance resources with various `instanceClass` sizes.
    */
   def ClusterInstance(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.docdb.ClusterInstanceArgs.Builder])(using conf: KoPulumiConf) =

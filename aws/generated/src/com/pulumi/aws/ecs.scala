@@ -173,6 +173,22 @@ object ecs:
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
+  /**
+   * Manages an ECS Express service. The Express service provides a simplified way to deploy containerized applications with automatic provisioning and management of AWS infrastructure including Application Load Balancers (ALBs), target groups, security groups, and auto-scaling policies. This service offers built-in load balancing, auto-scaling, and networking capabilities with zero-downtime deployments.
+   *  
+   *  Express services automatically handle infrastructure provisioning and updates through rolling deployments, ensuring high availability during service modifications. When you update an Express service, a new service revision is created and deployed with zero downtime.
+   */
+  def ExpressGatewayService(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.ecs.ExpressGatewayServiceArgs.Builder])(using conf: KoPulumiConf) =
+    var argsBuilder = com.pulumi.aws.ecs.ExpressGatewayServiceArgs.builder
+    conf.logicalName2tagName(name) match
+      case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
+      case None          =>
+    
+    com.pulumi.aws.ecs.ExpressGatewayService(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder).build)
+
   /** Provides an ECS cluster. */
   def Cluster(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ecs.ClusterArgs.Builder])(using conf: KoPulumiConf) =
@@ -215,6 +231,27 @@ object ecs:
         com.pulumi.aws.ecs.ClusterArgs.Builder =
       def argsBuilder = com.pulumi.aws.ecs.inputs.ClusterSettingArgs.builder
       builder.settings(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.aws.ecs.ExpressGatewayServiceArgs.Builder)
+    def networkConfigurations(args: Endofunction[com.pulumi.aws.ecs.inputs.ExpressGatewayServiceNetworkConfigurationArgs.Builder]*):
+        com.pulumi.aws.ecs.ExpressGatewayServiceArgs.Builder =
+      def argsBuilder = com.pulumi.aws.ecs.inputs.ExpressGatewayServiceNetworkConfigurationArgs.builder
+      builder.networkConfigurations(args.map(_(argsBuilder).build)*)
+
+    def primaryContainer(args: Endofunction[com.pulumi.aws.ecs.inputs.ExpressGatewayServicePrimaryContainerArgs.Builder]):
+        com.pulumi.aws.ecs.ExpressGatewayServiceArgs.Builder =
+      val argsBuilder = com.pulumi.aws.ecs.inputs.ExpressGatewayServicePrimaryContainerArgs.builder
+      builder.primaryContainer(args(argsBuilder).build)
+
+    def scalingTargets(args: Endofunction[com.pulumi.aws.ecs.inputs.ExpressGatewayServiceScalingTargetArgs.Builder]*):
+        com.pulumi.aws.ecs.ExpressGatewayServiceArgs.Builder =
+      def argsBuilder = com.pulumi.aws.ecs.inputs.ExpressGatewayServiceScalingTargetArgs.builder
+      builder.scalingTargets(args.map(_(argsBuilder).build)*)
+
+    def timeouts(args: Endofunction[com.pulumi.aws.ecs.inputs.ExpressGatewayServiceTimeoutsArgs.Builder]):
+        com.pulumi.aws.ecs.ExpressGatewayServiceArgs.Builder =
+      val argsBuilder = com.pulumi.aws.ecs.inputs.ExpressGatewayServiceTimeoutsArgs.builder
+      builder.timeouts(args(argsBuilder).build)
 
   /**
    * &gt; **Note:** To prevent a race condition during service deletion, make sure to set `dependsOn` to the related `aws.iam.RolePolicy`; otherwise, the policy may be destroyed too soon and the ECS service will then get stuck in the `DRAINING` state.
@@ -520,6 +557,36 @@ object ecs:
       def argsBuilder = com.pulumi.aws.ecs.inputs.TaskDefinitionVolumeArgs.builder
       builder.volumes(args.map(_(argsBuilder).build)*)
 
+  extension (builder: com.pulumi.aws.ecs.inputs.ExpressGatewayServiceState.Builder)
+    /**
+     * @param ingressPaths List of ingress paths with access type and endpoint information.
+     * @return builder
+     */
+    def ingressPaths(args: Endofunction[com.pulumi.aws.ecs.inputs.ExpressGatewayServiceIngressPathArgs.Builder]*):
+        com.pulumi.aws.ecs.inputs.ExpressGatewayServiceState.Builder =
+      def argsBuilder = com.pulumi.aws.ecs.inputs.ExpressGatewayServiceIngressPathArgs.builder
+      builder.ingressPaths(args.map(_(argsBuilder).build)*)
+
+    def networkConfigurations(args: Endofunction[com.pulumi.aws.ecs.inputs.ExpressGatewayServiceNetworkConfigurationArgs.Builder]*):
+        com.pulumi.aws.ecs.inputs.ExpressGatewayServiceState.Builder =
+      def argsBuilder = com.pulumi.aws.ecs.inputs.ExpressGatewayServiceNetworkConfigurationArgs.builder
+      builder.networkConfigurations(args.map(_(argsBuilder).build)*)
+
+    def primaryContainer(args: Endofunction[com.pulumi.aws.ecs.inputs.ExpressGatewayServicePrimaryContainerArgs.Builder]):
+        com.pulumi.aws.ecs.inputs.ExpressGatewayServiceState.Builder =
+      val argsBuilder = com.pulumi.aws.ecs.inputs.ExpressGatewayServicePrimaryContainerArgs.builder
+      builder.primaryContainer(args(argsBuilder).build)
+
+    def scalingTargets(args: Endofunction[com.pulumi.aws.ecs.inputs.ExpressGatewayServiceScalingTargetArgs.Builder]*):
+        com.pulumi.aws.ecs.inputs.ExpressGatewayServiceState.Builder =
+      def argsBuilder = com.pulumi.aws.ecs.inputs.ExpressGatewayServiceScalingTargetArgs.builder
+      builder.scalingTargets(args.map(_(argsBuilder).build)*)
+
+    def timeouts(args: Endofunction[com.pulumi.aws.ecs.inputs.ExpressGatewayServiceTimeoutsArgs.Builder]):
+        com.pulumi.aws.ecs.inputs.ExpressGatewayServiceState.Builder =
+      val argsBuilder = com.pulumi.aws.ecs.inputs.ExpressGatewayServiceTimeoutsArgs.builder
+      builder.timeouts(args(argsBuilder).build)
+
   extension (builder: com.pulumi.aws.ecs.inputs.ServiceServiceConnectConfigurationServiceArgs.Builder)
     /**
      * @param clientAlias List of client aliases for this Service Connect service. You use these to assign names that can be used by client applications. For each service block where enabled is true, exactly one `clientAlias` with one `port` should be specified. See below.
@@ -605,6 +672,27 @@ object ecs:
         com.pulumi.aws.ecs.inputs.ServiceServiceConnectConfigurationServiceClientAliasArgs.Builder =
       def argsBuilder = com.pulumi.aws.ecs.inputs.ServiceServiceConnectConfigurationServiceClientAliasTestTrafficRuleArgs.builder
       builder.testTrafficRules(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.aws.ecs.inputs.ExpressGatewayServicePrimaryContainerArgs.Builder)
+    def awsLogsConfigurations(args: Endofunction[com.pulumi.aws.ecs.inputs.ExpressGatewayServicePrimaryContainerAwsLogsConfigurationArgs.Builder]*):
+        com.pulumi.aws.ecs.inputs.ExpressGatewayServicePrimaryContainerArgs.Builder =
+      def argsBuilder = com.pulumi.aws.ecs.inputs.ExpressGatewayServicePrimaryContainerAwsLogsConfigurationArgs.builder
+      builder.awsLogsConfigurations(args.map(_(argsBuilder).build)*)
+
+    def environments(args: Endofunction[com.pulumi.aws.ecs.inputs.ExpressGatewayServicePrimaryContainerEnvironmentArgs.Builder]*):
+        com.pulumi.aws.ecs.inputs.ExpressGatewayServicePrimaryContainerArgs.Builder =
+      def argsBuilder = com.pulumi.aws.ecs.inputs.ExpressGatewayServicePrimaryContainerEnvironmentArgs.builder
+      builder.environments(args.map(_(argsBuilder).build)*)
+
+    def repositoryCredentials(args: Endofunction[com.pulumi.aws.ecs.inputs.ExpressGatewayServicePrimaryContainerRepositoryCredentialsArgs.Builder]):
+        com.pulumi.aws.ecs.inputs.ExpressGatewayServicePrimaryContainerArgs.Builder =
+      val argsBuilder = com.pulumi.aws.ecs.inputs.ExpressGatewayServicePrimaryContainerRepositoryCredentialsArgs.builder
+      builder.repositoryCredentials(args(argsBuilder).build)
+
+    def secrets(args: Endofunction[com.pulumi.aws.ecs.inputs.ExpressGatewayServicePrimaryContainerSecretArgs.Builder]*):
+        com.pulumi.aws.ecs.inputs.ExpressGatewayServicePrimaryContainerArgs.Builder =
+      def argsBuilder = com.pulumi.aws.ecs.inputs.ExpressGatewayServicePrimaryContainerSecretArgs.builder
+      builder.secrets(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.aws.ecs.inputs.ServiceServiceConnectConfigurationArgs.Builder)
     /**
@@ -1009,6 +1097,15 @@ object ecs:
       builder.authorizationConfig(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.ecs.inputs.CapacityProviderManagedInstancesProviderArgs.Builder)
+    /**
+     * @param infrastructureOptimization Defines how Amazon ECS Managed Instances optimizes the infrastructure in your capacity provider. Configure it to turn on or off the infrastructure optimization in your capacity provider, and to control the idle EC2 instances optimization delay.
+     * @return builder
+     */
+    def infrastructureOptimization(args: Endofunction[com.pulumi.aws.ecs.inputs.CapacityProviderManagedInstancesProviderInfrastructureOptimizationArgs.Builder]):
+        com.pulumi.aws.ecs.inputs.CapacityProviderManagedInstancesProviderArgs.Builder =
+      val argsBuilder = com.pulumi.aws.ecs.inputs.CapacityProviderManagedInstancesProviderInfrastructureOptimizationArgs.builder
+      builder.infrastructureOptimization(args(argsBuilder).build)
+
     /**
      * @param instanceLaunchTemplate The launch template configuration that specifies how Amazon ECS should launch Amazon EC2 instances. This includes the instance profile, network configuration, storage settings, and instance requirements for attribute-based instance type selection. For more information, see [Store instance launch parameters in Amazon EC2 launch templates](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html) in the Amazon EC2 User Guide. Detailed below.
      * @return builder

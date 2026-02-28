@@ -327,6 +327,16 @@ object s3:
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
+  extension (builder: com.pulumi.aws.s3.VectorsVectorBucketArgs.Builder)
+    /**
+     * @param encryptionConfigurations Encryption configuration for the vector bucket. See Encryption Configuration below for more details.
+     * @return builder
+     */
+    def encryptionConfigurations(args: Endofunction[com.pulumi.aws.s3.inputs.VectorsVectorBucketEncryptionConfigurationArgs.Builder]*):
+        com.pulumi.aws.s3.VectorsVectorBucketArgs.Builder =
+      def argsBuilder = com.pulumi.aws.s3.inputs.VectorsVectorBucketEncryptionConfigurationArgs.builder
+      builder.encryptionConfigurations(args.map(_(argsBuilder).build)*)
+
   /**
    * Provides a S3 bucket [metrics configuration](http://docs.aws.amazon.com/AmazonS3/latest/dev/metrics-configurations.html) resource.
    *  
@@ -365,6 +375,18 @@ object s3:
     val argsBuilder = com.pulumi.aws.s3.BucketLifecycleConfigurationV2Args.builder
     
     com.pulumi.aws.s3.BucketLifecycleConfigurationV2(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder).build)
+
+  /** Resource for managing an Amazon S3 Vectors Vector Bucket. */
+  def VectorsVectorBucket(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.s3.VectorsVectorBucketArgs.Builder])(using conf: KoPulumiConf) =
+    var argsBuilder = com.pulumi.aws.s3.VectorsVectorBucketArgs.builder
+    conf.logicalName2tagName(name) match
+      case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
+      case None          =>
+    
+    com.pulumi.aws.s3.VectorsVectorBucket(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
@@ -520,13 +542,11 @@ object s3:
       builder.rule(args(argsBuilder).build)
 
   /**
-   * ## Import
+   * Provides an independent configuration resource for S3 bucket [replication configuration](http://docs.aws.amazon.com/AmazonS3/latest/dev/crr.html).
    *  
-   *  Using `pulumi import`, import S3 bucket replication configuration using the `bucket`. For example:
+   *  &gt; **NOTE:** S3 Buckets only support a single replication configuration. Declaring multiple `aws.s3.BucketReplicationConfig` resources to the same S3 Bucket will cause a perpetual difference in configuration.
    *  
-   *  ```sh
-   *  $ pulumi import aws:s3/bucketReplicationConfig:BucketReplicationConfig replication bucket-name
-   *  ```
+   *  &gt; This resource cannot be used with S3 directory buckets.
    */
   def BucketReplicationConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.s3.BucketReplicationConfigArgs.Builder]) =
@@ -560,7 +580,11 @@ object s3:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /**
-   * 
+   * Manages S3 bucket-level Public Access Block configuration. For more information about these settings, see the [AWS S3 Block Public Access documentation](https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html).
+   *  
+   *  &gt; This resource cannot be used with S3 directory buckets.
+   *  
+   *  &gt; Setting `skipDestroy` to `true` means that the AWS Provider will not destroy a public access block, even when running `terraform destroy`. The configuration is thus an intentional dangling resource that is not managed by Terraform and will remain in-place in your AWS account.
    */
   def BucketPublicAccessBlock(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.s3.BucketPublicAccessBlockArgs.Builder]) =
@@ -756,6 +780,7 @@ object s3:
   extension (builder: com.pulumi.aws.s3.BucketReplicationConfigArgs.Builder)
     /**
      * @param rules List of configuration blocks describing the rules managing the replication. See below.
+     *  
      *  &gt; **NOTE:** Replication to multiple destination buckets requires that `priority` is specified in the `rule` object. If the corresponding rule requires no filter, an empty configuration block `filter {}` must be specified.
      *  
      *  &gt; **NOTE:** Amazon S3&#39;s latest version of the replication configuration is V2, which includes the `filter` attribute for replication rules.
@@ -803,6 +828,8 @@ object s3:
    *  &gt; This resource provides functionality for managing S3 general purpose buckets in an AWS Partition. To manage Amazon S3 Express directory buckets, use the `awsDirectoryBucket` resource. To manage [S3 on Outposts](https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html), use the `aws.s3control.Bucket` resource.
    *  
    *  &gt; Object Lock can be enabled by using the `objectLockEnable` attribute or by using the `aws.s3.BucketObjectLockConfiguration` resource. Please note, that by using the resource, Object Lock can be enabled/disabled without destroying and recreating the bucket.
+   *  
+   *  &gt; To support ABAC (Attribute Based Access Control) in general purpose buckets, this resource will now attempt to send tags in the create request and use the S3 Control tagging APIs [`TagResource`](https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_TagResource.html), [`UntagResource`](https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_UntagResource.html), and [`ListTagsForResource`](https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_ListTagsForResource.html) for read and update operations. The calling principal must have the corresponding `s3:TagResource`, `s3:UntagResource`, and `s3:ListTagsForResource` [IAM permissions](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3.html#amazons3-actions-as-permissions). If the principal lacks the appropriate permissions, the provider will fall back to tagging after creation and using the S3 tagging APIs [`PutBucketTagging`](https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketTagging.html), [`DeleteBucketTagging`](https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketTagging.html), and [`GetBucketTagging`](https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketTagging.html) instead. With ABAC enabled, tag modifications may fail with the fall back behavior. See the [AWS documentation](https://docs.aws.amazon.com/AmazonS3/latest/userguide/buckets-tagging-enable-abac.html) for additional details on enabling ABAC in general purpose buckets.
    */
   @deprecated() def BucketV2(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.s3.BucketV2Args.Builder])(using conf: KoPulumiConf) =
@@ -812,6 +839,18 @@ object s3:
       case None          =>
     
     com.pulumi.aws.s3.BucketV2(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder).build)
+
+  /**
+   * Manages ABAC (Attribute Based Access Control) for an AWS S3 (Simple Storage) Bucket.
+   *  See the [AWS documentation](https://docs.aws.amazon.com/AmazonS3/latest/userguide/buckets-tagging-enable-abac.html) on enabling ABAC for general purpose buckets for additional information.
+   */
+  def BucketAbac(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.s3.BucketAbacArgs.Builder]) =
+    val argsBuilder = com.pulumi.aws.s3.BucketAbacArgs.builder
+    
+    com.pulumi.aws.s3.BucketAbac(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
@@ -933,6 +972,18 @@ object s3:
       val argsBuilder = com.pulumi.aws.s3.inputs.GetBucketObjectPlainArgs.builder
       com.pulumi.aws.s3.S3Functions.getBucketObjectPlain(args(argsBuilder).build)
 
+    /** Provides details about an AWS S3 (Simple Storage) Bucket Object Lock Configuration. */
+    def getBucketObjectLockConfiguration(args: Endofunction[com.pulumi.aws.s3.inputs.GetBucketObjectLockConfigurationArgs.Builder] = identity):
+        com.pulumi.core.Output[com.pulumi.aws.s3.outputs.GetBucketObjectLockConfigurationResult] =
+      val argsBuilder = com.pulumi.aws.s3.inputs.GetBucketObjectLockConfigurationArgs.builder
+      com.pulumi.aws.s3.S3Functions.getBucketObjectLockConfiguration(args(argsBuilder).build)
+
+    /** Provides details about an AWS S3 (Simple Storage) Bucket Object Lock Configuration. */
+    def getBucketObjectLockConfigurationPlain(args: Endofunction[com.pulumi.aws.s3.inputs.GetBucketObjectLockConfigurationPlainArgs.Builder] = identity):
+        java.util.concurrent.CompletableFuture[com.pulumi.aws.s3.outputs.GetBucketObjectLockConfigurationResult] =
+      val argsBuilder = com.pulumi.aws.s3.inputs.GetBucketObjectLockConfigurationPlainArgs.builder
+      com.pulumi.aws.s3.S3Functions.getBucketObjectLockConfigurationPlain(args(argsBuilder).build)
+
     /**
      * &gt; **NOTE:** The `aws.s3.getBucketObjects` data source is DEPRECATED and will be removed in a future version! Use `aws.s3.getObjects` instead, where new features and fixes will be added.
      *  
@@ -968,6 +1019,18 @@ object s3:
         java.util.concurrent.CompletableFuture[com.pulumi.aws.s3.outputs.GetBucketPolicyResult] =
       val argsBuilder = com.pulumi.aws.s3.inputs.GetBucketPolicyPlainArgs.builder
       com.pulumi.aws.s3.S3Functions.getBucketPolicyPlain(args(argsBuilder).build)
+
+    /** Data source for managing an AWS S3 (Simple Storage) Bucket Replication Configuration. */
+    def getBucketReplicationConfiguration(args: Endofunction[com.pulumi.aws.s3.inputs.GetBucketReplicationConfigurationArgs.Builder] = identity):
+        com.pulumi.core.Output[com.pulumi.aws.s3.outputs.GetBucketReplicationConfigurationResult] =
+      val argsBuilder = com.pulumi.aws.s3.inputs.GetBucketReplicationConfigurationArgs.builder
+      com.pulumi.aws.s3.S3Functions.getBucketReplicationConfiguration(args(argsBuilder).build)
+
+    /** Data source for managing an AWS S3 (Simple Storage) Bucket Replication Configuration. */
+    def getBucketReplicationConfigurationPlain(args: Endofunction[com.pulumi.aws.s3.inputs.GetBucketReplicationConfigurationPlainArgs.Builder] = identity):
+        java.util.concurrent.CompletableFuture[com.pulumi.aws.s3.outputs.GetBucketReplicationConfigurationResult] =
+      val argsBuilder = com.pulumi.aws.s3.inputs.GetBucketReplicationConfigurationPlainArgs.builder
+      com.pulumi.aws.s3.S3Functions.getBucketReplicationConfigurationPlain(args(argsBuilder).build)
 
     /** Lists Amazon S3 Express directory buckets. */
     def getDirectoryBuckets(args: Endofunction[com.pulumi.aws.s3.inputs.GetDirectoryBucketsArgs.Builder] = identity):
@@ -1128,6 +1191,25 @@ object s3:
       val argsBuilder = com.pulumi.aws.s3.inputs.BucketVersioningV2VersioningConfigurationArgs.builder
       builder.versioningConfiguration(args(argsBuilder).build)
 
+  extension (builder: com.pulumi.aws.s3.VectorsIndexArgs.Builder)
+    /**
+     * @param encryptionConfigurations Block for encryption configuration for the vector index. See `encyptionConfiguration` block below.
+     * @return builder
+     */
+    def encryptionConfigurations(args: Endofunction[com.pulumi.aws.s3.inputs.VectorsIndexEncryptionConfigurationArgs.Builder]*):
+        com.pulumi.aws.s3.VectorsIndexArgs.Builder =
+      def argsBuilder = com.pulumi.aws.s3.inputs.VectorsIndexEncryptionConfigurationArgs.builder
+      builder.encryptionConfigurations(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param metadataConfiguration Block for metadata configuration for the vector index. See `metadataConfiguration` block below.
+     * @return builder
+     */
+    def metadataConfiguration(args: Endofunction[com.pulumi.aws.s3.inputs.VectorsIndexMetadataConfigurationArgs.Builder]):
+        com.pulumi.aws.s3.VectorsIndexArgs.Builder =
+      val argsBuilder = com.pulumi.aws.s3.inputs.VectorsIndexMetadataConfigurationArgs.builder
+      builder.metadataConfiguration(args(argsBuilder).build)
+
   extension (builder: com.pulumi.aws.s3.BucketIntelligentTieringConfigurationArgs.Builder)
     /**
      * @param filter Bucket filter. The configuration only includes objects that meet the filter&#39;s criteria (documented below).
@@ -1146,6 +1228,27 @@ object s3:
         com.pulumi.aws.s3.BucketIntelligentTieringConfigurationArgs.Builder =
       def argsBuilder = com.pulumi.aws.s3.inputs.BucketIntelligentTieringConfigurationTieringArgs.builder
       builder.tierings(args.map(_(argsBuilder).build)*)
+
+  /** Resource for managing an Amazon S3 Vectors Vector Bucket policy. */
+  def VectorsVectorBucketPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.s3.VectorsVectorBucketPolicyArgs.Builder]) =
+    val argsBuilder = com.pulumi.aws.s3.VectorsVectorBucketPolicyArgs.builder
+    
+    com.pulumi.aws.s3.VectorsVectorBucketPolicy(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder).build)
+
+  /** Resource for managing an Amazon S3 Vectors Index. */
+  def VectorsIndex(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.s3.VectorsIndexArgs.Builder])(using conf: KoPulumiConf) =
+    var argsBuilder = com.pulumi.aws.s3.VectorsIndexArgs.builder
+    conf.logicalName2tagName(name) match
+      case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
+      case None          =>
+    
+    com.pulumi.aws.s3.VectorsIndex(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder).build)
 
   /**
    * Provides an S3 bucket website configuration resource. For more information, see [Hosting Websites on S3](https://docs.aws.amazon.com/AmazonS3/latest/dev/WebsiteHosting.html).
@@ -1209,6 +1312,8 @@ object s3:
    * Provides a S3 bucket server-side encryption configuration resource.
    *  
    *  &gt; **NOTE:** Destroying an `aws.s3.BucketServerSideEncryptionConfiguration` resource resets the bucket to [Amazon S3 bucket default encryption](https://docs.aws.amazon.com/AmazonS3/latest/userguide/default-encryption-faq.html).
+   *  
+   *  &gt; **NOTE:** Starting in March 2026, Amazon S3 will automatically block server-side encryption with customer-provided keys (SSE-C) for all new buckets. Use the `blockedEncryptionTypes` argument to manage this behavior. For more information, see the [SSE-C changes FAQ](https://docs.aws.amazon.com/AmazonS3/latest/userguide/default-s3-c-encryption-setting-faq.html).
    */
   @deprecated() def BucketServerSideEncryptionConfigurationV2(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.s3.BucketServerSideEncryptionConfigurationV2Args.Builder]) =
@@ -1250,6 +1355,8 @@ object s3:
    * Provides a S3 bucket server-side encryption configuration resource.
    *  
    *  &gt; **NOTE:** Destroying an `aws.s3.BucketServerSideEncryptionConfiguration` resource resets the bucket to [Amazon S3 bucket default encryption](https://docs.aws.amazon.com/AmazonS3/latest/userguide/default-encryption-faq.html).
+   *  
+   *  &gt; **NOTE:** Starting in March 2026, Amazon S3 will automatically block server-side encryption with customer-provided keys (SSE-C) for all new buckets. Use the `blockedEncryptionTypes` argument to manage this behavior. For more information, see the [SSE-C changes FAQ](https://docs.aws.amazon.com/AmazonS3/latest/userguide/default-s3-c-encryption-setting-faq.html).
    */
   def BucketServerSideEncryptionConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.s3.BucketServerSideEncryptionConfigurationArgs.Builder]) =
@@ -1349,6 +1456,18 @@ object s3:
     com.pulumi.aws.s3.BucketVersioning(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
+
+  extension (builder: com.pulumi.aws.s3.BucketAbacArgs.Builder)
+    /**
+     * @param abacStatus ABAC status configuration. See `abacStatus` Block for details.
+     *  
+     *  The following arguments are optional:
+     * @return builder
+     */
+    def abacStatus(args: Endofunction[com.pulumi.aws.s3.inputs.BucketAbacAbacStatusArgs.Builder]):
+        com.pulumi.aws.s3.BucketAbacArgs.Builder =
+      val argsBuilder = com.pulumi.aws.s3.inputs.BucketAbacAbacStatusArgs.builder
+      builder.abacStatus(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.s3.BucketWebsiteConfigurationArgs.Builder)
     /**
@@ -2436,6 +2555,7 @@ object s3:
   extension (builder: com.pulumi.aws.s3.inputs.BucketReplicationConfigState.Builder)
     /**
      * @param rules List of configuration blocks describing the rules managing the replication. See below.
+     *  
      *  &gt; **NOTE:** Replication to multiple destination buckets requires that `priority` is specified in the `rule` object. If the corresponding rule requires no filter, an empty configuration block `filter {}` must be specified.
      *  
      *  &gt; **NOTE:** Amazon S3&#39;s latest version of the replication configuration is V2, which includes the `filter` attribute for replication rules.
@@ -2582,6 +2702,25 @@ object s3:
       val argsBuilder = com.pulumi.aws.s3.inputs.BucketReplicationConfigRuleDestinationMetricsEventThresholdArgs.builder
       builder.eventThreshold(args(argsBuilder).build)
 
+  extension (builder: com.pulumi.aws.s3.inputs.VectorsIndexState.Builder)
+    /**
+     * @param encryptionConfigurations Block for encryption configuration for the vector index. See `encyptionConfiguration` block below.
+     * @return builder
+     */
+    def encryptionConfigurations(args: Endofunction[com.pulumi.aws.s3.inputs.VectorsIndexEncryptionConfigurationArgs.Builder]*):
+        com.pulumi.aws.s3.inputs.VectorsIndexState.Builder =
+      def argsBuilder = com.pulumi.aws.s3.inputs.VectorsIndexEncryptionConfigurationArgs.builder
+      builder.encryptionConfigurations(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param metadataConfiguration Block for metadata configuration for the vector index. See `metadataConfiguration` block below.
+     * @return builder
+     */
+    def metadataConfiguration(args: Endofunction[com.pulumi.aws.s3.inputs.VectorsIndexMetadataConfigurationArgs.Builder]):
+        com.pulumi.aws.s3.inputs.VectorsIndexState.Builder =
+      val argsBuilder = com.pulumi.aws.s3.inputs.VectorsIndexMetadataConfigurationArgs.builder
+      builder.metadataConfiguration(args(argsBuilder).build)
+
   extension (builder: com.pulumi.aws.s3.inputs.BucketV2ReplicationConfigurationRuleDestinationArgs.Builder)
     /**
      * @param accessControlTranslations Specifies the overrides to use for object owners on replication (documented below). Must be used in conjunction with `accountId` owner override configuration.
@@ -2609,6 +2748,28 @@ object s3:
         com.pulumi.aws.s3.inputs.BucketV2ReplicationConfigurationRuleDestinationArgs.Builder =
       def argsBuilder = com.pulumi.aws.s3.inputs.BucketV2ReplicationConfigurationRuleDestinationReplicationTimeArgs.builder
       builder.replicationTimes(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.aws.s3.inputs.BucketAbacState.Builder)
+    /**
+     * @param abacStatus ABAC status configuration. See `abacStatus` Block for details.
+     *  
+     *  The following arguments are optional:
+     * @return builder
+     */
+    def abacStatus(args: Endofunction[com.pulumi.aws.s3.inputs.BucketAbacAbacStatusArgs.Builder]):
+        com.pulumi.aws.s3.inputs.BucketAbacState.Builder =
+      val argsBuilder = com.pulumi.aws.s3.inputs.BucketAbacAbacStatusArgs.builder
+      builder.abacStatus(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.s3.inputs.VectorsVectorBucketState.Builder)
+    /**
+     * @param encryptionConfigurations Encryption configuration for the vector bucket. See Encryption Configuration below for more details.
+     * @return builder
+     */
+    def encryptionConfigurations(args: Endofunction[com.pulumi.aws.s3.inputs.VectorsVectorBucketEncryptionConfigurationArgs.Builder]*):
+        com.pulumi.aws.s3.inputs.VectorsVectorBucketState.Builder =
+      def argsBuilder = com.pulumi.aws.s3.inputs.VectorsVectorBucketEncryptionConfigurationArgs.builder
+      builder.encryptionConfigurations(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.aws.s3.inputs.BucketNotificationState.Builder)
     /**
@@ -3043,6 +3204,8 @@ object s3:
    *  &gt; This resource provides functionality for managing S3 general purpose buckets in an AWS Partition. To manage Amazon S3 Express directory buckets, use the `awsDirectoryBucket` resource. To manage [S3 on Outposts](https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html), use the `aws.s3control.Bucket` resource.
    *  
    *  &gt; Object Lock can be enabled by using the `objectLockEnable` attribute or by using the `aws.s3.BucketObjectLockConfiguration` resource. Please note, that by using the resource, Object Lock can be enabled/disabled without destroying and recreating the bucket.
+   *  
+   *  &gt; To support ABAC (Attribute Based Access Control) in general purpose buckets, this resource will now attempt to send tags in the create request and use the S3 Control tagging APIs [`TagResource`](https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_TagResource.html), [`UntagResource`](https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_UntagResource.html), and [`ListTagsForResource`](https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_ListTagsForResource.html) for read and update operations. The calling principal must have the corresponding `s3:TagResource`, `s3:UntagResource`, and `s3:ListTagsForResource` [IAM permissions](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3.html#amazons3-actions-as-permissions). If the principal lacks the appropriate permissions, the provider will fall back to tagging after creation and using the S3 tagging APIs [`PutBucketTagging`](https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketTagging.html), [`DeleteBucketTagging`](https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketTagging.html), and [`GetBucketTagging`](https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketTagging.html) instead. With ABAC enabled, tag modifications may fail with the fall back behavior. See the [AWS documentation](https://docs.aws.amazon.com/AmazonS3/latest/userguide/buckets-tagging-enable-abac.html) for additional details on enabling ABAC in general purpose buckets.
    */
   def Bucket(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.s3.BucketArgs.Builder])(using conf: KoPulumiConf) =

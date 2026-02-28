@@ -36,7 +36,9 @@ object devopsguru:
       com.pulumi.aws.devopsguru.DevopsguruFunctions.getResourceCollectionPlain(args(argsBuilder).build)
 
   /**
-   * 
+   * Resource for managing an AWS DevOps Guru Service Integration.
+   *  
+   *  &gt; To prevent unintentional deletion of account wide settings, destruction of this resource will only remove it from the Terraform state. To disable any configured settings, explicitly set the opt-in value to `DISABLED` and apply again before destroying.
    */
   def ServiceIntegration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.devopsguru.ServiceIntegrationArgs.Builder]) =
@@ -87,7 +89,11 @@ object devopsguru:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /**
-   * 
+   * Resource for managing an AWS DevOps Guru Event Sources Config. Currently the only service that can be integrated with DevOps Guru is Amazon CodeGuru Profiler, which can produce proactive recommendations which can be stored and viewed in DevOps Guru.
+   *  
+   *  &gt; Destruction of this resource will set the CodeGuru profiler status to `DISABLED`. If you wish to preserve an `ENABLED` configuration while removing the Terraform resource, utilize a `removed` block (available in Terraform 1.7+).
+   *  
+   *  &gt; Event sources are configured at the account level. To avoid persistent differences, this resource should be defined only once.
    */
   def EventSourcesConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.devopsguru.EventSourcesConfigArgs.Builder]) =

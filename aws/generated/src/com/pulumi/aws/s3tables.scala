@@ -73,6 +73,16 @@ object s3tables:
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
+  extension (builder: com.pulumi.aws.s3tables.TableReplicationArgs.Builder)
+    /**
+     * @param rule Replication rules. See Rule below for more details.
+     * @return builder
+     */
+    def rule(args: Endofunction[com.pulumi.aws.s3tables.inputs.TableReplicationRuleArgs.Builder]):
+        com.pulumi.aws.s3tables.TableReplicationArgs.Builder =
+      val argsBuilder = com.pulumi.aws.s3tables.inputs.TableReplicationRuleArgs.builder
+      builder.rule(args(argsBuilder).build)
+
   /** Resource for managing an Amazon S3 Tables Table. */
   def Table(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.s3tables.TableArgs.Builder])(using conf: KoPulumiConf) =
@@ -85,6 +95,24 @@ object s3tables:
       case None          =>
     
     com.pulumi.aws.s3tables.Table(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder).build)
+
+  /** Manages Amazon S3 Tables Table Replication configuration. */
+  def TableReplication(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.s3tables.TableReplicationArgs.Builder]) =
+    val argsBuilder = com.pulumi.aws.s3tables.TableReplicationArgs.builder
+    
+    com.pulumi.aws.s3tables.TableReplication(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder).build)
+
+  /** Manages Amazon S3 Tables Table Bucket Replication configuration. */
+  def TableBucketReplication(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.s3tables.TableBucketReplicationArgs.Builder]) =
+    val argsBuilder = com.pulumi.aws.s3tables.TableBucketReplicationArgs.builder
+    
+    com.pulumi.aws.s3tables.TableBucketReplication(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
@@ -118,6 +146,26 @@ object s3tables:
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
+  extension (builder: com.pulumi.aws.s3tables.TableBucketReplicationArgs.Builder)
+    /**
+     * @param rule Replication rules. See Rule below for more details.
+     * @return builder
+     */
+    def rule(args: Endofunction[com.pulumi.aws.s3tables.inputs.TableBucketReplicationRuleArgs.Builder]):
+        com.pulumi.aws.s3tables.TableBucketReplicationArgs.Builder =
+      val argsBuilder = com.pulumi.aws.s3tables.inputs.TableBucketReplicationRuleArgs.builder
+      builder.rule(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.s3tables.inputs.TableBucketReplicationRuleArgs.Builder)
+    /**
+     * @param destinations Replication destination. See Destination below for more details.
+     * @return builder
+     */
+    def destinations(args: Endofunction[com.pulumi.aws.s3tables.inputs.TableBucketReplicationRuleDestinationArgs.Builder]*):
+        com.pulumi.aws.s3tables.inputs.TableBucketReplicationRuleArgs.Builder =
+      def argsBuilder = com.pulumi.aws.s3tables.inputs.TableBucketReplicationRuleDestinationArgs.builder
+      builder.destinations(args.map(_(argsBuilder).build)*)
+
   extension (builder: com.pulumi.aws.s3tables.inputs.TableState.Builder)
     /**
      * @param encryptionConfiguration A single table bucket encryption configuration object.
@@ -148,6 +196,26 @@ object s3tables:
         com.pulumi.aws.s3tables.inputs.TableState.Builder =
       val argsBuilder = com.pulumi.aws.s3tables.inputs.TableMetadataArgs.builder
       builder.metadata(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.s3tables.inputs.TableReplicationState.Builder)
+    /**
+     * @param rule Replication rules. See Rule below for more details.
+     * @return builder
+     */
+    def rule(args: Endofunction[com.pulumi.aws.s3tables.inputs.TableReplicationRuleArgs.Builder]):
+        com.pulumi.aws.s3tables.inputs.TableReplicationState.Builder =
+      val argsBuilder = com.pulumi.aws.s3tables.inputs.TableReplicationRuleArgs.builder
+      builder.rule(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.s3tables.inputs.TableBucketReplicationState.Builder)
+    /**
+     * @param rule Replication rules. See Rule below for more details.
+     * @return builder
+     */
+    def rule(args: Endofunction[com.pulumi.aws.s3tables.inputs.TableBucketReplicationRuleArgs.Builder]):
+        com.pulumi.aws.s3tables.inputs.TableBucketReplicationState.Builder =
+      val argsBuilder = com.pulumi.aws.s3tables.inputs.TableBucketReplicationRuleArgs.builder
+      builder.rule(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.s3tables.inputs.TableMaintenanceConfigurationArgs.Builder)
     /**
@@ -213,6 +281,16 @@ object s3tables:
         com.pulumi.aws.s3tables.inputs.TableMaintenanceConfigurationIcebergSnapshotManagementArgs.Builder =
       val argsBuilder = com.pulumi.aws.s3tables.inputs.TableMaintenanceConfigurationIcebergSnapshotManagementSettingsArgs.builder
       builder.settings(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.s3tables.inputs.TableReplicationRuleArgs.Builder)
+    /**
+     * @param destinations Replication destination. See Destination below for more details.
+     * @return builder
+     */
+    def destinations(args: Endofunction[com.pulumi.aws.s3tables.inputs.TableReplicationRuleDestinationArgs.Builder]*):
+        com.pulumi.aws.s3tables.inputs.TableReplicationRuleArgs.Builder =
+      def argsBuilder = com.pulumi.aws.s3tables.inputs.TableReplicationRuleDestinationArgs.builder
+      builder.destinations(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.aws.s3tables.inputs.TableBucketMaintenanceConfigurationIcebergUnreferencedFileRemovalArgs.Builder)
     /**

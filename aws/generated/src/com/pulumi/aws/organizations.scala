@@ -22,6 +22,21 @@ object organizations:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /**
+   * Manages an individual Organizations resource tag. This resource should only be used in cases where Organizations resources are created outside Terraform (e.g., Organizations Accounts implicitly created by AWS Control Tower).
+   *  
+   *  &gt; **NOTE:** This tagging resource should not be combined with the Terraform resource for managing the parent resource. For example, using `aws.organizations.Account` and `aws.organizations.Tag` to manage tags of the same Organizations account will cause a perpetual difference where the `aws.organizations.Account` resource will try to remove the tag being added by the `aws.organizations.Tag` resource. However, if the parent resource is created in the same configuration (i.e., if you have no other choice), you should add `ignoreChanges = [tags]` in the parent resource&#39;s lifecycle block. This ensures that Terraform ignores differences in tags managed via the separate tagging resource, avoiding the perpetual difference mentioned above.
+   *  
+   *  &gt; **NOTE:** This tagging resource does not use the provider `ignoreTags` configuration.
+   */
+  def Tag(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.organizations.TagArgs.Builder]) =
+    val argsBuilder = com.pulumi.aws.organizations.TagArgs.builder
+    
+    com.pulumi.aws.organizations.Tag(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder).build)
+
+  /**
    * Provides a resource to create an organization.
    *  
    *  !&gt; **WARNING:** When migrating from a `featureSet` of `CONSOLIDATED_BILLING` to `ALL`, the Organization account owner will received an email stating the following: &#34;You started the process to enable all features for your AWS organization. As part of that process, all member accounts that joined your organization by invitation must approve the change. You don\u2019t need approval from member accounts that you directly created from within your AWS organization.&#34; After all member accounts have accepted the invitation, the Organization account owner must then finalize the changes via the [AWS Console](https://console.aws.amazon.com/organizations/home#/organization/settings/migration-progress). Until these steps are performed, the provider will perpetually show a difference, and the `DescribeOrganization` API will continue to show the `FeatureSet` as `CONSOLIDATED_BILLING`. See the [AWS Organizations documentation](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html) for more information.
@@ -92,6 +107,18 @@ object organizations:
     // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
     export com.pulumi.aws.organizations.OrganizationsFunctions.*
   extension (self: OrganizationsFunctions.type)
+    /** Get information about an account in an organization. */
+    def getAccount(args: Endofunction[com.pulumi.aws.organizations.inputs.GetAccountArgs.Builder] = identity):
+        com.pulumi.core.Output[com.pulumi.aws.organizations.outputs.GetAccountResult] =
+      val argsBuilder = com.pulumi.aws.organizations.inputs.GetAccountArgs.builder
+      com.pulumi.aws.organizations.OrganizationsFunctions.getAccount(args(argsBuilder).build)
+
+    /** Get information about an account in an organization. */
+    def getAccountPlain(args: Endofunction[com.pulumi.aws.organizations.inputs.GetAccountPlainArgs.Builder] = identity):
+        java.util.concurrent.CompletableFuture[com.pulumi.aws.organizations.outputs.GetAccountResult] =
+      val argsBuilder = com.pulumi.aws.organizations.inputs.GetAccountPlainArgs.builder
+      com.pulumi.aws.organizations.OrganizationsFunctions.getAccountPlain(args(argsBuilder).build)
+
     /** Get a list of AWS accounts that are designated as delegated administrators in this organization */
     def getDelegatedAdministrators(args: Endofunction[com.pulumi.aws.organizations.inputs.GetDelegatedAdministratorsArgs.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.aws.organizations.outputs.GetDelegatedAdministratorsResult] =
@@ -115,6 +142,30 @@ object organizations:
         java.util.concurrent.CompletableFuture[com.pulumi.aws.organizations.outputs.GetDelegatedServicesResult] =
       val argsBuilder = com.pulumi.aws.organizations.inputs.GetDelegatedServicesPlainArgs.builder
       com.pulumi.aws.organizations.OrganizationsFunctions.getDelegatedServicesPlain(args(argsBuilder).build)
+
+    /** Get the [entity path](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_last-accessed-view-data-orgs.html#access_policies_last-accessed-viewing-orgs-entity-path) for an entity. An entity&#39;s path is the text representation of the structure of that AWS Organizations entity. */
+    def getEntityPath(args: Endofunction[com.pulumi.aws.organizations.inputs.GetEntityPathArgs.Builder] = identity):
+        com.pulumi.core.Output[com.pulumi.aws.organizations.outputs.GetEntityPathResult] =
+      val argsBuilder = com.pulumi.aws.organizations.inputs.GetEntityPathArgs.builder
+      com.pulumi.aws.organizations.OrganizationsFunctions.getEntityPath(args(argsBuilder).build)
+
+    /** Get the [entity path](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_last-accessed-view-data-orgs.html#access_policies_last-accessed-viewing-orgs-entity-path) for an entity. An entity&#39;s path is the text representation of the structure of that AWS Organizations entity. */
+    def getEntityPathPlain(args: Endofunction[com.pulumi.aws.organizations.inputs.GetEntityPathPlainArgs.Builder] = identity):
+        java.util.concurrent.CompletableFuture[com.pulumi.aws.organizations.outputs.GetEntityPathResult] =
+      val argsBuilder = com.pulumi.aws.organizations.inputs.GetEntityPathPlainArgs.builder
+      com.pulumi.aws.organizations.OrganizationsFunctions.getEntityPathPlain(args(argsBuilder).build)
+
+    /** Get information about the organization that the users account belongs to. */
+    def getOrganization(args: Endofunction[com.pulumi.aws.organizations.inputs.GetOrganizationArgs.Builder] = identity):
+        com.pulumi.core.Output[com.pulumi.aws.organizations.outputs.GetOrganizationResult] =
+      val argsBuilder = com.pulumi.aws.organizations.inputs.GetOrganizationArgs.builder
+      com.pulumi.aws.organizations.OrganizationsFunctions.getOrganization(args(argsBuilder).build)
+
+    /** Get information about the organization that the users account belongs to. */
+    def getOrganizationPlain(args: Endofunction[com.pulumi.aws.organizations.inputs.GetOrganizationPlainArgs.Builder] = identity):
+        java.util.concurrent.CompletableFuture[com.pulumi.aws.organizations.outputs.GetOrganizationResult] =
+      val argsBuilder = com.pulumi.aws.organizations.inputs.GetOrganizationPlainArgs.builder
+      com.pulumi.aws.organizations.OrganizationsFunctions.getOrganizationPlain(args(argsBuilder).build)
 
     /** Data source for getting an AWS Organizations Organizational Unit. */
     def getOrganizationalUnit(args: Endofunction[com.pulumi.aws.organizations.inputs.GetOrganizationalUnitArgs.Builder] = identity):

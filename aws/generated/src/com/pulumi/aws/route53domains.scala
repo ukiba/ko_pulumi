@@ -297,9 +297,7 @@ object route53domains:
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
-  /**
-   * 
-   */
+  /** Provides a resource to manage a domain. This resource registers, renews and deregisters a domain name. If a domain name&#39;s lifecycle is managed outside of Terraform use the `aws.route53domains.RegisteredDomain` resource instead. */
   def Domain(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.route53domains.DomainArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.route53domains.DomainArgs.builder

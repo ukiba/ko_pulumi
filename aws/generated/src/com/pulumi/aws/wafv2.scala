@@ -256,6 +256,18 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.GetIpSetPlainArgs.builder
       com.pulumi.aws.wafv2.Wafv2Functions.getIpSetPlain(args(argsBuilder).build)
 
+    /** High-level information for a managed rule group. */
+    def getManagedRuleGroup(args: Endofunction[com.pulumi.aws.wafv2.inputs.GetManagedRuleGroupArgs.Builder] = identity):
+        com.pulumi.core.Output[com.pulumi.aws.wafv2.outputs.GetManagedRuleGroupResult] =
+      val argsBuilder = com.pulumi.aws.wafv2.inputs.GetManagedRuleGroupArgs.builder
+      com.pulumi.aws.wafv2.Wafv2Functions.getManagedRuleGroup(args(argsBuilder).build)
+
+    /** High-level information for a managed rule group. */
+    def getManagedRuleGroupPlain(args: Endofunction[com.pulumi.aws.wafv2.inputs.GetManagedRuleGroupPlainArgs.Builder] = identity):
+        java.util.concurrent.CompletableFuture[com.pulumi.aws.wafv2.outputs.GetManagedRuleGroupResult] =
+      val argsBuilder = com.pulumi.aws.wafv2.inputs.GetManagedRuleGroupPlainArgs.builder
+      com.pulumi.aws.wafv2.Wafv2Functions.getManagedRuleGroupPlain(args(argsBuilder).build)
+
     /** Retrieves the summary of a WAFv2 Regex Pattern Set. */
     def getRegexPatternSet(args: Endofunction[com.pulumi.aws.wafv2.inputs.GetRegexPatternSetArgs.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.aws.wafv2.outputs.GetRegexPatternSetResult] =
@@ -8252,7 +8264,7 @@ object wafv2:
       builder.orStatement(args(argsBuilder).build)
 
     /**
-     * @param rateBasedStatement Rate-based rule tracks the rate of requests for each originating `IP address`, and triggers the rule action when the rate exceeds a limit that you specify on the number of requests in any `5-minute` time span. This statement can not be nested. See `rateBasedStatement` below for details.
+     * @param rateBasedStatement Rate-based rule tracks the rate of requests for each originating `IP address`, and triggers the rule action when the rate exceeds a limit that you specify on the number of requests in any specified time span. This statement can not be nested. See `rateBasedStatement` below for details.
      * @return builder
      */
     def rateBasedStatement(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementArgs.Builder]):

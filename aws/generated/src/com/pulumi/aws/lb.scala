@@ -336,6 +336,15 @@ object lb:
       builder.connectionLogs(args(argsBuilder).build)
 
     /**
+     * @param healthCheckLogs Health Check Logs block. See below. Only valid for Load Balancers of type `application`.
+     * @return builder
+     */
+    def healthCheckLogs(args: Endofunction[com.pulumi.aws.lb.inputs.LoadBalancerHealthCheckLogsArgs.Builder]):
+        com.pulumi.aws.lb.LoadBalancerArgs.Builder =
+      val argsBuilder = com.pulumi.aws.lb.inputs.LoadBalancerHealthCheckLogsArgs.builder
+      builder.healthCheckLogs(args(argsBuilder).build)
+
+    /**
      * @param ipamPools . The IPAM pools to use with the load balancer.  Only valid for Load Balancers of type `application`. See ipamPools for more information.
      * @return builder
      */
@@ -448,6 +457,16 @@ object lb:
       builder.forwards(args.map(_(argsBuilder).build)*)
 
     /**
+     * @param jwtValidations An action to validate using JWT.
+     *  Detailed below.
+     * @return builder
+     */
+    def jwtValidations(args: Endofunction[com.pulumi.aws.lb.inputs.GetListenerRuleActionJwtValidationArgs.Builder]*):
+        com.pulumi.aws.lb.inputs.GetListenerRuleActionArgs.Builder =
+      def argsBuilder = com.pulumi.aws.lb.inputs.GetListenerRuleActionJwtValidationArgs.builder
+      builder.jwtValidations(args.map(_(argsBuilder).build)*)
+
+    /**
      * @param redirects An action to redirect the request.
      *  Detailed below.
      * @return builder
@@ -535,6 +554,16 @@ object lb:
       val argsBuilder = com.pulumi.aws.lb.inputs.ListenerMutualAuthenticationArgs.builder
       builder.mutualAuthentication(args(argsBuilder).build)
 
+  extension (builder: com.pulumi.aws.lb.inputs.GetListenerRuleActionJwtValidationArgs.Builder)
+    /**
+     * @param additionalClaims Additional claims to validate.
+     * @return builder
+     */
+    def additionalClaims(args: Endofunction[com.pulumi.aws.lb.inputs.GetListenerRuleActionJwtValidationAdditionalClaimArgs.Builder]*):
+        com.pulumi.aws.lb.inputs.GetListenerRuleActionJwtValidationArgs.Builder =
+      def argsBuilder = com.pulumi.aws.lb.inputs.GetListenerRuleActionJwtValidationAdditionalClaimArgs.builder
+      builder.additionalClaims(args.map(_(argsBuilder).build)*)
+
   extension (builder: com.pulumi.aws.lb.inputs.ListenerRuleActionForwardArgs.Builder)
     /**
      * @param stickiness The target group stickiness for the rule.
@@ -553,6 +582,16 @@ object lb:
         com.pulumi.aws.lb.inputs.ListenerRuleActionForwardArgs.Builder =
       def argsBuilder = com.pulumi.aws.lb.inputs.ListenerRuleActionForwardTargetGroupArgs.builder
       builder.targetGroups(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.aws.lb.inputs.ListenerDefaultActionJwtValidationArgs.Builder)
+    /**
+     * @param additionalClaims Repeatable configuration block for additional claims to validate.
+     * @return builder
+     */
+    def additionalClaims(args: Endofunction[com.pulumi.aws.lb.inputs.ListenerDefaultActionJwtValidationAdditionalClaimArgs.Builder]*):
+        com.pulumi.aws.lb.inputs.ListenerDefaultActionJwtValidationArgs.Builder =
+      def argsBuilder = com.pulumi.aws.lb.inputs.ListenerDefaultActionJwtValidationAdditionalClaimArgs.builder
+      builder.additionalClaims(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.aws.lb.inputs.GetListenerRuleActionForwardArgs.Builder)
     /**
@@ -603,6 +642,15 @@ object lb:
         com.pulumi.aws.lb.inputs.LoadBalancerState.Builder =
       val argsBuilder = com.pulumi.aws.lb.inputs.LoadBalancerConnectionLogsArgs.builder
       builder.connectionLogs(args(argsBuilder).build)
+
+    /**
+     * @param healthCheckLogs Health Check Logs block. See below. Only valid for Load Balancers of type `application`.
+     * @return builder
+     */
+    def healthCheckLogs(args: Endofunction[com.pulumi.aws.lb.inputs.LoadBalancerHealthCheckLogsArgs.Builder]):
+        com.pulumi.aws.lb.inputs.LoadBalancerState.Builder =
+      val argsBuilder = com.pulumi.aws.lb.inputs.LoadBalancerHealthCheckLogsArgs.builder
+      builder.healthCheckLogs(args(argsBuilder).build)
 
     /**
      * @param ipamPools . The IPAM pools to use with the load balancer.  Only valid for Load Balancers of type `application`. See ipamPools for more information.
@@ -687,6 +735,16 @@ object lb:
       def argsBuilder = com.pulumi.aws.lb.inputs.GetListenerRuleConditionQueryStringValueArgs.builder
       builder.values(args.map(_(argsBuilder).build)*)
 
+  extension (builder: com.pulumi.aws.lb.inputs.ListenerRuleActionJwtValidationArgs.Builder)
+    /**
+     * @param additionalClaims Repeatable configuration block for additional claims to validate.
+     * @return builder
+     */
+    def additionalClaims(args: Endofunction[com.pulumi.aws.lb.inputs.ListenerRuleActionJwtValidationAdditionalClaimArgs.Builder]*):
+        com.pulumi.aws.lb.inputs.ListenerRuleActionJwtValidationArgs.Builder =
+      def argsBuilder = com.pulumi.aws.lb.inputs.ListenerRuleActionJwtValidationAdditionalClaimArgs.builder
+      builder.additionalClaims(args.map(_(argsBuilder).build)*)
+
   extension (builder: com.pulumi.aws.lb.inputs.ListenerDefaultActionArgs.Builder)
     /**
      * @param authenticateCognito Configuration block for using Amazon Cognito to authenticate users. Specify only when `type` is `authenticate-cognito`. See below.
@@ -723,6 +781,15 @@ object lb:
         com.pulumi.aws.lb.inputs.ListenerDefaultActionArgs.Builder =
       val argsBuilder = com.pulumi.aws.lb.inputs.ListenerDefaultActionForwardArgs.builder
       builder.forward(args(argsBuilder).build)
+
+    /**
+     * @param jwtValidation Configuration block for creating a JWT validation action. Required if `type` is `jwt-validation`.
+     * @return builder
+     */
+    def jwtValidation(args: Endofunction[com.pulumi.aws.lb.inputs.ListenerDefaultActionJwtValidationArgs.Builder]):
+        com.pulumi.aws.lb.inputs.ListenerDefaultActionArgs.Builder =
+      val argsBuilder = com.pulumi.aws.lb.inputs.ListenerDefaultActionJwtValidationArgs.builder
+      builder.jwtValidation(args(argsBuilder).build)
 
     /**
      * @param redirect Configuration block for creating a redirect action. Required if `type` is `redirect`. See below.
@@ -828,6 +895,15 @@ object lb:
         com.pulumi.aws.lb.inputs.ListenerRuleActionArgs.Builder =
       val argsBuilder = com.pulumi.aws.lb.inputs.ListenerRuleActionForwardArgs.builder
       builder.forward(args(argsBuilder).build)
+
+    /**
+     * @param jwtValidation Information for creating a JWT validation action. Required if `type` is `jwt-validation`.
+     * @return builder
+     */
+    def jwtValidation(args: Endofunction[com.pulumi.aws.lb.inputs.ListenerRuleActionJwtValidationArgs.Builder]):
+        com.pulumi.aws.lb.inputs.ListenerRuleActionArgs.Builder =
+      val argsBuilder = com.pulumi.aws.lb.inputs.ListenerRuleActionJwtValidationArgs.builder
+      builder.jwtValidation(args(argsBuilder).build)
 
     /**
      * @param redirect Information for creating a redirect action. Required if `type` is `redirect`.
@@ -1008,6 +1084,16 @@ object lb:
    * Provides a Load Balancer Listener Rule resource.
    *  
    *  &gt; **Note:** `aws.alb.ListenerRule` is known as `aws.lb.ListenerRule`. The functionality is identical.
+   *  
+   *  #### Required
+   *  
+   *  - `arn` (String) Amazon Resource Name (ARN) of the load balancer listener rule.
+   *  
+   *  Using `pulumi import`, import rules using their ARN. For example:
+   *  
+   *  ```sh
+   *  $ pulumi import aws:lb/listenerRule:ListenerRule front_end arn:aws:elasticloadbalancing:us-west-2:187416307283:listener-rule/app/test/8e4497da625e2d8a/9ab28ade35828f96/67b3d2d36dd7c26b
+   *  ```
    */
   def ListenerRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.lb.ListenerRuleArgs.Builder])(using conf: KoPulumiConf) =

@@ -317,7 +317,9 @@ object odb:
 
   extension (builder: com.pulumi.aws.odb.CloudAutonomousVmClusterArgs.Builder)
     /**
-     * @param maintenanceWindow The maintenance window of the Autonomous VM cluster.
+     * @param maintenanceWindow The maintenance window of the Autonomous VM cluster. Changing this will force terraform to create new resource.
+     *  
+     *  The following arguments are optional:
      * @return builder
      */
     def maintenanceWindow(args: Endofunction[com.pulumi.aws.odb.inputs.CloudAutonomousVmClusterMaintenanceWindowArgs.Builder]):
@@ -374,7 +376,9 @@ object odb:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /**
-   * 
+   * Terraform  resource for managing oracle database network peering resource in AWS. If underlying odb network is shared, ARN must be used while creating network peering.
+   *  
+   *  You can find out more about Oracle Database{@literal @}AWS from [User Guide](https://docs.aws.amazon.com/odb/latest/UserGuide/what-is-odb.html).
    */
   def NetworkPeeringConnection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.odb.NetworkPeeringConnectionArgs.Builder])(using conf: KoPulumiConf) =
@@ -400,7 +404,9 @@ object odb:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /**
-   * 
+   * Terraform to manage cloud vm cluster resource in AWS for Oracle Database{@literal @}AWS. If underlying odb network and cloud exadata infrastructure is shared, ARN must be used while creating VM cluster.
+   *  
+   *  You can find out more about Oracle Database{@literal @}AWS from [User Guide](https://docs.aws.amazon.com/odb/latest/UserGuide/what-is-odb.html).
    */
   def CloudVmCluster(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.odb.CloudVmClusterArgs.Builder])(using conf: KoPulumiConf) =
@@ -414,6 +420,10 @@ object odb:
         resourceOptions(CustomResourceOptions.builder).build)
 
   extension (builder: com.pulumi.aws.odb.CloudExadataInfrastructureArgs.Builder)
+    /**
+     * @param customerContactsToSendToOcis The email addresses of contacts to receive notification from Oracle about maintenance updates for the Exadata infrastructure. Changing this will force terraform to create new resource.
+     * @return builder
+     */
     def customerContactsToSendToOcis(args: Endofunction[com.pulumi.aws.odb.inputs.CloudExadataInfrastructureCustomerContactsToSendToOciArgs.Builder]*):
         com.pulumi.aws.odb.CloudExadataInfrastructureArgs.Builder =
       def argsBuilder = com.pulumi.aws.odb.inputs.CloudExadataInfrastructureCustomerContactsToSendToOciArgs.builder
@@ -471,6 +481,10 @@ object odb:
       builder.months(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.aws.odb.inputs.CloudExadataInfrastructureState.Builder)
+    /**
+     * @param customerContactsToSendToOcis The email addresses of contacts to receive notification from Oracle about maintenance updates for the Exadata infrastructure. Changing this will force terraform to create new resource.
+     * @return builder
+     */
     def customerContactsToSendToOcis(args: Endofunction[com.pulumi.aws.odb.inputs.CloudExadataInfrastructureCustomerContactsToSendToOciArgs.Builder]*):
         com.pulumi.aws.odb.inputs.CloudExadataInfrastructureState.Builder =
       def argsBuilder = com.pulumi.aws.odb.inputs.CloudExadataInfrastructureCustomerContactsToSendToOciArgs.builder
@@ -492,7 +506,9 @@ object odb:
 
   extension (builder: com.pulumi.aws.odb.inputs.CloudAutonomousVmClusterState.Builder)
     /**
-     * @param maintenanceWindow The maintenance window of the Autonomous VM cluster.
+     * @param maintenanceWindow The maintenance window of the Autonomous VM cluster. Changing this will force terraform to create new resource.
+     *  
+     *  The following arguments are optional:
      * @return builder
      */
     def maintenanceWindow(args: Endofunction[com.pulumi.aws.odb.inputs.CloudAutonomousVmClusterMaintenanceWindowArgs.Builder]):
@@ -507,7 +523,7 @@ object odb:
 
   extension (builder: com.pulumi.aws.odb.inputs.CloudAutonomousVmClusterMaintenanceWindowArgs.Builder)
     /**
-     * @param daysOfWeeks The days of the week when maintenance can be performed.
+     * @param daysOfWeeks The days of the week when maintenance can be performed. Changing this will force terraform to create new resource.
      * @return builder
      */
     def daysOfWeeks(args: Endofunction[com.pulumi.aws.odb.inputs.CloudAutonomousVmClusterMaintenanceWindowDaysOfWeekArgs.Builder]*):
@@ -516,7 +532,7 @@ object odb:
       builder.daysOfWeeks(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param months The months when maintenance can be performed.
+     * @param months The months when maintenance can be performed. Changing this will force terraform to create new resource.
      * @return builder
      */
     def months(args: Endofunction[com.pulumi.aws.odb.inputs.CloudAutonomousVmClusterMaintenanceWindowMonthArgs.Builder]*):
@@ -538,9 +554,9 @@ object odb:
      * @param iormConfigCaches The Exadata IORM (I/O Resource Manager) configuration cache details for the VM cluster.
      * @return builder
      */
-    def iormConfigCaches(args: Endofunction[com.pulumi.aws.odb.inputs.CloudVmClusterIormConfigCachArgs.Builder]*):
+    def iormConfigCaches(args: Endofunction[com.pulumi.aws.odb.inputs.CloudVmClusterIormConfigCacheArgs.Builder]*):
         com.pulumi.aws.odb.inputs.CloudVmClusterState.Builder =
-      def argsBuilder = com.pulumi.aws.odb.inputs.CloudVmClusterIormConfigCachArgs.builder
+      def argsBuilder = com.pulumi.aws.odb.inputs.CloudVmClusterIormConfigCacheArgs.builder
       builder.iormConfigCaches(args.map(_(argsBuilder).build)*)
 
     def timeouts(args: Endofunction[com.pulumi.aws.odb.inputs.CloudVmClusterTimeoutsArgs.Builder]):
@@ -572,23 +588,22 @@ object odb:
       val argsBuilder = com.pulumi.aws.odb.inputs.NetworkTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
-  extension (builder: com.pulumi.aws.odb.inputs.CloudVmClusterIormConfigCachArgs.Builder)
-    def dbPlans(args: Endofunction[com.pulumi.aws.odb.inputs.CloudVmClusterIormConfigCachDbPlanArgs.Builder]*):
-        com.pulumi.aws.odb.inputs.CloudVmClusterIormConfigCachArgs.Builder =
-      def argsBuilder = com.pulumi.aws.odb.inputs.CloudVmClusterIormConfigCachDbPlanArgs.builder
+  extension (builder: com.pulumi.aws.odb.inputs.CloudVmClusterIormConfigCacheArgs.Builder)
+    def dbPlans(args: Endofunction[com.pulumi.aws.odb.inputs.CloudVmClusterIormConfigCacheDbPlanArgs.Builder]*):
+        com.pulumi.aws.odb.inputs.CloudVmClusterIormConfigCacheArgs.Builder =
+      def argsBuilder = com.pulumi.aws.odb.inputs.CloudVmClusterIormConfigCacheDbPlanArgs.builder
       builder.dbPlans(args.map(_(argsBuilder).build)*)
 
-  extension (builder: com.pulumi.aws.odb.inputs.GetNetworkPeeringConnectionsArgs.Builder)
+  extension (builder: com.pulumi.aws.odb.inputs.NetworkManagedServiceArgs.Builder)
     /**
-     * @param odbPeeringConnections The list of ODB peering connections. A summary of an ODB peering connection.
+     * @param kmsAccesses Specifies the configuration for KMS access from the ODB network.
      * @return builder
      */
-    def odbPeeringConnections(args: Endofunction[com.pulumi.aws.odb.inputs.GetNetworkPeeringConnectionsOdbPeeringConnectionArgs.Builder]*):
-        com.pulumi.aws.odb.inputs.GetNetworkPeeringConnectionsArgs.Builder =
-      def argsBuilder = com.pulumi.aws.odb.inputs.GetNetworkPeeringConnectionsOdbPeeringConnectionArgs.builder
-      builder.odbPeeringConnections(args.map(_(argsBuilder).build)*)
+    def kmsAccesses(args: Endofunction[com.pulumi.aws.odb.inputs.NetworkManagedServiceKmsAccessArgs.Builder]*):
+        com.pulumi.aws.odb.inputs.NetworkManagedServiceArgs.Builder =
+      def argsBuilder = com.pulumi.aws.odb.inputs.NetworkManagedServiceKmsAccessArgs.builder
+      builder.kmsAccesses(args.map(_(argsBuilder).build)*)
 
-  extension (builder: com.pulumi.aws.odb.inputs.NetworkManagedServiceArgs.Builder)
     def managedS3BackupAccesses(args: Endofunction[com.pulumi.aws.odb.inputs.NetworkManagedServiceManagedS3BackupAccessArgs.Builder]*):
         com.pulumi.aws.odb.inputs.NetworkManagedServiceArgs.Builder =
       def argsBuilder = com.pulumi.aws.odb.inputs.NetworkManagedServiceManagedS3BackupAccessArgs.builder
@@ -607,6 +622,15 @@ object odb:
         com.pulumi.aws.odb.inputs.NetworkManagedServiceArgs.Builder =
       def argsBuilder = com.pulumi.aws.odb.inputs.NetworkManagedServiceServiceNetworkEndpointArgs.builder
       builder.serviceNetworkEndpoints(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param stsAccesses Specifies the configuration for STS access from the ODB network.
+     * @return builder
+     */
+    def stsAccesses(args: Endofunction[com.pulumi.aws.odb.inputs.NetworkManagedServiceStsAccessArgs.Builder]*):
+        com.pulumi.aws.odb.inputs.NetworkManagedServiceArgs.Builder =
+      def argsBuilder = com.pulumi.aws.odb.inputs.NetworkManagedServiceStsAccessArgs.builder
+      builder.stsAccesses(args.map(_(argsBuilder).build)*)
 
     /**
      * @param zeroEtlAccesses Specifies the configuration for Zero-ETL access from the ODB network.

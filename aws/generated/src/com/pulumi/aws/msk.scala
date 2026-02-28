@@ -261,6 +261,15 @@ object msk:
       val argsBuilder = com.pulumi.aws.msk.inputs.ClusterOpenMonitoringArgs.builder
       builder.openMonitoring(args(argsBuilder).build)
 
+    /**
+     * @param rebalancing Configuration block for intelligent rebalancing. See rebalancing Argument Reference below. Only applicable to MSK Provisioned clusters with Express brokers.
+     * @return builder
+     */
+    def rebalancing(args: Endofunction[com.pulumi.aws.msk.inputs.ClusterRebalancingArgs.Builder]):
+        com.pulumi.aws.msk.ClusterArgs.Builder =
+      val argsBuilder = com.pulumi.aws.msk.inputs.ClusterRebalancingArgs.builder
+      builder.rebalancing(args(argsBuilder).build)
+
   /**
    * Associates SCRAM secrets stored in the Secrets Manager service with a Managed Streaming for Kafka (MSK) cluster.
    *  
@@ -366,6 +375,15 @@ object msk:
         com.pulumi.aws.msk.inputs.ClusterState.Builder =
       val argsBuilder = com.pulumi.aws.msk.inputs.ClusterOpenMonitoringArgs.builder
       builder.openMonitoring(args(argsBuilder).build)
+
+    /**
+     * @param rebalancing Configuration block for intelligent rebalancing. See rebalancing Argument Reference below. Only applicable to MSK Provisioned clusters with Express brokers.
+     * @return builder
+     */
+    def rebalancing(args: Endofunction[com.pulumi.aws.msk.inputs.ClusterRebalancingArgs.Builder]):
+        com.pulumi.aws.msk.inputs.ClusterState.Builder =
+      val argsBuilder = com.pulumi.aws.msk.inputs.ClusterRebalancingArgs.builder
+      builder.rebalancing(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.msk.inputs.ReplicatorReplicationInfoListArgs.Builder)
     /**

@@ -94,6 +94,15 @@ object eks:
       builder.computeConfig(args(argsBuilder).build)
 
     /**
+     * @param controlPlaneScalingConfig Configuration block for the control plane scaling tier. See [EKS Provisioned Control Plane](https://docs.aws.amazon.com/eks/latest/userguide/eks-provisioned-control-plane-getting-started.html) for more information. Detailed below.
+     * @return builder
+     */
+    def controlPlaneScalingConfig(args: Endofunction[com.pulumi.aws.eks.inputs.ClusterControlPlaneScalingConfigArgs.Builder]):
+        com.pulumi.aws.eks.ClusterArgs.Builder =
+      val argsBuilder = com.pulumi.aws.eks.inputs.ClusterControlPlaneScalingConfigArgs.builder
+      builder.controlPlaneScalingConfig(args(argsBuilder).build)
+
+    /**
      * @param encryptionConfig Configuration block with encryption configuration for the cluster. Detailed below.
      * @return builder
      */
@@ -177,6 +186,18 @@ object eks:
       val argsBuilder = com.pulumi.aws.eks.inputs.AccessPolicyAssociationAccessScopeArgs.builder
       builder.accessScope(args(argsBuilder).build)
 
+  /** Manages an EKS Capability for an EKS cluster. */
+  def Capability(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.eks.CapabilityArgs.Builder])(using conf: KoPulumiConf) =
+    var argsBuilder = com.pulumi.aws.eks.CapabilityArgs.builder
+    conf.logicalName2tagName(name) match
+      case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
+      case None          =>
+    
+    com.pulumi.aws.eks.Capability(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder).build)
+
   extension (builder: com.pulumi.aws.eks.NodeGroupArgs.Builder)
     /**
      * @param launchTemplate Configuration block with Launch Template settings. See `launchTemplate` below for details. Conflicts with `remoteAccess`.
@@ -253,6 +274,21 @@ object eks:
     com.pulumi.aws.eks.PodIdentityAssociation(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
+
+  extension (builder: com.pulumi.aws.eks.CapabilityArgs.Builder)
+    /**
+     * @param configuration Configuration for the capability. See `configuration` below.
+     * @return builder
+     */
+    def configuration(args: Endofunction[com.pulumi.aws.eks.inputs.CapabilityConfigurationArgs.Builder]):
+        com.pulumi.aws.eks.CapabilityArgs.Builder =
+      val argsBuilder = com.pulumi.aws.eks.inputs.CapabilityConfigurationArgs.builder
+      builder.configuration(args(argsBuilder).build)
+
+    def timeouts(args: Endofunction[com.pulumi.aws.eks.inputs.CapabilityTimeoutsArgs.Builder]):
+        com.pulumi.aws.eks.CapabilityArgs.Builder =
+      val argsBuilder = com.pulumi.aws.eks.inputs.CapabilityTimeoutsArgs.builder
+      builder.timeouts(args(argsBuilder).build)
 
   /** Access Entry Configurations for an EKS Cluster. */
   def AccessEntry(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
@@ -476,6 +512,15 @@ object eks:
       builder.computeConfig(args(argsBuilder).build)
 
     /**
+     * @param controlPlaneScalingConfig Configuration block for the control plane scaling tier. See [EKS Provisioned Control Plane](https://docs.aws.amazon.com/eks/latest/userguide/eks-provisioned-control-plane-getting-started.html) for more information. Detailed below.
+     * @return builder
+     */
+    def controlPlaneScalingConfig(args: Endofunction[com.pulumi.aws.eks.inputs.ClusterControlPlaneScalingConfigArgs.Builder]):
+        com.pulumi.aws.eks.inputs.ClusterState.Builder =
+      val argsBuilder = com.pulumi.aws.eks.inputs.ClusterControlPlaneScalingConfigArgs.builder
+      builder.controlPlaneScalingConfig(args(argsBuilder).build)
+
+    /**
      * @param encryptionConfig Configuration block with encryption configuration for the cluster. Detailed below.
      * @return builder
      */
@@ -682,6 +727,21 @@ object eks:
       val argsBuilder = com.pulumi.aws.eks.inputs.ClusterOutpostConfigControlPlanePlacementArgs.builder
       builder.controlPlanePlacement(args(argsBuilder).build)
 
+  extension (builder: com.pulumi.aws.eks.inputs.CapabilityState.Builder)
+    /**
+     * @param configuration Configuration for the capability. See `configuration` below.
+     * @return builder
+     */
+    def configuration(args: Endofunction[com.pulumi.aws.eks.inputs.CapabilityConfigurationArgs.Builder]):
+        com.pulumi.aws.eks.inputs.CapabilityState.Builder =
+      val argsBuilder = com.pulumi.aws.eks.inputs.CapabilityConfigurationArgs.builder
+      builder.configuration(args(argsBuilder).build)
+
+    def timeouts(args: Endofunction[com.pulumi.aws.eks.inputs.CapabilityTimeoutsArgs.Builder]):
+        com.pulumi.aws.eks.inputs.CapabilityState.Builder =
+      val argsBuilder = com.pulumi.aws.eks.inputs.CapabilityTimeoutsArgs.builder
+      builder.timeouts(args(argsBuilder).build)
+
   extension (builder: com.pulumi.aws.eks.inputs.ClusterEncryptionConfigArgs.Builder)
     /**
      * @param provider Configuration block with provider for encryption. Detailed below.
@@ -692,6 +752,44 @@ object eks:
       val argsBuilder = com.pulumi.aws.eks.inputs.ClusterEncryptionConfigProviderArgs.builder
       builder.provider(args(argsBuilder).build)
 
+  extension (builder: com.pulumi.aws.eks.inputs.CapabilityConfigurationArgoCdRbacRoleMappingArgs.Builder)
+    /**
+     * @param identities List of identities. See `identity` below.
+     * @return builder
+     */
+    def identities(args: Endofunction[com.pulumi.aws.eks.inputs.CapabilityConfigurationArgoCdRbacRoleMappingIdentityArgs.Builder]*):
+        com.pulumi.aws.eks.inputs.CapabilityConfigurationArgoCdRbacRoleMappingArgs.Builder =
+      def argsBuilder = com.pulumi.aws.eks.inputs.CapabilityConfigurationArgoCdRbacRoleMappingIdentityArgs.builder
+      builder.identities(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.aws.eks.inputs.CapabilityConfigurationArgoCdArgs.Builder)
+    /**
+     * @param awsIdc AWS IAM Identity Center configuration. See `awsIdc` below.
+     * @return builder
+     */
+    def awsIdc(args: Endofunction[com.pulumi.aws.eks.inputs.CapabilityConfigurationArgoCdAwsIdcArgs.Builder]):
+        com.pulumi.aws.eks.inputs.CapabilityConfigurationArgoCdArgs.Builder =
+      val argsBuilder = com.pulumi.aws.eks.inputs.CapabilityConfigurationArgoCdAwsIdcArgs.builder
+      builder.awsIdc(args(argsBuilder).build)
+
+    /**
+     * @param networkAccess Network access configuration. See `networkAccess` below.
+     * @return builder
+     */
+    def networkAccess(args: Endofunction[com.pulumi.aws.eks.inputs.CapabilityConfigurationArgoCdNetworkAccessArgs.Builder]):
+        com.pulumi.aws.eks.inputs.CapabilityConfigurationArgoCdArgs.Builder =
+      val argsBuilder = com.pulumi.aws.eks.inputs.CapabilityConfigurationArgoCdNetworkAccessArgs.builder
+      builder.networkAccess(args(argsBuilder).build)
+
+    /**
+     * @param rbacRoleMappings RBAC role mappings. See `rbacRoleMapping` below.
+     * @return builder
+     */
+    def rbacRoleMappings(args: Endofunction[com.pulumi.aws.eks.inputs.CapabilityConfigurationArgoCdRbacRoleMappingArgs.Builder]*):
+        com.pulumi.aws.eks.inputs.CapabilityConfigurationArgoCdArgs.Builder =
+      def argsBuilder = com.pulumi.aws.eks.inputs.CapabilityConfigurationArgoCdRbacRoleMappingArgs.builder
+      builder.rbacRoleMappings(args.map(_(argsBuilder).build)*)
+
   extension (builder: com.pulumi.aws.eks.inputs.IdentityProviderConfigState.Builder)
     /**
      * @param oidc Nested attribute containing [OpenID Connect](https://openid.net/connect/) identity provider information for the cluster. Detailed below.
@@ -701,6 +799,16 @@ object eks:
         com.pulumi.aws.eks.inputs.IdentityProviderConfigState.Builder =
       val argsBuilder = com.pulumi.aws.eks.inputs.IdentityProviderConfigOidcArgs.builder
       builder.oidc(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.eks.inputs.CapabilityConfigurationArgs.Builder)
+    /**
+     * @param argoCd ArgoCD configuration. See `argoCd` below.
+     * @return builder
+     */
+    def argoCd(args: Endofunction[com.pulumi.aws.eks.inputs.CapabilityConfigurationArgoCdArgs.Builder]):
+        com.pulumi.aws.eks.inputs.CapabilityConfigurationArgs.Builder =
+      val argsBuilder = com.pulumi.aws.eks.inputs.CapabilityConfigurationArgoCdArgs.builder
+      builder.argoCd(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.eks.inputs.NodeGroupNodeRepairConfigArgs.Builder)
     /**

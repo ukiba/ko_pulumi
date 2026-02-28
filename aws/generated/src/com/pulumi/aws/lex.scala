@@ -271,6 +271,16 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsSlotTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
+    /**
+     * @param valueElicitationSetting Prompts that Amazon Lex sends to the user to elicit a response that provides the value for the slot.
+     *  If you configure this block without `prompt_specification.*.prompt_attempts_specification`, AWS will provide default `promptAttemptsSpecification` blocks for the initial prompt (map key `Initial`) and each retry attempt (map keys `Retry1`, `Retry2`, etc.).
+     *  This will cause Terraform to report differences.
+     *  Use the `valueElicitationSetting` configuration above in the `valueElicitationSetting` example to avoid differences resulting from AWS default configurations.
+     *  See the `valueElicitationSetting` argument reference below.
+     *  
+     *  The following arguments are optional:
+     * @return builder
+     */
     def valueElicitationSetting(args: Endofunction[com.pulumi.aws.lex.inputs.V2modelsSlotValueElicitationSettingArgs.Builder]):
         com.pulumi.aws.lex.V2modelsSlotArgs.Builder =
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsSlotValueElicitationSettingArgs.builder
@@ -291,15 +301,7 @@ object lex:
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
-  /**
-   * ## Import
-   *  
-   *  Using `pulumi import`, import Lex V2 Models Intent using the `intent_id:bot_id:bot_version:locale_id`. For example:
-   *  
-   *  ```sh
-   *  $ pulumi import aws:lex/v2modelsIntent:V2modelsIntent example intent-42874:bot-11376:DRAFT:en_US
-   *  ```
-   */
+  /** Resource for managing an AWS Lex V2 Models Intent. */
   def V2modelsIntent(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.lex.V2modelsIntentArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.lex.V2modelsIntentArgs.builder
@@ -408,15 +410,7 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsBotVersionTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
-  /**
-   * ## Import
-   *  
-   *  Using `pulumi import`, import Lex V2 Models Slot using the `id`. For example:
-   *  
-   *  ```sh
-   *  $ pulumi import aws:lex/v2modelsSlot:V2modelsSlot example bot-1234,1,intent-5678,en-US,slot-9012
-   *  ```
-   */
+  /** Resource for managing an AWS Lex V2 Models Slot. */
   def V2modelsSlot(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.lex.V2modelsSlotArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.lex.V2modelsSlotArgs.builder
@@ -466,6 +460,10 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentClosingSettingArgs.builder
       builder.closingSetting(args(argsBuilder).build)
 
+    /**
+     * @param confirmationSetting Configuration block for prompts that Amazon Lex sends to the user to confirm the completion of an intent. If the user answers &#34;no,&#34; the settings contain a statement that is sent to the user to end the intent. If you configure this block without `prompt_specification.*.prompt_attempts_specification`, AWS will provide default configurations for `Initial` and `Retry1` `promptAttemptsSpecification`s. This will cause Terraform to report differences. Use the `confirmationSetting` configuration above in the Basic Usage example to avoid differences resulting from AWS default configuration. See `confirmationSetting`.
+     * @return builder
+     */
     def confirmationSetting(args: Endofunction[com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingArgs.Builder]):
         com.pulumi.aws.lex.V2modelsIntentArgs.Builder =
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingArgs.builder
@@ -508,7 +506,7 @@ object lex:
       builder.inputContexts(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param kendraConfiguration Configuration block for information required to use the AMAZON.KendraSearchIntent intent to connect to an Amazon Kendra index. The AMAZON.KendraSearchIntent intent is called when Amazon Lex can&#39;t determine another intent to invoke. See `kendraConfiguration`.
+     * @param kendraConfiguration Configuration block for information required to use the AMAZON.KendraSearchIntent intent to connect to an Amazon Kendra index. The AMAZON.KendraSearchIntent intent is called when Amazon Lex can&#39;t determine another intent to invoke. Cannot be used with `qnaIntentConfiguration`. See `kendraConfiguration`.
      * @return builder
      */
     def kendraConfiguration(args: Endofunction[com.pulumi.aws.lex.inputs.V2modelsIntentKendraConfigurationArgs.Builder]):
@@ -524,6 +522,15 @@ object lex:
         com.pulumi.aws.lex.V2modelsIntentArgs.Builder =
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentOutputContextArgs.builder
       builder.outputContexts(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param qnaIntentConfiguration Configuration block for QnA intent settings. This is used when `parentIntentSignature` is set to `AMAZON.QnAIntent`. Cannot be used with `kendraConfiguration`. See `qnaIntentConfiguration`.
+     * @return builder
+     */
+    def qnaIntentConfiguration(args: Endofunction[com.pulumi.aws.lex.inputs.V2modelsIntentQnaIntentConfigurationArgs.Builder]):
+        com.pulumi.aws.lex.V2modelsIntentArgs.Builder =
+      val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentQnaIntentConfigurationArgs.builder
+      builder.qnaIntentConfiguration(args(argsBuilder).build)
 
     /**
      * @param sampleUtterances Configuration block for strings that a user might say to signal the intent. See `sampleUtterance`.
@@ -2097,6 +2104,16 @@ object lex:
         com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookFulfillmentUpdatesSpecificationStartResponseMessageGroupArgs.Builder =
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookFulfillmentUpdatesSpecificationStartResponseMessageGroupVariationArgs.builder
       builder.variations(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentQnaIntentConfigurationDataSourceConfigurationBedrockKnowledgeStoreConfigurationArgs.Builder)
+    /**
+     * @param exactResponseFields Configuration block for exact response fields. See `exactResponseFields`.
+     * @return builder
+     */
+    def exactResponseFields(args: Endofunction[com.pulumi.aws.lex.inputs.V2modelsIntentQnaIntentConfigurationDataSourceConfigurationBedrockKnowledgeStoreConfigurationExactResponseFieldsArgs.Builder]):
+        com.pulumi.aws.lex.inputs.V2modelsIntentQnaIntentConfigurationDataSourceConfigurationBedrockKnowledgeStoreConfigurationArgs.Builder =
+      val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentQnaIntentConfigurationDataSourceConfigurationBedrockKnowledgeStoreConfigurationExactResponseFieldsArgs.builder
+      builder.exactResponseFields(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsSlotSubSlotSettingSlotSpecificationValueElicitationSettingWaitAndContinueSpecificationStillWaitingResponseArgs.Builder)
     def messageGroups(args: Endofunction[com.pulumi.aws.lex.inputs.V2modelsSlotSubSlotSettingSlotSpecificationValueElicitationSettingWaitAndContinueSpecificationStillWaitingResponseMessageGroupArgs.Builder]*):
@@ -6441,6 +6458,16 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingFailureConditionalDefaultBranchResponseMessageGroupArgs.builder
       builder.messageGroups(args.map(_(argsBuilder).build)*)
 
+  extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentQnaIntentConfigurationDataSourceConfigurationOpensearchConfigurationArgs.Builder)
+    /**
+     * @param exactResponseFields Configuration block for exact response fields. See `exactResponseFields`.
+     * @return builder
+     */
+    def exactResponseFields(args: Endofunction[com.pulumi.aws.lex.inputs.V2modelsIntentQnaIntentConfigurationDataSourceConfigurationOpensearchConfigurationExactResponseFieldsArgs.Builder]):
+        com.pulumi.aws.lex.inputs.V2modelsIntentQnaIntentConfigurationDataSourceConfigurationOpensearchConfigurationArgs.Builder =
+      val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentQnaIntentConfigurationDataSourceConfigurationOpensearchConfigurationExactResponseFieldsArgs.builder
+      builder.exactResponseFields(args(argsBuilder).build)
+
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookFulfillmentUpdatesSpecificationStartResponseMessageGroupMessageImageResponseCardArgs.Builder)
     /**
      * @param buttons Configuration blocks for buttons that should be displayed on the response card. The arrangement of the buttons is determined by the platform that displays the button. See `button`.
@@ -7040,6 +7067,16 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsSlotValueElicitationSettingWaitAndContinueSpecificationWaitingResponseMessageGroupMessageSsmlMessageArgs.builder
       builder.ssmlMessage(args(argsBuilder).build)
 
+  extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentQnaIntentConfigurationBedrockModelConfigurationArgs.Builder)
+    /**
+     * @param guardrail Configuration block for the guardrail to use with the Bedrock model. See `guardrail`.
+     * @return builder
+     */
+    def guardrail(args: Endofunction[com.pulumi.aws.lex.inputs.V2modelsIntentQnaIntentConfigurationBedrockModelConfigurationGuardrailArgs.Builder]):
+        com.pulumi.aws.lex.inputs.V2modelsIntentQnaIntentConfigurationBedrockModelConfigurationArgs.Builder =
+      val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentQnaIntentConfigurationBedrockModelConfigurationGuardrailArgs.builder
+      builder.guardrail(args(argsBuilder).build)
+
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationSuccessNextStepIntentArgs.Builder)
     /**
      * @param slots Configuration block for all of the slot value overrides for the intent. The name of the slot maps to the value of the slot. Slots that are not included in the map aren&#39;t overridden. See `slot`.
@@ -7200,6 +7237,10 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentClosingSettingArgs.builder
       builder.closingSetting(args(argsBuilder).build)
 
+    /**
+     * @param confirmationSetting Configuration block for prompts that Amazon Lex sends to the user to confirm the completion of an intent. If the user answers &#34;no,&#34; the settings contain a statement that is sent to the user to end the intent. If you configure this block without `prompt_specification.*.prompt_attempts_specification`, AWS will provide default configurations for `Initial` and `Retry1` `promptAttemptsSpecification`s. This will cause Terraform to report differences. Use the `confirmationSetting` configuration above in the Basic Usage example to avoid differences resulting from AWS default configuration. See `confirmationSetting`.
+     * @return builder
+     */
     def confirmationSetting(args: Endofunction[com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingArgs.Builder]):
         com.pulumi.aws.lex.inputs.V2modelsIntentState.Builder =
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingArgs.builder
@@ -7242,7 +7283,7 @@ object lex:
       builder.inputContexts(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param kendraConfiguration Configuration block for information required to use the AMAZON.KendraSearchIntent intent to connect to an Amazon Kendra index. The AMAZON.KendraSearchIntent intent is called when Amazon Lex can&#39;t determine another intent to invoke. See `kendraConfiguration`.
+     * @param kendraConfiguration Configuration block for information required to use the AMAZON.KendraSearchIntent intent to connect to an Amazon Kendra index. The AMAZON.KendraSearchIntent intent is called when Amazon Lex can&#39;t determine another intent to invoke. Cannot be used with `qnaIntentConfiguration`. See `kendraConfiguration`.
      * @return builder
      */
     def kendraConfiguration(args: Endofunction[com.pulumi.aws.lex.inputs.V2modelsIntentKendraConfigurationArgs.Builder]):
@@ -7258,6 +7299,15 @@ object lex:
         com.pulumi.aws.lex.inputs.V2modelsIntentState.Builder =
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentOutputContextArgs.builder
       builder.outputContexts(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param qnaIntentConfiguration Configuration block for QnA intent settings. This is used when `parentIntentSignature` is set to `AMAZON.QnAIntent`. Cannot be used with `kendraConfiguration`. See `qnaIntentConfiguration`.
+     * @return builder
+     */
+    def qnaIntentConfiguration(args: Endofunction[com.pulumi.aws.lex.inputs.V2modelsIntentQnaIntentConfigurationArgs.Builder]):
+        com.pulumi.aws.lex.inputs.V2modelsIntentState.Builder =
+      val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentQnaIntentConfigurationArgs.builder
+      builder.qnaIntentConfiguration(args(argsBuilder).build)
 
     /**
      * @param sampleUtterances Configuration block for strings that a user might say to signal the intent. See `sampleUtterance`.
@@ -7806,6 +7856,34 @@ object lex:
         com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingFailureResponseMessageGroupMessageImageResponseCardArgs.Builder =
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingFailureResponseMessageGroupMessageImageResponseCardButtonArgs.builder
       builder.buttons(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentQnaIntentConfigurationDataSourceConfigurationArgs.Builder)
+    /**
+     * @param bedrockKnowledgeStoreConfiguration Configuration block for Amazon Bedrock Knowledge Base as a data source. See `bedrockKnowledgeStoreConfiguration`.
+     * @return builder
+     */
+    def bedrockKnowledgeStoreConfiguration(args: Endofunction[com.pulumi.aws.lex.inputs.V2modelsIntentQnaIntentConfigurationDataSourceConfigurationBedrockKnowledgeStoreConfigurationArgs.Builder]):
+        com.pulumi.aws.lex.inputs.V2modelsIntentQnaIntentConfigurationDataSourceConfigurationArgs.Builder =
+      val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentQnaIntentConfigurationDataSourceConfigurationBedrockKnowledgeStoreConfigurationArgs.builder
+      builder.bedrockKnowledgeStoreConfiguration(args(argsBuilder).build)
+
+    /**
+     * @param kendraConfiguration Configuration block for Amazon Kendra as a data source. See `kendraConfiguration`.
+     * @return builder
+     */
+    def kendraConfiguration(args: Endofunction[com.pulumi.aws.lex.inputs.V2modelsIntentQnaIntentConfigurationDataSourceConfigurationKendraConfigurationArgs.Builder]):
+        com.pulumi.aws.lex.inputs.V2modelsIntentQnaIntentConfigurationDataSourceConfigurationArgs.Builder =
+      val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentQnaIntentConfigurationDataSourceConfigurationKendraConfigurationArgs.builder
+      builder.kendraConfiguration(args(argsBuilder).build)
+
+    /**
+     * @param opensearchConfiguration Configuration block for OpenSearch as a data source. See `opensearchConfiguration`.
+     * @return builder
+     */
+    def opensearchConfiguration(args: Endofunction[com.pulumi.aws.lex.inputs.V2modelsIntentQnaIntentConfigurationDataSourceConfigurationOpensearchConfigurationArgs.Builder]):
+        com.pulumi.aws.lex.inputs.V2modelsIntentQnaIntentConfigurationDataSourceConfigurationArgs.Builder =
+      val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentQnaIntentConfigurationDataSourceConfigurationOpensearchConfigurationArgs.builder
+      builder.opensearchConfiguration(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingInitialResponseMessageGroupMessageArgs.Builder)
     /**
@@ -9003,6 +9081,25 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentClosingSettingConditionalDefaultBranchResponseMessageGroupVariationArgs.builder
       builder.variations(args.map(_(argsBuilder).build)*)
 
+  extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentQnaIntentConfigurationArgs.Builder)
+    /**
+     * @param bedrockModelConfiguration Configuration block for the Amazon Bedrock model to use for generating responses. See `bedrockModelConfiguration`.
+     * @return builder
+     */
+    def bedrockModelConfiguration(args: Endofunction[com.pulumi.aws.lex.inputs.V2modelsIntentQnaIntentConfigurationBedrockModelConfigurationArgs.Builder]):
+        com.pulumi.aws.lex.inputs.V2modelsIntentQnaIntentConfigurationArgs.Builder =
+      val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentQnaIntentConfigurationBedrockModelConfigurationArgs.builder
+      builder.bedrockModelConfiguration(args(argsBuilder).build)
+
+    /**
+     * @param dataSourceConfiguration Configuration block for the data sources to use for the QnA intent. Only one data source (Bedrock Knowledge Base, Kendra, or OpenSearch) can be specified. See `dataSourceConfiguration`.
+     * @return builder
+     */
+    def dataSourceConfiguration(args: Endofunction[com.pulumi.aws.lex.inputs.V2modelsIntentQnaIntentConfigurationDataSourceConfigurationArgs.Builder]):
+        com.pulumi.aws.lex.inputs.V2modelsIntentQnaIntentConfigurationArgs.Builder =
+      val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentQnaIntentConfigurationDataSourceConfigurationArgs.builder
+      builder.dataSourceConfiguration(args(argsBuilder).build)
+
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingConditionalConditionalBranchResponseMessageGroupArgs.Builder)
     /**
      * @param message Configuration block for the primary message that Amazon Lex should send to the user. See `message`.
@@ -9943,6 +10040,16 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsSlotTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
+    /**
+     * @param valueElicitationSetting Prompts that Amazon Lex sends to the user to elicit a response that provides the value for the slot.
+     *  If you configure this block without `prompt_specification.*.prompt_attempts_specification`, AWS will provide default `promptAttemptsSpecification` blocks for the initial prompt (map key `Initial`) and each retry attempt (map keys `Retry1`, `Retry2`, etc.).
+     *  This will cause Terraform to report differences.
+     *  Use the `valueElicitationSetting` configuration above in the `valueElicitationSetting` example to avoid differences resulting from AWS default configurations.
+     *  See the `valueElicitationSetting` argument reference below.
+     *  
+     *  The following arguments are optional:
+     * @return builder
+     */
     def valueElicitationSetting(args: Endofunction[com.pulumi.aws.lex.inputs.V2modelsSlotValueElicitationSettingArgs.Builder]):
         com.pulumi.aws.lex.inputs.V2modelsSlotState.Builder =
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsSlotValueElicitationSettingArgs.builder

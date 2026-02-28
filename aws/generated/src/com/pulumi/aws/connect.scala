@@ -601,6 +601,10 @@ object connect:
       builder.userConfigs(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.aws.connect.inputs.RoutingProfileMediaConcurrencyArgs.Builder)
+    /**
+     * @param crossChannelBehavior Defines the cross-channel routing behavior for each traffic type. **Out-of-band changes are only detected when this argument is explicitly configured in your Terraform configuration.** Documented below.
+     * @return builder
+     */
     def crossChannelBehavior(args: Endofunction[com.pulumi.aws.connect.inputs.RoutingProfileMediaConcurrencyCrossChannelBehaviorArgs.Builder]):
         com.pulumi.aws.connect.inputs.RoutingProfileMediaConcurrencyArgs.Builder =
       val argsBuilder = com.pulumi.aws.connect.inputs.RoutingProfileMediaConcurrencyCrossChannelBehaviorArgs.builder

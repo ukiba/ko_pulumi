@@ -36,6 +36,48 @@ object cloudfront:
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
+  extension (builder: com.pulumi.aws.cloudfront.DistributionTenantArgs.Builder)
+    /**
+     * @param customizations Customizations for the distribution tenant (maximum one).
+     * @return builder
+     */
+    def customizations(args: Endofunction[com.pulumi.aws.cloudfront.inputs.DistributionTenantCustomizationsArgs.Builder]):
+        com.pulumi.aws.cloudfront.DistributionTenantArgs.Builder =
+      val argsBuilder = com.pulumi.aws.cloudfront.inputs.DistributionTenantCustomizationsArgs.builder
+      builder.customizations(args(argsBuilder).build)
+
+    /**
+     * @param domains Set of domains associated with the distribution tenant.
+     * @return builder
+     */
+    def domains(args: Endofunction[com.pulumi.aws.cloudfront.inputs.DistributionTenantDomainArgs.Builder]*):
+        com.pulumi.aws.cloudfront.DistributionTenantArgs.Builder =
+      def argsBuilder = com.pulumi.aws.cloudfront.inputs.DistributionTenantDomainArgs.builder
+      builder.domains(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param managedCertificateRequest Managed certificate request for CloudFront managed ACM certificate (maximum one).
+     * @return builder
+     */
+    def managedCertificateRequest(args: Endofunction[com.pulumi.aws.cloudfront.inputs.DistributionTenantManagedCertificateRequestArgs.Builder]):
+        com.pulumi.aws.cloudfront.DistributionTenantArgs.Builder =
+      val argsBuilder = com.pulumi.aws.cloudfront.inputs.DistributionTenantManagedCertificateRequestArgs.builder
+      builder.managedCertificateRequest(args(argsBuilder).build)
+
+    /**
+     * @param parameters Set of parameter values for the distribution tenant.
+     * @return builder
+     */
+    def parameters(args: Endofunction[com.pulumi.aws.cloudfront.inputs.DistributionTenantParameterArgs.Builder]*):
+        com.pulumi.aws.cloudfront.DistributionTenantArgs.Builder =
+      def argsBuilder = com.pulumi.aws.cloudfront.inputs.DistributionTenantParameterArgs.builder
+      builder.parameters(args.map(_(argsBuilder).build)*)
+
+    def timeouts(args: Endofunction[com.pulumi.aws.cloudfront.inputs.DistributionTenantTimeoutsArgs.Builder]):
+        com.pulumi.aws.cloudfront.DistributionTenantArgs.Builder =
+      val argsBuilder = com.pulumi.aws.cloudfront.inputs.DistributionTenantTimeoutsArgs.builder
+      builder.timeouts(args(argsBuilder).build)
+
   /**
    * 
    */
@@ -60,6 +102,15 @@ object cloudfront:
         resourceOptions(CustomResourceOptions.builder).build)
 
   extension (builder: com.pulumi.aws.cloudfront.DistributionArgs.Builder)
+    /**
+     * @param connectionFunctionAssociation A connection function association configuration block (maximum one).
+     * @return builder
+     */
+    def connectionFunctionAssociation(args: Endofunction[com.pulumi.aws.cloudfront.inputs.DistributionConnectionFunctionAssociationArgs.Builder]):
+        com.pulumi.aws.cloudfront.DistributionArgs.Builder =
+      val argsBuilder = com.pulumi.aws.cloudfront.inputs.DistributionConnectionFunctionAssociationArgs.builder
+      builder.connectionFunctionAssociation(args(argsBuilder).build)
+
     /**
      * @param customErrorResponses One or more custom error response elements (multiples allowed).
      * @return builder
@@ -132,6 +183,15 @@ object cloudfront:
       val argsBuilder = com.pulumi.aws.cloudfront.inputs.DistributionViewerCertificateArgs.builder
       builder.viewerCertificate(args(argsBuilder).build)
 
+    /**
+     * @param viewerMtlsConfig The viewer mTLS configuration for this distribution (maximum one).
+     * @return builder
+     */
+    def viewerMtlsConfig(args: Endofunction[com.pulumi.aws.cloudfront.inputs.DistributionViewerMtlsConfigArgs.Builder]):
+        com.pulumi.aws.cloudfront.DistributionArgs.Builder =
+      val argsBuilder = com.pulumi.aws.cloudfront.inputs.DistributionViewerMtlsConfigArgs.builder
+      builder.viewerMtlsConfig(args(argsBuilder).build)
+
   /**
    * Creates an Amazon CloudFront VPC origin.
    *  
@@ -183,7 +243,9 @@ object cloudfront:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /**
-   * 
+   * Resource for managing an AWS CloudFront KeyValueStore Key.
+   *  
+   *  !&gt; This resource manages individual key value pairs in a KeyValueStore. This can lead to high costs associated with accessing the CloudFront KeyValueStore API when performing terraform operations with many key value pairs defined. For large key value stores, consider the `aws.cloudfront.KeyvaluestoreKeysExclusive` resource to minimize the number of API calls made to the CloudFront KeyValueStore API.
    */
   def KeyvaluestoreKey(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.cloudfront.KeyvaluestoreKeyArgs.Builder]) =
@@ -194,13 +256,11 @@ object cloudfront:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /**
-   * ## Import
+   * Resource for maintaining exclusive management of resource key value pairs defined in an AWS CloudFront KeyValueStore.
    *  
-   *  Using `pulumi import`, import AWS CloudFront KeyValueStore Key Value Pairs using the `key_value_store_arn`. For example:
+   *  !&gt; This resource takes exclusive ownership over key value pairs defined in a KeyValueStore. This includes removal of key value pairs which are not explicitly configured. To prevent persistent drift, ensure any `aws.cloudfront.KeyvaluestoreKey` resources managed alongside this resource have an equivalent `resourceKeyValuePair` argument.
    *  
-   *  ```sh
-   *  $ pulumi import aws:cloudfront/keyvaluestoreKeysExclusive:KeyvaluestoreKeysExclusive example arn:aws:cloudfront::111111111111:key-value-store/8562g61f-caba-2845-9d99-b97diwae5d3c
-   *  ```
+   *  &gt; Destruction of this resource means Terraform will no longer manage reconciliation of the configured key value pairs. It __will not__ delete the configured key value pairs from the KeyValueStore.
    */
   def KeyvaluestoreKeysExclusive(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.cloudfront.KeyvaluestoreKeysExclusiveArgs.Builder]) =
@@ -233,6 +293,56 @@ object cloudfront:
       case None               =>
     
     com.pulumi.aws.cloudfront.OriginAccessControl(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder).build)
+
+  /**
+   * Creates an Amazon CloudFront Connection Group.
+   *  
+   *  For information about CloudFront Connection Groups, see the [AWS CloudFormation Documentation](https://docs.aws.amazon.com/AWSCloudFormation/latest/TemplateReference/aws-resource-cloudfront-connectiongroup.html).
+   */
+  def ConnectionGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.cloudfront.ConnectionGroupArgs.Builder])(using conf: KoPulumiConf) =
+    var argsBuilder = com.pulumi.aws.cloudfront.ConnectionGroupArgs.builder
+    conf.logicalName2pysicalName(name) match
+      case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
+      case None               =>
+    conf.logicalName2tagName(name) match
+      case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
+      case None          =>
+    
+    com.pulumi.aws.cloudfront.ConnectionGroup(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder).build)
+
+  extension (builder: com.pulumi.aws.cloudfront.AnycastIpListArgs.Builder)
+    def timeouts(args: Endofunction[com.pulumi.aws.cloudfront.inputs.AnycastIpListTimeoutsArgs.Builder]):
+        com.pulumi.aws.cloudfront.AnycastIpListArgs.Builder =
+      val argsBuilder = com.pulumi.aws.cloudfront.inputs.AnycastIpListTimeoutsArgs.builder
+      builder.timeouts(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.cloudfront.ConnectionFunctionArgs.Builder)
+    /**
+     * @param connectionFunctionConfig Configuration information for the connection function. See `connectionFunctionConfig` below.
+     * @return builder
+     */
+    def connectionFunctionConfig(args: Endofunction[com.pulumi.aws.cloudfront.inputs.ConnectionFunctionConnectionFunctionConfigArgs.Builder]):
+        com.pulumi.aws.cloudfront.ConnectionFunctionArgs.Builder =
+      val argsBuilder = com.pulumi.aws.cloudfront.inputs.ConnectionFunctionConnectionFunctionConfigArgs.builder
+      builder.connectionFunctionConfig(args(argsBuilder).build)
+
+  /** Resource for managing a CloudFront Anycast IP List. */
+  def AnycastIpList(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.cloudfront.AnycastIpListArgs.Builder])(using conf: KoPulumiConf) =
+    var argsBuilder = com.pulumi.aws.cloudfront.AnycastIpListArgs.builder
+    conf.logicalName2pysicalName(name) match
+      case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
+      case None               =>
+    conf.logicalName2tagName(name) match
+      case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
+      case None          =>
+    
+    com.pulumi.aws.cloudfront.AnycastIpList(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
@@ -297,6 +407,18 @@ object cloudfront:
       val argsBuilder = com.pulumi.aws.cloudfront.inputs.GetCachePolicyPlainArgs.builder
       com.pulumi.aws.cloudfront.CloudfrontFunctions.getCachePolicyPlain(args(argsBuilder).build)
 
+    /** Use this data source to retrieve information about a CloudFront connection group. */
+    def getConnectionGroup(args: Endofunction[com.pulumi.aws.cloudfront.inputs.GetConnectionGroupArgs.Builder] = identity):
+        com.pulumi.core.Output[com.pulumi.aws.cloudfront.outputs.GetConnectionGroupResult] =
+      val argsBuilder = com.pulumi.aws.cloudfront.inputs.GetConnectionGroupArgs.builder
+      com.pulumi.aws.cloudfront.CloudfrontFunctions.getConnectionGroup(args(argsBuilder).build)
+
+    /** Use this data source to retrieve information about a CloudFront connection group. */
+    def getConnectionGroupPlain(args: Endofunction[com.pulumi.aws.cloudfront.inputs.GetConnectionGroupPlainArgs.Builder] = identity):
+        java.util.concurrent.CompletableFuture[com.pulumi.aws.cloudfront.outputs.GetConnectionGroupResult] =
+      val argsBuilder = com.pulumi.aws.cloudfront.inputs.GetConnectionGroupPlainArgs.builder
+      com.pulumi.aws.cloudfront.CloudfrontFunctions.getConnectionGroupPlain(args(argsBuilder).build)
+
     /** Use this data source to retrieve information about a CloudFront distribution. */
     def getDistribution(args: Endofunction[com.pulumi.aws.cloudfront.inputs.GetDistributionArgs.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.aws.cloudfront.outputs.GetDistributionResult] =
@@ -308,6 +430,18 @@ object cloudfront:
         java.util.concurrent.CompletableFuture[com.pulumi.aws.cloudfront.outputs.GetDistributionResult] =
       val argsBuilder = com.pulumi.aws.cloudfront.inputs.GetDistributionPlainArgs.builder
       com.pulumi.aws.cloudfront.CloudfrontFunctions.getDistributionPlain(args(argsBuilder).build)
+
+    /** Use this data source to retrieve information about a CloudFront distribution tenant. */
+    def getDistributionTenant(args: Endofunction[com.pulumi.aws.cloudfront.inputs.GetDistributionTenantArgs.Builder] = identity):
+        com.pulumi.core.Output[com.pulumi.aws.cloudfront.outputs.GetDistributionTenantResult] =
+      val argsBuilder = com.pulumi.aws.cloudfront.inputs.GetDistributionTenantArgs.builder
+      com.pulumi.aws.cloudfront.CloudfrontFunctions.getDistributionTenant(args(argsBuilder).build)
+
+    /** Use this data source to retrieve information about a CloudFront distribution tenant. */
+    def getDistributionTenantPlain(args: Endofunction[com.pulumi.aws.cloudfront.inputs.GetDistributionTenantPlainArgs.Builder] = identity):
+        java.util.concurrent.CompletableFuture[com.pulumi.aws.cloudfront.outputs.GetDistributionTenantResult] =
+      val argsBuilder = com.pulumi.aws.cloudfront.inputs.GetDistributionTenantPlainArgs.builder
+      com.pulumi.aws.cloudfront.CloudfrontFunctions.getDistributionTenantPlain(args(argsBuilder).build)
 
     /** Provides information about a CloudFront Function. */
     def getFunction(args: Endofunction[com.pulumi.aws.cloudfront.inputs.GetFunctionArgs.Builder] = identity):
@@ -432,6 +566,27 @@ object cloudfront:
       val argsBuilder = com.pulumi.aws.cloudfront.inputs.VpcOriginVpcOriginEndpointConfigArgs.builder
       builder.vpcOriginEndpointConfig(args(argsBuilder).build)
 
+  /** Manages an AWS CloudFront Connection Function. */
+  def ConnectionFunction(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.cloudfront.ConnectionFunctionArgs.Builder])(using conf: KoPulumiConf) =
+    var argsBuilder = com.pulumi.aws.cloudfront.ConnectionFunctionArgs.builder
+    conf.logicalName2pysicalName(name) match
+      case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
+      case None               =>
+    conf.logicalName2tagName(name) match
+      case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
+      case None          =>
+    
+    com.pulumi.aws.cloudfront.ConnectionFunction(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder).build)
+
+  extension (builder: com.pulumi.aws.cloudfront.ConnectionGroupArgs.Builder)
+    def timeouts(args: Endofunction[com.pulumi.aws.cloudfront.inputs.ConnectionGroupTimeoutsArgs.Builder]):
+        com.pulumi.aws.cloudfront.ConnectionGroupArgs.Builder =
+      val argsBuilder = com.pulumi.aws.cloudfront.inputs.ConnectionGroupTimeoutsArgs.builder
+      builder.timeouts(args(argsBuilder).build)
+
   /** Resource for managing an AWS CloudFront Key Value Store. */
   def KeyValueStore(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.cloudfront.KeyValueStoreArgs.Builder])(using conf: KoPulumiConf) =
@@ -441,6 +596,21 @@ object cloudfront:
       case None               =>
     
     com.pulumi.aws.cloudfront.KeyValueStore(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder).build)
+
+  /** Manages an AWS CloudFront Trust Store. */
+  def TrustStore(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.cloudfront.TrustStoreArgs.Builder])(using conf: KoPulumiConf) =
+    var argsBuilder = com.pulumi.aws.cloudfront.TrustStoreArgs.builder
+    conf.logicalName2pysicalName(name) match
+      case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
+      case None               =>
+    conf.logicalName2tagName(name) match
+      case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
+      case None          =>
+    
+    com.pulumi.aws.cloudfront.TrustStore(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
@@ -535,6 +705,74 @@ object cloudfront:
       val argsBuilder = com.pulumi.aws.cloudfront.inputs.OriginRequestPolicyQueryStringsConfigArgs.builder
       builder.queryStringsConfig(args(argsBuilder).build)
 
+  /**
+   * Creates an Amazon CloudFront distribution tenant.
+   *  
+   *  Distribution tenants allow you to create isolated configurations within a multi-tenant CloudFront distribution. Each tenant can have its own domains, customizations, and parameters while sharing the underlying distribution infrastructure.
+   *  
+   *  For information about CloudFront distribution tenants, see the [Amazon CloudFront Developer Guide](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-tenants.html).
+   */
+  def DistributionTenant(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.cloudfront.DistributionTenantArgs.Builder])(using conf: KoPulumiConf) =
+    var argsBuilder = com.pulumi.aws.cloudfront.DistributionTenantArgs.builder
+    conf.logicalName2pysicalName(name) match
+      case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
+      case None               =>
+    conf.logicalName2tagName(name) match
+      case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
+      case None          =>
+    
+    com.pulumi.aws.cloudfront.DistributionTenant(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder).build)
+
+  /**
+   * Creates an Amazon CloudFront multi-tenant distribution.
+   *  
+   *  Multi-tenant distributions are a specialized type of CloudFront distribution designed for multi-tenant applications. They have specific limitations and requirements compared to standard CloudFront distributions.
+   *  
+   *  For information about CloudFront multi-tenant distributions, see the [Amazon CloudFront Developer Guide](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/).
+   *  
+   *  &gt; **NOTE:** CloudFront distributions take about 15 minutes to reach a deployed state after creation or modification. During this time, deletes to resources will be blocked. If you need to delete a distribution that is enabled and you do not want to wait, you need to use the `retainOnDelete` flag.
+   *  
+   *  ## Multi-tenant Distribution Limitations
+   *  
+   *  Multi-tenant distributions have the following limitations compared to standard CloudFront distributions:
+   *  
+   *  - **Connection Mode**: Automatically set to `tenant-only` and cannot be modified
+   *  - **Cache Policies**: Must use cache policies instead of legacy TTL settings
+   *  - **Trusted Key Groups**: Must use trusted key groups instead of trusted signers
+   *  - **WAF Integration**: Only supports WAF v2 web ACLs
+   *  - **Certificate Management**: Must use ACM certificates (IAM certificates not supported)
+   *  
+   *  ### Unsupported Attributes
+   *  
+   *  The following attributes that are available in standard CloudFront distributions are **not supported** for multi-tenant distributions:
+   *  
+   *  - `activeTrustedSigners` - Use `activeTrustedKeyGroups` instead
+   *  - `aliasIcpRecordals` - Managed by connection groups
+   *  - `aliases` - Managed by connection groups
+   *  - `anycastIpListId` - Use connection groups instead
+   *  - `continuousDeploymentPolicyId`
+   *  - `forwardedValues` in cache behaviors - Deprecated, use cache policies instead
+   *  - `isIpv6Enabled` - Managed by connection groups
+   *  - `priceClass` - Managed by connection groups
+   *  - `smoothStreaming` in cache behaviors
+   *  - `staging` mode
+   *  - `trustedSigners` in cache behaviors - Use `trustedKeyGroups` instead
+   *  - Cache behavior TTL settings (`defaultTtl`, `maxTtl`, `minTtl`) - Use cache policies instead
+   */
+  def MultitenantDistribution(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.cloudfront.MultitenantDistributionArgs.Builder])(using conf: KoPulumiConf) =
+    var argsBuilder = com.pulumi.aws.cloudfront.MultitenantDistributionArgs.builder
+    conf.logicalName2tagName(name) match
+      case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
+      case None          =>
+    
+    com.pulumi.aws.cloudfront.MultitenantDistribution(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder).build)
+
   extension (builder: com.pulumi.aws.cloudfront.FieldLevelEncryptionProfileArgs.Builder)
     /**
      * @param encryptionEntities The encryption entities config block for field-level encryption profiles that contains an attribute `items` which includes the encryption key and field pattern specifications.
@@ -544,6 +782,93 @@ object cloudfront:
         com.pulumi.aws.cloudfront.FieldLevelEncryptionProfileArgs.Builder =
       val argsBuilder = com.pulumi.aws.cloudfront.inputs.FieldLevelEncryptionProfileEncryptionEntitiesArgs.builder
       builder.encryptionEntities(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.cloudfront.MultitenantDistributionArgs.Builder)
+    /**
+     * @param activeTrustedKeyGroups List of key groups that CloudFront can use to validate signed URLs or signed cookies. See Active Trusted Key Groups below.
+     * @return builder
+     */
+    def activeTrustedKeyGroups(args: Endofunction[com.pulumi.aws.cloudfront.inputs.MultitenantDistributionActiveTrustedKeyGroupArgs.Builder]*):
+        com.pulumi.aws.cloudfront.MultitenantDistributionArgs.Builder =
+      def argsBuilder = com.pulumi.aws.cloudfront.inputs.MultitenantDistributionActiveTrustedKeyGroupArgs.builder
+      builder.activeTrustedKeyGroups(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param cacheBehaviors Ordered list of cache behaviors resource for this distribution. See Cache Behavior below.
+     * @return builder
+     */
+    def cacheBehaviors(args: Endofunction[com.pulumi.aws.cloudfront.inputs.MultitenantDistributionCacheBehaviorArgs.Builder]*):
+        com.pulumi.aws.cloudfront.MultitenantDistributionArgs.Builder =
+      def argsBuilder = com.pulumi.aws.cloudfront.inputs.MultitenantDistributionCacheBehaviorArgs.builder
+      builder.cacheBehaviors(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param customErrorResponses One or more custom error response elements. See Custom Error Response below.
+     * @return builder
+     */
+    def customErrorResponses(args: Endofunction[com.pulumi.aws.cloudfront.inputs.MultitenantDistributionCustomErrorResponseArgs.Builder]*):
+        com.pulumi.aws.cloudfront.MultitenantDistributionArgs.Builder =
+      def argsBuilder = com.pulumi.aws.cloudfront.inputs.MultitenantDistributionCustomErrorResponseArgs.builder
+      builder.customErrorResponses(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param defaultCacheBehavior Default cache behavior for this distribution. See Default Cache Behavior below.
+     * @return builder
+     */
+    def defaultCacheBehavior(args: Endofunction[com.pulumi.aws.cloudfront.inputs.MultitenantDistributionDefaultCacheBehaviorArgs.Builder]):
+        com.pulumi.aws.cloudfront.MultitenantDistributionArgs.Builder =
+      val argsBuilder = com.pulumi.aws.cloudfront.inputs.MultitenantDistributionDefaultCacheBehaviorArgs.builder
+      builder.defaultCacheBehavior(args(argsBuilder).build)
+
+    /**
+     * @param originGroups One or more originGroup for this distribution (multiples allowed). See Origin Group below.
+     * @return builder
+     */
+    def originGroups(args: Endofunction[com.pulumi.aws.cloudfront.inputs.MultitenantDistributionOriginGroupArgs.Builder]*):
+        com.pulumi.aws.cloudfront.MultitenantDistributionArgs.Builder =
+      def argsBuilder = com.pulumi.aws.cloudfront.inputs.MultitenantDistributionOriginGroupArgs.builder
+      builder.originGroups(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param origins One or more origins for this distribution (multiples allowed). See Origin below.
+     * @return builder
+     */
+    def origins(args: Endofunction[com.pulumi.aws.cloudfront.inputs.MultitenantDistributionOriginArgs.Builder]*):
+        com.pulumi.aws.cloudfront.MultitenantDistributionArgs.Builder =
+      def argsBuilder = com.pulumi.aws.cloudfront.inputs.MultitenantDistributionOriginArgs.builder
+      builder.origins(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param restrictions Restriction configuration for this distribution. See Restrictions below.
+     * @return builder
+     */
+    def restrictions(args: Endofunction[com.pulumi.aws.cloudfront.inputs.MultitenantDistributionRestrictionsArgs.Builder]):
+        com.pulumi.aws.cloudfront.MultitenantDistributionArgs.Builder =
+      val argsBuilder = com.pulumi.aws.cloudfront.inputs.MultitenantDistributionRestrictionsArgs.builder
+      builder.restrictions(args(argsBuilder).build)
+
+    /**
+     * @param tenantConfig Tenant configuration that contains parameter definitions for multi-tenant distributions. See Tenant Config below.
+     * @return builder
+     */
+    def tenantConfig(args: Endofunction[com.pulumi.aws.cloudfront.inputs.MultitenantDistributionTenantConfigArgs.Builder]):
+        com.pulumi.aws.cloudfront.MultitenantDistributionArgs.Builder =
+      val argsBuilder = com.pulumi.aws.cloudfront.inputs.MultitenantDistributionTenantConfigArgs.builder
+      builder.tenantConfig(args(argsBuilder).build)
+
+    def timeouts(args: Endofunction[com.pulumi.aws.cloudfront.inputs.MultitenantDistributionTimeoutsArgs.Builder]):
+        com.pulumi.aws.cloudfront.MultitenantDistributionArgs.Builder =
+      val argsBuilder = com.pulumi.aws.cloudfront.inputs.MultitenantDistributionTimeoutsArgs.builder
+      builder.timeouts(args(argsBuilder).build)
+
+    /**
+     * @param viewerCertificate SSL configuration for this distribution. See Viewer Certificate below.
+     * @return builder
+     */
+    def viewerCertificate(args: Endofunction[com.pulumi.aws.cloudfront.inputs.MultitenantDistributionViewerCertificateArgs.Builder]):
+        com.pulumi.aws.cloudfront.MultitenantDistributionArgs.Builder =
+      val argsBuilder = com.pulumi.aws.cloudfront.inputs.MultitenantDistributionViewerCertificateArgs.builder
+      builder.viewerCertificate(args(argsBuilder).build)
 
   /**
    * Provides a CloudFront Function resource. With CloudFront Functions in Amazon CloudFront, you can write lightweight functions in JavaScript for high-scale, latency-sensitive CDN customizations.
@@ -602,6 +927,12 @@ object cloudfront:
         com.pulumi.aws.cloudfront.CachePolicyArgs.Builder =
       val argsBuilder = com.pulumi.aws.cloudfront.inputs.CachePolicyParametersInCacheKeyAndForwardedToOriginArgs.builder
       builder.parametersInCacheKeyAndForwardedToOrigin(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.cloudfront.inputs.ConnectionGroupState.Builder)
+    def timeouts(args: Endofunction[com.pulumi.aws.cloudfront.inputs.ConnectionGroupTimeoutsArgs.Builder]):
+        com.pulumi.aws.cloudfront.inputs.ConnectionGroupState.Builder =
+      val argsBuilder = com.pulumi.aws.cloudfront.inputs.ConnectionGroupTimeoutsArgs.builder
+      builder.timeouts(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.cloudfront.inputs.ContinuousDeploymentPolicyTrafficConfigArgs.Builder)
     /**
@@ -703,6 +1034,23 @@ object cloudfront:
       val argsBuilder = com.pulumi.aws.cloudfront.inputs.ResponseHeadersPolicyCorsConfigAccessControlExposeHeadersArgs.builder
       builder.accessControlExposeHeaders(args(argsBuilder).build)
 
+  extension (builder: com.pulumi.aws.cloudfront.inputs.TrustStoreState.Builder)
+    /**
+     * @param caCertificatesBundleSource Configuration block for the CA certificates bundle source. See `caCertificatesBundleSource` below.
+     *  
+     *  The following arguments are optional:
+     * @return builder
+     */
+    def caCertificatesBundleSource(args: Endofunction[com.pulumi.aws.cloudfront.inputs.TrustStoreCaCertificatesBundleSourceArgs.Builder]):
+        com.pulumi.aws.cloudfront.inputs.TrustStoreState.Builder =
+      val argsBuilder = com.pulumi.aws.cloudfront.inputs.TrustStoreCaCertificatesBundleSourceArgs.builder
+      builder.caCertificatesBundleSource(args(argsBuilder).build)
+
+    def timeouts(args: Endofunction[com.pulumi.aws.cloudfront.inputs.TrustStoreTimeoutsArgs.Builder]):
+        com.pulumi.aws.cloudfront.inputs.TrustStoreState.Builder =
+      val argsBuilder = com.pulumi.aws.cloudfront.inputs.TrustStoreTimeoutsArgs.builder
+      builder.timeouts(args(argsBuilder).build)
+
   extension (builder: com.pulumi.aws.cloudfront.inputs.CachePolicyParametersInCacheKeyAndForwardedToOriginCookiesConfigArgs.Builder)
     /**
      * @param cookies Object that contains a list of cookie names. See Items for more information.
@@ -712,6 +1060,103 @@ object cloudfront:
         com.pulumi.aws.cloudfront.inputs.CachePolicyParametersInCacheKeyAndForwardedToOriginCookiesConfigArgs.Builder =
       val argsBuilder = com.pulumi.aws.cloudfront.inputs.CachePolicyParametersInCacheKeyAndForwardedToOriginCookiesConfigCookiesArgs.builder
       builder.cookies(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.cloudfront.inputs.MultitenantDistributionState.Builder)
+    /**
+     * @param activeTrustedKeyGroups List of key groups that CloudFront can use to validate signed URLs or signed cookies. See Active Trusted Key Groups below.
+     * @return builder
+     */
+    def activeTrustedKeyGroups(args: Endofunction[com.pulumi.aws.cloudfront.inputs.MultitenantDistributionActiveTrustedKeyGroupArgs.Builder]*):
+        com.pulumi.aws.cloudfront.inputs.MultitenantDistributionState.Builder =
+      def argsBuilder = com.pulumi.aws.cloudfront.inputs.MultitenantDistributionActiveTrustedKeyGroupArgs.builder
+      builder.activeTrustedKeyGroups(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param cacheBehaviors Ordered list of cache behaviors resource for this distribution. See Cache Behavior below.
+     * @return builder
+     */
+    def cacheBehaviors(args: Endofunction[com.pulumi.aws.cloudfront.inputs.MultitenantDistributionCacheBehaviorArgs.Builder]*):
+        com.pulumi.aws.cloudfront.inputs.MultitenantDistributionState.Builder =
+      def argsBuilder = com.pulumi.aws.cloudfront.inputs.MultitenantDistributionCacheBehaviorArgs.builder
+      builder.cacheBehaviors(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param customErrorResponses One or more custom error response elements. See Custom Error Response below.
+     * @return builder
+     */
+    def customErrorResponses(args: Endofunction[com.pulumi.aws.cloudfront.inputs.MultitenantDistributionCustomErrorResponseArgs.Builder]*):
+        com.pulumi.aws.cloudfront.inputs.MultitenantDistributionState.Builder =
+      def argsBuilder = com.pulumi.aws.cloudfront.inputs.MultitenantDistributionCustomErrorResponseArgs.builder
+      builder.customErrorResponses(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param defaultCacheBehavior Default cache behavior for this distribution. See Default Cache Behavior below.
+     * @return builder
+     */
+    def defaultCacheBehavior(args: Endofunction[com.pulumi.aws.cloudfront.inputs.MultitenantDistributionDefaultCacheBehaviorArgs.Builder]):
+        com.pulumi.aws.cloudfront.inputs.MultitenantDistributionState.Builder =
+      val argsBuilder = com.pulumi.aws.cloudfront.inputs.MultitenantDistributionDefaultCacheBehaviorArgs.builder
+      builder.defaultCacheBehavior(args(argsBuilder).build)
+
+    /**
+     * @param originGroups One or more originGroup for this distribution (multiples allowed). See Origin Group below.
+     * @return builder
+     */
+    def originGroups(args: Endofunction[com.pulumi.aws.cloudfront.inputs.MultitenantDistributionOriginGroupArgs.Builder]*):
+        com.pulumi.aws.cloudfront.inputs.MultitenantDistributionState.Builder =
+      def argsBuilder = com.pulumi.aws.cloudfront.inputs.MultitenantDistributionOriginGroupArgs.builder
+      builder.originGroups(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param origins One or more origins for this distribution (multiples allowed). See Origin below.
+     * @return builder
+     */
+    def origins(args: Endofunction[com.pulumi.aws.cloudfront.inputs.MultitenantDistributionOriginArgs.Builder]*):
+        com.pulumi.aws.cloudfront.inputs.MultitenantDistributionState.Builder =
+      def argsBuilder = com.pulumi.aws.cloudfront.inputs.MultitenantDistributionOriginArgs.builder
+      builder.origins(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param restrictions Restriction configuration for this distribution. See Restrictions below.
+     * @return builder
+     */
+    def restrictions(args: Endofunction[com.pulumi.aws.cloudfront.inputs.MultitenantDistributionRestrictionsArgs.Builder]):
+        com.pulumi.aws.cloudfront.inputs.MultitenantDistributionState.Builder =
+      val argsBuilder = com.pulumi.aws.cloudfront.inputs.MultitenantDistributionRestrictionsArgs.builder
+      builder.restrictions(args(argsBuilder).build)
+
+    /**
+     * @param tenantConfig Tenant configuration that contains parameter definitions for multi-tenant distributions. See Tenant Config below.
+     * @return builder
+     */
+    def tenantConfig(args: Endofunction[com.pulumi.aws.cloudfront.inputs.MultitenantDistributionTenantConfigArgs.Builder]):
+        com.pulumi.aws.cloudfront.inputs.MultitenantDistributionState.Builder =
+      val argsBuilder = com.pulumi.aws.cloudfront.inputs.MultitenantDistributionTenantConfigArgs.builder
+      builder.tenantConfig(args(argsBuilder).build)
+
+    def timeouts(args: Endofunction[com.pulumi.aws.cloudfront.inputs.MultitenantDistributionTimeoutsArgs.Builder]):
+        com.pulumi.aws.cloudfront.inputs.MultitenantDistributionState.Builder =
+      val argsBuilder = com.pulumi.aws.cloudfront.inputs.MultitenantDistributionTimeoutsArgs.builder
+      builder.timeouts(args(argsBuilder).build)
+
+    /**
+     * @param viewerCertificate SSL configuration for this distribution. See Viewer Certificate below.
+     * @return builder
+     */
+    def viewerCertificate(args: Endofunction[com.pulumi.aws.cloudfront.inputs.MultitenantDistributionViewerCertificateArgs.Builder]):
+        com.pulumi.aws.cloudfront.inputs.MultitenantDistributionState.Builder =
+      val argsBuilder = com.pulumi.aws.cloudfront.inputs.MultitenantDistributionViewerCertificateArgs.builder
+      builder.viewerCertificate(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.cloudfront.inputs.DistributionViewerMtlsConfigArgs.Builder)
+    /**
+     * @param trustStoreConfig The trust store configuration for viewer mTLS (maximum one).
+     * @return builder
+     */
+    def trustStoreConfig(args: Endofunction[com.pulumi.aws.cloudfront.inputs.DistributionViewerMtlsConfigTrustStoreConfigArgs.Builder]):
+        com.pulumi.aws.cloudfront.inputs.DistributionViewerMtlsConfigArgs.Builder =
+      val argsBuilder = com.pulumi.aws.cloudfront.inputs.DistributionViewerMtlsConfigTrustStoreConfigArgs.builder
+      builder.trustStoreConfig(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.cloudfront.inputs.MonitoringSubscriptionState.Builder)
     /**
@@ -835,6 +1280,85 @@ object cloudfront:
       val argsBuilder = com.pulumi.aws.cloudfront.inputs.ContinuousDeploymentPolicyTrafficConfigArgs.builder
       builder.trafficConfig(args(argsBuilder).build)
 
+  extension (builder: com.pulumi.aws.cloudfront.inputs.DistributionTenantState.Builder)
+    /**
+     * @param customizations Customizations for the distribution tenant (maximum one).
+     * @return builder
+     */
+    def customizations(args: Endofunction[com.pulumi.aws.cloudfront.inputs.DistributionTenantCustomizationsArgs.Builder]):
+        com.pulumi.aws.cloudfront.inputs.DistributionTenantState.Builder =
+      val argsBuilder = com.pulumi.aws.cloudfront.inputs.DistributionTenantCustomizationsArgs.builder
+      builder.customizations(args(argsBuilder).build)
+
+    /**
+     * @param domains Set of domains associated with the distribution tenant.
+     * @return builder
+     */
+    def domains(args: Endofunction[com.pulumi.aws.cloudfront.inputs.DistributionTenantDomainArgs.Builder]*):
+        com.pulumi.aws.cloudfront.inputs.DistributionTenantState.Builder =
+      def argsBuilder = com.pulumi.aws.cloudfront.inputs.DistributionTenantDomainArgs.builder
+      builder.domains(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param managedCertificateRequest Managed certificate request for CloudFront managed ACM certificate (maximum one).
+     * @return builder
+     */
+    def managedCertificateRequest(args: Endofunction[com.pulumi.aws.cloudfront.inputs.DistributionTenantManagedCertificateRequestArgs.Builder]):
+        com.pulumi.aws.cloudfront.inputs.DistributionTenantState.Builder =
+      val argsBuilder = com.pulumi.aws.cloudfront.inputs.DistributionTenantManagedCertificateRequestArgs.builder
+      builder.managedCertificateRequest(args(argsBuilder).build)
+
+    /**
+     * @param parameters Set of parameter values for the distribution tenant.
+     * @return builder
+     */
+    def parameters(args: Endofunction[com.pulumi.aws.cloudfront.inputs.DistributionTenantParameterArgs.Builder]*):
+        com.pulumi.aws.cloudfront.inputs.DistributionTenantState.Builder =
+      def argsBuilder = com.pulumi.aws.cloudfront.inputs.DistributionTenantParameterArgs.builder
+      builder.parameters(args.map(_(argsBuilder).build)*)
+
+    def timeouts(args: Endofunction[com.pulumi.aws.cloudfront.inputs.DistributionTenantTimeoutsArgs.Builder]):
+        com.pulumi.aws.cloudfront.inputs.DistributionTenantState.Builder =
+      val argsBuilder = com.pulumi.aws.cloudfront.inputs.DistributionTenantTimeoutsArgs.builder
+      builder.timeouts(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.cloudfront.inputs.MultitenantDistributionCacheBehaviorArgs.Builder)
+    /**
+     * @param allowedMethods Controls which HTTP methods CloudFront processes and forwards to your Amazon S3 bucket or your custom origin.
+     * @return builder
+     */
+    def allowedMethods(args: Endofunction[com.pulumi.aws.cloudfront.inputs.MultitenantDistributionCacheBehaviorAllowedMethodsArgs.Builder]):
+        com.pulumi.aws.cloudfront.inputs.MultitenantDistributionCacheBehaviorArgs.Builder =
+      val argsBuilder = com.pulumi.aws.cloudfront.inputs.MultitenantDistributionCacheBehaviorAllowedMethodsArgs.builder
+      builder.allowedMethods(args(argsBuilder).build)
+
+    /**
+     * @param functionAssociations Configuration block for CloudFront Functions associations. See Function Association below.
+     * @return builder
+     */
+    def functionAssociations(args: Endofunction[com.pulumi.aws.cloudfront.inputs.MultitenantDistributionCacheBehaviorFunctionAssociationArgs.Builder]*):
+        com.pulumi.aws.cloudfront.inputs.MultitenantDistributionCacheBehaviorArgs.Builder =
+      def argsBuilder = com.pulumi.aws.cloudfront.inputs.MultitenantDistributionCacheBehaviorFunctionAssociationArgs.builder
+      builder.functionAssociations(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param lambdaFunctionAssociations Configuration block for Lambda{@literal @}Edge associations. See Lambda Function Association below.
+     * @return builder
+     */
+    def lambdaFunctionAssociations(args: Endofunction[com.pulumi.aws.cloudfront.inputs.MultitenantDistributionCacheBehaviorLambdaFunctionAssociationArgs.Builder]*):
+        com.pulumi.aws.cloudfront.inputs.MultitenantDistributionCacheBehaviorArgs.Builder =
+      def argsBuilder = com.pulumi.aws.cloudfront.inputs.MultitenantDistributionCacheBehaviorLambdaFunctionAssociationArgs.builder
+      builder.lambdaFunctionAssociations(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param trustedKeyGroups List of key group IDs that CloudFront can use to validate signed URLs or signed cookies.
+     * @return builder
+     */
+    def trustedKeyGroups(args: Endofunction[com.pulumi.aws.cloudfront.inputs.MultitenantDistributionCacheBehaviorTrustedKeyGroupsArgs.Builder]):
+        com.pulumi.aws.cloudfront.inputs.MultitenantDistributionCacheBehaviorArgs.Builder =
+      val argsBuilder = com.pulumi.aws.cloudfront.inputs.MultitenantDistributionCacheBehaviorTrustedKeyGroupsArgs.builder
+      builder.trustedKeyGroups(args(argsBuilder).build)
+
   extension (builder: com.pulumi.aws.cloudfront.inputs.MonitoringSubscriptionMonitoringSubscriptionArgs.Builder)
     /**
      * @param realtimeMetricsSubscriptionConfig A subscription configuration for additional CloudWatch metrics. See below.
@@ -844,6 +1368,16 @@ object cloudfront:
         com.pulumi.aws.cloudfront.inputs.MonitoringSubscriptionMonitoringSubscriptionArgs.Builder =
       val argsBuilder = com.pulumi.aws.cloudfront.inputs.MonitoringSubscriptionMonitoringSubscriptionRealtimeMetricsSubscriptionConfigArgs.builder
       builder.realtimeMetricsSubscriptionConfig(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.cloudfront.inputs.TrustStoreCaCertificatesBundleSourceArgs.Builder)
+    /**
+     * @param caCertificatesBundleS3Location Configuration block for the S3 location of the CA certificates bundle. See `caCertificatesBundleS3Location` below.
+     * @return builder
+     */
+    def caCertificatesBundleS3Location(args: Endofunction[com.pulumi.aws.cloudfront.inputs.TrustStoreCaCertificatesBundleSourceCaCertificatesBundleS3LocationArgs.Builder]):
+        com.pulumi.aws.cloudfront.inputs.TrustStoreCaCertificatesBundleSourceArgs.Builder =
+      val argsBuilder = com.pulumi.aws.cloudfront.inputs.TrustStoreCaCertificatesBundleSourceCaCertificatesBundleS3LocationArgs.builder
+      builder.caCertificatesBundleS3Location(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.cloudfront.inputs.DistributionOriginArgs.Builder)
     /**
@@ -918,7 +1452,26 @@ object cloudfront:
       def argsBuilder = com.pulumi.aws.cloudfront.inputs.KeyvaluestoreKeysExclusiveResourceKeyValuePairArgs.builder
       builder.resourceKeyValuePairs(args.map(_(argsBuilder).build)*)
 
+  extension (builder: com.pulumi.aws.cloudfront.inputs.MultitenantDistributionTenantConfigParameterDefinitionArgs.Builder)
+    /**
+     * @param definitions Definition of the parameter schema. See Parameter Definition Schema below.
+     * @return builder
+     */
+    def definitions(args: Endofunction[com.pulumi.aws.cloudfront.inputs.MultitenantDistributionTenantConfigParameterDefinitionDefinitionArgs.Builder]*):
+        com.pulumi.aws.cloudfront.inputs.MultitenantDistributionTenantConfigParameterDefinitionArgs.Builder =
+      def argsBuilder = com.pulumi.aws.cloudfront.inputs.MultitenantDistributionTenantConfigParameterDefinitionDefinitionArgs.builder
+      builder.definitions(args.map(_(argsBuilder).build)*)
+
   extension (builder: com.pulumi.aws.cloudfront.inputs.DistributionState.Builder)
+    /**
+     * @param connectionFunctionAssociation A connection function association configuration block (maximum one).
+     * @return builder
+     */
+    def connectionFunctionAssociation(args: Endofunction[com.pulumi.aws.cloudfront.inputs.DistributionConnectionFunctionAssociationArgs.Builder]):
+        com.pulumi.aws.cloudfront.inputs.DistributionState.Builder =
+      val argsBuilder = com.pulumi.aws.cloudfront.inputs.DistributionConnectionFunctionAssociationArgs.builder
+      builder.connectionFunctionAssociation(args(argsBuilder).build)
+
     /**
      * @param customErrorResponses One or more custom error response elements (multiples allowed).
      * @return builder
@@ -1009,6 +1562,52 @@ object cloudfront:
       val argsBuilder = com.pulumi.aws.cloudfront.inputs.DistributionViewerCertificateArgs.builder
       builder.viewerCertificate(args(argsBuilder).build)
 
+    /**
+     * @param viewerMtlsConfig The viewer mTLS configuration for this distribution (maximum one).
+     * @return builder
+     */
+    def viewerMtlsConfig(args: Endofunction[com.pulumi.aws.cloudfront.inputs.DistributionViewerMtlsConfigArgs.Builder]):
+        com.pulumi.aws.cloudfront.inputs.DistributionState.Builder =
+      val argsBuilder = com.pulumi.aws.cloudfront.inputs.DistributionViewerMtlsConfigArgs.builder
+      builder.viewerMtlsConfig(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.cloudfront.inputs.MultitenantDistributionDefaultCacheBehaviorArgs.Builder)
+    /**
+     * @param allowedMethods Controls which HTTP methods CloudFront processes and forwards to your Amazon S3 bucket or your custom origin.
+     * @return builder
+     */
+    def allowedMethods(args: Endofunction[com.pulumi.aws.cloudfront.inputs.MultitenantDistributionDefaultCacheBehaviorAllowedMethodsArgs.Builder]):
+        com.pulumi.aws.cloudfront.inputs.MultitenantDistributionDefaultCacheBehaviorArgs.Builder =
+      val argsBuilder = com.pulumi.aws.cloudfront.inputs.MultitenantDistributionDefaultCacheBehaviorAllowedMethodsArgs.builder
+      builder.allowedMethods(args(argsBuilder).build)
+
+    /**
+     * @param functionAssociations Configuration block for CloudFront Functions associations. See Function Association below.
+     * @return builder
+     */
+    def functionAssociations(args: Endofunction[com.pulumi.aws.cloudfront.inputs.MultitenantDistributionDefaultCacheBehaviorFunctionAssociationArgs.Builder]*):
+        com.pulumi.aws.cloudfront.inputs.MultitenantDistributionDefaultCacheBehaviorArgs.Builder =
+      def argsBuilder = com.pulumi.aws.cloudfront.inputs.MultitenantDistributionDefaultCacheBehaviorFunctionAssociationArgs.builder
+      builder.functionAssociations(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param lambdaFunctionAssociations Configuration block for Lambda{@literal @}Edge associations. See Lambda Function Association below.
+     * @return builder
+     */
+    def lambdaFunctionAssociations(args: Endofunction[com.pulumi.aws.cloudfront.inputs.MultitenantDistributionDefaultCacheBehaviorLambdaFunctionAssociationArgs.Builder]*):
+        com.pulumi.aws.cloudfront.inputs.MultitenantDistributionDefaultCacheBehaviorArgs.Builder =
+      def argsBuilder = com.pulumi.aws.cloudfront.inputs.MultitenantDistributionDefaultCacheBehaviorLambdaFunctionAssociationArgs.builder
+      builder.lambdaFunctionAssociations(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param trustedKeyGroups List of key group IDs that CloudFront can use to validate signed URLs or signed cookies.
+     * @return builder
+     */
+    def trustedKeyGroups(args: Endofunction[com.pulumi.aws.cloudfront.inputs.MultitenantDistributionDefaultCacheBehaviorTrustedKeyGroupsArgs.Builder]):
+        com.pulumi.aws.cloudfront.inputs.MultitenantDistributionDefaultCacheBehaviorArgs.Builder =
+      val argsBuilder = com.pulumi.aws.cloudfront.inputs.MultitenantDistributionDefaultCacheBehaviorTrustedKeyGroupsArgs.builder
+      builder.trustedKeyGroups(args(argsBuilder).build)
+
   extension (builder: com.pulumi.aws.cloudfront.inputs.DistributionTrustedKeyGroupArgs.Builder)
     /**
      * @param items List of nested attributes for each trusted signer
@@ -1024,6 +1623,43 @@ object cloudfront:
         com.pulumi.aws.cloudfront.inputs.KeyValueStoreState.Builder =
       val argsBuilder = com.pulumi.aws.cloudfront.inputs.KeyValueStoreTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.cloudfront.inputs.MultitenantDistributionOriginArgs.Builder)
+    /**
+     * @param customHeaders One or more sub-resources with `name` and `value` parameters that specify header data that will be sent to the origin. See Custom Header below.
+     * @return builder
+     */
+    def customHeaders(args: Endofunction[com.pulumi.aws.cloudfront.inputs.MultitenantDistributionOriginCustomHeaderArgs.Builder]*):
+        com.pulumi.aws.cloudfront.inputs.MultitenantDistributionOriginArgs.Builder =
+      def argsBuilder = com.pulumi.aws.cloudfront.inputs.MultitenantDistributionOriginCustomHeaderArgs.builder
+      builder.customHeaders(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param customOriginConfigs CloudFront origin access identity to associate with the origin. See Custom Origin Config below.
+     * @return builder
+     */
+    def customOriginConfigs(args: Endofunction[com.pulumi.aws.cloudfront.inputs.MultitenantDistributionOriginCustomOriginConfigArgs.Builder]*):
+        com.pulumi.aws.cloudfront.inputs.MultitenantDistributionOriginArgs.Builder =
+      def argsBuilder = com.pulumi.aws.cloudfront.inputs.MultitenantDistributionOriginCustomOriginConfigArgs.builder
+      builder.customOriginConfigs(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param originShields CloudFront Origin Shield configuration information. See Origin Shield below.
+     * @return builder
+     */
+    def originShields(args: Endofunction[com.pulumi.aws.cloudfront.inputs.MultitenantDistributionOriginOriginShieldArgs.Builder]*):
+        com.pulumi.aws.cloudfront.inputs.MultitenantDistributionOriginArgs.Builder =
+      def argsBuilder = com.pulumi.aws.cloudfront.inputs.MultitenantDistributionOriginOriginShieldArgs.builder
+      builder.originShields(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param vpcOriginConfigs CloudFront VPC origin configuration. See VPC Origin Config below.
+     * @return builder
+     */
+    def vpcOriginConfigs(args: Endofunction[com.pulumi.aws.cloudfront.inputs.MultitenantDistributionOriginVpcOriginConfigArgs.Builder]*):
+        com.pulumi.aws.cloudfront.inputs.MultitenantDistributionOriginArgs.Builder =
+      def argsBuilder = com.pulumi.aws.cloudfront.inputs.MultitenantDistributionOriginVpcOriginConfigArgs.builder
+      builder.vpcOriginConfigs(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.aws.cloudfront.inputs.OriginRequestPolicyHeadersConfigArgs.Builder)
     def headers(args: Endofunction[com.pulumi.aws.cloudfront.inputs.OriginRequestPolicyHeadersConfigHeadersArgs.Builder]):
@@ -1054,6 +1690,55 @@ object cloudfront:
       val argsBuilder = com.pulumi.aws.cloudfront.inputs.DistributionRestrictionsGeoRestrictionArgs.builder
       builder.geoRestriction(args(argsBuilder).build)
 
+  extension (builder: com.pulumi.aws.cloudfront.inputs.ConnectionFunctionConnectionFunctionConfigArgs.Builder)
+    /**
+     * @param keyValueStoreAssociation Key value store associations. See `keyValueStoreAssociation` below.
+     * @return builder
+     */
+    def keyValueStoreAssociation(args: Endofunction[com.pulumi.aws.cloudfront.inputs.ConnectionFunctionConnectionFunctionConfigKeyValueStoreAssociationArgs.Builder]):
+        com.pulumi.aws.cloudfront.inputs.ConnectionFunctionConnectionFunctionConfigArgs.Builder =
+      val argsBuilder = com.pulumi.aws.cloudfront.inputs.ConnectionFunctionConnectionFunctionConfigKeyValueStoreAssociationArgs.builder
+      builder.keyValueStoreAssociation(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.cloudfront.inputs.MultitenantDistributionTenantConfigParameterDefinitionDefinitionArgs.Builder)
+    /**
+     * @param stringSchemas String schema configuration. See String Schema below.
+     * @return builder
+     */
+    def stringSchemas(args: Endofunction[com.pulumi.aws.cloudfront.inputs.MultitenantDistributionTenantConfigParameterDefinitionDefinitionStringSchemaArgs.Builder]*):
+        com.pulumi.aws.cloudfront.inputs.MultitenantDistributionTenantConfigParameterDefinitionDefinitionArgs.Builder =
+      def argsBuilder = com.pulumi.aws.cloudfront.inputs.MultitenantDistributionTenantConfigParameterDefinitionDefinitionStringSchemaArgs.builder
+      builder.stringSchemas(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.aws.cloudfront.inputs.MultitenantDistributionRestrictionsArgs.Builder)
+    /**
+     * @param geoRestriction Geographic restriction configuration. See Geo Restriction below.
+     * @return builder
+     */
+    def geoRestriction(args: Endofunction[com.pulumi.aws.cloudfront.inputs.MultitenantDistributionRestrictionsGeoRestrictionArgs.Builder]):
+        com.pulumi.aws.cloudfront.inputs.MultitenantDistributionRestrictionsArgs.Builder =
+      val argsBuilder = com.pulumi.aws.cloudfront.inputs.MultitenantDistributionRestrictionsGeoRestrictionArgs.builder
+      builder.geoRestriction(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.cloudfront.inputs.MultitenantDistributionOriginGroupArgs.Builder)
+    /**
+     * @param failoverCriteria Failover criteria for when to failover to the secondary origin. See Failover Criteria below.
+     * @return builder
+     */
+    def failoverCriteria(args: Endofunction[com.pulumi.aws.cloudfront.inputs.MultitenantDistributionOriginGroupFailoverCriteriaArgs.Builder]):
+        com.pulumi.aws.cloudfront.inputs.MultitenantDistributionOriginGroupArgs.Builder =
+      val argsBuilder = com.pulumi.aws.cloudfront.inputs.MultitenantDistributionOriginGroupFailoverCriteriaArgs.builder
+      builder.failoverCriteria(args(argsBuilder).build)
+
+    /**
+     * @param members List of origins in this origin group. Must contain exactly 2 members. See Origin Group Member below.
+     * @return builder
+     */
+    def members(args: Endofunction[com.pulumi.aws.cloudfront.inputs.MultitenantDistributionOriginGroupMemberArgs.Builder]*):
+        com.pulumi.aws.cloudfront.inputs.MultitenantDistributionOriginGroupArgs.Builder =
+      def argsBuilder = com.pulumi.aws.cloudfront.inputs.MultitenantDistributionOriginGroupMemberArgs.builder
+      builder.members(args.map(_(argsBuilder).build)*)
+
   extension (builder: com.pulumi.aws.cloudfront.inputs.FieldLevelEncryptionConfigQueryArgProfileConfigQueryArgProfilesArgs.Builder)
     def items(args: Endofunction[com.pulumi.aws.cloudfront.inputs.FieldLevelEncryptionConfigQueryArgProfileConfigQueryArgProfilesItemArgs.Builder]*):
         com.pulumi.aws.cloudfront.inputs.FieldLevelEncryptionConfigQueryArgProfileConfigQueryArgProfilesArgs.Builder =
@@ -1069,6 +1754,12 @@ object cloudfront:
         com.pulumi.aws.cloudfront.inputs.FieldLevelEncryptionProfileEncryptionEntitiesItemArgs.Builder =
       val argsBuilder = com.pulumi.aws.cloudfront.inputs.FieldLevelEncryptionProfileEncryptionEntitiesItemFieldPatternsArgs.builder
       builder.fieldPatterns(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.cloudfront.inputs.AnycastIpListState.Builder)
+    def timeouts(args: Endofunction[com.pulumi.aws.cloudfront.inputs.AnycastIpListTimeoutsArgs.Builder]):
+        com.pulumi.aws.cloudfront.inputs.AnycastIpListState.Builder =
+      val argsBuilder = com.pulumi.aws.cloudfront.inputs.AnycastIpListTimeoutsArgs.builder
+      builder.timeouts(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.cloudfront.inputs.FieldLevelEncryptionConfigContentTypeProfileConfigContentTypeProfilesArgs.Builder)
     def items(args: Endofunction[com.pulumi.aws.cloudfront.inputs.FieldLevelEncryptionConfigContentTypeProfileConfigContentTypeProfilesItemArgs.Builder]*):
@@ -1113,6 +1804,34 @@ object cloudfront:
       def argsBuilder = com.pulumi.aws.cloudfront.inputs.DistributionDefaultCacheBehaviorLambdaFunctionAssociationArgs.builder
       builder.lambdaFunctionAssociations(args.map(_(argsBuilder).build)*)
 
+  extension (builder: com.pulumi.aws.cloudfront.inputs.DistributionTenantCustomizationsArgs.Builder)
+    /**
+     * @param certificate Certificate configuration for the tenant (maximum one).
+     * @return builder
+     */
+    def certificate(args: Endofunction[com.pulumi.aws.cloudfront.inputs.DistributionTenantCustomizationsCertificateArgs.Builder]):
+        com.pulumi.aws.cloudfront.inputs.DistributionTenantCustomizationsArgs.Builder =
+      val argsBuilder = com.pulumi.aws.cloudfront.inputs.DistributionTenantCustomizationsCertificateArgs.builder
+      builder.certificate(args(argsBuilder).build)
+
+    /**
+     * @param geoRestriction Geographic restrictions configuration for the tenant (maximum one).
+     * @return builder
+     */
+    def geoRestriction(args: Endofunction[com.pulumi.aws.cloudfront.inputs.DistributionTenantCustomizationsGeoRestrictionArgs.Builder]):
+        com.pulumi.aws.cloudfront.inputs.DistributionTenantCustomizationsArgs.Builder =
+      val argsBuilder = com.pulumi.aws.cloudfront.inputs.DistributionTenantCustomizationsGeoRestrictionArgs.builder
+      builder.geoRestriction(args(argsBuilder).build)
+
+    /**
+     * @param webAcl Web ACL configuration for the tenant (maximum one).
+     * @return builder
+     */
+    def webAcl(args: Endofunction[com.pulumi.aws.cloudfront.inputs.DistributionTenantCustomizationsWebAclArgs.Builder]):
+        com.pulumi.aws.cloudfront.inputs.DistributionTenantCustomizationsArgs.Builder =
+      val argsBuilder = com.pulumi.aws.cloudfront.inputs.DistributionTenantCustomizationsWebAclArgs.builder
+      builder.webAcl(args(argsBuilder).build)
+
   extension (builder: com.pulumi.aws.cloudfront.inputs.FieldLevelEncryptionProfileState.Builder)
     /**
      * @param encryptionEntities The encryption entities config block for field-level encryption profiles that contains an attribute `items` which includes the encryption key and field pattern specifications.
@@ -1142,6 +1861,16 @@ object cloudfront:
         com.pulumi.aws.cloudfront.inputs.DistributionOrderedCacheBehaviorForwardedValuesArgs.Builder =
       val argsBuilder = com.pulumi.aws.cloudfront.inputs.DistributionOrderedCacheBehaviorForwardedValuesCookiesArgs.builder
       builder.cookies(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.cloudfront.inputs.ConnectionFunctionState.Builder)
+    /**
+     * @param connectionFunctionConfig Configuration information for the connection function. See `connectionFunctionConfig` below.
+     * @return builder
+     */
+    def connectionFunctionConfig(args: Endofunction[com.pulumi.aws.cloudfront.inputs.ConnectionFunctionConnectionFunctionConfigArgs.Builder]):
+        com.pulumi.aws.cloudfront.inputs.ConnectionFunctionState.Builder =
+      val argsBuilder = com.pulumi.aws.cloudfront.inputs.ConnectionFunctionConnectionFunctionConfigArgs.builder
+      builder.connectionFunctionConfig(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.cloudfront.inputs.DistributionOriginGroupArgs.Builder)
     /**
@@ -1266,6 +1995,16 @@ object cloudfront:
       val argsBuilder = com.pulumi.aws.cloudfront.inputs.ContinuousDeploymentPolicyTrafficConfigSingleWeightConfigSessionStickinessConfigArgs.builder
       builder.sessionStickinessConfig(args(argsBuilder).build)
 
+  extension (builder: com.pulumi.aws.cloudfront.inputs.MultitenantDistributionActiveTrustedKeyGroupArgs.Builder)
+    /**
+     * @param items List of key groups. See Key Group Items below.
+     * @return builder
+     */
+    def items(args: Endofunction[com.pulumi.aws.cloudfront.inputs.MultitenantDistributionActiveTrustedKeyGroupItemArgs.Builder]*):
+        com.pulumi.aws.cloudfront.inputs.MultitenantDistributionActiveTrustedKeyGroupArgs.Builder =
+      def argsBuilder = com.pulumi.aws.cloudfront.inputs.MultitenantDistributionActiveTrustedKeyGroupItemArgs.builder
+      builder.items(args.map(_(argsBuilder).build)*)
+
   extension (builder: com.pulumi.aws.cloudfront.inputs.RealtimeLogConfigEndpointArgs.Builder)
     /**
      * @param kinesisStreamConfig The Amazon Kinesis data stream configuration.
@@ -1352,6 +2091,16 @@ object cloudfront:
       val argsBuilder = com.pulumi.aws.cloudfront.inputs.VpcOriginVpcOriginEndpointConfigOriginSslProtocolsArgs.builder
       builder.originSslProtocols(args(argsBuilder).build)
 
+  extension (builder: com.pulumi.aws.cloudfront.inputs.MultitenantDistributionTenantConfigArgs.Builder)
+    /**
+     * @param parameterDefinitions One or more parameter definitions for the tenant configuration. See Parameter Definition below.
+     * @return builder
+     */
+    def parameterDefinitions(args: Endofunction[com.pulumi.aws.cloudfront.inputs.MultitenantDistributionTenantConfigParameterDefinitionArgs.Builder]*):
+        com.pulumi.aws.cloudfront.inputs.MultitenantDistributionTenantConfigArgs.Builder =
+      def argsBuilder = com.pulumi.aws.cloudfront.inputs.MultitenantDistributionTenantConfigParameterDefinitionArgs.builder
+      builder.parameterDefinitions(args.map(_(argsBuilder).build)*)
+
   extension (builder: com.pulumi.aws.cloudfront.ResponseHeadersPolicyArgs.Builder)
     /**
      * @param corsConfig A configuration for a set of HTTP response headers that are used for Cross-Origin Resource Sharing (CORS). See Cors Config for more information.
@@ -1397,3 +2146,20 @@ object cloudfront:
         com.pulumi.aws.cloudfront.ResponseHeadersPolicyArgs.Builder =
       val argsBuilder = com.pulumi.aws.cloudfront.inputs.ResponseHeadersPolicyServerTimingHeadersConfigArgs.builder
       builder.serverTimingHeadersConfig(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.cloudfront.TrustStoreArgs.Builder)
+    /**
+     * @param caCertificatesBundleSource Configuration block for the CA certificates bundle source. See `caCertificatesBundleSource` below.
+     *  
+     *  The following arguments are optional:
+     * @return builder
+     */
+    def caCertificatesBundleSource(args: Endofunction[com.pulumi.aws.cloudfront.inputs.TrustStoreCaCertificatesBundleSourceArgs.Builder]):
+        com.pulumi.aws.cloudfront.TrustStoreArgs.Builder =
+      val argsBuilder = com.pulumi.aws.cloudfront.inputs.TrustStoreCaCertificatesBundleSourceArgs.builder
+      builder.caCertificatesBundleSource(args(argsBuilder).build)
+
+    def timeouts(args: Endofunction[com.pulumi.aws.cloudfront.inputs.TrustStoreTimeoutsArgs.Builder]):
+        com.pulumi.aws.cloudfront.TrustStoreArgs.Builder =
+      val argsBuilder = com.pulumi.aws.cloudfront.inputs.TrustStoreTimeoutsArgs.builder
+      builder.timeouts(args(argsBuilder).build)

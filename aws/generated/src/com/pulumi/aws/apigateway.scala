@@ -25,23 +25,25 @@ object apigateway:
    *  
    *  ## Import
    *  
-   *  For a non-root `base_path`:
+   *  For a non-root `basePath`:
    *  
-   *  For a non-root `base_path` and a private custom domain name:
+   *  For a non-root `basePath` and a private custom domain name:
    *  
-   *  Using `pulumi import`, import `aws_api_gateway_base_path_mapping` using the domain name and base path or domain name, base path and domain name ID (for private custom domain names). For example:
+   *  Using `pulumi import`, import `aws.apigateway.BasePathMapping` using the domain name and base path or domain name, base path and domain name ID (for private custom domain names). For example:
    *  
-   *  For an empty `base_path` or, in other words, a root path (`/`):
+   *  For an empty `basePath` or, in other words, a root path (`/`):
    *  
    *  ```sh
    *  $ pulumi import aws:apigateway/basePathMapping:BasePathMapping example example.com/
    *  ```
-   *  For a non-root `base_path`:
+   *  
+   *  For a non-root `basePath`:
    *  
    *  ```sh
    *  $ pulumi import aws:apigateway/basePathMapping:BasePathMapping example example.com/base-path
    *  ```
-   *  For a non-root `base_path` and a private custom domain name:
+   *  
+   *  For a non-root `basePath` and a private custom domain name:
    *  
    *  ```sh
    *  $ pulumi import aws:apigateway/basePathMapping:BasePathMapping example api.internal.example.com/base-path/abcde12345
@@ -288,7 +290,7 @@ object apigateway:
    *  
    *  ## Import
    *  
-   *  Using `pulumi import`, import `aws_api_gateway_stage` using `REST-API-ID/STAGE-NAME`. For example:
+   *  Using `pulumi import`, import `aws.apigateway.Stage` using `REST-API-ID/STAGE-NAME`. For example:
    *  
    *  ```sh
    *  $ pulumi import aws:apigateway/stage:Stage example 12345abcde/example
@@ -449,7 +451,9 @@ object apigateway:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /**
-   * 
+   * Resource for updating an AWS API Gateway REST API with a new API description.
+   *  
+   *  &gt; **NOTE:** When importing an OpenAPI specification using the `body` argument, the `info.title` field updates the `name` of the `aws.apigateway.RestApi`. If the imported `title` differs from the configured `name`, Terraform will report the difference.
    */
   def RestApiPut(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.apigateway.RestApiPutArgs.Builder]) =

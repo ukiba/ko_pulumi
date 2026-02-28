@@ -23,7 +23,7 @@ object invoicing:
 
   extension (builder: com.pulumi.aws.invoicing.InvoiceUnitArgs.Builder)
     /**
-     * @param rules Configuration block for invoice unit rules. See below.
+     * @param rules Configuration block for invoice unit rules. See `rule` below.
      *  
      *  The following arguments are optional:
      * @return builder
@@ -40,7 +40,7 @@ object invoicing:
 
   extension (builder: com.pulumi.aws.invoicing.inputs.InvoiceUnitState.Builder)
     /**
-     * @param rules Configuration block for invoice unit rules. See below.
+     * @param rules Configuration block for invoice unit rules. See `rule` below.
      *  
      *  The following arguments are optional:
      * @return builder

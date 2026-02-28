@@ -26,9 +26,7 @@ object verifiedpermissions:
       val argsBuilder = com.pulumi.aws.verifiedpermissions.inputs.SchemaDefinitionArgs.builder
       builder.definition(args(argsBuilder).build)
 
-  /**
-   * 
-   */
+  /** This is a Terraform resource for managing an AWS Verified Permissions Policy Store Schema. */
   def Schema(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.verifiedpermissions.SchemaArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.verifiedpermissions.SchemaArgs.builder
@@ -56,9 +54,7 @@ object verifiedpermissions:
       val argsBuilder = com.pulumi.aws.verifiedpermissions.inputs.IdentitySourceConfigurationArgs.builder
       builder.configuration(args(argsBuilder).build)
 
-  /**
-   * 
-   */
+  /** This is a Terraform resource for managing an AWS Verified Permissions Policy Store. */
   def PolicyStore(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.verifiedpermissions.PolicyStoreArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.verifiedpermissions.PolicyStoreArgs.builder

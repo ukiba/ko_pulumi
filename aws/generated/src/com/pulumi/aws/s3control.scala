@@ -7,7 +7,13 @@ import com.pulumi.resources.CustomResourceOptions
 
 object s3control:
   /**
-   * 
+   * Provides a resource to manage the access point scope for a directory bucket.
+   *  
+   *  With access points for directory buckets, you can use the access point scope to restrict access to specific prefixes, API actions, or a combination of both. You can specify any amount of prefixes, but the total length of characters of all prefixes must be less than 256 bytes. For more information, see [AWS Documentation](https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points-directory-buckets-manage-scope.html).
+   *  
+   *  &gt; For all the services in AWS Local Zones, including Amazon S3, your accountID must be enabled before you can create or access any resource in the Local Zone. You can use the `DescribeAvailabilityZones` API operation to confirm your accountID access to a Local Zone. For more information, see [AWS Documentation](https://docs.aws.amazon.com/AmazonS3/latest/userguide/opt-in-directory-bucket-lz.html)
+   *  
+   *  &gt; Terraform provides two ways to manage access point scopes. You can use a standalone resource `awsS3controlDirectoryAccessPointScope` or, an in-line scope with the  `awsS3DirectoryAccessPoint` resource. You cannot use a standalone resource at the same time as in-line, which will cause an overwrite of each other. You must use one or the other.
    */
   def DirectoryBucketAccessPointScope(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.s3control.DirectoryBucketAccessPointScopeArgs.Builder])(using conf: KoPulumiConf) =
@@ -230,6 +236,18 @@ object s3control:
     // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
     export com.pulumi.aws.s3control.S3controlFunctions.*
   extension (self: S3controlFunctions.type)
+    /** Provides details about an AWS S3 Control Access Points. */
+    def getAccessPoints(args: Endofunction[com.pulumi.aws.s3control.inputs.GetAccessPointsArgs.Builder] = identity):
+        com.pulumi.core.Output[com.pulumi.aws.s3control.outputs.GetAccessPointsResult] =
+      val argsBuilder = com.pulumi.aws.s3control.inputs.GetAccessPointsArgs.builder
+      com.pulumi.aws.s3control.S3controlFunctions.getAccessPoints(args(argsBuilder).build)
+
+    /** Provides details about an AWS S3 Control Access Points. */
+    def getAccessPointsPlain(args: Endofunction[com.pulumi.aws.s3control.inputs.GetAccessPointsPlainArgs.Builder] = identity):
+        java.util.concurrent.CompletableFuture[com.pulumi.aws.s3control.outputs.GetAccessPointsResult] =
+      val argsBuilder = com.pulumi.aws.s3control.inputs.GetAccessPointsPlainArgs.builder
+      com.pulumi.aws.s3control.S3controlFunctions.getAccessPointsPlain(args(argsBuilder).build)
+
     /** Provides details on a specific S3 Multi-Region Access Point. */
     def getMultiRegionAccessPoint(args: Endofunction[com.pulumi.aws.s3control.inputs.GetMultiRegionAccessPointArgs.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.aws.s3control.outputs.GetMultiRegionAccessPointResult] =
@@ -241,6 +259,18 @@ object s3control:
         java.util.concurrent.CompletableFuture[com.pulumi.aws.s3control.outputs.GetMultiRegionAccessPointResult] =
       val argsBuilder = com.pulumi.aws.s3control.inputs.GetMultiRegionAccessPointPlainArgs.builder
       com.pulumi.aws.s3control.S3controlFunctions.getMultiRegionAccessPointPlain(args(argsBuilder).build)
+
+    /** Provides details about AWS S3 Control Multi-Region Access Points. */
+    def getMultiRegionAccessPoints(args: Endofunction[com.pulumi.aws.s3control.inputs.GetMultiRegionAccessPointsArgs.Builder] = identity):
+        com.pulumi.core.Output[com.pulumi.aws.s3control.outputs.GetMultiRegionAccessPointsResult] =
+      val argsBuilder = com.pulumi.aws.s3control.inputs.GetMultiRegionAccessPointsArgs.builder
+      com.pulumi.aws.s3control.S3controlFunctions.getMultiRegionAccessPoints(args(argsBuilder).build)
+
+    /** Provides details about AWS S3 Control Multi-Region Access Points. */
+    def getMultiRegionAccessPointsPlain(args: Endofunction[com.pulumi.aws.s3control.inputs.GetMultiRegionAccessPointsPlainArgs.Builder] = identity):
+        java.util.concurrent.CompletableFuture[com.pulumi.aws.s3control.outputs.GetMultiRegionAccessPointsResult] =
+      val argsBuilder = com.pulumi.aws.s3control.inputs.GetMultiRegionAccessPointsPlainArgs.builder
+      com.pulumi.aws.s3control.S3controlFunctions.getMultiRegionAccessPointsPlain(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.s3control.DirectoryBucketAccessPointScopeArgs.Builder)
     /**

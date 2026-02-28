@@ -333,7 +333,7 @@ object batch:
       builder.resources(args(argsBuilder).build)
 
     /**
-     * @param securityContext Security context for a job.
+     * @param securityContext Security context for a job. See `securityContext` below.
      * @return builder
      */
     def securityContext(args: Endofunction[com.pulumi.aws.batch.inputs.JobDefinitionEksPropertiesPodPropertiesInitContainerSecurityContextArgs.Builder]):
@@ -473,7 +473,7 @@ object batch:
       builder.resources(args(argsBuilder).build)
 
     /**
-     * @param securityContext Security context for a job.
+     * @param securityContext Security context for a job. See `securityContext` below.
      * @return builder
      */
     def securityContext(args: Endofunction[com.pulumi.aws.batch.inputs.JobDefinitionEksPropertiesPodPropertiesContainerSecurityContextArgs.Builder]):

@@ -901,7 +901,7 @@ object lakeformation:
 
   extension (builder: com.pulumi.aws.lakeformation.inputs.DataCellsFilterTableDataRowFilterArgs.Builder)
     /**
-     * @param allRowsWildcard (Optional) A wildcard that matches all rows.
+     * @param allRowsWildcard (Optional) A wildcard that matches all rows. Required when applying column-level filtering without row-level filtering. Use an empty block: `allRowsWildcard {}`.
      * @return builder
      */
     def allRowsWildcard(args: Endofunction[com.pulumi.aws.lakeformation.inputs.DataCellsFilterTableDataRowFilterAllRowsWildcardArgs.Builder]):

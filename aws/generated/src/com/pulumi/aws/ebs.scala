@@ -96,7 +96,9 @@ object ebs:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /**
-   * 
+   * Provides a resource to manage the state of the &#34;Block public access for snapshots&#34; setting on region level.
+   *  
+   *  &gt; **NOTE:** Removing this Terraform resource disables blocking.
    */
   def SnapshotBlockPublicAccess(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ebs.SnapshotBlockPublicAccessArgs.Builder]) =

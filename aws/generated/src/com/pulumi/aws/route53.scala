@@ -723,13 +723,13 @@ object route53:
       builder.ipAddresses(args.map(_(argsBuilder).build)*)
 
   /**
-   * ## Import
+   * Resource for maintaining exclusive management of resource record sets defined in an AWS Route53 hosted zone.
    *  
-   *  Using `pulumi import`, import Route 53 Records Exclusive using the `zone_id`. For example:
+   *  !&gt; This resource takes exclusive ownership over resource record sets defined in a hosted zone. This includes removal of record sets which are not explicitly configured. To prevent persistent drift, ensure any `aws.route53.Record` resources managed alongside this resource have an equivalent `resourceRecordSet` argument.
    *  
-   *  ```sh
-   *  $ pulumi import aws:route53/recordsExclusive:RecordsExclusive example ABCD1234
-   *  ```
+   *  &gt; Destruction of this resource means Terraform will no longer manage reconciliation of the configured resource record sets. It __will not__ delete the configured record sets from the hosted zone.
+   *  
+   *  &gt; The default `NS` and `SOA` records created during provisioning of the Route53 Zone __should not be included__ in this resource definition. Adding them will cause persistent drift as the read operation is explicitly configured to ignore writing them to state.
    */
   def RecordsExclusive(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.route53.RecordsExclusiveArgs.Builder]) =

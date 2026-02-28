@@ -7,7 +7,13 @@ import com.pulumi.resources.CustomResourceOptions
 
 object dynamodb:
   /**
-   * 
+   * Resource for managing an AWS DynamoDB Table Export. Terraform will wait until the Table export reaches a status of `COMPLETED` or `FAILED`.
+   *  
+   *  See the [AWS Documentation](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/S3DataExport.HowItWorks.html) for more information on how this process works.
+   *  
+   *  &gt; **TIP:** Point-in-time Recovery must be enabled on the target DynamoDB Table.
+   *  
+   *  &gt; **NOTE:** Once a AWS DynamoDB Table Export has been created it is immutable. The AWS API does not delete this resource. When you run destroy the provider will remove the resource from the Terraform state, no exported data will be deleted.
    */
   def TableExport(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.dynamodb.TableExportArgs.Builder]) =
@@ -35,6 +41,15 @@ object dynamodb:
         com.pulumi.aws.dynamodb.TableArgs.Builder =
       def argsBuilder = com.pulumi.aws.dynamodb.inputs.TableGlobalSecondaryIndexArgs.builder
       builder.globalSecondaryIndexes(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param globalTableWitness Witness Region in a Multi-Region Strong Consistency deployment. **Note** This must be used alongside a single `replica` with `consistencyMode` set to `STRONG`. Other combinations will fail to provision. See below.
+     * @return builder
+     */
+    def globalTableWitness(args: Endofunction[com.pulumi.aws.dynamodb.inputs.TableGlobalTableWitnessArgs.Builder]):
+        com.pulumi.aws.dynamodb.TableArgs.Builder =
+      val argsBuilder = com.pulumi.aws.dynamodb.inputs.TableGlobalTableWitnessArgs.builder
+      builder.globalTableWitness(args(argsBuilder).build)
 
     /**
      * @param importTable Import Amazon S3 data into a new table. See below.
@@ -156,12 +171,75 @@ object dynamodb:
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
+  extension (builder: com.pulumi.aws.dynamodb.GlobalSecondaryIndexArgs.Builder)
+    /**
+     * @param keySchemas Set of nested attribute definitions.
+     *  At least 1 element defining a `HASH` is required.
+     *  All elements with the `keyType` of `HASH` must precede elements with `keyType` of `RANGE`.
+     *  Changing any values in `keySchema` will re-create the resource.
+     *  See `keySchema` below.
+     * @return builder
+     */
+    def keySchemas(args: Endofunction[com.pulumi.aws.dynamodb.inputs.GlobalSecondaryIndexKeySchemaArgs.Builder]*):
+        com.pulumi.aws.dynamodb.GlobalSecondaryIndexArgs.Builder =
+      def argsBuilder = com.pulumi.aws.dynamodb.inputs.GlobalSecondaryIndexKeySchemaArgs.builder
+      builder.keySchemas(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param onDemandThroughput Sets the maximum number of read and write units for the index.
+     *  See `onDemandThroughput` below.
+     *  Only valid if the table&#39;s `billingMode` is `PAY_PER_REQUEST`.
+     * @return builder
+     */
+    def onDemandThroughput(args: Endofunction[com.pulumi.aws.dynamodb.inputs.GlobalSecondaryIndexOnDemandThroughputArgs.Builder]):
+        com.pulumi.aws.dynamodb.GlobalSecondaryIndexArgs.Builder =
+      val argsBuilder = com.pulumi.aws.dynamodb.inputs.GlobalSecondaryIndexOnDemandThroughputArgs.builder
+      builder.onDemandThroughput(args(argsBuilder).build)
+
+    /**
+     * @param projection Describes which attributes from the table are represented in the index.
+     *  See `projection` below.
+     * @return builder
+     */
+    def projection(args: Endofunction[com.pulumi.aws.dynamodb.inputs.GlobalSecondaryIndexProjectionArgs.Builder]):
+        com.pulumi.aws.dynamodb.GlobalSecondaryIndexArgs.Builder =
+      val argsBuilder = com.pulumi.aws.dynamodb.inputs.GlobalSecondaryIndexProjectionArgs.builder
+      builder.projection(args(argsBuilder).build)
+
+    /**
+     * @param provisionedThroughput Provisioned throughput for the index.
+     *  See `provisionedThroughput` below.
+     *  Required if the table&#39;s `billingMode` is `PROVISIONED`.
+     * @return builder
+     */
+    def provisionedThroughput(args: Endofunction[com.pulumi.aws.dynamodb.inputs.GlobalSecondaryIndexProvisionedThroughputArgs.Builder]):
+        com.pulumi.aws.dynamodb.GlobalSecondaryIndexArgs.Builder =
+      val argsBuilder = com.pulumi.aws.dynamodb.inputs.GlobalSecondaryIndexProvisionedThroughputArgs.builder
+      builder.provisionedThroughput(args(argsBuilder).build)
+
+    def timeouts(args: Endofunction[com.pulumi.aws.dynamodb.inputs.GlobalSecondaryIndexTimeoutsArgs.Builder]):
+        com.pulumi.aws.dynamodb.GlobalSecondaryIndexArgs.Builder =
+      val argsBuilder = com.pulumi.aws.dynamodb.inputs.GlobalSecondaryIndexTimeoutsArgs.builder
+      builder.timeouts(args(argsBuilder).build)
+
+    /**
+     * @param warmThroughput Sets the number of warm read and write units for this index.
+     *  See `warmThroughput` below.
+     * @return builder
+     */
+    def warmThroughput(args: Endofunction[com.pulumi.aws.dynamodb.inputs.GlobalSecondaryIndexWarmThroughputArgs.Builder]):
+        com.pulumi.aws.dynamodb.GlobalSecondaryIndexArgs.Builder =
+      val argsBuilder = com.pulumi.aws.dynamodb.inputs.GlobalSecondaryIndexWarmThroughputArgs.builder
+      builder.warmThroughput(args(argsBuilder).build)
+
   /**
    * Provides a DynamoDB table resource.
    *  
    *  &gt; **Note:** It is recommended to use [`ignoreChanges`](https://www.pulumi.com/docs/intro/concepts/programming-model/#ignorechanges) for `readCapacity` and/or `writeCapacity` if there&#39;s `autoscaling policy` attached to the table.
    *  
    *  &gt; **Note:** When using aws.dynamodb.TableReplica with this resource, use `lifecycle` `ignoreChanges` for `replica`, _e.g._, `lifecycle { ignoreChanges = [replica] }`.
+   *  
+   *  &gt; **Note:** If autoscaling creates drift for your `globalSecondaryIndex` blocks and/or more granular `lifecycle` management for GSIs, we recommend using the new **experimental** resource `aws.dynamodb.GlobalSecondaryIndex`.
    *  
    *  ## DynamoDB Table attributes
    *  
@@ -171,6 +249,8 @@ object dynamodb:
    *  * LSI or GSI hash key or range key
    *  
    *  The DynamoDB API expects attribute structure (name and type) to be passed along when creating or updating GSI/LSIs or creating the initial table. In these cases it expects the Hash / Range keys to be provided. Because these get re-used in numerous places (i.e the table&#39;s range key could be a part of one or more GSIs), they are stored on the table object to prevent duplication and increase consistency. If you add attributes here that are not used in these scenarios it can cause an infinite loop in planning.
+   *  
+   *  &gt; **Note:** When using the `aws.dynamodb.GlobalSecondaryIndex` resource, you do not need to define the attributes for externally managed GSIs in the `aws.dynamodb.Table` resource.
    */
   def Table(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.dynamodb.TableArgs.Builder])(using conf: KoPulumiConf) =
@@ -192,6 +272,23 @@ object dynamodb:
     val argsBuilder = com.pulumi.aws.dynamodb.ResourcePolicyArgs.builder
     
     com.pulumi.aws.dynamodb.ResourcePolicy(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder).build)
+
+  /**
+   * !&gt; The resource type `aws.dynamodb.GlobalSecondaryIndex` is an experimental feature. The schema or behavior may change without notice, and it is not subject to the backwards compatibility guarantee of the provider.
+   *  
+   *  &gt; The resource type `aws.dynamodb.GlobalSecondaryIndex` can be enabled by setting the environment variable `TF_AWS_EXPERIMENT_dynamodb_global_secondary_index` to any value. If not enabled, use of `aws.dynamodb.GlobalSecondaryIndex` will result in an error when running Terraform.
+   *  
+   *  &gt; Please provide feedback, positive or negative, at https://github.com/hashicorp/terraform-provider-aws/issues/45640. User feedback will determine if this experiment is a success.
+   *  
+   *  !&gt; **WARNING:** Do not combine `aws.dynamodb.GlobalSecondaryIndex` resources in conjunction with `globalSecondaryIndex` on `aws.dynamodb.Table`. Doing so may cause conflicts, perpertual differences, and Global Secondary Indexes being overwritten.
+   */
+  def GlobalSecondaryIndex(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.dynamodb.GlobalSecondaryIndexArgs.Builder]) =
+    val argsBuilder = com.pulumi.aws.dynamodb.GlobalSecondaryIndexArgs.builder
+    
+    com.pulumi.aws.dynamodb.GlobalSecondaryIndex(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
@@ -303,6 +400,67 @@ object dynamodb:
       val argsBuilder = com.pulumi.aws.dynamodb.inputs.TableImportTableInputFormatOptionsCsvArgs.builder
       builder.csv(args(argsBuilder).build)
 
+  extension (builder: com.pulumi.aws.dynamodb.inputs.GlobalSecondaryIndexState.Builder)
+    /**
+     * @param keySchemas Set of nested attribute definitions.
+     *  At least 1 element defining a `HASH` is required.
+     *  All elements with the `keyType` of `HASH` must precede elements with `keyType` of `RANGE`.
+     *  Changing any values in `keySchema` will re-create the resource.
+     *  See `keySchema` below.
+     * @return builder
+     */
+    def keySchemas(args: Endofunction[com.pulumi.aws.dynamodb.inputs.GlobalSecondaryIndexKeySchemaArgs.Builder]*):
+        com.pulumi.aws.dynamodb.inputs.GlobalSecondaryIndexState.Builder =
+      def argsBuilder = com.pulumi.aws.dynamodb.inputs.GlobalSecondaryIndexKeySchemaArgs.builder
+      builder.keySchemas(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param onDemandThroughput Sets the maximum number of read and write units for the index.
+     *  See `onDemandThroughput` below.
+     *  Only valid if the table&#39;s `billingMode` is `PAY_PER_REQUEST`.
+     * @return builder
+     */
+    def onDemandThroughput(args: Endofunction[com.pulumi.aws.dynamodb.inputs.GlobalSecondaryIndexOnDemandThroughputArgs.Builder]):
+        com.pulumi.aws.dynamodb.inputs.GlobalSecondaryIndexState.Builder =
+      val argsBuilder = com.pulumi.aws.dynamodb.inputs.GlobalSecondaryIndexOnDemandThroughputArgs.builder
+      builder.onDemandThroughput(args(argsBuilder).build)
+
+    /**
+     * @param projection Describes which attributes from the table are represented in the index.
+     *  See `projection` below.
+     * @return builder
+     */
+    def projection(args: Endofunction[com.pulumi.aws.dynamodb.inputs.GlobalSecondaryIndexProjectionArgs.Builder]):
+        com.pulumi.aws.dynamodb.inputs.GlobalSecondaryIndexState.Builder =
+      val argsBuilder = com.pulumi.aws.dynamodb.inputs.GlobalSecondaryIndexProjectionArgs.builder
+      builder.projection(args(argsBuilder).build)
+
+    /**
+     * @param provisionedThroughput Provisioned throughput for the index.
+     *  See `provisionedThroughput` below.
+     *  Required if the table&#39;s `billingMode` is `PROVISIONED`.
+     * @return builder
+     */
+    def provisionedThroughput(args: Endofunction[com.pulumi.aws.dynamodb.inputs.GlobalSecondaryIndexProvisionedThroughputArgs.Builder]):
+        com.pulumi.aws.dynamodb.inputs.GlobalSecondaryIndexState.Builder =
+      val argsBuilder = com.pulumi.aws.dynamodb.inputs.GlobalSecondaryIndexProvisionedThroughputArgs.builder
+      builder.provisionedThroughput(args(argsBuilder).build)
+
+    def timeouts(args: Endofunction[com.pulumi.aws.dynamodb.inputs.GlobalSecondaryIndexTimeoutsArgs.Builder]):
+        com.pulumi.aws.dynamodb.inputs.GlobalSecondaryIndexState.Builder =
+      val argsBuilder = com.pulumi.aws.dynamodb.inputs.GlobalSecondaryIndexTimeoutsArgs.builder
+      builder.timeouts(args(argsBuilder).build)
+
+    /**
+     * @param warmThroughput Sets the number of warm read and write units for this index.
+     *  See `warmThroughput` below.
+     * @return builder
+     */
+    def warmThroughput(args: Endofunction[com.pulumi.aws.dynamodb.inputs.GlobalSecondaryIndexWarmThroughputArgs.Builder]):
+        com.pulumi.aws.dynamodb.inputs.GlobalSecondaryIndexState.Builder =
+      val argsBuilder = com.pulumi.aws.dynamodb.inputs.GlobalSecondaryIndexWarmThroughputArgs.builder
+      builder.warmThroughput(args(argsBuilder).build)
+
   extension (builder: com.pulumi.aws.dynamodb.inputs.TableState.Builder)
     /**
      * @param attributes Set of nested attribute definitions. Only required for `hashKey` and `rangeKey` attributes. See below.
@@ -321,6 +479,15 @@ object dynamodb:
         com.pulumi.aws.dynamodb.inputs.TableState.Builder =
       def argsBuilder = com.pulumi.aws.dynamodb.inputs.TableGlobalSecondaryIndexArgs.builder
       builder.globalSecondaryIndexes(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param globalTableWitness Witness Region in a Multi-Region Strong Consistency deployment. **Note** This must be used alongside a single `replica` with `consistencyMode` set to `STRONG`. Other combinations will fail to provision. See below.
+     * @return builder
+     */
+    def globalTableWitness(args: Endofunction[com.pulumi.aws.dynamodb.inputs.TableGlobalTableWitnessArgs.Builder]):
+        com.pulumi.aws.dynamodb.inputs.TableState.Builder =
+      val argsBuilder = com.pulumi.aws.dynamodb.inputs.TableGlobalTableWitnessArgs.builder
+      builder.globalTableWitness(args(argsBuilder).build)
 
     /**
      * @param importTable Import Amazon S3 data into a new table. See below.
@@ -395,6 +562,15 @@ object dynamodb:
       builder.warmThroughput(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.dynamodb.inputs.TableGlobalSecondaryIndexArgs.Builder)
+    /**
+     * @param keySchemas Configuration block(s) for the key schema. Mutually exclusive with `hashKey` and `rangeKey`. Required if `hashKey` is not specified. Supports multi-attribute keys for the [Multi-Attribute Keys design pattern](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GSI.DesignPattern.MultiAttributeKeys.html). See below.
+     * @return builder
+     */
+    def keySchemas(args: Endofunction[com.pulumi.aws.dynamodb.inputs.TableGlobalSecondaryIndexKeySchemaArgs.Builder]*):
+        com.pulumi.aws.dynamodb.inputs.TableGlobalSecondaryIndexArgs.Builder =
+      def argsBuilder = com.pulumi.aws.dynamodb.inputs.TableGlobalSecondaryIndexKeySchemaArgs.builder
+      builder.keySchemas(args.map(_(argsBuilder).build)*)
+
     /**
      * @param onDemandThroughput Sets the maximum number of read and write units for the specified on-demand index. See below.
      * @return builder

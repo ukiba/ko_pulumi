@@ -159,6 +159,15 @@ object backup:
       def argsBuilder = com.pulumi.aws.backup.inputs.PlanRuleArgs.builder
       builder.rules(args.map(_(argsBuilder).build)*)
 
+    /**
+     * @param scanSettings Block for scanning configuration for the backup rule and includes the malware scanner, and scan mode of either full or incremental. Detailed below.
+     * @return builder
+     */
+    def scanSettings(args: Endofunction[com.pulumi.aws.backup.inputs.PlanScanSettingArgs.Builder]*):
+        com.pulumi.aws.backup.PlanArgs.Builder =
+      def argsBuilder = com.pulumi.aws.backup.inputs.PlanScanSettingArgs.builder
+      builder.scanSettings(args.map(_(argsBuilder).build)*)
+
   /** Resource for managing an AWS Backup Logically Air Gapped Vault. */
   def LogicallyAirGappedVault(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.backup.LogicallyAirGappedVaultArgs.Builder])(using conf: KoPulumiConf) =
@@ -308,7 +317,11 @@ object backup:
       def argsBuilder = com.pulumi.aws.backup.inputs.FrameworkControlArgs.builder
       builder.controls(args.map(_(argsBuilder).build)*)
 
-  /** Provides an AWS Backup Global Settings resource. */
+  /**
+   * Provides an AWS Backup Global Settings resource.
+   *  
+   *  &gt; **Note:** This resource will show perpetual differences for any supported settings not explicitly configured in the `globalSettings` configuration block. To avoid this, specify all supported options with their default values (typically `&#34;false&#34;`, but check the plan diff for the actual value). See [UpdateGlobalSettings](https://docs.aws.amazon.com/aws-backup/latest/devguide/API_UpdateGlobalSettings.html) in the AWS Backup Developer Guide for available settings.
+   */
   def GlobalSettings(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.backup.GlobalSettingsArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.backup.GlobalSettingsArgs.builder
@@ -428,6 +441,15 @@ object backup:
       def argsBuilder = com.pulumi.aws.backup.inputs.PlanRuleArgs.builder
       builder.rules(args.map(_(argsBuilder).build)*)
 
+    /**
+     * @param scanSettings Block for scanning configuration for the backup rule and includes the malware scanner, and scan mode of either full or incremental. Detailed below.
+     * @return builder
+     */
+    def scanSettings(args: Endofunction[com.pulumi.aws.backup.inputs.PlanScanSettingArgs.Builder]*):
+        com.pulumi.aws.backup.inputs.PlanState.Builder =
+      def argsBuilder = com.pulumi.aws.backup.inputs.PlanScanSettingArgs.builder
+      builder.scanSettings(args.map(_(argsBuilder).build)*)
+
   extension (builder: com.pulumi.aws.backup.inputs.RestoreTestingSelectionProtectedResourceConditionsArgs.Builder)
     /**
      * @param stringEquals The list of string equals conditions for resource tags. Filters the values of your tagged resources for only those resources that you tagged with the same value. Also called &#34;exact matching.&#34;. See the structure for details
@@ -504,6 +526,15 @@ object backup:
         com.pulumi.aws.backup.inputs.PlanRuleArgs.Builder =
       val argsBuilder = com.pulumi.aws.backup.inputs.PlanRuleLifecycleArgs.builder
       builder.lifecycle(args(argsBuilder).build)
+
+    /**
+     * @param scanActions Block for scanning configuration for the backup rule and includes the malware scanner, and scan mode of either full or incremental.
+     * @return builder
+     */
+    def scanActions(args: Endofunction[com.pulumi.aws.backup.inputs.PlanRuleScanActionArgs.Builder]*):
+        com.pulumi.aws.backup.inputs.PlanRuleArgs.Builder =
+      def argsBuilder = com.pulumi.aws.backup.inputs.PlanRuleScanActionArgs.builder
+      builder.scanActions(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.aws.backup.inputs.FrameworkControlArgs.Builder)
     /**

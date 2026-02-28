@@ -73,6 +73,15 @@ object apigatewayv2:
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
+  /** Resource for managing an AWS API Gateway V2 Routing Rule. */
+  def RoutingRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.apigatewayv2.RoutingRuleArgs.Builder]) =
+    val argsBuilder = com.pulumi.aws.apigatewayv2.RoutingRuleArgs.builder
+    
+    com.pulumi.aws.apigatewayv2.RoutingRule(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder).build)
+
   extension (builder: com.pulumi.aws.apigatewayv2.RouteArgs.Builder)
     /**
      * @param requestParameters Request parameters for the route. Supported only for WebSocket APIs.
@@ -82,6 +91,25 @@ object apigatewayv2:
         com.pulumi.aws.apigatewayv2.RouteArgs.Builder =
       def argsBuilder = com.pulumi.aws.apigatewayv2.inputs.RouteRequestParameterArgs.builder
       builder.requestParameters(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.aws.apigatewayv2.RoutingRuleArgs.Builder)
+    /**
+     * @param actions Configuration of resulting action based on matching routing rules condition. See below.
+     * @return builder
+     */
+    def actions(args: Endofunction[com.pulumi.aws.apigatewayv2.inputs.RoutingRuleActionArgs.Builder]*):
+        com.pulumi.aws.apigatewayv2.RoutingRuleArgs.Builder =
+      def argsBuilder = com.pulumi.aws.apigatewayv2.inputs.RoutingRuleActionArgs.builder
+      builder.actions(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param conditions Conditions configuration. See below.
+     * @return builder
+     */
+    def conditions(args: Endofunction[com.pulumi.aws.apigatewayv2.inputs.RoutingRuleConditionArgs.Builder]*):
+        com.pulumi.aws.apigatewayv2.RoutingRuleArgs.Builder =
+      def argsBuilder = com.pulumi.aws.apigatewayv2.inputs.RoutingRuleConditionArgs.builder
+      builder.conditions(args.map(_(argsBuilder).build)*)
 
   /**
    * Manages an Amazon API Gateway Version 2 route.
@@ -334,6 +362,25 @@ object apigatewayv2:
       val argsBuilder = com.pulumi.aws.apigatewayv2.inputs.AuthorizerJwtConfigurationArgs.builder
       builder.jwtConfiguration(args(argsBuilder).build)
 
+  extension (builder: com.pulumi.aws.apigatewayv2.inputs.RoutingRuleState.Builder)
+    /**
+     * @param actions Configuration of resulting action based on matching routing rules condition. See below.
+     * @return builder
+     */
+    def actions(args: Endofunction[com.pulumi.aws.apigatewayv2.inputs.RoutingRuleActionArgs.Builder]*):
+        com.pulumi.aws.apigatewayv2.inputs.RoutingRuleState.Builder =
+      def argsBuilder = com.pulumi.aws.apigatewayv2.inputs.RoutingRuleActionArgs.builder
+      builder.actions(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param conditions Conditions configuration. See below.
+     * @return builder
+     */
+    def conditions(args: Endofunction[com.pulumi.aws.apigatewayv2.inputs.RoutingRuleConditionArgs.Builder]*):
+        com.pulumi.aws.apigatewayv2.inputs.RoutingRuleState.Builder =
+      def argsBuilder = com.pulumi.aws.apigatewayv2.inputs.RoutingRuleConditionArgs.builder
+      builder.conditions(args.map(_(argsBuilder).build)*)
+
   extension (builder: com.pulumi.aws.apigatewayv2.inputs.IntegrationState.Builder)
     /**
      * @param responseParameters Mappings to transform the HTTP response from a backend integration before returning the response to clients. Supported only for HTTP APIs.
@@ -362,6 +409,16 @@ object apigatewayv2:
         com.pulumi.aws.apigatewayv2.inputs.RouteState.Builder =
       def argsBuilder = com.pulumi.aws.apigatewayv2.inputs.RouteRequestParameterArgs.builder
       builder.requestParameters(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.aws.apigatewayv2.inputs.RoutingRuleConditionMatchHeadersArgs.Builder)
+    /**
+     * @param anyOf Configuration of the headers to be matched. There is a match if any of the header name and header value globs are matched. See below.
+     * @return builder
+     */
+    def anyOf(args: Endofunction[com.pulumi.aws.apigatewayv2.inputs.RoutingRuleConditionMatchHeadersAnyOfArgs.Builder]):
+        com.pulumi.aws.apigatewayv2.inputs.RoutingRuleConditionMatchHeadersArgs.Builder =
+      val argsBuilder = com.pulumi.aws.apigatewayv2.inputs.RoutingRuleConditionMatchHeadersAnyOfArgs.builder
+      builder.anyOf(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.apigatewayv2.inputs.StageState.Builder)
     /**
@@ -420,6 +477,35 @@ object apigatewayv2:
         com.pulumi.aws.apigatewayv2.inputs.DomainNameState.Builder =
       val argsBuilder = com.pulumi.aws.apigatewayv2.inputs.DomainNameMutualTlsAuthenticationArgs.builder
       builder.mutualTlsAuthentication(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.apigatewayv2.inputs.RoutingRuleActionArgs.Builder)
+    /**
+     * @param invokeApi Configuration to invoke a stage of a target API. Only REST APIs are supported. See below.
+     * @return builder
+     */
+    def invokeApi(args: Endofunction[com.pulumi.aws.apigatewayv2.inputs.RoutingRuleActionInvokeApiArgs.Builder]):
+        com.pulumi.aws.apigatewayv2.inputs.RoutingRuleActionArgs.Builder =
+      val argsBuilder = com.pulumi.aws.apigatewayv2.inputs.RoutingRuleActionInvokeApiArgs.builder
+      builder.invokeApi(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.apigatewayv2.inputs.RoutingRuleConditionArgs.Builder)
+    /**
+     * @param matchBasePaths The base path to be matched. See below.
+     * @return builder
+     */
+    def matchBasePaths(args: Endofunction[com.pulumi.aws.apigatewayv2.inputs.RoutingRuleConditionMatchBasePathsArgs.Builder]):
+        com.pulumi.aws.apigatewayv2.inputs.RoutingRuleConditionArgs.Builder =
+      val argsBuilder = com.pulumi.aws.apigatewayv2.inputs.RoutingRuleConditionMatchBasePathsArgs.builder
+      builder.matchBasePaths(args(argsBuilder).build)
+
+    /**
+     * @param matchHeaders The headers to be matched. See below.
+     * @return builder
+     */
+    def matchHeaders(args: Endofunction[com.pulumi.aws.apigatewayv2.inputs.RoutingRuleConditionMatchHeadersArgs.Builder]):
+        com.pulumi.aws.apigatewayv2.inputs.RoutingRuleConditionArgs.Builder =
+      val argsBuilder = com.pulumi.aws.apigatewayv2.inputs.RoutingRuleConditionMatchHeadersArgs.builder
+      builder.matchHeaders(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.apigatewayv2.ApiArgs.Builder)
     /**
