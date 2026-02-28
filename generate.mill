@@ -62,7 +62,7 @@ class PulumiAwsAdapterGenerator(dstRoot: Path, classpath: Seq[String]):
         if gen.members.exists(_.contains("CustomResourceOptions")) then
           """
           |import com.pulumi.resources.CustomResourceOptions
-          |""".stripMargin
+          |""".stripMargin.dropRightWhile(_.isWhitespace)
         else
           ""
 
@@ -70,9 +70,8 @@ class PulumiAwsAdapterGenerator(dstRoot: Path, classpath: Seq[String]):
         writer.append(s"""
           |package jp.ukiba.ko_pulumi
           |package aws
-          |
-          |import scala.language.implicitConversions
           |$importCustomResourceOptions
+          |
           |object ${packageComps.last}:
           |""".stripMargin.dropWhile(_.isWhitespace).dropRight(1)) // no new line at the last
         for member <- gen.members do

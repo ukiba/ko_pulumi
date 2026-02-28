@@ -1,8 +1,6 @@
 package jp.ukiba.ko_pulumi
 package aws
 
-import scala.language.implicitConversions
-
 import com.pulumi.resources.CustomResourceOptions
 
 object codecommit:

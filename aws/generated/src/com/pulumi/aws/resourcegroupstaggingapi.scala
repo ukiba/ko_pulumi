@@ -1,7 +1,6 @@
 package jp.ukiba.ko_pulumi
 package aws
 
-import scala.language.implicitConversions
 
 object resourcegroupstaggingapi:
   type ResourcegroupstaggingapiFunctions = com.pulumi.aws.resourcegroupstaggingapi.ResourcegroupstaggingapiFunctions

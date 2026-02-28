@@ -1,7 +1,6 @@
 package jp.ukiba.ko_pulumi
 package aws
 
-import scala.language.implicitConversions
 
 object pricing:
   extension (builder: com.pulumi.aws.pricing.inputs.GetProductArgs.Builder)

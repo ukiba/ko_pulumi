@@ -1,7 +1,6 @@
 package jp.ukiba.ko_pulumi
 package aws
 
-import scala.language.implicitConversions
 
 object polly:
   type PollyFunctions = com.pulumi.aws.polly.PollyFunctions

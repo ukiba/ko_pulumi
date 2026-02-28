@@ -1,7 +1,6 @@
 package jp.ukiba.ko_pulumi
 package aws
 
-import scala.language.implicitConversions
 
 object outposts:
   type OutpostsFunctions = com.pulumi.aws.outposts.OutpostsFunctions
