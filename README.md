@@ -6,14 +6,14 @@
     1. [pulumi-java](https://github.com/pulumi/pulumi-java) requires Java 11, but
        [scala 3.8](https://github.com/scala/scala3) requires Java 17
 
-1. Plumi 3.210.0 or later
+2. Plumi 3.210.0 or later
     1. Mac: `brew install pulumi/tap/pulumi`
 
 ## Build environment
 
 1. Recent Linux / macOS / Windows
 
-1. Java 25
+2. Java 25
     1. [Install Coursier](https://get-coursier.io/docs/cli-installation), then 
 
            eval $(cs java --jvm corretto:25 --env)
