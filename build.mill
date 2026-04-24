@@ -1,4 +1,4 @@
-//| mill-version: 1.1.3
+//| mill-version: 1.1.5
 
 package build
 
@@ -19,7 +19,7 @@ def pomSettingsBase = PomSettings(
 )
 
 trait ScalaModuleEx extends ScalaModule:
-  def scalaVersion = "3.8.1"
+  def scalaVersion = "3.8.3"
   def scalacOptions = Seq(
     "-Yexplicit-nulls",          // make `AnyRef` non-nullable; null safety
     "-Wsafe-init",               // avoid the type system to be unsound with respect to null

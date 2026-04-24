@@ -21,10 +21,10 @@
 3. [mill](https://com-lihaoyi.github.io/mill/)
     1. The launcher scripts have been committed
 
-           curl -Lf https://repo1.maven.org/maven2/com/lihaoyi/mill-dist/1.1.3/mill-dist-1.1.3-mill.sh -o mill
+           curl -Lf https://repo1.maven.org/maven2/com/lihaoyi/mill-dist/1.1.5/mill-dist-1.1.5-mill.sh -o mill
            chmod +x mill
 
-           curl -Lf https://repo1.maven.org/maven2/com/lihaoyi/mill-dist/1.1.3/mill-dist-1.1.3-mill.bat -o mill.bat
+           curl -Lf https://repo1.maven.org/maven2/com/lihaoyi/mill-dist/1.1.5/mill-dist-1.1.5-mill.bat -o mill.bat
 
 
 # Build
