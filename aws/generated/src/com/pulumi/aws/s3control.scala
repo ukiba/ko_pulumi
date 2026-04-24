@@ -345,6 +345,15 @@ object s3control:
       builder.advancedDataProtectionMetrics(args(argsBuilder).build)
 
     /**
+     * @param advancedPerformanceMetrics Advanced performance metrics for S3 Storage Lens. See Advanced Performance Metrics below for more details.
+     * @return builder
+     */
+    def advancedPerformanceMetrics(args: Endofunction[com.pulumi.aws.s3control.inputs.StorageLensConfigurationStorageLensConfigurationAccountLevelAdvancedPerformanceMetricsArgs.Builder]):
+        com.pulumi.aws.s3control.inputs.StorageLensConfigurationStorageLensConfigurationAccountLevelArgs.Builder =
+      val argsBuilder = com.pulumi.aws.s3control.inputs.StorageLensConfigurationStorageLensConfigurationAccountLevelAdvancedPerformanceMetricsArgs.builder
+      builder.advancedPerformanceMetrics(args(argsBuilder).build)
+
+    /**
      * @param bucketLevel S3 Storage Lens bucket-level configuration. See Bucket Level below for more details.
      * @return builder
      */
@@ -381,6 +390,25 @@ object s3control:
         com.pulumi.aws.s3control.inputs.ObjectLambdaAccessPointState.Builder =
       val argsBuilder = com.pulumi.aws.s3control.inputs.ObjectLambdaAccessPointConfigurationArgs.builder
       builder.configuration(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.s3control.inputs.StorageLensConfigurationStorageLensConfigurationExpandedPrefixesDataExportStorageLensTableDestinationEncryptionArgs.Builder)
+    /**
+     * @param sseKms SSE-KMS encryption. See SSE KMS below for more details.
+     * @return builder
+     */
+    def sseKms(args: Endofunction[com.pulumi.aws.s3control.inputs.StorageLensConfigurationStorageLensConfigurationExpandedPrefixesDataExportStorageLensTableDestinationEncryptionSseKmsArgs.Builder]):
+        com.pulumi.aws.s3control.inputs.StorageLensConfigurationStorageLensConfigurationExpandedPrefixesDataExportStorageLensTableDestinationEncryptionArgs.Builder =
+      val argsBuilder = com.pulumi.aws.s3control.inputs.StorageLensConfigurationStorageLensConfigurationExpandedPrefixesDataExportStorageLensTableDestinationEncryptionSseKmsArgs.builder
+      builder.sseKms(args(argsBuilder).build)
+
+    /**
+     * @param sseS3s SSE-S3 encryption. An empty configuration block `{}` should be used.
+     * @return builder
+     */
+    def sseS3s(args: Endofunction[com.pulumi.aws.s3control.inputs.StorageLensConfigurationStorageLensConfigurationExpandedPrefixesDataExportStorageLensTableDestinationEncryptionSseS3Args.Builder]*):
+        com.pulumi.aws.s3control.inputs.StorageLensConfigurationStorageLensConfigurationExpandedPrefixesDataExportStorageLensTableDestinationEncryptionArgs.Builder =
+      def argsBuilder = com.pulumi.aws.s3control.inputs.StorageLensConfigurationStorageLensConfigurationExpandedPrefixesDataExportStorageLensTableDestinationEncryptionSseS3Args.builder
+      builder.sseS3s(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.aws.s3control.inputs.StorageLensConfigurationState.Builder)
     /**
@@ -430,6 +458,15 @@ object s3control:
       builder.exclude(args(argsBuilder).build)
 
     /**
+     * @param expandedPrefixesDataExport Configuration for the S3 Storage Lens expanded prefix metrics report. Unlike the default Storage Lens metrics report, the enhanced prefix metrics report includes all S3 Storage Lens storage and activity data related to the full list of prefixes in your Storage Lens configuration. See Expanded Prefixes Data Export below for more details.
+     * @return builder
+     */
+    def expandedPrefixesDataExport(args: Endofunction[com.pulumi.aws.s3control.inputs.StorageLensConfigurationStorageLensConfigurationExpandedPrefixesDataExportArgs.Builder]):
+        com.pulumi.aws.s3control.inputs.StorageLensConfigurationStorageLensConfigurationArgs.Builder =
+      val argsBuilder = com.pulumi.aws.s3control.inputs.StorageLensConfigurationStorageLensConfigurationExpandedPrefixesDataExportArgs.builder
+      builder.expandedPrefixesDataExport(args(argsBuilder).build)
+
+    /**
      * @param include What is included in this configuration. Conflicts with `exclude`. See Include below for more details.
      * @return builder
      */
@@ -437,6 +474,35 @@ object s3control:
         com.pulumi.aws.s3control.inputs.StorageLensConfigurationStorageLensConfigurationArgs.Builder =
       val argsBuilder = com.pulumi.aws.s3control.inputs.StorageLensConfigurationStorageLensConfigurationIncludeArgs.builder
       builder.include(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.s3control.inputs.StorageLensConfigurationStorageLensConfigurationExpandedPrefixesDataExportS3BucketDestinationArgs.Builder)
+    /**
+     * @param encryption Encryption of the metrics exports in this bucket. See Encryption below for more details.
+     * @return builder
+     */
+    def encryption(args: Endofunction[com.pulumi.aws.s3control.inputs.StorageLensConfigurationStorageLensConfigurationExpandedPrefixesDataExportS3BucketDestinationEncryptionArgs.Builder]):
+        com.pulumi.aws.s3control.inputs.StorageLensConfigurationStorageLensConfigurationExpandedPrefixesDataExportS3BucketDestinationArgs.Builder =
+      val argsBuilder = com.pulumi.aws.s3control.inputs.StorageLensConfigurationStorageLensConfigurationExpandedPrefixesDataExportS3BucketDestinationEncryptionArgs.builder
+      builder.encryption(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.s3control.inputs.StorageLensConfigurationStorageLensConfigurationExpandedPrefixesDataExportArgs.Builder)
+    /**
+     * @param s3BucketDestination The bucket where the S3 Storage Lens expanded prefix metrics export will be located. See S3 Bucket Destination below for more details.
+     * @return builder
+     */
+    def s3BucketDestination(args: Endofunction[com.pulumi.aws.s3control.inputs.StorageLensConfigurationStorageLensConfigurationExpandedPrefixesDataExportS3BucketDestinationArgs.Builder]):
+        com.pulumi.aws.s3control.inputs.StorageLensConfigurationStorageLensConfigurationExpandedPrefixesDataExportArgs.Builder =
+      val argsBuilder = com.pulumi.aws.s3control.inputs.StorageLensConfigurationStorageLensConfigurationExpandedPrefixesDataExportS3BucketDestinationArgs.builder
+      builder.s3BucketDestination(args(argsBuilder).build)
+
+    /**
+     * @param storageLensTableDestination S3 table bucket where the S3 Storage Lens expanded prefix metrics export will be located. See Storage Lens Table Destination below for more details.
+     * @return builder
+     */
+    def storageLensTableDestination(args: Endofunction[com.pulumi.aws.s3control.inputs.StorageLensConfigurationStorageLensConfigurationExpandedPrefixesDataExportStorageLensTableDestinationArgs.Builder]):
+        com.pulumi.aws.s3control.inputs.StorageLensConfigurationStorageLensConfigurationExpandedPrefixesDataExportArgs.Builder =
+      val argsBuilder = com.pulumi.aws.s3control.inputs.StorageLensConfigurationStorageLensConfigurationExpandedPrefixesDataExportStorageLensTableDestinationArgs.builder
+      builder.storageLensTableDestination(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.s3control.inputs.StorageLensConfigurationStorageLensConfigurationAccountLevelBucketLevelPrefixLevelArgs.Builder)
     /**
@@ -485,6 +551,15 @@ object s3control:
         com.pulumi.aws.s3control.inputs.StorageLensConfigurationStorageLensConfigurationAccountLevelBucketLevelArgs.Builder =
       val argsBuilder = com.pulumi.aws.s3control.inputs.StorageLensConfigurationStorageLensConfigurationAccountLevelBucketLevelAdvancedDataProtectionMetricsArgs.builder
       builder.advancedDataProtectionMetrics(args(argsBuilder).build)
+
+    /**
+     * @param advancedPerformanceMetrics Advanced performance metrics for S3 Storage Lens. See Advanced Performance Metrics above for more details.
+     * @return builder
+     */
+    def advancedPerformanceMetrics(args: Endofunction[com.pulumi.aws.s3control.inputs.StorageLensConfigurationStorageLensConfigurationAccountLevelBucketLevelAdvancedPerformanceMetricsArgs.Builder]):
+        com.pulumi.aws.s3control.inputs.StorageLensConfigurationStorageLensConfigurationAccountLevelBucketLevelArgs.Builder =
+      val argsBuilder = com.pulumi.aws.s3control.inputs.StorageLensConfigurationStorageLensConfigurationAccountLevelBucketLevelAdvancedPerformanceMetricsArgs.builder
+      builder.advancedPerformanceMetrics(args(argsBuilder).build)
 
     /**
      * @param detailedStatusCodeMetrics Detailed status code metrics for S3 Storage Lens. See Detailed Status Code Metrics above for more details.
@@ -543,6 +618,16 @@ object s3control:
       def argsBuilder = com.pulumi.aws.s3control.inputs.StorageLensConfigurationStorageLensConfigurationDataExportS3BucketDestinationEncryptionSseS3Args.builder
       builder.sseS3s(args.map(_(argsBuilder).build)*)
 
+  extension (builder: com.pulumi.aws.s3control.inputs.StorageLensConfigurationStorageLensConfigurationDataExportStorageLensTableDestinationArgs.Builder)
+    /**
+     * @param encryption Encryption of the metrics exports in this S3 tables bucket. See Encryption below for more details.
+     * @return builder
+     */
+    def encryption(args: Endofunction[com.pulumi.aws.s3control.inputs.StorageLensConfigurationStorageLensConfigurationDataExportStorageLensTableDestinationEncryptionArgs.Builder]):
+        com.pulumi.aws.s3control.inputs.StorageLensConfigurationStorageLensConfigurationDataExportStorageLensTableDestinationArgs.Builder =
+      val argsBuilder = com.pulumi.aws.s3control.inputs.StorageLensConfigurationStorageLensConfigurationDataExportStorageLensTableDestinationEncryptionArgs.builder
+      builder.encryption(args(argsBuilder).build)
+
   extension (builder: com.pulumi.aws.s3control.inputs.ObjectLambdaAccessPointConfigurationTransformationConfigurationArgs.Builder)
     /**
      * @param contentTransformation The content transformation of an Object Lambda Access Point configuration. See Content Transformation below for more details.
@@ -562,6 +647,35 @@ object s3control:
         com.pulumi.aws.s3control.inputs.BucketLifecycleConfigurationState.Builder =
       def argsBuilder = com.pulumi.aws.s3control.inputs.BucketLifecycleConfigurationRuleArgs.builder
       builder.rules(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.aws.s3control.inputs.StorageLensConfigurationStorageLensConfigurationExpandedPrefixesDataExportStorageLensTableDestinationArgs.Builder)
+    /**
+     * @param encryption Encryption of the metrics exports in this S3 tables bucket. See Encryption below for more details.
+     * @return builder
+     */
+    def encryption(args: Endofunction[com.pulumi.aws.s3control.inputs.StorageLensConfigurationStorageLensConfigurationExpandedPrefixesDataExportStorageLensTableDestinationEncryptionArgs.Builder]):
+        com.pulumi.aws.s3control.inputs.StorageLensConfigurationStorageLensConfigurationExpandedPrefixesDataExportStorageLensTableDestinationArgs.Builder =
+      val argsBuilder = com.pulumi.aws.s3control.inputs.StorageLensConfigurationStorageLensConfigurationExpandedPrefixesDataExportStorageLensTableDestinationEncryptionArgs.builder
+      builder.encryption(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.s3control.inputs.StorageLensConfigurationStorageLensConfigurationExpandedPrefixesDataExportS3BucketDestinationEncryptionArgs.Builder)
+    /**
+     * @param sseKms SSE-KMS encryption. See SSE KMS below for more details.
+     * @return builder
+     */
+    def sseKms(args: Endofunction[com.pulumi.aws.s3control.inputs.StorageLensConfigurationStorageLensConfigurationExpandedPrefixesDataExportS3BucketDestinationEncryptionSseKmsArgs.Builder]):
+        com.pulumi.aws.s3control.inputs.StorageLensConfigurationStorageLensConfigurationExpandedPrefixesDataExportS3BucketDestinationEncryptionArgs.Builder =
+      val argsBuilder = com.pulumi.aws.s3control.inputs.StorageLensConfigurationStorageLensConfigurationExpandedPrefixesDataExportS3BucketDestinationEncryptionSseKmsArgs.builder
+      builder.sseKms(args(argsBuilder).build)
+
+    /**
+     * @param sseS3s SSE-S3 encryption. An empty configuration block `{}` should be used.
+     * @return builder
+     */
+    def sseS3s(args: Endofunction[com.pulumi.aws.s3control.inputs.StorageLensConfigurationStorageLensConfigurationExpandedPrefixesDataExportS3BucketDestinationEncryptionSseS3Args.Builder]*):
+        com.pulumi.aws.s3control.inputs.StorageLensConfigurationStorageLensConfigurationExpandedPrefixesDataExportS3BucketDestinationEncryptionArgs.Builder =
+      def argsBuilder = com.pulumi.aws.s3control.inputs.StorageLensConfigurationStorageLensConfigurationExpandedPrefixesDataExportS3BucketDestinationEncryptionSseS3Args.builder
+      builder.sseS3s(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.aws.s3control.inputs.AccessGrantState.Builder)
     /**
@@ -630,6 +744,25 @@ object s3control:
       val argsBuilder = com.pulumi.aws.s3control.inputs.ObjectLambdaAccessPointConfigurationTransformationConfigurationContentTransformationAwsLambdaArgs.builder
       builder.awsLambda(args(argsBuilder).build)
 
+  extension (builder: com.pulumi.aws.s3control.inputs.StorageLensConfigurationStorageLensConfigurationDataExportStorageLensTableDestinationEncryptionArgs.Builder)
+    /**
+     * @param sseKms SSE-KMS encryption. See SSE KMS below for more details.
+     * @return builder
+     */
+    def sseKms(args: Endofunction[com.pulumi.aws.s3control.inputs.StorageLensConfigurationStorageLensConfigurationDataExportStorageLensTableDestinationEncryptionSseKmsArgs.Builder]):
+        com.pulumi.aws.s3control.inputs.StorageLensConfigurationStorageLensConfigurationDataExportStorageLensTableDestinationEncryptionArgs.Builder =
+      val argsBuilder = com.pulumi.aws.s3control.inputs.StorageLensConfigurationStorageLensConfigurationDataExportStorageLensTableDestinationEncryptionSseKmsArgs.builder
+      builder.sseKms(args(argsBuilder).build)
+
+    /**
+     * @param sseS3s SSE-S3 encryption. An empty configuration block `{}` should be used.
+     * @return builder
+     */
+    def sseS3s(args: Endofunction[com.pulumi.aws.s3control.inputs.StorageLensConfigurationStorageLensConfigurationDataExportStorageLensTableDestinationEncryptionSseS3Args.Builder]*):
+        com.pulumi.aws.s3control.inputs.StorageLensConfigurationStorageLensConfigurationDataExportStorageLensTableDestinationEncryptionArgs.Builder =
+      def argsBuilder = com.pulumi.aws.s3control.inputs.StorageLensConfigurationStorageLensConfigurationDataExportStorageLensTableDestinationEncryptionSseS3Args.builder
+      builder.sseS3s(args.map(_(argsBuilder).build)*)
+
   extension (builder: com.pulumi.aws.s3control.inputs.MultiRegionAccessPointDetailsArgs.Builder)
     def publicAccessBlock(args: Endofunction[com.pulumi.aws.s3control.inputs.MultiRegionAccessPointDetailsPublicAccessBlockArgs.Builder]):
         com.pulumi.aws.s3control.inputs.MultiRegionAccessPointDetailsArgs.Builder =
@@ -663,6 +796,15 @@ object s3control:
         com.pulumi.aws.s3control.inputs.StorageLensConfigurationStorageLensConfigurationDataExportArgs.Builder =
       val argsBuilder = com.pulumi.aws.s3control.inputs.StorageLensConfigurationStorageLensConfigurationDataExportS3BucketDestinationArgs.builder
       builder.s3BucketDestination(args(argsBuilder).build)
+
+    /**
+     * @param storageLensTableDestination S3 table bucket where the S3 Storage Lens metrics export will be located. See Storage Lens Table Destination below for more details.
+     * @return builder
+     */
+    def storageLensTableDestination(args: Endofunction[com.pulumi.aws.s3control.inputs.StorageLensConfigurationStorageLensConfigurationDataExportStorageLensTableDestinationArgs.Builder]):
+        com.pulumi.aws.s3control.inputs.StorageLensConfigurationStorageLensConfigurationDataExportArgs.Builder =
+      val argsBuilder = com.pulumi.aws.s3control.inputs.StorageLensConfigurationStorageLensConfigurationDataExportStorageLensTableDestinationArgs.builder
+      builder.storageLensTableDestination(args(argsBuilder).build)
 
   /**
    * Provides a resource to manage an S3 Control Bucket.

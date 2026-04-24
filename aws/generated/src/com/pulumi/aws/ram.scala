@@ -32,6 +32,16 @@ object ram:
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
+  extension (builder: com.pulumi.aws.ram.ResourceShareArgs.Builder)
+    /**
+     * @param resourceShareConfiguration A block that specifies the configuration of the resource share. See `resourceShareConfiguration` Block for details.
+     * @return builder
+     */
+    def resourceShareConfiguration(args: Endofunction[com.pulumi.aws.ram.inputs.ResourceShareResourceShareConfigurationArgs.Builder]):
+        com.pulumi.aws.ram.ResourceShareArgs.Builder =
+      val argsBuilder = com.pulumi.aws.ram.inputs.ResourceShareResourceShareConfigurationArgs.builder
+      builder.resourceShareConfiguration(args(argsBuilder).build)
+
   /** Manages an AWS RAM (Resource Access Manager) Permission. */
   def Permission(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ram.PermissionArgs.Builder])(using conf: KoPulumiConf) =
@@ -139,6 +149,16 @@ object ram:
         com.pulumi.aws.ram.inputs.PermissionState.Builder =
       val argsBuilder = com.pulumi.aws.ram.inputs.PermissionTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.ram.inputs.ResourceShareState.Builder)
+    /**
+     * @param resourceShareConfiguration A block that specifies the configuration of the resource share. See `resourceShareConfiguration` Block for details.
+     * @return builder
+     */
+    def resourceShareConfiguration(args: Endofunction[com.pulumi.aws.ram.inputs.ResourceShareResourceShareConfigurationArgs.Builder]):
+        com.pulumi.aws.ram.inputs.ResourceShareState.Builder =
+      val argsBuilder = com.pulumi.aws.ram.inputs.ResourceShareResourceShareConfigurationArgs.builder
+      builder.resourceShareConfiguration(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.ram.inputs.GetResourceShareArgs.Builder)
     /**

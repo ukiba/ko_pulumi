@@ -4,6 +4,32 @@ package aws
 import com.pulumi.resources.CustomResourceOptions
 
 object s3:
+  extension (builder: com.pulumi.aws.s3.FilesAccessPointArgs.Builder)
+    /**
+     * @param posixUsers POSIX user configuration. See `posixUser` below. Changing this value forces replacement.
+     *  
+     *  The following arguments are optional:
+     * @return builder
+     */
+    def posixUsers(args: Endofunction[com.pulumi.aws.s3.inputs.FilesAccessPointPosixUserArgs.Builder]*):
+        com.pulumi.aws.s3.FilesAccessPointArgs.Builder =
+      def argsBuilder = com.pulumi.aws.s3.inputs.FilesAccessPointPosixUserArgs.builder
+      builder.posixUsers(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param rootDirectories Root directory configuration. See `rootDirectory` below. Changing this value forces replacement.
+     * @return builder
+     */
+    def rootDirectories(args: Endofunction[com.pulumi.aws.s3.inputs.FilesAccessPointRootDirectoryArgs.Builder]*):
+        com.pulumi.aws.s3.FilesAccessPointArgs.Builder =
+      def argsBuilder = com.pulumi.aws.s3.inputs.FilesAccessPointRootDirectoryArgs.builder
+      builder.rootDirectories(args.map(_(argsBuilder).build)*)
+
+    def timeouts(args: Endofunction[com.pulumi.aws.s3.inputs.FilesAccessPointTimeoutsArgs.Builder]):
+        com.pulumi.aws.s3.FilesAccessPointArgs.Builder =
+      val argsBuilder = com.pulumi.aws.s3.inputs.FilesAccessPointTimeoutsArgs.builder
+      builder.timeouts(args(argsBuilder).build)
+
   extension (builder: com.pulumi.aws.s3.BucketWebsiteConfigurationV2Args.Builder)
     /**
      * @param errorDocument Name of the error document for the website. See below.
@@ -81,6 +107,15 @@ object s3:
     val argsBuilder = com.pulumi.aws.s3.BucketAclArgs.builder
     
     com.pulumi.aws.s3.BucketAcl(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder).build)
+
+  /** Manages an S3 Files File System Policy. */
+  def FilesFileSystemPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.s3.FilesFileSystemPolicyArgs.Builder]) =
+    val argsBuilder = com.pulumi.aws.s3.FilesFileSystemPolicyArgs.builder
+    
+    com.pulumi.aws.s3.FilesFileSystemPolicy(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
@@ -335,11 +370,7 @@ object s3:
       def argsBuilder = com.pulumi.aws.s3.inputs.VectorsVectorBucketEncryptionConfigurationArgs.builder
       builder.encryptionConfigurations(args.map(_(argsBuilder).build)*)
 
-  /**
-   * Provides a S3 bucket [metrics configuration](http://docs.aws.amazon.com/AmazonS3/latest/dev/metrics-configurations.html) resource.
-   *  
-   *  &gt; This resource cannot be used with S3 directory buckets.
-   */
+  /** Provides a S3 bucket [metrics configuration](http://docs.aws.amazon.com/AmazonS3/latest/dev/metrics-configurations.html) resource. */
   def BucketMetric(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.s3.BucketMetricArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.s3.BucketMetricArgs.builder
@@ -408,11 +439,7 @@ object s3:
       val argsBuilder = com.pulumi.aws.s3.inputs.BucketVersioningVersioningConfigurationArgs.builder
       builder.versioningConfiguration(args(argsBuilder).build)
 
-  /**
-   * Provides a S3 bucket [inventory configuration](https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-inventory.html) resource.
-   *  
-   *  &gt; This resource cannot be used with S3 directory buckets.
-   */
+  /** Provides a S3 bucket [inventory configuration](https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-inventory.html) resource. */
   def Inventory(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.s3.InventoryArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.s3.InventoryArgs.builder
@@ -563,6 +590,27 @@ object s3:
         com.pulumi.aws.s3.BucketCorsConfigurationV2Args.Builder =
       def argsBuilder = com.pulumi.aws.s3.inputs.BucketCorsConfigurationV2CorsRuleArgs.builder
       builder.corsRules(args.map(_(argsBuilder).build)*)
+
+  /** Manages an S3 Files Access Point. */
+  def FilesAccessPoint(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.s3.FilesAccessPointArgs.Builder])(using conf: KoPulumiConf) =
+    var argsBuilder = com.pulumi.aws.s3.FilesAccessPointArgs.builder
+    conf.logicalName2tagName(name) match
+      case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
+      case None          =>
+    
+    com.pulumi.aws.s3.FilesAccessPoint(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder).build)
+
+  /** Manages an S3 Files Synchronization configuration. */
+  def FilesSynchronizationConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.s3.FilesSynchronizationConfigurationArgs.Builder]) =
+    val argsBuilder = com.pulumi.aws.s3.FilesSynchronizationConfigurationArgs.builder
+    
+    com.pulumi.aws.s3.FilesSynchronizationConfiguration(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder).build)
 
   /**
    * Provides an S3 bucket accelerate configuration resource. See the [Requirements for using Transfer Acceleration](https://docs.aws.amazon.com/AmazonS3/latest/userguide/transfer-acceleration.html#transfer-acceleration-requirements) for more details.
@@ -820,6 +868,15 @@ object s3:
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
+  /** Manages an S3 Files Mount Target. */
+  def FilesMountTarget(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.s3.FilesMountTargetArgs.Builder]) =
+    val argsBuilder = com.pulumi.aws.s3.FilesMountTargetArgs.builder
+    
+    com.pulumi.aws.s3.FilesMountTarget(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder).build)
+
   /**
    * Provides a S3 bucket resource.
    *  
@@ -866,6 +923,12 @@ object s3:
     com.pulumi.aws.s3.BucketRequestPaymentConfigurationV2(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
+
+  extension (builder: com.pulumi.aws.s3.FilesMountTargetArgs.Builder)
+    def timeouts(args: Endofunction[com.pulumi.aws.s3.inputs.FilesMountTargetTimeoutsArgs.Builder]):
+        com.pulumi.aws.s3.FilesMountTargetArgs.Builder =
+      val argsBuilder = com.pulumi.aws.s3.inputs.FilesMountTargetTimeoutsArgs.builder
+      builder.timeouts(args(argsBuilder).build)
 
   type S3Functions = com.pulumi.aws.s3.S3Functions
   object S3Functions:
@@ -1041,6 +1104,54 @@ object s3:
         java.util.concurrent.CompletableFuture[com.pulumi.aws.s3.outputs.GetDirectoryBucketsResult] =
       val argsBuilder = com.pulumi.aws.s3.inputs.GetDirectoryBucketsPlainArgs.builder
       com.pulumi.aws.s3.S3Functions.getDirectoryBucketsPlain(args(argsBuilder).build)
+
+    /** Data source for managing an S3 Files Access Point. */
+    def getFilesAccessPoint(args: Endofunction[com.pulumi.aws.s3.inputs.GetFilesAccessPointArgs.Builder] = identity):
+        com.pulumi.core.Output[com.pulumi.aws.s3.outputs.GetFilesAccessPointResult] =
+      val argsBuilder = com.pulumi.aws.s3.inputs.GetFilesAccessPointArgs.builder
+      com.pulumi.aws.s3.S3Functions.getFilesAccessPoint(args(argsBuilder).build)
+
+    /** Data source for managing an S3 Files Access Point. */
+    def getFilesAccessPointPlain(args: Endofunction[com.pulumi.aws.s3.inputs.GetFilesAccessPointPlainArgs.Builder] = identity):
+        java.util.concurrent.CompletableFuture[com.pulumi.aws.s3.outputs.GetFilesAccessPointResult] =
+      val argsBuilder = com.pulumi.aws.s3.inputs.GetFilesAccessPointPlainArgs.builder
+      com.pulumi.aws.s3.S3Functions.getFilesAccessPointPlain(args(argsBuilder).build)
+
+    /** Get information on an S3 Files File System. */
+    def getFilesFileSystem(args: Endofunction[com.pulumi.aws.s3.inputs.GetFilesFileSystemArgs.Builder] = identity):
+        com.pulumi.core.Output[com.pulumi.aws.s3.outputs.GetFilesFileSystemResult] =
+      val argsBuilder = com.pulumi.aws.s3.inputs.GetFilesFileSystemArgs.builder
+      com.pulumi.aws.s3.S3Functions.getFilesFileSystem(args(argsBuilder).build)
+
+    /** Get information on an S3 Files File System. */
+    def getFilesFileSystemPlain(args: Endofunction[com.pulumi.aws.s3.inputs.GetFilesFileSystemPlainArgs.Builder] = identity):
+        java.util.concurrent.CompletableFuture[com.pulumi.aws.s3.outputs.GetFilesFileSystemResult] =
+      val argsBuilder = com.pulumi.aws.s3.inputs.GetFilesFileSystemPlainArgs.builder
+      com.pulumi.aws.s3.S3Functions.getFilesFileSystemPlain(args(argsBuilder).build)
+
+    /** Provides details about S3 Files File Systems. */
+    def getFilesFileSystems(args: Endofunction[com.pulumi.aws.s3.inputs.GetFilesFileSystemsArgs.Builder] = identity):
+        com.pulumi.core.Output[com.pulumi.aws.s3.outputs.GetFilesFileSystemsResult] =
+      val argsBuilder = com.pulumi.aws.s3.inputs.GetFilesFileSystemsArgs.builder
+      com.pulumi.aws.s3.S3Functions.getFilesFileSystems(args(argsBuilder).build)
+
+    /** Provides details about S3 Files File Systems. */
+    def getFilesFileSystemsPlain(args: Endofunction[com.pulumi.aws.s3.inputs.GetFilesFileSystemsPlainArgs.Builder] = identity):
+        java.util.concurrent.CompletableFuture[com.pulumi.aws.s3.outputs.GetFilesFileSystemsResult] =
+      val argsBuilder = com.pulumi.aws.s3.inputs.GetFilesFileSystemsPlainArgs.builder
+      com.pulumi.aws.s3.S3Functions.getFilesFileSystemsPlain(args(argsBuilder).build)
+
+    /** Provides details about an S3 Files Mount Target. */
+    def getFilesMountTarget(args: Endofunction[com.pulumi.aws.s3.inputs.GetFilesMountTargetArgs.Builder] = identity):
+        com.pulumi.core.Output[com.pulumi.aws.s3.outputs.GetFilesMountTargetResult] =
+      val argsBuilder = com.pulumi.aws.s3.inputs.GetFilesMountTargetArgs.builder
+      com.pulumi.aws.s3.S3Functions.getFilesMountTarget(args(argsBuilder).build)
+
+    /** Provides details about an S3 Files Mount Target. */
+    def getFilesMountTargetPlain(args: Endofunction[com.pulumi.aws.s3.inputs.GetFilesMountTargetPlainArgs.Builder] = identity):
+        java.util.concurrent.CompletableFuture[com.pulumi.aws.s3.outputs.GetFilesMountTargetResult] =
+      val argsBuilder = com.pulumi.aws.s3.inputs.GetFilesMountTargetPlainArgs.builder
+      com.pulumi.aws.s3.S3Functions.getFilesMountTargetPlain(args(argsBuilder).build)
 
     /**
      * The S3 object data source allows access to the metadata and
@@ -1311,7 +1422,7 @@ object s3:
    *  
    *  &gt; **NOTE:** Destroying an `aws.s3.BucketServerSideEncryptionConfiguration` resource resets the bucket to [Amazon S3 bucket default encryption](https://docs.aws.amazon.com/AmazonS3/latest/userguide/default-encryption-faq.html).
    *  
-   *  &gt; **NOTE:** Starting in March 2026, Amazon S3 will automatically block server-side encryption with customer-provided keys (SSE-C) for all new buckets. Use the `blockedEncryptionTypes` argument to manage this behavior. For more information, see the [SSE-C changes FAQ](https://docs.aws.amazon.com/AmazonS3/latest/userguide/default-s3-c-encryption-setting-faq.html).
+   *  &gt; **NOTE:** Starting in April 2026, Amazon S3 will automatically block server-side encryption with customer-provided keys (SSE-C) for all new buckets. Use the `blockedEncryptionTypes` argument to manage this behavior. For more information, see the [SSE-C changes FAQ](https://docs.aws.amazon.com/AmazonS3/latest/userguide/default-s3-c-encryption-setting-faq.html).
    */
   @deprecated() def BucketServerSideEncryptionConfigurationV2(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.s3.BucketServerSideEncryptionConfigurationV2Args.Builder]) =
@@ -1354,7 +1465,7 @@ object s3:
    *  
    *  &gt; **NOTE:** Destroying an `aws.s3.BucketServerSideEncryptionConfiguration` resource resets the bucket to [Amazon S3 bucket default encryption](https://docs.aws.amazon.com/AmazonS3/latest/userguide/default-encryption-faq.html).
    *  
-   *  &gt; **NOTE:** Starting in March 2026, Amazon S3 will automatically block server-side encryption with customer-provided keys (SSE-C) for all new buckets. Use the `blockedEncryptionTypes` argument to manage this behavior. For more information, see the [SSE-C changes FAQ](https://docs.aws.amazon.com/AmazonS3/latest/userguide/default-s3-c-encryption-setting-faq.html).
+   *  &gt; **NOTE:** Starting in April 2026, Amazon S3 will automatically block server-side encryption with customer-provided keys (SSE-C) for all new buckets. Use the `blockedEncryptionTypes` argument to manage this behavior. For more information, see the [SSE-C changes FAQ](https://docs.aws.amazon.com/AmazonS3/latest/userguide/default-s3-c-encryption-setting-faq.html).
    */
   def BucketServerSideEncryptionConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.s3.BucketServerSideEncryptionConfigurationArgs.Builder]) =
@@ -1423,6 +1534,18 @@ object s3:
     val argsBuilder = com.pulumi.aws.s3.BucketObjectLockConfigurationArgs.builder
     
     com.pulumi.aws.s3.BucketObjectLockConfiguration(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder).build)
+
+  /** Manages an S3 Files File System. */
+  def FilesFileSystem(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.s3.FilesFileSystemArgs.Builder])(using conf: KoPulumiConf) =
+    var argsBuilder = com.pulumi.aws.s3.FilesFileSystemArgs.builder
+    conf.logicalName2tagName(name) match
+      case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
+      case None          =>
+    
+    com.pulumi.aws.s3.FilesFileSystem(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
@@ -1536,6 +1659,27 @@ object s3:
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
+  extension (builder: com.pulumi.aws.s3.FilesSynchronizationConfigurationArgs.Builder)
+    /**
+     * @param expirationDataRules Expiration data rule configuration. See `expirationDataRule` below.
+     * @return builder
+     */
+    def expirationDataRules(args: Endofunction[com.pulumi.aws.s3.inputs.FilesSynchronizationConfigurationExpirationDataRuleArgs.Builder]*):
+        com.pulumi.aws.s3.FilesSynchronizationConfigurationArgs.Builder =
+      def argsBuilder = com.pulumi.aws.s3.inputs.FilesSynchronizationConfigurationExpirationDataRuleArgs.builder
+      builder.expirationDataRules(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param importDataRules One or more import data rules. See `importDataRule` below.
+     *  
+     *  The following arguments are optional:
+     * @return builder
+     */
+    def importDataRules(args: Endofunction[com.pulumi.aws.s3.inputs.FilesSynchronizationConfigurationImportDataRuleArgs.Builder]*):
+        com.pulumi.aws.s3.FilesSynchronizationConfigurationArgs.Builder =
+      def argsBuilder = com.pulumi.aws.s3.inputs.FilesSynchronizationConfigurationImportDataRuleArgs.builder
+      builder.importDataRules(args.map(_(argsBuilder).build)*)
+
   extension (builder: com.pulumi.aws.s3.inputs.BucketAclV2AccessControlPolicyGrantArgs.Builder)
     /**
      * @param grantee Configuration block for the person being granted permissions. See below.
@@ -1555,6 +1699,16 @@ object s3:
         com.pulumi.aws.s3.inputs.BucketMetricState.Builder =
       val argsBuilder = com.pulumi.aws.s3.inputs.BucketMetricFilterArgs.builder
       builder.filter(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.s3.inputs.FilesAccessPointRootDirectoryArgs.Builder)
+    /**
+     * @param creationPermissions Permissions to set when creating the root directory. See `creationPermissions` below. Changing this value forces replacement.
+     * @return builder
+     */
+    def creationPermissions(args: Endofunction[com.pulumi.aws.s3.inputs.FilesAccessPointRootDirectoryCreationPermissionArgs.Builder]*):
+        com.pulumi.aws.s3.inputs.FilesAccessPointRootDirectoryArgs.Builder =
+      def argsBuilder = com.pulumi.aws.s3.inputs.FilesAccessPointRootDirectoryCreationPermissionArgs.builder
+      builder.creationPermissions(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.aws.s3.inputs.DirectoryBucketState.Builder)
     /**
@@ -1651,6 +1805,12 @@ object s3:
         com.pulumi.aws.s3.inputs.BucketLifecycleRuleArgs.Builder =
       def argsBuilder = com.pulumi.aws.s3.inputs.BucketLifecycleRuleTransitionArgs.builder
       builder.transitions(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.aws.s3.inputs.FilesMountTargetState.Builder)
+    def timeouts(args: Endofunction[com.pulumi.aws.s3.inputs.FilesMountTargetTimeoutsArgs.Builder]):
+        com.pulumi.aws.s3.inputs.FilesMountTargetState.Builder =
+      val argsBuilder = com.pulumi.aws.s3.inputs.FilesMountTargetTimeoutsArgs.builder
+      builder.timeouts(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.s3.inputs.BucketMetadataConfigurationState.Builder)
     /**
@@ -2345,6 +2505,27 @@ object s3:
       val argsBuilder = com.pulumi.aws.s3.inputs.BucketWebsiteConfigurationV2RoutingRuleRedirectArgs.builder
       builder.redirect(args(argsBuilder).build)
 
+  extension (builder: com.pulumi.aws.s3.inputs.FilesSynchronizationConfigurationState.Builder)
+    /**
+     * @param expirationDataRules Expiration data rule configuration. See `expirationDataRule` below.
+     * @return builder
+     */
+    def expirationDataRules(args: Endofunction[com.pulumi.aws.s3.inputs.FilesSynchronizationConfigurationExpirationDataRuleArgs.Builder]*):
+        com.pulumi.aws.s3.inputs.FilesSynchronizationConfigurationState.Builder =
+      def argsBuilder = com.pulumi.aws.s3.inputs.FilesSynchronizationConfigurationExpirationDataRuleArgs.builder
+      builder.expirationDataRules(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param importDataRules One or more import data rules. See `importDataRule` below.
+     *  
+     *  The following arguments are optional:
+     * @return builder
+     */
+    def importDataRules(args: Endofunction[com.pulumi.aws.s3.inputs.FilesSynchronizationConfigurationImportDataRuleArgs.Builder]*):
+        com.pulumi.aws.s3.inputs.FilesSynchronizationConfigurationState.Builder =
+      def argsBuilder = com.pulumi.aws.s3.inputs.FilesSynchronizationConfigurationImportDataRuleArgs.builder
+      builder.importDataRules(args.map(_(argsBuilder).build)*)
+
   extension (builder: com.pulumi.aws.s3.inputs.BucketLoggingState.Builder)
     /**
      * @param targetGrants Set of configuration blocks with information for granting permissions. See below.
@@ -2577,6 +2758,16 @@ object s3:
       val argsBuilder = com.pulumi.aws.s3.inputs.BucketLoggingV2TargetGrantGranteeArgs.builder
       builder.grantee(args(argsBuilder).build)
 
+  extension (builder: com.pulumi.aws.s3.inputs.GetFilesFileSystemsArgs.Builder)
+    /**
+     * @param fileSystems List of file systems. See `fileSystems` below.
+     * @return builder
+     */
+    def fileSystems(args: Endofunction[com.pulumi.aws.s3.inputs.GetFilesFileSystemsFileSystemArgs.Builder]*):
+        com.pulumi.aws.s3.inputs.GetFilesFileSystemsArgs.Builder =
+      def argsBuilder = com.pulumi.aws.s3.inputs.GetFilesFileSystemsFileSystemArgs.builder
+      builder.fileSystems(args.map(_(argsBuilder).build)*)
+
   extension (builder: com.pulumi.aws.s3.inputs.BucketAclV2AccessControlPolicyArgs.Builder)
     /**
      * @param grants Set of `grant` configuration blocks. See below.
@@ -2680,6 +2871,42 @@ object s3:
       def argsBuilder = com.pulumi.aws.s3.inputs.BucketLifecycleConfigurationRuleTransitionArgs.builder
       builder.transitions(args.map(_(argsBuilder).build)*)
 
+  extension (builder: com.pulumi.aws.s3.inputs.GetFilesAccessPointRootDirectoryArgs.Builder)
+    /**
+     * @param creationPermissions Permissions set when the root directory was created. See `creationPermissions` below.
+     * @return builder
+     */
+    def creationPermissions(args: Endofunction[com.pulumi.aws.s3.inputs.GetFilesAccessPointRootDirectoryCreationPermissionArgs.Builder]*):
+        com.pulumi.aws.s3.inputs.GetFilesAccessPointRootDirectoryArgs.Builder =
+      def argsBuilder = com.pulumi.aws.s3.inputs.GetFilesAccessPointRootDirectoryCreationPermissionArgs.builder
+      builder.creationPermissions(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.aws.s3.inputs.FilesAccessPointState.Builder)
+    /**
+     * @param posixUsers POSIX user configuration. See `posixUser` below. Changing this value forces replacement.
+     *  
+     *  The following arguments are optional:
+     * @return builder
+     */
+    def posixUsers(args: Endofunction[com.pulumi.aws.s3.inputs.FilesAccessPointPosixUserArgs.Builder]*):
+        com.pulumi.aws.s3.inputs.FilesAccessPointState.Builder =
+      def argsBuilder = com.pulumi.aws.s3.inputs.FilesAccessPointPosixUserArgs.builder
+      builder.posixUsers(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param rootDirectories Root directory configuration. See `rootDirectory` below. Changing this value forces replacement.
+     * @return builder
+     */
+    def rootDirectories(args: Endofunction[com.pulumi.aws.s3.inputs.FilesAccessPointRootDirectoryArgs.Builder]*):
+        com.pulumi.aws.s3.inputs.FilesAccessPointState.Builder =
+      def argsBuilder = com.pulumi.aws.s3.inputs.FilesAccessPointRootDirectoryArgs.builder
+      builder.rootDirectories(args.map(_(argsBuilder).build)*)
+
+    def timeouts(args: Endofunction[com.pulumi.aws.s3.inputs.FilesAccessPointTimeoutsArgs.Builder]):
+        com.pulumi.aws.s3.inputs.FilesAccessPointState.Builder =
+      val argsBuilder = com.pulumi.aws.s3.inputs.FilesAccessPointTimeoutsArgs.builder
+      builder.timeouts(args(argsBuilder).build)
+
   extension (builder: com.pulumi.aws.s3.inputs.BucketVersioningV2State.Builder)
     /**
      * @param versioningConfiguration Configuration block for the versioning parameters. See below.
@@ -2689,6 +2916,25 @@ object s3:
         com.pulumi.aws.s3.inputs.BucketVersioningV2State.Builder =
       val argsBuilder = com.pulumi.aws.s3.inputs.BucketVersioningV2VersioningConfigurationArgs.builder
       builder.versioningConfiguration(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.s3.inputs.GetFilesAccessPointArgs.Builder)
+    /**
+     * @param posixUsers POSIX user configuration. See `posixUser` below.
+     * @return builder
+     */
+    def posixUsers(args: Endofunction[com.pulumi.aws.s3.inputs.GetFilesAccessPointPosixUserArgs.Builder]*):
+        com.pulumi.aws.s3.inputs.GetFilesAccessPointArgs.Builder =
+      def argsBuilder = com.pulumi.aws.s3.inputs.GetFilesAccessPointPosixUserArgs.builder
+      builder.posixUsers(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param rootDirectories Root directory configuration. See `rootDirectory` below.
+     * @return builder
+     */
+    def rootDirectories(args: Endofunction[com.pulumi.aws.s3.inputs.GetFilesAccessPointRootDirectoryArgs.Builder]*):
+        com.pulumi.aws.s3.inputs.GetFilesAccessPointArgs.Builder =
+      def argsBuilder = com.pulumi.aws.s3.inputs.GetFilesAccessPointRootDirectoryArgs.builder
+      builder.rootDirectories(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.aws.s3.inputs.BucketReplicationConfigRuleDestinationMetricsArgs.Builder)
     /**
@@ -3149,6 +3395,12 @@ object s3:
       val argsBuilder = com.pulumi.aws.s3.inputs.BucketAclAccessControlPolicyGrantGranteeArgs.builder
       builder.grantee(args(argsBuilder).build)
 
+  extension (builder: com.pulumi.aws.s3.inputs.FilesFileSystemState.Builder)
+    def timeouts(args: Endofunction[com.pulumi.aws.s3.inputs.FilesFileSystemTimeoutsArgs.Builder]):
+        com.pulumi.aws.s3.inputs.FilesFileSystemState.Builder =
+      val argsBuilder = com.pulumi.aws.s3.inputs.FilesFileSystemTimeoutsArgs.builder
+      builder.timeouts(args(argsBuilder).build)
+
   extension (builder: com.pulumi.aws.s3.inputs.BucketLifecycleConfigurationRuleFilterArgs.Builder)
     /**
      * @param and Configuration block used to apply a logical `AND` to two or more predicates. See below. The Lifecycle Rule will apply to any object matching all the predicates configured inside the `and` block.
@@ -3224,3 +3476,9 @@ object s3:
     com.pulumi.aws.s3.BucketMetadataConfiguration(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
+
+  extension (builder: com.pulumi.aws.s3.FilesFileSystemArgs.Builder)
+    def timeouts(args: Endofunction[com.pulumi.aws.s3.inputs.FilesFileSystemTimeoutsArgs.Builder]):
+        com.pulumi.aws.s3.FilesFileSystemArgs.Builder =
+      val argsBuilder = com.pulumi.aws.s3.inputs.FilesFileSystemTimeoutsArgs.builder
+      builder.timeouts(args(argsBuilder).build)

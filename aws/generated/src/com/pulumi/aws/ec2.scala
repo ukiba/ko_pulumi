@@ -1576,6 +1576,30 @@ object ec2:
       val argsBuilder = com.pulumi.aws.ec2.inputs.GetSerialConsoleAccessPlainArgs.builder
       com.pulumi.aws.ec2.Ec2Functions.getSerialConsoleAccessPlain(args(argsBuilder).build)
 
+    /** Provides details about an EC2 Service Link Virtual Interface. More information can be found in the [Outposts User Guide](https://docs.aws.amazon.com/outposts/latest/userguide/how-outposts-works.html#how-service-link). */
+    def getServiceLinkVirtualInterface(args: Endofunction[com.pulumi.aws.ec2.inputs.GetServiceLinkVirtualInterfaceArgs.Builder] = identity):
+        com.pulumi.core.Output[com.pulumi.aws.ec2.outputs.GetServiceLinkVirtualInterfaceResult] =
+      val argsBuilder = com.pulumi.aws.ec2.inputs.GetServiceLinkVirtualInterfaceArgs.builder
+      com.pulumi.aws.ec2.Ec2Functions.getServiceLinkVirtualInterface(args(argsBuilder).build)
+
+    /** Provides details about an EC2 Service Link Virtual Interface. More information can be found in the [Outposts User Guide](https://docs.aws.amazon.com/outposts/latest/userguide/how-outposts-works.html#how-service-link). */
+    def getServiceLinkVirtualInterfacePlain(args: Endofunction[com.pulumi.aws.ec2.inputs.GetServiceLinkVirtualInterfacePlainArgs.Builder] = identity):
+        java.util.concurrent.CompletableFuture[com.pulumi.aws.ec2.outputs.GetServiceLinkVirtualInterfaceResult] =
+      val argsBuilder = com.pulumi.aws.ec2.inputs.GetServiceLinkVirtualInterfacePlainArgs.builder
+      com.pulumi.aws.ec2.Ec2Functions.getServiceLinkVirtualInterfacePlain(args(argsBuilder).build)
+
+    /** Provides a list of EC2 Service Link Virtual Interface IDs matching the provided filters. More information can be found in the [Outposts User Guide](https://docs.aws.amazon.com/outposts/latest/userguide/how-outposts-works.html#how-service-link). */
+    def getServiceLinkVirtualInterfaces(args: Endofunction[com.pulumi.aws.ec2.inputs.GetServiceLinkVirtualInterfacesArgs.Builder] = identity):
+        com.pulumi.core.Output[com.pulumi.aws.ec2.outputs.GetServiceLinkVirtualInterfacesResult] =
+      val argsBuilder = com.pulumi.aws.ec2.inputs.GetServiceLinkVirtualInterfacesArgs.builder
+      com.pulumi.aws.ec2.Ec2Functions.getServiceLinkVirtualInterfaces(args(argsBuilder).build)
+
+    /** Provides a list of EC2 Service Link Virtual Interface IDs matching the provided filters. More information can be found in the [Outposts User Guide](https://docs.aws.amazon.com/outposts/latest/userguide/how-outposts-works.html#how-service-link). */
+    def getServiceLinkVirtualInterfacesPlain(args: Endofunction[com.pulumi.aws.ec2.inputs.GetServiceLinkVirtualInterfacesPlainArgs.Builder] = identity):
+        java.util.concurrent.CompletableFuture[com.pulumi.aws.ec2.outputs.GetServiceLinkVirtualInterfacesResult] =
+      val argsBuilder = com.pulumi.aws.ec2.inputs.GetServiceLinkVirtualInterfacesPlainArgs.builder
+      com.pulumi.aws.ec2.Ec2Functions.getServiceLinkVirtualInterfacesPlain(args(argsBuilder).build)
+
     /**
      * &gt; There is only a single spot data feed subscription per account.
      *  
@@ -2743,7 +2767,10 @@ object ec2:
   /**
    * Provides an EC2 launch template resource. Can be used to create instances or auto scaling groups.
    *  
-   *  ## Import
+   *  #### Optional
+   *  
+   *  * `accountId` (String) AWS Account where this resource is managed.
+   *  * `region` (String) Region where this resource is managed.
    *  
    *  Using `pulumi import`, import Launch Templates using the `id`. For example:
    *  
@@ -3087,6 +3114,15 @@ object ec2:
         com.pulumi.aws.ec2.NetworkInterfaceArgs.Builder =
       def argsBuilder = com.pulumi.aws.ec2.inputs.NetworkInterfaceAttachmentArgs.builder
       builder.attachments(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param enaSrdSpecification Configures ENA Express for the network interface. The ENI must be attached to an instance to configure ENA Express. See ENA SRD Specification below for more details.
+     * @return builder
+     */
+    def enaSrdSpecification(args: Endofunction[com.pulumi.aws.ec2.inputs.NetworkInterfaceEnaSrdSpecificationArgs.Builder]):
+        com.pulumi.aws.ec2.NetworkInterfaceArgs.Builder =
+      val argsBuilder = com.pulumi.aws.ec2.inputs.NetworkInterfaceEnaSrdSpecificationArgs.builder
+      builder.enaSrdSpecification(args(argsBuilder).build)
 
   /** Provides an IPAM Resource Discovery resource. IPAM Resource Discoveries are resources meant for multi-organization customers. If you wish to use a single IPAM across multiple orgs, a resource discovery can be created and shared from a subordinate organization to the management organizations IPAM delegated admin account. For a full deployment example, see `aws.ec2.VpcIpamResourceDiscoveryAssociation` resource. */
   def VpcIpamResourceDiscovery(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
@@ -3688,6 +3724,16 @@ object ec2:
       def argsBuilder = com.pulumi.aws.ec2.inputs.DefaultRouteTableRouteArgs.builder
       builder.routes(args.map(_(argsBuilder).build)*)
 
+  extension (builder: com.pulumi.aws.ec2.inputs.NetworkInterfaceEnaSrdSpecificationArgs.Builder)
+    /**
+     * @param enaSrdUdpSpecification Configures ENA Express for UDP network traffic. See ENA SRD UDP Specification below for more details.
+     * @return builder
+     */
+    def enaSrdUdpSpecification(args: Endofunction[com.pulumi.aws.ec2.inputs.NetworkInterfaceEnaSrdSpecificationEnaSrdUdpSpecificationArgs.Builder]):
+        com.pulumi.aws.ec2.inputs.NetworkInterfaceEnaSrdSpecificationArgs.Builder =
+      val argsBuilder = com.pulumi.aws.ec2.inputs.NetworkInterfaceEnaSrdSpecificationEnaSrdUdpSpecificationArgs.builder
+      builder.enaSrdUdpSpecification(args(argsBuilder).build)
+
   extension (builder: com.pulumi.aws.ec2.inputs.VpcIpamPoolCidrState.Builder)
     /**
      * @param cidrAuthorizationContext A signed document that proves that you are authorized to bring the specified IP address range to Amazon using BYOIP. This is not stored in the state file. See cidrAuthorizationContext for more information.
@@ -3825,6 +3871,15 @@ object ec2:
         com.pulumi.aws.ec2.inputs.NetworkInterfaceState.Builder =
       def argsBuilder = com.pulumi.aws.ec2.inputs.NetworkInterfaceAttachmentArgs.builder
       builder.attachments(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param enaSrdSpecification Configures ENA Express for the network interface. The ENI must be attached to an instance to configure ENA Express. See ENA SRD Specification below for more details.
+     * @return builder
+     */
+    def enaSrdSpecification(args: Endofunction[com.pulumi.aws.ec2.inputs.NetworkInterfaceEnaSrdSpecificationArgs.Builder]):
+        com.pulumi.aws.ec2.inputs.NetworkInterfaceState.Builder =
+      val argsBuilder = com.pulumi.aws.ec2.inputs.NetworkInterfaceEnaSrdSpecificationArgs.builder
+      builder.enaSrdSpecification(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.ec2.inputs.GetVpcIpamPoolArgs.Builder)
     /**
@@ -6061,6 +6116,16 @@ object ec2:
       def argsBuilder = com.pulumi.aws.ec2.inputs.GetInstanceTypeOfferingFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
+  extension (builder: com.pulumi.aws.ec2.inputs.GetServiceLinkVirtualInterfacesArgs.Builder)
+    /**
+     * @param filters One or more configuration blocks containing name-values filters. See the [EC2 API Reference](https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeServiceLinkVirtualInterfaces.html) for supported filters. Detailed below.
+     * @return builder
+     */
+    def filters(args: Endofunction[com.pulumi.aws.ec2.inputs.GetServiceLinkVirtualInterfacesFilterArgs.Builder]*):
+        com.pulumi.aws.ec2.inputs.GetServiceLinkVirtualInterfacesArgs.Builder =
+      def argsBuilder = com.pulumi.aws.ec2.inputs.GetServiceLinkVirtualInterfacesFilterArgs.builder
+      builder.filters(args.map(_(argsBuilder).build)*)
+
   extension (builder: com.pulumi.aws.ec2.inputs.GetSubnetArgs.Builder)
     /**
      * @param filters Configuration block. Detailed below.
@@ -6079,6 +6144,16 @@ object ec2:
     def filters(args: Endofunction[com.pulumi.aws.ec2.inputs.GetSecurityGroupFilterArgs.Builder]*):
         com.pulumi.aws.ec2.inputs.GetSecurityGroupArgs.Builder =
       def argsBuilder = com.pulumi.aws.ec2.inputs.GetSecurityGroupFilterArgs.builder
+      builder.filters(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.aws.ec2.inputs.GetServiceLinkVirtualInterfaceArgs.Builder)
+    /**
+     * @param filters One or more configuration blocks containing name-values filters. See the [EC2 API Reference](https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeServiceLinkVirtualInterfaces.html) for supported filters. Detailed below.
+     * @return builder
+     */
+    def filters(args: Endofunction[com.pulumi.aws.ec2.inputs.GetServiceLinkVirtualInterfaceFilterArgs.Builder]*):
+        com.pulumi.aws.ec2.inputs.GetServiceLinkVirtualInterfaceArgs.Builder =
+      def argsBuilder = com.pulumi.aws.ec2.inputs.GetServiceLinkVirtualInterfaceFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.aws.ec2.inputs.SpotFleetRequestState.Builder)

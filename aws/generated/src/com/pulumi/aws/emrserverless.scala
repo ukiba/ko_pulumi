@@ -65,6 +65,11 @@ object emrserverless:
       val argsBuilder = com.pulumi.aws.emrserverless.inputs.ApplicationInteractiveConfigurationArgs.builder
       builder.interactiveConfiguration(args(argsBuilder).build)
 
+    def jobLevelCostAllocationConfiguration(args: Endofunction[com.pulumi.aws.emrserverless.inputs.ApplicationJobLevelCostAllocationConfigurationArgs.Builder]):
+        com.pulumi.aws.emrserverless.ApplicationArgs.Builder =
+      val argsBuilder = com.pulumi.aws.emrserverless.inputs.ApplicationJobLevelCostAllocationConfigurationArgs.builder
+      builder.jobLevelCostAllocationConfiguration(args(argsBuilder).build)
+
     /**
      * @param maximumCapacity The maximum capacity to allocate when the application is created. This is cumulative across all workers at any given point in time, not just when an application is created. No new resources will be created once any one of the defined limits is hit.
      * @return builder
@@ -212,6 +217,11 @@ object emrserverless:
         com.pulumi.aws.emrserverless.inputs.ApplicationState.Builder =
       val argsBuilder = com.pulumi.aws.emrserverless.inputs.ApplicationInteractiveConfigurationArgs.builder
       builder.interactiveConfiguration(args(argsBuilder).build)
+
+    def jobLevelCostAllocationConfiguration(args: Endofunction[com.pulumi.aws.emrserverless.inputs.ApplicationJobLevelCostAllocationConfigurationArgs.Builder]):
+        com.pulumi.aws.emrserverless.inputs.ApplicationState.Builder =
+      val argsBuilder = com.pulumi.aws.emrserverless.inputs.ApplicationJobLevelCostAllocationConfigurationArgs.builder
+      builder.jobLevelCostAllocationConfiguration(args(argsBuilder).build)
 
     /**
      * @param maximumCapacity The maximum capacity to allocate when the application is created. This is cumulative across all workers at any given point in time, not just when an application is created. No new resources will be created once any one of the defined limits is hit.

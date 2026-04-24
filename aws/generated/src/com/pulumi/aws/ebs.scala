@@ -16,6 +16,24 @@ object ebs:
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
+  /** Creates a copy of an existing Amazon EBS volume. */
+  def VolumeCopy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.ebs.VolumeCopyArgs.Builder])(using conf: KoPulumiConf) =
+    var argsBuilder = com.pulumi.aws.ebs.VolumeCopyArgs.builder
+    conf.logicalName2tagName(name) match
+      case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
+      case None          =>
+    
+    com.pulumi.aws.ebs.VolumeCopy(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder).build)
+
+  extension (builder: com.pulumi.aws.ebs.VolumeCopyArgs.Builder)
+    def timeouts(args: Endofunction[com.pulumi.aws.ebs.inputs.VolumeCopyTimeoutsArgs.Builder]):
+        com.pulumi.aws.ebs.VolumeCopyArgs.Builder =
+      val argsBuilder = com.pulumi.aws.ebs.inputs.VolumeCopyTimeoutsArgs.builder
+      builder.timeouts(args(argsBuilder).build)
+
   extension (builder: com.pulumi.aws.ebs.FastSnapshotRestoreArgs.Builder)
     def timeouts(args: Endofunction[com.pulumi.aws.ebs.inputs.FastSnapshotRestoreTimeoutsArgs.Builder]):
         com.pulumi.aws.ebs.FastSnapshotRestoreArgs.Builder =
@@ -287,6 +305,12 @@ object ebs:
         com.pulumi.aws.ebs.inputs.GetEbsVolumesArgs.Builder =
       def argsBuilder = com.pulumi.aws.ebs.inputs.GetEbsVolumesFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.aws.ebs.inputs.VolumeCopyState.Builder)
+    def timeouts(args: Endofunction[com.pulumi.aws.ebs.inputs.VolumeCopyTimeoutsArgs.Builder]):
+        com.pulumi.aws.ebs.inputs.VolumeCopyState.Builder =
+      val argsBuilder = com.pulumi.aws.ebs.inputs.VolumeCopyTimeoutsArgs.builder
+      builder.timeouts(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.ebs.inputs.FastSnapshotRestoreState.Builder)
     def timeouts(args: Endofunction[com.pulumi.aws.ebs.inputs.FastSnapshotRestoreTimeoutsArgs.Builder]):

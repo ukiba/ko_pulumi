@@ -243,8 +243,11 @@ object guardduty:
 
   /** Provides a resource to manage a GuardDuty PublishingDestination. Requires an existing GuardDuty Detector. */
   def PublishingDestination(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
-      (args: Endofunction[com.pulumi.aws.guardduty.PublishingDestinationArgs.Builder]) =
-    val argsBuilder = com.pulumi.aws.guardduty.PublishingDestinationArgs.builder
+      (args: Endofunction[com.pulumi.aws.guardduty.PublishingDestinationArgs.Builder])(using conf: KoPulumiConf) =
+    var argsBuilder = com.pulumi.aws.guardduty.PublishingDestinationArgs.builder
+    conf.logicalName2tagName(name) match
+      case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
+      case None          =>
     
     com.pulumi.aws.guardduty.PublishingDestination(name,
         args(argsBuilder).build,

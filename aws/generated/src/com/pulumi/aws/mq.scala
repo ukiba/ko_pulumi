@@ -74,8 +74,6 @@ object mq:
 
     /**
      * @param users Configuration block for broker users. For `engineType` of `RabbitMQ`, Amazon MQ does not return broker users preventing this resource from making user updates and drift detection. Detailed below.
-     *  
-     *  The following arguments are optional:
      * @return builder
      */
     def users(args: Endofunction[com.pulumi.aws.mq.inputs.BrokerUserArgs.Builder]*):
@@ -196,8 +194,6 @@ object mq:
 
     /**
      * @param users Configuration block for broker users. For `engineType` of `RabbitMQ`, Amazon MQ does not return broker users preventing this resource from making user updates and drift detection. Detailed below.
-     *  
-     *  The following arguments are optional:
      * @return builder
      */
     def users(args: Endofunction[com.pulumi.aws.mq.inputs.BrokerUserArgs.Builder]*):

@@ -34,7 +34,11 @@ object costexplorer:
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
-  /** Provides a CE Cost Allocation Tag. */
+  /**
+   * Provides a CE Cost Allocation Tag.
+   *  
+   *  &gt; **NOTE:** After the user-defined tags are created and applied to resources, it can take up to 24 hours for the tag keys to appear on Cost Allocation tag page for activation.
+   */
   def CostAllocationTag(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.costexplorer.CostAllocationTagArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.costexplorer.CostAllocationTagArgs.builder

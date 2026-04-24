@@ -598,6 +598,10 @@ object networkfirewall:
       builder.logDestinationConfigs(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.aws.networkfirewall.inputs.VpcEndpointAssociationVpcEndpointAssociationStatusArgs.Builder)
+    /**
+     * @param associationSyncStates Set of subnets configured for use by the VPC Endpoint Association.
+     * @return builder
+     */
     def associationSyncStates(args: Endofunction[com.pulumi.aws.networkfirewall.inputs.VpcEndpointAssociationVpcEndpointAssociationStatusAssociationSyncStateArgs.Builder]*):
         com.pulumi.aws.networkfirewall.inputs.VpcEndpointAssociationVpcEndpointAssociationStatusArgs.Builder =
       def argsBuilder = com.pulumi.aws.networkfirewall.inputs.VpcEndpointAssociationVpcEndpointAssociationStatusAssociationSyncStateArgs.builder

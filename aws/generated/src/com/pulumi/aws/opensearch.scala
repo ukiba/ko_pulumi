@@ -62,6 +62,15 @@ object opensearch:
         resourceOptions(CustomResourceOptions.builder).build)
 
   extension (builder: com.pulumi.aws.opensearch.ServerlessCollectionArgs.Builder)
+    /**
+     * @param encryptionConfigs Configuration block for direct collection encryption settings. See `encryptionConfig` below for details.
+     * @return builder
+     */
+    def encryptionConfigs(args: Endofunction[com.pulumi.aws.opensearch.inputs.ServerlessCollectionEncryptionConfigArgs.Builder]*):
+        com.pulumi.aws.opensearch.ServerlessCollectionArgs.Builder =
+      def argsBuilder = com.pulumi.aws.opensearch.inputs.ServerlessCollectionEncryptionConfigArgs.builder
+      builder.encryptionConfigs(args.map(_(argsBuilder).build)*)
+
     def timeouts(args: Endofunction[com.pulumi.aws.opensearch.inputs.ServerlessCollectionTimeoutsArgs.Builder]):
         com.pulumi.aws.opensearch.ServerlessCollectionArgs.Builder =
       val argsBuilder = com.pulumi.aws.opensearch.inputs.ServerlessCollectionTimeoutsArgs.builder
@@ -182,6 +191,15 @@ object opensearch:
       builder.cognitoOptions(args(argsBuilder).build)
 
     /**
+     * @param deploymentStrategyOptions Configuration block for the deployment strategy options of the domain. Detailed below.
+     * @return builder
+     */
+    def deploymentStrategyOptions(args: Endofunction[com.pulumi.aws.opensearch.inputs.DomainDeploymentStrategyOptionsArgs.Builder]):
+        com.pulumi.aws.opensearch.DomainArgs.Builder =
+      val argsBuilder = com.pulumi.aws.opensearch.inputs.DomainDeploymentStrategyOptionsArgs.builder
+      builder.deploymentStrategyOptions(args(argsBuilder).build)
+
+    /**
      * @param domainEndpointOptions Configuration block for domain endpoint HTTP(S) related options. Detailed below.
      * @return builder
      */
@@ -271,6 +289,25 @@ object opensearch:
       val argsBuilder = com.pulumi.aws.opensearch.inputs.DomainVpcOptionsArgs.builder
       builder.vpcOptions(args(argsBuilder).build)
 
+  /**
+   * Resource for managing an AWS OpenSearch Serverless Collection Group.
+   *  
+   *  Collection groups let multiple OpenSearch Serverless collections share compute resources while keeping encryption and access controls independent.
+   */
+  def ServerlessCollectionGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.opensearch.ServerlessCollectionGroupArgs.Builder])(using conf: KoPulumiConf) =
+    var argsBuilder = com.pulumi.aws.opensearch.ServerlessCollectionGroupArgs.builder
+    conf.logicalName2pysicalName(name) match
+      case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
+      case None               =>
+    conf.logicalName2tagName(name) match
+      case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
+      case None          =>
+    
+    com.pulumi.aws.opensearch.ServerlessCollectionGroup(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder).build)
+
   /** Manages an [AWS Opensearch Inbound Connection Accepter](https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_AcceptInboundConnection.html). If connecting domains from different AWS accounts, ensure that the accepter is configured to use the AWS account where the _remote_ opensearch domain exists. */
   def InboundConnectionAccepter(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.opensearch.InboundConnectionAccepterArgs.Builder]) =
@@ -288,6 +325,16 @@ object opensearch:
     com.pulumi.aws.opensearch.OutboundConnection(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
+
+  extension (builder: com.pulumi.aws.opensearch.ServerlessCollectionGroupArgs.Builder)
+    /**
+     * @param capacityLimits Configuration block for the collection group&#39;s indexing and search capacity limits. See `capacityLimits` below for details.
+     * @return builder
+     */
+    def capacityLimits(args: Endofunction[com.pulumi.aws.opensearch.inputs.ServerlessCollectionGroupCapacityLimitArgs.Builder]*):
+        com.pulumi.aws.opensearch.ServerlessCollectionGroupArgs.Builder =
+      def argsBuilder = com.pulumi.aws.opensearch.inputs.ServerlessCollectionGroupCapacityLimitArgs.builder
+      builder.capacityLimits(args.map(_(argsBuilder).build)*)
 
   /** Resource for managing an AWS OpenSearch Serverless Access Policy. See AWS documentation for [data access policies](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-data-access.html) and [supported data access policy permissions](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-data-access.html#serverless-data-supported-permissions). */
   def ServerlessAccessPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
@@ -403,7 +450,7 @@ object opensearch:
   /**
    * Resource for managing an AWS OpenSearch Serverless Collection.
    *  
-   *  &gt; **NOTE:** An `aws.opensearch.ServerlessCollection` cannot be created without having an applicable encryption security policy. Use the `dependsOn` meta-argument to define this dependency.
+   *  &gt; **NOTE:** An `aws.opensearch.ServerlessCollection` must have encryption configured either by an applicable encryption security policy or by setting `encryptionConfig` directly on the resource.
    *  
    *  &gt; **NOTE:** An `aws.opensearch.ServerlessCollection` is not accessible without configuring an applicable network security policy. Data cannot be accessed without configuring an applicable data access policy.
    */
@@ -461,6 +508,30 @@ object opensearch:
         java.util.concurrent.CompletableFuture[com.pulumi.aws.opensearch.outputs.GetServerlessCollectionResult] =
       val argsBuilder = com.pulumi.aws.opensearch.inputs.GetServerlessCollectionPlainArgs.builder
       com.pulumi.aws.opensearch.OpensearchFunctions.getServerlessCollectionPlain(args(argsBuilder).build)
+
+    /** Data source for managing an AWS OpenSearch Serverless Collection Group. */
+    def getServerlessCollectionGroup(args: Endofunction[com.pulumi.aws.opensearch.inputs.GetServerlessCollectionGroupArgs.Builder] = identity):
+        com.pulumi.core.Output[com.pulumi.aws.opensearch.outputs.GetServerlessCollectionGroupResult] =
+      val argsBuilder = com.pulumi.aws.opensearch.inputs.GetServerlessCollectionGroupArgs.builder
+      com.pulumi.aws.opensearch.OpensearchFunctions.getServerlessCollectionGroup(args(argsBuilder).build)
+
+    /** Data source for managing an AWS OpenSearch Serverless Collection Group. */
+    def getServerlessCollectionGroupPlain(args: Endofunction[com.pulumi.aws.opensearch.inputs.GetServerlessCollectionGroupPlainArgs.Builder] = identity):
+        java.util.concurrent.CompletableFuture[com.pulumi.aws.opensearch.outputs.GetServerlessCollectionGroupResult] =
+      val argsBuilder = com.pulumi.aws.opensearch.inputs.GetServerlessCollectionGroupPlainArgs.builder
+      com.pulumi.aws.opensearch.OpensearchFunctions.getServerlessCollectionGroupPlain(args(argsBuilder).build)
+
+    /** Data source for listing AWS OpenSearch Serverless Collection Groups. */
+    def getServerlessCollectionGroups(args: Endofunction[com.pulumi.aws.opensearch.inputs.GetServerlessCollectionGroupsArgs.Builder] = identity):
+        com.pulumi.core.Output[com.pulumi.aws.opensearch.outputs.GetServerlessCollectionGroupsResult] =
+      val argsBuilder = com.pulumi.aws.opensearch.inputs.GetServerlessCollectionGroupsArgs.builder
+      com.pulumi.aws.opensearch.OpensearchFunctions.getServerlessCollectionGroups(args(argsBuilder).build)
+
+    /** Data source for listing AWS OpenSearch Serverless Collection Groups. */
+    def getServerlessCollectionGroupsPlain(args: Endofunction[com.pulumi.aws.opensearch.inputs.GetServerlessCollectionGroupsPlainArgs.Builder] = identity):
+        java.util.concurrent.CompletableFuture[com.pulumi.aws.opensearch.outputs.GetServerlessCollectionGroupsResult] =
+      val argsBuilder = com.pulumi.aws.opensearch.inputs.GetServerlessCollectionGroupsPlainArgs.builder
+      com.pulumi.aws.opensearch.OpensearchFunctions.getServerlessCollectionGroupsPlain(args(argsBuilder).build)
 
     /** Data source for managing an AWS OpenSearch Serverless Lifecycle Policy. */
     def getServerlessLifecyclePolicy(args: Endofunction[com.pulumi.aws.opensearch.inputs.GetServerlessLifecyclePolicyArgs.Builder] = identity):
@@ -583,6 +654,15 @@ object opensearch:
         com.pulumi.aws.opensearch.inputs.DomainState.Builder =
       val argsBuilder = com.pulumi.aws.opensearch.inputs.DomainCognitoOptionsArgs.builder
       builder.cognitoOptions(args(argsBuilder).build)
+
+    /**
+     * @param deploymentStrategyOptions Configuration block for the deployment strategy options of the domain. Detailed below.
+     * @return builder
+     */
+    def deploymentStrategyOptions(args: Endofunction[com.pulumi.aws.opensearch.inputs.DomainDeploymentStrategyOptionsArgs.Builder]):
+        com.pulumi.aws.opensearch.inputs.DomainState.Builder =
+      val argsBuilder = com.pulumi.aws.opensearch.inputs.DomainDeploymentStrategyOptionsArgs.builder
+      builder.deploymentStrategyOptions(args(argsBuilder).build)
 
     /**
      * @param domainEndpointOptions Configuration block for domain endpoint HTTP(S) related options. Detailed below.
@@ -753,6 +833,15 @@ object opensearch:
       builder.crossClusterSearch(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.opensearch.inputs.ServerlessCollectionState.Builder)
+    /**
+     * @param encryptionConfigs Configuration block for direct collection encryption settings. See `encryptionConfig` below for details.
+     * @return builder
+     */
+    def encryptionConfigs(args: Endofunction[com.pulumi.aws.opensearch.inputs.ServerlessCollectionEncryptionConfigArgs.Builder]*):
+        com.pulumi.aws.opensearch.inputs.ServerlessCollectionState.Builder =
+      def argsBuilder = com.pulumi.aws.opensearch.inputs.ServerlessCollectionEncryptionConfigArgs.builder
+      builder.encryptionConfigs(args.map(_(argsBuilder).build)*)
+
     def timeouts(args: Endofunction[com.pulumi.aws.opensearch.inputs.ServerlessCollectionTimeoutsArgs.Builder]):
         com.pulumi.aws.opensearch.inputs.ServerlessCollectionState.Builder =
       val argsBuilder = com.pulumi.aws.opensearch.inputs.ServerlessCollectionTimeoutsArgs.builder
@@ -903,7 +992,26 @@ object opensearch:
       def argsBuilder = com.pulumi.aws.opensearch.inputs.DomainAutoTuneOptionsMaintenanceScheduleArgs.builder
       builder.maintenanceSchedules(args.map(_(argsBuilder).build)*)
 
+  extension (builder: com.pulumi.aws.opensearch.inputs.ServerlessCollectionGroupState.Builder)
+    /**
+     * @param capacityLimits Configuration block for the collection group&#39;s indexing and search capacity limits. See `capacityLimits` below for details.
+     * @return builder
+     */
+    def capacityLimits(args: Endofunction[com.pulumi.aws.opensearch.inputs.ServerlessCollectionGroupCapacityLimitArgs.Builder]*):
+        com.pulumi.aws.opensearch.inputs.ServerlessCollectionGroupState.Builder =
+      def argsBuilder = com.pulumi.aws.opensearch.inputs.ServerlessCollectionGroupCapacityLimitArgs.builder
+      builder.capacityLimits(args.map(_(argsBuilder).build)*)
+
   extension (builder: com.pulumi.aws.opensearch.inputs.DomainAdvancedSecurityOptionsArgs.Builder)
+    /**
+     * @param jwtOptions Configuration block for JWT authentication. Requires OpenSearch 2.11 or later. Detailed below.
+     * @return builder
+     */
+    def jwtOptions(args: Endofunction[com.pulumi.aws.opensearch.inputs.DomainAdvancedSecurityOptionsJwtOptionsArgs.Builder]):
+        com.pulumi.aws.opensearch.inputs.DomainAdvancedSecurityOptionsArgs.Builder =
+      val argsBuilder = com.pulumi.aws.opensearch.inputs.DomainAdvancedSecurityOptionsJwtOptionsArgs.builder
+      builder.jwtOptions(args(argsBuilder).build)
+
     /**
      * @param masterUserOptions Configuration block for the main user. Detailed below.
      * @return builder

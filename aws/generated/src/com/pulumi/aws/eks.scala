@@ -49,6 +49,15 @@ object eks:
 
   extension (builder: com.pulumi.aws.eks.AddonArgs.Builder)
     /**
+     * @param namespaceConfig Namespace configuration for the add-on. See `namespaceConfig` below for details.
+     * @return builder
+     */
+    def namespaceConfig(args: Endofunction[com.pulumi.aws.eks.inputs.AddonNamespaceConfigArgs.Builder]):
+        com.pulumi.aws.eks.AddonArgs.Builder =
+      val argsBuilder = com.pulumi.aws.eks.inputs.AddonNamespaceConfigArgs.builder
+      builder.namespaceConfig(args(argsBuilder).build)
+
+    /**
      * @param podIdentityAssociations Configuration block with EKS Pod Identity association settings. See `podIdentityAssociation` below for details.
      * @return builder
      */
@@ -602,6 +611,15 @@ object eks:
       builder.zonalShiftConfig(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.eks.inputs.AddonState.Builder)
+    /**
+     * @param namespaceConfig Namespace configuration for the add-on. See `namespaceConfig` below for details.
+     * @return builder
+     */
+    def namespaceConfig(args: Endofunction[com.pulumi.aws.eks.inputs.AddonNamespaceConfigArgs.Builder]):
+        com.pulumi.aws.eks.inputs.AddonState.Builder =
+      val argsBuilder = com.pulumi.aws.eks.inputs.AddonNamespaceConfigArgs.builder
+      builder.namespaceConfig(args(argsBuilder).build)
+
     /**
      * @param podIdentityAssociations Configuration block with EKS Pod Identity association settings. See `podIdentityAssociation` below for details.
      * @return builder

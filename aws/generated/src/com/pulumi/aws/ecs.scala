@@ -694,6 +694,15 @@ object ecs:
 
   extension (builder: com.pulumi.aws.ecs.inputs.ServiceServiceConnectConfigurationArgs.Builder)
     /**
+     * @param accessLogConfiguration Configuration for Service Connect access logs. See below.
+     * @return builder
+     */
+    def accessLogConfiguration(args: Endofunction[com.pulumi.aws.ecs.inputs.ServiceServiceConnectConfigurationAccessLogConfigurationArgs.Builder]):
+        com.pulumi.aws.ecs.inputs.ServiceServiceConnectConfigurationArgs.Builder =
+      val argsBuilder = com.pulumi.aws.ecs.inputs.ServiceServiceConnectConfigurationAccessLogConfigurationArgs.builder
+      builder.accessLogConfiguration(args(argsBuilder).build)
+
+    /**
      * @param logConfiguration Log configuration for the container. See below.
      * @return builder
      */
@@ -776,6 +785,15 @@ object ecs:
         com.pulumi.aws.ecs.inputs.TaskDefinitionVolumeArgs.Builder =
       val argsBuilder = com.pulumi.aws.ecs.inputs.TaskDefinitionVolumeFsxWindowsFileServerVolumeConfigurationArgs.builder
       builder.fsxWindowsFileServerVolumeConfiguration(args(argsBuilder).build)
+
+    /**
+     * @param s3filesVolumeConfiguration Configuration block for an S3 Files volume. Detailed below.
+     * @return builder
+     */
+    def s3filesVolumeConfiguration(args: Endofunction[com.pulumi.aws.ecs.inputs.TaskDefinitionVolumeS3filesVolumeConfigurationArgs.Builder]):
+        com.pulumi.aws.ecs.inputs.TaskDefinitionVolumeArgs.Builder =
+      val argsBuilder = com.pulumi.aws.ecs.inputs.TaskDefinitionVolumeS3filesVolumeConfigurationArgs.builder
+      builder.s3filesVolumeConfiguration(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.ecs.inputs.ServiceVolumeConfigurationManagedEbsVolumeArgs.Builder)
     /**

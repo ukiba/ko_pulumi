@@ -100,6 +100,23 @@ object organizations:
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
+  /**
+   * Manages trusted access between an AWS service and AWS Organizations.
+   *  
+   *  &gt; **Note:** AWS recommends enabling and disabling trusted access for a service through the service&#39;s own console or its AWS CLI commands or API operation equivalents, rather than using this resource directly. Using the service-specific tooling ensures that the service can perform the required steps when enabling trusted access (e.g. creating any required resources) and any required clean up operations when disabling trusted access. See the [AWS Organizations User Guide](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrate_services.html) for more details. The complete list of AWS services that support trusted access with AWS Organizations is available in the [Services that work with Organizations](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrate_services_list.html) page.
+   *  
+   *  &gt; **Note:** This resource requires the Organizations management account.
+   *  
+   *  &gt; **NOTE:** Terraform provides both this standalone AWS service access resource and exclusive service access defined in-line in the `aws.organizations.Organization` resource via the `awsServiceAccessPrincipals` argument. At this time, you cannot use the service access in conjunction with this resource otherwise it will cause a perpetual difference in plan output. You can optionally use the generic Terraform resource lifecycle configuration block with `ignoreChanges` in the `aws.organizations.Organization` resource to manage additional service access via this resource.
+   */
+  def AwsServiceAccess(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.organizations.AwsServiceAccessArgs.Builder]) =
+    val argsBuilder = com.pulumi.aws.organizations.AwsServiceAccessArgs.builder
+    
+    com.pulumi.aws.organizations.AwsServiceAccess(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder).build)
+
   type OrganizationsFunctions = com.pulumi.aws.organizations.OrganizationsFunctions
   object OrganizationsFunctions:
     // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)

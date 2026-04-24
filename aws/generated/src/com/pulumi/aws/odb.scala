@@ -564,7 +564,7 @@ object odb:
 
   extension (builder: com.pulumi.aws.odb.inputs.NetworkState.Builder)
     /**
-     * @param managedServices The name of the OCI resource anchor for the Exadata infrastructure.
+     * @param managedServices The managed services configuration for the ODB network.
      * @return builder
      */
     def managedServices(args: Endofunction[com.pulumi.aws.odb.inputs.NetworkManagedServiceArgs.Builder]*):
@@ -593,6 +593,15 @@ object odb:
       builder.dbPlans(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.aws.odb.inputs.NetworkManagedServiceArgs.Builder)
+    /**
+     * @param crossRegionS3RestoreSourcesAccesses The list of regions enabled for cross-region restore in the ODB network.
+     * @return builder
+     */
+    def crossRegionS3RestoreSourcesAccesses(args: Endofunction[com.pulumi.aws.odb.inputs.NetworkManagedServiceCrossRegionS3RestoreSourcesAccessArgs.Builder]*):
+        com.pulumi.aws.odb.inputs.NetworkManagedServiceArgs.Builder =
+      def argsBuilder = com.pulumi.aws.odb.inputs.NetworkManagedServiceCrossRegionS3RestoreSourcesAccessArgs.builder
+      builder.crossRegionS3RestoreSourcesAccesses(args.map(_(argsBuilder).build)*)
+
     /**
      * @param kmsAccesses Specifies the configuration for KMS access from the ODB network.
      * @return builder

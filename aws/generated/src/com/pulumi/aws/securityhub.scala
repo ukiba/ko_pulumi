@@ -521,6 +521,15 @@ object securityhub:
       builder.awsAccountIds(args.map(_(argsBuilder).build)*)
 
     /**
+     * @param awsAccountNames The name of the AWS account in which a finding is generated. See String_Filter below for more details.
+     * @return builder
+     */
+    def awsAccountNames(args: Endofunction[com.pulumi.aws.securityhub.inputs.InsightFiltersAwsAccountNameArgs.Builder]*):
+        com.pulumi.aws.securityhub.inputs.InsightFiltersArgs.Builder =
+      def argsBuilder = com.pulumi.aws.securityhub.inputs.InsightFiltersAwsAccountNameArgs.builder
+      builder.awsAccountNames(args.map(_(argsBuilder).build)*)
+
+    /**
      * @param companyNames The name of the findings provider (company) that owns the solution (product) that generates findings. See String_Filter below for more details.
      * @return builder
      */
@@ -528,6 +537,42 @@ object securityhub:
         com.pulumi.aws.securityhub.inputs.InsightFiltersArgs.Builder =
       def argsBuilder = com.pulumi.aws.securityhub.inputs.InsightFiltersCompanyNameArgs.builder
       builder.companyNames(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param complianceAssociatedStandardsIds The unique identifier of a standard in which a control is enabled. See String_Filter below for more details.
+     * @return builder
+     */
+    def complianceAssociatedStandardsIds(args: Endofunction[com.pulumi.aws.securityhub.inputs.InsightFiltersComplianceAssociatedStandardsIdArgs.Builder]*):
+        com.pulumi.aws.securityhub.inputs.InsightFiltersArgs.Builder =
+      def argsBuilder = com.pulumi.aws.securityhub.inputs.InsightFiltersComplianceAssociatedStandardsIdArgs.builder
+      builder.complianceAssociatedStandardsIds(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param complianceSecurityControlIds The unique identifier of a control across standards. See String_Filter below for more details.
+     * @return builder
+     */
+    def complianceSecurityControlIds(args: Endofunction[com.pulumi.aws.securityhub.inputs.InsightFiltersComplianceSecurityControlIdArgs.Builder]*):
+        com.pulumi.aws.securityhub.inputs.InsightFiltersArgs.Builder =
+      def argsBuilder = com.pulumi.aws.securityhub.inputs.InsightFiltersComplianceSecurityControlIdArgs.builder
+      builder.complianceSecurityControlIds(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param complianceSecurityControlParametersNames The unique identifier of a control across standards. See String_Filter below for more details.
+     * @return builder
+     */
+    def complianceSecurityControlParametersNames(args: Endofunction[com.pulumi.aws.securityhub.inputs.InsightFiltersComplianceSecurityControlParametersNameArgs.Builder]*):
+        com.pulumi.aws.securityhub.inputs.InsightFiltersArgs.Builder =
+      def argsBuilder = com.pulumi.aws.securityhub.inputs.InsightFiltersComplianceSecurityControlParametersNameArgs.builder
+      builder.complianceSecurityControlParametersNames(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param complianceSecurityControlParametersValues The current value of a security control parameter. See String_Filter below for more details.
+     * @return builder
+     */
+    def complianceSecurityControlParametersValues(args: Endofunction[com.pulumi.aws.securityhub.inputs.InsightFiltersComplianceSecurityControlParametersValueArgs.Builder]*):
+        com.pulumi.aws.securityhub.inputs.InsightFiltersArgs.Builder =
+      def argsBuilder = com.pulumi.aws.securityhub.inputs.InsightFiltersComplianceSecurityControlParametersValueArgs.builder
+      builder.complianceSecurityControlParametersValues(args.map(_(argsBuilder).build)*)
 
     /**
      * @param complianceStatuses Exclusive to findings that are generated as the result of a check run against a specific rule in a supported standard, such as CIS AWS Foundations. Contains security standard-related finding details. See String Filter below for more details.

@@ -95,7 +95,7 @@ object elasticache:
   /**
    * Provides an ElastiCache user resource.
    *  
-   *  &gt; **Note:** All arguments including the username and passwords will be stored in the raw state as plain-text.
+   *  &gt; **Note:** All arguments including the username and passwords will be stored in the raw state as plain-text unless you use the write-only `passwordsWo` argument.
    */
   def User(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.elasticache.UserArgs.Builder])(using conf: KoPulumiConf) =

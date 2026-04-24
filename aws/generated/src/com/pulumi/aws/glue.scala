@@ -286,6 +286,15 @@ object glue:
       val argsBuilder = com.pulumi.aws.glue.inputs.CatalogTableTargetTableArgs.builder
       builder.targetTable(args(argsBuilder).build)
 
+    /**
+     * @param viewDefinition A structure that contains all the information that defines the view, including the dialect or dialects for the view, and the query. See `viewDefinition` below.
+     * @return builder
+     */
+    def viewDefinition(args: Endofunction[com.pulumi.aws.glue.inputs.CatalogTableViewDefinitionArgs.Builder]):
+        com.pulumi.aws.glue.CatalogTableArgs.Builder =
+      val argsBuilder = com.pulumi.aws.glue.inputs.CatalogTableViewDefinitionArgs.builder
+      builder.viewDefinition(args(argsBuilder).build)
+
   /**
    * Provides a Glue Job resource.
    *  
@@ -719,6 +728,26 @@ object glue:
       val argsBuilder = com.pulumi.aws.glue.inputs.MLTransformParametersArgs.builder
       builder.parameters(args(argsBuilder).build)
 
+  extension (builder: com.pulumi.aws.glue.inputs.CatalogTableOpenTableFormatInputIcebergInputIcebergTableInputSortOrderArgs.Builder)
+    /**
+     * @param fields The list of fields and their sort directions that define the ordering criteria for the Iceberg table data. See `fields` below.
+     * @return builder
+     */
+    def fields(args: Endofunction[com.pulumi.aws.glue.inputs.CatalogTableOpenTableFormatInputIcebergInputIcebergTableInputSortOrderFieldArgs.Builder]*):
+        com.pulumi.aws.glue.inputs.CatalogTableOpenTableFormatInputIcebergInputIcebergTableInputSortOrderArgs.Builder =
+      def argsBuilder = com.pulumi.aws.glue.inputs.CatalogTableOpenTableFormatInputIcebergInputIcebergTableInputSortOrderFieldArgs.builder
+      builder.fields(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.aws.glue.inputs.CatalogTableViewDefinitionArgs.Builder)
+    /**
+     * @param representations A list of structures that contains the dialect of the view, and the query that defines the view. See `representations` below.
+     * @return builder
+     */
+    def representations(args: Endofunction[com.pulumi.aws.glue.inputs.CatalogTableViewDefinitionRepresentationArgs.Builder]*):
+        com.pulumi.aws.glue.inputs.CatalogTableViewDefinitionArgs.Builder =
+      def argsBuilder = com.pulumi.aws.glue.inputs.CatalogTableViewDefinitionRepresentationArgs.builder
+      builder.representations(args.map(_(argsBuilder).build)*)
+
   extension (builder: com.pulumi.aws.glue.inputs.MLTransformParametersArgs.Builder)
     /**
      * @param findMatchesParameters The parameters for the find matches algorithm. see Find Matches Parameters.
@@ -738,6 +767,16 @@ object glue:
         com.pulumi.aws.glue.inputs.CatalogDatabaseCreateTableDefaultPermissionArgs.Builder =
       val argsBuilder = com.pulumi.aws.glue.inputs.CatalogDatabaseCreateTableDefaultPermissionPrincipalArgs.builder
       builder.principal(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.glue.inputs.CatalogTableOpenTableFormatInputIcebergInputArgs.Builder)
+    /**
+     * @param icebergTableInput Configuration parameters, including table properties and metadata specifications. See `icebergTableInput` below.
+     * @return builder
+     */
+    def icebergTableInput(args: Endofunction[com.pulumi.aws.glue.inputs.CatalogTableOpenTableFormatInputIcebergInputIcebergTableInputArgs.Builder]):
+        com.pulumi.aws.glue.inputs.CatalogTableOpenTableFormatInputIcebergInputArgs.Builder =
+      val argsBuilder = com.pulumi.aws.glue.inputs.CatalogTableOpenTableFormatInputIcebergInputIcebergTableInputArgs.builder
+      builder.icebergTableInput(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.glue.inputs.SecurityConfigurationEncryptionConfigurationArgs.Builder)
     def cloudwatchEncryption(args: Endofunction[com.pulumi.aws.glue.inputs.SecurityConfigurationEncryptionConfigurationCloudwatchEncryptionArgs.Builder]):
@@ -963,6 +1002,15 @@ object glue:
       val argsBuilder = com.pulumi.aws.glue.inputs.CatalogTableTargetTableArgs.builder
       builder.targetTable(args(argsBuilder).build)
 
+    /**
+     * @param viewDefinition A structure that contains all the information that defines the view, including the dialect or dialects for the view, and the query. See `viewDefinition` below.
+     * @return builder
+     */
+    def viewDefinition(args: Endofunction[com.pulumi.aws.glue.inputs.CatalogTableViewDefinitionArgs.Builder]):
+        com.pulumi.aws.glue.inputs.CatalogTableState.Builder =
+      val argsBuilder = com.pulumi.aws.glue.inputs.CatalogTableViewDefinitionArgs.builder
+      builder.viewDefinition(args(argsBuilder).build)
+
   extension (builder: com.pulumi.aws.glue.inputs.CatalogTableOptimizerConfigurationOrphanFileDeletionConfigurationArgs.Builder)
     /**
      * @param icebergConfiguration The configuration for an Iceberg orphan file deletion optimizer.
@@ -1047,6 +1095,16 @@ object glue:
         com.pulumi.aws.glue.inputs.TriggerState.Builder =
       val argsBuilder = com.pulumi.aws.glue.inputs.TriggerPredicateArgs.builder
       builder.predicate(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.glue.inputs.CatalogTableOpenTableFormatInputIcebergInputIcebergTableInputPartitionSpecArgs.Builder)
+    /**
+     * @param fields The list of partition fields that define how the table data should be partitioned. See `fields` below.
+     * @return builder
+     */
+    def fields(args: Endofunction[com.pulumi.aws.glue.inputs.CatalogTableOpenTableFormatInputIcebergInputIcebergTableInputPartitionSpecFieldArgs.Builder]*):
+        com.pulumi.aws.glue.inputs.CatalogTableOpenTableFormatInputIcebergInputIcebergTableInputPartitionSpecArgs.Builder =
+      def argsBuilder = com.pulumi.aws.glue.inputs.CatalogTableOpenTableFormatInputIcebergInputIcebergTableInputPartitionSpecFieldArgs.builder
+      builder.fields(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.aws.glue.inputs.CatalogTableStorageDescriptorArgs.Builder)
     /**
@@ -1217,6 +1275,16 @@ object glue:
       val argsBuilder = com.pulumi.aws.glue.inputs.ConnectionPhysicalConnectionRequirementsArgs.builder
       builder.physicalConnectionRequirements(args(argsBuilder).build)
 
+  extension (builder: com.pulumi.aws.glue.inputs.CatalogTableOpenTableFormatInputIcebergInputIcebergTableInputSchemaArgs.Builder)
+    /**
+     * @param fields The list of field definitions that make up the table schema. See `fields` below.
+     * @return builder
+     */
+    def fields(args: Endofunction[com.pulumi.aws.glue.inputs.CatalogTableOpenTableFormatInputIcebergInputIcebergTableInputSchemaFieldArgs.Builder]*):
+        com.pulumi.aws.glue.inputs.CatalogTableOpenTableFormatInputIcebergInputIcebergTableInputSchemaArgs.Builder =
+      def argsBuilder = com.pulumi.aws.glue.inputs.CatalogTableOpenTableFormatInputIcebergInputIcebergTableInputSchemaFieldArgs.builder
+      builder.fields(args.map(_(argsBuilder).build)*)
+
   extension (builder: com.pulumi.aws.glue.inputs.CatalogTableOptimizerConfigurationArgs.Builder)
     /**
      * @param orphanFileDeletionConfiguration The configuration block for an orphan file deletion optimizer. See Orphan File Deletion Configuration for additional details.
@@ -1361,3 +1429,31 @@ object glue:
         com.pulumi.aws.glue.inputs.DataCatalogEncryptionSettingsState.Builder =
       val argsBuilder = com.pulumi.aws.glue.inputs.DataCatalogEncryptionSettingsDataCatalogEncryptionSettingsArgs.builder
       builder.dataCatalogEncryptionSettings(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.glue.inputs.CatalogTableOpenTableFormatInputIcebergInputIcebergTableInputArgs.Builder)
+    /**
+     * @param partitionSpec The partitioning specification that defines how the Iceberg table data will be organized and partitioned for optimal query performance. See `partitionSpec` below.
+     * @return builder
+     */
+    def partitionSpec(args: Endofunction[com.pulumi.aws.glue.inputs.CatalogTableOpenTableFormatInputIcebergInputIcebergTableInputPartitionSpecArgs.Builder]):
+        com.pulumi.aws.glue.inputs.CatalogTableOpenTableFormatInputIcebergInputIcebergTableInputArgs.Builder =
+      val argsBuilder = com.pulumi.aws.glue.inputs.CatalogTableOpenTableFormatInputIcebergInputIcebergTableInputPartitionSpecArgs.builder
+      builder.partitionSpec(args(argsBuilder).build)
+
+    /**
+     * @param schema The schema definition that specifies the structure, field types, and metadata for the Iceberg table. See `schema` below.
+     * @return builder
+     */
+    def schema(args: Endofunction[com.pulumi.aws.glue.inputs.CatalogTableOpenTableFormatInputIcebergInputIcebergTableInputSchemaArgs.Builder]):
+        com.pulumi.aws.glue.inputs.CatalogTableOpenTableFormatInputIcebergInputIcebergTableInputArgs.Builder =
+      val argsBuilder = com.pulumi.aws.glue.inputs.CatalogTableOpenTableFormatInputIcebergInputIcebergTableInputSchemaArgs.builder
+      builder.schema(args(argsBuilder).build)
+
+    /**
+     * @param sortOrder The sort order specification that defines how data should be ordered within each partition to optimize query performance. See `sortOrder` below.
+     * @return builder
+     */
+    def sortOrder(args: Endofunction[com.pulumi.aws.glue.inputs.CatalogTableOpenTableFormatInputIcebergInputIcebergTableInputSortOrderArgs.Builder]):
+        com.pulumi.aws.glue.inputs.CatalogTableOpenTableFormatInputIcebergInputIcebergTableInputArgs.Builder =
+      val argsBuilder = com.pulumi.aws.glue.inputs.CatalogTableOpenTableFormatInputIcebergInputIcebergTableInputSortOrderArgs.builder
+      builder.sortOrder(args(argsBuilder).build)

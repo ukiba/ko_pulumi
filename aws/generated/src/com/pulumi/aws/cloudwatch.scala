@@ -41,6 +41,19 @@ object cloudwatch:
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
+  /**
+   * Manages AWS CloudWatch OTel enrichment. This is a singleton resource that enables OTel enrichment at the account level.
+   *  
+   *  &gt; **NOTE:** This resource requires the `aws.observabilityadmin.TelemetryEnrichment` resource to be configured first. Without telemetry enrichment enabled, OTel enrichment will not function properly even if the API accepts the configuration.
+   */
+  def OtelEnrichment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.cloudwatch.OtelEnrichmentArgs.Builder]) =
+    val argsBuilder = com.pulumi.aws.cloudwatch.OtelEnrichmentArgs.builder
+    
+    com.pulumi.aws.cloudwatch.OtelEnrichment(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder).build)
+
   extension (builder: com.pulumi.aws.cloudwatch.EventEndpointArgs.Builder)
     /**
      * @param eventBuses The event buses to use. The names of the event buses must be identical in each Region. Exactly two event buses are required. Documented below.
@@ -125,6 +138,21 @@ object cloudwatch:
       case None          =>
     
     com.pulumi.aws.cloudwatch.EventBus(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder).build)
+
+  /** Manages an AWS CloudWatch Alarm Mute Rule. */
+  def AlarmMuteRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.cloudwatch.AlarmMuteRuleArgs.Builder])(using conf: KoPulumiConf) =
+    var argsBuilder = com.pulumi.aws.cloudwatch.AlarmMuteRuleArgs.builder
+    conf.logicalName2pysicalName(name) match
+      case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
+      case None               =>
+    conf.logicalName2tagName(name) match
+      case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
+      case None          =>
+    
+    com.pulumi.aws.cloudwatch.AlarmMuteRule(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
@@ -298,6 +326,12 @@ object cloudwatch:
     com.pulumi.aws.cloudwatch.LogResourcePolicy(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
+
+  extension (builder: com.pulumi.aws.cloudwatch.OtelEnrichmentArgs.Builder)
+    def timeouts(args: Endofunction[com.pulumi.aws.cloudwatch.inputs.OtelEnrichmentTimeoutsArgs.Builder]):
+        com.pulumi.aws.cloudwatch.OtelEnrichmentArgs.Builder =
+      val argsBuilder = com.pulumi.aws.cloudwatch.inputs.OtelEnrichmentTimeoutsArgs.builder
+      builder.timeouts(args(argsBuilder).build)
 
   /** Provides a CloudWatch Dashboard resource. */
   def Dashboard(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
@@ -477,6 +511,15 @@ object cloudwatch:
       builder.policyDocument(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.cloudwatch.MetricAlarmArgs.Builder)
+    /**
+     * @param evaluationCriteria The evaluation criteria for PromQL alarms. Cannot be used with traditional metric alarm parameters.
+     * @return builder
+     */
+    def evaluationCriteria(args: Endofunction[com.pulumi.aws.cloudwatch.inputs.MetricAlarmEvaluationCriteriaArgs.Builder]):
+        com.pulumi.aws.cloudwatch.MetricAlarmArgs.Builder =
+      val argsBuilder = com.pulumi.aws.cloudwatch.inputs.MetricAlarmEvaluationCriteriaArgs.builder
+      builder.evaluationCriteria(args(argsBuilder).build)
+
     /**
      * @param metricQueries Enables you to create an alarm based on a metric math expression. You may specify at most 20.
      * @return builder
@@ -948,6 +991,26 @@ object cloudwatch:
       val argsBuilder = com.pulumi.aws.cloudwatch.inputs.GetLogDataProtectionPolicyDocumentStatementOperationDeidentifyMaskConfigArgs.builder
       builder.maskConfig(args(argsBuilder).build)
 
+  extension (builder: com.pulumi.aws.cloudwatch.inputs.AlarmMuteRuleRuleArgs.Builder)
+    /**
+     * @param schedule Schedule for the mute rule. See `schedule` block below for details.
+     * @return builder
+     */
+    def schedule(args: Endofunction[com.pulumi.aws.cloudwatch.inputs.AlarmMuteRuleRuleScheduleArgs.Builder]):
+        com.pulumi.aws.cloudwatch.inputs.AlarmMuteRuleRuleArgs.Builder =
+      val argsBuilder = com.pulumi.aws.cloudwatch.inputs.AlarmMuteRuleRuleScheduleArgs.builder
+      builder.schedule(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.cloudwatch.inputs.MetricAlarmEvaluationCriteriaArgs.Builder)
+    /**
+     * @param promqlCriteria The PromQL criteria for the alarm evaluation.
+     * @return builder
+     */
+    def promqlCriteria(args: Endofunction[com.pulumi.aws.cloudwatch.inputs.MetricAlarmEvaluationCriteriaPromqlCriteriaArgs.Builder]):
+        com.pulumi.aws.cloudwatch.inputs.MetricAlarmEvaluationCriteriaArgs.Builder =
+      val argsBuilder = com.pulumi.aws.cloudwatch.inputs.MetricAlarmEvaluationCriteriaPromqlCriteriaArgs.builder
+      builder.promqlCriteria(args(argsBuilder).build)
+
   extension (builder: com.pulumi.aws.cloudwatch.inputs.LogTransformerTransformerConfigArgs.Builder)
     /**
      * @param addKeys Adds new key-value pairs to the log event. See `addKeys` below for details.
@@ -1182,6 +1245,16 @@ object cloudwatch:
       val argsBuilder = com.pulumi.aws.cloudwatch.inputs.InternetMonitorInternetMeasurementsLogDeliveryS3ConfigArgs.builder
       builder.s3Config(args(argsBuilder).build)
 
+  extension (builder: com.pulumi.aws.cloudwatch.inputs.EventConnectionAuthParametersConnectivityParametersArgs.Builder)
+    /**
+     * @param resourceParameters The parameters for EventBridge to use when invoking the authentication endpoint. Documented below.
+     * @return builder
+     */
+    def resourceParameters(args: Endofunction[com.pulumi.aws.cloudwatch.inputs.EventConnectionAuthParametersConnectivityParametersResourceParametersArgs.Builder]):
+        com.pulumi.aws.cloudwatch.inputs.EventConnectionAuthParametersConnectivityParametersArgs.Builder =
+      val argsBuilder = com.pulumi.aws.cloudwatch.inputs.EventConnectionAuthParametersConnectivityParametersResourceParametersArgs.builder
+      builder.resourceParameters(args(argsBuilder).build)
+
   extension (builder: com.pulumi.aws.cloudwatch.inputs.LogDeliveryState.Builder)
     /**
      * @param s3DeliveryConfigurations Parameters that are valid only when the delivery&#39;s delivery destination is an S3 bucket.
@@ -1191,6 +1264,12 @@ object cloudwatch:
         com.pulumi.aws.cloudwatch.inputs.LogDeliveryState.Builder =
       def argsBuilder = com.pulumi.aws.cloudwatch.inputs.LogDeliveryS3DeliveryConfigurationArgs.builder
       builder.s3DeliveryConfigurations(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.aws.cloudwatch.inputs.OtelEnrichmentState.Builder)
+    def timeouts(args: Endofunction[com.pulumi.aws.cloudwatch.inputs.OtelEnrichmentTimeoutsArgs.Builder]):
+        com.pulumi.aws.cloudwatch.inputs.OtelEnrichmentState.Builder =
+      val argsBuilder = com.pulumi.aws.cloudwatch.inputs.OtelEnrichmentTimeoutsArgs.builder
+      builder.timeouts(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.cloudwatch.inputs.EventTargetState.Builder)
     /**
@@ -1347,6 +1426,27 @@ object cloudwatch:
         com.pulumi.aws.cloudwatch.inputs.EventTargetEcsTargetArgs.Builder =
       def argsBuilder = com.pulumi.aws.cloudwatch.inputs.EventTargetEcsTargetPlacementConstraintArgs.builder
       builder.placementConstraints(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.aws.cloudwatch.inputs.AlarmMuteRuleState.Builder)
+    /**
+     * @param muteTargets Alarms to mute. See `muteTargets` block below for details.
+     * @return builder
+     */
+    def muteTargets(args: Endofunction[com.pulumi.aws.cloudwatch.inputs.AlarmMuteRuleMuteTargetsArgs.Builder]):
+        com.pulumi.aws.cloudwatch.inputs.AlarmMuteRuleState.Builder =
+      val argsBuilder = com.pulumi.aws.cloudwatch.inputs.AlarmMuteRuleMuteTargetsArgs.builder
+      builder.muteTargets(args(argsBuilder).build)
+
+    /**
+     * @param rule Rule definition for the mute rule. See `rule` block below for details.
+     *  
+     *  The following arguments are optional:
+     * @return builder
+     */
+    def rule(args: Endofunction[com.pulumi.aws.cloudwatch.inputs.AlarmMuteRuleRuleArgs.Builder]):
+        com.pulumi.aws.cloudwatch.inputs.AlarmMuteRuleState.Builder =
+      val argsBuilder = com.pulumi.aws.cloudwatch.inputs.AlarmMuteRuleRuleArgs.builder
+      builder.rule(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.cloudwatch.inputs.LogTransformerTransformerConfigAddKeysArgs.Builder)
     /**
@@ -1641,6 +1741,15 @@ object cloudwatch:
 
   extension (builder: com.pulumi.aws.cloudwatch.inputs.MetricAlarmState.Builder)
     /**
+     * @param evaluationCriteria The evaluation criteria for PromQL alarms. Cannot be used with traditional metric alarm parameters.
+     * @return builder
+     */
+    def evaluationCriteria(args: Endofunction[com.pulumi.aws.cloudwatch.inputs.MetricAlarmEvaluationCriteriaArgs.Builder]):
+        com.pulumi.aws.cloudwatch.inputs.MetricAlarmState.Builder =
+      val argsBuilder = com.pulumi.aws.cloudwatch.inputs.MetricAlarmEvaluationCriteriaArgs.builder
+      builder.evaluationCriteria(args(argsBuilder).build)
+
+    /**
      * @param metricQueries Enables you to create an alarm based on a metric math expression. You may specify at most 20.
      * @return builder
      */
@@ -1714,6 +1823,15 @@ object cloudwatch:
         com.pulumi.aws.cloudwatch.inputs.EventConnectionAuthParametersArgs.Builder =
       val argsBuilder = com.pulumi.aws.cloudwatch.inputs.EventConnectionAuthParametersBasicArgs.builder
       builder.basic(args(argsBuilder).build)
+
+    /**
+     * @param connectivityParameters Parameters used for `oauth` with private API. Documented below.
+     * @return builder
+     */
+    def connectivityParameters(args: Endofunction[com.pulumi.aws.cloudwatch.inputs.EventConnectionAuthParametersConnectivityParametersArgs.Builder]):
+        com.pulumi.aws.cloudwatch.inputs.EventConnectionAuthParametersArgs.Builder =
+      val argsBuilder = com.pulumi.aws.cloudwatch.inputs.EventConnectionAuthParametersConnectivityParametersArgs.builder
+      builder.connectivityParameters(args(argsBuilder).build)
 
     /**
      * @param invocationHttpParameters Invocation Http Parameters are additional credentials used to sign each Invocation of the ApiDestination created from this Connection. If the ApiDestination Rule Target has additional HttpParameters, the values will be merged together, with the Connection Invocation Http Parameters taking precedence. Secret values are stored and managed by AWS Secrets Manager. A maximum of 1 are allowed. Documented below.
@@ -1797,3 +1915,24 @@ object cloudwatch:
         com.pulumi.aws.cloudwatch.inputs.EventConnectionState.Builder =
       val argsBuilder = com.pulumi.aws.cloudwatch.inputs.EventConnectionInvocationConnectivityParametersArgs.builder
       builder.invocationConnectivityParameters(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.cloudwatch.AlarmMuteRuleArgs.Builder)
+    /**
+     * @param muteTargets Alarms to mute. See `muteTargets` block below for details.
+     * @return builder
+     */
+    def muteTargets(args: Endofunction[com.pulumi.aws.cloudwatch.inputs.AlarmMuteRuleMuteTargetsArgs.Builder]):
+        com.pulumi.aws.cloudwatch.AlarmMuteRuleArgs.Builder =
+      val argsBuilder = com.pulumi.aws.cloudwatch.inputs.AlarmMuteRuleMuteTargetsArgs.builder
+      builder.muteTargets(args(argsBuilder).build)
+
+    /**
+     * @param rule Rule definition for the mute rule. See `rule` block below for details.
+     *  
+     *  The following arguments are optional:
+     * @return builder
+     */
+    def rule(args: Endofunction[com.pulumi.aws.cloudwatch.inputs.AlarmMuteRuleRuleArgs.Builder]):
+        com.pulumi.aws.cloudwatch.AlarmMuteRuleArgs.Builder =
+      val argsBuilder = com.pulumi.aws.cloudwatch.inputs.AlarmMuteRuleRuleArgs.builder
+      builder.rule(args(argsBuilder).build)

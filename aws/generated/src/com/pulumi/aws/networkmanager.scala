@@ -72,6 +72,19 @@ object networkmanager:
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
+  /**
+   * Associates an EC2 managed prefix list with a Network Manager Cloud WAN core network. Once associated, the prefix list can be referenced in the core network policy document.
+   *  
+   *  &gt; **NOTE:** The prefix list must be defined in the [Cloud WAN home region](https://docs.aws.amazon.com/network-manager/latest/cloudwan/what-is-cloudwan.html#cloudwan-home-region) (us-west-2). Although defined in the Cloud WAN home region, the prefix-list based policy will apply globally to all the relevant core network edges (regions) in your core network.
+   */
+  def PrefixListAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.networkmanager.PrefixListAssociationArgs.Builder]) =
+    val argsBuilder = com.pulumi.aws.networkmanager.PrefixListAssociationArgs.builder
+    
+    com.pulumi.aws.networkmanager.PrefixListAssociation(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder).build)
+
   extension (builder: com.pulumi.aws.networkmanager.DxGatewayAttachmentArgs.Builder)
     def timeouts(args: Endofunction[com.pulumi.aws.networkmanager.inputs.DxGatewayAttachmentTimeoutsArgs.Builder]):
         com.pulumi.aws.networkmanager.DxGatewayAttachmentArgs.Builder =
@@ -311,6 +324,18 @@ object networkmanager:
         java.util.concurrent.CompletableFuture[com.pulumi.aws.networkmanager.outputs.GetConnectionsResult] =
       val argsBuilder = com.pulumi.aws.networkmanager.inputs.GetConnectionsPlainArgs.builder
       com.pulumi.aws.networkmanager.NetworkmanagerFunctions.getConnectionsPlain(args(argsBuilder).build)
+
+    /** Provides details about an AWS Network Manager Core Network. */
+    def getCoreNetwork(args: Endofunction[com.pulumi.aws.networkmanager.inputs.GetCoreNetworkArgs.Builder] = identity):
+        com.pulumi.core.Output[com.pulumi.aws.networkmanager.outputs.GetCoreNetworkResult] =
+      val argsBuilder = com.pulumi.aws.networkmanager.inputs.GetCoreNetworkArgs.builder
+      com.pulumi.aws.networkmanager.NetworkmanagerFunctions.getCoreNetwork(args(argsBuilder).build)
+
+    /** Provides details about an AWS Network Manager Core Network. */
+    def getCoreNetworkPlain(args: Endofunction[com.pulumi.aws.networkmanager.inputs.GetCoreNetworkPlainArgs.Builder] = identity):
+        java.util.concurrent.CompletableFuture[com.pulumi.aws.networkmanager.outputs.GetCoreNetworkResult] =
+      val argsBuilder = com.pulumi.aws.networkmanager.inputs.GetCoreNetworkPlainArgs.builder
+      com.pulumi.aws.networkmanager.NetworkmanagerFunctions.getCoreNetworkPlain(args(argsBuilder).build)
 
     /**
      * Generates a Core Network policy document in JSON format for use with resources that expect core network policy documents such as `awsccNetworkmanagerCoreNetwork`. It follows the API definition from the [core-network-policy documentation](https://docs.aws.amazon.com/vpc/latest/cloudwan/cloudwan-policies-json.html).

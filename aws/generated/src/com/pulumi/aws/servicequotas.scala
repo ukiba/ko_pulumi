@@ -62,6 +62,19 @@ object servicequotas:
       com.pulumi.aws.servicequotas.ServicequotasFunctions.getTemplatesPlain(args(argsBuilder).build)
 
   /**
+   * Manages AWS Service Quotas Automatic Management.
+   *  
+   *  &gt; **Note:** Due to AWS API limitations, the `notificationArn` attribute cannot be removed once set without recreating the resource. Removing this value from your configuration will trigger resource replacement.
+   */
+  def AutoManagement(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.servicequotas.AutoManagementArgs.Builder]) =
+    val argsBuilder = com.pulumi.aws.servicequotas.AutoManagementArgs.builder
+    
+    com.pulumi.aws.servicequotas.AutoManagement(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder).build)
+
+  /**
    * Manages an individual Service Quota.
    *  
    *  &gt; **NOTE:** Global quotas apply to all AWS regions, but can only be accessed in `us-east-1` in the Commercial partition or `us-gov-west-1` in the GovCloud partition. In other regions, the AWS API will return the error `The request failed because the specified service does not exist.`

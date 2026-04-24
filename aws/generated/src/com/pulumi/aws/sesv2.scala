@@ -37,7 +37,7 @@ object sesv2:
 
   extension (builder: com.pulumi.aws.sesv2.ConfigurationSetEventDestinationArgs.Builder)
     /**
-     * @param eventDestination A name that identifies the event destination within the configuration set.
+     * @param eventDestination An object that defines the event destination. See `eventDestination` Block for details.
      * @return builder
      */
     def eventDestination(args: Endofunction[com.pulumi.aws.sesv2.inputs.ConfigurationSetEventDestinationEventDestinationArgs.Builder]):
@@ -319,7 +319,7 @@ object sesv2:
 
   extension (builder: com.pulumi.aws.sesv2.inputs.ConfigurationSetEventDestinationState.Builder)
     /**
-     * @param eventDestination A name that identifies the event destination within the configuration set.
+     * @param eventDestination An object that defines the event destination. See `eventDestination` Block for details.
      * @return builder
      */
     def eventDestination(args: Endofunction[com.pulumi.aws.sesv2.inputs.ConfigurationSetEventDestinationEventDestinationArgs.Builder]):

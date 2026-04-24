@@ -50,7 +50,7 @@ object budgets:
       builder.costTypes(args(argsBuilder).build)
 
     /**
-     * @param filterExpression Object containing Filter Expression to apply to budget. Conflicts with `costFilter`.
+     * @param filterExpression Object containing Filter Expression to apply to budget. Conflicts with `costFilter` and requires `metrics`.
      * @return builder
      */
     def filterExpression(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetFilterExpressionArgs.Builder]):
@@ -447,7 +447,7 @@ object budgets:
       builder.costTypes(args(argsBuilder).build)
 
     /**
-     * @param filterExpression Object containing Filter Expression to apply to budget. Conflicts with `costFilter`.
+     * @param filterExpression Object containing Filter Expression to apply to budget. Conflicts with `costFilter` and requires `metrics`.
      * @return builder
      */
     def filterExpression(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetFilterExpressionArgs.Builder]):

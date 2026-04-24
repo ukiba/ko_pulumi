@@ -84,7 +84,7 @@ object amp:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /**
-   * &gt; **Note:** If you change a Scraper&#39;s source (EKS cluster), Terraform
+   * &gt; **Note:** If you change a Scraper&#39;s source (EKS cluster or VPC configuration), Terraform
    *  will delete the current Scraper and create a new one.
    *  
    *  Provides an Amazon Managed Service for Prometheus fully managed collector
@@ -326,6 +326,17 @@ object amp:
         com.pulumi.aws.amp.inputs.ScraperSourceArgs.Builder =
       val argsBuilder = com.pulumi.aws.amp.inputs.ScraperSourceEksArgs.builder
       builder.eks(args(argsBuilder).build)
+
+    /**
+     * @param vpc Configuration block for a VPC source. See `vpc`.
+     *  
+     *  &gt; **NOTE:** Either `eks` or `vpc` must be specified, but not both.
+     * @return builder
+     */
+    def vpc(args: Endofunction[com.pulumi.aws.amp.inputs.ScraperSourceVpcArgs.Builder]):
+        com.pulumi.aws.amp.inputs.ScraperSourceArgs.Builder =
+      val argsBuilder = com.pulumi.aws.amp.inputs.ScraperSourceVpcArgs.builder
+      builder.vpc(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.amp.inputs.ResourcePolicyState.Builder)
     def timeouts(args: Endofunction[com.pulumi.aws.amp.inputs.ResourcePolicyTimeoutsArgs.Builder]):

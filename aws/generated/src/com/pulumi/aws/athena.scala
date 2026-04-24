@@ -254,6 +254,15 @@ object athena:
       builder.monitoringConfiguration(args(argsBuilder).build)
 
     /**
+     * @param queryResultsS3AccessGrantsConfiguration Configuration block for S3 access grants. See Query Results S3 Access Grants Configuration below.
+     * @return builder
+     */
+    def queryResultsS3AccessGrantsConfiguration(args: Endofunction[com.pulumi.aws.athena.inputs.WorkgroupConfigurationQueryResultsS3AccessGrantsConfigurationArgs.Builder]):
+        com.pulumi.aws.athena.inputs.WorkgroupConfigurationArgs.Builder =
+      val argsBuilder = com.pulumi.aws.athena.inputs.WorkgroupConfigurationQueryResultsS3AccessGrantsConfigurationArgs.builder
+      builder.queryResultsS3AccessGrantsConfiguration(args(argsBuilder).build)
+
+    /**
      * @param resultConfiguration Configuration block with result settings. See Result Configuration below.
      * @return builder
      */

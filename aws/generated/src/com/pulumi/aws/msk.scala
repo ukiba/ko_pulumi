@@ -96,6 +96,18 @@ object msk:
       val argsBuilder = com.pulumi.aws.msk.inputs.GetKafkaVersionPlainArgs.builder
       com.pulumi.aws.msk.MskFunctions.getKafkaVersionPlain(args(argsBuilder).build)
 
+    /** Get information on an Amazon MSK Topic. */
+    def getTopic(args: Endofunction[com.pulumi.aws.msk.inputs.GetTopicArgs.Builder] = identity):
+        com.pulumi.core.Output[com.pulumi.aws.msk.outputs.GetTopicResult] =
+      val argsBuilder = com.pulumi.aws.msk.inputs.GetTopicArgs.builder
+      com.pulumi.aws.msk.MskFunctions.getTopic(args(argsBuilder).build)
+
+    /** Get information on an Amazon MSK Topic. */
+    def getTopicPlain(args: Endofunction[com.pulumi.aws.msk.inputs.GetTopicPlainArgs.Builder] = identity):
+        java.util.concurrent.CompletableFuture[com.pulumi.aws.msk.outputs.GetTopicResult] =
+      val argsBuilder = com.pulumi.aws.msk.inputs.GetTopicPlainArgs.builder
+      com.pulumi.aws.msk.MskFunctions.getTopicPlain(args(argsBuilder).build)
+
     /** Get information on an Amazon MSK VPC Connection. */
     def getVpcConnection(args: Endofunction[com.pulumi.aws.msk.inputs.GetVpcConnectionArgs.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.aws.msk.outputs.GetVpcConnectionResult] =
@@ -268,6 +280,18 @@ object msk:
       val argsBuilder = com.pulumi.aws.msk.inputs.ClusterRebalancingArgs.builder
       builder.rebalancing(args(argsBuilder).build)
 
+  /** Manages an AWS Managed Streaming for Kafka Topic. */
+  def Topic(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.msk.TopicArgs.Builder])(using conf: KoPulumiConf) =
+    var argsBuilder = com.pulumi.aws.msk.TopicArgs.builder
+    conf.logicalName2pysicalName(name) match
+      case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
+      case None               =>
+    
+    com.pulumi.aws.msk.Topic(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder).build)
+
   /**
    * Associates SCRAM secrets stored in the Secrets Manager service with a Managed Streaming for Kafka (MSK) cluster.
    *  
@@ -290,6 +314,12 @@ object msk:
     com.pulumi.aws.msk.ScramSecretAssociation(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
+
+  extension (builder: com.pulumi.aws.msk.TopicArgs.Builder)
+    def timeouts(args: Endofunction[com.pulumi.aws.msk.inputs.TopicTimeoutsArgs.Builder]):
+        com.pulumi.aws.msk.TopicArgs.Builder =
+      val argsBuilder = com.pulumi.aws.msk.inputs.TopicTimeoutsArgs.builder
+      builder.timeouts(args(argsBuilder).build)
 
   /** Resource for managing an AWS Managed Streaming for Kafka Cluster Policy. */
   def ClusterPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
@@ -430,6 +460,12 @@ object msk:
         com.pulumi.aws.msk.inputs.ReplicatorKafkaClusterArgs.Builder =
       val argsBuilder = com.pulumi.aws.msk.inputs.ReplicatorKafkaClusterVpcConfigArgs.builder
       builder.vpcConfig(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.msk.inputs.TopicState.Builder)
+    def timeouts(args: Endofunction[com.pulumi.aws.msk.inputs.TopicTimeoutsArgs.Builder]):
+        com.pulumi.aws.msk.inputs.TopicState.Builder =
+      val argsBuilder = com.pulumi.aws.msk.inputs.TopicTimeoutsArgs.builder
+      builder.timeouts(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.msk.inputs.ClusterBrokerNodeGroupInfoConnectivityInfoVpcConnectivityClientAuthenticationArgs.Builder)
     /**
@@ -579,7 +615,7 @@ object msk:
       builder.connectivityInfo(args(argsBuilder).build)
 
     /**
-     * @param storageInfo A block that contains information about storage volumes attached to MSK broker nodes. See brokerNodeGroupInfo storage_info Argument Reference below.
+     * @param storageInfo A block that contains information about storage volumes attached to MSK broker nodes. See brokerNodeGroupInfo storage_info Argument Reference below. This block must not be specified when an Express instance type is specified for `instanceType`.
      * @return builder
      */
     def storageInfo(args: Endofunction[com.pulumi.aws.msk.inputs.ClusterBrokerNodeGroupInfoStorageInfoArgs.Builder]):

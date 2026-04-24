@@ -622,6 +622,30 @@ object iam:
       val argsBuilder = com.pulumi.aws.iam.inputs.GetRolePlainArgs.builder
       com.pulumi.aws.iam.IamFunctions.getRolePlain(args(argsBuilder).build)
 
+    /** Use this data source to get the names of inline policies associated with an IAM role. */
+    def getRolePolicies(args: Endofunction[com.pulumi.aws.iam.inputs.GetRolePoliciesArgs.Builder] = identity):
+        com.pulumi.core.Output[com.pulumi.aws.iam.outputs.GetRolePoliciesResult] =
+      val argsBuilder = com.pulumi.aws.iam.inputs.GetRolePoliciesArgs.builder
+      com.pulumi.aws.iam.IamFunctions.getRolePolicies(args(argsBuilder).build)
+
+    /** Use this data source to get the names of inline policies associated with an IAM role. */
+    def getRolePoliciesPlain(args: Endofunction[com.pulumi.aws.iam.inputs.GetRolePoliciesPlainArgs.Builder] = identity):
+        java.util.concurrent.CompletableFuture[com.pulumi.aws.iam.outputs.GetRolePoliciesResult] =
+      val argsBuilder = com.pulumi.aws.iam.inputs.GetRolePoliciesPlainArgs.builder
+      com.pulumi.aws.iam.IamFunctions.getRolePoliciesPlain(args(argsBuilder).build)
+
+    /** Provides details about the managed policies attached to an AWS IAM Role. */
+    def getRolePolicyAttachments(args: Endofunction[com.pulumi.aws.iam.inputs.GetRolePolicyAttachmentsArgs.Builder] = identity):
+        com.pulumi.core.Output[com.pulumi.aws.iam.outputs.GetRolePolicyAttachmentsResult] =
+      val argsBuilder = com.pulumi.aws.iam.inputs.GetRolePolicyAttachmentsArgs.builder
+      com.pulumi.aws.iam.IamFunctions.getRolePolicyAttachments(args(argsBuilder).build)
+
+    /** Provides details about the managed policies attached to an AWS IAM Role. */
+    def getRolePolicyAttachmentsPlain(args: Endofunction[com.pulumi.aws.iam.inputs.GetRolePolicyAttachmentsPlainArgs.Builder] = identity):
+        java.util.concurrent.CompletableFuture[com.pulumi.aws.iam.outputs.GetRolePolicyAttachmentsResult] =
+      val argsBuilder = com.pulumi.aws.iam.inputs.GetRolePolicyAttachmentsPlainArgs.builder
+      com.pulumi.aws.iam.IamFunctions.getRolePolicyAttachmentsPlain(args(argsBuilder).build)
+
     /** Use this data source to get the ARNs and Names of IAM Roles. */
     def getRoles(args: Endofunction[com.pulumi.aws.iam.inputs.GetRolesArgs.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.aws.iam.outputs.GetRolesResult] =

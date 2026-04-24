@@ -4,6 +4,12 @@ package aws
 import com.pulumi.resources.CustomResourceOptions
 
 object ec2transitgateway:
+  extension (builder: com.pulumi.aws.ec2transitgateway.MeteringPolicyArgs.Builder)
+    def timeouts(args: Endofunction[com.pulumi.aws.ec2transitgateway.inputs.MeteringPolicyTimeoutsArgs.Builder]):
+        com.pulumi.aws.ec2transitgateway.MeteringPolicyArgs.Builder =
+      val argsBuilder = com.pulumi.aws.ec2transitgateway.inputs.MeteringPolicyTimeoutsArgs.builder
+      builder.timeouts(args(argsBuilder).build)
+
   /** Manages an EC2 Transit Gateway Policy Table. */
   def PolicyTable(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ec2transitgateway.PolicyTableArgs.Builder])(using conf: KoPulumiConf) =
@@ -22,6 +28,15 @@ object ec2transitgateway:
     val argsBuilder = com.pulumi.aws.ec2transitgateway.DefaultRouteTablePropagationArgs.builder
     
     com.pulumi.aws.ec2transitgateway.DefaultRouteTablePropagation(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder).build)
+
+  /** Manages an EC2 Transit Gateway Metering Policy Entry. Each entry defines a traffic matching rule within a Transit Gateway Metering Policy that determines which account is charged for matching traffic flows. */
+  def MeteringPolicyEntry(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.ec2transitgateway.MeteringPolicyEntryArgs.Builder]) =
+    val argsBuilder = com.pulumi.aws.ec2transitgateway.MeteringPolicyEntryArgs.builder
+    
+    com.pulumi.aws.ec2transitgateway.MeteringPolicyEntry(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
@@ -291,6 +306,18 @@ object ec2transitgateway:
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
+  /** Manages an EC2 Transit Gateway Metering Policy for Flexible Cost Allocation (FCA). A metering policy defines how traffic is metered for cost allocation purposes on a Transit Gateway. */
+  def MeteringPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.ec2transitgateway.MeteringPolicyArgs.Builder])(using conf: KoPulumiConf) =
+    var argsBuilder = com.pulumi.aws.ec2transitgateway.MeteringPolicyArgs.builder
+    conf.logicalName2tagName(name) match
+      case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
+      case None          =>
+    
+    com.pulumi.aws.ec2transitgateway.MeteringPolicy(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder).build)
+
   /** Manages an EC2 Transit Gateway. */
   def TransitGateway(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ec2transitgateway.TransitGatewayArgs.Builder])(using conf: KoPulumiConf) =
@@ -468,6 +495,12 @@ object ec2transitgateway:
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
+  extension (builder: com.pulumi.aws.ec2transitgateway.MeteringPolicyEntryArgs.Builder)
+    def timeouts(args: Endofunction[com.pulumi.aws.ec2transitgateway.inputs.MeteringPolicyEntryTimeoutsArgs.Builder]):
+        com.pulumi.aws.ec2transitgateway.MeteringPolicyEntryArgs.Builder =
+      val argsBuilder = com.pulumi.aws.ec2transitgateway.inputs.MeteringPolicyEntryTimeoutsArgs.builder
+      builder.timeouts(args(argsBuilder).build)
+
   /** Manages an EC2 Transit Gateway Connect. */
   def Connect(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ec2transitgateway.ConnectArgs.Builder])(using conf: KoPulumiConf) =
@@ -522,10 +555,22 @@ object ec2transitgateway:
       def argsBuilder = com.pulumi.aws.ec2transitgateway.inputs.GetRouteTableRoutesFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
+  extension (builder: com.pulumi.aws.ec2transitgateway.inputs.MeteringPolicyEntryState.Builder)
+    def timeouts(args: Endofunction[com.pulumi.aws.ec2transitgateway.inputs.MeteringPolicyEntryTimeoutsArgs.Builder]):
+        com.pulumi.aws.ec2transitgateway.inputs.MeteringPolicyEntryState.Builder =
+      val argsBuilder = com.pulumi.aws.ec2transitgateway.inputs.MeteringPolicyEntryTimeoutsArgs.builder
+      builder.timeouts(args(argsBuilder).build)
+
   extension (builder: com.pulumi.aws.ec2transitgateway.inputs.DefaultRouteTablePropagationState.Builder)
     def timeouts(args: Endofunction[com.pulumi.aws.ec2transitgateway.inputs.DefaultRouteTablePropagationTimeoutsArgs.Builder]):
         com.pulumi.aws.ec2transitgateway.inputs.DefaultRouteTablePropagationState.Builder =
       val argsBuilder = com.pulumi.aws.ec2transitgateway.inputs.DefaultRouteTablePropagationTimeoutsArgs.builder
+      builder.timeouts(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.ec2transitgateway.inputs.MeteringPolicyState.Builder)
+    def timeouts(args: Endofunction[com.pulumi.aws.ec2transitgateway.inputs.MeteringPolicyTimeoutsArgs.Builder]):
+        com.pulumi.aws.ec2transitgateway.inputs.MeteringPolicyState.Builder =
+      val argsBuilder = com.pulumi.aws.ec2transitgateway.inputs.MeteringPolicyTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.ec2transitgateway.inputs.GetMulticastDomainArgs.Builder)

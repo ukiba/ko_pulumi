@@ -9,6 +9,18 @@ object savingsplans:
     // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
     export com.pulumi.aws.savingsplans.SavingsplansFunctions.*
   extension (self: SavingsplansFunctions.type)
+    /** Data source for getting AWS Savings Plans Offerings. */
+    def getOfferings(args: Endofunction[com.pulumi.aws.savingsplans.inputs.GetOfferingsArgs.Builder] = identity):
+        com.pulumi.core.Output[com.pulumi.aws.savingsplans.outputs.GetOfferingsResult] =
+      val argsBuilder = com.pulumi.aws.savingsplans.inputs.GetOfferingsArgs.builder
+      com.pulumi.aws.savingsplans.SavingsplansFunctions.getOfferings(args(argsBuilder).build)
+
+    /** Data source for getting AWS Savings Plans Offerings. */
+    def getOfferingsPlain(args: Endofunction[com.pulumi.aws.savingsplans.inputs.GetOfferingsPlainArgs.Builder] = identity):
+        java.util.concurrent.CompletableFuture[com.pulumi.aws.savingsplans.outputs.GetOfferingsResult] =
+      val argsBuilder = com.pulumi.aws.savingsplans.inputs.GetOfferingsPlainArgs.builder
+      com.pulumi.aws.savingsplans.SavingsplansFunctions.getOfferingsPlain(args(argsBuilder).build)
+
     /** Use this data source to get information on an existing AWS Savings Plan. */
     def getSavingsPlan(args: Endofunction[com.pulumi.aws.savingsplans.inputs.GetSavingsPlanArgs.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.aws.savingsplans.outputs.GetSavingsPlanResult] =
@@ -44,6 +56,16 @@ object savingsplans:
     com.pulumi.aws.savingsplans.SavingsPlan(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
+
+  extension (builder: com.pulumi.aws.savingsplans.inputs.GetOfferingsArgs.Builder)
+    /**
+     * @param filters List of filters. See Filter.
+     * @return builder
+     */
+    def filters(args: Endofunction[com.pulumi.aws.savingsplans.inputs.GetOfferingsFilterArgs.Builder]*):
+        com.pulumi.aws.savingsplans.inputs.GetOfferingsArgs.Builder =
+      def argsBuilder = com.pulumi.aws.savingsplans.inputs.GetOfferingsFilterArgs.builder
+      builder.filters(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.aws.savingsplans.inputs.SavingsPlanState.Builder)
     def timeouts(args: Endofunction[com.pulumi.aws.savingsplans.inputs.SavingsPlanTimeoutsArgs.Builder]):

@@ -124,6 +124,18 @@ object sagemaker:
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
+  /** Manages an AWS SageMaker AI Algorithm. */
+  def Algorithm(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.sagemaker.AlgorithmArgs.Builder])(using conf: KoPulumiConf) =
+    var argsBuilder = com.pulumi.aws.sagemaker.AlgorithmArgs.builder
+    conf.logicalName2tagName(name) match
+      case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
+      case None          =>
+    
+    com.pulumi.aws.sagemaker.Algorithm(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder).build)
+
   extension (builder: com.pulumi.aws.sagemaker.UserProfileArgs.Builder)
     /**
      * @param userSettings The user settings. See User Settings below.
@@ -180,6 +192,25 @@ object sagemaker:
       case None          =>
     
     com.pulumi.aws.sagemaker.Hub(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder).build)
+
+  /**
+   * Manages an AWS SageMaker AI Hyper Parameter Tuning Job.
+   *  
+   *  &gt; **NOTE:** This resource does not wait for the tuning job to complete before returning. Terraform may complete apply before the job reaches a terminal state.
+   */
+  def HyperParameterTuningJob(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.sagemaker.HyperParameterTuningJobArgs.Builder])(using conf: KoPulumiConf) =
+    var argsBuilder = com.pulumi.aws.sagemaker.HyperParameterTuningJobArgs.builder
+    conf.logicalName2pysicalName(name) match
+      case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
+      case None               =>
+    conf.logicalName2tagName(name) match
+      case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
+      case None          =>
+    
+    com.pulumi.aws.sagemaker.HyperParameterTuningJob(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
@@ -337,6 +368,12 @@ object sagemaker:
       val argsBuilder = com.pulumi.aws.sagemaker.inputs.DomainRetentionPolicyArgs.builder
       builder.retentionPolicy(args(argsBuilder).build)
 
+  extension (builder: com.pulumi.aws.sagemaker.MlflowAppArgs.Builder)
+    def timeouts(args: Endofunction[com.pulumi.aws.sagemaker.inputs.MlflowAppTimeoutsArgs.Builder]):
+        com.pulumi.aws.sagemaker.MlflowAppArgs.Builder =
+      val argsBuilder = com.pulumi.aws.sagemaker.inputs.MlflowAppTimeoutsArgs.builder
+      builder.timeouts(args(argsBuilder).build)
+
   extension (builder: com.pulumi.aws.sagemaker.MonitoringScheduleArgs.Builder)
     /**
      * @param monitoringScheduleConfig The configuration object that specifies the monitoring schedule and defines the monitoring job. Fields are documented below.
@@ -356,6 +393,18 @@ object sagemaker:
       case None          =>
     
     com.pulumi.aws.sagemaker.FeatureGroup(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder).build)
+
+  /** Manages an AWS SageMaker AI Training Job. */
+  def TrainingJob(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.sagemaker.TrainingJobArgs.Builder])(using conf: KoPulumiConf) =
+    var argsBuilder = com.pulumi.aws.sagemaker.TrainingJobArgs.builder
+    conf.logicalName2tagName(name) match
+      case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
+      case None          =>
+    
+    com.pulumi.aws.sagemaker.TrainingJob(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
@@ -391,6 +440,39 @@ object sagemaker:
     com.pulumi.aws.sagemaker.UserProfile(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
+
+  extension (builder: com.pulumi.aws.sagemaker.AlgorithmArgs.Builder)
+    /**
+     * @param inferenceSpecification Configuration for inference jobs that use this algorithm. See Inference Specification.
+     * @return builder
+     */
+    def inferenceSpecification(args: Endofunction[com.pulumi.aws.sagemaker.inputs.AlgorithmInferenceSpecificationArgs.Builder]):
+        com.pulumi.aws.sagemaker.AlgorithmArgs.Builder =
+      val argsBuilder = com.pulumi.aws.sagemaker.inputs.AlgorithmInferenceSpecificationArgs.builder
+      builder.inferenceSpecification(args(argsBuilder).build)
+
+    def timeouts(args: Endofunction[com.pulumi.aws.sagemaker.inputs.AlgorithmTimeoutsArgs.Builder]):
+        com.pulumi.aws.sagemaker.AlgorithmArgs.Builder =
+      val argsBuilder = com.pulumi.aws.sagemaker.inputs.AlgorithmTimeoutsArgs.builder
+      builder.timeouts(args(argsBuilder).build)
+
+    /**
+     * @param trainingSpecification Configuration for training jobs that use this algorithm. See Training Specification.
+     * @return builder
+     */
+    def trainingSpecification(args: Endofunction[com.pulumi.aws.sagemaker.inputs.AlgorithmTrainingSpecificationArgs.Builder]):
+        com.pulumi.aws.sagemaker.AlgorithmArgs.Builder =
+      val argsBuilder = com.pulumi.aws.sagemaker.inputs.AlgorithmTrainingSpecificationArgs.builder
+      builder.trainingSpecification(args(argsBuilder).build)
+
+    /**
+     * @param validationSpecification Configuration used to validate the algorithm. See Validation Specification.
+     * @return builder
+     */
+    def validationSpecification(args: Endofunction[com.pulumi.aws.sagemaker.inputs.AlgorithmValidationSpecificationArgs.Builder]):
+        com.pulumi.aws.sagemaker.AlgorithmArgs.Builder =
+      val argsBuilder = com.pulumi.aws.sagemaker.inputs.AlgorithmValidationSpecificationArgs.builder
+      builder.validationSpecification(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.sagemaker.HubArgs.Builder)
     /**
@@ -558,6 +640,190 @@ object sagemaker:
       val argsBuilder = com.pulumi.aws.sagemaker.inputs.SpaceSpaceSharingSettingsArgs.builder
       builder.spaceSharingSettings(args(argsBuilder).build)
 
+  extension (builder: com.pulumi.aws.sagemaker.TrainingJobArgs.Builder)
+    /**
+     * @param algorithmSpecification Algorithm-related parameters of the training job. See `algorithmSpecification` below. Conflicts with `serverlessJobConfig`.
+     * @return builder
+     */
+    def algorithmSpecification(args: Endofunction[com.pulumi.aws.sagemaker.inputs.TrainingJobAlgorithmSpecificationArgs.Builder]):
+        com.pulumi.aws.sagemaker.TrainingJobArgs.Builder =
+      val argsBuilder = com.pulumi.aws.sagemaker.inputs.TrainingJobAlgorithmSpecificationArgs.builder
+      builder.algorithmSpecification(args(argsBuilder).build)
+
+    /**
+     * @param checkpointConfig Location of checkpoints during training. See `checkpointConfig` below. Conflicts with `serverlessJobConfig`.
+     * @return builder
+     */
+    def checkpointConfig(args: Endofunction[com.pulumi.aws.sagemaker.inputs.TrainingJobCheckpointConfigArgs.Builder]):
+        com.pulumi.aws.sagemaker.TrainingJobArgs.Builder =
+      val argsBuilder = com.pulumi.aws.sagemaker.inputs.TrainingJobCheckpointConfigArgs.builder
+      builder.checkpointConfig(args(argsBuilder).build)
+
+    /**
+     * @param debugHookConfig Configuration for debugging rules. See `debugHookConfig` below. Conflicts with `serverlessJobConfig`.
+     * @return builder
+     */
+    def debugHookConfig(args: Endofunction[com.pulumi.aws.sagemaker.inputs.TrainingJobDebugHookConfigArgs.Builder]):
+        com.pulumi.aws.sagemaker.TrainingJobArgs.Builder =
+      val argsBuilder = com.pulumi.aws.sagemaker.inputs.TrainingJobDebugHookConfigArgs.builder
+      builder.debugHookConfig(args(argsBuilder).build)
+
+    /**
+     * @param debugRuleConfigurations List of debug rule configurations. Maximum of 20. See `debugRuleConfigurations` below.
+     * @return builder
+     */
+    def debugRuleConfigurations(args: Endofunction[com.pulumi.aws.sagemaker.inputs.TrainingJobDebugRuleConfigurationArgs.Builder]*):
+        com.pulumi.aws.sagemaker.TrainingJobArgs.Builder =
+      def argsBuilder = com.pulumi.aws.sagemaker.inputs.TrainingJobDebugRuleConfigurationArgs.builder
+      builder.debugRuleConfigurations(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param experimentConfig Associates a SageMaker AI Experiment or Trial to the training job. See `experimentConfig` below. Conflicts with `serverlessJobConfig`.
+     * @return builder
+     */
+    def experimentConfig(args: Endofunction[com.pulumi.aws.sagemaker.inputs.TrainingJobExperimentConfigArgs.Builder]):
+        com.pulumi.aws.sagemaker.TrainingJobArgs.Builder =
+      val argsBuilder = com.pulumi.aws.sagemaker.inputs.TrainingJobExperimentConfigArgs.builder
+      builder.experimentConfig(args(argsBuilder).build)
+
+    /**
+     * @param infraCheckConfig Infrastructure health check configuration. See `infraCheckConfig` below.
+     * @return builder
+     */
+    def infraCheckConfig(args: Endofunction[com.pulumi.aws.sagemaker.inputs.TrainingJobInfraCheckConfigArgs.Builder]):
+        com.pulumi.aws.sagemaker.TrainingJobArgs.Builder =
+      val argsBuilder = com.pulumi.aws.sagemaker.inputs.TrainingJobInfraCheckConfigArgs.builder
+      builder.infraCheckConfig(args(argsBuilder).build)
+
+    /**
+     * @param inputDataConfigs List of input data channel configurations for the training job. Maximum of 20. See `inputDataConfig` below.
+     * @return builder
+     */
+    def inputDataConfigs(args: Endofunction[com.pulumi.aws.sagemaker.inputs.TrainingJobInputDataConfigArgs.Builder]*):
+        com.pulumi.aws.sagemaker.TrainingJobArgs.Builder =
+      def argsBuilder = com.pulumi.aws.sagemaker.inputs.TrainingJobInputDataConfigArgs.builder
+      builder.inputDataConfigs(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param mlflowConfig MLflow integration configuration. See `mlflowConfig` below.
+     * @return builder
+     */
+    def mlflowConfig(args: Endofunction[com.pulumi.aws.sagemaker.inputs.TrainingJobMlflowConfigArgs.Builder]):
+        com.pulumi.aws.sagemaker.TrainingJobArgs.Builder =
+      val argsBuilder = com.pulumi.aws.sagemaker.inputs.TrainingJobMlflowConfigArgs.builder
+      builder.mlflowConfig(args(argsBuilder).build)
+
+    /**
+     * @param modelPackageConfig Model package configuration. Requires `serverlessJobConfig`. See `modelPackageConfig` below.
+     * @return builder
+     */
+    def modelPackageConfig(args: Endofunction[com.pulumi.aws.sagemaker.inputs.TrainingJobModelPackageConfigArgs.Builder]):
+        com.pulumi.aws.sagemaker.TrainingJobArgs.Builder =
+      val argsBuilder = com.pulumi.aws.sagemaker.inputs.TrainingJobModelPackageConfigArgs.builder
+      builder.modelPackageConfig(args(argsBuilder).build)
+
+    /**
+     * @param outputDataConfig Location of the output data from the training job. See `outputDataConfig` below.
+     *  
+     *  The following arguments are optional:
+     * @return builder
+     */
+    def outputDataConfig(args: Endofunction[com.pulumi.aws.sagemaker.inputs.TrainingJobOutputDataConfigArgs.Builder]):
+        com.pulumi.aws.sagemaker.TrainingJobArgs.Builder =
+      val argsBuilder = com.pulumi.aws.sagemaker.inputs.TrainingJobOutputDataConfigArgs.builder
+      builder.outputDataConfig(args(argsBuilder).build)
+
+    /**
+     * @param profilerConfig Configuration for the profiler. See `profilerConfig` below. Conflicts with `serverlessJobConfig`.
+     * @return builder
+     */
+    def profilerConfig(args: Endofunction[com.pulumi.aws.sagemaker.inputs.TrainingJobProfilerConfigArgs.Builder]):
+        com.pulumi.aws.sagemaker.TrainingJobArgs.Builder =
+      val argsBuilder = com.pulumi.aws.sagemaker.inputs.TrainingJobProfilerConfigArgs.builder
+      builder.profilerConfig(args(argsBuilder).build)
+
+    /**
+     * @param profilerRuleConfigurations List of profiler rule configurations. Maximum of 20. See `profilerRuleConfigurations` below. Conflicts with `serverlessJobConfig`.
+     * @return builder
+     */
+    def profilerRuleConfigurations(args: Endofunction[com.pulumi.aws.sagemaker.inputs.TrainingJobProfilerRuleConfigurationArgs.Builder]*):
+        com.pulumi.aws.sagemaker.TrainingJobArgs.Builder =
+      def argsBuilder = com.pulumi.aws.sagemaker.inputs.TrainingJobProfilerRuleConfigurationArgs.builder
+      builder.profilerRuleConfigurations(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param remoteDebugConfig Configuration for remote debugging. See `remoteDebugConfig` below.
+     * @return builder
+     */
+    def remoteDebugConfig(args: Endofunction[com.pulumi.aws.sagemaker.inputs.TrainingJobRemoteDebugConfigArgs.Builder]):
+        com.pulumi.aws.sagemaker.TrainingJobArgs.Builder =
+      val argsBuilder = com.pulumi.aws.sagemaker.inputs.TrainingJobRemoteDebugConfigArgs.builder
+      builder.remoteDebugConfig(args(argsBuilder).build)
+
+    /**
+     * @param resourceConfig Resources for the training job, including compute instances and storage volumes. See `resourceConfig` below.
+     * @return builder
+     */
+    def resourceConfig(args: Endofunction[com.pulumi.aws.sagemaker.inputs.TrainingJobResourceConfigArgs.Builder]):
+        com.pulumi.aws.sagemaker.TrainingJobArgs.Builder =
+      val argsBuilder = com.pulumi.aws.sagemaker.inputs.TrainingJobResourceConfigArgs.builder
+      builder.resourceConfig(args(argsBuilder).build)
+
+    /**
+     * @param retryStrategy Number of times to retry the job if it fails. See `retryStrategy` below. Conflicts with `serverlessJobConfig`.
+     * @return builder
+     */
+    def retryStrategy(args: Endofunction[com.pulumi.aws.sagemaker.inputs.TrainingJobRetryStrategyArgs.Builder]):
+        com.pulumi.aws.sagemaker.TrainingJobArgs.Builder =
+      val argsBuilder = com.pulumi.aws.sagemaker.inputs.TrainingJobRetryStrategyArgs.builder
+      builder.retryStrategy(args(argsBuilder).build)
+
+    /**
+     * @param serverlessJobConfig Configuration for serverless training jobs using foundation models. Conflicts with `algorithmSpecification`, `enableManagedSpotTraining`, `environment`, `retryStrategy`, `checkpointConfig`, `debugHookConfig`, `experimentConfig`, `profilerConfig`, `profilerRuleConfigurations`, and `tensorBoardOutputConfig`. See `serverlessJobConfig` below.
+     * @return builder
+     */
+    def serverlessJobConfig(args: Endofunction[com.pulumi.aws.sagemaker.inputs.TrainingJobServerlessJobConfigArgs.Builder]):
+        com.pulumi.aws.sagemaker.TrainingJobArgs.Builder =
+      val argsBuilder = com.pulumi.aws.sagemaker.inputs.TrainingJobServerlessJobConfigArgs.builder
+      builder.serverlessJobConfig(args(argsBuilder).build)
+
+    /**
+     * @param sessionChainingConfig Configuration for session tag chaining. See `sessionChainingConfig` below.
+     * @return builder
+     */
+    def sessionChainingConfig(args: Endofunction[com.pulumi.aws.sagemaker.inputs.TrainingJobSessionChainingConfigArgs.Builder]):
+        com.pulumi.aws.sagemaker.TrainingJobArgs.Builder =
+      val argsBuilder = com.pulumi.aws.sagemaker.inputs.TrainingJobSessionChainingConfigArgs.builder
+      builder.sessionChainingConfig(args(argsBuilder).build)
+
+    def stoppingCondition(args: Endofunction[com.pulumi.aws.sagemaker.inputs.TrainingJobStoppingConditionArgs.Builder]):
+        com.pulumi.aws.sagemaker.TrainingJobArgs.Builder =
+      val argsBuilder = com.pulumi.aws.sagemaker.inputs.TrainingJobStoppingConditionArgs.builder
+      builder.stoppingCondition(args(argsBuilder).build)
+
+    /**
+     * @param tensorBoardOutputConfig Configuration for TensorBoard output. See `tensorBoardOutputConfig` below. Conflicts with `serverlessJobConfig`.
+     * @return builder
+     */
+    def tensorBoardOutputConfig(args: Endofunction[com.pulumi.aws.sagemaker.inputs.TrainingJobTensorBoardOutputConfigArgs.Builder]):
+        com.pulumi.aws.sagemaker.TrainingJobArgs.Builder =
+      val argsBuilder = com.pulumi.aws.sagemaker.inputs.TrainingJobTensorBoardOutputConfigArgs.builder
+      builder.tensorBoardOutputConfig(args(argsBuilder).build)
+
+    def timeouts(args: Endofunction[com.pulumi.aws.sagemaker.inputs.TrainingJobTimeoutsArgs.Builder]):
+        com.pulumi.aws.sagemaker.TrainingJobArgs.Builder =
+      val argsBuilder = com.pulumi.aws.sagemaker.inputs.TrainingJobTimeoutsArgs.builder
+      builder.timeouts(args(argsBuilder).build)
+
+    /**
+     * @param vpcConfig VPC configuration for the training job. See `vpcConfig` below.
+     * @return builder
+     */
+    def vpcConfig(args: Endofunction[com.pulumi.aws.sagemaker.inputs.TrainingJobVpcConfigArgs.Builder]):
+        com.pulumi.aws.sagemaker.TrainingJobArgs.Builder =
+      val argsBuilder = com.pulumi.aws.sagemaker.inputs.TrainingJobVpcConfigArgs.builder
+      builder.vpcConfig(args(argsBuilder).build)
+
   extension (builder: com.pulumi.aws.sagemaker.ModelCardExportJobArgs.Builder)
     /**
      * @param outputConfig Export output details. Fields are documented below.
@@ -689,6 +955,21 @@ object sagemaker:
       case None          =>
     
     com.pulumi.aws.sagemaker.LabelingJob(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder).build)
+
+  /** Provides a SageMaker AI MLflow App resource. */
+  def MlflowApp(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.sagemaker.MlflowAppArgs.Builder])(using conf: KoPulumiConf) =
+    var argsBuilder = com.pulumi.aws.sagemaker.MlflowAppArgs.builder
+    conf.logicalName2pysicalName(name) match
+      case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
+      case None               =>
+    conf.logicalName2tagName(name) match
+      case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
+      case None          =>
+    
+    com.pulumi.aws.sagemaker.MlflowApp(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
@@ -923,6 +1204,57 @@ object sagemaker:
       val argsBuilder = com.pulumi.aws.sagemaker.inputs.EndpointDeploymentConfigArgs.builder
       builder.deploymentConfig(args(argsBuilder).build)
 
+  extension (builder: com.pulumi.aws.sagemaker.HyperParameterTuningJobArgs.Builder)
+    /**
+     * @param autotune Autotune settings. See `autotune`.
+     * @return builder
+     */
+    def autotune(args: Endofunction[com.pulumi.aws.sagemaker.inputs.HyperParameterTuningJobAutotuneArgs.Builder]):
+        com.pulumi.aws.sagemaker.HyperParameterTuningJobArgs.Builder =
+      val argsBuilder = com.pulumi.aws.sagemaker.inputs.HyperParameterTuningJobAutotuneArgs.builder
+      builder.autotune(args(argsBuilder).build)
+
+    /**
+     * @param config Tuning job settings. See `config`.
+     * @return builder
+     */
+    def config(args: Endofunction[com.pulumi.aws.sagemaker.inputs.HyperParameterTuningJobConfigArgs.Builder]):
+        com.pulumi.aws.sagemaker.HyperParameterTuningJobArgs.Builder =
+      val argsBuilder = com.pulumi.aws.sagemaker.inputs.HyperParameterTuningJobConfigArgs.builder
+      builder.config(args(argsBuilder).build)
+
+    def timeouts(args: Endofunction[com.pulumi.aws.sagemaker.inputs.HyperParameterTuningJobTimeoutsArgs.Builder]):
+        com.pulumi.aws.sagemaker.HyperParameterTuningJobArgs.Builder =
+      val argsBuilder = com.pulumi.aws.sagemaker.inputs.HyperParameterTuningJobTimeoutsArgs.builder
+      builder.timeouts(args(argsBuilder).build)
+
+    /**
+     * @param trainingJobDefinition Single training job definition for tuning. See `trainingJobDefinition`.
+     * @return builder
+     */
+    def trainingJobDefinition(args: Endofunction[com.pulumi.aws.sagemaker.inputs.HyperParameterTuningJobTrainingJobDefinitionArgs.Builder]):
+        com.pulumi.aws.sagemaker.HyperParameterTuningJobArgs.Builder =
+      val argsBuilder = com.pulumi.aws.sagemaker.inputs.HyperParameterTuningJobTrainingJobDefinitionArgs.builder
+      builder.trainingJobDefinition(args(argsBuilder).build)
+
+    /**
+     * @param trainingJobDefinitions Multiple training job definitions for tuning. See `trainingJobDefinition`.
+     * @return builder
+     */
+    def trainingJobDefinitions(args: Endofunction[com.pulumi.aws.sagemaker.inputs.HyperParameterTuningJobTrainingJobDefinitionArgs.Builder]*):
+        com.pulumi.aws.sagemaker.HyperParameterTuningJobArgs.Builder =
+      def argsBuilder = com.pulumi.aws.sagemaker.inputs.HyperParameterTuningJobTrainingJobDefinitionArgs.builder
+      builder.trainingJobDefinitions(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param warmStartConfig Warm start settings. See `warmStartConfig`.
+     * @return builder
+     */
+    def warmStartConfig(args: Endofunction[com.pulumi.aws.sagemaker.inputs.HyperParameterTuningJobWarmStartConfigArgs.Builder]):
+        com.pulumi.aws.sagemaker.HyperParameterTuningJobArgs.Builder =
+      val argsBuilder = com.pulumi.aws.sagemaker.inputs.HyperParameterTuningJobWarmStartConfigArgs.builder
+      builder.warmStartConfig(args(argsBuilder).build)
+
   /** Manages status of Service Catalog in SageMaker. Service Catalog is used to create SageMaker AI projects. */
   def ServicecatalogPortfolioStatus(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.sagemaker.ServicecatalogPortfolioStatusArgs.Builder]) =
@@ -1029,6 +1361,25 @@ object sagemaker:
         com.pulumi.aws.sagemaker.inputs.DomainState.Builder =
       val argsBuilder = com.pulumi.aws.sagemaker.inputs.DomainRetentionPolicyArgs.builder
       builder.retentionPolicy(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.sagemaker.inputs.AlgorithmValidationSpecificationValidationProfilesTrainingJobDefinitionInputDataConfigArgs.Builder)
+    /**
+     * @param dataSource Source of the input data. See Data Source.
+     * @return builder
+     */
+    def dataSource(args: Endofunction[com.pulumi.aws.sagemaker.inputs.AlgorithmValidationSpecificationValidationProfilesTrainingJobDefinitionInputDataConfigDataSourceArgs.Builder]):
+        com.pulumi.aws.sagemaker.inputs.AlgorithmValidationSpecificationValidationProfilesTrainingJobDefinitionInputDataConfigArgs.Builder =
+      val argsBuilder = com.pulumi.aws.sagemaker.inputs.AlgorithmValidationSpecificationValidationProfilesTrainingJobDefinitionInputDataConfigDataSourceArgs.builder
+      builder.dataSource(args(argsBuilder).build)
+
+    /**
+     * @param shuffleConfig Shuffle configuration for the channel. See Shuffle Config.
+     * @return builder
+     */
+    def shuffleConfig(args: Endofunction[com.pulumi.aws.sagemaker.inputs.AlgorithmValidationSpecificationValidationProfilesTrainingJobDefinitionInputDataConfigShuffleConfigArgs.Builder]):
+        com.pulumi.aws.sagemaker.inputs.AlgorithmValidationSpecificationValidationProfilesTrainingJobDefinitionInputDataConfigArgs.Builder =
+      val argsBuilder = com.pulumi.aws.sagemaker.inputs.AlgorithmValidationSpecificationValidationProfilesTrainingJobDefinitionInputDataConfigShuffleConfigArgs.builder
+      builder.shuffleConfig(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.sagemaker.inputs.EndpointConfigurationProductionVariantArgs.Builder)
     /**
@@ -1153,6 +1504,25 @@ object sagemaker:
       def argsBuilder = com.pulumi.aws.sagemaker.inputs.EndpointConfigurationShadowProductionVariantArgs.builder
       builder.shadowProductionVariants(args.map(_(argsBuilder).build)*)
 
+  extension (builder: com.pulumi.aws.sagemaker.inputs.AlgorithmValidationSpecificationValidationProfilesArgs.Builder)
+    /**
+     * @param trainingJobDefinition Training job definition used during validation. See Training Job Definition.
+     * @return builder
+     */
+    def trainingJobDefinition(args: Endofunction[com.pulumi.aws.sagemaker.inputs.AlgorithmValidationSpecificationValidationProfilesTrainingJobDefinitionArgs.Builder]):
+        com.pulumi.aws.sagemaker.inputs.AlgorithmValidationSpecificationValidationProfilesArgs.Builder =
+      val argsBuilder = com.pulumi.aws.sagemaker.inputs.AlgorithmValidationSpecificationValidationProfilesTrainingJobDefinitionArgs.builder
+      builder.trainingJobDefinition(args(argsBuilder).build)
+
+    /**
+     * @param transformJobDefinition Transform job definition used during validation. See Transform Job Definition.
+     * @return builder
+     */
+    def transformJobDefinition(args: Endofunction[com.pulumi.aws.sagemaker.inputs.AlgorithmValidationSpecificationValidationProfilesTransformJobDefinitionArgs.Builder]):
+        com.pulumi.aws.sagemaker.inputs.AlgorithmValidationSpecificationValidationProfilesArgs.Builder =
+      val argsBuilder = com.pulumi.aws.sagemaker.inputs.AlgorithmValidationSpecificationValidationProfilesTransformJobDefinitionArgs.builder
+      builder.transformJobDefinition(args(argsBuilder).build)
+
   extension (builder: com.pulumi.aws.sagemaker.inputs.UserProfileUserSettingsCodeEditorAppSettingsAppLifecycleManagementArgs.Builder)
     /**
      * @param idleSettings Settings related to idle shutdown of Studio applications. see `idleSettings` Block below.
@@ -1230,6 +1600,210 @@ object sagemaker:
       val argsBuilder = com.pulumi.aws.sagemaker.inputs.MonitoringScheduleMonitoringScheduleConfigScheduleConfigArgs.builder
       builder.scheduleConfig(args(argsBuilder).build)
 
+  extension (builder: com.pulumi.aws.sagemaker.inputs.HyperParameterTuningJobConfigStrategyConfigArgs.Builder)
+    /**
+     * @param hyperbandStrategyConfig Hyperband strategy settings. See `hyperbandStrategyConfig`.
+     * @return builder
+     */
+    def hyperbandStrategyConfig(args: Endofunction[com.pulumi.aws.sagemaker.inputs.HyperParameterTuningJobConfigStrategyConfigHyperbandStrategyConfigArgs.Builder]):
+        com.pulumi.aws.sagemaker.inputs.HyperParameterTuningJobConfigStrategyConfigArgs.Builder =
+      val argsBuilder = com.pulumi.aws.sagemaker.inputs.HyperParameterTuningJobConfigStrategyConfigHyperbandStrategyConfigArgs.builder
+      builder.hyperbandStrategyConfig(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.sagemaker.inputs.TrainingJobState.Builder)
+    /**
+     * @param algorithmSpecification Algorithm-related parameters of the training job. See `algorithmSpecification` below. Conflicts with `serverlessJobConfig`.
+     * @return builder
+     */
+    def algorithmSpecification(args: Endofunction[com.pulumi.aws.sagemaker.inputs.TrainingJobAlgorithmSpecificationArgs.Builder]):
+        com.pulumi.aws.sagemaker.inputs.TrainingJobState.Builder =
+      val argsBuilder = com.pulumi.aws.sagemaker.inputs.TrainingJobAlgorithmSpecificationArgs.builder
+      builder.algorithmSpecification(args(argsBuilder).build)
+
+    /**
+     * @param checkpointConfig Location of checkpoints during training. See `checkpointConfig` below. Conflicts with `serverlessJobConfig`.
+     * @return builder
+     */
+    def checkpointConfig(args: Endofunction[com.pulumi.aws.sagemaker.inputs.TrainingJobCheckpointConfigArgs.Builder]):
+        com.pulumi.aws.sagemaker.inputs.TrainingJobState.Builder =
+      val argsBuilder = com.pulumi.aws.sagemaker.inputs.TrainingJobCheckpointConfigArgs.builder
+      builder.checkpointConfig(args(argsBuilder).build)
+
+    /**
+     * @param debugHookConfig Configuration for debugging rules. See `debugHookConfig` below. Conflicts with `serverlessJobConfig`.
+     * @return builder
+     */
+    def debugHookConfig(args: Endofunction[com.pulumi.aws.sagemaker.inputs.TrainingJobDebugHookConfigArgs.Builder]):
+        com.pulumi.aws.sagemaker.inputs.TrainingJobState.Builder =
+      val argsBuilder = com.pulumi.aws.sagemaker.inputs.TrainingJobDebugHookConfigArgs.builder
+      builder.debugHookConfig(args(argsBuilder).build)
+
+    /**
+     * @param debugRuleConfigurations List of debug rule configurations. Maximum of 20. See `debugRuleConfigurations` below.
+     * @return builder
+     */
+    def debugRuleConfigurations(args: Endofunction[com.pulumi.aws.sagemaker.inputs.TrainingJobDebugRuleConfigurationArgs.Builder]*):
+        com.pulumi.aws.sagemaker.inputs.TrainingJobState.Builder =
+      def argsBuilder = com.pulumi.aws.sagemaker.inputs.TrainingJobDebugRuleConfigurationArgs.builder
+      builder.debugRuleConfigurations(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param experimentConfig Associates a SageMaker AI Experiment or Trial to the training job. See `experimentConfig` below. Conflicts with `serverlessJobConfig`.
+     * @return builder
+     */
+    def experimentConfig(args: Endofunction[com.pulumi.aws.sagemaker.inputs.TrainingJobExperimentConfigArgs.Builder]):
+        com.pulumi.aws.sagemaker.inputs.TrainingJobState.Builder =
+      val argsBuilder = com.pulumi.aws.sagemaker.inputs.TrainingJobExperimentConfigArgs.builder
+      builder.experimentConfig(args(argsBuilder).build)
+
+    /**
+     * @param infraCheckConfig Infrastructure health check configuration. See `infraCheckConfig` below.
+     * @return builder
+     */
+    def infraCheckConfig(args: Endofunction[com.pulumi.aws.sagemaker.inputs.TrainingJobInfraCheckConfigArgs.Builder]):
+        com.pulumi.aws.sagemaker.inputs.TrainingJobState.Builder =
+      val argsBuilder = com.pulumi.aws.sagemaker.inputs.TrainingJobInfraCheckConfigArgs.builder
+      builder.infraCheckConfig(args(argsBuilder).build)
+
+    /**
+     * @param inputDataConfigs List of input data channel configurations for the training job. Maximum of 20. See `inputDataConfig` below.
+     * @return builder
+     */
+    def inputDataConfigs(args: Endofunction[com.pulumi.aws.sagemaker.inputs.TrainingJobInputDataConfigArgs.Builder]*):
+        com.pulumi.aws.sagemaker.inputs.TrainingJobState.Builder =
+      def argsBuilder = com.pulumi.aws.sagemaker.inputs.TrainingJobInputDataConfigArgs.builder
+      builder.inputDataConfigs(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param mlflowConfig MLflow integration configuration. See `mlflowConfig` below.
+     * @return builder
+     */
+    def mlflowConfig(args: Endofunction[com.pulumi.aws.sagemaker.inputs.TrainingJobMlflowConfigArgs.Builder]):
+        com.pulumi.aws.sagemaker.inputs.TrainingJobState.Builder =
+      val argsBuilder = com.pulumi.aws.sagemaker.inputs.TrainingJobMlflowConfigArgs.builder
+      builder.mlflowConfig(args(argsBuilder).build)
+
+    /**
+     * @param modelPackageConfig Model package configuration. Requires `serverlessJobConfig`. See `modelPackageConfig` below.
+     * @return builder
+     */
+    def modelPackageConfig(args: Endofunction[com.pulumi.aws.sagemaker.inputs.TrainingJobModelPackageConfigArgs.Builder]):
+        com.pulumi.aws.sagemaker.inputs.TrainingJobState.Builder =
+      val argsBuilder = com.pulumi.aws.sagemaker.inputs.TrainingJobModelPackageConfigArgs.builder
+      builder.modelPackageConfig(args(argsBuilder).build)
+
+    /**
+     * @param outputDataConfig Location of the output data from the training job. See `outputDataConfig` below.
+     *  
+     *  The following arguments are optional:
+     * @return builder
+     */
+    def outputDataConfig(args: Endofunction[com.pulumi.aws.sagemaker.inputs.TrainingJobOutputDataConfigArgs.Builder]):
+        com.pulumi.aws.sagemaker.inputs.TrainingJobState.Builder =
+      val argsBuilder = com.pulumi.aws.sagemaker.inputs.TrainingJobOutputDataConfigArgs.builder
+      builder.outputDataConfig(args(argsBuilder).build)
+
+    /**
+     * @param profilerConfig Configuration for the profiler. See `profilerConfig` below. Conflicts with `serverlessJobConfig`.
+     * @return builder
+     */
+    def profilerConfig(args: Endofunction[com.pulumi.aws.sagemaker.inputs.TrainingJobProfilerConfigArgs.Builder]):
+        com.pulumi.aws.sagemaker.inputs.TrainingJobState.Builder =
+      val argsBuilder = com.pulumi.aws.sagemaker.inputs.TrainingJobProfilerConfigArgs.builder
+      builder.profilerConfig(args(argsBuilder).build)
+
+    /**
+     * @param profilerRuleConfigurations List of profiler rule configurations. Maximum of 20. See `profilerRuleConfigurations` below. Conflicts with `serverlessJobConfig`.
+     * @return builder
+     */
+    def profilerRuleConfigurations(args: Endofunction[com.pulumi.aws.sagemaker.inputs.TrainingJobProfilerRuleConfigurationArgs.Builder]*):
+        com.pulumi.aws.sagemaker.inputs.TrainingJobState.Builder =
+      def argsBuilder = com.pulumi.aws.sagemaker.inputs.TrainingJobProfilerRuleConfigurationArgs.builder
+      builder.profilerRuleConfigurations(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param remoteDebugConfig Configuration for remote debugging. See `remoteDebugConfig` below.
+     * @return builder
+     */
+    def remoteDebugConfig(args: Endofunction[com.pulumi.aws.sagemaker.inputs.TrainingJobRemoteDebugConfigArgs.Builder]):
+        com.pulumi.aws.sagemaker.inputs.TrainingJobState.Builder =
+      val argsBuilder = com.pulumi.aws.sagemaker.inputs.TrainingJobRemoteDebugConfigArgs.builder
+      builder.remoteDebugConfig(args(argsBuilder).build)
+
+    /**
+     * @param resourceConfig Resources for the training job, including compute instances and storage volumes. See `resourceConfig` below.
+     * @return builder
+     */
+    def resourceConfig(args: Endofunction[com.pulumi.aws.sagemaker.inputs.TrainingJobResourceConfigArgs.Builder]):
+        com.pulumi.aws.sagemaker.inputs.TrainingJobState.Builder =
+      val argsBuilder = com.pulumi.aws.sagemaker.inputs.TrainingJobResourceConfigArgs.builder
+      builder.resourceConfig(args(argsBuilder).build)
+
+    /**
+     * @param retryStrategy Number of times to retry the job if it fails. See `retryStrategy` below. Conflicts with `serverlessJobConfig`.
+     * @return builder
+     */
+    def retryStrategy(args: Endofunction[com.pulumi.aws.sagemaker.inputs.TrainingJobRetryStrategyArgs.Builder]):
+        com.pulumi.aws.sagemaker.inputs.TrainingJobState.Builder =
+      val argsBuilder = com.pulumi.aws.sagemaker.inputs.TrainingJobRetryStrategyArgs.builder
+      builder.retryStrategy(args(argsBuilder).build)
+
+    /**
+     * @param serverlessJobConfig Configuration for serverless training jobs using foundation models. Conflicts with `algorithmSpecification`, `enableManagedSpotTraining`, `environment`, `retryStrategy`, `checkpointConfig`, `debugHookConfig`, `experimentConfig`, `profilerConfig`, `profilerRuleConfigurations`, and `tensorBoardOutputConfig`. See `serverlessJobConfig` below.
+     * @return builder
+     */
+    def serverlessJobConfig(args: Endofunction[com.pulumi.aws.sagemaker.inputs.TrainingJobServerlessJobConfigArgs.Builder]):
+        com.pulumi.aws.sagemaker.inputs.TrainingJobState.Builder =
+      val argsBuilder = com.pulumi.aws.sagemaker.inputs.TrainingJobServerlessJobConfigArgs.builder
+      builder.serverlessJobConfig(args(argsBuilder).build)
+
+    /**
+     * @param sessionChainingConfig Configuration for session tag chaining. See `sessionChainingConfig` below.
+     * @return builder
+     */
+    def sessionChainingConfig(args: Endofunction[com.pulumi.aws.sagemaker.inputs.TrainingJobSessionChainingConfigArgs.Builder]):
+        com.pulumi.aws.sagemaker.inputs.TrainingJobState.Builder =
+      val argsBuilder = com.pulumi.aws.sagemaker.inputs.TrainingJobSessionChainingConfigArgs.builder
+      builder.sessionChainingConfig(args(argsBuilder).build)
+
+    def stoppingCondition(args: Endofunction[com.pulumi.aws.sagemaker.inputs.TrainingJobStoppingConditionArgs.Builder]):
+        com.pulumi.aws.sagemaker.inputs.TrainingJobState.Builder =
+      val argsBuilder = com.pulumi.aws.sagemaker.inputs.TrainingJobStoppingConditionArgs.builder
+      builder.stoppingCondition(args(argsBuilder).build)
+
+    /**
+     * @param tensorBoardOutputConfig Configuration for TensorBoard output. See `tensorBoardOutputConfig` below. Conflicts with `serverlessJobConfig`.
+     * @return builder
+     */
+    def tensorBoardOutputConfig(args: Endofunction[com.pulumi.aws.sagemaker.inputs.TrainingJobTensorBoardOutputConfigArgs.Builder]):
+        com.pulumi.aws.sagemaker.inputs.TrainingJobState.Builder =
+      val argsBuilder = com.pulumi.aws.sagemaker.inputs.TrainingJobTensorBoardOutputConfigArgs.builder
+      builder.tensorBoardOutputConfig(args(argsBuilder).build)
+
+    def timeouts(args: Endofunction[com.pulumi.aws.sagemaker.inputs.TrainingJobTimeoutsArgs.Builder]):
+        com.pulumi.aws.sagemaker.inputs.TrainingJobState.Builder =
+      val argsBuilder = com.pulumi.aws.sagemaker.inputs.TrainingJobTimeoutsArgs.builder
+      builder.timeouts(args(argsBuilder).build)
+
+    /**
+     * @param vpcConfig VPC configuration for the training job. See `vpcConfig` below.
+     * @return builder
+     */
+    def vpcConfig(args: Endofunction[com.pulumi.aws.sagemaker.inputs.TrainingJobVpcConfigArgs.Builder]):
+        com.pulumi.aws.sagemaker.inputs.TrainingJobState.Builder =
+      val argsBuilder = com.pulumi.aws.sagemaker.inputs.TrainingJobVpcConfigArgs.builder
+      builder.vpcConfig(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.sagemaker.inputs.HyperParameterTuningJobWarmStartConfigArgs.Builder)
+    /**
+     * @param parentHyperParameterTuningJobs Parent tuning jobs for warm start.
+     * @return builder
+     */
+    def parentHyperParameterTuningJobs(args: Endofunction[com.pulumi.aws.sagemaker.inputs.HyperParameterTuningJobWarmStartConfigParentHyperParameterTuningJobArgs.Builder]*):
+        com.pulumi.aws.sagemaker.inputs.HyperParameterTuningJobWarmStartConfigArgs.Builder =
+      def argsBuilder = com.pulumi.aws.sagemaker.inputs.HyperParameterTuningJobWarmStartConfigParentHyperParameterTuningJobArgs.builder
+      builder.parentHyperParameterTuningJobs(args.map(_(argsBuilder).build)*)
+
   extension (builder: com.pulumi.aws.sagemaker.inputs.DataQualityJobDefinitionDataQualityBaselineConfigArgs.Builder)
     /**
      * @param constraintsResource The constraints resource for a monitoring job. Fields are documented below.
@@ -1295,6 +1869,25 @@ object sagemaker:
         com.pulumi.aws.sagemaker.inputs.FlowDefinitionState.Builder =
       val argsBuilder = com.pulumi.aws.sagemaker.inputs.FlowDefinitionOutputConfigArgs.builder
       builder.outputConfig(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.sagemaker.inputs.HyperParameterTuningJobTrainingJobDefinitionResourceConfigArgs.Builder)
+    /**
+     * @param instanceGroups Instance group settings. See `instanceGroups`.
+     * @return builder
+     */
+    def instanceGroups(args: Endofunction[com.pulumi.aws.sagemaker.inputs.HyperParameterTuningJobTrainingJobDefinitionResourceConfigInstanceGroupArgs.Builder]*):
+        com.pulumi.aws.sagemaker.inputs.HyperParameterTuningJobTrainingJobDefinitionResourceConfigArgs.Builder =
+      def argsBuilder = com.pulumi.aws.sagemaker.inputs.HyperParameterTuningJobTrainingJobDefinitionResourceConfigInstanceGroupArgs.builder
+      builder.instanceGroups(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param instancePlacementConfig Placement settings. See `instancePlacementConfig`.
+     * @return builder
+     */
+    def instancePlacementConfig(args: Endofunction[com.pulumi.aws.sagemaker.inputs.HyperParameterTuningJobTrainingJobDefinitionResourceConfigInstancePlacementConfigArgs.Builder]):
+        com.pulumi.aws.sagemaker.inputs.HyperParameterTuningJobTrainingJobDefinitionResourceConfigArgs.Builder =
+      val argsBuilder = com.pulumi.aws.sagemaker.inputs.HyperParameterTuningJobTrainingJobDefinitionResourceConfigInstancePlacementConfigArgs.builder
+      builder.instancePlacementConfig(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.sagemaker.inputs.FeatureGroupOfflineStoreConfigArgs.Builder)
     /**
@@ -1371,6 +1964,16 @@ object sagemaker:
         com.pulumi.aws.sagemaker.inputs.ModelPrimaryContainerAdditionalModelDataSourceS3DataSourceArgs.Builder =
       val argsBuilder = com.pulumi.aws.sagemaker.inputs.ModelPrimaryContainerAdditionalModelDataSourceS3DataSourceModelAccessConfigArgs.builder
       builder.modelAccessConfig(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.sagemaker.inputs.HyperParameterTuningJobTrainingJobDefinitionHyperParameterTuningResourceConfigArgs.Builder)
+    /**
+     * @param instanceConfigs Per-instance-type resource settings. See `instanceConfigs`.
+     * @return builder
+     */
+    def instanceConfigs(args: Endofunction[com.pulumi.aws.sagemaker.inputs.HyperParameterTuningJobTrainingJobDefinitionHyperParameterTuningResourceConfigInstanceConfigArgs.Builder]*):
+        com.pulumi.aws.sagemaker.inputs.HyperParameterTuningJobTrainingJobDefinitionHyperParameterTuningResourceConfigArgs.Builder =
+      def argsBuilder = com.pulumi.aws.sagemaker.inputs.HyperParameterTuningJobTrainingJobDefinitionHyperParameterTuningResourceConfigInstanceConfigArgs.builder
+      builder.instanceConfigs(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.aws.sagemaker.inputs.DomainDefaultUserSettingsJupyterLabAppSettingsArgs.Builder)
     /**
@@ -1555,6 +2158,25 @@ object sagemaker:
       val argsBuilder = com.pulumi.aws.sagemaker.inputs.AppImageConfigJupyterLabImageConfigFileSystemConfigArgs.builder
       builder.fileSystemConfig(args(argsBuilder).build)
 
+  extension (builder: com.pulumi.aws.sagemaker.inputs.HyperParameterTuningJobTrainingJobDefinitionInputDataConfigArgs.Builder)
+    /**
+     * @param dataSource Data source settings. See `dataSource`.
+     * @return builder
+     */
+    def dataSource(args: Endofunction[com.pulumi.aws.sagemaker.inputs.HyperParameterTuningJobTrainingJobDefinitionInputDataConfigDataSourceArgs.Builder]):
+        com.pulumi.aws.sagemaker.inputs.HyperParameterTuningJobTrainingJobDefinitionInputDataConfigArgs.Builder =
+      val argsBuilder = com.pulumi.aws.sagemaker.inputs.HyperParameterTuningJobTrainingJobDefinitionInputDataConfigDataSourceArgs.builder
+      builder.dataSource(args(argsBuilder).build)
+
+    /**
+     * @param shuffleConfig Shuffling settings. See `shuffleConfig`.
+     * @return builder
+     */
+    def shuffleConfig(args: Endofunction[com.pulumi.aws.sagemaker.inputs.HyperParameterTuningJobTrainingJobDefinitionInputDataConfigShuffleConfigArgs.Builder]):
+        com.pulumi.aws.sagemaker.inputs.HyperParameterTuningJobTrainingJobDefinitionInputDataConfigArgs.Builder =
+      val argsBuilder = com.pulumi.aws.sagemaker.inputs.HyperParameterTuningJobTrainingJobDefinitionInputDataConfigShuffleConfigArgs.builder
+      builder.shuffleConfig(args(argsBuilder).build)
+
   extension (builder: com.pulumi.aws.sagemaker.inputs.EndpointDeploymentConfigBlueGreenUpdatePolicyArgs.Builder)
     /**
      * @param trafficRoutingConfiguration Defines the traffic routing strategy to shift traffic from the old fleet to the new fleet during an endpoint deployment. See Traffic Routing Configuration.
@@ -1574,6 +2196,16 @@ object sagemaker:
         com.pulumi.aws.sagemaker.inputs.DataQualityJobDefinitionDataQualityJobOutputConfigArgs.Builder =
       val argsBuilder = com.pulumi.aws.sagemaker.inputs.DataQualityJobDefinitionDataQualityJobOutputConfigMonitoringOutputsArgs.builder
       builder.monitoringOutputs(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.sagemaker.inputs.TrainingJobDebugHookConfigArgs.Builder)
+    /**
+     * @param collectionConfigurations List of tensor collections to configure for the debug hook. Maximum of 20. See `collectionConfigurations` below.
+     * @return builder
+     */
+    def collectionConfigurations(args: Endofunction[com.pulumi.aws.sagemaker.inputs.TrainingJobDebugHookConfigCollectionConfigurationArgs.Builder]*):
+        com.pulumi.aws.sagemaker.inputs.TrainingJobDebugHookConfigArgs.Builder =
+      def argsBuilder = com.pulumi.aws.sagemaker.inputs.TrainingJobDebugHookConfigCollectionConfigurationArgs.builder
+      builder.collectionConfigurations(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.aws.sagemaker.inputs.UserProfileUserSettingsKernelGatewayAppSettingsArgs.Builder)
     /**
@@ -1650,6 +2282,43 @@ object sagemaker:
         com.pulumi.aws.sagemaker.inputs.EndpointDeploymentConfigAutoRollbackConfigurationArgs.Builder =
       def argsBuilder = com.pulumi.aws.sagemaker.inputs.EndpointDeploymentConfigAutoRollbackConfigurationAlarmArgs.builder
       builder.alarms(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.aws.sagemaker.inputs.HyperParameterTuningJobTrainingJobDefinitionHyperParameterRangesArgs.Builder)
+    /**
+     * @param autoParameters Parameter list for automatic range selection.
+     * @return builder
+     */
+    def autoParameters(args: Endofunction[com.pulumi.aws.sagemaker.inputs.HyperParameterTuningJobTrainingJobDefinitionHyperParameterRangesAutoParameterArgs.Builder]*):
+        com.pulumi.aws.sagemaker.inputs.HyperParameterTuningJobTrainingJobDefinitionHyperParameterRangesArgs.Builder =
+      def argsBuilder = com.pulumi.aws.sagemaker.inputs.HyperParameterTuningJobTrainingJobDefinitionHyperParameterRangesAutoParameterArgs.builder
+      builder.autoParameters(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param categoricalParameterRanges Categorical parameter ranges.
+     * @return builder
+     */
+    def categoricalParameterRanges(args: Endofunction[com.pulumi.aws.sagemaker.inputs.HyperParameterTuningJobTrainingJobDefinitionHyperParameterRangesCategoricalParameterRangeArgs.Builder]*):
+        com.pulumi.aws.sagemaker.inputs.HyperParameterTuningJobTrainingJobDefinitionHyperParameterRangesArgs.Builder =
+      def argsBuilder = com.pulumi.aws.sagemaker.inputs.HyperParameterTuningJobTrainingJobDefinitionHyperParameterRangesCategoricalParameterRangeArgs.builder
+      builder.categoricalParameterRanges(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param continuousParameterRanges Continuous parameter ranges.
+     * @return builder
+     */
+    def continuousParameterRanges(args: Endofunction[com.pulumi.aws.sagemaker.inputs.HyperParameterTuningJobTrainingJobDefinitionHyperParameterRangesContinuousParameterRangeArgs.Builder]*):
+        com.pulumi.aws.sagemaker.inputs.HyperParameterTuningJobTrainingJobDefinitionHyperParameterRangesArgs.Builder =
+      def argsBuilder = com.pulumi.aws.sagemaker.inputs.HyperParameterTuningJobTrainingJobDefinitionHyperParameterRangesContinuousParameterRangeArgs.builder
+      builder.continuousParameterRanges(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param integerParameterRanges Integer parameter ranges.
+     * @return builder
+     */
+    def integerParameterRanges(args: Endofunction[com.pulumi.aws.sagemaker.inputs.HyperParameterTuningJobTrainingJobDefinitionHyperParameterRangesIntegerParameterRangeArgs.Builder]*):
+        com.pulumi.aws.sagemaker.inputs.HyperParameterTuningJobTrainingJobDefinitionHyperParameterRangesArgs.Builder =
+      def argsBuilder = com.pulumi.aws.sagemaker.inputs.HyperParameterTuningJobTrainingJobDefinitionHyperParameterRangesIntegerParameterRangeArgs.builder
+      builder.integerParameterRanges(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.aws.sagemaker.inputs.DataQualityJobDefinitionDataQualityJobInputBatchTransformInputArgs.Builder)
     /**
@@ -1944,6 +2613,80 @@ object sagemaker:
       val argsBuilder = com.pulumi.aws.sagemaker.inputs.UserProfileUserSettingsCodeEditorAppSettingsDefaultResourceSpecArgs.builder
       builder.defaultResourceSpec(args(argsBuilder).build)
 
+  extension (builder: com.pulumi.aws.sagemaker.inputs.AlgorithmValidationSpecificationValidationProfilesTransformJobDefinitionArgs.Builder)
+    /**
+     * @param transformInput Input configuration for the transform job. See Transform Input.
+     * @return builder
+     */
+    def transformInput(args: Endofunction[com.pulumi.aws.sagemaker.inputs.AlgorithmValidationSpecificationValidationProfilesTransformJobDefinitionTransformInputArgs.Builder]):
+        com.pulumi.aws.sagemaker.inputs.AlgorithmValidationSpecificationValidationProfilesTransformJobDefinitionArgs.Builder =
+      val argsBuilder = com.pulumi.aws.sagemaker.inputs.AlgorithmValidationSpecificationValidationProfilesTransformJobDefinitionTransformInputArgs.builder
+      builder.transformInput(args(argsBuilder).build)
+
+    /**
+     * @param transformOutput Output configuration for the transform job. See Transform Output.
+     * @return builder
+     */
+    def transformOutput(args: Endofunction[com.pulumi.aws.sagemaker.inputs.AlgorithmValidationSpecificationValidationProfilesTransformJobDefinitionTransformOutputArgs.Builder]):
+        com.pulumi.aws.sagemaker.inputs.AlgorithmValidationSpecificationValidationProfilesTransformJobDefinitionArgs.Builder =
+      val argsBuilder = com.pulumi.aws.sagemaker.inputs.AlgorithmValidationSpecificationValidationProfilesTransformJobDefinitionTransformOutputArgs.builder
+      builder.transformOutput(args(argsBuilder).build)
+
+    /**
+     * @param transformResources Compute resources for the transform job. See Transform Resources.
+     * @return builder
+     */
+    def transformResources(args: Endofunction[com.pulumi.aws.sagemaker.inputs.AlgorithmValidationSpecificationValidationProfilesTransformJobDefinitionTransformResourcesArgs.Builder]):
+        com.pulumi.aws.sagemaker.inputs.AlgorithmValidationSpecificationValidationProfilesTransformJobDefinitionArgs.Builder =
+      val argsBuilder = com.pulumi.aws.sagemaker.inputs.AlgorithmValidationSpecificationValidationProfilesTransformJobDefinitionTransformResourcesArgs.builder
+      builder.transformResources(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.sagemaker.inputs.AlgorithmTrainingSpecificationArgs.Builder)
+    /**
+     * @param additionalS3DataSource Additional training data to make available to the algorithm. See Additional S3 Data Source.
+     * @return builder
+     */
+    def additionalS3DataSource(args: Endofunction[com.pulumi.aws.sagemaker.inputs.AlgorithmTrainingSpecificationAdditionalS3DataSourceArgs.Builder]):
+        com.pulumi.aws.sagemaker.inputs.AlgorithmTrainingSpecificationArgs.Builder =
+      val argsBuilder = com.pulumi.aws.sagemaker.inputs.AlgorithmTrainingSpecificationAdditionalS3DataSourceArgs.builder
+      builder.additionalS3DataSource(args(argsBuilder).build)
+
+    /**
+     * @param metricDefinitions List of metric definitions used to parse training logs. See Metric Definitions.
+     * @return builder
+     */
+    def metricDefinitions(args: Endofunction[com.pulumi.aws.sagemaker.inputs.AlgorithmTrainingSpecificationMetricDefinitionArgs.Builder]*):
+        com.pulumi.aws.sagemaker.inputs.AlgorithmTrainingSpecificationArgs.Builder =
+      def argsBuilder = com.pulumi.aws.sagemaker.inputs.AlgorithmTrainingSpecificationMetricDefinitionArgs.builder
+      builder.metricDefinitions(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param supportedHyperParameters Hyperparameter definitions supported by the algorithm. See Supported Hyper Parameters.
+     * @return builder
+     */
+    def supportedHyperParameters(args: Endofunction[com.pulumi.aws.sagemaker.inputs.AlgorithmTrainingSpecificationSupportedHyperParameterArgs.Builder]*):
+        com.pulumi.aws.sagemaker.inputs.AlgorithmTrainingSpecificationArgs.Builder =
+      def argsBuilder = com.pulumi.aws.sagemaker.inputs.AlgorithmTrainingSpecificationSupportedHyperParameterArgs.builder
+      builder.supportedHyperParameters(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param supportedTuningJobObjectiveMetrics Objective metrics supported for hyperparameter tuning jobs. See Supported Tuning Job Objective Metrics.
+     * @return builder
+     */
+    def supportedTuningJobObjectiveMetrics(args: Endofunction[com.pulumi.aws.sagemaker.inputs.AlgorithmTrainingSpecificationSupportedTuningJobObjectiveMetricArgs.Builder]*):
+        com.pulumi.aws.sagemaker.inputs.AlgorithmTrainingSpecificationArgs.Builder =
+      def argsBuilder = com.pulumi.aws.sagemaker.inputs.AlgorithmTrainingSpecificationSupportedTuningJobObjectiveMetricArgs.builder
+      builder.supportedTuningJobObjectiveMetrics(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param trainingChannels List of channel definitions supported for training. See Training Channels.
+     * @return builder
+     */
+    def trainingChannels(args: Endofunction[com.pulumi.aws.sagemaker.inputs.AlgorithmTrainingSpecificationTrainingChannelArgs.Builder]*):
+        com.pulumi.aws.sagemaker.inputs.AlgorithmTrainingSpecificationArgs.Builder =
+      def argsBuilder = com.pulumi.aws.sagemaker.inputs.AlgorithmTrainingSpecificationTrainingChannelArgs.builder
+      builder.trainingChannels(args.map(_(argsBuilder).build)*)
+
   extension (builder: com.pulumi.aws.sagemaker.inputs.EndpointState.Builder)
     /**
      * @param deploymentConfig The deployment configuration for an endpoint, which contains the desired deployment strategy and rollback configurations. See Deployment Config.
@@ -2002,6 +2745,43 @@ object sagemaker:
       val argsBuilder = com.pulumi.aws.sagemaker.inputs.CodeRepositoryGitConfigArgs.builder
       builder.gitConfig(args(argsBuilder).build)
 
+  extension (builder: com.pulumi.aws.sagemaker.inputs.AlgorithmValidationSpecificationValidationProfilesTrainingJobDefinitionArgs.Builder)
+    /**
+     * @param inputDataConfigs Input channel configuration for the validation training job. See Input Data Config.
+     * @return builder
+     */
+    def inputDataConfigs(args: Endofunction[com.pulumi.aws.sagemaker.inputs.AlgorithmValidationSpecificationValidationProfilesTrainingJobDefinitionInputDataConfigArgs.Builder]*):
+        com.pulumi.aws.sagemaker.inputs.AlgorithmValidationSpecificationValidationProfilesTrainingJobDefinitionArgs.Builder =
+      def argsBuilder = com.pulumi.aws.sagemaker.inputs.AlgorithmValidationSpecificationValidationProfilesTrainingJobDefinitionInputDataConfigArgs.builder
+      builder.inputDataConfigs(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param outputDataConfig Output configuration for the validation training job. See Output Data Config.
+     * @return builder
+     */
+    def outputDataConfig(args: Endofunction[com.pulumi.aws.sagemaker.inputs.AlgorithmValidationSpecificationValidationProfilesTrainingJobDefinitionOutputDataConfigArgs.Builder]):
+        com.pulumi.aws.sagemaker.inputs.AlgorithmValidationSpecificationValidationProfilesTrainingJobDefinitionArgs.Builder =
+      val argsBuilder = com.pulumi.aws.sagemaker.inputs.AlgorithmValidationSpecificationValidationProfilesTrainingJobDefinitionOutputDataConfigArgs.builder
+      builder.outputDataConfig(args(argsBuilder).build)
+
+    /**
+     * @param resourceConfig Resource configuration for the validation training job. See Resource Config.
+     * @return builder
+     */
+    def resourceConfig(args: Endofunction[com.pulumi.aws.sagemaker.inputs.AlgorithmValidationSpecificationValidationProfilesTrainingJobDefinitionResourceConfigArgs.Builder]):
+        com.pulumi.aws.sagemaker.inputs.AlgorithmValidationSpecificationValidationProfilesTrainingJobDefinitionArgs.Builder =
+      val argsBuilder = com.pulumi.aws.sagemaker.inputs.AlgorithmValidationSpecificationValidationProfilesTrainingJobDefinitionResourceConfigArgs.builder
+      builder.resourceConfig(args(argsBuilder).build)
+
+    /**
+     * @param stoppingCondition Stopping condition for the validation training job. See Stopping Condition.
+     * @return builder
+     */
+    def stoppingCondition(args: Endofunction[com.pulumi.aws.sagemaker.inputs.AlgorithmValidationSpecificationValidationProfilesTrainingJobDefinitionStoppingConditionArgs.Builder]):
+        com.pulumi.aws.sagemaker.inputs.AlgorithmValidationSpecificationValidationProfilesTrainingJobDefinitionArgs.Builder =
+      val argsBuilder = com.pulumi.aws.sagemaker.inputs.AlgorithmValidationSpecificationValidationProfilesTrainingJobDefinitionStoppingConditionArgs.builder
+      builder.stoppingCondition(args(argsBuilder).build)
+
   extension (builder: com.pulumi.aws.sagemaker.inputs.MonitoringScheduleState.Builder)
     /**
      * @param monitoringScheduleConfig The configuration object that specifies the monitoring schedule and defines the monitoring job. Fields are documented below.
@@ -2011,6 +2791,25 @@ object sagemaker:
         com.pulumi.aws.sagemaker.inputs.MonitoringScheduleState.Builder =
       val argsBuilder = com.pulumi.aws.sagemaker.inputs.MonitoringScheduleMonitoringScheduleConfigArgs.builder
       builder.monitoringScheduleConfig(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.sagemaker.inputs.HyperParameterTuningJobTrainingJobDefinitionInputDataConfigDataSourceS3DataSourceArgs.Builder)
+    /**
+     * @param hubAccessConfig Hub access settings. See `hubAccessConfig`.
+     * @return builder
+     */
+    def hubAccessConfig(args: Endofunction[com.pulumi.aws.sagemaker.inputs.HyperParameterTuningJobTrainingJobDefinitionInputDataConfigDataSourceS3DataSourceHubAccessConfigArgs.Builder]):
+        com.pulumi.aws.sagemaker.inputs.HyperParameterTuningJobTrainingJobDefinitionInputDataConfigDataSourceS3DataSourceArgs.Builder =
+      val argsBuilder = com.pulumi.aws.sagemaker.inputs.HyperParameterTuningJobTrainingJobDefinitionInputDataConfigDataSourceS3DataSourceHubAccessConfigArgs.builder
+      builder.hubAccessConfig(args(argsBuilder).build)
+
+    /**
+     * @param modelAccessConfig Model access settings. See `modelAccessConfig`.
+     * @return builder
+     */
+    def modelAccessConfig(args: Endofunction[com.pulumi.aws.sagemaker.inputs.HyperParameterTuningJobTrainingJobDefinitionInputDataConfigDataSourceS3DataSourceModelAccessConfigArgs.Builder]):
+        com.pulumi.aws.sagemaker.inputs.HyperParameterTuningJobTrainingJobDefinitionInputDataConfigDataSourceS3DataSourceArgs.Builder =
+      val argsBuilder = com.pulumi.aws.sagemaker.inputs.HyperParameterTuningJobTrainingJobDefinitionInputDataConfigDataSourceS3DataSourceModelAccessConfigArgs.builder
+      builder.modelAccessConfig(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.sagemaker.inputs.DeviceFleetState.Builder)
     /**
@@ -2022,6 +2821,35 @@ object sagemaker:
       val argsBuilder = com.pulumi.aws.sagemaker.inputs.DeviceFleetOutputConfigArgs.builder
       builder.outputConfig(args(argsBuilder).build)
 
+  extension (builder: com.pulumi.aws.sagemaker.inputs.HyperParameterTuningJobTrainingJobDefinitionAlgorithmSpecificationArgs.Builder)
+    /**
+     * @param metricDefinitions Metric extraction rules.
+     * @return builder
+     */
+    def metricDefinitions(args: Endofunction[com.pulumi.aws.sagemaker.inputs.HyperParameterTuningJobTrainingJobDefinitionAlgorithmSpecificationMetricDefinitionArgs.Builder]*):
+        com.pulumi.aws.sagemaker.inputs.HyperParameterTuningJobTrainingJobDefinitionAlgorithmSpecificationArgs.Builder =
+      def argsBuilder = com.pulumi.aws.sagemaker.inputs.HyperParameterTuningJobTrainingJobDefinitionAlgorithmSpecificationMetricDefinitionArgs.builder
+      builder.metricDefinitions(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.aws.sagemaker.inputs.TrainingJobResourceConfigArgs.Builder)
+    /**
+     * @param instanceGroups List of instance groups for heterogeneous cluster training. Maximum of 5. Conflicts with `instanceCount`, `instanceType`, and `keepAlivePeriodInSeconds`. See `instanceGroups` below.
+     * @return builder
+     */
+    def instanceGroups(args: Endofunction[com.pulumi.aws.sagemaker.inputs.TrainingJobResourceConfigInstanceGroupArgs.Builder]*):
+        com.pulumi.aws.sagemaker.inputs.TrainingJobResourceConfigArgs.Builder =
+      def argsBuilder = com.pulumi.aws.sagemaker.inputs.TrainingJobResourceConfigInstanceGroupArgs.builder
+      builder.instanceGroups(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param instancePlacementConfig Instance placement configuration. See `instancePlacementConfig` below.
+     * @return builder
+     */
+    def instancePlacementConfig(args: Endofunction[com.pulumi.aws.sagemaker.inputs.TrainingJobResourceConfigInstancePlacementConfigArgs.Builder]):
+        com.pulumi.aws.sagemaker.inputs.TrainingJobResourceConfigArgs.Builder =
+      val argsBuilder = com.pulumi.aws.sagemaker.inputs.TrainingJobResourceConfigInstancePlacementConfigArgs.builder
+      builder.instancePlacementConfig(args(argsBuilder).build)
+
   extension (builder: com.pulumi.aws.sagemaker.inputs.LabelingJobLabelingJobAlgorithmsConfigLabelingJobResourceConfigArgs.Builder)
     /**
      * @param vpcConfig VPC that SageMaker jobs, hosted models, and compute resources have access to. Fields are documented below.
@@ -2031,6 +2859,101 @@ object sagemaker:
         com.pulumi.aws.sagemaker.inputs.LabelingJobLabelingJobAlgorithmsConfigLabelingJobResourceConfigArgs.Builder =
       val argsBuilder = com.pulumi.aws.sagemaker.inputs.LabelingJobLabelingJobAlgorithmsConfigLabelingJobResourceConfigVpcConfigArgs.builder
       builder.vpcConfig(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.sagemaker.inputs.HyperParameterTuningJobTrainingJobDefinitionInputDataConfigDataSourceArgs.Builder)
+    /**
+     * @param fileSystemDataSource File system source settings. See `fileSystemDataSource`.
+     * @return builder
+     */
+    def fileSystemDataSource(args: Endofunction[com.pulumi.aws.sagemaker.inputs.HyperParameterTuningJobTrainingJobDefinitionInputDataConfigDataSourceFileSystemDataSourceArgs.Builder]):
+        com.pulumi.aws.sagemaker.inputs.HyperParameterTuningJobTrainingJobDefinitionInputDataConfigDataSourceArgs.Builder =
+      val argsBuilder = com.pulumi.aws.sagemaker.inputs.HyperParameterTuningJobTrainingJobDefinitionInputDataConfigDataSourceFileSystemDataSourceArgs.builder
+      builder.fileSystemDataSource(args(argsBuilder).build)
+
+    /**
+     * @param s3DataSource S3 source settings. See `s3DataSource`.
+     * @return builder
+     */
+    def s3DataSource(args: Endofunction[com.pulumi.aws.sagemaker.inputs.HyperParameterTuningJobTrainingJobDefinitionInputDataConfigDataSourceS3DataSourceArgs.Builder]):
+        com.pulumi.aws.sagemaker.inputs.HyperParameterTuningJobTrainingJobDefinitionInputDataConfigDataSourceArgs.Builder =
+      val argsBuilder = com.pulumi.aws.sagemaker.inputs.HyperParameterTuningJobTrainingJobDefinitionInputDataConfigDataSourceS3DataSourceArgs.builder
+      builder.s3DataSource(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.sagemaker.inputs.AlgorithmValidationSpecificationValidationProfilesTransformJobDefinitionTransformInputDataSourceArgs.Builder)
+    /**
+     * @param s3DataSource S3-backed training data source. See Training S3 Data Source.
+     * @return builder
+     */
+    def s3DataSource(args: Endofunction[com.pulumi.aws.sagemaker.inputs.AlgorithmValidationSpecificationValidationProfilesTransformJobDefinitionTransformInputDataSourceS3DataSourceArgs.Builder]):
+        com.pulumi.aws.sagemaker.inputs.AlgorithmValidationSpecificationValidationProfilesTransformJobDefinitionTransformInputDataSourceArgs.Builder =
+      val argsBuilder = com.pulumi.aws.sagemaker.inputs.AlgorithmValidationSpecificationValidationProfilesTransformJobDefinitionTransformInputDataSourceS3DataSourceArgs.builder
+      builder.s3DataSource(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.sagemaker.inputs.HyperParameterTuningJobTrainingJobDefinitionResourceConfigInstancePlacementConfigArgs.Builder)
+    /**
+     * @param placementSpecifications Placement details. See `placementSpecifications`.
+     * @return builder
+     */
+    def placementSpecifications(args: Endofunction[com.pulumi.aws.sagemaker.inputs.HyperParameterTuningJobTrainingJobDefinitionResourceConfigInstancePlacementConfigPlacementSpecificationArgs.Builder]*):
+        com.pulumi.aws.sagemaker.inputs.HyperParameterTuningJobTrainingJobDefinitionResourceConfigInstancePlacementConfigArgs.Builder =
+      def argsBuilder = com.pulumi.aws.sagemaker.inputs.HyperParameterTuningJobTrainingJobDefinitionResourceConfigInstancePlacementConfigPlacementSpecificationArgs.builder
+      builder.placementSpecifications(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.aws.sagemaker.inputs.AlgorithmValidationSpecificationArgs.Builder)
+    /**
+     * @param validationProfiles Validation profiles for the algorithm. See Validation Profiles.
+     * @return builder
+     */
+    def validationProfiles(args: Endofunction[com.pulumi.aws.sagemaker.inputs.AlgorithmValidationSpecificationValidationProfilesArgs.Builder]):
+        com.pulumi.aws.sagemaker.inputs.AlgorithmValidationSpecificationArgs.Builder =
+      val argsBuilder = com.pulumi.aws.sagemaker.inputs.AlgorithmValidationSpecificationValidationProfilesArgs.builder
+      builder.validationProfiles(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.sagemaker.inputs.HyperParameterTuningJobConfigArgs.Builder)
+    /**
+     * @param objective Objective metric used by tuning. See `objective`.
+     * @return builder
+     */
+    def objective(args: Endofunction[com.pulumi.aws.sagemaker.inputs.HyperParameterTuningJobConfigObjectiveArgs.Builder]):
+        com.pulumi.aws.sagemaker.inputs.HyperParameterTuningJobConfigArgs.Builder =
+      val argsBuilder = com.pulumi.aws.sagemaker.inputs.HyperParameterTuningJobConfigObjectiveArgs.builder
+      builder.objective(args(argsBuilder).build)
+
+    /**
+     * @param parameterRanges Hyperparameter search ranges. See `parameterRanges`.
+     * @return builder
+     */
+    def parameterRanges(args: Endofunction[com.pulumi.aws.sagemaker.inputs.HyperParameterTuningJobConfigParameterRangesArgs.Builder]):
+        com.pulumi.aws.sagemaker.inputs.HyperParameterTuningJobConfigArgs.Builder =
+      val argsBuilder = com.pulumi.aws.sagemaker.inputs.HyperParameterTuningJobConfigParameterRangesArgs.builder
+      builder.parameterRanges(args(argsBuilder).build)
+
+    /**
+     * @param resourceLimits Training job limits for tuning. See `resourceLimits`.
+     * @return builder
+     */
+    def resourceLimits(args: Endofunction[com.pulumi.aws.sagemaker.inputs.HyperParameterTuningJobConfigResourceLimitsArgs.Builder]):
+        com.pulumi.aws.sagemaker.inputs.HyperParameterTuningJobConfigArgs.Builder =
+      val argsBuilder = com.pulumi.aws.sagemaker.inputs.HyperParameterTuningJobConfigResourceLimitsArgs.builder
+      builder.resourceLimits(args(argsBuilder).build)
+
+    /**
+     * @param strategyConfig Extra strategy options. See `strategyConfig`.
+     * @return builder
+     */
+    def strategyConfig(args: Endofunction[com.pulumi.aws.sagemaker.inputs.HyperParameterTuningJobConfigStrategyConfigArgs.Builder]):
+        com.pulumi.aws.sagemaker.inputs.HyperParameterTuningJobConfigArgs.Builder =
+      val argsBuilder = com.pulumi.aws.sagemaker.inputs.HyperParameterTuningJobConfigStrategyConfigArgs.builder
+      builder.strategyConfig(args(argsBuilder).build)
+
+    /**
+     * @param tuningJobCompletionCriteria Conditions to complete tuning. See `tuningJobCompletionCriteria`.
+     * @return builder
+     */
+    def tuningJobCompletionCriteria(args: Endofunction[com.pulumi.aws.sagemaker.inputs.HyperParameterTuningJobConfigTuningJobCompletionCriteriaArgs.Builder]):
+        com.pulumi.aws.sagemaker.inputs.HyperParameterTuningJobConfigArgs.Builder =
+      val argsBuilder = com.pulumi.aws.sagemaker.inputs.HyperParameterTuningJobConfigTuningJobCompletionCriteriaArgs.builder
+      builder.tuningJobCompletionCriteria(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.sagemaker.inputs.ModelContainerModelDataSourceArgs.Builder)
     /**
@@ -2051,6 +2974,43 @@ object sagemaker:
         com.pulumi.aws.sagemaker.inputs.ModelContainerAdditionalModelDataSourceArgs.Builder =
       def argsBuilder = com.pulumi.aws.sagemaker.inputs.ModelContainerAdditionalModelDataSourceS3DataSourceArgs.builder
       builder.s3DataSources(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.aws.sagemaker.inputs.HyperParameterTuningJobConfigParameterRangesArgs.Builder)
+    /**
+     * @param autoParameters Parameter list for automatic range selection.
+     * @return builder
+     */
+    def autoParameters(args: Endofunction[com.pulumi.aws.sagemaker.inputs.HyperParameterTuningJobConfigParameterRangesAutoParameterArgs.Builder]*):
+        com.pulumi.aws.sagemaker.inputs.HyperParameterTuningJobConfigParameterRangesArgs.Builder =
+      def argsBuilder = com.pulumi.aws.sagemaker.inputs.HyperParameterTuningJobConfigParameterRangesAutoParameterArgs.builder
+      builder.autoParameters(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param categoricalParameterRanges Categorical parameter ranges.
+     * @return builder
+     */
+    def categoricalParameterRanges(args: Endofunction[com.pulumi.aws.sagemaker.inputs.HyperParameterTuningJobConfigParameterRangesCategoricalParameterRangeArgs.Builder]*):
+        com.pulumi.aws.sagemaker.inputs.HyperParameterTuningJobConfigParameterRangesArgs.Builder =
+      def argsBuilder = com.pulumi.aws.sagemaker.inputs.HyperParameterTuningJobConfigParameterRangesCategoricalParameterRangeArgs.builder
+      builder.categoricalParameterRanges(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param continuousParameterRanges Continuous parameter ranges.
+     * @return builder
+     */
+    def continuousParameterRanges(args: Endofunction[com.pulumi.aws.sagemaker.inputs.HyperParameterTuningJobConfigParameterRangesContinuousParameterRangeArgs.Builder]*):
+        com.pulumi.aws.sagemaker.inputs.HyperParameterTuningJobConfigParameterRangesArgs.Builder =
+      def argsBuilder = com.pulumi.aws.sagemaker.inputs.HyperParameterTuningJobConfigParameterRangesContinuousParameterRangeArgs.builder
+      builder.continuousParameterRanges(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param integerParameterRanges Integer parameter ranges.
+     * @return builder
+     */
+    def integerParameterRanges(args: Endofunction[com.pulumi.aws.sagemaker.inputs.HyperParameterTuningJobConfigParameterRangesIntegerParameterRangeArgs.Builder]*):
+        com.pulumi.aws.sagemaker.inputs.HyperParameterTuningJobConfigParameterRangesArgs.Builder =
+      def argsBuilder = com.pulumi.aws.sagemaker.inputs.HyperParameterTuningJobConfigParameterRangesIntegerParameterRangeArgs.builder
+      builder.integerParameterRanges(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.aws.sagemaker.inputs.WorkforceState.Builder)
     /**
@@ -2176,6 +3136,34 @@ object sagemaker:
       val argsBuilder = com.pulumi.aws.sagemaker.inputs.ModelPrimaryContainerImageConfigRepositoryAuthConfigArgs.builder
       builder.repositoryAuthConfig(args(argsBuilder).build)
 
+  extension (builder: com.pulumi.aws.sagemaker.inputs.AlgorithmTrainingSpecificationSupportedHyperParameterRangeArgs.Builder)
+    /**
+     * @param categoricalParameterRangeSpecification Categorical range definition. See Categorical Parameter Range Specification.
+     * @return builder
+     */
+    def categoricalParameterRangeSpecification(args: Endofunction[com.pulumi.aws.sagemaker.inputs.AlgorithmTrainingSpecificationSupportedHyperParameterRangeCategoricalParameterRangeSpecificationArgs.Builder]):
+        com.pulumi.aws.sagemaker.inputs.AlgorithmTrainingSpecificationSupportedHyperParameterRangeArgs.Builder =
+      val argsBuilder = com.pulumi.aws.sagemaker.inputs.AlgorithmTrainingSpecificationSupportedHyperParameterRangeCategoricalParameterRangeSpecificationArgs.builder
+      builder.categoricalParameterRangeSpecification(args(argsBuilder).build)
+
+    /**
+     * @param continuousParameterRangeSpecification Continuous range definition. See Continuous Parameter Range Specification.
+     * @return builder
+     */
+    def continuousParameterRangeSpecification(args: Endofunction[com.pulumi.aws.sagemaker.inputs.AlgorithmTrainingSpecificationSupportedHyperParameterRangeContinuousParameterRangeSpecificationArgs.Builder]):
+        com.pulumi.aws.sagemaker.inputs.AlgorithmTrainingSpecificationSupportedHyperParameterRangeArgs.Builder =
+      val argsBuilder = com.pulumi.aws.sagemaker.inputs.AlgorithmTrainingSpecificationSupportedHyperParameterRangeContinuousParameterRangeSpecificationArgs.builder
+      builder.continuousParameterRangeSpecification(args(argsBuilder).build)
+
+    /**
+     * @param integerParameterRangeSpecification Integer range definition. See Integer Parameter Range Specification.
+     * @return builder
+     */
+    def integerParameterRangeSpecification(args: Endofunction[com.pulumi.aws.sagemaker.inputs.AlgorithmTrainingSpecificationSupportedHyperParameterRangeIntegerParameterRangeSpecificationArgs.Builder]):
+        com.pulumi.aws.sagemaker.inputs.AlgorithmTrainingSpecificationSupportedHyperParameterRangeArgs.Builder =
+      val argsBuilder = com.pulumi.aws.sagemaker.inputs.AlgorithmTrainingSpecificationSupportedHyperParameterRangeIntegerParameterRangeSpecificationArgs.builder
+      builder.integerParameterRangeSpecification(args(argsBuilder).build)
+
   extension (builder: com.pulumi.aws.sagemaker.inputs.SpaceSpaceSettingsJupyterLabAppSettingsAppLifecycleManagementArgs.Builder)
     /**
      * @param idleSettings Settings related to idle shutdown of Studio applications. See `idleSettings` Block below.
@@ -2238,6 +3226,25 @@ object sagemaker:
       val argsBuilder = com.pulumi.aws.sagemaker.inputs.FeatureGroupFeatureDefinitionCollectionConfigArgs.builder
       builder.collectionConfig(args(argsBuilder).build)
 
+  extension (builder: com.pulumi.aws.sagemaker.inputs.TrainingJobInputDataConfigArgs.Builder)
+    /**
+     * @param dataSource Location of the channel data. See `dataSource` below.
+     * @return builder
+     */
+    def dataSource(args: Endofunction[com.pulumi.aws.sagemaker.inputs.TrainingJobInputDataConfigDataSourceArgs.Builder]):
+        com.pulumi.aws.sagemaker.inputs.TrainingJobInputDataConfigArgs.Builder =
+      val argsBuilder = com.pulumi.aws.sagemaker.inputs.TrainingJobInputDataConfigDataSourceArgs.builder
+      builder.dataSource(args(argsBuilder).build)
+
+    /**
+     * @param shuffleConfig Configuration for shuffling data in the channel. See `shuffleConfig` below.
+     * @return builder
+     */
+    def shuffleConfig(args: Endofunction[com.pulumi.aws.sagemaker.inputs.TrainingJobInputDataConfigShuffleConfigArgs.Builder]):
+        com.pulumi.aws.sagemaker.inputs.TrainingJobInputDataConfigArgs.Builder =
+      val argsBuilder = com.pulumi.aws.sagemaker.inputs.TrainingJobInputDataConfigShuffleConfigArgs.builder
+      builder.shuffleConfig(args(argsBuilder).build)
+
   extension (builder: com.pulumi.aws.sagemaker.inputs.DomainDomainSettingsRStudioServerProDomainSettingsArgs.Builder)
     /**
      * @param defaultResourceSpec The default instance type and the Amazon Resource Name (ARN) of the SageMaker AI image created on the instance. see `defaultResourceSpec` Block above.
@@ -2266,6 +3273,76 @@ object sagemaker:
         com.pulumi.aws.sagemaker.inputs.UserProfileUserSettingsRSessionAppSettingsArgs.Builder =
       val argsBuilder = com.pulumi.aws.sagemaker.inputs.UserProfileUserSettingsRSessionAppSettingsDefaultResourceSpecArgs.builder
       builder.defaultResourceSpec(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.sagemaker.inputs.AlgorithmValidationSpecificationValidationProfilesTrainingJobDefinitionResourceConfigArgs.Builder)
+    /**
+     * @param instanceGroups Instance group definitions for the training job. See Instance Groups.
+     * @return builder
+     */
+    def instanceGroups(args: Endofunction[com.pulumi.aws.sagemaker.inputs.AlgorithmValidationSpecificationValidationProfilesTrainingJobDefinitionResourceConfigInstanceGroupArgs.Builder]*):
+        com.pulumi.aws.sagemaker.inputs.AlgorithmValidationSpecificationValidationProfilesTrainingJobDefinitionResourceConfigArgs.Builder =
+      def argsBuilder = com.pulumi.aws.sagemaker.inputs.AlgorithmValidationSpecificationValidationProfilesTrainingJobDefinitionResourceConfigInstanceGroupArgs.builder
+      builder.instanceGroups(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param instancePlacementConfig Placement configuration for the training job. See Instance Placement Config.
+     * @return builder
+     */
+    def instancePlacementConfig(args: Endofunction[com.pulumi.aws.sagemaker.inputs.AlgorithmValidationSpecificationValidationProfilesTrainingJobDefinitionResourceConfigInstancePlacementConfigArgs.Builder]):
+        com.pulumi.aws.sagemaker.inputs.AlgorithmValidationSpecificationValidationProfilesTrainingJobDefinitionResourceConfigArgs.Builder =
+      val argsBuilder = com.pulumi.aws.sagemaker.inputs.AlgorithmValidationSpecificationValidationProfilesTrainingJobDefinitionResourceConfigInstancePlacementConfigArgs.builder
+      builder.instancePlacementConfig(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.sagemaker.inputs.HyperParameterTuningJobState.Builder)
+    /**
+     * @param autotune Autotune settings. See `autotune`.
+     * @return builder
+     */
+    def autotune(args: Endofunction[com.pulumi.aws.sagemaker.inputs.HyperParameterTuningJobAutotuneArgs.Builder]):
+        com.pulumi.aws.sagemaker.inputs.HyperParameterTuningJobState.Builder =
+      val argsBuilder = com.pulumi.aws.sagemaker.inputs.HyperParameterTuningJobAutotuneArgs.builder
+      builder.autotune(args(argsBuilder).build)
+
+    /**
+     * @param config Tuning job settings. See `config`.
+     * @return builder
+     */
+    def config(args: Endofunction[com.pulumi.aws.sagemaker.inputs.HyperParameterTuningJobConfigArgs.Builder]):
+        com.pulumi.aws.sagemaker.inputs.HyperParameterTuningJobState.Builder =
+      val argsBuilder = com.pulumi.aws.sagemaker.inputs.HyperParameterTuningJobConfigArgs.builder
+      builder.config(args(argsBuilder).build)
+
+    def timeouts(args: Endofunction[com.pulumi.aws.sagemaker.inputs.HyperParameterTuningJobTimeoutsArgs.Builder]):
+        com.pulumi.aws.sagemaker.inputs.HyperParameterTuningJobState.Builder =
+      val argsBuilder = com.pulumi.aws.sagemaker.inputs.HyperParameterTuningJobTimeoutsArgs.builder
+      builder.timeouts(args(argsBuilder).build)
+
+    /**
+     * @param trainingJobDefinition Single training job definition for tuning. See `trainingJobDefinition`.
+     * @return builder
+     */
+    def trainingJobDefinition(args: Endofunction[com.pulumi.aws.sagemaker.inputs.HyperParameterTuningJobTrainingJobDefinitionArgs.Builder]):
+        com.pulumi.aws.sagemaker.inputs.HyperParameterTuningJobState.Builder =
+      val argsBuilder = com.pulumi.aws.sagemaker.inputs.HyperParameterTuningJobTrainingJobDefinitionArgs.builder
+      builder.trainingJobDefinition(args(argsBuilder).build)
+
+    /**
+     * @param trainingJobDefinitions Multiple training job definitions for tuning. See `trainingJobDefinition`.
+     * @return builder
+     */
+    def trainingJobDefinitions(args: Endofunction[com.pulumi.aws.sagemaker.inputs.HyperParameterTuningJobTrainingJobDefinitionArgs.Builder]*):
+        com.pulumi.aws.sagemaker.inputs.HyperParameterTuningJobState.Builder =
+      def argsBuilder = com.pulumi.aws.sagemaker.inputs.HyperParameterTuningJobTrainingJobDefinitionArgs.builder
+      builder.trainingJobDefinitions(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param warmStartConfig Warm start settings. See `warmStartConfig`.
+     * @return builder
+     */
+    def warmStartConfig(args: Endofunction[com.pulumi.aws.sagemaker.inputs.HyperParameterTuningJobWarmStartConfigArgs.Builder]):
+        com.pulumi.aws.sagemaker.inputs.HyperParameterTuningJobState.Builder =
+      val argsBuilder = com.pulumi.aws.sagemaker.inputs.HyperParameterTuningJobWarmStartConfigArgs.builder
+      builder.warmStartConfig(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.sagemaker.inputs.LabelingJobState.Builder)
     /**
@@ -2361,6 +3438,25 @@ object sagemaker:
         com.pulumi.aws.sagemaker.inputs.DomainDefaultUserSettingsSpaceStorageSettingsArgs.Builder =
       val argsBuilder = com.pulumi.aws.sagemaker.inputs.DomainDefaultUserSettingsSpaceStorageSettingsDefaultEbsStorageSettingsArgs.builder
       builder.defaultEbsStorageSettings(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.sagemaker.inputs.TrainingJobInputDataConfigDataSourceS3DataSourceArgs.Builder)
+    /**
+     * @param hubAccessConfig SageMaker AI Hub access configuration. See `hubAccessConfig` below.
+     * @return builder
+     */
+    def hubAccessConfig(args: Endofunction[com.pulumi.aws.sagemaker.inputs.TrainingJobInputDataConfigDataSourceS3DataSourceHubAccessConfigArgs.Builder]):
+        com.pulumi.aws.sagemaker.inputs.TrainingJobInputDataConfigDataSourceS3DataSourceArgs.Builder =
+      val argsBuilder = com.pulumi.aws.sagemaker.inputs.TrainingJobInputDataConfigDataSourceS3DataSourceHubAccessConfigArgs.builder
+      builder.hubAccessConfig(args(argsBuilder).build)
+
+    /**
+     * @param modelAccessConfig Model access configuration. See `modelAccessConfig` below.
+     * @return builder
+     */
+    def modelAccessConfig(args: Endofunction[com.pulumi.aws.sagemaker.inputs.TrainingJobInputDataConfigDataSourceS3DataSourceModelAccessConfigArgs.Builder]):
+        com.pulumi.aws.sagemaker.inputs.TrainingJobInputDataConfigDataSourceS3DataSourceArgs.Builder =
+      val argsBuilder = com.pulumi.aws.sagemaker.inputs.TrainingJobInputDataConfigDataSourceS3DataSourceModelAccessConfigArgs.builder
+      builder.modelAccessConfig(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.sagemaker.inputs.DomainDefaultUserSettingsArgs.Builder)
     /**
@@ -2480,6 +3576,12 @@ object sagemaker:
       val argsBuilder = com.pulumi.aws.sagemaker.inputs.DomainDefaultUserSettingsTensorBoardAppSettingsArgs.builder
       builder.tensorBoardAppSettings(args(argsBuilder).build)
 
+  extension (builder: com.pulumi.aws.sagemaker.inputs.MlflowAppState.Builder)
+    def timeouts(args: Endofunction[com.pulumi.aws.sagemaker.inputs.MlflowAppTimeoutsArgs.Builder]):
+        com.pulumi.aws.sagemaker.inputs.MlflowAppState.Builder =
+      val argsBuilder = com.pulumi.aws.sagemaker.inputs.MlflowAppTimeoutsArgs.builder
+      builder.timeouts(args(argsBuilder).build)
+
   extension (builder: com.pulumi.aws.sagemaker.inputs.FeatureGroupState.Builder)
     /**
      * @param featureDefinitions A list of Feature names and types. See Feature Definition Below.
@@ -2513,6 +3615,68 @@ object sagemaker:
       val argsBuilder = com.pulumi.aws.sagemaker.inputs.FeatureGroupThroughputConfigArgs.builder
       builder.throughputConfig(args(argsBuilder).build)
 
+  extension (builder: com.pulumi.aws.sagemaker.inputs.AlgorithmTrainingSpecificationSupportedHyperParameterArgs.Builder)
+    /**
+     * @param range Allowed value range for the hyperparameter. See Parameter Range.
+     * @return builder
+     */
+    def range(args: Endofunction[com.pulumi.aws.sagemaker.inputs.AlgorithmTrainingSpecificationSupportedHyperParameterRangeArgs.Builder]):
+        com.pulumi.aws.sagemaker.inputs.AlgorithmTrainingSpecificationSupportedHyperParameterArgs.Builder =
+      val argsBuilder = com.pulumi.aws.sagemaker.inputs.AlgorithmTrainingSpecificationSupportedHyperParameterRangeArgs.builder
+      builder.range(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.sagemaker.inputs.AlgorithmState.Builder)
+    /**
+     * @param inferenceSpecification Configuration for inference jobs that use this algorithm. See Inference Specification.
+     * @return builder
+     */
+    def inferenceSpecification(args: Endofunction[com.pulumi.aws.sagemaker.inputs.AlgorithmInferenceSpecificationArgs.Builder]):
+        com.pulumi.aws.sagemaker.inputs.AlgorithmState.Builder =
+      val argsBuilder = com.pulumi.aws.sagemaker.inputs.AlgorithmInferenceSpecificationArgs.builder
+      builder.inferenceSpecification(args(argsBuilder).build)
+
+    def timeouts(args: Endofunction[com.pulumi.aws.sagemaker.inputs.AlgorithmTimeoutsArgs.Builder]):
+        com.pulumi.aws.sagemaker.inputs.AlgorithmState.Builder =
+      val argsBuilder = com.pulumi.aws.sagemaker.inputs.AlgorithmTimeoutsArgs.builder
+      builder.timeouts(args(argsBuilder).build)
+
+    /**
+     * @param trainingSpecification Configuration for training jobs that use this algorithm. See Training Specification.
+     * @return builder
+     */
+    def trainingSpecification(args: Endofunction[com.pulumi.aws.sagemaker.inputs.AlgorithmTrainingSpecificationArgs.Builder]):
+        com.pulumi.aws.sagemaker.inputs.AlgorithmState.Builder =
+      val argsBuilder = com.pulumi.aws.sagemaker.inputs.AlgorithmTrainingSpecificationArgs.builder
+      builder.trainingSpecification(args(argsBuilder).build)
+
+    /**
+     * @param validationSpecification Configuration used to validate the algorithm. See Validation Specification.
+     * @return builder
+     */
+    def validationSpecification(args: Endofunction[com.pulumi.aws.sagemaker.inputs.AlgorithmValidationSpecificationArgs.Builder]):
+        com.pulumi.aws.sagemaker.inputs.AlgorithmState.Builder =
+      val argsBuilder = com.pulumi.aws.sagemaker.inputs.AlgorithmValidationSpecificationArgs.builder
+      builder.validationSpecification(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.sagemaker.inputs.AlgorithmValidationSpecificationValidationProfilesTrainingJobDefinitionInputDataConfigDataSourceArgs.Builder)
+    /**
+     * @param fileSystemDataSource File system-backed data source. See File System Data Source.
+     * @return builder
+     */
+    def fileSystemDataSource(args: Endofunction[com.pulumi.aws.sagemaker.inputs.AlgorithmValidationSpecificationValidationProfilesTrainingJobDefinitionInputDataConfigDataSourceFileSystemDataSourceArgs.Builder]):
+        com.pulumi.aws.sagemaker.inputs.AlgorithmValidationSpecificationValidationProfilesTrainingJobDefinitionInputDataConfigDataSourceArgs.Builder =
+      val argsBuilder = com.pulumi.aws.sagemaker.inputs.AlgorithmValidationSpecificationValidationProfilesTrainingJobDefinitionInputDataConfigDataSourceFileSystemDataSourceArgs.builder
+      builder.fileSystemDataSource(args(argsBuilder).build)
+
+    /**
+     * @param s3DataSource S3-backed training data source. See Training S3 Data Source.
+     * @return builder
+     */
+    def s3DataSource(args: Endofunction[com.pulumi.aws.sagemaker.inputs.AlgorithmValidationSpecificationValidationProfilesTrainingJobDefinitionInputDataConfigDataSourceS3DataSourceArgs.Builder]):
+        com.pulumi.aws.sagemaker.inputs.AlgorithmValidationSpecificationValidationProfilesTrainingJobDefinitionInputDataConfigDataSourceArgs.Builder =
+      val argsBuilder = com.pulumi.aws.sagemaker.inputs.AlgorithmValidationSpecificationValidationProfilesTrainingJobDefinitionInputDataConfigDataSourceS3DataSourceArgs.builder
+      builder.s3DataSource(args(argsBuilder).build)
+
   extension (builder: com.pulumi.aws.sagemaker.inputs.EndpointDeploymentConfigArgs.Builder)
     /**
      * @param autoRollbackConfiguration Automatic rollback configuration for handling endpoint deployment failures and recovery. See Auto Rollback Configuration.
@@ -2540,6 +3704,16 @@ object sagemaker:
         com.pulumi.aws.sagemaker.inputs.EndpointDeploymentConfigArgs.Builder =
       val argsBuilder = com.pulumi.aws.sagemaker.inputs.EndpointDeploymentConfigRollingUpdatePolicyArgs.builder
       builder.rollingUpdatePolicy(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.sagemaker.inputs.AlgorithmValidationSpecificationValidationProfilesTrainingJobDefinitionResourceConfigInstancePlacementConfigArgs.Builder)
+    /**
+     * @param placementSpecifications Placement specifications for ultra servers. See Placement Specifications.
+     * @return builder
+     */
+    def placementSpecifications(args: Endofunction[com.pulumi.aws.sagemaker.inputs.AlgorithmValidationSpecificationValidationProfilesTrainingJobDefinitionResourceConfigInstancePlacementConfigPlacementSpecificationArgs.Builder]*):
+        com.pulumi.aws.sagemaker.inputs.AlgorithmValidationSpecificationValidationProfilesTrainingJobDefinitionResourceConfigInstancePlacementConfigArgs.Builder =
+      def argsBuilder = com.pulumi.aws.sagemaker.inputs.AlgorithmValidationSpecificationValidationProfilesTrainingJobDefinitionResourceConfigInstancePlacementConfigPlacementSpecificationArgs.builder
+      builder.placementSpecifications(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.aws.sagemaker.inputs.WorkteamState.Builder)
     /**
@@ -2569,6 +3743,16 @@ object sagemaker:
       val argsBuilder = com.pulumi.aws.sagemaker.inputs.WorkteamWorkerAccessConfigurationArgs.builder
       builder.workerAccessConfiguration(args(argsBuilder).build)
 
+  extension (builder: com.pulumi.aws.sagemaker.inputs.TrainingJobAlgorithmSpecificationTrainingImageConfigArgs.Builder)
+    /**
+     * @param trainingRepositoryAuthConfig Authentication configuration for the training image repository. See `trainingRepositoryAuthConfig` below.
+     * @return builder
+     */
+    def trainingRepositoryAuthConfig(args: Endofunction[com.pulumi.aws.sagemaker.inputs.TrainingJobAlgorithmSpecificationTrainingImageConfigTrainingRepositoryAuthConfigArgs.Builder]):
+        com.pulumi.aws.sagemaker.inputs.TrainingJobAlgorithmSpecificationTrainingImageConfigArgs.Builder =
+      val argsBuilder = com.pulumi.aws.sagemaker.inputs.TrainingJobAlgorithmSpecificationTrainingImageConfigTrainingRepositoryAuthConfigArgs.builder
+      builder.trainingRepositoryAuthConfig(args(argsBuilder).build)
+
   extension (builder: com.pulumi.aws.sagemaker.inputs.AppImageConfigKernelGatewayImageConfigArgs.Builder)
     /**
      * @param fileSystemConfig The URL where the Git repository is located. See File System Config details below.
@@ -2597,6 +3781,25 @@ object sagemaker:
         com.pulumi.aws.sagemaker.inputs.SpaceSpaceSettingsSpaceStorageSettingsArgs.Builder =
       val argsBuilder = com.pulumi.aws.sagemaker.inputs.SpaceSpaceSettingsSpaceStorageSettingsEbsStorageSettingsArgs.builder
       builder.ebsStorageSettings(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.sagemaker.inputs.HyperParameterTuningJobConfigTuningJobCompletionCriteriaArgs.Builder)
+    /**
+     * @param bestObjectiveNotImproving Stop condition for non-improving jobs. See `bestObjectiveNotImproving`.
+     * @return builder
+     */
+    def bestObjectiveNotImproving(args: Endofunction[com.pulumi.aws.sagemaker.inputs.HyperParameterTuningJobConfigTuningJobCompletionCriteriaBestObjectiveNotImprovingArgs.Builder]):
+        com.pulumi.aws.sagemaker.inputs.HyperParameterTuningJobConfigTuningJobCompletionCriteriaArgs.Builder =
+      val argsBuilder = com.pulumi.aws.sagemaker.inputs.HyperParameterTuningJobConfigTuningJobCompletionCriteriaBestObjectiveNotImprovingArgs.builder
+      builder.bestObjectiveNotImproving(args(argsBuilder).build)
+
+    /**
+     * @param convergenceDetected Stop condition based on convergence. See `convergenceDetected`.
+     * @return builder
+     */
+    def convergenceDetected(args: Endofunction[com.pulumi.aws.sagemaker.inputs.HyperParameterTuningJobConfigTuningJobCompletionCriteriaConvergenceDetectedArgs.Builder]):
+        com.pulumi.aws.sagemaker.inputs.HyperParameterTuningJobConfigTuningJobCompletionCriteriaArgs.Builder =
+      val argsBuilder = com.pulumi.aws.sagemaker.inputs.HyperParameterTuningJobConfigTuningJobCompletionCriteriaConvergenceDetectedArgs.builder
+      builder.convergenceDetected(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.sagemaker.inputs.MonitoringScheduleMonitoringScheduleConfigMonitoringJobDefinitionArgs.Builder)
     /**
@@ -2683,6 +3886,17 @@ object sagemaker:
       val argsBuilder = com.pulumi.aws.sagemaker.inputs.MonitoringScheduleMonitoringScheduleConfigMonitoringJobDefinitionBaselineStatisticsResourceArgs.builder
       builder.statisticsResource(args(argsBuilder).build)
 
+  extension (builder: com.pulumi.aws.sagemaker.inputs.AlgorithmValidationSpecificationValidationProfilesTrainingJobDefinitionInputDataConfigDataSourceS3DataSourceArgs.Builder)
+    def hubAccessConfig(args: Endofunction[com.pulumi.aws.sagemaker.inputs.AlgorithmValidationSpecificationValidationProfilesTrainingJobDefinitionInputDataConfigDataSourceS3DataSourceHubAccessConfigArgs.Builder]):
+        com.pulumi.aws.sagemaker.inputs.AlgorithmValidationSpecificationValidationProfilesTrainingJobDefinitionInputDataConfigDataSourceS3DataSourceArgs.Builder =
+      val argsBuilder = com.pulumi.aws.sagemaker.inputs.AlgorithmValidationSpecificationValidationProfilesTrainingJobDefinitionInputDataConfigDataSourceS3DataSourceHubAccessConfigArgs.builder
+      builder.hubAccessConfig(args(argsBuilder).build)
+
+    def modelAccessConfig(args: Endofunction[com.pulumi.aws.sagemaker.inputs.AlgorithmValidationSpecificationValidationProfilesTrainingJobDefinitionInputDataConfigDataSourceS3DataSourceModelAccessConfigArgs.Builder]):
+        com.pulumi.aws.sagemaker.inputs.AlgorithmValidationSpecificationValidationProfilesTrainingJobDefinitionInputDataConfigDataSourceS3DataSourceArgs.Builder =
+      val argsBuilder = com.pulumi.aws.sagemaker.inputs.AlgorithmValidationSpecificationValidationProfilesTrainingJobDefinitionInputDataConfigDataSourceS3DataSourceModelAccessConfigArgs.builder
+      builder.modelAccessConfig(args(argsBuilder).build)
+
   extension (builder: com.pulumi.aws.sagemaker.inputs.EndpointConfigurationAsyncInferenceConfigOutputConfigArgs.Builder)
     /**
      * @param notificationConfig Configuration for notifications of inference results for asynchronous inference.
@@ -2742,6 +3956,16 @@ object sagemaker:
       val argsBuilder = com.pulumi.aws.sagemaker.inputs.DomainDefaultUserSettingsJupyterLabAppSettingsAppLifecycleManagementIdleSettingsArgs.builder
       builder.idleSettings(args(argsBuilder).build)
 
+  extension (builder: com.pulumi.aws.sagemaker.inputs.TrainingJobResourceConfigInstancePlacementConfigArgs.Builder)
+    /**
+     * @param placementSpecifications Placement specifications for instance placement. See `placementSpecifications` below.
+     * @return builder
+     */
+    def placementSpecifications(args: Endofunction[com.pulumi.aws.sagemaker.inputs.TrainingJobResourceConfigInstancePlacementConfigPlacementSpecificationArgs.Builder]*):
+        com.pulumi.aws.sagemaker.inputs.TrainingJobResourceConfigInstancePlacementConfigArgs.Builder =
+      def argsBuilder = com.pulumi.aws.sagemaker.inputs.TrainingJobResourceConfigInstancePlacementConfigPlacementSpecificationArgs.builder
+      builder.placementSpecifications(args.map(_(argsBuilder).build)*)
+
   extension (builder: com.pulumi.aws.sagemaker.inputs.MonitoringScheduleMonitoringScheduleConfigMonitoringJobDefinitionMonitoringOutputConfigArgs.Builder)
     /**
      * @param monitoringOutputs Monitoring outputs for monitoring jobs. Fields are documented below.
@@ -2751,6 +3975,43 @@ object sagemaker:
         com.pulumi.aws.sagemaker.inputs.MonitoringScheduleMonitoringScheduleConfigMonitoringJobDefinitionMonitoringOutputConfigArgs.Builder =
       val argsBuilder = com.pulumi.aws.sagemaker.inputs.MonitoringScheduleMonitoringScheduleConfigMonitoringJobDefinitionMonitoringOutputConfigMonitoringOutputsArgs.builder
       builder.monitoringOutputs(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.sagemaker.inputs.AlgorithmInferenceSpecificationContainerArgs.Builder)
+    /**
+     * @param additionalS3DataSource Additional model data to make available to the container. See Additional S3 Data Source.
+     * @return builder
+     */
+    def additionalS3DataSource(args: Endofunction[com.pulumi.aws.sagemaker.inputs.AlgorithmInferenceSpecificationContainerAdditionalS3DataSourceArgs.Builder]):
+        com.pulumi.aws.sagemaker.inputs.AlgorithmInferenceSpecificationContainerArgs.Builder =
+      val argsBuilder = com.pulumi.aws.sagemaker.inputs.AlgorithmInferenceSpecificationContainerAdditionalS3DataSourceArgs.builder
+      builder.additionalS3DataSource(args(argsBuilder).build)
+
+    /**
+     * @param baseModel Base model information for the container. See Base Model.
+     * @return builder
+     */
+    def baseModel(args: Endofunction[com.pulumi.aws.sagemaker.inputs.AlgorithmInferenceSpecificationContainerBaseModelArgs.Builder]):
+        com.pulumi.aws.sagemaker.inputs.AlgorithmInferenceSpecificationContainerArgs.Builder =
+      val argsBuilder = com.pulumi.aws.sagemaker.inputs.AlgorithmInferenceSpecificationContainerBaseModelArgs.builder
+      builder.baseModel(args(argsBuilder).build)
+
+    /**
+     * @param modelDataSource Source of model data for the container. See Model Data Source.
+     * @return builder
+     */
+    def modelDataSource(args: Endofunction[com.pulumi.aws.sagemaker.inputs.AlgorithmInferenceSpecificationContainerModelDataSourceArgs.Builder]):
+        com.pulumi.aws.sagemaker.inputs.AlgorithmInferenceSpecificationContainerArgs.Builder =
+      val argsBuilder = com.pulumi.aws.sagemaker.inputs.AlgorithmInferenceSpecificationContainerModelDataSourceArgs.builder
+      builder.modelDataSource(args(argsBuilder).build)
+
+    /**
+     * @param modelInput Additional model input configuration. See Model Input.
+     * @return builder
+     */
+    def modelInput(args: Endofunction[com.pulumi.aws.sagemaker.inputs.AlgorithmInferenceSpecificationContainerModelInputArgs.Builder]):
+        com.pulumi.aws.sagemaker.inputs.AlgorithmInferenceSpecificationContainerArgs.Builder =
+      val argsBuilder = com.pulumi.aws.sagemaker.inputs.AlgorithmInferenceSpecificationContainerModelInputArgs.builder
+      builder.modelInput(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.sagemaker.inputs.EndpointConfigurationShadowProductionVariantArgs.Builder)
     /**
@@ -2876,6 +4137,17 @@ object sagemaker:
       def argsBuilder = com.pulumi.aws.sagemaker.inputs.ProjectServiceCatalogProvisioningDetailsProvisioningParameterArgs.builder
       builder.provisioningParameters(args.map(_(argsBuilder).build)*)
 
+  extension (builder: com.pulumi.aws.sagemaker.inputs.AlgorithmInferenceSpecificationContainerModelDataSourceS3DataSourceArgs.Builder)
+    def hubAccessConfig(args: Endofunction[com.pulumi.aws.sagemaker.inputs.AlgorithmInferenceSpecificationContainerModelDataSourceS3DataSourceHubAccessConfigArgs.Builder]):
+        com.pulumi.aws.sagemaker.inputs.AlgorithmInferenceSpecificationContainerModelDataSourceS3DataSourceArgs.Builder =
+      val argsBuilder = com.pulumi.aws.sagemaker.inputs.AlgorithmInferenceSpecificationContainerModelDataSourceS3DataSourceHubAccessConfigArgs.builder
+      builder.hubAccessConfig(args(argsBuilder).build)
+
+    def modelAccessConfig(args: Endofunction[com.pulumi.aws.sagemaker.inputs.AlgorithmInferenceSpecificationContainerModelDataSourceS3DataSourceModelAccessConfigArgs.Builder]):
+        com.pulumi.aws.sagemaker.inputs.AlgorithmInferenceSpecificationContainerModelDataSourceS3DataSourceArgs.Builder =
+      val argsBuilder = com.pulumi.aws.sagemaker.inputs.AlgorithmInferenceSpecificationContainerModelDataSourceS3DataSourceModelAccessConfigArgs.builder
+      builder.modelAccessConfig(args(argsBuilder).build)
+
   extension (builder: com.pulumi.aws.sagemaker.inputs.ModelCardState.Builder)
     /**
      * @param securityConfig KMS key to encrypt, decrypt, and re-encrypt model card content. Fields are documented below.
@@ -2890,6 +4162,106 @@ object sagemaker:
         com.pulumi.aws.sagemaker.inputs.ModelCardState.Builder =
       val argsBuilder = com.pulumi.aws.sagemaker.inputs.ModelCardTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.sagemaker.inputs.HyperParameterTuningJobTrainingJobDefinitionArgs.Builder)
+    /**
+     * @param algorithmSpecification Algorithm settings. See `algorithmSpecification`.
+     * @return builder
+     */
+    def algorithmSpecification(args: Endofunction[com.pulumi.aws.sagemaker.inputs.HyperParameterTuningJobTrainingJobDefinitionAlgorithmSpecificationArgs.Builder]):
+        com.pulumi.aws.sagemaker.inputs.HyperParameterTuningJobTrainingJobDefinitionArgs.Builder =
+      val argsBuilder = com.pulumi.aws.sagemaker.inputs.HyperParameterTuningJobTrainingJobDefinitionAlgorithmSpecificationArgs.builder
+      builder.algorithmSpecification(args(argsBuilder).build)
+
+    /**
+     * @param checkpointConfig Checkpoint output location. See `checkpointConfig`.
+     * @return builder
+     */
+    def checkpointConfig(args: Endofunction[com.pulumi.aws.sagemaker.inputs.HyperParameterTuningJobTrainingJobDefinitionCheckpointConfigArgs.Builder]):
+        com.pulumi.aws.sagemaker.inputs.HyperParameterTuningJobTrainingJobDefinitionArgs.Builder =
+      val argsBuilder = com.pulumi.aws.sagemaker.inputs.HyperParameterTuningJobTrainingJobDefinitionCheckpointConfigArgs.builder
+      builder.checkpointConfig(args(argsBuilder).build)
+
+    /**
+     * @param hyperParameterRanges Hyperparameter ranges for this definition. See `parameterRanges`.
+     * @return builder
+     */
+    def hyperParameterRanges(args: Endofunction[com.pulumi.aws.sagemaker.inputs.HyperParameterTuningJobTrainingJobDefinitionHyperParameterRangesArgs.Builder]):
+        com.pulumi.aws.sagemaker.inputs.HyperParameterTuningJobTrainingJobDefinitionArgs.Builder =
+      val argsBuilder = com.pulumi.aws.sagemaker.inputs.HyperParameterTuningJobTrainingJobDefinitionHyperParameterRangesArgs.builder
+      builder.hyperParameterRanges(args(argsBuilder).build)
+
+    /**
+     * @param hyperParameterTuningResourceConfig Tuning resource settings. See `hyperParameterTuningResourceConfig`.
+     * @return builder
+     */
+    def hyperParameterTuningResourceConfig(args: Endofunction[com.pulumi.aws.sagemaker.inputs.HyperParameterTuningJobTrainingJobDefinitionHyperParameterTuningResourceConfigArgs.Builder]):
+        com.pulumi.aws.sagemaker.inputs.HyperParameterTuningJobTrainingJobDefinitionArgs.Builder =
+      val argsBuilder = com.pulumi.aws.sagemaker.inputs.HyperParameterTuningJobTrainingJobDefinitionHyperParameterTuningResourceConfigArgs.builder
+      builder.hyperParameterTuningResourceConfig(args(argsBuilder).build)
+
+    /**
+     * @param inputDataConfigs Input data channels. See `inputDataConfig`.
+     * @return builder
+     */
+    def inputDataConfigs(args: Endofunction[com.pulumi.aws.sagemaker.inputs.HyperParameterTuningJobTrainingJobDefinitionInputDataConfigArgs.Builder]*):
+        com.pulumi.aws.sagemaker.inputs.HyperParameterTuningJobTrainingJobDefinitionArgs.Builder =
+      def argsBuilder = com.pulumi.aws.sagemaker.inputs.HyperParameterTuningJobTrainingJobDefinitionInputDataConfigArgs.builder
+      builder.inputDataConfigs(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param outputDataConfig Output data settings. See `outputDataConfig`.
+     * @return builder
+     */
+    def outputDataConfig(args: Endofunction[com.pulumi.aws.sagemaker.inputs.HyperParameterTuningJobTrainingJobDefinitionOutputDataConfigArgs.Builder]):
+        com.pulumi.aws.sagemaker.inputs.HyperParameterTuningJobTrainingJobDefinitionArgs.Builder =
+      val argsBuilder = com.pulumi.aws.sagemaker.inputs.HyperParameterTuningJobTrainingJobDefinitionOutputDataConfigArgs.builder
+      builder.outputDataConfig(args(argsBuilder).build)
+
+    /**
+     * @param resourceConfig Training resources. See `resourceConfig`.
+     * @return builder
+     */
+    def resourceConfig(args: Endofunction[com.pulumi.aws.sagemaker.inputs.HyperParameterTuningJobTrainingJobDefinitionResourceConfigArgs.Builder]):
+        com.pulumi.aws.sagemaker.inputs.HyperParameterTuningJobTrainingJobDefinitionArgs.Builder =
+      val argsBuilder = com.pulumi.aws.sagemaker.inputs.HyperParameterTuningJobTrainingJobDefinitionResourceConfigArgs.builder
+      builder.resourceConfig(args(argsBuilder).build)
+
+    /**
+     * @param retryStrategies Retry settings. See `retryStrategy`.
+     * @return builder
+     */
+    def retryStrategies(args: Endofunction[com.pulumi.aws.sagemaker.inputs.HyperParameterTuningJobTrainingJobDefinitionRetryStrategyArgs.Builder]*):
+        com.pulumi.aws.sagemaker.inputs.HyperParameterTuningJobTrainingJobDefinitionArgs.Builder =
+      def argsBuilder = com.pulumi.aws.sagemaker.inputs.HyperParameterTuningJobTrainingJobDefinitionRetryStrategyArgs.builder
+      builder.retryStrategies(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param stoppingCondition Stopping settings. See `stoppingCondition`.
+     * @return builder
+     */
+    def stoppingCondition(args: Endofunction[com.pulumi.aws.sagemaker.inputs.HyperParameterTuningJobTrainingJobDefinitionStoppingConditionArgs.Builder]):
+        com.pulumi.aws.sagemaker.inputs.HyperParameterTuningJobTrainingJobDefinitionArgs.Builder =
+      val argsBuilder = com.pulumi.aws.sagemaker.inputs.HyperParameterTuningJobTrainingJobDefinitionStoppingConditionArgs.builder
+      builder.stoppingCondition(args(argsBuilder).build)
+
+    /**
+     * @param tuningObjective Objective for this training definition. See `tuningObjective`.
+     * @return builder
+     */
+    def tuningObjective(args: Endofunction[com.pulumi.aws.sagemaker.inputs.HyperParameterTuningJobTrainingJobDefinitionTuningObjectiveArgs.Builder]):
+        com.pulumi.aws.sagemaker.inputs.HyperParameterTuningJobTrainingJobDefinitionArgs.Builder =
+      val argsBuilder = com.pulumi.aws.sagemaker.inputs.HyperParameterTuningJobTrainingJobDefinitionTuningObjectiveArgs.builder
+      builder.tuningObjective(args(argsBuilder).build)
+
+    /**
+     * @param vpcConfig VPC settings. See `vpcConfig`.
+     * @return builder
+     */
+    def vpcConfig(args: Endofunction[com.pulumi.aws.sagemaker.inputs.HyperParameterTuningJobTrainingJobDefinitionVpcConfigArgs.Builder]):
+        com.pulumi.aws.sagemaker.inputs.HyperParameterTuningJobTrainingJobDefinitionArgs.Builder =
+      val argsBuilder = com.pulumi.aws.sagemaker.inputs.HyperParameterTuningJobTrainingJobDefinitionVpcConfigArgs.builder
+      builder.vpcConfig(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.sagemaker.inputs.SpaceSpaceSettingsCustomFileSystemArgs.Builder)
     /**
@@ -2950,6 +4322,25 @@ object sagemaker:
         com.pulumi.aws.sagemaker.inputs.FlowDefinitionHumanLoopActivationConfigArgs.Builder =
       val argsBuilder = com.pulumi.aws.sagemaker.inputs.FlowDefinitionHumanLoopActivationConfigHumanLoopActivationConditionsConfigArgs.builder
       builder.humanLoopActivationConditionsConfig(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.sagemaker.inputs.TrainingJobAlgorithmSpecificationArgs.Builder)
+    /**
+     * @param metricDefinitions List of metric definitions for the training job. Maximum of 40. Use this to extract custom metrics from your own training container logs. SageMaker can still publish built-in metrics for built-in algorithms and supported prebuilt images when this block is omitted. See `metricDefinitions` below.
+     * @return builder
+     */
+    def metricDefinitions(args: Endofunction[com.pulumi.aws.sagemaker.inputs.TrainingJobAlgorithmSpecificationMetricDefinitionArgs.Builder]*):
+        com.pulumi.aws.sagemaker.inputs.TrainingJobAlgorithmSpecificationArgs.Builder =
+      def argsBuilder = com.pulumi.aws.sagemaker.inputs.TrainingJobAlgorithmSpecificationMetricDefinitionArgs.builder
+      builder.metricDefinitions(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param trainingImageConfig Training image configuration. See `trainingImageConfig` below.
+     * @return builder
+     */
+    def trainingImageConfig(args: Endofunction[com.pulumi.aws.sagemaker.inputs.TrainingJobAlgorithmSpecificationTrainingImageConfigArgs.Builder]):
+        com.pulumi.aws.sagemaker.inputs.TrainingJobAlgorithmSpecificationArgs.Builder =
+      val argsBuilder = com.pulumi.aws.sagemaker.inputs.TrainingJobAlgorithmSpecificationTrainingImageConfigArgs.builder
+      builder.trainingImageConfig(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.sagemaker.inputs.ModelContainerArgs.Builder)
     /**
@@ -3016,6 +4407,16 @@ object sagemaker:
         com.pulumi.aws.sagemaker.inputs.ModelPrimaryContainerModelDataSourceS3DataSourceArgs.Builder =
       val argsBuilder = com.pulumi.aws.sagemaker.inputs.ModelPrimaryContainerModelDataSourceS3DataSourceModelAccessConfigArgs.builder
       builder.modelAccessConfig(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.sagemaker.inputs.AlgorithmValidationSpecificationValidationProfilesTransformJobDefinitionTransformInputArgs.Builder)
+    /**
+     * @param dataSource Data source for the transform job. See Transform Job Data Source.
+     * @return builder
+     */
+    def dataSource(args: Endofunction[com.pulumi.aws.sagemaker.inputs.AlgorithmValidationSpecificationValidationProfilesTransformJobDefinitionTransformInputDataSourceArgs.Builder]):
+        com.pulumi.aws.sagemaker.inputs.AlgorithmValidationSpecificationValidationProfilesTransformJobDefinitionTransformInputArgs.Builder =
+      val argsBuilder = com.pulumi.aws.sagemaker.inputs.AlgorithmValidationSpecificationValidationProfilesTransformJobDefinitionTransformInputDataSourceArgs.builder
+      builder.dataSource(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.sagemaker.inputs.DataQualityJobDefinitionDataQualityJobInputArgs.Builder)
     /**
@@ -3165,6 +4566,25 @@ object sagemaker:
         com.pulumi.aws.sagemaker.inputs.FeatureGroupOnlineStoreConfigArgs.Builder =
       val argsBuilder = com.pulumi.aws.sagemaker.inputs.FeatureGroupOnlineStoreConfigTtlDurationArgs.builder
       builder.ttlDuration(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.sagemaker.inputs.TrainingJobInputDataConfigDataSourceArgs.Builder)
+    /**
+     * @param fileSystemDataSource File system data source. See `fileSystemDataSource` below.
+     * @return builder
+     */
+    def fileSystemDataSource(args: Endofunction[com.pulumi.aws.sagemaker.inputs.TrainingJobInputDataConfigDataSourceFileSystemDataSourceArgs.Builder]):
+        com.pulumi.aws.sagemaker.inputs.TrainingJobInputDataConfigDataSourceArgs.Builder =
+      val argsBuilder = com.pulumi.aws.sagemaker.inputs.TrainingJobInputDataConfigDataSourceFileSystemDataSourceArgs.builder
+      builder.fileSystemDataSource(args(argsBuilder).build)
+
+    /**
+     * @param s3DataSource S3 data source. See `s3DataSource` below.
+     * @return builder
+     */
+    def s3DataSource(args: Endofunction[com.pulumi.aws.sagemaker.inputs.TrainingJobInputDataConfigDataSourceS3DataSourceArgs.Builder]):
+        com.pulumi.aws.sagemaker.inputs.TrainingJobInputDataConfigDataSourceArgs.Builder =
+      val argsBuilder = com.pulumi.aws.sagemaker.inputs.TrainingJobInputDataConfigDataSourceS3DataSourceArgs.builder
+      builder.s3DataSource(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.sagemaker.inputs.DataQualityJobDefinitionState.Builder)
     /**
@@ -3436,6 +4856,16 @@ object sagemaker:
       val argsBuilder = com.pulumi.aws.sagemaker.inputs.DomainDomainSettingsTrustedIdentityPropagationSettingsArgs.builder
       builder.trustedIdentityPropagationSettings(args(argsBuilder).build)
 
+  extension (builder: com.pulumi.aws.sagemaker.inputs.AlgorithmInferenceSpecificationContainerModelDataSourceArgs.Builder)
+    /**
+     * @param s3DataSource S3-backed model data source. See Model Data Source S3 Data Source.
+     * @return builder
+     */
+    def s3DataSource(args: Endofunction[com.pulumi.aws.sagemaker.inputs.AlgorithmInferenceSpecificationContainerModelDataSourceS3DataSourceArgs.Builder]):
+        com.pulumi.aws.sagemaker.inputs.AlgorithmInferenceSpecificationContainerModelDataSourceArgs.Builder =
+      val argsBuilder = com.pulumi.aws.sagemaker.inputs.AlgorithmInferenceSpecificationContainerModelDataSourceS3DataSourceArgs.builder
+      builder.s3DataSource(args(argsBuilder).build)
+
   extension (builder: com.pulumi.aws.sagemaker.inputs.AppImageConfigState.Builder)
     /**
      * @param codeEditorAppImageConfig The CodeEditorAppImageConfig. See Code Editor App Image Config details below.
@@ -3583,6 +5013,16 @@ object sagemaker:
         com.pulumi.aws.sagemaker.inputs.WorkteamMemberDefinitionArgs.Builder =
       val argsBuilder = com.pulumi.aws.sagemaker.inputs.WorkteamMemberDefinitionOidcMemberDefinitionArgs.builder
       builder.oidcMemberDefinition(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.sagemaker.inputs.AlgorithmInferenceSpecificationArgs.Builder)
+    /**
+     * @param containers List of container definitions for inference.
+     * @return builder
+     */
+    def containers(args: Endofunction[com.pulumi.aws.sagemaker.inputs.AlgorithmInferenceSpecificationContainerArgs.Builder]*):
+        com.pulumi.aws.sagemaker.inputs.AlgorithmInferenceSpecificationArgs.Builder =
+      def argsBuilder = com.pulumi.aws.sagemaker.inputs.AlgorithmInferenceSpecificationContainerArgs.builder
+      builder.containers(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.aws.sagemaker.inputs.SpaceState.Builder)
     /**

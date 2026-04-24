@@ -295,6 +295,18 @@ object dynamodb:
     // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
     export com.pulumi.aws.dynamodb.DynamodbFunctions.*
   extension (self: DynamodbFunctions.type)
+    /** Data source for listing AWS DynamoDB backups. */
+    def getBackups(args: Endofunction[com.pulumi.aws.dynamodb.inputs.GetBackupsArgs.Builder] = identity):
+        com.pulumi.core.Output[com.pulumi.aws.dynamodb.outputs.GetBackupsResult] =
+      val argsBuilder = com.pulumi.aws.dynamodb.inputs.GetBackupsArgs.builder
+      com.pulumi.aws.dynamodb.DynamodbFunctions.getBackups(args(argsBuilder).build)
+
+    /** Data source for listing AWS DynamoDB backups. */
+    def getBackupsPlain(args: Endofunction[com.pulumi.aws.dynamodb.inputs.GetBackupsPlainArgs.Builder] = identity):
+        java.util.concurrent.CompletableFuture[com.pulumi.aws.dynamodb.outputs.GetBackupsResult] =
+      val argsBuilder = com.pulumi.aws.dynamodb.inputs.GetBackupsPlainArgs.builder
+      com.pulumi.aws.dynamodb.DynamodbFunctions.getBackupsPlain(args(argsBuilder).build)
+
     /** Provides information about a DynamoDB table. */
     def getTable(args: Endofunction[com.pulumi.aws.dynamodb.inputs.GetTableArgs.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.aws.dynamodb.outputs.GetTableResult] =
