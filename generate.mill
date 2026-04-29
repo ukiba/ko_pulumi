@@ -19,9 +19,8 @@ import java.util.Locale.ENGLISH
 
 class PulumiAwsAdapterGenerator(dstRoot: Path, classpath: Seq[String]):
   def processDirectory(srcRoot: Path): Seq[Path] =
-    def isJavaFile(path: Path) = !Files.isDirectory(path) &&
-        path.getFileName.toString.toLowerCase.endsWith(".java")
-    val files = Files.walk(srcRoot).toScala(List).filter(isJavaFile)
+    def isJavaFile(path: Path) = !Files.isDirectory(path) && path.getFileName.toString.toLowerCase.endsWith(".java")
+    val files = Files.walk(srcRoot).toScala(Seq).filter(isJavaFile)
 
     val compiler = ToolProvider.getSystemJavaCompiler
     val fileManager = compiler.getStandardFileManager(
@@ -43,9 +42,9 @@ class PulumiAwsAdapterGenerator(dstRoot: Path, classpath: Seq[String]):
       fileManager.getJavaFileObjectsFromPaths(files.asJava),  // compilationUnits
     ).asInstanceOf[JavacTask]
 
-    given DocTrees = DocTrees.instance(task)  // Trees.instance(task) 
+    given DocTrees = DocTrees.instance(task)  // Trees.instance(task) if getDocCommentTree is not needed
     given elements: Elements = task.getElements
-    given types: Types = task.getTypes
+    given types   : Types    = task.getTypes
 
     val unitTrees = task.parse()
     task.analyze()  // needed for getElement / getTypeMirror
@@ -59,28 +58,98 @@ class PulumiAwsAdapterGenerator(dstRoot: Path, classpath: Seq[String]):
           Files.createDirectories(parentDir)
 
       val importCustomResourceOptions =
-        if gen.members.exists(_.contains("CustomResourceOptions")) then
+        if gen.members.exists(_.text.contains("CustomResourceOptions")) then
           """
           |import com.pulumi.resources.CustomResourceOptions
           |""".stripMargin.dropRightWhile(_.isWhitespace)
         else
           ""
 
-      Using(Files.newBufferedWriter(scalaFile, UTF_8)): writer =>
+      Using(Files.newBufferedWriter(scalaFile)): writer =>  // UTF_8
         writer.append(s"""
           |package jp.ukiba.ko_pulumi
           |package aws
           |$importCustomResourceOptions
           |
           |object ${packageComps.last}:
-          |""".stripMargin.dropWhile(_.isWhitespace).dropRight(1)) // no new line at the last
+          |""".stripMargin.dropWhile(_.isWhitespace).dropRight(1)) // no newline at the last
         for member <- gen.members do
-          writer.append(member)
+          writer.append(member.text)
 
       scalaFile
-    generatedScalaFiles.toSeq.sorted
 
-  case class Gen(var members: Seq[String] = Nil)
+    // support `jp.ukiba.ko_pulumi.aws.all.*`
+
+    // split into multiple package files, to avoid `Class too large` error,
+    // caused by JVM's per-class limit (65535 methods, 64K constant pool entries).
+    val splitsConf: Seq[(range: (from: Char, to: Char), fileName: String)] = Seq(
+      ('a', 'e') -> "all_a.scala",
+      ('f', 'j') -> "all_f.scala",
+      ('k', 'o') -> "all_k.scala",
+      ('p', 't') -> "all_p.scala",
+      ('u', 'z') -> "all_u.scala",
+    )
+
+    val `all.scala` = dstRoot.resolve(s"all.scala")
+    val splitsFiles = splitsConf.map: conf =>
+      (conf = conf, file = dstRoot.resolve(conf.fileName))
+
+    var funcsDedup = Set.empty[String]  // deduplicate
+    var extMethodsDedup = Set.empty[(cls: String, method: String)]
+
+    gens.foreach: (packageComps, gen) =>
+      for member <- gen.members do
+        gens.foreach: (packageComps, gen) =>
+          var extNames: Seq[String] = Nil  // deduplicate the names
+          gen.members.foreach:
+            case CustomResourceMember(_, _) =>
+              // avoid `two or more overloaded variants of method Cluster have default arguments`
+              // for ecs.Cluster, eks.Cluster, rds.Cluster, redshift.Cluster, msk.Cluster, ...
+              // they would be referenced with the prefix
+
+            case ResourceArgsMember(_, names) =>
+              names.foreach: name =>
+                extMethodsDedup += (packageComps.last, name)
+
+            case FunctionsMember(_, name) =>
+              funcsDedup += s"${packageComps.last}.$name"
+
+    Using.Manager: use =>
+      val mainWriter = use(Files.newBufferedWriter(`all.scala`))  // UTF_8
+      val splitWriters = splitsFiles.map: file =>
+        (conf = file.conf, writer = use(Files.newBufferedWriter(file.file)))
+
+      (mainWriter +: splitWriters.map(_.writer)).foreach: writer =>
+        writer.append(s"""
+          |package jp.ukiba.ko_pulumi.aws.all
+          |
+          |import jp.ukiba.ko_pulumi
+          |
+          |""".stripMargin.dropWhile(_ == '\n'))
+
+      funcsDedup.toSeq.sorted.foreach: func =>
+        mainWriter.append(s"""
+          |export ko_pulumi.aws.$func
+          |""".stripMargin.drop(1))  // no newline at the beginning
+
+      splitWriters.foreach: writer =>
+        val extMethods = extMethodsDedup.filter: extMethod =>
+          val headCh = extMethod.method.head
+          headCh >= writer.conf.range.from && headCh <= writer.conf.range.to 
+
+        extMethods.toSeq.sortBy(_.cls).foreach: extMethod =>
+          writer.writer.append(s"""
+            |export ko_pulumi.aws.${extMethod.cls}.${extMethod.method}
+            |""".stripMargin.drop(1))  // no newline at the beginning
+
+    (generatedScalaFiles.toSeq ++ (`all.scala` +: splitsFiles.map(_.file))).sorted
+
+  case class Gen(var members: Seq[Member] = Nil)
+  sealed trait Member:
+    def text: String
+  case class CustomResourceMember(text: String, name: String)       extends Member
+  case class ResourceArgsMember  (text: String, names: Seq[String]) extends Member
+  case class FunctionsMember     (text: String, name: String)       extends Member
   var gens = Map.empty[Seq[String], Gen]  // the key is package components
 
   def genOf(packageComps: Seq[String]): Gen =
@@ -206,7 +275,7 @@ class PulumiAwsAdapterGenerator(dstRoot: Path, classpath: Seq[String]):
                     |""".stripMargin.trim),
                 ).flatten.map(_ + "\n    ").mkString
 
-                genOf(packageComps).members :+= s"""
+                genOf(packageComps).members :+= CustomResourceMember(s"""
                   |  ${clsDoc}${deprecated}def $clsName(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
                   |      (args: Endofunction[$pkg.${clsName}Args.Builder])$usingConf =
                   |    $builderVarOrVal argsBuilder = $pkg.${clsName}Args.builder
@@ -214,7 +283,7 @@ class PulumiAwsAdapterGenerator(dstRoot: Path, classpath: Seq[String]):
                   |    $pkg.$clsName(name,
                   |        args(argsBuilder).build,
                   |        resourceOptions(CustomResourceOptions.builder).build)
-                  |""".stripMargin
+                  |""".stripMargin, clsName.toString)
               case None =>
 
           /*
@@ -265,7 +334,7 @@ class PulumiAwsAdapterGenerator(dstRoot: Path, classpath: Seq[String]):
               val packageCompsWithoutInputs = packageComps.last match
                 case "inputs" => packageComps.init
                 case _        => packageComps
-              genOf(packageCompsWithoutInputs).members :+= s"""
+              genOf(packageCompsWithoutInputs).members :+= ResourceArgsMember(s"""
                   |  extension (builder: $argsBuilderType)
                   |    ${
                           argsBuilderMethodsWithType.map: (method, argsType, arrayArgs) =>
@@ -295,7 +364,8 @@ class PulumiAwsAdapterGenerator(dstRoot: Path, classpath: Seq[String]):
                                 |      builder.$methodName(args.map(_(argsBuilder).build)*)
                                 |""".stripMargin
                           .mkString.dropWhile(_.isWhitespace)
-                       }""".stripMargin
+                       }""".stripMargin,
+                          argsBuilderMethodsWithType.map(_._1.simpleName.toString).map(escapeScalaKeyword).toSeq)
 
           /*
             Generate the following code
@@ -329,7 +399,7 @@ class PulumiAwsAdapterGenerator(dstRoot: Path, classpath: Seq[String]):
               }
 
             if functionMethods.nonEmpty then
-              genOf(packageComps).members :+= s"""
+              genOf(packageComps).members :+= FunctionsMember(s"""
                 |  type $clsName = $pkg.$clsName
                 |  object $clsName:
                 |    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
@@ -360,7 +430,7 @@ class PulumiAwsAdapterGenerator(dstRoot: Path, classpath: Seq[String]):
                             |      $pkg.$clsName.$methodName(args(argsBuilder).build)
                             |""".stripMargin
                         .mkString.dropWhile(_.isWhitespace)
-                     }""".stripMargin
+                     }""".stripMargin, clsName.toString)
 
         case _ =>  // INTERFACE, ENUM, RECORD, or annotation type declaration
 
