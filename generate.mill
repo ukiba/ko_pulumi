@@ -15,6 +15,7 @@ import javax.tools.ToolProvider
 import java.nio.file.{Path, Files}
 import java.nio.charset.StandardCharsets.UTF_8
 import java.io.File.pathSeparator
+import java.io.Writer
 import java.util.Locale.ENGLISH
 
 class PulumiAwsAdapterGenerator(dstRoot: Path, classpath: Seq[String]):
@@ -51,7 +52,7 @@ class PulumiAwsAdapterGenerator(dstRoot: Path, classpath: Seq[String]):
 
     Scanner().scan(unitTrees, ())
     val generatedScalaFiles = gens.map: (packageComps, gen) =>
-      val scalaFile = dstRoot.resolve(s"${packageComps.mkString("/")}.scala")
+      val scalaFile = dstRoot.resolve(s"${packageComps.last}.scala")
 
       for parentDir <- Option(scalaFile.getParent) do
         if !Files.isDirectory(parentDir) then
@@ -65,7 +66,7 @@ class PulumiAwsAdapterGenerator(dstRoot: Path, classpath: Seq[String]):
         else
           ""
 
-      Using(Files.newBufferedWriter(scalaFile)): writer =>  // UTF_8
+      Using(newWriter(scalaFile)): writer =>
         writer.append(s"""
           |package jp.ukiba.ko_pulumi
           |package aws
@@ -83,14 +84,14 @@ class PulumiAwsAdapterGenerator(dstRoot: Path, classpath: Seq[String]):
     // split into multiple package files, to avoid `Class too large` error,
     // caused by JVM's per-class limit (65535 methods, 64K constant pool entries).
     val splitsConf: Seq[(range: (from: Char, to: Char), fileName: String)] = Seq(
-      ('a', 'e') -> "all_a.scala",
-      ('f', 'j') -> "all_f.scala",
-      ('k', 'o') -> "all_k.scala",
-      ('p', 't') -> "all_p.scala",
-      ('u', 'z') -> "all_u.scala",
+      ('a', 'e') -> "all/package_a.scala",
+      ('f', 'j') -> "all/package_f.scala",
+      ('k', 'o') -> "all/package_k.scala",
+      ('p', 't') -> "all/package_p.scala",
+      ('u', 'z') -> "all/package_u.scala",
     )
 
-    val `all.scala` = dstRoot.resolve(s"all.scala")
+    val `package.scala` = dstRoot.resolve(s"all/package.scala")
     val splitsFiles = splitsConf.map: conf =>
       (conf = conf, file = dstRoot.resolve(conf.fileName))
 
@@ -115,9 +116,9 @@ class PulumiAwsAdapterGenerator(dstRoot: Path, classpath: Seq[String]):
               funcsDedup += s"${packageComps.last}.$name"
 
     Using.Manager: use =>
-      val mainWriter = use(Files.newBufferedWriter(`all.scala`))  // UTF_8
+      val mainWriter = use(newWriter(`package.scala`))
       val splitWriters = splitsFiles.map: file =>
-        (conf = file.conf, writer = use(Files.newBufferedWriter(file.file)))
+        (conf = file.conf, writer = use(newWriter(file.file)))
 
       (mainWriter +: splitWriters.map(_.writer)).foreach: writer =>
         writer.append(s"""
@@ -142,7 +143,7 @@ class PulumiAwsAdapterGenerator(dstRoot: Path, classpath: Seq[String]):
             |export ko_pulumi.aws.${extMethod.cls}.${extMethod.method}
             |""".stripMargin.drop(1))  // no newline at the beginning
 
-    (generatedScalaFiles.toSeq ++ (`all.scala` +: splitsFiles.map(_.file))).sorted
+    (generatedScalaFiles.toSeq ++ (`package.scala` +: splitsFiles.map(_.file))).sorted
 
   case class Gen(var members: Seq[Member] = Nil)
   sealed trait Member:
@@ -461,3 +462,10 @@ class PulumiAwsAdapterGenerator(dstRoot: Path, classpath: Seq[String]):
       s"/** ${outLines.head} */\n$indent"
     else
       s"${outLines.mkString(s"/**\n$indent * ", s"\n$indent * ", s"\n$indent */")}\n$indent"
+
+  def newWriter(file: Path): Writer =
+    Option(file.getParent).foreach: parentDir =>
+      if !Files.isDirectory(parentDir) then
+        Files.createDirectories(parentDir)
+
+    Files.newBufferedWriter(file)  // UTF_8
