@@ -44,13 +44,3 @@
 ## Show the available dependency updates
 
     ./mill mill.scalalib.Dependency/showUpdates
-
-## Review the changes in the generated sources
-
-    cd out/aws/
-    git init -b main
-    echo '/*' > .gitignore
-    echo '!generatedSources.dest' >> .gitignore
-    echo '!.gitignore' >> .gitignore
-    git add generatedSources.dest .gitignore
-    git commit -m orig
