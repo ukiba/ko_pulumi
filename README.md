@@ -19,7 +19,7 @@
            eval $(cs java --jvm corretto:25 --env)
 
 3. [mill](https://com-lihaoyi.github.io/mill/)
-    1. The launcher scripts have been committed
+    1. The launcher scripts were downloaded as follows, and then committed to the repository.
 
            curl -Lf https://repo1.maven.org/maven2/com/lihaoyi/mill-dist/1.1.5/mill-dist-1.1.5-mill.sh -o mill
            chmod +x mill
