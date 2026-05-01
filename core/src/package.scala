@@ -32,30 +32,31 @@ package object ko_pulumi:
     )
 
   object syntax:
-    // familiar method names for Output
-    extension [A](output: Output[A])
-      def flatMap[B](f: A => Output[B]): Output[B] = output.apply     (f.asJava)
-      def map    [B](f: A => B)        : Output[B] = output.applyValue(f.asJava)
-      def foreach[B](f: A => B)        : Unit      = output.applyValue(f.asJava)
+    object all:
+      // familiar method names for Output
+      extension [A](output: Output[A])
+        def flatMap[B](f: A => Output[B]): Output[B] = output.apply     (f.asJava)
+        def map    [B](f: A => B)        : Output[B] = output.applyValue(f.asJava)
+        def foreach[B](f: A => B)        : Unit      = output.applyValue(f.asJava)
 
-    // TODO: this probably doesn't belong here
-    extension [A](value: A)
-      /**
-       * Discards a value.
-       * Intended to be used with `-Wnonunit-statement` compiler option
-       * to enable `A pure expression does nothing in statement position` warning.
-       * The method name `void` follows `cats` library.
-       */
-      inline def void: Unit = ()
+      // TODO: this probably doesn't belong here
+      extension [A](value: A)
+        /**
+         * Discards a value.
+         * Intended to be used with `-Wnonunit-statement` compiler option
+         * to enable `A pure expression does nothing in statement position` warning.
+         * The method name `void` follows `cats` library.
+         */
+        inline def void: Unit = ()
 
-    extension [A](list: JList[A])
-      // the same name as fs2.Stream.CompileOps.onlyOrError
-      def onlyOrError: A =
-        list.size match
-          case 1 => list.get(0)
-          case 0 => throw IllegalArgumentException("Expected single element: no element")
-          case n => throw IllegalArgumentException(s"Expected single element: $n elements")
-  import syntax.*
+      extension [A](list: JList[A])
+        // the same name as fs2.Stream.CompileOps.onlyOrError
+        def onlyOrError: A =
+          list.size match
+            case 1 => list.head
+            case 0 => throw IllegalArgumentException(s"Expected single element: no element")
+            case n => throw IllegalArgumentException(s"Expected single element: $n elements")
+  import syntax.all.*
 
   // reduce the need to describe the conversions between the Scala and Java/Pulumi types
   given [A] => Conversion[Option[A], JOptional[A]] = _.toJava

@@ -84,14 +84,14 @@ class PulumiAwsAdapterGenerator(dstRoot: Path, classpath: Seq[String]):
     // split into multiple package files, to avoid `Class too large` error,
     // caused by JVM's per-class limit (65535 methods, 64K constant pool entries).
     val splitsConf: Seq[(range: (from: Char, to: Char), fileName: String)] = Seq(
-      ('a', 'e') -> "all/package_a.scala",
-      ('f', 'j') -> "all/package_f.scala",
-      ('k', 'o') -> "all/package_k.scala",
-      ('p', 't') -> "all/package_p.scala",
-      ('u', 'z') -> "all/package_u.scala",
+      ('a', 'e') -> "syntax/all_a.scala",
+      ('f', 'j') -> "syntax/all_f.scala",
+      ('k', 'o') -> "syntax/all_k.scala",
+      ('p', 't') -> "syntax/all_p.scala",
+      ('u', 'z') -> "syntax/all_u.scala",
     )
 
-    val `package.scala` = dstRoot.resolve(s"all/package.scala")
+    val `package.scala` = dstRoot.resolve(s"syntax/all.scala")
     val splitsFiles = splitsConf.map: conf =>
       (conf = conf, file = dstRoot.resolve(conf.fileName))
 
@@ -122,7 +122,7 @@ class PulumiAwsAdapterGenerator(dstRoot: Path, classpath: Seq[String]):
 
       (mainWriter +: splitWriters.map(_.writer)).foreach: writer =>
         writer.append(s"""
-          |package jp.ukiba.ko_pulumi.aws.all
+          |package jp.ukiba.ko_pulumi.aws.syntax.all
           |
           |import jp.ukiba.ko_pulumi
           |

@@ -1,4 +1,4 @@
-package jp.ukiba.ko_pulumi.aws.all
+package jp.ukiba.ko_pulumi.aws.syntax.all
 
 import jp.ukiba.ko_pulumi
 
