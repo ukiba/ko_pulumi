@@ -10,7 +10,7 @@ object bedrock:
    *  **Important Limitations:**
    *  
    *  - Each memory can have a maximum of 6 strategies total
-   *  - Only one strategy of each built-in type (`SEMANTIC`, `SUMMARIZATION`, `USER_PREFERENCE`) can exist per memory
+   *  - Only one strategy of each built-in type (`SEMANTIC`, `SUMMARIZATION`, `USER_PREFERENCE`, `EPISODIC`) can exist per memory
    *  - Multiple `CUSTOM` strategies are allowed (subject to the total limit of 6)
    */
   def AgentcoreMemoryStrategy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)

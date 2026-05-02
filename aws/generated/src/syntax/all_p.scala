@@ -477,10 +477,12 @@ export ko_pulumi.aws.ec2.privateDnsNameConfigurations
 export ko_pulumi.aws.ec2.tunnel2LogOptions
 export ko_pulumi.aws.ec2.prefixLists
 export ko_pulumi.aws.ec2.routeTableRoutes
+export ko_pulumi.aws.ec2.packetHeaderStatement
 export ko_pulumi.aws.ec2.targetCapacitySpecification
 export ko_pulumi.aws.ec2.routes
 export ko_pulumi.aws.ec2.rootBlockDevice
 export ko_pulumi.aws.ec2.requester
+export ko_pulumi.aws.ec2.source
 export ko_pulumi.aws.ec2.timeouts
 export ko_pulumi.aws.ec2.privateDnsNameOptions
 export ko_pulumi.aws.ec2.secondaryNetworkInterfaces
@@ -500,6 +502,7 @@ export ko_pulumi.aws.ec2.primaryNetworkInterfaces
 export ko_pulumi.aws.ec2.returnPathComponents
 export ko_pulumi.aws.ec2.placement
 export ko_pulumi.aws.ec2.spotOptions
+export ko_pulumi.aws.ec2.throughResources
 export ko_pulumi.aws.ec2.secondaryInterfaces
 export ko_pulumi.aws.ec2.securityGroups
 export ko_pulumi.aws.ec2.sourceVpcs
@@ -508,6 +511,7 @@ export ko_pulumi.aws.ec2.subnets
 export ko_pulumi.aws.ec2.tunnel1LogOptions
 export ko_pulumi.aws.ec2.securityGroup
 export ko_pulumi.aws.ec2.transitGatewayRouteTables
+export ko_pulumi.aws.ec2.resourceStatement
 export ko_pulumi.aws.ec2transitgateway.timeouts
 export ko_pulumi.aws.ecr.policy
 export ko_pulumi.aws.ecr.rules

@@ -413,10 +413,12 @@ export ko_pulumi.aws.ebs.clientData
 export ko_pulumi.aws.ebs.diskContainer
 export ko_pulumi.aws.ec2.ephemeralBlockDevices
 export ko_pulumi.aws.ec2.additionalDetails
+export ko_pulumi.aws.ec2.destination
 export ko_pulumi.aws.ec2.blockDeviceMappings
 export ko_pulumi.aws.ec2.ebs
 export ko_pulumi.aws.ec2.elasticLoadBalancerListeners
 export ko_pulumi.aws.ec2.acls
+export ko_pulumi.aws.ec2.excludePaths
 export ko_pulumi.aws.ec2.explanations
 export ko_pulumi.aws.ec2.capacityReservationOptions
 export ko_pulumi.aws.ec2.enclaveOptions

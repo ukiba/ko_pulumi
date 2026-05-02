@@ -85,6 +85,30 @@ object securityhub:
     // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
     export com.pulumi.aws.securityhub.SecurityhubFunctions.*
   extension (self: SecurityhubFunctions.type)
+    /** Lists the standards that are currently enabled. */
+    def getEnabledStandards(args: Endofunction[com.pulumi.aws.securityhub.inputs.GetEnabledStandardsArgs.Builder] = identity):
+        com.pulumi.core.Output[com.pulumi.aws.securityhub.outputs.GetEnabledStandardsResult] =
+      val argsBuilder = com.pulumi.aws.securityhub.inputs.GetEnabledStandardsArgs.builder
+      com.pulumi.aws.securityhub.SecurityhubFunctions.getEnabledStandards(args(argsBuilder).build)
+
+    /** Lists the standards that are currently enabled. */
+    def getEnabledStandardsPlain(args: Endofunction[com.pulumi.aws.securityhub.inputs.GetEnabledStandardsPlainArgs.Builder] = identity):
+        java.util.concurrent.CompletableFuture[com.pulumi.aws.securityhub.outputs.GetEnabledStandardsResult] =
+      val argsBuilder = com.pulumi.aws.securityhub.inputs.GetEnabledStandardsPlainArgs.builder
+      com.pulumi.aws.securityhub.SecurityhubFunctions.getEnabledStandardsPlain(args(argsBuilder).build)
+
+    /** Lists security controls. */
+    def getSecurityControls(args: Endofunction[com.pulumi.aws.securityhub.inputs.GetSecurityControlsArgs.Builder] = identity):
+        com.pulumi.core.Output[com.pulumi.aws.securityhub.outputs.GetSecurityControlsResult] =
+      val argsBuilder = com.pulumi.aws.securityhub.inputs.GetSecurityControlsArgs.builder
+      com.pulumi.aws.securityhub.SecurityhubFunctions.getSecurityControls(args(argsBuilder).build)
+
+    /** Lists security controls. */
+    def getSecurityControlsPlain(args: Endofunction[com.pulumi.aws.securityhub.inputs.GetSecurityControlsPlainArgs.Builder] = identity):
+        java.util.concurrent.CompletableFuture[com.pulumi.aws.securityhub.outputs.GetSecurityControlsResult] =
+      val argsBuilder = com.pulumi.aws.securityhub.inputs.GetSecurityControlsPlainArgs.builder
+      com.pulumi.aws.securityhub.SecurityhubFunctions.getSecurityControlsPlain(args(argsBuilder).build)
+
     /** Data source for managing an AWS Security Hub Standards Control Associations. */
     def getStandardsControlAssociations(args: Endofunction[com.pulumi.aws.securityhub.inputs.GetStandardsControlAssociationsArgs.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.aws.securityhub.outputs.GetStandardsControlAssociationsResult] =
@@ -120,9 +144,11 @@ object securityhub:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /**
-   * Enables Security Hub for this AWS account.
+   * Enables Security Hub CSPM for this AWS account.
    *  
    *  &gt; **NOTE:** Destroying this resource will disable Security Hub for this AWS account.
+   *  
+   *  &gt; **NOTE:** This resource manages Security Hub CSPM, which is distinct from the unified Security Hub V2 service managed by `aws.securityhub.AccountV2`. Both can coexist in the same account.
    */
   def Account(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.securityhub.AccountArgs.Builder]) =
@@ -222,6 +248,24 @@ object securityhub:
         com.pulumi.aws.securityhub.AutomationRuleArgs.Builder =
       val argsBuilder = com.pulumi.aws.securityhub.inputs.AutomationRuleCriteriaArgs.builder
       builder.criteria(args(argsBuilder).build)
+
+  /**
+   * Enables the unified Security Hub V2 for this AWS account.
+   *  
+   *  &gt; **NOTE:** Destroying this resource will disable Security Hub V2 for this AWS account.
+   *  
+   *  &gt; **NOTE:** This resource manages the unified Security Hub V2 service, which is distinct from the classic Security Hub CSPM managed by `aws.securityhub.Account`. Both can coexist in the same account.
+   */
+  def AccountV2(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.securityhub.AccountV2Args.Builder])(using conf: KoPulumiConf) =
+    var argsBuilder = com.pulumi.aws.securityhub.AccountV2Args.builder
+    conf.logicalName2tagName(name) match
+      case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
+      case None          =>
+    
+    com.pulumi.aws.securityhub.AccountV2(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder).build)
 
   /**
    * Disable/enable Security Hub standards control in the current region.

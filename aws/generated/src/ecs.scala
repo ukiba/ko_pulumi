@@ -175,6 +175,8 @@ object ecs:
    * Manages an ECS Express service. The Express service provides a simplified way to deploy containerized applications with automatic provisioning and management of AWS infrastructure including Application Load Balancers (ALBs), target groups, security groups, and auto-scaling policies. This service offers built-in load balancing, auto-scaling, and networking capabilities with zero-downtime deployments.
    *  
    *  Express services automatically handle infrastructure provisioning and updates through rolling deployments, ensuring high availability during service modifications. When you update an Express service, a new service revision is created and deployed with zero downtime.
+   *  
+   *  &gt; **Note:** To prevent a race condition during service deletion, make sure to set `dependsOn` to the related `aws.iam.RolePolicy` or `aws.iam.RolePolicyAttachment` resources. Otherwise, the policy may be destroyed too soon and the ECS service will then get stuck in the `DRAINING` state.
    */
   def ExpressGatewayService(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ecs.ExpressGatewayServiceArgs.Builder])(using conf: KoPulumiConf) =

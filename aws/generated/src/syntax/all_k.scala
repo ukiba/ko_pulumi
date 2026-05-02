@@ -210,6 +210,7 @@ export ko_pulumi.aws.dynamodb.localSecondaryIndexes
 export ko_pulumi.aws.dynamodb.keySchemas
 export ko_pulumi.aws.dynamodb.onDemandThroughput
 export ko_pulumi.aws.ec2.outboundHeaders
+export ko_pulumi.aws.ec2.matchPaths
 export ko_pulumi.aws.ec2.launchTemplate
 export ko_pulumi.aws.ec2.launchTemplateSpecification
 export ko_pulumi.aws.ec2.launchTemplateConfigs

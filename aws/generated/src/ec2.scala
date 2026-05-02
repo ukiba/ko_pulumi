@@ -144,6 +144,30 @@ object ec2:
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
+  extension (builder: com.pulumi.aws.ec2.NetworkInsightsAccessScopeArgs.Builder)
+    /**
+     * @param excludePaths Set of access scope path statements to exclude.
+     *  See `excludePaths` below for details.
+     * @return builder
+     */
+    def excludePaths(args: Endofunction[com.pulumi.aws.ec2.inputs.NetworkInsightsAccessScopeExcludePathArgs.Builder]*):
+        com.pulumi.aws.ec2.NetworkInsightsAccessScopeArgs.Builder =
+      def argsBuilder = com.pulumi.aws.ec2.inputs.NetworkInsightsAccessScopeExcludePathArgs.builder
+      builder.excludePaths(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param matchPaths Set of access scope path statements to match.
+     *  At least one must be specified.
+     *  See `matchPaths` below for details.
+     *  
+     *  The following arguments are optional:
+     * @return builder
+     */
+    def matchPaths(args: Endofunction[com.pulumi.aws.ec2.inputs.NetworkInsightsAccessScopeMatchPathArgs.Builder]*):
+        com.pulumi.aws.ec2.NetworkInsightsAccessScopeArgs.Builder =
+      def argsBuilder = com.pulumi.aws.ec2.inputs.NetworkInsightsAccessScopeMatchPathArgs.builder
+      builder.matchPaths(args.map(_(argsBuilder).build)*)
+
   extension (builder: com.pulumi.aws.ec2.NetworkInsightsPathArgs.Builder)
     /**
      * @param filterAtDestination Scopes the analysis to network paths that match specific filters at the destination. If you specify this parameter, you can&#39;t specify `destinationIp`. See below for details. Note that Terraform performs drift detection on this argument only when the value is provided.
@@ -441,7 +465,11 @@ object ec2:
       def argsBuilder = com.pulumi.aws.ec2.inputs.DefaultNetworkAclIngressArgs.builder
       builder.ingress(args.map(_(argsBuilder).build)*)
 
-  /** Provides a VPC resource. */
+  /**
+   * Provides a VPC resource.
+   *  
+   *  &gt; **NOTE:** When AWS GuardDuty is enabled in your account, it automatically creates VPC endpoints and security groups in your VPCs to monitor network traffic. During VPC deletion, the provider automatically detects and removes these GuardDuty-managed VPC endpoints and security groups if they are blocking the deletion. This cleanup only targets resources tagged with `GuardDutyManaged=true` and happens automatically during destroy operations with no manual intervention required. For optimal functionality, the IAM role used by Terraform should have the optional permissions listed below. If these permissions are not available, the provider will continue with the deletion attempt and surface warnings only if the deletion ultimately fails.
+   */
   def Vpc(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ec2.VpcArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.ec2.VpcArgs.builder
@@ -2486,6 +2514,8 @@ object ec2:
    * Provides an VPC subnet resource.
    *  
    *  &gt; **NOTE:** Due to [AWS Lambda improved VPC networking changes that began deploying in September 2019](https://aws.amazon.com/blogs/compute/announcing-improved-vpc-networking-for-aws-lambda-functions/), subnets associated with Lambda Functions can take up to 45 minutes to successfully delete. To allow for successful deletion, the provider will wait for at least 45 minutes even if a shorter delete timeout is specified.
+   *  
+   *  &gt; **NOTE:** When AWS GuardDuty is enabled in your account, it automatically creates VPC endpoints in your VPCs to monitor network traffic. During subnet deletion, the provider automatically detects and dissociates the subnet from these GuardDuty-managed VPC endpoints if they are blocking the deletion, preserving GuardDuty protection for other subnets in the VPC. This cleanup only targets resources tagged with `GuardDutyManaged=true` and happens automatically during destroy operations with no manual intervention required. For optimal functionality, the IAM role used by Terraform should have the optional permissions listed below. If these permissions are not available, the provider will continue with the deletion attempt and surface warnings only if the deletion ultimately fails.
    */
   def Subnet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ec2.SubnetArgs.Builder])(using conf: KoPulumiConf) =
@@ -3399,6 +3429,21 @@ object ec2:
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
+  /**
+   * Provides a Network Insights Access Scope resource.
+   *  Part of the &#34;Network Access Analyzer&#34; service in the AWS VPC console.
+   */
+  def NetworkInsightsAccessScope(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.ec2.NetworkInsightsAccessScopeArgs.Builder])(using conf: KoPulumiConf) =
+    var argsBuilder = com.pulumi.aws.ec2.NetworkInsightsAccessScopeArgs.builder
+    conf.logicalName2tagName(name) match
+      case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
+      case None          =>
+    
+    com.pulumi.aws.ec2.NetworkInsightsAccessScope(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder).build)
+
   /** Provides a subnet CIDR reservation resource. */
   def SubnetCidrReservation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ec2.SubnetCidrReservationArgs.Builder]) =
@@ -3724,6 +3769,30 @@ object ec2:
       def argsBuilder = com.pulumi.aws.ec2.inputs.DefaultRouteTableRouteArgs.builder
       builder.routes(args.map(_(argsBuilder).build)*)
 
+  extension (builder: com.pulumi.aws.ec2.inputs.NetworkInsightsAccessScopeState.Builder)
+    /**
+     * @param excludePaths Set of access scope path statements to exclude.
+     *  See `excludePaths` below for details.
+     * @return builder
+     */
+    def excludePaths(args: Endofunction[com.pulumi.aws.ec2.inputs.NetworkInsightsAccessScopeExcludePathArgs.Builder]*):
+        com.pulumi.aws.ec2.inputs.NetworkInsightsAccessScopeState.Builder =
+      def argsBuilder = com.pulumi.aws.ec2.inputs.NetworkInsightsAccessScopeExcludePathArgs.builder
+      builder.excludePaths(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param matchPaths Set of access scope path statements to match.
+     *  At least one must be specified.
+     *  See `matchPaths` below for details.
+     *  
+     *  The following arguments are optional:
+     * @return builder
+     */
+    def matchPaths(args: Endofunction[com.pulumi.aws.ec2.inputs.NetworkInsightsAccessScopeMatchPathArgs.Builder]*):
+        com.pulumi.aws.ec2.inputs.NetworkInsightsAccessScopeState.Builder =
+      def argsBuilder = com.pulumi.aws.ec2.inputs.NetworkInsightsAccessScopeMatchPathArgs.builder
+      builder.matchPaths(args.map(_(argsBuilder).build)*)
+
   extension (builder: com.pulumi.aws.ec2.inputs.NetworkInterfaceEnaSrdSpecificationArgs.Builder)
     /**
      * @param enaSrdUdpSpecification Configures ENA Express for UDP network traffic. See ENA SRD UDP Specification below for more details.
@@ -3770,6 +3839,37 @@ object ec2:
         com.pulumi.aws.ec2.inputs.GetVpcPeeringConnectionArgs.Builder =
       def argsBuilder = com.pulumi.aws.ec2.inputs.GetVpcPeeringConnectionFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.aws.ec2.inputs.NetworkInsightsAccessScopeExcludePathArgs.Builder)
+    /**
+     * @param destination Path statement for the destination.
+     *  See `source` and `destination` below for details.
+     * @return builder
+     */
+    def destination(args: Endofunction[com.pulumi.aws.ec2.inputs.NetworkInsightsAccessScopeExcludePathDestinationArgs.Builder]):
+        com.pulumi.aws.ec2.inputs.NetworkInsightsAccessScopeExcludePathArgs.Builder =
+      val argsBuilder = com.pulumi.aws.ec2.inputs.NetworkInsightsAccessScopeExcludePathDestinationArgs.builder
+      builder.destination(args(argsBuilder).build)
+
+    /**
+     * @param source Path statement for the source.
+     *  See `source` and `destination` below for details.
+     * @return builder
+     */
+    def source(args: Endofunction[com.pulumi.aws.ec2.inputs.NetworkInsightsAccessScopeExcludePathSourceArgs.Builder]):
+        com.pulumi.aws.ec2.inputs.NetworkInsightsAccessScopeExcludePathArgs.Builder =
+      val argsBuilder = com.pulumi.aws.ec2.inputs.NetworkInsightsAccessScopeExcludePathSourceArgs.builder
+      builder.source(args(argsBuilder).build)
+
+    /**
+     * @param throughResources Path statement for through resources.
+     *  See `throughResources` below for details.
+     * @return builder
+     */
+    def throughResources(args: Endofunction[com.pulumi.aws.ec2.inputs.NetworkInsightsAccessScopeExcludePathThroughResourceArgs.Builder]*):
+        com.pulumi.aws.ec2.inputs.NetworkInsightsAccessScopeExcludePathArgs.Builder =
+      def argsBuilder = com.pulumi.aws.ec2.inputs.NetworkInsightsAccessScopeExcludePathThroughResourceArgs.builder
+      builder.throughResources(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.aws.ec2.inputs.GetNetworkInterfaceArgs.Builder)
     /**
@@ -4259,6 +4359,22 @@ object ec2:
       val argsBuilder = com.pulumi.aws.ec2.inputs.LaunchTemplateInstanceRequirementsVcpuCountArgs.builder
       builder.vcpuCount(args(argsBuilder).build)
 
+  extension (builder: com.pulumi.aws.ec2.inputs.NetworkInsightsAccessScopeMatchPathDestinationArgs.Builder)
+    /**
+     * @param packetHeaderStatement Packet header statement.
+     *  See `packetHeaderStatement` below for details.
+     * @return builder
+     */
+    def packetHeaderStatement(args: Endofunction[com.pulumi.aws.ec2.inputs.NetworkInsightsAccessScopeMatchPathDestinationPacketHeaderStatementArgs.Builder]):
+        com.pulumi.aws.ec2.inputs.NetworkInsightsAccessScopeMatchPathDestinationArgs.Builder =
+      val argsBuilder = com.pulumi.aws.ec2.inputs.NetworkInsightsAccessScopeMatchPathDestinationPacketHeaderStatementArgs.builder
+      builder.packetHeaderStatement(args(argsBuilder).build)
+
+    def resourceStatement(args: Endofunction[com.pulumi.aws.ec2.inputs.NetworkInsightsAccessScopeMatchPathDestinationResourceStatementArgs.Builder]):
+        com.pulumi.aws.ec2.inputs.NetworkInsightsAccessScopeMatchPathDestinationArgs.Builder =
+      val argsBuilder = com.pulumi.aws.ec2.inputs.NetworkInsightsAccessScopeMatchPathDestinationResourceStatementArgs.builder
+      builder.resourceStatement(args(argsBuilder).build)
+
   extension (builder: com.pulumi.aws.ec2.inputs.NetworkInsightsAnalysisReturnPathComponentSecurityGroupRuleArgs.Builder)
     def portRanges(args: Endofunction[com.pulumi.aws.ec2.inputs.NetworkInsightsAnalysisReturnPathComponentSecurityGroupRulePortRangeArgs.Builder]*):
         com.pulumi.aws.ec2.inputs.NetworkInsightsAnalysisReturnPathComponentSecurityGroupRuleArgs.Builder =
@@ -4606,6 +4722,27 @@ object ec2:
       def argsBuilder = com.pulumi.aws.ec2.inputs.NetworkInsightsAnalysisForwardPathComponentAclRulePortRangeArgs.builder
       builder.portRanges(args.map(_(argsBuilder).build)*)
 
+  extension (builder: com.pulumi.aws.ec2.inputs.NetworkInsightsAccessScopeMatchPathArgs.Builder)
+    /**
+     * @param destination Path statement for the destination.
+     *  See `source` and `destination` below for details.
+     * @return builder
+     */
+    def destination(args: Endofunction[com.pulumi.aws.ec2.inputs.NetworkInsightsAccessScopeMatchPathDestinationArgs.Builder]):
+        com.pulumi.aws.ec2.inputs.NetworkInsightsAccessScopeMatchPathArgs.Builder =
+      val argsBuilder = com.pulumi.aws.ec2.inputs.NetworkInsightsAccessScopeMatchPathDestinationArgs.builder
+      builder.destination(args(argsBuilder).build)
+
+    /**
+     * @param source Path statement for the source.
+     *  See `source` and `destination` below for details.
+     * @return builder
+     */
+    def source(args: Endofunction[com.pulumi.aws.ec2.inputs.NetworkInsightsAccessScopeMatchPathSourceArgs.Builder]):
+        com.pulumi.aws.ec2.inputs.NetworkInsightsAccessScopeMatchPathArgs.Builder =
+      val argsBuilder = com.pulumi.aws.ec2.inputs.NetworkInsightsAccessScopeMatchPathSourceArgs.builder
+      builder.source(args(argsBuilder).build)
+
   extension (builder: com.pulumi.aws.ec2.inputs.VpcPeeringConnectionAccepterState.Builder)
     /**
      * @param accepter A configuration block that describes [VPC Peering Connection]
@@ -4838,6 +4975,28 @@ object ec2:
       val argsBuilder = com.pulumi.aws.ec2.inputs.VpnConnectionTunnel2LogOptionsCloudwatchLogOptionsArgs.builder
       builder.cloudwatchLogOptions(args(argsBuilder).build)
 
+  extension (builder: com.pulumi.aws.ec2.inputs.NetworkInsightsAccessScopeMatchPathSourceArgs.Builder)
+    /**
+     * @param packetHeaderStatement Packet header statement.
+     *  See `packetHeaderStatement` below for details.
+     * @return builder
+     */
+    def packetHeaderStatement(args: Endofunction[com.pulumi.aws.ec2.inputs.NetworkInsightsAccessScopeMatchPathSourcePacketHeaderStatementArgs.Builder]):
+        com.pulumi.aws.ec2.inputs.NetworkInsightsAccessScopeMatchPathSourceArgs.Builder =
+      val argsBuilder = com.pulumi.aws.ec2.inputs.NetworkInsightsAccessScopeMatchPathSourcePacketHeaderStatementArgs.builder
+      builder.packetHeaderStatement(args(argsBuilder).build)
+
+    /**
+     * @param resourceStatement Resource statement.
+     *  Exactly one of `resources` or `resourceTypes` must be specified.
+     *  See `resourceStatement` below for details.
+     * @return builder
+     */
+    def resourceStatement(args: Endofunction[com.pulumi.aws.ec2.inputs.NetworkInsightsAccessScopeMatchPathSourceResourceStatementArgs.Builder]):
+        com.pulumi.aws.ec2.inputs.NetworkInsightsAccessScopeMatchPathSourceArgs.Builder =
+      val argsBuilder = com.pulumi.aws.ec2.inputs.NetworkInsightsAccessScopeMatchPathSourceResourceStatementArgs.builder
+      builder.resourceStatement(args(argsBuilder).build)
+
   extension (builder: com.pulumi.aws.ec2.inputs.VpcIpamPoolState.Builder)
     /**
      * @param sourceResource Resource to use to use to configure a resource planning IPAM Pool. If configured, the `locale` of the parent pool must match the region that the vpc resides in.
@@ -5004,6 +5163,22 @@ object ec2:
       val argsBuilder = com.pulumi.aws.ec2.inputs.FleetLaunchTemplateConfigOverrideInstanceRequirementsArgs.builder
       builder.instanceRequirements(args(argsBuilder).build)
 
+  extension (builder: com.pulumi.aws.ec2.inputs.NetworkInsightsAccessScopeExcludePathDestinationArgs.Builder)
+    /**
+     * @param packetHeaderStatement Packet header statement.
+     *  See `packetHeaderStatement` below for details.
+     * @return builder
+     */
+    def packetHeaderStatement(args: Endofunction[com.pulumi.aws.ec2.inputs.NetworkInsightsAccessScopeExcludePathDestinationPacketHeaderStatementArgs.Builder]):
+        com.pulumi.aws.ec2.inputs.NetworkInsightsAccessScopeExcludePathDestinationArgs.Builder =
+      val argsBuilder = com.pulumi.aws.ec2.inputs.NetworkInsightsAccessScopeExcludePathDestinationPacketHeaderStatementArgs.builder
+      builder.packetHeaderStatement(args(argsBuilder).build)
+
+    def resourceStatement(args: Endofunction[com.pulumi.aws.ec2.inputs.NetworkInsightsAccessScopeExcludePathDestinationResourceStatementArgs.Builder]):
+        com.pulumi.aws.ec2.inputs.NetworkInsightsAccessScopeExcludePathDestinationArgs.Builder =
+      val argsBuilder = com.pulumi.aws.ec2.inputs.NetworkInsightsAccessScopeExcludePathDestinationResourceStatementArgs.builder
+      builder.resourceStatement(args(argsBuilder).build)
+
   extension (builder: com.pulumi.aws.ec2.inputs.NetworkInsightsAnalysisReturnPathComponentInboundHeaderArgs.Builder)
     def destinationPortRanges(args: Endofunction[com.pulumi.aws.ec2.inputs.NetworkInsightsAnalysisReturnPathComponentInboundHeaderDestinationPortRangeArgs.Builder]*):
         com.pulumi.aws.ec2.inputs.NetworkInsightsAnalysisReturnPathComponentInboundHeaderArgs.Builder =
@@ -5042,6 +5217,18 @@ object ec2:
         com.pulumi.aws.ec2.inputs.DefaultCreditSpecificationState.Builder =
       val argsBuilder = com.pulumi.aws.ec2.inputs.DefaultCreditSpecificationTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.ec2.inputs.NetworkInsightsAccessScopeExcludePathThroughResourceArgs.Builder)
+    /**
+     * @param resourceStatement Resource statement.
+     *  Exactly one of `resources` or `resourceTypes` must be specified.
+     *  See `resourceStatement` below for details.
+     * @return builder
+     */
+    def resourceStatement(args: Endofunction[com.pulumi.aws.ec2.inputs.NetworkInsightsAccessScopeExcludePathThroughResourceResourceStatementArgs.Builder]):
+        com.pulumi.aws.ec2.inputs.NetworkInsightsAccessScopeExcludePathThroughResourceArgs.Builder =
+      val argsBuilder = com.pulumi.aws.ec2.inputs.NetworkInsightsAccessScopeExcludePathThroughResourceResourceStatementArgs.builder
+      builder.resourceStatement(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.ec2.inputs.GetNatGatewayArgs.Builder)
     /**
@@ -5374,6 +5561,28 @@ object ec2:
         com.pulumi.aws.ec2.inputs.GetNetworkInsightsPathArgs.Builder =
       def argsBuilder = com.pulumi.aws.ec2.inputs.GetNetworkInsightsPathFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.aws.ec2.inputs.NetworkInsightsAccessScopeExcludePathSourceArgs.Builder)
+    /**
+     * @param packetHeaderStatement Packet header statement.
+     *  See `packetHeaderStatement` below for details.
+     * @return builder
+     */
+    def packetHeaderStatement(args: Endofunction[com.pulumi.aws.ec2.inputs.NetworkInsightsAccessScopeExcludePathSourcePacketHeaderStatementArgs.Builder]):
+        com.pulumi.aws.ec2.inputs.NetworkInsightsAccessScopeExcludePathSourceArgs.Builder =
+      val argsBuilder = com.pulumi.aws.ec2.inputs.NetworkInsightsAccessScopeExcludePathSourcePacketHeaderStatementArgs.builder
+      builder.packetHeaderStatement(args(argsBuilder).build)
+
+    /**
+     * @param resourceStatement Resource statement.
+     *  Exactly one of `resources` or `resourceTypes` must be specified.
+     *  See `resourceStatement` below for details.
+     * @return builder
+     */
+    def resourceStatement(args: Endofunction[com.pulumi.aws.ec2.inputs.NetworkInsightsAccessScopeExcludePathSourceResourceStatementArgs.Builder]):
+        com.pulumi.aws.ec2.inputs.NetworkInsightsAccessScopeExcludePathSourceArgs.Builder =
+      val argsBuilder = com.pulumi.aws.ec2.inputs.NetworkInsightsAccessScopeExcludePathSourceResourceStatementArgs.builder
+      builder.resourceStatement(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.ec2.inputs.GetVpcEndpointServiceArgs.Builder)
     /**
