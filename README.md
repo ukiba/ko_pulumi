@@ -34,7 +34,7 @@
     ./mill _.generate
     ./mill _.compile
 
-1. `publishLocal` that outputs to `~/.ivy2/local` is unreliable
+1. `publishLocal` that outputs to `~/.ivy2/local` is not used (unreliable)
     1. [The local ivy2 repository is searched before Maven Central by default](https://get-coursier.io/docs/other-repositories), but
     2. [SNAPSHOT versions are cached for 24 hours by default](https://get-coursier.io/docs/ttl)
 
