@@ -9,8 +9,6 @@ import java.util.{Optional as JOptional, List as JList, Map as JMap}
 
 /** Enhances pulumi-java */
 package object ko_pulumi:
-  import scala.language.implicitConversions
-
   // TODO this does not belong here
   type Endofunction[A] = Function1[A, A]
 
@@ -24,11 +22,11 @@ package object ko_pulumi:
   )
 
   object KoPulumiConf:
-    private def applyName(name: String) = Some(name)
-    object Full extends KoPulumiConf(
-      applyName,
-      applyName,
-      applyName,
+    private def propagateLogicalName(name: String) = Some(name)
+    object PropagateLogicalNameAll extends KoPulumiConf(
+      propagateLogicalName,
+      propagateLogicalName,
+      propagateLogicalName,
     )
 
   object syntax:
@@ -53,7 +51,7 @@ package object ko_pulumi:
         // the same name as fs2.Stream.CompileOps.onlyOrError
         def onlyOrError: A =
           list.size match
-            case 1 => list.head
+            case 1 => list.get(0)
             case 0 => throw IllegalArgumentException(s"Expected single element: no element")
             case n => throw IllegalArgumentException(s"Expected single element: $n elements")
   import syntax.all.*
@@ -70,14 +68,8 @@ package object ko_pulumi:
 
   // convert Output[String] to Output[JList[String]]
   // for ec2.InstanceArgs.builder.vpcSecurityGroupIds
-  given [A] => Conversion[Output[A], Output[JList[A]]] = _.map(a => Seq(a))
+  given [A] => Conversion[Output[A], Output[JList[A]]] = _.map(a => JList.of(a))
 
   given [A, B] => Conversion[Either[A, B], PEither[A, B]] = _ match
     case Left(left)   => PEither.ofLeft(left)
     case Right(right) => PEither.ofRight(right)
-/* alternate syntax
-  given [A, B] => Conversion[Either[A, B], PEither[A, B]]:
-    def apply(either: Either[A, B]) = either match
-      case Left(left)   => PEither.ofLeft(left)
-      case Right(right) => PEither.ofRight(right)
-*/
