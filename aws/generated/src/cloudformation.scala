@@ -32,6 +32,10 @@ object cloudformation:
       val argsBuilder = com.pulumi.aws.cloudformation.inputs.StackSetOperationPreferencesArgs.builder
       builder.operationPreferences(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.cloudformation.StackSetArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.cloudformation.StackInstancesArgs.Builder)
     /**
      * @param deploymentTargets AWS Organizations accounts for which to create stack instances in the `regions`. stack sets doesn&#39;t deploy stack instances to the organization management account, even if the organization management account is in your organization or in an OU in your organization. Drift detection is not possible for most of this argument. See deploymentTargets below.
@@ -51,6 +55,7 @@ object cloudformation:
       val argsBuilder = com.pulumi.aws.cloudformation.inputs.StackInstancesOperationPreferencesArgs.builder
       builder.operationPreferences(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.cloudformation.CloudFormationTypeArgs.Builder)
     /**
      * @param loggingConfig Configuration block containing logging configuration.
@@ -61,6 +66,7 @@ object cloudformation:
       val argsBuilder = com.pulumi.aws.cloudformation.inputs.CloudFormationTypeLoggingConfigArgs.builder
       builder.loggingConfig(args(argsBuilder).build)
 
+                       
   /**
    * Manages CloudFormation stack instances for the specified accounts, within the specified regions. A stack instance refers to a stack in a specific account and region. Additional information about stacks can be found in the [AWS CloudFormation User Guide](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacks.html).
    *  
@@ -169,6 +175,7 @@ object cloudformation:
       val argsBuilder = com.pulumi.aws.cloudformation.inputs.StackSetInstanceOperationPreferencesArgs.builder
       builder.operationPreferences(args(argsBuilder).build)
 
+                       
   /**
    * Manages a version of a CloudFormation Type.
    *  
@@ -198,6 +205,7 @@ object cloudformation:
       val argsBuilder = com.pulumi.aws.cloudformation.inputs.CloudFormationTypeLoggingConfigArgs.builder
       builder.loggingConfig(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.cloudformation.inputs.StackSetState.Builder)
     /**
      * @param autoDeployment Configuration block containing the auto-deployment model for your StackSet. This can only be defined when using the `SERVICE_MANAGED` permission model.
@@ -226,6 +234,10 @@ object cloudformation:
       val argsBuilder = com.pulumi.aws.cloudformation.inputs.StackSetOperationPreferencesArgs.builder
       builder.operationPreferences(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.cloudformation.inputs.StackSetState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.cloudformation.inputs.StackInstancesState.Builder)
     /**
      * @param deploymentTargets AWS Organizations accounts for which to create stack instances in the `regions`. stack sets doesn&#39;t deploy stack instances to the organization management account, even if the organization management account is in your organization or in an OU in your organization. Drift detection is not possible for most of this argument. See deploymentTargets below.
@@ -254,6 +266,7 @@ object cloudformation:
       def argsBuilder = com.pulumi.aws.cloudformation.inputs.StackInstancesStackInstanceSummaryArgs.builder
       builder.stackInstanceSummaries(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.cloudformation.inputs.StackSetInstanceState.Builder)
     /**
      * @param deploymentTargets AWS Organizations accounts to which StackSets deploys. StackSets doesn&#39;t deploy stack instances to the organization management account, even if the organization management account is in your organization or in an OU in your organization. Drift detection is not possible for this argument. See deploymentTargets below.
@@ -282,6 +295,7 @@ object cloudformation:
       def argsBuilder = com.pulumi.aws.cloudformation.inputs.StackSetInstanceStackInstanceSummaryArgs.builder
       builder.stackInstanceSummaries(args.map(_(argsBuilder).build)*)
 
+                       
   /** Provides a CloudFormation Stack resource. */
   def Stack(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.cloudformation.StackArgs.Builder])(using conf: KoPulumiConf) =

@@ -40,6 +40,10 @@ object qbusiness:
       val argsBuilder = com.pulumi.aws.qbusiness.inputs.ApplicationTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.qbusiness.ApplicationArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.qbusiness.inputs.ApplicationState.Builder)
     /**
      * @param attachmentsConfiguration Information about whether file upload functionality is activated or deactivated for your end user. See `attachmentsConfiguration` below.
@@ -63,3 +67,8 @@ object qbusiness:
         com.pulumi.aws.qbusiness.inputs.ApplicationState.Builder =
       val argsBuilder = com.pulumi.aws.qbusiness.inputs.ApplicationTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
+
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.qbusiness.inputs.ApplicationState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       

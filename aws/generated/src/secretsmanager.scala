@@ -121,6 +121,7 @@ object secretsmanager:
       val argsBuilder = com.pulumi.aws.secretsmanager.inputs.SecretRotationRotationRulesArgs.builder
       builder.rotationRules(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.secretsmanager.SecretArgs.Builder)
     /**
      * @param replicas Configuration block to support secret replication. See details below.
@@ -131,6 +132,10 @@ object secretsmanager:
       def argsBuilder = com.pulumi.aws.secretsmanager.inputs.SecretReplicaArgs.builder
       builder.replicas(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.secretsmanager.SecretArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /** Provides a resource to manage AWS Secrets Manager secret policy. */
   def SecretPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.secretsmanager.SecretPolicyArgs.Builder]) =
@@ -172,6 +177,10 @@ object secretsmanager:
       def argsBuilder = com.pulumi.aws.secretsmanager.inputs.SecretReplicaArgs.builder
       builder.replicas(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.secretsmanager.inputs.SecretState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.secretsmanager.inputs.GetSecretsArgs.Builder)
     /**
      * @param filters Configuration block(s) for filtering. Detailed below.
@@ -182,6 +191,7 @@ object secretsmanager:
       def argsBuilder = com.pulumi.aws.secretsmanager.inputs.GetSecretsFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.secretsmanager.inputs.SecretRotationState.Builder)
     /**
      * @param rotationRules A structure that defines the rotation configuration for this secret. Defined below.
@@ -191,3 +201,5 @@ object secretsmanager:
         com.pulumi.aws.secretsmanager.inputs.SecretRotationState.Builder =
       val argsBuilder = com.pulumi.aws.secretsmanager.inputs.SecretRotationRotationRulesArgs.builder
       builder.rotationRules(args(argsBuilder).build)
+
+                       

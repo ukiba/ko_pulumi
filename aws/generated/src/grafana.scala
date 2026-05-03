@@ -23,6 +23,10 @@ object grafana:
       val argsBuilder = com.pulumi.aws.grafana.inputs.WorkspaceVpcConfigurationArgs.builder
       builder.vpcConfiguration(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.grafana.WorkspaceArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /** Provides an Amazon Managed Grafana workspace SAML configuration resource. */
   def WorkspaceSamlConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.grafana.WorkspaceSamlConfigurationArgs.Builder]) =
@@ -135,6 +139,10 @@ object grafana:
       val argsBuilder = com.pulumi.aws.grafana.inputs.WorkspaceVpcConfigurationArgs.builder
       builder.vpcConfiguration(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.grafana.inputs.WorkspaceState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /** Provides an Amazon Managed Grafana workspace license association resource. */
   def LicenseAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.grafana.LicenseAssociationArgs.Builder]) =

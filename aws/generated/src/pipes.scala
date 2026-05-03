@@ -41,6 +41,10 @@ object pipes:
       val argsBuilder = com.pulumi.aws.pipes.inputs.PipeTargetParametersArgs.builder
       builder.targetParameters(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.pipes.PipeArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /**
    * Resource for managing an AWS EventBridge Pipes Pipe.
    *  
@@ -74,6 +78,7 @@ object pipes:
       val argsBuilder = com.pulumi.aws.pipes.inputs.PipeSourceParametersManagedStreamingKafkaParametersCredentialsArgs.builder
       builder.credentials(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.pipes.inputs.PipeState.Builder)
     /**
      * @param enrichmentParameters Parameters to configure enrichment for your pipe. Detailed below.
@@ -111,6 +116,10 @@ object pipes:
       val argsBuilder = com.pulumi.aws.pipes.inputs.PipeTargetParametersArgs.builder
       builder.targetParameters(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.pipes.inputs.PipeState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.pipes.inputs.PipeTargetParametersEcsTaskParametersArgs.Builder)
     /**
      * @param capacityProviderStrategies List of capacity provider strategies to use for the task. If a capacityProviderStrategy is specified, the launchType parameter must be omitted. If no capacityProviderStrategy or launchType is specified, the defaultCapacityProviderStrategy for the cluster is used. Detailed below.
@@ -157,6 +166,10 @@ object pipes:
       def argsBuilder = com.pulumi.aws.pipes.inputs.PipeTargetParametersEcsTaskParametersPlacementStrategyArgs.builder
       builder.placementStrategies(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.pipes.inputs.PipeTargetParametersEcsTaskParametersArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.pipes.inputs.PipeTargetParametersArgs.Builder)
     /**
      * @param batchJobParameters The parameters for using an AWS Batch job as a target. Detailed below.
@@ -257,6 +270,7 @@ object pipes:
       val argsBuilder = com.pulumi.aws.pipes.inputs.PipeTargetParametersStepFunctionStateMachineParametersArgs.builder
       builder.stepFunctionStateMachineParameters(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.pipes.inputs.PipeLogConfigurationArgs.Builder)
     /**
      * @param cloudwatchLogsLogDestination Amazon CloudWatch Logs logging configuration settings for the pipe. Detailed below.
@@ -285,6 +299,7 @@ object pipes:
       val argsBuilder = com.pulumi.aws.pipes.inputs.PipeLogConfigurationS3LogDestinationArgs.builder
       builder.s3LogDestination(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.pipes.inputs.PipeSourceParametersSelfManagedKafkaParametersArgs.Builder)
     /**
      * @param credentials The credentials needed to access the resource. Detailed below.
@@ -304,6 +319,7 @@ object pipes:
       val argsBuilder = com.pulumi.aws.pipes.inputs.PipeSourceParametersSelfManagedKafkaParametersVpcArgs.builder
       builder.vpc(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.pipes.inputs.PipeTargetParametersEcsTaskParametersNetworkConfigurationArgs.Builder)
     /**
      * @param awsVpcConfiguration Use this structure to specify the VPC subnets and security groups for the task, and whether a public IP address is to be used. This structure is relevant only for ECS tasks that use the awsvpc network mode. Detailed below.
@@ -314,6 +330,7 @@ object pipes:
       val argsBuilder = com.pulumi.aws.pipes.inputs.PipeTargetParametersEcsTaskParametersNetworkConfigurationAwsVpcConfigurationArgs.builder
       builder.awsVpcConfiguration(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.pipes.inputs.PipeSourceParametersActivemqBrokerParametersArgs.Builder)
     /**
      * @param credentials The credentials needed to access the resource. Detailed below.
@@ -324,6 +341,7 @@ object pipes:
       val argsBuilder = com.pulumi.aws.pipes.inputs.PipeSourceParametersActivemqBrokerParametersCredentialsArgs.builder
       builder.credentials(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.pipes.inputs.PipeEnrichmentParametersArgs.Builder)
     /**
      * @param httpParameters Contains the HTTP parameters to use when the target is a API Gateway REST endpoint or EventBridge ApiDestination. If you specify an API Gateway REST API or EventBridge ApiDestination as a target, you can use this parameter to specify headers, path parameters, and query string keys/values as part of your target invoking request. If you&#39;re using ApiDestinations, the corresponding Connection can also have these values configured. In case of any conflicting keys, values from the Connection take precedence. Detailed below.
@@ -334,6 +352,7 @@ object pipes:
       val argsBuilder = com.pulumi.aws.pipes.inputs.PipeEnrichmentParametersHttpParametersArgs.builder
       builder.httpParameters(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.pipes.inputs.PipeTargetParametersSagemakerPipelineParametersArgs.Builder)
     /**
      * @param pipelineParameters List of Parameter names and values for SageMaker AI Model Building Pipeline execution. Detailed below.
@@ -344,6 +363,7 @@ object pipes:
       def argsBuilder = com.pulumi.aws.pipes.inputs.PipeTargetParametersSagemakerPipelineParametersPipelineParameterArgs.builder
       builder.pipelineParameters(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.pipes.inputs.PipeSourceParametersArgs.Builder)
     /**
      * @param activemqBrokerParameters The parameters for using an Active MQ broker as a source. Detailed below.
@@ -417,6 +437,7 @@ object pipes:
       val argsBuilder = com.pulumi.aws.pipes.inputs.PipeSourceParametersSqsQueueParametersArgs.builder
       builder.sqsQueueParameters(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.pipes.inputs.PipeTargetParametersBatchJobParametersContainerOverridesArgs.Builder)
     /**
      * @param environments The environment variables to send to the container. You can add new environment variables, which are added to the container at launch, or you can override the existing environment variables from the Docker image or the task definition. You must also specify a container name. Detailed below.
@@ -436,6 +457,7 @@ object pipes:
       def argsBuilder = com.pulumi.aws.pipes.inputs.PipeTargetParametersBatchJobParametersContainerOverridesResourceRequirementArgs.builder
       builder.resourceRequirements(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.pipes.inputs.PipeSourceParametersDynamodbStreamParametersArgs.Builder)
     /**
      * @param deadLetterConfig Define the target queue to send dead-letter queue events to. Detailed below.
@@ -446,6 +468,7 @@ object pipes:
       val argsBuilder = com.pulumi.aws.pipes.inputs.PipeSourceParametersDynamodbStreamParametersDeadLetterConfigArgs.builder
       builder.deadLetterConfig(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.pipes.inputs.PipeTargetParametersEcsTaskParametersOverridesArgs.Builder)
     /**
      * @param containerOverrides One or more container overrides that are sent to a task. Detailed below.
@@ -474,6 +497,7 @@ object pipes:
       def argsBuilder = com.pulumi.aws.pipes.inputs.PipeTargetParametersEcsTaskParametersOverridesInferenceAcceleratorOverrideArgs.builder
       builder.inferenceAcceleratorOverrides(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.pipes.inputs.PipeTargetParametersEcsTaskParametersOverridesContainerOverrideArgs.Builder)
     /**
      * @param environmentFiles A list of files containing the environment variables to pass to a container, instead of the value from the container definition. Detailed below.
@@ -502,6 +526,7 @@ object pipes:
       def argsBuilder = com.pulumi.aws.pipes.inputs.PipeTargetParametersEcsTaskParametersOverridesContainerOverrideResourceRequirementArgs.builder
       builder.resourceRequirements(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.pipes.inputs.PipeSourceParametersFilterCriteriaArgs.Builder)
     /**
      * @param filters An array of up to 5 event patterns. Detailed below.
@@ -512,6 +537,7 @@ object pipes:
       def argsBuilder = com.pulumi.aws.pipes.inputs.PipeSourceParametersFilterCriteriaFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.pipes.inputs.PipeSourceParametersRabbitmqBrokerParametersArgs.Builder)
     /**
      * @param credentials The credentials needed to access the resource. Detailed below.
@@ -522,6 +548,7 @@ object pipes:
       val argsBuilder = com.pulumi.aws.pipes.inputs.PipeSourceParametersRabbitmqBrokerParametersCredentialsArgs.builder
       builder.credentials(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.pipes.inputs.PipeSourceParametersKinesisStreamParametersArgs.Builder)
     /**
      * @param deadLetterConfig Define the target queue to send dead-letter queue events to. Detailed below.
@@ -532,6 +559,7 @@ object pipes:
       val argsBuilder = com.pulumi.aws.pipes.inputs.PipeSourceParametersKinesisStreamParametersDeadLetterConfigArgs.builder
       builder.deadLetterConfig(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.pipes.inputs.PipeTargetParametersBatchJobParametersArgs.Builder)
     /**
      * @param arrayProperties The array properties for the submitted job, such as the size of the array. The array size can be between 2 and 10,000. If you specify array properties for a job, it becomes an array job. This parameter is used only if the target is an AWS Batch job. Detailed below.
@@ -568,3 +596,5 @@ object pipes:
         com.pulumi.aws.pipes.inputs.PipeTargetParametersBatchJobParametersArgs.Builder =
       val argsBuilder = com.pulumi.aws.pipes.inputs.PipeTargetParametersBatchJobParametersRetryStrategyArgs.builder
       builder.retryStrategy(args(argsBuilder).build)
+
+                       

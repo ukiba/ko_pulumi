@@ -50,6 +50,10 @@ object alb:
       def argsBuilder = com.pulumi.aws.alb.inputs.TargetGroupTargetHealthStateArgs.builder
       builder.targetHealthStates(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.alb.TargetGroupArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /**
    * Provides a Load Balancer Listener Certificate resource.
    *  
@@ -125,6 +129,10 @@ object alb:
       def argsBuilder = com.pulumi.aws.alb.inputs.ListenerRuleTransformArgs.builder
       builder.transforms(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.alb.ListenerRuleArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /**
    * Provides a Load Balancer resource.
    *  
@@ -284,6 +292,10 @@ object alb:
       def argsBuilder = com.pulumi.aws.alb.inputs.LoadBalancerSubnetMappingArgs.builder
       builder.subnetMappings(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.alb.LoadBalancerArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /**
    * Provides a Load Balancer Listener resource.
    *  
@@ -319,6 +331,10 @@ object alb:
       val argsBuilder = com.pulumi.aws.alb.inputs.ListenerMutualAuthenticationArgs.builder
       builder.mutualAuthentication(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.alb.ListenerArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.alb.inputs.TargetGroupTargetGroupHealthArgs.Builder)
     /**
      * @param dnsFailover Block to configure DNS Failover requirements. See DNS Failover below for details on attributes.
@@ -338,6 +354,7 @@ object alb:
       val argsBuilder = com.pulumi.aws.alb.inputs.TargetGroupTargetGroupHealthUnhealthyStateRoutingArgs.builder
       builder.unhealthyStateRouting(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.alb.inputs.ListenerState.Builder)
     /**
      * @param defaultActions Configuration block for default actions. See below.
@@ -357,6 +374,10 @@ object alb:
       val argsBuilder = com.pulumi.aws.alb.inputs.ListenerMutualAuthenticationArgs.builder
       builder.mutualAuthentication(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.alb.inputs.ListenerState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.alb.inputs.ListenerRuleActionForwardArgs.Builder)
     /**
      * @param stickiness The target group stickiness for the rule.
@@ -376,6 +397,7 @@ object alb:
       def argsBuilder = com.pulumi.aws.alb.inputs.ListenerRuleActionForwardTargetGroupArgs.builder
       builder.targetGroups(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.alb.inputs.ListenerDefaultActionJwtValidationArgs.Builder)
     /**
      * @param additionalClaims Repeatable configuration block for additional claims to validate.
@@ -386,6 +408,7 @@ object alb:
       def argsBuilder = com.pulumi.aws.alb.inputs.ListenerDefaultActionJwtValidationAdditionalClaimArgs.builder
       builder.additionalClaims(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.alb.inputs.LoadBalancerState.Builder)
     /**
      * @param accessLogs Access Logs block. See below.
@@ -441,6 +464,10 @@ object alb:
       def argsBuilder = com.pulumi.aws.alb.inputs.LoadBalancerSubnetMappingArgs.builder
       builder.subnetMappings(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.alb.inputs.LoadBalancerState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.alb.inputs.TargetGroupState.Builder)
     /**
      * @param healthCheck Health Check configuration block. Detailed below.
@@ -487,6 +514,10 @@ object alb:
       def argsBuilder = com.pulumi.aws.alb.inputs.TargetGroupTargetHealthStateArgs.builder
       builder.targetHealthStates(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.alb.inputs.TargetGroupState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.alb.inputs.ListenerRuleActionJwtValidationArgs.Builder)
     /**
      * @param additionalClaims Repeatable configuration block for additional claims to validate.
@@ -497,6 +528,7 @@ object alb:
       def argsBuilder = com.pulumi.aws.alb.inputs.ListenerRuleActionJwtValidationAdditionalClaimArgs.builder
       builder.additionalClaims(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.alb.inputs.ListenerDefaultActionArgs.Builder)
     /**
      * @param authenticateCognito Configuration block for using Amazon Cognito to authenticate users. Specify only when `type` is `authenticate-cognito`. See below.
@@ -552,6 +584,7 @@ object alb:
       val argsBuilder = com.pulumi.aws.alb.inputs.ListenerDefaultActionRedirectArgs.builder
       builder.redirect(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.alb.inputs.ListenerRuleState.Builder)
     /**
      * @param actions An Action block. Action blocks are documented below.
@@ -580,6 +613,10 @@ object alb:
       def argsBuilder = com.pulumi.aws.alb.inputs.ListenerRuleTransformArgs.builder
       builder.transforms(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.alb.inputs.ListenerRuleState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.alb.inputs.ListenerRuleTransformHostHeaderRewriteConfigArgs.Builder)
     /**
      * @param rewrite Block for host header rewrite configuration. Only one block is accepted. See Rewrite Blocks below.
@@ -590,6 +627,7 @@ object alb:
       val argsBuilder = com.pulumi.aws.alb.inputs.ListenerRuleTransformHostHeaderRewriteConfigRewriteArgs.builder
       builder.rewrite(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.alb.inputs.ListenerRuleTransformArgs.Builder)
     /**
      * @param hostHeaderRewriteConfig Configuration block for host header rewrite. Required if `type` is `host-header-rewrite`. See Host Header Rewrite Config Blocks below.
@@ -609,6 +647,7 @@ object alb:
       val argsBuilder = com.pulumi.aws.alb.inputs.ListenerRuleTransformUrlRewriteConfigArgs.builder
       builder.urlRewriteConfig(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.alb.inputs.ListenerRuleActionArgs.Builder)
     /**
      * @param authenticateCognito Information for creating an authenticate action using Cognito. Required if `type` is `authenticate-cognito`.
@@ -666,6 +705,7 @@ object alb:
       val argsBuilder = com.pulumi.aws.alb.inputs.ListenerRuleActionRedirectArgs.builder
       builder.redirect(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.alb.inputs.ListenerRuleConditionArgs.Builder)
     /**
      * @param hostHeader Host header patterns to match. Host Header block fields documented below.
@@ -723,6 +763,7 @@ object alb:
       val argsBuilder = com.pulumi.aws.alb.inputs.ListenerRuleConditionSourceIpArgs.builder
       builder.sourceIp(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.alb.inputs.ListenerDefaultActionForwardArgs.Builder)
     /**
      * @param stickiness Configuration block for target group stickiness for the rule. See below.
@@ -744,6 +785,7 @@ object alb:
       def argsBuilder = com.pulumi.aws.alb.inputs.ListenerDefaultActionForwardTargetGroupArgs.builder
       builder.targetGroups(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.alb.inputs.ListenerRuleTransformUrlRewriteConfigArgs.Builder)
     /**
      * @param rewrite Block for URL rewrite configuration. Only one block is accepted. See Rewrite Blocks below.
@@ -754,6 +796,7 @@ object alb:
       val argsBuilder = com.pulumi.aws.alb.inputs.ListenerRuleTransformUrlRewriteConfigRewriteArgs.builder
       builder.rewrite(args(argsBuilder).build)
 
+                       
   /**
    * Provides a Load Balancer Listener Rule resource.
    *  

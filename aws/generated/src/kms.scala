@@ -19,6 +19,7 @@ object kms:
       val argsBuilder = com.pulumi.aws.kms.inputs.CustomKeyStoreXksProxyAuthenticationCredentialArgs.builder
       builder.xksProxyAuthenticationCredential(args(argsBuilder).build)
 
+                       
   /**
    * The KMS ciphertext resource allows you to encrypt plaintext into ciphertext
    *  by using an AWS KMS customer master key. The value returned by this resource
@@ -276,6 +277,7 @@ object kms:
       def argsBuilder = com.pulumi.aws.kms.inputs.GrantConstraintArgs.builder
       builder.constraints(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.kms.inputs.GetSecretsArgs.Builder)
     /**
      * @param secrets One or more encrypted payload definitions from the KMS service. See the Secret Definitions below.
@@ -286,18 +288,21 @@ object kms:
       def argsBuilder = com.pulumi.aws.kms.inputs.GetSecretsSecretArgs.builder
       builder.secrets(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.kms.inputs.GetSecretArgs.Builder)
     def secrets(args: Endofunction[com.pulumi.aws.kms.inputs.GetSecretSecretArgs.Builder]*):
         com.pulumi.aws.kms.inputs.GetSecretArgs.Builder =
       def argsBuilder = com.pulumi.aws.kms.inputs.GetSecretSecretArgs.builder
       builder.secrets(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.kms.inputs.CustomKeyStoreState.Builder)
     def xksProxyAuthenticationCredential(args: Endofunction[com.pulumi.aws.kms.inputs.CustomKeyStoreXksProxyAuthenticationCredentialArgs.Builder]):
         com.pulumi.aws.kms.inputs.CustomKeyStoreState.Builder =
       val argsBuilder = com.pulumi.aws.kms.inputs.CustomKeyStoreXksProxyAuthenticationCredentialArgs.builder
       builder.xksProxyAuthenticationCredential(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.kms.GrantArgs.Builder)
     /**
      * @param constraints A structure that you can use to allow certain operations in the grant only when the desired encryption context is present. For more information about encryption context, see [Encryption Context](https://docs.aws.amazon.com/kms/latest/developerguide/encrypt_context.html).
@@ -307,3 +312,5 @@ object kms:
         com.pulumi.aws.kms.GrantArgs.Builder =
       def argsBuilder = com.pulumi.aws.kms.inputs.GrantConstraintArgs.builder
       builder.constraints(args.map(_(argsBuilder).build)*)
+
+                       

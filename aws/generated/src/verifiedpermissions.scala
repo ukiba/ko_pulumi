@@ -14,6 +14,10 @@ object verifiedpermissions:
       val argsBuilder = com.pulumi.aws.verifiedpermissions.inputs.PolicyStoreValidationSettingsArgs.builder
       builder.validationSettings(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.verifiedpermissions.PolicyStoreArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.verifiedpermissions.SchemaArgs.Builder)
     /**
      * @param definition The definition of the schema.
@@ -24,6 +28,7 @@ object verifiedpermissions:
       val argsBuilder = com.pulumi.aws.verifiedpermissions.inputs.SchemaDefinitionArgs.builder
       builder.definition(args(argsBuilder).build)
 
+                       
   /** This is a Terraform resource for managing an AWS Verified Permissions Policy Store Schema. */
   def Schema(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.verifiedpermissions.SchemaArgs.Builder]) =
@@ -52,6 +57,7 @@ object verifiedpermissions:
       val argsBuilder = com.pulumi.aws.verifiedpermissions.inputs.IdentitySourceConfigurationArgs.builder
       builder.configuration(args(argsBuilder).build)
 
+                       
   /** This is a Terraform resource for managing an AWS Verified Permissions Policy Store. */
   def PolicyStore(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.verifiedpermissions.PolicyStoreArgs.Builder])(using conf: KoPulumiConf) =
@@ -100,6 +106,7 @@ object verifiedpermissions:
       val argsBuilder = com.pulumi.aws.verifiedpermissions.inputs.PolicyDefinitionArgs.builder
       builder.definition(args(argsBuilder).build)
 
+                       
   /** Resource for managing an AWS Verified Permissions Policy. */
   def Policy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.verifiedpermissions.PolicyArgs.Builder]) =
@@ -128,6 +135,7 @@ object verifiedpermissions:
       val argsBuilder = com.pulumi.aws.verifiedpermissions.inputs.IdentitySourceConfigurationOpenIdConnectConfigurationTokenSelectionIdentityTokenOnlyArgs.builder
       builder.identityTokenOnly(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.verifiedpermissions.inputs.PolicyDefinitionArgs.Builder)
     /**
      * @param static_ The static policy statement. See Static below.
@@ -147,6 +155,7 @@ object verifiedpermissions:
       val argsBuilder = com.pulumi.aws.verifiedpermissions.inputs.PolicyDefinitionTemplateLinkedArgs.builder
       builder.templateLinked(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.verifiedpermissions.inputs.IdentitySourceState.Builder)
     /**
      * @param configuration Specifies the details required to communicate with the identity provider (IdP) associated with this identity source. See Configuration below.
@@ -157,6 +166,7 @@ object verifiedpermissions:
       val argsBuilder = com.pulumi.aws.verifiedpermissions.inputs.IdentitySourceConfigurationArgs.builder
       builder.configuration(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.verifiedpermissions.inputs.IdentitySourceConfigurationCognitoUserPoolConfigurationArgs.Builder)
     /**
      * @param groupConfiguration The type of entity that a policy store maps to groups from an Amazon Cognito user pool identity source. See Group Configuration below.
@@ -167,6 +177,7 @@ object verifiedpermissions:
       val argsBuilder = com.pulumi.aws.verifiedpermissions.inputs.IdentitySourceConfigurationCognitoUserPoolConfigurationGroupConfigurationArgs.builder
       builder.groupConfiguration(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.verifiedpermissions.inputs.IdentitySourceConfigurationOpenIdConnectConfigurationArgs.Builder)
     /**
      * @param groupConfiguration The type of entity that a policy store maps to groups from an Amazon Cognito user pool identity source. See Group Configuration below.
@@ -186,6 +197,7 @@ object verifiedpermissions:
       val argsBuilder = com.pulumi.aws.verifiedpermissions.inputs.IdentitySourceConfigurationOpenIdConnectConfigurationTokenSelectionArgs.builder
       builder.tokenSelection(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.verifiedpermissions.inputs.PolicyStoreState.Builder)
     /**
      * @param validationSettings Validation settings for the policy store.
@@ -196,6 +208,10 @@ object verifiedpermissions:
       val argsBuilder = com.pulumi.aws.verifiedpermissions.inputs.PolicyStoreValidationSettingsArgs.builder
       builder.validationSettings(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.verifiedpermissions.inputs.PolicyStoreState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.verifiedpermissions.inputs.SchemaState.Builder)
     /**
      * @param definition The definition of the schema.
@@ -206,6 +222,7 @@ object verifiedpermissions:
       val argsBuilder = com.pulumi.aws.verifiedpermissions.inputs.SchemaDefinitionArgs.builder
       builder.definition(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.verifiedpermissions.inputs.PolicyState.Builder)
     /**
      * @param definition The definition of the policy. See Definition below.
@@ -216,6 +233,7 @@ object verifiedpermissions:
       val argsBuilder = com.pulumi.aws.verifiedpermissions.inputs.PolicyDefinitionArgs.builder
       builder.definition(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.verifiedpermissions.inputs.PolicyDefinitionTemplateLinkedArgs.Builder)
     /**
      * @param principal The principal of the template linked policy.
@@ -235,6 +253,7 @@ object verifiedpermissions:
       val argsBuilder = com.pulumi.aws.verifiedpermissions.inputs.PolicyDefinitionTemplateLinkedResourceArgs.builder
       builder.resource(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.verifiedpermissions.inputs.IdentitySourceConfigurationArgs.Builder)
     /**
      * @param cognitoUserPoolConfiguration Specifies the configuration details of an Amazon Cognito user pool that Verified Permissions can use as a source of authenticated identities as entities. See Cognito User Pool Configuration below.
@@ -253,3 +272,5 @@ object verifiedpermissions:
         com.pulumi.aws.verifiedpermissions.inputs.IdentitySourceConfigurationArgs.Builder =
       val argsBuilder = com.pulumi.aws.verifiedpermissions.inputs.IdentitySourceConfigurationOpenIdConnectConfigurationArgs.builder
       builder.openIdConnectConfiguration(args(argsBuilder).build)
+
+                       

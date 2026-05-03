@@ -47,6 +47,10 @@ object eks:
       val argsBuilder = com.pulumi.aws.eks.inputs.IdentityProviderConfigOidcArgs.builder
       builder.oidc(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.eks.IdentityProviderConfigArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.eks.AddonArgs.Builder)
     /**
      * @param namespaceConfig Namespace configuration for the add-on. See `namespaceConfig` below for details.
@@ -66,6 +70,10 @@ object eks:
       def argsBuilder = com.pulumi.aws.eks.inputs.AddonPodIdentityAssociationArgs.builder
       builder.podIdentityAssociations(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.eks.AddonArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /** Manages an EKS Cluster. */
   def Cluster(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.eks.ClusterArgs.Builder])(using conf: KoPulumiConf) =
@@ -183,6 +191,10 @@ object eks:
       val argsBuilder = com.pulumi.aws.eks.inputs.ClusterZonalShiftConfigArgs.builder
       builder.zonalShiftConfig(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.eks.ClusterArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.eks.AccessPolicyAssociationArgs.Builder)
     /**
      * @param accessScope The configuration block to determine the scope of the access. See `accessScope` Block below.
@@ -193,6 +205,7 @@ object eks:
       val argsBuilder = com.pulumi.aws.eks.inputs.AccessPolicyAssociationAccessScopeArgs.builder
       builder.accessScope(args(argsBuilder).build)
 
+                       
   /** Manages an EKS Capability for an EKS cluster. */
   def Capability(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.eks.CapabilityArgs.Builder])(using conf: KoPulumiConf) =
@@ -260,6 +273,10 @@ object eks:
       val argsBuilder = com.pulumi.aws.eks.inputs.NodeGroupUpdateConfigArgs.builder
       builder.updateConfig(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.eks.NodeGroupArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /**
    * Resource for managing an AWS EKS (Elastic Kubernetes) Pod Identity Association.
    *  
@@ -297,6 +314,10 @@ object eks:
       val argsBuilder = com.pulumi.aws.eks.inputs.CapabilityTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.eks.CapabilityArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /** Access Entry Configurations for an EKS Cluster. */
   def AccessEntry(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.eks.AccessEntryArgs.Builder])(using conf: KoPulumiConf) =
@@ -319,6 +340,10 @@ object eks:
       def argsBuilder = com.pulumi.aws.eks.inputs.FargateProfileSelectorArgs.builder
       builder.selectors(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.eks.FargateProfileArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /** Manages an EKS add-on. */
   def Addon(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.eks.AddonArgs.Builder])(using conf: KoPulumiConf) =
@@ -480,6 +505,10 @@ object eks:
       def argsBuilder = com.pulumi.aws.eks.inputs.FargateProfileSelectorArgs.builder
       builder.selectors(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.eks.inputs.FargateProfileState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.eks.inputs.ClusterKubernetesNetworkConfigArgs.Builder)
     /**
      * @param elasticLoadBalancing Configuration block with elastic load balancing configuration for the cluster. Detailed below.
@@ -490,6 +519,7 @@ object eks:
       val argsBuilder = com.pulumi.aws.eks.inputs.ClusterKubernetesNetworkConfigElasticLoadBalancingArgs.builder
       builder.elasticLoadBalancing(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.eks.inputs.ClusterState.Builder)
     /**
      * @param accessConfig Configuration block for the access config associated with your cluster, see [Amazon EKS Access Entries](https://docs.aws.amazon.com/eks/latest/userguide/access-entries.html). Detailed below.
@@ -610,6 +640,10 @@ object eks:
       val argsBuilder = com.pulumi.aws.eks.inputs.ClusterZonalShiftConfigArgs.builder
       builder.zonalShiftConfig(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.eks.inputs.ClusterState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.eks.inputs.AddonState.Builder)
     /**
      * @param namespaceConfig Namespace configuration for the add-on. See `namespaceConfig` below for details.
@@ -629,6 +663,10 @@ object eks:
       def argsBuilder = com.pulumi.aws.eks.inputs.AddonPodIdentityAssociationArgs.builder
       builder.podIdentityAssociations(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.eks.inputs.AddonState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.eks.inputs.NodeGroupState.Builder)
     /**
      * @param launchTemplate Configuration block with Launch Template settings. See `launchTemplate` below for details. Conflicts with `remoteAccess`.
@@ -693,6 +731,10 @@ object eks:
       val argsBuilder = com.pulumi.aws.eks.inputs.NodeGroupUpdateConfigArgs.builder
       builder.updateConfig(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.eks.inputs.NodeGroupState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.eks.inputs.AccessPolicyAssociationState.Builder)
     /**
      * @param accessScope The configuration block to determine the scope of the access. See `accessScope` Block below.
@@ -703,6 +745,7 @@ object eks:
       val argsBuilder = com.pulumi.aws.eks.inputs.AccessPolicyAssociationAccessScopeArgs.builder
       builder.accessScope(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.eks.inputs.NodeGroupResourceArgs.Builder)
     /**
      * @param autoscalingGroups List of objects containing information about AutoScaling Groups.
@@ -713,6 +756,7 @@ object eks:
       def argsBuilder = com.pulumi.aws.eks.inputs.NodeGroupResourceAutoscalingGroupArgs.builder
       builder.autoscalingGroups(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.eks.inputs.ClusterRemoteNetworkConfigArgs.Builder)
     /**
      * @param remoteNodeNetworks Configuration block with remote node network configuration for EKS Hybrid Nodes. Detailed below.
@@ -732,6 +776,7 @@ object eks:
       val argsBuilder = com.pulumi.aws.eks.inputs.ClusterRemoteNetworkConfigRemotePodNetworksArgs.builder
       builder.remotePodNetworks(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.eks.inputs.ClusterOutpostConfigArgs.Builder)
     /**
      * @param controlPlanePlacement An object representing the placement configuration for all the control plane instances of your local Amazon EKS cluster on AWS Outpost.
@@ -743,6 +788,7 @@ object eks:
       val argsBuilder = com.pulumi.aws.eks.inputs.ClusterOutpostConfigControlPlanePlacementArgs.builder
       builder.controlPlanePlacement(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.eks.inputs.CapabilityState.Builder)
     /**
      * @param configuration Configuration for the capability. See `configuration` below.
@@ -758,6 +804,10 @@ object eks:
       val argsBuilder = com.pulumi.aws.eks.inputs.CapabilityTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.eks.inputs.CapabilityState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.eks.inputs.ClusterEncryptionConfigArgs.Builder)
     /**
      * @param provider Configuration block with provider for encryption. Detailed below.
@@ -768,6 +818,7 @@ object eks:
       val argsBuilder = com.pulumi.aws.eks.inputs.ClusterEncryptionConfigProviderArgs.builder
       builder.provider(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.eks.inputs.CapabilityConfigurationArgoCdRbacRoleMappingArgs.Builder)
     /**
      * @param identities List of identities. See `identity` below.
@@ -778,6 +829,7 @@ object eks:
       def argsBuilder = com.pulumi.aws.eks.inputs.CapabilityConfigurationArgoCdRbacRoleMappingIdentityArgs.builder
       builder.identities(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.eks.inputs.CapabilityConfigurationArgoCdArgs.Builder)
     /**
      * @param awsIdc AWS IAM Identity Center configuration. See `awsIdc` below.
@@ -806,6 +858,7 @@ object eks:
       def argsBuilder = com.pulumi.aws.eks.inputs.CapabilityConfigurationArgoCdRbacRoleMappingArgs.builder
       builder.rbacRoleMappings(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.eks.inputs.IdentityProviderConfigState.Builder)
     /**
      * @param oidc Nested attribute containing [OpenID Connect](https://openid.net/connect/) identity provider information for the cluster. Detailed below.
@@ -816,6 +869,10 @@ object eks:
       val argsBuilder = com.pulumi.aws.eks.inputs.IdentityProviderConfigOidcArgs.builder
       builder.oidc(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.eks.inputs.IdentityProviderConfigState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.eks.inputs.CapabilityConfigurationArgs.Builder)
     /**
      * @param argoCd ArgoCD configuration. See `argoCd` below.
@@ -826,6 +883,7 @@ object eks:
       val argsBuilder = com.pulumi.aws.eks.inputs.CapabilityConfigurationArgoCdArgs.builder
       builder.argoCd(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.eks.inputs.NodeGroupNodeRepairConfigArgs.Builder)
     /**
      * @param nodeRepairConfigOverrides Granular overrides for specific repair actions. See `nodeRepairConfigOverrides` below for details.
@@ -836,6 +894,7 @@ object eks:
       def argsBuilder = com.pulumi.aws.eks.inputs.NodeGroupNodeRepairConfigNodeRepairConfigOverrideArgs.builder
       builder.nodeRepairConfigOverrides(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.eks.inputs.ClusterStorageConfigArgs.Builder)
     /**
      * @param blockStorage Configuration block with block storage configuration for the cluster. Detailed below.
@@ -846,6 +905,7 @@ object eks:
       val argsBuilder = com.pulumi.aws.eks.inputs.ClusterStorageConfigBlockStorageArgs.builder
       builder.blockStorage(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.eks.inputs.ClusterIdentityArgs.Builder)
     /**
      * @param oidcs Nested block containing [OpenID Connect](https://openid.net/connect/) identity provider information for the cluster. Detailed below.
@@ -855,3 +915,5 @@ object eks:
         com.pulumi.aws.eks.inputs.ClusterIdentityArgs.Builder =
       def argsBuilder = com.pulumi.aws.eks.inputs.ClusterIdentityOidcArgs.builder
       builder.oidcs(args.map(_(argsBuilder).build)*)
+
+                       

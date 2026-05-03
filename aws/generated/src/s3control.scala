@@ -86,6 +86,7 @@ object s3control:
       val argsBuilder = com.pulumi.aws.s3control.inputs.MultiRegionAccessPointDetailsArgs.builder
       builder.details(args(argsBuilder).build)
 
+                       
   /**
    * Provides a resource to manage an S3 Access Grants instance, which serves as a logical grouping for access grants.
    *  You can have one S3 Access Grants instance per Region in your account.
@@ -120,6 +121,10 @@ object s3control:
       val argsBuilder = com.pulumi.aws.s3control.inputs.AccessGrantGranteeArgs.builder
       builder.grantee(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.s3control.AccessGrantArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /**
    * Provides a resource to manage an S3 Access Grants location.
    *  A location is an S3 resource (bucket or prefix) in a permission grant that the grantee can access.
@@ -147,6 +152,7 @@ object s3control:
       def argsBuilder = com.pulumi.aws.s3control.inputs.BucketLifecycleConfigurationRuleArgs.builder
       builder.rules(args.map(_(argsBuilder).build)*)
 
+                       
   /** Provides a resource to manage an S3 Storage Lens configuration. */
   def StorageLensConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.s3control.StorageLensConfigurationArgs.Builder])(using conf: KoPulumiConf) =
@@ -182,6 +188,10 @@ object s3control:
       val argsBuilder = com.pulumi.aws.s3control.inputs.StorageLensConfigurationStorageLensConfigurationArgs.builder
       builder.storageLensConfiguration(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.s3control.StorageLensConfigurationArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /** Provides a resource to manage an S3 Multi-Region Access Point access control policy. */
   def MultiRegionAccessPointPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.s3control.MultiRegionAccessPointPolicyArgs.Builder]) =
@@ -201,6 +211,7 @@ object s3control:
       val argsBuilder = com.pulumi.aws.s3control.inputs.ObjectLambdaAccessPointConfigurationArgs.builder
       builder.configuration(args(argsBuilder).build)
 
+                       
   /**
    * Provides a resource to manage an S3 Multi-Region Access Point associated with specified buckets.
    *  
@@ -280,6 +291,7 @@ object s3control:
       val argsBuilder = com.pulumi.aws.s3control.inputs.DirectoryBucketAccessPointScopeScopeArgs.builder
       builder.scope(args(argsBuilder).build)
 
+                       
   /**
    * Provides a resource to manage an S3 Access Grant.
    *  Each access grant has its own ID and gives an IAM user or role or a directory user, or group (the grantee) access to a registered location. You determine the level of access, such as `READ` or `READWRITE`.
@@ -306,6 +318,7 @@ object s3control:
       val argsBuilder = com.pulumi.aws.s3control.inputs.MultiRegionAccessPointPolicyDetailsArgs.builder
       builder.details(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.s3control.inputs.StorageLensConfigurationStorageLensConfigurationAccountLevelBucketLevelPrefixLevelStorageMetricsArgs.Builder)
     /**
      * @param selectionCriteria Selection criteria. See Selection Criteria below for more details.
@@ -316,6 +329,7 @@ object s3control:
       val argsBuilder = com.pulumi.aws.s3control.inputs.StorageLensConfigurationStorageLensConfigurationAccountLevelBucketLevelPrefixLevelStorageMetricsSelectionCriteriaArgs.builder
       builder.selectionCriteria(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.s3control.inputs.StorageLensConfigurationStorageLensConfigurationAccountLevelArgs.Builder)
     /**
      * @param activityMetrics S3 Storage Lens activity metrics. See Activity Metrics below for more details.
@@ -371,6 +385,7 @@ object s3control:
       val argsBuilder = com.pulumi.aws.s3control.inputs.StorageLensConfigurationStorageLensConfigurationAccountLevelDetailedStatusCodeMetricsArgs.builder
       builder.detailedStatusCodeMetrics(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.s3control.inputs.StorageLensConfigurationStorageLensConfigurationDataExportS3BucketDestinationArgs.Builder)
     /**
      * @param encryption Encryption of the metrics exports in this bucket. See Encryption below for more details.
@@ -381,6 +396,7 @@ object s3control:
       val argsBuilder = com.pulumi.aws.s3control.inputs.StorageLensConfigurationStorageLensConfigurationDataExportS3BucketDestinationEncryptionArgs.builder
       builder.encryption(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.s3control.inputs.ObjectLambdaAccessPointState.Builder)
     /**
      * @param configuration A configuration block containing details about the Object Lambda Access Point. See Configuration below for more details.
@@ -391,6 +407,7 @@ object s3control:
       val argsBuilder = com.pulumi.aws.s3control.inputs.ObjectLambdaAccessPointConfigurationArgs.builder
       builder.configuration(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.s3control.inputs.StorageLensConfigurationStorageLensConfigurationExpandedPrefixesDataExportStorageLensTableDestinationEncryptionArgs.Builder)
     /**
      * @param sseKms SSE-KMS encryption. See SSE KMS below for more details.
@@ -410,6 +427,7 @@ object s3control:
       def argsBuilder = com.pulumi.aws.s3control.inputs.StorageLensConfigurationStorageLensConfigurationExpandedPrefixesDataExportStorageLensTableDestinationEncryptionSseS3Args.builder
       builder.sseS3s(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.s3control.inputs.StorageLensConfigurationState.Builder)
     /**
      * @param storageLensConfiguration The S3 Storage Lens configuration. See Storage Lens Configuration below for more details.
@@ -420,6 +438,10 @@ object s3control:
       val argsBuilder = com.pulumi.aws.s3control.inputs.StorageLensConfigurationStorageLensConfigurationArgs.builder
       builder.storageLensConfiguration(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.s3control.inputs.StorageLensConfigurationState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.s3control.inputs.StorageLensConfigurationStorageLensConfigurationArgs.Builder)
     /**
      * @param accountLevel The account-level configurations of the S3 Storage Lens configuration. See Account Level below for more details.
@@ -475,6 +497,7 @@ object s3control:
       val argsBuilder = com.pulumi.aws.s3control.inputs.StorageLensConfigurationStorageLensConfigurationIncludeArgs.builder
       builder.include(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.s3control.inputs.StorageLensConfigurationStorageLensConfigurationExpandedPrefixesDataExportS3BucketDestinationArgs.Builder)
     /**
      * @param encryption Encryption of the metrics exports in this bucket. See Encryption below for more details.
@@ -485,6 +508,7 @@ object s3control:
       val argsBuilder = com.pulumi.aws.s3control.inputs.StorageLensConfigurationStorageLensConfigurationExpandedPrefixesDataExportS3BucketDestinationEncryptionArgs.builder
       builder.encryption(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.s3control.inputs.StorageLensConfigurationStorageLensConfigurationExpandedPrefixesDataExportArgs.Builder)
     /**
      * @param s3BucketDestination The bucket where the S3 Storage Lens expanded prefix metrics export will be located. See S3 Bucket Destination below for more details.
@@ -504,6 +528,7 @@ object s3control:
       val argsBuilder = com.pulumi.aws.s3control.inputs.StorageLensConfigurationStorageLensConfigurationExpandedPrefixesDataExportStorageLensTableDestinationArgs.builder
       builder.storageLensTableDestination(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.s3control.inputs.StorageLensConfigurationStorageLensConfigurationAccountLevelBucketLevelPrefixLevelArgs.Builder)
     /**
      * @param storageMetrics Prefix-level storage metrics for S3 Storage Lens. See Prefix Level Storage Metrics below for more details.
@@ -514,6 +539,7 @@ object s3control:
       val argsBuilder = com.pulumi.aws.s3control.inputs.StorageLensConfigurationStorageLensConfigurationAccountLevelBucketLevelPrefixLevelStorageMetricsArgs.builder
       builder.storageMetrics(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.s3control.inputs.MultiRegionAccessPointState.Builder)
     /**
      * @param details A configuration block containing details about the Multi-Region Access Point. See Details Configuration Block below for more details
@@ -524,6 +550,7 @@ object s3control:
       val argsBuilder = com.pulumi.aws.s3control.inputs.MultiRegionAccessPointDetailsArgs.builder
       builder.details(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.s3control.inputs.StorageLensConfigurationStorageLensConfigurationAccountLevelBucketLevelArgs.Builder)
     /**
      * @param activityMetrics S3 Storage Lens activity metrics. See Activity Metrics above for more details.
@@ -579,6 +606,7 @@ object s3control:
       val argsBuilder = com.pulumi.aws.s3control.inputs.StorageLensConfigurationStorageLensConfigurationAccountLevelBucketLevelPrefixLevelArgs.builder
       builder.prefixLevel(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.s3control.inputs.DirectoryBucketAccessPointScopeState.Builder)
     /**
      * @param scope . Scope is used to restrict access to specific prefixes, API operations, or a combination of both. To remove the `scope`, set it to `{permissions=[] prefixes=[]}`. The default scope is `{permissions=[] prefixes=[]}`.
@@ -589,6 +617,7 @@ object s3control:
       val argsBuilder = com.pulumi.aws.s3control.inputs.DirectoryBucketAccessPointScopeScopeArgs.builder
       builder.scope(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.s3control.inputs.MultiRegionAccessPointPolicyState.Builder)
     /**
      * @param details A configuration block containing details about the policy for the Multi-Region Access Point. See Details Configuration Block below for more details
@@ -599,6 +628,7 @@ object s3control:
       val argsBuilder = com.pulumi.aws.s3control.inputs.MultiRegionAccessPointPolicyDetailsArgs.builder
       builder.details(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.s3control.inputs.StorageLensConfigurationStorageLensConfigurationDataExportS3BucketDestinationEncryptionArgs.Builder)
     /**
      * @param sseKms SSE-KMS encryption. See SSE KMS below for more details.
@@ -618,6 +648,7 @@ object s3control:
       def argsBuilder = com.pulumi.aws.s3control.inputs.StorageLensConfigurationStorageLensConfigurationDataExportS3BucketDestinationEncryptionSseS3Args.builder
       builder.sseS3s(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.s3control.inputs.StorageLensConfigurationStorageLensConfigurationDataExportStorageLensTableDestinationArgs.Builder)
     /**
      * @param encryption Encryption of the metrics exports in this S3 tables bucket. See Encryption below for more details.
@@ -628,6 +659,7 @@ object s3control:
       val argsBuilder = com.pulumi.aws.s3control.inputs.StorageLensConfigurationStorageLensConfigurationDataExportStorageLensTableDestinationEncryptionArgs.builder
       builder.encryption(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.s3control.inputs.ObjectLambdaAccessPointConfigurationTransformationConfigurationArgs.Builder)
     /**
      * @param contentTransformation The content transformation of an Object Lambda Access Point configuration. See Content Transformation below for more details.
@@ -638,6 +670,7 @@ object s3control:
       val argsBuilder = com.pulumi.aws.s3control.inputs.ObjectLambdaAccessPointConfigurationTransformationConfigurationContentTransformationArgs.builder
       builder.contentTransformation(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.s3control.inputs.BucketLifecycleConfigurationState.Builder)
     /**
      * @param rules Configuration block(s) containing lifecycle rules for the bucket.
@@ -648,6 +681,7 @@ object s3control:
       def argsBuilder = com.pulumi.aws.s3control.inputs.BucketLifecycleConfigurationRuleArgs.builder
       builder.rules(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.s3control.inputs.StorageLensConfigurationStorageLensConfigurationExpandedPrefixesDataExportStorageLensTableDestinationArgs.Builder)
     /**
      * @param encryption Encryption of the metrics exports in this S3 tables bucket. See Encryption below for more details.
@@ -658,6 +692,7 @@ object s3control:
       val argsBuilder = com.pulumi.aws.s3control.inputs.StorageLensConfigurationStorageLensConfigurationExpandedPrefixesDataExportStorageLensTableDestinationEncryptionArgs.builder
       builder.encryption(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.s3control.inputs.StorageLensConfigurationStorageLensConfigurationExpandedPrefixesDataExportS3BucketDestinationEncryptionArgs.Builder)
     /**
      * @param sseKms SSE-KMS encryption. See SSE KMS below for more details.
@@ -677,6 +712,7 @@ object s3control:
       def argsBuilder = com.pulumi.aws.s3control.inputs.StorageLensConfigurationStorageLensConfigurationExpandedPrefixesDataExportS3BucketDestinationEncryptionSseS3Args.builder
       builder.sseS3s(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.s3control.inputs.AccessGrantState.Builder)
     /**
      * @param accessGrantsLocationConfiguration See Location Configuration below for more details.
@@ -696,6 +732,10 @@ object s3control:
       val argsBuilder = com.pulumi.aws.s3control.inputs.AccessGrantGranteeArgs.builder
       builder.grantee(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.s3control.inputs.AccessGrantState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.s3control.inputs.BucketLifecycleConfigurationRuleArgs.Builder)
     /**
      * @param abortIncompleteMultipartUpload Configuration block containing settings for abort incomplete multipart upload.
@@ -724,6 +764,7 @@ object s3control:
       val argsBuilder = com.pulumi.aws.s3control.inputs.BucketLifecycleConfigurationRuleFilterArgs.builder
       builder.filter(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.s3control.inputs.ObjectLambdaAccessPointConfigurationArgs.Builder)
     /**
      * @param transformationConfigurations List of transformation configurations for the Object Lambda Access Point. See Transformation Configuration below for more details.
@@ -734,6 +775,7 @@ object s3control:
       def argsBuilder = com.pulumi.aws.s3control.inputs.ObjectLambdaAccessPointConfigurationTransformationConfigurationArgs.builder
       builder.transformationConfigurations(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.s3control.inputs.ObjectLambdaAccessPointConfigurationTransformationConfigurationContentTransformationArgs.Builder)
     /**
      * @param awsLambda Configuration for an AWS Lambda function. See AWS Lambda below for more details.
@@ -744,6 +786,7 @@ object s3control:
       val argsBuilder = com.pulumi.aws.s3control.inputs.ObjectLambdaAccessPointConfigurationTransformationConfigurationContentTransformationAwsLambdaArgs.builder
       builder.awsLambda(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.s3control.inputs.StorageLensConfigurationStorageLensConfigurationDataExportStorageLensTableDestinationEncryptionArgs.Builder)
     /**
      * @param sseKms SSE-KMS encryption. See SSE KMS below for more details.
@@ -763,6 +806,7 @@ object s3control:
       def argsBuilder = com.pulumi.aws.s3control.inputs.StorageLensConfigurationStorageLensConfigurationDataExportStorageLensTableDestinationEncryptionSseS3Args.builder
       builder.sseS3s(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.s3control.inputs.MultiRegionAccessPointDetailsArgs.Builder)
     def publicAccessBlock(args: Endofunction[com.pulumi.aws.s3control.inputs.MultiRegionAccessPointDetailsPublicAccessBlockArgs.Builder]):
         com.pulumi.aws.s3control.inputs.MultiRegionAccessPointDetailsArgs.Builder =
@@ -778,6 +822,7 @@ object s3control:
       def argsBuilder = com.pulumi.aws.s3control.inputs.MultiRegionAccessPointDetailsRegionArgs.builder
       builder.regions(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.s3control.inputs.StorageLensConfigurationStorageLensConfigurationDataExportArgs.Builder)
     /**
      * @param cloudWatchMetrics Amazon CloudWatch publishing for S3 Storage Lens metrics. See Cloud Watch Metrics below for more details.
@@ -806,6 +851,7 @@ object s3control:
       val argsBuilder = com.pulumi.aws.s3control.inputs.StorageLensConfigurationStorageLensConfigurationDataExportStorageLensTableDestinationArgs.builder
       builder.storageLensTableDestination(args(argsBuilder).build)
 
+                       
   /**
    * Provides a resource to manage an S3 Control Bucket.
    *  

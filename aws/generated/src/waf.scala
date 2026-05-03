@@ -14,6 +14,7 @@ object waf:
       def argsBuilder = com.pulumi.aws.waf.inputs.IpSetIpSetDescriptorArgs.builder
       builder.ipSetDescriptors(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.waf.GeoMatchSetArgs.Builder)
     /**
      * @param geoMatchConstraints The GeoMatchConstraint objects which contain the country that you want AWS WAF to search for.
@@ -24,6 +25,7 @@ object waf:
       def argsBuilder = com.pulumi.aws.waf.inputs.GeoMatchSetGeoMatchConstraintArgs.builder
       builder.geoMatchConstraints(args.map(_(argsBuilder).build)*)
 
+                       
   /** Provides a WAF Rule Group Resource */
   def RuleGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.waf.RuleGroupArgs.Builder])(using conf: KoPulumiConf) =
@@ -49,6 +51,10 @@ object waf:
       def argsBuilder = com.pulumi.aws.waf.inputs.RulePredicateArgs.builder
       builder.predicates(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.waf.RuleArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.waf.RuleGroupArgs.Builder)
     /**
      * @param activatedRules A list of activated rules, see below
@@ -59,6 +65,10 @@ object waf:
       def argsBuilder = com.pulumi.aws.waf.inputs.RuleGroupActivatedRuleArgs.builder
       builder.activatedRules(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.waf.RuleGroupArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /** Provides a WAF SQL Injection Match Set Resource */
   def SqlInjectionMatchSet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.waf.SqlInjectionMatchSetArgs.Builder])(using conf: KoPulumiConf) =
@@ -99,6 +109,10 @@ object waf:
       def argsBuilder = com.pulumi.aws.waf.inputs.WebAclRuleArgs.builder
       builder.rules(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.waf.WebAclArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /** Provides a WAF Regex Pattern Set Resource */
   def RegexPatternSet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.waf.RegexPatternSetArgs.Builder])(using conf: KoPulumiConf) =
@@ -136,6 +150,7 @@ object waf:
       def argsBuilder = com.pulumi.aws.waf.inputs.SqlInjectionMatchSetSqlInjectionMatchTupleArgs.builder
       builder.sqlInjectionMatchTuples(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.waf.XssMatchSetArgs.Builder)
     /**
      * @param xssMatchTuples The parts of web requests that you want to inspect for cross-site scripting attacks.
@@ -146,6 +161,7 @@ object waf:
       def argsBuilder = com.pulumi.aws.waf.inputs.XssMatchSetXssMatchTupleArgs.builder
       builder.xssMatchTuples(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.waf.RegexMatchSetArgs.Builder)
     /**
      * @param regexMatchTuples The regular expression pattern that you want AWS WAF to search for in web requests, the location in requests that you want AWS WAF to search, and other settings. See below.
@@ -156,6 +172,7 @@ object waf:
       def argsBuilder = com.pulumi.aws.waf.inputs.RegexMatchSetRegexMatchTupleArgs.builder
       builder.regexMatchTuples(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.waf.RateBasedRuleArgs.Builder)
     /**
      * @param predicates The objects to include in a rule (documented below).
@@ -166,6 +183,10 @@ object waf:
       def argsBuilder = com.pulumi.aws.waf.inputs.RateBasedRulePredicateArgs.builder
       builder.predicates(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.waf.RateBasedRuleArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /** Use the `aws.waf.SizeConstraintSet` resource to manage WAF size constraint sets. */
   def SizeConstraintSet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.waf.SizeConstraintSetArgs.Builder])(using conf: KoPulumiConf) =
@@ -202,6 +223,7 @@ object waf:
       def argsBuilder = com.pulumi.aws.waf.inputs.ByteMatchSetByteMatchTupleArgs.builder
       builder.byteMatchTuples(args.map(_(argsBuilder).build)*)
 
+                       
   type WafFunctions = com.pulumi.aws.waf.WafFunctions
   object WafFunctions:
     // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
@@ -292,6 +314,7 @@ object waf:
       def argsBuilder = com.pulumi.aws.waf.inputs.SizeConstraintSetSizeConstraintArgs.builder
       builder.sizeConstraints(args.map(_(argsBuilder).build)*)
 
+                       
   /** Provides a WAF IPSet Resource */
   def IpSet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.waf.IpSetArgs.Builder])(using conf: KoPulumiConf) =
@@ -367,6 +390,7 @@ object waf:
       def argsBuilder = com.pulumi.aws.waf.inputs.ByteMatchSetByteMatchTupleArgs.builder
       builder.byteMatchTuples(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.waf.inputs.RegexMatchSetState.Builder)
     /**
      * @param regexMatchTuples The regular expression pattern that you want AWS WAF to search for in web requests, the location in requests that you want AWS WAF to search, and other settings. See below.
@@ -377,6 +401,7 @@ object waf:
       def argsBuilder = com.pulumi.aws.waf.inputs.RegexMatchSetRegexMatchTupleArgs.builder
       builder.regexMatchTuples(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.waf.inputs.SqlInjectionMatchSetState.Builder)
     /**
      * @param sqlInjectionMatchTuples The parts of web requests that you want AWS WAF to inspect for malicious SQL code and, if you want AWS WAF to inspect a header, the name of the header.
@@ -387,6 +412,7 @@ object waf:
       def argsBuilder = com.pulumi.aws.waf.inputs.SqlInjectionMatchSetSqlInjectionMatchTupleArgs.builder
       builder.sqlInjectionMatchTuples(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.waf.inputs.RegexMatchSetRegexMatchTupleArgs.Builder)
     /**
      * @param fieldToMatch The part of a web request that you want to search, such as a specified header or a query string.
@@ -397,6 +423,7 @@ object waf:
       val argsBuilder = com.pulumi.aws.waf.inputs.RegexMatchSetRegexMatchTupleFieldToMatchArgs.builder
       builder.fieldToMatch(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.waf.inputs.RuleGroupState.Builder)
     /**
      * @param activatedRules A list of activated rules, see below
@@ -407,6 +434,10 @@ object waf:
       def argsBuilder = com.pulumi.aws.waf.inputs.RuleGroupActivatedRuleArgs.builder
       builder.activatedRules(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.waf.inputs.RuleGroupState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.waf.inputs.SizeConstraintSetState.Builder)
     /**
      * @param sizeConstraints Parts of web requests that you want to inspect the size of.
@@ -417,6 +448,7 @@ object waf:
       def argsBuilder = com.pulumi.aws.waf.inputs.SizeConstraintSetSizeConstraintArgs.builder
       builder.sizeConstraints(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.waf.inputs.GeoMatchSetState.Builder)
     /**
      * @param geoMatchConstraints The GeoMatchConstraint objects which contain the country that you want AWS WAF to search for.
@@ -427,6 +459,7 @@ object waf:
       def argsBuilder = com.pulumi.aws.waf.inputs.GeoMatchSetGeoMatchConstraintArgs.builder
       builder.geoMatchConstraints(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.waf.inputs.WebAclLoggingConfigurationArgs.Builder)
     /**
      * @param redactedFields Configuration block containing parts of the request that you want redacted from the logs. Detailed below.
@@ -437,6 +470,7 @@ object waf:
       val argsBuilder = com.pulumi.aws.waf.inputs.WebAclLoggingConfigurationRedactedFieldsArgs.builder
       builder.redactedFields(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.waf.inputs.WebAclRuleArgs.Builder)
     /**
      * @param action The action that CloudFront or AWS WAF takes when a web request matches the conditions in the rule. Not used if `type` is `GROUP`.
@@ -456,6 +490,7 @@ object waf:
       val argsBuilder = com.pulumi.aws.waf.inputs.WebAclRuleOverrideActionArgs.builder
       builder.overrideAction(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.waf.inputs.ByteMatchSetByteMatchTupleArgs.Builder)
     /**
      * @param fieldToMatch The part of a web request that you want to search, such as a specified header or a query string.
@@ -466,6 +501,7 @@ object waf:
       val argsBuilder = com.pulumi.aws.waf.inputs.ByteMatchSetByteMatchTupleFieldToMatchArgs.builder
       builder.fieldToMatch(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.waf.inputs.RuleGroupActivatedRuleArgs.Builder)
     /**
      * @param action Specifies the action that CloudFront or AWS WAF takes when a web request matches the conditions in the rule.
@@ -476,6 +512,7 @@ object waf:
       val argsBuilder = com.pulumi.aws.waf.inputs.RuleGroupActivatedRuleActionArgs.builder
       builder.action(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.waf.inputs.WebAclLoggingConfigurationRedactedFieldsArgs.Builder)
     /**
      * @param fieldToMatches Set of configuration blocks for fields to redact. Detailed below.
@@ -486,6 +523,7 @@ object waf:
       def argsBuilder = com.pulumi.aws.waf.inputs.WebAclLoggingConfigurationRedactedFieldsFieldToMatchArgs.builder
       builder.fieldToMatches(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.waf.inputs.XssMatchSetState.Builder)
     /**
      * @param xssMatchTuples The parts of web requests that you want to inspect for cross-site scripting attacks.
@@ -496,6 +534,7 @@ object waf:
       def argsBuilder = com.pulumi.aws.waf.inputs.XssMatchSetXssMatchTupleArgs.builder
       builder.xssMatchTuples(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.waf.inputs.SizeConstraintSetSizeConstraintArgs.Builder)
     /**
      * @param fieldToMatch Parameter that specifies where in a web request to look for the size constraint.
@@ -506,6 +545,7 @@ object waf:
       val argsBuilder = com.pulumi.aws.waf.inputs.SizeConstraintSetSizeConstraintFieldToMatchArgs.builder
       builder.fieldToMatch(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.waf.inputs.XssMatchSetXssMatchTupleArgs.Builder)
     /**
      * @param fieldToMatch Specifies where in a web request to look for cross-site scripting attacks.
@@ -516,6 +556,7 @@ object waf:
       val argsBuilder = com.pulumi.aws.waf.inputs.XssMatchSetXssMatchTupleFieldToMatchArgs.builder
       builder.fieldToMatch(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.waf.inputs.IpSetState.Builder)
     /**
      * @param ipSetDescriptors One or more pairs specifying the IP address type (IPV4 or IPV6) and the IP address range (in CIDR format) from which web requests originate.
@@ -526,6 +567,7 @@ object waf:
       def argsBuilder = com.pulumi.aws.waf.inputs.IpSetIpSetDescriptorArgs.builder
       builder.ipSetDescriptors(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.waf.inputs.SqlInjectionMatchSetSqlInjectionMatchTupleArgs.Builder)
     /**
      * @param fieldToMatch Specifies where in a web request to look for snippets of malicious SQL code.
@@ -536,6 +578,7 @@ object waf:
       val argsBuilder = com.pulumi.aws.waf.inputs.SqlInjectionMatchSetSqlInjectionMatchTupleFieldToMatchArgs.builder
       builder.fieldToMatch(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.waf.inputs.RateBasedRuleState.Builder)
     /**
      * @param predicates The objects to include in a rule (documented below).
@@ -546,6 +589,10 @@ object waf:
       def argsBuilder = com.pulumi.aws.waf.inputs.RateBasedRulePredicateArgs.builder
       builder.predicates(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.waf.inputs.RateBasedRuleState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.waf.inputs.RuleState.Builder)
     /**
      * @param predicates The objects to include in a rule (documented below).
@@ -556,6 +603,10 @@ object waf:
       def argsBuilder = com.pulumi.aws.waf.inputs.RulePredicateArgs.builder
       builder.predicates(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.waf.inputs.RuleState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.waf.inputs.WebAclState.Builder)
     /**
      * @param defaultAction Configuration block with action that you want AWS WAF to take when a request doesn&#39;t match the criteria in any of the rules that are associated with the web ACL. Detailed below.
@@ -583,3 +634,8 @@ object waf:
         com.pulumi.aws.waf.inputs.WebAclState.Builder =
       def argsBuilder = com.pulumi.aws.waf.inputs.WebAclRuleArgs.builder
       builder.rules(args.map(_(argsBuilder).build)*)
+
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.waf.inputs.WebAclState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       

@@ -76,6 +76,10 @@ object opensearch:
       val argsBuilder = com.pulumi.aws.opensearch.inputs.ServerlessCollectionTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.opensearch.ServerlessCollectionArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /** Resource for managing an AWS OpenSearch Serverless Security Config. */
   def ServerlessSecurityConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.opensearch.ServerlessSecurityConfigArgs.Builder])(using conf: KoPulumiConf) =
@@ -116,6 +120,7 @@ object opensearch:
       val argsBuilder = com.pulumi.aws.opensearch.inputs.OutboundConnectionRemoteDomainInfoArgs.builder
       builder.remoteDomainInfo(args(argsBuilder).build)
 
+                       
   /** Resource for managing an AWS OpenSearch Authorize Vpc Endpoint Access. */
   def AuthorizeVpcEndpointAccess(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.opensearch.AuthorizeVpcEndpointAccessArgs.Builder]) =
@@ -144,6 +149,7 @@ object opensearch:
       val argsBuilder = com.pulumi.aws.opensearch.inputs.ServerlessSecurityConfigSamlOptionsArgs.builder
       builder.samlOptions(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.opensearch.DomainArgs.Builder)
     /**
      * @param advancedSecurityOptions Configuration block for [fine-grained access control](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/fgac.html). Detailed below.
@@ -289,6 +295,10 @@ object opensearch:
       val argsBuilder = com.pulumi.aws.opensearch.inputs.DomainVpcOptionsArgs.builder
       builder.vpcOptions(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.opensearch.DomainArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /**
    * Resource for managing an AWS OpenSearch Serverless Collection Group.
    *  
@@ -336,6 +346,10 @@ object opensearch:
       def argsBuilder = com.pulumi.aws.opensearch.inputs.ServerlessCollectionGroupCapacityLimitArgs.builder
       builder.capacityLimits(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.opensearch.ServerlessCollectionGroupArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /** Resource for managing an AWS OpenSearch Serverless Access Policy. See AWS documentation for [data access policies](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-data-access.html) and [supported data access policy permissions](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-data-access.html#serverless-data-supported-permissions). */
   def ServerlessAccessPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.opensearch.ServerlessAccessPolicyArgs.Builder])(using conf: KoPulumiConf) =
@@ -354,6 +368,7 @@ object opensearch:
       val argsBuilder = com.pulumi.aws.opensearch.inputs.ServerlessVpcEndpointTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.opensearch.PackageArgs.Builder)
     /**
      * @param packageSource Configuration block for the package source options.
@@ -364,6 +379,7 @@ object opensearch:
       val argsBuilder = com.pulumi.aws.opensearch.inputs.PackagePackageSourceArgs.builder
       builder.packageSource(args(argsBuilder).build)
 
+                       
   /** Allows setting policy to an OpenSearch domain while referencing domain attributes (e.g., ARN). */
   def DomainPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.opensearch.DomainPolicyArgs.Builder]) =
@@ -383,6 +399,7 @@ object opensearch:
       val argsBuilder = com.pulumi.aws.opensearch.inputs.DomainSamlOptionsSamlOptionsArgs.builder
       builder.samlOptions(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.opensearch.VpcEndpointArgs.Builder)
     /**
      * @param vpcOptions Options to specify the subnets and security groups for the endpoint.
@@ -393,6 +410,7 @@ object opensearch:
       val argsBuilder = com.pulumi.aws.opensearch.inputs.VpcEndpointVpcOptionsArgs.builder
       builder.vpcOptions(args(argsBuilder).build)
 
+                       
   /** Resource for managing an AWS OpenSearchServerless VPC Endpoint. */
   def ServerlessVpcEndpoint(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.opensearch.ServerlessVpcEndpointArgs.Builder])(using conf: KoPulumiConf) =
@@ -438,6 +456,10 @@ object opensearch:
       val argsBuilder = com.pulumi.aws.opensearch.inputs.ApplicationTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.opensearch.ApplicationArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /** Manages SAML authentication options for an AWS OpenSearch Domain. */
   def DomainSamlOptions(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.opensearch.DomainSamlOptionsArgs.Builder]) =
@@ -609,6 +631,7 @@ object opensearch:
       val argsBuilder = com.pulumi.aws.opensearch.inputs.OutboundConnectionRemoteDomainInfoArgs.builder
       builder.remoteDomainInfo(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.opensearch.inputs.DomainState.Builder)
     /**
      * @param advancedSecurityOptions Configuration block for [fine-grained access control](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/fgac.html). Detailed below.
@@ -754,6 +777,10 @@ object opensearch:
       val argsBuilder = com.pulumi.aws.opensearch.inputs.DomainVpcOptionsArgs.builder
       builder.vpcOptions(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.opensearch.inputs.DomainState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.opensearch.inputs.ServerlessSecurityConfigState.Builder)
     /**
      * @param samlOptions Configuration block for SAML options.
@@ -764,6 +791,7 @@ object opensearch:
       val argsBuilder = com.pulumi.aws.opensearch.inputs.ServerlessSecurityConfigSamlOptionsArgs.builder
       builder.samlOptions(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.opensearch.inputs.DomainAimlOptionsArgs.Builder)
     /**
      * @param naturalLanguageQueryGenerationOptions Configuration block for parameters required for natural language query generation on the specified domain.
@@ -792,6 +820,7 @@ object opensearch:
       val argsBuilder = com.pulumi.aws.opensearch.inputs.DomainAimlOptionsServerlessVectorAccelerationArgs.builder
       builder.serverlessVectorAcceleration(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.opensearch.inputs.DomainOffPeakWindowOptionsOffPeakWindowArgs.Builder)
     /**
      * @param windowStartTime 10h window for updates
@@ -802,6 +831,7 @@ object opensearch:
       val argsBuilder = com.pulumi.aws.opensearch.inputs.DomainOffPeakWindowOptionsOffPeakWindowWindowStartTimeArgs.builder
       builder.windowStartTime(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.opensearch.inputs.VpcEndpointState.Builder)
     /**
      * @param vpcOptions Options to specify the subnets and security groups for the endpoint.
@@ -812,6 +842,7 @@ object opensearch:
       val argsBuilder = com.pulumi.aws.opensearch.inputs.VpcEndpointVpcOptionsArgs.builder
       builder.vpcOptions(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.opensearch.inputs.DomainSamlOptionsSamlOptionsArgs.Builder)
     /**
      * @param idp Information from your identity provider.
@@ -822,6 +853,7 @@ object opensearch:
       val argsBuilder = com.pulumi.aws.opensearch.inputs.DomainSamlOptionsSamlOptionsIdpArgs.builder
       builder.idp(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.opensearch.inputs.OutboundConnectionConnectionPropertiesArgs.Builder)
     /**
      * @param crossClusterSearch Configuration block for cross cluster search.
@@ -832,6 +864,7 @@ object opensearch:
       val argsBuilder = com.pulumi.aws.opensearch.inputs.OutboundConnectionConnectionPropertiesCrossClusterSearchArgs.builder
       builder.crossClusterSearch(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.opensearch.inputs.ServerlessCollectionState.Builder)
     /**
      * @param encryptionConfigs Configuration block for direct collection encryption settings. See `encryptionConfig` below for details.
@@ -847,12 +880,17 @@ object opensearch:
       val argsBuilder = com.pulumi.aws.opensearch.inputs.ServerlessCollectionTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.opensearch.inputs.ServerlessCollectionState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.opensearch.inputs.DomainOffPeakWindowOptionsArgs.Builder)
     def offPeakWindow(args: Endofunction[com.pulumi.aws.opensearch.inputs.DomainOffPeakWindowOptionsOffPeakWindowArgs.Builder]):
         com.pulumi.aws.opensearch.inputs.DomainOffPeakWindowOptionsArgs.Builder =
       val argsBuilder = com.pulumi.aws.opensearch.inputs.DomainOffPeakWindowOptionsOffPeakWindowArgs.builder
       builder.offPeakWindow(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.opensearch.inputs.DomainAutoTuneOptionsMaintenanceScheduleArgs.Builder)
     /**
      * @param duration Configuration block for the duration of the Auto-Tune maintenance window. Detailed below.
@@ -863,6 +901,7 @@ object opensearch:
       val argsBuilder = com.pulumi.aws.opensearch.inputs.DomainAutoTuneOptionsMaintenanceScheduleDurationArgs.builder
       builder.duration(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.opensearch.inputs.ApplicationState.Builder)
     /**
      * @param appConfigs Configuration block(s) for OpenSearch application settings. See App Config below.
@@ -896,6 +935,10 @@ object opensearch:
       val argsBuilder = com.pulumi.aws.opensearch.inputs.ApplicationTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.opensearch.inputs.ApplicationState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.opensearch.inputs.DomainClusterConfigNodeOptionArgs.Builder)
     /**
      * @param nodeConfig Container to specify sizing of a node type.
@@ -906,12 +949,14 @@ object opensearch:
       val argsBuilder = com.pulumi.aws.opensearch.inputs.DomainClusterConfigNodeOptionNodeConfigArgs.builder
       builder.nodeConfig(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.opensearch.inputs.ServerlessVpcEndpointState.Builder)
     def timeouts(args: Endofunction[com.pulumi.aws.opensearch.inputs.ServerlessVpcEndpointTimeoutsArgs.Builder]):
         com.pulumi.aws.opensearch.inputs.ServerlessVpcEndpointState.Builder =
       val argsBuilder = com.pulumi.aws.opensearch.inputs.ServerlessVpcEndpointTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.opensearch.inputs.DomainClusterConfigArgs.Builder)
     /**
      * @param coldStorageOptions Configuration block containing cold storage configuration. Detailed below.
@@ -940,6 +985,7 @@ object opensearch:
       val argsBuilder = com.pulumi.aws.opensearch.inputs.DomainClusterConfigZoneAwarenessConfigArgs.builder
       builder.zoneAwarenessConfig(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.opensearch.inputs.GetServerlessSecurityConfigArgs.Builder)
     /**
      * @param samlOptions SAML options for the security configuration.
@@ -950,6 +996,7 @@ object opensearch:
       def argsBuilder = com.pulumi.aws.opensearch.inputs.GetServerlessSecurityConfigSamlOptionArgs.builder
       builder.samlOptions(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.opensearch.inputs.PackageState.Builder)
     /**
      * @param packageSource Configuration block for the package source options.
@@ -960,6 +1007,7 @@ object opensearch:
       val argsBuilder = com.pulumi.aws.opensearch.inputs.PackagePackageSourceArgs.builder
       builder.packageSource(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.opensearch.inputs.AuthorizeVpcEndpointAccessState.Builder)
     /**
      * @param authorizedPrincipals Information about the Amazon Web Services account or service that was provided access to the domain. See authorized principal attribute for further details.
@@ -970,6 +1018,7 @@ object opensearch:
       def argsBuilder = com.pulumi.aws.opensearch.inputs.AuthorizeVpcEndpointAccessAuthorizedPrincipalArgs.builder
       builder.authorizedPrincipals(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.opensearch.inputs.DomainSamlOptionsState.Builder)
     /**
      * @param samlOptions SAML authentication options for an AWS OpenSearch Domain.
@@ -980,6 +1029,7 @@ object opensearch:
       val argsBuilder = com.pulumi.aws.opensearch.inputs.DomainSamlOptionsSamlOptionsArgs.builder
       builder.samlOptions(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.opensearch.inputs.DomainAutoTuneOptionsArgs.Builder)
     /**
      * @param maintenanceSchedules Configuration block for Auto-Tune maintenance windows. Can be specified multiple times for each maintenance window. Detailed below.
@@ -992,6 +1042,7 @@ object opensearch:
       def argsBuilder = com.pulumi.aws.opensearch.inputs.DomainAutoTuneOptionsMaintenanceScheduleArgs.builder
       builder.maintenanceSchedules(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.opensearch.inputs.ServerlessCollectionGroupState.Builder)
     /**
      * @param capacityLimits Configuration block for the collection group&#39;s indexing and search capacity limits. See `capacityLimits` below for details.
@@ -1002,6 +1053,10 @@ object opensearch:
       def argsBuilder = com.pulumi.aws.opensearch.inputs.ServerlessCollectionGroupCapacityLimitArgs.builder
       builder.capacityLimits(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.opensearch.inputs.ServerlessCollectionGroupState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.opensearch.inputs.DomainAdvancedSecurityOptionsArgs.Builder)
     /**
      * @param jwtOptions Configuration block for JWT authentication. Requires OpenSearch 2.11 or later. Detailed below.
@@ -1021,6 +1076,7 @@ object opensearch:
       val argsBuilder = com.pulumi.aws.opensearch.inputs.DomainAdvancedSecurityOptionsMasterUserOptionsArgs.builder
       builder.masterUserOptions(args(argsBuilder).build)
 
+                       
   /**
    * Manages an Amazon OpenSearch Domain.
    *  

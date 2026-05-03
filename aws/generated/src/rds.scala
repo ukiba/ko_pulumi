@@ -49,6 +49,7 @@ object rds:
       val argsBuilder = com.pulumi.aws.rds.inputs.InstanceDesiredStateTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
+                       
   /** Provides an custom engine version (CEV) resource for Amazon RDS Custom. For additional information, see [Working with CEVs for RDS Custom for Oracle](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-cev.html) and [Working with CEVs for RDS Custom for SQL Server](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-cev-sqlserver.html) in the the [RDS User Guide](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Welcome.html). */
   def CustomDbEngineVersion(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.rds.CustomDbEngineVersionArgs.Builder])(using conf: KoPulumiConf) =
@@ -79,6 +80,10 @@ object rds:
       val argsBuilder = com.pulumi.aws.rds.inputs.ShardGroupTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.rds.ShardGroupArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   type RdsFunctions = com.pulumi.aws.rds.RdsFunctions
   object RdsFunctions:
     // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
@@ -310,6 +315,10 @@ object rds:
       def argsBuilder = com.pulumi.aws.rds.inputs.ProxyAuthArgs.builder
       builder.auths(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.rds.ProxyArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /**
    * Provides an RDS DB parameter group resource. Documentation of the available parameters for various RDS engines can be found at:
    *  
@@ -368,6 +377,10 @@ object rds:
       val argsBuilder = com.pulumi.aws.rds.inputs.InstanceS3ImportArgs.builder
       builder.s3Import(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.rds.InstanceArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /** Provides an RDS DB subnet group resource. */
   def SubnetGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.rds.SubnetGroupArgs.Builder])(using conf: KoPulumiConf) =
@@ -393,6 +406,10 @@ object rds:
       def argsBuilder = com.pulumi.aws.rds.inputs.OptionGroupOptionArgs.builder
       builder.options(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.rds.OptionGroupArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /**
    * Provides a resource to manage an RDS DB proxy default target group resource.
    *  
@@ -434,6 +451,10 @@ object rds:
       val argsBuilder = com.pulumi.aws.rds.inputs.ClusterSnapshotCopyTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.rds.ClusterSnapshotCopyArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /** Resource for managing an AWS RDS (Relational Database) Export Task. */
   def ExportTask(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.rds.ExportTaskArgs.Builder]) =
@@ -549,6 +570,10 @@ object rds:
       def argsBuilder = com.pulumi.aws.rds.inputs.ParameterGroupParameterArgs.builder
       builder.parameters(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.rds.ParameterGroupArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /**
    * Manages an RDS Global Cluster, which is an Aurora global database spread across multiple regions. The global database contains a single primary cluster with read-write capability, and a read-only secondary cluster that receives data from the primary cluster through high-speed replication performed by the Aurora storage subsystem.
    *  
@@ -598,12 +623,17 @@ object rds:
       val argsBuilder = com.pulumi.aws.rds.inputs.ClusterServerlessv2ScalingConfigurationArgs.builder
       builder.serverlessv2ScalingConfiguration(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.rds.ClusterArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.rds.ExportTaskArgs.Builder)
     def timeouts(args: Endofunction[com.pulumi.aws.rds.inputs.ExportTaskTimeoutsArgs.Builder]):
         com.pulumi.aws.rds.ExportTaskArgs.Builder =
       val argsBuilder = com.pulumi.aws.rds.inputs.ExportTaskTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
+                       
   /** Manages an RDS database instance snapshot. For managing RDS database cluster snapshots, see the `aws.rds.ClusterSnapshot` resource. */
   def Snapshot(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.rds.SnapshotArgs.Builder])(using conf: KoPulumiConf) =
@@ -663,6 +693,7 @@ object rds:
       val argsBuilder = com.pulumi.aws.rds.inputs.ProxyDefaultTargetGroupConnectionPoolConfigArgs.builder
       builder.connectionPoolConfig(args(argsBuilder).build)
 
+                       
   /**
    * Provides an RDS DB cluster parameter group resource. Documentation of the available parameters for various Aurora engines can be found at:
    *  
@@ -781,6 +812,10 @@ object rds:
       val argsBuilder = com.pulumi.aws.rds.inputs.IntegrationTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.rds.IntegrationArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.rds.ClusterParameterGroupArgs.Builder)
     /**
      * @param parameters A list of DB parameters to apply. Note that parameters may differ from a family to an other. Full list of all parameters can be discovered via [`aws rds describe-db-cluster-parameters`](https://docs.aws.amazon.com/cli/latest/reference/rds/describe-db-cluster-parameters.html) after initial creation of the group.
@@ -791,6 +826,10 @@ object rds:
       def argsBuilder = com.pulumi.aws.rds.inputs.ClusterParameterGroupParameterArgs.builder
       builder.parameters(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.rds.ClusterParameterGroupArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /**
    * Provides an RDS Cluster Instance Resource. A Cluster Instance Resource defines
    *  attributes that are specific to a single instance in a RDS Cluster,
@@ -889,6 +928,10 @@ object rds:
       def argsBuilder = com.pulumi.aws.rds.inputs.ClusterParameterGroupParameterArgs.builder
       builder.parameters(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.rds.inputs.ClusterParameterGroupState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.rds.inputs.GetEngineVersionArgs.Builder)
     /**
      * @param filters One or more name/value pairs to use in filtering versions. There are several valid keys; for a full reference, check out [describe-db-engine-versions in the AWS CLI reference](https://awscli.amazonaws.com/v2/documentation/api/latest/reference/rds/describe-db-engine-versions.html).
@@ -899,6 +942,7 @@ object rds:
       def argsBuilder = com.pulumi.aws.rds.inputs.GetEngineVersionFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.rds.inputs.ParameterGroupState.Builder)
     /**
      * @param parameters The DB parameters to apply. See `parameter` Block below for more details. Note that parameters may differ from a family to an other. Full list of all parameters can be discovered via [`aws rds describe-db-parameters`](https://docs.aws.amazon.com/cli/latest/reference/rds/describe-db-parameters.html) after initial creation of the group.
@@ -909,6 +953,10 @@ object rds:
       def argsBuilder = com.pulumi.aws.rds.inputs.ParameterGroupParameterArgs.builder
       builder.parameters(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.rds.inputs.ParameterGroupState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.rds.inputs.GlobalClusterState.Builder)
     /**
      * @param globalClusterMembers Set of objects containing Global Cluster members.
@@ -919,12 +967,20 @@ object rds:
       def argsBuilder = com.pulumi.aws.rds.inputs.GlobalClusterGlobalClusterMemberArgs.builder
       builder.globalClusterMembers(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.rds.inputs.GlobalClusterState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.rds.inputs.ClusterSnapshotCopyState.Builder)
     def timeouts(args: Endofunction[com.pulumi.aws.rds.inputs.ClusterSnapshotCopyTimeoutsArgs.Builder]):
         com.pulumi.aws.rds.inputs.ClusterSnapshotCopyState.Builder =
       val argsBuilder = com.pulumi.aws.rds.inputs.ClusterSnapshotCopyTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.rds.inputs.ClusterSnapshotCopyState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.rds.inputs.ClusterState.Builder)
     /**
      * @param masterUserSecrets Block that specifies the master user secret. Only available when `manageMasterUserPassword` is set to true. Documented below.
@@ -967,18 +1023,27 @@ object rds:
       val argsBuilder = com.pulumi.aws.rds.inputs.ClusterServerlessv2ScalingConfigurationArgs.builder
       builder.serverlessv2ScalingConfiguration(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.rds.inputs.ClusterState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.rds.inputs.IntegrationState.Builder)
     def timeouts(args: Endofunction[com.pulumi.aws.rds.inputs.IntegrationTimeoutsArgs.Builder]):
         com.pulumi.aws.rds.inputs.IntegrationState.Builder =
       val argsBuilder = com.pulumi.aws.rds.inputs.IntegrationTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.rds.inputs.IntegrationState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.rds.inputs.InstanceDesiredStateState.Builder)
     def timeouts(args: Endofunction[com.pulumi.aws.rds.inputs.InstanceDesiredStateTimeoutsArgs.Builder]):
         com.pulumi.aws.rds.inputs.InstanceDesiredStateState.Builder =
       val argsBuilder = com.pulumi.aws.rds.inputs.InstanceDesiredStateTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.rds.inputs.ProxyState.Builder)
     /**
      * @param auths Configuration block(s) with authorization mechanisms to connect to the associated instances or clusters. Required when `defaultAuthScheme` is `NONE` or unspecified. Described below.
@@ -989,6 +1054,10 @@ object rds:
       def argsBuilder = com.pulumi.aws.rds.inputs.ProxyAuthArgs.builder
       builder.auths(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.rds.inputs.ProxyState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.rds.inputs.ReservedInstanceState.Builder)
     /**
      * @param recurringCharges Recurring price charged to run this reserved DB instance.
@@ -999,6 +1068,10 @@ object rds:
       def argsBuilder = com.pulumi.aws.rds.inputs.ReservedInstanceRecurringChargeArgs.builder
       builder.recurringCharges(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.rds.inputs.ReservedInstanceState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.rds.inputs.GetInstancesArgs.Builder)
     /**
      * @param filters Configuration block(s) used to filter instances with AWS supported attributes, such as `engine`, `db-cluster-id` or `db-instance-id` for example. Detailed below.
@@ -1009,12 +1082,17 @@ object rds:
       def argsBuilder = com.pulumi.aws.rds.inputs.GetInstancesFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.rds.inputs.GetInstancesArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.rds.inputs.ExportTaskState.Builder)
     def timeouts(args: Endofunction[com.pulumi.aws.rds.inputs.ExportTaskTimeoutsArgs.Builder]):
         com.pulumi.aws.rds.inputs.ExportTaskState.Builder =
       val argsBuilder = com.pulumi.aws.rds.inputs.ExportTaskTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.rds.inputs.ProxyDefaultTargetGroupState.Builder)
     /**
      * @param connectionPoolConfig The settings that determine the size and behavior of the connection pool for the target group.
@@ -1025,6 +1103,7 @@ object rds:
       val argsBuilder = com.pulumi.aws.rds.inputs.ProxyDefaultTargetGroupConnectionPoolConfigArgs.builder
       builder.connectionPoolConfig(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.rds.inputs.OptionGroupState.Builder)
     /**
      * @param options The options to apply. See `option` Block below for more details.
@@ -1035,6 +1114,10 @@ object rds:
       def argsBuilder = com.pulumi.aws.rds.inputs.OptionGroupOptionArgs.builder
       builder.options(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.rds.inputs.OptionGroupState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.rds.inputs.GetClustersArgs.Builder)
     /**
      * @param filters Configuration block(s) for filtering. Detailed below.
@@ -1045,12 +1128,17 @@ object rds:
       def argsBuilder = com.pulumi.aws.rds.inputs.GetClustersFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.rds.inputs.ShardGroupState.Builder)
     def timeouts(args: Endofunction[com.pulumi.aws.rds.inputs.ShardGroupTimeoutsArgs.Builder]):
         com.pulumi.aws.rds.inputs.ShardGroupState.Builder =
       val argsBuilder = com.pulumi.aws.rds.inputs.ShardGroupTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.rds.inputs.ShardGroupState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.rds.inputs.OptionGroupOptionArgs.Builder)
     /**
      * @param optionSettings The option settings to apply. See `optionSettings` Block below for more details.
@@ -1061,6 +1149,7 @@ object rds:
       def argsBuilder = com.pulumi.aws.rds.inputs.OptionGroupOptionOptionSettingArgs.builder
       builder.optionSettings(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.rds.inputs.InstanceState.Builder)
     /**
      * @param blueGreenUpdate Enables low-downtime updates using [RDS Blue/Green deployments][blue-green].
@@ -1110,6 +1199,10 @@ object rds:
       val argsBuilder = com.pulumi.aws.rds.inputs.InstanceS3ImportArgs.builder
       builder.s3Import(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.rds.inputs.InstanceState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /**
    * Manages RDS Aurora Cluster Database Activity Streams.
    *  

@@ -83,6 +83,7 @@ object sqs:
       val argsBuilder = com.pulumi.aws.sqs.inputs.PolicyDocumentArgs.builder
       builder.policy(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.sqs.inputs.QueuePolicyState.Builder)
     /**
      * @param policy JSON policy for the SQS queue. For more information about building AWS IAM policy documents with Terraform, see the AWS IAM Policy Document Guide. Ensure that `Version = &#34;2012-10-17&#34;` is set in the policy or AWS may hang in creating the queue.
@@ -93,12 +94,14 @@ object sqs:
       val argsBuilder = com.pulumi.aws.sqs.inputs.PolicyDocumentArgs.builder
       builder.policy(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.sqs.inputs.PolicyDocumentArgs.Builder)
     def Statement(args: Endofunction[com.pulumi.aws.iam.inputs.PolicyStatementArgs.Builder]*):
         com.pulumi.aws.sqs.inputs.PolicyDocumentArgs.Builder =
       def argsBuilder = com.pulumi.aws.iam.inputs.PolicyStatementArgs.builder
       builder.Statement(args.map(_(argsBuilder).build)*)
 
+                       
   /**
    * Allows you to set a redrive policy of an SQS Queue
    *  while referencing ARN of the dead letter queue inside the redrive policy.

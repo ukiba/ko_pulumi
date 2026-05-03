@@ -40,12 +40,17 @@ object dsql:
       val argsBuilder = com.pulumi.aws.dsql.inputs.ClusterTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.dsql.ClusterArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.dsql.ClusterPeeringArgs.Builder)
     def timeouts(args: Endofunction[com.pulumi.aws.dsql.inputs.ClusterPeeringTimeoutsArgs.Builder]):
         com.pulumi.aws.dsql.ClusterPeeringArgs.Builder =
       val argsBuilder = com.pulumi.aws.dsql.inputs.ClusterPeeringTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.dsql.inputs.ClusterState.Builder)
     /**
      * @param encryptionDetails Encryption configuration details for the DSQL Cluster.
@@ -70,8 +75,14 @@ object dsql:
       val argsBuilder = com.pulumi.aws.dsql.inputs.ClusterTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.dsql.inputs.ClusterState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.dsql.inputs.ClusterPeeringState.Builder)
     def timeouts(args: Endofunction[com.pulumi.aws.dsql.inputs.ClusterPeeringTimeoutsArgs.Builder]):
         com.pulumi.aws.dsql.inputs.ClusterPeeringState.Builder =
       val argsBuilder = com.pulumi.aws.dsql.inputs.ClusterPeeringTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
+
+                       

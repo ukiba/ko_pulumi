@@ -26,6 +26,7 @@ object mediapackage:
       def argsBuilder = com.pulumi.aws.mediapackage.inputs.ChannelHlsIngestIngestEndpointArgs.builder
       builder.ingestEndpoints(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.mediapackage.inputs.ChannelState.Builder)
     /**
      * @param hlsIngests A single item list of HLS ingest information
@@ -35,3 +36,8 @@ object mediapackage:
         com.pulumi.aws.mediapackage.inputs.ChannelState.Builder =
       def argsBuilder = com.pulumi.aws.mediapackage.inputs.ChannelHlsIngestArgs.builder
       builder.hlsIngests(args.map(_(argsBuilder).build)*)
+
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.mediapackage.inputs.ChannelState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       

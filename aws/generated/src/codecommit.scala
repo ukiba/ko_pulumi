@@ -38,6 +38,7 @@ object codecommit:
       def argsBuilder = com.pulumi.aws.codecommit.inputs.TriggerTriggerArgs.builder
       builder.triggers(args.map(_(argsBuilder).build)*)
 
+                       
   /** Provides a CodeCommit Trigger Resource. */
   def Trigger(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.codecommit.TriggerArgs.Builder]) =
@@ -94,3 +95,5 @@ object codecommit:
         com.pulumi.aws.codecommit.inputs.TriggerState.Builder =
       def argsBuilder = com.pulumi.aws.codecommit.inputs.TriggerTriggerArgs.builder
       builder.triggers(args.map(_(argsBuilder).build)*)
+
+                       

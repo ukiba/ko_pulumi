@@ -315,6 +315,10 @@ object organizations:
       def argsBuilder = com.pulumi.aws.organizations.inputs.OrganizationalUnitAccountArgs.builder
       builder.accounts(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.organizations.inputs.OrganizationalUnitState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.organizations.inputs.OrganizationState.Builder)
     /**
      * @param accounts List of organization accounts including the master account. For a list excluding the master account, see the `nonMasterAccounts` attribute. All elements have these attributes:
@@ -343,6 +347,7 @@ object organizations:
       def argsBuilder = com.pulumi.aws.organizations.inputs.OrganizationRootArgs.builder
       builder.roots(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.organizations.inputs.OrganizationRootArgs.Builder)
     /**
      * @param policyTypes List of policy types enabled for this root. All elements have these attributes:
@@ -352,3 +357,5 @@ object organizations:
         com.pulumi.aws.organizations.inputs.OrganizationRootArgs.Builder =
       def argsBuilder = com.pulumi.aws.organizations.inputs.OrganizationRootPolicyTypeArgs.builder
       builder.policyTypes(args.map(_(argsBuilder).build)*)
+
+                       

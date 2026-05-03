@@ -115,6 +115,10 @@ object emrserverless:
       val argsBuilder = com.pulumi.aws.emrserverless.inputs.ApplicationSchedulerConfigurationArgs.builder
       builder.schedulerConfiguration(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.emrserverless.ApplicationArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.emrserverless.inputs.ApplicationMonitoringConfigurationArgs.Builder)
     /**
      * @param cloudwatchLoggingConfiguration The Amazon CloudWatch configuration for monitoring logs.
@@ -152,6 +156,7 @@ object emrserverless:
       val argsBuilder = com.pulumi.aws.emrserverless.inputs.ApplicationMonitoringConfigurationS3MonitoringConfigurationArgs.builder
       builder.s3MonitoringConfiguration(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.emrserverless.inputs.ApplicationInitialCapacityInitialCapacityConfigArgs.Builder)
     /**
      * @param workerConfiguration The resource configuration of the initial capacity configuration.
@@ -162,6 +167,7 @@ object emrserverless:
       val argsBuilder = com.pulumi.aws.emrserverless.inputs.ApplicationInitialCapacityInitialCapacityConfigWorkerConfigurationArgs.builder
       builder.workerConfiguration(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.emrserverless.inputs.ApplicationMonitoringConfigurationCloudwatchLoggingConfigurationArgs.Builder)
     /**
      * @param logTypes The types of logs that you want to publish to CloudWatch. If you don&#39;t specify any log types, driver STDOUT and STDERR logs will be published to CloudWatch Logs by default. See logTypes for more details.
@@ -172,6 +178,7 @@ object emrserverless:
       def argsBuilder = com.pulumi.aws.emrserverless.inputs.ApplicationMonitoringConfigurationCloudwatchLoggingConfigurationLogTypeArgs.builder
       builder.logTypes(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.emrserverless.inputs.ApplicationState.Builder)
     /**
      * @param autoStartConfiguration The configuration for an application to automatically start on job submission.
@@ -268,6 +275,10 @@ object emrserverless:
       val argsBuilder = com.pulumi.aws.emrserverless.inputs.ApplicationSchedulerConfigurationArgs.builder
       builder.schedulerConfiguration(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.emrserverless.inputs.ApplicationState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.emrserverless.inputs.ApplicationInitialCapacityArgs.Builder)
     /**
      * @param initialCapacityConfig The initial capacity configuration per worker.
@@ -277,3 +288,5 @@ object emrserverless:
         com.pulumi.aws.emrserverless.inputs.ApplicationInitialCapacityArgs.Builder =
       val argsBuilder = com.pulumi.aws.emrserverless.inputs.ApplicationInitialCapacityInitialCapacityConfigArgs.builder
       builder.initialCapacityConfig(args(argsBuilder).build)
+
+                       

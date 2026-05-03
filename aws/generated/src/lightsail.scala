@@ -111,6 +111,10 @@ object lightsail:
       val argsBuilder = com.pulumi.aws.lightsail.inputs.DistributionOriginArgs.builder
       builder.origin(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.lightsail.DistributionArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /** Manages a Lightsail bucket resource access. Use this resource to grant a Lightsail resource (such as an instance) access to a specific bucket. */
   def BucketResourceAccess(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.lightsail.BucketResourceAccessArgs.Builder]) =
@@ -158,6 +162,10 @@ object lightsail:
       val argsBuilder = com.pulumi.aws.lightsail.inputs.InstanceAddOnArgs.builder
       builder.addOn(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.lightsail.InstanceArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /**
    * Manages a Lightsail Load Balancer Certificate attachment to a Lightsail Load Balancer.
    *  
@@ -266,6 +274,10 @@ object lightsail:
       val argsBuilder = com.pulumi.aws.lightsail.inputs.ContainerServicePublicDomainNamesArgs.builder
       builder.publicDomainNames(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.lightsail.ContainerServiceArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.lightsail.ContainerServiceDeploymentVersionArgs.Builder)
     /**
      * @param containers Set of configuration blocks that describe the settings of the containers that will be launched on the container service. Maximum of 53. See below.
@@ -285,6 +297,7 @@ object lightsail:
       val argsBuilder = com.pulumi.aws.lightsail.inputs.ContainerServiceDeploymentVersionPublicEndpointArgs.builder
       builder.publicEndpoint(args(argsBuilder).build)
 
+                       
   /**
    * Manages a Lightsail container service deployment version. Use this resource to deploy containerized applications to your Lightsail container service with specific container configurations and settings.
    *  
@@ -388,6 +401,7 @@ object lightsail:
       def argsBuilder = com.pulumi.aws.lightsail.inputs.InstancePublicPortsPortInfoArgs.builder
       builder.portInfos(args.map(_(argsBuilder).build)*)
 
+                       
   /** Manages a Lightsail content delivery network (CDN) distribution. Use this resource to cache content at edge locations and reduce latency for users accessing your content. */
   def Distribution(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.lightsail.DistributionArgs.Builder])(using conf: KoPulumiConf) =
@@ -413,6 +427,10 @@ object lightsail:
       def argsBuilder = com.pulumi.aws.lightsail.inputs.CertificateDomainValidationOptionArgs.builder
       builder.domainValidationOptions(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.lightsail.inputs.CertificateState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.lightsail.inputs.DistributionCacheBehaviorSettingsArgs.Builder)
     /**
      * @param forwardedCookies Cookies that are forwarded to the origin. Your content is cached based on the cookies that are forwarded. See below.
@@ -441,6 +459,7 @@ object lightsail:
       val argsBuilder = com.pulumi.aws.lightsail.inputs.DistributionCacheBehaviorSettingsForwardedQueryStringsArgs.builder
       builder.forwardedQueryStrings(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.lightsail.inputs.DistributionState.Builder)
     /**
      * @param cacheBehaviorSettings Cache behavior settings of the distribution. See below.
@@ -489,6 +508,10 @@ object lightsail:
       val argsBuilder = com.pulumi.aws.lightsail.inputs.DistributionOriginArgs.builder
       builder.origin(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.lightsail.inputs.DistributionState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.lightsail.inputs.ContainerServicePublicDomainNamesArgs.Builder)
     /**
      * @param certificates Set of certificate configurations for the public domain names. Each element contains the following attributes:
@@ -499,6 +522,7 @@ object lightsail:
       def argsBuilder = com.pulumi.aws.lightsail.inputs.ContainerServicePublicDomainNamesCertificateArgs.builder
       builder.certificates(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.lightsail.inputs.ContainerServicePrivateRegistryAccessArgs.Builder)
     /**
      * @param ecrImagePullerRole Configuration to access private container image repositories, such as Amazon Elastic Container Registry (Amazon ECR) private repositories. See below.
@@ -509,6 +533,7 @@ object lightsail:
       val argsBuilder = com.pulumi.aws.lightsail.inputs.ContainerServicePrivateRegistryAccessEcrImagePullerRoleArgs.builder
       builder.ecrImagePullerRole(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.lightsail.inputs.ContainerServiceState.Builder)
     /**
      * @param privateRegistryAccess Configuration for the container service to access private container image repositories, such as Amazon Elastic Container Registry (Amazon ECR) private repositories. See below.
@@ -528,6 +553,10 @@ object lightsail:
       val argsBuilder = com.pulumi.aws.lightsail.inputs.ContainerServicePublicDomainNamesArgs.builder
       builder.publicDomainNames(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.lightsail.inputs.ContainerServiceState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.lightsail.inputs.ContainerServiceDeploymentVersionState.Builder)
     /**
      * @param containers Set of configuration blocks that describe the settings of the containers that will be launched on the container service. Maximum of 53. See below.
@@ -547,6 +576,7 @@ object lightsail:
       val argsBuilder = com.pulumi.aws.lightsail.inputs.ContainerServiceDeploymentVersionPublicEndpointArgs.builder
       builder.publicEndpoint(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.lightsail.inputs.InstancePublicPortsState.Builder)
     /**
      * @param portInfos Descriptor of the ports to open for the specified instance. AWS closes all currently open ports that are not included in this argument. See `portInfo` Block for details.
@@ -559,6 +589,7 @@ object lightsail:
       def argsBuilder = com.pulumi.aws.lightsail.inputs.InstancePublicPortsPortInfoArgs.builder
       builder.portInfos(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.lightsail.inputs.LbCertificateState.Builder)
     /**
      * @param domainValidationRecords Set of domain validation objects which can be used to complete certificate validation. Can have more than one element, e.g., if SANs are defined.
@@ -569,6 +600,7 @@ object lightsail:
       def argsBuilder = com.pulumi.aws.lightsail.inputs.LbCertificateDomainValidationRecordArgs.builder
       builder.domainValidationRecords(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.lightsail.inputs.ContainerServiceDeploymentVersionPublicEndpointArgs.Builder)
     /**
      * @param healthCheck Configuration block that describes the health check configuration of the container. See below.
@@ -579,6 +611,7 @@ object lightsail:
       val argsBuilder = com.pulumi.aws.lightsail.inputs.ContainerServiceDeploymentVersionPublicEndpointHealthCheckArgs.builder
       builder.healthCheck(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.lightsail.inputs.InstanceState.Builder)
     /**
      * @param addOn Add-on configuration for the instance. See below.
@@ -589,6 +622,10 @@ object lightsail:
       val argsBuilder = com.pulumi.aws.lightsail.inputs.InstanceAddOnArgs.builder
       builder.addOn(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.lightsail.inputs.InstanceState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /** Manages a Lightsail bucket. Use this resource to create and manage object storage buckets for storing files, images, and other data in Lightsail. */
   def Bucket(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.lightsail.BucketArgs.Builder])(using conf: KoPulumiConf) =

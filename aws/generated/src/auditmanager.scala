@@ -16,6 +16,10 @@ object auditmanager:
       def argsBuilder = com.pulumi.aws.auditmanager.inputs.ControlControlMappingSourceArgs.builder
       builder.controlMappingSources(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.auditmanager.ControlArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /** Resource for managing an AWS Audit Manager Control. */
   def Control(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.auditmanager.ControlArgs.Builder])(using conf: KoPulumiConf) =
@@ -109,6 +113,10 @@ object auditmanager:
       val argsBuilder = com.pulumi.aws.auditmanager.inputs.AssessmentScopeArgs.builder
       builder.scope(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.auditmanager.AssessmentArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /** Resource for managing an AWS Audit Manager Framework. */
   def Framework(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.auditmanager.FrameworkArgs.Builder])(using conf: KoPulumiConf) =
@@ -180,6 +188,10 @@ object auditmanager:
       def argsBuilder = com.pulumi.aws.auditmanager.inputs.FrameworkControlSetArgs.builder
       builder.controlSets(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.auditmanager.FrameworkArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.auditmanager.inputs.AssessmentScopeArgs.Builder)
     /**
      * @param awsAccounts Amazon Web Services accounts that are in scope for the assessment. See `awsAccounts` below.
@@ -199,6 +211,7 @@ object auditmanager:
       def argsBuilder = com.pulumi.aws.auditmanager.inputs.AssessmentScopeAwsServiceArgs.builder
       builder.awsServices(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.auditmanager.inputs.ControlState.Builder)
     /**
      * @param controlMappingSources Data mapping sources. See `controlMappingSources` below.
@@ -211,6 +224,10 @@ object auditmanager:
       def argsBuilder = com.pulumi.aws.auditmanager.inputs.ControlControlMappingSourceArgs.builder
       builder.controlMappingSources(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.auditmanager.inputs.ControlState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.auditmanager.inputs.FrameworkState.Builder)
     /**
      * @param controlSets Configuration block(s) for the control sets that are associated with the framework. See `controlSets` Block below for details.
@@ -223,6 +240,10 @@ object auditmanager:
       def argsBuilder = com.pulumi.aws.auditmanager.inputs.FrameworkControlSetArgs.builder
       builder.controlSets(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.auditmanager.inputs.FrameworkState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.auditmanager.inputs.AssessmentState.Builder)
     /**
      * @param assessmentReportsDestination Assessment report storage destination configuration. See `assessmentReportsDestination` below.
@@ -262,6 +283,10 @@ object auditmanager:
       val argsBuilder = com.pulumi.aws.auditmanager.inputs.AssessmentScopeArgs.builder
       builder.scope(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.auditmanager.inputs.AssessmentState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.auditmanager.inputs.ControlControlMappingSourceArgs.Builder)
     /**
      * @param sourceKeyword The keyword to search for in CloudTrail logs, Config rules, Security Hub checks, and Amazon Web Services API names. See `sourceKeyword` below.
@@ -272,6 +297,7 @@ object auditmanager:
       val argsBuilder = com.pulumi.aws.auditmanager.inputs.ControlControlMappingSourceSourceKeywordArgs.builder
       builder.sourceKeyword(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.auditmanager.inputs.FrameworkControlSetArgs.Builder)
     /**
      * @param controls Configuration block(s) for the controls within the control set. See `controls` Block below for details.
@@ -281,3 +307,5 @@ object auditmanager:
         com.pulumi.aws.auditmanager.inputs.FrameworkControlSetArgs.Builder =
       def argsBuilder = com.pulumi.aws.auditmanager.inputs.FrameworkControlSetControlArgs.builder
       builder.controls(args.map(_(argsBuilder).build)*)
+
+                       

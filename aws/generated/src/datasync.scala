@@ -67,6 +67,10 @@ object datasync:
       val argsBuilder = com.pulumi.aws.datasync.inputs.NfsLocationOnPremConfigArgs.builder
       builder.onPremConfig(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.datasync.NfsLocationArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /**
    * Manages a Microsoft Azure Blob Storage Location within AWS DataSync.
    *  
@@ -125,6 +129,10 @@ object datasync:
       val argsBuilder = com.pulumi.aws.datasync.inputs.EfsLocationEc2ConfigArgs.builder
       builder.ec2Config(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.datasync.EfsLocationArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /** Manages an AWS DataSync FSx Windows Location. */
   def LocationFsxWindows(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.datasync.LocationFsxWindowsArgs.Builder])(using conf: KoPulumiConf) =
@@ -156,6 +164,10 @@ object datasync:
       val argsBuilder = com.pulumi.aws.datasync.inputs.LocationHdfsQopConfigurationArgs.builder
       builder.qopConfiguration(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.datasync.LocationHdfsArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /** Manages an AWS DataSync FSx Lustre Location. */
   def LocationFsxLustre(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.datasync.LocationFsxLustreArgs.Builder])(using conf: KoPulumiConf) =
@@ -194,6 +206,10 @@ object datasync:
       val argsBuilder = com.pulumi.aws.datasync.inputs.LocationSmbMountOptionsArgs.builder
       builder.mountOptions(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.datasync.LocationSmbArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /**
    * Manages an AWS DataSync Agent deployed on premises.
    *  
@@ -271,6 +287,10 @@ object datasync:
       val argsBuilder = com.pulumi.aws.datasync.inputs.TaskTaskReportConfigArgs.builder
       builder.taskReportConfig(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.datasync.TaskArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.datasync.S3LocationArgs.Builder)
     /**
      * @param s3Config Configuration block containing information for connecting to S3.
@@ -281,6 +301,10 @@ object datasync:
       val argsBuilder = com.pulumi.aws.datasync.inputs.S3LocationS3ConfigArgs.builder
       builder.s3Config(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.datasync.S3LocationArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /** Manages an AWS DataSync Task, which represents a configuration for synchronization. Starting an execution of these DataSync Tasks (actually synchronizing files) is performed outside of this resource. */
   def Task(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.datasync.TaskArgs.Builder])(using conf: KoPulumiConf) =
@@ -306,6 +330,10 @@ object datasync:
       val argsBuilder = com.pulumi.aws.datasync.inputs.LocationFsxOntapFileSystemProtocolArgs.builder
       builder.protocol(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.datasync.LocationFsxOntapFileSystemArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.datasync.FsxOpenZfsFileSystemArgs.Builder)
     /**
      * @param protocol The type of protocol that DataSync uses to access your file system. See below.
@@ -316,6 +344,10 @@ object datasync:
       val argsBuilder = com.pulumi.aws.datasync.inputs.FsxOpenZfsFileSystemProtocolArgs.builder
       builder.protocol(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.datasync.FsxOpenZfsFileSystemArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.datasync.LocationAzureBlobArgs.Builder)
     /**
      * @param sasConfiguration The SAS configuration that allows DataSync to access your Azure Blob Storage. See configuration below.
@@ -326,6 +358,10 @@ object datasync:
       val argsBuilder = com.pulumi.aws.datasync.inputs.LocationAzureBlobSasConfigurationArgs.builder
       builder.sasConfiguration(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.datasync.LocationAzureBlobArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /** Manages an AWS DataSync FSx OpenZfs Location. */
   def FsxOpenZfsFileSystem(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.datasync.FsxOpenZfsFileSystemArgs.Builder])(using conf: KoPulumiConf) =
@@ -348,6 +384,10 @@ object datasync:
       val argsBuilder = com.pulumi.aws.datasync.inputs.S3LocationS3ConfigArgs.builder
       builder.s3Config(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.datasync.inputs.S3LocationState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.datasync.inputs.LocationAzureBlobState.Builder)
     /**
      * @param sasConfiguration The SAS configuration that allows DataSync to access your Azure Blob Storage. See configuration below.
@@ -358,6 +398,10 @@ object datasync:
       val argsBuilder = com.pulumi.aws.datasync.inputs.LocationAzureBlobSasConfigurationArgs.builder
       builder.sasConfiguration(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.datasync.inputs.LocationAzureBlobState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.datasync.inputs.LocationSmbState.Builder)
     /**
      * @param mountOptions Configuration block containing mount options used by DataSync to access the SMB Server. Can be `AUTOMATIC`, `SMB2`, or `SMB3`.
@@ -368,6 +412,10 @@ object datasync:
       val argsBuilder = com.pulumi.aws.datasync.inputs.LocationSmbMountOptionsArgs.builder
       builder.mountOptions(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.datasync.inputs.LocationSmbState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.datasync.inputs.NfsLocationState.Builder)
     /**
      * @param mountOptions Configuration block containing mount options used by DataSync to access the NFS Server.
@@ -387,6 +435,10 @@ object datasync:
       val argsBuilder = com.pulumi.aws.datasync.inputs.NfsLocationOnPremConfigArgs.builder
       builder.onPremConfig(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.datasync.inputs.NfsLocationState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.datasync.inputs.TaskTaskReportConfigArgs.Builder)
     /**
      * @param reportOverrides Configuration block containing the configuration of the reporting level for aspects of your task report. See `reportOverrides` below.
@@ -406,6 +458,7 @@ object datasync:
       val argsBuilder = com.pulumi.aws.datasync.inputs.TaskTaskReportConfigS3DestinationArgs.builder
       builder.s3Destination(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.datasync.inputs.LocationHdfsState.Builder)
     /**
      * @param nameNodes The NameNode that manages the HDFS namespace. The NameNode performs operations such as opening, closing, and renaming files and directories. The NameNode contains the information to map blocks of data to the DataNodes. You can use only one NameNode. See configuration below.
@@ -425,6 +478,10 @@ object datasync:
       val argsBuilder = com.pulumi.aws.datasync.inputs.LocationHdfsQopConfigurationArgs.builder
       builder.qopConfiguration(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.datasync.inputs.LocationHdfsState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.datasync.inputs.TaskState.Builder)
     /**
      * @param excludes Filter rules that determines which files to exclude from a task.
@@ -471,6 +528,10 @@ object datasync:
       val argsBuilder = com.pulumi.aws.datasync.inputs.TaskTaskReportConfigArgs.builder
       builder.taskReportConfig(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.datasync.inputs.TaskState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.datasync.inputs.EfsLocationState.Builder)
     /**
      * @param ec2Config Configuration block containing EC2 configurations for connecting to the EFS File System.
@@ -481,6 +542,10 @@ object datasync:
       val argsBuilder = com.pulumi.aws.datasync.inputs.EfsLocationEc2ConfigArgs.builder
       builder.ec2Config(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.datasync.inputs.EfsLocationState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.datasync.inputs.LocationFsxOntapFileSystemProtocolSmbArgs.Builder)
     /**
      * @param mountOptions Mount options that are available for DataSync to access an SMB location. See SMB Mount Options below.
@@ -491,6 +556,7 @@ object datasync:
       val argsBuilder = com.pulumi.aws.datasync.inputs.LocationFsxOntapFileSystemProtocolSmbMountOptionsArgs.builder
       builder.mountOptions(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.datasync.inputs.FsxOpenZfsFileSystemProtocolNfsArgs.Builder)
     /**
      * @param mountOptions Represents the mount options that are available for DataSync to access an NFS location. See below.
@@ -501,6 +567,7 @@ object datasync:
       val argsBuilder = com.pulumi.aws.datasync.inputs.FsxOpenZfsFileSystemProtocolNfsMountOptionsArgs.builder
       builder.mountOptions(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.datasync.inputs.LocationFsxOntapFileSystemProtocolNfsArgs.Builder)
     /**
      * @param mountOptions Mount options that are available for DataSync to access an NFS location. See NFS Mount Options below.
@@ -511,6 +578,7 @@ object datasync:
       val argsBuilder = com.pulumi.aws.datasync.inputs.LocationFsxOntapFileSystemProtocolNfsMountOptionsArgs.builder
       builder.mountOptions(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.datasync.inputs.FsxOpenZfsFileSystemState.Builder)
     /**
      * @param protocol The type of protocol that DataSync uses to access your file system. See below.
@@ -521,6 +589,10 @@ object datasync:
       val argsBuilder = com.pulumi.aws.datasync.inputs.FsxOpenZfsFileSystemProtocolArgs.builder
       builder.protocol(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.datasync.inputs.FsxOpenZfsFileSystemState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.datasync.inputs.FsxOpenZfsFileSystemProtocolArgs.Builder)
     /**
      * @param nfs Represents the Network File System (NFS) protocol that DataSync uses to access your FSx for OpenZFS file system. See below.
@@ -531,6 +603,7 @@ object datasync:
       val argsBuilder = com.pulumi.aws.datasync.inputs.FsxOpenZfsFileSystemProtocolNfsArgs.builder
       builder.nfs(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.datasync.inputs.LocationFsxOntapFileSystemState.Builder)
     /**
      * @param protocol The data transfer protocol that DataSync uses to access your Amazon FSx file system. See Protocol below.
@@ -541,6 +614,10 @@ object datasync:
       val argsBuilder = com.pulumi.aws.datasync.inputs.LocationFsxOntapFileSystemProtocolArgs.builder
       builder.protocol(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.datasync.inputs.LocationFsxOntapFileSystemState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.datasync.inputs.LocationFsxOntapFileSystemProtocolArgs.Builder)
     /**
      * @param nfs Network File System (NFS) protocol that DataSync uses to access your FSx ONTAP file system. See NFS below.
@@ -559,3 +636,5 @@ object datasync:
         com.pulumi.aws.datasync.inputs.LocationFsxOntapFileSystemProtocolArgs.Builder =
       val argsBuilder = com.pulumi.aws.datasync.inputs.LocationFsxOntapFileSystemProtocolSmbArgs.builder
       builder.smb(args(argsBuilder).build)
+
+                       

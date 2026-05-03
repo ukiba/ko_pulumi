@@ -10,6 +10,10 @@ object workmail:
       val argsBuilder = com.pulumi.aws.workmail.inputs.OrganizationTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.workmail.OrganizationArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /** Manages an AWS WorkMail Group. */
   def Group(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.workmail.GroupArgs.Builder])(using conf: KoPulumiConf) =
@@ -74,12 +78,17 @@ object workmail:
       def argsBuilder = com.pulumi.aws.workmail.inputs.DomainRecordArgs.builder
       builder.records(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.workmail.inputs.OrganizationState.Builder)
     def timeouts(args: Endofunction[com.pulumi.aws.workmail.inputs.OrganizationTimeoutsArgs.Builder]):
         com.pulumi.aws.workmail.inputs.OrganizationState.Builder =
       val argsBuilder = com.pulumi.aws.workmail.inputs.OrganizationTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.workmail.inputs.OrganizationState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /** Manages a mail domain registered to an AWS WorkMail organization. */
   def Domain(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.workmail.DomainArgs.Builder]) =

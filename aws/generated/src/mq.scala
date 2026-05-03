@@ -81,6 +81,10 @@ object mq:
       def argsBuilder = com.pulumi.aws.mq.inputs.BrokerUserArgs.builder
       builder.users(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.mq.BrokerArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /** Manages an Amazon MQ configuration. Use this resource to create and manage broker configurations for ActiveMQ and RabbitMQ brokers. */
   def Configuration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.mq.ConfigurationArgs.Builder])(using conf: KoPulumiConf) =
@@ -200,3 +204,8 @@ object mq:
         com.pulumi.aws.mq.inputs.BrokerState.Builder =
       def argsBuilder = com.pulumi.aws.mq.inputs.BrokerUserArgs.builder
       builder.users(args.map(_(argsBuilder).build)*)
+
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.mq.inputs.BrokerState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       

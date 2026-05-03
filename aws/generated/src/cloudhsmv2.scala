@@ -62,3 +62,8 @@ object cloudhsmv2:
         com.pulumi.aws.cloudhsmv2.inputs.ClusterState.Builder =
       def argsBuilder = com.pulumi.aws.cloudhsmv2.inputs.ClusterClusterCertificateArgs.builder
       builder.clusterCertificates(args.map(_(argsBuilder).build)*)
+
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.cloudhsmv2.inputs.ClusterState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       

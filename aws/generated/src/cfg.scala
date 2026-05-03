@@ -23,6 +23,10 @@ object cfg:
       val argsBuilder = com.pulumi.aws.cfg.inputs.ConfigurationAggregatorOrganizationAggregationSourceArgs.builder
       builder.organizationAggregationSource(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.cfg.ConfigurationAggregatorArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /**
    * Manages status (recording / stopped) of an AWS Config Configuration Recorder.
    *  
@@ -82,6 +86,10 @@ object cfg:
       val argsBuilder = com.pulumi.aws.cfg.inputs.RuleSourceArgs.builder
       builder.source(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.cfg.RuleArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.cfg.OrganizationConformancePackArgs.Builder)
     /**
      * @param inputParameters Set of configuration blocks describing input parameters passed to the conformance pack template. Documented below. When configured, the parameters must also be included in the `templateBody` or in the template stored in Amazon S3 if using `templateS3Uri`.
@@ -92,6 +100,7 @@ object cfg:
       def argsBuilder = com.pulumi.aws.cfg.inputs.OrganizationConformancePackInputParameterArgs.builder
       builder.inputParameters(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.cfg.DeliveryChannelArgs.Builder)
     /**
      * @param snapshotDeliveryProperties Options for how AWS Config delivers configuration snapshots. See below
@@ -102,6 +111,7 @@ object cfg:
       val argsBuilder = com.pulumi.aws.cfg.inputs.DeliveryChannelSnapshotDeliveryPropertiesArgs.builder
       builder.snapshotDeliveryProperties(args(argsBuilder).build)
 
+                       
   /**
    * Manages a Config Organization Custom Rule. More information about these rules can be found in the [Enabling AWS Config Rules Across all Accounts in Your Organization](https://docs.aws.amazon.com/config/latest/developerguide/config-rule-multi-account-deployment.html) and [AWS Config Managed Rules](https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_use-managed-rules.html) documentation. For working with Organization Managed Rules (those invoking an AWS managed rule), see the `aws_config_organization_managed__rule` resource.
    *  
@@ -203,6 +213,7 @@ object cfg:
       def argsBuilder = com.pulumi.aws.cfg.inputs.RemediationConfigurationParameterArgs.builder
       builder.parameters(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.cfg.RecorderArgs.Builder)
     /**
      * @param recordingGroup Recording group - see below.
@@ -222,6 +233,7 @@ object cfg:
       val argsBuilder = com.pulumi.aws.cfg.inputs.RecorderRecordingModeArgs.builder
       builder.recordingMode(args(argsBuilder).build)
 
+                       
   /**
    * Manages a Config Organization Conformance Pack. More information can be found in the [Managing Conformance Packs Across all Accounts in Your Organization](https://docs.aws.amazon.com/config/latest/developerguide/conformance-pack-organization-apis.html) and [AWS Config Managed Rules](https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_use-managed-rules.html) documentation. Example conformance pack templates may be found in the [AWS Config Rules Repository](https://github.com/awslabs/aws-config-rules/tree/master/aws-config-conformance-packs).
    *  
@@ -311,6 +323,7 @@ object cfg:
       def argsBuilder = com.pulumi.aws.cfg.inputs.ConformancePackInputParameterArgs.builder
       builder.inputParameters(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.cfg.inputs.RecorderRecordingModeArgs.Builder)
     /**
      * @param recordingModeOverride Recording mode overrides. Detailed below.
@@ -321,6 +334,7 @@ object cfg:
       val argsBuilder = com.pulumi.aws.cfg.inputs.RecorderRecordingModeRecordingModeOverrideArgs.builder
       builder.recordingModeOverride(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.cfg.inputs.RemediationConfigurationExecutionControlsArgs.Builder)
     /**
      * @param ssmControls Configuration block for SSM controls. See below.
@@ -331,6 +345,7 @@ object cfg:
       val argsBuilder = com.pulumi.aws.cfg.inputs.RemediationConfigurationExecutionControlsSsmControlsArgs.builder
       builder.ssmControls(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.cfg.inputs.RuleSourceArgs.Builder)
     /**
      * @param customPolicyDetails Provides the runtime system, policy definition, and whether debug logging is enabled. Required when owner is set to `CUSTOM_POLICY`. See Custom Policy Details Below.
@@ -350,6 +365,7 @@ object cfg:
       def argsBuilder = com.pulumi.aws.cfg.inputs.RuleSourceSourceDetailArgs.builder
       builder.sourceDetails(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.cfg.inputs.RecorderRecordingGroupArgs.Builder)
     /**
      * @param exclusionByResourceTypes An object that specifies how AWS Config excludes resource types from being recorded by the configuration recorder.To use this option, you must set the useOnly field of RecordingStrategy to `EXCLUSION_BY_RESOURCE_TYPES` Requires `allSupported = false`. Conflicts with `resourceTypes`.
@@ -369,6 +385,7 @@ object cfg:
       def argsBuilder = com.pulumi.aws.cfg.inputs.RecorderRecordingGroupRecordingStrategyArgs.builder
       builder.recordingStrategies(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.cfg.inputs.RemediationConfigurationState.Builder)
     /**
      * @param executionControls Configuration block for execution controls. See below.
@@ -388,6 +405,7 @@ object cfg:
       def argsBuilder = com.pulumi.aws.cfg.inputs.RemediationConfigurationParameterArgs.builder
       builder.parameters(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.cfg.inputs.DeliveryChannelState.Builder)
     /**
      * @param snapshotDeliveryProperties Options for how AWS Config delivers configuration snapshots. See below
@@ -398,6 +416,7 @@ object cfg:
       val argsBuilder = com.pulumi.aws.cfg.inputs.DeliveryChannelSnapshotDeliveryPropertiesArgs.builder
       builder.snapshotDeliveryProperties(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.cfg.inputs.OrganizationConformancePackState.Builder)
     /**
      * @param inputParameters Set of configuration blocks describing input parameters passed to the conformance pack template. Documented below. When configured, the parameters must also be included in the `templateBody` or in the template stored in Amazon S3 if using `templateS3Uri`.
@@ -408,6 +427,7 @@ object cfg:
       def argsBuilder = com.pulumi.aws.cfg.inputs.OrganizationConformancePackInputParameterArgs.builder
       builder.inputParameters(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.cfg.inputs.RuleState.Builder)
     /**
      * @param evaluationModes The modes the Config rule can be evaluated in. See Evaluation Mode for more details.
@@ -436,6 +456,10 @@ object cfg:
       val argsBuilder = com.pulumi.aws.cfg.inputs.RuleSourceArgs.builder
       builder.source(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.cfg.inputs.RuleState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.cfg.inputs.ConfigurationAggregatorState.Builder)
     /**
      * @param accountAggregationSource The account(s) to aggregate config data from as documented below.
@@ -455,6 +479,10 @@ object cfg:
       val argsBuilder = com.pulumi.aws.cfg.inputs.ConfigurationAggregatorOrganizationAggregationSourceArgs.builder
       builder.organizationAggregationSource(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.cfg.inputs.ConfigurationAggregatorState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.cfg.inputs.RecorderState.Builder)
     /**
      * @param recordingGroup Recording group - see below.
@@ -474,6 +502,7 @@ object cfg:
       val argsBuilder = com.pulumi.aws.cfg.inputs.RecorderRecordingModeArgs.builder
       builder.recordingMode(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.cfg.ConformancePackArgs.Builder)
     /**
      * @param inputParameters Set of configuration blocks describing input parameters passed to the conformance pack template. Documented below. When configured, the parameters must also be included in the `templateBody` or in the template stored in Amazon S3 if using `templateS3Uri`.
@@ -484,6 +513,7 @@ object cfg:
       def argsBuilder = com.pulumi.aws.cfg.inputs.ConformancePackInputParameterArgs.builder
       builder.inputParameters(args.map(_(argsBuilder).build)*)
 
+                       
   /**
    * Provides an AWS Config Delivery Channel.
    *  

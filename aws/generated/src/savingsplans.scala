@@ -39,6 +39,10 @@ object savingsplans:
       val argsBuilder = com.pulumi.aws.savingsplans.inputs.SavingsPlanTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.savingsplans.SavingsPlanArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /**
    * Provides an AWS Savings Plan resource.
    *  
@@ -67,8 +71,14 @@ object savingsplans:
       def argsBuilder = com.pulumi.aws.savingsplans.inputs.GetOfferingsFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.savingsplans.inputs.SavingsPlanState.Builder)
     def timeouts(args: Endofunction[com.pulumi.aws.savingsplans.inputs.SavingsPlanTimeoutsArgs.Builder]):
         com.pulumi.aws.savingsplans.inputs.SavingsPlanState.Builder =
       val argsBuilder = com.pulumi.aws.savingsplans.inputs.SavingsPlanTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
+
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.savingsplans.inputs.SavingsPlanState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       

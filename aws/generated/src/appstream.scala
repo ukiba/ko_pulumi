@@ -73,6 +73,7 @@ object appstream:
       val argsBuilder = com.pulumi.aws.appstream.inputs.DirectoryConfigServiceAccountCredentialsArgs.builder
       builder.serviceAccountCredentials(args(argsBuilder).build)
 
+                       
   /** Provides an AppStream image builder. */
   def ImageBuilder(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.appstream.ImageBuilderArgs.Builder])(using conf: KoPulumiConf) =
@@ -125,6 +126,10 @@ object appstream:
       val argsBuilder = com.pulumi.aws.appstream.inputs.ImageBuilderVpcConfigArgs.builder
       builder.vpcConfig(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.appstream.ImageBuilderArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /** Provides an AppStream Directory Config. */
   def DirectoryConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.appstream.DirectoryConfigArgs.Builder]) =
@@ -162,6 +167,10 @@ object appstream:
       val argsBuilder = com.pulumi.aws.appstream.inputs.FleetVpcConfigArgs.builder
       builder.vpcConfig(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.appstream.FleetArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.appstream.StackArgs.Builder)
     /**
      * @param accessEndpoints Set of configuration blocks defining the interface VPC endpoints. Users of the stack can connect to AppStream 2.0 only through the specified endpoints.
@@ -213,6 +222,10 @@ object appstream:
       def argsBuilder = com.pulumi.aws.appstream.inputs.StackUserSettingArgs.builder
       builder.userSettings(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.appstream.StackArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.appstream.inputs.ImageBuilderState.Builder)
     /**
      * @param accessEndpoints Set of interface VPC endpoint (interface endpoint) objects. Maximum of 4. See below.
@@ -241,6 +254,10 @@ object appstream:
       val argsBuilder = com.pulumi.aws.appstream.inputs.ImageBuilderVpcConfigArgs.builder
       builder.vpcConfig(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.appstream.inputs.ImageBuilderState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.appstream.inputs.DirectoryConfigState.Builder)
     /**
      * @param certificateBasedAuthProperties Configuration block for the certificate-based authentication properties used to authenticate SAML 2.0 Identity Provider (IdP) user identities to Active Directory domain-joined streaming instances. See `certificateBasedAuthProperties` below.
@@ -260,6 +277,7 @@ object appstream:
       val argsBuilder = com.pulumi.aws.appstream.inputs.DirectoryConfigServiceAccountCredentialsArgs.builder
       builder.serviceAccountCredentials(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.appstream.inputs.FleetState.Builder)
     /**
      * @param computeCapacity Configuration block for the desired capacity of the fleet. See below.
@@ -288,6 +306,10 @@ object appstream:
       val argsBuilder = com.pulumi.aws.appstream.inputs.FleetVpcConfigArgs.builder
       builder.vpcConfig(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.appstream.inputs.FleetState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.appstream.inputs.StackState.Builder)
     /**
      * @param accessEndpoints Set of configuration blocks defining the interface VPC endpoints. Users of the stack can connect to AppStream 2.0 only through the specified endpoints.
@@ -339,6 +361,10 @@ object appstream:
       def argsBuilder = com.pulumi.aws.appstream.inputs.StackUserSettingArgs.builder
       builder.userSettings(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.appstream.inputs.StackState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /** Provides an AppStream stack. */
   def Stack(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.appstream.StackArgs.Builder])(using conf: KoPulumiConf) =

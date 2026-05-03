@@ -14,6 +14,7 @@ object securityhub:
       val argsBuilder = com.pulumi.aws.securityhub.inputs.OrganizationConfigurationOrganizationConfigurationArgs.builder
       builder.organizationConfiguration(args(argsBuilder).build)
 
+                       
   /** Manages a Security Hub administrator account for an organization. The AWS account utilizing this resource must be an Organizations primary account. More information about Organizations support in Security Hub can be found in the [Security Hub User Guide](https://docs.aws.amazon.com/securityhub/latest/userguide/designate-orgs-admin-account.html). */
   def OrganizationAdminAccount(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.securityhub.OrganizationAdminAccountArgs.Builder]) =
@@ -131,6 +132,7 @@ object securityhub:
       val argsBuilder = com.pulumi.aws.securityhub.inputs.InsightFiltersArgs.builder
       builder.filters(args(argsBuilder).build)
 
+                       
   /** Provides a Security Hub custom insight resource. See the [Managing custom insights section](https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-custom-insights.html) of the AWS User Guide for more information. */
   def Insight(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.securityhub.InsightArgs.Builder])(using conf: KoPulumiConf) =
@@ -249,6 +251,10 @@ object securityhub:
       val argsBuilder = com.pulumi.aws.securityhub.inputs.AutomationRuleCriteriaArgs.builder
       builder.criteria(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.securityhub.AutomationRuleArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /**
    * Enables the unified Security Hub V2 for this AWS account.
    *  
@@ -301,6 +307,7 @@ object securityhub:
       val argsBuilder = com.pulumi.aws.securityhub.inputs.ConfigurationPolicyConfigurationPolicyArgs.builder
       builder.configurationPolicy(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.securityhub.inputs.InsightFiltersNoteUpdatedAtArgs.Builder)
     /**
      * @param dateRange A configuration block of the date range for the date filter. See dateRange below for more details.
@@ -311,6 +318,7 @@ object securityhub:
       val argsBuilder = com.pulumi.aws.securityhub.inputs.InsightFiltersNoteUpdatedAtDateRangeArgs.builder
       builder.dateRange(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.securityhub.inputs.InsightFiltersThreatIntelIndicatorLastObservedAtArgs.Builder)
     /**
      * @param dateRange A configuration block of the date range for the date filter. See dateRange below for more details.
@@ -321,6 +329,7 @@ object securityhub:
       val argsBuilder = com.pulumi.aws.securityhub.inputs.InsightFiltersThreatIntelIndicatorLastObservedAtDateRangeArgs.builder
       builder.dateRange(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.securityhub.inputs.OrganizationConfigurationState.Builder)
     /**
      * @param organizationConfiguration Provides information about the way an organization is configured in Security Hub.
@@ -331,6 +340,7 @@ object securityhub:
       val argsBuilder = com.pulumi.aws.securityhub.inputs.OrganizationConfigurationOrganizationConfigurationArgs.builder
       builder.organizationConfiguration(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.securityhub.inputs.AutomationRuleCriteriaUpdatedAtArgs.Builder)
     /**
      * @param dateRange A configuration block of the date range for the date filter. See dateRange below for more details.
@@ -341,6 +351,7 @@ object securityhub:
       val argsBuilder = com.pulumi.aws.securityhub.inputs.AutomationRuleCriteriaUpdatedAtDateRangeArgs.builder
       builder.dateRange(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.securityhub.inputs.ConfigurationPolicyState.Builder)
     /**
      * @param configurationPolicy Defines how Security Hub is configured. See below.
@@ -351,6 +362,7 @@ object securityhub:
       val argsBuilder = com.pulumi.aws.securityhub.inputs.ConfigurationPolicyConfigurationPolicyArgs.builder
       builder.configurationPolicy(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.securityhub.inputs.ConfigurationPolicyConfigurationPolicySecurityControlsConfigurationSecurityControlCustomParameterArgs.Builder)
     /**
      * @param parameters An object that specifies parameter values for a control in a configuration policy. See below.
@@ -361,6 +373,7 @@ object securityhub:
       def argsBuilder = com.pulumi.aws.securityhub.inputs.ConfigurationPolicyConfigurationPolicySecurityControlsConfigurationSecurityControlCustomParameterParameterArgs.builder
       builder.parameters(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.securityhub.inputs.InsightFiltersUpdatedAtArgs.Builder)
     /**
      * @param dateRange A configuration block of the date range for the date filter. See dateRange below for more details.
@@ -371,6 +384,7 @@ object securityhub:
       val argsBuilder = com.pulumi.aws.securityhub.inputs.InsightFiltersUpdatedAtDateRangeArgs.builder
       builder.dateRange(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.securityhub.inputs.InsightFiltersResourceAwsIamAccessKeyCreatedAtArgs.Builder)
     /**
      * @param dateRange A configuration block of the date range for the date filter. See dateRange below for more details.
@@ -381,6 +395,7 @@ object securityhub:
       val argsBuilder = com.pulumi.aws.securityhub.inputs.InsightFiltersResourceAwsIamAccessKeyCreatedAtDateRangeArgs.builder
       builder.dateRange(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.securityhub.inputs.InsightFiltersFirstObservedAtArgs.Builder)
     /**
      * @param dateRange A configuration block of the date range for the date filter. See dateRange below for more details.
@@ -391,6 +406,7 @@ object securityhub:
       val argsBuilder = com.pulumi.aws.securityhub.inputs.InsightFiltersFirstObservedAtDateRangeArgs.builder
       builder.dateRange(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.securityhub.inputs.InsightFiltersCreatedAtArgs.Builder)
     /**
      * @param dateRange A configuration block of the date range for the date filter. See dateRange below for more details.
@@ -401,6 +417,7 @@ object securityhub:
       val argsBuilder = com.pulumi.aws.securityhub.inputs.InsightFiltersCreatedAtDateRangeArgs.builder
       builder.dateRange(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.securityhub.inputs.AutomationRuleActionArgs.Builder)
     /**
      * @param findingFieldsUpdate A block that specifies that the automation rule action is an update to a finding field.  Documented below.
@@ -411,6 +428,7 @@ object securityhub:
       val argsBuilder = com.pulumi.aws.securityhub.inputs.AutomationRuleActionFindingFieldsUpdateArgs.builder
       builder.findingFieldsUpdate(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.securityhub.inputs.ConfigurationPolicyConfigurationPolicySecurityControlsConfigurationArgs.Builder)
     /**
      * @param securityControlCustomParameters A list of control parameter customizations that are included in a configuration policy. Include multiple blocks to define multiple control custom parameters. See below.
@@ -421,6 +439,7 @@ object securityhub:
       def argsBuilder = com.pulumi.aws.securityhub.inputs.ConfigurationPolicyConfigurationPolicySecurityControlsConfigurationSecurityControlCustomParameterArgs.builder
       builder.securityControlCustomParameters(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.securityhub.inputs.AutomationRuleCriteriaCreatedAtArgs.Builder)
     /**
      * @param dateRange A configuration block of the date range for the date filter. See dateRange below for more details.
@@ -431,6 +450,7 @@ object securityhub:
       val argsBuilder = com.pulumi.aws.securityhub.inputs.AutomationRuleCriteriaCreatedAtDateRangeArgs.builder
       builder.dateRange(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.securityhub.inputs.InsightFiltersLastObservedAtArgs.Builder)
     /**
      * @param dateRange A configuration block of the date range for the date filter. See dateRange below for more details.
@@ -441,6 +461,7 @@ object securityhub:
       val argsBuilder = com.pulumi.aws.securityhub.inputs.InsightFiltersLastObservedAtDateRangeArgs.builder
       builder.dateRange(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.securityhub.inputs.ConfigurationPolicyConfigurationPolicySecurityControlsConfigurationSecurityControlCustomParameterParameterArgs.Builder)
     /**
      * @param bool The bool `value` for a Boolean-typed Security Hub Control Parameter.
@@ -514,6 +535,7 @@ object securityhub:
       val argsBuilder = com.pulumi.aws.securityhub.inputs.ConfigurationPolicyConfigurationPolicySecurityControlsConfigurationSecurityControlCustomParameterParameterStringListArgs.builder
       builder.stringList(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.securityhub.inputs.InsightFiltersResourceContainerLaunchedAtArgs.Builder)
     /**
      * @param dateRange A configuration block of the date range for the date filter. See dateRange below for more details.
@@ -524,6 +546,7 @@ object securityhub:
       val argsBuilder = com.pulumi.aws.securityhub.inputs.InsightFiltersResourceContainerLaunchedAtDateRangeArgs.builder
       builder.dateRange(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.securityhub.inputs.InsightFiltersResourceAwsEc2InstanceLaunchedAtArgs.Builder)
     /**
      * @param dateRange A configuration block of the date range for the date filter. See dateRange below for more details.
@@ -534,6 +557,7 @@ object securityhub:
       val argsBuilder = com.pulumi.aws.securityhub.inputs.InsightFiltersResourceAwsEc2InstanceLaunchedAtDateRangeArgs.builder
       builder.dateRange(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.securityhub.inputs.AutomationRuleCriteriaLastObservedAtArgs.Builder)
     /**
      * @param dateRange A configuration block of the date range for the date filter. See dateRange below for more details.
@@ -544,6 +568,7 @@ object securityhub:
       val argsBuilder = com.pulumi.aws.securityhub.inputs.AutomationRuleCriteriaLastObservedAtDateRangeArgs.builder
       builder.dateRange(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.securityhub.inputs.AutomationRuleCriteriaFirstObservedAtArgs.Builder)
     /**
      * @param dateRange A configuration block of the date range for the date filter. See dateRange below for more details.
@@ -554,6 +579,7 @@ object securityhub:
       val argsBuilder = com.pulumi.aws.securityhub.inputs.AutomationRuleCriteriaFirstObservedAtDateRangeArgs.builder
       builder.dateRange(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.securityhub.inputs.InsightFiltersArgs.Builder)
     /**
      * @param awsAccountIds AWS account ID that a finding is generated in. See String_Filter below for more details.
@@ -1392,6 +1418,7 @@ object securityhub:
       def argsBuilder = com.pulumi.aws.securityhub.inputs.InsightFiltersWorkflowStatusArgs.builder
       builder.workflowStatuses(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.securityhub.inputs.InsightState.Builder)
     /**
      * @param filters A configuration block including one or more (up to 10 distinct) attributes used to filter the findings included in the insight. The insight only includes findings that match criteria defined in the filters. See filters below for more details.
@@ -1402,6 +1429,7 @@ object securityhub:
       val argsBuilder = com.pulumi.aws.securityhub.inputs.InsightFiltersArgs.builder
       builder.filters(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.securityhub.inputs.AutomationRuleCriteriaNoteUpdatedAtArgs.Builder)
     /**
      * @param dateRange A configuration block of the date range for the date filter. See dateRange below for more details.
@@ -1412,6 +1440,7 @@ object securityhub:
       val argsBuilder = com.pulumi.aws.securityhub.inputs.AutomationRuleCriteriaNoteUpdatedAtDateRangeArgs.builder
       builder.dateRange(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.securityhub.inputs.AutomationRuleCriteriaArgs.Builder)
     /**
      * @param awsAccountIds The AWS account ID in which a finding was generated. Documented below.
@@ -1755,6 +1784,7 @@ object securityhub:
       def argsBuilder = com.pulumi.aws.securityhub.inputs.AutomationRuleCriteriaWorkflowStatusArgs.builder
       builder.workflowStatuses(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.securityhub.inputs.InsightFiltersProcessLaunchedAtArgs.Builder)
     /**
      * @param dateRange A configuration block of the date range for the date filter. See dateRange below for more details.
@@ -1765,6 +1795,7 @@ object securityhub:
       val argsBuilder = com.pulumi.aws.securityhub.inputs.InsightFiltersProcessLaunchedAtDateRangeArgs.builder
       builder.dateRange(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.securityhub.inputs.AutomationRuleActionFindingFieldsUpdateArgs.Builder)
     /**
      * @param note A resource block that updates the note. Documented below.
@@ -1802,6 +1833,7 @@ object securityhub:
       val argsBuilder = com.pulumi.aws.securityhub.inputs.AutomationRuleActionFindingFieldsUpdateWorkflowArgs.builder
       builder.workflow(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.securityhub.inputs.ConfigurationPolicyConfigurationPolicyArgs.Builder)
     /**
      * @param securityControlsConfiguration Defines which security controls are enabled in the configuration policy and any customizations to parameters affecting them. See below.
@@ -1812,6 +1844,7 @@ object securityhub:
       val argsBuilder = com.pulumi.aws.securityhub.inputs.ConfigurationPolicyConfigurationPolicySecurityControlsConfigurationArgs.builder
       builder.securityControlsConfiguration(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.securityhub.inputs.InsightFiltersProcessTerminatedAtArgs.Builder)
     /**
      * @param dateRange A configuration block of the date range for the date filter. See dateRange below for more details.
@@ -1822,6 +1855,7 @@ object securityhub:
       val argsBuilder = com.pulumi.aws.securityhub.inputs.InsightFiltersProcessTerminatedAtDateRangeArgs.builder
       builder.dateRange(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.securityhub.inputs.AutomationRuleState.Builder)
     /**
      * @param actions A block that specifies one or more actions to update finding fields if a finding matches the conditions specified in `Criteria`. Documented below.
@@ -1840,3 +1874,8 @@ object securityhub:
         com.pulumi.aws.securityhub.inputs.AutomationRuleState.Builder =
       val argsBuilder = com.pulumi.aws.securityhub.inputs.AutomationRuleCriteriaArgs.builder
       builder.criteria(args(argsBuilder).build)
+
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.securityhub.inputs.AutomationRuleState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       

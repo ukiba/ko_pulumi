@@ -128,6 +128,10 @@ object redshiftserverless:
       val argsBuilder = com.pulumi.aws.redshiftserverless.inputs.WorkgroupPricePerformanceTargetArgs.builder
       builder.pricePerformanceTarget(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.redshiftserverless.WorkgroupArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /** Creates a new Amazon Redshift Serverless Usage Limit. */
   def UsageLimit(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.redshiftserverless.UsageLimitArgs.Builder]) =
@@ -147,6 +151,7 @@ object redshiftserverless:
       def argsBuilder = com.pulumi.aws.redshiftserverless.inputs.WorkgroupEndpointVpcEndpointNetworkInterfaceArgs.builder
       builder.networkInterfaces(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.redshiftserverless.inputs.WorkgroupEndpointArgs.Builder)
     /**
      * @param vpcEndpoints The VPC endpoint or the Redshift Serverless workgroup. See `VPC Endpoint` below.
@@ -157,6 +162,7 @@ object redshiftserverless:
       def argsBuilder = com.pulumi.aws.redshiftserverless.inputs.WorkgroupEndpointVpcEndpointArgs.builder
       builder.vpcEndpoints(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.redshiftserverless.inputs.EndpointAccessState.Builder)
     /**
      * @param vpcEndpoints The VPC endpoint or the Redshift Serverless workgroup. See `VPC Endpoint` below.
@@ -167,6 +173,7 @@ object redshiftserverless:
       def argsBuilder = com.pulumi.aws.redshiftserverless.inputs.EndpointAccessVpcEndpointArgs.builder
       builder.vpcEndpoints(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.redshiftserverless.inputs.EndpointAccessVpcEndpointArgs.Builder)
     /**
      * @param networkInterfaces The network interfaces of the endpoint.. See `Network Interface` below.
@@ -177,6 +184,7 @@ object redshiftserverless:
       def argsBuilder = com.pulumi.aws.redshiftserverless.inputs.EndpointAccessVpcEndpointNetworkInterfaceArgs.builder
       builder.networkInterfaces(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.redshiftserverless.inputs.WorkgroupState.Builder)
     /**
      * @param configParameters An array of parameters to set for more control over a serverless database. See `Config Parameter` below.
@@ -204,3 +212,8 @@ object redshiftserverless:
         com.pulumi.aws.redshiftserverless.inputs.WorkgroupState.Builder =
       val argsBuilder = com.pulumi.aws.redshiftserverless.inputs.WorkgroupPricePerformanceTargetArgs.builder
       builder.pricePerformanceTarget(args(argsBuilder).build)
+
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.redshiftserverless.inputs.WorkgroupState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       

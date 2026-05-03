@@ -62,6 +62,10 @@ object amplify:
       val argsBuilder = com.pulumi.aws.amplify.inputs.AppJobConfigArgs.builder
       builder.jobConfig(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.amplify.AppArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.amplify.DomainAssociationArgs.Builder)
     /**
      * @param certificateSettings The type of SSL/TLS certificate to use for your custom domain. If you don&#39;t specify a certificate type, Amplify uses the default certificate that it provisions and manages for you.
@@ -81,6 +85,7 @@ object amplify:
       def argsBuilder = com.pulumi.aws.amplify.inputs.DomainAssociationSubDomainArgs.builder
       builder.subDomains(args.map(_(argsBuilder).build)*)
 
+                       
   /** Provides an Amplify Webhook resource. */
   def Webhook(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.amplify.WebhookArgs.Builder]) =
@@ -137,6 +142,7 @@ object amplify:
       def argsBuilder = com.pulumi.aws.amplify.inputs.DomainAssociationSubDomainArgs.builder
       builder.subDomains(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.amplify.inputs.AppState.Builder)
     /**
      * @param autoBranchCreationConfig Automated branch creation configuration for an Amplify app. See `autoBranchCreationConfig` Block for details.
@@ -182,3 +188,8 @@ object amplify:
         com.pulumi.aws.amplify.inputs.AppState.Builder =
       def argsBuilder = com.pulumi.aws.amplify.inputs.AppProductionBranchArgs.builder
       builder.productionBranches(args.map(_(argsBuilder).build)*)
+
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.amplify.inputs.AppState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       

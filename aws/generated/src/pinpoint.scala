@@ -97,6 +97,10 @@ object pinpoint:
       val argsBuilder = com.pulumi.aws.pinpoint.inputs.Smsvoicev2PhoneNumberTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.pinpoint.Smsvoicev2PhoneNumberArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /** Manages an AWS End User Messaging SMS opt-out list. */
   def Smsvoicev2OptOutList(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.pinpoint.Smsvoicev2OptOutListArgs.Builder])(using conf: KoPulumiConf) =
@@ -162,6 +166,10 @@ object pinpoint:
       val argsBuilder = com.pulumi.aws.pinpoint.inputs.AppQuietTimeArgs.builder
       builder.quietTime(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.pinpoint.AppArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /** Manages an AWS End User Messaging SMS phone number. */
   def Smsvoicev2PhoneNumber(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.pinpoint.Smsvoicev2PhoneNumberArgs.Builder])(using conf: KoPulumiConf) =
@@ -229,6 +237,7 @@ object pinpoint:
       def argsBuilder = com.pulumi.aws.pinpoint.inputs.EmailTemplateEmailTemplateHeaderArgs.builder
       builder.headers(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.pinpoint.inputs.EmailTemplateState.Builder)
     /**
      * @param emailTemplates Specifies the content and settings for a message template that can be used in messages that are sent through the email channel. See Email Template
@@ -239,12 +248,20 @@ object pinpoint:
       def argsBuilder = com.pulumi.aws.pinpoint.inputs.EmailTemplateEmailTemplateArgs.builder
       builder.emailTemplates(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.pinpoint.inputs.EmailTemplateState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.pinpoint.inputs.Smsvoicev2PhoneNumberState.Builder)
     def timeouts(args: Endofunction[com.pulumi.aws.pinpoint.inputs.Smsvoicev2PhoneNumberTimeoutsArgs.Builder]):
         com.pulumi.aws.pinpoint.inputs.Smsvoicev2PhoneNumberState.Builder =
       val argsBuilder = com.pulumi.aws.pinpoint.inputs.Smsvoicev2PhoneNumberTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.pinpoint.inputs.Smsvoicev2PhoneNumberState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.pinpoint.inputs.AppState.Builder)
     /**
      * @param campaignHook Specifies settings for invoking an AWS Lambda function that customizes a segment for a campaign
@@ -273,6 +290,10 @@ object pinpoint:
       val argsBuilder = com.pulumi.aws.pinpoint.inputs.AppQuietTimeArgs.builder
       builder.quietTime(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.pinpoint.inputs.AppState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /** Provides a Pinpoint Email Channel resource. */
   def EmailChannel(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.pinpoint.EmailChannelArgs.Builder]) =
@@ -291,3 +312,8 @@ object pinpoint:
         com.pulumi.aws.pinpoint.EmailTemplateArgs.Builder =
       def argsBuilder = com.pulumi.aws.pinpoint.inputs.EmailTemplateEmailTemplateArgs.builder
       builder.emailTemplates(args.map(_(argsBuilder).build)*)
+
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.pinpoint.EmailTemplateArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       

@@ -19,6 +19,10 @@ object fms:
       val argsBuilder = com.pulumi.aws.fms.inputs.ResourceSetTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.fms.ResourceSetArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /** Provides a resource to associate/disassociate an AWS Firewall Manager administrator account. This operation must be performed in the `us-east-1` region. */
   def AdminAccount(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.fms.AdminAccountArgs.Builder]) =
@@ -56,6 +60,10 @@ object fms:
       val argsBuilder = com.pulumi.aws.fms.inputs.PolicySecurityServicePolicyDataArgs.builder
       builder.securityServicePolicyData(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.fms.PolicyArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /**
    * Provides a resource to create an AWS Firewall Manager policy. You need to be using AWS organizations and have enabled the Firewall Manager administrator account.
    *  
@@ -99,6 +107,7 @@ object fms:
       val argsBuilder = com.pulumi.aws.fms.inputs.PolicySecurityServicePolicyDataPolicyOptionThirdPartyFirewallPolicyArgs.builder
       builder.thirdPartyFirewallPolicy(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.fms.inputs.PolicySecurityServicePolicyDataArgs.Builder)
     /**
      * @param policyOption Contains the Network Firewall firewall policy options to configure a centralized deployment model. See the `policyOption` block.
@@ -109,6 +118,7 @@ object fms:
       val argsBuilder = com.pulumi.aws.fms.inputs.PolicySecurityServicePolicyDataPolicyOptionArgs.builder
       builder.policyOption(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.fms.inputs.PolicySecurityServicePolicyDataPolicyOptionNetworkAclCommonPolicyNetworkAclEntrySetLastEntryArgs.Builder)
     /**
      * @param icmpTypeCodes A configuration block for ICMP protocol: The ICMP type and code. See the `icmpTypeCode` block.
@@ -128,6 +138,7 @@ object fms:
       def argsBuilder = com.pulumi.aws.fms.inputs.PolicySecurityServicePolicyDataPolicyOptionNetworkAclCommonPolicyNetworkAclEntrySetLastEntryPortRangeArgs.builder
       builder.portRanges(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.fms.inputs.PolicySecurityServicePolicyDataPolicyOptionNetworkAclCommonPolicyArgs.Builder)
     /**
      * @param networkAclEntrySet Defines NACL entries for Network ACL policy. See the `networkAclEntrySet` block.
@@ -138,6 +149,7 @@ object fms:
       val argsBuilder = com.pulumi.aws.fms.inputs.PolicySecurityServicePolicyDataPolicyOptionNetworkAclCommonPolicyNetworkAclEntrySetArgs.builder
       builder.networkAclEntrySet(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.fms.inputs.ResourceSetState.Builder)
     /**
      * @param resourceSets Details about the resource set to be created or updated. See `resourceSet` Attribute Reference below.
@@ -153,6 +165,10 @@ object fms:
       val argsBuilder = com.pulumi.aws.fms.inputs.ResourceSetTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.fms.inputs.ResourceSetState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.fms.inputs.PolicyState.Builder)
     /**
      * @param excludeMap A map of lists of accounts and OU&#39;s to exclude from the policy. See the `excludeMap` block.
@@ -181,6 +197,10 @@ object fms:
       val argsBuilder = com.pulumi.aws.fms.inputs.PolicySecurityServicePolicyDataArgs.builder
       builder.securityServicePolicyData(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.fms.inputs.PolicyState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.fms.inputs.PolicySecurityServicePolicyDataPolicyOptionNetworkAclCommonPolicyNetworkAclEntrySetArgs.Builder)
     /**
      * @param firstEntries The rules that you want to run first in the Firewall Manager managed network ACLs. Firewall manager creates entries with ID value between 1 and 5000. See the `firstEntry` block.
@@ -200,6 +220,7 @@ object fms:
       def argsBuilder = com.pulumi.aws.fms.inputs.PolicySecurityServicePolicyDataPolicyOptionNetworkAclCommonPolicyNetworkAclEntrySetLastEntryArgs.builder
       builder.lastEntries(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.fms.inputs.PolicySecurityServicePolicyDataPolicyOptionNetworkAclCommonPolicyNetworkAclEntrySetFirstEntryArgs.Builder)
     /**
      * @param icmpTypeCodes A configuration block for ICMP protocol: The ICMP type and code. See the `icmpTypeCode` block.
@@ -219,6 +240,7 @@ object fms:
       def argsBuilder = com.pulumi.aws.fms.inputs.PolicySecurityServicePolicyDataPolicyOptionNetworkAclCommonPolicyNetworkAclEntrySetFirstEntryPortRangeArgs.builder
       builder.portRanges(args.map(_(argsBuilder).build)*)
 
+                       
   /** Resource for managing an AWS FMS (Firewall Manager) Resource Set. */
   def ResourceSet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.fms.ResourceSetArgs.Builder])(using conf: KoPulumiConf) =

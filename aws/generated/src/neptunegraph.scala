@@ -19,6 +19,10 @@ object neptunegraph:
       val argsBuilder = com.pulumi.aws.neptunegraph.inputs.GraphVectorSearchConfigurationArgs.builder
       builder.vectorSearchConfiguration(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.neptunegraph.GraphArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /** The `aws.neptunegraph.Graph` resource creates an Amazon Analytics Graph. */
   def Graph(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.neptunegraph.GraphArgs.Builder])(using conf: KoPulumiConf) =
@@ -45,3 +49,8 @@ object neptunegraph:
         com.pulumi.aws.neptunegraph.inputs.GraphState.Builder =
       val argsBuilder = com.pulumi.aws.neptunegraph.inputs.GraphVectorSearchConfigurationArgs.builder
       builder.vectorSearchConfiguration(args(argsBuilder).build)
+
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.neptunegraph.inputs.GraphState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       

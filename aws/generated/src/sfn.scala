@@ -59,6 +59,10 @@ object sfn:
       val argsBuilder = com.pulumi.aws.sfn.inputs.StateMachineTracingConfigurationArgs.builder
       builder.tracingConfiguration(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.sfn.StateMachineArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.sfn.ActivityArgs.Builder)
     /**
      * @param encryptionConfiguration Defines what encryption configuration is used to encrypt data in the Activity. For more information see the section [Data at rest encyption](https://docs.aws.amazon.com/step-functions/latest/dg/encryption-at-rest.html) in the AWS Step Functions User Guide.
@@ -69,6 +73,10 @@ object sfn:
       val argsBuilder = com.pulumi.aws.sfn.inputs.ActivityEncryptionConfigurationArgs.builder
       builder.encryptionConfiguration(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.sfn.ActivityArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /** Provides a Step Function State Machine resource */
   def StateMachine(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.sfn.StateMachineArgs.Builder])(using conf: KoPulumiConf) =
@@ -155,6 +163,7 @@ object sfn:
       def argsBuilder = com.pulumi.aws.sfn.inputs.AliasRoutingConfigurationArgs.builder
       builder.routingConfigurations(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.sfn.inputs.ActivityState.Builder)
     /**
      * @param encryptionConfiguration Defines what encryption configuration is used to encrypt data in the Activity. For more information see the section [Data at rest encyption](https://docs.aws.amazon.com/step-functions/latest/dg/encryption-at-rest.html) in the AWS Step Functions User Guide.
@@ -165,6 +174,10 @@ object sfn:
       val argsBuilder = com.pulumi.aws.sfn.inputs.ActivityEncryptionConfigurationArgs.builder
       builder.encryptionConfiguration(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.sfn.inputs.ActivityState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.sfn.inputs.AliasState.Builder)
     /**
      * @param routingConfigurations The StateMachine alias&#39; route configuration settings. Fields documented below
@@ -175,6 +188,7 @@ object sfn:
       def argsBuilder = com.pulumi.aws.sfn.inputs.AliasRoutingConfigurationArgs.builder
       builder.routingConfigurations(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.sfn.inputs.StateMachineState.Builder)
     /**
      * @param encryptionConfiguration Defines what encryption configuration is used to encrypt data in the State Machine. For more information see [TBD] in the AWS Step Functions User Guide.
@@ -202,3 +216,8 @@ object sfn:
         com.pulumi.aws.sfn.inputs.StateMachineState.Builder =
       val argsBuilder = com.pulumi.aws.sfn.inputs.StateMachineTracingConfigurationArgs.builder
       builder.tracingConfiguration(args(argsBuilder).build)
+
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.sfn.inputs.StateMachineState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       

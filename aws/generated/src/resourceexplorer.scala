@@ -23,6 +23,10 @@ object resourceexplorer:
       def argsBuilder = com.pulumi.aws.resourceexplorer.inputs.ViewIncludedPropertyArgs.builder
       builder.includedProperties(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.resourceexplorer.ViewArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   type ResourceexplorerFunctions = com.pulumi.aws.resourceexplorer.ResourceexplorerFunctions
   object ResourceexplorerFunctions:
     // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
@@ -58,6 +62,10 @@ object resourceexplorer:
       val argsBuilder = com.pulumi.aws.resourceexplorer.inputs.IndexTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.resourceexplorer.IndexArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /** Provides a resource to manage a Resource Explorer view. */
   def View(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.resourceexplorer.ViewArgs.Builder])(using conf: KoPulumiConf) =
@@ -79,6 +87,10 @@ object resourceexplorer:
       val argsBuilder = com.pulumi.aws.resourceexplorer.inputs.IndexTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.resourceexplorer.inputs.IndexState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.resourceexplorer.inputs.ViewState.Builder)
     /**
      * @param filters Specifies which resources are included in the results of queries made using this view. See Filters below for more details.
@@ -97,3 +109,8 @@ object resourceexplorer:
         com.pulumi.aws.resourceexplorer.inputs.ViewState.Builder =
       def argsBuilder = com.pulumi.aws.resourceexplorer.inputs.ViewIncludedPropertyArgs.builder
       builder.includedProperties(args.map(_(argsBuilder).build)*)
+
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.resourceexplorer.inputs.ViewState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       

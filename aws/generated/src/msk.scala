@@ -23,6 +23,10 @@ object msk:
       val argsBuilder = com.pulumi.aws.msk.inputs.ReplicatorReplicationInfoListArgs.builder
       builder.replicationInfoList(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.msk.ReplicatorArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   type MskFunctions = com.pulumi.aws.msk.MskFunctions
   object MskFunctions:
     // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
@@ -163,6 +167,10 @@ object msk:
       def argsBuilder = com.pulumi.aws.msk.inputs.ServerlessClusterVpcConfigArgs.builder
       builder.vpcConfigs(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.msk.ServerlessClusterArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /** Associates a single SCRAM secret with a Managed Streaming for Kafka (MSK) cluster. */
   def SingleScramSecretAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.msk.SingleScramSecretAssociationArgs.Builder]) =
@@ -280,6 +288,10 @@ object msk:
       val argsBuilder = com.pulumi.aws.msk.inputs.ClusterRebalancingArgs.builder
       builder.rebalancing(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.msk.ClusterArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /** Manages an AWS Managed Streaming for Kafka Topic. */
   def Topic(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.msk.TopicArgs.Builder])(using conf: KoPulumiConf) =
@@ -321,6 +333,7 @@ object msk:
       val argsBuilder = com.pulumi.aws.msk.inputs.TopicTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
+                       
   /** Resource for managing an AWS Managed Streaming for Kafka Cluster Policy. */
   def ClusterPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.msk.ClusterPolicyArgs.Builder]) =
@@ -349,6 +362,7 @@ object msk:
       val argsBuilder = com.pulumi.aws.msk.inputs.ReplicatorReplicationInfoListTopicReplicationTopicNameConfigurationArgs.builder
       builder.topicNameConfiguration(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.msk.inputs.ClusterState.Builder)
     /**
      * @param brokerNodeGroupInfo Configuration block for the broker nodes of the Kafka cluster. See brokerNodeGroupInfo Argument Reference below.
@@ -413,6 +427,10 @@ object msk:
       val argsBuilder = com.pulumi.aws.msk.inputs.ClusterRebalancingArgs.builder
       builder.rebalancing(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.msk.inputs.ClusterState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.msk.inputs.ReplicatorReplicationInfoListArgs.Builder)
     /**
      * @param consumerGroupReplications Configuration relating to consumer group replication.
@@ -432,6 +450,7 @@ object msk:
       def argsBuilder = com.pulumi.aws.msk.inputs.ReplicatorReplicationInfoListTopicReplicationArgs.builder
       builder.topicReplications(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.msk.inputs.ServerlessClusterClientAuthenticationArgs.Builder)
     /**
      * @param sasl Details for client authentication using SASL. See below.
@@ -442,6 +461,7 @@ object msk:
       val argsBuilder = com.pulumi.aws.msk.inputs.ServerlessClusterClientAuthenticationSaslArgs.builder
       builder.sasl(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.msk.inputs.ReplicatorKafkaClusterArgs.Builder)
     /**
      * @param amazonMskCluster Details of an Amazon MSK cluster.
@@ -461,12 +481,14 @@ object msk:
       val argsBuilder = com.pulumi.aws.msk.inputs.ReplicatorKafkaClusterVpcConfigArgs.builder
       builder.vpcConfig(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.msk.inputs.TopicState.Builder)
     def timeouts(args: Endofunction[com.pulumi.aws.msk.inputs.TopicTimeoutsArgs.Builder]):
         com.pulumi.aws.msk.inputs.TopicState.Builder =
       val argsBuilder = com.pulumi.aws.msk.inputs.TopicTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.msk.inputs.ClusterBrokerNodeGroupInfoConnectivityInfoVpcConnectivityClientAuthenticationArgs.Builder)
     /**
      * @param sasl Configuration block for specifying SASL client authentication. See clientAuthentication sasl Argument Reference below.
@@ -477,6 +499,7 @@ object msk:
       val argsBuilder = com.pulumi.aws.msk.inputs.ClusterBrokerNodeGroupInfoConnectivityInfoVpcConnectivityClientAuthenticationSaslArgs.builder
       builder.sasl(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.msk.inputs.ClusterBrokerNodeGroupInfoStorageInfoArgs.Builder)
     /**
      * @param ebsStorageInfo A block that contains EBS volume information. See storageInfo ebs_storage_info Argument Reference below.
@@ -487,6 +510,7 @@ object msk:
       val argsBuilder = com.pulumi.aws.msk.inputs.ClusterBrokerNodeGroupInfoStorageInfoEbsStorageInfoArgs.builder
       builder.ebsStorageInfo(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.msk.inputs.ReplicatorState.Builder)
     /**
      * @param kafkaClusters A list of Kafka clusters which are targets of the replicator.
@@ -506,6 +530,10 @@ object msk:
       val argsBuilder = com.pulumi.aws.msk.inputs.ReplicatorReplicationInfoListArgs.builder
       builder.replicationInfoList(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.msk.inputs.ReplicatorState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.msk.inputs.ClusterLoggingInfoArgs.Builder)
     /**
      * @param brokerLogs Configuration block for Broker Logs settings for logging info. See loggingInfo broker_logs Argument Reference below.
@@ -516,6 +544,7 @@ object msk:
       val argsBuilder = com.pulumi.aws.msk.inputs.ClusterLoggingInfoBrokerLogsArgs.builder
       builder.brokerLogs(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.msk.inputs.ClusterOpenMonitoringPrometheusArgs.Builder)
     /**
      * @param jmxExporter Configuration block for JMX Exporter. See openMonitoring prometheus jmxExporter Argument Reference below.
@@ -535,6 +564,7 @@ object msk:
       val argsBuilder = com.pulumi.aws.msk.inputs.ClusterOpenMonitoringPrometheusNodeExporterArgs.builder
       builder.nodeExporter(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.msk.inputs.ClusterBrokerNodeGroupInfoConnectivityInfoArgs.Builder)
     /**
      * @param publicAccess Access control settings for brokers. See connectivityInfo public_access Argument Reference below.
@@ -554,6 +584,7 @@ object msk:
       val argsBuilder = com.pulumi.aws.msk.inputs.ClusterBrokerNodeGroupInfoConnectivityInfoVpcConnectivityArgs.builder
       builder.vpcConnectivity(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.msk.inputs.ClusterEncryptionInfoArgs.Builder)
     /**
      * @param encryptionInTransit Configuration block to specify encryption in transit. See encryptionInfo encryption_in_transit Argument Reference below.
@@ -564,6 +595,7 @@ object msk:
       val argsBuilder = com.pulumi.aws.msk.inputs.ClusterEncryptionInfoEncryptionInTransitArgs.builder
       builder.encryptionInTransit(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.msk.inputs.ClusterBrokerNodeGroupInfoStorageInfoEbsStorageInfoArgs.Builder)
     /**
      * @param provisionedThroughput A block that contains EBS volume provisioned throughput information. To provision storage throughput, you must choose broker type kafka.m5.4xlarge or larger. See ebsStorageInfo provisioned_throughput Argument Reference below.
@@ -574,6 +606,7 @@ object msk:
       val argsBuilder = com.pulumi.aws.msk.inputs.ClusterBrokerNodeGroupInfoStorageInfoEbsStorageInfoProvisionedThroughputArgs.builder
       builder.provisionedThroughput(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.msk.inputs.ClusterOpenMonitoringArgs.Builder)
     /**
      * @param prometheus Configuration block for Prometheus settings for open monitoring. See openMonitoring prometheus Argument Reference below.
@@ -584,6 +617,7 @@ object msk:
       val argsBuilder = com.pulumi.aws.msk.inputs.ClusterOpenMonitoringPrometheusArgs.builder
       builder.prometheus(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.msk.inputs.ClusterBrokerNodeGroupInfoConnectivityInfoVpcConnectivityArgs.Builder)
     /**
      * @param clientAuthentication Configuration block for specifying a client authentication. See clientAuthentication Argument Reference below.
@@ -594,6 +628,7 @@ object msk:
       val argsBuilder = com.pulumi.aws.msk.inputs.ClusterBrokerNodeGroupInfoConnectivityInfoVpcConnectivityClientAuthenticationArgs.builder
       builder.clientAuthentication(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.msk.inputs.ServerlessClusterClientAuthenticationSaslArgs.Builder)
     /**
      * @param iam Details for client authentication using IAM. See below.
@@ -604,6 +639,7 @@ object msk:
       val argsBuilder = com.pulumi.aws.msk.inputs.ServerlessClusterClientAuthenticationSaslIamArgs.builder
       builder.iam(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.msk.inputs.ClusterBrokerNodeGroupInfoArgs.Builder)
     /**
      * @param connectivityInfo Information about the cluster access configuration. See brokerNodeGroupInfo connectivity_info Argument Reference below. For security reasons, you can&#39;t turn on public access while creating an MSK cluster. However, you can update an existing cluster to make it publicly accessible. You can also create a new cluster and then update it to make it publicly accessible ([documentation](https://docs.aws.amazon.com/msk/latest/developerguide/public-access.html)).
@@ -623,6 +659,7 @@ object msk:
       val argsBuilder = com.pulumi.aws.msk.inputs.ClusterBrokerNodeGroupInfoStorageInfoArgs.builder
       builder.storageInfo(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.msk.inputs.ServerlessClusterState.Builder)
     /**
      * @param clientAuthentication Specifies client authentication information for the serverless cluster. See below.
@@ -642,6 +679,10 @@ object msk:
       def argsBuilder = com.pulumi.aws.msk.inputs.ServerlessClusterVpcConfigArgs.builder
       builder.vpcConfigs(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.msk.inputs.ServerlessClusterState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.msk.inputs.ClusterClientAuthenticationArgs.Builder)
     /**
      * @param sasl Configuration block for specifying SASL client authentication. See clientAuthentication sasl Argument Reference below.
@@ -661,6 +702,7 @@ object msk:
       val argsBuilder = com.pulumi.aws.msk.inputs.ClusterClientAuthenticationTlsArgs.builder
       builder.tls(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.msk.inputs.ClusterLoggingInfoBrokerLogsArgs.Builder)
     /**
      * @param cloudwatchLogs Configuration block for Cloudwatch Logs settings. See loggingInfo broker_logs cloudwatchLogs Argument Reference below.
@@ -688,3 +730,5 @@ object msk:
         com.pulumi.aws.msk.inputs.ClusterLoggingInfoBrokerLogsArgs.Builder =
       val argsBuilder = com.pulumi.aws.msk.inputs.ClusterLoggingInfoBrokerLogsS3Args.builder
       builder.s3(args(argsBuilder).build)
+
+                       

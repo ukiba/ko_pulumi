@@ -34,12 +34,17 @@ object ebs:
       val argsBuilder = com.pulumi.aws.ebs.inputs.VolumeCopyTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.ebs.VolumeCopyArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.ebs.FastSnapshotRestoreArgs.Builder)
     def timeouts(args: Endofunction[com.pulumi.aws.ebs.inputs.FastSnapshotRestoreTimeoutsArgs.Builder]):
         com.pulumi.aws.ebs.FastSnapshotRestoreArgs.Builder =
       val argsBuilder = com.pulumi.aws.ebs.inputs.FastSnapshotRestoreTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
+                       
   /**
    * Provides a resource to manage the default customer master key (CMK) that your AWS account uses to encrypt EBS volumes.
    *  
@@ -86,6 +91,10 @@ object ebs:
       val argsBuilder = com.pulumi.aws.ebs.inputs.SnapshotImportDiskContainerArgs.builder
       builder.diskContainer(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.ebs.SnapshotImportArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /**
    * Provides a resource to manage whether default EBS encryption is enabled for your AWS account in the current AWS region. To manage the default KMS key for the region, see the `aws.ebs.DefaultKmsKey` resource.
    *  
@@ -255,6 +264,7 @@ object ebs:
       val argsBuilder = com.pulumi.aws.ebs.inputs.SnapshotImportDiskContainerUserBucketArgs.builder
       builder.userBucket(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.ebs.inputs.GetSnapshotArgs.Builder)
     /**
      * @param filters One or more name/value pairs to filter off of. There are several valid keys, for a full reference, check out [describe-snapshots in the AWS CLI reference][1].
@@ -265,6 +275,10 @@ object ebs:
       def argsBuilder = com.pulumi.aws.ebs.inputs.GetSnapshotFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.ebs.inputs.GetSnapshotArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.ebs.inputs.GetVolumeArgs.Builder)
     /**
      * @param filters One or more name/value pairs to filter off of. There are
@@ -277,6 +291,10 @@ object ebs:
       def argsBuilder = com.pulumi.aws.ebs.inputs.GetVolumeFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.ebs.inputs.GetVolumeArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.ebs.inputs.SnapshotImportState.Builder)
     /**
      * @param clientData The client-specific data. Detailed below.
@@ -296,6 +314,10 @@ object ebs:
       val argsBuilder = com.pulumi.aws.ebs.inputs.SnapshotImportDiskContainerArgs.builder
       builder.diskContainer(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.ebs.inputs.SnapshotImportState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.ebs.inputs.GetEbsVolumesArgs.Builder)
     /**
      * @param filters Custom filter block as described below.
@@ -306,18 +328,27 @@ object ebs:
       def argsBuilder = com.pulumi.aws.ebs.inputs.GetEbsVolumesFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.ebs.inputs.GetEbsVolumesArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.ebs.inputs.VolumeCopyState.Builder)
     def timeouts(args: Endofunction[com.pulumi.aws.ebs.inputs.VolumeCopyTimeoutsArgs.Builder]):
         com.pulumi.aws.ebs.inputs.VolumeCopyState.Builder =
       val argsBuilder = com.pulumi.aws.ebs.inputs.VolumeCopyTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.ebs.inputs.VolumeCopyState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.ebs.inputs.FastSnapshotRestoreState.Builder)
     def timeouts(args: Endofunction[com.pulumi.aws.ebs.inputs.FastSnapshotRestoreTimeoutsArgs.Builder]):
         com.pulumi.aws.ebs.inputs.FastSnapshotRestoreState.Builder =
       val argsBuilder = com.pulumi.aws.ebs.inputs.FastSnapshotRestoreTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.ebs.inputs.GetSnapshotIdsArgs.Builder)
     /**
      * @param filters One or more name/value pairs to filter off of. There are several valid keys, for a full reference, check out [describe-volumes in the AWS CLI reference][1].
@@ -327,3 +358,5 @@ object ebs:
         com.pulumi.aws.ebs.inputs.GetSnapshotIdsArgs.Builder =
       def argsBuilder = com.pulumi.aws.ebs.inputs.GetSnapshotIdsFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
+
+                       

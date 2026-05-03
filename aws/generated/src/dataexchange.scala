@@ -21,6 +21,10 @@ object dataexchange:
       val argsBuilder = com.pulumi.aws.dataexchange.inputs.RevisionAssetsTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.dataexchange.RevisionAssetsArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /** Provides a resource to manage AWS Data Exchange DataSets. */
   def DataSet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.dataexchange.DataSetArgs.Builder])(using conf: KoPulumiConf) =
@@ -69,6 +73,7 @@ object dataexchange:
       val argsBuilder = com.pulumi.aws.dataexchange.inputs.EventActionEventArgs.builder
       builder.event(args(argsBuilder).build)
 
+                       
   /**
    * Resource for managing AWS Data Exchange Revision Assets.
    *  
@@ -105,12 +110,14 @@ object dataexchange:
       val argsBuilder = com.pulumi.aws.dataexchange.inputs.EventActionActionExportRevisionToS3Args.builder
       builder.exportRevisionToS3(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.dataexchange.inputs.RevisionAssetsAssetCreateS3DataAccessFromS3BucketAssetSourceArgs.Builder)
     def kmsKeysToGrants(args: Endofunction[com.pulumi.aws.dataexchange.inputs.RevisionAssetsAssetCreateS3DataAccessFromS3BucketAssetSourceKmsKeysToGrantArgs.Builder]*):
         com.pulumi.aws.dataexchange.inputs.RevisionAssetsAssetCreateS3DataAccessFromS3BucketAssetSourceArgs.Builder =
       def argsBuilder = com.pulumi.aws.dataexchange.inputs.RevisionAssetsAssetCreateS3DataAccessFromS3BucketAssetSourceKmsKeysToGrantArgs.builder
       builder.kmsKeysToGrants(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.dataexchange.inputs.EventActionState.Builder)
     /**
      * @param action Describes the action to take.
@@ -132,6 +139,7 @@ object dataexchange:
       val argsBuilder = com.pulumi.aws.dataexchange.inputs.EventActionEventArgs.builder
       builder.event(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.dataexchange.inputs.RevisionAssetsAssetArgs.Builder)
     /**
      * @param createS3DataAccessFromS3Bucket A block to create S3 data access from an S3 bucket. See Create S3 Data Access from S3 Bucket for more details.
@@ -160,6 +168,7 @@ object dataexchange:
       val argsBuilder = com.pulumi.aws.dataexchange.inputs.RevisionAssetsAssetImportAssetsFromSignedUrlArgs.builder
       builder.importAssetsFromSignedUrl(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.dataexchange.inputs.RevisionAssetsAssetCreateS3DataAccessFromS3BucketArgs.Builder)
     /**
      * @param assetSource A block specifying the source bucket for the asset. This block supports the following:
@@ -170,6 +179,7 @@ object dataexchange:
       val argsBuilder = com.pulumi.aws.dataexchange.inputs.RevisionAssetsAssetCreateS3DataAccessFromS3BucketAssetSourceArgs.builder
       builder.assetSource(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.dataexchange.inputs.RevisionAssetsAssetImportAssetsFromS3Args.Builder)
     /**
      * @param assetSource A block specifying the source bucket and key for the asset. This block supports the following:
@@ -180,6 +190,7 @@ object dataexchange:
       val argsBuilder = com.pulumi.aws.dataexchange.inputs.RevisionAssetsAssetImportAssetsFromS3AssetSourceArgs.builder
       builder.assetSource(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.dataexchange.inputs.EventActionActionExportRevisionToS3Args.Builder)
     /**
      * @param encryption Configures server-side encryption of the exported revision.
@@ -201,6 +212,7 @@ object dataexchange:
       val argsBuilder = com.pulumi.aws.dataexchange.inputs.EventActionActionExportRevisionToS3RevisionDestinationArgs.builder
       builder.revisionDestination(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.dataexchange.inputs.RevisionAssetsState.Builder)
     /**
      * @param assets A block to define the asset associated with the revision. See Asset for more details.
@@ -218,6 +230,10 @@ object dataexchange:
       val argsBuilder = com.pulumi.aws.dataexchange.inputs.RevisionAssetsTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.dataexchange.inputs.RevisionAssetsState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.dataexchange.inputs.EventActionEventArgs.Builder)
     /**
      * @param revisionPublished Configuration for a Revision Published event.
@@ -228,3 +244,5 @@ object dataexchange:
         com.pulumi.aws.dataexchange.inputs.EventActionEventArgs.Builder =
       val argsBuilder = com.pulumi.aws.dataexchange.inputs.EventActionEventRevisionPublishedArgs.builder
       builder.revisionPublished(args(argsBuilder).build)
+
+                       

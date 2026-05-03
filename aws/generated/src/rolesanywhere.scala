@@ -49,6 +49,10 @@ object rolesanywhere:
       val argsBuilder = com.pulumi.aws.rolesanywhere.inputs.TrustAnchorSourceArgs.builder
       builder.source(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.rolesanywhere.TrustAnchorArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.rolesanywhere.inputs.TrustAnchorSourceArgs.Builder)
     /**
      * @param sourceData The data denoting the source of trust, documented below
@@ -59,6 +63,7 @@ object rolesanywhere:
       val argsBuilder = com.pulumi.aws.rolesanywhere.inputs.TrustAnchorSourceSourceDataArgs.builder
       builder.sourceData(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.rolesanywhere.inputs.TrustAnchorState.Builder)
     def notificationSettings(args: Endofunction[com.pulumi.aws.rolesanywhere.inputs.TrustAnchorNotificationSettingArgs.Builder]*):
         com.pulumi.aws.rolesanywhere.inputs.TrustAnchorState.Builder =
@@ -73,3 +78,8 @@ object rolesanywhere:
         com.pulumi.aws.rolesanywhere.inputs.TrustAnchorState.Builder =
       val argsBuilder = com.pulumi.aws.rolesanywhere.inputs.TrustAnchorSourceArgs.builder
       builder.source(args(argsBuilder).build)
+
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.rolesanywhere.inputs.TrustAnchorState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       

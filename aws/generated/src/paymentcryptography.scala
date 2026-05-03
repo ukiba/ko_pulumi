@@ -30,6 +30,10 @@ object paymentcryptography:
       val argsBuilder = com.pulumi.aws.paymentcryptography.inputs.KeyTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.paymentcryptography.KeyArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /** Resource for managing an AWS Payment Cryptography Control Plane Key. */
   def Key(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.paymentcryptography.KeyArgs.Builder])(using conf: KoPulumiConf) =
@@ -52,6 +56,7 @@ object paymentcryptography:
       def argsBuilder = com.pulumi.aws.paymentcryptography.inputs.KeyKeyAttributeKeyModesOfUseArgs.builder
       builder.keyModesOfUses(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.paymentcryptography.inputs.KeyState.Builder)
     /**
      * @param keyAttributes Role of the key, the algorithm it supports, and the cryptographic operations allowed with the key.
@@ -68,3 +73,8 @@ object paymentcryptography:
         com.pulumi.aws.paymentcryptography.inputs.KeyState.Builder =
       val argsBuilder = com.pulumi.aws.paymentcryptography.inputs.KeyTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
+
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.paymentcryptography.inputs.KeyState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       

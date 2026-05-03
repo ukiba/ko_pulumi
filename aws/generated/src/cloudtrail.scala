@@ -14,6 +14,10 @@ object cloudtrail:
       def argsBuilder = com.pulumi.aws.cloudtrail.inputs.EventDataStoreAdvancedEventSelectorArgs.builder
       builder.advancedEventSelectors(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.cloudtrail.EventDataStoreArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   type CloudtrailFunctions = com.pulumi.aws.cloudtrail.CloudtrailFunctions
   object CloudtrailFunctions:
     // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
@@ -90,6 +94,10 @@ object cloudtrail:
       def argsBuilder = com.pulumi.aws.cloudtrail.inputs.TrailInsightSelectorArgs.builder
       builder.insightSelectors(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.cloudtrail.TrailArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /** Provides a resource to manage an AWS CloudTrail Delegated Administrator. */
   def OrganizationDelegatedAdminAccount(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.cloudtrail.OrganizationDelegatedAdminAccountArgs.Builder]) =
@@ -109,6 +117,10 @@ object cloudtrail:
       def argsBuilder = com.pulumi.aws.cloudtrail.inputs.EventDataStoreAdvancedEventSelectorArgs.builder
       builder.advancedEventSelectors(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.cloudtrail.inputs.EventDataStoreState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.cloudtrail.inputs.TrailAdvancedEventSelectorArgs.Builder)
     /**
      * @param fieldSelectors Specifies the selector statements in an advanced event selector. Fields documented below.
@@ -119,6 +131,7 @@ object cloudtrail:
       def argsBuilder = com.pulumi.aws.cloudtrail.inputs.TrailAdvancedEventSelectorFieldSelectorArgs.builder
       builder.fieldSelectors(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.cloudtrail.inputs.EventDataStoreAdvancedEventSelectorArgs.Builder)
     /**
      * @param fieldSelectors Specifies the selector statements in an advanced event selector. Fields documented below.
@@ -129,6 +142,7 @@ object cloudtrail:
       def argsBuilder = com.pulumi.aws.cloudtrail.inputs.EventDataStoreAdvancedEventSelectorFieldSelectorArgs.builder
       builder.fieldSelectors(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.cloudtrail.inputs.TrailEventSelectorArgs.Builder)
     /**
      * @param dataResources Configuration block for data events. See details below.
@@ -139,6 +153,7 @@ object cloudtrail:
       def argsBuilder = com.pulumi.aws.cloudtrail.inputs.TrailEventSelectorDataResourceArgs.builder
       builder.dataResources(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.cloudtrail.inputs.TrailState.Builder)
     /**
      * @param advancedEventSelectors Specifies an advanced event selector for enabling data event logging. Fields documented below. Conflicts with `eventSelector`.
@@ -167,6 +182,10 @@ object cloudtrail:
       def argsBuilder = com.pulumi.aws.cloudtrail.inputs.TrailInsightSelectorArgs.builder
       builder.insightSelectors(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.cloudtrail.inputs.TrailState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /**
    * Provides a CloudTrail Event Data Store.
    *  

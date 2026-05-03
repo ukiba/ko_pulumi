@@ -29,6 +29,10 @@ object appfabric:
       val argsBuilder = com.pulumi.aws.appfabric.inputs.AppAuthorizationTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.appfabric.AppAuthorizationArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /** Resource for managing an AWS AppFabric App Authorization. */
   def AppAuthorization(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.appfabric.AppAuthorizationArgs.Builder])(using conf: KoPulumiConf) =
@@ -74,6 +78,10 @@ object appfabric:
       val argsBuilder = com.pulumi.aws.appfabric.inputs.IngestionDestinationTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.appfabric.IngestionDestinationArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /** Resource for managing an AWS AppFabric Ingestion. */
   def Ingestion(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.appfabric.IngestionArgs.Builder])(using conf: KoPulumiConf) =
@@ -101,6 +109,7 @@ object appfabric:
       val argsBuilder = com.pulumi.aws.appfabric.inputs.AppAuthorizationConnectionTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
+                       
   /** Resource for managing an AWS AppFabric Ingestion Destination. */
   def IngestionDestination(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.appfabric.IngestionDestinationArgs.Builder])(using conf: KoPulumiConf) =
@@ -144,6 +153,7 @@ object appfabric:
       val argsBuilder = com.pulumi.aws.appfabric.inputs.AppAuthorizationCredentialOauth2CredentialArgs.builder
       builder.oauth2Credential(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.appfabric.inputs.IngestionDestinationProcessingConfigurationArgs.Builder)
     /**
      * @param auditLog Contains information about an audit log processing configuration.
@@ -154,6 +164,7 @@ object appfabric:
       val argsBuilder = com.pulumi.aws.appfabric.inputs.IngestionDestinationProcessingConfigurationAuditLogArgs.builder
       builder.auditLog(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.appfabric.inputs.IngestionDestinationDestinationConfigurationArgs.Builder)
     /**
      * @param auditLog Contains information about an audit log processing configuration.
@@ -164,6 +175,7 @@ object appfabric:
       val argsBuilder = com.pulumi.aws.appfabric.inputs.IngestionDestinationDestinationConfigurationAuditLogArgs.builder
       builder.auditLog(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.appfabric.inputs.IngestionDestinationState.Builder)
     /**
      * @param destinationConfiguration Contains information about the destination of ingested data.
@@ -188,6 +200,10 @@ object appfabric:
       val argsBuilder = com.pulumi.aws.appfabric.inputs.IngestionDestinationTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.appfabric.inputs.IngestionDestinationState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.appfabric.inputs.IngestionDestinationDestinationConfigurationAuditLogDestinationArgs.Builder)
     /**
      * @param firehoseStream Contains information about an Amazon Data Firehose delivery stream.
@@ -207,6 +223,7 @@ object appfabric:
       val argsBuilder = com.pulumi.aws.appfabric.inputs.IngestionDestinationDestinationConfigurationAuditLogDestinationS3BucketArgs.builder
       builder.s3Bucket(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.appfabric.inputs.AppAuthorizationConnectionState.Builder)
     /**
      * @param authRequest Contains OAuth2 authorization information.This is required if the app authorization for the request is configured with an OAuth2 (oauth2) authorization type.
@@ -231,6 +248,7 @@ object appfabric:
       val argsBuilder = com.pulumi.aws.appfabric.inputs.AppAuthorizationConnectionTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.appfabric.inputs.AppAuthorizationState.Builder)
     /**
      * @param credential Contains credentials for the application, such as an API key or OAuth2 client ID and secret.
@@ -256,6 +274,10 @@ object appfabric:
       val argsBuilder = com.pulumi.aws.appfabric.inputs.AppAuthorizationTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.appfabric.inputs.AppAuthorizationState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.appfabric.inputs.IngestionDestinationDestinationConfigurationAuditLogArgs.Builder)
     /**
      * @param destination Contains information about an audit log destination. Only one destination (Firehose Stream) or (S3 Bucket) can be specified.
@@ -265,3 +287,5 @@ object appfabric:
         com.pulumi.aws.appfabric.inputs.IngestionDestinationDestinationConfigurationAuditLogArgs.Builder =
       val argsBuilder = com.pulumi.aws.appfabric.inputs.IngestionDestinationDestinationConfigurationAuditLogDestinationArgs.builder
       builder.destination(args(argsBuilder).build)
+
+                       

@@ -23,6 +23,10 @@ object resourcegroups:
       val argsBuilder = com.pulumi.aws.resourcegroups.inputs.GroupResourceQueryArgs.builder
       builder.resourceQuery(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.resourcegroups.GroupArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /** Provides a Resource Group. */
   def Group(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.resourcegroups.GroupArgs.Builder])(using conf: KoPulumiConf) =
@@ -66,6 +70,10 @@ object resourcegroups:
       val argsBuilder = com.pulumi.aws.resourcegroups.inputs.GroupResourceQueryArgs.builder
       builder.resourceQuery(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.resourcegroups.inputs.GroupState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.resourcegroups.inputs.GroupConfigurationArgs.Builder)
     /**
      * @param parameters A collection of parameters for this group configuration item. See below for details.
@@ -75,3 +83,5 @@ object resourcegroups:
         com.pulumi.aws.resourcegroups.inputs.GroupConfigurationArgs.Builder =
       def argsBuilder = com.pulumi.aws.resourcegroups.inputs.GroupConfigurationParameterArgs.builder
       builder.parameters(args.map(_(argsBuilder).build)*)
+
+                       

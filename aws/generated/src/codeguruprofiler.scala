@@ -46,6 +46,10 @@ object codeguruprofiler:
       val argsBuilder = com.pulumi.aws.codeguruprofiler.inputs.ProfilingGroupAgentOrchestrationConfigArgs.builder
       builder.agentOrchestrationConfig(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.codeguruprofiler.ProfilingGroupArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.codeguruprofiler.inputs.ProfilingGroupState.Builder)
     /**
      * @param agentOrchestrationConfig Specifies whether profiling is enabled or disabled for the created profiling. See Agent Orchestration Config for more details.
@@ -55,3 +59,8 @@ object codeguruprofiler:
         com.pulumi.aws.codeguruprofiler.inputs.ProfilingGroupState.Builder =
       val argsBuilder = com.pulumi.aws.codeguruprofiler.inputs.ProfilingGroupAgentOrchestrationConfigArgs.builder
       builder.agentOrchestrationConfig(args(argsBuilder).build)
+
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.codeguruprofiler.inputs.ProfilingGroupState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       

@@ -118,6 +118,10 @@ object ec2clientvpn:
       val argsBuilder = com.pulumi.aws.ec2clientvpn.inputs.EndpointConnectionLogOptionsArgs.builder
       builder.connectionLogOptions(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.ec2clientvpn.EndpointArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.ec2clientvpn.inputs.EndpointState.Builder)
     /**
      * @param authenticationOptions Information about the authentication method to be used to authenticate clients.
@@ -164,6 +168,10 @@ object ec2clientvpn:
       val argsBuilder = com.pulumi.aws.ec2clientvpn.inputs.EndpointConnectionLogOptionsArgs.builder
       builder.connectionLogOptions(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.ec2clientvpn.inputs.EndpointState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.ec2clientvpn.inputs.GetEndpointArgs.Builder)
     /**
      * @param filters One or more configuration blocks containing name-values filters. Detailed below.
@@ -173,3 +181,8 @@ object ec2clientvpn:
         com.pulumi.aws.ec2clientvpn.inputs.GetEndpointArgs.Builder =
       def argsBuilder = com.pulumi.aws.ec2clientvpn.inputs.GetEndpointFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
+
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.ec2clientvpn.inputs.GetEndpointArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       

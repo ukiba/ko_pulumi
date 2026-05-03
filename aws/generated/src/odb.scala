@@ -330,6 +330,10 @@ object odb:
       val argsBuilder = com.pulumi.aws.odb.inputs.CloudAutonomousVmClusterTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.odb.CloudAutonomousVmClusterArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.odb.CloudVmClusterArgs.Builder)
     /**
      * @param dataCollectionOptions The set of preferences for the various diagnostic collection options for the VM cluster.
@@ -345,6 +349,10 @@ object odb:
       val argsBuilder = com.pulumi.aws.odb.inputs.CloudVmClusterTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.odb.CloudVmClusterArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /** Resource for managing odb Network resource in AWS for Oracle Database{@literal @}AWS. */
   def Network(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.odb.NetworkArgs.Builder])(using conf: KoPulumiConf) =
@@ -441,24 +449,40 @@ object odb:
       val argsBuilder = com.pulumi.aws.odb.inputs.CloudExadataInfrastructureTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.odb.CloudExadataInfrastructureArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.odb.NetworkPeeringConnectionArgs.Builder)
     def timeouts(args: Endofunction[com.pulumi.aws.odb.inputs.NetworkPeeringConnectionTimeoutsArgs.Builder]):
         com.pulumi.aws.odb.NetworkPeeringConnectionArgs.Builder =
       val argsBuilder = com.pulumi.aws.odb.inputs.NetworkPeeringConnectionTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.odb.NetworkPeeringConnectionArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.odb.NetworkArgs.Builder)
     def timeouts(args: Endofunction[com.pulumi.aws.odb.inputs.NetworkTimeoutsArgs.Builder]):
         com.pulumi.aws.odb.NetworkArgs.Builder =
       val argsBuilder = com.pulumi.aws.odb.inputs.NetworkTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.odb.NetworkArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.odb.inputs.NetworkPeeringConnectionState.Builder)
     def timeouts(args: Endofunction[com.pulumi.aws.odb.inputs.NetworkPeeringConnectionTimeoutsArgs.Builder]):
         com.pulumi.aws.odb.inputs.NetworkPeeringConnectionState.Builder =
       val argsBuilder = com.pulumi.aws.odb.inputs.NetworkPeeringConnectionTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.odb.inputs.NetworkPeeringConnectionState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.odb.inputs.CloudExadataInfrastructureMaintenanceWindowArgs.Builder)
     /**
      * @param daysOfWeeks The days of the week when maintenance can be performed.
@@ -478,6 +502,7 @@ object odb:
       def argsBuilder = com.pulumi.aws.odb.inputs.CloudExadataInfrastructureMaintenanceWindowMonthArgs.builder
       builder.months(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.odb.inputs.CloudExadataInfrastructureState.Builder)
     /**
      * @param customerContactsToSendToOcis The email addresses of contacts to receive notification from Oracle about maintenance updates for the Exadata infrastructure. Changing this will force terraform to create new resource.
@@ -502,6 +527,10 @@ object odb:
       val argsBuilder = com.pulumi.aws.odb.inputs.CloudExadataInfrastructureTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.odb.inputs.CloudExadataInfrastructureState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.odb.inputs.CloudAutonomousVmClusterState.Builder)
     /**
      * @param maintenanceWindow The maintenance window of the Autonomous VM cluster. Changing this will force terraform to create new resource.
@@ -519,6 +548,10 @@ object odb:
       val argsBuilder = com.pulumi.aws.odb.inputs.CloudAutonomousVmClusterTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.odb.inputs.CloudAutonomousVmClusterState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.odb.inputs.CloudAutonomousVmClusterMaintenanceWindowArgs.Builder)
     /**
      * @param daysOfWeeks The days of the week when maintenance can be performed. Changing this will force terraform to create new resource.
@@ -538,6 +571,7 @@ object odb:
       def argsBuilder = com.pulumi.aws.odb.inputs.CloudAutonomousVmClusterMaintenanceWindowMonthArgs.builder
       builder.months(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.odb.inputs.CloudVmClusterState.Builder)
     /**
      * @param dataCollectionOptions The set of preferences for the various diagnostic collection options for the VM cluster.
@@ -562,6 +596,10 @@ object odb:
       val argsBuilder = com.pulumi.aws.odb.inputs.CloudVmClusterTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.odb.inputs.CloudVmClusterState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.odb.inputs.NetworkState.Builder)
     /**
      * @param managedServices The managed services configuration for the ODB network.
@@ -586,12 +624,17 @@ object odb:
       val argsBuilder = com.pulumi.aws.odb.inputs.NetworkTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.odb.inputs.NetworkState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.odb.inputs.CloudVmClusterIormConfigCacheArgs.Builder)
     def dbPlans(args: Endofunction[com.pulumi.aws.odb.inputs.CloudVmClusterIormConfigCacheDbPlanArgs.Builder]*):
         com.pulumi.aws.odb.inputs.CloudVmClusterIormConfigCacheArgs.Builder =
       def argsBuilder = com.pulumi.aws.odb.inputs.CloudVmClusterIormConfigCacheDbPlanArgs.builder
       builder.dbPlans(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.odb.inputs.NetworkManagedServiceArgs.Builder)
     /**
      * @param crossRegionS3RestoreSourcesAccesses The list of regions enabled for cross-region restore in the ODB network.
@@ -649,3 +692,5 @@ object odb:
         com.pulumi.aws.odb.inputs.NetworkManagedServiceArgs.Builder =
       def argsBuilder = com.pulumi.aws.odb.inputs.NetworkManagedServiceZeroEtlAccessArgs.builder
       builder.zeroEtlAccesses(args.map(_(argsBuilder).build)*)
+
+                       

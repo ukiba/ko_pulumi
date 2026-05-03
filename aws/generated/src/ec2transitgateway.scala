@@ -10,6 +10,10 @@ object ec2transitgateway:
       val argsBuilder = com.pulumi.aws.ec2transitgateway.inputs.MeteringPolicyTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.ec2transitgateway.MeteringPolicyArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /** Manages an EC2 Transit Gateway Policy Table. */
   def PolicyTable(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ec2transitgateway.PolicyTableArgs.Builder])(using conf: KoPulumiConf) =
@@ -267,6 +271,7 @@ object ec2transitgateway:
       val argsBuilder = com.pulumi.aws.ec2transitgateway.inputs.DefaultRouteTableAssociationTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
+                       
   /** Manages an EC2 Transit Gateway Policy Table association. */
   def PolicyTableAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ec2transitgateway.PolicyTableAssociationArgs.Builder]) =
@@ -399,6 +404,7 @@ object ec2transitgateway:
       val argsBuilder = com.pulumi.aws.ec2transitgateway.inputs.DefaultRouteTablePropagationTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
+                       
   /** Manages an EC2 Instance Connect Endpoint. */
   def InstanceConnectEndpoint(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ec2transitgateway.InstanceConnectEndpointArgs.Builder])(using conf: KoPulumiConf) =
@@ -450,6 +456,10 @@ object ec2transitgateway:
       val argsBuilder = com.pulumi.aws.ec2transitgateway.inputs.PeeringAttachmentOptionsArgs.builder
       builder.options(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.ec2transitgateway.PeeringAttachmentArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /** Manages the accepter&#39;s side of an EC2 Transit Gateway Peering Attachment. */
   def PeeringAttachmentAccepter(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ec2transitgateway.PeeringAttachmentAccepterArgs.Builder])(using conf: KoPulumiConf) =
@@ -483,6 +493,10 @@ object ec2transitgateway:
       val argsBuilder = com.pulumi.aws.ec2transitgateway.inputs.InstanceConnectEndpointTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.ec2transitgateway.InstanceConnectEndpointArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /** Manages an EC2 Transit Gateway Route Table. */
   def RouteTable(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ec2transitgateway.RouteTableArgs.Builder])(using conf: KoPulumiConf) =
@@ -501,6 +515,7 @@ object ec2transitgateway:
       val argsBuilder = com.pulumi.aws.ec2transitgateway.inputs.MeteringPolicyEntryTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
+                       
   /** Manages an EC2 Transit Gateway Connect. */
   def Connect(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ec2transitgateway.ConnectArgs.Builder])(using conf: KoPulumiConf) =
@@ -535,6 +550,7 @@ object ec2transitgateway:
       def argsBuilder = com.pulumi.aws.ec2transitgateway.inputs.GetVpcAttachmentsFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.ec2transitgateway.inputs.GetPeeringAttachmentsArgs.Builder)
     /**
      * @param filters One or more configuration blocks containing name-values filters. Detailed below.
@@ -545,6 +561,7 @@ object ec2transitgateway:
       def argsBuilder = com.pulumi.aws.ec2transitgateway.inputs.GetPeeringAttachmentsFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.ec2transitgateway.inputs.GetRouteTableRoutesArgs.Builder)
     /**
      * @param filters Custom filter block as described below.
@@ -555,24 +572,31 @@ object ec2transitgateway:
       def argsBuilder = com.pulumi.aws.ec2transitgateway.inputs.GetRouteTableRoutesFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.ec2transitgateway.inputs.MeteringPolicyEntryState.Builder)
     def timeouts(args: Endofunction[com.pulumi.aws.ec2transitgateway.inputs.MeteringPolicyEntryTimeoutsArgs.Builder]):
         com.pulumi.aws.ec2transitgateway.inputs.MeteringPolicyEntryState.Builder =
       val argsBuilder = com.pulumi.aws.ec2transitgateway.inputs.MeteringPolicyEntryTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.ec2transitgateway.inputs.DefaultRouteTablePropagationState.Builder)
     def timeouts(args: Endofunction[com.pulumi.aws.ec2transitgateway.inputs.DefaultRouteTablePropagationTimeoutsArgs.Builder]):
         com.pulumi.aws.ec2transitgateway.inputs.DefaultRouteTablePropagationState.Builder =
       val argsBuilder = com.pulumi.aws.ec2transitgateway.inputs.DefaultRouteTablePropagationTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.ec2transitgateway.inputs.MeteringPolicyState.Builder)
     def timeouts(args: Endofunction[com.pulumi.aws.ec2transitgateway.inputs.MeteringPolicyTimeoutsArgs.Builder]):
         com.pulumi.aws.ec2transitgateway.inputs.MeteringPolicyState.Builder =
       val argsBuilder = com.pulumi.aws.ec2transitgateway.inputs.MeteringPolicyTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.ec2transitgateway.inputs.MeteringPolicyState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.ec2transitgateway.inputs.GetMulticastDomainArgs.Builder)
     /**
      * @param filters One or more configuration blocks containing name-values filters. Detailed below.
@@ -583,6 +607,10 @@ object ec2transitgateway:
       def argsBuilder = com.pulumi.aws.ec2transitgateway.inputs.GetMulticastDomainFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.ec2transitgateway.inputs.GetMulticastDomainArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.ec2transitgateway.inputs.GetDirectConnectGatewayAttachmentArgs.Builder)
     /**
      * @param filters Configuration block(s) for filtering. Detailed below.
@@ -593,6 +621,10 @@ object ec2transitgateway:
       def argsBuilder = com.pulumi.aws.ec2transitgateway.inputs.GetDirectConnectGatewayAttachmentFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.ec2transitgateway.inputs.GetDirectConnectGatewayAttachmentArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.ec2transitgateway.inputs.PeeringAttachmentState.Builder)
     /**
      * @param options Describes whether dynamic routing is enabled or disabled for the transit gateway peering request. See options below for more details!
@@ -603,6 +635,10 @@ object ec2transitgateway:
       val argsBuilder = com.pulumi.aws.ec2transitgateway.inputs.PeeringAttachmentOptionsArgs.builder
       builder.options(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.ec2transitgateway.inputs.PeeringAttachmentState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.ec2transitgateway.inputs.GetVpcAttachmentArgs.Builder)
     /**
      * @param filters One or more configuration blocks containing name-values filters. Detailed below.
@@ -613,6 +649,10 @@ object ec2transitgateway:
       def argsBuilder = com.pulumi.aws.ec2transitgateway.inputs.GetVpcAttachmentFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.ec2transitgateway.inputs.GetVpcAttachmentArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.ec2transitgateway.inputs.GetVpnAttachmentArgs.Builder)
     /**
      * @param filters Configuration block(s) for filtering. Detailed below.
@@ -623,6 +663,10 @@ object ec2transitgateway:
       def argsBuilder = com.pulumi.aws.ec2transitgateway.inputs.GetVpnAttachmentFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.ec2transitgateway.inputs.GetVpnAttachmentArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.ec2transitgateway.inputs.GetConnectPeerArgs.Builder)
     /**
      * @param filters One or more configuration blocks containing name-values filters. Detailed below.
@@ -633,6 +677,10 @@ object ec2transitgateway:
       def argsBuilder = com.pulumi.aws.ec2transitgateway.inputs.GetConnectPeerFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.ec2transitgateway.inputs.GetConnectPeerArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.ec2transitgateway.inputs.GetPeeringAttachmentArgs.Builder)
     /**
      * @param filters One or more configuration blocks containing name-values filters. Detailed below.
@@ -643,12 +691,17 @@ object ec2transitgateway:
       def argsBuilder = com.pulumi.aws.ec2transitgateway.inputs.GetPeeringAttachmentFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.ec2transitgateway.inputs.GetPeeringAttachmentArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.ec2transitgateway.inputs.DefaultRouteTableAssociationState.Builder)
     def timeouts(args: Endofunction[com.pulumi.aws.ec2transitgateway.inputs.DefaultRouteTableAssociationTimeoutsArgs.Builder]):
         com.pulumi.aws.ec2transitgateway.inputs.DefaultRouteTableAssociationState.Builder =
       val argsBuilder = com.pulumi.aws.ec2transitgateway.inputs.DefaultRouteTableAssociationTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.ec2transitgateway.inputs.GetAttachmentsArgs.Builder)
     /**
      * @param filters One or more configuration blocks containing name-values filters. Detailed below.
@@ -659,6 +712,10 @@ object ec2transitgateway:
       def argsBuilder = com.pulumi.aws.ec2transitgateway.inputs.GetAttachmentsFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.ec2transitgateway.inputs.GetAttachmentsArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.ec2transitgateway.inputs.GetRouteTableAssociationsArgs.Builder)
     /**
      * @param filters Custom filter block as described below.
@@ -672,6 +729,7 @@ object ec2transitgateway:
       def argsBuilder = com.pulumi.aws.ec2transitgateway.inputs.GetRouteTableAssociationsFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.ec2transitgateway.inputs.GetAttachmentArgs.Builder)
     /**
      * @param filters One or more configuration blocks containing name-values filters. Detailed below.
@@ -682,6 +740,10 @@ object ec2transitgateway:
       def argsBuilder = com.pulumi.aws.ec2transitgateway.inputs.GetAttachmentFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.ec2transitgateway.inputs.GetAttachmentArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.ec2transitgateway.inputs.GetConnectArgs.Builder)
     /**
      * @param filters One or more configuration blocks containing name-values filters. Detailed below.
@@ -692,12 +754,20 @@ object ec2transitgateway:
       def argsBuilder = com.pulumi.aws.ec2transitgateway.inputs.GetConnectFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.ec2transitgateway.inputs.GetConnectArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.ec2transitgateway.inputs.InstanceConnectEndpointState.Builder)
     def timeouts(args: Endofunction[com.pulumi.aws.ec2transitgateway.inputs.InstanceConnectEndpointTimeoutsArgs.Builder]):
         com.pulumi.aws.ec2transitgateway.inputs.InstanceConnectEndpointState.Builder =
       val argsBuilder = com.pulumi.aws.ec2transitgateway.inputs.InstanceConnectEndpointTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.ec2transitgateway.inputs.InstanceConnectEndpointState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.ec2transitgateway.inputs.GetRouteTablePropagationsArgs.Builder)
     /**
      * @param filters Custom filter block as described below.
@@ -711,6 +781,7 @@ object ec2transitgateway:
       def argsBuilder = com.pulumi.aws.ec2transitgateway.inputs.GetRouteTablePropagationsFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.ec2transitgateway.inputs.GetTransitGatewayArgs.Builder)
     /**
      * @param filters One or more configuration blocks containing name-values filters. Detailed below.
@@ -721,6 +792,10 @@ object ec2transitgateway:
       def argsBuilder = com.pulumi.aws.ec2transitgateway.inputs.GetTransitGatewayFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.ec2transitgateway.inputs.GetTransitGatewayArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.ec2transitgateway.inputs.GetRouteTableArgs.Builder)
     /**
      * @param filters One or more configuration blocks containing name-values filters. Detailed below.
@@ -731,6 +806,10 @@ object ec2transitgateway:
       def argsBuilder = com.pulumi.aws.ec2transitgateway.inputs.GetRouteTableFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.ec2transitgateway.inputs.GetRouteTableArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /**
    * Provides an EC2 instance state resource. This allows managing an instance power state.
    *  

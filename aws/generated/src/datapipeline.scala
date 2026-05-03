@@ -87,6 +87,7 @@ object datapipeline:
       def argsBuilder = com.pulumi.aws.datapipeline.inputs.PipelineDefinitionPipelineObjectArgs.builder
       builder.pipelineObjects(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.datapipeline.inputs.GetPipelineDefinitionArgs.Builder)
     /**
      * @param parameterValues Parameter values used in the pipeline definition. See below
@@ -97,6 +98,7 @@ object datapipeline:
       def argsBuilder = com.pulumi.aws.datapipeline.inputs.GetPipelineDefinitionParameterValueArgs.builder
       builder.parameterValues(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.datapipeline.inputs.PipelineDefinitionPipelineObjectArgs.Builder)
     /**
      * @param fields Configuration block for Key-value pairs that define the properties of the object. See below
@@ -107,6 +109,7 @@ object datapipeline:
       def argsBuilder = com.pulumi.aws.datapipeline.inputs.PipelineDefinitionPipelineObjectFieldArgs.builder
       builder.fields(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.datapipeline.inputs.PipelineDefinitionParameterObjectArgs.Builder)
     /**
      * @param attributes Configuration block for attributes of the parameter object. See below
@@ -117,6 +120,7 @@ object datapipeline:
       def argsBuilder = com.pulumi.aws.datapipeline.inputs.PipelineDefinitionParameterObjectAttributeArgs.builder
       builder.attributes(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.datapipeline.inputs.PipelineDefinitionState.Builder)
     /**
      * @param parameterObjects Configuration block for the parameter objects used in the pipeline definition. See below
@@ -146,3 +150,5 @@ object datapipeline:
         com.pulumi.aws.datapipeline.inputs.PipelineDefinitionState.Builder =
       def argsBuilder = com.pulumi.aws.datapipeline.inputs.PipelineDefinitionPipelineObjectArgs.builder
       builder.pipelineObjects(args.map(_(argsBuilder).build)*)
+
+                       

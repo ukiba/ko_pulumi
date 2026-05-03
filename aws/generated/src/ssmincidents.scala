@@ -32,6 +32,10 @@ object ssmincidents:
       val argsBuilder = com.pulumi.aws.ssmincidents.inputs.ResponsePlanIntegrationArgs.builder
       builder.integration(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.ssmincidents.ResponsePlanArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   type SsmincidentsFunctions = com.pulumi.aws.ssmincidents.SsmincidentsFunctions
   object SsmincidentsFunctions:
     // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
@@ -105,6 +109,10 @@ object ssmincidents:
       def argsBuilder = com.pulumi.aws.ssmincidents.inputs.ReplicationSetRegionArgs.builder
       builder.regions(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.ssmincidents.ReplicationSetArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /**
    * Provides a resource to manage response plans in AWS Systems Manager Incident Manager.
    *  
@@ -134,6 +142,7 @@ object ssmincidents:
       def argsBuilder = com.pulumi.aws.ssmincidents.inputs.ResponsePlanActionSsmAutomationParameterArgs.builder
       builder.parameters(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.ssmincidents.inputs.ResponsePlanIntegrationArgs.Builder)
     /**
      * @param pagerduties Details about the PagerDuty configuration for a response plan. The following values are supported:
@@ -144,6 +153,7 @@ object ssmincidents:
       def argsBuilder = com.pulumi.aws.ssmincidents.inputs.ResponsePlanIntegrationPagerdutyArgs.builder
       builder.pagerduties(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.ssmincidents.inputs.ReplicationSetState.Builder)
     /**
      * @param region The replication set&#39;s Regions. Use `regions` instead.
@@ -164,6 +174,10 @@ object ssmincidents:
       def argsBuilder = com.pulumi.aws.ssmincidents.inputs.ReplicationSetRegionArgs.builder
       builder.regions(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.ssmincidents.inputs.ReplicationSetState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.ssmincidents.inputs.ResponsePlanState.Builder)
     /**
      * @param action The actions that the response plan starts at the beginning of an incident.
@@ -192,6 +206,10 @@ object ssmincidents:
       val argsBuilder = com.pulumi.aws.ssmincidents.inputs.ResponsePlanIntegrationArgs.builder
       builder.integration(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.ssmincidents.inputs.ResponsePlanState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.ssmincidents.inputs.ResponsePlanActionArgs.Builder)
     /**
      * @param ssmAutomations The Systems Manager automation document to start as the runbook at the beginning of the incident. The following values are supported:
@@ -202,6 +220,7 @@ object ssmincidents:
       def argsBuilder = com.pulumi.aws.ssmincidents.inputs.ResponsePlanActionSsmAutomationArgs.builder
       builder.ssmAutomations(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.ssmincidents.inputs.ResponsePlanIncidentTemplateArgs.Builder)
     /**
      * @param notificationTargets The Amazon Simple Notification Service (Amazon SNS) targets that this incident notifies when it is updated. The `notificationTarget` configuration block supports the following argument:
@@ -211,3 +230,5 @@ object ssmincidents:
         com.pulumi.aws.ssmincidents.inputs.ResponsePlanIncidentTemplateArgs.Builder =
       def argsBuilder = com.pulumi.aws.ssmincidents.inputs.ResponsePlanIncidentTemplateNotificationTargetArgs.builder
       builder.notificationTargets(args.map(_(argsBuilder).build)*)
+
+                       

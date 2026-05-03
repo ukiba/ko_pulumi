@@ -19,12 +19,20 @@ object codeconnections:
       val argsBuilder = com.pulumi.aws.codeconnections.inputs.HostVpcConfigurationArgs.builder
       builder.vpcConfiguration(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.codeconnections.HostArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.codeconnections.ConnectionArgs.Builder)
     def timeouts(args: Endofunction[com.pulumi.aws.codeconnections.inputs.ConnectionTimeoutsArgs.Builder]):
         com.pulumi.aws.codeconnections.ConnectionArgs.Builder =
       val argsBuilder = com.pulumi.aws.codeconnections.inputs.ConnectionTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.codeconnections.ConnectionArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /**
    * Resource for managing an AWS CodeConnections Connection.
    *  
@@ -78,8 +86,17 @@ object codeconnections:
       val argsBuilder = com.pulumi.aws.codeconnections.inputs.HostVpcConfigurationArgs.builder
       builder.vpcConfiguration(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.codeconnections.inputs.HostState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.codeconnections.inputs.ConnectionState.Builder)
     def timeouts(args: Endofunction[com.pulumi.aws.codeconnections.inputs.ConnectionTimeoutsArgs.Builder]):
         com.pulumi.aws.codeconnections.inputs.ConnectionState.Builder =
       val argsBuilder = com.pulumi.aws.codeconnections.inputs.ConnectionTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
+
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.codeconnections.inputs.ConnectionState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       

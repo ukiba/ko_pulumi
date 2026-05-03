@@ -93,6 +93,7 @@ object athena:
       val argsBuilder = com.pulumi.aws.athena.inputs.DatabaseEncryptionConfigurationArgs.builder
       builder.encryptionConfiguration(args(argsBuilder).build)
 
+                       
   /**
    * Provides an Athena data catalog.
    *  
@@ -141,6 +142,10 @@ object athena:
       val argsBuilder = com.pulumi.aws.athena.inputs.WorkgroupConfigurationArgs.builder
       builder.configuration(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.athena.WorkgroupArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.athena.inputs.WorkgroupConfigurationMonitoringConfigurationArgs.Builder)
     /**
      * @param cloudWatchLoggingConfiguration Configuration block for delivering logs to Amazon CloudWatch log groups. See CloudWatch Logging Configuration below.
@@ -169,6 +174,7 @@ object athena:
       val argsBuilder = com.pulumi.aws.athena.inputs.WorkgroupConfigurationMonitoringConfigurationS3LoggingConfigurationArgs.builder
       builder.s3LoggingConfiguration(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.athena.inputs.WorkgroupConfigurationResultConfigurationArgs.Builder)
     /**
      * @param aclConfiguration That an Amazon S3 canned ACL should be set to control ownership of stored query results. See ACL Configuration below.
@@ -188,6 +194,7 @@ object athena:
       val argsBuilder = com.pulumi.aws.athena.inputs.WorkgroupConfigurationResultConfigurationEncryptionConfigurationArgs.builder
       builder.encryptionConfiguration(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.athena.inputs.DatabaseState.Builder)
     /**
      * @param aclConfiguration That an Amazon S3 canned ACL should be set to control ownership of stored query results. See ACL Configuration below.
@@ -207,6 +214,7 @@ object athena:
       val argsBuilder = com.pulumi.aws.athena.inputs.DatabaseEncryptionConfigurationArgs.builder
       builder.encryptionConfiguration(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.athena.inputs.WorkgroupConfigurationArgs.Builder)
     /**
      * @param customerContentEncryptionConfiguration Configuration block to specify the KMS key that is used to encrypt the user&#39;s data stores in Athena. This setting applies to the PySpark engine for Athena notebooks. See Customer Content Encryption Configuration below.
@@ -271,12 +279,17 @@ object athena:
       val argsBuilder = com.pulumi.aws.athena.inputs.WorkgroupConfigurationResultConfigurationArgs.builder
       builder.resultConfiguration(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.athena.inputs.CapacityReservationState.Builder)
     def timeouts(args: Endofunction[com.pulumi.aws.athena.inputs.CapacityReservationTimeoutsArgs.Builder]):
         com.pulumi.aws.athena.inputs.CapacityReservationState.Builder =
       val argsBuilder = com.pulumi.aws.athena.inputs.CapacityReservationTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.athena.inputs.CapacityReservationState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.athena.inputs.WorkgroupState.Builder)
     /**
      * @param configuration Configuration block with various settings for the workgroup. Documented below.
@@ -287,6 +300,10 @@ object athena:
       val argsBuilder = com.pulumi.aws.athena.inputs.WorkgroupConfigurationArgs.builder
       builder.configuration(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.athena.inputs.WorkgroupState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.athena.inputs.WorkgroupConfigurationManagedQueryResultsConfigurationArgs.Builder)
     /**
      * @param encryptionConfiguration Configuration block for the encryption configuration. See Managed Query Results Encryption Configuration below.
@@ -297,6 +314,7 @@ object athena:
       val argsBuilder = com.pulumi.aws.athena.inputs.WorkgroupConfigurationManagedQueryResultsConfigurationEncryptionConfigurationArgs.builder
       builder.encryptionConfiguration(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.athena.inputs.WorkgroupConfigurationMonitoringConfigurationCloudWatchLoggingConfigurationArgs.Builder)
     /**
      * @param logTypes Repeatable block defining log types to be delivered to CloudWatch.
@@ -307,8 +325,14 @@ object athena:
       def argsBuilder = com.pulumi.aws.athena.inputs.WorkgroupConfigurationMonitoringConfigurationCloudWatchLoggingConfigurationLogTypeArgs.builder
       builder.logTypes(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.athena.CapacityReservationArgs.Builder)
     def timeouts(args: Endofunction[com.pulumi.aws.athena.inputs.CapacityReservationTimeoutsArgs.Builder]):
         com.pulumi.aws.athena.CapacityReservationArgs.Builder =
       val argsBuilder = com.pulumi.aws.athena.inputs.CapacityReservationTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
+
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.athena.CapacityReservationArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       

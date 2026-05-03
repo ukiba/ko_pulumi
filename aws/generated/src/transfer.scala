@@ -94,6 +94,10 @@ object transfer:
       val argsBuilder = com.pulumi.aws.transfer.inputs.UserPosixProfileArgs.builder
       builder.posixProfile(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.transfer.UserArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /**
    * Manages an individual Transfer Family resource tag. This resource should only be used in cases where Transfer Family resources are created outside the provider (e.g., Servers without AWS Management Console) or the tag key has the `aws:` prefix.
    *  
@@ -196,6 +200,10 @@ object transfer:
       val argsBuilder = com.pulumi.aws.transfer.inputs.ServerWorkflowDetailsArgs.builder
       builder.workflowDetails(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.transfer.ServerArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /** Resource for managing an AWS Transfer Family Web App Customization. */
   def WebAppCustomization(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.transfer.WebAppCustomizationArgs.Builder]) =
@@ -236,6 +244,7 @@ object transfer:
       val argsBuilder = com.pulumi.aws.transfer.inputs.AccessPosixProfileArgs.builder
       builder.posixProfile(args(argsBuilder).build)
 
+                       
   /**
    * Provides a AWS Transfer Server resource.
    *  
@@ -282,6 +291,10 @@ object transfer:
       val argsBuilder = com.pulumi.aws.transfer.inputs.ConnectorSftpConfigArgs.builder
       builder.sftpConfig(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.transfer.ConnectorArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.transfer.WorkflowArgs.Builder)
     /**
      * @param onExceptionSteps Specifies the steps (actions) to take if errors are encountered during execution of the workflow. See Workflow Steps below.
@@ -301,6 +314,10 @@ object transfer:
       def argsBuilder = com.pulumi.aws.transfer.inputs.WorkflowStepArgs.builder
       builder.steps(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.transfer.WorkflowArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /** Provides a AWS Transfer AS2 Agreement resource. */
   def Agreement(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.transfer.AgreementArgs.Builder])(using conf: KoPulumiConf) =
@@ -344,6 +361,10 @@ object transfer:
       def argsBuilder = com.pulumi.aws.transfer.inputs.WebAppWebAppUnitArgs.builder
       builder.webAppUnits(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.transfer.WebAppArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /** Provides a AWS Transfer Workflow resource. */
   def Workflow(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.transfer.WorkflowArgs.Builder])(using conf: KoPulumiConf) =
@@ -366,6 +387,7 @@ object transfer:
       val argsBuilder = com.pulumi.aws.transfer.inputs.WorkflowOnExceptionStepCopyStepDetailsDestinationFileLocationArgs.builder
       builder.destinationFileLocation(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.transfer.inputs.WorkflowStepDecryptStepDetailsArgs.Builder)
     /**
      * @param destinationFileLocation Specifies the location for the file being copied. Use ${Transfer:username} in this field to parametrize the destination prefix by username.
@@ -376,6 +398,7 @@ object transfer:
       val argsBuilder = com.pulumi.aws.transfer.inputs.WorkflowStepDecryptStepDetailsDestinationFileLocationArgs.builder
       builder.destinationFileLocation(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.transfer.inputs.WorkflowOnExceptionStepDecryptStepDetailsArgs.Builder)
     /**
      * @param destinationFileLocation Specifies the location for the file being copied. Use ${Transfer:username} in this field to parametrize the destination prefix by username.
@@ -386,6 +409,7 @@ object transfer:
       val argsBuilder = com.pulumi.aws.transfer.inputs.WorkflowOnExceptionStepDecryptStepDetailsDestinationFileLocationArgs.builder
       builder.destinationFileLocation(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.transfer.inputs.WorkflowOnExceptionStepCopyStepDetailsDestinationFileLocationArgs.Builder)
     /**
      * @param efsFileLocation Specifies the details for the EFS file being copied.
@@ -405,6 +429,7 @@ object transfer:
       val argsBuilder = com.pulumi.aws.transfer.inputs.WorkflowOnExceptionStepCopyStepDetailsDestinationFileLocationS3FileLocationArgs.builder
       builder.s3FileLocation(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.transfer.inputs.WorkflowStepCopyStepDetailsArgs.Builder)
     /**
      * @param destinationFileLocation Specifies the location for the file being copied. Use ${Transfer:username} in this field to parametrize the destination prefix by username.
@@ -415,6 +440,7 @@ object transfer:
       val argsBuilder = com.pulumi.aws.transfer.inputs.WorkflowStepCopyStepDetailsDestinationFileLocationArgs.builder
       builder.destinationFileLocation(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.transfer.inputs.WorkflowOnExceptionStepTagStepDetailsArgs.Builder)
     /**
      * @param tags Array that contains from 1 to 10 key/value pairs. See S3 Tags below.
@@ -425,6 +451,7 @@ object transfer:
       def argsBuilder = com.pulumi.aws.transfer.inputs.WorkflowOnExceptionStepTagStepDetailsTagArgs.builder
       builder.tags(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.transfer.inputs.WorkflowOnExceptionStepDecryptStepDetailsDestinationFileLocationArgs.Builder)
     /**
      * @param efsFileLocation Specifies the details for the EFS file being copied.
@@ -444,6 +471,7 @@ object transfer:
       val argsBuilder = com.pulumi.aws.transfer.inputs.WorkflowOnExceptionStepDecryptStepDetailsDestinationFileLocationS3FileLocationArgs.builder
       builder.s3FileLocation(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.transfer.inputs.ServerWorkflowDetailsArgs.Builder)
     /**
      * @param onPartialUpload A trigger that starts a workflow if a file is only partially uploaded. See Workflow Detail below. See `onPartialUpload` Block below for details.
@@ -463,6 +491,7 @@ object transfer:
       val argsBuilder = com.pulumi.aws.transfer.inputs.ServerWorkflowDetailsOnUploadArgs.builder
       builder.onUpload(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.transfer.inputs.WorkflowStepCopyStepDetailsDestinationFileLocationArgs.Builder)
     /**
      * @param efsFileLocation Specifies the details for the EFS file being copied.
@@ -482,6 +511,7 @@ object transfer:
       val argsBuilder = com.pulumi.aws.transfer.inputs.WorkflowStepCopyStepDetailsDestinationFileLocationS3FileLocationArgs.builder
       builder.s3FileLocation(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.transfer.inputs.WebAppState.Builder)
     /**
      * @param endpointDetails Block for the endpoint configuration for the web app. If not specified, the web app will be created with a public endpoint.
@@ -513,6 +543,10 @@ object transfer:
       def argsBuilder = com.pulumi.aws.transfer.inputs.WebAppWebAppUnitArgs.builder
       builder.webAppUnits(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.transfer.inputs.WebAppState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.transfer.inputs.ConnectorEgressConfigArgs.Builder)
     /**
      * @param vpcLattice VPC Lattice configuration for routing connector traffic through customer VPCs. Fields documented below.
@@ -523,6 +557,7 @@ object transfer:
       val argsBuilder = com.pulumi.aws.transfer.inputs.ConnectorEgressConfigVpcLatticeArgs.builder
       builder.vpcLattice(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.transfer.inputs.WebAppEndpointDetailsArgs.Builder)
     /**
      * @param vpc Block defining VPC configuration for hosting the web app endpoint within a VPC. See Vpc below.
@@ -533,6 +568,7 @@ object transfer:
       val argsBuilder = com.pulumi.aws.transfer.inputs.WebAppEndpointDetailsVpcArgs.builder
       builder.vpc(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.transfer.inputs.ServerState.Builder)
     /**
      * @param endpointDetails The virtual private cloud (VPC) endpoint settings that you want to configure for your SFTP server. See `endpointDetails` Block below for details.
@@ -570,6 +606,10 @@ object transfer:
       val argsBuilder = com.pulumi.aws.transfer.inputs.ServerWorkflowDetailsArgs.builder
       builder.workflowDetails(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.transfer.inputs.ServerState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.transfer.inputs.WorkflowStepArgs.Builder)
     /**
      * @param copyStepDetails Details for a step that performs a file copy. See Copy Step Details below.
@@ -616,6 +656,7 @@ object transfer:
       val argsBuilder = com.pulumi.aws.transfer.inputs.WorkflowStepTagStepDetailsArgs.builder
       builder.tagStepDetails(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.transfer.inputs.WorkflowState.Builder)
     /**
      * @param onExceptionSteps Specifies the steps (actions) to take if errors are encountered during execution of the workflow. See Workflow Steps below.
@@ -635,6 +676,10 @@ object transfer:
       def argsBuilder = com.pulumi.aws.transfer.inputs.WorkflowStepArgs.builder
       builder.steps(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.transfer.inputs.WorkflowState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.transfer.inputs.UserState.Builder)
     /**
      * @param homeDirectoryMappings Logical directory mappings that specify what S3 paths and keys should be visible to your user and how you want to make them visible. See Home Directory Mappings below.
@@ -654,6 +699,10 @@ object transfer:
       val argsBuilder = com.pulumi.aws.transfer.inputs.UserPosixProfileArgs.builder
       builder.posixProfile(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.transfer.inputs.UserState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.transfer.inputs.WebAppIdentityProviderDetailsArgs.Builder)
     /**
      * @param identityCenterConfig Block that describes the values to use for the IAM Identity Center settings. See Identity center config below.
@@ -664,6 +713,7 @@ object transfer:
       val argsBuilder = com.pulumi.aws.transfer.inputs.WebAppIdentityProviderDetailsIdentityCenterConfigArgs.builder
       builder.identityCenterConfig(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.transfer.inputs.AccessState.Builder)
     /**
      * @param homeDirectoryMappings Logical directory mappings that specify what S3 paths and keys should be visible to your user and how you want to make them visible. See Home Directory Mappings below.
@@ -683,6 +733,7 @@ object transfer:
       val argsBuilder = com.pulumi.aws.transfer.inputs.AccessPosixProfileArgs.builder
       builder.posixProfile(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.transfer.inputs.WorkflowStepDecryptStepDetailsDestinationFileLocationArgs.Builder)
     /**
      * @param efsFileLocation Specifies the details for the EFS file being copied.
@@ -702,6 +753,7 @@ object transfer:
       val argsBuilder = com.pulumi.aws.transfer.inputs.WorkflowStepDecryptStepDetailsDestinationFileLocationS3FileLocationArgs.builder
       builder.s3FileLocation(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.transfer.inputs.WorkflowStepTagStepDetailsArgs.Builder)
     /**
      * @param tags Array that contains from 1 to 10 key/value pairs. See S3 Tags below.
@@ -712,6 +764,7 @@ object transfer:
       def argsBuilder = com.pulumi.aws.transfer.inputs.WorkflowStepTagStepDetailsTagArgs.builder
       builder.tags(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.transfer.inputs.ConnectorState.Builder)
     /**
      * @param as2Config Either SFTP or AS2 is configured.The parameters to configure for the connector object. Fields documented below.
@@ -740,6 +793,10 @@ object transfer:
       val argsBuilder = com.pulumi.aws.transfer.inputs.ConnectorSftpConfigArgs.builder
       builder.sftpConfig(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.transfer.inputs.ConnectorState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.transfer.inputs.WorkflowOnExceptionStepArgs.Builder)
     /**
      * @param copyStepDetails Details for a step that performs a file copy. See Copy Step Details below.
@@ -785,3 +842,5 @@ object transfer:
         com.pulumi.aws.transfer.inputs.WorkflowOnExceptionStepArgs.Builder =
       val argsBuilder = com.pulumi.aws.transfer.inputs.WorkflowOnExceptionStepTagStepDetailsArgs.builder
       builder.tagStepDetails(args(argsBuilder).build)
+
+                       

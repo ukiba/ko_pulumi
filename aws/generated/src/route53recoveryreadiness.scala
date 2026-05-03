@@ -16,6 +16,10 @@ object route53recoveryreadiness:
       def argsBuilder = com.pulumi.aws.route53recoveryreadiness.inputs.ResourceSetResourceArgs.builder
       builder.resources(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.route53recoveryreadiness.ResourceSetArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /** Provides an AWS Route 53 Recovery Readiness Recovery Group. */
   def RecoveryGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.route53recoveryreadiness.RecoveryGroupArgs.Builder])(using conf: KoPulumiConf) =
@@ -71,6 +75,7 @@ object route53recoveryreadiness:
       val argsBuilder = com.pulumi.aws.route53recoveryreadiness.inputs.ResourceSetResourceDnsTargetResourceTargetResourceR53ResourceArgs.builder
       builder.r53Resource(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.route53recoveryreadiness.inputs.ResourceSetState.Builder)
     /**
      * @param resources List of resources to add to this resource set. See below.
@@ -83,6 +88,10 @@ object route53recoveryreadiness:
       def argsBuilder = com.pulumi.aws.route53recoveryreadiness.inputs.ResourceSetResourceArgs.builder
       builder.resources(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.route53recoveryreadiness.inputs.ResourceSetState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.route53recoveryreadiness.inputs.ResourceSetResourceDnsTargetResourceArgs.Builder)
     /**
      * @param targetResource Target resource the R53 record specified with the above params points to.
@@ -93,6 +102,7 @@ object route53recoveryreadiness:
       val argsBuilder = com.pulumi.aws.route53recoveryreadiness.inputs.ResourceSetResourceDnsTargetResourceTargetResourceArgs.builder
       builder.targetResource(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.route53recoveryreadiness.inputs.ResourceSetResourceArgs.Builder)
     /**
      * @param dnsTargetResource Component for DNS/Routing Control Readiness Checks.
@@ -103,6 +113,7 @@ object route53recoveryreadiness:
       val argsBuilder = com.pulumi.aws.route53recoveryreadiness.inputs.ResourceSetResourceDnsTargetResourceArgs.builder
       builder.dnsTargetResource(args(argsBuilder).build)
 
+                       
   /** Provides an AWS Route 53 Recovery Readiness Resource Set. */
   def ResourceSet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.route53recoveryreadiness.ResourceSetArgs.Builder])(using conf: KoPulumiConf) =

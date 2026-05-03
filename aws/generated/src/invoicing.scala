@@ -36,6 +36,10 @@ object invoicing:
       val argsBuilder = com.pulumi.aws.invoicing.inputs.InvoiceUnitTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.invoicing.InvoiceUnitArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.invoicing.inputs.InvoiceUnitState.Builder)
     /**
      * @param rules Configuration block for invoice unit rules. See `rule` below.
@@ -52,3 +56,8 @@ object invoicing:
         com.pulumi.aws.invoicing.inputs.InvoiceUnitState.Builder =
       val argsBuilder = com.pulumi.aws.invoicing.inputs.InvoiceUnitTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
+
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.invoicing.inputs.InvoiceUnitState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       

@@ -23,6 +23,10 @@ object directoryservice:
       val argsBuilder = com.pulumi.aws.directoryservice.inputs.ServiceRegionVpcSettingsArgs.builder
       builder.vpcSettings(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.directoryservice.ServiceRegionArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /** Manages a directory in your account (directory owner) shared with another account (directory consumer). */
   def SharedDirectory(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.directoryservice.SharedDirectoryArgs.Builder]) =
@@ -66,6 +70,10 @@ object directoryservice:
       val argsBuilder = com.pulumi.aws.directoryservice.inputs.DirectoryVpcSettingsArgs.builder
       builder.vpcSettings(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.directoryservice.DirectoryArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   type DirectoryserviceFunctions = com.pulumi.aws.directoryservice.DirectoryserviceFunctions
   object DirectoryserviceFunctions:
     // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
@@ -119,6 +127,7 @@ object directoryservice:
       val argsBuilder = com.pulumi.aws.directoryservice.inputs.SharedDirectoryTargetArgs.builder
       builder.target(args(argsBuilder).build)
 
+                       
   /** Manages a directory&#39;s multi-factor authentication (MFA) using a Remote Authentication Dial In User Service (RADIUS) server. */
   def RadiusSettings(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.directoryservice.RadiusSettingsArgs.Builder]) =
@@ -160,6 +169,10 @@ object directoryservice:
       val argsBuilder = com.pulumi.aws.directoryservice.inputs.DirectoryVpcSettingsArgs.builder
       builder.vpcSettings(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.directoryservice.inputs.DirectoryState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.directoryservice.inputs.SharedDirectoryState.Builder)
     /**
      * @param target Identifier for the directory consumer account with whom the directory is to be shared. See below.
@@ -172,6 +185,7 @@ object directoryservice:
       val argsBuilder = com.pulumi.aws.directoryservice.inputs.SharedDirectoryTargetArgs.builder
       builder.target(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.directoryservice.inputs.ServiceRegionState.Builder)
     /**
      * @param vpcSettings VPC information in the replicated Region. Detailed below.
@@ -182,6 +196,10 @@ object directoryservice:
       val argsBuilder = com.pulumi.aws.directoryservice.inputs.ServiceRegionVpcSettingsArgs.builder
       builder.vpcSettings(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.directoryservice.inputs.ServiceRegionState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /**
    * Manages a trust relationship between two Active Directory Directories.
    *  

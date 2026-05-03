@@ -14,6 +14,7 @@ object chime:
       def argsBuilder = com.pulumi.aws.chime.inputs.SdkvoiceSipRuleTargetApplicationArgs.builder
       builder.targetApplications(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.chime.SdkvoiceSipMediaApplicationArgs.Builder)
     /**
      * @param endpoints List of endpoints (Lambda Amazon Resource Names) specified for the SIP media application. Currently, only one endpoint is supported. See `endpoints`.
@@ -24,6 +25,10 @@ object chime:
       val argsBuilder = com.pulumi.aws.chime.inputs.SdkvoiceSipMediaApplicationEndpointsArgs.builder
       builder.endpoints(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.chime.SdkvoiceSipMediaApplicationArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /** A ChimeSDKVoice SIP Media Application is a managed object that passes values from a SIP rule to a target AWS Lambda function. */
   def SdkvoiceSipMediaApplication(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.chime.SdkvoiceSipMediaApplicationArgs.Builder])(using conf: KoPulumiConf) =
@@ -49,6 +54,7 @@ object chime:
       val argsBuilder = com.pulumi.aws.chime.inputs.VoiceConnectorStreamingMediaInsightsConfigurationArgs.builder
       builder.mediaInsightsConfiguration(args(argsBuilder).build)
 
+                       
   /** Enables you to connect your phone system to the telephone network at a substantial cost savings by using SIP trunking. */
   def VoiceConnector(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.chime.VoiceConnectorArgs.Builder])(using conf: KoPulumiConf) =
@@ -74,6 +80,7 @@ object chime:
       def argsBuilder = com.pulumi.aws.chime.inputs.VoiceConnectorGroupConnectorArgs.builder
       builder.connectors(args.map(_(argsBuilder).build)*)
 
+                       
   /**
    * Adds a streaming configuration for the specified Amazon Chime Voice Connector. The streaming configuration specifies whether media streaming is enabled for sending to Amazon Kinesis.
    *  It also sets the retention period, in hours, for the Amazon Kinesis data.
@@ -96,6 +103,7 @@ object chime:
       def argsBuilder = com.pulumi.aws.chime.inputs.VoiceConnectorOriginationRouteArgs.builder
       builder.routes(args.map(_(argsBuilder).build)*)
 
+                       
   /**
    * Adds termination SIP credentials for the specified Amazon Chime Voice Connector.
    *  
@@ -177,6 +185,7 @@ object chime:
       val argsBuilder = com.pulumi.aws.chime.inputs.SdkvoiceGlobalSettingsVoiceConnectorArgs.builder
       builder.voiceConnector(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.chime.SdkvoiceVoiceProfileDomainArgs.Builder)
     /**
      * @param serverSideEncryptionConfiguration Configuration for server side encryption.
@@ -187,6 +196,10 @@ object chime:
       val argsBuilder = com.pulumi.aws.chime.inputs.SdkvoiceVoiceProfileDomainServerSideEncryptionConfigurationArgs.builder
       builder.serverSideEncryptionConfiguration(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.chime.SdkvoiceVoiceProfileDomainArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.chime.VoiceConnectorTerminationCredentialsArgs.Builder)
     /**
      * @param credentials List of termination SIP credentials.
@@ -197,6 +210,7 @@ object chime:
       def argsBuilder = com.pulumi.aws.chime.inputs.VoiceConnectorTerminationCredentialsCredentialArgs.builder
       builder.credentials(args.map(_(argsBuilder).build)*)
 
+                       
   /** A SIP rule associates your SIP media application with a phone number or a Request URI hostname. You can associate a SIP rule with more than one SIP media application. Each application then runs only that rule. */
   def SdkvoiceSipRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.chime.SdkvoiceSipRuleArgs.Builder])(using conf: KoPulumiConf) =
@@ -228,6 +242,7 @@ object chime:
       def argsBuilder = com.pulumi.aws.chime.inputs.VoiceConnectorTerminationCredentialsCredentialArgs.builder
       builder.credentials(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.chime.inputs.VoiceConnectorGroupState.Builder)
     /**
      * @param connectors The Amazon Chime Voice Connectors to route inbound calls to.
@@ -238,6 +253,7 @@ object chime:
       def argsBuilder = com.pulumi.aws.chime.inputs.VoiceConnectorGroupConnectorArgs.builder
       builder.connectors(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.chime.inputs.VoiceConnectorStreamingState.Builder)
     /**
      * @param mediaInsightsConfiguration The media insights configuration. See `mediaInsightsConfiguration`.
@@ -248,6 +264,7 @@ object chime:
       val argsBuilder = com.pulumi.aws.chime.inputs.VoiceConnectorStreamingMediaInsightsConfigurationArgs.builder
       builder.mediaInsightsConfiguration(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.chime.inputs.SdkvoiceGlobalSettingsState.Builder)
     /**
      * @param voiceConnector The Voice Connector settings. See voice_connector.
@@ -258,6 +275,7 @@ object chime:
       val argsBuilder = com.pulumi.aws.chime.inputs.SdkvoiceGlobalSettingsVoiceConnectorArgs.builder
       builder.voiceConnector(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.chime.inputs.SdkvoiceSipMediaApplicationState.Builder)
     /**
      * @param endpoints List of endpoints (Lambda Amazon Resource Names) specified for the SIP media application. Currently, only one endpoint is supported. See `endpoints`.
@@ -268,6 +286,10 @@ object chime:
       val argsBuilder = com.pulumi.aws.chime.inputs.SdkvoiceSipMediaApplicationEndpointsArgs.builder
       builder.endpoints(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.chime.inputs.SdkvoiceSipMediaApplicationState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.chime.inputs.VoiceConnectorOriginationState.Builder)
     /**
      * @param routes Set of call distribution properties defined for your SIP hosts. See route below for more details. Minimum of 1. Maximum of 20.
@@ -278,6 +300,7 @@ object chime:
       def argsBuilder = com.pulumi.aws.chime.inputs.VoiceConnectorOriginationRouteArgs.builder
       builder.routes(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.chime.inputs.SdkvoiceVoiceProfileDomainState.Builder)
     /**
      * @param serverSideEncryptionConfiguration Configuration for server side encryption.
@@ -288,6 +311,10 @@ object chime:
       val argsBuilder = com.pulumi.aws.chime.inputs.SdkvoiceVoiceProfileDomainServerSideEncryptionConfigurationArgs.builder
       builder.serverSideEncryptionConfiguration(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.chime.inputs.SdkvoiceVoiceProfileDomainState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.chime.inputs.SdkvoiceSipRuleState.Builder)
     /**
      * @param targetApplications List of SIP media applications with priority and AWS Region. Only one SIP application per AWS Region can be used. See `targetApplications`.
@@ -297,3 +324,5 @@ object chime:
         com.pulumi.aws.chime.inputs.SdkvoiceSipRuleState.Builder =
       def argsBuilder = com.pulumi.aws.chime.inputs.SdkvoiceSipRuleTargetApplicationArgs.builder
       builder.targetApplications(args.map(_(argsBuilder).build)*)
+
+                       

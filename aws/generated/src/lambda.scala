@@ -197,6 +197,7 @@ object lambda:
       val argsBuilder = com.pulumi.aws.lambda.inputs.FunctionUrlCorsArgs.builder
       builder.cors(args(argsBuilder).build)
 
+                       
   /** Manages an AWS Lambda Capacity Provider. */
   def CapacityProvider(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.lambda.CapacityProviderArgs.Builder])(using conf: KoPulumiConf) =
@@ -233,6 +234,10 @@ object lambda:
       val argsBuilder = com.pulumi.aws.lambda.inputs.CodeSigningConfigPoliciesArgs.builder
       builder.policies(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.lambda.CodeSigningConfigArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /**
    * Manages an AWS Lambda Layer Version Permission. Use this resource to share Lambda Layers with other AWS accounts, organizations, or make them publicly accessible.
    *  
@@ -258,6 +263,7 @@ object lambda:
       val argsBuilder = com.pulumi.aws.lambda.inputs.FunctionEventInvokeConfigDestinationConfigArgs.builder
       builder.destinationConfig(args(argsBuilder).build)
 
+                       
   /**
    * Manages an AWS Lambda Provisioned Concurrency Configuration. Use this resource to configure provisioned concurrency for Lambda functions.
    *  
@@ -395,6 +401,10 @@ object lambda:
       val argsBuilder = com.pulumi.aws.lambda.inputs.FunctionVpcConfigArgs.builder
       builder.vpcConfig(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.lambda.FunctionArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /** Manages an AWS Lambda permission. Use this resource to grant external sources (e.g., EventBridge Rules, SNS, or S3) permission to invoke Lambda functions. */
   def Permission(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.lambda.PermissionArgs.Builder]) =
@@ -430,6 +440,7 @@ object lambda:
       val argsBuilder = com.pulumi.aws.lambda.inputs.AliasRoutingConfigArgs.builder
       builder.routingConfig(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.lambda.CapacityProviderArgs.Builder)
     /**
      * @param capacityProviderScalingConfigs Configuration block for scaling policy settings. See Capacity Provider Scaling Config below.
@@ -474,6 +485,10 @@ object lambda:
       val argsBuilder = com.pulumi.aws.lambda.inputs.CapacityProviderVpcConfigArgs.builder
       builder.vpcConfig(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.lambda.CapacityProviderArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /**
    * Manages an AWS Lambda Function Event Invoke Config. Use this resource to configure error handling and destinations for asynchronous Lambda function invocations.
    *  
@@ -535,6 +550,7 @@ object lambda:
       val argsBuilder = com.pulumi.aws.lambda.inputs.FunctionUrlCorsArgs.builder
       builder.cors(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.lambda.inputs.EventSourceMappingSelfManagedKafkaEventSourceConfigArgs.Builder)
     /**
      * @param schemaRegistryConfig Block for a Kafka schema registry setting. See below.
@@ -545,6 +561,7 @@ object lambda:
       val argsBuilder = com.pulumi.aws.lambda.inputs.EventSourceMappingSelfManagedKafkaEventSourceConfigSchemaRegistryConfigArgs.builder
       builder.schemaRegistryConfig(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.lambda.inputs.AliasState.Builder)
     /**
      * @param routingConfig Lambda alias&#39; route configuration settings. See below.
@@ -555,6 +572,7 @@ object lambda:
       val argsBuilder = com.pulumi.aws.lambda.inputs.AliasRoutingConfigArgs.builder
       builder.routingConfig(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.lambda.inputs.EventSourceMappingAmazonManagedKafkaEventSourceConfigSchemaRegistryConfigArgs.Builder)
     /**
      * @param accessConfigs Configuration block for authentication Lambda uses to access the schema registry.
@@ -574,6 +592,7 @@ object lambda:
       def argsBuilder = com.pulumi.aws.lambda.inputs.EventSourceMappingAmazonManagedKafkaEventSourceConfigSchemaRegistryConfigSchemaValidationConfigArgs.builder
       builder.schemaValidationConfigs(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.lambda.inputs.EventSourceMappingState.Builder)
     /**
      * @param amazonManagedKafkaEventSourceConfig Additional configuration block for Amazon Managed Kafka sources. Incompatible with `selfManagedEventSource` and `selfManagedKafkaEventSourceConfig`. See below.
@@ -665,6 +684,10 @@ object lambda:
       def argsBuilder = com.pulumi.aws.lambda.inputs.EventSourceMappingSourceAccessConfigurationArgs.builder
       builder.sourceAccessConfigurations(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.lambda.inputs.EventSourceMappingState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.lambda.inputs.CapacityProviderState.Builder)
     /**
      * @param capacityProviderScalingConfigs Configuration block for scaling policy settings. See Capacity Provider Scaling Config below.
@@ -709,6 +732,10 @@ object lambda:
       val argsBuilder = com.pulumi.aws.lambda.inputs.CapacityProviderVpcConfigArgs.builder
       builder.vpcConfig(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.lambda.inputs.CapacityProviderState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.lambda.inputs.FunctionEventInvokeConfigState.Builder)
     /**
      * @param destinationConfig Configuration block with destination configuration. See below.
@@ -719,6 +746,7 @@ object lambda:
       val argsBuilder = com.pulumi.aws.lambda.inputs.FunctionEventInvokeConfigDestinationConfigArgs.builder
       builder.destinationConfig(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.lambda.inputs.EventSourceMappingSelfManagedKafkaEventSourceConfigSchemaRegistryConfigArgs.Builder)
     /**
      * @param accessConfigs Configuration block for authentication Lambda uses to access the schema registry.
@@ -738,6 +766,7 @@ object lambda:
       def argsBuilder = com.pulumi.aws.lambda.inputs.EventSourceMappingSelfManagedKafkaEventSourceConfigSchemaRegistryConfigSchemaValidationConfigArgs.builder
       builder.schemaValidationConfigs(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.lambda.inputs.EventSourceMappingFilterCriteriaArgs.Builder)
     /**
      * @param filters Set of up to 5 filter. If an event satisfies at least one, Lambda sends the event to the function or adds it to the next batch. See below.
@@ -748,6 +777,7 @@ object lambda:
       def argsBuilder = com.pulumi.aws.lambda.inputs.EventSourceMappingFilterCriteriaFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.lambda.inputs.FunctionEventInvokeConfigDestinationConfigArgs.Builder)
     /**
      * @param onFailure Configuration block with destination configuration for failed asynchronous invocations. See below.
@@ -767,6 +797,7 @@ object lambda:
       val argsBuilder = com.pulumi.aws.lambda.inputs.FunctionEventInvokeConfigDestinationConfigOnSuccessArgs.builder
       builder.onSuccess(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.lambda.inputs.FunctionState.Builder)
     /**
      * @param capacityProviderConfig Configuration block for Lambda Capacity Provider. See below.
@@ -876,6 +907,10 @@ object lambda:
       val argsBuilder = com.pulumi.aws.lambda.inputs.FunctionVpcConfigArgs.builder
       builder.vpcConfig(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.lambda.inputs.FunctionState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.lambda.inputs.EventSourceMappingDestinationConfigArgs.Builder)
     /**
      * @param onFailure Destination configuration for failed invocations. See below.
@@ -886,6 +921,7 @@ object lambda:
       val argsBuilder = com.pulumi.aws.lambda.inputs.EventSourceMappingDestinationConfigOnFailureArgs.builder
       builder.onFailure(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.lambda.inputs.FunctionCapacityProviderConfigArgs.Builder)
     /**
      * @param lambdaManagedInstancesCapacityProviderConfig Configuration block for Lambda Managed Instances Capacity Provider. See below.
@@ -896,6 +932,7 @@ object lambda:
       val argsBuilder = com.pulumi.aws.lambda.inputs.FunctionCapacityProviderConfigLambdaManagedInstancesCapacityProviderConfigArgs.builder
       builder.lambdaManagedInstancesCapacityProviderConfig(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.lambda.inputs.EventSourceMappingAmazonManagedKafkaEventSourceConfigArgs.Builder)
     /**
      * @param schemaRegistryConfig Block for a Kafka schema registry setting. See below.
@@ -906,6 +943,7 @@ object lambda:
       val argsBuilder = com.pulumi.aws.lambda.inputs.EventSourceMappingAmazonManagedKafkaEventSourceConfigSchemaRegistryConfigArgs.builder
       builder.schemaRegistryConfig(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.lambda.inputs.CapacityProviderCapacityProviderScalingConfigArgs.Builder)
     /**
      * @param scalingPolicies List of scaling policies. Only required if `scalingMode` is set to `&#34;Manual&#34;`. See Scaling Policies below.
@@ -916,6 +954,7 @@ object lambda:
       def argsBuilder = com.pulumi.aws.lambda.inputs.CapacityProviderCapacityProviderScalingConfigScalingPolicyArgs.builder
       builder.scalingPolicies(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.lambda.inputs.CodeSigningConfigState.Builder)
     /**
      * @param allowedPublishers Configuration block of allowed publishers as signing profiles for this code signing configuration. See below.
@@ -937,6 +976,10 @@ object lambda:
       val argsBuilder = com.pulumi.aws.lambda.inputs.CodeSigningConfigPoliciesArgs.builder
       builder.policies(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.lambda.inputs.CodeSigningConfigState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.lambda.EventSourceMappingArgs.Builder)
     /**
      * @param amazonManagedKafkaEventSourceConfig Additional configuration block for Amazon Managed Kafka sources. Incompatible with `selfManagedEventSource` and `selfManagedKafkaEventSourceConfig`. See below.
@@ -1028,6 +1071,10 @@ object lambda:
       def argsBuilder = com.pulumi.aws.lambda.inputs.EventSourceMappingSourceAccessConfigurationArgs.builder
       builder.sourceAccessConfigurations(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.lambda.EventSourceMappingArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /**
    * Manages an AWS Lambda Function Recursion Config. Use this resource to control how Lambda handles recursive function invocations to prevent infinite loops.
    *  

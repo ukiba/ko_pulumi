@@ -56,6 +56,10 @@ object imagebuilder:
       def argsBuilder = com.pulumi.aws.imagebuilder.inputs.ImageWorkflowArgs.builder
       builder.workflows(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.imagebuilder.ImageArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.imagebuilder.DistributionConfigurationArgs.Builder)
     /**
      * @param distributions One or more configuration blocks with distribution settings. Detailed below.
@@ -68,6 +72,10 @@ object imagebuilder:
       def argsBuilder = com.pulumi.aws.imagebuilder.inputs.DistributionConfigurationDistributionArgs.builder
       builder.distributions(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.imagebuilder.DistributionConfigurationArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /** Manages an Image Builder Image. */
   def Image(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.imagebuilder.ImageArgs.Builder])(using conf: KoPulumiConf) =
@@ -137,6 +145,10 @@ object imagebuilder:
       val argsBuilder = com.pulumi.aws.imagebuilder.inputs.InfrastructureConfigurationPlacementArgs.builder
       builder.placement(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.imagebuilder.InfrastructureConfigurationArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.imagebuilder.ImageRecipeArgs.Builder)
     /**
      * @param blockDeviceMappings Configuration block(s) with block device mappings for the image recipe. Detailed below.
@@ -165,6 +177,10 @@ object imagebuilder:
       val argsBuilder = com.pulumi.aws.imagebuilder.inputs.ImageRecipeSystemsManagerAgentArgs.builder
       builder.systemsManagerAgent(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.imagebuilder.ImageRecipeArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /** Manages an Image Builder Lifecycle Policy. */
   def LifecyclePolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.imagebuilder.LifecyclePolicyArgs.Builder])(using conf: KoPulumiConf) =
@@ -377,6 +393,10 @@ object imagebuilder:
       val argsBuilder = com.pulumi.aws.imagebuilder.inputs.LifecyclePolicyResourceSelectionArgs.builder
       builder.resourceSelection(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.imagebuilder.LifecyclePolicyArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.imagebuilder.ContainerRecipeArgs.Builder)
     /**
      * @param components Ordered configuration block(s) with components for the container recipe. Detailed below.
@@ -405,6 +425,10 @@ object imagebuilder:
       val argsBuilder = com.pulumi.aws.imagebuilder.inputs.ContainerRecipeTargetRepositoryArgs.builder
       builder.targetRepository(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.imagebuilder.ContainerRecipeArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.imagebuilder.ImagePipelineArgs.Builder)
     /**
      * @param imageScanningConfiguration Configuration block with image scanning configuration. Detailed below.
@@ -451,6 +475,10 @@ object imagebuilder:
       def argsBuilder = com.pulumi.aws.imagebuilder.inputs.ImagePipelineWorkflowArgs.builder
       builder.workflows(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.imagebuilder.ImagePipelineArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /** Manages an Image Builder Container Recipe. */
   def ContainerRecipe(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.imagebuilder.ContainerRecipeArgs.Builder])(using conf: KoPulumiConf) =
@@ -543,6 +571,10 @@ object imagebuilder:
       val argsBuilder = com.pulumi.aws.imagebuilder.inputs.InfrastructureConfigurationPlacementArgs.builder
       builder.placement(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.imagebuilder.inputs.InfrastructureConfigurationState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.imagebuilder.inputs.LifecyclePolicyPolicyDetailActionArgs.Builder)
     /**
      * @param includeResources Specifies the resources that the lifecycle policy applies to. Detailed below.
@@ -553,6 +585,7 @@ object imagebuilder:
       val argsBuilder = com.pulumi.aws.imagebuilder.inputs.LifecyclePolicyPolicyDetailActionIncludeResourcesArgs.builder
       builder.includeResources(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.imagebuilder.inputs.ImageState.Builder)
     /**
      * @param imageScanningConfiguration Configuration block with image scanning configuration. Detailed below.
@@ -599,6 +632,10 @@ object imagebuilder:
       def argsBuilder = com.pulumi.aws.imagebuilder.inputs.ImageWorkflowArgs.builder
       builder.workflows(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.imagebuilder.inputs.ImageState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.imagebuilder.inputs.ContainerRecipeComponentArgs.Builder)
     /**
      * @param parameters Configuration block(s) for parameters to configure the component. Detailed below.
@@ -609,6 +646,7 @@ object imagebuilder:
       def argsBuilder = com.pulumi.aws.imagebuilder.inputs.ContainerRecipeComponentParameterArgs.builder
       builder.parameters(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.imagebuilder.inputs.DistributionConfigurationState.Builder)
     /**
      * @param distributions One or more configuration blocks with distribution settings. Detailed below.
@@ -621,6 +659,10 @@ object imagebuilder:
       def argsBuilder = com.pulumi.aws.imagebuilder.inputs.DistributionConfigurationDistributionArgs.builder
       builder.distributions(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.imagebuilder.inputs.DistributionConfigurationState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.imagebuilder.inputs.DistributionConfigurationDistributionArgs.Builder)
     /**
      * @param amiDistributionConfiguration Configuration block with Amazon Machine Image (AMI) distribution settings. Detailed below.
@@ -676,6 +718,7 @@ object imagebuilder:
       def argsBuilder = com.pulumi.aws.imagebuilder.inputs.DistributionConfigurationDistributionSsmParameterConfigurationArgs.builder
       builder.ssmParameterConfigurations(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.imagebuilder.inputs.GetImagePipelinesArgs.Builder)
     /**
      * @param filters Configuration block(s) for filtering. Detailed below.
@@ -686,6 +729,7 @@ object imagebuilder:
       def argsBuilder = com.pulumi.aws.imagebuilder.inputs.GetImagePipelinesFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.imagebuilder.inputs.GetImageRecipesArgs.Builder)
     /**
      * @param filters Configuration block(s) for filtering. Detailed below.
@@ -696,6 +740,7 @@ object imagebuilder:
       def argsBuilder = com.pulumi.aws.imagebuilder.inputs.GetImageRecipesFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.imagebuilder.inputs.LifecyclePolicyPolicyDetailExclusionRulesAmisArgs.Builder)
     /**
      * @param lastLaunched Specifies configuration details for Image Builder to exclude the most recent resources from lifecycle actions. Detailed below.
@@ -706,6 +751,7 @@ object imagebuilder:
       val argsBuilder = com.pulumi.aws.imagebuilder.inputs.LifecyclePolicyPolicyDetailExclusionRulesAmisLastLaunchedArgs.builder
       builder.lastLaunched(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.imagebuilder.inputs.ImageImageScanningConfigurationArgs.Builder)
     /**
      * @param ecrConfiguration Configuration block with ECR configuration. Detailed below.
@@ -716,6 +762,7 @@ object imagebuilder:
       val argsBuilder = com.pulumi.aws.imagebuilder.inputs.ImageImageScanningConfigurationEcrConfigurationArgs.builder
       builder.ecrConfiguration(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.imagebuilder.inputs.ContainerRecipeInstanceConfigurationBlockDeviceMappingArgs.Builder)
     /**
      * @param ebs Configuration block with Elastic Block Storage (EBS) block device mapping settings. Detailed below.
@@ -726,6 +773,7 @@ object imagebuilder:
       val argsBuilder = com.pulumi.aws.imagebuilder.inputs.ContainerRecipeInstanceConfigurationBlockDeviceMappingEbsArgs.builder
       builder.ebs(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.imagebuilder.inputs.ImageRecipeComponentArgs.Builder)
     /**
      * @param parameters Configuration block(s) for parameters to configure the component. Detailed below.
@@ -736,6 +784,7 @@ object imagebuilder:
       def argsBuilder = com.pulumi.aws.imagebuilder.inputs.ImageRecipeComponentParameterArgs.builder
       builder.parameters(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.imagebuilder.inputs.ContainerRecipeInstanceConfigurationArgs.Builder)
     /**
      * @param blockDeviceMappings Configuration block(s) with block device mappings for the container recipe. Detailed below.
@@ -746,6 +795,7 @@ object imagebuilder:
       def argsBuilder = com.pulumi.aws.imagebuilder.inputs.ContainerRecipeInstanceConfigurationBlockDeviceMappingArgs.builder
       builder.blockDeviceMappings(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.imagebuilder.inputs.ImagePipelineImageScanningConfigurationArgs.Builder)
     /**
      * @param ecrConfiguration Configuration block with ECR configuration for image scanning. Detailed below.
@@ -756,6 +806,7 @@ object imagebuilder:
       val argsBuilder = com.pulumi.aws.imagebuilder.inputs.ImagePipelineImageScanningConfigurationEcrConfigurationArgs.builder
       builder.ecrConfiguration(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.imagebuilder.inputs.DistributionConfigurationDistributionAmiDistributionConfigurationArgs.Builder)
     /**
      * @param launchPermission Configuration block of EC2 launch permissions to apply to the distributed AMI. Detailed below.
@@ -766,6 +817,7 @@ object imagebuilder:
       val argsBuilder = com.pulumi.aws.imagebuilder.inputs.DistributionConfigurationDistributionAmiDistributionConfigurationLaunchPermissionArgs.builder
       builder.launchPermission(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.imagebuilder.inputs.ImagePipelineWorkflowArgs.Builder)
     /**
      * @param parameters Configuration block for the workflow parameters. Detailed below.
@@ -776,6 +828,7 @@ object imagebuilder:
       def argsBuilder = com.pulumi.aws.imagebuilder.inputs.ImagePipelineWorkflowParameterArgs.builder
       builder.parameters(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.imagebuilder.inputs.DistributionConfigurationDistributionContainerDistributionConfigurationArgs.Builder)
     /**
      * @param targetRepository Configuration block with the destination repository for the container distribution configuration.
@@ -786,6 +839,7 @@ object imagebuilder:
       val argsBuilder = com.pulumi.aws.imagebuilder.inputs.DistributionConfigurationDistributionContainerDistributionConfigurationTargetRepositoryArgs.builder
       builder.targetRepository(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.imagebuilder.inputs.InfrastructureConfigurationLoggingArgs.Builder)
     /**
      * @param s3Logs Configuration block with S3 logging settings. Detailed below.
@@ -796,6 +850,7 @@ object imagebuilder:
       val argsBuilder = com.pulumi.aws.imagebuilder.inputs.InfrastructureConfigurationLoggingS3LogsArgs.builder
       builder.s3Logs(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.imagebuilder.inputs.ImagePipelineState.Builder)
     /**
      * @param imageScanningConfiguration Configuration block with image scanning configuration. Detailed below.
@@ -842,6 +897,10 @@ object imagebuilder:
       def argsBuilder = com.pulumi.aws.imagebuilder.inputs.ImagePipelineWorkflowArgs.builder
       builder.workflows(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.imagebuilder.inputs.ImagePipelineState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.imagebuilder.inputs.GetInfrastructureConfigurationsArgs.Builder)
     /**
      * @param filters Configuration block(s) for filtering. Detailed below.
@@ -852,6 +911,7 @@ object imagebuilder:
       def argsBuilder = com.pulumi.aws.imagebuilder.inputs.GetInfrastructureConfigurationsFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.imagebuilder.inputs.GetContainerRecipesArgs.Builder)
     /**
      * @param filters Configuration block(s) for filtering. Detailed below.
@@ -862,6 +922,7 @@ object imagebuilder:
       def argsBuilder = com.pulumi.aws.imagebuilder.inputs.GetContainerRecipesFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.imagebuilder.inputs.DistributionConfigurationDistributionFastLaunchConfigurationArgs.Builder)
     /**
      * @param launchTemplate Configuration block for the launch template that the fast-launch enabled Windows AMI uses when it launches Windows instances to create pre-provisioned snapshots. Detailed below.
@@ -881,6 +942,7 @@ object imagebuilder:
       val argsBuilder = com.pulumi.aws.imagebuilder.inputs.DistributionConfigurationDistributionFastLaunchConfigurationSnapshotConfigurationArgs.builder
       builder.snapshotConfiguration(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.imagebuilder.inputs.ImageRecipeBlockDeviceMappingArgs.Builder)
     /**
      * @param ebs Configuration block with Elastic Block Storage (EBS) block device mapping settings. Detailed below.
@@ -891,6 +953,7 @@ object imagebuilder:
       val argsBuilder = com.pulumi.aws.imagebuilder.inputs.ImageRecipeBlockDeviceMappingEbsArgs.builder
       builder.ebs(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.imagebuilder.inputs.LifecyclePolicyState.Builder)
     /**
      * @param policyDetails Configuration block with policy details. Detailed below.
@@ -912,6 +975,10 @@ object imagebuilder:
       val argsBuilder = com.pulumi.aws.imagebuilder.inputs.LifecyclePolicyResourceSelectionArgs.builder
       builder.resourceSelection(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.imagebuilder.inputs.LifecyclePolicyState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.imagebuilder.inputs.ImageWorkflowArgs.Builder)
     /**
      * @param parameters Configuration block for the workflow parameters. Detailed below.
@@ -922,6 +989,7 @@ object imagebuilder:
       def argsBuilder = com.pulumi.aws.imagebuilder.inputs.ImageWorkflowParameterArgs.builder
       builder.parameters(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.imagebuilder.inputs.LifecyclePolicyResourceSelectionArgs.Builder)
     /**
      * @param recipes A list of recipe that are used as selection criteria for the output images that the lifecycle policy applies to. Detailed below.
@@ -932,6 +1000,7 @@ object imagebuilder:
       def argsBuilder = com.pulumi.aws.imagebuilder.inputs.LifecyclePolicyResourceSelectionRecipeArgs.builder
       builder.recipes(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.imagebuilder.inputs.ImageOutputResourceArgs.Builder)
     /**
      * @param amis Set of objects with each Amazon Machine Image (AMI) created.
@@ -951,6 +1020,7 @@ object imagebuilder:
       def argsBuilder = com.pulumi.aws.imagebuilder.inputs.ImageOutputResourceContainerArgs.builder
       builder.containers(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.imagebuilder.inputs.ContainerRecipeState.Builder)
     /**
      * @param components Ordered configuration block(s) with components for the container recipe. Detailed below.
@@ -979,6 +1049,10 @@ object imagebuilder:
       val argsBuilder = com.pulumi.aws.imagebuilder.inputs.ContainerRecipeTargetRepositoryArgs.builder
       builder.targetRepository(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.imagebuilder.inputs.ContainerRecipeState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.imagebuilder.inputs.GetDistributionConfigurationsArgs.Builder)
     /**
      * @param filters Configuration block(s) for filtering. Detailed below.
@@ -989,6 +1063,7 @@ object imagebuilder:
       def argsBuilder = com.pulumi.aws.imagebuilder.inputs.GetDistributionConfigurationsFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.imagebuilder.inputs.GetComponentsArgs.Builder)
     /**
      * @param filters Configuration block(s) for filtering. Detailed below.
@@ -999,6 +1074,7 @@ object imagebuilder:
       def argsBuilder = com.pulumi.aws.imagebuilder.inputs.GetComponentsFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.imagebuilder.inputs.LifecyclePolicyPolicyDetailArgs.Builder)
     /**
      * @param action Configuration details for the policy action.
@@ -1029,6 +1105,7 @@ object imagebuilder:
       val argsBuilder = com.pulumi.aws.imagebuilder.inputs.LifecyclePolicyPolicyDetailFilterArgs.builder
       builder.filter(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.imagebuilder.inputs.ImageRecipeState.Builder)
     /**
      * @param blockDeviceMappings Configuration block(s) with block device mappings for the image recipe. Detailed below.
@@ -1057,6 +1134,10 @@ object imagebuilder:
       val argsBuilder = com.pulumi.aws.imagebuilder.inputs.ImageRecipeSystemsManagerAgentArgs.builder
       builder.systemsManagerAgent(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.imagebuilder.inputs.ImageRecipeState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.imagebuilder.inputs.LifecyclePolicyPolicyDetailExclusionRulesArgs.Builder)
     /**
      * @param amis Lists configuration values that apply to AMIs that Image Builder should exclude from the lifecycle action. Detailed below.
@@ -1066,3 +1147,5 @@ object imagebuilder:
         com.pulumi.aws.imagebuilder.inputs.LifecyclePolicyPolicyDetailExclusionRulesArgs.Builder =
       val argsBuilder = com.pulumi.aws.imagebuilder.inputs.LifecyclePolicyPolicyDetailExclusionRulesAmisArgs.builder
       builder.amis(args(argsBuilder).build)
+
+                       

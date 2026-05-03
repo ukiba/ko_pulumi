@@ -23,6 +23,10 @@ object chimesdkmediapipelines:
       val argsBuilder = com.pulumi.aws.chimesdkmediapipelines.inputs.MediaInsightsPipelineConfigurationRealTimeAlertConfigurationArgs.builder
       builder.realTimeAlertConfiguration(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.chimesdkmediapipelines.MediaInsightsPipelineConfigurationArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /**
    * Resource for managing an AWS Chime SDK Media Pipelines Media Insights Pipeline Configuration.
    *  Consult the [Call analytics developer guide](https://docs.aws.amazon.com/chime-sdk/latest/dg/call-analytics.html) for more detailed information about usage.
@@ -114,6 +118,7 @@ object chimesdkmediapipelines:
       val argsBuilder = com.pulumi.aws.chimesdkmediapipelines.inputs.MediaInsightsPipelineConfigurationElementVoiceAnalyticsProcessorConfigurationArgs.builder
       builder.voiceAnalyticsProcessorConfiguration(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.chimesdkmediapipelines.inputs.MediaInsightsPipelineConfigurationElementAmazonTranscribeCallAnalyticsProcessorConfigurationArgs.Builder)
     /**
      * @param postCallAnalyticsSettings Settings for post call analytics.
@@ -124,6 +129,7 @@ object chimesdkmediapipelines:
       val argsBuilder = com.pulumi.aws.chimesdkmediapipelines.inputs.MediaInsightsPipelineConfigurationElementAmazonTranscribeCallAnalyticsProcessorConfigurationPostCallAnalyticsSettingsArgs.builder
       builder.postCallAnalyticsSettings(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.chimesdkmediapipelines.inputs.MediaInsightsPipelineConfigurationRealTimeAlertConfigurationRuleArgs.Builder)
     /**
      * @param issueDetectionConfiguration Configuration for an issue detection rule.
@@ -152,6 +158,7 @@ object chimesdkmediapipelines:
       val argsBuilder = com.pulumi.aws.chimesdkmediapipelines.inputs.MediaInsightsPipelineConfigurationRealTimeAlertConfigurationRuleSentimentConfigurationArgs.builder
       builder.sentimentConfiguration(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.chimesdkmediapipelines.inputs.MediaInsightsPipelineConfigurationRealTimeAlertConfigurationArgs.Builder)
     /**
      * @param rules Collection of real time alert rules
@@ -162,6 +169,7 @@ object chimesdkmediapipelines:
       def argsBuilder = com.pulumi.aws.chimesdkmediapipelines.inputs.MediaInsightsPipelineConfigurationRealTimeAlertConfigurationRuleArgs.builder
       builder.rules(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.chimesdkmediapipelines.inputs.MediaInsightsPipelineConfigurationState.Builder)
     /**
      * @param elements Collection of processors and sinks to transform media and deliver data.
@@ -180,3 +188,8 @@ object chimesdkmediapipelines:
         com.pulumi.aws.chimesdkmediapipelines.inputs.MediaInsightsPipelineConfigurationState.Builder =
       val argsBuilder = com.pulumi.aws.chimesdkmediapipelines.inputs.MediaInsightsPipelineConfigurationRealTimeAlertConfigurationArgs.builder
       builder.realTimeAlertConfiguration(args(argsBuilder).build)
+
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.chimesdkmediapipelines.inputs.MediaInsightsPipelineConfigurationState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       

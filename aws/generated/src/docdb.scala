@@ -89,6 +89,10 @@ object docdb:
       val argsBuilder = com.pulumi.aws.docdb.inputs.ClusterServerlessV2ScalingConfigurationArgs.builder
       builder.serverlessV2ScalingConfiguration(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.docdb.ClusterArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   type DocdbFunctions = com.pulumi.aws.docdb.DocdbFunctions
   object DocdbFunctions:
     // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
@@ -154,6 +158,10 @@ object docdb:
       val argsBuilder = com.pulumi.aws.docdb.inputs.ElasticClusterTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.docdb.ElasticClusterArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.docdb.ClusterParameterGroupArgs.Builder)
     /**
      * @param parameters A list of DocumentDB parameters to apply. Setting parameters to system default values may show a difference on imported resources.
@@ -164,6 +172,10 @@ object docdb:
       def argsBuilder = com.pulumi.aws.docdb.inputs.ClusterParameterGroupParameterArgs.builder
       builder.parameters(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.docdb.ClusterParameterGroupArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /**
    * Provides an DocumentDB Cluster Resource Instance. A Cluster Instance Resource defines attributes that are specific to a single instance in a DocumentDB Cluster.
    *  
@@ -199,6 +211,10 @@ object docdb:
       def argsBuilder = com.pulumi.aws.docdb.inputs.ClusterParameterGroupParameterArgs.builder
       builder.parameters(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.docdb.inputs.ClusterParameterGroupState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.docdb.inputs.GlobalClusterState.Builder)
     /**
      * @param globalClusterMembers Set of objects containing Global Cluster members.
@@ -209,6 +225,7 @@ object docdb:
       def argsBuilder = com.pulumi.aws.docdb.inputs.GlobalClusterGlobalClusterMemberArgs.builder
       builder.globalClusterMembers(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.docdb.inputs.ClusterState.Builder)
     def masterUserSecrets(args: Endofunction[com.pulumi.aws.docdb.inputs.ClusterMasterUserSecretArgs.Builder]*):
         com.pulumi.aws.docdb.inputs.ClusterState.Builder =
@@ -233,8 +250,17 @@ object docdb:
       val argsBuilder = com.pulumi.aws.docdb.inputs.ClusterServerlessV2ScalingConfigurationArgs.builder
       builder.serverlessV2ScalingConfiguration(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.docdb.inputs.ClusterState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.docdb.inputs.ElasticClusterState.Builder)
     def timeouts(args: Endofunction[com.pulumi.aws.docdb.inputs.ElasticClusterTimeoutsArgs.Builder]):
         com.pulumi.aws.docdb.inputs.ElasticClusterState.Builder =
       val argsBuilder = com.pulumi.aws.docdb.inputs.ElasticClusterTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
+
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.docdb.inputs.ElasticClusterState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       

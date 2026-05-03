@@ -29,3 +29,5 @@ object polly:
         com.pulumi.aws.polly.inputs.GetVoicesArgs.Builder =
       def argsBuilder = com.pulumi.aws.polly.inputs.GetVoicesVoiceArgs.builder
       builder.voices(args.map(_(argsBuilder).build)*)
+
+                       

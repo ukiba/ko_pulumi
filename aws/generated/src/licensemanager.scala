@@ -108,6 +108,7 @@ object licensemanager:
       def argsBuilder = com.pulumi.aws.licensemanager.inputs.GetReceivedLicensesFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.licensemanager.inputs.GetLicenseGrantsArgs.Builder)
     /**
      * @param filters Custom filter block as described below.
@@ -117,3 +118,5 @@ object licensemanager:
         com.pulumi.aws.licensemanager.inputs.GetLicenseGrantsArgs.Builder =
       def argsBuilder = com.pulumi.aws.licensemanager.inputs.GetLicenseGrantsFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
+
+                       

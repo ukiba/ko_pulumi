@@ -14,6 +14,10 @@ object cloudwatch:
       val argsBuilder = com.pulumi.aws.cloudwatch.inputs.LogDeliveryDestinationDeliveryDestinationConfigurationArgs.builder
       builder.deliveryDestinationConfiguration(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.cloudwatch.LogDeliveryDestinationArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /** Resource for managing an AWS CloudWatch Logs Delivery. A delivery is a connection between an `aws.cloudwatch.LogDeliverySource` and an `aws.cloudwatch.LogDeliveryDestination`. */
   def LogDelivery(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.cloudwatch.LogDeliveryArgs.Builder])(using conf: KoPulumiConf) =
@@ -82,6 +86,7 @@ object cloudwatch:
       val argsBuilder = com.pulumi.aws.cloudwatch.inputs.EventEndpointRoutingConfigArgs.builder
       builder.routingConfig(args(argsBuilder).build)
 
+                       
   /** Provides a CloudWatch Log Stream resource. */
   def LogStream(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.cloudwatch.LogStreamArgs.Builder])(using conf: KoPulumiConf) =
@@ -166,6 +171,10 @@ object cloudwatch:
       val argsBuilder = com.pulumi.aws.cloudwatch.inputs.CompositeAlarmActionsSuppressorArgs.builder
       builder.actionsSuppressor(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.cloudwatch.CompositeAlarmArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /** Provides a CloudWatch Logs destination policy resource. */
   def LogDestinationPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.cloudwatch.LogDestinationPolicyArgs.Builder]) =
@@ -194,6 +203,10 @@ object cloudwatch:
       val argsBuilder = com.pulumi.aws.cloudwatch.inputs.InternetMonitorInternetMeasurementsLogDeliveryArgs.builder
       builder.internetMeasurementsLogDelivery(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.cloudwatch.InternetMonitorArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /** Resource for managing an AWS CloudWatch Contributor Insight Rule. */
   def ContributorInsightRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.cloudwatch.ContributorInsightRuleArgs.Builder])(using conf: KoPulumiConf) =
@@ -248,6 +261,10 @@ object cloudwatch:
       def argsBuilder = com.pulumi.aws.cloudwatch.inputs.LogDeliveryS3DeliveryConfigurationArgs.builder
       builder.s3DeliveryConfigurations(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.cloudwatch.LogDeliveryArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /** Provides a CloudWatch Logs subscription filter resource. */
   def LogSubscriptionFilter(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.cloudwatch.LogSubscriptionFilterArgs.Builder])(using conf: KoPulumiConf) =
@@ -333,6 +350,7 @@ object cloudwatch:
       val argsBuilder = com.pulumi.aws.cloudwatch.inputs.OtelEnrichmentTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
+                       
   /** Provides a CloudWatch Dashboard resource. */
   def Dashboard(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.cloudwatch.DashboardArgs.Builder]) =
@@ -388,6 +406,10 @@ object cloudwatch:
       val argsBuilder = com.pulumi.aws.cloudwatch.inputs.EventBusLogConfigArgs.builder
       builder.logConfig(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.cloudwatch.EventBusArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /** Provides a CloudWatch Logs query definition resource. */
   def QueryDefinition(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.cloudwatch.QueryDefinitionArgs.Builder])(using conf: KoPulumiConf) =
@@ -460,6 +482,7 @@ object cloudwatch:
       val argsBuilder = com.pulumi.aws.cloudwatch.inputs.EventConnectionInvocationConnectivityParametersArgs.builder
       builder.invocationConnectivityParameters(args(argsBuilder).build)
 
+                       
   /**
    * Provides a resource to create an EventBridge Global Endpoint.
    *  
@@ -510,6 +533,7 @@ object cloudwatch:
       val argsBuilder = com.pulumi.aws.cloudwatch.inputs.PolicyDocumentArgs.builder
       builder.policyDocument(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.cloudwatch.MetricAlarmArgs.Builder)
     /**
      * @param evaluationCriteria The evaluation criteria for PromQL alarms. Cannot be used with traditional metric alarm parameters.
@@ -529,6 +553,10 @@ object cloudwatch:
       def argsBuilder = com.pulumi.aws.cloudwatch.inputs.MetricAlarmMetricQueryArgs.builder
       builder.metricQueries(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.cloudwatch.MetricAlarmArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /**
    * Provides a resource to create an EventBridge resource policy to support cross-account events.
    *  
@@ -786,6 +814,7 @@ object cloudwatch:
       val argsBuilder = com.pulumi.aws.cloudwatch.inputs.EventTargetSqsTargetArgs.builder
       builder.sqsTarget(args(argsBuilder).build)
 
+                       
   /** Resource for managing an AWS CloudWatch Logs Delivery Destination. */
   def LogDeliveryDestination(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.cloudwatch.LogDeliveryDestinationArgs.Builder])(using conf: KoPulumiConf) =
@@ -845,6 +874,7 @@ object cloudwatch:
       val argsBuilder = com.pulumi.aws.cloudwatch.inputs.LogMetricFilterMetricTransformationArgs.builder
       builder.metricTransformation(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.cloudwatch.MetricStreamArgs.Builder)
     /**
      * @param excludeFilters List of exclusive metric filters. If you specify this parameter, the stream sends metrics from all metric namespaces except for the namespaces and the conditional metric names that you specify here. If you don&#39;t specify metric names or provide empty metric names whole metric namespace is excluded. Conflicts with `includeFilter`.
@@ -873,6 +903,10 @@ object cloudwatch:
       def argsBuilder = com.pulumi.aws.cloudwatch.inputs.MetricStreamStatisticsConfigurationArgs.builder
       builder.statisticsConfigurations(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.cloudwatch.MetricStreamArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /** Provides a CloudWatch Log Account Policy resource. */
   def LogAccountPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.cloudwatch.LogAccountPolicyArgs.Builder]) =
@@ -892,6 +926,7 @@ object cloudwatch:
       def argsBuilder = com.pulumi.aws.cloudwatch.inputs.LogTransformerTransformerConfigArgs.builder
       builder.transformerConfigs(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.cloudwatch.EventPermissionArgs.Builder)
     /**
      * @param condition Configuration block to limit the event bus permissions you are granting to only accounts that fulfill the condition. Specified below.
@@ -902,6 +937,7 @@ object cloudwatch:
       val argsBuilder = com.pulumi.aws.cloudwatch.inputs.EventPermissionConditionArgs.builder
       builder.condition(args(argsBuilder).build)
 
+                       
   /** Resource for managing an AWS CloudWatch Logs Transformer. */
   def LogTransformer(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.cloudwatch.LogTransformerArgs.Builder]) =
@@ -951,6 +987,7 @@ object cloudwatch:
       val argsBuilder = com.pulumi.aws.cloudwatch.inputs.EventEndpointRoutingConfigArgs.builder
       builder.routingConfig(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.cloudwatch.inputs.LogMetricFilterState.Builder)
     /**
      * @param metricTransformation A block defining collection of information needed to define how metric data gets emitted. See below.
@@ -961,6 +998,7 @@ object cloudwatch:
       val argsBuilder = com.pulumi.aws.cloudwatch.inputs.LogMetricFilterMetricTransformationArgs.builder
       builder.metricTransformation(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.cloudwatch.inputs.LogTransformerTransformerConfigSubstituteStringArgs.Builder)
     /**
      * @param entries Objects containing the information about the fields to substitute. You must include at least one entry, and ten at most. See `substituteString` `entry` below for details.
@@ -971,6 +1009,7 @@ object cloudwatch:
       def argsBuilder = com.pulumi.aws.cloudwatch.inputs.LogTransformerTransformerConfigSubstituteStringEntryArgs.builder
       builder.entries(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.cloudwatch.inputs.EventPermissionState.Builder)
     /**
      * @param condition Configuration block to limit the event bus permissions you are granting to only accounts that fulfill the condition. Specified below.
@@ -981,6 +1020,7 @@ object cloudwatch:
       val argsBuilder = com.pulumi.aws.cloudwatch.inputs.EventPermissionConditionArgs.builder
       builder.condition(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.cloudwatch.inputs.GetLogDataProtectionPolicyDocumentStatementOperationDeidentifyArgs.Builder)
     /**
      * @param maskConfig An empty object that configures masking.
@@ -991,6 +1031,7 @@ object cloudwatch:
       val argsBuilder = com.pulumi.aws.cloudwatch.inputs.GetLogDataProtectionPolicyDocumentStatementOperationDeidentifyMaskConfigArgs.builder
       builder.maskConfig(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.cloudwatch.inputs.AlarmMuteRuleRuleArgs.Builder)
     /**
      * @param schedule Schedule for the mute rule. See `schedule` block below for details.
@@ -1001,6 +1042,7 @@ object cloudwatch:
       val argsBuilder = com.pulumi.aws.cloudwatch.inputs.AlarmMuteRuleRuleScheduleArgs.builder
       builder.schedule(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.cloudwatch.inputs.MetricAlarmEvaluationCriteriaArgs.Builder)
     /**
      * @param promqlCriteria The PromQL criteria for the alarm evaluation.
@@ -1011,6 +1053,7 @@ object cloudwatch:
       val argsBuilder = com.pulumi.aws.cloudwatch.inputs.MetricAlarmEvaluationCriteriaPromqlCriteriaArgs.builder
       builder.promqlCriteria(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.cloudwatch.inputs.LogTransformerTransformerConfigArgs.Builder)
     /**
      * @param addKeys Adds new key-value pairs to the log event. See `addKeys` below for details.
@@ -1219,6 +1262,7 @@ object cloudwatch:
       def argsBuilder = com.pulumi.aws.cloudwatch.inputs.LogTransformerTransformerConfigUpperCaseStringArgs.builder
       builder.upperCaseStrings(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.cloudwatch.inputs.EventTargetSagemakerPipelineTargetArgs.Builder)
     /**
      * @param pipelineParameterLists List of Parameter names and values for SageMaker AI Model Building Pipeline execution.
@@ -1229,6 +1273,7 @@ object cloudwatch:
       def argsBuilder = com.pulumi.aws.cloudwatch.inputs.EventTargetSagemakerPipelineTargetPipelineParameterListArgs.builder
       builder.pipelineParameterLists(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.cloudwatch.inputs.GetLogDataProtectionPolicyDocumentConfigurationArgs.Builder)
     /**
      * @param customDataIdentifiers Configures custom regular expressions to detect sensitive data. Read more in [Custom data identifiers](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL-custom-data-identifiers.html).
@@ -1239,12 +1284,14 @@ object cloudwatch:
       def argsBuilder = com.pulumi.aws.cloudwatch.inputs.GetLogDataProtectionPolicyDocumentConfigurationCustomDataIdentifierArgs.builder
       builder.customDataIdentifiers(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.cloudwatch.inputs.InternetMonitorInternetMeasurementsLogDeliveryArgs.Builder)
     def s3Config(args: Endofunction[com.pulumi.aws.cloudwatch.inputs.InternetMonitorInternetMeasurementsLogDeliveryS3ConfigArgs.Builder]):
         com.pulumi.aws.cloudwatch.inputs.InternetMonitorInternetMeasurementsLogDeliveryArgs.Builder =
       val argsBuilder = com.pulumi.aws.cloudwatch.inputs.InternetMonitorInternetMeasurementsLogDeliveryS3ConfigArgs.builder
       builder.s3Config(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.cloudwatch.inputs.EventConnectionAuthParametersConnectivityParametersArgs.Builder)
     /**
      * @param resourceParameters The parameters for EventBridge to use when invoking the authentication endpoint. Documented below.
@@ -1255,6 +1302,7 @@ object cloudwatch:
       val argsBuilder = com.pulumi.aws.cloudwatch.inputs.EventConnectionAuthParametersConnectivityParametersResourceParametersArgs.builder
       builder.resourceParameters(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.cloudwatch.inputs.LogDeliveryState.Builder)
     /**
      * @param s3DeliveryConfigurations Parameters that are valid only when the delivery&#39;s delivery destination is an S3 bucket.
@@ -1265,12 +1313,17 @@ object cloudwatch:
       def argsBuilder = com.pulumi.aws.cloudwatch.inputs.LogDeliveryS3DeliveryConfigurationArgs.builder
       builder.s3DeliveryConfigurations(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.cloudwatch.inputs.LogDeliveryState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.cloudwatch.inputs.OtelEnrichmentState.Builder)
     def timeouts(args: Endofunction[com.pulumi.aws.cloudwatch.inputs.OtelEnrichmentTimeoutsArgs.Builder]):
         com.pulumi.aws.cloudwatch.inputs.OtelEnrichmentState.Builder =
       val argsBuilder = com.pulumi.aws.cloudwatch.inputs.OtelEnrichmentTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.cloudwatch.inputs.EventTargetState.Builder)
     /**
      * @param appsyncTarget Parameters used when you are using the rule to invoke an AppSync GraphQL API mutation. Documented below. A maximum of 1 are allowed.
@@ -1380,6 +1433,7 @@ object cloudwatch:
       val argsBuilder = com.pulumi.aws.cloudwatch.inputs.EventTargetSqsTargetArgs.builder
       builder.sqsTarget(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.cloudwatch.inputs.EventConnectionInvocationConnectivityParametersArgs.Builder)
     /**
      * @param resourceParameters The parameters for EventBridge to use when invoking the resource endpoint. Documented below.
@@ -1390,6 +1444,7 @@ object cloudwatch:
       val argsBuilder = com.pulumi.aws.cloudwatch.inputs.EventConnectionInvocationConnectivityParametersResourceParametersArgs.builder
       builder.resourceParameters(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.cloudwatch.inputs.EventTargetEcsTargetArgs.Builder)
     /**
      * @param capacityProviderStrategies The capacity provider strategy to use for the task. If a `capacityProviderStrategy` specified, the `launchType` parameter must be omitted. If no `capacityProviderStrategy` or `launchType` is specified, the default capacity provider strategy for the cluster is used. Can be one or more. See below.
@@ -1427,6 +1482,10 @@ object cloudwatch:
       def argsBuilder = com.pulumi.aws.cloudwatch.inputs.EventTargetEcsTargetPlacementConstraintArgs.builder
       builder.placementConstraints(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.cloudwatch.inputs.EventTargetEcsTargetArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.cloudwatch.inputs.AlarmMuteRuleState.Builder)
     /**
      * @param muteTargets Alarms to mute. See `muteTargets` block below for details.
@@ -1448,6 +1507,10 @@ object cloudwatch:
       val argsBuilder = com.pulumi.aws.cloudwatch.inputs.AlarmMuteRuleRuleArgs.builder
       builder.rule(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.cloudwatch.inputs.AlarmMuteRuleState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.cloudwatch.inputs.LogTransformerTransformerConfigAddKeysArgs.Builder)
     /**
      * @param entries Objects containing the information about the keys to add to the log event. You must include at least one entry, and five at most. See `addKeys` `entry` below for details.
@@ -1458,6 +1521,7 @@ object cloudwatch:
       def argsBuilder = com.pulumi.aws.cloudwatch.inputs.LogTransformerTransformerConfigAddKeysEntryArgs.builder
       builder.entries(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.cloudwatch.inputs.LogTransformerTransformerConfigRenameKeyArgs.Builder)
     /**
      * @param entries Objects containing the information about the keys to rename. You must include at least one entry, and five at most. See `renameKeys` `entry` below for details.
@@ -1468,6 +1532,7 @@ object cloudwatch:
       def argsBuilder = com.pulumi.aws.cloudwatch.inputs.LogTransformerTransformerConfigRenameKeyEntryArgs.builder
       builder.entries(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.cloudwatch.inputs.GetLogDataProtectionPolicyDocumentStatementOperationAuditArgs.Builder)
     /**
      * @param findingsDestination Configures destinations to send audit findings to.
@@ -1478,6 +1543,7 @@ object cloudwatch:
       val argsBuilder = com.pulumi.aws.cloudwatch.inputs.GetLogDataProtectionPolicyDocumentStatementOperationAuditFindingsDestinationArgs.builder
       builder.findingsDestination(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.cloudwatch.inputs.LogTransformerTransformerConfigCopyValueArgs.Builder)
     /**
      * @param entries Objects containing the information about the values to copy to the log event. You must include at least one entry, and five at most. See `copyValue` `entry` below for details.
@@ -1488,6 +1554,7 @@ object cloudwatch:
       def argsBuilder = com.pulumi.aws.cloudwatch.inputs.LogTransformerTransformerConfigCopyValueEntryArgs.builder
       builder.entries(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.cloudwatch.inputs.LogTransformerTransformerConfigMoveKeyArgs.Builder)
     /**
      * @param entries Objects containing the information about the keys to move to the log event. You must include at least one entry, and five at most. See `moveKeys` `entry` below for details.
@@ -1498,6 +1565,7 @@ object cloudwatch:
       def argsBuilder = com.pulumi.aws.cloudwatch.inputs.LogTransformerTransformerConfigMoveKeyEntryArgs.builder
       builder.entries(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.cloudwatch.inputs.LogResourcePolicyState.Builder)
     /**
      * @param policyDocument Details of the resource policy, including the identity of the principal that is enabled to put logs to this account. This is formatted as a JSON string. Maximum length of 5120 characters.
@@ -1508,6 +1576,7 @@ object cloudwatch:
       val argsBuilder = com.pulumi.aws.cloudwatch.inputs.PolicyDocumentArgs.builder
       builder.policyDocument(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.cloudwatch.inputs.EventBusState.Builder)
     /**
      * @param deadLetterConfig Configuration details of the Amazon SQS queue for EventBridge to use as a dead-letter queue (DLQ). This block supports the following arguments:
@@ -1527,6 +1596,10 @@ object cloudwatch:
       val argsBuilder = com.pulumi.aws.cloudwatch.inputs.EventBusLogConfigArgs.builder
       builder.logConfig(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.cloudwatch.inputs.EventBusState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.cloudwatch.inputs.CompositeAlarmState.Builder)
     /**
      * @param actionsSuppressor Actions will be suppressed if the suppressor alarm is in the ALARM state.
@@ -1537,6 +1610,10 @@ object cloudwatch:
       val argsBuilder = com.pulumi.aws.cloudwatch.inputs.CompositeAlarmActionsSuppressorArgs.builder
       builder.actionsSuppressor(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.cloudwatch.inputs.CompositeAlarmState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.cloudwatch.inputs.EventEndpointRoutingConfigArgs.Builder)
     /**
      * @param failoverConfig Parameters used for failover. This includes what triggers failover and what happens when it&#39;s triggered. Documented below.
@@ -1547,6 +1624,7 @@ object cloudwatch:
       val argsBuilder = com.pulumi.aws.cloudwatch.inputs.EventEndpointRoutingConfigFailoverConfigArgs.builder
       builder.failoverConfig(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.cloudwatch.inputs.MetricStreamStatisticsConfigurationArgs.Builder)
     /**
      * @param includeMetrics An array that defines the metrics that are to have additional statistics streamed. See details below.
@@ -1557,6 +1635,7 @@ object cloudwatch:
       def argsBuilder = com.pulumi.aws.cloudwatch.inputs.MetricStreamStatisticsConfigurationIncludeMetricArgs.builder
       builder.includeMetrics(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.cloudwatch.inputs.MetricStreamState.Builder)
     /**
      * @param excludeFilters List of exclusive metric filters. If you specify this parameter, the stream sends metrics from all metric namespaces except for the namespaces and the conditional metric names that you specify here. If you don&#39;t specify metric names or provide empty metric names whole metric namespace is excluded. Conflicts with `includeFilter`.
@@ -1585,6 +1664,10 @@ object cloudwatch:
       def argsBuilder = com.pulumi.aws.cloudwatch.inputs.MetricStreamStatisticsConfigurationArgs.builder
       builder.statisticsConfigurations(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.cloudwatch.inputs.MetricStreamState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.cloudwatch.inputs.LogTransformerState.Builder)
     /**
      * @param transformerConfigs Specifies the configuration of the transformer. You must include at least one configuration, and 20 at most. See `transformerConfig` below for details.
@@ -1595,6 +1678,7 @@ object cloudwatch:
       def argsBuilder = com.pulumi.aws.cloudwatch.inputs.LogTransformerTransformerConfigArgs.builder
       builder.transformerConfigs(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.cloudwatch.inputs.EventEndpointRoutingConfigFailoverConfigArgs.Builder)
     /**
      * @param primary Parameters used for the primary Region. Documented below.
@@ -1614,6 +1698,7 @@ object cloudwatch:
       val argsBuilder = com.pulumi.aws.cloudwatch.inputs.EventEndpointRoutingConfigFailoverConfigSecondaryArgs.builder
       builder.secondary(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.cloudwatch.inputs.EventConnectionAuthParametersOauthArgs.Builder)
     /**
      * @param clientParameters Contains the client parameters for OAuth authorization. Contains the following two parameters.
@@ -1633,6 +1718,7 @@ object cloudwatch:
       val argsBuilder = com.pulumi.aws.cloudwatch.inputs.EventConnectionAuthParametersOauthOauthHttpParametersArgs.builder
       builder.oauthHttpParameters(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.cloudwatch.inputs.GetLogDataProtectionPolicyDocumentStatementOperationArgs.Builder)
     /**
      * @param audit Configures the detection of sensitive data.
@@ -1654,6 +1740,7 @@ object cloudwatch:
       val argsBuilder = com.pulumi.aws.cloudwatch.inputs.GetLogDataProtectionPolicyDocumentStatementOperationDeidentifyArgs.builder
       builder.deidentify(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.cloudwatch.inputs.LogDeliveryDestinationState.Builder)
     /**
      * @param deliveryDestinationConfiguration The AWS resource that will receive the logs. Required for CloudWatch Logs, Amazon S3, and Firehose destinations. Not required for X-Ray trace delivery destinations.
@@ -1664,6 +1751,10 @@ object cloudwatch:
       val argsBuilder = com.pulumi.aws.cloudwatch.inputs.LogDeliveryDestinationDeliveryDestinationConfigurationArgs.builder
       builder.deliveryDestinationConfiguration(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.cloudwatch.inputs.LogDeliveryDestinationState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.cloudwatch.inputs.EventConnectionAuthParametersInvocationHttpParametersArgs.Builder)
     /**
      * @param bodies Contains additional body string parameters for the connection. You can include up to 100 additional body string parameters per request. Each additional parameter counts towards the event payload size, which cannot exceed 64 KB. Each parameter can contain the following:
@@ -1692,6 +1783,7 @@ object cloudwatch:
       def argsBuilder = com.pulumi.aws.cloudwatch.inputs.EventConnectionAuthParametersInvocationHttpParametersQueryStringArgs.builder
       builder.queryStrings(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.cloudwatch.inputs.InternetMonitorState.Builder)
     /**
      * @param healthEventsConfig Health event thresholds. A health event threshold percentage, for performance and availability, determines when Internet Monitor creates a health event when there&#39;s an internet issue that affects your application end users. See Health Events Config below.
@@ -1711,6 +1803,10 @@ object cloudwatch:
       val argsBuilder = com.pulumi.aws.cloudwatch.inputs.InternetMonitorInternetMeasurementsLogDeliveryArgs.builder
       builder.internetMeasurementsLogDelivery(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.cloudwatch.inputs.InternetMonitorState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.cloudwatch.inputs.GetLogDataProtectionPolicyDocumentStatementOperationAuditFindingsDestinationArgs.Builder)
     /**
      * @param cloudwatchLogs Configures CloudWatch Logs as a findings destination.
@@ -1739,6 +1835,7 @@ object cloudwatch:
       val argsBuilder = com.pulumi.aws.cloudwatch.inputs.GetLogDataProtectionPolicyDocumentStatementOperationAuditFindingsDestinationS3Args.builder
       builder.s3(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.cloudwatch.inputs.MetricAlarmState.Builder)
     /**
      * @param evaluationCriteria The evaluation criteria for PromQL alarms. Cannot be used with traditional metric alarm parameters.
@@ -1758,6 +1855,10 @@ object cloudwatch:
       def argsBuilder = com.pulumi.aws.cloudwatch.inputs.MetricAlarmMetricQueryArgs.builder
       builder.metricQueries(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.cloudwatch.inputs.MetricAlarmState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.cloudwatch.inputs.GetLogDataProtectionPolicyDocumentArgs.Builder)
     def configuration(args: Endofunction[com.pulumi.aws.cloudwatch.inputs.GetLogDataProtectionPolicyDocumentConfigurationArgs.Builder]):
         com.pulumi.aws.cloudwatch.inputs.GetLogDataProtectionPolicyDocumentArgs.Builder =
@@ -1777,6 +1878,7 @@ object cloudwatch:
       def argsBuilder = com.pulumi.aws.cloudwatch.inputs.GetLogDataProtectionPolicyDocumentStatementArgs.builder
       builder.statements(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.cloudwatch.inputs.EventConnectionAuthParametersOauthOauthHttpParametersArgs.Builder)
     /**
      * @param bodies Contains additional body string parameters for the connection. You can include up to 100 additional body string parameters per request. Each additional parameter counts towards the event payload size, which cannot exceed 64 KB. Each parameter can contain the following:
@@ -1805,6 +1907,7 @@ object cloudwatch:
       def argsBuilder = com.pulumi.aws.cloudwatch.inputs.EventConnectionAuthParametersOauthOauthHttpParametersQueryStringArgs.builder
       builder.queryStrings(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.cloudwatch.inputs.EventConnectionAuthParametersArgs.Builder)
     /**
      * @param apiKey Parameters used for API_KEY authorization. An API key to include in the header for each authentication request. A maximum of 1 are allowed. Conflicts with `basic` and `oauth`. Documented below.
@@ -1851,12 +1954,14 @@ object cloudwatch:
       val argsBuilder = com.pulumi.aws.cloudwatch.inputs.EventConnectionAuthParametersOauthArgs.builder
       builder.oauth(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.cloudwatch.inputs.PolicyDocumentArgs.Builder)
     def Statement(args: Endofunction[com.pulumi.aws.iam.inputs.PolicyStatementArgs.Builder]*):
         com.pulumi.aws.cloudwatch.inputs.PolicyDocumentArgs.Builder =
       def argsBuilder = com.pulumi.aws.iam.inputs.PolicyStatementArgs.builder
       builder.Statement(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.cloudwatch.inputs.LogTransformerTransformerConfigSplitStringArgs.Builder)
     /**
      * @param entries Objects containing the information about the fields to split. You must include at least one entry, and ten at most. See `splitString` `entry` below for details.
@@ -1867,6 +1972,7 @@ object cloudwatch:
       def argsBuilder = com.pulumi.aws.cloudwatch.inputs.LogTransformerTransformerConfigSplitStringEntryArgs.builder
       builder.entries(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.cloudwatch.inputs.MetricAlarmMetricQueryArgs.Builder)
     /**
      * @param metric The metric to be returned, along with statistics, period, and units. Use this parameter only if this object is retrieving a metric and not performing a math expression on returned data.
@@ -1877,6 +1983,7 @@ object cloudwatch:
       val argsBuilder = com.pulumi.aws.cloudwatch.inputs.MetricAlarmMetricQueryMetricArgs.builder
       builder.metric(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.cloudwatch.inputs.LogTransformerTransformerConfigTypeConverterArgs.Builder)
     /**
      * @param entries Objects containing the information about the fields to change the type of. You must include at least one entry, and five at most. See `typeConverter` `entry` below for details.
@@ -1887,6 +1994,7 @@ object cloudwatch:
       def argsBuilder = com.pulumi.aws.cloudwatch.inputs.LogTransformerTransformerConfigTypeConverterEntryArgs.builder
       builder.entries(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.cloudwatch.inputs.GetLogDataProtectionPolicyDocumentStatementArgs.Builder)
     /**
      * @param operation Configures the data protection operation applied by this statement.
@@ -1897,6 +2005,7 @@ object cloudwatch:
       val argsBuilder = com.pulumi.aws.cloudwatch.inputs.GetLogDataProtectionPolicyDocumentStatementOperationArgs.builder
       builder.operation(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.cloudwatch.inputs.EventConnectionState.Builder)
     /**
      * @param authParameters Parameters used for authorization. A maximum of 1 are allowed. Documented below.
@@ -1916,6 +2025,7 @@ object cloudwatch:
       val argsBuilder = com.pulumi.aws.cloudwatch.inputs.EventConnectionInvocationConnectivityParametersArgs.builder
       builder.invocationConnectivityParameters(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.cloudwatch.AlarmMuteRuleArgs.Builder)
     /**
      * @param muteTargets Alarms to mute. See `muteTargets` block below for details.
@@ -1936,3 +2046,8 @@ object cloudwatch:
         com.pulumi.aws.cloudwatch.AlarmMuteRuleArgs.Builder =
       val argsBuilder = com.pulumi.aws.cloudwatch.inputs.AlarmMuteRuleRuleArgs.builder
       builder.rule(args(argsBuilder).build)
+
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.cloudwatch.AlarmMuteRuleArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       

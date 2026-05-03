@@ -26,6 +26,10 @@ object dlm:
       val argsBuilder = com.pulumi.aws.dlm.inputs.LifecyclePolicyPolicyDetailsArgs.builder
       builder.policyDetails(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.dlm.LifecyclePolicyArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.dlm.inputs.LifecyclePolicyPolicyDetailsScheduleArgs.Builder)
     /**
      * @param archiveRule Specifies a snapshot archiving rule for a schedule. See `archiveRule` block.
@@ -82,6 +86,7 @@ object dlm:
       val argsBuilder = com.pulumi.aws.dlm.inputs.LifecyclePolicyPolicyDetailsScheduleShareRuleArgs.builder
       builder.shareRule(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.dlm.inputs.LifecyclePolicyPolicyDetailsArgs.Builder)
     /**
      * @param action The actions to be performed when the event-based policy is triggered. You can specify only one action per policy. This parameter is required for event-based policies only. If you are creating a snapshot or AMI policy, omit this parameter. See the `action` configuration block.
@@ -124,6 +129,7 @@ object dlm:
       def argsBuilder = com.pulumi.aws.dlm.inputs.LifecyclePolicyPolicyDetailsScheduleArgs.builder
       builder.schedules(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.dlm.inputs.LifecyclePolicyPolicyDetailsActionCrossRegionCopyArgs.Builder)
     /**
      * @param encryptionConfiguration The encryption settings for the copied snapshot. See the `encryptionConfiguration` block. Max of 1 per action.
@@ -139,6 +145,7 @@ object dlm:
       val argsBuilder = com.pulumi.aws.dlm.inputs.LifecyclePolicyPolicyDetailsActionCrossRegionCopyRetainRuleArgs.builder
       builder.retainRule(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.dlm.inputs.LifecyclePolicyPolicyDetailsScheduleArchiveRuleArchiveRetainRuleArgs.Builder)
     /**
      * @param retentionArchiveTier Information about retention period in the Amazon EBS Snapshots Archive. See the `retentionArchiveTier` block.
@@ -149,6 +156,7 @@ object dlm:
       val argsBuilder = com.pulumi.aws.dlm.inputs.LifecyclePolicyPolicyDetailsScheduleArchiveRuleArchiveRetainRuleRetentionArchiveTierArgs.builder
       builder.retentionArchiveTier(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.dlm.inputs.LifecyclePolicyPolicyDetailsActionArgs.Builder)
     /**
      * @param crossRegionCopies The rule for copying shared snapshots across Regions. See the `crossRegionCopy` configuration block.
@@ -159,6 +167,7 @@ object dlm:
       def argsBuilder = com.pulumi.aws.dlm.inputs.LifecyclePolicyPolicyDetailsActionCrossRegionCopyArgs.builder
       builder.crossRegionCopies(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.dlm.inputs.LifecyclePolicyPolicyDetailsScheduleArchiveRuleArgs.Builder)
     /**
      * @param archiveRetainRule Information about the retention period for the snapshot archiving rule. See the `archiveRetainRule` block.
@@ -169,6 +178,7 @@ object dlm:
       val argsBuilder = com.pulumi.aws.dlm.inputs.LifecyclePolicyPolicyDetailsScheduleArchiveRuleArchiveRetainRuleArgs.builder
       builder.archiveRetainRule(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.dlm.inputs.LifecyclePolicyPolicyDetailsScheduleCrossRegionCopyRuleArgs.Builder)
     def deprecateRule(args: Endofunction[com.pulumi.aws.dlm.inputs.LifecyclePolicyPolicyDetailsScheduleCrossRegionCopyRuleDeprecateRuleArgs.Builder]):
         com.pulumi.aws.dlm.inputs.LifecyclePolicyPolicyDetailsScheduleCrossRegionCopyRuleArgs.Builder =
@@ -180,12 +190,14 @@ object dlm:
       val argsBuilder = com.pulumi.aws.dlm.inputs.LifecyclePolicyPolicyDetailsScheduleCrossRegionCopyRuleRetainRuleArgs.builder
       builder.retainRule(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.dlm.inputs.LifecyclePolicyPolicyDetailsEventSourceArgs.Builder)
     def parameters(args: Endofunction[com.pulumi.aws.dlm.inputs.LifecyclePolicyPolicyDetailsEventSourceParametersArgs.Builder]):
         com.pulumi.aws.dlm.inputs.LifecyclePolicyPolicyDetailsEventSourceArgs.Builder =
       val argsBuilder = com.pulumi.aws.dlm.inputs.LifecyclePolicyPolicyDetailsEventSourceParametersArgs.builder
       builder.parameters(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.dlm.inputs.LifecyclePolicyState.Builder)
     /**
      * @param policyDetails See the `policyDetails` configuration block. Max of 1.
@@ -196,6 +208,10 @@ object dlm:
       val argsBuilder = com.pulumi.aws.dlm.inputs.LifecyclePolicyPolicyDetailsArgs.builder
       builder.policyDetails(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.dlm.inputs.LifecyclePolicyState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.dlm.inputs.LifecyclePolicyPolicyDetailsScheduleCreateRuleArgs.Builder)
     /**
      * @param scripts Specifies pre and/or post scripts for a snapshot lifecycle policy that targets instances. Valid only when `resourceType` is INSTANCE. See the `scripts` configuration block.
@@ -205,3 +221,5 @@ object dlm:
         com.pulumi.aws.dlm.inputs.LifecyclePolicyPolicyDetailsScheduleCreateRuleArgs.Builder =
       val argsBuilder = com.pulumi.aws.dlm.inputs.LifecyclePolicyPolicyDetailsScheduleCreateRuleScriptsArgs.builder
       builder.scripts(args(argsBuilder).build)
+
+                       

@@ -38,6 +38,10 @@ object rum:
       val argsBuilder = com.pulumi.aws.rum.inputs.AppMonitorCustomEventsArgs.builder
       builder.customEvents(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.rum.AppMonitorArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /** Provides a CloudWatch RUM Metrics Destination resource. */
   def MetricsDestination(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.rum.MetricsDestinationArgs.Builder]) =
@@ -65,3 +69,8 @@ object rum:
         com.pulumi.aws.rum.inputs.AppMonitorState.Builder =
       val argsBuilder = com.pulumi.aws.rum.inputs.AppMonitorCustomEventsArgs.builder
       builder.customEvents(args(argsBuilder).build)
+
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.rum.inputs.AppMonitorState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       

@@ -10,6 +10,7 @@ object computeoptimizer:
       val argsBuilder = com.pulumi.aws.computeoptimizer.inputs.EnrollmentStatusTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
+                       
   /** Manages AWS Compute Optimizer enrollment status. */
   def EnrollmentStatus(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.computeoptimizer.EnrollmentStatusArgs.Builder]) =
@@ -65,6 +66,7 @@ object computeoptimizer:
       def argsBuilder = com.pulumi.aws.computeoptimizer.inputs.RecommendationPreferencesUtilizationPreferenceArgs.builder
       builder.utilizationPreferences(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.computeoptimizer.inputs.RecommendationPreferencesState.Builder)
     /**
      * @param externalMetricsPreference The provider of the external metrics recommendation preference. See External Metrics Preference below.
@@ -102,6 +104,7 @@ object computeoptimizer:
       def argsBuilder = com.pulumi.aws.computeoptimizer.inputs.RecommendationPreferencesUtilizationPreferenceArgs.builder
       builder.utilizationPreferences(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.computeoptimizer.inputs.RecommendationPreferencesUtilizationPreferenceArgs.Builder)
     /**
      * @param metricParameters The parameters to set when customizing the resource utilization thresholds.
@@ -112,8 +115,11 @@ object computeoptimizer:
       val argsBuilder = com.pulumi.aws.computeoptimizer.inputs.RecommendationPreferencesUtilizationPreferenceMetricParametersArgs.builder
       builder.metricParameters(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.computeoptimizer.inputs.EnrollmentStatusState.Builder)
     def timeouts(args: Endofunction[com.pulumi.aws.computeoptimizer.inputs.EnrollmentStatusTimeoutsArgs.Builder]):
         com.pulumi.aws.computeoptimizer.inputs.EnrollmentStatusState.Builder =
       val argsBuilder = com.pulumi.aws.computeoptimizer.inputs.EnrollmentStatusTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
+
+                       

@@ -72,6 +72,7 @@ object codedeploy:
       val argsBuilder = com.pulumi.aws.codedeploy.inputs.DeploymentConfigZonalConfigArgs.builder
       builder.zonalConfig(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.codedeploy.DeploymentGroupArgs.Builder)
     /**
      * @param alarmConfiguration Configuration block of alarms associated with the deployment group (documented below).
@@ -163,6 +164,10 @@ object codedeploy:
       def argsBuilder = com.pulumi.aws.codedeploy.inputs.DeploymentGroupTriggerConfigurationArgs.builder
       builder.triggerConfigurations(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.codedeploy.DeploymentGroupArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.codedeploy.inputs.DeploymentGroupLoadBalancerInfoTargetGroupPairInfoArgs.Builder)
     /**
      * @param prodTrafficRoute Configuration block for the production traffic route (documented below).
@@ -191,6 +196,7 @@ object codedeploy:
       val argsBuilder = com.pulumi.aws.codedeploy.inputs.DeploymentGroupLoadBalancerInfoTargetGroupPairInfoTestTrafficRouteArgs.builder
       builder.testTrafficRoute(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.codedeploy.inputs.DeploymentGroupEc2TagSetArgs.Builder)
     /**
      * @param ec2TagFilters Tag filters associated with the deployment group. See the AWS docs for details.
@@ -201,6 +207,7 @@ object codedeploy:
       def argsBuilder = com.pulumi.aws.codedeploy.inputs.DeploymentGroupEc2TagSetEc2TagFilterArgs.builder
       builder.ec2TagFilters(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.codedeploy.inputs.DeploymentGroupBlueGreenDeploymentConfigArgs.Builder)
     /**
      * @param deploymentReadyOption Information about the action to take when newly provisioned instances are ready to receive traffic in a blue/green deployment (documented below).
@@ -231,6 +238,7 @@ object codedeploy:
       val argsBuilder = com.pulumi.aws.codedeploy.inputs.DeploymentGroupBlueGreenDeploymentConfigTerminateBlueInstancesOnDeploymentSuccessArgs.builder
       builder.terminateBlueInstancesOnDeploymentSuccess(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.codedeploy.inputs.DeploymentConfigState.Builder)
     /**
      * @param minimumHealthyHosts A minimumHealthyHosts block. Required for `Server` compute platform. Minimum Healthy Hosts are documented below.
@@ -259,6 +267,7 @@ object codedeploy:
       val argsBuilder = com.pulumi.aws.codedeploy.inputs.DeploymentConfigZonalConfigArgs.builder
       builder.zonalConfig(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.codedeploy.inputs.DeploymentConfigTrafficRoutingConfigArgs.Builder)
     /**
      * @param timeBasedCanary The time based canary configuration information. If `type` is `TimeBasedLinear`, use `timeBasedLinear` instead.
@@ -278,6 +287,7 @@ object codedeploy:
       val argsBuilder = com.pulumi.aws.codedeploy.inputs.DeploymentConfigTrafficRoutingConfigTimeBasedLinearArgs.builder
       builder.timeBasedLinear(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.codedeploy.inputs.DeploymentGroupLoadBalancerInfoArgs.Builder)
     /**
      * @param elbInfos The Classic Elastic Load Balancer to use in a deployment. Conflicts with `targetGroupInfo` and `targetGroupPairInfo`.
@@ -306,6 +316,7 @@ object codedeploy:
       val argsBuilder = com.pulumi.aws.codedeploy.inputs.DeploymentGroupLoadBalancerInfoTargetGroupPairInfoArgs.builder
       builder.targetGroupPairInfo(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.codedeploy.inputs.DeploymentGroupState.Builder)
     /**
      * @param alarmConfiguration Configuration block of alarms associated with the deployment group (documented below).
@@ -397,6 +408,10 @@ object codedeploy:
       def argsBuilder = com.pulumi.aws.codedeploy.inputs.DeploymentGroupTriggerConfigurationArgs.builder
       builder.triggerConfigurations(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.codedeploy.inputs.DeploymentGroupState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.codedeploy.inputs.DeploymentConfigZonalConfigArgs.Builder)
     /**
      * @param minimumHealthyHostsPerZone The number or percentage of instances that must remain available per Availability Zone during a deployment. If you don&#39;t specify a value under `minimumHealthyHostsPerZone`, then CodeDeploy uses a default value of 0 percent. This block is more documented below.
@@ -406,3 +421,5 @@ object codedeploy:
         com.pulumi.aws.codedeploy.inputs.DeploymentConfigZonalConfigArgs.Builder =
       val argsBuilder = com.pulumi.aws.codedeploy.inputs.DeploymentConfigZonalConfigMinimumHealthyHostsPerZoneArgs.builder
       builder.minimumHealthyHostsPerZone(args(argsBuilder).build)
+
+                       

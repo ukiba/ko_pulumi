@@ -68,6 +68,10 @@ object keyspaces:
       val argsBuilder = com.pulumi.aws.keyspaces.inputs.TableTtlArgs.builder
       builder.ttl(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.keyspaces.TableArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /**
    * Provides a Keyspaces Table.
    *  
@@ -94,6 +98,10 @@ object keyspaces:
       val argsBuilder = com.pulumi.aws.keyspaces.inputs.KeyspaceReplicationSpecificationArgs.builder
       builder.replicationSpecification(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.keyspaces.KeyspaceArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /**
    * Provides a Keyspaces Keyspace.
    *  
@@ -177,6 +185,10 @@ object keyspaces:
       val argsBuilder = com.pulumi.aws.keyspaces.inputs.TableTtlArgs.builder
       builder.ttl(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.keyspaces.inputs.TableState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.keyspaces.inputs.KeyspaceState.Builder)
     /**
      * @param replicationSpecification The replication specification of the keyspace.
@@ -187,6 +199,10 @@ object keyspaces:
       val argsBuilder = com.pulumi.aws.keyspaces.inputs.KeyspaceReplicationSpecificationArgs.builder
       builder.replicationSpecification(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.keyspaces.inputs.KeyspaceState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.keyspaces.inputs.TableSchemaDefinitionArgs.Builder)
     /**
      * @param clusteringKeys The columns that are part of the clustering key of the table.
@@ -223,3 +239,5 @@ object keyspaces:
         com.pulumi.aws.keyspaces.inputs.TableSchemaDefinitionArgs.Builder =
       def argsBuilder = com.pulumi.aws.keyspaces.inputs.TableSchemaDefinitionStaticColumnArgs.builder
       builder.staticColumns(args.map(_(argsBuilder).build)*)
+
+                       

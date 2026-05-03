@@ -50,6 +50,10 @@ object iot:
       val argsBuilder = com.pulumi.aws.iot.inputs.BillingGroupPropertiesArgs.builder
       builder.properties(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.iot.BillingGroupArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /** Creates and manages an AWS IoT domain configuration. */
   def DomainConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.iot.DomainConfigurationArgs.Builder])(using conf: KoPulumiConf) =
@@ -90,6 +94,7 @@ object iot:
       val argsBuilder = com.pulumi.aws.iot.inputs.TopicRuleDestinationVpcConfigurationArgs.builder
       builder.vpcConfiguration(args(argsBuilder).build)
 
+                       
   /**
    * Manages IoT event configurations.
    *  
@@ -320,6 +325,10 @@ object iot:
       def argsBuilder = com.pulumi.aws.iot.inputs.TopicRuleTimestreamArgs.builder
       builder.timestreams(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.iot.TopicRuleArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.iot.ThingTypeArgs.Builder)
     /**
      * @param properties , Configuration block that can contain the following properties of the thing type:
@@ -330,6 +339,10 @@ object iot:
       val argsBuilder = com.pulumi.aws.iot.inputs.ThingTypePropertiesArgs.builder
       builder.properties(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.iot.ThingTypeArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.iot.ThingGroupArgs.Builder)
     /**
      * @param properties The Thing Group properties. Defined below.
@@ -340,6 +353,10 @@ object iot:
       val argsBuilder = com.pulumi.aws.iot.inputs.ThingGroupPropertiesArgs.builder
       builder.properties(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.iot.ThingGroupArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /** Provides a resource to manage [default logging options](https://docs.aws.amazon.com/iot/latest/developerguide/configure-logging.html#configure-logging-console). */
   def LoggingOptions(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.iot.LoggingOptionsArgs.Builder]) =
@@ -383,6 +400,10 @@ object iot:
       val argsBuilder = com.pulumi.aws.iot.inputs.CaCertificateRegistrationConfigArgs.builder
       builder.registrationConfig(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.iot.CaCertificateArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.iot.IndexingConfigurationArgs.Builder)
     /**
      * @param thingGroupIndexingConfiguration Thing group indexing configuration. See below.
@@ -402,6 +423,7 @@ object iot:
       val argsBuilder = com.pulumi.aws.iot.inputs.IndexingConfigurationThingIndexingConfigurationArgs.builder
       builder.thingIndexingConfiguration(args(argsBuilder).build)
 
+                       
   /** Managing [IoT Thing indexing](https://docs.aws.amazon.com/iot/latest/developerguide/managing-index.html). */
   def IndexingConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.iot.IndexingConfigurationArgs.Builder]) =
@@ -421,6 +443,10 @@ object iot:
       val argsBuilder = com.pulumi.aws.iot.inputs.ProvisioningTemplatePreProvisioningHookArgs.builder
       builder.preProvisioningHook(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.iot.ProvisioningTemplateArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /** Creates and manages an AWS IoT topic rule. */
   def TopicRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.iot.TopicRuleArgs.Builder])(using conf: KoPulumiConf) =
@@ -465,6 +491,10 @@ object iot:
       val argsBuilder = com.pulumi.aws.iot.inputs.ThingTypePropertiesArgs.builder
       builder.properties(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.iot.inputs.ThingTypeState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.iot.inputs.IndexingConfigurationState.Builder)
     /**
      * @param thingGroupIndexingConfiguration Thing group indexing configuration. See below.
@@ -484,6 +514,7 @@ object iot:
       val argsBuilder = com.pulumi.aws.iot.inputs.IndexingConfigurationThingIndexingConfigurationArgs.builder
       builder.thingIndexingConfiguration(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.iot.inputs.TopicRuleErrorActionTimestreamArgs.Builder)
     /**
      * @param dimensions Configuration blocks with metadata attributes of the time series that are written in each measure record. Nested arguments below.
@@ -503,6 +534,7 @@ object iot:
       val argsBuilder = com.pulumi.aws.iot.inputs.TopicRuleErrorActionTimestreamTimestampArgs.builder
       builder.timestamp(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.iot.inputs.TopicRuleState.Builder)
     def cloudwatchAlarms(args: Endofunction[com.pulumi.aws.iot.inputs.TopicRuleCloudwatchAlarmArgs.Builder]*):
         com.pulumi.aws.iot.inputs.TopicRuleState.Builder =
@@ -608,6 +640,10 @@ object iot:
       def argsBuilder = com.pulumi.aws.iot.inputs.TopicRuleTimestreamArgs.builder
       builder.timestreams(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.iot.inputs.TopicRuleState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.iot.inputs.DomainConfigurationState.Builder)
     /**
      * @param authorizerConfig An object that specifies the authorization service for a domain. See the `authorizerConfig` Block below for details.
@@ -627,6 +663,10 @@ object iot:
       val argsBuilder = com.pulumi.aws.iot.inputs.DomainConfigurationTlsConfigArgs.builder
       builder.tlsConfig(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.iot.inputs.DomainConfigurationState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.iot.inputs.ThingGroupPropertiesArgs.Builder)
     /**
      * @param attributePayload The Thing Group attributes. Defined below.
@@ -637,6 +677,7 @@ object iot:
       val argsBuilder = com.pulumi.aws.iot.inputs.ThingGroupPropertiesAttributePayloadArgs.builder
       builder.attributePayload(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.iot.inputs.BillingGroupState.Builder)
     def metadatas(args: Endofunction[com.pulumi.aws.iot.inputs.BillingGroupMetadataArgs.Builder]*):
         com.pulumi.aws.iot.inputs.BillingGroupState.Builder =
@@ -652,6 +693,10 @@ object iot:
       val argsBuilder = com.pulumi.aws.iot.inputs.BillingGroupPropertiesArgs.builder
       builder.properties(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.iot.inputs.BillingGroupState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.iot.inputs.IndexingConfigurationThingGroupIndexingConfigurationArgs.Builder)
     /**
      * @param customFields A list of thing group fields to index. This list cannot contain any managed fields. See below.
@@ -671,6 +716,7 @@ object iot:
       def argsBuilder = com.pulumi.aws.iot.inputs.IndexingConfigurationThingGroupIndexingConfigurationManagedFieldArgs.builder
       builder.managedFields(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.iot.inputs.TopicRuleTimestreamArgs.Builder)
     /**
      * @param dimensions Configuration blocks with metadata attributes of the time series that are written in each measure record. Nested arguments below.
@@ -690,6 +736,7 @@ object iot:
       val argsBuilder = com.pulumi.aws.iot.inputs.TopicRuleTimestreamTimestampArgs.builder
       builder.timestamp(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.iot.inputs.IndexingConfigurationThingIndexingConfigurationArgs.Builder)
     /**
      * @param customFields Contains custom field names and their data type. See below.
@@ -718,6 +765,7 @@ object iot:
       def argsBuilder = com.pulumi.aws.iot.inputs.IndexingConfigurationThingIndexingConfigurationManagedFieldArgs.builder
       builder.managedFields(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.iot.inputs.TopicRuleErrorActionKafkaArgs.Builder)
     /**
      * @param headers The list of Kafka headers that you specify. Nested arguments below.
@@ -728,12 +776,14 @@ object iot:
       def argsBuilder = com.pulumi.aws.iot.inputs.TopicRuleErrorActionKafkaHeaderArgs.builder
       builder.headers(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.iot.inputs.ThingGroupMetadataArgs.Builder)
     def rootToParentGroups(args: Endofunction[com.pulumi.aws.iot.inputs.ThingGroupMetadataRootToParentGroupArgs.Builder]*):
         com.pulumi.aws.iot.inputs.ThingGroupMetadataArgs.Builder =
       def argsBuilder = com.pulumi.aws.iot.inputs.ThingGroupMetadataRootToParentGroupArgs.builder
       builder.rootToParentGroups(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.iot.inputs.TopicRuleHttpArgs.Builder)
     /**
      * @param httpHeaders Custom HTTP header IoT Core should send. It is possible to define more than one custom header.
@@ -744,6 +794,7 @@ object iot:
       def argsBuilder = com.pulumi.aws.iot.inputs.TopicRuleHttpHttpHeaderArgs.builder
       builder.httpHeaders(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.iot.inputs.TopicRuleErrorActionArgs.Builder)
     def cloudwatchAlarm(args: Endofunction[com.pulumi.aws.iot.inputs.TopicRuleErrorActionCloudwatchAlarmArgs.Builder]):
         com.pulumi.aws.iot.inputs.TopicRuleErrorActionArgs.Builder =
@@ -840,6 +891,7 @@ object iot:
       val argsBuilder = com.pulumi.aws.iot.inputs.TopicRuleErrorActionTimestreamArgs.builder
       builder.timestream(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.iot.inputs.TopicRuleDestinationState.Builder)
     /**
      * @param vpcConfiguration Configuration of the virtual private cloud (VPC) connection. For more info, see the [AWS documentation](https://docs.aws.amazon.com/iot/latest/developerguide/vpc-rule-action.html).
@@ -850,6 +902,7 @@ object iot:
       val argsBuilder = com.pulumi.aws.iot.inputs.TopicRuleDestinationVpcConfigurationArgs.builder
       builder.vpcConfiguration(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.iot.inputs.TopicRuleDynamodbv2Args.Builder)
     /**
      * @param putItem Configuration block with DynamoDB Table to which the message will be written. Nested arguments below.
@@ -860,6 +913,7 @@ object iot:
       val argsBuilder = com.pulumi.aws.iot.inputs.TopicRuleDynamodbv2PutItemArgs.builder
       builder.putItem(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.iot.inputs.TopicRuleErrorActionHttpArgs.Builder)
     /**
      * @param httpHeaders Custom HTTP header IoT Core should send. It is possible to define more than one custom header.
@@ -870,6 +924,7 @@ object iot:
       def argsBuilder = com.pulumi.aws.iot.inputs.TopicRuleErrorActionHttpHttpHeaderArgs.builder
       builder.httpHeaders(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.iot.inputs.ProvisioningTemplateState.Builder)
     /**
      * @param preProvisioningHook Creates a pre-provisioning hook template. Details below.
@@ -880,6 +935,10 @@ object iot:
       val argsBuilder = com.pulumi.aws.iot.inputs.ProvisioningTemplatePreProvisioningHookArgs.builder
       builder.preProvisioningHook(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.iot.inputs.ProvisioningTemplateState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.iot.inputs.ThingGroupState.Builder)
     def metadatas(args: Endofunction[com.pulumi.aws.iot.inputs.ThingGroupMetadataArgs.Builder]*):
         com.pulumi.aws.iot.inputs.ThingGroupState.Builder =
@@ -895,6 +954,10 @@ object iot:
       val argsBuilder = com.pulumi.aws.iot.inputs.ThingGroupPropertiesArgs.builder
       builder.properties(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.iot.inputs.ThingGroupState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.iot.inputs.TopicRuleErrorActionDynamodbv2Args.Builder)
     /**
      * @param putItem Configuration block with DynamoDB Table to which the message will be written. Nested arguments below.
@@ -905,6 +968,7 @@ object iot:
       val argsBuilder = com.pulumi.aws.iot.inputs.TopicRuleErrorActionDynamodbv2PutItemArgs.builder
       builder.putItem(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.iot.inputs.CaCertificateState.Builder)
     /**
      * @param registrationConfig Information about the registration configuration. See below.
@@ -924,6 +988,10 @@ object iot:
       def argsBuilder = com.pulumi.aws.iot.inputs.CaCertificateValidityArgs.builder
       builder.validities(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.iot.inputs.CaCertificateState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.iot.inputs.TopicRuleKafkaArgs.Builder)
     /**
      * @param headers The list of Kafka headers that you specify. Nested arguments below.
@@ -934,6 +1002,7 @@ object iot:
       def argsBuilder = com.pulumi.aws.iot.inputs.TopicRuleKafkaHeaderArgs.builder
       builder.headers(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.iot.DomainConfigurationArgs.Builder)
     /**
      * @param authorizerConfig An object that specifies the authorization service for a domain. See the `authorizerConfig` Block below for details.
@@ -952,3 +1021,8 @@ object iot:
         com.pulumi.aws.iot.DomainConfigurationArgs.Builder =
       val argsBuilder = com.pulumi.aws.iot.inputs.DomainConfigurationTlsConfigArgs.builder
       builder.tlsConfig(args(argsBuilder).build)
+
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.iot.DomainConfigurationArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       

@@ -83,6 +83,10 @@ object acm:
       def argsBuilder = com.pulumi.aws.acm.inputs.CertificateValidationOptionArgs.builder
       builder.validationOptions(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.acm.CertificateArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.acm.inputs.CertificateState.Builder)
     /**
      * @param domainValidationOptions Set of domain validation objects which can be used to complete certificate validation.
@@ -114,6 +118,10 @@ object acm:
       def argsBuilder = com.pulumi.aws.acm.inputs.CertificateValidationOptionArgs.builder
       builder.validationOptions(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.acm.inputs.CertificateState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   type AcmFunctions = com.pulumi.aws.acm.AcmFunctions
   object AcmFunctions:
     // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)

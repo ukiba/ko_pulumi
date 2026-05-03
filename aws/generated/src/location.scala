@@ -127,6 +127,10 @@ object location:
       val argsBuilder = com.pulumi.aws.location.inputs.PlaceIndexDataSourceConfigurationArgs.builder
       builder.dataSourceConfiguration(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.location.PlaceIndexArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /** Resource for managing an AWS Location Tracker Association. */
   def TrackerAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.location.TrackerAssociationArgs.Builder]) =
@@ -158,6 +162,10 @@ object location:
       val argsBuilder = com.pulumi.aws.location.inputs.MapConfigurationArgs.builder
       builder.configuration(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.location.MapArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /** Provides a Location Service Tracker. */
   def Tracker(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.location.TrackerArgs.Builder])(using conf: KoPulumiConf) =
@@ -192,6 +200,10 @@ object location:
       val argsBuilder = com.pulumi.aws.location.inputs.PlaceIndexDataSourceConfigurationArgs.builder
       builder.dataSourceConfiguration(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.location.inputs.PlaceIndexState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.location.inputs.MapState.Builder)
     /**
      * @param configuration Configuration block with the map style selected from an available data provider. Detailed below.
@@ -201,3 +213,8 @@ object location:
         com.pulumi.aws.location.inputs.MapState.Builder =
       val argsBuilder = com.pulumi.aws.location.inputs.MapConfigurationArgs.builder
       builder.configuration(args(argsBuilder).build)
+
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.location.inputs.MapState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       

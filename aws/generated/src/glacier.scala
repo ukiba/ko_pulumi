@@ -14,6 +14,10 @@ object glacier:
       val argsBuilder = com.pulumi.aws.glacier.inputs.VaultNotificationArgs.builder
       builder.notification(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.glacier.VaultArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /**
    * Manages a Glacier Vault Lock. You can refer to the [Glacier Developer Guide](https://docs.aws.amazon.com/amazonglacier/latest/dev/vault-lock.html) for a full explanation of the Glacier Vault Lock functionality.
    *  
@@ -59,3 +63,8 @@ object glacier:
         com.pulumi.aws.glacier.inputs.VaultState.Builder =
       val argsBuilder = com.pulumi.aws.glacier.inputs.VaultNotificationArgs.builder
       builder.notification(args(argsBuilder).build)
+
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.glacier.inputs.VaultState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       

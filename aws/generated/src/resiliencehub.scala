@@ -36,6 +36,10 @@ object resiliencehub:
       val argsBuilder = com.pulumi.aws.resiliencehub.inputs.ResiliencyPolicyTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.resiliencehub.ResiliencyPolicyArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.resiliencehub.inputs.ResiliencyPolicyState.Builder)
     /**
      * @param policy The type of resiliency policy to be created, including the recovery time objective (RTO) and recovery point objective (RPO) in seconds. See `policy`.
@@ -53,6 +57,10 @@ object resiliencehub:
       val argsBuilder = com.pulumi.aws.resiliencehub.inputs.ResiliencyPolicyTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.resiliencehub.inputs.ResiliencyPolicyState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.resiliencehub.inputs.ResiliencyPolicyPolicyArgs.Builder)
     /**
      * @param az Specifies Availability Zone failure policy. See `policy.az`
@@ -91,3 +99,5 @@ object resiliencehub:
         com.pulumi.aws.resiliencehub.inputs.ResiliencyPolicyPolicyArgs.Builder =
       val argsBuilder = com.pulumi.aws.resiliencehub.inputs.ResiliencyPolicyPolicySoftwareArgs.builder
       builder.software(args(argsBuilder).build)
+
+                       

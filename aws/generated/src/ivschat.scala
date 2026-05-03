@@ -29,6 +29,10 @@ object ivschat:
       val argsBuilder = com.pulumi.aws.ivschat.inputs.LoggingConfigurationDestinationConfigurationArgs.builder
       builder.destinationConfiguration(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.ivschat.LoggingConfigurationArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.ivschat.RoomArgs.Builder)
     /**
      * @param messageReviewHandler Configuration information for optional
@@ -40,6 +44,10 @@ object ivschat:
       val argsBuilder = com.pulumi.aws.ivschat.inputs.RoomMessageReviewHandlerArgs.builder
       builder.messageReviewHandler(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.ivschat.RoomArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /** Resource for managing an AWS IVS (Interactive Video) Chat Logging Configuration. */
   def LoggingConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ivschat.LoggingConfigurationArgs.Builder])(using conf: KoPulumiConf) =
@@ -83,6 +91,7 @@ object ivschat:
       val argsBuilder = com.pulumi.aws.ivschat.inputs.LoggingConfigurationDestinationConfigurationS3Args.builder
       builder.s3(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.ivschat.inputs.LoggingConfigurationState.Builder)
     /**
      * @param destinationConfiguration Object containing destination configuration for where chat activity will be logged. This object must contain exactly one of the following children arguments:
@@ -93,6 +102,10 @@ object ivschat:
       val argsBuilder = com.pulumi.aws.ivschat.inputs.LoggingConfigurationDestinationConfigurationArgs.builder
       builder.destinationConfiguration(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.ivschat.inputs.LoggingConfigurationState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.ivschat.inputs.RoomState.Builder)
     /**
      * @param messageReviewHandler Configuration information for optional
@@ -103,3 +116,8 @@ object ivschat:
         com.pulumi.aws.ivschat.inputs.RoomState.Builder =
       val argsBuilder = com.pulumi.aws.ivschat.inputs.RoomMessageReviewHandlerArgs.builder
       builder.messageReviewHandler(args(argsBuilder).build)
+
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.ivschat.inputs.RoomState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       

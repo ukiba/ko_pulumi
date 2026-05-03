@@ -30,6 +30,10 @@ object s3:
       val argsBuilder = com.pulumi.aws.s3.inputs.FilesAccessPointTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.s3.FilesAccessPointArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.s3.BucketWebsiteConfigurationV2Args.Builder)
     /**
      * @param errorDocument Name of the error document for the website. See below.
@@ -67,6 +71,7 @@ object s3:
       def argsBuilder = com.pulumi.aws.s3.inputs.BucketWebsiteConfigurationV2RoutingRuleArgs.builder
       builder.routingRules(args.map(_(argsBuilder).build)*)
 
+                       
   /**
    * Provides an S3 bucket accelerate configuration resource. See the [Requirements for using Transfer Acceleration](https://docs.aws.amazon.com/AmazonS3/latest/userguide/transfer-acceleration.html#transfer-acceleration-requirements) for more details.
    *  
@@ -152,6 +157,7 @@ object s3:
       val argsBuilder = com.pulumi.aws.s3.inputs.BucketAclAccessControlPolicyArgs.builder
       builder.accessControlPolicy(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.s3.AccessPointArgs.Builder)
     /**
      * @param publicAccessBlockConfiguration Configuration block to manage the `PublicAccessBlock` configuration that you want to apply to this Amazon S3 bucket. You can enable the configuration options in any combination. Detailed below.
@@ -171,6 +177,10 @@ object s3:
       val argsBuilder = com.pulumi.aws.s3.inputs.AccessPointVpcConfigurationArgs.builder
       builder.vpcConfiguration(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.s3.AccessPointArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.s3.BucketServerSideEncryptionConfigurationArgs.Builder)
     /**
      * @param rules Set of server-side encryption configuration rules. See below. Currently, only a single rule is supported.
@@ -181,6 +191,7 @@ object s3:
       def argsBuilder = com.pulumi.aws.s3.inputs.BucketServerSideEncryptionConfigurationRuleArgs.builder
       builder.rules(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.s3.BucketV2Args.Builder)
     /**
      * @param corsRules Rule of [Cross-Origin Resource Sharing](https://docs.aws.amazon.com/AmazonS3/latest/dev/cors.html). See CORS rule below for details. This provider will only perform drift detection if a configuration value is provided. Use the resource `aws.s3.BucketCorsConfiguration` instead.
@@ -280,6 +291,10 @@ object s3:
       def argsBuilder = com.pulumi.aws.s3.inputs.BucketV2WebsiteArgs.builder
       builder.websites(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.s3.BucketV2Args.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /**
    * Provides an S3 bucket Object Lock configuration resource. For more information about Object Locking, go to [Using S3 Object Lock](https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lock.html) in the Amazon S3 User Guide.
    *  
@@ -317,6 +332,7 @@ object s3:
       val argsBuilder = com.pulumi.aws.s3.inputs.BucketObjectLockConfigurationV2RuleArgs.builder
       builder.rule(args(argsBuilder).build)
 
+                       
   /**
    * Provides an [S3 Intelligent-Tiering](https://docs.aws.amazon.com/AmazonS3/latest/userguide/intelligent-tiering.html) configuration resource.
    *  
@@ -343,6 +359,7 @@ object s3:
       def argsBuilder = com.pulumi.aws.s3.inputs.BucketServerSideEncryptionConfigurationV2RuleArgs.builder
       builder.rules(args.map(_(argsBuilder).build)*)
 
+                       
   /**
    * Provides an S3 bucket (server access) logging resource. For more information, see [Logging requests using server access logging](https://docs.aws.amazon.com/AmazonS3/latest/userguide/ServerLogs.html)
    *  in the AWS S3 User Guide.
@@ -370,6 +387,10 @@ object s3:
       def argsBuilder = com.pulumi.aws.s3.inputs.VectorsVectorBucketEncryptionConfigurationArgs.builder
       builder.encryptionConfigurations(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.s3.VectorsVectorBucketArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /** Provides a S3 bucket [metrics configuration](http://docs.aws.amazon.com/AmazonS3/latest/dev/metrics-configurations.html) resource. */
   def BucketMetric(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.s3.BucketMetricArgs.Builder])(using conf: KoPulumiConf) =
@@ -429,6 +450,7 @@ object s3:
       val argsBuilder = com.pulumi.aws.s3.inputs.PolicyDocumentArgs.builder
       builder.policy(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.s3.BucketVersioningArgs.Builder)
     /**
      * @param versioningConfiguration Configuration block for the versioning parameters. See below.
@@ -439,6 +461,7 @@ object s3:
       val argsBuilder = com.pulumi.aws.s3.inputs.BucketVersioningVersioningConfigurationArgs.builder
       builder.versioningConfiguration(args(argsBuilder).build)
 
+                       
   /** Provides a S3 bucket [inventory configuration](https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-inventory.html) resource. */
   def Inventory(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.s3.InventoryArgs.Builder])(using conf: KoPulumiConf) =
@@ -470,6 +493,7 @@ object s3:
       val argsBuilder = com.pulumi.aws.s3.inputs.BucketLoggingV2TargetObjectKeyFormatArgs.builder
       builder.targetObjectKeyFormat(args(argsBuilder).build)
 
+                       
   /**
    * Provides a resource to manage S3 Bucket Ownership Controls. For more information, see the [S3 Developer Guide](https://docs.aws.amazon.com/AmazonS3/latest/dev/about-object-ownership.html).
    *  
@@ -498,6 +522,7 @@ object s3:
       val argsBuilder = com.pulumi.aws.s3.inputs.BucketLifecycleConfigurationV2TimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
+                       
   /**
    * Provides a resource for controlling versioning on an S3 bucket.
    *  Deleting this resource will either suspend versioning on the associated S3 bucket or
@@ -566,6 +591,7 @@ object s3:
       val argsBuilder = com.pulumi.aws.s3.inputs.BucketObjectLockConfigurationRuleArgs.builder
       builder.rule(args(argsBuilder).build)
 
+                       
   /**
    * Provides an independent configuration resource for S3 bucket [replication configuration](http://docs.aws.amazon.com/AmazonS3/latest/dev/crr.html).
    *  
@@ -591,6 +617,7 @@ object s3:
       def argsBuilder = com.pulumi.aws.s3.inputs.BucketCorsConfigurationV2CorsRuleArgs.builder
       builder.corsRules(args.map(_(argsBuilder).build)*)
 
+                       
   /** Manages an S3 Files Access Point. */
   def FilesAccessPoint(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.s3.FilesAccessPointArgs.Builder])(using conf: KoPulumiConf) =
@@ -674,6 +701,7 @@ object s3:
       val argsBuilder = com.pulumi.aws.s3.inputs.AnalyticsConfigurationStorageClassAnalysisArgs.builder
       builder.storageClassAnalysis(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.s3.BucketArgs.Builder)
     /**
      * @param corsRules Rule of [Cross-Origin Resource Sharing](https://docs.aws.amazon.com/AmazonS3/latest/dev/cors.html). See CORS rule below for details. This provider will only perform drift detection if a configuration value is provided. Use the resource `aws.s3.BucketCorsConfiguration` instead.
@@ -785,6 +813,10 @@ object s3:
       val argsBuilder = com.pulumi.aws.s3.inputs.BucketWebsiteArgs.builder
       builder.website(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.s3.BucketArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.s3.BucketLifecycleConfigurationArgs.Builder)
     /**
      * @param rules List of configuration blocks describing the rules managing the replication. See below.
@@ -800,6 +832,7 @@ object s3:
       val argsBuilder = com.pulumi.aws.s3.inputs.BucketLifecycleConfigurationTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.s3.BucketObjectv2Args.Builder)
     /**
      * @param overrideProvider Override provider-level configuration options. See Override Provider below for more details.
@@ -810,6 +843,10 @@ object s3:
       val argsBuilder = com.pulumi.aws.s3.inputs.BucketObjectv2OverrideProviderArgs.builder
       builder.overrideProvider(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.s3.BucketObjectv2Args.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /**
    * Provides an S3 bucket website configuration resource. For more information, see [Hosting Websites on S3](https://docs.aws.amazon.com/AmazonS3/latest/dev/WebsiteHosting.html).
    *  
@@ -840,6 +877,7 @@ object s3:
       def argsBuilder = com.pulumi.aws.s3.inputs.BucketReplicationConfigRuleArgs.builder
       builder.rules(args.map(_(argsBuilder).build)*)
 
+                       
   /**
    * Provides an S3 bucket request payment configuration resource. For more information, see [Requester Pays Buckets](https://docs.aws.amazon.com/AmazonS3/latest/dev/RequesterPaysBuckets.html).
    *  
@@ -930,6 +968,7 @@ object s3:
       val argsBuilder = com.pulumi.aws.s3.inputs.FilesMountTargetTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
+                       
   type S3Functions = com.pulumi.aws.s3.S3Functions
   object S3Functions:
     // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
@@ -1233,6 +1272,7 @@ object s3:
       def argsBuilder = com.pulumi.aws.s3.inputs.BucketCorsConfigurationCorsRuleArgs.builder
       builder.corsRules(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.s3.BucketMetricArgs.Builder)
     /**
      * @param filter [Object filtering](http://docs.aws.amazon.com/AmazonS3/latest/dev/metrics-configurations.html#metrics-configurations-filter) that accepts a prefix, tags, or a logical AND of prefix and tags (documented below).
@@ -1243,6 +1283,7 @@ object s3:
       val argsBuilder = com.pulumi.aws.s3.inputs.BucketMetricFilterArgs.builder
       builder.filter(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.s3.BucketNotificationArgs.Builder)
     /**
      * @param lambdaFunctions Used to configure notifications to a Lambda Function. See below.
@@ -1271,6 +1312,7 @@ object s3:
       def argsBuilder = com.pulumi.aws.s3.inputs.BucketNotificationTopicArgs.builder
       builder.topics(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.s3.BucketLoggingArgs.Builder)
     /**
      * @param targetGrants Set of configuration blocks with information for granting permissions. See below.
@@ -1290,6 +1332,7 @@ object s3:
       val argsBuilder = com.pulumi.aws.s3.inputs.BucketLoggingTargetObjectKeyFormatArgs.builder
       builder.targetObjectKeyFormat(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.s3.BucketVersioningV2Args.Builder)
     /**
      * @param versioningConfiguration Configuration block for the versioning parameters. See below.
@@ -1300,6 +1343,7 @@ object s3:
       val argsBuilder = com.pulumi.aws.s3.inputs.BucketVersioningV2VersioningConfigurationArgs.builder
       builder.versioningConfiguration(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.s3.VectorsIndexArgs.Builder)
     /**
      * @param encryptionConfigurations Block for encryption configuration for the vector index. See `encyptionConfiguration` block below.
@@ -1319,6 +1363,10 @@ object s3:
       val argsBuilder = com.pulumi.aws.s3.inputs.VectorsIndexMetadataConfigurationArgs.builder
       builder.metadataConfiguration(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.s3.VectorsIndexArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.s3.BucketIntelligentTieringConfigurationArgs.Builder)
     /**
      * @param filter Bucket filter. The configuration only includes objects that meet the filter&#39;s criteria (documented below).
@@ -1338,6 +1386,7 @@ object s3:
       def argsBuilder = com.pulumi.aws.s3.inputs.BucketIntelligentTieringConfigurationTieringArgs.builder
       builder.tierings(args.map(_(argsBuilder).build)*)
 
+                       
   /** Resource for managing an Amazon S3 Vectors Vector Bucket policy. */
   def VectorsVectorBucketPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.s3.VectorsVectorBucketPolicyArgs.Builder]) =
@@ -1382,6 +1431,10 @@ object s3:
       val argsBuilder = com.pulumi.aws.s3.inputs.DirectoryBucketLocationArgs.builder
       builder.location(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.s3.DirectoryBucketArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /**
    * Provides an independent configuration resource for S3 bucket [lifecycle configuration](https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lifecycle-mgmt.html).
    *  
@@ -1417,6 +1470,7 @@ object s3:
       val argsBuilder = com.pulumi.aws.s3.inputs.BucketAclV2AccessControlPolicyArgs.builder
       builder.accessControlPolicy(args(argsBuilder).build)
 
+                       
   /**
    * Provides a S3 bucket server-side encryption configuration resource.
    *  
@@ -1492,6 +1546,7 @@ object s3:
       val argsBuilder = com.pulumi.aws.s3.inputs.BucketMetadataConfigurationTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.s3.ObjectCopyArgs.Builder)
     /**
      * @param grants Configuration block for header grants. Documented below. Conflicts with `acl`.
@@ -1507,6 +1562,10 @@ object s3:
       val argsBuilder = com.pulumi.aws.s3.inputs.ObjectCopyOverrideProviderArgs.builder
       builder.overrideProvider(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.s3.ObjectCopyArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /**
    * Provides an S3 bucket ACL resource.
    *  
@@ -1559,6 +1618,7 @@ object s3:
       val argsBuilder = com.pulumi.aws.s3.inputs.BucketOwnershipControlsRuleArgs.builder
       builder.rule(args(argsBuilder).build)
 
+                       
   /**
    * Provides a resource for controlling versioning on an S3 bucket.
    *  Deleting this resource will either suspend versioning on the associated S3 bucket or
@@ -1590,6 +1650,7 @@ object s3:
       val argsBuilder = com.pulumi.aws.s3.inputs.BucketAbacAbacStatusArgs.builder
       builder.abacStatus(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.s3.BucketWebsiteConfigurationArgs.Builder)
     /**
      * @param errorDocument Name of the error document for the website. See below.
@@ -1627,6 +1688,7 @@ object s3:
       def argsBuilder = com.pulumi.aws.s3.inputs.BucketWebsiteConfigurationRoutingRuleArgs.builder
       builder.routingRules(args.map(_(argsBuilder).build)*)
 
+                       
   /**
    * Manages S3 account-level Public Access Block configuration. For more information about these settings, see the [AWS S3 Block Public Access documentation](https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html).
    *  
@@ -1680,6 +1742,7 @@ object s3:
       def argsBuilder = com.pulumi.aws.s3.inputs.FilesSynchronizationConfigurationImportDataRuleArgs.builder
       builder.importDataRules(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.s3.inputs.BucketAclV2AccessControlPolicyGrantArgs.Builder)
     /**
      * @param grantee Configuration block for the person being granted permissions. See below.
@@ -1690,6 +1753,7 @@ object s3:
       val argsBuilder = com.pulumi.aws.s3.inputs.BucketAclV2AccessControlPolicyGrantGranteeArgs.builder
       builder.grantee(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.s3.inputs.BucketMetricState.Builder)
     /**
      * @param filter [Object filtering](http://docs.aws.amazon.com/AmazonS3/latest/dev/metrics-configurations.html#metrics-configurations-filter) that accepts a prefix, tags, or a logical AND of prefix and tags (documented below).
@@ -1700,6 +1764,7 @@ object s3:
       val argsBuilder = com.pulumi.aws.s3.inputs.BucketMetricFilterArgs.builder
       builder.filter(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.s3.inputs.FilesAccessPointRootDirectoryArgs.Builder)
     /**
      * @param creationPermissions Permissions to set when creating the root directory. See `creationPermissions` below. Changing this value forces replacement.
@@ -1710,6 +1775,7 @@ object s3:
       def argsBuilder = com.pulumi.aws.s3.inputs.FilesAccessPointRootDirectoryCreationPermissionArgs.builder
       builder.creationPermissions(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.s3.inputs.DirectoryBucketState.Builder)
     /**
      * @param location Bucket location. See Location below for more details.
@@ -1720,6 +1786,10 @@ object s3:
       val argsBuilder = com.pulumi.aws.s3.inputs.DirectoryBucketLocationArgs.builder
       builder.location(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.s3.inputs.DirectoryBucketState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.s3.inputs.BucketMetadataConfigurationMetadataConfigurationJournalTableConfigurationArgs.Builder)
     /**
      * @param encryptionConfiguration Encryption configuration for the journal table. See `encryptionConfiguration` Block for details.
@@ -1739,6 +1809,7 @@ object s3:
       val argsBuilder = com.pulumi.aws.s3.inputs.BucketMetadataConfigurationMetadataConfigurationJournalTableConfigurationRecordExpirationArgs.builder
       builder.recordExpiration(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.s3.inputs.BucketServerSideEncryptionConfigurationArgs.Builder)
     /**
      * @param rule Single object for server-side encryption by default configuration. (documented below)
@@ -1749,6 +1820,7 @@ object s3:
       val argsBuilder = com.pulumi.aws.s3.inputs.BucketServerSideEncryptionConfigurationRuleArgs.builder
       builder.rule(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.s3.inputs.BucketV2ServerSideEncryptionConfigurationArgs.Builder)
     /**
      * @param rules Single object for server-side encryption by default configuration. (documented below)
@@ -1759,6 +1831,7 @@ object s3:
       def argsBuilder = com.pulumi.aws.s3.inputs.BucketV2ServerSideEncryptionConfigurationRuleArgs.builder
       builder.rules(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.s3.inputs.BucketObjectv2OverrideProviderArgs.Builder)
     /**
      * @param defaultTags Override the provider `defaultTags` configuration block.
@@ -1769,6 +1842,7 @@ object s3:
       val argsBuilder = com.pulumi.aws.s3.inputs.BucketObjectv2OverrideProviderDefaultTagsArgs.builder
       builder.defaultTags(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.s3.inputs.BucketLifecycleRuleArgs.Builder)
     /**
      * @param expiration Specifies a period in the object&#39;s expire. See Expiration below for details.
@@ -1806,12 +1880,17 @@ object s3:
       def argsBuilder = com.pulumi.aws.s3.inputs.BucketLifecycleRuleTransitionArgs.builder
       builder.transitions(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.s3.inputs.BucketLifecycleRuleArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.s3.inputs.FilesMountTargetState.Builder)
     def timeouts(args: Endofunction[com.pulumi.aws.s3.inputs.FilesMountTargetTimeoutsArgs.Builder]):
         com.pulumi.aws.s3.inputs.FilesMountTargetState.Builder =
       val argsBuilder = com.pulumi.aws.s3.inputs.FilesMountTargetTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.s3.inputs.BucketMetadataConfigurationState.Builder)
     /**
      * @param metadataConfiguration Metadata configuration. See `metadataConfiguration` Block for details.
@@ -1829,6 +1908,7 @@ object s3:
       val argsBuilder = com.pulumi.aws.s3.inputs.BucketMetadataConfigurationTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.s3.inputs.BucketAclV2State.Builder)
     /**
      * @param accessControlPolicy Configuration block that sets the ACL permissions for an object per grantee. See below.
@@ -1839,6 +1919,7 @@ object s3:
       val argsBuilder = com.pulumi.aws.s3.inputs.BucketAclV2AccessControlPolicyArgs.builder
       builder.accessControlPolicy(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.s3.inputs.BucketObjectv2State.Builder)
     /**
      * @param overrideProvider Override provider-level configuration options. See Override Provider below for more details.
@@ -1849,6 +1930,10 @@ object s3:
       val argsBuilder = com.pulumi.aws.s3.inputs.BucketObjectv2OverrideProviderArgs.builder
       builder.overrideProvider(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.s3.inputs.BucketObjectv2State.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.s3.inputs.BucketVersioningState.Builder)
     /**
      * @param versioningConfiguration Configuration block for the versioning parameters. See below.
@@ -1859,6 +1944,7 @@ object s3:
       val argsBuilder = com.pulumi.aws.s3.inputs.BucketVersioningVersioningConfigurationArgs.builder
       builder.versioningConfiguration(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.s3.inputs.ObjectCopyState.Builder)
     /**
      * @param grants Configuration block for header grants. Documented below. Conflicts with `acl`.
@@ -1874,6 +1960,10 @@ object s3:
       val argsBuilder = com.pulumi.aws.s3.inputs.ObjectCopyOverrideProviderArgs.builder
       builder.overrideProvider(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.s3.inputs.ObjectCopyState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.s3.inputs.BucketMetadataConfigurationMetadataConfigurationArgs.Builder)
     /**
      * @param destinations Destination information for the S3 Metadata configuration.
@@ -1902,6 +1992,7 @@ object s3:
       val argsBuilder = com.pulumi.aws.s3.inputs.BucketMetadataConfigurationMetadataConfigurationJournalTableConfigurationArgs.builder
       builder.journalTableConfiguration(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.s3.inputs.BucketLoggingV2TargetObjectKeyFormatArgs.Builder)
     /**
      * @param partitionedPrefix Partitioned S3 key for log objects, in the form `[targetPrefix][SourceAccountId]/[SourceRegion]/[SourceBucket]/[YYYY]/[MM]/[DD]/[YYYY]-[MM]-[DD]-[hh]-[mm]-[ss]-[UniqueString]`. Conflicts with `simplePrefix`. See below.
@@ -1921,6 +2012,7 @@ object s3:
       val argsBuilder = com.pulumi.aws.s3.inputs.BucketLoggingV2TargetObjectKeyFormatSimplePrefixArgs.builder
       builder.simplePrefix(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.s3.inputs.BucketLifecycleConfigurationV2RuleArgs.Builder)
     /**
      * @param abortIncompleteMultipartUpload Configuration block that specifies the days since the initiation of an incomplete multipart upload that Amazon S3 will wait before permanently removing all parts of the upload. See below.
@@ -1977,6 +2069,7 @@ object s3:
       def argsBuilder = com.pulumi.aws.s3.inputs.BucketLifecycleConfigurationV2RuleTransitionArgs.builder
       builder.transitions(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.s3.inputs.BucketLoggingTargetGrantArgs.Builder)
     /**
      * @param grantee Configuration block for the person being granted permissions. See below.
@@ -1987,6 +2080,7 @@ object s3:
       val argsBuilder = com.pulumi.aws.s3.inputs.BucketLoggingTargetGrantGranteeArgs.builder
       builder.grantee(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.s3.inputs.BucketV2ReplicationConfigurationArgs.Builder)
     /**
      * @param rules Specifies the rules managing the replication (documented below).
@@ -1997,6 +2091,7 @@ object s3:
       def argsBuilder = com.pulumi.aws.s3.inputs.BucketV2ReplicationConfigurationRuleArgs.builder
       builder.rules(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.s3.inputs.AccessPointState.Builder)
     /**
      * @param publicAccessBlockConfiguration Configuration block to manage the `PublicAccessBlock` configuration that you want to apply to this Amazon S3 bucket. You can enable the configuration options in any combination. Detailed below.
@@ -2016,6 +2111,10 @@ object s3:
       val argsBuilder = com.pulumi.aws.s3.inputs.AccessPointVpcConfigurationArgs.builder
       builder.vpcConfiguration(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.s3.inputs.AccessPointState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.s3.inputs.BucketCorsConfigurationV2State.Builder)
     /**
      * @param corsRules Set of origins and methods (cross-origin access that you want to allow). See below. You can configure up to 100 rules.
@@ -2026,6 +2125,7 @@ object s3:
       def argsBuilder = com.pulumi.aws.s3.inputs.BucketCorsConfigurationV2CorsRuleArgs.builder
       builder.corsRules(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.s3.inputs.BucketWebsiteConfigurationState.Builder)
     /**
      * @param errorDocument Name of the error document for the website. See below.
@@ -2063,6 +2163,7 @@ object s3:
       def argsBuilder = com.pulumi.aws.s3.inputs.BucketWebsiteConfigurationRoutingRuleArgs.builder
       builder.routingRules(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.s3.inputs.BucketV2ServerSideEncryptionConfigurationRuleArgs.Builder)
     /**
      * @param applyServerSideEncryptionByDefaults Single object for setting server-side encryption by default. (documented below)
@@ -2073,6 +2174,7 @@ object s3:
       def argsBuilder = com.pulumi.aws.s3.inputs.BucketV2ServerSideEncryptionConfigurationRuleApplyServerSideEncryptionByDefaultArgs.builder
       builder.applyServerSideEncryptionByDefaults(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.s3.inputs.InventoryDestinationBucketEncryptionArgs.Builder)
     /**
      * @param sseKms Specifies to use server-side encryption with AWS KMS-managed keys to encrypt the inventory file (documented below).
@@ -2092,6 +2194,7 @@ object s3:
       val argsBuilder = com.pulumi.aws.s3.inputs.InventoryDestinationBucketEncryptionSseS3Args.builder
       builder.sseS3(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.s3.inputs.BucketObjectLockConfigurationState.Builder)
     /**
      * @param rule Configuration block for specifying the Object Lock rule for the specified object. See below.
@@ -2102,6 +2205,7 @@ object s3:
       val argsBuilder = com.pulumi.aws.s3.inputs.BucketObjectLockConfigurationRuleArgs.builder
       builder.rule(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.s3.inputs.BucketAclState.Builder)
     /**
      * @param accessControlPolicy Configuration block that sets the ACL permissions for an object per grantee. See below.
@@ -2112,6 +2216,7 @@ object s3:
       val argsBuilder = com.pulumi.aws.s3.inputs.BucketAclAccessControlPolicyArgs.builder
       builder.accessControlPolicy(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.s3.inputs.BucketCorsConfigurationState.Builder)
     /**
      * @param corsRules Set of origins and methods (cross-origin access that you want to allow). See below. You can configure up to 100 rules.
@@ -2122,6 +2227,7 @@ object s3:
       def argsBuilder = com.pulumi.aws.s3.inputs.BucketCorsConfigurationCorsRuleArgs.builder
       builder.corsRules(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.s3.inputs.BucketV2State.Builder)
     /**
      * @param corsRules Rule of [Cross-Origin Resource Sharing](https://docs.aws.amazon.com/AmazonS3/latest/dev/cors.html). See CORS rule below for details. This provider will only perform drift detection if a configuration value is provided. Use the resource `aws.s3.BucketCorsConfiguration` instead.
@@ -2221,6 +2327,10 @@ object s3:
       def argsBuilder = com.pulumi.aws.s3.inputs.BucketV2WebsiteArgs.builder
       builder.websites(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.s3.inputs.BucketV2State.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.s3.inputs.BucketServerSideEncryptionConfigurationRuleArgs.Builder)
     /**
      * @param applyServerSideEncryptionByDefault Single object for setting server-side encryption by default. See below.
@@ -2231,6 +2341,7 @@ object s3:
       val argsBuilder = com.pulumi.aws.s3.inputs.BucketServerSideEncryptionConfigurationRuleApplyServerSideEncryptionByDefaultArgs.builder
       builder.applyServerSideEncryptionByDefault(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.s3.inputs.BucketReplicationConfigurationRuleSourceSelectionCriteriaArgs.Builder)
     /**
      * @param sseKmsEncryptedObjects Match SSE-KMS encrypted objects (documented below). If specified, `replicaKmsKeyId`
@@ -2242,6 +2353,7 @@ object s3:
       val argsBuilder = com.pulumi.aws.s3.inputs.BucketReplicationConfigurationRuleSourceSelectionCriteriaSseKmsEncryptedObjectsArgs.builder
       builder.sseKmsEncryptedObjects(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.s3.inputs.BucketV2ReplicationConfigurationRuleArgs.Builder)
     /**
      * @param destinations Specifies the destination for the rule (documented below).
@@ -2270,6 +2382,7 @@ object s3:
       def argsBuilder = com.pulumi.aws.s3.inputs.BucketV2ReplicationConfigurationRuleSourceSelectionCriteriaArgs.builder
       builder.sourceSelectionCriterias(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.s3.inputs.BucketOwnershipControlsState.Builder)
     /**
      * @param rule Configuration block(s) with Ownership Controls rules. Detailed below.
@@ -2280,6 +2393,7 @@ object s3:
       val argsBuilder = com.pulumi.aws.s3.inputs.BucketOwnershipControlsRuleArgs.builder
       builder.rule(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.s3.inputs.BucketState.Builder)
     /**
      * @param corsRules Rule of [Cross-Origin Resource Sharing](https://docs.aws.amazon.com/AmazonS3/latest/dev/cors.html). See CORS rule below for details. This provider will only perform drift detection if a configuration value is provided. Use the resource `aws.s3.BucketCorsConfiguration` instead.
@@ -2391,6 +2505,10 @@ object s3:
       val argsBuilder = com.pulumi.aws.s3.inputs.BucketWebsiteArgs.builder
       builder.website(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.s3.inputs.BucketState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.s3.inputs.BucketReplicationConfigurationRuleArgs.Builder)
     /**
      * @param destination Specifies the destination for the rule (documented below).
@@ -2419,6 +2537,7 @@ object s3:
       val argsBuilder = com.pulumi.aws.s3.inputs.BucketReplicationConfigurationRuleSourceSelectionCriteriaArgs.builder
       builder.sourceSelectionCriteria(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.s3.inputs.BucketWebsiteConfigurationV2State.Builder)
     /**
      * @param errorDocument Name of the error document for the website. See below.
@@ -2456,6 +2575,7 @@ object s3:
       def argsBuilder = com.pulumi.aws.s3.inputs.BucketWebsiteConfigurationV2RoutingRuleArgs.builder
       builder.routingRules(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.s3.inputs.BucketObjectLockConfigurationArgs.Builder)
     /**
      * @param rule Object Lock rule in place for this bucket (documented below).
@@ -2467,6 +2587,7 @@ object s3:
       val argsBuilder = com.pulumi.aws.s3.inputs.BucketObjectLockConfigurationRuleArgs.builder
       builder.rule(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.s3.inputs.BucketLifecycleConfigurationV2RuleFilterArgs.Builder)
     /**
      * @param and Configuration block used to apply a logical `AND` to two or more predicates. See below. The Lifecycle Rule will apply to any object matching all the predicates configured inside the `and` block.
@@ -2486,6 +2607,7 @@ object s3:
       val argsBuilder = com.pulumi.aws.s3.inputs.BucketLifecycleConfigurationV2RuleFilterTagArgs.builder
       builder.tag(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.s3.inputs.BucketWebsiteConfigurationV2RoutingRuleArgs.Builder)
     /**
      * @param condition Configuration block for describing a condition that must be met for the specified redirect to apply. See below.
@@ -2505,6 +2627,7 @@ object s3:
       val argsBuilder = com.pulumi.aws.s3.inputs.BucketWebsiteConfigurationV2RoutingRuleRedirectArgs.builder
       builder.redirect(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.s3.inputs.FilesSynchronizationConfigurationState.Builder)
     /**
      * @param expirationDataRules Expiration data rule configuration. See `expirationDataRule` below.
@@ -2526,6 +2649,7 @@ object s3:
       def argsBuilder = com.pulumi.aws.s3.inputs.FilesSynchronizationConfigurationImportDataRuleArgs.builder
       builder.importDataRules(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.s3.inputs.BucketLoggingState.Builder)
     /**
      * @param targetGrants Set of configuration blocks with information for granting permissions. See below.
@@ -2545,6 +2669,7 @@ object s3:
       val argsBuilder = com.pulumi.aws.s3.inputs.BucketLoggingTargetObjectKeyFormatArgs.builder
       builder.targetObjectKeyFormat(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.s3.inputs.AnalyticsConfigurationStorageClassAnalysisDataExportDestinationArgs.Builder)
     /**
      * @param s3BucketDestination Analytics data export currently only supports an S3 bucket destination (documented below).
@@ -2555,6 +2680,7 @@ object s3:
       val argsBuilder = com.pulumi.aws.s3.inputs.AnalyticsConfigurationStorageClassAnalysisDataExportDestinationS3BucketDestinationArgs.builder
       builder.s3BucketDestination(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.s3.inputs.BucketServerSideEncryptionConfigurationV2RuleArgs.Builder)
     /**
      * @param applyServerSideEncryptionByDefault Single object for setting server-side encryption by default. See below.
@@ -2565,6 +2691,7 @@ object s3:
       val argsBuilder = com.pulumi.aws.s3.inputs.BucketServerSideEncryptionConfigurationV2RuleApplyServerSideEncryptionByDefaultArgs.builder
       builder.applyServerSideEncryptionByDefault(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.s3.inputs.BucketObjectLockConfigurationRuleArgs.Builder)
     /**
      * @param defaultRetention Configuration block for specifying the default Object Lock retention settings for new objects placed in the specified bucket. See below.
@@ -2575,6 +2702,7 @@ object s3:
       val argsBuilder = com.pulumi.aws.s3.inputs.BucketObjectLockConfigurationRuleDefaultRetentionArgs.builder
       builder.defaultRetention(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.s3.inputs.BucketV2ObjectLockConfigurationRuleArgs.Builder)
     /**
      * @param defaultRetentions Default retention period that you want to apply to new objects placed in this bucket (documented below).
@@ -2585,6 +2713,7 @@ object s3:
       def argsBuilder = com.pulumi.aws.s3.inputs.BucketV2ObjectLockConfigurationRuleDefaultRetentionArgs.builder
       builder.defaultRetentions(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.s3.inputs.BucketObjectLockConfigurationV2RuleArgs.Builder)
     /**
      * @param defaultRetention Configuration block for specifying the default Object Lock retention settings for new objects placed in the specified bucket. See below.
@@ -2595,6 +2724,7 @@ object s3:
       val argsBuilder = com.pulumi.aws.s3.inputs.BucketObjectLockConfigurationV2RuleDefaultRetentionArgs.builder
       builder.defaultRetention(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.s3.inputs.BucketMetadataConfigurationMetadataConfigurationInventoryTableConfigurationArgs.Builder)
     /**
      * @param encryptionConfiguration Encryption configuration for the inventory table. See `encryptionConfiguration` Block for details.
@@ -2605,6 +2735,7 @@ object s3:
       val argsBuilder = com.pulumi.aws.s3.inputs.BucketMetadataConfigurationMetadataConfigurationInventoryTableConfigurationEncryptionConfigurationArgs.builder
       builder.encryptionConfiguration(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.s3.inputs.ObjectCopyOverrideProviderArgs.Builder)
     /**
      * @param defaultTags Override the provider `defaultTags` configuration block.
@@ -2615,6 +2746,7 @@ object s3:
       val argsBuilder = com.pulumi.aws.s3.inputs.ObjectCopyOverrideProviderDefaultTagsArgs.builder
       builder.defaultTags(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.s3.inputs.BucketWebsiteConfigurationRoutingRuleArgs.Builder)
     /**
      * @param condition Configuration block for describing a condition that must be met for the specified redirect to apply. See below.
@@ -2634,6 +2766,7 @@ object s3:
       val argsBuilder = com.pulumi.aws.s3.inputs.BucketWebsiteConfigurationRoutingRuleRedirectArgs.builder
       builder.redirect(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.s3.inputs.AnalyticsConfigurationState.Builder)
     /**
      * @param filter Object filtering that accepts a prefix, tags, or a logical AND of prefix and tags (documented below).
@@ -2653,6 +2786,7 @@ object s3:
       val argsBuilder = com.pulumi.aws.s3.inputs.AnalyticsConfigurationStorageClassAnalysisArgs.builder
       builder.storageClassAnalysis(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.s3.inputs.BucketLifecycleConfigurationState.Builder)
     /**
      * @param rules List of configuration blocks describing the rules managing the replication. See below.
@@ -2668,6 +2802,7 @@ object s3:
       val argsBuilder = com.pulumi.aws.s3.inputs.BucketLifecycleConfigurationTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.s3.inputs.BucketV2ReplicationConfigurationRuleSourceSelectionCriteriaArgs.Builder)
     /**
      * @param sseKmsEncryptedObjects Match SSE-KMS encrypted objects (documented below). If specified, `replicaKmsKeyId`
@@ -2679,6 +2814,7 @@ object s3:
       def argsBuilder = com.pulumi.aws.s3.inputs.BucketV2ReplicationConfigurationRuleSourceSelectionCriteriaSseKmsEncryptedObjectArgs.builder
       builder.sseKmsEncryptedObjects(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.s3.inputs.BucketReplicationConfigRuleDestinationArgs.Builder)
     /**
      * @param accessControlTranslation Configuration block that specifies the overrides to use for object owners on replication. See below. Specify this only in a cross-account scenario (where source and destination bucket owners are not the same), and you want to change replica ownership to the AWS account that owns the destination bucket. If this is not specified in the replication configuration, the replicas are owned by same AWS account that owns the source object. Must be used in conjunction with `account` owner override configuration.
@@ -2716,6 +2852,7 @@ object s3:
       val argsBuilder = com.pulumi.aws.s3.inputs.BucketReplicationConfigRuleDestinationReplicationTimeArgs.builder
       builder.replicationTime(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.s3.inputs.BucketLifecycleConfigurationV2State.Builder)
     /**
      * @param rules List of configuration blocks describing the rules managing the replication. See below.
@@ -2731,6 +2868,7 @@ object s3:
       val argsBuilder = com.pulumi.aws.s3.inputs.BucketLifecycleConfigurationV2TimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.s3.inputs.BucketReplicationConfigState.Builder)
     /**
      * @param rules List of configuration blocks describing the rules managing the replication. See below.
@@ -2748,6 +2886,7 @@ object s3:
       def argsBuilder = com.pulumi.aws.s3.inputs.BucketReplicationConfigRuleArgs.builder
       builder.rules(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.s3.inputs.BucketLoggingV2TargetGrantArgs.Builder)
     /**
      * @param grantee Configuration block for the person being granted permissions. See below.
@@ -2758,6 +2897,7 @@ object s3:
       val argsBuilder = com.pulumi.aws.s3.inputs.BucketLoggingV2TargetGrantGranteeArgs.builder
       builder.grantee(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.s3.inputs.GetFilesFileSystemsArgs.Builder)
     /**
      * @param fileSystems List of file systems. See `fileSystems` below.
@@ -2768,6 +2908,7 @@ object s3:
       def argsBuilder = com.pulumi.aws.s3.inputs.GetFilesFileSystemsFileSystemArgs.builder
       builder.fileSystems(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.s3.inputs.BucketAclV2AccessControlPolicyArgs.Builder)
     /**
      * @param grants Set of `grant` configuration blocks. See below.
@@ -2787,6 +2928,7 @@ object s3:
       val argsBuilder = com.pulumi.aws.s3.inputs.BucketAclV2AccessControlPolicyOwnerArgs.builder
       builder.owner(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.s3.inputs.BucketReplicationConfigurationRuleDestinationArgs.Builder)
     /**
      * @param accessControlTranslation Specifies the overrides to use for object owners on replication (documented below). Must be used in conjunction with `accountId` owner override configuration.
@@ -2815,6 +2957,7 @@ object s3:
       val argsBuilder = com.pulumi.aws.s3.inputs.BucketReplicationConfigurationRuleDestinationReplicationTimeArgs.builder
       builder.replicationTime(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.s3.inputs.BucketLifecycleConfigurationRuleArgs.Builder)
     /**
      * @param abortIncompleteMultipartUpload Configuration block that specifies the days since the initiation of an incomplete multipart upload that Amazon S3 will wait before permanently removing all parts of the upload. See below.
@@ -2871,6 +3014,7 @@ object s3:
       def argsBuilder = com.pulumi.aws.s3.inputs.BucketLifecycleConfigurationRuleTransitionArgs.builder
       builder.transitions(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.s3.inputs.GetFilesAccessPointRootDirectoryArgs.Builder)
     /**
      * @param creationPermissions Permissions set when the root directory was created. See `creationPermissions` below.
@@ -2881,6 +3025,7 @@ object s3:
       def argsBuilder = com.pulumi.aws.s3.inputs.GetFilesAccessPointRootDirectoryCreationPermissionArgs.builder
       builder.creationPermissions(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.s3.inputs.FilesAccessPointState.Builder)
     /**
      * @param posixUsers POSIX user configuration. See `posixUser` below. Changing this value forces replacement.
@@ -2907,6 +3052,10 @@ object s3:
       val argsBuilder = com.pulumi.aws.s3.inputs.FilesAccessPointTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.s3.inputs.FilesAccessPointState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.s3.inputs.BucketVersioningV2State.Builder)
     /**
      * @param versioningConfiguration Configuration block for the versioning parameters. See below.
@@ -2917,6 +3066,7 @@ object s3:
       val argsBuilder = com.pulumi.aws.s3.inputs.BucketVersioningV2VersioningConfigurationArgs.builder
       builder.versioningConfiguration(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.s3.inputs.GetFilesAccessPointArgs.Builder)
     /**
      * @param posixUsers POSIX user configuration. See `posixUser` below.
@@ -2936,6 +3086,7 @@ object s3:
       def argsBuilder = com.pulumi.aws.s3.inputs.GetFilesAccessPointRootDirectoryArgs.builder
       builder.rootDirectories(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.s3.inputs.BucketReplicationConfigRuleDestinationMetricsArgs.Builder)
     /**
      * @param eventThreshold Configuration block that specifies the time threshold for emitting the `s3:Replication:OperationMissedThreshold` event. See below.
@@ -2946,6 +3097,7 @@ object s3:
       val argsBuilder = com.pulumi.aws.s3.inputs.BucketReplicationConfigRuleDestinationMetricsEventThresholdArgs.builder
       builder.eventThreshold(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.s3.inputs.VectorsIndexState.Builder)
     /**
      * @param encryptionConfigurations Block for encryption configuration for the vector index. See `encyptionConfiguration` block below.
@@ -2965,6 +3117,10 @@ object s3:
       val argsBuilder = com.pulumi.aws.s3.inputs.VectorsIndexMetadataConfigurationArgs.builder
       builder.metadataConfiguration(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.s3.inputs.VectorsIndexState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.s3.inputs.BucketV2ReplicationConfigurationRuleDestinationArgs.Builder)
     /**
      * @param accessControlTranslations Specifies the overrides to use for object owners on replication (documented below). Must be used in conjunction with `accountId` owner override configuration.
@@ -2993,6 +3149,7 @@ object s3:
       def argsBuilder = com.pulumi.aws.s3.inputs.BucketV2ReplicationConfigurationRuleDestinationReplicationTimeArgs.builder
       builder.replicationTimes(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.s3.inputs.BucketAbacState.Builder)
     /**
      * @param abacStatus ABAC status configuration. See `abacStatus` Block for details.
@@ -3005,6 +3162,7 @@ object s3:
       val argsBuilder = com.pulumi.aws.s3.inputs.BucketAbacAbacStatusArgs.builder
       builder.abacStatus(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.s3.inputs.VectorsVectorBucketState.Builder)
     /**
      * @param encryptionConfigurations Encryption configuration for the vector bucket. See Encryption Configuration below for more details.
@@ -3015,6 +3173,10 @@ object s3:
       def argsBuilder = com.pulumi.aws.s3.inputs.VectorsVectorBucketEncryptionConfigurationArgs.builder
       builder.encryptionConfigurations(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.s3.inputs.VectorsVectorBucketState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.s3.inputs.BucketNotificationState.Builder)
     /**
      * @param lambdaFunctions Used to configure notifications to a Lambda Function. See below.
@@ -3043,6 +3205,7 @@ object s3:
       def argsBuilder = com.pulumi.aws.s3.inputs.BucketNotificationTopicArgs.builder
       builder.topics(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.s3.inputs.BucketReplicationConfigRuleArgs.Builder)
     /**
      * @param deleteMarkerReplication Whether delete markers are replicated. This argument is only valid with V2 replication configurations (i.e., when `filter` is used)documented below.
@@ -3089,6 +3252,7 @@ object s3:
       val argsBuilder = com.pulumi.aws.s3.inputs.BucketReplicationConfigRuleSourceSelectionCriteriaArgs.builder
       builder.sourceSelectionCriteria(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.s3.inputs.BucketReplicationConfigRuleSourceSelectionCriteriaArgs.Builder)
     /**
      * @param replicaModifications Configuration block that you can specify for selections for modifications on replicas. Amazon S3 doesn&#39;t replicate replica modifications by default. In the latest version of replication configuration (when `filter` is specified), you can specify this element and set the status to `Enabled` to replicate modifications on replicas.
@@ -3108,6 +3272,7 @@ object s3:
       val argsBuilder = com.pulumi.aws.s3.inputs.BucketReplicationConfigRuleSourceSelectionCriteriaSseKmsEncryptedObjectsArgs.builder
       builder.sseKmsEncryptedObjects(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.s3.inputs.BucketLoggingTargetObjectKeyFormatArgs.Builder)
     /**
      * @param partitionedPrefix Partitioned S3 key for log objects, in the form `[targetPrefix][SourceAccountId]/[SourceRegion]/[SourceBucket]/[YYYY]/[MM]/[DD]/[YYYY]-[MM]-[DD]-[hh]-[mm]-[ss]-[UniqueString]`. Conflicts with `simplePrefix`. See below.
@@ -3127,6 +3292,7 @@ object s3:
       val argsBuilder = com.pulumi.aws.s3.inputs.BucketLoggingTargetObjectKeyFormatSimplePrefixArgs.builder
       builder.simplePrefix(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.s3.inputs.InventoryState.Builder)
     /**
      * @param destination Contains information about where to publish the inventory results (documented below).
@@ -3155,6 +3321,7 @@ object s3:
       val argsBuilder = com.pulumi.aws.s3.inputs.InventoryScheduleArgs.builder
       builder.schedule(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.s3.inputs.BucketObjectLockConfigurationV2State.Builder)
     /**
      * @param rule Configuration block for specifying the Object Lock rule for the specified object. See below.
@@ -3165,6 +3332,7 @@ object s3:
       val argsBuilder = com.pulumi.aws.s3.inputs.BucketObjectLockConfigurationV2RuleArgs.builder
       builder.rule(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.s3.inputs.BucketV2LifecycleRuleArgs.Builder)
     /**
      * @param expirations Specifies a period in the object&#39;s expire. See Expiration below for details.
@@ -3202,6 +3370,10 @@ object s3:
       def argsBuilder = com.pulumi.aws.s3.inputs.BucketV2LifecycleRuleTransitionArgs.builder
       builder.transitions(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.s3.inputs.BucketV2LifecycleRuleArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.s3.inputs.BucketAclAccessControlPolicyArgs.Builder)
     /**
      * @param grants Set of `grant` configuration blocks. See below.
@@ -3221,6 +3393,7 @@ object s3:
       val argsBuilder = com.pulumi.aws.s3.inputs.BucketAclAccessControlPolicyOwnerArgs.builder
       builder.owner(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.s3.inputs.BucketReplicationConfigRuleFilterArgs.Builder)
     /**
      * @param and Configuration block for specifying rule filters. This element is required only if you specify more than one filter. See and below for more details.
@@ -3240,6 +3413,7 @@ object s3:
       val argsBuilder = com.pulumi.aws.s3.inputs.BucketReplicationConfigRuleFilterTagArgs.builder
       builder.tag(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.s3.inputs.BucketPolicyState.Builder)
     /**
      * @param policy Text of the policy. Although this is a bucket policy rather than an IAM policy, the `aws.iam.getPolicyDocument` data source may be used, so long as it specifies a principal. For more information about building AWS IAM policy documents, see the AWS IAM Policy Document Guide. Note: Bucket policies are limited to 20 KB in size.
@@ -3250,6 +3424,7 @@ object s3:
       val argsBuilder = com.pulumi.aws.s3.inputs.PolicyDocumentArgs.builder
       builder.policy(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.s3.inputs.BucketIntelligentTieringConfigurationState.Builder)
     /**
      * @param filter Bucket filter. The configuration only includes objects that meet the filter&#39;s criteria (documented below).
@@ -3269,6 +3444,7 @@ object s3:
       def argsBuilder = com.pulumi.aws.s3.inputs.BucketIntelligentTieringConfigurationTieringArgs.builder
       builder.tierings(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.s3.inputs.InventoryDestinationBucketArgs.Builder)
     /**
      * @param encryption Contains the type of server-side encryption to use to encrypt the inventory (documented below).
@@ -3279,6 +3455,7 @@ object s3:
       val argsBuilder = com.pulumi.aws.s3.inputs.InventoryDestinationBucketEncryptionArgs.builder
       builder.encryption(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.s3.inputs.BucketLoggingV2State.Builder)
     /**
      * @param targetGrants Set of configuration blocks with information for granting permissions. See below.
@@ -3298,6 +3475,7 @@ object s3:
       val argsBuilder = com.pulumi.aws.s3.inputs.BucketLoggingV2TargetObjectKeyFormatArgs.builder
       builder.targetObjectKeyFormat(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.s3.inputs.AnalyticsConfigurationStorageClassAnalysisArgs.Builder)
     /**
      * @param dataExport Data export configuration (documented below).
@@ -3308,12 +3486,14 @@ object s3:
       val argsBuilder = com.pulumi.aws.s3.inputs.AnalyticsConfigurationStorageClassAnalysisDataExportArgs.builder
       builder.dataExport(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.s3.inputs.PolicyDocumentArgs.Builder)
     def Statement(args: Endofunction[com.pulumi.aws.iam.inputs.PolicyStatementArgs.Builder]*):
         com.pulumi.aws.s3.inputs.PolicyDocumentArgs.Builder =
       def argsBuilder = com.pulumi.aws.iam.inputs.PolicyStatementArgs.builder
       builder.Statement(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.s3.inputs.BucketServerSideEncryptionConfigurationState.Builder)
     /**
      * @param rules Set of server-side encryption configuration rules. See below. Currently, only a single rule is supported.
@@ -3324,6 +3504,7 @@ object s3:
       def argsBuilder = com.pulumi.aws.s3.inputs.BucketServerSideEncryptionConfigurationRuleArgs.builder
       builder.rules(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.s3.inputs.BucketReplicationConfigRuleDestinationReplicationTimeArgs.Builder)
     /**
      * @param time Configuration block specifying the time by which replication should be complete for all objects and operations on objects. See below.
@@ -3334,6 +3515,7 @@ object s3:
       val argsBuilder = com.pulumi.aws.s3.inputs.BucketReplicationConfigRuleDestinationReplicationTimeTimeArgs.builder
       builder.time(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.s3.inputs.BucketReplicationConfigurationArgs.Builder)
     /**
      * @param rules Specifies the rules managing the replication (documented below).
@@ -3344,6 +3526,7 @@ object s3:
       def argsBuilder = com.pulumi.aws.s3.inputs.BucketReplicationConfigurationRuleArgs.builder
       builder.rules(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.s3.inputs.BucketServerSideEncryptionConfigurationV2State.Builder)
     /**
      * @param rules Set of server-side encryption configuration rules. See below. Currently, only a single rule is supported.
@@ -3354,6 +3537,7 @@ object s3:
       def argsBuilder = com.pulumi.aws.s3.inputs.BucketServerSideEncryptionConfigurationV2RuleArgs.builder
       builder.rules(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.s3.inputs.BucketV2ObjectLockConfigurationArgs.Builder)
     /**
      * @param rules Object Lock rule in place for this bucket (documented below).
@@ -3365,6 +3549,7 @@ object s3:
       def argsBuilder = com.pulumi.aws.s3.inputs.BucketV2ObjectLockConfigurationRuleArgs.builder
       builder.rules(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.s3.inputs.AnalyticsConfigurationStorageClassAnalysisDataExportArgs.Builder)
     /**
      * @param destination Specifies the destination for the exported analytics data (documented below).
@@ -3375,6 +3560,7 @@ object s3:
       val argsBuilder = com.pulumi.aws.s3.inputs.AnalyticsConfigurationStorageClassAnalysisDataExportDestinationArgs.builder
       builder.destination(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.s3.inputs.InventoryDestinationArgs.Builder)
     /**
      * @param bucket S3 bucket configuration where inventory results are published (documented below).
@@ -3385,6 +3571,7 @@ object s3:
       val argsBuilder = com.pulumi.aws.s3.inputs.InventoryDestinationBucketArgs.builder
       builder.bucket(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.s3.inputs.BucketAclAccessControlPolicyGrantArgs.Builder)
     /**
      * @param grantee Configuration block for the person being granted permissions. See below.
@@ -3395,12 +3582,17 @@ object s3:
       val argsBuilder = com.pulumi.aws.s3.inputs.BucketAclAccessControlPolicyGrantGranteeArgs.builder
       builder.grantee(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.s3.inputs.FilesFileSystemState.Builder)
     def timeouts(args: Endofunction[com.pulumi.aws.s3.inputs.FilesFileSystemTimeoutsArgs.Builder]):
         com.pulumi.aws.s3.inputs.FilesFileSystemState.Builder =
       val argsBuilder = com.pulumi.aws.s3.inputs.FilesFileSystemTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.s3.inputs.FilesFileSystemState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.s3.inputs.BucketLifecycleConfigurationRuleFilterArgs.Builder)
     /**
      * @param and Configuration block used to apply a logical `AND` to two or more predicates. See below. The Lifecycle Rule will apply to any object matching all the predicates configured inside the `and` block.
@@ -3420,6 +3612,7 @@ object s3:
       val argsBuilder = com.pulumi.aws.s3.inputs.BucketLifecycleConfigurationRuleFilterTagArgs.builder
       builder.tag(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.s3.InventoryArgs.Builder)
     /**
      * @param destination Contains information about where to publish the inventory results (documented below).
@@ -3448,6 +3641,7 @@ object s3:
       val argsBuilder = com.pulumi.aws.s3.inputs.InventoryScheduleArgs.builder
       builder.schedule(args(argsBuilder).build)
 
+                       
   /**
    * Provides a S3 bucket resource.
    *  
@@ -3482,3 +3676,8 @@ object s3:
         com.pulumi.aws.s3.FilesFileSystemArgs.Builder =
       val argsBuilder = com.pulumi.aws.s3.inputs.FilesFileSystemTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
+
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.s3.FilesFileSystemArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       

@@ -115,6 +115,7 @@ object identitystore:
       val argsBuilder = com.pulumi.aws.identitystore.inputs.UserPhoneNumbersArgs.builder
       builder.phoneNumbers(args(argsBuilder).build)
 
+                       
   /**
    * This resource manages a User resource within an Identity Store.
    *  
@@ -161,6 +162,7 @@ object identitystore:
       val argsBuilder = com.pulumi.aws.identitystore.inputs.GetUserAlternateIdentifierUniqueAttributeArgs.builder
       builder.uniqueAttribute(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.identitystore.inputs.GetGroupArgs.Builder)
     /**
      * @param alternateIdentifier A unique identifier for the group that is not the primary identifier. Conflicts with `groupId` and `filter`. Detailed below.
@@ -171,6 +173,7 @@ object identitystore:
       val argsBuilder = com.pulumi.aws.identitystore.inputs.GetGroupAlternateIdentifierArgs.builder
       builder.alternateIdentifier(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.identitystore.inputs.GroupState.Builder)
     /**
      * @param externalIds A list of external IDs that contains the identifiers issued to this resource by an external identity provider. See External IDs below.
@@ -181,6 +184,7 @@ object identitystore:
       def argsBuilder = com.pulumi.aws.identitystore.inputs.GroupExternalIdArgs.builder
       builder.externalIds(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.identitystore.inputs.GetGroupAlternateIdentifierArgs.Builder)
     /**
      * @param externalId Configuration block for filtering by the identifier issued by an external identity provider. Detailed below.
@@ -202,6 +206,7 @@ object identitystore:
       val argsBuilder = com.pulumi.aws.identitystore.inputs.GetGroupAlternateIdentifierUniqueAttributeArgs.builder
       builder.uniqueAttribute(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.identitystore.inputs.GetUserArgs.Builder)
     /**
      * @param alternateIdentifier A unique identifier for a user or group that is not the primary identifier. Conflicts with `userId` and `filter`. Detailed below.
@@ -212,6 +217,7 @@ object identitystore:
       val argsBuilder = com.pulumi.aws.identitystore.inputs.GetUserAlternateIdentifierArgs.builder
       builder.alternateIdentifier(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.identitystore.inputs.UserState.Builder)
     /**
      * @param addresses Details about the user&#39;s address. At most 1 address is allowed. Detailed below.
@@ -257,3 +263,5 @@ object identitystore:
         com.pulumi.aws.identitystore.inputs.UserState.Builder =
       val argsBuilder = com.pulumi.aws.identitystore.inputs.UserPhoneNumbersArgs.builder
       builder.phoneNumbers(args(argsBuilder).build)
+
+                       

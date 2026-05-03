@@ -121,6 +121,10 @@ object dynamodb:
       val argsBuilder = com.pulumi.aws.dynamodb.inputs.TableWarmThroughputArgs.builder
       builder.warmThroughput(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.dynamodb.TableArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.dynamodb.GlobalTableArgs.Builder)
     /**
      * @param replicas Underlying DynamoDB Table. At least 1 replica must be defined. See below.
@@ -131,6 +135,7 @@ object dynamodb:
       def argsBuilder = com.pulumi.aws.dynamodb.inputs.GlobalTableReplicaArgs.builder
       builder.replicas(args.map(_(argsBuilder).build)*)
 
+                       
   /**
    * Provides a DynamoDB table item resource
    *  
@@ -230,6 +235,7 @@ object dynamodb:
       val argsBuilder = com.pulumi.aws.dynamodb.inputs.GlobalSecondaryIndexWarmThroughputArgs.builder
       builder.warmThroughput(args(argsBuilder).build)
 
+                       
   /**
    * Provides a DynamoDB table resource.
    *  
@@ -367,6 +373,7 @@ object dynamodb:
       val argsBuilder = com.pulumi.aws.dynamodb.inputs.TableExportIncrementalExportSpecificationArgs.builder
       builder.incrementalExportSpecification(args(argsBuilder).build)
 
+                       
   /** Provides a DynamoDB contributor insights resource */
   def ContributorInsights(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.dynamodb.ContributorInsightsArgs.Builder]) =
@@ -400,6 +407,10 @@ object dynamodb:
       val argsBuilder = com.pulumi.aws.dynamodb.inputs.GetTableServerSideEncryptionArgs.builder
       builder.serverSideEncryption(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.dynamodb.inputs.GetTableArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.dynamodb.inputs.TableImportTableInputFormatOptionsArgs.Builder)
     /**
      * @param csv This block contains the processing options for the CSV file being imported:
@@ -410,6 +421,7 @@ object dynamodb:
       val argsBuilder = com.pulumi.aws.dynamodb.inputs.TableImportTableInputFormatOptionsCsvArgs.builder
       builder.csv(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.dynamodb.inputs.GlobalSecondaryIndexState.Builder)
     /**
      * @param keySchemas Set of nested attribute definitions.
@@ -471,6 +483,7 @@ object dynamodb:
       val argsBuilder = com.pulumi.aws.dynamodb.inputs.GlobalSecondaryIndexWarmThroughputArgs.builder
       builder.warmThroughput(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.dynamodb.inputs.TableState.Builder)
     /**
      * @param attributes Set of nested attribute definitions. Only required for `hashKey` and `rangeKey` attributes. See below.
@@ -571,6 +584,10 @@ object dynamodb:
       val argsBuilder = com.pulumi.aws.dynamodb.inputs.TableWarmThroughputArgs.builder
       builder.warmThroughput(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.dynamodb.inputs.TableState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.dynamodb.inputs.TableGlobalSecondaryIndexArgs.Builder)
     /**
      * @param keySchemas Configuration block(s) for the key schema. Mutually exclusive with `hashKey` and `rangeKey`. Required if `hashKey` is not specified. Supports multi-attribute keys for the [Multi-Attribute Keys design pattern](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GSI.DesignPattern.MultiAttributeKeys.html). See below.
@@ -599,6 +616,7 @@ object dynamodb:
       val argsBuilder = com.pulumi.aws.dynamodb.inputs.TableGlobalSecondaryIndexWarmThroughputArgs.builder
       builder.warmThroughput(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.dynamodb.inputs.GlobalTableState.Builder)
     /**
      * @param replicas Underlying DynamoDB Table. At least 1 replica must be defined. See below.
@@ -609,6 +627,7 @@ object dynamodb:
       def argsBuilder = com.pulumi.aws.dynamodb.inputs.GlobalTableReplicaArgs.builder
       builder.replicas(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.dynamodb.inputs.TableImportTableArgs.Builder)
     /**
      * @param inputFormatOptions Describe the format options for the data that was imported into the target table.
@@ -631,8 +650,11 @@ object dynamodb:
       val argsBuilder = com.pulumi.aws.dynamodb.inputs.TableImportTableS3BucketSourceArgs.builder
       builder.s3BucketSource(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.dynamodb.inputs.TableExportState.Builder)
     def incrementalExportSpecification(args: Endofunction[com.pulumi.aws.dynamodb.inputs.TableExportIncrementalExportSpecificationArgs.Builder]):
         com.pulumi.aws.dynamodb.inputs.TableExportState.Builder =
       val argsBuilder = com.pulumi.aws.dynamodb.inputs.TableExportIncrementalExportSpecificationArgs.builder
       builder.incrementalExportSpecification(args(argsBuilder).build)
+
+                       

@@ -115,6 +115,10 @@ object synthetics:
       val argsBuilder = com.pulumi.aws.synthetics.inputs.CanaryVpcConfigArgs.builder
       builder.vpcConfig(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.synthetics.CanaryArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.synthetics.inputs.CanaryState.Builder)
     /**
      * @param artifactConfig configuration for canary artifacts, including the encryption-at-rest settings for artifacts that the canary uploads to Amazon S3. See Artifact Config.
@@ -163,6 +167,10 @@ object synthetics:
       val argsBuilder = com.pulumi.aws.synthetics.inputs.CanaryVpcConfigArgs.builder
       builder.vpcConfig(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.synthetics.inputs.CanaryState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.synthetics.inputs.CanaryScheduleArgs.Builder)
     /**
      * @param retryConfig Configuration block for canary retries. Detailed below.
@@ -173,6 +181,7 @@ object synthetics:
       val argsBuilder = com.pulumi.aws.synthetics.inputs.CanaryScheduleRetryConfigArgs.builder
       builder.retryConfig(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.synthetics.inputs.CanaryArtifactConfigArgs.Builder)
     /**
      * @param s3Encryption Configuration of the encryption-at-rest settings for artifacts that the canary uploads to Amazon S3. See S3 Encryption.
@@ -182,3 +191,5 @@ object synthetics:
         com.pulumi.aws.synthetics.inputs.CanaryArtifactConfigArgs.Builder =
       val argsBuilder = com.pulumi.aws.synthetics.inputs.CanaryArtifactConfigS3EncryptionArgs.builder
       builder.s3Encryption(args(argsBuilder).build)
+
+                       

@@ -35,6 +35,10 @@ object drs:
       val argsBuilder = com.pulumi.aws.drs.inputs.ReplicationConfigurationTemplateTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.drs.inputs.ReplicationConfigurationTemplateState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.drs.ReplicationConfigurationTemplateArgs.Builder)
     /**
      * @param pitPolicies Configuration block for Point in time (PIT) policy to manage snapshots taken during replication. See below.
@@ -49,3 +53,8 @@ object drs:
         com.pulumi.aws.drs.ReplicationConfigurationTemplateArgs.Builder =
       val argsBuilder = com.pulumi.aws.drs.inputs.ReplicationConfigurationTemplateTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
+
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.drs.ReplicationConfigurationTemplateArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       

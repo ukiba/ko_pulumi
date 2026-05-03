@@ -62,6 +62,10 @@ object qldb:
       val argsBuilder = com.pulumi.aws.qldb.inputs.StreamKinesisConfigurationArgs.builder
       builder.kinesisConfiguration(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.qldb.StreamArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.qldb.inputs.StreamState.Builder)
     /**
      * @param kinesisConfiguration The configuration settings of the Kinesis Data Streams destination for your stream request. Documented below.
@@ -71,3 +75,8 @@ object qldb:
         com.pulumi.aws.qldb.inputs.StreamState.Builder =
       val argsBuilder = com.pulumi.aws.qldb.inputs.StreamKinesisConfigurationArgs.builder
       builder.kinesisConfiguration(args(argsBuilder).build)
+
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.qldb.inputs.StreamState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       

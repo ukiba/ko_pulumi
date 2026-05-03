@@ -33,6 +33,10 @@ object devicefarm:
       def argsBuilder = com.pulumi.aws.devicefarm.inputs.DevicePoolRuleArgs.builder
       builder.rules(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.devicefarm.DevicePoolArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /**
    * Provides a resource to manage AWS Device Farm Test Grid Projects.
    *  
@@ -77,6 +81,10 @@ object devicefarm:
       val argsBuilder = com.pulumi.aws.devicefarm.inputs.TestGridProjectVpcConfigArgs.builder
       builder.vpcConfig(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.devicefarm.TestGridProjectArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /**
    * Provides a resource to manage AWS Device Farm Network Profiles.
    *  \u2202
@@ -144,6 +152,10 @@ object devicefarm:
       val argsBuilder = com.pulumi.aws.devicefarm.inputs.TestGridProjectVpcConfigArgs.builder
       builder.vpcConfig(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.devicefarm.inputs.TestGridProjectState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.devicefarm.inputs.DevicePoolState.Builder)
     /**
      * @param rules The device pool&#39;s rules. See Rule.
@@ -153,3 +165,8 @@ object devicefarm:
         com.pulumi.aws.devicefarm.inputs.DevicePoolState.Builder =
       def argsBuilder = com.pulumi.aws.devicefarm.inputs.DevicePoolRuleArgs.builder
       builder.rules(args.map(_(argsBuilder).build)*)
+
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.devicefarm.inputs.DevicePoolState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       

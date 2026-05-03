@@ -43,6 +43,10 @@ object rbin:
       val argsBuilder = com.pulumi.aws.rbin.inputs.RuleRetentionPeriodArgs.builder
       builder.retentionPeriod(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.rbin.RuleArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /** Resource for managing an AWS RBin Rule. */
   def Rule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.rbin.RuleArgs.Builder])(using conf: KoPulumiConf) =
@@ -94,6 +98,10 @@ object rbin:
       val argsBuilder = com.pulumi.aws.rbin.inputs.RuleRetentionPeriodArgs.builder
       builder.retentionPeriod(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.rbin.inputs.RuleState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.rbin.inputs.RuleLockConfigurationArgs.Builder)
     /**
      * @param unlockDelay Information about the retention rule unlock delay. See `unlockDelay` below.
@@ -103,3 +111,5 @@ object rbin:
         com.pulumi.aws.rbin.inputs.RuleLockConfigurationArgs.Builder =
       val argsBuilder = com.pulumi.aws.rbin.inputs.RuleLockConfigurationUnlockDelayArgs.builder
       builder.unlockDelay(args(argsBuilder).build)
+
+                       

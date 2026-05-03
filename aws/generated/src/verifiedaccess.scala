@@ -14,6 +14,10 @@ object verifiedaccess:
       val argsBuilder = com.pulumi.aws.verifiedaccess.inputs.GroupSseConfigurationArgs.builder
       builder.sseConfiguration(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.verifiedaccess.GroupArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /** Resource for managing a Verified Access Logging Configuration. */
   def InstanceLoggingConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.verifiedaccess.InstanceLoggingConfigurationArgs.Builder]) =
@@ -45,6 +49,7 @@ object verifiedaccess:
       val argsBuilder = com.pulumi.aws.verifiedaccess.inputs.InstanceLoggingConfigurationAccessLogsArgs.builder
       builder.accessLogs(args(argsBuilder).build)
 
+                       
   /** Resource for managing a Verified Access Instance Trust Provider Attachment. */
   def InstanceTrustProviderAttachment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.verifiedaccess.InstanceTrustProviderAttachmentArgs.Builder]) =
@@ -87,6 +92,10 @@ object verifiedaccess:
       val argsBuilder = com.pulumi.aws.verifiedaccess.inputs.TrustProviderSseSpecificationArgs.builder
       builder.sseSpecification(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.verifiedaccess.TrustProviderArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /** Resource for managing an AWS EC2 (Elastic Compute Cloud) Verified Access Endpoint. */
   def Endpoint(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.verifiedaccess.EndpointArgs.Builder])(using conf: KoPulumiConf) =
@@ -165,6 +174,10 @@ object verifiedaccess:
       val argsBuilder = com.pulumi.aws.verifiedaccess.inputs.EndpointSseSpecificationArgs.builder
       builder.sseSpecification(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.verifiedaccess.EndpointArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.verifiedaccess.inputs.TrustProviderState.Builder)
     /**
      * @param deviceOptions A block of options for device identity based trust providers.
@@ -198,6 +211,10 @@ object verifiedaccess:
       val argsBuilder = com.pulumi.aws.verifiedaccess.inputs.TrustProviderSseSpecificationArgs.builder
       builder.sseSpecification(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.verifiedaccess.inputs.TrustProviderState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.verifiedaccess.inputs.GroupState.Builder)
     /**
      * @param sseConfiguration Configuration block to use KMS keys for server-side encryption.
@@ -208,12 +225,17 @@ object verifiedaccess:
       val argsBuilder = com.pulumi.aws.verifiedaccess.inputs.GroupSseConfigurationArgs.builder
       builder.sseConfiguration(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.verifiedaccess.inputs.GroupState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.verifiedaccess.inputs.EndpointNetworkInterfaceOptionsArgs.Builder)
     def portRanges(args: Endofunction[com.pulumi.aws.verifiedaccess.inputs.EndpointNetworkInterfaceOptionsPortRangeArgs.Builder]*):
         com.pulumi.aws.verifiedaccess.inputs.EndpointNetworkInterfaceOptionsArgs.Builder =
       def argsBuilder = com.pulumi.aws.verifiedaccess.inputs.EndpointNetworkInterfaceOptionsPortRangeArgs.builder
       builder.portRanges(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.verifiedaccess.inputs.EndpointState.Builder)
     /**
      * @param cidrOptions The CIDR block details. This parameter is required if the endpoint type is `cidr`.
@@ -256,6 +278,10 @@ object verifiedaccess:
       val argsBuilder = com.pulumi.aws.verifiedaccess.inputs.EndpointSseSpecificationArgs.builder
       builder.sseSpecification(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.verifiedaccess.inputs.EndpointState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.verifiedaccess.inputs.InstanceLoggingConfigurationState.Builder)
     /**
      * @param accessLogs A block that specifies the configuration options for Verified Access instances. Detailed below.
@@ -266,6 +292,7 @@ object verifiedaccess:
       val argsBuilder = com.pulumi.aws.verifiedaccess.inputs.InstanceLoggingConfigurationAccessLogsArgs.builder
       builder.accessLogs(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.verifiedaccess.inputs.InstanceLoggingConfigurationAccessLogsArgs.Builder)
     /**
      * @param cloudwatchLogs A block that specifies configures sending Verified Access logs to CloudWatch Logs. Detailed below.
@@ -294,18 +321,21 @@ object verifiedaccess:
       val argsBuilder = com.pulumi.aws.verifiedaccess.inputs.InstanceLoggingConfigurationAccessLogsS3Args.builder
       builder.s3(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.verifiedaccess.inputs.EndpointLoadBalancerOptionsArgs.Builder)
     def portRanges(args: Endofunction[com.pulumi.aws.verifiedaccess.inputs.EndpointLoadBalancerOptionsPortRangeArgs.Builder]*):
         com.pulumi.aws.verifiedaccess.inputs.EndpointLoadBalancerOptionsArgs.Builder =
       def argsBuilder = com.pulumi.aws.verifiedaccess.inputs.EndpointLoadBalancerOptionsPortRangeArgs.builder
       builder.portRanges(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.verifiedaccess.inputs.EndpointCidrOptionsArgs.Builder)
     def portRanges(args: Endofunction[com.pulumi.aws.verifiedaccess.inputs.EndpointCidrOptionsPortRangeArgs.Builder]*):
         com.pulumi.aws.verifiedaccess.inputs.EndpointCidrOptionsArgs.Builder =
       def argsBuilder = com.pulumi.aws.verifiedaccess.inputs.EndpointCidrOptionsPortRangeArgs.builder
       builder.portRanges(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.verifiedaccess.inputs.InstanceState.Builder)
     /**
      * @param verifiedAccessTrustProviders One or more blocks of providing information about the AWS Verified Access Trust Providers. See verifiedAccessTrustProviders below for details.One or more blocks
@@ -315,3 +345,8 @@ object verifiedaccess:
         com.pulumi.aws.verifiedaccess.inputs.InstanceState.Builder =
       def argsBuilder = com.pulumi.aws.verifiedaccess.inputs.InstanceVerifiedAccessTrustProviderArgs.builder
       builder.verifiedAccessTrustProviders(args.map(_(argsBuilder).build)*)
+
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.verifiedaccess.inputs.InstanceState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       

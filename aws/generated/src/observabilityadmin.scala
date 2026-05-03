@@ -51,6 +51,7 @@ object observabilityadmin:
       val argsBuilder = com.pulumi.aws.observabilityadmin.inputs.TelemetryEnrichmentTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.observabilityadmin.CentralizationRuleForOrganizationArgs.Builder)
     /**
      * @param rule Configuration block for the centralization rule. See `rule` below.
@@ -68,6 +69,10 @@ object observabilityadmin:
       val argsBuilder = com.pulumi.aws.observabilityadmin.inputs.CentralizationRuleForOrganizationTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.observabilityadmin.CentralizationRuleForOrganizationArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.observabilityadmin.TelemetryPipelineArgs.Builder)
     /**
      * @param configuration Configuration block for the telemetry pipeline. See `configuration` below.
@@ -85,6 +90,10 @@ object observabilityadmin:
       val argsBuilder = com.pulumi.aws.observabilityadmin.inputs.TelemetryPipelineTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.observabilityadmin.TelemetryPipelineArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /**
    * Manages an AWS CloudWatch Observability Admin Telemetry Enrichment.
    *  
@@ -130,12 +139,14 @@ object observabilityadmin:
       val argsBuilder = com.pulumi.aws.observabilityadmin.inputs.CentralizationRuleForOrganizationRuleDestinationDestinationLogsConfigurationLogsEncryptionConfigurationArgs.builder
       builder.logsEncryptionConfiguration(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.observabilityadmin.inputs.TelemetryEnrichmentState.Builder)
     def timeouts(args: Endofunction[com.pulumi.aws.observabilityadmin.inputs.TelemetryEnrichmentTimeoutsArgs.Builder]):
         com.pulumi.aws.observabilityadmin.inputs.TelemetryEnrichmentState.Builder =
       val argsBuilder = com.pulumi.aws.observabilityadmin.inputs.TelemetryEnrichmentTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.observabilityadmin.inputs.CentralizationRuleForOrganizationRuleArgs.Builder)
     /**
      * @param destination Configuration block for the destination where logs will be centralized. See `destination` below.
@@ -155,6 +166,7 @@ object observabilityadmin:
       val argsBuilder = com.pulumi.aws.observabilityadmin.inputs.CentralizationRuleForOrganizationRuleSourceArgs.builder
       builder.source(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.observabilityadmin.inputs.CentralizationRuleForOrganizationRuleSourceArgs.Builder)
     /**
      * @param sourceLogsConfiguration Configuration block for source logs settings. See `sourceLogsConfiguration` below.
@@ -165,6 +177,7 @@ object observabilityadmin:
       val argsBuilder = com.pulumi.aws.observabilityadmin.inputs.CentralizationRuleForOrganizationRuleSourceSourceLogsConfigurationArgs.builder
       builder.sourceLogsConfiguration(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.observabilityadmin.inputs.CentralizationRuleForOrganizationRuleDestinationArgs.Builder)
     /**
      * @param destinationLogsConfiguration Configuration block for destination logs settings. See `destinationLogsConfiguration` below.
@@ -175,6 +188,7 @@ object observabilityadmin:
       val argsBuilder = com.pulumi.aws.observabilityadmin.inputs.CentralizationRuleForOrganizationRuleDestinationDestinationLogsConfigurationArgs.builder
       builder.destinationLogsConfiguration(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.observabilityadmin.inputs.TelemetryPipelineState.Builder)
     /**
      * @param configuration Configuration block for the telemetry pipeline. See `configuration` below.
@@ -192,6 +206,10 @@ object observabilityadmin:
       val argsBuilder = com.pulumi.aws.observabilityadmin.inputs.TelemetryPipelineTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.observabilityadmin.inputs.TelemetryPipelineState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.observabilityadmin.inputs.CentralizationRuleForOrganizationState.Builder)
     /**
      * @param rule Configuration block for the centralization rule. See `rule` below.
@@ -208,3 +226,8 @@ object observabilityadmin:
         com.pulumi.aws.observabilityadmin.inputs.CentralizationRuleForOrganizationState.Builder =
       val argsBuilder = com.pulumi.aws.observabilityadmin.inputs.CentralizationRuleForOrganizationTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
+
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.observabilityadmin.inputs.CentralizationRuleForOrganizationState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       

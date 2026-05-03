@@ -32,6 +32,10 @@ object networkfirewall:
       def argsBuilder = com.pulumi.aws.networkfirewall.inputs.FirewallSubnetMappingArgs.builder
       builder.subnetMappings(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.networkfirewall.FirewallArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.networkfirewall.VpcEndpointAssociationArgs.Builder)
     /**
      * @param subnetMapping The ID for a subnet that&#39;s used in an association with a firewall. See Subnet Mapping below for details.
@@ -47,6 +51,10 @@ object networkfirewall:
       val argsBuilder = com.pulumi.aws.networkfirewall.inputs.VpcEndpointAssociationTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.networkfirewall.VpcEndpointAssociationArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /** Resource for managing an AWS Network Firewall TLS Inspection Configuration. */
   def TlsInspectionConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.networkfirewall.TlsInspectionConfigurationArgs.Builder])(using conf: KoPulumiConf) =
@@ -81,6 +89,10 @@ object networkfirewall:
       val argsBuilder = com.pulumi.aws.networkfirewall.inputs.FirewallPolicyFirewallPolicyArgs.builder
       builder.firewallPolicy(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.networkfirewall.FirewallPolicyArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   type NetworkfirewallFunctions = com.pulumi.aws.networkfirewall.NetworkfirewallFunctions
   object NetworkfirewallFunctions:
     // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
@@ -143,6 +155,7 @@ object networkfirewall:
       val argsBuilder = com.pulumi.aws.networkfirewall.inputs.FirewallTransitGatewayAttachmentAccepterTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.networkfirewall.RuleGroupArgs.Builder)
     /**
      * @param encryptionConfiguration KMS encryption configuration settings. See Encryption Configuration below for details.
@@ -162,6 +175,10 @@ object networkfirewall:
       val argsBuilder = com.pulumi.aws.networkfirewall.inputs.RuleGroupRuleGroupArgs.builder
       builder.ruleGroup(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.networkfirewall.RuleGroupArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /** Provides an AWS Network Firewall Firewall Policy Resource */
   def FirewallPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.networkfirewall.FirewallPolicyArgs.Builder])(using conf: KoPulumiConf) =
@@ -196,6 +213,7 @@ object networkfirewall:
       val argsBuilder = com.pulumi.aws.networkfirewall.inputs.LoggingConfigurationLoggingConfigurationArgs.builder
       builder.loggingConfiguration(args(argsBuilder).build)
 
+                       
   /**
    * Manages a firewall endpoint for an AWS Network Firewall firewall.
    *  
@@ -262,6 +280,7 @@ object networkfirewall:
       val argsBuilder = com.pulumi.aws.networkfirewall.inputs.FirewallPolicyFirewallPolicyStatefulEngineOptionsFlowTimeoutsArgs.builder
       builder.flowTimeouts(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.networkfirewall.inputs.RuleGroupRuleGroupRulesSourceStatelessRulesAndCustomActionsCustomActionActionDefinitionPublishMetricActionArgs.Builder)
     /**
      * @param dimensions Set of configuration blocks containing the dimension settings to use for Amazon CloudWatch custom metrics. See Dimension below for details.
@@ -272,6 +291,7 @@ object networkfirewall:
       def argsBuilder = com.pulumi.aws.networkfirewall.inputs.RuleGroupRuleGroupRulesSourceStatelessRulesAndCustomActionsCustomActionActionDefinitionPublishMetricActionDimensionArgs.builder
       builder.dimensions(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.networkfirewall.inputs.RuleGroupRuleGroupArgs.Builder)
     /**
      * @param referenceSets A configuration block that defines the IP Set References for the rule group. See Reference Sets below for details. Please notes that there can only be a maximum of 5 `referenceSets` in a `ruleGroup`. See the [AWS documentation](https://docs.aws.amazon.com/network-firewall/latest/developerguide/rule-groups-ip-set-references.html#rule-groups-ip-set-reference-limits) for details.
@@ -309,6 +329,7 @@ object networkfirewall:
       val argsBuilder = com.pulumi.aws.networkfirewall.inputs.RuleGroupRuleGroupStatefulRuleOptionsArgs.builder
       builder.statefulRuleOptions(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.networkfirewall.inputs.RuleGroupRuleGroupRulesSourceStatelessRulesAndCustomActionsCustomActionArgs.Builder)
     /**
      * @param actionDefinition A configuration block describing the custom action associated with the `actionName`. See Action Definition below for details.
@@ -319,6 +340,7 @@ object networkfirewall:
       val argsBuilder = com.pulumi.aws.networkfirewall.inputs.RuleGroupRuleGroupRulesSourceStatelessRulesAndCustomActionsCustomActionActionDefinitionArgs.builder
       builder.actionDefinition(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.networkfirewall.inputs.RuleGroupRuleGroupRulesSourceStatefulRuleArgs.Builder)
     /**
      * @param header A configuration block containing the stateful 5-tuple inspection criteria for the rule, used to inspect traffic flows. See Header below for details.
@@ -338,6 +360,7 @@ object networkfirewall:
       def argsBuilder = com.pulumi.aws.networkfirewall.inputs.RuleGroupRuleGroupRulesSourceStatefulRuleRuleOptionArgs.builder
       builder.ruleOptions(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.networkfirewall.inputs.TlsInspectionConfigurationState.Builder)
     /**
      * @param certificateAuthorities Certificate Manager certificate block. See Certificate Authority below for details.
@@ -382,6 +405,10 @@ object networkfirewall:
       val argsBuilder = com.pulumi.aws.networkfirewall.inputs.TlsInspectionConfigurationTlsInspectionConfigurationArgs.builder
       builder.tlsInspectionConfiguration(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.networkfirewall.inputs.TlsInspectionConfigurationState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.networkfirewall.inputs.RuleGroupRuleGroupRuleVariablesArgs.Builder)
     /**
      * @param ipSets Set of configuration blocks that define IP address information. See IP Sets below for details.
@@ -401,6 +428,7 @@ object networkfirewall:
       def argsBuilder = com.pulumi.aws.networkfirewall.inputs.RuleGroupRuleGroupRuleVariablesPortSetArgs.builder
       builder.portSets(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.networkfirewall.inputs.FirewallPolicyFirewallPolicyStatelessCustomActionActionDefinitionPublishMetricActionArgs.Builder)
     /**
      * @param dimensions Set of configuration blocks describing dimension settings to use for Amazon CloudWatch custom metrics. See Dimension below for more details.
@@ -411,6 +439,7 @@ object networkfirewall:
       def argsBuilder = com.pulumi.aws.networkfirewall.inputs.FirewallPolicyFirewallPolicyStatelessCustomActionActionDefinitionPublishMetricActionDimensionArgs.builder
       builder.dimensions(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.networkfirewall.inputs.FirewallFirewallStatusArgs.Builder)
     /**
      * @param syncStates Set of subnets configured for use by the firewall.
@@ -430,6 +459,7 @@ object networkfirewall:
       def argsBuilder = com.pulumi.aws.networkfirewall.inputs.FirewallFirewallStatusTransitGatewayAttachmentSyncStateArgs.builder
       builder.transitGatewayAttachmentSyncStates(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.networkfirewall.inputs.RuleGroupRuleGroupRulesSourceStatelessRulesAndCustomActionsArgs.Builder)
     /**
      * @param customActions Set of configuration blocks containing custom action definitions that are available for use by the set of `stateless rule`. See Custom Action below for details.
@@ -449,6 +479,7 @@ object networkfirewall:
       def argsBuilder = com.pulumi.aws.networkfirewall.inputs.RuleGroupRuleGroupRulesSourceStatelessRulesAndCustomActionsStatelessRuleArgs.builder
       builder.statelessRules(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.networkfirewall.inputs.RuleGroupRuleGroupRuleVariablesIpSetArgs.Builder)
     /**
      * @param ipSet A configuration block that defines a set of IP addresses. See IP Set below for details.
@@ -459,6 +490,7 @@ object networkfirewall:
       val argsBuilder = com.pulumi.aws.networkfirewall.inputs.RuleGroupRuleGroupRuleVariablesIpSetIpSetArgs.builder
       builder.ipSet(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.networkfirewall.inputs.TlsInspectionConfigurationTlsInspectionConfigurationServerCertificateConfigurationScopeArgs.Builder)
     /**
      * @param destinationPorts Set of configuration blocks describing the destination ports to inspect for. If not specified, this matches with any destination port. See Destination Ports below for details.
@@ -496,6 +528,7 @@ object networkfirewall:
       def argsBuilder = com.pulumi.aws.networkfirewall.inputs.TlsInspectionConfigurationTlsInspectionConfigurationServerCertificateConfigurationScopeSourceArgs.builder
       builder.sources(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.networkfirewall.inputs.FirewallPolicyFirewallPolicyStatelessCustomActionArgs.Builder)
     /**
      * @param actionDefinition A configuration block describing the custom action associated with the `actionName`. See Action Definition below for details.
@@ -506,6 +539,7 @@ object networkfirewall:
       val argsBuilder = com.pulumi.aws.networkfirewall.inputs.FirewallPolicyFirewallPolicyStatelessCustomActionActionDefinitionArgs.builder
       builder.actionDefinition(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.networkfirewall.inputs.RuleGroupState.Builder)
     /**
      * @param encryptionConfiguration KMS encryption configuration settings. See Encryption Configuration below for details.
@@ -525,6 +559,10 @@ object networkfirewall:
       val argsBuilder = com.pulumi.aws.networkfirewall.inputs.RuleGroupRuleGroupArgs.builder
       builder.ruleGroup(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.networkfirewall.inputs.RuleGroupState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.networkfirewall.inputs.FirewallPolicyFirewallPolicyPolicyVariablesRuleVariableArgs.Builder)
     /**
      * @param ipSet A configuration block that defines a set of IP addresses. See IP Set below for details.
@@ -535,6 +573,7 @@ object networkfirewall:
       val argsBuilder = com.pulumi.aws.networkfirewall.inputs.FirewallPolicyFirewallPolicyPolicyVariablesRuleVariableIpSetArgs.builder
       builder.ipSet(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.networkfirewall.inputs.FirewallPolicyFirewallPolicyArgs.Builder)
     /**
      * @param policyVariables . Contains variables that you can use to override default Suricata settings in your firewall policy. See Rule Variables for details.
@@ -581,12 +620,14 @@ object networkfirewall:
       def argsBuilder = com.pulumi.aws.networkfirewall.inputs.FirewallPolicyFirewallPolicyStatelessRuleGroupReferenceArgs.builder
       builder.statelessRuleGroupReferences(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.networkfirewall.inputs.FirewallTransitGatewayAttachmentAccepterState.Builder)
     def timeouts(args: Endofunction[com.pulumi.aws.networkfirewall.inputs.FirewallTransitGatewayAttachmentAccepterTimeoutsArgs.Builder]):
         com.pulumi.aws.networkfirewall.inputs.FirewallTransitGatewayAttachmentAccepterState.Builder =
       val argsBuilder = com.pulumi.aws.networkfirewall.inputs.FirewallTransitGatewayAttachmentAccepterTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.networkfirewall.inputs.LoggingConfigurationLoggingConfigurationArgs.Builder)
     /**
      * @param logDestinationConfigs Set of configuration blocks describing the logging details for a firewall. See Log Destination Config below for details. At most, only Three blocks can be specified; one for `FLOW` logs and one for `ALERT` logs and one for `TLS` logs.
@@ -597,6 +638,7 @@ object networkfirewall:
       def argsBuilder = com.pulumi.aws.networkfirewall.inputs.LoggingConfigurationLoggingConfigurationLogDestinationConfigArgs.builder
       builder.logDestinationConfigs(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.networkfirewall.inputs.VpcEndpointAssociationVpcEndpointAssociationStatusArgs.Builder)
     /**
      * @param associationSyncStates Set of subnets configured for use by the VPC Endpoint Association.
@@ -607,12 +649,14 @@ object networkfirewall:
       def argsBuilder = com.pulumi.aws.networkfirewall.inputs.VpcEndpointAssociationVpcEndpointAssociationStatusAssociationSyncStateArgs.builder
       builder.associationSyncStates(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.networkfirewall.inputs.FirewallPolicyFirewallPolicyPolicyVariablesArgs.Builder)
     def ruleVariables(args: Endofunction[com.pulumi.aws.networkfirewall.inputs.FirewallPolicyFirewallPolicyPolicyVariablesRuleVariableArgs.Builder]*):
         com.pulumi.aws.networkfirewall.inputs.FirewallPolicyFirewallPolicyPolicyVariablesArgs.Builder =
       def argsBuilder = com.pulumi.aws.networkfirewall.inputs.FirewallPolicyFirewallPolicyPolicyVariablesRuleVariableArgs.builder
       builder.ruleVariables(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.networkfirewall.inputs.FirewallPolicyState.Builder)
     /**
      * @param encryptionConfiguration KMS encryption configuration settings. See Encryption Configuration below for details.
@@ -632,6 +676,10 @@ object networkfirewall:
       val argsBuilder = com.pulumi.aws.networkfirewall.inputs.FirewallPolicyFirewallPolicyArgs.builder
       builder.firewallPolicy(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.networkfirewall.inputs.FirewallPolicyState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.networkfirewall.inputs.TlsInspectionConfigurationTlsInspectionConfigurationServerCertificateConfigurationArgs.Builder)
     /**
      * @param checkCertificateRevocationStatus Check Certificate Revocation Status block. Detailed below.
@@ -660,6 +708,7 @@ object networkfirewall:
       def argsBuilder = com.pulumi.aws.networkfirewall.inputs.TlsInspectionConfigurationTlsInspectionConfigurationServerCertificateConfigurationServerCertificateArgs.builder
       builder.serverCertificates(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.networkfirewall.inputs.RuleGroupRuleGroupReferenceSetsIpSetReferenceArgs.Builder)
     /**
      * @param ipSetReferences Set of configuration blocks that define the IP Reference information. See IP Set Reference below for details.
@@ -670,6 +719,7 @@ object networkfirewall:
       def argsBuilder = com.pulumi.aws.networkfirewall.inputs.RuleGroupRuleGroupReferenceSetsIpSetReferenceIpSetReferenceArgs.builder
       builder.ipSetReferences(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.networkfirewall.inputs.RuleGroupRuleGroupRulesSourceStatelessRulesAndCustomActionsStatelessRuleRuleDefinitionMatchAttributesArgs.Builder)
     /**
      * @param destinationPorts Set of configuration blocks describing the destination ports to inspect for. If not specified, this matches with any destination port. See Destination Port below for details.
@@ -716,6 +766,7 @@ object networkfirewall:
       def argsBuilder = com.pulumi.aws.networkfirewall.inputs.RuleGroupRuleGroupRulesSourceStatelessRulesAndCustomActionsStatelessRuleRuleDefinitionMatchAttributesTcpFlagArgs.builder
       builder.tcpFlags(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.networkfirewall.inputs.RuleGroupRuleGroupRulesSourceStatelessRulesAndCustomActionsStatelessRuleRuleDefinitionArgs.Builder)
     /**
      * @param matchAttributes A configuration block containing criteria for AWS Network Firewall to use to inspect an individual packet in stateless rule inspection. See Match Attributes below for details.
@@ -726,12 +777,14 @@ object networkfirewall:
       val argsBuilder = com.pulumi.aws.networkfirewall.inputs.RuleGroupRuleGroupRulesSourceStatelessRulesAndCustomActionsStatelessRuleRuleDefinitionMatchAttributesArgs.builder
       builder.matchAttributes(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.networkfirewall.inputs.RuleGroupRuleGroupReferenceSetsArgs.Builder)
     def ipSetReferences(args: Endofunction[com.pulumi.aws.networkfirewall.inputs.RuleGroupRuleGroupReferenceSetsIpSetReferenceArgs.Builder]*):
         com.pulumi.aws.networkfirewall.inputs.RuleGroupRuleGroupReferenceSetsArgs.Builder =
       def argsBuilder = com.pulumi.aws.networkfirewall.inputs.RuleGroupRuleGroupReferenceSetsIpSetReferenceArgs.builder
       builder.ipSetReferences(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.networkfirewall.inputs.FirewallPolicyFirewallPolicyStatefulRuleGroupReferenceArgs.Builder)
     /**
      * @param override Configuration block for override values
@@ -742,6 +795,7 @@ object networkfirewall:
       val argsBuilder = com.pulumi.aws.networkfirewall.inputs.FirewallPolicyFirewallPolicyStatefulRuleGroupReferenceOverrideArgs.builder
       builder.`override`(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.networkfirewall.inputs.RuleGroupRuleGroupRulesSourceStatelessRulesAndCustomActionsStatelessRuleArgs.Builder)
     /**
      * @param ruleDefinition A configuration block defining the stateless 5-tuple packet inspection criteria and the action to take on a packet that matches the criteria. See Rule Definition below for details.
@@ -752,6 +806,7 @@ object networkfirewall:
       val argsBuilder = com.pulumi.aws.networkfirewall.inputs.RuleGroupRuleGroupRulesSourceStatelessRulesAndCustomActionsStatelessRuleRuleDefinitionArgs.builder
       builder.ruleDefinition(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.networkfirewall.inputs.RuleGroupRuleGroupRulesSourceArgs.Builder)
     /**
      * @param rulesSourceList A configuration block containing **stateful** inspection criteria for a domain list rule group. See Rules Source List below for details.
@@ -780,6 +835,7 @@ object networkfirewall:
       val argsBuilder = com.pulumi.aws.networkfirewall.inputs.RuleGroupRuleGroupRulesSourceStatelessRulesAndCustomActionsArgs.builder
       builder.statelessRulesAndCustomActions(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.networkfirewall.inputs.VpcEndpointAssociationState.Builder)
     /**
      * @param subnetMapping The ID for a subnet that&#39;s used in an association with a firewall. See Subnet Mapping below for details.
@@ -804,6 +860,10 @@ object networkfirewall:
       def argsBuilder = com.pulumi.aws.networkfirewall.inputs.VpcEndpointAssociationVpcEndpointAssociationStatusArgs.builder
       builder.vpcEndpointAssociationStatuses(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.networkfirewall.inputs.VpcEndpointAssociationState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.networkfirewall.inputs.TlsInspectionConfigurationTlsInspectionConfigurationArgs.Builder)
     /**
      * @param serverCertificateConfiguration Server certificate configurations that are associated with the TLS configuration. Detailed below.
@@ -814,6 +874,7 @@ object networkfirewall:
       val argsBuilder = com.pulumi.aws.networkfirewall.inputs.TlsInspectionConfigurationTlsInspectionConfigurationServerCertificateConfigurationArgs.builder
       builder.serverCertificateConfiguration(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.networkfirewall.inputs.LoggingConfigurationState.Builder)
     /**
      * @param loggingConfiguration A configuration block describing how AWS Network Firewall performs logging for a firewall. See Logging Configuration below for details.
@@ -824,6 +885,7 @@ object networkfirewall:
       val argsBuilder = com.pulumi.aws.networkfirewall.inputs.LoggingConfigurationLoggingConfigurationArgs.builder
       builder.loggingConfiguration(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.networkfirewall.inputs.RuleGroupRuleGroupRuleVariablesPortSetArgs.Builder)
     /**
      * @param portSet A configuration block that defines a set of port ranges. See Port Set below for details.
@@ -834,6 +896,7 @@ object networkfirewall:
       val argsBuilder = com.pulumi.aws.networkfirewall.inputs.RuleGroupRuleGroupRuleVariablesPortSetPortSetArgs.builder
       builder.portSet(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.networkfirewall.inputs.FirewallState.Builder)
     /**
      * @param availabilityZoneMappings Required when creating a transit gateway-attached firewall. Set of configuration blocks describing the avaiability availability where you want to create firewall endpoints for a transit gateway-attached firewall.
@@ -871,6 +934,10 @@ object networkfirewall:
       def argsBuilder = com.pulumi.aws.networkfirewall.inputs.FirewallSubnetMappingArgs.builder
       builder.subnetMappings(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.networkfirewall.inputs.FirewallState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.networkfirewall.inputs.RuleGroupRuleGroupRulesSourceStatelessRulesAndCustomActionsCustomActionActionDefinitionArgs.Builder)
     /**
      * @param publishMetricAction A configuration block describing the stateless inspection criteria that publishes the specified metrics to Amazon CloudWatch for the matching packet. You can pair this custom action with any of the standard stateless rule actions. See Publish Metric Action below for details.
@@ -881,6 +948,7 @@ object networkfirewall:
       val argsBuilder = com.pulumi.aws.networkfirewall.inputs.RuleGroupRuleGroupRulesSourceStatelessRulesAndCustomActionsCustomActionActionDefinitionPublishMetricActionArgs.builder
       builder.publishMetricAction(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.networkfirewall.inputs.FirewallFirewallStatusSyncStateArgs.Builder)
     /**
      * @param attachments Nested list describing the attachment status of the firewall&#39;s association with a single VPC subnet.
@@ -891,6 +959,7 @@ object networkfirewall:
       def argsBuilder = com.pulumi.aws.networkfirewall.inputs.FirewallFirewallStatusSyncStateAttachmentArgs.builder
       builder.attachments(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.networkfirewall.inputs.VpcEndpointAssociationVpcEndpointAssociationStatusAssociationSyncStateArgs.Builder)
     /**
      * @param attachments Nested list describing the attachment status of the firewall&#39;s VPC Endpoint Association with a single VPC subnet.
@@ -901,6 +970,7 @@ object networkfirewall:
       def argsBuilder = com.pulumi.aws.networkfirewall.inputs.VpcEndpointAssociationVpcEndpointAssociationStatusAssociationSyncStateAttachmentArgs.builder
       builder.attachments(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.networkfirewall.inputs.FirewallPolicyFirewallPolicyStatelessCustomActionActionDefinitionArgs.Builder)
     /**
      * @param publishMetricAction A configuration block describing the stateless inspection criteria that publishes the specified metrics to Amazon CloudWatch for the matching packet. You can pair this custom action with any of the standard stateless rule actions. See Publish Metric Action below for details.
@@ -911,6 +981,7 @@ object networkfirewall:
       val argsBuilder = com.pulumi.aws.networkfirewall.inputs.FirewallPolicyFirewallPolicyStatelessCustomActionActionDefinitionPublishMetricActionArgs.builder
       builder.publishMetricAction(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.networkfirewall.TlsInspectionConfigurationArgs.Builder)
     /**
      * @param encryptionConfigurations Encryption configuration block. Detailed below.
@@ -936,3 +1007,8 @@ object networkfirewall:
         com.pulumi.aws.networkfirewall.TlsInspectionConfigurationArgs.Builder =
       val argsBuilder = com.pulumi.aws.networkfirewall.inputs.TlsInspectionConfigurationTlsInspectionConfigurationArgs.builder
       builder.tlsInspectionConfiguration(args(argsBuilder).build)
+
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.networkfirewall.TlsInspectionConfigurationArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       

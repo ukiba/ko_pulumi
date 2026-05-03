@@ -14,6 +14,10 @@ object ssoadmin:
       val argsBuilder = com.pulumi.aws.ssoadmin.inputs.TrustedTokenIssuerTrustedTokenIssuerConfigurationArgs.builder
       builder.trustedTokenIssuerConfiguration(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.ssoadmin.TrustedTokenIssuerArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /** Provides a Single Sign-On (SSO) ABAC Resource: https://docs.aws.amazon.com/singlesignon/latest/userguide/abac.html */
   def InstanceAccessControlAttributes(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ssoadmin.InstanceAccessControlAttributesArgs.Builder]) =
@@ -59,6 +63,7 @@ object ssoadmin:
       val argsBuilder = com.pulumi.aws.ssoadmin.inputs.ManagedPolicyAttachmentsExclusiveTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
+                       
   /**
    * Resource for managing an AWS SSO Admin Application.
    *  
@@ -90,6 +95,7 @@ object ssoadmin:
       val argsBuilder = com.pulumi.aws.ssoadmin.inputs.CustomerManagedPolicyAttachmentCustomerManagedPolicyReferenceArgs.builder
       builder.customerManagedPolicyReference(args(argsBuilder).build)
 
+                       
   type SsoadminFunctions = com.pulumi.aws.ssoadmin.SsoadminFunctions
   object SsoadminFunctions:
     // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
@@ -252,6 +258,7 @@ object ssoadmin:
       val argsBuilder = com.pulumi.aws.ssoadmin.inputs.PermissionsBoundaryAttachmentPermissionsBoundaryArgs.builder
       builder.permissionsBoundary(args(argsBuilder).build)
 
+                       
   /**
    * Provides an IAM inline policy for a Single Sign-On (SSO) Permission Set resource
    *  
@@ -322,6 +329,7 @@ object ssoadmin:
       def argsBuilder = com.pulumi.aws.ssoadmin.inputs.InstanceAccessControlAttributesAttributeArgs.builder
       builder.attributes(args.map(_(argsBuilder).build)*)
 
+                       
   /**
    * Resource for managing exclusive AWS SSO Admin Managed Policy Attachments.
    *  
@@ -349,6 +357,10 @@ object ssoadmin:
       val argsBuilder = com.pulumi.aws.ssoadmin.inputs.ApplicationPortalOptionsArgs.builder
       builder.portalOptions(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.ssoadmin.ApplicationArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.ssoadmin.CustomerManagedPolicyAttachmentsExclusiveArgs.Builder)
     /**
      * @param customerManagedPolicyReferences Specifies the names and paths of the customer managed policies to attach. See Customer Managed Policy Reference below.
@@ -364,6 +376,7 @@ object ssoadmin:
       val argsBuilder = com.pulumi.aws.ssoadmin.inputs.CustomerManagedPolicyAttachmentsExclusiveTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.ssoadmin.inputs.CustomerManagedPolicyAttachmentState.Builder)
     /**
      * @param customerManagedPolicyReference Specifies the name and path of a customer managed policy. See below.
@@ -374,6 +387,7 @@ object ssoadmin:
       val argsBuilder = com.pulumi.aws.ssoadmin.inputs.CustomerManagedPolicyAttachmentCustomerManagedPolicyReferenceArgs.builder
       builder.customerManagedPolicyReference(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.ssoadmin.inputs.TrustedTokenIssuerTrustedTokenIssuerConfigurationArgs.Builder)
     /**
      * @param oidcJwtConfiguration A block that describes the settings for a trusted token issuer that works with OpenID Connect (OIDC) by using JSON Web Tokens (JWT). See Documented below below.
@@ -384,6 +398,7 @@ object ssoadmin:
       val argsBuilder = com.pulumi.aws.ssoadmin.inputs.TrustedTokenIssuerTrustedTokenIssuerConfigurationOidcJwtConfigurationArgs.builder
       builder.oidcJwtConfiguration(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.ssoadmin.inputs.PermissionsBoundaryAttachmentPermissionsBoundaryArgs.Builder)
     /**
      * @param customerManagedPolicyReference Specifies the name and path of a customer managed policy. See below.
@@ -394,6 +409,7 @@ object ssoadmin:
       val argsBuilder = com.pulumi.aws.ssoadmin.inputs.PermissionsBoundaryAttachmentPermissionsBoundaryCustomerManagedPolicyReferenceArgs.builder
       builder.customerManagedPolicyReference(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.ssoadmin.inputs.InstanceAccessControlAttributesAttributeArgs.Builder)
     /**
      * @param values The value used for mapping a specified attribute to an identity source. See AccessControlAttributeValue
@@ -404,6 +420,7 @@ object ssoadmin:
       def argsBuilder = com.pulumi.aws.ssoadmin.inputs.InstanceAccessControlAttributesAttributeValueArgs.builder
       builder.values(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.ssoadmin.inputs.InstanceAccessControlAttributesState.Builder)
     /**
      * @param attributes See AccessControlAttribute for more details.
@@ -414,6 +431,7 @@ object ssoadmin:
       def argsBuilder = com.pulumi.aws.ssoadmin.inputs.InstanceAccessControlAttributesAttributeArgs.builder
       builder.attributes(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.ssoadmin.inputs.ApplicationState.Builder)
     /**
      * @param portalOptions Options for the portal associated with an application. See `portalOptions` below.
@@ -424,6 +442,10 @@ object ssoadmin:
       val argsBuilder = com.pulumi.aws.ssoadmin.inputs.ApplicationPortalOptionsArgs.builder
       builder.portalOptions(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.ssoadmin.inputs.ApplicationState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.ssoadmin.inputs.PermissionsBoundaryAttachmentState.Builder)
     /**
      * @param permissionsBoundary The permissions boundary policy. See below.
@@ -434,6 +456,7 @@ object ssoadmin:
       val argsBuilder = com.pulumi.aws.ssoadmin.inputs.PermissionsBoundaryAttachmentPermissionsBoundaryArgs.builder
       builder.permissionsBoundary(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.ssoadmin.inputs.GetPrincipalApplicationAssignmentsArgs.Builder)
     /**
      * @param applicationAssignments List of principals assigned to the application. See the `applicationAssignments` attribute reference below.
@@ -444,6 +467,7 @@ object ssoadmin:
       def argsBuilder = com.pulumi.aws.ssoadmin.inputs.GetPrincipalApplicationAssignmentsApplicationAssignmentArgs.builder
       builder.applicationAssignments(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.ssoadmin.inputs.CustomerManagedPolicyAttachmentsExclusiveState.Builder)
     /**
      * @param customerManagedPolicyReferences Specifies the names and paths of the customer managed policies to attach. See Customer Managed Policy Reference below.
@@ -459,12 +483,14 @@ object ssoadmin:
       val argsBuilder = com.pulumi.aws.ssoadmin.inputs.CustomerManagedPolicyAttachmentsExclusiveTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.ssoadmin.inputs.ManagedPolicyAttachmentsExclusiveState.Builder)
     def timeouts(args: Endofunction[com.pulumi.aws.ssoadmin.inputs.ManagedPolicyAttachmentsExclusiveTimeoutsArgs.Builder]):
         com.pulumi.aws.ssoadmin.inputs.ManagedPolicyAttachmentsExclusiveState.Builder =
       val argsBuilder = com.pulumi.aws.ssoadmin.inputs.ManagedPolicyAttachmentsExclusiveTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.ssoadmin.inputs.ApplicationPortalOptionsArgs.Builder)
     /**
      * @param signInOptions Sign-in options for the access portal. See `signInOptions` below.
@@ -475,6 +501,7 @@ object ssoadmin:
       val argsBuilder = com.pulumi.aws.ssoadmin.inputs.ApplicationPortalOptionsSignInOptionsArgs.builder
       builder.signInOptions(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.ssoadmin.inputs.TrustedTokenIssuerState.Builder)
     /**
      * @param trustedTokenIssuerConfiguration A block that specifies settings that apply to the trusted token issuer, these change depending on the type you specify in `trustedTokenIssuerType`. Documented below.
@@ -484,3 +511,8 @@ object ssoadmin:
         com.pulumi.aws.ssoadmin.inputs.TrustedTokenIssuerState.Builder =
       val argsBuilder = com.pulumi.aws.ssoadmin.inputs.TrustedTokenIssuerTrustedTokenIssuerConfigurationArgs.builder
       builder.trustedTokenIssuerConfiguration(args(argsBuilder).build)
+
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.ssoadmin.inputs.TrustedTokenIssuerState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       

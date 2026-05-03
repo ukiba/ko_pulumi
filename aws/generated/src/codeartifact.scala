@@ -23,6 +23,10 @@ object codeartifact:
       def argsBuilder = com.pulumi.aws.codeartifact.inputs.RepositoryUpstreamArgs.builder
       builder.upstreams(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.codeartifact.RepositoryArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /** Provides a CodeArtifact Domains Permissions Policy Resource. */
   def DomainPermissions(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.codeartifact.DomainPermissionsArgs.Builder]) =
@@ -101,6 +105,10 @@ object codeartifact:
       def argsBuilder = com.pulumi.aws.codeartifact.inputs.RepositoryUpstreamArgs.builder
       builder.upstreams(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.codeartifact.inputs.RepositoryState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /** Provides a CodeArtifact Domain Resource. */
   def Domain(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.codeartifact.DomainArgs.Builder])(using conf: KoPulumiConf) =

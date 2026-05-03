@@ -29,6 +29,10 @@ object appintegrations:
       val argsBuilder = com.pulumi.aws.appintegrations.inputs.DataIntegrationScheduleConfigArgs.builder
       builder.scheduleConfig(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.appintegrations.DataIntegrationArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   type AppintegrationsFunctions = com.pulumi.aws.appintegrations.AppintegrationsFunctions
   object AppintegrationsFunctions:
     // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
@@ -55,3 +59,8 @@ object appintegrations:
         com.pulumi.aws.appintegrations.inputs.DataIntegrationState.Builder =
       val argsBuilder = com.pulumi.aws.appintegrations.inputs.DataIntegrationScheduleConfigArgs.builder
       builder.scheduleConfig(args(argsBuilder).build)
+
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.appintegrations.inputs.DataIntegrationState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       

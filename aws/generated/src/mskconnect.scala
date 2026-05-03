@@ -70,6 +70,10 @@ object mskconnect:
       val argsBuilder = com.pulumi.aws.mskconnect.inputs.CustomPluginLocationArgs.builder
       builder.location(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.mskconnect.CustomPluginArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /** Provides an Amazon MSK Connect Custom Plugin Resource. */
   def CustomPlugin(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.mskconnect.CustomPluginArgs.Builder])(using conf: KoPulumiConf) =
@@ -164,6 +168,10 @@ object mskconnect:
       val argsBuilder = com.pulumi.aws.mskconnect.inputs.ConnectorWorkerConfigurationArgs.builder
       builder.workerConfiguration(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.mskconnect.ConnectorArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.mskconnect.inputs.ConnectorCapacityArgs.Builder)
     /**
      * @param autoscaling Information about the auto scaling parameters for the connector. See `autoscaling` Block for details.
@@ -183,6 +191,7 @@ object mskconnect:
       val argsBuilder = com.pulumi.aws.mskconnect.inputs.ConnectorCapacityProvisionedCapacityArgs.builder
       builder.provisionedCapacity(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.mskconnect.inputs.CustomPluginLocationArgs.Builder)
     /**
      * @param s3 Information of the plugin file stored in Amazon S3. See `s3` Block for details..
@@ -193,6 +202,7 @@ object mskconnect:
       val argsBuilder = com.pulumi.aws.mskconnect.inputs.CustomPluginLocationS3Args.builder
       builder.s3(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.mskconnect.inputs.ConnectorKafkaClusterArgs.Builder)
     /**
      * @param apacheKafkaCluster The Apache Kafka cluster to which the connector is connected. See `apacheKafkaCluster` Block for details.
@@ -203,6 +213,7 @@ object mskconnect:
       val argsBuilder = com.pulumi.aws.mskconnect.inputs.ConnectorKafkaClusterApacheKafkaClusterArgs.builder
       builder.apacheKafkaCluster(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.mskconnect.inputs.ConnectorKafkaClusterApacheKafkaClusterArgs.Builder)
     /**
      * @param vpc Details of an Amazon VPC which has network connectivity to the Apache Kafka cluster. See `vpc` Block for details.
@@ -213,6 +224,7 @@ object mskconnect:
       val argsBuilder = com.pulumi.aws.mskconnect.inputs.ConnectorKafkaClusterApacheKafkaClusterVpcArgs.builder
       builder.vpc(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.mskconnect.inputs.ConnectorLogDeliveryArgs.Builder)
     /**
      * @param workerLogDelivery The workers can send worker logs to different destination types. This configuration specifies the details of these destinations. See `workerLogDelivery` Block for details.
@@ -223,6 +235,7 @@ object mskconnect:
       val argsBuilder = com.pulumi.aws.mskconnect.inputs.ConnectorLogDeliveryWorkerLogDeliveryArgs.builder
       builder.workerLogDelivery(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.mskconnect.inputs.ConnectorPluginArgs.Builder)
     /**
      * @param customPlugin Details about a custom plugin. See `customPlugin` Block for details.
@@ -233,6 +246,7 @@ object mskconnect:
       val argsBuilder = com.pulumi.aws.mskconnect.inputs.ConnectorPluginCustomPluginArgs.builder
       builder.customPlugin(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.mskconnect.inputs.ConnectorCapacityAutoscalingArgs.Builder)
     /**
      * @param scaleInPolicy The scale-in policy for the connector. See `scaleInPolicy` Block for details.
@@ -252,6 +266,7 @@ object mskconnect:
       val argsBuilder = com.pulumi.aws.mskconnect.inputs.ConnectorCapacityAutoscalingScaleOutPolicyArgs.builder
       builder.scaleOutPolicy(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.mskconnect.inputs.ConnectorState.Builder)
     /**
      * @param capacity Information about the capacity allocated to the connector. See `capacity` Block for details.
@@ -316,6 +331,10 @@ object mskconnect:
       val argsBuilder = com.pulumi.aws.mskconnect.inputs.ConnectorWorkerConfigurationArgs.builder
       builder.workerConfiguration(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.mskconnect.inputs.ConnectorState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.mskconnect.inputs.ConnectorLogDeliveryWorkerLogDeliveryArgs.Builder)
     /**
      * @param cloudwatchLogs Details about delivering logs to Amazon CloudWatch Logs. See `cloudwatchLogs` Block for details.
@@ -344,6 +363,7 @@ object mskconnect:
       val argsBuilder = com.pulumi.aws.mskconnect.inputs.ConnectorLogDeliveryWorkerLogDeliveryS3Args.builder
       builder.s3(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.mskconnect.inputs.CustomPluginState.Builder)
     /**
      * @param location Information about the location of a custom plugin. See `location` Block for details.
@@ -353,3 +373,8 @@ object mskconnect:
         com.pulumi.aws.mskconnect.inputs.CustomPluginState.Builder =
       val argsBuilder = com.pulumi.aws.mskconnect.inputs.CustomPluginLocationArgs.builder
       builder.location(args(argsBuilder).build)
+
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.mskconnect.inputs.CustomPluginState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       

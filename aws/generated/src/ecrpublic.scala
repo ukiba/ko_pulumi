@@ -14,6 +14,10 @@ object ecrpublic:
       val argsBuilder = com.pulumi.aws.ecrpublic.inputs.RepositoryCatalogDataArgs.builder
       builder.catalogData(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.ecrpublic.RepositoryArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /**
    * Provides a Public Elastic Container Registry Repository.
    *  
@@ -92,6 +96,10 @@ object ecrpublic:
       val argsBuilder = com.pulumi.aws.ecrpublic.inputs.RepositoryCatalogDataArgs.builder
       builder.catalogData(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.ecrpublic.inputs.RepositoryState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.ecrpublic.inputs.GetImagesArgs.Builder)
     /**
      * @param imageIds One or more image ID filters. Each image ID can use either a tag or digest (or both). Each object has the following attributes:
@@ -101,3 +109,5 @@ object ecrpublic:
         com.pulumi.aws.ecrpublic.inputs.GetImagesArgs.Builder =
       def argsBuilder = com.pulumi.aws.ecrpublic.inputs.GetImagesImageIdArgs.builder
       builder.imageIds(args.map(_(argsBuilder).build)*)
+
+                       

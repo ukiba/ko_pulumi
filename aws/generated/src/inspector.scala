@@ -66,6 +66,10 @@ object inspector:
       def argsBuilder = com.pulumi.aws.inspector.inputs.AssessmentTemplateEventSubscriptionArgs.builder
       builder.eventSubscriptions(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.inspector.AssessmentTemplateArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /** Provides an Amazon Inspector Classic Resource Group. */
   def ResourceGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.inspector.ResourceGroupArgs.Builder])(using conf: KoPulumiConf) =
@@ -87,3 +91,8 @@ object inspector:
         com.pulumi.aws.inspector.inputs.AssessmentTemplateState.Builder =
       def argsBuilder = com.pulumi.aws.inspector.inputs.AssessmentTemplateEventSubscriptionArgs.builder
       builder.eventSubscriptions(args.map(_(argsBuilder).build)*)
+
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.inspector.inputs.AssessmentTemplateState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       

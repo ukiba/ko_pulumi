@@ -226,6 +226,10 @@ object servicecatalog:
       val argsBuilder = com.pulumi.aws.servicecatalog.inputs.ProvisionedProductStackSetProvisioningPreferencesArgs.builder
       builder.stackSetProvisioningPreferences(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.servicecatalog.ProvisionedProductArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /**
    * This resource provisions and manages a Service Catalog provisioned product.
    *  
@@ -261,6 +265,10 @@ object servicecatalog:
       val argsBuilder = com.pulumi.aws.servicecatalog.inputs.ProductProvisioningArtifactParametersArgs.builder
       builder.provisioningArtifactParameters(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.servicecatalog.ProductArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /**
    * Manages a Service Catalog Tag Option Resource Association.
    *  
@@ -383,6 +391,7 @@ object servicecatalog:
       val argsBuilder = com.pulumi.aws.servicecatalog.inputs.ServiceActionDefinitionArgs.builder
       builder.definition(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.servicecatalog.inputs.ProductState.Builder)
     /**
      * @param provisioningArtifactParameters Configuration block for provisioning artifact (i.e., version) parameters. See `provisioningArtifactParameters` Block for details.
@@ -393,6 +402,10 @@ object servicecatalog:
       val argsBuilder = com.pulumi.aws.servicecatalog.inputs.ProductProvisioningArtifactParametersArgs.builder
       builder.provisioningArtifactParameters(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.servicecatalog.inputs.ProductState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.servicecatalog.inputs.ServiceActionState.Builder)
     /**
      * @param definition Self-service action definition configuration block. Detailed below.
@@ -403,6 +416,7 @@ object servicecatalog:
       val argsBuilder = com.pulumi.aws.servicecatalog.inputs.ServiceActionDefinitionArgs.builder
       builder.definition(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.servicecatalog.inputs.ProvisionedProductState.Builder)
     /**
      * @param outputs The set of outputs for the product created.
@@ -431,6 +445,10 @@ object servicecatalog:
       val argsBuilder = com.pulumi.aws.servicecatalog.inputs.ProvisionedProductStackSetProvisioningPreferencesArgs.builder
       builder.stackSetProvisioningPreferences(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.servicecatalog.inputs.ProvisionedProductState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /** Provides a resource to create a Service Catalog Portfolio. */
   def Portfolio(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.servicecatalog.PortfolioArgs.Builder])(using conf: KoPulumiConf) =

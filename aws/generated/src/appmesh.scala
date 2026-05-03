@@ -41,6 +41,10 @@ object appmesh:
       val argsBuilder = com.pulumi.aws.appmesh.inputs.VirtualNodeSpecArgs.builder
       builder.spec(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.appmesh.VirtualNodeArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.appmesh.RouteArgs.Builder)
     /**
      * @param spec Route specification to apply.
@@ -51,6 +55,10 @@ object appmesh:
       val argsBuilder = com.pulumi.aws.appmesh.inputs.RouteSpecArgs.builder
       builder.spec(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.appmesh.RouteArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /** Provides an AWS App Mesh route resource. */
   def Route(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.appmesh.RouteArgs.Builder])(using conf: KoPulumiConf) =
@@ -91,6 +99,10 @@ object appmesh:
       val argsBuilder = com.pulumi.aws.appmesh.inputs.VirtualServiceSpecArgs.builder
       builder.spec(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.appmesh.VirtualServiceArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /**
    * Provides an AWS App Mesh virtual node resource.
    *  
@@ -129,6 +141,10 @@ object appmesh:
       val argsBuilder = com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecArgs.builder
       builder.spec(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.appmesh.VirtualGatewayArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /** Provides an AWS App Mesh virtual service resource. */
   def VirtualService(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.appmesh.VirtualServiceArgs.Builder])(using conf: KoPulumiConf) =
@@ -154,6 +170,10 @@ object appmesh:
       val argsBuilder = com.pulumi.aws.appmesh.inputs.MeshSpecArgs.builder
       builder.spec(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.appmesh.MeshArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /** Provides an AWS App Mesh service mesh resource. */
   def Mesh(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.appmesh.MeshArgs.Builder])(using conf: KoPulumiConf) =
@@ -179,6 +199,10 @@ object appmesh:
       val argsBuilder = com.pulumi.aws.appmesh.inputs.GatewayRouteSpecArgs.builder
       builder.spec(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.appmesh.GatewayRouteArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.appmesh.VirtualRouterArgs.Builder)
     /**
      * @param spec Virtual router specification to apply.
@@ -189,6 +213,10 @@ object appmesh:
       val argsBuilder = com.pulumi.aws.appmesh.inputs.VirtualRouterSpecArgs.builder
       builder.spec(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.appmesh.VirtualRouterArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   type AppmeshFunctions = com.pulumi.aws.appmesh.AppmeshFunctions
   object AppmeshFunctions:
     // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
@@ -315,6 +343,7 @@ object appmesh:
       def argsBuilder = com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttpRouteMatchQueryParameterArgs.builder
       builder.queryParameters(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.appmesh.inputs.VirtualNodeSpecServiceDiscoveryArgs.Builder)
     /**
      * @param awsCloudMap Any AWS Cloud Map information for the virtual node.
@@ -334,6 +363,7 @@ object appmesh:
       val argsBuilder = com.pulumi.aws.appmesh.inputs.VirtualNodeSpecServiceDiscoveryDnsArgs.builder
       builder.dns(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.appmesh.inputs.RouteSpecHttpRouteMatchArgs.Builder)
     /**
      * @param headers Client request headers to match on.
@@ -362,6 +392,7 @@ object appmesh:
       def argsBuilder = com.pulumi.aws.appmesh.inputs.RouteSpecHttpRouteMatchQueryParameterArgs.builder
       builder.queryParameters(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.appmesh.inputs.RouteSpecTcpRouteActionArgs.Builder)
     /**
      * @param weightedTargets Targets that traffic is routed to when a request matches the route.
@@ -373,6 +404,7 @@ object appmesh:
       def argsBuilder = com.pulumi.aws.appmesh.inputs.RouteSpecTcpRouteActionWeightedTargetArgs.builder
       builder.weightedTargets(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.appmesh.inputs.VirtualGatewayState.Builder)
     /**
      * @param spec Virtual gateway specification to apply.
@@ -383,6 +415,10 @@ object appmesh:
       val argsBuilder = com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecArgs.builder
       builder.spec(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.appmesh.inputs.VirtualGatewayState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.appmesh.inputs.RouteSpecHttpRouteRetryPolicyArgs.Builder)
     /**
      * @param perRetryTimeout Per-retry timeout.
@@ -393,6 +429,7 @@ object appmesh:
       val argsBuilder = com.pulumi.aws.appmesh.inputs.RouteSpecHttpRouteRetryPolicyPerRetryTimeoutArgs.builder
       builder.perRetryTimeout(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.appmesh.inputs.VirtualNodeSpecBackendVirtualServiceClientPolicyTlsArgs.Builder)
     /**
      * @param certificate Listener&#39;s TLS certificate.
@@ -412,6 +449,7 @@ object appmesh:
       val argsBuilder = com.pulumi.aws.appmesh.inputs.VirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationArgs.builder
       builder.validation(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationTrustArgs.Builder)
     /**
      * @param acm TLS validation context trust for an AWS Certificate Manager (ACM) certificate.
@@ -440,6 +478,7 @@ object appmesh:
       val argsBuilder = com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationTrustSdsArgs.builder
       builder.sds(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttp2RouteMatchHeaderArgs.Builder)
     /**
      * @param match Method and value to match the header value sent with a request. Specify one match method.
@@ -450,6 +489,7 @@ object appmesh:
       val argsBuilder = com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttp2RouteMatchHeaderMatchArgs.builder
       builder.`match`(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.appmesh.inputs.RouteSpecGrpcRouteArgs.Builder)
     /**
      * @param action Action to take if a match is determined.
@@ -487,6 +527,7 @@ object appmesh:
       val argsBuilder = com.pulumi.aws.appmesh.inputs.RouteSpecGrpcRouteTimeoutArgs.builder
       builder.timeout(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerTlsValidationArgs.Builder)
     /**
      * @param subjectAlternativeNames SANs for a TLS validation context.
@@ -506,6 +547,7 @@ object appmesh:
       val argsBuilder = com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerTlsValidationTrustArgs.builder
       builder.trust(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecBackendDefaultsClientPolicyTlsCertificateArgs.Builder)
     /**
      * @param file Local file certificate.
@@ -525,6 +567,7 @@ object appmesh:
       val argsBuilder = com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecBackendDefaultsClientPolicyTlsCertificateSdsArgs.builder
       builder.sds(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecLoggingAccessLogArgs.Builder)
     /**
      * @param file File object to send virtual gateway access logs to.
@@ -535,6 +578,7 @@ object appmesh:
       val argsBuilder = com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecLoggingAccessLogFileArgs.builder
       builder.file(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.appmesh.inputs.VirtualNodeState.Builder)
     /**
      * @param spec Virtual node specification to apply.
@@ -545,6 +589,10 @@ object appmesh:
       val argsBuilder = com.pulumi.aws.appmesh.inputs.VirtualNodeSpecArgs.builder
       builder.spec(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.appmesh.inputs.VirtualNodeState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerTimeoutArgs.Builder)
     /**
      * @param grpc Timeouts for gRPC listeners.
@@ -582,6 +630,7 @@ object appmesh:
       val argsBuilder = com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerTimeoutTcpArgs.builder
       builder.tcp(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttp2RouteMatchHeaderMatchArgs.Builder)
     /**
      * @param range Object that specifies the range of numbers that the header value sent by the client must be included in.
@@ -592,6 +641,7 @@ object appmesh:
       val argsBuilder = com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttp2RouteMatchHeaderMatchRangeArgs.builder
       builder.range(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.appmesh.inputs.RouteSpecHttp2RouteRetryPolicyArgs.Builder)
     /**
      * @param perRetryTimeout Per-retry timeout.
@@ -602,6 +652,7 @@ object appmesh:
       val argsBuilder = com.pulumi.aws.appmesh.inputs.RouteSpecHttp2RouteRetryPolicyPerRetryTimeoutArgs.builder
       builder.perRetryTimeout(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.appmesh.inputs.MeshState.Builder)
     /**
      * @param spec Service mesh specification to apply.
@@ -612,6 +663,10 @@ object appmesh:
       val argsBuilder = com.pulumi.aws.appmesh.inputs.MeshSpecArgs.builder
       builder.spec(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.appmesh.inputs.MeshState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.appmesh.inputs.RouteSpecGrpcRouteMatchMetadataArgs.Builder)
     /**
      * @param match Data to match from the request.
@@ -622,6 +677,7 @@ object appmesh:
       val argsBuilder = com.pulumi.aws.appmesh.inputs.RouteSpecGrpcRouteMatchMetadataMatchArgs.builder
       builder.`match`(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.appmesh.inputs.RouteSpecHttpRouteActionArgs.Builder)
     /**
      * @param weightedTargets Targets that traffic is routed to when a request matches the route.
@@ -633,6 +689,7 @@ object appmesh:
       def argsBuilder = com.pulumi.aws.appmesh.inputs.RouteSpecHttpRouteActionWeightedTargetArgs.builder
       builder.weightedTargets(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.appmesh.inputs.VirtualNodeSpecBackendDefaultsArgs.Builder)
     /**
      * @param clientPolicy Default client policy for virtual service backends. See above for details.
@@ -643,6 +700,7 @@ object appmesh:
       val argsBuilder = com.pulumi.aws.appmesh.inputs.VirtualNodeSpecBackendDefaultsClientPolicyArgs.builder
       builder.clientPolicy(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.appmesh.inputs.GatewayRouteSpecArgs.Builder)
     /**
      * @param grpcRoute Specification of a gRPC gateway route.
@@ -671,6 +729,7 @@ object appmesh:
       val argsBuilder = com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttpRouteArgs.builder
       builder.httpRoute(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttp2RouteMatchQueryParameterArgs.Builder)
     /**
      * @param match The query parameter to match on.
@@ -681,6 +740,7 @@ object appmesh:
       val argsBuilder = com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttp2RouteMatchQueryParameterMatchArgs.builder
       builder.`match`(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.appmesh.inputs.VirtualNodeSpecBackendDefaultsClientPolicyArgs.Builder)
     /**
      * @param tls Transport Layer Security (TLS) client policy.
@@ -691,6 +751,7 @@ object appmesh:
       val argsBuilder = com.pulumi.aws.appmesh.inputs.VirtualNodeSpecBackendDefaultsClientPolicyTlsArgs.builder
       builder.tls(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationSubjectAlternativeNamesArgs.Builder)
     /**
      * @param match Criteria for determining a SAN&#39;s match.
@@ -701,6 +762,7 @@ object appmesh:
       val argsBuilder = com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationSubjectAlternativeNamesMatchArgs.builder
       builder.`match`(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerArgs.Builder)
     /**
      * @param connectionPool Connection pool information for the listener.
@@ -756,6 +818,7 @@ object appmesh:
       val argsBuilder = com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerTlsArgs.builder
       builder.tls(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.appmesh.inputs.RouteSpecHttp2RouteMatchHeaderMatchArgs.Builder)
     /**
      * @param range Object that specifies the range of numbers that the header value sent by the client must be included in.
@@ -766,6 +829,7 @@ object appmesh:
       val argsBuilder = com.pulumi.aws.appmesh.inputs.RouteSpecHttp2RouteMatchHeaderMatchRangeArgs.builder
       builder.range(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.appmesh.inputs.VirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationSubjectAlternativeNamesArgs.Builder)
     /**
      * @param match Criteria for determining a SAN&#39;s match.
@@ -776,6 +840,7 @@ object appmesh:
       val argsBuilder = com.pulumi.aws.appmesh.inputs.VirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationSubjectAlternativeNamesMatchArgs.builder
       builder.`match`(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecListenerTlsCertificateArgs.Builder)
     /**
      * @param acm An AWS Certificate Manager (ACM) certificate.
@@ -804,6 +869,7 @@ object appmesh:
       val argsBuilder = com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecListenerTlsCertificateSdsArgs.builder
       builder.sds(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.appmesh.inputs.VirtualServiceSpecProviderArgs.Builder)
     /**
      * @param virtualNode Virtual node associated with a virtual service.
@@ -823,6 +889,7 @@ object appmesh:
       val argsBuilder = com.pulumi.aws.appmesh.inputs.VirtualServiceSpecProviderVirtualRouterArgs.builder
       builder.virtualRouter(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.appmesh.inputs.RouteSpecGrpcRouteActionArgs.Builder)
     /**
      * @param weightedTargets Targets that traffic is routed to when a request matches the route.
@@ -834,6 +901,7 @@ object appmesh:
       def argsBuilder = com.pulumi.aws.appmesh.inputs.RouteSpecGrpcRouteActionWeightedTargetArgs.builder
       builder.weightedTargets(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.appmesh.inputs.GatewayRouteSpecGrpcRouteArgs.Builder)
     /**
      * @param action Action to take if a match is determined.
@@ -853,6 +921,7 @@ object appmesh:
       val argsBuilder = com.pulumi.aws.appmesh.inputs.GatewayRouteSpecGrpcRouteMatchArgs.builder
       builder.`match`(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttp2RouteActionArgs.Builder)
     /**
      * @param rewrite Gateway route action to rewrite.
@@ -872,6 +941,7 @@ object appmesh:
       val argsBuilder = com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttp2RouteActionTargetArgs.builder
       builder.target(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerTlsArgs.Builder)
     /**
      * @param certificate Listener&#39;s TLS certificate.
@@ -891,6 +961,7 @@ object appmesh:
       val argsBuilder = com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerTlsValidationArgs.builder
       builder.validation(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.appmesh.inputs.RouteState.Builder)
     /**
      * @param spec Route specification to apply.
@@ -901,6 +972,10 @@ object appmesh:
       val argsBuilder = com.pulumi.aws.appmesh.inputs.RouteSpecArgs.builder
       builder.spec(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.appmesh.inputs.RouteState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecListenerConnectionPoolArgs.Builder)
     /**
      * @param grpc Connection pool information for gRPC listeners.
@@ -929,6 +1004,7 @@ object appmesh:
       val argsBuilder = com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecListenerConnectionPoolHttp2Args.builder
       builder.http2(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.appmesh.inputs.RouteSpecTcpRouteTimeoutArgs.Builder)
     /**
      * @param idle Idle timeout. An idle timeout bounds the amount of time that a connection may be idle.
@@ -939,6 +1015,7 @@ object appmesh:
       val argsBuilder = com.pulumi.aws.appmesh.inputs.RouteSpecTcpRouteTimeoutIdleArgs.builder
       builder.idle(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.appmesh.inputs.VirtualRouterSpecListenerArgs.Builder)
     /**
      * @param portMapping Port mapping information for the listener.
@@ -949,6 +1026,7 @@ object appmesh:
       val argsBuilder = com.pulumi.aws.appmesh.inputs.VirtualRouterSpecListenerPortMappingArgs.builder
       builder.portMapping(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.appmesh.inputs.RouteSpecGrpcRouteTimeoutArgs.Builder)
     /**
      * @param idle Idle timeout. An idle timeout bounds the amount of time that a connection may be idle.
@@ -968,6 +1046,7 @@ object appmesh:
       val argsBuilder = com.pulumi.aws.appmesh.inputs.RouteSpecGrpcRouteTimeoutPerRequestArgs.builder
       builder.perRequest(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecListenerArgs.Builder)
     /**
      * @param connectionPool Connection pool information for the listener.
@@ -1005,6 +1084,7 @@ object appmesh:
       val argsBuilder = com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecListenerTlsArgs.builder
       builder.tls(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.appmesh.inputs.RouteSpecTcpRouteArgs.Builder)
     /**
      * @param action Action to take if a match is determined.
@@ -1029,6 +1109,7 @@ object appmesh:
       val argsBuilder = com.pulumi.aws.appmesh.inputs.RouteSpecTcpRouteTimeoutArgs.builder
       builder.timeout(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttpRouteActionRewriteArgs.Builder)
     /**
      * @param hostname Host name to rewrite.
@@ -1057,6 +1138,7 @@ object appmesh:
       val argsBuilder = com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttpRouteActionRewritePrefixArgs.builder
       builder.prefix(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerTlsValidationSubjectAlternativeNamesArgs.Builder)
     /**
      * @param match Criteria for determining a SAN&#39;s match.
@@ -1067,6 +1149,7 @@ object appmesh:
       val argsBuilder = com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerTlsValidationSubjectAlternativeNamesMatchArgs.builder
       builder.`match`(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttp2RouteActionTargetArgs.Builder)
     /**
      * @param virtualService Virtual service gateway route target.
@@ -1077,6 +1160,7 @@ object appmesh:
       val argsBuilder = com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttp2RouteActionTargetVirtualServiceArgs.builder
       builder.virtualService(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerTimeoutHttp2Args.Builder)
     /**
      * @param idle Idle timeout. An idle timeout bounds the amount of time that a connection may be idle.
@@ -1096,6 +1180,7 @@ object appmesh:
       val argsBuilder = com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerTimeoutHttp2PerRequestArgs.builder
       builder.perRequest(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.appmesh.inputs.VirtualNodeSpecBackendDefaultsClientPolicyTlsValidationSubjectAlternativeNamesArgs.Builder)
     /**
      * @param match Criteria for determining a SAN&#39;s match.
@@ -1106,6 +1191,7 @@ object appmesh:
       val argsBuilder = com.pulumi.aws.appmesh.inputs.VirtualNodeSpecBackendDefaultsClientPolicyTlsValidationSubjectAlternativeNamesMatchArgs.builder
       builder.`match`(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.appmesh.inputs.RouteSpecHttpRouteMatchHeaderMatchArgs.Builder)
     /**
      * @param range Object that specifies the range of numbers that the header value sent by the client must be included in.
@@ -1116,6 +1202,7 @@ object appmesh:
       val argsBuilder = com.pulumi.aws.appmesh.inputs.RouteSpecHttpRouteMatchHeaderMatchRangeArgs.builder
       builder.range(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerTimeoutTcpArgs.Builder)
     /**
      * @param idle Idle timeout. An idle timeout bounds the amount of time that a connection may be idle.
@@ -1126,6 +1213,7 @@ object appmesh:
       val argsBuilder = com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerTimeoutTcpIdleArgs.builder
       builder.idle(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.appmesh.inputs.RouteSpecHttp2RouteArgs.Builder)
     /**
      * @param action Action to take if a match is determined.
@@ -1163,6 +1251,7 @@ object appmesh:
       val argsBuilder = com.pulumi.aws.appmesh.inputs.RouteSpecHttp2RouteTimeoutArgs.builder
       builder.timeout(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecLoggingAccessLogFileArgs.Builder)
     /**
      * @param format The specified format for the logs.
@@ -1173,6 +1262,7 @@ object appmesh:
       val argsBuilder = com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecLoggingAccessLogFileFormatArgs.builder
       builder.format(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerOutlierDetectionArgs.Builder)
     /**
      * @param baseEjectionDuration Base amount of time for which a host is ejected.
@@ -1192,6 +1282,7 @@ object appmesh:
       val argsBuilder = com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerOutlierDetectionIntervalArgs.builder
       builder.interval(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttp2RouteMatchArgs.Builder)
     /**
      * @param headers Client request headers to match on.
@@ -1229,6 +1320,7 @@ object appmesh:
       def argsBuilder = com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttp2RouteMatchQueryParameterArgs.builder
       builder.queryParameters(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttpRouteMatchQueryParameterArgs.Builder)
     /**
      * @param match The query parameter to match on.
@@ -1239,6 +1331,7 @@ object appmesh:
       val argsBuilder = com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttpRouteMatchQueryParameterMatchArgs.builder
       builder.`match`(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.appmesh.inputs.VirtualNodeSpecLoggingArgs.Builder)
     /**
      * @param accessLog Access log configuration for a virtual node.
@@ -1249,6 +1342,7 @@ object appmesh:
       val argsBuilder = com.pulumi.aws.appmesh.inputs.VirtualNodeSpecLoggingAccessLogArgs.builder
       builder.accessLog(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.appmesh.inputs.RouteSpecGrpcRouteRetryPolicyArgs.Builder)
     /**
      * @param perRetryTimeout Per-retry timeout.
@@ -1259,6 +1353,7 @@ object appmesh:
       val argsBuilder = com.pulumi.aws.appmesh.inputs.RouteSpecGrpcRouteRetryPolicyPerRetryTimeoutArgs.builder
       builder.perRetryTimeout(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.appmesh.inputs.GatewayRouteSpecGrpcRouteActionTargetArgs.Builder)
     /**
      * @param virtualService Virtual service gateway route target.
@@ -1269,6 +1364,7 @@ object appmesh:
       val argsBuilder = com.pulumi.aws.appmesh.inputs.GatewayRouteSpecGrpcRouteActionTargetVirtualServiceArgs.builder
       builder.virtualService(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecArgs.Builder)
     /**
      * @param backendDefaults Defaults for backends.
@@ -1297,6 +1393,7 @@ object appmesh:
       val argsBuilder = com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecLoggingArgs.builder
       builder.logging(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.appmesh.inputs.RouteSpecArgs.Builder)
     /**
      * @param grpcRoute GRPC routing information for the route.
@@ -1334,6 +1431,7 @@ object appmesh:
       val argsBuilder = com.pulumi.aws.appmesh.inputs.RouteSpecTcpRouteArgs.builder
       builder.tcpRoute(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecLoggingArgs.Builder)
     /**
      * @param accessLog Access log configuration for a virtual gateway.
@@ -1344,6 +1442,7 @@ object appmesh:
       val argsBuilder = com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecLoggingAccessLogArgs.builder
       builder.accessLog(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecListenerTlsValidationTrustArgs.Builder)
     /**
      * @param file TLS validation context trust for a local file certificate.
@@ -1363,6 +1462,7 @@ object appmesh:
       val argsBuilder = com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecListenerTlsValidationTrustSdsArgs.builder
       builder.sds(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.appmesh.inputs.RouteSpecHttp2RouteMatchQueryParameterArgs.Builder)
     /**
      * @param match The query parameter to match on.
@@ -1373,6 +1473,7 @@ object appmesh:
       val argsBuilder = com.pulumi.aws.appmesh.inputs.RouteSpecHttp2RouteMatchQueryParameterMatchArgs.builder
       builder.`match`(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttpRouteActionArgs.Builder)
     /**
      * @param rewrite Gateway route action to rewrite.
@@ -1392,6 +1493,7 @@ object appmesh:
       val argsBuilder = com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttpRouteActionTargetArgs.builder
       builder.target(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.appmesh.inputs.RouteSpecGrpcRouteMatchArgs.Builder)
     /**
      * @param metadatas Data to match from the gRPC request.
@@ -1402,6 +1504,7 @@ object appmesh:
       def argsBuilder = com.pulumi.aws.appmesh.inputs.RouteSpecGrpcRouteMatchMetadataArgs.builder
       builder.metadatas(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.appmesh.inputs.VirtualRouterState.Builder)
     /**
      * @param spec Virtual router specification to apply.
@@ -1412,6 +1515,10 @@ object appmesh:
       val argsBuilder = com.pulumi.aws.appmesh.inputs.VirtualRouterSpecArgs.builder
       builder.spec(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.appmesh.inputs.VirtualRouterState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationArgs.Builder)
     /**
      * @param subjectAlternativeNames SANs for a virtual gateway&#39;s listener&#39;s Transport Layer Security (TLS) validation context.
@@ -1431,6 +1538,7 @@ object appmesh:
       val argsBuilder = com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationTrustArgs.builder
       builder.trust(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.appmesh.inputs.VirtualNodeSpecLoggingAccessLogFileFormatArgs.Builder)
     /**
      * @param jsons The logging format for JSON.
@@ -1441,6 +1549,7 @@ object appmesh:
       def argsBuilder = com.pulumi.aws.appmesh.inputs.VirtualNodeSpecLoggingAccessLogFileFormatJsonArgs.builder
       builder.jsons(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.appmesh.inputs.RouteSpecHttp2RouteActionArgs.Builder)
     /**
      * @param weightedTargets Targets that traffic is routed to when a request matches the route.
@@ -1452,6 +1561,7 @@ object appmesh:
       def argsBuilder = com.pulumi.aws.appmesh.inputs.RouteSpecHttp2RouteActionWeightedTargetArgs.builder
       builder.weightedTargets(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerTimeoutHttpArgs.Builder)
     /**
      * @param idle Idle timeout. An idle timeout bounds the amount of time that a connection may be idle.
@@ -1471,6 +1581,7 @@ object appmesh:
       val argsBuilder = com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerTimeoutHttpPerRequestArgs.builder
       builder.perRequest(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.appmesh.inputs.VirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationTrustArgs.Builder)
     /**
      * @param acm TLS validation context trust for an AWS Certificate Manager (ACM) certificate.
@@ -1499,6 +1610,7 @@ object appmesh:
       val argsBuilder = com.pulumi.aws.appmesh.inputs.VirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationTrustSdsArgs.builder
       builder.sds(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerConnectionPoolArgs.Builder)
     /**
      * @param grpc Connection pool information for gRPC listeners.
@@ -1536,6 +1648,7 @@ object appmesh:
       def argsBuilder = com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerConnectionPoolTcpArgs.builder
       builder.tcps(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.appmesh.inputs.VirtualNodeSpecBackendVirtualServiceArgs.Builder)
     /**
      * @param clientPolicy Client policy for the backend.
@@ -1546,6 +1659,7 @@ object appmesh:
       val argsBuilder = com.pulumi.aws.appmesh.inputs.VirtualNodeSpecBackendVirtualServiceClientPolicyArgs.builder
       builder.clientPolicy(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttpRouteMatchHeaderMatchArgs.Builder)
     /**
      * @param range Object that specifies the range of numbers that the header value sent by the client must be included in.
@@ -1556,6 +1670,7 @@ object appmesh:
       val argsBuilder = com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttpRouteMatchHeaderMatchRangeArgs.builder
       builder.range(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttpRouteArgs.Builder)
     /**
      * @param action Action to take if a match is determined.
@@ -1575,6 +1690,7 @@ object appmesh:
       val argsBuilder = com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttpRouteMatchArgs.builder
       builder.`match`(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecListenerTlsValidationArgs.Builder)
     /**
      * @param subjectAlternativeNames SANs for a virtual gateway&#39;s listener&#39;s Transport Layer Security (TLS) validation context.
@@ -1594,6 +1710,7 @@ object appmesh:
       val argsBuilder = com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecListenerTlsValidationTrustArgs.builder
       builder.trust(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.appmesh.inputs.VirtualNodeSpecBackendArgs.Builder)
     /**
      * @param virtualService Virtual service to use as a backend for a virtual node.
@@ -1604,6 +1721,7 @@ object appmesh:
       val argsBuilder = com.pulumi.aws.appmesh.inputs.VirtualNodeSpecBackendVirtualServiceArgs.builder
       builder.virtualService(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.appmesh.inputs.VirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationArgs.Builder)
     /**
      * @param subjectAlternativeNames SANs for a TLS validation context.
@@ -1623,6 +1741,7 @@ object appmesh:
       val argsBuilder = com.pulumi.aws.appmesh.inputs.VirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationTrustArgs.builder
       builder.trust(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.appmesh.inputs.RouteSpecHttp2RouteMatchHeaderArgs.Builder)
     /**
      * @param match Method and value to match the header value sent with a request. Specify one match method.
@@ -1633,6 +1752,7 @@ object appmesh:
       val argsBuilder = com.pulumi.aws.appmesh.inputs.RouteSpecHttp2RouteMatchHeaderMatchArgs.builder
       builder.`match`(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerTlsValidationTrustArgs.Builder)
     /**
      * @param file TLS validation context trust for a local file certificate.
@@ -1652,6 +1772,7 @@ object appmesh:
       val argsBuilder = com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerTlsValidationTrustSdsArgs.builder
       builder.sds(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.appmesh.inputs.VirtualNodeSpecBackendVirtualServiceClientPolicyTlsCertificateArgs.Builder)
     /**
      * @param file Local file certificate.
@@ -1671,6 +1792,7 @@ object appmesh:
       val argsBuilder = com.pulumi.aws.appmesh.inputs.VirtualNodeSpecBackendVirtualServiceClientPolicyTlsCertificateSdsArgs.builder
       builder.sds(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.appmesh.inputs.RouteSpecHttp2RouteTimeoutArgs.Builder)
     /**
      * @param idle Idle timeout. An idle timeout bounds the amount of time that a connection may be idle.
@@ -1690,6 +1812,7 @@ object appmesh:
       val argsBuilder = com.pulumi.aws.appmesh.inputs.RouteSpecHttp2RouteTimeoutPerRequestArgs.builder
       builder.perRequest(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerTlsCertificateArgs.Builder)
     /**
      * @param acm An AWS Certificate Manager (ACM) certificate.
@@ -1718,6 +1841,7 @@ object appmesh:
       val argsBuilder = com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerTlsCertificateSdsArgs.builder
       builder.sds(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.appmesh.inputs.VirtualNodeSpecBackendDefaultsClientPolicyTlsValidationTrustArgs.Builder)
     /**
      * @param acm TLS validation context trust for an AWS Certificate Manager (ACM) certificate.
@@ -1746,6 +1870,7 @@ object appmesh:
       val argsBuilder = com.pulumi.aws.appmesh.inputs.VirtualNodeSpecBackendDefaultsClientPolicyTlsValidationTrustSdsArgs.builder
       builder.sds(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.appmesh.inputs.RouteSpecGrpcRouteMatchMetadataMatchArgs.Builder)
     /**
      * @param range Object that specifies the range of numbers that the value sent by the client must be included in.
@@ -1756,6 +1881,7 @@ object appmesh:
       val argsBuilder = com.pulumi.aws.appmesh.inputs.RouteSpecGrpcRouteMatchMetadataMatchRangeArgs.builder
       builder.range(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.appmesh.inputs.VirtualNodeSpecLoggingAccessLogArgs.Builder)
     /**
      * @param file File object to send virtual node access logs to.
@@ -1766,6 +1892,7 @@ object appmesh:
       val argsBuilder = com.pulumi.aws.appmesh.inputs.VirtualNodeSpecLoggingAccessLogFileArgs.builder
       builder.file(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecBackendDefaultsClientPolicyArgs.Builder)
     /**
      * @param tls Transport Layer Security (TLS) client policy.
@@ -1776,6 +1903,7 @@ object appmesh:
       val argsBuilder = com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecBackendDefaultsClientPolicyTlsArgs.builder
       builder.tls(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecBackendDefaultsClientPolicyTlsArgs.Builder)
     /**
      * @param certificate Listener&#39;s TLS certificate.
@@ -1795,6 +1923,7 @@ object appmesh:
       val argsBuilder = com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationArgs.builder
       builder.validation(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecListenerTlsValidationSubjectAlternativeNamesArgs.Builder)
     /**
      * @param match Criteria for determining a SAN&#39;s match.
@@ -1805,6 +1934,7 @@ object appmesh:
       val argsBuilder = com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecListenerTlsValidationSubjectAlternativeNamesMatchArgs.builder
       builder.`match`(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.appmesh.inputs.VirtualNodeSpecBackendDefaultsClientPolicyTlsCertificateArgs.Builder)
     /**
      * @param file Local file certificate.
@@ -1824,6 +1954,7 @@ object appmesh:
       val argsBuilder = com.pulumi.aws.appmesh.inputs.VirtualNodeSpecBackendDefaultsClientPolicyTlsCertificateSdsArgs.builder
       builder.sds(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.appmesh.inputs.RouteSpecHttp2RouteMatchArgs.Builder)
     /**
      * @param headers Client request headers to match on.
@@ -1852,6 +1983,7 @@ object appmesh:
       def argsBuilder = com.pulumi.aws.appmesh.inputs.RouteSpecHttp2RouteMatchQueryParameterArgs.builder
       builder.queryParameters(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecBackendDefaultsArgs.Builder)
     /**
      * @param clientPolicy Default client policy for virtual gateway backends.
@@ -1862,6 +1994,7 @@ object appmesh:
       val argsBuilder = com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecBackendDefaultsClientPolicyArgs.builder
       builder.clientPolicy(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.appmesh.inputs.RouteSpecHttpRouteMatchQueryParameterArgs.Builder)
     /**
      * @param match The query parameter to match on.
@@ -1872,6 +2005,7 @@ object appmesh:
       val argsBuilder = com.pulumi.aws.appmesh.inputs.RouteSpecHttpRouteMatchQueryParameterMatchArgs.builder
       builder.`match`(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecLoggingAccessLogFileFormatArgs.Builder)
     /**
      * @param jsons The logging format for JSON.
@@ -1882,6 +2016,7 @@ object appmesh:
       def argsBuilder = com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecLoggingAccessLogFileFormatJsonArgs.builder
       builder.jsons(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.appmesh.inputs.RouteSpecHttpRouteTimeoutArgs.Builder)
     /**
      * @param idle Idle timeout. An idle timeout bounds the amount of time that a connection may be idle.
@@ -1901,6 +2036,7 @@ object appmesh:
       val argsBuilder = com.pulumi.aws.appmesh.inputs.RouteSpecHttpRouteTimeoutPerRequestArgs.builder
       builder.perRequest(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.appmesh.inputs.VirtualNodeSpecLoggingAccessLogFileArgs.Builder)
     /**
      * @param format The specified format for the logs.
@@ -1911,6 +2047,7 @@ object appmesh:
       val argsBuilder = com.pulumi.aws.appmesh.inputs.VirtualNodeSpecLoggingAccessLogFileFormatArgs.builder
       builder.format(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.appmesh.inputs.MeshSpecArgs.Builder)
     /**
      * @param egressFilter Egress filter rules for the service mesh.
@@ -1930,6 +2067,7 @@ object appmesh:
       val argsBuilder = com.pulumi.aws.appmesh.inputs.MeshSpecServiceDiscoveryArgs.builder
       builder.serviceDiscovery(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecListenerTlsArgs.Builder)
     /**
      * @param certificate Listener&#39;s TLS certificate.
@@ -1949,6 +2087,7 @@ object appmesh:
       val argsBuilder = com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecListenerTlsValidationArgs.builder
       builder.validation(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttp2RouteArgs.Builder)
     /**
      * @param action Action to take if a match is determined.
@@ -1968,6 +2107,7 @@ object appmesh:
       val argsBuilder = com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttp2RouteMatchArgs.builder
       builder.`match`(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.appmesh.inputs.VirtualServiceState.Builder)
     /**
      * @param spec Virtual service specification to apply.
@@ -1978,6 +2118,10 @@ object appmesh:
       val argsBuilder = com.pulumi.aws.appmesh.inputs.VirtualServiceSpecArgs.builder
       builder.spec(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.appmesh.inputs.VirtualServiceState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.appmesh.inputs.RouteSpecHttpRouteMatchHeaderArgs.Builder)
     /**
      * @param match Method and value to match the header value sent with a request. Specify one match method.
@@ -1988,6 +2132,7 @@ object appmesh:
       val argsBuilder = com.pulumi.aws.appmesh.inputs.RouteSpecHttpRouteMatchHeaderMatchArgs.builder
       builder.`match`(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttpRouteMatchHeaderArgs.Builder)
     /**
      * @param match Method and value to match the header value sent with a request. Specify one match method.
@@ -1998,6 +2143,7 @@ object appmesh:
       val argsBuilder = com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttpRouteMatchHeaderMatchArgs.builder
       builder.`match`(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.appmesh.inputs.GatewayRouteSpecGrpcRouteActionArgs.Builder)
     /**
      * @param target Target that traffic is routed to when a request matches the gateway route.
@@ -2008,6 +2154,7 @@ object appmesh:
       val argsBuilder = com.pulumi.aws.appmesh.inputs.GatewayRouteSpecGrpcRouteActionTargetArgs.builder
       builder.target(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.appmesh.inputs.VirtualNodeSpecBackendDefaultsClientPolicyTlsValidationArgs.Builder)
     /**
      * @param subjectAlternativeNames SANs for a TLS validation context.
@@ -2027,6 +2174,7 @@ object appmesh:
       val argsBuilder = com.pulumi.aws.appmesh.inputs.VirtualNodeSpecBackendDefaultsClientPolicyTlsValidationTrustArgs.builder
       builder.trust(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.appmesh.inputs.VirtualServiceSpecArgs.Builder)
     /**
      * @param provider App Mesh object that is acting as the provider for a virtual service. You can specify a single virtual node or virtual router.
@@ -2037,6 +2185,7 @@ object appmesh:
       val argsBuilder = com.pulumi.aws.appmesh.inputs.VirtualServiceSpecProviderArgs.builder
       builder.provider(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerTimeoutGrpcArgs.Builder)
     /**
      * @param idle Idle timeout. An idle timeout bounds the amount of time that a connection may be idle.
@@ -2056,6 +2205,7 @@ object appmesh:
       val argsBuilder = com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerTimeoutGrpcPerRequestArgs.builder
       builder.perRequest(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.appmesh.inputs.RouteSpecHttpRouteArgs.Builder)
     /**
      * @param action Action to take if a match is determined.
@@ -2093,6 +2243,7 @@ object appmesh:
       val argsBuilder = com.pulumi.aws.appmesh.inputs.RouteSpecHttpRouteTimeoutArgs.builder
       builder.timeout(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.appmesh.inputs.VirtualRouterSpecArgs.Builder)
     /**
      * @param listeners Listeners that the virtual router is expected to receive inbound traffic from.
@@ -2104,6 +2255,7 @@ object appmesh:
       def argsBuilder = com.pulumi.aws.appmesh.inputs.VirtualRouterSpecListenerArgs.builder
       builder.listeners(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.appmesh.inputs.VirtualNodeSpecBackendDefaultsClientPolicyTlsArgs.Builder)
     /**
      * @param certificate Listener&#39;s TLS certificate.
@@ -2123,6 +2275,7 @@ object appmesh:
       val argsBuilder = com.pulumi.aws.appmesh.inputs.VirtualNodeSpecBackendDefaultsClientPolicyTlsValidationArgs.builder
       builder.validation(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.appmesh.inputs.GatewayRouteState.Builder)
     /**
      * @param spec Gateway route specification to apply.
@@ -2133,6 +2286,10 @@ object appmesh:
       val argsBuilder = com.pulumi.aws.appmesh.inputs.GatewayRouteSpecArgs.builder
       builder.spec(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.appmesh.inputs.GatewayRouteState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttpRouteActionTargetArgs.Builder)
     /**
      * @param virtualService Virtual service gateway route target.
@@ -2143,6 +2300,7 @@ object appmesh:
       val argsBuilder = com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttpRouteActionTargetVirtualServiceArgs.builder
       builder.virtualService(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.appmesh.inputs.VirtualNodeSpecArgs.Builder)
     /**
      * @param backendDefaults Defaults for backends.
@@ -2189,6 +2347,7 @@ object appmesh:
       val argsBuilder = com.pulumi.aws.appmesh.inputs.VirtualNodeSpecServiceDiscoveryArgs.builder
       builder.serviceDiscovery(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.appmesh.inputs.VirtualNodeSpecBackendVirtualServiceClientPolicyArgs.Builder)
     /**
      * @param tls Transport Layer Security (TLS) client policy.
@@ -2199,6 +2358,7 @@ object appmesh:
       val argsBuilder = com.pulumi.aws.appmesh.inputs.VirtualNodeSpecBackendVirtualServiceClientPolicyTlsArgs.builder
       builder.tls(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttp2RouteActionRewriteArgs.Builder)
     /**
      * @param hostname Host name to rewrite.
@@ -2227,6 +2387,7 @@ object appmesh:
       val argsBuilder = com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttp2RouteActionRewritePrefixArgs.builder
       builder.prefix(args(argsBuilder).build)
 
+                       
   /** Provides an AWS App Mesh gateway route resource. */
   def GatewayRoute(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.appmesh.GatewayRouteArgs.Builder])(using conf: KoPulumiConf) =

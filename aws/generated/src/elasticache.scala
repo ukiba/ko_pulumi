@@ -27,6 +27,10 @@ object elasticache:
       val argsBuilder = com.pulumi.aws.elasticache.inputs.UserAuthenticationModeArgs.builder
       builder.authenticationMode(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.elasticache.UserArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /**
    * Provides an ElastiCache parameter group resource.
    *  
@@ -130,6 +134,10 @@ object elasticache:
       def argsBuilder = com.pulumi.aws.elasticache.inputs.ParameterGroupParameterArgs.builder
       builder.parameters(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.elasticache.ParameterGroupArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.elasticache.ClusterArgs.Builder)
     /**
      * @param logDeliveryConfigurations Specifies the destination and format of Redis [SLOWLOG](https://redis.io/commands/slowlog) or Redis [Engine Log](https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/Log_Delivery.html#Log_contents-engine-log). See the documentation on [Amazon ElastiCache](https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/Log_Delivery.html). See Log Delivery Configuration below for more details.
@@ -140,6 +148,10 @@ object elasticache:
       def argsBuilder = com.pulumi.aws.elasticache.inputs.ClusterLogDeliveryConfigurationArgs.builder
       builder.logDeliveryConfigurations(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.elasticache.ClusterArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /** Provides an ElastiCache Serverless Cache resource which manages memcached, redis or valkey. */
   def ServerlessCache(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.elasticache.ServerlessCacheArgs.Builder])(using conf: KoPulumiConf) =
@@ -161,6 +173,10 @@ object elasticache:
       val argsBuilder = com.pulumi.aws.elasticache.inputs.ReservedCacheNodeTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.elasticache.ReservedCacheNodeArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   type ElasticacheFunctions = com.pulumi.aws.elasticache.ElasticacheFunctions
   object ElasticacheFunctions:
     // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
@@ -257,6 +273,10 @@ object elasticache:
       def argsBuilder = com.pulumi.aws.elasticache.inputs.ReplicationGroupNodeGroupConfigurationArgs.builder
       builder.nodeGroupConfigurations(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.elasticache.ReplicationGroupArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /**
    * Provides an ElastiCache Replication Group resource.
    *  
@@ -305,6 +325,10 @@ object elasticache:
       val argsBuilder = com.pulumi.aws.elasticache.inputs.ServerlessCacheTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.elasticache.ServerlessCacheArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /**
    * Manages an ElastiCache Reserved Cache Node.
    *  
@@ -343,6 +367,7 @@ object elasticache:
       def argsBuilder = com.pulumi.aws.elasticache.inputs.GlobalReplicationGroupGlobalNodeGroupArgs.builder
       builder.globalNodeGroups(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.elasticache.inputs.ParameterGroupState.Builder)
     /**
      * @param parameters A list of ElastiCache parameters to apply.
@@ -353,6 +378,10 @@ object elasticache:
       def argsBuilder = com.pulumi.aws.elasticache.inputs.ParameterGroupParameterArgs.builder
       builder.parameters(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.elasticache.inputs.ParameterGroupState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.elasticache.inputs.ClusterState.Builder)
     /**
      * @param cacheNodes List of node objects including `id`, `address`, `port` and `availabilityZone`.
@@ -372,6 +401,10 @@ object elasticache:
       def argsBuilder = com.pulumi.aws.elasticache.inputs.ClusterLogDeliveryConfigurationArgs.builder
       builder.logDeliveryConfigurations(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.elasticache.inputs.ClusterState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.elasticache.inputs.ServerlessCacheState.Builder)
     /**
      * @param cacheUsageLimits Sets the cache usage limits for storage and ElastiCache Processing Units for the cache. See `cacheUsageLimits` Block for details.
@@ -405,6 +438,10 @@ object elasticache:
       val argsBuilder = com.pulumi.aws.elasticache.inputs.ServerlessCacheTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.elasticache.inputs.ServerlessCacheState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.elasticache.inputs.ReplicationGroupState.Builder)
     /**
      * @param logDeliveryConfigurations Specifies the destination and format of Redis OSS/Valkey [SLOWLOG](https://redis.io/commands/slowlog) or Redis OSS/Valkey [Engine Log](https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Log_Delivery.html#Log_contents-engine-log). See the documentation on [Amazon ElastiCache](https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Log_Delivery.html#Log_contents-engine-log). See Log Delivery Configuration below for more details.
@@ -424,6 +461,10 @@ object elasticache:
       def argsBuilder = com.pulumi.aws.elasticache.inputs.ReplicationGroupNodeGroupConfigurationArgs.builder
       builder.nodeGroupConfigurations(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.elasticache.inputs.ReplicationGroupState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.elasticache.inputs.ServerlessCacheCacheUsageLimitsArgs.Builder)
     /**
      * @param dataStorage The maximum data storage limit in the cache, expressed in Gigabytes. See `dataStorage` Block for details.
@@ -443,6 +484,7 @@ object elasticache:
       def argsBuilder = com.pulumi.aws.elasticache.inputs.ServerlessCacheCacheUsageLimitsEcpuPerSecondArgs.builder
       builder.ecpuPerSeconds(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.elasticache.inputs.ReservedCacheNodeState.Builder)
     /**
      * @param recurringCharges Recurring price charged to run this reserved cache node.
@@ -458,12 +500,17 @@ object elasticache:
       val argsBuilder = com.pulumi.aws.elasticache.inputs.ReservedCacheNodeTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.elasticache.inputs.ReservedCacheNodeState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.elasticache.inputs.GetUserArgs.Builder)
     def authenticationModes(args: Endofunction[com.pulumi.aws.elasticache.inputs.GetUserAuthenticationModeArgs.Builder]*):
         com.pulumi.aws.elasticache.inputs.GetUserArgs.Builder =
       def argsBuilder = com.pulumi.aws.elasticache.inputs.GetUserAuthenticationModeArgs.builder
       builder.authenticationModes(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.elasticache.inputs.UserState.Builder)
     /**
      * @param authenticationMode Denotes the user&#39;s authentication properties. Detailed below.
@@ -473,3 +520,8 @@ object elasticache:
         com.pulumi.aws.elasticache.inputs.UserState.Builder =
       val argsBuilder = com.pulumi.aws.elasticache.inputs.UserAuthenticationModeArgs.builder
       builder.authenticationMode(args(argsBuilder).build)
+
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.elasticache.inputs.UserState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       

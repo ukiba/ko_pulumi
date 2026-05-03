@@ -45,6 +45,7 @@ object cloudsearch:
       val argsBuilder = com.pulumi.aws.cloudsearch.inputs.DomainScalingParametersArgs.builder
       builder.scalingParameters(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.cloudsearch.inputs.DomainState.Builder)
     /**
      * @param endpointOptions Domain endpoint options. Documented below.
@@ -73,6 +74,7 @@ object cloudsearch:
       val argsBuilder = com.pulumi.aws.cloudsearch.inputs.DomainScalingParametersArgs.builder
       builder.scalingParameters(args(argsBuilder).build)
 
+                       
   /**
    * Provides an CloudSearch domain resource.
    *  

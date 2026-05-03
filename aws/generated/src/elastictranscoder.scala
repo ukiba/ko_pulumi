@@ -82,6 +82,7 @@ object elastictranscoder:
       def argsBuilder = com.pulumi.aws.elastictranscoder.inputs.PresetVideoWatermarkArgs.builder
       builder.videoWatermarks(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.elastictranscoder.PipelineArgs.Builder)
     /**
      * @param contentConfig The ContentConfig object specifies information about the Amazon S3 bucket in which you want Elastic Transcoder to save transcoded files and playlists. (documented below)
@@ -137,6 +138,7 @@ object elastictranscoder:
       def argsBuilder = com.pulumi.aws.elastictranscoder.inputs.PipelineThumbnailConfigPermissionArgs.builder
       builder.thumbnailConfigPermissions(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.elastictranscoder.inputs.PresetState.Builder)
     /**
      * @param audio Audio parameters object (documented below).
@@ -183,6 +185,7 @@ object elastictranscoder:
       def argsBuilder = com.pulumi.aws.elastictranscoder.inputs.PresetVideoWatermarkArgs.builder
       builder.videoWatermarks(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.elastictranscoder.inputs.PipelineState.Builder)
     /**
      * @param contentConfig The ContentConfig object specifies information about the Amazon S3 bucket in which you want Elastic Transcoder to save transcoded files and playlists. (documented below)
@@ -237,3 +240,5 @@ object elastictranscoder:
         com.pulumi.aws.elastictranscoder.inputs.PipelineState.Builder =
       def argsBuilder = com.pulumi.aws.elastictranscoder.inputs.PipelineThumbnailConfigPermissionArgs.builder
       builder.thumbnailConfigPermissions(args.map(_(argsBuilder).build)*)
+
+                       

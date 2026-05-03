@@ -228,16 +228,9 @@ class PulumiAwsAdapterGenerator(dstRoot: Path, classpath: Seq[String]):
                   throw IllegalStateException(s"pulumi Args class must have Builder inner class: $argsType")
 
                 val argsBuilderMembers = argsBuilderType.enclosedElements  // directly declared and mandated
-
-                def isMethod(name: String, paramTypes: TypeMirror*)(elem: Element): Boolean =
-                  elem.getKind == ElementKind.METHOD &&
-                  elem.simpleName.contentEquals(name) &&
-                  elem.parametersOpt.exists: params =>
-                    params.length == paramTypes.length
-                    params.zip(paramTypes).forall: pair =>
-                      types.isSameType(pair._1.asType, pair._2)
                 val argsBuilderHasName = argsBuilderMembers.exists(isMethod("name", `java.lang.String`))
-                val argsBuilderHasTags = argsBuilderMembers.exists(isMethod("tags", `java.util.Map<java.lang.String,java.lang.String>`))
+                val argsBuilderHasTags = argsBuilderMembers.exists(isMethod("tags",
+                    `java.util.Map<java.lang.String,java.lang.String>`))
 
                 val clsDoc = Option(trees.getDocCommentTree(currentPath)).map: docTree =>
                   val lines = docTree.toString.split('\n').toSeq
@@ -330,6 +323,8 @@ class PulumiAwsAdapterGenerator(dstRoot: Path, classpath: Seq[String]):
                     Some((method, paramType, false))
                   case _ =>
                     None
+            val argsBuilderHasTags = argsBuilderMembers.exists(isMethod("tags",
+                `java.util.Map<java.lang.String,java.lang.String>`))
 
             if argsBuilderMethodsWithType.nonEmpty then
               val packageCompsWithoutInputs = packageComps.last match
@@ -365,8 +360,33 @@ class PulumiAwsAdapterGenerator(dstRoot: Path, classpath: Seq[String]):
                                 |      builder.$methodName(args.map(_(argsBuilder).build)*)
                                 |""".stripMargin
                           .mkString.dropWhile(_.isWhitespace)
-                       }""".stripMargin,
-                          argsBuilderMethodsWithType.map(_._1.simpleName.toString).map(escapeScalaKeyword).toSeq)
+                       }${
+                          // Name tag can already be present but `tags` method can only override
+                          Option.when(argsBuilderHasTags)(s"""
+                            |    def mapTags(fn: Endofunction[Map[String, String]]):
+                            |        $argsBuilderType =
+                            |      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                            |""".stripMargin).mkString.dropRightWhile(_.isWhitespace)
+
+                          // the compile time tripled without transformOptOutputMap helper method,
+                          // even if implicit search is avoided
+/*
+                          Option.when(argsBuilderHasTags)(s"""
+                            |    def mapTags(fn: Endofunction[Map[String, String]]):
+                            |        $argsBuilderType =
+                            |      val Map = scala.collection.immutable.Map  // avoid collision with aws.location.Map
+                            |      import scala.jdk.javaapi.CollectionConverters.{asScala, asJava}  // explicit conversion methods
+                            |      def empty = com.pulumi.core.Output.of(Map.empty[String, String])
+                            |      val origTagsOut = builder.build.tags  // Optional<Output<Map<String,String>>>
+                            |          .map(_.applyValue(tags => Map.from(asScala(tags)))).orElse(empty)
+                            |      builder.tags(origTagsOut.applyValue(tags => asJava(fn(tags))))
+                            |""".stripMargin).mkString.dropRightWhile(_.isWhitespace)
+*/
+                       }
+                       """.stripMargin,
+                          (argsBuilderMethodsWithType.map(_._1.simpleName.toString).toSeq
+                              ++ Option.when(argsBuilderHasTags)("mapTags").toSeq
+                          ).map(escapeScalaKeyword).toSeq)
 
           /*
             Generate the following code
@@ -434,6 +454,14 @@ class PulumiAwsAdapterGenerator(dstRoot: Path, classpath: Seq[String]):
                      }""".stripMargin, clsName.toString)
 
         case _ =>  // INTERFACE, ENUM, RECORD, or annotation type declaration
+
+  def isMethod(name: String, paramTypes: TypeMirror*)(elem: Element)(using types: Types): Boolean =
+    elem.getKind == ElementKind.METHOD &&
+    elem.simpleName.contentEquals(name) &&
+    elem.parametersOpt.exists: params =>
+      params.length == paramTypes.length
+      params.zip(paramTypes).forall: pair =>
+        types.isSameType(pair._1.asType, pair._2)
 
   def renderScalaType(typeMirror: TypeMirror): String =
     val text = typeMirror.toString

@@ -14,6 +14,10 @@ object vpclattice:
       val argsBuilder = com.pulumi.aws.vpclattice.inputs.TargetGroupConfigArgs.builder
       builder.config(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.vpclattice.TargetGroupArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   type VpclatticeFunctions = com.pulumi.aws.vpclattice.VpclatticeFunctions
   object VpclatticeFunctions:
     // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
@@ -155,6 +159,10 @@ object vpclattice:
       val argsBuilder = com.pulumi.aws.vpclattice.inputs.ListenerRuleMatchArgs.builder
       builder.`match`(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.vpclattice.ListenerRuleArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /** Resource for managing an AWS VPC Lattice Service Network. */
   def ServiceNetwork(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.vpclattice.ServiceNetworkArgs.Builder])(using conf: KoPulumiConf) =
@@ -176,6 +184,10 @@ object vpclattice:
       val argsBuilder = com.pulumi.aws.vpclattice.inputs.ServiceNetworkResourceAssociationTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.vpclattice.ServiceNetworkResourceAssociationArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /** Resource for managing an AWS VPC Lattice Service Network Resource Association. */
   def ServiceNetworkResourceAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.vpclattice.ServiceNetworkResourceAssociationArgs.Builder])(using conf: KoPulumiConf) =
@@ -203,6 +215,10 @@ object vpclattice:
       val argsBuilder = com.pulumi.aws.vpclattice.inputs.ResourceGatewayTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.vpclattice.ResourceGatewayArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.vpclattice.TargetGroupAttachmentArgs.Builder)
     /**
      * @param target The target.
@@ -213,6 +229,7 @@ object vpclattice:
       val argsBuilder = com.pulumi.aws.vpclattice.inputs.TargetGroupAttachmentTargetArgs.builder
       builder.target(args(argsBuilder).build)
 
+                       
   /** Resource for managing an AWS VPC Lattice Service. */
   def Service(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.vpclattice.ServiceArgs.Builder])(using conf: KoPulumiConf) =
@@ -238,6 +255,10 @@ object vpclattice:
       val argsBuilder = com.pulumi.aws.vpclattice.inputs.ServiceNetworkVpcAssociationDnsOptionsArgs.builder
       builder.dnsOptions(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.vpclattice.ServiceNetworkVpcAssociationArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /** Resource for managing an AWS VPC Lattice Service Network VPC Association. */
   def ServiceNetworkVpcAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.vpclattice.ServiceNetworkVpcAssociationArgs.Builder])(using conf: KoPulumiConf) =
@@ -294,6 +315,10 @@ object vpclattice:
       val argsBuilder = com.pulumi.aws.vpclattice.inputs.ResourceConfigurationTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.vpclattice.ResourceConfigurationArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /** Resource for managing an AWS VPC Lattice Resource Gateway. */
   def ResourceGateway(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.vpclattice.ResourceGatewayArgs.Builder])(using conf: KoPulumiConf) =
@@ -319,6 +344,10 @@ object vpclattice:
       val argsBuilder = com.pulumi.aws.vpclattice.inputs.ListenerDefaultActionArgs.builder
       builder.defaultAction(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.vpclattice.ListenerArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /** Resource for managing an AWS VPC Lattice Auth Policy. */
   def AuthPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.vpclattice.AuthPolicyArgs.Builder]) =
@@ -355,6 +384,10 @@ object vpclattice:
       val argsBuilder = com.pulumi.aws.vpclattice.inputs.ServiceNetworkResourceAssociationTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.vpclattice.inputs.ServiceNetworkResourceAssociationState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.vpclattice.inputs.ServiceNetworkVpcAssociationState.Builder)
     /**
      * @param dnsOptions Configuration block for DNS option. See `dnsOptions` block below for details.
@@ -365,6 +398,10 @@ object vpclattice:
       val argsBuilder = com.pulumi.aws.vpclattice.inputs.ServiceNetworkVpcAssociationDnsOptionsArgs.builder
       builder.dnsOptions(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.vpclattice.inputs.ServiceNetworkVpcAssociationState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.vpclattice.inputs.ListenerState.Builder)
     /**
      * @param defaultAction Default action block for the default listener rule. Default action blocks are defined below.
@@ -375,12 +412,20 @@ object vpclattice:
       val argsBuilder = com.pulumi.aws.vpclattice.inputs.ListenerDefaultActionArgs.builder
       builder.defaultAction(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.vpclattice.inputs.ListenerState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.vpclattice.inputs.ResourceGatewayState.Builder)
     def timeouts(args: Endofunction[com.pulumi.aws.vpclattice.inputs.ResourceGatewayTimeoutsArgs.Builder]):
         com.pulumi.aws.vpclattice.inputs.ResourceGatewayState.Builder =
       val argsBuilder = com.pulumi.aws.vpclattice.inputs.ResourceGatewayTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.vpclattice.inputs.ResourceGatewayState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.vpclattice.inputs.ListenerRuleActionForwardArgs.Builder)
     /**
      * @param targetGroups The target groups. Traffic matching the rule is forwarded to the specified target groups. With forward actions, you can assign a weight that controls the prioritization and selection of each target group. This means that requests are distributed to individual target groups based on their weights. For example, if two target groups have the same weight, each target group receives half of the traffic.
@@ -393,6 +438,7 @@ object vpclattice:
       def argsBuilder = com.pulumi.aws.vpclattice.inputs.ListenerRuleActionForwardTargetGroupArgs.builder
       builder.targetGroups(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.vpclattice.inputs.ResourceConfigurationState.Builder)
     /**
      * @param resourceConfigurationDefinition Details of the Resource Configuration. See `resourceConfigurationDefinition` Block for details.
@@ -410,6 +456,10 @@ object vpclattice:
       val argsBuilder = com.pulumi.aws.vpclattice.inputs.ResourceConfigurationTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.vpclattice.inputs.ResourceConfigurationState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.vpclattice.inputs.TargetGroupConfigArgs.Builder)
     /**
      * @param healthCheck The health check configuration.
@@ -420,6 +470,7 @@ object vpclattice:
       val argsBuilder = com.pulumi.aws.vpclattice.inputs.TargetGroupConfigHealthCheckArgs.builder
       builder.healthCheck(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.vpclattice.inputs.ListenerRuleMatchHttpMatchArgs.Builder)
     /**
      * @param headerMatches The header matches.
@@ -442,6 +493,7 @@ object vpclattice:
       val argsBuilder = com.pulumi.aws.vpclattice.inputs.ListenerRuleMatchHttpMatchPathMatchArgs.builder
       builder.pathMatch(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.vpclattice.inputs.ResourceConfigurationResourceConfigurationDefinitionArgs.Builder)
     /**
      * @param arnResource Resource DNS Configuration. See `arnResource` Block for details.
@@ -470,6 +522,7 @@ object vpclattice:
       val argsBuilder = com.pulumi.aws.vpclattice.inputs.ResourceConfigurationResourceConfigurationDefinitionIpResourceArgs.builder
       builder.ipResource(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.vpclattice.inputs.TargetGroupAttachmentState.Builder)
     /**
      * @param target The target.
@@ -480,6 +533,7 @@ object vpclattice:
       val argsBuilder = com.pulumi.aws.vpclattice.inputs.TargetGroupAttachmentTargetArgs.builder
       builder.target(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.vpclattice.inputs.TargetGroupConfigHealthCheckArgs.Builder)
     /**
      * @param matcher The codes to use when checking for a successful response from a target. These are called _Success codes_ in the console.
@@ -490,6 +544,7 @@ object vpclattice:
       val argsBuilder = com.pulumi.aws.vpclattice.inputs.TargetGroupConfigHealthCheckMatcherArgs.builder
       builder.matcher(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.vpclattice.inputs.TargetGroupState.Builder)
     /**
      * @param config The target group configuration.
@@ -500,6 +555,10 @@ object vpclattice:
       val argsBuilder = com.pulumi.aws.vpclattice.inputs.TargetGroupConfigArgs.builder
       builder.config(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.vpclattice.inputs.TargetGroupState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.vpclattice.inputs.ServiceNetworkServiceAssociationState.Builder)
     /**
      * @param dnsEntries The DNS name of the service.
@@ -510,6 +569,10 @@ object vpclattice:
       def argsBuilder = com.pulumi.aws.vpclattice.inputs.ServiceNetworkServiceAssociationDnsEntryArgs.builder
       builder.dnsEntries(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.vpclattice.inputs.ServiceNetworkServiceAssociationState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.vpclattice.inputs.ListenerDefaultActionArgs.Builder)
     def fixedResponse(args: Endofunction[com.pulumi.aws.vpclattice.inputs.ListenerDefaultActionFixedResponseArgs.Builder]):
         com.pulumi.aws.vpclattice.inputs.ListenerDefaultActionArgs.Builder =
@@ -527,6 +590,7 @@ object vpclattice:
       def argsBuilder = com.pulumi.aws.vpclattice.inputs.ListenerDefaultActionForwardArgs.builder
       builder.forwards(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.vpclattice.inputs.ListenerRuleMatchHttpMatchHeaderMatchArgs.Builder)
     /**
      * @param match The header match type.
@@ -538,6 +602,7 @@ object vpclattice:
       val argsBuilder = com.pulumi.aws.vpclattice.inputs.ListenerRuleMatchHttpMatchHeaderMatchMatchArgs.builder
       builder.`match`(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.vpclattice.inputs.ListenerRuleState.Builder)
     /**
      * @param action The action for the listener rule.
@@ -559,6 +624,10 @@ object vpclattice:
       val argsBuilder = com.pulumi.aws.vpclattice.inputs.ListenerRuleMatchArgs.builder
       builder.`match`(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.vpclattice.inputs.ListenerRuleState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.vpclattice.inputs.ServiceState.Builder)
     /**
      * @param dnsEntries DNS name of the service.
@@ -569,6 +638,10 @@ object vpclattice:
       def argsBuilder = com.pulumi.aws.vpclattice.inputs.ServiceDnsEntryArgs.builder
       builder.dnsEntries(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.vpclattice.inputs.ServiceState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.vpclattice.inputs.ListenerRuleActionArgs.Builder)
     /**
      * @param fixedResponse Describes the rule action that returns a custom HTTP response.
@@ -590,6 +663,7 @@ object vpclattice:
       val argsBuilder = com.pulumi.aws.vpclattice.inputs.ListenerRuleActionForwardArgs.builder
       builder.forward(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.vpclattice.inputs.ListenerRuleMatchArgs.Builder)
     /**
      * @param httpMatch The HTTP criteria that a rule must match.
@@ -601,6 +675,7 @@ object vpclattice:
       val argsBuilder = com.pulumi.aws.vpclattice.inputs.ListenerRuleMatchHttpMatchArgs.builder
       builder.httpMatch(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.vpclattice.inputs.ListenerDefaultActionForwardArgs.Builder)
     /**
      * @param targetGroups One or more target group blocks.
@@ -611,6 +686,7 @@ object vpclattice:
       def argsBuilder = com.pulumi.aws.vpclattice.inputs.ListenerDefaultActionForwardTargetGroupArgs.builder
       builder.targetGroups(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.vpclattice.inputs.ListenerRuleMatchHttpMatchPathMatchArgs.Builder)
     /**
      * @param match The header match type.
@@ -622,6 +698,7 @@ object vpclattice:
       val argsBuilder = com.pulumi.aws.vpclattice.inputs.ListenerRuleMatchHttpMatchPathMatchMatchArgs.builder
       builder.`match`(args(argsBuilder).build)
 
+                       
   /** Resource for managing an AWS VPC Lattice Listener Rule. */
   def ListenerRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.vpclattice.ListenerRuleArgs.Builder])(using conf: KoPulumiConf) =

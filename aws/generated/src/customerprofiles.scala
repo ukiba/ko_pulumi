@@ -35,6 +35,10 @@ object customerprofiles:
       val argsBuilder = com.pulumi.aws.customerprofiles.inputs.DomainRuleBasedMatchingArgs.builder
       builder.ruleBasedMatching(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.customerprofiles.DomainArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.customerprofiles.ProfileArgs.Builder)
     /**
      * @param address A block that specifies a generic address associated with the customer that is not mailing, shipping, or billing. Documented below.
@@ -72,6 +76,7 @@ object customerprofiles:
       val argsBuilder = com.pulumi.aws.customerprofiles.inputs.ProfileShippingAddressArgs.builder
       builder.shippingAddress(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.customerprofiles.inputs.DomainState.Builder)
     /**
      * @param matching A block that specifies the process of matching duplicate profiles. Documented below.
@@ -91,18 +96,24 @@ object customerprofiles:
       val argsBuilder = com.pulumi.aws.customerprofiles.inputs.DomainRuleBasedMatchingArgs.builder
       builder.ruleBasedMatching(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.customerprofiles.inputs.DomainState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.customerprofiles.inputs.DomainRuleBasedMatchingExportingConfigArgs.Builder)
     def s3Exporting(args: Endofunction[com.pulumi.aws.customerprofiles.inputs.DomainRuleBasedMatchingExportingConfigS3ExportingArgs.Builder]):
         com.pulumi.aws.customerprofiles.inputs.DomainRuleBasedMatchingExportingConfigArgs.Builder =
       val argsBuilder = com.pulumi.aws.customerprofiles.inputs.DomainRuleBasedMatchingExportingConfigS3ExportingArgs.builder
       builder.s3Exporting(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.customerprofiles.inputs.DomainMatchingExportingConfigArgs.Builder)
     def s3Exporting(args: Endofunction[com.pulumi.aws.customerprofiles.inputs.DomainMatchingExportingConfigS3ExportingArgs.Builder]):
         com.pulumi.aws.customerprofiles.inputs.DomainMatchingExportingConfigArgs.Builder =
       val argsBuilder = com.pulumi.aws.customerprofiles.inputs.DomainMatchingExportingConfigS3ExportingArgs.builder
       builder.s3Exporting(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.customerprofiles.inputs.DomainMatchingAutoMergingArgs.Builder)
     /**
      * @param conflictResolution A block that specifies how the auto-merging process should resolve conflicts between different profiles. Documented below.
@@ -123,6 +134,7 @@ object customerprofiles:
       val argsBuilder = com.pulumi.aws.customerprofiles.inputs.DomainMatchingAutoMergingConsolidationArgs.builder
       builder.consolidation(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.customerprofiles.inputs.DomainRuleBasedMatchingArgs.Builder)
     /**
      * @param attributeTypesSelector A block that configures information about the `AttributeTypesSelector` where the rule-based identity resolution uses to match profiles. Documented below.
@@ -160,6 +172,7 @@ object customerprofiles:
       def argsBuilder = com.pulumi.aws.customerprofiles.inputs.DomainRuleBasedMatchingMatchingRuleArgs.builder
       builder.matchingRules(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.customerprofiles.inputs.ProfileState.Builder)
     /**
      * @param address A block that specifies a generic address associated with the customer that is not mailing, shipping, or billing. Documented below.
@@ -197,6 +210,7 @@ object customerprofiles:
       val argsBuilder = com.pulumi.aws.customerprofiles.inputs.ProfileShippingAddressArgs.builder
       builder.shippingAddress(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.customerprofiles.inputs.DomainMatchingArgs.Builder)
     /**
      * @param autoMerging A block that specifies the configuration about the auto-merging process. Documented below.
@@ -225,6 +239,7 @@ object customerprofiles:
       val argsBuilder = com.pulumi.aws.customerprofiles.inputs.DomainMatchingJobScheduleArgs.builder
       builder.jobSchedule(args(argsBuilder).build)
 
+                       
   /**
    * Resource for managing an Amazon Customer Profiles Domain.
    *  See the [Create Domain](https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_CreateDomain.html) for more information.

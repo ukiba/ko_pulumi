@@ -39,6 +39,10 @@ object storagegateway:
       val argsBuilder = com.pulumi.aws.storagegateway.inputs.SmbFileShareCacheAttributesArgs.builder
       builder.cacheAttributes(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.storagegateway.SmbFileShareArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /**
    * Manages an AWS Storage Gateway upload buffer.
    *  
@@ -146,6 +150,10 @@ object storagegateway:
       val argsBuilder = com.pulumi.aws.storagegateway.inputs.NfsFileShareNfsFileShareDefaultsArgs.builder
       builder.nfsFileShareDefaults(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.storagegateway.NfsFileShareArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /**
    * Associate an Amazon FSx file system with the FSx File Gateway. After the association process is complete, the file shares on the Amazon FSx file system are available for access through the gateway. This operation only supports the FSx File Gateway type.
    *  
@@ -181,6 +189,10 @@ object storagegateway:
       val argsBuilder = com.pulumi.aws.storagegateway.inputs.GatewaySmbActiveDirectorySettingsArgs.builder
       builder.smbActiveDirectorySettings(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.storagegateway.GatewayArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.storagegateway.FileSystemAssociationArgs.Builder)
     /**
      * @param cacheAttributes Refresh cache information. see Cache Attributes for more details.
@@ -191,6 +203,10 @@ object storagegateway:
       val argsBuilder = com.pulumi.aws.storagegateway.inputs.FileSystemAssociationCacheAttributesArgs.builder
       builder.cacheAttributes(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.storagegateway.FileSystemAssociationArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /** Manages an AWS Storage Gateway NFS File Share. */
   def NfsFileShare(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.storagegateway.NfsFileShareArgs.Builder])(using conf: KoPulumiConf) =
@@ -222,6 +238,10 @@ object storagegateway:
       val argsBuilder = com.pulumi.aws.storagegateway.inputs.NfsFileShareNfsFileShareDefaultsArgs.builder
       builder.nfsFileShareDefaults(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.storagegateway.inputs.NfsFileShareState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.storagegateway.inputs.GatewayState.Builder)
     /**
      * @param gatewayNetworkInterfaces An array that contains descriptions of the gateway network interfaces. See Gateway Network Interface.
@@ -250,6 +270,10 @@ object storagegateway:
       val argsBuilder = com.pulumi.aws.storagegateway.inputs.GatewaySmbActiveDirectorySettingsArgs.builder
       builder.smbActiveDirectorySettings(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.storagegateway.inputs.GatewayState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.storagegateway.inputs.FileSystemAssociationState.Builder)
     /**
      * @param cacheAttributes Refresh cache information. see Cache Attributes for more details.
@@ -260,6 +284,10 @@ object storagegateway:
       val argsBuilder = com.pulumi.aws.storagegateway.inputs.FileSystemAssociationCacheAttributesArgs.builder
       builder.cacheAttributes(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.storagegateway.inputs.FileSystemAssociationState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.storagegateway.inputs.SmbFileShareState.Builder)
     /**
      * @param cacheAttributes Refresh cache information. see `cacheAttributes` Block for more details.
@@ -270,6 +298,10 @@ object storagegateway:
       val argsBuilder = com.pulumi.aws.storagegateway.inputs.SmbFileShareCacheAttributesArgs.builder
       builder.cacheAttributes(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.storagegateway.inputs.SmbFileShareState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   type StoragegatewayFunctions = com.pulumi.aws.storagegateway.StoragegatewayFunctions
   object StoragegatewayFunctions:
     // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)

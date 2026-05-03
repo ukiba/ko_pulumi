@@ -75,6 +75,10 @@ object dms:
       val argsBuilder = com.pulumi.aws.dms.inputs.ReplicationConfigComputeConfigArgs.builder
       builder.computeConfig(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.dms.ReplicationConfigArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   type DmsFunctions = com.pulumi.aws.dms.DmsFunctions
   object DmsFunctions:
     // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
@@ -233,6 +237,10 @@ object dms:
       val argsBuilder = com.pulumi.aws.dms.inputs.ReplicationInstanceKerberosAuthenticationSettingsArgs.builder
       builder.kerberosAuthenticationSettings(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.dms.ReplicationInstanceArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /** Provides a DMS (Data Migration Service) replication instance resource. DMS replication instances can be created, updated, deleted, and imported. */
   def ReplicationInstance(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.dms.ReplicationInstanceArgs.Builder])(using conf: KoPulumiConf) =
@@ -339,6 +347,10 @@ object dms:
       val argsBuilder = com.pulumi.aws.dms.inputs.EndpointRedshiftSettingsArgs.builder
       builder.redshiftSettings(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.dms.EndpointArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.dms.inputs.ReplicationConfigState.Builder)
     /**
      * @param computeConfig Configuration block for provisioning an DMS Serverless replication.
@@ -349,6 +361,10 @@ object dms:
       val argsBuilder = com.pulumi.aws.dms.inputs.ReplicationConfigComputeConfigArgs.builder
       builder.computeConfig(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.dms.inputs.ReplicationConfigState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.dms.inputs.EndpointState.Builder)
     /**
      * @param elasticsearchSettings Configuration block for OpenSearch settings. See below.
@@ -427,6 +443,10 @@ object dms:
       val argsBuilder = com.pulumi.aws.dms.inputs.EndpointRedshiftSettingsArgs.builder
       builder.redshiftSettings(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.dms.inputs.EndpointState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.dms.inputs.ReplicationInstanceState.Builder)
     /**
      * @param kerberosAuthenticationSettings Configuration block for settings required for Kerberos authentication. See below.
@@ -436,3 +456,8 @@ object dms:
         com.pulumi.aws.dms.inputs.ReplicationInstanceState.Builder =
       val argsBuilder = com.pulumi.aws.dms.inputs.ReplicationInstanceKerberosAuthenticationSettingsArgs.builder
       builder.kerberosAuthenticationSettings(args(argsBuilder).build)
+
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.dms.inputs.ReplicationInstanceState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       

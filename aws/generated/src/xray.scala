@@ -14,6 +14,10 @@ object xray:
       val argsBuilder = com.pulumi.aws.xray.inputs.GroupInsightsConfigurationArgs.builder
       builder.insightsConfiguration(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.xray.GroupArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /** Creates and manages an AWS XRay Sampling Rule. */
   def SamplingRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.xray.SamplingRuleArgs.Builder])(using conf: KoPulumiConf) =
@@ -69,3 +73,8 @@ object xray:
         com.pulumi.aws.xray.inputs.GroupState.Builder =
       val argsBuilder = com.pulumi.aws.xray.inputs.GroupInsightsConfigurationArgs.builder
       builder.insightsConfiguration(args(argsBuilder).build)
+
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.xray.inputs.GroupState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       

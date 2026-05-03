@@ -76,6 +76,10 @@ object cloudfront:
       val argsBuilder = com.pulumi.aws.cloudfront.inputs.DistributionTenantTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.cloudfront.DistributionTenantArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /**
    * 
    */
@@ -190,6 +194,10 @@ object cloudfront:
       val argsBuilder = com.pulumi.aws.cloudfront.inputs.DistributionViewerMtlsConfigArgs.builder
       builder.viewerMtlsConfig(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.cloudfront.DistributionArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /**
    * Creates an Amazon CloudFront VPC origin.
    *  
@@ -226,6 +234,7 @@ object cloudfront:
       val argsBuilder = com.pulumi.aws.cloudfront.inputs.ContinuousDeploymentPolicyTrafficConfigArgs.builder
       builder.trafficConfig(args(argsBuilder).build)
 
+                       
   /**
    * 
    */
@@ -278,6 +287,7 @@ object cloudfront:
       val argsBuilder = com.pulumi.aws.cloudfront.inputs.MonitoringSubscriptionMonitoringSubscriptionArgs.builder
       builder.monitoringSubscription(args(argsBuilder).build)
 
+                       
   /**
    * Manages an AWS CloudFront Origin Access Control, which is used by CloudFront Distributions with an Amazon S3 bucket as the origin.
    *  
@@ -319,6 +329,10 @@ object cloudfront:
       val argsBuilder = com.pulumi.aws.cloudfront.inputs.AnycastIpListTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.cloudfront.AnycastIpListArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.cloudfront.ConnectionFunctionArgs.Builder)
     /**
      * @param connectionFunctionConfig Configuration information for the connection function. See `connectionFunctionConfig` below.
@@ -329,6 +343,10 @@ object cloudfront:
       val argsBuilder = com.pulumi.aws.cloudfront.inputs.ConnectionFunctionConnectionFunctionConfigArgs.builder
       builder.connectionFunctionConfig(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.cloudfront.ConnectionFunctionArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /** Resource for managing a CloudFront Anycast IP List. */
   def AnycastIpList(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.cloudfront.AnycastIpListArgs.Builder])(using conf: KoPulumiConf) =
@@ -388,6 +406,7 @@ object cloudfront:
       val argsBuilder = com.pulumi.aws.cloudfront.inputs.KeyValueStoreTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
+                       
   type CloudfrontFunctions = com.pulumi.aws.cloudfront.CloudfrontFunctions
   object CloudfrontFunctions:
     // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
@@ -564,6 +583,10 @@ object cloudfront:
       val argsBuilder = com.pulumi.aws.cloudfront.inputs.VpcOriginVpcOriginEndpointConfigArgs.builder
       builder.vpcOriginEndpointConfig(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.cloudfront.VpcOriginArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /** Manages an AWS CloudFront Connection Function. */
   def ConnectionFunction(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.cloudfront.ConnectionFunctionArgs.Builder])(using conf: KoPulumiConf) =
@@ -585,6 +608,10 @@ object cloudfront:
       val argsBuilder = com.pulumi.aws.cloudfront.inputs.ConnectionGroupTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.cloudfront.ConnectionGroupArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /** Resource for managing an AWS CloudFront Key Value Store. */
   def KeyValueStore(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.cloudfront.KeyValueStoreArgs.Builder])(using conf: KoPulumiConf) =
@@ -646,6 +673,7 @@ object cloudfront:
       def argsBuilder = com.pulumi.aws.cloudfront.inputs.KeyvaluestoreKeysExclusiveResourceKeyValuePairArgs.builder
       builder.resourceKeyValuePairs(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.cloudfront.RealtimeLogConfigArgs.Builder)
     /**
      * @param endpoint The Amazon Kinesis data streams where real-time log data is sent.
@@ -656,6 +684,7 @@ object cloudfront:
       val argsBuilder = com.pulumi.aws.cloudfront.inputs.RealtimeLogConfigEndpointArgs.builder
       builder.endpoint(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.cloudfront.FieldLevelEncryptionConfigArgs.Builder)
     /**
      * @param contentTypeProfileConfig Content Type Profile Config specifies when to forward content if a content type isn&#39;t recognized and profiles to use as by default in a request if a query argument doesn&#39;t specify a profile to use.
@@ -675,6 +704,7 @@ object cloudfront:
       val argsBuilder = com.pulumi.aws.cloudfront.inputs.FieldLevelEncryptionConfigQueryArgProfileConfigArgs.builder
       builder.queryArgProfileConfig(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.cloudfront.OriginRequestPolicyArgs.Builder)
     /**
      * @param cookiesConfig Object that determines whether any cookies in viewer requests (and if so, which cookies) are included in the origin request key and automatically included in requests that CloudFront sends to the origin. See Cookies Config for more information.
@@ -703,6 +733,7 @@ object cloudfront:
       val argsBuilder = com.pulumi.aws.cloudfront.inputs.OriginRequestPolicyQueryStringsConfigArgs.builder
       builder.queryStringsConfig(args(argsBuilder).build)
 
+                       
   /**
    * Creates an Amazon CloudFront distribution tenant.
    *  
@@ -781,6 +812,7 @@ object cloudfront:
       val argsBuilder = com.pulumi.aws.cloudfront.inputs.FieldLevelEncryptionProfileEncryptionEntitiesArgs.builder
       builder.encryptionEntities(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.cloudfront.MultitenantDistributionArgs.Builder)
     /**
      * @param activeTrustedKeyGroups List of key groups that CloudFront can use to validate signed URLs or signed cookies. See Active Trusted Key Groups below.
@@ -868,6 +900,10 @@ object cloudfront:
       val argsBuilder = com.pulumi.aws.cloudfront.inputs.MultitenantDistributionViewerCertificateArgs.builder
       builder.viewerCertificate(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.cloudfront.MultitenantDistributionArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /**
    * Provides a CloudFront Function resource. With CloudFront Functions in Amazon CloudFront, you can write lightweight functions in JavaScript for high-scale, latency-sensitive CDN customizations.
    *  
@@ -926,12 +962,17 @@ object cloudfront:
       val argsBuilder = com.pulumi.aws.cloudfront.inputs.CachePolicyParametersInCacheKeyAndForwardedToOriginArgs.builder
       builder.parametersInCacheKeyAndForwardedToOrigin(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.cloudfront.inputs.ConnectionGroupState.Builder)
     def timeouts(args: Endofunction[com.pulumi.aws.cloudfront.inputs.ConnectionGroupTimeoutsArgs.Builder]):
         com.pulumi.aws.cloudfront.inputs.ConnectionGroupState.Builder =
       val argsBuilder = com.pulumi.aws.cloudfront.inputs.ConnectionGroupTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.cloudfront.inputs.ConnectionGroupState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.cloudfront.inputs.ContinuousDeploymentPolicyTrafficConfigArgs.Builder)
     /**
      * @param singleHeaderConfig Determines which HTTP requests are sent to the staging distribution. See `singleHeaderConfig`.
@@ -951,12 +992,14 @@ object cloudfront:
       val argsBuilder = com.pulumi.aws.cloudfront.inputs.ContinuousDeploymentPolicyTrafficConfigSingleWeightConfigArgs.builder
       builder.singleWeightConfig(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.cloudfront.inputs.OriginRequestPolicyQueryStringsConfigArgs.Builder)
     def queryStrings(args: Endofunction[com.pulumi.aws.cloudfront.inputs.OriginRequestPolicyQueryStringsConfigQueryStringsArgs.Builder]):
         com.pulumi.aws.cloudfront.inputs.OriginRequestPolicyQueryStringsConfigArgs.Builder =
       val argsBuilder = com.pulumi.aws.cloudfront.inputs.OriginRequestPolicyQueryStringsConfigQueryStringsArgs.builder
       builder.queryStrings(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.cloudfront.inputs.CachePolicyState.Builder)
     /**
      * @param parametersInCacheKeyAndForwardedToOrigin Configuration for including HTTP headers, cookies, and URL query strings in the cache key. For more information, refer to the Parameters In Cache Key And Forwarded To Origin section.
@@ -967,6 +1010,7 @@ object cloudfront:
       val argsBuilder = com.pulumi.aws.cloudfront.inputs.CachePolicyParametersInCacheKeyAndForwardedToOriginArgs.builder
       builder.parametersInCacheKeyAndForwardedToOrigin(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.cloudfront.inputs.OriginRequestPolicyState.Builder)
     /**
      * @param cookiesConfig Object that determines whether any cookies in viewer requests (and if so, which cookies) are included in the origin request key and automatically included in requests that CloudFront sends to the origin. See Cookies Config for more information.
@@ -995,6 +1039,7 @@ object cloudfront:
       val argsBuilder = com.pulumi.aws.cloudfront.inputs.OriginRequestPolicyQueryStringsConfigArgs.builder
       builder.queryStringsConfig(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.cloudfront.inputs.ResponseHeadersPolicyCorsConfigArgs.Builder)
     /**
      * @param accessControlAllowHeaders Object that contains an attribute `items` that contains a list of HTTP header names that CloudFront includes as values for the `Access-Control-Allow-Headers` HTTP response header.
@@ -1032,6 +1077,7 @@ object cloudfront:
       val argsBuilder = com.pulumi.aws.cloudfront.inputs.ResponseHeadersPolicyCorsConfigAccessControlExposeHeadersArgs.builder
       builder.accessControlExposeHeaders(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.cloudfront.inputs.TrustStoreState.Builder)
     /**
      * @param caCertificatesBundleSource Configuration block for the CA certificates bundle source. See `caCertificatesBundleSource` below.
@@ -1049,6 +1095,10 @@ object cloudfront:
       val argsBuilder = com.pulumi.aws.cloudfront.inputs.TrustStoreTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.cloudfront.inputs.TrustStoreState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.cloudfront.inputs.CachePolicyParametersInCacheKeyAndForwardedToOriginCookiesConfigArgs.Builder)
     /**
      * @param cookies Object that contains a list of cookie names. See Items for more information.
@@ -1059,6 +1109,7 @@ object cloudfront:
       val argsBuilder = com.pulumi.aws.cloudfront.inputs.CachePolicyParametersInCacheKeyAndForwardedToOriginCookiesConfigCookiesArgs.builder
       builder.cookies(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.cloudfront.inputs.MultitenantDistributionState.Builder)
     /**
      * @param activeTrustedKeyGroups List of key groups that CloudFront can use to validate signed URLs or signed cookies. See Active Trusted Key Groups below.
@@ -1146,6 +1197,10 @@ object cloudfront:
       val argsBuilder = com.pulumi.aws.cloudfront.inputs.MultitenantDistributionViewerCertificateArgs.builder
       builder.viewerCertificate(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.cloudfront.inputs.MultitenantDistributionState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.cloudfront.inputs.DistributionViewerMtlsConfigArgs.Builder)
     /**
      * @param trustStoreConfig The trust store configuration for viewer mTLS (maximum one).
@@ -1156,6 +1211,7 @@ object cloudfront:
       val argsBuilder = com.pulumi.aws.cloudfront.inputs.DistributionViewerMtlsConfigTrustStoreConfigArgs.builder
       builder.trustStoreConfig(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.cloudfront.inputs.MonitoringSubscriptionState.Builder)
     /**
      * @param monitoringSubscription A monitoring subscription. This structure contains information about whether additional CloudWatch metrics are enabled for a given CloudFront distribution.
@@ -1166,6 +1222,7 @@ object cloudfront:
       val argsBuilder = com.pulumi.aws.cloudfront.inputs.MonitoringSubscriptionMonitoringSubscriptionArgs.builder
       builder.monitoringSubscription(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.cloudfront.inputs.ResponseHeadersPolicyState.Builder)
     /**
      * @param corsConfig A configuration for a set of HTTP response headers that are used for Cross-Origin Resource Sharing (CORS). See Cors Config for more information.
@@ -1212,6 +1269,7 @@ object cloudfront:
       val argsBuilder = com.pulumi.aws.cloudfront.inputs.ResponseHeadersPolicyServerTimingHeadersConfigArgs.builder
       builder.serverTimingHeadersConfig(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.cloudfront.inputs.DistributionOrderedCacheBehaviorArgs.Builder)
     /**
      * @param forwardedValues The forwarded values configuration that specifies how CloudFront handles query strings, cookies and headers (maximum one).
@@ -1249,6 +1307,7 @@ object cloudfront:
       def argsBuilder = com.pulumi.aws.cloudfront.inputs.DistributionOrderedCacheBehaviorLambdaFunctionAssociationArgs.builder
       builder.lambdaFunctionAssociations(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.cloudfront.inputs.CachePolicyParametersInCacheKeyAndForwardedToOriginQueryStringsConfigArgs.Builder)
     /**
      * @param queryStrings Configuration parameter that contains a list of query string names. See Items for more information.
@@ -1259,6 +1318,7 @@ object cloudfront:
       val argsBuilder = com.pulumi.aws.cloudfront.inputs.CachePolicyParametersInCacheKeyAndForwardedToOriginQueryStringsConfigQueryStringsArgs.builder
       builder.queryStrings(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.cloudfront.inputs.ContinuousDeploymentPolicyState.Builder)
     /**
      * @param stagingDistributionDnsNames CloudFront domain name of the staging distribution. See `stagingDistributionDnsNames`.
@@ -1278,6 +1338,7 @@ object cloudfront:
       val argsBuilder = com.pulumi.aws.cloudfront.inputs.ContinuousDeploymentPolicyTrafficConfigArgs.builder
       builder.trafficConfig(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.cloudfront.inputs.DistributionTenantState.Builder)
     /**
      * @param customizations Customizations for the distribution tenant (maximum one).
@@ -1320,6 +1381,10 @@ object cloudfront:
       val argsBuilder = com.pulumi.aws.cloudfront.inputs.DistributionTenantTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.cloudfront.inputs.DistributionTenantState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.cloudfront.inputs.MultitenantDistributionCacheBehaviorArgs.Builder)
     /**
      * @param allowedMethods Controls which HTTP methods CloudFront processes and forwards to your Amazon S3 bucket or your custom origin.
@@ -1357,6 +1422,7 @@ object cloudfront:
       val argsBuilder = com.pulumi.aws.cloudfront.inputs.MultitenantDistributionCacheBehaviorTrustedKeyGroupsArgs.builder
       builder.trustedKeyGroups(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.cloudfront.inputs.MonitoringSubscriptionMonitoringSubscriptionArgs.Builder)
     /**
      * @param realtimeMetricsSubscriptionConfig A subscription configuration for additional CloudWatch metrics. See below.
@@ -1367,6 +1433,7 @@ object cloudfront:
       val argsBuilder = com.pulumi.aws.cloudfront.inputs.MonitoringSubscriptionMonitoringSubscriptionRealtimeMetricsSubscriptionConfigArgs.builder
       builder.realtimeMetricsSubscriptionConfig(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.cloudfront.inputs.TrustStoreCaCertificatesBundleSourceArgs.Builder)
     /**
      * @param caCertificatesBundleS3Location Configuration block for the S3 location of the CA certificates bundle. See `caCertificatesBundleS3Location` below.
@@ -1377,6 +1444,7 @@ object cloudfront:
       val argsBuilder = com.pulumi.aws.cloudfront.inputs.TrustStoreCaCertificatesBundleSourceCaCertificatesBundleS3LocationArgs.builder
       builder.caCertificatesBundleS3Location(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.cloudfront.inputs.DistributionOriginArgs.Builder)
     /**
      * @param customHeaders One or more sub-resources with `name` and `value` parameters that specify header data that will be sent to the origin (multiples allowed).
@@ -1423,12 +1491,14 @@ object cloudfront:
       val argsBuilder = com.pulumi.aws.cloudfront.inputs.DistributionOriginVpcOriginConfigArgs.builder
       builder.vpcOriginConfig(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.cloudfront.inputs.FieldLevelEncryptionProfileEncryptionEntitiesArgs.Builder)
     def items(args: Endofunction[com.pulumi.aws.cloudfront.inputs.FieldLevelEncryptionProfileEncryptionEntitiesItemArgs.Builder]*):
         com.pulumi.aws.cloudfront.inputs.FieldLevelEncryptionProfileEncryptionEntitiesArgs.Builder =
       def argsBuilder = com.pulumi.aws.cloudfront.inputs.FieldLevelEncryptionProfileEncryptionEntitiesItemArgs.builder
       builder.items(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.cloudfront.inputs.RealtimeLogConfigState.Builder)
     /**
      * @param endpoint The Amazon Kinesis data streams where real-time log data is sent.
@@ -1439,6 +1509,7 @@ object cloudfront:
       val argsBuilder = com.pulumi.aws.cloudfront.inputs.RealtimeLogConfigEndpointArgs.builder
       builder.endpoint(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.cloudfront.inputs.KeyvaluestoreKeysExclusiveState.Builder)
     /**
      * @param resourceKeyValuePairs A list of all resource key value pairs associated with the KeyValueStore.
@@ -1450,6 +1521,7 @@ object cloudfront:
       def argsBuilder = com.pulumi.aws.cloudfront.inputs.KeyvaluestoreKeysExclusiveResourceKeyValuePairArgs.builder
       builder.resourceKeyValuePairs(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.cloudfront.inputs.MultitenantDistributionTenantConfigParameterDefinitionArgs.Builder)
     /**
      * @param definitions Definition of the parameter schema. See Parameter Definition Schema below.
@@ -1460,6 +1532,7 @@ object cloudfront:
       def argsBuilder = com.pulumi.aws.cloudfront.inputs.MultitenantDistributionTenantConfigParameterDefinitionDefinitionArgs.builder
       builder.definitions(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.cloudfront.inputs.DistributionState.Builder)
     /**
      * @param connectionFunctionAssociation A connection function association configuration block (maximum one).
@@ -1569,6 +1642,10 @@ object cloudfront:
       val argsBuilder = com.pulumi.aws.cloudfront.inputs.DistributionViewerMtlsConfigArgs.builder
       builder.viewerMtlsConfig(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.cloudfront.inputs.DistributionState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.cloudfront.inputs.MultitenantDistributionDefaultCacheBehaviorArgs.Builder)
     /**
      * @param allowedMethods Controls which HTTP methods CloudFront processes and forwards to your Amazon S3 bucket or your custom origin.
@@ -1606,6 +1683,7 @@ object cloudfront:
       val argsBuilder = com.pulumi.aws.cloudfront.inputs.MultitenantDistributionDefaultCacheBehaviorTrustedKeyGroupsArgs.builder
       builder.trustedKeyGroups(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.cloudfront.inputs.DistributionTrustedKeyGroupArgs.Builder)
     /**
      * @param items List of nested attributes for each trusted signer
@@ -1616,12 +1694,14 @@ object cloudfront:
       def argsBuilder = com.pulumi.aws.cloudfront.inputs.DistributionTrustedKeyGroupItemArgs.builder
       builder.items(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.cloudfront.inputs.KeyValueStoreState.Builder)
     def timeouts(args: Endofunction[com.pulumi.aws.cloudfront.inputs.KeyValueStoreTimeoutsArgs.Builder]):
         com.pulumi.aws.cloudfront.inputs.KeyValueStoreState.Builder =
       val argsBuilder = com.pulumi.aws.cloudfront.inputs.KeyValueStoreTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.cloudfront.inputs.MultitenantDistributionOriginArgs.Builder)
     /**
      * @param customHeaders One or more sub-resources with `name` and `value` parameters that specify header data that will be sent to the origin. See Custom Header below.
@@ -1659,12 +1739,14 @@ object cloudfront:
       def argsBuilder = com.pulumi.aws.cloudfront.inputs.MultitenantDistributionOriginVpcOriginConfigArgs.builder
       builder.vpcOriginConfigs(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.cloudfront.inputs.OriginRequestPolicyHeadersConfigArgs.Builder)
     def headers(args: Endofunction[com.pulumi.aws.cloudfront.inputs.OriginRequestPolicyHeadersConfigHeadersArgs.Builder]):
         com.pulumi.aws.cloudfront.inputs.OriginRequestPolicyHeadersConfigArgs.Builder =
       val argsBuilder = com.pulumi.aws.cloudfront.inputs.OriginRequestPolicyHeadersConfigHeadersArgs.builder
       builder.headers(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.cloudfront.inputs.VpcOriginState.Builder)
     def timeouts(args: Endofunction[com.pulumi.aws.cloudfront.inputs.VpcOriginTimeoutsArgs.Builder]):
         com.pulumi.aws.cloudfront.inputs.VpcOriginState.Builder =
@@ -1682,12 +1764,17 @@ object cloudfront:
       val argsBuilder = com.pulumi.aws.cloudfront.inputs.VpcOriginVpcOriginEndpointConfigArgs.builder
       builder.vpcOriginEndpointConfig(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.cloudfront.inputs.VpcOriginState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.cloudfront.inputs.DistributionRestrictionsArgs.Builder)
     def geoRestriction(args: Endofunction[com.pulumi.aws.cloudfront.inputs.DistributionRestrictionsGeoRestrictionArgs.Builder]):
         com.pulumi.aws.cloudfront.inputs.DistributionRestrictionsArgs.Builder =
       val argsBuilder = com.pulumi.aws.cloudfront.inputs.DistributionRestrictionsGeoRestrictionArgs.builder
       builder.geoRestriction(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.cloudfront.inputs.ConnectionFunctionConnectionFunctionConfigArgs.Builder)
     /**
      * @param keyValueStoreAssociation Key value store associations. See `keyValueStoreAssociation` below.
@@ -1698,6 +1785,7 @@ object cloudfront:
       val argsBuilder = com.pulumi.aws.cloudfront.inputs.ConnectionFunctionConnectionFunctionConfigKeyValueStoreAssociationArgs.builder
       builder.keyValueStoreAssociation(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.cloudfront.inputs.MultitenantDistributionTenantConfigParameterDefinitionDefinitionArgs.Builder)
     /**
      * @param stringSchemas String schema configuration. See String Schema below.
@@ -1708,6 +1796,7 @@ object cloudfront:
       def argsBuilder = com.pulumi.aws.cloudfront.inputs.MultitenantDistributionTenantConfigParameterDefinitionDefinitionStringSchemaArgs.builder
       builder.stringSchemas(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.cloudfront.inputs.MultitenantDistributionRestrictionsArgs.Builder)
     /**
      * @param geoRestriction Geographic restriction configuration. See Geo Restriction below.
@@ -1718,6 +1807,7 @@ object cloudfront:
       val argsBuilder = com.pulumi.aws.cloudfront.inputs.MultitenantDistributionRestrictionsGeoRestrictionArgs.builder
       builder.geoRestriction(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.cloudfront.inputs.MultitenantDistributionOriginGroupArgs.Builder)
     /**
      * @param failoverCriteria Failover criteria for when to failover to the secondary origin. See Failover Criteria below.
@@ -1737,12 +1827,14 @@ object cloudfront:
       def argsBuilder = com.pulumi.aws.cloudfront.inputs.MultitenantDistributionOriginGroupMemberArgs.builder
       builder.members(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.cloudfront.inputs.FieldLevelEncryptionConfigQueryArgProfileConfigQueryArgProfilesArgs.Builder)
     def items(args: Endofunction[com.pulumi.aws.cloudfront.inputs.FieldLevelEncryptionConfigQueryArgProfileConfigQueryArgProfilesItemArgs.Builder]*):
         com.pulumi.aws.cloudfront.inputs.FieldLevelEncryptionConfigQueryArgProfileConfigQueryArgProfilesArgs.Builder =
       def argsBuilder = com.pulumi.aws.cloudfront.inputs.FieldLevelEncryptionConfigQueryArgProfileConfigQueryArgProfilesItemArgs.builder
       builder.items(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.cloudfront.inputs.FieldLevelEncryptionProfileEncryptionEntitiesItemArgs.Builder)
     /**
      * @param fieldPatterns Object that contains an attribute `items` that contains the list of field patterns in a field-level encryption content type profile specify the fields that you want to be encrypted.
@@ -1753,18 +1845,24 @@ object cloudfront:
       val argsBuilder = com.pulumi.aws.cloudfront.inputs.FieldLevelEncryptionProfileEncryptionEntitiesItemFieldPatternsArgs.builder
       builder.fieldPatterns(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.cloudfront.inputs.AnycastIpListState.Builder)
     def timeouts(args: Endofunction[com.pulumi.aws.cloudfront.inputs.AnycastIpListTimeoutsArgs.Builder]):
         com.pulumi.aws.cloudfront.inputs.AnycastIpListState.Builder =
       val argsBuilder = com.pulumi.aws.cloudfront.inputs.AnycastIpListTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.cloudfront.inputs.AnycastIpListState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.cloudfront.inputs.FieldLevelEncryptionConfigContentTypeProfileConfigContentTypeProfilesArgs.Builder)
     def items(args: Endofunction[com.pulumi.aws.cloudfront.inputs.FieldLevelEncryptionConfigContentTypeProfileConfigContentTypeProfilesItemArgs.Builder]*):
         com.pulumi.aws.cloudfront.inputs.FieldLevelEncryptionConfigContentTypeProfileConfigContentTypeProfilesArgs.Builder =
       def argsBuilder = com.pulumi.aws.cloudfront.inputs.FieldLevelEncryptionConfigContentTypeProfileConfigContentTypeProfilesItemArgs.builder
       builder.items(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.cloudfront.inputs.DistributionDefaultCacheBehaviorArgs.Builder)
     /**
      * @param forwardedValues The forwarded values configuration that specifies how CloudFront handles query strings, cookies and headers (maximum one).
@@ -1802,6 +1900,7 @@ object cloudfront:
       def argsBuilder = com.pulumi.aws.cloudfront.inputs.DistributionDefaultCacheBehaviorLambdaFunctionAssociationArgs.builder
       builder.lambdaFunctionAssociations(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.cloudfront.inputs.DistributionTenantCustomizationsArgs.Builder)
     /**
      * @param certificate Certificate configuration for the tenant (maximum one).
@@ -1830,6 +1929,7 @@ object cloudfront:
       val argsBuilder = com.pulumi.aws.cloudfront.inputs.DistributionTenantCustomizationsWebAclArgs.builder
       builder.webAcl(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.cloudfront.inputs.FieldLevelEncryptionProfileState.Builder)
     /**
      * @param encryptionEntities The encryption entities config block for field-level encryption profiles that contains an attribute `items` which includes the encryption key and field pattern specifications.
@@ -1840,6 +1940,7 @@ object cloudfront:
       val argsBuilder = com.pulumi.aws.cloudfront.inputs.FieldLevelEncryptionProfileEncryptionEntitiesArgs.builder
       builder.encryptionEntities(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.cloudfront.inputs.CachePolicyParametersInCacheKeyAndForwardedToOriginHeadersConfigArgs.Builder)
     /**
      * @param headers Object contains a list of header names. See Items for more information.
@@ -1850,6 +1951,7 @@ object cloudfront:
       val argsBuilder = com.pulumi.aws.cloudfront.inputs.CachePolicyParametersInCacheKeyAndForwardedToOriginHeadersConfigHeadersArgs.builder
       builder.headers(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.cloudfront.inputs.DistributionOrderedCacheBehaviorForwardedValuesArgs.Builder)
     /**
      * @param cookies The forwarded values cookies that specifies how CloudFront handles cookies (maximum one).
@@ -1860,6 +1962,7 @@ object cloudfront:
       val argsBuilder = com.pulumi.aws.cloudfront.inputs.DistributionOrderedCacheBehaviorForwardedValuesCookiesArgs.builder
       builder.cookies(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.cloudfront.inputs.ConnectionFunctionState.Builder)
     /**
      * @param connectionFunctionConfig Configuration information for the connection function. See `connectionFunctionConfig` below.
@@ -1870,6 +1973,10 @@ object cloudfront:
       val argsBuilder = com.pulumi.aws.cloudfront.inputs.ConnectionFunctionConnectionFunctionConfigArgs.builder
       builder.connectionFunctionConfig(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.cloudfront.inputs.ConnectionFunctionState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.cloudfront.inputs.DistributionOriginGroupArgs.Builder)
     /**
      * @param failoverCriteria The failover criteria for when to failover to the secondary origin.
@@ -1889,6 +1996,7 @@ object cloudfront:
       def argsBuilder = com.pulumi.aws.cloudfront.inputs.DistributionOriginGroupMemberArgs.builder
       builder.members(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.cloudfront.inputs.FieldLevelEncryptionConfigState.Builder)
     /**
      * @param contentTypeProfileConfig Content Type Profile Config specifies when to forward content if a content type isn&#39;t recognized and profiles to use as by default in a request if a query argument doesn&#39;t specify a profile to use.
@@ -1908,6 +2016,7 @@ object cloudfront:
       val argsBuilder = com.pulumi.aws.cloudfront.inputs.FieldLevelEncryptionConfigQueryArgProfileConfigArgs.builder
       builder.queryArgProfileConfig(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.cloudfront.inputs.FieldLevelEncryptionConfigContentTypeProfileConfigArgs.Builder)
     /**
      * @param contentTypeProfiles Object that contains an attribute `items` that contains the list of configurations for a field-level encryption content type-profile. See Content Type Profile.
@@ -1918,6 +2027,7 @@ object cloudfront:
       val argsBuilder = com.pulumi.aws.cloudfront.inputs.FieldLevelEncryptionConfigContentTypeProfileConfigContentTypeProfilesArgs.builder
       builder.contentTypeProfiles(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.cloudfront.inputs.FieldLevelEncryptionConfigQueryArgProfileConfigArgs.Builder)
     /**
      * @param queryArgProfiles Object that contains an attribute `items` that contains the list ofrofiles specified for query argument-profile mapping for field-level encryption. see Query Arg Profile.
@@ -1928,6 +2038,7 @@ object cloudfront:
       val argsBuilder = com.pulumi.aws.cloudfront.inputs.FieldLevelEncryptionConfigQueryArgProfileConfigQueryArgProfilesArgs.builder
       builder.queryArgProfiles(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.cloudfront.inputs.ResponseHeadersPolicySecurityHeadersConfigArgs.Builder)
     /**
      * @param contentSecurityPolicy The policy directives and their values that CloudFront includes as values for the `Content-Security-Policy` HTTP response header. See Content Security Policy for more information.
@@ -1983,6 +2094,7 @@ object cloudfront:
       val argsBuilder = com.pulumi.aws.cloudfront.inputs.ResponseHeadersPolicySecurityHeadersConfigXssProtectionArgs.builder
       builder.xssProtection(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.cloudfront.inputs.ContinuousDeploymentPolicyTrafficConfigSingleWeightConfigArgs.Builder)
     /**
      * @param sessionStickinessConfig Session stickiness provides the ability to define multiple requests from a single viewer as a single session. This prevents the potentially inconsistent experience of sending some of a given user&#39;s requests to the staging distribution, while others are sent to the primary distribution. Define the session duration using TTL values. See `sessionStickinessConfig`.
@@ -1993,6 +2105,7 @@ object cloudfront:
       val argsBuilder = com.pulumi.aws.cloudfront.inputs.ContinuousDeploymentPolicyTrafficConfigSingleWeightConfigSessionStickinessConfigArgs.builder
       builder.sessionStickinessConfig(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.cloudfront.inputs.MultitenantDistributionActiveTrustedKeyGroupArgs.Builder)
     /**
      * @param items List of key groups. See Key Group Items below.
@@ -2003,6 +2116,7 @@ object cloudfront:
       def argsBuilder = com.pulumi.aws.cloudfront.inputs.MultitenantDistributionActiveTrustedKeyGroupItemArgs.builder
       builder.items(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.cloudfront.inputs.RealtimeLogConfigEndpointArgs.Builder)
     /**
      * @param kinesisStreamConfig The Amazon Kinesis data stream configuration.
@@ -2013,12 +2127,14 @@ object cloudfront:
       val argsBuilder = com.pulumi.aws.cloudfront.inputs.RealtimeLogConfigEndpointKinesisStreamConfigArgs.builder
       builder.kinesisStreamConfig(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.cloudfront.inputs.ResponseHeadersPolicyCustomHeadersConfigArgs.Builder)
     def items(args: Endofunction[com.pulumi.aws.cloudfront.inputs.ResponseHeadersPolicyCustomHeadersConfigItemArgs.Builder]*):
         com.pulumi.aws.cloudfront.inputs.ResponseHeadersPolicyCustomHeadersConfigArgs.Builder =
       def argsBuilder = com.pulumi.aws.cloudfront.inputs.ResponseHeadersPolicyCustomHeadersConfigItemArgs.builder
       builder.items(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.cloudfront.inputs.CachePolicyParametersInCacheKeyAndForwardedToOriginArgs.Builder)
     /**
      * @param cookiesConfig Whether any cookies in viewer requests are included in the cache key and automatically included in requests that CloudFront sends to the origin. See Cookies Config for more information.
@@ -2047,12 +2163,14 @@ object cloudfront:
       val argsBuilder = com.pulumi.aws.cloudfront.inputs.CachePolicyParametersInCacheKeyAndForwardedToOriginQueryStringsConfigArgs.builder
       builder.queryStringsConfig(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.cloudfront.inputs.ResponseHeadersPolicyRemoveHeadersConfigArgs.Builder)
     def items(args: Endofunction[com.pulumi.aws.cloudfront.inputs.ResponseHeadersPolicyRemoveHeadersConfigItemArgs.Builder]*):
         com.pulumi.aws.cloudfront.inputs.ResponseHeadersPolicyRemoveHeadersConfigArgs.Builder =
       def argsBuilder = com.pulumi.aws.cloudfront.inputs.ResponseHeadersPolicyRemoveHeadersConfigItemArgs.builder
       builder.items(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.cloudfront.inputs.DistributionTrustedSignerArgs.Builder)
     /**
      * @param items List of nested attributes for each trusted signer
@@ -2063,12 +2181,14 @@ object cloudfront:
       def argsBuilder = com.pulumi.aws.cloudfront.inputs.DistributionTrustedSignerItemArgs.builder
       builder.items(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.cloudfront.inputs.OriginRequestPolicyCookiesConfigArgs.Builder)
     def cookies(args: Endofunction[com.pulumi.aws.cloudfront.inputs.OriginRequestPolicyCookiesConfigCookiesArgs.Builder]):
         com.pulumi.aws.cloudfront.inputs.OriginRequestPolicyCookiesConfigArgs.Builder =
       val argsBuilder = com.pulumi.aws.cloudfront.inputs.OriginRequestPolicyCookiesConfigCookiesArgs.builder
       builder.cookies(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.cloudfront.inputs.DistributionDefaultCacheBehaviorForwardedValuesArgs.Builder)
     /**
      * @param cookies The forwarded values cookies that specifies how CloudFront handles cookies (maximum one).
@@ -2079,6 +2199,7 @@ object cloudfront:
       val argsBuilder = com.pulumi.aws.cloudfront.inputs.DistributionDefaultCacheBehaviorForwardedValuesCookiesArgs.builder
       builder.cookies(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.cloudfront.inputs.VpcOriginVpcOriginEndpointConfigArgs.Builder)
     /**
      * @param originSslProtocols A complex type that contains information about the SSL/TLS protocols that CloudFront can use when establishing an HTTPS connection with your origin.
@@ -2089,6 +2210,7 @@ object cloudfront:
       val argsBuilder = com.pulumi.aws.cloudfront.inputs.VpcOriginVpcOriginEndpointConfigOriginSslProtocolsArgs.builder
       builder.originSslProtocols(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.cloudfront.inputs.MultitenantDistributionTenantConfigArgs.Builder)
     /**
      * @param parameterDefinitions One or more parameter definitions for the tenant configuration. See Parameter Definition below.
@@ -2099,6 +2221,7 @@ object cloudfront:
       def argsBuilder = com.pulumi.aws.cloudfront.inputs.MultitenantDistributionTenantConfigParameterDefinitionArgs.builder
       builder.parameterDefinitions(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.cloudfront.ResponseHeadersPolicyArgs.Builder)
     /**
      * @param corsConfig A configuration for a set of HTTP response headers that are used for Cross-Origin Resource Sharing (CORS). See Cors Config for more information.
@@ -2145,6 +2268,7 @@ object cloudfront:
       val argsBuilder = com.pulumi.aws.cloudfront.inputs.ResponseHeadersPolicyServerTimingHeadersConfigArgs.builder
       builder.serverTimingHeadersConfig(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.cloudfront.TrustStoreArgs.Builder)
     /**
      * @param caCertificatesBundleSource Configuration block for the CA certificates bundle source. See `caCertificatesBundleSource` below.
@@ -2161,3 +2285,8 @@ object cloudfront:
         com.pulumi.aws.cloudfront.TrustStoreArgs.Builder =
       val argsBuilder = com.pulumi.aws.cloudfront.inputs.TrustStoreTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
+
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.cloudfront.TrustStoreArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       

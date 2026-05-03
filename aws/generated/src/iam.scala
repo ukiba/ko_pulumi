@@ -318,6 +318,7 @@ object iam:
       val argsBuilder = com.pulumi.aws.iam.inputs.PolicyDocumentArgs.builder
       builder.policy(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.iam.GroupPolicyArgs.Builder)
     /**
      * @param policy The policy document. This is a JSON formatted string.
@@ -328,6 +329,7 @@ object iam:
       val argsBuilder = com.pulumi.aws.iam.inputs.PolicyDocumentArgs.builder
       builder.policy(args(argsBuilder).build)
 
+                       
   /**
    * &gt; **Note:** There is only a single policy allowed per AWS account. An existing policy will be lost when using this resource as an effect of this limitation.
    *  
@@ -375,6 +377,10 @@ object iam:
       def argsBuilder = com.pulumi.aws.iam.inputs.RoleInlinePolicyArgs.builder
       builder.inlinePolicies(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.iam.RoleArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /**
    * Resource for maintaining exclusive management of managed IAM policies assigned to an AWS IAM (Identity &amp; Access Management) user.
    *  
@@ -839,6 +845,10 @@ object iam:
       val argsBuilder = com.pulumi.aws.iam.inputs.PolicyDocumentArgs.builder
       builder.policy(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.iam.PolicyArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /**
    * &gt; **NOTE:**: To reliably detect drift between customer managed policies listed in this resource and actual policies attached to the role in the cloud, you currently need to run Pulumi with `pulumi up --refresh`. See [#4766](https://github.com/pulumi/pulumi-aws/issues/4766) for tracking making this work with regular `pulumi up`
    *  
@@ -880,6 +890,7 @@ object iam:
       val argsBuilder = com.pulumi.aws.iam.inputs.PolicyDocumentArgs.builder
       builder.policy(args(argsBuilder).build)
 
+                       
   /**
    * Provides an IAM policy.
    *  
@@ -911,6 +922,7 @@ object iam:
       def argsBuilder = com.pulumi.aws.iam.inputs.GetPrincipalPolicySimulationContextArgs.builder
       builder.contexts(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.iam.inputs.GetPolicyDocumentStatementArgs.Builder)
     /**
      * @param conditions Configuration block for a condition. Detailed below.
@@ -939,6 +951,7 @@ object iam:
       def argsBuilder = com.pulumi.aws.iam.inputs.GetPolicyDocumentStatementPrincipalArgs.builder
       builder.principals(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.iam.inputs.UserPolicyState.Builder)
     /**
      * @param policy The policy document. This is a JSON formatted string.
@@ -949,6 +962,7 @@ object iam:
       val argsBuilder = com.pulumi.aws.iam.inputs.PolicyDocumentArgs.builder
       builder.policy(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.iam.inputs.PolicyState.Builder)
     /**
      * @param policy Policy document. This is a JSON formatted string. For more information about building AWS IAM policy documents, see the AWS IAM Policy Document Guide
@@ -959,6 +973,10 @@ object iam:
       val argsBuilder = com.pulumi.aws.iam.inputs.PolicyDocumentArgs.builder
       builder.policy(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.iam.inputs.PolicyState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.iam.inputs.RolePolicyState.Builder)
     /**
      * @param policy The inline policy document.
@@ -971,6 +989,7 @@ object iam:
       val argsBuilder = com.pulumi.aws.iam.inputs.PolicyDocumentArgs.builder
       builder.policy(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.iam.inputs.GetPolicyDocumentArgs.Builder)
     /**
      * @param statements Configuration block for a policy statement. Detailed below.
@@ -981,6 +1000,7 @@ object iam:
       def argsBuilder = com.pulumi.aws.iam.inputs.GetPolicyDocumentStatementArgs.builder
       builder.statements(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.iam.inputs.RoleState.Builder)
     /**
      * @param assumeRolePolicy Policy that grants an entity permission to assume the role.
@@ -1004,12 +1024,17 @@ object iam:
       def argsBuilder = com.pulumi.aws.iam.inputs.RoleInlinePolicyArgs.builder
       builder.inlinePolicies(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.iam.inputs.RoleState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.iam.inputs.PolicyDocumentArgs.Builder)
     def Statement(args: Endofunction[com.pulumi.aws.iam.inputs.PolicyStatementArgs.Builder]*):
         com.pulumi.aws.iam.inputs.PolicyDocumentArgs.Builder =
       def argsBuilder = com.pulumi.aws.iam.inputs.PolicyStatementArgs.builder
       builder.Statement(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.iam.inputs.GroupPolicyState.Builder)
     /**
      * @param policy The policy document. This is a JSON formatted string.
@@ -1020,6 +1045,7 @@ object iam:
       val argsBuilder = com.pulumi.aws.iam.inputs.PolicyDocumentArgs.builder
       builder.policy(args(argsBuilder).build)
 
+                       
   /**
    * Manages an AWS IAM (Identity &amp; Access Management) Outbound Web Identity Federation.
    *  

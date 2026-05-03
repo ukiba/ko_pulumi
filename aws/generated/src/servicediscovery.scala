@@ -32,6 +32,10 @@ object servicediscovery:
       val argsBuilder = com.pulumi.aws.servicediscovery.inputs.ServiceHealthCheckCustomConfigArgs.builder
       builder.healthCheckCustomConfig(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.servicediscovery.ServiceArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   type ServicediscoveryFunctions = com.pulumi.aws.servicediscovery.ServicediscoveryFunctions
   object ServicediscoveryFunctions:
     // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
@@ -158,6 +162,7 @@ object servicediscovery:
       def argsBuilder = com.pulumi.aws.servicediscovery.inputs.ServiceDnsConfigDnsRecordArgs.builder
       builder.dnsRecords(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.servicediscovery.inputs.ServiceState.Builder)
     /**
      * @param dnsConfig A complex type that contains information about the resource record sets that you want Amazon Route 53 to create when you register an instance. See `dnsConfig` Block for details.
@@ -185,3 +190,8 @@ object servicediscovery:
         com.pulumi.aws.servicediscovery.inputs.ServiceState.Builder =
       val argsBuilder = com.pulumi.aws.servicediscovery.inputs.ServiceHealthCheckCustomConfigArgs.builder
       builder.healthCheckCustomConfig(args(argsBuilder).build)
+
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.servicediscovery.inputs.ServiceState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       

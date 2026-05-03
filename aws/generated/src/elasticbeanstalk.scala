@@ -144,6 +144,10 @@ object elasticbeanstalk:
       def argsBuilder = com.pulumi.aws.elasticbeanstalk.inputs.EnvironmentSettingArgs.builder
       builder.settings(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.elasticbeanstalk.EnvironmentArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.elasticbeanstalk.ConfigurationTemplateArgs.Builder)
     /**
      * @param settings Option settings to configure the new Environment. These
@@ -156,12 +160,17 @@ object elasticbeanstalk:
       def argsBuilder = com.pulumi.aws.elasticbeanstalk.inputs.ConfigurationTemplateSettingArgs.builder
       builder.settings(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.elasticbeanstalk.ApplicationArgs.Builder)
     def appversionLifecycle(args: Endofunction[com.pulumi.aws.elasticbeanstalk.inputs.ApplicationAppversionLifecycleArgs.Builder]):
         com.pulumi.aws.elasticbeanstalk.ApplicationArgs.Builder =
       val argsBuilder = com.pulumi.aws.elasticbeanstalk.inputs.ApplicationAppversionLifecycleArgs.builder
       builder.appversionLifecycle(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.elasticbeanstalk.ApplicationArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.elasticbeanstalk.inputs.EnvironmentState.Builder)
     /**
      * @param allSettings List of all option settings configured in this Environment. These
@@ -185,12 +194,20 @@ object elasticbeanstalk:
       def argsBuilder = com.pulumi.aws.elasticbeanstalk.inputs.EnvironmentSettingArgs.builder
       builder.settings(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.elasticbeanstalk.inputs.EnvironmentState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.elasticbeanstalk.inputs.ApplicationState.Builder)
     def appversionLifecycle(args: Endofunction[com.pulumi.aws.elasticbeanstalk.inputs.ApplicationAppversionLifecycleArgs.Builder]):
         com.pulumi.aws.elasticbeanstalk.inputs.ApplicationState.Builder =
       val argsBuilder = com.pulumi.aws.elasticbeanstalk.inputs.ApplicationAppversionLifecycleArgs.builder
       builder.appversionLifecycle(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.elasticbeanstalk.inputs.ApplicationState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.elasticbeanstalk.inputs.ConfigurationTemplateState.Builder)
     /**
      * @param settings Option settings to configure the new Environment. These
@@ -202,3 +219,5 @@ object elasticbeanstalk:
         com.pulumi.aws.elasticbeanstalk.inputs.ConfigurationTemplateState.Builder =
       def argsBuilder = com.pulumi.aws.elasticbeanstalk.inputs.ConfigurationTemplateSettingArgs.builder
       builder.settings(args.map(_(argsBuilder).build)*)
+
+                       

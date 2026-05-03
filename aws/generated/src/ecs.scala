@@ -122,6 +122,10 @@ object ecs:
       def argsBuilder = com.pulumi.aws.ecs.inputs.ServiceVpcLatticeConfigurationArgs.builder
       builder.vpcLatticeConfigurations(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.ecs.ServiceArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /**
    * Manages the capacity providers of an ECS Cluster.
    *  
@@ -232,6 +236,10 @@ object ecs:
       def argsBuilder = com.pulumi.aws.ecs.inputs.ClusterSettingArgs.builder
       builder.settings(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.ecs.ClusterArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.ecs.ExpressGatewayServiceArgs.Builder)
     def networkConfigurations(args: Endofunction[com.pulumi.aws.ecs.inputs.ExpressGatewayServiceNetworkConfigurationArgs.Builder]*):
         com.pulumi.aws.ecs.ExpressGatewayServiceArgs.Builder =
@@ -253,6 +261,10 @@ object ecs:
       val argsBuilder = com.pulumi.aws.ecs.inputs.ExpressGatewayServiceTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.ecs.ExpressGatewayServiceArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /**
    * &gt; **Note:** To prevent a race condition during service deletion, make sure to set `dependsOn` to the related `aws.iam.RolePolicy`; otherwise, the policy may be destroyed too soon and the ECS service will then get stuck in the `DRAINING` state.
    *  
@@ -338,6 +350,10 @@ object ecs:
       val argsBuilder = com.pulumi.aws.ecs.inputs.TaskSetServiceRegistriesArgs.builder
       builder.serviceRegistries(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.ecs.TaskSetArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.ecs.CapacityProviderArgs.Builder)
     /**
      * @param autoScalingGroupProvider Configuration block for the provider for the ECS auto scaling group. Detailed below. Exactly one of `autoScalingGroupProvider` or `managedInstancesProvider` must be specified.
@@ -357,6 +373,10 @@ object ecs:
       val argsBuilder = com.pulumi.aws.ecs.inputs.CapacityProviderManagedInstancesProviderArgs.builder
       builder.managedInstancesProvider(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.ecs.CapacityProviderArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /**
    * Provides an ECS task set - effectively a task that is expected to run until an error occurs or a user terminates it (typically a webserver or a database).
    *  
@@ -507,6 +527,7 @@ object ecs:
       def argsBuilder = com.pulumi.aws.ecs.inputs.ClusterCapacityProvidersDefaultCapacityProviderStrategyArgs.builder
       builder.defaultCapacityProviderStrategies(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.ecs.TaskDefinitionArgs.Builder)
     /**
      * @param ephemeralStorage The amount of ephemeral storage to allocate for the task. This parameter is used to expand the total amount of ephemeral storage available, beyond the default amount, for tasks hosted on AWS Fargate. See Ephemeral Storage.
@@ -557,6 +578,10 @@ object ecs:
       def argsBuilder = com.pulumi.aws.ecs.inputs.TaskDefinitionVolumeArgs.builder
       builder.volumes(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.ecs.TaskDefinitionArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.ecs.inputs.ExpressGatewayServiceState.Builder)
     /**
      * @param ingressPaths List of ingress paths with access type and endpoint information.
@@ -587,6 +612,10 @@ object ecs:
       val argsBuilder = com.pulumi.aws.ecs.inputs.ExpressGatewayServiceTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.ecs.inputs.ExpressGatewayServiceState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.ecs.inputs.ServiceServiceConnectConfigurationServiceArgs.Builder)
     /**
      * @param clientAlias List of client aliases for this Service Connect service. You use these to assign names that can be used by client applications. For each service block where enabled is true, exactly one `clientAlias` with one `port` should be specified. See below.
@@ -615,6 +644,7 @@ object ecs:
       val argsBuilder = com.pulumi.aws.ecs.inputs.ServiceServiceConnectConfigurationServiceTlsArgs.builder
       builder.tls(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.ecs.inputs.ClusterCapacityProvidersState.Builder)
     /**
      * @param defaultCapacityProviderStrategies Set of capacity provider strategies to use by default for the cluster. Detailed below.
@@ -625,6 +655,7 @@ object ecs:
       def argsBuilder = com.pulumi.aws.ecs.inputs.ClusterCapacityProvidersDefaultCapacityProviderStrategyArgs.builder
       builder.defaultCapacityProviderStrategies(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.ecs.inputs.ClusterState.Builder)
     /**
      * @param configuration Execute command configuration for the cluster. See `configuration` Block for details.
@@ -653,6 +684,10 @@ object ecs:
       def argsBuilder = com.pulumi.aws.ecs.inputs.ClusterSettingArgs.builder
       builder.settings(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.ecs.inputs.ClusterState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.ecs.inputs.TaskDefinitionVolumeFsxWindowsFileServerVolumeConfigurationArgs.Builder)
     /**
      * @param authorizationConfig Configuration block for authorization for the Amazon FSx for Windows File Server file system detailed below.
@@ -663,6 +698,7 @@ object ecs:
       val argsBuilder = com.pulumi.aws.ecs.inputs.TaskDefinitionVolumeFsxWindowsFileServerVolumeConfigurationAuthorizationConfigArgs.builder
       builder.authorizationConfig(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.ecs.inputs.ServiceServiceConnectConfigurationServiceClientAliasArgs.Builder)
     /**
      * @param testTrafficRules Configuration block for test traffic routing rules. See below.
@@ -673,6 +709,7 @@ object ecs:
       def argsBuilder = com.pulumi.aws.ecs.inputs.ServiceServiceConnectConfigurationServiceClientAliasTestTrafficRuleArgs.builder
       builder.testTrafficRules(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.ecs.inputs.ExpressGatewayServicePrimaryContainerArgs.Builder)
     def awsLogsConfigurations(args: Endofunction[com.pulumi.aws.ecs.inputs.ExpressGatewayServicePrimaryContainerAwsLogsConfigurationArgs.Builder]*):
         com.pulumi.aws.ecs.inputs.ExpressGatewayServicePrimaryContainerArgs.Builder =
@@ -694,6 +731,7 @@ object ecs:
       def argsBuilder = com.pulumi.aws.ecs.inputs.ExpressGatewayServicePrimaryContainerSecretArgs.builder
       builder.secrets(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.ecs.inputs.ServiceServiceConnectConfigurationArgs.Builder)
     /**
      * @param accessLogConfiguration Configuration for Service Connect access logs. See below.
@@ -722,6 +760,7 @@ object ecs:
       def argsBuilder = com.pulumi.aws.ecs.inputs.ServiceServiceConnectConfigurationServiceArgs.builder
       builder.services(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.ecs.inputs.CapacityProviderManagedInstancesProviderInstanceLaunchTemplateArgs.Builder)
     /**
      * @param instanceRequirements The instance requirements. You can specify the instance types and instance requirements such as vCPU count, memory, network performance, and accelerator specifications. Amazon ECS automatically selects the instances that match the specified criteria. Detailed below.
@@ -750,6 +789,7 @@ object ecs:
       val argsBuilder = com.pulumi.aws.ecs.inputs.CapacityProviderManagedInstancesProviderInstanceLaunchTemplateStorageConfigurationArgs.builder
       builder.storageConfiguration(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.ecs.inputs.ServiceServiceConnectConfigurationServiceClientAliasTestTrafficRuleArgs.Builder)
     /**
      * @param header Configuration block for header-based routing rules. See below.
@@ -760,6 +800,7 @@ object ecs:
       val argsBuilder = com.pulumi.aws.ecs.inputs.ServiceServiceConnectConfigurationServiceClientAliasTestTrafficRuleHeaderArgs.builder
       builder.header(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.ecs.inputs.TaskDefinitionVolumeArgs.Builder)
     /**
      * @param dockerVolumeConfiguration Configuration block to configure a docker volume. Detailed below.
@@ -797,6 +838,7 @@ object ecs:
       val argsBuilder = com.pulumi.aws.ecs.inputs.TaskDefinitionVolumeS3filesVolumeConfigurationArgs.builder
       builder.s3filesVolumeConfiguration(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.ecs.inputs.ServiceVolumeConfigurationManagedEbsVolumeArgs.Builder)
     /**
      * @param tagSpecifications The tags to apply to the volume. See below.
@@ -807,6 +849,7 @@ object ecs:
       def argsBuilder = com.pulumi.aws.ecs.inputs.ServiceVolumeConfigurationManagedEbsVolumeTagSpecificationArgs.builder
       builder.tagSpecifications(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.ecs.inputs.ServiceServiceConnectConfigurationServiceTlsArgs.Builder)
     /**
      * @param issuerCertAuthority Details of the certificate authority which will issue the certificate.
@@ -817,6 +860,7 @@ object ecs:
       val argsBuilder = com.pulumi.aws.ecs.inputs.ServiceServiceConnectConfigurationServiceTlsIssuerCertAuthorityArgs.builder
       builder.issuerCertAuthority(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.ecs.inputs.CapacityProviderState.Builder)
     /**
      * @param autoScalingGroupProvider Configuration block for the provider for the ECS auto scaling group. Detailed below. Exactly one of `autoScalingGroupProvider` or `managedInstancesProvider` must be specified.
@@ -836,6 +880,10 @@ object ecs:
       val argsBuilder = com.pulumi.aws.ecs.inputs.CapacityProviderManagedInstancesProviderArgs.builder
       builder.managedInstancesProvider(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.ecs.inputs.CapacityProviderState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.ecs.inputs.ClusterConfigurationExecuteCommandConfigurationArgs.Builder)
     /**
      * @param logConfiguration Log configuration for the results of the execute command actions. Required when `logging` is `OVERRIDE`. See `logConfiguration` Block for details.
@@ -846,6 +894,7 @@ object ecs:
       val argsBuilder = com.pulumi.aws.ecs.inputs.ClusterConfigurationExecuteCommandConfigurationLogConfigurationArgs.builder
       builder.logConfiguration(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.ecs.inputs.ServiceVolumeConfigurationArgs.Builder)
     /**
      * @param managedEbsVolume Configuration for the Amazon EBS volume that Amazon ECS creates and manages on your behalf. See below.
@@ -856,6 +905,7 @@ object ecs:
       val argsBuilder = com.pulumi.aws.ecs.inputs.ServiceVolumeConfigurationManagedEbsVolumeArgs.builder
       builder.managedEbsVolume(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.ecs.inputs.CapacityProviderManagedInstancesProviderInstanceLaunchTemplateInstanceRequirementsArgs.Builder)
     /**
      * @param acceleratorCount The minimum and maximum number of accelerators for the instance types. This is used when you need instances with specific numbers of GPUs or other accelerators.
@@ -938,6 +988,7 @@ object ecs:
       val argsBuilder = com.pulumi.aws.ecs.inputs.CapacityProviderManagedInstancesProviderInstanceLaunchTemplateInstanceRequirementsVcpuCountArgs.builder
       builder.vcpuCount(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.ecs.inputs.ServiceServiceConnectConfigurationServiceClientAliasTestTrafficRuleHeaderArgs.Builder)
     /**
      * @param value Configuration block for header value matching criteria. See below.
@@ -948,6 +999,7 @@ object ecs:
       val argsBuilder = com.pulumi.aws.ecs.inputs.ServiceServiceConnectConfigurationServiceClientAliasTestTrafficRuleHeaderValueArgs.builder
       builder.value(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.ecs.inputs.ServiceDeploymentConfigurationArgs.Builder)
     /**
      * @param canaryConfiguration Configuration block for canary deployment strategy. Required when `strategy` is set to `CANARY`. See below.
@@ -976,6 +1028,7 @@ object ecs:
       val argsBuilder = com.pulumi.aws.ecs.inputs.ServiceDeploymentConfigurationLinearConfigurationArgs.builder
       builder.linearConfiguration(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.ecs.inputs.ServiceState.Builder)
     /**
      * @param alarms Information about the CloudWatch alarms. See below.
@@ -1094,6 +1147,10 @@ object ecs:
       def argsBuilder = com.pulumi.aws.ecs.inputs.ServiceVpcLatticeConfigurationArgs.builder
       builder.vpcLatticeConfigurations(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.ecs.inputs.ServiceState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.ecs.inputs.ServiceServiceConnectConfigurationLogConfigurationArgs.Builder)
     /**
      * @param secretOptions Secrets to pass to the log configuration. See below.
@@ -1104,6 +1161,7 @@ object ecs:
       def argsBuilder = com.pulumi.aws.ecs.inputs.ServiceServiceConnectConfigurationLogConfigurationSecretOptionArgs.builder
       builder.secretOptions(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.ecs.inputs.TaskDefinitionVolumeEfsVolumeConfigurationArgs.Builder)
     /**
      * @param authorizationConfig Configuration block for authorization for the Amazon EFS file system. Detailed below.
@@ -1114,6 +1172,7 @@ object ecs:
       val argsBuilder = com.pulumi.aws.ecs.inputs.TaskDefinitionVolumeEfsVolumeConfigurationAuthorizationConfigArgs.builder
       builder.authorizationConfig(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.ecs.inputs.CapacityProviderManagedInstancesProviderArgs.Builder)
     /**
      * @param infrastructureOptimization Defines how Amazon ECS Managed Instances optimizes the infrastructure in your capacity provider. Configure it to turn on or off the infrastructure optimization in your capacity provider, and to control the idle EC2 instances optimization delay.
@@ -1133,6 +1192,7 @@ object ecs:
       val argsBuilder = com.pulumi.aws.ecs.inputs.CapacityProviderManagedInstancesProviderInstanceLaunchTemplateArgs.builder
       builder.instanceLaunchTemplate(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.ecs.inputs.TaskSetState.Builder)
     /**
      * @param capacityProviderStrategies The capacity provider strategy to use for the service. Can be one or more.  Defined below.
@@ -1179,6 +1239,10 @@ object ecs:
       val argsBuilder = com.pulumi.aws.ecs.inputs.TaskSetServiceRegistriesArgs.builder
       builder.serviceRegistries(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.ecs.inputs.TaskSetState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.ecs.inputs.ClusterConfigurationArgs.Builder)
     /**
      * @param executeCommandConfiguration Details of the execute command configuration. See `executeCommandConfiguration` Block for details.
@@ -1198,6 +1262,7 @@ object ecs:
       val argsBuilder = com.pulumi.aws.ecs.inputs.ClusterConfigurationManagedStorageConfigurationArgs.builder
       builder.managedStorageConfiguration(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.ecs.inputs.TaskDefinitionState.Builder)
     /**
      * @param ephemeralStorage The amount of ephemeral storage to allocate for the task. This parameter is used to expand the total amount of ephemeral storage available, beyond the default amount, for tasks hosted on AWS Fargate. See Ephemeral Storage.
@@ -1248,6 +1313,10 @@ object ecs:
       def argsBuilder = com.pulumi.aws.ecs.inputs.TaskDefinitionVolumeArgs.builder
       builder.volumes(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.ecs.inputs.TaskDefinitionState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.ecs.inputs.ServiceLoadBalancerArgs.Builder)
     /**
      * @param advancedConfiguration Configuration block for Blue/Green deployment settings. Required when using `BLUE_GREEN` deployment strategy. See below.
@@ -1258,6 +1327,7 @@ object ecs:
       val argsBuilder = com.pulumi.aws.ecs.inputs.ServiceLoadBalancerAdvancedConfigurationArgs.builder
       builder.advancedConfiguration(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.ecs.inputs.GetTaskExecutionArgs.Builder)
     /**
      * @param capacityProviderStrategies Set of capacity provider strategies to use for the cluster. See below.
@@ -1304,6 +1374,10 @@ object ecs:
       def argsBuilder = com.pulumi.aws.ecs.inputs.GetTaskExecutionPlacementStrategyArgs.builder
       builder.placementStrategies(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.ecs.inputs.GetTaskExecutionArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.ecs.inputs.CapacityProviderAutoScalingGroupProviderArgs.Builder)
     /**
      * @param managedScaling Configuration block defining the parameters of the auto scaling. Detailed below.
@@ -1314,6 +1388,7 @@ object ecs:
       val argsBuilder = com.pulumi.aws.ecs.inputs.CapacityProviderAutoScalingGroupProviderManagedScalingArgs.builder
       builder.managedScaling(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.ecs.inputs.GetTaskExecutionOverridesArgs.Builder)
     /**
      * @param containerOverrides One or more container overrides that are sent to a task. See below.
@@ -1324,6 +1399,7 @@ object ecs:
       def argsBuilder = com.pulumi.aws.ecs.inputs.GetTaskExecutionOverridesContainerOverrideArgs.builder
       builder.containerOverrides(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.ecs.inputs.GetTaskExecutionOverridesContainerOverrideArgs.Builder)
     /**
      * @param environments The environment variables to send to the container. You can add new environment variables, which are added to the container at launch, or you can override the existing environment variables from the Docker image or the task definition. See below.
@@ -1342,3 +1418,5 @@ object ecs:
         com.pulumi.aws.ecs.inputs.GetTaskExecutionOverridesContainerOverrideArgs.Builder =
       def argsBuilder = com.pulumi.aws.ecs.inputs.GetTaskExecutionOverridesContainerOverrideResourceRequirementArgs.builder
       builder.resourceRequirements(args.map(_(argsBuilder).build)*)
+
+                       

@@ -42,6 +42,10 @@ object transcribe:
       val argsBuilder = com.pulumi.aws.transcribe.inputs.LanguageModelInputDataConfigArgs.builder
       builder.inputDataConfig(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.transcribe.LanguageModelArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /** Resource for managing an AWS Transcribe Vocabulary. */
   def Vocabulary(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.transcribe.VocabularyArgs.Builder])(using conf: KoPulumiConf) =
@@ -75,3 +79,8 @@ object transcribe:
         com.pulumi.aws.transcribe.inputs.LanguageModelState.Builder =
       val argsBuilder = com.pulumi.aws.transcribe.inputs.LanguageModelInputDataConfigArgs.builder
       builder.inputDataConfig(args(argsBuilder).build)
+
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.transcribe.inputs.LanguageModelState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       

@@ -77,6 +77,7 @@ object ses:
       def argsBuilder = com.pulumi.aws.ses.inputs.ReceiptRuleWorkmailActionArgs.builder
       builder.workmailActions(args.map(_(argsBuilder).build)*)
 
+                       
   /** Provides an SES domain identity resource */
   def DomainIdentity(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ses.DomainIdentityArgs.Builder]) =
@@ -137,6 +138,7 @@ object ses:
       val argsBuilder = com.pulumi.aws.ses.inputs.EventDestinationSnsDestinationArgs.builder
       builder.snsDestination(args(argsBuilder).build)
 
+                       
   /**
    * Provides an SES domain MAIL FROM resource.
    *  
@@ -268,6 +270,7 @@ object ses:
       val argsBuilder = com.pulumi.aws.ses.inputs.ConfigurationSetTrackingOptionsArgs.builder
       builder.trackingOptions(args(argsBuilder).build)
 
+                       
   /** Provides an SES configuration set resource. */
   def ConfigurationSet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ses.ConfigurationSetArgs.Builder])(using conf: KoPulumiConf) =
@@ -348,6 +351,7 @@ object ses:
       val argsBuilder = com.pulumi.aws.ses.inputs.EventDestinationSnsDestinationArgs.builder
       builder.snsDestination(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.ses.inputs.ReceiptRuleState.Builder)
     /**
      * @param addHeaderActions A list of Add Header Action blocks. Documented below.
@@ -412,6 +416,7 @@ object ses:
       def argsBuilder = com.pulumi.aws.ses.inputs.ReceiptRuleWorkmailActionArgs.builder
       builder.workmailActions(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.ses.inputs.ConfigurationSetState.Builder)
     /**
      * @param deliveryOptions Whether messages that use the configuration set are required to use TLS. See below.
@@ -430,3 +435,5 @@ object ses:
         com.pulumi.aws.ses.inputs.ConfigurationSetState.Builder =
       val argsBuilder = com.pulumi.aws.ses.inputs.ConfigurationSetTrackingOptionsArgs.builder
       builder.trackingOptions(args(argsBuilder).build)
+
+                       

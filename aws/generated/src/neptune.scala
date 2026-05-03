@@ -83,6 +83,10 @@ object neptune:
       def argsBuilder = com.pulumi.aws.neptune.inputs.ParameterGroupParameterArgs.builder
       builder.parameters(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.neptune.ParameterGroupArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /**
    * Manages a Neptune Global Cluster. A global cluster consists of one primary region and up to five read-only secondary regions. You issue write operations directly to the primary cluster in the primary region and Amazon Neptune automatically replicates the data to the secondary regions using dedicated infrastructure.
    *  
@@ -106,6 +110,10 @@ object neptune:
       val argsBuilder = com.pulumi.aws.neptune.inputs.ClusterServerlessV2ScalingConfigurationArgs.builder
       builder.serverlessV2ScalingConfiguration(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.neptune.ClusterArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   type NeptuneFunctions = com.pulumi.aws.neptune.NeptuneFunctions
   object NeptuneFunctions:
     // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
@@ -168,6 +176,10 @@ object neptune:
       def argsBuilder = com.pulumi.aws.neptune.inputs.ClusterParameterGroupParameterArgs.builder
       builder.parameters(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.neptune.ClusterParameterGroupArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /**
    * A Cluster Instance Resource defines attributes that are specific to a single instance in a Neptune Cluster.
    *  
@@ -216,6 +228,10 @@ object neptune:
       def argsBuilder = com.pulumi.aws.neptune.inputs.ClusterParameterGroupParameterArgs.builder
       builder.parameters(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.neptune.inputs.ClusterParameterGroupState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.neptune.inputs.ParameterGroupState.Builder)
     /**
      * @param parameters A list of Neptune parameters to apply.
@@ -226,6 +242,10 @@ object neptune:
       def argsBuilder = com.pulumi.aws.neptune.inputs.ParameterGroupParameterArgs.builder
       builder.parameters(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.neptune.inputs.ParameterGroupState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.neptune.inputs.GlobalClusterState.Builder)
     /**
      * @param globalClusterMembers Set of objects containing Global Cluster members.
@@ -236,6 +256,7 @@ object neptune:
       def argsBuilder = com.pulumi.aws.neptune.inputs.GlobalClusterGlobalClusterMemberArgs.builder
       builder.globalClusterMembers(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.neptune.inputs.ClusterState.Builder)
     /**
      * @param serverlessV2ScalingConfiguration If set, create the Neptune cluster as a serverless one. See Serverless for example block attributes.
@@ -245,3 +266,8 @@ object neptune:
         com.pulumi.aws.neptune.inputs.ClusterState.Builder =
       val argsBuilder = com.pulumi.aws.neptune.inputs.ClusterServerlessV2ScalingConfigurationArgs.builder
       builder.serverlessV2ScalingConfiguration(args(argsBuilder).build)
+
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.neptune.inputs.ClusterState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       

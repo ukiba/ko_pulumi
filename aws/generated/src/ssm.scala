@@ -14,6 +14,10 @@ object ssm:
       def argsBuilder = com.pulumi.aws.ssm.inputs.DocumentAttachmentsSourceArgs.builder
       builder.attachmentsSources(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.ssm.DocumentArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.ssm.PatchBaselineArgs.Builder)
     /**
      * @param approvalRules Set of rules used to include patches in the baseline. Up to 10 approval rules can be specified. See `approvalRule` below.
@@ -42,6 +46,10 @@ object ssm:
       def argsBuilder = com.pulumi.aws.ssm.inputs.PatchBaselineSourceArgs.builder
       builder.sources(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.ssm.PatchBaselineArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /** Provides an SSM Maintenance Window Task resource */
   def MaintenanceWindowTask(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ssm.MaintenanceWindowTaskArgs.Builder])(using conf: KoPulumiConf) =
@@ -135,6 +143,7 @@ object ssm:
       val argsBuilder = com.pulumi.aws.ssm.inputs.MaintenanceWindowTaskTaskInvocationParametersArgs.builder
       builder.taskInvocationParameters(args(argsBuilder).build)
 
+                       
   type SsmFunctions = com.pulumi.aws.ssm.SsmFunctions
   object SsmFunctions:
     // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
@@ -280,6 +289,10 @@ object ssm:
       val argsBuilder = com.pulumi.aws.ssm.inputs.ContactsRotationRecurrenceArgs.builder
       builder.recurrence(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.ssm.ContactsRotationArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.ssm.MaintenanceWindowTargetArgs.Builder)
     /**
      * @param targets The targets to register with the maintenance window. In other words, the instances to run commands on when the maintenance window runs. You can specify targets using instance IDs, resource group names, or tags that have been applied to instances. For more information about these examples formats see
@@ -291,6 +304,7 @@ object ssm:
       def argsBuilder = com.pulumi.aws.ssm.inputs.MaintenanceWindowTargetTargetArgs.builder
       builder.targets(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.ssm.ResourceDataSyncArgs.Builder)
     /**
      * @param s3Destination Amazon S3 configuration details for the sync.
@@ -301,6 +315,7 @@ object ssm:
       val argsBuilder = com.pulumi.aws.ssm.inputs.ResourceDataSyncS3DestinationArgs.builder
       builder.s3Destination(args(argsBuilder).build)
 
+                       
   /** Provides an SSM Maintenance Window Target resource */
   def MaintenanceWindowTarget(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ssm.MaintenanceWindowTargetArgs.Builder])(using conf: KoPulumiConf) =
@@ -352,6 +367,10 @@ object ssm:
       val argsBuilder = com.pulumi.aws.ssm.inputs.QuicksetupConfigurationManagerTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.ssm.QuicksetupConfigurationManagerArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.ssm.AssociationArgs.Builder)
     /**
      * @param outputLocation An output location block. Output Location is documented below.
@@ -371,6 +390,10 @@ object ssm:
       def argsBuilder = com.pulumi.aws.ssm.inputs.AssociationTargetArgs.builder
       builder.targets(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.ssm.AssociationArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /** Resource for managing an AWS SSM Quick Setup Configuration Manager. */
   def QuicksetupConfigurationManager(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ssm.QuicksetupConfigurationManagerArgs.Builder])(using conf: KoPulumiConf) =
@@ -441,6 +464,7 @@ object ssm:
       def argsBuilder = com.pulumi.aws.ssm.inputs.GetPatchBaselinesFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.ssm.inputs.ContactsRotationRecurrenceShiftCoverageArgs.Builder)
     /**
      * @param coverageTimes (Required) Information about when an on-call shift begins and ends. See Coverage Times for more details.
@@ -451,6 +475,7 @@ object ssm:
       def argsBuilder = com.pulumi.aws.ssm.inputs.ContactsRotationRecurrenceShiftCoverageCoverageTimeArgs.builder
       builder.coverageTimes(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.ssm.inputs.DocumentState.Builder)
     /**
      * @param attachmentsSources One or more configuration blocks describing attachments sources to a version of a document. See `attachmentsSource` block below for details.
@@ -470,6 +495,10 @@ object ssm:
       def argsBuilder = com.pulumi.aws.ssm.inputs.DocumentParameterArgs.builder
       builder.parameters(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.ssm.inputs.DocumentState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.ssm.inputs.MaintenanceWindowTaskTaskInvocationParametersAutomationParametersArgs.Builder)
     /**
      * @param parameters The parameters for the RUN_COMMAND task execution. Documented below.
@@ -480,6 +509,7 @@ object ssm:
       def argsBuilder = com.pulumi.aws.ssm.inputs.MaintenanceWindowTaskTaskInvocationParametersAutomationParametersParameterArgs.builder
       builder.parameters(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.ssm.inputs.ContactsRotationRecurrenceWeeklySettingArgs.Builder)
     /**
      * @param handOffTime (Required) The hand off time. See Hand Off Time for more details.
@@ -490,6 +520,7 @@ object ssm:
       val argsBuilder = com.pulumi.aws.ssm.inputs.ContactsRotationRecurrenceWeeklySettingHandOffTimeArgs.builder
       builder.handOffTime(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.ssm.inputs.GetInstancesArgs.Builder)
     /**
      * @param filters Configuration block(s) for filtering. Detailed below.
@@ -500,6 +531,7 @@ object ssm:
       def argsBuilder = com.pulumi.aws.ssm.inputs.GetInstancesFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.ssm.inputs.MaintenanceWindowTaskTaskInvocationParametersRunCommandParametersArgs.Builder)
     /**
      * @param cloudwatchConfig Configuration options for sending command output to CloudWatch Logs. Documented below.
@@ -528,6 +560,7 @@ object ssm:
       def argsBuilder = com.pulumi.aws.ssm.inputs.MaintenanceWindowTaskTaskInvocationParametersRunCommandParametersParameterArgs.builder
       builder.parameters(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.ssm.inputs.GetMaintenanceWindowsArgs.Builder)
     /**
      * @param filters Configuration block(s) for filtering. Detailed below.
@@ -538,6 +571,7 @@ object ssm:
       def argsBuilder = com.pulumi.aws.ssm.inputs.GetMaintenanceWindowsFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.ssm.inputs.ContactsRotationState.Builder)
     /**
      * @param recurrence Information about when an on-call rotation is in effect and how long the rotation period lasts. Exactly one of either `dailySettings`, `monthlySettings`, or `weeklySettings` must be populated. See Recurrence for more details.
@@ -550,6 +584,10 @@ object ssm:
       val argsBuilder = com.pulumi.aws.ssm.inputs.ContactsRotationRecurrenceArgs.builder
       builder.recurrence(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.ssm.inputs.ContactsRotationState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.ssm.inputs.QuicksetupConfigurationManagerState.Builder)
     /**
      * @param configurationDefinition Definition of the Quick Setup configuration that the configuration manager deploys. See `configurationDefinition` below.
@@ -574,6 +612,10 @@ object ssm:
       val argsBuilder = com.pulumi.aws.ssm.inputs.QuicksetupConfigurationManagerTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.ssm.inputs.QuicksetupConfigurationManagerState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.ssm.inputs.MaintenanceWindowTaskState.Builder)
     /**
      * @param targets The targets (either instances or window target ids). Instances are specified using Key=InstanceIds,Values=instanceid1,instanceid2. Window target ids are specified using Key=WindowTargetIds,Values=window target id1, window target id2.
@@ -593,6 +635,7 @@ object ssm:
       val argsBuilder = com.pulumi.aws.ssm.inputs.MaintenanceWindowTaskTaskInvocationParametersArgs.builder
       builder.taskInvocationParameters(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.ssm.inputs.ContactsRotationRecurrenceArgs.Builder)
     def dailySettings(args: Endofunction[com.pulumi.aws.ssm.inputs.ContactsRotationRecurrenceDailySettingArgs.Builder]*):
         com.pulumi.aws.ssm.inputs.ContactsRotationRecurrenceArgs.Builder =
@@ -626,6 +669,7 @@ object ssm:
       def argsBuilder = com.pulumi.aws.ssm.inputs.ContactsRotationRecurrenceWeeklySettingArgs.builder
       builder.weeklySettings(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.ssm.inputs.AssociationState.Builder)
     /**
      * @param outputLocation An output location block. Output Location is documented below.
@@ -645,6 +689,10 @@ object ssm:
       def argsBuilder = com.pulumi.aws.ssm.inputs.AssociationTargetArgs.builder
       builder.targets(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.ssm.inputs.AssociationState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.ssm.inputs.MaintenanceWindowTaskTaskInvocationParametersArgs.Builder)
     /**
      * @param automationParameters The parameters for an AUTOMATION task type. Documented below.
@@ -682,6 +730,7 @@ object ssm:
       val argsBuilder = com.pulumi.aws.ssm.inputs.MaintenanceWindowTaskTaskInvocationParametersStepFunctionsParametersArgs.builder
       builder.stepFunctionsParameters(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.ssm.inputs.ContactsRotationRecurrenceShiftCoverageCoverageTimeArgs.Builder)
     /**
      * @param end (Required) The end time of the on-call shift. See Hand Off Time for more details.
@@ -701,6 +750,7 @@ object ssm:
       val argsBuilder = com.pulumi.aws.ssm.inputs.ContactsRotationRecurrenceShiftCoverageCoverageTimeStartArgs.builder
       builder.start(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.ssm.inputs.MaintenanceWindowTargetState.Builder)
     /**
      * @param targets The targets to register with the maintenance window. In other words, the instances to run commands on when the maintenance window runs. You can specify targets using instance IDs, resource group names, or tags that have been applied to instances. For more information about these examples formats see
@@ -712,6 +762,7 @@ object ssm:
       def argsBuilder = com.pulumi.aws.ssm.inputs.MaintenanceWindowTargetTargetArgs.builder
       builder.targets(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.ssm.inputs.ResourceDataSyncState.Builder)
     /**
      * @param s3Destination Amazon S3 configuration details for the sync.
@@ -722,6 +773,7 @@ object ssm:
       val argsBuilder = com.pulumi.aws.ssm.inputs.ResourceDataSyncS3DestinationArgs.builder
       builder.s3Destination(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.ssm.inputs.ContactsRotationRecurrenceMonthlySettingArgs.Builder)
     /**
      * @param handOffTime (Required) The hand off time. See Hand Off Time for more details.
@@ -732,6 +784,7 @@ object ssm:
       val argsBuilder = com.pulumi.aws.ssm.inputs.ContactsRotationRecurrenceMonthlySettingHandOffTimeArgs.builder
       builder.handOffTime(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.ssm.inputs.PatchBaselineApprovalRuleArgs.Builder)
     /**
      * @param patchFilters Patch filter group that defines the criteria for the rule. Up to 5 patch filters can be specified per approval rule using Key/Value pairs. Valid combinations of these Keys and the `operatingSystem` value can be found in the [SSM DescribePatchProperties API Reference](https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DescribePatchProperties.html). Valid Values are exact values for the patch property given as the key, or a wildcard `*`, which matches all values. `PATCH_SET` defaults to `OS` if unspecified
@@ -742,6 +795,7 @@ object ssm:
       def argsBuilder = com.pulumi.aws.ssm.inputs.PatchBaselineApprovalRulePatchFilterArgs.builder
       builder.patchFilters(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.ssm.inputs.PatchBaselineState.Builder)
     /**
      * @param approvalRules Set of rules used to include patches in the baseline. Up to 10 approval rules can be specified. See `approvalRule` below.
@@ -769,3 +823,8 @@ object ssm:
         com.pulumi.aws.ssm.inputs.PatchBaselineState.Builder =
       def argsBuilder = com.pulumi.aws.ssm.inputs.PatchBaselineSourceArgs.builder
       builder.sources(args.map(_(argsBuilder).build)*)
+
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.ssm.inputs.PatchBaselineState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       

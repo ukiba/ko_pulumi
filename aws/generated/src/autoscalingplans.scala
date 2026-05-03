@@ -42,6 +42,7 @@ object autoscalingplans:
       def argsBuilder = com.pulumi.aws.autoscalingplans.inputs.ScalingPlanScalingInstructionArgs.builder
       builder.scalingInstructions(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.autoscalingplans.inputs.ScalingPlanScalingInstructionTargetTrackingConfigurationArgs.Builder)
     /**
      * @param customizedScalingMetricSpecification Customized metric. You can specify either `customizedScalingMetricSpecification` or `predefinedScalingMetricSpecification`.
@@ -63,6 +64,7 @@ object autoscalingplans:
       val argsBuilder = com.pulumi.aws.autoscalingplans.inputs.ScalingPlanScalingInstructionTargetTrackingConfigurationPredefinedScalingMetricSpecificationArgs.builder
       builder.predefinedScalingMetricSpecification(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.autoscalingplans.inputs.ScalingPlanState.Builder)
     /**
      * @param applicationSource CloudFormation stack or set of tags. You can create one scaling plan per application source.
@@ -82,6 +84,7 @@ object autoscalingplans:
       def argsBuilder = com.pulumi.aws.autoscalingplans.inputs.ScalingPlanScalingInstructionArgs.builder
       builder.scalingInstructions(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.autoscalingplans.inputs.ScalingPlanApplicationSourceArgs.Builder)
     /**
      * @param tagFilters Set of tags.
@@ -92,6 +95,7 @@ object autoscalingplans:
       def argsBuilder = com.pulumi.aws.autoscalingplans.inputs.ScalingPlanApplicationSourceTagFilterArgs.builder
       builder.tagFilters(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.autoscalingplans.inputs.ScalingPlanScalingInstructionArgs.Builder)
     /**
      * @param customizedLoadMetricSpecification Customized load metric to use for predictive scaling. You must specify either `customizedLoadMetricSpecification` or `predefinedLoadMetricSpecification` when configuring predictive scaling.
@@ -122,3 +126,5 @@ object autoscalingplans:
         com.pulumi.aws.autoscalingplans.inputs.ScalingPlanScalingInstructionArgs.Builder =
       def argsBuilder = com.pulumi.aws.autoscalingplans.inputs.ScalingPlanScalingInstructionTargetTrackingConfigurationArgs.builder
       builder.targetTrackingConfigurations(args.map(_(argsBuilder).build)*)
+
+                       

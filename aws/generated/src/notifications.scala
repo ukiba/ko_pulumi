@@ -70,6 +70,7 @@ object notifications:
       val argsBuilder = com.pulumi.aws.notifications.inputs.OrganizationsAccessTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
+                       
   /**
    * Resource for managing AWS User Notifications Organizations Access. This resource enables or disables organizations access for AWS User Notifications in AWS Organizations, allowing the service to access organization information.
    *  
@@ -91,6 +92,7 @@ object notifications:
       val argsBuilder = com.pulumi.aws.notifications.inputs.NotificationHubTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
+                       
   /** Resource for managing an AWS User Notifications Notification Configuration. */
   def NotificationConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.notifications.NotificationConfigurationArgs.Builder])(using conf: KoPulumiConf) =
@@ -121,8 +123,11 @@ object notifications:
       val argsBuilder = com.pulumi.aws.notifications.inputs.OrganizationsAccessTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.notifications.inputs.NotificationHubState.Builder)
     def timeouts(args: Endofunction[com.pulumi.aws.notifications.inputs.NotificationHubTimeoutsArgs.Builder]):
         com.pulumi.aws.notifications.inputs.NotificationHubState.Builder =
       val argsBuilder = com.pulumi.aws.notifications.inputs.NotificationHubTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
+
+                       

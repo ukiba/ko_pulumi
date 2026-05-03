@@ -68,6 +68,7 @@ object lakeformation:
       def argsBuilder = com.pulumi.aws.lakeformation.inputs.LfTagExpressionExpressionArgs.builder
       builder.expressions(args.map(_(argsBuilder).build)*)
 
+                       
   /** Resource for managing an AWS Lake Formation Opt In. */
   def OptIn(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.lakeformation.OptInArgs.Builder]) =
@@ -161,6 +162,7 @@ object lakeformation:
       def argsBuilder = com.pulumi.aws.lakeformation.inputs.DataLakeSettingsCreateTableDefaultPermissionArgs.builder
       builder.createTableDefaultPermissions(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.lakeformation.ResourceLfTagsArgs.Builder)
     /**
      * @param database Configuration block for a database resource. See below.
@@ -202,6 +204,7 @@ object lakeformation:
       val argsBuilder = com.pulumi.aws.lakeformation.inputs.ResourceLfTagsTableWithColumnsArgs.builder
       builder.tableWithColumns(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.lakeformation.PermissionsArgs.Builder)
     /**
      * @param dataCellsFilter Configuration block for a data cells filter resource. Detailed below.
@@ -268,6 +271,7 @@ object lakeformation:
       val argsBuilder = com.pulumi.aws.lakeformation.inputs.PermissionsTableWithColumnsArgs.builder
       builder.tableWithColumns(args(argsBuilder).build)
 
+                       
   /** Manages an attachment between one or more existing LF-tags and an existing Lake Formation resource. */
   def ResourceLfTags(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.lakeformation.ResourceLfTagsArgs.Builder]) =
@@ -332,6 +336,7 @@ object lakeformation:
       val argsBuilder = com.pulumi.aws.lakeformation.inputs.ResourceLfTagTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.lakeformation.OptInArgs.Builder)
     /**
      * @param conditions Lake Formation condition, which applies to permissions and opt-ins that contain an expression.
@@ -360,6 +365,7 @@ object lakeformation:
       def argsBuilder = com.pulumi.aws.lakeformation.inputs.OptInResourceDataArgs.builder
       builder.resourceDatas(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.lakeformation.DataCellsFilterArgs.Builder)
     /**
      * @param tableData Information about the data cells filter. See Table Data below for details.
@@ -375,6 +381,7 @@ object lakeformation:
       val argsBuilder = com.pulumi.aws.lakeformation.inputs.DataCellsFilterTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
+                       
   /**
    * Grants permissions to the principal to access metadata in the Data Catalog and data organized in underlying data storage such as Amazon S3. Permissions are granted to a principal, in a Data Catalog, relative to a Lake Formation resource, which includes the Data Catalog, databases, tables, LF-tags, and LF-tag policies. For more information, see [Security and Access Control to Metadata and Data in Lake Formation](https://docs.aws.amazon.com/lake-formation/latest/dg/security-data-access.html).
    *  
@@ -613,6 +620,7 @@ object lakeformation:
       val argsBuilder = com.pulumi.aws.lakeformation.inputs.ResourceLfTagsTableWithColumnsArgs.builder
       builder.tableWithColumns(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.lakeformation.inputs.PermissionsState.Builder)
     /**
      * @param dataCellsFilter Configuration block for a data cells filter resource. Detailed below.
@@ -679,6 +687,7 @@ object lakeformation:
       val argsBuilder = com.pulumi.aws.lakeformation.inputs.PermissionsTableWithColumnsArgs.builder
       builder.tableWithColumns(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.lakeformation.inputs.PermissionsLfTagPolicyArgs.Builder)
     /**
      * @param expressions A list of tag conditions that apply to the resource&#39;s tag policy. Configuration block for tag conditions that apply to the policy. See `expression` below.
@@ -691,6 +700,7 @@ object lakeformation:
       def argsBuilder = com.pulumi.aws.lakeformation.inputs.PermissionsLfTagPolicyExpressionArgs.builder
       builder.expressions(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.lakeformation.inputs.GetPermissionsLfTagPolicyArgs.Builder)
     /**
      * @param expressions List of tag conditions that apply to the resource&#39;s tag policy. Configuration block for tag conditions that apply to the policy. See `expression` below.
@@ -703,6 +713,7 @@ object lakeformation:
       def argsBuilder = com.pulumi.aws.lakeformation.inputs.GetPermissionsLfTagPolicyExpressionArgs.builder
       builder.expressions(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.lakeformation.inputs.ResourceLfTagTableWithColumnsArgs.Builder)
     /**
      * @param columnWildcard Option to add column wildcard. See Column Wildcard for more details.
@@ -713,6 +724,7 @@ object lakeformation:
       val argsBuilder = com.pulumi.aws.lakeformation.inputs.ResourceLfTagTableWithColumnsColumnWildcardArgs.builder
       builder.columnWildcard(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.lakeformation.inputs.OptInResourceDataTableWithColumnsArgs.Builder)
     /**
      * @param columnWildcard Wildcard specified by a ColumnWildcard object. At least one of ColumnNames or ColumnWildcard is required.
@@ -723,6 +735,7 @@ object lakeformation:
       val argsBuilder = com.pulumi.aws.lakeformation.inputs.OptInResourceDataTableWithColumnsColumnWildcardArgs.builder
       builder.columnWildcard(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.lakeformation.inputs.ResourceLfTagState.Builder)
     /**
      * @param database Configuration block for a database resource. See Database for more details.
@@ -769,6 +782,7 @@ object lakeformation:
       val argsBuilder = com.pulumi.aws.lakeformation.inputs.ResourceLfTagTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.lakeformation.inputs.DataCellsFilterState.Builder)
     /**
      * @param tableData Information about the data cells filter. See Table Data below for details.
@@ -784,6 +798,7 @@ object lakeformation:
       val argsBuilder = com.pulumi.aws.lakeformation.inputs.DataCellsFilterTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.lakeformation.inputs.OptInState.Builder)
     /**
      * @param conditions Lake Formation condition, which applies to permissions and opt-ins that contain an expression.
@@ -812,6 +827,7 @@ object lakeformation:
       def argsBuilder = com.pulumi.aws.lakeformation.inputs.OptInResourceDataArgs.builder
       builder.resourceDatas(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.lakeformation.inputs.DataCellsFilterTableDataArgs.Builder)
     /**
      * @param columnWildcard A wildcard with exclusions. See Column Wildcard below for details.
@@ -831,6 +847,7 @@ object lakeformation:
       val argsBuilder = com.pulumi.aws.lakeformation.inputs.DataCellsFilterTableDataRowFilterArgs.builder
       builder.rowFilter(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.lakeformation.inputs.GetPermissionsArgs.Builder)
     /**
      * @param dataCellsFilter Configuration block for a data cells filter resource. Detailed below.
@@ -897,6 +914,7 @@ object lakeformation:
       val argsBuilder = com.pulumi.aws.lakeformation.inputs.GetPermissionsTableWithColumnsArgs.builder
       builder.tableWithColumns(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.lakeformation.inputs.DataCellsFilterTableDataRowFilterArgs.Builder)
     /**
      * @param allRowsWildcard (Optional) A wildcard that matches all rows. Required when applying column-level filtering without row-level filtering. Use an empty block: `allRowsWildcard {}`.
@@ -907,6 +925,7 @@ object lakeformation:
       val argsBuilder = com.pulumi.aws.lakeformation.inputs.DataCellsFilterTableDataRowFilterAllRowsWildcardArgs.builder
       builder.allRowsWildcard(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.lakeformation.inputs.DataLakeSettingsState.Builder)
     /**
      * @param createDatabaseDefaultPermissions Up to three configuration blocks of principal permissions for default create database permissions. Detailed below.
@@ -926,6 +945,7 @@ object lakeformation:
       def argsBuilder = com.pulumi.aws.lakeformation.inputs.DataLakeSettingsCreateTableDefaultPermissionArgs.builder
       builder.createTableDefaultPermissions(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.lakeformation.inputs.LfTagExpressionState.Builder)
     /**
      * @param expressions A list of LF-Tag conditions (key-value pairs). See expression for more details.
@@ -938,6 +958,7 @@ object lakeformation:
       def argsBuilder = com.pulumi.aws.lakeformation.inputs.LfTagExpressionExpressionArgs.builder
       builder.expressions(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.lakeformation.inputs.OptInResourceDataArgs.Builder)
     /**
      * @param catalogs Identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. See Catalog for more details.
@@ -1019,3 +1040,5 @@ object lakeformation:
         com.pulumi.aws.lakeformation.inputs.OptInResourceDataArgs.Builder =
       val argsBuilder = com.pulumi.aws.lakeformation.inputs.OptInResourceDataTableWithColumnsArgs.builder
       builder.tableWithColumns(args(argsBuilder).build)
+
+                       

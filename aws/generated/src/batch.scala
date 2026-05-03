@@ -32,6 +32,10 @@ object batch:
       val argsBuilder = com.pulumi.aws.batch.inputs.ComputeEnvironmentUpdatePolicyArgs.builder
       builder.updatePolicy(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.batch.ComputeEnvironmentArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /**
    * Creates a AWS Batch compute environment. Compute environments contain the Amazon ECS container instances that are used to run containerized batch jobs.
    *  
@@ -159,6 +163,10 @@ object batch:
       val argsBuilder = com.pulumi.aws.batch.inputs.JobQueueTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.batch.JobQueueArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /** Provides a Batch Scheduling Policy resource. */
   def SchedulingPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.batch.SchedulingPolicyArgs.Builder])(using conf: KoPulumiConf) =
@@ -217,6 +225,10 @@ object batch:
       val argsBuilder = com.pulumi.aws.batch.inputs.JobDefinitionTimeoutArgs.builder
       builder.timeout(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.batch.JobDefinitionArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.batch.inputs.JobDefinitionRetryStrategyArgs.Builder)
     /**
      * @param evaluateOnExits Evaluate on exit conditions under which the job should be retried or failed. If this parameter is specified, then the `attempts` parameter must also be specified. You may specify up to 5 configuration blocks.
@@ -227,6 +239,7 @@ object batch:
       def argsBuilder = com.pulumi.aws.batch.inputs.JobDefinitionRetryStrategyEvaluateOnExitArgs.builder
       builder.evaluateOnExits(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.batch.inputs.JobDefinitionEksPropertiesPodPropertiesVolumeArgs.Builder)
     def emptyDir(args: Endofunction[com.pulumi.aws.batch.inputs.JobDefinitionEksPropertiesPodPropertiesVolumeEmptyDirArgs.Builder]):
         com.pulumi.aws.batch.inputs.JobDefinitionEksPropertiesPodPropertiesVolumeArgs.Builder =
@@ -243,6 +256,7 @@ object batch:
       val argsBuilder = com.pulumi.aws.batch.inputs.JobDefinitionEksPropertiesPodPropertiesVolumeSecretArgs.builder
       builder.secret(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.batch.inputs.ComputeEnvironmentState.Builder)
     /**
      * @param computeResources Details of the compute resources managed by the compute environment. This parameter is required for managed compute environments. See details below.
@@ -271,12 +285,20 @@ object batch:
       val argsBuilder = com.pulumi.aws.batch.inputs.ComputeEnvironmentUpdatePolicyArgs.builder
       builder.updatePolicy(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.batch.inputs.ComputeEnvironmentState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.batch.inputs.SchedulingPolicyState.Builder)
     def fairSharePolicy(args: Endofunction[com.pulumi.aws.batch.inputs.SchedulingPolicyFairSharePolicyArgs.Builder]):
         com.pulumi.aws.batch.inputs.SchedulingPolicyState.Builder =
       val argsBuilder = com.pulumi.aws.batch.inputs.SchedulingPolicyFairSharePolicyArgs.builder
       builder.fairSharePolicy(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.batch.inputs.SchedulingPolicyState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.batch.inputs.JobQueueState.Builder)
     /**
      * @param computeEnvironmentOrders The set of compute environments mapped to a job queue and their order relative to each other. The job scheduler uses this parameter to determine which compute environment runs a specific job. Compute environments must be in the VALID state before you can associate them with a job queue. You can associate up to three compute environments with a job queue.
@@ -301,6 +323,10 @@ object batch:
       val argsBuilder = com.pulumi.aws.batch.inputs.JobQueueTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.batch.inputs.JobQueueState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.batch.inputs.SchedulingPolicyFairSharePolicyArgs.Builder)
     /**
      * @param shareDistributions One or more share distribution blocks which define the weights for the fair share identifiers for the fair share policy. For more information, see [FairsharePolicy](https://docs.aws.amazon.com/batch/latest/APIReference/API_FairsharePolicy.html). The `shareDistribution` block is documented below.
@@ -311,6 +337,7 @@ object batch:
       def argsBuilder = com.pulumi.aws.batch.inputs.SchedulingPolicyFairSharePolicyShareDistributionArgs.builder
       builder.shareDistributions(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.batch.inputs.JobDefinitionEksPropertiesPodPropertiesInitContainerArgs.Builder)
     /**
      * @param envs Environment variables to pass to a container. See EKS Environment below.
@@ -348,6 +375,7 @@ object batch:
       def argsBuilder = com.pulumi.aws.batch.inputs.JobDefinitionEksPropertiesPodPropertiesInitContainerVolumeMountArgs.builder
       builder.volumeMounts(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.batch.inputs.JobDefinitionState.Builder)
     /**
      * @param eksProperties Valid eks properties. This parameter is only valid if the `type` parameter is `container`.
@@ -376,6 +404,10 @@ object batch:
       val argsBuilder = com.pulumi.aws.batch.inputs.JobDefinitionTimeoutArgs.builder
       builder.timeout(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.batch.inputs.JobDefinitionState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.batch.inputs.ComputeEnvironmentComputeResourcesArgs.Builder)
     /**
      * @param ec2Configurations Provides information used to select Amazon Machine Images (AMIs) for EC2 instances in the compute environment. If Ec2Configuration isn&#39;t specified, the default is ECS_AL2. This parameter isn&#39;t applicable to jobs that are running on Fargate resources, and shouldn&#39;t be specified.
@@ -395,6 +427,10 @@ object batch:
       val argsBuilder = com.pulumi.aws.batch.inputs.ComputeEnvironmentComputeResourcesLaunchTemplateArgs.builder
       builder.launchTemplate(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.batch.inputs.ComputeEnvironmentComputeResourcesArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.batch.inputs.JobDefinitionEksPropertiesPodPropertiesArgs.Builder)
     /**
      * @param containers Properties of the container that&#39;s used on the Amazon EKS pod. See containers below.
@@ -441,6 +477,7 @@ object batch:
       def argsBuilder = com.pulumi.aws.batch.inputs.JobDefinitionEksPropertiesPodPropertiesVolumeArgs.builder
       builder.volumes(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.batch.inputs.JobDefinitionEksPropertiesArgs.Builder)
     /**
      * @param podProperties Properties for the Kubernetes pod resources of a job. See `podProperties` below.
@@ -451,6 +488,7 @@ object batch:
       val argsBuilder = com.pulumi.aws.batch.inputs.JobDefinitionEksPropertiesPodPropertiesArgs.builder
       builder.podProperties(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.batch.inputs.JobDefinitionEksPropertiesPodPropertiesContainerArgs.Builder)
     /**
      * @param envs Environment variables to pass to a container. See EKS Environment below.
@@ -488,8 +526,14 @@ object batch:
       def argsBuilder = com.pulumi.aws.batch.inputs.JobDefinitionEksPropertiesPodPropertiesContainerVolumeMountArgs.builder
       builder.volumeMounts(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.batch.SchedulingPolicyArgs.Builder)
     def fairSharePolicy(args: Endofunction[com.pulumi.aws.batch.inputs.SchedulingPolicyFairSharePolicyArgs.Builder]):
         com.pulumi.aws.batch.SchedulingPolicyArgs.Builder =
       val argsBuilder = com.pulumi.aws.batch.inputs.SchedulingPolicyFairSharePolicyArgs.builder
       builder.fairSharePolicy(args(argsBuilder).build)
+
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.batch.SchedulingPolicyArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       

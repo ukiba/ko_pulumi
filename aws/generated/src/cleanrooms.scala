@@ -16,6 +16,10 @@ object cleanrooms:
       val argsBuilder = com.pulumi.aws.cleanrooms.inputs.ConfiguredTableTableReferenceArgs.builder
       builder.tableReference(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.cleanrooms.ConfiguredTableArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /**
    * Provides a AWS Clean Rooms collaboration.
    *  All members included in the definition will be invited to join the collaboration and can create memberships.
@@ -49,6 +53,10 @@ object cleanrooms:
       val argsBuilder = com.pulumi.aws.cleanrooms.inputs.MembershipPaymentConfigurationArgs.builder
       builder.paymentConfiguration(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.cleanrooms.MembershipArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.cleanrooms.CollaborationArgs.Builder)
     /**
      * @param dataEncryptionMetadata Collection of settings which determine how the [c3r client](https://docs.aws.amazon.com/clean-rooms/latest/userguide/crypto-computing.html) will encrypt data for use within this collaboration. See below.
@@ -68,6 +76,10 @@ object cleanrooms:
       def argsBuilder = com.pulumi.aws.cleanrooms.inputs.CollaborationMemberArgs.builder
       builder.members(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.cleanrooms.CollaborationArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /** Provides a AWS Clean Rooms membership. Memberships are used to join a Clean Rooms collaboration by the invited member. */
   def Membership(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.cleanrooms.MembershipArgs.Builder])(using conf: KoPulumiConf) =
@@ -114,6 +126,10 @@ object cleanrooms:
       def argsBuilder = com.pulumi.aws.cleanrooms.inputs.CollaborationMemberArgs.builder
       builder.members(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.cleanrooms.inputs.CollaborationState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.cleanrooms.inputs.MembershipState.Builder)
     /**
      * @param defaultResultConfiguration The default configuration for a query result.
@@ -129,12 +145,17 @@ object cleanrooms:
       val argsBuilder = com.pulumi.aws.cleanrooms.inputs.MembershipPaymentConfigurationArgs.builder
       builder.paymentConfiguration(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.cleanrooms.inputs.MembershipState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.cleanrooms.inputs.MembershipPaymentConfigurationArgs.Builder)
     def queryCompute(args: Endofunction[com.pulumi.aws.cleanrooms.inputs.MembershipPaymentConfigurationQueryComputeArgs.Builder]):
         com.pulumi.aws.cleanrooms.inputs.MembershipPaymentConfigurationArgs.Builder =
       val argsBuilder = com.pulumi.aws.cleanrooms.inputs.MembershipPaymentConfigurationQueryComputeArgs.builder
       builder.queryCompute(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.cleanrooms.inputs.ConfiguredTableState.Builder)
     /**
      * @param tableReference A reference to the AWS Glue table which will be used to create the configured table.
@@ -147,14 +168,21 @@ object cleanrooms:
       val argsBuilder = com.pulumi.aws.cleanrooms.inputs.ConfiguredTableTableReferenceArgs.builder
       builder.tableReference(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.cleanrooms.inputs.ConfiguredTableState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.cleanrooms.inputs.MembershipDefaultResultConfigurationArgs.Builder)
     def outputConfiguration(args: Endofunction[com.pulumi.aws.cleanrooms.inputs.MembershipDefaultResultConfigurationOutputConfigurationArgs.Builder]):
         com.pulumi.aws.cleanrooms.inputs.MembershipDefaultResultConfigurationArgs.Builder =
       val argsBuilder = com.pulumi.aws.cleanrooms.inputs.MembershipDefaultResultConfigurationOutputConfigurationArgs.builder
       builder.outputConfiguration(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.cleanrooms.inputs.MembershipDefaultResultConfigurationOutputConfigurationArgs.Builder)
     def s3(args: Endofunction[com.pulumi.aws.cleanrooms.inputs.MembershipDefaultResultConfigurationOutputConfigurationS3Args.Builder]):
         com.pulumi.aws.cleanrooms.inputs.MembershipDefaultResultConfigurationOutputConfigurationArgs.Builder =
       val argsBuilder = com.pulumi.aws.cleanrooms.inputs.MembershipDefaultResultConfigurationOutputConfigurationS3Args.builder
       builder.s3(args(argsBuilder).build)
+
+                       

@@ -262,6 +262,7 @@ object aws:
       val argsBuilder = com.pulumi.aws.inputs.ProviderIgnoreTagsArgs.builder
       builder.ignoreTags(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.inputs.GetRegionsArgs.Builder)
     /**
      * @param filters Configuration block(s) to use as filters. Detailed below.
@@ -272,6 +273,7 @@ object aws:
       def argsBuilder = com.pulumi.aws.inputs.GetRegionsFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.inputs.GetAvailabilityZoneArgs.Builder)
     /**
      * @param filters Configuration block(s) for filtering. Detailed below.
@@ -282,6 +284,7 @@ object aws:
       def argsBuilder = com.pulumi.aws.inputs.GetAvailabilityZoneFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.inputs.GetAvailabilityZonesArgs.Builder)
     /**
      * @param filters Configuration block(s) for filtering. Detailed below.
@@ -291,3 +294,5 @@ object aws:
         com.pulumi.aws.inputs.GetAvailabilityZonesArgs.Builder =
       def argsBuilder = com.pulumi.aws.inputs.GetAvailabilityZonesFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
+
+                       

@@ -324,6 +324,10 @@ object apigateway:
       val argsBuilder = com.pulumi.aws.apigateway.inputs.DomainNameMutualTlsAuthenticationArgs.builder
       builder.mutualTlsAuthentication(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.apigateway.DomainNameArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /** Provides a HTTP Method for an API Gateway Resource. */
   def Method(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.apigateway.MethodArgs.Builder]) =
@@ -357,6 +361,7 @@ object apigateway:
       val argsBuilder = com.pulumi.aws.apigateway.inputs.RestApiPutTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
+                       
   /** Provides a settings of an API Gateway Documentation Part. */
   def DocumentationPart(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.apigateway.DocumentationPartArgs.Builder]) =
@@ -492,6 +497,7 @@ object apigateway:
       val argsBuilder = com.pulumi.aws.apigateway.inputs.DocumentationPartLocationArgs.builder
       builder.location(args(argsBuilder).build)
 
+                       
   /**
    * Provides an API Gateway API Key.
    *  
@@ -521,6 +527,10 @@ object apigateway:
       val argsBuilder = com.pulumi.aws.apigateway.inputs.RestApiEndpointConfigurationArgs.builder
       builder.endpointConfiguration(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.apigateway.RestApiArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.apigateway.MethodSettingsArgs.Builder)
     /**
      * @param settings Settings block, see below.
@@ -531,6 +541,7 @@ object apigateway:
       val argsBuilder = com.pulumi.aws.apigateway.inputs.MethodSettingsSettingsArgs.builder
       builder.settings(args(argsBuilder).build)
 
+                       
   /**
    * Provides an API Gateway VPC Link.
    *  
@@ -584,6 +595,10 @@ object apigateway:
       val argsBuilder = com.pulumi.aws.apigateway.inputs.StageCanarySettingsArgs.builder
       builder.canarySettings(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.apigateway.StageArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.apigateway.IntegrationArgs.Builder)
     /**
      * @param tlsConfig TLS configuration. See below.
@@ -594,6 +609,7 @@ object apigateway:
       val argsBuilder = com.pulumi.aws.apigateway.inputs.IntegrationTlsConfigArgs.builder
       builder.tlsConfig(args(argsBuilder).build)
 
+                       
   /** Manages an API Gateway Request Validator. */
   def RequestValidator(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.apigateway.RequestValidatorArgs.Builder])(using conf: KoPulumiConf) =
@@ -726,6 +742,10 @@ object apigateway:
       val argsBuilder = com.pulumi.aws.apigateway.inputs.UsagePlanThrottleSettingsArgs.builder
       builder.throttleSettings(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.apigateway.inputs.UsagePlanState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.apigateway.inputs.RestApiState.Builder)
     /**
      * @param endpointConfiguration Configuration block defining API endpoint configuration including endpoint type. Defined below.
@@ -736,6 +756,10 @@ object apigateway:
       val argsBuilder = com.pulumi.aws.apigateway.inputs.RestApiEndpointConfigurationArgs.builder
       builder.endpointConfiguration(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.apigateway.inputs.RestApiState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.apigateway.inputs.IntegrationState.Builder)
     /**
      * @param tlsConfig TLS configuration. See below.
@@ -746,6 +770,7 @@ object apigateway:
       val argsBuilder = com.pulumi.aws.apigateway.inputs.IntegrationTlsConfigArgs.builder
       builder.tlsConfig(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.apigateway.inputs.AccountState.Builder)
     /**
      * @param throttleSettings Account-Level throttle settings. See exported fields below.
@@ -756,6 +781,7 @@ object apigateway:
       def argsBuilder = com.pulumi.aws.apigateway.inputs.AccountThrottleSettingArgs.builder
       builder.throttleSettings(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.apigateway.inputs.MethodSettingsState.Builder)
     /**
      * @param settings Settings block, see below.
@@ -766,6 +792,7 @@ object apigateway:
       val argsBuilder = com.pulumi.aws.apigateway.inputs.MethodSettingsSettingsArgs.builder
       builder.settings(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.apigateway.inputs.StageState.Builder)
     /**
      * @param accessLogSettings Enables access logs for the API stage. See Access Log Settings below.
@@ -785,6 +812,10 @@ object apigateway:
       val argsBuilder = com.pulumi.aws.apigateway.inputs.StageCanarySettingsArgs.builder
       builder.canarySettings(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.apigateway.inputs.StageState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.apigateway.inputs.DomainNameState.Builder)
     /**
      * @param endpointConfiguration Configuration block defining API endpoint information including type. See below.
@@ -804,12 +835,17 @@ object apigateway:
       val argsBuilder = com.pulumi.aws.apigateway.inputs.DomainNameMutualTlsAuthenticationArgs.builder
       builder.mutualTlsAuthentication(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.apigateway.inputs.DomainNameState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.apigateway.inputs.RestApiPutState.Builder)
     def timeouts(args: Endofunction[com.pulumi.aws.apigateway.inputs.RestApiPutTimeoutsArgs.Builder]):
         com.pulumi.aws.apigateway.inputs.RestApiPutState.Builder =
       val argsBuilder = com.pulumi.aws.apigateway.inputs.RestApiPutTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.apigateway.inputs.UsagePlanApiStageArgs.Builder)
     /**
      * @param throttles The throttling limits of the usage plan.
@@ -820,6 +856,7 @@ object apigateway:
       def argsBuilder = com.pulumi.aws.apigateway.inputs.UsagePlanApiStageThrottleArgs.builder
       builder.throttles(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.apigateway.inputs.DocumentationPartState.Builder)
     /**
      * @param location Location of the targeted API entity of the to-be-created documentation part. See below.
@@ -830,6 +867,7 @@ object apigateway:
       val argsBuilder = com.pulumi.aws.apigateway.inputs.DocumentationPartLocationArgs.builder
       builder.location(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.apigateway.UsagePlanArgs.Builder)
     /**
      * @param apiStages Associated API stages of the usage plan.
@@ -857,3 +895,8 @@ object apigateway:
         com.pulumi.aws.apigateway.UsagePlanArgs.Builder =
       val argsBuilder = com.pulumi.aws.apigateway.inputs.UsagePlanThrottleSettingsArgs.builder
       builder.throttleSettings(args(argsBuilder).build)
+
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.apigateway.UsagePlanArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       

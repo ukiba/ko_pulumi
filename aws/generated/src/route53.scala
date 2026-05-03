@@ -15,6 +15,10 @@ object route53:
       def argsBuilder = com.pulumi.aws.route53.inputs.ResolverRuleTargetIpArgs.builder
       builder.targetIps(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.route53.ResolverRuleArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /** Provides a Route 53 Resolver DNSSEC config resource. */
   def ResolverDnsSecConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.route53.ResolverDnsSecConfigArgs.Builder]) =
@@ -342,12 +346,17 @@ object route53:
       val argsBuilder = com.pulumi.aws.route53.inputs.ProfilesResourceAssociationTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.route53.ProfilesProfileArgs.Builder)
     def timeouts(args: Endofunction[com.pulumi.aws.route53.inputs.ProfilesProfileTimeoutsArgs.Builder]):
         com.pulumi.aws.route53.ProfilesProfileArgs.Builder =
       val argsBuilder = com.pulumi.aws.route53.inputs.ProfilesProfileTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.route53.ProfilesProfileArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /** Manages a Route53 Traffic Policy. */
   def TrafficPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.route53.TrafficPolicyArgs.Builder])(using conf: KoPulumiConf) =
@@ -438,6 +447,10 @@ object route53:
       val argsBuilder = com.pulumi.aws.route53.inputs.ProfilesAssociationTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.route53.ProfilesAssociationArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /** Provides a Route 53 Resolver query logging configuration resource. */
   def ResolverQueryLogConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.route53.ResolverQueryLogConfigArgs.Builder])(using conf: KoPulumiConf) =
@@ -484,6 +497,10 @@ object route53:
       def argsBuilder = com.pulumi.aws.route53.inputs.ZoneVpcArgs.builder
       builder.vpcs(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.route53.ZoneArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /** Provides a Route53 CIDR collection resource. */
   def CidrCollection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.route53.CidrCollectionArgs.Builder])(using conf: KoPulumiConf) =
@@ -620,6 +637,7 @@ object route53:
       val argsBuilder = com.pulumi.aws.route53.inputs.RecordsExclusiveTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.route53.RecordArgs.Builder)
     /**
      * @param aliases An alias block. Conflicts with `ttl` &amp; `records`.
@@ -685,6 +703,7 @@ object route53:
       def argsBuilder = com.pulumi.aws.route53.inputs.RecordWeightedRoutingPolicyArgs.builder
       builder.weightedRoutingPolicies(args.map(_(argsBuilder).build)*)
 
+                       
   /** Provides a [Route53 Delegation Set](https://docs.aws.amazon.com/Route53/latest/APIReference/API-actions-by-function.html#actions-by-function-reusable-delegation-sets) resource. */
   def DelegationSet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.route53.DelegationSetArgs.Builder]) =
@@ -720,6 +739,10 @@ object route53:
       def argsBuilder = com.pulumi.aws.route53.inputs.ResolverEndpointIpAddressArgs.builder
       builder.ipAddresses(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.route53.ResolverEndpointArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /**
    * Resource for maintaining exclusive management of resource record sets defined in an AWS Route53 hosted zone.
    *  
@@ -747,6 +770,10 @@ object route53:
       def argsBuilder = com.pulumi.aws.route53.inputs.ZoneVpcArgs.builder
       builder.vpcs(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.route53.inputs.ZoneState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.route53.inputs.ResolverEndpointState.Builder)
     /**
      * @param ipAddresses Subnets and IP addresses in your VPC that you want DNS queries to pass through on the way from your VPCs
@@ -758,6 +785,10 @@ object route53:
       def argsBuilder = com.pulumi.aws.route53.inputs.ResolverEndpointIpAddressArgs.builder
       builder.ipAddresses(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.route53.inputs.ResolverEndpointState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.route53.inputs.GetQueryLogConfigArgs.Builder)
     /**
      * @param filters One or more name/value pairs to use as filters. There are
@@ -770,6 +801,10 @@ object route53:
       def argsBuilder = com.pulumi.aws.route53.inputs.GetQueryLogConfigFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.route53.inputs.GetQueryLogConfigArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.route53.inputs.RecordsExclusiveResourceRecordSetArgs.Builder)
     /**
      * @param aliasTarget Alias target block.
@@ -816,6 +851,7 @@ object route53:
       def argsBuilder = com.pulumi.aws.route53.inputs.RecordsExclusiveResourceRecordSetResourceRecordArgs.builder
       builder.resourceRecords(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.route53.inputs.GetResolverEndpointArgs.Builder)
     /**
      * @param filters One or more name/value pairs to use as filters. There are
@@ -828,12 +864,14 @@ object route53:
       def argsBuilder = com.pulumi.aws.route53.inputs.GetResolverEndpointFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.route53.inputs.ProfilesResourceAssociationState.Builder)
     def timeouts(args: Endofunction[com.pulumi.aws.route53.inputs.ProfilesResourceAssociationTimeoutsArgs.Builder]):
         com.pulumi.aws.route53.inputs.ProfilesResourceAssociationState.Builder =
       val argsBuilder = com.pulumi.aws.route53.inputs.ProfilesResourceAssociationTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.route53.inputs.RecordsExclusiveResourceRecordSetGeoproximityLocationArgs.Builder)
     /**
      * @param coordinates Coordinates for a geoproximity resource record.
@@ -845,6 +883,7 @@ object route53:
       val argsBuilder = com.pulumi.aws.route53.inputs.RecordsExclusiveResourceRecordSetGeoproximityLocationCoordinatesArgs.builder
       builder.coordinates(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.route53.inputs.RecordsExclusiveState.Builder)
     /**
      * @param resourceRecordSets A list of all resource record sets associated with the hosted zone.
@@ -861,6 +900,7 @@ object route53:
       val argsBuilder = com.pulumi.aws.route53.inputs.RecordsExclusiveTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.route53.inputs.ResolverRuleState.Builder)
     /**
      * @param targetIps Configuration block(s) indicating the IPs that you want Resolver to forward DNS queries to (documented below).
@@ -872,6 +912,10 @@ object route53:
       def argsBuilder = com.pulumi.aws.route53.inputs.ResolverRuleTargetIpArgs.builder
       builder.targetIps(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.route53.inputs.ResolverRuleState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.route53.inputs.GetTrafficPolicyDocumentArgs.Builder)
     /**
      * @param endpoints Configuration block for the definitions of the endpoints that you want to use in this traffic policy. See below
@@ -891,6 +935,7 @@ object route53:
       def argsBuilder = com.pulumi.aws.route53.inputs.GetTrafficPolicyDocumentRuleArgs.builder
       builder.rules(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.route53.inputs.GetTrafficPolicyDocumentRuleArgs.Builder)
     /**
      * @param geoProximityLocations Configuration block for when you add a geoproximity rule, you configure Amazon Route 53 to route traffic to your resources based on the geographic location of your resources. Only valid for `geoproximity` type. See below
@@ -942,6 +987,7 @@ object route53:
       val argsBuilder = com.pulumi.aws.route53.inputs.GetTrafficPolicyDocumentRuleSecondaryArgs.builder
       builder.secondary(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.route53.inputs.RecordState.Builder)
     /**
      * @param aliases An alias block. Conflicts with `ttl` &amp; `records`.
@@ -1007,6 +1053,7 @@ object route53:
       def argsBuilder = com.pulumi.aws.route53.inputs.RecordWeightedRoutingPolicyArgs.builder
       builder.weightedRoutingPolicies(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.route53.inputs.RecordGeoproximityRoutingPolicyArgs.Builder)
     /**
      * @param coordinates Specify `latitude` and `longitude` for routing traffic to non-AWS resources.
@@ -1017,14 +1064,24 @@ object route53:
       def argsBuilder = com.pulumi.aws.route53.inputs.RecordGeoproximityRoutingPolicyCoordinateArgs.builder
       builder.coordinates(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.route53.inputs.ProfilesAssociationState.Builder)
     def timeouts(args: Endofunction[com.pulumi.aws.route53.inputs.ProfilesAssociationTimeoutsArgs.Builder]):
         com.pulumi.aws.route53.inputs.ProfilesAssociationState.Builder =
       val argsBuilder = com.pulumi.aws.route53.inputs.ProfilesAssociationTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.route53.inputs.ProfilesAssociationState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.route53.inputs.ProfilesProfileState.Builder)
     def timeouts(args: Endofunction[com.pulumi.aws.route53.inputs.ProfilesProfileTimeoutsArgs.Builder]):
         com.pulumi.aws.route53.inputs.ProfilesProfileState.Builder =
       val argsBuilder = com.pulumi.aws.route53.inputs.ProfilesProfileTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
+
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.route53.inputs.ProfilesProfileState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       

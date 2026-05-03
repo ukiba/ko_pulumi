@@ -56,6 +56,7 @@ object devopsguru:
       def argsBuilder = com.pulumi.aws.devopsguru.inputs.EventSourcesConfigEventSourceArgs.builder
       builder.eventSources(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.devopsguru.NotificationChannelArgs.Builder)
     /**
      * @param filters Filter configurations for the Amazon SNS notification topic. See the `filters` argument reference below.
@@ -77,6 +78,7 @@ object devopsguru:
       val argsBuilder = com.pulumi.aws.devopsguru.inputs.NotificationChannelSnsArgs.builder
       builder.sns(args(argsBuilder).build)
 
+                       
   /** Resource for managing an AWS DevOps Guru Notification Channel. */
   def NotificationChannel(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.devopsguru.NotificationChannelArgs.Builder]) =
@@ -133,6 +135,7 @@ object devopsguru:
       val argsBuilder = com.pulumi.aws.devopsguru.inputs.ResourceCollectionTagsArgs.builder
       builder.tags(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.devopsguru.ServiceIntegrationArgs.Builder)
     /**
      * @param kmsServerSideEncryption Information about whether DevOps Guru is configured to encrypt server-side data using KMS. See `kmsServerSideEncryption` below.
@@ -161,6 +164,7 @@ object devopsguru:
       val argsBuilder = com.pulumi.aws.devopsguru.inputs.ServiceIntegrationOpsCenterArgs.builder
       builder.opsCenter(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.devopsguru.inputs.ResourceCollectionState.Builder)
     /**
      * @param cloudformation A collection of AWS CloudFormation stacks. See `cloudformation` below for additional details.
@@ -180,6 +184,7 @@ object devopsguru:
       val argsBuilder = com.pulumi.aws.devopsguru.inputs.ResourceCollectionTagsArgs.builder
       builder.tags(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.devopsguru.inputs.GetNotificationChannelArgs.Builder)
     /**
      * @param filters Filter configurations for the Amazon SNS notification topic. See the `filters` attribute reference below.
@@ -199,6 +204,7 @@ object devopsguru:
       def argsBuilder = com.pulumi.aws.devopsguru.inputs.GetNotificationChannelSnArgs.builder
       builder.sns(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.devopsguru.inputs.ServiceIntegrationState.Builder)
     /**
      * @param kmsServerSideEncryption Information about whether DevOps Guru is configured to encrypt server-side data using KMS. See `kmsServerSideEncryption` below.
@@ -227,6 +233,7 @@ object devopsguru:
       val argsBuilder = com.pulumi.aws.devopsguru.inputs.ServiceIntegrationOpsCenterArgs.builder
       builder.opsCenter(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.devopsguru.inputs.EventSourcesConfigEventSourceArgs.Builder)
     /**
      * @param amazonCodeGuruProfilers Stores whether DevOps Guru is configured to consume recommendations which are generated from AWS CodeGuru Profiler. See `amazonCodeGuruProfiler` below.
@@ -237,6 +244,7 @@ object devopsguru:
       def argsBuilder = com.pulumi.aws.devopsguru.inputs.EventSourcesConfigEventSourceAmazonCodeGuruProfilerArgs.builder
       builder.amazonCodeGuruProfilers(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.devopsguru.inputs.NotificationChannelState.Builder)
     /**
      * @param filters Filter configurations for the Amazon SNS notification topic. See the `filters` argument reference below.
@@ -258,6 +266,7 @@ object devopsguru:
       val argsBuilder = com.pulumi.aws.devopsguru.inputs.NotificationChannelSnsArgs.builder
       builder.sns(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.devopsguru.inputs.EventSourcesConfigState.Builder)
     /**
      * @param eventSources Configuration information about the integration of DevOps Guru as the Consumer via EventBridge with another AWS Service. See `eventSources` below.
@@ -267,3 +276,5 @@ object devopsguru:
         com.pulumi.aws.devopsguru.inputs.EventSourcesConfigState.Builder =
       def argsBuilder = com.pulumi.aws.devopsguru.inputs.EventSourcesConfigEventSourceArgs.builder
       builder.eventSources(args.map(_(argsBuilder).build)*)
+
+                       

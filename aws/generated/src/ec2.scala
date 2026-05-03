@@ -44,6 +44,10 @@ object ec2:
       def argsBuilder = com.pulumi.aws.ec2.inputs.SecurityGroupIngressArgs.builder
       builder.ingress(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.ec2.SecurityGroupArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /**
    * Provides a resource to associate additional IPv6 CIDR blocks with a VPC.
    *  
@@ -63,6 +67,10 @@ object ec2:
       val argsBuilder = com.pulumi.aws.ec2.inputs.CapacityBlockReservationTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.ec2.CapacityBlockReservationArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.ec2.AmiArgs.Builder)
     /**
      * @param ebsBlockDevices Nested block describing an EBS block device that should be
@@ -84,6 +92,10 @@ object ec2:
       def argsBuilder = com.pulumi.aws.ec2.inputs.AmiEphemeralBlockDeviceArgs.builder
       builder.ephemeralBlockDevices(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.ec2.AmiArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /**
    * Provides a resource to manage a [default subnet](http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/default-vpc.html#default-vpc-basics) in the current region.
    *  
@@ -168,6 +180,10 @@ object ec2:
       def argsBuilder = com.pulumi.aws.ec2.inputs.NetworkInsightsAccessScopeMatchPathArgs.builder
       builder.matchPaths(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.ec2.NetworkInsightsAccessScopeArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.ec2.NetworkInsightsPathArgs.Builder)
     /**
      * @param filterAtDestination Scopes the analysis to network paths that match specific filters at the destination. If you specify this parameter, you can&#39;t specify `destinationIp`. See below for details. Note that Terraform performs drift detection on this argument only when the value is provided.
@@ -187,6 +203,10 @@ object ec2:
       val argsBuilder = com.pulumi.aws.ec2.inputs.NetworkInsightsPathFilterAtSourceArgs.builder
       builder.filterAtSource(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.ec2.NetworkInsightsPathArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /**
    * Provides a VPC Endpoint resource.
    *  
@@ -219,6 +239,10 @@ object ec2:
       val argsBuilder = com.pulumi.aws.ec2.inputs.FlowLogDestinationOptionsArgs.builder
       builder.destinationOptions(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.ec2.FlowLogArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /**
    * Provides a security group rule resource. Represents a single `ingress` or `egress` group rule, which can be added to external Security Groups.
    *  
@@ -322,6 +346,10 @@ object ec2:
       val argsBuilder = com.pulumi.aws.ec2.inputs.VpcIpamPoolSourceResourceArgs.builder
       builder.sourceResource(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.ec2.VpcIpamPoolArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.ec2.ManagedPrefixListArgs.Builder)
     /**
      * @param entries Configuration block for prefix list entry. Detailed below. Different entries may have overlapping CIDR blocks, but a particular CIDR should not be duplicated.
@@ -332,6 +360,10 @@ object ec2:
       def argsBuilder = com.pulumi.aws.ec2.inputs.ManagedPrefixListEntryArgs.builder
       builder.entries(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.ec2.ManagedPrefixListArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /**
    * The &#34;AMI copy&#34; resource allows duplication of an Amazon Machine Image (AMI),
    *  including cross-region copies.
@@ -369,6 +401,7 @@ object ec2:
       def argsBuilder = com.pulumi.aws.ec2.inputs.AllowedImagesSettingsImageCriterionArgs.builder
       builder.imageCriterions(args.map(_(argsBuilder).build)*)
 
+                       
   /**
    * Provides an AWS EBS Volume Attachment as a top level resource, to attach and
    *  detach volumes from AWS Instances.
@@ -419,6 +452,10 @@ object ec2:
       val argsBuilder = com.pulumi.aws.ec2.inputs.SpotFleetRequestSpotMaintenanceStrategiesArgs.builder
       builder.spotMaintenanceStrategies(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.ec2.SpotFleetRequestArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /** Provides a VPC DHCP Options Association resource. */
   def VpcDhcpOptionsAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ec2.VpcDhcpOptionsAssociationArgs.Builder]) =
@@ -434,6 +471,10 @@ object ec2:
       val argsBuilder = com.pulumi.aws.ec2.inputs.SecondarySubnetTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.ec2.SecondarySubnetArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /** Creates a scope for AWS IPAM. */
   def VpcIpamScope(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ec2.VpcIpamScopeArgs.Builder])(using conf: KoPulumiConf) =
@@ -465,6 +506,10 @@ object ec2:
       def argsBuilder = com.pulumi.aws.ec2.inputs.DefaultNetworkAclIngressArgs.builder
       builder.ingress(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.ec2.DefaultNetworkAclArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /**
    * Provides a VPC resource.
    *  
@@ -600,6 +645,10 @@ object ec2:
       def argsBuilder = com.pulumi.aws.ec2.inputs.SpotInstanceRequestSecondaryNetworkInterfaceArgs.builder
       builder.secondaryNetworkInterfaces(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.ec2.SpotInstanceRequestArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.ec2.VpnConnectionArgs.Builder)
     /**
      * @param tunnel1LogOptions Options for logging VPN tunnel activity. See Log Options below for more details.
@@ -619,6 +668,10 @@ object ec2:
       val argsBuilder = com.pulumi.aws.ec2.inputs.VpnConnectionTunnel2LogOptionsArgs.builder
       builder.tunnel2LogOptions(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.ec2.VpnConnectionArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.ec2.NatGatewayArgs.Builder)
     /**
      * @param availabilityZoneAddresses Repeatable configuration block for the Elastic IP addresses (EIPs) and availability zones for the regional NAT gateway. When not specified, the regional NAT gateway will automatically expand to new AZs and associate EIPs upon detection of an elastic network interface (auto mode). When specified, auto-expansion is disabled (manual mode). See `availabilityZoneAddress` below for details.
@@ -629,6 +682,10 @@ object ec2:
       def argsBuilder = com.pulumi.aws.ec2.inputs.NatGatewayAvailabilityZoneAddressArgs.builder
       builder.availabilityZoneAddresses(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.ec2.NatGatewayArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /**
    * Provides an IP address pool resource for IPAM.
    *  
@@ -797,6 +854,10 @@ object ec2:
       def argsBuilder = com.pulumi.aws.ec2.inputs.InstanceSecondaryNetworkInterfaceArgs.builder
       builder.secondaryNetworkInterfaces(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.ec2.InstanceArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /**
    * Provides a security group resource.
    *  
@@ -843,6 +904,7 @@ object ec2:
       val argsBuilder = com.pulumi.aws.ec2.inputs.PeeringConnectionOptionsRequesterArgs.builder
       builder.requester(args(argsBuilder).build)
 
+                       
   /**
    * Provides a resource to create a new launch configuration, used for autoscaling groups.
    *  
@@ -887,6 +949,10 @@ object ec2:
       def argsBuilder = com.pulumi.aws.ec2.inputs.RouteTableRouteArgs.builder
       builder.routes(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.ec2.RouteTableArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.ec2.VpcPeeringConnectionAccepterArgs.Builder)
     /**
      * @param accepter A configuration block that describes [VPC Peering Connection]
@@ -908,12 +974,20 @@ object ec2:
       val argsBuilder = com.pulumi.aws.ec2.inputs.VpcPeeringConnectionAccepterRequesterArgs.builder
       builder.requester(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.ec2.VpcPeeringConnectionAccepterArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.ec2.VpcBlockPublicAccessExclusionArgs.Builder)
     def timeouts(args: Endofunction[com.pulumi.aws.ec2.inputs.VpcBlockPublicAccessExclusionTimeoutsArgs.Builder]):
         com.pulumi.aws.ec2.VpcBlockPublicAccessExclusionArgs.Builder =
       val argsBuilder = com.pulumi.aws.ec2.inputs.VpcBlockPublicAccessExclusionTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.ec2.VpcBlockPublicAccessExclusionArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /**
    * Resource for managing an AWS VPC NAT Gateway EIP Association.
    *  
@@ -933,6 +1007,7 @@ object ec2:
       val argsBuilder = com.pulumi.aws.ec2.inputs.DefaultCreditSpecificationTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
+                       
   /** Provides a customer gateway inside a VPC. These objects can be connected to VPN gateways via VPN connections, and allow you to establish tunnels between your network and the VPC. */
   def CustomerGateway(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ec2.CustomerGatewayArgs.Builder])(using conf: KoPulumiConf) =
@@ -2078,6 +2153,7 @@ object ec2:
       val argsBuilder = com.pulumi.aws.ec2.inputs.NatGatewayEipAssociationTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
+                       
   /** Enables the IPAM Service and promotes a delegated administrator. */
   def VpcIpamOrganizationAdminAccount(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ec2.VpcIpamOrganizationAdminAccountArgs.Builder]) =
@@ -2218,6 +2294,10 @@ object ec2:
       val argsBuilder = com.pulumi.aws.ec2.inputs.VpcPeeringConnectionRequesterArgs.builder
       builder.requester(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.ec2.VpcPeeringConnectionArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /** Assigns a static reverse DNS record to an Elastic IP addresses. See [Using reverse DNS for email applications](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html#Using_Elastic_Addressing_Reverse_DNS). */
   def EipDomainName(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ec2.EipDomainNameArgs.Builder]) =
@@ -2250,6 +2330,10 @@ object ec2:
       val argsBuilder = com.pulumi.aws.ec2.inputs.SecondaryNetworkTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.ec2.SecondaryNetworkArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /**
    * Provides a resource to create an association between a route table and a subnet or a route table and an
    *  internet gateway or virtual private gateway.
@@ -2397,6 +2481,7 @@ object ec2:
       val argsBuilder = com.pulumi.aws.ec2.inputs.VpcIpamPoolCidrCidrAuthorizationContextArgs.builder
       builder.cidrAuthorizationContext(args(argsBuilder).build)
 
+                       
   /**
    * Resource for managing an exclusive set of AWS VPC (Virtual Private Cloud) Security Group Rules.
    *  
@@ -2439,6 +2524,7 @@ object ec2:
       val argsBuilder = com.pulumi.aws.ec2.inputs.VpcBlockPublicAccessOptionsTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
+                       
   /**
    * Creates an entry (a rule) in a network ACL with the specified rule number.
    *  
@@ -2466,6 +2552,10 @@ object ec2:
       def argsBuilder = com.pulumi.aws.ec2.inputs.VpcIpamOperatingRegionArgs.builder
       builder.operatingRegions(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.ec2.VpcIpamArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /** Previews a CIDR from an IPAM address pool. Only works for private IPv4. */
   def VpcIpamPreviewNextCidr(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ec2.VpcIpamPreviewNextCidrArgs.Builder]) =
@@ -2494,6 +2584,10 @@ object ec2:
       def argsBuilder = com.pulumi.aws.ec2.inputs.NetworkAclIngressArgs.builder
       builder.ingress(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.ec2.NetworkAclArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /**
    * Provisions a CIDR from an IPAM address pool.
    *  
@@ -2735,6 +2829,10 @@ object ec2:
       def argsBuilder = com.pulumi.aws.ec2.inputs.LaunchTemplateTagSpecificationArgs.builder
       builder.tagSpecifications(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.ec2.LaunchTemplateArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /**
    * [IPv6 only] Creates an egress-only Internet gateway for your VPC.
    *  An egress-only Internet gateway is used to enable outbound communication
@@ -2794,6 +2892,10 @@ object ec2:
       val argsBuilder = com.pulumi.aws.ec2.inputs.VpcEncryptionControlTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.ec2.VpcEncryptionControlArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /**
    * Provides an EC2 launch template resource. Can be used to create instances or auto scaling groups.
    *  
@@ -2907,6 +3009,7 @@ object ec2:
       val argsBuilder = com.pulumi.aws.ec2.inputs.TrafficMirrorFilterRuleSourcePortRangeArgs.builder
       builder.sourcePortRange(args(argsBuilder).build)
 
+                       
   /**
    * Provides an network ACL association resource which allows you to associate your network ACL with any subnet(s).
    *  
@@ -3005,6 +3108,10 @@ object ec2:
       def argsBuilder = com.pulumi.aws.ec2.inputs.AmiCopyEphemeralBlockDeviceArgs.builder
       builder.ephemeralBlockDevices(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.ec2.AmiCopyArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /**
    * Provides a resource to manage whether serial console access is enabled for your AWS account in the current AWS region.
    *  
@@ -3105,6 +3212,10 @@ object ec2:
       def argsBuilder = com.pulumi.aws.ec2.inputs.VpcIpamResourceDiscoveryOrganizationalUnitExclusionArgs.builder
       builder.organizationalUnitExclusions(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.ec2.VpcIpamResourceDiscoveryArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /** Provides a resource to create a VPC VPN Gateway. */
   def VpnGateway(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ec2.VpnGatewayArgs.Builder])(using conf: KoPulumiConf) =
@@ -3154,6 +3265,10 @@ object ec2:
       val argsBuilder = com.pulumi.aws.ec2.inputs.NetworkInterfaceEnaSrdSpecificationArgs.builder
       builder.enaSrdSpecification(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.ec2.NetworkInterfaceArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /** Provides an IPAM Resource Discovery resource. IPAM Resource Discoveries are resources meant for multi-organization customers. If you wish to use a single IPAM across multiple orgs, a resource discovery can be created and shared from a subordinate organization to the management organizations IPAM delegated admin account. For a full deployment example, see `aws.ec2.VpcIpamResourceDiscoveryAssociation` resource. */
   def VpcIpamResourceDiscovery(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ec2.VpcIpamResourceDiscoveryArgs.Builder])(using conf: KoPulumiConf) =
@@ -3185,6 +3300,10 @@ object ec2:
       def argsBuilder = com.pulumi.aws.ec2.inputs.VpcEndpointSubnetConfigurationArgs.builder
       builder.subnetConfigurations(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.ec2.VpcEndpointArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /**
    * Provides a VPC Endpoint Service resource.
    *  Service consumers can create an _Interface_ VPC Endpoint to connect to the service.
@@ -3236,6 +3355,10 @@ object ec2:
       def argsBuilder = com.pulumi.aws.ec2.inputs.AmiFromInstanceEphemeralBlockDeviceArgs.builder
       builder.ephemeralBlockDevices(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.ec2.AmiFromInstanceArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /** Manages a VPC Encryption Control. */
   def VpcEncryptionControl(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ec2.VpcEncryptionControlArgs.Builder])(using conf: KoPulumiConf) =
@@ -3308,6 +3431,10 @@ object ec2:
       val argsBuilder = com.pulumi.aws.ec2.inputs.FleetTargetCapacitySpecificationArgs.builder
       builder.targetCapacitySpecification(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.ec2.FleetArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /** Adds a launch permission to an Amazon Machine Image (AMI). */
   def AmiLaunchPermission(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ec2.AmiLaunchPermissionArgs.Builder]) =
@@ -3480,6 +3607,10 @@ object ec2:
       def argsBuilder = com.pulumi.aws.ec2.inputs.DefaultRouteTableRouteArgs.builder
       builder.routes(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.ec2.DefaultRouteTableArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.ec2.LaunchConfigurationArgs.Builder)
     /**
      * @param ebsBlockDevices Additional EBS block devices to attach to the instance. See Block Devices below for details.
@@ -3517,12 +3648,17 @@ object ec2:
       val argsBuilder = com.pulumi.aws.ec2.inputs.LaunchConfigurationRootBlockDeviceArgs.builder
       builder.rootBlockDevice(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.ec2.EncryptionControlArgs.Builder)
     def timeouts(args: Endofunction[com.pulumi.aws.ec2.inputs.EncryptionControlTimeoutsArgs.Builder]):
         com.pulumi.aws.ec2.EncryptionControlArgs.Builder =
       val argsBuilder = com.pulumi.aws.ec2.inputs.EncryptionControlTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.ec2.EncryptionControlArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /**
    * Provides an EC2 Spot Fleet Request resource. This allows a fleet of Spot
    *  instances to be requested on the Spot market.
@@ -3547,6 +3683,7 @@ object ec2:
       val argsBuilder = com.pulumi.aws.ec2.inputs.NetworkInterfacePermissionTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
+                       
   /** Provides an Elastic network interface (ENI) resource. */
   def NetworkInterface(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ec2.NetworkInterfaceArgs.Builder])(using conf: KoPulumiConf) =
@@ -3740,6 +3877,10 @@ object ec2:
       def argsBuilder = com.pulumi.aws.ec2.inputs.SecurityGroupIngressArgs.builder
       builder.ingress(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.ec2.inputs.SecurityGroupState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.ec2.inputs.GetLocalGatewaysArgs.Builder)
     /**
      * @param filters Custom filter block as described below.
@@ -3753,12 +3894,17 @@ object ec2:
       def argsBuilder = com.pulumi.aws.ec2.inputs.GetLocalGatewaysFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.ec2.inputs.GetLocalGatewaysArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.ec2.inputs.NetworkInsightsAnalysisExplanationSecurityGroupRuleArgs.Builder)
     def portRanges(args: Endofunction[com.pulumi.aws.ec2.inputs.NetworkInsightsAnalysisExplanationSecurityGroupRulePortRangeArgs.Builder]*):
         com.pulumi.aws.ec2.inputs.NetworkInsightsAnalysisExplanationSecurityGroupRuleArgs.Builder =
       def argsBuilder = com.pulumi.aws.ec2.inputs.NetworkInsightsAnalysisExplanationSecurityGroupRulePortRangeArgs.builder
       builder.portRanges(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.ec2.inputs.DefaultRouteTableState.Builder)
     /**
      * @param routes Set of objects. Detailed below
@@ -3769,6 +3915,10 @@ object ec2:
       def argsBuilder = com.pulumi.aws.ec2.inputs.DefaultRouteTableRouteArgs.builder
       builder.routes(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.ec2.inputs.DefaultRouteTableState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.ec2.inputs.NetworkInsightsAccessScopeState.Builder)
     /**
      * @param excludePaths Set of access scope path statements to exclude.
@@ -3793,6 +3943,10 @@ object ec2:
       def argsBuilder = com.pulumi.aws.ec2.inputs.NetworkInsightsAccessScopeMatchPathArgs.builder
       builder.matchPaths(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.ec2.inputs.NetworkInsightsAccessScopeState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.ec2.inputs.NetworkInterfaceEnaSrdSpecificationArgs.Builder)
     /**
      * @param enaSrdUdpSpecification Configures ENA Express for UDP network traffic. See ENA SRD UDP Specification below for more details.
@@ -3803,6 +3957,7 @@ object ec2:
       val argsBuilder = com.pulumi.aws.ec2.inputs.NetworkInterfaceEnaSrdSpecificationEnaSrdUdpSpecificationArgs.builder
       builder.enaSrdUdpSpecification(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.ec2.inputs.VpcIpamPoolCidrState.Builder)
     /**
      * @param cidrAuthorizationContext A signed document that proves that you are authorized to bring the specified IP address range to Amazon using BYOIP. This is not stored in the state file. See cidrAuthorizationContext for more information.
@@ -3813,6 +3968,7 @@ object ec2:
       val argsBuilder = com.pulumi.aws.ec2.inputs.VpcIpamPoolCidrCidrAuthorizationContextArgs.builder
       builder.cidrAuthorizationContext(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.ec2.inputs.VpcEncryptionControlState.Builder)
     /**
      * @param resourceExclusions State of exclusions from encryption enforcement.
@@ -3830,6 +3986,10 @@ object ec2:
       val argsBuilder = com.pulumi.aws.ec2.inputs.VpcEncryptionControlTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.ec2.inputs.VpcEncryptionControlState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.ec2.inputs.GetVpcPeeringConnectionArgs.Builder)
     /**
      * @param filters Custom filter block as described below.
@@ -3840,6 +4000,10 @@ object ec2:
       def argsBuilder = com.pulumi.aws.ec2.inputs.GetVpcPeeringConnectionFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.ec2.inputs.GetVpcPeeringConnectionArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.ec2.inputs.NetworkInsightsAccessScopeExcludePathArgs.Builder)
     /**
      * @param destination Path statement for the destination.
@@ -3871,6 +4035,7 @@ object ec2:
       def argsBuilder = com.pulumi.aws.ec2.inputs.NetworkInsightsAccessScopeExcludePathThroughResourceArgs.builder
       builder.throughResources(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.ec2.inputs.GetNetworkInterfaceArgs.Builder)
     /**
      * @param filters One or more name/value pairs to filter off of. There are several valid keys, for a full reference, check out [describe-network-interfaces](https://docs.aws.amazon.com/cli/latest/reference/ec2/describe-network-interfaces.html) in the AWS CLI reference.
@@ -3881,6 +4046,10 @@ object ec2:
       def argsBuilder = com.pulumi.aws.ec2.inputs.GetNetworkInterfaceFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.ec2.inputs.GetNetworkInterfaceArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.ec2.inputs.GetInstanceArgs.Builder)
     /**
      * @param filters One or more filters to apply to the search.
@@ -3894,6 +4063,10 @@ object ec2:
       def argsBuilder = com.pulumi.aws.ec2.inputs.GetInstanceFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.ec2.inputs.GetInstanceArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.ec2.inputs.NetworkAclState.Builder)
     /**
      * @param egress Specifies an egress rule. Parameters defined below.
@@ -3913,6 +4086,10 @@ object ec2:
       def argsBuilder = com.pulumi.aws.ec2.inputs.NetworkAclIngressArgs.builder
       builder.ingress(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.ec2.inputs.NetworkAclState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.ec2.inputs.ManagedPrefixListState.Builder)
     /**
      * @param entries Configuration block for prefix list entry. Detailed below. Different entries may have overlapping CIDR blocks, but a particular CIDR should not be duplicated.
@@ -3923,6 +4100,10 @@ object ec2:
       def argsBuilder = com.pulumi.aws.ec2.inputs.ManagedPrefixListEntryArgs.builder
       builder.entries(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.ec2.inputs.ManagedPrefixListState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.ec2.inputs.LaunchTemplateNetworkInterfaceArgs.Builder)
     /**
      * @param connectionTrackingSpecification The Connection Tracking Configuration for the network interface. See [Amazon EC2 security group connection tracking](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/security-group-connection-tracking.html#connection-tracking-timeouts)
@@ -3942,6 +4123,7 @@ object ec2:
       val argsBuilder = com.pulumi.aws.ec2.inputs.LaunchTemplateNetworkInterfaceEnaSrdSpecificationArgs.builder
       builder.enaSrdSpecification(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.ec2.inputs.GetInstanceTypesArgs.Builder)
     /**
      * @param filters One or more configuration blocks containing name-values filters. See the [EC2 API Reference](https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstanceTypes.html) for supported filters. Detailed below.
@@ -3952,6 +4134,7 @@ object ec2:
       def argsBuilder = com.pulumi.aws.ec2.inputs.GetInstanceTypesFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.ec2.inputs.GetNetworkInterfacesArgs.Builder)
     /**
      * @param filters Custom filter block as described below.
@@ -3962,6 +4145,10 @@ object ec2:
       def argsBuilder = com.pulumi.aws.ec2.inputs.GetNetworkInterfacesFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.ec2.inputs.GetNetworkInterfacesArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.ec2.inputs.NetworkInterfaceState.Builder)
     /**
      * @param attachments Configuration block to define the attachment of the ENI. See Attachment below for more details!
@@ -3981,6 +4168,10 @@ object ec2:
       val argsBuilder = com.pulumi.aws.ec2.inputs.NetworkInterfaceEnaSrdSpecificationArgs.builder
       builder.enaSrdSpecification(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.ec2.inputs.NetworkInterfaceState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.ec2.inputs.GetVpcIpamPoolArgs.Builder)
     /**
      * @param filters Custom filter block as described below.
@@ -3991,6 +4182,10 @@ object ec2:
       def argsBuilder = com.pulumi.aws.ec2.inputs.GetVpcIpamPoolFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.ec2.inputs.GetVpcIpamPoolArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.ec2.inputs.GetSubnetsArgs.Builder)
     /**
      * @param filters Custom filter block as described below.
@@ -4001,6 +4196,10 @@ object ec2:
       def argsBuilder = com.pulumi.aws.ec2.inputs.GetSubnetsFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.ec2.inputs.GetSubnetsArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.ec2.inputs.EncryptionControlState.Builder)
     /**
      * @param resourceExclusions State of exclusions from encryption enforcement.
@@ -4018,6 +4217,10 @@ object ec2:
       val argsBuilder = com.pulumi.aws.ec2.inputs.EncryptionControlTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.ec2.inputs.EncryptionControlState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.ec2.inputs.GetPrefixListArgs.Builder)
     /**
      * @param filters Configuration block(s) for filtering. Detailed below.
@@ -4032,6 +4235,7 @@ object ec2:
       def argsBuilder = com.pulumi.aws.ec2.inputs.GetPrefixListFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.ec2.inputs.VpcIpamResourceDiscoveryState.Builder)
     /**
      * @param operatingRegions Determines which regions the Resource Discovery will enable IPAM features for usage and monitoring. Locale is the Region where you want to make an IPAM pool available for allocations. You can only create pools with locales that match the operating Regions of the IPAM Resource Discovery. You can only create VPCs from a pool whose locale matches the VPC&#39;s Region. You specify a region using the regionName parameter. **You must set your provider block region as an operating_region.**
@@ -4051,6 +4255,10 @@ object ec2:
       def argsBuilder = com.pulumi.aws.ec2.inputs.VpcIpamResourceDiscoveryOrganizationalUnitExclusionArgs.builder
       builder.organizationalUnitExclusions(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.ec2.inputs.VpcIpamResourceDiscoveryState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.ec2.inputs.NetworkInsightsAnalysisForwardPathComponentInboundHeaderArgs.Builder)
     def destinationPortRanges(args: Endofunction[com.pulumi.aws.ec2.inputs.NetworkInsightsAnalysisForwardPathComponentInboundHeaderDestinationPortRangeArgs.Builder]*):
         com.pulumi.aws.ec2.inputs.NetworkInsightsAnalysisForwardPathComponentInboundHeaderArgs.Builder =
@@ -4062,24 +4270,34 @@ object ec2:
       def argsBuilder = com.pulumi.aws.ec2.inputs.NetworkInsightsAnalysisForwardPathComponentInboundHeaderSourcePortRangeArgs.builder
       builder.sourcePortRanges(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.ec2.inputs.GetCoipPoolArgs.Builder)
     def filters(args: Endofunction[com.pulumi.aws.ec2.inputs.GetCoipPoolFilterArgs.Builder]*):
         com.pulumi.aws.ec2.inputs.GetCoipPoolArgs.Builder =
       def argsBuilder = com.pulumi.aws.ec2.inputs.GetCoipPoolFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.ec2.inputs.GetCoipPoolArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.ec2.inputs.GetLocalGatewayRouteTableArgs.Builder)
     def filters(args: Endofunction[com.pulumi.aws.ec2.inputs.GetLocalGatewayRouteTableFilterArgs.Builder]*):
         com.pulumi.aws.ec2.inputs.GetLocalGatewayRouteTableArgs.Builder =
       def argsBuilder = com.pulumi.aws.ec2.inputs.GetLocalGatewayRouteTableFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.ec2.inputs.GetLocalGatewayRouteTableArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.ec2.inputs.EipDomainNameState.Builder)
     def timeouts(args: Endofunction[com.pulumi.aws.ec2.inputs.EipDomainNameTimeoutsArgs.Builder]):
         com.pulumi.aws.ec2.inputs.EipDomainNameState.Builder =
       val argsBuilder = com.pulumi.aws.ec2.inputs.EipDomainNameTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.ec2.inputs.GetVpcsArgs.Builder)
     /**
      * @param filters Custom filter block as described below.
@@ -4090,6 +4308,10 @@ object ec2:
       def argsBuilder = com.pulumi.aws.ec2.inputs.GetVpcsFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.ec2.inputs.GetVpcsArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.ec2.inputs.NetworkInsightsAnalysisExplanationArgs.Builder)
     def aclRules(args: Endofunction[com.pulumi.aws.ec2.inputs.NetworkInsightsAnalysisExplanationAclRuleArgs.Builder]*):
         com.pulumi.aws.ec2.inputs.NetworkInsightsAnalysisExplanationArgs.Builder =
@@ -4261,12 +4483,14 @@ object ec2:
       def argsBuilder = com.pulumi.aws.ec2.inputs.NetworkInsightsAnalysisExplanationVpnGatewayArgs.builder
       builder.vpnGateways(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.ec2.inputs.NetworkInterfacePermissionState.Builder)
     def timeouts(args: Endofunction[com.pulumi.aws.ec2.inputs.NetworkInterfacePermissionTimeoutsArgs.Builder]):
         com.pulumi.aws.ec2.inputs.NetworkInterfacePermissionState.Builder =
       val argsBuilder = com.pulumi.aws.ec2.inputs.NetworkInterfacePermissionTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.ec2.inputs.GetNatGatewaysArgs.Builder)
     /**
      * @param filters Custom filter block as described below.
@@ -4277,6 +4501,10 @@ object ec2:
       def argsBuilder = com.pulumi.aws.ec2.inputs.GetNatGatewaysFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.ec2.inputs.GetNatGatewaysArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.ec2.inputs.LaunchTemplateInstanceRequirementsArgs.Builder)
     /**
      * @param acceleratorCount Block describing the minimum and maximum number of accelerators (GPUs, FPGAs, or AWS Inferentia chips). Default is no minimum or maximum.
@@ -4359,6 +4587,7 @@ object ec2:
       val argsBuilder = com.pulumi.aws.ec2.inputs.LaunchTemplateInstanceRequirementsVcpuCountArgs.builder
       builder.vcpuCount(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.ec2.inputs.NetworkInsightsAccessScopeMatchPathDestinationArgs.Builder)
     /**
      * @param packetHeaderStatement Packet header statement.
@@ -4375,12 +4604,14 @@ object ec2:
       val argsBuilder = com.pulumi.aws.ec2.inputs.NetworkInsightsAccessScopeMatchPathDestinationResourceStatementArgs.builder
       builder.resourceStatement(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.ec2.inputs.NetworkInsightsAnalysisReturnPathComponentSecurityGroupRuleArgs.Builder)
     def portRanges(args: Endofunction[com.pulumi.aws.ec2.inputs.NetworkInsightsAnalysisReturnPathComponentSecurityGroupRulePortRangeArgs.Builder]*):
         com.pulumi.aws.ec2.inputs.NetworkInsightsAnalysisReturnPathComponentSecurityGroupRuleArgs.Builder =
       def argsBuilder = com.pulumi.aws.ec2.inputs.NetworkInsightsAnalysisReturnPathComponentSecurityGroupRulePortRangeArgs.builder
       builder.portRanges(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.ec2.inputs.VpcEndpointState.Builder)
     /**
      * @param dnsEntries The DNS entries for the VPC Endpoint. Applicable for endpoints of type `Interface`. DNS blocks are documented below.
@@ -4409,6 +4640,10 @@ object ec2:
       def argsBuilder = com.pulumi.aws.ec2.inputs.VpcEndpointSubnetConfigurationArgs.builder
       builder.subnetConfigurations(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.ec2.inputs.VpcEndpointState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.ec2.inputs.FlowLogState.Builder)
     /**
      * @param destinationOptions Describes the destination options for a flow log. More details below.
@@ -4419,6 +4654,10 @@ object ec2:
       val argsBuilder = com.pulumi.aws.ec2.inputs.FlowLogDestinationOptionsArgs.builder
       builder.destinationOptions(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.ec2.inputs.FlowLogState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.ec2.inputs.GetLocalGatewayRouteTablesArgs.Builder)
     /**
      * @param filters Custom filter block as described below.
@@ -4432,6 +4671,10 @@ object ec2:
       def argsBuilder = com.pulumi.aws.ec2.inputs.GetLocalGatewayRouteTablesFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.ec2.inputs.GetLocalGatewayRouteTablesArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.ec2.inputs.SecondarySubnetState.Builder)
     /**
      * @param ipv4CidrBlockAssociations A list of IPv4 CIDR block associations for the secondary network.
@@ -4447,6 +4690,10 @@ object ec2:
       val argsBuilder = com.pulumi.aws.ec2.inputs.SecondarySubnetTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.ec2.inputs.SecondarySubnetState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.ec2.inputs.GetPublicIpv4PoolsArgs.Builder)
     /**
      * @param filters Custom filter block as described below.
@@ -4457,6 +4704,10 @@ object ec2:
       def argsBuilder = com.pulumi.aws.ec2.inputs.GetPublicIpv4PoolsFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.ec2.inputs.GetPublicIpv4PoolsArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.ec2.inputs.SpotFleetRequestSpotMaintenanceStrategiesArgs.Builder)
     /**
      * @param capacityRebalance Nested argument containing the capacity rebalance for your fleet request. Defined below.
@@ -4467,12 +4718,14 @@ object ec2:
       val argsBuilder = com.pulumi.aws.ec2.inputs.SpotFleetRequestSpotMaintenanceStrategiesCapacityRebalanceArgs.builder
       builder.capacityRebalance(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.ec2.inputs.NetworkInsightsAnalysisReturnPathComponentAdditionalDetailArgs.Builder)
     def components(args: Endofunction[com.pulumi.aws.ec2.inputs.NetworkInsightsAnalysisReturnPathComponentAdditionalDetailComponentArgs.Builder]*):
         com.pulumi.aws.ec2.inputs.NetworkInsightsAnalysisReturnPathComponentAdditionalDetailArgs.Builder =
       def argsBuilder = com.pulumi.aws.ec2.inputs.NetworkInsightsAnalysisReturnPathComponentAdditionalDetailComponentArgs.builder
       builder.components(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.ec2.inputs.FleetSpotOptionsMaintenanceStrategiesArgs.Builder)
     /**
      * @param capacityRebalance Nested argument containing the capacity rebalance for your fleet request. Defined below.
@@ -4483,6 +4736,7 @@ object ec2:
       val argsBuilder = com.pulumi.aws.ec2.inputs.FleetSpotOptionsMaintenanceStrategiesCapacityRebalanceArgs.builder
       builder.capacityRebalance(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.ec2.inputs.GetLocalGatewayVirtualInterfaceGroupArgs.Builder)
     /**
      * @param filters One or more configuration blocks containing name-values filters. See the [EC2 API Reference](https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeLocalGatewayVirtualInterfaceGroups.html) for supported filters. Detailed below.
@@ -4493,6 +4747,10 @@ object ec2:
       def argsBuilder = com.pulumi.aws.ec2.inputs.GetLocalGatewayVirtualInterfaceGroupFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.ec2.inputs.GetLocalGatewayVirtualInterfaceGroupArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.ec2.inputs.SecondaryNetworkState.Builder)
     /**
      * @param ipv4CidrBlockAssociations A list of IPv4 CIDR block associations for the secondary network.
@@ -4508,6 +4766,10 @@ object ec2:
       val argsBuilder = com.pulumi.aws.ec2.inputs.SecondaryNetworkTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.ec2.inputs.SecondaryNetworkState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.ec2.inputs.DefaultNetworkAclState.Builder)
     /**
      * @param egress Configuration block for an egress rule. Detailed below.
@@ -4527,6 +4789,10 @@ object ec2:
       def argsBuilder = com.pulumi.aws.ec2.inputs.DefaultNetworkAclIngressArgs.builder
       builder.ingress(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.ec2.inputs.DefaultNetworkAclState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.ec2.inputs.AllowedImagesSettingsImageCriterionArgs.Builder)
     /**
      * @param creationDateCondition Condition based on AMI creation date. See `creationDateCondition` below.
@@ -4546,6 +4812,7 @@ object ec2:
       val argsBuilder = com.pulumi.aws.ec2.inputs.AllowedImagesSettingsImageCriterionDeprecationTimeConditionArgs.builder
       builder.deprecationTimeCondition(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.ec2.inputs.GetEipsArgs.Builder)
     /**
      * @param filters Custom filter block as described below.
@@ -4556,6 +4823,10 @@ object ec2:
       def argsBuilder = com.pulumi.aws.ec2.inputs.GetEipsFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.ec2.inputs.GetEipsArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.ec2.inputs.AmiState.Builder)
     /**
      * @param ebsBlockDevices Nested block describing an EBS block device that should be
@@ -4577,6 +4848,10 @@ object ec2:
       def argsBuilder = com.pulumi.aws.ec2.inputs.AmiEphemeralBlockDeviceArgs.builder
       builder.ephemeralBlockDevices(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.ec2.inputs.AmiState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.ec2.inputs.VpnConnectionTunnel1LogOptionsArgs.Builder)
     /**
      * @param cloudwatchLogOptions Options for sending VPN tunnel logs to CloudWatch. See CloudWatch Log Options below for more details.
@@ -4587,6 +4862,7 @@ object ec2:
       val argsBuilder = com.pulumi.aws.ec2.inputs.VpnConnectionTunnel1LogOptionsCloudwatchLogOptionsArgs.builder
       builder.cloudwatchLogOptions(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.ec2.inputs.AmiCopyState.Builder)
     /**
      * @param ebsBlockDevices Nested block describing an EBS block device that should be
@@ -4608,6 +4884,10 @@ object ec2:
       def argsBuilder = com.pulumi.aws.ec2.inputs.AmiCopyEphemeralBlockDeviceArgs.builder
       builder.ephemeralBlockDevices(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.ec2.inputs.AmiCopyState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.ec2.inputs.GetSpotPriceArgs.Builder)
     /**
      * @param filters One or more configuration blocks containing name-values filters. See the [EC2 API Reference](https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeSpotPriceHistory.html) for supported filters. Detailed below.
@@ -4618,6 +4898,7 @@ object ec2:
       def argsBuilder = com.pulumi.aws.ec2.inputs.GetSpotPriceFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.ec2.inputs.GetManagedPrefixListsArgs.Builder)
     /**
      * @param filters Custom filter block as described below.
@@ -4628,6 +4909,10 @@ object ec2:
       def argsBuilder = com.pulumi.aws.ec2.inputs.GetManagedPrefixListsFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.ec2.inputs.GetManagedPrefixListsArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.ec2.inputs.GetVpcIpamPoolCidrsArgs.Builder)
     /**
      * @param filters Custom filter block as described below.
@@ -4638,6 +4923,7 @@ object ec2:
       def argsBuilder = com.pulumi.aws.ec2.inputs.GetVpcIpamPoolCidrsFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.ec2.inputs.FleetOnDemandOptionsArgs.Builder)
     /**
      * @param capacityReservationOptions The strategy for using unused Capacity Reservations for fulfilling On-Demand capacity. Supported only for fleets of type `instant`.
@@ -4648,6 +4934,7 @@ object ec2:
       val argsBuilder = com.pulumi.aws.ec2.inputs.FleetOnDemandOptionsCapacityReservationOptionsArgs.builder
       builder.capacityReservationOptions(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.ec2.inputs.VpcPeeringConnectionState.Builder)
     /**
      * @param accepter An optional configuration block that allows for [VPC Peering Connection](https://docs.aws.amazon.com/vpc/latest/peering/what-is-vpc-peering.html) options to be set for the VPC that accepts
@@ -4669,6 +4956,10 @@ object ec2:
       val argsBuilder = com.pulumi.aws.ec2.inputs.VpcPeeringConnectionRequesterArgs.builder
       builder.requester(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.ec2.inputs.VpcPeeringConnectionState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.ec2.inputs.NetworkInsightsAnalysisForwardPathComponentOutboundHeaderArgs.Builder)
     def destinationPortRanges(args: Endofunction[com.pulumi.aws.ec2.inputs.NetworkInsightsAnalysisForwardPathComponentOutboundHeaderDestinationPortRangeArgs.Builder]*):
         com.pulumi.aws.ec2.inputs.NetworkInsightsAnalysisForwardPathComponentOutboundHeaderArgs.Builder =
@@ -4680,6 +4971,7 @@ object ec2:
       def argsBuilder = com.pulumi.aws.ec2.inputs.NetworkInsightsAnalysisForwardPathComponentOutboundHeaderSourcePortRangeArgs.builder
       builder.sourcePortRanges(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.ec2.inputs.RouteTableState.Builder)
     /**
      * @param routes A list of route objects. Their keys are documented below.
@@ -4693,6 +4985,10 @@ object ec2:
       def argsBuilder = com.pulumi.aws.ec2.inputs.RouteTableRouteArgs.builder
       builder.routes(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.ec2.inputs.RouteTableState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.ec2.inputs.VpcIpamState.Builder)
     /**
      * @param operatingRegions Determines which locales can be chosen when you create pools. Locale is the Region where you want to make an IPAM pool available for allocations. You can only create pools with locales that match the operating Regions of the IPAM. You can only create VPCs from a pool whose locale matches the VPC&#39;s Region. You specify a region using the regionName parameter. You **must** set your provider block region as an operating_region.
@@ -4703,6 +4999,10 @@ object ec2:
       def argsBuilder = com.pulumi.aws.ec2.inputs.VpcIpamOperatingRegionArgs.builder
       builder.operatingRegions(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.ec2.inputs.VpcIpamState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.ec2.inputs.GetInstancesArgs.Builder)
     /**
      * @param filters One or more filters to apply to the search.
@@ -4716,12 +5016,14 @@ object ec2:
       def argsBuilder = com.pulumi.aws.ec2.inputs.GetInstancesFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.ec2.inputs.NetworkInsightsAnalysisForwardPathComponentAclRuleArgs.Builder)
     def portRanges(args: Endofunction[com.pulumi.aws.ec2.inputs.NetworkInsightsAnalysisForwardPathComponentAclRulePortRangeArgs.Builder]*):
         com.pulumi.aws.ec2.inputs.NetworkInsightsAnalysisForwardPathComponentAclRuleArgs.Builder =
       def argsBuilder = com.pulumi.aws.ec2.inputs.NetworkInsightsAnalysisForwardPathComponentAclRulePortRangeArgs.builder
       builder.portRanges(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.ec2.inputs.NetworkInsightsAccessScopeMatchPathArgs.Builder)
     /**
      * @param destination Path statement for the destination.
@@ -4743,6 +5045,7 @@ object ec2:
       val argsBuilder = com.pulumi.aws.ec2.inputs.NetworkInsightsAccessScopeMatchPathSourceArgs.builder
       builder.source(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.ec2.inputs.VpcPeeringConnectionAccepterState.Builder)
     /**
      * @param accepter A configuration block that describes [VPC Peering Connection]
@@ -4764,6 +5067,10 @@ object ec2:
       val argsBuilder = com.pulumi.aws.ec2.inputs.VpcPeeringConnectionAccepterRequesterArgs.builder
       builder.requester(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.ec2.inputs.VpcPeeringConnectionAccepterState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.ec2.inputs.GetVpcDhcpOptionsArgs.Builder)
     /**
      * @param filters List of custom filters as described below.
@@ -4774,6 +5081,10 @@ object ec2:
       def argsBuilder = com.pulumi.aws.ec2.inputs.GetVpcDhcpOptionsFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.ec2.inputs.GetVpcDhcpOptionsArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.ec2.inputs.NetworkInsightsPathFilterAtSourceArgs.Builder)
     /**
      * @param destinationPortRange The destination port range. See below for details.
@@ -4793,6 +5104,7 @@ object ec2:
       val argsBuilder = com.pulumi.aws.ec2.inputs.NetworkInsightsPathFilterAtSourceSourcePortRangeArgs.builder
       builder.sourcePortRange(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.ec2.inputs.GetAmiIdsArgs.Builder)
     /**
      * @param filters One or more name/value pairs to filter off of. There
@@ -4805,6 +5117,7 @@ object ec2:
       def argsBuilder = com.pulumi.aws.ec2.inputs.GetAmiIdsFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.ec2.inputs.NetworkInsightsPathFilterAtDestinationArgs.Builder)
     /**
      * @param destinationPortRange The destination port range. See below for details.
@@ -4824,6 +5137,7 @@ object ec2:
       val argsBuilder = com.pulumi.aws.ec2.inputs.NetworkInsightsPathFilterAtDestinationSourcePortRangeArgs.builder
       builder.sourcePortRange(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.ec2.inputs.GetLocalGatewayVirtualInterfaceGroupsArgs.Builder)
     /**
      * @param filters One or more configuration blocks containing name-values filters. See the [EC2 API Reference](https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeLocalGatewayVirtualInterfaceGroups.html) for supported filters. Detailed below.
@@ -4834,6 +5148,10 @@ object ec2:
       def argsBuilder = com.pulumi.aws.ec2.inputs.GetLocalGatewayVirtualInterfaceGroupsFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.ec2.inputs.GetLocalGatewayVirtualInterfaceGroupsArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.ec2.inputs.DefaultSecurityGroupState.Builder)
     /**
      * @param egress Configuration block. Detailed below.
@@ -4853,6 +5171,10 @@ object ec2:
       def argsBuilder = com.pulumi.aws.ec2.inputs.DefaultSecurityGroupIngressArgs.builder
       builder.ingress(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.ec2.inputs.DefaultSecurityGroupState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.ec2.inputs.LaunchTemplateInstanceMarketOptionsArgs.Builder)
     /**
      * @param spotOptions The options for [Spot Instance](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances.html)
@@ -4863,6 +5185,7 @@ object ec2:
       val argsBuilder = com.pulumi.aws.ec2.inputs.LaunchTemplateInstanceMarketOptionsSpotOptionsArgs.builder
       builder.spotOptions(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.ec2.inputs.GetKeyPairArgs.Builder)
     /**
      * @param filters Custom filter block as described below.
@@ -4877,6 +5200,10 @@ object ec2:
       def argsBuilder = com.pulumi.aws.ec2.inputs.GetKeyPairFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.ec2.inputs.GetKeyPairArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.ec2.inputs.FleetLaunchTemplateConfigOverrideInstanceRequirementsArgs.Builder)
     /**
      * @param acceleratorCount Block describing the minimum and maximum number of accelerators (GPUs, FPGAs, or AWS Inferentia chips). Default is no minimum or maximum limits.
@@ -4959,12 +5286,17 @@ object ec2:
       val argsBuilder = com.pulumi.aws.ec2.inputs.FleetLaunchTemplateConfigOverrideInstanceRequirementsVcpuCountArgs.builder
       builder.vcpuCount(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.ec2.inputs.VpcBlockPublicAccessExclusionState.Builder)
     def timeouts(args: Endofunction[com.pulumi.aws.ec2.inputs.VpcBlockPublicAccessExclusionTimeoutsArgs.Builder]):
         com.pulumi.aws.ec2.inputs.VpcBlockPublicAccessExclusionState.Builder =
       val argsBuilder = com.pulumi.aws.ec2.inputs.VpcBlockPublicAccessExclusionTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.ec2.inputs.VpcBlockPublicAccessExclusionState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.ec2.inputs.VpnConnectionTunnel2LogOptionsArgs.Builder)
     /**
      * @param cloudwatchLogOptions Options for sending VPN tunnel logs to CloudWatch. See CloudWatch Log Options below for more details.
@@ -4975,6 +5307,7 @@ object ec2:
       val argsBuilder = com.pulumi.aws.ec2.inputs.VpnConnectionTunnel2LogOptionsCloudwatchLogOptionsArgs.builder
       builder.cloudwatchLogOptions(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.ec2.inputs.NetworkInsightsAccessScopeMatchPathSourceArgs.Builder)
     /**
      * @param packetHeaderStatement Packet header statement.
@@ -4997,6 +5330,7 @@ object ec2:
       val argsBuilder = com.pulumi.aws.ec2.inputs.NetworkInsightsAccessScopeMatchPathSourceResourceStatementArgs.builder
       builder.resourceStatement(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.ec2.inputs.VpcIpamPoolState.Builder)
     /**
      * @param sourceResource Resource to use to use to configure a resource planning IPAM Pool. If configured, the `locale` of the parent pool must match the region that the vpc resides in.
@@ -5007,6 +5341,10 @@ object ec2:
       val argsBuilder = com.pulumi.aws.ec2.inputs.VpcIpamPoolSourceResourceArgs.builder
       builder.sourceResource(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.ec2.inputs.VpcIpamPoolState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.ec2.inputs.VpcEncryptionControlResourceExclusionsArgs.Builder)
     /**
      * @param egressOnlyInternetGateway `state` and `stateMessage` describing encryption enforcement state for Egress-Only Internet Gateways.
@@ -5080,6 +5418,7 @@ object ec2:
       val argsBuilder = com.pulumi.aws.ec2.inputs.VpcEncryptionControlResourceExclusionsVpcPeeringArgs.builder
       builder.vpcPeering(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.ec2.inputs.LaunchTemplateCapacityReservationSpecificationArgs.Builder)
     /**
      * @param capacityReservationTarget Used to target a specific Capacity Reservation:
@@ -5090,6 +5429,7 @@ object ec2:
       val argsBuilder = com.pulumi.aws.ec2.inputs.LaunchTemplateCapacityReservationSpecificationCapacityReservationTargetArgs.builder
       builder.capacityReservationTarget(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.ec2.inputs.GetVpcIpamsArgs.Builder)
     /**
      * @param filters Custom filter block as described below.
@@ -5102,6 +5442,7 @@ object ec2:
       def argsBuilder = com.pulumi.aws.ec2.inputs.GetVpcIpamsFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.ec2.inputs.GetNetworkInsightsAnalysisArgs.Builder)
     /**
      * @param filters Configuration block(s) for filtering. Detailed below.
@@ -5116,6 +5457,10 @@ object ec2:
       def argsBuilder = com.pulumi.aws.ec2.inputs.GetNetworkInsightsAnalysisFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.ec2.inputs.GetNetworkInsightsAnalysisArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.ec2.inputs.VpnConnectionState.Builder)
     /**
      * @param routes The static routes associated with the VPN connection. Detailed below.
@@ -5153,6 +5498,10 @@ object ec2:
       def argsBuilder = com.pulumi.aws.ec2.inputs.VpnConnectionVgwTelemetryArgs.builder
       builder.vgwTelemetries(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.ec2.inputs.VpnConnectionState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.ec2.inputs.FleetLaunchTemplateConfigOverrideArgs.Builder)
     /**
      * @param instanceRequirements Override the instance type in the Launch Template with instance types that satisfy the requirements.
@@ -5163,6 +5512,7 @@ object ec2:
       val argsBuilder = com.pulumi.aws.ec2.inputs.FleetLaunchTemplateConfigOverrideInstanceRequirementsArgs.builder
       builder.instanceRequirements(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.ec2.inputs.NetworkInsightsAccessScopeExcludePathDestinationArgs.Builder)
     /**
      * @param packetHeaderStatement Packet header statement.
@@ -5179,6 +5529,7 @@ object ec2:
       val argsBuilder = com.pulumi.aws.ec2.inputs.NetworkInsightsAccessScopeExcludePathDestinationResourceStatementArgs.builder
       builder.resourceStatement(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.ec2.inputs.NetworkInsightsAnalysisReturnPathComponentInboundHeaderArgs.Builder)
     def destinationPortRanges(args: Endofunction[com.pulumi.aws.ec2.inputs.NetworkInsightsAnalysisReturnPathComponentInboundHeaderDestinationPortRangeArgs.Builder]*):
         com.pulumi.aws.ec2.inputs.NetworkInsightsAnalysisReturnPathComponentInboundHeaderArgs.Builder =
@@ -5190,6 +5541,7 @@ object ec2:
       def argsBuilder = com.pulumi.aws.ec2.inputs.NetworkInsightsAnalysisReturnPathComponentInboundHeaderSourcePortRangeArgs.builder
       builder.sourcePortRanges(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.ec2.inputs.GetVpnGatewayArgs.Builder)
     /**
      * @param filters Custom filter block as described below.
@@ -5200,24 +5552,34 @@ object ec2:
       def argsBuilder = com.pulumi.aws.ec2.inputs.GetVpnGatewayFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.ec2.inputs.GetVpnGatewayArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.ec2.inputs.CapacityBlockReservationState.Builder)
     def timeouts(args: Endofunction[com.pulumi.aws.ec2.inputs.CapacityBlockReservationTimeoutsArgs.Builder]):
         com.pulumi.aws.ec2.inputs.CapacityBlockReservationState.Builder =
       val argsBuilder = com.pulumi.aws.ec2.inputs.CapacityBlockReservationTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.ec2.inputs.CapacityBlockReservationState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.ec2.inputs.NetworkInsightsAnalysisForwardPathComponentAdditionalDetailArgs.Builder)
     def components(args: Endofunction[com.pulumi.aws.ec2.inputs.NetworkInsightsAnalysisForwardPathComponentAdditionalDetailComponentArgs.Builder]*):
         com.pulumi.aws.ec2.inputs.NetworkInsightsAnalysisForwardPathComponentAdditionalDetailArgs.Builder =
       def argsBuilder = com.pulumi.aws.ec2.inputs.NetworkInsightsAnalysisForwardPathComponentAdditionalDetailComponentArgs.builder
       builder.components(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.ec2.inputs.DefaultCreditSpecificationState.Builder)
     def timeouts(args: Endofunction[com.pulumi.aws.ec2.inputs.DefaultCreditSpecificationTimeoutsArgs.Builder]):
         com.pulumi.aws.ec2.inputs.DefaultCreditSpecificationState.Builder =
       val argsBuilder = com.pulumi.aws.ec2.inputs.DefaultCreditSpecificationTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.ec2.inputs.NetworkInsightsAccessScopeExcludePathThroughResourceArgs.Builder)
     /**
      * @param resourceStatement Resource statement.
@@ -5230,6 +5592,7 @@ object ec2:
       val argsBuilder = com.pulumi.aws.ec2.inputs.NetworkInsightsAccessScopeExcludePathThroughResourceResourceStatementArgs.builder
       builder.resourceStatement(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.ec2.inputs.GetNatGatewayArgs.Builder)
     /**
      * @param filters Custom filter block as described below.
@@ -5244,6 +5607,10 @@ object ec2:
       def argsBuilder = com.pulumi.aws.ec2.inputs.GetNatGatewayFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.ec2.inputs.GetNatGatewayArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.ec2.inputs.SpotFleetRequestLaunchTemplateConfigArgs.Builder)
     /**
      * @param launchTemplateSpecification Launch template specification. See Launch Template Specification below for more details.
@@ -5263,12 +5630,14 @@ object ec2:
       def argsBuilder = com.pulumi.aws.ec2.inputs.SpotFleetRequestLaunchTemplateConfigOverrideArgs.builder
       builder.overrides(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.ec2.inputs.NetworkInsightsAnalysisReturnPathComponentAclRuleArgs.Builder)
     def portRanges(args: Endofunction[com.pulumi.aws.ec2.inputs.NetworkInsightsAnalysisReturnPathComponentAclRulePortRangeArgs.Builder]*):
         com.pulumi.aws.ec2.inputs.NetworkInsightsAnalysisReturnPathComponentAclRuleArgs.Builder =
       def argsBuilder = com.pulumi.aws.ec2.inputs.NetworkInsightsAnalysisReturnPathComponentAclRulePortRangeArgs.builder
       builder.portRanges(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.ec2.inputs.NetworkInsightsAnalysisReturnPathComponentOutboundHeaderArgs.Builder)
     def destinationPortRanges(args: Endofunction[com.pulumi.aws.ec2.inputs.NetworkInsightsAnalysisReturnPathComponentOutboundHeaderDestinationPortRangeArgs.Builder]*):
         com.pulumi.aws.ec2.inputs.NetworkInsightsAnalysisReturnPathComponentOutboundHeaderArgs.Builder =
@@ -5280,24 +5649,28 @@ object ec2:
       def argsBuilder = com.pulumi.aws.ec2.inputs.NetworkInsightsAnalysisReturnPathComponentOutboundHeaderSourcePortRangeArgs.builder
       builder.sourcePortRanges(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.ec2.inputs.NetworkInsightsAnalysisExplanationAclRuleArgs.Builder)
     def portRanges(args: Endofunction[com.pulumi.aws.ec2.inputs.NetworkInsightsAnalysisExplanationAclRulePortRangeArgs.Builder]*):
         com.pulumi.aws.ec2.inputs.NetworkInsightsAnalysisExplanationAclRuleArgs.Builder =
       def argsBuilder = com.pulumi.aws.ec2.inputs.NetworkInsightsAnalysisExplanationAclRulePortRangeArgs.builder
       builder.portRanges(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.ec2.inputs.VpcBlockPublicAccessOptionsState.Builder)
     def timeouts(args: Endofunction[com.pulumi.aws.ec2.inputs.VpcBlockPublicAccessOptionsTimeoutsArgs.Builder]):
         com.pulumi.aws.ec2.inputs.VpcBlockPublicAccessOptionsState.Builder =
       val argsBuilder = com.pulumi.aws.ec2.inputs.VpcBlockPublicAccessOptionsTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.ec2.inputs.NatGatewayEipAssociationState.Builder)
     def timeouts(args: Endofunction[com.pulumi.aws.ec2.inputs.NatGatewayEipAssociationTimeoutsArgs.Builder]):
         com.pulumi.aws.ec2.inputs.NatGatewayEipAssociationState.Builder =
       val argsBuilder = com.pulumi.aws.ec2.inputs.NatGatewayEipAssociationTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.ec2.inputs.GetCoipPoolsArgs.Builder)
     /**
      * @param filters Custom filter block as described below.
@@ -5311,6 +5684,10 @@ object ec2:
       def argsBuilder = com.pulumi.aws.ec2.inputs.GetCoipPoolsFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.ec2.inputs.GetCoipPoolsArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.ec2.inputs.GetAmiArgs.Builder)
     /**
      * @param filters One or more name/value pairs to filter off of. There are
@@ -5323,6 +5700,10 @@ object ec2:
       def argsBuilder = com.pulumi.aws.ec2.inputs.GetAmiFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.ec2.inputs.GetAmiArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.ec2.inputs.SpotInstanceRequestCapacityReservationSpecificationArgs.Builder)
     /**
      * @param capacityReservationTarget Information about the target Capacity Reservation. See Capacity Reservation Target below for more details.
@@ -5335,6 +5716,7 @@ object ec2:
       val argsBuilder = com.pulumi.aws.ec2.inputs.SpotInstanceRequestCapacityReservationSpecificationCapacityReservationTargetArgs.builder
       builder.capacityReservationTarget(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.ec2.inputs.SpotFleetRequestLaunchTemplateConfigOverrideInstanceRequirementsArgs.Builder)
     /**
      * @param acceleratorCount Block describing the minimum and maximum number of accelerators (GPUs, FPGAs, or AWS Inferentia chips). Default is no minimum or maximum.
@@ -5417,6 +5799,7 @@ object ec2:
       val argsBuilder = com.pulumi.aws.ec2.inputs.SpotFleetRequestLaunchTemplateConfigOverrideInstanceRequirementsVcpuCountArgs.builder
       builder.vcpuCount(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.ec2.inputs.NetworkInsightsPathState.Builder)
     /**
      * @param filterAtDestination Scopes the analysis to network paths that match specific filters at the destination. If you specify this parameter, you can&#39;t specify `destinationIp`. See below for details. Note that Terraform performs drift detection on this argument only when the value is provided.
@@ -5436,6 +5819,10 @@ object ec2:
       val argsBuilder = com.pulumi.aws.ec2.inputs.NetworkInsightsPathFilterAtSourceArgs.builder
       builder.filterAtSource(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.ec2.inputs.NetworkInsightsPathState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.ec2.inputs.GetRouteTablesArgs.Builder)
     /**
      * @param filters Custom filter block as described below.
@@ -5446,6 +5833,10 @@ object ec2:
       def argsBuilder = com.pulumi.aws.ec2.inputs.GetRouteTablesFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.ec2.inputs.GetRouteTablesArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.ec2.inputs.GetLocalGatewayArgs.Builder)
     /**
      * @param filters Custom filter block as described below.
@@ -5456,6 +5847,10 @@ object ec2:
       def argsBuilder = com.pulumi.aws.ec2.inputs.GetLocalGatewayFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.ec2.inputs.GetLocalGatewayArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.ec2.inputs.PeeringConnectionOptionsState.Builder)
     /**
      * @param accepter An optional configuration block that allows for [VPC Peering Connection](https://docs.aws.amazon.com/vpc/latest/peering/what-is-vpc-peering.html) options to be set for the VPC that accepts the peering connection (a maximum of one).
@@ -5475,6 +5870,7 @@ object ec2:
       val argsBuilder = com.pulumi.aws.ec2.inputs.PeeringConnectionOptionsRequesterArgs.builder
       builder.requester(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.ec2.inputs.EncryptionControlResourceExclusionsArgs.Builder)
     /**
      * @param egressOnlyInternetGateway `state` and `stateMessage` describing encryption enforcement state for Egress-Only Internet Gateways.
@@ -5548,6 +5944,7 @@ object ec2:
       val argsBuilder = com.pulumi.aws.ec2.inputs.EncryptionControlResourceExclusionsVpcPeeringArgs.builder
       builder.vpcPeering(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.ec2.inputs.GetNetworkInsightsPathArgs.Builder)
     /**
      * @param filters Configuration block(s) for filtering. Detailed below.
@@ -5562,6 +5959,10 @@ object ec2:
       def argsBuilder = com.pulumi.aws.ec2.inputs.GetNetworkInsightsPathFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.ec2.inputs.GetNetworkInsightsPathArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.ec2.inputs.NetworkInsightsAccessScopeExcludePathSourceArgs.Builder)
     /**
      * @param packetHeaderStatement Packet header statement.
@@ -5584,6 +5985,7 @@ object ec2:
       val argsBuilder = com.pulumi.aws.ec2.inputs.NetworkInsightsAccessScopeExcludePathSourceResourceStatementArgs.builder
       builder.resourceStatement(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.ec2.inputs.GetVpcEndpointServiceArgs.Builder)
     /**
      * @param filters Configuration block(s) for filtering. Detailed below.
@@ -5594,6 +5996,10 @@ object ec2:
       def argsBuilder = com.pulumi.aws.ec2.inputs.GetVpcEndpointServiceFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.ec2.inputs.GetVpcEndpointServiceArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.ec2.inputs.SpotInstanceRequestState.Builder)
     /**
      * @param capacityReservationSpecification Describes an instance&#39;s Capacity Reservation targeting option. See Capacity Reservation Specification below for more details.
@@ -5722,6 +6128,10 @@ object ec2:
       def argsBuilder = com.pulumi.aws.ec2.inputs.SpotInstanceRequestSecondaryNetworkInterfaceArgs.builder
       builder.secondaryNetworkInterfaces(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.ec2.inputs.SpotInstanceRequestState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.ec2.inputs.GetLaunchTemplateArgs.Builder)
     /**
      * @param filters Configuration block(s) for filtering. Detailed below.
@@ -5732,6 +6142,10 @@ object ec2:
       def argsBuilder = com.pulumi.aws.ec2.inputs.GetLaunchTemplateFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.ec2.inputs.GetLaunchTemplateArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.ec2.inputs.LaunchConfigurationState.Builder)
     /**
      * @param ebsBlockDevices Additional EBS block devices to attach to the instance. See Block Devices below for details.
@@ -5769,6 +6183,7 @@ object ec2:
       val argsBuilder = com.pulumi.aws.ec2.inputs.LaunchConfigurationRootBlockDeviceArgs.builder
       builder.rootBlockDevice(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.ec2.inputs.GetVpcArgs.Builder)
     /**
      * @param filters Custom filter block as described below.
@@ -5779,6 +6194,10 @@ object ec2:
       def argsBuilder = com.pulumi.aws.ec2.inputs.GetVpcFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.ec2.inputs.GetVpcArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.ec2.inputs.FleetState.Builder)
     /**
      * @param fleetInstanceSets Information about the instances that were launched by the fleet. Available only when `type` is set to `instant`.
@@ -5825,6 +6244,10 @@ object ec2:
       val argsBuilder = com.pulumi.aws.ec2.inputs.FleetTargetCapacitySpecificationArgs.builder
       builder.targetCapacitySpecification(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.ec2.inputs.FleetState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.ec2.inputs.NatGatewayState.Builder)
     /**
      * @param availabilityZoneAddresses Repeatable configuration block for the Elastic IP addresses (EIPs) and availability zones for the regional NAT gateway. When not specified, the regional NAT gateway will automatically expand to new AZs and associate EIPs upon detection of an elastic network interface (auto mode). When specified, auto-expansion is disabled (manual mode). See `availabilityZoneAddress` below for details.
@@ -5844,6 +6267,10 @@ object ec2:
       def argsBuilder = com.pulumi.aws.ec2.inputs.NatGatewayRegionalNatGatewayAddressArgs.builder
       builder.regionalNatGatewayAddresses(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.ec2.inputs.NatGatewayState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.ec2.inputs.LaunchTemplateNetworkInterfaceEnaSrdSpecificationArgs.Builder)
     /**
      * @param enaSrdUdpSpecification Configuration for ENA Express UDP optimization. See details below.
@@ -5854,6 +6281,7 @@ object ec2:
       val argsBuilder = com.pulumi.aws.ec2.inputs.LaunchTemplateNetworkInterfaceEnaSrdSpecificationEnaSrdUdpSpecificationArgs.builder
       builder.enaSrdUdpSpecification(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.ec2.inputs.InstanceCapacityReservationSpecificationArgs.Builder)
     /**
      * @param capacityReservationTarget Information about the target Capacity Reservation. See Capacity Reservation Target below for more details.
@@ -5866,6 +6294,7 @@ object ec2:
       val argsBuilder = com.pulumi.aws.ec2.inputs.InstanceCapacityReservationSpecificationCapacityReservationTargetArgs.builder
       builder.capacityReservationTarget(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.ec2.inputs.TrafficMirrorFilterRuleState.Builder)
     /**
      * @param destinationPortRange Destination port range. Supported only when the protocol is set to TCP(6) or UDP(17). See Traffic mirror port range documented below
@@ -5885,6 +6314,7 @@ object ec2:
       val argsBuilder = com.pulumi.aws.ec2.inputs.TrafficMirrorFilterRuleSourcePortRangeArgs.builder
       builder.sourcePortRange(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.ec2.inputs.AllowedImagesSettingsState.Builder)
     /**
      * @param imageCriterions List of image criteria. Maximum of 10 criterion blocks allowed. See `imageCriterion` below.
@@ -5895,6 +6325,7 @@ object ec2:
       def argsBuilder = com.pulumi.aws.ec2.inputs.AllowedImagesSettingsImageCriterionArgs.builder
       builder.imageCriterions(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.ec2.inputs.GetVpcEndpointArgs.Builder)
     /**
      * @param filters Custom filter block as described below.
@@ -5905,6 +6336,10 @@ object ec2:
       def argsBuilder = com.pulumi.aws.ec2.inputs.GetVpcEndpointFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.ec2.inputs.GetVpcEndpointArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.ec2.inputs.SpotFleetRequestLaunchSpecificationArgs.Builder)
     def ebsBlockDevices(args: Endofunction[com.pulumi.aws.ec2.inputs.SpotFleetRequestLaunchSpecificationEbsBlockDeviceArgs.Builder]*):
         com.pulumi.aws.ec2.inputs.SpotFleetRequestLaunchSpecificationArgs.Builder =
@@ -5921,6 +6356,10 @@ object ec2:
       def argsBuilder = com.pulumi.aws.ec2.inputs.SpotFleetRequestLaunchSpecificationRootBlockDeviceArgs.builder
       builder.rootBlockDevices(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.ec2.inputs.SpotFleetRequestLaunchSpecificationArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.ec2.inputs.GetCustomerGatewayArgs.Builder)
     /**
      * @param filters One or more [name-value pairs][dcg-filters] to filter by.
@@ -5933,6 +6372,10 @@ object ec2:
       def argsBuilder = com.pulumi.aws.ec2.inputs.GetCustomerGatewayFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.ec2.inputs.GetCustomerGatewayArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.ec2.inputs.LaunchTemplateState.Builder)
     /**
      * @param blockDeviceMappings Specify volumes to attach to the instance besides the volumes specified by the AMI.
@@ -6107,6 +6550,10 @@ object ec2:
       def argsBuilder = com.pulumi.aws.ec2.inputs.LaunchTemplateTagSpecificationArgs.builder
       builder.tagSpecifications(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.ec2.inputs.LaunchTemplateState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.ec2.inputs.NetworkInsightsAnalysisReturnPathComponentArgs.Builder)
     def aclRules(args: Endofunction[com.pulumi.aws.ec2.inputs.NetworkInsightsAnalysisReturnPathComponentAclRuleArgs.Builder]*):
         com.pulumi.aws.ec2.inputs.NetworkInsightsAnalysisReturnPathComponentArgs.Builder =
@@ -6178,6 +6625,7 @@ object ec2:
       def argsBuilder = com.pulumi.aws.ec2.inputs.NetworkInsightsAnalysisReturnPathComponentVpcArgs.builder
       builder.vpcs(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.ec2.inputs.GetVpcIpamPoolsArgs.Builder)
     /**
      * @param filters Custom filter block as described below.
@@ -6190,6 +6638,7 @@ object ec2:
       def argsBuilder = com.pulumi.aws.ec2.inputs.GetVpcIpamPoolsFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.ec2.inputs.SpotFleetRequestLaunchTemplateConfigOverrideArgs.Builder)
     /**
      * @param instanceRequirements The instance requirements. See below.
@@ -6200,6 +6649,7 @@ object ec2:
       val argsBuilder = com.pulumi.aws.ec2.inputs.SpotFleetRequestLaunchTemplateConfigOverrideInstanceRequirementsArgs.builder
       builder.instanceRequirements(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.ec2.inputs.GetManagedPrefixListArgs.Builder)
     /**
      * @param filters Configuration block(s) for filtering. Detailed below.
@@ -6214,6 +6664,10 @@ object ec2:
       def argsBuilder = com.pulumi.aws.ec2.inputs.GetManagedPrefixListFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.ec2.inputs.GetManagedPrefixListArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.ec2.inputs.NetworkInsightsAnalysisForwardPathComponentArgs.Builder)
     def aclRules(args: Endofunction[com.pulumi.aws.ec2.inputs.NetworkInsightsAnalysisForwardPathComponentAclRuleArgs.Builder]*):
         com.pulumi.aws.ec2.inputs.NetworkInsightsAnalysisForwardPathComponentArgs.Builder =
@@ -6285,6 +6739,7 @@ object ec2:
       def argsBuilder = com.pulumi.aws.ec2.inputs.NetworkInsightsAnalysisForwardPathComponentVpcArgs.builder
       builder.vpcs(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.ec2.inputs.GetDedicatedHostArgs.Builder)
     /**
      * @param filters Configuration block. Detailed below.
@@ -6295,6 +6750,10 @@ object ec2:
       def argsBuilder = com.pulumi.aws.ec2.inputs.GetDedicatedHostFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.ec2.inputs.GetDedicatedHostArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.ec2.inputs.GetSecurityGroupsArgs.Builder)
     /**
      * @param filters One or more name/value pairs to use as filters. There are several valid keys, for a full reference, check out [describe-security-groups in the AWS CLI reference][1].
@@ -6305,6 +6764,10 @@ object ec2:
       def argsBuilder = com.pulumi.aws.ec2.inputs.GetSecurityGroupsFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.ec2.inputs.GetSecurityGroupsArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.ec2.inputs.GetVpcPeeringConnectionsArgs.Builder)
     /**
      * @param filters Custom filter block as described below.
@@ -6315,6 +6778,10 @@ object ec2:
       def argsBuilder = com.pulumi.aws.ec2.inputs.GetVpcPeeringConnectionsFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.ec2.inputs.GetVpcPeeringConnectionsArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.ec2.inputs.GetInstanceTypeOfferingArgs.Builder)
     /**
      * @param filters One or more configuration blocks containing name-values filters. See the [EC2 API Reference](https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstanceTypeOfferings.html) for supported filters. Detailed below.
@@ -6325,6 +6792,7 @@ object ec2:
       def argsBuilder = com.pulumi.aws.ec2.inputs.GetInstanceTypeOfferingFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.ec2.inputs.GetServiceLinkVirtualInterfacesArgs.Builder)
     /**
      * @param filters One or more configuration blocks containing name-values filters. See the [EC2 API Reference](https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeServiceLinkVirtualInterfaces.html) for supported filters. Detailed below.
@@ -6335,6 +6803,10 @@ object ec2:
       def argsBuilder = com.pulumi.aws.ec2.inputs.GetServiceLinkVirtualInterfacesFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.ec2.inputs.GetServiceLinkVirtualInterfacesArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.ec2.inputs.GetSubnetArgs.Builder)
     /**
      * @param filters Configuration block. Detailed below.
@@ -6345,6 +6817,10 @@ object ec2:
       def argsBuilder = com.pulumi.aws.ec2.inputs.GetSubnetFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.ec2.inputs.GetSubnetArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.ec2.inputs.GetSecurityGroupArgs.Builder)
     /**
      * @param filters Custom filter block as described below.
@@ -6355,6 +6831,10 @@ object ec2:
       def argsBuilder = com.pulumi.aws.ec2.inputs.GetSecurityGroupFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.ec2.inputs.GetSecurityGroupArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.ec2.inputs.GetServiceLinkVirtualInterfaceArgs.Builder)
     /**
      * @param filters One or more configuration blocks containing name-values filters. See the [EC2 API Reference](https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeServiceLinkVirtualInterfaces.html) for supported filters. Detailed below.
@@ -6365,6 +6845,7 @@ object ec2:
       def argsBuilder = com.pulumi.aws.ec2.inputs.GetServiceLinkVirtualInterfaceFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.ec2.inputs.SpotFleetRequestState.Builder)
     /**
      * @param launchSpecifications Used to define the launch configuration of the
@@ -6401,6 +6882,10 @@ object ec2:
       val argsBuilder = com.pulumi.aws.ec2.inputs.SpotFleetRequestSpotMaintenanceStrategiesArgs.builder
       builder.spotMaintenanceStrategies(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.ec2.inputs.SpotFleetRequestState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.ec2.inputs.GetRouteTableArgs.Builder)
     /**
      * @param filters Configuration block. Detailed below.
@@ -6411,6 +6896,10 @@ object ec2:
       def argsBuilder = com.pulumi.aws.ec2.inputs.GetRouteTableFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.ec2.inputs.GetRouteTableArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.ec2.inputs.AmiFromInstanceState.Builder)
     /**
      * @param ebsBlockDevices Nested block describing an EBS block device that should be
@@ -6432,6 +6921,10 @@ object ec2:
       def argsBuilder = com.pulumi.aws.ec2.inputs.AmiFromInstanceEphemeralBlockDeviceArgs.builder
       builder.ephemeralBlockDevices(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.ec2.inputs.AmiFromInstanceState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.ec2.inputs.VpcEndpointServiceState.Builder)
     /**
      * @param privateDnsNameConfigurations List of objects containing information about the endpoint service private DNS name configuration.
@@ -6442,6 +6935,10 @@ object ec2:
       def argsBuilder = com.pulumi.aws.ec2.inputs.VpcEndpointServicePrivateDnsNameConfigurationArgs.builder
       builder.privateDnsNameConfigurations(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.ec2.inputs.VpcEndpointServiceState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.ec2.inputs.GetTransitGatewayRouteTablesArgs.Builder)
     /**
      * @param filters Custom filter block as described below.
@@ -6452,6 +6949,10 @@ object ec2:
       def argsBuilder = com.pulumi.aws.ec2.inputs.GetTransitGatewayRouteTablesFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.ec2.inputs.GetTransitGatewayRouteTablesArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.ec2.inputs.InstanceInstanceMarketOptionsArgs.Builder)
     /**
      * @param spotOptions Block to configure the options for Spot Instances. See Spot Options below for details on attributes.
@@ -6462,6 +6963,7 @@ object ec2:
       val argsBuilder = com.pulumi.aws.ec2.inputs.InstanceInstanceMarketOptionsSpotOptionsArgs.builder
       builder.spotOptions(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.ec2.inputs.GetVpnConnectionArgs.Builder)
     /**
      * @param filters Configuration block(s) for filtering. Detailed below.
@@ -6472,6 +6974,7 @@ object ec2:
       def argsBuilder = com.pulumi.aws.ec2.inputs.GetVpnConnectionFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.ec2.inputs.FleetLaunchTemplateConfigArgs.Builder)
     /**
      * @param launchTemplateSpecification Nested argument containing EC2 Launch Template to use. Defined below.
@@ -6491,6 +6994,7 @@ object ec2:
       def argsBuilder = com.pulumi.aws.ec2.inputs.FleetLaunchTemplateConfigOverrideArgs.builder
       builder.overrides(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.ec2.inputs.GetNetworkAclsArgs.Builder)
     /**
      * @param filters Custom filter block as described below.
@@ -6501,6 +7005,10 @@ object ec2:
       def argsBuilder = com.pulumi.aws.ec2.inputs.GetNetworkAclsFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.ec2.inputs.GetNetworkAclsArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.ec2.inputs.LaunchTemplateBlockDeviceMappingArgs.Builder)
     /**
      * @param ebs Configure EBS volume properties.
@@ -6511,6 +7019,7 @@ object ec2:
       val argsBuilder = com.pulumi.aws.ec2.inputs.LaunchTemplateBlockDeviceMappingEbsArgs.builder
       builder.ebs(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.ec2.inputs.GetInternetGatewayArgs.Builder)
     /**
      * @param filters Custom filter block as described below.
@@ -6524,12 +7033,17 @@ object ec2:
       def argsBuilder = com.pulumi.aws.ec2.inputs.GetInternetGatewayFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.ec2.inputs.GetInternetGatewayArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.ec2.inputs.NetworkInsightsAnalysisForwardPathComponentSecurityGroupRuleArgs.Builder)
     def portRanges(args: Endofunction[com.pulumi.aws.ec2.inputs.NetworkInsightsAnalysisForwardPathComponentSecurityGroupRulePortRangeArgs.Builder]*):
         com.pulumi.aws.ec2.inputs.NetworkInsightsAnalysisForwardPathComponentSecurityGroupRuleArgs.Builder =
       def argsBuilder = com.pulumi.aws.ec2.inputs.NetworkInsightsAnalysisForwardPathComponentSecurityGroupRulePortRangeArgs.builder
       builder.portRanges(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.ec2.inputs.GetLocalGatewayVirtualInterfaceArgs.Builder)
     /**
      * @param filters One or more configuration blocks containing name-values filters. See the [EC2 API Reference](https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeLocalGatewayVirtualInterfaces.html) for supported filters. Detailed below.
@@ -6540,6 +7054,10 @@ object ec2:
       def argsBuilder = com.pulumi.aws.ec2.inputs.GetLocalGatewayVirtualInterfaceFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.ec2.inputs.GetLocalGatewayVirtualInterfaceArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.ec2.inputs.GetElasticIpArgs.Builder)
     /**
      * @param filters One or more name/value pairs to use as filters. There are several valid keys, for a full reference, check out the [EC2 API Reference](https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeAddresses.html).
@@ -6550,6 +7068,10 @@ object ec2:
       def argsBuilder = com.pulumi.aws.ec2.inputs.GetElasticIpFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.ec2.inputs.GetElasticIpArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.ec2.inputs.NetworkInsightsAnalysisState.Builder)
     /**
      * @param alternatePathHints Potential intermediate components of a feasible path. Described below.
@@ -6587,6 +7109,10 @@ object ec2:
       def argsBuilder = com.pulumi.aws.ec2.inputs.NetworkInsightsAnalysisReturnPathComponentArgs.builder
       builder.returnPathComponents(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.ec2.inputs.NetworkInsightsAnalysisState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.ec2.inputs.FleetSpotOptionsArgs.Builder)
     /**
      * @param maintenanceStrategies Nested argument containing maintenance strategies for managing your Spot Instances that are at an elevated risk of being interrupted. Defined below.
@@ -6597,6 +7123,7 @@ object ec2:
       val argsBuilder = com.pulumi.aws.ec2.inputs.FleetSpotOptionsMaintenanceStrategiesArgs.builder
       builder.maintenanceStrategies(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.ec2.inputs.GetInstanceTypeOfferingsArgs.Builder)
     /**
      * @param filters One or more configuration blocks containing name-values filters. See the [EC2 API Reference](https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstanceTypeOfferings.html) for supported filters. Detailed below.
@@ -6607,6 +7134,7 @@ object ec2:
       def argsBuilder = com.pulumi.aws.ec2.inputs.GetInstanceTypeOfferingsFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.ec2.inputs.InstanceState.Builder)
     /**
      * @param capacityReservationSpecification Describes an instance&#39;s Capacity Reservation targeting option. See Capacity Reservation Specification below for more details.
@@ -6744,6 +7272,10 @@ object ec2:
       def argsBuilder = com.pulumi.aws.ec2.inputs.InstanceSecondaryNetworkInterfaceArgs.builder
       builder.secondaryNetworkInterfaces(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.ec2.inputs.InstanceState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /**
    * Provides an EC2 Secondary Subnet resource.
    *  
@@ -6779,8 +7311,14 @@ object ec2:
       def argsBuilder = com.pulumi.aws.ec2.inputs.DefaultSecurityGroupIngressArgs.builder
       builder.ingress(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.ec2.DefaultSecurityGroupArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.ec2.EipDomainNameArgs.Builder)
     def timeouts(args: Endofunction[com.pulumi.aws.ec2.inputs.EipDomainNameTimeoutsArgs.Builder]):
         com.pulumi.aws.ec2.EipDomainNameArgs.Builder =
       val argsBuilder = com.pulumi.aws.ec2.inputs.EipDomainNameTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
+
+                       

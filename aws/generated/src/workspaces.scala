@@ -10,6 +10,10 @@ object workspaces:
       val argsBuilder = com.pulumi.aws.workspaces.inputs.ConnectionAliasTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.workspaces.ConnectionAliasArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.workspaces.IpGroupArgs.Builder)
     /**
      * @param rules One or more pairs specifying the IP group rule (in CIDR format) from which web requests originate.
@@ -20,6 +24,10 @@ object workspaces:
       def argsBuilder = com.pulumi.aws.workspaces.inputs.IpGroupRuleArgs.builder
       builder.rules(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.workspaces.IpGroupArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /** Provides an IP access control group in AWS WorkSpaces Service */
   def IpGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.workspaces.IpGroupArgs.Builder])(using conf: KoPulumiConf) =
@@ -45,6 +53,10 @@ object workspaces:
       val argsBuilder = com.pulumi.aws.workspaces.inputs.WorkspaceWorkspacePropertiesArgs.builder
       builder.workspaceProperties(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.workspaces.WorkspaceArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /**
    * Provides a WorkSpaces directory in AWS WorkSpaces Service.
    *  
@@ -116,6 +128,10 @@ object workspaces:
       val argsBuilder = com.pulumi.aws.workspaces.inputs.DirectoryWorkspaceCreationPropertiesArgs.builder
       builder.workspaceCreationProperties(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.workspaces.DirectoryArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /** Resource for managing an AWS WorkSpaces Connection Alias. */
   def ConnectionAlias(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.workspaces.ConnectionAliasArgs.Builder])(using conf: KoPulumiConf) =
@@ -203,6 +219,10 @@ object workspaces:
       val argsBuilder = com.pulumi.aws.workspaces.inputs.ConnectionAliasTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.workspaces.inputs.ConnectionAliasState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.workspaces.inputs.DirectoryState.Builder)
     /**
      * @param activeDirectoryConfig Configuration for Active Directory integration when `workspaceType` is set to `POOLS`. Defined below.
@@ -258,6 +278,10 @@ object workspaces:
       val argsBuilder = com.pulumi.aws.workspaces.inputs.DirectoryWorkspaceCreationPropertiesArgs.builder
       builder.workspaceCreationProperties(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.workspaces.inputs.DirectoryState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.workspaces.inputs.WorkspaceState.Builder)
     /**
      * @param workspaceProperties The WorkSpace properties.
@@ -268,6 +292,10 @@ object workspaces:
       val argsBuilder = com.pulumi.aws.workspaces.inputs.WorkspaceWorkspacePropertiesArgs.builder
       builder.workspaceProperties(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.workspaces.inputs.WorkspaceState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.workspaces.inputs.IpGroupState.Builder)
     /**
      * @param rules One or more pairs specifying the IP group rule (in CIDR format) from which web requests originate.
@@ -277,3 +305,8 @@ object workspaces:
         com.pulumi.aws.workspaces.inputs.IpGroupState.Builder =
       def argsBuilder = com.pulumi.aws.workspaces.inputs.IpGroupRuleArgs.builder
       builder.rules(args.map(_(argsBuilder).build)*)
+
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.workspaces.inputs.IpGroupState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       

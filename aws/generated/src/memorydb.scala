@@ -91,6 +91,10 @@ object memorydb:
       val argsBuilder = com.pulumi.aws.memorydb.inputs.UserAuthenticationModeArgs.builder
       builder.authenticationMode(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.memorydb.UserArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /**
    * Provides a MemoryDB Parameter Group.
    *  
@@ -135,6 +139,10 @@ object memorydb:
       val argsBuilder = com.pulumi.aws.memorydb.inputs.MultiRegionClusterTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.memorydb.MultiRegionClusterArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /**
    * Provides a MemoryDB Cluster.
    *  
@@ -182,6 +190,10 @@ object memorydb:
       def argsBuilder = com.pulumi.aws.memorydb.inputs.ParameterGroupParameterArgs.builder
       builder.parameters(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.memorydb.ParameterGroupArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /**
    * Provides a MemoryDB Snapshot.
    *  
@@ -246,6 +258,10 @@ object memorydb:
       def argsBuilder = com.pulumi.aws.memorydb.inputs.ParameterGroupParameterArgs.builder
       builder.parameters(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.memorydb.inputs.ParameterGroupState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.memorydb.inputs.ClusterState.Builder)
     def clusterEndpoints(args: Endofunction[com.pulumi.aws.memorydb.inputs.ClusterClusterEndpointArgs.Builder]*):
         com.pulumi.aws.memorydb.inputs.ClusterState.Builder =
@@ -261,18 +277,27 @@ object memorydb:
       def argsBuilder = com.pulumi.aws.memorydb.inputs.ClusterShardArgs.builder
       builder.shards(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.memorydb.inputs.ClusterState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.memorydb.inputs.MultiRegionClusterState.Builder)
     def timeouts(args: Endofunction[com.pulumi.aws.memorydb.inputs.MultiRegionClusterTimeoutsArgs.Builder]):
         com.pulumi.aws.memorydb.inputs.MultiRegionClusterState.Builder =
       val argsBuilder = com.pulumi.aws.memorydb.inputs.MultiRegionClusterTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.memorydb.inputs.MultiRegionClusterState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.memorydb.inputs.ClusterShardNodeArgs.Builder)
     def endpoints(args: Endofunction[com.pulumi.aws.memorydb.inputs.ClusterShardNodeEndpointArgs.Builder]*):
         com.pulumi.aws.memorydb.inputs.ClusterShardNodeArgs.Builder =
       def argsBuilder = com.pulumi.aws.memorydb.inputs.ClusterShardNodeEndpointArgs.builder
       builder.endpoints(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.memorydb.inputs.SnapshotState.Builder)
     /**
      * @param clusterConfigurations The configuration of the cluster from which the snapshot was taken.
@@ -283,6 +308,10 @@ object memorydb:
       def argsBuilder = com.pulumi.aws.memorydb.inputs.SnapshotClusterConfigurationArgs.builder
       builder.clusterConfigurations(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.memorydb.inputs.SnapshotState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.memorydb.inputs.UserState.Builder)
     /**
      * @param authenticationMode Denotes the user&#39;s authentication properties. Detailed below.
@@ -293,6 +322,10 @@ object memorydb:
       val argsBuilder = com.pulumi.aws.memorydb.inputs.UserAuthenticationModeArgs.builder
       builder.authenticationMode(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.memorydb.inputs.UserState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.memorydb.inputs.ClusterShardArgs.Builder)
     /**
      * @param nodes Set of nodes in this shard.
@@ -302,3 +335,5 @@ object memorydb:
         com.pulumi.aws.memorydb.inputs.ClusterShardArgs.Builder =
       def argsBuilder = com.pulumi.aws.memorydb.inputs.ClusterShardNodeArgs.builder
       builder.nodes(args.map(_(argsBuilder).build)*)
+
+                       

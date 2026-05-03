@@ -73,3 +73,10 @@ package object ko_pulumi:
   given [A, B] => Conversion[Either[A, B], PEither[A, B]] = _ match
     case Left(left)   => PEither.ofLeft(left)
     case Right(right) => PEither.ofRight(right)
+
+  // helper to transform builder.build.tags to be passed to builder.tags
+  def transformOptOutputMap[A, B](orig: JOptional[Output[JMap[A, B]]], fn: Map[A, B] => Map[A, B]):
+      Output[JMap[A, B]] =
+    orig.toScala match
+      case Some(output) => output.map(value => fn(value.asScala.toMap).asJava)
+      case None         => Output.of(fn(Map.empty).asJava)

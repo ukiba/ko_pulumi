@@ -14,6 +14,7 @@ object codestarconnections:
       val argsBuilder = com.pulumi.aws.codestarconnections.inputs.HostVpcConfigurationArgs.builder
       builder.vpcConfiguration(args(argsBuilder).build)
 
+                       
   type CodestarconnectionsFunctions = com.pulumi.aws.codestarconnections.CodestarconnectionsFunctions
   object CodestarconnectionsFunctions:
     // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
@@ -75,3 +76,5 @@ object codestarconnections:
         com.pulumi.aws.codestarconnections.inputs.HostState.Builder =
       val argsBuilder = com.pulumi.aws.codestarconnections.inputs.HostVpcConfigurationArgs.builder
       builder.vpcConfiguration(args(argsBuilder).build)
+
+                       

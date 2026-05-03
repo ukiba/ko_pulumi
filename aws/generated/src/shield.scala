@@ -28,12 +28,14 @@ object shield:
       def argsBuilder = com.pulumi.aws.shield.inputs.ProactiveEngagementEmergencyContactArgs.builder
       builder.emergencyContacts(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.shield.DrtAccessRoleArnAssociationArgs.Builder)
     def timeouts(args: Endofunction[com.pulumi.aws.shield.inputs.DrtAccessRoleArnAssociationTimeoutsArgs.Builder]):
         com.pulumi.aws.shield.DrtAccessRoleArnAssociationArgs.Builder =
       val argsBuilder = com.pulumi.aws.shield.inputs.DrtAccessRoleArnAssociationTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
+                       
   type ShieldFunctions = com.pulumi.aws.shield.ShieldFunctions
   object ShieldFunctions:
     // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
@@ -57,6 +59,7 @@ object shield:
       val argsBuilder = com.pulumi.aws.shield.inputs.ApplicationLayerAutomaticResponseTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
+                       
   /**
    * Resource for managing an AWS Shield DRT Access Log Bucket Association.
    *  Up to 10 log buckets can be associated for DRT Access sharing with the Shield Response Team (SRT).
@@ -105,6 +108,7 @@ object shield:
       val argsBuilder = com.pulumi.aws.shield.inputs.DrtAccessLogBucketAssociationTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
+                       
   /**
    * Creates a grouping of protected resources so they can be handled as a collective.
    *  This resource grouping improves the accuracy of detection and reduces false positives. For more information see
@@ -163,12 +167,14 @@ object shield:
       val argsBuilder = com.pulumi.aws.shield.inputs.DrtAccessRoleArnAssociationTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.shield.inputs.DrtAccessLogBucketAssociationState.Builder)
     def timeouts(args: Endofunction[com.pulumi.aws.shield.inputs.DrtAccessLogBucketAssociationTimeoutsArgs.Builder]):
         com.pulumi.aws.shield.inputs.DrtAccessLogBucketAssociationState.Builder =
       val argsBuilder = com.pulumi.aws.shield.inputs.DrtAccessLogBucketAssociationTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.shield.inputs.ProactiveEngagementState.Builder)
     /**
      * @param emergencyContacts One or more emergency contacts. You must provide at least one phone number in the emergency contact list. See `emergencyContacts`.
@@ -179,8 +185,11 @@ object shield:
       def argsBuilder = com.pulumi.aws.shield.inputs.ProactiveEngagementEmergencyContactArgs.builder
       builder.emergencyContacts(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.shield.inputs.ApplicationLayerAutomaticResponseState.Builder)
     def timeouts(args: Endofunction[com.pulumi.aws.shield.inputs.ApplicationLayerAutomaticResponseTimeoutsArgs.Builder]):
         com.pulumi.aws.shield.inputs.ApplicationLayerAutomaticResponseState.Builder =
       val argsBuilder = com.pulumi.aws.shield.inputs.ApplicationLayerAutomaticResponseTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
+
+                       

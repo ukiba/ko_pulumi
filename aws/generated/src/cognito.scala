@@ -149,6 +149,10 @@ object cognito:
       val argsBuilder = com.pulumi.aws.cognito.inputs.UserPoolWebAuthnConfigurationArgs.builder
       builder.webAuthnConfiguration(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.cognito.UserPoolArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /** Provides a Cognito Risk Configuration resource. */
   def RiskConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.cognito.RiskConfigurationArgs.Builder]) =
@@ -278,6 +282,10 @@ object cognito:
       def argsBuilder = com.pulumi.aws.cognito.inputs.IdentityPoolCognitoIdentityProviderArgs.builder
       builder.cognitoIdentityProviders(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.cognito.IdentityPoolArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.cognito.UserPoolClientArgs.Builder)
     /**
      * @param analyticsConfiguration Configuration block for Amazon Pinpoint analytics that collects metrics for this user pool. See details below.
@@ -306,6 +314,7 @@ object cognito:
       val argsBuilder = com.pulumi.aws.cognito.inputs.UserPoolClientTokenValidityUnitsArgs.builder
       builder.tokenValidityUnits(args(argsBuilder).build)
 
+                       
   /** Provides an AWS Cognito Identity Pool. */
   def IdentityPool(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.cognito.IdentityPoolArgs.Builder])(using conf: KoPulumiConf) =
@@ -364,6 +373,7 @@ object cognito:
       def argsBuilder = com.pulumi.aws.cognito.inputs.LogDeliveryConfigurationLogConfigurationArgs.builder
       builder.logConfigurations(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.cognito.IdentityPoolRoleAttachmentArgs.Builder)
     /**
      * @param roleMappings A List of Role Mapping.
@@ -374,6 +384,7 @@ object cognito:
       def argsBuilder = com.pulumi.aws.cognito.inputs.IdentityPoolRoleAttachmentRoleMappingArgs.builder
       builder.roleMappings(args.map(_(argsBuilder).build)*)
 
+                       
   /** Provides a Cognito Resource Server. */
   def ResourceServer(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.cognito.ResourceServerArgs.Builder])(using conf: KoPulumiConf) =
@@ -423,6 +434,7 @@ object cognito:
       def argsBuilder = com.pulumi.aws.cognito.inputs.ResourceServerScopeArgs.builder
       builder.scopes(args.map(_(argsBuilder).build)*)
 
+                       
   /** Provides a Cognito User Group resource. */
   def UserGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.cognito.UserGroupArgs.Builder])(using conf: KoPulumiConf) =
@@ -513,6 +525,7 @@ object cognito:
       val argsBuilder = com.pulumi.aws.cognito.inputs.ManagedUserPoolClientTokenValidityUnitsArgs.builder
       builder.tokenValidityUnits(args(argsBuilder).build)
 
+                       
   /**
    * Provides a Cognito User Pool UI Customization resource.
    *  
@@ -536,6 +549,7 @@ object cognito:
       def argsBuilder = com.pulumi.aws.cognito.inputs.ManagedLoginBrandingAssetArgs.builder
       builder.assets(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.cognito.RiskConfigurationArgs.Builder)
     /**
      * @param accountTakeoverRiskConfiguration The account takeover risk configuration. See details below.
@@ -564,6 +578,7 @@ object cognito:
       val argsBuilder = com.pulumi.aws.cognito.inputs.RiskConfigurationRiskExceptionConfigurationArgs.builder
       builder.riskExceptionConfiguration(args(argsBuilder).build)
 
+                       
   /** Provides an AWS Cognito Identity Principal Mapping. */
   def IdentityPoolProviderPrincipalTag(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.cognito.IdentityPoolProviderPrincipalTagArgs.Builder]) =
@@ -583,6 +598,7 @@ object cognito:
       def argsBuilder = com.pulumi.aws.cognito.inputs.ResourceServerScopeArgs.builder
       builder.scopes(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.cognito.inputs.UserPoolSchemaArgs.Builder)
     /**
      * @param numberAttributeConstraints Configuration block for the constraints for an attribute of the number type. Detailed below.
@@ -602,6 +618,7 @@ object cognito:
       val argsBuilder = com.pulumi.aws.cognito.inputs.UserPoolSchemaStringAttributeConstraintsArgs.builder
       builder.stringAttributeConstraints(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.cognito.inputs.IdentityPoolRoleAttachmentRoleMappingArgs.Builder)
     /**
      * @param mappingRules The Rules Configuration to be used for mapping users to roles. You can specify up to 25 rules per identity provider. Rules are evaluated in order. The first one to match specifies the role.
@@ -612,6 +629,7 @@ object cognito:
       def argsBuilder = com.pulumi.aws.cognito.inputs.IdentityPoolRoleAttachmentRoleMappingMappingRuleArgs.builder
       builder.mappingRules(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.cognito.inputs.ManagedLoginBrandingState.Builder)
     /**
      * @param assets Image files to apply to roles like backgrounds, logos, and icons. See details below.
@@ -622,6 +640,7 @@ object cognito:
       def argsBuilder = com.pulumi.aws.cognito.inputs.ManagedLoginBrandingAssetArgs.builder
       builder.assets(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.cognito.inputs.UserPoolAccountRecoverySettingArgs.Builder)
     /**
      * @param recoveryMechanisms List of Account Recovery Options of the following structure:
@@ -632,6 +651,7 @@ object cognito:
       def argsBuilder = com.pulumi.aws.cognito.inputs.UserPoolAccountRecoverySettingRecoveryMechanismArgs.builder
       builder.recoveryMechanisms(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.cognito.inputs.RiskConfigurationAccountTakeoverRiskConfigurationNotifyConfigurationArgs.Builder)
     /**
      * @param blockEmail Email template used when a detected risk event is blocked. See notify email type below.
@@ -660,6 +680,7 @@ object cognito:
       val argsBuilder = com.pulumi.aws.cognito.inputs.RiskConfigurationAccountTakeoverRiskConfigurationNotifyConfigurationNoActionEmailArgs.builder
       builder.noActionEmail(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.cognito.inputs.LogDeliveryConfigurationLogConfigurationArgs.Builder)
     /**
      * @param cloudWatchLogsConfiguration Configuration for CloudWatch Logs delivery. See CloudWatch Logs Configuration below.
@@ -690,6 +711,7 @@ object cognito:
       val argsBuilder = com.pulumi.aws.cognito.inputs.LogDeliveryConfigurationLogConfigurationS3ConfigurationArgs.builder
       builder.s3Configuration(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.cognito.inputs.RiskConfigurationState.Builder)
     /**
      * @param accountTakeoverRiskConfiguration The account takeover risk configuration. See details below.
@@ -718,6 +740,7 @@ object cognito:
       val argsBuilder = com.pulumi.aws.cognito.inputs.RiskConfigurationRiskExceptionConfigurationArgs.builder
       builder.riskExceptionConfiguration(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.cognito.inputs.UserPoolState.Builder)
     /**
      * @param accountRecoverySetting Configuration block to define which verified available method a user can use to recover their forgotten password. Detailed below.
@@ -863,6 +886,10 @@ object cognito:
       val argsBuilder = com.pulumi.aws.cognito.inputs.UserPoolWebAuthnConfigurationArgs.builder
       builder.webAuthnConfiguration(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.cognito.inputs.UserPoolState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.cognito.inputs.UserPoolClientState.Builder)
     /**
      * @param analyticsConfiguration Configuration block for Amazon Pinpoint analytics that collects metrics for this user pool. See details below.
@@ -891,6 +918,7 @@ object cognito:
       val argsBuilder = com.pulumi.aws.cognito.inputs.UserPoolClientTokenValidityUnitsArgs.builder
       builder.tokenValidityUnits(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.cognito.inputs.RiskConfigurationCompromisedCredentialsRiskConfigurationArgs.Builder)
     /**
      * @param actions The compromised credentials risk configuration actions. See details below.
@@ -901,6 +929,7 @@ object cognito:
       val argsBuilder = com.pulumi.aws.cognito.inputs.RiskConfigurationCompromisedCredentialsRiskConfigurationActionsArgs.builder
       builder.actions(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.cognito.inputs.UserPoolUserPoolAddOnsArgs.Builder)
     /**
      * @param advancedSecurityAdditionalFlows A block to specify the threat protection configuration options for additional authentication types in your user pool, including custom authentication. Detailed below.
@@ -911,6 +940,7 @@ object cognito:
       val argsBuilder = com.pulumi.aws.cognito.inputs.UserPoolUserPoolAddOnsAdvancedSecurityAdditionalFlowsArgs.builder
       builder.advancedSecurityAdditionalFlows(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.cognito.inputs.ManagedUserPoolClientState.Builder)
     /**
      * @param analyticsConfiguration Configuration block for Amazon Pinpoint analytics that collects metrics for this user pool. See details below.
@@ -939,6 +969,7 @@ object cognito:
       val argsBuilder = com.pulumi.aws.cognito.inputs.ManagedUserPoolClientTokenValidityUnitsArgs.builder
       builder.tokenValidityUnits(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.cognito.inputs.IdentityPoolRoleAttachmentState.Builder)
     /**
      * @param roleMappings A List of Role Mapping.
@@ -949,6 +980,7 @@ object cognito:
       def argsBuilder = com.pulumi.aws.cognito.inputs.IdentityPoolRoleAttachmentRoleMappingArgs.builder
       builder.roleMappings(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.cognito.inputs.RiskConfigurationAccountTakeoverRiskConfigurationActionsArgs.Builder)
     /**
      * @param highAction Action to take for a high risk. See action block below.
@@ -977,6 +1009,7 @@ object cognito:
       val argsBuilder = com.pulumi.aws.cognito.inputs.RiskConfigurationAccountTakeoverRiskConfigurationActionsMediumActionArgs.builder
       builder.mediumAction(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.cognito.inputs.UserPoolLambdaConfigArgs.Builder)
     /**
      * @param customEmailSender A custom email sender AWS Lambda trigger. See customEmailSender Below.
@@ -1005,6 +1038,7 @@ object cognito:
       val argsBuilder = com.pulumi.aws.cognito.inputs.UserPoolLambdaConfigPreTokenGenerationConfigArgs.builder
       builder.preTokenGenerationConfig(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.cognito.inputs.UserPoolAdminCreateUserConfigArgs.Builder)
     /**
      * @param inviteMessageTemplate Invite message template structure. Detailed below.
@@ -1015,6 +1049,7 @@ object cognito:
       val argsBuilder = com.pulumi.aws.cognito.inputs.UserPoolAdminCreateUserConfigInviteMessageTemplateArgs.builder
       builder.inviteMessageTemplate(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.cognito.inputs.LogDeliveryConfigurationState.Builder)
     /**
      * @param logConfigurations Configuration block for log delivery. At least one configuration block is required. See Log Configurations below.
@@ -1025,6 +1060,7 @@ object cognito:
       def argsBuilder = com.pulumi.aws.cognito.inputs.LogDeliveryConfigurationLogConfigurationArgs.builder
       builder.logConfigurations(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.cognito.inputs.RiskConfigurationAccountTakeoverRiskConfigurationArgs.Builder)
     /**
      * @param actions Account takeover risk configuration actions. See details below.
@@ -1044,6 +1080,7 @@ object cognito:
       val argsBuilder = com.pulumi.aws.cognito.inputs.RiskConfigurationAccountTakeoverRiskConfigurationNotifyConfigurationArgs.builder
       builder.notifyConfiguration(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.cognito.inputs.IdentityPoolState.Builder)
     /**
      * @param cognitoIdentityProviders An array of Amazon Cognito Identity user pools and their client IDs.
@@ -1053,3 +1090,8 @@ object cognito:
         com.pulumi.aws.cognito.inputs.IdentityPoolState.Builder =
       def argsBuilder = com.pulumi.aws.cognito.inputs.IdentityPoolCognitoIdentityProviderArgs.builder
       builder.cognitoIdentityProviders(args.map(_(argsBuilder).build)*)
+
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.cognito.inputs.IdentityPoolState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       

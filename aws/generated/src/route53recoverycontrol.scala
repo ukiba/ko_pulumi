@@ -14,6 +14,10 @@ object route53recoverycontrol:
       val argsBuilder = com.pulumi.aws.route53recoverycontrol.inputs.SafetyRuleRuleConfigArgs.builder
       builder.ruleConfig(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.route53recoverycontrol.SafetyRuleArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /** Provides an AWS Route 53 Recovery Control Config Safety Rule */
   def SafetyRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.route53recoverycontrol.SafetyRuleArgs.Builder])(using conf: KoPulumiConf) =
@@ -81,6 +85,10 @@ object route53recoverycontrol:
       def argsBuilder = com.pulumi.aws.route53recoverycontrol.inputs.ClusterClusterEndpointArgs.builder
       builder.clusterEndpoints(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.route53recoverycontrol.inputs.ClusterState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.route53recoverycontrol.inputs.SafetyRuleState.Builder)
     /**
      * @param ruleConfig Configuration block for safety rule criteria. See below.
@@ -90,3 +98,8 @@ object route53recoverycontrol:
         com.pulumi.aws.route53recoverycontrol.inputs.SafetyRuleState.Builder =
       val argsBuilder = com.pulumi.aws.route53recoverycontrol.inputs.SafetyRuleRuleConfigArgs.builder
       builder.ruleConfig(args(argsBuilder).build)
+
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.route53recoverycontrol.inputs.SafetyRuleState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       

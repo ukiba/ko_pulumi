@@ -32,6 +32,7 @@ object codecatalyst:
       def argsBuilder = com.pulumi.aws.codecatalyst.inputs.DevEnvironmentRepositoryArgs.builder
       builder.repositories(args.map(_(argsBuilder).build)*)
 
+                       
   type CodecatalystFunctions = com.pulumi.aws.codecatalyst.CodecatalystFunctions
   object CodecatalystFunctions:
     // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
@@ -89,6 +90,10 @@ object codecatalyst:
       def argsBuilder = com.pulumi.aws.codecatalyst.inputs.GetDevEnvironmentRepositoryArgs.builder
       builder.repositories(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.codecatalyst.inputs.GetDevEnvironmentArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.codecatalyst.inputs.DevEnvironmentState.Builder)
     /**
      * @param ides Information about the integrated development environment (IDE) configured for a Dev Environment.
@@ -116,3 +121,5 @@ object codecatalyst:
         com.pulumi.aws.codecatalyst.inputs.DevEnvironmentState.Builder =
       def argsBuilder = com.pulumi.aws.codecatalyst.inputs.DevEnvironmentRepositoryArgs.builder
       builder.repositories(args.map(_(argsBuilder).build)*)
+
+                       

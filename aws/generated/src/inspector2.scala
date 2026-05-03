@@ -14,6 +14,7 @@ object inspector2:
       val argsBuilder = com.pulumi.aws.inspector2.inputs.OrganizationConfigurationAutoEnableArgs.builder
       builder.autoEnable(args(argsBuilder).build)
 
+                       
   /**
    * Resource for managing an Amazon Inspector Organization Configuration.
    *  
@@ -41,6 +42,10 @@ object inspector2:
       def argsBuilder = com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaArgs.builder
       builder.filterCriterias(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.inspector2.FilterArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /** Resource for associating accounts to existing Inspector instances. */
   def MemberAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.inspector2.MemberAssociationArgs.Builder]) =
@@ -97,6 +102,7 @@ object inspector2:
       val argsBuilder = com.pulumi.aws.inspector2.inputs.OrganizationConfigurationAutoEnableArgs.builder
       builder.autoEnable(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaArgs.Builder)
     /**
      * @param awsAccountIds (Optional) The AWS account ID in which the finding was generated. Documented below.
@@ -512,6 +518,7 @@ object inspector2:
       def argsBuilder = com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaVulnerablePackageArgs.builder
       builder.vulnerablePackages(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaVulnerablePackageArgs.Builder)
     /**
      * @param architecture (Optional) The architecture of the package. Documented below.
@@ -585,6 +592,7 @@ object inspector2:
       val argsBuilder = com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaVulnerablePackageVersionArgs.builder
       builder.version(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.inspector2.inputs.FilterState.Builder)
     /**
      * @param filterCriterias Details on the filter criteria. Documented below.
@@ -596,3 +604,8 @@ object inspector2:
         com.pulumi.aws.inspector2.inputs.FilterState.Builder =
       def argsBuilder = com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaArgs.builder
       builder.filterCriterias(args.map(_(argsBuilder).build)*)
+
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.inspector2.inputs.FilterState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       

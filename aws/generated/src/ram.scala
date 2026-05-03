@@ -42,6 +42,10 @@ object ram:
       val argsBuilder = com.pulumi.aws.ram.inputs.ResourceShareResourceShareConfigurationArgs.builder
       builder.resourceShareConfiguration(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.ram.ResourceShareArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /** Manages an AWS RAM (Resource Access Manager) Permission. */
   def Permission(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ram.PermissionArgs.Builder])(using conf: KoPulumiConf) =
@@ -114,6 +118,10 @@ object ram:
       val argsBuilder = com.pulumi.aws.ram.inputs.PermissionTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.ram.PermissionArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   type RamFunctions = com.pulumi.aws.ram.RamFunctions
   object RamFunctions:
     // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
@@ -150,6 +158,10 @@ object ram:
       val argsBuilder = com.pulumi.aws.ram.inputs.PermissionTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.ram.inputs.PermissionState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.ram.inputs.ResourceShareState.Builder)
     /**
      * @param resourceShareConfiguration A block that specifies the configuration of the resource share. See `resourceShareConfiguration` Block for details.
@@ -160,6 +172,10 @@ object ram:
       val argsBuilder = com.pulumi.aws.ram.inputs.ResourceShareResourceShareConfigurationArgs.builder
       builder.resourceShareConfiguration(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.ram.inputs.ResourceShareState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.ram.inputs.GetResourceShareArgs.Builder)
     /**
      * @param filters Filter used to scope the list of owned shares e.g., by tags. See [related docs] (https://docs.aws.amazon.com/ram/latest/APIReference/API_TagFilter.html).
@@ -169,3 +185,8 @@ object ram:
         com.pulumi.aws.ram.inputs.GetResourceShareArgs.Builder =
       def argsBuilder = com.pulumi.aws.ram.inputs.GetResourceShareFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
+
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.ram.inputs.GetResourceShareArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       

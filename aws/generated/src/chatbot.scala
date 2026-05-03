@@ -22,6 +22,10 @@ object chatbot:
       val argsBuilder = com.pulumi.aws.chatbot.inputs.TeamsChannelConfigurationTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.chatbot.TeamsChannelConfigurationArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   type ChatbotFunctions = com.pulumi.aws.chatbot.ChatbotFunctions
   object ChatbotFunctions:
     // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
@@ -61,14 +65,27 @@ object chatbot:
       val argsBuilder = com.pulumi.aws.chatbot.inputs.SlackChannelConfigurationTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.chatbot.SlackChannelConfigurationArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.chatbot.inputs.SlackChannelConfigurationState.Builder)
     def timeouts(args: Endofunction[com.pulumi.aws.chatbot.inputs.SlackChannelConfigurationTimeoutsArgs.Builder]):
         com.pulumi.aws.chatbot.inputs.SlackChannelConfigurationState.Builder =
       val argsBuilder = com.pulumi.aws.chatbot.inputs.SlackChannelConfigurationTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.chatbot.inputs.SlackChannelConfigurationState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.chatbot.inputs.TeamsChannelConfigurationState.Builder)
     def timeouts(args: Endofunction[com.pulumi.aws.chatbot.inputs.TeamsChannelConfigurationTimeoutsArgs.Builder]):
         com.pulumi.aws.chatbot.inputs.TeamsChannelConfigurationState.Builder =
       val argsBuilder = com.pulumi.aws.chatbot.inputs.TeamsChannelConfigurationTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
+
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.chatbot.inputs.TeamsChannelConfigurationState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       

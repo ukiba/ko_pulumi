@@ -123,6 +123,7 @@ object servicequotas:
       def argsBuilder = com.pulumi.aws.servicequotas.inputs.ServiceQuotaUsageMetricArgs.builder
       builder.usageMetrics(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.servicequotas.inputs.ServiceQuotaUsageMetricArgs.Builder)
     /**
      * @param metricDimensions The metric dimensions.
@@ -132,3 +133,5 @@ object servicequotas:
         com.pulumi.aws.servicequotas.inputs.ServiceQuotaUsageMetricArgs.Builder =
       def argsBuilder = com.pulumi.aws.servicequotas.inputs.ServiceQuotaUsageMetricMetricDimensionArgs.builder
       builder.metricDimensions(args.map(_(argsBuilder).build)*)
+
+                       

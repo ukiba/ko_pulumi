@@ -14,6 +14,7 @@ object connect:
       val argsBuilder = com.pulumi.aws.connect.inputs.BotAssociationLexBotArgs.builder
       builder.lexBot(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.connect.QueueArgs.Builder)
     /**
      * @param outboundCallerConfig A block that defines the outbound caller ID name, number, and outbound whisper flow. The Outbound Caller Config block is documented below.
@@ -24,6 +25,10 @@ object connect:
       val argsBuilder = com.pulumi.aws.connect.inputs.QueueOutboundCallerConfigArgs.builder
       builder.outboundCallerConfig(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.connect.QueueArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.connect.HoursOfOperationArgs.Builder)
     /**
      * @param configs One or more config blocks which define the configuration information for the hours of operation: day, start time, and end time . Config blocks are documented below.
@@ -34,6 +39,10 @@ object connect:
       def argsBuilder = com.pulumi.aws.connect.inputs.HoursOfOperationConfigArgs.builder
       builder.configs(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.connect.HoursOfOperationArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.connect.UserArgs.Builder)
     /**
      * @param identityInfo A block that contains information about the identity of the user. Documented below.
@@ -53,6 +62,10 @@ object connect:
       val argsBuilder = com.pulumi.aws.connect.inputs.UserPhoneConfigArgs.builder
       builder.phoneConfig(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.connect.UserArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /**
    * Provides an Amazon Connect Contact Flow Module resource. For more information see
    *  [Amazon Connect: Getting Started](https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-get-started.html)
@@ -87,6 +100,7 @@ object connect:
       val argsBuilder = com.pulumi.aws.connect.inputs.UserHierarchyStructureHierarchyStructureArgs.builder
       builder.hierarchyStructure(args(argsBuilder).build)
 
+                       
   /**
    * Provides an Amazon Connect Queue resource. For more information see
    *  [Amazon Connect: Getting Started](https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-get-started.html)
@@ -408,6 +422,7 @@ object connect:
       val argsBuilder = com.pulumi.aws.connect.inputs.InstanceStorageConfigStorageConfigArgs.builder
       builder.storageConfig(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.connect.RoutingProfileArgs.Builder)
     /**
      * @param mediaConcurrencies One or more `mediaConcurrencies` blocks that specify the channels that agents can handle in the Contact Control Panel (CCP) for this Routing Profile. The `mediaConcurrencies` block is documented below.
@@ -427,6 +442,10 @@ object connect:
       def argsBuilder = com.pulumi.aws.connect.inputs.RoutingProfileQueueConfigArgs.builder
       builder.queueConfigs(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.connect.RoutingProfileArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /**
    * Provides an Amazon Connect instance resource. For more information see
    *  [Amazon Connect: Getting Started](https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-get-started.html)
@@ -550,6 +569,10 @@ object connect:
       val argsBuilder = com.pulumi.aws.connect.inputs.QuickConnectQuickConnectConfigArgs.builder
       builder.quickConnectConfig(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.connect.QuickConnectArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   /**
    * Provides an Amazon Connect User Hierarchy Group resource. For more information see
    *  [Amazon Connect: Getting Started](https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-get-started.html)
@@ -598,6 +621,7 @@ object connect:
       def argsBuilder = com.pulumi.aws.connect.inputs.QuickConnectQuickConnectConfigUserConfigArgs.builder
       builder.userConfigs(args.map(_(argsBuilder).build)*)
 
+                       
   extension (builder: com.pulumi.aws.connect.inputs.RoutingProfileMediaConcurrencyArgs.Builder)
     /**
      * @param crossChannelBehavior Defines the cross-channel routing behavior for each traffic type. **Out-of-band changes are only detected when this argument is explicitly configured in your Terraform configuration.** Documented below.
@@ -608,6 +632,7 @@ object connect:
       val argsBuilder = com.pulumi.aws.connect.inputs.RoutingProfileMediaConcurrencyCrossChannelBehaviorArgs.builder
       builder.crossChannelBehavior(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.connect.inputs.GetBotAssociationArgs.Builder)
     /**
      * @param lexBot Configuration information of an Amazon Lex (V1) bot. Detailed below.
@@ -618,6 +643,7 @@ object connect:
       val argsBuilder = com.pulumi.aws.connect.inputs.GetBotAssociationLexBotArgs.builder
       builder.lexBot(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.connect.inputs.QuickConnectState.Builder)
     /**
      * @param quickConnectConfig A block that defines the configuration information for the Quick Connect: `quickConnectType` and one of `phoneConfig`, `queueConfig`, `userConfig` . The Quick Connect Config block is documented below.
@@ -628,6 +654,10 @@ object connect:
       val argsBuilder = com.pulumi.aws.connect.inputs.QuickConnectQuickConnectConfigArgs.builder
       builder.quickConnectConfig(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.connect.inputs.QuickConnectState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.connect.inputs.InstanceStorageConfigStorageConfigKinesisVideoStreamConfigArgs.Builder)
     /**
      * @param encryptionConfig The encryption configuration. Documented below.
@@ -638,6 +668,7 @@ object connect:
       val argsBuilder = com.pulumi.aws.connect.inputs.InstanceStorageConfigStorageConfigKinesisVideoStreamConfigEncryptionConfigArgs.builder
       builder.encryptionConfig(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.connect.inputs.UserHierarchyStructureState.Builder)
     /**
      * @param hierarchyStructure A block that defines the hierarchy structure&#39;s levels. The `hierarchyStructure` block is documented below.
@@ -648,6 +679,7 @@ object connect:
       val argsBuilder = com.pulumi.aws.connect.inputs.UserHierarchyStructureHierarchyStructureArgs.builder
       builder.hierarchyStructure(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.connect.inputs.QueueState.Builder)
     /**
      * @param outboundCallerConfig A block that defines the outbound caller ID name, number, and outbound whisper flow. The Outbound Caller Config block is documented below.
@@ -658,6 +690,10 @@ object connect:
       val argsBuilder = com.pulumi.aws.connect.inputs.QueueOutboundCallerConfigArgs.builder
       builder.outboundCallerConfig(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.connect.inputs.QueueState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.connect.inputs.RoutingProfileState.Builder)
     /**
      * @param mediaConcurrencies One or more `mediaConcurrencies` blocks that specify the channels that agents can handle in the Contact Control Panel (CCP) for this Routing Profile. The `mediaConcurrencies` block is documented below.
@@ -677,6 +713,10 @@ object connect:
       def argsBuilder = com.pulumi.aws.connect.inputs.RoutingProfileQueueConfigArgs.builder
       builder.queueConfigs(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.connect.inputs.RoutingProfileState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.connect.inputs.UserHierarchyGroupState.Builder)
     /**
      * @param hierarchyPaths A block that contains information about the levels in the hierarchy group. The `hierarchyPath` block is documented below.
@@ -687,6 +727,10 @@ object connect:
       def argsBuilder = com.pulumi.aws.connect.inputs.UserHierarchyGroupHierarchyPathArgs.builder
       builder.hierarchyPaths(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.connect.inputs.UserHierarchyGroupState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.connect.inputs.UserState.Builder)
     /**
      * @param identityInfo A block that contains information about the identity of the user. Documented below.
@@ -706,6 +750,10 @@ object connect:
       val argsBuilder = com.pulumi.aws.connect.inputs.UserPhoneConfigArgs.builder
       builder.phoneConfig(args(argsBuilder).build)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.connect.inputs.UserState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.connect.inputs.InstanceStorageConfigState.Builder)
     /**
      * @param storageConfig Specifies the storage configuration options for the Connect Instance. Documented below.
@@ -716,6 +764,7 @@ object connect:
       val argsBuilder = com.pulumi.aws.connect.inputs.InstanceStorageConfigStorageConfigArgs.builder
       builder.storageConfig(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.connect.inputs.HoursOfOperationState.Builder)
     /**
      * @param configs One or more config blocks which define the configuration information for the hours of operation: day, start time, and end time . Config blocks are documented below.
@@ -726,6 +775,10 @@ object connect:
       def argsBuilder = com.pulumi.aws.connect.inputs.HoursOfOperationConfigArgs.builder
       builder.configs(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.connect.inputs.HoursOfOperationState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.connect.inputs.UserHierarchyStructureHierarchyStructureArgs.Builder)
     /**
      * @param levelFive A block that defines the details of level five. The level block is documented below.
@@ -774,6 +827,7 @@ object connect:
       val argsBuilder = com.pulumi.aws.connect.inputs.UserHierarchyStructureHierarchyStructureLevelTwoArgs.builder
       builder.levelTwo(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.connect.inputs.BotAssociationState.Builder)
     /**
      * @param lexBot Configuration information of an Amazon Lex (V1) bot. Detailed below.
@@ -784,6 +838,7 @@ object connect:
       val argsBuilder = com.pulumi.aws.connect.inputs.BotAssociationLexBotArgs.builder
       builder.lexBot(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.connect.inputs.InstanceStorageConfigStorageConfigS3ConfigArgs.Builder)
     /**
      * @param encryptionConfig The encryption configuration. Documented below.
@@ -794,6 +849,7 @@ object connect:
       val argsBuilder = com.pulumi.aws.connect.inputs.InstanceStorageConfigStorageConfigS3ConfigEncryptionConfigArgs.builder
       builder.encryptionConfig(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.connect.inputs.HoursOfOperationConfigArgs.Builder)
     /**
      * @param endTime A end time block specifies the time that your contact center closes. The `endTime` is documented below.
@@ -813,6 +869,7 @@ object connect:
       val argsBuilder = com.pulumi.aws.connect.inputs.HoursOfOperationConfigStartTimeArgs.builder
       builder.startTime(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.connect.inputs.InstanceStorageConfigStorageConfigArgs.Builder)
     /**
      * @param kinesisFirehoseConfig A block that specifies the configuration of the Kinesis Firehose delivery stream. Documented below.
@@ -850,6 +907,7 @@ object connect:
       val argsBuilder = com.pulumi.aws.connect.inputs.InstanceStorageConfigStorageConfigS3ConfigArgs.builder
       builder.s3Config(args(argsBuilder).build)
 
+                       
   extension (builder: com.pulumi.aws.connect.inputs.PhoneNumberState.Builder)
     /**
      * @param statuses The status of the phone number. Valid Values: `CLAIMED` | `IN_PROGRESS` | `FAILED`.
@@ -860,6 +918,10 @@ object connect:
       def argsBuilder = com.pulumi.aws.connect.inputs.PhoneNumberStatusArgs.builder
       builder.statuses(args.map(_(argsBuilder).build)*)
 
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.connect.inputs.PhoneNumberState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.connect.inputs.UserHierarchyGroupHierarchyPathArgs.Builder)
     /**
      * @param levelFives A block that defines the details of level five. The level block is documented below.
@@ -906,6 +968,7 @@ object connect:
       def argsBuilder = com.pulumi.aws.connect.inputs.UserHierarchyGroupHierarchyPathLevelTwoArgs.builder
       builder.levelTwos(args.map(_(argsBuilder).build)*)
 
+                       
   /**
    * Allows the specified Amazon Connect instance to access the specified Amazon Lex (V1) bot. For more information see
    *  [Amazon Connect: Getting Started](https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-get-started.html) and [Add an Amazon Lex bot](https://docs.aws.amazon.com/connect/latest/adminguide/amazon-lex.html).
