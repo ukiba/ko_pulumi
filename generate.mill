@@ -91,7 +91,7 @@ class PulumiAwsAdapterGenerator(dstRoot: Path, classpath: Seq[String]):
       ('u', 'z') -> "syntax/all_u.scala",
     )
 
-    val `package.scala` = dstRoot.resolve(s"syntax/all.scala")
+    val `all.scala` = dstRoot.resolve(s"syntax/all.scala")
     val splitsFiles = splitsConf.map: conf =>
       (conf = conf, file = dstRoot.resolve(conf.fileName))
 
@@ -116,7 +116,7 @@ class PulumiAwsAdapterGenerator(dstRoot: Path, classpath: Seq[String]):
               funcsDedup += s"${packageComps.last}.$name"
 
     Using.Manager: use =>
-      val mainWriter = use(newWriter(`package.scala`))
+      val mainWriter = use(newWriter(`all.scala`))
       val splitWriters = splitsFiles.map: file =>
         (conf = file.conf, writer = use(newWriter(file.file)))
 
@@ -143,7 +143,7 @@ class PulumiAwsAdapterGenerator(dstRoot: Path, classpath: Seq[String]):
             |export ko_pulumi.aws.${extMethod.cls}.${extMethod.method}
             |""".stripMargin.drop(1))  // no newline at the beginning
 
-    (generatedScalaFiles.toSeq ++ (`package.scala` +: splitsFiles.map(_.file))).sorted
+    (generatedScalaFiles.toSeq ++ (`all.scala` +: splitsFiles.map(_.file))).sorted
 
   case class Gen(var members: Seq[Member] = Nil)
   sealed trait Member:
