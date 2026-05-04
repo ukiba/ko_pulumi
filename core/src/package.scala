@@ -54,25 +54,26 @@ package object ko_pulumi:
             case 1 => list.get(0)
             case 0 => throw IllegalArgumentException(s"Expected single element: no element")
             case n => throw IllegalArgumentException(s"Expected single element: $n elements")
+
+      // reduce the need to describe the conversions between the Scala and Java/Pulumi types
+      given [A] => Conversion[Option[A], JOptional[A]] = _.toJava
+      given [A] => Conversion[JOptional[A], Option[A]] = _.toScala
+
+      given [A] => Conversion[Seq[A], JList[A]] = _.asJava
+      given [A] => Conversion[JList[A], Seq[A]] = _.asScala.toSeq // immutable
+
+      given [K, V] => Conversion[Map[K, V], JMap[K, V]] = _.asJava
+      given [K, V] => Conversion[JMap[K, V], Map[K, V]] = _.asScala.toMap // immutable
+
+      // convert Output[String] to Output[JList[String]]
+      // for ec2.InstanceArgs.builder.vpcSecurityGroupIds
+      given [A] => Conversion[Output[A], Output[JList[A]]] = _.map(a => JList.of(a))
+
+      given [A, B] => Conversion[Either[A, B], PEither[A, B]] = _ match
+        case Left(left)   => PEither.ofLeft(left)
+        case Right(right) => PEither.ofRight(right)
+
   import syntax.all.*
-
-  // reduce the need to describe the conversions between the Scala and Java/Pulumi types
-  given [A] => Conversion[Option[A], JOptional[A]] = _.toJava
-  given [A] => Conversion[JOptional[A], Option[A]] = _.toScala
-
-  given [A] => Conversion[Seq[A], JList[A]] = _.asJava
-  given [A] => Conversion[JList[A], Seq[A]] = _.asScala.toSeq // immutable
-
-  given [K, V] => Conversion[Map[K, V], JMap[K, V]] = _.asJava
-  given [K, V] => Conversion[JMap[K, V], Map[K, V]] = _.asScala.toMap // immutable
-
-  // convert Output[String] to Output[JList[String]]
-  // for ec2.InstanceArgs.builder.vpcSecurityGroupIds
-  given [A] => Conversion[Output[A], Output[JList[A]]] = _.map(a => JList.of(a))
-
-  given [A, B] => Conversion[Either[A, B], PEither[A, B]] = _ match
-    case Left(left)   => PEither.ofLeft(left)
-    case Right(right) => PEither.ofRight(right)
 
   // helper to transform builder.build.tags to be passed to builder.tags
   def transformOptOutputMap[A, B](orig: JOptional[Output[JMap[A, B]]], fn: Map[A, B] => Map[A, B]):
