@@ -254,11 +254,6 @@ class PulumiProviderAdapterGenerator(dstRoot: Path, packageName: String, classpa
                   s"@deprecated(${anno.arguments.mkString(", ")}) "  // 
                 .mkString
 
-                val (usingConf, builderVarOrVal) =
-                  if argsBuilderHasName || argsBuilderHasTags then
-                    ("(using conf: KoPulumiConf)", "var")
-                  else
-                    ("", "val")
                 val applyConf = Seq(
                   Option.when(argsBuilderHasName)("""
                     |    conf.logicalName2pysicalName(name) match
@@ -279,6 +274,12 @@ class PulumiProviderAdapterGenerator(dstRoot: Path, packageName: String, classpa
                     |      case None         =>
                     |""".stripMargin.trim),
                 ).flatten.map(_ + "\n    ").mkString
+
+                val (usingConf, builderVarOrVal) =
+                  if argsBuilderHasName || argsBuilderHasTags then
+                    ("(using conf: KoPulumiConf)", "var")
+                  else
+                    ("", "val")
 
                 // identity is qualified to avoid the collision with gcp.storage.identity
                 val resourceFuncType = s"Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity"
