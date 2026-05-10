@@ -14,7 +14,6 @@ object wafregional:
       def argsBuilder = com.pulumi.aws.wafregional.inputs.IpSetIpSetDescriptorArgs.builder
       builder.ipSetDescriptors(args.map(_(argsBuilder).build)*)
 
-                       
   type WafregionalFunctions = com.pulumi.aws.wafregional.WafregionalFunctions
   object WafregionalFunctions:
     // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
@@ -90,7 +89,6 @@ object wafregional:
       def argsBuilder = com.pulumi.aws.wafregional.inputs.GeoMatchSetGeoMatchConstraintArgs.builder
       builder.geoMatchConstraints(args.map(_(argsBuilder).build)*)
 
-                       
   /** Provides a WAF Regional Rule Group Resource */
   def RuleGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.wafregional.RuleGroupArgs.Builder])(using conf: KoPulumiConf) =
@@ -101,7 +99,6 @@ object wafregional:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.wafregional.RuleGroup(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -119,7 +116,7 @@ object wafregional:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.wafregional.RuleArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.wafregional.RuleGroupArgs.Builder)
     /**
      * @param activatedRules A list of activated rules, see below
@@ -133,7 +130,7 @@ object wafregional:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.wafregional.RuleGroupArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   /** Provides a WAF Regional SQL Injection Match Set Resource for use with Application Load Balancer. */
   def SqlInjectionMatchSet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.wafregional.SqlInjectionMatchSetArgs.Builder])(using conf: KoPulumiConf) =
@@ -141,7 +138,6 @@ object wafregional:
     conf.logicalName2pysicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
       case None               =>
-    
     com.pulumi.aws.wafregional.SqlInjectionMatchSet(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -177,7 +173,7 @@ object wafregional:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.wafregional.WebAclArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   /** Provides a WAF Regional Regex Pattern Set Resource */
   def RegexPatternSet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.wafregional.RegexPatternSetArgs.Builder])(using conf: KoPulumiConf) =
@@ -185,7 +181,6 @@ object wafregional:
     conf.logicalName2pysicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
       case None               =>
-    
     com.pulumi.aws.wafregional.RegexPatternSet(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -200,7 +195,6 @@ object wafregional:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.wafregional.WebAcl(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -215,7 +209,6 @@ object wafregional:
       def argsBuilder = com.pulumi.aws.wafregional.inputs.SqlInjectionMatchSetSqlInjectionMatchTupleArgs.builder
       builder.sqlInjectionMatchTuples(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafregional.XssMatchSetArgs.Builder)
     /**
      * @param xssMatchTuples The parts of web requests that you want to inspect for cross-site scripting attacks.
@@ -226,16 +219,14 @@ object wafregional:
       def argsBuilder = com.pulumi.aws.wafregional.inputs.XssMatchSetXssMatchTupleArgs.builder
       builder.xssMatchTuples(args.map(_(argsBuilder).build)*)
 
-                       
   /**
    * Manages an association with WAF Regional Web ACL.
-   *  
+   * 
    *  &gt; **Note:** An Application Load Balancer can only be associated with one WAF Regional WebACL.
    */
   def WebAclAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.wafregional.WebAclAssociationArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.wafregional.WebAclAssociationArgs.builder
-    
     com.pulumi.aws.wafregional.WebAclAssociation(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -250,7 +241,6 @@ object wafregional:
       def argsBuilder = com.pulumi.aws.wafregional.inputs.RegexMatchSetRegexMatchTupleArgs.builder
       builder.regexMatchTuples(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafregional.RateBasedRuleArgs.Builder)
     /**
      * @param predicates The objects to include in a rule (documented below).
@@ -264,7 +254,7 @@ object wafregional:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.wafregional.RateBasedRuleArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   /** Provides a WAF Regional Size Constraint Set Resource for use with Application Load Balancer. */
   def SizeConstraintSet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.wafregional.SizeConstraintSetArgs.Builder])(using conf: KoPulumiConf) =
@@ -272,7 +262,6 @@ object wafregional:
     conf.logicalName2pysicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
       case None               =>
-    
     com.pulumi.aws.wafregional.SizeConstraintSet(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -284,7 +273,6 @@ object wafregional:
     conf.logicalName2pysicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
       case None               =>
-    
     com.pulumi.aws.wafregional.GeoMatchSet(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -299,7 +287,6 @@ object wafregional:
       def argsBuilder = com.pulumi.aws.wafregional.inputs.ByteMatchSetByteMatchTupleArgs.builder
       builder.byteMatchTuples(args.map(_(argsBuilder).build)*)
 
-                       
   /** Provides a WAF Rate Based Rule Resource */
   def RateBasedRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.wafregional.RateBasedRuleArgs.Builder])(using conf: KoPulumiConf) =
@@ -310,7 +297,6 @@ object wafregional:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.wafregional.RateBasedRule(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -325,7 +311,6 @@ object wafregional:
       def argsBuilder = com.pulumi.aws.wafregional.inputs.SizeConstraintSetSizeConstraintArgs.builder
       builder.sizeConstraints(args.map(_(argsBuilder).build)*)
 
-                       
   /** Provides a WAF Regional IPSet Resource for use with Application Load Balancer. */
   def IpSet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.wafregional.IpSetArgs.Builder])(using conf: KoPulumiConf) =
@@ -333,7 +318,6 @@ object wafregional:
     conf.logicalName2pysicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
       case None               =>
-    
     com.pulumi.aws.wafregional.IpSet(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -345,7 +329,6 @@ object wafregional:
     conf.logicalName2pysicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
       case None               =>
-    
     com.pulumi.aws.wafregional.RegexMatchSet(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -360,7 +343,6 @@ object wafregional:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.wafregional.Rule(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -372,7 +354,6 @@ object wafregional:
     conf.logicalName2pysicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
       case None               =>
-    
     com.pulumi.aws.wafregional.ByteMatchSet(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -384,7 +365,6 @@ object wafregional:
     conf.logicalName2pysicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
       case None               =>
-    
     com.pulumi.aws.wafregional.XssMatchSet(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -399,7 +379,6 @@ object wafregional:
       def argsBuilder = com.pulumi.aws.wafregional.inputs.ByteMatchSetByteMatchTupleArgs.builder
       builder.byteMatchTuples(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafregional.inputs.RegexMatchSetState.Builder)
     /**
      * @param regexMatchTuples The regular expression pattern that you want AWS WAF to search for in web requests, the location in requests that you want AWS WAF to search, and other settings. See below.
@@ -410,7 +389,6 @@ object wafregional:
       def argsBuilder = com.pulumi.aws.wafregional.inputs.RegexMatchSetRegexMatchTupleArgs.builder
       builder.regexMatchTuples(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafregional.inputs.SqlInjectionMatchSetState.Builder)
     /**
      * @param sqlInjectionMatchTuples The parts of web requests that you want AWS WAF to inspect for malicious SQL code and, if you want AWS WAF to inspect a header, the name of the header.
@@ -421,7 +399,6 @@ object wafregional:
       def argsBuilder = com.pulumi.aws.wafregional.inputs.SqlInjectionMatchSetSqlInjectionMatchTupleArgs.builder
       builder.sqlInjectionMatchTuples(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafregional.inputs.RegexMatchSetRegexMatchTupleArgs.Builder)
     /**
      * @param fieldToMatch The part of a web request that you want to search, such as a specified header or a query string.
@@ -432,7 +409,6 @@ object wafregional:
       val argsBuilder = com.pulumi.aws.wafregional.inputs.RegexMatchSetRegexMatchTupleFieldToMatchArgs.builder
       builder.fieldToMatch(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafregional.inputs.RuleGroupState.Builder)
     /**
      * @param activatedRules A list of activated rules, see below
@@ -446,7 +422,7 @@ object wafregional:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.wafregional.inputs.RuleGroupState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.wafregional.inputs.SizeConstraintSetState.Builder)
     /**
      * @param sizeConstraints Specifies the parts of web requests that you want to inspect the size of.
@@ -457,7 +433,6 @@ object wafregional:
       def argsBuilder = com.pulumi.aws.wafregional.inputs.SizeConstraintSetSizeConstraintArgs.builder
       builder.sizeConstraints(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafregional.inputs.GeoMatchSetState.Builder)
     /**
      * @param geoMatchConstraints The Geo Match Constraint objects which contain the country that you want AWS WAF to search for.
@@ -468,7 +443,6 @@ object wafregional:
       def argsBuilder = com.pulumi.aws.wafregional.inputs.GeoMatchSetGeoMatchConstraintArgs.builder
       builder.geoMatchConstraints(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafregional.inputs.WebAclLoggingConfigurationArgs.Builder)
     /**
      * @param redactedFields Configuration block containing parts of the request that you want redacted from the logs. Detailed below.
@@ -479,7 +453,6 @@ object wafregional:
       val argsBuilder = com.pulumi.aws.wafregional.inputs.WebAclLoggingConfigurationRedactedFieldsArgs.builder
       builder.redactedFields(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafregional.inputs.WebAclRuleArgs.Builder)
     /**
      * @param action Configuration block of the action that CloudFront or AWS WAF takes when a web request matches the conditions in the rule.  Not used if `type` is `GROUP`. Detailed below.
@@ -499,7 +472,6 @@ object wafregional:
       val argsBuilder = com.pulumi.aws.wafregional.inputs.WebAclRuleOverrideActionArgs.builder
       builder.overrideAction(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafregional.inputs.ByteMatchSetByteMatchTupleArgs.Builder)
     /**
      * @param fieldToMatch Settings for the ByteMatchTuple. FieldToMatch documented below.
@@ -510,7 +482,6 @@ object wafregional:
       val argsBuilder = com.pulumi.aws.wafregional.inputs.ByteMatchSetByteMatchTupleFieldToMatchArgs.builder
       builder.fieldToMatch(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafregional.inputs.RuleGroupActivatedRuleArgs.Builder)
     /**
      * @param action Specifies the action that CloudFront or AWS WAF takes when a web request matches the conditions in the rule.
@@ -521,7 +492,6 @@ object wafregional:
       val argsBuilder = com.pulumi.aws.wafregional.inputs.RuleGroupActivatedRuleActionArgs.builder
       builder.action(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafregional.inputs.WebAclLoggingConfigurationRedactedFieldsArgs.Builder)
     /**
      * @param fieldToMatches Set of configuration blocks for fields to redact. Detailed below.
@@ -532,7 +502,6 @@ object wafregional:
       def argsBuilder = com.pulumi.aws.wafregional.inputs.WebAclLoggingConfigurationRedactedFieldsFieldToMatchArgs.builder
       builder.fieldToMatches(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafregional.inputs.XssMatchSetState.Builder)
     /**
      * @param xssMatchTuples The parts of web requests that you want to inspect for cross-site scripting attacks.
@@ -543,7 +512,6 @@ object wafregional:
       def argsBuilder = com.pulumi.aws.wafregional.inputs.XssMatchSetXssMatchTupleArgs.builder
       builder.xssMatchTuples(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafregional.inputs.SizeConstraintSetSizeConstraintArgs.Builder)
     /**
      * @param fieldToMatch Specifies where in a web request to look for the size constraint.
@@ -554,7 +522,6 @@ object wafregional:
       val argsBuilder = com.pulumi.aws.wafregional.inputs.SizeConstraintSetSizeConstraintFieldToMatchArgs.builder
       builder.fieldToMatch(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafregional.inputs.XssMatchSetXssMatchTupleArgs.Builder)
     /**
      * @param fieldToMatch Specifies where in a web request to look for cross-site scripting attacks.
@@ -565,7 +532,6 @@ object wafregional:
       val argsBuilder = com.pulumi.aws.wafregional.inputs.XssMatchSetXssMatchTupleFieldToMatchArgs.builder
       builder.fieldToMatch(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafregional.inputs.IpSetState.Builder)
     /**
      * @param ipSetDescriptors One or more pairs specifying the IP address type (IPV4 or IPV6) and the IP address range (in CIDR notation) from which web requests originate.
@@ -576,7 +542,6 @@ object wafregional:
       def argsBuilder = com.pulumi.aws.wafregional.inputs.IpSetIpSetDescriptorArgs.builder
       builder.ipSetDescriptors(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafregional.inputs.SqlInjectionMatchSetSqlInjectionMatchTupleArgs.Builder)
     /**
      * @param fieldToMatch Specifies where in a web request to look for snippets of malicious SQL code.
@@ -587,7 +552,6 @@ object wafregional:
       val argsBuilder = com.pulumi.aws.wafregional.inputs.SqlInjectionMatchSetSqlInjectionMatchTupleFieldToMatchArgs.builder
       builder.fieldToMatch(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafregional.inputs.RateBasedRuleState.Builder)
     /**
      * @param predicates The objects to include in a rule (documented below).
@@ -601,7 +565,7 @@ object wafregional:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.wafregional.inputs.RateBasedRuleState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.wafregional.inputs.RuleState.Builder)
     /**
      * @param predicates The objects to include in a rule (documented below).
@@ -615,7 +579,7 @@ object wafregional:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.wafregional.inputs.RuleState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.wafregional.inputs.WebAclState.Builder)
     /**
      * @param defaultAction The action that you want AWS WAF Regional to take when a request doesn&#39;t match the criteria in any of the rules that are associated with the web ACL.
@@ -647,4 +611,3 @@ object wafregional:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.wafregional.inputs.WebAclState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       

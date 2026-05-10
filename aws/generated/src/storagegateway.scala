@@ -6,13 +6,12 @@ import com.pulumi.resources.CustomResourceOptions
 object storagegateway:
   /**
    * Manages an AWS Storage Gateway working storage.
-   *  
+   * 
    *  &gt; **NOTE:** The Storage Gateway API provides no method to remove a working storage disk. Destroying this resource does not perform any Storage Gateway actions.
    */
   def WorkingStorage(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.storagegateway.WorkingStorageArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.storagegateway.WorkingStorageArgs.builder
-    
     com.pulumi.aws.storagegateway.WorkingStorage(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -24,7 +23,6 @@ object storagegateway:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.storagegateway.TapePool(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -42,25 +40,24 @@ object storagegateway:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.storagegateway.SmbFileShareArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   /**
    * Manages an AWS Storage Gateway upload buffer.
-   *  
+   * 
    *  &gt; **NOTE:** The Storage Gateway API provides no method to remove an upload buffer disk. Destroying this resource does not perform any Storage Gateway actions.
    */
   def UploadBuffer(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.storagegateway.UploadBufferArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.storagegateway.UploadBufferArgs.builder
-    
     com.pulumi.aws.storagegateway.UploadBuffer(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
   /**
    * Manages an AWS Storage Gateway cached iSCSI volume.
-   *  
+   * 
    *  &gt; **NOTE:** The gateway must have cache added (e.g., via the `aws.storagegateway.Cache` resource) before creating volumes otherwise the Storage Gateway API will return an error.
-   *  
+   * 
    *  &gt; **NOTE:** The gateway must have an upload buffer added (e.g., via the `aws.storagegateway.UploadBuffer` resource) before the volume is operational to clients, however the Storage Gateway API will allow volume creation without error in that case and return volume status as `UPLOAD BUFFER NOT CONFIGURED`.
    */
   def CachesIscsiVolume(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
@@ -69,14 +66,13 @@ object storagegateway:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.storagegateway.CachesIscsiVolume(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
   /**
    * Manages an AWS Storage Gateway file, tape, or volume gateway in the provider region.
-   *  
+   * 
    *  &gt; **NOTE:** The Storage Gateway API requires the gateway to be connected to properly return information after activation. If you are receiving `The specified gateway is not connected` errors during resource creation (gateway activation), ensure your gateway instance meets the [Storage Gateway requirements](https://docs.aws.amazon.com/storagegateway/latest/userguide/Requirements.html).
    */
   def Gateway(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
@@ -85,27 +81,25 @@ object storagegateway:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.storagegateway.Gateway(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
   /**
    * Manages an AWS Storage Gateway cache.
-   *  
+   * 
    *  &gt; **NOTE:** The Storage Gateway API provides no method to remove a cache disk. Destroying this resource does not perform any Storage Gateway actions.
    */
   def Cache(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.storagegateway.CacheArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.storagegateway.CacheArgs.builder
-    
     com.pulumi.aws.storagegateway.Cache(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
   /**
    * Manages an AWS Storage Gateway stored iSCSI volume.
-   *  
+   * 
    *  &gt; **NOTE:** The gateway must have a working storage added (e.g., via the `aws.storagegateway.WorkingStorage` resource) before the volume is operational to clients, however the Storage Gateway API will allow volume creation without error in that case and return volume status as `WORKING STORAGE NOT CONFIGURED`.
    */
   def StoredIscsiVolume(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
@@ -114,7 +108,6 @@ object storagegateway:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.storagegateway.StoredIscsiVolume(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -126,7 +119,6 @@ object storagegateway:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.storagegateway.SmbFileShare(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -153,10 +145,10 @@ object storagegateway:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.storagegateway.NfsFileShareArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   /**
    * Associate an Amazon FSx file system with the FSx File Gateway. After the association process is complete, the file shares on the Amazon FSx file system are available for access through the gateway. This operation only supports the FSx File Gateway type.
-   *  
+   * 
    *  [FSx File Gateway requirements](https://docs.aws.amazon.com/filegateway/latest/filefsxw/Requirements.html).
    */
   def FileSystemAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
@@ -165,7 +157,6 @@ object storagegateway:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.storagegateway.FileSystemAssociation(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -192,7 +183,7 @@ object storagegateway:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.storagegateway.GatewayArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.storagegateway.FileSystemAssociationArgs.Builder)
     /**
      * @param cacheAttributes Refresh cache information. see Cache Attributes for more details.
@@ -206,7 +197,7 @@ object storagegateway:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.storagegateway.FileSystemAssociationArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   /** Manages an AWS Storage Gateway NFS File Share. */
   def NfsFileShare(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.storagegateway.NfsFileShareArgs.Builder])(using conf: KoPulumiConf) =
@@ -214,7 +205,6 @@ object storagegateway:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.storagegateway.NfsFileShare(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -241,7 +231,7 @@ object storagegateway:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.storagegateway.inputs.NfsFileShareState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.storagegateway.inputs.GatewayState.Builder)
     /**
      * @param gatewayNetworkInterfaces An array that contains descriptions of the gateway network interfaces. See Gateway Network Interface.
@@ -273,7 +263,7 @@ object storagegateway:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.storagegateway.inputs.GatewayState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.storagegateway.inputs.FileSystemAssociationState.Builder)
     /**
      * @param cacheAttributes Refresh cache information. see Cache Attributes for more details.
@@ -287,7 +277,7 @@ object storagegateway:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.storagegateway.inputs.FileSystemAssociationState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.storagegateway.inputs.SmbFileShareState.Builder)
     /**
      * @param cacheAttributes Refresh cache information. see `cacheAttributes` Block for more details.
@@ -301,7 +291,7 @@ object storagegateway:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.storagegateway.inputs.SmbFileShareState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   type StoragegatewayFunctions = com.pulumi.aws.storagegateway.StoragegatewayFunctions
   object StoragegatewayFunctions:
     // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)

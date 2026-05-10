@@ -6,11 +6,11 @@ import com.pulumi.resources.CustomResourceOptions
 object cloudhsmv2:
   /**
    * Creates an Amazon CloudHSM v2 cluster.
-   *  
+   * 
    *  For information about CloudHSM v2, see the
    *  [AWS CloudHSM User Guide](https://docs.aws.amazon.com/cloudhsm/latest/userguide/introduction.html) and the [Amazon
    *  CloudHSM API Reference][2].
-   *  
+   * 
    *  &gt; **NOTE:** A CloudHSM Cluster can take several minutes to set up.
    *  Practically no single attribute can be updated, except for `tags`.
    *  If you need to delete a cluster, you have to remove its HSM modules first.
@@ -22,7 +22,6 @@ object cloudhsmv2:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.cloudhsmv2.Cluster(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -48,7 +47,6 @@ object cloudhsmv2:
   def Hsm(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.cloudhsmv2.HsmArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.cloudhsmv2.HsmArgs.builder
-    
     com.pulumi.aws.cloudhsmv2.Hsm(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -66,4 +64,3 @@ object cloudhsmv2:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.cloudhsmv2.inputs.ClusterState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       

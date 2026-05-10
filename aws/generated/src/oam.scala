@@ -6,7 +6,7 @@ import com.pulumi.resources.CustomResourceOptions
 object oam:
   /**
    * Resource for managing an AWS CloudWatch Observability Access Manager Link.
-   *  
+   * 
    *  &gt; **NOTE:** Creating an `aws.oam.Link` may sometimes fail if the `aws.oam.SinkPolicy` for the attached `aws.oam.Sink` is not created before the `aws.oam.Link`. To prevent this, declare an explicit dependency using a `dependsOn` meta-argument.
    */
   def Link(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
@@ -15,7 +15,6 @@ object oam:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.oam.Link(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -30,7 +29,6 @@ object oam:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.oam.Sink(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -48,12 +46,11 @@ object oam:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.oam.LinkArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   /** Resource for managing an AWS CloudWatch Observability Access Manager Sink Policy. */
   def SinkPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.oam.SinkPolicyArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.oam.SinkPolicyArgs.builder
-    
     com.pulumi.aws.oam.SinkPolicy(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -124,7 +121,7 @@ object oam:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.oam.inputs.LinkState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.oam.inputs.LinkLinkConfigurationArgs.Builder)
     /**
      * @param logGroupConfiguration Configuration for filtering which log groups are to send log events from the source account to the monitoring account. See `logGroupConfiguration` Block for details.
@@ -143,5 +140,3 @@ object oam:
         com.pulumi.aws.oam.inputs.LinkLinkConfigurationArgs.Builder =
       val argsBuilder = com.pulumi.aws.oam.inputs.LinkLinkConfigurationMetricConfigurationArgs.builder
       builder.metricConfiguration(args(argsBuilder).build)
-
-                       

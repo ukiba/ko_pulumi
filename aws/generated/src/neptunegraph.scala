@@ -22,7 +22,7 @@ object neptunegraph:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.neptunegraph.GraphArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   /** The `aws.neptunegraph.Graph` resource creates an Amazon Analytics Graph. */
   def Graph(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.neptunegraph.GraphArgs.Builder])(using conf: KoPulumiConf) =
@@ -30,7 +30,6 @@ object neptunegraph:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.neptunegraph.Graph(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -53,4 +52,3 @@ object neptunegraph:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.neptunegraph.inputs.GraphState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       

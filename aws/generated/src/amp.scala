@@ -10,12 +10,10 @@ object amp:
       val argsBuilder = com.pulumi.aws.amp.inputs.ResourcePolicyTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
-                       
   /** Manages an Amazon Managed Service for Prometheus (AMP) Alert Manager Definition */
   def AlertManagerDefinition(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.amp.AlertManagerDefinitionArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.amp.AlertManagerDefinitionArgs.builder
-    
     com.pulumi.aws.amp.AlertManagerDefinition(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -33,7 +31,7 @@ object amp:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.amp.WorkspaceArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   type AmpFunctions = com.pulumi.aws.amp.AmpFunctions
   object AmpFunctions:
     // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
@@ -77,13 +75,12 @@ object amp:
 
   /**
    * Manages an Amazon Managed Service for Prometheus (AMP) Resource Policy.
-   *  
+   * 
    *  Resource-based policies allow you to grant permissions to other AWS accounts or services to access your Prometheus workspace. This enables cross-account access and fine-grained permissions for workspace sharing.
    */
   def ResourcePolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.amp.ResourcePolicyArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.amp.ResourcePolicyArgs.builder
-    
     com.pulumi.aws.amp.ResourcePolicy(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -91,10 +88,10 @@ object amp:
   /**
    * &gt; **Note:** If you change a Scraper&#39;s source (EKS cluster or VPC configuration), Terraform
    *  will delete the current Scraper and create a new one.
-   *  
+   * 
    *  Provides an Amazon Managed Service for Prometheus fully managed collector
    *  (scraper).
-   *  
+   * 
    *  Read more in the [Amazon Managed Service for Prometheus user guide](https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-collector.html).
    */
   def Scraper(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
@@ -103,7 +100,6 @@ object amp:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.amp.Scraper(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -123,12 +119,10 @@ object amp:
       val argsBuilder = com.pulumi.aws.amp.inputs.WorkspaceConfigurationTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
-                       
   /** Manages an Amazon Managed Service for Prometheus (AMP) Query Logging Configuration. */
   def QueryLoggingConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.amp.QueryLoggingConfigurationArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.amp.QueryLoggingConfigurationArgs.builder
-    
     com.pulumi.aws.amp.QueryLoggingConfiguration(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -143,7 +137,6 @@ object amp:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.amp.RuleGroupNamespace(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -163,7 +156,6 @@ object amp:
       val argsBuilder = com.pulumi.aws.amp.inputs.QueryLoggingConfigurationTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.amp.ScraperArgs.Builder)
     /**
      * @param destination Configuration block for the managed scraper to send metrics to. See `destination`.
@@ -185,7 +177,7 @@ object amp:
 
     /**
      * @param source Configuration block to specify where the managed scraper will collect metrics from. See `source`.
-     *  
+     * 
      *  The following arguments are optional:
      * @return builder
      */
@@ -202,7 +194,7 @@ object amp:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.amp.ScraperArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   /** Manages an Amazon Managed Service for Prometheus (AMP) Workspace. */
   def Workspace(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.amp.WorkspaceArgs.Builder])(using conf: KoPulumiConf) =
@@ -210,7 +202,6 @@ object amp:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.amp.Workspace(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -219,7 +210,6 @@ object amp:
   def WorkspaceConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.amp.WorkspaceConfigurationArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.amp.WorkspaceConfigurationArgs.builder
-    
     com.pulumi.aws.amp.WorkspaceConfiguration(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -234,7 +224,6 @@ object amp:
       val argsBuilder = com.pulumi.aws.amp.inputs.WorkspaceConfigurationLimitsPerLabelSetLimitsArgs.builder
       builder.limits(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.amp.inputs.ScraperState.Builder)
     /**
      * @param destination Configuration block for the managed scraper to send metrics to. See `destination`.
@@ -256,7 +245,7 @@ object amp:
 
     /**
      * @param source Configuration block to specify where the managed scraper will collect metrics from. See `source`.
-     *  
+     * 
      *  The following arguments are optional:
      * @return builder
      */
@@ -273,7 +262,7 @@ object amp:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.amp.inputs.ScraperState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.amp.inputs.QueryLoggingConfigurationDestinationArgs.Builder)
     /**
      * @param cloudwatchLogs Configuration block for CloudWatch Logs destination. See `cloudwatchLogs`.
@@ -293,7 +282,6 @@ object amp:
       val argsBuilder = com.pulumi.aws.amp.inputs.QueryLoggingConfigurationDestinationFiltersArgs.builder
       builder.filters(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.amp.inputs.WorkspaceState.Builder)
     /**
      * @param loggingConfiguration Logging configuration for the workspace. See Logging Configuration below for details.
@@ -307,7 +295,7 @@ object amp:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.amp.inputs.WorkspaceState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.amp.inputs.QueryLoggingConfigurationState.Builder)
     /**
      * @param destinations Configuration block for the logging destinations. See `destinations`.
@@ -323,7 +311,6 @@ object amp:
       val argsBuilder = com.pulumi.aws.amp.inputs.QueryLoggingConfigurationTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.amp.inputs.WorkspaceConfigurationState.Builder)
     /**
      * @param limitsPerLabelSets Configuration block for setting limits on metrics with specific label sets. Detailed below.
@@ -339,7 +326,6 @@ object amp:
       val argsBuilder = com.pulumi.aws.amp.inputs.WorkspaceConfigurationTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.amp.inputs.ScraperSourceArgs.Builder)
     /**
      * @param eks Configuration block for an EKS cluster source. See `eks`.
@@ -352,7 +338,7 @@ object amp:
 
     /**
      * @param vpc Configuration block for a VPC source. See `vpc`.
-     *  
+     * 
      *  &gt; **NOTE:** Either `eks` or `vpc` must be specified, but not both.
      * @return builder
      */
@@ -361,14 +347,12 @@ object amp:
       val argsBuilder = com.pulumi.aws.amp.inputs.ScraperSourceVpcArgs.builder
       builder.vpc(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.amp.inputs.ResourcePolicyState.Builder)
     def timeouts(args: Endofunction[com.pulumi.aws.amp.inputs.ResourcePolicyTimeoutsArgs.Builder]):
         com.pulumi.aws.amp.inputs.ResourcePolicyState.Builder =
       val argsBuilder = com.pulumi.aws.amp.inputs.ResourcePolicyTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.amp.inputs.ScraperDestinationArgs.Builder)
     /**
      * @param amp Configuration block for an Amazon Managed Prometheus workspace destination. See `amp`.
@@ -378,5 +362,3 @@ object amp:
         com.pulumi.aws.amp.inputs.ScraperDestinationArgs.Builder =
       val argsBuilder = com.pulumi.aws.amp.inputs.ScraperDestinationAmpArgs.builder
       builder.amp(args(argsBuilder).build)
-
-                       

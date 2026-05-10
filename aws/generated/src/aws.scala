@@ -23,13 +23,13 @@ object aws:
     /**
      * `aws.getAvailabilityZone` provides details about a specific availability zone (AZ)
      *  in the current Region.
-     *  
+     * 
      *  This can be used both to validate an availability zone given in a variable
      *  and to split the AZ name into its component parts of an AWS Region and an
      *  AZ identifier letter. The latter may be useful e.g., for implementing a
      *  consistent subnet numbering scheme across several regions by mapping both
      *  the region and the subnet letter to network numbers.
-     *  
+     * 
      *  This is different from the `aws.getAvailabilityZones` (plural) data source,
      *  which provides a list of the available zones.
      */
@@ -41,13 +41,13 @@ object aws:
     /**
      * `aws.getAvailabilityZone` provides details about a specific availability zone (AZ)
      *  in the current Region.
-     *  
+     * 
      *  This can be used both to validate an availability zone given in a variable
      *  and to split the AZ name into its component parts of an AWS Region and an
      *  AZ identifier letter. The latter may be useful e.g., for implementing a
      *  consistent subnet numbering scheme across several regions by mapping both
      *  the region and the subnet letter to network numbers.
-     *  
+     * 
      *  This is different from the `aws.getAvailabilityZones` (plural) data source,
      *  which provides a list of the available zones.
      */
@@ -60,10 +60,10 @@ object aws:
      * The Availability Zones data source allows access to the list of AWS
      *  Availability Zones which can be accessed by an AWS account within the region
      *  configured in the provider.
-     *  
+     * 
      *  This is different from the `aws.getAvailabilityZone` (singular) data source,
      *  which provides some details about a specific availability zone.
-     *  
+     * 
      *  &gt; When [Local Zones](https://aws.amazon.com/about-aws/global-infrastructure/localzones/) are enabled in a region, by default the API and this data source include both Local Zones and Availability Zones. To return only Availability Zones, see the example section below.
      */
     def getAvailabilityZones(args: Endofunction[com.pulumi.aws.inputs.GetAvailabilityZonesArgs.Builder] = identity):
@@ -75,10 +75,10 @@ object aws:
      * The Availability Zones data source allows access to the list of AWS
      *  Availability Zones which can be accessed by an AWS account within the region
      *  configured in the provider.
-     *  
+     * 
      *  This is different from the `aws.getAvailabilityZone` (singular) data source,
      *  which provides some details about a specific availability zone.
-     *  
+     * 
      *  &gt; When [Local Zones](https://aws.amazon.com/about-aws/global-infrastructure/localzones/) are enabled in a region, by default the API and this data source include both Local Zones and Availability Zones. To return only Availability Zones, see the example section below.
      */
     def getAvailabilityZonesPlain(args: Endofunction[com.pulumi.aws.inputs.GetAvailabilityZonesPlainArgs.Builder] = identity):
@@ -118,7 +118,7 @@ object aws:
 
     /**
      * Use this data source to get the default tags configured on the provider.
-     *  
+     * 
      *  With this data source, you can apply default tags to resources not _directly_ managed by a resource, such as the instances underneath an Auto Scaling group or the volumes created for an EC2 instance.
      */
     def getDefaultTags(args: Endofunction[com.pulumi.aws.inputs.GetDefaultTagsArgs.Builder] = identity):
@@ -128,7 +128,7 @@ object aws:
 
     /**
      * Use this data source to get the default tags configured on the provider.
-     *  
+     * 
      *  With this data source, you can apply default tags to resources not _directly_ managed by a resource, such as the instances underneath an Auto Scaling group or the volumes created for an EC2 instance.
      */
     def getDefaultTagsPlain(args: Endofunction[com.pulumi.aws.inputs.GetDefaultTagsPlainArgs.Builder] = identity):
@@ -168,7 +168,7 @@ object aws:
 
     /**
      * `aws.getRegion` provides details about a specific AWS Region.
-     *  
+     * 
      *  As well as validating a given Region name this resource can be used to
      *  discover the name of the Region configured within the provider. The latter
      *  can be useful in a child module which is inheriting an AWS provider
@@ -181,7 +181,7 @@ object aws:
 
     /**
      * `aws.getRegion` provides details about a specific AWS Region.
-     *  
+     * 
      *  As well as validating a given Region name this resource can be used to
      *  discover the name of the Region configured within the provider. The latter
      *  can be useful in a child module which is inheriting an AWS provider
@@ -262,7 +262,6 @@ object aws:
       val argsBuilder = com.pulumi.aws.inputs.ProviderIgnoreTagsArgs.builder
       builder.ignoreTags(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.inputs.GetRegionsArgs.Builder)
     /**
      * @param filters Configuration block(s) to use as filters. Detailed below.
@@ -273,7 +272,6 @@ object aws:
       def argsBuilder = com.pulumi.aws.inputs.GetRegionsFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.inputs.GetAvailabilityZoneArgs.Builder)
     /**
      * @param filters Configuration block(s) for filtering. Detailed below.
@@ -284,7 +282,6 @@ object aws:
       def argsBuilder = com.pulumi.aws.inputs.GetAvailabilityZoneFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.inputs.GetAvailabilityZonesArgs.Builder)
     /**
      * @param filters Configuration block(s) for filtering. Detailed below.
@@ -294,5 +291,3 @@ object aws:
         com.pulumi.aws.inputs.GetAvailabilityZonesArgs.Builder =
       def argsBuilder = com.pulumi.aws.inputs.GetAvailabilityZonesFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
-
-                       

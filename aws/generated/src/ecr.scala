@@ -47,7 +47,7 @@ object ecr:
 
     /**
      * Generates an ECR lifecycle policy document in JSON format. Can be used with resources such as the `aws.ecr.LifecyclePolicy` resource.
-     *  
+     * 
      *  &gt; For more information about building AWS ECR lifecycle policy documents, see the [AWS ECR Lifecycle Policy Document Guide](https://docs.aws.amazon.com/AmazonECR/latest/userguide/LifecyclePolicies.html).
      */
     def getLifecyclePolicyDocument(args: Endofunction[com.pulumi.aws.ecr.inputs.GetLifecyclePolicyDocumentArgs.Builder] = identity):
@@ -57,7 +57,7 @@ object ecr:
 
     /**
      * Generates an ECR lifecycle policy document in JSON format. Can be used with resources such as the `aws.ecr.LifecyclePolicy` resource.
-     *  
+     * 
      *  &gt; For more information about building AWS ECR lifecycle policy documents, see the [AWS ECR Lifecycle Policy Document Guide](https://docs.aws.amazon.com/AmazonECR/latest/userguide/LifecyclePolicies.html).
      */
     def getLifecyclePolicyDocumentPlain(args: Endofunction[com.pulumi.aws.ecr.inputs.GetLifecyclePolicyDocumentPlainArgs.Builder] = identity):
@@ -144,12 +144,11 @@ object ecr:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.ecr.RepositoryArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   /** Provides an Elastic Container Registry Scanning Configuration. Can&#39;t be completely deleted, instead reverts to the default `BASIC` scanning configuration without rules. */
   def RegistryScanningConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ecr.RegistryScanningConfigurationArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.ecr.RegistryScanningConfigurationArgs.builder
-    
     com.pulumi.aws.ecr.RegistryScanningConfiguration(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -173,7 +172,6 @@ object ecr:
       def argsBuilder = com.pulumi.aws.ecr.inputs.RepositoryCreationTemplateImageTagMutabilityExclusionFilterArgs.builder
       builder.imageTagMutabilityExclusionFilters(args.map(_(argsBuilder).build)*)
 
-                       
   /** Provides a resource to manage AWS ECR account settings */
   def AccountSetting(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ecr.AccountSettingArgs.Builder])(using conf: KoPulumiConf) =
@@ -181,7 +179,6 @@ object ecr:
     conf.logicalName2pysicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
       case None               =>
-    
     com.pulumi.aws.ecr.AccountSetting(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -196,31 +193,28 @@ object ecr:
       def argsBuilder = com.pulumi.aws.ecr.inputs.RegistryScanningConfigurationRuleArgs.builder
       builder.rules(args.map(_(argsBuilder).build)*)
 
-                       
   /**
    * Manages an ECR repository lifecycle policy.
-   *  
+   * 
    *  &gt; **NOTE:** Only one `aws.ecr.LifecyclePolicy` resource can be used with the same ECR repository. To apply multiple rules, they must be combined in the `policy` JSON.
-   *  
+   * 
    *  &gt; **NOTE:** The AWS ECR API seems to reorder rules based on `rulePriority`. If you define multiple rules that are not sorted in ascending `rulePriority` order in the this provider code, the resource will be flagged for recreation every deployment.
    */
   def LifecyclePolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ecr.LifecyclePolicyArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.ecr.LifecyclePolicyArgs.builder
-    
     com.pulumi.aws.ecr.LifecyclePolicy(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
   /**
    * Provides an Elastic Container Registry Policy.
-   *  
+   * 
    *  &gt; **NOTE on ECR Registry Policies:** While the AWS Management Console interface may suggest the ability to define multiple policies by creating multiple statements, ECR registry policies are effectively managed as singular entities at the regional level by the AWS APIs. Therefore, the `aws.ecr.RegistryPolicy` resource should be configured only once per region with all necessary statements defined in the same policy. Attempting to define multiple `aws.ecr.RegistryPolicy` resources may result in perpetual differences, with one policy overriding another.
    */
   def RegistryPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ecr.RegistryPolicyArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.ecr.RegistryPolicyArgs.builder
-    
     com.pulumi.aws.ecr.RegistryPolicy(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -235,12 +229,10 @@ object ecr:
       val argsBuilder = com.pulumi.aws.ecr.inputs.LifecyclePolicyDocumentArgs.builder
       builder.policy(args(argsBuilder).build)
 
-                       
   /** Manages an AWS ECR (Elastic Container Registry) Pull Time Update Exclusion. */
   def PullTimeUpdateExclusion(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ecr.PullTimeUpdateExclusionArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.ecr.PullTimeUpdateExclusionArgs.builder
-    
     com.pulumi.aws.ecr.PullTimeUpdateExclusion(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -255,7 +247,6 @@ object ecr:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.ecr.Repository(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -264,34 +255,31 @@ object ecr:
   def RepositoryCreationTemplate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ecr.RepositoryCreationTemplateArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.ecr.RepositoryCreationTemplateArgs.builder
-    
     com.pulumi.aws.ecr.RepositoryCreationTemplate(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
   /**
    * Provides an Elastic Container Registry Repository Policy.
-   *  
+   * 
    *  Note that currently only one policy may be applied to a repository.
    */
   def RepositoryPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ecr.RepositoryPolicyArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.ecr.RepositoryPolicyArgs.builder
-    
     com.pulumi.aws.ecr.RepositoryPolicy(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
   /**
    * Provides an Elastic Container Registry Pull Through Cache Rule.
-   *  
+   * 
    *  More information about pull through cache rules, including the set of supported
    *  upstream repositories, see [Using pull through cache rules](https://docs.aws.amazon.com/AmazonECR/latest/userguide/pull-through-cache.html).
    */
   def PullThroughCacheRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ecr.PullThroughCacheRuleArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.ecr.PullThroughCacheRuleArgs.builder
-    
     com.pulumi.aws.ecr.PullThroughCacheRule(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -306,7 +294,6 @@ object ecr:
       val argsBuilder = com.pulumi.aws.ecr.inputs.PolicyDocumentArgs.builder
       builder.policy(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.ecr.ReplicationConfigurationArgs.Builder)
     /**
      * @param replicationConfiguration Replication configuration for a registry. See Replication Configuration.
@@ -317,12 +304,10 @@ object ecr:
       val argsBuilder = com.pulumi.aws.ecr.inputs.ReplicationConfigurationReplicationConfigurationArgs.builder
       builder.replicationConfiguration(args(argsBuilder).build)
 
-                       
   /** Provides an Elastic Container Registry Replication Configuration. */
   def ReplicationConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ecr.ReplicationConfigurationArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.ecr.ReplicationConfigurationArgs.builder
-    
     com.pulumi.aws.ecr.ReplicationConfiguration(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -337,7 +322,6 @@ object ecr:
       val argsBuilder = com.pulumi.aws.ecr.inputs.PolicyDocumentArgs.builder
       builder.policy(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.ecr.inputs.ReplicationConfigurationReplicationConfigurationRuleArgs.Builder)
     /**
      * @param destinations the details of a replication destination. A maximum of 25 are allowed per `rule`. See Destination.
@@ -357,7 +341,6 @@ object ecr:
       def argsBuilder = com.pulumi.aws.ecr.inputs.ReplicationConfigurationReplicationConfigurationRuleRepositoryFilterArgs.builder
       builder.repositoryFilters(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.ecr.inputs.RegistryScanningConfigurationRuleArgs.Builder)
     /**
      * @param repositoryFilters One or more repository filter blocks, containing a `filter` (required string filtering repositories, see pattern regex [here](https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_ScanningRepositoryFilter.html)) and a `filterType` (required string, currently only `WILDCARD` is supported).
@@ -368,7 +351,6 @@ object ecr:
       def argsBuilder = com.pulumi.aws.ecr.inputs.RegistryScanningConfigurationRuleRepositoryFilterArgs.builder
       builder.repositoryFilters(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.ecr.inputs.ReplicationConfigurationReplicationConfigurationArgs.Builder)
     /**
      * @param rules The replication rules for a replication configuration. A maximum of 10 are allowed per `replicationConfiguration`. See Rule
@@ -379,14 +361,12 @@ object ecr:
       def argsBuilder = com.pulumi.aws.ecr.inputs.ReplicationConfigurationReplicationConfigurationRuleArgs.builder
       builder.rules(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.ecr.inputs.GetLifecyclePolicyDocumentArgs.Builder)
     def rules(args: Endofunction[com.pulumi.aws.ecr.inputs.GetLifecyclePolicyDocumentRuleArgs.Builder]*):
         com.pulumi.aws.ecr.inputs.GetLifecyclePolicyDocumentArgs.Builder =
       def argsBuilder = com.pulumi.aws.ecr.inputs.GetLifecyclePolicyDocumentRuleArgs.builder
       builder.rules(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.ecr.inputs.RegistryScanningConfigurationState.Builder)
     /**
      * @param rules One or multiple blocks specifying scanning rules to determine which repository filters are used and at what frequency scanning will occur. See below for schema.
@@ -397,7 +377,6 @@ object ecr:
       def argsBuilder = com.pulumi.aws.ecr.inputs.RegistryScanningConfigurationRuleArgs.builder
       builder.rules(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.ecr.inputs.RepositoryPolicyState.Builder)
     /**
      * @param policy The policy document. This is a JSON formatted string.
@@ -408,7 +387,6 @@ object ecr:
       val argsBuilder = com.pulumi.aws.ecr.inputs.PolicyDocumentArgs.builder
       builder.policy(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.ecr.inputs.GetLifecyclePolicyDocumentRuleArgs.Builder)
     /**
      * @param action Specifies the action to take.
@@ -428,7 +406,6 @@ object ecr:
       val argsBuilder = com.pulumi.aws.ecr.inputs.GetLifecyclePolicyDocumentRuleSelectionArgs.builder
       builder.selection(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.ecr.inputs.LifecyclePolicyDocumentArgs.Builder)
     /**
      * @param rules The rules that comprise the lifecycle policy.
@@ -439,7 +416,6 @@ object ecr:
       def argsBuilder = com.pulumi.aws.ecr.inputs.LifecyclePolicyRuleArgs.builder
       builder.rules(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.ecr.inputs.ReplicationConfigurationState.Builder)
     /**
      * @param replicationConfiguration Replication configuration for a registry. See Replication Configuration.
@@ -450,7 +426,6 @@ object ecr:
       val argsBuilder = com.pulumi.aws.ecr.inputs.ReplicationConfigurationReplicationConfigurationArgs.builder
       builder.replicationConfiguration(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.ecr.inputs.RepositoryCreationTemplateState.Builder)
     /**
      * @param encryptionConfigurations Encryption configuration for any created repositories. See below for schema.
@@ -470,7 +445,6 @@ object ecr:
       def argsBuilder = com.pulumi.aws.ecr.inputs.RepositoryCreationTemplateImageTagMutabilityExclusionFilterArgs.builder
       builder.imageTagMutabilityExclusionFilters(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.ecr.inputs.LifecyclePolicyState.Builder)
     /**
      * @param policy The policy document. This is a JSON formatted string. See more details about [Policy Parameters](http://docs.aws.amazon.com/AmazonECR/latest/userguide/LifecyclePolicies.html#lifecycle_policy_parameters) in the official AWS docs. Consider using the `aws.ecr.getLifecyclePolicyDocument` dataSource to generate/manage the JSON document used for the `policy` argument.
@@ -481,7 +455,6 @@ object ecr:
       val argsBuilder = com.pulumi.aws.ecr.inputs.LifecyclePolicyDocumentArgs.builder
       builder.policy(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.ecr.inputs.RepositoryState.Builder)
     /**
      * @param encryptionConfigurations Encryption configuration for the repository. See below for schema.
@@ -513,7 +486,7 @@ object ecr:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.ecr.inputs.RepositoryState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.ecr.inputs.RegistryPolicyState.Builder)
     /**
      * @param policy The policy document. This is a JSON formatted string.
@@ -524,14 +497,12 @@ object ecr:
       val argsBuilder = com.pulumi.aws.ecr.inputs.PolicyDocumentArgs.builder
       builder.policy(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.ecr.inputs.PolicyDocumentArgs.Builder)
     def Statement(args: Endofunction[com.pulumi.aws.iam.inputs.PolicyStatementArgs.Builder]*):
         com.pulumi.aws.ecr.inputs.PolicyDocumentArgs.Builder =
       def argsBuilder = com.pulumi.aws.iam.inputs.PolicyStatementArgs.builder
       builder.Statement(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.ecr.inputs.LifecyclePolicyRuleArgs.Builder)
     /**
      * @param action The action to take when the rule is triggered.
@@ -550,5 +521,3 @@ object ecr:
         com.pulumi.aws.ecr.inputs.LifecyclePolicyRuleArgs.Builder =
       val argsBuilder = com.pulumi.aws.ecr.inputs.LifecyclePolicySelectionArgs.builder
       builder.selection(args(argsBuilder).build)
-
-                       

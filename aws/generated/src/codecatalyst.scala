@@ -32,7 +32,6 @@ object codecatalyst:
       def argsBuilder = com.pulumi.aws.codecatalyst.inputs.DevEnvironmentRepositoryArgs.builder
       builder.repositories(args.map(_(argsBuilder).build)*)
 
-                       
   type CodecatalystFunctions = com.pulumi.aws.codecatalyst.CodecatalystFunctions
   object CodecatalystFunctions:
     // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
@@ -54,7 +53,6 @@ object codecatalyst:
   def DevEnvironment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.codecatalyst.DevEnvironmentArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.codecatalyst.DevEnvironmentArgs.builder
-    
     com.pulumi.aws.codecatalyst.DevEnvironment(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -63,7 +61,6 @@ object codecatalyst:
   def Project(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.codecatalyst.ProjectArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.codecatalyst.ProjectArgs.builder
-    
     com.pulumi.aws.codecatalyst.Project(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -75,7 +72,6 @@ object codecatalyst:
     conf.logicalName2pysicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
       case None               =>
-    
     com.pulumi.aws.codecatalyst.SourceRepository(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -93,7 +89,7 @@ object codecatalyst:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.codecatalyst.inputs.GetDevEnvironmentArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.codecatalyst.inputs.DevEnvironmentState.Builder)
     /**
      * @param ides Information about the integrated development environment (IDE) configured for a Dev Environment.
@@ -121,5 +117,3 @@ object codecatalyst:
         com.pulumi.aws.codecatalyst.inputs.DevEnvironmentState.Builder =
       def argsBuilder = com.pulumi.aws.codecatalyst.inputs.DevEnvironmentRepositoryArgs.builder
       builder.repositories(args.map(_(argsBuilder).build)*)
-
-                       

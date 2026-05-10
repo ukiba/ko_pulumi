@@ -14,7 +14,6 @@ object lex:
     conf.logicalName2pysicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
       case None               =>
-    
     com.pulumi.aws.lex.SlotType(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -66,7 +65,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsSlotTypeValueSelectionSettingArgs.builder
       builder.valueSelectionSetting(args(argsBuilder).build)
 
-                       
   type LexFunctions = com.pulumi.aws.lex.LexFunctions
   object LexFunctions:
     // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
@@ -130,7 +128,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.BotAliasConversationLogsArgs.builder
       builder.conversationLogs(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.IntentArgs.Builder)
     /**
      * @param conclusionStatement The statement that you want Amazon Lex to convey to the user
@@ -211,7 +208,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.IntentSlotArgs.builder
       builder.slots(args.map(_(argsBuilder).build)*)
 
-                       
   /**
    * Provides an Amazon Lex Bot Alias resource. For more information see
    *  [Amazon Lex: How It Works](https://docs.aws.amazon.com/lex/latest/dg/how-it-works.html)
@@ -222,7 +218,6 @@ object lex:
     conf.logicalName2pysicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
       case None               =>
-    
     com.pulumi.aws.lex.BotAlias(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -231,7 +226,6 @@ object lex:
   def V2modelsBotVersion(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.lex.V2modelsBotVersionArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.lex.V2modelsBotVersionArgs.builder
-    
     com.pulumi.aws.lex.V2modelsBotVersion(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -278,7 +272,7 @@ object lex:
      *  This will cause Terraform to report differences.
      *  Use the `valueElicitationSetting` configuration above in the `valueElicitationSetting` example to avoid differences resulting from AWS default configurations.
      *  See the `valueElicitationSetting` argument reference below.
-     *  
+     * 
      *  The following arguments are optional:
      * @return builder
      */
@@ -287,7 +281,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsSlotValueElicitationSettingArgs.builder
       builder.valueElicitationSetting(args(argsBuilder).build)
 
-                       
   /** Resource for managing an AWS Lex V2 Models Bot. */
   def V2modelsBot(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.lex.V2modelsBotArgs.Builder])(using conf: KoPulumiConf) =
@@ -298,7 +291,6 @@ object lex:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.lex.V2modelsBot(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -310,7 +302,6 @@ object lex:
     conf.logicalName2pysicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
       case None               =>
-    
     com.pulumi.aws.lex.V2modelsIntent(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -322,7 +313,6 @@ object lex:
     conf.logicalName2pysicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
       case None               =>
-    
     com.pulumi.aws.lex.V2modelsBotLocale(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -334,7 +324,6 @@ object lex:
     conf.logicalName2pysicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
       case None               =>
-    
     com.pulumi.aws.lex.V2modelsSlotType(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -354,7 +343,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsBotLocaleVoiceSettingsArgs.builder
       builder.voiceSettings(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.V2modelsBotArgs.Builder)
     /**
      * @param dataPrivacies Provides information on additional privacy protections Amazon Lex should use with the bot&#39;s data. See `dataPrivacy`
@@ -382,7 +370,7 @@ object lex:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.lex.V2modelsBotArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   /**
    * Provides an Amazon Lex Bot resource. For more information see
    *  [Amazon Lex: How It Works](https://docs.aws.amazon.com/lex/latest/dg/how-it-works.html)
@@ -393,7 +381,6 @@ object lex:
     conf.logicalName2pysicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
       case None               =>
-    
     com.pulumi.aws.lex.Bot(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -411,14 +398,12 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.SlotTypeEnumerationValueArgs.builder
       builder.enumerationValues(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.V2modelsBotVersionArgs.Builder)
     def timeouts(args: Endofunction[com.pulumi.aws.lex.inputs.V2modelsBotVersionTimeoutsArgs.Builder]):
         com.pulumi.aws.lex.V2modelsBotVersionArgs.Builder =
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsBotVersionTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
-                       
   /** Resource for managing an AWS Lex V2 Models Slot. */
   def V2modelsSlot(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.lex.V2modelsSlotArgs.Builder])(using conf: KoPulumiConf) =
@@ -426,7 +411,6 @@ object lex:
     conf.logicalName2pysicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
       case None               =>
-    
     com.pulumi.aws.lex.V2modelsSlot(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -459,7 +443,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.BotIntentArgs.builder
       builder.intents(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.V2modelsIntentArgs.Builder)
     /**
      * @param closingSetting Configuration block for the response that Amazon Lex sends to the user when the intent is closed. See `closingSetting`.
@@ -565,7 +548,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
-                       
   /**
    * Provides an Amazon Lex Intent resource. For more information see
    *  [Amazon Lex: How It Works](https://docs.aws.amazon.com/lex/latest/dg/how-it-works.html)
@@ -576,7 +558,6 @@ object lex:
     conf.logicalName2pysicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
       case None               =>
-    
     com.pulumi.aws.lex.Intent(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -600,7 +581,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingConditionalConditionalBranchNextStepIntentArgs.builder
       builder.intent(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingCodeHookPostCodeHookSpecificationFailureConditionalDefaultBranchResponseMessageGroupVariationArgs.Builder)
     /**
      * @param customPayload Configuration block for a message in a custom format defined by the client application. See `customPayload`.
@@ -638,7 +618,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingCodeHookPostCodeHookSpecificationFailureConditionalDefaultBranchResponseMessageGroupVariationSsmlMessageArgs.builder
       builder.ssmlMessage(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationTimeoutNextStepIntentSlotArgs.Builder)
     /**
      * @param value Configuration block for the current value of the slot. See `value`.
@@ -649,7 +628,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationTimeoutNextStepIntentSlotValueArgs.builder
       builder.value(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingCodeHookPostCodeHookSpecificationFailureConditionalConditionalBranchResponseMessageGroupMessageArgs.Builder)
     /**
      * @param customPayload Configuration block for a message in a custom format defined by the client application. See `customPayload`.
@@ -687,7 +665,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingCodeHookPostCodeHookSpecificationFailureConditionalConditionalBranchResponseMessageGroupMessageSsmlMessageArgs.builder
       builder.ssmlMessage(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationTimeoutConditionalDefaultBranchNextStepIntentArgs.Builder)
     /**
      * @param slots Configuration block for all of the slot value overrides for the intent. The name of the slot maps to the value of the slot. Slots that are not included in the map aren&#39;t overridden. See `slot`.
@@ -698,7 +675,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationTimeoutConditionalDefaultBranchNextStepIntentSlotArgs.builder
       builder.slots(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingFailureConditionalConditionalBranchNextStepIntentArgs.Builder)
     /**
      * @param slots Configuration block for all of the slot value overrides for the intent. The name of the slot maps to the value of the slot. Slots that are not included in the map aren&#39;t overridden. See `slot`.
@@ -709,7 +685,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingFailureConditionalConditionalBranchNextStepIntentSlotArgs.builder
       builder.slots(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingCodeHookPostCodeHookSpecificationSuccessConditionalConditionalBranchNextStepArgs.Builder)
     /**
      * @param dialogAction Configuration block for action that the bot executes at runtime when the conversation reaches this step. See `dialogAction`.
@@ -729,14 +704,12 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingCodeHookPostCodeHookSpecificationSuccessConditionalConditionalBranchNextStepIntentArgs.builder
       builder.intent(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.IntentFollowUpPromptRejectionStatementArgs.Builder)
     def messages(args: Endofunction[com.pulumi.aws.lex.inputs.IntentFollowUpPromptRejectionStatementMessageArgs.Builder]*):
         com.pulumi.aws.lex.inputs.IntentFollowUpPromptRejectionStatementArgs.Builder =
       def argsBuilder = com.pulumi.aws.lex.inputs.IntentFollowUpPromptRejectionStatementMessageArgs.builder
       builder.messages(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingFailureConditionalDefaultBranchResponseMessageGroupArgs.Builder)
     /**
      * @param message Configuration block for the primary message that Amazon Lex should send to the user. See `message`.
@@ -756,7 +729,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingFailureConditionalDefaultBranchResponseMessageGroupVariationArgs.builder
       builder.variations(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentClosingSettingClosingResponseArgs.Builder)
     /**
      * @param messageGroups Configuration blocks for responses that Amazon Lex can send to the user. Amazon Lex chooses the actual response to send at runtime. See `messageGroup`.
@@ -767,7 +739,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentClosingSettingClosingResponseMessageGroupArgs.builder
       builder.messageGroups(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationTimeoutConditionalDefaultBranchResponseArgs.Builder)
     /**
      * @param messageGroups Configuration blocks for responses that Amazon Lex can send to the user. Amazon Lex chooses the actual response to send at runtime. See `messageGroup`.
@@ -778,7 +749,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationTimeoutConditionalDefaultBranchResponseMessageGroupArgs.builder
       builder.messageGroups(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingCodeHookPostCodeHookSpecificationTimeoutConditionalDefaultBranchNextStepArgs.Builder)
     /**
      * @param dialogAction Configuration block for action that the bot executes at runtime when the conversation reaches this step. See `dialogAction`.
@@ -798,7 +768,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingCodeHookPostCodeHookSpecificationTimeoutConditionalDefaultBranchNextStepIntentArgs.builder
       builder.intent(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingDeclinationConditionalArgs.Builder)
     /**
      * @param conditionalBranches Configuration blocks for conditional branches. A conditional branch is made up of a condition, a response and a next step. The response and next step are executed when the condition is true. See `conditionalBranch`.
@@ -818,7 +787,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingDeclinationConditionalDefaultBranchArgs.builder
       builder.defaultBranch(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingCodeHookPostCodeHookSpecificationSuccessNextStepIntentSlotArgs.Builder)
     /**
      * @param value Configuration block for the current value of the slot. See `value`.
@@ -829,7 +797,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingCodeHookPostCodeHookSpecificationSuccessNextStepIntentSlotValueArgs.builder
       builder.value(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationSuccessConditionalDefaultBranchNextStepIntentArgs.Builder)
     /**
      * @param slots Configuration block for all of the slot value overrides for the intent. The name of the slot maps to the value of the slot. Slots that are not included in the map aren&#39;t overridden. See `slot`.
@@ -840,7 +807,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationSuccessConditionalDefaultBranchNextStepIntentSlotArgs.builder
       builder.slots(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationSuccessNextStepIntentArgs.Builder)
     /**
      * @param slots Configuration block for all of the slot value overrides for the intent. The name of the slot maps to the value of the slot. Slots that are not included in the map aren&#39;t overridden. See `slot`.
@@ -851,7 +817,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationSuccessNextStepIntentSlotArgs.builder
       builder.slots(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentClosingSettingConditionalDefaultBranchNextStepIntentArgs.Builder)
     /**
      * @param slots Configuration block for all of the slot value overrides for the intent. The name of the slot maps to the value of the slot. Slots that are not included in the map aren&#39;t overridden. See `slot`.
@@ -862,7 +827,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentClosingSettingConditionalDefaultBranchNextStepIntentSlotArgs.builder
       builder.slots(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationSuccessConditionalConditionalBranchResponseMessageGroupMessageImageResponseCardArgs.Builder)
     /**
      * @param buttons Configuration blocks for buttons that should be displayed on the response card. The arrangement of the buttons is determined by the platform that displays the button. See `button`.
@@ -873,7 +837,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationSuccessConditionalConditionalBranchResponseMessageGroupMessageImageResponseCardButtonArgs.builder
       builder.buttons(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingCodeHookPostCodeHookSpecificationTimeoutConditionalDefaultBranchNextStepIntentSlotArgs.Builder)
     /**
      * @param value Configuration block for the current value of the slot. See `value`.
@@ -884,7 +847,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingCodeHookPostCodeHookSpecificationTimeoutConditionalDefaultBranchNextStepIntentSlotValueArgs.builder
       builder.value(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingDeclinationNextStepIntentArgs.Builder)
     /**
      * @param slots Configuration block for all of the slot value overrides for the intent. The name of the slot maps to the value of the slot. Slots that are not included in the map aren&#39;t overridden. See `slot`.
@@ -895,7 +857,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingDeclinationNextStepIntentSlotArgs.builder
       builder.slots(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingCodeHookPostCodeHookSpecificationSuccessResponseMessageGroupVariationImageResponseCardArgs.Builder)
     /**
      * @param buttons Configuration blocks for buttons that should be displayed on the response card. The arrangement of the buttons is determined by the platform that displays the button. See `button`.
@@ -906,7 +867,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingCodeHookPostCodeHookSpecificationSuccessResponseMessageGroupVariationImageResponseCardButtonArgs.builder
       builder.buttons(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingFailureResponseMessageGroupVariationImageResponseCardArgs.Builder)
     /**
      * @param buttons Configuration blocks for buttons that should be displayed on the response card. The arrangement of the buttons is determined by the platform that displays the button. See `button`.
@@ -917,7 +877,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingFailureResponseMessageGroupVariationImageResponseCardButtonArgs.builder
       builder.buttons(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingDeclinationConditionalConditionalBranchArgs.Builder)
     /**
      * @param condition Configuration block for the expression to evaluate. If the condition is true, the branch&#39;s actions are taken. See `condition`.
@@ -946,7 +905,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingDeclinationConditionalConditionalBranchResponseArgs.builder
       builder.response(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingConfirmationResponseMessageGroupMessageImageResponseCardArgs.Builder)
     /**
      * @param buttons Configuration blocks for buttons that should be displayed on the response card. The arrangement of the buttons is determined by the platform that displays the button. See `button`.
@@ -957,7 +915,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingConfirmationResponseMessageGroupMessageImageResponseCardButtonArgs.builder
       builder.buttons(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookFulfillmentUpdatesSpecificationArgs.Builder)
     /**
      * @param startResponse Configuration block for the message sent to users when the fulfillment Lambda functions starts running.
@@ -977,7 +934,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookFulfillmentUpdatesSpecificationUpdateResponseArgs.builder
       builder.updateResponse(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingDeclinationConditionalConditionalBranchResponseMessageGroupVariationImageResponseCardArgs.Builder)
     /**
      * @param buttons Configuration blocks for buttons that should be displayed on the response card. The arrangement of the buttons is determined by the platform that displays the button. See `button`.
@@ -988,7 +944,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingDeclinationConditionalConditionalBranchResponseMessageGroupVariationImageResponseCardButtonArgs.builder
       builder.buttons(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsSlotTypeCompositeSlotTypeSettingArgs.Builder)
     /**
      * @param subSlots Sub slots in the composite slot.
@@ -1000,7 +955,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsSlotTypeCompositeSlotTypeSettingSubSlotArgs.builder
       builder.subSlots(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingDeclinationResponseMessageGroupVariationImageResponseCardArgs.Builder)
     /**
      * @param buttons Configuration blocks for buttons that should be displayed on the response card. The arrangement of the buttons is determined by the platform that displays the button. See `button`.
@@ -1011,7 +965,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingDeclinationResponseMessageGroupVariationImageResponseCardButtonArgs.builder
       builder.buttons(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingFailureConditionalConditionalBranchResponseMessageGroupMessageImageResponseCardArgs.Builder)
     /**
      * @param buttons Configuration blocks for buttons that should be displayed on the response card. The arrangement of the buttons is determined by the platform that displays the button. See `button`.
@@ -1022,7 +975,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingFailureConditionalConditionalBranchResponseMessageGroupMessageImageResponseCardButtonArgs.builder
       builder.buttons(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationTimeoutConditionalConditionalBranchNextStepArgs.Builder)
     /**
      * @param dialogAction Configuration block for action that the bot executes at runtime when the conversation reaches this step. See `dialogAction`.
@@ -1042,7 +994,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationTimeoutConditionalConditionalBranchNextStepIntentArgs.builder
       builder.intent(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationFailureConditionalConditionalBranchNextStepIntentArgs.Builder)
     /**
      * @param slots Configuration block for all of the slot value overrides for the intent. The name of the slot maps to the value of the slot. Slots that are not included in the map aren&#39;t overridden. See `slot`.
@@ -1053,7 +1004,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationFailureConditionalConditionalBranchNextStepIntentSlotArgs.builder
       builder.slots(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingCodeHookPostCodeHookSpecificationFailureConditionalConditionalBranchResponseMessageGroupVariationImageResponseCardArgs.Builder)
     /**
      * @param buttons Configuration blocks for buttons that should be displayed on the response card. The arrangement of the buttons is determined by the platform that displays the button. See `button`.
@@ -1064,7 +1014,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingCodeHookPostCodeHookSpecificationFailureConditionalConditionalBranchResponseMessageGroupVariationImageResponseCardButtonArgs.builder
       builder.buttons(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingCodeHookPostCodeHookSpecificationSuccessConditionalConditionalBranchResponseArgs.Builder)
     /**
      * @param messageGroups Configuration blocks for responses that Amazon Lex can send to the user. Amazon Lex chooses the actual response to send at runtime. See `messageGroup`.
@@ -1075,7 +1024,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingCodeHookPostCodeHookSpecificationSuccessConditionalConditionalBranchResponseMessageGroupArgs.builder
       builder.messageGroups(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationFailureNextStepIntentSlotArgs.Builder)
     /**
      * @param value Configuration block for the current value of the slot. See `value`.
@@ -1086,7 +1034,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationFailureNextStepIntentSlotValueArgs.builder
       builder.value(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingCodeHookPostCodeHookSpecificationTimeoutConditionalDefaultBranchResponseArgs.Builder)
     /**
      * @param messageGroups Configuration blocks for responses that Amazon Lex can send to the user. Amazon Lex chooses the actual response to send at runtime. See `messageGroup`.
@@ -1097,7 +1044,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingCodeHookPostCodeHookSpecificationTimeoutConditionalDefaultBranchResponseMessageGroupArgs.builder
       builder.messageGroups(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationTimeoutConditionalConditionalBranchResponseMessageGroupVariationArgs.Builder)
     /**
      * @param customPayload Configuration block for a message in a custom format defined by the client application. See `customPayload`.
@@ -1135,7 +1081,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationTimeoutConditionalConditionalBranchResponseMessageGroupVariationSsmlMessageArgs.builder
       builder.ssmlMessage(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationTimeoutConditionalDefaultBranchNextStepArgs.Builder)
     /**
      * @param dialogAction Configuration block for action that the bot executes at runtime when the conversation reaches this step. See `dialogAction`.
@@ -1155,14 +1100,12 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationTimeoutConditionalDefaultBranchNextStepIntentArgs.builder
       builder.intent(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsSlotValueElicitationSettingWaitAndContinueSpecificationStillWaitingResponseMessageGroupVariationImageResponseCardArgs.Builder)
     def buttons(args: Endofunction[com.pulumi.aws.lex.inputs.V2modelsSlotValueElicitationSettingWaitAndContinueSpecificationStillWaitingResponseMessageGroupVariationImageResponseCardButtonArgs.Builder]*):
         com.pulumi.aws.lex.inputs.V2modelsSlotValueElicitationSettingWaitAndContinueSpecificationStillWaitingResponseMessageGroupVariationImageResponseCardArgs.Builder =
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsSlotValueElicitationSettingWaitAndContinueSpecificationStillWaitingResponseMessageGroupVariationImageResponseCardButtonArgs.builder
       builder.buttons(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationTimeoutResponseMessageGroupMessageImageResponseCardArgs.Builder)
     /**
      * @param buttons Configuration blocks for buttons that should be displayed on the response card. The arrangement of the buttons is determined by the platform that displays the button. See `button`.
@@ -1173,7 +1116,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationTimeoutResponseMessageGroupMessageImageResponseCardButtonArgs.builder
       builder.buttons(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationFailureConditionalConditionalBranchResponseMessageGroupVariationArgs.Builder)
     /**
      * @param customPayload Configuration block for a message in a custom format defined by the client application. See `customPayload`.
@@ -1211,7 +1153,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationFailureConditionalConditionalBranchResponseMessageGroupVariationSsmlMessageArgs.builder
       builder.ssmlMessage(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationTimeoutConditionalDefaultBranchResponseMessageGroupMessageArgs.Builder)
     /**
      * @param customPayload Configuration block for a message in a custom format defined by the client application. See `customPayload`.
@@ -1249,7 +1190,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationTimeoutConditionalDefaultBranchResponseMessageGroupMessageSsmlMessageArgs.builder
       builder.ssmlMessage(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingConditionalConditionalBranchResponseArgs.Builder)
     /**
      * @param messageGroups Configuration blocks for responses that Amazon Lex can send to the user. Amazon Lex chooses the actual response to send at runtime. See `messageGroup`.
@@ -1260,7 +1200,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingConditionalConditionalBranchResponseMessageGroupArgs.builder
       builder.messageGroups(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingCodeHookPostCodeHookSpecificationTimeoutResponseMessageGroupMessageImageResponseCardArgs.Builder)
     /**
      * @param buttons Configuration blocks for buttons that should be displayed on the response card. The arrangement of the buttons is determined by the platform that displays the button. See `button`.
@@ -1271,7 +1210,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingCodeHookPostCodeHookSpecificationTimeoutResponseMessageGroupMessageImageResponseCardButtonArgs.builder
       builder.buttons(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingFailureConditionalDefaultBranchResponseMessageGroupVariationImageResponseCardArgs.Builder)
     /**
      * @param buttons Configuration blocks for buttons that should be displayed on the response card. The arrangement of the buttons is determined by the platform that displays the button. See `button`.
@@ -1282,7 +1220,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingFailureConditionalDefaultBranchResponseMessageGroupVariationImageResponseCardButtonArgs.builder
       builder.buttons(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsSlotValueElicitationSettingPromptSpecificationMessageGroupVariationArgs.Builder)
     def customPayload(args: Endofunction[com.pulumi.aws.lex.inputs.V2modelsSlotValueElicitationSettingPromptSpecificationMessageGroupVariationCustomPayloadArgs.Builder]):
         com.pulumi.aws.lex.inputs.V2modelsSlotValueElicitationSettingPromptSpecificationMessageGroupVariationArgs.Builder =
@@ -1304,14 +1241,12 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsSlotValueElicitationSettingPromptSpecificationMessageGroupVariationSsmlMessageArgs.builder
       builder.ssmlMessage(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.IntentSlotValueElicitationPromptArgs.Builder)
     def messages(args: Endofunction[com.pulumi.aws.lex.inputs.IntentSlotValueElicitationPromptMessageArgs.Builder]*):
         com.pulumi.aws.lex.inputs.IntentSlotValueElicitationPromptArgs.Builder =
       def argsBuilder = com.pulumi.aws.lex.inputs.IntentSlotValueElicitationPromptMessageArgs.builder
       builder.messages(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingPromptSpecificationPromptAttemptsSpecificationAudioAndDtmfInputSpecificationArgs.Builder)
     /**
      * @param audioSpecification Configuration block for the settings on audio input. See `audioSpecification`.
@@ -1331,7 +1266,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingPromptSpecificationPromptAttemptsSpecificationAudioAndDtmfInputSpecificationDtmfSpecificationArgs.builder
       builder.dtmfSpecification(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsSlotSubSlotSettingSlotSpecificationValueElicitationSettingDefaultValueSpecificationArgs.Builder)
     /**
      * @param defaultValueLists List of default values.
@@ -1344,7 +1278,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsSlotSubSlotSettingSlotSpecificationValueElicitationSettingDefaultValueSpecificationDefaultValueListArgs.builder
       builder.defaultValueLists(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationTimeoutConditionalConditionalBranchResponseArgs.Builder)
     /**
      * @param messageGroups Configuration blocks for responses that Amazon Lex can send to the user. Amazon Lex chooses the actual response to send at runtime. See `messageGroup`.
@@ -1355,7 +1288,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationTimeoutConditionalConditionalBranchResponseMessageGroupArgs.builder
       builder.messageGroups(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationTimeoutResponseMessageGroupVariationImageResponseCardArgs.Builder)
     /**
      * @param buttons Configuration blocks for buttons that should be displayed on the response card. The arrangement of the buttons is determined by the platform that displays the button. See `button`.
@@ -1366,7 +1298,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationTimeoutResponseMessageGroupVariationImageResponseCardButtonArgs.builder
       builder.buttons(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsSlotSubSlotSettingSlotSpecificationValueElicitationSettingWaitAndContinueSpecificationContinueResponseMessageGroupArgs.Builder)
     /**
      * @param message Configuration block for the primary message that Amazon Lex should send to the user.
@@ -1389,7 +1320,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsSlotSubSlotSettingSlotSpecificationValueElicitationSettingWaitAndContinueSpecificationContinueResponseMessageGroupVariationArgs.builder
       builder.variations(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.IntentFulfillmentActivityArgs.Builder)
     /**
      * @param codeHook A description of the Lambda function that is run to fulfill the intent.
@@ -1401,7 +1331,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.IntentFulfillmentActivityCodeHookArgs.builder
       builder.codeHook(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingCodeHookPostCodeHookSpecificationSuccessConditionalArgs.Builder)
     /**
      * @param conditionalBranches Configuration blocks for conditional branches. A conditional branch is made up of a condition, a response and a next step. The response and next step are executed when the condition is true. See `conditionalBranch`.
@@ -1421,7 +1350,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingCodeHookPostCodeHookSpecificationSuccessConditionalDefaultBranchArgs.builder
       builder.defaultBranch(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingCodeHookPostCodeHookSpecificationTimeoutNextStepIntentArgs.Builder)
     /**
      * @param slots Configuration block for all of the slot value overrides for the intent. The name of the slot maps to the value of the slot. Slots that are not included in the map aren&#39;t overridden. See `slot`.
@@ -1432,14 +1360,12 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingCodeHookPostCodeHookSpecificationTimeoutNextStepIntentSlotArgs.builder
       builder.slots(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsSlotValueElicitationSettingWaitAndContinueSpecificationWaitingResponseMessageGroupMessageImageResponseCardArgs.Builder)
     def buttons(args: Endofunction[com.pulumi.aws.lex.inputs.V2modelsSlotValueElicitationSettingWaitAndContinueSpecificationWaitingResponseMessageGroupMessageImageResponseCardButtonArgs.Builder]*):
         com.pulumi.aws.lex.inputs.V2modelsSlotValueElicitationSettingWaitAndContinueSpecificationWaitingResponseMessageGroupMessageImageResponseCardArgs.Builder =
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsSlotValueElicitationSettingWaitAndContinueSpecificationWaitingResponseMessageGroupMessageImageResponseCardButtonArgs.builder
       builder.buttons(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationTimeoutConditionalDefaultBranchResponseMessageGroupMessageArgs.Builder)
     /**
      * @param customPayload Configuration block for a message in a custom format defined by the client application. See `customPayload`.
@@ -1477,7 +1403,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationTimeoutConditionalDefaultBranchResponseMessageGroupMessageSsmlMessageArgs.builder
       builder.ssmlMessage(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingCodeHookPostCodeHookSpecificationFailureResponseMessageGroupArgs.Builder)
     /**
      * @param message Configuration block for the primary message that Amazon Lex should send to the user. See `message`.
@@ -1497,7 +1422,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingCodeHookPostCodeHookSpecificationFailureResponseMessageGroupVariationArgs.builder
       builder.variations(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingFailureConditionalDefaultBranchResponseMessageGroupMessageArgs.Builder)
     /**
      * @param customPayload Configuration block for a message in a custom format defined by the client application. See `customPayload`.
@@ -1535,7 +1459,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingFailureConditionalDefaultBranchResponseMessageGroupMessageSsmlMessageArgs.builder
       builder.ssmlMessage(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationSuccessConditionalConditionalBranchResponseMessageGroupVariationImageResponseCardArgs.Builder)
     /**
      * @param buttons Configuration blocks for buttons that should be displayed on the response card. The arrangement of the buttons is determined by the platform that displays the button. See `button`.
@@ -1546,7 +1469,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationSuccessConditionalConditionalBranchResponseMessageGroupVariationImageResponseCardButtonArgs.builder
       builder.buttons(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingConditionalConditionalBranchNextStepIntentSlotArgs.Builder)
     /**
      * @param value Configuration block for the current value of the slot. See `value`.
@@ -1557,7 +1479,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingConditionalConditionalBranchNextStepIntentSlotValueArgs.builder
       builder.value(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingCodeHookPostCodeHookSpecificationFailureResponseMessageGroupVariationImageResponseCardArgs.Builder)
     /**
      * @param buttons Configuration blocks for buttons that should be displayed on the response card. The arrangement of the buttons is determined by the platform that displays the button. See `button`.
@@ -1568,7 +1489,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingCodeHookPostCodeHookSpecificationFailureResponseMessageGroupVariationImageResponseCardButtonArgs.builder
       builder.buttons(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationFailureResponseMessageGroupMessageImageResponseCardArgs.Builder)
     /**
      * @param buttons Configuration blocks for buttons that should be displayed on the response card. The arrangement of the buttons is determined by the platform that displays the button. See `button`.
@@ -1579,7 +1499,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationFailureResponseMessageGroupMessageImageResponseCardButtonArgs.builder
       builder.buttons(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationFailureConditionalDefaultBranchNextStepIntentArgs.Builder)
     /**
      * @param slots Configuration block for all of the slot value overrides for the intent. The name of the slot maps to the value of the slot. Slots that are not included in the map aren&#39;t overridden. See `slot`.
@@ -1590,7 +1509,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationFailureConditionalDefaultBranchNextStepIntentSlotArgs.builder
       builder.slots(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingDeclinationConditionalDefaultBranchResponseMessageGroupMessageImageResponseCardArgs.Builder)
     /**
      * @param buttons Configuration blocks for buttons that should be displayed on the response card. The arrangement of the buttons is determined by the platform that displays the button. See `button`.
@@ -1601,7 +1519,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingDeclinationConditionalDefaultBranchResponseMessageGroupMessageImageResponseCardButtonArgs.builder
       builder.buttons(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingConfirmationConditionalDefaultBranchNextStepIntentSlotArgs.Builder)
     /**
      * @param value Configuration block for the current value of the slot. See `value`.
@@ -1612,7 +1529,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingConfirmationConditionalDefaultBranchNextStepIntentSlotValueArgs.builder
       builder.value(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingCodeHookPostCodeHookSpecificationTimeoutResponseMessageGroupMessageArgs.Builder)
     /**
      * @param customPayload Configuration block for a message in a custom format defined by the client application. See `customPayload`.
@@ -1650,7 +1566,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingCodeHookPostCodeHookSpecificationTimeoutResponseMessageGroupMessageSsmlMessageArgs.builder
       builder.ssmlMessage(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsSlotValueElicitationSettingPromptSpecificationMessageGroupMessageArgs.Builder)
     def customPayload(args: Endofunction[com.pulumi.aws.lex.inputs.V2modelsSlotValueElicitationSettingPromptSpecificationMessageGroupMessageCustomPayloadArgs.Builder]):
         com.pulumi.aws.lex.inputs.V2modelsSlotValueElicitationSettingPromptSpecificationMessageGroupMessageArgs.Builder =
@@ -1672,7 +1587,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsSlotValueElicitationSettingPromptSpecificationMessageGroupMessageSsmlMessageArgs.builder
       builder.ssmlMessage(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentClosingSettingConditionalConditionalBranchResponseMessageGroupArgs.Builder)
     /**
      * @param message Configuration block for the primary message that Amazon Lex should send to the user. See `message`.
@@ -1692,7 +1606,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentClosingSettingConditionalConditionalBranchResponseMessageGroupVariationArgs.builder
       builder.variations(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingFailureNextStepIntentSlotArgs.Builder)
     /**
      * @param value Configuration block for the current value of the slot. See `value`.
@@ -1703,7 +1616,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingFailureNextStepIntentSlotValueArgs.builder
       builder.value(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingCodeHookPostCodeHookSpecificationFailureConditionalConditionalBranchNextStepIntentArgs.Builder)
     /**
      * @param slots Configuration block for all of the slot value overrides for the intent. The name of the slot maps to the value of the slot. Slots that are not included in the map aren&#39;t overridden. See `slot`.
@@ -1714,7 +1626,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingCodeHookPostCodeHookSpecificationFailureConditionalConditionalBranchNextStepIntentSlotArgs.builder
       builder.slots(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookFulfillmentUpdatesSpecificationStartResponseMessageGroupVariationImageResponseCardArgs.Builder)
     /**
      * @param buttons Configuration blocks for buttons that should be displayed on the response card. The arrangement of the buttons is determined by the platform that displays the button. See `button`.
@@ -1725,7 +1636,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookFulfillmentUpdatesSpecificationStartResponseMessageGroupVariationImageResponseCardButtonArgs.builder
       builder.buttons(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationTimeoutResponseMessageGroupArgs.Builder)
     /**
      * @param message Configuration block for the primary message that Amazon Lex should send to the user. See `message`.
@@ -1745,7 +1655,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationTimeoutResponseMessageGroupVariationArgs.builder
       builder.variations(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookFulfillmentUpdatesSpecificationStartResponseArgs.Builder)
     /**
      * @param messageGroups Between 1-5 configuration block message groups that contain start messages. Amazon Lex chooses one of the messages to play to the user. See `messageGroup`.
@@ -1756,7 +1665,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookFulfillmentUpdatesSpecificationStartResponseMessageGroupArgs.builder
       builder.messageGroups(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationSuccessConditionalConditionalBranchNextStepIntentArgs.Builder)
     /**
      * @param slots Configuration block for all of the slot value overrides for the intent. The name of the slot maps to the value of the slot. Slots that are not included in the map aren&#39;t overridden. See `slot`.
@@ -1767,7 +1675,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationSuccessConditionalConditionalBranchNextStepIntentSlotArgs.builder
       builder.slots(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationSuccessConditionalConditionalBranchResponseMessageGroupMessageImageResponseCardArgs.Builder)
     /**
      * @param buttons Configuration blocks for buttons that should be displayed on the response card. The arrangement of the buttons is determined by the platform that displays the button. See `button`.
@@ -1778,7 +1685,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationSuccessConditionalConditionalBranchResponseMessageGroupMessageImageResponseCardButtonArgs.builder
       builder.buttons(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationSuccessConditionalDefaultBranchResponseMessageGroupMessageImageResponseCardArgs.Builder)
     /**
      * @param buttons Configuration blocks for buttons that should be displayed on the response card. The arrangement of the buttons is determined by the platform that displays the button. See `button`.
@@ -1789,7 +1695,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationSuccessConditionalDefaultBranchResponseMessageGroupMessageImageResponseCardButtonArgs.builder
       builder.buttons(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingFailureResponseArgs.Builder)
     /**
      * @param messageGroups Configuration blocks for responses that Amazon Lex can send to the user. Amazon Lex chooses the actual response to send at runtime. See `messageGroup`.
@@ -1800,7 +1705,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingFailureResponseMessageGroupArgs.builder
       builder.messageGroups(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.IntentSlotArgs.Builder)
     /**
      * @param valueElicitationPrompt The prompt that Amazon Lex uses to elicit the slot value
@@ -1812,7 +1716,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.IntentSlotValueElicitationPromptArgs.builder
       builder.valueElicitationPrompt(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingConfirmationConditionalDefaultBranchArgs.Builder)
     /**
      * @param nextStep Configuration block for the next step in the conversation. See `nextStep`.
@@ -1832,7 +1735,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingConfirmationConditionalDefaultBranchResponseArgs.builder
       builder.response(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingCodeHookArgs.Builder)
     /**
      * @param postCodeHookSpecification Configuration block that contains the responses and actions that Amazon Lex takes after the Lambda function is complete. See `postCodeHookSpecification`.
@@ -1843,7 +1745,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationArgs.builder
       builder.postCodeHookSpecification(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingCodeHookPostCodeHookSpecificationFailureConditionalConditionalBranchNextStepIntentSlotArgs.Builder)
     /**
      * @param value Configuration block for the current value of the slot. See `value`.
@@ -1854,7 +1755,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingCodeHookPostCodeHookSpecificationFailureConditionalConditionalBranchNextStepIntentSlotValueArgs.builder
       builder.value(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingCodeHookPostCodeHookSpecificationTimeoutConditionalConditionalBranchResponseMessageGroupVariationArgs.Builder)
     /**
      * @param customPayload Configuration block for a message in a custom format defined by the client application. See `customPayload`.
@@ -1892,7 +1792,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingCodeHookPostCodeHookSpecificationTimeoutConditionalConditionalBranchResponseMessageGroupVariationSsmlMessageArgs.builder
       builder.ssmlMessage(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingCodeHookPostCodeHookSpecificationFailureConditionalConditionalBranchResponseMessageGroupMessageImageResponseCardArgs.Builder)
     /**
      * @param buttons Configuration blocks for buttons that should be displayed on the response card. The arrangement of the buttons is determined by the platform that displays the button. See `button`.
@@ -1903,7 +1802,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingCodeHookPostCodeHookSpecificationFailureConditionalConditionalBranchResponseMessageGroupMessageImageResponseCardButtonArgs.builder
       builder.buttons(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingPromptSpecificationArgs.Builder)
     /**
      * @param messageGroups Configuration block for messages that Amazon Lex can send to the user. Amazon Lex chooses the actual message to send at runtime. See `messageGroup`.
@@ -1923,7 +1821,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingPromptSpecificationPromptAttemptsSpecificationArgs.builder
       builder.promptAttemptsSpecifications(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingInitialResponseMessageGroupArgs.Builder)
     /**
      * @param message Configuration block for the primary message that Amazon Lex should send to the user. See `message`.
@@ -1943,7 +1840,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingInitialResponseMessageGroupVariationArgs.builder
       builder.variations(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationFailureResponseMessageGroupMessageArgs.Builder)
     /**
      * @param customPayload Configuration block for a message in a custom format defined by the client application. See `customPayload`.
@@ -1981,7 +1877,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationFailureResponseMessageGroupMessageSsmlMessageArgs.builder
       builder.ssmlMessage(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingDeclinationConditionalDefaultBranchNextStepIntentSlotArgs.Builder)
     /**
      * @param value Configuration block for the current value of the slot. See `value`.
@@ -1992,7 +1887,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingDeclinationConditionalDefaultBranchNextStepIntentSlotValueArgs.builder
       builder.value(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationFailureNextStepArgs.Builder)
     /**
      * @param dialogAction Configuration block for action that the bot executes at runtime when the conversation reaches this step. See `dialogAction`.
@@ -2012,7 +1906,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationFailureNextStepIntentArgs.builder
       builder.intent(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationFailureConditionalConditionalBranchResponseArgs.Builder)
     /**
      * @param messageGroups Configuration blocks for responses that Amazon Lex can send to the user. Amazon Lex chooses the actual response to send at runtime. See `messageGroup`.
@@ -2023,7 +1916,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationFailureConditionalConditionalBranchResponseMessageGroupArgs.builder
       builder.messageGroups(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingPromptSpecificationMessageGroupArgs.Builder)
     /**
      * @param message Configuration block for the primary message that Amazon Lex should send to the user. See `message`.
@@ -2043,7 +1935,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingPromptSpecificationMessageGroupVariationArgs.builder
       builder.variations(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookFulfillmentUpdatesSpecificationStartResponseMessageGroupVariationArgs.Builder)
     /**
      * @param customPayload Configuration block for a message in a custom format defined by the client application. See `customPayload`.
@@ -2081,7 +1972,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookFulfillmentUpdatesSpecificationStartResponseMessageGroupVariationSsmlMessageArgs.builder
       builder.ssmlMessage(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingCodeHookPostCodeHookSpecificationFailureConditionalDefaultBranchResponseMessageGroupMessageArgs.Builder)
     /**
      * @param customPayload Configuration block for a message in a custom format defined by the client application. See `customPayload`.
@@ -2119,7 +2009,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingCodeHookPostCodeHookSpecificationFailureConditionalDefaultBranchResponseMessageGroupMessageSsmlMessageArgs.builder
       builder.ssmlMessage(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationTimeoutConditionalConditionalBranchNextStepIntentSlotArgs.Builder)
     /**
      * @param value Configuration block for the current value of the slot. See `value`.
@@ -2130,7 +2019,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationTimeoutConditionalConditionalBranchNextStepIntentSlotValueArgs.builder
       builder.value(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsSlotSubSlotSettingSlotSpecificationValueElicitationSettingPromptSpecificationMessageGroupArgs.Builder)
     /**
      * @param message Configuration block for the primary message that Amazon Lex should send to the user.
@@ -2153,7 +2041,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsSlotSubSlotSettingSlotSpecificationValueElicitationSettingPromptSpecificationMessageGroupVariationArgs.builder
       builder.variations(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingConfirmationResponseMessageGroupMessageArgs.Builder)
     /**
      * @param customPayload Configuration block for a message in a custom format defined by the client application. See `customPayload`.
@@ -2191,7 +2078,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingConfirmationResponseMessageGroupMessageSsmlMessageArgs.builder
       builder.ssmlMessage(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookFulfillmentUpdatesSpecificationStartResponseMessageGroupArgs.Builder)
     /**
      * @param message Configuration block for the primary message that Amazon Lex should send to the user. See `message`.
@@ -2211,7 +2097,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookFulfillmentUpdatesSpecificationStartResponseMessageGroupVariationArgs.builder
       builder.variations(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentQnaIntentConfigurationDataSourceConfigurationBedrockKnowledgeStoreConfigurationArgs.Builder)
     /**
      * @param exactResponseFields Configuration block for exact response fields. See `exactResponseFields`.
@@ -2222,14 +2107,12 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentQnaIntentConfigurationDataSourceConfigurationBedrockKnowledgeStoreConfigurationExactResponseFieldsArgs.builder
       builder.exactResponseFields(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsSlotSubSlotSettingSlotSpecificationValueElicitationSettingWaitAndContinueSpecificationStillWaitingResponseArgs.Builder)
     def messageGroups(args: Endofunction[com.pulumi.aws.lex.inputs.V2modelsSlotSubSlotSettingSlotSpecificationValueElicitationSettingWaitAndContinueSpecificationStillWaitingResponseMessageGroupArgs.Builder]*):
         com.pulumi.aws.lex.inputs.V2modelsSlotSubSlotSettingSlotSpecificationValueElicitationSettingWaitAndContinueSpecificationStillWaitingResponseArgs.Builder =
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsSlotSubSlotSettingSlotSpecificationValueElicitationSettingWaitAndContinueSpecificationStillWaitingResponseMessageGroupArgs.builder
       builder.messageGroups(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsSlotValueElicitationSettingWaitAndContinueSpecificationArgs.Builder)
     /**
      * @param continueResponses Response that Amazon Lex sends to indicate that the bot is ready to continue the conversation.
@@ -2261,7 +2144,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsSlotValueElicitationSettingWaitAndContinueSpecificationWaitingResponseArgs.builder
       builder.waitingResponses(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationTimeoutConditionalConditionalBranchResponseMessageGroupVariationImageResponseCardArgs.Builder)
     /**
      * @param buttons Configuration blocks for buttons that should be displayed on the response card. The arrangement of the buttons is determined by the platform that displays the button. See `button`.
@@ -2272,7 +2154,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationTimeoutConditionalConditionalBranchResponseMessageGroupVariationImageResponseCardButtonArgs.builder
       builder.buttons(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationSuccessConditionalDefaultBranchArgs.Builder)
     /**
      * @param nextStep Configuration block for the next step in the conversation. See `nextStep`.
@@ -2292,7 +2173,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationSuccessConditionalDefaultBranchResponseArgs.builder
       builder.response(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingCodeHookPostCodeHookSpecificationFailureConditionalConditionalBranchResponseMessageGroupArgs.Builder)
     /**
      * @param message Configuration block for the primary message that Amazon Lex should send to the user. See `message`.
@@ -2312,7 +2192,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingCodeHookPostCodeHookSpecificationFailureConditionalConditionalBranchResponseMessageGroupVariationArgs.builder
       builder.variations(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsBotState.Builder)
     /**
      * @param dataPrivacies Provides information on additional privacy protections Amazon Lex should use with the bot&#39;s data. See `dataPrivacy`
@@ -2340,7 +2219,7 @@ object lex:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.lex.inputs.V2modelsBotState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationTimeoutConditionalDefaultBranchResponseMessageGroupArgs.Builder)
     /**
      * @param message Configuration block for the primary message that Amazon Lex should send to the user. See `message`.
@@ -2360,7 +2239,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationTimeoutConditionalDefaultBranchResponseMessageGroupVariationArgs.builder
       builder.variations(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationFailureConditionalArgs.Builder)
     /**
      * @param conditionalBranches Configuration blocks for conditional branches. A conditional branch is made up of a condition, a response and a next step. The response and next step are executed when the condition is true. See `conditionalBranch`.
@@ -2380,7 +2258,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationFailureConditionalDefaultBranchArgs.builder
       builder.defaultBranch(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationFailureConditionalConditionalBranchResponseMessageGroupArgs.Builder)
     /**
      * @param message Configuration block for the primary message that Amazon Lex should send to the user. See `message`.
@@ -2400,7 +2277,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationFailureConditionalConditionalBranchResponseMessageGroupVariationArgs.builder
       builder.variations(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationSuccessResponseMessageGroupVariationArgs.Builder)
     /**
      * @param customPayload Configuration block for a message in a custom format defined by the client application. See `customPayload`.
@@ -2438,7 +2314,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationSuccessResponseMessageGroupVariationSsmlMessageArgs.builder
       builder.ssmlMessage(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationFailureConditionalConditionalBranchResponseMessageGroupVariationImageResponseCardArgs.Builder)
     /**
      * @param buttons Configuration blocks for buttons that should be displayed on the response card. The arrangement of the buttons is determined by the platform that displays the button. See `button`.
@@ -2449,7 +2324,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationFailureConditionalConditionalBranchResponseMessageGroupVariationImageResponseCardButtonArgs.builder
       builder.buttons(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingConfirmationConditionalDefaultBranchResponseMessageGroupMessageArgs.Builder)
     /**
      * @param customPayload Configuration block for a message in a custom format defined by the client application. See `customPayload`.
@@ -2487,14 +2361,12 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingConfirmationConditionalDefaultBranchResponseMessageGroupMessageSsmlMessageArgs.builder
       builder.ssmlMessage(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsSlotSubSlotSettingSlotSpecificationValueElicitationSettingWaitAndContinueSpecificationStillWaitingResponseMessageGroupMessageImageResponseCardArgs.Builder)
     def buttons(args: Endofunction[com.pulumi.aws.lex.inputs.V2modelsSlotSubSlotSettingSlotSpecificationValueElicitationSettingWaitAndContinueSpecificationStillWaitingResponseMessageGroupMessageImageResponseCardButtonArgs.Builder]*):
         com.pulumi.aws.lex.inputs.V2modelsSlotSubSlotSettingSlotSpecificationValueElicitationSettingWaitAndContinueSpecificationStillWaitingResponseMessageGroupMessageImageResponseCardArgs.Builder =
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsSlotSubSlotSettingSlotSpecificationValueElicitationSettingWaitAndContinueSpecificationStillWaitingResponseMessageGroupMessageImageResponseCardButtonArgs.builder
       builder.buttons(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingCodeHookPostCodeHookSpecificationFailureConditionalDefaultBranchResponseMessageGroupMessageImageResponseCardArgs.Builder)
     /**
      * @param buttons Configuration blocks for buttons that should be displayed on the response card. The arrangement of the buttons is determined by the platform that displays the button. See `button`.
@@ -2505,7 +2377,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingCodeHookPostCodeHookSpecificationFailureConditionalDefaultBranchResponseMessageGroupMessageImageResponseCardButtonArgs.builder
       builder.buttons(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsSlotSubSlotSettingSlotSpecificationArgs.Builder)
     /**
      * @param valueElicitationSettings Elicitation setting details for constituent sub slots of a composite slot.
@@ -2517,7 +2388,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsSlotSubSlotSettingSlotSpecificationValueElicitationSettingArgs.builder
       builder.valueElicitationSettings(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationSuccessConditionalDefaultBranchArgs.Builder)
     /**
      * @param nextStep Configuration block for the next step in the conversation. See `nextStep`.
@@ -2537,7 +2407,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationSuccessConditionalDefaultBranchResponseArgs.builder
       builder.response(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingCodeHookPostCodeHookSpecificationSuccessConditionalDefaultBranchArgs.Builder)
     /**
      * @param nextStep Configuration block for the next step in the conversation. See `nextStep`.
@@ -2557,7 +2426,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingCodeHookPostCodeHookSpecificationSuccessConditionalDefaultBranchResponseArgs.builder
       builder.response(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationFailureConditionalDefaultBranchResponseMessageGroupArgs.Builder)
     /**
      * @param message Configuration block for the primary message that Amazon Lex should send to the user. See `message`.
@@ -2577,7 +2445,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationFailureConditionalDefaultBranchResponseMessageGroupVariationArgs.builder
       builder.variations(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationFailureResponseArgs.Builder)
     /**
      * @param messageGroups Configuration blocks for responses that Amazon Lex can send to the user. Amazon Lex chooses the actual response to send at runtime. See `messageGroup`.
@@ -2588,7 +2455,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationFailureResponseMessageGroupArgs.builder
       builder.messageGroups(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationFailureConditionalConditionalBranchNextStepArgs.Builder)
     /**
      * @param dialogAction Configuration block for action that the bot executes at runtime when the conversation reaches this step. See `dialogAction`.
@@ -2608,7 +2474,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationFailureConditionalConditionalBranchNextStepIntentArgs.builder
       builder.intent(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingCodeHookPostCodeHookSpecificationFailureConditionalDefaultBranchResponseMessageGroupArgs.Builder)
     /**
      * @param message Configuration block for the primary message that Amazon Lex should send to the user. See `message`.
@@ -2628,7 +2493,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingCodeHookPostCodeHookSpecificationFailureConditionalDefaultBranchResponseMessageGroupVariationArgs.builder
       builder.variations(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingDeclinationConditionalConditionalBranchNextStepIntentSlotArgs.Builder)
     /**
      * @param value Configuration block for the current value of the slot. See `value`.
@@ -2639,7 +2503,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingDeclinationConditionalConditionalBranchNextStepIntentSlotValueArgs.builder
       builder.value(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingNextStepIntentArgs.Builder)
     /**
      * @param slots Configuration block for all of the slot value overrides for the intent. The name of the slot maps to the value of the slot. Slots that are not included in the map aren&#39;t overridden. See `slot`.
@@ -2650,7 +2513,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingNextStepIntentSlotArgs.builder
       builder.slots(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingPromptSpecificationMessageGroupMessageArgs.Builder)
     /**
      * @param customPayload Configuration block for a message in a custom format defined by the client application. See `customPayload`.
@@ -2688,7 +2550,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingPromptSpecificationMessageGroupMessageSsmlMessageArgs.builder
       builder.ssmlMessage(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsSlotSubSlotSettingSlotSpecificationValueElicitationSettingWaitAndContinueSpecificationWaitingResponseMessageGroupMessageArgs.Builder)
     def customPayload(args: Endofunction[com.pulumi.aws.lex.inputs.V2modelsSlotSubSlotSettingSlotSpecificationValueElicitationSettingWaitAndContinueSpecificationWaitingResponseMessageGroupMessageCustomPayloadArgs.Builder]):
         com.pulumi.aws.lex.inputs.V2modelsSlotSubSlotSettingSlotSpecificationValueElicitationSettingWaitAndContinueSpecificationWaitingResponseMessageGroupMessageArgs.Builder =
@@ -2710,7 +2571,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsSlotSubSlotSettingSlotSpecificationValueElicitationSettingWaitAndContinueSpecificationWaitingResponseMessageGroupMessageSsmlMessageArgs.builder
       builder.ssmlMessage(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsSlotValueElicitationSettingWaitAndContinueSpecificationWaitingResponseMessageGroupArgs.Builder)
     /**
      * @param message Configuration block for the primary message that Amazon Lex should send to the user.
@@ -2733,7 +2593,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsSlotValueElicitationSettingWaitAndContinueSpecificationWaitingResponseMessageGroupVariationArgs.builder
       builder.variations(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentClosingSettingConditionalArgs.Builder)
     /**
      * @param conditionalBranches Configuration blocks for conditional branches. A conditional branch is made up of a condition, a response and a next step. The response and next step are executed when the condition is true. See `conditionalBranch`.
@@ -2753,7 +2612,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentClosingSettingConditionalDefaultBranchArgs.builder
       builder.defaultBranch(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingCodeHookPostCodeHookSpecificationSuccessConditionalConditionalBranchNextStepIntentSlotArgs.Builder)
     /**
      * @param value Configuration block for the current value of the slot. See `value`.
@@ -2764,7 +2622,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingCodeHookPostCodeHookSpecificationSuccessConditionalConditionalBranchNextStepIntentSlotValueArgs.builder
       builder.value(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationTimeoutConditionalDefaultBranchNextStepIntentSlotArgs.Builder)
     /**
      * @param value Configuration block for the current value of the slot. See `value`.
@@ -2775,7 +2632,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationTimeoutConditionalDefaultBranchNextStepIntentSlotValueArgs.builder
       builder.value(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingFailureConditionalConditionalBranchNextStepIntentSlotArgs.Builder)
     /**
      * @param value Configuration block for the current value of the slot. See `value`.
@@ -2786,7 +2642,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingFailureConditionalConditionalBranchNextStepIntentSlotValueArgs.builder
       builder.value(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingFailureNextStepArgs.Builder)
     /**
      * @param dialogAction Configuration block for action that the bot executes at runtime when the conversation reaches this step. See `dialogAction`.
@@ -2806,7 +2661,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingFailureNextStepIntentArgs.builder
       builder.intent(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingCodeHookPostCodeHookSpecificationTimeoutConditionalArgs.Builder)
     /**
      * @param conditionalBranches Configuration blocks for conditional branches. A conditional branch is made up of a condition, a response and a next step. The response and next step are executed when the condition is true. See `conditionalBranch`.
@@ -2826,7 +2680,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingCodeHookPostCodeHookSpecificationTimeoutConditionalDefaultBranchArgs.builder
       builder.defaultBranch(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationTimeoutResponseMessageGroupArgs.Builder)
     /**
      * @param message Configuration block for the primary message that Amazon Lex should send to the user. See `message`.
@@ -2846,7 +2699,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationTimeoutResponseMessageGroupVariationArgs.builder
       builder.variations(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationSuccessConditionalDefaultBranchResponseArgs.Builder)
     /**
      * @param messageGroups Configuration blocks for responses that Amazon Lex can send to the user. Amazon Lex chooses the actual response to send at runtime. See `messageGroup`.
@@ -2857,14 +2709,12 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationSuccessConditionalDefaultBranchResponseMessageGroupArgs.builder
       builder.messageGroups(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsSlotValueElicitationSettingWaitAndContinueSpecificationStillWaitingResponseArgs.Builder)
     def messageGroups(args: Endofunction[com.pulumi.aws.lex.inputs.V2modelsSlotValueElicitationSettingWaitAndContinueSpecificationStillWaitingResponseMessageGroupArgs.Builder]*):
         com.pulumi.aws.lex.inputs.V2modelsSlotValueElicitationSettingWaitAndContinueSpecificationStillWaitingResponseArgs.Builder =
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsSlotValueElicitationSettingWaitAndContinueSpecificationStillWaitingResponseMessageGroupArgs.builder
       builder.messageGroups(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingCodeHookPostCodeHookSpecificationSuccessConditionalDefaultBranchNextStepArgs.Builder)
     /**
      * @param dialogAction Configuration block for action that the bot executes at runtime when the conversation reaches this step. See `dialogAction`.
@@ -2884,14 +2734,12 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingCodeHookPostCodeHookSpecificationSuccessConditionalDefaultBranchNextStepIntentArgs.builder
       builder.intent(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.BotAbortStatementArgs.Builder)
     def messages(args: Endofunction[com.pulumi.aws.lex.inputs.BotAbortStatementMessageArgs.Builder]*):
         com.pulumi.aws.lex.inputs.BotAbortStatementArgs.Builder =
       def argsBuilder = com.pulumi.aws.lex.inputs.BotAbortStatementMessageArgs.builder
       builder.messages(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookFulfillmentUpdatesSpecificationStartResponseMessageGroupMessageArgs.Builder)
     /**
      * @param customPayload Configuration block for a message in a custom format defined by the client application. See `customPayload`.
@@ -2929,7 +2777,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookFulfillmentUpdatesSpecificationStartResponseMessageGroupMessageSsmlMessageArgs.builder
       builder.ssmlMessage(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingConfirmationConditionalConditionalBranchNextStepIntentSlotArgs.Builder)
     /**
      * @param value Configuration block for the current value of the slot. See `value`.
@@ -2940,7 +2787,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingConfirmationConditionalConditionalBranchNextStepIntentSlotValueArgs.builder
       builder.value(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingFailureConditionalDefaultBranchResponseMessageGroupMessageImageResponseCardArgs.Builder)
     /**
      * @param buttons Configuration blocks for buttons that should be displayed on the response card. The arrangement of the buttons is determined by the platform that displays the button. See `button`.
@@ -2951,7 +2797,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingFailureConditionalDefaultBranchResponseMessageGroupMessageImageResponseCardButtonArgs.builder
       builder.buttons(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationFailureResponseMessageGroupVariationImageResponseCardArgs.Builder)
     /**
      * @param buttons Configuration blocks for buttons that should be displayed on the response card. The arrangement of the buttons is determined by the platform that displays the button. See `button`.
@@ -2962,7 +2807,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationFailureResponseMessageGroupVariationImageResponseCardButtonArgs.builder
       builder.buttons(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationArgs.Builder)
     /**
      * @param failureConditional Configuration block for conditional branches to evaluate after the dialog code hook throws an exception or returns with the State field of the Intent object set to Failed. See `failureConditional`.
@@ -3045,7 +2889,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationTimeoutResponseArgs.builder
       builder.timeoutResponse(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationSuccessConditionalDefaultBranchNextStepIntentSlotArgs.Builder)
     /**
      * @param value Configuration block for the current value of the slot. See `value`.
@@ -3056,7 +2899,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationSuccessConditionalDefaultBranchNextStepIntentSlotValueArgs.builder
       builder.value(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingConfirmationConditionalDefaultBranchResponseArgs.Builder)
     /**
      * @param messageGroups Configuration blocks for responses that Amazon Lex can send to the user. Amazon Lex chooses the actual response to send at runtime. See `messageGroup`.
@@ -3067,7 +2909,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingConfirmationConditionalDefaultBranchResponseMessageGroupArgs.builder
       builder.messageGroups(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsSlotSubSlotSettingSlotSpecificationValueElicitationSettingWaitAndContinueSpecificationWaitingResponseMessageGroupVariationArgs.Builder)
     def customPayload(args: Endofunction[com.pulumi.aws.lex.inputs.V2modelsSlotSubSlotSettingSlotSpecificationValueElicitationSettingWaitAndContinueSpecificationWaitingResponseMessageGroupVariationCustomPayloadArgs.Builder]):
         com.pulumi.aws.lex.inputs.V2modelsSlotSubSlotSettingSlotSpecificationValueElicitationSettingWaitAndContinueSpecificationWaitingResponseMessageGroupVariationArgs.Builder =
@@ -3089,7 +2930,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsSlotSubSlotSettingSlotSpecificationValueElicitationSettingWaitAndContinueSpecificationWaitingResponseMessageGroupVariationSsmlMessageArgs.builder
       builder.ssmlMessage(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationTimeoutConditionalConditionalBranchResponseMessageGroupArgs.Builder)
     /**
      * @param message Configuration block for the primary message that Amazon Lex should send to the user. See `message`.
@@ -3109,7 +2949,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationTimeoutConditionalConditionalBranchResponseMessageGroupVariationArgs.builder
       builder.variations(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingCodeHookPostCodeHookSpecificationTimeoutResponseMessageGroupVariationImageResponseCardArgs.Builder)
     /**
      * @param buttons Configuration blocks for buttons that should be displayed on the response card. The arrangement of the buttons is determined by the platform that displays the button. See `button`.
@@ -3120,7 +2959,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingCodeHookPostCodeHookSpecificationTimeoutResponseMessageGroupVariationImageResponseCardButtonArgs.builder
       builder.buttons(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationTimeoutResponseMessageGroupVariationArgs.Builder)
     /**
      * @param customPayload Configuration block for a message in a custom format defined by the client application. See `customPayload`.
@@ -3158,7 +2996,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationTimeoutResponseMessageGroupVariationSsmlMessageArgs.builder
       builder.ssmlMessage(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentClosingSettingConditionalConditionalBranchResponseMessageGroupVariationArgs.Builder)
     /**
      * @param customPayload Configuration block for a message in a custom format defined by the client application. See `customPayload`.
@@ -3196,7 +3033,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentClosingSettingConditionalConditionalBranchResponseMessageGroupVariationSsmlMessageArgs.builder
       builder.ssmlMessage(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsSlotSubSlotSettingSlotSpecificationValueElicitationSettingPromptSpecificationPromptAttemptsSpecificationArgs.Builder)
     def allowedInputTypes(args: Endofunction[com.pulumi.aws.lex.inputs.V2modelsSlotSubSlotSettingSlotSpecificationValueElicitationSettingPromptSpecificationPromptAttemptsSpecificationAllowedInputTypesArgs.Builder]):
         com.pulumi.aws.lex.inputs.V2modelsSlotSubSlotSettingSlotSpecificationValueElicitationSettingPromptSpecificationPromptAttemptsSpecificationArgs.Builder =
@@ -3213,7 +3049,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsSlotSubSlotSettingSlotSpecificationValueElicitationSettingPromptSpecificationPromptAttemptsSpecificationTextInputSpecificationArgs.builder
       builder.textInputSpecification(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsSlotValueElicitationSettingWaitAndContinueSpecificationContinueResponseMessageGroupMessageArgs.Builder)
     def customPayload(args: Endofunction[com.pulumi.aws.lex.inputs.V2modelsSlotValueElicitationSettingWaitAndContinueSpecificationContinueResponseMessageGroupMessageCustomPayloadArgs.Builder]):
         com.pulumi.aws.lex.inputs.V2modelsSlotValueElicitationSettingWaitAndContinueSpecificationContinueResponseMessageGroupMessageArgs.Builder =
@@ -3235,7 +3070,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsSlotValueElicitationSettingWaitAndContinueSpecificationContinueResponseMessageGroupMessageSsmlMessageArgs.builder
       builder.ssmlMessage(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingCodeHookPostCodeHookSpecificationFailureConditionalDefaultBranchResponseMessageGroupVariationImageResponseCardArgs.Builder)
     /**
      * @param buttons Configuration blocks for buttons that should be displayed on the response card. The arrangement of the buttons is determined by the platform that displays the button. See `button`.
@@ -3246,7 +3080,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingCodeHookPostCodeHookSpecificationFailureConditionalDefaultBranchResponseMessageGroupVariationImageResponseCardButtonArgs.builder
       builder.buttons(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingDeclinationResponseMessageGroupMessageArgs.Builder)
     /**
      * @param customPayload Configuration block for a message in a custom format defined by the client application. See `customPayload`.
@@ -3284,7 +3117,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingDeclinationResponseMessageGroupMessageSsmlMessageArgs.builder
       builder.ssmlMessage(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingCodeHookPostCodeHookSpecificationTimeoutConditionalDefaultBranchResponseMessageGroupMessageArgs.Builder)
     /**
      * @param customPayload Configuration block for a message in a custom format defined by the client application. See `customPayload`.
@@ -3322,7 +3154,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingCodeHookPostCodeHookSpecificationTimeoutConditionalDefaultBranchResponseMessageGroupMessageSsmlMessageArgs.builder
       builder.ssmlMessage(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationSuccessNextStepIntentSlotArgs.Builder)
     /**
      * @param value Configuration block for the current value of the slot. See `value`.
@@ -3333,7 +3164,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationSuccessNextStepIntentSlotValueArgs.builder
       builder.value(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationSuccessConditionalConditionalBranchResponseArgs.Builder)
     /**
      * @param messageGroups Configuration blocks for responses that Amazon Lex can send to the user. Amazon Lex chooses the actual response to send at runtime. See `messageGroup`.
@@ -3344,7 +3174,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationSuccessConditionalConditionalBranchResponseMessageGroupArgs.builder
       builder.messageGroups(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationFailureConditionalDefaultBranchResponseMessageGroupMessageImageResponseCardArgs.Builder)
     /**
      * @param buttons Configuration blocks for buttons that should be displayed on the response card. The arrangement of the buttons is determined by the platform that displays the button. See `button`.
@@ -3355,7 +3184,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationFailureConditionalDefaultBranchResponseMessageGroupMessageImageResponseCardButtonArgs.builder
       builder.buttons(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationSuccessResponseMessageGroupArgs.Builder)
     /**
      * @param message Configuration block for the primary message that Amazon Lex should send to the user. See `message`.
@@ -3375,7 +3203,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationSuccessResponseMessageGroupVariationArgs.builder
       builder.variations(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationFailureConditionalDefaultBranchResponseMessageGroupVariationArgs.Builder)
     /**
      * @param customPayload Configuration block for a message in a custom format defined by the client application. See `customPayload`.
@@ -3413,7 +3240,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationFailureConditionalDefaultBranchResponseMessageGroupVariationSsmlMessageArgs.builder
       builder.ssmlMessage(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingDeclinationConditionalDefaultBranchResponseMessageGroupVariationArgs.Builder)
     /**
      * @param customPayload Configuration block for a message in a custom format defined by the client application. See `customPayload`.
@@ -3451,7 +3277,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingDeclinationConditionalDefaultBranchResponseMessageGroupVariationSsmlMessageArgs.builder
       builder.ssmlMessage(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationSuccessConditionalConditionalBranchResponseMessageGroupArgs.Builder)
     /**
      * @param message Configuration block for the primary message that Amazon Lex should send to the user. See `message`.
@@ -3471,7 +3296,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationSuccessConditionalConditionalBranchResponseMessageGroupVariationArgs.builder
       builder.variations(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationSuccessConditionalConditionalBranchResponseMessageGroupMessageArgs.Builder)
     /**
      * @param customPayload Configuration block for a message in a custom format defined by the client application. See `customPayload`.
@@ -3509,7 +3333,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationSuccessConditionalConditionalBranchResponseMessageGroupMessageSsmlMessageArgs.builder
       builder.ssmlMessage(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentClosingSettingClosingResponseMessageGroupMessageArgs.Builder)
     /**
      * @param customPayload Configuration block for a message in a custom format defined by the client application. See `customPayload`.
@@ -3547,7 +3370,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentClosingSettingClosingResponseMessageGroupMessageSsmlMessageArgs.builder
       builder.ssmlMessage(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingCodeHookPostCodeHookSpecificationTimeoutConditionalDefaultBranchNextStepIntentArgs.Builder)
     /**
      * @param slots Configuration block for all of the slot value overrides for the intent. The name of the slot maps to the value of the slot. Slots that are not included in the map aren&#39;t overridden. See `slot`.
@@ -3558,7 +3380,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingCodeHookPostCodeHookSpecificationTimeoutConditionalDefaultBranchNextStepIntentSlotArgs.builder
       builder.slots(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationTimeoutConditionalDefaultBranchResponseMessageGroupVariationArgs.Builder)
     /**
      * @param customPayload Configuration block for a message in a custom format defined by the client application. See `customPayload`.
@@ -3596,7 +3417,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationTimeoutConditionalDefaultBranchResponseMessageGroupVariationSsmlMessageArgs.builder
       builder.ssmlMessage(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingCodeHookPostCodeHookSpecificationTimeoutNextStepIntentSlotArgs.Builder)
     /**
      * @param value Configuration block for the current value of the slot. See `value`.
@@ -3607,7 +3427,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingCodeHookPostCodeHookSpecificationTimeoutNextStepIntentSlotValueArgs.builder
       builder.value(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationTimeoutResponseArgs.Builder)
     /**
      * @param messageGroups Configuration blocks for responses that Amazon Lex can send to the user. Amazon Lex chooses the actual response to send at runtime. See `messageGroup`.
@@ -3618,7 +3437,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationTimeoutResponseMessageGroupArgs.builder
       builder.messageGroups(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingConfirmationConditionalDefaultBranchNextStepArgs.Builder)
     /**
      * @param dialogAction Configuration block for action that the bot executes at runtime when the conversation reaches this step. See `dialogAction`.
@@ -3638,7 +3456,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingConfirmationConditionalDefaultBranchNextStepIntentArgs.builder
       builder.intent(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationTimeoutConditionalConditionalBranchNextStepIntentArgs.Builder)
     /**
      * @param slots Configuration block for all of the slot value overrides for the intent. The name of the slot maps to the value of the slot. Slots that are not included in the map aren&#39;t overridden. See `slot`.
@@ -3649,7 +3466,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationTimeoutConditionalConditionalBranchNextStepIntentSlotArgs.builder
       builder.slots(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingInitialResponseArgs.Builder)
     /**
      * @param messageGroups Configuration blocks for responses that Amazon Lex can send to the user. Amazon Lex chooses the actual response to send at runtime. See `messageGroup`.
@@ -3660,7 +3476,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingInitialResponseMessageGroupArgs.builder
       builder.messageGroups(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationTimeoutResponseMessageGroupMessageArgs.Builder)
     /**
      * @param customPayload Configuration block for a message in a custom format defined by the client application. See `customPayload`.
@@ -3698,7 +3513,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationTimeoutResponseMessageGroupMessageSsmlMessageArgs.builder
       builder.ssmlMessage(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationSuccessResponseMessageGroupArgs.Builder)
     /**
      * @param message Configuration block for the primary message that Amazon Lex should send to the user. See `message`.
@@ -3718,7 +3532,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationSuccessResponseMessageGroupVariationArgs.builder
       builder.variations(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingCodeHookPostCodeHookSpecificationTimeoutConditionalDefaultBranchResponseMessageGroupVariationImageResponseCardArgs.Builder)
     /**
      * @param buttons Configuration blocks for buttons that should be displayed on the response card. The arrangement of the buttons is determined by the platform that displays the button. See `button`.
@@ -3729,7 +3542,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingCodeHookPostCodeHookSpecificationTimeoutConditionalDefaultBranchResponseMessageGroupVariationImageResponseCardButtonArgs.builder
       builder.buttons(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationSuccessConditionalDefaultBranchResponseMessageGroupArgs.Builder)
     /**
      * @param message Configuration block for the primary message that Amazon Lex should send to the user. See `message`.
@@ -3749,7 +3561,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationSuccessConditionalDefaultBranchResponseMessageGroupVariationArgs.builder
       builder.variations(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationSuccessResponseMessageGroupVariationImageResponseCardArgs.Builder)
     /**
      * @param buttons Configuration blocks for buttons that should be displayed on the response card. The arrangement of the buttons is determined by the platform that displays the button. See `button`.
@@ -3760,7 +3571,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationSuccessResponseMessageGroupVariationImageResponseCardButtonArgs.builder
       builder.buttons(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingCodeHookPostCodeHookSpecificationSuccessConditionalDefaultBranchResponseArgs.Builder)
     /**
      * @param messageGroups Configuration blocks for responses that Amazon Lex can send to the user. Amazon Lex chooses the actual response to send at runtime. See `messageGroup`.
@@ -3771,7 +3581,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingCodeHookPostCodeHookSpecificationSuccessConditionalDefaultBranchResponseMessageGroupArgs.builder
       builder.messageGroups(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingFailureConditionalConditionalBranchResponseMessageGroupArgs.Builder)
     /**
      * @param message Configuration block for the primary message that Amazon Lex should send to the user. See `message`.
@@ -3791,7 +3600,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingFailureConditionalConditionalBranchResponseMessageGroupVariationArgs.builder
       builder.variations(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentClosingSettingConditionalConditionalBranchNextStepIntentArgs.Builder)
     /**
      * @param slots Configuration block for all of the slot value overrides for the intent. The name of the slot maps to the value of the slot. Slots that are not included in the map aren&#39;t overridden. See `slot`.
@@ -3802,7 +3610,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentClosingSettingConditionalConditionalBranchNextStepIntentSlotArgs.builder
       builder.slots(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationSuccessConditionalDefaultBranchNextStepArgs.Builder)
     /**
      * @param dialogAction Configuration block for action that the bot executes at runtime when the conversation reaches this step. See `dialogAction`.
@@ -3822,7 +3629,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationSuccessConditionalDefaultBranchNextStepIntentArgs.builder
       builder.intent(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingDeclinationConditionalConditionalBranchResponseMessageGroupMessageArgs.Builder)
     /**
      * @param customPayload Configuration block for a message in a custom format defined by the client application. See `customPayload`.
@@ -3860,7 +3666,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingDeclinationConditionalConditionalBranchResponseMessageGroupMessageSsmlMessageArgs.builder
       builder.ssmlMessage(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingCodeHookPostCodeHookSpecificationFailureResponseMessageGroupMessageArgs.Builder)
     /**
      * @param customPayload Configuration block for a message in a custom format defined by the client application. See `customPayload`.
@@ -3898,7 +3703,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingCodeHookPostCodeHookSpecificationFailureResponseMessageGroupMessageSsmlMessageArgs.builder
       builder.ssmlMessage(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationTimeoutNextStepArgs.Builder)
     /**
      * @param dialogAction Configuration block for action that the bot executes at runtime when the conversation reaches this step. See `dialogAction`.
@@ -3918,7 +3722,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationTimeoutNextStepIntentArgs.builder
       builder.intent(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingDeclinationConditionalConditionalBranchResponseMessageGroupMessageImageResponseCardArgs.Builder)
     /**
      * @param buttons Configuration blocks for buttons that should be displayed on the response card. The arrangement of the buttons is determined by the platform that displays the button. See `button`.
@@ -3929,7 +3732,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingDeclinationConditionalConditionalBranchResponseMessageGroupMessageImageResponseCardButtonArgs.builder
       builder.buttons(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationTimeoutConditionalConditionalBranchResponseMessageGroupMessageArgs.Builder)
     /**
      * @param customPayload Configuration block for a message in a custom format defined by the client application. See `customPayload`.
@@ -3967,7 +3769,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationTimeoutConditionalConditionalBranchResponseMessageGroupMessageSsmlMessageArgs.builder
       builder.ssmlMessage(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationTimeoutConditionalArgs.Builder)
     /**
      * @param conditionalBranches Configuration blocks for conditional branches. A conditional branch is made up of a condition, a response and a next step. The response and next step are executed when the condition is true. See `conditionalBranch`.
@@ -3987,7 +3788,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationTimeoutConditionalDefaultBranchArgs.builder
       builder.defaultBranch(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingCodeHookPostCodeHookSpecificationSuccessConditionalConditionalBranchResponseMessageGroupVariationArgs.Builder)
     /**
      * @param customPayload Configuration block for a message in a custom format defined by the client application. See `customPayload`.
@@ -4025,7 +3825,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingCodeHookPostCodeHookSpecificationSuccessConditionalConditionalBranchResponseMessageGroupVariationSsmlMessageArgs.builder
       builder.ssmlMessage(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationSuccessConditionalConditionalBranchNextStepArgs.Builder)
     /**
      * @param dialogAction Configuration block for action that the bot executes at runtime when the conversation reaches this step. See `dialogAction`.
@@ -4045,7 +3844,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationSuccessConditionalConditionalBranchNextStepIntentArgs.builder
       builder.intent(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingConfirmationNextStepIntentArgs.Builder)
     /**
      * @param slots Configuration block for all of the slot value overrides for the intent. The name of the slot maps to the value of the slot. Slots that are not included in the map aren&#39;t overridden. See `slot`.
@@ -4056,7 +3854,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingConfirmationNextStepIntentSlotArgs.builder
       builder.slots(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingDeclinationResponseMessageGroupArgs.Builder)
     /**
      * @param message Configuration block for the primary message that Amazon Lex should send to the user. See `message`.
@@ -4076,7 +3873,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingDeclinationResponseMessageGroupVariationArgs.builder
       builder.variations(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationTimeoutConditionalConditionalBranchResponseMessageGroupMessageImageResponseCardArgs.Builder)
     /**
      * @param buttons Configuration blocks for buttons that should be displayed on the response card. The arrangement of the buttons is determined by the platform that displays the button. See `button`.
@@ -4087,7 +3883,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationTimeoutConditionalConditionalBranchResponseMessageGroupMessageImageResponseCardButtonArgs.builder
       builder.buttons(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationSuccessConditionalConditionalBranchNextStepIntentSlotArgs.Builder)
     /**
      * @param value Configuration block for the current value of the slot. See `value`.
@@ -4098,7 +3893,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationSuccessConditionalConditionalBranchNextStepIntentSlotValueArgs.builder
       builder.value(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingConfirmationConditionalConditionalBranchResponseMessageGroupVariationImageResponseCardArgs.Builder)
     /**
      * @param buttons Configuration blocks for buttons that should be displayed on the response card. The arrangement of the buttons is determined by the platform that displays the button. See `button`.
@@ -4109,7 +3903,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingConfirmationConditionalConditionalBranchResponseMessageGroupVariationImageResponseCardButtonArgs.builder
       builder.buttons(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingCodeHookPostCodeHookSpecificationFailureConditionalConditionalBranchNextStepArgs.Builder)
     /**
      * @param dialogAction Configuration block for action that the bot executes at runtime when the conversation reaches this step. See `dialogAction`.
@@ -4129,7 +3922,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingCodeHookPostCodeHookSpecificationFailureConditionalConditionalBranchNextStepIntentArgs.builder
       builder.intent(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationTimeoutNextStepIntentArgs.Builder)
     /**
      * @param slots Configuration block for all of the slot value overrides for the intent. The name of the slot maps to the value of the slot. Slots that are not included in the map aren&#39;t overridden. See `slot`.
@@ -4140,7 +3932,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationTimeoutNextStepIntentSlotArgs.builder
       builder.slots(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsSlotSubSlotSettingSlotSpecificationValueElicitationSettingWaitAndContinueSpecificationWaitingResponseMessageGroupArgs.Builder)
     /**
      * @param message Configuration block for the primary message that Amazon Lex should send to the user.
@@ -4163,7 +3954,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsSlotSubSlotSettingSlotSpecificationValueElicitationSettingWaitAndContinueSpecificationWaitingResponseMessageGroupVariationArgs.builder
       builder.variations(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsBotLocaleState.Builder)
     def timeouts(args: Endofunction[com.pulumi.aws.lex.inputs.V2modelsBotLocaleTimeoutsArgs.Builder]):
         com.pulumi.aws.lex.inputs.V2modelsBotLocaleState.Builder =
@@ -4179,7 +3969,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsBotLocaleVoiceSettingsArgs.builder
       builder.voiceSettings(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingFailureResponseMessageGroupVariationArgs.Builder)
     /**
      * @param customPayload Configuration block for a message in a custom format defined by the client application. See `customPayload`.
@@ -4217,7 +4006,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingFailureResponseMessageGroupVariationSsmlMessageArgs.builder
       builder.ssmlMessage(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationSuccessConditionalConditionalBranchResponseMessageGroupVariationArgs.Builder)
     /**
      * @param customPayload Configuration block for a message in a custom format defined by the client application. See `customPayload`.
@@ -4255,7 +4043,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationSuccessConditionalConditionalBranchResponseMessageGroupVariationSsmlMessageArgs.builder
       builder.ssmlMessage(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingDeclinationResponseMessageGroupVariationArgs.Builder)
     /**
      * @param customPayload Configuration block for a message in a custom format defined by the client application. See `customPayload`.
@@ -4293,14 +4080,12 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingDeclinationResponseMessageGroupVariationSsmlMessageArgs.builder
       builder.ssmlMessage(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsSlotSubSlotSettingSlotSpecificationValueElicitationSettingWaitAndContinueSpecificationWaitingResponseMessageGroupMessageImageResponseCardArgs.Builder)
     def buttons(args: Endofunction[com.pulumi.aws.lex.inputs.V2modelsSlotSubSlotSettingSlotSpecificationValueElicitationSettingWaitAndContinueSpecificationWaitingResponseMessageGroupMessageImageResponseCardButtonArgs.Builder]*):
         com.pulumi.aws.lex.inputs.V2modelsSlotSubSlotSettingSlotSpecificationValueElicitationSettingWaitAndContinueSpecificationWaitingResponseMessageGroupMessageImageResponseCardArgs.Builder =
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsSlotSubSlotSettingSlotSpecificationValueElicitationSettingWaitAndContinueSpecificationWaitingResponseMessageGroupMessageImageResponseCardButtonArgs.builder
       builder.buttons(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingFailureConditionalConditionalBranchNextStepArgs.Builder)
     /**
      * @param dialogAction Configuration block for action that the bot executes at runtime when the conversation reaches this step. See `dialogAction`.
@@ -4320,7 +4105,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingFailureConditionalConditionalBranchNextStepIntentArgs.builder
       builder.intent(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingConditionalDefaultBranchNextStepIntentArgs.Builder)
     /**
      * @param slots Configuration block for all of the slot value overrides for the intent. The name of the slot maps to the value of the slot. Slots that are not included in the map aren&#39;t overridden. See `slot`.
@@ -4331,7 +4115,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingConditionalDefaultBranchNextStepIntentSlotArgs.builder
       builder.slots(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookArgs.Builder)
     /**
      * @param fulfillmentUpdatesSpecification Configuration block for settings for update messages sent to the user for long-running Lambda fulfillment functions. Fulfillment updates can be used only with streaming conversations. See `fulfillmentUpdatesSpecification`.
@@ -4351,7 +4134,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationArgs.builder
       builder.postFulfillmentStatusSpecification(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingConditionalConditionalBranchArgs.Builder)
     /**
      * @param condition Configuration block for the expression to evaluate. If the condition is true, the branch&#39;s actions are taken. See `condition`.
@@ -4380,7 +4162,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingConditionalConditionalBranchResponseArgs.builder
       builder.response(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingConfirmationResponseArgs.Builder)
     /**
      * @param messageGroups Configuration blocks for responses that Amazon Lex can send to the user. Amazon Lex chooses the actual response to send at runtime. See `messageGroup`.
@@ -4391,7 +4172,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingConfirmationResponseMessageGroupArgs.builder
       builder.messageGroups(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationSuccessResponseMessageGroupMessageArgs.Builder)
     /**
      * @param customPayload Configuration block for a message in a custom format defined by the client application. See `customPayload`.
@@ -4429,7 +4209,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationSuccessResponseMessageGroupMessageSsmlMessageArgs.builder
       builder.ssmlMessage(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingFailureConditionalConditionalBranchResponseMessageGroupVariationArgs.Builder)
     /**
      * @param customPayload Configuration block for a message in a custom format defined by the client application. See `customPayload`.
@@ -4467,14 +4246,12 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingFailureConditionalConditionalBranchResponseMessageGroupVariationSsmlMessageArgs.builder
       builder.ssmlMessage(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsSlotValueElicitationSettingWaitAndContinueSpecificationStillWaitingResponseMessageGroupMessageImageResponseCardArgs.Builder)
     def buttons(args: Endofunction[com.pulumi.aws.lex.inputs.V2modelsSlotValueElicitationSettingWaitAndContinueSpecificationStillWaitingResponseMessageGroupMessageImageResponseCardButtonArgs.Builder]*):
         com.pulumi.aws.lex.inputs.V2modelsSlotValueElicitationSettingWaitAndContinueSpecificationStillWaitingResponseMessageGroupMessageImageResponseCardArgs.Builder =
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsSlotValueElicitationSettingWaitAndContinueSpecificationStillWaitingResponseMessageGroupMessageImageResponseCardButtonArgs.builder
       builder.buttons(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationSuccessResponseArgs.Builder)
     /**
      * @param messageGroups Configuration blocks for responses that Amazon Lex can send to the user. Amazon Lex chooses the actual response to send at runtime. See `messageGroup`.
@@ -4485,7 +4262,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationSuccessResponseMessageGroupArgs.builder
       builder.messageGroups(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingConditionalDefaultBranchNextStepIntentSlotArgs.Builder)
     /**
      * @param value Configuration block for the current value of the slot. See `value`.
@@ -4496,7 +4272,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingConditionalDefaultBranchNextStepIntentSlotValueArgs.builder
       builder.value(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingConfirmationNextStepIntentSlotArgs.Builder)
     /**
      * @param value Configuration block for the current value of the slot. See `value`.
@@ -4507,7 +4282,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingConfirmationNextStepIntentSlotValueArgs.builder
       builder.value(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingCodeHookPostCodeHookSpecificationFailureConditionalDefaultBranchNextStepIntentArgs.Builder)
     /**
      * @param slots Configuration block for all of the slot value overrides for the intent. The name of the slot maps to the value of the slot. Slots that are not included in the map aren&#39;t overridden. See `slot`.
@@ -4518,14 +4292,12 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingCodeHookPostCodeHookSpecificationFailureConditionalDefaultBranchNextStepIntentSlotArgs.builder
       builder.slots(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsBotVersionState.Builder)
     def timeouts(args: Endofunction[com.pulumi.aws.lex.inputs.V2modelsBotVersionTimeoutsArgs.Builder]):
         com.pulumi.aws.lex.inputs.V2modelsBotVersionState.Builder =
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsBotVersionTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsSlotValueElicitationSettingWaitAndContinueSpecificationStillWaitingResponseMessageGroupArgs.Builder)
     /**
      * @param message Configuration block for the primary message that Amazon Lex should send to the user.
@@ -4548,7 +4320,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsSlotValueElicitationSettingWaitAndContinueSpecificationStillWaitingResponseMessageGroupVariationArgs.builder
       builder.variations(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingFailureNextStepIntentArgs.Builder)
     /**
      * @param slots Configuration block for all of the slot value overrides for the intent. The name of the slot maps to the value of the slot. Slots that are not included in the map aren&#39;t overridden. See `slot`.
@@ -4559,7 +4330,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingFailureNextStepIntentSlotArgs.builder
       builder.slots(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingConfirmationConditionalDefaultBranchNextStepIntentArgs.Builder)
     /**
      * @param slots Configuration block for all of the slot value overrides for the intent. The name of the slot maps to the value of the slot. Slots that are not included in the map aren&#39;t overridden. See `slot`.
@@ -4570,7 +4340,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingConfirmationConditionalDefaultBranchNextStepIntentSlotArgs.builder
       builder.slots(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingCodeHookPostCodeHookSpecificationTimeoutNextStepArgs.Builder)
     /**
      * @param dialogAction Configuration block for action that the bot executes at runtime when the conversation reaches this step. See `dialogAction`.
@@ -4590,7 +4359,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingCodeHookPostCodeHookSpecificationTimeoutNextStepIntentArgs.builder
       builder.intent(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingInitialResponseMessageGroupVariationImageResponseCardArgs.Builder)
     /**
      * @param buttons Configuration blocks for buttons that should be displayed on the response card. The arrangement of the buttons is determined by the platform that displays the button. See `button`.
@@ -4601,7 +4369,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingInitialResponseMessageGroupVariationImageResponseCardButtonArgs.builder
       builder.buttons(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationFailureNextStepIntentArgs.Builder)
     /**
      * @param slots Configuration block for all of the slot value overrides for the intent. The name of the slot maps to the value of the slot. Slots that are not included in the map aren&#39;t overridden. See `slot`.
@@ -4612,7 +4379,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationFailureNextStepIntentSlotArgs.builder
       builder.slots(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationFailureConditionalDefaultBranchResponseArgs.Builder)
     /**
      * @param messageGroups Configuration blocks for responses that Amazon Lex can send to the user. Amazon Lex chooses the actual response to send at runtime. See `messageGroup`.
@@ -4623,7 +4389,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationFailureConditionalDefaultBranchResponseMessageGroupArgs.builder
       builder.messageGroups(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsSlotSubSlotSettingArgs.Builder)
     /**
      * @param slotSpecifications Specifications for the constituent sub slots of a composite slot.
@@ -4635,7 +4400,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsSlotSubSlotSettingSlotSpecificationArgs.builder
       builder.slotSpecifications(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingConfirmationResponseMessageGroupVariationArgs.Builder)
     /**
      * @param customPayload Configuration block for a message in a custom format defined by the client application. See `customPayload`.
@@ -4673,7 +4437,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingConfirmationResponseMessageGroupVariationSsmlMessageArgs.builder
       builder.ssmlMessage(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingFailureConditionalConditionalBranchResponseArgs.Builder)
     /**
      * @param messageGroups Configuration blocks for responses that Amazon Lex can send to the user. Amazon Lex chooses the actual response to send at runtime. See `messageGroup`.
@@ -4684,7 +4447,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingFailureConditionalConditionalBranchResponseMessageGroupArgs.builder
       builder.messageGroups(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookFulfillmentUpdatesSpecificationUpdateResponseArgs.Builder)
     /**
      * @param messageGroups Between 1-5 configuration block message groups that contain start messages. Amazon Lex chooses one of the messages to play to the user. See `messageGroup`.
@@ -4695,7 +4457,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookFulfillmentUpdatesSpecificationUpdateResponseMessageGroupArgs.builder
       builder.messageGroups(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingCodeHookPostCodeHookSpecificationSuccessResponseMessageGroupMessageImageResponseCardArgs.Builder)
     /**
      * @param buttons Configuration blocks for buttons that should be displayed on the response card. The arrangement of the buttons is determined by the platform that displays the button. See `button`.
@@ -4706,7 +4467,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingCodeHookPostCodeHookSpecificationSuccessResponseMessageGroupMessageImageResponseCardButtonArgs.builder
       builder.buttons(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingCodeHookPostCodeHookSpecificationSuccessConditionalDefaultBranchNextStepIntentSlotArgs.Builder)
     /**
      * @param value Configuration block for the current value of the slot. See `value`.
@@ -4717,7 +4477,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingCodeHookPostCodeHookSpecificationSuccessConditionalDefaultBranchNextStepIntentSlotValueArgs.builder
       builder.value(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsSlotSubSlotSettingSlotSpecificationValueElicitationSettingPromptSpecificationMessageGroupVariationArgs.Builder)
     def customPayload(args: Endofunction[com.pulumi.aws.lex.inputs.V2modelsSlotSubSlotSettingSlotSpecificationValueElicitationSettingPromptSpecificationMessageGroupVariationCustomPayloadArgs.Builder]):
         com.pulumi.aws.lex.inputs.V2modelsSlotSubSlotSettingSlotSpecificationValueElicitationSettingPromptSpecificationMessageGroupVariationArgs.Builder =
@@ -4739,7 +4498,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsSlotSubSlotSettingSlotSpecificationValueElicitationSettingPromptSpecificationMessageGroupVariationSsmlMessageArgs.builder
       builder.ssmlMessage(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingCodeHookPostCodeHookSpecificationTimeoutConditionalConditionalBranchNextStepIntentSlotArgs.Builder)
     /**
      * @param value Configuration block for the current value of the slot. See `value`.
@@ -4750,7 +4508,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingCodeHookPostCodeHookSpecificationTimeoutConditionalConditionalBranchNextStepIntentSlotValueArgs.builder
       builder.value(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingFailureConditionalConditionalBranchResponseMessageGroupVariationImageResponseCardArgs.Builder)
     /**
      * @param buttons Configuration blocks for buttons that should be displayed on the response card. The arrangement of the buttons is determined by the platform that displays the button. See `button`.
@@ -4761,7 +4518,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingFailureConditionalConditionalBranchResponseMessageGroupVariationImageResponseCardButtonArgs.builder
       builder.buttons(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationFailureConditionalDefaultBranchResponseMessageGroupMessageArgs.Builder)
     /**
      * @param customPayload Configuration block for a message in a custom format defined by the client application. See `customPayload`.
@@ -4799,7 +4555,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationFailureConditionalDefaultBranchResponseMessageGroupMessageSsmlMessageArgs.builder
       builder.ssmlMessage(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationSuccessResponseMessageGroupMessageImageResponseCardArgs.Builder)
     /**
      * @param buttons Configuration blocks for buttons that should be displayed on the response card. The arrangement of the buttons is determined by the platform that displays the button. See `button`.
@@ -4810,7 +4565,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationSuccessResponseMessageGroupMessageImageResponseCardButtonArgs.builder
       builder.buttons(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentClosingSettingConditionalDefaultBranchResponseMessageGroupMessageArgs.Builder)
     /**
      * @param customPayload Configuration block for a message in a custom format defined by the client application. See `customPayload`.
@@ -4848,7 +4602,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentClosingSettingConditionalDefaultBranchResponseMessageGroupMessageSsmlMessageArgs.builder
       builder.ssmlMessage(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingFailureResponseMessageGroupMessageArgs.Builder)
     /**
      * @param customPayload Configuration block for a message in a custom format defined by the client application. See `customPayload`.
@@ -4886,7 +4639,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingFailureResponseMessageGroupMessageSsmlMessageArgs.builder
       builder.ssmlMessage(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsSlotTypeExternalSourceSettingGrammarSlotTypeSettingArgs.Builder)
     /**
      * @param sources Source of the grammar used to create the slot type.
@@ -4898,7 +4650,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsSlotTypeExternalSourceSettingGrammarSlotTypeSettingSourceArgs.builder
       builder.sources(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingCodeHookPostCodeHookSpecificationFailureConditionalConditionalBranchResponseArgs.Builder)
     /**
      * @param messageGroups Configuration blocks for responses that Amazon Lex can send to the user. Amazon Lex chooses the actual response to send at runtime. See `messageGroup`.
@@ -4909,7 +4660,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingCodeHookPostCodeHookSpecificationFailureConditionalConditionalBranchResponseMessageGroupArgs.builder
       builder.messageGroups(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsSlotSubSlotSettingSlotSpecificationValueElicitationSettingWaitAndContinueSpecificationArgs.Builder)
     /**
      * @param continueResponses Response that Amazon Lex sends to indicate that the bot is ready to continue the conversation.
@@ -4941,7 +4691,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsSlotSubSlotSettingSlotSpecificationValueElicitationSettingWaitAndContinueSpecificationWaitingResponseArgs.builder
       builder.waitingResponses(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingConfirmationResponseMessageGroupVariationImageResponseCardArgs.Builder)
     /**
      * @param buttons Configuration blocks for buttons that should be displayed on the response card. The arrangement of the buttons is determined by the platform that displays the button. See `button`.
@@ -4952,7 +4701,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingConfirmationResponseMessageGroupVariationImageResponseCardButtonArgs.builder
       builder.buttons(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingArgs.Builder)
     /**
      * @param codeHook Configuration block for the dialog code hook that is called by Amazon Lex at a step of the conversation. See `codeHook`.
@@ -4990,7 +4738,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingNextStepArgs.builder
       builder.nextStep(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationTimeoutConditionalDefaultBranchResponseMessageGroupMessageImageResponseCardArgs.Builder)
     /**
      * @param buttons Configuration blocks for buttons that should be displayed on the response card. The arrangement of the buttons is determined by the platform that displays the button. See `button`.
@@ -5001,7 +4748,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationTimeoutConditionalDefaultBranchResponseMessageGroupMessageImageResponseCardButtonArgs.builder
       builder.buttons(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingCodeHookPostCodeHookSpecificationSuccessConditionalDefaultBranchResponseMessageGroupVariationImageResponseCardArgs.Builder)
     /**
      * @param buttons Configuration blocks for buttons that should be displayed on the response card. The arrangement of the buttons is determined by the platform that displays the button. See `button`.
@@ -5012,7 +4758,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingCodeHookPostCodeHookSpecificationSuccessConditionalDefaultBranchResponseMessageGroupVariationImageResponseCardButtonArgs.builder
       builder.buttons(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationFailureConditionalConditionalBranchNextStepIntentSlotArgs.Builder)
     /**
      * @param value Configuration block for the current value of the slot. See `value`.
@@ -5023,7 +4768,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationFailureConditionalConditionalBranchNextStepIntentSlotValueArgs.builder
       builder.value(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingConfirmationConditionalDefaultBranchResponseMessageGroupVariationImageResponseCardArgs.Builder)
     /**
      * @param buttons Configuration blocks for buttons that should be displayed on the response card. The arrangement of the buttons is determined by the platform that displays the button. See `button`.
@@ -5034,7 +4778,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingConfirmationConditionalDefaultBranchResponseMessageGroupVariationImageResponseCardButtonArgs.builder
       builder.buttons(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationSuccessConditionalArgs.Builder)
     /**
      * @param conditionalBranches Configuration blocks for conditional branches. A conditional branch is made up of a condition, a response and a next step. The response and next step are executed when the condition is true. See `conditionalBranch`.
@@ -5054,7 +4797,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationSuccessConditionalDefaultBranchArgs.builder
       builder.defaultBranch(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingDeclinationConditionalDefaultBranchResponseMessageGroupArgs.Builder)
     /**
      * @param message Configuration block for the primary message that Amazon Lex should send to the user. See `message`.
@@ -5074,7 +4816,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingDeclinationConditionalDefaultBranchResponseMessageGroupVariationArgs.builder
       builder.variations(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsSlotSubSlotSettingSlotSpecificationValueElicitationSettingWaitAndContinueSpecificationWaitingResponseArgs.Builder)
     /**
      * @param messageGroups Configuration blocks for responses that Amazon Lex can send to the user.
@@ -5087,7 +4828,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsSlotSubSlotSettingSlotSpecificationValueElicitationSettingWaitAndContinueSpecificationWaitingResponseMessageGroupArgs.builder
       builder.messageGroups(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationFailureConditionalDefaultBranchResponseMessageGroupMessageArgs.Builder)
     /**
      * @param customPayload Configuration block for a message in a custom format defined by the client application. See `customPayload`.
@@ -5125,7 +4865,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationFailureConditionalDefaultBranchResponseMessageGroupMessageSsmlMessageArgs.builder
       builder.ssmlMessage(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationFailureConditionalDefaultBranchNextStepArgs.Builder)
     /**
      * @param dialogAction Configuration block for action that the bot executes at runtime when the conversation reaches this step. See `dialogAction`.
@@ -5145,7 +4884,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationFailureConditionalDefaultBranchNextStepIntentArgs.builder
       builder.intent(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.SlotTypeState.Builder)
     /**
      * @param enumerationValues A list of EnumerationValue objects that defines the values that
@@ -5159,7 +4897,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.SlotTypeEnumerationValueArgs.builder
       builder.enumerationValues(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationFailureResponseMessageGroupVariationArgs.Builder)
     /**
      * @param customPayload Configuration block for a message in a custom format defined by the client application. See `customPayload`.
@@ -5197,7 +4934,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationFailureResponseMessageGroupVariationSsmlMessageArgs.builder
       builder.ssmlMessage(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationFailureConditionalConditionalBranchResponseMessageGroupMessageArgs.Builder)
     /**
      * @param customPayload Configuration block for a message in a custom format defined by the client application. See `customPayload`.
@@ -5235,7 +4971,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationFailureConditionalConditionalBranchResponseMessageGroupMessageSsmlMessageArgs.builder
       builder.ssmlMessage(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingCodeHookPostCodeHookSpecificationTimeoutResponseArgs.Builder)
     /**
      * @param messageGroups Configuration blocks for responses that Amazon Lex can send to the user. Amazon Lex chooses the actual response to send at runtime. See `messageGroup`.
@@ -5246,7 +4981,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingCodeHookPostCodeHookSpecificationTimeoutResponseMessageGroupArgs.builder
       builder.messageGroups(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationSuccessConditionalDefaultBranchResponseMessageGroupVariationArgs.Builder)
     /**
      * @param customPayload Configuration block for a message in a custom format defined by the client application. See `customPayload`.
@@ -5284,7 +5018,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationSuccessConditionalDefaultBranchResponseMessageGroupVariationSsmlMessageArgs.builder
       builder.ssmlMessage(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationFailureConditionalDefaultBranchNextStepIntentSlotArgs.Builder)
     /**
      * @param value Configuration block for the current value of the slot. See `value`.
@@ -5295,7 +5028,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationFailureConditionalDefaultBranchNextStepIntentSlotValueArgs.builder
       builder.value(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingConfirmationNextStepArgs.Builder)
     /**
      * @param dialogAction Configuration block for action that the bot executes at runtime when the conversation reaches this step. See `dialogAction`.
@@ -5315,7 +5047,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingConfirmationNextStepIntentArgs.builder
       builder.intent(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationSuccessNextStepArgs.Builder)
     /**
      * @param dialogAction Configuration block for action that the bot executes at runtime when the conversation reaches this step. See `dialogAction`.
@@ -5335,7 +5066,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationSuccessNextStepIntentArgs.builder
       builder.intent(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsSlotValueElicitationSettingPromptSpecificationMessageGroupArgs.Builder)
     /**
      * @param message Configuration block for the primary message that Amazon Lex should send to the user.
@@ -5358,7 +5088,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsSlotValueElicitationSettingPromptSpecificationMessageGroupVariationArgs.builder
       builder.variations(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingPromptSpecificationMessageGroupVariationImageResponseCardArgs.Builder)
     /**
      * @param buttons Configuration blocks for buttons that should be displayed on the response card. The arrangement of the buttons is determined by the platform that displays the button. See `button`.
@@ -5369,7 +5098,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingPromptSpecificationMessageGroupVariationImageResponseCardButtonArgs.builder
       builder.buttons(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationTimeoutConditionalConditionalBranchResponseMessageGroupMessageImageResponseCardArgs.Builder)
     /**
      * @param buttons Configuration blocks for buttons that should be displayed on the response card. The arrangement of the buttons is determined by the platform that displays the button. See `button`.
@@ -5380,7 +5108,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationTimeoutConditionalConditionalBranchResponseMessageGroupMessageImageResponseCardButtonArgs.builder
       builder.buttons(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingConfirmationConditionalConditionalBranchResponseMessageGroupArgs.Builder)
     /**
      * @param message Configuration block for the primary message that Amazon Lex should send to the user. See `message`.
@@ -5400,7 +5127,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingConfirmationConditionalConditionalBranchResponseMessageGroupVariationArgs.builder
       builder.variations(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationFailureConditionalDefaultBranchResponseMessageGroupMessageImageResponseCardArgs.Builder)
     /**
      * @param buttons Configuration blocks for buttons that should be displayed on the response card. The arrangement of the buttons is determined by the platform that displays the button. See `button`.
@@ -5411,7 +5137,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationFailureConditionalDefaultBranchResponseMessageGroupMessageImageResponseCardButtonArgs.builder
       builder.buttons(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingCodeHookPostCodeHookSpecificationSuccessConditionalDefaultBranchResponseMessageGroupVariationArgs.Builder)
     /**
      * @param customPayload Configuration block for a message in a custom format defined by the client application. See `customPayload`.
@@ -5449,7 +5174,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingCodeHookPostCodeHookSpecificationSuccessConditionalDefaultBranchResponseMessageGroupVariationSsmlMessageArgs.builder
       builder.ssmlMessage(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationSuccessConditionalConditionalBranchNextStepIntentSlotArgs.Builder)
     /**
      * @param value Configuration block for the current value of the slot. See `value`.
@@ -5460,7 +5184,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationSuccessConditionalConditionalBranchNextStepIntentSlotValueArgs.builder
       builder.value(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.BotState.Builder)
     /**
      * @param abortStatement The message that Amazon Lex uses to abort a conversation. Attributes are documented under statement.
@@ -5489,7 +5212,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.BotIntentArgs.builder
       builder.intents(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingCodeHookPostCodeHookSpecificationFailureNextStepArgs.Builder)
     /**
      * @param dialogAction Configuration block for action that the bot executes at runtime when the conversation reaches this step. See `dialogAction`.
@@ -5509,7 +5231,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingCodeHookPostCodeHookSpecificationFailureNextStepIntentArgs.builder
       builder.intent(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.BotAliasState.Builder)
     /**
      * @param conversationLogs The settings that determine how Amazon Lex uses conversation logs for the alias. Attributes are documented under conversation_logs.
@@ -5520,7 +5241,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.BotAliasConversationLogsArgs.builder
       builder.conversationLogs(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentClosingSettingClosingResponseMessageGroupVariationImageResponseCardArgs.Builder)
     /**
      * @param buttons Configuration blocks for buttons that should be displayed on the response card. The arrangement of the buttons is determined by the platform that displays the button. See `button`.
@@ -5531,7 +5251,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentClosingSettingClosingResponseMessageGroupVariationImageResponseCardButtonArgs.builder
       builder.buttons(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingConditionalConditionalBranchResponseMessageGroupVariationArgs.Builder)
     /**
      * @param customPayload Configuration block for a message in a custom format defined by the client application. See `customPayload`.
@@ -5569,7 +5288,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingConditionalConditionalBranchResponseMessageGroupVariationSsmlMessageArgs.builder
       builder.ssmlMessage(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.IntentFollowUpPromptPromptArgs.Builder)
     /**
      * @param messages A set of messages, each of which provides a message string and its type.
@@ -5582,7 +5300,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.IntentFollowUpPromptPromptMessageArgs.builder
       builder.messages(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationSuccessConditionalDefaultBranchResponseMessageGroupMessageArgs.Builder)
     /**
      * @param customPayload Configuration block for a message in a custom format defined by the client application. See `customPayload`.
@@ -5620,7 +5337,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationSuccessConditionalDefaultBranchResponseMessageGroupMessageSsmlMessageArgs.builder
       builder.ssmlMessage(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationTimeoutConditionalDefaultBranchResponseArgs.Builder)
     /**
      * @param messageGroups Configuration blocks for responses that Amazon Lex can send to the user. Amazon Lex chooses the actual response to send at runtime. See `messageGroup`.
@@ -5631,7 +5347,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationTimeoutConditionalDefaultBranchResponseMessageGroupArgs.builder
       builder.messageGroups(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.IntentFollowUpPromptArgs.Builder)
     /**
      * @param prompt Prompts for information from the user. Attributes are documented under prompt.
@@ -5653,7 +5368,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.IntentFollowUpPromptRejectionStatementArgs.builder
       builder.rejectionStatement(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentClosingSettingConditionalConditionalBranchResponseMessageGroupMessageImageResponseCardArgs.Builder)
     /**
      * @param buttons Configuration blocks for buttons that should be displayed on the response card. The arrangement of the buttons is determined by the platform that displays the button. See `button`.
@@ -5664,7 +5378,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentClosingSettingConditionalConditionalBranchResponseMessageGroupMessageImageResponseCardButtonArgs.builder
       builder.buttons(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsSlotValueElicitationSettingWaitAndContinueSpecificationWaitingResponseArgs.Builder)
     /**
      * @param messageGroups Configuration blocks for responses that Amazon Lex can send to the user.
@@ -5677,7 +5390,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsSlotValueElicitationSettingWaitAndContinueSpecificationWaitingResponseMessageGroupArgs.builder
       builder.messageGroups(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingFailureConditionalDefaultBranchArgs.Builder)
     /**
      * @param nextStep Configuration block for the next step in the conversation. See `nextStep`.
@@ -5697,14 +5409,12 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingFailureConditionalDefaultBranchResponseArgs.builder
       builder.response(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsSlotValueElicitationSettingWaitAndContinueSpecificationContinueResponseMessageGroupVariationImageResponseCardArgs.Builder)
     def buttons(args: Endofunction[com.pulumi.aws.lex.inputs.V2modelsSlotValueElicitationSettingWaitAndContinueSpecificationContinueResponseMessageGroupVariationImageResponseCardButtonArgs.Builder]*):
         com.pulumi.aws.lex.inputs.V2modelsSlotValueElicitationSettingWaitAndContinueSpecificationContinueResponseMessageGroupVariationImageResponseCardArgs.Builder =
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsSlotValueElicitationSettingWaitAndContinueSpecificationContinueResponseMessageGroupVariationImageResponseCardButtonArgs.builder
       builder.buttons(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationTimeoutConditionalDefaultBranchNextStepIntentSlotArgs.Builder)
     /**
      * @param value Configuration block for the current value of the slot. See `value`.
@@ -5715,7 +5425,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationTimeoutConditionalDefaultBranchNextStepIntentSlotValueArgs.builder
       builder.value(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingArgs.Builder)
     /**
      * @param codeHook Configuration block for the intent&#39;s confirmation step. The dialog code hook is triggered based on these invocation settings when the confirmation next step or declination next step or failure next step is `invokeDialogCodeHook`.  See `codeHook`.
@@ -5825,7 +5534,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingPromptSpecificationArgs.builder
       builder.promptSpecification(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingFailureConditionalDefaultBranchNextStepArgs.Builder)
     /**
      * @param dialogAction Configuration block for action that the bot executes at runtime when the conversation reaches this step. See `dialogAction`.
@@ -5845,7 +5553,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingFailureConditionalDefaultBranchNextStepIntentArgs.builder
       builder.intent(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationSuccessConditionalDefaultBranchResponseMessageGroupMessageArgs.Builder)
     /**
      * @param customPayload Configuration block for a message in a custom format defined by the client application. See `customPayload`.
@@ -5883,7 +5590,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationSuccessConditionalDefaultBranchResponseMessageGroupMessageSsmlMessageArgs.builder
       builder.ssmlMessage(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentClosingSettingConditionalDefaultBranchNextStepIntentSlotArgs.Builder)
     /**
      * @param value Configuration block for the current value of the slot. See `value`.
@@ -5894,7 +5600,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentClosingSettingConditionalDefaultBranchNextStepIntentSlotValueArgs.builder
       builder.value(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationArgs.Builder)
     /**
      * @param failureConditional Configuration block for conditional branches to evaluate after the dialog code hook throws an exception or returns with the State field of the Intent object set to Failed.
@@ -5977,7 +5682,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationTimeoutResponseArgs.builder
       builder.timeoutResponse(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingDeclinationNextStepIntentSlotArgs.Builder)
     /**
      * @param value Configuration block for the current value of the slot. See `value`.
@@ -5988,14 +5692,12 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingDeclinationNextStepIntentSlotValueArgs.builder
       builder.value(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsSlotValueElicitationSettingWaitAndContinueSpecificationWaitingResponseMessageGroupVariationImageResponseCardArgs.Builder)
     def buttons(args: Endofunction[com.pulumi.aws.lex.inputs.V2modelsSlotValueElicitationSettingWaitAndContinueSpecificationWaitingResponseMessageGroupVariationImageResponseCardButtonArgs.Builder]*):
         com.pulumi.aws.lex.inputs.V2modelsSlotValueElicitationSettingWaitAndContinueSpecificationWaitingResponseMessageGroupVariationImageResponseCardArgs.Builder =
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsSlotValueElicitationSettingWaitAndContinueSpecificationWaitingResponseMessageGroupVariationImageResponseCardButtonArgs.builder
       builder.buttons(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingDeclinationResponseArgs.Builder)
     /**
      * @param messageGroups Configuration blocks for responses that Amazon Lex can send to the user. Amazon Lex chooses the actual response to send at runtime. See `messageGroup`.
@@ -6006,7 +5708,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingDeclinationResponseMessageGroupArgs.builder
       builder.messageGroups(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationTimeoutConditionalDefaultBranchNextStepArgs.Builder)
     /**
      * @param dialogAction Configuration block for action that the bot executes at runtime when the conversation reaches this step. See `dialogAction`.
@@ -6026,7 +5727,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationTimeoutConditionalDefaultBranchNextStepIntentArgs.builder
       builder.intent(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationTimeoutResponseMessageGroupVariationArgs.Builder)
     /**
      * @param customPayload Configuration block for a message in a custom format defined by the client application. See `customPayload`.
@@ -6064,7 +5764,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationTimeoutResponseMessageGroupVariationSsmlMessageArgs.builder
       builder.ssmlMessage(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationSuccessResponseMessageGroupMessageImageResponseCardArgs.Builder)
     /**
      * @param buttons Configuration blocks for buttons that should be displayed on the response card. The arrangement of the buttons is determined by the platform that displays the button. See `button`.
@@ -6075,7 +5774,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationSuccessResponseMessageGroupMessageImageResponseCardButtonArgs.builder
       builder.buttons(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationFailureConditionalConditionalBranchResponseMessageGroupMessageArgs.Builder)
     /**
      * @param customPayload Configuration block for a message in a custom format defined by the client application. See `customPayload`.
@@ -6113,7 +5811,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationFailureConditionalConditionalBranchResponseMessageGroupMessageSsmlMessageArgs.builder
       builder.ssmlMessage(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingCodeHookArgs.Builder)
     /**
      * @param postCodeHookSpecification Configuration block that contains the responses and actions that Amazon Lex takes after the Lambda function is complete. See `postCodeHookSpecification`.
@@ -6124,7 +5821,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingCodeHookPostCodeHookSpecificationArgs.builder
       builder.postCodeHookSpecification(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingConditionalDefaultBranchResponseMessageGroupArgs.Builder)
     /**
      * @param message Configuration block for the primary message that Amazon Lex should send to the user. See `message`.
@@ -6144,7 +5840,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingConditionalDefaultBranchResponseMessageGroupVariationArgs.builder
       builder.variations(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentClosingSettingConditionalConditionalBranchResponseMessageGroupMessageArgs.Builder)
     /**
      * @param customPayload Configuration block for a message in a custom format defined by the client application. See `customPayload`.
@@ -6182,7 +5877,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentClosingSettingConditionalConditionalBranchResponseMessageGroupMessageSsmlMessageArgs.builder
       builder.ssmlMessage(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookFulfillmentUpdatesSpecificationUpdateResponseMessageGroupMessageArgs.Builder)
     /**
      * @param customPayload Configuration block for a message in a custom format defined by the client application. See `customPayload`.
@@ -6220,7 +5914,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookFulfillmentUpdatesSpecificationUpdateResponseMessageGroupMessageSsmlMessageArgs.builder
       builder.ssmlMessage(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsSlotValueElicitationSettingPromptSpecificationArgs.Builder)
     def messageGroups(args: Endofunction[com.pulumi.aws.lex.inputs.V2modelsSlotValueElicitationSettingPromptSpecificationMessageGroupArgs.Builder]*):
         com.pulumi.aws.lex.inputs.V2modelsSlotValueElicitationSettingPromptSpecificationArgs.Builder =
@@ -6232,7 +5925,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsSlotValueElicitationSettingPromptSpecificationPromptAttemptsSpecificationArgs.builder
       builder.promptAttemptsSpecifications(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingConditionalDefaultBranchResponseMessageGroupVariationImageResponseCardArgs.Builder)
     /**
      * @param buttons Configuration blocks for buttons that should be displayed on the response card. The arrangement of the buttons is determined by the platform that displays the button. See `button`.
@@ -6243,7 +5935,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingConditionalDefaultBranchResponseMessageGroupVariationImageResponseCardButtonArgs.builder
       builder.buttons(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationFailureConditionalConditionalBranchNextStepIntentSlotArgs.Builder)
     /**
      * @param value Configuration block for the current value of the slot. See `value`.
@@ -6254,7 +5945,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationFailureConditionalConditionalBranchNextStepIntentSlotValueArgs.builder
       builder.value(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsSlotValueElicitationSettingWaitAndContinueSpecificationStillWaitingResponseMessageGroupMessageArgs.Builder)
     def customPayload(args: Endofunction[com.pulumi.aws.lex.inputs.V2modelsSlotValueElicitationSettingWaitAndContinueSpecificationStillWaitingResponseMessageGroupMessageCustomPayloadArgs.Builder]):
         com.pulumi.aws.lex.inputs.V2modelsSlotValueElicitationSettingWaitAndContinueSpecificationStillWaitingResponseMessageGroupMessageArgs.Builder =
@@ -6276,7 +5966,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsSlotValueElicitationSettingWaitAndContinueSpecificationStillWaitingResponseMessageGroupMessageSsmlMessageArgs.builder
       builder.ssmlMessage(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingConfirmationConditionalConditionalBranchResponseMessageGroupMessageImageResponseCardArgs.Builder)
     /**
      * @param buttons Configuration blocks for buttons that should be displayed on the response card. The arrangement of the buttons is determined by the platform that displays the button. See `button`.
@@ -6287,7 +5976,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingConfirmationConditionalConditionalBranchResponseMessageGroupMessageImageResponseCardButtonArgs.builder
       builder.buttons(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingCodeHookPostCodeHookSpecificationFailureResponseArgs.Builder)
     /**
      * @param messageGroups Configuration blocks for responses that Amazon Lex can send to the user. Amazon Lex chooses the actual response to send at runtime. See `messageGroup`.
@@ -6298,7 +5986,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingCodeHookPostCodeHookSpecificationFailureResponseMessageGroupArgs.builder
       builder.messageGroups(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationFailureResponseMessageGroupMessageArgs.Builder)
     /**
      * @param customPayload Configuration block for a message in a custom format defined by the client application. See `customPayload`.
@@ -6336,7 +6023,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationFailureResponseMessageGroupMessageSsmlMessageArgs.builder
       builder.ssmlMessage(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingCodeHookPostCodeHookSpecificationSuccessConditionalConditionalBranchArgs.Builder)
     /**
      * @param condition Configuration block for the expression to evaluate. If the condition is true, the branch&#39;s actions are taken. See `condition`.
@@ -6365,7 +6051,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingCodeHookPostCodeHookSpecificationSuccessConditionalConditionalBranchResponseArgs.builder
       builder.response(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingConfirmationConditionalConditionalBranchArgs.Builder)
     /**
      * @param condition Configuration block for the expression to evaluate. If the condition is true, the branch&#39;s actions are taken. See `condition`.
@@ -6394,7 +6079,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingConfirmationConditionalConditionalBranchResponseArgs.builder
       builder.response(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsSlotTypeValueSelectionSettingArgs.Builder)
     /**
      * @param advancedRecognitionSettings Provides settings that enable advanced recognition settings for slot values.
@@ -6417,7 +6101,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsSlotTypeValueSelectionSettingRegexFilterArgs.builder
       builder.regexFilters(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingConditionalConditionalBranchResponseMessageGroupVariationImageResponseCardArgs.Builder)
     /**
      * @param buttons Configuration blocks for buttons that should be displayed on the response card. The arrangement of the buttons is determined by the platform that displays the button. See `button`.
@@ -6428,14 +6111,12 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingConditionalConditionalBranchResponseMessageGroupVariationImageResponseCardButtonArgs.builder
       builder.buttons(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsSlotSubSlotSettingSlotSpecificationValueElicitationSettingWaitAndContinueSpecificationContinueResponseMessageGroupMessageImageResponseCardArgs.Builder)
     def buttons(args: Endofunction[com.pulumi.aws.lex.inputs.V2modelsSlotSubSlotSettingSlotSpecificationValueElicitationSettingWaitAndContinueSpecificationContinueResponseMessageGroupMessageImageResponseCardButtonArgs.Builder]*):
         com.pulumi.aws.lex.inputs.V2modelsSlotSubSlotSettingSlotSpecificationValueElicitationSettingWaitAndContinueSpecificationContinueResponseMessageGroupMessageImageResponseCardArgs.Builder =
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsSlotSubSlotSettingSlotSpecificationValueElicitationSettingWaitAndContinueSpecificationContinueResponseMessageGroupMessageImageResponseCardButtonArgs.builder
       builder.buttons(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsSlotValueElicitationSettingWaitAndContinueSpecificationContinueResponseArgs.Builder)
     /**
      * @param messageGroups Configuration blocks for responses that Amazon Lex can send to the user.
@@ -6448,7 +6129,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsSlotValueElicitationSettingWaitAndContinueSpecificationContinueResponseMessageGroupArgs.builder
       builder.messageGroups(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingDeclinationNextStepArgs.Builder)
     /**
      * @param dialogAction Configuration block for action that the bot executes at runtime when the conversation reaches this step. See `dialogAction`.
@@ -6468,7 +6148,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingDeclinationNextStepIntentArgs.builder
       builder.intent(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentClosingSettingArgs.Builder)
     /**
      * @param closingResponse Configuration block for response that Amazon Lex sends to the user when the intent is complete. See `closingResponse`.
@@ -6497,7 +6176,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentClosingSettingNextStepArgs.builder
       builder.nextStep(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingCodeHookPostCodeHookSpecificationArgs.Builder)
     /**
      * @param failureConditional Configuration block for conditional branches to evaluate after the dialog code hook throws an exception or returns with the State field of the Intent object set to Failed.
@@ -6580,7 +6258,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingCodeHookPostCodeHookSpecificationTimeoutResponseArgs.builder
       builder.timeoutResponse(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationSuccessConditionalConditionalBranchNextStepIntentArgs.Builder)
     /**
      * @param slots Configuration block for all of the slot value overrides for the intent. The name of the slot maps to the value of the slot. Slots that are not included in the map aren&#39;t overridden. See `slot`.
@@ -6591,7 +6268,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationSuccessConditionalConditionalBranchNextStepIntentSlotArgs.builder
       builder.slots(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationFailureConditionalConditionalBranchResponseMessageGroupArgs.Builder)
     /**
      * @param message Configuration block for the primary message that Amazon Lex should send to the user. See `message`.
@@ -6611,7 +6287,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationFailureConditionalConditionalBranchResponseMessageGroupVariationArgs.builder
       builder.variations(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationSuccessConditionalConditionalBranchArgs.Builder)
     /**
      * @param condition Configuration block for the expression to evaluate. If the condition is true, the branch&#39;s actions are taken. See `condition`.
@@ -6640,7 +6315,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationSuccessConditionalConditionalBranchResponseArgs.builder
       builder.response(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingCodeHookPostCodeHookSpecificationSuccessConditionalConditionalBranchResponseMessageGroupMessageImageResponseCardArgs.Builder)
     /**
      * @param buttons Configuration blocks for buttons that should be displayed on the response card. The arrangement of the buttons is determined by the platform that displays the button. See `button`.
@@ -6651,7 +6325,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingCodeHookPostCodeHookSpecificationSuccessConditionalConditionalBranchResponseMessageGroupMessageImageResponseCardButtonArgs.builder
       builder.buttons(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingCodeHookPostCodeHookSpecificationFailureResponseMessageGroupVariationArgs.Builder)
     /**
      * @param customPayload Configuration block for a message in a custom format defined by the client application. See `customPayload`.
@@ -6689,7 +6362,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingCodeHookPostCodeHookSpecificationFailureResponseMessageGroupVariationSsmlMessageArgs.builder
       builder.ssmlMessage(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationSuccessConditionalConditionalBranchArgs.Builder)
     /**
      * @param condition Configuration block for the expression to evaluate. If the condition is true, the branch&#39;s actions are taken. See `condition`.
@@ -6718,14 +6390,12 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationSuccessConditionalConditionalBranchResponseArgs.builder
       builder.response(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsSlotSubSlotSettingSlotSpecificationValueElicitationSettingPromptSpecificationMessageGroupMessageImageResponseCardArgs.Builder)
     def buttons(args: Endofunction[com.pulumi.aws.lex.inputs.V2modelsSlotSubSlotSettingSlotSpecificationValueElicitationSettingPromptSpecificationMessageGroupMessageImageResponseCardButtonArgs.Builder]*):
         com.pulumi.aws.lex.inputs.V2modelsSlotSubSlotSettingSlotSpecificationValueElicitationSettingPromptSpecificationMessageGroupMessageImageResponseCardArgs.Builder =
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsSlotSubSlotSettingSlotSpecificationValueElicitationSettingPromptSpecificationMessageGroupMessageImageResponseCardButtonArgs.builder
       builder.buttons(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingFailureConditionalConditionalBranchArgs.Builder)
     /**
      * @param condition Configuration block for the expression to evaluate. If the condition is true, the branch&#39;s actions are taken. See `condition`.
@@ -6754,7 +6424,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingFailureConditionalConditionalBranchResponseArgs.builder
       builder.response(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationFailureConditionalConditionalBranchResponseMessageGroupMessageImageResponseCardArgs.Builder)
     /**
      * @param buttons Configuration blocks for buttons that should be displayed on the response card. The arrangement of the buttons is determined by the platform that displays the button. See `button`.
@@ -6765,7 +6434,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationFailureConditionalConditionalBranchResponseMessageGroupMessageImageResponseCardButtonArgs.builder
       builder.buttons(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationFailureConditionalDefaultBranchNextStepIntentArgs.Builder)
     /**
      * @param slots Configuration block for all of the slot value overrides for the intent. The name of the slot maps to the value of the slot. Slots that are not included in the map aren&#39;t overridden. See `slot`.
@@ -6776,7 +6444,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationFailureConditionalDefaultBranchNextStepIntentSlotArgs.builder
       builder.slots(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingFailureConditionalDefaultBranchResponseArgs.Builder)
     /**
      * @param messageGroups Configuration blocks for responses that Amazon Lex can send to the user. Amazon Lex chooses the actual response to send at runtime. See `messageGroup`.
@@ -6787,7 +6454,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingFailureConditionalDefaultBranchResponseMessageGroupArgs.builder
       builder.messageGroups(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentQnaIntentConfigurationDataSourceConfigurationOpensearchConfigurationArgs.Builder)
     /**
      * @param exactResponseFields Configuration block for exact response fields. See `exactResponseFields`.
@@ -6798,7 +6464,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentQnaIntentConfigurationDataSourceConfigurationOpensearchConfigurationExactResponseFieldsArgs.builder
       builder.exactResponseFields(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookFulfillmentUpdatesSpecificationStartResponseMessageGroupMessageImageResponseCardArgs.Builder)
     /**
      * @param buttons Configuration blocks for buttons that should be displayed on the response card. The arrangement of the buttons is determined by the platform that displays the button. See `button`.
@@ -6809,7 +6474,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookFulfillmentUpdatesSpecificationStartResponseMessageGroupMessageImageResponseCardButtonArgs.builder
       builder.buttons(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingCodeHookPostCodeHookSpecificationSuccessConditionalDefaultBranchResponseMessageGroupMessageImageResponseCardArgs.Builder)
     /**
      * @param buttons Configuration blocks for buttons that should be displayed on the response card. The arrangement of the buttons is determined by the platform that displays the button. See `button`.
@@ -6820,7 +6484,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingCodeHookPostCodeHookSpecificationSuccessConditionalDefaultBranchResponseMessageGroupMessageImageResponseCardButtonArgs.builder
       builder.buttons(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentClosingSettingConditionalConditionalBranchNextStepIntentSlotArgs.Builder)
     /**
      * @param value Configuration block for the current value of the slot. See `value`.
@@ -6831,7 +6494,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentClosingSettingConditionalConditionalBranchNextStepIntentSlotValueArgs.builder
       builder.value(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingCodeHookPostCodeHookSpecificationFailureNextStepIntentSlotArgs.Builder)
     /**
      * @param value Configuration block for the current value of the slot. See `value`.
@@ -6842,7 +6504,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingCodeHookPostCodeHookSpecificationFailureNextStepIntentSlotValueArgs.builder
       builder.value(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingConfirmationConditionalConditionalBranchResponseArgs.Builder)
     /**
      * @param messageGroups Configuration blocks for responses that Amazon Lex can send to the user. Amazon Lex chooses the actual response to send at runtime. See `messageGroup`.
@@ -6853,7 +6514,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingConfirmationConditionalConditionalBranchResponseMessageGroupArgs.builder
       builder.messageGroups(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingCodeHookPostCodeHookSpecificationTimeoutResponseMessageGroupVariationArgs.Builder)
     /**
      * @param customPayload Configuration block for a message in a custom format defined by the client application. See `customPayload`.
@@ -6891,7 +6551,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingCodeHookPostCodeHookSpecificationTimeoutResponseMessageGroupVariationSsmlMessageArgs.builder
       builder.ssmlMessage(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentClosingSettingConditionalConditionalBranchResponseArgs.Builder)
     /**
      * @param messageGroups Configuration blocks for responses that Amazon Lex can send to the user. Amazon Lex chooses the actual response to send at runtime. See `messageGroup`.
@@ -6902,7 +6561,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentClosingSettingConditionalConditionalBranchResponseMessageGroupArgs.builder
       builder.messageGroups(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsSlotValueElicitationSettingWaitAndContinueSpecificationWaitingResponseMessageGroupVariationArgs.Builder)
     def customPayload(args: Endofunction[com.pulumi.aws.lex.inputs.V2modelsSlotValueElicitationSettingWaitAndContinueSpecificationWaitingResponseMessageGroupVariationCustomPayloadArgs.Builder]):
         com.pulumi.aws.lex.inputs.V2modelsSlotValueElicitationSettingWaitAndContinueSpecificationWaitingResponseMessageGroupVariationArgs.Builder =
@@ -6924,14 +6582,12 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsSlotValueElicitationSettingWaitAndContinueSpecificationWaitingResponseMessageGroupVariationSsmlMessageArgs.builder
       builder.ssmlMessage(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.BotClarificationPromptArgs.Builder)
     def messages(args: Endofunction[com.pulumi.aws.lex.inputs.BotClarificationPromptMessageArgs.Builder]*):
         com.pulumi.aws.lex.inputs.BotClarificationPromptArgs.Builder =
       def argsBuilder = com.pulumi.aws.lex.inputs.BotClarificationPromptMessageArgs.builder
       builder.messages(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingConfirmationConditionalDefaultBranchResponseMessageGroupVariationArgs.Builder)
     /**
      * @param customPayload Configuration block for a message in a custom format defined by the client application. See `customPayload`.
@@ -6969,7 +6625,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingConfirmationConditionalDefaultBranchResponseMessageGroupVariationSsmlMessageArgs.builder
       builder.ssmlMessage(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationSuccessConditionalConditionalBranchResponseArgs.Builder)
     /**
      * @param messageGroups Configuration blocks for responses that Amazon Lex can send to the user. Amazon Lex chooses the actual response to send at runtime. See `messageGroup`.
@@ -6980,14 +6635,12 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationSuccessConditionalConditionalBranchResponseMessageGroupArgs.builder
       builder.messageGroups(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsSlotValueElicitationSettingWaitAndContinueSpecificationContinueResponseMessageGroupMessageImageResponseCardArgs.Builder)
     def buttons(args: Endofunction[com.pulumi.aws.lex.inputs.V2modelsSlotValueElicitationSettingWaitAndContinueSpecificationContinueResponseMessageGroupMessageImageResponseCardButtonArgs.Builder]*):
         com.pulumi.aws.lex.inputs.V2modelsSlotValueElicitationSettingWaitAndContinueSpecificationContinueResponseMessageGroupMessageImageResponseCardArgs.Builder =
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsSlotValueElicitationSettingWaitAndContinueSpecificationContinueResponseMessageGroupMessageImageResponseCardButtonArgs.builder
       builder.buttons(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationFailureResponseMessageGroupVariationImageResponseCardArgs.Builder)
     /**
      * @param buttons Configuration blocks for buttons that should be displayed on the response card. The arrangement of the buttons is determined by the platform that displays the button. See `button`.
@@ -6998,7 +6651,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationFailureResponseMessageGroupVariationImageResponseCardButtonArgs.builder
       builder.buttons(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingConfirmationConditionalDefaultBranchResponseMessageGroupMessageImageResponseCardArgs.Builder)
     /**
      * @param buttons Configuration blocks for buttons that should be displayed on the response card. The arrangement of the buttons is determined by the platform that displays the button. See `button`.
@@ -7009,7 +6661,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingConfirmationConditionalDefaultBranchResponseMessageGroupMessageImageResponseCardButtonArgs.builder
       builder.buttons(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationFailureResponseArgs.Builder)
     /**
      * @param messageGroups Configuration blocks for responses that Amazon Lex can send to the user. Amazon Lex chooses the actual response to send at runtime. See `messageGroup`.
@@ -7020,7 +6671,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationFailureResponseMessageGroupArgs.builder
       builder.messageGroups(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsSlotValueElicitationSettingDefaultValueSpecificationArgs.Builder)
     /**
      * @param defaultValueLists List of default values.
@@ -7033,7 +6683,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsSlotValueElicitationSettingDefaultValueSpecificationDefaultValueListArgs.builder
       builder.defaultValueLists(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationFailureConditionalConditionalBranchNextStepIntentArgs.Builder)
     /**
      * @param slots Configuration block for all of the slot value overrides for the intent. The name of the slot maps to the value of the slot. Slots that are not included in the map aren&#39;t overridden. See `slot`.
@@ -7044,7 +6693,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationFailureConditionalConditionalBranchNextStepIntentSlotArgs.builder
       builder.slots(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingCodeHookPostCodeHookSpecificationFailureNextStepIntentArgs.Builder)
     /**
      * @param slots Configuration block for all of the slot value overrides for the intent. The name of the slot maps to the value of the slot. Slots that are not included in the map aren&#39;t overridden. See `slot`.
@@ -7055,7 +6703,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingCodeHookPostCodeHookSpecificationFailureNextStepIntentSlotArgs.builder
       builder.slots(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingDeclinationConditionalDefaultBranchResponseMessageGroupMessageArgs.Builder)
     /**
      * @param customPayload Configuration block for a message in a custom format defined by the client application. See `customPayload`.
@@ -7093,7 +6740,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingDeclinationConditionalDefaultBranchResponseMessageGroupMessageSsmlMessageArgs.builder
       builder.ssmlMessage(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationSuccessConditionalConditionalBranchResponseMessageGroupMessageArgs.Builder)
     /**
      * @param customPayload Configuration block for a message in a custom format defined by the client application. See `customPayload`.
@@ -7131,7 +6777,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationSuccessConditionalConditionalBranchResponseMessageGroupMessageSsmlMessageArgs.builder
       builder.ssmlMessage(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingCodeHookPostCodeHookSpecificationSuccessConditionalConditionalBranchNextStepIntentArgs.Builder)
     /**
      * @param slots Configuration block for all of the slot value overrides for the intent. The name of the slot maps to the value of the slot. Slots that are not included in the map aren&#39;t overridden. See `slot`.
@@ -7142,7 +6787,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingCodeHookPostCodeHookSpecificationSuccessConditionalConditionalBranchNextStepIntentSlotArgs.builder
       builder.slots(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentClosingSettingConditionalConditionalBranchArgs.Builder)
     /**
      * @param condition Configuration block for the expression to evaluate. If the condition is true, the branch&#39;s actions are taken. See `condition`.
@@ -7171,7 +6815,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentClosingSettingConditionalConditionalBranchResponseArgs.builder
       builder.response(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingCodeHookPostCodeHookSpecificationSuccessResponseMessageGroupMessageArgs.Builder)
     /**
      * @param customPayload Configuration block for a message in a custom format defined by the client application. See `customPayload`.
@@ -7209,7 +6852,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingCodeHookPostCodeHookSpecificationSuccessResponseMessageGroupMessageSsmlMessageArgs.builder
       builder.ssmlMessage(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingConditionalDefaultBranchResponseArgs.Builder)
     /**
      * @param messageGroups Configuration blocks for responses that Amazon Lex can send to the user. Amazon Lex chooses the actual response to send at runtime. See `messageGroup`.
@@ -7220,7 +6862,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingConditionalDefaultBranchResponseMessageGroupArgs.builder
       builder.messageGroups(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingCodeHookPostCodeHookSpecificationSuccessResponseMessageGroupArgs.Builder)
     /**
      * @param message Configuration block for the primary message that Amazon Lex should send to the user. See `message`.
@@ -7240,7 +6881,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingCodeHookPostCodeHookSpecificationSuccessResponseMessageGroupVariationArgs.builder
       builder.variations(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsSlotValueElicitationSettingWaitAndContinueSpecificationStillWaitingResponseMessageGroupVariationArgs.Builder)
     def customPayload(args: Endofunction[com.pulumi.aws.lex.inputs.V2modelsSlotValueElicitationSettingWaitAndContinueSpecificationStillWaitingResponseMessageGroupVariationCustomPayloadArgs.Builder]):
         com.pulumi.aws.lex.inputs.V2modelsSlotValueElicitationSettingWaitAndContinueSpecificationStillWaitingResponseMessageGroupVariationArgs.Builder =
@@ -7262,7 +6902,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsSlotValueElicitationSettingWaitAndContinueSpecificationStillWaitingResponseMessageGroupVariationSsmlMessageArgs.builder
       builder.ssmlMessage(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingCodeHookPostCodeHookSpecificationTimeoutConditionalConditionalBranchResponseArgs.Builder)
     /**
      * @param messageGroups Configuration blocks for responses that Amazon Lex can send to the user. Amazon Lex chooses the actual response to send at runtime. See `messageGroup`.
@@ -7273,7 +6912,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingCodeHookPostCodeHookSpecificationTimeoutConditionalConditionalBranchResponseMessageGroupArgs.builder
       builder.messageGroups(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationSuccessConditionalConditionalBranchResponseMessageGroupVariationArgs.Builder)
     /**
      * @param customPayload Configuration block for a message in a custom format defined by the client application. See `customPayload`.
@@ -7311,7 +6949,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationSuccessConditionalConditionalBranchResponseMessageGroupVariationSsmlMessageArgs.builder
       builder.ssmlMessage(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingFailureConditionalArgs.Builder)
     /**
      * @param conditionalBranches Configuration blocks for conditional branches. A conditional branch is made up of a condition, a response and a next step. The response and next step are executed when the condition is true. See `conditionalBranch`.
@@ -7331,7 +6968,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingFailureConditionalDefaultBranchArgs.builder
       builder.defaultBranch(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationFailureResponseMessageGroupVariationArgs.Builder)
     /**
      * @param customPayload Configuration block for a message in a custom format defined by the client application. See `customPayload`.
@@ -7369,7 +7005,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationFailureResponseMessageGroupVariationSsmlMessageArgs.builder
       builder.ssmlMessage(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingPromptSpecificationMessageGroupVariationArgs.Builder)
     /**
      * @param customPayload Configuration block for a message in a custom format defined by the client application. See `customPayload`.
@@ -7407,7 +7042,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingPromptSpecificationMessageGroupVariationSsmlMessageArgs.builder
       builder.ssmlMessage(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsSlotValueElicitationSettingWaitAndContinueSpecificationWaitingResponseMessageGroupMessageArgs.Builder)
     def customPayload(args: Endofunction[com.pulumi.aws.lex.inputs.V2modelsSlotValueElicitationSettingWaitAndContinueSpecificationWaitingResponseMessageGroupMessageCustomPayloadArgs.Builder]):
         com.pulumi.aws.lex.inputs.V2modelsSlotValueElicitationSettingWaitAndContinueSpecificationWaitingResponseMessageGroupMessageArgs.Builder =
@@ -7429,7 +7063,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsSlotValueElicitationSettingWaitAndContinueSpecificationWaitingResponseMessageGroupMessageSsmlMessageArgs.builder
       builder.ssmlMessage(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentQnaIntentConfigurationBedrockModelConfigurationArgs.Builder)
     /**
      * @param guardrail Configuration block for the guardrail to use with the Bedrock model. See `guardrail`.
@@ -7440,7 +7073,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentQnaIntentConfigurationBedrockModelConfigurationGuardrailArgs.builder
       builder.guardrail(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationSuccessNextStepIntentArgs.Builder)
     /**
      * @param slots Configuration block for all of the slot value overrides for the intent. The name of the slot maps to the value of the slot. Slots that are not included in the map aren&#39;t overridden. See `slot`.
@@ -7451,7 +7083,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationSuccessNextStepIntentSlotArgs.builder
       builder.slots(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentClosingSettingConditionalDefaultBranchResponseMessageGroupMessageImageResponseCardArgs.Builder)
     /**
      * @param buttons Configuration blocks for buttons that should be displayed on the response card. The arrangement of the buttons is determined by the platform that displays the button. See `button`.
@@ -7462,7 +7093,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentClosingSettingConditionalDefaultBranchResponseMessageGroupMessageImageResponseCardButtonArgs.builder
       builder.buttons(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationTimeoutConditionalConditionalBranchResponseMessageGroupMessageArgs.Builder)
     /**
      * @param customPayload Configuration block for a message in a custom format defined by the client application. See `customPayload`.
@@ -7500,7 +7130,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationTimeoutConditionalConditionalBranchResponseMessageGroupMessageSsmlMessageArgs.builder
       builder.ssmlMessage(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingConfirmationConditionalConditionalBranchResponseMessageGroupVariationArgs.Builder)
     /**
      * @param customPayload Configuration block for a message in a custom format defined by the client application. See `customPayload`.
@@ -7538,7 +7167,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingConfirmationConditionalConditionalBranchResponseMessageGroupVariationSsmlMessageArgs.builder
       builder.ssmlMessage(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingCodeHookPostCodeHookSpecificationTimeoutConditionalDefaultBranchResponseMessageGroupVariationArgs.Builder)
     /**
      * @param customPayload Configuration block for a message in a custom format defined by the client application. See `customPayload`.
@@ -7576,7 +7204,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingCodeHookPostCodeHookSpecificationTimeoutConditionalDefaultBranchResponseMessageGroupVariationSsmlMessageArgs.builder
       builder.ssmlMessage(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentClosingSettingConditionalDefaultBranchArgs.Builder)
     /**
      * @param nextStep Configuration block for the next step in the conversation. See `nextStep`.
@@ -7596,7 +7223,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentClosingSettingConditionalDefaultBranchResponseArgs.builder
       builder.response(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentState.Builder)
     /**
      * @param closingSetting Configuration block for the response that Amazon Lex sends to the user when the intent is closed. See `closingSetting`.
@@ -7702,7 +7328,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingConditionalConditionalBranchNextStepIntentArgs.Builder)
     /**
      * @param slots Configuration block for all of the slot value overrides for the intent. The name of the slot maps to the value of the slot. Slots that are not included in the map aren&#39;t overridden. See `slot`.
@@ -7713,7 +7338,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingConditionalConditionalBranchNextStepIntentSlotArgs.builder
       builder.slots(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookFulfillmentUpdatesSpecificationUpdateResponseMessageGroupVariationArgs.Builder)
     /**
      * @param customPayload Configuration block for a message in a custom format defined by the client application. See `customPayload`.
@@ -7751,7 +7375,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookFulfillmentUpdatesSpecificationUpdateResponseMessageGroupVariationSsmlMessageArgs.builder
       builder.ssmlMessage(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationSuccessConditionalConditionalBranchNextStepArgs.Builder)
     /**
      * @param dialogAction Configuration block for action that the bot executes at runtime when the conversation reaches this step. See `dialogAction`.
@@ -7771,7 +7394,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationSuccessConditionalConditionalBranchNextStepIntentArgs.builder
       builder.intent(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingConfirmationConditionalConditionalBranchNextStepArgs.Builder)
     /**
      * @param dialogAction Configuration block for action that the bot executes at runtime when the conversation reaches this step. See `dialogAction`.
@@ -7791,7 +7413,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingConfirmationConditionalConditionalBranchNextStepIntentArgs.builder
       builder.intent(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationSuccessResponseMessageGroupVariationImageResponseCardArgs.Builder)
     /**
      * @param buttons Configuration blocks for buttons that should be displayed on the response card. The arrangement of the buttons is determined by the platform that displays the button. See `button`.
@@ -7802,7 +7423,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationSuccessResponseMessageGroupVariationImageResponseCardButtonArgs.builder
       builder.buttons(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingCodeHookPostCodeHookSpecificationSuccessConditionalDefaultBranchResponseMessageGroupArgs.Builder)
     /**
      * @param message Configuration block for the primary message that Amazon Lex should send to the user. See `message`.
@@ -7822,7 +7442,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingCodeHookPostCodeHookSpecificationSuccessConditionalDefaultBranchResponseMessageGroupVariationArgs.builder
       builder.variations(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingFailureConditionalDefaultBranchNextStepIntentArgs.Builder)
     /**
      * @param slots Configuration block for all of the slot value overrides for the intent. The name of the slot maps to the value of the slot. Slots that are not included in the map aren&#39;t overridden. See `slot`.
@@ -7833,7 +7452,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingFailureConditionalDefaultBranchNextStepIntentSlotArgs.builder
       builder.slots(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentClosingSettingConditionalConditionalBranchNextStepArgs.Builder)
     /**
      * @param dialogAction Configuration block for action that the bot executes at runtime when the conversation reaches this step. See `dialogAction`.
@@ -7853,7 +7471,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentClosingSettingConditionalConditionalBranchNextStepIntentArgs.builder
       builder.intent(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationSuccessNextStepIntentSlotArgs.Builder)
     /**
      * @param value Configuration block for the current value of the slot. See `value`.
@@ -7864,7 +7481,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationSuccessNextStepIntentSlotValueArgs.builder
       builder.value(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationFailureNextStepArgs.Builder)
     /**
      * @param dialogAction Configuration block for action that the bot executes at runtime when the conversation reaches this step. See `dialogAction`.
@@ -7884,7 +7500,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationFailureNextStepIntentArgs.builder
       builder.intent(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationSuccessConditionalDefaultBranchResponseMessageGroupArgs.Builder)
     /**
      * @param message Configuration block for the primary message that Amazon Lex should send to the user. See `message`.
@@ -7904,7 +7519,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationSuccessConditionalDefaultBranchResponseMessageGroupVariationArgs.builder
       builder.variations(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsSlotTypeExternalSourceSettingArgs.Builder)
     /**
      * @param grammarSlotTypeSettings Settings required for a slot type based on a grammar that you provide.
@@ -7916,7 +7530,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsSlotTypeExternalSourceSettingGrammarSlotTypeSettingArgs.builder
       builder.grammarSlotTypeSettings(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationSuccessConditionalDefaultBranchNextStepIntentArgs.Builder)
     /**
      * @param slots Configuration block for all of the slot value overrides for the intent. The name of the slot maps to the value of the slot. Slots that are not included in the map aren&#39;t overridden. See `slot`.
@@ -7927,7 +7540,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationSuccessConditionalDefaultBranchNextStepIntentSlotArgs.builder
       builder.slots(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentClosingSettingConditionalDefaultBranchResponseMessageGroupVariationArgs.Builder)
     /**
      * @param customPayload Configuration block for a message in a custom format defined by the client application. See `customPayload`.
@@ -7965,7 +7577,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentClosingSettingConditionalDefaultBranchResponseMessageGroupVariationSsmlMessageArgs.builder
       builder.ssmlMessage(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingConfirmationConditionalArgs.Builder)
     /**
      * @param conditionalBranches Configuration blocks for conditional branches. A conditional branch is made up of a condition, a response and a next step. The response and next step are executed when the condition is true. See `conditionalBranch`.
@@ -7985,7 +7596,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingConfirmationConditionalDefaultBranchArgs.builder
       builder.defaultBranch(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsSlotValueElicitationSettingWaitAndContinueSpecificationContinueResponseMessageGroupVariationArgs.Builder)
     def customPayload(args: Endofunction[com.pulumi.aws.lex.inputs.V2modelsSlotValueElicitationSettingWaitAndContinueSpecificationContinueResponseMessageGroupVariationCustomPayloadArgs.Builder]):
         com.pulumi.aws.lex.inputs.V2modelsSlotValueElicitationSettingWaitAndContinueSpecificationContinueResponseMessageGroupVariationArgs.Builder =
@@ -8007,7 +7617,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsSlotValueElicitationSettingWaitAndContinueSpecificationContinueResponseMessageGroupVariationSsmlMessageArgs.builder
       builder.ssmlMessage(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingDeclinationConditionalDefaultBranchArgs.Builder)
     /**
      * @param nextStep Configuration block for the next step in the conversation. See `nextStep`.
@@ -8027,7 +7636,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingDeclinationConditionalDefaultBranchResponseArgs.builder
       builder.response(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationTimeoutConditionalDefaultBranchNextStepIntentArgs.Builder)
     /**
      * @param slots Configuration block for all of the slot value overrides for the intent. The name of the slot maps to the value of the slot. Slots that are not included in the map aren&#39;t overridden. See `slot`.
@@ -8038,7 +7646,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationTimeoutConditionalDefaultBranchNextStepIntentSlotArgs.builder
       builder.slots(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingPromptSpecificationPromptAttemptsSpecificationArgs.Builder)
     /**
      * @param allowedInputTypes Configuration block for the allowed input types of the prompt attempt. See `allowedInputTypes`.
@@ -8067,7 +7674,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingPromptSpecificationPromptAttemptsSpecificationTextInputSpecificationArgs.builder
       builder.textInputSpecification(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingConditionalDefaultBranchNextStepArgs.Builder)
     /**
      * @param dialogAction Configuration block for action that the bot executes at runtime when the conversation reaches this step. See `dialogAction`.
@@ -8087,7 +7693,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingConditionalDefaultBranchNextStepIntentArgs.builder
       builder.intent(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingDeclinationResponseMessageGroupMessageImageResponseCardArgs.Builder)
     /**
      * @param buttons Configuration blocks for buttons that should be displayed on the response card. The arrangement of the buttons is determined by the platform that displays the button. See `button`.
@@ -8098,7 +7703,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingDeclinationResponseMessageGroupMessageImageResponseCardButtonArgs.builder
       builder.buttons(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsSlotTypeState.Builder)
     /**
      * @param compositeSlotTypeSettings Specifications for a composite slot type.
@@ -8146,7 +7750,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsSlotTypeValueSelectionSettingArgs.builder
       builder.valueSelectionSetting(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationFailureConditionalArgs.Builder)
     /**
      * @param conditionalBranches Configuration blocks for conditional branches. A conditional branch is made up of a condition, a response and a next step. The response and next step are executed when the condition is true. See `conditionalBranch`.
@@ -8166,14 +7769,12 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationFailureConditionalDefaultBranchArgs.builder
       builder.defaultBranch(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsSlotSubSlotSettingSlotSpecificationValueElicitationSettingWaitAndContinueSpecificationWaitingResponseMessageGroupVariationImageResponseCardArgs.Builder)
     def buttons(args: Endofunction[com.pulumi.aws.lex.inputs.V2modelsSlotSubSlotSettingSlotSpecificationValueElicitationSettingWaitAndContinueSpecificationWaitingResponseMessageGroupVariationImageResponseCardButtonArgs.Builder]*):
         com.pulumi.aws.lex.inputs.V2modelsSlotSubSlotSettingSlotSpecificationValueElicitationSettingWaitAndContinueSpecificationWaitingResponseMessageGroupVariationImageResponseCardArgs.Builder =
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsSlotSubSlotSettingSlotSpecificationValueElicitationSettingWaitAndContinueSpecificationWaitingResponseMessageGroupVariationImageResponseCardButtonArgs.builder
       builder.buttons(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingInitialResponseMessageGroupMessageImageResponseCardArgs.Builder)
     /**
      * @param buttons Configuration blocks for buttons that should be displayed on the response card. The arrangement of the buttons is determined by the platform that displays the button. See `button`.
@@ -8184,7 +7785,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingInitialResponseMessageGroupMessageImageResponseCardButtonArgs.builder
       builder.buttons(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationFailureConditionalConditionalBranchResponseMessageGroupMessageImageResponseCardArgs.Builder)
     /**
      * @param buttons Configuration blocks for buttons that should be displayed on the response card. The arrangement of the buttons is determined by the platform that displays the button. See `button`.
@@ -8195,7 +7795,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationFailureConditionalConditionalBranchResponseMessageGroupMessageImageResponseCardButtonArgs.builder
       builder.buttons(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationTimeoutConditionalDefaultBranchResponseMessageGroupMessageImageResponseCardArgs.Builder)
     /**
      * @param buttons Configuration blocks for buttons that should be displayed on the response card. The arrangement of the buttons is determined by the platform that displays the button. See `button`.
@@ -8206,7 +7805,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationTimeoutConditionalDefaultBranchResponseMessageGroupMessageImageResponseCardButtonArgs.builder
       builder.buttons(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingCodeHookPostCodeHookSpecificationTimeoutConditionalConditionalBranchNextStepArgs.Builder)
     /**
      * @param dialogAction Configuration block for action that the bot executes at runtime when the conversation reaches this step. See `dialogAction`.
@@ -8226,7 +7824,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingCodeHookPostCodeHookSpecificationTimeoutConditionalConditionalBranchNextStepIntentArgs.builder
       builder.intent(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationTimeoutNextStepArgs.Builder)
     /**
      * @param dialogAction Configuration block for action that the bot executes at runtime when the conversation reaches this step. See `dialogAction`.
@@ -8246,7 +7843,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationTimeoutNextStepIntentArgs.builder
       builder.intent(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingFailureResponseMessageGroupMessageImageResponseCardArgs.Builder)
     /**
      * @param buttons Configuration blocks for buttons that should be displayed on the response card. The arrangement of the buttons is determined by the platform that displays the button. See `button`.
@@ -8257,7 +7853,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingFailureResponseMessageGroupMessageImageResponseCardButtonArgs.builder
       builder.buttons(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentQnaIntentConfigurationDataSourceConfigurationArgs.Builder)
     /**
      * @param bedrockKnowledgeStoreConfiguration Configuration block for Amazon Bedrock Knowledge Base as a data source. See `bedrockKnowledgeStoreConfiguration`.
@@ -8286,7 +7881,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentQnaIntentConfigurationDataSourceConfigurationOpensearchConfigurationArgs.builder
       builder.opensearchConfiguration(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingInitialResponseMessageGroupMessageArgs.Builder)
     /**
      * @param customPayload Configuration block for a message in a custom format defined by the client application. See `customPayload`.
@@ -8324,7 +7918,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingInitialResponseMessageGroupMessageSsmlMessageArgs.builder
       builder.ssmlMessage(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingCodeHookPostCodeHookSpecificationTimeoutConditionalDefaultBranchResponseMessageGroupMessageImageResponseCardArgs.Builder)
     /**
      * @param buttons Configuration blocks for buttons that should be displayed on the response card. The arrangement of the buttons is determined by the platform that displays the button. See `button`.
@@ -8335,7 +7928,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingCodeHookPostCodeHookSpecificationTimeoutConditionalDefaultBranchResponseMessageGroupMessageImageResponseCardButtonArgs.builder
       builder.buttons(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationTimeoutConditionalDefaultBranchArgs.Builder)
     /**
      * @param nextStep Configuration block for the next step in the conversation. See `nextStep`.
@@ -8355,7 +7947,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationTimeoutConditionalDefaultBranchResponseArgs.builder
       builder.response(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsSlotSubSlotSettingSlotSpecificationValueElicitationSettingWaitAndContinueSpecificationStillWaitingResponseMessageGroupMessageArgs.Builder)
     def customPayload(args: Endofunction[com.pulumi.aws.lex.inputs.V2modelsSlotSubSlotSettingSlotSpecificationValueElicitationSettingWaitAndContinueSpecificationStillWaitingResponseMessageGroupMessageCustomPayloadArgs.Builder]):
         com.pulumi.aws.lex.inputs.V2modelsSlotSubSlotSettingSlotSpecificationValueElicitationSettingWaitAndContinueSpecificationStillWaitingResponseMessageGroupMessageArgs.Builder =
@@ -8377,14 +7968,12 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsSlotSubSlotSettingSlotSpecificationValueElicitationSettingWaitAndContinueSpecificationStillWaitingResponseMessageGroupMessageSsmlMessageArgs.builder
       builder.ssmlMessage(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.IntentConclusionStatementArgs.Builder)
     def messages(args: Endofunction[com.pulumi.aws.lex.inputs.IntentConclusionStatementMessageArgs.Builder]*):
         com.pulumi.aws.lex.inputs.IntentConclusionStatementArgs.Builder =
       def argsBuilder = com.pulumi.aws.lex.inputs.IntentConclusionStatementMessageArgs.builder
       builder.messages(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentClosingSettingClosingResponseMessageGroupMessageImageResponseCardArgs.Builder)
     /**
      * @param buttons Configuration blocks for buttons that should be displayed on the response card. The arrangement of the buttons is determined by the platform that displays the button. See `button`.
@@ -8395,14 +7984,12 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentClosingSettingClosingResponseMessageGroupMessageImageResponseCardButtonArgs.builder
       builder.buttons(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsSlotValueElicitationSettingPromptSpecificationMessageGroupMessageImageResponseCardArgs.Builder)
     def buttons(args: Endofunction[com.pulumi.aws.lex.inputs.V2modelsSlotValueElicitationSettingPromptSpecificationMessageGroupMessageImageResponseCardButtonArgs.Builder]*):
         com.pulumi.aws.lex.inputs.V2modelsSlotValueElicitationSettingPromptSpecificationMessageGroupMessageImageResponseCardArgs.Builder =
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsSlotValueElicitationSettingPromptSpecificationMessageGroupMessageImageResponseCardButtonArgs.builder
       builder.buttons(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationSuccessConditionalDefaultBranchResponseArgs.Builder)
     /**
      * @param messageGroups Configuration blocks for responses that Amazon Lex can send to the user. Amazon Lex chooses the actual response to send at runtime. See `messageGroup`.
@@ -8413,21 +8000,18 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationSuccessConditionalDefaultBranchResponseMessageGroupArgs.builder
       builder.messageGroups(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsSlotSubSlotSettingSlotSpecificationValueElicitationSettingWaitAndContinueSpecificationStillWaitingResponseMessageGroupVariationImageResponseCardArgs.Builder)
     def buttons(args: Endofunction[com.pulumi.aws.lex.inputs.V2modelsSlotSubSlotSettingSlotSpecificationValueElicitationSettingWaitAndContinueSpecificationStillWaitingResponseMessageGroupVariationImageResponseCardButtonArgs.Builder]*):
         com.pulumi.aws.lex.inputs.V2modelsSlotSubSlotSettingSlotSpecificationValueElicitationSettingWaitAndContinueSpecificationStillWaitingResponseMessageGroupVariationImageResponseCardArgs.Builder =
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsSlotSubSlotSettingSlotSpecificationValueElicitationSettingWaitAndContinueSpecificationStillWaitingResponseMessageGroupVariationImageResponseCardButtonArgs.builder
       builder.buttons(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsSlotValueElicitationSettingPromptSpecificationMessageGroupVariationImageResponseCardArgs.Builder)
     def buttons(args: Endofunction[com.pulumi.aws.lex.inputs.V2modelsSlotValueElicitationSettingPromptSpecificationMessageGroupVariationImageResponseCardButtonArgs.Builder]*):
         com.pulumi.aws.lex.inputs.V2modelsSlotValueElicitationSettingPromptSpecificationMessageGroupVariationImageResponseCardArgs.Builder =
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsSlotValueElicitationSettingPromptSpecificationMessageGroupVariationImageResponseCardButtonArgs.builder
       builder.buttons(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationFailureConditionalConditionalBranchResponseArgs.Builder)
     /**
      * @param messageGroups Configuration blocks for responses that Amazon Lex can send to the user. Amazon Lex chooses the actual response to send at runtime. See `messageGroup`.
@@ -8438,7 +8022,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationFailureConditionalConditionalBranchResponseMessageGroupArgs.builder
       builder.messageGroups(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsSlotSubSlotSettingSlotSpecificationValueElicitationSettingWaitAndContinueSpecificationContinueResponseMessageGroupMessageArgs.Builder)
     def customPayload(args: Endofunction[com.pulumi.aws.lex.inputs.V2modelsSlotSubSlotSettingSlotSpecificationValueElicitationSettingWaitAndContinueSpecificationContinueResponseMessageGroupMessageCustomPayloadArgs.Builder]):
         com.pulumi.aws.lex.inputs.V2modelsSlotSubSlotSettingSlotSpecificationValueElicitationSettingWaitAndContinueSpecificationContinueResponseMessageGroupMessageArgs.Builder =
@@ -8460,7 +8043,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsSlotSubSlotSettingSlotSpecificationValueElicitationSettingWaitAndContinueSpecificationContinueResponseMessageGroupMessageSsmlMessageArgs.builder
       builder.ssmlMessage(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsSlotSubSlotSettingSlotSpecificationValueElicitationSettingPromptSpecificationPromptAttemptsSpecificationAudioAndDtmfInputSpecificationArgs.Builder)
     def audioSpecification(args: Endofunction[com.pulumi.aws.lex.inputs.V2modelsSlotSubSlotSettingSlotSpecificationValueElicitationSettingPromptSpecificationPromptAttemptsSpecificationAudioAndDtmfInputSpecificationAudioSpecificationArgs.Builder]):
         com.pulumi.aws.lex.inputs.V2modelsSlotSubSlotSettingSlotSpecificationValueElicitationSettingPromptSpecificationPromptAttemptsSpecificationAudioAndDtmfInputSpecificationArgs.Builder =
@@ -8472,7 +8054,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsSlotSubSlotSettingSlotSpecificationValueElicitationSettingPromptSpecificationPromptAttemptsSpecificationAudioAndDtmfInputSpecificationDtmfSpecificationArgs.builder
       builder.dtmfSpecification(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationFailureConditionalDefaultBranchResponseMessageGroupVariationImageResponseCardArgs.Builder)
     /**
      * @param buttons Configuration blocks for buttons that should be displayed on the response card. The arrangement of the buttons is determined by the platform that displays the button. See `button`.
@@ -8483,7 +8064,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationFailureConditionalDefaultBranchResponseMessageGroupVariationImageResponseCardButtonArgs.builder
       builder.buttons(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingCodeHookPostCodeHookSpecificationSuccessResponseArgs.Builder)
     /**
      * @param messageGroups Configuration blocks for responses that Amazon Lex can send to the user. Amazon Lex chooses the actual response to send at runtime. See `messageGroup`.
@@ -8494,7 +8074,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingCodeHookPostCodeHookSpecificationSuccessResponseMessageGroupArgs.builder
       builder.messageGroups(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingCodeHookPostCodeHookSpecificationTimeoutResponseMessageGroupArgs.Builder)
     /**
      * @param message Configuration block for the primary message that Amazon Lex should send to the user. See `message`.
@@ -8514,7 +8093,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingCodeHookPostCodeHookSpecificationTimeoutResponseMessageGroupVariationArgs.builder
       builder.variations(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingDeclinationConditionalConditionalBranchResponseMessageGroupArgs.Builder)
     /**
      * @param message Configuration block for the primary message that Amazon Lex should send to the user. See `message`.
@@ -8534,7 +8112,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingDeclinationConditionalConditionalBranchResponseMessageGroupVariationArgs.builder
       builder.variations(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationTimeoutConditionalDefaultBranchArgs.Builder)
     /**
      * @param nextStep Configuration block for the next step in the conversation. See `nextStep`.
@@ -8554,7 +8131,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationTimeoutConditionalDefaultBranchResponseArgs.builder
       builder.response(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingConfirmationResponseMessageGroupArgs.Builder)
     /**
      * @param message Configuration block for the primary message that Amazon Lex should send to the user. See `message`.
@@ -8574,7 +8150,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingConfirmationResponseMessageGroupVariationArgs.builder
       builder.variations(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingInitialResponseMessageGroupVariationArgs.Builder)
     /**
      * @param customPayload Configuration block for a message in a custom format defined by the client application. See `customPayload`.
@@ -8612,7 +8187,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingInitialResponseMessageGroupVariationSsmlMessageArgs.builder
       builder.ssmlMessage(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingCodeHookPostCodeHookSpecificationTimeoutConditionalConditionalBranchResponseMessageGroupMessageArgs.Builder)
     /**
      * @param customPayload Configuration block for a message in a custom format defined by the client application. See `customPayload`.
@@ -8650,14 +8224,12 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingCodeHookPostCodeHookSpecificationTimeoutConditionalConditionalBranchResponseMessageGroupMessageSsmlMessageArgs.builder
       builder.ssmlMessage(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.IntentConfirmationPromptArgs.Builder)
     def messages(args: Endofunction[com.pulumi.aws.lex.inputs.IntentConfirmationPromptMessageArgs.Builder]*):
         com.pulumi.aws.lex.inputs.IntentConfirmationPromptArgs.Builder =
       def argsBuilder = com.pulumi.aws.lex.inputs.IntentConfirmationPromptMessageArgs.builder
       builder.messages(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsSlotValueElicitationSettingPromptSpecificationPromptAttemptsSpecificationAudioAndDtmfInputSpecificationArgs.Builder)
     def audioSpecification(args: Endofunction[com.pulumi.aws.lex.inputs.V2modelsSlotValueElicitationSettingPromptSpecificationPromptAttemptsSpecificationAudioAndDtmfInputSpecificationAudioSpecificationArgs.Builder]):
         com.pulumi.aws.lex.inputs.V2modelsSlotValueElicitationSettingPromptSpecificationPromptAttemptsSpecificationAudioAndDtmfInputSpecificationArgs.Builder =
@@ -8669,7 +8241,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsSlotValueElicitationSettingPromptSpecificationPromptAttemptsSpecificationAudioAndDtmfInputSpecificationDtmfSpecificationArgs.builder
       builder.dtmfSpecification(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationFailureConditionalDefaultBranchNextStepIntentSlotArgs.Builder)
     /**
      * @param value Configuration block for the current value of the slot. See `value`.
@@ -8680,7 +8251,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationFailureConditionalDefaultBranchNextStepIntentSlotValueArgs.builder
       builder.value(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingConditionalDefaultBranchResponseMessageGroupVariationArgs.Builder)
     /**
      * @param customPayload Configuration block for a message in a custom format defined by the client application. See `customPayload`.
@@ -8718,7 +8288,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingConditionalDefaultBranchResponseMessageGroupVariationSsmlMessageArgs.builder
       builder.ssmlMessage(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingConfirmationConditionalDefaultBranchResponseMessageGroupArgs.Builder)
     /**
      * @param message Configuration block for the primary message that Amazon Lex should send to the user. See `message`.
@@ -8738,7 +8307,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingConfirmationConditionalDefaultBranchResponseMessageGroupVariationArgs.builder
       builder.variations(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationSuccessConditionalDefaultBranchResponseMessageGroupVariationArgs.Builder)
     /**
      * @param customPayload Configuration block for a message in a custom format defined by the client application. See `customPayload`.
@@ -8776,7 +8344,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationSuccessConditionalDefaultBranchResponseMessageGroupVariationSsmlMessageArgs.builder
       builder.ssmlMessage(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingConditionalConditionalBranchResponseMessageGroupMessageImageResponseCardArgs.Builder)
     /**
      * @param buttons Configuration blocks for buttons that should be displayed on the response card. The arrangement of the buttons is determined by the platform that displays the button. See `button`.
@@ -8787,7 +8354,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingConditionalConditionalBranchResponseMessageGroupMessageImageResponseCardButtonArgs.builder
       builder.buttons(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationTimeoutConditionalDefaultBranchResponseMessageGroupVariationImageResponseCardArgs.Builder)
     /**
      * @param buttons Configuration blocks for buttons that should be displayed on the response card. The arrangement of the buttons is determined by the platform that displays the button. See `button`.
@@ -8798,7 +8364,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationTimeoutConditionalDefaultBranchResponseMessageGroupVariationImageResponseCardButtonArgs.builder
       builder.buttons(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsSlotSubSlotSettingSlotSpecificationValueElicitationSettingPromptSpecificationArgs.Builder)
     def messageGroups(args: Endofunction[com.pulumi.aws.lex.inputs.V2modelsSlotSubSlotSettingSlotSpecificationValueElicitationSettingPromptSpecificationMessageGroupArgs.Builder]*):
         com.pulumi.aws.lex.inputs.V2modelsSlotSubSlotSettingSlotSpecificationValueElicitationSettingPromptSpecificationArgs.Builder =
@@ -8810,7 +8375,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsSlotSubSlotSettingSlotSpecificationValueElicitationSettingPromptSpecificationPromptAttemptsSpecificationArgs.builder
       builder.promptAttemptsSpecifications(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsSlotValueElicitationSettingWaitAndContinueSpecificationContinueResponseMessageGroupArgs.Builder)
     /**
      * @param message Configuration block for the primary message that Amazon Lex should send to the user.
@@ -8833,7 +8397,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsSlotValueElicitationSettingWaitAndContinueSpecificationContinueResponseMessageGroupVariationArgs.builder
       builder.variations(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentClosingSettingClosingResponseMessageGroupArgs.Builder)
     /**
      * @param message Configuration block for the primary message that Amazon Lex should send to the user. See `message`.
@@ -8853,7 +8416,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentClosingSettingClosingResponseMessageGroupVariationArgs.builder
       builder.variations(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingCodeHookPostCodeHookSpecificationSuccessNextStepIntentArgs.Builder)
     /**
      * @param slots Configuration block for all of the slot value overrides for the intent. The name of the slot maps to the value of the slot. Slots that are not included in the map aren&#39;t overridden. See `slot`.
@@ -8864,7 +8426,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingCodeHookPostCodeHookSpecificationSuccessNextStepIntentSlotArgs.builder
       builder.slots(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.BotAliasConversationLogsArgs.Builder)
     /**
      * @param logSettings The settings for your conversation logs. You can log text, audio, or both. Attributes are documented under log_settings.
@@ -8875,7 +8436,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.BotAliasConversationLogsLogSettingArgs.builder
       builder.logSettings(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationTimeoutConditionalConditionalBranchNextStepIntentSlotArgs.Builder)
     /**
      * @param value Configuration block for the current value of the slot. See `value`.
@@ -8886,7 +8446,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationTimeoutConditionalConditionalBranchNextStepIntentSlotValueArgs.builder
       builder.value(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingNextStepIntentSlotArgs.Builder)
     /**
      * @param value Configuration block for the current value of the slot. See `value`.
@@ -8897,7 +8456,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingNextStepIntentSlotValueArgs.builder
       builder.value(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingCodeHookPostCodeHookSpecificationTimeoutConditionalDefaultBranchArgs.Builder)
     /**
      * @param nextStep Configuration block for the next step in the conversation. See `nextStep`.
@@ -8917,7 +8475,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingCodeHookPostCodeHookSpecificationTimeoutConditionalDefaultBranchResponseArgs.builder
       builder.response(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingCodeHookPostCodeHookSpecificationTimeoutConditionalConditionalBranchNextStepIntentArgs.Builder)
     /**
      * @param slots Configuration block for all of the slot value overrides for the intent. The name of the slot maps to the value of the slot. Slots that are not included in the map aren&#39;t overridden. See `slot`.
@@ -8928,7 +8485,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingCodeHookPostCodeHookSpecificationTimeoutConditionalConditionalBranchNextStepIntentSlotArgs.builder
       builder.slots(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.IntentState.Builder)
     /**
      * @param conclusionStatement The statement that you want Amazon Lex to convey to the user
@@ -9009,7 +8565,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.IntentSlotArgs.builder
       builder.slots(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingCodeHookPostCodeHookSpecificationSuccessNextStepArgs.Builder)
     /**
      * @param dialogAction Configuration block for action that the bot executes at runtime when the conversation reaches this step. See `dialogAction`.
@@ -9029,7 +8584,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingCodeHookPostCodeHookSpecificationSuccessNextStepIntentArgs.builder
       builder.intent(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationFailureConditionalDefaultBranchResponseMessageGroupVariationImageResponseCardArgs.Builder)
     /**
      * @param buttons Configuration blocks for buttons that should be displayed on the response card. The arrangement of the buttons is determined by the platform that displays the button. See `button`.
@@ -9040,7 +8594,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationFailureConditionalDefaultBranchResponseMessageGroupVariationImageResponseCardButtonArgs.builder
       builder.buttons(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookFulfillmentUpdatesSpecificationUpdateResponseMessageGroupArgs.Builder)
     /**
      * @param message Configuration block for the primary message that Amazon Lex should send to the user. See `message`.
@@ -9060,7 +8613,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookFulfillmentUpdatesSpecificationUpdateResponseMessageGroupVariationArgs.builder
       builder.variations(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationTimeoutConditionalConditionalBranchResponseMessageGroupVariationImageResponseCardArgs.Builder)
     /**
      * @param buttons Configuration blocks for buttons that should be displayed on the response card. The arrangement of the buttons is determined by the platform that displays the button. See `button`.
@@ -9071,7 +8623,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationTimeoutConditionalConditionalBranchResponseMessageGroupVariationImageResponseCardButtonArgs.builder
       builder.buttons(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationTimeoutConditionalDefaultBranchResponseMessageGroupArgs.Builder)
     /**
      * @param message Configuration block for the primary message that Amazon Lex should send to the user. See `message`.
@@ -9091,7 +8642,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationTimeoutConditionalDefaultBranchResponseMessageGroupVariationArgs.builder
       builder.variations(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationFailureConditionalConditionalBranchNextStepArgs.Builder)
     /**
      * @param dialogAction Configuration block for action that the bot executes at runtime when the conversation reaches this step. See `dialogAction`.
@@ -9111,7 +8661,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationFailureConditionalConditionalBranchNextStepIntentArgs.builder
       builder.intent(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingDeclinationConditionalConditionalBranchResponseMessageGroupVariationArgs.Builder)
     /**
      * @param customPayload Configuration block for a message in a custom format defined by the client application. See `customPayload`.
@@ -9149,7 +8698,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingDeclinationConditionalConditionalBranchResponseMessageGroupVariationSsmlMessageArgs.builder
       builder.ssmlMessage(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingCodeHookPostCodeHookSpecificationSuccessResponseMessageGroupVariationArgs.Builder)
     /**
      * @param customPayload Configuration block for a message in a custom format defined by the client application. See `customPayload`.
@@ -9187,7 +8735,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingCodeHookPostCodeHookSpecificationSuccessResponseMessageGroupVariationSsmlMessageArgs.builder
       builder.ssmlMessage(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingCodeHookPostCodeHookSpecificationTimeoutConditionalDefaultBranchResponseMessageGroupArgs.Builder)
     /**
      * @param message Configuration block for the primary message that Amazon Lex should send to the user. See `message`.
@@ -9207,7 +8754,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingCodeHookPostCodeHookSpecificationTimeoutConditionalDefaultBranchResponseMessageGroupVariationArgs.builder
       builder.variations(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsSlotSubSlotSettingSlotSpecificationValueElicitationSettingArgs.Builder)
     /**
      * @param defaultValueSpecifications List of default values for a slot.
@@ -9244,7 +8790,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsSlotSubSlotSettingSlotSpecificationValueElicitationSettingWaitAndContinueSpecificationArgs.builder
       builder.waitAndContinueSpecifications(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationTimeoutResponseArgs.Builder)
     /**
      * @param messageGroups Configuration blocks for responses that Amazon Lex can send to the user. Amazon Lex chooses the actual response to send at runtime. See `messageGroup`.
@@ -9255,7 +8800,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationTimeoutResponseMessageGroupArgs.builder
       builder.messageGroups(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationTimeoutNextStepIntentArgs.Builder)
     /**
      * @param slots Configuration block for all of the slot value overrides for the intent. The name of the slot maps to the value of the slot. Slots that are not included in the map aren&#39;t overridden. See `slot`.
@@ -9266,7 +8810,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationTimeoutNextStepIntentSlotArgs.builder
       builder.slots(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationTimeoutConditionalArgs.Builder)
     /**
      * @param conditionalBranches Configuration blocks for conditional branches. A conditional branch is made up of a condition, a response and a next step. The response and next step are executed when the condition is true. See `conditionalBranch`.
@@ -9286,7 +8829,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationTimeoutConditionalDefaultBranchArgs.builder
       builder.defaultBranch(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationSuccessConditionalDefaultBranchNextStepArgs.Builder)
     /**
      * @param dialogAction Configuration block for action that the bot executes at runtime when the conversation reaches this step. See `dialogAction`.
@@ -9306,7 +8848,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationSuccessConditionalDefaultBranchNextStepIntentArgs.builder
       builder.intent(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationFailureConditionalConditionalBranchResponseMessageGroupVariationImageResponseCardArgs.Builder)
     /**
      * @param buttons Configuration blocks for buttons that should be displayed on the response card. The arrangement of the buttons is determined by the platform that displays the button. See `button`.
@@ -9317,7 +8858,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationFailureConditionalConditionalBranchResponseMessageGroupVariationImageResponseCardButtonArgs.builder
       builder.buttons(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingConfirmationConditionalConditionalBranchResponseMessageGroupMessageArgs.Builder)
     /**
      * @param customPayload Configuration block for a message in a custom format defined by the client application. See `customPayload`.
@@ -9355,7 +8895,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingConfirmationConditionalConditionalBranchResponseMessageGroupMessageSsmlMessageArgs.builder
       builder.ssmlMessage(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingPromptSpecificationMessageGroupMessageImageResponseCardArgs.Builder)
     /**
      * @param buttons Configuration blocks for buttons that should be displayed on the response card. The arrangement of the buttons is determined by the platform that displays the button. See `button`.
@@ -9366,7 +8905,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingPromptSpecificationMessageGroupMessageImageResponseCardButtonArgs.builder
       builder.buttons(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsSlotSubSlotSettingSlotSpecificationValueElicitationSettingWaitAndContinueSpecificationStillWaitingResponseMessageGroupVariationArgs.Builder)
     def customPayload(args: Endofunction[com.pulumi.aws.lex.inputs.V2modelsSlotSubSlotSettingSlotSpecificationValueElicitationSettingWaitAndContinueSpecificationStillWaitingResponseMessageGroupVariationCustomPayloadArgs.Builder]):
         com.pulumi.aws.lex.inputs.V2modelsSlotSubSlotSettingSlotSpecificationValueElicitationSettingWaitAndContinueSpecificationStillWaitingResponseMessageGroupVariationArgs.Builder =
@@ -9388,7 +8926,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsSlotSubSlotSettingSlotSpecificationValueElicitationSettingWaitAndContinueSpecificationStillWaitingResponseMessageGroupVariationSsmlMessageArgs.builder
       builder.ssmlMessage(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationFailureNextStepIntentArgs.Builder)
     /**
      * @param slots Configuration block for all of the slot value overrides for the intent. The name of the slot maps to the value of the slot. Slots that are not included in the map aren&#39;t overridden. See `slot`.
@@ -9399,7 +8936,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationFailureNextStepIntentSlotArgs.builder
       builder.slots(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationTimeoutConditionalConditionalBranchArgs.Builder)
     /**
      * @param condition Configuration block for the expression to evaluate. If the condition is true, the branch&#39;s actions are taken. See `condition`.
@@ -9428,7 +8964,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationTimeoutConditionalConditionalBranchResponseArgs.builder
       builder.response(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationTimeoutConditionalConditionalBranchArgs.Builder)
     /**
      * @param condition Configuration block for the expression to evaluate. If the condition is true, the branch&#39;s actions are taken. See `condition`.
@@ -9457,7 +8992,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationTimeoutConditionalConditionalBranchResponseArgs.builder
       builder.response(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingCodeHookPostCodeHookSpecificationSuccessConditionalDefaultBranchResponseMessageGroupMessageArgs.Builder)
     /**
      * @param customPayload Configuration block for a message in a custom format defined by the client application. See `customPayload`.
@@ -9495,7 +9029,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingCodeHookPostCodeHookSpecificationSuccessConditionalDefaultBranchResponseMessageGroupMessageSsmlMessageArgs.builder
       builder.ssmlMessage(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingFailureConditionalDefaultBranchNextStepIntentSlotArgs.Builder)
     /**
      * @param value Configuration block for the current value of the slot. See `value`.
@@ -9506,7 +9039,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingFailureConditionalDefaultBranchNextStepIntentSlotValueArgs.builder
       builder.value(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingCodeHookPostCodeHookSpecificationFailureConditionalArgs.Builder)
     /**
      * @param conditionalBranches Configuration blocks for conditional branches. A conditional branch is made up of a condition, a response and a next step. The response and next step are executed when the condition is true. See `conditionalBranch`.
@@ -9526,7 +9058,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingCodeHookPostCodeHookSpecificationFailureConditionalDefaultBranchArgs.builder
       builder.defaultBranch(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentClosingSettingConditionalDefaultBranchResponseMessageGroupArgs.Builder)
     /**
      * @param message Configuration block for the primary message that Amazon Lex should send to the user. See `message`.
@@ -9546,7 +9077,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentClosingSettingConditionalDefaultBranchResponseMessageGroupVariationArgs.builder
       builder.variations(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentQnaIntentConfigurationArgs.Builder)
     /**
      * @param bedrockModelConfiguration Configuration block for the Amazon Bedrock model to use for generating responses. See `bedrockModelConfiguration`.
@@ -9566,7 +9096,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentQnaIntentConfigurationDataSourceConfigurationArgs.builder
       builder.dataSourceConfiguration(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingConditionalConditionalBranchResponseMessageGroupArgs.Builder)
     /**
      * @param message Configuration block for the primary message that Amazon Lex should send to the user. See `message`.
@@ -9586,7 +9115,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingConditionalConditionalBranchResponseMessageGroupVariationArgs.builder
       builder.variations(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingCodeHookPostCodeHookSpecificationSuccessConditionalConditionalBranchResponseMessageGroupVariationImageResponseCardArgs.Builder)
     /**
      * @param buttons Configuration blocks for buttons that should be displayed on the response card. The arrangement of the buttons is determined by the platform that displays the button. See `button`.
@@ -9597,7 +9125,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingCodeHookPostCodeHookSpecificationSuccessConditionalConditionalBranchResponseMessageGroupVariationImageResponseCardButtonArgs.builder
       builder.buttons(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsSlotSubSlotSettingSlotSpecificationValueElicitationSettingPromptSpecificationMessageGroupMessageArgs.Builder)
     def customPayload(args: Endofunction[com.pulumi.aws.lex.inputs.V2modelsSlotSubSlotSettingSlotSpecificationValueElicitationSettingPromptSpecificationMessageGroupMessageCustomPayloadArgs.Builder]):
         com.pulumi.aws.lex.inputs.V2modelsSlotSubSlotSettingSlotSpecificationValueElicitationSettingPromptSpecificationMessageGroupMessageArgs.Builder =
@@ -9619,7 +9146,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsSlotSubSlotSettingSlotSpecificationValueElicitationSettingPromptSpecificationMessageGroupMessageSsmlMessageArgs.builder
       builder.ssmlMessage(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationSuccessResponseMessageGroupMessageArgs.Builder)
     /**
      * @param customPayload Configuration block for a message in a custom format defined by the client application. See `customPayload`.
@@ -9657,7 +9183,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationSuccessResponseMessageGroupMessageSsmlMessageArgs.builder
       builder.ssmlMessage(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationFailureConditionalDefaultBranchResponseMessageGroupArgs.Builder)
     /**
      * @param message Configuration block for the primary message that Amazon Lex should send to the user. See `message`.
@@ -9677,7 +9202,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationFailureConditionalDefaultBranchResponseMessageGroupVariationArgs.builder
       builder.variations(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationFailureConditionalConditionalBranchResponseMessageGroupVariationArgs.Builder)
     /**
      * @param customPayload Configuration block for a message in a custom format defined by the client application. See `customPayload`.
@@ -9715,7 +9239,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationFailureConditionalConditionalBranchResponseMessageGroupVariationSsmlMessageArgs.builder
       builder.ssmlMessage(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsSlotValueElicitationSettingPromptSpecificationPromptAttemptsSpecificationArgs.Builder)
     def allowedInputTypes(args: Endofunction[com.pulumi.aws.lex.inputs.V2modelsSlotValueElicitationSettingPromptSpecificationPromptAttemptsSpecificationAllowedInputTypesArgs.Builder]):
         com.pulumi.aws.lex.inputs.V2modelsSlotValueElicitationSettingPromptSpecificationPromptAttemptsSpecificationArgs.Builder =
@@ -9732,7 +9255,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsSlotValueElicitationSettingPromptSpecificationPromptAttemptsSpecificationTextInputSpecificationArgs.builder
       builder.textInputSpecification(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationTimeoutConditionalConditionalBranchResponseMessageGroupVariationArgs.Builder)
     /**
      * @param customPayload Configuration block for a message in a custom format defined by the client application. See `customPayload`.
@@ -9770,7 +9292,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationTimeoutConditionalConditionalBranchResponseMessageGroupVariationSsmlMessageArgs.builder
       builder.ssmlMessage(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingCodeHookPostCodeHookSpecificationTimeoutConditionalConditionalBranchArgs.Builder)
     /**
      * @param condition Configuration block for the expression to evaluate. If the condition is true, the branch&#39;s actions are taken. See `condition`.
@@ -9799,7 +9320,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingCodeHookPostCodeHookSpecificationTimeoutConditionalConditionalBranchResponseArgs.builder
       builder.response(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationTimeoutConditionalDefaultBranchResponseMessageGroupVariationImageResponseCardArgs.Builder)
     /**
      * @param buttons Configuration blocks for buttons that should be displayed on the response card. The arrangement of the buttons is determined by the platform that displays the button. See `button`.
@@ -9810,7 +9330,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationTimeoutConditionalDefaultBranchResponseMessageGroupVariationImageResponseCardButtonArgs.builder
       builder.buttons(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingCodeHookPostCodeHookSpecificationSuccessConditionalConditionalBranchResponseMessageGroupMessageArgs.Builder)
     /**
      * @param customPayload Configuration block for a message in a custom format defined by the client application. See `customPayload`.
@@ -9848,7 +9367,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingCodeHookPostCodeHookSpecificationSuccessConditionalConditionalBranchResponseMessageGroupMessageSsmlMessageArgs.builder
       builder.ssmlMessage(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentClosingSettingClosingResponseMessageGroupVariationArgs.Builder)
     /**
      * @param customPayload Configuration block for a message in a custom format defined by the client application. See `customPayload`.
@@ -9886,7 +9404,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentClosingSettingClosingResponseMessageGroupVariationSsmlMessageArgs.builder
       builder.ssmlMessage(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationSuccessConditionalDefaultBranchResponseMessageGroupMessageImageResponseCardArgs.Builder)
     /**
      * @param buttons Configuration blocks for buttons that should be displayed on the response card. The arrangement of the buttons is determined by the platform that displays the button. See `button`.
@@ -9897,7 +9414,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationSuccessConditionalDefaultBranchResponseMessageGroupMessageImageResponseCardButtonArgs.builder
       builder.buttons(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentClosingSettingConditionalDefaultBranchResponseArgs.Builder)
     /**
      * @param messageGroups Configuration blocks for responses that Amazon Lex can send to the user. Amazon Lex chooses the actual response to send at runtime. See `messageGroup`.
@@ -9908,7 +9424,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentClosingSettingConditionalDefaultBranchResponseMessageGroupArgs.builder
       builder.messageGroups(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationTimeoutResponseMessageGroupMessageArgs.Builder)
     /**
      * @param customPayload Configuration block for a message in a custom format defined by the client application. See `customPayload`.
@@ -9946,7 +9461,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationTimeoutResponseMessageGroupMessageSsmlMessageArgs.builder
       builder.ssmlMessage(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationSuccessResponseMessageGroupVariationArgs.Builder)
     /**
      * @param customPayload Configuration block for a message in a custom format defined by the client application. See `customPayload`.
@@ -9984,7 +9498,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationSuccessResponseMessageGroupVariationSsmlMessageArgs.builder
       builder.ssmlMessage(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsSlotSubSlotSettingSlotSpecificationValueElicitationSettingWaitAndContinueSpecificationContinueResponseArgs.Builder)
     /**
      * @param messageGroups Configuration blocks for responses that Amazon Lex can send to the user.
@@ -9997,7 +9510,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsSlotSubSlotSettingSlotSpecificationValueElicitationSettingWaitAndContinueSpecificationContinueResponseMessageGroupArgs.builder
       builder.messageGroups(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingCodeHookPostCodeHookSpecificationSuccessConditionalConditionalBranchResponseMessageGroupArgs.Builder)
     /**
      * @param message Configuration block for the primary message that Amazon Lex should send to the user. See `message`.
@@ -10017,7 +9529,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingCodeHookPostCodeHookSpecificationSuccessConditionalConditionalBranchResponseMessageGroupVariationArgs.builder
       builder.variations(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingNextStepArgs.Builder)
     /**
      * @param dialogAction Configuration block for action that the bot executes at runtime when the conversation reaches this step. See `dialogAction`.
@@ -10037,7 +9548,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingNextStepIntentArgs.builder
       builder.intent(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingCodeHookPostCodeHookSpecificationFailureConditionalConditionalBranchResponseMessageGroupVariationArgs.Builder)
     /**
      * @param customPayload Configuration block for a message in a custom format defined by the client application. See `customPayload`.
@@ -10075,7 +9585,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingCodeHookPostCodeHookSpecificationFailureConditionalConditionalBranchResponseMessageGroupVariationSsmlMessageArgs.builder
       builder.ssmlMessage(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingDeclinationConditionalDefaultBranchResponseArgs.Builder)
     /**
      * @param messageGroups Configuration blocks for responses that Amazon Lex can send to the user. Amazon Lex chooses the actual response to send at runtime. See `messageGroup`.
@@ -10086,7 +9595,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingDeclinationConditionalDefaultBranchResponseMessageGroupArgs.builder
       builder.messageGroups(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationTimeoutConditionalConditionalBranchNextStepIntentArgs.Builder)
     /**
      * @param slots Configuration block for all of the slot value overrides for the intent. The name of the slot maps to the value of the slot. Slots that are not included in the map aren&#39;t overridden. See `slot`.
@@ -10097,7 +9605,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationTimeoutConditionalConditionalBranchNextStepIntentSlotArgs.builder
       builder.slots(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationSuccessNextStepArgs.Builder)
     /**
      * @param dialogAction Configuration block for action that the bot executes at runtime when the conversation reaches this step. See `dialogAction`.
@@ -10117,7 +9624,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationSuccessNextStepIntentArgs.builder
       builder.intent(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationFailureResponseMessageGroupArgs.Builder)
     /**
      * @param message Configuration block for the primary message that Amazon Lex should send to the user. See `message`.
@@ -10137,7 +9643,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationFailureResponseMessageGroupVariationArgs.builder
       builder.variations(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationSuccessConditionalConditionalBranchResponseMessageGroupArgs.Builder)
     /**
      * @param message Configuration block for the primary message that Amazon Lex should send to the user. See `message`.
@@ -10157,7 +9662,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationSuccessConditionalConditionalBranchResponseMessageGroupVariationArgs.builder
       builder.variations(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingDeclinationConditionalConditionalBranchNextStepArgs.Builder)
     /**
      * @param dialogAction Configuration block for action that the bot executes at runtime when the conversation reaches this step. See `dialogAction`.
@@ -10177,7 +9681,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingDeclinationConditionalConditionalBranchNextStepIntentArgs.builder
       builder.intent(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationTimeoutConditionalConditionalBranchNextStepArgs.Builder)
     /**
      * @param dialogAction Configuration block for action that the bot executes at runtime when the conversation reaches this step. See `dialogAction`.
@@ -10197,7 +9700,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationTimeoutConditionalConditionalBranchNextStepIntentArgs.builder
       builder.intent(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingConditionalConditionalBranchResponseMessageGroupMessageArgs.Builder)
     /**
      * @param customPayload Configuration block for a message in a custom format defined by the client application. See `customPayload`.
@@ -10235,7 +9737,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingConditionalConditionalBranchResponseMessageGroupMessageSsmlMessageArgs.builder
       builder.ssmlMessage(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingCodeHookPostCodeHookSpecificationTimeoutConditionalConditionalBranchResponseMessageGroupArgs.Builder)
     /**
      * @param message Configuration block for the primary message that Amazon Lex should send to the user. See `message`.
@@ -10255,7 +9756,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingCodeHookPostCodeHookSpecificationTimeoutConditionalConditionalBranchResponseMessageGroupVariationArgs.builder
       builder.variations(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookFulfillmentUpdatesSpecificationUpdateResponseMessageGroupVariationImageResponseCardArgs.Builder)
     /**
      * @param buttons Configuration blocks for buttons that should be displayed on the response card. The arrangement of the buttons is determined by the platform that displays the button. See `button`.
@@ -10266,7 +9766,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookFulfillmentUpdatesSpecificationUpdateResponseMessageGroupVariationImageResponseCardButtonArgs.builder
       builder.buttons(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookFulfillmentUpdatesSpecificationUpdateResponseMessageGroupMessageImageResponseCardArgs.Builder)
     /**
      * @param buttons Configuration blocks for buttons that should be displayed on the response card. The arrangement of the buttons is determined by the platform that displays the button. See `button`.
@@ -10277,7 +9776,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookFulfillmentUpdatesSpecificationUpdateResponseMessageGroupMessageImageResponseCardButtonArgs.builder
       builder.buttons(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingCodeHookPostCodeHookSpecificationTimeoutConditionalConditionalBranchResponseMessageGroupMessageImageResponseCardArgs.Builder)
     /**
      * @param buttons Configuration blocks for buttons that should be displayed on the response card. The arrangement of the buttons is determined by the platform that displays the button. See `button`.
@@ -10288,7 +9786,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingCodeHookPostCodeHookSpecificationTimeoutConditionalConditionalBranchResponseMessageGroupMessageImageResponseCardButtonArgs.builder
       builder.buttons(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationFailureConditionalDefaultBranchResponseArgs.Builder)
     /**
      * @param messageGroups Configuration blocks for responses that Amazon Lex can send to the user. Amazon Lex chooses the actual response to send at runtime. See `messageGroup`.
@@ -10299,7 +9796,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationFailureConditionalDefaultBranchResponseMessageGroupArgs.builder
       builder.messageGroups(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingCodeHookPostCodeHookSpecificationFailureConditionalDefaultBranchNextStepArgs.Builder)
     /**
      * @param dialogAction Configuration block for action that the bot executes at runtime when the conversation reaches this step. See `dialogAction`.
@@ -10319,7 +9815,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingCodeHookPostCodeHookSpecificationFailureConditionalDefaultBranchNextStepIntentArgs.builder
       builder.intent(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentClosingSettingConditionalConditionalBranchResponseMessageGroupVariationImageResponseCardArgs.Builder)
     /**
      * @param buttons Configuration blocks for buttons that should be displayed on the response card. The arrangement of the buttons is determined by the platform that displays the button. See `button`.
@@ -10330,7 +9825,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentClosingSettingConditionalConditionalBranchResponseMessageGroupVariationImageResponseCardButtonArgs.builder
       builder.buttons(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsSlotSubSlotSettingSlotSpecificationValueElicitationSettingWaitAndContinueSpecificationStillWaitingResponseMessageGroupArgs.Builder)
     /**
      * @param message Configuration block for the primary message that Amazon Lex should send to the user.
@@ -10353,7 +9847,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsSlotSubSlotSettingSlotSpecificationValueElicitationSettingWaitAndContinueSpecificationStillWaitingResponseMessageGroupVariationArgs.builder
       builder.variations(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationFailureNextStepIntentSlotArgs.Builder)
     /**
      * @param value Configuration block for the current value of the slot. See `value`.
@@ -10364,7 +9857,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationFailureNextStepIntentSlotValueArgs.builder
       builder.value(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingFailureConditionalDefaultBranchResponseMessageGroupVariationArgs.Builder)
     /**
      * @param customPayload Configuration block for a message in a custom format defined by the client application. See `customPayload`.
@@ -10402,7 +9894,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingFailureConditionalDefaultBranchResponseMessageGroupVariationSsmlMessageArgs.builder
       builder.ssmlMessage(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationSuccessConditionalDefaultBranchResponseMessageGroupVariationImageResponseCardArgs.Builder)
     /**
      * @param buttons Configuration blocks for buttons that should be displayed on the response card. The arrangement of the buttons is determined by the platform that displays the button. See `button`.
@@ -10413,7 +9904,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationSuccessConditionalDefaultBranchResponseMessageGroupVariationImageResponseCardButtonArgs.builder
       builder.buttons(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationTimeoutConditionalConditionalBranchResponseMessageGroupArgs.Builder)
     /**
      * @param message Configuration block for the primary message that Amazon Lex should send to the user. See `message`.
@@ -10433,7 +9923,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationTimeoutConditionalConditionalBranchResponseMessageGroupVariationArgs.builder
       builder.variations(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationFailureConditionalDefaultBranchArgs.Builder)
     /**
      * @param nextStep Configuration block for the next step in the conversation. See `nextStep`.
@@ -10453,7 +9942,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationFailureConditionalDefaultBranchResponseArgs.builder
       builder.response(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationSuccessConditionalDefaultBranchNextStepIntentSlotArgs.Builder)
     /**
      * @param value Configuration block for the current value of the slot. See `value`.
@@ -10464,7 +9952,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationSuccessConditionalDefaultBranchNextStepIntentSlotValueArgs.builder
       builder.value(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingDeclinationConditionalDefaultBranchNextStepArgs.Builder)
     /**
      * @param dialogAction Configuration block for action that the bot executes at runtime when the conversation reaches this step. See `dialogAction`.
@@ -10484,7 +9971,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingDeclinationConditionalDefaultBranchNextStepIntentArgs.builder
       builder.intent(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationSuccessResponseArgs.Builder)
     /**
      * @param messageGroups Configuration blocks for responses that Amazon Lex can send to the user. Amazon Lex chooses the actual response to send at runtime. See `messageGroup`.
@@ -10495,7 +9981,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationSuccessResponseMessageGroupArgs.builder
       builder.messageGroups(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentClosingSettingNextStepArgs.Builder)
     /**
      * @param dialogAction Configuration block for action that the bot executes at runtime when the conversation reaches this step. See `dialogAction`.
@@ -10515,7 +10000,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentClosingSettingNextStepIntentArgs.builder
       builder.intent(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsSlotState.Builder)
     /**
      * @param multipleValuesSettings Whether the slot returns multiple values in one response.
@@ -10558,7 +10042,7 @@ object lex:
      *  This will cause Terraform to report differences.
      *  Use the `valueElicitationSetting` configuration above in the `valueElicitationSetting` example to avoid differences resulting from AWS default configurations.
      *  See the `valueElicitationSetting` argument reference below.
-     *  
+     * 
      *  The following arguments are optional:
      * @return builder
      */
@@ -10567,7 +10051,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsSlotValueElicitationSettingArgs.builder
       builder.valueElicitationSetting(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingConditionalDefaultBranchResponseMessageGroupMessageImageResponseCardArgs.Builder)
     /**
      * @param buttons Configuration blocks for buttons that should be displayed on the response card. The arrangement of the buttons is determined by the platform that displays the button. See `button`.
@@ -10578,7 +10061,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingConditionalDefaultBranchResponseMessageGroupMessageImageResponseCardButtonArgs.builder
       builder.buttons(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingDeclinationConditionalConditionalBranchResponseArgs.Builder)
     /**
      * @param messageGroups Configuration blocks for responses that Amazon Lex can send to the user. Amazon Lex chooses the actual response to send at runtime. See `messageGroup`.
@@ -10589,7 +10071,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingDeclinationConditionalConditionalBranchResponseMessageGroupArgs.builder
       builder.messageGroups(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationTimeoutConditionalConditionalBranchResponseArgs.Builder)
     /**
      * @param messageGroups Configuration blocks for responses that Amazon Lex can send to the user. Amazon Lex chooses the actual response to send at runtime. See `messageGroup`.
@@ -10600,7 +10081,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationTimeoutConditionalConditionalBranchResponseMessageGroupArgs.builder
       builder.messageGroups(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingDeclinationConditionalDefaultBranchResponseMessageGroupVariationImageResponseCardArgs.Builder)
     /**
      * @param buttons Configuration blocks for buttons that should be displayed on the response card. The arrangement of the buttons is determined by the platform that displays the button. See `button`.
@@ -10611,7 +10091,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingDeclinationConditionalDefaultBranchResponseMessageGroupVariationImageResponseCardButtonArgs.builder
       builder.buttons(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentClosingSettingNextStepIntentArgs.Builder)
     /**
      * @param slots Configuration block for all of the slot value overrides for the intent. The name of the slot maps to the value of the slot. Slots that are not included in the map aren&#39;t overridden. See `slot`.
@@ -10622,21 +10101,18 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentClosingSettingNextStepIntentSlotArgs.builder
       builder.slots(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsSlotSubSlotSettingSlotSpecificationValueElicitationSettingPromptSpecificationMessageGroupVariationImageResponseCardArgs.Builder)
     def buttons(args: Endofunction[com.pulumi.aws.lex.inputs.V2modelsSlotSubSlotSettingSlotSpecificationValueElicitationSettingPromptSpecificationMessageGroupVariationImageResponseCardButtonArgs.Builder]*):
         com.pulumi.aws.lex.inputs.V2modelsSlotSubSlotSettingSlotSpecificationValueElicitationSettingPromptSpecificationMessageGroupVariationImageResponseCardArgs.Builder =
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsSlotSubSlotSettingSlotSpecificationValueElicitationSettingPromptSpecificationMessageGroupVariationImageResponseCardButtonArgs.builder
       builder.buttons(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsSlotSubSlotSettingSlotSpecificationValueElicitationSettingWaitAndContinueSpecificationContinueResponseMessageGroupVariationImageResponseCardArgs.Builder)
     def buttons(args: Endofunction[com.pulumi.aws.lex.inputs.V2modelsSlotSubSlotSettingSlotSpecificationValueElicitationSettingWaitAndContinueSpecificationContinueResponseMessageGroupVariationImageResponseCardButtonArgs.Builder]*):
         com.pulumi.aws.lex.inputs.V2modelsSlotSubSlotSettingSlotSpecificationValueElicitationSettingWaitAndContinueSpecificationContinueResponseMessageGroupVariationImageResponseCardArgs.Builder =
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsSlotSubSlotSettingSlotSpecificationValueElicitationSettingWaitAndContinueSpecificationContinueResponseMessageGroupVariationImageResponseCardButtonArgs.builder
       builder.buttons(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentClosingSettingNextStepIntentSlotArgs.Builder)
     /**
      * @param value Configuration block for the current value of the slot. See `value`.
@@ -10647,7 +10123,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentClosingSettingNextStepIntentSlotValueArgs.builder
       builder.value(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentClosingSettingConditionalDefaultBranchResponseMessageGroupVariationImageResponseCardArgs.Builder)
     /**
      * @param buttons Configuration blocks for buttons that should be displayed on the response card. The arrangement of the buttons is determined by the platform that displays the button. See `button`.
@@ -10658,7 +10133,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentClosingSettingConditionalDefaultBranchResponseMessageGroupVariationImageResponseCardButtonArgs.builder
       builder.buttons(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentClosingSettingConditionalDefaultBranchNextStepArgs.Builder)
     /**
      * @param dialogAction Configuration block for action that the bot executes at runtime when the conversation reaches this step. See `dialogAction`.
@@ -10678,7 +10152,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentClosingSettingConditionalDefaultBranchNextStepIntentArgs.builder
       builder.intent(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationSuccessConditionalArgs.Builder)
     /**
      * @param conditionalBranches Configuration blocks for conditional branches. A conditional branch is made up of a condition, a response and a next step. The response and next step are executed when the condition is true. See `conditionalBranch`.
@@ -10698,7 +10171,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationSuccessConditionalDefaultBranchArgs.builder
       builder.defaultBranch(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingCodeHookPostCodeHookSpecificationSuccessConditionalDefaultBranchNextStepIntentArgs.Builder)
     /**
      * @param slots Configuration block for all of the slot value overrides for the intent. The name of the slot maps to the value of the slot. Slots that are not included in the map aren&#39;t overridden. See `slot`.
@@ -10709,7 +10181,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingCodeHookPostCodeHookSpecificationSuccessConditionalDefaultBranchNextStepIntentSlotArgs.builder
       builder.slots(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingDeclinationConditionalConditionalBranchNextStepIntentArgs.Builder)
     /**
      * @param slots Configuration block for all of the slot value overrides for the intent. The name of the slot maps to the value of the slot. Slots that are not included in the map aren&#39;t overridden. See `slot`.
@@ -10720,7 +10191,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingDeclinationConditionalConditionalBranchNextStepIntentSlotArgs.builder
       builder.slots(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationFailureConditionalDefaultBranchArgs.Builder)
     /**
      * @param nextStep Configuration block for the next step in the conversation. See `nextStep`.
@@ -10740,7 +10210,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationFailureConditionalDefaultBranchResponseArgs.builder
       builder.response(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsSlotTypeSlotTypeValueArgs.Builder)
     /**
      * @param sampleValues Value of the slot type entry.
@@ -10762,7 +10231,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsSlotTypeSlotTypeValueSynonymArgs.builder
       builder.synonyms(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationTimeoutResponseMessageGroupMessageImageResponseCardArgs.Builder)
     /**
      * @param buttons Configuration blocks for buttons that should be displayed on the response card. The arrangement of the buttons is determined by the platform that displays the button. See `button`.
@@ -10773,7 +10241,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationTimeoutResponseMessageGroupMessageImageResponseCardButtonArgs.builder
       builder.buttons(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingCodeHookPostCodeHookSpecificationTimeoutConditionalConditionalBranchResponseMessageGroupVariationImageResponseCardArgs.Builder)
     /**
      * @param buttons Configuration blocks for buttons that should be displayed on the response card. The arrangement of the buttons is determined by the platform that displays the button. See `button`.
@@ -10784,7 +10251,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingCodeHookPostCodeHookSpecificationTimeoutConditionalConditionalBranchResponseMessageGroupVariationImageResponseCardButtonArgs.builder
       builder.buttons(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingConfirmationConditionalConditionalBranchNextStepIntentArgs.Builder)
     /**
      * @param slots Configuration block for all of the slot value overrides for the intent. The name of the slot maps to the value of the slot. Slots that are not included in the map aren&#39;t overridden. See `slot`.
@@ -10795,7 +10261,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingConfirmationConditionalConditionalBranchNextStepIntentSlotArgs.builder
       builder.slots(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingCodeHookPostCodeHookSpecificationFailureConditionalDefaultBranchResponseArgs.Builder)
     /**
      * @param messageGroups Configuration blocks for responses that Amazon Lex can send to the user. Amazon Lex chooses the actual response to send at runtime. See `messageGroup`.
@@ -10806,7 +10271,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingCodeHookPostCodeHookSpecificationFailureConditionalDefaultBranchResponseMessageGroupArgs.builder
       builder.messageGroups(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsSlotValueElicitationSettingArgs.Builder)
     /**
      * @param defaultValueSpecifications List of default values for a slot.
@@ -10853,7 +10317,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsSlotValueElicitationSettingWaitAndContinueSpecificationArgs.builder
       builder.waitAndContinueSpecifications(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationFailureConditionalDefaultBranchNextStepArgs.Builder)
     /**
      * @param dialogAction Configuration block for action that the bot executes at runtime when the conversation reaches this step. See `dialogAction`.
@@ -10873,7 +10336,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationFailureConditionalDefaultBranchNextStepIntentArgs.builder
       builder.intent(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationTimeoutConditionalDefaultBranchResponseMessageGroupVariationArgs.Builder)
     /**
      * @param customPayload Configuration block for a message in a custom format defined by the client application. See `customPayload`.
@@ -10911,7 +10373,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationTimeoutConditionalDefaultBranchResponseMessageGroupVariationSsmlMessageArgs.builder
       builder.ssmlMessage(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingCodeHookPostCodeHookSpecificationFailureConditionalConditionalBranchArgs.Builder)
     /**
      * @param condition Configuration block for the expression to evaluate. If the condition is true, the branch&#39;s actions are taken. See `condition`.
@@ -10940,7 +10401,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingCodeHookPostCodeHookSpecificationFailureConditionalConditionalBranchResponseArgs.builder
       builder.response(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationSuccessConditionalDefaultBranchResponseMessageGroupVariationImageResponseCardArgs.Builder)
     /**
      * @param buttons Configuration blocks for buttons that should be displayed on the response card. The arrangement of the buttons is determined by the platform that displays the button. See `button`.
@@ -10951,7 +10411,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationSuccessConditionalDefaultBranchResponseMessageGroupVariationImageResponseCardButtonArgs.builder
       builder.buttons(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingFailureConditionalConditionalBranchResponseMessageGroupMessageArgs.Builder)
     /**
      * @param customPayload Configuration block for a message in a custom format defined by the client application. See `customPayload`.
@@ -10989,7 +10448,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingFailureConditionalConditionalBranchResponseMessageGroupMessageSsmlMessageArgs.builder
       builder.ssmlMessage(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationTimeoutResponseMessageGroupVariationImageResponseCardArgs.Builder)
     /**
      * @param buttons Configuration blocks for buttons that should be displayed on the response card. The arrangement of the buttons is determined by the platform that displays the button. See `button`.
@@ -11000,7 +10458,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationTimeoutResponseMessageGroupVariationImageResponseCardButtonArgs.builder
       builder.buttons(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingConditionalDefaultBranchArgs.Builder)
     /**
      * @param nextStep Configuration block for the next step in the conversation. See `nextStep`.
@@ -11020,7 +10477,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingConditionalDefaultBranchResponseArgs.builder
       builder.response(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsSlotSubSlotSettingSlotSpecificationValueElicitationSettingWaitAndContinueSpecificationContinueResponseMessageGroupVariationArgs.Builder)
     def customPayload(args: Endofunction[com.pulumi.aws.lex.inputs.V2modelsSlotSubSlotSettingSlotSpecificationValueElicitationSettingWaitAndContinueSpecificationContinueResponseMessageGroupVariationCustomPayloadArgs.Builder]):
         com.pulumi.aws.lex.inputs.V2modelsSlotSubSlotSettingSlotSpecificationValueElicitationSettingWaitAndContinueSpecificationContinueResponseMessageGroupVariationArgs.Builder =
@@ -11042,7 +10498,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsSlotSubSlotSettingSlotSpecificationValueElicitationSettingWaitAndContinueSpecificationContinueResponseMessageGroupVariationSsmlMessageArgs.builder
       builder.ssmlMessage(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingConditionalArgs.Builder)
     /**
      * @param conditionalBranches Configuration blocks for conditional branches. A conditional branch is made up of a condition, a response and a next step. The response and next step are executed when the condition is true. See `conditionalBranch`.
@@ -11062,7 +10517,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingConditionalDefaultBranchArgs.builder
       builder.defaultBranch(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationFailureResponseMessageGroupMessageImageResponseCardArgs.Builder)
     /**
      * @param buttons Configuration blocks for buttons that should be displayed on the response card. The arrangement of the buttons is determined by the platform that displays the button. See `button`.
@@ -11073,7 +10527,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationFailureResponseMessageGroupMessageImageResponseCardButtonArgs.builder
       builder.buttons(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingCodeHookPostCodeHookSpecificationFailureConditionalDefaultBranchNextStepIntentSlotArgs.Builder)
     /**
      * @param value Configuration block for the current value of the slot. See `value`.
@@ -11084,7 +10537,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingCodeHookPostCodeHookSpecificationFailureConditionalDefaultBranchNextStepIntentSlotValueArgs.builder
       builder.value(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationFailureResponseMessageGroupArgs.Builder)
     /**
      * @param message Configuration block for the primary message that Amazon Lex should send to the user. See `message`.
@@ -11104,7 +10556,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationFailureResponseMessageGroupVariationArgs.builder
       builder.variations(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationSuccessConditionalConditionalBranchResponseMessageGroupVariationImageResponseCardArgs.Builder)
     /**
      * @param buttons Configuration blocks for buttons that should be displayed on the response card. The arrangement of the buttons is determined by the platform that displays the button. See `button`.
@@ -11115,7 +10566,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationSuccessConditionalConditionalBranchResponseMessageGroupVariationImageResponseCardButtonArgs.builder
       builder.buttons(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationFailureConditionalDefaultBranchResponseMessageGroupVariationArgs.Builder)
     /**
      * @param customPayload Configuration block for a message in a custom format defined by the client application. See `customPayload`.
@@ -11153,7 +10603,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationFailureConditionalDefaultBranchResponseMessageGroupVariationSsmlMessageArgs.builder
       builder.ssmlMessage(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationTimeoutNextStepIntentSlotArgs.Builder)
     /**
      * @param value Configuration block for the current value of the slot. See `value`.
@@ -11164,7 +10613,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationTimeoutNextStepIntentSlotValueArgs.builder
       builder.value(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingConditionalDefaultBranchResponseMessageGroupMessageArgs.Builder)
     /**
      * @param customPayload Configuration block for a message in a custom format defined by the client application. See `customPayload`.
@@ -11202,7 +10650,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingConditionalDefaultBranchResponseMessageGroupMessageSsmlMessageArgs.builder
       builder.ssmlMessage(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingDeclinationConditionalDefaultBranchNextStepIntentArgs.Builder)
     /**
      * @param slots Configuration block for all of the slot value overrides for the intent. The name of the slot maps to the value of the slot. Slots that are not included in the map aren&#39;t overridden. See `slot`.
@@ -11213,7 +10660,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingDeclinationConditionalDefaultBranchNextStepIntentSlotArgs.builder
       builder.slots(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingFailureResponseMessageGroupArgs.Builder)
     /**
      * @param message Configuration block for the primary message that Amazon Lex should send to the user. See `message`.
@@ -11233,14 +10679,12 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingFailureResponseMessageGroupVariationArgs.builder
       builder.variations(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.IntentRejectionStatementArgs.Builder)
     def messages(args: Endofunction[com.pulumi.aws.lex.inputs.IntentRejectionStatementMessageArgs.Builder]*):
         com.pulumi.aws.lex.inputs.IntentRejectionStatementArgs.Builder =
       def argsBuilder = com.pulumi.aws.lex.inputs.IntentRejectionStatementMessageArgs.builder
       builder.messages(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationFailureConditionalConditionalBranchArgs.Builder)
     /**
      * @param condition Configuration block for the expression to evaluate. If the condition is true, the branch&#39;s actions are taken. See `condition`.
@@ -11269,7 +10713,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentConfirmationSettingCodeHookPostCodeHookSpecificationFailureConditionalConditionalBranchResponseArgs.builder
       builder.response(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationFailureConditionalConditionalBranchArgs.Builder)
     /**
      * @param condition Configuration block for the expression to evaluate. If the condition is true, the branch&#39;s actions are taken. See `condition`.
@@ -11298,7 +10741,6 @@ object lex:
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentFulfillmentCodeHookPostFulfillmentStatusSpecificationFailureConditionalConditionalBranchResponseArgs.builder
       builder.response(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingCodeHookPostCodeHookSpecificationFailureResponseMessageGroupMessageImageResponseCardArgs.Builder)
     /**
      * @param buttons Configuration blocks for buttons that should be displayed on the response card. The arrangement of the buttons is determined by the platform that displays the button. See `button`.
@@ -11309,7 +10751,6 @@ object lex:
       def argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingCodeHookPostCodeHookSpecificationFailureResponseMessageGroupMessageImageResponseCardButtonArgs.builder
       builder.buttons(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingCodeHookPostCodeHookSpecificationFailureConditionalDefaultBranchArgs.Builder)
     /**
      * @param nextStep Configuration block for the next step in the conversation. See `nextStep`.
@@ -11328,5 +10769,3 @@ object lex:
         com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingCodeHookPostCodeHookSpecificationFailureConditionalDefaultBranchArgs.Builder =
       val argsBuilder = com.pulumi.aws.lex.inputs.V2modelsIntentInitialResponseSettingCodeHookPostCodeHookSpecificationFailureConditionalDefaultBranchResponseArgs.builder
       builder.response(args(argsBuilder).build)
-
-                       

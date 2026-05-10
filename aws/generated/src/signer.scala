@@ -8,7 +8,6 @@ object signer:
   def SigningProfilePermission(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.signer.SigningProfilePermissionArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.signer.SigningProfilePermissionArgs.builder
-    
     com.pulumi.aws.signer.SigningProfilePermission(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -17,7 +16,6 @@ object signer:
   def SigningJob(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.signer.SigningJobArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.signer.SigningJobArgs.builder
-    
     com.pulumi.aws.signer.SigningJob(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -70,7 +68,6 @@ object signer:
       val argsBuilder = com.pulumi.aws.signer.inputs.SigningJobSourceArgs.builder
       builder.source(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.signer.SigningProfileArgs.Builder)
     /**
      * @param signatureValidityPeriod The validity period for a signing job. See `signatureValidityPeriod` Block below for details.
@@ -93,7 +90,7 @@ object signer:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.signer.SigningProfileArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   /** Creates a Signer Signing Profile. A signing profile contains information about the code signing configuration parameters that can be used by a given code signing user. */
   def SigningProfile(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.signer.SigningProfileArgs.Builder])(using conf: KoPulumiConf) =
@@ -104,7 +101,6 @@ object signer:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.signer.SigningProfile(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -140,14 +136,13 @@ object signer:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.signer.inputs.SigningProfileState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.signer.inputs.SigningJobSignedObjectArgs.Builder)
     def s3s(args: Endofunction[com.pulumi.aws.signer.inputs.SigningJobSignedObjectS3Args.Builder]*):
         com.pulumi.aws.signer.inputs.SigningJobSignedObjectArgs.Builder =
       def argsBuilder = com.pulumi.aws.signer.inputs.SigningJobSignedObjectS3Args.builder
       builder.s3s(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.signer.inputs.SigningJobDestinationArgs.Builder)
     /**
      * @param s3 A configuration block describing the S3 Destination object: See S3 Destination below for details.
@@ -158,7 +153,6 @@ object signer:
       val argsBuilder = com.pulumi.aws.signer.inputs.SigningJobDestinationS3Args.builder
       builder.s3(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.signer.inputs.SigningJobSourceArgs.Builder)
     /**
      * @param s3 A configuration block describing the S3 Source object: See S3 Source below for details.
@@ -169,7 +163,6 @@ object signer:
       val argsBuilder = com.pulumi.aws.signer.inputs.SigningJobSourceS3Args.builder
       builder.s3(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.signer.inputs.SigningJobState.Builder)
     /**
      * @param destination The S3 bucket in which to save your signed object. See Destination below for details.
@@ -206,5 +199,3 @@ object signer:
         com.pulumi.aws.signer.inputs.SigningJobState.Builder =
       val argsBuilder = com.pulumi.aws.signer.inputs.SigningJobSourceArgs.builder
       builder.source(args(argsBuilder).build)
-
-                       

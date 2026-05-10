@@ -6,13 +6,12 @@ import com.pulumi.resources.CustomResourceOptions
 object cloudsearch:
   /**
    * Provides an CloudSearch domain service access policy resource.
-   *  
+   * 
    *  The provider waits for the domain service access policy to become `Active` when applying a configuration.
    */
   def DomainServiceAccessPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.cloudsearch.DomainServiceAccessPolicyArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.cloudsearch.DomainServiceAccessPolicyArgs.builder
-    
     com.pulumi.aws.cloudsearch.DomainServiceAccessPolicy(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -45,7 +44,6 @@ object cloudsearch:
       val argsBuilder = com.pulumi.aws.cloudsearch.inputs.DomainScalingParametersArgs.builder
       builder.scalingParameters(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.cloudsearch.inputs.DomainState.Builder)
     /**
      * @param endpointOptions Domain endpoint options. Documented below.
@@ -74,10 +72,9 @@ object cloudsearch:
       val argsBuilder = com.pulumi.aws.cloudsearch.inputs.DomainScalingParametersArgs.builder
       builder.scalingParameters(args(argsBuilder).build)
 
-                       
   /**
    * Provides an CloudSearch domain resource.
-   *  
+   * 
    *  The provider waits for the domain to become `Active` when applying a configuration.
    */
   def Domain(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
@@ -86,7 +83,6 @@ object cloudsearch:
     conf.logicalName2pysicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
       case None               =>
-    
     com.pulumi.aws.cloudsearch.Domain(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)

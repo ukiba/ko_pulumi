@@ -8,7 +8,6 @@ object amplify:
   def DomainAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.amplify.DomainAssociationArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.amplify.DomainAssociationArgs.builder
-    
     com.pulumi.aws.amplify.DomainAssociation(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -20,7 +19,6 @@ object amplify:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.amplify.Branch(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -65,7 +63,7 @@ object amplify:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.amplify.AppArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.amplify.DomainAssociationArgs.Builder)
     /**
      * @param certificateSettings The type of SSL/TLS certificate to use for your custom domain. If you don&#39;t specify a certificate type, Amplify uses the default certificate that it provisions and manages for you.
@@ -85,19 +83,17 @@ object amplify:
       def argsBuilder = com.pulumi.aws.amplify.inputs.DomainAssociationSubDomainArgs.builder
       builder.subDomains(args.map(_(argsBuilder).build)*)
 
-                       
   /** Provides an Amplify Webhook resource. */
   def Webhook(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.amplify.WebhookArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.amplify.WebhookArgs.builder
-    
     com.pulumi.aws.amplify.Webhook(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
   /**
    * Provides an Amplify App resource, a fullstack serverless app hosted on the [AWS Amplify Console](https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html).
-   *  
+   * 
    *  &gt; **Note:** When you create/update an Amplify App from the provider, you may end up with the error &#34;BadRequestException: You should at least provide one valid token&#34; because of authentication issues. See the section &#34;Repository with Tokens&#34; below.
    */
   def App(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
@@ -109,7 +105,6 @@ object amplify:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.amplify.App(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -118,7 +113,6 @@ object amplify:
   def BackendEnvironment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.amplify.BackendEnvironmentArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.amplify.BackendEnvironmentArgs.builder
-    
     com.pulumi.aws.amplify.BackendEnvironment(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -142,7 +136,6 @@ object amplify:
       def argsBuilder = com.pulumi.aws.amplify.inputs.DomainAssociationSubDomainArgs.builder
       builder.subDomains(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.amplify.inputs.AppState.Builder)
     /**
      * @param autoBranchCreationConfig Automated branch creation configuration for an Amplify app. See `autoBranchCreationConfig` Block for details.
@@ -192,4 +185,3 @@ object amplify:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.amplify.inputs.AppState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       

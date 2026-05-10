@@ -29,5 +29,3 @@ object vpn:
         com.pulumi.aws.vpn.inputs.GetConnectionArgs.Builder =
       def argsBuilder = com.pulumi.aws.vpn.inputs.GetConnectionFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
-
-                       

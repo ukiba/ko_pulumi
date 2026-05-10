@@ -11,7 +11,6 @@ object ebs:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.ebs.SnapshotCopy(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -23,7 +22,6 @@ object ebs:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.ebs.VolumeCopy(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -37,28 +35,26 @@ object ebs:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.ebs.VolumeCopyArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.ebs.FastSnapshotRestoreArgs.Builder)
     def timeouts(args: Endofunction[com.pulumi.aws.ebs.inputs.FastSnapshotRestoreTimeoutsArgs.Builder]):
         com.pulumi.aws.ebs.FastSnapshotRestoreArgs.Builder =
       val argsBuilder = com.pulumi.aws.ebs.inputs.FastSnapshotRestoreTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
-                       
   /**
    * Provides a resource to manage the default customer master key (CMK) that your AWS account uses to encrypt EBS volumes.
-   *  
+   * 
    *  Your AWS account has an AWS-managed default CMK that is used for encrypting an EBS volume when no CMK is specified in the API call that creates the volume.
    *  By using the `aws.ebs.DefaultKmsKey` resource, you can specify a customer-managed CMK to use in place of the AWS-managed default CMK.
-   *  
+   * 
    *  &gt; **NOTE:** Creating an `aws.ebs.DefaultKmsKey` resource does not enable default EBS encryption. Use the `aws.ebs.EncryptionByDefault` to enable default EBS encryption.
-   *  
+   * 
    *  &gt; **NOTE:** Destroying this resource will reset the default CMK to the account&#39;s AWS-managed default CMK for EBS.
    */
   def DefaultKmsKey(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ebs.DefaultKmsKeyArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.ebs.DefaultKmsKeyArgs.builder
-    
     com.pulumi.aws.ebs.DefaultKmsKey(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -67,7 +63,6 @@ object ebs:
   def FastSnapshotRestore(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ebs.FastSnapshotRestoreArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.ebs.FastSnapshotRestoreArgs.builder
-    
     com.pulumi.aws.ebs.FastSnapshotRestore(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -94,16 +89,15 @@ object ebs:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.ebs.SnapshotImportArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   /**
    * Provides a resource to manage whether default EBS encryption is enabled for your AWS account in the current AWS region. To manage the default KMS key for the region, see the `aws.ebs.DefaultKmsKey` resource.
-   *  
+   * 
    *  &gt; **NOTE:** Removing this resource disables default EBS encryption.
    */
   def EncryptionByDefault(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ebs.EncryptionByDefaultArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.ebs.EncryptionByDefaultArgs.builder
-    
     com.pulumi.aws.ebs.EncryptionByDefault(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -115,20 +109,18 @@ object ebs:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.ebs.Snapshot(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
   /**
    * Provides a resource to manage the state of the &#34;Block public access for snapshots&#34; setting on region level.
-   *  
+   * 
    *  &gt; **NOTE:** Removing this Terraform resource disables blocking.
    */
   def SnapshotBlockPublicAccess(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ebs.SnapshotBlockPublicAccessArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.ebs.SnapshotBlockPublicAccessArgs.builder
-    
     com.pulumi.aws.ebs.SnapshotBlockPublicAccess(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -152,7 +144,7 @@ object ebs:
 
     /**
      * `aws.ebs.getEbsVolumes` provides identifying information for EBS volumes matching given criteria.
-     *  
+     * 
      *  This data source can be useful for getting a list of volume IDs with (for example) matching tags.
      */
     def getEbsVolumes(args: Endofunction[com.pulumi.aws.ebs.inputs.GetEbsVolumesArgs.Builder] = identity):
@@ -162,7 +154,7 @@ object ebs:
 
     /**
      * `aws.ebs.getEbsVolumes` provides identifying information for EBS volumes matching given criteria.
-     *  
+     * 
      *  This data source can be useful for getting a list of volume IDs with (for example) matching tags.
      */
     def getEbsVolumesPlain(args: Endofunction[com.pulumi.aws.ebs.inputs.GetEbsVolumesPlainArgs.Builder] = identity):
@@ -237,7 +229,6 @@ object ebs:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.ebs.SnapshotImport(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -249,7 +240,6 @@ object ebs:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.ebs.Volume(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -264,7 +254,6 @@ object ebs:
       val argsBuilder = com.pulumi.aws.ebs.inputs.SnapshotImportDiskContainerUserBucketArgs.builder
       builder.userBucket(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.ebs.inputs.GetSnapshotArgs.Builder)
     /**
      * @param filters One or more name/value pairs to filter off of. There are several valid keys, for a full reference, check out [describe-snapshots in the AWS CLI reference][1].
@@ -278,7 +267,7 @@ object ebs:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.ebs.inputs.GetSnapshotArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.ebs.inputs.GetVolumeArgs.Builder)
     /**
      * @param filters One or more name/value pairs to filter off of. There are
@@ -294,7 +283,7 @@ object ebs:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.ebs.inputs.GetVolumeArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.ebs.inputs.SnapshotImportState.Builder)
     /**
      * @param clientData The client-specific data. Detailed below.
@@ -317,7 +306,7 @@ object ebs:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.ebs.inputs.SnapshotImportState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.ebs.inputs.GetEbsVolumesArgs.Builder)
     /**
      * @param filters Custom filter block as described below.
@@ -331,7 +320,7 @@ object ebs:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.ebs.inputs.GetEbsVolumesArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.ebs.inputs.VolumeCopyState.Builder)
     def timeouts(args: Endofunction[com.pulumi.aws.ebs.inputs.VolumeCopyTimeoutsArgs.Builder]):
         com.pulumi.aws.ebs.inputs.VolumeCopyState.Builder =
@@ -341,14 +330,13 @@ object ebs:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.ebs.inputs.VolumeCopyState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.ebs.inputs.FastSnapshotRestoreState.Builder)
     def timeouts(args: Endofunction[com.pulumi.aws.ebs.inputs.FastSnapshotRestoreTimeoutsArgs.Builder]):
         com.pulumi.aws.ebs.inputs.FastSnapshotRestoreState.Builder =
       val argsBuilder = com.pulumi.aws.ebs.inputs.FastSnapshotRestoreTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.ebs.inputs.GetSnapshotIdsArgs.Builder)
     /**
      * @param filters One or more name/value pairs to filter off of. There are several valid keys, for a full reference, check out [describe-volumes in the AWS CLI reference][1].
@@ -358,5 +346,3 @@ object ebs:
         com.pulumi.aws.ebs.inputs.GetSnapshotIdsArgs.Builder =
       def argsBuilder = com.pulumi.aws.ebs.inputs.GetSnapshotIdsFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
-
-                       

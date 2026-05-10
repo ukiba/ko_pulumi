@@ -14,7 +14,6 @@ object serverlessrepository:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.serverlessrepository.CloudFormationStack(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)

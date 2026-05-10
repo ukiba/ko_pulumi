@@ -11,7 +11,6 @@ object rds:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.rds.SnapshotCopy(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -26,7 +25,6 @@ object rds:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.rds.EventSubscription(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -38,7 +36,6 @@ object rds:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.rds.ShardGroup(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -49,7 +46,6 @@ object rds:
       val argsBuilder = com.pulumi.aws.rds.inputs.InstanceDesiredStateTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
-                       
   /** Provides an custom engine version (CEV) resource for Amazon RDS Custom. For additional information, see [Working with CEVs for RDS Custom for Oracle](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-cev.html) and [Working with CEVs for RDS Custom for SQL Server](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-cev-sqlserver.html) in the the [RDS User Guide](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Welcome.html). */
   def CustomDbEngineVersion(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.rds.CustomDbEngineVersionArgs.Builder])(using conf: KoPulumiConf) =
@@ -57,7 +53,6 @@ object rds:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.rds.CustomDbEngineVersion(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -69,7 +64,6 @@ object rds:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.rds.Integration(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -83,7 +77,7 @@ object rds:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.rds.ShardGroupArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   type RdsFunctions = com.pulumi.aws.rds.RdsFunctions
   object RdsFunctions:
     // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
@@ -127,7 +121,7 @@ object rds:
 
     /**
      * Use this data source to get information about a DB Cluster Snapshot for use when provisioning DB clusters.
-     *  
+     * 
      *  &gt; **NOTE:** This data source does not apply to snapshots created on DB Instances.
      *  See the `aws.rds.Snapshot` data source for DB Instance snapshots.
      */
@@ -138,7 +132,7 @@ object rds:
 
     /**
      * Use this data source to get information about a DB Cluster Snapshot for use when provisioning DB clusters.
-     *  
+     * 
      *  &gt; **NOTE:** This data source does not apply to snapshots created on DB Instances.
      *  See the `aws.rds.Snapshot` data source for DB Instance snapshots.
      */
@@ -273,7 +267,7 @@ object rds:
 
     /**
      * Use this data source to get information about a DB Snapshot for use when provisioning DB instances
-     *  
+     * 
      *  &gt; **NOTE:** This data source does not apply to snapshots created on Aurora DB clusters.
      *  See the `aws.rds.ClusterSnapshot` data source for DB Cluster snapshots.
      */
@@ -284,7 +278,7 @@ object rds:
 
     /**
      * Use this data source to get information about a DB Snapshot for use when provisioning DB instances
-     *  
+     * 
      *  &gt; **NOTE:** This data source does not apply to snapshots created on Aurora DB clusters.
      *  See the `aws.rds.ClusterSnapshot` data source for DB Cluster snapshots.
      */
@@ -318,18 +312,18 @@ object rds:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.rds.ProxyArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   /**
    * Provides an RDS DB parameter group resource. Documentation of the available parameters for various RDS engines can be found at:
-   *  
+   * 
    *  * [Aurora MySQL Parameters](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AuroraMySQL.Reference.html)
    *  * [Aurora PostgreSQL Parameters](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AuroraPostgreSQL.Reference.html)
    *  * [MariaDB Parameters](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Appendix.MariaDB.Parameters.html)
    *  * [Oracle Parameters](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ModifyInstance.Oracle.html#USER_ModifyInstance.Oracle.sqlnet)
    *  * [PostgreSQL Parameters](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Appendix.PostgreSQL.CommonDBATasks.html#Appendix.PostgreSQL.CommonDBATasks.Parameters)
-   *  
+   * 
    *  &gt; **Hands-on:** For an example of the `aws.rds.ParameterGroup` in use, follow the Manage AWS RDS Instances tutorial on HashiCorp Learn.
-   *  
+   * 
    *  &gt; **NOTE:** If you encounter a pulumi preview showing parameter changes after an apply (_i.e._, _perpetual diffs_), see the Problematic Plan Changes example below for additional guidance.
    */
   def ParameterGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
@@ -341,7 +335,6 @@ object rds:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.rds.ParameterGroup(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -380,7 +373,7 @@ object rds:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.rds.InstanceArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   /** Provides an RDS DB subnet group resource. */
   def SubnetGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.rds.SubnetGroupArgs.Builder])(using conf: KoPulumiConf) =
@@ -391,7 +384,6 @@ object rds:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.rds.SubnetGroup(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -409,18 +401,18 @@ object rds:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.rds.OptionGroupArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   /**
    * Provides a resource to manage an RDS DB proxy default target group resource.
-   *  
+   * 
    *  The `aws.rds.ProxyDefaultTargetGroup` behaves differently from normal resources, in that the provider does not _create_ or _destroy_ this resource, since it implicitly exists as part of an RDS DB Proxy. On the provider resource creation it is automatically imported and on resource destruction, the provider performs no actions in RDS.
-   *  
+   * 
    *  &gt; **NOTE:** When the associated `aws.rds.Proxy` resource is replaced, Terraform will lose track of this resource, causing unexpected differences on the next apply. To ensure proper dependency management, add a `lifecycle` block with `replaceTriggeredBy` referencing the `aws.rds.Proxy` resource&#39;s `id` attribute.
-   *  
+   * 
    *  ## Import
-   *  
+   * 
    *  Using `pulumi import`, import DB proxy default target groups using the `dbProxyName`. For example:
-   *  
+   * 
    *  ```sh
    *  $ pulumi import aws:rds/proxyDefaultTargetGroup:ProxyDefaultTargetGroup example example
    *  ```
@@ -428,7 +420,6 @@ object rds:
   def ProxyDefaultTargetGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.rds.ProxyDefaultTargetGroupArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.rds.ProxyDefaultTargetGroupArgs.builder
-    
     com.pulumi.aws.rds.ProxyDefaultTargetGroup(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -440,7 +431,6 @@ object rds:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.rds.ProxyEndpoint(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -454,12 +444,11 @@ object rds:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.rds.ClusterSnapshotCopyArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   /** Resource for managing an AWS RDS (Relational Database) Export Task. */
   def ExportTask(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.rds.ExportTaskArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.rds.ExportTaskArgs.builder
-    
     com.pulumi.aws.rds.ExportTask(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -471,24 +460,23 @@ object rds:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.rds.ClusterSnapshotCopy(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
   /**
    * Manages a [RDS Aurora Cluster](https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_Aurora.html) or a [RDS Multi-AZ DB Cluster](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html). To manage cluster instances that inherit configuration from the cluster (when not running the cluster in `serverless` engine mode), see the `aws.rds.ClusterInstance` resource. To manage non-Aurora DB instances (e.g., MySQL, PostgreSQL, SQL Server, etc.), see the `aws.rds.Instance` resource.
-   *  
+   * 
    *  For information on the difference between the available Aurora MySQL engines see [Comparison between Aurora MySQL 1 and Aurora MySQL 2](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AuroraMySQL.Updates.20180206.html) in the Amazon RDS User Guide.
-   *  
+   * 
    *  Changes to an RDS Cluster can occur when you manually change a parameter, such as `port`, and are reflected in the next maintenance window. Because of this, this provider may report a difference in its planning phase because a modification has not yet taken place. You can use the `applyImmediately` flag to instruct the service to apply the change immediately (see documentation below).
-   *  
+   * 
    *  &gt; **Note:** Multi-AZ DB clusters are supported only for the MySQL and PostgreSQL DB engines.
-   *  
+   * 
    *  &gt; **Note:** `caCertificateIdentifier` is only supported for Multi-AZ DB clusters.
-   *  
+   * 
    *  &gt; **Note:** using `applyImmediately` can result in a brief downtime as the server reboots. See the AWS Docs on [RDS Maintenance](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html) for more information.
-   *  
+   * 
    *  &gt; **Note:** All arguments including the username and password will be stored in the raw state as plain-text.
    *  **NOTE on RDS Clusters and RDS Cluster Role Associations:** Pulumi provides both a standalone RDS Cluster Role Association - (an association between an RDS Cluster and a single IAM Role) and an RDS Cluster resource with `iamRoles` attributes. Use one resource or the other to associate IAM Roles and RDS Clusters. Not doing so will cause a conflict of associations and will result in the association being overwritten.
    */
@@ -498,56 +486,53 @@ object rds:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.rds.Cluster(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
   /**
    * Provides a resource to override the system-default Secure Sockets Layer/Transport Layer Security (SSL/TLS) certificate for Amazon RDS for new DB instances in the current AWS region.
-   *  
+   * 
    *  &gt; **NOTE:** Removing this Terraform resource removes the override. New DB instances will use the system-default certificate for the current AWS region.
    */
   def Certificate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.rds.CertificateArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.rds.CertificateArgs.builder
-    
     com.pulumi.aws.rds.Certificate(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
   /**
    * Resource for managing an AWS RDS (Relational Database) RDS Instance State.
-   *  
+   * 
    *  &gt; Destruction of this resource is a no-op and **will not** modify the instance state
    */
   def InstanceDesiredState(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.rds.InstanceDesiredStateArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.rds.InstanceDesiredStateArgs.builder
-    
     com.pulumi.aws.rds.InstanceDesiredState(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
   /**
    * Provides an RDS DB proxy target resource.
-   *  
+   * 
    *  &gt; **NOTE:** When the associated `aws.rds.Proxy` resource is replaced, Terraform will lose track of this resource, causing unexpected differences on the next apply. To ensure proper dependency management, add a `lifecycle` block with `replaceTriggeredBy` referencing the `aws.rds.Proxy` resource&#39;s `id` attribute.
-   *  
+   * 
    *  ## Import
-   *  
+   * 
    *  Provisioned Clusters:
-   *  
+   * 
    *  **Using `pulumi import` to import** RDS DB Proxy Targets using the `dbProxyName`, `targetGroupName`, target type (such as `RDS_INSTANCE` or `TRACKED_CLUSTER`), and resource identifier separated by forward slashes (`/`). For example:
-   *  
+   * 
    *  Instances:
-   *  
+   * 
    *  ```sh
    *  $ pulumi import aws:rds/proxyTarget:ProxyTarget example example-proxy/default/RDS_INSTANCE/example-instance
    *  ```
-   *  
+   * 
    *  Provisioned Clusters:
-   *  
+   * 
    *  ```sh
    *  $ pulumi import aws:rds/proxyTarget:ProxyTarget example example-proxy/default/TRACKED_CLUSTER/example-cluster
    *  ```
@@ -555,7 +540,6 @@ object rds:
   def ProxyTarget(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.rds.ProxyTargetArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.rds.ProxyTargetArgs.builder
-    
     com.pulumi.aws.rds.ProxyTarget(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -573,10 +557,10 @@ object rds:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.rds.ParameterGroupArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   /**
    * Manages an RDS Global Cluster, which is an Aurora global database spread across multiple regions. The global database contains a single primary cluster with read-write capability, and a read-only secondary cluster that receives data from the primary cluster through high-speed replication performed by the Aurora storage subsystem.
-   *  
+   * 
    *  More information about Aurora global databases can be found in the [Aurora User Guide](https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-global-database.html#aurora-global-database-creating).
    */
   def GlobalCluster(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
@@ -585,7 +569,6 @@ object rds:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.rds.GlobalCluster(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -626,14 +609,13 @@ object rds:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.rds.ClusterArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.rds.ExportTaskArgs.Builder)
     def timeouts(args: Endofunction[com.pulumi.aws.rds.inputs.ExportTaskTimeoutsArgs.Builder]):
         com.pulumi.aws.rds.ExportTaskArgs.Builder =
       val argsBuilder = com.pulumi.aws.rds.inputs.ExportTaskTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
-                       
   /** Manages an RDS database instance snapshot. For managing RDS database cluster snapshots, see the `aws.rds.ClusterSnapshot` resource. */
   def Snapshot(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.rds.SnapshotArgs.Builder])(using conf: KoPulumiConf) =
@@ -641,14 +623,13 @@ object rds:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.rds.Snapshot(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
   /**
    * Provides an RDS DB option group resource. Documentation of the available options for various RDS engines can be found at:
-   *  
+   * 
    *  * [MariaDB Options](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Appendix.MariaDB.Options.html)
    *  * [Microsoft SQL Server Options](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Appendix.SQLServer.Options.html)
    *  * [MySQL Options](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Appendix.MySQL.Options.html)
@@ -663,22 +644,20 @@ object rds:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.rds.OptionGroup(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
   /**
    * Manage cross-region replication of automated backups to a different AWS Region. Documentation for cross-region automated backup replication can be found at:
-   *  
+   * 
    *  * [Replicating automated backups to another AWS Region](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ReplicateBackups.html)
-   *  
+   * 
    *  &gt; **Note:** This resource has to be created in the destination region.
    */
   def InstanceAutomatedBackupsReplication(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.rds.InstanceAutomatedBackupsReplicationArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.rds.InstanceAutomatedBackupsReplicationArgs.builder
-    
     com.pulumi.aws.rds.InstanceAutomatedBackupsReplication(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -693,10 +672,9 @@ object rds:
       val argsBuilder = com.pulumi.aws.rds.inputs.ProxyDefaultTargetGroupConnectionPoolConfigArgs.builder
       builder.connectionPoolConfig(args(argsBuilder).build)
 
-                       
   /**
    * Provides an RDS DB cluster parameter group resource. Documentation of the available parameters for various Aurora engines can be found at:
-   *  
+   * 
    *  * [Aurora MySQL Parameters](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AuroraMySQL.Reference.html)
    *  * [Aurora PostgreSQL Parameters](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AuroraPostgreSQL.Reference.html)
    */
@@ -709,7 +687,6 @@ object rds:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.rds.ClusterParameterGroup(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -718,38 +695,38 @@ object rds:
    * Provides an RDS instance resource.  A DB instance is an isolated database
    *  environment in the cloud.  A DB instance can contain multiple user-created
    *  databases.
-   *  
+   * 
    *  Changes to a DB instance can occur when you manually change a parameter, such as
    *  `allocatedStorage`, and are reflected in the next maintenance window. Because
    *  of this, this provider may report a difference in its planning phase because a
    *  modification has not yet taken place. You can use the `applyImmediately` flag
    *  to instruct the service to apply the change immediately (see documentation
    *  below).
-   *  
+   * 
    *  When upgrading the major version of an engine, `allowMajorVersionUpgrade` must be set to `true`.
-   *  
+   * 
    *  &gt; **Note:** using `applyImmediately` can result in a brief downtime as the server reboots.
    *  See the AWS Docs on [RDS Instance Maintenance][instance-maintenance] for more information.
-   *  
+   * 
    *  &gt; **Note:** All arguments including the username and password will be stored in the raw state as plain-text.
    *  Read more about sensitive data instate.
-   *  
+   * 
    *  ## RDS Instance Class Types
-   *  
+   * 
    *  Amazon RDS supports instance classes for the following use cases: General-purpose, Memory-optimized, Burstable Performance, and Optimized-reads.
    *  For more information please read the AWS RDS documentation about [DB Instance Class Types](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html)
-   *  
+   * 
    *  ## Low-Downtime Updates
-   *  
+   * 
    *  By default, RDS applies updates to DB Instances in-place, which can lead to service interruptions.
    *  Low-downtime updates minimize service interruptions by performing the updates with an [RDS Blue/Green deployment][blue-green] and switching over the instances when complete.
-   *  
+   * 
    *  Low-downtime updates are only available for DB Instances using MySQL, MariaDB and PostgreSQL,
    *  as other engines are not supported by RDS Blue/Green deployments.
    *  They cannot be used with DB Instances with replicas.
-   *  
+   * 
    *  Backups must be enabled to use low-downtime updates.
-   *  
+   * 
    *  Enable low-downtime updates by setting `blue_green_update.enabled` to `true`.
    */
   def Instance(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
@@ -758,14 +735,13 @@ object rds:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.rds.Instance(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
   /**
    * Provides an RDS DB proxy resource. For additional information, see the [RDS User Guide](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-proxy.html).
-   *  
+   * 
    *  &gt; **Note:** Not all Availability Zones (AZs) support DB proxies. Specifying `vpcSubnetIds` for AZs that do not support proxies will not trigger an error as long as at least one `vpcSubnetId` is valid. However, this will cause Terraform to continuously detect differences between the configuration and the actual infrastructure. Refer to the Unsupported Availability Zones section below for potential workarounds.
    */
   def Proxy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
@@ -777,23 +753,22 @@ object rds:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.rds.Proxy(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
   /**
    * Manages an RDS DB Instance association with an IAM Role. Example use cases:
-   *  
+   * 
    *  * [Amazon RDS Oracle integration with Amazon S3](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-s3-integration.html)
    *  * [Importing Amazon S3 Data into an RDS PostgreSQL DB Instance](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PostgreSQL.S3Import.html)
-   *  
+   * 
    *  &gt; To manage the RDS DB Instance IAM Role for [Enhanced Monitoring](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.OS.html), see the `aws.rds.Instance` resource `monitoringRoleArn` argument instead.
-   *  
+   * 
    *  ## Import
-   *  
+   * 
    *  Using `pulumi import`, import `aws.rds.RoleAssociation` using the DB Instance Identifier and IAM Role ARN separated by a comma (`,`). For example:
-   *  
+   * 
    *  ```sh
    *  $ pulumi import aws:rds/roleAssociation:RoleAssociation example my-db-instance,arn:aws:iam::123456789012:role/my-role
    *  ```
@@ -801,7 +776,6 @@ object rds:
   def RoleAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.rds.RoleAssociationArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.rds.RoleAssociationArgs.builder
-    
     com.pulumi.aws.rds.RoleAssociation(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -815,7 +789,7 @@ object rds:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.rds.IntegrationArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.rds.ClusterParameterGroupArgs.Builder)
     /**
      * @param parameters A list of DB parameters to apply. Note that parameters may differ from a family to an other. Full list of all parameters can be discovered via [`aws rds describe-db-cluster-parameters`](https://docs.aws.amazon.com/cli/latest/reference/rds/describe-db-cluster-parameters.html) after initial creation of the group.
@@ -829,23 +803,23 @@ object rds:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.rds.ClusterParameterGroupArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   /**
    * Provides an RDS Cluster Instance Resource. A Cluster Instance Resource defines
    *  attributes that are specific to a single instance in a RDS Cluster,
    *  specifically running Amazon Aurora.
-   *  
+   * 
    *  Unlike other RDS resources that support replication, with Amazon Aurora you do
    *  not designate a primary and subsequent replicas. Instead, you simply add RDS
    *  Instances and Aurora manages the replication. You can use the [count][5]
    *  meta-parameter to make multiple instances and join them all to the same RDS
    *  Cluster, or you may specify different Cluster Instance resources with various
    *  `instanceClass` sizes.
-   *  
+   * 
    *  For more information on Amazon Aurora, see [Aurora on Amazon RDS](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html) in the Amazon RDS User Guide.
-   *  
+   * 
    *  &gt; **NOTE:** Deletion Protection from the RDS service can only be enabled at the cluster level, not for individual cluster instances. You can still add the [`protect` CustomResourceOption](https://www.pulumi.com/docs/intro/concepts/programming-model/#protect) to this resource configuration if you desire protection from accidental deletion.
-   *  
+   * 
    *  &gt; **NOTE:** `aurora` is no longer a valid `engine` because of [Amazon Aurora&#39;s MySQL-Compatible Edition version 1 end of life](https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.MySQL56.EOL.html).
    */
   def ClusterInstance(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
@@ -854,7 +828,6 @@ object rds:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.rds.ClusterInstance(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -869,30 +842,28 @@ object rds:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.rds.ClusterEndpoint(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
   /**
    * Manages a RDS DB Cluster association with an IAM Role. Example use cases:
-   *  
+   * 
    *  * [Creating an IAM Role to Allow Amazon Aurora to Access AWS Services](https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/AuroraMySQL.Integrating.Authorizing.IAM.CreateRole.html)
    *  * [Importing Amazon S3 Data into an RDS PostgreSQL DB Cluster](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PostgreSQL.S3Import.html)
    */
   def ClusterRoleAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.rds.ClusterRoleAssociationArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.rds.ClusterRoleAssociationArgs.builder
-    
     com.pulumi.aws.rds.ClusterRoleAssociation(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
   /**
    * Manages an RDS DB Reserved Instance.
-   *  
+   * 
    *  &gt; **NOTE:** Once created, a reservation is valid for the `duration` of the provided `offeringId` and cannot be deleted. Performing a `destroy` will only remove the resource from state. For more information see [RDS Reserved Instances Documentation](https://aws.amazon.com/rds/reserved-instances/) and [PurchaseReservedDBInstancesOffering](https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_PurchaseReservedDBInstancesOffering.html).
-   *  
+   * 
    *  &gt; **NOTE:** Due to the expense of testing this resource, we provide it as best effort. If you find it useful, and have the ability to help test or notice issues, consider reaching out to us on GitHub.
    */
   def ReservedInstance(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
@@ -901,7 +872,6 @@ object rds:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.rds.ReservedInstance(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -913,7 +883,6 @@ object rds:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.rds.ClusterSnapshot(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -931,7 +900,7 @@ object rds:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.rds.inputs.ClusterParameterGroupState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.rds.inputs.GetEngineVersionArgs.Builder)
     /**
      * @param filters One or more name/value pairs to use in filtering versions. There are several valid keys; for a full reference, check out [describe-db-engine-versions in the AWS CLI reference](https://awscli.amazonaws.com/v2/documentation/api/latest/reference/rds/describe-db-engine-versions.html).
@@ -942,7 +911,6 @@ object rds:
       def argsBuilder = com.pulumi.aws.rds.inputs.GetEngineVersionFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.rds.inputs.ParameterGroupState.Builder)
     /**
      * @param parameters The DB parameters to apply. See `parameter` Block below for more details. Note that parameters may differ from a family to an other. Full list of all parameters can be discovered via [`aws rds describe-db-parameters`](https://docs.aws.amazon.com/cli/latest/reference/rds/describe-db-parameters.html) after initial creation of the group.
@@ -956,7 +924,7 @@ object rds:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.rds.inputs.ParameterGroupState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.rds.inputs.GlobalClusterState.Builder)
     /**
      * @param globalClusterMembers Set of objects containing Global Cluster members.
@@ -970,7 +938,7 @@ object rds:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.rds.inputs.GlobalClusterState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.rds.inputs.ClusterSnapshotCopyState.Builder)
     def timeouts(args: Endofunction[com.pulumi.aws.rds.inputs.ClusterSnapshotCopyTimeoutsArgs.Builder]):
         com.pulumi.aws.rds.inputs.ClusterSnapshotCopyState.Builder =
@@ -980,7 +948,7 @@ object rds:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.rds.inputs.ClusterSnapshotCopyState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.rds.inputs.ClusterState.Builder)
     /**
      * @param masterUserSecrets Block that specifies the master user secret. Only available when `manageMasterUserPassword` is set to true. Documented below.
@@ -1026,7 +994,7 @@ object rds:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.rds.inputs.ClusterState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.rds.inputs.IntegrationState.Builder)
     def timeouts(args: Endofunction[com.pulumi.aws.rds.inputs.IntegrationTimeoutsArgs.Builder]):
         com.pulumi.aws.rds.inputs.IntegrationState.Builder =
@@ -1036,14 +1004,13 @@ object rds:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.rds.inputs.IntegrationState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.rds.inputs.InstanceDesiredStateState.Builder)
     def timeouts(args: Endofunction[com.pulumi.aws.rds.inputs.InstanceDesiredStateTimeoutsArgs.Builder]):
         com.pulumi.aws.rds.inputs.InstanceDesiredStateState.Builder =
       val argsBuilder = com.pulumi.aws.rds.inputs.InstanceDesiredStateTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.rds.inputs.ProxyState.Builder)
     /**
      * @param auths Configuration block(s) with authorization mechanisms to connect to the associated instances or clusters. Required when `defaultAuthScheme` is `NONE` or unspecified. Described below.
@@ -1057,7 +1024,7 @@ object rds:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.rds.inputs.ProxyState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.rds.inputs.ReservedInstanceState.Builder)
     /**
      * @param recurringCharges Recurring price charged to run this reserved DB instance.
@@ -1071,7 +1038,7 @@ object rds:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.rds.inputs.ReservedInstanceState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.rds.inputs.GetInstancesArgs.Builder)
     /**
      * @param filters Configuration block(s) used to filter instances with AWS supported attributes, such as `engine`, `db-cluster-id` or `db-instance-id` for example. Detailed below.
@@ -1085,14 +1052,13 @@ object rds:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.rds.inputs.GetInstancesArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.rds.inputs.ExportTaskState.Builder)
     def timeouts(args: Endofunction[com.pulumi.aws.rds.inputs.ExportTaskTimeoutsArgs.Builder]):
         com.pulumi.aws.rds.inputs.ExportTaskState.Builder =
       val argsBuilder = com.pulumi.aws.rds.inputs.ExportTaskTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.rds.inputs.ProxyDefaultTargetGroupState.Builder)
     /**
      * @param connectionPoolConfig The settings that determine the size and behavior of the connection pool for the target group.
@@ -1103,7 +1069,6 @@ object rds:
       val argsBuilder = com.pulumi.aws.rds.inputs.ProxyDefaultTargetGroupConnectionPoolConfigArgs.builder
       builder.connectionPoolConfig(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.rds.inputs.OptionGroupState.Builder)
     /**
      * @param options The options to apply. See `option` Block below for more details.
@@ -1117,7 +1082,7 @@ object rds:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.rds.inputs.OptionGroupState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.rds.inputs.GetClustersArgs.Builder)
     /**
      * @param filters Configuration block(s) for filtering. Detailed below.
@@ -1128,7 +1093,6 @@ object rds:
       def argsBuilder = com.pulumi.aws.rds.inputs.GetClustersFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.rds.inputs.ShardGroupState.Builder)
     def timeouts(args: Endofunction[com.pulumi.aws.rds.inputs.ShardGroupTimeoutsArgs.Builder]):
         com.pulumi.aws.rds.inputs.ShardGroupState.Builder =
@@ -1138,7 +1102,7 @@ object rds:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.rds.inputs.ShardGroupState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.rds.inputs.OptionGroupOptionArgs.Builder)
     /**
      * @param optionSettings The option settings to apply. See `optionSettings` Block below for more details.
@@ -1149,7 +1113,6 @@ object rds:
       def argsBuilder = com.pulumi.aws.rds.inputs.OptionGroupOptionOptionSettingArgs.builder
       builder.optionSettings(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.rds.inputs.InstanceState.Builder)
     /**
      * @param blueGreenUpdate Enables low-downtime updates using [RDS Blue/Green deployments][blue-green].
@@ -1202,22 +1165,21 @@ object rds:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.rds.inputs.InstanceState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   /**
    * Manages RDS Aurora Cluster Database Activity Streams.
-   *  
+   * 
    *  Database Activity Streams have some limits and requirements, refer to the [Monitoring Amazon Aurora using Database Activity Streams](https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/DBActivityStreams.html) documentation for detailed limitations and requirements.
-   *  
+   * 
    *  &gt; **Note:** This resource always calls the RDS [`StartActivityStream`][2] API with the `ApplyImmediately` parameter set to `true`. This is because the provider needs the activity stream to be started in order for it to get the associated attributes.
-   *  
+   * 
    *  &gt; **Note:** This resource depends on having at least one `aws.rds.ClusterInstance` created. To avoid race conditions when all resources are being created together, add an explicit resource reference using the resource `dependsOn` meta-argument.
-   *  
+   * 
    *  &gt; **Note:** This resource is available in all regions except the following: `cn-north-1`, `cn-northwest-1`, `us-gov-east-1`, `us-gov-west-1`
    */
   def ClusterActivityStream(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.rds.ClusterActivityStreamArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.rds.ClusterActivityStreamArgs.builder
-    
     com.pulumi.aws.rds.ClusterActivityStream(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)

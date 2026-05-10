@@ -16,7 +16,7 @@ object codegurureviewer:
 
     /**
      * @param repository An object describing the repository to associate. Valid values: `bitbucket`, `codecommit`, `githubEnterpriseServer`, or `s3Bucket`. Block is documented below. Note: for repositories that leverage CodeStar connections (ex. `bitbucket`, `githubEnterpriseServer`) the connection must be in `Available` status prior to creating this resource.
-     *  
+     * 
      *  The following arguments are optional:
      * @return builder
      */
@@ -28,7 +28,7 @@ object codegurureviewer:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.codegurureviewer.RepositoryAssociationArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   /** Resource for managing an AWS CodeGuru Reviewer Repository Association. */
   def RepositoryAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.codegurureviewer.RepositoryAssociationArgs.Builder])(using conf: KoPulumiConf) =
@@ -36,7 +36,6 @@ object codegurureviewer:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.codegurureviewer.RepositoryAssociation(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -62,14 +61,12 @@ object codegurureviewer:
       val argsBuilder = com.pulumi.aws.codegurureviewer.inputs.RepositoryAssociationRepositoryS3BucketArgs.builder
       builder.s3Bucket(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.codegurureviewer.inputs.RepositoryAssociationS3RepositoryDetailArgs.Builder)
     def codeArtifacts(args: Endofunction[com.pulumi.aws.codegurureviewer.inputs.RepositoryAssociationS3RepositoryDetailCodeArtifactArgs.Builder]*):
         com.pulumi.aws.codegurureviewer.inputs.RepositoryAssociationS3RepositoryDetailArgs.Builder =
       def argsBuilder = com.pulumi.aws.codegurureviewer.inputs.RepositoryAssociationS3RepositoryDetailCodeArtifactArgs.builder
       builder.codeArtifacts(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.codegurureviewer.inputs.RepositoryAssociationState.Builder)
     /**
      * @param kmsKeyDetails An object describing the KMS key to asssociate. Block is documented below.
@@ -82,7 +79,7 @@ object codegurureviewer:
 
     /**
      * @param repository An object describing the repository to associate. Valid values: `bitbucket`, `codecommit`, `githubEnterpriseServer`, or `s3Bucket`. Block is documented below. Note: for repositories that leverage CodeStar connections (ex. `bitbucket`, `githubEnterpriseServer`) the connection must be in `Available` status prior to creating this resource.
-     *  
+     * 
      *  The following arguments are optional:
      * @return builder
      */
@@ -99,4 +96,3 @@ object codegurureviewer:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.codegurureviewer.inputs.RepositoryAssociationState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       

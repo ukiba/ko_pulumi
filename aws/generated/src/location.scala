@@ -100,7 +100,6 @@ object location:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.location.Map(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -112,7 +111,6 @@ object location:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.location.GeofenceCollection(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -130,12 +128,11 @@ object location:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.location.PlaceIndexArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   /** Resource for managing an AWS Location Tracker Association. */
   def TrackerAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.location.TrackerAssociationArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.location.TrackerAssociationArgs.builder
-    
     com.pulumi.aws.location.TrackerAssociation(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -147,7 +144,6 @@ object location:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.location.RouteCalculation(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -165,7 +161,7 @@ object location:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.location.MapArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   /** Provides a Location Service Tracker. */
   def Tracker(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.location.TrackerArgs.Builder])(using conf: KoPulumiConf) =
@@ -173,7 +169,6 @@ object location:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.location.Tracker(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -185,7 +180,6 @@ object location:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.location.PlaceIndex(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -203,7 +197,7 @@ object location:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.location.inputs.PlaceIndexState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.location.inputs.MapState.Builder)
     /**
      * @param configuration Configuration block with the map style selected from an available data provider. Detailed below.
@@ -217,4 +211,3 @@ object location:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.location.inputs.MapState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       

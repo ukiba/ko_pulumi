@@ -18,7 +18,6 @@ object devicefarm:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.devicefarm.InstanceProfile(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -36,10 +35,10 @@ object devicefarm:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.devicefarm.DevicePoolArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   /**
    * Provides a resource to manage AWS Device Farm Test Grid Projects.
-   *  
+   * 
    *  &gt; **NOTE:** AWS currently has limited regional support for Device Farm (e.g., `us-west-2`). See [AWS Device Farm endpoints and quotas](https://docs.aws.amazon.com/general/latest/gr/devicefarm.html) for information on supported regions.
    */
   def TestGridProject(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
@@ -51,7 +50,6 @@ object devicefarm:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.devicefarm.TestGridProject(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -66,7 +64,6 @@ object devicefarm:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.devicefarm.DevicePool(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -84,7 +81,7 @@ object devicefarm:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.devicefarm.TestGridProjectArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   /**
    * Provides a resource to manage AWS Device Farm Network Profiles.
    *  \u2202
@@ -99,17 +96,16 @@ object devicefarm:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.devicefarm.NetworkProfile(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
   /**
    * Provides a resource to manage AWS Device Farm Projects.
-   *  
+   * 
    *  For more information about Device Farm Projects, see the AWS Documentation on
    *  [Device Farm Projects][aws-get-project].
-   *  
+   * 
    *  &gt; **NOTE:** AWS currently has limited regional support for Device Farm (e.g., `us-west-2`). See [AWS Device Farm endpoints and quotas](https://docs.aws.amazon.com/general/latest/gr/devicefarm.html) for information on supported regions.
    */
   def Project(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
@@ -121,14 +117,13 @@ object devicefarm:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.devicefarm.Project(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
   /**
    * Provides a resource to manage AWS Device Farm Uploads.
-   *  
+   * 
    *  &gt; **NOTE:** AWS currently has limited regional support for Device Farm (e.g., `us-west-2`). See [AWS Device Farm endpoints and quotas](https://docs.aws.amazon.com/general/latest/gr/devicefarm.html) for information on supported regions.
    */
   def Upload(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
@@ -137,7 +132,6 @@ object devicefarm:
     conf.logicalName2pysicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
       case None               =>
-    
     com.pulumi.aws.devicefarm.Upload(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -155,7 +149,7 @@ object devicefarm:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.devicefarm.inputs.TestGridProjectState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.devicefarm.inputs.DevicePoolState.Builder)
     /**
      * @param rules The device pool&#39;s rules. See Rule.
@@ -169,4 +163,3 @@ object devicefarm:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.devicefarm.inputs.DevicePoolState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       

@@ -11,7 +11,7 @@ object odb:
   extension (self: OdbFunctions.type)
     /**
      * Data source for managing cloud autonomous vm cluster resource in AWS for Oracle Database{@literal @}AWS.
-     *  
+     * 
      *  You can find out more about Oracle Database{@literal @}AWS from [User Guide](https://docs.aws.amazon.com/odb/latest/UserGuide/what-is-odb.html).
      */
     def getCloudAutonomousVmCluster(args: Endofunction[com.pulumi.aws.odb.inputs.GetCloudAutonomousVmClusterArgs.Builder] = identity):
@@ -21,7 +21,7 @@ object odb:
 
     /**
      * Data source for managing cloud autonomous vm cluster resource in AWS for Oracle Database{@literal @}AWS.
-     *  
+     * 
      *  You can find out more about Oracle Database{@literal @}AWS from [User Guide](https://docs.aws.amazon.com/odb/latest/UserGuide/what-is-odb.html).
      */
     def getCloudAutonomousVmClusterPlain(args: Endofunction[com.pulumi.aws.odb.inputs.GetCloudAutonomousVmClusterPlainArgs.Builder] = identity):
@@ -31,7 +31,7 @@ object odb:
 
     /**
      * Data source for managing cloud autonomous vm clusters in AWS for Oracle Database{@literal @}AWS.
-     *  
+     * 
      *  You can find out more about Oracle Database{@literal @}AWS from [User Guide](https://docs.aws.amazon.com/odb/latest/UserGuide/what-is-odb.html).
      */
     def getCloudAutonomousVmClusters(args: Endofunction[com.pulumi.aws.odb.inputs.GetCloudAutonomousVmClustersArgs.Builder] = identity):
@@ -41,7 +41,7 @@ object odb:
 
     /**
      * Data source for managing cloud autonomous vm clusters in AWS for Oracle Database{@literal @}AWS.
-     *  
+     * 
      *  You can find out more about Oracle Database{@literal @}AWS from [User Guide](https://docs.aws.amazon.com/odb/latest/UserGuide/what-is-odb.html).
      */
     def getCloudAutonomousVmClustersPlain(args: Endofunction[com.pulumi.aws.odb.inputs.GetCloudAutonomousVmClustersPlainArgs.Builder] = identity):
@@ -51,7 +51,7 @@ object odb:
 
     /**
      * Data source for exadata infrastructure resource in AWS for Oracle Database{@literal @}AWS.
-     *  
+     * 
      *  You can find out more about Oracle Database{@literal @}AWS from [User Guide](https://docs.aws.amazon.com/odb/latest/UserGuide/what-is-odb.html).
      */
     def getCloudExadataInfrastructure(args: Endofunction[com.pulumi.aws.odb.inputs.GetCloudExadataInfrastructureArgs.Builder] = identity):
@@ -61,7 +61,7 @@ object odb:
 
     /**
      * Data source for exadata infrastructure resource in AWS for Oracle Database{@literal @}AWS.
-     *  
+     * 
      *  You can find out more about Oracle Database{@literal @}AWS from [User Guide](https://docs.aws.amazon.com/odb/latest/UserGuide/what-is-odb.html).
      */
     def getCloudExadataInfrastructurePlain(args: Endofunction[com.pulumi.aws.odb.inputs.GetCloudExadataInfrastructurePlainArgs.Builder] = identity):
@@ -71,7 +71,7 @@ object odb:
 
     /**
      * Data source for exadata infrastructures in AWS for Oracle Database{@literal @}AWS.
-     *  
+     * 
      *  You can find out more about Oracle Database{@literal @}AWS from [User Guide](https://docs.aws.amazon.com/odb/latest/UserGuide/what-is-odb.html).
      */
     def getCloudExadataInfrastructures(args: Endofunction[com.pulumi.aws.odb.inputs.GetCloudExadataInfrastructuresArgs.Builder] = identity):
@@ -81,7 +81,7 @@ object odb:
 
     /**
      * Data source for exadata infrastructures in AWS for Oracle Database{@literal @}AWS.
-     *  
+     * 
      *  You can find out more about Oracle Database{@literal @}AWS from [User Guide](https://docs.aws.amazon.com/odb/latest/UserGuide/what-is-odb.html).
      */
     def getCloudExadataInfrastructuresPlain(args: Endofunction[com.pulumi.aws.odb.inputs.GetCloudExadataInfrastructuresPlainArgs.Builder] = identity):
@@ -91,7 +91,7 @@ object odb:
 
     /**
      * Data source for cloud vm cluster in AWS for Oracle Database{@literal @}AWS.
-     *  
+     * 
      *  You can find out more about Oracle Database{@literal @}AWS from [User Guide](https://docs.aws.amazon.com/odb/latest/UserGuide/what-is-odb.html).
      */
     def getCloudVmCluster(args: Endofunction[com.pulumi.aws.odb.inputs.GetCloudVmClusterArgs.Builder] = identity):
@@ -101,7 +101,7 @@ object odb:
 
     /**
      * Data source for cloud vm cluster in AWS for Oracle Database{@literal @}AWS.
-     *  
+     * 
      *  You can find out more about Oracle Database{@literal @}AWS from [User Guide](https://docs.aws.amazon.com/odb/latest/UserGuide/what-is-odb.html).
      */
     def getCloudVmClusterPlain(args: Endofunction[com.pulumi.aws.odb.inputs.GetCloudVmClusterPlainArgs.Builder] = identity):
@@ -111,7 +111,7 @@ object odb:
 
     /**
      * Data source for retrieving all cloud vm clusters AWS for Oracle Database{@literal @}AWS.
-     *  
+     * 
      *  You can find out more about Oracle Database{@literal @}AWS from [User Guide](https://docs.aws.amazon.com/odb/latest/UserGuide/what-is-odb.html).
      */
     def getCloudVmClusters(args: Endofunction[com.pulumi.aws.odb.inputs.GetCloudVmClustersArgs.Builder] = identity):
@@ -121,7 +121,7 @@ object odb:
 
     /**
      * Data source for retrieving all cloud vm clusters AWS for Oracle Database{@literal @}AWS.
-     *  
+     * 
      *  You can find out more about Oracle Database{@literal @}AWS from [User Guide](https://docs.aws.amazon.com/odb/latest/UserGuide/what-is-odb.html).
      */
     def getCloudVmClustersPlain(args: Endofunction[com.pulumi.aws.odb.inputs.GetCloudVmClustersPlainArgs.Builder] = identity):
@@ -131,7 +131,7 @@ object odb:
 
     /**
      * Data source for manging db nodes linked to cloud vm cluster of Oracle Database{@literal @}AWS.
-     *  
+     * 
      *  You can find out more about Oracle Database{@literal @}AWS from [User Guide](https://docs.aws.amazon.com/odb/latest/UserGuide/what-is-odb.html).
      */
     def getDbNode(args: Endofunction[com.pulumi.aws.odb.inputs.GetDbNodeArgs.Builder] = identity):
@@ -141,7 +141,7 @@ object odb:
 
     /**
      * Data source for manging db nodes linked to cloud vm cluster of Oracle Database{@literal @}AWS.
-     *  
+     * 
      *  You can find out more about Oracle Database{@literal @}AWS from [User Guide](https://docs.aws.amazon.com/odb/latest/UserGuide/what-is-odb.html).
      */
     def getDbNodePlain(args: Endofunction[com.pulumi.aws.odb.inputs.GetDbNodePlainArgs.Builder] = identity):
@@ -151,7 +151,7 @@ object odb:
 
     /**
      * Data source for manging db nodes linked to cloud vm cluster of Oracle Database{@literal @}AWS.
-     *  
+     * 
      *  You can find out more about Oracle Database{@literal @}AWS from [User Guide](https://docs.aws.amazon.com/odb/latest/UserGuide/what-is-odb.html).
      */
     def getDbNodes(args: Endofunction[com.pulumi.aws.odb.inputs.GetDbNodesArgs.Builder] = identity):
@@ -161,7 +161,7 @@ object odb:
 
     /**
      * Data source for manging db nodes linked to cloud vm cluster of Oracle Database{@literal @}AWS.
-     *  
+     * 
      *  You can find out more about Oracle Database{@literal @}AWS from [User Guide](https://docs.aws.amazon.com/odb/latest/UserGuide/what-is-odb.html).
      */
     def getDbNodesPlain(args: Endofunction[com.pulumi.aws.odb.inputs.GetDbNodesPlainArgs.Builder] = identity):
@@ -171,7 +171,7 @@ object odb:
 
     /**
      * Data source for manging db server linked to exadata infrastructure of Oracle Database{@literal @}AWS.
-     *  
+     * 
      *  You can find out more about Oracle Database{@literal @}AWS from [User Guide](https://docs.aws.amazon.com/odb/latest/UserGuide/what-is-odb.html).
      */
     def getDbServer(args: Endofunction[com.pulumi.aws.odb.inputs.GetDbServerArgs.Builder] = identity):
@@ -181,7 +181,7 @@ object odb:
 
     /**
      * Data source for manging db server linked to exadata infrastructure of Oracle Database{@literal @}AWS.
-     *  
+     * 
      *  You can find out more about Oracle Database{@literal @}AWS from [User Guide](https://docs.aws.amazon.com/odb/latest/UserGuide/what-is-odb.html).
      */
     def getDbServerPlain(args: Endofunction[com.pulumi.aws.odb.inputs.GetDbServerPlainArgs.Builder] = identity):
@@ -191,7 +191,7 @@ object odb:
 
     /**
      * Data source for manging db servers linked to exadata infrastructure of Oracle Database{@literal @}AWS.
-     *  
+     * 
      *  You can find out more about Oracle Database{@literal @}AWS from [User Guide](https://docs.aws.amazon.com/odb/latest/UserGuide/what-is-odb.html).
      */
     def getDbServers(args: Endofunction[com.pulumi.aws.odb.inputs.GetDbServersArgs.Builder] = identity):
@@ -201,7 +201,7 @@ object odb:
 
     /**
      * Data source for manging db servers linked to exadata infrastructure of Oracle Database{@literal @}AWS.
-     *  
+     * 
      *  You can find out more about Oracle Database{@literal @}AWS from [User Guide](https://docs.aws.amazon.com/odb/latest/UserGuide/what-is-odb.html).
      */
     def getDbServersPlain(args: Endofunction[com.pulumi.aws.odb.inputs.GetDbServersPlainArgs.Builder] = identity):
@@ -211,7 +211,7 @@ object odb:
 
     /**
      * Data source to retrieve available system shapes Oracle Database{@literal @}AWS.
-     *  
+     * 
      *  You can find out more about Oracle Database{@literal @}AWS from [User Guide](https://docs.aws.amazon.com/odb/latest/UserGuide/what-is-odb.html).
      */
     def getDbSystemShapes(args: Endofunction[com.pulumi.aws.odb.inputs.GetDbSystemShapesArgs.Builder] = identity):
@@ -221,7 +221,7 @@ object odb:
 
     /**
      * Data source to retrieve available system shapes Oracle Database{@literal @}AWS.
-     *  
+     * 
      *  You can find out more about Oracle Database{@literal @}AWS from [User Guide](https://docs.aws.amazon.com/odb/latest/UserGuide/what-is-odb.html).
      */
     def getDbSystemShapesPlain(args: Endofunction[com.pulumi.aws.odb.inputs.GetDbSystemShapesPlainArgs.Builder] = identity):
@@ -231,7 +231,7 @@ object odb:
 
     /**
      * Data source to retrieve available Grid Infrastructure versions of Oracle Database{@literal @}AWS.
-     *  
+     * 
      *  You can find out more about Oracle Database{@literal @}AWS from [User Guide](https://docs.aws.amazon.com/odb/latest/UserGuide/what-is-odb.html).
      */
     def getGiVersions(args: Endofunction[com.pulumi.aws.odb.inputs.GetGiVersionsArgs.Builder] = identity):
@@ -241,7 +241,7 @@ object odb:
 
     /**
      * Data source to retrieve available Grid Infrastructure versions of Oracle Database{@literal @}AWS.
-     *  
+     * 
      *  You can find out more about Oracle Database{@literal @}AWS from [User Guide](https://docs.aws.amazon.com/odb/latest/UserGuide/what-is-odb.html).
      */
     def getGiVersionsPlain(args: Endofunction[com.pulumi.aws.odb.inputs.GetGiVersionsPlainArgs.Builder] = identity):
@@ -263,7 +263,7 @@ object odb:
 
     /**
      * Data source for managing oracle database network peering resource in AWS.
-     *  
+     * 
      *  You can find out more about Oracle Database{@literal @}AWS from [User Guide](https://docs.aws.amazon.com/odb/latest/UserGuide/what-is-odb.html).
      */
     def getNetworkPeeringConnection(args: Endofunction[com.pulumi.aws.odb.inputs.GetNetworkPeeringConnectionArgs.Builder] = identity):
@@ -273,7 +273,7 @@ object odb:
 
     /**
      * Data source for managing oracle database network peering resource in AWS.
-     *  
+     * 
      *  You can find out more about Oracle Database{@literal @}AWS from [User Guide](https://docs.aws.amazon.com/odb/latest/UserGuide/what-is-odb.html).
      */
     def getNetworkPeeringConnectionPlain(args: Endofunction[com.pulumi.aws.odb.inputs.GetNetworkPeeringConnectionPlainArgs.Builder] = identity):
@@ -283,7 +283,7 @@ object odb:
 
     /**
      * Data source for retrieving all oracle database network peering resource in Oracle Database{@literal @}AWS.
-     *  
+     * 
      *  You can find out more about Oracle Database{@literal @}AWS from [User Guide](https://docs.aws.amazon.com/odb/latest/UserGuide/what-is-odb.html).
      */
     def getNetworkPeeringConnections(args: Endofunction[com.pulumi.aws.odb.inputs.GetNetworkPeeringConnectionsArgs.Builder] = identity):
@@ -293,7 +293,7 @@ object odb:
 
     /**
      * Data source for retrieving all oracle database network peering resource in Oracle Database{@literal @}AWS.
-     *  
+     * 
      *  You can find out more about Oracle Database{@literal @}AWS from [User Guide](https://docs.aws.amazon.com/odb/latest/UserGuide/what-is-odb.html).
      */
     def getNetworkPeeringConnectionsPlain(args: Endofunction[com.pulumi.aws.odb.inputs.GetNetworkPeeringConnectionsPlainArgs.Builder] = identity):
@@ -316,7 +316,7 @@ object odb:
   extension (builder: com.pulumi.aws.odb.CloudAutonomousVmClusterArgs.Builder)
     /**
      * @param maintenanceWindow The maintenance window of the Autonomous VM cluster. Changing this will force terraform to create new resource.
-     *  
+     * 
      *  The following arguments are optional:
      * @return builder
      */
@@ -333,7 +333,7 @@ object odb:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.odb.CloudAutonomousVmClusterArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.odb.CloudVmClusterArgs.Builder)
     /**
      * @param dataCollectionOptions The set of preferences for the various diagnostic collection options for the VM cluster.
@@ -352,7 +352,7 @@ object odb:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.odb.CloudVmClusterArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   /** Resource for managing odb Network resource in AWS for Oracle Database{@literal @}AWS. */
   def Network(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.odb.NetworkArgs.Builder])(using conf: KoPulumiConf) =
@@ -360,14 +360,13 @@ object odb:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.odb.Network(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
   /**
    * Resource managing cloud autonomous vm cluster in AWS for Oracle Database{@literal @}AWS.
-   *  
+   * 
    *  You can find out more about Oracle Database{@literal @}AWS from [User Guide](https://docs.aws.amazon.com/odb/latest/UserGuide/what-is-odb.html).
    */
   def CloudAutonomousVmCluster(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
@@ -376,14 +375,13 @@ object odb:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.odb.CloudAutonomousVmCluster(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
   /**
    * Terraform  resource for managing oracle database network peering resource in AWS. If underlying odb network is shared, ARN must be used while creating network peering.
-   *  
+   * 
    *  You can find out more about Oracle Database{@literal @}AWS from [User Guide](https://docs.aws.amazon.com/odb/latest/UserGuide/what-is-odb.html).
    */
   def NetworkPeeringConnection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
@@ -392,7 +390,6 @@ object odb:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.odb.NetworkPeeringConnection(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -404,14 +401,13 @@ object odb:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.odb.CloudExadataInfrastructure(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
   /**
    * Terraform to manage cloud vm cluster resource in AWS for Oracle Database{@literal @}AWS. If underlying odb network and cloud exadata infrastructure is shared, ARN must be used while creating VM cluster.
-   *  
+   * 
    *  You can find out more about Oracle Database{@literal @}AWS from [User Guide](https://docs.aws.amazon.com/odb/latest/UserGuide/what-is-odb.html).
    */
   def CloudVmCluster(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
@@ -420,7 +416,6 @@ object odb:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.odb.CloudVmCluster(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -452,7 +447,7 @@ object odb:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.odb.CloudExadataInfrastructureArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.odb.NetworkPeeringConnectionArgs.Builder)
     def timeouts(args: Endofunction[com.pulumi.aws.odb.inputs.NetworkPeeringConnectionTimeoutsArgs.Builder]):
         com.pulumi.aws.odb.NetworkPeeringConnectionArgs.Builder =
@@ -462,7 +457,7 @@ object odb:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.odb.NetworkPeeringConnectionArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.odb.NetworkArgs.Builder)
     def timeouts(args: Endofunction[com.pulumi.aws.odb.inputs.NetworkTimeoutsArgs.Builder]):
         com.pulumi.aws.odb.NetworkArgs.Builder =
@@ -472,7 +467,7 @@ object odb:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.odb.NetworkArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.odb.inputs.NetworkPeeringConnectionState.Builder)
     def timeouts(args: Endofunction[com.pulumi.aws.odb.inputs.NetworkPeeringConnectionTimeoutsArgs.Builder]):
         com.pulumi.aws.odb.inputs.NetworkPeeringConnectionState.Builder =
@@ -482,7 +477,7 @@ object odb:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.odb.inputs.NetworkPeeringConnectionState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.odb.inputs.CloudExadataInfrastructureMaintenanceWindowArgs.Builder)
     /**
      * @param daysOfWeeks The days of the week when maintenance can be performed.
@@ -502,7 +497,6 @@ object odb:
       def argsBuilder = com.pulumi.aws.odb.inputs.CloudExadataInfrastructureMaintenanceWindowMonthArgs.builder
       builder.months(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.odb.inputs.CloudExadataInfrastructureState.Builder)
     /**
      * @param customerContactsToSendToOcis The email addresses of contacts to receive notification from Oracle about maintenance updates for the Exadata infrastructure. Changing this will force terraform to create new resource.
@@ -530,11 +524,11 @@ object odb:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.odb.inputs.CloudExadataInfrastructureState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.odb.inputs.CloudAutonomousVmClusterState.Builder)
     /**
      * @param maintenanceWindow The maintenance window of the Autonomous VM cluster. Changing this will force terraform to create new resource.
-     *  
+     * 
      *  The following arguments are optional:
      * @return builder
      */
@@ -551,7 +545,7 @@ object odb:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.odb.inputs.CloudAutonomousVmClusterState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.odb.inputs.CloudAutonomousVmClusterMaintenanceWindowArgs.Builder)
     /**
      * @param daysOfWeeks The days of the week when maintenance can be performed. Changing this will force terraform to create new resource.
@@ -571,7 +565,6 @@ object odb:
       def argsBuilder = com.pulumi.aws.odb.inputs.CloudAutonomousVmClusterMaintenanceWindowMonthArgs.builder
       builder.months(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.odb.inputs.CloudVmClusterState.Builder)
     /**
      * @param dataCollectionOptions The set of preferences for the various diagnostic collection options for the VM cluster.
@@ -599,7 +592,7 @@ object odb:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.odb.inputs.CloudVmClusterState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.odb.inputs.NetworkState.Builder)
     /**
      * @param managedServices The managed services configuration for the ODB network.
@@ -627,14 +620,13 @@ object odb:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.odb.inputs.NetworkState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.odb.inputs.CloudVmClusterIormConfigCacheArgs.Builder)
     def dbPlans(args: Endofunction[com.pulumi.aws.odb.inputs.CloudVmClusterIormConfigCacheDbPlanArgs.Builder]*):
         com.pulumi.aws.odb.inputs.CloudVmClusterIormConfigCacheArgs.Builder =
       def argsBuilder = com.pulumi.aws.odb.inputs.CloudVmClusterIormConfigCacheDbPlanArgs.builder
       builder.dbPlans(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.odb.inputs.NetworkManagedServiceArgs.Builder)
     /**
      * @param crossRegionS3RestoreSourcesAccesses The list of regions enabled for cross-region restore in the ODB network.
@@ -684,7 +676,7 @@ object odb:
 
     /**
      * @param zeroEtlAccesses Specifies the configuration for Zero-ETL access from the ODB network.
-     *  
+     * 
      *  The following arguments are optional:
      * @return builder
      */
@@ -692,5 +684,3 @@ object odb:
         com.pulumi.aws.odb.inputs.NetworkManagedServiceArgs.Builder =
       def argsBuilder = com.pulumi.aws.odb.inputs.NetworkManagedServiceZeroEtlAccessArgs.builder
       builder.zeroEtlAccesses(args.map(_(argsBuilder).build)*)
-
-                       

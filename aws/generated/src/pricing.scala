@@ -13,7 +13,6 @@ object pricing:
       def argsBuilder = com.pulumi.aws.pricing.inputs.GetProductFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
-                       
   type PricingFunctions = com.pulumi.aws.pricing.PricingFunctions
   object PricingFunctions:
     // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)

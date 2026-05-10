@@ -11,7 +11,6 @@ object controltower:
   def ControlTowerControl(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.controltower.ControlTowerControlArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.controltower.ControlTowerControlArgs.builder
-    
     com.pulumi.aws.controltower.ControlTowerControl(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -19,11 +18,11 @@ object controltower:
   /**
    * Creates a new landing zone using Control Tower. For more information on usage, please see the
    *  [AWS Control Tower Landing Zone User Guide](https://docs.aws.amazon.com/controltower/latest/userguide/how-control-tower-works.html).
-   *  
+   * 
    *  ## Import
-   *  
+   * 
    *  Using `pulumi import`, import a Control Tower Landing Zone using the `id`. For example:
-   *  
+   * 
    *  ```sh
    *  $ pulumi import aws:controltower/landingZone:LandingZone example 1A2B3C4D5E6F7G8H
    *  ```
@@ -34,7 +33,6 @@ object controltower:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.controltower.LandingZone(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -46,7 +44,6 @@ object controltower:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.controltower.Baseline(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -78,7 +75,6 @@ object controltower:
       def argsBuilder = com.pulumi.aws.controltower.inputs.ControlTowerControlParameterArgs.builder
       builder.parameters(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.controltower.inputs.ControlTowerControlState.Builder)
     /**
      * @param parameters Parameter values which are specified to configure the control when you enable it. See Parameters for more details.
@@ -89,7 +85,6 @@ object controltower:
       def argsBuilder = com.pulumi.aws.controltower.inputs.ControlTowerControlParameterArgs.builder
       builder.parameters(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.controltower.inputs.BaselineState.Builder)
     /**
      * @param parameters A list of key-value objects that specify enablement parameters, where key is a string and value is a document of any type. See Parameter below for details.
@@ -108,7 +103,7 @@ object controltower:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.controltower.inputs.BaselineState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.controltower.inputs.LandingZoneState.Builder)
     /**
      * @param driftStatuses The drift status summary of the landing zone.
@@ -122,7 +117,7 @@ object controltower:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.controltower.inputs.LandingZoneState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.controltower.BaselineArgs.Builder)
     /**
      * @param parameters A list of key-value objects that specify enablement parameters, where key is a string and value is a document of any type. See Parameter below for details.
@@ -141,4 +136,3 @@ object controltower:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.controltower.BaselineArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       

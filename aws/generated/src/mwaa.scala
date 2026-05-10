@@ -14,7 +14,6 @@ object mwaa:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.mwaa.Environment(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -41,7 +40,7 @@ object mwaa:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.mwaa.EnvironmentArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.mwaa.inputs.EnvironmentLoggingConfigurationArgs.Builder)
     /**
      * @param dagProcessingLogs (Optional) Log configuration options for processing DAGs. See Module logging configuration for more information. Disabled by default.
@@ -88,14 +87,12 @@ object mwaa:
       val argsBuilder = com.pulumi.aws.mwaa.inputs.EnvironmentLoggingConfigurationWorkerLogsArgs.builder
       builder.workerLogs(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.mwaa.inputs.EnvironmentLastUpdatedArgs.Builder)
     def errors(args: Endofunction[com.pulumi.aws.mwaa.inputs.EnvironmentLastUpdatedErrorArgs.Builder]*):
         com.pulumi.aws.mwaa.inputs.EnvironmentLastUpdatedArgs.Builder =
       def argsBuilder = com.pulumi.aws.mwaa.inputs.EnvironmentLastUpdatedErrorArgs.builder
       builder.errors(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.mwaa.inputs.EnvironmentState.Builder)
     def lastUpdateds(args: Endofunction[com.pulumi.aws.mwaa.inputs.EnvironmentLastUpdatedArgs.Builder]*):
         com.pulumi.aws.mwaa.inputs.EnvironmentState.Builder =
@@ -123,4 +120,3 @@ object mwaa:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.mwaa.inputs.EnvironmentState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       

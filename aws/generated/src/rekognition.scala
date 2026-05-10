@@ -13,7 +13,7 @@ object rekognition:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.rekognition.CollectionArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   /** Resource for managing an AWS Rekognition Collection. */
   def Collection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.rekognition.CollectionArgs.Builder])(using conf: KoPulumiConf) =
@@ -21,7 +21,6 @@ object rekognition:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.rekognition.Collection(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -35,12 +34,12 @@ object rekognition:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.rekognition.ProjectArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   /**
    * Resource for managing an AWS Rekognition Stream Processor.
-   *  
+   * 
    *  &gt; This resource must be configured specifically for your use case, and not all options are compatible with one another. See [Stream Processor API documentation](https://docs.aws.amazon.com/rekognition/latest/APIReference/API_CreateStreamProcessor.html#rekognition-CreateStreamProcessor-request-Input) for configuration information.
-   *  
+   * 
    *  &gt; Stream Processors configured for Face Recognition cannot have _any_ properties updated after the fact, and it will result in an AWS API error.
    */
   def StreamProcessor(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
@@ -52,7 +51,6 @@ object rekognition:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.rekognition.StreamProcessor(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -67,7 +65,6 @@ object rekognition:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.rekognition.Project(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -120,7 +117,7 @@ object rekognition:
 
     /**
      * @param settings Input parameters used in a streaming video analyzed by a stream processor. See `settings`.
-     *  
+     * 
      *  The following arguments are optional:
      * @return builder
      */
@@ -137,7 +134,7 @@ object rekognition:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.rekognition.StreamProcessorArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.rekognition.inputs.StreamProcessorInputArgs.Builder)
     /**
      * @param kinesisVideoStream Kinesis input stream. See `kinesisVideoStream`.
@@ -148,7 +145,6 @@ object rekognition:
       val argsBuilder = com.pulumi.aws.rekognition.inputs.StreamProcessorInputKinesisVideoStreamArgs.builder
       builder.kinesisVideoStream(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.rekognition.inputs.StreamProcessorState.Builder)
     /**
      * @param dataSharingPreference See `dataSharingPreference`.
@@ -197,7 +193,7 @@ object rekognition:
 
     /**
      * @param settings Input parameters used in a streaming video analyzed by a stream processor. See `settings`.
-     *  
+     * 
      *  The following arguments are optional:
      * @return builder
      */
@@ -214,7 +210,7 @@ object rekognition:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.rekognition.inputs.StreamProcessorState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.rekognition.inputs.StreamProcessorOutputArgs.Builder)
     /**
      * @param kinesisDataStream The Amazon Kinesis Data Streams stream to which the Amazon Rekognition stream processor streams the analysis results. See `kinesisDataStream`.
@@ -234,7 +230,6 @@ object rekognition:
       val argsBuilder = com.pulumi.aws.rekognition.inputs.StreamProcessorOutputS3DestinationArgs.builder
       builder.s3Destination(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.rekognition.inputs.ProjectState.Builder)
     def timeouts(args: Endofunction[com.pulumi.aws.rekognition.inputs.ProjectTimeoutsArgs.Builder]):
         com.pulumi.aws.rekognition.inputs.ProjectState.Builder =
@@ -244,7 +239,7 @@ object rekognition:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.rekognition.inputs.ProjectState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.rekognition.inputs.StreamProcessorSettingsArgs.Builder)
     /**
      * @param connectedHome Label detection settings to use on a streaming video. See `connectedHome`.
@@ -264,7 +259,6 @@ object rekognition:
       val argsBuilder = com.pulumi.aws.rekognition.inputs.StreamProcessorSettingsFaceSearchArgs.builder
       builder.faceSearch(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.rekognition.inputs.StreamProcessorRegionsOfInterestArgs.Builder)
     /**
      * @param boundingBox Box representing a region of interest on screen. Only 1 per region is allowed. See `boundingBox`.
@@ -284,7 +278,6 @@ object rekognition:
       def argsBuilder = com.pulumi.aws.rekognition.inputs.StreamProcessorRegionsOfInterestPolygonArgs.builder
       builder.polygons(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.rekognition.inputs.CollectionState.Builder)
     def timeouts(args: Endofunction[com.pulumi.aws.rekognition.inputs.CollectionTimeoutsArgs.Builder]):
         com.pulumi.aws.rekognition.inputs.CollectionState.Builder =
@@ -294,4 +287,3 @@ object rekognition:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.rekognition.inputs.CollectionState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       

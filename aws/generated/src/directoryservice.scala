@@ -8,7 +8,6 @@ object directoryservice:
   def ConditionalForwarder(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.directoryservice.ConditionalForwarderArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.directoryservice.ConditionalForwarderArgs.builder
-    
     com.pulumi.aws.directoryservice.ConditionalForwarder(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -26,12 +25,11 @@ object directoryservice:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.directoryservice.ServiceRegionArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   /** Manages a directory in your account (directory owner) shared with another account (directory consumer). */
   def SharedDirectory(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.directoryservice.SharedDirectoryArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.directoryservice.SharedDirectoryArgs.builder
-    
     com.pulumi.aws.directoryservice.SharedDirectory(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -46,7 +44,6 @@ object directoryservice:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.directoryservice.Directory(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -73,7 +70,7 @@ object directoryservice:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.directoryservice.DirectoryArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   type DirectoryserviceFunctions = com.pulumi.aws.directoryservice.DirectoryserviceFunctions
   object DirectoryserviceFunctions:
     // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
@@ -101,7 +98,6 @@ object directoryservice:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.directoryservice.ServiceRegion(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -110,7 +106,6 @@ object directoryservice:
   def LogSubscription(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.directoryservice.LogSubscriptionArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.directoryservice.LogSubscriptionArgs.builder
-    
     com.pulumi.aws.directoryservice.LogSubscription(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -118,7 +113,7 @@ object directoryservice:
   extension (builder: com.pulumi.aws.directoryservice.SharedDirectoryArgs.Builder)
     /**
      * @param target Identifier for the directory consumer account with whom the directory is to be shared. See below.
-     *  
+     * 
      *  The following arguments are optional:
      * @return builder
      */
@@ -127,25 +122,22 @@ object directoryservice:
       val argsBuilder = com.pulumi.aws.directoryservice.inputs.SharedDirectoryTargetArgs.builder
       builder.target(args(argsBuilder).build)
 
-                       
   /** Manages a directory&#39;s multi-factor authentication (MFA) using a Remote Authentication Dial In User Service (RADIUS) server. */
   def RadiusSettings(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.directoryservice.RadiusSettingsArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.directoryservice.RadiusSettingsArgs.builder
-    
     com.pulumi.aws.directoryservice.RadiusSettings(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
   /**
    * Accepts a shared directory in a consumer account.
-   *  
+   * 
    *  &gt; **NOTE:** Destroying this resource removes the shared directory from the consumer account only.
    */
   def SharedDirectoryAccepter(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.directoryservice.SharedDirectoryAccepterArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.directoryservice.SharedDirectoryAccepterArgs.builder
-    
     com.pulumi.aws.directoryservice.SharedDirectoryAccepter(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -172,11 +164,11 @@ object directoryservice:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.directoryservice.inputs.DirectoryState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.directoryservice.inputs.SharedDirectoryState.Builder)
     /**
      * @param target Identifier for the directory consumer account with whom the directory is to be shared. See below.
-     *  
+     * 
      *  The following arguments are optional:
      * @return builder
      */
@@ -185,7 +177,6 @@ object directoryservice:
       val argsBuilder = com.pulumi.aws.directoryservice.inputs.SharedDirectoryTargetArgs.builder
       builder.target(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.directoryservice.inputs.ServiceRegionState.Builder)
     /**
      * @param vpcSettings VPC information in the replicated Region. Detailed below.
@@ -199,12 +190,12 @@ object directoryservice:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.directoryservice.inputs.ServiceRegionState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   /**
    * Manages a trust relationship between two Active Directory Directories.
-   *  
+   * 
    *  The directories may either be both AWS Managed Microsoft AD domains or an AWS Managed Microsoft AD domain and a self-managed Active Directory Domain.
-   *  
+   * 
    *  The Trust relationship must be configured on both sides of the relationship.
    *  If a Trust has only been created on one side, it will be in the state `VerifyFailed`.
    *  Once the second Trust is created, the first will update to the correct state.
@@ -212,7 +203,6 @@ object directoryservice:
   def Trust(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.directoryservice.TrustArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.directoryservice.TrustArgs.builder
-    
     com.pulumi.aws.directoryservice.Trust(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)

@@ -19,7 +19,6 @@ object route53domains:
       val argsBuilder = com.pulumi.aws.route53domains.inputs.DelegationSignerRecordTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.route53domains.DomainArgs.Builder)
     /**
      * @param adminContact Details about the domain administrative contact. See Contact Blocks for more details.
@@ -74,7 +73,7 @@ object route53domains:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.route53domains.DomainArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.route53domains.RegisteredDomainArgs.Builder)
     /**
      * @param adminContact Details about the domain administrative contact. See Contact Blocks for more details.
@@ -124,12 +123,11 @@ object route53domains:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.route53domains.RegisteredDomainArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   /** Provides a resource to manage a [delegation signer record](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-configuring-dnssec-enable-signing.html#dns-configuring-dnssec-enable-signing-step-1) in the parent DNS zone for domains registered with Route53. */
   def DelegationSignerRecord(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.route53domains.DelegationSignerRecordArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.route53domains.DelegationSignerRecordArgs.builder
-    
     com.pulumi.aws.route53domains.DelegationSignerRecord(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -188,7 +186,7 @@ object route53domains:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.route53domains.inputs.DomainState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.route53domains.inputs.DomainRegistrantContactArgs.Builder)
     /**
      * @param extraParams A list of name-value pairs for parameters required by certain top-level domains.
@@ -199,7 +197,6 @@ object route53domains:
       def argsBuilder = com.pulumi.aws.route53domains.inputs.DomainRegistrantContactExtraParamArgs.builder
       builder.extraParams(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.route53domains.inputs.DelegationSignerRecordState.Builder)
     /**
      * @param signingAttributes The information about a key, including the algorithm, public key-value, and flags.
@@ -215,7 +212,6 @@ object route53domains:
       val argsBuilder = com.pulumi.aws.route53domains.inputs.DelegationSignerRecordTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.route53domains.inputs.DomainTechContactArgs.Builder)
     /**
      * @param extraParams A list of name-value pairs for parameters required by certain top-level domains.
@@ -226,7 +222,6 @@ object route53domains:
       def argsBuilder = com.pulumi.aws.route53domains.inputs.DomainTechContactExtraParamArgs.builder
       builder.extraParams(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.route53domains.inputs.RegisteredDomainState.Builder)
     /**
      * @param adminContact Details about the domain administrative contact. See Contact Blocks for more details.
@@ -276,7 +271,7 @@ object route53domains:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.route53domains.inputs.RegisteredDomainState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.route53domains.inputs.DomainAdminContactArgs.Builder)
     /**
      * @param extraParams A list of name-value pairs for parameters required by certain top-level domains.
@@ -287,7 +282,6 @@ object route53domains:
       def argsBuilder = com.pulumi.aws.route53domains.inputs.DomainAdminContactExtraParamArgs.builder
       builder.extraParams(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.route53domains.inputs.DomainBillingContactArgs.Builder)
     /**
      * @param extraParams A list of name-value pairs for parameters required by certain top-level domains.
@@ -298,12 +292,11 @@ object route53domains:
       def argsBuilder = com.pulumi.aws.route53domains.inputs.DomainBillingContactExtraParamArgs.builder
       builder.extraParams(args.map(_(argsBuilder).build)*)
 
-                       
   /**
    * Provides a resource to manage a domain that has been [registered](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html) and associated with the current AWS account. To register, renew and deregister a domain use the `aws.route53domains.Domain` resource instead.
-   *  
+   * 
    *  **This is an advanced resource** and has special caveats to be aware of when using it. Please read this document in its entirety before using this resource.
-   *  
+   * 
    *  The `aws.route53domains.RegisteredDomain` resource behaves differently from normal resources in that if a domain has been registered, the provider does not _register_ this domain, but instead &#34;adopts&#34; it into management. A destroy does not delete the domain but does remove the resource from state.
    */
   def RegisteredDomain(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
@@ -312,7 +305,6 @@ object route53domains:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.route53domains.RegisteredDomain(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -324,7 +316,6 @@ object route53domains:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.route53domains.Domain(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)

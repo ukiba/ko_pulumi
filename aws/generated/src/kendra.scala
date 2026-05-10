@@ -14,7 +14,6 @@ object kendra:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.kendra.QuerySuggestionsBlockList(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -41,7 +40,7 @@ object kendra:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.kendra.DataSourceArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   /** Provides an Amazon Kendra Index resource. */
   def Index(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.kendra.IndexArgs.Builder])(using conf: KoPulumiConf) =
@@ -52,7 +51,6 @@ object kendra:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.kendra.Index(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -106,7 +104,7 @@ object kendra:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.kendra.IndexArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.kendra.ThesaurusArgs.Builder)
     /**
      * @param sourceS3Path The S3 path where your thesaurus file sits in S3. Detailed below.
@@ -120,7 +118,7 @@ object kendra:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.kendra.ThesaurusArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   /** Resource for managing an AWS Kendra Thesaurus. */
   def Thesaurus(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.kendra.ThesaurusArgs.Builder])(using conf: KoPulumiConf) =
@@ -131,7 +129,6 @@ object kendra:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.kendra.Thesaurus(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -149,7 +146,7 @@ object kendra:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.kendra.FaqArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   /** Resource for managing an AWS Kendra Experience. */
   def Experience(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.kendra.ExperienceArgs.Builder])(using conf: KoPulumiConf) =
@@ -157,7 +154,6 @@ object kendra:
     conf.logicalName2pysicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
       case None               =>
-    
     com.pulumi.aws.kendra.Experience(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -230,7 +226,7 @@ object kendra:
   extension (builder: com.pulumi.aws.kendra.ExperienceArgs.Builder)
     /**
      * @param configuration Configuration information for your Amazon Kendra experience. The provider will only perform drift detection of its value when present in a configuration. Detailed below.
-     *  
+     * 
      *  &gt; **NOTE:** By default of the AWS Kendra API, updates to an existing `aws.kendra.Experience` resource (e.g. updating the `name`) will also update the `configuration.content_source_configuration.direct_put_content` parameter to `false` if not already provided.
      * @return builder
      */
@@ -239,7 +235,6 @@ object kendra:
       val argsBuilder = com.pulumi.aws.kendra.inputs.ExperienceConfigurationArgs.builder
       builder.configuration(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.kendra.QuerySuggestionsBlockListArgs.Builder)
     /**
      * @param sourceS3Path S3 path where your block list text file is located. See details below.
@@ -253,7 +248,7 @@ object kendra:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.kendra.QuerySuggestionsBlockListArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   /** Resource for managing an AWS Kendra FAQ. */
   def Faq(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.kendra.FaqArgs.Builder])(using conf: KoPulumiConf) =
@@ -264,7 +259,6 @@ object kendra:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.kendra.Faq(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -282,7 +276,7 @@ object kendra:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.kendra.inputs.FaqState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.kendra.inputs.DataSourceCustomDocumentEnrichmentConfigurationInlineConfigurationConditionArgs.Builder)
     /**
      * @param conditionOnValue The value used by the operator. For example, you can specify the value &#39;financial&#39; for strings in the `_source_uri` field that partially match or contain this value. See condition_on_value.
@@ -293,7 +287,6 @@ object kendra:
       val argsBuilder = com.pulumi.aws.kendra.inputs.DataSourceCustomDocumentEnrichmentConfigurationInlineConfigurationConditionConditionOnValueArgs.builder
       builder.conditionOnValue(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.kendra.inputs.DataSourceCustomDocumentEnrichmentConfigurationInlineConfigurationArgs.Builder)
     /**
      * @param condition Configuration of the condition used for the target document attribute or metadata field when ingesting documents into Amazon Kendra. See condition.
@@ -313,7 +306,6 @@ object kendra:
       val argsBuilder = com.pulumi.aws.kendra.inputs.DataSourceCustomDocumentEnrichmentConfigurationInlineConfigurationTargetArgs.builder
       builder.target(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.kendra.inputs.DataSourceConfigurationArgs.Builder)
     /**
      * @param s3Configuration A block that provides the configuration information to connect to an Amazon S3 bucket as your data source. Detailed below.
@@ -344,7 +336,6 @@ object kendra:
       val argsBuilder = com.pulumi.aws.kendra.inputs.DataSourceConfigurationWebCrawlerConfigurationArgs.builder
       builder.webCrawlerConfiguration(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.kendra.inputs.IndexDocumentMetadataConfigurationUpdateArgs.Builder)
     /**
      * @param relevance A block that provides manual tuning parameters to determine how the field affects the search results. Detailed below
@@ -364,7 +355,6 @@ object kendra:
       val argsBuilder = com.pulumi.aws.kendra.inputs.IndexDocumentMetadataConfigurationUpdateSearchArgs.builder
       builder.search(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.kendra.inputs.DataSourceConfigurationWebCrawlerConfigurationAuthenticationConfigurationArgs.Builder)
     /**
      * @param basicAuthentications The list of configuration information that&#39;s required to connect to and crawl a website host using basic authentication credentials. The list includes the name and port number of the website host. Detailed below.
@@ -375,7 +365,6 @@ object kendra:
       def argsBuilder = com.pulumi.aws.kendra.inputs.DataSourceConfigurationWebCrawlerConfigurationAuthenticationConfigurationBasicAuthenticationArgs.builder
       builder.basicAuthentications(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.kendra.inputs.DataSourceCustomDocumentEnrichmentConfigurationInlineConfigurationTargetArgs.Builder)
     /**
      * @param targetDocumentAttributeValue The target value you want to create for the target attribute. For example, &#39;Finance&#39; could be the target value for the target attribute key &#39;Department&#39;. See target_document_attribute_value.
@@ -386,7 +375,6 @@ object kendra:
       val argsBuilder = com.pulumi.aws.kendra.inputs.DataSourceCustomDocumentEnrichmentConfigurationInlineConfigurationTargetTargetDocumentAttributeValueArgs.builder
       builder.targetDocumentAttributeValue(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.kendra.inputs.IndexState.Builder)
     /**
      * @param capacityUnits A block that sets the number of additional document storage and query capacity units that should be used by the index. Detailed below.
@@ -445,7 +433,7 @@ object kendra:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.kendra.inputs.IndexState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.kendra.inputs.DataSourceConfigurationWebCrawlerConfigurationUrlsArgs.Builder)
     /**
      * @param seedUrlConfiguration A block that specifies the configuration of the seed or starting point URLs of the websites you want to crawl. You can choose to crawl only the website host names, or the website host names with subdomains, or the website host names with subdomains and other domains that the webpages link to. You can list up to `100` seed URLs. Detailed below.
@@ -465,7 +453,6 @@ object kendra:
       val argsBuilder = com.pulumi.aws.kendra.inputs.DataSourceConfigurationWebCrawlerConfigurationUrlsSiteMapsConfigurationArgs.builder
       builder.siteMapsConfiguration(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.kendra.inputs.DataSourceCustomDocumentEnrichmentConfigurationPreExtractionHookConfigurationInvocationConditionArgs.Builder)
     /**
      * @param conditionOnValue The value used by the operator. For example, you can specify the value &#39;financial&#39; for strings in the `_source_uri` field that partially match or contain this value. See condition_on_value.
@@ -476,7 +463,6 @@ object kendra:
       val argsBuilder = com.pulumi.aws.kendra.inputs.DataSourceCustomDocumentEnrichmentConfigurationPreExtractionHookConfigurationInvocationConditionConditionOnValueArgs.builder
       builder.conditionOnValue(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.kendra.inputs.ExperienceConfigurationArgs.Builder)
     /**
      * @param contentSourceConfiguration The identifiers of your data sources and FAQs. Or, you can specify that you want to use documents indexed via the `BatchPutDocument API`. The provider will only perform drift detection of its value when present in a configuration. Detailed below.
@@ -496,7 +482,6 @@ object kendra:
       val argsBuilder = com.pulumi.aws.kendra.inputs.ExperienceConfigurationUserIdentityConfigurationArgs.builder
       builder.userIdentityConfiguration(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.kendra.inputs.DataSourceCustomDocumentEnrichmentConfigurationPostExtractionHookConfigurationArgs.Builder)
     /**
      * @param invocationCondition A block that specifies the condition used for when a Lambda function should be invoked. For example, you can specify a condition that if there are empty date-time values, then Amazon Kendra should invoke a function that inserts the current date-time. See invocation_condition.
@@ -507,7 +492,6 @@ object kendra:
       val argsBuilder = com.pulumi.aws.kendra.inputs.DataSourceCustomDocumentEnrichmentConfigurationPostExtractionHookConfigurationInvocationConditionArgs.builder
       builder.invocationCondition(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.kendra.inputs.IndexIndexStatisticArgs.Builder)
     /**
      * @param faqStatistics A block that specifies the number of question and answer topics in the index. Detailed below.
@@ -527,7 +511,6 @@ object kendra:
       def argsBuilder = com.pulumi.aws.kendra.inputs.IndexIndexStatisticTextDocumentStatisticArgs.builder
       builder.textDocumentStatistics(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.kendra.inputs.DataSourceConfigurationWebCrawlerConfigurationArgs.Builder)
     /**
      * @param authenticationConfiguration A block with the configuration information required to connect to websites using authentication. You can connect to websites using basic authentication of user name and password. You use a secret in AWS Secrets Manager to store your authentication credentials. You must provide the website host name and port number. For example, the host name of `https://a.example.com/page1.html` is `&#34;a.example.com&#34;` and the port is `443`, the standard port for HTTPS. Detailed below.
@@ -556,7 +539,6 @@ object kendra:
       val argsBuilder = com.pulumi.aws.kendra.inputs.DataSourceConfigurationWebCrawlerConfigurationUrlsArgs.builder
       builder.urls(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.kendra.inputs.DataSourceCustomDocumentEnrichmentConfigurationArgs.Builder)
     /**
      * @param inlineConfigurations Configuration information to alter document attributes or metadata fields and content when ingesting documents into Amazon Kendra. Minimum number of `0` items. Maximum number of `100` items. Detailed below.
@@ -585,7 +567,6 @@ object kendra:
       val argsBuilder = com.pulumi.aws.kendra.inputs.DataSourceCustomDocumentEnrichmentConfigurationPreExtractionHookConfigurationArgs.builder
       builder.preExtractionHookConfiguration(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.kendra.inputs.QuerySuggestionsBlockListState.Builder)
     /**
      * @param sourceS3Path S3 path where your block list text file is located. See details below.
@@ -599,7 +580,7 @@ object kendra:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.kendra.inputs.QuerySuggestionsBlockListState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.kendra.inputs.DataSourceConfigurationS3ConfigurationArgs.Builder)
     /**
      * @param accessControlListConfiguration A block that provides the path to the S3 bucket that contains the user context filtering files for the data source. For the format of the file, see [Access control for S3 data sources](https://docs.aws.amazon.com/kendra/latest/dg/s3-acl.html). Detailed below.
@@ -619,7 +600,6 @@ object kendra:
       val argsBuilder = com.pulumi.aws.kendra.inputs.DataSourceConfigurationS3ConfigurationDocumentsMetadataConfigurationArgs.builder
       builder.documentsMetadataConfiguration(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.kendra.inputs.ThesaurusState.Builder)
     /**
      * @param sourceS3Path The S3 path where your thesaurus file sits in S3. Detailed below.
@@ -633,7 +613,7 @@ object kendra:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.kendra.inputs.ThesaurusState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.kendra.inputs.DataSourceCustomDocumentEnrichmentConfigurationPostExtractionHookConfigurationInvocationConditionArgs.Builder)
     /**
      * @param conditionOnValue The value used by the operator. For example, you can specify the value &#39;financial&#39; for strings in the `_source_uri` field that partially match or contain this value. See condition_on_value.
@@ -644,7 +624,6 @@ object kendra:
       val argsBuilder = com.pulumi.aws.kendra.inputs.DataSourceCustomDocumentEnrichmentConfigurationPostExtractionHookConfigurationInvocationConditionConditionOnValueArgs.builder
       builder.conditionOnValue(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.kendra.inputs.IndexUserTokenConfigurationsArgs.Builder)
     /**
      * @param jsonTokenTypeConfiguration A block that specifies the information about the JSON token type configuration. Detailed below.
@@ -664,11 +643,10 @@ object kendra:
       val argsBuilder = com.pulumi.aws.kendra.inputs.IndexUserTokenConfigurationsJwtTokenTypeConfigurationArgs.builder
       builder.jwtTokenTypeConfiguration(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.kendra.inputs.ExperienceState.Builder)
     /**
      * @param configuration Configuration information for your Amazon Kendra experience. The provider will only perform drift detection of its value when present in a configuration. Detailed below.
-     *  
+     * 
      *  &gt; **NOTE:** By default of the AWS Kendra API, updates to an existing `aws.kendra.Experience` resource (e.g. updating the `name`) will also update the `configuration.content_source_configuration.direct_put_content` parameter to `false` if not already provided.
      * @return builder
      */
@@ -686,7 +664,6 @@ object kendra:
       def argsBuilder = com.pulumi.aws.kendra.inputs.ExperienceEndpointArgs.builder
       builder.endpoints(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.kendra.inputs.DataSourceState.Builder)
     /**
      * @param configuration A block with the configuration information to connect to your Data Source repository. You can&#39;t specify the `configuration` block when the `type` parameter is set to `CUSTOM`. Detailed below.
@@ -709,7 +686,7 @@ object kendra:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.kendra.inputs.DataSourceState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.kendra.inputs.DataSourceCustomDocumentEnrichmentConfigurationPreExtractionHookConfigurationArgs.Builder)
     /**
      * @param invocationCondition A block that specifies the condition used for when a Lambda function should be invoked. For example, you can specify a condition that if there are empty date-time values, then Amazon Kendra should invoke a function that inserts the current date-time. See invocation_condition.
@@ -720,7 +697,6 @@ object kendra:
       val argsBuilder = com.pulumi.aws.kendra.inputs.DataSourceCustomDocumentEnrichmentConfigurationPreExtractionHookConfigurationInvocationConditionArgs.builder
       builder.invocationCondition(args(argsBuilder).build)
 
-                       
   /** Resource for managing an AWS Kendra Data Source. */
   def DataSource(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.kendra.DataSourceArgs.Builder])(using conf: KoPulumiConf) =
@@ -731,7 +707,6 @@ object kendra:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.kendra.DataSource(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)

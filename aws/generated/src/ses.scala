@@ -8,7 +8,6 @@ object ses:
   def ReceiptRuleSet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ses.ReceiptRuleSetArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.ses.ReceiptRuleSetArgs.builder
-    
     com.pulumi.aws.ses.ReceiptRuleSet(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -77,12 +76,10 @@ object ses:
       def argsBuilder = com.pulumi.aws.ses.inputs.ReceiptRuleWorkmailActionArgs.builder
       builder.workmailActions(args.map(_(argsBuilder).build)*)
 
-                       
   /** Provides an SES domain identity resource */
   def DomainIdentity(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ses.DomainIdentityArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.ses.DomainIdentityArgs.builder
-    
     com.pulumi.aws.ses.DomainIdentity(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -94,7 +91,6 @@ object ses:
     conf.logicalName2pysicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
       case None               =>
-    
     com.pulumi.aws.ses.ReceiptFilter(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -103,7 +99,6 @@ object ses:
   def IdentityNotificationTopic(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ses.IdentityNotificationTopicArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.ses.IdentityNotificationTopicArgs.builder
-    
     com.pulumi.aws.ses.IdentityNotificationTopic(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -129,7 +124,7 @@ object ses:
 
     /**
      * @param snsDestination Send the events to an SNS Topic destination
-     *  
+     * 
      *  &gt; **NOTE:** You can specify `&#34;cloudwatchDestination&#34;` or `&#34;kinesisDestination&#34;` but not both
      * @return builder
      */
@@ -138,16 +133,14 @@ object ses:
       val argsBuilder = com.pulumi.aws.ses.inputs.EventDestinationSnsDestinationArgs.builder
       builder.snsDestination(args(argsBuilder).build)
 
-                       
   /**
    * Provides an SES domain MAIL FROM resource.
-   *  
+   * 
    *  &gt; **NOTE:** For the MAIL FROM domain to be fully usable, this resource should be paired with the aws.ses.DomainIdentity resource. To validate the MAIL FROM domain, a DNS MX record is required. To pass SPF checks, a DNS TXT record may also be required. See the [Amazon SES MAIL FROM documentation](https://docs.aws.amazon.com/ses/latest/dg/mail-from.html) for more information.
    */
   def MailFrom(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ses.MailFromArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.ses.MailFromArgs.builder
-    
     com.pulumi.aws.ses.MailFrom(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -156,7 +149,6 @@ object ses:
   def EmailIdentity(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ses.EmailIdentityArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.ses.EmailIdentityArgs.builder
-    
     com.pulumi.aws.ses.EmailIdentity(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -209,7 +201,6 @@ object ses:
     conf.logicalName2pysicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
       case None               =>
-    
     com.pulumi.aws.ses.IdentityPolicy(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -221,20 +212,18 @@ object ses:
     conf.logicalName2pysicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
       case None               =>
-    
     com.pulumi.aws.ses.ReceiptRule(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
   /**
    * Provides an SES domain DKIM generation resource.
-   *  
+   * 
    *  Domain ownership needs to be confirmed first using sesDomainIdentity Resource
    */
   def DomainDkim(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ses.DomainDkimArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.ses.DomainDkimArgs.builder
-    
     com.pulumi.aws.ses.DomainDkim(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -246,7 +235,6 @@ object ses:
     conf.logicalName2pysicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
       case None               =>
-    
     com.pulumi.aws.ses.EventDestination(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -270,7 +258,6 @@ object ses:
       val argsBuilder = com.pulumi.aws.ses.inputs.ConfigurationSetTrackingOptionsArgs.builder
       builder.trackingOptions(args(argsBuilder).build)
 
-                       
   /** Provides an SES configuration set resource. */
   def ConfigurationSet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ses.ConfigurationSetArgs.Builder])(using conf: KoPulumiConf) =
@@ -278,7 +265,6 @@ object ses:
     conf.logicalName2pysicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
       case None               =>
-    
     com.pulumi.aws.ses.ConfigurationSet(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -290,7 +276,6 @@ object ses:
     conf.logicalName2pysicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
       case None               =>
-    
     com.pulumi.aws.ses.Template(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -299,24 +284,22 @@ object ses:
   def ActiveReceiptRuleSet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ses.ActiveReceiptRuleSetArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.ses.ActiveReceiptRuleSetArgs.builder
-    
     com.pulumi.aws.ses.ActiveReceiptRuleSet(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
   /**
    * Represents a successful verification of an SES domain identity.
-   *  
+   * 
    *  Most commonly, this resource is used together with `aws.route53.Record` and
    *  `aws.ses.DomainIdentity` to request an SES domain identity,
    *  deploy the required DNS verification records, and wait for verification to complete.
-   *  
+   * 
    *  &gt; **WARNING:** This resource implements a part of the verification workflow. It does not represent a real-world entity in AWS, therefore changing or deleting this resource on its own has no immediate effect.
    */
   def DomainIdentityVerification(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ses.DomainIdentityVerificationArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.ses.DomainIdentityVerificationArgs.builder
-    
     com.pulumi.aws.ses.DomainIdentityVerification(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -342,7 +325,7 @@ object ses:
 
     /**
      * @param snsDestination Send the events to an SNS Topic destination
-     *  
+     * 
      *  &gt; **NOTE:** You can specify `&#34;cloudwatchDestination&#34;` or `&#34;kinesisDestination&#34;` but not both
      * @return builder
      */
@@ -351,7 +334,6 @@ object ses:
       val argsBuilder = com.pulumi.aws.ses.inputs.EventDestinationSnsDestinationArgs.builder
       builder.snsDestination(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.ses.inputs.ReceiptRuleState.Builder)
     /**
      * @param addHeaderActions A list of Add Header Action blocks. Documented below.
@@ -416,7 +398,6 @@ object ses:
       def argsBuilder = com.pulumi.aws.ses.inputs.ReceiptRuleWorkmailActionArgs.builder
       builder.workmailActions(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.ses.inputs.ConfigurationSetState.Builder)
     /**
      * @param deliveryOptions Whether messages that use the configuration set are required to use TLS. See below.
@@ -435,5 +416,3 @@ object ses:
         com.pulumi.aws.ses.inputs.ConfigurationSetState.Builder =
       val argsBuilder = com.pulumi.aws.ses.inputs.ConfigurationSetTrackingOptionsArgs.builder
       builder.trackingOptions(args(argsBuilder).build)
-
-                       

@@ -7,7 +7,7 @@ object emr:
   /**
    * Provides an Elastic MapReduce Cluster Instance Group configuration.
    *  See [Amazon Elastic MapReduce Documentation](https://aws.amazon.com/documentation/emr/) for more information.
-   *  
+   * 
    *  &gt; **NOTE:** At this time, Instance Groups cannot be destroyed through the API nor
    *  web interface. Instance Groups are destroyed when the EMR Cluster is destroyed.
    *  this provider will resize any Instance Group to zero when destroying the resource.
@@ -18,7 +18,6 @@ object emr:
     conf.logicalName2pysicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
       case None               =>
-    
     com.pulumi.aws.emr.InstanceGroup(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -27,7 +26,6 @@ object emr:
   def StudioSessionMapping(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.emr.StudioSessionMappingArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.emr.StudioSessionMappingArgs.builder
-    
     com.pulumi.aws.emr.StudioSessionMapping(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -64,7 +62,7 @@ object emr:
   /**
    * Provides an Elastic MapReduce Cluster Instance Fleet configuration.
    *  See [Amazon Elastic MapReduce Documentation](https://aws.amazon.com/documentation/emr/) for more information.
-   *  
+   * 
    *  &gt; **NOTE:** At this time, Instance Fleets cannot be destroyed through the API nor
    *  web interface. Instance Fleets are destroyed when the EMR Cluster is destroyed.
    *  the provider will resize any Instance Fleet to zero when destroying the resource.
@@ -75,7 +73,6 @@ object emr:
     conf.logicalName2pysicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
       case None               =>
-    
     com.pulumi.aws.emr.InstanceFleet(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -84,14 +81,13 @@ object emr:
   def BlockPublicAccessConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.emr.BlockPublicAccessConfigurationArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.emr.BlockPublicAccessConfigurationArgs.builder
-    
     com.pulumi.aws.emr.BlockPublicAccessConfiguration(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
   /**
    * Provides an Elastic MapReduce Cluster, a web service that makes it easy to process large amounts of data efficiently. See [Amazon Elastic MapReduce Documentation](https://aws.amazon.com/documentation/elastic-mapreduce/) for more information.
-   *  
+   * 
    *  To configure [Instance Groups](https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-instance-group-configuration.html#emr-plan-instance-groups) for [task nodes](https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-master-core-task-nodes.html#emr-plan-task), see the `aws.emr.InstanceGroup` resource.
    */
   def Cluster(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
@@ -103,7 +99,6 @@ object emr:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.emr.Cluster(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -127,7 +122,6 @@ object emr:
       val argsBuilder = com.pulumi.aws.emr.inputs.InstanceFleetLaunchSpecificationsArgs.builder
       builder.launchSpecifications(args(argsBuilder).build)
 
-                       
   /** Provides an Elastic MapReduce Studio. */
   def Studio(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.emr.StudioArgs.Builder])(using conf: KoPulumiConf) =
@@ -138,7 +132,6 @@ object emr:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.emr.Studio(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -237,7 +230,7 @@ object emr:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.emr.ClusterArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.emr.BlockPublicAccessConfigurationArgs.Builder)
     /**
      * @param permittedPublicSecurityGroupRuleRanges Configuration block for defining permitted public security group rule port ranges. Can be defined multiple times per resource. Only valid if `blockPublicSecurityGroupRules` is set to `true`.
@@ -248,7 +241,6 @@ object emr:
       def argsBuilder = com.pulumi.aws.emr.inputs.BlockPublicAccessConfigurationPermittedPublicSecurityGroupRuleRangeArgs.builder
       builder.permittedPublicSecurityGroupRuleRanges(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.emr.InstanceGroupArgs.Builder)
     /**
      * @param ebsConfigs One or more `ebsConfig` blocks as defined below. Changing this forces a new resource to be created.
@@ -259,12 +251,10 @@ object emr:
       def argsBuilder = com.pulumi.aws.emr.inputs.InstanceGroupEbsConfigArgs.builder
       builder.ebsConfigs(args.map(_(argsBuilder).build)*)
 
-                       
   /** Provides a Managed Scaling policy for EMR Cluster. With Amazon EMR versions 5.30.0 and later (except for Amazon EMR 6.0.0), you can enable EMR managed scaling to automatically increase or decrease the number of instances or units in your cluster based on workload. See [Using EMR Managed Scaling in Amazon EMR](https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-managed-scaling.html) for more information. */
   def ManagedScalingPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.emr.ManagedScalingPolicyArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.emr.ManagedScalingPolicyArgs.builder
-    
     com.pulumi.aws.emr.ManagedScalingPolicy(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -276,7 +266,6 @@ object emr:
     conf.logicalName2pysicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
       case None               =>
-    
     com.pulumi.aws.emr.SecurityConfiguration(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -291,7 +280,6 @@ object emr:
       def argsBuilder = com.pulumi.aws.emr.inputs.ManagedScalingPolicyComputeLimitArgs.builder
       builder.computeLimits(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.emr.inputs.InstanceGroupState.Builder)
     /**
      * @param ebsConfigs One or more `ebsConfig` blocks as defined below. Changing this forces a new resource to be created.
@@ -302,7 +290,6 @@ object emr:
       def argsBuilder = com.pulumi.aws.emr.inputs.InstanceGroupEbsConfigArgs.builder
       builder.ebsConfigs(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.emr.inputs.ClusterState.Builder)
     /**
      * @param autoTerminationPolicy An auto-termination policy for an Amazon EMR cluster. An auto-termination policy defines the amount of idle time in seconds after which a cluster automatically terminates. See Auto Termination Policy Below.
@@ -397,7 +384,7 @@ object emr:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.emr.inputs.ClusterState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.emr.inputs.InstanceFleetInstanceTypeConfigArgs.Builder)
     /**
      * @param configurations A configuration classification that applies when provisioning cluster instances, which can include configurations for applications and software that run on the cluster. List of `configuration` blocks.
@@ -417,7 +404,6 @@ object emr:
       def argsBuilder = com.pulumi.aws.emr.inputs.InstanceFleetInstanceTypeConfigEbsConfigArgs.builder
       builder.ebsConfigs(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.emr.inputs.ClusterMasterInstanceGroupArgs.Builder)
     /**
      * @param ebsConfigs Configuration block(s) for EBS volumes attached to each instance in the instance group. Detailed below.
@@ -428,7 +414,6 @@ object emr:
       def argsBuilder = com.pulumi.aws.emr.inputs.ClusterMasterInstanceGroupEbsConfigArgs.builder
       builder.ebsConfigs(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.emr.inputs.ClusterCoreInstanceFleetArgs.Builder)
     /**
      * @param instanceTypeConfigs Configuration block for instance fleet.
@@ -448,7 +433,6 @@ object emr:
       val argsBuilder = com.pulumi.aws.emr.inputs.ClusterCoreInstanceFleetLaunchSpecificationsArgs.builder
       builder.launchSpecifications(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.emr.inputs.ClusterCoreInstanceFleetLaunchSpecificationsArgs.Builder)
     /**
      * @param onDemandSpecifications Configuration block for on demand instances launch specifications.
@@ -468,7 +452,6 @@ object emr:
       def argsBuilder = com.pulumi.aws.emr.inputs.ClusterCoreInstanceFleetLaunchSpecificationsSpotSpecificationArgs.builder
       builder.spotSpecifications(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.emr.inputs.ClusterCoreInstanceFleetInstanceTypeConfigArgs.Builder)
     /**
      * @param configurations Configuration classification that applies when provisioning cluster instances, which can include configurations for applications and software that run on the cluster. List of `configuration` blocks.
@@ -488,7 +471,6 @@ object emr:
       def argsBuilder = com.pulumi.aws.emr.inputs.ClusterCoreInstanceFleetInstanceTypeConfigEbsConfigArgs.builder
       builder.ebsConfigs(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.emr.inputs.ClusterMasterInstanceFleetLaunchSpecificationsArgs.Builder)
     /**
      * @param onDemandSpecifications Configuration block for on demand instances launch specifications.
@@ -508,7 +490,6 @@ object emr:
       def argsBuilder = com.pulumi.aws.emr.inputs.ClusterMasterInstanceFleetLaunchSpecificationsSpotSpecificationArgs.builder
       builder.spotSpecifications(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.emr.inputs.BlockPublicAccessConfigurationState.Builder)
     /**
      * @param permittedPublicSecurityGroupRuleRanges Configuration block for defining permitted public security group rule port ranges. Can be defined multiple times per resource. Only valid if `blockPublicSecurityGroupRules` is set to `true`.
@@ -519,7 +500,6 @@ object emr:
       def argsBuilder = com.pulumi.aws.emr.inputs.BlockPublicAccessConfigurationPermittedPublicSecurityGroupRuleRangeArgs.builder
       builder.permittedPublicSecurityGroupRuleRanges(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.emr.inputs.GetReleaseLabelsArgs.Builder)
     /**
      * @param filters Filters the results of the request. Prefix specifies the prefix of release labels to return. Application specifies the application (with/without version) of release labels to return. See Filters.
@@ -530,7 +510,6 @@ object emr:
       val argsBuilder = com.pulumi.aws.emr.inputs.GetReleaseLabelsFiltersArgs.builder
       builder.filters(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.emr.inputs.ClusterCoreInstanceGroupArgs.Builder)
     /**
      * @param ebsConfigs Configuration block(s) for EBS volumes attached to each instance in the instance group. Detailed below.
@@ -541,7 +520,6 @@ object emr:
       def argsBuilder = com.pulumi.aws.emr.inputs.ClusterCoreInstanceGroupEbsConfigArgs.builder
       builder.ebsConfigs(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.emr.inputs.ClusterMasterInstanceFleetInstanceTypeConfigArgs.Builder)
     /**
      * @param configurations Configuration classification that applies when provisioning cluster instances, which can include configurations for applications and software that run on the cluster. List of `configuration` blocks.
@@ -561,7 +539,6 @@ object emr:
       def argsBuilder = com.pulumi.aws.emr.inputs.ClusterMasterInstanceFleetInstanceTypeConfigEbsConfigArgs.builder
       builder.ebsConfigs(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.emr.inputs.ManagedScalingPolicyState.Builder)
     /**
      * @param computeLimits Configuration block with compute limit settings. Described below.
@@ -572,7 +549,6 @@ object emr:
       def argsBuilder = com.pulumi.aws.emr.inputs.ManagedScalingPolicyComputeLimitArgs.builder
       builder.computeLimits(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.emr.inputs.InstanceFleetLaunchSpecificationsArgs.Builder)
     /**
      * @param onDemandSpecifications Configuration block for on demand instances launch specifications
@@ -592,7 +568,6 @@ object emr:
       def argsBuilder = com.pulumi.aws.emr.inputs.InstanceFleetLaunchSpecificationsSpotSpecificationArgs.builder
       builder.spotSpecifications(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.emr.inputs.ClusterStepArgs.Builder)
     /**
      * @param hadoopJarStep JAR file used for the step. See below.
@@ -603,7 +578,6 @@ object emr:
       val argsBuilder = com.pulumi.aws.emr.inputs.ClusterStepHadoopJarStepArgs.builder
       builder.hadoopJarStep(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.emr.inputs.ClusterMasterInstanceFleetArgs.Builder)
     /**
      * @param instanceTypeConfigs Configuration block for instance fleet.
@@ -623,7 +597,6 @@ object emr:
       val argsBuilder = com.pulumi.aws.emr.inputs.ClusterMasterInstanceFleetLaunchSpecificationsArgs.builder
       builder.launchSpecifications(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.emr.inputs.InstanceFleetState.Builder)
     /**
      * @param instanceTypeConfigs Configuration block for instance fleet
@@ -642,5 +615,3 @@ object emr:
         com.pulumi.aws.emr.inputs.InstanceFleetState.Builder =
       val argsBuilder = com.pulumi.aws.emr.inputs.InstanceFleetLaunchSpecificationsArgs.builder
       builder.launchSpecifications(args(argsBuilder).build)
-
-                       

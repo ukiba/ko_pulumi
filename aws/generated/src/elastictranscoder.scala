@@ -6,7 +6,7 @@ import com.pulumi.resources.CustomResourceOptions
 object elastictranscoder:
   /**
    * Provides an Elastic Transcoder pipeline resource.
-   *  
+   * 
    *  &gt; **Warning:** This resource is deprecated. Use [AWS Elemental MediaConvert](https://aws.amazon.com/blogs/media/migrating-workflows-from-amazon-elastic-transcoder-to-aws-elemental-mediaconvert/) instead. AWS will [discontinue support for Amazon Elastic Transcoder](https://aws.amazon.com/blogs/media/support-for-amazon-elastic-transcoder-ending-soon/), effective November 13, 2025.
    */
   def Pipeline(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
@@ -15,14 +15,13 @@ object elastictranscoder:
     conf.logicalName2pysicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
       case None               =>
-    
     com.pulumi.aws.elastictranscoder.Pipeline(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
   /**
    * Provides an Elastic Transcoder preset resource.
-   *  
+   * 
    *  &gt; **Warning:** This resource is deprecated. Use [AWS Elemental MediaConvert](https://aws.amazon.com/blogs/media/migrating-workflows-from-amazon-elastic-transcoder-to-aws-elemental-mediaconvert/) instead. AWS will [discontinue support for Amazon Elastic Transcoder](https://aws.amazon.com/blogs/media/support-for-amazon-elastic-transcoder-ending-soon/), effective November 13, 2025.
    */
   def Preset(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
@@ -31,7 +30,6 @@ object elastictranscoder:
     conf.logicalName2pysicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
       case None               =>
-    
     com.pulumi.aws.elastictranscoder.Preset(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -82,7 +80,6 @@ object elastictranscoder:
       def argsBuilder = com.pulumi.aws.elastictranscoder.inputs.PresetVideoWatermarkArgs.builder
       builder.videoWatermarks(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.elastictranscoder.PipelineArgs.Builder)
     /**
      * @param contentConfig The ContentConfig object specifies information about the Amazon S3 bucket in which you want Elastic Transcoder to save transcoded files and playlists. (documented below)
@@ -122,9 +119,9 @@ object elastictranscoder:
 
     /**
      * @param thumbnailConfigPermissions The permissions for the `thumbnailConfig` object. (documented below)
-     *  
+     * 
      *  See [&#34;Create Pipeline&#34;](http://docs.aws.amazon.com/elastictranscoder/latest/developerguide/create-pipeline.html) in the AWS docs for reference.
-     *  
+     * 
      *  The `contentConfig` object specifies information about the Amazon S3 bucket in
      *  which you want Elastic Transcoder to save transcoded files and playlists: which
      *  bucket to use, and the storage class that you want to assign to the files. If
@@ -138,7 +135,6 @@ object elastictranscoder:
       def argsBuilder = com.pulumi.aws.elastictranscoder.inputs.PipelineThumbnailConfigPermissionArgs.builder
       builder.thumbnailConfigPermissions(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.elastictranscoder.inputs.PresetState.Builder)
     /**
      * @param audio Audio parameters object (documented below).
@@ -185,7 +181,6 @@ object elastictranscoder:
       def argsBuilder = com.pulumi.aws.elastictranscoder.inputs.PresetVideoWatermarkArgs.builder
       builder.videoWatermarks(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.elastictranscoder.inputs.PipelineState.Builder)
     /**
      * @param contentConfig The ContentConfig object specifies information about the Amazon S3 bucket in which you want Elastic Transcoder to save transcoded files and playlists. (documented below)
@@ -225,9 +220,9 @@ object elastictranscoder:
 
     /**
      * @param thumbnailConfigPermissions The permissions for the `thumbnailConfig` object. (documented below)
-     *  
+     * 
      *  See [&#34;Create Pipeline&#34;](http://docs.aws.amazon.com/elastictranscoder/latest/developerguide/create-pipeline.html) in the AWS docs for reference.
-     *  
+     * 
      *  The `contentConfig` object specifies information about the Amazon S3 bucket in
      *  which you want Elastic Transcoder to save transcoded files and playlists: which
      *  bucket to use, and the storage class that you want to assign to the files. If
@@ -240,5 +235,3 @@ object elastictranscoder:
         com.pulumi.aws.elastictranscoder.inputs.PipelineState.Builder =
       def argsBuilder = com.pulumi.aws.elastictranscoder.inputs.PipelineThumbnailConfigPermissionArgs.builder
       builder.thumbnailConfigPermissions(args.map(_(argsBuilder).build)*)
-
-                       

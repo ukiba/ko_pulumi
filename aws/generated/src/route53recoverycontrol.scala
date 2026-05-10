@@ -17,7 +17,7 @@ object route53recoverycontrol:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.route53recoverycontrol.SafetyRuleArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   /** Provides an AWS Route 53 Recovery Control Config Safety Rule */
   def SafetyRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.route53recoverycontrol.SafetyRuleArgs.Builder])(using conf: KoPulumiConf) =
@@ -28,7 +28,6 @@ object route53recoverycontrol:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.route53recoverycontrol.SafetyRule(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -43,7 +42,6 @@ object route53recoverycontrol:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.route53recoverycontrol.ControlPanel(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -58,7 +56,6 @@ object route53recoverycontrol:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.route53recoverycontrol.Cluster(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -70,7 +67,6 @@ object route53recoverycontrol:
     conf.logicalName2pysicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
       case None               =>
-    
     com.pulumi.aws.route53recoverycontrol.RoutingControl(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -88,7 +84,7 @@ object route53recoverycontrol:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.route53recoverycontrol.inputs.ClusterState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.route53recoverycontrol.inputs.SafetyRuleState.Builder)
     /**
      * @param ruleConfig Configuration block for safety rule criteria. See below.
@@ -102,4 +98,3 @@ object route53recoverycontrol:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.route53recoverycontrol.inputs.SafetyRuleState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       

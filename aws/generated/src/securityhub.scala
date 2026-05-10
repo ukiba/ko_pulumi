@@ -14,44 +14,40 @@ object securityhub:
       val argsBuilder = com.pulumi.aws.securityhub.inputs.OrganizationConfigurationOrganizationConfigurationArgs.builder
       builder.organizationConfiguration(args(argsBuilder).build)
 
-                       
   /** Manages a Security Hub administrator account for an organization. The AWS account utilizing this resource must be an Organizations primary account. More information about Organizations support in Security Hub can be found in the [Security Hub User Guide](https://docs.aws.amazon.com/securityhub/latest/userguide/designate-orgs-admin-account.html). */
   def OrganizationAdminAccount(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.securityhub.OrganizationAdminAccountArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.securityhub.OrganizationAdminAccountArgs.builder
-    
     com.pulumi.aws.securityhub.OrganizationAdminAccount(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
   /**
    * Manages Security Hub configuration policy associations.
-   *  
+   * 
    *  &gt; **NOTE:** This resource requires `aws.securityhub.OrganizationConfiguration` to be configured with type `CENTRAL`. More information about Security Hub central configuration and configuration policies can be found in the [How Security Hub configuration policies work](https://docs.aws.amazon.com/securityhub/latest/userguide/configuration-policies-overview.html) documentation.
    */
   def ConfigurationPolicyAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.securityhub.ConfigurationPolicyAssociationArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.securityhub.ConfigurationPolicyAssociationArgs.builder
-    
     com.pulumi.aws.securityhub.ConfigurationPolicyAssociation(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
   /**
    * Manages the Security Hub Organization Configuration.
-   *  
+   * 
    *  &gt; **NOTE:** This resource requires an `aws.securityhub.OrganizationAdminAccount` to be configured (not necessarily with Pulumi). More information about managing Security Hub in an organization can be found in the [Managing administrator and member accounts](https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-accounts.html) documentation.
-   *  
+   * 
    *  &gt; **NOTE:** In order to set the `configurationType` to `CENTRAL`, the delegated admin must be a member account of the organization and not the management account. Central configuration also requires an `aws.securityhub.FindingAggregator` to be configured.
-   *  
+   * 
    *  &gt; **NOTE:** This is an advanced AWS resource. Pulumi will automatically assume management of the Security Hub Organization Configuration without import and perform no actions on removal from the Pulumi program.
-   *  
+   * 
    *  &gt; **NOTE:** Deleting this resource resets security hub to a local organization configuration with auto enable false.
    */
   def OrganizationConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.securityhub.OrganizationConfigurationArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.securityhub.OrganizationConfigurationArgs.builder
-    
     com.pulumi.aws.securityhub.OrganizationConfiguration(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -63,20 +59,18 @@ object securityhub:
     conf.logicalName2pysicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
       case None               =>
-    
     com.pulumi.aws.securityhub.ActionTarget(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
   /**
    * &gt; **Note:** AWS accounts can only be associated with a single Security Hub master account. Destroying this resource will disassociate the member account from the master account.
-   *  
+   * 
    *  Accepts a Security Hub invitation.
    */
   def InviteAccepter(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.securityhub.InviteAccepterArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.securityhub.InviteAccepterArgs.builder
-    
     com.pulumi.aws.securityhub.InviteAccepter(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -132,7 +126,6 @@ object securityhub:
       val argsBuilder = com.pulumi.aws.securityhub.inputs.InsightFiltersArgs.builder
       builder.filters(args(argsBuilder).build)
 
-                       
   /** Provides a Security Hub custom insight resource. See the [Managing custom insights section](https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-custom-insights.html) of the AWS User Guide for more information. */
   def Insight(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.securityhub.InsightArgs.Builder])(using conf: KoPulumiConf) =
@@ -140,22 +133,20 @@ object securityhub:
     conf.logicalName2pysicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
       case None               =>
-    
     com.pulumi.aws.securityhub.Insight(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
   /**
    * Enables Security Hub CSPM for this AWS account.
-   *  
+   * 
    *  &gt; **NOTE:** Destroying this resource will disable Security Hub for this AWS account.
-   *  
+   * 
    *  &gt; **NOTE:** This resource manages Security Hub CSPM, which is distinct from the unified Security Hub V2 service managed by `aws.securityhub.AccountV2`. Both can coexist in the same account.
    */
   def Account(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.securityhub.AccountArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.securityhub.AccountArgs.builder
-    
     com.pulumi.aws.securityhub.Account(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -164,16 +155,15 @@ object securityhub:
   def FindingAggregator(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.securityhub.FindingAggregatorArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.securityhub.FindingAggregatorArgs.builder
-    
     com.pulumi.aws.securityhub.FindingAggregator(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
   /**
    * Resource for managing an AWS Security Hub Standards Control Association.
-   *  
+   * 
    *  Disable/enable Security Hub security control in the standard.
-   *  
+   * 
    *  The `aws.securityhub.StandardsControlAssociation`, similarly to `aws.securityhub.StandardsControl`,
    *  behaves differently from normal resources, in that Terraform does not _create_ this resource, but instead &#34;adopts&#34; it
    *  into management. When you _delete_ this resource configuration, Terraform &#34;abandons&#34; resource as is and just removes it from the state.
@@ -181,7 +171,6 @@ object securityhub:
   def StandardsControlAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.securityhub.StandardsControlAssociationArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.securityhub.StandardsControlAssociationArgs.builder
-    
     com.pulumi.aws.securityhub.StandardsControlAssociation(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -190,14 +179,13 @@ object securityhub:
   def ProductSubscription(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.securityhub.ProductSubscriptionArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.securityhub.ProductSubscriptionArgs.builder
-    
     com.pulumi.aws.securityhub.ProductSubscription(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
   /**
    * Manages Security Hub configuration policy
-   *  
+   * 
    *  &gt; **NOTE:** This resource requires `aws.securityhub.OrganizationConfiguration` to be configured of type `CENTRAL`. More information about Security Hub central configuration and configuration policies can be found in the [How Security Hub configuration policies work](https://docs.aws.amazon.com/securityhub/latest/userguide/configuration-policies-overview.html) documentation.
    */
   def ConfigurationPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
@@ -206,7 +194,6 @@ object securityhub:
     conf.logicalName2pysicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
       case None               =>
-    
     com.pulumi.aws.securityhub.ConfigurationPolicy(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -215,7 +202,6 @@ object securityhub:
   def Member(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.securityhub.MemberArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.securityhub.MemberArgs.builder
-    
     com.pulumi.aws.securityhub.Member(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -227,7 +213,6 @@ object securityhub:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.securityhub.AutomationRule(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -254,12 +239,12 @@ object securityhub:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.securityhub.AutomationRuleArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   /**
    * Enables the unified Security Hub V2 for this AWS account.
-   *  
+   * 
    *  &gt; **NOTE:** Destroying this resource will disable Security Hub V2 for this AWS account.
-   *  
+   * 
    *  &gt; **NOTE:** This resource manages the unified Security Hub V2 service, which is distinct from the classic Security Hub CSPM managed by `aws.securityhub.Account`. Both can coexist in the same account.
    */
   def AccountV2(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
@@ -268,14 +253,13 @@ object securityhub:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.securityhub.AccountV2(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
   /**
    * Disable/enable Security Hub standards control in the current region.
-   *  
+   * 
    *  The `aws.securityhub.StandardsControl` behaves differently from normal resources, in that
    *  Pulumi does not _create_ this resource, but instead &#34;adopts&#34; it
    *  into management. When you _delete_ this resource configuration, Pulumi &#34;abandons&#34; resource as is and just removes it from the state.
@@ -283,7 +267,6 @@ object securityhub:
   def StandardsControl(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.securityhub.StandardsControlArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.securityhub.StandardsControlArgs.builder
-    
     com.pulumi.aws.securityhub.StandardsControl(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -292,7 +275,6 @@ object securityhub:
   def StandardsSubscription(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.securityhub.StandardsSubscriptionArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.securityhub.StandardsSubscriptionArgs.builder
-    
     com.pulumi.aws.securityhub.StandardsSubscription(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -307,7 +289,6 @@ object securityhub:
       val argsBuilder = com.pulumi.aws.securityhub.inputs.ConfigurationPolicyConfigurationPolicyArgs.builder
       builder.configurationPolicy(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.securityhub.inputs.InsightFiltersNoteUpdatedAtArgs.Builder)
     /**
      * @param dateRange A configuration block of the date range for the date filter. See dateRange below for more details.
@@ -318,7 +299,6 @@ object securityhub:
       val argsBuilder = com.pulumi.aws.securityhub.inputs.InsightFiltersNoteUpdatedAtDateRangeArgs.builder
       builder.dateRange(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.securityhub.inputs.InsightFiltersThreatIntelIndicatorLastObservedAtArgs.Builder)
     /**
      * @param dateRange A configuration block of the date range for the date filter. See dateRange below for more details.
@@ -329,7 +309,6 @@ object securityhub:
       val argsBuilder = com.pulumi.aws.securityhub.inputs.InsightFiltersThreatIntelIndicatorLastObservedAtDateRangeArgs.builder
       builder.dateRange(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.securityhub.inputs.OrganizationConfigurationState.Builder)
     /**
      * @param organizationConfiguration Provides information about the way an organization is configured in Security Hub.
@@ -340,7 +319,6 @@ object securityhub:
       val argsBuilder = com.pulumi.aws.securityhub.inputs.OrganizationConfigurationOrganizationConfigurationArgs.builder
       builder.organizationConfiguration(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.securityhub.inputs.AutomationRuleCriteriaUpdatedAtArgs.Builder)
     /**
      * @param dateRange A configuration block of the date range for the date filter. See dateRange below for more details.
@@ -351,7 +329,6 @@ object securityhub:
       val argsBuilder = com.pulumi.aws.securityhub.inputs.AutomationRuleCriteriaUpdatedAtDateRangeArgs.builder
       builder.dateRange(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.securityhub.inputs.ConfigurationPolicyState.Builder)
     /**
      * @param configurationPolicy Defines how Security Hub is configured. See below.
@@ -362,7 +339,6 @@ object securityhub:
       val argsBuilder = com.pulumi.aws.securityhub.inputs.ConfigurationPolicyConfigurationPolicyArgs.builder
       builder.configurationPolicy(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.securityhub.inputs.ConfigurationPolicyConfigurationPolicySecurityControlsConfigurationSecurityControlCustomParameterArgs.Builder)
     /**
      * @param parameters An object that specifies parameter values for a control in a configuration policy. See below.
@@ -373,7 +349,6 @@ object securityhub:
       def argsBuilder = com.pulumi.aws.securityhub.inputs.ConfigurationPolicyConfigurationPolicySecurityControlsConfigurationSecurityControlCustomParameterParameterArgs.builder
       builder.parameters(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.securityhub.inputs.InsightFiltersUpdatedAtArgs.Builder)
     /**
      * @param dateRange A configuration block of the date range for the date filter. See dateRange below for more details.
@@ -384,7 +359,6 @@ object securityhub:
       val argsBuilder = com.pulumi.aws.securityhub.inputs.InsightFiltersUpdatedAtDateRangeArgs.builder
       builder.dateRange(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.securityhub.inputs.InsightFiltersResourceAwsIamAccessKeyCreatedAtArgs.Builder)
     /**
      * @param dateRange A configuration block of the date range for the date filter. See dateRange below for more details.
@@ -395,7 +369,6 @@ object securityhub:
       val argsBuilder = com.pulumi.aws.securityhub.inputs.InsightFiltersResourceAwsIamAccessKeyCreatedAtDateRangeArgs.builder
       builder.dateRange(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.securityhub.inputs.InsightFiltersFirstObservedAtArgs.Builder)
     /**
      * @param dateRange A configuration block of the date range for the date filter. See dateRange below for more details.
@@ -406,7 +379,6 @@ object securityhub:
       val argsBuilder = com.pulumi.aws.securityhub.inputs.InsightFiltersFirstObservedAtDateRangeArgs.builder
       builder.dateRange(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.securityhub.inputs.InsightFiltersCreatedAtArgs.Builder)
     /**
      * @param dateRange A configuration block of the date range for the date filter. See dateRange below for more details.
@@ -417,7 +389,6 @@ object securityhub:
       val argsBuilder = com.pulumi.aws.securityhub.inputs.InsightFiltersCreatedAtDateRangeArgs.builder
       builder.dateRange(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.securityhub.inputs.AutomationRuleActionArgs.Builder)
     /**
      * @param findingFieldsUpdate A block that specifies that the automation rule action is an update to a finding field.  Documented below.
@@ -428,7 +399,6 @@ object securityhub:
       val argsBuilder = com.pulumi.aws.securityhub.inputs.AutomationRuleActionFindingFieldsUpdateArgs.builder
       builder.findingFieldsUpdate(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.securityhub.inputs.ConfigurationPolicyConfigurationPolicySecurityControlsConfigurationArgs.Builder)
     /**
      * @param securityControlCustomParameters A list of control parameter customizations that are included in a configuration policy. Include multiple blocks to define multiple control custom parameters. See below.
@@ -439,7 +409,6 @@ object securityhub:
       def argsBuilder = com.pulumi.aws.securityhub.inputs.ConfigurationPolicyConfigurationPolicySecurityControlsConfigurationSecurityControlCustomParameterArgs.builder
       builder.securityControlCustomParameters(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.securityhub.inputs.AutomationRuleCriteriaCreatedAtArgs.Builder)
     /**
      * @param dateRange A configuration block of the date range for the date filter. See dateRange below for more details.
@@ -450,7 +419,6 @@ object securityhub:
       val argsBuilder = com.pulumi.aws.securityhub.inputs.AutomationRuleCriteriaCreatedAtDateRangeArgs.builder
       builder.dateRange(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.securityhub.inputs.InsightFiltersLastObservedAtArgs.Builder)
     /**
      * @param dateRange A configuration block of the date range for the date filter. See dateRange below for more details.
@@ -461,7 +429,6 @@ object securityhub:
       val argsBuilder = com.pulumi.aws.securityhub.inputs.InsightFiltersLastObservedAtDateRangeArgs.builder
       builder.dateRange(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.securityhub.inputs.ConfigurationPolicyConfigurationPolicySecurityControlsConfigurationSecurityControlCustomParameterParameterArgs.Builder)
     /**
      * @param bool The bool `value` for a Boolean-typed Security Hub Control Parameter.
@@ -535,7 +502,6 @@ object securityhub:
       val argsBuilder = com.pulumi.aws.securityhub.inputs.ConfigurationPolicyConfigurationPolicySecurityControlsConfigurationSecurityControlCustomParameterParameterStringListArgs.builder
       builder.stringList(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.securityhub.inputs.InsightFiltersResourceContainerLaunchedAtArgs.Builder)
     /**
      * @param dateRange A configuration block of the date range for the date filter. See dateRange below for more details.
@@ -546,7 +512,6 @@ object securityhub:
       val argsBuilder = com.pulumi.aws.securityhub.inputs.InsightFiltersResourceContainerLaunchedAtDateRangeArgs.builder
       builder.dateRange(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.securityhub.inputs.InsightFiltersResourceAwsEc2InstanceLaunchedAtArgs.Builder)
     /**
      * @param dateRange A configuration block of the date range for the date filter. See dateRange below for more details.
@@ -557,7 +522,6 @@ object securityhub:
       val argsBuilder = com.pulumi.aws.securityhub.inputs.InsightFiltersResourceAwsEc2InstanceLaunchedAtDateRangeArgs.builder
       builder.dateRange(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.securityhub.inputs.AutomationRuleCriteriaLastObservedAtArgs.Builder)
     /**
      * @param dateRange A configuration block of the date range for the date filter. See dateRange below for more details.
@@ -568,7 +532,6 @@ object securityhub:
       val argsBuilder = com.pulumi.aws.securityhub.inputs.AutomationRuleCriteriaLastObservedAtDateRangeArgs.builder
       builder.dateRange(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.securityhub.inputs.AutomationRuleCriteriaFirstObservedAtArgs.Builder)
     /**
      * @param dateRange A configuration block of the date range for the date filter. See dateRange below for more details.
@@ -579,7 +542,6 @@ object securityhub:
       val argsBuilder = com.pulumi.aws.securityhub.inputs.AutomationRuleCriteriaFirstObservedAtDateRangeArgs.builder
       builder.dateRange(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.securityhub.inputs.InsightFiltersArgs.Builder)
     /**
      * @param awsAccountIds AWS account ID that a finding is generated in. See String_Filter below for more details.
@@ -1418,7 +1380,6 @@ object securityhub:
       def argsBuilder = com.pulumi.aws.securityhub.inputs.InsightFiltersWorkflowStatusArgs.builder
       builder.workflowStatuses(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.securityhub.inputs.InsightState.Builder)
     /**
      * @param filters A configuration block including one or more (up to 10 distinct) attributes used to filter the findings included in the insight. The insight only includes findings that match criteria defined in the filters. See filters below for more details.
@@ -1429,7 +1390,6 @@ object securityhub:
       val argsBuilder = com.pulumi.aws.securityhub.inputs.InsightFiltersArgs.builder
       builder.filters(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.securityhub.inputs.AutomationRuleCriteriaNoteUpdatedAtArgs.Builder)
     /**
      * @param dateRange A configuration block of the date range for the date filter. See dateRange below for more details.
@@ -1440,7 +1400,6 @@ object securityhub:
       val argsBuilder = com.pulumi.aws.securityhub.inputs.AutomationRuleCriteriaNoteUpdatedAtDateRangeArgs.builder
       builder.dateRange(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.securityhub.inputs.AutomationRuleCriteriaArgs.Builder)
     /**
      * @param awsAccountIds The AWS account ID in which a finding was generated. Documented below.
@@ -1784,7 +1743,6 @@ object securityhub:
       def argsBuilder = com.pulumi.aws.securityhub.inputs.AutomationRuleCriteriaWorkflowStatusArgs.builder
       builder.workflowStatuses(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.securityhub.inputs.InsightFiltersProcessLaunchedAtArgs.Builder)
     /**
      * @param dateRange A configuration block of the date range for the date filter. See dateRange below for more details.
@@ -1795,7 +1753,6 @@ object securityhub:
       val argsBuilder = com.pulumi.aws.securityhub.inputs.InsightFiltersProcessLaunchedAtDateRangeArgs.builder
       builder.dateRange(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.securityhub.inputs.AutomationRuleActionFindingFieldsUpdateArgs.Builder)
     /**
      * @param note A resource block that updates the note. Documented below.
@@ -1833,7 +1790,6 @@ object securityhub:
       val argsBuilder = com.pulumi.aws.securityhub.inputs.AutomationRuleActionFindingFieldsUpdateWorkflowArgs.builder
       builder.workflow(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.securityhub.inputs.ConfigurationPolicyConfigurationPolicyArgs.Builder)
     /**
      * @param securityControlsConfiguration Defines which security controls are enabled in the configuration policy and any customizations to parameters affecting them. See below.
@@ -1844,7 +1800,6 @@ object securityhub:
       val argsBuilder = com.pulumi.aws.securityhub.inputs.ConfigurationPolicyConfigurationPolicySecurityControlsConfigurationArgs.builder
       builder.securityControlsConfiguration(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.securityhub.inputs.InsightFiltersProcessTerminatedAtArgs.Builder)
     /**
      * @param dateRange A configuration block of the date range for the date filter. See dateRange below for more details.
@@ -1855,7 +1810,6 @@ object securityhub:
       val argsBuilder = com.pulumi.aws.securityhub.inputs.InsightFiltersProcessTerminatedAtDateRangeArgs.builder
       builder.dateRange(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.securityhub.inputs.AutomationRuleState.Builder)
     /**
      * @param actions A block that specifies one or more actions to update finding fields if a finding matches the conditions specified in `Criteria`. Documented below.
@@ -1878,4 +1832,3 @@ object securityhub:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.securityhub.inputs.AutomationRuleState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       

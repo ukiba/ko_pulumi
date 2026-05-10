@@ -53,38 +53,36 @@ object alb:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.alb.TargetGroupArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   /**
    * Provides a Load Balancer Listener Certificate resource.
-   *  
+   * 
    *  This resource is for additional certificates and does not replace the default certificate on the listener.
-   *  
+   * 
    *  &gt; **Note:** `aws.alb.ListenerCertificate` is known as `aws.lb.ListenerCertificate`. The functionality is identical.
    */
   def ListenerCertificate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.alb.ListenerCertificateArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.alb.ListenerCertificateArgs.builder
-    
     com.pulumi.aws.alb.ListenerCertificate(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
   /**
    * Provides the ability to register instances and containers with an Application Load Balancer (ALB) or Network Load Balancer (NLB) target group. For attaching resources with Elastic Load Balancer (ELB), see the `aws.elb.Attachment` resource.
-   *  
+   * 
    *  &gt; **Note:** `aws.alb.TargetGroupAttachment` is known as `aws.lb.TargetGroupAttachment`. The functionality is identical.
    */
   def TargetGroupAttachment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.alb.TargetGroupAttachmentArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.alb.TargetGroupAttachmentArgs.builder
-    
     com.pulumi.aws.alb.TargetGroupAttachment(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
   /**
    * Provides a Target Group resource for use with Load Balancer resources.
-   *  
+   * 
    *  &gt; **Note:** `aws.alb.TargetGroup` is known as `aws.lb.TargetGroup`. The functionality is identical.
    */
   def TargetGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
@@ -96,7 +94,6 @@ object alb:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.alb.TargetGroup(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -132,10 +129,10 @@ object alb:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.alb.ListenerRuleArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   /**
    * Provides a Load Balancer resource.
-   *  
+   * 
    *  &gt; **Note:** `aws.alb.LoadBalancer` is known as `aws.lb.LoadBalancer`. The functionality is identical.
    */
   def LoadBalancer(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
@@ -147,7 +144,6 @@ object alb:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.alb.LoadBalancer(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -159,9 +155,9 @@ object alb:
   extension (self: AlbFunctions.type)
     /**
      * &gt; **Note:** `aws.alb.Listener` is known as `aws.lb.Listener`. The functionality is identical.
-     *  
+     * 
      *  Provides information about a Load Balancer Listener.
-     *  
+     * 
      *  This data source can prove useful when a module accepts an LB Listener as an input variable and needs to know the LB it is attached to, or other information specific to the listener in question.
      */
     def getListener(args: Endofunction[com.pulumi.aws.alb.inputs.GetListenerArgs.Builder] = identity):
@@ -171,9 +167,9 @@ object alb:
 
     /**
      * &gt; **Note:** `aws.alb.Listener` is known as `aws.lb.Listener`. The functionality is identical.
-     *  
+     * 
      *  Provides information about a Load Balancer Listener.
-     *  
+     * 
      *  This data source can prove useful when a module accepts an LB Listener as an input variable and needs to know the LB it is attached to, or other information specific to the listener in question.
      */
     def getListenerPlain(args: Endofunction[com.pulumi.aws.alb.inputs.GetListenerPlainArgs.Builder] = identity):
@@ -183,9 +179,9 @@ object alb:
 
     /**
      * &gt; **Note:** `aws.alb.LoadBalancer` is known as `aws.lb.LoadBalancer`. The functionality is identical.
-     *  
+     * 
      *  Provides information about a Load Balancer.
-     *  
+     * 
      *  This data source can prove useful when a module accepts an LB as an input
      *  variable and needs to, for example, determine the security groups associated
      *  with it, etc.
@@ -197,9 +193,9 @@ object alb:
 
     /**
      * &gt; **Note:** `aws.alb.LoadBalancer` is known as `aws.lb.LoadBalancer`. The functionality is identical.
-     *  
+     * 
      *  Provides information about a Load Balancer.
-     *  
+     * 
      *  This data source can prove useful when a module accepts an LB as an input
      *  variable and needs to, for example, determine the security groups associated
      *  with it, etc.
@@ -211,9 +207,9 @@ object alb:
 
     /**
      * &gt; **Note:** `aws.alb.TargetGroup` is known as `aws.lb.TargetGroup`. The functionality is identical.
-     *  
+     * 
      *  Provides information about a Load Balancer Target Group.
-     *  
+     * 
      *  This data source can prove useful when a module accepts an LB Target Group as an
      *  input variable and needs to know its attributes. It can also be used to get the ARN of
      *  an LB Target Group for use in other resources, given LB Target Group name.
@@ -225,9 +221,9 @@ object alb:
 
     /**
      * &gt; **Note:** `aws.alb.TargetGroup` is known as `aws.lb.TargetGroup`. The functionality is identical.
-     *  
+     * 
      *  Provides information about a Load Balancer Target Group.
-     *  
+     * 
      *  This data source can prove useful when a module accepts an LB Target Group as an
      *  input variable and needs to know its attributes. It can also be used to get the ARN of
      *  an LB Target Group for use in other resources, given LB Target Group name.
@@ -295,10 +291,10 @@ object alb:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.alb.LoadBalancerArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   /**
    * Provides a Load Balancer Listener resource.
-   *  
+   * 
    *  &gt; **Note:** `aws.alb.Listener` is known as `aws.lb.Listener`. The functionality is identical.
    */
   def Listener(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
@@ -307,7 +303,6 @@ object alb:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.alb.Listener(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -334,7 +329,7 @@ object alb:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.alb.ListenerArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.alb.inputs.TargetGroupTargetGroupHealthArgs.Builder)
     /**
      * @param dnsFailover Block to configure DNS Failover requirements. See DNS Failover below for details on attributes.
@@ -354,7 +349,6 @@ object alb:
       val argsBuilder = com.pulumi.aws.alb.inputs.TargetGroupTargetGroupHealthUnhealthyStateRoutingArgs.builder
       builder.unhealthyStateRouting(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.alb.inputs.ListenerState.Builder)
     /**
      * @param defaultActions Configuration block for default actions. See below.
@@ -377,7 +371,7 @@ object alb:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.alb.inputs.ListenerState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.alb.inputs.ListenerRuleActionForwardArgs.Builder)
     /**
      * @param stickiness The target group stickiness for the rule.
@@ -397,7 +391,6 @@ object alb:
       def argsBuilder = com.pulumi.aws.alb.inputs.ListenerRuleActionForwardTargetGroupArgs.builder
       builder.targetGroups(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.alb.inputs.ListenerDefaultActionJwtValidationArgs.Builder)
     /**
      * @param additionalClaims Repeatable configuration block for additional claims to validate.
@@ -408,7 +401,6 @@ object alb:
       def argsBuilder = com.pulumi.aws.alb.inputs.ListenerDefaultActionJwtValidationAdditionalClaimArgs.builder
       builder.additionalClaims(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.alb.inputs.LoadBalancerState.Builder)
     /**
      * @param accessLogs Access Logs block. See below.
@@ -467,7 +459,7 @@ object alb:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.alb.inputs.LoadBalancerState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.alb.inputs.TargetGroupState.Builder)
     /**
      * @param healthCheck Health Check configuration block. Detailed below.
@@ -517,7 +509,7 @@ object alb:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.alb.inputs.TargetGroupState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.alb.inputs.ListenerRuleActionJwtValidationArgs.Builder)
     /**
      * @param additionalClaims Repeatable configuration block for additional claims to validate.
@@ -528,7 +520,6 @@ object alb:
       def argsBuilder = com.pulumi.aws.alb.inputs.ListenerRuleActionJwtValidationAdditionalClaimArgs.builder
       builder.additionalClaims(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.alb.inputs.ListenerDefaultActionArgs.Builder)
     /**
      * @param authenticateCognito Configuration block for using Amazon Cognito to authenticate users. Specify only when `type` is `authenticate-cognito`. See below.
@@ -584,7 +575,6 @@ object alb:
       val argsBuilder = com.pulumi.aws.alb.inputs.ListenerDefaultActionRedirectArgs.builder
       builder.redirect(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.alb.inputs.ListenerRuleState.Builder)
     /**
      * @param actions An Action block. Action blocks are documented below.
@@ -616,7 +606,7 @@ object alb:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.alb.inputs.ListenerRuleState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.alb.inputs.ListenerRuleTransformHostHeaderRewriteConfigArgs.Builder)
     /**
      * @param rewrite Block for host header rewrite configuration. Only one block is accepted. See Rewrite Blocks below.
@@ -627,7 +617,6 @@ object alb:
       val argsBuilder = com.pulumi.aws.alb.inputs.ListenerRuleTransformHostHeaderRewriteConfigRewriteArgs.builder
       builder.rewrite(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.alb.inputs.ListenerRuleTransformArgs.Builder)
     /**
      * @param hostHeaderRewriteConfig Configuration block for host header rewrite. Required if `type` is `host-header-rewrite`. See Host Header Rewrite Config Blocks below.
@@ -647,7 +636,6 @@ object alb:
       val argsBuilder = com.pulumi.aws.alb.inputs.ListenerRuleTransformUrlRewriteConfigArgs.builder
       builder.urlRewriteConfig(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.alb.inputs.ListenerRuleActionArgs.Builder)
     /**
      * @param authenticateCognito Information for creating an authenticate action using Cognito. Required if `type` is `authenticate-cognito`.
@@ -705,7 +693,6 @@ object alb:
       val argsBuilder = com.pulumi.aws.alb.inputs.ListenerRuleActionRedirectArgs.builder
       builder.redirect(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.alb.inputs.ListenerRuleConditionArgs.Builder)
     /**
      * @param hostHeader Host header patterns to match. Host Header block fields documented below.
@@ -754,7 +741,7 @@ object alb:
 
     /**
      * @param sourceIp Contains a single `values` item which is a list of source IP CIDR notations to match. You can use both IPv4 and IPv6 addresses. Wildcards are not supported. Condition is satisfied if the source IP address of the request matches one of the CIDR blocks. Condition is not satisfied by the addresses in the `X-Forwarded-For` header, use `httpHeader` condition instead.
-     *  
+     * 
      *  &gt; **NOTE::** Exactly one of `hostHeader`, `httpHeader`, `httpRequestMethod`, `pathPattern`, `queryString` or `sourceIp` must be set per condition.
      * @return builder
      */
@@ -763,7 +750,6 @@ object alb:
       val argsBuilder = com.pulumi.aws.alb.inputs.ListenerRuleConditionSourceIpArgs.builder
       builder.sourceIp(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.alb.inputs.ListenerDefaultActionForwardArgs.Builder)
     /**
      * @param stickiness Configuration block for target group stickiness for the rule. See below.
@@ -776,7 +762,7 @@ object alb:
 
     /**
      * @param targetGroups Set of 1-5 target group blocks. See below.
-     *  
+     * 
      *  The following arguments are optional:
      * @return builder
      */
@@ -785,7 +771,6 @@ object alb:
       def argsBuilder = com.pulumi.aws.alb.inputs.ListenerDefaultActionForwardTargetGroupArgs.builder
       builder.targetGroups(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.alb.inputs.ListenerRuleTransformUrlRewriteConfigArgs.Builder)
     /**
      * @param rewrite Block for URL rewrite configuration. Only one block is accepted. See Rewrite Blocks below.
@@ -796,18 +781,17 @@ object alb:
       val argsBuilder = com.pulumi.aws.alb.inputs.ListenerRuleTransformUrlRewriteConfigRewriteArgs.builder
       builder.rewrite(args(argsBuilder).build)
 
-                       
   /**
    * Provides a Load Balancer Listener Rule resource.
-   *  
+   * 
    *  &gt; **Note:** `aws.alb.ListenerRule` is known as `aws.lb.ListenerRule`. The functionality is identical.
-   *  
+   * 
    *  #### Required
-   *  
+   * 
    *  - `arn` (String) Amazon Resource Name (ARN) of the load balancer listener rule.
-   *  
+   * 
    *  Using `pulumi import`, import rules using their ARN. For example:
-   *  
+   * 
    *  ```sh
    *  $ pulumi import aws:alb/listenerRule:ListenerRule front_end arn:aws:elasticloadbalancing:us-west-2:187416307283:listener-rule/app/test/8e4497da625e2d8a/9ab28ade35828f96/67b3d2d36dd7c26b
    *  ```
@@ -818,7 +802,6 @@ object alb:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.alb.ListenerRule(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)

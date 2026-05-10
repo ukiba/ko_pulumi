@@ -17,7 +17,6 @@ object apigatewayv2:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.apigatewayv2.Stage(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -44,7 +43,7 @@ object apigatewayv2:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.apigatewayv2.DomainNameArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   /**
    * Manages an Amazon API Gateway Version 2 integration.
    *  More information can be found in the [Amazon API Gateway Developer Guide](https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api.html).
@@ -52,7 +51,6 @@ object apigatewayv2:
   def Integration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.apigatewayv2.IntegrationArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.apigatewayv2.IntegrationArgs.builder
-    
     com.pulumi.aws.apigatewayv2.Integration(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -60,7 +58,7 @@ object apigatewayv2:
   /**
    * Manages an Amazon API Gateway Version 2 domain name.
    *  More information can be found in the [Amazon API Gateway Developer Guide](https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-custom-domains.html).
-   *  
+   * 
    *  &gt; **Note:** This resource establishes ownership of and the TLS settings for
    *  a particular domain name. An API stage can be associated with the domain name using the `aws.apigatewayv2.ApiMapping` resource.
    */
@@ -70,7 +68,6 @@ object apigatewayv2:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.apigatewayv2.DomainName(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -79,7 +76,6 @@ object apigatewayv2:
   def RoutingRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.apigatewayv2.RoutingRuleArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.apigatewayv2.RoutingRuleArgs.builder
-    
     com.pulumi.aws.apigatewayv2.RoutingRule(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -94,7 +90,6 @@ object apigatewayv2:
       def argsBuilder = com.pulumi.aws.apigatewayv2.inputs.RouteRequestParameterArgs.builder
       builder.requestParameters(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.apigatewayv2.RoutingRuleArgs.Builder)
     /**
      * @param actions Configuration of resulting action based on matching routing rules condition. See below.
@@ -114,7 +109,6 @@ object apigatewayv2:
       def argsBuilder = com.pulumi.aws.apigatewayv2.inputs.RoutingRuleConditionArgs.builder
       builder.conditions(args.map(_(argsBuilder).build)*)
 
-                       
   /**
    * Manages an Amazon API Gateway Version 2 route.
    *  More information can be found in the [Amazon API Gateway Developer Guide](https://docs.aws.amazon.com/apigateway/latest/developerguide/welcome.html) for [WebSocket](https://docs.aws.amazon.com/apigateway/latest/developerguide/websocket-api-develop-routes.html) and [HTTP](https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-develop-routes.html) APIs.
@@ -122,7 +116,6 @@ object apigatewayv2:
   def Route(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.apigatewayv2.RouteArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.apigatewayv2.RouteArgs.builder
-    
     com.pulumi.aws.apigatewayv2.Route(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -137,7 +130,6 @@ object apigatewayv2:
     conf.logicalName2pysicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
       case None               =>
-    
     com.pulumi.aws.apigatewayv2.Authorizer(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -153,7 +145,6 @@ object apigatewayv2:
       val argsBuilder = com.pulumi.aws.apigatewayv2.inputs.AuthorizerJwtConfigurationArgs.builder
       builder.jwtConfiguration(args(argsBuilder).build)
 
-                       
   type Apigatewayv2Functions = com.pulumi.aws.apigatewayv2.Apigatewayv2Functions
   object Apigatewayv2Functions:
     // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
@@ -214,14 +205,13 @@ object apigatewayv2:
   def ApiMapping(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.apigatewayv2.ApiMappingArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.apigatewayv2.ApiMappingArgs.builder
-    
     com.pulumi.aws.apigatewayv2.ApiMapping(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
   /**
    * Manages an Amazon API Gateway Version 2 VPC Link.
-   *  
+   * 
    *  &gt; **Note:** Amazon API Gateway Version 2 VPC Links enable private integrations that connect HTTP APIs to private resources in a VPC.
    *  To enable private integration for REST APIs, use the Amazon API Gateway Version 1 VPC Link resource.
    */
@@ -234,7 +224,6 @@ object apigatewayv2:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.apigatewayv2.VpcLink(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -246,7 +235,6 @@ object apigatewayv2:
   def IntegrationResponse(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.apigatewayv2.IntegrationResponseArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.apigatewayv2.IntegrationResponseArgs.builder
-    
     com.pulumi.aws.apigatewayv2.IntegrationResponse(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -283,7 +271,7 @@ object apigatewayv2:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.apigatewayv2.StageArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.apigatewayv2.IntegrationArgs.Builder)
     /**
      * @param responseParameters Mappings to transform the HTTP response from a backend integration before returning the response to clients. Supported only for HTTP APIs.
@@ -303,24 +291,22 @@ object apigatewayv2:
       val argsBuilder = com.pulumi.aws.apigatewayv2.inputs.IntegrationTlsConfigArgs.builder
       builder.tlsConfig(args(argsBuilder).build)
 
-                       
   /**
    * Manages an Amazon API Gateway Version 2 deployment.
    *  More information can be found in the [Amazon API Gateway Developer Guide](https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api.html).
-   *  
+   * 
    *  &gt; **Note:** Creating a deployment for an API requires at least one `aws.apigatewayv2.Route` resource associated with that API. To avoid race conditions when all resources are being created together, you need to add implicit resource references via the `triggers` argument or explicit resource references using the [resource `dependsOn` meta-argument](https://www.pulumi.com/docs/intro/concepts/programming-model/#dependson).
    */
   def Deployment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.apigatewayv2.DeploymentArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.apigatewayv2.DeploymentArgs.builder
-    
     com.pulumi.aws.apigatewayv2.Deployment(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
   /**
    * Manages an Amazon API Gateway Version 2 API.
-   *  
+   * 
    *  &gt; **Note:** Amazon API Gateway Version 2 resources are used for creating and deploying WebSocket and HTTP APIs. To create and deploy REST APIs, use Amazon API Gateway Version 1 resources.
    */
   def Api(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
@@ -332,7 +318,6 @@ object apigatewayv2:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.apigatewayv2.Api(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -344,7 +329,6 @@ object apigatewayv2:
   def RouteResponse(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.apigatewayv2.RouteResponseArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.apigatewayv2.RouteResponseArgs.builder
-    
     com.pulumi.aws.apigatewayv2.RouteResponse(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -356,7 +340,6 @@ object apigatewayv2:
     conf.logicalName2pysicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
       case None               =>
-    
     com.pulumi.aws.apigatewayv2.Model(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -372,7 +355,6 @@ object apigatewayv2:
       val argsBuilder = com.pulumi.aws.apigatewayv2.inputs.AuthorizerJwtConfigurationArgs.builder
       builder.jwtConfiguration(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.apigatewayv2.inputs.RoutingRuleState.Builder)
     /**
      * @param actions Configuration of resulting action based on matching routing rules condition. See below.
@@ -392,7 +374,6 @@ object apigatewayv2:
       def argsBuilder = com.pulumi.aws.apigatewayv2.inputs.RoutingRuleConditionArgs.builder
       builder.conditions(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.apigatewayv2.inputs.IntegrationState.Builder)
     /**
      * @param responseParameters Mappings to transform the HTTP response from a backend integration before returning the response to clients. Supported only for HTTP APIs.
@@ -412,7 +393,6 @@ object apigatewayv2:
       val argsBuilder = com.pulumi.aws.apigatewayv2.inputs.IntegrationTlsConfigArgs.builder
       builder.tlsConfig(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.apigatewayv2.inputs.RouteState.Builder)
     /**
      * @param requestParameters Request parameters for the route. Supported only for WebSocket APIs.
@@ -423,7 +403,6 @@ object apigatewayv2:
       def argsBuilder = com.pulumi.aws.apigatewayv2.inputs.RouteRequestParameterArgs.builder
       builder.requestParameters(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.apigatewayv2.inputs.RoutingRuleConditionMatchHeadersArgs.Builder)
     /**
      * @param anyOf Configuration of the headers to be matched. There is a match if any of the header name and header value globs are matched. See below.
@@ -434,7 +413,6 @@ object apigatewayv2:
       val argsBuilder = com.pulumi.aws.apigatewayv2.inputs.RoutingRuleConditionMatchHeadersAnyOfArgs.builder
       builder.anyOf(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.apigatewayv2.inputs.StageState.Builder)
     /**
      * @param accessLogSettings Settings for logging access in this stage.
@@ -467,7 +445,7 @@ object apigatewayv2:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.apigatewayv2.inputs.StageState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.apigatewayv2.inputs.ApiState.Builder)
     /**
      * @param corsConfiguration Cross-origin resource sharing (CORS) [configuration](https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-cors.html). Applicable for HTTP APIs.
@@ -481,7 +459,7 @@ object apigatewayv2:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.apigatewayv2.inputs.ApiState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.apigatewayv2.inputs.DomainNameState.Builder)
     /**
      * @param domainNameConfiguration Domain name configuration. See below.
@@ -504,7 +482,7 @@ object apigatewayv2:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.apigatewayv2.inputs.DomainNameState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.apigatewayv2.inputs.RoutingRuleActionArgs.Builder)
     /**
      * @param invokeApi Configuration to invoke a stage of a target API. Only REST APIs are supported. See below.
@@ -515,7 +493,6 @@ object apigatewayv2:
       val argsBuilder = com.pulumi.aws.apigatewayv2.inputs.RoutingRuleActionInvokeApiArgs.builder
       builder.invokeApi(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.apigatewayv2.inputs.RoutingRuleConditionArgs.Builder)
     /**
      * @param matchBasePaths The base path to be matched. See below.
@@ -535,7 +512,6 @@ object apigatewayv2:
       val argsBuilder = com.pulumi.aws.apigatewayv2.inputs.RoutingRuleConditionMatchHeadersArgs.builder
       builder.matchHeaders(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.apigatewayv2.ApiArgs.Builder)
     /**
      * @param corsConfiguration Cross-origin resource sharing (CORS) [configuration](https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-cors.html). Applicable for HTTP APIs.
@@ -549,4 +525,3 @@ object apigatewayv2:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.apigatewayv2.ApiArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       

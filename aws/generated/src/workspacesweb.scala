@@ -17,7 +17,7 @@ object workspacesweb:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.workspacesweb.DataProtectionSettingsArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.workspacesweb.PortalArgs.Builder)
     def timeouts(args: Endofunction[com.pulumi.aws.workspacesweb.inputs.PortalTimeoutsArgs.Builder]):
         com.pulumi.aws.workspacesweb.PortalArgs.Builder =
@@ -27,12 +27,11 @@ object workspacesweb:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.workspacesweb.PortalArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   /** Resource for managing an AWS WorkSpaces Web IP Access Settings Association. */
   def IpAccessSettingsAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.workspacesweb.IpAccessSettingsAssociationArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.workspacesweb.IpAccessSettingsAssociationArgs.builder
-    
     com.pulumi.aws.workspacesweb.IpAccessSettingsAssociation(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -44,7 +43,6 @@ object workspacesweb:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.workspacesweb.IdentityProvider(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -56,7 +54,6 @@ object workspacesweb:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.workspacesweb.DataProtectionSettings(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -65,7 +62,6 @@ object workspacesweb:
   def UserSettingsAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.workspacesweb.UserSettingsAssociationArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.workspacesweb.UserSettingsAssociationArgs.builder
-    
     com.pulumi.aws.workspacesweb.UserSettingsAssociation(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -74,7 +70,6 @@ object workspacesweb:
   def UserAccessLoggingSettingsAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.workspacesweb.UserAccessLoggingSettingsAssociationArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.workspacesweb.UserAccessLoggingSettingsAssociationArgs.builder
-    
     com.pulumi.aws.workspacesweb.UserAccessLoggingSettingsAssociation(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -83,7 +78,6 @@ object workspacesweb:
   def BrowserSettingsAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.workspacesweb.BrowserSettingsAssociationArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.workspacesweb.BrowserSettingsAssociationArgs.builder
-    
     com.pulumi.aws.workspacesweb.BrowserSettingsAssociation(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -92,7 +86,6 @@ object workspacesweb:
   def SessionLoggerAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.workspacesweb.SessionLoggerAssociationArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.workspacesweb.SessionLoggerAssociationArgs.builder
-    
     com.pulumi.aws.workspacesweb.SessionLoggerAssociation(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -104,7 +97,6 @@ object workspacesweb:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.workspacesweb.Portal(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -116,7 +108,6 @@ object workspacesweb:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.workspacesweb.UserAccessLoggingSettings(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -125,7 +116,6 @@ object workspacesweb:
   def TrustStoreAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.workspacesweb.TrustStoreAssociationArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.workspacesweb.TrustStoreAssociationArgs.builder
-    
     com.pulumi.aws.workspacesweb.TrustStoreAssociation(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -133,7 +123,7 @@ object workspacesweb:
   extension (builder: com.pulumi.aws.workspacesweb.IpAccessSettingsArgs.Builder)
     /**
      * @param ipRules The IP rules of the IP access settings. See IP Rule below.
-     *  
+     * 
      *  The following arguments are optional:
      * @return builder
      */
@@ -145,7 +135,7 @@ object workspacesweb:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.workspacesweb.IpAccessSettingsArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   /** Resource for managing an AWS WorkSpaces Web Network Settings resource. Once associated with a web portal, network settings define how streaming instances will connect with your specified VPC. */
   def NetworkSettings(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.workspacesweb.NetworkSettingsArgs.Builder])(using conf: KoPulumiConf) =
@@ -153,7 +143,6 @@ object workspacesweb:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.workspacesweb.NetworkSettings(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -165,7 +154,6 @@ object workspacesweb:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.workspacesweb.IpAccessSettings(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -174,7 +162,6 @@ object workspacesweb:
   def DataProtectionSettingsAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.workspacesweb.DataProtectionSettingsAssociationArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.workspacesweb.DataProtectionSettingsAssociationArgs.builder
-    
     com.pulumi.aws.workspacesweb.DataProtectionSettingsAssociation(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -201,7 +188,7 @@ object workspacesweb:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.workspacesweb.UserSettingsArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   /** Resource for managing an AWS WorkSpaces Web Browser Settings resource. */
   def BrowserSettings(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.workspacesweb.BrowserSettingsArgs.Builder])(using conf: KoPulumiConf) =
@@ -209,7 +196,6 @@ object workspacesweb:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.workspacesweb.BrowserSettings(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -221,7 +207,6 @@ object workspacesweb:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.workspacesweb.TrustStore(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -233,7 +218,6 @@ object workspacesweb:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.workspacesweb.SessionLogger(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -245,7 +229,6 @@ object workspacesweb:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.workspacesweb.UserSettings(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -262,7 +245,7 @@ object workspacesweb:
 
     /**
      * @param logConfiguration Configuration block for specifying where logs are delivered. See Log Configuration below.
-     *  
+     * 
      *  The following arguments are optional:
      * @return builder
      */
@@ -274,12 +257,11 @@ object workspacesweb:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.workspacesweb.SessionLoggerArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   /** Resource for managing an AWS WorkSpaces Web Network Settings Association. */
   def NetworkSettingsAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.workspacesweb.NetworkSettingsAssociationArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.workspacesweb.NetworkSettingsAssociationArgs.builder
-    
     com.pulumi.aws.workspacesweb.NetworkSettingsAssociation(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -296,7 +278,7 @@ object workspacesweb:
 
     /**
      * @param logConfiguration Configuration block for specifying where logs are delivered. See Log Configuration below.
-     *  
+     * 
      *  The following arguments are optional:
      * @return builder
      */
@@ -308,7 +290,7 @@ object workspacesweb:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.workspacesweb.inputs.SessionLoggerState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.workspacesweb.inputs.DataProtectionSettingsInlineRedactionConfigurationInlineRedactionPatternArgs.Builder)
     /**
      * @param customPattern The configuration for a custom pattern. Either a `customPattern` or `builtInPatternId` is required. Detailed below.
@@ -328,7 +310,6 @@ object workspacesweb:
       def argsBuilder = com.pulumi.aws.workspacesweb.inputs.DataProtectionSettingsInlineRedactionConfigurationInlineRedactionPatternRedactionPlaceHolderArgs.builder
       builder.redactionPlaceHolders(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.workspacesweb.inputs.TrustStoreState.Builder)
     /**
      * @param certificates Set of certificates to include in the trust store. See Certificate below.
@@ -342,7 +323,7 @@ object workspacesweb:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.workspacesweb.inputs.TrustStoreState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.workspacesweb.inputs.PortalState.Builder)
     def timeouts(args: Endofunction[com.pulumi.aws.workspacesweb.inputs.PortalTimeoutsArgs.Builder]):
         com.pulumi.aws.workspacesweb.inputs.PortalState.Builder =
@@ -352,11 +333,11 @@ object workspacesweb:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.workspacesweb.inputs.PortalState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.workspacesweb.inputs.IpAccessSettingsState.Builder)
     /**
      * @param ipRules The IP rules of the IP access settings. See IP Rule below.
-     *  
+     * 
      *  The following arguments are optional:
      * @return builder
      */
@@ -368,7 +349,7 @@ object workspacesweb:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.workspacesweb.inputs.IpAccessSettingsState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.workspacesweb.inputs.DataProtectionSettingsState.Builder)
     /**
      * @param inlineRedactionConfiguration The inline redaction configuration of the data protection settings. Detailed below.
@@ -382,7 +363,7 @@ object workspacesweb:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.workspacesweb.inputs.DataProtectionSettingsState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.workspacesweb.inputs.SessionLoggerEventFilterArgs.Builder)
     /**
      * @param all Block that specifies to monitor all events. Set to `{}` to monitor all events.
@@ -393,7 +374,6 @@ object workspacesweb:
       val argsBuilder = com.pulumi.aws.workspacesweb.inputs.SessionLoggerEventFilterAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.workspacesweb.inputs.UserSettingsCookieSynchronizationConfigurationArgs.Builder)
     /**
      * @param allowlists List of cookie specifications that are allowed to be synchronized to the remote browser.
@@ -413,7 +393,6 @@ object workspacesweb:
       def argsBuilder = com.pulumi.aws.workspacesweb.inputs.UserSettingsCookieSynchronizationConfigurationBlocklistArgs.builder
       builder.blocklists(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.workspacesweb.inputs.UserSettingsState.Builder)
     /**
      * @param cookieSynchronizationConfiguration Configuration that specifies which cookies should be synchronized from the end user&#39;s local browser to the remote browser. Detailed below.
@@ -436,7 +415,7 @@ object workspacesweb:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.workspacesweb.inputs.UserSettingsState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.workspacesweb.inputs.SessionLoggerLogConfigurationArgs.Builder)
     /**
      * @param s3 Configuration block for S3 log delivery. See S3 Configuration below.
@@ -447,7 +426,6 @@ object workspacesweb:
       val argsBuilder = com.pulumi.aws.workspacesweb.inputs.SessionLoggerLogConfigurationS3Args.builder
       builder.s3(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.workspacesweb.inputs.DataProtectionSettingsInlineRedactionConfigurationArgs.Builder)
     /**
      * @param inlineRedactionPatterns The inline redaction patterns to be enabled for the inline redaction configuration. Detailed below.
@@ -458,7 +436,6 @@ object workspacesweb:
       def argsBuilder = com.pulumi.aws.workspacesweb.inputs.DataProtectionSettingsInlineRedactionConfigurationInlineRedactionPatternArgs.builder
       builder.inlineRedactionPatterns(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.workspacesweb.TrustStoreArgs.Builder)
     /**
      * @param certificates Set of certificates to include in the trust store. See Certificate below.
@@ -472,4 +449,3 @@ object workspacesweb:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.workspacesweb.TrustStoreArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       

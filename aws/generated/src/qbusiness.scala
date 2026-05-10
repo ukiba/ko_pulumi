@@ -11,7 +11,6 @@ object qbusiness:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.qbusiness.Application(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -43,7 +42,7 @@ object qbusiness:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.qbusiness.ApplicationArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.qbusiness.inputs.ApplicationState.Builder)
     /**
      * @param attachmentsConfiguration Information about whether file upload functionality is activated or deactivated for your end user. See `attachmentsConfiguration` below.
@@ -71,4 +70,3 @@ object qbusiness:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.qbusiness.inputs.ApplicationState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       

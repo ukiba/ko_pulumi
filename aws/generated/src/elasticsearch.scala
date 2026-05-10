@@ -8,7 +8,6 @@ object elasticsearch:
   def VpcEndpoint(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.elasticsearch.VpcEndpointArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.elasticsearch.VpcEndpointArgs.builder
-    
     com.pulumi.aws.elasticsearch.VpcEndpoint(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -125,7 +124,7 @@ object elasticsearch:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.elasticsearch.DomainArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.elasticsearch.DomainPolicyArgs.Builder)
     /**
      * @param accessPolicies IAM policy document specifying the access policies for the domain
@@ -136,12 +135,10 @@ object elasticsearch:
       val argsBuilder = com.pulumi.aws.elasticsearch.inputs.PolicyDocumentArgs.builder
       builder.accessPolicies(args(argsBuilder).build)
 
-                       
   /** Allows setting policy to an Elasticsearch domain while referencing domain attributes (e.g., ARN) */
   def DomainPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.elasticsearch.DomainPolicyArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.elasticsearch.DomainPolicyArgs.builder
-    
     com.pulumi.aws.elasticsearch.DomainPolicy(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -156,7 +153,6 @@ object elasticsearch:
       val argsBuilder = com.pulumi.aws.elasticsearch.inputs.DomainSamlOptionsSamlOptionsArgs.builder
       builder.samlOptions(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.elasticsearch.VpcEndpointArgs.Builder)
     /**
      * @param vpcOptions Options to specify the subnets and security groups for the endpoint.
@@ -167,12 +163,10 @@ object elasticsearch:
       val argsBuilder = com.pulumi.aws.elasticsearch.inputs.VpcEndpointVpcOptionsArgs.builder
       builder.vpcOptions(args(argsBuilder).build)
 
-                       
   /** Manages SAML authentication options for an AWS Elasticsearch Domain. */
   def DomainSamlOptions(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.elasticsearch.DomainSamlOptionsArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.elasticsearch.DomainSamlOptionsArgs.builder
-    
     com.pulumi.aws.elasticsearch.DomainSamlOptions(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -306,7 +300,7 @@ object elasticsearch:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.elasticsearch.inputs.DomainState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.elasticsearch.inputs.DomainPolicyState.Builder)
     /**
      * @param accessPolicies IAM policy document specifying the access policies for the domain
@@ -317,7 +311,6 @@ object elasticsearch:
       val argsBuilder = com.pulumi.aws.elasticsearch.inputs.PolicyDocumentArgs.builder
       builder.accessPolicies(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.elasticsearch.inputs.VpcEndpointState.Builder)
     /**
      * @param vpcOptions Options to specify the subnets and security groups for the endpoint.
@@ -328,7 +321,6 @@ object elasticsearch:
       val argsBuilder = com.pulumi.aws.elasticsearch.inputs.VpcEndpointVpcOptionsArgs.builder
       builder.vpcOptions(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.elasticsearch.inputs.DomainSamlOptionsSamlOptionsArgs.Builder)
     /**
      * @param idp Information from your identity provider.
@@ -339,7 +331,6 @@ object elasticsearch:
       val argsBuilder = com.pulumi.aws.elasticsearch.inputs.DomainSamlOptionsSamlOptionsIdpArgs.builder
       builder.idp(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.elasticsearch.inputs.DomainAutoTuneOptionsMaintenanceScheduleArgs.Builder)
     /**
      * @param duration Configuration block for the duration of the Auto-Tune maintenance window. Detailed below.
@@ -350,7 +341,6 @@ object elasticsearch:
       val argsBuilder = com.pulumi.aws.elasticsearch.inputs.DomainAutoTuneOptionsMaintenanceScheduleDurationArgs.builder
       builder.duration(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.elasticsearch.inputs.DomainClusterConfigArgs.Builder)
     /**
      * @param coldStorageOptions Configuration block containing cold storage configuration. Detailed below.
@@ -370,7 +360,6 @@ object elasticsearch:
       val argsBuilder = com.pulumi.aws.elasticsearch.inputs.DomainClusterConfigZoneAwarenessConfigArgs.builder
       builder.zoneAwarenessConfig(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.elasticsearch.inputs.DomainSamlOptionsState.Builder)
     /**
      * @param samlOptions The SAML authentication options for an AWS Elasticsearch Domain.
@@ -381,7 +370,6 @@ object elasticsearch:
       val argsBuilder = com.pulumi.aws.elasticsearch.inputs.DomainSamlOptionsSamlOptionsArgs.builder
       builder.samlOptions(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.elasticsearch.inputs.DomainAutoTuneOptionsArgs.Builder)
     /**
      * @param maintenanceSchedules Configuration block for Auto-Tune maintenance windows. Can be specified multiple times for each maintenance window. Detailed below.
@@ -392,7 +380,6 @@ object elasticsearch:
       def argsBuilder = com.pulumi.aws.elasticsearch.inputs.DomainAutoTuneOptionsMaintenanceScheduleArgs.builder
       builder.maintenanceSchedules(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.elasticsearch.inputs.DomainAdvancedSecurityOptionsArgs.Builder)
     /**
      * @param masterUserOptions Configuration block for the main user. Detailed below.
@@ -403,14 +390,12 @@ object elasticsearch:
       val argsBuilder = com.pulumi.aws.elasticsearch.inputs.DomainAdvancedSecurityOptionsMasterUserOptionsArgs.builder
       builder.masterUserOptions(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.elasticsearch.inputs.PolicyDocumentArgs.Builder)
     def Statement(args: Endofunction[com.pulumi.aws.iam.inputs.PolicyStatementArgs.Builder]*):
         com.pulumi.aws.elasticsearch.inputs.PolicyDocumentArgs.Builder =
       def argsBuilder = com.pulumi.aws.iam.inputs.PolicyStatementArgs.builder
       builder.Statement(args.map(_(argsBuilder).build)*)
 
-                       
   /** Manages an AWS Elasticsearch Domain. */
   def Domain(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.elasticsearch.DomainArgs.Builder])(using conf: KoPulumiConf) =
@@ -418,7 +403,6 @@ object elasticsearch:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.elasticsearch.Domain(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)

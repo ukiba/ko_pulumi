@@ -31,7 +31,6 @@ object appstream:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.appstream.Fleet(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -40,7 +39,6 @@ object appstream:
   def UserStackAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.appstream.UserStackAssociationArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.appstream.UserStackAssociationArgs.builder
-    
     com.pulumi.aws.appstream.UserStackAssociation(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -49,7 +47,6 @@ object appstream:
   def FleetStackAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.appstream.FleetStackAssociationArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.appstream.FleetStackAssociationArgs.builder
-    
     com.pulumi.aws.appstream.FleetStackAssociation(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -73,7 +70,6 @@ object appstream:
       val argsBuilder = com.pulumi.aws.appstream.inputs.DirectoryConfigServiceAccountCredentialsArgs.builder
       builder.serviceAccountCredentials(args(argsBuilder).build)
 
-                       
   /** Provides an AppStream image builder. */
   def ImageBuilder(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.appstream.ImageBuilderArgs.Builder])(using conf: KoPulumiConf) =
@@ -84,7 +80,6 @@ object appstream:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.appstream.ImageBuilder(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -93,7 +88,6 @@ object appstream:
   def User(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.appstream.UserArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.appstream.UserArgs.builder
-    
     com.pulumi.aws.appstream.User(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -129,12 +123,11 @@ object appstream:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.appstream.ImageBuilderArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   /** Provides an AppStream Directory Config. */
   def DirectoryConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.appstream.DirectoryConfigArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.appstream.DirectoryConfigArgs.builder
-    
     com.pulumi.aws.appstream.DirectoryConfig(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -170,7 +163,7 @@ object appstream:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.appstream.FleetArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.appstream.StackArgs.Builder)
     /**
      * @param accessEndpoints Set of configuration blocks defining the interface VPC endpoints. Users of the stack can connect to AppStream 2.0 only through the specified endpoints.
@@ -225,7 +218,7 @@ object appstream:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.appstream.StackArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.appstream.inputs.ImageBuilderState.Builder)
     /**
      * @param accessEndpoints Set of interface VPC endpoint (interface endpoint) objects. Maximum of 4. See below.
@@ -257,7 +250,7 @@ object appstream:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.appstream.inputs.ImageBuilderState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.appstream.inputs.DirectoryConfigState.Builder)
     /**
      * @param certificateBasedAuthProperties Configuration block for the certificate-based authentication properties used to authenticate SAML 2.0 Identity Provider (IdP) user identities to Active Directory domain-joined streaming instances. See `certificateBasedAuthProperties` below.
@@ -277,7 +270,6 @@ object appstream:
       val argsBuilder = com.pulumi.aws.appstream.inputs.DirectoryConfigServiceAccountCredentialsArgs.builder
       builder.serviceAccountCredentials(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.appstream.inputs.FleetState.Builder)
     /**
      * @param computeCapacity Configuration block for the desired capacity of the fleet. See below.
@@ -309,7 +301,7 @@ object appstream:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.appstream.inputs.FleetState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.appstream.inputs.StackState.Builder)
     /**
      * @param accessEndpoints Set of configuration blocks defining the interface VPC endpoints. Users of the stack can connect to AppStream 2.0 only through the specified endpoints.
@@ -364,7 +356,7 @@ object appstream:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.appstream.inputs.StackState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   /** Provides an AppStream stack. */
   def Stack(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.appstream.StackArgs.Builder])(using conf: KoPulumiConf) =
@@ -375,7 +367,6 @@ object appstream:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.appstream.Stack(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)

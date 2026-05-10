@@ -31,11 +31,11 @@ object networkflowmonitor:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.networkflowmonitor.MonitorArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.networkflowmonitor.ScopeArgs.Builder)
     /**
      * @param targets The targets to define the scope to be monitored. A target is an array of target resources, which are currently Region-account pairs.
-     *  
+     * 
      *  The following arguments are optional:
      * @return builder
      */
@@ -52,7 +52,7 @@ object networkflowmonitor:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.networkflowmonitor.ScopeArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   /** Manages a Network Flow Monitor Scope. */
   def Scope(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.networkflowmonitor.ScopeArgs.Builder])(using conf: KoPulumiConf) =
@@ -60,7 +60,6 @@ object networkflowmonitor:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.networkflowmonitor.Scope(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -72,7 +71,6 @@ object networkflowmonitor:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.networkflowmonitor.Monitor(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -87,11 +85,10 @@ object networkflowmonitor:
       val argsBuilder = com.pulumi.aws.networkflowmonitor.inputs.ScopeTargetTargetIdentifierTargetIdArgs.builder
       builder.targetId(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.networkflowmonitor.inputs.ScopeState.Builder)
     /**
      * @param targets The targets to define the scope to be monitored. A target is an array of target resources, which are currently Region-account pairs.
-     *  
+     * 
      *  The following arguments are optional:
      * @return builder
      */
@@ -108,7 +105,7 @@ object networkflowmonitor:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.networkflowmonitor.inputs.ScopeState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.networkflowmonitor.inputs.ScopeTargetArgs.Builder)
     /**
      * @param targetIdentifier A target identifier is a pair of identifying information for a scope.
@@ -119,7 +116,6 @@ object networkflowmonitor:
       val argsBuilder = com.pulumi.aws.networkflowmonitor.inputs.ScopeTargetTargetIdentifierArgs.builder
       builder.targetIdentifier(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.networkflowmonitor.inputs.MonitorState.Builder)
     /**
      * @param localResources The local resources to monitor. A local resource in a workload is the location of the hosts where the Network Flow Monitor agent is installed.
@@ -147,4 +143,3 @@ object networkflowmonitor:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.networkflowmonitor.inputs.MonitorState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       

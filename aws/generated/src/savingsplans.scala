@@ -42,12 +42,12 @@ object savingsplans:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.savingsplans.SavingsPlanArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   /**
    * Provides an AWS Savings Plan resource.
-   *  
+   * 
    *  &gt; **WARNING:** Savings Plans represent a financial commitment. Once a Savings Plan becomes active, it **cannot be cancelled or deleted**. Only Savings Plans in the `queued` state (scheduled for future purchase) can be deleted. Use this resource with caution.
-   *  
+   * 
    *  &gt; **Note:** Importing an active Savings Plan will add it to your Terraform state, but destroying it will only remove it from state - the actual Savings Plan will continue until its term ends.
    */
   def SavingsPlan(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
@@ -56,7 +56,6 @@ object savingsplans:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.savingsplans.SavingsPlan(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -71,7 +70,6 @@ object savingsplans:
       def argsBuilder = com.pulumi.aws.savingsplans.inputs.GetOfferingsFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.savingsplans.inputs.SavingsPlanState.Builder)
     def timeouts(args: Endofunction[com.pulumi.aws.savingsplans.inputs.SavingsPlanTimeoutsArgs.Builder]):
         com.pulumi.aws.savingsplans.inputs.SavingsPlanState.Builder =
@@ -81,4 +79,3 @@ object savingsplans:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.savingsplans.inputs.SavingsPlanState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       

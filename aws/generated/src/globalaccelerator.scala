@@ -8,7 +8,6 @@ object globalaccelerator:
   def CustomRoutingEndpointGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.globalaccelerator.CustomRoutingEndpointGroupArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.globalaccelerator.CustomRoutingEndpointGroupArgs.builder
-    
     com.pulumi.aws.globalaccelerator.CustomRoutingEndpointGroup(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -61,7 +60,6 @@ object globalaccelerator:
       def argsBuilder = com.pulumi.aws.globalaccelerator.inputs.EndpointGroupPortOverrideArgs.builder
       builder.portOverrides(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.globalaccelerator.AcceleratorArgs.Builder)
     /**
      * @param attributes The attributes of the accelerator. Fields documented below.
@@ -75,12 +73,11 @@ object globalaccelerator:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.globalaccelerator.AcceleratorArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   /** Provides a Global Accelerator custom routing listener. */
   def CustomRoutingListener(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.globalaccelerator.CustomRoutingListenerArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.globalaccelerator.CustomRoutingListenerArgs.builder
-    
     com.pulumi.aws.globalaccelerator.CustomRoutingListener(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -95,7 +92,6 @@ object globalaccelerator:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.globalaccelerator.CrossAccountAttachment(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -113,7 +109,7 @@ object globalaccelerator:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.globalaccelerator.CrossAccountAttachmentArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.globalaccelerator.CustomRoutingEndpointGroupArgs.Builder)
     /**
      * @param destinationConfigurations The port ranges and protocols for all endpoints in a custom routing endpoint group to accept client traffic on. Fields documented below.
@@ -133,7 +129,6 @@ object globalaccelerator:
       def argsBuilder = com.pulumi.aws.globalaccelerator.inputs.CustomRoutingEndpointGroupEndpointConfigurationArgs.builder
       builder.endpointConfigurations(args.map(_(argsBuilder).build)*)
 
-                       
   /** Creates a Global Accelerator custom routing accelerator. */
   def CustomRoutingAccelerator(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.globalaccelerator.CustomRoutingAcceleratorArgs.Builder])(using conf: KoPulumiConf) =
@@ -144,7 +139,6 @@ object globalaccelerator:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.globalaccelerator.CustomRoutingAccelerator(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -159,7 +153,6 @@ object globalaccelerator:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.globalaccelerator.Accelerator(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -168,7 +161,6 @@ object globalaccelerator:
   def EndpointGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.globalaccelerator.EndpointGroupArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.globalaccelerator.EndpointGroupArgs.builder
-    
     com.pulumi.aws.globalaccelerator.EndpointGroup(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -183,12 +175,10 @@ object globalaccelerator:
       def argsBuilder = com.pulumi.aws.globalaccelerator.inputs.CustomRoutingListenerPortRangeArgs.builder
       builder.portRanges(args.map(_(argsBuilder).build)*)
 
-                       
   /** Provides a Global Accelerator listener. */
   def Listener(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.globalaccelerator.ListenerArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.globalaccelerator.ListenerArgs.builder
-    
     com.pulumi.aws.globalaccelerator.Listener(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -203,7 +193,6 @@ object globalaccelerator:
       def argsBuilder = com.pulumi.aws.globalaccelerator.inputs.ListenerPortRangeArgs.builder
       builder.portRanges(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.globalaccelerator.CustomRoutingAcceleratorArgs.Builder)
     /**
      * @param attributes The attributes of the accelerator. Fields documented below.
@@ -217,7 +206,7 @@ object globalaccelerator:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.globalaccelerator.CustomRoutingAcceleratorArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.globalaccelerator.inputs.ListenerState.Builder)
     /**
      * @param portRanges The list of port ranges for the connections from clients to the accelerator. Fields documented below.
@@ -228,7 +217,6 @@ object globalaccelerator:
       def argsBuilder = com.pulumi.aws.globalaccelerator.inputs.ListenerPortRangeArgs.builder
       builder.portRanges(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.globalaccelerator.inputs.CrossAccountAttachmentState.Builder)
     /**
      * @param resources List of resources to be associated with the accelerator.
@@ -242,7 +230,7 @@ object globalaccelerator:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.globalaccelerator.inputs.CrossAccountAttachmentState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.globalaccelerator.inputs.CustomRoutingAcceleratorState.Builder)
     /**
      * @param attributes The attributes of the accelerator. Fields documented below.
@@ -265,7 +253,7 @@ object globalaccelerator:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.globalaccelerator.inputs.CustomRoutingAcceleratorState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.globalaccelerator.inputs.AcceleratorState.Builder)
     /**
      * @param attributes The attributes of the accelerator. Fields documented below.
@@ -288,7 +276,7 @@ object globalaccelerator:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.globalaccelerator.inputs.AcceleratorState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.globalaccelerator.inputs.CustomRoutingListenerState.Builder)
     /**
      * @param portRanges The list of port ranges for the connections from clients to the accelerator. Fields documented below.
@@ -299,7 +287,6 @@ object globalaccelerator:
       def argsBuilder = com.pulumi.aws.globalaccelerator.inputs.CustomRoutingListenerPortRangeArgs.builder
       builder.portRanges(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.globalaccelerator.inputs.EndpointGroupState.Builder)
     /**
      * @param endpointConfigurations The list of endpoint objects. Fields documented below.
@@ -319,7 +306,6 @@ object globalaccelerator:
       def argsBuilder = com.pulumi.aws.globalaccelerator.inputs.EndpointGroupPortOverrideArgs.builder
       builder.portOverrides(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.globalaccelerator.inputs.CustomRoutingEndpointGroupState.Builder)
     /**
      * @param destinationConfigurations The port ranges and protocols for all endpoints in a custom routing endpoint group to accept client traffic on. Fields documented below.
@@ -338,5 +324,3 @@ object globalaccelerator:
         com.pulumi.aws.globalaccelerator.inputs.CustomRoutingEndpointGroupState.Builder =
       def argsBuilder = com.pulumi.aws.globalaccelerator.inputs.CustomRoutingEndpointGroupEndpointConfigurationArgs.builder
       builder.endpointConfigurations(args.map(_(argsBuilder).build)*)
-
-                       

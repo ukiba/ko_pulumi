@@ -193,7 +193,7 @@ object glue:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.glue.CrawlerArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.glue.DataQualityRulesetArgs.Builder)
     /**
      * @param targetTable A Configuration block specifying a target table associated with the data quality ruleset. See `targetTable` below.
@@ -207,7 +207,7 @@ object glue:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.glue.DataQualityRulesetArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   /** Provides a Glue Catalog Database Resource. You can refer to the [Glue Developer Guide](http://docs.aws.amazon.com/glue/latest/dg/populate-data-catalog.html) for a full explanation of the Glue Data Catalog functionality */
   def CatalogDatabase(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.glue.CatalogDatabaseArgs.Builder])(using conf: KoPulumiConf) =
@@ -218,7 +218,6 @@ object glue:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.glue.CatalogDatabase(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -233,7 +232,6 @@ object glue:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.glue.Catalog(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -248,7 +246,6 @@ object glue:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.glue.MLTransform(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -260,7 +257,6 @@ object glue:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.glue.Schema(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -275,7 +271,6 @@ object glue:
       val argsBuilder = com.pulumi.aws.glue.inputs.DataCatalogEncryptionSettingsDataCatalogEncryptionSettingsArgs.builder
       builder.dataCatalogEncryptionSettings(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.glue.CatalogTableArgs.Builder)
     /**
      * @param openTableFormatInput Configuration block for open table formats. See `openTableFormatInput` below.
@@ -331,10 +326,9 @@ object glue:
       val argsBuilder = com.pulumi.aws.glue.inputs.CatalogTableViewDefinitionArgs.builder
       builder.viewDefinition(args(argsBuilder).build)
 
-                       
   /**
    * Provides a Glue Job resource.
-   *  
+   * 
    *  &gt; Glue functionality, such as monitoring and logging of jobs, is typically managed with the `defaultArguments` argument. See the [Special Parameters Used by AWS Glue](https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html) topic in the Glue developer guide for additional information.
    */
   def Job(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
@@ -346,7 +340,6 @@ object glue:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.glue.Job(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -391,14 +384,13 @@ object glue:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.glue.JobArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   /**
    * 
    */
   def PartitionIndex(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.glue.PartitionIndexArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.glue.PartitionIndexArgs.builder
-    
     com.pulumi.aws.glue.PartitionIndex(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -407,7 +399,6 @@ object glue:
   def DataCatalogEncryptionSettings(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.glue.DataCatalogEncryptionSettingsArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.glue.DataCatalogEncryptionSettingsArgs.builder
-    
     com.pulumi.aws.glue.DataCatalogEncryptionSettings(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -416,7 +407,6 @@ object glue:
   def ResourcePolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.glue.ResourcePolicyArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.glue.ResourcePolicyArgs.builder
-    
     com.pulumi.aws.glue.ResourcePolicy(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -431,7 +421,6 @@ object glue:
       val argsBuilder = com.pulumi.aws.glue.inputs.CatalogTableOptimizerConfigurationArgs.builder
       builder.configuration(args(argsBuilder).build)
 
-                       
   /** Provides a Glue Data Quality Ruleset Resource. You can refer to the [Glue Developer Guide](https://docs.aws.amazon.com/glue/latest/dg/glue-data-quality.html) for a full explanation of the Glue Data Quality Ruleset functionality */
   def DataQualityRuleset(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.glue.DataQualityRulesetArgs.Builder])(using conf: KoPulumiConf) =
@@ -442,7 +431,6 @@ object glue:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.glue.DataQualityRuleset(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -457,7 +445,6 @@ object glue:
       val argsBuilder = com.pulumi.aws.glue.inputs.SecurityConfigurationEncryptionConfigurationArgs.builder
       builder.encryptionConfiguration(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.glue.CatalogDatabaseArgs.Builder)
     /**
      * @param createTableDefaultPermissions Creates a set of default permissions on the table for principals. See `createTableDefaultPermission` below.
@@ -489,7 +476,7 @@ object glue:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.glue.CatalogDatabaseArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.glue.ConnectionArgs.Builder)
     /**
      * @param authenticationConfiguration Configuration block for authentication options. See `authenticationConfiguration` below.
@@ -512,7 +499,7 @@ object glue:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.glue.ConnectionArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.glue.PartitionArgs.Builder)
     /**
      * @param storageDescriptor A storage descriptor object containing information about the physical storage of this table. You can refer to the [Glue Developer Guide](https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-tables.html#aws-glue-api-catalog-tables-StorageDescriptor) for a full explanation of this object.
@@ -523,7 +510,6 @@ object glue:
       val argsBuilder = com.pulumi.aws.glue.inputs.PartitionStorageDescriptorArgs.builder
       builder.storageDescriptor(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.glue.ClassifierArgs.Builder)
     /**
      * @param csvClassifier A classifier for CSV content. Defined below.
@@ -561,7 +547,6 @@ object glue:
       val argsBuilder = com.pulumi.aws.glue.inputs.ClassifierXmlClassifierArgs.builder
       builder.xmlClassifier(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.glue.TriggerArgs.Builder)
     /**
      * @param actions List of actions initiated by this trigger when it fires. See Actions Below.
@@ -593,7 +578,7 @@ object glue:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.glue.TriggerArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.glue.PartitionIndexArgs.Builder)
     /**
      * @param partitionIndex Configuration block for a partition index. See `partitionIndex` below.
@@ -604,7 +589,6 @@ object glue:
       val argsBuilder = com.pulumi.aws.glue.inputs.PartitionIndexPartitionIndexArgs.builder
       builder.partitionIndex(args(argsBuilder).build)
 
-                       
   /** Manages a Glue Trigger resource. */
   def Trigger(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.glue.TriggerArgs.Builder])(using conf: KoPulumiConf) =
@@ -615,7 +599,6 @@ object glue:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.glue.Trigger(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -630,7 +613,6 @@ object glue:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.glue.Connection(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -645,7 +627,6 @@ object glue:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.glue.DevEndpoint(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -660,7 +641,6 @@ object glue:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.glue.Crawler(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -669,7 +649,6 @@ object glue:
   def Partition(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.glue.PartitionArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.glue.PartitionArgs.builder
-    
     com.pulumi.aws.glue.Partition(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -678,7 +657,6 @@ object glue:
   def CatalogTableOptimizer(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.glue.CatalogTableOptimizerArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.glue.CatalogTableOptimizerArgs.builder
-    
     com.pulumi.aws.glue.CatalogTableOptimizer(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -690,7 +668,6 @@ object glue:
     conf.logicalName2pysicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
       case None               =>
-    
     com.pulumi.aws.glue.UserDefinedFunction(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -705,7 +682,6 @@ object glue:
       def argsBuilder = com.pulumi.aws.glue.inputs.UserDefinedFunctionResourceUriArgs.builder
       builder.resourceUris(args.map(_(argsBuilder).build)*)
 
-                       
   /** Manages a Glue Security Configuration. */
   def SecurityConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.glue.SecurityConfigurationArgs.Builder])(using conf: KoPulumiConf) =
@@ -713,7 +689,6 @@ object glue:
     conf.logicalName2pysicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
       case None               =>
-    
     com.pulumi.aws.glue.SecurityConfiguration(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -725,7 +700,6 @@ object glue:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.glue.Registry(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -737,14 +711,13 @@ object glue:
     conf.logicalName2pysicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
       case None               =>
-    
     com.pulumi.aws.glue.CatalogTable(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
   /**
    * Provides a Glue Classifier resource.
-   *  
+   * 
    *  &gt; **NOTE:** It is only valid to create one type of classifier (CSV, grok, JSON, or XML). Changing classifier types will recreate the classifier.
    */
   def Classifier(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
@@ -753,7 +726,6 @@ object glue:
     conf.logicalName2pysicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
       case None               =>
-    
     com.pulumi.aws.glue.Classifier(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -772,7 +744,6 @@ object glue:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.glue.Workflow(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -799,7 +770,7 @@ object glue:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.glue.MLTransformArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.glue.inputs.CatalogTableOpenTableFormatInputIcebergInputIcebergTableInputSortOrderArgs.Builder)
     /**
      * @param fields The list of fields and their sort directions that define the ordering criteria for the Iceberg table data. See `fields` below.
@@ -810,7 +781,6 @@ object glue:
       def argsBuilder = com.pulumi.aws.glue.inputs.CatalogTableOpenTableFormatInputIcebergInputIcebergTableInputSortOrderFieldArgs.builder
       builder.fields(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.glue.inputs.CatalogCreateDatabaseDefaultPermissionArgs.Builder)
     /**
      * @param principal Principal who is granted permissions. See `principal` below.
@@ -821,7 +791,6 @@ object glue:
       val argsBuilder = com.pulumi.aws.glue.inputs.CatalogCreateDatabaseDefaultPermissionPrincipalArgs.builder
       builder.principal(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.glue.inputs.CatalogTableViewDefinitionArgs.Builder)
     /**
      * @param representations A list of structures that contains the dialect of the view, and the query that defines the view. See `representations` below.
@@ -832,7 +801,6 @@ object glue:
       def argsBuilder = com.pulumi.aws.glue.inputs.CatalogTableViewDefinitionRepresentationArgs.builder
       builder.representations(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.glue.inputs.ConnectionAuthenticationConfigurationOauth2PropertiesArgs.Builder)
     /**
      * @param authorizationCodeProperties Authorization code properties. See `authorizationCodeProperties` below.
@@ -861,7 +829,6 @@ object glue:
       val argsBuilder = com.pulumi.aws.glue.inputs.ConnectionAuthenticationConfigurationOauth2PropertiesOauth2CredentialsArgs.builder
       builder.oauth2Credentials(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.glue.inputs.MLTransformParametersArgs.Builder)
     /**
      * @param findMatchesParameters The parameters for the find matches algorithm. see Find Matches Parameters.
@@ -872,7 +839,6 @@ object glue:
       val argsBuilder = com.pulumi.aws.glue.inputs.MLTransformParametersFindMatchesParametersArgs.builder
       builder.findMatchesParameters(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.glue.inputs.CatalogDatabaseCreateTableDefaultPermissionArgs.Builder)
     /**
      * @param principal The principal who is granted permissions.. See `principal` below.
@@ -883,7 +849,6 @@ object glue:
       val argsBuilder = com.pulumi.aws.glue.inputs.CatalogDatabaseCreateTableDefaultPermissionPrincipalArgs.builder
       builder.principal(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.glue.inputs.CatalogTableOpenTableFormatInputIcebergInputArgs.Builder)
     /**
      * @param icebergTableInput Configuration parameters, including table properties and metadata specifications. See `icebergTableInput` below.
@@ -894,7 +859,6 @@ object glue:
       val argsBuilder = com.pulumi.aws.glue.inputs.CatalogTableOpenTableFormatInputIcebergInputIcebergTableInputArgs.builder
       builder.icebergTableInput(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.glue.inputs.SecurityConfigurationEncryptionConfigurationArgs.Builder)
     def cloudwatchEncryption(args: Endofunction[com.pulumi.aws.glue.inputs.SecurityConfigurationEncryptionConfigurationCloudwatchEncryptionArgs.Builder]):
         com.pulumi.aws.glue.inputs.SecurityConfigurationEncryptionConfigurationArgs.Builder =
@@ -915,7 +879,6 @@ object glue:
       val argsBuilder = com.pulumi.aws.glue.inputs.SecurityConfigurationEncryptionConfigurationS3EncryptionArgs.builder
       builder.s3Encryption(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.glue.inputs.UserDefinedFunctionState.Builder)
     /**
      * @param resourceUris The configuration block for Resource URIs. See resource uris below for more details.
@@ -926,7 +889,6 @@ object glue:
       def argsBuilder = com.pulumi.aws.glue.inputs.UserDefinedFunctionResourceUriArgs.builder
       builder.resourceUris(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.glue.inputs.CatalogTableStorageDescriptorSchemaReferenceArgs.Builder)
     /**
      * @param schemaId Configuration block that contains schema identity fields. Either this or the `schemaVersionId` has to be provided. See `schemaId` below.
@@ -937,7 +899,6 @@ object glue:
       val argsBuilder = com.pulumi.aws.glue.inputs.CatalogTableStorageDescriptorSchemaReferenceSchemaIdArgs.builder
       builder.schemaId(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.glue.inputs.CrawlerState.Builder)
     /**
      * @param catalogTargets List of nested AWS Glue Data Catalog target arguments. See Catalog Target below.
@@ -1050,7 +1011,7 @@ object glue:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.glue.inputs.CrawlerState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.glue.inputs.SecurityConfigurationState.Builder)
     /**
      * @param encryptionConfiguration Configuration block containing encryption configuration. Detailed below.
@@ -1061,7 +1022,6 @@ object glue:
       val argsBuilder = com.pulumi.aws.glue.inputs.SecurityConfigurationEncryptionConfigurationArgs.builder
       builder.encryptionConfiguration(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.glue.inputs.ConnectionAuthenticationConfigurationArgs.Builder)
     /**
      * @param basicAuthenticationCredentials Basic authentication credentials. See `basicAuthenticationCredentials` below.
@@ -1081,7 +1041,6 @@ object glue:
       val argsBuilder = com.pulumi.aws.glue.inputs.ConnectionAuthenticationConfigurationOauth2PropertiesArgs.builder
       builder.oauth2Properties(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.glue.inputs.GetScriptArgs.Builder)
     /**
      * @param dagEdges List of the edges in the DAG. Defined below.
@@ -1101,7 +1060,6 @@ object glue:
       def argsBuilder = com.pulumi.aws.glue.inputs.GetScriptDagNodeArgs.builder
       builder.dagNodes(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.glue.inputs.CatalogTableState.Builder)
     /**
      * @param openTableFormatInput Configuration block for open table formats. See `openTableFormatInput` below.
@@ -1157,7 +1115,6 @@ object glue:
       val argsBuilder = com.pulumi.aws.glue.inputs.CatalogTableViewDefinitionArgs.builder
       builder.viewDefinition(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.glue.inputs.CatalogTableOptimizerConfigurationOrphanFileDeletionConfigurationArgs.Builder)
     /**
      * @param icebergConfiguration The configuration for an Iceberg orphan file deletion optimizer.
@@ -1168,7 +1125,6 @@ object glue:
       val argsBuilder = com.pulumi.aws.glue.inputs.CatalogTableOptimizerConfigurationOrphanFileDeletionConfigurationIcebergConfigurationArgs.builder
       builder.icebergConfiguration(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.glue.inputs.CatalogState.Builder)
     /**
      * @param catalogProperties Configuration block of properties for the catalog. See `catalogProperties` below.
@@ -1223,7 +1179,7 @@ object glue:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.glue.inputs.CatalogState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.glue.inputs.PartitionStorageDescriptorArgs.Builder)
     /**
      * @param columns A list of the Columns in the table.
@@ -1261,7 +1217,6 @@ object glue:
       def argsBuilder = com.pulumi.aws.glue.inputs.PartitionStorageDescriptorSortColumnArgs.builder
       builder.sortColumns(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.glue.inputs.GetScriptDagNodeArgs.Builder)
     /**
      * @param args Nested configuration an argument or property of a node. Defined below.
@@ -1272,7 +1227,6 @@ object glue:
       def argsBuilder = com.pulumi.aws.glue.inputs.GetScriptDagNodeArgArgs.builder
       builder.args(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.glue.inputs.CatalogCatalogPropertiesArgs.Builder)
     /**
      * @param dataLakeAccessProperties Configuration block for data lake access properties. See `dataLakeAccessProperties` below.
@@ -1292,7 +1246,6 @@ object glue:
       val argsBuilder = com.pulumi.aws.glue.inputs.CatalogCatalogPropertiesIcebergOptimizationPropertiesArgs.builder
       builder.icebergOptimizationProperties(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.glue.inputs.TriggerState.Builder)
     /**
      * @param actions List of actions initiated by this trigger when it fires. See Actions Below.
@@ -1324,7 +1277,7 @@ object glue:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.glue.inputs.TriggerState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.glue.inputs.CatalogTableOpenTableFormatInputIcebergInputIcebergTableInputPartitionSpecArgs.Builder)
     /**
      * @param fields The list of partition fields that define how the table data should be partitioned. See `fields` below.
@@ -1335,7 +1288,6 @@ object glue:
       def argsBuilder = com.pulumi.aws.glue.inputs.CatalogTableOpenTableFormatInputIcebergInputIcebergTableInputPartitionSpecFieldArgs.builder
       builder.fields(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.glue.inputs.CatalogTableStorageDescriptorArgs.Builder)
     /**
      * @param columns Configuration block for columns in the table. See `columns` below.
@@ -1382,7 +1334,6 @@ object glue:
       def argsBuilder = com.pulumi.aws.glue.inputs.CatalogTableStorageDescriptorSortColumnArgs.builder
       builder.sortColumns(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.glue.inputs.ClassifierState.Builder)
     /**
      * @param csvClassifier A classifier for CSV content. Defined below.
@@ -1420,7 +1371,6 @@ object glue:
       val argsBuilder = com.pulumi.aws.glue.inputs.ClassifierXmlClassifierArgs.builder
       builder.xmlClassifier(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.glue.inputs.MLTransformState.Builder)
     /**
      * @param inputRecordTables A list of AWS Glue table definitions used by the transform. see Input Record Tables.
@@ -1452,7 +1402,7 @@ object glue:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.glue.inputs.MLTransformState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.glue.inputs.TriggerActionArgs.Builder)
     /**
      * @param notificationProperty Specifies configuration properties of a job run notification. See Notification Property details below.
@@ -1463,7 +1413,6 @@ object glue:
       val argsBuilder = com.pulumi.aws.glue.inputs.TriggerActionNotificationPropertyArgs.builder
       builder.notificationProperty(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.glue.inputs.CatalogDatabaseState.Builder)
     /**
      * @param createTableDefaultPermissions Creates a set of default permissions on the table for principals. See `createTableDefaultPermission` below.
@@ -1495,7 +1444,7 @@ object glue:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.glue.inputs.CatalogDatabaseState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.glue.inputs.PartitionState.Builder)
     /**
      * @param storageDescriptor A storage descriptor object containing information about the physical storage of this table. You can refer to the [Glue Developer Guide](https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-tables.html#aws-glue-api-catalog-tables-StorageDescriptor) for a full explanation of this object.
@@ -1506,7 +1455,6 @@ object glue:
       val argsBuilder = com.pulumi.aws.glue.inputs.PartitionStorageDescriptorArgs.builder
       builder.storageDescriptor(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.glue.inputs.ConnectionState.Builder)
     /**
      * @param authenticationConfiguration Configuration block for authentication options. See `authenticationConfiguration` below.
@@ -1529,7 +1477,7 @@ object glue:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.glue.inputs.ConnectionState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.glue.inputs.CatalogTableOpenTableFormatInputIcebergInputIcebergTableInputSchemaArgs.Builder)
     /**
      * @param fields The list of field definitions that make up the table schema. See `fields` below.
@@ -1540,7 +1488,6 @@ object glue:
       def argsBuilder = com.pulumi.aws.glue.inputs.CatalogTableOpenTableFormatInputIcebergInputIcebergTableInputSchemaFieldArgs.builder
       builder.fields(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.glue.inputs.CatalogTableOptimizerConfigurationArgs.Builder)
     /**
      * @param orphanFileDeletionConfiguration The configuration block for an orphan file deletion optimizer. See Orphan File Deletion Configuration for additional details.
@@ -1560,7 +1507,6 @@ object glue:
       val argsBuilder = com.pulumi.aws.glue.inputs.CatalogTableOptimizerConfigurationRetentionConfigurationArgs.builder
       builder.retentionConfiguration(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.glue.inputs.DataCatalogEncryptionSettingsDataCatalogEncryptionSettingsArgs.Builder)
     /**
      * @param connectionPasswordEncryption When connection password protection is enabled, the Data Catalog uses a customer-provided key to encrypt the password as part of CreateConnection or UpdateConnection and store it in the ENCRYPTED_PASSWORD field in the connection properties. You can enable catalog encryption or only password encryption. see Connection Password Encryption.
@@ -1580,7 +1526,6 @@ object glue:
       val argsBuilder = com.pulumi.aws.glue.inputs.DataCatalogEncryptionSettingsDataCatalogEncryptionSettingsEncryptionAtRestArgs.builder
       builder.encryptionAtRest(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.glue.inputs.TriggerPredicateArgs.Builder)
     /**
      * @param conditions A list of the conditions that determine when the trigger will fire. See Conditions.
@@ -1591,7 +1536,6 @@ object glue:
       def argsBuilder = com.pulumi.aws.glue.inputs.TriggerPredicateConditionArgs.builder
       builder.conditions(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.glue.inputs.CatalogCreateTableDefaultPermissionArgs.Builder)
     /**
      * @param principal Principal who is granted permissions. See `principal` below.
@@ -1602,7 +1546,6 @@ object glue:
       val argsBuilder = com.pulumi.aws.glue.inputs.CatalogCreateTableDefaultPermissionPrincipalArgs.builder
       builder.principal(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.glue.inputs.CatalogTableOptimizerState.Builder)
     /**
      * @param configuration A configuration block that defines the table optimizer settings. See Configuration for additional details.
@@ -1613,7 +1556,6 @@ object glue:
       val argsBuilder = com.pulumi.aws.glue.inputs.CatalogTableOptimizerConfigurationArgs.builder
       builder.configuration(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.glue.inputs.DataQualityRulesetState.Builder)
     /**
      * @param targetTable A Configuration block specifying a target table associated with the data quality ruleset. See `targetTable` below.
@@ -1627,7 +1569,7 @@ object glue:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.glue.inputs.DataQualityRulesetState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.glue.inputs.CatalogTableOptimizerConfigurationRetentionConfigurationArgs.Builder)
     /**
      * @param icebergConfiguration The configuration for an Iceberg snapshot retention optimizer.
@@ -1638,7 +1580,6 @@ object glue:
       val argsBuilder = com.pulumi.aws.glue.inputs.CatalogTableOptimizerConfigurationRetentionConfigurationIcebergConfigurationArgs.builder
       builder.icebergConfiguration(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.glue.inputs.CatalogTableOpenTableFormatInputArgs.Builder)
     /**
      * @param icebergInput Configuration block for iceberg table config. See `icebergInput` below.
@@ -1649,7 +1590,6 @@ object glue:
       val argsBuilder = com.pulumi.aws.glue.inputs.CatalogTableOpenTableFormatInputIcebergInputArgs.builder
       builder.icebergInput(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.glue.inputs.PartitionIndexState.Builder)
     /**
      * @param partitionIndex Configuration block for a partition index. See `partitionIndex` below.
@@ -1660,7 +1600,6 @@ object glue:
       val argsBuilder = com.pulumi.aws.glue.inputs.PartitionIndexPartitionIndexArgs.builder
       builder.partitionIndex(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.glue.inputs.JobState.Builder)
     /**
      * @param command The command of the job. Defined below.
@@ -1701,7 +1640,7 @@ object glue:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.glue.inputs.JobState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.glue.inputs.DataCatalogEncryptionSettingsState.Builder)
     /**
      * @param dataCatalogEncryptionSettings The security configuration to set. see Data Catalog Encryption Settings.
@@ -1712,7 +1651,6 @@ object glue:
       val argsBuilder = com.pulumi.aws.glue.inputs.DataCatalogEncryptionSettingsDataCatalogEncryptionSettingsArgs.builder
       builder.dataCatalogEncryptionSettings(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.glue.inputs.CatalogTableOpenTableFormatInputIcebergInputIcebergTableInputArgs.Builder)
     /**
      * @param partitionSpec The partitioning specification that defines how the Iceberg table data will be organized and partitioned for optimal query performance. See `partitionSpec` below.
@@ -1741,7 +1679,6 @@ object glue:
       val argsBuilder = com.pulumi.aws.glue.inputs.CatalogTableOpenTableFormatInputIcebergInputIcebergTableInputSortOrderArgs.builder
       builder.sortOrder(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.glue.CatalogArgs.Builder)
     /**
      * @param catalogProperties Configuration block of properties for the catalog. See `catalogProperties` below.
@@ -1796,4 +1733,3 @@ object glue:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.glue.CatalogArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       

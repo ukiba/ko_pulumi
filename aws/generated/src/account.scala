@@ -11,7 +11,6 @@ object account:
     conf.logicalName2pysicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
       case None               =>
-    
     com.pulumi.aws.account.AlternativeContact(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -20,7 +19,6 @@ object account:
   def Region(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.account.RegionArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.account.RegionArgs.builder
-    
     com.pulumi.aws.account.Region(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -29,7 +27,6 @@ object account:
   def PrimaryContact(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.account.PrimaryContactArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.account.PrimaryContactArgs.builder
-    
     com.pulumi.aws.account.PrimaryContact(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -53,7 +50,7 @@ object account:
 
     /**
      * The `aws.account.getRegions` data source lets you query AWS region information for any account in your AWS Organization. It uses the AWS Account REST Service to show all regions, including those that are enabled, disabled, or in the process of being enabled or disabled. You can list regions for any organization account, see all possible region opt-in statuses (`ENABLED`, `ENABLING`, `DISABLING`, `DISABLED`, `ENABLED_BY_DEFAULT`), and check which regions are being enabled or disabled.
-     *  
+     * 
      *  This is more comprehensive than the aws.getRegions data source, which only uses the EC2 REST service and is limited to the current account and a subset of region statuses.
      */
     def getRegions(args: Endofunction[com.pulumi.aws.account.inputs.GetRegionsArgs.Builder] = identity):
@@ -63,7 +60,7 @@ object account:
 
     /**
      * The `aws.account.getRegions` data source lets you query AWS region information for any account in your AWS Organization. It uses the AWS Account REST Service to show all regions, including those that are enabled, disabled, or in the process of being enabled or disabled. You can list regions for any organization account, see all possible region opt-in statuses (`ENABLED`, `ENABLING`, `DISABLING`, `DISABLED`, `ENABLED_BY_DEFAULT`), and check which regions are being enabled or disabled.
-     *  
+     * 
      *  This is more comprehensive than the aws.getRegions data source, which only uses the EC2 REST service and is limited to the current account and a subset of region statuses.
      */
     def getRegionsPlain(args: Endofunction[com.pulumi.aws.account.inputs.GetRegionsPlainArgs.Builder] = identity):

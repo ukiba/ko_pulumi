@@ -79,7 +79,7 @@ object budgets:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.budgets.BudgetArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   /** Provides a budgets budget resource. Budgets use the cost visualization provided by Cost Explorer to show you the status of your budgets, to provide forecasts of your estimated costs, and to track your AWS usage, including your free tier usage. */
   def Budget(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.budgets.BudgetArgs.Builder])(using conf: KoPulumiConf) =
@@ -90,7 +90,6 @@ object budgets:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.budgets.Budget(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -102,7 +101,6 @@ object budgets:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.budgets.BudgetAction(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -138,7 +136,7 @@ object budgets:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.budgets.BudgetActionArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.budgets.inputs.BudgetFilterExpressionOrArgs.Builder)
     /**
      * @param ands (Optional) A list of filter expressions to combine with AND logic. Each `and` block is one operand and must itself contain exactly one root.
@@ -194,7 +192,6 @@ object budgets:
       val argsBuilder = com.pulumi.aws.budgets.inputs.BudgetFilterExpressionOrTagsArgs.builder
       builder.tags(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.budgets.inputs.BudgetFilterExpressionArgs.Builder)
     /**
      * @param ands (Optional) A list of filter expressions to combine with AND logic. Each `and` block is one operand and must itself contain exactly one root.
@@ -250,7 +247,6 @@ object budgets:
       val argsBuilder = com.pulumi.aws.budgets.inputs.BudgetFilterExpressionTagsArgs.builder
       builder.tags(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.budgets.inputs.BudgetFilterExpressionNotOrArgs.Builder)
     /**
      * @param costCategories (Optional) A Cost Category Filter block.
@@ -279,7 +275,6 @@ object budgets:
       val argsBuilder = com.pulumi.aws.budgets.inputs.BudgetFilterExpressionNotOrTagsArgs.builder
       builder.tags(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.budgets.inputs.BudgetFilterExpressionOrNotArgs.Builder)
     /**
      * @param costCategories (Optional) A Cost Category Filter block.
@@ -308,7 +303,6 @@ object budgets:
       val argsBuilder = com.pulumi.aws.budgets.inputs.BudgetFilterExpressionOrNotTagsArgs.builder
       builder.tags(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.budgets.inputs.BudgetActionDefinitionArgs.Builder)
     /**
      * @param iamActionDefinition The AWS Identity and Access Management (IAM) action definition details. See IAM Action Definition.
@@ -337,7 +331,6 @@ object budgets:
       val argsBuilder = com.pulumi.aws.budgets.inputs.BudgetActionDefinitionSsmActionDefinitionArgs.builder
       builder.ssmActionDefinition(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.budgets.inputs.BudgetFilterExpressionOrOrArgs.Builder)
     /**
      * @param costCategories (Optional) A Cost Category Filter block.
@@ -366,7 +359,6 @@ object budgets:
       val argsBuilder = com.pulumi.aws.budgets.inputs.BudgetFilterExpressionOrOrTagsArgs.builder
       builder.tags(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.budgets.inputs.BudgetFilterExpressionNotArgs.Builder)
     /**
      * @param ands (Optional) A list of filter expressions to combine with AND logic. Each `and` block is one operand and must itself contain exactly one root.
@@ -422,7 +414,6 @@ object budgets:
       val argsBuilder = com.pulumi.aws.budgets.inputs.BudgetFilterExpressionNotTagsArgs.builder
       builder.tags(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.budgets.inputs.BudgetAutoAdjustDataArgs.Builder)
     /**
      * @param historicalOptions (Optional) - Configuration block of Historical Options. Required for `autoAdjustType` of `HISTORICAL` Configuration block that defines the historical data that your auto-adjusting budget is based on.
@@ -433,7 +424,6 @@ object budgets:
       val argsBuilder = com.pulumi.aws.budgets.inputs.BudgetAutoAdjustDataHistoricalOptionsArgs.builder
       builder.historicalOptions(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.budgets.inputs.BudgetState.Builder)
     /**
      * @param autoAdjustData Object containing AutoAdjustData which determines the budget amount for an auto-adjusting budget.
@@ -492,7 +482,7 @@ object budgets:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.budgets.inputs.BudgetState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.budgets.inputs.BudgetFilterExpressionNotAndArgs.Builder)
     /**
      * @param costCategories (Optional) A Cost Category Filter block.
@@ -521,7 +511,6 @@ object budgets:
       val argsBuilder = com.pulumi.aws.budgets.inputs.BudgetFilterExpressionNotAndTagsArgs.builder
       builder.tags(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.budgets.inputs.BudgetFilterExpressionAndNotArgs.Builder)
     /**
      * @param costCategories (Optional) A Cost Category Filter block.
@@ -550,7 +539,6 @@ object budgets:
       val argsBuilder = com.pulumi.aws.budgets.inputs.BudgetFilterExpressionAndNotTagsArgs.builder
       builder.tags(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.budgets.inputs.BudgetFilterExpressionAndArgs.Builder)
     /**
      * @param ands (Optional) A list of filter expressions to combine with AND logic. Each `and` block is one operand and must itself contain exactly one root.
@@ -606,7 +594,6 @@ object budgets:
       val argsBuilder = com.pulumi.aws.budgets.inputs.BudgetFilterExpressionAndTagsArgs.builder
       builder.tags(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.budgets.inputs.BudgetFilterExpressionAndAndArgs.Builder)
     /**
      * @param costCategories (Optional) A Cost Category Filter block.
@@ -635,7 +622,6 @@ object budgets:
       val argsBuilder = com.pulumi.aws.budgets.inputs.BudgetFilterExpressionAndAndTagsArgs.builder
       builder.tags(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.budgets.inputs.BudgetFilterExpressionNotNotArgs.Builder)
     /**
      * @param costCategories (Optional) A Cost Category Filter block.
@@ -664,7 +650,6 @@ object budgets:
       val argsBuilder = com.pulumi.aws.budgets.inputs.BudgetFilterExpressionNotNotTagsArgs.builder
       builder.tags(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.budgets.inputs.BudgetActionState.Builder)
     /**
      * @param actionThreshold The trigger threshold of the action. See Action Threshold.
@@ -696,7 +681,7 @@ object budgets:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.budgets.inputs.BudgetActionState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.budgets.inputs.BudgetFilterExpressionOrAndArgs.Builder)
     /**
      * @param costCategories (Optional) A Cost Category Filter block.
@@ -725,7 +710,6 @@ object budgets:
       val argsBuilder = com.pulumi.aws.budgets.inputs.BudgetFilterExpressionOrAndTagsArgs.builder
       builder.tags(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.budgets.inputs.BudgetFilterExpressionAndOrArgs.Builder)
     /**
      * @param costCategories (Optional) A Cost Category Filter block.
@@ -753,5 +737,3 @@ object budgets:
         com.pulumi.aws.budgets.inputs.BudgetFilterExpressionAndOrArgs.Builder =
       val argsBuilder = com.pulumi.aws.budgets.inputs.BudgetFilterExpressionAndOrTagsArgs.builder
       builder.tags(args(argsBuilder).build)
-
-                       

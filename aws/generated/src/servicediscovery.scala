@@ -35,7 +35,7 @@ object servicediscovery:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.servicediscovery.ServiceArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   type ServicediscoveryFunctions = com.pulumi.aws.servicediscovery.ServicediscoveryFunctions
   object ServicediscoveryFunctions:
     // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
@@ -91,7 +91,6 @@ object servicediscovery:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.servicediscovery.PrivateDnsNamespace(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -106,7 +105,6 @@ object servicediscovery:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.servicediscovery.Service(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -115,7 +113,6 @@ object servicediscovery:
   def Instance(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.servicediscovery.InstanceArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.servicediscovery.InstanceArgs.builder
-    
     com.pulumi.aws.servicediscovery.Instance(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -132,7 +129,6 @@ object servicediscovery:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.servicediscovery.HttpNamespace(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -147,7 +143,6 @@ object servicediscovery:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.servicediscovery.PublicDnsNamespace(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -162,7 +157,6 @@ object servicediscovery:
       def argsBuilder = com.pulumi.aws.servicediscovery.inputs.ServiceDnsConfigDnsRecordArgs.builder
       builder.dnsRecords(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.servicediscovery.inputs.ServiceState.Builder)
     /**
      * @param dnsConfig A complex type that contains information about the resource record sets that you want Amazon Route 53 to create when you register an instance. See `dnsConfig` Block for details.
@@ -194,4 +188,3 @@ object servicediscovery:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.servicediscovery.inputs.ServiceState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       

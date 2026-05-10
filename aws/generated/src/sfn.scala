@@ -14,7 +14,6 @@ object sfn:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.sfn.Activity(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -26,7 +25,6 @@ object sfn:
     conf.logicalName2pysicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
       case None               =>
-    
     com.pulumi.aws.sfn.Alias(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -62,7 +60,7 @@ object sfn:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.sfn.StateMachineArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.sfn.ActivityArgs.Builder)
     /**
      * @param encryptionConfiguration Defines what encryption configuration is used to encrypt data in the Activity. For more information see the section [Data at rest encyption](https://docs.aws.amazon.com/step-functions/latest/dg/encryption-at-rest.html) in the AWS Step Functions User Guide.
@@ -76,7 +74,7 @@ object sfn:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.sfn.ActivityArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   /** Provides a Step Function State Machine resource */
   def StateMachine(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.sfn.StateMachineArgs.Builder])(using conf: KoPulumiConf) =
@@ -87,7 +85,6 @@ object sfn:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.sfn.StateMachine(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -163,7 +160,6 @@ object sfn:
       def argsBuilder = com.pulumi.aws.sfn.inputs.AliasRoutingConfigurationArgs.builder
       builder.routingConfigurations(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.sfn.inputs.ActivityState.Builder)
     /**
      * @param encryptionConfiguration Defines what encryption configuration is used to encrypt data in the Activity. For more information see the section [Data at rest encyption](https://docs.aws.amazon.com/step-functions/latest/dg/encryption-at-rest.html) in the AWS Step Functions User Guide.
@@ -177,7 +173,7 @@ object sfn:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.sfn.inputs.ActivityState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.sfn.inputs.AliasState.Builder)
     /**
      * @param routingConfigurations The StateMachine alias&#39; route configuration settings. Fields documented below
@@ -188,7 +184,6 @@ object sfn:
       def argsBuilder = com.pulumi.aws.sfn.inputs.AliasRoutingConfigurationArgs.builder
       builder.routingConfigurations(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.sfn.inputs.StateMachineState.Builder)
     /**
      * @param encryptionConfiguration Defines what encryption configuration is used to encrypt data in the State Machine. For more information see [TBD] in the AWS Step Functions User Guide.
@@ -220,4 +215,3 @@ object sfn:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.sfn.inputs.StateMachineState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       

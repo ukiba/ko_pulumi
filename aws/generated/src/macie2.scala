@@ -8,7 +8,6 @@ object macie2:
   def OrganizationAdminAccount(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.macie2.OrganizationAdminAccountArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.macie2.OrganizationAdminAccountArgs.builder
-    
     com.pulumi.aws.macie2.OrganizationAdminAccount(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -23,12 +22,10 @@ object macie2:
       val argsBuilder = com.pulumi.aws.macie2.inputs.ClassificationExportConfigurationS3DestinationArgs.builder
       builder.s3Destination(args(argsBuilder).build)
 
-                       
   /** Provides a resource to manage Amazon Macie configuration settings for an organization in AWS Organizations. */
   def OrganizationConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.macie2.OrganizationConfigurationArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.macie2.OrganizationConfigurationArgs.builder
-    
     com.pulumi.aws.macie2.OrganizationConfiguration(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -37,7 +34,6 @@ object macie2:
   def ClassificationExportConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.macie2.ClassificationExportConfigurationArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.macie2.ClassificationExportConfigurationArgs.builder
-    
     com.pulumi.aws.macie2.ClassificationExportConfiguration(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -52,7 +48,6 @@ object macie2:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.macie2.ClassificationJob(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -61,7 +56,6 @@ object macie2:
   def Account(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.macie2.AccountArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.macie2.AccountArgs.builder
-    
     com.pulumi.aws.macie2.Account(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -88,7 +82,7 @@ object macie2:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.macie2.ClassificationJobArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   /** Provides a resource to manage an [Amazon Macie Member](https://docs.aws.amazon.com/macie/latest/APIReference/members-id.html). */
   def Member(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.macie2.MemberArgs.Builder])(using conf: KoPulumiConf) =
@@ -96,7 +90,6 @@ object macie2:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.macie2.Member(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -105,7 +98,6 @@ object macie2:
   def InvitationAccepter(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.macie2.InvitationAccepterArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.macie2.InvitationAccepterArgs.builder
-    
     com.pulumi.aws.macie2.InvitationAccepter(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -120,7 +112,6 @@ object macie2:
       def argsBuilder = com.pulumi.aws.macie2.inputs.ClassificationJobS3JobDefinitionScopingIncludesAndArgs.builder
       builder.ands(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.macie2.inputs.ClassificationJobState.Builder)
     /**
      * @param s3JobDefinition The S3 buckets that contain the objects to analyze, and the scope of that analysis. (documented below)
@@ -152,7 +143,7 @@ object macie2:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.macie2.inputs.ClassificationJobState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.macie2.inputs.ClassificationJobS3JobDefinitionScopingExcludesArgs.Builder)
     /**
      * @param ands An array of conditions, one for each condition that determines which objects to include or exclude from the job. (documented below)
@@ -163,7 +154,6 @@ object macie2:
       def argsBuilder = com.pulumi.aws.macie2.inputs.ClassificationJobS3JobDefinitionScopingExcludesAndArgs.builder
       builder.ands(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.macie2.inputs.ClassificationJobS3JobDefinitionScopingExcludesAndArgs.Builder)
     /**
      * @param simpleScopeTerm A property-based condition that defines a property, operator, and one or more values for including or excluding an object from the job. (documented below)
@@ -183,7 +173,6 @@ object macie2:
       val argsBuilder = com.pulumi.aws.macie2.inputs.ClassificationJobS3JobDefinitionScopingExcludesAndTagScopeTermArgs.builder
       builder.tagScopeTerm(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.macie2.inputs.ClassificationJobS3JobDefinitionScopingExcludesAndTagScopeTermArgs.Builder)
     /**
      * @param tagValues The tag keys or tag key and value pairs to use in the condition.
@@ -194,7 +183,6 @@ object macie2:
       def argsBuilder = com.pulumi.aws.macie2.inputs.ClassificationJobS3JobDefinitionScopingExcludesAndTagScopeTermTagValueArgs.builder
       builder.tagValues(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.macie2.inputs.ClassificationJobS3JobDefinitionBucketCriteriaIncludesAndTagCriterionArgs.Builder)
     /**
      * @param tagValues The  tag key and value pairs to use in the condition. One or more blocks are allowed. (documented below)
@@ -205,7 +193,6 @@ object macie2:
       def argsBuilder = com.pulumi.aws.macie2.inputs.ClassificationJobS3JobDefinitionBucketCriteriaIncludesAndTagCriterionTagValueArgs.builder
       builder.tagValues(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.macie2.inputs.ClassificationJobS3JobDefinitionArgs.Builder)
     /**
      * @param bucketCriteria The property- and tag-based conditions that determine which S3 buckets to include or exclude from the analysis. Conflicts with `bucketDefinitions`. (documented below)
@@ -234,7 +221,6 @@ object macie2:
       val argsBuilder = com.pulumi.aws.macie2.inputs.ClassificationJobS3JobDefinitionScopingArgs.builder
       builder.scoping(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.macie2.inputs.ClassificationJobS3JobDefinitionScopingIncludesAndArgs.Builder)
     /**
      * @param simpleScopeTerm A property-based condition that defines a property, operator, and one or more values for including or excluding an object from the job. (documented below)
@@ -254,7 +240,6 @@ object macie2:
       val argsBuilder = com.pulumi.aws.macie2.inputs.ClassificationJobS3JobDefinitionScopingIncludesAndTagScopeTermArgs.builder
       builder.tagScopeTerm(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.macie2.inputs.ClassificationJobS3JobDefinitionScopingArgs.Builder)
     /**
      * @param excludes The property- or tag-based conditions that determine which objects to exclude from the analysis. (documented below)
@@ -274,7 +259,6 @@ object macie2:
       val argsBuilder = com.pulumi.aws.macie2.inputs.ClassificationJobS3JobDefinitionScopingIncludesArgs.builder
       builder.includes(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.macie2.inputs.ClassificationJobS3JobDefinitionBucketCriteriaExcludesAndArgs.Builder)
     /**
      * @param simpleCriterion A property-based condition that defines a property, operator, and one or more values for including or excluding an S3 buckets from the job. (documented below)
@@ -294,7 +278,6 @@ object macie2:
       val argsBuilder = com.pulumi.aws.macie2.inputs.ClassificationJobS3JobDefinitionBucketCriteriaExcludesAndTagCriterionArgs.builder
       builder.tagCriterion(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.macie2.inputs.ClassificationJobS3JobDefinitionBucketCriteriaIncludesAndArgs.Builder)
     /**
      * @param simpleCriterion A property-based condition that defines a property, operator, and one or more values for including or excluding an S3 buckets from the job. (documented below)
@@ -314,7 +297,6 @@ object macie2:
       val argsBuilder = com.pulumi.aws.macie2.inputs.ClassificationJobS3JobDefinitionBucketCriteriaIncludesAndTagCriterionArgs.builder
       builder.tagCriterion(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.macie2.inputs.ClassificationJobS3JobDefinitionBucketCriteriaArgs.Builder)
     /**
      * @param excludes The property- or tag-based conditions that determine which S3 buckets to exclude from the analysis. (documented below)
@@ -334,7 +316,6 @@ object macie2:
       val argsBuilder = com.pulumi.aws.macie2.inputs.ClassificationJobS3JobDefinitionBucketCriteriaIncludesArgs.builder
       builder.includes(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.macie2.inputs.ClassificationJobS3JobDefinitionBucketCriteriaExcludesAndTagCriterionArgs.Builder)
     /**
      * @param tagValues The  tag key and value pairs to use in the condition. One or more blocks are allowed. (documented below)
@@ -345,7 +326,6 @@ object macie2:
       def argsBuilder = com.pulumi.aws.macie2.inputs.ClassificationJobS3JobDefinitionBucketCriteriaExcludesAndTagCriterionTagValueArgs.builder
       builder.tagValues(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.macie2.inputs.ClassificationJobS3JobDefinitionBucketCriteriaExcludesArgs.Builder)
     /**
      * @param ands An array of conditions, one for each condition that determines which objects to include or exclude from the job. (documented below)
@@ -356,7 +336,6 @@ object macie2:
       def argsBuilder = com.pulumi.aws.macie2.inputs.ClassificationJobS3JobDefinitionBucketCriteriaExcludesAndArgs.builder
       builder.ands(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.macie2.inputs.ClassificationJobS3JobDefinitionScopingIncludesAndTagScopeTermArgs.Builder)
     /**
      * @param tagValues The tag keys or tag key and value pairs to use in the condition.
@@ -367,7 +346,6 @@ object macie2:
       def argsBuilder = com.pulumi.aws.macie2.inputs.ClassificationJobS3JobDefinitionScopingIncludesAndTagScopeTermTagValueArgs.builder
       builder.tagValues(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.macie2.inputs.ClassificationExportConfigurationState.Builder)
     /**
      * @param s3Destination Configuration block for a S3 Destination. Defined below
@@ -378,7 +356,6 @@ object macie2:
       val argsBuilder = com.pulumi.aws.macie2.inputs.ClassificationExportConfigurationS3DestinationArgs.builder
       builder.s3Destination(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.macie2.inputs.ClassificationJobS3JobDefinitionBucketCriteriaIncludesArgs.Builder)
     /**
      * @param ands An array of conditions, one for each condition that determines which objects to include or exclude from the job. (documented below)
@@ -388,5 +365,3 @@ object macie2:
         com.pulumi.aws.macie2.inputs.ClassificationJobS3JobDefinitionBucketCriteriaIncludesArgs.Builder =
       def argsBuilder = com.pulumi.aws.macie2.inputs.ClassificationJobS3JobDefinitionBucketCriteriaIncludesAndArgs.builder
       builder.ands(args.map(_(argsBuilder).build)*)
-
-                       

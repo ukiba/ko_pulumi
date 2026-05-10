@@ -6,7 +6,7 @@ import com.pulumi.resources.CustomResourceOptions
 object schemas:
   /**
    * Provides an EventBridge Schema Discoverer resource.
-   *  
+   * 
    *  &gt; **Note:** EventBridge was formerly known as CloudWatch Events. The functionality is identical.
    */
   def Discoverer(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
@@ -15,14 +15,13 @@ object schemas:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.schemas.Discoverer(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
   /**
    * Provides an EventBridge Schema resource.
-   *  
+   * 
    *  &gt; **Note:** EventBridge was formerly known as CloudWatch Events. The functionality is identical.
    */
   def Schema(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
@@ -34,7 +33,6 @@ object schemas:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.schemas.Schema(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -43,14 +41,13 @@ object schemas:
   def RegistryPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.schemas.RegistryPolicyArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.schemas.RegistryPolicyArgs.builder
-    
     com.pulumi.aws.schemas.RegistryPolicy(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
   /**
    * Provides an EventBridge Custom Schema Registry resource.
-   *  
+   * 
    *  &gt; **Note:** EventBridge was formerly known as CloudWatch Events. The functionality is identical.
    */
   def Registry(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
@@ -62,7 +59,6 @@ object schemas:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.schemas.Registry(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)

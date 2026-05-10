@@ -6,7 +6,7 @@ import com.pulumi.resources.CustomResourceOptions
 object transcribe:
   /**
    * Resource for managing an AWS Transcribe LanguageModel.
-   *  
+   * 
    *  &gt; This resource can take a significant amount of time to provision. See Language Model [FAQ](https://aws.amazon.com/transcribe/faqs/) for more details.
    */
   def LanguageModel(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
@@ -15,7 +15,6 @@ object transcribe:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.transcribe.LanguageModel(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -27,7 +26,6 @@ object transcribe:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.transcribe.VocabularyFilter(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -45,7 +43,7 @@ object transcribe:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.transcribe.LanguageModelArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   /** Resource for managing an AWS Transcribe Vocabulary. */
   def Vocabulary(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.transcribe.VocabularyArgs.Builder])(using conf: KoPulumiConf) =
@@ -53,7 +51,6 @@ object transcribe:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.transcribe.Vocabulary(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -65,7 +62,6 @@ object transcribe:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.transcribe.MedicalVocabulary(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -83,4 +79,3 @@ object transcribe:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.transcribe.inputs.LanguageModelState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       

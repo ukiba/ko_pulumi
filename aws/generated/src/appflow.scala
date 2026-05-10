@@ -53,7 +53,7 @@ object appflow:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.appflow.FlowArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.appflow.ConnectorProfileArgs.Builder)
     /**
      * @param connectorProfileConfig Defines the connector-specific configuration and credentials. See Connector Profile Config for more details.
@@ -64,7 +64,6 @@ object appflow:
       val argsBuilder = com.pulumi.aws.appflow.inputs.ConnectorProfileConnectorProfileConfigArgs.builder
       builder.connectorProfileConfig(args(argsBuilder).build)
 
-                       
   /** Provides an AppFlow flow resource. */
   def Flow(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.appflow.FlowArgs.Builder])(using conf: KoPulumiConf) =
@@ -75,14 +74,13 @@ object appflow:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.appflow.Flow(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
   /**
    * Provides an AppFlow connector profile resource.
-   *  
+   * 
    *  For information about AppFlow flows, see the [Amazon AppFlow API Reference](https://docs.aws.amazon.com/appflow/1.0/APIReference/Welcome.html).
    *  For specific information about creating an AppFlow connector profile, see the
    *  [CreateConnectorProfile](https://docs.aws.amazon.com/appflow/1.0/APIReference/API_CreateConnectorProfile.html) page in the Amazon AppFlow API Reference.
@@ -93,7 +91,6 @@ object appflow:
     conf.logicalName2pysicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
       case None               =>
-    
     com.pulumi.aws.appflow.ConnectorProfile(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -212,21 +209,18 @@ object appflow:
       val argsBuilder = com.pulumi.aws.appflow.inputs.FlowDestinationFlowConfigDestinationConnectorPropertiesZendeskArgs.builder
       builder.zendesk(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.appflow.inputs.ConnectorProfileConnectorProfileConfigConnectorProfileCredentialsSlackArgs.Builder)
     def oauthRequest(args: Endofunction[com.pulumi.aws.appflow.inputs.ConnectorProfileConnectorProfileConfigConnectorProfileCredentialsSlackOauthRequestArgs.Builder]):
         com.pulumi.aws.appflow.inputs.ConnectorProfileConnectorProfileConfigConnectorProfileCredentialsSlackArgs.Builder =
       val argsBuilder = com.pulumi.aws.appflow.inputs.ConnectorProfileConnectorProfileConfigConnectorProfileCredentialsSlackOauthRequestArgs.builder
       builder.oauthRequest(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.appflow.inputs.FlowDestinationFlowConfigDestinationConnectorPropertiesEventBridgeArgs.Builder)
     def errorHandlingConfig(args: Endofunction[com.pulumi.aws.appflow.inputs.FlowDestinationFlowConfigDestinationConnectorPropertiesEventBridgeErrorHandlingConfigArgs.Builder]):
         com.pulumi.aws.appflow.inputs.FlowDestinationFlowConfigDestinationConnectorPropertiesEventBridgeArgs.Builder =
       val argsBuilder = com.pulumi.aws.appflow.inputs.FlowDestinationFlowConfigDestinationConnectorPropertiesEventBridgeErrorHandlingConfigArgs.builder
       builder.errorHandlingConfig(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.appflow.inputs.FlowSourceFlowConfigSourceConnectorPropertiesS3Args.Builder)
     /**
      * @param s3InputFormatConfig When you use Amazon S3 as the source, the configuration format that you provide the flow input data. See S3 Input Format Config for details.
@@ -237,21 +231,18 @@ object appflow:
       val argsBuilder = com.pulumi.aws.appflow.inputs.FlowSourceFlowConfigSourceConnectorPropertiesS3S3InputFormatConfigArgs.builder
       builder.s3InputFormatConfig(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.appflow.inputs.FlowDestinationFlowConfigDestinationConnectorPropertiesSnowflakeArgs.Builder)
     def errorHandlingConfig(args: Endofunction[com.pulumi.aws.appflow.inputs.FlowDestinationFlowConfigDestinationConnectorPropertiesSnowflakeErrorHandlingConfigArgs.Builder]):
         com.pulumi.aws.appflow.inputs.FlowDestinationFlowConfigDestinationConnectorPropertiesSnowflakeArgs.Builder =
       val argsBuilder = com.pulumi.aws.appflow.inputs.FlowDestinationFlowConfigDestinationConnectorPropertiesSnowflakeErrorHandlingConfigArgs.builder
       builder.errorHandlingConfig(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.appflow.inputs.FlowMetadataCatalogConfigArgs.Builder)
     def glueDataCatalog(args: Endofunction[com.pulumi.aws.appflow.inputs.FlowMetadataCatalogConfigGlueDataCatalogArgs.Builder]):
         com.pulumi.aws.appflow.inputs.FlowMetadataCatalogConfigArgs.Builder =
       val argsBuilder = com.pulumi.aws.appflow.inputs.FlowMetadataCatalogConfigGlueDataCatalogArgs.builder
       builder.glueDataCatalog(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.appflow.inputs.FlowDestinationFlowConfigArgs.Builder)
     /**
      * @param destinationConnectorProperties This stores the information that is required to query a particular connector. See Destination Connector Properties for more information.
@@ -262,7 +253,6 @@ object appflow:
       val argsBuilder = com.pulumi.aws.appflow.inputs.FlowDestinationFlowConfigDestinationConnectorPropertiesArgs.builder
       builder.destinationConnectorProperties(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.appflow.inputs.FlowSourceFlowConfigSourceConnectorPropertiesArgs.Builder)
     /**
      * @param amplitude Information that is required for querying Amplitude. See Generic Source Properties for more details.
@@ -408,7 +398,6 @@ object appflow:
       val argsBuilder = com.pulumi.aws.appflow.inputs.FlowSourceFlowConfigSourceConnectorPropertiesZendeskArgs.builder
       builder.zendesk(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.appflow.inputs.ConnectorProfileConnectorProfileConfigConnectorProfilePropertiesCustomConnectorArgs.Builder)
     /**
      * @param oauth2Properties The OAuth 2.0 properties required for OAuth 2.0 authentication.
@@ -419,21 +408,18 @@ object appflow:
       val argsBuilder = com.pulumi.aws.appflow.inputs.ConnectorProfileConnectorProfileConfigConnectorProfilePropertiesCustomConnectorOauth2PropertiesArgs.builder
       builder.oauth2Properties(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.appflow.inputs.ConnectorProfileConnectorProfileConfigConnectorProfileCredentialsMarketoArgs.Builder)
     def oauthRequest(args: Endofunction[com.pulumi.aws.appflow.inputs.ConnectorProfileConnectorProfileConfigConnectorProfileCredentialsMarketoOauthRequestArgs.Builder]):
         com.pulumi.aws.appflow.inputs.ConnectorProfileConnectorProfileConfigConnectorProfileCredentialsMarketoArgs.Builder =
       val argsBuilder = com.pulumi.aws.appflow.inputs.ConnectorProfileConnectorProfileConfigConnectorProfileCredentialsMarketoOauthRequestArgs.builder
       builder.oauthRequest(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.appflow.inputs.ConnectorProfileConnectorProfileConfigConnectorProfileCredentialsCustomConnectorOauth2Args.Builder)
     def oauthRequest(args: Endofunction[com.pulumi.aws.appflow.inputs.ConnectorProfileConnectorProfileConfigConnectorProfileCredentialsCustomConnectorOauth2OauthRequestArgs.Builder]):
         com.pulumi.aws.appflow.inputs.ConnectorProfileConnectorProfileConfigConnectorProfileCredentialsCustomConnectorOauth2Args.Builder =
       val argsBuilder = com.pulumi.aws.appflow.inputs.ConnectorProfileConnectorProfileConfigConnectorProfileCredentialsCustomConnectorOauth2OauthRequestArgs.builder
       builder.oauthRequest(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.appflow.inputs.FlowDestinationFlowConfigDestinationConnectorPropertiesS3S3OutputFormatConfigArgs.Builder)
     /**
      * @param aggregationConfig Aggregation settings that you can use to customize the output format of your flow data. See Aggregation Config for more details.
@@ -453,7 +439,6 @@ object appflow:
       val argsBuilder = com.pulumi.aws.appflow.inputs.FlowDestinationFlowConfigDestinationConnectorPropertiesS3S3OutputFormatConfigPrefixConfigArgs.builder
       builder.prefixConfig(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.appflow.inputs.FlowState.Builder)
     /**
      * @param destinationFlowConfigs A Destination Flow Config that controls how Amazon AppFlow places data in the destination connector.
@@ -503,7 +488,7 @@ object appflow:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.appflow.inputs.FlowState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.appflow.inputs.FlowDestinationFlowConfigDestinationConnectorPropertiesUpsolverS3OutputFormatConfigArgs.Builder)
     /**
      * @param aggregationConfig Aggregation settings that you can use to customize the output format of your flow data. See Aggregation Config for more details.
@@ -523,7 +508,6 @@ object appflow:
       val argsBuilder = com.pulumi.aws.appflow.inputs.FlowDestinationFlowConfigDestinationConnectorPropertiesUpsolverS3OutputFormatConfigPrefixConfigArgs.builder
       builder.prefixConfig(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.appflow.inputs.ConnectorProfileConnectorProfileConfigConnectorProfileCredentialsSapoDataArgs.Builder)
     /**
      * @param basicAuthCredentials The SAPOData basic authentication credentials.
@@ -543,21 +527,18 @@ object appflow:
       val argsBuilder = com.pulumi.aws.appflow.inputs.ConnectorProfileConnectorProfileConfigConnectorProfileCredentialsSapoDataOauthCredentialsArgs.builder
       builder.oauthCredentials(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.appflow.inputs.ConnectorProfileConnectorProfileConfigConnectorProfileCredentialsGoogleAnalyticsArgs.Builder)
     def oauthRequest(args: Endofunction[com.pulumi.aws.appflow.inputs.ConnectorProfileConnectorProfileConfigConnectorProfileCredentialsGoogleAnalyticsOauthRequestArgs.Builder]):
         com.pulumi.aws.appflow.inputs.ConnectorProfileConnectorProfileConfigConnectorProfileCredentialsGoogleAnalyticsArgs.Builder =
       val argsBuilder = com.pulumi.aws.appflow.inputs.ConnectorProfileConnectorProfileConfigConnectorProfileCredentialsGoogleAnalyticsOauthRequestArgs.builder
       builder.oauthRequest(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.appflow.inputs.FlowDestinationFlowConfigDestinationConnectorPropertiesCustomConnectorArgs.Builder)
     def errorHandlingConfig(args: Endofunction[com.pulumi.aws.appflow.inputs.FlowDestinationFlowConfigDestinationConnectorPropertiesCustomConnectorErrorHandlingConfigArgs.Builder]):
         com.pulumi.aws.appflow.inputs.FlowDestinationFlowConfigDestinationConnectorPropertiesCustomConnectorArgs.Builder =
       val argsBuilder = com.pulumi.aws.appflow.inputs.FlowDestinationFlowConfigDestinationConnectorPropertiesCustomConnectorErrorHandlingConfigArgs.builder
       builder.errorHandlingConfig(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.appflow.inputs.FlowSourceFlowConfigSourceConnectorPropertiesSapoDataArgs.Builder)
     /**
      * @param paginationConfig Sets the page size for each concurrent process that transfers OData records from your SAP instance.
@@ -577,21 +558,18 @@ object appflow:
       val argsBuilder = com.pulumi.aws.appflow.inputs.FlowSourceFlowConfigSourceConnectorPropertiesSapoDataParallelismConfigArgs.builder
       builder.parallelismConfig(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.appflow.inputs.FlowDestinationFlowConfigDestinationConnectorPropertiesHoneycodeArgs.Builder)
     def errorHandlingConfig(args: Endofunction[com.pulumi.aws.appflow.inputs.FlowDestinationFlowConfigDestinationConnectorPropertiesHoneycodeErrorHandlingConfigArgs.Builder]):
         com.pulumi.aws.appflow.inputs.FlowDestinationFlowConfigDestinationConnectorPropertiesHoneycodeArgs.Builder =
       val argsBuilder = com.pulumi.aws.appflow.inputs.FlowDestinationFlowConfigDestinationConnectorPropertiesHoneycodeErrorHandlingConfigArgs.builder
       builder.errorHandlingConfig(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.appflow.inputs.FlowDestinationFlowConfigDestinationConnectorPropertiesMarketoArgs.Builder)
     def errorHandlingConfig(args: Endofunction[com.pulumi.aws.appflow.inputs.FlowDestinationFlowConfigDestinationConnectorPropertiesMarketoErrorHandlingConfigArgs.Builder]):
         com.pulumi.aws.appflow.inputs.FlowDestinationFlowConfigDestinationConnectorPropertiesMarketoArgs.Builder =
       val argsBuilder = com.pulumi.aws.appflow.inputs.FlowDestinationFlowConfigDestinationConnectorPropertiesMarketoErrorHandlingConfigArgs.builder
       builder.errorHandlingConfig(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.appflow.inputs.ConnectorProfileConnectorProfileConfigConnectorProfileCredentialsCustomConnectorArgs.Builder)
     def apiKey(args: Endofunction[com.pulumi.aws.appflow.inputs.ConnectorProfileConnectorProfileConfigConnectorProfileCredentialsCustomConnectorApiKeyArgs.Builder]):
         com.pulumi.aws.appflow.inputs.ConnectorProfileConnectorProfileConfigConnectorProfileCredentialsCustomConnectorArgs.Builder =
@@ -625,7 +603,6 @@ object appflow:
       val argsBuilder = com.pulumi.aws.appflow.inputs.ConnectorProfileConnectorProfileConfigConnectorProfileCredentialsCustomConnectorOauth2Args.builder
       builder.oauth2(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.appflow.inputs.ConnectorProfileConnectorProfileConfigConnectorProfilePropertiesSapoDataArgs.Builder)
     /**
      * @param oauthProperties The SAPOData OAuth properties required for OAuth type authentication.
@@ -636,42 +613,36 @@ object appflow:
       val argsBuilder = com.pulumi.aws.appflow.inputs.ConnectorProfileConnectorProfileConfigConnectorProfilePropertiesSapoDataOauthPropertiesArgs.builder
       builder.oauthProperties(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.appflow.inputs.ConnectorProfileConnectorProfileConfigConnectorProfileCredentialsSapoDataOauthCredentialsArgs.Builder)
     def oauthRequest(args: Endofunction[com.pulumi.aws.appflow.inputs.ConnectorProfileConnectorProfileConfigConnectorProfileCredentialsSapoDataOauthCredentialsOauthRequestArgs.Builder]):
         com.pulumi.aws.appflow.inputs.ConnectorProfileConnectorProfileConfigConnectorProfileCredentialsSapoDataOauthCredentialsArgs.Builder =
       val argsBuilder = com.pulumi.aws.appflow.inputs.ConnectorProfileConnectorProfileConfigConnectorProfileCredentialsSapoDataOauthCredentialsOauthRequestArgs.builder
       builder.oauthRequest(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.appflow.inputs.ConnectorProfileConnectorProfileConfigConnectorProfileCredentialsSalesforceArgs.Builder)
     def oauthRequest(args: Endofunction[com.pulumi.aws.appflow.inputs.ConnectorProfileConnectorProfileConfigConnectorProfileCredentialsSalesforceOauthRequestArgs.Builder]):
         com.pulumi.aws.appflow.inputs.ConnectorProfileConnectorProfileConfigConnectorProfileCredentialsSalesforceArgs.Builder =
       val argsBuilder = com.pulumi.aws.appflow.inputs.ConnectorProfileConnectorProfileConfigConnectorProfileCredentialsSalesforceOauthRequestArgs.builder
       builder.oauthRequest(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.appflow.inputs.FlowDestinationFlowConfigDestinationConnectorPropertiesSalesforceArgs.Builder)
     def errorHandlingConfig(args: Endofunction[com.pulumi.aws.appflow.inputs.FlowDestinationFlowConfigDestinationConnectorPropertiesSalesforceErrorHandlingConfigArgs.Builder]):
         com.pulumi.aws.appflow.inputs.FlowDestinationFlowConfigDestinationConnectorPropertiesSalesforceArgs.Builder =
       val argsBuilder = com.pulumi.aws.appflow.inputs.FlowDestinationFlowConfigDestinationConnectorPropertiesSalesforceErrorHandlingConfigArgs.builder
       builder.errorHandlingConfig(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.appflow.inputs.FlowTriggerConfigTriggerPropertiesArgs.Builder)
     def scheduled(args: Endofunction[com.pulumi.aws.appflow.inputs.FlowTriggerConfigTriggerPropertiesScheduledArgs.Builder]):
         com.pulumi.aws.appflow.inputs.FlowTriggerConfigTriggerPropertiesArgs.Builder =
       val argsBuilder = com.pulumi.aws.appflow.inputs.FlowTriggerConfigTriggerPropertiesScheduledArgs.builder
       builder.scheduled(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.appflow.inputs.FlowDestinationFlowConfigDestinationConnectorPropertiesRedshiftArgs.Builder)
     def errorHandlingConfig(args: Endofunction[com.pulumi.aws.appflow.inputs.FlowDestinationFlowConfigDestinationConnectorPropertiesRedshiftErrorHandlingConfigArgs.Builder]):
         com.pulumi.aws.appflow.inputs.FlowDestinationFlowConfigDestinationConnectorPropertiesRedshiftArgs.Builder =
       val argsBuilder = com.pulumi.aws.appflow.inputs.FlowDestinationFlowConfigDestinationConnectorPropertiesRedshiftErrorHandlingConfigArgs.builder
       builder.errorHandlingConfig(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.appflow.inputs.FlowTriggerConfigArgs.Builder)
     /**
      * @param triggerProperties Configuration details of a schedule-triggered flow as defined by the user. Currently, these settings only apply to the `Scheduled` trigger type. See Scheduled Trigger Properties for details.
@@ -682,14 +653,12 @@ object appflow:
       val argsBuilder = com.pulumi.aws.appflow.inputs.FlowTriggerConfigTriggerPropertiesArgs.builder
       builder.triggerProperties(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.appflow.inputs.FlowDestinationFlowConfigDestinationConnectorPropertiesS3Args.Builder)
     def s3OutputFormatConfig(args: Endofunction[com.pulumi.aws.appflow.inputs.FlowDestinationFlowConfigDestinationConnectorPropertiesS3S3OutputFormatConfigArgs.Builder]):
         com.pulumi.aws.appflow.inputs.FlowDestinationFlowConfigDestinationConnectorPropertiesS3Args.Builder =
       val argsBuilder = com.pulumi.aws.appflow.inputs.FlowDestinationFlowConfigDestinationConnectorPropertiesS3S3OutputFormatConfigArgs.builder
       builder.s3OutputFormatConfig(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.appflow.inputs.ConnectorProfileConnectorProfileConfigConnectorProfilePropertiesArgs.Builder)
     /**
      * @param amplitude The connector-specific credentials required when using Amplitude. See Amplitude Connector Profile Credentials for more details.
@@ -853,7 +822,6 @@ object appflow:
       val argsBuilder = com.pulumi.aws.appflow.inputs.ConnectorProfileConnectorProfileConfigConnectorProfilePropertiesZendeskArgs.builder
       builder.zendesk(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.appflow.inputs.FlowSourceFlowConfigArgs.Builder)
     /**
      * @param incrementalPullConfig Defines the configuration for a scheduled incremental data pull. If a valid configuration is provided, the fields specified in the configuration are used when querying for the incremental data pull. See Incremental Pull Config for more details.
@@ -873,7 +841,6 @@ object appflow:
       val argsBuilder = com.pulumi.aws.appflow.inputs.FlowSourceFlowConfigSourceConnectorPropertiesArgs.builder
       builder.sourceConnectorProperties(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.appflow.inputs.ConnectorProfileConnectorProfileConfigArgs.Builder)
     /**
      * @param connectorProfileCredentials The connector-specific credentials required by each connector. See Connector Profile Credentials for more details.
@@ -893,14 +860,12 @@ object appflow:
       val argsBuilder = com.pulumi.aws.appflow.inputs.ConnectorProfileConnectorProfileConfigConnectorProfilePropertiesArgs.builder
       builder.connectorProfileProperties(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.appflow.inputs.ConnectorProfileConnectorProfileConfigConnectorProfileCredentialsZendeskArgs.Builder)
     def oauthRequest(args: Endofunction[com.pulumi.aws.appflow.inputs.ConnectorProfileConnectorProfileConfigConnectorProfileCredentialsZendeskOauthRequestArgs.Builder]):
         com.pulumi.aws.appflow.inputs.ConnectorProfileConnectorProfileConfigConnectorProfileCredentialsZendeskArgs.Builder =
       val argsBuilder = com.pulumi.aws.appflow.inputs.ConnectorProfileConnectorProfileConfigConnectorProfileCredentialsZendeskOauthRequestArgs.builder
       builder.oauthRequest(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.appflow.inputs.FlowDestinationFlowConfigDestinationConnectorPropertiesSapoDataArgs.Builder)
     def errorHandlingConfig(args: Endofunction[com.pulumi.aws.appflow.inputs.FlowDestinationFlowConfigDestinationConnectorPropertiesSapoDataErrorHandlingConfigArgs.Builder]):
         com.pulumi.aws.appflow.inputs.FlowDestinationFlowConfigDestinationConnectorPropertiesSapoDataArgs.Builder =
@@ -916,7 +881,6 @@ object appflow:
       val argsBuilder = com.pulumi.aws.appflow.inputs.FlowDestinationFlowConfigDestinationConnectorPropertiesSapoDataSuccessResponseHandlingConfigArgs.builder
       builder.successResponseHandlingConfig(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.appflow.inputs.ConnectorProfileState.Builder)
     /**
      * @param connectorProfileConfig Defines the connector-specific configuration and credentials. See Connector Profile Config for more details.
@@ -927,7 +891,6 @@ object appflow:
       val argsBuilder = com.pulumi.aws.appflow.inputs.ConnectorProfileConnectorProfileConfigArgs.builder
       builder.connectorProfileConfig(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.appflow.inputs.ConnectorProfileConnectorProfileConfigConnectorProfileCredentialsArgs.Builder)
     /**
      * @param amplitude The connector-specific credentials required when using Amplitude. See Amplitude Connector Profile Credentials for more details.
@@ -1091,7 +1054,6 @@ object appflow:
       val argsBuilder = com.pulumi.aws.appflow.inputs.ConnectorProfileConnectorProfileConfigConnectorProfileCredentialsZendeskArgs.builder
       builder.zendesk(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.appflow.inputs.FlowTaskArgs.Builder)
     /**
      * @param connectorOperators Operation to be performed on the provided source fields. See Connector Operator for details.
@@ -1102,25 +1064,20 @@ object appflow:
       def argsBuilder = com.pulumi.aws.appflow.inputs.FlowTaskConnectorOperatorArgs.builder
       builder.connectorOperators(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.appflow.inputs.FlowDestinationFlowConfigDestinationConnectorPropertiesUpsolverArgs.Builder)
     def s3OutputFormatConfig(args: Endofunction[com.pulumi.aws.appflow.inputs.FlowDestinationFlowConfigDestinationConnectorPropertiesUpsolverS3OutputFormatConfigArgs.Builder]):
         com.pulumi.aws.appflow.inputs.FlowDestinationFlowConfigDestinationConnectorPropertiesUpsolverArgs.Builder =
       val argsBuilder = com.pulumi.aws.appflow.inputs.FlowDestinationFlowConfigDestinationConnectorPropertiesUpsolverS3OutputFormatConfigArgs.builder
       builder.s3OutputFormatConfig(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.appflow.inputs.ConnectorProfileConnectorProfileConfigConnectorProfileCredentialsHoneycodeArgs.Builder)
     def oauthRequest(args: Endofunction[com.pulumi.aws.appflow.inputs.ConnectorProfileConnectorProfileConfigConnectorProfileCredentialsHoneycodeOauthRequestArgs.Builder]):
         com.pulumi.aws.appflow.inputs.ConnectorProfileConnectorProfileConfigConnectorProfileCredentialsHoneycodeArgs.Builder =
       val argsBuilder = com.pulumi.aws.appflow.inputs.ConnectorProfileConnectorProfileConfigConnectorProfileCredentialsHoneycodeOauthRequestArgs.builder
       builder.oauthRequest(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.appflow.inputs.FlowDestinationFlowConfigDestinationConnectorPropertiesZendeskArgs.Builder)
     def errorHandlingConfig(args: Endofunction[com.pulumi.aws.appflow.inputs.FlowDestinationFlowConfigDestinationConnectorPropertiesZendeskErrorHandlingConfigArgs.Builder]):
         com.pulumi.aws.appflow.inputs.FlowDestinationFlowConfigDestinationConnectorPropertiesZendeskArgs.Builder =
       val argsBuilder = com.pulumi.aws.appflow.inputs.FlowDestinationFlowConfigDestinationConnectorPropertiesZendeskErrorHandlingConfigArgs.builder
       builder.errorHandlingConfig(args(argsBuilder).build)
-
-                       

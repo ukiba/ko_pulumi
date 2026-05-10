@@ -13,7 +13,7 @@ object workspaces:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.workspaces.ConnectionAliasArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.workspaces.IpGroupArgs.Builder)
     /**
      * @param rules One or more pairs specifying the IP group rule (in CIDR format) from which web requests originate.
@@ -27,7 +27,7 @@ object workspaces:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.workspaces.IpGroupArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   /** Provides an IP access control group in AWS WorkSpaces Service */
   def IpGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.workspaces.IpGroupArgs.Builder])(using conf: KoPulumiConf) =
@@ -38,7 +38,6 @@ object workspaces:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.workspaces.IpGroup(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -56,10 +55,10 @@ object workspaces:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.workspaces.WorkspaceArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   /**
    * Provides a WorkSpaces directory in AWS WorkSpaces Service.
-   *  
+   * 
    *  &gt; **NOTE:** AWS WorkSpaces service requires [`workspaces_DefaultRole`](https://docs.aws.amazon.com/workspaces/latest/adminguide/workspaces-access-control.html#create-default-role) IAM role to operate normally.
    */
   def Directory(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
@@ -68,7 +67,6 @@ object workspaces:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.workspaces.Directory(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -131,7 +129,7 @@ object workspaces:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.workspaces.DirectoryArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   /** Resource for managing an AWS WorkSpaces Connection Alias. */
   def ConnectionAlias(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.workspaces.ConnectionAliasArgs.Builder])(using conf: KoPulumiConf) =
@@ -139,7 +137,6 @@ object workspaces:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.workspaces.ConnectionAlias(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -199,7 +196,7 @@ object workspaces:
 
   /**
    * Provides a workspace in [AWS Workspaces](https://docs.aws.amazon.com/workspaces/latest/adminguide/amazon-workspaces.html) Service
-   *  
+   * 
    *  &gt; **NOTE:** AWS WorkSpaces service requires [`workspaces_DefaultRole`](https://docs.aws.amazon.com/workspaces/latest/adminguide/workspaces-access-control.html#create-default-role) IAM role to operate normally.
    */
   def Workspace(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
@@ -208,7 +205,6 @@ object workspaces:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.workspaces.Workspace(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -222,7 +218,7 @@ object workspaces:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.workspaces.inputs.ConnectionAliasState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.workspaces.inputs.DirectoryState.Builder)
     /**
      * @param activeDirectoryConfig Configuration for Active Directory integration when `workspaceType` is set to `POOLS`. Defined below.
@@ -281,7 +277,7 @@ object workspaces:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.workspaces.inputs.DirectoryState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.workspaces.inputs.WorkspaceState.Builder)
     /**
      * @param workspaceProperties The WorkSpace properties.
@@ -295,7 +291,7 @@ object workspaces:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.workspaces.inputs.WorkspaceState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.workspaces.inputs.IpGroupState.Builder)
     /**
      * @param rules One or more pairs specifying the IP group rule (in CIDR format) from which web requests originate.
@@ -309,4 +305,3 @@ object workspaces:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.workspaces.inputs.IpGroupState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       

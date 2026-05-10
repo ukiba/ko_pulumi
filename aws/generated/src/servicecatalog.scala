@@ -95,7 +95,7 @@ object servicecatalog:
 
     /**
      * Use this data source to retrieve information about a Service Catalog product.
-     *  
+     * 
      *  &gt; **NOTE:** A &#34;provisioning artifact&#34; is also known as a &#34;version,&#34; and a &#34;distributor&#34; is also known as a &#34;vendor.&#34;
      */
     def getProduct(args: Endofunction[com.pulumi.aws.servicecatalog.inputs.GetProductArgs.Builder] = identity):
@@ -105,7 +105,7 @@ object servicecatalog:
 
     /**
      * Use this data source to retrieve information about a Service Catalog product.
-     *  
+     * 
      *  &gt; **NOTE:** A &#34;provisioning artifact&#34; is also known as a &#34;version,&#34; and a &#34;distributor&#34; is also known as a &#34;vendor.&#34;
      */
     def getProductPlain(args: Endofunction[com.pulumi.aws.servicecatalog.inputs.GetProductPlainArgs.Builder] = identity):
@@ -127,19 +127,18 @@ object servicecatalog:
 
   /**
    * Manages a Service Catalog Portfolio Share. Shares the specified portfolio with the specified account or organization node. You can share portfolios to an organization, an organizational unit, or a specific account.
-   *  
+   * 
    *  If the portfolio share with the specified account or organization node already exists, using this resource to re-create the share will have no effect and will not return an error. You can then use this resource to update the share.
-   *  
+   * 
    *  &gt; **NOTE:** Shares to an organization node can only be created by the management account of an organization or by a delegated administrator. If a delegated admin is de-registered, they can no longer create portfolio shares.
-   *  
+   * 
    *  &gt; **NOTE:** AWSOrganizationsAccess must be enabled in order to create a portfolio share to an organization node.
-   *  
+   * 
    *  &gt; **NOTE:** You can&#39;t share a shared resource, including portfolios that contain a shared product.
    */
   def PortfolioShare(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.servicecatalog.PortfolioShareArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.servicecatalog.PortfolioShareArgs.builder
-    
     com.pulumi.aws.servicecatalog.PortfolioShare(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -154,7 +153,6 @@ object servicecatalog:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.servicecatalog.AppregistryAttributeGroup(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -163,16 +161,15 @@ object servicecatalog:
   def PrincipalPortfolioAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.servicecatalog.PrincipalPortfolioAssociationArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.servicecatalog.PrincipalPortfolioAssociationArgs.builder
-    
     com.pulumi.aws.servicecatalog.PrincipalPortfolioAssociation(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
   /**
    * Manages a Service Catalog Product.
-   *  
+   * 
    *  &gt; **NOTE:** The user or role that uses this resources must have the `cloudformation:GetTemplate` IAM policy permission. This policy permission is required when using the `templatePhysicalId` argument.
-   *  
+   * 
    *  &gt; A &#34;provisioning artifact&#34; is also referred to as a &#34;version.&#34; A &#34;distributor&#34; is also referred to as a &#34;vendor.&#34;
    */
   def Product(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
@@ -184,7 +181,6 @@ object servicecatalog:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.servicecatalog.Product(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -193,7 +189,6 @@ object servicecatalog:
   def ProductPortfolioAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.servicecatalog.ProductPortfolioAssociationArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.servicecatalog.ProductPortfolioAssociationArgs.builder
-    
     com.pulumi.aws.servicecatalog.ProductPortfolioAssociation(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -202,7 +197,6 @@ object servicecatalog:
   def TagOption(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.servicecatalog.TagOptionArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.servicecatalog.TagOptionArgs.builder
-    
     com.pulumi.aws.servicecatalog.TagOption(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -229,16 +223,16 @@ object servicecatalog:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.servicecatalog.ProvisionedProductArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   /**
    * This resource provisions and manages a Service Catalog provisioned product.
-   *  
+   * 
    *  A provisioned product is a resourced instance of a product. For example, provisioning a product based on a CloudFormation template launches a CloudFormation stack and its underlying resources.
-   *  
+   * 
    *  Like this resource, the `awsServicecatalogRecord` data source also provides information about a provisioned product. Although a Service Catalog record provides some overlapping information with this resource, a record is tied to a provisioned product event, such as provisioning, termination, and updating.
-   *  
+   * 
    *  &gt; **Tip:** If you include conflicted keys as tags, AWS will report an error, &#34;Parameter validation failed: Missing required parameter in Tags[N]:Value&#34;.
-   *  
+   * 
    *  &gt; **Tip:** A &#34;provisioning artifact&#34; is also referred to as a &#34;version.&#34; A &#34;distributor&#34; is also referred to as a &#34;vendor.&#34;
    */
   def ProvisionedProduct(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
@@ -250,7 +244,6 @@ object servicecatalog:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.servicecatalog.ProvisionedProduct(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -268,27 +261,26 @@ object servicecatalog:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.servicecatalog.ProductArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   /**
    * Manages a Service Catalog Tag Option Resource Association.
-   *  
+   * 
    *  &gt; **Tip:** A &#34;resource&#34; is either a Service Catalog portfolio or product.
    */
   def TagOptionResourceAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.servicecatalog.TagOptionResourceAssociationArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.servicecatalog.TagOptionResourceAssociationArgs.builder
-    
     com.pulumi.aws.servicecatalog.TagOptionResourceAssociation(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
   /**
    * Manages a Service Catalog Provisioning Artifact for a specified product.
-   *  
+   * 
    *  &gt; A &#34;provisioning artifact&#34; is also referred to as a &#34;version.&#34;
-   *  
+   * 
    *  &gt; **NOTE:** You cannot create a provisioning artifact for a product that was shared with you.
-   *  
+   * 
    *  &gt; **NOTE:** The user or role that use this resource must have the `cloudformation:GetTemplate` IAM policy permission. This policy permission is required when using the `templatePhysicalId` argument.
    */
   def ProvisioningArtifact(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
@@ -297,7 +289,6 @@ object servicecatalog:
     conf.logicalName2pysicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
       case None               =>
-    
     com.pulumi.aws.servicecatalog.ProvisioningArtifact(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -309,7 +300,6 @@ object servicecatalog:
     conf.logicalName2pysicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
       case None               =>
-    
     com.pulumi.aws.servicecatalog.ServiceAction(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -318,53 +308,49 @@ object servicecatalog:
   def AppregistryAttributeGroupAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.servicecatalog.AppregistryAttributeGroupAssociationArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.servicecatalog.AppregistryAttributeGroupAssociationArgs.builder
-    
     com.pulumi.aws.servicecatalog.AppregistryAttributeGroupAssociation(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
   /**
    * Manages a Service Catalog Budget Resource Association.
-   *  
+   * 
    *  &gt; **Tip:** A &#34;resource&#34; is either a Service Catalog portfolio or product.
    */
   def BudgetResourceAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.servicecatalog.BudgetResourceAssociationArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.servicecatalog.BudgetResourceAssociationArgs.builder
-    
     com.pulumi.aws.servicecatalog.BudgetResourceAssociation(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
   /**
    * Manages Service Catalog AWS Organizations Access, a portfolio sharing feature through AWS Organizations. This allows Service Catalog to receive updates on your organization in order to sync your shares with the current structure. This resource will prompt AWS to set `organizations:EnableAWSServiceAccess` on your behalf so that your shares can be in sync with any changes in your AWS Organizations structure.
-   *  
+   * 
    *  &gt; **NOTE:** This resource can only be used by the management account in the organization. In other words, a delegated administrator is not authorized to use the resource.
    */
   def OrganizationsAccess(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.servicecatalog.OrganizationsAccessArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.servicecatalog.OrganizationsAccessArgs.builder
-    
     com.pulumi.aws.servicecatalog.OrganizationsAccess(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
   /**
    * Manages a Service Catalog Constraint.
-   *  
+   * 
    *  &gt; **NOTE:** This resource does not associate a Service Catalog product and portfolio. However, the product and portfolio must be associated (see the `aws.servicecatalog.ProductPortfolioAssociation` resource) prior to creating a constraint or you will receive an error.
    */
   def Constraint(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.servicecatalog.ConstraintArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.servicecatalog.ConstraintArgs.builder
-    
     com.pulumi.aws.servicecatalog.Constraint(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
   /**
    * Resource for managing an AWS Service Catalog AppRegistry Application.
-   *  
+   * 
    *  &gt; An AWS Service Catalog AppRegistry Application is displayed in the AWS Console under &#34;MyApplications&#34;.
    */
   def AppregistryApplication(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
@@ -376,7 +362,6 @@ object servicecatalog:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.servicecatalog.AppregistryApplication(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -391,7 +376,6 @@ object servicecatalog:
       val argsBuilder = com.pulumi.aws.servicecatalog.inputs.ServiceActionDefinitionArgs.builder
       builder.definition(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.servicecatalog.inputs.ProductState.Builder)
     /**
      * @param provisioningArtifactParameters Configuration block for provisioning artifact (i.e., version) parameters. See `provisioningArtifactParameters` Block for details.
@@ -405,7 +389,7 @@ object servicecatalog:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.servicecatalog.inputs.ProductState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.servicecatalog.inputs.ServiceActionState.Builder)
     /**
      * @param definition Self-service action definition configuration block. Detailed below.
@@ -416,7 +400,6 @@ object servicecatalog:
       val argsBuilder = com.pulumi.aws.servicecatalog.inputs.ServiceActionDefinitionArgs.builder
       builder.definition(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.servicecatalog.inputs.ProvisionedProductState.Builder)
     /**
      * @param outputs The set of outputs for the product created.
@@ -448,7 +431,7 @@ object servicecatalog:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.servicecatalog.inputs.ProvisionedProductState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   /** Provides a resource to create a Service Catalog Portfolio. */
   def Portfolio(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.servicecatalog.PortfolioArgs.Builder])(using conf: KoPulumiConf) =
@@ -459,7 +442,6 @@ object servicecatalog:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.servicecatalog.Portfolio(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)

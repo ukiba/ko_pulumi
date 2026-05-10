@@ -11,7 +11,6 @@ object licensemanager:
     conf.logicalName2pysicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
       case None               =>
-    
     com.pulumi.aws.licensemanager.LicenseGrant(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -61,14 +60,13 @@ object licensemanager:
   def LicenseGrantAccepter(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.licensemanager.LicenseGrantAccepterArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.licensemanager.LicenseGrantAccepterArgs.builder
-    
     com.pulumi.aws.licensemanager.LicenseGrantAccepter(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
   /**
    * Provides a License Manager license configuration resource.
-   *  
+   * 
    *  &gt; **Note:** Removing the `licenseCount` attribute is not supported by the License Manager API.
    */
   def LicenseConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
@@ -80,20 +78,18 @@ object licensemanager:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.licensemanager.LicenseConfiguration(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
   /**
    * Provides a License Manager association.
-   *  
+   * 
    *  &gt; **Note:** License configurations can also be associated with launch templates by specifying the `licenseSpecifications` block for an `aws.ec2.LaunchTemplate`.
    */
   def Association(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.licensemanager.AssociationArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.licensemanager.AssociationArgs.builder
-    
     com.pulumi.aws.licensemanager.Association(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -108,7 +104,6 @@ object licensemanager:
       def argsBuilder = com.pulumi.aws.licensemanager.inputs.GetReceivedLicensesFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.licensemanager.inputs.GetLicenseGrantsArgs.Builder)
     /**
      * @param filters Custom filter block as described below.
@@ -118,5 +113,3 @@ object licensemanager:
         com.pulumi.aws.licensemanager.inputs.GetLicenseGrantsArgs.Builder =
       def argsBuilder = com.pulumi.aws.licensemanager.inputs.GetLicenseGrantsFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
-
-                       

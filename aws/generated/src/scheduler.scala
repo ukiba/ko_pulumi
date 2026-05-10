@@ -16,7 +16,7 @@ object scheduler:
 
     /**
      * @param target Configures the target of the schedule. Detailed below.
-     *  
+     * 
      *  The following arguments are optional:
      * @return builder
      */
@@ -25,12 +25,11 @@ object scheduler:
       val argsBuilder = com.pulumi.aws.scheduler.inputs.ScheduleTargetArgs.builder
       builder.target(args(argsBuilder).build)
 
-                       
   /**
    * Provides an EventBridge Scheduler Schedule resource.
-   *  
+   * 
    *  You can find out more about EventBridge Scheduler in the [User Guide](https://docs.aws.amazon.com/scheduler/latest/UserGuide/what-is-scheduler.html).
-   *  
+   * 
    *  &gt; **Note:** EventBridge was formerly known as CloudWatch Events. The functionality is identical.
    */
   def Schedule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
@@ -39,16 +38,15 @@ object scheduler:
     conf.logicalName2pysicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
       case None               =>
-    
     com.pulumi.aws.scheduler.Schedule(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
   /**
    * Provides an EventBridge Scheduler Schedule Group resource.
-   *  
+   * 
    *  You can find out more about EventBridge Scheduler in the [User Guide](https://docs.aws.amazon.com/scheduler/latest/UserGuide/what-is-scheduler.html).
-   *  
+   * 
    *  &gt; **Note:** EventBridge was formerly known as CloudWatch Events. The functionality is identical.
    */
   def ScheduleGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
@@ -60,7 +58,6 @@ object scheduler:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.scheduler.ScheduleGroup(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -129,7 +126,6 @@ object scheduler:
       val argsBuilder = com.pulumi.aws.scheduler.inputs.ScheduleTargetSqsParametersArgs.builder
       builder.sqsParameters(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.scheduler.inputs.ScheduleState.Builder)
     /**
      * @param flexibleTimeWindow Configures a time window during which EventBridge Scheduler invokes the schedule. Detailed below.
@@ -142,7 +138,7 @@ object scheduler:
 
     /**
      * @param target Configures the target of the schedule. Detailed below.
-     *  
+     * 
      *  The following arguments are optional:
      * @return builder
      */
@@ -151,7 +147,6 @@ object scheduler:
       val argsBuilder = com.pulumi.aws.scheduler.inputs.ScheduleTargetArgs.builder
       builder.target(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.scheduler.inputs.ScheduleTargetSagemakerPipelineParametersArgs.Builder)
     /**
      * @param pipelineParameters Set of up to 200 parameter names and values to use when executing the SageMaker AI Model Building Pipeline. Detailed below.
@@ -162,7 +157,6 @@ object scheduler:
       def argsBuilder = com.pulumi.aws.scheduler.inputs.ScheduleTargetSagemakerPipelineParametersPipelineParameterArgs.builder
       builder.pipelineParameters(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.scheduler.inputs.ScheduleTargetEcsParametersArgs.Builder)
     /**
      * @param capacityProviderStrategies Up to `6` capacity provider strategies to use for the task. Detailed below.
@@ -203,4 +197,3 @@ object scheduler:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.scheduler.inputs.ScheduleTargetEcsParametersArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       

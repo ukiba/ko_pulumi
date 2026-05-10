@@ -8,7 +8,6 @@ object notifications:
   def EventRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.notifications.EventRuleArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.notifications.EventRuleArgs.builder
-    
     com.pulumi.aws.notifications.EventRule(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -17,7 +16,6 @@ object notifications:
   def ManagedNotificationAccountContactAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.notifications.ManagedNotificationAccountContactAssociationArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.notifications.ManagedNotificationAccountContactAssociationArgs.builder
-    
     com.pulumi.aws.notifications.ManagedNotificationAccountContactAssociation(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -26,7 +24,6 @@ object notifications:
   def ManagedNotificationAdditionalChannelAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.notifications.ManagedNotificationAdditionalChannelAssociationArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.notifications.ManagedNotificationAdditionalChannelAssociationArgs.builder
-    
     com.pulumi.aws.notifications.ManagedNotificationAdditionalChannelAssociation(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -35,7 +32,6 @@ object notifications:
   def OrganizationalUnitAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.notifications.OrganizationalUnitAssociationArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.notifications.OrganizationalUnitAssociationArgs.builder
-    
     com.pulumi.aws.notifications.OrganizationalUnitAssociation(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -50,7 +46,6 @@ object notifications:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.notifications.ContactsEmailContact(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -59,7 +54,6 @@ object notifications:
   def NotificationHub(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.notifications.NotificationHubArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.notifications.NotificationHubArgs.builder
-    
     com.pulumi.aws.notifications.NotificationHub(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -70,18 +64,16 @@ object notifications:
       val argsBuilder = com.pulumi.aws.notifications.inputs.OrganizationsAccessTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
-                       
   /**
    * Resource for managing AWS User Notifications Organizations Access. This resource enables or disables organizations access for AWS User Notifications in AWS Organizations, allowing the service to access organization information.
-   *  
+   * 
    *  &gt; **NOTE:** This resource can only be used in the management account of an AWS Organization.
-   *  
+   * 
    *  &gt; **NOTE:** Deleting this resource will always disable organizations access for AWS User Notifications, regardless of the `enabled` attribute value.
    */
   def OrganizationsAccess(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.notifications.OrganizationsAccessArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.notifications.OrganizationsAccessArgs.builder
-    
     com.pulumi.aws.notifications.OrganizationsAccess(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -92,7 +84,6 @@ object notifications:
       val argsBuilder = com.pulumi.aws.notifications.inputs.NotificationHubTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
-                       
   /** Resource for managing an AWS User Notifications Notification Configuration. */
   def NotificationConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.notifications.NotificationConfigurationArgs.Builder])(using conf: KoPulumiConf) =
@@ -103,7 +94,6 @@ object notifications:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.notifications.NotificationConfiguration(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -112,7 +102,6 @@ object notifications:
   def ChannelAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.notifications.ChannelAssociationArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.notifications.ChannelAssociationArgs.builder
-    
     com.pulumi.aws.notifications.ChannelAssociation(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -123,11 +112,8 @@ object notifications:
       val argsBuilder = com.pulumi.aws.notifications.inputs.OrganizationsAccessTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.notifications.inputs.NotificationHubState.Builder)
     def timeouts(args: Endofunction[com.pulumi.aws.notifications.inputs.NotificationHubTimeoutsArgs.Builder]):
         com.pulumi.aws.notifications.inputs.NotificationHubState.Builder =
       val argsBuilder = com.pulumi.aws.notifications.inputs.NotificationHubTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
-
-                       

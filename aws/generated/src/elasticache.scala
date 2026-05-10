@@ -6,13 +6,12 @@ import com.pulumi.resources.CustomResourceOptions
 object elasticache:
   /**
    * Associate an existing ElastiCache user and an existing user group.
-   *  
+   * 
    *  &gt; Pulumi will detect changes in the `aws.elasticache.UserGroup` since `aws.elasticache.UserGroupAssociation` changes the user IDs associated with the user group. You can ignore these changes with the `lifecycle` `ignoreChanges` meta argument as shown in the example.
    */
   def UserGroupAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.elasticache.UserGroupAssociationArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.elasticache.UserGroupAssociationArgs.builder
-    
     com.pulumi.aws.elasticache.UserGroupAssociation(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -30,10 +29,10 @@ object elasticache:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.elasticache.UserArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   /**
    * Provides an ElastiCache parameter group resource.
-   *  
+   * 
    *  &gt; **NOTE:** Attempting to remove the `reserved-memory` parameter when `family` is set to `redis2.6` or `redis2.8` may show a perpetual difference in this provider due to an ElastiCache API limitation. Leave that parameter configured with any value to workaround the issue.
    */
   def ParameterGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
@@ -45,7 +44,6 @@ object elasticache:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.elasticache.ParameterGroup(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -60,7 +58,6 @@ object elasticache:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.elasticache.SubnetGroup(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -69,10 +66,10 @@ object elasticache:
    * Provides an ElastiCache Cluster resource, which manages a Memcached cluster, a single-node Redis instance,
    *  or a read replica in a Redis (Cluster Mode Enabled) replication group. For more information, refer to
    *  the AWS document [What is Amazon ElastiCache?](https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/WhatIs.html).
-   *  
+   * 
    *  For working with Redis (Cluster Mode Enabled) replication groups, see the
    *  `aws.elasticache.ReplicationGroup` resource.
-   *  
+   * 
    *  &gt; **Note:** When you change an attribute, such as `numCacheNodes`, by default
    *  it is applied in the next maintenance window. Because of this, this provider may report
    *  a difference in its planning phase because the actual modification has not yet taken
@@ -82,7 +79,7 @@ object elasticache:
    *  [ElastiCache for Memcached](https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/ParameterGroups.Engine.html#ParameterGroups.Memcached) or
    *  [ElastiCache for Valkey and Redis OSS](https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/ParameterGroups.Engine.html#ParameterGroups.Redis)
    *  for more information.
-   *  
+   * 
    *  &gt; **Note:** Any attribute changes that re-create the resource will be applied immediately, regardless of the value of `applyImmediately`.
    */
   def Cluster(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
@@ -91,14 +88,13 @@ object elasticache:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.elasticache.Cluster(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
   /**
    * Provides an ElastiCache user resource.
-   *  
+   * 
    *  &gt; **Note:** All arguments including the username and passwords will be stored in the raw state as plain-text unless you use the write-only `passwordsWo` argument.
    */
   def User(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
@@ -107,7 +103,6 @@ object elasticache:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.elasticache.User(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -119,7 +114,6 @@ object elasticache:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.elasticache.UserGroup(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -137,7 +131,7 @@ object elasticache:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.elasticache.ParameterGroupArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.elasticache.ClusterArgs.Builder)
     /**
      * @param logDeliveryConfigurations Specifies the destination and format of Redis [SLOWLOG](https://redis.io/commands/slowlog) or Redis [Engine Log](https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/Log_Delivery.html#Log_contents-engine-log). See the documentation on [Amazon ElastiCache](https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/Log_Delivery.html). See Log Delivery Configuration below for more details.
@@ -151,7 +145,7 @@ object elasticache:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.elasticache.ClusterArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   /** Provides an ElastiCache Serverless Cache resource which manages memcached, redis or valkey. */
   def ServerlessCache(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.elasticache.ServerlessCacheArgs.Builder])(using conf: KoPulumiConf) =
@@ -162,7 +156,6 @@ object elasticache:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.elasticache.ServerlessCache(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -176,7 +169,7 @@ object elasticache:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.elasticache.ReservedCacheNodeArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   type ElasticacheFunctions = com.pulumi.aws.elasticache.ElasticacheFunctions
   object ElasticacheFunctions:
     // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
@@ -276,14 +269,14 @@ object elasticache:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.elasticache.ReplicationGroupArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   /**
    * Provides an ElastiCache Replication Group resource.
-   *  
+   * 
    *  For working with a [Memcached cluster](https://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/WhatIs.html) or a
    *  [single-node Redis instance (Cluster Mode Disabled)](https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/WhatIs.html),
    *  see the `aws.elasticache.Cluster` resource.
-   *  
+   * 
    *  &gt; **Note:** When you change an attribute, such as `engineVersion`, by
    *  default the ElastiCache API applies it in the next maintenance window. Because
    *  of this, this provider may report a difference in its planning phase because the
@@ -294,9 +287,9 @@ object elasticache:
    *  See the AWS Documentation on
    *  [Modifying an ElastiCache Cache Cluster](https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Clusters.Modify.html)
    *  for more information.
-   *  
+   * 
    *  &gt; **Note:** Any attribute changes that re-create the resource will be applied immediately, regardless of the value of `applyImmediately`.
-   *  
+   * 
    *  &gt; **Note:** Be aware of the terminology collision around &#34;cluster&#34; for `aws.elasticache.ReplicationGroup`. For example, it is possible to create a [&#34;Cluster Mode Disabled [Redis] Cluster&#34;](https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Clusters.Create.CON.Redis.html). With &#34;Cluster Mode Enabled&#34;, the data will be stored in shards (called &#34;node groups&#34;). See [Redis Cluster Configuration](https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/cluster-create-determine-requirements.html#redis-cluster-configuration) for a diagram of the differences. To enable cluster mode, use a parameter group that has cluster mode enabled. The default parameter groups provided by AWS end with &#34;.cluster.on&#34;, for example `default.redis6.x.cluster.on`.
    */
   def ReplicationGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
@@ -305,7 +298,6 @@ object elasticache:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.elasticache.ReplicationGroup(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -328,12 +320,12 @@ object elasticache:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.elasticache.ServerlessCacheArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   /**
    * Manages an ElastiCache Reserved Cache Node.
-   *  
+   * 
    *  &gt; **NOTE:** Once created, a reservation is valid for the `duration` of the provided `offeringId` and cannot be deleted. Performing a `destroy` will only remove the resource from state. For more information see [ElastiCache Reserved Nodes Documentation](https://aws.amazon.com/elasticache/reserved-cache-nodes/) and [PurchaseReservedCacheNodesOffering](https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_PurchaseReservedCacheNodesOffering.html).
-   *  
+   * 
    *  &gt; **NOTE:** Due to the expense of testing this resource, we provide it as best effort. If you find it useful, and have the ability to help test or notice issues, consider reaching out to us on GitHub.
    */
   def ReservedCacheNode(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
@@ -342,7 +334,6 @@ object elasticache:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.elasticache.ReservedCacheNode(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -351,7 +342,6 @@ object elasticache:
   def GlobalReplicationGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.elasticache.GlobalReplicationGroupArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.elasticache.GlobalReplicationGroupArgs.builder
-    
     com.pulumi.aws.elasticache.GlobalReplicationGroup(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -367,7 +357,6 @@ object elasticache:
       def argsBuilder = com.pulumi.aws.elasticache.inputs.GlobalReplicationGroupGlobalNodeGroupArgs.builder
       builder.globalNodeGroups(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.elasticache.inputs.ParameterGroupState.Builder)
     /**
      * @param parameters A list of ElastiCache parameters to apply.
@@ -381,7 +370,7 @@ object elasticache:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.elasticache.inputs.ParameterGroupState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.elasticache.inputs.ClusterState.Builder)
     /**
      * @param cacheNodes List of node objects including `id`, `address`, `port` and `availabilityZone`.
@@ -404,7 +393,7 @@ object elasticache:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.elasticache.inputs.ClusterState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.elasticache.inputs.ServerlessCacheState.Builder)
     /**
      * @param cacheUsageLimits Sets the cache usage limits for storage and ElastiCache Processing Units for the cache. See `cacheUsageLimits` Block for details.
@@ -441,7 +430,7 @@ object elasticache:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.elasticache.inputs.ServerlessCacheState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.elasticache.inputs.ReplicationGroupState.Builder)
     /**
      * @param logDeliveryConfigurations Specifies the destination and format of Redis OSS/Valkey [SLOWLOG](https://redis.io/commands/slowlog) or Redis OSS/Valkey [Engine Log](https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Log_Delivery.html#Log_contents-engine-log). See the documentation on [Amazon ElastiCache](https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Log_Delivery.html#Log_contents-engine-log). See Log Delivery Configuration below for more details.
@@ -464,7 +453,7 @@ object elasticache:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.elasticache.inputs.ReplicationGroupState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.elasticache.inputs.ServerlessCacheCacheUsageLimitsArgs.Builder)
     /**
      * @param dataStorage The maximum data storage limit in the cache, expressed in Gigabytes. See `dataStorage` Block for details.
@@ -484,7 +473,6 @@ object elasticache:
       def argsBuilder = com.pulumi.aws.elasticache.inputs.ServerlessCacheCacheUsageLimitsEcpuPerSecondArgs.builder
       builder.ecpuPerSeconds(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.elasticache.inputs.ReservedCacheNodeState.Builder)
     /**
      * @param recurringCharges Recurring price charged to run this reserved cache node.
@@ -503,14 +491,13 @@ object elasticache:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.elasticache.inputs.ReservedCacheNodeState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.elasticache.inputs.GetUserArgs.Builder)
     def authenticationModes(args: Endofunction[com.pulumi.aws.elasticache.inputs.GetUserAuthenticationModeArgs.Builder]*):
         com.pulumi.aws.elasticache.inputs.GetUserArgs.Builder =
       def argsBuilder = com.pulumi.aws.elasticache.inputs.GetUserAuthenticationModeArgs.builder
       builder.authenticationModes(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.elasticache.inputs.UserState.Builder)
     /**
      * @param authenticationMode Denotes the user&#39;s authentication properties. Detailed below.
@@ -524,4 +511,3 @@ object elasticache:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.elasticache.inputs.UserState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       

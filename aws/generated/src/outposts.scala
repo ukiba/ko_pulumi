@@ -107,13 +107,12 @@ object outposts:
 
   /**
    * Resource for managing an AWS Outposts Capacity Task.
-   *  
+   * 
    *  A capacity task redistributes the instance pools available on an Outpost rack or server to match the `instancePool` configuration declared in the resource. Starting a capacity task is a long-running, asynchronous operation \u2014 Terraform waits for it to reach a terminal state (`COMPLETED`, `CANCELLED`, or `FAILED`) before finishing the apply.
    */
   def CapacityTask(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.outposts.CapacityTaskArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.outposts.CapacityTaskArgs.builder
-    
     com.pulumi.aws.outposts.CapacityTask(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -146,7 +145,6 @@ object outposts:
       val argsBuilder = com.pulumi.aws.outposts.inputs.CapacityTaskTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.outposts.inputs.CapacityTaskState.Builder)
     /**
      * @param instancePools One or more `instancePool` blocks defining the desired instance-type layout for the Outpost. See below. At least one block is required. Changing any value forces a new resource.
@@ -174,5 +172,3 @@ object outposts:
         com.pulumi.aws.outposts.inputs.CapacityTaskState.Builder =
       val argsBuilder = com.pulumi.aws.outposts.inputs.CapacityTaskTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
-
-                       

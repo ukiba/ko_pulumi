@@ -26,7 +26,7 @@ object ivs:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.ivs.RecordingConfigurationArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   /** Resource for managing an AWS IVS (Interactive Video) Channel. */
   def Channel(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ivs.ChannelArgs.Builder])(using conf: KoPulumiConf) =
@@ -37,7 +37,6 @@ object ivs:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.ivs.Channel(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -52,7 +51,6 @@ object ivs:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.ivs.PlaybackKeyPair(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -84,7 +82,6 @@ object ivs:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.ivs.RecordingConfiguration(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -99,7 +96,6 @@ object ivs:
       val argsBuilder = com.pulumi.aws.ivs.inputs.RecordingConfigurationDestinationConfigurationS3Args.builder
       builder.s3(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.ivs.inputs.RecordingConfigurationState.Builder)
     /**
      * @param destinationConfiguration Object containing destination configuration for where recorded video will be stored.
@@ -122,4 +118,3 @@ object ivs:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.ivs.inputs.RecordingConfigurationState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       

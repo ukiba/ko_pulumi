@@ -17,10 +17,10 @@ object ecrpublic:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.ecrpublic.RepositoryArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   /**
    * Provides a Public Elastic Container Registry Repository.
-   *  
+   * 
    *  &gt; **NOTE:** This resource can only be used in the `us-east-1` region.
    */
   def Repository(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
@@ -29,22 +29,20 @@ object ecrpublic:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.ecrpublic.Repository(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
   /**
    * Provides an Elastic Container Registry Public Repository Policy.
-   *  
+   * 
    *  Note that currently only one policy may be applied to a repository.
-   *  
+   * 
    *  &gt; **NOTE:** This resource can only be used in the `us-east-1` region.
    */
   def RepositoryPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ecrpublic.RepositoryPolicyArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.ecrpublic.RepositoryPolicyArgs.builder
-    
     com.pulumi.aws.ecrpublic.RepositoryPolicy(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -56,7 +54,7 @@ object ecrpublic:
   extension (self: EcrpublicFunctions.type)
     /**
      * The Public ECR Authorization Token data source allows the authorization token, token expiration date, user name, and password to be retrieved for a Public ECR repository.
-     *  
+     * 
      *  &gt; **NOTE:** This data source can only be used in the `us-east-1` region.
      */
     def getAuthorizationToken(args: Endofunction[com.pulumi.aws.ecrpublic.inputs.GetAuthorizationTokenArgs.Builder] = identity):
@@ -66,7 +64,7 @@ object ecrpublic:
 
     /**
      * The Public ECR Authorization Token data source allows the authorization token, token expiration date, user name, and password to be retrieved for a Public ECR repository.
-     *  
+     * 
      *  &gt; **NOTE:** This data source can only be used in the `us-east-1` region.
      */
     def getAuthorizationTokenPlain(args: Endofunction[com.pulumi.aws.ecrpublic.inputs.GetAuthorizationTokenPlainArgs.Builder] = identity):
@@ -99,7 +97,7 @@ object ecrpublic:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.ecrpublic.inputs.RepositoryState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.ecrpublic.inputs.GetImagesArgs.Builder)
     /**
      * @param imageIds One or more image ID filters. Each image ID can use either a tag or digest (or both). Each object has the following attributes:
@@ -109,5 +107,3 @@ object ecrpublic:
         com.pulumi.aws.ecrpublic.inputs.GetImagesArgs.Builder =
       def argsBuilder = com.pulumi.aws.ecrpublic.inputs.GetImagesImageIdArgs.builder
       builder.imageIds(args.map(_(argsBuilder).build)*)
-
-                       

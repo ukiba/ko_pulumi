@@ -14,7 +14,6 @@ object inspector:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.inspector.AssessmentTemplate(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -51,7 +50,6 @@ object inspector:
     conf.logicalName2pysicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
       case None               =>
-    
     com.pulumi.aws.inspector.AssessmentTarget(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -69,7 +67,7 @@ object inspector:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.inspector.AssessmentTemplateArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   /** Provides an Amazon Inspector Classic Resource Group. */
   def ResourceGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.inspector.ResourceGroupArgs.Builder])(using conf: KoPulumiConf) =
@@ -77,7 +75,6 @@ object inspector:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.inspector.ResourceGroup(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -95,4 +92,3 @@ object inspector:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.inspector.inputs.AssessmentTemplateState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       

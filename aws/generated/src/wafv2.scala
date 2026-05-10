@@ -14,7 +14,6 @@ object wafv2:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.wafv2.RuleGroup(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -50,7 +49,7 @@ object wafv2:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.wafv2.RuleGroupArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.wafv2.WebAclArgs.Builder)
     /**
      * @param associationConfig Specifies custom configurations for the associations between the web ACL and protected resources. See `associationConfig` below for details.
@@ -127,10 +126,10 @@ object wafv2:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.wafv2.WebAclArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   /**
    * Manages an individual rule within a WAFv2 Web ACL. This resource creates proper Terraform dependencies for safe deletion of referenced resources like IP sets, solving the `WAFAssociatedItemException` error that occurs when deleting IP sets that are still referenced by Web ACL rules.
-   *  
+   * 
    *  &gt; **NOTE:** When using this resource, you must add `lifecycle { ignoreChanges = [rule] }` to your `aws.wafv2.WebAcl` resource to prevent conflicts. See the `aws.wafv2.WebAcl` documentation for a full description of the limitations of inline rules that this resource addresses.
    */
   def WebAclRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
@@ -139,7 +138,6 @@ object wafv2:
     conf.logicalName2pysicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
       case None               =>
-    
     com.pulumi.aws.wafv2.WebAclRule(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -154,7 +152,6 @@ object wafv2:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.wafv2.RegexPatternSet(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -178,7 +175,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclLoggingConfigurationRedactedFieldArgs.builder
       builder.redactedFields(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.WebAclRuleArgs.Builder)
     /**
      * @param action Action to take when the rule matches. See Action below. Conflicts with `overrideAction`.
@@ -248,18 +244,17 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleVisibilityConfigArgs.builder
       builder.visibilityConfig(args(argsBuilder).build)
 
-                       
   /**
    * Creates a WAFv2 Web ACL resource.
-   *  
+   * 
    *  &gt; **Note:** Inline `rule` blocks in this resource have several known limitations. Consider using `aws.wafv2.WebAclRule` to manage rules as separate resources instead. Limitations include: **Deletion ordering errors:** When removing a rule that references an IP set or rule group, AWS requires the rule to be detached before the referenced resource is deleted. Terraform&#39;s dependency graph cannot model this correctly for inline rules, resulting in `WAFAssociatedItemException` errors. **Spurious diffs:** AWS returns rules in an unpredictable order, which can cause Terraform to detect changes even when the configuration has not changed. **Coupled updates:** Modifying one inline rule may cause all rules to be recreated, which can be disruptive.
-   *  
+   * 
    *  !&gt; **Warning:** If you use the `aws.wafv2.WebAclRule` or `aws.wafv2.WebAclRuleGroupAssociation` resources with this Web ACL, you must add `lifecycle { ignoreChanges = [rule] }` to this resource to prevent configuration drift. Those resources manage the Web ACL&#39;s rules outside of this resource&#39;s direct management.
-   *  
+   * 
    *  ## Import
-   *  
+   * 
    *  Using `pulumi import`, import WAFv2 Web ACLs using `ID/Name/Scope`. For example:
-   *  
+   * 
    *  ```sh
    *  $ pulumi import aws:wafv2/webAcl:WebAcl example a1b2c3d4-d5f6-7777-8888-9999aaaabbbbcccc/example/REGIONAL
    *  ```
@@ -273,44 +268,42 @@ object wafv2:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.wafv2.WebAcl(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
   /**
    * Associates a WAFv2 Rule Group (custom or managed) with a Web ACL by adding a rule that references the Rule Group. Use this resource to apply the rules defined in a Rule Group to a Web ACL without duplicating rule definitions.
-   *  
+   * 
    *  This resource supports both:
-   *  
+   * 
    *  - **Custom Rule Groups**: User-created rule groups that you manage within your AWS account
    *  - **Managed Rule Groups**: Pre-configured rule groups provided by AWS or third-party vendors
-   *  
+   * 
    *  !&gt; **Warning:** Verify the rule names in your `ruleActionOverride`s carefully. With managed rule groups, WAF silently ignores any override that uses an invalid rule name. With customer-owned rule groups, invalid rule names in your overrides will cause web ACL updates to fail. An invalid rule name is any name that doesn&#39;t exactly match the case-sensitive name of an existing rule in the rule group.
-   *  
+   * 
    *  !&gt; **Warning:** Using this resource will cause the associated Web ACL resource to show configuration drift in the `rule` argument unless you add `lifecycle { ignoreChanges = [rule] }` to the Web ACL resource configuration. This is because this resource modifies the Web ACL&#39;s rules outside of the Web ACL resource&#39;s direct management.
-   *  
+   * 
    *  &gt; **Note:** This resource creates a rule within the Web ACL that references the entire Rule Group. The rule group&#39;s individual rules are evaluated as a unit when requests are processed by the Web ACL.
    */
   def WebAclRuleGroupAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.wafv2.WebAclRuleGroupAssociationArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.wafv2.WebAclRuleGroupAssociationArgs.builder
-    
     com.pulumi.aws.wafv2.WebAclRuleGroupAssociation(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
   /**
    * Creates a WAFv2 Web ACL Association.
-   *  
+   * 
    *  &gt; **NOTE on associating a WAFv2 Web ACL with a Cloudfront distribution:** Do not use this resource to associate a WAFv2 Web ACL with a Cloudfront Distribution. The [AWS API call backing this resource](https://docs.aws.amazon.com/waf/latest/APIReference/API_AssociateWebACL.html) notes that you should use the `webAclId` property on the `cloudfrontDistribution` instead.
-   *  
+   * 
    *  [1]: https://docs.aws.amazon.com/waf/latest/APIReference/API_AssociateWebACL.html
-   *  
+   * 
    *  ## Import
-   *  
+   * 
    *  Using `pulumi import`, import WAFv2 Web ACL Association using `WEB_ACL_ARN,RESOURCE_ARN`. For example:
-   *  
+   * 
    *  ```sh
    *  $ pulumi import aws:wafv2/webAclAssociation:WebAclAssociation example arn:aws:wafv2:...7ce849ea,arn:aws:apigateway:...ages/name
    *  ```
@@ -318,7 +311,6 @@ object wafv2:
   def WebAclAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.wafv2.WebAclAssociationArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.wafv2.WebAclAssociationArgs.builder
-    
     com.pulumi.aws.wafv2.WebAclAssociation(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -327,7 +319,6 @@ object wafv2:
   def ApiKey(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.wafv2.ApiKeyArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.wafv2.ApiKeyArgs.builder
-    
     com.pulumi.aws.wafv2.ApiKey(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -407,20 +398,18 @@ object wafv2:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.wafv2.IpSet(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
   /**
    * This resource creates a WAFv2 Web ACL Logging Configuration.
-   *  
+   * 
    *  !&gt; **WARNING:** When logging from a WAFv2 Web ACL to a CloudWatch Log Group, the WAFv2 service tries to create or update a generic Log Resource Policy named `AWSWAF-LOGS`. However, if there are a large number of Web ACLs or if the account frequently creates and deletes Web ACLs, this policy may exceed the maximum policy size. As a result, this resource type will fail to be created. More details about this issue can be found in this issue. To prevent this issue, you can manage a specific resource policy. Please refer to the example below for managing a CloudWatch Log Group with a managed CloudWatch Log Resource Policy.
    */
   def WebAclLoggingConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.wafv2.WebAclLoggingConfigurationArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.wafv2.WebAclLoggingConfigurationArgs.builder
-    
     com.pulumi.aws.wafv2.WebAclLoggingConfiguration(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -458,7 +447,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationVisibilityConfigArgs.builder
       builder.visibilityConfig(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.RegexPatternSetArgs.Builder)
     /**
      * @param regularExpressions One or more blocks of regular expression patterns that you want AWS WAF to search for, such as `B[a{@literal @}]dB[o0]t`. See Regular Expression below for details.
@@ -472,7 +460,7 @@ object wafv2:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.wafv2.RegexPatternSetArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSizeConstraintStatementFieldToMatchCookiesMatchPatternArgs.Builder)
     /**
      * @param all An empty configuration block that is used for inspecting all headers.
@@ -483,7 +471,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSizeConstraintStatementFieldToMatchCookiesMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchCookiesArgs.Builder)
     /**
      * @param matchPatterns Cookies to inspect. See Cookies Match Pattern below.
@@ -494,7 +481,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchCookiesMatchPatternArgs.builder
       builder.matchPatterns(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementRuleActionOverrideActionToUseCaptchaCustomRequestHandlingArgs.Builder)
     /**
      * @param insertHeaders Custom headers to insert into the request. See Insert Header below.
@@ -505,7 +491,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementRuleActionOverrideActionToUseCaptchaCustomRequestHandlingInsertHeaderArgs.builder
       builder.insertHeaders(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchCookiesArgs.Builder)
     /**
      * @param matchPatterns The filter to use to identify the subset of cookies to inspect in a web request. You must specify exactly one setting: either `all`, `includedCookies` or `excludedCookies`. More details: [CookieMatchPattern](https://docs.aws.amazon.com/waf/latest/APIReference/API_CookieMatchPattern.html)
@@ -516,7 +501,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchCookiesMatchPatternArgs.builder
       builder.matchPatterns(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRuleGroupReferenceStatementRuleActionOverrideActionToUseCountArgs.Builder)
     /**
      * @param customRequestHandling Custom request handling configuration. See Custom Request Handling below.
@@ -527,7 +511,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRuleGroupReferenceStatementRuleActionOverrideActionToUseCountCustomRequestHandlingArgs.builder
       builder.customRequestHandling(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementByteMatchStatementFieldToMatchJsonBodyArgs.Builder)
     /**
      * @param matchPattern JSON content to inspect. See JSON Body Match Pattern below.
@@ -538,14 +521,12 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementByteMatchStatementFieldToMatchJsonBodyMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementSqliMatchStatementFieldToMatchCookiesMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementSqliMatchStatementFieldToMatchCookiesMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementSqliMatchStatementFieldToMatchCookiesMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementSqliMatchStatementFieldToMatchCookiesMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementByteMatchStatementFieldToMatchCookiesArgs.Builder)
     /**
      * @param matchPatterns Cookies to inspect. See Cookies Match Pattern below.
@@ -556,7 +537,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementByteMatchStatementFieldToMatchCookiesMatchPatternArgs.builder
       builder.matchPatterns(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementSqliMatchStatementArgs.Builder)
     def fieldToMatch(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementSqliMatchStatementFieldToMatchArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementSqliMatchStatementArgs.Builder =
@@ -568,7 +548,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementSqliMatchStatementTextTransformationArgs.builder
       builder.textTransformations(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementAsnMatchStatementArgs.Builder)
     /**
      * @param forwardedIpConfig Configuration for inspecting IP addresses in an HTTP header instead of using the web request origin. See Forwarded IP Config below.
@@ -579,7 +558,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementAsnMatchStatementForwardedIpConfigArgs.builder
       builder.forwardedIpConfig(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchHeaderArgs.Builder)
     /**
      * @param matchPattern Headers to inspect. See Headers Match Pattern below.
@@ -590,7 +568,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchHeaderMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementXssMatchStatementFieldToMatchHeaderArgs.Builder)
     /**
      * @param matchPattern Headers to inspect. See Headers Match Pattern below.
@@ -601,7 +578,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementXssMatchStatementFieldToMatchHeaderMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementArgs.Builder)
     def fieldToMatch(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementArgs.Builder =
@@ -613,21 +589,18 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementTextTransformationArgs.builder
       builder.textTransformations(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchJsonBodyMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchJsonBodyMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchJsonBodyMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchJsonBodyMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexPatternSetReferenceStatementFieldToMatchJsonBodyMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexPatternSetReferenceStatementFieldToMatchJsonBodyMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexPatternSetReferenceStatementFieldToMatchJsonBodyMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexPatternSetReferenceStatementFieldToMatchJsonBodyMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementRuleActionOverrideActionToUseChallengeArgs.Builder)
     /**
      * @param customRequestHandling Custom request handling configuration. See Custom Request Handling below.
@@ -638,14 +611,12 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementRuleActionOverrideActionToUseChallengeCustomRequestHandlingArgs.builder
       builder.customRequestHandling(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRegexPatternSetReferenceStatementFieldToMatchHeaderMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRegexPatternSetReferenceStatementFieldToMatchHeaderMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRegexPatternSetReferenceStatementFieldToMatchHeaderMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRegexPatternSetReferenceStatementFieldToMatchHeaderMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementFieldToMatchArgs.Builder)
     /**
      * @param allQueryArguments Inspect all query arguments.
@@ -773,14 +744,12 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementFieldToMatchUriPathArgs.builder
       builder.uriPath(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchJsonBodyMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchJsonBodyMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchJsonBodyMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchJsonBodyMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementSizeConstraintStatementArgs.Builder)
     /**
      * @param fieldToMatch Part of the web request that you want WAF to inspect. See Field to Match below.
@@ -800,7 +769,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementSizeConstraintStatementTextTransformationArgs.builder
       builder.textTransformations(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementRuleActionOverrideActionToUseAllowCustomRequestHandlingArgs.Builder)
     /**
      * @param insertHeaders Custom headers to insert into the request. See Insert Header below.
@@ -811,7 +779,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementRuleActionOverrideActionToUseAllowCustomRequestHandlingInsertHeaderArgs.builder
       builder.insertHeaders(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleActionCaptchaArgs.Builder)
     /**
      * @param customRequestHandling Defines custom handling for the web request. See Custom Request Handling below for details.
@@ -822,7 +789,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleActionCaptchaCustomRequestHandlingArgs.builder
       builder.customRequestHandling(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementArgs.Builder)
     /**
      * @param andStatement Logical AND statement that combines multiple statements. See And Statement below.
@@ -961,7 +927,7 @@ object wafv2:
 
     /**
      * @param xssMatchStatement Match requests that appear to contain cross-site scripting attacks. See Cross-Site Scripting Match Statement below.
-     *  
+     * 
      *  &gt; **NOTE:** Logical statements (`andStatement`, `notStatement`, `orStatement`) can be nested up to 3 levels deep. This matches the nesting limit of the `aws.wafv2.WebAcl` resource.
      * @return builder
      */
@@ -970,7 +936,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementXssMatchStatementArgs.builder
       builder.xssMatchStatement(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementAsnMatchStatementArgs.Builder)
     /**
      * @param forwardedIpConfig Configuration for inspecting IP addresses in an HTTP header instead of using the web request origin. See Forwarded IP Config below.
@@ -981,7 +946,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementAsnMatchStatementForwardedIpConfigArgs.builder
       builder.forwardedIpConfig(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchJsonBodyArgs.Builder)
     /**
      * @param matchPattern The patterns to look for in the JSON body. You must specify exactly one setting: either `all` or `includedPaths`. See [JsonMatchPattern](https://docs.aws.amazon.com/waf/latest/APIReference/API_JsonMatchPattern.html) for details.
@@ -992,14 +956,12 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchJsonBodyMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchJsonBodyMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchJsonBodyMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchJsonBodyMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchJsonBodyMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementIpSetReferenceStatementArgs.Builder)
     /**
      * @param ipSetForwardedIpConfig Configuration for inspecting forwarded IP headers. See IP Set Forwarded IP Config below.
@@ -1010,7 +972,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementIpSetReferenceStatementIpSetForwardedIpConfigArgs.builder
       builder.ipSetForwardedIpConfig(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementSqliMatchStatementFieldToMatchCookiesArgs.Builder)
     /**
      * @param matchPatterns Cookies to inspect. See Cookies Match Pattern below.
@@ -1021,7 +982,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementSqliMatchStatementFieldToMatchCookiesMatchPatternArgs.builder
       builder.matchPatterns(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchJsonBodyArgs.Builder)
     /**
      * @param matchPattern JSON content to inspect. See JSON Body Match Pattern below.
@@ -1032,7 +992,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchJsonBodyMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAtpRuleSetArgs.Builder)
     def requestInspection(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAtpRuleSetRequestInspectionArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAtpRuleSetArgs.Builder =
@@ -1044,7 +1003,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAtpRuleSetResponseInspectionArgs.builder
       builder.responseInspection(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementRuleActionOverrideActionToUseArgs.Builder)
     /**
      * @param allow Allow the request. See Allow below.
@@ -1087,7 +1045,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementRuleActionOverrideActionToUseCountArgs.builder
       builder.count(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementRegexPatternSetReferenceStatementArgs.Builder)
     /**
      * @param fieldToMatch Part of the web request that you want WAF to inspect. See Field to Match below.
@@ -1107,7 +1064,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementRegexPatternSetReferenceStatementTextTransformationArgs.builder
       builder.textTransformations(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementManagedRuleGroupConfigArgs.Builder)
     def awsManagedRulesAcfpRuleSet(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAcfpRuleSetArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementManagedRuleGroupConfigArgs.Builder =
@@ -1147,7 +1103,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementManagedRuleGroupConfigUsernameFieldArgs.builder
       builder.usernameField(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementByteMatchStatementFieldToMatchCookiesArgs.Builder)
     /**
      * @param matchPatterns Cookies to inspect. See Cookies Match Pattern below.
@@ -1158,7 +1113,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementByteMatchStatementFieldToMatchCookiesMatchPatternArgs.builder
       builder.matchPatterns(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexMatchStatementArgs.Builder)
     /**
      * @param fieldToMatch The part of a web request that you want AWS WAF to inspect. See Field to Match below for details.
@@ -1180,7 +1134,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexMatchStatementTextTransformationArgs.builder
       builder.textTransformations(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementArgs.Builder)
     /**
      * @param asnMatchStatement Match requests based on Autonomous System Number (ASN). See ASN Match Statement above.
@@ -1272,7 +1225,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementArgs.builder
       builder.xssMatchStatement(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementSqliMatchStatementFieldToMatchArgs.Builder)
     /**
      * @param allQueryArguments Inspect all query arguments.
@@ -1400,7 +1352,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementSqliMatchStatementFieldToMatchUriPathArgs.builder
       builder.uriPath(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchJsonBodyMatchPatternArgs.Builder)
     /**
      * @param all An empty configuration block that is used for inspecting all headers.
@@ -1411,7 +1362,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchJsonBodyMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupManagedRuleGroupConfigsAwsManagedRulesAtpRuleSetArgs.Builder)
     /**
      * @param requestInspection Criteria for inspecting login requests, used by the ATP rule group to validate credentials usage. See below.
@@ -1431,7 +1381,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupManagedRuleGroupConfigsAwsManagedRulesAtpRuleSetResponseInspectionArgs.builder
       builder.responseInspection(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAntiDdosRuleSetClientSideActionConfigArgs.Builder)
     /**
      * @param challenge Present a silent challenge. See Challenge below.
@@ -1442,7 +1391,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAntiDdosRuleSetClientSideActionConfigChallengeArgs.builder
       builder.challenge(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleActionAllowCustomRequestHandlingArgs.Builder)
     /**
      * @param insertHeaders Custom headers to insert into the request. See Insert Header below.
@@ -1453,7 +1401,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleActionAllowCustomRequestHandlingInsertHeaderArgs.builder
       builder.insertHeaders(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleActionChallengeCustomRequestHandlingArgs.Builder)
     /**
      * @param insertHeaders Custom headers to insert into the request. See Insert Header below.
@@ -1464,14 +1411,12 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleActionChallengeCustomRequestHandlingInsertHeaderArgs.builder
       builder.insertHeaders(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementFieldToMatchHeaderMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementFieldToMatchHeaderMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementFieldToMatchHeaderMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementFieldToMatchHeaderMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementRuleActionOverrideActionToUseChallengeArgs.Builder)
     /**
      * @param customRequestHandling Custom request handling configuration. See Custom Request Handling below.
@@ -1482,14 +1427,12 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementRuleActionOverrideActionToUseChallengeCustomRequestHandlingArgs.builder
       builder.customRequestHandling(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRegexPatternSetReferenceStatementFieldToMatchHeaderMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRegexPatternSetReferenceStatementFieldToMatchHeaderMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRegexPatternSetReferenceStatementFieldToMatchHeaderMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRegexPatternSetReferenceStatementFieldToMatchHeaderMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementSqliMatchStatementFieldToMatchJsonBodyArgs.Builder)
     /**
      * @param matchPattern JSON content to inspect. See JSON Body Match Pattern below.
@@ -1500,21 +1443,18 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementSqliMatchStatementFieldToMatchJsonBodyMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchJsonBodyMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchJsonBodyMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchJsonBodyMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchJsonBodyMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRateBasedStatementCustomKeyQueryStringArgs.Builder)
     def textTransformations(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRateBasedStatementCustomKeyQueryStringTextTransformationArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRateBasedStatementCustomKeyQueryStringArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRateBasedStatementCustomKeyQueryStringTextTransformationArgs.builder
       builder.textTransformations(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementArgs.Builder)
     /**
      * @param fieldToMatch Part of the web request that you want WAF to inspect. See Field to Match below.
@@ -1534,7 +1474,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementTextTransformationArgs.builder
       builder.textTransformations(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRegexMatchStatementFieldToMatchHeaderArgs.Builder)
     /**
      * @param matchPattern Headers to inspect. See Headers Match Pattern below.
@@ -1545,7 +1484,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRegexMatchStatementFieldToMatchHeaderMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementFieldToMatchJsonBodyArgs.Builder)
     /**
      * @param matchPattern JSON content to inspect. See JSON Body Match Pattern below.
@@ -1556,21 +1494,18 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementFieldToMatchJsonBodyMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRegexMatchStatementFieldToMatchCookiesMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRegexMatchStatementFieldToMatchCookiesMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRegexMatchStatementFieldToMatchCookiesMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRegexMatchStatementFieldToMatchCookiesMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRegexMatchStatementFieldToMatchCookiesMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRegexMatchStatementFieldToMatchCookiesMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRegexMatchStatementFieldToMatchCookiesMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRegexMatchStatementFieldToMatchCookiesMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementArgs.Builder)
     /**
      * @param fieldToMatch Part of the web request that you want WAF to inspect. See Field to Match below.
@@ -1590,14 +1525,12 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementTextTransformationArgs.builder
       builder.textTransformations(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementSqliMatchStatementFieldToMatchJsonBodyMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementSqliMatchStatementFieldToMatchJsonBodyMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementSqliMatchStatementFieldToMatchJsonBodyMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementSqliMatchStatementFieldToMatchJsonBodyMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSizeConstraintStatementFieldToMatchJsonBodyMatchPatternArgs.Builder)
     /**
      * @param all An empty configuration block that is used for inspecting all headers.
@@ -1608,7 +1541,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSizeConstraintStatementFieldToMatchJsonBodyMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementXssMatchStatementArgs.Builder)
     def fieldToMatch(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementXssMatchStatementArgs.Builder =
@@ -1620,7 +1552,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementXssMatchStatementTextTransformationArgs.builder
       builder.textTransformations(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclLoggingConfigurationLoggingFilterArgs.Builder)
     /**
      * @param filters Filter(s) that you want to apply to the logs. See Filter below for more details.
@@ -1631,7 +1562,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclLoggingConfigurationLoggingFilterFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchCookiesArgs.Builder)
     /**
      * @param matchPatterns Cookies to inspect. See Cookies Match Pattern below.
@@ -1642,7 +1572,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchCookiesMatchPatternArgs.builder
       builder.matchPatterns(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRegexPatternSetReferenceStatementFieldToMatchHeaderArgs.Builder)
     /**
      * @param matchPattern Headers to inspect. See Headers Match Pattern below.
@@ -1653,7 +1582,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRegexPatternSetReferenceStatementFieldToMatchHeaderMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementAsnMatchStatementArgs.Builder)
     /**
      * @param forwardedIpConfig Configuration for inspecting IP addresses in an HTTP header instead of using the web request origin. See Forwarded IP Config below.
@@ -1664,7 +1592,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementAsnMatchStatementForwardedIpConfigArgs.builder
       builder.forwardedIpConfig(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRuleGroupReferenceStatementRuleActionOverrideActionToUseCaptchaArgs.Builder)
     /**
      * @param customRequestHandling Custom request handling configuration. See Custom Request Handling below.
@@ -1675,14 +1602,12 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRuleGroupReferenceStatementRuleActionOverrideActionToUseCaptchaCustomRequestHandlingArgs.builder
       builder.customRequestHandling(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementRegexMatchStatementFieldToMatchJsonBodyMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementRegexMatchStatementFieldToMatchJsonBodyMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementRegexMatchStatementFieldToMatchJsonBodyMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementRegexMatchStatementFieldToMatchJsonBodyMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementRegexMatchStatementFieldToMatchJsonBodyArgs.Builder)
     /**
      * @param matchPattern JSON content to inspect. See JSON Body Match Pattern below.
@@ -1693,7 +1618,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementRegexMatchStatementFieldToMatchJsonBodyMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementArgs.Builder)
     /**
      * @param fieldToMatch Part of the web request that you want WAF to inspect. See Field to Match below.
@@ -1713,14 +1637,12 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementTextTransformationArgs.builder
       builder.textTransformations(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementFieldToMatchJsonBodyMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementFieldToMatchJsonBodyMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementFieldToMatchJsonBodyMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementFieldToMatchJsonBodyMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementAndStatementArgs.Builder)
     /**
      * @param statements The statements to combine.
@@ -1731,7 +1653,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementArgs.builder
       builder.statements(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementArgs.Builder)
     /**
      * @param asnMatchStatement Match requests based on Autonomous System Number (ASN). See ASN Match Statement above.
@@ -1823,7 +1744,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementArgs.builder
       builder.xssMatchStatement(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementByteMatchStatementArgs.Builder)
     /**
      * @param fieldToMatch Part of the web request that you want WAF to inspect. See Field to Match below.
@@ -1843,7 +1763,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementByteMatchStatementTextTransformationArgs.builder
       builder.textTransformations(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationRuleGroupReferenceRuleActionOverrideActionToUseChallengeCustomRequestHandlingArgs.Builder)
     /**
      * @param insertHeaders Headers to insert into the request. See below.
@@ -1854,7 +1773,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationRuleGroupReferenceRuleActionOverrideActionToUseChallengeCustomRequestHandlingInsertHeaderArgs.builder
       builder.insertHeaders(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchJsonBodyArgs.Builder)
     /**
      * @param matchPattern The patterns to look for in the JSON body. You must specify exactly one setting: either `all` or `includedPaths`. See [JsonMatchPattern](https://docs.aws.amazon.com/waf/latest/APIReference/API_JsonMatchPattern.html) for details.
@@ -1865,7 +1783,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchJsonBodyMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchJsonBodyMatchPatternArgs.Builder)
     /**
      * @param all An empty configuration block that is used for inspecting all headers.
@@ -1876,7 +1793,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchJsonBodyMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementByteMatchStatementFieldToMatchCookiesArgs.Builder)
     /**
      * @param matchPatterns The filter to use to identify the subset of cookies to inspect in a web request. You must specify exactly one setting: either `all`, `includedCookies` or `excludedCookies`. More details: [CookieMatchPattern](https://docs.aws.amazon.com/waf/latest/APIReference/API_CookieMatchPattern.html)
@@ -1887,7 +1803,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementByteMatchStatementFieldToMatchCookiesMatchPatternArgs.builder
       builder.matchPatterns(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementSizeConstraintStatementFieldToMatchJsonBodyArgs.Builder)
     /**
      * @param matchPattern JSON content to inspect. See JSON Body Match Pattern below.
@@ -1898,7 +1813,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementSizeConstraintStatementFieldToMatchJsonBodyMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclDefaultActionArgs.Builder)
     /**
      * @param allow Specifies that AWS WAF should allow requests by default. See `allow` below for details.
@@ -1918,14 +1832,12 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclDefaultActionBlockArgs.builder
       builder.block(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementRegexMatchStatementFieldToMatchJsonBodyMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementRegexMatchStatementFieldToMatchJsonBodyMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementRegexMatchStatementFieldToMatchJsonBodyMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementRegexMatchStatementFieldToMatchJsonBodyMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementAsnMatchStatementArgs.Builder)
     /**
      * @param forwardedIpConfig Configuration for inspecting IP addresses in an HTTP header instead of using the web request origin. See Forwarded IP Config below.
@@ -1936,14 +1848,12 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementAsnMatchStatementForwardedIpConfigArgs.builder
       builder.forwardedIpConfig(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchCookiesMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchCookiesMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchCookiesMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchCookiesMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchJsonBodyArgs.Builder)
     /**
      * @param matchPattern JSON content to inspect. See JSON Body Match Pattern below.
@@ -1954,14 +1864,12 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchJsonBodyMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchJsonBodyMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchJsonBodyMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchJsonBodyMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchJsonBodyMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementFieldToMatchCookiesArgs.Builder)
     /**
      * @param matchPatterns Cookies to inspect. See Cookies Match Pattern below.
@@ -1972,14 +1880,12 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementFieldToMatchCookiesMatchPatternArgs.builder
       builder.matchPatterns(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchCookiesMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchCookiesMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchCookiesMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchCookiesMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchArgs.Builder)
     /**
      * @param allQueryArguments Inspect all query arguments.
@@ -2107,7 +2013,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchUriPathArgs.builder
       builder.uriPath(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRateBasedStatementScopeDownStatementXssMatchStatementArgs.Builder)
     def fieldToMatch(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRateBasedStatementScopeDownStatementXssMatchStatementArgs.Builder =
@@ -2119,14 +2024,12 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRateBasedStatementScopeDownStatementXssMatchStatementTextTransformationArgs.builder
       builder.textTransformations(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementSqliMatchStatementFieldToMatchJsonBodyMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementSqliMatchStatementFieldToMatchJsonBodyMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementSqliMatchStatementFieldToMatchJsonBodyMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementSqliMatchStatementFieldToMatchJsonBodyMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchJsonBodyMatchPatternArgs.Builder)
     /**
      * @param all An empty configuration block that is used for inspecting all headers.
@@ -2137,7 +2040,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchJsonBodyMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleActionBlockArgs.Builder)
     /**
      * @param customResponse Custom response configuration. See Custom Response below.
@@ -2148,21 +2050,18 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleActionBlockCustomResponseArgs.builder
       builder.customResponse(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementByteMatchStatementFieldToMatchCookiesMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementByteMatchStatementFieldToMatchCookiesMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementByteMatchStatementFieldToMatchCookiesMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementByteMatchStatementFieldToMatchCookiesMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchHeaderMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchHeaderMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchHeaderMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchHeaderMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementByteMatchStatementFieldToMatchArgs.Builder)
     /**
      * @param allQueryArguments Inspect all query arguments.
@@ -2290,7 +2189,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementByteMatchStatementFieldToMatchUriPathArgs.builder
       builder.uriPath(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSqliMatchStatementFieldToMatchJsonBodyArgs.Builder)
     /**
      * @param matchPattern The patterns to look for in the JSON body. You must specify exactly one setting: either `all` or `includedPaths`. See [JsonMatchPattern](https://docs.aws.amazon.com/waf/latest/APIReference/API_JsonMatchPattern.html) for details.
@@ -2301,7 +2199,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSqliMatchStatementFieldToMatchJsonBodyMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchArgs.Builder)
     /**
      * @param allQueryArguments Inspect all query arguments.
@@ -2429,7 +2326,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchUriPathArgs.builder
       builder.uriPath(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchCookiesMatchPatternArgs.Builder)
     /**
      * @param all An empty configuration block that is used for inspecting all headers.
@@ -2440,7 +2336,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchCookiesMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementRuleActionOverrideActionToUseBlockCustomResponseArgs.Builder)
     /**
      * @param responseHeaders Custom headers to include in the response. See Response Header below.
@@ -2451,7 +2346,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementRuleActionOverrideActionToUseBlockCustomResponseResponseHeaderArgs.builder
       builder.responseHeaders(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRuleGroupReferenceStatementRuleActionOverrideActionToUseAllowArgs.Builder)
     /**
      * @param customRequestHandling Custom request handling configuration. See Custom Request Handling below.
@@ -2462,14 +2356,12 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRuleGroupReferenceStatementRuleActionOverrideActionToUseAllowCustomRequestHandlingArgs.builder
       builder.customRequestHandling(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAntiDdosRuleSetArgs.Builder)
     def clientSideActionConfig(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAntiDdosRuleSetClientSideActionConfigArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAntiDdosRuleSetArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAntiDdosRuleSetClientSideActionConfigArgs.builder
       builder.clientSideActionConfig(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclLoggingConfigurationRedactedFieldArgs.Builder)
     /**
      * @param method HTTP method to be redacted. It must be specified as an empty configuration block `{}`. The method indicates the type of operation that the request is asking the origin to perform.
@@ -2507,35 +2399,30 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclLoggingConfigurationRedactedFieldUriPathArgs.builder
       builder.uriPath(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementSqliMatchStatementFieldToMatchHeaderMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementSqliMatchStatementFieldToMatchHeaderMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementSqliMatchStatementFieldToMatchHeaderMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementSqliMatchStatementFieldToMatchHeaderMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementSizeConstraintStatementFieldToMatchJsonBodyMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementSizeConstraintStatementFieldToMatchJsonBodyMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementSizeConstraintStatementFieldToMatchJsonBodyMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementSizeConstraintStatementFieldToMatchJsonBodyMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRateBasedStatementCustomKeyUriPathArgs.Builder)
     def textTransformations(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRateBasedStatementCustomKeyUriPathTextTransformationArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRateBasedStatementCustomKeyUriPathArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRateBasedStatementCustomKeyUriPathTextTransformationArgs.builder
       builder.textTransformations(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchJsonBodyMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchJsonBodyMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchJsonBodyMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchJsonBodyMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchJsonBodyArgs.Builder)
     /**
      * @param matchPattern JSON content to inspect. See JSON Body Match Pattern below.
@@ -2546,7 +2433,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchJsonBodyMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRuleGroupReferenceStatementRuleActionOverrideActionToUseCountCustomRequestHandlingArgs.Builder)
     /**
      * @param insertHeaders Custom headers to insert into the request. See Insert Header below.
@@ -2557,14 +2443,12 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRuleGroupReferenceStatementRuleActionOverrideActionToUseCountCustomRequestHandlingInsertHeaderArgs.builder
       builder.insertHeaders(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementFieldToMatchCookiesMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementFieldToMatchCookiesMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementFieldToMatchCookiesMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementFieldToMatchCookiesMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementXssMatchStatementArgs.Builder)
     /**
      * @param fieldToMatch The part of a web request that you want AWS WAF to inspect. See Field to Match below for details.
@@ -2586,7 +2470,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementXssMatchStatementTextTransformationArgs.builder
       builder.textTransformations(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchHeaderArgs.Builder)
     /**
      * @param matchPattern Headers to inspect. See Headers Match Pattern below.
@@ -2597,7 +2480,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchHeaderMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementSqliMatchStatementFieldToMatchHeaderArgs.Builder)
     /**
      * @param matchPattern Headers to inspect. See Headers Match Pattern below.
@@ -2608,21 +2490,18 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementSqliMatchStatementFieldToMatchHeaderMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRateBasedStatementCustomKeyQueryStringArgs.Builder)
     def textTransformations(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRateBasedStatementCustomKeyQueryStringTextTransformationArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRateBasedStatementCustomKeyQueryStringArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRateBasedStatementCustomKeyQueryStringTextTransformationArgs.builder
       builder.textTransformations(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRegexMatchStatementFieldToMatchJsonBodyMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRegexMatchStatementFieldToMatchJsonBodyMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRegexMatchStatementFieldToMatchJsonBodyMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRegexMatchStatementFieldToMatchJsonBodyMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRuleGroupReferenceStatementRuleActionOverrideActionToUseChallengeArgs.Builder)
     /**
      * @param customRequestHandling Custom request handling configuration. See Custom Request Handling below.
@@ -2633,21 +2512,18 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRuleGroupReferenceStatementRuleActionOverrideActionToUseChallengeCustomRequestHandlingArgs.builder
       builder.customRequestHandling(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAntiDdosRuleSetClientSideActionConfigChallengeArgs.Builder)
     def exemptUriRegularExpressions(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAntiDdosRuleSetClientSideActionConfigChallengeExemptUriRegularExpressionArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAntiDdosRuleSetClientSideActionConfigChallengeArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAntiDdosRuleSetClientSideActionConfigChallengeExemptUriRegularExpressionArgs.builder
       builder.exemptUriRegularExpressions(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementXssMatchStatementFieldToMatchJsonBodyMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementXssMatchStatementFieldToMatchJsonBodyMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementXssMatchStatementFieldToMatchJsonBodyMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementXssMatchStatementFieldToMatchJsonBodyMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchHeaderArgs.Builder)
     /**
      * @param matchPattern Headers to inspect. See Headers Match Pattern below.
@@ -2658,7 +2534,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchHeaderMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRateBasedStatementArgs.Builder)
     /**
      * @param customKeys Aggregate the request counts using one or more web request components as the aggregate keys. See Custom Keys below.
@@ -2687,21 +2562,18 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementArgs.builder
       builder.scopeDownStatement(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementSqliMatchStatementFieldToMatchHeaderMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementSqliMatchStatementFieldToMatchHeaderMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementSqliMatchStatementFieldToMatchHeaderMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementSqliMatchStatementFieldToMatchHeaderMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementSqliMatchStatementFieldToMatchCookiesMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementSqliMatchStatementFieldToMatchCookiesMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementSqliMatchStatementFieldToMatchCookiesMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementSqliMatchStatementFieldToMatchCookiesMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementSqliMatchStatementFieldToMatchArgs.Builder)
     /**
      * @param allQueryArguments Inspect all query arguments.
@@ -2829,7 +2701,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementSqliMatchStatementFieldToMatchUriPathArgs.builder
       builder.uriPath(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementByteMatchStatementFieldToMatchCookiesArgs.Builder)
     /**
      * @param matchPatterns Cookies to inspect. See Cookies Match Pattern below.
@@ -2840,14 +2711,12 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementByteMatchStatementFieldToMatchCookiesMatchPatternArgs.builder
       builder.matchPatterns(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexMatchStatementFieldToMatchHeaderMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexMatchStatementFieldToMatchHeaderMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexMatchStatementFieldToMatchHeaderMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexMatchStatementFieldToMatchHeaderMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchCookiesArgs.Builder)
     /**
      * @param matchPatterns Cookies to inspect. See Cookies Match Pattern below.
@@ -2858,7 +2727,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchCookiesMatchPatternArgs.builder
       builder.matchPatterns(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSqliMatchStatementFieldToMatchCookiesArgs.Builder)
     /**
      * @param matchPatterns Cookies to inspect. See Cookies Match Pattern below.
@@ -2869,7 +2737,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSqliMatchStatementFieldToMatchCookiesMatchPatternArgs.builder
       builder.matchPatterns(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementAsnMatchStatementArgs.Builder)
     /**
      * @param forwardedIpConfig Configuration for inspecting IP addresses in an HTTP header instead of using the web request origin. See Forwarded IP Config below.
@@ -2880,14 +2747,12 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementAsnMatchStatementForwardedIpConfigArgs.builder
       builder.forwardedIpConfig(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementRegexMatchStatementFieldToMatchHeaderMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementRegexMatchStatementFieldToMatchHeaderMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementRegexMatchStatementFieldToMatchHeaderMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementRegexMatchStatementFieldToMatchHeaderMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRuleGroupReferenceStatementRuleActionOverrideActionToUseBlockCustomResponseArgs.Builder)
     /**
      * @param responseHeaders Custom headers to include in the response. See Response Header below.
@@ -2898,7 +2763,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRuleGroupReferenceStatementRuleActionOverrideActionToUseBlockCustomResponseResponseHeaderArgs.builder
       builder.responseHeaders(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRegexPatternSetReferenceStatementFieldToMatchArgs.Builder)
     /**
      * @param allQueryArguments Inspect all query arguments.
@@ -3026,7 +2890,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRegexPatternSetReferenceStatementFieldToMatchUriPathArgs.builder
       builder.uriPath(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchArgs.Builder)
     /**
      * @param allQueryArguments Inspect all query arguments.
@@ -3154,7 +3017,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchUriPathArgs.builder
       builder.uriPath(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementXssMatchStatementFieldToMatchJsonBodyArgs.Builder)
     /**
      * @param matchPattern JSON content to inspect. See JSON Body Match Pattern below.
@@ -3165,14 +3027,12 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementXssMatchStatementFieldToMatchJsonBodyMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRateBasedStatementCustomKeyQueryStringArgs.Builder)
     def textTransformations(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRateBasedStatementCustomKeyQueryStringTextTransformationArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRateBasedStatementCustomKeyQueryStringArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRateBasedStatementCustomKeyQueryStringTextTransformationArgs.builder
       builder.textTransformations(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementGeoMatchStatementArgs.Builder)
     /**
      * @param forwardedIpConfig Configuration for inspecting forwarded IP headers. See Forwarded IP Config below.
@@ -3183,7 +3043,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementGeoMatchStatementForwardedIpConfigArgs.builder
       builder.forwardedIpConfig(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementByteMatchStatementFieldToMatchArgs.Builder)
     /**
      * @param allQueryArguments Inspect all query arguments.
@@ -3311,7 +3170,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementByteMatchStatementFieldToMatchUriPathArgs.builder
       builder.uriPath(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchArgs.Builder)
     /**
      * @param allQueryArguments Inspect all query arguments.
@@ -3439,7 +3297,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchUriPathArgs.builder
       builder.uriPath(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchArgs.Builder)
     /**
      * @param allQueryArguments Inspect all query arguments.
@@ -3567,7 +3424,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchUriPathArgs.builder
       builder.uriPath(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementRegexPatternSetReferenceStatementArgs.Builder)
     /**
      * @param fieldToMatch Part of the web request that you want WAF to inspect. See Field to Match below.
@@ -3587,21 +3443,18 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementRegexPatternSetReferenceStatementTextTransformationArgs.builder
       builder.textTransformations(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchHeaderMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchHeaderMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchHeaderMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchHeaderMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementByteMatchStatementFieldToMatchJsonBodyMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementByteMatchStatementFieldToMatchJsonBodyMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementByteMatchStatementFieldToMatchJsonBodyMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementByteMatchStatementFieldToMatchJsonBodyMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRuleGroupReferenceStatementRuleActionOverrideActionToUseChallengeCustomRequestHandlingArgs.Builder)
     /**
      * @param insertHeaders Custom headers to insert into the request. See Insert Header below.
@@ -3612,14 +3465,12 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRuleGroupReferenceStatementRuleActionOverrideActionToUseChallengeCustomRequestHandlingInsertHeaderArgs.builder
       builder.insertHeaders(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementByteMatchStatementFieldToMatchJsonBodyMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementByteMatchStatementFieldToMatchJsonBodyMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementByteMatchStatementFieldToMatchJsonBodyMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementByteMatchStatementFieldToMatchJsonBodyMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementArgs.Builder)
     /**
      * @param customKeys Aggregate the request counts using one or more web request components as the aggregate keys. See `customKey` below for details.
@@ -3648,7 +3499,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementArgs.builder
       builder.scopeDownStatement(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationRuleGroupReferenceRuleActionOverrideActionToUseBlockArgs.Builder)
     /**
      * @param customResponse Custom response for blocked requests. See below.
@@ -3659,21 +3509,18 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationRuleGroupReferenceRuleActionOverrideActionToUseBlockCustomResponseArgs.builder
       builder.customResponse(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchCookiesMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchCookiesMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchCookiesMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchCookiesMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchHeaderMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchHeaderMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchHeaderMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchHeaderMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexMatchStatementFieldToMatchArgs.Builder)
     /**
      * @param allQueryArguments Inspect all query arguments.
@@ -3801,7 +3648,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexMatchStatementFieldToMatchUriPathArgs.builder
       builder.uriPath(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementSqliMatchStatementFieldToMatchCookiesArgs.Builder)
     /**
      * @param matchPatterns Cookies to inspect. See Cookies Match Pattern below.
@@ -3812,7 +3658,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementSqliMatchStatementFieldToMatchCookiesMatchPatternArgs.builder
       builder.matchPatterns(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementGeoMatchStatementArgs.Builder)
     /**
      * @param forwardedIpConfig The configuration for inspecting IP addresses in an HTTP header that you specify, instead of using the IP address that&#39;s reported by the web request origin. See Forwarded IP Config below for details.
@@ -3823,14 +3668,12 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementGeoMatchStatementForwardedIpConfigArgs.builder
       builder.forwardedIpConfig(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRegexMatchStatementFieldToMatchHeaderMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRegexMatchStatementFieldToMatchHeaderMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRegexMatchStatementFieldToMatchHeaderMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRegexMatchStatementFieldToMatchHeaderMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementRuleActionOverrideActionToUseCaptchaCustomRequestHandlingArgs.Builder)
     /**
      * @param insertHeaders Custom headers to insert into the request. See Insert Header below.
@@ -3841,7 +3684,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementRuleActionOverrideActionToUseCaptchaCustomRequestHandlingInsertHeaderArgs.builder
       builder.insertHeaders(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRuleGroupReferenceStatementRuleActionOverrideArgs.Builder)
     /**
      * @param actionToUse Override action to use for the rule. See Action below.
@@ -3852,7 +3694,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRuleGroupReferenceStatementRuleActionOverrideActionToUseArgs.builder
       builder.actionToUse(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementIpSetReferenceStatementArgs.Builder)
     /**
      * @param ipSetForwardedIpConfig Configuration for inspecting forwarded IP headers. See IP Set Forwarded IP Config below.
@@ -3863,7 +3704,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementIpSetReferenceStatementIpSetForwardedIpConfigArgs.builder
       builder.ipSetForwardedIpConfig(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchHeaderArgs.Builder)
     /**
      * @param matchPattern Headers to inspect. See Headers Match Pattern below.
@@ -3874,7 +3714,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchHeaderMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementArgs.Builder)
     /**
      * @param fieldToMatch Part of the web request that you want WAF to inspect. See Field to Match below.
@@ -3894,7 +3733,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementTextTransformationArgs.builder
       builder.textTransformations(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementRuleActionOverrideActionToUseCaptchaArgs.Builder)
     /**
      * @param customRequestHandling Custom request handling configuration. See Custom Request Handling below.
@@ -3905,21 +3743,18 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementRuleActionOverrideActionToUseCaptchaCustomRequestHandlingArgs.builder
       builder.customRequestHandling(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementCustomKeyQueryArgumentArgs.Builder)
     def textTransformations(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementCustomKeyQueryArgumentTextTransformationArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementCustomKeyQueryArgumentArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementCustomKeyQueryArgumentTextTransformationArgs.builder
       builder.textTransformations(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementXssMatchStatementFieldToMatchHeaderMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementXssMatchStatementFieldToMatchHeaderMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementXssMatchStatementFieldToMatchHeaderMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementXssMatchStatementFieldToMatchHeaderMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexPatternSetReferenceStatementFieldToMatchCookiesArgs.Builder)
     /**
      * @param matchPatterns Cookies to inspect. See Cookies Match Pattern below.
@@ -3930,14 +3765,12 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexPatternSetReferenceStatementFieldToMatchCookiesMatchPatternArgs.builder
       builder.matchPatterns(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchCookiesMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchCookiesMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchCookiesMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchCookiesMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchArgs.Builder)
     /**
      * @param allQueryArguments Inspect all query arguments.
@@ -4065,7 +3898,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchUriPathArgs.builder
       builder.uriPath(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRateBasedStatementScopeDownStatementGeoMatchStatementArgs.Builder)
     /**
      * @param forwardedIpConfig Configuration for inspecting forwarded IP headers. See Forwarded IP Config below.
@@ -4076,14 +3908,12 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRateBasedStatementScopeDownStatementGeoMatchStatementForwardedIpConfigArgs.builder
       builder.forwardedIpConfig(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchHeaderMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchHeaderMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchHeaderMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchHeaderMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRuleGroupReferenceStatementRuleActionOverrideActionToUseArgs.Builder)
     /**
      * @param allow Allow the request. See Allow below.
@@ -4126,7 +3956,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRuleGroupReferenceStatementRuleActionOverrideActionToUseCountArgs.builder
       builder.count(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchHeaderArgs.Builder)
     /**
      * @param matchPattern Headers to inspect. See Headers Match Pattern below.
@@ -4137,7 +3966,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchHeaderMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRateBasedStatementScopeDownStatementSizeConstraintStatementArgs.Builder)
     /**
      * @param fieldToMatch Part of the web request that you want WAF to inspect. See Field to Match below.
@@ -4157,7 +3985,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRateBasedStatementScopeDownStatementSizeConstraintStatementTextTransformationArgs.builder
       builder.textTransformations(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementRuleActionOverrideActionToUseAllowCustomRequestHandlingArgs.Builder)
     /**
      * @param insertHeaders Custom headers to insert into the request. See Insert Header below.
@@ -4168,14 +3995,12 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementRuleActionOverrideActionToUseAllowCustomRequestHandlingInsertHeaderArgs.builder
       builder.insertHeaders(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchJsonBodyMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchJsonBodyMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchJsonBodyMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchJsonBodyMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementFieldToMatchArgs.Builder)
     /**
      * @param allQueryArguments Inspect all query arguments.
@@ -4303,28 +4128,24 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementFieldToMatchUriPathArgs.builder
       builder.uriPath(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchHeaderMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchHeaderMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchHeaderMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchHeaderMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchHeaderMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchHeaderMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchHeaderMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchHeaderMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementSizeConstraintStatementFieldToMatchCookiesMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementSizeConstraintStatementFieldToMatchCookiesMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementSizeConstraintStatementFieldToMatchCookiesMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementSizeConstraintStatementFieldToMatchCookiesMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRuleGroupReferenceStatementRuleActionOverrideActionToUseAllowCustomRequestHandlingArgs.Builder)
     /**
      * @param insertHeaders Custom headers to insert into the request. See Insert Header below.
@@ -4335,14 +4156,12 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRuleGroupReferenceStatementRuleActionOverrideActionToUseAllowCustomRequestHandlingInsertHeaderArgs.builder
       builder.insertHeaders(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchJsonBodyMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchJsonBodyMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchJsonBodyMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchJsonBodyMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleArgs.Builder)
     /**
      * @param action The action that AWS WAF should take on a web request when it matches the rule&#39;s statement. Settings at the `aws.wafv2.WebAcl` level can override the rule action setting. See Action below for details.
@@ -4389,7 +4208,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleVisibilityConfigArgs.builder
       builder.visibilityConfig(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigArgs.Builder)
     def awsManagedRulesAcfpRuleSet(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAcfpRuleSetArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigArgs.Builder =
@@ -4429,7 +4247,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigUsernameFieldArgs.builder
       builder.usernameField(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRegexMatchStatementFieldToMatchArgs.Builder)
     /**
      * @param allQueryArguments Inspect all query arguments.
@@ -4557,7 +4374,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRegexMatchStatementFieldToMatchUriPathArgs.builder
       builder.uriPath(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSqliMatchStatementArgs.Builder)
     /**
      * @param fieldToMatch The part of a web request that you want AWS WAF to inspect. See Field to Match below for details.
@@ -4579,7 +4395,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSqliMatchStatementTextTransformationArgs.builder
       builder.textTransformations(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementXssMatchStatementFieldToMatchArgs.Builder)
     /**
      * @param allQueryArguments Inspect all query arguments.
@@ -4707,7 +4522,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementXssMatchStatementFieldToMatchUriPathArgs.builder
       builder.uriPath(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleActionCaptchaArgs.Builder)
     /**
      * @param customRequestHandling Custom request handling configuration. See Custom Request Handling below.
@@ -4718,14 +4532,12 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleActionCaptchaCustomRequestHandlingArgs.builder
       builder.customRequestHandling(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSqliMatchStatementFieldToMatchJsonBodyMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSqliMatchStatementFieldToMatchJsonBodyMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSqliMatchStatementFieldToMatchJsonBodyMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSqliMatchStatementFieldToMatchJsonBodyMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementByteMatchStatementArgs.Builder)
     /**
      * @param fieldToMatch Part of the web request that you want WAF to inspect. See Field to Match below.
@@ -4745,14 +4557,12 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementByteMatchStatementTextTransformationArgs.builder
       builder.textTransformations(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchHeaderMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchHeaderMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchHeaderMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchHeaderMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRuleGroupReferenceStatementRuleActionOverrideActionToUseBlockArgs.Builder)
     /**
      * @param customResponse Custom response configuration. See Custom Response below.
@@ -4763,7 +4573,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRuleGroupReferenceStatementRuleActionOverrideActionToUseBlockCustomResponseArgs.builder
       builder.customResponse(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclChallengeConfigArgs.Builder)
     /**
      * @param immunityTimeProperty Defines custom immunity time. See `immunityTimeProperty` below for details.
@@ -4774,7 +4583,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclChallengeConfigImmunityTimePropertyArgs.builder
       builder.immunityTimeProperty(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleActionCaptchaCustomRequestHandlingArgs.Builder)
     /**
      * @param insertHeaders Custom headers to insert into the request. See Insert Header below.
@@ -4785,7 +4593,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleActionCaptchaCustomRequestHandlingInsertHeaderArgs.builder
       builder.insertHeaders(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementByteMatchStatementArgs.Builder)
     /**
      * @param fieldToMatch Part of the web request that you want WAF to inspect. See Field to Match below.
@@ -4805,7 +4612,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementByteMatchStatementTextTransformationArgs.builder
       builder.textTransformations(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchJsonBodyArgs.Builder)
     /**
      * @param matchPattern JSON content to inspect. See JSON Body Match Pattern below.
@@ -4816,7 +4622,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchJsonBodyMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupManagedRuleGroupConfigsAwsManagedRulesAtpRuleSetRequestInspectionArgs.Builder)
     /**
      * @param passwordField Details about your login page password field. See below.
@@ -4836,7 +4641,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupManagedRuleGroupConfigsAwsManagedRulesAtpRuleSetRequestInspectionUsernameFieldArgs.builder
       builder.usernameField(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementByteMatchStatementFieldToMatchArgs.Builder)
     /**
      * @param allQueryArguments Inspect all query arguments.
@@ -4964,7 +4768,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementByteMatchStatementFieldToMatchUriPathArgs.builder
       builder.uriPath(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementArgs.Builder)
     /**
      * @param fieldToMatch The part of a web request that you want AWS WAF to inspect. See Field to Match below for details.
@@ -4986,14 +4789,12 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementTextTransformationArgs.builder
       builder.textTransformations(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRateBasedStatementCustomKeyHeaderArgs.Builder)
     def textTransformations(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRateBasedStatementCustomKeyHeaderTextTransformationArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRateBasedStatementCustomKeyHeaderArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRateBasedStatementCustomKeyHeaderTextTransformationArgs.builder
       builder.textTransformations(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupRuleActionOverrideActionToUseBlockCustomResponseArgs.Builder)
     /**
      * @param responseHeaders Headers to include in the response. See below.
@@ -5004,14 +4805,12 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupRuleActionOverrideActionToUseBlockCustomResponseResponseHeaderArgs.builder
       builder.responseHeaders(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchHeaderMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchHeaderMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchHeaderMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchHeaderMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementSqliMatchStatementFieldToMatchArgs.Builder)
     /**
      * @param allQueryArguments Inspect all query arguments.
@@ -5139,7 +4938,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementSqliMatchStatementFieldToMatchUriPathArgs.builder
       builder.uriPath(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSqliMatchStatementFieldToMatchJsonBodyArgs.Builder)
     /**
      * @param matchPattern JSON content to inspect. See JSON Body Match Pattern below.
@@ -5150,7 +4948,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSqliMatchStatementFieldToMatchJsonBodyMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementByteMatchStatementArgs.Builder)
     /**
      * @param fieldToMatch Part of the web request that you want WAF to inspect. See Field to Match below.
@@ -5170,7 +4967,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementByteMatchStatementTextTransformationArgs.builder
       builder.textTransformations(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSqliMatchStatementFieldToMatchJsonBodyMatchPatternArgs.Builder)
     /**
      * @param all An empty configuration block that is used for inspecting all headers.
@@ -5181,7 +4977,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSqliMatchStatementFieldToMatchJsonBodyMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementOrStatementArgs.Builder)
     /**
      * @param statements The statements to combine.
@@ -5192,14 +4987,12 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementArgs.builder
       builder.statements(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchHeaderMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchHeaderMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchHeaderMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchHeaderMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRuleGroupReferenceStatementRuleActionOverrideActionToUseCountCustomRequestHandlingArgs.Builder)
     /**
      * @param insertHeaders Custom headers to insert into the request. See Insert Header below.
@@ -5210,14 +5003,12 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRuleGroupReferenceStatementRuleActionOverrideActionToUseCountCustomRequestHandlingInsertHeaderArgs.builder
       builder.insertHeaders(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchCookiesMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchCookiesMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchCookiesMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchCookiesMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementRegexMatchStatementFieldToMatchArgs.Builder)
     /**
      * @param allQueryArguments Inspect all query arguments.
@@ -5345,7 +5136,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementRegexMatchStatementFieldToMatchUriPathArgs.builder
       builder.uriPath(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupRuleActionOverrideActionToUseCaptchaArgs.Builder)
     /**
      * @param customRequestHandling Custom handling for CAPTCHA requests. See below.
@@ -5356,7 +5146,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupRuleActionOverrideActionToUseCaptchaCustomRequestHandlingArgs.builder
       builder.customRequestHandling(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRegexMatchStatementFieldToMatchJsonBodyArgs.Builder)
     /**
      * @param matchPattern JSON content to inspect. See JSON Body Match Pattern below.
@@ -5367,7 +5156,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRegexMatchStatementFieldToMatchJsonBodyMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchCookiesArgs.Builder)
     /**
      * @param matchPatterns Cookies to inspect. See Cookies Match Pattern below.
@@ -5378,7 +5166,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchCookiesMatchPatternArgs.builder
       builder.matchPatterns(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementRegexPatternSetReferenceStatementArgs.Builder)
     /**
      * @param fieldToMatch Part of the web request that you want WAF to inspect. See Field to Match below.
@@ -5398,7 +5185,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementRegexPatternSetReferenceStatementTextTransformationArgs.builder
       builder.textTransformations(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchArgs.Builder)
     /**
      * @param allQueryArguments Inspect all query arguments.
@@ -5526,7 +5312,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchUriPathArgs.builder
       builder.uriPath(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexMatchStatementFieldToMatchJsonBodyArgs.Builder)
     /**
      * @param matchPattern The patterns to look for in the JSON body. You must specify exactly one setting: either `all` or `includedPaths`. See [JsonMatchPattern](https://docs.aws.amazon.com/waf/latest/APIReference/API_JsonMatchPattern.html) for details.
@@ -5537,7 +5322,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexMatchStatementFieldToMatchJsonBodyMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchHeaderArgs.Builder)
     /**
      * @param matchPattern Headers to inspect. See Headers Match Pattern below.
@@ -5548,7 +5332,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchHeaderMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementSqliMatchStatementArgs.Builder)
     def fieldToMatch(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementSqliMatchStatementFieldToMatchArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementSqliMatchStatementArgs.Builder =
@@ -5560,7 +5343,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementSqliMatchStatementTextTransformationArgs.builder
       builder.textTransformations(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementXssMatchStatementFieldToMatchJsonBodyMatchPatternArgs.Builder)
     /**
      * @param all An empty configuration block that is used for inspecting all headers.
@@ -5571,7 +5353,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementXssMatchStatementFieldToMatchJsonBodyMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementFieldToMatchHeaderArgs.Builder)
     /**
      * @param matchPattern Headers to inspect. See Headers Match Pattern below.
@@ -5582,7 +5363,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementFieldToMatchHeaderMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementRegexMatchStatementFieldToMatchJsonBodyArgs.Builder)
     /**
      * @param matchPattern JSON content to inspect. See JSON Body Match Pattern below.
@@ -5593,7 +5373,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementRegexMatchStatementFieldToMatchJsonBodyMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchCookiesArgs.Builder)
     /**
      * @param matchPatterns Cookies to inspect. See Cookies Match Pattern below.
@@ -5604,14 +5383,12 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchCookiesMatchPatternArgs.builder
       builder.matchPatterns(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRateBasedStatementCustomKeyUriPathArgs.Builder)
     def textTransformations(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRateBasedStatementCustomKeyUriPathTextTransformationArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRateBasedStatementCustomKeyUriPathArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRateBasedStatementCustomKeyUriPathTextTransformationArgs.builder
       builder.textTransformations(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementSqliMatchStatementFieldToMatchHeaderArgs.Builder)
     /**
      * @param matchPattern Headers to inspect. See Headers Match Pattern below.
@@ -5622,14 +5399,12 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementSqliMatchStatementFieldToMatchHeaderMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementSizeConstraintStatementFieldToMatchJsonBodyMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementSizeConstraintStatementFieldToMatchJsonBodyMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementSizeConstraintStatementFieldToMatchJsonBodyMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementSizeConstraintStatementFieldToMatchJsonBodyMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAcfpRuleSetArgs.Builder)
     def requestInspection(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAcfpRuleSetRequestInspectionArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAcfpRuleSetArgs.Builder =
@@ -5641,7 +5416,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAcfpRuleSetResponseInspectionArgs.builder
       builder.responseInspection(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexMatchStatementFieldToMatchJsonBodyArgs.Builder)
     /**
      * @param matchPattern JSON content to inspect. See JSON Body Match Pattern below.
@@ -5652,7 +5426,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexMatchStatementFieldToMatchJsonBodyMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchJsonBodyArgs.Builder)
     /**
      * @param matchPattern JSON content to inspect. See JSON Body Match Pattern below.
@@ -5663,14 +5436,12 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchJsonBodyMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRateBasedStatementCustomKeyCookieArgs.Builder)
     def textTransformations(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRateBasedStatementCustomKeyCookieTextTransformationArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRateBasedStatementCustomKeyCookieArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRateBasedStatementCustomKeyCookieTextTransformationArgs.builder
       builder.textTransformations(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementByteMatchStatementFieldToMatchHeaderArgs.Builder)
     /**
      * @param matchPattern Headers to inspect. See Headers Match Pattern below.
@@ -5681,14 +5452,12 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementByteMatchStatementFieldToMatchHeaderMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAntiDdosRuleSetClientSideActionConfigChallengeArgs.Builder)
     def exemptUriRegularExpressions(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAntiDdosRuleSetClientSideActionConfigChallengeExemptUriRegularExpressionArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAntiDdosRuleSetClientSideActionConfigChallengeArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAntiDdosRuleSetClientSideActionConfigChallengeExemptUriRegularExpressionArgs.builder
       builder.exemptUriRegularExpressions(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexPatternSetReferenceStatementFieldToMatchHeaderMatchPatternArgs.Builder)
     /**
      * @param all An empty configuration block that is used for inspecting all headers.
@@ -5699,7 +5468,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexPatternSetReferenceStatementFieldToMatchHeaderMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAntiDdosRuleSetClientSideActionConfigArgs.Builder)
     /**
      * @param challenge Present a silent challenge. See Challenge below.
@@ -5710,21 +5478,18 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAntiDdosRuleSetClientSideActionConfigChallengeArgs.builder
       builder.challenge(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRateBasedStatementCustomKeyQueryArgumentArgs.Builder)
     def textTransformations(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRateBasedStatementCustomKeyQueryArgumentTextTransformationArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRateBasedStatementCustomKeyQueryArgumentArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRateBasedStatementCustomKeyQueryArgumentTextTransformationArgs.builder
       builder.textTransformations(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchCookiesMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchCookiesMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchCookiesMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchCookiesMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchHeaderArgs.Builder)
     /**
      * @param matchPattern Headers to inspect. See Headers Match Pattern below.
@@ -5735,7 +5500,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchHeaderMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSqliMatchStatementFieldToMatchCookiesArgs.Builder)
     /**
      * @param matchPatterns The filter to use to identify the subset of cookies to inspect in a web request. You must specify exactly one setting: either `all`, `includedCookies` or `excludedCookies`. More details: [CookieMatchPattern](https://docs.aws.amazon.com/waf/latest/APIReference/API_CookieMatchPattern.html)
@@ -5746,28 +5510,24 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSqliMatchStatementFieldToMatchCookiesMatchPatternArgs.builder
       builder.matchPatterns(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchJsonBodyMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchJsonBodyMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchJsonBodyMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchJsonBodyMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchCookiesMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchCookiesMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchCookiesMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchCookiesMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchCookiesMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchCookiesMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchCookiesMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchCookiesMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRegexPatternSetReferenceStatementFieldToMatchCookiesArgs.Builder)
     /**
      * @param matchPatterns Cookies to inspect. See Cookies Match Pattern below.
@@ -5778,7 +5538,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRegexPatternSetReferenceStatementFieldToMatchCookiesMatchPatternArgs.builder
       builder.matchPatterns(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementNotStatementArgs.Builder)
     /**
      * @param statements The statements to combine.
@@ -5789,14 +5548,12 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementArgs.builder
       builder.statements(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchHeaderMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchHeaderMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchHeaderMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchHeaderMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementByteMatchStatementArgs.Builder)
     /**
      * @param fieldToMatch Part of the web request that you want WAF to inspect. See Field to Match below.
@@ -5816,7 +5573,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementByteMatchStatementTextTransformationArgs.builder
       builder.textTransformations(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchHeaderArgs.Builder)
     /**
      * @param matchPattern Headers to inspect. See Headers Match Pattern below.
@@ -5827,7 +5583,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchHeaderMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSizeConstraintStatementFieldToMatchArgs.Builder)
     /**
      * @param allQueryArguments Inspect all query arguments.
@@ -5955,7 +5710,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSizeConstraintStatementFieldToMatchUriPathArgs.builder
       builder.uriPath(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchCookiesArgs.Builder)
     /**
      * @param matchPatterns Cookies to inspect. See Cookies Match Pattern below.
@@ -5966,7 +5720,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchCookiesMatchPatternArgs.builder
       builder.matchPatterns(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementCustomKeyCookieArgs.Builder)
     /**
      * @param textTransformations Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection. They are used in rate-based rule statements, to transform request components before using them as custom aggregation keys. Atleast one transformation is required. See Text Transformation above for details.
@@ -5977,7 +5730,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementCustomKeyCookieTextTransformationArgs.builder
       builder.textTransformations(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementIpSetReferenceStatementArgs.Builder)
     /**
      * @param ipSetForwardedIpConfig Configuration for inspecting forwarded IP headers. See IP Set Forwarded IP Config below.
@@ -5988,7 +5740,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementIpSetReferenceStatementIpSetForwardedIpConfigArgs.builder
       builder.ipSetForwardedIpConfig(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementByteMatchStatementFieldToMatchHeaderArgs.Builder)
     /**
      * @param matchPattern Headers to inspect. See Headers Match Pattern below.
@@ -5999,14 +5750,12 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementByteMatchStatementFieldToMatchHeaderMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementSizeConstraintStatementFieldToMatchHeaderMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementSizeConstraintStatementFieldToMatchHeaderMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementSizeConstraintStatementFieldToMatchHeaderMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementSizeConstraintStatementFieldToMatchHeaderMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementFieldToMatchCookiesArgs.Builder)
     /**
      * @param matchPatterns Cookies to inspect. See Cookies Match Pattern below.
@@ -6017,7 +5766,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementFieldToMatchCookiesMatchPatternArgs.builder
       builder.matchPatterns(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRegexMatchStatementFieldToMatchCookiesArgs.Builder)
     /**
      * @param matchPatterns Cookies to inspect. See Cookies Match Pattern below.
@@ -6028,14 +5776,12 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRegexMatchStatementFieldToMatchCookiesMatchPatternArgs.builder
       builder.matchPatterns(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementFieldToMatchHeaderMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementFieldToMatchHeaderMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementFieldToMatchHeaderMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementFieldToMatchHeaderMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSqliMatchStatementFieldToMatchHeaderMatchPatternArgs.Builder)
     /**
      * @param all An empty configuration block that is used for inspecting all headers.
@@ -6046,7 +5792,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSqliMatchStatementFieldToMatchHeaderMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementSqliMatchStatementArgs.Builder)
     def fieldToMatch(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementSqliMatchStatementFieldToMatchArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementSqliMatchStatementArgs.Builder =
@@ -6058,7 +5803,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementSqliMatchStatementTextTransformationArgs.builder
       builder.textTransformations(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementRuleActionOverrideActionToUseCountCustomRequestHandlingArgs.Builder)
     /**
      * @param insertHeaders Custom headers to insert into the request. See Insert Header below.
@@ -6069,7 +5813,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementRuleActionOverrideActionToUseCountCustomRequestHandlingInsertHeaderArgs.builder
       builder.insertHeaders(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchHeaderArgs.Builder)
     /**
      * @param matchPattern Headers to inspect. See Headers Match Pattern below.
@@ -6080,7 +5823,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchHeaderMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementRuleActionOverrideActionToUseCaptchaCustomRequestHandlingArgs.Builder)
     /**
      * @param insertHeaders Custom headers to insert into the request. See Insert Header below.
@@ -6091,7 +5833,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementRuleActionOverrideActionToUseCaptchaCustomRequestHandlingInsertHeaderArgs.builder
       builder.insertHeaders(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRateBasedStatementCustomKeyArgs.Builder)
     def asn(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRateBasedStatementCustomKeyAsnArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRateBasedStatementCustomKeyArgs.Builder =
@@ -6197,7 +5938,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRateBasedStatementCustomKeyUriPathArgs.builder
       builder.uriPath(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRegexPatternSetReferenceStatementFieldToMatchHeaderArgs.Builder)
     /**
      * @param matchPattern Headers to inspect. See Headers Match Pattern below.
@@ -6208,7 +5948,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRegexPatternSetReferenceStatementFieldToMatchHeaderMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchHeaderArgs.Builder)
     /**
      * @param matchPattern The filter to use to identify the subset of headers to inspect in a web request. The `matchPattern` block supports only one of the following arguments:
@@ -6219,7 +5958,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchHeaderMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchArgs.Builder)
     /**
      * @param allQueryArguments Inspect all query arguments.
@@ -6347,7 +6085,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchUriPathArgs.builder
       builder.uriPath(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleCaptchaConfigArgs.Builder)
     /**
      * @param immunityTimeProperty Defines custom immunity time. See Immunity Time Property below for details.
@@ -6358,7 +6095,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleCaptchaConfigImmunityTimePropertyArgs.builder
       builder.immunityTimeProperty(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexMatchStatementFieldToMatchCookiesMatchPatternArgs.Builder)
     /**
      * @param all An empty configuration block that is used for inspecting all headers.
@@ -6369,7 +6105,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexMatchStatementFieldToMatchCookiesMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchCookiesArgs.Builder)
     /**
      * @param matchPatterns The filter to use to identify the subset of cookies to inspect in a web request. You must specify exactly one setting: either `all`, `includedCookies` or `excludedCookies`. More details: [CookieMatchPattern](https://docs.aws.amazon.com/waf/latest/APIReference/API_CookieMatchPattern.html)
@@ -6380,7 +6115,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchCookiesMatchPatternArgs.builder
       builder.matchPatterns(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSizeConstraintStatementFieldToMatchJsonBodyArgs.Builder)
     /**
      * @param matchPattern The patterns to look for in the JSON body. You must specify exactly one setting: either `all` or `includedPaths`. See [JsonMatchPattern](https://docs.aws.amazon.com/waf/latest/APIReference/API_JsonMatchPattern.html) for details.
@@ -6391,14 +6125,12 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSizeConstraintStatementFieldToMatchJsonBodyMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRateBasedStatementCustomKeyCookieArgs.Builder)
     def textTransformations(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRateBasedStatementCustomKeyCookieTextTransformationArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRateBasedStatementCustomKeyCookieArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRateBasedStatementCustomKeyCookieTextTransformationArgs.builder
       builder.textTransformations(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementXssMatchStatementFieldToMatchJsonBodyArgs.Builder)
     /**
      * @param matchPattern JSON content to inspect. See JSON Body Match Pattern below.
@@ -6409,14 +6141,12 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementXssMatchStatementFieldToMatchJsonBodyMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementByteMatchStatementFieldToMatchCookiesMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementByteMatchStatementFieldToMatchCookiesMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementByteMatchStatementFieldToMatchCookiesMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementByteMatchStatementFieldToMatchCookiesMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleActionChallengeArgs.Builder)
     /**
      * @param customRequestHandling Defines custom handling for the web request. See Custom Request Handling below for details.
@@ -6427,7 +6157,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleActionChallengeCustomRequestHandlingArgs.builder
       builder.customRequestHandling(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchArgs.Builder)
     /**
      * @param allQueryArguments Inspect all query arguments.
@@ -6555,7 +6284,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchUriPathArgs.builder
       builder.uriPath(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementArgs.Builder)
     /**
      * @param fieldToMatch Part of the web request that you want WAF to inspect. See Field to Match below.
@@ -6575,7 +6303,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementTextTransformationArgs.builder
       builder.textTransformations(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleActionCountArgs.Builder)
     /**
      * @param customRequestHandling Defines custom handling for the web request. See Custom Request Handling below for details.
@@ -6586,7 +6313,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleActionCountCustomRequestHandlingArgs.builder
       builder.customRequestHandling(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementRuleActionOverrideActionToUseCountArgs.Builder)
     /**
      * @param customRequestHandling Custom request handling configuration. See Custom Request Handling below.
@@ -6597,7 +6323,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementRuleActionOverrideActionToUseCountCustomRequestHandlingArgs.builder
       builder.customRequestHandling(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementXssMatchStatementFieldToMatchHeaderArgs.Builder)
     /**
      * @param matchPattern The filter to use to identify the subset of headers to inspect in a web request. The `matchPattern` block supports only one of the following arguments:
@@ -6608,14 +6333,12 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementXssMatchStatementFieldToMatchHeaderMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchHeaderMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchHeaderMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchHeaderMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchHeaderMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRegexPatternSetReferenceStatementFieldToMatchJsonBodyArgs.Builder)
     /**
      * @param matchPattern JSON content to inspect. See JSON Body Match Pattern below.
@@ -6626,7 +6349,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRegexPatternSetReferenceStatementFieldToMatchJsonBodyMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchHeaderArgs.Builder)
     /**
      * @param matchPattern Headers to inspect. See Headers Match Pattern below.
@@ -6637,7 +6359,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchHeaderMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRegexMatchStatementFieldToMatchCookiesArgs.Builder)
     /**
      * @param matchPatterns Cookies to inspect. See Cookies Match Pattern below.
@@ -6648,14 +6369,12 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRegexMatchStatementFieldToMatchCookiesMatchPatternArgs.builder
       builder.matchPatterns(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexMatchStatementFieldToMatchCookiesMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexMatchStatementFieldToMatchCookiesMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexMatchStatementFieldToMatchCookiesMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexMatchStatementFieldToMatchCookiesMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementXssMatchStatementFieldToMatchArgs.Builder)
     /**
      * @param allQueryArguments Inspect all query arguments.
@@ -6783,7 +6502,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementXssMatchStatementFieldToMatchUriPathArgs.builder
       builder.uriPath(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupState.Builder)
     /**
      * @param customResponseBodies Defines custom response bodies that can be referenced by `customResponse` actions. See Custom Response Body below for details.
@@ -6815,7 +6533,7 @@ object wafv2:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.wafv2.inputs.RuleGroupState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRuleGroupReferenceStatementRuleActionOverrideActionToUseChallengeCustomRequestHandlingArgs.Builder)
     /**
      * @param insertHeaders Custom headers to insert into the request. See Insert Header below.
@@ -6826,7 +6544,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRuleGroupReferenceStatementRuleActionOverrideActionToUseChallengeCustomRequestHandlingInsertHeaderArgs.builder
       builder.insertHeaders(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRuleGroupReferenceStatementRuleActionOverrideActionToUseChallengeArgs.Builder)
     /**
      * @param customRequestHandling Custom request handling configuration. See Custom Request Handling below.
@@ -6837,7 +6554,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRuleGroupReferenceStatementRuleActionOverrideActionToUseChallengeCustomRequestHandlingArgs.builder
       builder.customRequestHandling(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementSqliMatchStatementFieldToMatchArgs.Builder)
     /**
      * @param allQueryArguments Inspect all query arguments.
@@ -6965,7 +6681,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementSqliMatchStatementFieldToMatchUriPathArgs.builder
       builder.uriPath(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchCookiesArgs.Builder)
     /**
      * @param matchPatterns Cookies to inspect. See Cookies Match Pattern below.
@@ -6976,7 +6691,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchCookiesMatchPatternArgs.builder
       builder.matchPatterns(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupArgs.Builder)
     /**
      * @param managedRuleGroupConfigs Additional information that&#39;s used by a managed rule group. Only one rule attribute is allowed in each config. See below.
@@ -6996,7 +6710,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupRuleActionOverrideArgs.builder
       builder.ruleActionOverrides(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAtpRuleSetResponseInspectionArgs.Builder)
     def bodyContains(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAtpRuleSetResponseInspectionBodyContainsArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAtpRuleSetResponseInspectionArgs.Builder =
@@ -7022,7 +6735,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAtpRuleSetResponseInspectionStatusCodeArgs.builder
       builder.statusCode(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementArgs.Builder)
     def managedRuleGroupConfigs(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementManagedRuleGroupConfigArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementArgs.Builder =
@@ -7047,14 +6759,12 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementArgs.builder
       builder.scopeDownStatement(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementXssMatchStatementFieldToMatchHeaderMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementXssMatchStatementFieldToMatchHeaderMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementXssMatchStatementFieldToMatchHeaderMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementXssMatchStatementFieldToMatchHeaderMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementFieldToMatchCookiesArgs.Builder)
     /**
      * @param matchPatterns Cookies to inspect. See Cookies Match Pattern below.
@@ -7065,14 +6775,12 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementFieldToMatchCookiesMatchPatternArgs.builder
       builder.matchPatterns(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementByteMatchStatementFieldToMatchCookiesMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementByteMatchStatementFieldToMatchCookiesMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementByteMatchStatementFieldToMatchCookiesMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementByteMatchStatementFieldToMatchCookiesMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupManagedRuleGroupConfigsAwsManagedRulesAcfpRuleSetRequestInspectionArgs.Builder)
     /**
      * @param addressFields Names of the fields in the request payload that contain your customer&#39;s primary physical address. See below.
@@ -7119,7 +6827,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupManagedRuleGroupConfigsAwsManagedRulesAcfpRuleSetRequestInspectionUsernameFieldArgs.builder
       builder.usernameField(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRuleGroupReferenceStatementArgs.Builder)
     /**
      * @param excludedRules Rules to exclude from the rule group. See Excluded Rule below.
@@ -7139,7 +6846,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRuleGroupReferenceStatementRuleActionOverrideArgs.builder
       builder.ruleActionOverrides(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRegexPatternSetReferenceStatementArgs.Builder)
     /**
      * @param fieldToMatch Part of the web request that you want WAF to inspect. See Field to Match below.
@@ -7159,14 +6865,12 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRegexPatternSetReferenceStatementTextTransformationArgs.builder
       builder.textTransformations(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementSqliMatchStatementFieldToMatchHeaderMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementSqliMatchStatementFieldToMatchHeaderMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementSqliMatchStatementFieldToMatchHeaderMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementSqliMatchStatementFieldToMatchHeaderMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementRuleActionOverrideActionToUseBlockCustomResponseArgs.Builder)
     /**
      * @param responseHeaders Custom headers to include in the response. See Response Header below.
@@ -7177,7 +6881,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementRuleActionOverrideActionToUseBlockCustomResponseResponseHeaderArgs.builder
       builder.responseHeaders(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRegexMatchStatementFieldToMatchArgs.Builder)
     /**
      * @param allQueryArguments Inspect all query arguments.
@@ -7305,21 +7008,18 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRegexMatchStatementFieldToMatchUriPathArgs.builder
       builder.uriPath(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementByteMatchStatementFieldToMatchCookiesMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementByteMatchStatementFieldToMatchCookiesMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementByteMatchStatementFieldToMatchCookiesMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementByteMatchStatementFieldToMatchCookiesMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchHeaderMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchHeaderMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchHeaderMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchHeaderMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRateBasedStatementScopeDownStatementIpSetReferenceStatementArgs.Builder)
     /**
      * @param ipSetForwardedIpConfig Configuration for inspecting forwarded IP headers. See IP Set Forwarded IP Config below.
@@ -7330,7 +7030,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRateBasedStatementScopeDownStatementIpSetReferenceStatementIpSetForwardedIpConfigArgs.builder
       builder.ipSetForwardedIpConfig(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchHeaderArgs.Builder)
     /**
      * @param matchPattern The filter to use to identify the subset of headers to inspect in a web request. The `matchPattern` block supports only one of the following arguments:
@@ -7341,7 +7040,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchHeaderMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclDefaultActionBlockCustomResponseArgs.Builder)
     /**
      * @param responseHeaders The `responseHeader` blocks used to define the HTTP response headers added to the response. See `responseHeader` below for details.
@@ -7352,7 +7050,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclDefaultActionBlockCustomResponseResponseHeaderArgs.builder
       builder.responseHeaders(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSqliMatchStatementFieldToMatchArgs.Builder)
     /**
      * @param allQueryArguments Inspect all query arguments.
@@ -7480,14 +7177,12 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSqliMatchStatementFieldToMatchUriPathArgs.builder
       builder.uriPath(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRegexPatternSetReferenceStatementFieldToMatchCookiesMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRegexPatternSetReferenceStatementFieldToMatchCookiesMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRegexPatternSetReferenceStatementFieldToMatchCookiesMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRegexPatternSetReferenceStatementFieldToMatchCookiesMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementSizeConstraintStatementArgs.Builder)
     /**
      * @param fieldToMatch Part of the web request that you want WAF to inspect. See Field to Match below.
@@ -7507,7 +7202,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementSizeConstraintStatementTextTransformationArgs.builder
       builder.textTransformations(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchCookiesMatchPatternArgs.Builder)
     /**
      * @param all An empty configuration block that is used for inspecting all headers.
@@ -7518,7 +7212,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchCookiesMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRegexPatternSetReferenceStatementFieldToMatchJsonBodyArgs.Builder)
     /**
      * @param matchPattern JSON content to inspect. See JSON Body Match Pattern below.
@@ -7529,7 +7222,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRegexPatternSetReferenceStatementFieldToMatchJsonBodyMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRuleGroupReferenceStatementRuleActionOverrideActionToUseArgs.Builder)
     /**
      * @param allow Allow the request. See Allow below.
@@ -7572,7 +7264,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRuleGroupReferenceStatementRuleActionOverrideActionToUseCountArgs.builder
       builder.count(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementIpSetReferenceStatementArgs.Builder)
     /**
      * @param ipSetForwardedIpConfig Configuration for inspecting forwarded IP headers. See IP Set Forwarded IP Config below.
@@ -7583,7 +7274,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementIpSetReferenceStatementIpSetForwardedIpConfigArgs.builder
       builder.ipSetForwardedIpConfig(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRateBasedStatementScopeDownStatementByteMatchStatementArgs.Builder)
     /**
      * @param fieldToMatch Part of the web request that you want WAF to inspect. See Field to Match below.
@@ -7603,7 +7293,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRateBasedStatementScopeDownStatementByteMatchStatementTextTransformationArgs.builder
       builder.textTransformations(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupRuleActionOverrideActionToUseBlockArgs.Builder)
     /**
      * @param customResponse Custom response for blocked requests. See below.
@@ -7614,7 +7303,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupRuleActionOverrideActionToUseBlockCustomResponseArgs.builder
       builder.customResponse(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementAsnMatchStatementArgs.Builder)
     /**
      * @param forwardedIpConfig Configuration for inspecting IP addresses in an HTTP header instead of using the web request origin. See Forwarded IP Config below.
@@ -7625,7 +7313,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementAsnMatchStatementForwardedIpConfigArgs.builder
       builder.forwardedIpConfig(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchHeaderArgs.Builder)
     /**
      * @param matchPattern Headers to inspect. See Headers Match Pattern below.
@@ -7636,35 +7323,30 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchHeaderMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementSqliMatchStatementFieldToMatchCookiesMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementSqliMatchStatementFieldToMatchCookiesMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementSqliMatchStatementFieldToMatchCookiesMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementSqliMatchStatementFieldToMatchCookiesMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchHeaderMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchHeaderMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchHeaderMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchHeaderMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchJsonBodyMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchJsonBodyMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchJsonBodyMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchJsonBodyMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchHeaderMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchHeaderMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchHeaderMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchHeaderMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRuleGroupReferenceStatementArgs.Builder)
     /**
      * @param excludedRules Rules to exclude from the rule group. See Excluded Rule below.
@@ -7684,7 +7366,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRuleGroupReferenceStatementRuleActionOverrideArgs.builder
       builder.ruleActionOverrides(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleActionCountCustomRequestHandlingArgs.Builder)
     /**
      * @param insertHeaders Custom headers to insert into the request. See Insert Header below.
@@ -7695,7 +7376,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleActionCountCustomRequestHandlingInsertHeaderArgs.builder
       builder.insertHeaders(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchHeaderArgs.Builder)
     /**
      * @param matchPattern Headers to inspect. See Headers Match Pattern below.
@@ -7706,7 +7386,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchHeaderMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementByteMatchStatementFieldToMatchArgs.Builder)
     /**
      * @param allQueryArguments Inspect all query arguments.
@@ -7834,28 +7513,24 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementByteMatchStatementFieldToMatchUriPathArgs.builder
       builder.uriPath(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchJsonBodyMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchJsonBodyMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchJsonBodyMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchJsonBodyMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementSqliMatchStatementFieldToMatchHeaderMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementSqliMatchStatementFieldToMatchHeaderMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementSqliMatchStatementFieldToMatchHeaderMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementSqliMatchStatementFieldToMatchHeaderMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementSqliMatchStatementFieldToMatchHeaderMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementSqliMatchStatementFieldToMatchHeaderMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementSqliMatchStatementFieldToMatchHeaderMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementSqliMatchStatementFieldToMatchHeaderMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchHeaderArgs.Builder)
     /**
      * @param matchPattern Headers to inspect. See Headers Match Pattern below.
@@ -7866,21 +7541,18 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchHeaderMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementByteMatchStatementFieldToMatchJsonBodyMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementByteMatchStatementFieldToMatchJsonBodyMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementByteMatchStatementFieldToMatchJsonBodyMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementByteMatchStatementFieldToMatchJsonBodyMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementSizeConstraintStatementFieldToMatchHeaderMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementSizeConstraintStatementFieldToMatchHeaderMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementSizeConstraintStatementFieldToMatchHeaderMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementSizeConstraintStatementFieldToMatchHeaderMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAcfpRuleSetArgs.Builder)
     def requestInspection(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAcfpRuleSetRequestInspectionArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAcfpRuleSetArgs.Builder =
@@ -7892,7 +7564,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAcfpRuleSetResponseInspectionArgs.builder
       builder.responseInspection(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchJsonBodyArgs.Builder)
     /**
      * @param matchPattern JSON content to inspect. See JSON Body Match Pattern below.
@@ -7903,7 +7574,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchJsonBodyMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchCookiesArgs.Builder)
     /**
      * @param matchPatterns Cookies to inspect. See Cookies Match Pattern below.
@@ -7914,7 +7584,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchCookiesMatchPatternArgs.builder
       builder.matchPatterns(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementGeoMatchStatementArgs.Builder)
     /**
      * @param forwardedIpConfig Configuration for inspecting forwarded IP headers. See Forwarded IP Config below.
@@ -7925,7 +7594,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementGeoMatchStatementForwardedIpConfigArgs.builder
       builder.forwardedIpConfig(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementRuleActionOverrideActionToUseArgs.Builder)
     /**
      * @param allow Allow the request. See Allow below.
@@ -7968,7 +7636,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementRuleActionOverrideActionToUseCountArgs.builder
       builder.count(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSqliMatchStatementFieldToMatchHeaderArgs.Builder)
     /**
      * @param matchPattern The filter to use to identify the subset of headers to inspect in a web request. The `matchPattern` block supports only one of the following arguments:
@@ -7979,14 +7646,12 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSqliMatchStatementFieldToMatchHeaderMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchHeaderMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchHeaderMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchHeaderMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchHeaderMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementArgs.Builder)
     /**
      * @param statement Single statement to negate. Exactly one statement must be specified.
@@ -7997,7 +7662,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementArgs.builder
       builder.statement(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchArgs.Builder)
     /**
      * @param allQueryArguments Inspect all query arguments.
@@ -8125,14 +7789,12 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchUriPathArgs.builder
       builder.uriPath(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchCookiesMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchCookiesMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchCookiesMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchCookiesMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchArgs.Builder)
     /**
      * @param allQueryArguments Inspect all query arguments.
@@ -8260,7 +7922,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchUriPathArgs.builder
       builder.uriPath(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAcfpRuleSetRequestInspectionArgs.Builder)
     def addressFields(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAcfpRuleSetRequestInspectionAddressFieldsArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAcfpRuleSetRequestInspectionArgs.Builder =
@@ -8287,14 +7948,12 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAcfpRuleSetRequestInspectionUsernameFieldArgs.builder
       builder.usernameField(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementCustomKeyCookieArgs.Builder)
     def textTransformations(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementCustomKeyCookieTextTransformationArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementCustomKeyCookieArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementCustomKeyCookieTextTransformationArgs.builder
       builder.textTransformations(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchCookiesArgs.Builder)
     /**
      * @param matchPatterns Cookies to inspect. See Cookies Match Pattern below.
@@ -8305,7 +7964,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchCookiesMatchPatternArgs.builder
       builder.matchPatterns(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementRegexMatchStatementFieldToMatchJsonBodyArgs.Builder)
     /**
      * @param matchPattern JSON content to inspect. See JSON Body Match Pattern below.
@@ -8316,7 +7974,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementRegexMatchStatementFieldToMatchJsonBodyMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRegexMatchStatementFieldToMatchJsonBodyArgs.Builder)
     /**
      * @param matchPattern JSON content to inspect. See JSON Body Match Pattern below.
@@ -8327,14 +7984,12 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRegexMatchStatementFieldToMatchJsonBodyMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementSqliMatchStatementFieldToMatchHeaderMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementSqliMatchStatementFieldToMatchHeaderMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementSqliMatchStatementFieldToMatchHeaderMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementSqliMatchStatementFieldToMatchHeaderMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRegexPatternSetReferenceStatementFieldToMatchCookiesArgs.Builder)
     /**
      * @param matchPatterns Cookies to inspect. See Cookies Match Pattern below.
@@ -8345,7 +8000,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRegexPatternSetReferenceStatementFieldToMatchCookiesMatchPatternArgs.builder
       builder.matchPatterns(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementByteMatchStatementFieldToMatchArgs.Builder)
     /**
      * @param allQueryArguments Inspect all query arguments.
@@ -8473,7 +8127,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementByteMatchStatementFieldToMatchUriPathArgs.builder
       builder.uriPath(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementArgs.Builder)
     /**
      * @param customKeys Aggregate the request counts using one or more web request components as the aggregate keys. See Custom Keys below.
@@ -8502,7 +8155,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementArgs.builder
       builder.scopeDownStatement(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementByteMatchStatementFieldToMatchJsonBodyArgs.Builder)
     /**
      * @param matchPattern JSON content to inspect. See JSON Body Match Pattern below.
@@ -8513,14 +8165,12 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementByteMatchStatementFieldToMatchJsonBodyMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchCookiesMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchCookiesMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchCookiesMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchCookiesMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementArgs.Builder)
     /**
      * @param andStatement A logical rule statement used to combine other rule statements with AND logic. See AND Statement below for details.
@@ -8639,7 +8289,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementArgs.builder
       builder.xssMatchStatement(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRuleGroupReferenceStatementArgs.Builder)
     /**
      * @param excludedRules Rules to exclude from the rule group. See Excluded Rule below.
@@ -8659,7 +8308,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRuleGroupReferenceStatementRuleActionOverrideArgs.builder
       builder.ruleActionOverrides(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchCookiesMatchPatternArgs.Builder)
     /**
      * @param all An empty configuration block that is used for inspecting all headers.
@@ -8670,7 +8318,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchCookiesMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRateBasedStatementCustomKeyArgs.Builder)
     def asn(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRateBasedStatementCustomKeyAsnArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRateBasedStatementCustomKeyArgs.Builder =
@@ -8776,7 +8423,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRateBasedStatementCustomKeyUriPathArgs.builder
       builder.uriPath(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementRegexMatchStatementFieldToMatchHeaderArgs.Builder)
     /**
      * @param matchPattern Headers to inspect. See Headers Match Pattern below.
@@ -8787,7 +8433,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementRegexMatchStatementFieldToMatchHeaderMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementSizeConstraintStatementFieldToMatchCookiesArgs.Builder)
     /**
      * @param matchPatterns Cookies to inspect. See Cookies Match Pattern below.
@@ -8798,7 +8443,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementSizeConstraintStatementFieldToMatchCookiesMatchPatternArgs.builder
       builder.matchPatterns(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementSizeConstraintStatementFieldToMatchJsonBodyArgs.Builder)
     /**
      * @param matchPattern JSON content to inspect. See JSON Body Match Pattern below.
@@ -8809,7 +8453,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementSizeConstraintStatementFieldToMatchJsonBodyMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementFieldToMatchCookiesArgs.Builder)
     /**
      * @param matchPatterns Cookies to inspect. See Cookies Match Pattern below.
@@ -8820,7 +8463,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementFieldToMatchCookiesMatchPatternArgs.builder
       builder.matchPatterns(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementSizeConstraintStatementArgs.Builder)
     /**
      * @param fieldToMatch Part of the web request that you want WAF to inspect. See Field to Match below.
@@ -8840,7 +8482,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementSizeConstraintStatementTextTransformationArgs.builder
       builder.textTransformations(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchJsonBodyArgs.Builder)
     /**
      * @param matchPattern JSON content to inspect. See JSON Body Match Pattern below.
@@ -8851,7 +8492,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchJsonBodyMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementRuleActionOverrideActionToUseAllowArgs.Builder)
     /**
      * @param customRequestHandling Custom request handling configuration. See Custom Request Handling below.
@@ -8862,14 +8502,12 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementRuleActionOverrideActionToUseAllowCustomRequestHandlingArgs.builder
       builder.customRequestHandling(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementFieldToMatchJsonBodyMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementFieldToMatchJsonBodyMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementFieldToMatchJsonBodyMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementFieldToMatchJsonBodyMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementByteMatchStatementFieldToMatchArgs.Builder)
     /**
      * @param allQueryArguments Inspect all query arguments.
@@ -8997,7 +8635,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementByteMatchStatementFieldToMatchUriPathArgs.builder
       builder.uriPath(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementRegexMatchStatementArgs.Builder)
     /**
      * @param fieldToMatch Part of the web request that you want WAF to inspect. See Field to Match below.
@@ -9017,7 +8654,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementRegexMatchStatementTextTransformationArgs.builder
       builder.textTransformations(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchArgs.Builder)
     /**
      * @param allQueryArguments Inspect all query arguments.
@@ -9145,14 +8781,12 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchUriPathArgs.builder
       builder.uriPath(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementByteMatchStatementFieldToMatchJsonBodyMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementByteMatchStatementFieldToMatchJsonBodyMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementByteMatchStatementFieldToMatchJsonBodyMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementByteMatchStatementFieldToMatchJsonBodyMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRuleGroupReferenceStatementRuleActionOverrideActionToUseAllowCustomRequestHandlingArgs.Builder)
     /**
      * @param insertHeaders Custom headers to insert into the request. See Insert Header below.
@@ -9163,7 +8797,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRuleGroupReferenceStatementRuleActionOverrideActionToUseAllowCustomRequestHandlingInsertHeaderArgs.builder
       builder.insertHeaders(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclLoggingConfigurationLoggingFilterFilterArgs.Builder)
     /**
      * @param conditions Match condition(s) for the filter. See Condition below for more details.
@@ -9174,7 +8807,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclLoggingConfigurationLoggingFilterFilterConditionArgs.builder
       builder.conditions(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAtpRuleSetArgs.Builder)
     def requestInspection(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAtpRuleSetRequestInspectionArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAtpRuleSetArgs.Builder =
@@ -9186,7 +8818,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAtpRuleSetResponseInspectionArgs.builder
       builder.responseInspection(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchCookiesMatchPatternArgs.Builder)
     /**
      * @param all An empty configuration block that is used for inspecting all headers.
@@ -9197,7 +8828,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchCookiesMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchHeaderArgs.Builder)
     /**
      * @param matchPattern Headers to inspect. See Headers Match Pattern below.
@@ -9208,7 +8838,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchHeaderMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupManagedRuleGroupConfigsAwsManagedRulesAtpRuleSetResponseInspectionArgs.Builder)
     /**
      * @param bodyContains Configures inspection of the response body. See below.
@@ -9246,7 +8875,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupManagedRuleGroupConfigsAwsManagedRulesAtpRuleSetResponseInspectionStatusCodeArgs.builder
       builder.statusCode(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementGeoMatchStatementArgs.Builder)
     /**
      * @param forwardedIpConfig Configuration for inspecting forwarded IP headers. See Forwarded IP Config below.
@@ -9257,7 +8885,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementGeoMatchStatementForwardedIpConfigArgs.builder
       builder.forwardedIpConfig(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchHeaderArgs.Builder)
     /**
      * @param matchPattern Headers to inspect. See Headers Match Pattern below.
@@ -9268,7 +8895,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchHeaderMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRuleGroupReferenceStatementRuleActionOverrideActionToUseBlockCustomResponseArgs.Builder)
     /**
      * @param responseHeaders Custom headers to include in the response. See Response Header below.
@@ -9279,7 +8905,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRuleGroupReferenceStatementRuleActionOverrideActionToUseBlockCustomResponseResponseHeaderArgs.builder
       builder.responseHeaders(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleActionAllowArgs.Builder)
     /**
      * @param customRequestHandling Defines custom handling for the web request. See Custom Request Handling below for details.
@@ -9290,7 +8915,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleActionAllowCustomRequestHandlingArgs.builder
       builder.customRequestHandling(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexPatternSetReferenceStatementFieldToMatchArgs.Builder)
     /**
      * @param allQueryArguments Inspect all query arguments.
@@ -9418,7 +9042,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexPatternSetReferenceStatementFieldToMatchUriPathArgs.builder
       builder.uriPath(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementOrStatementArgs.Builder)
     /**
      * @param statements The statements to combine.
@@ -9429,7 +9052,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementArgs.builder
       builder.statements(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRateBasedStatementCustomKeyArgs.Builder)
     def asn(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRateBasedStatementCustomKeyAsnArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRateBasedStatementCustomKeyArgs.Builder =
@@ -9535,7 +9157,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRateBasedStatementCustomKeyUriPathArgs.builder
       builder.uriPath(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRuleGroupReferenceStatementRuleActionOverrideArgs.Builder)
     /**
      * @param actionToUse Override action to use for the rule. See Action below.
@@ -9546,14 +9167,12 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRuleGroupReferenceStatementRuleActionOverrideActionToUseArgs.builder
       builder.actionToUse(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchJsonBodyMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchJsonBodyMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchJsonBodyMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchJsonBodyMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchCookiesArgs.Builder)
     /**
      * @param matchPatterns Cookies to inspect. See Cookies Match Pattern below.
@@ -9564,7 +9183,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchCookiesMatchPatternArgs.builder
       builder.matchPatterns(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementSqliMatchStatementFieldToMatchCookiesArgs.Builder)
     /**
      * @param matchPatterns Cookies to inspect. See Cookies Match Pattern below.
@@ -9575,7 +9193,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementSqliMatchStatementFieldToMatchCookiesMatchPatternArgs.builder
       builder.matchPatterns(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementSqliMatchStatementFieldToMatchArgs.Builder)
     /**
      * @param allQueryArguments Inspect all query arguments.
@@ -9703,7 +9320,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementSqliMatchStatementFieldToMatchUriPathArgs.builder
       builder.uriPath(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementXssMatchStatementArgs.Builder)
     def fieldToMatch(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementXssMatchStatementFieldToMatchArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementXssMatchStatementArgs.Builder =
@@ -9715,14 +9331,12 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementXssMatchStatementTextTransformationArgs.builder
       builder.textTransformations(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchJsonBodyMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchJsonBodyMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchJsonBodyMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchJsonBodyMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementSqliMatchStatementFieldToMatchJsonBodyArgs.Builder)
     /**
      * @param matchPattern JSON content to inspect. See JSON Body Match Pattern below.
@@ -9733,7 +9347,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementSqliMatchStatementFieldToMatchJsonBodyMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementArgs.Builder)
     /**
      * @param fieldToMatch Part of the web request that you want WAF to inspect. See Field to Match below.
@@ -9753,7 +9366,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementTextTransformationArgs.builder
       builder.textTransformations(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementByteMatchStatementFieldToMatchHeaderArgs.Builder)
     /**
      * @param matchPattern Headers to inspect. See Headers Match Pattern below.
@@ -9764,7 +9376,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementByteMatchStatementFieldToMatchHeaderMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclLoggingConfigurationState.Builder)
     /**
      * @param loggingFilter Configuration block that specifies which web requests are kept in the logs and which are dropped. It allows filtering based on the rule action and the web request labels applied by matching rules during web ACL evaluation. For more details, refer to the Logging Filter section below.
@@ -9784,14 +9395,12 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclLoggingConfigurationRedactedFieldArgs.builder
       builder.redactedFields(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchJsonBodyMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchJsonBodyMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchJsonBodyMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchJsonBodyMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexPatternSetReferenceStatementFieldToMatchHeaderArgs.Builder)
     /**
      * @param matchPattern Headers to inspect. See Headers Match Pattern below.
@@ -9802,7 +9411,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexPatternSetReferenceStatementFieldToMatchHeaderMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementArgs.Builder)
     def managedRuleGroupConfigs(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementManagedRuleGroupConfigArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementArgs.Builder =
@@ -9827,7 +9435,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementArgs.builder
       builder.scopeDownStatement(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementRegexMatchStatementFieldToMatchCookiesArgs.Builder)
     /**
      * @param matchPatterns Cookies to inspect. See Cookies Match Pattern below.
@@ -9838,7 +9445,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementRegexMatchStatementFieldToMatchCookiesMatchPatternArgs.builder
       builder.matchPatterns(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchJsonBodyArgs.Builder)
     /**
      * @param matchPattern JSON content to inspect. See JSON Body Match Pattern below.
@@ -9849,7 +9455,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchJsonBodyMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationRuleGroupReferenceRuleActionOverrideActionToUseCaptchaArgs.Builder)
     /**
      * @param customRequestHandling Custom handling for CAPTCHA requests. See below.
@@ -9860,14 +9465,12 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationRuleGroupReferenceRuleActionOverrideActionToUseCaptchaCustomRequestHandlingArgs.builder
       builder.customRequestHandling(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchCookiesMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchCookiesMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchCookiesMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchCookiesMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementIpSetReferenceStatementArgs.Builder)
     /**
      * @param ipSetForwardedIpConfig Configuration for inspecting forwarded IP headers. See IP Set Forwarded IP Config below.
@@ -9878,7 +9481,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementIpSetReferenceStatementIpSetForwardedIpConfigArgs.builder
       builder.ipSetForwardedIpConfig(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementManagedRuleGroupConfigArgs.Builder)
     def awsManagedRulesAcfpRuleSet(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAcfpRuleSetArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementManagedRuleGroupConfigArgs.Builder =
@@ -9918,7 +9520,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementManagedRuleGroupConfigUsernameFieldArgs.builder
       builder.usernameField(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchJsonBodyArgs.Builder)
     /**
      * @param matchPattern JSON content to inspect. See JSON Body Match Pattern below.
@@ -9929,7 +9530,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchJsonBodyMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleArgs.Builder)
     /**
      * @param action Action that AWS WAF should take on a web request when it matches the rule&#39;s statement. This is used only for rules whose **statements do not reference a rule group**. See `action` for details.
@@ -9994,7 +9594,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleVisibilityConfigArgs.builder
       builder.visibilityConfig(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSizeConstraintStatementFieldToMatchHeaderMatchPatternArgs.Builder)
     /**
      * @param all An empty configuration block that is used for inspecting all headers.
@@ -10005,7 +9604,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSizeConstraintStatementFieldToMatchHeaderMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementOrStatementArgs.Builder)
     /**
      * @param statements The statements to combine.
@@ -10016,7 +9614,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementArgs.builder
       builder.statements(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRuleGroupReferenceStatementRuleActionOverrideActionToUseArgs.Builder)
     /**
      * @param allow Allow the request. See Allow below.
@@ -10059,7 +9656,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRuleGroupReferenceStatementRuleActionOverrideActionToUseCountArgs.builder
       builder.count(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementRegexMatchStatementFieldToMatchCookiesArgs.Builder)
     /**
      * @param matchPatterns Cookies to inspect. See Cookies Match Pattern below.
@@ -10070,7 +9666,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementRegexMatchStatementFieldToMatchCookiesMatchPatternArgs.builder
       builder.matchPatterns(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchArgs.Builder)
     /**
      * @param allQueryArguments Inspect all query arguments.
@@ -10198,7 +9793,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchUriPathArgs.builder
       builder.uriPath(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementAsnMatchStatementArgs.Builder)
     /**
      * @param forwardedIpConfig Configuration for inspecting IP addresses in an HTTP header instead of using the web request origin. See Forwarded IP Config below.
@@ -10209,21 +9803,18 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementAsnMatchStatementForwardedIpConfigArgs.builder
       builder.forwardedIpConfig(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchJsonBodyMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchJsonBodyMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchJsonBodyMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchJsonBodyMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRegexPatternSetReferenceStatementFieldToMatchJsonBodyMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRegexPatternSetReferenceStatementFieldToMatchJsonBodyMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRegexPatternSetReferenceStatementFieldToMatchJsonBodyMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRegexPatternSetReferenceStatementFieldToMatchJsonBodyMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRuleGroupReferenceStatementRuleActionOverrideActionToUseBlockArgs.Builder)
     /**
      * @param customResponse Custom response configuration. See Custom Response below.
@@ -10234,7 +9825,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRuleGroupReferenceStatementRuleActionOverrideActionToUseBlockCustomResponseArgs.builder
       builder.customResponse(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupManagedRuleGroupConfigsAwsManagedRulesAcfpRuleSetArgs.Builder)
     /**
      * @param requestInspection Criteria for inspecting login requests, used by the ATP rule group to validate credentials usage. See below.
@@ -10254,7 +9844,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupManagedRuleGroupConfigsAwsManagedRulesAcfpRuleSetResponseInspectionArgs.builder
       builder.responseInspection(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAtpRuleSetRequestInspectionArgs.Builder)
     def passwordField(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAtpRuleSetRequestInspectionPasswordFieldArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAtpRuleSetRequestInspectionArgs.Builder =
@@ -10266,7 +9855,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAtpRuleSetRequestInspectionUsernameFieldArgs.builder
       builder.usernameField(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementByteMatchStatementArgs.Builder)
     /**
      * @param fieldToMatch Part of the web request that you want WAF to inspect. See Field to Match below.
@@ -10286,14 +9874,12 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementByteMatchStatementTextTransformationArgs.builder
       builder.textTransformations(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRegexMatchStatementFieldToMatchCookiesMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRegexMatchStatementFieldToMatchCookiesMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRegexMatchStatementFieldToMatchCookiesMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRegexMatchStatementFieldToMatchCookiesMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementArgs.Builder)
     def fieldToMatch(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementFieldToMatchArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementArgs.Builder =
@@ -10305,7 +9891,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementTextTransformationArgs.builder
       builder.textTransformations(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementRuleActionOverrideArgs.Builder)
     /**
      * @param actionToUse Override action to use for the rule. See Action below.
@@ -10316,14 +9901,12 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementRuleActionOverrideActionToUseArgs.builder
       builder.actionToUse(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementSqliMatchStatementFieldToMatchJsonBodyMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementSqliMatchStatementFieldToMatchJsonBodyMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementSqliMatchStatementFieldToMatchJsonBodyMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementSqliMatchStatementFieldToMatchJsonBodyMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchJsonBodyArgs.Builder)
     /**
      * @param matchPattern The patterns to look for in the JSON body. You must specify exactly one setting: either `all` or `includedPaths`. See [JsonMatchPattern](https://docs.aws.amazon.com/waf/latest/APIReference/API_JsonMatchPattern.html) for details.
@@ -10334,14 +9917,12 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchJsonBodyMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementSqliMatchStatementFieldToMatchJsonBodyMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementSqliMatchStatementFieldToMatchJsonBodyMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementSqliMatchStatementFieldToMatchJsonBodyMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementSqliMatchStatementFieldToMatchJsonBodyMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAcfpRuleSetResponseInspectionArgs.Builder)
     def bodyContains(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAcfpRuleSetResponseInspectionBodyContainsArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAcfpRuleSetResponseInspectionArgs.Builder =
@@ -10367,7 +9948,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAcfpRuleSetResponseInspectionStatusCodeArgs.builder
       builder.statusCode(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementRuleActionOverrideActionToUseChallengeArgs.Builder)
     /**
      * @param customRequestHandling Custom request handling configuration. See Custom Request Handling below.
@@ -10378,21 +9958,18 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementRuleActionOverrideActionToUseChallengeCustomRequestHandlingArgs.builder
       builder.customRequestHandling(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRegexPatternSetReferenceStatementFieldToMatchHeaderMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRegexPatternSetReferenceStatementFieldToMatchHeaderMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRegexPatternSetReferenceStatementFieldToMatchHeaderMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRegexPatternSetReferenceStatementFieldToMatchHeaderMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchHeaderMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchHeaderMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchHeaderMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchHeaderMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementSqliMatchStatementArgs.Builder)
     def fieldToMatch(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementSqliMatchStatementFieldToMatchArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementSqliMatchStatementArgs.Builder =
@@ -10404,7 +9981,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementSqliMatchStatementTextTransformationArgs.builder
       builder.textTransformations(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchJsonBodyArgs.Builder)
     /**
      * @param matchPattern JSON content to inspect. See JSON Body Match Pattern below.
@@ -10415,7 +9991,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchJsonBodyMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementGeoMatchStatementArgs.Builder)
     /**
      * @param forwardedIpConfig Configuration for inspecting forwarded IP headers. See Forwarded IP Config below.
@@ -10426,7 +10001,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementGeoMatchStatementForwardedIpConfigArgs.builder
       builder.forwardedIpConfig(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementSqliMatchStatementFieldToMatchHeaderArgs.Builder)
     /**
      * @param matchPattern Headers to inspect. See Headers Match Pattern below.
@@ -10437,14 +10011,12 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementSqliMatchStatementFieldToMatchHeaderMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRegexPatternSetReferenceStatementFieldToMatchCookiesMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRegexPatternSetReferenceStatementFieldToMatchCookiesMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRegexPatternSetReferenceStatementFieldToMatchCookiesMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRegexPatternSetReferenceStatementFieldToMatchCookiesMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchHeaderArgs.Builder)
     /**
      * @param matchPattern Headers to inspect. See Headers Match Pattern below.
@@ -10455,7 +10027,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchHeaderMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRuleGroupReferenceStatementRuleActionOverrideActionToUseCountArgs.Builder)
     /**
      * @param customRequestHandling Custom request handling configuration. See Custom Request Handling below.
@@ -10466,7 +10037,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRuleGroupReferenceStatementRuleActionOverrideActionToUseCountCustomRequestHandlingArgs.builder
       builder.customRequestHandling(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchCookiesArgs.Builder)
     /**
      * @param matchPatterns The filter to use to identify the subset of cookies to inspect in a web request. You must specify exactly one setting: either `all`, `includedCookies` or `excludedCookies`. More details: [CookieMatchPattern](https://docs.aws.amazon.com/waf/latest/APIReference/API_CookieMatchPattern.html)
@@ -10477,7 +10047,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchCookiesMatchPatternArgs.builder
       builder.matchPatterns(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementRegexMatchStatementArgs.Builder)
     /**
      * @param fieldToMatch Part of the web request that you want WAF to inspect. See Field to Match below.
@@ -10497,7 +10066,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementRegexMatchStatementTextTransformationArgs.builder
       builder.textTransformations(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchHeaderArgs.Builder)
     /**
      * @param matchPattern Headers to inspect. See Headers Match Pattern below.
@@ -10508,7 +10076,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchHeaderMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementRuleActionOverrideActionToUseCountArgs.Builder)
     /**
      * @param customRequestHandling Custom request handling configuration. See Custom Request Handling below.
@@ -10519,7 +10086,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementRuleActionOverrideActionToUseCountCustomRequestHandlingArgs.builder
       builder.customRequestHandling(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementRuleActionOverrideActionToUseCountCustomRequestHandlingArgs.Builder)
     /**
      * @param insertHeaders Custom headers to insert into the request. See Insert Header below.
@@ -10530,7 +10096,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementRuleActionOverrideActionToUseCountCustomRequestHandlingInsertHeaderArgs.builder
       builder.insertHeaders(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclCaptchaConfigArgs.Builder)
     /**
      * @param immunityTimeProperty Defines custom immunity time. See `immunityTimeProperty` below for details.
@@ -10541,7 +10106,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclCaptchaConfigImmunityTimePropertyArgs.builder
       builder.immunityTimeProperty(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementXssMatchStatementArgs.Builder)
     def fieldToMatch(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementXssMatchStatementFieldToMatchArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementXssMatchStatementArgs.Builder =
@@ -10553,7 +10117,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementXssMatchStatementTextTransformationArgs.builder
       builder.textTransformations(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRegexMatchStatementFieldToMatchCookiesArgs.Builder)
     /**
      * @param matchPatterns Cookies to inspect. See Cookies Match Pattern below.
@@ -10564,14 +10127,12 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRegexMatchStatementFieldToMatchCookiesMatchPatternArgs.builder
       builder.matchPatterns(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementSqliMatchStatementFieldToMatchHeaderMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementSqliMatchStatementFieldToMatchHeaderMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementSqliMatchStatementFieldToMatchHeaderMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementSqliMatchStatementFieldToMatchHeaderMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexMatchStatementFieldToMatchHeaderArgs.Builder)
     /**
      * @param matchPattern The filter to use to identify the subset of headers to inspect in a web request. The `matchPattern` block supports only one of the following arguments:
@@ -10582,21 +10143,18 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexMatchStatementFieldToMatchHeaderMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRateBasedStatementCustomKeyQueryArgumentArgs.Builder)
     def textTransformations(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRateBasedStatementCustomKeyQueryArgumentTextTransformationArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRateBasedStatementCustomKeyQueryArgumentArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRateBasedStatementCustomKeyQueryArgumentTextTransformationArgs.builder
       builder.textTransformations(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementRegexMatchStatementFieldToMatchCookiesMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementRegexMatchStatementFieldToMatchCookiesMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementRegexMatchStatementFieldToMatchCookiesMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementRegexMatchStatementFieldToMatchCookiesMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchCookiesArgs.Builder)
     /**
      * @param matchPatterns Cookies to inspect. See Cookies Match Pattern below.
@@ -10607,14 +10165,12 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchCookiesMatchPatternArgs.builder
       builder.matchPatterns(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchJsonBodyMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchJsonBodyMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchJsonBodyMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchJsonBodyMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementByteMatchStatementFieldToMatchJsonBodyArgs.Builder)
     /**
      * @param matchPattern JSON content to inspect. See JSON Body Match Pattern below.
@@ -10625,7 +10181,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementByteMatchStatementFieldToMatchJsonBodyMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSqliMatchStatementFieldToMatchCookiesMatchPatternArgs.Builder)
     /**
      * @param all An empty configuration block that is used for inspecting all headers.
@@ -10636,7 +10191,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSqliMatchStatementFieldToMatchCookiesMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchHeaderArgs.Builder)
     /**
      * @param matchPattern Headers to inspect. See Headers Match Pattern below.
@@ -10647,7 +10201,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchHeaderMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementRuleActionOverrideActionToUseCountArgs.Builder)
     /**
      * @param customRequestHandling Custom request handling configuration. See Custom Request Handling below.
@@ -10658,7 +10211,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementRuleActionOverrideActionToUseCountCustomRequestHandlingArgs.builder
       builder.customRequestHandling(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchCookiesArgs.Builder)
     /**
      * @param matchPatterns Cookies to inspect. See Cookies Match Pattern below.
@@ -10669,7 +10221,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchCookiesMatchPatternArgs.builder
       builder.matchPatterns(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRuleGroupReferenceStatementRuleActionOverrideActionToUseAllowCustomRequestHandlingArgs.Builder)
     /**
      * @param insertHeaders Custom headers to insert into the request. See Insert Header below.
@@ -10680,14 +10231,12 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRuleGroupReferenceStatementRuleActionOverrideActionToUseAllowCustomRequestHandlingInsertHeaderArgs.builder
       builder.insertHeaders(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementByteMatchStatementFieldToMatchJsonBodyMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementByteMatchStatementFieldToMatchJsonBodyMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementByteMatchStatementFieldToMatchJsonBodyMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementByteMatchStatementFieldToMatchJsonBodyMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSizeConstraintStatementFieldToMatchHeaderArgs.Builder)
     /**
      * @param matchPattern The filter to use to identify the subset of headers to inspect in a web request. The `matchPattern` block supports only one of the following arguments:
@@ -10698,7 +10247,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSizeConstraintStatementFieldToMatchHeaderMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementRuleActionOverrideActionToUseArgs.Builder)
     /**
      * @param allow Allow the request. See Allow below.
@@ -10741,21 +10289,18 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementRuleActionOverrideActionToUseCountArgs.builder
       builder.count(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRegexMatchStatementFieldToMatchHeaderMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRegexMatchStatementFieldToMatchHeaderMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRegexMatchStatementFieldToMatchHeaderMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRegexMatchStatementFieldToMatchHeaderMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchCookiesMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchCookiesMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchCookiesMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchCookiesMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchCookiesArgs.Builder)
     /**
      * @param matchPatterns Cookies to inspect. See Cookies Match Pattern below.
@@ -10766,7 +10311,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchCookiesMatchPatternArgs.builder
       builder.matchPatterns(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementRuleActionOverrideActionToUseAllowArgs.Builder)
     /**
      * @param customRequestHandling Custom request handling configuration. See Custom Request Handling below.
@@ -10777,7 +10321,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementRuleActionOverrideActionToUseAllowCustomRequestHandlingArgs.builder
       builder.customRequestHandling(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementXssMatchStatementFieldToMatchCookiesArgs.Builder)
     /**
      * @param matchPatterns The filter to use to identify the subset of cookies to inspect in a web request. You must specify exactly one setting: either `all`, `includedCookies` or `excludedCookies`. More details: [CookieMatchPattern](https://docs.aws.amazon.com/waf/latest/APIReference/API_CookieMatchPattern.html)
@@ -10788,7 +10331,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementXssMatchStatementFieldToMatchCookiesMatchPatternArgs.builder
       builder.matchPatterns(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclAssociationConfigRequestBodyArgs.Builder)
     /**
      * @param apiGateway Customizes the request body that your protected Amazon API Gateway REST APIs forward to AWS WAF for inspection. Applicable only when `scope` is set to `CLOUDFRONT`. See `apiGateway` below for details.
@@ -10835,14 +10377,12 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclAssociationConfigRequestBodyVerifiedAccessInstanceArgs.builder
       builder.verifiedAccessInstance(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchHeaderMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchHeaderMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchHeaderMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchHeaderMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementCustomKeyQueryArgumentArgs.Builder)
     /**
      * @param textTransformations Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection. They are used in rate-based rule statements, to transform request components before using them as custom aggregation keys. Atleast one transformation is required. See Text Transformation above for details.
@@ -10853,7 +10393,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementCustomKeyQueryArgumentTextTransformationArgs.builder
       builder.textTransformations(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementIpSetReferenceStatementArgs.Builder)
     /**
      * @param ipSetForwardedIpConfig Configuration for inspecting forwarded IP headers. See IP Set Forwarded IP Config below.
@@ -10864,7 +10403,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementIpSetReferenceStatementIpSetForwardedIpConfigArgs.builder
       builder.ipSetForwardedIpConfig(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexMatchStatementFieldToMatchHeaderArgs.Builder)
     /**
      * @param matchPattern Headers to inspect. See Headers Match Pattern below.
@@ -10875,7 +10413,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexMatchStatementFieldToMatchHeaderMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAntiDdosRuleSetClientSideActionConfigArgs.Builder)
     /**
      * @param challenge Present a silent challenge. See Challenge below.
@@ -10886,21 +10423,18 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAntiDdosRuleSetClientSideActionConfigChallengeArgs.builder
       builder.challenge(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementFieldToMatchHeaderMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementFieldToMatchHeaderMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementFieldToMatchHeaderMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementFieldToMatchHeaderMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementByteMatchStatementFieldToMatchHeaderMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementByteMatchStatementFieldToMatchHeaderMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementByteMatchStatementFieldToMatchHeaderMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementByteMatchStatementFieldToMatchHeaderMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementRuleActionOverrideActionToUseAllowArgs.Builder)
     /**
      * @param customRequestHandling Custom request handling configuration. See Custom Request Handling below.
@@ -10911,7 +10445,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementRuleActionOverrideActionToUseAllowCustomRequestHandlingArgs.builder
       builder.customRequestHandling(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementByteMatchStatementFieldToMatchJsonBodyMatchPatternArgs.Builder)
     /**
      * @param all An empty configuration block that is used for inspecting all headers.
@@ -10922,7 +10455,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementByteMatchStatementFieldToMatchJsonBodyMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementByteMatchStatementFieldToMatchCookiesArgs.Builder)
     /**
      * @param matchPatterns Cookies to inspect. See Cookies Match Pattern below.
@@ -10933,7 +10465,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementByteMatchStatementFieldToMatchCookiesMatchPatternArgs.builder
       builder.matchPatterns(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleCaptchaConfigArgs.Builder)
     /**
      * @param immunityTimeProperty Immunity time configuration. See Immunity Time Property below.
@@ -10944,7 +10475,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleCaptchaConfigImmunityTimePropertyArgs.builder
       builder.immunityTimeProperty(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRuleGroupReferenceStatementRuleActionOverrideActionToUseCountCustomRequestHandlingArgs.Builder)
     /**
      * @param insertHeaders Custom headers to insert into the request. See Insert Header below.
@@ -10955,7 +10485,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRuleGroupReferenceStatementRuleActionOverrideActionToUseCountCustomRequestHandlingInsertHeaderArgs.builder
       builder.insertHeaders(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationRuleGroupReferenceRuleActionOverrideActionToUseCaptchaCustomRequestHandlingArgs.Builder)
     /**
      * @param insertHeaders Headers to insert into the request. See below.
@@ -10966,7 +10495,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationRuleGroupReferenceRuleActionOverrideActionToUseCaptchaCustomRequestHandlingInsertHeaderArgs.builder
       builder.insertHeaders(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclDefaultActionAllowArgs.Builder)
     /**
      * @param customRequestHandling Defines custom handling for the web request. See `customRequestHandling` below for details.
@@ -10977,7 +10505,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclDefaultActionAllowCustomRequestHandlingArgs.builder
       builder.customRequestHandling(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementFieldToMatchJsonBodyArgs.Builder)
     /**
      * @param matchPattern JSON content to inspect. See JSON Body Match Pattern below.
@@ -10988,7 +10515,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementFieldToMatchJsonBodyMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchJsonBodyArgs.Builder)
     /**
      * @param matchPattern JSON content to inspect. See JSON Body Match Pattern below.
@@ -10999,7 +10525,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchJsonBodyMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchHeaderMatchPatternArgs.Builder)
     /**
      * @param all An empty configuration block that is used for inspecting all headers.
@@ -11010,14 +10535,12 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchHeaderMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchJsonBodyMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchJsonBodyMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchJsonBodyMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchJsonBodyMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexPatternSetReferenceStatementFieldToMatchHeaderArgs.Builder)
     /**
      * @param matchPattern The filter to use to identify the subset of headers to inspect in a web request. The `matchPattern` block supports only one of the following arguments:
@@ -11028,7 +10551,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexPatternSetReferenceStatementFieldToMatchHeaderMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRuleGroupReferenceStatementRuleActionOverrideActionToUseAllowArgs.Builder)
     /**
      * @param customRequestHandling Custom request handling configuration. See Custom Request Handling below.
@@ -11039,7 +10561,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRuleGroupReferenceStatementRuleActionOverrideActionToUseAllowCustomRequestHandlingArgs.builder
       builder.customRequestHandling(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRuleGroupReferenceStatementRuleActionOverrideActionToUseChallengeCustomRequestHandlingArgs.Builder)
     /**
      * @param insertHeaders Custom headers to insert into the request. See Insert Header below.
@@ -11050,21 +10571,18 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRuleGroupReferenceStatementRuleActionOverrideActionToUseChallengeCustomRequestHandlingInsertHeaderArgs.builder
       builder.insertHeaders(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchJsonBodyMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchJsonBodyMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchJsonBodyMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchJsonBodyMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementXssMatchStatementFieldToMatchJsonBodyMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementXssMatchStatementFieldToMatchJsonBodyMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementXssMatchStatementFieldToMatchJsonBodyMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementXssMatchStatementFieldToMatchJsonBodyMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementAsnMatchStatementArgs.Builder)
     /**
      * @param forwardedIpConfig Configuration for inspecting IP addresses in an HTTP header that you specify, instead of using the IP address that&#39;s reported by the web request origin. See Forwarded IP Config below for more details.
@@ -11075,7 +10593,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementAsnMatchStatementForwardedIpConfigArgs.builder
       builder.forwardedIpConfig(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementByteMatchStatementFieldToMatchJsonBodyArgs.Builder)
     /**
      * @param matchPattern The patterns to look for in the JSON body. You must specify exactly one setting: either `all` or `includedPaths`. See [JsonMatchPattern](https://docs.aws.amazon.com/waf/latest/APIReference/API_JsonMatchPattern.html) for details.
@@ -11086,7 +10603,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementByteMatchStatementFieldToMatchJsonBodyMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchHeaderArgs.Builder)
     /**
      * @param matchPattern Headers to inspect. See Headers Match Pattern below.
@@ -11097,14 +10613,12 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchHeaderMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementSqliMatchStatementFieldToMatchCookiesMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementSqliMatchStatementFieldToMatchCookiesMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementSqliMatchStatementFieldToMatchCookiesMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementSqliMatchStatementFieldToMatchCookiesMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchArgs.Builder)
     /**
      * @param allQueryArguments Inspect all query arguments.
@@ -11232,7 +10746,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchUriPathArgs.builder
       builder.uriPath(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementRuleActionOverrideArgs.Builder)
     /**
      * @param actionToUse Override action to use for the rule. See Action below.
@@ -11243,7 +10756,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementRuleActionOverrideActionToUseArgs.builder
       builder.actionToUse(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSqliMatchStatementFieldToMatchHeaderArgs.Builder)
     /**
      * @param matchPattern Headers to inspect. See Headers Match Pattern below.
@@ -11254,14 +10766,12 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSqliMatchStatementFieldToMatchHeaderMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAntiDdosRuleSetClientSideActionConfigChallengeArgs.Builder)
     def exemptUriRegularExpressions(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAntiDdosRuleSetClientSideActionConfigChallengeExemptUriRegularExpressionArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAntiDdosRuleSetClientSideActionConfigChallengeArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAntiDdosRuleSetClientSideActionConfigChallengeExemptUriRegularExpressionArgs.builder
       builder.exemptUriRegularExpressions(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexMatchStatementFieldToMatchHeaderArgs.Builder)
     /**
      * @param matchPattern Headers to inspect. See Headers Match Pattern below.
@@ -11272,7 +10782,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexMatchStatementFieldToMatchHeaderMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementRegexMatchStatementArgs.Builder)
     /**
      * @param fieldToMatch Part of the web request that you want WAF to inspect. See Field to Match below.
@@ -11292,14 +10801,12 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementRegexMatchStatementTextTransformationArgs.builder
       builder.textTransformations(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchCookiesMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchCookiesMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchCookiesMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchCookiesMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchJsonBodyArgs.Builder)
     /**
      * @param matchPattern JSON content to inspect. See JSON Body Match Pattern below.
@@ -11310,7 +10817,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchJsonBodyMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchCookiesArgs.Builder)
     /**
      * @param matchPatterns Cookies to inspect. See Cookies Match Pattern below.
@@ -11321,7 +10827,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchCookiesMatchPatternArgs.builder
       builder.matchPatterns(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementSizeConstraintStatementFieldToMatchArgs.Builder)
     /**
      * @param allQueryArguments Inspect all query arguments.
@@ -11449,7 +10954,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementSizeConstraintStatementFieldToMatchUriPathArgs.builder
       builder.uriPath(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementXssMatchStatementFieldToMatchHeaderMatchPatternArgs.Builder)
     /**
      * @param all An empty configuration block that is used for inspecting all headers.
@@ -11460,7 +10964,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementXssMatchStatementFieldToMatchHeaderMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementRuleActionOverrideActionToUseBlockArgs.Builder)
     /**
      * @param customResponse Custom response configuration. See Custom Response below.
@@ -11471,7 +10974,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementRuleActionOverrideActionToUseBlockCustomResponseArgs.builder
       builder.customResponse(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementByteMatchStatementFieldToMatchHeaderArgs.Builder)
     /**
      * @param matchPattern Headers to inspect. See Headers Match Pattern below.
@@ -11482,7 +10984,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementByteMatchStatementFieldToMatchHeaderMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementAndStatementArgs.Builder)
     /**
      * @param statements The statements to combine.
@@ -11493,7 +10994,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementArgs.builder
       builder.statements(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementRuleActionOverrideActionToUseCaptchaArgs.Builder)
     /**
      * @param customRequestHandling Custom request handling configuration. See Custom Request Handling below.
@@ -11504,7 +11004,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementRuleActionOverrideActionToUseCaptchaCustomRequestHandlingArgs.builder
       builder.customRequestHandling(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRuleGroupReferenceStatementRuleActionOverrideActionToUseBlockCustomResponseArgs.Builder)
     /**
      * @param responseHeaders Custom headers to include in the response. See Response Header below.
@@ -11515,7 +11014,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRuleGroupReferenceStatementRuleActionOverrideActionToUseBlockCustomResponseResponseHeaderArgs.builder
       builder.responseHeaders(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementSizeConstraintStatementFieldToMatchHeaderArgs.Builder)
     /**
      * @param matchPattern Headers to inspect. See Headers Match Pattern below.
@@ -11526,7 +11024,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementSizeConstraintStatementFieldToMatchHeaderMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchArgs.Builder)
     /**
      * @param allQueryArguments Inspect all query arguments.
@@ -11654,7 +11151,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchUriPathArgs.builder
       builder.uriPath(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupRuleActionOverrideActionToUseChallengeCustomRequestHandlingArgs.Builder)
     /**
      * @param insertHeaders Headers to insert into the request. See below.
@@ -11665,28 +11161,24 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupRuleActionOverrideActionToUseChallengeCustomRequestHandlingInsertHeaderArgs.builder
       builder.insertHeaders(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAntiDdosRuleSetArgs.Builder)
     def clientSideActionConfig(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAntiDdosRuleSetClientSideActionConfigArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAntiDdosRuleSetArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAntiDdosRuleSetClientSideActionConfigArgs.builder
       builder.clientSideActionConfig(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementCustomKeyUriPathArgs.Builder)
     def textTransformations(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementCustomKeyUriPathTextTransformationArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementCustomKeyUriPathArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementCustomKeyUriPathTextTransformationArgs.builder
       builder.textTransformations(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementXssMatchStatementFieldToMatchHeaderMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementXssMatchStatementFieldToMatchHeaderMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementXssMatchStatementFieldToMatchHeaderMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementXssMatchStatementFieldToMatchHeaderMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementCustomKeyArgs.Builder)
     def asn(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementCustomKeyAsnArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementCustomKeyArgs.Builder =
@@ -11792,7 +11284,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementCustomKeyUriPathArgs.builder
       builder.uriPath(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchHeaderMatchPatternArgs.Builder)
     /**
      * @param all An empty configuration block that is used for inspecting all headers.
@@ -11803,7 +11294,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchHeaderMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementSqliMatchStatementFieldToMatchHeaderArgs.Builder)
     /**
      * @param matchPattern Headers to inspect. See Headers Match Pattern below.
@@ -11814,21 +11304,18 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementSqliMatchStatementFieldToMatchHeaderMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRegexPatternSetReferenceStatementFieldToMatchJsonBodyMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRegexPatternSetReferenceStatementFieldToMatchJsonBodyMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRegexPatternSetReferenceStatementFieldToMatchJsonBodyMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRegexPatternSetReferenceStatementFieldToMatchJsonBodyMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementByteMatchStatementFieldToMatchJsonBodyMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementByteMatchStatementFieldToMatchJsonBodyMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementByteMatchStatementFieldToMatchJsonBodyMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementByteMatchStatementFieldToMatchJsonBodyMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchCookiesArgs.Builder)
     /**
      * @param matchPatterns Cookies to inspect. See Cookies Match Pattern below.
@@ -11839,7 +11326,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchCookiesMatchPatternArgs.builder
       builder.matchPatterns(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRuleGroupReferenceStatementRuleActionOverrideActionToUseCaptchaArgs.Builder)
     /**
      * @param customRequestHandling Custom request handling configuration. See Custom Request Handling below.
@@ -11850,7 +11336,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRuleGroupReferenceStatementRuleActionOverrideActionToUseCaptchaCustomRequestHandlingArgs.builder
       builder.customRequestHandling(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRuleGroupReferenceStatementRuleActionOverrideActionToUseCaptchaCustomRequestHandlingArgs.Builder)
     /**
      * @param insertHeaders Custom headers to insert into the request. See Insert Header below.
@@ -11861,7 +11346,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRuleGroupReferenceStatementRuleActionOverrideActionToUseCaptchaCustomRequestHandlingInsertHeaderArgs.builder
       builder.insertHeaders(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementFieldToMatchJsonBodyArgs.Builder)
     /**
      * @param matchPattern JSON content to inspect. See JSON Body Match Pattern below.
@@ -11872,7 +11356,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementFieldToMatchJsonBodyMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchHeaderArgs.Builder)
     /**
      * @param matchPattern Headers to inspect. See Headers Match Pattern below.
@@ -11883,7 +11366,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchHeaderMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementRuleActionOverrideActionToUseChallengeCustomRequestHandlingArgs.Builder)
     /**
      * @param insertHeaders Custom headers to insert into the request. See Insert Header below.
@@ -11894,7 +11376,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementRuleActionOverrideActionToUseChallengeCustomRequestHandlingInsertHeaderArgs.builder
       builder.insertHeaders(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementArgs.Builder)
     def managedRuleGroupConfigs(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementManagedRuleGroupConfigArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementArgs.Builder =
@@ -11919,7 +11400,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementArgs.builder
       builder.scopeDownStatement(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementSqliMatchStatementFieldToMatchJsonBodyArgs.Builder)
     /**
      * @param matchPattern JSON content to inspect. See JSON Body Match Pattern below.
@@ -11930,7 +11410,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementSqliMatchStatementFieldToMatchJsonBodyMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupRuleActionOverrideActionToUseCaptchaCustomRequestHandlingArgs.Builder)
     /**
      * @param insertHeaders Headers to insert into the request. See below.
@@ -11941,7 +11420,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupRuleActionOverrideActionToUseCaptchaCustomRequestHandlingInsertHeaderArgs.builder
       builder.insertHeaders(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementAndStatementArgs.Builder)
     /**
      * @param statements The statements to combine.
@@ -11952,14 +11430,12 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementArgs.builder
       builder.statements(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRegexMatchStatementFieldToMatchJsonBodyMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRegexMatchStatementFieldToMatchJsonBodyMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRegexMatchStatementFieldToMatchJsonBodyMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRegexMatchStatementFieldToMatchJsonBodyMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchCookiesArgs.Builder)
     /**
      * @param matchPatterns Cookies to inspect. See Cookies Match Pattern below.
@@ -11970,7 +11446,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchCookiesMatchPatternArgs.builder
       builder.matchPatterns(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchHeaderArgs.Builder)
     /**
      * @param matchPattern Headers to inspect. See Headers Match Pattern below.
@@ -11981,21 +11456,18 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchHeaderMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRateBasedStatementCustomKeyUriPathArgs.Builder)
     def textTransformations(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRateBasedStatementCustomKeyUriPathTextTransformationArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRateBasedStatementCustomKeyUriPathArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRateBasedStatementCustomKeyUriPathTextTransformationArgs.builder
       builder.textTransformations(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementFieldToMatchJsonBodyMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementFieldToMatchJsonBodyMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementFieldToMatchJsonBodyMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementFieldToMatchJsonBodyMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementRegexMatchStatementFieldToMatchHeaderArgs.Builder)
     /**
      * @param matchPattern Headers to inspect. See Headers Match Pattern below.
@@ -12006,7 +11478,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementRegexMatchStatementFieldToMatchHeaderMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchJsonBodyArgs.Builder)
     /**
      * @param matchPattern JSON content to inspect. See JSON Body Match Pattern below.
@@ -12017,7 +11488,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchJsonBodyMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementAndStatementArgs.Builder)
     /**
      * @param statements The statements to combine.
@@ -12028,7 +11498,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementArgs.builder
       builder.statements(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementXssMatchStatementFieldToMatchHeaderArgs.Builder)
     /**
      * @param matchPattern Headers to inspect. See Headers Match Pattern below.
@@ -12039,14 +11508,12 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementXssMatchStatementFieldToMatchHeaderMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementFieldToMatchJsonBodyMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementFieldToMatchJsonBodyMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementFieldToMatchJsonBodyMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementFieldToMatchJsonBodyMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRuleGroupReferenceStatementRuleActionOverrideArgs.Builder)
     /**
      * @param actionToUse Override action to use for the rule. See Action below.
@@ -12057,7 +11524,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRuleGroupReferenceStatementRuleActionOverrideActionToUseArgs.builder
       builder.actionToUse(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAcfpRuleSetResponseInspectionArgs.Builder)
     def bodyContains(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAcfpRuleSetResponseInspectionBodyContainsArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAcfpRuleSetResponseInspectionArgs.Builder =
@@ -12083,7 +11549,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAcfpRuleSetResponseInspectionStatusCodeArgs.builder
       builder.statusCode(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementGeoMatchStatementArgs.Builder)
     /**
      * @param forwardedIpConfig Configuration for inspecting forwarded IP headers. See Forwarded IP Config below.
@@ -12094,7 +11559,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementGeoMatchStatementForwardedIpConfigArgs.builder
       builder.forwardedIpConfig(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRegexPatternSetReferenceStatementFieldToMatchArgs.Builder)
     /**
      * @param allQueryArguments Inspect all query arguments.
@@ -12222,7 +11686,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRegexPatternSetReferenceStatementFieldToMatchUriPathArgs.builder
       builder.uriPath(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementIpSetReferenceStatementArgs.Builder)
     /**
      * @param ipSetForwardedIpConfig The configuration for inspecting IP addresses in an HTTP header that you specify, instead of using the IP address that&#39;s reported by the web request origin. See IPSet Forwarded IP Config below for more details.
@@ -12233,7 +11696,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementIpSetReferenceStatementIpSetForwardedIpConfigArgs.builder
       builder.ipSetForwardedIpConfig(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRuleGroupReferenceStatementRuleActionOverrideActionToUseCountArgs.Builder)
     /**
      * @param customRequestHandling Custom request handling configuration. See Custom Request Handling below.
@@ -12244,7 +11706,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRuleGroupReferenceStatementRuleActionOverrideActionToUseCountCustomRequestHandlingArgs.builder
       builder.customRequestHandling(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementArgs.Builder)
     /**
      * @param asnMatchStatement Match requests based on Autonomous System Number (ASN). See ASN Match Statement above.
@@ -12336,7 +11797,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementXssMatchStatementArgs.builder
       builder.xssMatchStatement(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementByteMatchStatementFieldToMatchArgs.Builder)
     /**
      * @param allQueryArguments Inspect all query arguments.
@@ -12464,7 +11924,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementByteMatchStatementFieldToMatchUriPathArgs.builder
       builder.uriPath(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementSqliMatchStatementFieldToMatchJsonBodyArgs.Builder)
     /**
      * @param matchPattern JSON content to inspect. See JSON Body Match Pattern below.
@@ -12475,7 +11934,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementSqliMatchStatementFieldToMatchJsonBodyMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementRuleActionOverrideActionToUseAllowArgs.Builder)
     /**
      * @param customRequestHandling Custom request handling configuration. See Custom Request Handling below.
@@ -12486,7 +11944,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementRuleActionOverrideActionToUseAllowCustomRequestHandlingArgs.builder
       builder.customRequestHandling(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclDataProtectionConfigArgs.Builder)
     /**
      * @param dataProtections A block for data protection configurations for specific web request field types. See `dataProtection` block for details.
@@ -12497,7 +11954,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclDataProtectionConfigDataProtectionArgs.builder
       builder.dataProtections(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchHeaderArgs.Builder)
     /**
      * @param matchPattern Headers to inspect. See Headers Match Pattern below.
@@ -12508,14 +11964,12 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchHeaderMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRegexMatchStatementFieldToMatchHeaderMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRegexMatchStatementFieldToMatchHeaderMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRegexMatchStatementFieldToMatchHeaderMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRegexMatchStatementFieldToMatchHeaderMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchArgs.Builder)
     /**
      * @param allQueryArguments Inspect all query arguments.
@@ -12643,7 +12097,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchUriPathArgs.builder
       builder.uriPath(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchArgs.Builder)
     /**
      * @param allQueryArguments Inspect all query arguments.
@@ -12771,7 +12224,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchUriPathArgs.builder
       builder.uriPath(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementSqliMatchStatementFieldToMatchCookiesArgs.Builder)
     /**
      * @param matchPatterns Cookies to inspect. See Cookies Match Pattern below.
@@ -12782,7 +12234,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementSqliMatchStatementFieldToMatchCookiesMatchPatternArgs.builder
       builder.matchPatterns(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementByteMatchStatementFieldToMatchCookiesArgs.Builder)
     /**
      * @param matchPatterns Cookies to inspect. See Cookies Match Pattern below.
@@ -12793,7 +12244,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementByteMatchStatementFieldToMatchCookiesMatchPatternArgs.builder
       builder.matchPatterns(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementRegexMatchStatementFieldToMatchCookiesArgs.Builder)
     /**
      * @param matchPatterns Cookies to inspect. See Cookies Match Pattern below.
@@ -12804,7 +12254,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementRegexMatchStatementFieldToMatchCookiesMatchPatternArgs.builder
       builder.matchPatterns(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRuleGroupReferenceStatementArgs.Builder)
     /**
      * @param excludedRules Rules to exclude from the rule group. See Excluded Rule below.
@@ -12824,14 +12273,12 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRuleGroupReferenceStatementRuleActionOverrideArgs.builder
       builder.ruleActionOverrides(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchJsonBodyMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchJsonBodyMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchJsonBodyMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchJsonBodyMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchArgs.Builder)
     /**
      * @param allQueryArguments Inspect all query arguments.
@@ -12959,7 +12406,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchUriPathArgs.builder
       builder.uriPath(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementIpSetReferenceStatementArgs.Builder)
     /**
      * @param ipSetForwardedIpConfig The configuration for inspecting IP addresses in an HTTP header that you specify, instead of using the IP address that&#39;s reported by the web request origin. See IPSet Forwarded IP Config below for more details.
@@ -12970,7 +12416,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementIpSetReferenceStatementIpSetForwardedIpConfigArgs.builder
       builder.ipSetForwardedIpConfig(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRuleGroupReferenceStatementRuleActionOverrideActionToUseCaptchaCustomRequestHandlingArgs.Builder)
     /**
      * @param insertHeaders Custom headers to insert into the request. See Insert Header below.
@@ -12981,14 +12426,12 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRuleGroupReferenceStatementRuleActionOverrideActionToUseCaptchaCustomRequestHandlingInsertHeaderArgs.builder
       builder.insertHeaders(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchHeaderMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchHeaderMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchHeaderMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchHeaderMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementRuleActionOverrideActionToUseBlockArgs.Builder)
     /**
      * @param customResponse Custom response configuration. See Custom Response below.
@@ -12999,7 +12442,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementRuleActionOverrideActionToUseBlockCustomResponseArgs.builder
       builder.customResponse(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementAsnMatchStatementArgs.Builder)
     /**
      * @param forwardedIpConfig Configuration for inspecting IP addresses in an HTTP header instead of using the web request origin. See Forwarded IP Config below.
@@ -13010,7 +12452,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementAsnMatchStatementForwardedIpConfigArgs.builder
       builder.forwardedIpConfig(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchArgs.Builder)
     /**
      * @param allQueryArguments Inspect all query arguments.
@@ -13138,7 +12579,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchUriPathArgs.builder
       builder.uriPath(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementByteMatchStatementFieldToMatchHeaderArgs.Builder)
     /**
      * @param matchPattern Headers to inspect. See Headers Match Pattern below.
@@ -13149,7 +12589,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementByteMatchStatementFieldToMatchHeaderMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchCookiesArgs.Builder)
     /**
      * @param matchPatterns Cookies to inspect. See Cookies Match Pattern below.
@@ -13160,7 +12599,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchCookiesMatchPatternArgs.builder
       builder.matchPatterns(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRuleGroupReferenceStatementRuleActionOverrideActionToUseBlockArgs.Builder)
     /**
      * @param customResponse Custom response configuration. See Custom Response below.
@@ -13171,7 +12609,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRuleGroupReferenceStatementRuleActionOverrideActionToUseBlockCustomResponseArgs.builder
       builder.customResponse(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleActionArgs.Builder)
     /**
      * @param allow Instructs AWS WAF to allow the web request. See Allow below for details.
@@ -13218,7 +12655,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleActionCountArgs.builder
       builder.count(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementRuleActionOverrideActionToUseAllowCustomRequestHandlingArgs.Builder)
     /**
      * @param insertHeaders Custom headers to insert into the request. See Insert Header below.
@@ -13229,7 +12665,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementRuleActionOverrideActionToUseAllowCustomRequestHandlingInsertHeaderArgs.builder
       builder.insertHeaders(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementXssMatchStatementFieldToMatchJsonBodyArgs.Builder)
     /**
      * @param matchPattern JSON content to inspect. See JSON Body Match Pattern below.
@@ -13240,7 +12675,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementXssMatchStatementFieldToMatchJsonBodyMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclDefaultActionBlockArgs.Builder)
     /**
      * @param customResponse Defines a custom response for the web request. See `customResponse` below for details.
@@ -13251,7 +12685,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclDefaultActionBlockCustomResponseArgs.builder
       builder.customResponse(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchHeaderArgs.Builder)
     /**
      * @param matchPattern Headers to inspect. See Headers Match Pattern below.
@@ -13262,14 +12695,12 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchHeaderMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchJsonBodyMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchJsonBodyMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchJsonBodyMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchJsonBodyMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRuleGroupReferenceStatementRuleActionOverrideActionToUseCaptchaCustomRequestHandlingArgs.Builder)
     /**
      * @param insertHeaders Custom headers to insert into the request. See Insert Header below.
@@ -13280,7 +12711,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRuleGroupReferenceStatementRuleActionOverrideActionToUseCaptchaCustomRequestHandlingInsertHeaderArgs.builder
       builder.insertHeaders(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexPatternSetReferenceStatementArgs.Builder)
     /**
      * @param fieldToMatch Part of the web request that you want WAF to inspect. See Field to Match below.
@@ -13300,7 +12730,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexPatternSetReferenceStatementTextTransformationArgs.builder
       builder.textTransformations(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementIpSetReferenceStatementArgs.Builder)
     /**
      * @param ipSetForwardedIpConfig Configuration for inspecting forwarded IP headers. See IP Set Forwarded IP Config below.
@@ -13311,7 +12740,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementIpSetReferenceStatementIpSetForwardedIpConfigArgs.builder
       builder.ipSetForwardedIpConfig(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementRuleActionOverrideActionToUseBlockArgs.Builder)
     /**
      * @param customResponse Custom response configuration. See Custom Response below.
@@ -13322,7 +12750,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementRuleActionOverrideActionToUseBlockCustomResponseArgs.builder
       builder.customResponse(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchHeaderMatchPatternArgs.Builder)
     /**
      * @param all An empty configuration block that is used for inspecting all headers.
@@ -13333,7 +12760,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchHeaderMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementSizeConstraintStatementFieldToMatchCookiesArgs.Builder)
     /**
      * @param matchPatterns Cookies to inspect. See Cookies Match Pattern below.
@@ -13344,7 +12770,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementSizeConstraintStatementFieldToMatchCookiesMatchPatternArgs.builder
       builder.matchPatterns(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexMatchStatementArgs.Builder)
     /**
      * @param fieldToMatch Part of the web request that you want WAF to inspect. See Field to Match below.
@@ -13364,7 +12789,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexMatchStatementTextTransformationArgs.builder
       builder.textTransformations(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementSqliMatchStatementFieldToMatchJsonBodyArgs.Builder)
     /**
      * @param matchPattern JSON content to inspect. See JSON Body Match Pattern below.
@@ -13375,7 +12799,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementSqliMatchStatementFieldToMatchJsonBodyMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementFieldToMatchArgs.Builder)
     /**
      * @param allQueryArguments Inspect all query arguments.
@@ -13503,21 +12926,18 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementFieldToMatchUriPathArgs.builder
       builder.uriPath(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchCookiesMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchCookiesMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchCookiesMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchCookiesMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementXssMatchStatementFieldToMatchCookiesMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementXssMatchStatementFieldToMatchCookiesMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementXssMatchStatementFieldToMatchCookiesMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementXssMatchStatementFieldToMatchCookiesMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchJsonBodyArgs.Builder)
     /**
      * @param matchPattern JSON content to inspect. See JSON Body Match Pattern below.
@@ -13528,28 +12948,24 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchJsonBodyMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementXssMatchStatementFieldToMatchJsonBodyMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementXssMatchStatementFieldToMatchJsonBodyMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementXssMatchStatementFieldToMatchJsonBodyMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementXssMatchStatementFieldToMatchJsonBodyMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSqliMatchStatementFieldToMatchHeaderMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSqliMatchStatementFieldToMatchHeaderMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSqliMatchStatementFieldToMatchHeaderMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSqliMatchStatementFieldToMatchHeaderMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementSqliMatchStatementFieldToMatchCookiesMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementSqliMatchStatementFieldToMatchCookiesMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementSqliMatchStatementFieldToMatchCookiesMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementSqliMatchStatementFieldToMatchCookiesMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAcfpRuleSetRequestInspectionArgs.Builder)
     def addressFields(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAcfpRuleSetRequestInspectionAddressFieldsArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAcfpRuleSetRequestInspectionArgs.Builder =
@@ -13576,7 +12992,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAcfpRuleSetRequestInspectionUsernameFieldArgs.builder
       builder.usernameField(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexPatternSetReferenceStatementFieldToMatchArgs.Builder)
     /**
      * @param allQueryArguments Inspect all query arguments.
@@ -13704,14 +13119,12 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexPatternSetReferenceStatementFieldToMatchUriPathArgs.builder
       builder.uriPath(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementCustomKeyQueryStringArgs.Builder)
     def textTransformations(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementCustomKeyQueryStringTextTransformationArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementCustomKeyQueryStringArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementCustomKeyQueryStringTextTransformationArgs.builder
       builder.textTransformations(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexMatchStatementFieldToMatchHeaderMatchPatternArgs.Builder)
     /**
      * @param all An empty configuration block that is used for inspecting all headers.
@@ -13722,7 +13135,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexMatchStatementFieldToMatchHeaderMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementCustomKeyArgs.Builder)
     def asn(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementCustomKeyAsnArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementCustomKeyArgs.Builder =
@@ -13828,7 +13240,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementCustomKeyUriPathArgs.builder
       builder.uriPath(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRateBasedStatementScopeDownStatementSqliMatchStatementArgs.Builder)
     def fieldToMatch(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRateBasedStatementScopeDownStatementSqliMatchStatementArgs.Builder =
@@ -13840,7 +13251,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRateBasedStatementScopeDownStatementSqliMatchStatementTextTransformationArgs.builder
       builder.textTransformations(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementRuleActionOverrideActionToUseCaptchaArgs.Builder)
     /**
      * @param customRequestHandling Custom request handling configuration. See Custom Request Handling below.
@@ -13851,7 +13261,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementRuleActionOverrideActionToUseCaptchaCustomRequestHandlingArgs.builder
       builder.customRequestHandling(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchCookiesArgs.Builder)
     /**
      * @param matchPatterns Cookies to inspect. See Cookies Match Pattern below.
@@ -13862,21 +13271,18 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchCookiesMatchPatternArgs.builder
       builder.matchPatterns(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchHeaderMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchHeaderMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchHeaderMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchHeaderMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementSqliMatchStatementFieldToMatchJsonBodyMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementSqliMatchStatementFieldToMatchJsonBodyMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementSqliMatchStatementFieldToMatchJsonBodyMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementSqliMatchStatementFieldToMatchJsonBodyMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchCookiesArgs.Builder)
     /**
      * @param matchPatterns Cookies to inspect. See Cookies Match Pattern below.
@@ -13887,7 +13293,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchCookiesMatchPatternArgs.builder
       builder.matchPatterns(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchArgs.Builder)
     /**
      * @param allQueryArguments Inspect all query arguments.
@@ -14015,14 +13420,12 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchUriPathArgs.builder
       builder.uriPath(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementByteMatchStatementFieldToMatchHeaderMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementByteMatchStatementFieldToMatchHeaderMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementByteMatchStatementFieldToMatchHeaderMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementByteMatchStatementFieldToMatchHeaderMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementSqliMatchStatementFieldToMatchArgs.Builder)
     /**
      * @param allQueryArguments Inspect all query arguments.
@@ -14150,14 +13553,12 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementSqliMatchStatementFieldToMatchUriPathArgs.builder
       builder.uriPath(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementByteMatchStatementFieldToMatchCookiesMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementByteMatchStatementFieldToMatchCookiesMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementByteMatchStatementFieldToMatchCookiesMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementByteMatchStatementFieldToMatchCookiesMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementByteMatchStatementFieldToMatchHeaderArgs.Builder)
     /**
      * @param matchPattern Headers to inspect. See Headers Match Pattern below.
@@ -14168,7 +13569,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementByteMatchStatementFieldToMatchHeaderMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementIpSetReferenceStatementArgs.Builder)
     /**
      * @param ipSetForwardedIpConfig Configuration for inspecting forwarded IP headers. See IP Set Forwarded IP Config below.
@@ -14179,7 +13579,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementIpSetReferenceStatementIpSetForwardedIpConfigArgs.builder
       builder.ipSetForwardedIpConfig(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRuleGroupReferenceStatementRuleActionOverrideActionToUseAllowArgs.Builder)
     /**
      * @param customRequestHandling Custom request handling configuration. See Custom Request Handling below.
@@ -14190,7 +13589,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRuleGroupReferenceStatementRuleActionOverrideActionToUseAllowCustomRequestHandlingArgs.builder
       builder.customRequestHandling(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementRuleActionOverrideActionToUseBlockCustomResponseArgs.Builder)
     /**
      * @param responseHeaders Custom headers to include in the response. See Response Header below.
@@ -14201,7 +13599,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementRuleActionOverrideActionToUseBlockCustomResponseResponseHeaderArgs.builder
       builder.responseHeaders(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchArgs.Builder)
     /**
      * @param allQueryArguments Inspect all query arguments.
@@ -14329,7 +13726,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchUriPathArgs.builder
       builder.uriPath(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementRuleActionOverrideActionToUseCountArgs.Builder)
     /**
      * @param customRequestHandling Custom request handling configuration. See Custom Request Handling below.
@@ -14340,14 +13736,12 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementRuleActionOverrideActionToUseCountCustomRequestHandlingArgs.builder
       builder.customRequestHandling(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchCookiesMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchCookiesMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchCookiesMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchCookiesMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementRuleActionOverrideActionToUseArgs.Builder)
     /**
      * @param allow Allow the request. See Allow below.
@@ -14390,7 +13784,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementRuleActionOverrideActionToUseCountArgs.builder
       builder.count(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementRuleActionOverrideArgs.Builder)
     /**
      * @param actionToUse Override action to use for the rule. See Action below.
@@ -14401,7 +13794,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementRuleActionOverrideActionToUseArgs.builder
       builder.actionToUse(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementSizeConstraintStatementArgs.Builder)
     /**
      * @param fieldToMatch Part of the web request that you want WAF to inspect. See Field to Match below.
@@ -14421,7 +13813,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementSizeConstraintStatementTextTransformationArgs.builder
       builder.textTransformations(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementGeoMatchStatementArgs.Builder)
     /**
      * @param forwardedIpConfig The configuration for inspecting IP addresses in an HTTP header that you specify, instead of using the IP address that&#39;s reported by the web request origin. See Forwarded IP Config below for details.
@@ -14432,7 +13823,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementGeoMatchStatementForwardedIpConfigArgs.builder
       builder.forwardedIpConfig(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementCustomKeyQueryStringArgs.Builder)
     /**
      * @param textTransformations Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection. They are used in rate-based rule statements, to transform request components before using them as custom aggregation keys. Atleast one transformation is required. See Text Transformation above for details.
@@ -14443,7 +13833,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementCustomKeyQueryStringTextTransformationArgs.builder
       builder.textTransformations(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchJsonBodyArgs.Builder)
     /**
      * @param matchPattern JSON content to inspect. See JSON Body Match Pattern below.
@@ -14454,7 +13843,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchJsonBodyMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementSqliMatchStatementFieldToMatchHeaderArgs.Builder)
     /**
      * @param matchPattern Headers to inspect. See Headers Match Pattern below.
@@ -14465,7 +13853,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementSqliMatchStatementFieldToMatchHeaderMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementXssMatchStatementArgs.Builder)
     def fieldToMatch(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementXssMatchStatementArgs.Builder =
@@ -14477,7 +13864,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementXssMatchStatementTextTransformationArgs.builder
       builder.textTransformations(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRuleGroupReferenceStatementRuleActionOverrideActionToUseCountCustomRequestHandlingArgs.Builder)
     /**
      * @param insertHeaders Custom headers to insert into the request. See Insert Header below.
@@ -14488,7 +13874,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRuleGroupReferenceStatementRuleActionOverrideActionToUseCountCustomRequestHandlingInsertHeaderArgs.builder
       builder.insertHeaders(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchJsonBodyMatchPatternArgs.Builder)
     /**
      * @param all An empty configuration block that is used for inspecting all headers.
@@ -14499,7 +13884,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchJsonBodyMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchHeaderMatchPatternArgs.Builder)
     /**
      * @param all An empty configuration block that is used for inspecting all headers.
@@ -14510,14 +13894,12 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchHeaderMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAntiDdosRuleSetArgs.Builder)
     def clientSideActionConfig(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAntiDdosRuleSetClientSideActionConfigArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAntiDdosRuleSetArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAntiDdosRuleSetClientSideActionConfigArgs.builder
       builder.clientSideActionConfig(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementOrStatementArgs.Builder)
     /**
      * @param statements The statements to combine.
@@ -14528,7 +13910,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementArgs.builder
       builder.statements(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAtpRuleSetResponseInspectionArgs.Builder)
     def bodyContains(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAtpRuleSetResponseInspectionBodyContainsArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAtpRuleSetResponseInspectionArgs.Builder =
@@ -14554,7 +13935,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAtpRuleSetResponseInspectionStatusCodeArgs.builder
       builder.statusCode(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementArgs.Builder)
     /**
      * @param asnMatchStatement Match requests based on Autonomous System Number (ASN). See ASN Match Statement above.
@@ -14646,14 +14026,12 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementArgs.builder
       builder.xssMatchStatement(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementFieldToMatchHeaderMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementFieldToMatchHeaderMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementFieldToMatchHeaderMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementFieldToMatchHeaderMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchCookiesArgs.Builder)
     /**
      * @param matchPatterns The filter to use to identify the subset of cookies to inspect in a web request. You must specify exactly one setting: either `all`, `includedCookies` or `excludedCookies`. More details: [CookieMatchPattern](https://docs.aws.amazon.com/waf/latest/APIReference/API_CookieMatchPattern.html)
@@ -14664,7 +14042,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchCookiesMatchPatternArgs.builder
       builder.matchPatterns(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchJsonBodyArgs.Builder)
     /**
      * @param matchPattern JSON content to inspect. See JSON Body Match Pattern below.
@@ -14675,7 +14052,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchJsonBodyMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementByteMatchStatementArgs.Builder)
     /**
      * @param fieldToMatch Part of the web request that you want WAF to inspect. See Field to Match below.
@@ -14695,7 +14071,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementByteMatchStatementTextTransformationArgs.builder
       builder.textTransformations(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationRuleGroupReferenceArgs.Builder)
     /**
      * @param ruleActionOverrides Override actions for specific rules within the rule group. See below.
@@ -14706,7 +14081,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationRuleGroupReferenceRuleActionOverrideArgs.builder
       builder.ruleActionOverrides(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupRuleActionOverrideActionToUseArgs.Builder)
     /**
      * @param allow Allow the request. See below.
@@ -14753,7 +14127,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupRuleActionOverrideActionToUseCountArgs.builder
       builder.count(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchArgs.Builder)
     /**
      * @param allQueryArguments Inspect all query arguments.
@@ -14881,7 +14254,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchUriPathArgs.builder
       builder.uriPath(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchArgs.Builder)
     /**
      * @param allQueryArguments Inspect all query arguments.
@@ -15009,7 +14381,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchUriPathArgs.builder
       builder.uriPath(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementXssMatchStatementFieldToMatchJsonBodyArgs.Builder)
     /**
      * @param matchPattern The patterns to look for in the JSON body. You must specify exactly one setting: either `all` or `includedPaths`. See [JsonMatchPattern](https://docs.aws.amazon.com/waf/latest/APIReference/API_JsonMatchPattern.html) for details.
@@ -15020,7 +14391,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementXssMatchStatementFieldToMatchJsonBodyMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationState.Builder)
     /**
      * @param managedRuleGroup Managed Rule Group configuration. One of `ruleGroupReference` or `managedRuleGroup` is required. Conflicts with `ruleGroupReference`. See below.
@@ -15054,7 +14424,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationVisibilityConfigArgs.builder
       builder.visibilityConfig(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleActionBlockArgs.Builder)
     /**
      * @param customResponse Defines a custom response for the web request. See Custom Response below for details.
@@ -15065,7 +14434,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleActionBlockCustomResponseArgs.builder
       builder.customResponse(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchHeaderArgs.Builder)
     /**
      * @param matchPattern Headers to inspect. See Headers Match Pattern below.
@@ -15076,7 +14444,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchHeaderMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementXssMatchStatementFieldToMatchCookiesArgs.Builder)
     /**
      * @param matchPatterns Cookies to inspect. See Cookies Match Pattern below.
@@ -15087,7 +14454,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementXssMatchStatementFieldToMatchCookiesMatchPatternArgs.builder
       builder.matchPatterns(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRegexPatternSetReferenceStatementArgs.Builder)
     /**
      * @param fieldToMatch Part of the web request that you want WAF to inspect. See Field to Match below.
@@ -15107,7 +14473,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRegexPatternSetReferenceStatementTextTransformationArgs.builder
       builder.textTransformations(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementSizeConstraintStatementFieldToMatchCookiesArgs.Builder)
     /**
      * @param matchPatterns Cookies to inspect. See Cookies Match Pattern below.
@@ -15118,7 +14483,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementSizeConstraintStatementFieldToMatchCookiesMatchPatternArgs.builder
       builder.matchPatterns(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchJsonBodyArgs.Builder)
     /**
      * @param matchPattern JSON content to inspect. See JSON Body Match Pattern below.
@@ -15129,7 +14493,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchJsonBodyMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchHeaderArgs.Builder)
     /**
      * @param matchPattern Headers to inspect. See Headers Match Pattern below.
@@ -15140,7 +14503,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchHeaderMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationRuleGroupReferenceRuleActionOverrideActionToUseAllowCustomRequestHandlingArgs.Builder)
     /**
      * @param insertHeaders Headers to insert into the request. See below.
@@ -15151,14 +14513,12 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationRuleGroupReferenceRuleActionOverrideActionToUseAllowCustomRequestHandlingInsertHeaderArgs.builder
       builder.insertHeaders(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementSizeConstraintStatementFieldToMatchCookiesMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementSizeConstraintStatementFieldToMatchCookiesMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementSizeConstraintStatementFieldToMatchCookiesMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementSizeConstraintStatementFieldToMatchCookiesMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementByteMatchStatementFieldToMatchArgs.Builder)
     /**
      * @param allQueryArguments Inspect all query arguments.
@@ -15286,7 +14646,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementByteMatchStatementFieldToMatchUriPathArgs.builder
       builder.uriPath(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementSqliMatchStatementFieldToMatchJsonBodyArgs.Builder)
     /**
      * @param matchPattern JSON content to inspect. See JSON Body Match Pattern below.
@@ -15297,14 +14656,12 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementSqliMatchStatementFieldToMatchJsonBodyMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRateBasedStatementCustomKeyHeaderArgs.Builder)
     def textTransformations(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRateBasedStatementCustomKeyHeaderTextTransformationArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRateBasedStatementCustomKeyHeaderArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRateBasedStatementCustomKeyHeaderTextTransformationArgs.builder
       builder.textTransformations(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchJsonBodyArgs.Builder)
     /**
      * @param matchPattern JSON content to inspect. See JSON Body Match Pattern below.
@@ -15315,7 +14672,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchJsonBodyMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementManagedRuleGroupConfigArgs.Builder)
     def awsManagedRulesAcfpRuleSet(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAcfpRuleSetArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementManagedRuleGroupConfigArgs.Builder =
@@ -15355,14 +14711,12 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementManagedRuleGroupConfigUsernameFieldArgs.builder
       builder.usernameField(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementSizeConstraintStatementFieldToMatchJsonBodyMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementSizeConstraintStatementFieldToMatchJsonBodyMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementSizeConstraintStatementFieldToMatchJsonBodyMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementSizeConstraintStatementFieldToMatchJsonBodyMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexPatternSetReferenceStatementFieldToMatchJsonBodyArgs.Builder)
     /**
      * @param matchPattern JSON content to inspect. See JSON Body Match Pattern below.
@@ -15373,7 +14727,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexPatternSetReferenceStatementFieldToMatchJsonBodyMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRuleGroupReferenceStatementRuleActionOverrideActionToUseChallengeCustomRequestHandlingArgs.Builder)
     /**
      * @param insertHeaders Custom headers to insert into the request. See Insert Header below.
@@ -15384,21 +14737,18 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRuleGroupReferenceStatementRuleActionOverrideActionToUseChallengeCustomRequestHandlingInsertHeaderArgs.builder
       builder.insertHeaders(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementSqliMatchStatementFieldToMatchJsonBodyMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementSqliMatchStatementFieldToMatchJsonBodyMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementSqliMatchStatementFieldToMatchJsonBodyMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementSqliMatchStatementFieldToMatchJsonBodyMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchHeaderMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchHeaderMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchHeaderMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchHeaderMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationRuleGroupReferenceRuleActionOverrideActionToUseBlockCustomResponseArgs.Builder)
     /**
      * @param responseHeaders Headers to include in the response. See below.
@@ -15409,7 +14759,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationRuleGroupReferenceRuleActionOverrideActionToUseBlockCustomResponseResponseHeaderArgs.builder
       builder.responseHeaders(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRuleGroupReferenceStatementRuleActionOverrideActionToUseChallengeArgs.Builder)
     /**
      * @param customRequestHandling Custom request handling configuration. See Custom Request Handling below.
@@ -15420,7 +14769,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRuleGroupReferenceStatementRuleActionOverrideActionToUseChallengeCustomRequestHandlingArgs.builder
       builder.customRequestHandling(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAtpRuleSetRequestInspectionArgs.Builder)
     def passwordField(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAtpRuleSetRequestInspectionPasswordFieldArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAtpRuleSetRequestInspectionArgs.Builder =
@@ -15432,7 +14780,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAtpRuleSetRequestInspectionUsernameFieldArgs.builder
       builder.usernameField(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchJsonBodyArgs.Builder)
     /**
      * @param matchPattern The patterns to look for in the JSON body. You must specify exactly one setting: either `all` or `includedPaths`. See [JsonMatchPattern](https://docs.aws.amazon.com/waf/latest/APIReference/API_JsonMatchPattern.html) for details.
@@ -15443,7 +14790,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchJsonBodyMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementCustomKeyHeaderArgs.Builder)
     /**
      * @param textTransformations Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection. They are used in rate-based rule statements, to transform request components before using them as custom aggregation keys. Atleast one transformation is required. See Text Transformation above for details.
@@ -15454,7 +14800,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementCustomKeyHeaderTextTransformationArgs.builder
       builder.textTransformations(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchArgs.Builder)
     /**
      * @param allQueryArguments Inspect all query arguments.
@@ -15582,7 +14927,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchUriPathArgs.builder
       builder.uriPath(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleActionBlockCustomResponseArgs.Builder)
     /**
      * @param responseHeaders Custom headers to include in the response. See Response Header below.
@@ -15593,7 +14937,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleActionBlockCustomResponseResponseHeaderArgs.builder
       builder.responseHeaders(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementSizeConstraintStatementFieldToMatchJsonBodyArgs.Builder)
     /**
      * @param matchPattern JSON content to inspect. See JSON Body Match Pattern below.
@@ -15604,7 +14947,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementSizeConstraintStatementFieldToMatchJsonBodyMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementSqliMatchStatementFieldToMatchJsonBodyArgs.Builder)
     /**
      * @param matchPattern JSON content to inspect. See JSON Body Match Pattern below.
@@ -15615,7 +14957,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementSqliMatchStatementFieldToMatchJsonBodyMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleOverrideActionArgs.Builder)
     /**
      * @param count Override the rule action with count.
@@ -15635,7 +14976,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleOverrideActionNoneArgs.builder
       builder.none(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementRuleActionOverrideActionToUseBlockArgs.Builder)
     /**
      * @param customResponse Custom response configuration. See Custom Response below.
@@ -15646,14 +14986,12 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementRuleActionOverrideActionToUseBlockCustomResponseArgs.builder
       builder.customResponse(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchCookiesMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchCookiesMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchCookiesMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchCookiesMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexMatchStatementFieldToMatchArgs.Builder)
     /**
      * @param allQueryArguments Inspect all query arguments.
@@ -15781,14 +15119,12 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexMatchStatementFieldToMatchUriPathArgs.builder
       builder.uriPath(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchCookiesMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchCookiesMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchCookiesMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchCookiesMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchJsonBodyArgs.Builder)
     /**
      * @param matchPattern JSON content to inspect. See JSON Body Match Pattern below.
@@ -15799,7 +15135,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchJsonBodyMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleActionAllowCustomRequestHandlingArgs.Builder)
     /**
      * @param insertHeaders The `insertHeader` blocks used to define HTTP headers added to the request. See Custom HTTP Header below for details.
@@ -15810,7 +15145,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleActionAllowCustomRequestHandlingInsertHeaderArgs.builder
       builder.insertHeaders(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementSizeConstraintStatementFieldToMatchCookiesArgs.Builder)
     /**
      * @param matchPatterns Cookies to inspect. See Cookies Match Pattern below.
@@ -15821,7 +15155,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementSizeConstraintStatementFieldToMatchCookiesMatchPatternArgs.builder
       builder.matchPatterns(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAtpRuleSetResponseInspectionArgs.Builder)
     def bodyContains(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAtpRuleSetResponseInspectionBodyContainsArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAtpRuleSetResponseInspectionArgs.Builder =
@@ -15847,7 +15180,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAtpRuleSetResponseInspectionStatusCodeArgs.builder
       builder.statusCode(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclDataProtectionConfigDataProtectionArgs.Builder)
     /**
      * @param field Specifies the field type and optional keys to apply the protection behavior to. See `field` block below for details.
@@ -15858,7 +15190,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclDataProtectionConfigDataProtectionFieldArgs.builder
       builder.field(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchHeaderArgs.Builder)
     /**
      * @param matchPattern The filter to use to identify the subset of headers to inspect in a web request. The `matchPattern` block supports only one of the following arguments:
@@ -15869,7 +15200,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchHeaderMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupManagedRuleGroupConfigsAwsManagedRulesAcfpRuleSetResponseInspectionArgs.Builder)
     /**
      * @param bodyContains Configures inspection of the response body. See below.
@@ -15907,7 +15237,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupManagedRuleGroupConfigsAwsManagedRulesAcfpRuleSetResponseInspectionStatusCodeArgs.builder
       builder.statusCode(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRuleGroupReferenceStatementRuleActionOverrideActionToUseArgs.Builder)
     /**
      * @param allow Allow the request. See Allow below.
@@ -15950,7 +15279,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRuleGroupReferenceStatementRuleActionOverrideActionToUseCountArgs.builder
       builder.count(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchJsonBodyArgs.Builder)
     /**
      * @param matchPattern JSON content to inspect. See JSON Body Match Pattern below.
@@ -15961,7 +15289,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchJsonBodyMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementXssMatchStatementFieldToMatchArgs.Builder)
     /**
      * @param allQueryArguments Inspect all query arguments.
@@ -16089,7 +15416,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementXssMatchStatementFieldToMatchUriPathArgs.builder
       builder.uriPath(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementFieldToMatchJsonBodyArgs.Builder)
     /**
      * @param matchPattern JSON content to inspect. See JSON Body Match Pattern below.
@@ -16100,7 +15426,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementFieldToMatchJsonBodyMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchJsonBodyArgs.Builder)
     /**
      * @param matchPattern The patterns to look for in the JSON body. You must specify exactly one setting: either `all` or `includedPaths`. See [JsonMatchPattern](https://docs.aws.amazon.com/waf/latest/APIReference/API_JsonMatchPattern.html) for details.
@@ -16111,7 +15436,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchJsonBodyMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementArgs.Builder)
     /**
      * @param statement Single statement to negate. Exactly one statement must be specified.
@@ -16122,21 +15446,18 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementArgs.builder
       builder.statement(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementByteMatchStatementFieldToMatchHeaderMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementByteMatchStatementFieldToMatchHeaderMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementByteMatchStatementFieldToMatchHeaderMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementByteMatchStatementFieldToMatchHeaderMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementRegexMatchStatementFieldToMatchJsonBodyMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementRegexMatchStatementFieldToMatchJsonBodyMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementRegexMatchStatementFieldToMatchJsonBodyMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementRegexMatchStatementFieldToMatchJsonBodyMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementSizeConstraintStatementFieldToMatchHeaderArgs.Builder)
     /**
      * @param matchPattern Headers to inspect. See Headers Match Pattern below.
@@ -16147,14 +15468,12 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementSizeConstraintStatementFieldToMatchHeaderMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRateBasedStatementCustomKeyCookieArgs.Builder)
     def textTransformations(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRateBasedStatementCustomKeyCookieTextTransformationArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRateBasedStatementCustomKeyCookieArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRateBasedStatementCustomKeyCookieTextTransformationArgs.builder
       builder.textTransformations(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchCookiesArgs.Builder)
     /**
      * @param matchPatterns Cookies to inspect. See Cookies Match Pattern below.
@@ -16165,7 +15484,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchCookiesMatchPatternArgs.builder
       builder.matchPatterns(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationRuleGroupReferenceRuleActionOverrideArgs.Builder)
     /**
      * @param actionToUse Action to use instead of the rule&#39;s original action. See below.
@@ -16176,7 +15494,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationRuleGroupReferenceRuleActionOverrideActionToUseArgs.builder
       builder.actionToUse(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchCookiesArgs.Builder)
     /**
      * @param matchPatterns Cookies to inspect. See Cookies Match Pattern below.
@@ -16187,14 +15504,12 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchCookiesMatchPatternArgs.builder
       builder.matchPatterns(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchJsonBodyMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchJsonBodyMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchJsonBodyMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchJsonBodyMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementArgs.Builder)
     /**
      * @param statement Single statement to negate. Exactly one statement must be specified.
@@ -16205,7 +15520,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementArgs.builder
       builder.statement(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementGeoMatchStatementArgs.Builder)
     /**
      * @param forwardedIpConfig Configuration for inspecting forwarded IP headers. See Forwarded IP Config below.
@@ -16216,7 +15530,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementGeoMatchStatementForwardedIpConfigArgs.builder
       builder.forwardedIpConfig(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementSqliMatchStatementFieldToMatchCookiesArgs.Builder)
     /**
      * @param matchPatterns Cookies to inspect. See Cookies Match Pattern below.
@@ -16227,7 +15540,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementSqliMatchStatementFieldToMatchCookiesMatchPatternArgs.builder
       builder.matchPatterns(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementByteMatchStatementFieldToMatchCookiesArgs.Builder)
     /**
      * @param matchPatterns Cookies to inspect. See Cookies Match Pattern below.
@@ -16238,7 +15550,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementByteMatchStatementFieldToMatchCookiesMatchPatternArgs.builder
       builder.matchPatterns(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchHeaderArgs.Builder)
     /**
      * @param matchPattern Headers to inspect. See Headers Match Pattern below.
@@ -16249,7 +15560,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchHeaderMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchCookiesMatchPatternArgs.Builder)
     /**
      * @param all An empty configuration block that is used for inspecting all headers.
@@ -16260,7 +15570,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchCookiesMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupRuleActionOverrideArgs.Builder)
     /**
      * @param actionToUse Action to use instead of the rule&#39;s original action. See below.
@@ -16271,7 +15580,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupRuleActionOverrideActionToUseArgs.builder
       builder.actionToUse(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementRuleActionOverrideActionToUseCaptchaCustomRequestHandlingArgs.Builder)
     /**
      * @param insertHeaders Custom headers to insert into the request. See Insert Header below.
@@ -16282,7 +15590,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementRuleActionOverrideActionToUseCaptchaCustomRequestHandlingInsertHeaderArgs.builder
       builder.insertHeaders(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementArgs.Builder)
     /**
      * @param fieldToMatch The part of a web request that you want AWS WAF to inspect. See Field to Match below for details.
@@ -16304,7 +15611,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementTextTransformationArgs.builder
       builder.textTransformations(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchArgs.Builder)
     /**
      * @param allQueryArguments Inspect all query arguments.
@@ -16432,7 +15738,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchUriPathArgs.builder
       builder.uriPath(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementArgs.Builder)
     /**
      * @param fieldToMatch The part of a web request that you want AWS WAF to inspect. See Field to Match below for details.
@@ -16454,7 +15759,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementTextTransformationArgs.builder
       builder.textTransformations(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupRuleActionOverrideActionToUseCountArgs.Builder)
     /**
      * @param customRequestHandling Custom handling for counted requests. See below.
@@ -16465,14 +15769,12 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupRuleActionOverrideActionToUseCountCustomRequestHandlingArgs.builder
       builder.customRequestHandling(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementByteMatchStatementFieldToMatchHeaderMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementByteMatchStatementFieldToMatchHeaderMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementByteMatchStatementFieldToMatchHeaderMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementByteMatchStatementFieldToMatchHeaderMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclAssociationConfigArgs.Builder)
     /**
      * @param requestBodies Customizes the request body that your protected resource forward to AWS WAF for inspection. See `requestBody` below for details.
@@ -16483,7 +15785,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclAssociationConfigRequestBodyArgs.builder
       builder.requestBodies(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchJsonBodyArgs.Builder)
     /**
      * @param matchPattern JSON content to inspect. See JSON Body Match Pattern below.
@@ -16494,21 +15795,18 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchJsonBodyMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchCookiesMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchCookiesMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchCookiesMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchCookiesMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchJsonBodyMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchJsonBodyMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchJsonBodyMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchJsonBodyMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementByteMatchStatementFieldToMatchHeaderArgs.Builder)
     /**
      * @param matchPattern The filter to use to identify the subset of headers to inspect in a web request. The `matchPattern` block supports only one of the following arguments:
@@ -16519,14 +15817,12 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementByteMatchStatementFieldToMatchHeaderMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchHeaderMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchHeaderMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchHeaderMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchHeaderMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexPatternSetReferenceStatementArgs.Builder)
     /**
      * @param fieldToMatch Part of the web request that you want WAF to inspect. See Field to Match below.
@@ -16546,7 +15842,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexPatternSetReferenceStatementTextTransformationArgs.builder
       builder.textTransformations(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementAsnMatchStatementArgs.Builder)
     /**
      * @param forwardedIpConfig Configuration for inspecting IP addresses in an HTTP header instead of using the web request origin. See Forwarded IP Config below.
@@ -16557,7 +15852,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementAsnMatchStatementForwardedIpConfigArgs.builder
       builder.forwardedIpConfig(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchHeaderArgs.Builder)
     /**
      * @param matchPattern Headers to inspect. See Headers Match Pattern below.
@@ -16568,7 +15862,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchHeaderMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRegexPatternSetReferenceStatementFieldToMatchHeaderArgs.Builder)
     /**
      * @param matchPattern Headers to inspect. See Headers Match Pattern below.
@@ -16579,7 +15872,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRegexPatternSetReferenceStatementFieldToMatchHeaderMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupRuleActionOverrideActionToUseAllowArgs.Builder)
     /**
      * @param customRequestHandling Custom handling for allowed requests. See below.
@@ -16590,7 +15882,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupRuleActionOverrideActionToUseAllowCustomRequestHandlingArgs.builder
       builder.customRequestHandling(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchHeaderArgs.Builder)
     /**
      * @param matchPattern Headers to inspect. See Headers Match Pattern below.
@@ -16601,14 +15892,12 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchHeaderMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementFieldToMatchCookiesMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementFieldToMatchCookiesMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementFieldToMatchCookiesMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementFieldToMatchCookiesMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRegexMatchStatementFieldToMatchHeaderArgs.Builder)
     /**
      * @param matchPattern Headers to inspect. See Headers Match Pattern below.
@@ -16619,7 +15908,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRegexMatchStatementFieldToMatchHeaderMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleChallengeConfigArgs.Builder)
     /**
      * @param immunityTimeProperty Immunity time configuration. See Immunity Time Property below.
@@ -16630,7 +15918,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleChallengeConfigImmunityTimePropertyArgs.builder
       builder.immunityTimeProperty(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupManagedRuleGroupConfigsArgs.Builder)
     /**
      * @param awsManagedRulesAcfpRuleSet Additional configuration for using the Account Creation Fraud Prevention managed rule group. Use this to specify information such as the registration page of your application and the type of content to accept or reject from the client. See below.
@@ -16668,7 +15955,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupManagedRuleGroupConfigsAwsManagedRulesBotControlRuleSetArgs.builder
       builder.awsManagedRulesBotControlRuleSet(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementArgs.Builder)
     def fieldToMatch(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementFieldToMatchArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementArgs.Builder =
@@ -16680,7 +15966,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementTextTransformationArgs.builder
       builder.textTransformations(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRegexMatchStatementArgs.Builder)
     /**
      * @param fieldToMatch Part of the web request that you want WAF to inspect. See Field to Match below.
@@ -16700,7 +15985,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRegexMatchStatementTextTransformationArgs.builder
       builder.textTransformations(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupRuleActionOverrideActionToUseCountCustomRequestHandlingArgs.Builder)
     /**
      * @param insertHeaders Headers to insert into the request. See below.
@@ -16711,7 +15995,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupRuleActionOverrideActionToUseCountCustomRequestHandlingInsertHeaderArgs.builder
       builder.insertHeaders(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchHeaderMatchPatternArgs.Builder)
     /**
      * @param all An empty configuration block that is used for inspecting all headers.
@@ -16722,7 +16005,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchHeaderMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchJsonBodyArgs.Builder)
     /**
      * @param matchPattern JSON content to inspect. See JSON Body Match Pattern below.
@@ -16733,21 +16015,18 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchJsonBodyMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementSizeConstraintStatementFieldToMatchJsonBodyMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementSizeConstraintStatementFieldToMatchJsonBodyMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementSizeConstraintStatementFieldToMatchJsonBodyMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementSizeConstraintStatementFieldToMatchJsonBodyMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAntiDdosRuleSetArgs.Builder)
     def clientSideActionConfig(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAntiDdosRuleSetClientSideActionConfigArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAntiDdosRuleSetArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAntiDdosRuleSetClientSideActionConfigArgs.builder
       builder.clientSideActionConfig(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementSqliMatchStatementFieldToMatchArgs.Builder)
     /**
      * @param allQueryArguments Inspect all query arguments.
@@ -16875,21 +16154,18 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementSqliMatchStatementFieldToMatchUriPathArgs.builder
       builder.uriPath(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementRegexMatchStatementFieldToMatchHeaderMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementRegexMatchStatementFieldToMatchHeaderMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementRegexMatchStatementFieldToMatchHeaderMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementRegexMatchStatementFieldToMatchHeaderMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementByteMatchStatementFieldToMatchHeaderMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementByteMatchStatementFieldToMatchHeaderMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementByteMatchStatementFieldToMatchHeaderMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementByteMatchStatementFieldToMatchHeaderMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchArgs.Builder)
     /**
      * @param allQueryArguments Inspect all query arguments.
@@ -17017,21 +16293,18 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchUriPathArgs.builder
       builder.uriPath(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchHeaderMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchHeaderMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchHeaderMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchHeaderMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementByteMatchStatementFieldToMatchCookiesMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementByteMatchStatementFieldToMatchCookiesMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementByteMatchStatementFieldToMatchCookiesMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementByteMatchStatementFieldToMatchCookiesMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementArgs.Builder)
     /**
      * @param fieldToMatch Part of the web request that you want WAF to inspect. See Field to Match below.
@@ -17051,14 +16324,12 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementTextTransformationArgs.builder
       builder.textTransformations(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementByteMatchStatementFieldToMatchHeaderMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementByteMatchStatementFieldToMatchHeaderMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementByteMatchStatementFieldToMatchHeaderMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementByteMatchStatementFieldToMatchHeaderMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementXssMatchStatementFieldToMatchArgs.Builder)
     /**
      * @param allQueryArguments Inspect all query arguments.
@@ -17186,7 +16457,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementXssMatchStatementFieldToMatchUriPathArgs.builder
       builder.uriPath(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAtpRuleSetRequestInspectionArgs.Builder)
     def passwordField(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAtpRuleSetRequestInspectionPasswordFieldArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAtpRuleSetRequestInspectionArgs.Builder =
@@ -17198,7 +16468,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAtpRuleSetRequestInspectionUsernameFieldArgs.builder
       builder.usernameField(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchCookiesArgs.Builder)
     /**
      * @param matchPatterns Cookies to inspect. See Cookies Match Pattern below.
@@ -17209,7 +16478,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchCookiesMatchPatternArgs.builder
       builder.matchPatterns(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexMatchStatementFieldToMatchArgs.Builder)
     /**
      * @param allQueryArguments Inspect all query arguments.
@@ -17337,7 +16605,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexMatchStatementFieldToMatchUriPathArgs.builder
       builder.uriPath(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementByteMatchStatementArgs.Builder)
     /**
      * @param fieldToMatch Part of the web request that you want WAF to inspect. See Field to Match below.
@@ -17357,21 +16624,18 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementByteMatchStatementTextTransformationArgs.builder
       builder.textTransformations(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementRegexMatchStatementFieldToMatchCookiesMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementRegexMatchStatementFieldToMatchCookiesMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementRegexMatchStatementFieldToMatchCookiesMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementRegexMatchStatementFieldToMatchCookiesMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchHeaderMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchHeaderMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchHeaderMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchHeaderMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementSizeConstraintStatementFieldToMatchArgs.Builder)
     /**
      * @param allQueryArguments Inspect all query arguments.
@@ -17499,7 +16763,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementSizeConstraintStatementFieldToMatchUriPathArgs.builder
       builder.uriPath(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementArgs.Builder)
     /**
      * @param andStatement Logical AND statement that combines multiple statements. See And Statement below.
@@ -17638,7 +16901,7 @@ object wafv2:
 
     /**
      * @param xssMatchStatement Match requests that appear to contain cross-site scripting attacks. See Cross-Site Scripting Match Statement below.
-     *  
+     * 
      *  &gt; **NOTE:** Logical statements (`andStatement`, `notStatement`, `orStatement`) can be nested up to 3 levels deep. This matches the nesting limit of the `aws.wafv2.WebAcl` resource.
      * @return builder
      */
@@ -17647,7 +16910,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementXssMatchStatementArgs.builder
       builder.xssMatchStatement(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementRuleActionOverrideActionToUseCountCustomRequestHandlingArgs.Builder)
     /**
      * @param insertHeaders Custom headers to insert into the request. See Insert Header below.
@@ -17658,7 +16920,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementRuleActionOverrideActionToUseCountCustomRequestHandlingInsertHeaderArgs.builder
       builder.insertHeaders(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchCookiesArgs.Builder)
     /**
      * @param matchPatterns The filter to use to identify the subset of cookies to inspect in a web request. You must specify exactly one setting: either `all`, `includedCookies` or `excludedCookies`. More details: [CookieMatchPattern](https://docs.aws.amazon.com/waf/latest/APIReference/API_CookieMatchPattern.html)
@@ -17669,7 +16930,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchCookiesMatchPatternArgs.builder
       builder.matchPatterns(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementSizeConstraintStatementFieldToMatchJsonBodyArgs.Builder)
     /**
      * @param matchPattern JSON content to inspect. See JSON Body Match Pattern below.
@@ -17680,14 +16940,12 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementSizeConstraintStatementFieldToMatchJsonBodyMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchHeaderMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchHeaderMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchHeaderMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchHeaderMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementByteMatchStatementFieldToMatchHeaderMatchPatternArgs.Builder)
     /**
      * @param all An empty configuration block that is used for inspecting all headers.
@@ -17698,7 +16956,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementByteMatchStatementFieldToMatchHeaderMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementArgs.Builder)
     /**
      * @param asnMatchStatement Match requests based on Autonomous System Number (ASN). See ASN Match Statement above.
@@ -17790,7 +17047,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementArgs.builder
       builder.xssMatchStatement(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchJsonBodyArgs.Builder)
     /**
      * @param matchPattern JSON content to inspect. See JSON Body Match Pattern below.
@@ -17801,7 +17057,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchJsonBodyMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchJsonBodyArgs.Builder)
     /**
      * @param matchPattern JSON content to inspect. See JSON Body Match Pattern below.
@@ -17812,7 +17067,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchJsonBodyMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementXssMatchStatementFieldToMatchCookiesArgs.Builder)
     /**
      * @param matchPatterns Cookies to inspect. See Cookies Match Pattern below.
@@ -17823,7 +17077,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementXssMatchStatementFieldToMatchCookiesMatchPatternArgs.builder
       builder.matchPatterns(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSqliMatchStatementArgs.Builder)
     def fieldToMatch(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSqliMatchStatementFieldToMatchArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSqliMatchStatementArgs.Builder =
@@ -17835,14 +17088,12 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSqliMatchStatementTextTransformationArgs.builder
       builder.textTransformations(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchJsonBodyMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchJsonBodyMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchJsonBodyMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchJsonBodyMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAcfpRuleSetRequestInspectionArgs.Builder)
     def addressFields(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAcfpRuleSetRequestInspectionAddressFieldsArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAcfpRuleSetRequestInspectionArgs.Builder =
@@ -17869,7 +17120,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAcfpRuleSetRequestInspectionUsernameFieldArgs.builder
       builder.usernameField(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAcfpRuleSetResponseInspectionArgs.Builder)
     def bodyContains(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAcfpRuleSetResponseInspectionBodyContainsArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAcfpRuleSetResponseInspectionArgs.Builder =
@@ -17895,7 +17145,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAcfpRuleSetResponseInspectionStatusCodeArgs.builder
       builder.statusCode(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexMatchStatementFieldToMatchJsonBodyArgs.Builder)
     /**
      * @param matchPattern JSON content to inspect. See JSON Body Match Pattern below.
@@ -17906,7 +17155,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexMatchStatementFieldToMatchJsonBodyMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchCookiesArgs.Builder)
     /**
      * @param matchPatterns Cookies to inspect. See Cookies Match Pattern below.
@@ -17917,7 +17165,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchCookiesMatchPatternArgs.builder
       builder.matchPatterns(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementFieldToMatchHeaderArgs.Builder)
     /**
      * @param matchPattern Headers to inspect. See Headers Match Pattern below.
@@ -17928,7 +17175,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementFieldToMatchHeaderMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementAsnMatchStatementArgs.Builder)
     /**
      * @param forwardedIpConfig Configuration for inspecting IP addresses in an HTTP header instead of using the web request origin. See Forwarded IP Config below.
@@ -17939,7 +17185,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementAsnMatchStatementForwardedIpConfigArgs.builder
       builder.forwardedIpConfig(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementSizeConstraintStatementFieldToMatchArgs.Builder)
     /**
      * @param allQueryArguments Inspect all query arguments.
@@ -18067,14 +17312,12 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementSizeConstraintStatementFieldToMatchUriPathArgs.builder
       builder.uriPath(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchCookiesMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchCookiesMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchCookiesMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchCookiesMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAcfpRuleSetArgs.Builder)
     def requestInspection(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAcfpRuleSetRequestInspectionArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAcfpRuleSetArgs.Builder =
@@ -18086,14 +17329,12 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAcfpRuleSetResponseInspectionArgs.builder
       builder.responseInspection(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchCookiesMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchCookiesMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchCookiesMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchCookiesMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAtpRuleSetRequestInspectionArgs.Builder)
     def passwordField(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAtpRuleSetRequestInspectionPasswordFieldArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAtpRuleSetRequestInspectionArgs.Builder =
@@ -18105,7 +17346,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAtpRuleSetRequestInspectionUsernameFieldArgs.builder
       builder.usernameField(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementRegexMatchStatementFieldToMatchArgs.Builder)
     /**
      * @param allQueryArguments Inspect all query arguments.
@@ -18233,14 +17473,12 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementRegexMatchStatementFieldToMatchUriPathArgs.builder
       builder.uriPath(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchCookiesMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchCookiesMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchCookiesMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchCookiesMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementIpSetReferenceStatementArgs.Builder)
     /**
      * @param ipSetForwardedIpConfig Configuration for inspecting forwarded IP headers. See IP Set Forwarded IP Config below.
@@ -18251,14 +17489,12 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementIpSetReferenceStatementIpSetForwardedIpConfigArgs.builder
       builder.ipSetForwardedIpConfig(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchHeaderMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchHeaderMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchHeaderMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchHeaderMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleActionChallengeArgs.Builder)
     /**
      * @param customRequestHandling Custom request handling configuration. See Custom Request Handling below.
@@ -18269,21 +17505,18 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleActionChallengeCustomRequestHandlingArgs.builder
       builder.customRequestHandling(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRateBasedStatementCustomKeyQueryArgumentArgs.Builder)
     def textTransformations(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRateBasedStatementCustomKeyQueryArgumentTextTransformationArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRateBasedStatementCustomKeyQueryArgumentArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRateBasedStatementCustomKeyQueryArgumentTextTransformationArgs.builder
       builder.textTransformations(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementXssMatchStatementFieldToMatchCookiesMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementXssMatchStatementFieldToMatchCookiesMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementXssMatchStatementFieldToMatchCookiesMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementXssMatchStatementFieldToMatchCookiesMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchCookiesArgs.Builder)
     /**
      * @param matchPatterns Cookies to inspect. See Cookies Match Pattern below.
@@ -18294,21 +17527,18 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchCookiesMatchPatternArgs.builder
       builder.matchPatterns(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchHeaderMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchHeaderMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchHeaderMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchHeaderMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementSqliMatchStatementFieldToMatchJsonBodyMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementSqliMatchStatementFieldToMatchJsonBodyMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementSqliMatchStatementFieldToMatchJsonBodyMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementSqliMatchStatementFieldToMatchJsonBodyMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementXssMatchStatementArgs.Builder)
     def fieldToMatch(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementXssMatchStatementFieldToMatchArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementXssMatchStatementArgs.Builder =
@@ -18320,7 +17550,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementXssMatchStatementTextTransformationArgs.builder
       builder.textTransformations(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementByteMatchStatementFieldToMatchJsonBodyArgs.Builder)
     /**
      * @param matchPattern JSON content to inspect. See JSON Body Match Pattern below.
@@ -18331,7 +17560,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementByteMatchStatementFieldToMatchJsonBodyMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAcfpRuleSetRequestInspectionArgs.Builder)
     def addressFields(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAcfpRuleSetRequestInspectionAddressFieldsArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAcfpRuleSetRequestInspectionArgs.Builder =
@@ -18358,7 +17586,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAcfpRuleSetRequestInspectionUsernameFieldArgs.builder
       builder.usernameField(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementGeoMatchStatementArgs.Builder)
     /**
      * @param forwardedIpConfig Configuration for inspecting forwarded IP headers. See Forwarded IP Config below.
@@ -18369,14 +17596,12 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementGeoMatchStatementForwardedIpConfigArgs.builder
       builder.forwardedIpConfig(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchHeaderMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchHeaderMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchHeaderMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchHeaderMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementArgs.Builder)
     def managedRuleGroupConfigs(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementArgs.Builder =
@@ -18401,7 +17626,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementArgs.builder
       builder.scopeDownStatement(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleState.Builder)
     /**
      * @param action Action to take when the rule matches. See Action below. Conflicts with `overrideAction`.
@@ -18471,14 +17695,12 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleVisibilityConfigArgs.builder
       builder.visibilityConfig(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchJsonBodyMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchJsonBodyMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchJsonBodyMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchJsonBodyMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementXssMatchStatementArgs.Builder)
     def fieldToMatch(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementXssMatchStatementFieldToMatchArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementXssMatchStatementArgs.Builder =
@@ -18490,7 +17712,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementXssMatchStatementTextTransformationArgs.builder
       builder.textTransformations(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementAsnMatchStatementArgs.Builder)
     /**
      * @param forwardedIpConfig Configuration for inspecting IP addresses in an HTTP header instead of using the web request origin. See Forwarded IP Config below.
@@ -18501,7 +17722,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementAsnMatchStatementForwardedIpConfigArgs.builder
       builder.forwardedIpConfig(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementByteMatchStatementFieldToMatchJsonBodyArgs.Builder)
     /**
      * @param matchPattern JSON content to inspect. See JSON Body Match Pattern below.
@@ -18512,7 +17732,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementByteMatchStatementFieldToMatchJsonBodyMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRateBasedStatementScopeDownStatementRegexMatchStatementArgs.Builder)
     /**
      * @param fieldToMatch Part of the web request that you want WAF to inspect. See Field to Match below.
@@ -18532,14 +17751,12 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRateBasedStatementScopeDownStatementRegexMatchStatementTextTransformationArgs.builder
       builder.textTransformations(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchJsonBodyMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchJsonBodyMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchJsonBodyMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchJsonBodyMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementXssMatchStatementFieldToMatchHeaderArgs.Builder)
     /**
      * @param matchPattern Headers to inspect. See Headers Match Pattern below.
@@ -18550,7 +17767,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementXssMatchStatementFieldToMatchHeaderMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchArgs.Builder)
     /**
      * @param allQueryArguments Inspect all query arguments.
@@ -18678,7 +17894,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchUriPathArgs.builder
       builder.uriPath(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRuleGroupReferenceStatementRuleActionOverrideActionToUseChallengeArgs.Builder)
     /**
      * @param customRequestHandling Custom request handling configuration. See Custom Request Handling below.
@@ -18689,14 +17904,12 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRuleGroupReferenceStatementRuleActionOverrideActionToUseChallengeCustomRequestHandlingArgs.builder
       builder.customRequestHandling(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementFieldToMatchCookiesMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementFieldToMatchCookiesMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementFieldToMatchCookiesMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementFieldToMatchCookiesMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchJsonBodyArgs.Builder)
     /**
      * @param matchPattern The patterns to look for in the JSON body. You must specify exactly one setting: either `all` or `includedPaths`. See [JsonMatchPattern](https://docs.aws.amazon.com/waf/latest/APIReference/API_JsonMatchPattern.html) for details.
@@ -18707,7 +17920,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchJsonBodyMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementNotStatementArgs.Builder)
     /**
      * @param statements The statements to combine.
@@ -18718,7 +17930,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementArgs.builder
       builder.statements(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchArgs.Builder)
     /**
      * @param allQueryArguments Inspect all query arguments.
@@ -18846,7 +18057,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchUriPathArgs.builder
       builder.uriPath(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchHeaderArgs.Builder)
     /**
      * @param matchPattern The filter to use to identify the subset of headers to inspect in a web request. The `matchPattern` block supports only one of the following arguments:
@@ -18857,14 +18067,12 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchHeaderMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchCookiesMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchCookiesMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchCookiesMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchCookiesMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementAsnMatchStatementArgs.Builder)
     /**
      * @param forwardedIpConfig Configuration for inspecting IP addresses in an HTTP header that you specify, instead of using the IP address that&#39;s reported by the web request origin. See Forwarded IP Config below for more details.
@@ -18875,7 +18083,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementAsnMatchStatementForwardedIpConfigArgs.builder
       builder.forwardedIpConfig(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAcfpRuleSetResponseInspectionArgs.Builder)
     def bodyContains(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAcfpRuleSetResponseInspectionBodyContainsArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAcfpRuleSetResponseInspectionArgs.Builder =
@@ -18901,14 +18108,12 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAcfpRuleSetResponseInspectionStatusCodeArgs.builder
       builder.statusCode(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchCookiesMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchCookiesMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchCookiesMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchCookiesMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleActionBlockCustomResponseArgs.Builder)
     /**
      * @param responseHeaders The `responseHeader` blocks used to define the HTTP response headers added to the response. See Custom HTTP Header below for details.
@@ -18919,14 +18124,12 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleActionBlockCustomResponseResponseHeaderArgs.builder
       builder.responseHeaders(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchJsonBodyMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchJsonBodyMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchJsonBodyMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchJsonBodyMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementSqliMatchStatementArgs.Builder)
     def fieldToMatch(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementSqliMatchStatementArgs.Builder =
@@ -18938,7 +18141,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementSqliMatchStatementTextTransformationArgs.builder
       builder.textTransformations(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementSizeConstraintStatementFieldToMatchHeaderArgs.Builder)
     /**
      * @param matchPattern Headers to inspect. See Headers Match Pattern below.
@@ -18949,7 +18151,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementSizeConstraintStatementFieldToMatchHeaderMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementByteMatchStatementFieldToMatchArgs.Builder)
     /**
      * @param allQueryArguments Inspect all query arguments.
@@ -19077,7 +18278,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementByteMatchStatementFieldToMatchUriPathArgs.builder
       builder.uriPath(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementByteMatchStatementFieldToMatchCookiesArgs.Builder)
     /**
      * @param matchPatterns Cookies to inspect. See Cookies Match Pattern below.
@@ -19088,7 +18288,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementByteMatchStatementFieldToMatchCookiesMatchPatternArgs.builder
       builder.matchPatterns(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementArgs.Builder)
     /**
      * @param fieldToMatch The part of a web request that you want AWS WAF to inspect. See Field to Match below for details.
@@ -19110,7 +18309,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementTextTransformationArgs.builder
       builder.textTransformations(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchArgs.Builder)
     /**
      * @param allQueryArguments Inspect all query arguments.
@@ -19238,7 +18436,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchUriPathArgs.builder
       builder.uriPath(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationRuleGroupReferenceRuleActionOverrideActionToUseCountArgs.Builder)
     /**
      * @param customRequestHandling Custom handling for counted requests. See below.
@@ -19249,14 +18446,12 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationRuleGroupReferenceRuleActionOverrideActionToUseCountCustomRequestHandlingArgs.builder
       builder.customRequestHandling(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementCustomKeyHeaderArgs.Builder)
     def textTransformations(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementCustomKeyHeaderTextTransformationArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementCustomKeyHeaderArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementCustomKeyHeaderTextTransformationArgs.builder
       builder.textTransformations(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRateBasedStatementScopeDownStatementAsnMatchStatementArgs.Builder)
     /**
      * @param forwardedIpConfig Configuration for inspecting IP addresses in an HTTP header instead of using the web request origin. See Forwarded IP Config below.
@@ -19267,7 +18462,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRateBasedStatementScopeDownStatementAsnMatchStatementForwardedIpConfigArgs.builder
       builder.forwardedIpConfig(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRegexPatternSetReferenceStatementFieldToMatchJsonBodyArgs.Builder)
     /**
      * @param matchPattern JSON content to inspect. See JSON Body Match Pattern below.
@@ -19278,7 +18472,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRegexPatternSetReferenceStatementFieldToMatchJsonBodyMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchCookiesArgs.Builder)
     /**
      * @param matchPatterns Cookies to inspect. See Cookies Match Pattern below.
@@ -19289,7 +18482,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchCookiesMatchPatternArgs.builder
       builder.matchPatterns(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementRegexMatchStatementArgs.Builder)
     /**
      * @param fieldToMatch Part of the web request that you want WAF to inspect. See Field to Match below.
@@ -19309,7 +18501,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementRegexMatchStatementTextTransformationArgs.builder
       builder.textTransformations(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchHeaderArgs.Builder)
     /**
      * @param matchPattern Headers to inspect. See Headers Match Pattern below.
@@ -19320,7 +18511,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchHeaderMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRegexMatchStatementFieldToMatchArgs.Builder)
     /**
      * @param allQueryArguments Inspect all query arguments.
@@ -19448,7 +18638,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRegexMatchStatementFieldToMatchUriPathArgs.builder
       builder.uriPath(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementXssMatchStatementFieldToMatchArgs.Builder)
     /**
      * @param allQueryArguments Inspect all query arguments.
@@ -19576,7 +18765,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementXssMatchStatementFieldToMatchUriPathArgs.builder
       builder.uriPath(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchArgs.Builder)
     /**
      * @param allQueryArguments Inspect all query arguments.
@@ -19704,7 +18892,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchUriPathArgs.builder
       builder.uriPath(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementRuleActionOverrideActionToUseCountCustomRequestHandlingArgs.Builder)
     /**
      * @param insertHeaders Custom headers to insert into the request. See Insert Header below.
@@ -19715,7 +18902,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementRuleActionOverrideActionToUseCountCustomRequestHandlingInsertHeaderArgs.builder
       builder.insertHeaders(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementXssMatchStatementFieldToMatchHeaderArgs.Builder)
     /**
      * @param matchPattern Headers to inspect. See Headers Match Pattern below.
@@ -19726,7 +18912,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementXssMatchStatementFieldToMatchHeaderMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchJsonBodyArgs.Builder)
     /**
      * @param matchPattern JSON content to inspect. See JSON Body Match Pattern below.
@@ -19737,7 +18922,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchJsonBodyMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchArgs.Builder)
     /**
      * @param allQueryArguments Inspect all query arguments.
@@ -19865,7 +19049,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchUriPathArgs.builder
       builder.uriPath(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRuleGroupReferenceStatementRuleActionOverrideActionToUseAllowArgs.Builder)
     /**
      * @param customRequestHandling Custom request handling configuration. See Custom Request Handling below.
@@ -19876,14 +19059,12 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRuleGroupReferenceStatementRuleActionOverrideActionToUseAllowCustomRequestHandlingArgs.builder
       builder.customRequestHandling(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementSizeConstraintStatementFieldToMatchHeaderMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementSizeConstraintStatementFieldToMatchHeaderMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementSizeConstraintStatementFieldToMatchHeaderMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementSizeConstraintStatementFieldToMatchHeaderMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementArgs.Builder)
     def fieldToMatch(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementFieldToMatchArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementArgs.Builder =
@@ -19895,7 +19076,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementTextTransformationArgs.builder
       builder.textTransformations(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchJsonBodyMatchPatternArgs.Builder)
     /**
      * @param all An empty configuration block that is used for inspecting all headers.
@@ -19906,14 +19086,12 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchJsonBodyMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRegexMatchStatementFieldToMatchJsonBodyMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRegexMatchStatementFieldToMatchJsonBodyMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRegexMatchStatementFieldToMatchJsonBodyMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRegexMatchStatementFieldToMatchJsonBodyMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementXssMatchStatementFieldToMatchCookiesMatchPatternArgs.Builder)
     /**
      * @param all An empty configuration block that is used for inspecting all headers.
@@ -19924,7 +19102,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementXssMatchStatementFieldToMatchCookiesMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementRegexMatchStatementArgs.Builder)
     /**
      * @param fieldToMatch Part of the web request that you want WAF to inspect. See Field to Match below.
@@ -19944,7 +19121,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementRegexMatchStatementTextTransformationArgs.builder
       builder.textTransformations(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementArgs.Builder)
     /**
      * @param asnMatchStatement Match requests based on Autonomous System Number (ASN). See ASN Match Statement below.
@@ -20056,7 +19232,7 @@ object wafv2:
 
     /**
      * @param xssMatchStatement Match requests that appear to contain cross-site scripting attacks. See Cross-Site Scripting Match Statement below.
-     *  
+     * 
      *  &gt; **NOTE:** Logical statements (`andStatement`, `notStatement`, `orStatement`) can be nested up to 3 levels deep. This matches the nesting limit of the `aws.wafv2.WebAcl` resource.
      * @return builder
      */
@@ -20065,14 +19241,12 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementXssMatchStatementArgs.builder
       builder.xssMatchStatement(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchCookiesMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchCookiesMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchCookiesMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchCookiesMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclLoggingConfigurationLoggingFilterFilterConditionArgs.Builder)
     /**
      * @param actionCondition Configuration for a single action condition. See Action Condition below for more details.
@@ -20092,7 +19266,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclLoggingConfigurationLoggingFilterFilterConditionLabelNameConditionArgs.builder
       builder.labelNameCondition(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRuleGroupReferenceStatementRuleActionOverrideActionToUseCountArgs.Builder)
     /**
      * @param customRequestHandling Custom request handling configuration. See Custom Request Handling below.
@@ -20103,7 +19276,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRuleGroupReferenceStatementRuleActionOverrideActionToUseCountCustomRequestHandlingArgs.builder
       builder.customRequestHandling(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRegexPatternSetReferenceStatementFieldToMatchCookiesArgs.Builder)
     /**
      * @param matchPatterns Cookies to inspect. See Cookies Match Pattern below.
@@ -20114,7 +19286,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRegexPatternSetReferenceStatementFieldToMatchCookiesMatchPatternArgs.builder
       builder.matchPatterns(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchJsonBodyArgs.Builder)
     /**
      * @param matchPattern JSON content to inspect. See JSON Body Match Pattern below.
@@ -20125,7 +19296,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchJsonBodyMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchHeaderArgs.Builder)
     /**
      * @param matchPattern Headers to inspect. See Headers Match Pattern below.
@@ -20136,7 +19306,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchHeaderMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementIpSetReferenceStatementArgs.Builder)
     /**
      * @param ipSetForwardedIpConfig Configuration for inspecting forwarded IP headers. See IP Set Forwarded IP Config below.
@@ -20147,7 +19316,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementIpSetReferenceStatementIpSetForwardedIpConfigArgs.builder
       builder.ipSetForwardedIpConfig(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexMatchStatementFieldToMatchCookiesArgs.Builder)
     /**
      * @param matchPatterns Cookies to inspect. See Cookies Match Pattern below.
@@ -20158,7 +19326,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexMatchStatementFieldToMatchCookiesMatchPatternArgs.builder
       builder.matchPatterns(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementArgs.Builder)
     /**
      * @param fieldToMatch Part of the web request that you want WAF to inspect. See Field to Match below.
@@ -20178,7 +19345,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementTextTransformationArgs.builder
       builder.textTransformations(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchArgs.Builder)
     /**
      * @param allQueryArguments Inspect all query arguments.
@@ -20306,7 +19472,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchUriPathArgs.builder
       builder.uriPath(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAtpRuleSetArgs.Builder)
     def requestInspection(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAtpRuleSetRequestInspectionArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAtpRuleSetArgs.Builder =
@@ -20318,14 +19483,12 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAtpRuleSetResponseInspectionArgs.builder
       builder.responseInspection(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementRegexMatchStatementFieldToMatchCookiesMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementRegexMatchStatementFieldToMatchCookiesMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementRegexMatchStatementFieldToMatchCookiesMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementRegexMatchStatementFieldToMatchCookiesMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementSqliMatchStatementFieldToMatchCookiesArgs.Builder)
     /**
      * @param matchPatterns Cookies to inspect. See Cookies Match Pattern below.
@@ -20336,7 +19499,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementSqliMatchStatementFieldToMatchCookiesMatchPatternArgs.builder
       builder.matchPatterns(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAntiDdosRuleSetClientSideActionConfigArgs.Builder)
     /**
      * @param challenge Present a silent challenge. See Challenge below.
@@ -20347,14 +19509,12 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAntiDdosRuleSetClientSideActionConfigChallengeArgs.builder
       builder.challenge(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchCookiesMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchCookiesMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchCookiesMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchCookiesMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchCookiesArgs.Builder)
     /**
      * @param matchPatterns Cookies to inspect. See Cookies Match Pattern below.
@@ -20365,21 +19525,18 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchCookiesMatchPatternArgs.builder
       builder.matchPatterns(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementByteMatchStatementFieldToMatchJsonBodyMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementByteMatchStatementFieldToMatchJsonBodyMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementByteMatchStatementFieldToMatchJsonBodyMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementByteMatchStatementFieldToMatchJsonBodyMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchHeaderMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchHeaderMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchHeaderMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchHeaderMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementArgs.Builder)
     def fieldToMatch(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementFieldToMatchArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementArgs.Builder =
@@ -20391,14 +19548,12 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementTextTransformationArgs.builder
       builder.textTransformations(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchJsonBodyMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchJsonBodyMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchJsonBodyMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchJsonBodyMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchJsonBodyArgs.Builder)
     /**
      * @param matchPattern JSON content to inspect. See JSON Body Match Pattern below.
@@ -20409,7 +19564,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchJsonBodyMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationRuleGroupReferenceRuleActionOverrideActionToUseAllowArgs.Builder)
     /**
      * @param customRequestHandling Custom handling for allowed requests. See below.
@@ -20420,7 +19574,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationRuleGroupReferenceRuleActionOverrideActionToUseAllowCustomRequestHandlingArgs.builder
       builder.customRequestHandling(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchCookiesArgs.Builder)
     /**
      * @param matchPatterns Cookies to inspect. See Cookies Match Pattern below.
@@ -20431,7 +19584,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchCookiesMatchPatternArgs.builder
       builder.matchPatterns(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementCustomKeyUriPathArgs.Builder)
     /**
      * @param textTransformations Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection. They are used in rate-based rule statements, to transform request components before using them as custom aggregation keys. Atleast one transformation is required. See Text Transformation above for details.
@@ -20442,14 +19594,12 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementCustomKeyUriPathTextTransformationArgs.builder
       builder.textTransformations(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementXssMatchStatementFieldToMatchJsonBodyMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementXssMatchStatementFieldToMatchJsonBodyMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementXssMatchStatementFieldToMatchJsonBodyMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementXssMatchStatementFieldToMatchJsonBodyMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAtpRuleSetResponseInspectionArgs.Builder)
     def bodyContains(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAtpRuleSetResponseInspectionBodyContainsArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAtpRuleSetResponseInspectionArgs.Builder =
@@ -20475,7 +19625,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAtpRuleSetResponseInspectionStatusCodeArgs.builder
       builder.statusCode(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementRuleActionOverrideArgs.Builder)
     /**
      * @param actionToUse Override action to use for the rule. See Action below.
@@ -20486,7 +19635,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementRuleActionOverrideActionToUseArgs.builder
       builder.actionToUse(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleActionArgs.Builder)
     /**
      * @param allow Allow the request. See Allow below.
@@ -20533,7 +19681,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleActionCountArgs.builder
       builder.count(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchCookiesArgs.Builder)
     /**
      * @param matchPatterns Cookies to inspect. See Cookies Match Pattern below.
@@ -20544,7 +19691,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchCookiesMatchPatternArgs.builder
       builder.matchPatterns(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementFieldToMatchHeaderArgs.Builder)
     /**
      * @param matchPattern Headers to inspect. See Headers Match Pattern below.
@@ -20555,14 +19701,12 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementFieldToMatchHeaderMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementSqliMatchStatementFieldToMatchCookiesMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementSqliMatchStatementFieldToMatchCookiesMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementSqliMatchStatementFieldToMatchCookiesMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementSqliMatchStatementFieldToMatchCookiesMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRegexMatchStatementFieldToMatchHeaderArgs.Builder)
     /**
      * @param matchPattern Headers to inspect. See Headers Match Pattern below.
@@ -20573,21 +19717,18 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRegexMatchStatementFieldToMatchHeaderMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementSizeConstraintStatementFieldToMatchCookiesMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementSizeConstraintStatementFieldToMatchCookiesMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementSizeConstraintStatementFieldToMatchCookiesMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementSizeConstraintStatementFieldToMatchCookiesMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchJsonBodyMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchJsonBodyMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchJsonBodyMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchJsonBodyMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementByteMatchStatementFieldToMatchHeaderArgs.Builder)
     /**
      * @param matchPattern Headers to inspect. See Headers Match Pattern below.
@@ -20598,14 +19739,12 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementByteMatchStatementFieldToMatchHeaderMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementSizeConstraintStatementFieldToMatchHeaderMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementSizeConstraintStatementFieldToMatchHeaderMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementSizeConstraintStatementFieldToMatchHeaderMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementSizeConstraintStatementFieldToMatchHeaderMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchCookiesMatchPatternArgs.Builder)
     /**
      * @param all An empty configuration block that is used for inspecting all headers.
@@ -20616,14 +19755,12 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchCookiesMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementXssMatchStatementFieldToMatchCookiesMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementXssMatchStatementFieldToMatchCookiesMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementXssMatchStatementFieldToMatchCookiesMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementXssMatchStatementFieldToMatchCookiesMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRegexPatternSetReferenceStatementArgs.Builder)
     /**
      * @param fieldToMatch Part of the web request that you want WAF to inspect. See Field to Match below.
@@ -20643,7 +19780,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRegexPatternSetReferenceStatementTextTransformationArgs.builder
       builder.textTransformations(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchJsonBodyArgs.Builder)
     /**
      * @param matchPattern JSON content to inspect. See JSON Body Match Pattern below.
@@ -20654,14 +19790,12 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchJsonBodyMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementByteMatchStatementFieldToMatchCookiesMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementByteMatchStatementFieldToMatchCookiesMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementByteMatchStatementFieldToMatchCookiesMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementByteMatchStatementFieldToMatchCookiesMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementSizeConstraintStatementArgs.Builder)
     /**
      * @param fieldToMatch Part of the web request that you want WAF to inspect. See Field to Match below.
@@ -20681,7 +19815,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementSizeConstraintStatementTextTransformationArgs.builder
       builder.textTransformations(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRateBasedStatementScopeDownStatementArgs.Builder)
     /**
      * @param asnMatchStatement Match requests based on Autonomous System Number (ASN). See ASN Match Statement above.
@@ -20773,7 +19906,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRateBasedStatementScopeDownStatementXssMatchStatementArgs.builder
       builder.xssMatchStatement(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchJsonBodyMatchPatternArgs.Builder)
     /**
      * @param all An empty configuration block that is used for inspecting all headers.
@@ -20784,14 +19916,12 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchJsonBodyMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementByteMatchStatementFieldToMatchHeaderMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementByteMatchStatementFieldToMatchHeaderMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementByteMatchStatementFieldToMatchHeaderMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementByteMatchStatementFieldToMatchHeaderMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationRuleGroupReferenceRuleActionOverrideActionToUseChallengeArgs.Builder)
     /**
      * @param customRequestHandling Custom handling for challenge requests. See below.
@@ -20802,7 +19932,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationRuleGroupReferenceRuleActionOverrideActionToUseChallengeCustomRequestHandlingArgs.builder
       builder.customRequestHandling(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementSqliMatchStatementFieldToMatchHeaderArgs.Builder)
     /**
      * @param matchPattern Headers to inspect. See Headers Match Pattern below.
@@ -20813,7 +19942,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementSqliMatchStatementFieldToMatchHeaderMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSqliMatchStatementFieldToMatchArgs.Builder)
     /**
      * @param allQueryArguments Inspect all query arguments.
@@ -20941,21 +20069,18 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSqliMatchStatementFieldToMatchUriPathArgs.builder
       builder.uriPath(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRateBasedStatementCustomKeyHeaderArgs.Builder)
     def textTransformations(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRateBasedStatementCustomKeyHeaderTextTransformationArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRateBasedStatementCustomKeyHeaderArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRateBasedStatementCustomKeyHeaderTextTransformationArgs.builder
       builder.textTransformations(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSqliMatchStatementFieldToMatchCookiesMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSqliMatchStatementFieldToMatchCookiesMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSqliMatchStatementFieldToMatchCookiesMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSqliMatchStatementFieldToMatchCookiesMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementByteMatchStatementArgs.Builder)
     /**
      * @param fieldToMatch Part of the web request that you want WAF to inspect. See Field to Match below.
@@ -20975,7 +20100,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementByteMatchStatementTextTransformationArgs.builder
       builder.textTransformations(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexPatternSetReferenceStatementArgs.Builder)
     /**
      * @param fieldToMatch The part of a web request that you want AWS WAF to inspect. See Field to Match below for details.
@@ -20997,7 +20121,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexPatternSetReferenceStatementTextTransformationArgs.builder
       builder.textTransformations(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementArgs.Builder)
     /**
      * @param fieldToMatch Part of the web request that you want WAF to inspect. See Field to Match below.
@@ -21017,7 +20140,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementTextTransformationArgs.builder
       builder.textTransformations(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementArgs.Builder)
     /**
      * @param asnMatchStatement Match requests based on Autonomous System Number (ASN). See ASN Match Statement above.
@@ -21109,35 +20231,30 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementXssMatchStatementArgs.builder
       builder.xssMatchStatement(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementSqliMatchStatementFieldToMatchCookiesMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementSqliMatchStatementFieldToMatchCookiesMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementSqliMatchStatementFieldToMatchCookiesMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementSqliMatchStatementFieldToMatchCookiesMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchCookiesMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchCookiesMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchCookiesMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchCookiesMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchJsonBodyMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchJsonBodyMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchJsonBodyMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchJsonBodyMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchCookiesMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchCookiesMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchCookiesMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchCookiesMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchArgs.Builder)
     /**
      * @param allQueryArguments Inspect all query arguments.
@@ -21265,7 +20382,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchUriPathArgs.builder
       builder.uriPath(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRuleGroupReferenceStatementRuleActionOverrideActionToUseAllowCustomRequestHandlingArgs.Builder)
     /**
      * @param insertHeaders Custom headers to insert into the request. See Insert Header below.
@@ -21276,21 +20392,18 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRuleGroupReferenceStatementRuleActionOverrideActionToUseAllowCustomRequestHandlingInsertHeaderArgs.builder
       builder.insertHeaders(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementXssMatchStatementFieldToMatchCookiesMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementXssMatchStatementFieldToMatchCookiesMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementXssMatchStatementFieldToMatchCookiesMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementXssMatchStatementFieldToMatchCookiesMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexMatchStatementFieldToMatchHeaderMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexMatchStatementFieldToMatchHeaderMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexMatchStatementFieldToMatchHeaderMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexMatchStatementFieldToMatchHeaderMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementFieldToMatchArgs.Builder)
     /**
      * @param allQueryArguments Inspect all query arguments.
@@ -21418,7 +20531,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementFieldToMatchUriPathArgs.builder
       builder.uriPath(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchCookiesArgs.Builder)
     /**
      * @param matchPatterns Cookies to inspect. See Cookies Match Pattern below.
@@ -21429,7 +20541,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchCookiesMatchPatternArgs.builder
       builder.matchPatterns(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementSqliMatchStatementFieldToMatchHeaderArgs.Builder)
     /**
      * @param matchPattern Headers to inspect. See Headers Match Pattern below.
@@ -21440,7 +20551,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementSqliMatchStatementFieldToMatchHeaderMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchArgs.Builder)
     /**
      * @param allQueryArguments Inspect all query arguments.
@@ -21568,14 +20678,12 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchUriPathArgs.builder
       builder.uriPath(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRegexPatternSetReferenceStatementFieldToMatchJsonBodyMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRegexPatternSetReferenceStatementFieldToMatchJsonBodyMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRegexPatternSetReferenceStatementFieldToMatchJsonBodyMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRegexPatternSetReferenceStatementFieldToMatchJsonBodyMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementByteMatchStatementFieldToMatchJsonBodyArgs.Builder)
     /**
      * @param matchPattern JSON content to inspect. See JSON Body Match Pattern below.
@@ -21586,7 +20694,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementByteMatchStatementFieldToMatchJsonBodyMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementRuleActionOverrideActionToUseChallengeCustomRequestHandlingArgs.Builder)
     /**
      * @param insertHeaders Custom headers to insert into the request. See Insert Header below.
@@ -21597,7 +20704,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementRuleActionOverrideActionToUseChallengeCustomRequestHandlingInsertHeaderArgs.builder
       builder.insertHeaders(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRuleGroupReferenceStatementRuleActionOverrideActionToUseBlockArgs.Builder)
     /**
      * @param customResponse Custom response configuration. See Custom Response below.
@@ -21608,7 +20714,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRuleGroupReferenceStatementRuleActionOverrideActionToUseBlockCustomResponseArgs.builder
       builder.customResponse(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementSqliMatchStatementFieldToMatchCookiesArgs.Builder)
     /**
      * @param matchPatterns Cookies to inspect. See Cookies Match Pattern below.
@@ -21619,7 +20724,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementSqliMatchStatementFieldToMatchCookiesMatchPatternArgs.builder
       builder.matchPatterns(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchJsonBodyArgs.Builder)
     /**
      * @param matchPattern JSON content to inspect. See JSON Body Match Pattern below.
@@ -21630,7 +20734,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchJsonBodyMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementArgs.Builder)
     /**
      * @param andStatement Logical AND statement that combines multiple statements. See And Statement below.
@@ -21769,7 +20872,7 @@ object wafv2:
 
     /**
      * @param xssMatchStatement Match requests that appear to contain cross-site scripting attacks. See Cross-Site Scripting Match Statement below.
-     *  
+     * 
      *  &gt; **NOTE:** Logical statements (`andStatement`, `notStatement`, `orStatement`) can be nested up to 3 levels deep. This matches the nesting limit of the `aws.wafv2.WebAcl` resource.
      * @return builder
      */
@@ -21778,7 +20881,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementXssMatchStatementArgs.builder
       builder.xssMatchStatement(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementGeoMatchStatementArgs.Builder)
     /**
      * @param forwardedIpConfig Configuration for inspecting forwarded IP headers. See Forwarded IP Config below.
@@ -21789,14 +20891,12 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementGeoMatchStatementForwardedIpConfigArgs.builder
       builder.forwardedIpConfig(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementByteMatchStatementFieldToMatchJsonBodyMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementByteMatchStatementFieldToMatchJsonBodyMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementByteMatchStatementFieldToMatchJsonBodyMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementByteMatchStatementFieldToMatchJsonBodyMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchHeaderMatchPatternArgs.Builder)
     /**
      * @param all An empty configuration block that is used for inspecting all headers.
@@ -21807,7 +20907,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchHeaderMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchHeaderArgs.Builder)
     /**
      * @param matchPattern Headers to inspect. See Headers Match Pattern below.
@@ -21818,7 +20917,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchHeaderMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRegexMatchStatementFieldToMatchJsonBodyArgs.Builder)
     /**
      * @param matchPattern JSON content to inspect. See JSON Body Match Pattern below.
@@ -21829,7 +20927,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRegexMatchStatementFieldToMatchJsonBodyMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementRuleActionOverrideActionToUseChallengeCustomRequestHandlingArgs.Builder)
     /**
      * @param insertHeaders Custom headers to insert into the request. See Insert Header below.
@@ -21840,7 +20937,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementRuleActionOverrideActionToUseChallengeCustomRequestHandlingInsertHeaderArgs.builder
       builder.insertHeaders(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleActionChallengeCustomRequestHandlingArgs.Builder)
     /**
      * @param insertHeaders The `insertHeader` blocks used to define HTTP headers added to the request. See Custom HTTP Header below for details.
@@ -21851,7 +20947,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleActionChallengeCustomRequestHandlingInsertHeaderArgs.builder
       builder.insertHeaders(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRuleGroupReferenceStatementRuleActionOverrideActionToUseCaptchaArgs.Builder)
     /**
      * @param customRequestHandling Custom request handling configuration. See Custom Request Handling below.
@@ -21862,14 +20957,12 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRuleGroupReferenceStatementRuleActionOverrideActionToUseCaptchaCustomRequestHandlingArgs.builder
       builder.customRequestHandling(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexMatchStatementFieldToMatchCookiesMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexMatchStatementFieldToMatchCookiesMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexMatchStatementFieldToMatchCookiesMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexMatchStatementFieldToMatchCookiesMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementArgs.Builder)
     /**
      * @param fieldToMatch The part of a web request that you want AWS WAF to inspect. See Field to Match below for details.
@@ -21891,7 +20984,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementTextTransformationArgs.builder
       builder.textTransformations(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementArgs.Builder)
     /**
      * @param andStatement A logical rule statement used to combine other rule statements with AND logic. See AND Statement below for details.
@@ -22019,7 +21111,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementXssMatchStatementArgs.builder
       builder.xssMatchStatement(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementSqliMatchStatementArgs.Builder)
     def fieldToMatch(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementSqliMatchStatementFieldToMatchArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementSqliMatchStatementArgs.Builder =
@@ -22031,7 +21122,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementSqliMatchStatementTextTransformationArgs.builder
       builder.textTransformations(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchCookiesArgs.Builder)
     /**
      * @param matchPatterns Cookies to inspect. See Cookies Match Pattern below.
@@ -22042,7 +21132,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchCookiesMatchPatternArgs.builder
       builder.matchPatterns(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementArgs.Builder)
     /**
      * @param fieldToMatch Part of the web request that you want WAF to inspect. See Field to Match below.
@@ -22062,7 +21151,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementTextTransformationArgs.builder
       builder.textTransformations(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationRuleGroupReferenceRuleActionOverrideActionToUseCountCustomRequestHandlingArgs.Builder)
     /**
      * @param insertHeaders Headers to insert into the request. See below.
@@ -22073,7 +21161,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationRuleGroupReferenceRuleActionOverrideActionToUseCountCustomRequestHandlingInsertHeaderArgs.builder
       builder.insertHeaders(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexMatchStatementArgs.Builder)
     /**
      * @param fieldToMatch Part of the web request that you want WAF to inspect. See Field to Match below.
@@ -22093,7 +21180,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexMatchStatementTextTransformationArgs.builder
       builder.textTransformations(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupManagedRuleGroupConfigsAwsManagedRulesAntiDdosRuleSetClientSideActionConfigArgs.Builder)
     /**
      * @param challenge Configuration for the use of the `AWSManagedRulesAntiDDoSRuleSet` rules `ChallengeAllDuringEvent` and `ChallengeDDoSRequests`. See below.
@@ -22104,7 +21190,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupManagedRuleGroupConfigsAwsManagedRulesAntiDdosRuleSetClientSideActionConfigChallengeArgs.builder
       builder.challenge(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRegexMatchStatementArgs.Builder)
     /**
      * @param fieldToMatch Part of the web request that you want WAF to inspect. See Field to Match below.
@@ -22124,14 +21209,12 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRegexMatchStatementTextTransformationArgs.builder
       builder.textTransformations(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexPatternSetReferenceStatementFieldToMatchCookiesMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexPatternSetReferenceStatementFieldToMatchCookiesMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexPatternSetReferenceStatementFieldToMatchCookiesMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexPatternSetReferenceStatementFieldToMatchCookiesMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementByteMatchStatementFieldToMatchJsonBodyArgs.Builder)
     /**
      * @param matchPattern JSON content to inspect. See JSON Body Match Pattern below.
@@ -22142,21 +21225,18 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementByteMatchStatementFieldToMatchJsonBodyMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchCookiesMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchCookiesMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchCookiesMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchCookiesMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchHeaderMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchHeaderMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchHeaderMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchHeaderMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexMatchStatementFieldToMatchJsonBodyMatchPatternArgs.Builder)
     /**
      * @param all An empty configuration block that is used for inspecting all headers.
@@ -22167,7 +21247,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexMatchStatementFieldToMatchJsonBodyMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupRuleActionOverrideActionToUseChallengeArgs.Builder)
     /**
      * @param customRequestHandling Custom handling for challenge requests. See below.
@@ -22178,7 +21257,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupRuleActionOverrideActionToUseChallengeCustomRequestHandlingArgs.builder
       builder.customRequestHandling(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleActionAllowArgs.Builder)
     /**
      * @param customRequestHandling Custom request handling configuration. See Custom Request Handling below.
@@ -22189,7 +21267,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleActionAllowCustomRequestHandlingArgs.builder
       builder.customRequestHandling(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationRuleGroupReferenceRuleActionOverrideActionToUseArgs.Builder)
     /**
      * @param allow Allow the request. See below.
@@ -22236,7 +21313,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationRuleGroupReferenceRuleActionOverrideActionToUseCountArgs.builder
       builder.count(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementFieldToMatchHeaderArgs.Builder)
     /**
      * @param matchPattern Headers to inspect. See Headers Match Pattern below.
@@ -22247,7 +21323,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementFieldToMatchHeaderMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementGeoMatchStatementArgs.Builder)
     /**
      * @param forwardedIpConfig Configuration for inspecting forwarded IP headers. See Forwarded IP Config below.
@@ -22258,7 +21333,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementGeoMatchStatementForwardedIpConfigArgs.builder
       builder.forwardedIpConfig(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchHeaderArgs.Builder)
     /**
      * @param matchPattern The filter to use to identify the subset of headers to inspect in a web request. The `matchPattern` block supports only one of the following arguments:
@@ -22269,14 +21343,12 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchHeaderMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementByteMatchStatementFieldToMatchHeaderMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementByteMatchStatementFieldToMatchHeaderMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementByteMatchStatementFieldToMatchHeaderMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementByteMatchStatementFieldToMatchHeaderMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclDefaultActionAllowCustomRequestHandlingArgs.Builder)
     /**
      * @param insertHeaders The `insertHeader` blocks used to define HTTP headers added to the request. See `insertHeader` below for details.
@@ -22287,7 +21359,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclDefaultActionAllowCustomRequestHandlingInsertHeaderArgs.builder
       builder.insertHeaders(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchArgs.Builder)
     /**
      * @param allQueryArguments Inspect all query arguments.
@@ -22415,7 +21486,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchUriPathArgs.builder
       builder.uriPath(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementRuleActionOverrideActionToUseChallengeCustomRequestHandlingArgs.Builder)
     /**
      * @param insertHeaders Custom headers to insert into the request. See Insert Header below.
@@ -22426,7 +21496,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementRuleActionOverrideActionToUseChallengeCustomRequestHandlingInsertHeaderArgs.builder
       builder.insertHeaders(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAcfpRuleSetArgs.Builder)
     def requestInspection(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAcfpRuleSetRequestInspectionArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAcfpRuleSetArgs.Builder =
@@ -22438,7 +21507,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAcfpRuleSetResponseInspectionArgs.builder
       builder.responseInspection(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleActionCaptchaCustomRequestHandlingArgs.Builder)
     /**
      * @param insertHeaders The `insertHeader` blocks used to define HTTP headers added to the request. See Custom HTTP Header below for details.
@@ -22449,14 +21517,12 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleActionCaptchaCustomRequestHandlingInsertHeaderArgs.builder
       builder.insertHeaders(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchJsonBodyMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchJsonBodyMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchJsonBodyMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchJsonBodyMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementByteMatchStatementArgs.Builder)
     /**
      * @param fieldToMatch Part of the web request that you want WAF to inspect. See Field to Match below.
@@ -22476,7 +21542,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementByteMatchStatementTextTransformationArgs.builder
       builder.textTransformations(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRuleGroupReferenceStatementRuleActionOverrideActionToUseBlockCustomResponseArgs.Builder)
     /**
      * @param responseHeaders Custom headers to include in the response. See Response Header below.
@@ -22487,7 +21552,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRuleGroupReferenceStatementRuleActionOverrideActionToUseBlockCustomResponseResponseHeaderArgs.builder
       builder.responseHeaders(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementSizeConstraintStatementFieldToMatchHeaderArgs.Builder)
     /**
      * @param matchPattern Headers to inspect. See Headers Match Pattern below.
@@ -22498,7 +21562,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementSizeConstraintStatementFieldToMatchHeaderMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexMatchStatementFieldToMatchCookiesArgs.Builder)
     /**
      * @param matchPatterns Cookies to inspect. See Cookies Match Pattern below.
@@ -22509,7 +21572,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexMatchStatementFieldToMatchCookiesMatchPatternArgs.builder
       builder.matchPatterns(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRuleGroupReferenceStatementRuleActionOverrideActionToUseCaptchaArgs.Builder)
     /**
      * @param customRequestHandling Custom request handling configuration. See Custom Request Handling below.
@@ -22520,7 +21582,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRuleGroupReferenceStatementRuleActionOverrideActionToUseCaptchaCustomRequestHandlingArgs.builder
       builder.customRequestHandling(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRuleGroupReferenceStatementRuleActionOverrideActionToUseCaptchaCustomRequestHandlingArgs.Builder)
     /**
      * @param insertHeaders Custom headers to insert into the request. See Insert Header below.
@@ -22531,7 +21592,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRuleGroupReferenceStatementRuleActionOverrideActionToUseCaptchaCustomRequestHandlingInsertHeaderArgs.builder
       builder.insertHeaders(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementSqliMatchStatementArgs.Builder)
     def fieldToMatch(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementSqliMatchStatementArgs.Builder =
@@ -22543,7 +21603,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementSqliMatchStatementTextTransformationArgs.builder
       builder.textTransformations(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchArgs.Builder)
     /**
      * @param allQueryArguments Inspect all query arguments.
@@ -22671,7 +21730,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchUriPathArgs.builder
       builder.uriPath(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementSqliMatchStatementArgs.Builder)
     def fieldToMatch(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementSqliMatchStatementFieldToMatchArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementSqliMatchStatementArgs.Builder =
@@ -22683,7 +21741,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementSqliMatchStatementTextTransformationArgs.builder
       builder.textTransformations(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclState.Builder)
     /**
      * @param associationConfig Specifies custom configurations for the associations between the web ACL and protected resources. See `associationConfig` below for details.
@@ -22760,21 +21817,19 @@ object wafv2:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.wafv2.inputs.WebAclState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementByteMatchStatementFieldToMatchCookiesMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementByteMatchStatementFieldToMatchCookiesMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementByteMatchStatementFieldToMatchCookiesMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementByteMatchStatementFieldToMatchCookiesMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementXssMatchStatementFieldToMatchHeaderMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementXssMatchStatementFieldToMatchHeaderMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementXssMatchStatementFieldToMatchHeaderMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementXssMatchStatementFieldToMatchHeaderMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchHeaderArgs.Builder)
     /**
      * @param matchPattern Headers to inspect. See Headers Match Pattern below.
@@ -22785,7 +21840,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchHeaderMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementSqliMatchStatementArgs.Builder)
     def fieldToMatch(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementSqliMatchStatementFieldToMatchArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementSqliMatchStatementArgs.Builder =
@@ -22797,7 +21851,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementSqliMatchStatementTextTransformationArgs.builder
       builder.textTransformations(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementArgs.Builder)
     /**
      * @param fieldToMatch Part of the web request that you want WAF to inspect. See Field to Match below.
@@ -22817,7 +21870,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementTextTransformationArgs.builder
       builder.textTransformations(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementArgs.Builder)
     /**
      * @param fieldToMatch The part of a web request that you want AWS WAF to inspect. See Field to Match below for details.
@@ -22839,7 +21891,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementTextTransformationArgs.builder
       builder.textTransformations(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleActionCountCustomRequestHandlingArgs.Builder)
     /**
      * @param insertHeaders The `insertHeader` blocks used to define HTTP headers added to the request. See Custom HTTP Header below for details.
@@ -22850,7 +21901,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleActionCountCustomRequestHandlingInsertHeaderArgs.builder
       builder.insertHeaders(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.RegexPatternSetState.Builder)
     /**
      * @param regularExpressions One or more blocks of regular expression patterns that you want AWS WAF to search for, such as `B[a{@literal @}]dB[o0]t`. See Regular Expression below for details.
@@ -22864,7 +21914,7 @@ object wafv2:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.wafv2.inputs.RegexPatternSetState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSizeConstraintStatementArgs.Builder)
     /**
      * @param fieldToMatch The part of a web request that you want AWS WAF to inspect. See Field to Match below for details.
@@ -22886,7 +21936,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSizeConstraintStatementTextTransformationArgs.builder
       builder.textTransformations(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementByteMatchStatementFieldToMatchJsonBodyArgs.Builder)
     /**
      * @param matchPattern JSON content to inspect. See JSON Body Match Pattern below.
@@ -22897,14 +21946,12 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementByteMatchStatementFieldToMatchJsonBodyMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchCookiesMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchCookiesMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchCookiesMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchCookiesMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchCookiesArgs.Builder)
     /**
      * @param matchPatterns Cookies to inspect. See Cookies Match Pattern below.
@@ -22915,7 +21962,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchCookiesMatchPatternArgs.builder
       builder.matchPatterns(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementAndStatementArgs.Builder)
     /**
      * @param statements The statements to combine.
@@ -22926,7 +21972,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementArgs.builder
       builder.statements(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementByteMatchStatementArgs.Builder)
     /**
      * @param fieldToMatch The part of a web request that you want AWS WAF to inspect. See Field to Match below for details.
@@ -22948,21 +21993,18 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementByteMatchStatementTextTransformationArgs.builder
       builder.textTransformations(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexMatchStatementFieldToMatchJsonBodyMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexMatchStatementFieldToMatchJsonBodyMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexMatchStatementFieldToMatchJsonBodyMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexMatchStatementFieldToMatchJsonBodyMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchHeaderMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchHeaderMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchHeaderMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchHeaderMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexPatternSetReferenceStatementFieldToMatchJsonBodyMatchPatternArgs.Builder)
     /**
      * @param all An empty configuration block that is used for inspecting all headers.
@@ -22973,7 +22015,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexPatternSetReferenceStatementFieldToMatchJsonBodyMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementRuleActionOverrideActionToUseBlockCustomResponseArgs.Builder)
     /**
      * @param responseHeaders Custom headers to include in the response. See Response Header below.
@@ -22984,7 +22025,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementRuleActionOverrideActionToUseBlockCustomResponseResponseHeaderArgs.builder
       builder.responseHeaders(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRegexPatternSetReferenceStatementFieldToMatchArgs.Builder)
     /**
      * @param allQueryArguments Inspect all query arguments.
@@ -23112,7 +22152,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRegexPatternSetReferenceStatementFieldToMatchUriPathArgs.builder
       builder.uriPath(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexPatternSetReferenceStatementFieldToMatchCookiesArgs.Builder)
     /**
      * @param matchPatterns The filter to use to identify the subset of cookies to inspect in a web request. You must specify exactly one setting: either `all`, `includedCookies` or `excludedCookies`. More details: [CookieMatchPattern](https://docs.aws.amazon.com/waf/latest/APIReference/API_CookieMatchPattern.html)
@@ -23123,7 +22162,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexPatternSetReferenceStatementFieldToMatchCookiesMatchPatternArgs.builder
       builder.matchPatterns(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementRuleActionOverrideActionToUseAllowCustomRequestHandlingArgs.Builder)
     /**
      * @param insertHeaders Custom headers to insert into the request. See Insert Header below.
@@ -23134,7 +22172,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementRuleActionOverrideActionToUseAllowCustomRequestHandlingInsertHeaderArgs.builder
       builder.insertHeaders(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementGeoMatchStatementArgs.Builder)
     /**
      * @param forwardedIpConfig Configuration for inspecting forwarded IP headers. See Forwarded IP Config below.
@@ -23145,7 +22182,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementGeoMatchStatementForwardedIpConfigArgs.builder
       builder.forwardedIpConfig(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupManagedRuleGroupConfigsAwsManagedRulesAntiDdosRuleSetArgs.Builder)
     /**
      * @param clientSideActionConfig Configuration for the request handling that&#39;s applied by the managed rule group rules `ChallengeAllDuringEvent` and `ChallengeDDoSRequests` during a distributed denial of service (DDoS) attack. See below.
@@ -23156,7 +22192,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupManagedRuleGroupConfigsAwsManagedRulesAntiDdosRuleSetClientSideActionConfigArgs.builder
       builder.clientSideActionConfig(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchJsonBodyArgs.Builder)
     /**
      * @param matchPattern JSON content to inspect. See JSON Body Match Pattern below.
@@ -23167,7 +22202,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchJsonBodyMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchJsonBodyArgs.Builder)
     /**
      * @param matchPattern JSON content to inspect. See JSON Body Match Pattern below.
@@ -23178,7 +22212,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchJsonBodyMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchCookiesArgs.Builder)
     /**
      * @param matchPatterns The filter to use to identify the subset of cookies to inspect in a web request. You must specify exactly one setting: either `all`, `includedCookies` or `excludedCookies`. More details: [CookieMatchPattern](https://docs.aws.amazon.com/waf/latest/APIReference/API_CookieMatchPattern.html)
@@ -23189,7 +22222,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchCookiesMatchPatternArgs.builder
       builder.matchPatterns(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRegexMatchStatementArgs.Builder)
     /**
      * @param fieldToMatch Part of the web request that you want WAF to inspect. See Field to Match below.
@@ -23209,14 +22241,12 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRegexMatchStatementTextTransformationArgs.builder
       builder.textTransformations(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexPatternSetReferenceStatementFieldToMatchHeaderMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexPatternSetReferenceStatementFieldToMatchHeaderMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexPatternSetReferenceStatementFieldToMatchHeaderMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexPatternSetReferenceStatementFieldToMatchHeaderMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementArgs.Builder)
     def fieldToMatch(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementArgs.Builder =
@@ -23228,7 +22258,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementTextTransformationArgs.builder
       builder.textTransformations(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRateBasedStatementArgs.Builder)
     /**
      * @param customKeys Aggregate the request counts using one or more web request components as the aggregate keys. See Custom Keys below.
@@ -23257,7 +22286,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementArgs.builder
       builder.scopeDownStatement(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementRuleActionOverrideActionToUseChallengeArgs.Builder)
     /**
      * @param customRequestHandling Custom request handling configuration. See Custom Request Handling below.
@@ -23268,7 +22296,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementRuleActionOverrideActionToUseChallengeCustomRequestHandlingArgs.builder
       builder.customRequestHandling(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementArgs.Builder)
     /**
      * @param asnMatchStatement Match requests based on Autonomous System Number (ASN). See ASN Match Statement above.
@@ -23360,7 +22387,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementArgs.builder
       builder.xssMatchStatement(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementGeoMatchStatementArgs.Builder)
     /**
      * @param forwardedIpConfig Configuration for inspecting forwarded IP headers. See Forwarded IP Config below.
@@ -23371,14 +22397,12 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementGeoMatchStatementForwardedIpConfigArgs.builder
       builder.forwardedIpConfig(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchJsonBodyMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchJsonBodyMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchJsonBodyMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchJsonBodyMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupRuleActionOverrideActionToUseAllowCustomRequestHandlingArgs.Builder)
     /**
      * @param insertHeaders Headers to insert into the request. See below.
@@ -23389,7 +22413,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupRuleActionOverrideActionToUseAllowCustomRequestHandlingInsertHeaderArgs.builder
       builder.insertHeaders(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAtpRuleSetArgs.Builder)
     def requestInspection(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAtpRuleSetRequestInspectionArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAtpRuleSetArgs.Builder =
@@ -23401,7 +22424,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAtpRuleSetResponseInspectionArgs.builder
       builder.responseInspection(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchArgs.Builder)
     /**
      * @param allQueryArguments Inspect all query arguments.
@@ -23529,7 +22551,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchUriPathArgs.builder
       builder.uriPath(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexPatternSetReferenceStatementFieldToMatchJsonBodyArgs.Builder)
     /**
      * @param matchPattern The patterns to look for in the JSON body. You must specify exactly one setting: either `all` or `includedPaths`. See [JsonMatchPattern](https://docs.aws.amazon.com/waf/latest/APIReference/API_JsonMatchPattern.html) for details.
@@ -23540,7 +22561,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexPatternSetReferenceStatementFieldToMatchJsonBodyMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleActionCountArgs.Builder)
     /**
      * @param customRequestHandling Custom request handling configuration. See Custom Request Handling below.
@@ -23551,7 +22571,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleActionCountCustomRequestHandlingArgs.builder
       builder.customRequestHandling(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementOrStatementArgs.Builder)
     /**
      * @param statements The statements to combine.
@@ -23562,7 +22581,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementArgs.builder
       builder.statements(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementRuleActionOverrideActionToUseCaptchaArgs.Builder)
     /**
      * @param customRequestHandling Custom request handling configuration. See Custom Request Handling below.
@@ -23573,7 +22591,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementRuleActionOverrideActionToUseCaptchaCustomRequestHandlingArgs.builder
       builder.customRequestHandling(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexPatternSetReferenceStatementFieldToMatchCookiesMatchPatternArgs.Builder)
     /**
      * @param all An empty configuration block that is used for inspecting all headers.
@@ -23584,35 +22601,30 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexPatternSetReferenceStatementFieldToMatchCookiesMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchJsonBodyMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchJsonBodyMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchJsonBodyMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchJsonBodyMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchCookiesMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchCookiesMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchCookiesMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchCookiesMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementSizeConstraintStatementFieldToMatchCookiesMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementSizeConstraintStatementFieldToMatchCookiesMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementSizeConstraintStatementFieldToMatchCookiesMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementSizeConstraintStatementFieldToMatchCookiesMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAntiDdosRuleSetClientSideActionConfigChallengeArgs.Builder)
     def exemptUriRegularExpressions(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAntiDdosRuleSetClientSideActionConfigChallengeExemptUriRegularExpressionArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAntiDdosRuleSetClientSideActionConfigChallengeArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAntiDdosRuleSetClientSideActionConfigChallengeExemptUriRegularExpressionArgs.builder
       builder.exemptUriRegularExpressions(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementByteMatchStatementFieldToMatchCookiesMatchPatternArgs.Builder)
     /**
      * @param all An empty configuration block that is used for inspecting all headers.
@@ -23623,7 +22635,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementByteMatchStatementFieldToMatchCookiesMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementRegexMatchStatementFieldToMatchArgs.Builder)
     /**
      * @param allQueryArguments Inspect all query arguments.
@@ -23751,7 +22762,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementRegexMatchStatementFieldToMatchUriPathArgs.builder
       builder.uriPath(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchArgs.Builder)
     /**
      * @param allQueryArguments Inspect all query arguments.
@@ -23879,14 +22889,12 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchUriPathArgs.builder
       builder.uriPath(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchHeaderMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchHeaderMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchHeaderMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchHeaderMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRateBasedStatementArgs.Builder)
     /**
      * @param customKeys Aggregate the request counts using one or more web request components as the aggregate keys. See Custom Keys below.
@@ -23915,7 +22923,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRateBasedStatementScopeDownStatementArgs.builder
       builder.scopeDownStatement(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementXssMatchStatementFieldToMatchCookiesArgs.Builder)
     /**
      * @param matchPatterns Cookies to inspect. See Cookies Match Pattern below.
@@ -23926,14 +22933,12 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementXssMatchStatementFieldToMatchCookiesMatchPatternArgs.builder
       builder.matchPatterns(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRegexPatternSetReferenceStatementFieldToMatchCookiesMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRegexPatternSetReferenceStatementFieldToMatchCookiesMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRegexPatternSetReferenceStatementFieldToMatchCookiesMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementRegexPatternSetReferenceStatementFieldToMatchCookiesMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupManagedRuleGroupConfigsAwsManagedRulesAntiDdosRuleSetClientSideActionConfigChallengeArgs.Builder)
     /**
      * @param exemptUriRegularExpressions Block for the list of the regular expressions to match against the web request URI, used to identify requests that can&#39;t handle a silent browser challenge. See below.
@@ -23944,21 +22949,18 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupManagedRuleGroupConfigsAwsManagedRulesAntiDdosRuleSetClientSideActionConfigChallengeExemptUriRegularExpressionArgs.builder
       builder.exemptUriRegularExpressions(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementFieldToMatchCookiesMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementFieldToMatchCookiesMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementFieldToMatchCookiesMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementFieldToMatchCookiesMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchCookiesMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchCookiesMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchCookiesMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchCookiesMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexMatchStatementFieldToMatchCookiesArgs.Builder)
     /**
      * @param matchPatterns The filter to use to identify the subset of cookies to inspect in a web request. You must specify exactly one setting: either `all`, `includedCookies` or `excludedCookies`. More details: [CookieMatchPattern](https://docs.aws.amazon.com/waf/latest/APIReference/API_CookieMatchPattern.html)
@@ -23969,7 +22971,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexMatchStatementFieldToMatchCookiesMatchPatternArgs.builder
       builder.matchPatterns(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSizeConstraintStatementFieldToMatchCookiesArgs.Builder)
     /**
      * @param matchPatterns The filter to use to identify the subset of cookies to inspect in a web request. You must specify exactly one setting: either `all`, `includedCookies` or `excludedCookies`. More details: [CookieMatchPattern](https://docs.aws.amazon.com/waf/latest/APIReference/API_CookieMatchPattern.html)
@@ -23980,7 +22981,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSizeConstraintStatementFieldToMatchCookiesMatchPatternArgs.builder
       builder.matchPatterns(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementXssMatchStatementFieldToMatchJsonBodyArgs.Builder)
     /**
      * @param matchPattern JSON content to inspect. See JSON Body Match Pattern below.
@@ -23991,7 +22991,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementXssMatchStatementFieldToMatchJsonBodyMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementRegexMatchStatementFieldToMatchHeaderArgs.Builder)
     /**
      * @param matchPattern Headers to inspect. See Headers Match Pattern below.
@@ -24002,14 +23001,12 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementRegexMatchStatementFieldToMatchHeaderMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementRegexMatchStatementFieldToMatchHeaderMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementRegexMatchStatementFieldToMatchHeaderMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementRegexMatchStatementFieldToMatchHeaderMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementRegexMatchStatementFieldToMatchHeaderMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementSizeConstraintStatementFieldToMatchArgs.Builder)
     /**
      * @param allQueryArguments Inspect all query arguments.
@@ -24137,14 +23134,12 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementSizeConstraintStatementFieldToMatchUriPathArgs.builder
       builder.uriPath(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchHeaderMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchHeaderMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchHeaderMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchHeaderMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementByteMatchStatementFieldToMatchHeaderArgs.Builder)
     /**
      * @param matchPattern Headers to inspect. See Headers Match Pattern below.
@@ -24155,7 +23150,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementByteMatchStatementFieldToMatchHeaderMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchCookiesArgs.Builder)
     /**
      * @param matchPatterns Cookies to inspect. See Cookies Match Pattern below.
@@ -24166,7 +23160,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchCookiesMatchPatternArgs.builder
       builder.matchPatterns(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementIpSetReferenceStatementArgs.Builder)
     /**
      * @param ipSetForwardedIpConfig Configuration for inspecting forwarded IP headers. See IP Set Forwarded IP Config below.
@@ -24177,7 +23170,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementIpSetReferenceStatementIpSetForwardedIpConfigArgs.builder
       builder.ipSetForwardedIpConfig(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchJsonBodyArgs.Builder)
     /**
      * @param matchPattern JSON content to inspect. See JSON Body Match Pattern below.
@@ -24188,7 +23180,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchJsonBodyMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementByteMatchStatementFieldToMatchCookiesArgs.Builder)
     /**
      * @param matchPatterns Cookies to inspect. See Cookies Match Pattern below.
@@ -24199,7 +23190,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementByteMatchStatementFieldToMatchCookiesMatchPatternArgs.builder
       builder.matchPatterns(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchHeaderArgs.Builder)
     /**
      * @param matchPattern The filter to use to identify the subset of headers to inspect in a web request. The `matchPattern` block supports only one of the following arguments:
@@ -24210,7 +23200,6 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchHeaderMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementSizeConstraintStatementArgs.Builder)
     /**
      * @param fieldToMatch Part of the web request that you want WAF to inspect. See Field to Match below.
@@ -24230,14 +23219,12 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementSizeConstraintStatementTextTransformationArgs.builder
       builder.textTransformations(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchCookiesMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchCookiesMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchCookiesMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchCookiesMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementXssMatchStatementFieldToMatchCookiesArgs.Builder)
     /**
      * @param matchPatterns Cookies to inspect. See Cookies Match Pattern below.
@@ -24248,7 +23235,6 @@ object wafv2:
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementXssMatchStatementFieldToMatchCookiesMatchPatternArgs.builder
       builder.matchPatterns(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRuleGroupReferenceStatementRuleActionOverrideArgs.Builder)
     /**
      * @param actionToUse Override action to use for the rule. See Action below.
@@ -24259,11 +23245,8 @@ object wafv2:
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementStatementNotStatementStatementNotStatementStatementRuleGroupReferenceStatementRuleActionOverrideActionToUseArgs.builder
       builder.actionToUse(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexMatchStatementFieldToMatchJsonBodyMatchPatternArgs.Builder)
     def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexMatchStatementFieldToMatchJsonBodyMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexMatchStatementFieldToMatchJsonBodyMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexMatchStatementFieldToMatchJsonBodyMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
-
-                       

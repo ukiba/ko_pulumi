@@ -14,7 +14,6 @@ object codebuild:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.codebuild.Fleet(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -64,7 +63,6 @@ object codebuild:
       val argsBuilder = com.pulumi.aws.codebuild.inputs.WebhookScopeConfigurationArgs.builder
       builder.scopeConfiguration(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.codebuild.ProjectArgs.Builder)
     /**
      * @param artifacts Configuration block. Detailed below.
@@ -150,7 +148,7 @@ object codebuild:
 
     /**
      * @param source Configuration block. Detailed below.
-     *  
+     * 
      *  The following arguments are optional:
      * @return builder
      */
@@ -171,7 +169,7 @@ object codebuild:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.codebuild.ProjectArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.codebuild.ReportGroupArgs.Builder)
     /**
      * @param exportConfig Information about the destination where the raw data of this Report Group is exported. see Export Config documented below.
@@ -185,12 +183,11 @@ object codebuild:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.codebuild.ReportGroupArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   /** Provides a CodeBuild Resource Policy Resource. */
   def ResourcePolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.codebuild.ResourcePolicyArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.codebuild.ResourcePolicyArgs.builder
-    
     com.pulumi.aws.codebuild.ResourcePolicy(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -205,7 +202,6 @@ object codebuild:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.codebuild.ReportGroup(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -224,7 +220,6 @@ object codebuild:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.codebuild.Project(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -233,7 +228,6 @@ object codebuild:
   def Webhook(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.codebuild.WebhookArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.codebuild.WebhookArgs.builder
-    
     com.pulumi.aws.codebuild.Webhook(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -269,10 +263,10 @@ object codebuild:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.codebuild.FleetArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   /**
    * Provides a CodeBuild Source Credentials Resource.
-   *  
+   * 
    *  &gt; **NOTE:
    *  ** [Codebuild only allows a single credential per given server type in a given region](https://docs.aws.amazon.com/cdk/api/v2/docs/aws-cdk-lib.aws_codebuild.GitHubSourceCredentials.html).
    *  Therefore, when you define `aws.codebuild.SourceCredential`,
@@ -281,7 +275,6 @@ object codebuild:
   def SourceCredential(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.codebuild.SourceCredentialArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.codebuild.SourceCredentialArgs.builder
-    
     com.pulumi.aws.codebuild.SourceCredential(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -305,7 +298,6 @@ object codebuild:
       val argsBuilder = com.pulumi.aws.codebuild.inputs.ProjectLogsConfigS3LogsArgs.builder
       builder.s3Logs(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.codebuild.inputs.WebhookFilterGroupArgs.Builder)
     /**
      * @param filters A webhook filter for the group. See filter for details.
@@ -316,7 +308,6 @@ object codebuild:
       def argsBuilder = com.pulumi.aws.codebuild.inputs.WebhookFilterGroupFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.codebuild.inputs.ProjectSecondarySourceArgs.Builder)
     /**
      * @param auth Information about the strategy CodeBuild should use when authenticating with the source code host.
@@ -348,7 +339,6 @@ object codebuild:
       val argsBuilder = com.pulumi.aws.codebuild.inputs.ProjectSecondarySourceGitSubmodulesConfigArgs.builder
       builder.gitSubmodulesConfig(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.codebuild.inputs.ProjectSourceArgs.Builder)
     /**
      * @param auth Information about the strategy CodeBuild should use when authenticating with the source code host.
@@ -380,7 +370,6 @@ object codebuild:
       val argsBuilder = com.pulumi.aws.codebuild.inputs.ProjectSourceGitSubmodulesConfigArgs.builder
       builder.gitSubmodulesConfig(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.codebuild.inputs.FleetScalingConfigurationArgs.Builder)
     /**
      * @param targetTrackingScalingConfigs Configuration block. Detailed below.
@@ -391,7 +380,6 @@ object codebuild:
       def argsBuilder = com.pulumi.aws.codebuild.inputs.FleetScalingConfigurationTargetTrackingScalingConfigArgs.builder
       builder.targetTrackingScalingConfigs(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.codebuild.inputs.ProjectEnvironmentArgs.Builder)
     /**
      * @param dockerServer Configuration block. Detailed below.
@@ -429,7 +417,6 @@ object codebuild:
       val argsBuilder = com.pulumi.aws.codebuild.inputs.ProjectEnvironmentRegistryCredentialArgs.builder
       builder.registryCredential(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.codebuild.inputs.ReportGroupState.Builder)
     /**
      * @param exportConfig Information about the destination where the raw data of this Report Group is exported. see Export Config documented below.
@@ -443,7 +430,7 @@ object codebuild:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.codebuild.inputs.ReportGroupState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.codebuild.inputs.ProjectState.Builder)
     /**
      * @param artifacts Configuration block. Detailed below.
@@ -529,7 +516,7 @@ object codebuild:
 
     /**
      * @param source Configuration block. Detailed below.
-     *  
+     * 
      *  The following arguments are optional:
      * @return builder
      */
@@ -550,7 +537,7 @@ object codebuild:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.codebuild.inputs.ProjectState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.codebuild.inputs.ReportGroupExportConfigArgs.Builder)
     /**
      * @param s3Destination contains information about the S3 bucket where the run of a report is exported. see S3 Destination documented below.
@@ -561,7 +548,6 @@ object codebuild:
       val argsBuilder = com.pulumi.aws.codebuild.inputs.ReportGroupExportConfigS3DestinationArgs.builder
       builder.s3Destination(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.codebuild.inputs.ProjectBuildBatchConfigArgs.Builder)
     /**
      * @param restrictions Configuration block specifying the restrictions for the batch build. Detailed below.
@@ -572,7 +558,6 @@ object codebuild:
       val argsBuilder = com.pulumi.aws.codebuild.inputs.ProjectBuildBatchConfigRestrictionsArgs.builder
       builder.restrictions(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.codebuild.inputs.FleetState.Builder)
     /**
      * @param computeConfiguration The compute configuration of the compute fleet. This is only required if `computeType` is set to `ATTRIBUTE_BASED_COMPUTE` or `CUSTOM_INSTANCE_TYPE`. See `computeConfiguration` below.
@@ -613,7 +598,7 @@ object codebuild:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.codebuild.inputs.FleetState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.codebuild.inputs.WebhookState.Builder)
     /**
      * @param filterGroups Information about the webhook&#39;s trigger. See filterGroup for details.
@@ -641,5 +626,3 @@ object codebuild:
         com.pulumi.aws.codebuild.inputs.WebhookState.Builder =
       val argsBuilder = com.pulumi.aws.codebuild.inputs.WebhookScopeConfigurationArgs.builder
       builder.scopeConfiguration(args(argsBuilder).build)
-
-                       

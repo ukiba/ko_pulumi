@@ -11,7 +11,6 @@ object kinesisanalyticsv2:
   def ApplicationSnapshot(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.kinesisanalyticsv2.ApplicationSnapshotArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.kinesisanalyticsv2.ApplicationSnapshotArgs.builder
-    
     com.pulumi.aws.kinesisanalyticsv2.ApplicationSnapshot(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -19,7 +18,7 @@ object kinesisanalyticsv2:
   /**
    * Manages a Kinesis Analytics v2 Application.
    *  This resource can be used to manage both Kinesis Data Analytics for SQL applications and Kinesis Data Analytics for Apache Flink applications.
-   *  
+   * 
    *  &gt; **Note:** Kinesis Data Analytics for SQL applications created using this resource cannot currently be viewed in the AWS Console. To manage Kinesis Data Analytics for SQL applications that can also be viewed in the AWS Console, use the `aws.kinesis.AnalyticsApplication` resource.
    */
   def Application(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
@@ -31,7 +30,6 @@ object kinesisanalyticsv2:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.kinesisanalyticsv2.Application(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -58,7 +56,7 @@ object kinesisanalyticsv2:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.kinesisanalyticsv2.ApplicationArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.kinesisanalyticsv2.inputs.ApplicationApplicationConfigurationSqlApplicationConfigurationInputInputProcessingConfigurationArgs.Builder)
     /**
      * @param inputLambdaProcessor Describes the Lambda function that is used to preprocess the records in the stream before being processed by your application code.
@@ -69,7 +67,6 @@ object kinesisanalyticsv2:
       val argsBuilder = com.pulumi.aws.kinesisanalyticsv2.inputs.ApplicationApplicationConfigurationSqlApplicationConfigurationInputInputProcessingConfigurationInputLambdaProcessorArgs.builder
       builder.inputLambdaProcessor(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.kinesisanalyticsv2.inputs.ApplicationApplicationConfigurationSqlApplicationConfigurationInputArgs.Builder)
     /**
      * @param inputParallelism Describes the number of in-application streams to create.
@@ -126,7 +123,6 @@ object kinesisanalyticsv2:
       val argsBuilder = com.pulumi.aws.kinesisanalyticsv2.inputs.ApplicationApplicationConfigurationSqlApplicationConfigurationInputKinesisStreamsInputArgs.builder
       builder.kinesisStreamsInput(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.kinesisanalyticsv2.inputs.ApplicationApplicationConfigurationSqlApplicationConfigurationReferenceDataSourceReferenceSchemaRecordFormatArgs.Builder)
     /**
      * @param mappingParameters Provides additional mapping information specific to the record format (such as JSON, CSV, or record fields delimited by some delimiter) on the streaming source.
@@ -137,7 +133,6 @@ object kinesisanalyticsv2:
       val argsBuilder = com.pulumi.aws.kinesisanalyticsv2.inputs.ApplicationApplicationConfigurationSqlApplicationConfigurationReferenceDataSourceReferenceSchemaRecordFormatMappingParametersArgs.builder
       builder.mappingParameters(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.kinesisanalyticsv2.inputs.ApplicationApplicationConfigurationSqlApplicationConfigurationInputInputSchemaArgs.Builder)
     /**
      * @param recordColumns Describes the mapping of each data element in the streaming source to the corresponding column in the in-application stream.
@@ -157,7 +152,6 @@ object kinesisanalyticsv2:
       val argsBuilder = com.pulumi.aws.kinesisanalyticsv2.inputs.ApplicationApplicationConfigurationSqlApplicationConfigurationInputInputSchemaRecordFormatArgs.builder
       builder.recordFormat(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.kinesisanalyticsv2.inputs.ApplicationApplicationConfigurationEnvironmentPropertiesArgs.Builder)
     /**
      * @param propertyGroups Describes the execution property groups.
@@ -168,7 +162,6 @@ object kinesisanalyticsv2:
       def argsBuilder = com.pulumi.aws.kinesisanalyticsv2.inputs.ApplicationApplicationConfigurationEnvironmentPropertiesPropertyGroupArgs.builder
       builder.propertyGroups(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.kinesisanalyticsv2.inputs.ApplicationApplicationConfigurationArgs.Builder)
     /**
      * @param applicationCodeConfiguration The code location and type parameters for the application.
@@ -242,7 +235,6 @@ object kinesisanalyticsv2:
       val argsBuilder = com.pulumi.aws.kinesisanalyticsv2.inputs.ApplicationApplicationConfigurationVpcConfigurationArgs.builder
       builder.vpcConfiguration(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.kinesisanalyticsv2.inputs.ApplicationApplicationConfigurationApplicationCodeConfigurationCodeContentArgs.Builder)
     /**
      * @param s3ContentLocation Information about the Amazon S3 bucket containing the application code.
@@ -253,7 +245,6 @@ object kinesisanalyticsv2:
       val argsBuilder = com.pulumi.aws.kinesisanalyticsv2.inputs.ApplicationApplicationConfigurationApplicationCodeConfigurationCodeContentS3ContentLocationArgs.builder
       builder.s3ContentLocation(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.kinesisanalyticsv2.inputs.ApplicationApplicationConfigurationApplicationCodeConfigurationArgs.Builder)
     /**
      * @param codeContent The location and type of the application code.
@@ -264,7 +255,6 @@ object kinesisanalyticsv2:
       val argsBuilder = com.pulumi.aws.kinesisanalyticsv2.inputs.ApplicationApplicationConfigurationApplicationCodeConfigurationCodeContentArgs.builder
       builder.codeContent(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.kinesisanalyticsv2.inputs.ApplicationApplicationConfigurationSqlApplicationConfigurationArgs.Builder)
     /**
      * @param input The input stream used by the application.
@@ -293,7 +283,6 @@ object kinesisanalyticsv2:
       val argsBuilder = com.pulumi.aws.kinesisanalyticsv2.inputs.ApplicationApplicationConfigurationSqlApplicationConfigurationReferenceDataSourceArgs.builder
       builder.referenceDataSource(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.kinesisanalyticsv2.inputs.ApplicationApplicationConfigurationSqlApplicationConfigurationOutputArgs.Builder)
     /**
      * @param destinationSchema Describes the data format when records are written to the destination.
@@ -331,7 +320,6 @@ object kinesisanalyticsv2:
       val argsBuilder = com.pulumi.aws.kinesisanalyticsv2.inputs.ApplicationApplicationConfigurationSqlApplicationConfigurationOutputLambdaOutputArgs.builder
       builder.lambdaOutput(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.kinesisanalyticsv2.inputs.ApplicationApplicationConfigurationFlinkApplicationConfigurationArgs.Builder)
     /**
      * @param checkpointConfiguration Describes an application&#39;s checkpointing configuration.
@@ -360,7 +348,6 @@ object kinesisanalyticsv2:
       val argsBuilder = com.pulumi.aws.kinesisanalyticsv2.inputs.ApplicationApplicationConfigurationFlinkApplicationConfigurationParallelismConfigurationArgs.builder
       builder.parallelismConfiguration(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.kinesisanalyticsv2.inputs.ApplicationApplicationConfigurationRunConfigurationArgs.Builder)
     /**
      * @param applicationRestoreConfiguration The restore behavior of a restarting application.
@@ -380,7 +367,6 @@ object kinesisanalyticsv2:
       val argsBuilder = com.pulumi.aws.kinesisanalyticsv2.inputs.ApplicationApplicationConfigurationRunConfigurationFlinkRunConfigurationArgs.builder
       builder.flinkRunConfiguration(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.kinesisanalyticsv2.inputs.ApplicationState.Builder)
     /**
      * @param applicationConfiguration The application&#39;s configuration
@@ -403,7 +389,7 @@ object kinesisanalyticsv2:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.kinesisanalyticsv2.inputs.ApplicationState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.kinesisanalyticsv2.inputs.ApplicationApplicationConfigurationSqlApplicationConfigurationReferenceDataSourceArgs.Builder)
     /**
      * @param referenceSchema Describes the format of the data in the streaming source, and how each data element maps to corresponding columns created in the in-application stream.
@@ -423,7 +409,6 @@ object kinesisanalyticsv2:
       val argsBuilder = com.pulumi.aws.kinesisanalyticsv2.inputs.ApplicationApplicationConfigurationSqlApplicationConfigurationReferenceDataSourceS3ReferenceDataSourceArgs.builder
       builder.s3ReferenceDataSource(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.kinesisanalyticsv2.inputs.ApplicationApplicationConfigurationSqlApplicationConfigurationInputInputSchemaRecordFormatArgs.Builder)
     /**
      * @param mappingParameters Provides additional mapping information specific to the record format (such as JSON, CSV, or record fields delimited by some delimiter) on the streaming source.
@@ -434,7 +419,6 @@ object kinesisanalyticsv2:
       val argsBuilder = com.pulumi.aws.kinesisanalyticsv2.inputs.ApplicationApplicationConfigurationSqlApplicationConfigurationInputInputSchemaRecordFormatMappingParametersArgs.builder
       builder.mappingParameters(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.kinesisanalyticsv2.inputs.ApplicationApplicationConfigurationSqlApplicationConfigurationReferenceDataSourceReferenceSchemaArgs.Builder)
     /**
      * @param recordColumns Describes the mapping of each data element in the streaming source to the corresponding column in the in-application stream.
@@ -454,7 +438,6 @@ object kinesisanalyticsv2:
       val argsBuilder = com.pulumi.aws.kinesisanalyticsv2.inputs.ApplicationApplicationConfigurationSqlApplicationConfigurationReferenceDataSourceReferenceSchemaRecordFormatArgs.builder
       builder.recordFormat(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.kinesisanalyticsv2.inputs.ApplicationApplicationConfigurationSqlApplicationConfigurationReferenceDataSourceReferenceSchemaRecordFormatMappingParametersArgs.Builder)
     /**
      * @param csvMappingParameters Provides additional mapping information when the record format uses delimiters (for example, CSV).
@@ -474,7 +457,6 @@ object kinesisanalyticsv2:
       val argsBuilder = com.pulumi.aws.kinesisanalyticsv2.inputs.ApplicationApplicationConfigurationSqlApplicationConfigurationReferenceDataSourceReferenceSchemaRecordFormatMappingParametersJsonMappingParametersArgs.builder
       builder.jsonMappingParameters(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.kinesisanalyticsv2.inputs.ApplicationApplicationConfigurationSqlApplicationConfigurationInputInputSchemaRecordFormatMappingParametersArgs.Builder)
     /**
      * @param csvMappingParameters Provides additional mapping information when the record format uses delimiters (for example, CSV).
@@ -493,5 +475,3 @@ object kinesisanalyticsv2:
         com.pulumi.aws.kinesisanalyticsv2.inputs.ApplicationApplicationConfigurationSqlApplicationConfigurationInputInputSchemaRecordFormatMappingParametersArgs.Builder =
       val argsBuilder = com.pulumi.aws.kinesisanalyticsv2.inputs.ApplicationApplicationConfigurationSqlApplicationConfigurationInputInputSchemaRecordFormatMappingParametersJsonMappingParametersArgs.builder
       builder.jsonMappingParameters(args(argsBuilder).build)
-
-                       

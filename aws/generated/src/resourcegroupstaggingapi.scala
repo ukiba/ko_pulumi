@@ -41,5 +41,3 @@ object resourcegroupstaggingapi:
         com.pulumi.aws.resourcegroupstaggingapi.inputs.GetResourcesArgs.Builder =
       def argsBuilder = com.pulumi.aws.resourcegroupstaggingapi.inputs.GetResourcesTagFilterArgs.builder
       builder.tagFilters(args.map(_(argsBuilder).build)*)
-
-                       

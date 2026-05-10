@@ -8,20 +8,18 @@ object detective:
   def OrganizationAdminAccount(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.detective.OrganizationAdminAccountArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.detective.OrganizationAdminAccountArgs.builder
-    
     com.pulumi.aws.detective.OrganizationAdminAccount(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
   /**
    * Manages the Detective Organization Configuration in the current AWS Region. The AWS account utilizing this resource must have been assigned as a delegated Organization administrator account, e.g., via the `aws.detective.OrganizationAdminAccount` resource. More information about Organizations support in Detective can be found in the [Detective User Guide](https://docs.aws.amazon.com/detective/latest/adminguide/accounts-orgs-transition.html).
-   *  
+   * 
    *  &gt; **NOTE:** This is an advanced Terraform resource. Terraform will automatically assume management of the Detective Organization Configuration without import and perform no actions on removal from the Terraform configuration.
    */
   def OrganizationConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.detective.OrganizationConfigurationArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.detective.OrganizationConfigurationArgs.builder
-    
     com.pulumi.aws.detective.OrganizationConfiguration(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -33,7 +31,6 @@ object detective:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.detective.Graph(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -42,7 +39,6 @@ object detective:
   def Member(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.detective.MemberArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.detective.MemberArgs.builder
-    
     com.pulumi.aws.detective.Member(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -51,7 +47,6 @@ object detective:
   def InvitationAccepter(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.detective.InvitationAccepterArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.detective.InvitationAccepterArgs.builder
-    
     com.pulumi.aws.detective.InvitationAccepter(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)

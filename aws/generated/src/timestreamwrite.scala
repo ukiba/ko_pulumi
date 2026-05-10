@@ -64,7 +64,7 @@ object timestreamwrite:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.timestreamwrite.TableArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   /** Provides a Timestream table resource. */
   def Table(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.timestreamwrite.TableArgs.Builder])(using conf: KoPulumiConf) =
@@ -72,7 +72,6 @@ object timestreamwrite:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.timestreamwrite.Table(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -84,7 +83,6 @@ object timestreamwrite:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.timestreamwrite.Database(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -99,7 +97,6 @@ object timestreamwrite:
       val argsBuilder = com.pulumi.aws.timestreamwrite.inputs.TableMagneticStoreWritePropertiesMagneticStoreRejectedDataLocationS3ConfigurationArgs.builder
       builder.s3Configuration(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.timestreamwrite.inputs.TableState.Builder)
     /**
      * @param magneticStoreWriteProperties Contains properties to set on the table when enabling magnetic store writes. See Magnetic Store Write Properties below for more details.
@@ -131,7 +128,7 @@ object timestreamwrite:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.timestreamwrite.inputs.TableState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.timestreamwrite.inputs.TableMagneticStoreWritePropertiesArgs.Builder)
     /**
      * @param magneticStoreRejectedDataLocation The location to write error reports for records rejected asynchronously during magnetic store writes. See Magnetic Store Rejected Data Location below for more details.
@@ -142,7 +139,6 @@ object timestreamwrite:
       val argsBuilder = com.pulumi.aws.timestreamwrite.inputs.TableMagneticStoreWritePropertiesMagneticStoreRejectedDataLocationArgs.builder
       builder.magneticStoreRejectedDataLocation(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.timestreamwrite.inputs.TableSchemaArgs.Builder)
     /**
      * @param compositePartitionKey A non-empty list of partition keys defining the attributes used to partition the table data. The order of the list determines the partition hierarchy. The name and type of each partition key as well as the partition key order cannot be changed after the table is created. However, the enforcement level of each partition key can be changed. See Composite Partition Key below for more details.
@@ -152,5 +148,3 @@ object timestreamwrite:
         com.pulumi.aws.timestreamwrite.inputs.TableSchemaArgs.Builder =
       val argsBuilder = com.pulumi.aws.timestreamwrite.inputs.TableSchemaCompositePartitionKeyArgs.builder
       builder.compositePartitionKey(args(argsBuilder).build)
-
-                       

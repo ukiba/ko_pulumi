@@ -6,7 +6,7 @@ import com.pulumi.resources.CustomResourceOptions
 object sqs:
   /**
    * Amazon SQS (Simple Queue Service) is a fully managed message queuing service that enables decoupling and scaling of microservices, distributed systems, and serverless applications. This resource allows you to create, configure, and manage an SQS queue, which acts as a reliable message buffer between producers and consumers. With support for standard and FIFO queues, SQS ensures secure, scalable, and asynchronous message processing. Use this resource to define queue attributes, configure access policies, and integrate seamlessly with AWS services like Lambda, SNS, and EC2.
-   *  
+   * 
    *  !&gt; AWS will hang indefinitely, leading to a `timeout while waiting` error, when creating or updating an `aws.sqs.Queue` with an associated `aws.sqs.QueuePolicy` if `Version = &#34;2012-10-17&#34;` is not explicitly set in the policy.
    */
   def Queue(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
@@ -18,7 +18,6 @@ object sqs:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.sqs.Queue(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -27,7 +26,6 @@ object sqs:
   def RedriveAllowPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.sqs.RedriveAllowPolicyArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.sqs.RedriveAllowPolicyArgs.builder
-    
     com.pulumi.aws.sqs.RedriveAllowPolicy(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -41,7 +39,7 @@ object sqs:
      * Use this data source to get the ARN and URL of queue in AWS Simple Queue Service (SQS).
      *  By using this data source, you can reference SQS queues without having to hardcode
      *  the ARNs as input.
-     *  
+     * 
      *  &gt; **NOTE:** To use this data source, you must have the `sqs:GetQueueAttributes` and `sqs:GetQueueURL` permissions.
      */
     def getQueue(args: Endofunction[com.pulumi.aws.sqs.inputs.GetQueueArgs.Builder] = identity):
@@ -53,7 +51,7 @@ object sqs:
      * Use this data source to get the ARN and URL of queue in AWS Simple Queue Service (SQS).
      *  By using this data source, you can reference SQS queues without having to hardcode
      *  the ARNs as input.
-     *  
+     * 
      *  &gt; **NOTE:** To use this data source, you must have the `sqs:GetQueueAttributes` and `sqs:GetQueueURL` permissions.
      */
     def getQueuePlain(args: Endofunction[com.pulumi.aws.sqs.inputs.GetQueuePlainArgs.Builder] = identity):
@@ -83,7 +81,6 @@ object sqs:
       val argsBuilder = com.pulumi.aws.sqs.inputs.PolicyDocumentArgs.builder
       builder.policy(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.sqs.inputs.QueuePolicyState.Builder)
     /**
      * @param policy JSON policy for the SQS queue. For more information about building AWS IAM policy documents with Terraform, see the AWS IAM Policy Document Guide. Ensure that `Version = &#34;2012-10-17&#34;` is set in the policy or AWS may hang in creating the queue.
@@ -94,18 +91,16 @@ object sqs:
       val argsBuilder = com.pulumi.aws.sqs.inputs.PolicyDocumentArgs.builder
       builder.policy(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.sqs.inputs.PolicyDocumentArgs.Builder)
     def Statement(args: Endofunction[com.pulumi.aws.iam.inputs.PolicyStatementArgs.Builder]*):
         com.pulumi.aws.sqs.inputs.PolicyDocumentArgs.Builder =
       def argsBuilder = com.pulumi.aws.iam.inputs.PolicyStatementArgs.builder
       builder.Statement(args.map(_(argsBuilder).build)*)
 
-                       
   /**
    * Allows you to set a redrive policy of an SQS Queue
    *  while referencing ARN of the dead letter queue inside the redrive policy.
-   *  
+   * 
    *  This is useful when you want to set a dedicated
    *  dead letter queue for a standard or FIFO queue, but need
    *  the dead letter queue to exist before setting the redrive policy.
@@ -113,20 +108,18 @@ object sqs:
   def RedrivePolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.sqs.RedrivePolicyArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.sqs.RedrivePolicyArgs.builder
-    
     com.pulumi.aws.sqs.RedrivePolicy(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
   /**
    * Allows you to set a policy of an SQS Queue while referencing the ARN of the queue within the policy.
-   *  
+   * 
    *  !&gt; AWS will hang indefinitely when creating or updating an `aws.sqs.Queue` with an associated policy if `Version = &#34;2012-10-17&#34;` is not explicitly set in the policy. See below for an example of how to avoid this issue.
    */
   def QueuePolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.sqs.QueuePolicyArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.sqs.QueuePolicyArgs.builder
-    
     com.pulumi.aws.sqs.QueuePolicy(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)

@@ -6,7 +6,7 @@ import com.pulumi.resources.CustomResourceOptions
 object cur:
   /**
    * Manages Cost and Usage Report Definitions.
-   *  
+   * 
    *  &gt; *NOTE:* The AWS Cost and Usage Report service is only available in `us-east-1` currently.
    */
   def ReportDefinition(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
@@ -15,7 +15,6 @@ object cur:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.cur.ReportDefinition(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -27,9 +26,9 @@ object cur:
   extension (self: CurFunctions.type)
     /**
      * Use this data source to get information on an AWS Cost and Usage Report Definition.
-     *  
+     * 
      *  &gt; *NOTE:* The AWS Cost and Usage Report service is only available in `us-east-1` currently.
-     *  
+     * 
      *  &gt; *NOTE:* If AWS Organizations is enabled, only the master account can use this resource.
      */
     def getReportDefinition(args: Endofunction[com.pulumi.aws.cur.inputs.GetReportDefinitionArgs.Builder] = identity):
@@ -39,9 +38,9 @@ object cur:
 
     /**
      * Use this data source to get information on an AWS Cost and Usage Report Definition.
-     *  
+     * 
      *  &gt; *NOTE:* The AWS Cost and Usage Report service is only available in `us-east-1` currently.
-     *  
+     * 
      *  &gt; *NOTE:* If AWS Organizations is enabled, only the master account can use this resource.
      */
     def getReportDefinitionPlain(args: Endofunction[com.pulumi.aws.cur.inputs.GetReportDefinitionPlainArgs.Builder] = identity):

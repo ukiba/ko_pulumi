@@ -71,10 +71,10 @@ object keyspaces:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.keyspaces.TableArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   /**
    * Provides a Keyspaces Table.
-   *  
+   * 
    *  More information about Keyspaces tables can be found in the [Keyspaces Developer Guide](https://docs.aws.amazon.com/keyspaces/latest/devguide/working-with-tables.html).
    */
   def Table(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
@@ -83,7 +83,6 @@ object keyspaces:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.keyspaces.Table(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -101,10 +100,10 @@ object keyspaces:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.keyspaces.KeyspaceArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   /**
    * Provides a Keyspaces Keyspace.
-   *  
+   * 
    *  More information about keyspaces can be found in the [Keyspaces User Guide](https://docs.aws.amazon.com/keyspaces/latest/devguide/what-is-keyspaces.html).
    */
   def Keyspace(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
@@ -116,7 +115,6 @@ object keyspaces:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.keyspaces.Keyspace(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -188,7 +186,7 @@ object keyspaces:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.keyspaces.inputs.TableState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.keyspaces.inputs.KeyspaceState.Builder)
     /**
      * @param replicationSpecification The replication specification of the keyspace.
@@ -202,7 +200,7 @@ object keyspaces:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.keyspaces.inputs.KeyspaceState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.keyspaces.inputs.TableSchemaDefinitionArgs.Builder)
     /**
      * @param clusteringKeys The columns that are part of the clustering key of the table.
@@ -239,5 +237,3 @@ object keyspaces:
         com.pulumi.aws.keyspaces.inputs.TableSchemaDefinitionArgs.Builder =
       def argsBuilder = com.pulumi.aws.keyspaces.inputs.TableSchemaDefinitionStaticColumnArgs.builder
       builder.staticColumns(args.map(_(argsBuilder).build)*)
-
-                       

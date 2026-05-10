@@ -14,7 +14,6 @@ object connect:
       val argsBuilder = com.pulumi.aws.connect.inputs.BotAssociationLexBotArgs.builder
       builder.lexBot(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.connect.QueueArgs.Builder)
     /**
      * @param outboundCallerConfig A block that defines the outbound caller ID name, number, and outbound whisper flow. The Outbound Caller Config block is documented below.
@@ -28,7 +27,7 @@ object connect:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.connect.QueueArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.connect.HoursOfOperationArgs.Builder)
     /**
      * @param configs One or more config blocks which define the configuration information for the hours of operation: day, start time, and end time . Config blocks are documented below.
@@ -42,7 +41,7 @@ object connect:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.connect.HoursOfOperationArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.connect.UserArgs.Builder)
     /**
      * @param identityInfo A block that contains information about the identity of the user. Documented below.
@@ -65,14 +64,14 @@ object connect:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.connect.UserArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   /**
    * Provides an Amazon Connect Contact Flow Module resource. For more information see
    *  [Amazon Connect: Getting Started](https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-get-started.html)
-   *  
+   * 
    *  This resource embeds or references Contact Flows Modules specified in Amazon Connect Contact Flow Language. For more information see
    *  [Amazon Connect Flow language](https://docs.aws.amazon.com/connect/latest/adminguide/flow-language.html)
-   *  
+   * 
    *  !&gt; **WARN:** Contact Flow Modules exported from the Console [See Contact Flow import/export which is the same for Contact Flow Modules](https://docs.aws.amazon.com/connect/latest/adminguide/contact-flow-import-export.html) are not in the Amazon Connect Contact Flow Language and can not be used with this resource. Instead, the recommendation is to use the AWS CLI [`describe-contact-flow-module`](https://docs.aws.amazon.com/cli/latest/reference/connect/describe-contact-flow-module.html).
    *  See example below which uses `jq` to extract the `Content` attribute and saves it to a local file.
    */
@@ -85,7 +84,6 @@ object connect:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.connect.ContactFlowModule(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -100,7 +98,6 @@ object connect:
       val argsBuilder = com.pulumi.aws.connect.inputs.UserHierarchyStructureHierarchyStructureArgs.builder
       builder.hierarchyStructure(args(argsBuilder).build)
 
-                       
   /**
    * Provides an Amazon Connect Queue resource. For more information see
    *  [Amazon Connect: Getting Started](https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-get-started.html)
@@ -114,7 +111,6 @@ object connect:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.connect.Queue(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -132,7 +128,6 @@ object connect:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.connect.User(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -150,7 +145,6 @@ object connect:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.connect.QuickConnect(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -168,7 +162,6 @@ object connect:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.connect.RoutingProfile(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -176,10 +169,10 @@ object connect:
   /**
    * Provides an Amazon Connect Contact Flow resource. For more information see
    *  [Amazon Connect: Getting Started](https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-get-started.html)
-   *  
+   * 
    *  This resource embeds or references Contact Flows specified in Amazon Connect Contact Flow Language. For more information see
    *  [Amazon Connect Flow language](https://docs.aws.amazon.com/connect/latest/adminguide/flow-language.html)
-   *  
+   * 
    *  !&gt; **WARN:** Contact Flows exported from the Console [Contact Flow import/export](https://docs.aws.amazon.com/connect/latest/adminguide/contact-flow-import-export.html) are not in the Amazon Connect Contact Flow Language and can not be used with this resource. Instead, the recommendation is to use the AWS CLI [`describe-contact-flow`](https://awscli.amazonaws.com/v2/documentation/api/latest/reference/connect/describe-contact-flow.html).
    *  See example below which uses `jq` to extract the `Content` attribute and saves it to a local file.
    */
@@ -192,7 +185,6 @@ object connect:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.connect.ContactFlow(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -407,7 +399,6 @@ object connect:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.connect.HoursOfOperation(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -422,7 +413,6 @@ object connect:
       val argsBuilder = com.pulumi.aws.connect.inputs.InstanceStorageConfigStorageConfigArgs.builder
       builder.storageConfig(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.connect.RoutingProfileArgs.Builder)
     /**
      * @param mediaConcurrencies One or more `mediaConcurrencies` blocks that specify the channels that agents can handle in the Contact Control Panel (CCP) for this Routing Profile. The `mediaConcurrencies` block is documented below.
@@ -445,11 +435,11 @@ object connect:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.connect.RoutingProfileArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   /**
    * Provides an Amazon Connect instance resource. For more information see
    *  [Amazon Connect: Getting Started](https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-get-started.html)
-   *  
+   * 
    *  !&gt; **WARN:** Amazon Connect enforces a limit of [100 combined instance creation and deletions every 30 days](https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#feature-limits). For example, if you create 80 instances and delete 20 of them, you must wait 30 days to create or delete another instance. Use care when creating or deleting instances.
    */
   def Instance(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
@@ -458,7 +448,6 @@ object connect:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.connect.Instance(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -470,7 +459,6 @@ object connect:
   def LambdaFunctionAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.connect.LambdaFunctionAssociationArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.connect.LambdaFunctionAssociationArgs.builder
-    
     com.pulumi.aws.connect.LambdaFunctionAssociation(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -488,7 +476,6 @@ object connect:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.connect.SecurityProfile(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -506,7 +493,6 @@ object connect:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.connect.Vocabulary(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -518,7 +504,6 @@ object connect:
   def InstanceStorageConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.connect.InstanceStorageConfigArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.connect.InstanceStorageConfigArgs.builder
-    
     com.pulumi.aws.connect.InstanceStorageConfig(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -527,7 +512,6 @@ object connect:
   def PhoneNumberContactFlowAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.connect.PhoneNumberContactFlowAssociationArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.connect.PhoneNumberContactFlowAssociationArgs.builder
-    
     com.pulumi.aws.connect.PhoneNumberContactFlowAssociation(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -539,7 +523,6 @@ object connect:
   def UserHierarchyStructure(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.connect.UserHierarchyStructureArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.connect.UserHierarchyStructureArgs.builder
-    
     com.pulumi.aws.connect.UserHierarchyStructure(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -554,7 +537,6 @@ object connect:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.connect.PhoneNumber(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -572,11 +554,11 @@ object connect:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.connect.QuickConnectArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   /**
    * Provides an Amazon Connect User Hierarchy Group resource. For more information see
    *  [Amazon Connect: Getting Started](https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-get-started.html)
-   *  
+   * 
    *  &gt; **NOTE:** The User Hierarchy Structure must be created before creating a User Hierarchy Group.
    */
   def UserHierarchyGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
@@ -588,7 +570,6 @@ object connect:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.connect.UserHierarchyGroup(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -621,7 +602,6 @@ object connect:
       def argsBuilder = com.pulumi.aws.connect.inputs.QuickConnectQuickConnectConfigUserConfigArgs.builder
       builder.userConfigs(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.connect.inputs.RoutingProfileMediaConcurrencyArgs.Builder)
     /**
      * @param crossChannelBehavior Defines the cross-channel routing behavior for each traffic type. **Out-of-band changes are only detected when this argument is explicitly configured in your Terraform configuration.** Documented below.
@@ -632,7 +612,6 @@ object connect:
       val argsBuilder = com.pulumi.aws.connect.inputs.RoutingProfileMediaConcurrencyCrossChannelBehaviorArgs.builder
       builder.crossChannelBehavior(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.connect.inputs.GetBotAssociationArgs.Builder)
     /**
      * @param lexBot Configuration information of an Amazon Lex (V1) bot. Detailed below.
@@ -643,7 +622,6 @@ object connect:
       val argsBuilder = com.pulumi.aws.connect.inputs.GetBotAssociationLexBotArgs.builder
       builder.lexBot(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.connect.inputs.QuickConnectState.Builder)
     /**
      * @param quickConnectConfig A block that defines the configuration information for the Quick Connect: `quickConnectType` and one of `phoneConfig`, `queueConfig`, `userConfig` . The Quick Connect Config block is documented below.
@@ -657,7 +635,7 @@ object connect:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.connect.inputs.QuickConnectState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.connect.inputs.InstanceStorageConfigStorageConfigKinesisVideoStreamConfigArgs.Builder)
     /**
      * @param encryptionConfig The encryption configuration. Documented below.
@@ -668,7 +646,6 @@ object connect:
       val argsBuilder = com.pulumi.aws.connect.inputs.InstanceStorageConfigStorageConfigKinesisVideoStreamConfigEncryptionConfigArgs.builder
       builder.encryptionConfig(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.connect.inputs.UserHierarchyStructureState.Builder)
     /**
      * @param hierarchyStructure A block that defines the hierarchy structure&#39;s levels. The `hierarchyStructure` block is documented below.
@@ -679,7 +656,6 @@ object connect:
       val argsBuilder = com.pulumi.aws.connect.inputs.UserHierarchyStructureHierarchyStructureArgs.builder
       builder.hierarchyStructure(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.connect.inputs.QueueState.Builder)
     /**
      * @param outboundCallerConfig A block that defines the outbound caller ID name, number, and outbound whisper flow. The Outbound Caller Config block is documented below.
@@ -693,7 +669,7 @@ object connect:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.connect.inputs.QueueState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.connect.inputs.RoutingProfileState.Builder)
     /**
      * @param mediaConcurrencies One or more `mediaConcurrencies` blocks that specify the channels that agents can handle in the Contact Control Panel (CCP) for this Routing Profile. The `mediaConcurrencies` block is documented below.
@@ -716,7 +692,7 @@ object connect:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.connect.inputs.RoutingProfileState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.connect.inputs.UserHierarchyGroupState.Builder)
     /**
      * @param hierarchyPaths A block that contains information about the levels in the hierarchy group. The `hierarchyPath` block is documented below.
@@ -730,7 +706,7 @@ object connect:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.connect.inputs.UserHierarchyGroupState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.connect.inputs.UserState.Builder)
     /**
      * @param identityInfo A block that contains information about the identity of the user. Documented below.
@@ -753,7 +729,7 @@ object connect:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.connect.inputs.UserState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.connect.inputs.InstanceStorageConfigState.Builder)
     /**
      * @param storageConfig Specifies the storage configuration options for the Connect Instance. Documented below.
@@ -764,7 +740,6 @@ object connect:
       val argsBuilder = com.pulumi.aws.connect.inputs.InstanceStorageConfigStorageConfigArgs.builder
       builder.storageConfig(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.connect.inputs.HoursOfOperationState.Builder)
     /**
      * @param configs One or more config blocks which define the configuration information for the hours of operation: day, start time, and end time . Config blocks are documented below.
@@ -778,11 +753,11 @@ object connect:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.connect.inputs.HoursOfOperationState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.connect.inputs.UserHierarchyStructureHierarchyStructureArgs.Builder)
     /**
      * @param levelFive A block that defines the details of level five. The level block is documented below.
-     *  
+     * 
      *  Each level block supports the following arguments:
      * @return builder
      */
@@ -827,7 +802,6 @@ object connect:
       val argsBuilder = com.pulumi.aws.connect.inputs.UserHierarchyStructureHierarchyStructureLevelTwoArgs.builder
       builder.levelTwo(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.connect.inputs.BotAssociationState.Builder)
     /**
      * @param lexBot Configuration information of an Amazon Lex (V1) bot. Detailed below.
@@ -838,7 +812,6 @@ object connect:
       val argsBuilder = com.pulumi.aws.connect.inputs.BotAssociationLexBotArgs.builder
       builder.lexBot(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.connect.inputs.InstanceStorageConfigStorageConfigS3ConfigArgs.Builder)
     /**
      * @param encryptionConfig The encryption configuration. Documented below.
@@ -849,7 +822,6 @@ object connect:
       val argsBuilder = com.pulumi.aws.connect.inputs.InstanceStorageConfigStorageConfigS3ConfigEncryptionConfigArgs.builder
       builder.encryptionConfig(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.connect.inputs.HoursOfOperationConfigArgs.Builder)
     /**
      * @param endTime A end time block specifies the time that your contact center closes. The `endTime` is documented below.
@@ -869,7 +841,6 @@ object connect:
       val argsBuilder = com.pulumi.aws.connect.inputs.HoursOfOperationConfigStartTimeArgs.builder
       builder.startTime(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.connect.inputs.InstanceStorageConfigStorageConfigArgs.Builder)
     /**
      * @param kinesisFirehoseConfig A block that specifies the configuration of the Kinesis Firehose delivery stream. Documented below.
@@ -907,7 +878,6 @@ object connect:
       val argsBuilder = com.pulumi.aws.connect.inputs.InstanceStorageConfigStorageConfigS3ConfigArgs.builder
       builder.s3Config(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.connect.inputs.PhoneNumberState.Builder)
     /**
      * @param statuses The status of the phone number. Valid Values: `CLAIMED` | `IN_PROGRESS` | `FAILED`.
@@ -921,7 +891,7 @@ object connect:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.connect.inputs.PhoneNumberState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.connect.inputs.UserHierarchyGroupHierarchyPathArgs.Builder)
     /**
      * @param levelFives A block that defines the details of level five. The level block is documented below.
@@ -968,17 +938,15 @@ object connect:
       def argsBuilder = com.pulumi.aws.connect.inputs.UserHierarchyGroupHierarchyPathLevelTwoArgs.builder
       builder.levelTwos(args.map(_(argsBuilder).build)*)
 
-                       
   /**
    * Allows the specified Amazon Connect instance to access the specified Amazon Lex (V1) bot. For more information see
    *  [Amazon Connect: Getting Started](https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-get-started.html) and [Add an Amazon Lex bot](https://docs.aws.amazon.com/connect/latest/adminguide/amazon-lex.html).
-   *  
+   * 
    *  &gt; **NOTE:** This resource only currently supports Amazon Lex (V1) Associations.
    */
   def BotAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.connect.BotAssociationArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.connect.BotAssociationArgs.builder
-    
     com.pulumi.aws.connect.BotAssociation(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)

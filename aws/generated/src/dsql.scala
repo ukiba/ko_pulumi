@@ -8,7 +8,6 @@ object dsql:
   def ClusterPeering(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.dsql.ClusterPeeringArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.dsql.ClusterPeeringArgs.builder
-    
     com.pulumi.aws.dsql.ClusterPeering(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -20,7 +19,6 @@ object dsql:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.dsql.Cluster(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -43,14 +41,13 @@ object dsql:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.dsql.ClusterArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.dsql.ClusterPeeringArgs.Builder)
     def timeouts(args: Endofunction[com.pulumi.aws.dsql.inputs.ClusterPeeringTimeoutsArgs.Builder]):
         com.pulumi.aws.dsql.ClusterPeeringArgs.Builder =
       val argsBuilder = com.pulumi.aws.dsql.inputs.ClusterPeeringTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.dsql.inputs.ClusterState.Builder)
     /**
      * @param encryptionDetails Encryption configuration details for the DSQL Cluster.
@@ -78,11 +75,9 @@ object dsql:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.dsql.inputs.ClusterState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.dsql.inputs.ClusterPeeringState.Builder)
     def timeouts(args: Endofunction[com.pulumi.aws.dsql.inputs.ClusterPeeringTimeoutsArgs.Builder]):
         com.pulumi.aws.dsql.inputs.ClusterPeeringState.Builder =
       val argsBuilder = com.pulumi.aws.dsql.inputs.ClusterPeeringTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
-
-                       

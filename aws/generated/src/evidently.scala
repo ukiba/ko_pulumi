@@ -6,7 +6,7 @@ import com.pulumi.resources.CustomResourceOptions
 object evidently:
   /**
    * Provides a CloudWatch Evidently Launch resource.
-   *  
+   * 
    *  &gt; **Warning:** This resource is deprecated. Use [AWS AppConfig feature flags](https://aws.amazon.com/blogs/mt/using-aws-appconfig-feature-flags/) instead.
    */
   def Launch(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
@@ -18,14 +18,13 @@ object evidently:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.evidently.Launch(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
   /**
    * Provides a CloudWatch Evidently Segment resource.
-   *  
+   * 
    *  &gt; **Warning:** This resource is deprecated. Use [AWS AppConfig feature flags](https://aws.amazon.com/blogs/mt/using-aws-appconfig-feature-flags/) instead.
    */
   def Segment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
@@ -37,7 +36,6 @@ object evidently:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.evidently.Segment(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -55,7 +53,7 @@ object evidently:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.evidently.ProjectArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.evidently.FeatureArgs.Builder)
     /**
      * @param variations One or more blocks that contain the configuration of the feature&#39;s different variations. Detailed below
@@ -69,10 +67,10 @@ object evidently:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.evidently.FeatureArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   /**
    * Provides a CloudWatch Evidently Project resource.
-   *  
+   * 
    *  &gt; **Warning:** This resource is deprecated. Use [AWS AppConfig feature flags](https://aws.amazon.com/blogs/mt/using-aws-appconfig-feature-flags/) instead.
    */
   def Project(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
@@ -84,7 +82,6 @@ object evidently:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.evidently.Project(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -120,10 +117,10 @@ object evidently:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.evidently.LaunchArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   /**
    * Provides a CloudWatch Evidently Feature resource.
-   *  
+   * 
    *  &gt; **Warning:** This resource is deprecated. Use [AWS AppConfig feature flags](https://aws.amazon.com/blogs/mt/using-aws-appconfig-feature-flags/) instead.
    */
   def Feature(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
@@ -135,7 +132,6 @@ object evidently:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.evidently.Feature(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -150,7 +146,6 @@ object evidently:
       def argsBuilder = com.pulumi.aws.evidently.inputs.LaunchScheduledSplitsConfigStepArgs.builder
       builder.steps(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.evidently.inputs.LaunchScheduledSplitsConfigStepArgs.Builder)
     /**
      * @param segmentOverrides One or up to six blocks that specify different traffic splits for one or more audience segments. A segment is a portion of your audience that share one or more characteristics. Examples could be Chrome browser users, users in Europe, or Firefox browser users in Europe who also fit other criteria that your application collects, such as age. Detailed below.
@@ -161,7 +156,6 @@ object evidently:
       def argsBuilder = com.pulumi.aws.evidently.inputs.LaunchScheduledSplitsConfigStepSegmentOverrideArgs.builder
       builder.segmentOverrides(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.evidently.inputs.ProjectState.Builder)
     /**
      * @param dataDelivery A block that contains information about where Evidently is to store evaluation events for longer term storage, if you choose to do so. If you choose not to store these events, Evidently deletes them after using them to produce metrics and other experiment results that you can view. See below.
@@ -175,7 +169,7 @@ object evidently:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.evidently.inputs.ProjectState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.evidently.inputs.LaunchState.Builder)
     /**
      * @param executions A block that contains information about the start and end times of the launch. Detailed below
@@ -216,7 +210,7 @@ object evidently:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.evidently.inputs.LaunchState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.evidently.inputs.FeatureVariationArgs.Builder)
     /**
      * @param value A block that specifies the value assigned to this variation. Detailed below
@@ -227,7 +221,6 @@ object evidently:
       val argsBuilder = com.pulumi.aws.evidently.inputs.FeatureVariationValueArgs.builder
       builder.value(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.evidently.inputs.FeatureState.Builder)
     /**
      * @param evaluationRules One or more blocks that define the evaluation rules for the feature. Detailed below
@@ -250,7 +243,7 @@ object evidently:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.evidently.inputs.FeatureState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.evidently.inputs.ProjectDataDeliveryArgs.Builder)
     /**
      * @param cloudwatchLogs A block that defines the CloudWatch Log Group that stores the evaluation events. See below.
@@ -270,7 +263,6 @@ object evidently:
       val argsBuilder = com.pulumi.aws.evidently.inputs.ProjectDataDeliveryS3DestinationArgs.builder
       builder.s3Destination(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.evidently.inputs.LaunchMetricMonitorArgs.Builder)
     /**
      * @param metricDefinition A block that defines the metric. Detailed below.
@@ -280,5 +272,3 @@ object evidently:
         com.pulumi.aws.evidently.inputs.LaunchMetricMonitorArgs.Builder =
       val argsBuilder = com.pulumi.aws.evidently.inputs.LaunchMetricMonitorMetricDefinitionArgs.builder
       builder.metricDefinition(args(argsBuilder).build)
-
-                       

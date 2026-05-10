@@ -8,7 +8,6 @@ object sesv2:
   def EmailIdentityFeedbackAttributes(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.sesv2.EmailIdentityFeedbackAttributesArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.sesv2.EmailIdentityFeedbackAttributesArgs.builder
-    
     com.pulumi.aws.sesv2.EmailIdentityFeedbackAttributes(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -26,7 +25,7 @@ object sesv2:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.sesv2.EmailIdentityArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   /** Resource for managing an AWS SESv2 (Simple Email V2) Dedicated IP Pool. */
   def DedicatedIpPool(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.sesv2.DedicatedIpPoolArgs.Builder])(using conf: KoPulumiConf) =
@@ -34,7 +33,6 @@ object sesv2:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.sesv2.DedicatedIpPool(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -49,7 +47,6 @@ object sesv2:
       val argsBuilder = com.pulumi.aws.sesv2.inputs.ConfigurationSetEventDestinationEventDestinationArgs.builder
       builder.eventDestination(args(argsBuilder).build)
 
-                       
   /** Resource for managing an AWS SESv2 (Simple Email V2) Email Identity. */
   def EmailIdentity(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.sesv2.EmailIdentityArgs.Builder])(using conf: KoPulumiConf) =
@@ -57,20 +54,18 @@ object sesv2:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.sesv2.EmailIdentity(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
   /**
    * Resource for managing an AWS SESv2 (Simple Email V2) Dedicated IP Assignment.
-   *  
+   * 
    *  This resource is used with &#34;Standard&#34; dedicated IP addresses. This includes addresses [requested and relinquished manually](https://docs.aws.amazon.com/ses/latest/dg/dedicated-ip-case.html) via an AWS support case, or [Bring Your Own IP](https://docs.aws.amazon.com/ses/latest/dg/dedicated-ip-byo.html) addresses. Once no longer assigned, this resource returns the IP to the [`ses-default-dedicated-pool`](https://docs.aws.amazon.com/ses/latest/dg/managing-ip-pools.html), managed by AWS.
    */
   def DedicatedIpAssignment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.sesv2.DedicatedIpAssignmentArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.sesv2.DedicatedIpAssignmentArgs.builder
-    
     com.pulumi.aws.sesv2.DedicatedIpAssignment(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -88,12 +83,11 @@ object sesv2:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.sesv2.ContactListArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   /** Manages AWS SESv2 (Simple Email V2) account-level suppression attributes. */
   def AccountSuppressionAttributes(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.sesv2.AccountSuppressionAttributesArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.sesv2.AccountSuppressionAttributesArgs.builder
-    
     com.pulumi.aws.sesv2.AccountSuppressionAttributes(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -102,7 +96,6 @@ object sesv2:
   def ConfigurationSetEventDestination(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.sesv2.ConfigurationSetEventDestinationArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.sesv2.ConfigurationSetEventDestinationArgs.builder
-    
     com.pulumi.aws.sesv2.ConfigurationSetEventDestination(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -111,7 +104,6 @@ object sesv2:
   def EmailIdentityMailFromAttributes(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.sesv2.EmailIdentityMailFromAttributesArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.sesv2.EmailIdentityMailFromAttributesArgs.builder
-    
     com.pulumi.aws.sesv2.EmailIdentityMailFromAttributes(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -174,7 +166,7 @@ object sesv2:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.sesv2.ConfigurationSetArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   /** Resource for managing an AWS SESv2 (Simple Email V2) Contact List. */
   def ContactList(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.sesv2.ContactListArgs.Builder])(using conf: KoPulumiConf) =
@@ -182,7 +174,6 @@ object sesv2:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.sesv2.ContactList(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -191,7 +182,6 @@ object sesv2:
   def TenantResourceAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.sesv2.TenantResourceAssociationArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.sesv2.TenantResourceAssociationArgs.builder
-    
     com.pulumi.aws.sesv2.TenantResourceAssociation(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -256,7 +246,6 @@ object sesv2:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.sesv2.ConfigurationSet(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -265,7 +254,6 @@ object sesv2:
   def EmailIdentityPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.sesv2.EmailIdentityPolicyArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.sesv2.EmailIdentityPolicyArgs.builder
-    
     com.pulumi.aws.sesv2.EmailIdentityPolicy(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -289,7 +277,6 @@ object sesv2:
       val argsBuilder = com.pulumi.aws.sesv2.inputs.AccountVdmAttributesGuardianAttributesArgs.builder
       builder.guardianAttributes(args(argsBuilder).build)
 
-                       
   /** Manages an AWS SESv2 (Simple Email V2) Tenant. */
   def Tenant(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.sesv2.TenantArgs.Builder])(using conf: KoPulumiConf) =
@@ -297,7 +284,6 @@ object sesv2:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.sesv2.Tenant(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -306,7 +292,6 @@ object sesv2:
   def AccountVdmAttributes(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.sesv2.AccountVdmAttributesArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.sesv2.AccountVdmAttributesArgs.builder
-    
     com.pulumi.aws.sesv2.AccountVdmAttributes(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -321,7 +306,6 @@ object sesv2:
       def argsBuilder = com.pulumi.aws.sesv2.inputs.ConfigurationSetEventDestinationEventDestinationCloudWatchDestinationDimensionConfigurationArgs.builder
       builder.dimensionConfigurations(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.sesv2.inputs.EmailIdentityState.Builder)
     /**
      * @param dkimSigningAttributes The configuration of the DKIM authentication settings for an email domain identity.
@@ -335,7 +319,7 @@ object sesv2:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.sesv2.inputs.EmailIdentityState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.sesv2.inputs.ConfigurationSetEventDestinationState.Builder)
     /**
      * @param eventDestination An object that defines the event destination. See `eventDestination` Block for details.
@@ -346,7 +330,6 @@ object sesv2:
       val argsBuilder = com.pulumi.aws.sesv2.inputs.ConfigurationSetEventDestinationEventDestinationArgs.builder
       builder.eventDestination(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.sesv2.inputs.ConfigurationSetEventDestinationEventDestinationArgs.Builder)
     /**
      * @param cloudWatchDestination An object that defines an Amazon CloudWatch destination for email events. See `cloudWatchDestination` Block for details.
@@ -393,7 +376,6 @@ object sesv2:
       val argsBuilder = com.pulumi.aws.sesv2.inputs.ConfigurationSetEventDestinationEventDestinationSnsDestinationArgs.builder
       builder.snsDestination(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.sesv2.inputs.ConfigurationSetState.Builder)
     /**
      * @param deliveryOptions An object that defines the dedicated IP pool that is used to send emails that you send using the configuration set. See `deliveryOptions` Block for details.
@@ -452,7 +434,7 @@ object sesv2:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.sesv2.inputs.ConfigurationSetState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.sesv2.inputs.AccountVdmAttributesState.Builder)
     /**
      * @param dashboardAttributes Specifies additional settings for your VDM configuration as applicable to the Dashboard.
@@ -472,7 +454,6 @@ object sesv2:
       val argsBuilder = com.pulumi.aws.sesv2.inputs.AccountVdmAttributesGuardianAttributesArgs.builder
       builder.guardianAttributes(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.sesv2.inputs.ConfigurationSetVdmOptionsArgs.Builder)
     /**
      * @param dashboardOptions Specifies additional settings for your VDM configuration as applicable to the Dashboard. See `dashboardOptions` Block for details.
@@ -492,7 +473,6 @@ object sesv2:
       val argsBuilder = com.pulumi.aws.sesv2.inputs.ConfigurationSetVdmOptionsGuardianOptionsArgs.builder
       builder.guardianOptions(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.sesv2.inputs.ContactListState.Builder)
     /**
      * @param topics Configuration block(s) with topic for the contact list. Detailed below.
@@ -506,4 +486,3 @@ object sesv2:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.sesv2.inputs.ContactListState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       

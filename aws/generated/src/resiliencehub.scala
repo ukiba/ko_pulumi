@@ -14,7 +14,6 @@ object resiliencehub:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.resiliencehub.ResiliencyPolicy(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -22,7 +21,7 @@ object resiliencehub:
   extension (builder: com.pulumi.aws.resiliencehub.ResiliencyPolicyArgs.Builder)
     /**
      * @param policy The type of resiliency policy to be created, including the recovery time objective (RTO) and recovery point objective (RPO) in seconds. See `policy`.
-     *  
+     * 
      *  The following arguments are optional:
      * @return builder
      */
@@ -39,11 +38,11 @@ object resiliencehub:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.resiliencehub.ResiliencyPolicyArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.resiliencehub.inputs.ResiliencyPolicyState.Builder)
     /**
      * @param policy The type of resiliency policy to be created, including the recovery time objective (RTO) and recovery point objective (RPO) in seconds. See `policy`.
-     *  
+     * 
      *  The following arguments are optional:
      * @return builder
      */
@@ -60,7 +59,7 @@ object resiliencehub:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.resiliencehub.inputs.ResiliencyPolicyState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.resiliencehub.inputs.ResiliencyPolicyPolicyArgs.Builder)
     /**
      * @param az Specifies Availability Zone failure policy. See `policy.az`
@@ -91,7 +90,7 @@ object resiliencehub:
 
     /**
      * @param software Specifies Application failure policy. See `policy.software`
-     *  
+     * 
      *  The following arguments are optional:
      * @return builder
      */
@@ -99,5 +98,3 @@ object resiliencehub:
         com.pulumi.aws.resiliencehub.inputs.ResiliencyPolicyPolicyArgs.Builder =
       val argsBuilder = com.pulumi.aws.resiliencehub.inputs.ResiliencyPolicyPolicySoftwareArgs.builder
       builder.software(args(argsBuilder).build)
-
-                       

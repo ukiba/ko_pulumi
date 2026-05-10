@@ -14,14 +14,13 @@ object timestreaminfluxdb:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.timestreaminfluxdb.DbInstance(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
   /**
    * Resource for managing an Amazon Timestream for InfluxDB read-replica cluster.
-   *  
+   * 
    *  &gt; **NOTE:** This resource requires a subscription to [Timestream for InfluxDB Read Replicas (Add-On) on the AWS Marketplace](https://aws.amazon.com/marketplace/pp/prodview-lftzfxtb5xlv4?applicationId=AWS-Marketplace-Console&amp;ref_=beagle&amp;sr=0-2).
    */
   def DbCluster(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
@@ -33,7 +32,6 @@ object timestreaminfluxdb:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.timestreaminfluxdb.DbCluster(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -56,7 +54,7 @@ object timestreaminfluxdb:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.timestreaminfluxdb.DbInstanceArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.timestreaminfluxdb.inputs.DbInstanceState.Builder)
     /**
      * @param logDeliveryConfiguration Configuration for sending InfluxDB engine logs to a specified S3 bucket. This argument is updatable.
@@ -75,7 +73,7 @@ object timestreaminfluxdb:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.timestreaminfluxdb.inputs.DbInstanceState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.timestreaminfluxdb.inputs.DbInstanceLogDeliveryConfigurationArgs.Builder)
     /**
      * @param s3Configuration Configuration for S3 bucket log delivery.
@@ -86,7 +84,6 @@ object timestreaminfluxdb:
       val argsBuilder = com.pulumi.aws.timestreaminfluxdb.inputs.DbInstanceLogDeliveryConfigurationS3ConfigurationArgs.builder
       builder.s3Configuration(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.timestreaminfluxdb.inputs.DbClusterLogDeliveryConfigurationArgs.Builder)
     /**
      * @param s3Configuration Configuration for S3 bucket log delivery.
@@ -97,7 +94,6 @@ object timestreaminfluxdb:
       val argsBuilder = com.pulumi.aws.timestreaminfluxdb.inputs.DbClusterLogDeliveryConfigurationS3ConfigurationArgs.builder
       builder.s3Configuration(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.timestreaminfluxdb.inputs.DbClusterState.Builder)
     /**
      * @param logDeliveryConfiguration Configuration for sending InfluxDB engine logs to a specified S3 bucket. This argument is updatable.
@@ -125,7 +121,7 @@ object timestreaminfluxdb:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.timestreaminfluxdb.inputs.DbClusterState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.timestreaminfluxdb.DbClusterArgs.Builder)
     /**
      * @param logDeliveryConfiguration Configuration for sending InfluxDB engine logs to a specified S3 bucket. This argument is updatable.
@@ -153,4 +149,3 @@ object timestreaminfluxdb:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.timestreaminfluxdb.DbClusterArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       

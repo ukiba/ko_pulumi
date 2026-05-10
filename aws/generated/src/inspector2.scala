@@ -14,18 +14,16 @@ object inspector2:
       val argsBuilder = com.pulumi.aws.inspector2.inputs.OrganizationConfigurationAutoEnableArgs.builder
       builder.autoEnable(args(argsBuilder).build)
 
-                       
   /**
    * Resource for managing an Amazon Inspector Organization Configuration.
-   *  
+   * 
    *  &gt; **NOTE:** In order for this resource to work, the account you use must be an Inspector Delegated Admin Account.
-   *  
+   * 
    *  &gt; **NOTE:** When this resource is deleted, EC2, ECR, Lambda, and Lambda code scans will no longer be automatically enabled for new members of your Amazon Inspector organization.
    */
   def OrganizationConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.inspector2.OrganizationConfigurationArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.inspector2.OrganizationConfigurationArgs.builder
-    
     com.pulumi.aws.inspector2.OrganizationConfiguration(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -33,7 +31,7 @@ object inspector2:
   extension (builder: com.pulumi.aws.inspector2.FilterArgs.Builder)
     /**
      * @param filterCriterias Details on the filter criteria. Documented below.
-     *  
+     * 
      *  The following arguments are optional:
      * @return builder
      */
@@ -45,12 +43,11 @@ object inspector2:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.inspector2.FilterArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   /** Resource for associating accounts to existing Inspector instances. */
   def MemberAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.inspector2.MemberAssociationArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.inspector2.MemberAssociationArgs.builder
-    
     com.pulumi.aws.inspector2.MemberAssociation(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -59,20 +56,18 @@ object inspector2:
   def DelegatedAdminAccount(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.inspector2.DelegatedAdminAccountArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.inspector2.DelegatedAdminAccountArgs.builder
-    
     com.pulumi.aws.inspector2.DelegatedAdminAccount(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
   /**
    * Resource for enabling Amazon Inspector resource scans.
-   *  
+   * 
    *  This resource must be created in the Organization&#39;s Administrator Account.
    */
   def Enabler(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.inspector2.EnablerArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.inspector2.EnablerArgs.builder
-    
     com.pulumi.aws.inspector2.Enabler(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -87,7 +82,6 @@ object inspector2:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.inspector2.Filter(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -102,7 +96,6 @@ object inspector2:
       val argsBuilder = com.pulumi.aws.inspector2.inputs.OrganizationConfigurationAutoEnableArgs.builder
       builder.autoEnable(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaArgs.Builder)
     /**
      * @param awsAccountIds (Optional) The AWS account ID in which the finding was generated. Documented below.
@@ -518,7 +511,6 @@ object inspector2:
       def argsBuilder = com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaVulnerablePackageArgs.builder
       builder.vulnerablePackages(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaVulnerablePackageArgs.Builder)
     /**
      * @param architecture (Optional) The architecture of the package. Documented below.
@@ -592,11 +584,10 @@ object inspector2:
       val argsBuilder = com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaVulnerablePackageVersionArgs.builder
       builder.version(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.inspector2.inputs.FilterState.Builder)
     /**
      * @param filterCriterias Details on the filter criteria. Documented below.
-     *  
+     * 
      *  The following arguments are optional:
      * @return builder
      */
@@ -608,4 +599,3 @@ object inspector2:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.inspector2.inputs.FilterState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       

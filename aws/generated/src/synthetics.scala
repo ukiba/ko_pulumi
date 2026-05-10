@@ -43,14 +43,13 @@ object synthetics:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.synthetics.Group(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
   /**
    * Provides a Synthetics Canary resource.
-   *  
+   * 
    *  &gt; **NOTE:** When you create a canary, AWS creates supporting implicit resources. See the Amazon CloudWatch Synthetics documentation on [DeleteCanary](https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_DeleteCanary.html) for a full list. Neither AWS nor this provider deletes these implicit resources automatically when the canary is deleted. Before deleting a canary, ensure you have all the information about the canary that you need to delete the implicit resources using the AWS Console, or AWS CLI.
    */
   def Canary(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
@@ -62,7 +61,6 @@ object synthetics:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.synthetics.Canary(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -71,7 +69,6 @@ object synthetics:
   def GroupAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.synthetics.GroupAssociationArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.synthetics.GroupAssociationArgs.builder
-    
     com.pulumi.aws.synthetics.GroupAssociation(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -97,7 +94,7 @@ object synthetics:
 
     /**
      * @param schedule Configuration block providing how often the canary is to run and when these test runs are to stop. Detailed below.
-     *  
+     * 
      *  The following arguments are optional:
      * @return builder
      */
@@ -118,7 +115,7 @@ object synthetics:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.synthetics.CanaryArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.synthetics.inputs.CanaryState.Builder)
     /**
      * @param artifactConfig configuration for canary artifacts, including the encryption-at-rest settings for artifacts that the canary uploads to Amazon S3. See Artifact Config.
@@ -140,7 +137,7 @@ object synthetics:
 
     /**
      * @param schedule Configuration block providing how often the canary is to run and when these test runs are to stop. Detailed below.
-     *  
+     * 
      *  The following arguments are optional:
      * @return builder
      */
@@ -170,7 +167,7 @@ object synthetics:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.synthetics.inputs.CanaryState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.synthetics.inputs.CanaryScheduleArgs.Builder)
     /**
      * @param retryConfig Configuration block for canary retries. Detailed below.
@@ -181,7 +178,6 @@ object synthetics:
       val argsBuilder = com.pulumi.aws.synthetics.inputs.CanaryScheduleRetryConfigArgs.builder
       builder.retryConfig(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.synthetics.inputs.CanaryArtifactConfigArgs.Builder)
     /**
      * @param s3Encryption Configuration of the encryption-at-rest settings for artifacts that the canary uploads to Amazon S3. See S3 Encryption.
@@ -191,5 +187,3 @@ object synthetics:
         com.pulumi.aws.synthetics.inputs.CanaryArtifactConfigArgs.Builder =
       val argsBuilder = com.pulumi.aws.synthetics.inputs.CanaryArtifactConfigS3EncryptionArgs.builder
       builder.s3Encryption(args(argsBuilder).build)
-
-                       

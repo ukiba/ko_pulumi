@@ -11,7 +11,6 @@ object networkmonitor:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.networkmonitor.Probe(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -23,7 +22,6 @@ object networkmonitor:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.networkmonitor.Monitor(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)

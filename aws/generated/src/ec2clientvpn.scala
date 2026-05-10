@@ -11,7 +11,6 @@ object ec2clientvpn:
   def NetworkAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ec2clientvpn.NetworkAssociationArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.ec2clientvpn.NetworkAssociationArgs.builder
-    
     com.pulumi.aws.ec2clientvpn.NetworkAssociation(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -23,7 +22,6 @@ object ec2clientvpn:
   def Route(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ec2clientvpn.RouteArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.ec2clientvpn.RouteArgs.builder
-    
     com.pulumi.aws.ec2clientvpn.Route(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -38,7 +36,6 @@ object ec2clientvpn:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.ec2clientvpn.Endpoint(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -50,7 +47,6 @@ object ec2clientvpn:
   def AuthorizationRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ec2clientvpn.AuthorizationRuleArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.ec2clientvpn.AuthorizationRuleArgs.builder
-    
     com.pulumi.aws.ec2clientvpn.AuthorizationRule(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -130,7 +126,7 @@ object ec2clientvpn:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.ec2clientvpn.EndpointArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.ec2clientvpn.inputs.EndpointState.Builder)
     /**
      * @param authenticationOptions Information about the authentication method to be used to authenticate clients. See `authenticationOptions` Block Reference below for details.
@@ -189,7 +185,7 @@ object ec2clientvpn:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.ec2clientvpn.inputs.EndpointState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.ec2clientvpn.inputs.GetEndpointArgs.Builder)
     /**
      * @param filters One or more configuration blocks containing name-values filters. Detailed below.
@@ -203,4 +199,3 @@ object ec2clientvpn:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.ec2clientvpn.inputs.GetEndpointArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       

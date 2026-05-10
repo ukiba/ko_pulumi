@@ -11,7 +11,6 @@ object mediapackage:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.mediapackage.Channel(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -26,7 +25,6 @@ object mediapackage:
       def argsBuilder = com.pulumi.aws.mediapackage.inputs.ChannelHlsIngestIngestEndpointArgs.builder
       builder.ingestEndpoints(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.mediapackage.inputs.ChannelState.Builder)
     /**
      * @param hlsIngests A single item list of HLS ingest information
@@ -40,4 +38,3 @@ object mediapackage:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.mediapackage.inputs.ChannelState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       

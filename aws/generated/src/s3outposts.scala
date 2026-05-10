@@ -8,7 +8,6 @@ object s3outposts:
   def Endpoint(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.s3outposts.EndpointArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.s3outposts.EndpointArgs.builder
-    
     com.pulumi.aws.s3outposts.Endpoint(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -22,5 +21,3 @@ object s3outposts:
         com.pulumi.aws.s3outposts.inputs.EndpointState.Builder =
       def argsBuilder = com.pulumi.aws.s3outposts.inputs.EndpointNetworkInterfaceArgs.builder
       builder.networkInterfaces(args.map(_(argsBuilder).build)*)
-
-                       

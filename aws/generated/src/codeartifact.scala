@@ -26,12 +26,11 @@ object codeartifact:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.codeartifact.RepositoryArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   /** Provides a CodeArtifact Domains Permissions Policy Resource. */
   def DomainPermissions(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.codeartifact.DomainPermissionsArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.codeartifact.DomainPermissionsArgs.builder
-    
     com.pulumi.aws.codeartifact.DomainPermissions(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -40,7 +39,6 @@ object codeartifact:
   def RepositoryPermissionsPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.codeartifact.RepositoryPermissionsPolicyArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.codeartifact.RepositoryPermissionsPolicyArgs.builder
-    
     com.pulumi.aws.codeartifact.RepositoryPermissionsPolicy(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -52,7 +50,6 @@ object codeartifact:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.codeartifact.Repository(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -108,7 +105,7 @@ object codeartifact:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.codeartifact.inputs.RepositoryState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   /** Provides a CodeArtifact Domain Resource. */
   def Domain(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.codeartifact.DomainArgs.Builder])(using conf: KoPulumiConf) =
@@ -116,7 +113,6 @@ object codeartifact:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.codeartifact.Domain(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)

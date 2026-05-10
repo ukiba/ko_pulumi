@@ -14,7 +14,6 @@ object macie:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.macie.FindingsFilter(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -32,7 +31,7 @@ object macie:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.macie.FindingsFilterArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   /** Provides a resource to manage an [AWS Macie Custom Data Identifier](https://docs.aws.amazon.com/macie/latest/APIReference/custom-data-identifiers-id.html). */
   def CustomDataIdentifier(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.macie.CustomDataIdentifierArgs.Builder])(using conf: KoPulumiConf) =
@@ -43,7 +42,6 @@ object macie:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.macie.CustomDataIdentifier(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -61,7 +59,7 @@ object macie:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.macie.inputs.FindingsFilterState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.macie.inputs.FindingsFilterFindingCriteriaArgs.Builder)
     /**
      * @param criterions A condition that specifies the property, operator, and one or more values to use to filter the results.  (documented below)
@@ -71,5 +69,3 @@ object macie:
         com.pulumi.aws.macie.inputs.FindingsFilterFindingCriteriaArgs.Builder =
       def argsBuilder = com.pulumi.aws.macie.inputs.FindingsFilterFindingCriteriaCriterionArgs.builder
       builder.criterions(args.map(_(argsBuilder).build)*)
-
-                       

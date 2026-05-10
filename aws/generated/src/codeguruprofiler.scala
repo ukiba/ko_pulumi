@@ -31,7 +31,6 @@ object codeguruprofiler:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.codeguruprofiler.ProfilingGroup(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -49,7 +48,7 @@ object codeguruprofiler:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.codeguruprofiler.ProfilingGroupArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.codeguruprofiler.inputs.ProfilingGroupState.Builder)
     /**
      * @param agentOrchestrationConfig Specifies whether profiling is enabled or disabled for the created profiling. See Agent Orchestration Config for more details.
@@ -63,4 +62,3 @@ object codeguruprofiler:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.codeguruprofiler.inputs.ProfilingGroupState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       

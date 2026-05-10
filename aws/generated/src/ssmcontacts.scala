@@ -6,7 +6,7 @@ import com.pulumi.resources.CustomResourceOptions
 object ssmcontacts:
   /**
    * Resource for managing an AWS SSM Contacts Contact Channel.
-   *  
+   * 
    *  &gt; **NOTE:** The contact channel needs to be activated in the AWS Systems Manager console, otherwise it can&#39;t be used to engage the contact. See the [Contacts section of the Incident Manager User Guide](https://docs.aws.amazon.com/incident-manager/latest/userguide/contacts.html) for more information.
    */
   def ContactChannel(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
@@ -15,14 +15,13 @@ object ssmcontacts:
     conf.logicalName2pysicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
       case None               =>
-    
     com.pulumi.aws.ssmcontacts.ContactChannel(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
   /**
    * Resource for managing an AWS SSM Contact.
-   *  
+   * 
    *  &gt; **NOTE:** A contact implicitly depends on a replication set. If you configured your replication set in Pulumi, we recommend you add it to the `dependsOn` argument for the Contact Resource.
    */
   def Contact(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
@@ -31,7 +30,6 @@ object ssmcontacts:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.ssmcontacts.Contact(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -46,7 +44,6 @@ object ssmcontacts:
       def argsBuilder = com.pulumi.aws.ssmcontacts.inputs.PlanStageArgs.builder
       builder.stages(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.ssmcontacts.ContactChannelArgs.Builder)
     /**
      * @param deliveryAddress Block that contains contact engagement details. See details below.
@@ -57,12 +54,10 @@ object ssmcontacts:
       val argsBuilder = com.pulumi.aws.ssmcontacts.inputs.ContactChannelDeliveryAddressArgs.builder
       builder.deliveryAddress(args(argsBuilder).build)
 
-                       
   /** Resource for managing an AWS SSM Contact Plan. */
   def Plan(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ssmcontacts.PlanArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.ssmcontacts.PlanArgs.builder
-    
     com.pulumi.aws.ssmcontacts.Plan(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -118,7 +113,6 @@ object ssmcontacts:
       def argsBuilder = com.pulumi.aws.ssmcontacts.inputs.PlanStageTargetArgs.builder
       builder.targets(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.ssmcontacts.inputs.PlanStageTargetArgs.Builder)
     /**
      * @param channelTargetInfo A configuration block for specifying information about the contact channel that Incident Manager engages. See Channel Target Info for more details.
@@ -138,7 +132,6 @@ object ssmcontacts:
       val argsBuilder = com.pulumi.aws.ssmcontacts.inputs.PlanStageTargetContactTargetInfoArgs.builder
       builder.contactTargetInfo(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.ssmcontacts.inputs.PlanState.Builder)
     /**
      * @param stages One or more configuration blocks for specifying a list of stages that the escalation plan or engagement plan uses to engage contacts and contact methods. See Stage below for more details.
@@ -149,7 +142,6 @@ object ssmcontacts:
       def argsBuilder = com.pulumi.aws.ssmcontacts.inputs.PlanStageArgs.builder
       builder.stages(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.ssmcontacts.inputs.ContactChannelState.Builder)
     /**
      * @param deliveryAddress Block that contains contact engagement details. See details below.
@@ -159,5 +151,3 @@ object ssmcontacts:
         com.pulumi.aws.ssmcontacts.inputs.ContactChannelState.Builder =
       val argsBuilder = com.pulumi.aws.ssmcontacts.inputs.ContactChannelDeliveryAddressArgs.builder
       builder.deliveryAddress(args(argsBuilder).build)
-
-                       

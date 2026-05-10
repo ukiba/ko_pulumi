@@ -14,7 +14,6 @@ object costexplorer:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.costexplorer.CostCategory(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -29,20 +28,18 @@ object costexplorer:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.costexplorer.AnomalyMonitor(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
   /**
    * Provides a CE Cost Allocation Tag.
-   *  
+   * 
    *  &gt; **NOTE:** After the user-defined tags are created and applied to resources, it can take up to 24 hours for the tag keys to appear on Cost Allocation tag page for activation.
    */
   def CostAllocationTag(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.costexplorer.CostAllocationTagArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.costexplorer.CostAllocationTagArgs.builder
-    
     com.pulumi.aws.costexplorer.CostAllocationTag(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -69,7 +66,7 @@ object costexplorer:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.costexplorer.CostCategoryArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.costexplorer.AnomalySubscriptionArgs.Builder)
     /**
      * @param subscribers A subscriber configuration. Multiple subscribers can be defined.
@@ -92,7 +89,7 @@ object costexplorer:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.costexplorer.AnomalySubscriptionArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   /** Provides a CE Anomaly Subscription. */
   def AnomalySubscription(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.costexplorer.AnomalySubscriptionArgs.Builder])(using conf: KoPulumiConf) =
@@ -103,7 +100,6 @@ object costexplorer:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.costexplorer.AnomalySubscription(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -165,7 +161,6 @@ object costexplorer:
       val argsBuilder = com.pulumi.aws.costexplorer.inputs.GetTagsTimePeriodArgs.builder
       builder.timePeriod(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.costexplorer.inputs.CostCategoryRuleRuleNotAndArgs.Builder)
     /**
      * @param costCategory Configuration block for the filter that&#39;s based on `CostCategory` values. See below.
@@ -194,7 +189,6 @@ object costexplorer:
       val argsBuilder = com.pulumi.aws.costexplorer.inputs.CostCategoryRuleRuleNotAndTagsArgs.builder
       builder.tags(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.costexplorer.inputs.CostCategoryRuleRuleAndNotArgs.Builder)
     /**
      * @param costCategory Configuration block for the filter that&#39;s based on `CostCategory` values. See below.
@@ -223,7 +217,6 @@ object costexplorer:
       val argsBuilder = com.pulumi.aws.costexplorer.inputs.CostCategoryRuleRuleAndNotTagsArgs.builder
       builder.tags(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.costexplorer.inputs.CostCategoryRuleRuleNotOrArgs.Builder)
     /**
      * @param costCategory Configuration block for the filter that&#39;s based on `CostCategory` values. See below.
@@ -252,7 +245,6 @@ object costexplorer:
       val argsBuilder = com.pulumi.aws.costexplorer.inputs.CostCategoryRuleRuleNotOrTagsArgs.builder
       builder.tags(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.costexplorer.inputs.AnomalySubscriptionThresholdExpressionNotArgs.Builder)
     /**
      * @param costCategory Configuration block for the filter that&#39;s based on  values. See Cost Category below.
@@ -281,7 +273,6 @@ object costexplorer:
       val argsBuilder = com.pulumi.aws.costexplorer.inputs.AnomalySubscriptionThresholdExpressionNotTagsArgs.builder
       builder.tags(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.costexplorer.inputs.CostCategoryRuleRuleOrNotArgs.Builder)
     /**
      * @param costCategory Configuration block for the filter that&#39;s based on `CostCategory` values. See below.
@@ -310,7 +301,6 @@ object costexplorer:
       val argsBuilder = com.pulumi.aws.costexplorer.inputs.CostCategoryRuleRuleOrNotTagsArgs.builder
       builder.tags(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.costexplorer.inputs.AnomalySubscriptionState.Builder)
     /**
      * @param subscribers A subscriber configuration. Multiple subscribers can be defined.
@@ -333,7 +323,7 @@ object costexplorer:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.costexplorer.inputs.AnomalySubscriptionState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.costexplorer.inputs.GetTagsFilterOrArgs.Builder)
     /**
      * @param costCategory Configuration block for the filter that&#39;s based on `CostCategory` values. See `costCategory` block below for details.
@@ -362,7 +352,6 @@ object costexplorer:
       val argsBuilder = com.pulumi.aws.costexplorer.inputs.GetTagsFilterOrTagsArgs.builder
       builder.tags(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.costexplorer.inputs.CostCategoryRuleRuleNotArgs.Builder)
     /**
      * @param ands Return results that match both `Dimension` objects.
@@ -418,7 +407,6 @@ object costexplorer:
       val argsBuilder = com.pulumi.aws.costexplorer.inputs.CostCategoryRuleRuleNotTagsArgs.builder
       builder.tags(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.costexplorer.inputs.GetTagsFilterNotArgs.Builder)
     /**
      * @param costCategory Configuration block for the filter that&#39;s based on `CostCategory` values. See `costCategory` block below for details.
@@ -447,7 +435,6 @@ object costexplorer:
       val argsBuilder = com.pulumi.aws.costexplorer.inputs.GetTagsFilterNotTagsArgs.builder
       builder.tags(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.costexplorer.inputs.CostCategoryRuleArgs.Builder)
     /**
      * @param inheritedValue Configuration block for the value the line item is categorized as if the line item contains the matched dimension. See below.
@@ -467,7 +454,6 @@ object costexplorer:
       val argsBuilder = com.pulumi.aws.costexplorer.inputs.CostCategoryRuleRuleArgs.builder
       builder.rule(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.costexplorer.inputs.GetTagsFilterAndArgs.Builder)
     /**
      * @param costCategory Configuration block for the filter that&#39;s based on `CostCategory` values. See `costCategory` block below for details.
@@ -496,7 +482,6 @@ object costexplorer:
       val argsBuilder = com.pulumi.aws.costexplorer.inputs.GetTagsFilterAndTagsArgs.builder
       builder.tags(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.costexplorer.inputs.GetTagsFilterArgs.Builder)
     /**
      * @param ands Return results that match both `Dimension` objects.
@@ -552,7 +537,6 @@ object costexplorer:
       val argsBuilder = com.pulumi.aws.costexplorer.inputs.GetTagsFilterTagsArgs.builder
       builder.tags(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.costexplorer.inputs.AnomalySubscriptionThresholdExpressionOrArgs.Builder)
     /**
      * @param costCategory Configuration block for the filter that&#39;s based on  values. See Cost Category below.
@@ -581,7 +565,6 @@ object costexplorer:
       val argsBuilder = com.pulumi.aws.costexplorer.inputs.AnomalySubscriptionThresholdExpressionOrTagsArgs.builder
       builder.tags(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.costexplorer.inputs.CostCategoryRuleRuleOrArgs.Builder)
     /**
      * @param ands Return results that match both `Dimension` objects.
@@ -637,7 +620,6 @@ object costexplorer:
       val argsBuilder = com.pulumi.aws.costexplorer.inputs.CostCategoryRuleRuleOrTagsArgs.builder
       builder.tags(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.costexplorer.inputs.CostCategoryRuleRuleAndArgs.Builder)
     /**
      * @param ands Return results that match both `Dimension` objects.
@@ -693,7 +675,6 @@ object costexplorer:
       val argsBuilder = com.pulumi.aws.costexplorer.inputs.CostCategoryRuleRuleAndTagsArgs.builder
       builder.tags(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.costexplorer.inputs.CostCategoryRuleRuleArgs.Builder)
     /**
      * @param ands Return results that match both `Dimension` objects.
@@ -749,7 +730,6 @@ object costexplorer:
       val argsBuilder = com.pulumi.aws.costexplorer.inputs.CostCategoryRuleRuleTagsArgs.builder
       builder.tags(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.costexplorer.inputs.CostCategoryState.Builder)
     /**
      * @param rules Configuration block for the Cost Category rules used to categorize costs. See below.
@@ -772,7 +752,7 @@ object costexplorer:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.costexplorer.inputs.CostCategoryState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.costexplorer.inputs.CostCategoryRuleRuleOrOrArgs.Builder)
     /**
      * @param costCategory Configuration block for the filter that&#39;s based on `CostCategory` values. See below.
@@ -801,7 +781,6 @@ object costexplorer:
       val argsBuilder = com.pulumi.aws.costexplorer.inputs.CostCategoryRuleRuleOrOrTagsArgs.builder
       builder.tags(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.costexplorer.inputs.CostCategorySplitChargeRuleArgs.Builder)
     /**
      * @param parameters Configuration block for the parameters for a split charge method. This is only required for the `FIXED` method. See below.
@@ -812,7 +791,6 @@ object costexplorer:
       def argsBuilder = com.pulumi.aws.costexplorer.inputs.CostCategorySplitChargeRuleParameterArgs.builder
       builder.parameters(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.costexplorer.inputs.CostCategoryRuleRuleAndOrArgs.Builder)
     /**
      * @param costCategory Configuration block for the filter that&#39;s based on `CostCategory` values. See below.
@@ -841,7 +819,6 @@ object costexplorer:
       val argsBuilder = com.pulumi.aws.costexplorer.inputs.CostCategoryRuleRuleAndOrTagsArgs.builder
       builder.tags(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.costexplorer.inputs.CostCategoryRuleRuleAndAndArgs.Builder)
     /**
      * @param costCategory Configuration block for the filter that&#39;s based on `CostCategory` values. See below.
@@ -870,7 +847,6 @@ object costexplorer:
       val argsBuilder = com.pulumi.aws.costexplorer.inputs.CostCategoryRuleRuleAndAndTagsArgs.builder
       builder.tags(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.costexplorer.inputs.CostCategoryRuleRuleNotNotArgs.Builder)
     /**
      * @param costCategory Configuration block for the filter that&#39;s based on `CostCategory` values. See below.
@@ -899,7 +875,6 @@ object costexplorer:
       val argsBuilder = com.pulumi.aws.costexplorer.inputs.CostCategoryRuleRuleNotNotTagsArgs.builder
       builder.tags(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.costexplorer.inputs.AnomalySubscriptionThresholdExpressionAndArgs.Builder)
     /**
      * @param costCategory Configuration block for the filter that&#39;s based on  values. See Cost Category below.
@@ -928,7 +903,6 @@ object costexplorer:
       val argsBuilder = com.pulumi.aws.costexplorer.inputs.AnomalySubscriptionThresholdExpressionAndTagsArgs.builder
       builder.tags(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.costexplorer.inputs.AnomalySubscriptionThresholdExpressionArgs.Builder)
     /**
      * @param ands Return results that match both Dimension objects.
@@ -984,7 +958,6 @@ object costexplorer:
       val argsBuilder = com.pulumi.aws.costexplorer.inputs.AnomalySubscriptionThresholdExpressionTagsArgs.builder
       builder.tags(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.costexplorer.inputs.CostCategoryRuleRuleOrAndArgs.Builder)
     /**
      * @param costCategory Configuration block for the filter that&#39;s based on `CostCategory` values. See below.
@@ -1012,5 +985,3 @@ object costexplorer:
         com.pulumi.aws.costexplorer.inputs.CostCategoryRuleRuleOrAndArgs.Builder =
       val argsBuilder = com.pulumi.aws.costexplorer.inputs.CostCategoryRuleRuleOrAndTagsArgs.builder
       builder.tags(args(argsBuilder).build)
-
-                       

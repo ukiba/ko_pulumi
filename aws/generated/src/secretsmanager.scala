@@ -14,7 +14,6 @@ object secretsmanager:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.secretsmanager.Secret(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -98,15 +97,14 @@ object secretsmanager:
 
   /**
    * Manages an individual AWS Secrets Manager secret tag. This resource should only be used in cases where AWS Secrets Manager secrets are created outside Terraform (e.g., [AWS Secrets Manager secrets managed by other AWS services](https://docs.aws.amazon.com/secretsmanager/latest/userguide/service-linked-secrets.html), such as RDS).
-   *  
+   * 
    *  &gt; **NOTE:** This tagging resource should not be combined with the Terraform resource for managing the parent resource. For example, using `aws.secretsmanager.Secret` and `aws.secretsmanager.Tag` to manage tags of the same AWS Secrets Manager secret will cause a perpetual difference where the `aws.secretsmanager.Secret` resource will try to remove the tag being added by the `aws.secretsmanager.Tag` resource. However, if the parent resource is created in the same configuration (i.e., if you have no other choice), you should add `ignoreChanges = [tags]` in the parent resource&#39;s lifecycle block. This ensures that Terraform ignores differences in tags managed via the separate tagging resource, avoiding the perpetual difference mentioned above.
-   *  
+   * 
    *  &gt; **NOTE:** This tagging resource does not use the provider `ignoreTags` configuration.
    */
   def Tag(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.secretsmanager.TagArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.secretsmanager.TagArgs.builder
-    
     com.pulumi.aws.secretsmanager.Tag(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -121,7 +119,6 @@ object secretsmanager:
       val argsBuilder = com.pulumi.aws.secretsmanager.inputs.SecretRotationRotationRulesArgs.builder
       builder.rotationRules(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.secretsmanager.SecretArgs.Builder)
     /**
      * @param replicas Configuration block to support secret replication. See details below.
@@ -135,12 +132,11 @@ object secretsmanager:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.secretsmanager.SecretArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   /** Provides a resource to manage AWS Secrets Manager secret policy. */
   def SecretPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.secretsmanager.SecretPolicyArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.secretsmanager.SecretPolicyArgs.builder
-    
     com.pulumi.aws.secretsmanager.SecretPolicy(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -149,20 +145,18 @@ object secretsmanager:
   def SecretRotation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.secretsmanager.SecretRotationArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.secretsmanager.SecretRotationArgs.builder
-    
     com.pulumi.aws.secretsmanager.SecretRotation(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
   /**
    * Provides a resource to manage AWS Secrets Manager secret version including its secret value. To manage secret metadata, see the `aws.secretsmanager.Secret` resource.
-   *  
+   * 
    *  &gt; **NOTE:** If the `AWSCURRENT` staging label is present on this version during resource deletion, that label cannot be removed and will be skipped to prevent errors when fully deleting the secret. That label will leave this secret version active even after the resource is deleted from this provider unless the secret itself is deleted. Move the `AWSCURRENT` staging label before or after deleting this resource from this provider to fully trigger version deprecation if necessary.
    */
   def SecretVersion(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.secretsmanager.SecretVersionArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.secretsmanager.SecretVersionArgs.builder
-    
     com.pulumi.aws.secretsmanager.SecretVersion(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -180,7 +174,7 @@ object secretsmanager:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.secretsmanager.inputs.SecretState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.secretsmanager.inputs.GetSecretsArgs.Builder)
     /**
      * @param filters Configuration block(s) for filtering. Detailed below.
@@ -191,7 +185,6 @@ object secretsmanager:
       def argsBuilder = com.pulumi.aws.secretsmanager.inputs.GetSecretsFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.secretsmanager.inputs.SecretRotationState.Builder)
     /**
      * @param rotationRules A structure that defines the rotation configuration for this secret. Defined below.
@@ -201,5 +194,3 @@ object secretsmanager:
         com.pulumi.aws.secretsmanager.inputs.SecretRotationState.Builder =
       val argsBuilder = com.pulumi.aws.secretsmanager.inputs.SecretRotationRotationRulesArgs.builder
       builder.rotationRules(args(argsBuilder).build)
-
-                       

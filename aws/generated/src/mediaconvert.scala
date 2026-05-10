@@ -17,7 +17,7 @@ object mediaconvert:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.mediaconvert.QueueArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   /** Provides an AWS Elemental MediaConvert Queue. */
   def Queue(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.mediaconvert.QueueArgs.Builder])(using conf: KoPulumiConf) =
@@ -28,7 +28,6 @@ object mediaconvert:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.mediaconvert.Queue(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -63,4 +62,3 @@ object mediaconvert:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.mediaconvert.inputs.QueueState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       

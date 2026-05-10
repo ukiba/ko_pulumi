@@ -11,7 +11,7 @@ object servicequotas:
   extension (self: ServicequotasFunctions.type)
     /**
      * Retrieve information about a Service Quotas Service.
-     *  
+     * 
      *  &gt; **NOTE:** Global quotas apply to all AWS regions, but can only be accessed in `us-east-1` in the Commercial partition or `us-gov-west-1` in the GovCloud partition. In other regions, the AWS API will return the error `The request failed because the specified service does not exist.`
      */
     def getService(args: Endofunction[com.pulumi.aws.servicequotas.inputs.GetServiceArgs.Builder] = identity):
@@ -21,7 +21,7 @@ object servicequotas:
 
     /**
      * Retrieve information about a Service Quotas Service.
-     *  
+     * 
      *  &gt; **NOTE:** Global quotas apply to all AWS regions, but can only be accessed in `us-east-1` in the Commercial partition or `us-gov-west-1` in the GovCloud partition. In other regions, the AWS API will return the error `The request failed because the specified service does not exist.`
      */
     def getServicePlain(args: Endofunction[com.pulumi.aws.servicequotas.inputs.GetServicePlainArgs.Builder] = identity):
@@ -31,7 +31,7 @@ object servicequotas:
 
     /**
      * Retrieve information about a Service Quota.
-     *  
+     * 
      *  &gt; **NOTE:** Global quotas apply to all AWS regions, but can only be accessed in `us-east-1` in the Commercial partition or `us-gov-west-1` in the GovCloud partition. In other regions, the AWS API will return the error `The request failed because the specified service does not exist.`
      */
     def getServiceQuota(args: Endofunction[com.pulumi.aws.servicequotas.inputs.GetServiceQuotaArgs.Builder] = identity):
@@ -41,7 +41,7 @@ object servicequotas:
 
     /**
      * Retrieve information about a Service Quota.
-     *  
+     * 
      *  &gt; **NOTE:** Global quotas apply to all AWS regions, but can only be accessed in `us-east-1` in the Commercial partition or `us-gov-west-1` in the GovCloud partition. In other regions, the AWS API will return the error `The request failed because the specified service does not exist.`
      */
     def getServiceQuotaPlain(args: Endofunction[com.pulumi.aws.servicequotas.inputs.GetServiceQuotaPlainArgs.Builder] = identity):
@@ -63,52 +63,48 @@ object servicequotas:
 
   /**
    * Manages AWS Service Quotas Automatic Management.
-   *  
+   * 
    *  &gt; **Note:** Due to AWS API limitations, the `notificationArn` attribute cannot be removed once set without recreating the resource. Removing this value from your configuration will trigger resource replacement.
    */
   def AutoManagement(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.servicequotas.AutoManagementArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.servicequotas.AutoManagementArgs.builder
-    
     com.pulumi.aws.servicequotas.AutoManagement(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
   /**
    * Manages an individual Service Quota.
-   *  
+   * 
    *  &gt; **NOTE:** Global quotas apply to all AWS regions, but can only be accessed in `us-east-1` in the Commercial partition or `us-gov-west-1` in the GovCloud partition. In other regions, the AWS API will return the error `The request failed because the specified service does not exist.`
    */
   def ServiceQuota(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.servicequotas.ServiceQuotaArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.servicequotas.ServiceQuotaArgs.builder
-    
     com.pulumi.aws.servicequotas.ServiceQuota(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
   /**
    * Resource for managing an AWS Service Quotas Template.
-   *  
+   * 
    *  &gt; Only the management account of an organization can alter Service Quota templates, and this must be done from the `us-east-1` region.
    */
   def Template(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.servicequotas.TemplateArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.servicequotas.TemplateArgs.builder
-    
     com.pulumi.aws.servicequotas.Template(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
   /**
    * Resource for managing an AWS Service Quotas Template Association.
-   *  
+   * 
    *  &gt; Only the management account of an organization can associate Service Quota templates, and this must be done from the `us-east-1` region.
    */
   def TemplateAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.servicequotas.TemplateAssociationArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.servicequotas.TemplateAssociationArgs.builder
-    
     com.pulumi.aws.servicequotas.TemplateAssociation(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -123,7 +119,6 @@ object servicequotas:
       def argsBuilder = com.pulumi.aws.servicequotas.inputs.ServiceQuotaUsageMetricArgs.builder
       builder.usageMetrics(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.servicequotas.inputs.ServiceQuotaUsageMetricArgs.Builder)
     /**
      * @param metricDimensions The metric dimensions.
@@ -133,5 +128,3 @@ object servicequotas:
         com.pulumi.aws.servicequotas.inputs.ServiceQuotaUsageMetricArgs.Builder =
       def argsBuilder = com.pulumi.aws.servicequotas.inputs.ServiceQuotaUsageMetricMetricDimensionArgs.builder
       builder.metricDimensions(args.map(_(argsBuilder).build)*)
-
-                       

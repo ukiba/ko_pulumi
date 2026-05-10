@@ -8,7 +8,6 @@ object cloud9:
   def EnvironmentMembership(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.cloud9.EnvironmentMembershipArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.cloud9.EnvironmentMembershipArgs.builder
-    
     com.pulumi.aws.cloud9.EnvironmentMembership(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -23,7 +22,6 @@ object cloud9:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.cloud9.EnvironmentEC2(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)

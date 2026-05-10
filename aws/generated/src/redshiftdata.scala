@@ -8,7 +8,6 @@ object redshiftdata:
   def Statement(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.redshiftdata.StatementArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.redshiftdata.StatementArgs.builder
-    
     com.pulumi.aws.redshiftdata.Statement(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -19,11 +18,8 @@ object redshiftdata:
       def argsBuilder = com.pulumi.aws.redshiftdata.inputs.StatementParameterArgs.builder
       builder.parameters(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.redshiftdata.inputs.StatementState.Builder)
     def parameters(args: Endofunction[com.pulumi.aws.redshiftdata.inputs.StatementParameterArgs.Builder]*):
         com.pulumi.aws.redshiftdata.inputs.StatementState.Builder =
       def argsBuilder = com.pulumi.aws.redshiftdata.inputs.StatementParameterArgs.builder
       builder.parameters(args.map(_(argsBuilder).build)*)
-
-                       

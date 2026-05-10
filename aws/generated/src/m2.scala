@@ -14,7 +14,6 @@ object m2:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.m2.Environment(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -29,7 +28,6 @@ object m2:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.m2.Application(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -53,14 +51,13 @@ object m2:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.m2.EnvironmentArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.m2.DeploymentArgs.Builder)
     def timeouts(args: Endofunction[com.pulumi.aws.m2.inputs.DeploymentTimeoutsArgs.Builder]):
         com.pulumi.aws.m2.DeploymentArgs.Builder =
       val argsBuilder = com.pulumi.aws.m2.inputs.DeploymentTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.m2.ApplicationArgs.Builder)
     /**
      * @param definition The application definition for this application. You can specify either inline JSON or an S3 bucket location.
@@ -79,12 +76,11 @@ object m2:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.m2.ApplicationArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   /** Resource for managing an [AWS Mainframe Modernization Deployment.](https://docs.aws.amazon.com/m2/latest/userguide/applications-m2-deploy.html) */
   def Deployment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.m2.DeploymentArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.m2.DeploymentArgs.builder
-    
     com.pulumi.aws.m2.Deployment(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -108,7 +104,7 @@ object m2:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.m2.inputs.EnvironmentState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.m2.inputs.ApplicationState.Builder)
     /**
      * @param definition The application definition for this application. You can specify either inline JSON or an S3 bucket location.
@@ -127,7 +123,7 @@ object m2:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.m2.inputs.ApplicationState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.m2.inputs.EnvironmentStorageConfigurationArgs.Builder)
     def efs(args: Endofunction[com.pulumi.aws.m2.inputs.EnvironmentStorageConfigurationEfsArgs.Builder]):
         com.pulumi.aws.m2.inputs.EnvironmentStorageConfigurationArgs.Builder =
@@ -139,11 +135,8 @@ object m2:
       val argsBuilder = com.pulumi.aws.m2.inputs.EnvironmentStorageConfigurationFsxArgs.builder
       builder.fsx(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.m2.inputs.DeploymentState.Builder)
     def timeouts(args: Endofunction[com.pulumi.aws.m2.inputs.DeploymentTimeoutsArgs.Builder]):
         com.pulumi.aws.m2.inputs.DeploymentState.Builder =
       val argsBuilder = com.pulumi.aws.m2.inputs.DeploymentTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
-
-                       

@@ -14,7 +14,6 @@ object appsync:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.appsync.ChannelNamespace(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -83,12 +82,10 @@ object appsync:
       val argsBuilder = com.pulumi.aws.appsync.inputs.DataSourceRelationalDatabaseConfigArgs.builder
       builder.relationalDatabaseConfig(args(argsBuilder).build)
 
-                       
   /** Provides an AppSync API Cache. */
   def ApiCache(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.appsync.ApiCacheArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.appsync.ApiCacheArgs.builder
-    
     com.pulumi.aws.appsync.ApiCache(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -130,12 +127,10 @@ object appsync:
       val argsBuilder = com.pulumi.aws.appsync.inputs.ResolverSyncConfigArgs.builder
       builder.syncConfig(args(argsBuilder).build)
 
-                       
   /** Provides an AppSync Type. */
   def Type(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.appsync.TypeArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.appsync.TypeArgs.builder
-    
     com.pulumi.aws.appsync.Type(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -144,7 +139,6 @@ object appsync:
   def Resolver(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.appsync.ResolverArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.appsync.ResolverArgs.builder
-    
     com.pulumi.aws.appsync.Resolver(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -153,7 +147,6 @@ object appsync:
   def DomainName(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.appsync.DomainNameArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.appsync.DomainNameArgs.builder
-    
     com.pulumi.aws.appsync.DomainName(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -216,7 +209,7 @@ object appsync:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.appsync.GraphQLApiArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.appsync.SourceApiAssociationArgs.Builder)
     def sourceApiAssociationConfigs(args: Endofunction[com.pulumi.aws.appsync.inputs.SourceApiAssociationSourceApiAssociationConfigArgs.Builder]*):
         com.pulumi.aws.appsync.SourceApiAssociationArgs.Builder =
@@ -228,12 +221,10 @@ object appsync:
       val argsBuilder = com.pulumi.aws.appsync.inputs.SourceApiAssociationTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
-                       
   /** Provides an AppSync API Key. */
   def ApiKey(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.appsync.ApiKeyArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.appsync.ApiKeyArgs.builder
-    
     com.pulumi.aws.appsync.ApiKey(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -248,7 +239,6 @@ object appsync:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.appsync.GraphQLApi(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -272,7 +262,6 @@ object appsync:
       val argsBuilder = com.pulumi.aws.appsync.inputs.FunctionSyncConfigArgs.builder
       builder.syncConfig(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.appsync.ChannelNamespaceArgs.Builder)
     /**
      * @param handlerConfigs Configuration for the `onPublish` and `onSubscribe` handlers. See Handler Configs below.
@@ -304,7 +293,7 @@ object appsync:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.appsync.ChannelNamespaceArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   /** Manages an [AWS AppSync Event API](https://docs.aws.amazon.com/appsync/latest/eventapi/event-api-concepts.html#API). Event APIs enable real-time subscriptions and event-driven communication in AppSync applications. */
   def Api(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.appsync.ApiArgs.Builder])(using conf: KoPulumiConf) =
@@ -315,7 +304,6 @@ object appsync:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.appsync.Api(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -327,7 +315,6 @@ object appsync:
     conf.logicalName2pysicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
       case None               =>
-    
     com.pulumi.aws.appsync.Function(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -336,7 +323,6 @@ object appsync:
   def DomainNameApiAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.appsync.DomainNameApiAssociationArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.appsync.DomainNameApiAssociationArgs.builder
-    
     com.pulumi.aws.appsync.DomainNameApiAssociation(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -351,7 +337,6 @@ object appsync:
       val argsBuilder = com.pulumi.aws.appsync.inputs.ChannelNamespaceHandlerConfigsOnPublishIntegrationArgs.builder
       builder.integration(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.appsync.inputs.ChannelNamespaceHandlerConfigsOnSubscribeIntegrationArgs.Builder)
     /**
      * @param lambdaConfig Configuration for a Lambda data source. See Lambda Config below.
@@ -362,7 +347,6 @@ object appsync:
       val argsBuilder = com.pulumi.aws.appsync.inputs.ChannelNamespaceHandlerConfigsOnSubscribeIntegrationLambdaConfigArgs.builder
       builder.lambdaConfig(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.appsync.inputs.ResolverSyncConfigArgs.Builder)
     /**
      * @param lambdaConflictHandlerConfig Lambda Conflict Handler Config when configuring `LAMBDA` as the Conflict Handler. See Lambda Conflict Handler Config.
@@ -373,7 +357,6 @@ object appsync:
       val argsBuilder = com.pulumi.aws.appsync.inputs.ResolverSyncConfigLambdaConflictHandlerConfigArgs.builder
       builder.lambdaConflictHandlerConfig(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.appsync.inputs.ChannelNamespaceState.Builder)
     /**
      * @param handlerConfigs Configuration for the `onPublish` and `onSubscribe` handlers. See Handler Configs below.
@@ -405,7 +388,7 @@ object appsync:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.appsync.inputs.ChannelNamespaceState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.appsync.inputs.GraphQLApiAdditionalAuthenticationProviderArgs.Builder)
     /**
      * @param lambdaAuthorizerConfig Nested argument containing Lambda authorizer configuration. See `lambdaAuthorizerConfig` Block for details.
@@ -434,7 +417,6 @@ object appsync:
       val argsBuilder = com.pulumi.aws.appsync.inputs.GraphQLApiAdditionalAuthenticationProviderUserPoolConfigArgs.builder
       builder.userPoolConfig(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.appsync.inputs.ApiEventConfigArgs.Builder)
     /**
      * @param authProviders List of authentication providers. See Auth Providers below.
@@ -481,7 +463,6 @@ object appsync:
       val argsBuilder = com.pulumi.aws.appsync.inputs.ApiEventConfigLogConfigArgs.builder
       builder.logConfig(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.appsync.inputs.DataSourceDynamodbConfigArgs.Builder)
     /**
      * @param deltaSyncConfig The DeltaSyncConfig for a versioned data source. See `deltaSyncConfig` Block for details.
@@ -492,7 +473,6 @@ object appsync:
       val argsBuilder = com.pulumi.aws.appsync.inputs.DataSourceDynamodbConfigDeltaSyncConfigArgs.builder
       builder.deltaSyncConfig(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.appsync.inputs.SourceApiAssociationState.Builder)
     def sourceApiAssociationConfigs(args: Endofunction[com.pulumi.aws.appsync.inputs.SourceApiAssociationSourceApiAssociationConfigArgs.Builder]*):
         com.pulumi.aws.appsync.inputs.SourceApiAssociationState.Builder =
@@ -504,7 +484,6 @@ object appsync:
       val argsBuilder = com.pulumi.aws.appsync.inputs.SourceApiAssociationTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.appsync.inputs.ApiEventConfigAuthProviderArgs.Builder)
     /**
      * @param cognitoConfig Configuration for Cognito user pool authentication. Required when `authType` is `AMAZON_COGNITO_USER_POOLS`. See Cognito Config below.
@@ -533,7 +512,6 @@ object appsync:
       val argsBuilder = com.pulumi.aws.appsync.inputs.ApiEventConfigAuthProviderOpenidConnectConfigArgs.builder
       builder.openidConnectConfig(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.appsync.inputs.DataSourceHttpConfigArgs.Builder)
     /**
      * @param authorizationConfig Authorization configuration in case the HTTP endpoint requires authorization. See `authorizationConfig` Block for details.
@@ -544,7 +522,6 @@ object appsync:
       val argsBuilder = com.pulumi.aws.appsync.inputs.DataSourceHttpConfigAuthorizationConfigArgs.builder
       builder.authorizationConfig(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.appsync.inputs.ApiState.Builder)
     /**
      * @param eventConfig Configuration for the Event API. See Event Config below.
@@ -558,7 +535,7 @@ object appsync:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.appsync.inputs.ApiState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.appsync.inputs.FunctionState.Builder)
     /**
      * @param runtime Describes a runtime used by an AWS AppSync pipeline resolver or AWS AppSync function. Specifies the name and version of the runtime to use. Note that if a runtime is specified, code must also be specified. See `runtime` Block for details.
@@ -578,7 +555,6 @@ object appsync:
       val argsBuilder = com.pulumi.aws.appsync.inputs.FunctionSyncConfigArgs.builder
       builder.syncConfig(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.appsync.inputs.ChannelNamespaceHandlerConfigsOnPublishIntegrationArgs.Builder)
     /**
      * @param lambdaConfig Configuration for a Lambda data source. See Lambda Config below.
@@ -589,7 +565,6 @@ object appsync:
       val argsBuilder = com.pulumi.aws.appsync.inputs.ChannelNamespaceHandlerConfigsOnPublishIntegrationLambdaConfigArgs.builder
       builder.lambdaConfig(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.appsync.inputs.DataSourceRelationalDatabaseConfigArgs.Builder)
     /**
      * @param httpEndpointConfig Amazon RDS HTTP endpoint configuration. See `httpEndpointConfig` Block for details.
@@ -600,7 +575,6 @@ object appsync:
       val argsBuilder = com.pulumi.aws.appsync.inputs.DataSourceRelationalDatabaseConfigHttpEndpointConfigArgs.builder
       builder.httpEndpointConfig(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.appsync.inputs.ChannelNamespaceHandlerConfigsOnSubscribeArgs.Builder)
     /**
      * @param integration Integration data source configuration for the handler. See Integration below.
@@ -611,7 +585,6 @@ object appsync:
       val argsBuilder = com.pulumi.aws.appsync.inputs.ChannelNamespaceHandlerConfigsOnSubscribeIntegrationArgs.builder
       builder.integration(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.appsync.inputs.ChannelNamespaceHandlerConfigsArgs.Builder)
     /**
      * @param onPublish Handler configuration. See Handler Config below.
@@ -631,7 +604,6 @@ object appsync:
       val argsBuilder = com.pulumi.aws.appsync.inputs.ChannelNamespaceHandlerConfigsOnSubscribeArgs.builder
       builder.onSubscribe(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.appsync.inputs.GraphQLApiState.Builder)
     /**
      * @param additionalAuthenticationProviders One or more additional authentication providers for the GraphQL API. See `additionalAuthenticationProvider` Block for details.
@@ -690,7 +662,7 @@ object appsync:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.appsync.inputs.GraphQLApiState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.appsync.inputs.FunctionSyncConfigArgs.Builder)
     /**
      * @param lambdaConflictHandlerConfig Lambda Conflict Handler Config when configuring `LAMBDA` as the Conflict Handler. See `lambdaConflictHandlerConfig` Block for details.
@@ -701,7 +673,6 @@ object appsync:
       val argsBuilder = com.pulumi.aws.appsync.inputs.FunctionSyncConfigLambdaConflictHandlerConfigArgs.builder
       builder.lambdaConflictHandlerConfig(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.appsync.inputs.ResolverState.Builder)
     /**
      * @param cachingConfig The Caching Config. See Caching Config.
@@ -739,7 +710,6 @@ object appsync:
       val argsBuilder = com.pulumi.aws.appsync.inputs.ResolverSyncConfigArgs.builder
       builder.syncConfig(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.appsync.inputs.DataSourceHttpConfigAuthorizationConfigArgs.Builder)
     /**
      * @param awsIamConfig Identity and Access Management (IAM) settings. See `awsIamConfig` Block for details.
@@ -750,7 +720,6 @@ object appsync:
       val argsBuilder = com.pulumi.aws.appsync.inputs.DataSourceHttpConfigAuthorizationConfigAwsIamConfigArgs.builder
       builder.awsIamConfig(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.appsync.inputs.DataSourceState.Builder)
     /**
      * @param dynamodbConfig DynamoDB settings. See `dynamodbConfig` Block for details.
@@ -815,12 +784,10 @@ object appsync:
       val argsBuilder = com.pulumi.aws.appsync.inputs.DataSourceRelationalDatabaseConfigArgs.builder
       builder.relationalDatabaseConfig(args(argsBuilder).build)
 
-                       
   /** Resource for managing an AWS AppSync Source API Association. */
   def SourceApiAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.appsync.SourceApiAssociationArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.appsync.SourceApiAssociationArgs.builder
-    
     com.pulumi.aws.appsync.SourceApiAssociation(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -838,7 +805,7 @@ object appsync:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.appsync.ApiArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   /** Provides an AppSync Data Source. */
   def DataSource(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.appsync.DataSourceArgs.Builder])(using conf: KoPulumiConf) =
@@ -846,7 +813,6 @@ object appsync:
     conf.logicalName2pysicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
       case None               =>
-    
     com.pulumi.aws.appsync.DataSource(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)

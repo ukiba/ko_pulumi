@@ -104,7 +104,6 @@ object autoscaling:
       val argsBuilder = com.pulumi.aws.autoscaling.inputs.GroupWarmPoolArgs.builder
       builder.warmPool(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.autoscaling.TrafficSourceAttachmentArgs.Builder)
     /**
      * @param trafficSource The unique identifiers of a traffic sources.
@@ -115,12 +114,11 @@ object autoscaling:
       val argsBuilder = com.pulumi.aws.autoscaling.inputs.TrafficSourceAttachmentTrafficSourceArgs.builder
       builder.trafficSource(args(argsBuilder).build)
 
-                       
   /**
    * Provides an Auto Scaling Group resource.
-   *  
+   * 
    *  &gt; **Note:** You must specify either `launchConfiguration`, `launchTemplate`, or `mixedInstancesPolicy`.
-   *  
+   * 
    *  &gt; **NOTE on Auto Scaling Groups, Attachments and Traffic Source Attachments:** Pulumi provides standalone Attachment (for attaching Classic Load Balancers and Application Load Balancer, Gateway Load Balancer, or Network Load Balancer target groups) and Traffic Source Attachment (for attaching Load Balancers and VPC Lattice target groups) resources and an Auto Scaling Group resource with `loadBalancers`, `targetGroupArns` and `trafficSource` attributes. Do not use the same traffic source in more than one of these resources. Doing so will cause a conflict of attachments. A `lifecycle` configuration block can be used to suppress differences if necessary.
    */
   def Group(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
@@ -129,22 +127,20 @@ object autoscaling:
     conf.logicalName2pysicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
       case None               =>
-    
     com.pulumi.aws.autoscaling.Group(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
   /**
    * Manages an individual Autoscaling Group (ASG) tag. This resource should only be used in cases where ASGs are created outside the provider (e.g., ASGs implicitly created by EKS Node Groups).
-   *  
+   * 
    *  &gt; **NOTE:** This tagging resource should not be combined with the resource for managing the parent resource. For example, using `aws.autoscaling.Group` and `aws.autoscaling.Tag` to manage tags of the same ASG will cause a perpetual difference where the `aws.autoscaling.Group` resource will try to remove the tag being added by the `aws.autoscaling.Tag` resource.
-   *  
+   * 
    *  &gt; **NOTE:** This tagging resource does not use the provider `ignoreTags` configuration.
    */
   def Tag(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.autoscaling.TagArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.autoscaling.TagArgs.builder
-    
     com.pulumi.aws.autoscaling.Tag(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -153,7 +149,6 @@ object autoscaling:
   def Schedule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.autoscaling.ScheduleArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.autoscaling.ScheduleArgs.builder
-    
     com.pulumi.aws.autoscaling.Schedule(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -166,7 +161,6 @@ object autoscaling:
   def Notification(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.autoscaling.NotificationArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.autoscaling.NotificationArgs.builder
-    
     com.pulumi.aws.autoscaling.Notification(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -181,7 +175,6 @@ object autoscaling:
       val argsBuilder = com.pulumi.aws.autoscaling.inputs.TagTagArgs.builder
       builder.tag(args(argsBuilder).build)
 
-                       
   type AutoscalingFunctions = com.pulumi.aws.autoscaling.AutoscalingFunctions
   object AutoscalingFunctions:
     // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
@@ -219,26 +212,24 @@ object autoscaling:
 
   /**
    * Attaches a load balancer to an Auto Scaling group.
-   *  
+   * 
    *  &gt; **NOTE on Auto Scaling Groups, Attachments and Traffic Source Attachments:** Pulumi provides standalone Attachment (for attaching Classic Load Balancers and Application Load Balancer, Gateway Load Balancer, or Network Load Balancer target groups) and Traffic Source Attachment (for attaching Load Balancers and VPC Lattice target groups) resources and an Auto Scaling Group resource with `loadBalancers`, `targetGroupArns` and `trafficSource` attributes. Do not use the same traffic source in more than one of these resources. Doing so will cause a conflict of attachments. A `lifecycle` configuration block can be used to suppress differences if necessary.
    */
   def Attachment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.autoscaling.AttachmentArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.autoscaling.AttachmentArgs.builder
-    
     com.pulumi.aws.autoscaling.Attachment(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
   /**
    * Attaches a traffic source to an Auto Scaling group.
-   *  
+   * 
    *  &gt; **NOTE on Auto Scaling Groups, Attachments and Traffic Source Attachments:** Pulumi provides standalone Attachment (for attaching Classic Load Balancers and Application Load Balancer, Gateway Load Balancer, or Network Load Balancer target groups) and Traffic Source Attachment (for attaching Load Balancers and VPC Lattice target groups) resources and an Auto Scaling Group resource with `loadBalancers`, `targetGroupArns` and `trafficSource` attributes. Do not use the same traffic source in more than one of these resources. Doing so will cause a conflict of attachments. A `lifecycle` configuration block can be used to suppress differences if necessary.
    */
   def TrafficSourceAttachment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.autoscaling.TrafficSourceAttachmentArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.autoscaling.TrafficSourceAttachmentArgs.builder
-    
     com.pulumi.aws.autoscaling.TrafficSourceAttachment(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -256,11 +247,11 @@ object autoscaling:
     /**
      * @param stepAdjustments Set of adjustments that manage
      *  group scaling. These have the following structure:
-     *  
+     * 
      *  <pre>
      *  {@code
      *  package generated_program;
-     *  
+     * 
      *  import com.pulumi.Context;
      *  import com.pulumi.Pulumi;
      *  import com.pulumi.core.Output;
@@ -273,15 +264,15 @@ object autoscaling:
      *  import java.io.File;
      *  import java.nio.file.Files;
      *  import java.nio.file.Paths;
-     *  
+     * 
      *  public class App {
      *      public static void main(String[] args) {
      *          Pulumi.run(App::stack);
      *      }
-     *  
+     * 
      *      public static void stack(Context ctx) {
      *          var example = new Policy("example", PolicyArgs.builder()
-     *              .stepAdjustments(            
+     *              .stepAdjustments(
      *                  PolicyStepAdjustmentArgs.builder()
      *                      .scalingAdjustment(-1)
      *                      .metricIntervalLowerBound("1")
@@ -293,12 +284,12 @@ object autoscaling:
      *                      .metricIntervalUpperBound("3")
      *                      .build())
      *              .build());
-     *  
+     * 
      *      }
      *  }
      *  }
      *  </pre>
-     *  
+     * 
      *  The following fields are available in step adjustments:
      * @return builder
      */
@@ -309,11 +300,11 @@ object autoscaling:
 
     /**
      * @param targetTrackingConfiguration Target tracking policy. These have the following structure:
-     *  
+     * 
      *  <pre>
      *  {@code
      *  package generated_program;
-     *  
+     * 
      *  import com.pulumi.Context;
      *  import com.pulumi.Pulumi;
      *  import com.pulumi.core.Output;
@@ -327,12 +318,12 @@ object autoscaling:
      *  import java.io.File;
      *  import java.nio.file.Files;
      *  import java.nio.file.Paths;
-     *  
+     * 
      *  public class App {
      *      public static void main(String[] args) {
      *          Pulumi.run(App::stack);
      *      }
-     *  
+     * 
      *      public static void stack(Context ctx) {
      *          var example = new Policy("example", PolicyArgs.builder()
      *              .targetTrackingConfiguration(PolicyTargetTrackingConfigurationArgs.builder()
@@ -342,12 +333,12 @@ object autoscaling:
      *                  .targetValue(40.0)
      *                  .build())
      *              .build());
-     *  
+     * 
      *      }
      *  }
      *  }
      *  </pre>
-     *  
+     * 
      *  The following fields are available in target tracking configuration:
      * @return builder
      */
@@ -356,10 +347,9 @@ object autoscaling:
       val argsBuilder = com.pulumi.aws.autoscaling.inputs.PolicyTargetTrackingConfigurationArgs.builder
       builder.targetTrackingConfiguration(args(argsBuilder).build)
 
-                       
   /**
    * Provides an AutoScaling Scaling Policy resource.
-   *  
+   * 
    *  &gt; **NOTE:** You may want to omit `desiredCapacity` attribute from attached `aws.autoscaling.Group`
    *  when using autoscaling policies. It&#39;s good practice to pick either
    *  [manual](https://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/as-manual-scaling.html)
@@ -372,7 +362,6 @@ object autoscaling:
     conf.logicalName2pysicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
       case None               =>
-    
     com.pulumi.aws.autoscaling.Policy(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -387,7 +376,6 @@ object autoscaling:
       val argsBuilder = com.pulumi.aws.autoscaling.inputs.TrafficSourceAttachmentTrafficSourceArgs.builder
       builder.trafficSource(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.autoscaling.inputs.PolicyPredictiveScalingConfigurationMetricSpecificationArgs.Builder)
     /**
      * @param customizedCapacityMetricSpecification Customized capacity metric specification. The field is only valid when you use `customizedLoadMetricSpecification`
@@ -443,7 +431,6 @@ object autoscaling:
       val argsBuilder = com.pulumi.aws.autoscaling.inputs.PolicyPredictiveScalingConfigurationMetricSpecificationPredefinedScalingMetricSpecificationArgs.builder
       builder.predefinedScalingMetricSpecification(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.autoscaling.inputs.GroupInstanceRefreshPreferencesArgs.Builder)
     /**
      * @param alarmSpecification Alarm Specification for Instance Refresh.
@@ -454,7 +441,6 @@ object autoscaling:
       val argsBuilder = com.pulumi.aws.autoscaling.inputs.GroupInstanceRefreshPreferencesAlarmSpecificationArgs.builder
       builder.alarmSpecification(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.autoscaling.inputs.PolicyPredictiveScalingConfigurationMetricSpecificationCustomizedCapacityMetricSpecificationMetricDataQueryMetricStatArgs.Builder)
     /**
      * @param metric Structure that defines the CloudWatch metric to return, including the metric name, namespace, and dimensions.
@@ -465,7 +451,6 @@ object autoscaling:
       val argsBuilder = com.pulumi.aws.autoscaling.inputs.PolicyPredictiveScalingConfigurationMetricSpecificationCustomizedCapacityMetricSpecificationMetricDataQueryMetricStatMetricArgs.builder
       builder.metric(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.autoscaling.inputs.PolicyTargetTrackingConfigurationCustomizedMetricSpecificationArgs.Builder)
     /**
      * @param metricDimensions Dimensions of the metric.
@@ -485,7 +470,6 @@ object autoscaling:
       def argsBuilder = com.pulumi.aws.autoscaling.inputs.PolicyTargetTrackingConfigurationCustomizedMetricSpecificationMetricArgs.builder
       builder.metrics(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.autoscaling.inputs.GroupMixedInstancesPolicyLaunchTemplateOverrideArgs.Builder)
     /**
      * @param instanceRequirements Override the instance type in the Launch Template with instance types that satisfy the requirements.
@@ -505,7 +489,6 @@ object autoscaling:
       val argsBuilder = com.pulumi.aws.autoscaling.inputs.GroupMixedInstancesPolicyLaunchTemplateOverrideLaunchTemplateSpecificationArgs.builder
       builder.launchTemplateSpecification(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.autoscaling.inputs.GroupWarmPoolArgs.Builder)
     /**
      * @param instanceReusePolicy Whether instances in the Auto Scaling group can be returned to the warm pool on scale in. The default is to terminate instances in the Auto Scaling group when the group scales in.
@@ -516,7 +499,6 @@ object autoscaling:
       val argsBuilder = com.pulumi.aws.autoscaling.inputs.GroupWarmPoolInstanceReusePolicyArgs.builder
       builder.instanceReusePolicy(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.autoscaling.inputs.GroupState.Builder)
     /**
      * @param availabilityZoneDistribution The instance capacity distribution across Availability Zones. See Availability Zone Distribution below for more details.
@@ -617,7 +599,6 @@ object autoscaling:
       val argsBuilder = com.pulumi.aws.autoscaling.inputs.GroupWarmPoolArgs.builder
       builder.warmPool(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.autoscaling.inputs.GroupCapacityReservationSpecificationArgs.Builder)
     /**
      * @param capacityReservationTarget Describes a target Capacity Reservation or Capacity Reservation resource group.
@@ -628,7 +609,6 @@ object autoscaling:
       val argsBuilder = com.pulumi.aws.autoscaling.inputs.GroupCapacityReservationSpecificationCapacityReservationTargetArgs.builder
       builder.capacityReservationTarget(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.autoscaling.inputs.GroupMixedInstancesPolicyLaunchTemplateArgs.Builder)
     /**
      * @param launchTemplateSpecification Override the instance launch template specification in the Launch Template.
@@ -648,7 +628,6 @@ object autoscaling:
       def argsBuilder = com.pulumi.aws.autoscaling.inputs.GroupMixedInstancesPolicyLaunchTemplateOverrideArgs.builder
       builder.overrides(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.autoscaling.inputs.PolicyPredictiveScalingConfigurationMetricSpecificationCustomizedScalingMetricSpecificationMetricDataQueryArgs.Builder)
     /**
      * @param metricStat Structure that defines CloudWatch metric to be used in predictive scaling policy. You must specify either `expression` or `metricStat`, but not both.
@@ -659,7 +638,6 @@ object autoscaling:
       val argsBuilder = com.pulumi.aws.autoscaling.inputs.PolicyPredictiveScalingConfigurationMetricSpecificationCustomizedScalingMetricSpecificationMetricDataQueryMetricStatArgs.builder
       builder.metricStat(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.autoscaling.inputs.PolicyPredictiveScalingConfigurationMetricSpecificationCustomizedLoadMetricSpecificationArgs.Builder)
     /**
      * @param metricDataQueries List of up to 10 structures that defines custom load metric in predictive scaling policy
@@ -670,7 +648,6 @@ object autoscaling:
       def argsBuilder = com.pulumi.aws.autoscaling.inputs.PolicyPredictiveScalingConfigurationMetricSpecificationCustomizedLoadMetricSpecificationMetricDataQueryArgs.builder
       builder.metricDataQueries(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.autoscaling.inputs.TagState.Builder)
     /**
      * @param tag Tag to create. The `tag` block is documented below.
@@ -681,7 +658,6 @@ object autoscaling:
       val argsBuilder = com.pulumi.aws.autoscaling.inputs.TagTagArgs.builder
       builder.tag(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.autoscaling.inputs.PolicyPredictiveScalingConfigurationMetricSpecificationCustomizedCapacityMetricSpecificationArgs.Builder)
     /**
      * @param metricDataQueries List of up to 10 structures that defines custom capacity metric in predictive scaling policy
@@ -692,7 +668,6 @@ object autoscaling:
       def argsBuilder = com.pulumi.aws.autoscaling.inputs.PolicyPredictiveScalingConfigurationMetricSpecificationCustomizedCapacityMetricSpecificationMetricDataQueryArgs.builder
       builder.metricDataQueries(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.autoscaling.inputs.PolicyTargetTrackingConfigurationCustomizedMetricSpecificationMetricMetricStatMetricArgs.Builder)
     /**
      * @param dimensions Dimensions of the metric.
@@ -703,7 +678,6 @@ object autoscaling:
       def argsBuilder = com.pulumi.aws.autoscaling.inputs.PolicyTargetTrackingConfigurationCustomizedMetricSpecificationMetricMetricStatMetricDimensionArgs.builder
       builder.dimensions(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.autoscaling.inputs.PolicyTargetTrackingConfigurationCustomizedMetricSpecificationMetricMetricStatArgs.Builder)
     /**
      * @param metric Structure that defines the CloudWatch metric to return, including the metric name, namespace, and dimensions.
@@ -714,7 +688,6 @@ object autoscaling:
       val argsBuilder = com.pulumi.aws.autoscaling.inputs.PolicyTargetTrackingConfigurationCustomizedMetricSpecificationMetricMetricStatMetricArgs.builder
       builder.metric(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.autoscaling.inputs.PolicyPredictiveScalingConfigurationMetricSpecificationCustomizedScalingMetricSpecificationArgs.Builder)
     /**
      * @param metricDataQueries List of up to 10 structures that defines custom scaling metric in predictive scaling policy
@@ -725,7 +698,6 @@ object autoscaling:
       def argsBuilder = com.pulumi.aws.autoscaling.inputs.PolicyPredictiveScalingConfigurationMetricSpecificationCustomizedScalingMetricSpecificationMetricDataQueryArgs.builder
       builder.metricDataQueries(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.autoscaling.inputs.GetAmiIdsArgs.Builder)
     /**
      * @param filters Filter used to scope the list e.g., by tags. See [related docs](http://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_Filter.html).
@@ -736,7 +708,6 @@ object autoscaling:
       def argsBuilder = com.pulumi.aws.autoscaling.inputs.GetAmiIdsFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.autoscaling.inputs.PolicyPredictiveScalingConfigurationMetricSpecificationCustomizedLoadMetricSpecificationMetricDataQueryArgs.Builder)
     /**
      * @param metricStat Structure that defines CloudWatch metric to be used in predictive scaling policy. You must specify either `expression` or `metricStat`, but not both.
@@ -747,7 +718,6 @@ object autoscaling:
       val argsBuilder = com.pulumi.aws.autoscaling.inputs.PolicyPredictiveScalingConfigurationMetricSpecificationCustomizedLoadMetricSpecificationMetricDataQueryMetricStatArgs.builder
       builder.metricStat(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.autoscaling.inputs.PolicyPredictiveScalingConfigurationMetricSpecificationCustomizedLoadMetricSpecificationMetricDataQueryMetricStatArgs.Builder)
     /**
      * @param metric Structure that defines the CloudWatch metric to return, including the metric name, namespace, and dimensions.
@@ -758,7 +728,6 @@ object autoscaling:
       val argsBuilder = com.pulumi.aws.autoscaling.inputs.PolicyPredictiveScalingConfigurationMetricSpecificationCustomizedLoadMetricSpecificationMetricDataQueryMetricStatMetricArgs.builder
       builder.metric(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.autoscaling.inputs.PolicyPredictiveScalingConfigurationMetricSpecificationCustomizedLoadMetricSpecificationMetricDataQueryMetricStatMetricArgs.Builder)
     /**
      * @param dimensions Dimensions of the metric.
@@ -769,7 +738,6 @@ object autoscaling:
       def argsBuilder = com.pulumi.aws.autoscaling.inputs.PolicyPredictiveScalingConfigurationMetricSpecificationCustomizedLoadMetricSpecificationMetricDataQueryMetricStatMetricDimensionArgs.builder
       builder.dimensions(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.autoscaling.inputs.PolicyPredictiveScalingConfigurationArgs.Builder)
     /**
      * @param metricSpecification This structure includes the metrics and target utilization to use for predictive scaling.
@@ -780,7 +748,6 @@ object autoscaling:
       val argsBuilder = com.pulumi.aws.autoscaling.inputs.PolicyPredictiveScalingConfigurationMetricSpecificationArgs.builder
       builder.metricSpecification(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.autoscaling.inputs.PolicyState.Builder)
     /**
      * @param predictiveScalingConfiguration Predictive scaling policy configuration to use with Amazon EC2 Auto Scaling.
@@ -794,11 +761,11 @@ object autoscaling:
     /**
      * @param stepAdjustments Set of adjustments that manage
      *  group scaling. These have the following structure:
-     *  
+     * 
      *  <pre>
      *  {@code
      *  package generated_program;
-     *  
+     * 
      *  import com.pulumi.Context;
      *  import com.pulumi.Pulumi;
      *  import com.pulumi.core.Output;
@@ -811,15 +778,15 @@ object autoscaling:
      *  import java.io.File;
      *  import java.nio.file.Files;
      *  import java.nio.file.Paths;
-     *  
+     * 
      *  public class App {
      *      public static void main(String[] args) {
      *          Pulumi.run(App::stack);
      *      }
-     *  
+     * 
      *      public static void stack(Context ctx) {
      *          var example = new Policy("example", PolicyArgs.builder()
-     *              .stepAdjustments(            
+     *              .stepAdjustments(
      *                  PolicyStepAdjustmentArgs.builder()
      *                      .scalingAdjustment(-1)
      *                      .metricIntervalLowerBound("1")
@@ -831,12 +798,12 @@ object autoscaling:
      *                      .metricIntervalUpperBound("3")
      *                      .build())
      *              .build());
-     *  
+     * 
      *      }
      *  }
      *  }
      *  </pre>
-     *  
+     * 
      *  The following fields are available in step adjustments:
      * @return builder
      */
@@ -847,11 +814,11 @@ object autoscaling:
 
     /**
      * @param targetTrackingConfiguration Target tracking policy. These have the following structure:
-     *  
+     * 
      *  <pre>
      *  {@code
      *  package generated_program;
-     *  
+     * 
      *  import com.pulumi.Context;
      *  import com.pulumi.Pulumi;
      *  import com.pulumi.core.Output;
@@ -865,12 +832,12 @@ object autoscaling:
      *  import java.io.File;
      *  import java.nio.file.Files;
      *  import java.nio.file.Paths;
-     *  
+     * 
      *  public class App {
      *      public static void main(String[] args) {
      *          Pulumi.run(App::stack);
      *      }
-     *  
+     * 
      *      public static void stack(Context ctx) {
      *          var example = new Policy("example", PolicyArgs.builder()
      *              .targetTrackingConfiguration(PolicyTargetTrackingConfigurationArgs.builder()
@@ -880,12 +847,12 @@ object autoscaling:
      *                  .targetValue(40.0)
      *                  .build())
      *              .build());
-     *  
+     * 
      *      }
      *  }
      *  }
      *  </pre>
-     *  
+     * 
      *  The following fields are available in target tracking configuration:
      * @return builder
      */
@@ -894,7 +861,6 @@ object autoscaling:
       val argsBuilder = com.pulumi.aws.autoscaling.inputs.PolicyTargetTrackingConfigurationArgs.builder
       builder.targetTrackingConfiguration(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.autoscaling.inputs.PolicyPredictiveScalingConfigurationMetricSpecificationCustomizedScalingMetricSpecificationMetricDataQueryMetricStatMetricArgs.Builder)
     /**
      * @param dimensions Dimensions of the metric.
@@ -905,7 +871,6 @@ object autoscaling:
       def argsBuilder = com.pulumi.aws.autoscaling.inputs.PolicyPredictiveScalingConfigurationMetricSpecificationCustomizedScalingMetricSpecificationMetricDataQueryMetricStatMetricDimensionArgs.builder
       builder.dimensions(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.autoscaling.inputs.PolicyTargetTrackingConfigurationCustomizedMetricSpecificationMetricArgs.Builder)
     /**
      * @param metricStat Structure that defines CloudWatch metric to be used in target tracking scaling policy. You must specify either `expression` or `metricStat`, but not both.
@@ -916,7 +881,6 @@ object autoscaling:
       val argsBuilder = com.pulumi.aws.autoscaling.inputs.PolicyTargetTrackingConfigurationCustomizedMetricSpecificationMetricMetricStatArgs.builder
       builder.metricStat(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.autoscaling.inputs.GroupMixedInstancesPolicyLaunchTemplateOverrideInstanceRequirementsArgs.Builder)
     /**
      * @param acceleratorCount Block describing the minimum and maximum number of accelerators (GPUs, FPGAs, or AWS Inferentia chips). Default is no minimum or maximum.
@@ -999,7 +963,6 @@ object autoscaling:
       val argsBuilder = com.pulumi.aws.autoscaling.inputs.GroupMixedInstancesPolicyLaunchTemplateOverrideInstanceRequirementsVcpuCountArgs.builder
       builder.vcpuCount(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.autoscaling.inputs.PolicyPredictiveScalingConfigurationMetricSpecificationCustomizedCapacityMetricSpecificationMetricDataQueryArgs.Builder)
     /**
      * @param metricStat Structure that defines CloudWatch metric to be used in predictive scaling policy. You must specify either `expression` or `metricStat`, but not both.
@@ -1010,7 +973,6 @@ object autoscaling:
       val argsBuilder = com.pulumi.aws.autoscaling.inputs.PolicyPredictiveScalingConfigurationMetricSpecificationCustomizedCapacityMetricSpecificationMetricDataQueryMetricStatArgs.builder
       builder.metricStat(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.autoscaling.inputs.PolicyPredictiveScalingConfigurationMetricSpecificationCustomizedScalingMetricSpecificationMetricDataQueryMetricStatArgs.Builder)
     /**
      * @param metric Structure that defines the CloudWatch metric to return, including the metric name, namespace, and dimensions.
@@ -1021,7 +983,6 @@ object autoscaling:
       val argsBuilder = com.pulumi.aws.autoscaling.inputs.PolicyPredictiveScalingConfigurationMetricSpecificationCustomizedScalingMetricSpecificationMetricDataQueryMetricStatMetricArgs.builder
       builder.metric(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.autoscaling.inputs.GroupMixedInstancesPolicyArgs.Builder)
     /**
      * @param instancesDistribution Nested argument containing settings on how to mix on-demand and Spot instances in the Auto Scaling group. Defined below.
@@ -1041,7 +1002,6 @@ object autoscaling:
       val argsBuilder = com.pulumi.aws.autoscaling.inputs.GroupMixedInstancesPolicyLaunchTemplateArgs.builder
       builder.launchTemplate(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.autoscaling.inputs.GroupInstanceRefreshArgs.Builder)
     /**
      * @param preferences Override default parameters for Instance Refresh.
@@ -1052,7 +1012,6 @@ object autoscaling:
       val argsBuilder = com.pulumi.aws.autoscaling.inputs.GroupInstanceRefreshPreferencesArgs.builder
       builder.preferences(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.autoscaling.inputs.PolicyPredictiveScalingConfigurationMetricSpecificationCustomizedCapacityMetricSpecificationMetricDataQueryMetricStatMetricArgs.Builder)
     /**
      * @param dimensions Dimensions of the metric.
@@ -1063,7 +1022,6 @@ object autoscaling:
       def argsBuilder = com.pulumi.aws.autoscaling.inputs.PolicyPredictiveScalingConfigurationMetricSpecificationCustomizedCapacityMetricSpecificationMetricDataQueryMetricStatMetricDimensionArgs.builder
       builder.dimensions(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.autoscaling.inputs.PolicyTargetTrackingConfigurationArgs.Builder)
     /**
      * @param customizedMetricSpecification Customized metric. Conflicts with `predefinedMetricSpecification`.
@@ -1083,10 +1041,9 @@ object autoscaling:
       val argsBuilder = com.pulumi.aws.autoscaling.inputs.PolicyTargetTrackingConfigurationPredefinedMetricSpecificationArgs.builder
       builder.predefinedMetricSpecification(args(argsBuilder).build)
 
-                       
   /**
    * Provides an AutoScaling Lifecycle Hook resource.
-   *  
+   * 
    *  &gt; **NOTE:** This provider has two types of ways you can add lifecycle hooks - via
    *  the `initialLifecycleHook` attribute from the
    *  `aws.autoscaling.Group`
@@ -1105,7 +1062,6 @@ object autoscaling:
     conf.logicalName2pysicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
       case None               =>
-    
     com.pulumi.aws.autoscaling.LifecycleHook(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)

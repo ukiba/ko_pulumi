@@ -60,7 +60,7 @@ object fis:
 
     /**
      * @param stopConditions When an ongoing experiment should be stopped. See below.
-     *  
+     * 
      *  The following arguments are optional:
      * @return builder
      */
@@ -81,12 +81,11 @@ object fis:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.fis.ExperimentTemplateArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   /** Manages an AWS FIS (Fault Injection Simulator) Target Account Configuration. */
   def TargetAccountConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.fis.TargetAccountConfigurationArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.fis.TargetAccountConfigurationArgs.builder
-    
     com.pulumi.aws.fis.TargetAccountConfiguration(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -104,7 +103,6 @@ object fis:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.fis.ExperimentTemplate(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -128,7 +126,6 @@ object fis:
       val argsBuilder = com.pulumi.aws.fis.inputs.ExperimentTemplateActionTargetArgs.builder
       builder.target(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.fis.inputs.ExperimentTemplateState.Builder)
     /**
      * @param actions Action to be performed during an experiment. See below.
@@ -168,7 +165,7 @@ object fis:
 
     /**
      * @param stopConditions When an ongoing experiment should be stopped. See below.
-     *  
+     * 
      *  The following arguments are optional:
      * @return builder
      */
@@ -189,7 +186,7 @@ object fis:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.fis.inputs.ExperimentTemplateState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.fis.inputs.ExperimentTemplateExperimentReportConfigurationArgs.Builder)
     /**
      * @param dataSources The data sources for the experiment report. See below.
@@ -209,7 +206,6 @@ object fis:
       val argsBuilder = com.pulumi.aws.fis.inputs.ExperimentTemplateExperimentReportConfigurationOutputsArgs.builder
       builder.outputs(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.fis.inputs.ExperimentTemplateExperimentReportConfigurationDataSourcesArgs.Builder)
     /**
      * @param cloudwatchDashboards The data sources for the experiment report. See below.
@@ -220,7 +216,6 @@ object fis:
       def argsBuilder = com.pulumi.aws.fis.inputs.ExperimentTemplateExperimentReportConfigurationDataSourcesCloudwatchDashboardArgs.builder
       builder.cloudwatchDashboards(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.fis.inputs.ExperimentTemplateTargetArgs.Builder)
     /**
      * @param filters Filter(s) for the target. Filters can be used to select resources based on specific attributes returned by the respective describe action of the resource type. For more information, see [Targets for AWS FIS](https://docs.aws.amazon.com/fis/latest/userguide/targets.html#target-filters). See below.
@@ -240,7 +235,6 @@ object fis:
       def argsBuilder = com.pulumi.aws.fis.inputs.ExperimentTemplateTargetResourceTagArgs.builder
       builder.resourceTags(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.fis.inputs.ExperimentTemplateExperimentReportConfigurationOutputsArgs.Builder)
     /**
      * @param s3Configuration The data sources for the experiment report. See below.
@@ -251,7 +245,6 @@ object fis:
       val argsBuilder = com.pulumi.aws.fis.inputs.ExperimentTemplateExperimentReportConfigurationOutputsS3ConfigurationArgs.builder
       builder.s3Configuration(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.fis.inputs.ExperimentTemplateLogConfigurationArgs.Builder)
     /**
      * @param cloudwatchLogsConfiguration The configuration for experiment logging to Amazon CloudWatch Logs. See below.
@@ -270,5 +263,3 @@ object fis:
         com.pulumi.aws.fis.inputs.ExperimentTemplateLogConfigurationArgs.Builder =
       val argsBuilder = com.pulumi.aws.fis.inputs.ExperimentTemplateLogConfigurationS3ConfigurationArgs.builder
       builder.s3Configuration(args(argsBuilder).build)
-
-                       

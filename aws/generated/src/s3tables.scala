@@ -38,7 +38,7 @@ object s3tables:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.s3tables.TableArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   /** Resource for managing an Amazon S3 Tables Table Bucket. */
   def TableBucket(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.s3tables.TableBucketArgs.Builder])(using conf: KoPulumiConf) =
@@ -49,7 +49,6 @@ object s3tables:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.s3tables.TableBucket(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -61,7 +60,6 @@ object s3tables:
     conf.logicalName2pysicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
       case None               =>
-    
     com.pulumi.aws.s3tables.TablePolicy(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -70,7 +68,6 @@ object s3tables:
   def Namespace(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.s3tables.NamespaceArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.s3tables.NamespaceArgs.builder
-    
     com.pulumi.aws.s3tables.Namespace(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -85,7 +82,6 @@ object s3tables:
       val argsBuilder = com.pulumi.aws.s3tables.inputs.TableReplicationRuleArgs.builder
       builder.rule(args(argsBuilder).build)
 
-                       
   /** Resource for managing an Amazon S3 Tables Table. */
   def Table(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.s3tables.TableArgs.Builder])(using conf: KoPulumiConf) =
@@ -96,7 +92,6 @@ object s3tables:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.s3tables.Table(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -105,7 +100,6 @@ object s3tables:
   def TableReplication(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.s3tables.TableReplicationArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.s3tables.TableReplicationArgs.builder
-    
     com.pulumi.aws.s3tables.TableReplication(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -114,7 +108,6 @@ object s3tables:
   def TableBucketReplication(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.s3tables.TableBucketReplicationArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.s3tables.TableBucketReplicationArgs.builder
-    
     com.pulumi.aws.s3tables.TableBucketReplication(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -143,12 +136,11 @@ object s3tables:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.s3tables.TableBucketArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   /** Resource for managing an Amazon S3 Tables Table Bucket Policy. */
   def TableBucketPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.s3tables.TableBucketPolicyArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.s3tables.TableBucketPolicyArgs.builder
-    
     com.pulumi.aws.s3tables.TableBucketPolicy(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -163,7 +155,6 @@ object s3tables:
       val argsBuilder = com.pulumi.aws.s3tables.inputs.TableBucketReplicationRuleArgs.builder
       builder.rule(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.s3tables.inputs.TableBucketReplicationRuleArgs.Builder)
     /**
      * @param destinations Replication destination. See Destination below for more details.
@@ -174,7 +165,6 @@ object s3tables:
       def argsBuilder = com.pulumi.aws.s3tables.inputs.TableBucketReplicationRuleDestinationArgs.builder
       builder.destinations(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.s3tables.inputs.TableState.Builder)
     /**
      * @param encryptionConfiguration A single table bucket encryption configuration object.
@@ -209,7 +199,7 @@ object s3tables:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.s3tables.inputs.TableState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.s3tables.inputs.TableReplicationState.Builder)
     /**
      * @param rule Replication rules. See Rule below for more details.
@@ -220,7 +210,6 @@ object s3tables:
       val argsBuilder = com.pulumi.aws.s3tables.inputs.TableReplicationRuleArgs.builder
       builder.rule(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.s3tables.inputs.TableBucketReplicationState.Builder)
     /**
      * @param rule Replication rules. See Rule below for more details.
@@ -231,7 +220,6 @@ object s3tables:
       val argsBuilder = com.pulumi.aws.s3tables.inputs.TableBucketReplicationRuleArgs.builder
       builder.rule(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.s3tables.inputs.TableMaintenanceConfigurationArgs.Builder)
     /**
      * @param icebergCompaction A single Iceberg compaction settings object.
@@ -253,7 +241,6 @@ object s3tables:
       val argsBuilder = com.pulumi.aws.s3tables.inputs.TableMaintenanceConfigurationIcebergSnapshotManagementArgs.builder
       builder.icebergSnapshotManagement(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.s3tables.inputs.TableMetadataIcebergSchemaArgs.Builder)
     /**
      * @param fields List of schema fields for the Iceberg table. Each field defines a column in the table schema.
@@ -265,7 +252,6 @@ object s3tables:
       def argsBuilder = com.pulumi.aws.s3tables.inputs.TableMetadataIcebergSchemaFieldArgs.builder
       builder.fields(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.s3tables.inputs.TableBucketMaintenanceConfigurationArgs.Builder)
     /**
      * @param icebergUnreferencedFileRemoval A single Iceberg unreferenced file removal settings object.
@@ -277,7 +263,6 @@ object s3tables:
       val argsBuilder = com.pulumi.aws.s3tables.inputs.TableBucketMaintenanceConfigurationIcebergUnreferencedFileRemovalArgs.builder
       builder.icebergUnreferencedFileRemoval(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.s3tables.inputs.TableMetadataIcebergArgs.Builder)
     /**
      * @param schema Schema configuration for the Iceberg table.
@@ -289,7 +274,6 @@ object s3tables:
       val argsBuilder = com.pulumi.aws.s3tables.inputs.TableMetadataIcebergSchemaArgs.builder
       builder.schema(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.s3tables.inputs.TableMaintenanceConfigurationIcebergSnapshotManagementArgs.Builder)
     /**
      * @param settings Settings object for snapshot management.
@@ -301,7 +285,6 @@ object s3tables:
       val argsBuilder = com.pulumi.aws.s3tables.inputs.TableMaintenanceConfigurationIcebergSnapshotManagementSettingsArgs.builder
       builder.settings(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.s3tables.inputs.TableReplicationRuleArgs.Builder)
     /**
      * @param destinations Replication destination. See Destination below for more details.
@@ -312,7 +295,6 @@ object s3tables:
       def argsBuilder = com.pulumi.aws.s3tables.inputs.TableReplicationRuleDestinationArgs.builder
       builder.destinations(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.s3tables.inputs.TableBucketMaintenanceConfigurationIcebergUnreferencedFileRemovalArgs.Builder)
     /**
      * @param settings Settings object for unreferenced file removal.
@@ -324,7 +306,6 @@ object s3tables:
       val argsBuilder = com.pulumi.aws.s3tables.inputs.TableBucketMaintenanceConfigurationIcebergUnreferencedFileRemovalSettingsArgs.builder
       builder.settings(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.s3tables.inputs.TableMaintenanceConfigurationIcebergCompactionArgs.Builder)
     /**
      * @param settings Settings object for compaction.
@@ -336,7 +317,6 @@ object s3tables:
       val argsBuilder = com.pulumi.aws.s3tables.inputs.TableMaintenanceConfigurationIcebergCompactionSettingsArgs.builder
       builder.settings(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.s3tables.inputs.TableMetadataArgs.Builder)
     /**
      * @param iceberg Contains details about the metadata for an Iceberg table. This block defines the schema structure for the Apache Iceberg table format.
@@ -348,7 +328,6 @@ object s3tables:
       val argsBuilder = com.pulumi.aws.s3tables.inputs.TableMetadataIcebergArgs.builder
       builder.iceberg(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.s3tables.inputs.TableBucketState.Builder)
     /**
      * @param encryptionConfiguration A single table bucket encryption configuration object.
@@ -373,4 +352,3 @@ object s3tables:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.s3tables.inputs.TableBucketState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       

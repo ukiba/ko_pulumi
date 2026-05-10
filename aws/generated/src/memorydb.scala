@@ -94,10 +94,10 @@ object memorydb:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.memorydb.UserArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   /**
    * Provides a MemoryDB Parameter Group.
-   *  
+   * 
    *  More information about parameter groups can be found in the [MemoryDB User Guide](https://docs.aws.amazon.com/memorydb/latest/devguide/parametergroups.html).
    */
   def ParameterGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
@@ -109,14 +109,13 @@ object memorydb:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.memorydb.ParameterGroup(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
   /**
    * Provides a MemoryDB Subnet Group.
-   *  
+   * 
    *  More information about subnet groups can be found in the [MemoryDB User Guide](https://docs.aws.amazon.com/memorydb/latest/devguide/subnetgroups.html).
    */
   def SubnetGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
@@ -128,7 +127,6 @@ object memorydb:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.memorydb.SubnetGroup(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -142,10 +140,10 @@ object memorydb:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.memorydb.MultiRegionClusterArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   /**
    * Provides a MemoryDB Cluster.
-   *  
+   * 
    *  More information about MemoryDB can be found in the [Developer Guide](https://docs.aws.amazon.com/memorydb/latest/devguide/what-is-memorydb-for-redis.html).
    */
   def Cluster(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
@@ -157,16 +155,15 @@ object memorydb:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.memorydb.Cluster(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
   /**
    * Provides a MemoryDB User.
-   *  
+   * 
    *  More information about users and ACL-s can be found in the [MemoryDB User Guide](https://docs.aws.amazon.com/memorydb/latest/devguide/clusters.acls.html).
-   *  
+   * 
    *  &gt; **Note:** All arguments including the username and passwords will be stored in the raw state as plain-text.
    */
   def User(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
@@ -175,7 +172,6 @@ object memorydb:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.memorydb.User(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -193,10 +189,10 @@ object memorydb:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.memorydb.ParameterGroupArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   /**
    * Provides a MemoryDB Snapshot.
-   *  
+   * 
    *  More information about snapshot and restore can be found in the [MemoryDB User Guide](https://docs.aws.amazon.com/memorydb/latest/devguide/snapshots.html).
    */
   def Snapshot(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
@@ -208,14 +204,13 @@ object memorydb:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.memorydb.Snapshot(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
   /**
    * Provides a MemoryDB ACL.
-   *  
+   * 
    *  More information about users and ACL-s can be found in the [MemoryDB User Guide](https://docs.aws.amazon.com/memorydb/latest/devguide/clusters.acls.html).
    */
   def Acl(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
@@ -227,14 +222,13 @@ object memorydb:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.memorydb.Acl(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
   /**
    * Provides a MemoryDB Multi Region Cluster.
-   *  
+   * 
    *  More information about MemoryDB can be found in the [Developer Guide](https://docs.aws.amazon.com/memorydb/latest/devguide/what-is-memorydb-for-redis.html).
    */
   def MultiRegionCluster(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
@@ -243,7 +237,6 @@ object memorydb:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.memorydb.MultiRegionCluster(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -261,7 +254,7 @@ object memorydb:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.memorydb.inputs.ParameterGroupState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.memorydb.inputs.ClusterState.Builder)
     def clusterEndpoints(args: Endofunction[com.pulumi.aws.memorydb.inputs.ClusterClusterEndpointArgs.Builder]*):
         com.pulumi.aws.memorydb.inputs.ClusterState.Builder =
@@ -280,7 +273,7 @@ object memorydb:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.memorydb.inputs.ClusterState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.memorydb.inputs.MultiRegionClusterState.Builder)
     def timeouts(args: Endofunction[com.pulumi.aws.memorydb.inputs.MultiRegionClusterTimeoutsArgs.Builder]):
         com.pulumi.aws.memorydb.inputs.MultiRegionClusterState.Builder =
@@ -290,14 +283,13 @@ object memorydb:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.memorydb.inputs.MultiRegionClusterState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.memorydb.inputs.ClusterShardNodeArgs.Builder)
     def endpoints(args: Endofunction[com.pulumi.aws.memorydb.inputs.ClusterShardNodeEndpointArgs.Builder]*):
         com.pulumi.aws.memorydb.inputs.ClusterShardNodeArgs.Builder =
       def argsBuilder = com.pulumi.aws.memorydb.inputs.ClusterShardNodeEndpointArgs.builder
       builder.endpoints(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.memorydb.inputs.SnapshotState.Builder)
     /**
      * @param clusterConfigurations The configuration of the cluster from which the snapshot was taken.
@@ -311,7 +303,7 @@ object memorydb:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.memorydb.inputs.SnapshotState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.memorydb.inputs.UserState.Builder)
     /**
      * @param authenticationMode Denotes the user&#39;s authentication properties. Detailed below.
@@ -325,7 +317,7 @@ object memorydb:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.memorydb.inputs.UserState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.memorydb.inputs.ClusterShardArgs.Builder)
     /**
      * @param nodes Set of nodes in this shard.
@@ -335,5 +327,3 @@ object memorydb:
         com.pulumi.aws.memorydb.inputs.ClusterShardArgs.Builder =
       def argsBuilder = com.pulumi.aws.memorydb.inputs.ClusterShardNodeArgs.builder
       builder.nodes(args.map(_(argsBuilder).build)*)
-
-                       

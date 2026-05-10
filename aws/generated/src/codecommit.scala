@@ -11,7 +11,6 @@ object codecommit:
     conf.logicalName2pysicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
       case None               =>
-    
     com.pulumi.aws.codecommit.ApprovalRuleTemplate(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -23,7 +22,6 @@ object codecommit:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.codecommit.Repository(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -38,12 +36,10 @@ object codecommit:
       def argsBuilder = com.pulumi.aws.codecommit.inputs.TriggerTriggerArgs.builder
       builder.triggers(args.map(_(argsBuilder).build)*)
 
-                       
   /** Provides a CodeCommit Trigger Resource. */
   def Trigger(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.codecommit.TriggerArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.codecommit.TriggerArgs.builder
-    
     com.pulumi.aws.codecommit.Trigger(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -81,7 +77,6 @@ object codecommit:
   def ApprovalRuleTemplateAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.codecommit.ApprovalRuleTemplateAssociationArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.codecommit.ApprovalRuleTemplateAssociationArgs.builder
-    
     com.pulumi.aws.codecommit.ApprovalRuleTemplateAssociation(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -95,5 +90,3 @@ object codecommit:
         com.pulumi.aws.codecommit.inputs.TriggerState.Builder =
       def argsBuilder = com.pulumi.aws.codecommit.inputs.TriggerTriggerArgs.builder
       builder.triggers(args.map(_(argsBuilder).build)*)
-
-                       

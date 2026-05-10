@@ -22,7 +22,7 @@ object billing:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.billing.ViewArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   type BillingFunctions = com.pulumi.aws.billing.BillingFunctions
   object BillingFunctions:
     // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
@@ -50,7 +50,6 @@ object billing:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.billing.View(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -83,7 +82,6 @@ object billing:
       val argsBuilder = com.pulumi.aws.billing.inputs.ViewDataFilterExpressionTimeRangeArgs.builder
       builder.timeRange(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.billing.inputs.ViewState.Builder)
     /**
      * @param dataFilterExpression Filter Cost Explorer APIs using the expression. Refer to the data-filter-expression block documentation for more details.
@@ -102,4 +100,3 @@ object billing:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.billing.inputs.ViewState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       

@@ -44,7 +44,7 @@ object sagemaker:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.sagemaker.EndpointConfigurationArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   /** Provides a SageMaker AI Code Repository resource. */
   def CodeRepository(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.sagemaker.CodeRepositoryArgs.Builder])(using conf: KoPulumiConf) =
@@ -52,7 +52,6 @@ object sagemaker:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.sagemaker.CodeRepository(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -64,7 +63,6 @@ object sagemaker:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.sagemaker.Pipeline(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -109,7 +107,7 @@ object sagemaker:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.sagemaker.ModelArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.sagemaker.DeviceFleetArgs.Builder)
     /**
      * @param outputConfig Specifies details about the repository. see Output Config details below.
@@ -123,7 +121,7 @@ object sagemaker:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.sagemaker.DeviceFleetArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   /** Provides a SageMaker AI Image resource. */
   def Image(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.sagemaker.ImageArgs.Builder])(using conf: KoPulumiConf) =
@@ -131,7 +129,6 @@ object sagemaker:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.sagemaker.Image(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -143,7 +140,6 @@ object sagemaker:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.sagemaker.Algorithm(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -161,7 +157,7 @@ object sagemaker:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.sagemaker.UserProfileArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.sagemaker.WorkforceArgs.Builder)
     /**
      * @param cognitoConfig Use this parameter to configure an Amazon Cognito private workforce. A single Cognito workforce is created using and corresponds to a single Amazon Cognito user pool. Conflicts with `oidcConfig`. see Cognito Config details below.
@@ -199,7 +195,6 @@ object sagemaker:
       val argsBuilder = com.pulumi.aws.sagemaker.inputs.WorkforceWorkforceVpcConfigArgs.builder
       builder.workforceVpcConfig(args(argsBuilder).build)
 
-                       
   /** Provides a SageMaker AI Hub resource. */
   def Hub(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.sagemaker.HubArgs.Builder])(using conf: KoPulumiConf) =
@@ -207,14 +202,13 @@ object sagemaker:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.sagemaker.Hub(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
   /**
    * Manages an AWS SageMaker AI Hyper Parameter Tuning Job.
-   *  
+   * 
    *  &gt; **NOTE:** This resource does not wait for the tuning job to complete before returning. Terraform may complete apply before the job reaches a terminal state.
    */
   def HyperParameterTuningJob(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
@@ -226,7 +220,6 @@ object sagemaker:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.sagemaker.HyperParameterTuningJob(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -262,7 +255,7 @@ object sagemaker:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.sagemaker.AppImageConfigArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   /** Provides a SageMaker AI Flow Definition resource. */
   def FlowDefinition(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.sagemaker.FlowDefinitionArgs.Builder])(using conf: KoPulumiConf) =
@@ -270,7 +263,6 @@ object sagemaker:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.sagemaker.FlowDefinition(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -288,12 +280,11 @@ object sagemaker:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.sagemaker.ProjectArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   /** Provides a SageMaker AI Workforce resource. */
   def Workforce(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.sagemaker.WorkforceArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.sagemaker.WorkforceArgs.builder
-    
     com.pulumi.aws.sagemaker.Workforce(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -305,7 +296,6 @@ object sagemaker:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.sagemaker.MlflowTrackingServer(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -328,12 +318,11 @@ object sagemaker:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.sagemaker.ModelCardArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   /** Provides a SageMaker AI Model Package Group Policy resource. */
   def ModelPackageGroupPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.sagemaker.ModelPackageGroupPolicyArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.sagemaker.ModelPackageGroupPolicyArgs.builder
-    
     com.pulumi.aws.sagemaker.ModelPackageGroupPolicy(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -345,7 +334,6 @@ object sagemaker:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.sagemaker.StudioLifecycleConfig(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -363,7 +351,7 @@ object sagemaker:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.sagemaker.NotebookInstanceArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.sagemaker.DomainArgs.Builder)
     /**
      * @param defaultSpaceSettings The default space settings. See `defaultSpaceSettings` Block below.
@@ -404,7 +392,7 @@ object sagemaker:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.sagemaker.DomainArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.sagemaker.MlflowAppArgs.Builder)
     def timeouts(args: Endofunction[com.pulumi.aws.sagemaker.inputs.MlflowAppTimeoutsArgs.Builder]):
         com.pulumi.aws.sagemaker.MlflowAppArgs.Builder =
@@ -414,7 +402,7 @@ object sagemaker:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.sagemaker.MlflowAppArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.sagemaker.MonitoringScheduleArgs.Builder)
     /**
      * @param monitoringScheduleConfig The configuration object that specifies the monitoring schedule and defines the monitoring job. Fields are documented below.
@@ -428,7 +416,7 @@ object sagemaker:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.sagemaker.MonitoringScheduleArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   /** Provides a SageMaker AI Feature Group resource. */
   def FeatureGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.sagemaker.FeatureGroupArgs.Builder])(using conf: KoPulumiConf) =
@@ -436,7 +424,6 @@ object sagemaker:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.sagemaker.FeatureGroup(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -448,7 +435,6 @@ object sagemaker:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.sagemaker.TrainingJob(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -460,7 +446,6 @@ object sagemaker:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.sagemaker.DeviceFleet(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -469,7 +454,6 @@ object sagemaker:
   def ImageVersion(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.sagemaker.ImageVersionArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.sagemaker.ImageVersionArgs.builder
-    
     com.pulumi.aws.sagemaker.ImageVersion(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -481,7 +465,6 @@ object sagemaker:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.sagemaker.UserProfile(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -522,7 +505,7 @@ object sagemaker:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.sagemaker.AlgorithmArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.sagemaker.HubArgs.Builder)
     /**
      * @param s3StorageConfig The Amazon S3 storage configuration for the hub. See S3 Storage Config details below.
@@ -536,7 +519,7 @@ object sagemaker:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.sagemaker.HubArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.sagemaker.FeatureGroupArgs.Builder)
     /**
      * @param featureDefinitions A list of Feature names and types. See Feature Definition Below.
@@ -573,7 +556,7 @@ object sagemaker:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.sagemaker.FeatureGroupArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   /** Provides a SageMaker AI monitoring schedule resource. */
   def MonitoringSchedule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.sagemaker.MonitoringScheduleArgs.Builder])(using conf: KoPulumiConf) =
@@ -584,7 +567,6 @@ object sagemaker:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.sagemaker.MonitoringSchedule(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -596,7 +578,6 @@ object sagemaker:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.sagemaker.ModelCard(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -608,7 +589,6 @@ object sagemaker:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.sagemaker.Workteam(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -626,7 +606,7 @@ object sagemaker:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.sagemaker.CodeRepositoryArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.sagemaker.LabelingJobArgs.Builder)
     /**
      * @param humanTaskConfig Configuration information required for human workers to complete a labeling task. Fields are documented below.
@@ -676,7 +656,7 @@ object sagemaker:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.sagemaker.LabelingJobArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.sagemaker.SpaceArgs.Builder)
     /**
      * @param ownershipSettings A collection of ownership settings. Required if `spaceSharingSettings` is set. See `ownershipSettings` Block below.
@@ -708,7 +688,7 @@ object sagemaker:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.sagemaker.SpaceArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.sagemaker.TrainingJobArgs.Builder)
     /**
      * @param algorithmSpecification Algorithm-related parameters of the training job. See `algorithmSpecification` below. Conflicts with `serverlessJobConfig`.
@@ -793,7 +773,7 @@ object sagemaker:
 
     /**
      * @param outputDataConfig Location of the output data from the training job. See `outputDataConfig` below.
-     *  
+     * 
      *  The following arguments are optional:
      * @return builder
      */
@@ -896,7 +876,7 @@ object sagemaker:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.sagemaker.TrainingJobArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.sagemaker.ModelCardExportJobArgs.Builder)
     /**
      * @param outputConfig Export output details. Fields are documented below.
@@ -912,7 +892,6 @@ object sagemaker:
       val argsBuilder = com.pulumi.aws.sagemaker.inputs.ModelCardExportJobTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.sagemaker.AppArgs.Builder)
     /**
      * @param resourceSpec The instance type and the Amazon Resource Name (ARN) of the SageMaker AI image created on the instance.See Resource Spec below.
@@ -926,12 +905,11 @@ object sagemaker:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.sagemaker.AppArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   /** Manage an Amazon SageMaker Model Card export job. */
   def ModelCardExportJob(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.sagemaker.ModelCardExportJobArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.sagemaker.ModelCardExportJobArgs.builder
-    
     com.pulumi.aws.sagemaker.ModelCardExportJob(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -940,7 +918,6 @@ object sagemaker:
   def Device(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.sagemaker.DeviceArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.sagemaker.DeviceArgs.builder
-    
     com.pulumi.aws.sagemaker.Device(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -955,7 +932,6 @@ object sagemaker:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.sagemaker.Endpoint(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -1027,7 +1003,7 @@ object sagemaker:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.sagemaker.DataQualityJobDefinitionArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   /** Manage an Amazon SageMaker labeling job. */
   def LabelingJob(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.sagemaker.LabelingJobArgs.Builder])(using conf: KoPulumiConf) =
@@ -1035,7 +1011,6 @@ object sagemaker:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.sagemaker.LabelingJob(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -1050,7 +1025,6 @@ object sagemaker:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.sagemaker.MlflowApp(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -1062,7 +1036,6 @@ object sagemaker:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.sagemaker.AppImageConfig(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -1080,7 +1053,7 @@ object sagemaker:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.sagemaker.HumanTaskUIArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   type SagemakerFunctions = com.pulumi.aws.sagemaker.SagemakerFunctions
   object SagemakerFunctions:
     // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
@@ -1088,7 +1061,7 @@ object sagemaker:
   extension (self: SagemakerFunctions.type)
     /**
      * Get information about prebuilt Amazon SageMaker AI  Docker images.
-     *  
+     * 
      *  &gt; **NOTE:** The AWS provider creates a validly constructed `registryPath` but does not verify that the `registryPath` corresponds to an existing image. For example, using a `registryPath` containing an `imageTag` that does not correspond to a Docker image in the ECR repository, will result in an error.
      */
     def getPrebuiltEcrImage(args: Endofunction[com.pulumi.aws.sagemaker.inputs.GetPrebuiltEcrImageArgs.Builder] = identity):
@@ -1098,7 +1071,7 @@ object sagemaker:
 
     /**
      * Get information about prebuilt Amazon SageMaker AI  Docker images.
-     *  
+     * 
      *  &gt; **NOTE:** The AWS provider creates a validly constructed `registryPath` but does not verify that the `registryPath` corresponds to an existing image. For example, using a `registryPath` containing an `imageTag` that does not correspond to a Docker image in the ECR repository, will result in an error.
      */
     def getPrebuiltEcrImagePlain(args: Endofunction[com.pulumi.aws.sagemaker.inputs.GetPrebuiltEcrImagePlainArgs.Builder] = identity):
@@ -1116,14 +1089,13 @@ object sagemaker:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.sagemaker.DataQualityJobDefinition(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
   /**
    * Provides a SageMaker AI Project resource.
-   *  
+   * 
    *   &gt; Note: If you are trying to use SageMaker AI projects with SageMaker AI studio you will need to add a tag with the key `sagemaker:studio-visibility` with value `true`. For more on requirements to use projects and permission needed see [AWS Docs](https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-projects-templates-custom.html).
    */
   def Project(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
@@ -1132,7 +1104,6 @@ object sagemaker:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.sagemaker.Project(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -1144,7 +1115,6 @@ object sagemaker:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.sagemaker.App(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -1159,7 +1129,6 @@ object sagemaker:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.sagemaker.NotebookInstance(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -1174,7 +1143,6 @@ object sagemaker:
       val argsBuilder = com.pulumi.aws.sagemaker.inputs.DeviceDeviceArgs.builder
       builder.device(args(argsBuilder).build)
 
-                       
   /** Provides a SageMaker AI endpoint configuration resource. */
   def EndpointConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.sagemaker.EndpointConfigurationArgs.Builder])(using conf: KoPulumiConf) =
@@ -1185,7 +1153,6 @@ object sagemaker:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.sagemaker.EndpointConfiguration(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -1200,7 +1167,6 @@ object sagemaker:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.sagemaker.NotebookInstanceLifecycleConfiguration(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -1212,7 +1178,6 @@ object sagemaker:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.sagemaker.Space(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -1257,7 +1222,7 @@ object sagemaker:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.sagemaker.FlowDefinitionArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   /** Provides a SageMaker AI Model Package Group resource. */
   def ModelPackageGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.sagemaker.ModelPackageGroupArgs.Builder])(using conf: KoPulumiConf) =
@@ -1265,7 +1230,6 @@ object sagemaker:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.sagemaker.ModelPackageGroup(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -1280,7 +1244,6 @@ object sagemaker:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.sagemaker.Model(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -1298,7 +1261,7 @@ object sagemaker:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.sagemaker.EndpointArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.sagemaker.HyperParameterTuningJobArgs.Builder)
     /**
      * @param autotune Autotune settings. See `autotune`.
@@ -1353,12 +1316,11 @@ object sagemaker:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.sagemaker.HyperParameterTuningJobArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   /** Manages status of Service Catalog in SageMaker. Service Catalog is used to create SageMaker AI projects. */
   def ServicecatalogPortfolioStatus(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.sagemaker.ServicecatalogPortfolioStatusArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.sagemaker.ServicecatalogPortfolioStatusArgs.builder
-    
     com.pulumi.aws.sagemaker.ServicecatalogPortfolioStatus(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -1385,7 +1347,7 @@ object sagemaker:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.sagemaker.PipelineArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.sagemaker.inputs.UserProfileUserSettingsJupyterLabAppSettingsArgs.Builder)
     /**
      * @param appLifecycleManagement Indicates whether idle shutdown is activated for JupyterLab applications. see `appLifecycleManagement` Block below.
@@ -1428,7 +1390,6 @@ object sagemaker:
       val argsBuilder = com.pulumi.aws.sagemaker.inputs.UserProfileUserSettingsJupyterLabAppSettingsEmrSettingsArgs.builder
       builder.emrSettings(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.sagemaker.inputs.DomainState.Builder)
     /**
      * @param defaultSpaceSettings The default space settings. See `defaultSpaceSettings` Block below.
@@ -1469,7 +1430,7 @@ object sagemaker:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.sagemaker.inputs.DomainState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.sagemaker.inputs.AlgorithmValidationSpecificationValidationProfilesTrainingJobDefinitionInputDataConfigArgs.Builder)
     /**
      * @param dataSource Source of the input data. See Data Source.
@@ -1489,7 +1450,6 @@ object sagemaker:
       val argsBuilder = com.pulumi.aws.sagemaker.inputs.AlgorithmValidationSpecificationValidationProfilesTrainingJobDefinitionInputDataConfigShuffleConfigArgs.builder
       builder.shuffleConfig(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.sagemaker.inputs.EndpointConfigurationProductionVariantArgs.Builder)
     /**
      * @param coreDumpConfig Core dump configuration from the model container when the process crashes. Fields are documented below.
@@ -1527,7 +1487,6 @@ object sagemaker:
       val argsBuilder = com.pulumi.aws.sagemaker.inputs.EndpointConfigurationProductionVariantServerlessConfigArgs.builder
       builder.serverlessConfig(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.sagemaker.inputs.DomainDefaultUserSettingsCodeEditorAppSettingsAppLifecycleManagementArgs.Builder)
     /**
      * @param idleSettings Settings related to idle shutdown of Studio applications. see `idleSettings` Block below.
@@ -1538,7 +1497,6 @@ object sagemaker:
       val argsBuilder = com.pulumi.aws.sagemaker.inputs.DomainDefaultUserSettingsCodeEditorAppSettingsAppLifecycleManagementIdleSettingsArgs.builder
       builder.idleSettings(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.sagemaker.inputs.UserProfileUserSettingsTensorBoardAppSettingsArgs.Builder)
     /**
      * @param defaultResourceSpec The default instance type and the Amazon Resource Name (ARN) of the SageMaker AI image created on the instance. see Default Resource Spec below.
@@ -1549,7 +1507,6 @@ object sagemaker:
       val argsBuilder = com.pulumi.aws.sagemaker.inputs.UserProfileUserSettingsTensorBoardAppSettingsDefaultResourceSpecArgs.builder
       builder.defaultResourceSpec(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.sagemaker.inputs.DomainDefaultSpaceSettingsSpaceStorageSettingsArgs.Builder)
     /**
      * @param defaultEbsStorageSettings The default EBS storage settings for a private space. See `defaultEbsStorageSettings` Block below.
@@ -1560,7 +1517,6 @@ object sagemaker:
       val argsBuilder = com.pulumi.aws.sagemaker.inputs.DomainDefaultSpaceSettingsSpaceStorageSettingsDefaultEbsStorageSettingsArgs.builder
       builder.defaultEbsStorageSettings(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.sagemaker.inputs.EndpointDeploymentConfigRollingUpdatePolicyArgs.Builder)
     /**
      * @param maximumBatchSize Batch size for each rolling step to provision capacity and turn on traffic on the new endpoint fleet, and terminate capacity on the old endpoint fleet. Value must be between 5% to 50% of the variant&#39;s total instance count. See Maximum Batch Size.
@@ -1580,7 +1536,6 @@ object sagemaker:
       val argsBuilder = com.pulumi.aws.sagemaker.inputs.EndpointDeploymentConfigRollingUpdatePolicyRollbackMaximumBatchSizeArgs.builder
       builder.rollbackMaximumBatchSize(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.sagemaker.inputs.EndpointConfigurationState.Builder)
     /**
      * @param asyncInferenceConfig How an endpoint performs asynchronous inference.
@@ -1621,7 +1576,7 @@ object sagemaker:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.sagemaker.inputs.EndpointConfigurationState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.sagemaker.inputs.AlgorithmValidationSpecificationValidationProfilesArgs.Builder)
     /**
      * @param trainingJobDefinition Training job definition used during validation. See Training Job Definition.
@@ -1641,7 +1596,6 @@ object sagemaker:
       val argsBuilder = com.pulumi.aws.sagemaker.inputs.AlgorithmValidationSpecificationValidationProfilesTransformJobDefinitionArgs.builder
       builder.transformJobDefinition(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.sagemaker.inputs.UserProfileUserSettingsCodeEditorAppSettingsAppLifecycleManagementArgs.Builder)
     /**
      * @param idleSettings Settings related to idle shutdown of Studio applications. see `idleSettings` Block below.
@@ -1652,7 +1606,6 @@ object sagemaker:
       val argsBuilder = com.pulumi.aws.sagemaker.inputs.UserProfileUserSettingsCodeEditorAppSettingsAppLifecycleManagementIdleSettingsArgs.builder
       builder.idleSettings(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.sagemaker.inputs.ModelContainerImageConfigArgs.Builder)
     /**
      * @param repositoryAuthConfig Specifies an authentication configuration for the private docker registry where your model image is hosted. Specify a value for this property only if you specified Vpc as the value for the RepositoryAccessMode field, and the private Docker registry where the model image is hosted requires authentication. see Repository Auth Config.
@@ -1663,7 +1616,6 @@ object sagemaker:
       val argsBuilder = com.pulumi.aws.sagemaker.inputs.ModelContainerImageConfigRepositoryAuthConfigArgs.builder
       builder.repositoryAuthConfig(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.sagemaker.inputs.EndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationArgs.Builder)
     /**
      * @param canarySize Batch size for the first step to turn on traffic on the new endpoint fleet. Value must be less than or equal to 50% of the variant&#39;s total instance count. See Canary Size.
@@ -1683,7 +1635,6 @@ object sagemaker:
       val argsBuilder = com.pulumi.aws.sagemaker.inputs.EndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationLinearStepSizeArgs.builder
       builder.linearStepSize(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.sagemaker.inputs.DataQualityJobDefinitionDataQualityJobInputBatchTransformInputDatasetFormatArgs.Builder)
     /**
      * @param csv The CSV dataset used in the monitoring job. Fields are documented below.
@@ -1703,7 +1654,6 @@ object sagemaker:
       val argsBuilder = com.pulumi.aws.sagemaker.inputs.DataQualityJobDefinitionDataQualityJobInputBatchTransformInputDatasetFormatJsonArgs.builder
       builder.json(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.sagemaker.inputs.MonitoringScheduleMonitoringScheduleConfigArgs.Builder)
     /**
      * @param monitoringJobDefinition Defines the monitoring job. Fields are documented below.
@@ -1723,7 +1673,6 @@ object sagemaker:
       val argsBuilder = com.pulumi.aws.sagemaker.inputs.MonitoringScheduleMonitoringScheduleConfigScheduleConfigArgs.builder
       builder.scheduleConfig(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.sagemaker.inputs.HyperParameterTuningJobConfigStrategyConfigArgs.Builder)
     /**
      * @param hyperbandStrategyConfig Hyperband strategy settings. See `hyperbandStrategyConfig`.
@@ -1734,7 +1683,6 @@ object sagemaker:
       val argsBuilder = com.pulumi.aws.sagemaker.inputs.HyperParameterTuningJobConfigStrategyConfigHyperbandStrategyConfigArgs.builder
       builder.hyperbandStrategyConfig(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.sagemaker.inputs.TrainingJobState.Builder)
     /**
      * @param algorithmSpecification Algorithm-related parameters of the training job. See `algorithmSpecification` below. Conflicts with `serverlessJobConfig`.
@@ -1819,7 +1767,7 @@ object sagemaker:
 
     /**
      * @param outputDataConfig Location of the output data from the training job. See `outputDataConfig` below.
-     *  
+     * 
      *  The following arguments are optional:
      * @return builder
      */
@@ -1922,7 +1870,7 @@ object sagemaker:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.sagemaker.inputs.TrainingJobState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.sagemaker.inputs.HyperParameterTuningJobWarmStartConfigArgs.Builder)
     /**
      * @param parentHyperParameterTuningJobs Parent tuning jobs for warm start.
@@ -1933,7 +1881,6 @@ object sagemaker:
       def argsBuilder = com.pulumi.aws.sagemaker.inputs.HyperParameterTuningJobWarmStartConfigParentHyperParameterTuningJobArgs.builder
       builder.parentHyperParameterTuningJobs(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.sagemaker.inputs.DataQualityJobDefinitionDataQualityBaselineConfigArgs.Builder)
     /**
      * @param constraintsResource The constraints resource for a monitoring job. Fields are documented below.
@@ -1953,7 +1900,6 @@ object sagemaker:
       val argsBuilder = com.pulumi.aws.sagemaker.inputs.DataQualityJobDefinitionDataQualityBaselineConfigStatisticsResourceArgs.builder
       builder.statisticsResource(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.sagemaker.inputs.ModelContainerAdditionalModelDataSourceS3DataSourceArgs.Builder)
     /**
      * @param modelAccessConfig Specifies the access configuration file for the ML model. You can explicitly accept the model end-user license agreement (EULA) within the [`modelAccessConfig` configuration block]. See Model Access Config.
@@ -1964,7 +1910,6 @@ object sagemaker:
       val argsBuilder = com.pulumi.aws.sagemaker.inputs.ModelContainerAdditionalModelDataSourceS3DataSourceModelAccessConfigArgs.builder
       builder.modelAccessConfig(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.sagemaker.inputs.FlowDefinitionState.Builder)
     /**
      * @param humanLoopActivationConfig An object containing information about the events that trigger a human workflow. See Human Loop Activation Config details below.
@@ -2005,7 +1950,7 @@ object sagemaker:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.sagemaker.inputs.FlowDefinitionState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.sagemaker.inputs.HyperParameterTuningJobTrainingJobDefinitionResourceConfigArgs.Builder)
     /**
      * @param instanceGroups Instance group settings. See `instanceGroups`.
@@ -2025,7 +1970,6 @@ object sagemaker:
       val argsBuilder = com.pulumi.aws.sagemaker.inputs.HyperParameterTuningJobTrainingJobDefinitionResourceConfigInstancePlacementConfigArgs.builder
       builder.instancePlacementConfig(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.sagemaker.inputs.FeatureGroupOfflineStoreConfigArgs.Builder)
     /**
      * @param dataCatalogConfig The meta data of the Glue table that is autogenerated when an OfflineStore is created. See Data Catalog Config Below.
@@ -2045,7 +1989,6 @@ object sagemaker:
       val argsBuilder = com.pulumi.aws.sagemaker.inputs.FeatureGroupOfflineStoreConfigS3StorageConfigArgs.builder
       builder.s3StorageConfig(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.sagemaker.inputs.UserProfileUserSettingsJupyterServerAppSettingsArgs.Builder)
     /**
      * @param codeRepositories A list of Git repositories that SageMaker AI automatically displays to users for cloning in the JupyterServer application. see Code Repository below.
@@ -2065,7 +2008,6 @@ object sagemaker:
       val argsBuilder = com.pulumi.aws.sagemaker.inputs.UserProfileUserSettingsJupyterServerAppSettingsDefaultResourceSpecArgs.builder
       builder.defaultResourceSpec(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.sagemaker.inputs.SpaceSpaceSettingsJupyterLabAppSettingsArgs.Builder)
     /**
      * @param appLifecycleManagement Settings that are used to configure and manage the lifecycle of JupyterLab applications in a space. See `appLifecycleManagement` Block below.
@@ -2094,7 +2036,6 @@ object sagemaker:
       val argsBuilder = com.pulumi.aws.sagemaker.inputs.SpaceSpaceSettingsJupyterLabAppSettingsDefaultResourceSpecArgs.builder
       builder.defaultResourceSpec(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.sagemaker.inputs.ModelPrimaryContainerAdditionalModelDataSourceS3DataSourceArgs.Builder)
     /**
      * @param modelAccessConfig Specifies the access configuration file for the ML model. You can explicitly accept the model end-user license agreement (EULA) within the [`modelAccessConfig` configuration block]. See Model Access Config.
@@ -2105,7 +2046,6 @@ object sagemaker:
       val argsBuilder = com.pulumi.aws.sagemaker.inputs.ModelPrimaryContainerAdditionalModelDataSourceS3DataSourceModelAccessConfigArgs.builder
       builder.modelAccessConfig(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.sagemaker.inputs.HyperParameterTuningJobTrainingJobDefinitionHyperParameterTuningResourceConfigArgs.Builder)
     /**
      * @param instanceConfigs Per-instance-type resource settings. See `instanceConfigs`.
@@ -2116,7 +2056,6 @@ object sagemaker:
       def argsBuilder = com.pulumi.aws.sagemaker.inputs.HyperParameterTuningJobTrainingJobDefinitionHyperParameterTuningResourceConfigInstanceConfigArgs.builder
       builder.instanceConfigs(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.sagemaker.inputs.DomainDefaultUserSettingsJupyterLabAppSettingsArgs.Builder)
     /**
      * @param appLifecycleManagement Indicates whether idle shutdown is activated for JupyterLab applications. see `appLifecycleManagement` Block below.
@@ -2163,7 +2102,6 @@ object sagemaker:
       val argsBuilder = com.pulumi.aws.sagemaker.inputs.DomainDefaultUserSettingsJupyterLabAppSettingsEmrSettingsArgs.builder
       builder.emrSettings(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.sagemaker.inputs.UserProfileUserSettingsArgs.Builder)
     /**
      * @param canvasAppSettings The Canvas app settings. See Canvas App Settings below.
@@ -2282,7 +2220,6 @@ object sagemaker:
       val argsBuilder = com.pulumi.aws.sagemaker.inputs.UserProfileUserSettingsTensorBoardAppSettingsArgs.builder
       builder.tensorBoardAppSettings(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.sagemaker.inputs.AppImageConfigJupyterLabImageConfigArgs.Builder)
     /**
      * @param containerConfig The configuration used to run the application image container. See Container Config details below.
@@ -2302,7 +2239,6 @@ object sagemaker:
       val argsBuilder = com.pulumi.aws.sagemaker.inputs.AppImageConfigJupyterLabImageConfigFileSystemConfigArgs.builder
       builder.fileSystemConfig(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.sagemaker.inputs.HyperParameterTuningJobTrainingJobDefinitionInputDataConfigArgs.Builder)
     /**
      * @param dataSource Data source settings. See `dataSource`.
@@ -2322,7 +2258,6 @@ object sagemaker:
       val argsBuilder = com.pulumi.aws.sagemaker.inputs.HyperParameterTuningJobTrainingJobDefinitionInputDataConfigShuffleConfigArgs.builder
       builder.shuffleConfig(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.sagemaker.inputs.EndpointDeploymentConfigBlueGreenUpdatePolicyArgs.Builder)
     /**
      * @param trafficRoutingConfiguration Defines the traffic routing strategy to shift traffic from the old fleet to the new fleet during an endpoint deployment. See Traffic Routing Configuration.
@@ -2333,7 +2268,6 @@ object sagemaker:
       val argsBuilder = com.pulumi.aws.sagemaker.inputs.EndpointDeploymentConfigBlueGreenUpdatePolicyTrafficRoutingConfigurationArgs.builder
       builder.trafficRoutingConfiguration(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.sagemaker.inputs.DataQualityJobDefinitionDataQualityJobOutputConfigArgs.Builder)
     /**
      * @param monitoringOutputs Monitoring outputs for monitoring jobs. This is where the output of the periodic monitoring jobs is uploaded. Fields are documented below.
@@ -2344,7 +2278,6 @@ object sagemaker:
       val argsBuilder = com.pulumi.aws.sagemaker.inputs.DataQualityJobDefinitionDataQualityJobOutputConfigMonitoringOutputsArgs.builder
       builder.monitoringOutputs(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.sagemaker.inputs.TrainingJobDebugHookConfigArgs.Builder)
     /**
      * @param collectionConfigurations List of tensor collections to configure for the debug hook. Maximum of 20. See `collectionConfigurations` below.
@@ -2355,7 +2288,6 @@ object sagemaker:
       def argsBuilder = com.pulumi.aws.sagemaker.inputs.TrainingJobDebugHookConfigCollectionConfigurationArgs.builder
       builder.collectionConfigurations(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.sagemaker.inputs.UserProfileUserSettingsKernelGatewayAppSettingsArgs.Builder)
     /**
      * @param customImages A list of custom SageMaker AI images that are configured to run as a KernelGateway app. see Custom Image below.
@@ -2375,7 +2307,6 @@ object sagemaker:
       val argsBuilder = com.pulumi.aws.sagemaker.inputs.UserProfileUserSettingsKernelGatewayAppSettingsDefaultResourceSpecArgs.builder
       builder.defaultResourceSpec(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.sagemaker.inputs.FlowDefinitionHumanLoopConfigPublicWorkforceTaskPriceArgs.Builder)
     /**
      * @param amountInUsd Defines the amount of money paid to an Amazon Mechanical Turk worker in United States dollars. See Amount In Usd details below.
@@ -2386,7 +2317,6 @@ object sagemaker:
       val argsBuilder = com.pulumi.aws.sagemaker.inputs.FlowDefinitionHumanLoopConfigPublicWorkforceTaskPriceAmountInUsdArgs.builder
       builder.amountInUsd(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.sagemaker.inputs.ModelState.Builder)
     /**
      * @param containers Specifies containers in the inference pipeline. If not specified, the `primaryContainer` argument is required. Fields are documented below.
@@ -2427,7 +2357,7 @@ object sagemaker:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.sagemaker.inputs.ModelState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.sagemaker.inputs.EndpointDeploymentConfigAutoRollbackConfigurationArgs.Builder)
     /**
      * @param alarms List of CloudWatch alarms in your account that are configured to monitor metrics on an endpoint. If any alarms are tripped during a deployment, SageMaker AI rolls back the deployment. See Alarms.
@@ -2438,7 +2368,6 @@ object sagemaker:
       def argsBuilder = com.pulumi.aws.sagemaker.inputs.EndpointDeploymentConfigAutoRollbackConfigurationAlarmArgs.builder
       builder.alarms(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.sagemaker.inputs.HyperParameterTuningJobTrainingJobDefinitionHyperParameterRangesArgs.Builder)
     /**
      * @param autoParameters Parameter list for automatic range selection.
@@ -2476,7 +2405,6 @@ object sagemaker:
       def argsBuilder = com.pulumi.aws.sagemaker.inputs.HyperParameterTuningJobTrainingJobDefinitionHyperParameterRangesIntegerParameterRangeArgs.builder
       builder.integerParameterRanges(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.sagemaker.inputs.DataQualityJobDefinitionDataQualityJobInputBatchTransformInputArgs.Builder)
     /**
      * @param datasetFormat The dataset format for your batch transform job. Fields are documented below.
@@ -2487,7 +2415,6 @@ object sagemaker:
       val argsBuilder = com.pulumi.aws.sagemaker.inputs.DataQualityJobDefinitionDataQualityJobInputBatchTransformInputDatasetFormatArgs.builder
       builder.datasetFormat(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.sagemaker.inputs.LabelingJobHumanTaskConfigPublicWorkforceTaskPriceArgs.Builder)
     /**
      * @param amountInUsd Amount of money paid to an Amazon Mechanical Turk worker in United States dollars. Fields are documented below.
@@ -2498,7 +2425,6 @@ object sagemaker:
       val argsBuilder = com.pulumi.aws.sagemaker.inputs.LabelingJobHumanTaskConfigPublicWorkforceTaskPriceAmountInUsdArgs.builder
       builder.amountInUsd(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.sagemaker.inputs.DomainDefaultUserSettingsRSessionAppSettingsArgs.Builder)
     /**
      * @param customImages A list of custom SageMaker AI images that are configured to run as a RSession app. see `customImage` Block below.
@@ -2518,7 +2444,6 @@ object sagemaker:
       val argsBuilder = com.pulumi.aws.sagemaker.inputs.DomainDefaultUserSettingsRSessionAppSettingsDefaultResourceSpecArgs.builder
       builder.defaultResourceSpec(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.sagemaker.inputs.EndpointConfigurationAsyncInferenceConfigArgs.Builder)
     /**
      * @param clientConfig Configures the behavior of the client used by SageMaker AI to interact with the model container during asynchronous inference.
@@ -2538,7 +2463,6 @@ object sagemaker:
       val argsBuilder = com.pulumi.aws.sagemaker.inputs.EndpointConfigurationAsyncInferenceConfigOutputConfigArgs.builder
       builder.outputConfig(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.sagemaker.inputs.ModelPrimaryContainerModelDataSourceArgs.Builder)
     /**
      * @param s3DataSources S3 location of model data to deploy. See S3 Data Source.
@@ -2549,7 +2473,6 @@ object sagemaker:
       def argsBuilder = com.pulumi.aws.sagemaker.inputs.ModelPrimaryContainerModelDataSourceS3DataSourceArgs.builder
       builder.s3DataSources(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.sagemaker.inputs.DataQualityJobDefinitionNetworkConfigArgs.Builder)
     /**
      * @param vpcConfig Specifies a VPC that your training jobs and hosted models have access to. Control access to and from your training and model containers by configuring the VPC. Fields are documented below.
@@ -2560,7 +2483,6 @@ object sagemaker:
       val argsBuilder = com.pulumi.aws.sagemaker.inputs.DataQualityJobDefinitionNetworkConfigVpcConfigArgs.builder
       builder.vpcConfig(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.sagemaker.inputs.UserProfileUserSettingsCanvasAppSettingsArgs.Builder)
     /**
      * @param directDeploySettings The model deployment settings for the SageMaker AI Canvas application. See Direct Deploy Settings below.
@@ -2630,7 +2552,6 @@ object sagemaker:
       val argsBuilder = com.pulumi.aws.sagemaker.inputs.UserProfileUserSettingsCanvasAppSettingsWorkspaceSettingsArgs.builder
       builder.workspaceSettings(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.sagemaker.inputs.MonitoringScheduleMonitoringScheduleConfigMonitoringJobDefinitionNetworkConfigArgs.Builder)
     /**
      * @param vpcConfig VPC that SageMaker jobs, hosted models, and compute resources have access to. Fields are documented below.
@@ -2641,7 +2562,6 @@ object sagemaker:
       val argsBuilder = com.pulumi.aws.sagemaker.inputs.MonitoringScheduleMonitoringScheduleConfigMonitoringJobDefinitionNetworkConfigVpcConfigArgs.builder
       builder.vpcConfig(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.sagemaker.inputs.MonitoringScheduleMonitoringScheduleConfigMonitoringJobDefinitionMonitoringInputsBatchTransformInputDatasetFormatArgs.Builder)
     /**
      * @param csv CSV dataset used in the monitoring job. Fields are documented below.
@@ -2661,7 +2581,6 @@ object sagemaker:
       val argsBuilder = com.pulumi.aws.sagemaker.inputs.MonitoringScheduleMonitoringScheduleConfigMonitoringJobDefinitionMonitoringInputsBatchTransformInputDatasetFormatJsonArgs.builder
       builder.json(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.sagemaker.inputs.DomainDefaultUserSettingsTensorBoardAppSettingsArgs.Builder)
     /**
      * @param defaultResourceSpec The default instance type and the Amazon Resource Name (ARN) of the SageMaker AI image created on the instance. see `defaultResourceSpec` Block below.
@@ -2672,7 +2591,6 @@ object sagemaker:
       val argsBuilder = com.pulumi.aws.sagemaker.inputs.DomainDefaultUserSettingsTensorBoardAppSettingsDefaultResourceSpecArgs.builder
       builder.defaultResourceSpec(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.sagemaker.inputs.DomainDefaultUserSettingsCanvasAppSettingsArgs.Builder)
     /**
      * @param directDeploySettings The model deployment settings for the SageMaker AI Canvas application. See `directDeploySettings` Block below.
@@ -2742,7 +2660,6 @@ object sagemaker:
       val argsBuilder = com.pulumi.aws.sagemaker.inputs.DomainDefaultUserSettingsCanvasAppSettingsWorkspaceSettingsArgs.builder
       builder.workspaceSettings(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.sagemaker.inputs.FlowDefinitionHumanLoopConfigArgs.Builder)
     /**
      * @param publicWorkforceTaskPrice Defines the amount of money paid to an Amazon Mechanical Turk worker for each task performed. See Public Workforce Task Price details below.
@@ -2753,7 +2670,6 @@ object sagemaker:
       val argsBuilder = com.pulumi.aws.sagemaker.inputs.FlowDefinitionHumanLoopConfigPublicWorkforceTaskPriceArgs.builder
       builder.publicWorkforceTaskPrice(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.sagemaker.inputs.UserProfileUserSettingsCodeEditorAppSettingsArgs.Builder)
     /**
      * @param appLifecycleManagement Indicates whether idle shutdown is activated for JupyterLab applications. see `appLifecycleManagement` Block below.
@@ -2782,7 +2698,6 @@ object sagemaker:
       val argsBuilder = com.pulumi.aws.sagemaker.inputs.UserProfileUserSettingsCodeEditorAppSettingsDefaultResourceSpecArgs.builder
       builder.defaultResourceSpec(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.sagemaker.inputs.AlgorithmValidationSpecificationValidationProfilesTransformJobDefinitionArgs.Builder)
     /**
      * @param transformInput Input configuration for the transform job. See Transform Input.
@@ -2811,7 +2726,6 @@ object sagemaker:
       val argsBuilder = com.pulumi.aws.sagemaker.inputs.AlgorithmValidationSpecificationValidationProfilesTransformJobDefinitionTransformResourcesArgs.builder
       builder.transformResources(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.sagemaker.inputs.AlgorithmTrainingSpecificationArgs.Builder)
     /**
      * @param additionalS3DataSource Additional training data to make available to the algorithm. See Additional S3 Data Source.
@@ -2858,7 +2772,6 @@ object sagemaker:
       def argsBuilder = com.pulumi.aws.sagemaker.inputs.AlgorithmTrainingSpecificationTrainingChannelArgs.builder
       builder.trainingChannels(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.sagemaker.inputs.EndpointState.Builder)
     /**
      * @param deploymentConfig The deployment configuration for an endpoint, which contains the desired deployment strategy and rollback configurations. See Deployment Config.
@@ -2872,7 +2785,7 @@ object sagemaker:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.sagemaker.inputs.EndpointState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.sagemaker.inputs.LabelingJobHumanTaskConfigArgs.Builder)
     /**
      * @param annotationConsolidationConfig How labels are consolidated across human workers. Fields are documented below.
@@ -2901,7 +2814,6 @@ object sagemaker:
       val argsBuilder = com.pulumi.aws.sagemaker.inputs.LabelingJobHumanTaskConfigUiConfigArgs.builder
       builder.uiConfig(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.sagemaker.inputs.DeviceState.Builder)
     /**
      * @param device The device to register with SageMaker AI Edge Manager. See Device details below.
@@ -2912,7 +2824,6 @@ object sagemaker:
       val argsBuilder = com.pulumi.aws.sagemaker.inputs.DeviceDeviceArgs.builder
       builder.device(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.sagemaker.inputs.CodeRepositoryState.Builder)
     /**
      * @param gitConfig Specifies details about the repository. see Git Config details below.
@@ -2926,7 +2837,7 @@ object sagemaker:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.sagemaker.inputs.CodeRepositoryState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.sagemaker.inputs.AlgorithmValidationSpecificationValidationProfilesTrainingJobDefinitionArgs.Builder)
     /**
      * @param inputDataConfigs Input channel configuration for the validation training job. See Input Data Config.
@@ -2964,7 +2875,6 @@ object sagemaker:
       val argsBuilder = com.pulumi.aws.sagemaker.inputs.AlgorithmValidationSpecificationValidationProfilesTrainingJobDefinitionStoppingConditionArgs.builder
       builder.stoppingCondition(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.sagemaker.inputs.MonitoringScheduleState.Builder)
     /**
      * @param monitoringScheduleConfig The configuration object that specifies the monitoring schedule and defines the monitoring job. Fields are documented below.
@@ -2978,7 +2888,7 @@ object sagemaker:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.sagemaker.inputs.MonitoringScheduleState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.sagemaker.inputs.HyperParameterTuningJobTrainingJobDefinitionInputDataConfigDataSourceS3DataSourceArgs.Builder)
     /**
      * @param hubAccessConfig Hub access settings. See `hubAccessConfig`.
@@ -2998,7 +2908,6 @@ object sagemaker:
       val argsBuilder = com.pulumi.aws.sagemaker.inputs.HyperParameterTuningJobTrainingJobDefinitionInputDataConfigDataSourceS3DataSourceModelAccessConfigArgs.builder
       builder.modelAccessConfig(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.sagemaker.inputs.DeviceFleetState.Builder)
     /**
      * @param outputConfig Specifies details about the repository. see Output Config details below.
@@ -3012,7 +2921,7 @@ object sagemaker:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.sagemaker.inputs.DeviceFleetState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.sagemaker.inputs.HyperParameterTuningJobTrainingJobDefinitionAlgorithmSpecificationArgs.Builder)
     /**
      * @param metricDefinitions Metric extraction rules.
@@ -3023,7 +2932,6 @@ object sagemaker:
       def argsBuilder = com.pulumi.aws.sagemaker.inputs.HyperParameterTuningJobTrainingJobDefinitionAlgorithmSpecificationMetricDefinitionArgs.builder
       builder.metricDefinitions(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.sagemaker.inputs.TrainingJobResourceConfigArgs.Builder)
     /**
      * @param instanceGroups List of instance groups for heterogeneous cluster training. Maximum of 5. Conflicts with `instanceCount`, `instanceType`, and `keepAlivePeriodInSeconds`. See `instanceGroups` below.
@@ -3043,7 +2951,6 @@ object sagemaker:
       val argsBuilder = com.pulumi.aws.sagemaker.inputs.TrainingJobResourceConfigInstancePlacementConfigArgs.builder
       builder.instancePlacementConfig(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.sagemaker.inputs.LabelingJobLabelingJobAlgorithmsConfigLabelingJobResourceConfigArgs.Builder)
     /**
      * @param vpcConfig VPC that SageMaker jobs, hosted models, and compute resources have access to. Fields are documented below.
@@ -3054,7 +2961,6 @@ object sagemaker:
       val argsBuilder = com.pulumi.aws.sagemaker.inputs.LabelingJobLabelingJobAlgorithmsConfigLabelingJobResourceConfigVpcConfigArgs.builder
       builder.vpcConfig(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.sagemaker.inputs.HyperParameterTuningJobTrainingJobDefinitionInputDataConfigDataSourceArgs.Builder)
     /**
      * @param fileSystemDataSource File system source settings. See `fileSystemDataSource`.
@@ -3074,7 +2980,6 @@ object sagemaker:
       val argsBuilder = com.pulumi.aws.sagemaker.inputs.HyperParameterTuningJobTrainingJobDefinitionInputDataConfigDataSourceS3DataSourceArgs.builder
       builder.s3DataSource(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.sagemaker.inputs.AlgorithmValidationSpecificationValidationProfilesTransformJobDefinitionTransformInputDataSourceArgs.Builder)
     /**
      * @param s3DataSource S3-backed training data source. See Training S3 Data Source.
@@ -3085,7 +2990,6 @@ object sagemaker:
       val argsBuilder = com.pulumi.aws.sagemaker.inputs.AlgorithmValidationSpecificationValidationProfilesTransformJobDefinitionTransformInputDataSourceS3DataSourceArgs.builder
       builder.s3DataSource(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.sagemaker.inputs.HyperParameterTuningJobTrainingJobDefinitionResourceConfigInstancePlacementConfigArgs.Builder)
     /**
      * @param placementSpecifications Placement details. See `placementSpecifications`.
@@ -3096,7 +3000,6 @@ object sagemaker:
       def argsBuilder = com.pulumi.aws.sagemaker.inputs.HyperParameterTuningJobTrainingJobDefinitionResourceConfigInstancePlacementConfigPlacementSpecificationArgs.builder
       builder.placementSpecifications(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.sagemaker.inputs.AlgorithmValidationSpecificationArgs.Builder)
     /**
      * @param validationProfiles Validation profiles for the algorithm. See Validation Profiles.
@@ -3107,7 +3010,6 @@ object sagemaker:
       val argsBuilder = com.pulumi.aws.sagemaker.inputs.AlgorithmValidationSpecificationValidationProfilesArgs.builder
       builder.validationProfiles(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.sagemaker.inputs.HyperParameterTuningJobConfigArgs.Builder)
     /**
      * @param objective Objective metric used by tuning. See `objective`.
@@ -3154,7 +3056,6 @@ object sagemaker:
       val argsBuilder = com.pulumi.aws.sagemaker.inputs.HyperParameterTuningJobConfigTuningJobCompletionCriteriaArgs.builder
       builder.tuningJobCompletionCriteria(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.sagemaker.inputs.ModelContainerModelDataSourceArgs.Builder)
     /**
      * @param s3DataSources S3 location of model data to deploy. See S3 Data Source.
@@ -3165,7 +3066,6 @@ object sagemaker:
       def argsBuilder = com.pulumi.aws.sagemaker.inputs.ModelContainerModelDataSourceS3DataSourceArgs.builder
       builder.s3DataSources(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.sagemaker.inputs.ModelContainerAdditionalModelDataSourceArgs.Builder)
     /**
      * @param s3DataSources S3 location of model data to deploy. See S3 Data Source.
@@ -3176,7 +3076,6 @@ object sagemaker:
       def argsBuilder = com.pulumi.aws.sagemaker.inputs.ModelContainerAdditionalModelDataSourceS3DataSourceArgs.builder
       builder.s3DataSources(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.sagemaker.inputs.HyperParameterTuningJobConfigParameterRangesArgs.Builder)
     /**
      * @param autoParameters Parameter list for automatic range selection.
@@ -3214,7 +3113,6 @@ object sagemaker:
       def argsBuilder = com.pulumi.aws.sagemaker.inputs.HyperParameterTuningJobConfigParameterRangesIntegerParameterRangeArgs.builder
       builder.integerParameterRanges(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.sagemaker.inputs.WorkforceState.Builder)
     /**
      * @param cognitoConfig Use this parameter to configure an Amazon Cognito private workforce. A single Cognito workforce is created using and corresponds to a single Amazon Cognito user pool. Conflicts with `oidcConfig`. see Cognito Config details below.
@@ -3252,7 +3150,6 @@ object sagemaker:
       val argsBuilder = com.pulumi.aws.sagemaker.inputs.WorkforceWorkforceVpcConfigArgs.builder
       builder.workforceVpcConfig(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.sagemaker.inputs.LabelingJobLabelingJobAlgorithmsConfigArgs.Builder)
     /**
      * @param labelingJobResourceConfig Configuration information for the labeling job. Fields are documented below.
@@ -3263,7 +3160,6 @@ object sagemaker:
       val argsBuilder = com.pulumi.aws.sagemaker.inputs.LabelingJobLabelingJobAlgorithmsConfigLabelingJobResourceConfigArgs.builder
       builder.labelingJobResourceConfig(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.sagemaker.inputs.ProjectState.Builder)
     /**
      * @param serviceCatalogProvisioningDetails The product ID and provisioning artifact ID to provision a service catalog. See Service Catalog Provisioning Details below.
@@ -3277,7 +3173,7 @@ object sagemaker:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.sagemaker.inputs.ProjectState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.sagemaker.inputs.DomainDefaultUserSettingsCodeEditorAppSettingsArgs.Builder)
     /**
      * @param appLifecycleManagement Indicates whether idle shutdown is activated for JupyterLab applications. see `appLifecycleManagement` Block below.
@@ -3306,7 +3202,6 @@ object sagemaker:
       val argsBuilder = com.pulumi.aws.sagemaker.inputs.DomainDefaultUserSettingsCodeEditorAppSettingsDefaultResourceSpecArgs.builder
       builder.defaultResourceSpec(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.sagemaker.inputs.SpaceSpaceSettingsCodeEditorAppSettingsArgs.Builder)
     /**
      * @param appLifecycleManagement Settings that are used to configure and manage the lifecycle of JupyterLab applications in a space. See `appLifecycleManagement` Block below.
@@ -3326,7 +3221,6 @@ object sagemaker:
       val argsBuilder = com.pulumi.aws.sagemaker.inputs.SpaceSpaceSettingsCodeEditorAppSettingsDefaultResourceSpecArgs.builder
       builder.defaultResourceSpec(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.sagemaker.inputs.ModelContainerModelDataSourceS3DataSourceArgs.Builder)
     /**
      * @param modelAccessConfig Specifies the access configuration file for the ML model. You can explicitly accept the model end-user license agreement (EULA) within the [`modelAccessConfig` configuration block]. See Model Access Config.
@@ -3337,7 +3231,6 @@ object sagemaker:
       val argsBuilder = com.pulumi.aws.sagemaker.inputs.ModelContainerModelDataSourceS3DataSourceModelAccessConfigArgs.builder
       builder.modelAccessConfig(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.sagemaker.inputs.ModelPrimaryContainerImageConfigArgs.Builder)
     /**
      * @param repositoryAuthConfig Specifies an authentication configuration for the private docker registry where your model image is hosted. Specify a value for this property only if you specified Vpc as the value for the RepositoryAccessMode field, and the private Docker registry where the model image is hosted requires authentication. see Repository Auth Config.
@@ -3348,7 +3241,6 @@ object sagemaker:
       val argsBuilder = com.pulumi.aws.sagemaker.inputs.ModelPrimaryContainerImageConfigRepositoryAuthConfigArgs.builder
       builder.repositoryAuthConfig(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.sagemaker.inputs.AlgorithmTrainingSpecificationSupportedHyperParameterRangeArgs.Builder)
     /**
      * @param categoricalParameterRangeSpecification Categorical range definition. See Categorical Parameter Range Specification.
@@ -3377,7 +3269,6 @@ object sagemaker:
       val argsBuilder = com.pulumi.aws.sagemaker.inputs.AlgorithmTrainingSpecificationSupportedHyperParameterRangeIntegerParameterRangeSpecificationArgs.builder
       builder.integerParameterRangeSpecification(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.sagemaker.inputs.SpaceSpaceSettingsJupyterLabAppSettingsAppLifecycleManagementArgs.Builder)
     /**
      * @param idleSettings Settings related to idle shutdown of Studio applications. See `idleSettings` Block below.
@@ -3388,7 +3279,6 @@ object sagemaker:
       val argsBuilder = com.pulumi.aws.sagemaker.inputs.SpaceSpaceSettingsJupyterLabAppSettingsAppLifecycleManagementIdleSettingsArgs.builder
       builder.idleSettings(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.sagemaker.inputs.DomainDefaultSpaceSettingsJupyterLabAppSettingsArgs.Builder)
     /**
      * @param appLifecycleManagement Indicates whether idle shutdown is activated for JupyterLab applications. see `appLifecycleManagement` Block below.
@@ -3435,14 +3325,12 @@ object sagemaker:
       val argsBuilder = com.pulumi.aws.sagemaker.inputs.DomainDefaultSpaceSettingsJupyterLabAppSettingsEmrSettingsArgs.builder
       builder.emrSettings(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.sagemaker.inputs.FeatureGroupFeatureDefinitionArgs.Builder)
     def collectionConfig(args: Endofunction[com.pulumi.aws.sagemaker.inputs.FeatureGroupFeatureDefinitionCollectionConfigArgs.Builder]):
         com.pulumi.aws.sagemaker.inputs.FeatureGroupFeatureDefinitionArgs.Builder =
       val argsBuilder = com.pulumi.aws.sagemaker.inputs.FeatureGroupFeatureDefinitionCollectionConfigArgs.builder
       builder.collectionConfig(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.sagemaker.inputs.TrainingJobInputDataConfigArgs.Builder)
     /**
      * @param dataSource Location of the channel data. See `dataSource` below.
@@ -3462,7 +3350,6 @@ object sagemaker:
       val argsBuilder = com.pulumi.aws.sagemaker.inputs.TrainingJobInputDataConfigShuffleConfigArgs.builder
       builder.shuffleConfig(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.sagemaker.inputs.DomainDomainSettingsRStudioServerProDomainSettingsArgs.Builder)
     /**
      * @param defaultResourceSpec The default instance type and the Amazon Resource Name (ARN) of the SageMaker AI image created on the instance. see `defaultResourceSpec` Block above.
@@ -3473,7 +3360,6 @@ object sagemaker:
       val argsBuilder = com.pulumi.aws.sagemaker.inputs.DomainDomainSettingsRStudioServerProDomainSettingsDefaultResourceSpecArgs.builder
       builder.defaultResourceSpec(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.sagemaker.inputs.UserProfileUserSettingsRSessionAppSettingsArgs.Builder)
     /**
      * @param customImages A list of custom SageMaker AI images that are configured to run as a KernelGateway app. see Custom Image below.
@@ -3493,7 +3379,6 @@ object sagemaker:
       val argsBuilder = com.pulumi.aws.sagemaker.inputs.UserProfileUserSettingsRSessionAppSettingsDefaultResourceSpecArgs.builder
       builder.defaultResourceSpec(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.sagemaker.inputs.AlgorithmValidationSpecificationValidationProfilesTrainingJobDefinitionResourceConfigArgs.Builder)
     /**
      * @param instanceGroups Instance group definitions for the training job. See Instance Groups.
@@ -3513,7 +3398,6 @@ object sagemaker:
       val argsBuilder = com.pulumi.aws.sagemaker.inputs.AlgorithmValidationSpecificationValidationProfilesTrainingJobDefinitionResourceConfigInstancePlacementConfigArgs.builder
       builder.instancePlacementConfig(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.sagemaker.inputs.HyperParameterTuningJobState.Builder)
     /**
      * @param autotune Autotune settings. See `autotune`.
@@ -3568,7 +3452,7 @@ object sagemaker:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.sagemaker.inputs.HyperParameterTuningJobState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.sagemaker.inputs.LabelingJobState.Builder)
     /**
      * @param humanTaskConfig Configuration information required for human workers to complete a labeling task. Fields are documented below.
@@ -3627,7 +3511,7 @@ object sagemaker:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.sagemaker.inputs.LabelingJobState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.sagemaker.inputs.DataQualityJobDefinitionDataQualityJobOutputConfigMonitoringOutputsArgs.Builder)
     /**
      * @param s3Output The Amazon S3 storage location where the results of a monitoring job are saved. Fields are documented below.
@@ -3638,7 +3522,6 @@ object sagemaker:
       val argsBuilder = com.pulumi.aws.sagemaker.inputs.DataQualityJobDefinitionDataQualityJobOutputConfigMonitoringOutputsS3OutputArgs.builder
       builder.s3Output(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.sagemaker.inputs.DomainDefaultUserSettingsCustomFileSystemConfigArgs.Builder)
     /**
      * @param efsFileSystemConfig The default EBS storage settings for a private space. See `efsFileSystemConfig` Block below.
@@ -3649,7 +3532,6 @@ object sagemaker:
       val argsBuilder = com.pulumi.aws.sagemaker.inputs.DomainDefaultUserSettingsCustomFileSystemConfigEfsFileSystemConfigArgs.builder
       builder.efsFileSystemConfig(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.sagemaker.inputs.UserProfileState.Builder)
     /**
      * @param userSettings The user settings. See User Settings below.
@@ -3663,7 +3545,7 @@ object sagemaker:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.sagemaker.inputs.UserProfileState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.sagemaker.inputs.DomainDefaultUserSettingsSpaceStorageSettingsArgs.Builder)
     /**
      * @param defaultEbsStorageSettings The default EBS storage settings for a private space. See `defaultEbsStorageSettings` Block below.
@@ -3674,7 +3556,6 @@ object sagemaker:
       val argsBuilder = com.pulumi.aws.sagemaker.inputs.DomainDefaultUserSettingsSpaceStorageSettingsDefaultEbsStorageSettingsArgs.builder
       builder.defaultEbsStorageSettings(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.sagemaker.inputs.TrainingJobInputDataConfigDataSourceS3DataSourceArgs.Builder)
     /**
      * @param hubAccessConfig SageMaker AI Hub access configuration. See `hubAccessConfig` below.
@@ -3694,7 +3575,6 @@ object sagemaker:
       val argsBuilder = com.pulumi.aws.sagemaker.inputs.TrainingJobInputDataConfigDataSourceS3DataSourceModelAccessConfigArgs.builder
       builder.modelAccessConfig(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.sagemaker.inputs.DomainDefaultUserSettingsArgs.Builder)
     /**
      * @param canvasAppSettings The Canvas app settings. See `canvasAppSettings` Block below.
@@ -3813,7 +3693,6 @@ object sagemaker:
       val argsBuilder = com.pulumi.aws.sagemaker.inputs.DomainDefaultUserSettingsTensorBoardAppSettingsArgs.builder
       builder.tensorBoardAppSettings(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.sagemaker.inputs.MlflowAppState.Builder)
     def timeouts(args: Endofunction[com.pulumi.aws.sagemaker.inputs.MlflowAppTimeoutsArgs.Builder]):
         com.pulumi.aws.sagemaker.inputs.MlflowAppState.Builder =
@@ -3823,7 +3702,7 @@ object sagemaker:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.sagemaker.inputs.MlflowAppState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.sagemaker.inputs.FeatureGroupState.Builder)
     /**
      * @param featureDefinitions A list of Feature names and types. See Feature Definition Below.
@@ -3860,7 +3739,7 @@ object sagemaker:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.sagemaker.inputs.FeatureGroupState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.sagemaker.inputs.AlgorithmTrainingSpecificationSupportedHyperParameterArgs.Builder)
     /**
      * @param range Allowed value range for the hyperparameter. See Parameter Range.
@@ -3871,7 +3750,6 @@ object sagemaker:
       val argsBuilder = com.pulumi.aws.sagemaker.inputs.AlgorithmTrainingSpecificationSupportedHyperParameterRangeArgs.builder
       builder.range(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.sagemaker.inputs.AlgorithmState.Builder)
     /**
      * @param inferenceSpecification Configuration for inference jobs that use this algorithm. See Inference Specification.
@@ -3908,7 +3786,7 @@ object sagemaker:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.sagemaker.inputs.AlgorithmState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.sagemaker.inputs.AlgorithmValidationSpecificationValidationProfilesTrainingJobDefinitionInputDataConfigDataSourceArgs.Builder)
     /**
      * @param fileSystemDataSource File system-backed data source. See File System Data Source.
@@ -3928,7 +3806,6 @@ object sagemaker:
       val argsBuilder = com.pulumi.aws.sagemaker.inputs.AlgorithmValidationSpecificationValidationProfilesTrainingJobDefinitionInputDataConfigDataSourceS3DataSourceArgs.builder
       builder.s3DataSource(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.sagemaker.inputs.EndpointDeploymentConfigArgs.Builder)
     /**
      * @param autoRollbackConfiguration Automatic rollback configuration for handling endpoint deployment failures and recovery. See Auto Rollback Configuration.
@@ -3957,7 +3834,6 @@ object sagemaker:
       val argsBuilder = com.pulumi.aws.sagemaker.inputs.EndpointDeploymentConfigRollingUpdatePolicyArgs.builder
       builder.rollingUpdatePolicy(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.sagemaker.inputs.AlgorithmValidationSpecificationValidationProfilesTrainingJobDefinitionResourceConfigInstancePlacementConfigArgs.Builder)
     /**
      * @param placementSpecifications Placement specifications for ultra servers. See Placement Specifications.
@@ -3968,7 +3844,6 @@ object sagemaker:
       def argsBuilder = com.pulumi.aws.sagemaker.inputs.AlgorithmValidationSpecificationValidationProfilesTrainingJobDefinitionResourceConfigInstancePlacementConfigPlacementSpecificationArgs.builder
       builder.placementSpecifications(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.sagemaker.inputs.WorkteamState.Builder)
     /**
      * @param memberDefinitions A list of Member Definitions that contains objects that identify the workers that make up the work team. Workforces can be created using Amazon Cognito or your own OIDC Identity Provider (IdP). For private workforces created using Amazon Cognito use `cognitoMemberDefinition`. For workforces created using your own OIDC identity provider (IdP) use `oidcMemberDefinition`. Do not provide input for both of these parameters in a single request. see Member Definition details below.
@@ -4000,7 +3875,7 @@ object sagemaker:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.sagemaker.inputs.WorkteamState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.sagemaker.inputs.TrainingJobAlgorithmSpecificationTrainingImageConfigArgs.Builder)
     /**
      * @param trainingRepositoryAuthConfig Authentication configuration for the training image repository. See `trainingRepositoryAuthConfig` below.
@@ -4011,7 +3886,6 @@ object sagemaker:
       val argsBuilder = com.pulumi.aws.sagemaker.inputs.TrainingJobAlgorithmSpecificationTrainingImageConfigTrainingRepositoryAuthConfigArgs.builder
       builder.trainingRepositoryAuthConfig(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.sagemaker.inputs.AppImageConfigKernelGatewayImageConfigArgs.Builder)
     /**
      * @param fileSystemConfig The URL where the Git repository is located. See File System Config details below.
@@ -4031,7 +3905,6 @@ object sagemaker:
       def argsBuilder = com.pulumi.aws.sagemaker.inputs.AppImageConfigKernelGatewayImageConfigKernelSpecArgs.builder
       builder.kernelSpecs(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.sagemaker.inputs.SpaceSpaceSettingsSpaceStorageSettingsArgs.Builder)
     /**
      * @param ebsStorageSettings A collection of EBS storage settings for a space. See `ebsStorageSettings` Block below.
@@ -4042,7 +3915,6 @@ object sagemaker:
       val argsBuilder = com.pulumi.aws.sagemaker.inputs.SpaceSpaceSettingsSpaceStorageSettingsEbsStorageSettingsArgs.builder
       builder.ebsStorageSettings(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.sagemaker.inputs.HyperParameterTuningJobConfigTuningJobCompletionCriteriaArgs.Builder)
     /**
      * @param bestObjectiveNotImproving Stop condition for non-improving jobs. See `bestObjectiveNotImproving`.
@@ -4062,7 +3934,6 @@ object sagemaker:
       val argsBuilder = com.pulumi.aws.sagemaker.inputs.HyperParameterTuningJobConfigTuningJobCompletionCriteriaConvergenceDetectedArgs.builder
       builder.convergenceDetected(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.sagemaker.inputs.MonitoringScheduleMonitoringScheduleConfigMonitoringJobDefinitionArgs.Builder)
     /**
      * @param baseline Baseline configuration used to validate that the data conforms to the specified constraints and statistics. Fields are documented below.
@@ -4127,7 +3998,6 @@ object sagemaker:
       def argsBuilder = com.pulumi.aws.sagemaker.inputs.MonitoringScheduleMonitoringScheduleConfigMonitoringJobDefinitionStoppingConditionArgs.builder
       builder.stoppingConditions(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.sagemaker.inputs.UserProfileUserSettingsJupyterLabAppSettingsAppLifecycleManagementArgs.Builder)
     /**
      * @param idleSettings Settings related to idle shutdown of Studio applications. see `idleSettings` Block below.
@@ -4138,7 +4008,6 @@ object sagemaker:
       val argsBuilder = com.pulumi.aws.sagemaker.inputs.UserProfileUserSettingsJupyterLabAppSettingsAppLifecycleManagementIdleSettingsArgs.builder
       builder.idleSettings(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.sagemaker.inputs.MonitoringScheduleMonitoringScheduleConfigMonitoringJobDefinitionBaselineArgs.Builder)
     def constraintsResource(args: Endofunction[com.pulumi.aws.sagemaker.inputs.MonitoringScheduleMonitoringScheduleConfigMonitoringJobDefinitionBaselineConstraintsResourceArgs.Builder]):
         com.pulumi.aws.sagemaker.inputs.MonitoringScheduleMonitoringScheduleConfigMonitoringJobDefinitionBaselineArgs.Builder =
@@ -4150,7 +4019,6 @@ object sagemaker:
       val argsBuilder = com.pulumi.aws.sagemaker.inputs.MonitoringScheduleMonitoringScheduleConfigMonitoringJobDefinitionBaselineStatisticsResourceArgs.builder
       builder.statisticsResource(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.sagemaker.inputs.AlgorithmValidationSpecificationValidationProfilesTrainingJobDefinitionInputDataConfigDataSourceS3DataSourceArgs.Builder)
     def hubAccessConfig(args: Endofunction[com.pulumi.aws.sagemaker.inputs.AlgorithmValidationSpecificationValidationProfilesTrainingJobDefinitionInputDataConfigDataSourceS3DataSourceHubAccessConfigArgs.Builder]):
         com.pulumi.aws.sagemaker.inputs.AlgorithmValidationSpecificationValidationProfilesTrainingJobDefinitionInputDataConfigDataSourceS3DataSourceArgs.Builder =
@@ -4162,7 +4030,6 @@ object sagemaker:
       val argsBuilder = com.pulumi.aws.sagemaker.inputs.AlgorithmValidationSpecificationValidationProfilesTrainingJobDefinitionInputDataConfigDataSourceS3DataSourceModelAccessConfigArgs.builder
       builder.modelAccessConfig(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.sagemaker.inputs.EndpointConfigurationAsyncInferenceConfigOutputConfigArgs.Builder)
     /**
      * @param notificationConfig Configuration for notifications of inference results for asynchronous inference.
@@ -4173,7 +4040,6 @@ object sagemaker:
       val argsBuilder = com.pulumi.aws.sagemaker.inputs.EndpointConfigurationAsyncInferenceConfigOutputConfigNotificationConfigArgs.builder
       builder.notificationConfig(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.sagemaker.inputs.UserProfileUserSettingsSpaceStorageSettingsArgs.Builder)
     /**
      * @param defaultEbsStorageSettings The default EBS storage settings for a private space. See Default EBS Storage Settings below.
@@ -4184,7 +4050,6 @@ object sagemaker:
       val argsBuilder = com.pulumi.aws.sagemaker.inputs.UserProfileUserSettingsSpaceStorageSettingsDefaultEbsStorageSettingsArgs.builder
       builder.defaultEbsStorageSettings(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.sagemaker.inputs.HubState.Builder)
     /**
      * @param s3StorageConfig The Amazon S3 storage configuration for the hub. See S3 Storage Config details below.
@@ -4198,7 +4063,7 @@ object sagemaker:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.sagemaker.inputs.HubState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.sagemaker.inputs.PipelineState.Builder)
     /**
      * @param parallelismConfiguration This is the configuration that controls the parallelism of the pipeline. If specified, it applies to all runs of this pipeline by default. see Parallelism Configuration details below.
@@ -4221,7 +4086,7 @@ object sagemaker:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.sagemaker.inputs.PipelineState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.sagemaker.inputs.DomainDefaultUserSettingsJupyterLabAppSettingsAppLifecycleManagementArgs.Builder)
     /**
      * @param idleSettings Settings related to idle shutdown of Studio applications. see `idleSettings` Block below.
@@ -4232,7 +4097,6 @@ object sagemaker:
       val argsBuilder = com.pulumi.aws.sagemaker.inputs.DomainDefaultUserSettingsJupyterLabAppSettingsAppLifecycleManagementIdleSettingsArgs.builder
       builder.idleSettings(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.sagemaker.inputs.TrainingJobResourceConfigInstancePlacementConfigArgs.Builder)
     /**
      * @param placementSpecifications Placement specifications for instance placement. See `placementSpecifications` below.
@@ -4243,7 +4107,6 @@ object sagemaker:
       def argsBuilder = com.pulumi.aws.sagemaker.inputs.TrainingJobResourceConfigInstancePlacementConfigPlacementSpecificationArgs.builder
       builder.placementSpecifications(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.sagemaker.inputs.MonitoringScheduleMonitoringScheduleConfigMonitoringJobDefinitionMonitoringOutputConfigArgs.Builder)
     /**
      * @param monitoringOutputs Monitoring outputs for monitoring jobs. Fields are documented below.
@@ -4254,7 +4117,6 @@ object sagemaker:
       val argsBuilder = com.pulumi.aws.sagemaker.inputs.MonitoringScheduleMonitoringScheduleConfigMonitoringJobDefinitionMonitoringOutputConfigMonitoringOutputsArgs.builder
       builder.monitoringOutputs(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.sagemaker.inputs.AlgorithmInferenceSpecificationContainerArgs.Builder)
     /**
      * @param additionalS3DataSource Additional model data to make available to the container. See Additional S3 Data Source.
@@ -4292,7 +4154,6 @@ object sagemaker:
       val argsBuilder = com.pulumi.aws.sagemaker.inputs.AlgorithmInferenceSpecificationContainerModelInputArgs.builder
       builder.modelInput(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.sagemaker.inputs.EndpointConfigurationShadowProductionVariantArgs.Builder)
     /**
      * @param coreDumpConfig Core dump configuration from the model container when the process crashes. Fields are documented below.
@@ -4330,7 +4191,6 @@ object sagemaker:
       val argsBuilder = com.pulumi.aws.sagemaker.inputs.EndpointConfigurationShadowProductionVariantServerlessConfigArgs.builder
       builder.serverlessConfig(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.sagemaker.inputs.SpaceSpaceSettingsCodeEditorAppSettingsAppLifecycleManagementArgs.Builder)
     /**
      * @param idleSettings Settings related to idle shutdown of Studio applications. See `idleSettings` Block below.
@@ -4341,7 +4201,6 @@ object sagemaker:
       val argsBuilder = com.pulumi.aws.sagemaker.inputs.SpaceSpaceSettingsCodeEditorAppSettingsAppLifecycleManagementIdleSettingsArgs.builder
       builder.idleSettings(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.sagemaker.inputs.SpaceSpaceSettingsKernelGatewayAppSettingsArgs.Builder)
     /**
      * @param customImages A list of custom SageMaker AI images that are configured to run as a KernelGateway app. See `customImage` Block below.
@@ -4361,7 +4220,6 @@ object sagemaker:
       val argsBuilder = com.pulumi.aws.sagemaker.inputs.SpaceSpaceSettingsKernelGatewayAppSettingsDefaultResourceSpecArgs.builder
       builder.defaultResourceSpec(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.sagemaker.inputs.MonitoringScheduleMonitoringScheduleConfigMonitoringJobDefinitionMonitoringInputsArgs.Builder)
     /**
      * @param batchTransformInput Input object for the batch transform job. Fields are documented below.
@@ -4381,7 +4239,6 @@ object sagemaker:
       val argsBuilder = com.pulumi.aws.sagemaker.inputs.MonitoringScheduleMonitoringScheduleConfigMonitoringJobDefinitionMonitoringInputsEndpointInputArgs.builder
       builder.endpointInput(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.sagemaker.inputs.EndpointConfigurationDataCaptureConfigArgs.Builder)
     /**
      * @param captureContentTypeHeader Content type headers to capture. See `captureContentTypeHeader` below.
@@ -4401,7 +4258,6 @@ object sagemaker:
       def argsBuilder = com.pulumi.aws.sagemaker.inputs.EndpointConfigurationDataCaptureConfigCaptureOptionArgs.builder
       builder.captureOptions(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.sagemaker.inputs.DomainDefaultSpaceSettingsJupyterLabAppSettingsAppLifecycleManagementArgs.Builder)
     /**
      * @param idleSettings Settings related to idle shutdown of Studio applications. see `idleSettings` Block below.
@@ -4412,7 +4268,6 @@ object sagemaker:
       val argsBuilder = com.pulumi.aws.sagemaker.inputs.DomainDefaultSpaceSettingsJupyterLabAppSettingsAppLifecycleManagementIdleSettingsArgs.builder
       builder.idleSettings(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.sagemaker.inputs.ProjectServiceCatalogProvisioningDetailsArgs.Builder)
     /**
      * @param provisioningParameters A list of key value pairs that you specify when you provision a product. See Provisioning Parameter below.
@@ -4423,7 +4278,6 @@ object sagemaker:
       def argsBuilder = com.pulumi.aws.sagemaker.inputs.ProjectServiceCatalogProvisioningDetailsProvisioningParameterArgs.builder
       builder.provisioningParameters(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.sagemaker.inputs.AlgorithmInferenceSpecificationContainerModelDataSourceS3DataSourceArgs.Builder)
     def hubAccessConfig(args: Endofunction[com.pulumi.aws.sagemaker.inputs.AlgorithmInferenceSpecificationContainerModelDataSourceS3DataSourceHubAccessConfigArgs.Builder]):
         com.pulumi.aws.sagemaker.inputs.AlgorithmInferenceSpecificationContainerModelDataSourceS3DataSourceArgs.Builder =
@@ -4435,7 +4289,6 @@ object sagemaker:
       val argsBuilder = com.pulumi.aws.sagemaker.inputs.AlgorithmInferenceSpecificationContainerModelDataSourceS3DataSourceModelAccessConfigArgs.builder
       builder.modelAccessConfig(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.sagemaker.inputs.ModelCardState.Builder)
     /**
      * @param securityConfig KMS key to encrypt, decrypt, and re-encrypt model card content. Fields are documented below.
@@ -4454,7 +4307,7 @@ object sagemaker:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.sagemaker.inputs.ModelCardState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.sagemaker.inputs.HyperParameterTuningJobTrainingJobDefinitionArgs.Builder)
     /**
      * @param algorithmSpecification Algorithm settings. See `algorithmSpecification`.
@@ -4555,7 +4408,6 @@ object sagemaker:
       val argsBuilder = com.pulumi.aws.sagemaker.inputs.HyperParameterTuningJobTrainingJobDefinitionVpcConfigArgs.builder
       builder.vpcConfig(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.sagemaker.inputs.SpaceSpaceSettingsCustomFileSystemArgs.Builder)
     /**
      * @param efsFileSystem A custom file system in Amazon EFS. See `efsFileSystem` Block below.
@@ -4566,7 +4418,6 @@ object sagemaker:
       val argsBuilder = com.pulumi.aws.sagemaker.inputs.SpaceSpaceSettingsCustomFileSystemEfsFileSystemArgs.builder
       builder.efsFileSystem(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.sagemaker.inputs.WorkteamWorkerAccessConfigurationS3PresignArgs.Builder)
     /**
      * @param iamPolicyConstraints Use this parameter to specify the allowed request source. Possible sources are either SourceIp or VpcSourceIp. see IAM Policy Constraints details below.
@@ -4577,7 +4428,6 @@ object sagemaker:
       val argsBuilder = com.pulumi.aws.sagemaker.inputs.WorkteamWorkerAccessConfigurationS3PresignIamPolicyConstraintsArgs.builder
       builder.iamPolicyConstraints(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.sagemaker.inputs.ModelPrimaryContainerAdditionalModelDataSourceArgs.Builder)
     /**
      * @param s3DataSources S3 location of model data to deploy. See S3 Data Source.
@@ -4588,7 +4438,6 @@ object sagemaker:
       def argsBuilder = com.pulumi.aws.sagemaker.inputs.ModelPrimaryContainerAdditionalModelDataSourceS3DataSourceArgs.builder
       builder.s3DataSources(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.sagemaker.inputs.UserProfileUserSettingsCustomFileSystemConfigArgs.Builder)
     /**
      * @param efsFileSystemConfigs The default EBS storage settings for a private space. See EFS File System Config below.
@@ -4599,7 +4448,6 @@ object sagemaker:
       def argsBuilder = com.pulumi.aws.sagemaker.inputs.UserProfileUserSettingsCustomFileSystemConfigEfsFileSystemConfigArgs.builder
       builder.efsFileSystemConfigs(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.sagemaker.inputs.NotebookInstanceState.Builder)
     /**
      * @param instanceMetadataServiceConfiguration Information on the IMDS configuration of the notebook instance. Conflicts with `instanceMetadataServiceConfiguration`. see details below.
@@ -4613,7 +4461,7 @@ object sagemaker:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.sagemaker.inputs.NotebookInstanceState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.sagemaker.inputs.FlowDefinitionHumanLoopActivationConfigArgs.Builder)
     /**
      * @param humanLoopActivationConditionsConfig defines under what conditions SageMaker AI creates a human loop. See Human Loop Activation Conditions Config details below.
@@ -4624,7 +4472,6 @@ object sagemaker:
       val argsBuilder = com.pulumi.aws.sagemaker.inputs.FlowDefinitionHumanLoopActivationConfigHumanLoopActivationConditionsConfigArgs.builder
       builder.humanLoopActivationConditionsConfig(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.sagemaker.inputs.TrainingJobAlgorithmSpecificationArgs.Builder)
     /**
      * @param metricDefinitions List of metric definitions for the training job. Maximum of 40. Use this to extract custom metrics from your own training container logs. SageMaker can still publish built-in metrics for built-in algorithms and supported prebuilt images when this block is omitted. See `metricDefinitions` below.
@@ -4644,7 +4491,6 @@ object sagemaker:
       val argsBuilder = com.pulumi.aws.sagemaker.inputs.TrainingJobAlgorithmSpecificationTrainingImageConfigArgs.builder
       builder.trainingImageConfig(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.sagemaker.inputs.ModelContainerArgs.Builder)
     /**
      * @param additionalModelDataSources Additional data sources that are available to the model in addition to those specified in `modelDataSource`. See Additional Model Data Source.
@@ -4682,7 +4528,6 @@ object sagemaker:
       val argsBuilder = com.pulumi.aws.sagemaker.inputs.ModelContainerMultiModelConfigArgs.builder
       builder.multiModelConfig(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.sagemaker.inputs.SpaceSpaceSettingsJupyterServerAppSettingsArgs.Builder)
     /**
      * @param codeRepositories A list of Git repositories that SageMaker AI automatically displays to users for cloning in the JupyterServer application. See `codeRepository` Block below.
@@ -4702,7 +4547,6 @@ object sagemaker:
       val argsBuilder = com.pulumi.aws.sagemaker.inputs.SpaceSpaceSettingsJupyterServerAppSettingsDefaultResourceSpecArgs.builder
       builder.defaultResourceSpec(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.sagemaker.inputs.ModelPrimaryContainerModelDataSourceS3DataSourceArgs.Builder)
     /**
      * @param modelAccessConfig Specifies the access configuration file for the ML model. You can explicitly accept the model end-user license agreement (EULA) within the [`modelAccessConfig` configuration block]. See Model Access Config.
@@ -4713,7 +4557,6 @@ object sagemaker:
       val argsBuilder = com.pulumi.aws.sagemaker.inputs.ModelPrimaryContainerModelDataSourceS3DataSourceModelAccessConfigArgs.builder
       builder.modelAccessConfig(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.sagemaker.inputs.AlgorithmValidationSpecificationValidationProfilesTransformJobDefinitionTransformInputArgs.Builder)
     /**
      * @param dataSource Data source for the transform job. See Transform Job Data Source.
@@ -4724,7 +4567,6 @@ object sagemaker:
       val argsBuilder = com.pulumi.aws.sagemaker.inputs.AlgorithmValidationSpecificationValidationProfilesTransformJobDefinitionTransformInputDataSourceArgs.builder
       builder.dataSource(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.sagemaker.inputs.DataQualityJobDefinitionDataQualityJobInputArgs.Builder)
     /**
      * @param batchTransformInput Input object for the batch transform job. Fields are documented below.
@@ -4744,7 +4586,6 @@ object sagemaker:
       val argsBuilder = com.pulumi.aws.sagemaker.inputs.DataQualityJobDefinitionDataQualityJobInputEndpointInputArgs.builder
       builder.endpointInput(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.sagemaker.inputs.AppImageConfigCodeEditorAppImageConfigArgs.Builder)
     /**
      * @param containerConfig The configuration used to run the application image container. See Container Config details below.
@@ -4764,7 +4605,6 @@ object sagemaker:
       val argsBuilder = com.pulumi.aws.sagemaker.inputs.AppImageConfigCodeEditorAppImageConfigFileSystemConfigArgs.builder
       builder.fileSystemConfig(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.sagemaker.inputs.SpaceSpaceSettingsArgs.Builder)
     /**
      * @param codeEditorAppSettings The Code Editor application settings. See `codeEditorAppSettings` Block below.
@@ -4820,7 +4660,6 @@ object sagemaker:
       val argsBuilder = com.pulumi.aws.sagemaker.inputs.SpaceSpaceSettingsSpaceStorageSettingsArgs.builder
       builder.spaceStorageSettings(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.sagemaker.inputs.ModelPrimaryContainerArgs.Builder)
     /**
      * @param additionalModelDataSources Additional data sources that are available to the model in addition to those specified in `modelDataSource`. See Additional Model Data Source.
@@ -4858,7 +4697,6 @@ object sagemaker:
       val argsBuilder = com.pulumi.aws.sagemaker.inputs.ModelPrimaryContainerMultiModelConfigArgs.builder
       builder.multiModelConfig(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.sagemaker.inputs.FeatureGroupOnlineStoreConfigArgs.Builder)
     /**
      * @param securityConfig Security config for at-rest encryption of your OnlineStore. See Security Config Below.
@@ -4878,7 +4716,6 @@ object sagemaker:
       val argsBuilder = com.pulumi.aws.sagemaker.inputs.FeatureGroupOnlineStoreConfigTtlDurationArgs.builder
       builder.ttlDuration(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.sagemaker.inputs.TrainingJobInputDataConfigDataSourceArgs.Builder)
     /**
      * @param fileSystemDataSource File system data source. See `fileSystemDataSource` below.
@@ -4898,7 +4735,6 @@ object sagemaker:
       val argsBuilder = com.pulumi.aws.sagemaker.inputs.TrainingJobInputDataConfigDataSourceS3DataSourceArgs.builder
       builder.s3DataSource(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.sagemaker.inputs.DataQualityJobDefinitionState.Builder)
     /**
      * @param dataQualityAppSpecification Specifies the container that runs the monitoring job. Fields are documented below.
@@ -4966,7 +4802,7 @@ object sagemaker:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.sagemaker.inputs.DataQualityJobDefinitionState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.sagemaker.inputs.DomainDefaultUserSettingsKernelGatewayAppSettingsArgs.Builder)
     /**
      * @param customImages A list of custom SageMaker AI images that are configured to run as a KernelGateway app. see `customImage` Block below.
@@ -4986,7 +4822,6 @@ object sagemaker:
       val argsBuilder = com.pulumi.aws.sagemaker.inputs.DomainDefaultUserSettingsKernelGatewayAppSettingsDefaultResourceSpecArgs.builder
       builder.defaultResourceSpec(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.sagemaker.inputs.MonitoringScheduleMonitoringScheduleConfigMonitoringJobDefinitionMonitoringInputsBatchTransformInputArgs.Builder)
     /**
      * @param datasetFormat Dataset format for the batch transform job. Fields are documented below.
@@ -4997,7 +4832,6 @@ object sagemaker:
       val argsBuilder = com.pulumi.aws.sagemaker.inputs.MonitoringScheduleMonitoringScheduleConfigMonitoringJobDefinitionMonitoringInputsBatchTransformInputDatasetFormatArgs.builder
       builder.datasetFormat(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.sagemaker.inputs.DataQualityJobDefinitionJobResourcesArgs.Builder)
     /**
      * @param clusterConfig The configuration for the cluster resources used to run the processing job. Fields are documented below.
@@ -5008,14 +4842,12 @@ object sagemaker:
       val argsBuilder = com.pulumi.aws.sagemaker.inputs.DataQualityJobDefinitionJobResourcesClusterConfigArgs.builder
       builder.clusterConfig(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.sagemaker.inputs.FeatureGroupFeatureDefinitionCollectionConfigArgs.Builder)
     def vectorConfig(args: Endofunction[com.pulumi.aws.sagemaker.inputs.FeatureGroupFeatureDefinitionCollectionConfigVectorConfigArgs.Builder]):
         com.pulumi.aws.sagemaker.inputs.FeatureGroupFeatureDefinitionCollectionConfigArgs.Builder =
       val argsBuilder = com.pulumi.aws.sagemaker.inputs.FeatureGroupFeatureDefinitionCollectionConfigVectorConfigArgs.builder
       builder.vectorConfig(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.sagemaker.inputs.MonitoringScheduleMonitoringScheduleConfigMonitoringJobDefinitionMonitoringOutputConfigMonitoringOutputsArgs.Builder)
     /**
      * @param s3Output Amazon S3 storage location where the results of a monitoring job are saved. Fields are documented below.
@@ -5026,7 +4858,6 @@ object sagemaker:
       val argsBuilder = com.pulumi.aws.sagemaker.inputs.MonitoringScheduleMonitoringScheduleConfigMonitoringJobDefinitionMonitoringOutputConfigMonitoringOutputsS3OutputArgs.builder
       builder.s3Output(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.sagemaker.inputs.LabelingJobInputConfigDataSourceArgs.Builder)
     /**
      * @param s3DataSource S3 location of the input data objects.. Fields are documented below.
@@ -5046,7 +4877,6 @@ object sagemaker:
       val argsBuilder = com.pulumi.aws.sagemaker.inputs.LabelingJobInputConfigDataSourceSnsDataSourceArgs.builder
       builder.snsDataSource(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.sagemaker.inputs.DomainDefaultSpaceSettingsKernelGatewayAppSettingsArgs.Builder)
     /**
      * @param customImages A list of custom SageMaker AI images that are configured to run as a KernelGateway app. see `customImage` Block below.
@@ -5066,7 +4896,6 @@ object sagemaker:
       val argsBuilder = com.pulumi.aws.sagemaker.inputs.DomainDefaultSpaceSettingsKernelGatewayAppSettingsDefaultResourceSpecArgs.builder
       builder.defaultResourceSpec(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.sagemaker.inputs.HumanTaskUIState.Builder)
     /**
      * @param uiTemplate The Liquid template for the worker user interface. See UI Template below.
@@ -5080,7 +4909,7 @@ object sagemaker:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.sagemaker.inputs.HumanTaskUIState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.sagemaker.inputs.MonitoringScheduleMonitoringScheduleConfigMonitoringJobDefinitionMonitoringResourcesArgs.Builder)
     /**
      * @param clusterConfig Configuration for the cluster resources used to run the processing job. Fields are documented below.
@@ -5091,7 +4920,6 @@ object sagemaker:
       val argsBuilder = com.pulumi.aws.sagemaker.inputs.MonitoringScheduleMonitoringScheduleConfigMonitoringJobDefinitionMonitoringResourcesClusterConfigArgs.builder
       builder.clusterConfig(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.sagemaker.inputs.DomainDefaultSpaceSettingsArgs.Builder)
     /**
      * @param customFileSystemConfigs The settings for assigning a custom file system to a user profile. Permitted users can access this file system in Amazon SageMaker AI Studio. See `customFileSystemConfig` Block below.
@@ -5147,7 +4975,6 @@ object sagemaker:
       val argsBuilder = com.pulumi.aws.sagemaker.inputs.DomainDefaultSpaceSettingsSpaceStorageSettingsArgs.builder
       builder.spaceStorageSettings(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.sagemaker.inputs.WorkteamWorkerAccessConfigurationArgs.Builder)
     /**
      * @param s3Presign Defines any Amazon S3 resource constraints. see S3 Presign details below.
@@ -5158,7 +4985,6 @@ object sagemaker:
       val argsBuilder = com.pulumi.aws.sagemaker.inputs.WorkteamWorkerAccessConfigurationS3PresignArgs.builder
       builder.s3Presign(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.sagemaker.inputs.DomainDomainSettingsArgs.Builder)
     /**
      * @param dockerSettings A collection of settings that configure the domain\u2019s Docker interaction. see `dockerSettings` Block below.
@@ -5187,7 +5013,6 @@ object sagemaker:
       val argsBuilder = com.pulumi.aws.sagemaker.inputs.DomainDomainSettingsTrustedIdentityPropagationSettingsArgs.builder
       builder.trustedIdentityPropagationSettings(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.sagemaker.inputs.AlgorithmInferenceSpecificationContainerModelDataSourceArgs.Builder)
     /**
      * @param s3DataSource S3-backed model data source. See Model Data Source S3 Data Source.
@@ -5198,7 +5023,6 @@ object sagemaker:
       val argsBuilder = com.pulumi.aws.sagemaker.inputs.AlgorithmInferenceSpecificationContainerModelDataSourceS3DataSourceArgs.builder
       builder.s3DataSource(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.sagemaker.inputs.AppImageConfigState.Builder)
     /**
      * @param codeEditorAppImageConfig The CodeEditorAppImageConfig. See Code Editor App Image Config details below.
@@ -5230,7 +5054,7 @@ object sagemaker:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.sagemaker.inputs.AppImageConfigState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.sagemaker.inputs.DomainDefaultUserSettingsJupyterServerAppSettingsArgs.Builder)
     /**
      * @param codeRepositories A list of Git repositories that SageMaker AI automatically displays to users for cloning in the JupyterServer application. see `codeRepository` Block below.
@@ -5250,7 +5074,6 @@ object sagemaker:
       val argsBuilder = com.pulumi.aws.sagemaker.inputs.DomainDefaultUserSettingsJupyterServerAppSettingsDefaultResourceSpecArgs.builder
       builder.defaultResourceSpec(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.sagemaker.inputs.AppState.Builder)
     /**
      * @param resourceSpec The instance type and the Amazon Resource Name (ARN) of the SageMaker AI image created on the instance.See Resource Spec below.
@@ -5264,7 +5087,7 @@ object sagemaker:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.sagemaker.inputs.AppState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.sagemaker.inputs.ModelCardExportJobState.Builder)
     /**
      * @param exportArtifacts Exported model card artifacts.
@@ -5289,7 +5112,6 @@ object sagemaker:
       val argsBuilder = com.pulumi.aws.sagemaker.inputs.ModelCardExportJobTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.sagemaker.inputs.DomainDefaultSpaceSettingsCustomFileSystemConfigArgs.Builder)
     /**
      * @param efsFileSystemConfig The default EBS storage settings for a private space. See `efsFileSystemConfig` Block below.
@@ -5300,7 +5122,6 @@ object sagemaker:
       val argsBuilder = com.pulumi.aws.sagemaker.inputs.DomainDefaultSpaceSettingsCustomFileSystemConfigEfsFileSystemConfigArgs.builder
       builder.efsFileSystemConfig(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.sagemaker.inputs.LabelingJobInputConfigArgs.Builder)
     /**
      * @param dataAttributes Attributes of the data. Fields are documented below.
@@ -5320,7 +5141,6 @@ object sagemaker:
       val argsBuilder = com.pulumi.aws.sagemaker.inputs.LabelingJobInputConfigDataSourceArgs.builder
       builder.dataSource(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.sagemaker.inputs.DomainDefaultSpaceSettingsJupyterServerAppSettingsArgs.Builder)
     /**
      * @param codeRepositories A list of Git repositories that SageMaker AI automatically displays to users for cloning in the JupyterServer application. see `codeRepository` Block below.
@@ -5340,7 +5160,6 @@ object sagemaker:
       val argsBuilder = com.pulumi.aws.sagemaker.inputs.DomainDefaultSpaceSettingsJupyterServerAppSettingsDefaultResourceSpecArgs.builder
       builder.defaultResourceSpec(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.sagemaker.inputs.WorkteamMemberDefinitionArgs.Builder)
     /**
      * @param cognitoMemberDefinition The Amazon Cognito user group that is part of the work team. See Cognito Member Definition details below.
@@ -5360,7 +5179,6 @@ object sagemaker:
       val argsBuilder = com.pulumi.aws.sagemaker.inputs.WorkteamMemberDefinitionOidcMemberDefinitionArgs.builder
       builder.oidcMemberDefinition(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.sagemaker.inputs.AlgorithmInferenceSpecificationArgs.Builder)
     /**
      * @param containers List of container definitions for inference.
@@ -5371,7 +5189,6 @@ object sagemaker:
       def argsBuilder = com.pulumi.aws.sagemaker.inputs.AlgorithmInferenceSpecificationContainerArgs.builder
       builder.containers(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.sagemaker.inputs.SpaceState.Builder)
     /**
      * @param ownershipSettings A collection of ownership settings. Required if `spaceSharingSettings` is set. See `ownershipSettings` Block below.
@@ -5403,7 +5220,7 @@ object sagemaker:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.sagemaker.inputs.SpaceState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   /** Provides a SageMaker AI Human Task UI resource. */
   def HumanTaskUI(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.sagemaker.HumanTaskUIArgs.Builder])(using conf: KoPulumiConf) =
@@ -5411,7 +5228,6 @@ object sagemaker:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.sagemaker.HumanTaskUI(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -5447,7 +5263,7 @@ object sagemaker:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.sagemaker.WorkteamArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   /** Provides a SageMaker AI Domain resource. */
   def Domain(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.sagemaker.DomainArgs.Builder])(using conf: KoPulumiConf) =
@@ -5455,7 +5271,6 @@ object sagemaker:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.sagemaker.Domain(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)

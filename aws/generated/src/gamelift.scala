@@ -14,7 +14,6 @@ object gamelift:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.gamelift.Build(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -29,7 +28,6 @@ object gamelift:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.gamelift.Fleet(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -47,7 +45,7 @@ object gamelift:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.gamelift.GameSessionQueueArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   /** Provides a GameLift Alias resource. */
   def Alias(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.gamelift.AliasArgs.Builder])(using conf: KoPulumiConf) =
@@ -58,7 +56,6 @@ object gamelift:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.gamelift.Alias(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -76,7 +73,7 @@ object gamelift:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.gamelift.ScriptArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   /** Provides an GameLift Game Session Queue resource. */
   def GameSessionQueue(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.gamelift.GameSessionQueueArgs.Builder])(using conf: KoPulumiConf) =
@@ -87,7 +84,6 @@ object gamelift:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.gamelift.GameSessionQueue(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -99,7 +95,6 @@ object gamelift:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.gamelift.GameServerGroup(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -123,7 +118,7 @@ object gamelift:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.gamelift.GameServerGroupArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.gamelift.BuildArgs.Builder)
     /**
      * @param storageLocation Information indicating where your game build files are stored. See below.
@@ -137,7 +132,7 @@ object gamelift:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.gamelift.BuildArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.gamelift.AliasArgs.Builder)
     /**
      * @param routingStrategy Specifies the fleet and/or routing type to use for the alias.
@@ -151,7 +146,7 @@ object gamelift:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.gamelift.AliasArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.gamelift.FleetArgs.Builder)
     /**
      * @param certificateConfiguration Prompts GameLift to generate a TLS/SSL certificate for the fleet. See certificate_configuration.
@@ -192,7 +187,7 @@ object gamelift:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.gamelift.FleetArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   /** Provides an GameLift Script resource. */
   def Script(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.gamelift.ScriptArgs.Builder])(using conf: KoPulumiConf) =
@@ -203,7 +198,6 @@ object gamelift:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.gamelift.Script(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -218,7 +212,6 @@ object gamelift:
       def argsBuilder = com.pulumi.aws.gamelift.inputs.FleetRuntimeConfigurationServerProcessArgs.builder
       builder.serverProcesses(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.gamelift.inputs.AliasState.Builder)
     /**
      * @param routingStrategy Specifies the fleet and/or routing type to use for the alias.
@@ -232,7 +225,7 @@ object gamelift:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.gamelift.inputs.AliasState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.gamelift.inputs.GameSessionQueueState.Builder)
     /**
      * @param playerLatencyPolicies One or more policies used to choose fleet based on player latency. See below.
@@ -246,7 +239,7 @@ object gamelift:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.gamelift.inputs.GameSessionQueueState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.gamelift.inputs.ScriptState.Builder)
     /**
      * @param storageLocation Information indicating where your game script files are stored. See below.
@@ -260,14 +253,13 @@ object gamelift:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.gamelift.inputs.ScriptState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.gamelift.inputs.GameServerGroupAutoScalingPolicyArgs.Builder)
     def targetTrackingConfiguration(args: Endofunction[com.pulumi.aws.gamelift.inputs.GameServerGroupAutoScalingPolicyTargetTrackingConfigurationArgs.Builder]):
         com.pulumi.aws.gamelift.inputs.GameServerGroupAutoScalingPolicyArgs.Builder =
       val argsBuilder = com.pulumi.aws.gamelift.inputs.GameServerGroupAutoScalingPolicyTargetTrackingConfigurationArgs.builder
       builder.targetTrackingConfiguration(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.gamelift.inputs.BuildState.Builder)
     /**
      * @param storageLocation Information indicating where your game build files are stored. See below.
@@ -281,7 +273,7 @@ object gamelift:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.gamelift.inputs.BuildState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.gamelift.inputs.FleetState.Builder)
     /**
      * @param certificateConfiguration Prompts GameLift to generate a TLS/SSL certificate for the fleet. See certificate_configuration.
@@ -322,7 +314,7 @@ object gamelift:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.gamelift.inputs.FleetState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.gamelift.inputs.GameServerGroupState.Builder)
     def autoScalingPolicy(args: Endofunction[com.pulumi.aws.gamelift.inputs.GameServerGroupAutoScalingPolicyArgs.Builder]):
         com.pulumi.aws.gamelift.inputs.GameServerGroupState.Builder =
@@ -342,4 +334,3 @@ object gamelift:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.gamelift.inputs.GameServerGroupState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       

@@ -35,7 +35,7 @@ object ssmincidents:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.ssmincidents.ResponsePlanArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   type SsmincidentsFunctions = com.pulumi.aws.ssmincidents.SsmincidentsFunctions
   object SsmincidentsFunctions:
     // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
@@ -43,7 +43,7 @@ object ssmincidents:
   extension (self: SsmincidentsFunctions.type)
     /**
      * &gt; **NOTE:** The AWS Region specified by a provider must always be one of the Regions specified for the replication set.
-     *  
+     * 
      *  Use this data source to manage a replication set in AWS Systems Manager Incident Manager.
      */
     def getReplicationSet(args: Endofunction[com.pulumi.aws.ssmincidents.inputs.GetReplicationSetArgs.Builder] = identity):
@@ -53,7 +53,7 @@ object ssmincidents:
 
     /**
      * &gt; **NOTE:** The AWS Region specified by a provider must always be one of the Regions specified for the replication set.
-     *  
+     * 
      *  Use this data source to manage a replication set in AWS Systems Manager Incident Manager.
      */
     def getReplicationSetPlain(args: Endofunction[com.pulumi.aws.ssmincidents.inputs.GetReplicationSetPlainArgs.Builder] = identity):
@@ -75,7 +75,7 @@ object ssmincidents:
 
   /**
    * Provides a resource for managing a replication set in AWS Systems Manager Incident Manager.
-   *  
+   * 
    *  &gt; **NOTE:** Deleting a replication set also deletes all Incident Manager related data including response plans, incident records, contacts and escalation plans.
    */
   def ReplicationSet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
@@ -84,7 +84,6 @@ object ssmincidents:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.ssmincidents.ReplicationSet(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -112,10 +111,10 @@ object ssmincidents:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.ssmincidents.ReplicationSetArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   /**
    * Provides a resource to manage response plans in AWS Systems Manager Incident Manager.
-   *  
+   * 
    *  &gt; NOTE: A response plan implicitly depends on a replication set. If you configured your replication set in Pulumi, we recommend you add it to the `dependsOn` argument for the ResponsePlan Resource.
    */
   def ResponsePlan(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
@@ -127,7 +126,6 @@ object ssmincidents:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.ssmincidents.ResponsePlan(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -142,7 +140,6 @@ object ssmincidents:
       def argsBuilder = com.pulumi.aws.ssmincidents.inputs.ResponsePlanActionSsmAutomationParameterArgs.builder
       builder.parameters(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.ssmincidents.inputs.ResponsePlanIntegrationArgs.Builder)
     /**
      * @param pagerduties Details about the PagerDuty configuration for a response plan. The following values are supported:
@@ -153,7 +150,6 @@ object ssmincidents:
       def argsBuilder = com.pulumi.aws.ssmincidents.inputs.ResponsePlanIntegrationPagerdutyArgs.builder
       builder.pagerduties(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.ssmincidents.inputs.ReplicationSetState.Builder)
     /**
      * @param region The replication set&#39;s Regions. Use `regions` instead.
@@ -177,7 +173,7 @@ object ssmincidents:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.ssmincidents.inputs.ReplicationSetState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.ssmincidents.inputs.ResponsePlanState.Builder)
     /**
      * @param action The actions that the response plan starts at the beginning of an incident.
@@ -209,7 +205,7 @@ object ssmincidents:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.ssmincidents.inputs.ResponsePlanState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.ssmincidents.inputs.ResponsePlanActionArgs.Builder)
     /**
      * @param ssmAutomations The Systems Manager automation document to start as the runbook at the beginning of the incident. The following values are supported:
@@ -220,7 +216,6 @@ object ssmincidents:
       def argsBuilder = com.pulumi.aws.ssmincidents.inputs.ResponsePlanActionSsmAutomationArgs.builder
       builder.ssmAutomations(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.ssmincidents.inputs.ResponsePlanIncidentTemplateArgs.Builder)
     /**
      * @param notificationTargets The Amazon Simple Notification Service (Amazon SNS) targets that this incident notifies when it is updated. The `notificationTarget` configuration block supports the following argument:
@@ -230,5 +225,3 @@ object ssmincidents:
         com.pulumi.aws.ssmincidents.inputs.ResponsePlanIncidentTemplateArgs.Builder =
       def argsBuilder = com.pulumi.aws.ssmincidents.inputs.ResponsePlanIncidentTemplateNotificationTargetArgs.builder
       builder.notificationTargets(args.map(_(argsBuilder).build)*)
-
-                       

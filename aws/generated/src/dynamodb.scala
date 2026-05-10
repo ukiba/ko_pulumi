@@ -6,17 +6,16 @@ import com.pulumi.resources.CustomResourceOptions
 object dynamodb:
   /**
    * Resource for managing an AWS DynamoDB Table Export. Terraform will wait until the Table export reaches a status of `COMPLETED` or `FAILED`.
-   *  
+   * 
    *  See the [AWS Documentation](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/S3DataExport.HowItWorks.html) for more information on how this process works.
-   *  
+   * 
    *  &gt; **TIP:** Point-in-time Recovery must be enabled on the target DynamoDB Table.
-   *  
+   * 
    *  &gt; **NOTE:** Once a AWS DynamoDB Table Export has been created it is immutable. The AWS API does not delete this resource. When you run destroy the provider will remove the resource from the Terraform state, no exported data will be deleted.
    */
   def TableExport(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.dynamodb.TableExportArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.dynamodb.TableExportArgs.builder
-    
     com.pulumi.aws.dynamodb.TableExport(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -124,7 +123,7 @@ object dynamodb:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.dynamodb.TableArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.dynamodb.GlobalTableArgs.Builder)
     /**
      * @param replicas Underlying DynamoDB Table. At least 1 replica must be defined. See below.
@@ -135,17 +134,15 @@ object dynamodb:
       def argsBuilder = com.pulumi.aws.dynamodb.inputs.GlobalTableReplicaArgs.builder
       builder.replicas(args.map(_(argsBuilder).build)*)
 
-                       
   /**
    * Provides a DynamoDB table item resource
-   *  
+   * 
    *  &gt; **Note:** This resource is not meant to be used for managing large amounts of data in your table, it is not designed to scale.
    *    You should perform **regular backups** of all data in the table, see [AWS docs for more](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/BackupRestore.html).
    */
   def TableItem(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.dynamodb.TableItemArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.dynamodb.TableItemArgs.builder
-    
     com.pulumi.aws.dynamodb.TableItem(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -154,22 +151,20 @@ object dynamodb:
   def KinesisStreamingDestination(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.dynamodb.KinesisStreamingDestinationArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.dynamodb.KinesisStreamingDestinationArgs.builder
-    
     com.pulumi.aws.dynamodb.KinesisStreamingDestination(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
   /**
    * Manages an individual DynamoDB resource tag. This resource should only be used in cases where DynamoDB resources are created outside the provider (e.g., Table replicas in other regions).
-   *  
+   * 
    *  &gt; **NOTE:** This tagging resource should not be combined with the resource for managing the parent resource. For example, using `aws.dynamodb.Table` and `aws.dynamodb.Tag` to manage tags of the same DynamoDB Table in the same region will cause a perpetual difference where the `awsDynamodbCluster` resource will try to remove the tag being added by the `aws.dynamodb.Tag` resource.
-   *  
+   * 
    *  &gt; **NOTE:** This tagging resource does not use the provider `ignoreTags` configuration.
    */
   def Tag(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.dynamodb.TagArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.dynamodb.TagArgs.builder
-    
     com.pulumi.aws.dynamodb.Tag(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -235,25 +230,24 @@ object dynamodb:
       val argsBuilder = com.pulumi.aws.dynamodb.inputs.GlobalSecondaryIndexWarmThroughputArgs.builder
       builder.warmThroughput(args(argsBuilder).build)
 
-                       
   /**
    * Provides a DynamoDB table resource.
-   *  
+   * 
    *  &gt; **Note:** It is recommended to use [`ignoreChanges`](https://www.pulumi.com/docs/intro/concepts/programming-model/#ignorechanges) for `readCapacity` and/or `writeCapacity` if there&#39;s `autoscaling policy` attached to the table.
-   *  
+   * 
    *  &gt; **Note:** When using aws.dynamodb.TableReplica with this resource, use `lifecycle` `ignoreChanges` for `replica`, _e.g._, `lifecycle { ignoreChanges = [replica] }`.
-   *  
+   * 
    *  &gt; **Note:** If autoscaling creates drift for your `globalSecondaryIndex` blocks and/or more granular `lifecycle` management for GSIs, we recommend using the new **experimental** resource `aws.dynamodb.GlobalSecondaryIndex`.
-   *  
+   * 
    *  ## DynamoDB Table attributes
-   *  
+   * 
    *  Only define attributes on the table object that are going to be used as:
-   *  
+   * 
    *  * Table hash key or range key
    *  * LSI or GSI hash key or range key
-   *  
+   * 
    *  The DynamoDB API expects attribute structure (name and type) to be passed along when creating or updating GSI/LSIs or creating the initial table. In these cases it expects the Hash / Range keys to be provided. Because these get re-used in numerous places (i.e the table&#39;s range key could be a part of one or more GSIs), they are stored on the table object to prevent duplication and increase consistency. If you add attributes here that are not used in these scenarios it can cause an infinite loop in planning.
-   *  
+   * 
    *  &gt; **Note:** When using the `aws.dynamodb.GlobalSecondaryIndex` resource, you do not need to define the attributes for externally managed GSIs in the `aws.dynamodb.Table` resource.
    */
   def Table(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
@@ -265,7 +259,6 @@ object dynamodb:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.dynamodb.Table(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -274,7 +267,6 @@ object dynamodb:
   def ResourcePolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.dynamodb.ResourcePolicyArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.dynamodb.ResourcePolicyArgs.builder
-    
     com.pulumi.aws.dynamodb.ResourcePolicy(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -283,7 +275,6 @@ object dynamodb:
   def GlobalSecondaryIndex(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.dynamodb.GlobalSecondaryIndexArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.dynamodb.GlobalSecondaryIndexArgs.builder
-    
     com.pulumi.aws.dynamodb.GlobalSecondaryIndex(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -343,9 +334,9 @@ object dynamodb:
 
   /**
    * Manages [DynamoDB Global Tables V1 (version 2017.11.29)](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V1.html). These are layered on top of existing DynamoDB Tables.
-   *  
+   * 
    *  &gt; **NOTE:** To instead manage [DynamoDB Global Tables V2 (version 2019.11.21)](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html), use the `aws.dynamodb.Table` resource `replica` configuration block.
-   *  
+   * 
    *  &gt; Note: There are many restrictions before you can properly create DynamoDB Global Tables in multiple regions. See the [AWS DynamoDB Global Table Requirements](http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables_reqs_bestpractices.html) for more information.
    */
   def GlobalTable(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
@@ -354,7 +345,6 @@ object dynamodb:
     conf.logicalName2pysicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
       case None               =>
-    
     com.pulumi.aws.dynamodb.GlobalTable(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -365,21 +355,19 @@ object dynamodb:
       val argsBuilder = com.pulumi.aws.dynamodb.inputs.TableExportIncrementalExportSpecificationArgs.builder
       builder.incrementalExportSpecification(args(argsBuilder).build)
 
-                       
   /** Provides a DynamoDB contributor insights resource */
   def ContributorInsights(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.dynamodb.ContributorInsightsArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.dynamodb.ContributorInsightsArgs.builder
-    
     com.pulumi.aws.dynamodb.ContributorInsights(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
   /**
    * Provides a DynamoDB table replica resource for [DynamoDB Global Tables V2 (version 2019.11.21)](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html).
-   *  
+   * 
    *  &gt; **Note:** Use `lifecycle` `ignoreChanges` for `replica` in the associated aws.dynamodb.Table configuration.
-   *  
+   * 
    *  &gt; **Note:** Do not use the `replica` configuration block of aws.dynamodb.Table together with this resource as the two configuration options are mutually exclusive.
    */
   def TableReplica(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
@@ -388,7 +376,6 @@ object dynamodb:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.dynamodb.TableReplica(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -402,7 +389,7 @@ object dynamodb:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.dynamodb.inputs.GetTableArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.dynamodb.inputs.TableImportTableInputFormatOptionsArgs.Builder)
     /**
      * @param csv This block contains the processing options for the CSV file being imported:
@@ -413,7 +400,6 @@ object dynamodb:
       val argsBuilder = com.pulumi.aws.dynamodb.inputs.TableImportTableInputFormatOptionsCsvArgs.builder
       builder.csv(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.dynamodb.inputs.GlobalSecondaryIndexState.Builder)
     /**
      * @param keySchemas Set of nested attribute definitions.
@@ -475,7 +461,6 @@ object dynamodb:
       val argsBuilder = com.pulumi.aws.dynamodb.inputs.GlobalSecondaryIndexWarmThroughputArgs.builder
       builder.warmThroughput(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.dynamodb.inputs.TableState.Builder)
     /**
      * @param attributes Set of nested attribute definitions. Only required for `hashKey` and `rangeKey` attributes. See below.
@@ -579,7 +564,7 @@ object dynamodb:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.dynamodb.inputs.TableState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.dynamodb.inputs.TableGlobalSecondaryIndexArgs.Builder)
     /**
      * @param keySchemas Configuration block(s) for the key schema. Mutually exclusive with `hashKey` and `rangeKey`. Required if `hashKey` is not specified. Supports multi-attribute keys for the [Multi-Attribute Keys design pattern](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GSI.DesignPattern.MultiAttributeKeys.html). See below.
@@ -608,7 +593,6 @@ object dynamodb:
       val argsBuilder = com.pulumi.aws.dynamodb.inputs.TableGlobalSecondaryIndexWarmThroughputArgs.builder
       builder.warmThroughput(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.dynamodb.inputs.GlobalTableState.Builder)
     /**
      * @param replicas Underlying DynamoDB Table. At least 1 replica must be defined. See below.
@@ -619,7 +603,6 @@ object dynamodb:
       def argsBuilder = com.pulumi.aws.dynamodb.inputs.GlobalTableReplicaArgs.builder
       builder.replicas(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.dynamodb.inputs.TableImportTableArgs.Builder)
     /**
      * @param inputFormatOptions Describe the format options for the data that was imported into the target table.
@@ -642,11 +625,8 @@ object dynamodb:
       val argsBuilder = com.pulumi.aws.dynamodb.inputs.TableImportTableS3BucketSourceArgs.builder
       builder.s3BucketSource(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.dynamodb.inputs.TableExportState.Builder)
     def incrementalExportSpecification(args: Endofunction[com.pulumi.aws.dynamodb.inputs.TableExportIncrementalExportSpecificationArgs.Builder]):
         com.pulumi.aws.dynamodb.inputs.TableExportState.Builder =
       val argsBuilder = com.pulumi.aws.dynamodb.inputs.TableExportIncrementalExportSpecificationArgs.builder
       builder.incrementalExportSpecification(args(argsBuilder).build)
-
-                       

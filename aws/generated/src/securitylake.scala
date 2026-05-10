@@ -6,20 +6,19 @@ import com.pulumi.resources.CustomResourceOptions
 object securitylake:
   /**
    * Resource for managing an AWS Security Lake Custom Log Source.
-   *  
+   * 
    *  &gt; **NOTE:** The underlying `aws.securitylake.DataLake` must be configured before creating the `aws.securitylake.CustomLogSource`. Use a `dependsOn` statement.
    */
   def CustomLogSource(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.securitylake.CustomLogSourceArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.securitylake.CustomLogSourceArgs.builder
-    
     com.pulumi.aws.securitylake.CustomLogSource(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
   /**
    * Resource for managing an AWS Security Lake Subscriber.
-   *  
+   * 
    *  &gt; **NOTE:** The underlying `aws.securitylake.DataLake` must be configured before creating the `aws.securitylake.Subscriber`. Use a `dependsOn` statement.
    */
   def Subscriber(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
@@ -28,7 +27,6 @@ object securitylake:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.securitylake.Subscriber(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -37,7 +35,6 @@ object securitylake:
   def SubscriberNotification(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.securitylake.SubscriberNotificationArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.securitylake.SubscriberNotificationArgs.builder
-    
     com.pulumi.aws.securitylake.SubscriberNotification(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -52,7 +49,6 @@ object securitylake:
       val argsBuilder = com.pulumi.aws.securitylake.inputs.AwsLogSourceSourceArgs.builder
       builder.source(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.securitylake.DataLakeArgs.Builder)
     /**
      * @param configuration Specify the Region or Regions that will contribute data to the rollup region.
@@ -71,10 +67,10 @@ object securitylake:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.securitylake.DataLakeArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   /**
    * Resource for managing an AWS Security Lake Data Lake.
-   *  
+   * 
    *  &gt; **NOTE:** The underlying `aws.securitylake.DataLake` must be configured before creating other Security Lake resources. Use a `dependsOn` statement.
    */
   def DataLake(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
@@ -83,7 +79,6 @@ object securitylake:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.securitylake.DataLake(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -115,7 +110,7 @@ object securitylake:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.securitylake.SubscriberArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.securitylake.CustomLogSourceArgs.Builder)
     /**
      * @param configuration The configuration for the third-party custom source.
@@ -126,7 +121,6 @@ object securitylake:
       val argsBuilder = com.pulumi.aws.securitylake.inputs.CustomLogSourceConfigurationArgs.builder
       builder.configuration(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.securitylake.SubscriberNotificationArgs.Builder)
     /**
      * @param configuration Specify the configuration using which you want to create the subscriber notification..
@@ -137,18 +131,16 @@ object securitylake:
       val argsBuilder = com.pulumi.aws.securitylake.inputs.SubscriberNotificationConfigurationArgs.builder
       builder.configuration(args(argsBuilder).build)
 
-                       
   /**
    * Resource for managing an Amazon Security Lake AWS Log Source.
-   *  
+   * 
    *  &gt; **NOTE:** A single `aws.securitylake.AwsLogSource` should be used to configure a log source across all regions and accounts.
-   *  
+   * 
    *  &gt; **NOTE:** The underlying `aws.securitylake.DataLake` must be configured before creating the `aws.securitylake.AwsLogSource`. Use a `dependsOn` statement.
    */
   def AwsLogSource(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.securitylake.AwsLogSourceArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.securitylake.AwsLogSourceArgs.builder
-    
     com.pulumi.aws.securitylake.AwsLogSource(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -172,7 +164,6 @@ object securitylake:
       def argsBuilder = com.pulumi.aws.securitylake.inputs.SubscriberSourceCustomLogSourceResourceProviderArgs.builder
       builder.providers(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.securitylake.inputs.SubscriberState.Builder)
     /**
      * @param sources The supported AWS services from which logs and events are collected. Security Lake supports log and event collection for natively supported AWS services. See `source` Blocks below.
@@ -200,7 +191,7 @@ object securitylake:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.securitylake.inputs.SubscriberState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.securitylake.inputs.DataLakeConfigurationArgs.Builder)
     /**
      * @param encryptionConfigurations Provides encryption details of Amazon Security Lake object.
@@ -229,7 +220,6 @@ object securitylake:
       val argsBuilder = com.pulumi.aws.securitylake.inputs.DataLakeConfigurationReplicationConfigurationArgs.builder
       builder.replicationConfiguration(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.securitylake.inputs.CustomLogSourceConfigurationArgs.Builder)
     /**
      * @param crawlerConfiguration The configuration for the Glue Crawler for the third-party custom source.
@@ -249,7 +239,6 @@ object securitylake:
       val argsBuilder = com.pulumi.aws.securitylake.inputs.CustomLogSourceConfigurationProviderIdentityArgs.builder
       builder.providerIdentity(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.securitylake.inputs.DataLakeConfigurationLifecycleConfigurationArgs.Builder)
     /**
      * @param expiration Provides data expiration details of Amazon Security Lake object.
@@ -269,7 +258,6 @@ object securitylake:
       def argsBuilder = com.pulumi.aws.securitylake.inputs.DataLakeConfigurationLifecycleConfigurationTransitionArgs.builder
       builder.transitions(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.securitylake.inputs.SubscriberNotificationConfigurationArgs.Builder)
     /**
      * @param httpsNotificationConfiguration The configurations for HTTPS subscriber notification.
@@ -290,7 +278,6 @@ object securitylake:
       val argsBuilder = com.pulumi.aws.securitylake.inputs.SubscriberNotificationConfigurationSqsNotificationConfigurationArgs.builder
       builder.sqsNotificationConfiguration(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.securitylake.inputs.DataLakeState.Builder)
     /**
      * @param configuration Specify the Region or Regions that will contribute data to the rollup region.
@@ -309,7 +296,7 @@ object securitylake:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.securitylake.inputs.DataLakeState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.securitylake.inputs.SubscriberSourceArgs.Builder)
     /**
      * @param awsLogSourceResource Amazon Security Lake supports log and event collection for natively supported AWS services. See `awsLogSourceResource` Block below.
@@ -329,7 +316,6 @@ object securitylake:
       val argsBuilder = com.pulumi.aws.securitylake.inputs.SubscriberSourceCustomLogSourceResourceArgs.builder
       builder.customLogSourceResource(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.securitylake.inputs.AwsLogSourceState.Builder)
     /**
      * @param source Specify the natively-supported AWS service to add as a source in Security Lake.
@@ -340,7 +326,6 @@ object securitylake:
       val argsBuilder = com.pulumi.aws.securitylake.inputs.AwsLogSourceSourceArgs.builder
       builder.source(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.securitylake.inputs.CustomLogSourceState.Builder)
     /**
      * @param attributes The attributes of a third-party custom source.
@@ -369,7 +354,6 @@ object securitylake:
       def argsBuilder = com.pulumi.aws.securitylake.inputs.CustomLogSourceProviderDetailArgs.builder
       builder.providerDetails(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.securitylake.inputs.SubscriberNotificationState.Builder)
     /**
      * @param configuration Specify the configuration using which you want to create the subscriber notification..
@@ -379,5 +363,3 @@ object securitylake:
         com.pulumi.aws.securitylake.inputs.SubscriberNotificationState.Builder =
       val argsBuilder = com.pulumi.aws.securitylake.inputs.SubscriberNotificationConfigurationArgs.builder
       builder.configuration(args(argsBuilder).build)
-
-                       

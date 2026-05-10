@@ -8,20 +8,18 @@ object arczonalshift:
   def AutoshiftObserverNotificationStatus(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.arczonalshift.AutoshiftObserverNotificationStatusArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.arczonalshift.AutoshiftObserverNotificationStatusArgs.builder
-    
     com.pulumi.aws.arczonalshift.AutoshiftObserverNotificationStatus(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
   /**
    * Manages an AWS Application Recovery Controller Zonal Shift Zonal Autoshift Configuration for a managed resource (such as a load balancer).
-   *  
+   * 
    *  Zonal autoshift is a capability in AWS Application Recovery Controller (ARC) that automatically shifts traffic away from an Availability Zone when AWS identifies a potential issue, helping maintain application availability.
    */
   def ZonalAutoshiftConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.arczonalshift.ZonalAutoshiftConfigurationArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.arczonalshift.ZonalAutoshiftConfigurationArgs.builder
-    
     com.pulumi.aws.arczonalshift.ZonalAutoshiftConfiguration(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -45,7 +43,6 @@ object arczonalshift:
       def argsBuilder = com.pulumi.aws.arczonalshift.inputs.ZonalAutoshiftConfigurationOutcomeAlarmArgs.builder
       builder.outcomeAlarms(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.arczonalshift.inputs.ZonalAutoshiftConfigurationState.Builder)
     /**
      * @param blockingAlarms List of CloudWatch alarms that can block practice runs when in alarm state. See `blockingAlarms` below.
@@ -64,5 +61,3 @@ object arczonalshift:
         com.pulumi.aws.arczonalshift.inputs.ZonalAutoshiftConfigurationState.Builder =
       def argsBuilder = com.pulumi.aws.arczonalshift.inputs.ZonalAutoshiftConfigurationOutcomeAlarmArgs.builder
       builder.outcomeAlarms(args.map(_(argsBuilder).build)*)
-
-                       

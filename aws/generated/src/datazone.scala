@@ -19,7 +19,6 @@ object datazone:
       val argsBuilder = com.pulumi.aws.datazone.inputs.FormTypeTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
-                       
   /** Resource for managing an AWS DataZone Environment. */
   def Environment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.datazone.EnvironmentArgs.Builder])(using conf: KoPulumiConf) =
@@ -27,7 +26,6 @@ object datazone:
     conf.logicalName2pysicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
       case None               =>
-    
     com.pulumi.aws.datazone.Environment(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -38,7 +36,6 @@ object datazone:
       val argsBuilder = com.pulumi.aws.datazone.inputs.UserProfileTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
-                       
   /** Resource for managing an AWS DataZone Form Type. */
   def FormType(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.datazone.FormTypeArgs.Builder])(using conf: KoPulumiConf) =
@@ -46,7 +43,6 @@ object datazone:
     conf.logicalName2pysicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
       case None               =>
-    
     com.pulumi.aws.datazone.FormType(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -58,7 +54,6 @@ object datazone:
     conf.logicalName2pysicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
       case None               =>
-    
     com.pulumi.aws.datazone.AssetType(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -69,7 +64,6 @@ object datazone:
       val argsBuilder = com.pulumi.aws.datazone.inputs.ProjectTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
-                       
   type DatazoneFunctions = com.pulumi.aws.datazone.DatazoneFunctions
   object DatazoneFunctions:
     // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
@@ -117,12 +111,11 @@ object datazone:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.datazone.DomainArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   /** Resource for managing an AWS DataZone User Profile. */
   def UserProfile(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.datazone.UserProfileArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.datazone.UserProfileArgs.builder
-    
     com.pulumi.aws.datazone.UserProfile(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -134,7 +127,6 @@ object datazone:
     conf.logicalName2pysicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
       case None               =>
-    
     com.pulumi.aws.datazone.Glossary(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -143,7 +135,6 @@ object datazone:
   def EnvironmentBlueprintConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.datazone.EnvironmentBlueprintConfigurationArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.datazone.EnvironmentBlueprintConfigurationArgs.builder
-    
     com.pulumi.aws.datazone.EnvironmentBlueprintConfiguration(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -163,7 +154,6 @@ object datazone:
       val argsBuilder = com.pulumi.aws.datazone.inputs.AssetTypeTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.datazone.EnvironmentArgs.Builder)
     def timeouts(args: Endofunction[com.pulumi.aws.datazone.inputs.EnvironmentTimeoutsArgs.Builder]):
         com.pulumi.aws.datazone.EnvironmentArgs.Builder =
@@ -181,7 +171,6 @@ object datazone:
       def argsBuilder = com.pulumi.aws.datazone.inputs.EnvironmentUserParameterArgs.builder
       builder.userParameters(args.map(_(argsBuilder).build)*)
 
-                       
   /** Resource for managing an AWS DataZone Environment Profile. */
   def EnvironmentProfile(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.datazone.EnvironmentProfileArgs.Builder])(using conf: KoPulumiConf) =
@@ -189,7 +178,6 @@ object datazone:
     conf.logicalName2pysicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
       case None               =>
-    
     com.pulumi.aws.datazone.EnvironmentProfile(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -201,7 +189,6 @@ object datazone:
     conf.logicalName2pysicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
       case None               =>
-    
     com.pulumi.aws.datazone.GlossaryTerm(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -213,7 +200,6 @@ object datazone:
     conf.logicalName2pysicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
       case None               =>
-    
     com.pulumi.aws.datazone.Project(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -228,7 +214,6 @@ object datazone:
       def argsBuilder = com.pulumi.aws.datazone.inputs.EnvironmentProfileUserParameterArgs.builder
       builder.userParameters(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.datazone.GlossaryTermArgs.Builder)
     /**
      * @param termRelations Object classifying the term relations through the following attributes:
@@ -244,7 +229,6 @@ object datazone:
       val argsBuilder = com.pulumi.aws.datazone.inputs.GlossaryTermTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.datazone.inputs.DomainState.Builder)
     /**
      * @param singleSignOn Single sign on options, used to [enable AWS IAM Identity Center](https://docs.aws.amazon.com/datazone/latest/userguide/enable-IAM-identity-center-for-datazone.html) for DataZone.
@@ -263,7 +247,7 @@ object datazone:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.datazone.inputs.DomainState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.datazone.inputs.AssetTypeState.Builder)
     /**
      * @param formsInputs The metadata forms that are to be attached to the custom asset type.
@@ -279,7 +263,6 @@ object datazone:
       val argsBuilder = com.pulumi.aws.datazone.inputs.AssetTypeTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.datazone.inputs.ProjectState.Builder)
     /**
      * @param failureReasons List of error messages if operation cannot be completed.
@@ -295,7 +278,6 @@ object datazone:
       val argsBuilder = com.pulumi.aws.datazone.inputs.ProjectTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.datazone.inputs.EnvironmentState.Builder)
     /**
      * @param lastDeployments The details of the last deployment of the environment.
@@ -327,7 +309,6 @@ object datazone:
       def argsBuilder = com.pulumi.aws.datazone.inputs.EnvironmentUserParameterArgs.builder
       builder.userParameters(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.datazone.inputs.UserProfileState.Builder)
     /**
      * @param details Details about the user profile.
@@ -343,7 +324,6 @@ object datazone:
       val argsBuilder = com.pulumi.aws.datazone.inputs.UserProfileTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.datazone.inputs.EnvironmentProfileState.Builder)
     /**
      * @param userParameters Array of user parameters of the environment profile with the following attributes:
@@ -354,7 +334,6 @@ object datazone:
       def argsBuilder = com.pulumi.aws.datazone.inputs.EnvironmentProfileUserParameterArgs.builder
       builder.userParameters(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.datazone.inputs.UserProfileDetailArgs.Builder)
     def iams(args: Endofunction[com.pulumi.aws.datazone.inputs.UserProfileDetailIamArgs.Builder]*):
         com.pulumi.aws.datazone.inputs.UserProfileDetailArgs.Builder =
@@ -366,14 +345,12 @@ object datazone:
       def argsBuilder = com.pulumi.aws.datazone.inputs.UserProfileDetailSsoArgs.builder
       builder.ssos(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.datazone.inputs.EnvironmentLastDeploymentArgs.Builder)
     def failureReasons(args: Endofunction[com.pulumi.aws.datazone.inputs.EnvironmentLastDeploymentFailureReasonArgs.Builder]*):
         com.pulumi.aws.datazone.inputs.EnvironmentLastDeploymentArgs.Builder =
       def argsBuilder = com.pulumi.aws.datazone.inputs.EnvironmentLastDeploymentFailureReasonArgs.builder
       builder.failureReasons(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.datazone.inputs.FormTypeState.Builder)
     def imports(args: Endofunction[com.pulumi.aws.datazone.inputs.FormTypeImportArgs.Builder]*):
         com.pulumi.aws.datazone.inputs.FormTypeState.Builder =
@@ -394,7 +371,6 @@ object datazone:
       val argsBuilder = com.pulumi.aws.datazone.inputs.FormTypeTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.datazone.inputs.GlossaryTermState.Builder)
     /**
      * @param termRelations Object classifying the term relations through the following attributes:
@@ -410,7 +386,6 @@ object datazone:
       val argsBuilder = com.pulumi.aws.datazone.inputs.GlossaryTermTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
-                       
   /** Resource for managing an AWS DataZone Domain. */
   def Domain(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.datazone.DomainArgs.Builder])(using conf: KoPulumiConf) =
@@ -421,7 +396,6 @@ object datazone:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.datazone.Domain(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)

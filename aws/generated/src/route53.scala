@@ -18,12 +18,11 @@ object route53:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.route53.ResolverRuleArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   /** Provides a Route 53 Resolver DNSSEC config resource. */
   def ResolverDnsSecConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.route53.ResolverDnsSecConfigArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.route53.ResolverDnsSecConfigArgs.builder
-    
     com.pulumi.aws.route53.ResolverDnsSecConfig(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -35,7 +34,6 @@ object route53:
     conf.logicalName2pysicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
       case None               =>
-    
     com.pulumi.aws.route53.ProfilesResourceAssociation(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -47,7 +45,7 @@ object route53:
   extension (self: Route53Functions.type)
     /**
      * `aws.route53.DelegationSet` provides details about a specific Route 53 Delegation Set.
-     *  
+     * 
      *  This data source allows to find a list of name servers associated with a specific delegation set.
      */
     def getDelegationSet(args: Endofunction[com.pulumi.aws.route53.inputs.GetDelegationSetArgs.Builder] = identity):
@@ -57,7 +55,7 @@ object route53:
 
     /**
      * `aws.route53.DelegationSet` provides details about a specific Route 53 Delegation Set.
-     *  
+     * 
      *  This data source allows to find a list of name servers associated with a specific delegation set.
      */
     def getDelegationSetPlain(args: Endofunction[com.pulumi.aws.route53.inputs.GetDelegationSetPlainArgs.Builder] = identity):
@@ -103,7 +101,7 @@ object route53:
 
     /**
      * `aws.route53.ResolverEndpoint` provides details about a specific Route53 Resolver Endpoint.
-     *  
+     * 
      *  This data source allows to find a list of IPaddresses associated with a specific Route53 Resolver Endpoint.
      */
     def getResolverEndpoint(args: Endofunction[com.pulumi.aws.route53.inputs.GetResolverEndpointArgs.Builder] = identity):
@@ -113,7 +111,7 @@ object route53:
 
     /**
      * `aws.route53.ResolverEndpoint` provides details about a specific Route53 Resolver Endpoint.
-     *  
+     * 
      *  This data source allows to find a list of IPaddresses associated with a specific Route53 Resolver Endpoint.
      */
     def getResolverEndpointPlain(args: Endofunction[com.pulumi.aws.route53.inputs.GetResolverEndpointPlainArgs.Builder] = identity):
@@ -123,7 +121,7 @@ object route53:
 
     /**
      * `aws.route53.ResolverFirewallConfig` provides details about a specific a Route 53 Resolver DNS Firewall config.
-     *  
+     * 
      *  This data source allows to find a details about a specific a Route 53 Resolver DNS Firewall config.
      */
     def getResolverFirewallConfig(args: Endofunction[com.pulumi.aws.route53.inputs.GetResolverFirewallConfigArgs.Builder] = identity):
@@ -133,7 +131,7 @@ object route53:
 
     /**
      * `aws.route53.ResolverFirewallConfig` provides details about a specific a Route 53 Resolver DNS Firewall config.
-     *  
+     * 
      *  This data source allows to find a details about a specific a Route 53 Resolver DNS Firewall config.
      */
     def getResolverFirewallConfigPlain(args: Endofunction[com.pulumi.aws.route53.inputs.GetResolverFirewallConfigPlainArgs.Builder] = identity):
@@ -143,7 +141,7 @@ object route53:
 
     /**
      * `aws.route53.ResolverFirewallDomainList` Retrieves the specified firewall domain list.
-     *  
+     * 
      *  This data source allows to retrieve details about a specific a Route 53 Resolver DNS Firewall domain list.
      */
     def getResolverFirewallDomainList(args: Endofunction[com.pulumi.aws.route53.inputs.GetResolverFirewallDomainListArgs.Builder] = identity):
@@ -153,7 +151,7 @@ object route53:
 
     /**
      * `aws.route53.ResolverFirewallDomainList` Retrieves the specified firewall domain list.
-     *  
+     * 
      *  This data source allows to retrieve details about a specific a Route 53 Resolver DNS Firewall domain list.
      */
     def getResolverFirewallDomainListPlain(args: Endofunction[com.pulumi.aws.route53.inputs.GetResolverFirewallDomainListPlainArgs.Builder] = identity):
@@ -163,7 +161,7 @@ object route53:
 
     /**
      * `aws.route53.ResolverFirewallRuleGroup` Retrieves the specified firewall rule group.
-     *  
+     * 
      *  This data source allows to retrieve details about a specific a Route 53 Resolver DNS Firewall rule group.
      */
     def getResolverFirewallRuleGroup(args: Endofunction[com.pulumi.aws.route53.inputs.GetResolverFirewallRuleGroupArgs.Builder] = identity):
@@ -173,7 +171,7 @@ object route53:
 
     /**
      * `aws.route53.ResolverFirewallRuleGroup` Retrieves the specified firewall rule group.
-     *  
+     * 
      *  This data source allows to retrieve details about a specific a Route 53 Resolver DNS Firewall rule group.
      */
     def getResolverFirewallRuleGroupPlain(args: Endofunction[com.pulumi.aws.route53.inputs.GetResolverFirewallRuleGroupPlainArgs.Builder] = identity):
@@ -183,7 +181,7 @@ object route53:
 
     /**
      * `aws.route53.ResolverFirewallRuleGroupAssociation` Retrieves the specified firewall rule group association.
-     *  
+     * 
      *  This data source allows to retrieve details about a specific a Route 53 Resolver DNS Firewall rule group association.
      */
     def getResolverFirewallRuleGroupAssociation(args: Endofunction[com.pulumi.aws.route53.inputs.GetResolverFirewallRuleGroupAssociationArgs.Builder] = identity):
@@ -193,7 +191,7 @@ object route53:
 
     /**
      * `aws.route53.ResolverFirewallRuleGroupAssociation` Retrieves the specified firewall rule group association.
-     *  
+     * 
      *  This data source allows to retrieve details about a specific a Route 53 Resolver DNS Firewall rule group association.
      */
     def getResolverFirewallRuleGroupAssociationPlain(args: Endofunction[com.pulumi.aws.route53.inputs.GetResolverFirewallRuleGroupAssociationPlainArgs.Builder] = identity):
@@ -251,7 +249,7 @@ object route53:
 
     /**
      * `aws.route53.Zone` provides details about a specific Route 53 Hosted Zone.
-     *  
+     * 
      *  This data source allows to find a Hosted Zone ID given Hosted Zone name and certain search criteria.
      */
     def getZone(args: Endofunction[com.pulumi.aws.route53.inputs.GetZoneArgs.Builder] = identity):
@@ -261,7 +259,7 @@ object route53:
 
     /**
      * `aws.route53.Zone` provides details about a specific Route 53 Hosted Zone.
-     *  
+     * 
      *  This data source allows to find a Hosted Zone ID given Hosted Zone name and certain search criteria.
      */
     def getZonePlain(args: Endofunction[com.pulumi.aws.route53.inputs.GetZonePlainArgs.Builder] = identity):
@@ -271,7 +269,7 @@ object route53:
 
   /**
    * Provides a Route53 query logging configuration resource.
-   *  
+   * 
    *  &gt; **NOTE:** There are restrictions on the configuration of query logging. Notably,
    *  the CloudWatch log group must be in the `us-east-1` region,
    *  a permissive CloudWatch log resource policy must be in place, and
@@ -281,7 +279,6 @@ object route53:
   def QueryLog(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.route53.QueryLogArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.route53.QueryLogArgs.builder
-    
     com.pulumi.aws.route53.QueryLog(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -293,22 +290,20 @@ object route53:
     conf.logicalName2pysicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
       case None               =>
-    
     com.pulumi.aws.route53.ResolverFirewallRule(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
   /**
    * Manages Route 53 Hosted Zone Domain Name System Security Extensions (DNSSEC). For more information about managing DNSSEC in Route 53, see the [Route 53 Developer Guide](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-configuring-dnssec.html).
-   *  
+   * 
    *  !&gt; **WARNING:** If you disable DNSSEC signing for your hosted zone before the DNS changes have propagated, your domain could become unavailable on the internet. When you remove the DS records, you must wait until the longest TTL for the DS records that you remove has expired before you complete the step to disable DNSSEC signing. Please refer to the [Route 53 Developer Guide - Disable DNSSEC](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-configuring-dnssec-disable.html) for a detailed breakdown on the steps required to disable DNSSEC safely for a hosted zone.
-   *  
+   * 
    *  &gt; **Note:** Route53 hosted zones are global resources, and as such any `aws.kms.Key` that you use as part of a signing key needs to be located in the `us-east-1` region. In the example below, the main AWS provider declaration is for `us-east-1`, however if you are provisioning your AWS resources in a different region, you will need to specify a provider alias and use that attached to the `aws.kms.Key` resource as described in the provider alias documentation.
    */
   def HostedZoneDnsSec(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.route53.HostedZoneDnsSecArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.route53.HostedZoneDnsSecArgs.builder
-    
     com.pulumi.aws.route53.HostedZoneDnsSec(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -320,7 +315,6 @@ object route53:
     conf.logicalName2pysicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
       case None               =>
-    
     com.pulumi.aws.route53.CidrLocation(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -335,7 +329,6 @@ object route53:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.route53.ResolverRule(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -346,7 +339,6 @@ object route53:
       val argsBuilder = com.pulumi.aws.route53.inputs.ProfilesResourceAssociationTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.route53.ProfilesProfileArgs.Builder)
     def timeouts(args: Endofunction[com.pulumi.aws.route53.inputs.ProfilesProfileTimeoutsArgs.Builder]):
         com.pulumi.aws.route53.ProfilesProfileArgs.Builder =
@@ -356,7 +348,7 @@ object route53:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.route53.ProfilesProfileArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   /** Manages a Route53 Traffic Policy. */
   def TrafficPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.route53.TrafficPolicyArgs.Builder])(using conf: KoPulumiConf) =
@@ -364,7 +356,6 @@ object route53:
     conf.logicalName2pysicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
       case None               =>
-    
     com.pulumi.aws.route53.TrafficPolicy(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -379,7 +370,6 @@ object route53:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.route53.ProfilesAssociation(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -394,7 +384,6 @@ object route53:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.route53.ResolverFirewallDomainList(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -406,7 +395,6 @@ object route53:
     conf.logicalName2pysicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
       case None               =>
-    
     com.pulumi.aws.route53.ResolverRuleAssociation(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -421,22 +409,20 @@ object route53:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.route53.ProfilesProfile(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
   /**
    * Manages a Route53 Hosted Zone VPC association. VPC associations can only be made on private zones. See the `aws.route53.VpcAssociationAuthorization` resource for setting up cross-account associations.
-   *  
+   * 
    *  &gt; **NOTE:** Unless explicit association ordering is required (e.g., a separate cross-account association authorization), usage of this resource is not recommended. Use the `vpc` configuration blocks available within the `aws.route53.Zone` resource instead.
-   *  
+   * 
    *  &gt; **NOTE:** This provider provides both this standalone Zone VPC Association resource and exclusive VPC associations defined in-line in the `aws.route53.Zone` resource via `vpc` configuration blocks. At this time, you cannot use those in-line VPC associations in conjunction with this resource and the same zone ID otherwise it will cause a perpetual difference in plan output. You can optionally use [`ignoreChanges`](https://www.pulumi.com/docs/intro/concepts/programming-model/#ignorechanges) in the `aws.route53.Zone` resource to manage additional associations via this resource.
    */
   def ZoneAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.route53.ZoneAssociationArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.route53.ZoneAssociationArgs.builder
-    
     com.pulumi.aws.route53.ZoneAssociation(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -450,7 +436,7 @@ object route53:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.route53.ProfilesAssociationArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   /** Provides a Route 53 Resolver query logging configuration resource. */
   def ResolverQueryLogConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.route53.ResolverQueryLogConfigArgs.Builder])(using conf: KoPulumiConf) =
@@ -461,7 +447,6 @@ object route53:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.route53.ResolverQueryLogConfig(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -473,7 +458,6 @@ object route53:
     conf.logicalName2pysicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
       case None               =>
-    
     com.pulumi.aws.route53.KeySigningKey(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -482,7 +466,6 @@ object route53:
   def ResolverFirewallConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.route53.ResolverFirewallConfigArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.route53.ResolverFirewallConfigArgs.builder
-    
     com.pulumi.aws.route53.ResolverFirewallConfig(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -500,7 +483,7 @@ object route53:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.route53.ZoneArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   /** Provides a Route53 CIDR collection resource. */
   def CidrCollection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.route53.CidrCollectionArgs.Builder])(using conf: KoPulumiConf) =
@@ -508,7 +491,6 @@ object route53:
     conf.logicalName2pysicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
       case None               =>
-    
     com.pulumi.aws.route53.CidrCollection(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -520,7 +502,6 @@ object route53:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.route53.HealthCheck(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -535,7 +516,6 @@ object route53:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.route53.ResolverEndpoint(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -544,7 +524,6 @@ object route53:
   def ResolverConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.route53.ResolverConfigArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.route53.ResolverConfigArgs.builder
-    
     com.pulumi.aws.route53.ResolverConfig(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -553,7 +532,6 @@ object route53:
   def VpcAssociationAuthorization(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.route53.VpcAssociationAuthorizationArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.route53.VpcAssociationAuthorizationArgs.builder
-    
     com.pulumi.aws.route53.VpcAssociationAuthorization(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -568,7 +546,6 @@ object route53:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.route53.ResolverFirewallRuleGroup(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -583,7 +560,6 @@ object route53:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.route53.ResolverFirewallRuleGroupAssociation(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -595,7 +571,6 @@ object route53:
     conf.logicalName2pysicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
       case None               =>
-    
     com.pulumi.aws.route53.TrafficPolicyInstance(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -604,7 +579,6 @@ object route53:
   def ResolverQueryLogConfigAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.route53.ResolverQueryLogConfigAssociationArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.route53.ResolverQueryLogConfigAssociationArgs.builder
-    
     com.pulumi.aws.route53.ResolverQueryLogConfigAssociation(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -616,7 +590,6 @@ object route53:
     conf.logicalName2pysicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
       case None               =>
-    
     com.pulumi.aws.route53.Record(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -637,7 +610,6 @@ object route53:
       val argsBuilder = com.pulumi.aws.route53.inputs.RecordsExclusiveTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.route53.RecordArgs.Builder)
     /**
      * @param aliases An alias block. Conflicts with `ttl` &amp; `records`.
@@ -703,12 +675,10 @@ object route53:
       def argsBuilder = com.pulumi.aws.route53.inputs.RecordWeightedRoutingPolicyArgs.builder
       builder.weightedRoutingPolicies(args.map(_(argsBuilder).build)*)
 
-                       
   /** Provides a [Route53 Delegation Set](https://docs.aws.amazon.com/Route53/latest/APIReference/API-actions-by-function.html#actions-by-function-reusable-delegation-sets) resource. */
   def DelegationSet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.route53.DelegationSetArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.route53.DelegationSetArgs.builder
-    
     com.pulumi.aws.route53.DelegationSet(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -723,7 +693,6 @@ object route53:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.route53.Zone(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -742,20 +711,19 @@ object route53:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.route53.ResolverEndpointArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   /**
    * Resource for maintaining exclusive management of resource record sets defined in an AWS Route53 hosted zone.
-   *  
+   * 
    *  !&gt; This resource takes exclusive ownership over resource record sets defined in a hosted zone. This includes removal of record sets which are not explicitly configured. To prevent persistent drift, ensure any `aws.route53.Record` resources managed alongside this resource have an equivalent `resourceRecordSet` argument.
-   *  
+   * 
    *  &gt; Destruction of this resource means Terraform will no longer manage reconciliation of the configured resource record sets. It __will not__ delete the configured record sets from the hosted zone.
-   *  
+   * 
    *  &gt; The default `NS` and `SOA` records created during provisioning of the Route53 Zone __should not be included__ in this resource definition. Adding them will cause persistent drift as the read operation is explicitly configured to ignore writing them to state.
    */
   def RecordsExclusive(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.route53.RecordsExclusiveArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.route53.RecordsExclusiveArgs.builder
-    
     com.pulumi.aws.route53.RecordsExclusive(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -773,7 +741,7 @@ object route53:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.route53.inputs.ZoneState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.route53.inputs.ResolverEndpointState.Builder)
     /**
      * @param ipAddresses Subnets and IP addresses in your VPC that you want DNS queries to pass through on the way from your VPCs
@@ -788,7 +756,7 @@ object route53:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.route53.inputs.ResolverEndpointState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.route53.inputs.GetQueryLogConfigArgs.Builder)
     /**
      * @param filters One or more name/value pairs to use as filters. There are
@@ -804,7 +772,7 @@ object route53:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.route53.inputs.GetQueryLogConfigArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.route53.inputs.RecordsExclusiveResourceRecordSetArgs.Builder)
     /**
      * @param aliasTarget Alias target block.
@@ -851,7 +819,6 @@ object route53:
       def argsBuilder = com.pulumi.aws.route53.inputs.RecordsExclusiveResourceRecordSetResourceRecordArgs.builder
       builder.resourceRecords(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.route53.inputs.GetResolverEndpointArgs.Builder)
     /**
      * @param filters One or more name/value pairs to use as filters. There are
@@ -864,14 +831,12 @@ object route53:
       def argsBuilder = com.pulumi.aws.route53.inputs.GetResolverEndpointFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.route53.inputs.ProfilesResourceAssociationState.Builder)
     def timeouts(args: Endofunction[com.pulumi.aws.route53.inputs.ProfilesResourceAssociationTimeoutsArgs.Builder]):
         com.pulumi.aws.route53.inputs.ProfilesResourceAssociationState.Builder =
       val argsBuilder = com.pulumi.aws.route53.inputs.ProfilesResourceAssociationTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.route53.inputs.RecordsExclusiveResourceRecordSetGeoproximityLocationArgs.Builder)
     /**
      * @param coordinates Coordinates for a geoproximity resource record.
@@ -883,7 +848,6 @@ object route53:
       val argsBuilder = com.pulumi.aws.route53.inputs.RecordsExclusiveResourceRecordSetGeoproximityLocationCoordinatesArgs.builder
       builder.coordinates(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.route53.inputs.RecordsExclusiveState.Builder)
     /**
      * @param resourceRecordSets A list of all resource record sets associated with the hosted zone.
@@ -900,7 +864,6 @@ object route53:
       val argsBuilder = com.pulumi.aws.route53.inputs.RecordsExclusiveTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.route53.inputs.ResolverRuleState.Builder)
     /**
      * @param targetIps Configuration block(s) indicating the IPs that you want Resolver to forward DNS queries to (documented below).
@@ -915,7 +878,7 @@ object route53:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.route53.inputs.ResolverRuleState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.route53.inputs.GetTrafficPolicyDocumentArgs.Builder)
     /**
      * @param endpoints Configuration block for the definitions of the endpoints that you want to use in this traffic policy. See below
@@ -935,7 +898,6 @@ object route53:
       def argsBuilder = com.pulumi.aws.route53.inputs.GetTrafficPolicyDocumentRuleArgs.builder
       builder.rules(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.route53.inputs.GetTrafficPolicyDocumentRuleArgs.Builder)
     /**
      * @param geoProximityLocations Configuration block for when you add a geoproximity rule, you configure Amazon Route 53 to route traffic to your resources based on the geographic location of your resources. Only valid for `geoproximity` type. See below
@@ -987,7 +949,6 @@ object route53:
       val argsBuilder = com.pulumi.aws.route53.inputs.GetTrafficPolicyDocumentRuleSecondaryArgs.builder
       builder.secondary(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.route53.inputs.RecordState.Builder)
     /**
      * @param aliases An alias block. Conflicts with `ttl` &amp; `records`.
@@ -1053,7 +1014,6 @@ object route53:
       def argsBuilder = com.pulumi.aws.route53.inputs.RecordWeightedRoutingPolicyArgs.builder
       builder.weightedRoutingPolicies(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.route53.inputs.RecordGeoproximityRoutingPolicyArgs.Builder)
     /**
      * @param coordinates Specify `latitude` and `longitude` for routing traffic to non-AWS resources.
@@ -1064,7 +1024,6 @@ object route53:
       def argsBuilder = com.pulumi.aws.route53.inputs.RecordGeoproximityRoutingPolicyCoordinateArgs.builder
       builder.coordinates(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.route53.inputs.ProfilesAssociationState.Builder)
     def timeouts(args: Endofunction[com.pulumi.aws.route53.inputs.ProfilesAssociationTimeoutsArgs.Builder]):
         com.pulumi.aws.route53.inputs.ProfilesAssociationState.Builder =
@@ -1074,7 +1033,7 @@ object route53:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.route53.inputs.ProfilesAssociationState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.route53.inputs.ProfilesProfileState.Builder)
     def timeouts(args: Endofunction[com.pulumi.aws.route53.inputs.ProfilesProfileTimeoutsArgs.Builder]):
         com.pulumi.aws.route53.inputs.ProfilesProfileState.Builder =
@@ -1084,4 +1043,3 @@ object route53:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.route53.inputs.ProfilesProfileState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       

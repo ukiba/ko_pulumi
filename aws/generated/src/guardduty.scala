@@ -6,7 +6,7 @@ import com.pulumi.resources.CustomResourceOptions
 object guardduty:
   /**
    * Provides a resource to manage an Amazon GuardDuty detector.
-   *  
+   * 
    *  &gt; **NOTE:** Deleting this resource is equivalent to &#34;disabling&#34; GuardDuty for an AWS region, which removes all existing findings. You can set the `enable` attribute to `false` to instead &#34;suspend&#34; monitoring and feedback reporting while keeping existing data. See the [Suspending or Disabling Amazon GuardDuty documentation](https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_suspend-disable.html) for more information.
    */
   def Detector(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
@@ -15,7 +15,6 @@ object guardduty:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.guardduty.Detector(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -23,7 +22,7 @@ object guardduty:
   extension (builder: com.pulumi.aws.guardduty.OrganizationConfigurationArgs.Builder)
     /**
      * @param datasources Configuration for the collected datasources. [Deprecated](https://docs.aws.amazon.com/guardduty/latest/ug/guardduty-feature-object-api-changes-march2023.html) in favor of `aws.guardduty.OrganizationConfigurationFeature` resources.
-     *  
+     * 
      *  &gt; **NOTE:** One of `autoEnable` or `autoEnableOrganizationMembers` must be specified.
      * @return builder
      * @deprecated datasources is deprecated. Use &#34;aws.guardduty.OrganizationConfigurationFeature&#34; resources instead.
@@ -33,10 +32,9 @@ object guardduty:
       val argsBuilder = com.pulumi.aws.guardduty.inputs.OrganizationConfigurationDatasourcesArgs.builder
       builder.datasources(args(argsBuilder).build)
 
-                       
   /**
    * Provides a resource to manage a single Amazon GuardDuty [organization configuration feature](https://docs.aws.amazon.com/guardduty/latest/ug/guardduty-features-activation-model.html#guardduty-features).
-   *  
+   * 
    *  &gt; **NOTE:** Deleting this resource does not disable the organization configuration feature, the resource is simply removed from state instead.
    */
   def OrganizationConfigurationFeature(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
@@ -45,7 +43,6 @@ object guardduty:
     conf.logicalName2pysicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
       case None               =>
-    
     com.pulumi.aws.guardduty.OrganizationConfigurationFeature(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -54,7 +51,6 @@ object guardduty:
   def OrganizationAdminAccount(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.guardduty.OrganizationAdminAccountArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.guardduty.OrganizationAdminAccountArgs.builder
-    
     com.pulumi.aws.guardduty.OrganizationAdminAccount(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -69,23 +65,21 @@ object guardduty:
       def argsBuilder = com.pulumi.aws.guardduty.inputs.MemberDetectorFeatureAdditionalConfigurationArgs.builder
       builder.additionalConfigurations(args.map(_(argsBuilder).build)*)
 
-                       
   /**
    * Manages the GuardDuty Organization Configuration in the current AWS Region. The AWS account utilizing this resource must have been assigned as a delegated Organization administrator account, e.g., via the `aws.guardduty.OrganizationAdminAccount` resource. More information about Organizations support in GuardDuty can be found in the [GuardDuty User Guide](https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_organizations.html).
-   *  
+   * 
    *  &gt; **NOTE:** This is an advanced resource. The provider will automatically assume management of the GuardDuty Organization Configuration without import and perform no actions on removal from the resource configuration.
    */
   def OrganizationConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.guardduty.OrganizationConfigurationArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.guardduty.OrganizationConfigurationArgs.builder
-    
     com.pulumi.aws.guardduty.OrganizationConfiguration(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
   /**
    * Provides a resource to manage a single Amazon GuardDuty [detector feature](https://docs.aws.amazon.com/guardduty/latest/ug/guardduty-features-activation-model.html#guardduty-features).
-   *  
+   * 
    *  &gt; **NOTE:** Deleting this resource does not disable the detector feature, the resource in simply removed from state instead.
    */
   def DetectorFeature(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
@@ -94,7 +88,6 @@ object guardduty:
     conf.logicalName2pysicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
       case None               =>
-    
     com.pulumi.aws.guardduty.DetectorFeature(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -112,19 +105,18 @@ object guardduty:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.guardduty.FilterArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   /** Provides a resource to accept a pending GuardDuty invite on creation, ensure the detector has the correct primary account on read, and disassociate with the primary account upon removal. */
   def InviteAccepter(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.guardduty.InviteAccepterArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.guardduty.InviteAccepterArgs.builder
-    
     com.pulumi.aws.guardduty.InviteAccepter(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
   /**
    * Provides a resource to manage a GuardDuty ThreatIntelSet.
-   *  
+   * 
    *  &gt; **Note:** Currently in GuardDuty, users from member accounts cannot upload and further manage ThreatIntelSets. ThreatIntelSets that are uploaded by the primary account are imposed on GuardDuty functionality in its member accounts. See the [GuardDuty API Documentation](https://docs.aws.amazon.com/guardduty/latest/ug/create-threat-intel-set.html)
    */
   def ThreatIntelSet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
@@ -136,7 +128,6 @@ object guardduty:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.guardduty.ThreatIntelSet(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -180,7 +171,6 @@ object guardduty:
       def argsBuilder = com.pulumi.aws.guardduty.inputs.DetectorFeatureAdditionalConfigurationArgs.builder
       builder.additionalConfigurations(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.guardduty.MalwareProtectionPlanArgs.Builder)
     /**
      * @param actions Information about whether the tags will be added to the S3 object after scanning. See `actions` below.
@@ -203,7 +193,7 @@ object guardduty:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.guardduty.MalwareProtectionPlanArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   /** Provides a resource to manage a GuardDuty malware protection plan. */
   def MalwareProtectionPlan(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.guardduty.MalwareProtectionPlanArgs.Builder])(using conf: KoPulumiConf) =
@@ -211,14 +201,13 @@ object guardduty:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.guardduty.MalwareProtectionPlan(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
   /**
    * Provides a resource to manage a single Amazon GuardDuty [detector feature](https://docs.aws.amazon.com/guardduty/latest/ug/guardduty-features-activation-model.html#guardduty-features) for a member account.
-   *  
+   * 
    *  &gt; **NOTE:** Deleting this resource does not disable the detector feature in the member account, the resource in simply removed from state instead.
    */
   def MemberDetectorFeature(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
@@ -227,7 +216,6 @@ object guardduty:
     conf.logicalName2pysicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
       case None               =>
-    
     com.pulumi.aws.guardduty.MemberDetectorFeature(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -246,12 +234,11 @@ object guardduty:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.guardduty.DetectorArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   /** Provides a resource to manage a GuardDuty member. To accept invitations in member accounts, see the `aws.guardduty.InviteAccepter` resource. */
   def Member(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.guardduty.MemberArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.guardduty.MemberArgs.builder
-    
     com.pulumi.aws.guardduty.Member(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -263,14 +250,13 @@ object guardduty:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.guardduty.PublishingDestination(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
   /**
    * Provides a resource to manage a GuardDuty IPSet.
-   *  
+   * 
    *  &gt; **Note:** Currently in GuardDuty, users from member accounts cannot upload and further manage IPSets. IPSets that are uploaded by the primary account are imposed on GuardDuty functionality in its member accounts. See the [GuardDuty API Documentation](https://docs.aws.amazon.com/guardduty/latest/ug/create-ip-set.html)
    */
   def IPSet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
@@ -282,7 +268,6 @@ object guardduty:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.guardduty.IPSet(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -297,7 +282,6 @@ object guardduty:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.guardduty.Filter(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -313,7 +297,6 @@ object guardduty:
       val argsBuilder = com.pulumi.aws.guardduty.inputs.DetectorDatasourcesMalwareProtectionScanEc2InstanceWithFindingsEbsVolumesArgs.builder
       builder.ebsVolumes(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.guardduty.inputs.DetectorFeatureState.Builder)
     /**
      * @param additionalConfigurations Additional feature configuration block for features`EKS_RUNTIME_MONITORING` or `RUNTIME_MONITORING`. See below.
@@ -324,11 +307,10 @@ object guardduty:
       def argsBuilder = com.pulumi.aws.guardduty.inputs.DetectorFeatureAdditionalConfigurationArgs.builder
       builder.additionalConfigurations(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.guardduty.inputs.OrganizationConfigurationState.Builder)
     /**
      * @param datasources Configuration for the collected datasources. [Deprecated](https://docs.aws.amazon.com/guardduty/latest/ug/guardduty-feature-object-api-changes-march2023.html) in favor of `aws.guardduty.OrganizationConfigurationFeature` resources.
-     *  
+     * 
      *  &gt; **NOTE:** One of `autoEnable` or `autoEnableOrganizationMembers` must be specified.
      * @return builder
      * @deprecated datasources is deprecated. Use &#34;aws.guardduty.OrganizationConfigurationFeature&#34; resources instead.
@@ -338,7 +320,6 @@ object guardduty:
       val argsBuilder = com.pulumi.aws.guardduty.inputs.OrganizationConfigurationDatasourcesArgs.builder
       builder.datasources(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.guardduty.inputs.MalwareProtectionPlanState.Builder)
     /**
      * @param actions Information about whether the tags will be added to the S3 object after scanning. See `actions` below.
@@ -361,7 +342,7 @@ object guardduty:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.guardduty.inputs.MalwareProtectionPlanState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.guardduty.inputs.DetectorState.Builder)
     /**
      * @param datasources Describes which data sources will be enabled for the detector. See Data Sources below for more details. [Deprecated](https://docs.aws.amazon.com/guardduty/latest/ug/guardduty-feature-object-api-changes-march2023.html) in favor of `aws.guardduty.DetectorFeature` resources.
@@ -376,7 +357,7 @@ object guardduty:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.guardduty.inputs.DetectorState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.guardduty.inputs.OrganizationConfigurationDatasourcesArgs.Builder)
     /**
      * @param kubernetes Enable Kubernetes Audit Logs Monitoring automatically for new member accounts.
@@ -405,7 +386,6 @@ object guardduty:
       val argsBuilder = com.pulumi.aws.guardduty.inputs.OrganizationConfigurationDatasourcesS3LogsArgs.builder
       builder.s3Logs(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.guardduty.inputs.MalwareProtectionPlanActionArgs.Builder)
     /**
      * @param taggings Indicates whether the scanned S3 object will have tags about the scan result. See `tagging` below.
@@ -416,7 +396,6 @@ object guardduty:
       def argsBuilder = com.pulumi.aws.guardduty.inputs.MalwareProtectionPlanActionTaggingArgs.builder
       builder.taggings(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.guardduty.inputs.DetectorDatasourcesMalwareProtectionArgs.Builder)
     /**
      * @param scanEc2InstanceWithFindings Configure whether [Malware Protection](https://docs.aws.amazon.com/guardduty/latest/ug/malware-protection.html) is enabled as data source for EC2 instances with findings for the detector.
@@ -428,7 +407,6 @@ object guardduty:
       val argsBuilder = com.pulumi.aws.guardduty.inputs.DetectorDatasourcesMalwareProtectionScanEc2InstanceWithFindingsArgs.builder
       builder.scanEc2InstanceWithFindings(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.guardduty.inputs.OrganizationConfigurationFeatureState.Builder)
     /**
      * @param additionalConfigurations Additional feature configuration block for features `EKS_RUNTIME_MONITORING` or `RUNTIME_MONITORING`. See below.
@@ -439,7 +417,6 @@ object guardduty:
       def argsBuilder = com.pulumi.aws.guardduty.inputs.OrganizationConfigurationFeatureAdditionalConfigurationArgs.builder
       builder.additionalConfigurations(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.guardduty.inputs.MalwareProtectionPlanProtectedResourceArgs.Builder)
     /**
      * @param s3Bucket Information about the protected S3 bucket resource. See `s3Bucket` below.
@@ -450,14 +427,12 @@ object guardduty:
       val argsBuilder = com.pulumi.aws.guardduty.inputs.MalwareProtectionPlanProtectedResourceS3BucketArgs.builder
       builder.s3Bucket(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.guardduty.inputs.FilterFindingCriteriaArgs.Builder)
     def criterions(args: Endofunction[com.pulumi.aws.guardduty.inputs.FilterFindingCriteriaCriterionArgs.Builder]*):
         com.pulumi.aws.guardduty.inputs.FilterFindingCriteriaArgs.Builder =
       def argsBuilder = com.pulumi.aws.guardduty.inputs.FilterFindingCriteriaCriterionArgs.builder
       builder.criterions(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.guardduty.inputs.OrganizationConfigurationDatasourcesMalwareProtectionArgs.Builder)
     /**
      * @param scanEc2InstanceWithFindings Configure whether [Malware Protection](https://docs.aws.amazon.com/guardduty/latest/ug/malware-protection.html) for EC2 instances with findings should be auto-enabled for new members joining the organization.
@@ -469,7 +444,6 @@ object guardduty:
       val argsBuilder = com.pulumi.aws.guardduty.inputs.OrganizationConfigurationDatasourcesMalwareProtectionScanEc2InstanceWithFindingsArgs.builder
       builder.scanEc2InstanceWithFindings(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.guardduty.inputs.OrganizationConfigurationDatasourcesMalwareProtectionScanEc2InstanceWithFindingsArgs.Builder)
     /**
      * @param ebsVolumes Configure whether scanning EBS volumes should be auto-enabled for new members joining the organization
@@ -481,7 +455,6 @@ object guardduty:
       val argsBuilder = com.pulumi.aws.guardduty.inputs.OrganizationConfigurationDatasourcesMalwareProtectionScanEc2InstanceWithFindingsEbsVolumesArgs.builder
       builder.ebsVolumes(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.guardduty.inputs.OrganizationConfigurationDatasourcesKubernetesArgs.Builder)
     /**
      * @param auditLogs Enable Kubernetes Audit Logs Monitoring automatically for new member accounts. [Kubernetes protection](https://docs.aws.amazon.com/guardduty/latest/ug/kubernetes-protection.html).
@@ -493,7 +466,6 @@ object guardduty:
       val argsBuilder = com.pulumi.aws.guardduty.inputs.OrganizationConfigurationDatasourcesKubernetesAuditLogsArgs.builder
       builder.auditLogs(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.guardduty.inputs.MemberDetectorFeatureState.Builder)
     /**
      * @param additionalConfigurations Additional feature configuration block. See below.
@@ -504,7 +476,6 @@ object guardduty:
       def argsBuilder = com.pulumi.aws.guardduty.inputs.MemberDetectorFeatureAdditionalConfigurationArgs.builder
       builder.additionalConfigurations(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.guardduty.inputs.DetectorDatasourcesKubernetesArgs.Builder)
     /**
      * @param auditLogs Configures Kubernetes audit logs as a data source for [Kubernetes protection](https://docs.aws.amazon.com/guardduty/latest/ug/kubernetes-protection.html).
@@ -516,7 +487,6 @@ object guardduty:
       val argsBuilder = com.pulumi.aws.guardduty.inputs.DetectorDatasourcesKubernetesAuditLogsArgs.builder
       builder.auditLogs(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.guardduty.inputs.DetectorDatasourcesArgs.Builder)
     /**
      * @param kubernetes Configures [Kubernetes protection](https://docs.aws.amazon.com/guardduty/latest/ug/kubernetes-protection.html).
@@ -548,7 +518,6 @@ object guardduty:
       val argsBuilder = com.pulumi.aws.guardduty.inputs.DetectorDatasourcesS3LogsArgs.builder
       builder.s3Logs(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.guardduty.inputs.FilterState.Builder)
     /**
      * @param findingCriteria Represents the criteria to be used in the filter for querying findings. Contains one or more `criterion` blocks, documented below.
@@ -562,7 +531,7 @@ object guardduty:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.guardduty.inputs.FilterState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.guardduty.OrganizationConfigurationFeatureArgs.Builder)
     /**
      * @param additionalConfigurations Additional feature configuration block for features `EKS_RUNTIME_MONITORING` or `RUNTIME_MONITORING`. See below.
@@ -572,5 +541,3 @@ object guardduty:
         com.pulumi.aws.guardduty.OrganizationConfigurationFeatureArgs.Builder =
       def argsBuilder = com.pulumi.aws.guardduty.inputs.OrganizationConfigurationFeatureAdditionalConfigurationArgs.builder
       builder.additionalConfigurations(args.map(_(argsBuilder).build)*)
-
-                       

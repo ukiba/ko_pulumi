@@ -6,7 +6,7 @@ import com.pulumi.resources.CustomResourceOptions
 object drs:
   /**
    * Provides an Elastic Disaster Recovery replication configuration template resource. Before using DRS, your account must be [initialized](https://docs.aws.amazon.com/drs/latest/userguide/getting-started-initializing.html).
-   *  
+   * 
    *  &gt; **NOTE:** Your configuration must use the PIT policy shown in the basic configuration due to AWS rules. The only value that you can change is the `retentionDuration` of `ruleId` 3.
    */
   def ReplicationConfigurationTemplate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
@@ -15,7 +15,6 @@ object drs:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.drs.ReplicationConfigurationTemplate(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -38,7 +37,7 @@ object drs:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.drs.inputs.ReplicationConfigurationTemplateState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.drs.ReplicationConfigurationTemplateArgs.Builder)
     /**
      * @param pitPolicies Configuration block for Point in time (PIT) policy to manage snapshots taken during replication. See below.
@@ -57,4 +56,3 @@ object drs:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.drs.ReplicationConfigurationTemplateArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       

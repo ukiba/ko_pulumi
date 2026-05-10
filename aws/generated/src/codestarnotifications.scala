@@ -14,7 +14,6 @@ object codestarnotifications:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.codestarnotifications.NotificationRule(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -32,7 +31,7 @@ object codestarnotifications:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.codestarnotifications.NotificationRuleArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.codestarnotifications.inputs.NotificationRuleState.Builder)
     /**
      * @param targets Configuration blocks containing notification target information. Can be specified multiple times. At least one target must be specified on creation.
@@ -46,4 +45,3 @@ object codestarnotifications:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.codestarnotifications.inputs.NotificationRuleState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       

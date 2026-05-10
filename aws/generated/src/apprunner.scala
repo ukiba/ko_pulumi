@@ -52,7 +52,7 @@ object apprunner:
 
     /**
      * @param sourceConfiguration The source to deploy to the App Runner service. Can be a code or an image repository. See Source Configuration below for more details.
-     *  
+     * 
      *  The following arguments are optional:
      * @return builder
      */
@@ -64,7 +64,7 @@ object apprunner:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.apprunner.ServiceArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   /** Manages an App Runner VPC Connector. */
   def VpcConnector(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.apprunner.VpcConnectorArgs.Builder])(using conf: KoPulumiConf) =
@@ -72,20 +72,18 @@ object apprunner:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.apprunner.VpcConnector(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
   /**
    * Manages an App Runner Custom Domain association.
-   *  
+   * 
    *  &gt; **NOTE:** After creation, you must use the information in the `certificateValidationRecords` attribute to add CNAME records to your Domain Name System (DNS). For each mapped domain name, add a mapping to the target App Runner subdomain (found in the `dnsTarget` attribute) and one or more certificate validation records. App Runner then performs DNS validation to verify that you own or control the domain name you associated. App Runner tracks domain validity in a certificate stored in AWS Certificate Manager (ACM).
    */
   def CustomDomainAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.apprunner.CustomDomainAssociationArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.apprunner.CustomDomainAssociationArgs.builder
-    
     com.pulumi.aws.apprunner.CustomDomainAssociation(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -103,7 +101,7 @@ object apprunner:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.apprunner.ObservabilityConfigurationArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   /** Manages an App Runner Service. */
   def Service(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.apprunner.ServiceArgs.Builder])(using conf: KoPulumiConf) =
@@ -111,14 +109,13 @@ object apprunner:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.apprunner.Service(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
   /**
    * Manages an App Runner Connection.
-   *  
+   * 
    *  &gt; **NOTE:** After creation, you must complete the authentication handshake using the App Runner console.
    */
   def Connection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
@@ -127,7 +124,6 @@ object apprunner:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.apprunner.Connection(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -139,7 +135,6 @@ object apprunner:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.apprunner.ObservabilityConfiguration(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -150,7 +145,6 @@ object apprunner:
       val argsBuilder = com.pulumi.aws.apprunner.inputs.DeploymentTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
-                       
   type ApprunnerFunctions = com.pulumi.aws.apprunner.ApprunnerFunctions
   object ApprunnerFunctions:
     // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
@@ -178,7 +172,6 @@ object apprunner:
   def Deployment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.apprunner.DeploymentArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.apprunner.DeploymentArgs.builder
-    
     com.pulumi.aws.apprunner.Deployment(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -192,7 +185,6 @@ object apprunner:
   def DefaultAutoScalingConfigurationVersion(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.apprunner.DefaultAutoScalingConfigurationVersionArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.apprunner.DefaultAutoScalingConfigurationVersionArgs.builder
-    
     com.pulumi.aws.apprunner.DefaultAutoScalingConfigurationVersion(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -204,7 +196,6 @@ object apprunner:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.apprunner.AutoScalingConfigurationVersion(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -219,7 +210,6 @@ object apprunner:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.apprunner.VpcIngressConnection(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -243,7 +233,6 @@ object apprunner:
       val argsBuilder = com.pulumi.aws.apprunner.inputs.ServiceNetworkConfigurationIngressConfigurationArgs.builder
       builder.ingressConfiguration(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.apprunner.inputs.ServiceSourceConfigurationImageRepositoryArgs.Builder)
     /**
      * @param imageConfiguration Configuration for running the identified image. See Image Configuration below for more details.
@@ -254,7 +243,6 @@ object apprunner:
       val argsBuilder = com.pulumi.aws.apprunner.inputs.ServiceSourceConfigurationImageRepositoryImageConfigurationArgs.builder
       builder.imageConfiguration(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.apprunner.inputs.ServiceSourceConfigurationCodeRepositoryCodeConfigurationArgs.Builder)
     /**
      * @param codeConfigurationValues Basic configuration for building and running the App Runner service. Use this parameter to quickly launch an App Runner service without providing an apprunner.yaml file in the source code repository (or ignoring the file if it exists). See Code Configuration Values below for more details.
@@ -265,7 +253,6 @@ object apprunner:
       val argsBuilder = com.pulumi.aws.apprunner.inputs.ServiceSourceConfigurationCodeRepositoryCodeConfigurationCodeConfigurationValuesArgs.builder
       builder.codeConfigurationValues(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.apprunner.inputs.ServiceSourceConfigurationArgs.Builder)
     /**
      * @param authenticationConfiguration Describes resources needed to authenticate access to some source repositories. See Authentication Configuration below for more details.
@@ -294,7 +281,6 @@ object apprunner:
       val argsBuilder = com.pulumi.aws.apprunner.inputs.ServiceSourceConfigurationImageRepositoryArgs.builder
       builder.imageRepository(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.apprunner.inputs.ServiceSourceConfigurationCodeRepositoryArgs.Builder)
     /**
      * @param codeConfiguration Configuration for building and running the service from a source code repository. See Code Configuration below for more details.
@@ -314,7 +300,6 @@ object apprunner:
       val argsBuilder = com.pulumi.aws.apprunner.inputs.ServiceSourceConfigurationCodeRepositorySourceCodeVersionArgs.builder
       builder.sourceCodeVersion(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.apprunner.inputs.ObservabilityConfigurationState.Builder)
     /**
      * @param traceConfiguration Configuration of the tracing feature within this observability configuration. If you don&#39;t specify it, App Runner doesn&#39;t enable tracing. See Trace Configuration below for more details.
@@ -328,7 +313,7 @@ object apprunner:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.apprunner.inputs.ObservabilityConfigurationState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.apprunner.inputs.ServiceState.Builder)
     /**
      * @param encryptionConfiguration An optional custom encryption key that App Runner uses to encrypt the copy of your source repository that it maintains and your service logs. By default, App Runner uses an AWS managed CMK. See Encryption Configuration below for more details.
@@ -377,7 +362,7 @@ object apprunner:
 
     /**
      * @param sourceConfiguration The source to deploy to the App Runner service. Can be a code or an image repository. See Source Configuration below for more details.
-     *  
+     * 
      *  The following arguments are optional:
      * @return builder
      */
@@ -389,7 +374,7 @@ object apprunner:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.apprunner.inputs.ServiceState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.apprunner.inputs.CustomDomainAssociationState.Builder)
     /**
      * @param certificateValidationRecords A set of certificate CNAME records used for this domain name. See Certificate Validation Records below for more details.
@@ -400,7 +385,6 @@ object apprunner:
       def argsBuilder = com.pulumi.aws.apprunner.inputs.CustomDomainAssociationCertificateValidationRecordArgs.builder
       builder.certificateValidationRecords(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.apprunner.inputs.VpcIngressConnectionState.Builder)
     /**
      * @param ingressVpcConfiguration Specifications for the customer\u2019s Amazon VPC and the related AWS PrivateLink VPC endpoint that are used to create the VPC Ingress Connection resource. See Ingress VPC Configuration below for more details.
@@ -414,14 +398,13 @@ object apprunner:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.apprunner.inputs.VpcIngressConnectionState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.apprunner.inputs.DeploymentState.Builder)
     def timeouts(args: Endofunction[com.pulumi.aws.apprunner.inputs.DeploymentTimeoutsArgs.Builder]):
         com.pulumi.aws.apprunner.inputs.DeploymentState.Builder =
       val argsBuilder = com.pulumi.aws.apprunner.inputs.DeploymentTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.apprunner.VpcIngressConnectionArgs.Builder)
     /**
      * @param ingressVpcConfiguration Specifications for the customer\u2019s Amazon VPC and the related AWS PrivateLink VPC endpoint that are used to create the VPC Ingress Connection resource. See Ingress VPC Configuration below for more details.
@@ -435,4 +418,3 @@ object apprunner:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.apprunner.VpcIngressConnectionArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       

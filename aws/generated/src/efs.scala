@@ -11,7 +11,6 @@ object efs:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.efs.AccessPoint(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -38,7 +37,7 @@ object efs:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.efs.AccessPointArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   /** Provides an Elastic File System (EFS) File System resource. */
   def FileSystem(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.efs.FileSystemArgs.Builder])(using conf: KoPulumiConf) =
@@ -46,7 +45,6 @@ object efs:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.efs.FileSystem(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -108,7 +106,6 @@ object efs:
   def FileSystemPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.efs.FileSystemPolicyArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.efs.FileSystemPolicyArgs.builder
-    
     com.pulumi.aws.efs.FileSystemPolicy(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -120,7 +117,6 @@ object efs:
   def BackupPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.efs.BackupPolicyArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.efs.BackupPolicyArgs.builder
-    
     com.pulumi.aws.efs.BackupPolicy(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -135,7 +131,6 @@ object efs:
       val argsBuilder = com.pulumi.aws.efs.inputs.BackupPolicyBackupPolicyArgs.builder
       builder.backupPolicy(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.efs.FileSystemArgs.Builder)
     /**
      * @param lifecyclePolicies A file system [lifecycle policy](https://docs.aws.amazon.com/efs/latest/ug/API_LifecyclePolicy.html) object. See `lifecyclePolicy` block below for details.
@@ -158,7 +153,7 @@ object efs:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.efs.FileSystemArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.efs.ReplicationConfigurationArgs.Builder)
     /**
      * @param destination A destination configuration block (documented below).
@@ -169,16 +164,14 @@ object efs:
       val argsBuilder = com.pulumi.aws.efs.inputs.ReplicationConfigurationDestinationArgs.builder
       builder.destination(args(argsBuilder).build)
 
-                       
   /**
    * Creates a replica of an existing EFS file system in the same or another region. Creating this resource causes the source EFS file system to be replicated to a new read-only destination EFS file system (unless using the `destination.file_system_id` attribute). Deleting this resource will cause the replication from source to destination to stop and the destination file system will no longer be read only.
-   *  
+   * 
    *  &gt; **NOTE:** Deleting this resource does **not** delete the destination file system that was created.
    */
   def ReplicationConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.efs.ReplicationConfigurationArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.efs.ReplicationConfigurationArgs.builder
-    
     com.pulumi.aws.efs.ReplicationConfiguration(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -187,7 +180,6 @@ object efs:
   def MountTarget(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.efs.MountTargetArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.efs.MountTargetArgs.builder
-    
     com.pulumi.aws.efs.MountTarget(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -214,7 +206,7 @@ object efs:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.efs.inputs.AccessPointState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.efs.inputs.BackupPolicyState.Builder)
     /**
      * @param backupPolicy A backupPolicy object (documented below).
@@ -225,7 +217,6 @@ object efs:
       val argsBuilder = com.pulumi.aws.efs.inputs.BackupPolicyBackupPolicyArgs.builder
       builder.backupPolicy(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.efs.inputs.ReplicationConfigurationState.Builder)
     /**
      * @param destination A destination configuration block (documented below).
@@ -236,7 +227,6 @@ object efs:
       val argsBuilder = com.pulumi.aws.efs.inputs.ReplicationConfigurationDestinationArgs.builder
       builder.destination(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.efs.inputs.AccessPointRootDirectoryArgs.Builder)
     /**
      * @param creationInfo POSIX IDs and permissions to apply to the access point&#39;s Root Directory. See Creation Info below.
@@ -247,7 +237,6 @@ object efs:
       val argsBuilder = com.pulumi.aws.efs.inputs.AccessPointRootDirectoryCreationInfoArgs.builder
       builder.creationInfo(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.efs.inputs.FileSystemState.Builder)
     /**
      * @param lifecyclePolicies A file system [lifecycle policy](https://docs.aws.amazon.com/efs/latest/ug/API_LifecyclePolicy.html) object. See `lifecyclePolicy` block below for details.
@@ -279,4 +268,3 @@ object efs:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.efs.inputs.FileSystemState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       

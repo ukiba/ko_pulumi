@@ -17,30 +17,28 @@ object directconnect:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.directconnect.TransitVirtualInterface(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
   /**
    * Provides a MAC Security (MACSec) secret key resource for use with Direct Connect. See [MACsec prerequisites](https://docs.aws.amazon.com/directconnect/latest/UserGuide/direct-connect-mac-sec-getting-started.html#mac-sec-prerequisites) for information about MAC Security (MACsec) prerequisites.
-   *  
+   * 
    *  Creating this resource will also create a resource of type `aws.secretsmanager.Secret` which is managed by Direct Connect. While you can import this resource into your state, because this secret is managed by Direct Connect, you will not be able to make any modifications to it. See [How AWS Direct Connect uses AWS Secrets Manager](https://docs.aws.amazon.com/secretsmanager/latest/userguide/integrating_how-services-use-secrets_directconnect.html) for details.
-   *  
+   * 
    *  &gt; **Note:** All arguments including `ckn` and `cak` will be stored in the raw state as plain-text.
    *  **Note:** The `secretArn` argument can only be used to reference a previously created MACSec key. You cannot associate a Secrets Manager secret created outside of the `aws.directconnect.MacsecKeyAssociation` resource.
    */
   def MacsecKeyAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.directconnect.MacsecKeyAssociationArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.directconnect.MacsecKeyAssociationArgs.builder
-    
     com.pulumi.aws.directconnect.MacsecKeyAssociation(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
   /**
    * Provides a Direct Connect LAG. Connections can be added to the LAG via the `aws.directconnect.Connection` and `aws.directconnect.ConnectionAssociation` resources.
-   *  
+   * 
    *  &gt; *NOTE:* When creating a LAG, if no existing connection is specified, Direct Connect will create a connection and this provider will remove this unmanaged connection during resource creation.
    */
   def LinkAggregationGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
@@ -52,7 +50,6 @@ object directconnect:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.directconnect.LinkAggregationGroup(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -64,7 +61,6 @@ object directconnect:
     conf.logicalName2pysicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
       case None               =>
-    
     com.pulumi.aws.directconnect.HostedConnection(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -79,7 +75,6 @@ object directconnect:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.directconnect.PublicVirtualInterface(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -87,7 +82,7 @@ object directconnect:
   /**
    * Provides a resource to manage the accepter&#39;s side of a Direct Connect hosted transit virtual interface.
    *  This resource accepts ownership of a transit virtual interface created by another AWS account.
-   *  
+   * 
    *  &gt; **NOTE:** AWS allows a Direct Connect hosted transit virtual interface to be deleted from either the allocator&#39;s or accepter&#39;s side. However, this provider only allows the Direct Connect hosted transit virtual interface to be deleted from the allocator&#39;s side by removing the corresponding `aws.directconnect.HostedTransitVirtualInterface` resource from your configuration. Removing a `aws.directconnect.HostedTransitVirtualInterfaceAcceptor` resource from your configuration will remove it from your statefile and management, **but will not delete the Direct Connect virtual interface.**
    */
   def HostedTransitVirtualInterfaceAcceptor(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
@@ -96,7 +91,6 @@ object directconnect:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.directconnect.HostedTransitVirtualInterfaceAcceptor(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -111,14 +105,13 @@ object directconnect:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.directconnect.Gateway(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
   /**
    * Associates a Direct Connect Gateway with a VGW or transit gateway.
-   *  
+   * 
    *  To create a cross-account association, create an `aws.directconnect.GatewayAssociationProposal` resource
    *  in the AWS account that owns the VGW or transit gateway and then accept the proposal in the AWS account that owns the Direct Connect Gateway
    *  by creating an `aws.directconnect.GatewayAssociation` resource with the `proposalId` and `associatedGatewayOwnerAccountId` attributes set.
@@ -126,7 +119,6 @@ object directconnect:
   def GatewayAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.directconnect.GatewayAssociationArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.directconnect.GatewayAssociationArgs.builder
-    
     com.pulumi.aws.directconnect.GatewayAssociation(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -135,7 +127,6 @@ object directconnect:
   def ConnectionAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.directconnect.ConnectionAssociationArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.directconnect.ConnectionAssociationArgs.builder
-    
     com.pulumi.aws.directconnect.ConnectionAssociation(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -150,7 +141,6 @@ object directconnect:
     conf.logicalName2pysicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
       case None               =>
-    
     com.pulumi.aws.directconnect.HostedPrivateVirtualInterface(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -159,7 +149,6 @@ object directconnect:
   def BgpPeer(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.directconnect.BgpPeerArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.directconnect.BgpPeerArgs.builder
-    
     com.pulumi.aws.directconnect.BgpPeer(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -168,7 +157,6 @@ object directconnect:
   def GatewayAssociationProposal(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.directconnect.GatewayAssociationProposalArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.directconnect.GatewayAssociationProposalArgs.builder
-    
     com.pulumi.aws.directconnect.GatewayAssociationProposal(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -205,7 +193,7 @@ object directconnect:
     /**
      * Retrieve information about a specific AWS Direct Connect location in the current AWS Region.
      *  These are the locations that can be specified when configuring `aws.directconnect.Connection` or `aws.directconnect.LinkAggregationGroup` resources.
-     *  
+     * 
      *  &gt; **Note:** This data source is different from the `aws.directconnect.getLocations` data source which retrieves information about all the AWS Direct Connect locations in the current AWS Region.
      */
     def getLocation(args: Endofunction[com.pulumi.aws.directconnect.inputs.GetLocationArgs.Builder] = identity):
@@ -216,7 +204,7 @@ object directconnect:
     /**
      * Retrieve information about a specific AWS Direct Connect location in the current AWS Region.
      *  These are the locations that can be specified when configuring `aws.directconnect.Connection` or `aws.directconnect.LinkAggregationGroup` resources.
-     *  
+     * 
      *  &gt; **Note:** This data source is different from the `aws.directconnect.getLocations` data source which retrieves information about all the AWS Direct Connect locations in the current AWS Region.
      */
     def getLocationPlain(args: Endofunction[com.pulumi.aws.directconnect.inputs.GetLocationPlainArgs.Builder] = identity):
@@ -227,7 +215,7 @@ object directconnect:
     /**
      * Retrieve information about the AWS Direct Connect locations in the current AWS Region.
      *  These are the locations that can be specified when configuring `aws.directconnect.Connection` or `aws.directconnect.LinkAggregationGroup` resources.
-     *  
+     * 
      *  &gt; **Note:** This data source is different from the `aws.directconnect.getLocation` data source which retrieves information about a specific AWS Direct Connect location in the current AWS Region.
      */
     def getLocations(args: Endofunction[com.pulumi.aws.directconnect.inputs.GetLocationsArgs.Builder] = identity):
@@ -238,7 +226,7 @@ object directconnect:
     /**
      * Retrieve information about the AWS Direct Connect locations in the current AWS Region.
      *  These are the locations that can be specified when configuring `aws.directconnect.Connection` or `aws.directconnect.LinkAggregationGroup` resources.
-     *  
+     * 
      *  &gt; **Note:** This data source is different from the `aws.directconnect.getLocation` data source which retrieves information about a specific AWS Direct Connect location in the current AWS Region.
      */
     def getLocationsPlain(args: Endofunction[com.pulumi.aws.directconnect.inputs.GetLocationsPlainArgs.Builder] = identity):
@@ -268,7 +256,6 @@ object directconnect:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.directconnect.HostedPrivateVirtualInterfaceAccepter(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -283,7 +270,6 @@ object directconnect:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.directconnect.Connection(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -299,7 +285,6 @@ object directconnect:
     conf.logicalName2pysicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
       case None               =>
-    
     com.pulumi.aws.directconnect.HostedTransitVirtualInterface(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -314,7 +299,6 @@ object directconnect:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.directconnect.HostedPublicVirtualInterfaceAccepter(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -329,7 +313,6 @@ object directconnect:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.directconnect.PrivateVirtualInterface(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -338,7 +321,6 @@ object directconnect:
   def ConnectionConfirmation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.directconnect.ConnectionConfirmationArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.directconnect.ConnectionConfirmationArgs.builder
-    
     com.pulumi.aws.directconnect.ConnectionConfirmation(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -353,7 +335,6 @@ object directconnect:
     conf.logicalName2pysicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
       case None               =>
-    
     com.pulumi.aws.directconnect.HostedPublicVirtualInterface(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)

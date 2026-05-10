@@ -14,7 +14,6 @@ object appintegrations:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.appintegrations.DataIntegration(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -32,7 +31,7 @@ object appintegrations:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.appintegrations.DataIntegrationArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   type AppintegrationsFunctions = com.pulumi.aws.appintegrations.AppintegrationsFunctions
   object AppintegrationsFunctions:
     // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
@@ -63,4 +62,3 @@ object appintegrations:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.appintegrations.inputs.DataIntegrationState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       

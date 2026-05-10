@@ -14,7 +14,6 @@ object rum:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.rum.AppMonitor(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -41,12 +40,11 @@ object rum:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.rum.AppMonitorArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   /** Provides a CloudWatch RUM Metrics Destination resource. */
   def MetricsDestination(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.rum.MetricsDestinationArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.rum.MetricsDestinationArgs.builder
-    
     com.pulumi.aws.rum.MetricsDestination(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -73,4 +71,3 @@ object rum:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.rum.inputs.AppMonitorState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       

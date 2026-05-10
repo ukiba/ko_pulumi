@@ -11,7 +11,6 @@ object dax:
     conf.logicalName2pysicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
       case None               =>
-    
     com.pulumi.aws.dax.ParameterGroup(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -23,7 +22,6 @@ object dax:
     conf.logicalName2pysicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
       case None               =>
-    
     com.pulumi.aws.dax.SubnetGroup(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -35,7 +33,6 @@ object dax:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.dax.Cluster(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -50,7 +47,6 @@ object dax:
       def argsBuilder = com.pulumi.aws.dax.inputs.ParameterGroupParameterArgs.builder
       builder.parameters(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.dax.ClusterArgs.Builder)
     /**
      * @param serverSideEncryption Encrypt at rest options
@@ -64,7 +60,7 @@ object dax:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.dax.ClusterArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.dax.inputs.ParameterGroupState.Builder)
     /**
      * @param parameters The parameters of the parameter group.
@@ -75,7 +71,6 @@ object dax:
       def argsBuilder = com.pulumi.aws.dax.inputs.ParameterGroupParameterArgs.builder
       builder.parameters(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.dax.inputs.ClusterState.Builder)
     /**
      * @param nodes List of node objects including `id`, `address`, `port` and
@@ -100,4 +95,3 @@ object dax:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.dax.inputs.ClusterState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       

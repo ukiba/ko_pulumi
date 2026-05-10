@@ -6,13 +6,12 @@ import com.pulumi.resources.CustomResourceOptions
 object lakeformation:
   /**
    * Manages Lake Formation principals designated as data lake administrators and lists of principal permission entries for default create database and default create table permissions.
-   *  
+   * 
    *  &gt; **NOTE:** Lake Formation introduces fine-grained access control for data in your data lake. Part of the changes include the `IAMAllowedPrincipals` principal in order to make Lake Formation backwards compatible with existing IAM and Glue permissions. For more information, see [Changing the Default Security Settings for Your Data Lake](https://docs.aws.amazon.com/lake-formation/latest/dg/change-settings.html) and [Upgrading AWS Glue Data Permissions to the AWS Lake Formation Model](https://docs.aws.amazon.com/lake-formation/latest/dg/upgrade-glue-lake-formation.html).
    */
   def DataLakeSettings(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.lakeformation.DataLakeSettingsArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.lakeformation.DataLakeSettingsArgs.builder
-    
     com.pulumi.aws.lakeformation.DataLakeSettings(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -24,7 +23,6 @@ object lakeformation:
     conf.logicalName2pysicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
       case None               =>
-    
     com.pulumi.aws.lakeformation.LfTagExpression(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -33,7 +31,6 @@ object lakeformation:
   def IdentityCenterConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.lakeformation.IdentityCenterConfigurationArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.lakeformation.IdentityCenterConfigurationArgs.builder
-    
     com.pulumi.aws.lakeformation.IdentityCenterConfiguration(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -42,7 +39,6 @@ object lakeformation:
   def ResourceLfTag(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.lakeformation.ResourceLfTagArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.lakeformation.ResourceLfTagArgs.builder
-    
     com.pulumi.aws.lakeformation.ResourceLfTag(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -51,7 +47,6 @@ object lakeformation:
   def DataCellsFilter(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.lakeformation.DataCellsFilterArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.lakeformation.DataCellsFilterArgs.builder
-    
     com.pulumi.aws.lakeformation.DataCellsFilter(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -59,7 +54,7 @@ object lakeformation:
   extension (builder: com.pulumi.aws.lakeformation.LfTagExpressionArgs.Builder)
     /**
      * @param expressions A list of LF-Tag conditions (key-value pairs). See expression for more details.
-     *  
+     * 
      *  The following arguments are optional:
      * @return builder
      */
@@ -68,19 +63,17 @@ object lakeformation:
       def argsBuilder = com.pulumi.aws.lakeformation.inputs.LfTagExpressionExpressionArgs.builder
       builder.expressions(args.map(_(argsBuilder).build)*)
 
-                       
   /** Resource for managing an AWS Lake Formation Opt In. */
   def OptIn(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.lakeformation.OptInArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.lakeformation.OptInArgs.builder
-    
     com.pulumi.aws.lakeformation.OptIn(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
   /**
    * Registers a Lake Formation resource (e.g., S3 bucket) as managed by the Data Catalog. In other words, the S3 path is added to the data lake.
-   *  
+   * 
    *  Choose a role that has read/write access to the chosen Amazon S3 path or use the service-linked role.
    *  When you register the S3 path, the service-linked role and a new inline policy are created on your behalf.
    *  Lake Formation adds the first path to the inline policy and attaches it to the service-linked role.
@@ -89,7 +82,6 @@ object lakeformation:
   def Resource(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.lakeformation.ResourceArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.lakeformation.ResourceArgs.builder
-    
     com.pulumi.aws.lakeformation.Resource(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -113,7 +105,7 @@ object lakeformation:
 
     /**
      * Get permissions for a principal to access metadata in the Data Catalog and data organized in underlying data storage such as Amazon S3. Permissions are granted to a principal, in a Data Catalog, relative to a Lake Formation resource, which includes the Data Catalog, databases, tables, LF-tags, and LF-tag policies. For more information, see [Security and Access Control to Metadata and Data in Lake Formation](https://docs.aws.amazon.com/lake-formation/latest/dg/security-data-access.html).
-     *  
+     * 
      *  &gt; **NOTE:** This data source deals with explicitly granted permissions. Lake Formation grants implicit permissions to data lake administrators, database creators, and table creators. For more information, see [Implicit Lake Formation Permissions](https://docs.aws.amazon.com/lake-formation/latest/dg/implicit-permissions.html).
      */
     def getPermissions(args: Endofunction[com.pulumi.aws.lakeformation.inputs.GetPermissionsArgs.Builder] = identity):
@@ -123,7 +115,7 @@ object lakeformation:
 
     /**
      * Get permissions for a principal to access metadata in the Data Catalog and data organized in underlying data storage such as Amazon S3. Permissions are granted to a principal, in a Data Catalog, relative to a Lake Formation resource, which includes the Data Catalog, databases, tables, LF-tags, and LF-tag policies. For more information, see [Security and Access Control to Metadata and Data in Lake Formation](https://docs.aws.amazon.com/lake-formation/latest/dg/security-data-access.html).
-     *  
+     * 
      *  &gt; **NOTE:** This data source deals with explicitly granted permissions. Lake Formation grants implicit permissions to data lake administrators, database creators, and table creators. For more information, see [Implicit Lake Formation Permissions](https://docs.aws.amazon.com/lake-formation/latest/dg/implicit-permissions.html).
      */
     def getPermissionsPlain(args: Endofunction[com.pulumi.aws.lakeformation.inputs.GetPermissionsPlainArgs.Builder] = identity):
@@ -162,7 +154,6 @@ object lakeformation:
       def argsBuilder = com.pulumi.aws.lakeformation.inputs.DataLakeSettingsCreateTableDefaultPermissionArgs.builder
       builder.createTableDefaultPermissions(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lakeformation.ResourceLfTagsArgs.Builder)
     /**
      * @param database Configuration block for a database resource. See below.
@@ -175,7 +166,7 @@ object lakeformation:
 
     /**
      * @param lfTags Set of LF-tags to attach to the resource. See below.
-     *  
+     * 
      *  Exactly one of the following is required:
      * @return builder
      */
@@ -195,7 +186,7 @@ object lakeformation:
 
     /**
      * @param tableWithColumns Configuration block for a table with columns resource. See below.
-     *  
+     * 
      *  The following arguments are optional:
      * @return builder
      */
@@ -204,7 +195,6 @@ object lakeformation:
       val argsBuilder = com.pulumi.aws.lakeformation.inputs.ResourceLfTagsTableWithColumnsArgs.builder
       builder.tableWithColumns(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lakeformation.PermissionsArgs.Builder)
     /**
      * @param dataCellsFilter Configuration block for a data cells filter resource. Detailed below.
@@ -262,7 +252,7 @@ object lakeformation:
 
     /**
      * @param tableWithColumns Configuration block for a table with columns resource. Detailed below.
-     *  
+     * 
      *  The following arguments are optional:
      * @return builder
      */
@@ -271,12 +261,10 @@ object lakeformation:
       val argsBuilder = com.pulumi.aws.lakeformation.inputs.PermissionsTableWithColumnsArgs.builder
       builder.tableWithColumns(args(argsBuilder).build)
 
-                       
   /** Manages an attachment between one or more existing LF-tags and an existing Lake Formation resource. */
   def ResourceLfTags(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.lakeformation.ResourceLfTagsArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.lakeformation.ResourceLfTagsArgs.builder
-    
     com.pulumi.aws.lakeformation.ResourceLfTags(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -285,7 +273,6 @@ object lakeformation:
   def LfTag(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.lakeformation.LfTagArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.lakeformation.LfTagArgs.builder
-    
     com.pulumi.aws.lakeformation.LfTag(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -302,7 +289,7 @@ object lakeformation:
 
     /**
      * @param lfTag Set of LF-tags to attach to the resource. See LF Tag for more details.
-     *  
+     * 
      *  Exactly one of the following is required:
      * @return builder
      */
@@ -322,7 +309,7 @@ object lakeformation:
 
     /**
      * @param tableWithColumns Configuration block for a table with columns resource. See Table With Columns for more details.
-     *  
+     * 
      *  The following arguments are optional:
      * @return builder
      */
@@ -336,7 +323,6 @@ object lakeformation:
       val argsBuilder = com.pulumi.aws.lakeformation.inputs.ResourceLfTagTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lakeformation.OptInArgs.Builder)
     /**
      * @param conditions Lake Formation condition, which applies to permissions and opt-ins that contain an expression.
@@ -365,7 +351,6 @@ object lakeformation:
       def argsBuilder = com.pulumi.aws.lakeformation.inputs.OptInResourceDataArgs.builder
       builder.resourceDatas(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lakeformation.DataCellsFilterArgs.Builder)
     /**
      * @param tableData Information about the data cells filter. See Table Data below for details.
@@ -381,29 +366,28 @@ object lakeformation:
       val argsBuilder = com.pulumi.aws.lakeformation.inputs.DataCellsFilterTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
-                       
   /**
    * Grants permissions to the principal to access metadata in the Data Catalog and data organized in underlying data storage such as Amazon S3. Permissions are granted to a principal, in a Data Catalog, relative to a Lake Formation resource, which includes the Data Catalog, databases, tables, LF-tags, and LF-tag policies. For more information, see [Security and Access Control to Metadata and Data in Lake Formation](https://docs.aws.amazon.com/lake-formation/latest/dg/security-data-access.html).
-   *  
+   * 
    *  !&gt; **WARNING:** Lake Formation permissions are not in effect by default within AWS. Using this resource will not secure your data and will result in errors if you do not change the security settings for existing resources and the default security settings for new resources. See Default Behavior and `IAMAllowedPrincipals` for additional details.
-   *  
+   * 
    *  &gt; **NOTE:** In general, the `principal` should _NOT_ be a Lake Formation administrator or the entity (e.g., IAM role) that is running the deployment. Administrators have implicit permissions. These should be managed by granting or not granting administrator rights using `aws.lakeformation.DataLakeSettings`, _not_ with this resource.
-   *  
+   * 
    *  ## Default Behavior and `IAMAllowedPrincipals`
-   *  
+   * 
    *  **_Lake Formation permissions are not in effect by default within AWS._** `IAMAllowedPrincipals` (i.e., `IAM_ALLOWED_PRINCIPALS`) conflicts with individual Lake Formation permissions (i.e., non-`IAMAllowedPrincipals` permissions), will cause unexpected behavior, and may result in errors.
-   *  
+   * 
    *  When using Lake Formation, choose ONE of the following options as they are mutually exclusive:
-   *  
+   * 
    *  1. Use this resource (`aws.lakeformation.Permissions`), change the default security settings using `aws.lakeformation.DataLakeSettings`, and remove existing `IAMAllowedPrincipals` permissions
    *  2. Use `IAMAllowedPrincipals` without `aws.lakeformation.Permissions`
-   *  
+   * 
    *  This example shows removing the `IAMAllowedPrincipals` default security settings and making the caller a Lake Formation admin. Since `createDatabaseDefaultPermissions` and `createTableDefaultPermissions` are not set in the `aws.lakeformation.DataLakeSettings` resource, they are cleared.
-   *  
+   * 
    *  <pre>
    *  {@code
    *  package generated_program;
-   *  
+   * 
    *  import com.pulumi.Context;
    *  import com.pulumi.Pulumi;
    *  import com.pulumi.core.Output;
@@ -419,48 +403,48 @@ object lakeformation:
    *  import java.io.File;
    *  import java.nio.file.Files;
    *  import java.nio.file.Paths;
-   *  
+   * 
    *  public class App {
    *      public static void main(String[] args) {
    *          Pulumi.run(App::stack);
    *      }
-   *  
+   * 
    *      public static void stack(Context ctx) {
    *          final var current = AwsFunctions.getCallerIdentity(GetCallerIdentityArgs.builder()
    *              .build());
-   *  
+   * 
    *          final var currentGetSessionContext = IamFunctions.getSessionContext(GetSessionContextArgs.builder()
    *              .arn(current.arn())
    *              .build());
-   *  
+   * 
    *          var test = new DataLakeSettings("test", DataLakeSettingsArgs.builder()
    *              .admins(currentGetSessionContext.issuerArn())
    *              .build());
-   *  
+   * 
    *      }
    *  }
    *  }
    *  </pre>
-   *  
+   * 
    *  To remove existing `IAMAllowedPrincipals` permissions, use the [AWS Lake Formation Console](https://console.aws.amazon.com/lakeformation/) or [AWS CLI](https://awscli.amazonaws.com/v2/documentation/api/latest/reference/lakeformation/batch-revoke-permissions.html).
-   *  
+   * 
    *  `IAMAllowedPrincipals` is a hook to maintain backwards compatibility with AWS Glue. `IAMAllowedPrincipals` is a pseudo-entity group that acts like a Lake Formation principal. The group includes any IAM users and roles that are allowed access to your Data Catalog resources by your IAM policies.
-   *  
+   * 
    *  This is Lake Formation&#39;s default behavior:
-   *  
+   * 
    *  * Lake Formation grants `Super` permission to `IAMAllowedPrincipals` on all existing AWS Glue Data Catalog resources.
    *  * Lake Formation enables &#34;Use only IAM access control&#34; for new Data Catalog resources.
-   *  
+   * 
    *  For more details, see [Changing the Default Security Settings for Your Data Lake](https://docs.aws.amazon.com/lake-formation/latest/dg/change-settings.html).
-   *  
+   * 
    *  ### Problem Using `IAMAllowedPrincipals`
-   *  
+   * 
    *  AWS does not support combining `IAMAllowedPrincipals` permissions and non-`IAMAllowedPrincipals` permissions. Doing so results in unexpected permissions and behaviors. For example, this configuration grants a user `SELECT` on a column in a table.
-   *  
+   * 
    *  <pre>
    *  {@code
    *  package generated_program;
-   *  
+   * 
    *  import com.pulumi.Context;
    *  import com.pulumi.Pulumi;
    *  import com.pulumi.core.Output;
@@ -478,17 +462,17 @@ object lakeformation:
    *  import java.io.File;
    *  import java.nio.file.Files;
    *  import java.nio.file.Paths;
-   *  
+   * 
    *  public class App {
    *      public static void main(String[] args) {
    *          Pulumi.run(App::stack);
    *      }
-   *  
+   * 
    *      public static void stack(Context ctx) {
    *          var example = new CatalogDatabase("example", CatalogDatabaseArgs.builder()
    *              .name("sadabate")
    *              .build());
-   *  
+   * 
    *          var exampleCatalogTable = new CatalogTable("exampleCatalogTable", CatalogTableArgs.builder()
    *              .name("abelt")
    *              .databaseName(test.name())
@@ -499,7 +483,7 @@ object lakeformation:
    *                      .build())
    *                  .build())
    *              .build());
-   *  
+   * 
    *          var examplePermissions = new Permissions("examplePermissions", PermissionsArgs.builder()
    *              .permissions("SELECT")
    *              .principal("arn:aws:iam:us-east-1:123456789012:user/SanHolo")
@@ -509,26 +493,26 @@ object lakeformation:
    *                  .columnNames("event")
    *                  .build())
    *              .build());
-   *  
+   * 
    *      }
    *  }
    *  }
    *  </pre>
-   *  
+   * 
    *  The resulting permissions depend on whether the table had `IAMAllowedPrincipals` (IAP) permissions or not.
-   *  
+   * 
    *  | Result With IAP | Result Without IAP |
    *  | ---- | ---- |
    *  | `SELECT` column wildcard (i.e., all columns) | `SELECT` on `&#34;event&#34;` (as expected) |
-   *  
+   * 
    *  ## `ALLIAMPrincipals` group
-   *  
+   * 
    *  AllIAMPrincipals is a pseudo-entity group that acts like a Lake Formation principal. The group includes all IAMs in the account that is defined.
-   *  
+   * 
    *  <pre>
    *  {@code
    *  package generated_program;
-   *  
+   * 
    *  import com.pulumi.Context;
    *  import com.pulumi.Pulumi;
    *  import com.pulumi.core.Output;
@@ -541,12 +525,12 @@ object lakeformation:
    *  import java.io.File;
    *  import java.nio.file.Files;
    *  import java.nio.file.Paths;
-   *  
+   * 
    *  public class App {
    *      public static void main(String[] args) {
    *          Pulumi.run(App::stack);
    *      }
-   *  
+   * 
    *      public static void stack(Context ctx) {
    *          var example = new Permissions("example", PermissionsArgs.builder()
    *              .permissions("SELECT")
@@ -557,24 +541,23 @@ object lakeformation:
    *                  .columnNames("event")
    *                  .build())
    *              .build());
-   *  
+   * 
    *      }
    *  }
    *  }
    *  </pre>
-   *  
+   * 
    *  ## Using Lake Formation Permissions
-   *  
+   * 
    *  Lake Formation grants implicit permissions to data lake administrators, database creators, and table creators. These implicit permissions cannot be revoked _per se_. If this resource reads implicit permissions, it will attempt to revoke them, which causes an error when the resource is destroyed.
-   *  
+   * 
    *  There are two ways to avoid these errors. First, and the way we recommend, is to avoid using this resource with principals that have implicit permissions. A second, error-prone option, is to grant explicit permissions (and `permissionsWithGrantOption`) to &#34;overwrite&#34; a principal&#39;s implicit permissions, which you can then revoke with this resource. For more information, see [Implicit Lake Formation Permissions](https://docs.aws.amazon.com/lake-formation/latest/dg/implicit-permissions.html).
-   *  
+   * 
    *  If the `principal` is also a data lake administrator, AWS grants implicit permissions that can cause errors using this resource. For example, AWS implicitly grants a `principal`/administrator `permissions` and `permissionsWithGrantOption` of `ALL`, `ALTER`, `DELETE`, `DESCRIBE`, `DROP`, `INSERT`, and `SELECT` on a table. If you use this resource to explicitly grant the `principal`/administrator `permissions` but _not_ `permissionsWithGrantOption` of `ALL`, `ALTER`, `DELETE`, `DESCRIBE`, `DROP`, `INSERT`, and `SELECT` on the table, this resource will read the implicit `permissionsWithGrantOption` and attempt to revoke them when the resource is destroyed. Doing so will cause an `InvalidInputException: No permissions revoked` error because you cannot revoke implicit permissions _per se_. To workaround this problem, explicitly grant the `principal`/administrator `permissions` _and_ `permissionsWithGrantOption`, which can then be revoked. Similarly, granting a `principal`/administrator permissions on a table with columns and providing `columnNames`, will result in a `InvalidInputException: Permissions modification is invalid` error because you are narrowing the implicit permissions. Instead, set `wildcard` to `true` and remove the `columnNames`.
    */
   def Permissions(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.lakeformation.PermissionsArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.lakeformation.PermissionsArgs.builder
-    
     com.pulumi.aws.lakeformation.Permissions(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -591,7 +574,7 @@ object lakeformation:
 
     /**
      * @param lfTags Set of LF-tags to attach to the resource. See below.
-     *  
+     * 
      *  Exactly one of the following is required:
      * @return builder
      */
@@ -611,7 +594,7 @@ object lakeformation:
 
     /**
      * @param tableWithColumns Configuration block for a table with columns resource. See below.
-     *  
+     * 
      *  The following arguments are optional:
      * @return builder
      */
@@ -620,7 +603,6 @@ object lakeformation:
       val argsBuilder = com.pulumi.aws.lakeformation.inputs.ResourceLfTagsTableWithColumnsArgs.builder
       builder.tableWithColumns(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lakeformation.inputs.PermissionsState.Builder)
     /**
      * @param dataCellsFilter Configuration block for a data cells filter resource. Detailed below.
@@ -678,7 +660,7 @@ object lakeformation:
 
     /**
      * @param tableWithColumns Configuration block for a table with columns resource. Detailed below.
-     *  
+     * 
      *  The following arguments are optional:
      * @return builder
      */
@@ -687,11 +669,10 @@ object lakeformation:
       val argsBuilder = com.pulumi.aws.lakeformation.inputs.PermissionsTableWithColumnsArgs.builder
       builder.tableWithColumns(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lakeformation.inputs.PermissionsLfTagPolicyArgs.Builder)
     /**
      * @param expressions A list of tag conditions that apply to the resource&#39;s tag policy. Configuration block for tag conditions that apply to the policy. See `expression` below.
-     *  
+     * 
      *  The following argument is optional:
      * @return builder
      */
@@ -700,11 +681,10 @@ object lakeformation:
       def argsBuilder = com.pulumi.aws.lakeformation.inputs.PermissionsLfTagPolicyExpressionArgs.builder
       builder.expressions(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lakeformation.inputs.GetPermissionsLfTagPolicyArgs.Builder)
     /**
      * @param expressions List of tag conditions that apply to the resource&#39;s tag policy. Configuration block for tag conditions that apply to the policy. See `expression` below.
-     *  
+     * 
      *  The following argument is optional:
      * @return builder
      */
@@ -713,7 +693,6 @@ object lakeformation:
       def argsBuilder = com.pulumi.aws.lakeformation.inputs.GetPermissionsLfTagPolicyExpressionArgs.builder
       builder.expressions(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lakeformation.inputs.ResourceLfTagTableWithColumnsArgs.Builder)
     /**
      * @param columnWildcard Option to add column wildcard. See Column Wildcard for more details.
@@ -724,7 +703,6 @@ object lakeformation:
       val argsBuilder = com.pulumi.aws.lakeformation.inputs.ResourceLfTagTableWithColumnsColumnWildcardArgs.builder
       builder.columnWildcard(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lakeformation.inputs.OptInResourceDataTableWithColumnsArgs.Builder)
     /**
      * @param columnWildcard Wildcard specified by a ColumnWildcard object. At least one of ColumnNames or ColumnWildcard is required.
@@ -735,7 +713,6 @@ object lakeformation:
       val argsBuilder = com.pulumi.aws.lakeformation.inputs.OptInResourceDataTableWithColumnsColumnWildcardArgs.builder
       builder.columnWildcard(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lakeformation.inputs.ResourceLfTagState.Builder)
     /**
      * @param database Configuration block for a database resource. See Database for more details.
@@ -748,7 +725,7 @@ object lakeformation:
 
     /**
      * @param lfTag Set of LF-tags to attach to the resource. See LF Tag for more details.
-     *  
+     * 
      *  Exactly one of the following is required:
      * @return builder
      */
@@ -768,7 +745,7 @@ object lakeformation:
 
     /**
      * @param tableWithColumns Configuration block for a table with columns resource. See Table With Columns for more details.
-     *  
+     * 
      *  The following arguments are optional:
      * @return builder
      */
@@ -782,7 +759,6 @@ object lakeformation:
       val argsBuilder = com.pulumi.aws.lakeformation.inputs.ResourceLfTagTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lakeformation.inputs.DataCellsFilterState.Builder)
     /**
      * @param tableData Information about the data cells filter. See Table Data below for details.
@@ -798,7 +774,6 @@ object lakeformation:
       val argsBuilder = com.pulumi.aws.lakeformation.inputs.DataCellsFilterTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lakeformation.inputs.OptInState.Builder)
     /**
      * @param conditions Lake Formation condition, which applies to permissions and opt-ins that contain an expression.
@@ -827,7 +802,6 @@ object lakeformation:
       def argsBuilder = com.pulumi.aws.lakeformation.inputs.OptInResourceDataArgs.builder
       builder.resourceDatas(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lakeformation.inputs.DataCellsFilterTableDataArgs.Builder)
     /**
      * @param columnWildcard A wildcard with exclusions. See Column Wildcard below for details.
@@ -847,7 +821,6 @@ object lakeformation:
       val argsBuilder = com.pulumi.aws.lakeformation.inputs.DataCellsFilterTableDataRowFilterArgs.builder
       builder.rowFilter(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lakeformation.inputs.GetPermissionsArgs.Builder)
     /**
      * @param dataCellsFilter Configuration block for a data cells filter resource. Detailed below.
@@ -905,7 +878,7 @@ object lakeformation:
 
     /**
      * @param tableWithColumns Configuration block for a table with columns resource. Detailed below.
-     *  
+     * 
      *  The following arguments are optional:
      * @return builder
      */
@@ -914,7 +887,6 @@ object lakeformation:
       val argsBuilder = com.pulumi.aws.lakeformation.inputs.GetPermissionsTableWithColumnsArgs.builder
       builder.tableWithColumns(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lakeformation.inputs.DataCellsFilterTableDataRowFilterArgs.Builder)
     /**
      * @param allRowsWildcard (Optional) A wildcard that matches all rows. Required when applying column-level filtering without row-level filtering. Use an empty block: `allRowsWildcard {}`.
@@ -925,7 +897,6 @@ object lakeformation:
       val argsBuilder = com.pulumi.aws.lakeformation.inputs.DataCellsFilterTableDataRowFilterAllRowsWildcardArgs.builder
       builder.allRowsWildcard(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.lakeformation.inputs.DataLakeSettingsState.Builder)
     /**
      * @param createDatabaseDefaultPermissions Up to three configuration blocks of principal permissions for default create database permissions. Detailed below.
@@ -945,11 +916,10 @@ object lakeformation:
       def argsBuilder = com.pulumi.aws.lakeformation.inputs.DataLakeSettingsCreateTableDefaultPermissionArgs.builder
       builder.createTableDefaultPermissions(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lakeformation.inputs.LfTagExpressionState.Builder)
     /**
      * @param expressions A list of LF-Tag conditions (key-value pairs). See expression for more details.
-     *  
+     * 
      *  The following arguments are optional:
      * @return builder
      */
@@ -958,7 +928,6 @@ object lakeformation:
       def argsBuilder = com.pulumi.aws.lakeformation.inputs.LfTagExpressionExpressionArgs.builder
       builder.expressions(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.lakeformation.inputs.OptInResourceDataArgs.Builder)
     /**
      * @param catalogs Identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. See Catalog for more details.
@@ -1040,5 +1009,3 @@ object lakeformation:
         com.pulumi.aws.lakeformation.inputs.OptInResourceDataArgs.Builder =
       val argsBuilder = com.pulumi.aws.lakeformation.inputs.OptInResourceDataTableWithColumnsArgs.builder
       builder.tableWithColumns(args(argsBuilder).build)
-
-                       

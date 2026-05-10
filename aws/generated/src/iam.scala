@@ -6,20 +6,19 @@ import com.pulumi.resources.CustomResourceOptions
 object iam:
   /**
    * Provides an IAM Signing Certificate resource to upload Signing Certificates.
-   *  
+   * 
    *  &gt; **Note:** All arguments including the certificate body will be stored in the raw state as plain-text.
    */
   def SigningCertificate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.iam.SigningCertificateArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.iam.SigningCertificateArgs.builder
-    
     com.pulumi.aws.iam.SigningCertificate(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
   /**
    * Provides an IAM instance profile.
-   *  
+   * 
    *  &gt; **NOTE:** When managing instance profiles, remember that the `name` attribute must always be unique. This means that even if you have different `role` or `path` values, duplicating an existing instance profile `name` will lead to an `EntityAlreadyExists` error.
    */
   def InstanceProfile(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
@@ -31,7 +30,6 @@ object iam:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.iam.InstanceProfile(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -40,14 +38,13 @@ object iam:
    * Provides a resource for adding an IAM User to IAM Groups. This
    *  resource can be used multiple times with the same user for non-overlapping
    *  groups.
-   *  
+   * 
    *  To exclusively manage the users in a group, see the
    *  `aws.iam.GroupMembership` resource.
    */
   def UserGroupMembership(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.iam.UserGroupMembershipArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.iam.UserGroupMembershipArgs.builder
-    
     com.pulumi.aws.iam.UserGroupMembership(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -56,7 +53,6 @@ object iam:
   def ServiceSpecificCredential(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.iam.ServiceSpecificCredentialArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.iam.ServiceSpecificCredentialArgs.builder
-    
     com.pulumi.aws.iam.ServiceSpecificCredential(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -71,16 +67,15 @@ object iam:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.iam.SamlProvider(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
   /**
    * Provides an IAM role inline policy.
-   *  
+   * 
    *  &gt; **NOTE:** For a given role, this resource is incompatible with using the `aws.iam.Role` resource `inlinePolicy` argument. When using that argument and this resource, both will attempt to manage the role&#39;s inline policies and the provider will show a permanent difference.
-   *  
+   * 
    *  &gt; **NOTE:** We suggest using explicit JSON encoding or `aws.iam.getPolicyDocument` when assigning a value to `policy`. They seamlessly translate configuration to JSON, enabling you to maintain consistency within your configuration without the need for context switches. Also, you can sidestep potential complications arising from formatting discrepancies, whitespace inconsistencies, and other nuances inherent to JSON.
    */
   def RolePolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
@@ -89,14 +84,13 @@ object iam:
     conf.logicalName2pysicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
       case None               =>
-    
     com.pulumi.aws.iam.RolePolicy(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
   /**
    * Provides an IAM group.
-   *  
+   * 
    *  &gt; **NOTE on user management:** Using `aws.iam.GroupMembership` or `aws.iam.UserGroupMembership` resources in addition to manually managing user/group membership using the console may lead to configuration drift or conflicts. For this reason, it&#39;s recommended to either manage membership entirely with the provider or entirely within the AWS console.
    */
   def Group(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
@@ -105,27 +99,25 @@ object iam:
     conf.logicalName2pysicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
       case None               =>
-    
     com.pulumi.aws.iam.Group(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
   /**
    * Manages an IAM User Login Profile with limited support for password creation during this provider resource creation. Uses PGP to encrypt the password for safe transport to the user. PGP keys can be obtained from Keybase.
-   *  
+   * 
    *  &gt; To reset an IAM User login password via this provider, you can use delete and recreate this resource or change any of the arguments.
    */
   def UserLoginProfile(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.iam.UserLoginProfileArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.iam.UserLoginProfileArgs.builder
-    
     com.pulumi.aws.iam.UserLoginProfile(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
   /**
    * Provides an IAM policy attached to a user.
-   *  
+   * 
    *  &gt; **NOTE:** We suggest using explicit JSON encoding or `aws.iam.getPolicyDocument` when assigning a value to `policy`. They seamlessly translate configuration to JSON, enabling you to maintain consistency within your configuration without the need for context switches. Also, you can sidestep potential complications arising from formatting discrepancies, whitespace inconsistencies, and other nuances inherent to JSON.
    */
   def UserPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
@@ -134,7 +126,6 @@ object iam:
     conf.logicalName2pysicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
       case None               =>
-    
     com.pulumi.aws.iam.UserPolicy(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -142,12 +133,12 @@ object iam:
   /**
    * Provides an IAM Server Certificate resource to upload Server Certificates.
    *  Certs uploaded to IAM can easily work with other AWS services such as:
-   *  
+   * 
    *  - AWS Elastic Beanstalk
    *  - Elastic Load Balancing
    *  - CloudFront
    *  - AWS OpsWorks
-   *  
+   * 
    *  For information about server certificates in IAM, see [Managing Server
    *  Certificates][2] in AWS Documentation.
    */
@@ -160,20 +151,19 @@ object iam:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.iam.ServerCertificate(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
   /**
    * Attaches a Managed IAM Policy to user(s), role(s), and/or group(s)
-   *  
+   * 
    *  !&gt; **WARNING:** The aws.iam.PolicyAttachment resource creates **exclusive** attachments of IAM policies. Across the entire AWS account, all of the users/roles/groups to which a single policy is attached must be declared by a single aws.iam.PolicyAttachment resource. This means that even any users/roles/groups that have the attached policy via any other mechanism (including other resources managed by this provider) will have that attached policy revoked by this resource. Consider `aws.iam.RolePolicyAttachment`, `aws.iam.UserPolicyAttachment`, or `aws.iam.GroupPolicyAttachment` instead. These resources do not enforce exclusive attachment of an IAM policy.
-   *  
+   * 
    *  &gt; **NOTE:** The usage of this resource conflicts with the `aws.iam.GroupPolicyAttachment`, `aws.iam.RolePolicyAttachment`, and `aws.iam.UserPolicyAttachment` resources and will permanently show a difference if both are defined.
-   *  
+   * 
    *  &gt; **NOTE:** For a given role, this resource is incompatible with using the `aws.iam.Role` resource `managedPolicyArns` argument. When using that argument and this resource, both will attempt to manage the role&#39;s managed policy attachments and the provider will show a permanent difference.
-   *  
+   * 
    *  &gt; **NOTE:** To ensure Pulumi correctly manages dependencies during updates, use a reference to the IAM resource when defining the `policyArn` for `aws.iam.PolicyAttachment`, rather than constructing the ARN directly. For example, use `policyArn = aws_iam_policy.example.arn` instead of `policyArn = &#34;arn:aws:iam::${data.aws_caller_identity.current.account_id}:policy/Example&#34;`. Failing to do so may lead to errors like `DeleteConflict: Cannot delete a policy attached to entities` or `NoSuchEntity`.
    */
   def PolicyAttachment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
@@ -182,29 +172,27 @@ object iam:
     conf.logicalName2pysicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
       case None               =>
-    
     com.pulumi.aws.iam.PolicyAttachment(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
   /**
    * Attaches a Managed IAM Policy to an IAM role
-   *  
+   * 
    *  &gt; **NOTE:** The usage of this resource conflicts with the `aws.iam.PolicyAttachment` resource and will permanently show a difference if both are defined.
-   *  
+   * 
    *  &gt; **NOTE:** For a given role, this resource is incompatible with using the `aws.iam.Role` resource `managedPolicyArns` argument. When using that argument and this resource, both will attempt to manage the role&#39;s managed policy attachments and Pulumi will show a permanent difference.
    */
   def RolePolicyAttachment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.iam.RolePolicyAttachmentArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.iam.RolePolicyAttachmentArgs.builder
-    
     com.pulumi.aws.iam.RolePolicyAttachment(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
   /**
    * Provides an IAM user.
-   *  
+   * 
    *  &gt; *NOTE:* If policies are attached to the user via the `aws.iam.PolicyAttachment` resource and you are modifying the user `name` or `path`, the `forceDestroy` argument must be set to `true` and applied before attempting the operation otherwise you will encounter a `DeleteConflict` error. The `aws.iam.UserPolicyAttachment` resource (recommended) does not have this requirement.
    */
   def User(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
@@ -216,22 +204,20 @@ object iam:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.iam.User(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
   /**
    * Resource for maintaining exclusive management of managed IAM policies assigned to an AWS IAM (Identity &amp; Access Management) group.
-   *  
+   * 
    *  !&gt; This resource takes exclusive ownership over managed IAM policies attached to a group. This includes removal of managed IAM policies which are not explicitly configured. To prevent persistent drift, ensure any `aws.iam.GroupPolicyAttachment` resources managed alongside this resource are included in the `policyArns` argument.
-   *  
+   * 
    *  &gt; Destruction of this resource means Terraform will no longer manage reconciliation of the configured policy attachments. It **will not** detach the configured policies from the group.
    */
   def GroupPolicyAttachmentsExclusive(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.iam.GroupPolicyAttachmentsExclusiveArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.iam.GroupPolicyAttachmentsExclusiveArgs.builder
-    
     com.pulumi.aws.iam.GroupPolicyAttachmentsExclusive(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -240,33 +226,30 @@ object iam:
   def SshKey(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.iam.SshKeyArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.iam.SshKeyArgs.builder
-    
     com.pulumi.aws.iam.SshKey(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
   /**
    * Attaches a Managed IAM Policy to an IAM group
-   *  
+   * 
    *  &gt; **NOTE:** The usage of this resource conflicts with the `aws.iam.PolicyAttachment` resource and will permanently show a difference if both are defined.
    */
   def GroupPolicyAttachment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.iam.GroupPolicyAttachmentArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.iam.GroupPolicyAttachmentArgs.builder
-    
     com.pulumi.aws.iam.GroupPolicyAttachment(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
   /**
    * Manages centralized root access features across AWS member accounts managed using AWS Organizations. More information about managing root access in IAM can be found in the [Centralize root access for member accounts](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_root-enable-root-access.html).
-   *  
+   * 
    *  &gt; **NOTE:** The AWS account utilizing this resource must be an Organizations management account. Also, you must enable trusted access for AWS Identity and Access Management in AWS Organizations.
    */
   def OrganizationsFeatures(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.iam.OrganizationsFeaturesArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.iam.OrganizationsFeaturesArgs.builder
-    
     com.pulumi.aws.iam.OrganizationsFeatures(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -275,35 +258,32 @@ object iam:
   def AccessKey(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.iam.AccessKeyArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.iam.AccessKeyArgs.builder
-    
     com.pulumi.aws.iam.AccessKey(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
   /**
    * Resource for maintaining exclusive management of inline policies assigned to an AWS IAM (Identity &amp; Access Management) user.
-   *  
+   * 
    *  !&gt; This resource takes exclusive ownership over inline policies assigned to a user. This includes removal of inline policies which are not explicitly configured. To prevent persistent drift, ensure any `aws.iam.UserPolicy` resources managed alongside this resource are included in the `policyNames` argument.
-   *  
+   * 
    *  &gt; Destruction of this resource means Terraform will no longer manage reconciliation of the configured inline policy assignments. It __will not__ delete the configured policies from the user.
    */
   def UserPoliciesExclusive(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.iam.UserPoliciesExclusiveArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.iam.UserPoliciesExclusiveArgs.builder
-    
     com.pulumi.aws.iam.UserPoliciesExclusive(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
   /**
    * &gt; **Note:** There is only a single account alias per AWS account.
-   *  
+   * 
    *  Manages the account alias for the AWS Account.
    */
   def AccountAlias(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.iam.AccountAliasArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.iam.AccountAliasArgs.builder
-    
     com.pulumi.aws.iam.AccountAlias(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -318,7 +298,6 @@ object iam:
       val argsBuilder = com.pulumi.aws.iam.inputs.PolicyDocumentArgs.builder
       builder.policy(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.iam.GroupPolicyArgs.Builder)
     /**
      * @param policy The policy document. This is a JSON formatted string.
@@ -329,10 +308,9 @@ object iam:
       val argsBuilder = com.pulumi.aws.iam.inputs.PolicyDocumentArgs.builder
       builder.policy(args(argsBuilder).build)
 
-                       
   /**
    * &gt; **Note:** There is only a single policy allowed per AWS account. An existing policy will be lost when using this resource as an effect of this limitation.
-   *  
+   * 
    *  Manages Password Policy for the AWS Account.
    *  See more about [Account Password Policy](http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_passwords_account-policy.html)
    *  in the official AWS docs.
@@ -340,7 +318,6 @@ object iam:
   def AccountPasswordPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.iam.AccountPasswordPolicyArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.iam.AccountPasswordPolicyArgs.builder
-    
     com.pulumi.aws.iam.AccountPasswordPolicy(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -349,7 +326,6 @@ object iam:
   def SecurityTokenServicePreferences(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.iam.SecurityTokenServicePreferencesArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.iam.SecurityTokenServicePreferencesArgs.builder
-    
     com.pulumi.aws.iam.SecurityTokenServicePreferences(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -357,9 +333,9 @@ object iam:
   extension (builder: com.pulumi.aws.iam.RoleArgs.Builder)
     /**
      * @param assumeRolePolicy Policy that grants an entity permission to assume the role.
-     *  
+     * 
      *  &gt; **NOTE:** The `assumeRolePolicy` is very similar to but slightly different than a standard IAM policy and cannot use an `aws.iam.Policy` resource.  However, it _can_ use an `aws.iam.getPolicyDocument` data source. See the example above of how this works.
-     *  
+     * 
      *  The following arguments are optional:
      * @return builder
      */
@@ -380,63 +356,59 @@ object iam:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.iam.RoleArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   /**
    * Resource for maintaining exclusive management of managed IAM policies assigned to an AWS IAM (Identity &amp; Access Management) user.
-   *  
+   * 
    *  !&gt; This resource takes exclusive ownership over managed IAM policies attached to a user. This includes removal of managed IAM policies which are not explicitly configured. To prevent persistent drift, ensure any `aws.iam.UserPolicyAttachment` resources managed alongside this resource are included in the `policyArns` argument.
-   *  
+   * 
    *  &gt; Destruction of this resource means Terraform will no longer manage reconciliation of the configured policy attachments. It **will not** detach the configured policies from the user.
    */
   def UserPolicyAttachmentsExclusive(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.iam.UserPolicyAttachmentsExclusiveArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.iam.UserPolicyAttachmentsExclusiveArgs.builder
-    
     com.pulumi.aws.iam.UserPolicyAttachmentsExclusive(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
   /**
    * Attaches a Managed IAM Policy to an IAM user
-   *  
+   * 
    *  &gt; **NOTE:** The usage of this resource conflicts with the `aws.iam.PolicyAttachment` resource and will permanently show a difference if both are defined.
    */
   def UserPolicyAttachment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.iam.UserPolicyAttachmentArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.iam.UserPolicyAttachmentArgs.builder
-    
     com.pulumi.aws.iam.UserPolicyAttachment(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
   /**
    * Resource for maintaining exclusive management of inline policies assigned to an AWS IAM (Identity &amp; Access Management) group.
-   *  
+   * 
    *  !&gt; This resource takes exclusive ownership over inline policies assigned to a group. This includes removal of inline policies which are not explicitly configured. To prevent persistent drift, ensure any `aws.iam.GroupPolicy` resources managed alongside this resource are included in the `policyNames` argument.
-   *  
+   * 
    *  &gt; Destruction of this resource means Terraform will no longer manage reconciliation of the configured inline policy assignments. It __will not__ delete the configured policies from the group.
    */
   def GroupPoliciesExclusive(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.iam.GroupPoliciesExclusiveArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.iam.GroupPoliciesExclusiveArgs.builder
-    
     com.pulumi.aws.iam.GroupPoliciesExclusive(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
   /**
    * &gt; **NOTE:**: To reliably detect drift between customer managed inline policies listed in this resource and actual policies attached to the role in the cloud, you currently need to run Pulumi with `pulumi up --refresh`. See [#4766](https://github.com/pulumi/pulumi-aws/issues/4766) for tracking making this work with regular `pulumi up` invocations.
-   *  
+   * 
    *  Resource for maintaining exclusive management of inline policies assigned to an AWS IAM (Identity &amp; Access Management) role.
-   *  
+   * 
    *  !&gt; This resource takes exclusive ownership over inline policies assigned to a role. This includes removal of inline policies which are not explicitly configured. To prevent persistent drift, ensure any `aws.iam.RolePolicy` resources managed alongside this resource are included in the `policyNames` argument.
-   *  
+   * 
    *  &gt; Destruction of this resource means Pulumi will no longer manage reconciliation of the configured inline policy assignments. It __will not__ delete the configured policies from the role.
    */
   def RolePoliciesExclusive(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.iam.RolePoliciesExclusiveArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.iam.RolePoliciesExclusiveArgs.builder
-    
     com.pulumi.aws.iam.RolePoliciesExclusive(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -564,7 +536,7 @@ object iam:
 
     /**
      * Generates an IAM policy document in JSON format for use with resources that expect policy documents such as `aws.iam.Policy`.
-     *  
+     * 
      *  Using this data source to generate policy documents is *optional*. It is also valid to use literal JSON strings in your configuration or to use the `file` interpolation function to read a raw JSON policy document from a file.
      */
     def getPolicyDocument(args: Endofunction[com.pulumi.aws.iam.inputs.GetPolicyDocumentArgs.Builder] = identity):
@@ -574,7 +546,7 @@ object iam:
 
     /**
      * Generates an IAM policy document in JSON format for use with resources that expect policy documents such as `aws.iam.Policy`.
-     *  
+     * 
      *  Using this data source to generate policy documents is *optional*. It is also valid to use literal JSON strings in your configuration or to use the `file` interpolation function to read a raw JSON policy document from a file.
      */
     def getPolicyDocumentPlain(args: Endofunction[com.pulumi.aws.iam.inputs.GetPolicyDocumentPlainArgs.Builder] = identity):
@@ -584,10 +556,10 @@ object iam:
 
     /**
      * Runs a simulation of the IAM policies of a particular principal against a given hypothetical request.
-     *  
+     * 
      *  You can use this data source in conjunction with
      *  Preconditions and Postconditions so that your configuration can test either whether it should have sufficient access to do its own work, or whether policies your configuration declares itself are sufficient for their intended use elsewhere.
-     *  
+     * 
      *  &gt; **Note:** Correctly using this data source requires familiarity with various details of AWS Identity and Access Management, and how various AWS services integrate with it. For general information on the AWS IAM policy simulator, see [Testing IAM policies with the IAM policy simulator](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_testing-policies.html). This data source wraps the `iam:SimulatePrincipalPolicy` API action described on that page.
      */
     def getPrincipalPolicySimulation(args: Endofunction[com.pulumi.aws.iam.inputs.GetPrincipalPolicySimulationArgs.Builder] = identity):
@@ -597,10 +569,10 @@ object iam:
 
     /**
      * Runs a simulation of the IAM policies of a particular principal against a given hypothetical request.
-     *  
+     * 
      *  You can use this data source in conjunction with
      *  Preconditions and Postconditions so that your configuration can test either whether it should have sufficient access to do its own work, or whether policies your configuration declares itself are sufficient for their intended use elsewhere.
-     *  
+     * 
      *  &gt; **Note:** Correctly using this data source requires familiarity with various details of AWS Identity and Access Management, and how various AWS services integrate with it. For general information on the AWS IAM policy simulator, see [Testing IAM policies with the IAM policy simulator](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_testing-policies.html). This data source wraps the `iam:SimulatePrincipalPolicy` API action described on that page.
      */
     def getPrincipalPolicySimulationPlain(args: Endofunction[com.pulumi.aws.iam.inputs.GetPrincipalPolicySimulationPlainArgs.Builder] = identity):
@@ -698,7 +670,7 @@ object iam:
 
     /**
      * This data source provides information on the IAM source role of an STS assumed role. For non-role ARNs, this data source simply passes the ARN through in `issuerArn`.
-     *  
+     * 
      *  For some AWS resources, multiple types of principals are allowed in the same argument (e.g., IAM users and IAM roles). However, these arguments often do not allow assumed-role (i.e., STS, temporary credential) principals. Given an STS ARN, this data source provides the ARN for the source IAM role.
      */
     def getSessionContext(args: Endofunction[com.pulumi.aws.iam.inputs.GetSessionContextArgs.Builder] = identity):
@@ -708,7 +680,7 @@ object iam:
 
     /**
      * This data source provides information on the IAM source role of an STS assumed role. For non-role ARNs, this data source simply passes the ARN through in `issuerArn`.
-     *  
+     * 
      *  For some AWS resources, multiple types of principals are allowed in the same argument (e.g., IAM users and IAM roles). However, these arguments often do not allow assumed-role (i.e., STS, temporary credential) principals. Given an STS ARN, this data source provides the ARN for the source IAM role.
      */
     def getSessionContextPlain(args: Endofunction[com.pulumi.aws.iam.inputs.GetSessionContextPlainArgs.Builder] = identity):
@@ -762,11 +734,11 @@ object iam:
 
   /**
    * &gt; **WARNING:** Multiple aws.iam.GroupMembership resources with the same group name will produce inconsistent behavior!
-   *  
+   * 
    *  Provides a top level resource to manage IAM Group membership for IAM Users. For
    *  more information on managing IAM Groups or IAM Users, see IAM Groups or
    *  IAM Users
-   *  
+   * 
    *  &gt; **Note:** `aws.iam.GroupMembership` will conflict with itself if used more than once with the same group. To non-exclusively manage the users in a group, see the
    *  `aws.iam.UserGroupMembership` resource.
    */
@@ -776,18 +748,17 @@ object iam:
     conf.logicalName2pysicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
       case None               =>
-    
     com.pulumi.aws.iam.GroupMembership(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
   /**
    * Provides an IAM role.
-   *  
+   * 
    *  &gt; **NOTE:** If policies are attached to the role via the `aws.iam.PolicyAttachment` resource and you are modifying the role `name` or `path`, the `forceDetachPolicies` argument must be set to `true` and applied before attempting the operation otherwise you will encounter a `DeleteConflict` error. The `aws.iam.RolePolicyAttachment` resource (recommended) does not have this requirement.
-   *  
+   * 
    *  &gt; **NOTE:** If you use this resource&#39;s `managedPolicyArns` argument or `inlinePolicy` configuration blocks, this resource will take over exclusive management of the role&#39;s respective policy types (e.g., both policy types if both arguments are used). These arguments are incompatible with other ways of managing a role&#39;s policies, such as `aws.iam.PolicyAttachment`, `aws.iam.RolePolicyAttachment`, and `aws.iam.RolePolicy`. If you attempt to manage a role&#39;s policies by multiple means, you will get resource cycling and/or errors.
-   *  
+   * 
    *  &gt; **NOTE:** We suggest using explicit JSON encoding or `aws.iam.getPolicyDocument` when assigning a value to `policy`. They seamlessly translate configuration to JSON, enabling you to maintain consistency within your configuration without the need for context switches. Also, you can sidestep potential complications arising from formatting discrepancies, whitespace inconsistencies, and other nuances inherent to JSON.
    */
   def Role(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
@@ -799,7 +770,6 @@ object iam:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.iam.Role(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -811,14 +781,13 @@ object iam:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.iam.OpenIdConnectProvider(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
   /**
    * Provides an IAM Virtual MFA Device.
-   *  
+   * 
    *  &gt; **Note:** All attributes will be stored in the raw state as plain-text.
    *  **Note:** A virtual MFA device cannot be directly associated with an IAM User from the provider.
    *    To associate the virtual MFA device with a user and enable it, use the code returned in either `base32StringSeed` or `qrCodePng` to generate TOTP authentication codes.
@@ -830,7 +799,6 @@ object iam:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.iam.VirtualMfaDevice(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -848,20 +816,19 @@ object iam:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.iam.PolicyArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   /**
    * &gt; **NOTE:**: To reliably detect drift between customer managed policies listed in this resource and actual policies attached to the role in the cloud, you currently need to run Pulumi with `pulumi up --refresh`. See [#4766](https://github.com/pulumi/pulumi-aws/issues/4766) for tracking making this work with regular `pulumi up`
-   *  
+   * 
    *  Resource for maintaining exclusive management of managed IAM policies assigned to an AWS IAM (Identity &amp; Access Management) role.
-   *  
+   * 
    *  !&gt; This resource takes exclusive ownership over managed IAM policies attached to a role. This includes removal of managed IAM policies which are not explicitly configured. To prevent persistent drift, ensure any `aws.iam.RolePolicyAttachment` resources managed alongside this resource are included in the `policyArns` argument.
-   *  
+   * 
    *  &gt; Destruction of this resource means Pulumi will no longer manage reconciliation of the configured policy attachments. It **will not** detach the configured policies from the role.
    */
   def RolePolicyAttachmentsExclusive(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.iam.RolePolicyAttachmentsExclusiveArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.iam.RolePolicyAttachmentsExclusiveArgs.builder
-    
     com.pulumi.aws.iam.RolePolicyAttachmentsExclusive(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -873,7 +840,6 @@ object iam:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.iam.ServiceLinkedRole(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -890,10 +856,9 @@ object iam:
       val argsBuilder = com.pulumi.aws.iam.inputs.PolicyDocumentArgs.builder
       builder.policy(args(argsBuilder).build)
 
-                       
   /**
    * Provides an IAM policy.
-   *  
+   * 
    *  &gt; **NOTE:** We suggest using explicit JSON encoding or `aws.iam.getPolicyDocument` when assigning a value to `policy`. They seamlessly translate configuration to JSON, enabling you to maintain consistency within your configuration without the need for context switches. Also, you can sidestep potential complications arising from formatting discrepancies, whitespace inconsistencies, and other nuances inherent to JSON.
    */
   def Policy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
@@ -905,7 +870,6 @@ object iam:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.iam.Policy(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -913,7 +877,7 @@ object iam:
   extension (builder: com.pulumi.aws.iam.inputs.GetPrincipalPolicySimulationArgs.Builder)
     /**
      * @param contexts Each `context` block defines an entry in the table of additional context keys in the simulated request.
-     *  
+     * 
      *  IAM uses context keys for both custom conditions and for interpolating dynamic request-specific values into policy values. If you use policies that include those features then you will need to provide suitable example values for those keys to achieve a realistic simulation.
      * @return builder
      */
@@ -922,7 +886,6 @@ object iam:
       def argsBuilder = com.pulumi.aws.iam.inputs.GetPrincipalPolicySimulationContextArgs.builder
       builder.contexts(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.iam.inputs.GetPolicyDocumentStatementArgs.Builder)
     /**
      * @param conditions Configuration block for a condition. Detailed below.
@@ -951,7 +914,6 @@ object iam:
       def argsBuilder = com.pulumi.aws.iam.inputs.GetPolicyDocumentStatementPrincipalArgs.builder
       builder.principals(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.iam.inputs.UserPolicyState.Builder)
     /**
      * @param policy The policy document. This is a JSON formatted string.
@@ -962,7 +924,6 @@ object iam:
       val argsBuilder = com.pulumi.aws.iam.inputs.PolicyDocumentArgs.builder
       builder.policy(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.iam.inputs.PolicyState.Builder)
     /**
      * @param policy Policy document. This is a JSON formatted string. For more information about building AWS IAM policy documents, see the AWS IAM Policy Document Guide
@@ -976,7 +937,7 @@ object iam:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.iam.inputs.PolicyState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.iam.inputs.RolePolicyState.Builder)
     /**
      * @param policy The inline policy document.
@@ -989,7 +950,6 @@ object iam:
       val argsBuilder = com.pulumi.aws.iam.inputs.PolicyDocumentArgs.builder
       builder.policy(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.iam.inputs.GetPolicyDocumentArgs.Builder)
     /**
      * @param statements Configuration block for a policy statement. Detailed below.
@@ -1000,13 +960,12 @@ object iam:
       def argsBuilder = com.pulumi.aws.iam.inputs.GetPolicyDocumentStatementArgs.builder
       builder.statements(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.iam.inputs.RoleState.Builder)
     /**
      * @param assumeRolePolicy Policy that grants an entity permission to assume the role.
-     *  
+     * 
      *  &gt; **NOTE:** The `assumeRolePolicy` is very similar to but slightly different than a standard IAM policy and cannot use an `aws.iam.Policy` resource.  However, it _can_ use an `aws.iam.getPolicyDocument` data source. See the example above of how this works.
-     *  
+     * 
      *  The following arguments are optional:
      * @return builder
      */
@@ -1027,14 +986,13 @@ object iam:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.iam.inputs.RoleState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.iam.inputs.PolicyDocumentArgs.Builder)
     def Statement(args: Endofunction[com.pulumi.aws.iam.inputs.PolicyStatementArgs.Builder]*):
         com.pulumi.aws.iam.inputs.PolicyDocumentArgs.Builder =
       def argsBuilder = com.pulumi.aws.iam.inputs.PolicyStatementArgs.builder
       builder.Statement(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.iam.inputs.GroupPolicyState.Builder)
     /**
      * @param policy The policy document. This is a JSON formatted string.
@@ -1045,23 +1003,21 @@ object iam:
       val argsBuilder = com.pulumi.aws.iam.inputs.PolicyDocumentArgs.builder
       builder.policy(args(argsBuilder).build)
 
-                       
   /**
    * Manages an AWS IAM (Identity &amp; Access Management) Outbound Web Identity Federation.
-   *  
+   * 
    *  &gt; **NOTE:** Creating this Terraform resource enables IAM Outbound Web Identity Federation and deleting this Terraform resource disables IAM Outbound Web Identity Federation.
    */
   def OutboundWebIdentityFederation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.iam.OutboundWebIdentityFederationArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.iam.OutboundWebIdentityFederationArgs.builder
-    
     com.pulumi.aws.iam.OutboundWebIdentityFederation(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
   /**
    * Provides an IAM policy attached to a group.
-   *  
+   * 
    *  &gt; **NOTE:** We suggest using explicit JSON encoding or `aws.iam.getPolicyDocument` when assigning a value to `policy`. They seamlessly translate configuration to JSON, enabling you to maintain consistency within your configuration without the need for context switches. Also, you can sidestep potential complications arising from formatting discrepancies, whitespace inconsistencies, and other nuances inherent to JSON.
    */
   def GroupPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
@@ -1070,7 +1026,6 @@ object iam:
     conf.logicalName2pysicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
       case None               =>
-    
     com.pulumi.aws.iam.GroupPolicy(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)

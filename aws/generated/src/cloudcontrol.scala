@@ -25,7 +25,6 @@ object cloudcontrol:
   def Resource(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.cloudcontrol.ResourceArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.cloudcontrol.ResourceArgs.builder
-    
     com.pulumi.aws.cloudcontrol.Resource(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)

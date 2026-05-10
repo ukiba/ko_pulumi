@@ -17,7 +17,7 @@ object networkmanager:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.networkmanager.ConnectAttachmentArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   /** Manages a Network Manager link. Use this resource to create a link for a site. */
   def Link(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.networkmanager.LinkArgs.Builder])(using conf: KoPulumiConf) =
@@ -25,7 +25,6 @@ object networkmanager:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.networkmanager.Link(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -37,7 +36,6 @@ object networkmanager:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.networkmanager.TransitGatewayPeering(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -46,7 +44,6 @@ object networkmanager:
   def TransitGatewayRegistration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.networkmanager.TransitGatewayRegistrationArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.networkmanager.TransitGatewayRegistrationArgs.builder
-    
     com.pulumi.aws.networkmanager.TransitGatewayRegistration(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -55,14 +52,13 @@ object networkmanager:
   def TransitGatewayConnectPeerAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.networkmanager.TransitGatewayConnectPeerAssociationArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.networkmanager.TransitGatewayConnectPeerAssociationArgs.builder
-    
     com.pulumi.aws.networkmanager.TransitGatewayConnectPeerAssociation(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
   /**
    * Manages a Network Manager Core Network.
-   *  
+   * 
    *  Use this resource to create and manage a core network within a global network.
    */
   def CoreNetwork(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
@@ -71,20 +67,18 @@ object networkmanager:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.networkmanager.CoreNetwork(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
   /**
    * Associates an EC2 managed prefix list with a Network Manager Cloud WAN core network. Once associated, the prefix list can be referenced in the core network policy document.
-   *  
+   * 
    *  &gt; **NOTE:** The prefix list must be defined in the [Cloud WAN home region](https://docs.aws.amazon.com/network-manager/latest/cloudwan/what-is-cloudwan.html#cloudwan-home-region) (us-west-2). Although defined in the Cloud WAN home region, the prefix-list based policy will apply globally to all the relevant core network edges (regions) in your core network.
    */
   def PrefixListAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.networkmanager.PrefixListAssociationArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.networkmanager.PrefixListAssociationArgs.builder
-    
     com.pulumi.aws.networkmanager.PrefixListAssociation(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -98,7 +92,7 @@ object networkmanager:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.networkmanager.DxGatewayAttachmentArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   /** Manages a Network Manager VPC attachment. */
   def VpcAttachment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.networkmanager.VpcAttachmentArgs.Builder])(using conf: KoPulumiConf) =
@@ -106,20 +100,18 @@ object networkmanager:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.networkmanager.VpcAttachment(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
   /**
    * Manages an AWS Network Manager Attachment Accepter.
-   *  
+   * 
    *  Use this resource to accept cross-account attachments in AWS Network Manager. When an attachment is created in one account and needs to be accepted by another account that owns the core network, this resource handles the acceptance process.
    */
   def AttachmentAccepter(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.networkmanager.AttachmentAccepterArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.networkmanager.AttachmentAccepterArgs.builder
-    
     com.pulumi.aws.networkmanager.AttachmentAccepter(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -137,12 +129,11 @@ object networkmanager:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.networkmanager.ConnectPeerArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   /** Associates a routing policy label to a Network Manager Cloud WAN&#39;s attachment outside of the attachment creation. This is useful in multi-account environments where only the Cloud WAN core network owner account can apply a routing policy label. */
   def AttachmentRoutingPolicyLabel(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.networkmanager.AttachmentRoutingPolicyLabelArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.networkmanager.AttachmentRoutingPolicyLabelArgs.builder
-    
     com.pulumi.aws.networkmanager.AttachmentRoutingPolicyLabel(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -154,27 +145,25 @@ object networkmanager:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.networkmanager.SiteToSiteVpnAttachment(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
   /**
    * Manages a Network Manager Customer Gateway Association.
-   *  
+   * 
    *  Use this resource to associate a customer gateway with a device and optionally, with a link. If you specify a link, it must be associated with the specified device.
    */
   def CustomerGatewayAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.networkmanager.CustomerGatewayAssociationArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.networkmanager.CustomerGatewayAssociationArgs.builder
-    
     com.pulumi.aws.networkmanager.CustomerGatewayAssociation(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
   /**
    * Manages a Network Manager Direct Connect Gateway Attachment.
-   *  
+   * 
    *  Use this resource to create and manage a Direct Connect Gateway attachment to a Cloud WAN core network.
    */
   def DxGatewayAttachment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
@@ -183,7 +172,6 @@ object networkmanager:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.networkmanager.DxGatewayAttachment(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -195,7 +183,6 @@ object networkmanager:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.networkmanager.TransitGatewayRouteTableAttachment(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -213,12 +200,11 @@ object networkmanager:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.networkmanager.LinkArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   /** Manages a Network Manager link association. Associates a link to a device. A device can be associated to multiple links and a link can be associated to multiple devices. The device and link must be in the same global network and the same site. */
   def LinkAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.networkmanager.LinkAssociationArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.networkmanager.LinkAssociationArgs.builder
-    
     com.pulumi.aws.networkmanager.LinkAssociation(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -236,10 +222,10 @@ object networkmanager:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.networkmanager.VpcAttachmentArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   /**
    * Manages an AWS Network Manager Connect Attachment.
-   *  
+   * 
    *  Use this resource to create a Connect attachment in AWS Network Manager. Connect attachments enable you to connect your on-premises networks to your core network through a VPC or Transit Gateway attachment.
    */
   def ConnectAttachment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
@@ -248,29 +234,27 @@ object networkmanager:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.networkmanager.ConnectAttachment(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
   /**
    * Manages a Network Manager Core Network Policy Attachment.
-   *  
+   * 
    *  Use this resource to attach a Core Network Policy to an existing Core Network and execute the change set, which deploys changes globally based on the policy submitted (sets the policy to `LIVE`).
-   *  
+   * 
    *  &gt; **NOTE:** Deleting this resource will not delete the current policy defined in this resource. Deleting this resource will also not revert the current `LIVE` policy to the previous version.
    */
   def CoreNetworkPolicyAttachment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.networkmanager.CoreNetworkPolicyAttachmentArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.networkmanager.CoreNetworkPolicyAttachmentArgs.builder
-    
     com.pulumi.aws.networkmanager.CoreNetworkPolicyAttachment(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
   /**
    * Manages a Network Manager Device.
-   *  
+   * 
    *  Use this resource to create a device in a global network. If you specify both a site ID and a location, the location of the site is used for visualization in the Network Manager console.
    */
   def Device(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
@@ -279,14 +263,13 @@ object networkmanager:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.networkmanager.Device(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
   /**
    * Manages a Network Manager Global Network.
-   *  
+   * 
    *  Use this resource to create and manage a global network, which is a single private network that acts as the high-level container for your network objects.
    */
   def GlobalNetwork(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
@@ -295,14 +278,13 @@ object networkmanager:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.networkmanager.GlobalNetwork(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
   /**
    * Manages a Network Manager Connection.
-   *  
+   * 
    *  Use this resource to create a connection between two devices in your global network.
    */
   def Connection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
@@ -311,7 +293,6 @@ object networkmanager:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.networkmanager.Connection(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -359,7 +340,7 @@ object networkmanager:
 
     /**
      * Generates a Core Network policy document in JSON format for use with resources that expect core network policy documents such as `awsccNetworkmanagerCoreNetwork`. It follows the API definition from the [core-network-policy documentation](https://docs.aws.amazon.com/vpc/latest/cloudwan/cloudwan-policies-json.html).
-     *  
+     * 
      *  Using this data source to generate policy documents is *optional*. It is also valid to use literal JSON strings in your configuration or to use the `file` interpolation function to read a raw JSON policy document from a file.
      */
     def getCoreNetworkPolicyDocument(args: Endofunction[com.pulumi.aws.networkmanager.inputs.GetCoreNetworkPolicyDocumentArgs.Builder] = identity):
@@ -369,7 +350,7 @@ object networkmanager:
 
     /**
      * Generates a Core Network policy document in JSON format for use with resources that expect core network policy documents such as `awsccNetworkmanagerCoreNetwork`. It follows the API definition from the [core-network-policy documentation](https://docs.aws.amazon.com/vpc/latest/cloudwan/cloudwan-policies-json.html).
-     *  
+     * 
      *  Using this data source to generate policy documents is *optional*. It is also valid to use literal JSON strings in your configuration or to use the `file` interpolation function to read a raw JSON policy document from a file.
      */
     def getCoreNetworkPolicyDocumentPlain(args: Endofunction[com.pulumi.aws.networkmanager.inputs.GetCoreNetworkPolicyDocumentPlainArgs.Builder] = identity):
@@ -486,7 +467,7 @@ object networkmanager:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.networkmanager.SiteArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.networkmanager.DeviceArgs.Builder)
     /**
      * @param awsLocation AWS location of the device. Documented below.
@@ -509,7 +490,7 @@ object networkmanager:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.networkmanager.DeviceArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   /** Manages a Network Manager site. Use this resource to create a site in a global network. */
   def Site(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.networkmanager.SiteArgs.Builder])(using conf: KoPulumiConf) =
@@ -517,14 +498,13 @@ object networkmanager:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.networkmanager.Site(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
   /**
    * Manages an AWS Network Manager Connect Peer.
-   *  
+   * 
    *  Use this resource to create a Connect peer in AWS Network Manager. Connect peers establish BGP sessions with your on-premises networks through Connect attachments, enabling dynamic routing between your core network and external networks.
    */
   def ConnectPeer(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
@@ -533,7 +513,6 @@ object networkmanager:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.networkmanager.ConnectPeer(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -551,7 +530,7 @@ object networkmanager:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.networkmanager.inputs.LinkState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.networkmanager.inputs.GetCoreNetworkPolicyDocumentRoutingPolicyRoutingPolicyRuleRuleDefinitionArgs.Builder)
     /**
      * @param action Block defining the action to take when conditions match. Detailed below.
@@ -571,7 +550,6 @@ object networkmanager:
       def argsBuilder = com.pulumi.aws.networkmanager.inputs.GetCoreNetworkPolicyDocumentRoutingPolicyRoutingPolicyRuleRuleDefinitionMatchConditionArgs.builder
       builder.matchConditions(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.networkmanager.inputs.DeviceState.Builder)
     /**
      * @param awsLocation AWS location of the device. Documented below.
@@ -594,7 +572,7 @@ object networkmanager:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.networkmanager.inputs.DeviceState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.networkmanager.inputs.SiteState.Builder)
     /**
      * @param location Site location. See below.
@@ -608,7 +586,7 @@ object networkmanager:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.networkmanager.inputs.SiteState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.networkmanager.inputs.DxGatewayAttachmentState.Builder)
     def timeouts(args: Endofunction[com.pulumi.aws.networkmanager.inputs.DxGatewayAttachmentTimeoutsArgs.Builder]):
         com.pulumi.aws.networkmanager.inputs.DxGatewayAttachmentState.Builder =
@@ -618,7 +596,7 @@ object networkmanager:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.networkmanager.inputs.DxGatewayAttachmentState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.networkmanager.inputs.CoreNetworkState.Builder)
     /**
      * @param edges One or more blocks detailing the edges within a core network. Detailed below.
@@ -641,7 +619,7 @@ object networkmanager:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.networkmanager.inputs.CoreNetworkState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.networkmanager.inputs.GetCoreNetworkPolicyDocumentAttachmentPolicyArgs.Builder)
     /**
      * @param action Action to take when a condition is true. Detailed Below.
@@ -661,14 +639,12 @@ object networkmanager:
       def argsBuilder = com.pulumi.aws.networkmanager.inputs.GetCoreNetworkPolicyDocumentAttachmentPolicyConditionArgs.builder
       builder.conditions(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.networkmanager.inputs.ConnectPeerConfigurationArgs.Builder)
     def bgpConfigurations(args: Endofunction[com.pulumi.aws.networkmanager.inputs.ConnectPeerConfigurationBgpConfigurationArgs.Builder]*):
         com.pulumi.aws.networkmanager.inputs.ConnectPeerConfigurationArgs.Builder =
       def argsBuilder = com.pulumi.aws.networkmanager.inputs.ConnectPeerConfigurationBgpConfigurationArgs.builder
       builder.bgpConfigurations(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.networkmanager.inputs.ConnectAttachmentState.Builder)
     /**
      * @param options Options block. See options for more information.
@@ -682,7 +658,7 @@ object networkmanager:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.networkmanager.inputs.ConnectAttachmentState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.networkmanager.inputs.GetCoreNetworkPolicyDocumentSegmentActionArgs.Builder)
     /**
      * @param edgeLocationAssociation Associates routing policies with specific edge location pairs. Available in policy version `2025.11` and later. Detailed below.
@@ -711,7 +687,6 @@ object networkmanager:
       val argsBuilder = com.pulumi.aws.networkmanager.inputs.GetCoreNetworkPolicyDocumentSegmentActionWhenSentToArgs.builder
       builder.whenSentTo(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.networkmanager.inputs.ConnectPeerState.Builder)
     /**
      * @param bgpOptions Connect peer BGP options. See bgpOptions for more information.
@@ -734,7 +709,7 @@ object networkmanager:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.networkmanager.inputs.ConnectPeerState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.networkmanager.inputs.GetCoreNetworkPolicyDocumentSegmentActionViaArgs.Builder)
     /**
      * @param withEdgeOverrides Any edge overrides and the preferred edge to use.
@@ -745,7 +720,6 @@ object networkmanager:
       def argsBuilder = com.pulumi.aws.networkmanager.inputs.GetCoreNetworkPolicyDocumentSegmentActionViaWithEdgeOverrideArgs.builder
       builder.withEdgeOverrides(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.networkmanager.inputs.GetCoreNetworkPolicyDocumentRoutingPolicyArgs.Builder)
     /**
      * @param routingPolicyRules List of routing policy rules. Each rule defines match conditions and actions. Detailed below.
@@ -756,7 +730,6 @@ object networkmanager:
       def argsBuilder = com.pulumi.aws.networkmanager.inputs.GetCoreNetworkPolicyDocumentRoutingPolicyRoutingPolicyRuleArgs.builder
       builder.routingPolicyRules(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.networkmanager.inputs.VpcAttachmentState.Builder)
     /**
      * @param options Options for the VPC attachment. See below.
@@ -770,7 +743,7 @@ object networkmanager:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.networkmanager.inputs.VpcAttachmentState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.networkmanager.inputs.GetCoreNetworkPolicyDocumentAttachmentRoutingPolicyRuleArgs.Builder)
     /**
      * @param action Block defining the action to take when conditions match. Detailed below.
@@ -790,7 +763,6 @@ object networkmanager:
       def argsBuilder = com.pulumi.aws.networkmanager.inputs.GetCoreNetworkPolicyDocumentAttachmentRoutingPolicyRuleConditionArgs.builder
       builder.conditions(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.networkmanager.inputs.GetCoreNetworkPolicyDocumentCoreNetworkConfigurationArgs.Builder)
     /**
      * @param edgeLocations A block value of AWS Region locations where you&#39;re creating Core Network Edges. Detailed below.
@@ -801,7 +773,6 @@ object networkmanager:
       def argsBuilder = com.pulumi.aws.networkmanager.inputs.GetCoreNetworkPolicyDocumentCoreNetworkConfigurationEdgeLocationArgs.builder
       builder.edgeLocations(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.networkmanager.inputs.GetCoreNetworkPolicyDocumentArgs.Builder)
     /**
      * @param attachmentPolicies In a core network, all attachments use the block argument `attachmentPolicies` section to map an attachment to a segment. Instead of manually associating a segment to each attachment, attachments use tags, and then the tags are used to associate the attachment to the specified segment. Detailed below.
@@ -866,7 +837,6 @@ object networkmanager:
       def argsBuilder = com.pulumi.aws.networkmanager.inputs.GetCoreNetworkPolicyDocumentSegmentArgs.builder
       builder.segments(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.networkmanager.inputs.GetCoreNetworkPolicyDocumentRoutingPolicyRoutingPolicyRuleArgs.Builder)
     /**
      * @param ruleDefinition Defines the match conditions and actions for the rule. Detailed below.
@@ -876,5 +846,3 @@ object networkmanager:
         com.pulumi.aws.networkmanager.inputs.GetCoreNetworkPolicyDocumentRoutingPolicyRoutingPolicyRuleArgs.Builder =
       val argsBuilder = com.pulumi.aws.networkmanager.inputs.GetCoreNetworkPolicyDocumentRoutingPolicyRoutingPolicyRuleRuleDefinitionArgs.builder
       builder.ruleDefinition(args(argsBuilder).build)
-
-                       

@@ -6,7 +6,7 @@ import com.pulumi.resources.CustomResourceOptions
 object qldb:
   /**
    * Provides an AWS Quantum Ledger Database (QLDB) resource
-   *  
+   * 
    *  &gt; **NOTE:** Deletion protection is enabled by default. To successfully delete this resource via this provider, `deletionProtection = false` must be applied before attempting deletion.
    */
   def Ledger(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
@@ -18,7 +18,6 @@ object qldb:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.qldb.Ledger(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -47,7 +46,6 @@ object qldb:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.qldb.Stream(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -65,7 +63,7 @@ object qldb:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.qldb.StreamArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.qldb.inputs.StreamState.Builder)
     /**
      * @param kinesisConfiguration The configuration settings of the Kinesis Data Streams destination for your stream request. Documented below.
@@ -79,4 +77,3 @@ object qldb:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.qldb.inputs.StreamState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       

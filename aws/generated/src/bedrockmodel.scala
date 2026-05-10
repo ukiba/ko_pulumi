@@ -6,13 +6,12 @@ import com.pulumi.resources.CustomResourceOptions
 object bedrockmodel:
   /**
    * Manages Bedrock model invocation logging configuration.
-   *  
+   * 
    *  &gt; Model invocation logging is configured per AWS region. To avoid overwriting settings, this resource should not be defined in multiple configurations.
    */
   def InvocationLoggingConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.bedrockmodel.InvocationLoggingConfigurationArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.bedrockmodel.InvocationLoggingConfigurationArgs.builder
-    
     com.pulumi.aws.bedrockmodel.InvocationLoggingConfiguration(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -27,7 +26,6 @@ object bedrockmodel:
       val argsBuilder = com.pulumi.aws.bedrockmodel.inputs.InvocationLoggingConfigurationLoggingConfigArgs.builder
       builder.loggingConfig(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.bedrockmodel.inputs.InvocationLoggingConfigurationLoggingConfigArgs.Builder)
     /**
      * @param cloudwatchConfig CloudWatch logging configuration. See `cloudwatchConfig` Block for details.
@@ -47,7 +45,6 @@ object bedrockmodel:
       val argsBuilder = com.pulumi.aws.bedrockmodel.inputs.InvocationLoggingConfigurationLoggingConfigS3ConfigArgs.builder
       builder.s3Config(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.bedrockmodel.inputs.InvocationLoggingConfigurationState.Builder)
     /**
      * @param loggingConfig The logging configuration values to set. See `loggingConfig` Block for details.
@@ -58,7 +55,6 @@ object bedrockmodel:
       val argsBuilder = com.pulumi.aws.bedrockmodel.inputs.InvocationLoggingConfigurationLoggingConfigArgs.builder
       builder.loggingConfig(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.bedrockmodel.inputs.InvocationLoggingConfigurationLoggingConfigCloudwatchConfigArgs.Builder)
     /**
      * @param largeDataDeliveryS3Config S3 configuration for delivering a large amount of data. See `largeDataDeliveryS3Config` Block for details.
@@ -68,5 +64,3 @@ object bedrockmodel:
         com.pulumi.aws.bedrockmodel.inputs.InvocationLoggingConfigurationLoggingConfigCloudwatchConfigArgs.Builder =
       val argsBuilder = com.pulumi.aws.bedrockmodel.inputs.InvocationLoggingConfigurationLoggingConfigCloudwatchConfigLargeDataDeliveryS3ConfigArgs.builder
       builder.largeDataDeliveryS3Config(args(argsBuilder).build)
-
-                       

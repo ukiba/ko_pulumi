@@ -8,7 +8,6 @@ object acmpca:
   def CertificateAuthorityCertificate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.acmpca.CertificateAuthorityCertificateArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.acmpca.CertificateAuthorityCertificateArgs.builder
-    
     com.pulumi.aws.acmpca.CertificateAuthorityCertificate(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -64,10 +63,10 @@ object acmpca:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.acmpca.CertificateAuthorityArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   /**
    * Provides a resource to issue a certificate using AWS Certificate Manager Private Certificate Authority (ACM PCA).
-   *  
+   * 
    *  Certificates created using `aws.acmpca.Certificate` are not eligible for automatic renewal,
    *  and must be replaced instead.
    *  To issue a renewable certificate using an ACM PCA, create a `aws.acm.Certificate`
@@ -76,7 +75,6 @@ object acmpca:
   def Certificate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.acmpca.CertificateArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.acmpca.CertificateArgs.builder
-    
     com.pulumi.aws.acmpca.Certificate(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -88,7 +86,6 @@ object acmpca:
   def Permission(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.acmpca.PermissionArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.acmpca.PermissionArgs.builder
-    
     com.pulumi.aws.acmpca.Permission(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -103,19 +100,17 @@ object acmpca:
       val argsBuilder = com.pulumi.aws.acmpca.inputs.CertificateValidityArgs.builder
       builder.validity(args(argsBuilder).build)
 
-                       
   /** Attaches a resource based policy to a private CA. */
   def Policy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.acmpca.PolicyArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.acmpca.PolicyArgs.builder
-    
     com.pulumi.aws.acmpca.Policy(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
   /**
    * Provides a resource to manage AWS Certificate Manager Private Certificate Authorities (ACM PCA Certificate Authorities).
-   *  
+   * 
    *  &gt; **NOTE:** Creating this resource will leave the certificate authority in a `PENDING_CERTIFICATE` status, which means it cannot yet issue certificates. To complete this setup, you must fully sign the certificate authority CSR available in the `certificateSigningRequest` attribute. The `aws.acmpca.CertificateAuthorityCertificate` resource can be used for this purpose.
    */
   def CertificateAuthority(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
@@ -124,7 +119,6 @@ object acmpca:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.acmpca.CertificateAuthority(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -139,7 +133,6 @@ object acmpca:
       val argsBuilder = com.pulumi.aws.acmpca.inputs.CertificateValidityArgs.builder
       builder.validity(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.acmpca.inputs.CertificateAuthorityRevocationConfigurationArgs.Builder)
     /**
      * @param crlConfiguration Nested argument containing configuration of the certificate revocation list (CRL), if any, maintained by the certificate authority. Defined below.
@@ -160,7 +153,6 @@ object acmpca:
       val argsBuilder = com.pulumi.aws.acmpca.inputs.CertificateAuthorityRevocationConfigurationOcspConfigurationArgs.builder
       builder.ocspConfiguration(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.acmpca.inputs.CertificateAuthorityCertificateAuthorityConfigurationArgs.Builder)
     /**
      * @param subject Nested argument that contains X.500 distinguished name information. At least one nested attribute must be specified.
@@ -171,7 +163,6 @@ object acmpca:
       val argsBuilder = com.pulumi.aws.acmpca.inputs.CertificateAuthorityCertificateAuthorityConfigurationSubjectArgs.builder
       builder.subject(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.acmpca.inputs.CertificateAuthorityState.Builder)
     /**
      * @param certificateAuthorityConfiguration Nested argument containing algorithms and certificate subject information. Defined below.
@@ -194,4 +185,3 @@ object acmpca:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.acmpca.inputs.CertificateAuthorityState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       

@@ -8,7 +8,6 @@ object redshiftserverless:
   def CustomDomainAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.redshiftserverless.CustomDomainAssociationArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.redshiftserverless.CustomDomainAssociationArgs.builder
-    
     com.pulumi.aws.redshiftserverless.CustomDomainAssociation(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -20,14 +19,13 @@ object redshiftserverless:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.redshiftserverless.Workgroup(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
   /**
    * Creates a new Amazon Redshift Serverless Namespace.
-   *  
+   * 
    *  &gt; **Note:** Write-Only argument `adminPasswordWo` is available to use in place of `adminPassword`. Write-Only arguments are supported in HashiCorp Terraform 1.11.0 and later. Learn more.
    */
   def Namespace(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
@@ -36,7 +34,6 @@ object redshiftserverless:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.redshiftserverless.Namespace(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -45,7 +42,6 @@ object redshiftserverless:
   def ResourcePolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.redshiftserverless.ResourcePolicyArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.redshiftserverless.ResourcePolicyArgs.builder
-    
     com.pulumi.aws.redshiftserverless.ResourcePolicy(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -54,7 +50,6 @@ object redshiftserverless:
   def Snapshot(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.redshiftserverless.SnapshotArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.redshiftserverless.SnapshotArgs.builder
-    
     com.pulumi.aws.redshiftserverless.Snapshot(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -63,7 +58,6 @@ object redshiftserverless:
   def EndpointAccess(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.redshiftserverless.EndpointAccessArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.redshiftserverless.EndpointAccessArgs.builder
-    
     com.pulumi.aws.redshiftserverless.EndpointAccess(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -131,12 +125,11 @@ object redshiftserverless:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.redshiftserverless.WorkgroupArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   /** Creates a new Amazon Redshift Serverless Usage Limit. */
   def UsageLimit(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.redshiftserverless.UsageLimitArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.redshiftserverless.UsageLimitArgs.builder
-    
     com.pulumi.aws.redshiftserverless.UsageLimit(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -151,7 +144,6 @@ object redshiftserverless:
       def argsBuilder = com.pulumi.aws.redshiftserverless.inputs.WorkgroupEndpointVpcEndpointNetworkInterfaceArgs.builder
       builder.networkInterfaces(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.redshiftserverless.inputs.WorkgroupEndpointArgs.Builder)
     /**
      * @param vpcEndpoints The VPC endpoint or the Redshift Serverless workgroup. See `VPC Endpoint` below.
@@ -162,7 +154,6 @@ object redshiftserverless:
       def argsBuilder = com.pulumi.aws.redshiftserverless.inputs.WorkgroupEndpointVpcEndpointArgs.builder
       builder.vpcEndpoints(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.redshiftserverless.inputs.EndpointAccessState.Builder)
     /**
      * @param vpcEndpoints The VPC endpoint or the Redshift Serverless workgroup. See `VPC Endpoint` below.
@@ -173,7 +164,6 @@ object redshiftserverless:
       def argsBuilder = com.pulumi.aws.redshiftserverless.inputs.EndpointAccessVpcEndpointArgs.builder
       builder.vpcEndpoints(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.redshiftserverless.inputs.EndpointAccessVpcEndpointArgs.Builder)
     /**
      * @param networkInterfaces The network interfaces of the endpoint.. See `Network Interface` below.
@@ -184,7 +174,6 @@ object redshiftserverless:
       def argsBuilder = com.pulumi.aws.redshiftserverless.inputs.EndpointAccessVpcEndpointNetworkInterfaceArgs.builder
       builder.networkInterfaces(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.redshiftserverless.inputs.WorkgroupState.Builder)
     /**
      * @param configParameters An array of parameters to set for more control over a serverless database. See `Config Parameter` below.
@@ -216,4 +205,3 @@ object redshiftserverless:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.redshiftserverless.inputs.WorkgroupState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       

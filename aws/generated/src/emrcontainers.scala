@@ -14,7 +14,6 @@ object emrcontainers:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.emrcontainers.VirtualCluster(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -32,7 +31,7 @@ object emrcontainers:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.emrcontainers.JobTemplateArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   /** Manages an EMR Containers (EMR on EKS) Job Template. */
   def JobTemplate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.emrcontainers.JobTemplateArgs.Builder])(using conf: KoPulumiConf) =
@@ -43,7 +42,6 @@ object emrcontainers:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.emrcontainers.JobTemplate(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -78,7 +76,7 @@ object emrcontainers:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.emrcontainers.VirtualClusterArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.emrcontainers.inputs.JobTemplateJobTemplateDataJobDriverArgs.Builder)
     /**
      * @param sparkSqlJobDriver The job driver for job type.
@@ -98,7 +96,6 @@ object emrcontainers:
       val argsBuilder = com.pulumi.aws.emrcontainers.inputs.JobTemplateJobTemplateDataJobDriverSparkSubmitJobDriverArgs.builder
       builder.sparkSubmitJobDriver(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.emrcontainers.inputs.JobTemplateJobTemplateDataConfigurationOverridesArgs.Builder)
     /**
      * @param applicationConfigurations The configurations for the application running by the job run.
@@ -118,7 +115,6 @@ object emrcontainers:
       val argsBuilder = com.pulumi.aws.emrcontainers.inputs.JobTemplateJobTemplateDataConfigurationOverridesMonitoringConfigurationArgs.builder
       builder.monitoringConfiguration(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.emrcontainers.inputs.JobTemplateJobTemplateDataConfigurationOverridesApplicationConfigurationArgs.Builder)
     /**
      * @param configurations A list of additional configurations to apply within a configuration object.
@@ -129,7 +125,6 @@ object emrcontainers:
       def argsBuilder = com.pulumi.aws.emrcontainers.inputs.JobTemplateJobTemplateDataConfigurationOverridesApplicationConfigurationConfigurationArgs.builder
       builder.configurations(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.emrcontainers.inputs.JobTemplateJobTemplateDataArgs.Builder)
     /**
      * @param configurationOverrides The configuration settings that are used to override defaults configuration.
@@ -149,7 +144,6 @@ object emrcontainers:
       val argsBuilder = com.pulumi.aws.emrcontainers.inputs.JobTemplateJobTemplateDataJobDriverArgs.builder
       builder.jobDriver(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.emrcontainers.inputs.VirtualClusterState.Builder)
     /**
      * @param containerProvider Configuration block for the container provider associated with your cluster.
@@ -163,7 +157,7 @@ object emrcontainers:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.emrcontainers.inputs.VirtualClusterState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.emrcontainers.inputs.VirtualClusterContainerProviderArgs.Builder)
     /**
      * @param info Nested list containing information about the configuration of the container provider
@@ -174,7 +168,6 @@ object emrcontainers:
       val argsBuilder = com.pulumi.aws.emrcontainers.inputs.VirtualClusterContainerProviderInfoArgs.builder
       builder.info(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.emrcontainers.inputs.JobTemplateState.Builder)
     /**
      * @param jobTemplateData The job template data which holds values of StartJobRun API request.
@@ -188,7 +181,7 @@ object emrcontainers:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.emrcontainers.inputs.JobTemplateState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.emrcontainers.inputs.VirtualClusterContainerProviderInfoArgs.Builder)
     /**
      * @param eksInfo Nested list containing EKS-specific information about the cluster where the EMR Containers cluster is running
@@ -199,7 +192,6 @@ object emrcontainers:
       val argsBuilder = com.pulumi.aws.emrcontainers.inputs.VirtualClusterContainerProviderInfoEksInfoArgs.builder
       builder.eksInfo(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.emrcontainers.inputs.JobTemplateJobTemplateDataConfigurationOverridesMonitoringConfigurationArgs.Builder)
     /**
      * @param cloudWatchMonitoringConfiguration Monitoring configurations for CloudWatch.
@@ -218,5 +210,3 @@ object emrcontainers:
         com.pulumi.aws.emrcontainers.inputs.JobTemplateJobTemplateDataConfigurationOverridesMonitoringConfigurationArgs.Builder =
       val argsBuilder = com.pulumi.aws.emrcontainers.inputs.JobTemplateJobTemplateDataConfigurationOverridesMonitoringConfigurationS3MonitoringConfigurationArgs.builder
       builder.s3MonitoringConfiguration(args(argsBuilder).build)
-
-                       

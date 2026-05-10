@@ -17,7 +17,7 @@ object xray:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.xray.GroupArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   /** Creates and manages an AWS XRay Sampling Rule. */
   def SamplingRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.xray.SamplingRuleArgs.Builder])(using conf: KoPulumiConf) =
@@ -25,7 +25,6 @@ object xray:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.xray.SamplingRule(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -37,7 +36,6 @@ object xray:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.xray.Group(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -46,20 +44,18 @@ object xray:
   def ResourcePolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.xray.ResourcePolicyArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.xray.ResourcePolicyArgs.builder
-    
     com.pulumi.aws.xray.ResourcePolicy(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
   /**
    * Creates and manages an AWS XRay Encryption Config.
-   *  
+   * 
    *  &gt; **NOTE:** Removing this resource from the provider has no effect to the encryption configuration within X-Ray.
    */
   def EncryptionConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.xray.EncryptionConfigArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.xray.EncryptionConfigArgs.builder
-    
     com.pulumi.aws.xray.EncryptionConfig(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -77,4 +73,3 @@ object xray:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.xray.inputs.GroupState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       

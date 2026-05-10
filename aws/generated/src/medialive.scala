@@ -7,7 +7,7 @@ object medialive:
   extension (builder: com.pulumi.aws.medialive.MultiplexProgramArgs.Builder)
     /**
      * @param multiplexProgramSettings MultiplexProgram settings. See Multiplex Program Settings for more details.
-     *  
+     * 
      *  The following arguments are optional:
      * @return builder
      */
@@ -21,7 +21,6 @@ object medialive:
       val argsBuilder = com.pulumi.aws.medialive.inputs.MultiplexProgramTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
-                       
   /** Resource for managing an AWS MediaLive InputSecurityGroup. */
   def InputSecurityGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.medialive.InputSecurityGroupArgs.Builder])(using conf: KoPulumiConf) =
@@ -29,7 +28,6 @@ object medialive:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.medialive.InputSecurityGroup(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -55,7 +53,6 @@ object medialive:
   def MultiplexProgram(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.medialive.MultiplexProgramArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.medialive.MultiplexProgramArgs.builder
-    
     com.pulumi.aws.medialive.MultiplexProgram(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -70,7 +67,6 @@ object medialive:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.medialive.Channel(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -85,7 +81,6 @@ object medialive:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.medialive.Multiplex(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -103,7 +98,7 @@ object medialive:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.medialive.MultiplexArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.medialive.ChannelArgs.Builder)
     /**
      * @param cdiInputSpecification Specification of CDI inputs for this channel. See CDI Input Specification for more details.
@@ -171,7 +166,7 @@ object medialive:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.medialive.ChannelArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   /** Resource for managing an AWS MediaLive Input. */
   def Input(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.medialive.InputArgs.Builder])(using conf: KoPulumiConf) =
@@ -182,7 +177,6 @@ object medialive:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.medialive.Input(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -190,7 +184,7 @@ object medialive:
   extension (builder: com.pulumi.aws.medialive.InputSecurityGroupArgs.Builder)
     /**
      * @param whitelistRules Whitelist rules. See Whitelist Rules for more details.
-     *  
+     * 
      *  The following arguments are optional:
      * @return builder
      */
@@ -202,7 +196,7 @@ object medialive:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.medialive.InputSecurityGroupArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.medialive.InputArgs.Builder)
     /**
      * @param destinations Destination settings for PUSH type inputs. See Destinations for more details.
@@ -252,7 +246,7 @@ object medialive:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.medialive.InputArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.medialive.inputs.ChannelEncoderSettingsCaptionDescriptionArgs.Builder)
     /**
      * @param destinationSettings Additional settings for captions destination that depend on the destination type. See Destination Settings for more details.
@@ -263,7 +257,6 @@ object medialive:
       val argsBuilder = com.pulumi.aws.medialive.inputs.ChannelEncoderSettingsCaptionDescriptionDestinationSettingsArgs.builder
       builder.destinationSettings(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.medialive.inputs.ChannelEncoderSettingsCaptionDescriptionDestinationSettingsDvbSubDestinationSettingsArgs.Builder)
     /**
      * @param font External font file used for caption burn-in. File extension must be \u2018ttf\u2019 or \u2018tte\u2019. Although the user can select output fonts for many different types of input captions, embedded, STL and teletext sources use a strict grid system. Using external fonts with these caption sources could cause unexpected display of proportional fonts. All burn-in and DVB-Sub font settings must match. See Font for more details.
@@ -274,7 +267,6 @@ object medialive:
       val argsBuilder = com.pulumi.aws.medialive.inputs.ChannelEncoderSettingsCaptionDescriptionDestinationSettingsDvbSubDestinationSettingsFontArgs.builder
       builder.font(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.medialive.inputs.ChannelEncoderSettingsOutputGroupOutputGroupSettingsHlsGroupSettingsHlsCdnSettingArgs.Builder)
     def hlsAkamaiSettings(args: Endofunction[com.pulumi.aws.medialive.inputs.ChannelEncoderSettingsOutputGroupOutputGroupSettingsHlsGroupSettingsHlsCdnSettingHlsAkamaiSettingsArgs.Builder]):
         com.pulumi.aws.medialive.inputs.ChannelEncoderSettingsOutputGroupOutputGroupSettingsHlsGroupSettingsHlsCdnSettingArgs.Builder =
@@ -301,7 +293,6 @@ object medialive:
       val argsBuilder = com.pulumi.aws.medialive.inputs.ChannelEncoderSettingsOutputGroupOutputGroupSettingsHlsGroupSettingsHlsCdnSettingHlsWebdavSettingsArgs.builder
       builder.hlsWebdavSettings(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.medialive.inputs.ChannelEncoderSettingsCaptionDescriptionDestinationSettingsBurnInDestinationSettingsArgs.Builder)
     /**
      * @param font External font file used for caption burn-in. File extension must be \u2018ttf\u2019 or \u2018tte\u2019. Although the user can select output fonts for many different types of input captions, embedded, STL and teletext sources use a strict grid system. Using external fonts with these caption sources could cause unexpected display of proportional fonts. All burn-in and DVB-Sub font settings must match. See Font for more details.
@@ -312,7 +303,6 @@ object medialive:
       val argsBuilder = com.pulumi.aws.medialive.inputs.ChannelEncoderSettingsCaptionDescriptionDestinationSettingsBurnInDestinationSettingsFontArgs.builder
       builder.font(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.medialive.inputs.MultiplexProgramMultiplexProgramSettingsVideoSettingsArgs.Builder)
     /**
      * @param statmuxSettings Statmux settings. See Statmux Settings for more details.
@@ -323,7 +313,6 @@ object medialive:
       val argsBuilder = com.pulumi.aws.medialive.inputs.MultiplexProgramMultiplexProgramSettingsVideoSettingsStatmuxSettingsArgs.builder
       builder.statmuxSettings(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.medialive.inputs.ChannelInputAttachmentAutomaticInputFailoverSettingsFailoverConditionArgs.Builder)
     /**
      * @param failoverConditionSettings Failover condition type-specific settings. See Failover Condition Settings for more details.
@@ -334,7 +323,6 @@ object medialive:
       val argsBuilder = com.pulumi.aws.medialive.inputs.ChannelInputAttachmentAutomaticInputFailoverSettingsFailoverConditionFailoverConditionSettingsArgs.builder
       builder.failoverConditionSettings(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.medialive.inputs.MultiplexState.Builder)
     /**
      * @param multiplexSettings Multiplex settings. See Multiplex Settings for more details.
@@ -348,11 +336,11 @@ object medialive:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.medialive.inputs.MultiplexState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.medialive.inputs.InputSecurityGroupState.Builder)
     /**
      * @param whitelistRules Whitelist rules. See Whitelist Rules for more details.
-     *  
+     * 
      *  The following arguments are optional:
      * @return builder
      */
@@ -364,7 +352,7 @@ object medialive:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.medialive.inputs.InputSecurityGroupState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.medialive.inputs.ChannelEncoderSettingsOutputGroupOutputGroupSettingsArchiveGroupSettingArchiveCdnSettingsArgs.Builder)
     /**
      * @param archiveS3Settings Archive S3 Settings. See Archive S3 Settings for more details.
@@ -375,7 +363,6 @@ object medialive:
       val argsBuilder = com.pulumi.aws.medialive.inputs.ChannelEncoderSettingsOutputGroupOutputGroupSettingsArchiveGroupSettingArchiveCdnSettingsArchiveS3SettingsArgs.builder
       builder.archiveS3Settings(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.medialive.inputs.ChannelEncoderSettingsOutputGroupOutputOutputSettingsMultiplexOutputSettingsArgs.Builder)
     /**
      * @param destination Destination is a multiplex. See Destination for more details.
@@ -386,14 +373,12 @@ object medialive:
       val argsBuilder = com.pulumi.aws.medialive.inputs.ChannelEncoderSettingsOutputGroupOutputOutputSettingsMultiplexOutputSettingsDestinationArgs.builder
       builder.destination(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.medialive.inputs.ChannelEncoderSettingsVideoDescriptionCodecSettingsH265SettingsFilterSettingsArgs.Builder)
     def temporalFilterSettings(args: Endofunction[com.pulumi.aws.medialive.inputs.ChannelEncoderSettingsVideoDescriptionCodecSettingsH265SettingsFilterSettingsTemporalFilterSettingsArgs.Builder]):
         com.pulumi.aws.medialive.inputs.ChannelEncoderSettingsVideoDescriptionCodecSettingsH265SettingsFilterSettingsArgs.Builder =
       val argsBuilder = com.pulumi.aws.medialive.inputs.ChannelEncoderSettingsVideoDescriptionCodecSettingsH265SettingsFilterSettingsTemporalFilterSettingsArgs.builder
       builder.temporalFilterSettings(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.medialive.inputs.ChannelEncoderSettingsOutputGroupOutputGroupSettingsFrameCaptureGroupSettingsArgs.Builder)
     def destination(args: Endofunction[com.pulumi.aws.medialive.inputs.ChannelEncoderSettingsOutputGroupOutputGroupSettingsFrameCaptureGroupSettingsDestinationArgs.Builder]):
         com.pulumi.aws.medialive.inputs.ChannelEncoderSettingsOutputGroupOutputGroupSettingsFrameCaptureGroupSettingsArgs.Builder =
@@ -405,7 +390,6 @@ object medialive:
       val argsBuilder = com.pulumi.aws.medialive.inputs.ChannelEncoderSettingsOutputGroupOutputGroupSettingsFrameCaptureGroupSettingsFrameCaptureCdnSettingsArgs.builder
       builder.frameCaptureCdnSettings(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.medialive.inputs.ChannelInputAttachmentArgs.Builder)
     /**
      * @param automaticInputFailoverSettings User-specified settings for defining what the conditions are for declaring the input unhealthy and failing over to a different input. See Automatic Input Failover Settings for more details.
@@ -425,7 +409,6 @@ object medialive:
       val argsBuilder = com.pulumi.aws.medialive.inputs.ChannelInputAttachmentInputSettingsArgs.builder
       builder.inputSettings(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.medialive.inputs.ChannelEncoderSettingsMotionGraphicsConfigurationArgs.Builder)
     /**
      * @param motionGraphicsSettings Motion Graphics Settings. See Motion Graphics Settings for more details.
@@ -436,7 +419,6 @@ object medialive:
       val argsBuilder = com.pulumi.aws.medialive.inputs.ChannelEncoderSettingsMotionGraphicsConfigurationMotionGraphicsSettingsArgs.builder
       builder.motionGraphicsSettings(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.medialive.inputs.InputState.Builder)
     /**
      * @param destinations Destination settings for PUSH type inputs. See Destinations for more details.
@@ -486,7 +468,7 @@ object medialive:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.medialive.inputs.InputState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.medialive.inputs.ChannelEncoderSettingsCaptionDescriptionDestinationSettingsArgs.Builder)
     /**
      * @param aribDestinationSettings ARIB Destination Settings.
@@ -605,7 +587,6 @@ object medialive:
       val argsBuilder = com.pulumi.aws.medialive.inputs.ChannelEncoderSettingsCaptionDescriptionDestinationSettingsWebvttDestinationSettingsArgs.builder
       builder.webvttDestinationSettings(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.medialive.inputs.ChannelEncoderSettingsOutputGroupOutputOutputSettingsArgs.Builder)
     /**
      * @param archiveOutputSettings Archive output settings. See Archive Output Settings for more details.
@@ -667,7 +648,6 @@ object medialive:
       val argsBuilder = com.pulumi.aws.medialive.inputs.ChannelEncoderSettingsOutputGroupOutputOutputSettingsUdpOutputSettingsArgs.builder
       builder.udpOutputSettings(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.medialive.inputs.ChannelEncoderSettingsOutputGroupOutputOutputSettingsArchiveOutputSettingsContainerSettingsArgs.Builder)
     /**
      * @param m2tsSettings M2TS Settings. See [M2TS Settings](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-m2tssettings.html) for more details.
@@ -687,28 +667,24 @@ object medialive:
       val argsBuilder = com.pulumi.aws.medialive.inputs.ChannelEncoderSettingsOutputGroupOutputOutputSettingsArchiveOutputSettingsContainerSettingsRawSettingsArgs.builder
       builder.rawSettings(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.medialive.inputs.ChannelEncoderSettingsGlobalConfigurationInputLossBehaviorArgs.Builder)
     def inputLossImageSlate(args: Endofunction[com.pulumi.aws.medialive.inputs.ChannelEncoderSettingsGlobalConfigurationInputLossBehaviorInputLossImageSlateArgs.Builder]):
         com.pulumi.aws.medialive.inputs.ChannelEncoderSettingsGlobalConfigurationInputLossBehaviorArgs.Builder =
       val argsBuilder = com.pulumi.aws.medialive.inputs.ChannelEncoderSettingsGlobalConfigurationInputLossBehaviorInputLossImageSlateArgs.builder
       builder.inputLossImageSlate(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.medialive.inputs.ChannelEncoderSettingsOutputGroupOutputOutputSettingsHlsOutputSettingsHlsSettingsStandardHlsSettingsArgs.Builder)
     def m3u8Settings(args: Endofunction[com.pulumi.aws.medialive.inputs.ChannelEncoderSettingsOutputGroupOutputOutputSettingsHlsOutputSettingsHlsSettingsStandardHlsSettingsM3u8SettingsArgs.Builder]):
         com.pulumi.aws.medialive.inputs.ChannelEncoderSettingsOutputGroupOutputOutputSettingsHlsOutputSettingsHlsSettingsStandardHlsSettingsArgs.Builder =
       val argsBuilder = com.pulumi.aws.medialive.inputs.ChannelEncoderSettingsOutputGroupOutputOutputSettingsHlsOutputSettingsHlsSettingsStandardHlsSettingsM3u8SettingsArgs.builder
       builder.m3u8Settings(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.medialive.inputs.ChannelEncoderSettingsOutputGroupOutputGroupSettingsFrameCaptureGroupSettingsFrameCaptureCdnSettingsArgs.Builder)
     def frameCaptureS3Settings(args: Endofunction[com.pulumi.aws.medialive.inputs.ChannelEncoderSettingsOutputGroupOutputGroupSettingsFrameCaptureGroupSettingsFrameCaptureCdnSettingsFrameCaptureS3SettingsArgs.Builder]):
         com.pulumi.aws.medialive.inputs.ChannelEncoderSettingsOutputGroupOutputGroupSettingsFrameCaptureGroupSettingsFrameCaptureCdnSettingsArgs.Builder =
       val argsBuilder = com.pulumi.aws.medialive.inputs.ChannelEncoderSettingsOutputGroupOutputGroupSettingsFrameCaptureGroupSettingsFrameCaptureCdnSettingsFrameCaptureS3SettingsArgs.builder
       builder.frameCaptureS3Settings(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.medialive.inputs.ChannelEncoderSettingsOutputGroupOutputOutputSettingsRtmpOutputSettingsArgs.Builder)
     /**
      * @param destination The RTMP endpoint excluding the stream name. See Destination for more details.
@@ -719,7 +695,6 @@ object medialive:
       val argsBuilder = com.pulumi.aws.medialive.inputs.ChannelEncoderSettingsOutputGroupOutputOutputSettingsRtmpOutputSettingsDestinationArgs.builder
       builder.destination(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.medialive.inputs.ChannelEncoderSettingsVideoDescriptionCodecSettingsH265SettingsColorSpaceSettingsArgs.Builder)
     /**
      * @param colorSpacePassthroughSettings Sets the colorspace metadata to be passed through.
@@ -766,7 +741,6 @@ object medialive:
       val argsBuilder = com.pulumi.aws.medialive.inputs.ChannelEncoderSettingsVideoDescriptionCodecSettingsH265SettingsColorSpaceSettingsRec709SettingsArgs.builder
       builder.rec709Settings(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.medialive.inputs.ChannelInputAttachmentInputSettingsCaptionSelectorSelectorSettingsTeletextSourceSettingsArgs.Builder)
     /**
      * @param outputRectangle Optionally defines a region where TTML style captions will be displayed. See Caption Rectangle for more details.
@@ -777,14 +751,12 @@ object medialive:
       val argsBuilder = com.pulumi.aws.medialive.inputs.ChannelInputAttachmentInputSettingsCaptionSelectorSelectorSettingsTeletextSourceSettingsOutputRectangleArgs.builder
       builder.outputRectangle(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.medialive.inputs.ChannelEncoderSettingsOutputGroupOutputOutputSettingsHlsOutputSettingsArgs.Builder)
     def hlsSettings(args: Endofunction[com.pulumi.aws.medialive.inputs.ChannelEncoderSettingsOutputGroupOutputOutputSettingsHlsOutputSettingsHlsSettingsArgs.Builder]):
         com.pulumi.aws.medialive.inputs.ChannelEncoderSettingsOutputGroupOutputOutputSettingsHlsOutputSettingsArgs.Builder =
       val argsBuilder = com.pulumi.aws.medialive.inputs.ChannelEncoderSettingsOutputGroupOutputOutputSettingsHlsOutputSettingsHlsSettingsArgs.builder
       builder.hlsSettings(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.medialive.inputs.ChannelState.Builder)
     /**
      * @param cdiInputSpecification Specification of CDI inputs for this channel. See CDI Input Specification for more details.
@@ -852,7 +824,7 @@ object medialive:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.medialive.inputs.ChannelState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.medialive.inputs.ChannelEncoderSettingsOutputGroupOutputArgs.Builder)
     /**
      * @param outputSettings Settings for output. See Output Settings for more details.
@@ -863,7 +835,6 @@ object medialive:
       val argsBuilder = com.pulumi.aws.medialive.inputs.ChannelEncoderSettingsOutputGroupOutputOutputSettingsArgs.builder
       builder.outputSettings(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.medialive.inputs.ChannelEncoderSettingsOutputGroupOutputOutputSettingsHlsOutputSettingsHlsSettingsArgs.Builder)
     def audioOnlyHlsSettings(args: Endofunction[com.pulumi.aws.medialive.inputs.ChannelEncoderSettingsOutputGroupOutputOutputSettingsHlsOutputSettingsHlsSettingsAudioOnlyHlsSettingsArgs.Builder]):
         com.pulumi.aws.medialive.inputs.ChannelEncoderSettingsOutputGroupOutputOutputSettingsHlsOutputSettingsHlsSettingsArgs.Builder =
@@ -885,21 +856,18 @@ object medialive:
       val argsBuilder = com.pulumi.aws.medialive.inputs.ChannelEncoderSettingsOutputGroupOutputOutputSettingsHlsOutputSettingsHlsSettingsStandardHlsSettingsArgs.builder
       builder.standardHlsSettings(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.medialive.inputs.ChannelEncoderSettingsVideoDescriptionCodecSettingsH264SettingsFilterSettingsArgs.Builder)
     def temporalFilterSettings(args: Endofunction[com.pulumi.aws.medialive.inputs.ChannelEncoderSettingsVideoDescriptionCodecSettingsH264SettingsFilterSettingsTemporalFilterSettingsArgs.Builder]):
         com.pulumi.aws.medialive.inputs.ChannelEncoderSettingsVideoDescriptionCodecSettingsH264SettingsFilterSettingsArgs.Builder =
       val argsBuilder = com.pulumi.aws.medialive.inputs.ChannelEncoderSettingsVideoDescriptionCodecSettingsH264SettingsFilterSettingsTemporalFilterSettingsArgs.builder
       builder.temporalFilterSettings(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.medialive.inputs.ChannelInputAttachmentInputSettingsCaptionSelectorArgs.Builder)
     def selectorSettings(args: Endofunction[com.pulumi.aws.medialive.inputs.ChannelInputAttachmentInputSettingsCaptionSelectorSelectorSettingsArgs.Builder]):
         com.pulumi.aws.medialive.inputs.ChannelInputAttachmentInputSettingsCaptionSelectorArgs.Builder =
       val argsBuilder = com.pulumi.aws.medialive.inputs.ChannelInputAttachmentInputSettingsCaptionSelectorSelectorSettingsArgs.builder
       builder.selectorSettings(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.medialive.inputs.ChannelEncoderSettingsOutputGroupOutputOutputSettingsUdpOutputSettingsContainerSettingsArgs.Builder)
     /**
      * @param m2tsSettings M2TS Settings. See [M2TS Settings](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-m2tssettings.html) for more details.
@@ -910,7 +878,6 @@ object medialive:
       val argsBuilder = com.pulumi.aws.medialive.inputs.ChannelEncoderSettingsOutputGroupOutputOutputSettingsUdpOutputSettingsContainerSettingsM2tsSettingsArgs.builder
       builder.m2tsSettings(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.medialive.inputs.ChannelEncoderSettingsVideoDescriptionArgs.Builder)
     /**
      * @param codecSettings The video codec settings. See Video Codec Settings for more details.
@@ -921,28 +888,24 @@ object medialive:
       val argsBuilder = com.pulumi.aws.medialive.inputs.ChannelEncoderSettingsVideoDescriptionCodecSettingsArgs.builder
       builder.codecSettings(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.medialive.inputs.ChannelEncoderSettingsAudioDescriptionRemixSettingsChannelMappingArgs.Builder)
     def inputChannelLevels(args: Endofunction[com.pulumi.aws.medialive.inputs.ChannelEncoderSettingsAudioDescriptionRemixSettingsChannelMappingInputChannelLevelArgs.Builder]*):
         com.pulumi.aws.medialive.inputs.ChannelEncoderSettingsAudioDescriptionRemixSettingsChannelMappingArgs.Builder =
       def argsBuilder = com.pulumi.aws.medialive.inputs.ChannelEncoderSettingsAudioDescriptionRemixSettingsChannelMappingInputChannelLevelArgs.builder
       builder.inputChannelLevels(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.medialive.inputs.ChannelEncoderSettingsOutputGroupOutputGroupSettingsHlsGroupSettingsKeyProviderSettingsStaticKeySettingArgs.Builder)
     def keyProviderServer(args: Endofunction[com.pulumi.aws.medialive.inputs.ChannelEncoderSettingsOutputGroupOutputGroupSettingsHlsGroupSettingsKeyProviderSettingsStaticKeySettingKeyProviderServerArgs.Builder]):
         com.pulumi.aws.medialive.inputs.ChannelEncoderSettingsOutputGroupOutputGroupSettingsHlsGroupSettingsKeyProviderSettingsStaticKeySettingArgs.Builder =
       val argsBuilder = com.pulumi.aws.medialive.inputs.ChannelEncoderSettingsOutputGroupOutputGroupSettingsHlsGroupSettingsKeyProviderSettingsStaticKeySettingKeyProviderServerArgs.builder
       builder.keyProviderServer(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.medialive.inputs.ChannelEncoderSettingsAudioDescriptionAudioWatermarkSettingsArgs.Builder)
     def nielsenWatermarksSettings(args: Endofunction[com.pulumi.aws.medialive.inputs.ChannelEncoderSettingsAudioDescriptionAudioWatermarkSettingsNielsenWatermarksSettingsArgs.Builder]):
         com.pulumi.aws.medialive.inputs.ChannelEncoderSettingsAudioDescriptionAudioWatermarkSettingsArgs.Builder =
       val argsBuilder = com.pulumi.aws.medialive.inputs.ChannelEncoderSettingsAudioDescriptionAudioWatermarkSettingsNielsenWatermarksSettingsArgs.builder
       builder.nielsenWatermarksSettings(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.medialive.inputs.ChannelEncoderSettingsArgs.Builder)
     /**
      * @param audioDescriptions Audio descriptions for the channel. See Audio Descriptions for more details.
@@ -1025,14 +988,12 @@ object medialive:
       def argsBuilder = com.pulumi.aws.medialive.inputs.ChannelEncoderSettingsVideoDescriptionArgs.builder
       builder.videoDescriptions(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.medialive.inputs.ChannelEncoderSettingsOutputGroupOutputGroupSettingsHlsGroupSettingsKeyProviderSettingsArgs.Builder)
     def staticKeySettings(args: Endofunction[com.pulumi.aws.medialive.inputs.ChannelEncoderSettingsOutputGroupOutputGroupSettingsHlsGroupSettingsKeyProviderSettingsStaticKeySettingArgs.Builder]*):
         com.pulumi.aws.medialive.inputs.ChannelEncoderSettingsOutputGroupOutputGroupSettingsHlsGroupSettingsKeyProviderSettingsArgs.Builder =
       def argsBuilder = com.pulumi.aws.medialive.inputs.ChannelEncoderSettingsOutputGroupOutputGroupSettingsHlsGroupSettingsKeyProviderSettingsStaticKeySettingArgs.builder
       builder.staticKeySettings(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.medialive.inputs.ChannelInputAttachmentInputSettingsCaptionSelectorSelectorSettingsArgs.Builder)
     /**
      * @param ancillarySourceSettings Ancillary Source Settings. See Ancillary Source Settings for more details.
@@ -1097,7 +1058,6 @@ object medialive:
       val argsBuilder = com.pulumi.aws.medialive.inputs.ChannelInputAttachmentInputSettingsCaptionSelectorSelectorSettingsTeletextSourceSettingsArgs.builder
       builder.teletextSourceSettings(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.medialive.inputs.ChannelEncoderSettingsAudioDescriptionCodecSettingsArgs.Builder)
     /**
      * @param aacSettings Aac Settings. See AAC Settings for more details.
@@ -1150,14 +1110,12 @@ object medialive:
       val argsBuilder = com.pulumi.aws.medialive.inputs.ChannelEncoderSettingsAudioDescriptionCodecSettingsWavSettingsArgs.builder
       builder.wavSettings(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.medialive.inputs.ChannelEncoderSettingsAudioDescriptionRemixSettingsArgs.Builder)
     def channelMappings(args: Endofunction[com.pulumi.aws.medialive.inputs.ChannelEncoderSettingsAudioDescriptionRemixSettingsChannelMappingArgs.Builder]*):
         com.pulumi.aws.medialive.inputs.ChannelEncoderSettingsAudioDescriptionRemixSettingsArgs.Builder =
       def argsBuilder = com.pulumi.aws.medialive.inputs.ChannelEncoderSettingsAudioDescriptionRemixSettingsChannelMappingArgs.builder
       builder.channelMappings(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.medialive.inputs.ChannelEncoderSettingsOutputGroupOutputOutputSettingsUdpOutputSettingsArgs.Builder)
     /**
      * @param containerSettings UDP container settings. See Container Settings for more details.
@@ -1182,14 +1140,12 @@ object medialive:
       val argsBuilder = com.pulumi.aws.medialive.inputs.ChannelEncoderSettingsOutputGroupOutputOutputSettingsUdpOutputSettingsFecOutputSettingsArgs.builder
       builder.fecOutputSettings(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.medialive.inputs.ChannelInputAttachmentInputSettingsAudioSelectorArgs.Builder)
     def selectorSettings(args: Endofunction[com.pulumi.aws.medialive.inputs.ChannelInputAttachmentInputSettingsAudioSelectorSelectorSettingsArgs.Builder]):
         com.pulumi.aws.medialive.inputs.ChannelInputAttachmentInputSettingsAudioSelectorArgs.Builder =
       val argsBuilder = com.pulumi.aws.medialive.inputs.ChannelInputAttachmentInputSettingsAudioSelectorSelectorSettingsArgs.builder
       builder.selectorSettings(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.medialive.inputs.ChannelEncoderSettingsMotionGraphicsConfigurationMotionGraphicsSettingsArgs.Builder)
     /**
      * @param htmlMotionGraphicsSettings Html Motion Graphics Settings.
@@ -1200,11 +1156,10 @@ object medialive:
       val argsBuilder = com.pulumi.aws.medialive.inputs.ChannelEncoderSettingsMotionGraphicsConfigurationMotionGraphicsSettingsHtmlMotionGraphicsSettingsArgs.builder
       builder.htmlMotionGraphicsSettings(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.medialive.inputs.MultiplexProgramState.Builder)
     /**
      * @param multiplexProgramSettings MultiplexProgram settings. See Multiplex Program Settings for more details.
-     *  
+     * 
      *  The following arguments are optional:
      * @return builder
      */
@@ -1218,7 +1173,6 @@ object medialive:
       val argsBuilder = com.pulumi.aws.medialive.inputs.MultiplexProgramTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.medialive.inputs.MultiplexProgramMultiplexProgramSettingsArgs.Builder)
     /**
      * @param serviceDescriptor Service Descriptor. See Service Descriptor for more details.
@@ -1238,7 +1192,6 @@ object medialive:
       val argsBuilder = com.pulumi.aws.medialive.inputs.MultiplexProgramMultiplexProgramSettingsVideoSettingsArgs.builder
       builder.videoSettings(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.medialive.inputs.ChannelEncoderSettingsAudioDescriptionArgs.Builder)
     /**
      * @param audioNormalizationSettings Advanced audio normalization settings. See Audio Normalization Settings for more details.
@@ -1272,7 +1225,6 @@ object medialive:
       val argsBuilder = com.pulumi.aws.medialive.inputs.ChannelEncoderSettingsAudioDescriptionRemixSettingsArgs.builder
       builder.remixSettings(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.medialive.inputs.ChannelInputAttachmentAutomaticInputFailoverSettingsArgs.Builder)
     /**
      * @param failoverConditions A list of failover conditions. If any of these conditions occur, MediaLive will perform a failover to the other input. See Failover Condition Block for more details.
@@ -1283,7 +1235,6 @@ object medialive:
       def argsBuilder = com.pulumi.aws.medialive.inputs.ChannelInputAttachmentAutomaticInputFailoverSettingsFailoverConditionArgs.builder
       builder.failoverConditions(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.medialive.inputs.ChannelEncoderSettingsOutputGroupOutputGroupSettingsMediaPackageGroupSettingsArgs.Builder)
     /**
      * @param destination A director and base filename where archive files should be written. See Destination for more details.
@@ -1294,7 +1245,6 @@ object medialive:
       val argsBuilder = com.pulumi.aws.medialive.inputs.ChannelEncoderSettingsOutputGroupOutputGroupSettingsMediaPackageGroupSettingsDestinationArgs.builder
       builder.destination(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.medialive.inputs.ChannelInputAttachmentAutomaticInputFailoverSettingsFailoverConditionFailoverConditionSettingsArgs.Builder)
     /**
      * @param audioSilenceSettings MediaLive will perform a failover if the specified audio selector is silent for the specified period. See Audio Silence Failover Settings for more details.
@@ -1323,7 +1273,6 @@ object medialive:
       val argsBuilder = com.pulumi.aws.medialive.inputs.ChannelInputAttachmentAutomaticInputFailoverSettingsFailoverConditionFailoverConditionSettingsVideoBlackSettingsArgs.builder
       builder.videoBlackSettings(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.medialive.inputs.ChannelEncoderSettingsVideoDescriptionCodecSettingsH265SettingsArgs.Builder)
     /**
      * @param colorSpaceSettings Define the color metadata for the output. H265 Color Space Settings for more details.
@@ -1352,7 +1301,6 @@ object medialive:
       val argsBuilder = com.pulumi.aws.medialive.inputs.ChannelEncoderSettingsVideoDescriptionCodecSettingsH265SettingsTimecodeBurninSettingsArgs.builder
       builder.timecodeBurninSettings(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.medialive.inputs.ChannelEncoderSettingsVideoDescriptionCodecSettingsArgs.Builder)
     /**
      * @param frameCaptureSettings Frame capture settings. See Frame Capture Settings for more details.
@@ -1377,14 +1325,12 @@ object medialive:
       val argsBuilder = com.pulumi.aws.medialive.inputs.ChannelEncoderSettingsVideoDescriptionCodecSettingsH265SettingsArgs.builder
       builder.h265Settings(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.medialive.inputs.ChannelEncoderSettingsOutputGroupOutputOutputSettingsHlsOutputSettingsHlsSettingsAudioOnlyHlsSettingsArgs.Builder)
     def audioOnlyImage(args: Endofunction[com.pulumi.aws.medialive.inputs.ChannelEncoderSettingsOutputGroupOutputOutputSettingsHlsOutputSettingsHlsSettingsAudioOnlyHlsSettingsAudioOnlyImageArgs.Builder]):
         com.pulumi.aws.medialive.inputs.ChannelEncoderSettingsOutputGroupOutputOutputSettingsHlsOutputSettingsHlsSettingsAudioOnlyHlsSettingsArgs.Builder =
       val argsBuilder = com.pulumi.aws.medialive.inputs.ChannelEncoderSettingsOutputGroupOutputOutputSettingsHlsOutputSettingsHlsSettingsAudioOnlyHlsSettingsAudioOnlyImageArgs.builder
       builder.audioOnlyImage(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.medialive.inputs.ChannelEncoderSettingsOutputGroupOutputGroupSettingsArchiveGroupSettingArgs.Builder)
     /**
      * @param archiveCdnSettings Parameters that control the interactions with the CDN. See Archive CDN Settings for more details.
@@ -1404,7 +1350,6 @@ object medialive:
       val argsBuilder = com.pulumi.aws.medialive.inputs.ChannelEncoderSettingsOutputGroupOutputGroupSettingsArchiveGroupSettingDestinationArgs.builder
       builder.destination(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.medialive.inputs.ChannelEncoderSettingsOutputGroupOutputOutputSettingsArchiveOutputSettingsArgs.Builder)
     /**
      * @param containerSettings Settings specific to the container type of the file. See Container Settings for more details.
@@ -1415,7 +1360,6 @@ object medialive:
       val argsBuilder = com.pulumi.aws.medialive.inputs.ChannelEncoderSettingsOutputGroupOutputOutputSettingsArchiveOutputSettingsContainerSettingsArgs.builder
       builder.containerSettings(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.medialive.inputs.ChannelEncoderSettingsOutputGroupOutputOutputSettingsArchiveOutputSettingsContainerSettingsM2tsSettingsArgs.Builder)
     def dvbNitSettings(args: Endofunction[com.pulumi.aws.medialive.inputs.ChannelEncoderSettingsOutputGroupOutputOutputSettingsArchiveOutputSettingsContainerSettingsM2tsSettingsDvbNitSettingsArgs.Builder]):
         com.pulumi.aws.medialive.inputs.ChannelEncoderSettingsOutputGroupOutputOutputSettingsArchiveOutputSettingsContainerSettingsM2tsSettingsArgs.Builder =
@@ -1432,7 +1376,6 @@ object medialive:
       val argsBuilder = com.pulumi.aws.medialive.inputs.ChannelEncoderSettingsOutputGroupOutputOutputSettingsArchiveOutputSettingsContainerSettingsM2tsSettingsDvbTdtSettingsArgs.builder
       builder.dvbTdtSettings(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.medialive.inputs.ChannelEncoderSettingsOutputGroupOutputOutputSettingsUdpOutputSettingsContainerSettingsM2tsSettingsArgs.Builder)
     def dvbNitSettings(args: Endofunction[com.pulumi.aws.medialive.inputs.ChannelEncoderSettingsOutputGroupOutputOutputSettingsUdpOutputSettingsContainerSettingsM2tsSettingsDvbNitSettingsArgs.Builder]):
         com.pulumi.aws.medialive.inputs.ChannelEncoderSettingsOutputGroupOutputOutputSettingsUdpOutputSettingsContainerSettingsM2tsSettingsArgs.Builder =
@@ -1449,7 +1392,6 @@ object medialive:
       val argsBuilder = com.pulumi.aws.medialive.inputs.ChannelEncoderSettingsOutputGroupOutputOutputSettingsUdpOutputSettingsContainerSettingsM2tsSettingsDvbTdtSettingsArgs.builder
       builder.dvbTdtSettings(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.medialive.inputs.ChannelInputAttachmentInputSettingsAudioSelectorSelectorSettingsArgs.Builder)
     /**
      * @param audioHlsRenditionSelection Audio HLS Rendition Selection. See Audio HLS Rendition Selection for more details.
@@ -1487,7 +1429,6 @@ object medialive:
       val argsBuilder = com.pulumi.aws.medialive.inputs.ChannelInputAttachmentInputSettingsAudioSelectorSelectorSettingsAudioTrackSelectionArgs.builder
       builder.audioTrackSelection(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.medialive.inputs.ChannelInputAttachmentInputSettingsNetworkInputSettingsArgs.Builder)
     /**
      * @param hlsInputSettings Specifies HLS input settings when the uri is for a HLS manifest. See HLS Input Settings for more details.
@@ -1498,7 +1439,6 @@ object medialive:
       val argsBuilder = com.pulumi.aws.medialive.inputs.ChannelInputAttachmentInputSettingsNetworkInputSettingsHlsInputSettingsArgs.builder
       builder.hlsInputSettings(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.medialive.inputs.ChannelEncoderSettingsVideoDescriptionCodecSettingsH264SettingsArgs.Builder)
     /**
      * @param filterSettings Filters to apply to an encode. See H264 Filter Settings for more details.
@@ -1509,7 +1449,6 @@ object medialive:
       val argsBuilder = com.pulumi.aws.medialive.inputs.ChannelEncoderSettingsVideoDescriptionCodecSettingsH264SettingsFilterSettingsArgs.builder
       builder.filterSettings(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.medialive.inputs.ChannelEncoderSettingsOutputGroupArgs.Builder)
     /**
      * @param outputGroupSettings Settings associated with the output group. See Output Group Settings for more details.
@@ -1529,7 +1468,6 @@ object medialive:
       def argsBuilder = com.pulumi.aws.medialive.inputs.ChannelEncoderSettingsOutputGroupOutputArgs.builder
       builder.outputs(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.medialive.inputs.ChannelEncoderSettingsAudioDescriptionAudioWatermarkSettingsNielsenWatermarksSettingsArgs.Builder)
     /**
      * @param nielsenCbetSettings Used to insert watermarks of type Nielsen CBET. See Nielsen CBET Settings for more details.
@@ -1549,7 +1487,6 @@ object medialive:
       def argsBuilder = com.pulumi.aws.medialive.inputs.ChannelEncoderSettingsAudioDescriptionAudioWatermarkSettingsNielsenWatermarksSettingsNielsenNaesIiNwSettingArgs.builder
       builder.nielsenNaesIiNwSettings(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.medialive.inputs.ChannelEncoderSettingsOutputGroupOutputGroupSettingsArgs.Builder)
     /**
      * @param archiveGroupSettings Archive group settings. See Archive Group Settings for more details.
@@ -1603,14 +1540,12 @@ object medialive:
       val argsBuilder = com.pulumi.aws.medialive.inputs.ChannelEncoderSettingsOutputGroupOutputGroupSettingsUdpGroupSettingsArgs.builder
       builder.udpGroupSettings(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.medialive.inputs.ChannelEncoderSettingsOutputGroupOutputGroupSettingsMsSmoothGroupSettingsArgs.Builder)
     def destination(args: Endofunction[com.pulumi.aws.medialive.inputs.ChannelEncoderSettingsOutputGroupOutputGroupSettingsMsSmoothGroupSettingsDestinationArgs.Builder]):
         com.pulumi.aws.medialive.inputs.ChannelEncoderSettingsOutputGroupOutputGroupSettingsMsSmoothGroupSettingsArgs.Builder =
       val argsBuilder = com.pulumi.aws.medialive.inputs.ChannelEncoderSettingsOutputGroupOutputGroupSettingsMsSmoothGroupSettingsDestinationArgs.builder
       builder.destination(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.medialive.inputs.ChannelDestinationArgs.Builder)
     /**
      * @param mediaPackageSettings Destination settings for a MediaPackage output; one destination for both encoders. See Media Package Settings for more details.
@@ -1639,7 +1574,6 @@ object medialive:
       def argsBuilder = com.pulumi.aws.medialive.inputs.ChannelDestinationSettingArgs.builder
       builder.settings(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.medialive.inputs.ChannelEncoderSettingsAvailBlankingArgs.Builder)
     /**
      * @param availBlankingImage Blanking image to be used. See Avail Blanking Image for more details.
@@ -1650,7 +1584,6 @@ object medialive:
       val argsBuilder = com.pulumi.aws.medialive.inputs.ChannelEncoderSettingsAvailBlankingAvailBlankingImageArgs.builder
       builder.availBlankingImage(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.medialive.inputs.ChannelEncoderSettingsGlobalConfigurationArgs.Builder)
     /**
      * @param inputLossBehavior Settings for system actions when input is lost. See Input Loss Behavior for more details.
@@ -1661,7 +1594,6 @@ object medialive:
       val argsBuilder = com.pulumi.aws.medialive.inputs.ChannelEncoderSettingsGlobalConfigurationInputLossBehaviorArgs.builder
       builder.inputLossBehavior(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.medialive.inputs.ChannelInputAttachmentInputSettingsAudioSelectorSelectorSettingsAudioTrackSelectionArgs.Builder)
     /**
      * @param dolbyEDecode Configure decoding options for Dolby E streams - these should be Dolby E frames carried in PCM streams tagged with SMPTE-337. See Dolby E Decode for more details.
@@ -1681,7 +1613,6 @@ object medialive:
       def argsBuilder = com.pulumi.aws.medialive.inputs.ChannelInputAttachmentInputSettingsAudioSelectorSelectorSettingsAudioTrackSelectionTrackArgs.builder
       builder.tracks(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.medialive.inputs.ChannelInputAttachmentInputSettingsArgs.Builder)
     /**
      * @param audioSelectors Used to select the audio stream to decode for inputs that have multiple. See Audio Selectors for more details.
@@ -1715,7 +1646,6 @@ object medialive:
       val argsBuilder = com.pulumi.aws.medialive.inputs.ChannelInputAttachmentInputSettingsVideoSelectorArgs.builder
       builder.videoSelector(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.medialive.inputs.ChannelEncoderSettingsOutputGroupOutputGroupSettingsHlsGroupSettingsArgs.Builder)
     def captionLanguageMappings(args: Endofunction[com.pulumi.aws.medialive.inputs.ChannelEncoderSettingsOutputGroupOutputGroupSettingsHlsGroupSettingsCaptionLanguageMappingArgs.Builder]*):
         com.pulumi.aws.medialive.inputs.ChannelEncoderSettingsOutputGroupOutputGroupSettingsHlsGroupSettingsArgs.Builder =
@@ -1736,5 +1666,3 @@ object medialive:
         com.pulumi.aws.medialive.inputs.ChannelEncoderSettingsOutputGroupOutputGroupSettingsHlsGroupSettingsArgs.Builder =
       val argsBuilder = com.pulumi.aws.medialive.inputs.ChannelEncoderSettingsOutputGroupOutputGroupSettingsHlsGroupSettingsKeyProviderSettingsArgs.builder
       builder.keyProviderSettings(args(argsBuilder).build)
-
-                       

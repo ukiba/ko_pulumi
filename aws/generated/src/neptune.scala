@@ -16,7 +16,6 @@ object neptune:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.neptune.EventSubscription(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -31,7 +30,6 @@ object neptune:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.neptune.ParameterGroup(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -46,7 +44,6 @@ object neptune:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.neptune.SubnetGroup(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -54,7 +51,7 @@ object neptune:
   /**
    * Provides an Neptune Cluster Resource. A Cluster Resource defines attributes that are
    *  applied to the entire cluster of Neptune Cluster Instances.
-   *  
+   * 
    *  Changes to a Neptune Cluster can occur when you manually change a
    *  parameter, such as `backupRetentionPeriod`, and are reflected in the next maintenance
    *  window. Because of this, this provider may report a difference in its planning
@@ -68,7 +65,6 @@ object neptune:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.neptune.Cluster(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -86,16 +82,15 @@ object neptune:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.neptune.ParameterGroupArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   /**
    * Manages a Neptune Global Cluster. A global cluster consists of one primary region and up to five read-only secondary regions. You issue write operations directly to the primary cluster in the primary region and Amazon Neptune automatically replicates the data to the secondary regions using dedicated infrastructure.
-   *  
+   * 
    *  More information about Neptune Global Clusters can be found in the [Neptune User Guide](https://docs.aws.amazon.com/neptune/latest/userguide/neptune-global-database.html).
    */
   def GlobalCluster(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.neptune.GlobalClusterArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.neptune.GlobalClusterArgs.builder
-    
     com.pulumi.aws.neptune.GlobalCluster(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -113,7 +108,7 @@ object neptune:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.neptune.ClusterArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   type NeptuneFunctions = com.pulumi.aws.neptune.NeptuneFunctions
   object NeptuneFunctions:
     // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
@@ -121,7 +116,7 @@ object neptune:
   extension (self: NeptuneFunctions.type)
     /**
      * Information about a Neptune engine version.
-     *  
+     * 
      *  &gt; **Note:** If AWS returns multiple matching engine versions, this data source will produce a `multiple Neptune engine versions` error. To avoid this, provide additional criteria to narrow the results or use the `latest` argument to select a single version. See the Argument Reference for details.
      */
     def getEngineVersion(args: Endofunction[com.pulumi.aws.neptune.inputs.GetEngineVersionArgs.Builder] = identity):
@@ -131,7 +126,7 @@ object neptune:
 
     /**
      * Information about a Neptune engine version.
-     *  
+     * 
      *  &gt; **Note:** If AWS returns multiple matching engine versions, this data source will produce a `multiple Neptune engine versions` error. To avoid this, provide additional criteria to narrow the results or use the `latest` argument to select a single version. See the Argument Reference for details.
      */
     def getEngineVersionPlain(args: Endofunction[com.pulumi.aws.neptune.inputs.GetEngineVersionPlainArgs.Builder] = identity):
@@ -161,7 +156,6 @@ object neptune:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.neptune.ClusterParameterGroup(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -179,10 +173,10 @@ object neptune:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.neptune.ClusterParameterGroupArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   /**
    * A Cluster Instance Resource defines attributes that are specific to a single instance in a Neptune Cluster.
-   *  
+   * 
    *  You can simply add neptune instances and Neptune manages the replication. You can use the count
    *  meta-parameter to make multiple instances and join them all to the same Neptune Cluster, or you may specify different Cluster Instance resources with various `instanceClass` sizes.
    */
@@ -192,7 +186,6 @@ object neptune:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.neptune.ClusterInstance(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -204,7 +197,6 @@ object neptune:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.neptune.ClusterEndpoint(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -213,7 +205,6 @@ object neptune:
   def ClusterSnapshot(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.neptune.ClusterSnapshotArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.neptune.ClusterSnapshotArgs.builder
-    
     com.pulumi.aws.neptune.ClusterSnapshot(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -231,7 +222,7 @@ object neptune:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.neptune.inputs.ClusterParameterGroupState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.neptune.inputs.ParameterGroupState.Builder)
     /**
      * @param parameters A list of Neptune parameters to apply.
@@ -245,7 +236,7 @@ object neptune:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.neptune.inputs.ParameterGroupState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.neptune.inputs.GlobalClusterState.Builder)
     /**
      * @param globalClusterMembers Set of objects containing Global Cluster members.
@@ -256,7 +247,6 @@ object neptune:
       def argsBuilder = com.pulumi.aws.neptune.inputs.GlobalClusterGlobalClusterMemberArgs.builder
       builder.globalClusterMembers(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.neptune.inputs.ClusterState.Builder)
     /**
      * @param serverlessV2ScalingConfiguration If set, create the Neptune cluster as a serverless one. See Serverless for example block attributes.
@@ -270,4 +260,3 @@ object neptune:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.neptune.inputs.ClusterState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       

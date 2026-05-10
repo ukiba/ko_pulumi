@@ -14,7 +14,6 @@ object quicksight:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.quicksight.DataSet(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -68,7 +67,7 @@ object quicksight:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.quicksight.DataSourceArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.quicksight.IamPolicyAssignmentArgs.Builder)
     /**
      * @param identities Amazon QuickSight users, groups, or both to assign the policy to. See `identities` block.
@@ -79,14 +78,12 @@ object quicksight:
       val argsBuilder = com.pulumi.aws.quicksight.inputs.IamPolicyAssignmentIdentitiesArgs.builder
       builder.identities(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.quicksight.AccountSettingsArgs.Builder)
     def timeouts(args: Endofunction[com.pulumi.aws.quicksight.inputs.AccountSettingsTimeoutsArgs.Builder]):
         com.pulumi.aws.quicksight.AccountSettingsArgs.Builder =
       val argsBuilder = com.pulumi.aws.quicksight.inputs.AccountSettingsTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.quicksight.ThemeArgs.Builder)
     /**
      * @param configuration The theme configuration, which contains the theme display properties. See configuration.
@@ -109,12 +106,11 @@ object quicksight:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.quicksight.ThemeArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   /** Resource for managing an AWS QuickSight Template Alias. */
   def TemplateAlias(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.quicksight.TemplateAliasArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.quicksight.TemplateAliasArgs.builder
-    
     com.pulumi.aws.quicksight.TemplateAlias(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -123,7 +119,6 @@ object quicksight:
   def Group(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.quicksight.GroupArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.quicksight.GroupArgs.builder
-    
     com.pulumi.aws.quicksight.Group(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -137,16 +132,15 @@ object quicksight:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.quicksight.VpcConnectionArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   /**
    * Resource for managing an AWS QuickSight Account Subscription.
-   *  
+   * 
    *  &gt; Due to the absence of the `adminGroup`, `authorGroup`, `readerGroup`, `adminProGroup`, `authorProGroup`, and `readerProGroup` fields in the [`DescribeAccountSettings`](https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeAccountSettings.html) API response, changes made to these groups post-subscription will not be detected by this resource.
    */
   def AccountSubscription(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.quicksight.AccountSubscriptionArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.quicksight.AccountSubscriptionArgs.builder
-    
     com.pulumi.aws.quicksight.AccountSubscription(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -161,7 +155,6 @@ object quicksight:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.quicksight.Analysis(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -175,12 +168,11 @@ object quicksight:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.quicksight.NamespaceArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   /** Manages the custom permissions profile for a user. */
   def UserCustomPermission(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.quicksight.UserCustomPermissionArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.quicksight.UserCustomPermissionArgs.builder
-    
     com.pulumi.aws.quicksight.UserCustomPermission(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -192,7 +184,6 @@ object quicksight:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.quicksight.Namespace(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -210,7 +201,7 @@ object quicksight:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.quicksight.CustomPermissionsArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   /** Resource for managing an AWS QuickSight VPC Connection. */
   def VpcConnection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.quicksight.VpcConnectionArgs.Builder])(using conf: KoPulumiConf) =
@@ -221,7 +212,6 @@ object quicksight:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.quicksight.VpcConnection(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -248,11 +238,11 @@ object quicksight:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.quicksight.TemplateArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.quicksight.RefreshScheduleArgs.Builder)
     /**
      * @param schedule The [refresh schedule](https://docs.aws.amazon.com/quicksight/latest/APIReference/API_RefreshSchedule.html). See schedule
-     *  
+     * 
      *  The following arguments are optional:
      * @return builder
      */
@@ -261,12 +251,10 @@ object quicksight:
       val argsBuilder = com.pulumi.aws.quicksight.inputs.RefreshScheduleScheduleArgs.builder
       builder.schedule(args(argsBuilder).build)
 
-                       
   /** Resource for managing an AWS QuickSight Ingestion. */
   def Ingestion(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.quicksight.IngestionArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.quicksight.IngestionArgs.builder
-    
     com.pulumi.aws.quicksight.Ingestion(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -275,7 +263,6 @@ object quicksight:
   def User(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.quicksight.UserArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.quicksight.UserArgs.builder
-    
     com.pulumi.aws.quicksight.User(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -290,7 +277,6 @@ object quicksight:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.quicksight.Dashboard(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -389,7 +375,7 @@ object quicksight:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.quicksight.DataSetArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.quicksight.KeyRegistrationArgs.Builder)
     /**
      * @param keyRegistrations Registered keys. See key_registration.
@@ -400,12 +386,10 @@ object quicksight:
       def argsBuilder = com.pulumi.aws.quicksight.inputs.KeyRegistrationKeyRegistrationArgs.builder
       builder.keyRegistrations(args.map(_(argsBuilder).build)*)
 
-                       
   /** Resource for managing a QuickSight Refresh Schedule. */
   def RefreshSchedule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.quicksight.RefreshScheduleArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.quicksight.RefreshScheduleArgs.builder
-    
     com.pulumi.aws.quicksight.RefreshSchedule(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -414,20 +398,18 @@ object quicksight:
   def FolderMembership(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.quicksight.FolderMembershipArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.quicksight.FolderMembershipArgs.builder
-    
     com.pulumi.aws.quicksight.FolderMembership(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
   /**
    * Resource for managing an AWS QuickSight Account Settings.
-   *  
+   * 
    *  &gt; Deletion of this resource will not modify any settings, only remove the resource from state.
    */
   def AccountSettings(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.quicksight.AccountSettingsArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.quicksight.AccountSettingsArgs.builder
-    
     com.pulumi.aws.quicksight.AccountSettings(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -439,7 +421,6 @@ object quicksight:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.quicksight.CustomPermissions(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -448,7 +429,6 @@ object quicksight:
   def RoleCustomPermission(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.quicksight.RoleCustomPermissionArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.quicksight.RoleCustomPermissionArgs.builder
-    
     com.pulumi.aws.quicksight.RoleCustomPermission(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -457,7 +437,6 @@ object quicksight:
   def GroupMembership(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.quicksight.GroupMembershipArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.quicksight.GroupMembershipArgs.builder
-    
     com.pulumi.aws.quicksight.GroupMembership(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -472,20 +451,18 @@ object quicksight:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.quicksight.Template(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
   /**
    * Resource for managing an AWS QuickSight Role Membership.
-   *  
+   * 
    *  &gt; The role membership APIs are disabled for identities managed by QuickSight. This resource can only be used when the QuickSight account subscription uses the Active Directory or IAM Identity Center authentication method.
    */
   def RoleMembership(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.quicksight.RoleMembershipArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.quicksight.RoleMembershipArgs.builder
-    
     com.pulumi.aws.quicksight.RoleMembership(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -530,7 +507,7 @@ object quicksight:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.quicksight.DashboardArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.quicksight.AnalysisArgs.Builder)
     /**
      * @param parameters The parameters for the creation of the analysis, which you want to use to override the default settings. An analysis can have any type of parameters, and some parameters might accept multiple values. See parameters.
@@ -562,7 +539,7 @@ object quicksight:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.quicksight.AnalysisArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   type QuicksightFunctions = com.pulumi.aws.quicksight.QuicksightFunctions
   object QuicksightFunctions:
     // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
@@ -654,7 +631,6 @@ object quicksight:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.quicksight.Theme(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -672,29 +648,27 @@ object quicksight:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.quicksight.FolderArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   /**
    * Manages the content and status of IP rules.
-   *  
+   * 
    *  &gt; Deletion of this resource clears all IP restrictions from a QuickSight account.
    */
   def IpRestriction(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.quicksight.IpRestrictionArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.quicksight.IpRestrictionArgs.builder
-    
     com.pulumi.aws.quicksight.IpRestriction(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
   /**
    * Registers customer managed keys in a Amazon QuickSight account.
-   *  
+   * 
    *  &gt; Deletion of this resource clears all CMK registrations from a QuickSight account. QuickSight then uses AWS owned keys to encrypt your resources.
    */
   def KeyRegistration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.quicksight.KeyRegistrationArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.quicksight.KeyRegistrationArgs.builder
-    
     com.pulumi.aws.quicksight.KeyRegistration(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -709,7 +683,6 @@ object quicksight:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.quicksight.Folder(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -718,7 +691,6 @@ object quicksight:
   def IamPolicyAssignment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.quicksight.IamPolicyAssignmentArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.quicksight.IamPolicyAssignmentArgs.builder
-    
     com.pulumi.aws.quicksight.IamPolicyAssignment(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -733,7 +705,6 @@ object quicksight:
       def argsBuilder = com.pulumi.aws.quicksight.inputs.DataSetRowLevelPermissionTagConfigurationTagRuleArgs.builder
       builder.tagRules(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.quicksight.inputs.DashboardParametersArgs.Builder)
     /**
      * @param dateTimeParameters A list of parameters that have a data type of date-time. See [AWS API Documentation for complete description](https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DateTimeParameter.html).
@@ -771,7 +742,6 @@ object quicksight:
       def argsBuilder = com.pulumi.aws.quicksight.inputs.DashboardParametersStringParameterArgs.builder
       builder.stringParameters(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.quicksight.inputs.ThemeConfigurationSheetArgs.Builder)
     /**
      * @param tile The display options for tiles. See tile.
@@ -791,7 +761,6 @@ object quicksight:
       val argsBuilder = com.pulumi.aws.quicksight.inputs.ThemeConfigurationSheetTileLayoutArgs.builder
       builder.tileLayout(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.quicksight.inputs.DataSetState.Builder)
     /**
      * @param columnGroups Groupings of columns that work together in certain Amazon QuickSight features. Currently, only geospatial hierarchy is supported. See column_groups.
@@ -895,7 +864,7 @@ object quicksight:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.quicksight.inputs.DataSetState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.quicksight.inputs.DashboardSourceEntityArgs.Builder)
     /**
      * @param sourceTemplate The source template. See source_template.
@@ -906,7 +875,6 @@ object quicksight:
       val argsBuilder = com.pulumi.aws.quicksight.inputs.DashboardSourceEntitySourceTemplateArgs.builder
       builder.sourceTemplate(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.quicksight.inputs.DataSourceParametersS3Args.Builder)
     /**
      * @param manifestFileLocation An object containing the S3 location of the S3 manifest file.
@@ -917,7 +885,6 @@ object quicksight:
       val argsBuilder = com.pulumi.aws.quicksight.inputs.DataSourceParametersS3ManifestFileLocationArgs.builder
       builder.manifestFileLocation(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.quicksight.inputs.DataSetLogicalTableMapDataTransformTagColumnOperationTagArgs.Builder)
     /**
      * @param columnDescription A description for a column. See column_description.
@@ -928,7 +895,6 @@ object quicksight:
       val argsBuilder = com.pulumi.aws.quicksight.inputs.DataSetLogicalTableMapDataTransformTagColumnOperationTagColumnDescriptionArgs.builder
       builder.columnDescription(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.quicksight.inputs.RefreshScheduleScheduleScheduleFrequencyArgs.Builder)
     /**
      * @param refreshOnDay The [refresh on entity](https://docs.aws.amazon.com/quicksight/latest/APIReference/API_ScheduleRefreshOnEntity.html) configuration for weekly or monthly schedules. See refresh_on_day.
@@ -939,7 +905,6 @@ object quicksight:
       val argsBuilder = com.pulumi.aws.quicksight.inputs.RefreshScheduleScheduleScheduleFrequencyRefreshOnDayArgs.builder
       builder.refreshOnDay(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.quicksight.inputs.TemplateSourceEntityArgs.Builder)
     /**
      * @param sourceAnalysis The source analysis, if it is based on an analysis.. Only one of `sourceAnalysis` or `sourceTemplate` should be configured. See source_analysis.
@@ -959,7 +924,6 @@ object quicksight:
       val argsBuilder = com.pulumi.aws.quicksight.inputs.TemplateSourceEntitySourceTemplateArgs.builder
       builder.sourceTemplate(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.quicksight.inputs.DataSetLogicalTableMapDataTransformCreateColumnsOperationArgs.Builder)
     /**
      * @param columns Calculated columns to create. See columns.
@@ -970,7 +934,6 @@ object quicksight:
       def argsBuilder = com.pulumi.aws.quicksight.inputs.DataSetLogicalTableMapDataTransformCreateColumnsOperationColumnArgs.builder
       builder.columns(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.quicksight.inputs.ThemeConfigurationArgs.Builder)
     /**
      * @param dataColorPalette Color properties that apply to chart data colors. See data_color_palette.
@@ -1008,7 +971,6 @@ object quicksight:
       val argsBuilder = com.pulumi.aws.quicksight.inputs.ThemeConfigurationUiColorPaletteArgs.builder
       builder.uiColorPalette(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.quicksight.inputs.AnalysisSourceEntityArgs.Builder)
     /**
      * @param sourceTemplate The source template. See source_template.
@@ -1019,7 +981,6 @@ object quicksight:
       val argsBuilder = com.pulumi.aws.quicksight.inputs.AnalysisSourceEntitySourceTemplateArgs.builder
       builder.sourceTemplate(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.quicksight.inputs.DataSourceCredentialsArgs.Builder)
     /**
      * @param credentialPair Credential pair. See Credential Pair below for more details.
@@ -1030,7 +991,6 @@ object quicksight:
       val argsBuilder = com.pulumi.aws.quicksight.inputs.DataSourceCredentialsCredentialPairArgs.builder
       builder.credentialPair(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.quicksight.inputs.DataSetPhysicalTableMapCustomSqlArgs.Builder)
     /**
      * @param columns Column schema from the SQL query result set. See columns.
@@ -1041,7 +1001,6 @@ object quicksight:
       def argsBuilder = com.pulumi.aws.quicksight.inputs.DataSetPhysicalTableMapCustomSqlColumnArgs.builder
       builder.columns(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.quicksight.inputs.ThemeConfigurationTypographyArgs.Builder)
     /**
      * @param fontFamilies Determines the list of font families. Maximum number of 5 items. See font_families.
@@ -1052,7 +1011,6 @@ object quicksight:
       def argsBuilder = com.pulumi.aws.quicksight.inputs.ThemeConfigurationTypographyFontFamilyArgs.builder
       builder.fontFamilies(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.quicksight.inputs.FolderState.Builder)
     /**
      * @param permissions A set of resource permissions on the folder. Maximum of 64 items. See permissions.
@@ -1066,7 +1024,7 @@ object quicksight:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.quicksight.inputs.FolderState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.quicksight.inputs.DataSetLogicalTableMapDataTransformArgs.Builder)
     /**
      * @param castColumnTypeOperation A transform operation that casts a column to a different type. See cast_column_type_operation.
@@ -1131,7 +1089,6 @@ object quicksight:
       val argsBuilder = com.pulumi.aws.quicksight.inputs.DataSetLogicalTableMapDataTransformUntagColumnOperationArgs.builder
       builder.untagColumnOperation(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.quicksight.inputs.DataSetRefreshPropertiesRefreshConfigurationIncrementalRefreshArgs.Builder)
     /**
      * @param lookbackWindow The lookback window setup for an incremental refresh configuration. See lookback_window.
@@ -1142,7 +1099,6 @@ object quicksight:
       val argsBuilder = com.pulumi.aws.quicksight.inputs.DataSetRefreshPropertiesRefreshConfigurationIncrementalRefreshLookbackWindowArgs.builder
       builder.lookbackWindow(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.quicksight.inputs.DataSourceParametersArgs.Builder)
     /**
      * @param amazonElasticsearch Parameters for connecting to Amazon Elasticsearch.
@@ -1333,7 +1289,6 @@ object quicksight:
       val argsBuilder = com.pulumi.aws.quicksight.inputs.DataSourceParametersTwitterArgs.builder
       builder.twitter(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.quicksight.inputs.DataSetPhysicalTableMapRelationalTableArgs.Builder)
     /**
      * @param inputColumns Column schema of the table. See input_columns.
@@ -1344,7 +1299,6 @@ object quicksight:
       def argsBuilder = com.pulumi.aws.quicksight.inputs.DataSetPhysicalTableMapRelationalTableInputColumnArgs.builder
       builder.inputColumns(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.quicksight.inputs.TemplateSourceEntitySourceAnalysisArgs.Builder)
     /**
      * @param dataSetReferences A list of dataset references used as placeholders in the template. See data_set_references.
@@ -1355,11 +1309,10 @@ object quicksight:
       def argsBuilder = com.pulumi.aws.quicksight.inputs.TemplateSourceEntitySourceAnalysisDataSetReferenceArgs.builder
       builder.dataSetReferences(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.quicksight.inputs.RefreshScheduleState.Builder)
     /**
      * @param schedule The [refresh schedule](https://docs.aws.amazon.com/quicksight/latest/APIReference/API_RefreshSchedule.html). See schedule
-     *  
+     * 
      *  The following arguments are optional:
      * @return builder
      */
@@ -1368,7 +1321,6 @@ object quicksight:
       val argsBuilder = com.pulumi.aws.quicksight.inputs.RefreshScheduleScheduleArgs.builder
       builder.schedule(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.quicksight.inputs.DataSetLogicalTableMapSourceJoinInstructionArgs.Builder)
     /**
      * @param leftJoinKeyProperties Join key properties of the left operand. See left_join_key_properties.
@@ -1388,7 +1340,6 @@ object quicksight:
       val argsBuilder = com.pulumi.aws.quicksight.inputs.DataSetLogicalTableMapSourceJoinInstructionRightJoinKeyPropertiesArgs.builder
       builder.rightJoinKeyProperties(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.quicksight.inputs.KeyRegistrationState.Builder)
     /**
      * @param keyRegistrations Registered keys. See key_registration.
@@ -1399,7 +1350,6 @@ object quicksight:
       def argsBuilder = com.pulumi.aws.quicksight.inputs.KeyRegistrationKeyRegistrationArgs.builder
       builder.keyRegistrations(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.quicksight.inputs.RefreshScheduleScheduleArgs.Builder)
     /**
      * @param scheduleFrequency The configuration of the [schedule frequency](https://docs.aws.amazon.com/quicksight/latest/APIReference/API_RefreshFrequency.html). See schedule_frequency.
@@ -1410,7 +1360,6 @@ object quicksight:
       val argsBuilder = com.pulumi.aws.quicksight.inputs.RefreshScheduleScheduleScheduleFrequencyArgs.builder
       builder.scheduleFrequency(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.quicksight.inputs.DataSetPhysicalTableMapS3SourceArgs.Builder)
     /**
      * @param inputColumns Column schema of the table. See input_columns.
@@ -1430,7 +1379,6 @@ object quicksight:
       val argsBuilder = com.pulumi.aws.quicksight.inputs.DataSetPhysicalTableMapS3SourceUploadSettingsArgs.builder
       builder.uploadSettings(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.quicksight.inputs.DataSetRefreshPropertiesRefreshConfigurationArgs.Builder)
     /**
      * @param incrementalRefresh The incremental refresh for the data set. See incremental_refresh.
@@ -1441,7 +1389,6 @@ object quicksight:
       val argsBuilder = com.pulumi.aws.quicksight.inputs.DataSetRefreshPropertiesRefreshConfigurationIncrementalRefreshArgs.builder
       builder.incrementalRefresh(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.quicksight.inputs.DataSetLogicalTableMapSourceArgs.Builder)
     /**
      * @param joinInstruction Specifies the result of a join of two logical tables. See join_instruction.
@@ -1452,7 +1399,6 @@ object quicksight:
       val argsBuilder = com.pulumi.aws.quicksight.inputs.DataSetLogicalTableMapSourceJoinInstructionArgs.builder
       builder.joinInstruction(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.quicksight.inputs.AnalysisParametersArgs.Builder)
     /**
      * @param dateTimeParameters A list of parameters that have a data type of date-time. See [AWS API Documentation for complete description](https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DateTimeParameter.html).
@@ -1490,7 +1436,6 @@ object quicksight:
       def argsBuilder = com.pulumi.aws.quicksight.inputs.AnalysisParametersStringParameterArgs.builder
       builder.stringParameters(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.quicksight.inputs.DataSetPhysicalTableMapArgs.Builder)
     /**
      * @param customSql A physical table type built from the results of the custom SQL query. See custom_sql.
@@ -1519,14 +1464,12 @@ object quicksight:
       val argsBuilder = com.pulumi.aws.quicksight.inputs.DataSetPhysicalTableMapS3SourceArgs.builder
       builder.s3Source(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.quicksight.inputs.AccountSettingsState.Builder)
     def timeouts(args: Endofunction[com.pulumi.aws.quicksight.inputs.AccountSettingsTimeoutsArgs.Builder]):
         com.pulumi.aws.quicksight.inputs.AccountSettingsState.Builder =
       val argsBuilder = com.pulumi.aws.quicksight.inputs.AccountSettingsTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.quicksight.inputs.ThemeState.Builder)
     /**
      * @param configuration The theme configuration, which contains the theme display properties. See configuration.
@@ -1549,7 +1492,7 @@ object quicksight:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.quicksight.inputs.ThemeState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.quicksight.inputs.CustomPermissionsState.Builder)
     /**
      * @param capabilities Actions to include in the custom permissions profile. See capabilities.
@@ -1563,7 +1506,7 @@ object quicksight:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.quicksight.inputs.CustomPermissionsState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.quicksight.inputs.ThemeConfigurationSheetTileLayoutArgs.Builder)
     /**
      * @param gutter The gutter settings that apply between tiles. See gutter.
@@ -1583,7 +1526,6 @@ object quicksight:
       val argsBuilder = com.pulumi.aws.quicksight.inputs.ThemeConfigurationSheetTileLayoutMarginArgs.builder
       builder.margin(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.quicksight.inputs.NamespaceState.Builder)
     def timeouts(args: Endofunction[com.pulumi.aws.quicksight.inputs.NamespaceTimeoutsArgs.Builder]):
         com.pulumi.aws.quicksight.inputs.NamespaceState.Builder =
@@ -1593,7 +1535,7 @@ object quicksight:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.quicksight.inputs.NamespaceState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.quicksight.inputs.IamPolicyAssignmentState.Builder)
     /**
      * @param identities Amazon QuickSight users, groups, or both to assign the policy to. See `identities` block.
@@ -1604,7 +1546,6 @@ object quicksight:
       val argsBuilder = com.pulumi.aws.quicksight.inputs.IamPolicyAssignmentIdentitiesArgs.builder
       builder.identities(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.quicksight.inputs.DataSetLogicalTableMapDataTransformTagColumnOperationArgs.Builder)
     /**
      * @param tags The dataset column tag, currently only used for geospatial type tagging. See tags.
@@ -1615,7 +1556,6 @@ object quicksight:
       def argsBuilder = com.pulumi.aws.quicksight.inputs.DataSetLogicalTableMapDataTransformTagColumnOperationTagArgs.builder
       builder.tags(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.quicksight.inputs.ThemeConfigurationSheetTileArgs.Builder)
     /**
      * @param border The border around a tile. See border.
@@ -1626,7 +1566,6 @@ object quicksight:
       val argsBuilder = com.pulumi.aws.quicksight.inputs.ThemeConfigurationSheetTileBorderArgs.builder
       builder.border(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.quicksight.inputs.DataSetLogicalTableMapArgs.Builder)
     /**
      * @param dataTransforms Transform operations that act on this logical table. For this structure to be valid, only one of the attributes can be non-null. See data_transforms.
@@ -1646,7 +1585,6 @@ object quicksight:
       val argsBuilder = com.pulumi.aws.quicksight.inputs.DataSetLogicalTableMapSourceArgs.builder
       builder.source(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.quicksight.inputs.DataSetRefreshPropertiesArgs.Builder)
     /**
      * @param refreshConfiguration The refresh configuration for the data set. See refresh_configuration.
@@ -1657,7 +1595,6 @@ object quicksight:
       val argsBuilder = com.pulumi.aws.quicksight.inputs.DataSetRefreshPropertiesRefreshConfigurationArgs.builder
       builder.refreshConfiguration(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.quicksight.inputs.AnalysisState.Builder)
     /**
      * @param parameters The parameters for the creation of the analysis, which you want to use to override the default settings. An analysis can have any type of parameters, and some parameters might accept multiple values. See parameters.
@@ -1689,7 +1626,7 @@ object quicksight:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.quicksight.inputs.AnalysisState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.quicksight.inputs.TemplateState.Builder)
     /**
      * @param permissions A set of resource permissions on the template. Maximum of 64 items. See permissions.
@@ -1712,7 +1649,7 @@ object quicksight:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.quicksight.inputs.TemplateState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.quicksight.inputs.DashboardState.Builder)
     /**
      * @param dashboardPublishOptions Options for publishing the dashboard. See dashboard_publish_options.
@@ -1753,7 +1690,7 @@ object quicksight:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.quicksight.inputs.DashboardState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.quicksight.inputs.DataSetColumnGroupArgs.Builder)
     /**
      * @param geoSpatialColumnGroup Geospatial column group that denotes a hierarchy. See geo_spatial_column_group.
@@ -1764,7 +1701,6 @@ object quicksight:
       val argsBuilder = com.pulumi.aws.quicksight.inputs.DataSetColumnGroupGeoSpatialColumnGroupArgs.builder
       builder.geoSpatialColumnGroup(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.quicksight.inputs.DashboardDashboardPublishOptionsArgs.Builder)
     /**
      * @param adHocFilteringOption Ad hoc (one-time) filtering option. See ad_hoc_filtering_option.
@@ -1856,7 +1792,6 @@ object quicksight:
       val argsBuilder = com.pulumi.aws.quicksight.inputs.DashboardDashboardPublishOptionsVisualMenuOptionArgs.builder
       builder.visualMenuOption(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.quicksight.inputs.AnalysisSourceEntitySourceTemplateArgs.Builder)
     /**
      * @param dataSetReferences List of dataset references. See data_set_references.
@@ -1867,7 +1802,6 @@ object quicksight:
       def argsBuilder = com.pulumi.aws.quicksight.inputs.AnalysisSourceEntitySourceTemplateDataSetReferenceArgs.builder
       builder.dataSetReferences(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.quicksight.inputs.DashboardSourceEntitySourceTemplateArgs.Builder)
     /**
      * @param dataSetReferences List of dataset references. See data_set_references.
@@ -1878,7 +1812,6 @@ object quicksight:
       def argsBuilder = com.pulumi.aws.quicksight.inputs.DashboardSourceEntitySourceTemplateDataSetReferenceArgs.builder
       builder.dataSetReferences(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.quicksight.inputs.DataSourceState.Builder)
     /**
      * @param credentials The credentials Amazon QuickSight uses to connect to your underlying source. See Credentials below for more details.
@@ -1928,7 +1861,7 @@ object quicksight:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.quicksight.inputs.DataSourceState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.quicksight.inputs.VpcConnectionState.Builder)
     def timeouts(args: Endofunction[com.pulumi.aws.quicksight.inputs.VpcConnectionTimeoutsArgs.Builder]):
         com.pulumi.aws.quicksight.inputs.VpcConnectionState.Builder =
@@ -1938,7 +1871,7 @@ object quicksight:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.quicksight.inputs.VpcConnectionState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   /** Resource for managing QuickSight Data Source */
   def DataSource(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.quicksight.DataSourceArgs.Builder])(using conf: KoPulumiConf) =
@@ -1949,7 +1882,6 @@ object quicksight:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.quicksight.DataSource(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)

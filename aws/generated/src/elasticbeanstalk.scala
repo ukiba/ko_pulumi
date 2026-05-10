@@ -8,7 +8,7 @@ object elasticbeanstalk:
    * Provides an Elastic Beanstalk Environment Resource. Elastic Beanstalk allows
    *  you to deploy and manage applications in the AWS cloud without worrying about
    *  the infrastructure that runs those applications.
-   *  
+   * 
    *  Environments are often things such as `development`, `integration`, or
    *  `production`.
    */
@@ -21,7 +21,6 @@ object elasticbeanstalk:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.elasticbeanstalk.Environment(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -30,7 +29,7 @@ object elasticbeanstalk:
    * Provides an Elastic Beanstalk Application Resource. Elastic Beanstalk allows
    *  you to deploy and manage applications in the AWS cloud without worrying about
    *  the infrastructure that runs those applications.
-   *  
+   * 
    *  This resource creates an application that has one configuration template named
    *  `default`, and no application versions
    */
@@ -43,7 +42,6 @@ object elasticbeanstalk:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.elasticbeanstalk.Application(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -59,7 +57,6 @@ object elasticbeanstalk:
     conf.logicalName2pysicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
       case None               =>
-    
     com.pulumi.aws.elasticbeanstalk.ConfigurationTemplate(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -109,10 +106,10 @@ object elasticbeanstalk:
    * Provides an Elastic Beanstalk Application Version Resource. Elastic Beanstalk allows
    *  you to deploy and manage applications in the AWS cloud without worrying about
    *  the infrastructure that runs those applications.
-   *  
+   * 
    *  This resource creates a Beanstalk Application Version that can be deployed to a Beanstalk
    *  Environment.
-   *  
+   * 
    *  &gt; **NOTE on Application Version Resource:**  When using the Application Version resource with multiple
    *  Elastic Beanstalk Environments it is possible that an error may be returned
    *  when attempting to delete an Application Version while it is still in use by a different environment.
@@ -127,7 +124,6 @@ object elasticbeanstalk:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.elasticbeanstalk.ApplicationVersion(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -147,7 +143,7 @@ object elasticbeanstalk:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.elasticbeanstalk.EnvironmentArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.elasticbeanstalk.ConfigurationTemplateArgs.Builder)
     /**
      * @param settings Option settings to configure the new Environment. These
@@ -160,7 +156,6 @@ object elasticbeanstalk:
       def argsBuilder = com.pulumi.aws.elasticbeanstalk.inputs.ConfigurationTemplateSettingArgs.builder
       builder.settings(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.elasticbeanstalk.ApplicationArgs.Builder)
     def appversionLifecycle(args: Endofunction[com.pulumi.aws.elasticbeanstalk.inputs.ApplicationAppversionLifecycleArgs.Builder]):
         com.pulumi.aws.elasticbeanstalk.ApplicationArgs.Builder =
@@ -170,7 +165,7 @@ object elasticbeanstalk:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.elasticbeanstalk.ApplicationArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.elasticbeanstalk.inputs.EnvironmentState.Builder)
     /**
      * @param allSettings List of all option settings configured in this Environment. These
@@ -197,7 +192,7 @@ object elasticbeanstalk:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.elasticbeanstalk.inputs.EnvironmentState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.elasticbeanstalk.inputs.ApplicationState.Builder)
     def appversionLifecycle(args: Endofunction[com.pulumi.aws.elasticbeanstalk.inputs.ApplicationAppversionLifecycleArgs.Builder]):
         com.pulumi.aws.elasticbeanstalk.inputs.ApplicationState.Builder =
@@ -207,7 +202,7 @@ object elasticbeanstalk:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.elasticbeanstalk.inputs.ApplicationState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.elasticbeanstalk.inputs.ConfigurationTemplateState.Builder)
     /**
      * @param settings Option settings to configure the new Environment. These
@@ -219,5 +214,3 @@ object elasticbeanstalk:
         com.pulumi.aws.elasticbeanstalk.inputs.ConfigurationTemplateState.Builder =
       def argsBuilder = com.pulumi.aws.elasticbeanstalk.inputs.ConfigurationTemplateSettingArgs.builder
       builder.settings(args.map(_(argsBuilder).build)*)
-
-                       

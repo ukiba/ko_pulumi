@@ -8,7 +8,6 @@ object appconfig:
   def ExtensionAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.appconfig.ExtensionAssociationArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.appconfig.ExtensionAssociationArgs.builder
-    
     com.pulumi.aws.appconfig.ExtensionAssociation(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -23,7 +22,6 @@ object appconfig:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.appconfig.Environment(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -38,7 +36,6 @@ object appconfig:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.appconfig.Extension(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -53,7 +50,6 @@ object appconfig:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.appconfig.DeploymentStrategy(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -68,7 +64,6 @@ object appconfig:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.appconfig.Application(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -77,7 +72,6 @@ object appconfig:
   def HostedConfigurationVersion(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.appconfig.HostedConfigurationVersionArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.appconfig.HostedConfigurationVersionArgs.builder
-    
     com.pulumi.aws.appconfig.HostedConfigurationVersion(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -95,7 +89,7 @@ object appconfig:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.appconfig.ConfigurationProfileArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   /** Provides an AppConfig Configuration Profile resource. */
   def ConfigurationProfile(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.appconfig.ConfigurationProfileArgs.Builder])(using conf: KoPulumiConf) =
@@ -106,7 +100,6 @@ object appconfig:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.appconfig.ConfigurationProfile(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -124,7 +117,7 @@ object appconfig:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.appconfig.EventIntegrationArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   type AppconfigFunctions = com.pulumi.aws.appconfig.AppconfigFunctions
   object AppconfigFunctions:
     // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
@@ -224,7 +217,7 @@ object appconfig:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.appconfig.ExtensionArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.appconfig.EnvironmentArgs.Builder)
     /**
      * @param monitors Set of Amazon CloudWatch alarms to monitor during the deployment process. Maximum of 5. See Monitor below for more details.
@@ -238,7 +231,7 @@ object appconfig:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.appconfig.EnvironmentArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   /** Provides an AppConfig Deployment resource for an `aws.appconfig.Application` resource. */
   def Deployment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.appconfig.DeploymentArgs.Builder])(using conf: KoPulumiConf) =
@@ -246,7 +239,6 @@ object appconfig:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.appconfig.Deployment(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -261,7 +253,6 @@ object appconfig:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.appconfig.EventIntegration(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -279,7 +270,7 @@ object appconfig:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.appconfig.inputs.ConfigurationProfileState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.appconfig.inputs.ExtensionState.Builder)
     /**
      * @param actionPoints The action points defined in the extension. Detailed below.
@@ -302,7 +293,7 @@ object appconfig:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.appconfig.inputs.ExtensionState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.appconfig.inputs.EnvironmentState.Builder)
     /**
      * @param monitors Set of Amazon CloudWatch alarms to monitor during the deployment process. Maximum of 5. See Monitor below for more details.
@@ -316,7 +307,7 @@ object appconfig:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.appconfig.inputs.EnvironmentState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.appconfig.inputs.EventIntegrationState.Builder)
     /**
      * @param eventFilter Block that defines the configuration information for the event filter. The Event Filter block is documented below.
@@ -330,7 +321,7 @@ object appconfig:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.appconfig.inputs.EventIntegrationState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.appconfig.inputs.ExtensionActionPointArgs.Builder)
     /**
      * @param actions An action defines the tasks the extension performs during the AppConfig workflow. Detailed below.
@@ -340,5 +331,3 @@ object appconfig:
         com.pulumi.aws.appconfig.inputs.ExtensionActionPointArgs.Builder =
       def argsBuilder = com.pulumi.aws.appconfig.inputs.ExtensionActionPointActionArgs.builder
       builder.actions(args.map(_(argsBuilder).build)*)
-
-                       

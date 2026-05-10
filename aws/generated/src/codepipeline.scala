@@ -14,7 +14,6 @@ object codepipeline:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.codepipeline.Pipeline(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -41,7 +40,7 @@ object codepipeline:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.codepipeline.WebhookArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   /** Provides a CodeDeploy CustomActionType */
   def CustomActionType(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.codepipeline.CustomActionTypeArgs.Builder])(using conf: KoPulumiConf) =
@@ -49,7 +48,6 @@ object codepipeline:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.codepipeline.CustomActionType(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -82,7 +80,7 @@ object codepipeline:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.codepipeline.CustomActionTypeArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   /** Provides a CodePipeline Webhook. */
   def Webhook(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.codepipeline.WebhookArgs.Builder])(using conf: KoPulumiConf) =
@@ -93,7 +91,6 @@ object codepipeline:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.codepipeline.Webhook(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -128,7 +125,7 @@ object codepipeline:
 
     /**
      * @param variables A pipeline-level variable block. Valid only when `pipelineType` is `V2`. Variable are documented below.
-     *  
+     * 
      *  **Note:** `QUEUED` or `PARALLEL` mode can only be used with V2 pipelines.
      * @return builder
      */
@@ -140,7 +137,7 @@ object codepipeline:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.codepipeline.PipelineArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.codepipeline.inputs.PipelineTriggerAllGitConfigurationPushArgs.Builder)
     /**
      * @param branches The field that specifies to filter on branches for the push trigger configuration. A `branches` block is documented below.
@@ -169,7 +166,6 @@ object codepipeline:
       def argsBuilder = com.pulumi.aws.codepipeline.inputs.PipelineTriggerAllGitConfigurationPushTagArgs.builder
       builder.tags(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.codepipeline.inputs.PipelineTriggerAllGitConfigurationArgs.Builder)
     /**
      * @param pullRequests The field where the repository event that will start the pipeline is specified as pull requests. A `pullRequest` block is documented below.
@@ -189,7 +185,6 @@ object codepipeline:
       def argsBuilder = com.pulumi.aws.codepipeline.inputs.PipelineTriggerAllGitConfigurationPushArgs.builder
       builder.pushes(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.codepipeline.inputs.PipelineStageOnFailureConditionRuleArgs.Builder)
     /**
      * @param ruleTypeId The ID for the rule type, which is made up of the combined values for `category`, `owner`, `provider`, and `version`. Defined as an `ruleTypeId` block below.
@@ -200,7 +195,6 @@ object codepipeline:
       val argsBuilder = com.pulumi.aws.codepipeline.inputs.PipelineStageOnFailureConditionRuleRuleTypeIdArgs.builder
       builder.ruleTypeId(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.codepipeline.inputs.PipelineStageBeforeEntryConditionArgs.Builder)
     /**
      * @param rules The rules that make up the condition. Defined as a `rule` block below.
@@ -211,7 +205,6 @@ object codepipeline:
       def argsBuilder = com.pulumi.aws.codepipeline.inputs.PipelineStageBeforeEntryConditionRuleArgs.builder
       builder.rules(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.codepipeline.inputs.PipelineStageOnFailureConditionArgs.Builder)
     /**
      * @param rules The rules that make up the condition. Defined as a `rule` block below.
@@ -222,7 +215,6 @@ object codepipeline:
       def argsBuilder = com.pulumi.aws.codepipeline.inputs.PipelineStageOnFailureConditionRuleArgs.builder
       builder.rules(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.codepipeline.inputs.PipelineTriggerGitConfigurationPushArgs.Builder)
     /**
      * @param branches The field that specifies to filter on branches for the push trigger configuration. A `branches` block is documented below.
@@ -251,7 +243,6 @@ object codepipeline:
       val argsBuilder = com.pulumi.aws.codepipeline.inputs.PipelineTriggerGitConfigurationPushTagsArgs.builder
       builder.tags(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.codepipeline.inputs.PipelineTriggerGitConfigurationArgs.Builder)
     /**
      * @param pullRequests The field where the repository event that will start the pipeline is specified as pull requests. A `pullRequest` block is documented below.
@@ -271,7 +262,6 @@ object codepipeline:
       def argsBuilder = com.pulumi.aws.codepipeline.inputs.PipelineTriggerGitConfigurationPushArgs.builder
       builder.pushes(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.codepipeline.inputs.PipelineTriggerAllGitConfigurationPullRequestArgs.Builder)
     /**
      * @param branches The field that specifies to filter on branches for the pull request trigger configuration. A `branches` block is documented below.
@@ -291,7 +281,6 @@ object codepipeline:
       def argsBuilder = com.pulumi.aws.codepipeline.inputs.PipelineTriggerAllGitConfigurationPullRequestFilePathArgs.builder
       builder.filePaths(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.codepipeline.inputs.PipelineStageOnSuccessConditionArgs.Builder)
     /**
      * @param rules The rules that make up the condition. Defined as a `rule` block below.
@@ -302,7 +291,6 @@ object codepipeline:
       def argsBuilder = com.pulumi.aws.codepipeline.inputs.PipelineStageOnSuccessConditionRuleArgs.builder
       builder.rules(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.codepipeline.inputs.PipelineStageOnSuccessArgs.Builder)
     /**
      * @param condition The conditions that are success conditions. Defined as a `condition` block below.
@@ -313,7 +301,6 @@ object codepipeline:
       val argsBuilder = com.pulumi.aws.codepipeline.inputs.PipelineStageOnSuccessConditionArgs.builder
       builder.condition(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.codepipeline.inputs.PipelineStageBeforeEntryConditionRuleArgs.Builder)
     /**
      * @param ruleTypeId The ID for the rule type, which is made up of the combined values for `category`, `owner`, `provider`, and `version`. Defined as an `ruleTypeId` block below.
@@ -324,7 +311,6 @@ object codepipeline:
       val argsBuilder = com.pulumi.aws.codepipeline.inputs.PipelineStageBeforeEntryConditionRuleRuleTypeIdArgs.builder
       builder.ruleTypeId(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.codepipeline.inputs.PipelineTriggerAllArgs.Builder)
     /**
      * @param gitConfigurations Provides the filter criteria and the source stage for the repository event that starts the pipeline. For more information, refer to the [AWS documentation](https://docs.aws.amazon.com/codepipeline/latest/userguide/pipelines-filter.html). A `gitConfiguration` block is documented below.
@@ -335,7 +321,6 @@ object codepipeline:
       def argsBuilder = com.pulumi.aws.codepipeline.inputs.PipelineTriggerAllGitConfigurationArgs.builder
       builder.gitConfigurations(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.codepipeline.inputs.PipelineTriggerGitConfigurationPullRequestArgs.Builder)
     /**
      * @param branches The field that specifies to filter on branches for the pull request trigger configuration. A `branches` block is documented below.
@@ -355,7 +340,6 @@ object codepipeline:
       val argsBuilder = com.pulumi.aws.codepipeline.inputs.PipelineTriggerGitConfigurationPullRequestFilePathsArgs.builder
       builder.filePaths(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.codepipeline.inputs.PipelineState.Builder)
     /**
      * @param artifactStores One or more artifactStore blocks. Artifact stores are documented below.
@@ -395,7 +379,7 @@ object codepipeline:
 
     /**
      * @param variables A pipeline-level variable block. Valid only when `pipelineType` is `V2`. Variable are documented below.
-     *  
+     * 
      *  **Note:** `QUEUED` or `PARALLEL` mode can only be used with V2 pipelines.
      * @return builder
      */
@@ -407,7 +391,7 @@ object codepipeline:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.codepipeline.inputs.PipelineState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.codepipeline.inputs.PipelineStageOnFailureArgs.Builder)
     /**
      * @param condition The conditions that are failure conditions. Defined as a `condition` block below.
@@ -427,7 +411,6 @@ object codepipeline:
       val argsBuilder = com.pulumi.aws.codepipeline.inputs.PipelineStageOnFailureRetryConfigurationArgs.builder
       builder.retryConfiguration(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.codepipeline.inputs.PipelineArtifactStoreArgs.Builder)
     /**
      * @param encryptionKey The encryption key block AWS CodePipeline uses to encrypt the data in the artifact store, such as an AWS Key Management Service (AWS KMS) key. If you don&#39;t specify a key, AWS CodePipeline uses the default key for Amazon Simple Storage Service (Amazon S3). An `encryptionKey` block is documented below.
@@ -438,7 +421,6 @@ object codepipeline:
       val argsBuilder = com.pulumi.aws.codepipeline.inputs.PipelineArtifactStoreEncryptionKeyArgs.builder
       builder.encryptionKey(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.codepipeline.inputs.PipelineStageOnSuccessConditionRuleArgs.Builder)
     /**
      * @param ruleTypeId The ID for the rule type, which is made up of the combined values for `category`, `owner`, `provider`, and `version`. Defined as an `ruleTypeId` block below.
@@ -449,7 +431,6 @@ object codepipeline:
       val argsBuilder = com.pulumi.aws.codepipeline.inputs.PipelineStageOnSuccessConditionRuleRuleTypeIdArgs.builder
       builder.ruleTypeId(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.codepipeline.inputs.CustomActionTypeState.Builder)
     /**
      * @param configurationProperties The configuration properties for the custom action. Max 10 items.
@@ -478,7 +459,7 @@ object codepipeline:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.codepipeline.inputs.CustomActionTypeState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.codepipeline.inputs.PipelineStageArgs.Builder)
     /**
      * @param actions The action(s) to include in the stage. Defined as an `action` block below
@@ -516,7 +497,6 @@ object codepipeline:
       val argsBuilder = com.pulumi.aws.codepipeline.inputs.PipelineStageOnSuccessArgs.builder
       builder.onSuccess(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.codepipeline.inputs.WebhookState.Builder)
     /**
      * @param authenticationConfiguration An `auth` block. Required for `IP` and `GITHUB_HMAC`. Auth blocks are documented below.
@@ -539,7 +519,7 @@ object codepipeline:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.codepipeline.inputs.WebhookState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.codepipeline.inputs.PipelineStageBeforeEntryArgs.Builder)
     /**
      * @param condition The conditions that are configured as entry condition. Defined as a `condition` block below.
@@ -550,7 +530,6 @@ object codepipeline:
       val argsBuilder = com.pulumi.aws.codepipeline.inputs.PipelineStageBeforeEntryConditionArgs.builder
       builder.condition(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.codepipeline.inputs.PipelineTriggerArgs.Builder)
     /**
      * @param gitConfiguration Provides the filter criteria and the source stage for the repository event that starts the pipeline. For more information, refer to the [AWS documentation](https://docs.aws.amazon.com/codepipeline/latest/userguide/pipelines-filter.html). A `gitConfiguration` block is documented below.
@@ -560,5 +539,3 @@ object codepipeline:
         com.pulumi.aws.codepipeline.inputs.PipelineTriggerArgs.Builder =
       val argsBuilder = com.pulumi.aws.codepipeline.inputs.PipelineTriggerGitConfigurationArgs.builder
       builder.gitConfiguration(args(argsBuilder).build)
-
-                       

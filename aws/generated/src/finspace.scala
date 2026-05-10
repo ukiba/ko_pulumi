@@ -14,7 +14,6 @@ object finspace:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.finspace.KxDataview(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -29,7 +28,6 @@ object finspace:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.finspace.KxUser(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -56,7 +54,7 @@ object finspace:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.finspace.KxEnvironmentArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.finspace.KxVolumeArgs.Builder)
     /**
      * @param nas1Configurations Specifies the configuration for the Network attached storage (`NAS_1`) file system volume. This parameter is required when `volumeType` is `NAS_1`. See `nas1Configuration` Argument Reference below.
@@ -70,7 +68,7 @@ object finspace:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.finspace.KxVolumeArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   /** Resource for managing an AWS FinSpace Kx Environment. */
   def KxEnvironment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.finspace.KxEnvironmentArgs.Builder])(using conf: KoPulumiConf) =
@@ -81,7 +79,6 @@ object finspace:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.finspace.KxEnvironment(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -99,7 +96,7 @@ object finspace:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.finspace.KxDataviewArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   /** Resource for managing an AWS FinSpace Kx Database. */
   def KxDatabase(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.finspace.KxDatabaseArgs.Builder])(using conf: KoPulumiConf) =
@@ -110,7 +107,6 @@ object finspace:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.finspace.KxDatabase(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -125,7 +121,6 @@ object finspace:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.finspace.KxScalingGroup(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -205,7 +200,7 @@ object finspace:
 
     /**
      * @param vpcConfiguration Configuration details about the network where the Privatelink endpoint of the cluster resides. See vpc_configuration.
-     *  
+     * 
      *  The following arguments are optional:
      * @return builder
      */
@@ -217,7 +212,7 @@ object finspace:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.finspace.KxClusterArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   /** Resource for managing an AWS FinSpace Kx Volume. */
   def KxVolume(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.finspace.KxVolumeArgs.Builder])(using conf: KoPulumiConf) =
@@ -228,7 +223,6 @@ object finspace:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.finspace.KxVolume(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -243,7 +237,6 @@ object finspace:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.finspace.KxCluster(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -267,7 +260,6 @@ object finspace:
       val argsBuilder = com.pulumi.aws.finspace.inputs.KxEnvironmentTransitGatewayConfigurationAttachmentNetworkAclConfigurationPortRangeArgs.builder
       builder.portRange(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.finspace.inputs.KxClusterState.Builder)
     /**
      * @param autoScalingConfiguration Configuration based on which FinSpace will scale in or scale out nodes in your cluster. See auto_scaling_configuration.
@@ -343,7 +335,7 @@ object finspace:
 
     /**
      * @param vpcConfiguration Configuration details about the network where the Privatelink endpoint of the cluster resides. See vpc_configuration.
-     *  
+     * 
      *  The following arguments are optional:
      * @return builder
      */
@@ -355,7 +347,7 @@ object finspace:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.finspace.inputs.KxClusterState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.finspace.inputs.KxClusterDatabaseArgs.Builder)
     /**
      * @param cacheConfigurations Configuration details for the disk cache to increase performance reading from a KX database mounted to the cluster. See cache_configurations.
@@ -366,7 +358,6 @@ object finspace:
       def argsBuilder = com.pulumi.aws.finspace.inputs.KxClusterDatabaseCacheConfigurationArgs.builder
       builder.cacheConfigurations(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.finspace.inputs.KxEnvironmentTransitGatewayConfigurationArgs.Builder)
     /**
      * @param attachmentNetworkAclConfigurations Rules that define how you manage outbound traffic from kdb network to your internal network. Defined below.
@@ -377,7 +368,6 @@ object finspace:
       def argsBuilder = com.pulumi.aws.finspace.inputs.KxEnvironmentTransitGatewayConfigurationAttachmentNetworkAclConfigurationArgs.builder
       builder.attachmentNetworkAclConfigurations(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.finspace.inputs.KxVolumeState.Builder)
     def attachedClusters(args: Endofunction[com.pulumi.aws.finspace.inputs.KxVolumeAttachedClusterArgs.Builder]*):
         com.pulumi.aws.finspace.inputs.KxVolumeState.Builder =
@@ -396,7 +386,7 @@ object finspace:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.finspace.inputs.KxVolumeState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.finspace.inputs.KxEnvironmentState.Builder)
     /**
      * @param customDnsConfigurations List of DNS server name and server IP. This is used to set up Route-53 outbound resolvers. Defined below.
@@ -419,7 +409,7 @@ object finspace:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.finspace.inputs.KxEnvironmentState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.finspace.inputs.KxDataviewState.Builder)
     /**
      * @param segmentConfigurations The configuration that contains the database path of the data that you want to place on each selected volume. Each segment must have a unique database path for each volume. If you do not explicitly specify any database path for a volume, they are accessible from the cluster through the default S3/object store segment. See segmentConfigurations below.
@@ -433,4 +423,3 @@ object finspace:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.finspace.inputs.KxDataviewState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       

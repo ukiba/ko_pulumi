@@ -34,7 +34,7 @@ object rbin:
 
     /**
      * @param retentionPeriod Information about the retention period for which the retention rule is to retain resources. See `retentionPeriod` below.
-     *  
+     * 
      *  The following arguments are optional:
      * @return builder
      */
@@ -46,7 +46,7 @@ object rbin:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.rbin.RuleArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   /** Resource for managing an AWS RBin Rule. */
   def Rule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.rbin.RuleArgs.Builder])(using conf: KoPulumiConf) =
@@ -54,7 +54,6 @@ object rbin:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.rbin.Rule(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -89,7 +88,7 @@ object rbin:
 
     /**
      * @param retentionPeriod Information about the retention period for which the retention rule is to retain resources. See `retentionPeriod` below.
-     *  
+     * 
      *  The following arguments are optional:
      * @return builder
      */
@@ -101,7 +100,7 @@ object rbin:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.rbin.inputs.RuleState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.rbin.inputs.RuleLockConfigurationArgs.Builder)
     /**
      * @param unlockDelay Information about the retention rule unlock delay. See `unlockDelay` below.
@@ -111,5 +110,3 @@ object rbin:
         com.pulumi.aws.rbin.inputs.RuleLockConfigurationArgs.Builder =
       val argsBuilder = com.pulumi.aws.rbin.inputs.RuleLockConfigurationUnlockDelayArgs.builder
       builder.unlockDelay(args(argsBuilder).build)
-
-                       

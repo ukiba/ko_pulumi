@@ -11,7 +11,6 @@ object opensearchingest:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.opensearchingest.Pipeline(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -61,7 +60,7 @@ object opensearchingest:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.opensearchingest.PipelineArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.opensearchingest.inputs.PipelineState.Builder)
     /**
      * @param bufferOptions Key-value pairs to configure persistent buffering for the pipeline. See `bufferOptions` below.
@@ -107,7 +106,7 @@ object opensearchingest:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.opensearchingest.inputs.PipelineState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.opensearchingest.inputs.PipelineLogPublishingOptionsArgs.Builder)
     /**
      * @param cloudwatchLogDestination The destination for OpenSearch Ingestion logs sent to Amazon CloudWatch Logs. This parameter is required if IsLoggingEnabled is set to true. See `cloudwatchLogDestination` below.
@@ -117,5 +116,3 @@ object opensearchingest:
         com.pulumi.aws.opensearchingest.inputs.PipelineLogPublishingOptionsArgs.Builder =
       val argsBuilder = com.pulumi.aws.opensearchingest.inputs.PipelineLogPublishingOptionsCloudwatchLogDestinationArgs.builder
       builder.cloudwatchLogDestination(args(argsBuilder).build)
-
-                       

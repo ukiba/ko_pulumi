@@ -14,7 +14,6 @@ object mediapackagev2:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.mediapackagev2.ChannelGroup(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)

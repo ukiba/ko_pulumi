@@ -14,7 +14,6 @@ object comprehend:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.comprehend.DocumentClassifier(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -29,7 +28,6 @@ object comprehend:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.comprehend.EntityRecognizer(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -68,7 +66,7 @@ object comprehend:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.comprehend.DocumentClassifierArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.comprehend.EntityRecognizerArgs.Builder)
     /**
      * @param inputDataConfig Configuration for the training and testing data.
@@ -93,7 +91,7 @@ object comprehend:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.comprehend.EntityRecognizerArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.comprehend.inputs.DocumentClassifierState.Builder)
     /**
      * @param inputDataConfig Configuration for the training and testing data.
@@ -128,7 +126,7 @@ object comprehend:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.comprehend.inputs.DocumentClassifierState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.comprehend.inputs.EntityRecognizerState.Builder)
     /**
      * @param inputDataConfig Configuration for the training and testing data.
@@ -153,7 +151,7 @@ object comprehend:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.comprehend.inputs.EntityRecognizerState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.comprehend.inputs.EntityRecognizerInputDataConfigArgs.Builder)
     /**
      * @param annotations Specifies location of the document annotation data.
@@ -210,7 +208,6 @@ object comprehend:
       def argsBuilder = com.pulumi.aws.comprehend.inputs.EntityRecognizerInputDataConfigEntityTypeArgs.builder
       builder.entityTypes(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.comprehend.inputs.DocumentClassifierInputDataConfigArgs.Builder)
     /**
      * @param augmentedManifests List of training datasets produced by Amazon SageMaker AI Ground Truth.
@@ -222,5 +219,3 @@ object comprehend:
         com.pulumi.aws.comprehend.inputs.DocumentClassifierInputDataConfigArgs.Builder =
       def argsBuilder = com.pulumi.aws.comprehend.inputs.DocumentClassifierInputDataConfigAugmentedManifestArgs.builder
       builder.augmentedManifests(args.map(_(argsBuilder).build)*)
-
-                       

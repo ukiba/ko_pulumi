@@ -14,37 +14,34 @@ object organizations:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.organizations.OrganizationalUnit(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
   /**
    * Manages an individual Organizations resource tag. This resource should only be used in cases where Organizations resources are created outside Terraform (e.g., Organizations Accounts implicitly created by AWS Control Tower).
-   *  
+   * 
    *  &gt; **NOTE:** This tagging resource should not be combined with the Terraform resource for managing the parent resource. For example, using `aws.organizations.Account` and `aws.organizations.Tag` to manage tags of the same Organizations account will cause a perpetual difference where the `aws.organizations.Account` resource will try to remove the tag being added by the `aws.organizations.Tag` resource. However, if the parent resource is created in the same configuration (i.e., if you have no other choice), you should add `ignoreChanges = [tags]` in the parent resource&#39;s lifecycle block. This ensures that Terraform ignores differences in tags managed via the separate tagging resource, avoiding the perpetual difference mentioned above.
-   *  
+   * 
    *  &gt; **NOTE:** This tagging resource does not use the provider `ignoreTags` configuration.
    */
   def Tag(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.organizations.TagArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.organizations.TagArgs.builder
-    
     com.pulumi.aws.organizations.Tag(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
   /**
    * Provides a resource to create an organization.
-   *  
+   * 
    *  !&gt; **WARNING:** When migrating from a `featureSet` of `CONSOLIDATED_BILLING` to `ALL`, the Organization account owner will received an email stating the following: &#34;You started the process to enable all features for your AWS organization. As part of that process, all member accounts that joined your organization by invitation must approve the change. You don\u2019t need approval from member accounts that you directly created from within your AWS organization.&#34; After all member accounts have accepted the invitation, the Organization account owner must then finalize the changes via the [AWS Console](https://console.aws.amazon.com/organizations/home#/organization/settings/migration-progress). Until these steps are performed, the provider will perpetually show a difference, and the `DescribeOrganization` API will continue to show the `FeatureSet` as `CONSOLIDATED_BILLING`. See the [AWS Organizations documentation](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html) for more information.
-   *  
+   * 
    *  !&gt; **WARNING:** [Warning from the AWS Docs](https://docs.aws.amazon.com/organizations/latest/APIReference/API_EnableAWSServiceAccess.html): &#34;We recommend that you enable integration between AWS Organizations and the specified AWS service by using the console or commands that are provided by the specified service. Doing so ensures that the service is aware that it can create the resources that are required for the integration. How the service creates those resources in the organization&#39;s accounts depends on that service. For more information, see the documentation for the other AWS service.&#34;
    */
   def Organization(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.organizations.OrganizationArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.organizations.OrganizationArgs.builder
-    
     com.pulumi.aws.organizations.Organization(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -53,7 +50,6 @@ object organizations:
   def PolicyAttachment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.organizations.PolicyAttachmentArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.organizations.PolicyAttachmentArgs.builder
-    
     com.pulumi.aws.organizations.PolicyAttachment(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -62,7 +58,6 @@ object organizations:
   def DelegatedAdministrator(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.organizations.DelegatedAdministratorArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.organizations.DelegatedAdministratorArgs.builder
-    
     com.pulumi.aws.organizations.DelegatedAdministrator(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -74,16 +69,15 @@ object organizations:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.organizations.ResourcePolicy(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
   /**
    * Provides a resource to create a member account in the current organization.
-   *  
+   * 
    *  &gt; **Note:** Account management must be done from the organization&#39;s root account.
-   *  
+   * 
    *  &gt; **Note:** By default, deleting this resource will only remove an AWS account from an organization. You must set the `closeOnDeletion` flag to true to close the account. It is worth noting that quotas are enforced when using the `closeOnDeletion` argument, which can produce a [CLOSE_ACCOUNT_QUOTA_EXCEEDED](https://docs.aws.amazon.com/organizations/latest/APIReference/API_CloseAccount.html) error, and require you to close the account manually.
    */
   def Account(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
@@ -95,24 +89,22 @@ object organizations:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.organizations.Account(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
   /**
    * Manages trusted access between an AWS service and AWS Organizations.
-   *  
+   * 
    *  &gt; **Note:** AWS recommends enabling and disabling trusted access for a service through the service&#39;s own console or its AWS CLI commands or API operation equivalents, rather than using this resource directly. Using the service-specific tooling ensures that the service can perform the required steps when enabling trusted access (e.g. creating any required resources) and any required clean up operations when disabling trusted access. See the [AWS Organizations User Guide](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrate_services.html) for more details. The complete list of AWS services that support trusted access with AWS Organizations is available in the [Services that work with Organizations](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrate_services_list.html) page.
-   *  
+   * 
    *  &gt; **Note:** This resource requires the Organizations management account.
-   *  
+   * 
    *  &gt; **NOTE:** Terraform provides both this standalone AWS service access resource and exclusive service access defined in-line in the `aws.organizations.Organization` resource via the `awsServiceAccessPrincipals` argument. At this time, you cannot use the service access in conjunction with this resource otherwise it will cause a perpetual difference in plan output. You can optionally use the generic Terraform resource lifecycle configuration block with `ignoreChanges` in the `aws.organizations.Organization` resource to manage additional service access via this resource.
    */
   def AwsServiceAccess(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.organizations.AwsServiceAccessArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.organizations.AwsServiceAccessArgs.builder
-    
     com.pulumi.aws.organizations.AwsServiceAccess(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -300,7 +292,6 @@ object organizations:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.organizations.Policy(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -318,7 +309,7 @@ object organizations:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.organizations.inputs.OrganizationalUnitState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.organizations.inputs.OrganizationState.Builder)
     /**
      * @param accounts List of organization accounts including the master account. For a list excluding the master account, see the `nonMasterAccounts` attribute. All elements have these attributes:
@@ -347,7 +338,6 @@ object organizations:
       def argsBuilder = com.pulumi.aws.organizations.inputs.OrganizationRootArgs.builder
       builder.roots(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.organizations.inputs.OrganizationRootArgs.Builder)
     /**
      * @param policyTypes List of policy types enabled for this root. All elements have these attributes:
@@ -357,5 +347,3 @@ object organizations:
         com.pulumi.aws.organizations.inputs.OrganizationRootArgs.Builder =
       def argsBuilder = com.pulumi.aws.organizations.inputs.OrganizationRootPolicyTypeArgs.builder
       builder.policyTypes(args.map(_(argsBuilder).build)*)
-
-                       

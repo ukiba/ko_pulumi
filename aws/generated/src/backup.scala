@@ -23,7 +23,6 @@ object backup:
       def argsBuilder = com.pulumi.aws.backup.inputs.SelectionSelectionTagArgs.builder
       builder.selectionTags(args.map(_(argsBuilder).build)*)
 
-                       
   /** Provides an AWS Backup Report Plan resource. */
   def ReportPlan(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.backup.ReportPlanArgs.Builder])(using conf: KoPulumiConf) =
@@ -34,7 +33,6 @@ object backup:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.backup.ReportPlan(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -48,7 +46,7 @@ object backup:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.backup.LogicallyAirGappedVaultArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   /** Resource for managing an AWS Backup Restore Testing Plan. */
   def RestoreTestingPlan(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.backup.RestoreTestingPlanArgs.Builder])(using conf: KoPulumiConf) =
@@ -59,7 +57,6 @@ object backup:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.backup.RestoreTestingPlan(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -68,7 +65,6 @@ object backup:
   def RegionSettings(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.backup.RegionSettingsArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.backup.RegionSettingsArgs.builder
-    
     com.pulumi.aws.backup.RegionSettings(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -77,7 +73,6 @@ object backup:
   def VaultNotifications(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.backup.VaultNotificationsArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.backup.VaultNotificationsArgs.builder
-    
     com.pulumi.aws.backup.VaultNotifications(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -86,7 +81,6 @@ object backup:
   def VaultLockConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.backup.VaultLockConfigurationArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.backup.VaultLockConfigurationArgs.builder
-    
     com.pulumi.aws.backup.VaultLockConfiguration(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -98,7 +92,6 @@ object backup:
     conf.logicalName2pysicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
       case None               =>
-    
     com.pulumi.aws.backup.Selection(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -107,7 +100,6 @@ object backup:
   def VaultPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.backup.VaultPolicyArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.backup.VaultPolicyArgs.builder
-    
     com.pulumi.aws.backup.VaultPolicy(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -119,14 +111,13 @@ object backup:
     conf.logicalName2pysicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
       case None               =>
-    
     com.pulumi.aws.backup.RestoreTestingSelection(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
   /**
    * Provides an AWS Backup Framework resource.
-   *  
+   * 
    *  &gt; **Note:** For the Deployment Status of the Framework to be successful, please turn on resource tracking to enable AWS Config recording to track configuration changes of your backup resources. This can be done from the AWS Console.
    */
   def Framework(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
@@ -138,7 +129,6 @@ object backup:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.backup.Framework(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -174,7 +164,7 @@ object backup:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.backup.PlanArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   /** Resource for managing an AWS Backup Logically Air Gapped Vault. */
   def LogicallyAirGappedVault(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.backup.LogicallyAirGappedVaultArgs.Builder])(using conf: KoPulumiConf) =
@@ -185,7 +175,6 @@ object backup:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.backup.LogicallyAirGappedVault(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -265,7 +254,6 @@ object backup:
       val argsBuilder = com.pulumi.aws.backup.inputs.RestoreTestingSelectionProtectedResourceConditionsArgs.builder
       builder.protectedResourceConditions(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.backup.ReportPlanArgs.Builder)
     /**
      * @param reportDeliveryChannel An object that contains information about where and how to deliver your reports, specifically your Amazon S3 bucket name, S3 key prefix, and the formats of your reports. Detailed below.
@@ -288,7 +276,7 @@ object backup:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.backup.ReportPlanArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   /** Provides an AWS Backup plan resource. */
   def Plan(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.backup.PlanArgs.Builder])(using conf: KoPulumiConf) =
@@ -299,7 +287,6 @@ object backup:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.backup.Plan(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -314,7 +301,6 @@ object backup:
     conf.logicalName2tagName(name) match
       case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
       case None          =>
-    
     com.pulumi.aws.backup.Vault(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -332,16 +318,15 @@ object backup:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.backup.FrameworkArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   /**
    * Provides an AWS Backup Global Settings resource.
-   *  
+   * 
    *  &gt; **Note:** This resource will show perpetual differences for any supported settings not explicitly configured in the `globalSettings` configuration block. To avoid this, specify all supported options with their default values (typically `&#34;false&#34;`, but check the plan diff for the actual value). See [UpdateGlobalSettings](https://docs.aws.amazon.com/aws-backup/latest/devguide/API_UpdateGlobalSettings.html) in the AWS Backup Developer Guide for available settings.
    */
   def GlobalSettings(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.backup.GlobalSettingsArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.backup.GlobalSettingsArgs.builder
-    
     com.pulumi.aws.backup.GlobalSettings(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
@@ -359,7 +344,7 @@ object backup:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.backup.RestoreTestingPlanArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.backup.inputs.ReportPlanState.Builder)
     /**
      * @param reportDeliveryChannel An object that contains information about where and how to deliver your reports, specifically your Amazon S3 bucket name, S3 key prefix, and the formats of your reports. Detailed below.
@@ -382,7 +367,7 @@ object backup:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.backup.inputs.ReportPlanState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.backup.inputs.SelectionConditionArgs.Builder)
     /**
      * @param stringEquals Filters the values of your tagged resources for only those resources that you tagged with the same value. Also called &#34;exact matching&#34;. See below for details.
@@ -420,7 +405,6 @@ object backup:
       def argsBuilder = com.pulumi.aws.backup.inputs.SelectionConditionStringNotLikeArgs.builder
       builder.stringNotLikes(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.backup.inputs.LogicallyAirGappedVaultState.Builder)
     def timeouts(args: Endofunction[com.pulumi.aws.backup.inputs.LogicallyAirGappedVaultTimeoutsArgs.Builder]):
         com.pulumi.aws.backup.inputs.LogicallyAirGappedVaultState.Builder =
@@ -430,7 +414,7 @@ object backup:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.backup.inputs.LogicallyAirGappedVaultState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.backup.inputs.RestoreTestingSelectionState.Builder)
     /**
      * @param protectedResourceConditions The conditions for the protected resource.
@@ -441,7 +425,6 @@ object backup:
       val argsBuilder = com.pulumi.aws.backup.inputs.RestoreTestingSelectionProtectedResourceConditionsArgs.builder
       builder.protectedResourceConditions(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.backup.inputs.PlanRuleCopyActionArgs.Builder)
     /**
      * @param lifecycle The lifecycle defines when a protected resource is copied over to a backup vault and when it expires.  Fields documented above.
@@ -452,7 +435,6 @@ object backup:
       val argsBuilder = com.pulumi.aws.backup.inputs.PlanRuleCopyActionLifecycleArgs.builder
       builder.lifecycle(args(argsBuilder).build)
 
-                       
   extension (builder: com.pulumi.aws.backup.inputs.PlanState.Builder)
     /**
      * @param advancedBackupSettings An object that specifies backup options for each resource type.
@@ -484,7 +466,7 @@ object backup:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.backup.inputs.PlanState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.backup.inputs.RestoreTestingSelectionProtectedResourceConditionsArgs.Builder)
     /**
      * @param stringEquals The list of string equals conditions for resource tags. Filters the values of your tagged resources for only those resources that you tagged with the same value. Also called &#34;exact matching.&#34;. See the structure for details
@@ -504,7 +486,6 @@ object backup:
       def argsBuilder = com.pulumi.aws.backup.inputs.RestoreTestingSelectionProtectedResourceConditionsStringNotEqualArgs.builder
       builder.stringNotEquals(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.backup.inputs.FrameworkState.Builder)
     /**
      * @param controls One or more control blocks that make up the framework. Each control in the list has a name, input parameters, and scope. Detailed below.
@@ -518,7 +499,7 @@ object backup:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.backup.inputs.FrameworkState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.backup.inputs.SelectionState.Builder)
     /**
      * @param conditions Condition-based filters used to specify sets of resources for a backup plan. See below for details.
@@ -538,7 +519,6 @@ object backup:
       def argsBuilder = com.pulumi.aws.backup.inputs.SelectionSelectionTagArgs.builder
       builder.selectionTags(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.backup.inputs.RestoreTestingPlanState.Builder)
     /**
      * @param recoveryPointSelection Specifies the recovery point selection configuration. See RecoveryPointSelection section for more details.
@@ -552,7 +532,7 @@ object backup:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.backup.inputs.RestoreTestingPlanState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
-                       
+
   extension (builder: com.pulumi.aws.backup.inputs.PlanRuleArgs.Builder)
     /**
      * @param copyActions Configuration block(s) with copy operation settings. Detailed below.
@@ -581,7 +561,6 @@ object backup:
       def argsBuilder = com.pulumi.aws.backup.inputs.PlanRuleScanActionArgs.builder
       builder.scanActions(args.map(_(argsBuilder).build)*)
 
-                       
   extension (builder: com.pulumi.aws.backup.inputs.FrameworkControlArgs.Builder)
     /**
      * @param inputParameters One or more input parameter blocks. An example of a control with two parameters is: &#34;backup plan frequency is at least daily and the retention period is at least 1 year&#34;. The first parameter is daily. The second parameter is 1 year. Detailed below.
@@ -600,5 +579,3 @@ object backup:
         com.pulumi.aws.backup.inputs.FrameworkControlArgs.Builder =
       val argsBuilder = com.pulumi.aws.backup.inputs.FrameworkControlScopeArgs.builder
       builder.scope(args(argsBuilder).build)
-
-                       
