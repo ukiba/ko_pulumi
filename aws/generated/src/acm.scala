@@ -43,7 +43,7 @@ object acm:
    *  By default, a certificate is valid for 395 days and the managed renewal process will start 60 days before expiration.
    *  To renew the certificate earlier than 60 days before expiration, configure `earlyRenewalDuration`.
    */
-  def Certificate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def Certificate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.acm.CertificateArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.acm.CertificateArgs.builder
     conf.logicalName2tagName(name) match
@@ -63,7 +63,7 @@ object acm:
    * 
    *  &gt; **WARNING:** This resource implements a part of the validation workflow. It does not represent a real-world entity in AWS, therefore changing or deleting this resource on its own has no immediate effect.
    */
-  def CertificateValidation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def CertificateValidation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.acm.CertificateValidationArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.acm.CertificateValidationArgs.builder
     com.pulumi.aws.acm.CertificateValidation(name,
@@ -129,7 +129,7 @@ object acm:
      * Use this data source to get the ARN of a certificate in AWS Certificate Manager (ACM).
      *  You can reference the certificate by domain or tags without having to hard code the ARNs as input.
      */
-    def getCertificate(args: Endofunction[com.pulumi.aws.acm.inputs.GetCertificateArgs.Builder] = identity):
+    def getCertificate(args: Endofunction[com.pulumi.aws.acm.inputs.GetCertificateArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.acm.outputs.GetCertificateResult] =
       val argsBuilder = com.pulumi.aws.acm.inputs.GetCertificateArgs.builder
       com.pulumi.aws.acm.AcmFunctions.getCertificate(args(argsBuilder).build)
@@ -138,7 +138,7 @@ object acm:
      * Use this data source to get the ARN of a certificate in AWS Certificate Manager (ACM).
      *  You can reference the certificate by domain or tags without having to hard code the ARNs as input.
      */
-    def getCertificatePlain(args: Endofunction[com.pulumi.aws.acm.inputs.GetCertificatePlainArgs.Builder] = identity):
+    def getCertificatePlain(args: Endofunction[com.pulumi.aws.acm.inputs.GetCertificatePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.acm.outputs.GetCertificateResult] =
       val argsBuilder = com.pulumi.aws.acm.inputs.GetCertificatePlainArgs.builder
       com.pulumi.aws.acm.AcmFunctions.getCertificatePlain(args(argsBuilder).build)

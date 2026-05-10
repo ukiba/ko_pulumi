@@ -7,7 +7,7 @@ object cloudfront:
   /**
    * 
    */
-  def KeyGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def KeyGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.cloudfront.KeyGroupArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.cloudfront.KeyGroupArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -25,7 +25,7 @@ object cloudfront:
    *  origin access identities, see
    *  [Using an Origin Access Identity to Restrict Access to Your Amazon S3 Content][2].
    */
-  def OriginAccessIdentity(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def OriginAccessIdentity(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.cloudfront.OriginAccessIdentityArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.cloudfront.OriginAccessIdentityArgs.builder
     com.pulumi.aws.cloudfront.OriginAccessIdentity(name,
@@ -81,7 +81,7 @@ object cloudfront:
   /**
    * 
    */
-  def OriginRequestPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def OriginRequestPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.cloudfront.OriginRequestPolicyArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.cloudfront.OriginRequestPolicyArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -92,7 +92,7 @@ object cloudfront:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Provides a CloudFront Field-level Encryption Config resource. */
-  def FieldLevelEncryptionConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def FieldLevelEncryptionConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.cloudfront.FieldLevelEncryptionConfigArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.cloudfront.FieldLevelEncryptionConfigArgs.builder
     com.pulumi.aws.cloudfront.FieldLevelEncryptionConfig(name,
@@ -200,7 +200,7 @@ object cloudfront:
    *  For information about CloudFront VPC origins, see
    *  [Amazon CloudFront Developer Guide - Restrict access with VPC origins][1].
    */
-  def VpcOrigin(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def VpcOrigin(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.cloudfront.VpcOriginArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.cloudfront.VpcOriginArgs.builder
     conf.logicalName2tagName(name) match
@@ -232,7 +232,7 @@ object cloudfront:
   /**
    * 
    */
-  def CachePolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def CachePolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.cloudfront.CachePolicyArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.cloudfront.CachePolicyArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -247,7 +247,7 @@ object cloudfront:
    * 
    *  !&gt; This resource manages individual key value pairs in a KeyValueStore. This can lead to high costs associated with accessing the CloudFront KeyValueStore API when performing terraform operations with many key value pairs defined. For large key value stores, consider the `aws.cloudfront.KeyvaluestoreKeysExclusive` resource to minimize the number of API calls made to the CloudFront KeyValueStore API.
    */
-  def KeyvaluestoreKey(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def KeyvaluestoreKey(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.cloudfront.KeyvaluestoreKeyArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.cloudfront.KeyvaluestoreKeyArgs.builder
     com.pulumi.aws.cloudfront.KeyvaluestoreKey(name,
@@ -261,7 +261,7 @@ object cloudfront:
    * 
    *  &gt; Destruction of this resource means Terraform will no longer manage reconciliation of the configured key value pairs. It __will not__ delete the configured key value pairs from the KeyValueStore.
    */
-  def KeyvaluestoreKeysExclusive(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def KeyvaluestoreKeysExclusive(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.cloudfront.KeyvaluestoreKeysExclusiveArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.cloudfront.KeyvaluestoreKeysExclusiveArgs.builder
     com.pulumi.aws.cloudfront.KeyvaluestoreKeysExclusive(name,
@@ -283,7 +283,7 @@ object cloudfront:
    * 
    *  Read more about Origin Access Control in the [CloudFront Developer Guide](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-restricting-access-to-s3.html).
    */
-  def OriginAccessControl(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def OriginAccessControl(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.cloudfront.OriginAccessControlArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.cloudfront.OriginAccessControlArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -298,7 +298,7 @@ object cloudfront:
    * 
    *  For information about CloudFront Connection Groups, see the [AWS CloudFormation Documentation](https://docs.aws.amazon.com/AWSCloudFormation/latest/TemplateReference/aws-resource-cloudfront-connectiongroup.html).
    */
-  def ConnectionGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def ConnectionGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.cloudfront.ConnectionGroupArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.cloudfront.ConnectionGroupArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -336,7 +336,7 @@ object cloudfront:
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
 
   /** Resource for managing a CloudFront Anycast IP List. */
-  def AnycastIpList(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def AnycastIpList(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.cloudfront.AnycastIpListArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.cloudfront.AnycastIpListArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -350,7 +350,7 @@ object cloudfront:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Provides a CloudFront real-time log configuration resource. */
-  def MonitoringSubscription(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def MonitoringSubscription(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.cloudfront.MonitoringSubscriptionArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.cloudfront.MonitoringSubscriptionArgs.builder
     com.pulumi.aws.cloudfront.MonitoringSubscription(name,
@@ -363,7 +363,7 @@ object cloudfront:
    *  After you create a response headers policy, you can use its ID to attach it to one or more cache behaviors in a CloudFront distribution.
    *  When it\u2019s attached to a cache behavior, CloudFront adds the headers in the policy to every response that it sends for requests that match the cache behavior.
    */
-  def ResponseHeadersPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def ResponseHeadersPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.cloudfront.ResponseHeadersPolicyArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.cloudfront.ResponseHeadersPolicyArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -374,7 +374,7 @@ object cloudfront:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Provides a CloudFront real-time log configuration resource. */
-  def RealtimeLogConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def RealtimeLogConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.cloudfront.RealtimeLogConfigArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.cloudfront.RealtimeLogConfigArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -396,61 +396,61 @@ object cloudfront:
     export com.pulumi.aws.cloudfront.CloudfrontFunctions.*
   extension (self: CloudfrontFunctions.type)
     /** Use this data source to retrieve information about a CloudFront cache policy. */
-    def getCachePolicy(args: Endofunction[com.pulumi.aws.cloudfront.inputs.GetCachePolicyArgs.Builder] = identity):
+    def getCachePolicy(args: Endofunction[com.pulumi.aws.cloudfront.inputs.GetCachePolicyArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.cloudfront.outputs.GetCachePolicyResult] =
       val argsBuilder = com.pulumi.aws.cloudfront.inputs.GetCachePolicyArgs.builder
       com.pulumi.aws.cloudfront.CloudfrontFunctions.getCachePolicy(args(argsBuilder).build)
 
     /** Use this data source to retrieve information about a CloudFront cache policy. */
-    def getCachePolicyPlain(args: Endofunction[com.pulumi.aws.cloudfront.inputs.GetCachePolicyPlainArgs.Builder] = identity):
+    def getCachePolicyPlain(args: Endofunction[com.pulumi.aws.cloudfront.inputs.GetCachePolicyPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.cloudfront.outputs.GetCachePolicyResult] =
       val argsBuilder = com.pulumi.aws.cloudfront.inputs.GetCachePolicyPlainArgs.builder
       com.pulumi.aws.cloudfront.CloudfrontFunctions.getCachePolicyPlain(args(argsBuilder).build)
 
     /** Use this data source to retrieve information about a CloudFront connection group. */
-    def getConnectionGroup(args: Endofunction[com.pulumi.aws.cloudfront.inputs.GetConnectionGroupArgs.Builder] = identity):
+    def getConnectionGroup(args: Endofunction[com.pulumi.aws.cloudfront.inputs.GetConnectionGroupArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.cloudfront.outputs.GetConnectionGroupResult] =
       val argsBuilder = com.pulumi.aws.cloudfront.inputs.GetConnectionGroupArgs.builder
       com.pulumi.aws.cloudfront.CloudfrontFunctions.getConnectionGroup(args(argsBuilder).build)
 
     /** Use this data source to retrieve information about a CloudFront connection group. */
-    def getConnectionGroupPlain(args: Endofunction[com.pulumi.aws.cloudfront.inputs.GetConnectionGroupPlainArgs.Builder] = identity):
+    def getConnectionGroupPlain(args: Endofunction[com.pulumi.aws.cloudfront.inputs.GetConnectionGroupPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.cloudfront.outputs.GetConnectionGroupResult] =
       val argsBuilder = com.pulumi.aws.cloudfront.inputs.GetConnectionGroupPlainArgs.builder
       com.pulumi.aws.cloudfront.CloudfrontFunctions.getConnectionGroupPlain(args(argsBuilder).build)
 
     /** Use this data source to retrieve information about a CloudFront distribution. */
-    def getDistribution(args: Endofunction[com.pulumi.aws.cloudfront.inputs.GetDistributionArgs.Builder] = identity):
+    def getDistribution(args: Endofunction[com.pulumi.aws.cloudfront.inputs.GetDistributionArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.cloudfront.outputs.GetDistributionResult] =
       val argsBuilder = com.pulumi.aws.cloudfront.inputs.GetDistributionArgs.builder
       com.pulumi.aws.cloudfront.CloudfrontFunctions.getDistribution(args(argsBuilder).build)
 
     /** Use this data source to retrieve information about a CloudFront distribution. */
-    def getDistributionPlain(args: Endofunction[com.pulumi.aws.cloudfront.inputs.GetDistributionPlainArgs.Builder] = identity):
+    def getDistributionPlain(args: Endofunction[com.pulumi.aws.cloudfront.inputs.GetDistributionPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.cloudfront.outputs.GetDistributionResult] =
       val argsBuilder = com.pulumi.aws.cloudfront.inputs.GetDistributionPlainArgs.builder
       com.pulumi.aws.cloudfront.CloudfrontFunctions.getDistributionPlain(args(argsBuilder).build)
 
     /** Use this data source to retrieve information about a CloudFront distribution tenant. */
-    def getDistributionTenant(args: Endofunction[com.pulumi.aws.cloudfront.inputs.GetDistributionTenantArgs.Builder] = identity):
+    def getDistributionTenant(args: Endofunction[com.pulumi.aws.cloudfront.inputs.GetDistributionTenantArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.cloudfront.outputs.GetDistributionTenantResult] =
       val argsBuilder = com.pulumi.aws.cloudfront.inputs.GetDistributionTenantArgs.builder
       com.pulumi.aws.cloudfront.CloudfrontFunctions.getDistributionTenant(args(argsBuilder).build)
 
     /** Use this data source to retrieve information about a CloudFront distribution tenant. */
-    def getDistributionTenantPlain(args: Endofunction[com.pulumi.aws.cloudfront.inputs.GetDistributionTenantPlainArgs.Builder] = identity):
+    def getDistributionTenantPlain(args: Endofunction[com.pulumi.aws.cloudfront.inputs.GetDistributionTenantPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.cloudfront.outputs.GetDistributionTenantResult] =
       val argsBuilder = com.pulumi.aws.cloudfront.inputs.GetDistributionTenantPlainArgs.builder
       com.pulumi.aws.cloudfront.CloudfrontFunctions.getDistributionTenantPlain(args(argsBuilder).build)
 
     /** Provides information about a CloudFront Function. */
-    def getFunction(args: Endofunction[com.pulumi.aws.cloudfront.inputs.GetFunctionArgs.Builder] = identity):
+    def getFunction(args: Endofunction[com.pulumi.aws.cloudfront.inputs.GetFunctionArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.cloudfront.outputs.GetFunctionResult] =
       val argsBuilder = com.pulumi.aws.cloudfront.inputs.GetFunctionArgs.builder
       com.pulumi.aws.cloudfront.CloudfrontFunctions.getFunction(args(argsBuilder).build)
 
     /** Provides information about a CloudFront Function. */
-    def getFunctionPlain(args: Endofunction[com.pulumi.aws.cloudfront.inputs.GetFunctionPlainArgs.Builder] = identity):
+    def getFunctionPlain(args: Endofunction[com.pulumi.aws.cloudfront.inputs.GetFunctionPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.cloudfront.outputs.GetFunctionResult] =
       val argsBuilder = com.pulumi.aws.cloudfront.inputs.GetFunctionPlainArgs.builder
       com.pulumi.aws.cloudfront.CloudfrontFunctions.getFunctionPlain(args(argsBuilder).build)
@@ -459,7 +459,7 @@ object cloudfront:
      * The CloudFront Log Delivery Canonical User ID data source allows access to the [canonical user ID](http://docs.aws.amazon.com/general/latest/gr/acct-identifiers.html) of the AWS `awslogsdelivery` account for CloudFront bucket logging.
      *  See the [Amazon CloudFront Developer Guide](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/AccessLogs.html) for more information.
      */
-    def getLogDeliveryCanonicalUserId(args: Endofunction[com.pulumi.aws.cloudfront.inputs.GetLogDeliveryCanonicalUserIdArgs.Builder] = identity):
+    def getLogDeliveryCanonicalUserId(args: Endofunction[com.pulumi.aws.cloudfront.inputs.GetLogDeliveryCanonicalUserIdArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.cloudfront.outputs.GetLogDeliveryCanonicalUserIdResult] =
       val argsBuilder = com.pulumi.aws.cloudfront.inputs.GetLogDeliveryCanonicalUserIdArgs.builder
       com.pulumi.aws.cloudfront.CloudfrontFunctions.getLogDeliveryCanonicalUserId(args(argsBuilder).build)
@@ -468,43 +468,43 @@ object cloudfront:
      * The CloudFront Log Delivery Canonical User ID data source allows access to the [canonical user ID](http://docs.aws.amazon.com/general/latest/gr/acct-identifiers.html) of the AWS `awslogsdelivery` account for CloudFront bucket logging.
      *  See the [Amazon CloudFront Developer Guide](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/AccessLogs.html) for more information.
      */
-    def getLogDeliveryCanonicalUserIdPlain(args: Endofunction[com.pulumi.aws.cloudfront.inputs.GetLogDeliveryCanonicalUserIdPlainArgs.Builder] = identity):
+    def getLogDeliveryCanonicalUserIdPlain(args: Endofunction[com.pulumi.aws.cloudfront.inputs.GetLogDeliveryCanonicalUserIdPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.cloudfront.outputs.GetLogDeliveryCanonicalUserIdResult] =
       val argsBuilder = com.pulumi.aws.cloudfront.inputs.GetLogDeliveryCanonicalUserIdPlainArgs.builder
       com.pulumi.aws.cloudfront.CloudfrontFunctions.getLogDeliveryCanonicalUserIdPlain(args(argsBuilder).build)
 
     /** Use this data source to retrieve information for an Amazon CloudFront origin access control config. */
-    def getOriginAccessControl(args: Endofunction[com.pulumi.aws.cloudfront.inputs.GetOriginAccessControlArgs.Builder] = identity):
+    def getOriginAccessControl(args: Endofunction[com.pulumi.aws.cloudfront.inputs.GetOriginAccessControlArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.cloudfront.outputs.GetOriginAccessControlResult] =
       val argsBuilder = com.pulumi.aws.cloudfront.inputs.GetOriginAccessControlArgs.builder
       com.pulumi.aws.cloudfront.CloudfrontFunctions.getOriginAccessControl(args(argsBuilder).build)
 
     /** Use this data source to retrieve information for an Amazon CloudFront origin access control config. */
-    def getOriginAccessControlPlain(args: Endofunction[com.pulumi.aws.cloudfront.inputs.GetOriginAccessControlPlainArgs.Builder] = identity):
+    def getOriginAccessControlPlain(args: Endofunction[com.pulumi.aws.cloudfront.inputs.GetOriginAccessControlPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.cloudfront.outputs.GetOriginAccessControlResult] =
       val argsBuilder = com.pulumi.aws.cloudfront.inputs.GetOriginAccessControlPlainArgs.builder
       com.pulumi.aws.cloudfront.CloudfrontFunctions.getOriginAccessControlPlain(args(argsBuilder).build)
 
     /** Use this data source to get ARNs, ids and S3 canonical user IDs of Amazon CloudFront origin access identities. */
-    def getOriginAccessIdentities(args: Endofunction[com.pulumi.aws.cloudfront.inputs.GetOriginAccessIdentitiesArgs.Builder] = identity):
+    def getOriginAccessIdentities(args: Endofunction[com.pulumi.aws.cloudfront.inputs.GetOriginAccessIdentitiesArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.cloudfront.outputs.GetOriginAccessIdentitiesResult] =
       val argsBuilder = com.pulumi.aws.cloudfront.inputs.GetOriginAccessIdentitiesArgs.builder
       com.pulumi.aws.cloudfront.CloudfrontFunctions.getOriginAccessIdentities(args(argsBuilder).build)
 
     /** Use this data source to get ARNs, ids and S3 canonical user IDs of Amazon CloudFront origin access identities. */
-    def getOriginAccessIdentitiesPlain(args: Endofunction[com.pulumi.aws.cloudfront.inputs.GetOriginAccessIdentitiesPlainArgs.Builder] = identity):
+    def getOriginAccessIdentitiesPlain(args: Endofunction[com.pulumi.aws.cloudfront.inputs.GetOriginAccessIdentitiesPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.cloudfront.outputs.GetOriginAccessIdentitiesResult] =
       val argsBuilder = com.pulumi.aws.cloudfront.inputs.GetOriginAccessIdentitiesPlainArgs.builder
       com.pulumi.aws.cloudfront.CloudfrontFunctions.getOriginAccessIdentitiesPlain(args(argsBuilder).build)
 
     /** Use this data source to retrieve information for an Amazon CloudFront origin access identity. */
-    def getOriginAccessIdentity(args: Endofunction[com.pulumi.aws.cloudfront.inputs.GetOriginAccessIdentityArgs.Builder] = identity):
+    def getOriginAccessIdentity(args: Endofunction[com.pulumi.aws.cloudfront.inputs.GetOriginAccessIdentityArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.cloudfront.outputs.GetOriginAccessIdentityResult] =
       val argsBuilder = com.pulumi.aws.cloudfront.inputs.GetOriginAccessIdentityArgs.builder
       com.pulumi.aws.cloudfront.CloudfrontFunctions.getOriginAccessIdentity(args(argsBuilder).build)
 
     /** Use this data source to retrieve information for an Amazon CloudFront origin access identity. */
-    def getOriginAccessIdentityPlain(args: Endofunction[com.pulumi.aws.cloudfront.inputs.GetOriginAccessIdentityPlainArgs.Builder] = identity):
+    def getOriginAccessIdentityPlain(args: Endofunction[com.pulumi.aws.cloudfront.inputs.GetOriginAccessIdentityPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.cloudfront.outputs.GetOriginAccessIdentityResult] =
       val argsBuilder = com.pulumi.aws.cloudfront.inputs.GetOriginAccessIdentityPlainArgs.builder
       com.pulumi.aws.cloudfront.CloudfrontFunctions.getOriginAccessIdentityPlain(args(argsBuilder).build)
@@ -512,7 +512,7 @@ object cloudfront:
     /**
      * 
      */
-    def getOriginRequestPolicy(args: Endofunction[com.pulumi.aws.cloudfront.inputs.GetOriginRequestPolicyArgs.Builder] = identity):
+    def getOriginRequestPolicy(args: Endofunction[com.pulumi.aws.cloudfront.inputs.GetOriginRequestPolicyArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.cloudfront.outputs.GetOriginRequestPolicyResult] =
       val argsBuilder = com.pulumi.aws.cloudfront.inputs.GetOriginRequestPolicyArgs.builder
       com.pulumi.aws.cloudfront.CloudfrontFunctions.getOriginRequestPolicy(args(argsBuilder).build)
@@ -520,31 +520,31 @@ object cloudfront:
     /**
      * 
      */
-    def getOriginRequestPolicyPlain(args: Endofunction[com.pulumi.aws.cloudfront.inputs.GetOriginRequestPolicyPlainArgs.Builder] = identity):
+    def getOriginRequestPolicyPlain(args: Endofunction[com.pulumi.aws.cloudfront.inputs.GetOriginRequestPolicyPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.cloudfront.outputs.GetOriginRequestPolicyResult] =
       val argsBuilder = com.pulumi.aws.cloudfront.inputs.GetOriginRequestPolicyPlainArgs.builder
       com.pulumi.aws.cloudfront.CloudfrontFunctions.getOriginRequestPolicyPlain(args(argsBuilder).build)
 
     /** Provides a CloudFront real-time log configuration resource. */
-    def getRealtimeLogConfig(args: Endofunction[com.pulumi.aws.cloudfront.inputs.GetRealtimeLogConfigArgs.Builder] = identity):
+    def getRealtimeLogConfig(args: Endofunction[com.pulumi.aws.cloudfront.inputs.GetRealtimeLogConfigArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.cloudfront.outputs.GetRealtimeLogConfigResult] =
       val argsBuilder = com.pulumi.aws.cloudfront.inputs.GetRealtimeLogConfigArgs.builder
       com.pulumi.aws.cloudfront.CloudfrontFunctions.getRealtimeLogConfig(args(argsBuilder).build)
 
     /** Provides a CloudFront real-time log configuration resource. */
-    def getRealtimeLogConfigPlain(args: Endofunction[com.pulumi.aws.cloudfront.inputs.GetRealtimeLogConfigPlainArgs.Builder] = identity):
+    def getRealtimeLogConfigPlain(args: Endofunction[com.pulumi.aws.cloudfront.inputs.GetRealtimeLogConfigPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.cloudfront.outputs.GetRealtimeLogConfigResult] =
       val argsBuilder = com.pulumi.aws.cloudfront.inputs.GetRealtimeLogConfigPlainArgs.builder
       com.pulumi.aws.cloudfront.CloudfrontFunctions.getRealtimeLogConfigPlain(args(argsBuilder).build)
 
     /** Use this data source to retrieve information about a CloudFront cache policy. */
-    def getResponseHeadersPolicy(args: Endofunction[com.pulumi.aws.cloudfront.inputs.GetResponseHeadersPolicyArgs.Builder] = identity):
+    def getResponseHeadersPolicy(args: Endofunction[com.pulumi.aws.cloudfront.inputs.GetResponseHeadersPolicyArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.cloudfront.outputs.GetResponseHeadersPolicyResult] =
       val argsBuilder = com.pulumi.aws.cloudfront.inputs.GetResponseHeadersPolicyArgs.builder
       com.pulumi.aws.cloudfront.CloudfrontFunctions.getResponseHeadersPolicy(args(argsBuilder).build)
 
     /** Use this data source to retrieve information about a CloudFront cache policy. */
-    def getResponseHeadersPolicyPlain(args: Endofunction[com.pulumi.aws.cloudfront.inputs.GetResponseHeadersPolicyPlainArgs.Builder] = identity):
+    def getResponseHeadersPolicyPlain(args: Endofunction[com.pulumi.aws.cloudfront.inputs.GetResponseHeadersPolicyPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.cloudfront.outputs.GetResponseHeadersPolicyResult] =
       val argsBuilder = com.pulumi.aws.cloudfront.inputs.GetResponseHeadersPolicyPlainArgs.builder
       com.pulumi.aws.cloudfront.CloudfrontFunctions.getResponseHeadersPolicyPlain(args(argsBuilder).build)
@@ -571,7 +571,7 @@ object cloudfront:
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
 
   /** Manages an AWS CloudFront Connection Function. */
-  def ConnectionFunction(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def ConnectionFunction(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.cloudfront.ConnectionFunctionArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.cloudfront.ConnectionFunctionArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -595,7 +595,7 @@ object cloudfront:
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
 
   /** Resource for managing an AWS CloudFront Key Value Store. */
-  def KeyValueStore(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def KeyValueStore(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.cloudfront.KeyValueStoreArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.cloudfront.KeyValueStoreArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -606,7 +606,7 @@ object cloudfront:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Manages an AWS CloudFront Trust Store. */
-  def TrustStore(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def TrustStore(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.cloudfront.TrustStoreArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.cloudfront.TrustStoreArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -620,7 +620,7 @@ object cloudfront:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Resource for managing an AWS CloudFront Continuous Deployment Policy. */
-  def ContinuousDeploymentPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def ContinuousDeploymentPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.cloudfront.ContinuousDeploymentPolicyArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.cloudfront.ContinuousDeploymentPolicyArgs.builder
     com.pulumi.aws.cloudfront.ContinuousDeploymentPolicy(name,
@@ -630,7 +630,7 @@ object cloudfront:
   /**
    * 
    */
-  def PublicKey(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def PublicKey(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.cloudfront.PublicKeyArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.cloudfront.PublicKeyArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -715,7 +715,7 @@ object cloudfront:
    * 
    *  For information about CloudFront distribution tenants, see the [Amazon CloudFront Developer Guide](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-tenants.html).
    */
-  def DistributionTenant(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def DistributionTenant(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.cloudfront.DistributionTenantArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.cloudfront.DistributionTenantArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -764,7 +764,7 @@ object cloudfront:
    *  - `trustedSigners` in cache behaviors - Use `trustedKeyGroups` instead
    *  - Cache behavior TTL settings (`defaultTtl`, `maxTtl`, `minTtl`) - Use cache policies instead
    */
-  def MultitenantDistribution(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def MultitenantDistribution(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.cloudfront.MultitenantDistributionArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.cloudfront.MultitenantDistributionArgs.builder
     conf.logicalName2tagName(name) match
@@ -882,7 +882,7 @@ object cloudfront:
    * 
    *  &gt; **NOTE:** You cannot delete a function if it\u2019s associated with a cache behavior. First, update your distributions to remove the function association from all cache behaviors, then delete the function.
    */
-  def Function(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def Function(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.cloudfront.FunctionArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.cloudfront.FunctionArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -893,7 +893,7 @@ object cloudfront:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Provides a CloudFront Field-level Encryption Profile resource. */
-  def FieldLevelEncryptionProfile(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def FieldLevelEncryptionProfile(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.cloudfront.FieldLevelEncryptionProfileArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.cloudfront.FieldLevelEncryptionProfileArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -910,7 +910,7 @@ object cloudfront:
    * 
    *  &gt; **NOTE:** CloudFront distributions take about 15 minutes to reach a deployed state after creation or modification. During this time, deletes to resources will be blocked. If you need to delete a distribution that is enabled and you do not want to wait, you need to use the `retainOnDelete` flag.
    */
-  def Distribution(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def Distribution(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.cloudfront.DistributionArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.cloudfront.DistributionArgs.builder
     conf.logicalName2tagName(name) match

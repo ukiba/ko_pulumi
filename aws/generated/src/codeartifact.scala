@@ -28,7 +28,7 @@ object codeartifact:
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
 
   /** Provides a CodeArtifact Domains Permissions Policy Resource. */
-  def DomainPermissions(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def DomainPermissions(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.codeartifact.DomainPermissionsArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.codeartifact.DomainPermissionsArgs.builder
     com.pulumi.aws.codeartifact.DomainPermissions(name,
@@ -36,7 +36,7 @@ object codeartifact:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Provides a CodeArtifact Repostory Permissions Policy Resource. */
-  def RepositoryPermissionsPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def RepositoryPermissionsPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.codeartifact.RepositoryPermissionsPolicyArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.codeartifact.RepositoryPermissionsPolicyArgs.builder
     com.pulumi.aws.codeartifact.RepositoryPermissionsPolicy(name,
@@ -44,7 +44,7 @@ object codeartifact:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Provides a CodeArtifact Repository Resource. */
-  def Repository(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def Repository(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.codeartifact.RepositoryArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.codeartifact.RepositoryArgs.builder
     conf.logicalName2tagName(name) match
@@ -60,25 +60,25 @@ object codeartifact:
     export com.pulumi.aws.codeartifact.CodeartifactFunctions.*
   extension (self: CodeartifactFunctions.type)
     /** The CodeArtifact Authorization Token data source generates a temporary authentication token for accessing repositories in a CodeArtifact domain. */
-    def getAuthorizationToken(args: Endofunction[com.pulumi.aws.codeartifact.inputs.GetAuthorizationTokenArgs.Builder] = identity):
+    def getAuthorizationToken(args: Endofunction[com.pulumi.aws.codeartifact.inputs.GetAuthorizationTokenArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.codeartifact.outputs.GetAuthorizationTokenResult] =
       val argsBuilder = com.pulumi.aws.codeartifact.inputs.GetAuthorizationTokenArgs.builder
       com.pulumi.aws.codeartifact.CodeartifactFunctions.getAuthorizationToken(args(argsBuilder).build)
 
     /** The CodeArtifact Authorization Token data source generates a temporary authentication token for accessing repositories in a CodeArtifact domain. */
-    def getAuthorizationTokenPlain(args: Endofunction[com.pulumi.aws.codeartifact.inputs.GetAuthorizationTokenPlainArgs.Builder] = identity):
+    def getAuthorizationTokenPlain(args: Endofunction[com.pulumi.aws.codeartifact.inputs.GetAuthorizationTokenPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.codeartifact.outputs.GetAuthorizationTokenResult] =
       val argsBuilder = com.pulumi.aws.codeartifact.inputs.GetAuthorizationTokenPlainArgs.builder
       com.pulumi.aws.codeartifact.CodeartifactFunctions.getAuthorizationTokenPlain(args(argsBuilder).build)
 
     /** The CodeArtifact Repository Endpoint data source returns the endpoint of a repository for a specific package format. */
-    def getRepositoryEndpoint(args: Endofunction[com.pulumi.aws.codeartifact.inputs.GetRepositoryEndpointArgs.Builder] = identity):
+    def getRepositoryEndpoint(args: Endofunction[com.pulumi.aws.codeartifact.inputs.GetRepositoryEndpointArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.codeartifact.outputs.GetRepositoryEndpointResult] =
       val argsBuilder = com.pulumi.aws.codeartifact.inputs.GetRepositoryEndpointArgs.builder
       com.pulumi.aws.codeartifact.CodeartifactFunctions.getRepositoryEndpoint(args(argsBuilder).build)
 
     /** The CodeArtifact Repository Endpoint data source returns the endpoint of a repository for a specific package format. */
-    def getRepositoryEndpointPlain(args: Endofunction[com.pulumi.aws.codeartifact.inputs.GetRepositoryEndpointPlainArgs.Builder] = identity):
+    def getRepositoryEndpointPlain(args: Endofunction[com.pulumi.aws.codeartifact.inputs.GetRepositoryEndpointPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.codeartifact.outputs.GetRepositoryEndpointResult] =
       val argsBuilder = com.pulumi.aws.codeartifact.inputs.GetRepositoryEndpointPlainArgs.builder
       com.pulumi.aws.codeartifact.CodeartifactFunctions.getRepositoryEndpointPlain(args(argsBuilder).build)
@@ -107,7 +107,7 @@ object codeartifact:
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
 
   /** Provides a CodeArtifact Domain Resource. */
-  def Domain(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def Domain(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.codeartifact.DomainArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.codeartifact.DomainArgs.builder
     conf.logicalName2tagName(name) match

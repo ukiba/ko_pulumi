@@ -5,7 +5,7 @@ import com.pulumi.resources.CustomResourceOptions
 
 object ivschat:
   /** Resource for managing an AWS IVS (Interactive Video) Chat Room. */
-  def Room(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def Room(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.ivschat.RoomArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.ivschat.RoomArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -48,7 +48,7 @@ object ivschat:
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
 
   /** Resource for managing an AWS IVS (Interactive Video) Chat Logging Configuration. */
-  def LoggingConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def LoggingConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.ivschat.LoggingConfigurationArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.ivschat.LoggingConfigurationArgs.builder
     conf.logicalName2pysicalName(name) match

@@ -5,7 +5,7 @@ import com.pulumi.resources.CustomResourceOptions
 
 object mskconnect:
   /** Provides an Amazon MSK Connect Worker Configuration Resource. */
-  def WorkerConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def WorkerConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.mskconnect.WorkerConfigurationArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.mskconnect.WorkerConfigurationArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -24,37 +24,37 @@ object mskconnect:
     export com.pulumi.aws.mskconnect.MskconnectFunctions.*
   extension (self: MskconnectFunctions.type)
     /** Get information on an Amazon MSK Connect Connector. */
-    def getConnector(args: Endofunction[com.pulumi.aws.mskconnect.inputs.GetConnectorArgs.Builder] = identity):
+    def getConnector(args: Endofunction[com.pulumi.aws.mskconnect.inputs.GetConnectorArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.mskconnect.outputs.GetConnectorResult] =
       val argsBuilder = com.pulumi.aws.mskconnect.inputs.GetConnectorArgs.builder
       com.pulumi.aws.mskconnect.MskconnectFunctions.getConnector(args(argsBuilder).build)
 
     /** Get information on an Amazon MSK Connect Connector. */
-    def getConnectorPlain(args: Endofunction[com.pulumi.aws.mskconnect.inputs.GetConnectorPlainArgs.Builder] = identity):
+    def getConnectorPlain(args: Endofunction[com.pulumi.aws.mskconnect.inputs.GetConnectorPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.mskconnect.outputs.GetConnectorResult] =
       val argsBuilder = com.pulumi.aws.mskconnect.inputs.GetConnectorPlainArgs.builder
       com.pulumi.aws.mskconnect.MskconnectFunctions.getConnectorPlain(args(argsBuilder).build)
 
     /** Get information on an Amazon MSK Connect custom plugin. */
-    def getCustomPlugin(args: Endofunction[com.pulumi.aws.mskconnect.inputs.GetCustomPluginArgs.Builder] = identity):
+    def getCustomPlugin(args: Endofunction[com.pulumi.aws.mskconnect.inputs.GetCustomPluginArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.mskconnect.outputs.GetCustomPluginResult] =
       val argsBuilder = com.pulumi.aws.mskconnect.inputs.GetCustomPluginArgs.builder
       com.pulumi.aws.mskconnect.MskconnectFunctions.getCustomPlugin(args(argsBuilder).build)
 
     /** Get information on an Amazon MSK Connect custom plugin. */
-    def getCustomPluginPlain(args: Endofunction[com.pulumi.aws.mskconnect.inputs.GetCustomPluginPlainArgs.Builder] = identity):
+    def getCustomPluginPlain(args: Endofunction[com.pulumi.aws.mskconnect.inputs.GetCustomPluginPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.mskconnect.outputs.GetCustomPluginResult] =
       val argsBuilder = com.pulumi.aws.mskconnect.inputs.GetCustomPluginPlainArgs.builder
       com.pulumi.aws.mskconnect.MskconnectFunctions.getCustomPluginPlain(args(argsBuilder).build)
 
     /** Get information on an Amazon MSK Connect Worker Configuration. */
-    def getWorkerConfiguration(args: Endofunction[com.pulumi.aws.mskconnect.inputs.GetWorkerConfigurationArgs.Builder] = identity):
+    def getWorkerConfiguration(args: Endofunction[com.pulumi.aws.mskconnect.inputs.GetWorkerConfigurationArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.mskconnect.outputs.GetWorkerConfigurationResult] =
       val argsBuilder = com.pulumi.aws.mskconnect.inputs.GetWorkerConfigurationArgs.builder
       com.pulumi.aws.mskconnect.MskconnectFunctions.getWorkerConfiguration(args(argsBuilder).build)
 
     /** Get information on an Amazon MSK Connect Worker Configuration. */
-    def getWorkerConfigurationPlain(args: Endofunction[com.pulumi.aws.mskconnect.inputs.GetWorkerConfigurationPlainArgs.Builder] = identity):
+    def getWorkerConfigurationPlain(args: Endofunction[com.pulumi.aws.mskconnect.inputs.GetWorkerConfigurationPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.mskconnect.outputs.GetWorkerConfigurationResult] =
       val argsBuilder = com.pulumi.aws.mskconnect.inputs.GetWorkerConfigurationPlainArgs.builder
       com.pulumi.aws.mskconnect.MskconnectFunctions.getWorkerConfigurationPlain(args(argsBuilder).build)
@@ -74,7 +74,7 @@ object mskconnect:
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
 
   /** Provides an Amazon MSK Connect Custom Plugin Resource. */
-  def CustomPlugin(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def CustomPlugin(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.mskconnect.CustomPluginArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.mskconnect.CustomPluginArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -88,7 +88,7 @@ object mskconnect:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Provides an Amazon MSK Connect Connector resource. */
-  def Connector(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def Connector(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.mskconnect.ConnectorArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.mskconnect.ConnectorArgs.builder
     conf.logicalName2pysicalName(name) match

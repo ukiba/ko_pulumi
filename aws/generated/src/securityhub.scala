@@ -15,7 +15,7 @@ object securityhub:
       builder.organizationConfiguration(args(argsBuilder).build)
 
   /** Manages a Security Hub administrator account for an organization. The AWS account utilizing this resource must be an Organizations primary account. More information about Organizations support in Security Hub can be found in the [Security Hub User Guide](https://docs.aws.amazon.com/securityhub/latest/userguide/designate-orgs-admin-account.html). */
-  def OrganizationAdminAccount(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def OrganizationAdminAccount(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.securityhub.OrganizationAdminAccountArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.securityhub.OrganizationAdminAccountArgs.builder
     com.pulumi.aws.securityhub.OrganizationAdminAccount(name,
@@ -27,7 +27,7 @@ object securityhub:
    * 
    *  &gt; **NOTE:** This resource requires `aws.securityhub.OrganizationConfiguration` to be configured with type `CENTRAL`. More information about Security Hub central configuration and configuration policies can be found in the [How Security Hub configuration policies work](https://docs.aws.amazon.com/securityhub/latest/userguide/configuration-policies-overview.html) documentation.
    */
-  def ConfigurationPolicyAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def ConfigurationPolicyAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.securityhub.ConfigurationPolicyAssociationArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.securityhub.ConfigurationPolicyAssociationArgs.builder
     com.pulumi.aws.securityhub.ConfigurationPolicyAssociation(name,
@@ -45,7 +45,7 @@ object securityhub:
    * 
    *  &gt; **NOTE:** Deleting this resource resets security hub to a local organization configuration with auto enable false.
    */
-  def OrganizationConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def OrganizationConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.securityhub.OrganizationConfigurationArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.securityhub.OrganizationConfigurationArgs.builder
     com.pulumi.aws.securityhub.OrganizationConfiguration(name,
@@ -53,7 +53,7 @@ object securityhub:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Creates Security Hub custom action. */
-  def ActionTarget(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def ActionTarget(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.securityhub.ActionTargetArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.securityhub.ActionTargetArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -68,7 +68,7 @@ object securityhub:
    * 
    *  Accepts a Security Hub invitation.
    */
-  def InviteAccepter(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def InviteAccepter(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.securityhub.InviteAccepterArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.securityhub.InviteAccepterArgs.builder
     com.pulumi.aws.securityhub.InviteAccepter(name,
@@ -81,37 +81,37 @@ object securityhub:
     export com.pulumi.aws.securityhub.SecurityhubFunctions.*
   extension (self: SecurityhubFunctions.type)
     /** Lists the standards that are currently enabled. */
-    def getEnabledStandards(args: Endofunction[com.pulumi.aws.securityhub.inputs.GetEnabledStandardsArgs.Builder] = identity):
+    def getEnabledStandards(args: Endofunction[com.pulumi.aws.securityhub.inputs.GetEnabledStandardsArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.securityhub.outputs.GetEnabledStandardsResult] =
       val argsBuilder = com.pulumi.aws.securityhub.inputs.GetEnabledStandardsArgs.builder
       com.pulumi.aws.securityhub.SecurityhubFunctions.getEnabledStandards(args(argsBuilder).build)
 
     /** Lists the standards that are currently enabled. */
-    def getEnabledStandardsPlain(args: Endofunction[com.pulumi.aws.securityhub.inputs.GetEnabledStandardsPlainArgs.Builder] = identity):
+    def getEnabledStandardsPlain(args: Endofunction[com.pulumi.aws.securityhub.inputs.GetEnabledStandardsPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.securityhub.outputs.GetEnabledStandardsResult] =
       val argsBuilder = com.pulumi.aws.securityhub.inputs.GetEnabledStandardsPlainArgs.builder
       com.pulumi.aws.securityhub.SecurityhubFunctions.getEnabledStandardsPlain(args(argsBuilder).build)
 
     /** Lists security controls. */
-    def getSecurityControls(args: Endofunction[com.pulumi.aws.securityhub.inputs.GetSecurityControlsArgs.Builder] = identity):
+    def getSecurityControls(args: Endofunction[com.pulumi.aws.securityhub.inputs.GetSecurityControlsArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.securityhub.outputs.GetSecurityControlsResult] =
       val argsBuilder = com.pulumi.aws.securityhub.inputs.GetSecurityControlsArgs.builder
       com.pulumi.aws.securityhub.SecurityhubFunctions.getSecurityControls(args(argsBuilder).build)
 
     /** Lists security controls. */
-    def getSecurityControlsPlain(args: Endofunction[com.pulumi.aws.securityhub.inputs.GetSecurityControlsPlainArgs.Builder] = identity):
+    def getSecurityControlsPlain(args: Endofunction[com.pulumi.aws.securityhub.inputs.GetSecurityControlsPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.securityhub.outputs.GetSecurityControlsResult] =
       val argsBuilder = com.pulumi.aws.securityhub.inputs.GetSecurityControlsPlainArgs.builder
       com.pulumi.aws.securityhub.SecurityhubFunctions.getSecurityControlsPlain(args(argsBuilder).build)
 
     /** Data source for managing an AWS Security Hub Standards Control Associations. */
-    def getStandardsControlAssociations(args: Endofunction[com.pulumi.aws.securityhub.inputs.GetStandardsControlAssociationsArgs.Builder] = identity):
+    def getStandardsControlAssociations(args: Endofunction[com.pulumi.aws.securityhub.inputs.GetStandardsControlAssociationsArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.securityhub.outputs.GetStandardsControlAssociationsResult] =
       val argsBuilder = com.pulumi.aws.securityhub.inputs.GetStandardsControlAssociationsArgs.builder
       com.pulumi.aws.securityhub.SecurityhubFunctions.getStandardsControlAssociations(args(argsBuilder).build)
 
     /** Data source for managing an AWS Security Hub Standards Control Associations. */
-    def getStandardsControlAssociationsPlain(args: Endofunction[com.pulumi.aws.securityhub.inputs.GetStandardsControlAssociationsPlainArgs.Builder] = identity):
+    def getStandardsControlAssociationsPlain(args: Endofunction[com.pulumi.aws.securityhub.inputs.GetStandardsControlAssociationsPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.securityhub.outputs.GetStandardsControlAssociationsResult] =
       val argsBuilder = com.pulumi.aws.securityhub.inputs.GetStandardsControlAssociationsPlainArgs.builder
       com.pulumi.aws.securityhub.SecurityhubFunctions.getStandardsControlAssociationsPlain(args(argsBuilder).build)
@@ -127,7 +127,7 @@ object securityhub:
       builder.filters(args(argsBuilder).build)
 
   /** Provides a Security Hub custom insight resource. See the [Managing custom insights section](https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-custom-insights.html) of the AWS User Guide for more information. */
-  def Insight(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def Insight(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.securityhub.InsightArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.securityhub.InsightArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -144,7 +144,7 @@ object securityhub:
    * 
    *  &gt; **NOTE:** This resource manages Security Hub CSPM, which is distinct from the unified Security Hub V2 service managed by `aws.securityhub.AccountV2`. Both can coexist in the same account.
    */
-  def Account(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def Account(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.securityhub.AccountArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.securityhub.AccountArgs.builder
     com.pulumi.aws.securityhub.Account(name,
@@ -152,7 +152,7 @@ object securityhub:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Manages a Security Hub finding aggregator. Security Hub needs to be enabled in a region in order for the aggregator to pull through findings. */
-  def FindingAggregator(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def FindingAggregator(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.securityhub.FindingAggregatorArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.securityhub.FindingAggregatorArgs.builder
     com.pulumi.aws.securityhub.FindingAggregator(name,
@@ -168,7 +168,7 @@ object securityhub:
    *  behaves differently from normal resources, in that Terraform does not _create_ this resource, but instead &#34;adopts&#34; it
    *  into management. When you _delete_ this resource configuration, Terraform &#34;abandons&#34; resource as is and just removes it from the state.
    */
-  def StandardsControlAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def StandardsControlAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.securityhub.StandardsControlAssociationArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.securityhub.StandardsControlAssociationArgs.builder
     com.pulumi.aws.securityhub.StandardsControlAssociation(name,
@@ -176,7 +176,7 @@ object securityhub:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Subscribes to a Security Hub product. */
-  def ProductSubscription(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def ProductSubscription(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.securityhub.ProductSubscriptionArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.securityhub.ProductSubscriptionArgs.builder
     com.pulumi.aws.securityhub.ProductSubscription(name,
@@ -188,7 +188,7 @@ object securityhub:
    * 
    *  &gt; **NOTE:** This resource requires `aws.securityhub.OrganizationConfiguration` to be configured of type `CENTRAL`. More information about Security Hub central configuration and configuration policies can be found in the [How Security Hub configuration policies work](https://docs.aws.amazon.com/securityhub/latest/userguide/configuration-policies-overview.html) documentation.
    */
-  def ConfigurationPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def ConfigurationPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.securityhub.ConfigurationPolicyArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.securityhub.ConfigurationPolicyArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -199,7 +199,7 @@ object securityhub:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Provides a Security Hub member resource. */
-  def Member(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def Member(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.securityhub.MemberArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.securityhub.MemberArgs.builder
     com.pulumi.aws.securityhub.Member(name,
@@ -207,7 +207,7 @@ object securityhub:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Resource for managing an AWS Security Hub Automation Rule. */
-  def AutomationRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def AutomationRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.securityhub.AutomationRuleArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.securityhub.AutomationRuleArgs.builder
     conf.logicalName2tagName(name) match
@@ -247,7 +247,7 @@ object securityhub:
    * 
    *  &gt; **NOTE:** This resource manages the unified Security Hub V2 service, which is distinct from the classic Security Hub CSPM managed by `aws.securityhub.Account`. Both can coexist in the same account.
    */
-  def AccountV2(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def AccountV2(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.securityhub.AccountV2Args.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.securityhub.AccountV2Args.builder
     conf.logicalName2tagName(name) match
@@ -264,7 +264,7 @@ object securityhub:
    *  Pulumi does not _create_ this resource, but instead &#34;adopts&#34; it
    *  into management. When you _delete_ this resource configuration, Pulumi &#34;abandons&#34; resource as is and just removes it from the state.
    */
-  def StandardsControl(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def StandardsControl(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.securityhub.StandardsControlArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.securityhub.StandardsControlArgs.builder
     com.pulumi.aws.securityhub.StandardsControl(name,
@@ -272,7 +272,7 @@ object securityhub:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Subscribes to a Security Hub standard. */
-  def StandardsSubscription(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def StandardsSubscription(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.securityhub.StandardsSubscriptionArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.securityhub.StandardsSubscriptionArgs.builder
     com.pulumi.aws.securityhub.StandardsSubscription(name,

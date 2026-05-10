@@ -8,7 +8,7 @@ object kinesisanalyticsv2:
    * Manages a Kinesis Analytics v2 Application Snapshot.
    *  Snapshots are the AWS implementation of [Flink Savepoints](https://ci.apache.org/projects/flink/flink-docs-release-1.11/ops/state/savepoints.html).
    */
-  def ApplicationSnapshot(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def ApplicationSnapshot(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.kinesisanalyticsv2.ApplicationSnapshotArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.kinesisanalyticsv2.ApplicationSnapshotArgs.builder
     com.pulumi.aws.kinesisanalyticsv2.ApplicationSnapshot(name,
@@ -21,7 +21,7 @@ object kinesisanalyticsv2:
    * 
    *  &gt; **Note:** Kinesis Data Analytics for SQL applications created using this resource cannot currently be viewed in the AWS Console. To manage Kinesis Data Analytics for SQL applications that can also be viewed in the AWS Console, use the `aws.kinesis.AnalyticsApplication` resource.
    */
-  def Application(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def Application(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.kinesisanalyticsv2.ApplicationArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.kinesisanalyticsv2.ApplicationArgs.builder
     conf.logicalName2pysicalName(name) match

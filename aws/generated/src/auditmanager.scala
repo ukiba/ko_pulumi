@@ -21,7 +21,7 @@ object auditmanager:
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
 
   /** Resource for managing an AWS Audit Manager Control. */
-  def Control(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def Control(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.auditmanager.ControlArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.auditmanager.ControlArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -35,7 +35,7 @@ object auditmanager:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Resource for managing AWS Audit Manager Account Registration. */
-  def AccountRegistration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def AccountRegistration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.auditmanager.AccountRegistrationArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.auditmanager.AccountRegistrationArgs.builder
     com.pulumi.aws.auditmanager.AccountRegistration(name,
@@ -43,7 +43,7 @@ object auditmanager:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Resource for managing an AWS Audit Manager Framework Share. */
-  def FrameworkShare(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def FrameworkShare(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.auditmanager.FrameworkShareArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.auditmanager.FrameworkShareArgs.builder
     com.pulumi.aws.auditmanager.FrameworkShare(name,
@@ -51,7 +51,7 @@ object auditmanager:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Resource for managing AWS Audit Manager Organization Admin Account Registration. */
-  def OrganizationAdminAccountRegistration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def OrganizationAdminAccountRegistration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.auditmanager.OrganizationAdminAccountRegistrationArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.auditmanager.OrganizationAdminAccountRegistrationArgs.builder
     com.pulumi.aws.auditmanager.OrganizationAdminAccountRegistration(name,
@@ -59,7 +59,7 @@ object auditmanager:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Resource for managing an AWS Audit Manager Assessment Report. */
-  def AssessmentReport(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def AssessmentReport(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.auditmanager.AssessmentReportArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.auditmanager.AssessmentReportArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -70,7 +70,7 @@ object auditmanager:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Resource for managing an AWS Audit Manager Assessment Delegation. */
-  def AssessmentDelegation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def AssessmentDelegation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.auditmanager.AssessmentDelegationArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.auditmanager.AssessmentDelegationArgs.builder
     com.pulumi.aws.auditmanager.AssessmentDelegation(name,
@@ -112,7 +112,7 @@ object auditmanager:
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
 
   /** Resource for managing an AWS Audit Manager Framework. */
-  def Framework(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def Framework(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.auditmanager.FrameworkArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.auditmanager.FrameworkArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -131,31 +131,31 @@ object auditmanager:
     export com.pulumi.aws.auditmanager.AuditmanagerFunctions.*
   extension (self: AuditmanagerFunctions.type)
     /** Data source for managing an AWS Audit Manager Control. */
-    def getControl(args: Endofunction[com.pulumi.aws.auditmanager.inputs.GetControlArgs.Builder] = identity):
+    def getControl(args: Endofunction[com.pulumi.aws.auditmanager.inputs.GetControlArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.auditmanager.outputs.GetControlResult] =
       val argsBuilder = com.pulumi.aws.auditmanager.inputs.GetControlArgs.builder
       com.pulumi.aws.auditmanager.AuditmanagerFunctions.getControl(args(argsBuilder).build)
 
     /** Data source for managing an AWS Audit Manager Control. */
-    def getControlPlain(args: Endofunction[com.pulumi.aws.auditmanager.inputs.GetControlPlainArgs.Builder] = identity):
+    def getControlPlain(args: Endofunction[com.pulumi.aws.auditmanager.inputs.GetControlPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.auditmanager.outputs.GetControlResult] =
       val argsBuilder = com.pulumi.aws.auditmanager.inputs.GetControlPlainArgs.builder
       com.pulumi.aws.auditmanager.AuditmanagerFunctions.getControlPlain(args(argsBuilder).build)
 
     /** Data source for managing an AWS Audit Manager Framework. */
-    def getFramework(args: Endofunction[com.pulumi.aws.auditmanager.inputs.GetFrameworkArgs.Builder] = identity):
+    def getFramework(args: Endofunction[com.pulumi.aws.auditmanager.inputs.GetFrameworkArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.auditmanager.outputs.GetFrameworkResult] =
       val argsBuilder = com.pulumi.aws.auditmanager.inputs.GetFrameworkArgs.builder
       com.pulumi.aws.auditmanager.AuditmanagerFunctions.getFramework(args(argsBuilder).build)
 
     /** Data source for managing an AWS Audit Manager Framework. */
-    def getFrameworkPlain(args: Endofunction[com.pulumi.aws.auditmanager.inputs.GetFrameworkPlainArgs.Builder] = identity):
+    def getFrameworkPlain(args: Endofunction[com.pulumi.aws.auditmanager.inputs.GetFrameworkPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.auditmanager.outputs.GetFrameworkResult] =
       val argsBuilder = com.pulumi.aws.auditmanager.inputs.GetFrameworkPlainArgs.builder
       com.pulumi.aws.auditmanager.AuditmanagerFunctions.getFrameworkPlain(args(argsBuilder).build)
 
   /** Resource for managing an AWS Audit Manager Assessment. */
-  def Assessment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def Assessment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.auditmanager.AssessmentArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.auditmanager.AssessmentArgs.builder
     conf.logicalName2pysicalName(name) match

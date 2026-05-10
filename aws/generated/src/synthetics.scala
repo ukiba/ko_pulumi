@@ -10,31 +10,31 @@ object synthetics:
     export com.pulumi.aws.synthetics.SyntheticsFunctions.*
   extension (self: SyntheticsFunctions.type)
     /** Data source for managing an AWS CloudWatch Synthetics Runtime Version. */
-    def getRuntimeVersion(args: Endofunction[com.pulumi.aws.synthetics.inputs.GetRuntimeVersionArgs.Builder] = identity):
+    def getRuntimeVersion(args: Endofunction[com.pulumi.aws.synthetics.inputs.GetRuntimeVersionArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.synthetics.outputs.GetRuntimeVersionResult] =
       val argsBuilder = com.pulumi.aws.synthetics.inputs.GetRuntimeVersionArgs.builder
       com.pulumi.aws.synthetics.SyntheticsFunctions.getRuntimeVersion(args(argsBuilder).build)
 
     /** Data source for managing an AWS CloudWatch Synthetics Runtime Version. */
-    def getRuntimeVersionPlain(args: Endofunction[com.pulumi.aws.synthetics.inputs.GetRuntimeVersionPlainArgs.Builder] = identity):
+    def getRuntimeVersionPlain(args: Endofunction[com.pulumi.aws.synthetics.inputs.GetRuntimeVersionPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.synthetics.outputs.GetRuntimeVersionResult] =
       val argsBuilder = com.pulumi.aws.synthetics.inputs.GetRuntimeVersionPlainArgs.builder
       com.pulumi.aws.synthetics.SyntheticsFunctions.getRuntimeVersionPlain(args(argsBuilder).build)
 
     /** Data source for managing an AWS CloudWatch Synthetics Runtime Versions. */
-    def getRuntimeVersions(args: Endofunction[com.pulumi.aws.synthetics.inputs.GetRuntimeVersionsArgs.Builder] = identity):
+    def getRuntimeVersions(args: Endofunction[com.pulumi.aws.synthetics.inputs.GetRuntimeVersionsArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.synthetics.outputs.GetRuntimeVersionsResult] =
       val argsBuilder = com.pulumi.aws.synthetics.inputs.GetRuntimeVersionsArgs.builder
       com.pulumi.aws.synthetics.SyntheticsFunctions.getRuntimeVersions(args(argsBuilder).build)
 
     /** Data source for managing an AWS CloudWatch Synthetics Runtime Versions. */
-    def getRuntimeVersionsPlain(args: Endofunction[com.pulumi.aws.synthetics.inputs.GetRuntimeVersionsPlainArgs.Builder] = identity):
+    def getRuntimeVersionsPlain(args: Endofunction[com.pulumi.aws.synthetics.inputs.GetRuntimeVersionsPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.synthetics.outputs.GetRuntimeVersionsResult] =
       val argsBuilder = com.pulumi.aws.synthetics.inputs.GetRuntimeVersionsPlainArgs.builder
       com.pulumi.aws.synthetics.SyntheticsFunctions.getRuntimeVersionsPlain(args(argsBuilder).build)
 
   /** Provides a Synthetics Group resource. */
-  def Group(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def Group(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.synthetics.GroupArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.synthetics.GroupArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -52,7 +52,7 @@ object synthetics:
    * 
    *  &gt; **NOTE:** When you create a canary, AWS creates supporting implicit resources. See the Amazon CloudWatch Synthetics documentation on [DeleteCanary](https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_DeleteCanary.html) for a full list. Neither AWS nor this provider deletes these implicit resources automatically when the canary is deleted. Before deleting a canary, ensure you have all the information about the canary that you need to delete the implicit resources using the AWS Console, or AWS CLI.
    */
-  def Canary(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def Canary(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.synthetics.CanaryArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.synthetics.CanaryArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -66,7 +66,7 @@ object synthetics:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Provides a Synthetics Group Association resource. */
-  def GroupAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def GroupAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.synthetics.GroupAssociationArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.synthetics.GroupAssociationArgs.builder
     com.pulumi.aws.synthetics.GroupAssociation(name,

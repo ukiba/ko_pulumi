@@ -19,7 +19,7 @@ object xray:
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
 
   /** Creates and manages an AWS XRay Sampling Rule. */
-  def SamplingRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def SamplingRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.xray.SamplingRuleArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.xray.SamplingRuleArgs.builder
     conf.logicalName2tagName(name) match
@@ -30,7 +30,7 @@ object xray:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Creates and manages an AWS XRay Group. */
-  def Group(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def Group(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.xray.GroupArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.xray.GroupArgs.builder
     conf.logicalName2tagName(name) match
@@ -41,7 +41,7 @@ object xray:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Resource for managing an AWS X-Ray Resource Policy. */
-  def ResourcePolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def ResourcePolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.xray.ResourcePolicyArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.xray.ResourcePolicyArgs.builder
     com.pulumi.aws.xray.ResourcePolicy(name,
@@ -53,7 +53,7 @@ object xray:
    * 
    *  &gt; **NOTE:** Removing this resource from the provider has no effect to the encryption configuration within X-Ray.
    */
-  def EncryptionConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def EncryptionConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.xray.EncryptionConfigArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.xray.EncryptionConfigArgs.builder
     com.pulumi.aws.xray.EncryptionConfig(name,

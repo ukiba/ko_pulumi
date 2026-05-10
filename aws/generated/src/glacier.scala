@@ -27,7 +27,7 @@ object glacier:
    * 
    *  !&gt; **WARNING:** Once a Glacier Vault Lock is completed, it is immutable. The deletion of the Glacier Vault Lock is not be possible and attempting to remove it from this provider will return an error. Set the `ignoreDeletionError` argument to `true` and apply this configuration before attempting to delete this resource via this provider or remove this resource from this provider&#39;s management.
    */
-  def VaultLock(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def VaultLock(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.glacier.VaultLockArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.glacier.VaultLockArgs.builder
     com.pulumi.aws.glacier.VaultLock(name,
@@ -39,7 +39,7 @@ object glacier:
    * 
    *  &gt; **NOTE:** When removing a Glacier Vault, the Vault must be empty.
    */
-  def Vault(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def Vault(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.glacier.VaultArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.glacier.VaultArgs.builder
     conf.logicalName2pysicalName(name) match

@@ -5,7 +5,7 @@ import com.pulumi.resources.CustomResourceOptions
 
 object redshiftserverless:
   /** Resource for managing an AWS Redshift Serverless Custom Domain Association. */
-  def CustomDomainAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def CustomDomainAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.redshiftserverless.CustomDomainAssociationArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.redshiftserverless.CustomDomainAssociationArgs.builder
     com.pulumi.aws.redshiftserverless.CustomDomainAssociation(name,
@@ -13,7 +13,7 @@ object redshiftserverless:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Creates a new Amazon Redshift Serverless Workgroup. */
-  def Workgroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def Workgroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.redshiftserverless.WorkgroupArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.redshiftserverless.WorkgroupArgs.builder
     conf.logicalName2tagName(name) match
@@ -28,7 +28,7 @@ object redshiftserverless:
    * 
    *  &gt; **Note:** Write-Only argument `adminPasswordWo` is available to use in place of `adminPassword`. Write-Only arguments are supported in HashiCorp Terraform 1.11.0 and later. Learn more.
    */
-  def Namespace(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def Namespace(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.redshiftserverless.NamespaceArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.redshiftserverless.NamespaceArgs.builder
     conf.logicalName2tagName(name) match
@@ -39,7 +39,7 @@ object redshiftserverless:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Creates a new Amazon Redshift Serverless Resource Policy. */
-  def ResourcePolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def ResourcePolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.redshiftserverless.ResourcePolicyArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.redshiftserverless.ResourcePolicyArgs.builder
     com.pulumi.aws.redshiftserverless.ResourcePolicy(name,
@@ -47,7 +47,7 @@ object redshiftserverless:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Creates a new Amazon Redshift Serverless Snapshot. */
-  def Snapshot(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def Snapshot(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.redshiftserverless.SnapshotArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.redshiftserverless.SnapshotArgs.builder
     com.pulumi.aws.redshiftserverless.Snapshot(name,
@@ -55,7 +55,7 @@ object redshiftserverless:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Creates a new Amazon Redshift Serverless Endpoint Access. */
-  def EndpointAccess(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def EndpointAccess(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.redshiftserverless.EndpointAccessArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.redshiftserverless.EndpointAccessArgs.builder
     com.pulumi.aws.redshiftserverless.EndpointAccess(name,
@@ -68,37 +68,37 @@ object redshiftserverless:
     export com.pulumi.aws.redshiftserverless.RedshiftserverlessFunctions.*
   extension (self: RedshiftserverlessFunctions.type)
     /** Provides redshift serverless temporary credentials for a workgroup. */
-    def getCredentials(args: Endofunction[com.pulumi.aws.redshiftserverless.inputs.GetCredentialsArgs.Builder] = identity):
+    def getCredentials(args: Endofunction[com.pulumi.aws.redshiftserverless.inputs.GetCredentialsArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.redshiftserverless.outputs.GetCredentialsResult] =
       val argsBuilder = com.pulumi.aws.redshiftserverless.inputs.GetCredentialsArgs.builder
       com.pulumi.aws.redshiftserverless.RedshiftserverlessFunctions.getCredentials(args(argsBuilder).build)
 
     /** Provides redshift serverless temporary credentials for a workgroup. */
-    def getCredentialsPlain(args: Endofunction[com.pulumi.aws.redshiftserverless.inputs.GetCredentialsPlainArgs.Builder] = identity):
+    def getCredentialsPlain(args: Endofunction[com.pulumi.aws.redshiftserverless.inputs.GetCredentialsPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.redshiftserverless.outputs.GetCredentialsResult] =
       val argsBuilder = com.pulumi.aws.redshiftserverless.inputs.GetCredentialsPlainArgs.builder
       com.pulumi.aws.redshiftserverless.RedshiftserverlessFunctions.getCredentialsPlain(args(argsBuilder).build)
 
     /** Data source for managing an AWS Redshift Serverless Namespace. */
-    def getNamespace(args: Endofunction[com.pulumi.aws.redshiftserverless.inputs.GetNamespaceArgs.Builder] = identity):
+    def getNamespace(args: Endofunction[com.pulumi.aws.redshiftserverless.inputs.GetNamespaceArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.redshiftserverless.outputs.GetNamespaceResult] =
       val argsBuilder = com.pulumi.aws.redshiftserverless.inputs.GetNamespaceArgs.builder
       com.pulumi.aws.redshiftserverless.RedshiftserverlessFunctions.getNamespace(args(argsBuilder).build)
 
     /** Data source for managing an AWS Redshift Serverless Namespace. */
-    def getNamespacePlain(args: Endofunction[com.pulumi.aws.redshiftserverless.inputs.GetNamespacePlainArgs.Builder] = identity):
+    def getNamespacePlain(args: Endofunction[com.pulumi.aws.redshiftserverless.inputs.GetNamespacePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.redshiftserverless.outputs.GetNamespaceResult] =
       val argsBuilder = com.pulumi.aws.redshiftserverless.inputs.GetNamespacePlainArgs.builder
       com.pulumi.aws.redshiftserverless.RedshiftserverlessFunctions.getNamespacePlain(args(argsBuilder).build)
 
     /** Data source for managing an AWS Redshift Serverless Workgroup. */
-    def getWorkgroup(args: Endofunction[com.pulumi.aws.redshiftserverless.inputs.GetWorkgroupArgs.Builder] = identity):
+    def getWorkgroup(args: Endofunction[com.pulumi.aws.redshiftserverless.inputs.GetWorkgroupArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.redshiftserverless.outputs.GetWorkgroupResult] =
       val argsBuilder = com.pulumi.aws.redshiftserverless.inputs.GetWorkgroupArgs.builder
       com.pulumi.aws.redshiftserverless.RedshiftserverlessFunctions.getWorkgroup(args(argsBuilder).build)
 
     /** Data source for managing an AWS Redshift Serverless Workgroup. */
-    def getWorkgroupPlain(args: Endofunction[com.pulumi.aws.redshiftserverless.inputs.GetWorkgroupPlainArgs.Builder] = identity):
+    def getWorkgroupPlain(args: Endofunction[com.pulumi.aws.redshiftserverless.inputs.GetWorkgroupPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.redshiftserverless.outputs.GetWorkgroupResult] =
       val argsBuilder = com.pulumi.aws.redshiftserverless.inputs.GetWorkgroupPlainArgs.builder
       com.pulumi.aws.redshiftserverless.RedshiftserverlessFunctions.getWorkgroupPlain(args(argsBuilder).build)
@@ -127,7 +127,7 @@ object redshiftserverless:
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
 
   /** Creates a new Amazon Redshift Serverless Usage Limit. */
-  def UsageLimit(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def UsageLimit(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.redshiftserverless.UsageLimitArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.redshiftserverless.UsageLimitArgs.builder
     com.pulumi.aws.redshiftserverless.UsageLimit(name,

@@ -9,7 +9,7 @@ object mediastore:
    * 
    *  !&gt; **WARNING:** _This resource is deprecated and will be removed in a future version._ AWS has [announced](https://aws.amazon.com/blogs/media/support-for-aws-elemental-mediastore-ending-soon/) the discontinuation of AWS Elemental MediaStore, effective **November 13, 2025**. Users should begin transitioning to alternative solutions as soon as possible. For **simple live streaming workflows**, AWS recommends migrating to **Amazon S3**. For **advanced use cases** that require features such as packaging, DRM, or cross-region redundancy, consider using **AWS Elemental MediaPackage**.
    */
-  def Container(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def Container(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.mediastore.ContainerArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.mediastore.ContainerArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -29,7 +29,7 @@ object mediastore:
    * 
    *  &gt; **NOTE:** We suggest using `jsonencode()` or `aws.iam.getPolicyDocument` when assigning a value to `policy`. They seamlessly translate Terraform language into JSON, enabling you to maintain consistency within your configuration without the need for context switches. Also, you can sidestep potential complications arising from formatting discrepancies, whitespace inconsistencies, and other nuances inherent to JSON.
    */
-  def ContainerPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def ContainerPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.mediastore.ContainerPolicyArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.mediastore.ContainerPolicyArgs.builder
     com.pulumi.aws.mediastore.ContainerPolicy(name,

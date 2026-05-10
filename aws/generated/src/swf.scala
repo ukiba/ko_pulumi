@@ -5,7 +5,7 @@ import com.pulumi.resources.CustomResourceOptions
 
 object swf:
   /** Provides an SWF Domain resource. */
-  def Domain(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def Domain(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.swf.DomainArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.swf.DomainArgs.builder
     conf.logicalName2pysicalName(name) match

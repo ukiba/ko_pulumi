@@ -74,7 +74,7 @@ object cloudformation:
    * 
    *  &gt; **NOTE:** To retain the Stack during Terraform resource destroy, ensure `retainStacks = true` has been successfully applied into the Terraform state first. This must be completed _before_ an apply that would destroy the resource.
    */
-  def StackInstances(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def StackInstances(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.cloudformation.StackInstancesArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.cloudformation.StackInstancesArgs.builder
     com.pulumi.aws.cloudformation.StackInstances(name,
@@ -88,7 +88,7 @@ object cloudformation:
    * 
    *  &gt; **NOTE:** To retain the Stack during resource destroy, ensure `retainStack` has been set to `true` in the state first. This must be completed _before_ a deployment that would destroy the resource.
    */
-  def StackSetInstance(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def StackSetInstance(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.cloudformation.StackSetInstanceArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.cloudformation.StackSetInstanceArgs.builder
     com.pulumi.aws.cloudformation.StackSetInstance(name,
@@ -101,13 +101,13 @@ object cloudformation:
     export com.pulumi.aws.cloudformation.CloudformationFunctions.*
   extension (self: CloudformationFunctions.type)
     /** Provides details about a CloudFormation Type. */
-    def getCloudFormationType(args: Endofunction[com.pulumi.aws.cloudformation.inputs.GetCloudFormationTypeArgs.Builder] = identity):
+    def getCloudFormationType(args: Endofunction[com.pulumi.aws.cloudformation.inputs.GetCloudFormationTypeArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.cloudformation.outputs.GetCloudFormationTypeResult] =
       val argsBuilder = com.pulumi.aws.cloudformation.inputs.GetCloudFormationTypeArgs.builder
       com.pulumi.aws.cloudformation.CloudformationFunctions.getCloudFormationType(args(argsBuilder).build)
 
     /** Provides details about a CloudFormation Type. */
-    def getCloudFormationTypePlain(args: Endofunction[com.pulumi.aws.cloudformation.inputs.GetCloudFormationTypePlainArgs.Builder] = identity):
+    def getCloudFormationTypePlain(args: Endofunction[com.pulumi.aws.cloudformation.inputs.GetCloudFormationTypePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.cloudformation.outputs.GetCloudFormationTypeResult] =
       val argsBuilder = com.pulumi.aws.cloudformation.inputs.GetCloudFormationTypePlainArgs.builder
       com.pulumi.aws.cloudformation.CloudformationFunctions.getCloudFormationTypePlain(args(argsBuilder).build)
@@ -118,7 +118,7 @@ object cloudformation:
      * 
      *   &gt; Note: If you are trying to use a value from a Cloudformation Stack in the same deployment please use normal interpolation or Cloudformation Outputs.
      */
-    def getExport(args: Endofunction[com.pulumi.aws.cloudformation.inputs.GetExportArgs.Builder] = identity):
+    def getExport(args: Endofunction[com.pulumi.aws.cloudformation.inputs.GetExportArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.cloudformation.outputs.GetExportResult] =
       val argsBuilder = com.pulumi.aws.cloudformation.inputs.GetExportArgs.builder
       com.pulumi.aws.cloudformation.CloudformationFunctions.getExport(args(argsBuilder).build)
@@ -129,7 +129,7 @@ object cloudformation:
      * 
      *   &gt; Note: If you are trying to use a value from a Cloudformation Stack in the same deployment please use normal interpolation or Cloudformation Outputs.
      */
-    def getExportPlain(args: Endofunction[com.pulumi.aws.cloudformation.inputs.GetExportPlainArgs.Builder] = identity):
+    def getExportPlain(args: Endofunction[com.pulumi.aws.cloudformation.inputs.GetExportPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.cloudformation.outputs.GetExportResult] =
       val argsBuilder = com.pulumi.aws.cloudformation.inputs.GetExportPlainArgs.builder
       com.pulumi.aws.cloudformation.CloudformationFunctions.getExportPlain(args(argsBuilder).build)
@@ -138,7 +138,7 @@ object cloudformation:
      * The CloudFormation Stack data source allows access to stack
      *  outputs and other useful data including the template body.
      */
-    def getStack(args: Endofunction[com.pulumi.aws.cloudformation.inputs.GetStackArgs.Builder] = identity):
+    def getStack(args: Endofunction[com.pulumi.aws.cloudformation.inputs.GetStackArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.cloudformation.outputs.GetStackResult] =
       val argsBuilder = com.pulumi.aws.cloudformation.inputs.GetStackArgs.builder
       com.pulumi.aws.cloudformation.CloudformationFunctions.getStack(args(argsBuilder).build)
@@ -147,7 +147,7 @@ object cloudformation:
      * The CloudFormation Stack data source allows access to stack
      *  outputs and other useful data including the template body.
      */
-    def getStackPlain(args: Endofunction[com.pulumi.aws.cloudformation.inputs.GetStackPlainArgs.Builder] = identity):
+    def getStackPlain(args: Endofunction[com.pulumi.aws.cloudformation.inputs.GetStackPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.cloudformation.outputs.GetStackResult] =
       val argsBuilder = com.pulumi.aws.cloudformation.inputs.GetStackPlainArgs.builder
       com.pulumi.aws.cloudformation.CloudformationFunctions.getStackPlain(args(argsBuilder).build)
@@ -182,7 +182,7 @@ object cloudformation:
    *  $ pulumi import aws:cloudformation/cloudFormationType:CloudFormationType example arn:aws:cloudformation:us-east-1:123456789012:type/resource/ExampleCompany-ExampleService-ExampleType/1
    *  ```
    */
-  def CloudFormationType(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def CloudFormationType(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.cloudformation.CloudFormationTypeArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.cloudformation.CloudFormationTypeArgs.builder
     com.pulumi.aws.cloudformation.CloudFormationType(name,
@@ -288,7 +288,7 @@ object cloudformation:
       builder.stackInstanceSummaries(args.map(_(argsBuilder).build)*)
 
   /** Provides a CloudFormation Stack resource. */
-  def Stack(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def Stack(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.cloudformation.StackArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.cloudformation.StackArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -310,7 +310,7 @@ object cloudformation:
    * 
    *  &gt; **NOTE:** When using a delegated administrator account, ensure that your IAM User or Role has the `organizations:ListDelegatedAdministrators` permission. Otherwise, you may get an error like `ValidationError: Account used is not a delegated administrator`.
    */
-  def StackSet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def StackSet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.cloudformation.StackSetArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.cloudformation.StackSetArgs.builder
     conf.logicalName2pysicalName(name) match

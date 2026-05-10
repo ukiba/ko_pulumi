@@ -10,13 +10,13 @@ object budgets:
     export com.pulumi.aws.budgets.BudgetsFunctions.*
   extension (self: BudgetsFunctions.type)
     /** Data source for managing an AWS Web Services Budgets Budget. */
-    def getBudget(args: Endofunction[com.pulumi.aws.budgets.inputs.GetBudgetArgs.Builder] = identity):
+    def getBudget(args: Endofunction[com.pulumi.aws.budgets.inputs.GetBudgetArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.budgets.outputs.GetBudgetResult] =
       val argsBuilder = com.pulumi.aws.budgets.inputs.GetBudgetArgs.builder
       com.pulumi.aws.budgets.BudgetsFunctions.getBudget(args(argsBuilder).build)
 
     /** Data source for managing an AWS Web Services Budgets Budget. */
-    def getBudgetPlain(args: Endofunction[com.pulumi.aws.budgets.inputs.GetBudgetPlainArgs.Builder] = identity):
+    def getBudgetPlain(args: Endofunction[com.pulumi.aws.budgets.inputs.GetBudgetPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.budgets.outputs.GetBudgetResult] =
       val argsBuilder = com.pulumi.aws.budgets.inputs.GetBudgetPlainArgs.builder
       com.pulumi.aws.budgets.BudgetsFunctions.getBudgetPlain(args(argsBuilder).build)
@@ -81,7 +81,7 @@ object budgets:
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
 
   /** Provides a budgets budget resource. Budgets use the cost visualization provided by Cost Explorer to show you the status of your budgets, to provide forecasts of your estimated costs, and to track your AWS usage, including your free tier usage. */
-  def Budget(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def Budget(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.budgets.BudgetArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.budgets.BudgetArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -95,7 +95,7 @@ object budgets:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Provides a budget action resource. Budget actions are cost savings controls that run either automatically on your behalf or by using a workflow approval process. */
-  def BudgetAction(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def BudgetAction(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.budgets.BudgetActionArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.budgets.BudgetActionArgs.builder
     conf.logicalName2tagName(name) match

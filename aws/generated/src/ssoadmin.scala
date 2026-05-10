@@ -19,7 +19,7 @@ object ssoadmin:
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
 
   /** Provides a Single Sign-On (SSO) ABAC Resource: https://docs.aws.amazon.com/singlesignon/latest/userguide/abac.html */
-  def InstanceAccessControlAttributes(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def InstanceAccessControlAttributes(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.ssoadmin.InstanceAccessControlAttributesArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.ssoadmin.InstanceAccessControlAttributesArgs.builder
     com.pulumi.aws.ssoadmin.InstanceAccessControlAttributes(name,
@@ -31,7 +31,7 @@ object ssoadmin:
    * 
    *  &gt; **NOTE:** A permission set can have at most one permissions boundary attached; using more than one `aws.ssoadmin.PermissionsBoundaryAttachment` references the same permission set will show a permanent difference.
    */
-  def PermissionsBoundaryAttachment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def PermissionsBoundaryAttachment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.ssoadmin.PermissionsBoundaryAttachmentArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.ssoadmin.PermissionsBoundaryAttachmentArgs.builder
     com.pulumi.aws.ssoadmin.PermissionsBoundaryAttachment(name,
@@ -47,7 +47,7 @@ object ssoadmin:
    * 
    *  &gt; Destruction of this resource means Terraform will no longer manage the customer managed policy attachments, **but will not detach any policies**. The permission set will retain all customer managed policies that were attached at the time of destruction.
    */
-  def CustomerManagedPolicyAttachmentsExclusive(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def CustomerManagedPolicyAttachmentsExclusive(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.ssoadmin.CustomerManagedPolicyAttachmentsExclusiveArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.ssoadmin.CustomerManagedPolicyAttachmentsExclusiveArgs.builder
     com.pulumi.aws.ssoadmin.CustomerManagedPolicyAttachmentsExclusive(name,
@@ -67,7 +67,7 @@ object ssoadmin:
    *  Creation of 3rd party SAML or OAuth 2.0 applications require setup to be done through the associated app service or AWS console.
    *  See this issue for additional context.
    */
-  def Application(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def Application(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.ssoadmin.ApplicationArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.ssoadmin.ApplicationArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -96,85 +96,85 @@ object ssoadmin:
     export com.pulumi.aws.ssoadmin.SsoadminFunctions.*
   extension (self: SsoadminFunctions.type)
     /** Data source for managing an AWS SSO Admin Application. */
-    def getApplication(args: Endofunction[com.pulumi.aws.ssoadmin.inputs.GetApplicationArgs.Builder] = identity):
+    def getApplication(args: Endofunction[com.pulumi.aws.ssoadmin.inputs.GetApplicationArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.ssoadmin.outputs.GetApplicationResult] =
       val argsBuilder = com.pulumi.aws.ssoadmin.inputs.GetApplicationArgs.builder
       com.pulumi.aws.ssoadmin.SsoadminFunctions.getApplication(args(argsBuilder).build)
 
     /** Data source for managing an AWS SSO Admin Application. */
-    def getApplicationPlain(args: Endofunction[com.pulumi.aws.ssoadmin.inputs.GetApplicationPlainArgs.Builder] = identity):
+    def getApplicationPlain(args: Endofunction[com.pulumi.aws.ssoadmin.inputs.GetApplicationPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.ssoadmin.outputs.GetApplicationResult] =
       val argsBuilder = com.pulumi.aws.ssoadmin.inputs.GetApplicationPlainArgs.builder
       com.pulumi.aws.ssoadmin.SsoadminFunctions.getApplicationPlain(args(argsBuilder).build)
 
     /** Data source for managing AWS SSO Admin Application Assignments. */
-    def getApplicationAssignments(args: Endofunction[com.pulumi.aws.ssoadmin.inputs.GetApplicationAssignmentsArgs.Builder] = identity):
+    def getApplicationAssignments(args: Endofunction[com.pulumi.aws.ssoadmin.inputs.GetApplicationAssignmentsArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.ssoadmin.outputs.GetApplicationAssignmentsResult] =
       val argsBuilder = com.pulumi.aws.ssoadmin.inputs.GetApplicationAssignmentsArgs.builder
       com.pulumi.aws.ssoadmin.SsoadminFunctions.getApplicationAssignments(args(argsBuilder).build)
 
     /** Data source for managing AWS SSO Admin Application Assignments. */
-    def getApplicationAssignmentsPlain(args: Endofunction[com.pulumi.aws.ssoadmin.inputs.GetApplicationAssignmentsPlainArgs.Builder] = identity):
+    def getApplicationAssignmentsPlain(args: Endofunction[com.pulumi.aws.ssoadmin.inputs.GetApplicationAssignmentsPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.ssoadmin.outputs.GetApplicationAssignmentsResult] =
       val argsBuilder = com.pulumi.aws.ssoadmin.inputs.GetApplicationAssignmentsPlainArgs.builder
       com.pulumi.aws.ssoadmin.SsoadminFunctions.getApplicationAssignmentsPlain(args(argsBuilder).build)
 
     /** Data source for managing AWS SSO Admin Application Providers. */
-    def getApplicationProviders(args: Endofunction[com.pulumi.aws.ssoadmin.inputs.GetApplicationProvidersArgs.Builder] = identity):
+    def getApplicationProviders(args: Endofunction[com.pulumi.aws.ssoadmin.inputs.GetApplicationProvidersArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.ssoadmin.outputs.GetApplicationProvidersResult] =
       val argsBuilder = com.pulumi.aws.ssoadmin.inputs.GetApplicationProvidersArgs.builder
       com.pulumi.aws.ssoadmin.SsoadminFunctions.getApplicationProviders(args(argsBuilder).build)
 
     /** Data source for managing AWS SSO Admin Application Providers. */
-    def getApplicationProvidersPlain(args: Endofunction[com.pulumi.aws.ssoadmin.inputs.GetApplicationProvidersPlainArgs.Builder] = identity):
+    def getApplicationProvidersPlain(args: Endofunction[com.pulumi.aws.ssoadmin.inputs.GetApplicationProvidersPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.ssoadmin.outputs.GetApplicationProvidersResult] =
       val argsBuilder = com.pulumi.aws.ssoadmin.inputs.GetApplicationProvidersPlainArgs.builder
       com.pulumi.aws.ssoadmin.SsoadminFunctions.getApplicationProvidersPlain(args(argsBuilder).build)
 
     /** Use this data source to get ARNs and Identity Store IDs of Single Sign-On (SSO) Instances. */
-    def getInstances(args: Endofunction[com.pulumi.aws.ssoadmin.inputs.GetInstancesArgs.Builder] = identity):
+    def getInstances(args: Endofunction[com.pulumi.aws.ssoadmin.inputs.GetInstancesArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.ssoadmin.outputs.GetInstancesResult] =
       val argsBuilder = com.pulumi.aws.ssoadmin.inputs.GetInstancesArgs.builder
       com.pulumi.aws.ssoadmin.SsoadminFunctions.getInstances(args(argsBuilder).build)
 
     /** Use this data source to get ARNs and Identity Store IDs of Single Sign-On (SSO) Instances. */
-    def getInstancesPlain(args: Endofunction[com.pulumi.aws.ssoadmin.inputs.GetInstancesPlainArgs.Builder] = identity):
+    def getInstancesPlain(args: Endofunction[com.pulumi.aws.ssoadmin.inputs.GetInstancesPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.ssoadmin.outputs.GetInstancesResult] =
       val argsBuilder = com.pulumi.aws.ssoadmin.inputs.GetInstancesPlainArgs.builder
       com.pulumi.aws.ssoadmin.SsoadminFunctions.getInstancesPlain(args(argsBuilder).build)
 
     /** Use this data source to get a Single Sign-On (SSO) Permission Set. */
-    def getPermissionSet(args: Endofunction[com.pulumi.aws.ssoadmin.inputs.GetPermissionSetArgs.Builder] = identity):
+    def getPermissionSet(args: Endofunction[com.pulumi.aws.ssoadmin.inputs.GetPermissionSetArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.ssoadmin.outputs.GetPermissionSetResult] =
       val argsBuilder = com.pulumi.aws.ssoadmin.inputs.GetPermissionSetArgs.builder
       com.pulumi.aws.ssoadmin.SsoadminFunctions.getPermissionSet(args(argsBuilder).build)
 
     /** Use this data source to get a Single Sign-On (SSO) Permission Set. */
-    def getPermissionSetPlain(args: Endofunction[com.pulumi.aws.ssoadmin.inputs.GetPermissionSetPlainArgs.Builder] = identity):
+    def getPermissionSetPlain(args: Endofunction[com.pulumi.aws.ssoadmin.inputs.GetPermissionSetPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.ssoadmin.outputs.GetPermissionSetResult] =
       val argsBuilder = com.pulumi.aws.ssoadmin.inputs.GetPermissionSetPlainArgs.builder
       com.pulumi.aws.ssoadmin.SsoadminFunctions.getPermissionSetPlain(args(argsBuilder).build)
 
     /** Data source returning the ARN of all AWS SSO Admin Permission Sets. */
-    def getPermissionSets(args: Endofunction[com.pulumi.aws.ssoadmin.inputs.GetPermissionSetsArgs.Builder] = identity):
+    def getPermissionSets(args: Endofunction[com.pulumi.aws.ssoadmin.inputs.GetPermissionSetsArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.ssoadmin.outputs.GetPermissionSetsResult] =
       val argsBuilder = com.pulumi.aws.ssoadmin.inputs.GetPermissionSetsArgs.builder
       com.pulumi.aws.ssoadmin.SsoadminFunctions.getPermissionSets(args(argsBuilder).build)
 
     /** Data source returning the ARN of all AWS SSO Admin Permission Sets. */
-    def getPermissionSetsPlain(args: Endofunction[com.pulumi.aws.ssoadmin.inputs.GetPermissionSetsPlainArgs.Builder] = identity):
+    def getPermissionSetsPlain(args: Endofunction[com.pulumi.aws.ssoadmin.inputs.GetPermissionSetsPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.ssoadmin.outputs.GetPermissionSetsResult] =
       val argsBuilder = com.pulumi.aws.ssoadmin.inputs.GetPermissionSetsPlainArgs.builder
       com.pulumi.aws.ssoadmin.SsoadminFunctions.getPermissionSetsPlain(args(argsBuilder).build)
 
     /** Data source for viewing AWS SSO Admin Principal Application Assignments. */
-    def getPrincipalApplicationAssignments(args: Endofunction[com.pulumi.aws.ssoadmin.inputs.GetPrincipalApplicationAssignmentsArgs.Builder] = identity):
+    def getPrincipalApplicationAssignments(args: Endofunction[com.pulumi.aws.ssoadmin.inputs.GetPrincipalApplicationAssignmentsArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.ssoadmin.outputs.GetPrincipalApplicationAssignmentsResult] =
       val argsBuilder = com.pulumi.aws.ssoadmin.inputs.GetPrincipalApplicationAssignmentsArgs.builder
       com.pulumi.aws.ssoadmin.SsoadminFunctions.getPrincipalApplicationAssignments(args(argsBuilder).build)
 
     /** Data source for viewing AWS SSO Admin Principal Application Assignments. */
-    def getPrincipalApplicationAssignmentsPlain(args: Endofunction[com.pulumi.aws.ssoadmin.inputs.GetPrincipalApplicationAssignmentsPlainArgs.Builder] = identity):
+    def getPrincipalApplicationAssignmentsPlain(args: Endofunction[com.pulumi.aws.ssoadmin.inputs.GetPrincipalApplicationAssignmentsPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.ssoadmin.outputs.GetPrincipalApplicationAssignmentsResult] =
       val argsBuilder = com.pulumi.aws.ssoadmin.inputs.GetPrincipalApplicationAssignmentsPlainArgs.builder
       com.pulumi.aws.ssoadmin.SsoadminFunctions.getPrincipalApplicationAssignmentsPlain(args(argsBuilder).build)
@@ -186,7 +186,7 @@ object ssoadmin:
    * 
    *  &gt; **NOTE:** Creating this resource will automatically [Provision the Permission Set](https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_ProvisionPermissionSet.html) to apply the corresponding updates to all assigned accounts.
    */
-  def CustomerManagedPolicyAttachment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def CustomerManagedPolicyAttachment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.ssoadmin.CustomerManagedPolicyAttachmentArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.ssoadmin.CustomerManagedPolicyAttachmentArgs.builder
     com.pulumi.aws.ssoadmin.CustomerManagedPolicyAttachment(name,
@@ -194,7 +194,7 @@ object ssoadmin:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Resource for managing an AWS SSO Admin Application Assignment. */
-  def ApplicationAssignment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def ApplicationAssignment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.ssoadmin.ApplicationAssignmentArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.ssoadmin.ApplicationAssignmentArgs.builder
     com.pulumi.aws.ssoadmin.ApplicationAssignment(name,
@@ -202,7 +202,7 @@ object ssoadmin:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Resource for managing an AWS SSO Admin Trusted Token Issuer. */
-  def TrustedTokenIssuer(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def TrustedTokenIssuer(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.ssoadmin.TrustedTokenIssuerArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.ssoadmin.TrustedTokenIssuerArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -216,7 +216,7 @@ object ssoadmin:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Resource for managing an AWS SSO Admin Application Access Scope. */
-  def ApplicationAccessScope(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def ApplicationAccessScope(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.ssoadmin.ApplicationAccessScopeArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.ssoadmin.ApplicationAccessScopeArgs.builder
     com.pulumi.aws.ssoadmin.ApplicationAccessScope(name,
@@ -230,7 +230,7 @@ object ssoadmin:
    * 
    *  !&gt; **WARNING:** Do not use this resource together with the `aws.ssoadmin.ManagedPolicyAttachmentsExclusive` resource for the same permission set. Doing so will cause a conflict and will lead to managed policies being removed.
    */
-  def ManagedPolicyAttachment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def ManagedPolicyAttachment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.ssoadmin.ManagedPolicyAttachmentArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.ssoadmin.ManagedPolicyAttachmentArgs.builder
     com.pulumi.aws.ssoadmin.ManagedPolicyAttachment(name,
@@ -255,7 +255,7 @@ object ssoadmin:
    * 
    *  &gt; **NOTE:** We suggest using `jsonencode()` or `aws.iam.getPolicyDocument` when assigning a value to `inlinePolicy`. They seamlessly translate Terraform language into JSON, enabling you to maintain consistency within your configuration without the need for context switches. Also, you can sidestep potential complications arising from formatting discrepancies, whitespace inconsistencies, and other nuances inherent to JSON.
    */
-  def PermissionSetInlinePolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def PermissionSetInlinePolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.ssoadmin.PermissionSetInlinePolicyArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.ssoadmin.PermissionSetInlinePolicyArgs.builder
     com.pulumi.aws.ssoadmin.PermissionSetInlinePolicy(name,
@@ -267,7 +267,7 @@ object ssoadmin:
    * 
    *  &gt; **NOTE:** Updating this resource will automatically [Provision the Permission Set](https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_ProvisionPermissionSet.html) to apply the corresponding updates to all assigned accounts.
    */
-  def PermissionSet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def PermissionSet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.ssoadmin.PermissionSetArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.ssoadmin.PermissionSetArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -288,7 +288,7 @@ object ssoadmin:
    * 
    *  &gt; Deleting this resource will return the assignment configuration for the application to the default AWS behavior (ie. `assignmentRequired = true`).
    */
-  def ApplicationAssignmentConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def ApplicationAssignmentConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.ssoadmin.ApplicationAssignmentConfigurationArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.ssoadmin.ApplicationAssignmentConfigurationArgs.builder
     com.pulumi.aws.ssoadmin.ApplicationAssignmentConfiguration(name,
@@ -296,7 +296,7 @@ object ssoadmin:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Provides a Single Sign-On (SSO) Account Assignment resource */
-  def AccountAssignment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def AccountAssignment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.ssoadmin.AccountAssignmentArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.ssoadmin.AccountAssignmentArgs.builder
     com.pulumi.aws.ssoadmin.AccountAssignment(name,
@@ -322,7 +322,7 @@ object ssoadmin:
    * 
    *  &gt; Destruction of this resource means Terraform will no longer manage the managed policy attachments, **but will not detach any policies**. The permission set will retain all managed policies that were attached at the time of destruction.
    */
-  def ManagedPolicyAttachmentsExclusive(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def ManagedPolicyAttachmentsExclusive(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.ssoadmin.ManagedPolicyAttachmentsExclusiveArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.ssoadmin.ManagedPolicyAttachmentsExclusiveArgs.builder
     com.pulumi.aws.ssoadmin.ManagedPolicyAttachmentsExclusive(name,

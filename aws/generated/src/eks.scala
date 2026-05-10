@@ -5,7 +5,7 @@ import com.pulumi.resources.CustomResourceOptions
 
 object eks:
   /** Manages an EKS Identity Provider Configuration. */
-  def IdentityProviderConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def IdentityProviderConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.eks.IdentityProviderConfigArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.eks.IdentityProviderConfigArgs.builder
     conf.logicalName2tagName(name) match
@@ -16,7 +16,7 @@ object eks:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Access Entry Policy Association for an EKS Cluster. */
-  def AccessPolicyAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def AccessPolicyAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.eks.AccessPolicyAssociationArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.eks.AccessPolicyAssociationArgs.builder
     com.pulumi.aws.eks.AccessPolicyAssociation(name,
@@ -24,7 +24,7 @@ object eks:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Manages an EKS Fargate Profile. */
-  def FargateProfile(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def FargateProfile(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.eks.FargateProfileArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.eks.FargateProfileArgs.builder
     conf.logicalName2tagName(name) match
@@ -72,7 +72,7 @@ object eks:
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
 
   /** Manages an EKS Cluster. */
-  def Cluster(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def Cluster(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.eks.ClusterArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.eks.ClusterArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -202,7 +202,7 @@ object eks:
       builder.accessScope(args(argsBuilder).build)
 
   /** Manages an EKS Capability for an EKS cluster. */
-  def Capability(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def Capability(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.eks.CapabilityArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.eks.CapabilityArgs.builder
     conf.logicalName2tagName(name) match
@@ -282,7 +282,7 @@ object eks:
    * 
    *  Pod Identity is a simpler method than IAM roles for service accounts, as this method doesn\u2019t use OIDC identity providers. Additionally, you can configure a role for Pod Identity once, and reuse it across clusters.
    */
-  def PodIdentityAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def PodIdentityAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.eks.PodIdentityAssociationArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.eks.PodIdentityAssociationArgs.builder
     conf.logicalName2tagName(name) match
@@ -312,7 +312,7 @@ object eks:
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
 
   /** Access Entry Configurations for an EKS Cluster. */
-  def AccessEntry(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def AccessEntry(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.eks.AccessEntryArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.eks.AccessEntryArgs.builder
     conf.logicalName2tagName(name) match
@@ -337,7 +337,7 @@ object eks:
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
 
   /** Manages an EKS add-on. */
-  def Addon(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def Addon(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.eks.AddonArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.eks.AddonArgs.builder
     conf.logicalName2tagName(name) match
@@ -353,49 +353,49 @@ object eks:
     export com.pulumi.aws.eks.EksFunctions.*
   extension (self: EksFunctions.type)
     /** Access Entry Configurations for an EKS Cluster. */
-    def getAccessEntry(args: Endofunction[com.pulumi.aws.eks.inputs.GetAccessEntryArgs.Builder] = identity):
+    def getAccessEntry(args: Endofunction[com.pulumi.aws.eks.inputs.GetAccessEntryArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.eks.outputs.GetAccessEntryResult] =
       val argsBuilder = com.pulumi.aws.eks.inputs.GetAccessEntryArgs.builder
       com.pulumi.aws.eks.EksFunctions.getAccessEntry(args(argsBuilder).build)
 
     /** Access Entry Configurations for an EKS Cluster. */
-    def getAccessEntryPlain(args: Endofunction[com.pulumi.aws.eks.inputs.GetAccessEntryPlainArgs.Builder] = identity):
+    def getAccessEntryPlain(args: Endofunction[com.pulumi.aws.eks.inputs.GetAccessEntryPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.eks.outputs.GetAccessEntryResult] =
       val argsBuilder = com.pulumi.aws.eks.inputs.GetAccessEntryPlainArgs.builder
       com.pulumi.aws.eks.EksFunctions.getAccessEntryPlain(args(argsBuilder).build)
 
     /** Retrieve information about an EKS add-on. */
-    def getAddon(args: Endofunction[com.pulumi.aws.eks.inputs.GetAddonArgs.Builder] = identity):
+    def getAddon(args: Endofunction[com.pulumi.aws.eks.inputs.GetAddonArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.eks.outputs.GetAddonResult] =
       val argsBuilder = com.pulumi.aws.eks.inputs.GetAddonArgs.builder
       com.pulumi.aws.eks.EksFunctions.getAddon(args(argsBuilder).build)
 
     /** Retrieve information about an EKS add-on. */
-    def getAddonPlain(args: Endofunction[com.pulumi.aws.eks.inputs.GetAddonPlainArgs.Builder] = identity):
+    def getAddonPlain(args: Endofunction[com.pulumi.aws.eks.inputs.GetAddonPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.eks.outputs.GetAddonResult] =
       val argsBuilder = com.pulumi.aws.eks.inputs.GetAddonPlainArgs.builder
       com.pulumi.aws.eks.EksFunctions.getAddonPlain(args(argsBuilder).build)
 
     /** Retrieve information about a specific EKS add-on version compatible with an EKS cluster version. */
-    def getAddonVersion(args: Endofunction[com.pulumi.aws.eks.inputs.GetAddonVersionArgs.Builder] = identity):
+    def getAddonVersion(args: Endofunction[com.pulumi.aws.eks.inputs.GetAddonVersionArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.eks.outputs.GetAddonVersionResult] =
       val argsBuilder = com.pulumi.aws.eks.inputs.GetAddonVersionArgs.builder
       com.pulumi.aws.eks.EksFunctions.getAddonVersion(args(argsBuilder).build)
 
     /** Retrieve information about a specific EKS add-on version compatible with an EKS cluster version. */
-    def getAddonVersionPlain(args: Endofunction[com.pulumi.aws.eks.inputs.GetAddonVersionPlainArgs.Builder] = identity):
+    def getAddonVersionPlain(args: Endofunction[com.pulumi.aws.eks.inputs.GetAddonVersionPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.eks.outputs.GetAddonVersionResult] =
       val argsBuilder = com.pulumi.aws.eks.inputs.GetAddonVersionPlainArgs.builder
       com.pulumi.aws.eks.EksFunctions.getAddonVersionPlain(args(argsBuilder).build)
 
     /** Retrieve information about an EKS Cluster. */
-    def getCluster(args: Endofunction[com.pulumi.aws.eks.inputs.GetClusterArgs.Builder] = identity):
+    def getCluster(args: Endofunction[com.pulumi.aws.eks.inputs.GetClusterArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.eks.outputs.GetClusterResult] =
       val argsBuilder = com.pulumi.aws.eks.inputs.GetClusterArgs.builder
       com.pulumi.aws.eks.EksFunctions.getCluster(args(argsBuilder).build)
 
     /** Retrieve information about an EKS Cluster. */
-    def getClusterPlain(args: Endofunction[com.pulumi.aws.eks.inputs.GetClusterPlainArgs.Builder] = identity):
+    def getClusterPlain(args: Endofunction[com.pulumi.aws.eks.inputs.GetClusterPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.eks.outputs.GetClusterResult] =
       val argsBuilder = com.pulumi.aws.eks.inputs.GetClusterPlainArgs.builder
       com.pulumi.aws.eks.EksFunctions.getClusterPlain(args(argsBuilder).build)
@@ -408,7 +408,7 @@ object eks:
      *  This can be used to authenticate to an EKS cluster or to a cluster that has the AWS IAM Authenticator
      *  server configured.
      */
-    def getClusterAuth(args: Endofunction[com.pulumi.aws.eks.inputs.GetClusterAuthArgs.Builder] = identity):
+    def getClusterAuth(args: Endofunction[com.pulumi.aws.eks.inputs.GetClusterAuthArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.eks.outputs.GetClusterAuthResult] =
       val argsBuilder = com.pulumi.aws.eks.inputs.GetClusterAuthArgs.builder
       com.pulumi.aws.eks.EksFunctions.getClusterAuth(args(argsBuilder).build)
@@ -421,61 +421,61 @@ object eks:
      *  This can be used to authenticate to an EKS cluster or to a cluster that has the AWS IAM Authenticator
      *  server configured.
      */
-    def getClusterAuthPlain(args: Endofunction[com.pulumi.aws.eks.inputs.GetClusterAuthPlainArgs.Builder] = identity):
+    def getClusterAuthPlain(args: Endofunction[com.pulumi.aws.eks.inputs.GetClusterAuthPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.eks.outputs.GetClusterAuthResult] =
       val argsBuilder = com.pulumi.aws.eks.inputs.GetClusterAuthPlainArgs.builder
       com.pulumi.aws.eks.EksFunctions.getClusterAuthPlain(args(argsBuilder).build)
 
     /** Data source for managing AWS EKS (Elastic Kubernetes) Cluster Versions. */
-    def getClusterVersions(args: Endofunction[com.pulumi.aws.eks.inputs.GetClusterVersionsArgs.Builder] = identity):
+    def getClusterVersions(args: Endofunction[com.pulumi.aws.eks.inputs.GetClusterVersionsArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.eks.outputs.GetClusterVersionsResult] =
       val argsBuilder = com.pulumi.aws.eks.inputs.GetClusterVersionsArgs.builder
       com.pulumi.aws.eks.EksFunctions.getClusterVersions(args(argsBuilder).build)
 
     /** Data source for managing AWS EKS (Elastic Kubernetes) Cluster Versions. */
-    def getClusterVersionsPlain(args: Endofunction[com.pulumi.aws.eks.inputs.GetClusterVersionsPlainArgs.Builder] = identity):
+    def getClusterVersionsPlain(args: Endofunction[com.pulumi.aws.eks.inputs.GetClusterVersionsPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.eks.outputs.GetClusterVersionsResult] =
       val argsBuilder = com.pulumi.aws.eks.inputs.GetClusterVersionsPlainArgs.builder
       com.pulumi.aws.eks.EksFunctions.getClusterVersionsPlain(args(argsBuilder).build)
 
     /** Retrieve EKS Clusters list */
-    def getClusters(args: Endofunction[com.pulumi.aws.eks.inputs.GetClustersArgs.Builder] = identity):
+    def getClusters(args: Endofunction[com.pulumi.aws.eks.inputs.GetClustersArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.eks.outputs.GetClustersResult] =
       val argsBuilder = com.pulumi.aws.eks.inputs.GetClustersArgs.builder
       com.pulumi.aws.eks.EksFunctions.getClusters(args(argsBuilder).build)
 
     /** Retrieve EKS Clusters list */
-    def getClustersPlain(args: Endofunction[com.pulumi.aws.eks.inputs.GetClustersPlainArgs.Builder] = identity):
+    def getClustersPlain(args: Endofunction[com.pulumi.aws.eks.inputs.GetClustersPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.eks.outputs.GetClustersResult] =
       val argsBuilder = com.pulumi.aws.eks.inputs.GetClustersPlainArgs.builder
       com.pulumi.aws.eks.EksFunctions.getClustersPlain(args(argsBuilder).build)
 
     /** Retrieve information about an EKS Node Group. */
-    def getNodeGroup(args: Endofunction[com.pulumi.aws.eks.inputs.GetNodeGroupArgs.Builder] = identity):
+    def getNodeGroup(args: Endofunction[com.pulumi.aws.eks.inputs.GetNodeGroupArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.eks.outputs.GetNodeGroupResult] =
       val argsBuilder = com.pulumi.aws.eks.inputs.GetNodeGroupArgs.builder
       com.pulumi.aws.eks.EksFunctions.getNodeGroup(args(argsBuilder).build)
 
     /** Retrieve information about an EKS Node Group. */
-    def getNodeGroupPlain(args: Endofunction[com.pulumi.aws.eks.inputs.GetNodeGroupPlainArgs.Builder] = identity):
+    def getNodeGroupPlain(args: Endofunction[com.pulumi.aws.eks.inputs.GetNodeGroupPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.eks.outputs.GetNodeGroupResult] =
       val argsBuilder = com.pulumi.aws.eks.inputs.GetNodeGroupPlainArgs.builder
       com.pulumi.aws.eks.EksFunctions.getNodeGroupPlain(args(argsBuilder).build)
 
     /** Retrieve the EKS Node Groups associated with a named EKS cluster. This will allow you to pass a list of Node Group names to other resources. */
-    def getNodeGroups(args: Endofunction[com.pulumi.aws.eks.inputs.GetNodeGroupsArgs.Builder] = identity):
+    def getNodeGroups(args: Endofunction[com.pulumi.aws.eks.inputs.GetNodeGroupsArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.eks.outputs.GetNodeGroupsResult] =
       val argsBuilder = com.pulumi.aws.eks.inputs.GetNodeGroupsArgs.builder
       com.pulumi.aws.eks.EksFunctions.getNodeGroups(args(argsBuilder).build)
 
     /** Retrieve the EKS Node Groups associated with a named EKS cluster. This will allow you to pass a list of Node Group names to other resources. */
-    def getNodeGroupsPlain(args: Endofunction[com.pulumi.aws.eks.inputs.GetNodeGroupsPlainArgs.Builder] = identity):
+    def getNodeGroupsPlain(args: Endofunction[com.pulumi.aws.eks.inputs.GetNodeGroupsPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.eks.outputs.GetNodeGroupsResult] =
       val argsBuilder = com.pulumi.aws.eks.inputs.GetNodeGroupsPlainArgs.builder
       com.pulumi.aws.eks.EksFunctions.getNodeGroupsPlain(args(argsBuilder).build)
 
   /** Manages an EKS Node Group, which can provision and optionally update an Auto Scaling Group of Kubernetes worker nodes compatible with EKS. Additional documentation about this functionality can be found in the [EKS User Guide](https://docs.aws.amazon.com/eks/latest/userguide/managed-node-groups.html). */
-  def NodeGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def NodeGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.eks.NodeGroupArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.eks.NodeGroupArgs.builder
     conf.logicalName2tagName(name) match

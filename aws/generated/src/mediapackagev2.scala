@@ -5,7 +5,7 @@ import com.pulumi.resources.CustomResourceOptions
 
 object mediapackagev2:
   /** Creates an AWS Elemental MediaPackage Version 2 Channel Group. */
-  def ChannelGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def ChannelGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.mediapackagev2.ChannelGroupArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.mediapackagev2.ChannelGroupArgs.builder
     conf.logicalName2pysicalName(name) match

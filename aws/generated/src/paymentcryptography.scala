@@ -5,7 +5,7 @@ import com.pulumi.resources.CustomResourceOptions
 
 object paymentcryptography:
   /** Resource for managing an AWS Payment Cryptography Control Plane Key Alias. */
-  def KeyAlias(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def KeyAlias(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.paymentcryptography.KeyAliasArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.paymentcryptography.KeyAliasArgs.builder
     com.pulumi.aws.paymentcryptography.KeyAlias(name,
@@ -34,7 +34,7 @@ object paymentcryptography:
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
 
   /** Resource for managing an AWS Payment Cryptography Control Plane Key. */
-  def Key(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def Key(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.paymentcryptography.KeyArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.paymentcryptography.KeyArgs.builder
     conf.logicalName2tagName(name) match

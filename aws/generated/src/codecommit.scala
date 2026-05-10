@@ -5,7 +5,7 @@ import com.pulumi.resources.CustomResourceOptions
 
 object codecommit:
   /** Provides a CodeCommit Approval Rule Template Resource. */
-  def ApprovalRuleTemplate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def ApprovalRuleTemplate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.codecommit.ApprovalRuleTemplateArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.codecommit.ApprovalRuleTemplateArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -16,7 +16,7 @@ object codecommit:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Provides a CodeCommit Repository Resource. */
-  def Repository(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def Repository(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.codecommit.RepositoryArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.codecommit.RepositoryArgs.builder
     conf.logicalName2tagName(name) match
@@ -37,7 +37,7 @@ object codecommit:
       builder.triggers(args.map(_(argsBuilder).build)*)
 
   /** Provides a CodeCommit Trigger Resource. */
-  def Trigger(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def Trigger(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.codecommit.TriggerArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.codecommit.TriggerArgs.builder
     com.pulumi.aws.codecommit.Trigger(name,
@@ -50,31 +50,31 @@ object codecommit:
     export com.pulumi.aws.codecommit.CodecommitFunctions.*
   extension (self: CodecommitFunctions.type)
     /** Provides details about a specific CodeCommit Approval Rule Template. */
-    def getApprovalRuleTemplate(args: Endofunction[com.pulumi.aws.codecommit.inputs.GetApprovalRuleTemplateArgs.Builder] = identity):
+    def getApprovalRuleTemplate(args: Endofunction[com.pulumi.aws.codecommit.inputs.GetApprovalRuleTemplateArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.codecommit.outputs.GetApprovalRuleTemplateResult] =
       val argsBuilder = com.pulumi.aws.codecommit.inputs.GetApprovalRuleTemplateArgs.builder
       com.pulumi.aws.codecommit.CodecommitFunctions.getApprovalRuleTemplate(args(argsBuilder).build)
 
     /** Provides details about a specific CodeCommit Approval Rule Template. */
-    def getApprovalRuleTemplatePlain(args: Endofunction[com.pulumi.aws.codecommit.inputs.GetApprovalRuleTemplatePlainArgs.Builder] = identity):
+    def getApprovalRuleTemplatePlain(args: Endofunction[com.pulumi.aws.codecommit.inputs.GetApprovalRuleTemplatePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.codecommit.outputs.GetApprovalRuleTemplateResult] =
       val argsBuilder = com.pulumi.aws.codecommit.inputs.GetApprovalRuleTemplatePlainArgs.builder
       com.pulumi.aws.codecommit.CodecommitFunctions.getApprovalRuleTemplatePlain(args(argsBuilder).build)
 
     /** The CodeCommit Repository data source allows the ARN, Repository ID, Repository URL for HTTP and Repository URL for SSH to be retrieved for an CodeCommit repository. */
-    def getRepository(args: Endofunction[com.pulumi.aws.codecommit.inputs.GetRepositoryArgs.Builder] = identity):
+    def getRepository(args: Endofunction[com.pulumi.aws.codecommit.inputs.GetRepositoryArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.codecommit.outputs.GetRepositoryResult] =
       val argsBuilder = com.pulumi.aws.codecommit.inputs.GetRepositoryArgs.builder
       com.pulumi.aws.codecommit.CodecommitFunctions.getRepository(args(argsBuilder).build)
 
     /** The CodeCommit Repository data source allows the ARN, Repository ID, Repository URL for HTTP and Repository URL for SSH to be retrieved for an CodeCommit repository. */
-    def getRepositoryPlain(args: Endofunction[com.pulumi.aws.codecommit.inputs.GetRepositoryPlainArgs.Builder] = identity):
+    def getRepositoryPlain(args: Endofunction[com.pulumi.aws.codecommit.inputs.GetRepositoryPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.codecommit.outputs.GetRepositoryResult] =
       val argsBuilder = com.pulumi.aws.codecommit.inputs.GetRepositoryPlainArgs.builder
       com.pulumi.aws.codecommit.CodecommitFunctions.getRepositoryPlain(args(argsBuilder).build)
 
   /** Associates a CodeCommit Approval Rule Template with a Repository. */
-  def ApprovalRuleTemplateAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def ApprovalRuleTemplateAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.codecommit.ApprovalRuleTemplateAssociationArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.codecommit.ApprovalRuleTemplateAssociationArgs.builder
     com.pulumi.aws.codecommit.ApprovalRuleTemplateAssociation(name,

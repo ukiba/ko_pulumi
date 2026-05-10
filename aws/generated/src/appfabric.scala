@@ -34,7 +34,7 @@ object appfabric:
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
 
   /** Resource for managing an AWS AppFabric App Authorization. */
-  def AppAuthorization(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def AppAuthorization(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.appfabric.AppAuthorizationArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.appfabric.AppAuthorizationArgs.builder
     conf.logicalName2tagName(name) match
@@ -45,7 +45,7 @@ object appfabric:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Resource for managing an AWS AppFabric App Authorization Connection. */
-  def AppAuthorizationConnection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def AppAuthorizationConnection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.appfabric.AppAuthorizationConnectionArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.appfabric.AppAuthorizationConnectionArgs.builder
     com.pulumi.aws.appfabric.AppAuthorizationConnection(name,
@@ -81,7 +81,7 @@ object appfabric:
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
 
   /** Resource for managing an AWS AppFabric Ingestion. */
-  def Ingestion(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def Ingestion(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.appfabric.IngestionArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.appfabric.IngestionArgs.builder
     conf.logicalName2tagName(name) match
@@ -107,7 +107,7 @@ object appfabric:
       builder.timeouts(args(argsBuilder).build)
 
   /** Resource for managing an AWS AppFabric Ingestion Destination. */
-  def IngestionDestination(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def IngestionDestination(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.appfabric.IngestionDestinationArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.appfabric.IngestionDestinationArgs.builder
     conf.logicalName2tagName(name) match
@@ -118,7 +118,7 @@ object appfabric:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Resource for managing an AWS AppFabric AppBundle. */
-  def AppBundle(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def AppBundle(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.appfabric.AppBundleArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.appfabric.AppBundleArgs.builder
     conf.logicalName2tagName(name) match

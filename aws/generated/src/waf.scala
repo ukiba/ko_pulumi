@@ -25,7 +25,7 @@ object waf:
       builder.geoMatchConstraints(args.map(_(argsBuilder).build)*)
 
   /** Provides a WAF Rule Group Resource */
-  def RuleGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def RuleGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.waf.RuleGroupArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.waf.RuleGroupArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -67,7 +67,7 @@ object waf:
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
 
   /** Provides a WAF SQL Injection Match Set Resource */
-  def SqlInjectionMatchSet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def SqlInjectionMatchSet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.waf.SqlInjectionMatchSetArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.waf.SqlInjectionMatchSetArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -110,7 +110,7 @@ object waf:
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
 
   /** Provides a WAF Regex Pattern Set Resource */
-  def RegexPatternSet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def RegexPatternSet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.waf.RegexPatternSetArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.waf.RegexPatternSetArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -121,7 +121,7 @@ object waf:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Provides a WAF Web ACL Resource */
-  def WebAcl(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def WebAcl(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.waf.WebAclArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.waf.WebAclArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -179,7 +179,7 @@ object waf:
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
 
   /** Use the `aws.waf.SizeConstraintSet` resource to manage WAF size constraint sets. */
-  def SizeConstraintSet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def SizeConstraintSet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.waf.SizeConstraintSetArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.waf.SizeConstraintSetArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -190,7 +190,7 @@ object waf:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Provides a WAF Geo Match Set Resource */
-  def GeoMatchSet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def GeoMatchSet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.waf.GeoMatchSetArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.waf.GeoMatchSetArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -218,67 +218,67 @@ object waf:
     export com.pulumi.aws.waf.WafFunctions.*
   extension (self: WafFunctions.type)
     /** `aws.waf.IpSet` Retrieves a WAF IP Set Resource Id. */
-    def getIpset(args: Endofunction[com.pulumi.aws.waf.inputs.GetIpsetArgs.Builder] = identity):
+    def getIpset(args: Endofunction[com.pulumi.aws.waf.inputs.GetIpsetArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.waf.outputs.GetIpsetResult] =
       val argsBuilder = com.pulumi.aws.waf.inputs.GetIpsetArgs.builder
       com.pulumi.aws.waf.WafFunctions.getIpset(args(argsBuilder).build)
 
     /** `aws.waf.IpSet` Retrieves a WAF IP Set Resource Id. */
-    def getIpsetPlain(args: Endofunction[com.pulumi.aws.waf.inputs.GetIpsetPlainArgs.Builder] = identity):
+    def getIpsetPlain(args: Endofunction[com.pulumi.aws.waf.inputs.GetIpsetPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.waf.outputs.GetIpsetResult] =
       val argsBuilder = com.pulumi.aws.waf.inputs.GetIpsetPlainArgs.builder
       com.pulumi.aws.waf.WafFunctions.getIpsetPlain(args(argsBuilder).build)
 
     /** `aws.waf.RateBasedRule` Retrieves a WAF Rate Based Rule Resource Id. */
-    def getRateBasedRule(args: Endofunction[com.pulumi.aws.waf.inputs.GetRateBasedRuleArgs.Builder] = identity):
+    def getRateBasedRule(args: Endofunction[com.pulumi.aws.waf.inputs.GetRateBasedRuleArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.waf.outputs.GetRateBasedRuleResult] =
       val argsBuilder = com.pulumi.aws.waf.inputs.GetRateBasedRuleArgs.builder
       com.pulumi.aws.waf.WafFunctions.getRateBasedRule(args(argsBuilder).build)
 
     /** `aws.waf.RateBasedRule` Retrieves a WAF Rate Based Rule Resource Id. */
-    def getRateBasedRulePlain(args: Endofunction[com.pulumi.aws.waf.inputs.GetRateBasedRulePlainArgs.Builder] = identity):
+    def getRateBasedRulePlain(args: Endofunction[com.pulumi.aws.waf.inputs.GetRateBasedRulePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.waf.outputs.GetRateBasedRuleResult] =
       val argsBuilder = com.pulumi.aws.waf.inputs.GetRateBasedRulePlainArgs.builder
       com.pulumi.aws.waf.WafFunctions.getRateBasedRulePlain(args(argsBuilder).build)
 
     /** `aws.waf.Rule` Retrieves a WAF Rule Resource Id. */
-    def getRule(args: Endofunction[com.pulumi.aws.waf.inputs.GetRuleArgs.Builder] = identity):
+    def getRule(args: Endofunction[com.pulumi.aws.waf.inputs.GetRuleArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.waf.outputs.GetRuleResult] =
       val argsBuilder = com.pulumi.aws.waf.inputs.GetRuleArgs.builder
       com.pulumi.aws.waf.WafFunctions.getRule(args(argsBuilder).build)
 
     /** `aws.waf.Rule` Retrieves a WAF Rule Resource Id. */
-    def getRulePlain(args: Endofunction[com.pulumi.aws.waf.inputs.GetRulePlainArgs.Builder] = identity):
+    def getRulePlain(args: Endofunction[com.pulumi.aws.waf.inputs.GetRulePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.waf.outputs.GetRuleResult] =
       val argsBuilder = com.pulumi.aws.waf.inputs.GetRulePlainArgs.builder
       com.pulumi.aws.waf.WafFunctions.getRulePlain(args(argsBuilder).build)
 
     /** `aws.waf.getSubscribedRuleGroup` retrieves information about a Managed WAF Rule Group from AWS Marketplace (needs to be subscribed to first). */
-    def getSubscribedRuleGroup(args: Endofunction[com.pulumi.aws.waf.inputs.GetSubscribedRuleGroupArgs.Builder] = identity):
+    def getSubscribedRuleGroup(args: Endofunction[com.pulumi.aws.waf.inputs.GetSubscribedRuleGroupArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.waf.outputs.GetSubscribedRuleGroupResult] =
       val argsBuilder = com.pulumi.aws.waf.inputs.GetSubscribedRuleGroupArgs.builder
       com.pulumi.aws.waf.WafFunctions.getSubscribedRuleGroup(args(argsBuilder).build)
 
     /** `aws.waf.getSubscribedRuleGroup` retrieves information about a Managed WAF Rule Group from AWS Marketplace (needs to be subscribed to first). */
-    def getSubscribedRuleGroupPlain(args: Endofunction[com.pulumi.aws.waf.inputs.GetSubscribedRuleGroupPlainArgs.Builder] = identity):
+    def getSubscribedRuleGroupPlain(args: Endofunction[com.pulumi.aws.waf.inputs.GetSubscribedRuleGroupPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.waf.outputs.GetSubscribedRuleGroupResult] =
       val argsBuilder = com.pulumi.aws.waf.inputs.GetSubscribedRuleGroupPlainArgs.builder
       com.pulumi.aws.waf.WafFunctions.getSubscribedRuleGroupPlain(args(argsBuilder).build)
 
     /** `aws.waf.WebAcl` Retrieves a WAF Web ACL Resource Id. */
-    def getWebAcl(args: Endofunction[com.pulumi.aws.waf.inputs.GetWebAclArgs.Builder] = identity):
+    def getWebAcl(args: Endofunction[com.pulumi.aws.waf.inputs.GetWebAclArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.waf.outputs.GetWebAclResult] =
       val argsBuilder = com.pulumi.aws.waf.inputs.GetWebAclArgs.builder
       com.pulumi.aws.waf.WafFunctions.getWebAcl(args(argsBuilder).build)
 
     /** `aws.waf.WebAcl` Retrieves a WAF Web ACL Resource Id. */
-    def getWebAclPlain(args: Endofunction[com.pulumi.aws.waf.inputs.GetWebAclPlainArgs.Builder] = identity):
+    def getWebAclPlain(args: Endofunction[com.pulumi.aws.waf.inputs.GetWebAclPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.waf.outputs.GetWebAclResult] =
       val argsBuilder = com.pulumi.aws.waf.inputs.GetWebAclPlainArgs.builder
       com.pulumi.aws.waf.WafFunctions.getWebAclPlain(args(argsBuilder).build)
 
   /** Provides a WAF Rate Based Rule Resource */
-  def RateBasedRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def RateBasedRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.waf.RateBasedRuleArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.waf.RateBasedRuleArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -302,7 +302,7 @@ object waf:
       builder.sizeConstraints(args.map(_(argsBuilder).build)*)
 
   /** Provides a WAF IPSet Resource */
-  def IpSet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def IpSet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.waf.IpSetArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.waf.IpSetArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -313,7 +313,7 @@ object waf:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Provides a WAF Regex Match Set Resource */
-  def RegexMatchSet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def RegexMatchSet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.waf.RegexMatchSetArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.waf.RegexMatchSetArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -324,7 +324,7 @@ object waf:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Provides a WAF Rule Resource */
-  def Rule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def Rule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.waf.RuleArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.waf.RuleArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -338,7 +338,7 @@ object waf:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Provides a WAF Byte Match Set Resource */
-  def ByteMatchSet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def ByteMatchSet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.waf.ByteMatchSetArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.waf.ByteMatchSetArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -349,7 +349,7 @@ object waf:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Provides a WAF XSS Match Set Resource */
-  def XssMatchSet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def XssMatchSet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.waf.XssMatchSetArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.waf.XssMatchSetArgs.builder
     conf.logicalName2pysicalName(name) match

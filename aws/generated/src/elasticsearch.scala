@@ -5,7 +5,7 @@ import com.pulumi.resources.CustomResourceOptions
 
 object elasticsearch:
   /** Manages an [AWS Elasticsearch VPC Endpoint](https://docs.aws.amazon.com/elasticsearch-service/latest/APIReference/API_CreateVpcEndpoint.html). Creates an Amazon elasticsearch Service-managed VPC endpoint. */
-  def VpcEndpoint(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def VpcEndpoint(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.elasticsearch.VpcEndpointArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.elasticsearch.VpcEndpointArgs.builder
     com.pulumi.aws.elasticsearch.VpcEndpoint(name,
@@ -136,7 +136,7 @@ object elasticsearch:
       builder.accessPolicies(args(argsBuilder).build)
 
   /** Allows setting policy to an Elasticsearch domain while referencing domain attributes (e.g., ARN) */
-  def DomainPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def DomainPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.elasticsearch.DomainPolicyArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.elasticsearch.DomainPolicyArgs.builder
     com.pulumi.aws.elasticsearch.DomainPolicy(name,
@@ -164,7 +164,7 @@ object elasticsearch:
       builder.vpcOptions(args(argsBuilder).build)
 
   /** Manages SAML authentication options for an AWS Elasticsearch Domain. */
-  def DomainSamlOptions(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def DomainSamlOptions(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.elasticsearch.DomainSamlOptionsArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.elasticsearch.DomainSamlOptionsArgs.builder
     com.pulumi.aws.elasticsearch.DomainSamlOptions(name,
@@ -177,13 +177,13 @@ object elasticsearch:
     export com.pulumi.aws.elasticsearch.ElasticsearchFunctions.*
   extension (self: ElasticsearchFunctions.type)
     /** Use this data source to get information about an Elasticsearch Domain */
-    def getDomain(args: Endofunction[com.pulumi.aws.elasticsearch.inputs.GetDomainArgs.Builder] = identity):
+    def getDomain(args: Endofunction[com.pulumi.aws.elasticsearch.inputs.GetDomainArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.elasticsearch.outputs.GetDomainResult] =
       val argsBuilder = com.pulumi.aws.elasticsearch.inputs.GetDomainArgs.builder
       com.pulumi.aws.elasticsearch.ElasticsearchFunctions.getDomain(args(argsBuilder).build)
 
     /** Use this data source to get information about an Elasticsearch Domain */
-    def getDomainPlain(args: Endofunction[com.pulumi.aws.elasticsearch.inputs.GetDomainPlainArgs.Builder] = identity):
+    def getDomainPlain(args: Endofunction[com.pulumi.aws.elasticsearch.inputs.GetDomainPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.elasticsearch.outputs.GetDomainResult] =
       val argsBuilder = com.pulumi.aws.elasticsearch.inputs.GetDomainPlainArgs.builder
       com.pulumi.aws.elasticsearch.ElasticsearchFunctions.getDomainPlain(args(argsBuilder).build)
@@ -397,7 +397,7 @@ object elasticsearch:
       builder.Statement(args.map(_(argsBuilder).build)*)
 
   /** Manages an AWS Elasticsearch Domain. */
-  def Domain(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def Domain(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.elasticsearch.DomainArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.elasticsearch.DomainArgs.builder
     conf.logicalName2tagName(name) match

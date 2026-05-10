@@ -5,7 +5,7 @@ import com.pulumi.resources.CustomResourceOptions
 
 object redshift:
   /** Resource for managing an AWS Redshift Snapshot Copy. */
-  def SnapshotCopy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def SnapshotCopy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.redshift.SnapshotCopyArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.redshift.SnapshotCopyArgs.builder
     com.pulumi.aws.redshift.SnapshotCopy(name,
@@ -13,7 +13,7 @@ object redshift:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Provides a Redshift event subscription resource. */
-  def EventSubscription(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def EventSubscription(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.redshift.EventSubscriptionArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.redshift.EventSubscriptionArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -27,7 +27,7 @@ object redshift:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Creates a new Amazon Redshift IDC application. */
-  def IdcApplication(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def IdcApplication(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.redshift.IdcApplicationArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.redshift.IdcApplicationArgs.builder
     conf.logicalName2tagName(name) match
@@ -38,7 +38,7 @@ object redshift:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Resource for managing a DynamoDB zero-ETL integration or S3 event integration with Amazon Redshift. You can refer to the [User Guide](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/RedshiftforDynamoDB-zero-etl.html) for a DynamoDB zero-ETL integration or the [User Guide](https://docs.aws.amazon.com/redshift/latest/dg/loading-data-copy-job.html) for a S3 event integration. */
-  def Integration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def Integration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.redshift.IntegrationArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.redshift.IntegrationArgs.builder
     conf.logicalName2tagName(name) match
@@ -49,7 +49,7 @@ object redshift:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Creates a new Amazon Redshift endpoint authorization. */
-  def EndpointAuthorization(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def EndpointAuthorization(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.redshift.EndpointAuthorizationArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.redshift.EndpointAuthorizationArgs.builder
     com.pulumi.aws.redshift.EndpointAuthorization(name,
@@ -57,7 +57,7 @@ object redshift:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Provides a Redshift Cluster parameter group resource. */
-  def ParameterGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def ParameterGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.redshift.ParameterGroupArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.redshift.ParameterGroupArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -71,7 +71,7 @@ object redshift:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Creates an HSM client certificate that an Amazon Redshift cluster will use to connect to the client&#39;s HSM in order to store and retrieve the keys used to encrypt the cluster databases. */
-  def HsmClientCertificate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def HsmClientCertificate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.redshift.HsmClientCertificateArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.redshift.HsmClientCertificateArgs.builder
     conf.logicalName2tagName(name) match
@@ -82,7 +82,7 @@ object redshift:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Creates a new Amazon Redshift subnet group. You must provide a list of one or more subnets in your existing Amazon Virtual Private Cloud (Amazon VPC) when creating Amazon Redshift subnet group. */
-  def SubnetGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def SubnetGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.redshift.SubnetGroupArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.redshift.SubnetGroupArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -102,7 +102,7 @@ object redshift:
    * 
    *  &gt; **Note:** Write-Only argument `masterPasswordWo` is available to use in place of `masterPassword`. Write-Only arguments are supported in HashiCorp Terraform 1.11.0 and later. Learn more.
    */
-  def Cluster(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def Cluster(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.redshift.ClusterArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.redshift.ClusterArgs.builder
     conf.logicalName2tagName(name) match
@@ -118,79 +118,79 @@ object redshift:
     export com.pulumi.aws.redshift.RedshiftFunctions.*
   extension (self: RedshiftFunctions.type)
     /** Provides details about a specific redshift cluster. */
-    def getCluster(args: Endofunction[com.pulumi.aws.redshift.inputs.GetClusterArgs.Builder] = identity):
+    def getCluster(args: Endofunction[com.pulumi.aws.redshift.inputs.GetClusterArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.redshift.outputs.GetClusterResult] =
       val argsBuilder = com.pulumi.aws.redshift.inputs.GetClusterArgs.builder
       com.pulumi.aws.redshift.RedshiftFunctions.getCluster(args(argsBuilder).build)
 
     /** Provides details about a specific redshift cluster. */
-    def getClusterPlain(args: Endofunction[com.pulumi.aws.redshift.inputs.GetClusterPlainArgs.Builder] = identity):
+    def getClusterPlain(args: Endofunction[com.pulumi.aws.redshift.inputs.GetClusterPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.redshift.outputs.GetClusterResult] =
       val argsBuilder = com.pulumi.aws.redshift.inputs.GetClusterPlainArgs.builder
       com.pulumi.aws.redshift.RedshiftFunctions.getClusterPlain(args(argsBuilder).build)
 
     /** Provides redshift cluster temporary credentials. */
-    def getClusterCredentials(args: Endofunction[com.pulumi.aws.redshift.inputs.GetClusterCredentialsArgs.Builder] = identity):
+    def getClusterCredentials(args: Endofunction[com.pulumi.aws.redshift.inputs.GetClusterCredentialsArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.redshift.outputs.GetClusterCredentialsResult] =
       val argsBuilder = com.pulumi.aws.redshift.inputs.GetClusterCredentialsArgs.builder
       com.pulumi.aws.redshift.RedshiftFunctions.getClusterCredentials(args(argsBuilder).build)
 
     /** Provides redshift cluster temporary credentials. */
-    def getClusterCredentialsPlain(args: Endofunction[com.pulumi.aws.redshift.inputs.GetClusterCredentialsPlainArgs.Builder] = identity):
+    def getClusterCredentialsPlain(args: Endofunction[com.pulumi.aws.redshift.inputs.GetClusterCredentialsPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.redshift.outputs.GetClusterCredentialsResult] =
       val argsBuilder = com.pulumi.aws.redshift.inputs.GetClusterCredentialsPlainArgs.builder
       com.pulumi.aws.redshift.RedshiftFunctions.getClusterCredentialsPlain(args(argsBuilder).build)
 
     /** Data source for managing AWS Redshift Data Shares. */
-    def getDataShares(args: Endofunction[com.pulumi.aws.redshift.inputs.GetDataSharesArgs.Builder] = identity):
+    def getDataShares(args: Endofunction[com.pulumi.aws.redshift.inputs.GetDataSharesArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.redshift.outputs.GetDataSharesResult] =
       val argsBuilder = com.pulumi.aws.redshift.inputs.GetDataSharesArgs.builder
       com.pulumi.aws.redshift.RedshiftFunctions.getDataShares(args(argsBuilder).build)
 
     /** Data source for managing AWS Redshift Data Shares. */
-    def getDataSharesPlain(args: Endofunction[com.pulumi.aws.redshift.inputs.GetDataSharesPlainArgs.Builder] = identity):
+    def getDataSharesPlain(args: Endofunction[com.pulumi.aws.redshift.inputs.GetDataSharesPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.redshift.outputs.GetDataSharesResult] =
       val argsBuilder = com.pulumi.aws.redshift.inputs.GetDataSharesPlainArgs.builder
       com.pulumi.aws.redshift.RedshiftFunctions.getDataSharesPlain(args(argsBuilder).build)
 
     /** Information about Redshift Orderable Clusters and valid parameter combinations. */
-    def getOrderableCluster(args: Endofunction[com.pulumi.aws.redshift.inputs.GetOrderableClusterArgs.Builder] = identity):
+    def getOrderableCluster(args: Endofunction[com.pulumi.aws.redshift.inputs.GetOrderableClusterArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.redshift.outputs.GetOrderableClusterResult] =
       val argsBuilder = com.pulumi.aws.redshift.inputs.GetOrderableClusterArgs.builder
       com.pulumi.aws.redshift.RedshiftFunctions.getOrderableCluster(args(argsBuilder).build)
 
     /** Information about Redshift Orderable Clusters and valid parameter combinations. */
-    def getOrderableClusterPlain(args: Endofunction[com.pulumi.aws.redshift.inputs.GetOrderableClusterPlainArgs.Builder] = identity):
+    def getOrderableClusterPlain(args: Endofunction[com.pulumi.aws.redshift.inputs.GetOrderableClusterPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.redshift.outputs.GetOrderableClusterResult] =
       val argsBuilder = com.pulumi.aws.redshift.inputs.GetOrderableClusterPlainArgs.builder
       com.pulumi.aws.redshift.RedshiftFunctions.getOrderableClusterPlain(args(argsBuilder).build)
 
     /** Data source for managing AWS Redshift Producer Data Shares. */
-    def getProducerDataShares(args: Endofunction[com.pulumi.aws.redshift.inputs.GetProducerDataSharesArgs.Builder] = identity):
+    def getProducerDataShares(args: Endofunction[com.pulumi.aws.redshift.inputs.GetProducerDataSharesArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.redshift.outputs.GetProducerDataSharesResult] =
       val argsBuilder = com.pulumi.aws.redshift.inputs.GetProducerDataSharesArgs.builder
       com.pulumi.aws.redshift.RedshiftFunctions.getProducerDataShares(args(argsBuilder).build)
 
     /** Data source for managing AWS Redshift Producer Data Shares. */
-    def getProducerDataSharesPlain(args: Endofunction[com.pulumi.aws.redshift.inputs.GetProducerDataSharesPlainArgs.Builder] = identity):
+    def getProducerDataSharesPlain(args: Endofunction[com.pulumi.aws.redshift.inputs.GetProducerDataSharesPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.redshift.outputs.GetProducerDataSharesResult] =
       val argsBuilder = com.pulumi.aws.redshift.inputs.GetProducerDataSharesPlainArgs.builder
       com.pulumi.aws.redshift.RedshiftFunctions.getProducerDataSharesPlain(args(argsBuilder).build)
 
     /** Provides details about a specific redshift subnet group. */
-    def getSubnetGroup(args: Endofunction[com.pulumi.aws.redshift.inputs.GetSubnetGroupArgs.Builder] = identity):
+    def getSubnetGroup(args: Endofunction[com.pulumi.aws.redshift.inputs.GetSubnetGroupArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.redshift.outputs.GetSubnetGroupResult] =
       val argsBuilder = com.pulumi.aws.redshift.inputs.GetSubnetGroupArgs.builder
       com.pulumi.aws.redshift.RedshiftFunctions.getSubnetGroup(args(argsBuilder).build)
 
     /** Provides details about a specific redshift subnet group. */
-    def getSubnetGroupPlain(args: Endofunction[com.pulumi.aws.redshift.inputs.GetSubnetGroupPlainArgs.Builder] = identity):
+    def getSubnetGroupPlain(args: Endofunction[com.pulumi.aws.redshift.inputs.GetSubnetGroupPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.redshift.outputs.GetSubnetGroupResult] =
       val argsBuilder = com.pulumi.aws.redshift.inputs.GetSubnetGroupPlainArgs.builder
       com.pulumi.aws.redshift.RedshiftFunctions.getSubnetGroupPlain(args(argsBuilder).build)
 
   /** Creates a new Amazon Redshift Resource Policy. */
-  def ResourcePolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def ResourcePolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.redshift.ResourcePolicyArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.redshift.ResourcePolicyArgs.builder
     com.pulumi.aws.redshift.ResourcePolicy(name,
@@ -198,7 +198,7 @@ object redshift:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Creates a Redshift authentication profile */
-  def AuthenticationProfile(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def AuthenticationProfile(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.redshift.AuthenticationProfileArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.redshift.AuthenticationProfileArgs.builder
     com.pulumi.aws.redshift.AuthenticationProfile(name,
@@ -222,7 +222,7 @@ object redshift:
   /**
    * 
    */
-  def ScheduledAction(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def ScheduledAction(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.redshift.ScheduledActionArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.redshift.ScheduledActionArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -247,7 +247,7 @@ object redshift:
    * 
    *  &gt; **NOTE:** This resource has limited drift detection capabilities. AWS does not provide a reliable API to verify registration status after creation. The resource verifies that the underlying cluster or namespace exists and that an internal data share was created, but cannot detect if the registration was removed outside of Terraform.
    */
-  def NamespaceRegistration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def NamespaceRegistration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.redshift.NamespaceRegistrationArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.redshift.NamespaceRegistrationArgs.builder
     com.pulumi.aws.redshift.NamespaceRegistration(name,
@@ -257,7 +257,7 @@ object redshift:
   /**
    * 
    */
-  def SnapshotScheduleAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def SnapshotScheduleAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.redshift.SnapshotScheduleAssociationArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.redshift.SnapshotScheduleAssociationArgs.builder
     com.pulumi.aws.redshift.SnapshotScheduleAssociation(name,
@@ -265,7 +265,7 @@ object redshift:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Resource for managing an AWS Redshift Data Share Authorization. */
-  def DataShareAuthorization(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def DataShareAuthorization(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.redshift.DataShareAuthorizationArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.redshift.DataShareAuthorizationArgs.builder
     com.pulumi.aws.redshift.DataShareAuthorization(name,
@@ -273,7 +273,7 @@ object redshift:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Resource for managing an AWS Redshift Data Share Consumer Association. */
-  def DataShareConsumerAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def DataShareConsumerAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.redshift.DataShareConsumerAssociationArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.redshift.DataShareConsumerAssociationArgs.builder
     com.pulumi.aws.redshift.DataShareConsumerAssociation(name,
@@ -281,7 +281,7 @@ object redshift:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Creates a new Amazon Redshift Partner Integration. */
-  def Partner(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def Partner(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.redshift.PartnerArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.redshift.PartnerArgs.builder
     com.pulumi.aws.redshift.Partner(name,
@@ -293,7 +293,7 @@ object redshift:
    * 
    *  &gt; **NOTE:** A Redshift cluster&#39;s default IAM role can be managed both by this resource&#39;s `defaultIamRoleArn` argument and the `aws.redshift.Cluster` resource&#39;s `defaultIamRoleArn` argument. Do not configure different values for both arguments. Doing so will cause a conflict of default IAM roles.
    */
-  def ClusterIamRoles(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def ClusterIamRoles(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.redshift.ClusterIamRolesArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.redshift.ClusterIamRolesArgs.builder
     com.pulumi.aws.redshift.ClusterIamRoles(name,
@@ -303,7 +303,7 @@ object redshift:
   /**
    * 
    */
-  def SnapshotSchedule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def SnapshotSchedule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.redshift.SnapshotScheduleArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.redshift.SnapshotScheduleArgs.builder
     conf.logicalName2tagName(name) match
@@ -347,7 +347,7 @@ object redshift:
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
 
   /** Creates a new Amazon Redshift endpoint access. */
-  def EndpointAccess(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def EndpointAccess(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.redshift.EndpointAccessArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.redshift.EndpointAccessArgs.builder
     com.pulumi.aws.redshift.EndpointAccess(name,
@@ -355,7 +355,7 @@ object redshift:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Creates an HSM configuration that contains the information required by an Amazon Redshift cluster to store and use database encryption keys in a Hardware Security Module (HSM). */
-  def HsmConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def HsmConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.redshift.HsmConfigurationArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.redshift.HsmConfigurationArgs.builder
     conf.logicalName2tagName(name) match
@@ -366,7 +366,7 @@ object redshift:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Creates a new Amazon Redshift Usage Limit. */
-  def UsageLimit(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def UsageLimit(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.redshift.UsageLimitArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.redshift.UsageLimitArgs.builder
     conf.logicalName2tagName(name) match
@@ -377,7 +377,7 @@ object redshift:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Resource for managing an AWS Redshift Logging configuration. */
-  def Logging(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def Logging(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.redshift.LoggingArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.redshift.LoggingArgs.builder
     com.pulumi.aws.redshift.Logging(name,
@@ -385,7 +385,7 @@ object redshift:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Creates a Redshift cluster snapshot */
-  def ClusterSnapshot(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def ClusterSnapshot(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.redshift.ClusterSnapshotArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.redshift.ClusterSnapshotArgs.builder
     conf.logicalName2tagName(name) match
@@ -577,7 +577,7 @@ object redshift:
    * 
    *  Note that the grant must exist in the destination region, and not in the region of the cluster.
    */
-  def SnapshotCopyGrant(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def SnapshotCopyGrant(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.redshift.SnapshotCopyGrantArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.redshift.SnapshotCopyGrantArgs.builder
     conf.logicalName2tagName(name) match

@@ -23,7 +23,7 @@ object ecrpublic:
    * 
    *  &gt; **NOTE:** This resource can only be used in the `us-east-1` region.
    */
-  def Repository(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def Repository(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.ecrpublic.RepositoryArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.ecrpublic.RepositoryArgs.builder
     conf.logicalName2tagName(name) match
@@ -40,7 +40,7 @@ object ecrpublic:
    * 
    *  &gt; **NOTE:** This resource can only be used in the `us-east-1` region.
    */
-  def RepositoryPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def RepositoryPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.ecrpublic.RepositoryPolicyArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.ecrpublic.RepositoryPolicyArgs.builder
     com.pulumi.aws.ecrpublic.RepositoryPolicy(name,
@@ -57,7 +57,7 @@ object ecrpublic:
      * 
      *  &gt; **NOTE:** This data source can only be used in the `us-east-1` region.
      */
-    def getAuthorizationToken(args: Endofunction[com.pulumi.aws.ecrpublic.inputs.GetAuthorizationTokenArgs.Builder] = identity):
+    def getAuthorizationToken(args: Endofunction[com.pulumi.aws.ecrpublic.inputs.GetAuthorizationTokenArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.ecrpublic.outputs.GetAuthorizationTokenResult] =
       val argsBuilder = com.pulumi.aws.ecrpublic.inputs.GetAuthorizationTokenArgs.builder
       com.pulumi.aws.ecrpublic.EcrpublicFunctions.getAuthorizationToken(args(argsBuilder).build)
@@ -67,19 +67,19 @@ object ecrpublic:
      * 
      *  &gt; **NOTE:** This data source can only be used in the `us-east-1` region.
      */
-    def getAuthorizationTokenPlain(args: Endofunction[com.pulumi.aws.ecrpublic.inputs.GetAuthorizationTokenPlainArgs.Builder] = identity):
+    def getAuthorizationTokenPlain(args: Endofunction[com.pulumi.aws.ecrpublic.inputs.GetAuthorizationTokenPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.ecrpublic.outputs.GetAuthorizationTokenResult] =
       val argsBuilder = com.pulumi.aws.ecrpublic.inputs.GetAuthorizationTokenPlainArgs.builder
       com.pulumi.aws.ecrpublic.EcrpublicFunctions.getAuthorizationTokenPlain(args(argsBuilder).build)
 
     /** The ECR Public Images data source allows the list of images in a specified public repository to be retrieved. */
-    def getImages(args: Endofunction[com.pulumi.aws.ecrpublic.inputs.GetImagesArgs.Builder] = identity):
+    def getImages(args: Endofunction[com.pulumi.aws.ecrpublic.inputs.GetImagesArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.ecrpublic.outputs.GetImagesResult] =
       val argsBuilder = com.pulumi.aws.ecrpublic.inputs.GetImagesArgs.builder
       com.pulumi.aws.ecrpublic.EcrpublicFunctions.getImages(args(argsBuilder).build)
 
     /** The ECR Public Images data source allows the list of images in a specified public repository to be retrieved. */
-    def getImagesPlain(args: Endofunction[com.pulumi.aws.ecrpublic.inputs.GetImagesPlainArgs.Builder] = identity):
+    def getImagesPlain(args: Endofunction[com.pulumi.aws.ecrpublic.inputs.GetImagesPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.ecrpublic.outputs.GetImagesResult] =
       val argsBuilder = com.pulumi.aws.ecrpublic.inputs.GetImagesPlainArgs.builder
       com.pulumi.aws.ecrpublic.EcrpublicFunctions.getImagesPlain(args(argsBuilder).build)

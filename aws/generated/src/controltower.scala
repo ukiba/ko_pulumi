@@ -8,7 +8,7 @@ object controltower:
    * Allows the application of pre-defined controls to organizational units. For more information on usage, please see the
    *  [AWS Control Tower User Guide](https://docs.aws.amazon.com/controltower/latest/userguide/enable-guardrails.html).
    */
-  def ControlTowerControl(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def ControlTowerControl(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.controltower.ControlTowerControlArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.controltower.ControlTowerControlArgs.builder
     com.pulumi.aws.controltower.ControlTowerControl(name,
@@ -27,7 +27,7 @@ object controltower:
    *  $ pulumi import aws:controltower/landingZone:LandingZone example 1A2B3C4D5E6F7G8H
    *  ```
    */
-  def LandingZone(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def LandingZone(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.controltower.LandingZoneArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.controltower.LandingZoneArgs.builder
     conf.logicalName2tagName(name) match
@@ -38,7 +38,7 @@ object controltower:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Resource for managing an AWS Control Tower Baseline. */
-  def Baseline(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def Baseline(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.controltower.BaselineArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.controltower.BaselineArgs.builder
     conf.logicalName2tagName(name) match
@@ -54,13 +54,13 @@ object controltower:
     export com.pulumi.aws.controltower.ControltowerFunctions.*
   extension (self: ControltowerFunctions.type)
     /** List of Control Tower controls applied to an OU. */
-    def getControls(args: Endofunction[com.pulumi.aws.controltower.inputs.GetControlsArgs.Builder] = identity):
+    def getControls(args: Endofunction[com.pulumi.aws.controltower.inputs.GetControlsArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.controltower.outputs.GetControlsResult] =
       val argsBuilder = com.pulumi.aws.controltower.inputs.GetControlsArgs.builder
       com.pulumi.aws.controltower.ControltowerFunctions.getControls(args(argsBuilder).build)
 
     /** List of Control Tower controls applied to an OU. */
-    def getControlsPlain(args: Endofunction[com.pulumi.aws.controltower.inputs.GetControlsPlainArgs.Builder] = identity):
+    def getControlsPlain(args: Endofunction[com.pulumi.aws.controltower.inputs.GetControlsPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.controltower.outputs.GetControlsResult] =
       val argsBuilder = com.pulumi.aws.controltower.inputs.GetControlsPlainArgs.builder
       com.pulumi.aws.controltower.ControltowerFunctions.getControlsPlain(args(argsBuilder).build)

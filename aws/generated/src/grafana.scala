@@ -28,7 +28,7 @@ object grafana:
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
 
   /** Provides an Amazon Managed Grafana workspace SAML configuration resource. */
-  def WorkspaceSamlConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def WorkspaceSamlConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.grafana.WorkspaceSamlConfigurationArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.grafana.WorkspaceSamlConfigurationArgs.builder
     com.pulumi.aws.grafana.WorkspaceSamlConfiguration(name,
@@ -41,7 +41,7 @@ object grafana:
    * 
    *  Read about Service Accounts Tokens in the [Amazon Managed Grafana user guide](https://docs.aws.amazon.com/grafana/latest/userguide/service-accounts.html#service-account-tokens).
    */
-  def WorkspaceServiceAccountToken(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def WorkspaceServiceAccountToken(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.grafana.WorkspaceServiceAccountTokenArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.grafana.WorkspaceServiceAccountTokenArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -57,7 +57,7 @@ object grafana:
    * 
    *  Read about Service Accounts in the [Amazon Managed Grafana user guide](https://docs.aws.amazon.com/grafana/latest/userguide/service-accounts.html).
    */
-  def WorkspaceServiceAccount(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def WorkspaceServiceAccount(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.grafana.WorkspaceServiceAccountArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.grafana.WorkspaceServiceAccountArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -73,19 +73,19 @@ object grafana:
     export com.pulumi.aws.grafana.GrafanaFunctions.*
   extension (self: GrafanaFunctions.type)
     /** Provides an Amazon Managed Grafana workspace data source. */
-    def getWorkspace(args: Endofunction[com.pulumi.aws.grafana.inputs.GetWorkspaceArgs.Builder] = identity):
+    def getWorkspace(args: Endofunction[com.pulumi.aws.grafana.inputs.GetWorkspaceArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.grafana.outputs.GetWorkspaceResult] =
       val argsBuilder = com.pulumi.aws.grafana.inputs.GetWorkspaceArgs.builder
       com.pulumi.aws.grafana.GrafanaFunctions.getWorkspace(args(argsBuilder).build)
 
     /** Provides an Amazon Managed Grafana workspace data source. */
-    def getWorkspacePlain(args: Endofunction[com.pulumi.aws.grafana.inputs.GetWorkspacePlainArgs.Builder] = identity):
+    def getWorkspacePlain(args: Endofunction[com.pulumi.aws.grafana.inputs.GetWorkspacePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.grafana.outputs.GetWorkspaceResult] =
       val argsBuilder = com.pulumi.aws.grafana.inputs.GetWorkspacePlainArgs.builder
       com.pulumi.aws.grafana.GrafanaFunctions.getWorkspacePlain(args(argsBuilder).build)
 
   /** Provides an Amazon Managed Grafana workspace API Key resource. */
-  def WorkspaceApiKey(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def WorkspaceApiKey(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.grafana.WorkspaceApiKeyArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.grafana.WorkspaceApiKeyArgs.builder
     com.pulumi.aws.grafana.WorkspaceApiKey(name,
@@ -93,7 +93,7 @@ object grafana:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Provides an Amazon Managed Grafana workspace role association resource. */
-  def RoleAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def RoleAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.grafana.RoleAssociationArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.grafana.RoleAssociationArgs.builder
     com.pulumi.aws.grafana.RoleAssociation(name,
@@ -101,7 +101,7 @@ object grafana:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Provides an Amazon Managed Grafana workspace resource. */
-  def Workspace(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def Workspace(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.grafana.WorkspaceArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.grafana.WorkspaceArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -138,7 +138,7 @@ object grafana:
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
 
   /** Provides an Amazon Managed Grafana workspace license association resource. */
-  def LicenseAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def LicenseAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.grafana.LicenseAssociationArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.grafana.LicenseAssociationArgs.builder
     com.pulumi.aws.grafana.LicenseAssociation(name,

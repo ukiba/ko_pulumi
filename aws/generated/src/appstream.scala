@@ -10,19 +10,19 @@ object appstream:
     export com.pulumi.aws.appstream.AppstreamFunctions.*
   extension (self: AppstreamFunctions.type)
     /** Data source for managing an AWS AppStream 2.0 Image. */
-    def getImage(args: Endofunction[com.pulumi.aws.appstream.inputs.GetImageArgs.Builder] = identity):
+    def getImage(args: Endofunction[com.pulumi.aws.appstream.inputs.GetImageArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.appstream.outputs.GetImageResult] =
       val argsBuilder = com.pulumi.aws.appstream.inputs.GetImageArgs.builder
       com.pulumi.aws.appstream.AppstreamFunctions.getImage(args(argsBuilder).build)
 
     /** Data source for managing an AWS AppStream 2.0 Image. */
-    def getImagePlain(args: Endofunction[com.pulumi.aws.appstream.inputs.GetImagePlainArgs.Builder] = identity):
+    def getImagePlain(args: Endofunction[com.pulumi.aws.appstream.inputs.GetImagePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.appstream.outputs.GetImageResult] =
       val argsBuilder = com.pulumi.aws.appstream.inputs.GetImagePlainArgs.builder
       com.pulumi.aws.appstream.AppstreamFunctions.getImagePlain(args(argsBuilder).build)
 
   /** Provides an AppStream fleet. */
-  def Fleet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def Fleet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.appstream.FleetArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.appstream.FleetArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -36,7 +36,7 @@ object appstream:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Manages an AppStream User Stack association. */
-  def UserStackAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def UserStackAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.appstream.UserStackAssociationArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.appstream.UserStackAssociationArgs.builder
     com.pulumi.aws.appstream.UserStackAssociation(name,
@@ -44,7 +44,7 @@ object appstream:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Manages an AppStream Fleet Stack association. */
-  def FleetStackAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def FleetStackAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.appstream.FleetStackAssociationArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.appstream.FleetStackAssociationArgs.builder
     com.pulumi.aws.appstream.FleetStackAssociation(name,
@@ -71,7 +71,7 @@ object appstream:
       builder.serviceAccountCredentials(args(argsBuilder).build)
 
   /** Provides an AppStream image builder. */
-  def ImageBuilder(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def ImageBuilder(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.appstream.ImageBuilderArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.appstream.ImageBuilderArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -85,7 +85,7 @@ object appstream:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Provides an AppStream user. */
-  def User(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def User(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.appstream.UserArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.appstream.UserArgs.builder
     com.pulumi.aws.appstream.User(name,
@@ -125,7 +125,7 @@ object appstream:
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
 
   /** Provides an AppStream Directory Config. */
-  def DirectoryConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def DirectoryConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.appstream.DirectoryConfigArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.appstream.DirectoryConfigArgs.builder
     com.pulumi.aws.appstream.DirectoryConfig(name,
@@ -358,7 +358,7 @@ object appstream:
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
 
   /** Provides an AppStream stack. */
-  def Stack(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def Stack(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.appstream.StackArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.appstream.StackArgs.builder
     conf.logicalName2pysicalName(name) match

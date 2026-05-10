@@ -7,7 +7,7 @@ object neptune:
   /**
    * 
    */
-  def EventSubscription(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def EventSubscription(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.neptune.EventSubscriptionArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.neptune.EventSubscriptionArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -21,7 +21,7 @@ object neptune:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Manages a Neptune Parameter Group */
-  def ParameterGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def ParameterGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.neptune.ParameterGroupArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.neptune.ParameterGroupArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -35,7 +35,7 @@ object neptune:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Provides an Neptune subnet group resource. */
-  def SubnetGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def SubnetGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.neptune.SubnetGroupArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.neptune.SubnetGroupArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -59,7 +59,7 @@ object neptune:
    *  `applyImmediately` flag to instruct the service to apply the change immediately
    *  (see documentation below).
    */
-  def Cluster(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def Cluster(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.neptune.ClusterArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.neptune.ClusterArgs.builder
     conf.logicalName2tagName(name) match
@@ -88,7 +88,7 @@ object neptune:
    * 
    *  More information about Neptune Global Clusters can be found in the [Neptune User Guide](https://docs.aws.amazon.com/neptune/latest/userguide/neptune-global-database.html).
    */
-  def GlobalCluster(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def GlobalCluster(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.neptune.GlobalClusterArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.neptune.GlobalClusterArgs.builder
     com.pulumi.aws.neptune.GlobalCluster(name,
@@ -119,7 +119,7 @@ object neptune:
      * 
      *  &gt; **Note:** If AWS returns multiple matching engine versions, this data source will produce a `multiple Neptune engine versions` error. To avoid this, provide additional criteria to narrow the results or use the `latest` argument to select a single version. See the Argument Reference for details.
      */
-    def getEngineVersion(args: Endofunction[com.pulumi.aws.neptune.inputs.GetEngineVersionArgs.Builder] = identity):
+    def getEngineVersion(args: Endofunction[com.pulumi.aws.neptune.inputs.GetEngineVersionArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.neptune.outputs.GetEngineVersionResult] =
       val argsBuilder = com.pulumi.aws.neptune.inputs.GetEngineVersionArgs.builder
       com.pulumi.aws.neptune.NeptuneFunctions.getEngineVersion(args(argsBuilder).build)
@@ -129,25 +129,25 @@ object neptune:
      * 
      *  &gt; **Note:** If AWS returns multiple matching engine versions, this data source will produce a `multiple Neptune engine versions` error. To avoid this, provide additional criteria to narrow the results or use the `latest` argument to select a single version. See the Argument Reference for details.
      */
-    def getEngineVersionPlain(args: Endofunction[com.pulumi.aws.neptune.inputs.GetEngineVersionPlainArgs.Builder] = identity):
+    def getEngineVersionPlain(args: Endofunction[com.pulumi.aws.neptune.inputs.GetEngineVersionPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.neptune.outputs.GetEngineVersionResult] =
       val argsBuilder = com.pulumi.aws.neptune.inputs.GetEngineVersionPlainArgs.builder
       com.pulumi.aws.neptune.NeptuneFunctions.getEngineVersionPlain(args(argsBuilder).build)
 
     /** Information about Neptune orderable DB instances. */
-    def getOrderableDbInstance(args: Endofunction[com.pulumi.aws.neptune.inputs.GetOrderableDbInstanceArgs.Builder] = identity):
+    def getOrderableDbInstance(args: Endofunction[com.pulumi.aws.neptune.inputs.GetOrderableDbInstanceArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.neptune.outputs.GetOrderableDbInstanceResult] =
       val argsBuilder = com.pulumi.aws.neptune.inputs.GetOrderableDbInstanceArgs.builder
       com.pulumi.aws.neptune.NeptuneFunctions.getOrderableDbInstance(args(argsBuilder).build)
 
     /** Information about Neptune orderable DB instances. */
-    def getOrderableDbInstancePlain(args: Endofunction[com.pulumi.aws.neptune.inputs.GetOrderableDbInstancePlainArgs.Builder] = identity):
+    def getOrderableDbInstancePlain(args: Endofunction[com.pulumi.aws.neptune.inputs.GetOrderableDbInstancePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.neptune.outputs.GetOrderableDbInstanceResult] =
       val argsBuilder = com.pulumi.aws.neptune.inputs.GetOrderableDbInstancePlainArgs.builder
       com.pulumi.aws.neptune.NeptuneFunctions.getOrderableDbInstancePlain(args(argsBuilder).build)
 
   /** Manages a Neptune Cluster Parameter Group */
-  def ClusterParameterGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def ClusterParameterGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.neptune.ClusterParameterGroupArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.neptune.ClusterParameterGroupArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -180,7 +180,7 @@ object neptune:
    *  You can simply add neptune instances and Neptune manages the replication. You can use the count
    *  meta-parameter to make multiple instances and join them all to the same Neptune Cluster, or you may specify different Cluster Instance resources with various `instanceClass` sizes.
    */
-  def ClusterInstance(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def ClusterInstance(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.neptune.ClusterInstanceArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.neptune.ClusterInstanceArgs.builder
     conf.logicalName2tagName(name) match
@@ -191,7 +191,7 @@ object neptune:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Provides an Neptune Cluster Endpoint Resource. */
-  def ClusterEndpoint(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def ClusterEndpoint(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.neptune.ClusterEndpointArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.neptune.ClusterEndpointArgs.builder
     conf.logicalName2tagName(name) match
@@ -202,7 +202,7 @@ object neptune:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Manages a Neptune database cluster snapshot. */
-  def ClusterSnapshot(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def ClusterSnapshot(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.neptune.ClusterSnapshotArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.neptune.ClusterSnapshotArgs.builder
     com.pulumi.aws.neptune.ClusterSnapshot(name,

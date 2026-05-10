@@ -9,7 +9,7 @@ object lambda:
    * 
    *  For information about Lambda code signing configurations and how to use them, see [configuring code signing for Lambda functions](https://docs.aws.amazon.com/lambda/latest/dg/configuration-codesigning.html).
    */
-  def CodeSigningConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def CodeSigningConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.lambda.CodeSigningConfigArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.lambda.CodeSigningConfigArgs.builder
     conf.logicalName2tagName(name) match
@@ -26,7 +26,7 @@ object lambda:
    * 
    *  &gt; **Note:** If you get a `KMSAccessDeniedException: Lambda was unable to decrypt the environment variables because KMS access was denied` error when invoking a Lambda function with environment variables, the IAM role associated with the function may have been deleted and recreated after the function was created. You can fix the problem two ways: 1) updating the function&#39;s role to another role and then updating it back again to the recreated role. (When you create a function, Lambda grants permissions on the KMS key to the function&#39;s IAM role. If the IAM role is recreated, the grant is no longer valid. Changing the function&#39;s role or recreating the function causes Lambda to update the grant.)
    */
-  def Invocation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def Invocation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.lambda.InvocationArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.lambda.InvocationArgs.builder
     com.pulumi.aws.lambda.Invocation(name,
@@ -39,13 +39,13 @@ object lambda:
     export com.pulumi.aws.lambda.LambdaFunctions.*
   extension (self: LambdaFunctions.type)
     /** Provides details about an AWS Lambda Alias. Use this data source to retrieve information about an existing Lambda function alias for traffic management, deployment strategies, or API integrations. */
-    def getAlias(args: Endofunction[com.pulumi.aws.lambda.inputs.GetAliasArgs.Builder] = identity):
+    def getAlias(args: Endofunction[com.pulumi.aws.lambda.inputs.GetAliasArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.lambda.outputs.GetAliasResult] =
       val argsBuilder = com.pulumi.aws.lambda.inputs.GetAliasArgs.builder
       com.pulumi.aws.lambda.LambdaFunctions.getAlias(args(argsBuilder).build)
 
     /** Provides details about an AWS Lambda Alias. Use this data source to retrieve information about an existing Lambda function alias for traffic management, deployment strategies, or API integrations. */
-    def getAliasPlain(args: Endofunction[com.pulumi.aws.lambda.inputs.GetAliasPlainArgs.Builder] = identity):
+    def getAliasPlain(args: Endofunction[com.pulumi.aws.lambda.inputs.GetAliasPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.lambda.outputs.GetAliasResult] =
       val argsBuilder = com.pulumi.aws.lambda.inputs.GetAliasPlainArgs.builder
       com.pulumi.aws.lambda.LambdaFunctions.getAliasPlain(args(argsBuilder).build)
@@ -55,7 +55,7 @@ object lambda:
      * 
      *  For information about Lambda code signing configurations and how to use them, see [configuring code signing for Lambda functions](https://docs.aws.amazon.com/lambda/latest/dg/configuration-codesigning.html).
      */
-    def getCodeSigningConfig(args: Endofunction[com.pulumi.aws.lambda.inputs.GetCodeSigningConfigArgs.Builder] = identity):
+    def getCodeSigningConfig(args: Endofunction[com.pulumi.aws.lambda.inputs.GetCodeSigningConfigArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.lambda.outputs.GetCodeSigningConfigResult] =
       val argsBuilder = com.pulumi.aws.lambda.inputs.GetCodeSigningConfigArgs.builder
       com.pulumi.aws.lambda.LambdaFunctions.getCodeSigningConfig(args(argsBuilder).build)
@@ -65,7 +65,7 @@ object lambda:
      * 
      *  For information about Lambda code signing configurations and how to use them, see [configuring code signing for Lambda functions](https://docs.aws.amazon.com/lambda/latest/dg/configuration-codesigning.html).
      */
-    def getCodeSigningConfigPlain(args: Endofunction[com.pulumi.aws.lambda.inputs.GetCodeSigningConfigPlainArgs.Builder] = identity):
+    def getCodeSigningConfigPlain(args: Endofunction[com.pulumi.aws.lambda.inputs.GetCodeSigningConfigPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.lambda.outputs.GetCodeSigningConfigResult] =
       val argsBuilder = com.pulumi.aws.lambda.inputs.GetCodeSigningConfigPlainArgs.builder
       com.pulumi.aws.lambda.LambdaFunctions.getCodeSigningConfigPlain(args(argsBuilder).build)
@@ -75,7 +75,7 @@ object lambda:
      * 
      *  &gt; **Note:** This data source returns information about the latest version or alias specified by the `qualifier`. If no `qualifier` is provided, it returns information about the most recent published version, or `$LATEST` if no published version exists.
      */
-    def getFunction(args: Endofunction[com.pulumi.aws.lambda.inputs.GetFunctionArgs.Builder] = identity):
+    def getFunction(args: Endofunction[com.pulumi.aws.lambda.inputs.GetFunctionArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.lambda.outputs.GetFunctionResult] =
       val argsBuilder = com.pulumi.aws.lambda.inputs.GetFunctionArgs.builder
       com.pulumi.aws.lambda.LambdaFunctions.getFunction(args(argsBuilder).build)
@@ -85,31 +85,31 @@ object lambda:
      * 
      *  &gt; **Note:** This data source returns information about the latest version or alias specified by the `qualifier`. If no `qualifier` is provided, it returns information about the most recent published version, or `$LATEST` if no published version exists.
      */
-    def getFunctionPlain(args: Endofunction[com.pulumi.aws.lambda.inputs.GetFunctionPlainArgs.Builder] = identity):
+    def getFunctionPlain(args: Endofunction[com.pulumi.aws.lambda.inputs.GetFunctionPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.lambda.outputs.GetFunctionResult] =
       val argsBuilder = com.pulumi.aws.lambda.inputs.GetFunctionPlainArgs.builder
       com.pulumi.aws.lambda.LambdaFunctions.getFunctionPlain(args(argsBuilder).build)
 
     /** Provides details about an AWS Lambda Function URL. Use this data source to retrieve information about an existing function URL configuration. */
-    def getFunctionUrl(args: Endofunction[com.pulumi.aws.lambda.inputs.GetFunctionUrlArgs.Builder] = identity):
+    def getFunctionUrl(args: Endofunction[com.pulumi.aws.lambda.inputs.GetFunctionUrlArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.lambda.outputs.GetFunctionUrlResult] =
       val argsBuilder = com.pulumi.aws.lambda.inputs.GetFunctionUrlArgs.builder
       com.pulumi.aws.lambda.LambdaFunctions.getFunctionUrl(args(argsBuilder).build)
 
     /** Provides details about an AWS Lambda Function URL. Use this data source to retrieve information about an existing function URL configuration. */
-    def getFunctionUrlPlain(args: Endofunction[com.pulumi.aws.lambda.inputs.GetFunctionUrlPlainArgs.Builder] = identity):
+    def getFunctionUrlPlain(args: Endofunction[com.pulumi.aws.lambda.inputs.GetFunctionUrlPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.lambda.outputs.GetFunctionUrlResult] =
       val argsBuilder = com.pulumi.aws.lambda.inputs.GetFunctionUrlPlainArgs.builder
       com.pulumi.aws.lambda.LambdaFunctions.getFunctionUrlPlain(args(argsBuilder).build)
 
     /** Provides a list of AWS Lambda Functions in the current region. Use this data source to discover existing Lambda functions for inventory, monitoring, or bulk operations. */
-    def getFunctions(args: Endofunction[com.pulumi.aws.lambda.inputs.GetFunctionsArgs.Builder] = identity):
+    def getFunctions(args: Endofunction[com.pulumi.aws.lambda.inputs.GetFunctionsArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.lambda.outputs.GetFunctionsResult] =
       val argsBuilder = com.pulumi.aws.lambda.inputs.GetFunctionsArgs.builder
       com.pulumi.aws.lambda.LambdaFunctions.getFunctions(args(argsBuilder).build)
 
     /** Provides a list of AWS Lambda Functions in the current region. Use this data source to discover existing Lambda functions for inventory, monitoring, or bulk operations. */
-    def getFunctionsPlain(args: Endofunction[com.pulumi.aws.lambda.inputs.GetFunctionsPlainArgs.Builder] = identity):
+    def getFunctionsPlain(args: Endofunction[com.pulumi.aws.lambda.inputs.GetFunctionsPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.lambda.outputs.GetFunctionsResult] =
       val argsBuilder = com.pulumi.aws.lambda.inputs.GetFunctionsPlainArgs.builder
       com.pulumi.aws.lambda.LambdaFunctions.getFunctionsPlain(args(argsBuilder).build)
@@ -123,7 +123,7 @@ object lambda:
      * 
      *  &gt; **Note:** If you get a `KMSAccessDeniedException: Lambda was unable to decrypt the environment variables because KMS access was denied` error when invoking a Lambda function with environment variables, the IAM role associated with the function may have been deleted and recreated after the function was created. You can fix the problem two ways: 1) updating the function&#39;s role to another role and then updating it back again to the recreated role. (When you create a function, Lambda grants permissions on the KMS key to the function&#39;s IAM role. If the IAM role is recreated, the grant is no longer valid. Changing the function&#39;s role or recreating the function causes Lambda to update the grant.)
      */
-    def getInvocation(args: Endofunction[com.pulumi.aws.lambda.inputs.GetInvocationArgs.Builder] = identity):
+    def getInvocation(args: Endofunction[com.pulumi.aws.lambda.inputs.GetInvocationArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.lambda.outputs.GetInvocationResult] =
       val argsBuilder = com.pulumi.aws.lambda.inputs.GetInvocationArgs.builder
       com.pulumi.aws.lambda.LambdaFunctions.getInvocation(args(argsBuilder).build)
@@ -137,19 +137,19 @@ object lambda:
      * 
      *  &gt; **Note:** If you get a `KMSAccessDeniedException: Lambda was unable to decrypt the environment variables because KMS access was denied` error when invoking a Lambda function with environment variables, the IAM role associated with the function may have been deleted and recreated after the function was created. You can fix the problem two ways: 1) updating the function&#39;s role to another role and then updating it back again to the recreated role. (When you create a function, Lambda grants permissions on the KMS key to the function&#39;s IAM role. If the IAM role is recreated, the grant is no longer valid. Changing the function&#39;s role or recreating the function causes Lambda to update the grant.)
      */
-    def getInvocationPlain(args: Endofunction[com.pulumi.aws.lambda.inputs.GetInvocationPlainArgs.Builder] = identity):
+    def getInvocationPlain(args: Endofunction[com.pulumi.aws.lambda.inputs.GetInvocationPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.lambda.outputs.GetInvocationResult] =
       val argsBuilder = com.pulumi.aws.lambda.inputs.GetInvocationPlainArgs.builder
       com.pulumi.aws.lambda.LambdaFunctions.getInvocationPlain(args(argsBuilder).build)
 
     /** Provides details about an AWS Lambda Layer Version. Use this data source to retrieve information about a specific layer version or find the latest version compatible with your runtime and architecture requirements. */
-    def getLayerVersion(args: Endofunction[com.pulumi.aws.lambda.inputs.GetLayerVersionArgs.Builder] = identity):
+    def getLayerVersion(args: Endofunction[com.pulumi.aws.lambda.inputs.GetLayerVersionArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.lambda.outputs.GetLayerVersionResult] =
       val argsBuilder = com.pulumi.aws.lambda.inputs.GetLayerVersionArgs.builder
       com.pulumi.aws.lambda.LambdaFunctions.getLayerVersion(args(argsBuilder).build)
 
     /** Provides details about an AWS Lambda Layer Version. Use this data source to retrieve information about a specific layer version or find the latest version compatible with your runtime and architecture requirements. */
-    def getLayerVersionPlain(args: Endofunction[com.pulumi.aws.lambda.inputs.GetLayerVersionPlainArgs.Builder] = identity):
+    def getLayerVersionPlain(args: Endofunction[com.pulumi.aws.lambda.inputs.GetLayerVersionPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.lambda.outputs.GetLayerVersionResult] =
       val argsBuilder = com.pulumi.aws.lambda.inputs.GetLayerVersionPlainArgs.builder
       com.pulumi.aws.lambda.LambdaFunctions.getLayerVersionPlain(args(argsBuilder).build)
@@ -159,7 +159,7 @@ object lambda:
    * 
    *  For information about Lambda and how to use it, see [What is AWS Lambda?](http://docs.aws.amazon.com/lambda/latest/dg/welcome.html). For information about function aliases, see [CreateAlias](http://docs.aws.amazon.com/lambda/latest/dg/API_CreateAlias.html) and [AliasRoutingConfiguration](https://docs.aws.amazon.com/lambda/latest/dg/API_AliasRoutingConfiguration.html) in the API docs.
    */
-  def Alias(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def Alias(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.lambda.AliasArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.lambda.AliasArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -176,7 +176,7 @@ object lambda:
    * 
    *  &gt; **Note:** Setting `skipDestroy` to `true` means that the AWS Provider will not destroy any layer version, even when running `pulumi destroy`. Layer versions are thus intentional dangling resources that are not managed by Pulumi and may incur extra expense in your AWS account.
    */
-  def LayerVersion(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def LayerVersion(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.lambda.LayerVersionArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.lambda.LayerVersionArgs.builder
     com.pulumi.aws.lambda.LayerVersion(name,
@@ -194,7 +194,7 @@ object lambda:
       builder.cors(args(argsBuilder).build)
 
   /** Manages an AWS Lambda Capacity Provider. */
-  def CapacityProvider(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def CapacityProvider(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.lambda.CapacityProviderArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.lambda.CapacityProviderArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -239,7 +239,7 @@ object lambda:
    * 
    *  &gt; **Note:** Setting `skipDestroy` to `true` means that the AWS Provider will not destroy any layer version permission, even when running `pulumi destroy`. Layer version permissions are thus intentional dangling resources that are not managed by Pulumi and may incur extra expense in your AWS account.
    */
-  def LayerVersionPermission(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def LayerVersionPermission(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.lambda.LayerVersionPermissionArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.lambda.LayerVersionPermissionArgs.builder
     com.pulumi.aws.lambda.LayerVersionPermission(name,
@@ -261,7 +261,7 @@ object lambda:
    * 
    *  &gt; **Note:** Setting `skipDestroy` to `true` means that the AWS Provider will not destroy a provisioned concurrency configuration, even when running `pulumi destroy`. The configuration is thus an intentional dangling resource that is not managed by Pulumi and may incur extra expense in your AWS account.
    */
-  def ProvisionedConcurrencyConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def ProvisionedConcurrencyConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.lambda.ProvisionedConcurrencyConfigArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.lambda.ProvisionedConcurrencyConfigArgs.builder
     com.pulumi.aws.lambda.ProvisionedConcurrencyConfig(name,
@@ -275,7 +275,7 @@ object lambda:
    * 
    *  &gt; **Note:** Deletion of this resource returns the runtime update mode to `Auto` (the default behavior). To leave the configured runtime management options in-place, use a `removed` block with the destroy lifecycle set to `false`.
    */
-  def RuntimeManagementConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def RuntimeManagementConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.lambda.RuntimeManagementConfigArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.lambda.RuntimeManagementConfigArgs.builder
     com.pulumi.aws.lambda.RuntimeManagementConfig(name,
@@ -396,7 +396,7 @@ object lambda:
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
 
   /** Manages an AWS Lambda permission. Use this resource to grant external sources (e.g., EventBridge Rules, SNS, or S3) permission to invoke Lambda functions. */
-  def Permission(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def Permission(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.lambda.PermissionArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.lambda.PermissionArgs.builder
     com.pulumi.aws.lambda.Permission(name,
@@ -408,7 +408,7 @@ object lambda:
    * 
    *  For information about Lambda and how to use it, see [What is AWS Lambda?](http://docs.aws.amazon.com/lambda/latest/dg/welcome.html). For information about event source mappings, see [CreateEventSourceMapping](http://docs.aws.amazon.com/lambda/latest/dg/API_CreateEventSourceMapping.html) in the API docs.
    */
-  def EventSourceMapping(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def EventSourceMapping(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.lambda.EventSourceMappingArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.lambda.EventSourceMappingArgs.builder
     conf.logicalName2tagName(name) match
@@ -481,7 +481,7 @@ object lambda:
    * 
    *  More information about asynchronous invocations and the configurable values can be found in the [Lambda Developer Guide](https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html).
    */
-  def FunctionEventInvokeConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def FunctionEventInvokeConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.lambda.FunctionEventInvokeConfigArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.lambda.FunctionEventInvokeConfigArgs.builder
     com.pulumi.aws.lambda.FunctionEventInvokeConfig(name,
@@ -493,7 +493,7 @@ object lambda:
    * 
    *  &gt; **NOTE:** When [`authorizationType` is `&#34;NONE&#34;`](https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html#urls-auth-none) the `lambda:InvokeFunctionUrl` permission allowing a public endpoint and `lambda:InvokeFunction` permission with the `InvokedViaFunctionUrl` flag set to `true` are automatically added to the Lambda function on creation. These policies are NOT removed from AWS when the resource is destroyed.
    */
-  def FunctionUrl(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def FunctionUrl(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.lambda.FunctionUrlArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.lambda.FunctionUrlArgs.builder
     com.pulumi.aws.lambda.FunctionUrl(name,
@@ -511,7 +511,7 @@ object lambda:
    * 
    *  &gt; **Tip:** To give an external source (like an EventBridge Rule, SNS, or S3) permission to access the Lambda function, use the `aws.lambda.Permission` resource. See [Lambda Permission Model](https://docs.aws.amazon.com/lambda/latest/dg/intro-permission-model.html) for more details. On the other hand, the `role` argument of this resource is the function&#39;s execution role for identity and access to AWS services and resources.
    */
-  def Function(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def Function(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.lambda.FunctionArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.lambda.FunctionArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -1052,7 +1052,7 @@ object lambda:
    * 
    *  &gt; **Note:** Destruction of this resource will return the `recursiveLoop` configuration back to the default value of `Terminate`.
    */
-  def FunctionRecursionConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def FunctionRecursionConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.lambda.FunctionRecursionConfigArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.lambda.FunctionRecursionConfigArgs.builder
     com.pulumi.aws.lambda.FunctionRecursionConfig(name,

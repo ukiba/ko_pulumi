@@ -5,7 +5,7 @@ import com.pulumi.resources.CustomResourceOptions
 
 object wafv2:
   /** Creates a WAFv2 Rule Group resource. */
-  def RuleGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def RuleGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.wafv2.RuleGroupArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.wafv2.RuleGroupArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -132,7 +132,7 @@ object wafv2:
    * 
    *  &gt; **NOTE:** When using this resource, you must add `lifecycle { ignoreChanges = [rule] }` to your `aws.wafv2.WebAcl` resource to prevent conflicts. See the `aws.wafv2.WebAcl` documentation for a full description of the limitations of inline rules that this resource addresses.
    */
-  def WebAclRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def WebAclRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.wafv2.WebAclRuleArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.wafv2.WebAclRuleArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -143,7 +143,7 @@ object wafv2:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Provides an AWS WAFv2 Regex Pattern Set Resource */
-  def RegexPatternSet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def RegexPatternSet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.wafv2.RegexPatternSetArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.wafv2.RegexPatternSetArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -259,7 +259,7 @@ object wafv2:
    *  $ pulumi import aws:wafv2/webAcl:WebAcl example a1b2c3d4-d5f6-7777-8888-9999aaaabbbbcccc/example/REGIONAL
    *  ```
    */
-  def WebAcl(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def WebAcl(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.wafv2.WebAclArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.wafv2.WebAclArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -286,7 +286,7 @@ object wafv2:
    * 
    *  &gt; **Note:** This resource creates a rule within the Web ACL that references the entire Rule Group. The rule group&#39;s individual rules are evaluated as a unit when requests are processed by the Web ACL.
    */
-  def WebAclRuleGroupAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def WebAclRuleGroupAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.wafv2.WebAclRuleGroupAssociationArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.wafv2.WebAclRuleGroupAssociationArgs.builder
     com.pulumi.aws.wafv2.WebAclRuleGroupAssociation(name,
@@ -308,7 +308,7 @@ object wafv2:
    *  $ pulumi import aws:wafv2/webAclAssociation:WebAclAssociation example arn:aws:wafv2:...7ce849ea,arn:aws:apigateway:...ages/name
    *  ```
    */
-  def WebAclAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def WebAclAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.wafv2.WebAclAssociationArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.wafv2.WebAclAssociationArgs.builder
     com.pulumi.aws.wafv2.WebAclAssociation(name,
@@ -316,7 +316,7 @@ object wafv2:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Provides an AWS WAFv2 API Key resource. */
-  def ApiKey(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def ApiKey(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.wafv2.ApiKeyArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.wafv2.ApiKeyArgs.builder
     com.pulumi.aws.wafv2.ApiKey(name,
@@ -329,67 +329,67 @@ object wafv2:
     export com.pulumi.aws.wafv2.Wafv2Functions.*
   extension (self: Wafv2Functions.type)
     /** Retrieves the summary of a WAFv2 IP Set. */
-    def getIpSet(args: Endofunction[com.pulumi.aws.wafv2.inputs.GetIpSetArgs.Builder] = identity):
+    def getIpSet(args: Endofunction[com.pulumi.aws.wafv2.inputs.GetIpSetArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.wafv2.outputs.GetIpSetResult] =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.GetIpSetArgs.builder
       com.pulumi.aws.wafv2.Wafv2Functions.getIpSet(args(argsBuilder).build)
 
     /** Retrieves the summary of a WAFv2 IP Set. */
-    def getIpSetPlain(args: Endofunction[com.pulumi.aws.wafv2.inputs.GetIpSetPlainArgs.Builder] = identity):
+    def getIpSetPlain(args: Endofunction[com.pulumi.aws.wafv2.inputs.GetIpSetPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.wafv2.outputs.GetIpSetResult] =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.GetIpSetPlainArgs.builder
       com.pulumi.aws.wafv2.Wafv2Functions.getIpSetPlain(args(argsBuilder).build)
 
     /** High-level information for a managed rule group. */
-    def getManagedRuleGroup(args: Endofunction[com.pulumi.aws.wafv2.inputs.GetManagedRuleGroupArgs.Builder] = identity):
+    def getManagedRuleGroup(args: Endofunction[com.pulumi.aws.wafv2.inputs.GetManagedRuleGroupArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.wafv2.outputs.GetManagedRuleGroupResult] =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.GetManagedRuleGroupArgs.builder
       com.pulumi.aws.wafv2.Wafv2Functions.getManagedRuleGroup(args(argsBuilder).build)
 
     /** High-level information for a managed rule group. */
-    def getManagedRuleGroupPlain(args: Endofunction[com.pulumi.aws.wafv2.inputs.GetManagedRuleGroupPlainArgs.Builder] = identity):
+    def getManagedRuleGroupPlain(args: Endofunction[com.pulumi.aws.wafv2.inputs.GetManagedRuleGroupPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.wafv2.outputs.GetManagedRuleGroupResult] =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.GetManagedRuleGroupPlainArgs.builder
       com.pulumi.aws.wafv2.Wafv2Functions.getManagedRuleGroupPlain(args(argsBuilder).build)
 
     /** Retrieves the summary of a WAFv2 Regex Pattern Set. */
-    def getRegexPatternSet(args: Endofunction[com.pulumi.aws.wafv2.inputs.GetRegexPatternSetArgs.Builder] = identity):
+    def getRegexPatternSet(args: Endofunction[com.pulumi.aws.wafv2.inputs.GetRegexPatternSetArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.wafv2.outputs.GetRegexPatternSetResult] =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.GetRegexPatternSetArgs.builder
       com.pulumi.aws.wafv2.Wafv2Functions.getRegexPatternSet(args(argsBuilder).build)
 
     /** Retrieves the summary of a WAFv2 Regex Pattern Set. */
-    def getRegexPatternSetPlain(args: Endofunction[com.pulumi.aws.wafv2.inputs.GetRegexPatternSetPlainArgs.Builder] = identity):
+    def getRegexPatternSetPlain(args: Endofunction[com.pulumi.aws.wafv2.inputs.GetRegexPatternSetPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.wafv2.outputs.GetRegexPatternSetResult] =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.GetRegexPatternSetPlainArgs.builder
       com.pulumi.aws.wafv2.Wafv2Functions.getRegexPatternSetPlain(args(argsBuilder).build)
 
     /** Retrieves the summary of a WAFv2 Rule Group. */
-    def getRuleGroup(args: Endofunction[com.pulumi.aws.wafv2.inputs.GetRuleGroupArgs.Builder] = identity):
+    def getRuleGroup(args: Endofunction[com.pulumi.aws.wafv2.inputs.GetRuleGroupArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.wafv2.outputs.GetRuleGroupResult] =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.GetRuleGroupArgs.builder
       com.pulumi.aws.wafv2.Wafv2Functions.getRuleGroup(args(argsBuilder).build)
 
     /** Retrieves the summary of a WAFv2 Rule Group. */
-    def getRuleGroupPlain(args: Endofunction[com.pulumi.aws.wafv2.inputs.GetRuleGroupPlainArgs.Builder] = identity):
+    def getRuleGroupPlain(args: Endofunction[com.pulumi.aws.wafv2.inputs.GetRuleGroupPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.wafv2.outputs.GetRuleGroupResult] =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.GetRuleGroupPlainArgs.builder
       com.pulumi.aws.wafv2.Wafv2Functions.getRuleGroupPlain(args(argsBuilder).build)
 
     /** Retrieves the summary of a WAFv2 Web ACL. */
-    def getWebAcl(args: Endofunction[com.pulumi.aws.wafv2.inputs.GetWebAclArgs.Builder] = identity):
+    def getWebAcl(args: Endofunction[com.pulumi.aws.wafv2.inputs.GetWebAclArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.wafv2.outputs.GetWebAclResult] =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.GetWebAclArgs.builder
       com.pulumi.aws.wafv2.Wafv2Functions.getWebAcl(args(argsBuilder).build)
 
     /** Retrieves the summary of a WAFv2 Web ACL. */
-    def getWebAclPlain(args: Endofunction[com.pulumi.aws.wafv2.inputs.GetWebAclPlainArgs.Builder] = identity):
+    def getWebAclPlain(args: Endofunction[com.pulumi.aws.wafv2.inputs.GetWebAclPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.wafv2.outputs.GetWebAclResult] =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.GetWebAclPlainArgs.builder
       com.pulumi.aws.wafv2.Wafv2Functions.getWebAclPlain(args(argsBuilder).build)
 
   /** Provides a WAFv2 IP Set Resource */
-  def IpSet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def IpSet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.wafv2.IpSetArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.wafv2.IpSetArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -407,7 +407,7 @@ object wafv2:
    * 
    *  !&gt; **WARNING:** When logging from a WAFv2 Web ACL to a CloudWatch Log Group, the WAFv2 service tries to create or update a generic Log Resource Policy named `AWSWAF-LOGS`. However, if there are a large number of Web ACLs or if the account frequently creates and deletes Web ACLs, this policy may exceed the maximum policy size. As a result, this resource type will fail to be created. More details about this issue can be found in this issue. To prevent this issue, you can manage a specific resource policy. Please refer to the example below for managing a CloudWatch Log Group with a managed CloudWatch Log Resource Policy.
    */
-  def WebAclLoggingConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def WebAclLoggingConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.wafv2.WebAclLoggingConfigurationArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.wafv2.WebAclLoggingConfigurationArgs.builder
     com.pulumi.aws.wafv2.WebAclLoggingConfiguration(name,

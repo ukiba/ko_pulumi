@@ -5,7 +5,7 @@ import com.pulumi.resources.CustomResourceOptions
 
 object codestarnotifications:
   /** Provides a CodeStar Notifications Rule. */
-  def NotificationRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def NotificationRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.codestarnotifications.NotificationRuleArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.codestarnotifications.NotificationRuleArgs.builder
     conf.logicalName2pysicalName(name) match

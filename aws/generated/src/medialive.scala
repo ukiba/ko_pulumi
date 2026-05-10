@@ -22,7 +22,7 @@ object medialive:
       builder.timeouts(args(argsBuilder).build)
 
   /** Resource for managing an AWS MediaLive InputSecurityGroup. */
-  def InputSecurityGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def InputSecurityGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.medialive.InputSecurityGroupArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.medialive.InputSecurityGroupArgs.builder
     conf.logicalName2tagName(name) match
@@ -38,19 +38,19 @@ object medialive:
     export com.pulumi.aws.medialive.MedialiveFunctions.*
   extension (self: MedialiveFunctions.type)
     /** Data source for managing an AWS Elemental MediaLive Input. */
-    def getInput(args: Endofunction[com.pulumi.aws.medialive.inputs.GetInputArgs.Builder] = identity):
+    def getInput(args: Endofunction[com.pulumi.aws.medialive.inputs.GetInputArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.medialive.outputs.GetInputResult] =
       val argsBuilder = com.pulumi.aws.medialive.inputs.GetInputArgs.builder
       com.pulumi.aws.medialive.MedialiveFunctions.getInput(args(argsBuilder).build)
 
     /** Data source for managing an AWS Elemental MediaLive Input. */
-    def getInputPlain(args: Endofunction[com.pulumi.aws.medialive.inputs.GetInputPlainArgs.Builder] = identity):
+    def getInputPlain(args: Endofunction[com.pulumi.aws.medialive.inputs.GetInputPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.medialive.outputs.GetInputResult] =
       val argsBuilder = com.pulumi.aws.medialive.inputs.GetInputPlainArgs.builder
       com.pulumi.aws.medialive.MedialiveFunctions.getInputPlain(args(argsBuilder).build)
 
   /** Resource for managing an AWS MediaLive MultiplexProgram. */
-  def MultiplexProgram(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def MultiplexProgram(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.medialive.MultiplexProgramArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.medialive.MultiplexProgramArgs.builder
     com.pulumi.aws.medialive.MultiplexProgram(name,
@@ -58,7 +58,7 @@ object medialive:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Resource for managing an AWS MediaLive Channel. */
-  def Channel(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def Channel(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.medialive.ChannelArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.medialive.ChannelArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -72,7 +72,7 @@ object medialive:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Resource for managing an AWS MediaLive Multiplex. */
-  def Multiplex(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def Multiplex(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.medialive.MultiplexArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.medialive.MultiplexArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -168,7 +168,7 @@ object medialive:
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
 
   /** Resource for managing an AWS MediaLive Input. */
-  def Input(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def Input(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.medialive.InputArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.medialive.InputArgs.builder
     conf.logicalName2pysicalName(name) match

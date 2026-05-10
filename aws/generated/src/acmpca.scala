@@ -5,7 +5,7 @@ import com.pulumi.resources.CustomResourceOptions
 
 object acmpca:
   /** Associates a certificate with an AWS Certificate Manager Private Certificate Authority (ACM PCA Certificate Authority). An ACM PCA Certificate Authority is unable to issue certificates until it has a certificate associated with it. A root level ACM PCA Certificate Authority is able to self-sign its own root certificate. */
-  def CertificateAuthorityCertificate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def CertificateAuthorityCertificate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.acmpca.CertificateAuthorityCertificateArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.acmpca.CertificateAuthorityCertificateArgs.builder
     com.pulumi.aws.acmpca.CertificateAuthorityCertificate(name,
@@ -18,25 +18,25 @@ object acmpca:
     export com.pulumi.aws.acmpca.AcmpcaFunctions.*
   extension (self: AcmpcaFunctions.type)
     /** Get information on a Certificate issued by a AWS Certificate Manager Private Certificate Authority. */
-    def getCertificate(args: Endofunction[com.pulumi.aws.acmpca.inputs.GetCertificateArgs.Builder] = identity):
+    def getCertificate(args: Endofunction[com.pulumi.aws.acmpca.inputs.GetCertificateArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.acmpca.outputs.GetCertificateResult] =
       val argsBuilder = com.pulumi.aws.acmpca.inputs.GetCertificateArgs.builder
       com.pulumi.aws.acmpca.AcmpcaFunctions.getCertificate(args(argsBuilder).build)
 
     /** Get information on a Certificate issued by a AWS Certificate Manager Private Certificate Authority. */
-    def getCertificatePlain(args: Endofunction[com.pulumi.aws.acmpca.inputs.GetCertificatePlainArgs.Builder] = identity):
+    def getCertificatePlain(args: Endofunction[com.pulumi.aws.acmpca.inputs.GetCertificatePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.acmpca.outputs.GetCertificateResult] =
       val argsBuilder = com.pulumi.aws.acmpca.inputs.GetCertificatePlainArgs.builder
       com.pulumi.aws.acmpca.AcmpcaFunctions.getCertificatePlain(args(argsBuilder).build)
 
     /** Get information on a AWS Certificate Manager Private Certificate Authority (ACM PCA Certificate Authority). */
-    def getCertificateAuthority(args: Endofunction[com.pulumi.aws.acmpca.inputs.GetCertificateAuthorityArgs.Builder] = identity):
+    def getCertificateAuthority(args: Endofunction[com.pulumi.aws.acmpca.inputs.GetCertificateAuthorityArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.acmpca.outputs.GetCertificateAuthorityResult] =
       val argsBuilder = com.pulumi.aws.acmpca.inputs.GetCertificateAuthorityArgs.builder
       com.pulumi.aws.acmpca.AcmpcaFunctions.getCertificateAuthority(args(argsBuilder).build)
 
     /** Get information on a AWS Certificate Manager Private Certificate Authority (ACM PCA Certificate Authority). */
-    def getCertificateAuthorityPlain(args: Endofunction[com.pulumi.aws.acmpca.inputs.GetCertificateAuthorityPlainArgs.Builder] = identity):
+    def getCertificateAuthorityPlain(args: Endofunction[com.pulumi.aws.acmpca.inputs.GetCertificateAuthorityPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.acmpca.outputs.GetCertificateAuthorityResult] =
       val argsBuilder = com.pulumi.aws.acmpca.inputs.GetCertificateAuthorityPlainArgs.builder
       com.pulumi.aws.acmpca.AcmpcaFunctions.getCertificateAuthorityPlain(args(argsBuilder).build)
@@ -72,7 +72,7 @@ object acmpca:
    *  To issue a renewable certificate using an ACM PCA, create a `aws.acm.Certificate`
    *  with the parameter `certificateAuthorityArn`.
    */
-  def Certificate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def Certificate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.acmpca.CertificateArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.acmpca.CertificateArgs.builder
     com.pulumi.aws.acmpca.Certificate(name,
@@ -83,7 +83,7 @@ object acmpca:
    * Provides a resource to manage an AWS Certificate Manager Private Certificate Authorities Permission.
    *  Currently, this is only required in order to allow the ACM service to automatically renew certificates issued by a PCA.
    */
-  def Permission(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def Permission(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.acmpca.PermissionArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.acmpca.PermissionArgs.builder
     com.pulumi.aws.acmpca.Permission(name,
@@ -101,7 +101,7 @@ object acmpca:
       builder.validity(args(argsBuilder).build)
 
   /** Attaches a resource based policy to a private CA. */
-  def Policy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def Policy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.acmpca.PolicyArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.acmpca.PolicyArgs.builder
     com.pulumi.aws.acmpca.Policy(name,
@@ -113,7 +113,7 @@ object acmpca:
    * 
    *  &gt; **NOTE:** Creating this resource will leave the certificate authority in a `PENDING_CERTIFICATE` status, which means it cannot yet issue certificates. To complete this setup, you must fully sign the certificate authority CSR available in the `certificateSigningRequest` attribute. The `aws.acmpca.CertificateAuthorityCertificate` resource can be used for this purpose.
    */
-  def CertificateAuthority(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def CertificateAuthority(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.acmpca.CertificateAuthorityArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.acmpca.CertificateAuthorityArgs.builder
     conf.logicalName2tagName(name) match

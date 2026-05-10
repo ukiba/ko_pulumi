@@ -9,7 +9,7 @@ object datasync:
    * 
    *  &gt; **NOTE:** The DataSync Agents must be available before creating this resource.
    */
-  def NfsLocation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def NfsLocation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.datasync.NfsLocationArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.datasync.NfsLocationArgs.builder
     conf.logicalName2tagName(name) match
@@ -20,7 +20,7 @@ object datasync:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Resource for managing an AWS DataSync Location FSx Ontap File System. */
-  def LocationFsxOntapFileSystem(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def LocationFsxOntapFileSystem(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.datasync.LocationFsxOntapFileSystemArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.datasync.LocationFsxOntapFileSystemArgs.builder
     conf.logicalName2tagName(name) match
@@ -35,7 +35,7 @@ object datasync:
    * 
    *  &gt; **NOTE:** The DataSync Agents must be available before creating this resource.
    */
-  def LocationSmb(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def LocationSmb(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.datasync.LocationSmbArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.datasync.LocationSmbArgs.builder
     conf.logicalName2tagName(name) match
@@ -73,7 +73,7 @@ object datasync:
    * 
    *  &gt; **NOTE:** The DataSync Agents must be available before creating this resource.
    */
-  def LocationAzureBlob(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def LocationAzureBlob(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.datasync.LocationAzureBlobArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.datasync.LocationAzureBlobArgs.builder
     conf.logicalName2tagName(name) match
@@ -88,7 +88,7 @@ object datasync:
    * 
    *  &gt; **NOTE:** The DataSync Agents must be available before creating this resource.
    */
-  def LocationHdfs(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def LocationHdfs(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.datasync.LocationHdfsArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.datasync.LocationHdfsArgs.builder
     conf.logicalName2tagName(name) match
@@ -103,7 +103,7 @@ object datasync:
    * 
    *  &gt; **NOTE:** The EFS File System must have a mounted EFS Mount Target before creating this resource.
    */
-  def EfsLocation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def EfsLocation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.datasync.EfsLocationArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.datasync.EfsLocationArgs.builder
     conf.logicalName2tagName(name) match
@@ -128,7 +128,7 @@ object datasync:
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
 
   /** Manages an AWS DataSync FSx Windows Location. */
-  def LocationFsxWindows(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def LocationFsxWindows(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.datasync.LocationFsxWindowsArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.datasync.LocationFsxWindowsArgs.builder
     conf.logicalName2tagName(name) match
@@ -162,7 +162,7 @@ object datasync:
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
 
   /** Manages an AWS DataSync FSx Lustre Location. */
-  def LocationFsxLustre(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def LocationFsxLustre(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.datasync.LocationFsxLustreArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.datasync.LocationFsxLustreArgs.builder
     conf.logicalName2tagName(name) match
@@ -177,7 +177,7 @@ object datasync:
    * 
    *  &gt; **NOTE:** The DataSync Agents must be available before creating this resource.
    */
-  def LocationObjectStorage(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def LocationObjectStorage(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.datasync.LocationObjectStorageArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.datasync.LocationObjectStorageArgs.builder
     conf.logicalName2tagName(name) match
@@ -206,7 +206,7 @@ object datasync:
    * 
    *  &gt; **NOTE:** One of `activationKey` or `ipAddress` must be provided for resource creation (agent activation). Neither is required for resource import. If using `ipAddress`, this provider must be able to make an HTTP (port 80) GET request to the specified IP address from where it is running. The agent will turn off that HTTP server after activation.
    */
-  def Agent(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def Agent(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.datasync.AgentArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.datasync.AgentArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -220,7 +220,7 @@ object datasync:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Manages an S3 Location within AWS DataSync. */
-  def S3Location(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def S3Location(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.datasync.S3LocationArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.datasync.S3LocationArgs.builder
     conf.logicalName2tagName(name) match
@@ -295,7 +295,7 @@ object datasync:
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
 
   /** Manages an AWS DataSync Task, which represents a configuration for synchronization. Starting an execution of these DataSync Tasks (actually synchronizing files) is performed outside of this resource. */
-  def Task(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def Task(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.datasync.TaskArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.datasync.TaskArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -351,7 +351,7 @@ object datasync:
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
 
   /** Manages an AWS DataSync FSx OpenZfs Location. */
-  def FsxOpenZfsFileSystem(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def FsxOpenZfsFileSystem(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.datasync.FsxOpenZfsFileSystemArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.datasync.FsxOpenZfsFileSystemArgs.builder
     conf.logicalName2tagName(name) match

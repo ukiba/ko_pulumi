@@ -19,7 +19,7 @@ object cloudwatch:
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
 
   /** Resource for managing an AWS CloudWatch Logs Delivery. A delivery is a connection between an `aws.cloudwatch.LogDeliverySource` and an `aws.cloudwatch.LogDeliveryDestination`. */
-  def LogDelivery(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def LogDelivery(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.cloudwatch.LogDeliveryArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.cloudwatch.LogDeliveryArgs.builder
     conf.logicalName2tagName(name) match
@@ -30,7 +30,7 @@ object cloudwatch:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Provides a CloudWatch Metric Stream resource. */
-  def MetricStream(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def MetricStream(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.cloudwatch.MetricStreamArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.cloudwatch.MetricStreamArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -48,7 +48,7 @@ object cloudwatch:
    * 
    *  &gt; **NOTE:** This resource requires the `aws.observabilityadmin.TelemetryEnrichment` resource to be configured first. Without telemetry enrichment enabled, OTel enrichment will not function properly even if the API accepts the configuration.
    */
-  def OtelEnrichment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def OtelEnrichment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.cloudwatch.OtelEnrichmentArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.cloudwatch.OtelEnrichmentArgs.builder
     com.pulumi.aws.cloudwatch.OtelEnrichment(name,
@@ -84,7 +84,7 @@ object cloudwatch:
       builder.routingConfig(args(argsBuilder).build)
 
   /** Provides a CloudWatch Log Stream resource. */
-  def LogStream(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def LogStream(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.cloudwatch.LogStreamArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.cloudwatch.LogStreamArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -99,7 +99,7 @@ object cloudwatch:
    * 
    *  &gt; **Note:** EventBridge was formerly known as CloudWatch Events. The functionality is identical.
    */
-  def EventRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def EventRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.cloudwatch.EventRuleArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.cloudwatch.EventRuleArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -113,7 +113,7 @@ object cloudwatch:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Resource for managing an AWS CloudWatch Logs Index Policy. */
-  def LogIndexPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def LogIndexPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.cloudwatch.LogIndexPolicyArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.cloudwatch.LogIndexPolicyArgs.builder
     com.pulumi.aws.cloudwatch.LogIndexPolicy(name,
@@ -125,7 +125,7 @@ object cloudwatch:
    * 
    *  &gt; **Note:** EventBridge was formerly known as CloudWatch Events. The functionality is identical.
    */
-  def EventBus(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def EventBus(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.cloudwatch.EventBusArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.cloudwatch.EventBusArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -139,7 +139,7 @@ object cloudwatch:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Manages an AWS CloudWatch Alarm Mute Rule. */
-  def AlarmMuteRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def AlarmMuteRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.cloudwatch.AlarmMuteRuleArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.cloudwatch.AlarmMuteRuleArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -167,7 +167,7 @@ object cloudwatch:
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
 
   /** Provides a CloudWatch Logs destination policy resource. */
-  def LogDestinationPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def LogDestinationPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.cloudwatch.LogDestinationPolicyArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.cloudwatch.LogDestinationPolicyArgs.builder
     com.pulumi.aws.cloudwatch.LogDestinationPolicy(name,
@@ -198,7 +198,7 @@ object cloudwatch:
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
 
   /** Resource for managing an AWS CloudWatch Contributor Insight Rule. */
-  def ContributorInsightRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def ContributorInsightRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.cloudwatch.ContributorInsightRuleArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.cloudwatch.ContributorInsightRuleArgs.builder
     conf.logicalName2tagName(name) match
@@ -213,7 +213,7 @@ object cloudwatch:
    * 
    *  &gt; **Note:** EventBridge was formerly known as CloudWatch Events. The functionality is identical.
    */
-  def EventConnection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def EventConnection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.cloudwatch.EventConnectionArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.cloudwatch.EventConnectionArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -228,7 +228,7 @@ object cloudwatch:
    * 
    *  &gt; **NOTE:** An alarm (composite or metric) cannot be destroyed when there are other composite alarms depending on it. This can lead to a cyclical dependency on update, as the provider will unsuccessfully attempt to destroy alarms before updating the rule. Consider using `dependsOn`, references to alarm names, and two-stage updates.
    */
-  def CompositeAlarm(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def CompositeAlarm(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.cloudwatch.CompositeAlarmArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.cloudwatch.CompositeAlarmArgs.builder
     conf.logicalName2tagName(name) match
@@ -253,7 +253,7 @@ object cloudwatch:
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
 
   /** Provides a CloudWatch Logs subscription filter resource. */
-  def LogSubscriptionFilter(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def LogSubscriptionFilter(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.cloudwatch.LogSubscriptionFilterArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.cloudwatch.LogSubscriptionFilterArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -264,7 +264,7 @@ object cloudwatch:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Provides a CloudWatch Log Metric Filter resource. */
-  def LogMetricFilter(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def LogMetricFilter(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.cloudwatch.LogMetricFilterArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.cloudwatch.LogMetricFilterArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -275,7 +275,7 @@ object cloudwatch:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Resource for managing an AWS CloudWatch Logs Delivery Source. */
-  def LogDeliverySource(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def LogDeliverySource(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.cloudwatch.LogDeliverySourceArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.cloudwatch.LogDeliverySourceArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -293,7 +293,7 @@ object cloudwatch:
    * 
    *  &gt; **Note:** EventBridge was formerly known as CloudWatch Events. The functionality is identical.
    */
-  def EventApiDestination(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def EventApiDestination(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.cloudwatch.EventApiDestinationArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.cloudwatch.EventApiDestinationArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -310,7 +310,7 @@ object cloudwatch:
    * 
    *  &gt; **Note:** The EventBridge bus policy resource  (`aws.cloudwatch.EventBusPolicy`) is incompatible with the EventBridge permission resource (`aws.cloudwatch.EventPermission`) and will overwrite permissions.
    */
-  def EventPermission(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def EventPermission(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.cloudwatch.EventPermissionArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.cloudwatch.EventPermissionArgs.builder
     com.pulumi.aws.cloudwatch.EventPermission(name,
@@ -318,7 +318,7 @@ object cloudwatch:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Provides a resource to manage a CloudWatch log resource policy. */
-  def LogResourcePolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def LogResourcePolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.cloudwatch.LogResourcePolicyArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.cloudwatch.LogResourcePolicyArgs.builder
     com.pulumi.aws.cloudwatch.LogResourcePolicy(name,
@@ -332,7 +332,7 @@ object cloudwatch:
       builder.timeouts(args(argsBuilder).build)
 
   /** Provides a CloudWatch Dashboard resource. */
-  def Dashboard(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def Dashboard(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.cloudwatch.DashboardArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.cloudwatch.DashboardArgs.builder
     com.pulumi.aws.cloudwatch.Dashboard(name,
@@ -340,7 +340,7 @@ object cloudwatch:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Resource for managing an AWS CloudWatch Logs Log Anomaly Detector. */
-  def LogAnomalyDetector(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def LogAnomalyDetector(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.cloudwatch.LogAnomalyDetectorArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.cloudwatch.LogAnomalyDetectorArgs.builder
     conf.logicalName2tagName(name) match
@@ -351,7 +351,7 @@ object cloudwatch:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Provides a CloudWatch Metric Alarm resource. */
-  def MetricAlarm(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def MetricAlarm(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.cloudwatch.MetricAlarmArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.cloudwatch.MetricAlarmArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -388,7 +388,7 @@ object cloudwatch:
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
 
   /** Provides a CloudWatch Logs query definition resource. */
-  def QueryDefinition(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def QueryDefinition(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.cloudwatch.QueryDefinitionArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.cloudwatch.QueryDefinitionArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -399,7 +399,7 @@ object cloudwatch:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Provides a Internet Monitor Monitor resource. */
-  def InternetMonitor(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def InternetMonitor(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.cloudwatch.InternetMonitorArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.cloudwatch.InternetMonitorArgs.builder
     conf.logicalName2tagName(name) match
@@ -414,7 +414,7 @@ object cloudwatch:
    * 
    *  &gt; **Note:** EventBridge was formerly known as CloudWatch Events. The functionality is identical.
    */
-  def EventArchive(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def EventArchive(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.cloudwatch.EventArchiveArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.cloudwatch.EventArchiveArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -429,7 +429,7 @@ object cloudwatch:
    * 
    *  Read more about protecting sensitive user data in the [User Guide](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/mask-sensitive-log-data.html).
    */
-  def LogDataProtectionPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def LogDataProtectionPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.cloudwatch.LogDataProtectionPolicyArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.cloudwatch.LogDataProtectionPolicyArgs.builder
     com.pulumi.aws.cloudwatch.LogDataProtectionPolicy(name,
@@ -460,7 +460,7 @@ object cloudwatch:
    * 
    *  &gt; **Note:** EventBridge was formerly known as CloudWatch Events. The functionality is identical.
    */
-  def EventEndpoint(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def EventEndpoint(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.cloudwatch.EventEndpointArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.cloudwatch.EventEndpointArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -471,7 +471,7 @@ object cloudwatch:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Provides a CloudWatch Log Group resource. */
-  def LogGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def LogGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.cloudwatch.LogGroupArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.cloudwatch.LogGroupArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -485,7 +485,7 @@ object cloudwatch:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Resource for managing an AWS CloudWatch Logs Delivery Destination Policy. */
-  def LogDeliveryDestinationPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def LogDeliveryDestinationPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.cloudwatch.LogDeliveryDestinationPolicyArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.cloudwatch.LogDeliveryDestinationPolicyArgs.builder
     com.pulumi.aws.cloudwatch.LogDeliveryDestinationPolicy(name,
@@ -532,7 +532,7 @@ object cloudwatch:
    * 
    *  &gt; **Note:** The EventBridge bus policy resource  (`aws.cloudwatch.EventBusPolicy`) is incompatible with the EventBridge permission resource (`aws.cloudwatch.EventPermission`) and will overwrite permissions.
    */
-  def EventBusPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def EventBusPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.cloudwatch.EventBusPolicyArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.cloudwatch.EventBusPolicyArgs.builder
     com.pulumi.aws.cloudwatch.EventBusPolicy(name,
@@ -545,13 +545,13 @@ object cloudwatch:
     export com.pulumi.aws.cloudwatch.CloudwatchFunctions.*
   extension (self: CloudwatchFunctions.type)
     /** Data source for managing an AWS CloudWatch Contributor Managed Insight Rules. */
-    def getContributorManagedInsightRules(args: Endofunction[com.pulumi.aws.cloudwatch.inputs.GetContributorManagedInsightRulesArgs.Builder] = identity):
+    def getContributorManagedInsightRules(args: Endofunction[com.pulumi.aws.cloudwatch.inputs.GetContributorManagedInsightRulesArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.cloudwatch.outputs.GetContributorManagedInsightRulesResult] =
       val argsBuilder = com.pulumi.aws.cloudwatch.inputs.GetContributorManagedInsightRulesArgs.builder
       com.pulumi.aws.cloudwatch.CloudwatchFunctions.getContributorManagedInsightRules(args(argsBuilder).build)
 
     /** Data source for managing an AWS CloudWatch Contributor Managed Insight Rules. */
-    def getContributorManagedInsightRulesPlain(args: Endofunction[com.pulumi.aws.cloudwatch.inputs.GetContributorManagedInsightRulesPlainArgs.Builder] = identity):
+    def getContributorManagedInsightRulesPlain(args: Endofunction[com.pulumi.aws.cloudwatch.inputs.GetContributorManagedInsightRulesPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.cloudwatch.outputs.GetContributorManagedInsightRulesResult] =
       val argsBuilder = com.pulumi.aws.cloudwatch.inputs.GetContributorManagedInsightRulesPlainArgs.builder
       com.pulumi.aws.cloudwatch.CloudwatchFunctions.getContributorManagedInsightRulesPlain(args(argsBuilder).build)
@@ -561,7 +561,7 @@ object cloudwatch:
      *  EventBridge event bus. Use this data source to compute the ARN of
      *  an event bus, given the name of the bus.
      */
-    def getEventBus(args: Endofunction[com.pulumi.aws.cloudwatch.inputs.GetEventBusArgs.Builder] = identity):
+    def getEventBus(args: Endofunction[com.pulumi.aws.cloudwatch.inputs.GetEventBusArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.cloudwatch.outputs.GetEventBusResult] =
       val argsBuilder = com.pulumi.aws.cloudwatch.inputs.GetEventBusArgs.builder
       com.pulumi.aws.cloudwatch.CloudwatchFunctions.getEventBus(args(argsBuilder).build)
@@ -571,19 +571,19 @@ object cloudwatch:
      *  EventBridge event bus. Use this data source to compute the ARN of
      *  an event bus, given the name of the bus.
      */
-    def getEventBusPlain(args: Endofunction[com.pulumi.aws.cloudwatch.inputs.GetEventBusPlainArgs.Builder] = identity):
+    def getEventBusPlain(args: Endofunction[com.pulumi.aws.cloudwatch.inputs.GetEventBusPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.cloudwatch.outputs.GetEventBusResult] =
       val argsBuilder = com.pulumi.aws.cloudwatch.inputs.GetEventBusPlainArgs.builder
       com.pulumi.aws.cloudwatch.CloudwatchFunctions.getEventBusPlain(args(argsBuilder).build)
 
     /** Data source for managing an AWS EventBridge Event Buses. */
-    def getEventBuses(args: Endofunction[com.pulumi.aws.cloudwatch.inputs.GetEventBusesArgs.Builder] = identity):
+    def getEventBuses(args: Endofunction[com.pulumi.aws.cloudwatch.inputs.GetEventBusesArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.cloudwatch.outputs.GetEventBusesResult] =
       val argsBuilder = com.pulumi.aws.cloudwatch.inputs.GetEventBusesArgs.builder
       com.pulumi.aws.cloudwatch.CloudwatchFunctions.getEventBuses(args(argsBuilder).build)
 
     /** Data source for managing an AWS EventBridge Event Buses. */
-    def getEventBusesPlain(args: Endofunction[com.pulumi.aws.cloudwatch.inputs.GetEventBusesPlainArgs.Builder] = identity):
+    def getEventBusesPlain(args: Endofunction[com.pulumi.aws.cloudwatch.inputs.GetEventBusesPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.cloudwatch.outputs.GetEventBusesResult] =
       val argsBuilder = com.pulumi.aws.cloudwatch.inputs.GetEventBusesPlainArgs.builder
       com.pulumi.aws.cloudwatch.CloudwatchFunctions.getEventBusesPlain(args(argsBuilder).build)
@@ -593,7 +593,7 @@ object cloudwatch:
      * 
      *  &gt; **Note:** EventBridge was formerly known as CloudWatch Events. The functionality is identical.
      */
-    def getEventConnection(args: Endofunction[com.pulumi.aws.cloudwatch.inputs.GetEventConnectionArgs.Builder] = identity):
+    def getEventConnection(args: Endofunction[com.pulumi.aws.cloudwatch.inputs.GetEventConnectionArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.cloudwatch.outputs.GetEventConnectionResult] =
       val argsBuilder = com.pulumi.aws.cloudwatch.inputs.GetEventConnectionArgs.builder
       com.pulumi.aws.cloudwatch.CloudwatchFunctions.getEventConnection(args(argsBuilder).build)
@@ -603,7 +603,7 @@ object cloudwatch:
      * 
      *  &gt; **Note:** EventBridge was formerly known as CloudWatch Events. The functionality is identical.
      */
-    def getEventConnectionPlain(args: Endofunction[com.pulumi.aws.cloudwatch.inputs.GetEventConnectionPlainArgs.Builder] = identity):
+    def getEventConnectionPlain(args: Endofunction[com.pulumi.aws.cloudwatch.inputs.GetEventConnectionPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.cloudwatch.outputs.GetEventConnectionResult] =
       val argsBuilder = com.pulumi.aws.cloudwatch.inputs.GetEventConnectionPlainArgs.builder
       com.pulumi.aws.cloudwatch.CloudwatchFunctions.getEventConnectionPlain(args(argsBuilder).build)
@@ -613,7 +613,7 @@ object cloudwatch:
      * 
      *  &gt; **Note:** EventBridge was formerly known as CloudWatch Events. The functionality is identical.
      */
-    def getEventSource(args: Endofunction[com.pulumi.aws.cloudwatch.inputs.GetEventSourceArgs.Builder] = identity):
+    def getEventSource(args: Endofunction[com.pulumi.aws.cloudwatch.inputs.GetEventSourceArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.cloudwatch.outputs.GetEventSourceResult] =
       val argsBuilder = com.pulumi.aws.cloudwatch.inputs.GetEventSourceArgs.builder
       com.pulumi.aws.cloudwatch.CloudwatchFunctions.getEventSource(args(argsBuilder).build)
@@ -623,7 +623,7 @@ object cloudwatch:
      * 
      *  &gt; **Note:** EventBridge was formerly known as CloudWatch Events. The functionality is identical.
      */
-    def getEventSourcePlain(args: Endofunction[com.pulumi.aws.cloudwatch.inputs.GetEventSourcePlainArgs.Builder] = identity):
+    def getEventSourcePlain(args: Endofunction[com.pulumi.aws.cloudwatch.inputs.GetEventSourcePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.cloudwatch.outputs.GetEventSourceResult] =
       val argsBuilder = com.pulumi.aws.cloudwatch.inputs.GetEventSourcePlainArgs.builder
       com.pulumi.aws.cloudwatch.CloudwatchFunctions.getEventSourcePlain(args(argsBuilder).build)
@@ -633,7 +633,7 @@ object cloudwatch:
      * 
      *  &gt; For more information about data protection policies, see the [Help protect sensitive log data with masking](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/mask-sensitive-log-data.html).
      */
-    def getLogDataProtectionPolicyDocument(args: Endofunction[com.pulumi.aws.cloudwatch.inputs.GetLogDataProtectionPolicyDocumentArgs.Builder] = identity):
+    def getLogDataProtectionPolicyDocument(args: Endofunction[com.pulumi.aws.cloudwatch.inputs.GetLogDataProtectionPolicyDocumentArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.cloudwatch.outputs.GetLogDataProtectionPolicyDocumentResult] =
       val argsBuilder = com.pulumi.aws.cloudwatch.inputs.GetLogDataProtectionPolicyDocumentArgs.builder
       com.pulumi.aws.cloudwatch.CloudwatchFunctions.getLogDataProtectionPolicyDocument(args(argsBuilder).build)
@@ -643,31 +643,31 @@ object cloudwatch:
      * 
      *  &gt; For more information about data protection policies, see the [Help protect sensitive log data with masking](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/mask-sensitive-log-data.html).
      */
-    def getLogDataProtectionPolicyDocumentPlain(args: Endofunction[com.pulumi.aws.cloudwatch.inputs.GetLogDataProtectionPolicyDocumentPlainArgs.Builder] = identity):
+    def getLogDataProtectionPolicyDocumentPlain(args: Endofunction[com.pulumi.aws.cloudwatch.inputs.GetLogDataProtectionPolicyDocumentPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.cloudwatch.outputs.GetLogDataProtectionPolicyDocumentResult] =
       val argsBuilder = com.pulumi.aws.cloudwatch.inputs.GetLogDataProtectionPolicyDocumentPlainArgs.builder
       com.pulumi.aws.cloudwatch.CloudwatchFunctions.getLogDataProtectionPolicyDocumentPlain(args(argsBuilder).build)
 
     /** Use this data source to get information about an AWS Cloudwatch Log Group */
-    def getLogGroup(args: Endofunction[com.pulumi.aws.cloudwatch.inputs.GetLogGroupArgs.Builder] = identity):
+    def getLogGroup(args: Endofunction[com.pulumi.aws.cloudwatch.inputs.GetLogGroupArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.cloudwatch.outputs.GetLogGroupResult] =
       val argsBuilder = com.pulumi.aws.cloudwatch.inputs.GetLogGroupArgs.builder
       com.pulumi.aws.cloudwatch.CloudwatchFunctions.getLogGroup(args(argsBuilder).build)
 
     /** Use this data source to get information about an AWS Cloudwatch Log Group */
-    def getLogGroupPlain(args: Endofunction[com.pulumi.aws.cloudwatch.inputs.GetLogGroupPlainArgs.Builder] = identity):
+    def getLogGroupPlain(args: Endofunction[com.pulumi.aws.cloudwatch.inputs.GetLogGroupPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.cloudwatch.outputs.GetLogGroupResult] =
       val argsBuilder = com.pulumi.aws.cloudwatch.inputs.GetLogGroupPlainArgs.builder
       com.pulumi.aws.cloudwatch.CloudwatchFunctions.getLogGroupPlain(args(argsBuilder).build)
 
     /** Use this data source to get a list of AWS Cloudwatch Log Groups */
-    def getLogGroups(args: Endofunction[com.pulumi.aws.cloudwatch.inputs.GetLogGroupsArgs.Builder] = identity):
+    def getLogGroups(args: Endofunction[com.pulumi.aws.cloudwatch.inputs.GetLogGroupsArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.cloudwatch.outputs.GetLogGroupsResult] =
       val argsBuilder = com.pulumi.aws.cloudwatch.inputs.GetLogGroupsArgs.builder
       com.pulumi.aws.cloudwatch.CloudwatchFunctions.getLogGroups(args(argsBuilder).build)
 
     /** Use this data source to get a list of AWS Cloudwatch Log Groups */
-    def getLogGroupsPlain(args: Endofunction[com.pulumi.aws.cloudwatch.inputs.GetLogGroupsPlainArgs.Builder] = identity):
+    def getLogGroupsPlain(args: Endofunction[com.pulumi.aws.cloudwatch.inputs.GetLogGroupsPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.cloudwatch.outputs.GetLogGroupsResult] =
       val argsBuilder = com.pulumi.aws.cloudwatch.inputs.GetLogGroupsPlainArgs.builder
       com.pulumi.aws.cloudwatch.CloudwatchFunctions.getLogGroupsPlain(args(argsBuilder).build)
@@ -782,7 +782,7 @@ object cloudwatch:
       builder.sqsTarget(args(argsBuilder).build)
 
   /** Resource for managing an AWS CloudWatch Logs Delivery Destination. */
-  def LogDeliveryDestination(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def LogDeliveryDestination(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.cloudwatch.LogDeliveryDestinationArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.cloudwatch.LogDeliveryDestinationArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -796,7 +796,7 @@ object cloudwatch:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Provides a CloudWatch Logs destination resource. */
-  def LogDestination(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def LogDestination(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.cloudwatch.LogDestinationArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.cloudwatch.LogDestinationArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -820,7 +820,7 @@ object cloudwatch:
    *     or `aws.sns.TopicPolicy`.
    *     More info [here](https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-use-resource-based.html).
    */
-  def EventTarget(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def EventTarget(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.cloudwatch.EventTargetArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.cloudwatch.EventTargetArgs.builder
     com.pulumi.aws.cloudwatch.EventTarget(name,
@@ -870,7 +870,7 @@ object cloudwatch:
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
 
   /** Provides a CloudWatch Log Account Policy resource. */
-  def LogAccountPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def LogAccountPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.cloudwatch.LogAccountPolicyArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.cloudwatch.LogAccountPolicyArgs.builder
     com.pulumi.aws.cloudwatch.LogAccountPolicy(name,
@@ -898,7 +898,7 @@ object cloudwatch:
       builder.condition(args(argsBuilder).build)
 
   /** Resource for managing an AWS CloudWatch Logs Transformer. */
-  def LogTransformer(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def LogTransformer(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.cloudwatch.LogTransformerArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.cloudwatch.LogTransformerArgs.builder
     com.pulumi.aws.cloudwatch.LogTransformer(name,
@@ -906,7 +906,7 @@ object cloudwatch:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Resource for managing an AWS CloudWatch Contributor Managed Insight Rule. */
-  def ContributorManagedInsightRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def ContributorManagedInsightRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.cloudwatch.ContributorManagedInsightRuleArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.cloudwatch.ContributorManagedInsightRuleArgs.builder
     conf.logicalName2tagName(name) match

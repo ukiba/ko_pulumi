@@ -9,7 +9,7 @@ object oam:
    * 
    *  &gt; **NOTE:** Creating an `aws.oam.Link` may sometimes fail if the `aws.oam.SinkPolicy` for the attached `aws.oam.Sink` is not created before the `aws.oam.Link`. To prevent this, declare an explicit dependency using a `dependsOn` meta-argument.
    */
-  def Link(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def Link(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.oam.LinkArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.oam.LinkArgs.builder
     conf.logicalName2tagName(name) match
@@ -20,7 +20,7 @@ object oam:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Resource for managing an AWS CloudWatch Observability Access Manager Sink. */
-  def Sink(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def Sink(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.oam.SinkArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.oam.SinkArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -48,7 +48,7 @@ object oam:
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
 
   /** Resource for managing an AWS CloudWatch Observability Access Manager Sink Policy. */
-  def SinkPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def SinkPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.oam.SinkPolicyArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.oam.SinkPolicyArgs.builder
     com.pulumi.aws.oam.SinkPolicy(name,
@@ -61,49 +61,49 @@ object oam:
     export com.pulumi.aws.oam.OamFunctions.*
   extension (self: OamFunctions.type)
     /** Data source for managing an AWS CloudWatch Observability Access Manager Link. */
-    def getLink(args: Endofunction[com.pulumi.aws.oam.inputs.GetLinkArgs.Builder] = identity):
+    def getLink(args: Endofunction[com.pulumi.aws.oam.inputs.GetLinkArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.oam.outputs.GetLinkResult] =
       val argsBuilder = com.pulumi.aws.oam.inputs.GetLinkArgs.builder
       com.pulumi.aws.oam.OamFunctions.getLink(args(argsBuilder).build)
 
     /** Data source for managing an AWS CloudWatch Observability Access Manager Link. */
-    def getLinkPlain(args: Endofunction[com.pulumi.aws.oam.inputs.GetLinkPlainArgs.Builder] = identity):
+    def getLinkPlain(args: Endofunction[com.pulumi.aws.oam.inputs.GetLinkPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.oam.outputs.GetLinkResult] =
       val argsBuilder = com.pulumi.aws.oam.inputs.GetLinkPlainArgs.builder
       com.pulumi.aws.oam.OamFunctions.getLinkPlain(args(argsBuilder).build)
 
     /** Data source for managing an AWS CloudWatch Observability Access Manager Links. */
-    def getLinks(args: Endofunction[com.pulumi.aws.oam.inputs.GetLinksArgs.Builder] = identity):
+    def getLinks(args: Endofunction[com.pulumi.aws.oam.inputs.GetLinksArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.oam.outputs.GetLinksResult] =
       val argsBuilder = com.pulumi.aws.oam.inputs.GetLinksArgs.builder
       com.pulumi.aws.oam.OamFunctions.getLinks(args(argsBuilder).build)
 
     /** Data source for managing an AWS CloudWatch Observability Access Manager Links. */
-    def getLinksPlain(args: Endofunction[com.pulumi.aws.oam.inputs.GetLinksPlainArgs.Builder] = identity):
+    def getLinksPlain(args: Endofunction[com.pulumi.aws.oam.inputs.GetLinksPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.oam.outputs.GetLinksResult] =
       val argsBuilder = com.pulumi.aws.oam.inputs.GetLinksPlainArgs.builder
       com.pulumi.aws.oam.OamFunctions.getLinksPlain(args(argsBuilder).build)
 
     /** Data source for managing an AWS CloudWatch Observability Access Manager Sink. */
-    def getSink(args: Endofunction[com.pulumi.aws.oam.inputs.GetSinkArgs.Builder] = identity):
+    def getSink(args: Endofunction[com.pulumi.aws.oam.inputs.GetSinkArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.oam.outputs.GetSinkResult] =
       val argsBuilder = com.pulumi.aws.oam.inputs.GetSinkArgs.builder
       com.pulumi.aws.oam.OamFunctions.getSink(args(argsBuilder).build)
 
     /** Data source for managing an AWS CloudWatch Observability Access Manager Sink. */
-    def getSinkPlain(args: Endofunction[com.pulumi.aws.oam.inputs.GetSinkPlainArgs.Builder] = identity):
+    def getSinkPlain(args: Endofunction[com.pulumi.aws.oam.inputs.GetSinkPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.oam.outputs.GetSinkResult] =
       val argsBuilder = com.pulumi.aws.oam.inputs.GetSinkPlainArgs.builder
       com.pulumi.aws.oam.OamFunctions.getSinkPlain(args(argsBuilder).build)
 
     /** Data source for managing an AWS CloudWatch Observability Access Manager Sinks. */
-    def getSinks(args: Endofunction[com.pulumi.aws.oam.inputs.GetSinksArgs.Builder] = identity):
+    def getSinks(args: Endofunction[com.pulumi.aws.oam.inputs.GetSinksArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.oam.outputs.GetSinksResult] =
       val argsBuilder = com.pulumi.aws.oam.inputs.GetSinksArgs.builder
       com.pulumi.aws.oam.OamFunctions.getSinks(args(argsBuilder).build)
 
     /** Data source for managing an AWS CloudWatch Observability Access Manager Sinks. */
-    def getSinksPlain(args: Endofunction[com.pulumi.aws.oam.inputs.GetSinksPlainArgs.Builder] = identity):
+    def getSinksPlain(args: Endofunction[com.pulumi.aws.oam.inputs.GetSinksPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.oam.outputs.GetSinksResult] =
       val argsBuilder = com.pulumi.aws.oam.inputs.GetSinksPlainArgs.builder
       com.pulumi.aws.oam.OamFunctions.getSinksPlain(args(argsBuilder).build)

@@ -9,7 +9,7 @@ object qldb:
    * 
    *  &gt; **NOTE:** Deletion protection is enabled by default. To successfully delete this resource via this provider, `deletionProtection = false` must be applied before attempting deletion.
    */
-  def Ledger(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def Ledger(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.qldb.LedgerArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.qldb.LedgerArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -28,19 +28,19 @@ object qldb:
     export com.pulumi.aws.qldb.QldbFunctions.*
   extension (self: QldbFunctions.type)
     /** Use this data source to fetch information about a Quantum Ledger Database. */
-    def getLedger(args: Endofunction[com.pulumi.aws.qldb.inputs.GetLedgerArgs.Builder] = identity):
+    def getLedger(args: Endofunction[com.pulumi.aws.qldb.inputs.GetLedgerArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.qldb.outputs.GetLedgerResult] =
       val argsBuilder = com.pulumi.aws.qldb.inputs.GetLedgerArgs.builder
       com.pulumi.aws.qldb.QldbFunctions.getLedger(args(argsBuilder).build)
 
     /** Use this data source to fetch information about a Quantum Ledger Database. */
-    def getLedgerPlain(args: Endofunction[com.pulumi.aws.qldb.inputs.GetLedgerPlainArgs.Builder] = identity):
+    def getLedgerPlain(args: Endofunction[com.pulumi.aws.qldb.inputs.GetLedgerPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.qldb.outputs.GetLedgerResult] =
       val argsBuilder = com.pulumi.aws.qldb.inputs.GetLedgerPlainArgs.builder
       com.pulumi.aws.qldb.QldbFunctions.getLedgerPlain(args(argsBuilder).build)
 
   /** Provides an AWS Quantum Ledger Database (QLDB) Stream resource */
-  def Stream(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def Stream(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.qldb.StreamArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.qldb.StreamArgs.builder
     conf.logicalName2tagName(name) match

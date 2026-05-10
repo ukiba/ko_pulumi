@@ -15,7 +15,7 @@ object rekognition:
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
 
   /** Resource for managing an AWS Rekognition Collection. */
-  def Collection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def Collection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.rekognition.CollectionArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.rekognition.CollectionArgs.builder
     conf.logicalName2tagName(name) match
@@ -42,7 +42,7 @@ object rekognition:
    * 
    *  &gt; Stream Processors configured for Face Recognition cannot have _any_ properties updated after the fact, and it will result in an AWS API error.
    */
-  def StreamProcessor(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def StreamProcessor(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.rekognition.StreamProcessorArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.rekognition.StreamProcessorArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -56,7 +56,7 @@ object rekognition:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Resource for managing an AWS Rekognition Project. */
-  def Project(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def Project(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.rekognition.ProjectArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.rekognition.ProjectArgs.builder
     conf.logicalName2pysicalName(name) match

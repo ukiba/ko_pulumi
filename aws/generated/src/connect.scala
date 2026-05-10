@@ -75,7 +75,7 @@ object connect:
    *  !&gt; **WARN:** Contact Flow Modules exported from the Console [See Contact Flow import/export which is the same for Contact Flow Modules](https://docs.aws.amazon.com/connect/latest/adminguide/contact-flow-import-export.html) are not in the Amazon Connect Contact Flow Language and can not be used with this resource. Instead, the recommendation is to use the AWS CLI [`describe-contact-flow-module`](https://docs.aws.amazon.com/cli/latest/reference/connect/describe-contact-flow-module.html).
    *  See example below which uses `jq` to extract the `Content` attribute and saves it to a local file.
    */
-  def ContactFlowModule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def ContactFlowModule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.connect.ContactFlowModuleArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.connect.ContactFlowModuleArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -102,7 +102,7 @@ object connect:
    * Provides an Amazon Connect Queue resource. For more information see
    *  [Amazon Connect: Getting Started](https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-get-started.html)
    */
-  def Queue(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def Queue(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.connect.QueueArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.connect.QueueArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -119,7 +119,7 @@ object connect:
    * Provides an Amazon Connect User resource. For more information see
    *  [Amazon Connect: Getting Started](https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-get-started.html)
    */
-  def User(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def User(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.connect.UserArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.connect.UserArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -136,7 +136,7 @@ object connect:
    * Provides an Amazon Connect Quick Connect resource. For more information see
    *  [Amazon Connect: Getting Started](https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-get-started.html)
    */
-  def QuickConnect(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def QuickConnect(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.connect.QuickConnectArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.connect.QuickConnectArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -153,7 +153,7 @@ object connect:
    * Provides an Amazon Connect Routing Profile resource. For more information see
    *  [Amazon Connect: Getting Started](https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-get-started.html).
    */
-  def RoutingProfile(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def RoutingProfile(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.connect.RoutingProfileArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.connect.RoutingProfileArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -176,7 +176,7 @@ object connect:
    *  !&gt; **WARN:** Contact Flows exported from the Console [Contact Flow import/export](https://docs.aws.amazon.com/connect/latest/adminguide/contact-flow-import-export.html) are not in the Amazon Connect Contact Flow Language and can not be used with this resource. Instead, the recommendation is to use the AWS CLI [`describe-contact-flow`](https://awscli.amazonaws.com/v2/documentation/api/latest/reference/connect/describe-contact-flow.html).
    *  See example below which uses `jq` to extract the `Content` attribute and saves it to a local file.
    */
-  def ContactFlow(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def ContactFlow(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.connect.ContactFlowArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.connect.ContactFlowArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -195,193 +195,193 @@ object connect:
     export com.pulumi.aws.connect.ConnectFunctions.*
   extension (self: ConnectFunctions.type)
     /** Provides details about a specific Lex (V1) Bot associated with an Amazon Connect instance. */
-    def getBotAssociation(args: Endofunction[com.pulumi.aws.connect.inputs.GetBotAssociationArgs.Builder] = identity):
+    def getBotAssociation(args: Endofunction[com.pulumi.aws.connect.inputs.GetBotAssociationArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.connect.outputs.GetBotAssociationResult] =
       val argsBuilder = com.pulumi.aws.connect.inputs.GetBotAssociationArgs.builder
       com.pulumi.aws.connect.ConnectFunctions.getBotAssociation(args(argsBuilder).build)
 
     /** Provides details about a specific Lex (V1) Bot associated with an Amazon Connect instance. */
-    def getBotAssociationPlain(args: Endofunction[com.pulumi.aws.connect.inputs.GetBotAssociationPlainArgs.Builder] = identity):
+    def getBotAssociationPlain(args: Endofunction[com.pulumi.aws.connect.inputs.GetBotAssociationPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.connect.outputs.GetBotAssociationResult] =
       val argsBuilder = com.pulumi.aws.connect.inputs.GetBotAssociationPlainArgs.builder
       com.pulumi.aws.connect.ConnectFunctions.getBotAssociationPlain(args(argsBuilder).build)
 
     /** Provides details about a specific Amazon Connect Contact Flow. */
-    def getContactFlow(args: Endofunction[com.pulumi.aws.connect.inputs.GetContactFlowArgs.Builder] = identity):
+    def getContactFlow(args: Endofunction[com.pulumi.aws.connect.inputs.GetContactFlowArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.connect.outputs.GetContactFlowResult] =
       val argsBuilder = com.pulumi.aws.connect.inputs.GetContactFlowArgs.builder
       com.pulumi.aws.connect.ConnectFunctions.getContactFlow(args(argsBuilder).build)
 
     /** Provides details about a specific Amazon Connect Contact Flow. */
-    def getContactFlowPlain(args: Endofunction[com.pulumi.aws.connect.inputs.GetContactFlowPlainArgs.Builder] = identity):
+    def getContactFlowPlain(args: Endofunction[com.pulumi.aws.connect.inputs.GetContactFlowPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.connect.outputs.GetContactFlowResult] =
       val argsBuilder = com.pulumi.aws.connect.inputs.GetContactFlowPlainArgs.builder
       com.pulumi.aws.connect.ConnectFunctions.getContactFlowPlain(args(argsBuilder).build)
 
     /** Provides details about a specific Amazon Connect Contact Flow Module. */
-    def getContactFlowModule(args: Endofunction[com.pulumi.aws.connect.inputs.GetContactFlowModuleArgs.Builder] = identity):
+    def getContactFlowModule(args: Endofunction[com.pulumi.aws.connect.inputs.GetContactFlowModuleArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.connect.outputs.GetContactFlowModuleResult] =
       val argsBuilder = com.pulumi.aws.connect.inputs.GetContactFlowModuleArgs.builder
       com.pulumi.aws.connect.ConnectFunctions.getContactFlowModule(args(argsBuilder).build)
 
     /** Provides details about a specific Amazon Connect Contact Flow Module. */
-    def getContactFlowModulePlain(args: Endofunction[com.pulumi.aws.connect.inputs.GetContactFlowModulePlainArgs.Builder] = identity):
+    def getContactFlowModulePlain(args: Endofunction[com.pulumi.aws.connect.inputs.GetContactFlowModulePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.connect.outputs.GetContactFlowModuleResult] =
       val argsBuilder = com.pulumi.aws.connect.inputs.GetContactFlowModulePlainArgs.builder
       com.pulumi.aws.connect.ConnectFunctions.getContactFlowModulePlain(args(argsBuilder).build)
 
     /** Provides details about a specific Amazon Connect Hours of Operation. */
-    def getHoursOfOperation(args: Endofunction[com.pulumi.aws.connect.inputs.GetHoursOfOperationArgs.Builder] = identity):
+    def getHoursOfOperation(args: Endofunction[com.pulumi.aws.connect.inputs.GetHoursOfOperationArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.connect.outputs.GetHoursOfOperationResult] =
       val argsBuilder = com.pulumi.aws.connect.inputs.GetHoursOfOperationArgs.builder
       com.pulumi.aws.connect.ConnectFunctions.getHoursOfOperation(args(argsBuilder).build)
 
     /** Provides details about a specific Amazon Connect Hours of Operation. */
-    def getHoursOfOperationPlain(args: Endofunction[com.pulumi.aws.connect.inputs.GetHoursOfOperationPlainArgs.Builder] = identity):
+    def getHoursOfOperationPlain(args: Endofunction[com.pulumi.aws.connect.inputs.GetHoursOfOperationPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.connect.outputs.GetHoursOfOperationResult] =
       val argsBuilder = com.pulumi.aws.connect.inputs.GetHoursOfOperationPlainArgs.builder
       com.pulumi.aws.connect.ConnectFunctions.getHoursOfOperationPlain(args(argsBuilder).build)
 
     /** Provides details about a specific Amazon Connect Instance. */
-    def getInstance(args: Endofunction[com.pulumi.aws.connect.inputs.GetInstanceArgs.Builder] = identity):
+    def getInstance(args: Endofunction[com.pulumi.aws.connect.inputs.GetInstanceArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.connect.outputs.GetInstanceResult] =
       val argsBuilder = com.pulumi.aws.connect.inputs.GetInstanceArgs.builder
       com.pulumi.aws.connect.ConnectFunctions.getInstance(args(argsBuilder).build)
 
     /** Provides details about a specific Amazon Connect Instance. */
-    def getInstancePlain(args: Endofunction[com.pulumi.aws.connect.inputs.GetInstancePlainArgs.Builder] = identity):
+    def getInstancePlain(args: Endofunction[com.pulumi.aws.connect.inputs.GetInstancePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.connect.outputs.GetInstanceResult] =
       val argsBuilder = com.pulumi.aws.connect.inputs.GetInstancePlainArgs.builder
       com.pulumi.aws.connect.ConnectFunctions.getInstancePlain(args(argsBuilder).build)
 
     /** Provides details about a specific Amazon Connect Instance Storage Config. */
-    def getInstanceStorageConfig(args: Endofunction[com.pulumi.aws.connect.inputs.GetInstanceStorageConfigArgs.Builder] = identity):
+    def getInstanceStorageConfig(args: Endofunction[com.pulumi.aws.connect.inputs.GetInstanceStorageConfigArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.connect.outputs.GetInstanceStorageConfigResult] =
       val argsBuilder = com.pulumi.aws.connect.inputs.GetInstanceStorageConfigArgs.builder
       com.pulumi.aws.connect.ConnectFunctions.getInstanceStorageConfig(args(argsBuilder).build)
 
     /** Provides details about a specific Amazon Connect Instance Storage Config. */
-    def getInstanceStorageConfigPlain(args: Endofunction[com.pulumi.aws.connect.inputs.GetInstanceStorageConfigPlainArgs.Builder] = identity):
+    def getInstanceStorageConfigPlain(args: Endofunction[com.pulumi.aws.connect.inputs.GetInstanceStorageConfigPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.connect.outputs.GetInstanceStorageConfigResult] =
       val argsBuilder = com.pulumi.aws.connect.inputs.GetInstanceStorageConfigPlainArgs.builder
       com.pulumi.aws.connect.ConnectFunctions.getInstanceStorageConfigPlain(args(argsBuilder).build)
 
     /** Provides details about a specific Connect Lambda Function Association. */
-    def getLambdaFunctionAssociation(args: Endofunction[com.pulumi.aws.connect.inputs.GetLambdaFunctionAssociationArgs.Builder] = identity):
+    def getLambdaFunctionAssociation(args: Endofunction[com.pulumi.aws.connect.inputs.GetLambdaFunctionAssociationArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.connect.outputs.GetLambdaFunctionAssociationResult] =
       val argsBuilder = com.pulumi.aws.connect.inputs.GetLambdaFunctionAssociationArgs.builder
       com.pulumi.aws.connect.ConnectFunctions.getLambdaFunctionAssociation(args(argsBuilder).build)
 
     /** Provides details about a specific Connect Lambda Function Association. */
-    def getLambdaFunctionAssociationPlain(args: Endofunction[com.pulumi.aws.connect.inputs.GetLambdaFunctionAssociationPlainArgs.Builder] = identity):
+    def getLambdaFunctionAssociationPlain(args: Endofunction[com.pulumi.aws.connect.inputs.GetLambdaFunctionAssociationPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.connect.outputs.GetLambdaFunctionAssociationResult] =
       val argsBuilder = com.pulumi.aws.connect.inputs.GetLambdaFunctionAssociationPlainArgs.builder
       com.pulumi.aws.connect.ConnectFunctions.getLambdaFunctionAssociationPlain(args(argsBuilder).build)
 
     /** Provides details about a specific Amazon Connect Prompt. */
-    def getPrompt(args: Endofunction[com.pulumi.aws.connect.inputs.GetPromptArgs.Builder] = identity):
+    def getPrompt(args: Endofunction[com.pulumi.aws.connect.inputs.GetPromptArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.connect.outputs.GetPromptResult] =
       val argsBuilder = com.pulumi.aws.connect.inputs.GetPromptArgs.builder
       com.pulumi.aws.connect.ConnectFunctions.getPrompt(args(argsBuilder).build)
 
     /** Provides details about a specific Amazon Connect Prompt. */
-    def getPromptPlain(args: Endofunction[com.pulumi.aws.connect.inputs.GetPromptPlainArgs.Builder] = identity):
+    def getPromptPlain(args: Endofunction[com.pulumi.aws.connect.inputs.GetPromptPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.connect.outputs.GetPromptResult] =
       val argsBuilder = com.pulumi.aws.connect.inputs.GetPromptPlainArgs.builder
       com.pulumi.aws.connect.ConnectFunctions.getPromptPlain(args(argsBuilder).build)
 
     /** Provides details about a specific Amazon Connect Queue. */
-    def getQueue(args: Endofunction[com.pulumi.aws.connect.inputs.GetQueueArgs.Builder] = identity):
+    def getQueue(args: Endofunction[com.pulumi.aws.connect.inputs.GetQueueArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.connect.outputs.GetQueueResult] =
       val argsBuilder = com.pulumi.aws.connect.inputs.GetQueueArgs.builder
       com.pulumi.aws.connect.ConnectFunctions.getQueue(args(argsBuilder).build)
 
     /** Provides details about a specific Amazon Connect Queue. */
-    def getQueuePlain(args: Endofunction[com.pulumi.aws.connect.inputs.GetQueuePlainArgs.Builder] = identity):
+    def getQueuePlain(args: Endofunction[com.pulumi.aws.connect.inputs.GetQueuePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.connect.outputs.GetQueueResult] =
       val argsBuilder = com.pulumi.aws.connect.inputs.GetQueuePlainArgs.builder
       com.pulumi.aws.connect.ConnectFunctions.getQueuePlain(args(argsBuilder).build)
 
     /** Provides details about a specific Amazon Connect Quick Connect. */
-    def getQuickConnect(args: Endofunction[com.pulumi.aws.connect.inputs.GetQuickConnectArgs.Builder] = identity):
+    def getQuickConnect(args: Endofunction[com.pulumi.aws.connect.inputs.GetQuickConnectArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.connect.outputs.GetQuickConnectResult] =
       val argsBuilder = com.pulumi.aws.connect.inputs.GetQuickConnectArgs.builder
       com.pulumi.aws.connect.ConnectFunctions.getQuickConnect(args(argsBuilder).build)
 
     /** Provides details about a specific Amazon Connect Quick Connect. */
-    def getQuickConnectPlain(args: Endofunction[com.pulumi.aws.connect.inputs.GetQuickConnectPlainArgs.Builder] = identity):
+    def getQuickConnectPlain(args: Endofunction[com.pulumi.aws.connect.inputs.GetQuickConnectPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.connect.outputs.GetQuickConnectResult] =
       val argsBuilder = com.pulumi.aws.connect.inputs.GetQuickConnectPlainArgs.builder
       com.pulumi.aws.connect.ConnectFunctions.getQuickConnectPlain(args(argsBuilder).build)
 
     /** Provides details about a specific Amazon Connect Routing Profile. */
-    def getRoutingProfile(args: Endofunction[com.pulumi.aws.connect.inputs.GetRoutingProfileArgs.Builder] = identity):
+    def getRoutingProfile(args: Endofunction[com.pulumi.aws.connect.inputs.GetRoutingProfileArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.connect.outputs.GetRoutingProfileResult] =
       val argsBuilder = com.pulumi.aws.connect.inputs.GetRoutingProfileArgs.builder
       com.pulumi.aws.connect.ConnectFunctions.getRoutingProfile(args(argsBuilder).build)
 
     /** Provides details about a specific Amazon Connect Routing Profile. */
-    def getRoutingProfilePlain(args: Endofunction[com.pulumi.aws.connect.inputs.GetRoutingProfilePlainArgs.Builder] = identity):
+    def getRoutingProfilePlain(args: Endofunction[com.pulumi.aws.connect.inputs.GetRoutingProfilePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.connect.outputs.GetRoutingProfileResult] =
       val argsBuilder = com.pulumi.aws.connect.inputs.GetRoutingProfilePlainArgs.builder
       com.pulumi.aws.connect.ConnectFunctions.getRoutingProfilePlain(args(argsBuilder).build)
 
     /** Provides details about a specific Amazon Connect Security Profile. */
-    def getSecurityProfile(args: Endofunction[com.pulumi.aws.connect.inputs.GetSecurityProfileArgs.Builder] = identity):
+    def getSecurityProfile(args: Endofunction[com.pulumi.aws.connect.inputs.GetSecurityProfileArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.connect.outputs.GetSecurityProfileResult] =
       val argsBuilder = com.pulumi.aws.connect.inputs.GetSecurityProfileArgs.builder
       com.pulumi.aws.connect.ConnectFunctions.getSecurityProfile(args(argsBuilder).build)
 
     /** Provides details about a specific Amazon Connect Security Profile. */
-    def getSecurityProfilePlain(args: Endofunction[com.pulumi.aws.connect.inputs.GetSecurityProfilePlainArgs.Builder] = identity):
+    def getSecurityProfilePlain(args: Endofunction[com.pulumi.aws.connect.inputs.GetSecurityProfilePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.connect.outputs.GetSecurityProfileResult] =
       val argsBuilder = com.pulumi.aws.connect.inputs.GetSecurityProfilePlainArgs.builder
       com.pulumi.aws.connect.ConnectFunctions.getSecurityProfilePlain(args(argsBuilder).build)
 
     /** Provides details about a specific Amazon Connect User. */
-    def getUser(args: Endofunction[com.pulumi.aws.connect.inputs.GetUserArgs.Builder] = identity):
+    def getUser(args: Endofunction[com.pulumi.aws.connect.inputs.GetUserArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.connect.outputs.GetUserResult] =
       val argsBuilder = com.pulumi.aws.connect.inputs.GetUserArgs.builder
       com.pulumi.aws.connect.ConnectFunctions.getUser(args(argsBuilder).build)
 
     /** Provides details about a specific Amazon Connect User. */
-    def getUserPlain(args: Endofunction[com.pulumi.aws.connect.inputs.GetUserPlainArgs.Builder] = identity):
+    def getUserPlain(args: Endofunction[com.pulumi.aws.connect.inputs.GetUserPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.connect.outputs.GetUserResult] =
       val argsBuilder = com.pulumi.aws.connect.inputs.GetUserPlainArgs.builder
       com.pulumi.aws.connect.ConnectFunctions.getUserPlain(args(argsBuilder).build)
 
     /** Provides details about a specific Amazon Connect User Hierarchy Group. */
-    def getUserHierarchyGroup(args: Endofunction[com.pulumi.aws.connect.inputs.GetUserHierarchyGroupArgs.Builder] = identity):
+    def getUserHierarchyGroup(args: Endofunction[com.pulumi.aws.connect.inputs.GetUserHierarchyGroupArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.connect.outputs.GetUserHierarchyGroupResult] =
       val argsBuilder = com.pulumi.aws.connect.inputs.GetUserHierarchyGroupArgs.builder
       com.pulumi.aws.connect.ConnectFunctions.getUserHierarchyGroup(args(argsBuilder).build)
 
     /** Provides details about a specific Amazon Connect User Hierarchy Group. */
-    def getUserHierarchyGroupPlain(args: Endofunction[com.pulumi.aws.connect.inputs.GetUserHierarchyGroupPlainArgs.Builder] = identity):
+    def getUserHierarchyGroupPlain(args: Endofunction[com.pulumi.aws.connect.inputs.GetUserHierarchyGroupPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.connect.outputs.GetUserHierarchyGroupResult] =
       val argsBuilder = com.pulumi.aws.connect.inputs.GetUserHierarchyGroupPlainArgs.builder
       com.pulumi.aws.connect.ConnectFunctions.getUserHierarchyGroupPlain(args(argsBuilder).build)
 
     /** Provides details about a specific Amazon Connect User Hierarchy Structure */
-    def getUserHierarchyStructure(args: Endofunction[com.pulumi.aws.connect.inputs.GetUserHierarchyStructureArgs.Builder] = identity):
+    def getUserHierarchyStructure(args: Endofunction[com.pulumi.aws.connect.inputs.GetUserHierarchyStructureArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.connect.outputs.GetUserHierarchyStructureResult] =
       val argsBuilder = com.pulumi.aws.connect.inputs.GetUserHierarchyStructureArgs.builder
       com.pulumi.aws.connect.ConnectFunctions.getUserHierarchyStructure(args(argsBuilder).build)
 
     /** Provides details about a specific Amazon Connect User Hierarchy Structure */
-    def getUserHierarchyStructurePlain(args: Endofunction[com.pulumi.aws.connect.inputs.GetUserHierarchyStructurePlainArgs.Builder] = identity):
+    def getUserHierarchyStructurePlain(args: Endofunction[com.pulumi.aws.connect.inputs.GetUserHierarchyStructurePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.connect.outputs.GetUserHierarchyStructureResult] =
       val argsBuilder = com.pulumi.aws.connect.inputs.GetUserHierarchyStructurePlainArgs.builder
       com.pulumi.aws.connect.ConnectFunctions.getUserHierarchyStructurePlain(args(argsBuilder).build)
 
     /** Provides details about a specific Amazon Connect Vocabulary. */
-    def getVocabulary(args: Endofunction[com.pulumi.aws.connect.inputs.GetVocabularyArgs.Builder] = identity):
+    def getVocabulary(args: Endofunction[com.pulumi.aws.connect.inputs.GetVocabularyArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.connect.outputs.GetVocabularyResult] =
       val argsBuilder = com.pulumi.aws.connect.inputs.GetVocabularyArgs.builder
       com.pulumi.aws.connect.ConnectFunctions.getVocabulary(args(argsBuilder).build)
 
     /** Provides details about a specific Amazon Connect Vocabulary. */
-    def getVocabularyPlain(args: Endofunction[com.pulumi.aws.connect.inputs.GetVocabularyPlainArgs.Builder] = identity):
+    def getVocabularyPlain(args: Endofunction[com.pulumi.aws.connect.inputs.GetVocabularyPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.connect.outputs.GetVocabularyResult] =
       val argsBuilder = com.pulumi.aws.connect.inputs.GetVocabularyPlainArgs.builder
       com.pulumi.aws.connect.ConnectFunctions.getVocabularyPlain(args(argsBuilder).build)
@@ -390,7 +390,7 @@ object connect:
    * Provides an Amazon Connect Hours of Operation resource. For more information see
    *  [Amazon Connect: Getting Started](https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-get-started.html)
    */
-  def HoursOfOperation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def HoursOfOperation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.connect.HoursOfOperationArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.connect.HoursOfOperationArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -442,7 +442,7 @@ object connect:
    * 
    *  !&gt; **WARN:** Amazon Connect enforces a limit of [100 combined instance creation and deletions every 30 days](https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#feature-limits). For example, if you create 80 instances and delete 20 of them, you must wait 30 days to create or delete another instance. Use care when creating or deleting instances.
    */
-  def Instance(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def Instance(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.connect.InstanceArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.connect.InstanceArgs.builder
     conf.logicalName2tagName(name) match
@@ -456,7 +456,7 @@ object connect:
    * Provides an Amazon Connect Lambda Function Association. For more information see
    *  [Amazon Connect: Getting Started](https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-get-started.html) and [Invoke AWS Lambda functions](https://docs.aws.amazon.com/connect/latest/adminguide/connect-lambda-functions.html).
    */
-  def LambdaFunctionAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def LambdaFunctionAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.connect.LambdaFunctionAssociationArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.connect.LambdaFunctionAssociationArgs.builder
     com.pulumi.aws.connect.LambdaFunctionAssociation(name,
@@ -467,7 +467,7 @@ object connect:
    * Provides an Amazon Connect Security Profile resource. For more information see
    *  [Amazon Connect: Getting Started](https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-get-started.html)
    */
-  def SecurityProfile(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def SecurityProfile(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.connect.SecurityProfileArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.connect.SecurityProfileArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -484,7 +484,7 @@ object connect:
    * Provides an Amazon Connect Vocabulary resource. For more information see
    *  [Amazon Connect: Getting Started](https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-get-started.html)
    */
-  def Vocabulary(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def Vocabulary(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.connect.VocabularyArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.connect.VocabularyArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -501,7 +501,7 @@ object connect:
    * Provides an Amazon Connect Instance Storage Config resource. For more information see
    *  [Amazon Connect: Getting Started](https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-get-started.html)
    */
-  def InstanceStorageConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def InstanceStorageConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.connect.InstanceStorageConfigArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.connect.InstanceStorageConfigArgs.builder
     com.pulumi.aws.connect.InstanceStorageConfig(name,
@@ -509,7 +509,7 @@ object connect:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Associates a flow with a phone number claimed to an Amazon Connect instance. */
-  def PhoneNumberContactFlowAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def PhoneNumberContactFlowAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.connect.PhoneNumberContactFlowAssociationArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.connect.PhoneNumberContactFlowAssociationArgs.builder
     com.pulumi.aws.connect.PhoneNumberContactFlowAssociation(name,
@@ -520,7 +520,7 @@ object connect:
    * Provides an Amazon Connect User Hierarchy Structure resource. For more information see
    *  [Amazon Connect: Getting Started](https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-get-started.html)
    */
-  def UserHierarchyStructure(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def UserHierarchyStructure(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.connect.UserHierarchyStructureArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.connect.UserHierarchyStructureArgs.builder
     com.pulumi.aws.connect.UserHierarchyStructure(name,
@@ -531,7 +531,7 @@ object connect:
    * Provides an Amazon Connect Phone Number resource. For more information see
    *  [Amazon Connect: Getting Started](https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-get-started.html)
    */
-  def PhoneNumber(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def PhoneNumber(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.connect.PhoneNumberArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.connect.PhoneNumberArgs.builder
     conf.logicalName2tagName(name) match
@@ -561,7 +561,7 @@ object connect:
    * 
    *  &gt; **NOTE:** The User Hierarchy Structure must be created before creating a User Hierarchy Group.
    */
-  def UserHierarchyGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def UserHierarchyGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.connect.UserHierarchyGroupArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.connect.UserHierarchyGroupArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -944,7 +944,7 @@ object connect:
    * 
    *  &gt; **NOTE:** This resource only currently supports Amazon Lex (V1) Associations.
    */
-  def BotAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def BotAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.connect.BotAssociationArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.connect.BotAssociationArgs.builder
     com.pulumi.aws.connect.BotAssociation(name,

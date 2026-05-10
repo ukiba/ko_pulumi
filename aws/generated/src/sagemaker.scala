@@ -46,7 +46,7 @@ object sagemaker:
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
 
   /** Provides a SageMaker AI Code Repository resource. */
-  def CodeRepository(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def CodeRepository(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.sagemaker.CodeRepositoryArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.sagemaker.CodeRepositoryArgs.builder
     conf.logicalName2tagName(name) match
@@ -57,7 +57,7 @@ object sagemaker:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Provides a SageMaker AI Pipeline resource. */
-  def Pipeline(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def Pipeline(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.sagemaker.PipelineArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.sagemaker.PipelineArgs.builder
     conf.logicalName2tagName(name) match
@@ -123,7 +123,7 @@ object sagemaker:
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
 
   /** Provides a SageMaker AI Image resource. */
-  def Image(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def Image(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.sagemaker.ImageArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.sagemaker.ImageArgs.builder
     conf.logicalName2tagName(name) match
@@ -134,7 +134,7 @@ object sagemaker:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Manages an AWS SageMaker AI Algorithm. */
-  def Algorithm(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def Algorithm(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.sagemaker.AlgorithmArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.sagemaker.AlgorithmArgs.builder
     conf.logicalName2tagName(name) match
@@ -196,7 +196,7 @@ object sagemaker:
       builder.workforceVpcConfig(args(argsBuilder).build)
 
   /** Provides a SageMaker AI Hub resource. */
-  def Hub(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def Hub(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.sagemaker.HubArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.sagemaker.HubArgs.builder
     conf.logicalName2tagName(name) match
@@ -211,7 +211,7 @@ object sagemaker:
    * 
    *  &gt; **NOTE:** This resource does not wait for the tuning job to complete before returning. Terraform may complete apply before the job reaches a terminal state.
    */
-  def HyperParameterTuningJob(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def HyperParameterTuningJob(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.sagemaker.HyperParameterTuningJobArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.sagemaker.HyperParameterTuningJobArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -257,7 +257,7 @@ object sagemaker:
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
 
   /** Provides a SageMaker AI Flow Definition resource. */
-  def FlowDefinition(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def FlowDefinition(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.sagemaker.FlowDefinitionArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.sagemaker.FlowDefinitionArgs.builder
     conf.logicalName2tagName(name) match
@@ -282,7 +282,7 @@ object sagemaker:
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
 
   /** Provides a SageMaker AI Workforce resource. */
-  def Workforce(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def Workforce(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.sagemaker.WorkforceArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.sagemaker.WorkforceArgs.builder
     com.pulumi.aws.sagemaker.Workforce(name,
@@ -290,7 +290,7 @@ object sagemaker:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Provides a SageMaker AI MLFlow Tracking Server resource. */
-  def MlflowTrackingServer(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def MlflowTrackingServer(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.sagemaker.MlflowTrackingServerArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.sagemaker.MlflowTrackingServerArgs.builder
     conf.logicalName2tagName(name) match
@@ -320,7 +320,7 @@ object sagemaker:
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
 
   /** Provides a SageMaker AI Model Package Group Policy resource. */
-  def ModelPackageGroupPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def ModelPackageGroupPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.sagemaker.ModelPackageGroupPolicyArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.sagemaker.ModelPackageGroupPolicyArgs.builder
     com.pulumi.aws.sagemaker.ModelPackageGroupPolicy(name,
@@ -328,7 +328,7 @@ object sagemaker:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Provides a SageMaker AI Studio Lifecycle Config resource. */
-  def StudioLifecycleConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def StudioLifecycleConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.sagemaker.StudioLifecycleConfigArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.sagemaker.StudioLifecycleConfigArgs.builder
     conf.logicalName2tagName(name) match
@@ -418,7 +418,7 @@ object sagemaker:
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
 
   /** Provides a SageMaker AI Feature Group resource. */
-  def FeatureGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def FeatureGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.sagemaker.FeatureGroupArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.sagemaker.FeatureGroupArgs.builder
     conf.logicalName2tagName(name) match
@@ -429,7 +429,7 @@ object sagemaker:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Manages an AWS SageMaker AI Training Job. */
-  def TrainingJob(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def TrainingJob(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.sagemaker.TrainingJobArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.sagemaker.TrainingJobArgs.builder
     conf.logicalName2tagName(name) match
@@ -440,7 +440,7 @@ object sagemaker:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Provides a SageMaker AI Device Fleet resource. */
-  def DeviceFleet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def DeviceFleet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.sagemaker.DeviceFleetArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.sagemaker.DeviceFleetArgs.builder
     conf.logicalName2tagName(name) match
@@ -451,7 +451,7 @@ object sagemaker:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Provides a SageMaker AI Image Version resource. */
-  def ImageVersion(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def ImageVersion(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.sagemaker.ImageVersionArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.sagemaker.ImageVersionArgs.builder
     com.pulumi.aws.sagemaker.ImageVersion(name,
@@ -459,7 +459,7 @@ object sagemaker:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Provides a SageMaker AI User Profile resource. */
-  def UserProfile(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def UserProfile(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.sagemaker.UserProfileArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.sagemaker.UserProfileArgs.builder
     conf.logicalName2tagName(name) match
@@ -558,7 +558,7 @@ object sagemaker:
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
 
   /** Provides a SageMaker AI monitoring schedule resource. */
-  def MonitoringSchedule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def MonitoringSchedule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.sagemaker.MonitoringScheduleArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.sagemaker.MonitoringScheduleArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -572,7 +572,7 @@ object sagemaker:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Manage an Amazon SageMaker Model Card. */
-  def ModelCard(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def ModelCard(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.sagemaker.ModelCardArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.sagemaker.ModelCardArgs.builder
     conf.logicalName2tagName(name) match
@@ -583,7 +583,7 @@ object sagemaker:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Provides a SageMaker AI Workteam resource. */
-  def Workteam(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def Workteam(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.sagemaker.WorkteamArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.sagemaker.WorkteamArgs.builder
     conf.logicalName2tagName(name) match
@@ -907,7 +907,7 @@ object sagemaker:
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
 
   /** Manage an Amazon SageMaker Model Card export job. */
-  def ModelCardExportJob(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def ModelCardExportJob(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.sagemaker.ModelCardExportJobArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.sagemaker.ModelCardExportJobArgs.builder
     com.pulumi.aws.sagemaker.ModelCardExportJob(name,
@@ -915,7 +915,7 @@ object sagemaker:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Provides a SageMaker AI Device resource. */
-  def Device(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def Device(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.sagemaker.DeviceArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.sagemaker.DeviceArgs.builder
     com.pulumi.aws.sagemaker.Device(name,
@@ -923,7 +923,7 @@ object sagemaker:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Provides a SageMaker AI Endpoint resource. */
-  def Endpoint(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def Endpoint(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.sagemaker.EndpointArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.sagemaker.EndpointArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -1005,7 +1005,7 @@ object sagemaker:
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
 
   /** Manage an Amazon SageMaker labeling job. */
-  def LabelingJob(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def LabelingJob(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.sagemaker.LabelingJobArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.sagemaker.LabelingJobArgs.builder
     conf.logicalName2tagName(name) match
@@ -1016,7 +1016,7 @@ object sagemaker:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Provides a SageMaker AI MLflow App resource. */
-  def MlflowApp(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def MlflowApp(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.sagemaker.MlflowAppArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.sagemaker.MlflowAppArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -1030,7 +1030,7 @@ object sagemaker:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Provides a SageMaker AI App Image Config resource. */
-  def AppImageConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def AppImageConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.sagemaker.AppImageConfigArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.sagemaker.AppImageConfigArgs.builder
     conf.logicalName2tagName(name) match
@@ -1064,7 +1064,7 @@ object sagemaker:
      * 
      *  &gt; **NOTE:** The AWS provider creates a validly constructed `registryPath` but does not verify that the `registryPath` corresponds to an existing image. For example, using a `registryPath` containing an `imageTag` that does not correspond to a Docker image in the ECR repository, will result in an error.
      */
-    def getPrebuiltEcrImage(args: Endofunction[com.pulumi.aws.sagemaker.inputs.GetPrebuiltEcrImageArgs.Builder] = identity):
+    def getPrebuiltEcrImage(args: Endofunction[com.pulumi.aws.sagemaker.inputs.GetPrebuiltEcrImageArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.sagemaker.outputs.GetPrebuiltEcrImageResult] =
       val argsBuilder = com.pulumi.aws.sagemaker.inputs.GetPrebuiltEcrImageArgs.builder
       com.pulumi.aws.sagemaker.SagemakerFunctions.getPrebuiltEcrImage(args(argsBuilder).build)
@@ -1074,13 +1074,13 @@ object sagemaker:
      * 
      *  &gt; **NOTE:** The AWS provider creates a validly constructed `registryPath` but does not verify that the `registryPath` corresponds to an existing image. For example, using a `registryPath` containing an `imageTag` that does not correspond to a Docker image in the ECR repository, will result in an error.
      */
-    def getPrebuiltEcrImagePlain(args: Endofunction[com.pulumi.aws.sagemaker.inputs.GetPrebuiltEcrImagePlainArgs.Builder] = identity):
+    def getPrebuiltEcrImagePlain(args: Endofunction[com.pulumi.aws.sagemaker.inputs.GetPrebuiltEcrImagePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.sagemaker.outputs.GetPrebuiltEcrImageResult] =
       val argsBuilder = com.pulumi.aws.sagemaker.inputs.GetPrebuiltEcrImagePlainArgs.builder
       com.pulumi.aws.sagemaker.SagemakerFunctions.getPrebuiltEcrImagePlain(args(argsBuilder).build)
 
   /** Provides a SageMaker AI data quality job definition resource. */
-  def DataQualityJobDefinition(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def DataQualityJobDefinition(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.sagemaker.DataQualityJobDefinitionArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.sagemaker.DataQualityJobDefinitionArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -1098,7 +1098,7 @@ object sagemaker:
    * 
    *   &gt; Note: If you are trying to use SageMaker AI projects with SageMaker AI studio you will need to add a tag with the key `sagemaker:studio-visibility` with value `true`. For more on requirements to use projects and permission needed see [AWS Docs](https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-projects-templates-custom.html).
    */
-  def Project(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def Project(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.sagemaker.ProjectArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.sagemaker.ProjectArgs.builder
     conf.logicalName2tagName(name) match
@@ -1109,7 +1109,7 @@ object sagemaker:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Provides a SageMaker AI App resource. */
-  def App(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def App(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.sagemaker.AppArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.sagemaker.AppArgs.builder
     conf.logicalName2tagName(name) match
@@ -1120,7 +1120,7 @@ object sagemaker:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Provides a SageMaker AI Notebook Instance resource. */
-  def NotebookInstance(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def NotebookInstance(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.sagemaker.NotebookInstanceArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.sagemaker.NotebookInstanceArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -1144,7 +1144,7 @@ object sagemaker:
       builder.device(args(argsBuilder).build)
 
   /** Provides a SageMaker AI endpoint configuration resource. */
-  def EndpointConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def EndpointConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.sagemaker.EndpointConfigurationArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.sagemaker.EndpointConfigurationArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -1158,7 +1158,7 @@ object sagemaker:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Provides a lifecycle configuration for SageMaker AI Notebook Instances. */
-  def NotebookInstanceLifecycleConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def NotebookInstanceLifecycleConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.sagemaker.NotebookInstanceLifecycleConfigurationArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.sagemaker.NotebookInstanceLifecycleConfigurationArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -1172,7 +1172,7 @@ object sagemaker:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Provides a SageMaker AI Space resource. */
-  def Space(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def Space(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.sagemaker.SpaceArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.sagemaker.SpaceArgs.builder
     conf.logicalName2tagName(name) match
@@ -1224,7 +1224,7 @@ object sagemaker:
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
 
   /** Provides a SageMaker AI Model Package Group resource. */
-  def ModelPackageGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def ModelPackageGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.sagemaker.ModelPackageGroupArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.sagemaker.ModelPackageGroupArgs.builder
     conf.logicalName2tagName(name) match
@@ -1235,7 +1235,7 @@ object sagemaker:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Manages an Amazon SageMaker AI Model. */
-  def Model(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def Model(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.sagemaker.ModelArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.sagemaker.ModelArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -1318,7 +1318,7 @@ object sagemaker:
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
 
   /** Manages status of Service Catalog in SageMaker. Service Catalog is used to create SageMaker AI projects. */
-  def ServicecatalogPortfolioStatus(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def ServicecatalogPortfolioStatus(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.sagemaker.ServicecatalogPortfolioStatusArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.sagemaker.ServicecatalogPortfolioStatusArgs.builder
     com.pulumi.aws.sagemaker.ServicecatalogPortfolioStatus(name,
@@ -5222,7 +5222,7 @@ object sagemaker:
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
 
   /** Provides a SageMaker AI Human Task UI resource. */
-  def HumanTaskUI(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def HumanTaskUI(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.sagemaker.HumanTaskUIArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.sagemaker.HumanTaskUIArgs.builder
     conf.logicalName2tagName(name) match
@@ -5265,7 +5265,7 @@ object sagemaker:
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
 
   /** Provides a SageMaker AI Domain resource. */
-  def Domain(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def Domain(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.sagemaker.DomainArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.sagemaker.DomainArgs.builder
     conf.logicalName2tagName(name) match

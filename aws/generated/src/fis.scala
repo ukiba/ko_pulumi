@@ -10,13 +10,13 @@ object fis:
     export com.pulumi.aws.fis.FisFunctions.*
   extension (self: FisFunctions.type)
     /** This resource can be useful for getting back a set of FIS experiment template IDs. */
-    def getExperimentTemplates(args: Endofunction[com.pulumi.aws.fis.inputs.GetExperimentTemplatesArgs.Builder] = identity):
+    def getExperimentTemplates(args: Endofunction[com.pulumi.aws.fis.inputs.GetExperimentTemplatesArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.fis.outputs.GetExperimentTemplatesResult] =
       val argsBuilder = com.pulumi.aws.fis.inputs.GetExperimentTemplatesArgs.builder
       com.pulumi.aws.fis.FisFunctions.getExperimentTemplates(args(argsBuilder).build)
 
     /** This resource can be useful for getting back a set of FIS experiment template IDs. */
-    def getExperimentTemplatesPlain(args: Endofunction[com.pulumi.aws.fis.inputs.GetExperimentTemplatesPlainArgs.Builder] = identity):
+    def getExperimentTemplatesPlain(args: Endofunction[com.pulumi.aws.fis.inputs.GetExperimentTemplatesPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.fis.outputs.GetExperimentTemplatesResult] =
       val argsBuilder = com.pulumi.aws.fis.inputs.GetExperimentTemplatesPlainArgs.builder
       com.pulumi.aws.fis.FisFunctions.getExperimentTemplatesPlain(args(argsBuilder).build)
@@ -83,7 +83,7 @@ object fis:
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
 
   /** Manages an AWS FIS (Fault Injection Simulator) Target Account Configuration. */
-  def TargetAccountConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def TargetAccountConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.fis.TargetAccountConfigurationArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.fis.TargetAccountConfigurationArgs.builder
     com.pulumi.aws.fis.TargetAccountConfiguration(name,
@@ -97,7 +97,7 @@ object fis:
    *  See [Amazon Fault Injection Simulator](https://docs.aws.amazon.com/fis/index.html)
    *  for more information.
    */
-  def ExperimentTemplate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def ExperimentTemplate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.fis.ExperimentTemplateArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.fis.ExperimentTemplateArgs.builder
     conf.logicalName2tagName(name) match

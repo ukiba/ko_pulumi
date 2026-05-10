@@ -17,7 +17,7 @@ object appmesh:
    * 
    *  The state associated with existing resources will automatically be migrated.
    */
-  def VirtualRouter(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def VirtualRouter(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.appmesh.VirtualRouterArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.appmesh.VirtualRouterArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -59,7 +59,7 @@ object appmesh:
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
 
   /** Provides an AWS App Mesh route resource. */
-  def Route(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def Route(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.appmesh.RouteArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.appmesh.RouteArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -73,7 +73,7 @@ object appmesh:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Provides an AWS App Mesh virtual gateway resource. */
-  def VirtualGateway(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def VirtualGateway(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.appmesh.VirtualGatewayArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.appmesh.VirtualGatewayArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -114,7 +114,7 @@ object appmesh:
    * 
    *  The state associated with existing resources will automatically be migrated.
    */
-  def VirtualNode(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def VirtualNode(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.appmesh.VirtualNodeArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.appmesh.VirtualNodeArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -142,7 +142,7 @@ object appmesh:
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
 
   /** Provides an AWS App Mesh virtual service resource. */
-  def VirtualService(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def VirtualService(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.appmesh.VirtualServiceArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.appmesh.VirtualServiceArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -170,7 +170,7 @@ object appmesh:
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
 
   /** Provides an AWS App Mesh service mesh resource. */
-  def Mesh(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def Mesh(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.appmesh.MeshArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.appmesh.MeshArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -217,85 +217,85 @@ object appmesh:
     export com.pulumi.aws.appmesh.AppmeshFunctions.*
   extension (self: AppmeshFunctions.type)
     /** The App Mesh Gateway Route data source allows details of an App Mesh Gateway Route to be retrieved by its name, mesh_name, virtual_gateway_name, and optionally the mesh_owner. */
-    def getGatewayRoute(args: Endofunction[com.pulumi.aws.appmesh.inputs.GetGatewayRouteArgs.Builder] = identity):
+    def getGatewayRoute(args: Endofunction[com.pulumi.aws.appmesh.inputs.GetGatewayRouteArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.appmesh.outputs.GetGatewayRouteResult] =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.GetGatewayRouteArgs.builder
       com.pulumi.aws.appmesh.AppmeshFunctions.getGatewayRoute(args(argsBuilder).build)
 
     /** The App Mesh Gateway Route data source allows details of an App Mesh Gateway Route to be retrieved by its name, mesh_name, virtual_gateway_name, and optionally the mesh_owner. */
-    def getGatewayRoutePlain(args: Endofunction[com.pulumi.aws.appmesh.inputs.GetGatewayRoutePlainArgs.Builder] = identity):
+    def getGatewayRoutePlain(args: Endofunction[com.pulumi.aws.appmesh.inputs.GetGatewayRoutePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.appmesh.outputs.GetGatewayRouteResult] =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.GetGatewayRoutePlainArgs.builder
       com.pulumi.aws.appmesh.AppmeshFunctions.getGatewayRoutePlain(args(argsBuilder).build)
 
     /** The App Mesh Mesh data source allows details of an App Mesh Mesh to be retrieved by its name and optionally the mesh_owner. */
-    def getMesh(args: Endofunction[com.pulumi.aws.appmesh.inputs.GetMeshArgs.Builder] = identity):
+    def getMesh(args: Endofunction[com.pulumi.aws.appmesh.inputs.GetMeshArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.appmesh.outputs.GetMeshResult] =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.GetMeshArgs.builder
       com.pulumi.aws.appmesh.AppmeshFunctions.getMesh(args(argsBuilder).build)
 
     /** The App Mesh Mesh data source allows details of an App Mesh Mesh to be retrieved by its name and optionally the mesh_owner. */
-    def getMeshPlain(args: Endofunction[com.pulumi.aws.appmesh.inputs.GetMeshPlainArgs.Builder] = identity):
+    def getMeshPlain(args: Endofunction[com.pulumi.aws.appmesh.inputs.GetMeshPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.appmesh.outputs.GetMeshResult] =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.GetMeshPlainArgs.builder
       com.pulumi.aws.appmesh.AppmeshFunctions.getMeshPlain(args(argsBuilder).build)
 
     /** The App Mesh Route data source allows details of an App Mesh Route to be retrieved by its name, mesh_name, virtual_router_name, and optionally the mesh_owner. */
-    def getRoute(args: Endofunction[com.pulumi.aws.appmesh.inputs.GetRouteArgs.Builder] = identity):
+    def getRoute(args: Endofunction[com.pulumi.aws.appmesh.inputs.GetRouteArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.appmesh.outputs.GetRouteResult] =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.GetRouteArgs.builder
       com.pulumi.aws.appmesh.AppmeshFunctions.getRoute(args(argsBuilder).build)
 
     /** The App Mesh Route data source allows details of an App Mesh Route to be retrieved by its name, mesh_name, virtual_router_name, and optionally the mesh_owner. */
-    def getRoutePlain(args: Endofunction[com.pulumi.aws.appmesh.inputs.GetRoutePlainArgs.Builder] = identity):
+    def getRoutePlain(args: Endofunction[com.pulumi.aws.appmesh.inputs.GetRoutePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.appmesh.outputs.GetRouteResult] =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.GetRoutePlainArgs.builder
       com.pulumi.aws.appmesh.AppmeshFunctions.getRoutePlain(args(argsBuilder).build)
 
     /** Data source for managing an AWS App Mesh Virtual Gateway. */
-    def getVirtualGateway(args: Endofunction[com.pulumi.aws.appmesh.inputs.GetVirtualGatewayArgs.Builder] = identity):
+    def getVirtualGateway(args: Endofunction[com.pulumi.aws.appmesh.inputs.GetVirtualGatewayArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.appmesh.outputs.GetVirtualGatewayResult] =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.GetVirtualGatewayArgs.builder
       com.pulumi.aws.appmesh.AppmeshFunctions.getVirtualGateway(args(argsBuilder).build)
 
     /** Data source for managing an AWS App Mesh Virtual Gateway. */
-    def getVirtualGatewayPlain(args: Endofunction[com.pulumi.aws.appmesh.inputs.GetVirtualGatewayPlainArgs.Builder] = identity):
+    def getVirtualGatewayPlain(args: Endofunction[com.pulumi.aws.appmesh.inputs.GetVirtualGatewayPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.appmesh.outputs.GetVirtualGatewayResult] =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.GetVirtualGatewayPlainArgs.builder
       com.pulumi.aws.appmesh.AppmeshFunctions.getVirtualGatewayPlain(args(argsBuilder).build)
 
     /** Data source for managing an AWS App Mesh Virtual Node. */
-    def getVirtualNode(args: Endofunction[com.pulumi.aws.appmesh.inputs.GetVirtualNodeArgs.Builder] = identity):
+    def getVirtualNode(args: Endofunction[com.pulumi.aws.appmesh.inputs.GetVirtualNodeArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.appmesh.outputs.GetVirtualNodeResult] =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.GetVirtualNodeArgs.builder
       com.pulumi.aws.appmesh.AppmeshFunctions.getVirtualNode(args(argsBuilder).build)
 
     /** Data source for managing an AWS App Mesh Virtual Node. */
-    def getVirtualNodePlain(args: Endofunction[com.pulumi.aws.appmesh.inputs.GetVirtualNodePlainArgs.Builder] = identity):
+    def getVirtualNodePlain(args: Endofunction[com.pulumi.aws.appmesh.inputs.GetVirtualNodePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.appmesh.outputs.GetVirtualNodeResult] =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.GetVirtualNodePlainArgs.builder
       com.pulumi.aws.appmesh.AppmeshFunctions.getVirtualNodePlain(args(argsBuilder).build)
 
     /** The App Mesh Virtual Router data source allows details of an App Mesh Virtual Service to be retrieved by its name and mesh_name. */
-    def getVirtualRouter(args: Endofunction[com.pulumi.aws.appmesh.inputs.GetVirtualRouterArgs.Builder] = identity):
+    def getVirtualRouter(args: Endofunction[com.pulumi.aws.appmesh.inputs.GetVirtualRouterArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.appmesh.outputs.GetVirtualRouterResult] =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.GetVirtualRouterArgs.builder
       com.pulumi.aws.appmesh.AppmeshFunctions.getVirtualRouter(args(argsBuilder).build)
 
     /** The App Mesh Virtual Router data source allows details of an App Mesh Virtual Service to be retrieved by its name and mesh_name. */
-    def getVirtualRouterPlain(args: Endofunction[com.pulumi.aws.appmesh.inputs.GetVirtualRouterPlainArgs.Builder] = identity):
+    def getVirtualRouterPlain(args: Endofunction[com.pulumi.aws.appmesh.inputs.GetVirtualRouterPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.appmesh.outputs.GetVirtualRouterResult] =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.GetVirtualRouterPlainArgs.builder
       com.pulumi.aws.appmesh.AppmeshFunctions.getVirtualRouterPlain(args(argsBuilder).build)
 
     /** The App Mesh Virtual Service data source allows details of an App Mesh Virtual Service to be retrieved by its name, mesh_name, and optionally the mesh_owner. */
-    def getVirtualService(args: Endofunction[com.pulumi.aws.appmesh.inputs.GetVirtualServiceArgs.Builder] = identity):
+    def getVirtualService(args: Endofunction[com.pulumi.aws.appmesh.inputs.GetVirtualServiceArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.appmesh.outputs.GetVirtualServiceResult] =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.GetVirtualServiceArgs.builder
       com.pulumi.aws.appmesh.AppmeshFunctions.getVirtualService(args(argsBuilder).build)
 
     /** The App Mesh Virtual Service data source allows details of an App Mesh Virtual Service to be retrieved by its name, mesh_name, and optionally the mesh_owner. */
-    def getVirtualServicePlain(args: Endofunction[com.pulumi.aws.appmesh.inputs.GetVirtualServicePlainArgs.Builder] = identity):
+    def getVirtualServicePlain(args: Endofunction[com.pulumi.aws.appmesh.inputs.GetVirtualServicePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.appmesh.outputs.GetVirtualServiceResult] =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.GetVirtualServicePlainArgs.builder
       com.pulumi.aws.appmesh.AppmeshFunctions.getVirtualServicePlain(args(argsBuilder).build)
@@ -2278,7 +2278,7 @@ object appmesh:
       builder.prefix(args(argsBuilder).build)
 
   /** Provides an AWS App Mesh gateway route resource. */
-  def GatewayRoute(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def GatewayRoute(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.appmesh.GatewayRouteArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.appmesh.GatewayRouteArgs.builder
     conf.logicalName2pysicalName(name) match

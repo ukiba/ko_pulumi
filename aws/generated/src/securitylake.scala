@@ -9,7 +9,7 @@ object securitylake:
    * 
    *  &gt; **NOTE:** The underlying `aws.securitylake.DataLake` must be configured before creating the `aws.securitylake.CustomLogSource`. Use a `dependsOn` statement.
    */
-  def CustomLogSource(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def CustomLogSource(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.securitylake.CustomLogSourceArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.securitylake.CustomLogSourceArgs.builder
     com.pulumi.aws.securitylake.CustomLogSource(name,
@@ -21,7 +21,7 @@ object securitylake:
    * 
    *  &gt; **NOTE:** The underlying `aws.securitylake.DataLake` must be configured before creating the `aws.securitylake.Subscriber`. Use a `dependsOn` statement.
    */
-  def Subscriber(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def Subscriber(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.securitylake.SubscriberArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.securitylake.SubscriberArgs.builder
     conf.logicalName2tagName(name) match
@@ -32,7 +32,7 @@ object securitylake:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Resource for managing an AWS Security Lake Subscriber Notification. */
-  def SubscriberNotification(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def SubscriberNotification(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.securitylake.SubscriberNotificationArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.securitylake.SubscriberNotificationArgs.builder
     com.pulumi.aws.securitylake.SubscriberNotification(name,
@@ -73,7 +73,7 @@ object securitylake:
    * 
    *  &gt; **NOTE:** The underlying `aws.securitylake.DataLake` must be configured before creating other Security Lake resources. Use a `dependsOn` statement.
    */
-  def DataLake(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def DataLake(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.securitylake.DataLakeArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.securitylake.DataLakeArgs.builder
     conf.logicalName2tagName(name) match
@@ -138,7 +138,7 @@ object securitylake:
    * 
    *  &gt; **NOTE:** The underlying `aws.securitylake.DataLake` must be configured before creating the `aws.securitylake.AwsLogSource`. Use a `dependsOn` statement.
    */
-  def AwsLogSource(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def AwsLogSource(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.securitylake.AwsLogSourceArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.securitylake.AwsLogSourceArgs.builder
     com.pulumi.aws.securitylake.AwsLogSource(name,

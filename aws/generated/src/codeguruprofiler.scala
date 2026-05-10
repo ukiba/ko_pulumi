@@ -10,19 +10,19 @@ object codeguruprofiler:
     export com.pulumi.aws.codeguruprofiler.CodeguruprofilerFunctions.*
   extension (self: CodeguruprofilerFunctions.type)
     /** Data source for managing an AWS CodeGuru Profiler Profiling Group. */
-    def getProfilingGroup(args: Endofunction[com.pulumi.aws.codeguruprofiler.inputs.GetProfilingGroupArgs.Builder] = identity):
+    def getProfilingGroup(args: Endofunction[com.pulumi.aws.codeguruprofiler.inputs.GetProfilingGroupArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.codeguruprofiler.outputs.GetProfilingGroupResult] =
       val argsBuilder = com.pulumi.aws.codeguruprofiler.inputs.GetProfilingGroupArgs.builder
       com.pulumi.aws.codeguruprofiler.CodeguruprofilerFunctions.getProfilingGroup(args(argsBuilder).build)
 
     /** Data source for managing an AWS CodeGuru Profiler Profiling Group. */
-    def getProfilingGroupPlain(args: Endofunction[com.pulumi.aws.codeguruprofiler.inputs.GetProfilingGroupPlainArgs.Builder] = identity):
+    def getProfilingGroupPlain(args: Endofunction[com.pulumi.aws.codeguruprofiler.inputs.GetProfilingGroupPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.codeguruprofiler.outputs.GetProfilingGroupResult] =
       val argsBuilder = com.pulumi.aws.codeguruprofiler.inputs.GetProfilingGroupPlainArgs.builder
       com.pulumi.aws.codeguruprofiler.CodeguruprofilerFunctions.getProfilingGroupPlain(args(argsBuilder).build)
 
   /** Resource for managing an AWS CodeGuru Profiler Profiling Group. */
-  def ProfilingGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def ProfilingGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.codeguruprofiler.ProfilingGroupArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.codeguruprofiler.ProfilingGroupArgs.builder
     conf.logicalName2pysicalName(name) match

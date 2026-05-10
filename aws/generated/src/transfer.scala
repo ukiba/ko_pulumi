@@ -5,7 +5,7 @@ import com.pulumi.resources.CustomResourceOptions
 
 object transfer:
   /** Provides a AWS Transfer AS2 Profile resource. */
-  def Profile(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def Profile(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.transfer.ProfileArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.transfer.ProfileArgs.builder
     conf.logicalName2tagName(name) match
@@ -16,7 +16,7 @@ object transfer:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Resource for managing an AWS Transfer Family Web App. */
-  def WebApp(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def WebApp(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.transfer.WebAppArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.transfer.WebAppArgs.builder
     conf.logicalName2tagName(name) match
@@ -32,13 +32,13 @@ object transfer:
     export com.pulumi.aws.transfer.TransferFunctions.*
   extension (self: TransferFunctions.type)
     /** Data source for managing an AWS Transfer Family Connector. */
-    def getConnector(args: Endofunction[com.pulumi.aws.transfer.inputs.GetConnectorArgs.Builder] = identity):
+    def getConnector(args: Endofunction[com.pulumi.aws.transfer.inputs.GetConnectorArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.transfer.outputs.GetConnectorResult] =
       val argsBuilder = com.pulumi.aws.transfer.inputs.GetConnectorArgs.builder
       com.pulumi.aws.transfer.TransferFunctions.getConnector(args(argsBuilder).build)
 
     /** Data source for managing an AWS Transfer Family Connector. */
-    def getConnectorPlain(args: Endofunction[com.pulumi.aws.transfer.inputs.GetConnectorPlainArgs.Builder] = identity):
+    def getConnectorPlain(args: Endofunction[com.pulumi.aws.transfer.inputs.GetConnectorPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.transfer.outputs.GetConnectorResult] =
       val argsBuilder = com.pulumi.aws.transfer.inputs.GetConnectorPlainArgs.builder
       com.pulumi.aws.transfer.TransferFunctions.getConnectorPlain(args(argsBuilder).build)
@@ -47,7 +47,7 @@ object transfer:
      * Use this data source to get the ARN of an AWS Transfer Server for use in other
      *  resources.
      */
-    def getServer(args: Endofunction[com.pulumi.aws.transfer.inputs.GetServerArgs.Builder] = identity):
+    def getServer(args: Endofunction[com.pulumi.aws.transfer.inputs.GetServerArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.transfer.outputs.GetServerResult] =
       val argsBuilder = com.pulumi.aws.transfer.inputs.GetServerArgs.builder
       com.pulumi.aws.transfer.TransferFunctions.getServer(args(argsBuilder).build)
@@ -56,13 +56,13 @@ object transfer:
      * Use this data source to get the ARN of an AWS Transfer Server for use in other
      *  resources.
      */
-    def getServerPlain(args: Endofunction[com.pulumi.aws.transfer.inputs.GetServerPlainArgs.Builder] = identity):
+    def getServerPlain(args: Endofunction[com.pulumi.aws.transfer.inputs.GetServerPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.transfer.outputs.GetServerResult] =
       val argsBuilder = com.pulumi.aws.transfer.inputs.GetServerPlainArgs.builder
       com.pulumi.aws.transfer.TransferFunctions.getServerPlain(args(argsBuilder).build)
 
   /** Manages a host key for a server. This is an [_additional server host key_](https://docs.aws.amazon.com/transfer/latest/userguide/server-host-key-add.html). */
-  def HostKey(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def HostKey(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.transfer.HostKeyArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.transfer.HostKeyArgs.builder
     conf.logicalName2tagName(name) match
@@ -102,7 +102,7 @@ object transfer:
    * 
    *  &gt; **NOTE:** This tagging resource does not use the provider `ignoreTags` configuration.
    */
-  def Tag(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def Tag(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.transfer.TagArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.transfer.TagArgs.builder
     com.pulumi.aws.transfer.Tag(name,
@@ -114,7 +114,7 @@ object transfer:
    * 
    *  &gt; **NOTE:** We suggest using explicit JSON encoding or `aws.iam.getPolicyDocument` when assigning a value to `policy`. They seamlessly translate configuration to JSON, enabling you to maintain consistency within your configuration without the need for context switches. Also, you can sidestep potential complications arising from formatting discrepancies, whitespace inconsistencies, and other nuances inherent to JSON.
    */
-  def Access(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def Access(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.transfer.AccessArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.transfer.AccessArgs.builder
     com.pulumi.aws.transfer.Access(name,
@@ -126,7 +126,7 @@ object transfer:
    * 
    *  &gt; **NOTE:** We suggest using `jsonencode()` or `aws.iam.getPolicyDocument` when assigning a value to `policy`. They seamlessly translate Terraform language into JSON, enabling you to maintain consistency within your configuration without the need for context switches. Also, you can sidestep potential complications arising from formatting discrepancies, whitespace inconsistencies, and other nuances inherent to JSON.
    */
-  def User(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def User(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.transfer.UserArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.transfer.UserArgs.builder
     conf.logicalName2tagName(name) match
@@ -137,7 +137,7 @@ object transfer:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Provides a AWS Transfer AS2 Certificate resource. */
-  def Certificate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def Certificate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.transfer.CertificateArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.transfer.CertificateArgs.builder
     conf.logicalName2tagName(name) match
@@ -148,7 +148,7 @@ object transfer:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Provides a AWS Transfer User SSH Key resource. */
-  def SshKey(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def SshKey(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.transfer.SshKeyArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.transfer.SshKeyArgs.builder
     com.pulumi.aws.transfer.SshKey(name,
@@ -197,7 +197,7 @@ object transfer:
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
 
   /** Resource for managing an AWS Transfer Family Web App Customization. */
-  def WebAppCustomization(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def WebAppCustomization(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.transfer.WebAppCustomizationArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.transfer.WebAppCustomizationArgs.builder
     com.pulumi.aws.transfer.WebAppCustomization(name,
@@ -205,7 +205,7 @@ object transfer:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Provides a AWS Transfer AS2 Connector resource. */
-  def Connector(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def Connector(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.transfer.ConnectorArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.transfer.ConnectorArgs.builder
     conf.logicalName2tagName(name) match
@@ -241,7 +241,7 @@ object transfer:
    * 
    *  &gt; **NOTE:** Use the `aws.transfer.Tag` resource to manage the system tags used for [custom hostnames](https://docs.aws.amazon.com/transfer/latest/userguide/requirements-dns.html#tag-custom-hostname-cdk).
    */
-  def Server(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def Server(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.transfer.ServerArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.transfer.ServerArgs.builder
     conf.logicalName2tagName(name) match
@@ -307,7 +307,7 @@ object transfer:
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
 
   /** Provides a AWS Transfer AS2 Agreement resource. */
-  def Agreement(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def Agreement(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.transfer.AgreementArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.transfer.AgreementArgs.builder
     conf.logicalName2tagName(name) match
@@ -353,7 +353,7 @@ object transfer:
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
 
   /** Provides a AWS Transfer Workflow resource. */
-  def Workflow(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def Workflow(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.transfer.WorkflowArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.transfer.WorkflowArgs.builder
     conf.logicalName2tagName(name) match

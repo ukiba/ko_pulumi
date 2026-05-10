@@ -28,7 +28,7 @@ object resourcegroups:
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
 
   /** Provides a Resource Group. */
-  def Group(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def Group(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.resourcegroups.GroupArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.resourcegroups.GroupArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -42,7 +42,7 @@ object resourcegroups:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Resource for managing an AWS Resource Groups Resource. */
-  def Resource(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def Resource(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.resourcegroups.ResourceArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.resourcegroups.ResourceArgs.builder
     com.pulumi.aws.resourcegroups.Resource(name,

@@ -10,31 +10,31 @@ object datapipeline:
     export com.pulumi.aws.datapipeline.DatapipelineFunctions.*
   extension (self: DatapipelineFunctions.type)
     /** Provides details about a specific DataPipeline Pipeline. */
-    def getPipeline(args: Endofunction[com.pulumi.aws.datapipeline.inputs.GetPipelineArgs.Builder] = identity):
+    def getPipeline(args: Endofunction[com.pulumi.aws.datapipeline.inputs.GetPipelineArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.datapipeline.outputs.GetPipelineResult] =
       val argsBuilder = com.pulumi.aws.datapipeline.inputs.GetPipelineArgs.builder
       com.pulumi.aws.datapipeline.DatapipelineFunctions.getPipeline(args(argsBuilder).build)
 
     /** Provides details about a specific DataPipeline Pipeline. */
-    def getPipelinePlain(args: Endofunction[com.pulumi.aws.datapipeline.inputs.GetPipelinePlainArgs.Builder] = identity):
+    def getPipelinePlain(args: Endofunction[com.pulumi.aws.datapipeline.inputs.GetPipelinePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.datapipeline.outputs.GetPipelineResult] =
       val argsBuilder = com.pulumi.aws.datapipeline.inputs.GetPipelinePlainArgs.builder
       com.pulumi.aws.datapipeline.DatapipelineFunctions.getPipelinePlain(args(argsBuilder).build)
 
     /** Provides details about a specific DataPipeline Pipeline Definition. */
-    def getPipelineDefinition(args: Endofunction[com.pulumi.aws.datapipeline.inputs.GetPipelineDefinitionArgs.Builder] = identity):
+    def getPipelineDefinition(args: Endofunction[com.pulumi.aws.datapipeline.inputs.GetPipelineDefinitionArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.datapipeline.outputs.GetPipelineDefinitionResult] =
       val argsBuilder = com.pulumi.aws.datapipeline.inputs.GetPipelineDefinitionArgs.builder
       com.pulumi.aws.datapipeline.DatapipelineFunctions.getPipelineDefinition(args(argsBuilder).build)
 
     /** Provides details about a specific DataPipeline Pipeline Definition. */
-    def getPipelineDefinitionPlain(args: Endofunction[com.pulumi.aws.datapipeline.inputs.GetPipelineDefinitionPlainArgs.Builder] = identity):
+    def getPipelineDefinitionPlain(args: Endofunction[com.pulumi.aws.datapipeline.inputs.GetPipelineDefinitionPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.datapipeline.outputs.GetPipelineDefinitionResult] =
       val argsBuilder = com.pulumi.aws.datapipeline.inputs.GetPipelineDefinitionPlainArgs.builder
       com.pulumi.aws.datapipeline.DatapipelineFunctions.getPipelineDefinitionPlain(args(argsBuilder).build)
 
   /** Provides a DataPipeline Pipeline resource. */
-  def Pipeline(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def Pipeline(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.datapipeline.PipelineArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.datapipeline.PipelineArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -48,7 +48,7 @@ object datapipeline:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Provides a DataPipeline Pipeline Definition resource. */
-  def PipelineDefinition(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def PipelineDefinition(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.datapipeline.PipelineDefinitionArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.datapipeline.PipelineDefinitionArgs.builder
     com.pulumi.aws.datapipeline.PipelineDefinition(name,

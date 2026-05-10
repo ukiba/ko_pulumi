@@ -17,7 +17,7 @@ object sns:
    * 
    *  &gt; **NOTE:** You cannot unsubscribe to a subscription that is pending confirmation. If you use `email`, `email-json`, or `http`/`https` (without auto-confirmation enabled), until the subscription is confirmed (e.g., outside of this provider), AWS does not allow this provider to delete / unsubscribe the subscription. If you `destroy` an unconfirmed subscription, this provider will remove the subscription from its state but the subscription will still exist in AWS. However, if you delete an SNS topic, SNS [deletes all the subscriptions](https://docs.aws.amazon.com/sns/latest/dg/sns-delete-subscription-topic.html) associated with the topic. Also, you can import a subscription after confirmation and then have the capability to delete it.
    */
-  def TopicSubscription(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def TopicSubscription(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.sns.TopicSubscriptionArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.sns.TopicSubscriptionArgs.builder
     com.pulumi.aws.sns.TopicSubscription(name,
@@ -34,7 +34,7 @@ object sns:
      *  Service (SNS). By using this data source, you can reference SNS topics
      *  without having to hard code the ARNs as input.
      */
-    def getTopic(args: Endofunction[com.pulumi.aws.sns.inputs.GetTopicArgs.Builder] = identity):
+    def getTopic(args: Endofunction[com.pulumi.aws.sns.inputs.GetTopicArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.sns.outputs.GetTopicResult] =
       val argsBuilder = com.pulumi.aws.sns.inputs.GetTopicArgs.builder
       com.pulumi.aws.sns.SnsFunctions.getTopic(args(argsBuilder).build)
@@ -44,13 +44,13 @@ object sns:
      *  Service (SNS). By using this data source, you can reference SNS topics
      *  without having to hard code the ARNs as input.
      */
-    def getTopicPlain(args: Endofunction[com.pulumi.aws.sns.inputs.GetTopicPlainArgs.Builder] = identity):
+    def getTopicPlain(args: Endofunction[com.pulumi.aws.sns.inputs.GetTopicPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.sns.outputs.GetTopicResult] =
       val argsBuilder = com.pulumi.aws.sns.inputs.GetTopicPlainArgs.builder
       com.pulumi.aws.sns.SnsFunctions.getTopicPlain(args(argsBuilder).build)
 
   /** Provides a way to set SNS SMS preferences. */
-  def SmsPreferences(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def SmsPreferences(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.sns.SmsPreferencesArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.sns.SmsPreferencesArgs.builder
     com.pulumi.aws.sns.SmsPreferences(name,
@@ -58,7 +58,7 @@ object sns:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Provides an SNS platform application resource */
-  def PlatformApplication(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def PlatformApplication(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.sns.PlatformApplicationArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.sns.PlatformApplicationArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -69,7 +69,7 @@ object sns:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Provides an SNS topic resource */
-  def Topic(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def Topic(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.sns.TopicArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.sns.TopicArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -83,7 +83,7 @@ object sns:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Provides an SNS data protection topic policy resource */
-  def DataProtectionPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def DataProtectionPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.sns.DataProtectionPolicyArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.sns.DataProtectionPolicyArgs.builder
     com.pulumi.aws.sns.DataProtectionPolicy(name,
@@ -95,7 +95,7 @@ object sns:
    * 
    *  &gt; **NOTE:** If a Principal is specified as just an AWS account ID rather than an ARN, AWS silently converts it to the ARN for the root user, causing future deployments to differ. To avoid this problem, just specify the full ARN, e.g. `arn:aws:iam::123456789012:root`
    */
-  def TopicPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def TopicPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.sns.TopicPolicyArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.sns.TopicPolicyArgs.builder
     com.pulumi.aws.sns.TopicPolicy(name,

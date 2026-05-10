@@ -24,7 +24,7 @@ object bcmdata:
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
 
   /** Resource for managing an AWS BCM Data Exports Export. */
-  def Export(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def Export(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.bcmdata.ExportArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.bcmdata.ExportArgs.builder
     conf.logicalName2tagName(name) match

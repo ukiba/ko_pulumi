@@ -9,7 +9,7 @@ object schemas:
    * 
    *  &gt; **Note:** EventBridge was formerly known as CloudWatch Events. The functionality is identical.
    */
-  def Discoverer(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def Discoverer(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.schemas.DiscovererArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.schemas.DiscovererArgs.builder
     conf.logicalName2tagName(name) match
@@ -24,7 +24,7 @@ object schemas:
    * 
    *  &gt; **Note:** EventBridge was formerly known as CloudWatch Events. The functionality is identical.
    */
-  def Schema(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def Schema(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.schemas.SchemaArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.schemas.SchemaArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -38,7 +38,7 @@ object schemas:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Resource for managing an AWS EventBridge Schemas Registry Policy. */
-  def RegistryPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def RegistryPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.schemas.RegistryPolicyArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.schemas.RegistryPolicyArgs.builder
     com.pulumi.aws.schemas.RegistryPolicy(name,
@@ -50,7 +50,7 @@ object schemas:
    * 
    *  &gt; **Note:** EventBridge was formerly known as CloudWatch Events. The functionality is identical.
    */
-  def Registry(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def Registry(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.schemas.RegistryArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.schemas.RegistryArgs.builder
     conf.logicalName2pysicalName(name) match

@@ -5,7 +5,7 @@ import com.pulumi.resources.CustomResourceOptions
 
 object dsql:
   /** Resource for managing an Amazon Aurora DSQL Cluster Peering. */
-  def ClusterPeering(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def ClusterPeering(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.dsql.ClusterPeeringArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.dsql.ClusterPeeringArgs.builder
     com.pulumi.aws.dsql.ClusterPeering(name,
@@ -13,7 +13,7 @@ object dsql:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Resource for managing an Amazon Aurora DSQL Cluster. */
-  def Cluster(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def Cluster(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.dsql.ClusterArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.dsql.ClusterArgs.builder
     conf.logicalName2tagName(name) match

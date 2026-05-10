@@ -9,13 +9,13 @@ object polly:
     export com.pulumi.aws.polly.PollyFunctions.*
   extension (self: PollyFunctions.type)
     /** Data source for managing an AWS Polly Voices. */
-    def getVoices(args: Endofunction[com.pulumi.aws.polly.inputs.GetVoicesArgs.Builder] = identity):
+    def getVoices(args: Endofunction[com.pulumi.aws.polly.inputs.GetVoicesArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.polly.outputs.GetVoicesResult] =
       val argsBuilder = com.pulumi.aws.polly.inputs.GetVoicesArgs.builder
       com.pulumi.aws.polly.PollyFunctions.getVoices(args(argsBuilder).build)
 
     /** Data source for managing an AWS Polly Voices. */
-    def getVoicesPlain(args: Endofunction[com.pulumi.aws.polly.inputs.GetVoicesPlainArgs.Builder] = identity):
+    def getVoicesPlain(args: Endofunction[com.pulumi.aws.polly.inputs.GetVoicesPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.polly.outputs.GetVoicesResult] =
       val argsBuilder = com.pulumi.aws.polly.inputs.GetVoicesPlainArgs.builder
       com.pulumi.aws.polly.PollyFunctions.getVoicesPlain(args(argsBuilder).build)

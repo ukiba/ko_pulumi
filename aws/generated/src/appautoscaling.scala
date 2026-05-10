@@ -19,7 +19,7 @@ object appautoscaling:
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
 
   /** Provides an Application AutoScaling ScheduledAction resource. */
-  def ScheduledAction(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def ScheduledAction(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.appautoscaling.ScheduledActionArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.appautoscaling.ScheduledActionArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -46,7 +46,7 @@ object appautoscaling:
    * 
    *  &gt; **NOTE:** The [Application Auto Scaling service automatically attempts to manage IAM Service-Linked Roles](https://docs.aws.amazon.com/autoscaling/application/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-roles) when registering certain service namespaces for the first time. To manually manage this role, see the `aws.iam.ServiceLinkedRole` resource.
    */
-  def Target(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def Target(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.appautoscaling.TargetArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.appautoscaling.TargetArgs.builder
     conf.logicalName2tagName(name) match
@@ -85,7 +85,7 @@ object appautoscaling:
       builder.targetTrackingScalingPolicyConfiguration(args(argsBuilder).build)
 
   /** Provides an Application AutoScaling Policy resource. */
-  def Policy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def Policy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.appautoscaling.PolicyArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.appautoscaling.PolicyArgs.builder
     conf.logicalName2pysicalName(name) match

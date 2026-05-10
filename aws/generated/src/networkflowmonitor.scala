@@ -54,7 +54,7 @@ object networkflowmonitor:
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
 
   /** Manages a Network Flow Monitor Scope. */
-  def Scope(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def Scope(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.networkflowmonitor.ScopeArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.networkflowmonitor.ScopeArgs.builder
     conf.logicalName2tagName(name) match
@@ -65,7 +65,7 @@ object networkflowmonitor:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Manages a Network Flow Monitor Monitor. */
-  def Monitor(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def Monitor(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.networkflowmonitor.MonitorArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.networkflowmonitor.MonitorArgs.builder
     conf.logicalName2tagName(name) match

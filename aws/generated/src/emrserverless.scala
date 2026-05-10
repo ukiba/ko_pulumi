@@ -5,7 +5,7 @@ import com.pulumi.resources.CustomResourceOptions
 
 object emrserverless:
   /** Manages an EMR Serverless Application. */
-  def Application(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def Application(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.emrserverless.ApplicationArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.emrserverless.ApplicationArgs.builder
     conf.logicalName2pysicalName(name) match

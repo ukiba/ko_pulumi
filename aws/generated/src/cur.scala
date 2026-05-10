@@ -9,7 +9,7 @@ object cur:
    * 
    *  &gt; *NOTE:* The AWS Cost and Usage Report service is only available in `us-east-1` currently.
    */
-  def ReportDefinition(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def ReportDefinition(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.cur.ReportDefinitionArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.cur.ReportDefinitionArgs.builder
     conf.logicalName2tagName(name) match
@@ -31,7 +31,7 @@ object cur:
      * 
      *  &gt; *NOTE:* If AWS Organizations is enabled, only the master account can use this resource.
      */
-    def getReportDefinition(args: Endofunction[com.pulumi.aws.cur.inputs.GetReportDefinitionArgs.Builder] = identity):
+    def getReportDefinition(args: Endofunction[com.pulumi.aws.cur.inputs.GetReportDefinitionArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.cur.outputs.GetReportDefinitionResult] =
       val argsBuilder = com.pulumi.aws.cur.inputs.GetReportDefinitionArgs.builder
       com.pulumi.aws.cur.CurFunctions.getReportDefinition(args(argsBuilder).build)
@@ -43,7 +43,7 @@ object cur:
      * 
      *  &gt; *NOTE:* If AWS Organizations is enabled, only the master account can use this resource.
      */
-    def getReportDefinitionPlain(args: Endofunction[com.pulumi.aws.cur.inputs.GetReportDefinitionPlainArgs.Builder] = identity):
+    def getReportDefinitionPlain(args: Endofunction[com.pulumi.aws.cur.inputs.GetReportDefinitionPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.cur.outputs.GetReportDefinitionResult] =
       val argsBuilder = com.pulumi.aws.cur.inputs.GetReportDefinitionPlainArgs.builder
       com.pulumi.aws.cur.CurFunctions.getReportDefinitionPlain(args(argsBuilder).build)

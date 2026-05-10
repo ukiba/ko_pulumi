@@ -77,7 +77,7 @@ object keyspaces:
    * 
    *  More information about Keyspaces tables can be found in the [Keyspaces Developer Guide](https://docs.aws.amazon.com/keyspaces/latest/devguide/working-with-tables.html).
    */
-  def Table(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def Table(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.keyspaces.TableArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.keyspaces.TableArgs.builder
     conf.logicalName2tagName(name) match
@@ -106,7 +106,7 @@ object keyspaces:
    * 
    *  More information about keyspaces can be found in the [Keyspaces User Guide](https://docs.aws.amazon.com/keyspaces/latest/devguide/what-is-keyspaces.html).
    */
-  def Keyspace(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def Keyspace(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.keyspaces.KeyspaceArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.keyspaces.KeyspaceArgs.builder
     conf.logicalName2pysicalName(name) match

@@ -5,7 +5,7 @@ import com.pulumi.resources.CustomResourceOptions
 
 object codebuild:
   /** Provides a CodeBuild Fleet Resource. */
-  def Fleet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def Fleet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.codebuild.FleetArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.codebuild.FleetArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -24,13 +24,13 @@ object codebuild:
     export com.pulumi.aws.codebuild.CodebuildFunctions.*
   extension (self: CodebuildFunctions.type)
     /** Retrieve information about an CodeBuild Fleet. */
-    def getFleet(args: Endofunction[com.pulumi.aws.codebuild.inputs.GetFleetArgs.Builder] = identity):
+    def getFleet(args: Endofunction[com.pulumi.aws.codebuild.inputs.GetFleetArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.codebuild.outputs.GetFleetResult] =
       val argsBuilder = com.pulumi.aws.codebuild.inputs.GetFleetArgs.builder
       com.pulumi.aws.codebuild.CodebuildFunctions.getFleet(args(argsBuilder).build)
 
     /** Retrieve information about an CodeBuild Fleet. */
-    def getFleetPlain(args: Endofunction[com.pulumi.aws.codebuild.inputs.GetFleetPlainArgs.Builder] = identity):
+    def getFleetPlain(args: Endofunction[com.pulumi.aws.codebuild.inputs.GetFleetPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.codebuild.outputs.GetFleetResult] =
       val argsBuilder = com.pulumi.aws.codebuild.inputs.GetFleetPlainArgs.builder
       com.pulumi.aws.codebuild.CodebuildFunctions.getFleetPlain(args(argsBuilder).build)
@@ -185,7 +185,7 @@ object codebuild:
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
 
   /** Provides a CodeBuild Resource Policy Resource. */
-  def ResourcePolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def ResourcePolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.codebuild.ResourcePolicyArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.codebuild.ResourcePolicyArgs.builder
     com.pulumi.aws.codebuild.ResourcePolicy(name,
@@ -193,7 +193,7 @@ object codebuild:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Provides a CodeBuild Report Groups Resource. */
-  def ReportGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def ReportGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.codebuild.ReportGroupArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.codebuild.ReportGroupArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -211,7 +211,7 @@ object codebuild:
    *  `aws.codebuild.Webhook` resource, which manages the webhook to the
    *  source (e.g., the &#34;rebuild every time a code change is pushed&#34; option in the CodeBuild web console).
    */
-  def Project(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def Project(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.codebuild.ProjectArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.codebuild.ProjectArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -225,7 +225,7 @@ object codebuild:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Manages a CodeBuild webhook, which is an endpoint accepted by the CodeBuild service to trigger builds from source code repositories. Depending on the source type of the CodeBuild project, the CodeBuild service may also automatically create and delete the actual repository webhook as well. */
-  def Webhook(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def Webhook(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.codebuild.WebhookArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.codebuild.WebhookArgs.builder
     com.pulumi.aws.codebuild.Webhook(name,
@@ -272,7 +272,7 @@ object codebuild:
    *  Therefore, when you define `aws.codebuild.SourceCredential`,
    *  `aws.codebuild.Project` resource defined in the same module will use it.
    */
-  def SourceCredential(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def SourceCredential(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.codebuild.SourceCredentialArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.codebuild.SourceCredentialArgs.builder
     com.pulumi.aws.codebuild.SourceCredential(name,

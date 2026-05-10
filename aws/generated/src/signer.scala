@@ -5,7 +5,7 @@ import com.pulumi.resources.CustomResourceOptions
 
 object signer:
   /** Creates a Signer Signing Profile Permission. That is, a cross-account permission for a signing profile. */
-  def SigningProfilePermission(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def SigningProfilePermission(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.signer.SigningProfilePermissionArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.signer.SigningProfilePermissionArgs.builder
     com.pulumi.aws.signer.SigningProfilePermission(name,
@@ -13,7 +13,7 @@ object signer:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Creates a Signer Signing Job. */
-  def SigningJob(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def SigningJob(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.signer.SigningJobArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.signer.SigningJobArgs.builder
     com.pulumi.aws.signer.SigningJob(name,
@@ -26,25 +26,25 @@ object signer:
     export com.pulumi.aws.signer.SignerFunctions.*
   extension (self: SignerFunctions.type)
     /** Provides information about a Signer Signing Job. */
-    def getSigningJob(args: Endofunction[com.pulumi.aws.signer.inputs.GetSigningJobArgs.Builder] = identity):
+    def getSigningJob(args: Endofunction[com.pulumi.aws.signer.inputs.GetSigningJobArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.signer.outputs.GetSigningJobResult] =
       val argsBuilder = com.pulumi.aws.signer.inputs.GetSigningJobArgs.builder
       com.pulumi.aws.signer.SignerFunctions.getSigningJob(args(argsBuilder).build)
 
     /** Provides information about a Signer Signing Job. */
-    def getSigningJobPlain(args: Endofunction[com.pulumi.aws.signer.inputs.GetSigningJobPlainArgs.Builder] = identity):
+    def getSigningJobPlain(args: Endofunction[com.pulumi.aws.signer.inputs.GetSigningJobPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.signer.outputs.GetSigningJobResult] =
       val argsBuilder = com.pulumi.aws.signer.inputs.GetSigningJobPlainArgs.builder
       com.pulumi.aws.signer.SignerFunctions.getSigningJobPlain(args(argsBuilder).build)
 
     /** Provides information about a Signer Signing Profile. */
-    def getSigningProfile(args: Endofunction[com.pulumi.aws.signer.inputs.GetSigningProfileArgs.Builder] = identity):
+    def getSigningProfile(args: Endofunction[com.pulumi.aws.signer.inputs.GetSigningProfileArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.signer.outputs.GetSigningProfileResult] =
       val argsBuilder = com.pulumi.aws.signer.inputs.GetSigningProfileArgs.builder
       com.pulumi.aws.signer.SignerFunctions.getSigningProfile(args(argsBuilder).build)
 
     /** Provides information about a Signer Signing Profile. */
-    def getSigningProfilePlain(args: Endofunction[com.pulumi.aws.signer.inputs.GetSigningProfilePlainArgs.Builder] = identity):
+    def getSigningProfilePlain(args: Endofunction[com.pulumi.aws.signer.inputs.GetSigningProfilePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.signer.outputs.GetSigningProfileResult] =
       val argsBuilder = com.pulumi.aws.signer.inputs.GetSigningProfilePlainArgs.builder
       com.pulumi.aws.signer.SignerFunctions.getSigningProfilePlain(args(argsBuilder).build)
@@ -92,7 +92,7 @@ object signer:
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
 
   /** Creates a Signer Signing Profile. A signing profile contains information about the code signing configuration parameters that can be used by a given code signing user. */
-  def SigningProfile(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def SigningProfile(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.signer.SigningProfileArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.signer.SigningProfileArgs.builder
     conf.logicalName2pysicalName(name) match

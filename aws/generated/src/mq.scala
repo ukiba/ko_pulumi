@@ -15,7 +15,7 @@ object mq:
    * 
    *  !&gt; **Warning:** All arguments including the username and password will be stored in the raw state as plain-text. &gt; **Note:** Changes to an MQ Broker can occur when you change a parameter, such as `configuration` or `user`, and are reflected in the next maintenance window. Because of this, Terraform may report a difference in its planning phase because a modification has not yet taken place. You can use the `applyImmediately` flag to instruct the service to apply the change immediately (see documentation below). Using `applyImmediately` can result in a brief downtime as the broker reboots.
    */
-  def Broker(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def Broker(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.mq.BrokerArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.mq.BrokerArgs.builder
     conf.logicalName2tagName(name) match
@@ -85,7 +85,7 @@ object mq:
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
 
   /** Manages an Amazon MQ configuration. Use this resource to create and manage broker configurations for ActiveMQ and RabbitMQ brokers. */
-  def Configuration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def Configuration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.mq.ConfigurationArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.mq.ConfigurationArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -104,37 +104,37 @@ object mq:
     export com.pulumi.aws.mq.MqFunctions.*
   extension (self: MqFunctions.type)
     /** Provides details about an existing Amazon MQ broker. Use this data source to retrieve configuration and metadata for an Amazon MQ broker by ID or name. */
-    def getBroker(args: Endofunction[com.pulumi.aws.mq.inputs.GetBrokerArgs.Builder] = identity):
+    def getBroker(args: Endofunction[com.pulumi.aws.mq.inputs.GetBrokerArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.mq.outputs.GetBrokerResult] =
       val argsBuilder = com.pulumi.aws.mq.inputs.GetBrokerArgs.builder
       com.pulumi.aws.mq.MqFunctions.getBroker(args(argsBuilder).build)
 
     /** Provides details about an existing Amazon MQ broker. Use this data source to retrieve configuration and metadata for an Amazon MQ broker by ID or name. */
-    def getBrokerPlain(args: Endofunction[com.pulumi.aws.mq.inputs.GetBrokerPlainArgs.Builder] = identity):
+    def getBrokerPlain(args: Endofunction[com.pulumi.aws.mq.inputs.GetBrokerPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.mq.outputs.GetBrokerResult] =
       val argsBuilder = com.pulumi.aws.mq.inputs.GetBrokerPlainArgs.builder
       com.pulumi.aws.mq.MqFunctions.getBrokerPlain(args(argsBuilder).build)
 
     /** Provides details about available MQ broker engine types. Use this data source to retrieve supported engine types and their versions for Amazon MQ brokers. */
-    def getBrokerEngineTypes(args: Endofunction[com.pulumi.aws.mq.inputs.GetBrokerEngineTypesArgs.Builder] = identity):
+    def getBrokerEngineTypes(args: Endofunction[com.pulumi.aws.mq.inputs.GetBrokerEngineTypesArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.mq.outputs.GetBrokerEngineTypesResult] =
       val argsBuilder = com.pulumi.aws.mq.inputs.GetBrokerEngineTypesArgs.builder
       com.pulumi.aws.mq.MqFunctions.getBrokerEngineTypes(args(argsBuilder).build)
 
     /** Provides details about available MQ broker engine types. Use this data source to retrieve supported engine types and their versions for Amazon MQ brokers. */
-    def getBrokerEngineTypesPlain(args: Endofunction[com.pulumi.aws.mq.inputs.GetBrokerEngineTypesPlainArgs.Builder] = identity):
+    def getBrokerEngineTypesPlain(args: Endofunction[com.pulumi.aws.mq.inputs.GetBrokerEngineTypesPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.mq.outputs.GetBrokerEngineTypesResult] =
       val argsBuilder = com.pulumi.aws.mq.inputs.GetBrokerEngineTypesPlainArgs.builder
       com.pulumi.aws.mq.MqFunctions.getBrokerEngineTypesPlain(args(argsBuilder).build)
 
     /** Provides details about available MQ broker instance type offerings. Use this data source to discover supported instance types, storage types, and deployment modes for Amazon MQ brokers. */
-    def getInstanceTypeOfferings(args: Endofunction[com.pulumi.aws.mq.inputs.GetInstanceTypeOfferingsArgs.Builder] = identity):
+    def getInstanceTypeOfferings(args: Endofunction[com.pulumi.aws.mq.inputs.GetInstanceTypeOfferingsArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.mq.outputs.GetInstanceTypeOfferingsResult] =
       val argsBuilder = com.pulumi.aws.mq.inputs.GetInstanceTypeOfferingsArgs.builder
       com.pulumi.aws.mq.MqFunctions.getInstanceTypeOfferings(args(argsBuilder).build)
 
     /** Provides details about available MQ broker instance type offerings. Use this data source to discover supported instance types, storage types, and deployment modes for Amazon MQ brokers. */
-    def getInstanceTypeOfferingsPlain(args: Endofunction[com.pulumi.aws.mq.inputs.GetInstanceTypeOfferingsPlainArgs.Builder] = identity):
+    def getInstanceTypeOfferingsPlain(args: Endofunction[com.pulumi.aws.mq.inputs.GetInstanceTypeOfferingsPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.mq.outputs.GetInstanceTypeOfferingsResult] =
       val argsBuilder = com.pulumi.aws.mq.inputs.GetInstanceTypeOfferingsPlainArgs.builder
       com.pulumi.aws.mq.MqFunctions.getInstanceTypeOfferingsPlain(args(argsBuilder).build)

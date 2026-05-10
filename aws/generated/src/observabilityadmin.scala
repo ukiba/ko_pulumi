@@ -13,7 +13,7 @@ object observabilityadmin:
    * 
    *  &gt; **NOTE:** Only one telemetry pipeline per data source type is allowed per account. For example, you can have one pipeline for `amazon_api_gateway/access` and another for `amazon_vpc/flow`, but not two pipelines for the same data source type.
    */
-  def TelemetryPipeline(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def TelemetryPipeline(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.observabilityadmin.TelemetryPipelineArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.observabilityadmin.TelemetryPipelineArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -33,7 +33,7 @@ object observabilityadmin:
    * 
    *  This requires an AWS account within an organization with at least [delegated administrator permissions](https://docs.aws.amazon.com/organizations/latest/APIReference/API_RegisterDelegatedAdministrator.html).
    */
-  def CentralizationRuleForOrganization(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def CentralizationRuleForOrganization(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.observabilityadmin.CentralizationRuleForOrganizationArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.observabilityadmin.CentralizationRuleForOrganizationArgs.builder
     conf.logicalName2tagName(name) match
@@ -100,7 +100,7 @@ object observabilityadmin:
    * 
    *  &gt; **NOTE:** Only one telemetry enrichment can exist per account per region. Creating this resource enables the feature; destroying it disables the feature.
    */
-  def TelemetryEnrichment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def TelemetryEnrichment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.observabilityadmin.TelemetryEnrichmentArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.observabilityadmin.TelemetryEnrichmentArgs.builder
     com.pulumi.aws.observabilityadmin.TelemetryEnrichment(name,

@@ -5,7 +5,7 @@ import com.pulumi.resources.CustomResourceOptions
 
 object ses:
   /** Provides an SES receipt rule set resource. */
-  def ReceiptRuleSet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def ReceiptRuleSet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.ses.ReceiptRuleSetArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.ses.ReceiptRuleSetArgs.builder
     com.pulumi.aws.ses.ReceiptRuleSet(name,
@@ -77,7 +77,7 @@ object ses:
       builder.workmailActions(args.map(_(argsBuilder).build)*)
 
   /** Provides an SES domain identity resource */
-  def DomainIdentity(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def DomainIdentity(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.ses.DomainIdentityArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.ses.DomainIdentityArgs.builder
     com.pulumi.aws.ses.DomainIdentity(name,
@@ -85,7 +85,7 @@ object ses:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Provides an SES receipt filter resource */
-  def ReceiptFilter(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def ReceiptFilter(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.ses.ReceiptFilterArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.ses.ReceiptFilterArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -96,7 +96,7 @@ object ses:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Resource for managing SES Identity Notification Topics */
-  def IdentityNotificationTopic(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def IdentityNotificationTopic(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.ses.IdentityNotificationTopicArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.ses.IdentityNotificationTopicArgs.builder
     com.pulumi.aws.ses.IdentityNotificationTopic(name,
@@ -138,7 +138,7 @@ object ses:
    * 
    *  &gt; **NOTE:** For the MAIL FROM domain to be fully usable, this resource should be paired with the aws.ses.DomainIdentity resource. To validate the MAIL FROM domain, a DNS MX record is required. To pass SPF checks, a DNS TXT record may also be required. See the [Amazon SES MAIL FROM documentation](https://docs.aws.amazon.com/ses/latest/dg/mail-from.html) for more information.
    */
-  def MailFrom(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def MailFrom(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.ses.MailFromArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.ses.MailFromArgs.builder
     com.pulumi.aws.ses.MailFrom(name,
@@ -146,7 +146,7 @@ object ses:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Provides an SES email identity resource */
-  def EmailIdentity(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def EmailIdentity(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.ses.EmailIdentityArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.ses.EmailIdentityArgs.builder
     com.pulumi.aws.ses.EmailIdentity(name,
@@ -159,43 +159,43 @@ object ses:
     export com.pulumi.aws.ses.SesFunctions.*
   extension (self: SesFunctions.type)
     /** Retrieve the active SES receipt rule set */
-    def getActiveReceiptRuleSet(args: Endofunction[com.pulumi.aws.ses.inputs.GetActiveReceiptRuleSetArgs.Builder] = identity):
+    def getActiveReceiptRuleSet(args: Endofunction[com.pulumi.aws.ses.inputs.GetActiveReceiptRuleSetArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.ses.outputs.GetActiveReceiptRuleSetResult] =
       val argsBuilder = com.pulumi.aws.ses.inputs.GetActiveReceiptRuleSetArgs.builder
       com.pulumi.aws.ses.SesFunctions.getActiveReceiptRuleSet(args(argsBuilder).build)
 
     /** Retrieve the active SES receipt rule set */
-    def getActiveReceiptRuleSetPlain(args: Endofunction[com.pulumi.aws.ses.inputs.GetActiveReceiptRuleSetPlainArgs.Builder] = identity):
+    def getActiveReceiptRuleSetPlain(args: Endofunction[com.pulumi.aws.ses.inputs.GetActiveReceiptRuleSetPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.ses.outputs.GetActiveReceiptRuleSetResult] =
       val argsBuilder = com.pulumi.aws.ses.inputs.GetActiveReceiptRuleSetPlainArgs.builder
       com.pulumi.aws.ses.SesFunctions.getActiveReceiptRuleSetPlain(args(argsBuilder).build)
 
     /** Retrieve the SES domain identity */
-    def getDomainIdentity(args: Endofunction[com.pulumi.aws.ses.inputs.GetDomainIdentityArgs.Builder] = identity):
+    def getDomainIdentity(args: Endofunction[com.pulumi.aws.ses.inputs.GetDomainIdentityArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.ses.outputs.GetDomainIdentityResult] =
       val argsBuilder = com.pulumi.aws.ses.inputs.GetDomainIdentityArgs.builder
       com.pulumi.aws.ses.SesFunctions.getDomainIdentity(args(argsBuilder).build)
 
     /** Retrieve the SES domain identity */
-    def getDomainIdentityPlain(args: Endofunction[com.pulumi.aws.ses.inputs.GetDomainIdentityPlainArgs.Builder] = identity):
+    def getDomainIdentityPlain(args: Endofunction[com.pulumi.aws.ses.inputs.GetDomainIdentityPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.ses.outputs.GetDomainIdentityResult] =
       val argsBuilder = com.pulumi.aws.ses.inputs.GetDomainIdentityPlainArgs.builder
       com.pulumi.aws.ses.SesFunctions.getDomainIdentityPlain(args(argsBuilder).build)
 
     /** Retrieve the active SES email identity */
-    def getEmailIdentity(args: Endofunction[com.pulumi.aws.ses.inputs.GetEmailIdentityArgs.Builder] = identity):
+    def getEmailIdentity(args: Endofunction[com.pulumi.aws.ses.inputs.GetEmailIdentityArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.ses.outputs.GetEmailIdentityResult] =
       val argsBuilder = com.pulumi.aws.ses.inputs.GetEmailIdentityArgs.builder
       com.pulumi.aws.ses.SesFunctions.getEmailIdentity(args(argsBuilder).build)
 
     /** Retrieve the active SES email identity */
-    def getEmailIdentityPlain(args: Endofunction[com.pulumi.aws.ses.inputs.GetEmailIdentityPlainArgs.Builder] = identity):
+    def getEmailIdentityPlain(args: Endofunction[com.pulumi.aws.ses.inputs.GetEmailIdentityPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.ses.outputs.GetEmailIdentityResult] =
       val argsBuilder = com.pulumi.aws.ses.inputs.GetEmailIdentityPlainArgs.builder
       com.pulumi.aws.ses.SesFunctions.getEmailIdentityPlain(args(argsBuilder).build)
 
   /** Manages a SES Identity Policy. More information about SES Sending Authorization Policies can be found in the [SES Developer Guide](https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-policies.html). */
-  def IdentityPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def IdentityPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.ses.IdentityPolicyArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.ses.IdentityPolicyArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -206,7 +206,7 @@ object ses:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Provides an SES receipt rule resource */
-  def ReceiptRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def ReceiptRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.ses.ReceiptRuleArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.ses.ReceiptRuleArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -221,7 +221,7 @@ object ses:
    * 
    *  Domain ownership needs to be confirmed first using sesDomainIdentity Resource
    */
-  def DomainDkim(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def DomainDkim(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.ses.DomainDkimArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.ses.DomainDkimArgs.builder
     com.pulumi.aws.ses.DomainDkim(name,
@@ -229,7 +229,7 @@ object ses:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Provides an SES event destination */
-  def EventDestination(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def EventDestination(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.ses.EventDestinationArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.ses.EventDestinationArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -259,7 +259,7 @@ object ses:
       builder.trackingOptions(args(argsBuilder).build)
 
   /** Provides an SES configuration set resource. */
-  def ConfigurationSet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def ConfigurationSet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.ses.ConfigurationSetArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.ses.ConfigurationSetArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -270,7 +270,7 @@ object ses:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Provides a resource to create a SES template. */
-  def Template(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def Template(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.ses.TemplateArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.ses.TemplateArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -281,7 +281,7 @@ object ses:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Provides a resource to designate the active SES receipt rule set */
-  def ActiveReceiptRuleSet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def ActiveReceiptRuleSet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.ses.ActiveReceiptRuleSetArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.ses.ActiveReceiptRuleSetArgs.builder
     com.pulumi.aws.ses.ActiveReceiptRuleSet(name,
@@ -297,7 +297,7 @@ object ses:
    * 
    *  &gt; **WARNING:** This resource implements a part of the verification workflow. It does not represent a real-world entity in AWS, therefore changing or deleting this resource on its own has no immediate effect.
    */
-  def DomainIdentityVerification(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def DomainIdentityVerification(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.ses.DomainIdentityVerificationArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.ses.DomainIdentityVerificationArgs.builder
     com.pulumi.aws.ses.DomainIdentityVerification(name,

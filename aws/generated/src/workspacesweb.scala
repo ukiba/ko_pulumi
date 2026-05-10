@@ -29,7 +29,7 @@ object workspacesweb:
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
 
   /** Resource for managing an AWS WorkSpaces Web IP Access Settings Association. */
-  def IpAccessSettingsAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def IpAccessSettingsAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.workspacesweb.IpAccessSettingsAssociationArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.workspacesweb.IpAccessSettingsAssociationArgs.builder
     com.pulumi.aws.workspacesweb.IpAccessSettingsAssociation(name,
@@ -37,7 +37,7 @@ object workspacesweb:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Resource for managing an AWS WorkSpaces Web Identity Provider. */
-  def IdentityProvider(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def IdentityProvider(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.workspacesweb.IdentityProviderArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.workspacesweb.IdentityProviderArgs.builder
     conf.logicalName2tagName(name) match
@@ -48,7 +48,7 @@ object workspacesweb:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Resource for managing an AWS WorkSpaces Web Data Protection Settings resource. Once associated with a web portal, data protection settings control how sensitive information is redacted in streaming sessions. */
-  def DataProtectionSettings(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def DataProtectionSettings(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.workspacesweb.DataProtectionSettingsArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.workspacesweb.DataProtectionSettingsArgs.builder
     conf.logicalName2tagName(name) match
@@ -59,7 +59,7 @@ object workspacesweb:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Resource for managing an AWS WorkSpaces Web User Settings Association. */
-  def UserSettingsAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def UserSettingsAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.workspacesweb.UserSettingsAssociationArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.workspacesweb.UserSettingsAssociationArgs.builder
     com.pulumi.aws.workspacesweb.UserSettingsAssociation(name,
@@ -67,7 +67,7 @@ object workspacesweb:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Resource for managing an AWS WorkSpaces Web User Access Logging Settings Association. */
-  def UserAccessLoggingSettingsAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def UserAccessLoggingSettingsAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.workspacesweb.UserAccessLoggingSettingsAssociationArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.workspacesweb.UserAccessLoggingSettingsAssociationArgs.builder
     com.pulumi.aws.workspacesweb.UserAccessLoggingSettingsAssociation(name,
@@ -75,7 +75,7 @@ object workspacesweb:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Resource for managing an AWS WorkSpaces Web Browser Settings Association. */
-  def BrowserSettingsAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def BrowserSettingsAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.workspacesweb.BrowserSettingsAssociationArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.workspacesweb.BrowserSettingsAssociationArgs.builder
     com.pulumi.aws.workspacesweb.BrowserSettingsAssociation(name,
@@ -83,7 +83,7 @@ object workspacesweb:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Resource for managing an AWS WorkSpaces Web Session Logger Association. */
-  def SessionLoggerAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def SessionLoggerAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.workspacesweb.SessionLoggerAssociationArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.workspacesweb.SessionLoggerAssociationArgs.builder
     com.pulumi.aws.workspacesweb.SessionLoggerAssociation(name,
@@ -91,7 +91,7 @@ object workspacesweb:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Resource for managing an AWS WorkSpaces Web Portal. */
-  def Portal(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def Portal(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.workspacesweb.PortalArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.workspacesweb.PortalArgs.builder
     conf.logicalName2tagName(name) match
@@ -102,7 +102,7 @@ object workspacesweb:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Resource for managing an AWS WorkSpaces Web User Access Logging Settings resource. Once associated with a web portal, user access logging settings control how user access events are logged to Amazon Kinesis. */
-  def UserAccessLoggingSettings(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def UserAccessLoggingSettings(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.workspacesweb.UserAccessLoggingSettingsArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.workspacesweb.UserAccessLoggingSettingsArgs.builder
     conf.logicalName2tagName(name) match
@@ -113,7 +113,7 @@ object workspacesweb:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Resource for managing an AWS WorkSpaces Web Trust Store Association. */
-  def TrustStoreAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def TrustStoreAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.workspacesweb.TrustStoreAssociationArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.workspacesweb.TrustStoreAssociationArgs.builder
     com.pulumi.aws.workspacesweb.TrustStoreAssociation(name,
@@ -137,7 +137,7 @@ object workspacesweb:
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
 
   /** Resource for managing an AWS WorkSpaces Web Network Settings resource. Once associated with a web portal, network settings define how streaming instances will connect with your specified VPC. */
-  def NetworkSettings(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def NetworkSettings(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.workspacesweb.NetworkSettingsArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.workspacesweb.NetworkSettingsArgs.builder
     conf.logicalName2tagName(name) match
@@ -148,7 +148,7 @@ object workspacesweb:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Resource for managing an AWS WorkSpaces Web IP Access Settings resource. Once associated with a web portal, IP access settings control which IP addresses users can connect from. */
-  def IpAccessSettings(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def IpAccessSettings(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.workspacesweb.IpAccessSettingsArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.workspacesweb.IpAccessSettingsArgs.builder
     conf.logicalName2tagName(name) match
@@ -159,7 +159,7 @@ object workspacesweb:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Resource for managing an AWS WorkSpaces Web Data Protection Settings Association. */
-  def DataProtectionSettingsAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def DataProtectionSettingsAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.workspacesweb.DataProtectionSettingsAssociationArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.workspacesweb.DataProtectionSettingsAssociationArgs.builder
     com.pulumi.aws.workspacesweb.DataProtectionSettingsAssociation(name,
@@ -190,7 +190,7 @@ object workspacesweb:
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
 
   /** Resource for managing an AWS WorkSpaces Web Browser Settings resource. */
-  def BrowserSettings(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def BrowserSettings(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.workspacesweb.BrowserSettingsArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.workspacesweb.BrowserSettingsArgs.builder
     conf.logicalName2tagName(name) match
@@ -201,7 +201,7 @@ object workspacesweb:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Resource for managing an AWS WorkSpaces Web Trust Store. */
-  def TrustStore(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def TrustStore(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.workspacesweb.TrustStoreArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.workspacesweb.TrustStoreArgs.builder
     conf.logicalName2tagName(name) match
@@ -212,7 +212,7 @@ object workspacesweb:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Resource for managing an AWS WorkSpaces Web Session Logger. */
-  def SessionLogger(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def SessionLogger(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.workspacesweb.SessionLoggerArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.workspacesweb.SessionLoggerArgs.builder
     conf.logicalName2tagName(name) match
@@ -223,7 +223,7 @@ object workspacesweb:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Resource for managing an AWS WorkSpaces Web User Settings resource. Once associated with a web portal, user settings control how users can transfer data between a streaming session and their local devices. */
-  def UserSettings(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def UserSettings(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.workspacesweb.UserSettingsArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.workspacesweb.UserSettingsArgs.builder
     conf.logicalName2tagName(name) match
@@ -259,7 +259,7 @@ object workspacesweb:
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
 
   /** Resource for managing an AWS WorkSpaces Web Network Settings Association. */
-  def NetworkSettingsAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def NetworkSettingsAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.workspacesweb.NetworkSettingsAssociationArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.workspacesweb.NetworkSettingsAssociationArgs.builder
     com.pulumi.aws.workspacesweb.NetworkSettingsAssociation(name,

@@ -19,7 +19,7 @@ object accessanalyzer:
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
 
   /** Manages an Access Analyzer Analyzer. More information can be found in the [Access Analyzer User Guide](https://docs.aws.amazon.com/IAM/latest/UserGuide/what-is-access-analyzer.html). */
-  def Analyzer(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def Analyzer(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.accessanalyzer.AnalyzerArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.accessanalyzer.AnalyzerArgs.builder
     conf.logicalName2tagName(name) match
@@ -30,7 +30,7 @@ object accessanalyzer:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Resource for managing an AWS AccessAnalyzer Archive Rule. */
-  def ArchiveRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def ArchiveRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.accessanalyzer.ArchiveRuleArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.accessanalyzer.ArchiveRuleArgs.builder
     com.pulumi.aws.accessanalyzer.ArchiveRule(name,

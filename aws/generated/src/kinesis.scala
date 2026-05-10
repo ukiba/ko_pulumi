@@ -14,7 +14,7 @@ object kinesis:
      * 
      *  For more details, see the [Amazon Kinesis Firehose Documentation](https://aws.amazon.com/documentation/firehose/).
      */
-    def getFirehoseDeliveryStream(args: Endofunction[com.pulumi.aws.kinesis.inputs.GetFirehoseDeliveryStreamArgs.Builder] = identity):
+    def getFirehoseDeliveryStream(args: Endofunction[com.pulumi.aws.kinesis.inputs.GetFirehoseDeliveryStreamArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.kinesis.outputs.GetFirehoseDeliveryStreamResult] =
       val argsBuilder = com.pulumi.aws.kinesis.inputs.GetFirehoseDeliveryStreamArgs.builder
       com.pulumi.aws.kinesis.KinesisFunctions.getFirehoseDeliveryStream(args(argsBuilder).build)
@@ -24,7 +24,7 @@ object kinesis:
      * 
      *  For more details, see the [Amazon Kinesis Firehose Documentation](https://aws.amazon.com/documentation/firehose/).
      */
-    def getFirehoseDeliveryStreamPlain(args: Endofunction[com.pulumi.aws.kinesis.inputs.GetFirehoseDeliveryStreamPlainArgs.Builder] = identity):
+    def getFirehoseDeliveryStreamPlain(args: Endofunction[com.pulumi.aws.kinesis.inputs.GetFirehoseDeliveryStreamPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.kinesis.outputs.GetFirehoseDeliveryStreamResult] =
       val argsBuilder = com.pulumi.aws.kinesis.inputs.GetFirehoseDeliveryStreamPlainArgs.builder
       com.pulumi.aws.kinesis.KinesisFunctions.getFirehoseDeliveryStreamPlain(args(argsBuilder).build)
@@ -35,7 +35,7 @@ object kinesis:
      * 
      *  For more details, see the [Amazon Kinesis Documentation](https://aws.amazon.com/documentation/kinesis/).
      */
-    def getStream(args: Endofunction[com.pulumi.aws.kinesis.inputs.GetStreamArgs.Builder] = identity):
+    def getStream(args: Endofunction[com.pulumi.aws.kinesis.inputs.GetStreamArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.kinesis.outputs.GetStreamResult] =
       val argsBuilder = com.pulumi.aws.kinesis.inputs.GetStreamArgs.builder
       com.pulumi.aws.kinesis.KinesisFunctions.getStream(args(argsBuilder).build)
@@ -46,7 +46,7 @@ object kinesis:
      * 
      *  For more details, see the [Amazon Kinesis Documentation](https://aws.amazon.com/documentation/kinesis/).
      */
-    def getStreamPlain(args: Endofunction[com.pulumi.aws.kinesis.inputs.GetStreamPlainArgs.Builder] = identity):
+    def getStreamPlain(args: Endofunction[com.pulumi.aws.kinesis.inputs.GetStreamPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.kinesis.outputs.GetStreamResult] =
       val argsBuilder = com.pulumi.aws.kinesis.inputs.GetStreamPlainArgs.builder
       com.pulumi.aws.kinesis.KinesisFunctions.getStreamPlain(args(argsBuilder).build)
@@ -56,7 +56,7 @@ object kinesis:
      * 
      *  For more details, see the [Amazon Kinesis Stream Consumer Documentation](https://docs.aws.amazon.com/streams/latest/dev/enhanced-consumers.html).
      */
-    def getStreamConsumer(args: Endofunction[com.pulumi.aws.kinesis.inputs.GetStreamConsumerArgs.Builder] = identity):
+    def getStreamConsumer(args: Endofunction[com.pulumi.aws.kinesis.inputs.GetStreamConsumerArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.kinesis.outputs.GetStreamConsumerResult] =
       val argsBuilder = com.pulumi.aws.kinesis.inputs.GetStreamConsumerArgs.builder
       com.pulumi.aws.kinesis.KinesisFunctions.getStreamConsumer(args(argsBuilder).build)
@@ -66,7 +66,7 @@ object kinesis:
      * 
      *  For more details, see the [Amazon Kinesis Stream Consumer Documentation](https://docs.aws.amazon.com/streams/latest/dev/enhanced-consumers.html).
      */
-    def getStreamConsumerPlain(args: Endofunction[com.pulumi.aws.kinesis.inputs.GetStreamConsumerPlainArgs.Builder] = identity):
+    def getStreamConsumerPlain(args: Endofunction[com.pulumi.aws.kinesis.inputs.GetStreamConsumerPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.kinesis.outputs.GetStreamConsumerResult] =
       val argsBuilder = com.pulumi.aws.kinesis.inputs.GetStreamConsumerPlainArgs.builder
       com.pulumi.aws.kinesis.KinesisFunctions.getStreamConsumerPlain(args(argsBuilder).build)
@@ -75,7 +75,7 @@ object kinesis:
    * Provides a resource to manage an Amazon Kinesis Streams resource policy.
    *  Use a resource policy to manage cross-account access to your data streams or consumers.
    */
-  def ResourcePolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def ResourcePolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.kinesis.ResourcePolicyArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.kinesis.ResourcePolicyArgs.builder
     com.pulumi.aws.kinesis.ResourcePolicy(name,
@@ -88,7 +88,7 @@ object kinesis:
    * 
    *  For more details, see the [Amazon Kinesis Documentation](https://aws.amazon.com/documentation/kinesis/).
    */
-  def Stream(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def Stream(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.kinesis.StreamArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.kinesis.StreamArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -111,7 +111,7 @@ object kinesis:
    * 
    *  &gt; **Note:** To manage Amazon Kinesis Data Analytics for Apache Flink applications, use the `aws.kinesisanalyticsv2.Application` resource.
    */
-  def AnalyticsApplication(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def AnalyticsApplication(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.kinesis.AnalyticsApplicationArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.kinesis.AnalyticsApplicationArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -145,7 +145,7 @@ object kinesis:
    * 
    *  For more details, see the [Amazon Kinesis Stream Consumer Documentation](https://docs.aws.amazon.com/streams/latest/dev/enhanced-consumers.html).
    */
-  def StreamConsumer(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def StreamConsumer(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.kinesis.StreamConsumerArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.kinesis.StreamConsumerArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -206,7 +206,7 @@ object kinesis:
    * 
    *  For more details, see the [Amazon Kinesis Documentation](https://aws.amazon.com/documentation/kinesis/).
    */
-  def VideoStream(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def VideoStream(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.kinesis.VideoStreamArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.kinesis.VideoStreamArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -339,7 +339,7 @@ object kinesis:
    * 
    *  For more details, see the [Amazon Kinesis Firehose Documentation](https://aws.amazon.com/documentation/firehose/).
    */
-  def FirehoseDeliveryStream(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def FirehoseDeliveryStream(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.kinesis.FirehoseDeliveryStreamArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.kinesis.FirehoseDeliveryStreamArgs.builder
     conf.logicalName2pysicalName(name) match

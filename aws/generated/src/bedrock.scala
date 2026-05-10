@@ -13,7 +13,7 @@ object bedrock:
    *  - Only one strategy of each built-in type (`SEMANTIC`, `SUMMARIZATION`, `USER_PREFERENCE`, `EPISODIC`) can exist per memory
    *  - Multiple `CUSTOM` strategies are allowed (subject to the total limit of 6)
    */
-  def AgentcoreMemoryStrategy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def AgentcoreMemoryStrategy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.bedrock.AgentcoreMemoryStrategyArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.bedrock.AgentcoreMemoryStrategyArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -28,7 +28,7 @@ object bedrock:
    * 
    *  &gt; **Note:** Write-Only argument `apiKeyWo` is available to use in place of `apiKey`. Write-Only arguments are supported in HashiCorp Terraform 1.11.0 and later. Learn more.
    */
-  def AgentcoreApiKeyCredentialProvider(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def AgentcoreApiKeyCredentialProvider(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.bedrock.AgentcoreApiKeyCredentialProviderArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.bedrock.AgentcoreApiKeyCredentialProviderArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -75,7 +75,7 @@ object bedrock:
       builder.vectorIngestionConfiguration(args(argsBuilder).build)
 
   /** Manages an AWS Bedrock AgentCore Memory. Memory provides persistent storage for AI agent interactions, allowing agents to retain context across conversations and sessions. */
-  def AgentcoreMemory(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def AgentcoreMemory(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.bedrock.AgentcoreMemoryArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.bedrock.AgentcoreMemoryArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -89,7 +89,7 @@ object bedrock:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Resource for managing an AWS Agents for Amazon Bedrock Data Source. */
-  def AgentDataSource(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def AgentDataSource(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.bedrock.AgentDataSourceArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.bedrock.AgentDataSourceArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -100,7 +100,7 @@ object bedrock:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Resource for managing an AWS Agents for Amazon Bedrock Agent. */
-  def AgentAgent(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def AgentAgent(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.bedrock.AgentAgentArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.bedrock.AgentAgentArgs.builder
     conf.logicalName2tagName(name) match
@@ -111,7 +111,7 @@ object bedrock:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Manages an AWS Bedrock AgentCore Agent Runtime. Agent Runtime provides a containerized execution environment for AI agents. */
-  def AgentcoreAgentRuntime(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def AgentcoreAgentRuntime(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.bedrock.AgentcoreAgentRuntimeArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.bedrock.AgentcoreAgentRuntimeArgs.builder
     conf.logicalName2tagName(name) match
@@ -122,7 +122,7 @@ object bedrock:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Manages an AWS Bedrock AgentCore Code Interpreter. Code Interpreter provides a secure environment for AI agents to execute Python code, enabling data analysis, calculations, and file processing capabilities. */
-  def AgentcoreCodeInterpreter(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def AgentcoreCodeInterpreter(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.bedrock.AgentcoreCodeInterpreterArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.bedrock.AgentcoreCodeInterpreterArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -182,7 +182,7 @@ object bedrock:
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
 
   /** Manages [Provisioned Throughput](https://docs.aws.amazon.com/bedrock/latest/userguide/prov-throughput.html) for an Amazon Bedrock model. */
-  def ProvisionedModelThroughput(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def ProvisionedModelThroughput(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.bedrock.ProvisionedModelThroughputArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.bedrock.ProvisionedModelThroughputArgs.builder
     conf.logicalName2tagName(name) match
@@ -267,7 +267,7 @@ object bedrock:
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
 
   /** Resource for managing an AWS Agents for Amazon Bedrock Agent Alias. */
-  def AgentAgentAlias(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def AgentAgentAlias(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.bedrock.AgentAgentAliasArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.bedrock.AgentAgentAliasArgs.builder
     conf.logicalName2tagName(name) match
@@ -299,7 +299,7 @@ object bedrock:
       builder.timeouts(args(argsBuilder).build)
 
   /** Resource for managing an AWS Agents for Amazon Bedrock Knowledge Base. */
-  def AgentKnowledgeBase(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def AgentKnowledgeBase(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.bedrock.AgentKnowledgeBaseArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.bedrock.AgentKnowledgeBaseArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -313,7 +313,7 @@ object bedrock:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Resource for managing an AWS Agents for Amazon Bedrock Agent Action Group. */
-  def AgentAgentActionGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def AgentAgentActionGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.bedrock.AgentAgentActionGroupArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.bedrock.AgentAgentActionGroupArgs.builder
     com.pulumi.aws.bedrock.AgentAgentActionGroup(name,
@@ -335,7 +335,7 @@ object bedrock:
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
 
   /** Resource for managing an AWS Bedrock Guardrail Version. */
-  def GuardrailVersion(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def GuardrailVersion(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.bedrock.GuardrailVersionArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.bedrock.GuardrailVersionArgs.builder
     com.pulumi.aws.bedrock.GuardrailVersion(name,
@@ -343,7 +343,7 @@ object bedrock:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Resource for managing an AWS Bedrock Inference Profile. */
-  def InferenceProfile(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def InferenceProfile(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.bedrock.InferenceProfileArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.bedrock.InferenceProfileArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -367,7 +367,7 @@ object bedrock:
       builder.kmsConfiguration(args(argsBuilder).build)
 
   /** Resource for managing an Amazon Bedrock Guardrail. */
-  def Guardrail(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def Guardrail(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.bedrock.GuardrailArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.bedrock.GuardrailArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -447,7 +447,7 @@ object bedrock:
       builder.timeouts(args(argsBuilder).build)
 
   /** Manages an AWS Bedrock AgentCore Gateway. With Gateway, developers can convert APIs, Lambda functions, and existing services into Model Context Protocol (MCP)-compatible tools. */
-  def AgentcoreGateway(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def AgentcoreGateway(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.bedrock.AgentcoreGatewayArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.bedrock.AgentcoreGatewayArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -576,7 +576,7 @@ object bedrock:
    * 
    *  &gt; Deletion of this resource will not modify the CMK, only remove the resource from state.
    */
-  def AgentcoreTokenVaultCmk(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def AgentcoreTokenVaultCmk(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.bedrock.AgentcoreTokenVaultCmkArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.bedrock.AgentcoreTokenVaultCmkArgs.builder
     com.pulumi.aws.bedrock.AgentcoreTokenVaultCmk(name,
@@ -584,7 +584,7 @@ object bedrock:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Manages an AWS Bedrock AgentCore Agent Runtime Endpoint. Agent Runtime Endpoints provide a network-accessible interface for interacting with agent runtimes, enabling external systems to communicate with and invoke agent capabilities. */
-  def AgentcoreAgentRuntimeEndpoint(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def AgentcoreAgentRuntimeEndpoint(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.bedrock.AgentcoreAgentRuntimeEndpointArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.bedrock.AgentcoreAgentRuntimeEndpointArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -598,7 +598,7 @@ object bedrock:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Resource for managing an AWS Bedrock Agents Flow. */
-  def AgentFlow(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def AgentFlow(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.bedrock.AgentFlowArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.bedrock.AgentFlowArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -612,7 +612,7 @@ object bedrock:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Manages an AWS Bedrock AgentCore Gateway Target. Gateway targets define the endpoints and configurations that a gateway can invoke, such as Lambda functions or APIs, allowing agents to interact with external services through the Model Context Protocol (MCP). */
-  def AgentcoreGatewayTarget(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def AgentcoreGatewayTarget(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.bedrock.AgentcoreGatewayTargetArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.bedrock.AgentcoreGatewayTargetArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -741,67 +741,67 @@ object bedrock:
     export com.pulumi.aws.bedrock.BedrockFunctions.*
   extension (self: BedrockFunctions.type)
     /** Data source for managing an AWS Amazon BedrockAgent Agent Versions. */
-    def getAgentAgentVersions(args: Endofunction[com.pulumi.aws.bedrock.inputs.GetAgentAgentVersionsArgs.Builder] = identity):
+    def getAgentAgentVersions(args: Endofunction[com.pulumi.aws.bedrock.inputs.GetAgentAgentVersionsArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.bedrock.outputs.GetAgentAgentVersionsResult] =
       val argsBuilder = com.pulumi.aws.bedrock.inputs.GetAgentAgentVersionsArgs.builder
       com.pulumi.aws.bedrock.BedrockFunctions.getAgentAgentVersions(args(argsBuilder).build)
 
     /** Data source for managing an AWS Amazon BedrockAgent Agent Versions. */
-    def getAgentAgentVersionsPlain(args: Endofunction[com.pulumi.aws.bedrock.inputs.GetAgentAgentVersionsPlainArgs.Builder] = identity):
+    def getAgentAgentVersionsPlain(args: Endofunction[com.pulumi.aws.bedrock.inputs.GetAgentAgentVersionsPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.bedrock.outputs.GetAgentAgentVersionsResult] =
       val argsBuilder = com.pulumi.aws.bedrock.inputs.GetAgentAgentVersionsPlainArgs.builder
       com.pulumi.aws.bedrock.BedrockFunctions.getAgentAgentVersionsPlain(args(argsBuilder).build)
 
     /** Returns properties of a specific Amazon Bedrock custom model. */
-    def getCustomModel(args: Endofunction[com.pulumi.aws.bedrock.inputs.GetCustomModelArgs.Builder] = identity):
+    def getCustomModel(args: Endofunction[com.pulumi.aws.bedrock.inputs.GetCustomModelArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.bedrock.outputs.GetCustomModelResult] =
       val argsBuilder = com.pulumi.aws.bedrock.inputs.GetCustomModelArgs.builder
       com.pulumi.aws.bedrock.BedrockFunctions.getCustomModel(args(argsBuilder).build)
 
     /** Returns properties of a specific Amazon Bedrock custom model. */
-    def getCustomModelPlain(args: Endofunction[com.pulumi.aws.bedrock.inputs.GetCustomModelPlainArgs.Builder] = identity):
+    def getCustomModelPlain(args: Endofunction[com.pulumi.aws.bedrock.inputs.GetCustomModelPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.bedrock.outputs.GetCustomModelResult] =
       val argsBuilder = com.pulumi.aws.bedrock.inputs.GetCustomModelPlainArgs.builder
       com.pulumi.aws.bedrock.BedrockFunctions.getCustomModelPlain(args(argsBuilder).build)
 
     /** Returns a list of Amazon Bedrock custom models. */
-    def getCustomModels(args: Endofunction[com.pulumi.aws.bedrock.inputs.GetCustomModelsArgs.Builder] = identity):
+    def getCustomModels(args: Endofunction[com.pulumi.aws.bedrock.inputs.GetCustomModelsArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.bedrock.outputs.GetCustomModelsResult] =
       val argsBuilder = com.pulumi.aws.bedrock.inputs.GetCustomModelsArgs.builder
       com.pulumi.aws.bedrock.BedrockFunctions.getCustomModels(args(argsBuilder).build)
 
     /** Returns a list of Amazon Bedrock custom models. */
-    def getCustomModelsPlain(args: Endofunction[com.pulumi.aws.bedrock.inputs.GetCustomModelsPlainArgs.Builder] = identity):
+    def getCustomModelsPlain(args: Endofunction[com.pulumi.aws.bedrock.inputs.GetCustomModelsPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.bedrock.outputs.GetCustomModelsResult] =
       val argsBuilder = com.pulumi.aws.bedrock.inputs.GetCustomModelsPlainArgs.builder
       com.pulumi.aws.bedrock.BedrockFunctions.getCustomModelsPlain(args(argsBuilder).build)
 
     /** Data source for managing an AWS Bedrock Inference Profile. */
-    def getInferenceProfile(args: Endofunction[com.pulumi.aws.bedrock.inputs.GetInferenceProfileArgs.Builder] = identity):
+    def getInferenceProfile(args: Endofunction[com.pulumi.aws.bedrock.inputs.GetInferenceProfileArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.bedrock.outputs.GetInferenceProfileResult] =
       val argsBuilder = com.pulumi.aws.bedrock.inputs.GetInferenceProfileArgs.builder
       com.pulumi.aws.bedrock.BedrockFunctions.getInferenceProfile(args(argsBuilder).build)
 
     /** Data source for managing an AWS Bedrock Inference Profile. */
-    def getInferenceProfilePlain(args: Endofunction[com.pulumi.aws.bedrock.inputs.GetInferenceProfilePlainArgs.Builder] = identity):
+    def getInferenceProfilePlain(args: Endofunction[com.pulumi.aws.bedrock.inputs.GetInferenceProfilePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.bedrock.outputs.GetInferenceProfileResult] =
       val argsBuilder = com.pulumi.aws.bedrock.inputs.GetInferenceProfilePlainArgs.builder
       com.pulumi.aws.bedrock.BedrockFunctions.getInferenceProfilePlain(args(argsBuilder).build)
 
     /** Data source for managing AWS Bedrock Inference Profiles. */
-    def getInferenceProfiles(args: Endofunction[com.pulumi.aws.bedrock.inputs.GetInferenceProfilesArgs.Builder] = identity):
+    def getInferenceProfiles(args: Endofunction[com.pulumi.aws.bedrock.inputs.GetInferenceProfilesArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.bedrock.outputs.GetInferenceProfilesResult] =
       val argsBuilder = com.pulumi.aws.bedrock.inputs.GetInferenceProfilesArgs.builder
       com.pulumi.aws.bedrock.BedrockFunctions.getInferenceProfiles(args(argsBuilder).build)
 
     /** Data source for managing AWS Bedrock Inference Profiles. */
-    def getInferenceProfilesPlain(args: Endofunction[com.pulumi.aws.bedrock.inputs.GetInferenceProfilesPlainArgs.Builder] = identity):
+    def getInferenceProfilesPlain(args: Endofunction[com.pulumi.aws.bedrock.inputs.GetInferenceProfilesPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.bedrock.outputs.GetInferenceProfilesResult] =
       val argsBuilder = com.pulumi.aws.bedrock.inputs.GetInferenceProfilesPlainArgs.builder
       com.pulumi.aws.bedrock.BedrockFunctions.getInferenceProfilesPlain(args(argsBuilder).build)
 
   /** Manages an AWS Bedrock AgentCore Workload Identity. Workload Identity provides OAuth2-based authentication and authorization for AI agents to access external resources securely. */
-  def AgentcoreWorkloadIdentity(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def AgentcoreWorkloadIdentity(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.bedrock.AgentcoreWorkloadIdentityArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.bedrock.AgentcoreWorkloadIdentityArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -822,7 +822,7 @@ object bedrock:
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
 
   /** Resource for managing an AWS Agents for Amazon Bedrock Agent Knowledge Base Association. */
-  def AgentAgentKnowledgeBaseAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def AgentAgentKnowledgeBaseAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.bedrock.AgentAgentKnowledgeBaseAssociationArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.bedrock.AgentAgentKnowledgeBaseAssociationArgs.builder
     com.pulumi.aws.bedrock.AgentAgentKnowledgeBaseAssociation(name,
@@ -830,7 +830,7 @@ object bedrock:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Manages an AWS Bedrock AgentCore Browser. Browser provides AI agents with web browsing capabilities, allowing them to navigate websites, extract information, and interact with web content in a controlled environment. */
-  def AgentcoreBrowser(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def AgentcoreBrowser(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.bedrock.AgentcoreBrowserArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.bedrock.AgentcoreBrowserArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -904,7 +904,7 @@ object bedrock:
    * 
    *  &gt; **Note:** Write-Only arguments `clientIdWo` and `clientSecretWo` are available to use in place of `clientId` and `clientSecret`. Write-Only arguments are supported in HashiCorp Terraform 1.11.0 and later. Learn more.
    */
-  def AgentcoreOauth2CredentialProvider(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def AgentcoreOauth2CredentialProvider(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.bedrock.AgentcoreOauth2CredentialProviderArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.bedrock.AgentcoreOauth2CredentialProviderArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -924,7 +924,7 @@ object bedrock:
       builder.timeouts(args(argsBuilder).build)
 
   /** Resource for managing an AWS Bedrock Agents Agent Collaborator. */
-  def AgentAgentCollaborator(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def AgentAgentCollaborator(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.bedrock.AgentAgentCollaboratorArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.bedrock.AgentAgentCollaboratorArgs.builder
     com.pulumi.aws.bedrock.AgentAgentCollaborator(name,
@@ -3979,7 +3979,7 @@ object bedrock:
    *  * _Update_ updates the customization job&#39;s [tags](https://docs.aws.amazon.com/bedrock/latest/userguide/tagging.html).
    *  * _Delete_ stops the customization job if it is still active. If the customization job has completed, the custom model output by the job is deleted.
    */
-  def CustomModel(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def CustomModel(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.bedrock.CustomModelArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.bedrock.CustomModelArgs.builder
     conf.logicalName2tagName(name) match
@@ -4011,7 +4011,7 @@ object bedrock:
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
 
   /** Resource for managing an AWS Bedrock Agents Prompt. */
-  def AgentPrompt(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def AgentPrompt(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.bedrock.AgentPromptArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.bedrock.AgentPromptArgs.builder
     conf.logicalName2pysicalName(name) match

@@ -29,19 +29,19 @@ object billing:
     export com.pulumi.aws.billing.BillingFunctions.*
   extension (self: BillingFunctions.type)
     /** Provides details about an AWS Billing Views. */
-    def getViews(args: Endofunction[com.pulumi.aws.billing.inputs.GetViewsArgs.Builder] = identity):
+    def getViews(args: Endofunction[com.pulumi.aws.billing.inputs.GetViewsArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.billing.outputs.GetViewsResult] =
       val argsBuilder = com.pulumi.aws.billing.inputs.GetViewsArgs.builder
       com.pulumi.aws.billing.BillingFunctions.getViews(args(argsBuilder).build)
 
     /** Provides details about an AWS Billing Views. */
-    def getViewsPlain(args: Endofunction[com.pulumi.aws.billing.inputs.GetViewsPlainArgs.Builder] = identity):
+    def getViewsPlain(args: Endofunction[com.pulumi.aws.billing.inputs.GetViewsPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.billing.outputs.GetViewsResult] =
       val argsBuilder = com.pulumi.aws.billing.inputs.GetViewsPlainArgs.builder
       com.pulumi.aws.billing.BillingFunctions.getViewsPlain(args(argsBuilder).build)
 
   /** Manages an AWS Billing View. */
-  def View(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def View(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.billing.ViewArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.billing.ViewArgs.builder
     conf.logicalName2pysicalName(name) match

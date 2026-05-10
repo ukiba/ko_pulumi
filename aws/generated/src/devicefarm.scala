@@ -9,7 +9,7 @@ object devicefarm:
    *  \u2202
    *  &gt; **NOTE:** AWS currently has limited regional support for Device Farm (e.g., `us-west-2`). See [AWS Device Farm endpoints and quotas](https://docs.aws.amazon.com/general/latest/gr/devicefarm.html) for information on supported regions.
    */
-  def InstanceProfile(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def InstanceProfile(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.devicefarm.InstanceProfileArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.devicefarm.InstanceProfileArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -41,7 +41,7 @@ object devicefarm:
    * 
    *  &gt; **NOTE:** AWS currently has limited regional support for Device Farm (e.g., `us-west-2`). See [AWS Device Farm endpoints and quotas](https://docs.aws.amazon.com/general/latest/gr/devicefarm.html) for information on supported regions.
    */
-  def TestGridProject(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def TestGridProject(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.devicefarm.TestGridProjectArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.devicefarm.TestGridProjectArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -55,7 +55,7 @@ object devicefarm:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Provides a resource to manage AWS Device Farm Device Pools. */
-  def DevicePool(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def DevicePool(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.devicefarm.DevicePoolArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.devicefarm.DevicePoolArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -87,7 +87,7 @@ object devicefarm:
    *  \u2202
    *  &gt; **NOTE:** AWS currently has limited regional support for Device Farm (e.g., `us-west-2`). See [AWS Device Farm endpoints and quotas](https://docs.aws.amazon.com/general/latest/gr/devicefarm.html) for information on supported regions.
    */
-  def NetworkProfile(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def NetworkProfile(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.devicefarm.NetworkProfileArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.devicefarm.NetworkProfileArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -108,7 +108,7 @@ object devicefarm:
    * 
    *  &gt; **NOTE:** AWS currently has limited regional support for Device Farm (e.g., `us-west-2`). See [AWS Device Farm endpoints and quotas](https://docs.aws.amazon.com/general/latest/gr/devicefarm.html) for information on supported regions.
    */
-  def Project(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def Project(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.devicefarm.ProjectArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.devicefarm.ProjectArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -126,7 +126,7 @@ object devicefarm:
    * 
    *  &gt; **NOTE:** AWS currently has limited regional support for Device Farm (e.g., `us-west-2`). See [AWS Device Farm endpoints and quotas](https://docs.aws.amazon.com/general/latest/gr/devicefarm.html) for information on supported regions.
    */
-  def Upload(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def Upload(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.devicefarm.UploadArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.devicefarm.UploadArgs.builder
     conf.logicalName2pysicalName(name) match

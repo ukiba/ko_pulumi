@@ -5,7 +5,7 @@ import com.pulumi.resources.CustomResourceOptions
 
 object resiliencehub:
   /** Resource for managing an AWS Resilience Hub Resiliency Policy. */
-  def ResiliencyPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def ResiliencyPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.resiliencehub.ResiliencyPolicyArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.resiliencehub.ResiliencyPolicyArgs.builder
     conf.logicalName2pysicalName(name) match

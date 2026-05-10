@@ -5,7 +5,7 @@ import com.pulumi.resources.CustomResourceOptions
 
 object rum:
   /** Provides a CloudWatch RUM App Monitor resource. */
-  def AppMonitor(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def AppMonitor(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.rum.AppMonitorArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.rum.AppMonitorArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -42,7 +42,7 @@ object rum:
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
 
   /** Provides a CloudWatch RUM Metrics Destination resource. */
-  def MetricsDestination(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def MetricsDestination(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.rum.MetricsDestinationArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.rum.MetricsDestinationArgs.builder
     com.pulumi.aws.rum.MetricsDestination(name,

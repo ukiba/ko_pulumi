@@ -51,7 +51,7 @@ object ssm:
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
 
   /** Provides an SSM Maintenance Window Task resource */
-  def MaintenanceWindowTask(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def MaintenanceWindowTask(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.ssm.MaintenanceWindowTaskArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.ssm.MaintenanceWindowTaskArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -62,7 +62,7 @@ object ssm:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Resource for registering an AWS Systems Manager Default Patch Baseline. */
-  def DefaultPatchBaseline(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def DefaultPatchBaseline(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.ssm.DefaultPatchBaselineArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.ssm.DefaultPatchBaselineArgs.builder
     com.pulumi.aws.ssm.DefaultPatchBaseline(name,
@@ -70,7 +70,7 @@ object ssm:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Provides an SSM Maintenance Window resource */
-  def MaintenanceWindow(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def MaintenanceWindow(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.ssm.MaintenanceWindowArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.ssm.MaintenanceWindowArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -88,7 +88,7 @@ object ssm:
    * 
    *  &gt; **Note:** The `overwrite` argument makes it possible to overwrite an existing SSM Parameter created outside of IAC.
    */
-  def Parameter(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def Parameter(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.ssm.ParameterArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.ssm.ParameterArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -106,7 +106,7 @@ object ssm:
    * 
    *  &gt; **NOTE:** A rotation implicitly depends on a replication set. If you configured your replication set in Terraform, we recommend you add it to the `dependsOn` argument for the Terraform Contact Resource.
    */
-  def ContactsRotation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def ContactsRotation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.ssm.ContactsRotationArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.ssm.ContactsRotationArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -144,97 +144,97 @@ object ssm:
     export com.pulumi.aws.ssm.SsmFunctions.*
   extension (self: SsmFunctions.type)
     /** Provides a Terraform data source for managing a Contacts Rotation in AWS Systems Manager Incident Manager */
-    def getContactsRotation(args: Endofunction[com.pulumi.aws.ssm.inputs.GetContactsRotationArgs.Builder] = identity):
+    def getContactsRotation(args: Endofunction[com.pulumi.aws.ssm.inputs.GetContactsRotationArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.ssm.outputs.GetContactsRotationResult] =
       val argsBuilder = com.pulumi.aws.ssm.inputs.GetContactsRotationArgs.builder
       com.pulumi.aws.ssm.SsmFunctions.getContactsRotation(args(argsBuilder).build)
 
     /** Provides a Terraform data source for managing a Contacts Rotation in AWS Systems Manager Incident Manager */
-    def getContactsRotationPlain(args: Endofunction[com.pulumi.aws.ssm.inputs.GetContactsRotationPlainArgs.Builder] = identity):
+    def getContactsRotationPlain(args: Endofunction[com.pulumi.aws.ssm.inputs.GetContactsRotationPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.ssm.outputs.GetContactsRotationResult] =
       val argsBuilder = com.pulumi.aws.ssm.inputs.GetContactsRotationPlainArgs.builder
       com.pulumi.aws.ssm.SsmFunctions.getContactsRotationPlain(args(argsBuilder).build)
 
     /** Gets the contents of the specified Systems Manager document. */
-    def getDocument(args: Endofunction[com.pulumi.aws.ssm.inputs.GetDocumentArgs.Builder] = identity):
+    def getDocument(args: Endofunction[com.pulumi.aws.ssm.inputs.GetDocumentArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.ssm.outputs.GetDocumentResult] =
       val argsBuilder = com.pulumi.aws.ssm.inputs.GetDocumentArgs.builder
       com.pulumi.aws.ssm.SsmFunctions.getDocument(args(argsBuilder).build)
 
     /** Gets the contents of the specified Systems Manager document. */
-    def getDocumentPlain(args: Endofunction[com.pulumi.aws.ssm.inputs.GetDocumentPlainArgs.Builder] = identity):
+    def getDocumentPlain(args: Endofunction[com.pulumi.aws.ssm.inputs.GetDocumentPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.ssm.outputs.GetDocumentResult] =
       val argsBuilder = com.pulumi.aws.ssm.inputs.GetDocumentPlainArgs.builder
       com.pulumi.aws.ssm.SsmFunctions.getDocumentPlain(args(argsBuilder).build)
 
     /** Use this data source to get the instance IDs of SSM managed instances. */
-    def getInstances(args: Endofunction[com.pulumi.aws.ssm.inputs.GetInstancesArgs.Builder] = identity):
+    def getInstances(args: Endofunction[com.pulumi.aws.ssm.inputs.GetInstancesArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.ssm.outputs.GetInstancesResult] =
       val argsBuilder = com.pulumi.aws.ssm.inputs.GetInstancesArgs.builder
       com.pulumi.aws.ssm.SsmFunctions.getInstances(args(argsBuilder).build)
 
     /** Use this data source to get the instance IDs of SSM managed instances. */
-    def getInstancesPlain(args: Endofunction[com.pulumi.aws.ssm.inputs.GetInstancesPlainArgs.Builder] = identity):
+    def getInstancesPlain(args: Endofunction[com.pulumi.aws.ssm.inputs.GetInstancesPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.ssm.outputs.GetInstancesResult] =
       val argsBuilder = com.pulumi.aws.ssm.inputs.GetInstancesPlainArgs.builder
       com.pulumi.aws.ssm.SsmFunctions.getInstancesPlain(args(argsBuilder).build)
 
     /** Use this data source to get the window IDs of SSM maintenance windows. */
-    def getMaintenanceWindows(args: Endofunction[com.pulumi.aws.ssm.inputs.GetMaintenanceWindowsArgs.Builder] = identity):
+    def getMaintenanceWindows(args: Endofunction[com.pulumi.aws.ssm.inputs.GetMaintenanceWindowsArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.ssm.outputs.GetMaintenanceWindowsResult] =
       val argsBuilder = com.pulumi.aws.ssm.inputs.GetMaintenanceWindowsArgs.builder
       com.pulumi.aws.ssm.SsmFunctions.getMaintenanceWindows(args(argsBuilder).build)
 
     /** Use this data source to get the window IDs of SSM maintenance windows. */
-    def getMaintenanceWindowsPlain(args: Endofunction[com.pulumi.aws.ssm.inputs.GetMaintenanceWindowsPlainArgs.Builder] = identity):
+    def getMaintenanceWindowsPlain(args: Endofunction[com.pulumi.aws.ssm.inputs.GetMaintenanceWindowsPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.ssm.outputs.GetMaintenanceWindowsResult] =
       val argsBuilder = com.pulumi.aws.ssm.inputs.GetMaintenanceWindowsPlainArgs.builder
       com.pulumi.aws.ssm.SsmFunctions.getMaintenanceWindowsPlain(args(argsBuilder).build)
 
     /** Provides an SSM Parameter data source. */
-    def getParameter(args: Endofunction[com.pulumi.aws.ssm.inputs.GetParameterArgs.Builder] = identity):
+    def getParameter(args: Endofunction[com.pulumi.aws.ssm.inputs.GetParameterArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.ssm.outputs.GetParameterResult] =
       val argsBuilder = com.pulumi.aws.ssm.inputs.GetParameterArgs.builder
       com.pulumi.aws.ssm.SsmFunctions.getParameter(args(argsBuilder).build)
 
     /** Provides an SSM Parameter data source. */
-    def getParameterPlain(args: Endofunction[com.pulumi.aws.ssm.inputs.GetParameterPlainArgs.Builder] = identity):
+    def getParameterPlain(args: Endofunction[com.pulumi.aws.ssm.inputs.GetParameterPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.ssm.outputs.GetParameterResult] =
       val argsBuilder = com.pulumi.aws.ssm.inputs.GetParameterPlainArgs.builder
       com.pulumi.aws.ssm.SsmFunctions.getParameterPlain(args(argsBuilder).build)
 
     /** Use this data source to get information about one or more System Manager parameters in a specific hierarchy. */
-    def getParametersByPath(args: Endofunction[com.pulumi.aws.ssm.inputs.GetParametersByPathArgs.Builder] = identity):
+    def getParametersByPath(args: Endofunction[com.pulumi.aws.ssm.inputs.GetParametersByPathArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.ssm.outputs.GetParametersByPathResult] =
       val argsBuilder = com.pulumi.aws.ssm.inputs.GetParametersByPathArgs.builder
       com.pulumi.aws.ssm.SsmFunctions.getParametersByPath(args(argsBuilder).build)
 
     /** Use this data source to get information about one or more System Manager parameters in a specific hierarchy. */
-    def getParametersByPathPlain(args: Endofunction[com.pulumi.aws.ssm.inputs.GetParametersByPathPlainArgs.Builder] = identity):
+    def getParametersByPathPlain(args: Endofunction[com.pulumi.aws.ssm.inputs.GetParametersByPathPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.ssm.outputs.GetParametersByPathResult] =
       val argsBuilder = com.pulumi.aws.ssm.inputs.GetParametersByPathPlainArgs.builder
       com.pulumi.aws.ssm.SsmFunctions.getParametersByPathPlain(args(argsBuilder).build)
 
     /** Provides an SSM Patch Baseline data source. Useful if you wish to reuse the default baselines provided. */
-    def getPatchBaseline(args: Endofunction[com.pulumi.aws.ssm.inputs.GetPatchBaselineArgs.Builder] = identity):
+    def getPatchBaseline(args: Endofunction[com.pulumi.aws.ssm.inputs.GetPatchBaselineArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.ssm.outputs.GetPatchBaselineResult] =
       val argsBuilder = com.pulumi.aws.ssm.inputs.GetPatchBaselineArgs.builder
       com.pulumi.aws.ssm.SsmFunctions.getPatchBaseline(args(argsBuilder).build)
 
     /** Provides an SSM Patch Baseline data source. Useful if you wish to reuse the default baselines provided. */
-    def getPatchBaselinePlain(args: Endofunction[com.pulumi.aws.ssm.inputs.GetPatchBaselinePlainArgs.Builder] = identity):
+    def getPatchBaselinePlain(args: Endofunction[com.pulumi.aws.ssm.inputs.GetPatchBaselinePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.ssm.outputs.GetPatchBaselineResult] =
       val argsBuilder = com.pulumi.aws.ssm.inputs.GetPatchBaselinePlainArgs.builder
       com.pulumi.aws.ssm.SsmFunctions.getPatchBaselinePlain(args(argsBuilder).build)
 
     /** Data source for retrieving AWS SSM (Systems Manager) Patch Baselines. */
-    def getPatchBaselines(args: Endofunction[com.pulumi.aws.ssm.inputs.GetPatchBaselinesArgs.Builder] = identity):
+    def getPatchBaselines(args: Endofunction[com.pulumi.aws.ssm.inputs.GetPatchBaselinesArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.ssm.outputs.GetPatchBaselinesResult] =
       val argsBuilder = com.pulumi.aws.ssm.inputs.GetPatchBaselinesArgs.builder
       com.pulumi.aws.ssm.SsmFunctions.getPatchBaselines(args(argsBuilder).build)
 
     /** Data source for retrieving AWS SSM (Systems Manager) Patch Baselines. */
-    def getPatchBaselinesPlain(args: Endofunction[com.pulumi.aws.ssm.inputs.GetPatchBaselinesPlainArgs.Builder] = identity):
+    def getPatchBaselinesPlain(args: Endofunction[com.pulumi.aws.ssm.inputs.GetPatchBaselinesPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.ssm.outputs.GetPatchBaselinesResult] =
       val argsBuilder = com.pulumi.aws.ssm.inputs.GetPatchBaselinesPlainArgs.builder
       com.pulumi.aws.ssm.SsmFunctions.getPatchBaselinesPlain(args(argsBuilder).build)
@@ -245,7 +245,7 @@ object ssm:
    *  &gt; **NOTE on updating SSM documents:** Only documents with a schema version of 2.0
    *  or greater can update their content once created, see [SSM Schema Features](http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-ssm-docs.html#document-schemas-features). To update a document with an older schema version you must recreate the resource. Not all document types support a schema version of 2.0 or greater. Refer to [SSM document schema features and examples](https://docs.aws.amazon.com/systems-manager/latest/userguide/document-schemas-features.html) for information about which schema versions are supported for the respective `documentType`.
    */
-  def Document(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def Document(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.ssm.DocumentArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.ssm.DocumentArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -259,7 +259,7 @@ object ssm:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Provides a SSM resource data sync. */
-  def ResourceDataSync(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def ResourceDataSync(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.ssm.ResourceDataSyncArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.ssm.ResourceDataSyncArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -307,7 +307,7 @@ object ssm:
       builder.s3Destination(args(argsBuilder).build)
 
   /** Provides an SSM Maintenance Window Target resource */
-  def MaintenanceWindowTarget(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def MaintenanceWindowTarget(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.ssm.MaintenanceWindowTargetArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.ssm.MaintenanceWindowTargetArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -318,7 +318,7 @@ object ssm:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Associates an SSM Document to an instance or EC2 tag. */
-  def Association(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def Association(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.ssm.AssociationArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.ssm.AssociationArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -332,7 +332,7 @@ object ssm:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** This setting defines how a user interacts with or uses a service or a feature of a service. */
-  def ServiceSetting(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def ServiceSetting(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.ssm.ServiceSettingArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.ssm.ServiceSettingArgs.builder
     com.pulumi.aws.ssm.ServiceSetting(name,
@@ -382,7 +382,7 @@ object ssm:
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
 
   /** Resource for managing an AWS SSM Quick Setup Configuration Manager. */
-  def QuicksetupConfigurationManager(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def QuicksetupConfigurationManager(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.ssm.QuicksetupConfigurationManagerArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.ssm.QuicksetupConfigurationManagerArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -402,7 +402,7 @@ object ssm:
    *  both marked as optional fields, but the Patch Baseline requires that at least one
    *  of them is specified.
    */
-  def PatchBaseline(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def PatchBaseline(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.ssm.PatchBaselineArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.ssm.PatchBaselineArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -416,7 +416,7 @@ object ssm:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Registers an on-premises server or virtual machine with Amazon EC2 so that it can be managed using Run Command. */
-  def Activation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def Activation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.ssm.ActivationArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.ssm.ActivationArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -430,7 +430,7 @@ object ssm:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Provides an SSM Patch Group resource */
-  def PatchGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def PatchGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.ssm.PatchGroupArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.ssm.PatchGroupArgs.builder
     com.pulumi.aws.ssm.PatchGroup(name,

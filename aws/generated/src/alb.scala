@@ -61,7 +61,7 @@ object alb:
    * 
    *  &gt; **Note:** `aws.alb.ListenerCertificate` is known as `aws.lb.ListenerCertificate`. The functionality is identical.
    */
-  def ListenerCertificate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def ListenerCertificate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.alb.ListenerCertificateArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.alb.ListenerCertificateArgs.builder
     com.pulumi.aws.alb.ListenerCertificate(name,
@@ -73,7 +73,7 @@ object alb:
    * 
    *  &gt; **Note:** `aws.alb.TargetGroupAttachment` is known as `aws.lb.TargetGroupAttachment`. The functionality is identical.
    */
-  def TargetGroupAttachment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def TargetGroupAttachment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.alb.TargetGroupAttachmentArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.alb.TargetGroupAttachmentArgs.builder
     com.pulumi.aws.alb.TargetGroupAttachment(name,
@@ -85,7 +85,7 @@ object alb:
    * 
    *  &gt; **Note:** `aws.alb.TargetGroup` is known as `aws.lb.TargetGroup`. The functionality is identical.
    */
-  def TargetGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def TargetGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.alb.TargetGroupArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.alb.TargetGroupArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -135,7 +135,7 @@ object alb:
    * 
    *  &gt; **Note:** `aws.alb.LoadBalancer` is known as `aws.lb.LoadBalancer`. The functionality is identical.
    */
-  def LoadBalancer(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def LoadBalancer(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.alb.LoadBalancerArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.alb.LoadBalancerArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -160,7 +160,7 @@ object alb:
      * 
      *  This data source can prove useful when a module accepts an LB Listener as an input variable and needs to know the LB it is attached to, or other information specific to the listener in question.
      */
-    def getListener(args: Endofunction[com.pulumi.aws.alb.inputs.GetListenerArgs.Builder] = identity):
+    def getListener(args: Endofunction[com.pulumi.aws.alb.inputs.GetListenerArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.alb.outputs.GetListenerResult] =
       val argsBuilder = com.pulumi.aws.alb.inputs.GetListenerArgs.builder
       com.pulumi.aws.alb.AlbFunctions.getListener(args(argsBuilder).build)
@@ -172,7 +172,7 @@ object alb:
      * 
      *  This data source can prove useful when a module accepts an LB Listener as an input variable and needs to know the LB it is attached to, or other information specific to the listener in question.
      */
-    def getListenerPlain(args: Endofunction[com.pulumi.aws.alb.inputs.GetListenerPlainArgs.Builder] = identity):
+    def getListenerPlain(args: Endofunction[com.pulumi.aws.alb.inputs.GetListenerPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.alb.outputs.GetListenerResult] =
       val argsBuilder = com.pulumi.aws.alb.inputs.GetListenerPlainArgs.builder
       com.pulumi.aws.alb.AlbFunctions.getListenerPlain(args(argsBuilder).build)
@@ -186,7 +186,7 @@ object alb:
      *  variable and needs to, for example, determine the security groups associated
      *  with it, etc.
      */
-    def getLoadBalancer(args: Endofunction[com.pulumi.aws.alb.inputs.GetLoadBalancerArgs.Builder] = identity):
+    def getLoadBalancer(args: Endofunction[com.pulumi.aws.alb.inputs.GetLoadBalancerArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.alb.outputs.GetLoadBalancerResult] =
       val argsBuilder = com.pulumi.aws.alb.inputs.GetLoadBalancerArgs.builder
       com.pulumi.aws.alb.AlbFunctions.getLoadBalancer(args(argsBuilder).build)
@@ -200,7 +200,7 @@ object alb:
      *  variable and needs to, for example, determine the security groups associated
      *  with it, etc.
      */
-    def getLoadBalancerPlain(args: Endofunction[com.pulumi.aws.alb.inputs.GetLoadBalancerPlainArgs.Builder] = identity):
+    def getLoadBalancerPlain(args: Endofunction[com.pulumi.aws.alb.inputs.GetLoadBalancerPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.alb.outputs.GetLoadBalancerResult] =
       val argsBuilder = com.pulumi.aws.alb.inputs.GetLoadBalancerPlainArgs.builder
       com.pulumi.aws.alb.AlbFunctions.getLoadBalancerPlain(args(argsBuilder).build)
@@ -214,7 +214,7 @@ object alb:
      *  input variable and needs to know its attributes. It can also be used to get the ARN of
      *  an LB Target Group for use in other resources, given LB Target Group name.
      */
-    def getTargetGroup(args: Endofunction[com.pulumi.aws.alb.inputs.GetTargetGroupArgs.Builder] = identity):
+    def getTargetGroup(args: Endofunction[com.pulumi.aws.alb.inputs.GetTargetGroupArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.alb.outputs.GetTargetGroupResult] =
       val argsBuilder = com.pulumi.aws.alb.inputs.GetTargetGroupArgs.builder
       com.pulumi.aws.alb.AlbFunctions.getTargetGroup(args(argsBuilder).build)
@@ -228,7 +228,7 @@ object alb:
      *  input variable and needs to know its attributes. It can also be used to get the ARN of
      *  an LB Target Group for use in other resources, given LB Target Group name.
      */
-    def getTargetGroupPlain(args: Endofunction[com.pulumi.aws.alb.inputs.GetTargetGroupPlainArgs.Builder] = identity):
+    def getTargetGroupPlain(args: Endofunction[com.pulumi.aws.alb.inputs.GetTargetGroupPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.alb.outputs.GetTargetGroupResult] =
       val argsBuilder = com.pulumi.aws.alb.inputs.GetTargetGroupPlainArgs.builder
       com.pulumi.aws.alb.AlbFunctions.getTargetGroupPlain(args(argsBuilder).build)
@@ -297,7 +297,7 @@ object alb:
    * 
    *  &gt; **Note:** `aws.alb.Listener` is known as `aws.lb.Listener`. The functionality is identical.
    */
-  def Listener(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def Listener(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.alb.ListenerArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.alb.ListenerArgs.builder
     conf.logicalName2tagName(name) match
@@ -796,7 +796,7 @@ object alb:
    *  $ pulumi import aws:alb/listenerRule:ListenerRule front_end arn:aws:elasticloadbalancing:us-west-2:187416307283:listener-rule/app/test/8e4497da625e2d8a/9ab28ade35828f96/67b3d2d36dd7c26b
    *  ```
    */
-  def ListenerRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def ListenerRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.alb.ListenerRuleArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.alb.ListenerRuleArgs.builder
     conf.logicalName2tagName(name) match

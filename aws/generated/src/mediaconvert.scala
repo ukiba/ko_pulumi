@@ -19,7 +19,7 @@ object mediaconvert:
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
 
   /** Provides an AWS Elemental MediaConvert Queue. */
-  def Queue(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def Queue(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.mediaconvert.QueueArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.mediaconvert.QueueArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -38,13 +38,13 @@ object mediaconvert:
     export com.pulumi.aws.mediaconvert.MediaconvertFunctions.*
   extension (self: MediaconvertFunctions.type)
     /** Retrieve information about a AWS Elemental MediaConvert Queue. */
-    def getQueue(args: Endofunction[com.pulumi.aws.mediaconvert.inputs.GetQueueArgs.Builder] = identity):
+    def getQueue(args: Endofunction[com.pulumi.aws.mediaconvert.inputs.GetQueueArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.mediaconvert.outputs.GetQueueResult] =
       val argsBuilder = com.pulumi.aws.mediaconvert.inputs.GetQueueArgs.builder
       com.pulumi.aws.mediaconvert.MediaconvertFunctions.getQueue(args(argsBuilder).build)
 
     /** Retrieve information about a AWS Elemental MediaConvert Queue. */
-    def getQueuePlain(args: Endofunction[com.pulumi.aws.mediaconvert.inputs.GetQueuePlainArgs.Builder] = identity):
+    def getQueuePlain(args: Endofunction[com.pulumi.aws.mediaconvert.inputs.GetQueuePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.mediaconvert.outputs.GetQueueResult] =
       val argsBuilder = com.pulumi.aws.mediaconvert.inputs.GetQueuePlainArgs.builder
       com.pulumi.aws.mediaconvert.MediaconvertFunctions.getQueuePlain(args(argsBuilder).build)

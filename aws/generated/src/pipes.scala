@@ -54,7 +54,7 @@ object pipes:
    * 
    *  &gt; **Note:** EventBridge was formerly known as CloudWatch Events. The functionality is identical.
    */
-  def Pipe(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def Pipe(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.pipes.PipeArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.pipes.PipeArgs.builder
     conf.logicalName2pysicalName(name) match

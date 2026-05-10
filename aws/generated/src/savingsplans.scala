@@ -10,25 +10,25 @@ object savingsplans:
     export com.pulumi.aws.savingsplans.SavingsplansFunctions.*
   extension (self: SavingsplansFunctions.type)
     /** Data source for getting AWS Savings Plans Offerings. */
-    def getOfferings(args: Endofunction[com.pulumi.aws.savingsplans.inputs.GetOfferingsArgs.Builder] = identity):
+    def getOfferings(args: Endofunction[com.pulumi.aws.savingsplans.inputs.GetOfferingsArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.savingsplans.outputs.GetOfferingsResult] =
       val argsBuilder = com.pulumi.aws.savingsplans.inputs.GetOfferingsArgs.builder
       com.pulumi.aws.savingsplans.SavingsplansFunctions.getOfferings(args(argsBuilder).build)
 
     /** Data source for getting AWS Savings Plans Offerings. */
-    def getOfferingsPlain(args: Endofunction[com.pulumi.aws.savingsplans.inputs.GetOfferingsPlainArgs.Builder] = identity):
+    def getOfferingsPlain(args: Endofunction[com.pulumi.aws.savingsplans.inputs.GetOfferingsPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.savingsplans.outputs.GetOfferingsResult] =
       val argsBuilder = com.pulumi.aws.savingsplans.inputs.GetOfferingsPlainArgs.builder
       com.pulumi.aws.savingsplans.SavingsplansFunctions.getOfferingsPlain(args(argsBuilder).build)
 
     /** Use this data source to get information on an existing AWS Savings Plan. */
-    def getSavingsPlan(args: Endofunction[com.pulumi.aws.savingsplans.inputs.GetSavingsPlanArgs.Builder] = identity):
+    def getSavingsPlan(args: Endofunction[com.pulumi.aws.savingsplans.inputs.GetSavingsPlanArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.savingsplans.outputs.GetSavingsPlanResult] =
       val argsBuilder = com.pulumi.aws.savingsplans.inputs.GetSavingsPlanArgs.builder
       com.pulumi.aws.savingsplans.SavingsplansFunctions.getSavingsPlan(args(argsBuilder).build)
 
     /** Use this data source to get information on an existing AWS Savings Plan. */
-    def getSavingsPlanPlain(args: Endofunction[com.pulumi.aws.savingsplans.inputs.GetSavingsPlanPlainArgs.Builder] = identity):
+    def getSavingsPlanPlain(args: Endofunction[com.pulumi.aws.savingsplans.inputs.GetSavingsPlanPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.savingsplans.outputs.GetSavingsPlanResult] =
       val argsBuilder = com.pulumi.aws.savingsplans.inputs.GetSavingsPlanPlainArgs.builder
       com.pulumi.aws.savingsplans.SavingsplansFunctions.getSavingsPlanPlain(args(argsBuilder).build)
@@ -50,7 +50,7 @@ object savingsplans:
    * 
    *  &gt; **Note:** Importing an active Savings Plan will add it to your Terraform state, but destroying it will only remove it from state - the actual Savings Plan will continue until its term ends.
    */
-  def SavingsPlan(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def SavingsPlan(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.savingsplans.SavingsPlanArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.savingsplans.SavingsPlanArgs.builder
     conf.logicalName2tagName(name) match

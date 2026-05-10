@@ -9,7 +9,7 @@ object lakeformation:
    * 
    *  &gt; **NOTE:** Lake Formation introduces fine-grained access control for data in your data lake. Part of the changes include the `IAMAllowedPrincipals` principal in order to make Lake Formation backwards compatible with existing IAM and Glue permissions. For more information, see [Changing the Default Security Settings for Your Data Lake](https://docs.aws.amazon.com/lake-formation/latest/dg/change-settings.html) and [Upgrading AWS Glue Data Permissions to the AWS Lake Formation Model](https://docs.aws.amazon.com/lake-formation/latest/dg/upgrade-glue-lake-formation.html).
    */
-  def DataLakeSettings(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def DataLakeSettings(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.lakeformation.DataLakeSettingsArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.lakeformation.DataLakeSettingsArgs.builder
     com.pulumi.aws.lakeformation.DataLakeSettings(name,
@@ -17,7 +17,7 @@ object lakeformation:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Resource for managing an AWS Lake Formation LF Tag Expression. */
-  def LfTagExpression(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def LfTagExpression(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.lakeformation.LfTagExpressionArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.lakeformation.LfTagExpressionArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -28,7 +28,7 @@ object lakeformation:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Manages an AWS Lake Formation Identity Center Configuration. */
-  def IdentityCenterConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def IdentityCenterConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.lakeformation.IdentityCenterConfigurationArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.lakeformation.IdentityCenterConfigurationArgs.builder
     com.pulumi.aws.lakeformation.IdentityCenterConfiguration(name,
@@ -36,7 +36,7 @@ object lakeformation:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Resource for managing an AWS Lake Formation Resource LF Tag. */
-  def ResourceLfTag(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def ResourceLfTag(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.lakeformation.ResourceLfTagArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.lakeformation.ResourceLfTagArgs.builder
     com.pulumi.aws.lakeformation.ResourceLfTag(name,
@@ -44,7 +44,7 @@ object lakeformation:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Resource for managing an AWS Lake Formation Data Cells Filter. */
-  def DataCellsFilter(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def DataCellsFilter(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.lakeformation.DataCellsFilterArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.lakeformation.DataCellsFilterArgs.builder
     com.pulumi.aws.lakeformation.DataCellsFilter(name,
@@ -64,7 +64,7 @@ object lakeformation:
       builder.expressions(args.map(_(argsBuilder).build)*)
 
   /** Resource for managing an AWS Lake Formation Opt In. */
-  def OptIn(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def OptIn(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.lakeformation.OptInArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.lakeformation.OptInArgs.builder
     com.pulumi.aws.lakeformation.OptIn(name,
@@ -79,7 +79,7 @@ object lakeformation:
    *  Lake Formation adds the first path to the inline policy and attaches it to the service-linked role.
    *  When you register subsequent paths, Lake Formation adds the path to the existing policy.
    */
-  def Resource(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def Resource(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.lakeformation.ResourceArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.lakeformation.ResourceArgs.builder
     com.pulumi.aws.lakeformation.Resource(name,
@@ -92,13 +92,13 @@ object lakeformation:
     export com.pulumi.aws.lakeformation.LakeformationFunctions.*
   extension (self: LakeformationFunctions.type)
     /** Get Lake Formation principals designated as data lake administrators and lists of principal permission entries for default create database and default create table permissions. */
-    def getDataLakeSettings(args: Endofunction[com.pulumi.aws.lakeformation.inputs.GetDataLakeSettingsArgs.Builder] = identity):
+    def getDataLakeSettings(args: Endofunction[com.pulumi.aws.lakeformation.inputs.GetDataLakeSettingsArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.lakeformation.outputs.GetDataLakeSettingsResult] =
       val argsBuilder = com.pulumi.aws.lakeformation.inputs.GetDataLakeSettingsArgs.builder
       com.pulumi.aws.lakeformation.LakeformationFunctions.getDataLakeSettings(args(argsBuilder).build)
 
     /** Get Lake Formation principals designated as data lake administrators and lists of principal permission entries for default create database and default create table permissions. */
-    def getDataLakeSettingsPlain(args: Endofunction[com.pulumi.aws.lakeformation.inputs.GetDataLakeSettingsPlainArgs.Builder] = identity):
+    def getDataLakeSettingsPlain(args: Endofunction[com.pulumi.aws.lakeformation.inputs.GetDataLakeSettingsPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.lakeformation.outputs.GetDataLakeSettingsResult] =
       val argsBuilder = com.pulumi.aws.lakeformation.inputs.GetDataLakeSettingsPlainArgs.builder
       com.pulumi.aws.lakeformation.LakeformationFunctions.getDataLakeSettingsPlain(args(argsBuilder).build)
@@ -108,7 +108,7 @@ object lakeformation:
      * 
      *  &gt; **NOTE:** This data source deals with explicitly granted permissions. Lake Formation grants implicit permissions to data lake administrators, database creators, and table creators. For more information, see [Implicit Lake Formation Permissions](https://docs.aws.amazon.com/lake-formation/latest/dg/implicit-permissions.html).
      */
-    def getPermissions(args: Endofunction[com.pulumi.aws.lakeformation.inputs.GetPermissionsArgs.Builder] = identity):
+    def getPermissions(args: Endofunction[com.pulumi.aws.lakeformation.inputs.GetPermissionsArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.lakeformation.outputs.GetPermissionsResult] =
       val argsBuilder = com.pulumi.aws.lakeformation.inputs.GetPermissionsArgs.builder
       com.pulumi.aws.lakeformation.LakeformationFunctions.getPermissions(args(argsBuilder).build)
@@ -118,19 +118,19 @@ object lakeformation:
      * 
      *  &gt; **NOTE:** This data source deals with explicitly granted permissions. Lake Formation grants implicit permissions to data lake administrators, database creators, and table creators. For more information, see [Implicit Lake Formation Permissions](https://docs.aws.amazon.com/lake-formation/latest/dg/implicit-permissions.html).
      */
-    def getPermissionsPlain(args: Endofunction[com.pulumi.aws.lakeformation.inputs.GetPermissionsPlainArgs.Builder] = identity):
+    def getPermissionsPlain(args: Endofunction[com.pulumi.aws.lakeformation.inputs.GetPermissionsPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.lakeformation.outputs.GetPermissionsResult] =
       val argsBuilder = com.pulumi.aws.lakeformation.inputs.GetPermissionsPlainArgs.builder
       com.pulumi.aws.lakeformation.LakeformationFunctions.getPermissionsPlain(args(argsBuilder).build)
 
     /** Provides details about a Lake Formation resource. */
-    def getResource(args: Endofunction[com.pulumi.aws.lakeformation.inputs.GetResourceArgs.Builder] = identity):
+    def getResource(args: Endofunction[com.pulumi.aws.lakeformation.inputs.GetResourceArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.lakeformation.outputs.GetResourceResult] =
       val argsBuilder = com.pulumi.aws.lakeformation.inputs.GetResourceArgs.builder
       com.pulumi.aws.lakeformation.LakeformationFunctions.getResource(args(argsBuilder).build)
 
     /** Provides details about a Lake Formation resource. */
-    def getResourcePlain(args: Endofunction[com.pulumi.aws.lakeformation.inputs.GetResourcePlainArgs.Builder] = identity):
+    def getResourcePlain(args: Endofunction[com.pulumi.aws.lakeformation.inputs.GetResourcePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.lakeformation.outputs.GetResourceResult] =
       val argsBuilder = com.pulumi.aws.lakeformation.inputs.GetResourcePlainArgs.builder
       com.pulumi.aws.lakeformation.LakeformationFunctions.getResourcePlain(args(argsBuilder).build)
@@ -262,7 +262,7 @@ object lakeformation:
       builder.tableWithColumns(args(argsBuilder).build)
 
   /** Manages an attachment between one or more existing LF-tags and an existing Lake Formation resource. */
-  def ResourceLfTags(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def ResourceLfTags(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.lakeformation.ResourceLfTagsArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.lakeformation.ResourceLfTagsArgs.builder
     com.pulumi.aws.lakeformation.ResourceLfTags(name,
@@ -270,7 +270,7 @@ object lakeformation:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Creates an LF-Tag with the specified name and values. Each key must have at least one value. The maximum number of values permitted is 1000. */
-  def LfTag(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def LfTag(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.lakeformation.LfTagArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.lakeformation.LfTagArgs.builder
     com.pulumi.aws.lakeformation.LfTag(name,
@@ -555,7 +555,7 @@ object lakeformation:
    * 
    *  If the `principal` is also a data lake administrator, AWS grants implicit permissions that can cause errors using this resource. For example, AWS implicitly grants a `principal`/administrator `permissions` and `permissionsWithGrantOption` of `ALL`, `ALTER`, `DELETE`, `DESCRIBE`, `DROP`, `INSERT`, and `SELECT` on a table. If you use this resource to explicitly grant the `principal`/administrator `permissions` but _not_ `permissionsWithGrantOption` of `ALL`, `ALTER`, `DELETE`, `DESCRIBE`, `DROP`, `INSERT`, and `SELECT` on the table, this resource will read the implicit `permissionsWithGrantOption` and attempt to revoke them when the resource is destroyed. Doing so will cause an `InvalidInputException: No permissions revoked` error because you cannot revoke implicit permissions _per se_. To workaround this problem, explicitly grant the `principal`/administrator `permissions` _and_ `permissionsWithGrantOption`, which can then be revoked. Similarly, granting a `principal`/administrator permissions on a table with columns and providing `columnNames`, will result in a `InvalidInputException: Permissions modification is invalid` error because you are narrowing the implicit permissions. Instead, set `wildcard` to `true` and remove the `columnNames`.
    */
-  def Permissions(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def Permissions(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.lakeformation.PermissionsArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.lakeformation.PermissionsArgs.builder
     com.pulumi.aws.lakeformation.Permissions(name,

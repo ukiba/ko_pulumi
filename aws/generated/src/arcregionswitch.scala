@@ -10,25 +10,25 @@ object arcregionswitch:
     export com.pulumi.aws.arcregionswitch.ArcregionswitchFunctions.*
   extension (self: ArcregionswitchFunctions.type)
     /** Data source for managing an Amazon ARC Region Switch plan. */
-    def getPlan(args: Endofunction[com.pulumi.aws.arcregionswitch.inputs.GetPlanArgs.Builder] = identity):
+    def getPlan(args: Endofunction[com.pulumi.aws.arcregionswitch.inputs.GetPlanArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.arcregionswitch.outputs.GetPlanResult] =
       val argsBuilder = com.pulumi.aws.arcregionswitch.inputs.GetPlanArgs.builder
       com.pulumi.aws.arcregionswitch.ArcregionswitchFunctions.getPlan(args(argsBuilder).build)
 
     /** Data source for managing an Amazon ARC Region Switch plan. */
-    def getPlanPlain(args: Endofunction[com.pulumi.aws.arcregionswitch.inputs.GetPlanPlainArgs.Builder] = identity):
+    def getPlanPlain(args: Endofunction[com.pulumi.aws.arcregionswitch.inputs.GetPlanPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.arcregionswitch.outputs.GetPlanResult] =
       val argsBuilder = com.pulumi.aws.arcregionswitch.inputs.GetPlanPlainArgs.builder
       com.pulumi.aws.arcregionswitch.ArcregionswitchFunctions.getPlanPlain(args(argsBuilder).build)
 
     /** Data source for managing Amazon ARC Region Switch Route53 Health Checks. */
-    def getRoute53HealthChecks(args: Endofunction[com.pulumi.aws.arcregionswitch.inputs.GetRoute53HealthChecksArgs.Builder] = identity):
+    def getRoute53HealthChecks(args: Endofunction[com.pulumi.aws.arcregionswitch.inputs.GetRoute53HealthChecksArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.arcregionswitch.outputs.GetRoute53HealthChecksResult] =
       val argsBuilder = com.pulumi.aws.arcregionswitch.inputs.GetRoute53HealthChecksArgs.builder
       com.pulumi.aws.arcregionswitch.ArcregionswitchFunctions.getRoute53HealthChecks(args(argsBuilder).build)
 
     /** Data source for managing Amazon ARC Region Switch Route53 Health Checks. */
-    def getRoute53HealthChecksPlain(args: Endofunction[com.pulumi.aws.arcregionswitch.inputs.GetRoute53HealthChecksPlainArgs.Builder] = identity):
+    def getRoute53HealthChecksPlain(args: Endofunction[com.pulumi.aws.arcregionswitch.inputs.GetRoute53HealthChecksPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.arcregionswitch.outputs.GetRoute53HealthChecksResult] =
       val argsBuilder = com.pulumi.aws.arcregionswitch.inputs.GetRoute53HealthChecksPlainArgs.builder
       com.pulumi.aws.arcregionswitch.ArcregionswitchFunctions.getRoute53HealthChecksPlain(args(argsBuilder).build)
@@ -73,7 +73,7 @@ object arcregionswitch:
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
 
   /** Resource for managing an Amazon ARC Region Switch plan. */
-  def Plan(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def Plan(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.arcregionswitch.PlanArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.arcregionswitch.PlanArgs.builder
     conf.logicalName2pysicalName(name) match

@@ -10,67 +10,67 @@ object identitystore:
     export com.pulumi.aws.identitystore.IdentitystoreFunctions.*
   extension (self: IdentitystoreFunctions.type)
     /** Use this data source to get an Identity Store Group. */
-    def getGroup(args: Endofunction[com.pulumi.aws.identitystore.inputs.GetGroupArgs.Builder] = identity):
+    def getGroup(args: Endofunction[com.pulumi.aws.identitystore.inputs.GetGroupArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.identitystore.outputs.GetGroupResult] =
       val argsBuilder = com.pulumi.aws.identitystore.inputs.GetGroupArgs.builder
       com.pulumi.aws.identitystore.IdentitystoreFunctions.getGroup(args(argsBuilder).build)
 
     /** Use this data source to get an Identity Store Group. */
-    def getGroupPlain(args: Endofunction[com.pulumi.aws.identitystore.inputs.GetGroupPlainArgs.Builder] = identity):
+    def getGroupPlain(args: Endofunction[com.pulumi.aws.identitystore.inputs.GetGroupPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.identitystore.outputs.GetGroupResult] =
       val argsBuilder = com.pulumi.aws.identitystore.inputs.GetGroupPlainArgs.builder
       com.pulumi.aws.identitystore.IdentitystoreFunctions.getGroupPlain(args(argsBuilder).build)
 
     /** Use this data source to get a list of members in an Identity Store Group. */
-    def getGroupMemberships(args: Endofunction[com.pulumi.aws.identitystore.inputs.GetGroupMembershipsArgs.Builder] = identity):
+    def getGroupMemberships(args: Endofunction[com.pulumi.aws.identitystore.inputs.GetGroupMembershipsArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.identitystore.outputs.GetGroupMembershipsResult] =
       val argsBuilder = com.pulumi.aws.identitystore.inputs.GetGroupMembershipsArgs.builder
       com.pulumi.aws.identitystore.IdentitystoreFunctions.getGroupMemberships(args(argsBuilder).build)
 
     /** Use this data source to get a list of members in an Identity Store Group. */
-    def getGroupMembershipsPlain(args: Endofunction[com.pulumi.aws.identitystore.inputs.GetGroupMembershipsPlainArgs.Builder] = identity):
+    def getGroupMembershipsPlain(args: Endofunction[com.pulumi.aws.identitystore.inputs.GetGroupMembershipsPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.identitystore.outputs.GetGroupMembershipsResult] =
       val argsBuilder = com.pulumi.aws.identitystore.inputs.GetGroupMembershipsPlainArgs.builder
       com.pulumi.aws.identitystore.IdentitystoreFunctions.getGroupMembershipsPlain(args(argsBuilder).build)
 
     /** Data source for managing an AWS SSO Identity Store Groups. */
-    def getGroups(args: Endofunction[com.pulumi.aws.identitystore.inputs.GetGroupsArgs.Builder] = identity):
+    def getGroups(args: Endofunction[com.pulumi.aws.identitystore.inputs.GetGroupsArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.identitystore.outputs.GetGroupsResult] =
       val argsBuilder = com.pulumi.aws.identitystore.inputs.GetGroupsArgs.builder
       com.pulumi.aws.identitystore.IdentitystoreFunctions.getGroups(args(argsBuilder).build)
 
     /** Data source for managing an AWS SSO Identity Store Groups. */
-    def getGroupsPlain(args: Endofunction[com.pulumi.aws.identitystore.inputs.GetGroupsPlainArgs.Builder] = identity):
+    def getGroupsPlain(args: Endofunction[com.pulumi.aws.identitystore.inputs.GetGroupsPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.identitystore.outputs.GetGroupsResult] =
       val argsBuilder = com.pulumi.aws.identitystore.inputs.GetGroupsPlainArgs.builder
       com.pulumi.aws.identitystore.IdentitystoreFunctions.getGroupsPlain(args(argsBuilder).build)
 
     /** Use this data source to get an Identity Store User. */
-    def getUser(args: Endofunction[com.pulumi.aws.identitystore.inputs.GetUserArgs.Builder] = identity):
+    def getUser(args: Endofunction[com.pulumi.aws.identitystore.inputs.GetUserArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.identitystore.outputs.GetUserResult] =
       val argsBuilder = com.pulumi.aws.identitystore.inputs.GetUserArgs.builder
       com.pulumi.aws.identitystore.IdentitystoreFunctions.getUser(args(argsBuilder).build)
 
     /** Use this data source to get an Identity Store User. */
-    def getUserPlain(args: Endofunction[com.pulumi.aws.identitystore.inputs.GetUserPlainArgs.Builder] = identity):
+    def getUserPlain(args: Endofunction[com.pulumi.aws.identitystore.inputs.GetUserPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.identitystore.outputs.GetUserResult] =
       val argsBuilder = com.pulumi.aws.identitystore.inputs.GetUserPlainArgs.builder
       com.pulumi.aws.identitystore.IdentitystoreFunctions.getUserPlain(args(argsBuilder).build)
 
     /** Use this data source to get a list of users in an Identity Store instance. */
-    def getUsers(args: Endofunction[com.pulumi.aws.identitystore.inputs.GetUsersArgs.Builder] = identity):
+    def getUsers(args: Endofunction[com.pulumi.aws.identitystore.inputs.GetUsersArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.identitystore.outputs.GetUsersResult] =
       val argsBuilder = com.pulumi.aws.identitystore.inputs.GetUsersArgs.builder
       com.pulumi.aws.identitystore.IdentitystoreFunctions.getUsers(args(argsBuilder).build)
 
     /** Use this data source to get a list of users in an Identity Store instance. */
-    def getUsersPlain(args: Endofunction[com.pulumi.aws.identitystore.inputs.GetUsersPlainArgs.Builder] = identity):
+    def getUsersPlain(args: Endofunction[com.pulumi.aws.identitystore.inputs.GetUsersPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.identitystore.outputs.GetUsersResult] =
       val argsBuilder = com.pulumi.aws.identitystore.inputs.GetUsersPlainArgs.builder
       com.pulumi.aws.identitystore.IdentitystoreFunctions.getUsersPlain(args(argsBuilder).build)
 
   /** Resource for managing an AWS IdentityStore Group. */
-  def Group(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def Group(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.identitystore.GroupArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.identitystore.GroupArgs.builder
     com.pulumi.aws.identitystore.Group(name,
@@ -122,7 +122,7 @@ object identitystore:
    *  so your identity source does not automatically update with the changes that you make to
    *  users using this resource.
    */
-  def User(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def User(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.identitystore.UserArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.identitystore.UserArgs.builder
     com.pulumi.aws.identitystore.User(name,
@@ -130,7 +130,7 @@ object identitystore:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Resource for managing an AWS IdentityStore Group Membership. */
-  def GroupMembership(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def GroupMembership(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.identitystore.GroupMembershipArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.identitystore.GroupMembershipArgs.builder
     com.pulumi.aws.identitystore.GroupMembership(name,

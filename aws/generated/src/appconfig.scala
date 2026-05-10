@@ -5,7 +5,7 @@ import com.pulumi.resources.CustomResourceOptions
 
 object appconfig:
   /** Associates an AppConfig Extension with a Resource. */
-  def ExtensionAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def ExtensionAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.appconfig.ExtensionAssociationArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.appconfig.ExtensionAssociationArgs.builder
     com.pulumi.aws.appconfig.ExtensionAssociation(name,
@@ -13,7 +13,7 @@ object appconfig:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Provides an AppConfig Environment resource for an `aws.appconfig.Application` resource. One or more environments can be defined for an application. */
-  def Environment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def Environment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.appconfig.EnvironmentArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.appconfig.EnvironmentArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -27,7 +27,7 @@ object appconfig:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Provides an AppConfig Extension resource. */
-  def Extension(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def Extension(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.appconfig.ExtensionArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.appconfig.ExtensionArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -41,7 +41,7 @@ object appconfig:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Provides an AppConfig Deployment Strategy resource. */
-  def DeploymentStrategy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def DeploymentStrategy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.appconfig.DeploymentStrategyArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.appconfig.DeploymentStrategyArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -55,7 +55,7 @@ object appconfig:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Provides an AppConfig Application resource. */
-  def Application(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def Application(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.appconfig.ApplicationArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.appconfig.ApplicationArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -69,7 +69,7 @@ object appconfig:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Provides an AppConfig Hosted Configuration Version resource. */
-  def HostedConfigurationVersion(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def HostedConfigurationVersion(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.appconfig.HostedConfigurationVersionArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.appconfig.HostedConfigurationVersionArgs.builder
     com.pulumi.aws.appconfig.HostedConfigurationVersion(name,
@@ -91,7 +91,7 @@ object appconfig:
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
 
   /** Provides an AppConfig Configuration Profile resource. */
-  def ConfigurationProfile(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def ConfigurationProfile(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.appconfig.ConfigurationProfileArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.appconfig.ConfigurationProfileArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -124,25 +124,25 @@ object appconfig:
     export com.pulumi.aws.appconfig.AppconfigFunctions.*
   extension (self: AppconfigFunctions.type)
     /** Provides details about an AWS AppConfig Application. */
-    def getApplication(args: Endofunction[com.pulumi.aws.appconfig.inputs.GetApplicationArgs.Builder] = identity):
+    def getApplication(args: Endofunction[com.pulumi.aws.appconfig.inputs.GetApplicationArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.appconfig.outputs.GetApplicationResult] =
       val argsBuilder = com.pulumi.aws.appconfig.inputs.GetApplicationArgs.builder
       com.pulumi.aws.appconfig.AppconfigFunctions.getApplication(args(argsBuilder).build)
 
     /** Provides details about an AWS AppConfig Application. */
-    def getApplicationPlain(args: Endofunction[com.pulumi.aws.appconfig.inputs.GetApplicationPlainArgs.Builder] = identity):
+    def getApplicationPlain(args: Endofunction[com.pulumi.aws.appconfig.inputs.GetApplicationPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.appconfig.outputs.GetApplicationResult] =
       val argsBuilder = com.pulumi.aws.appconfig.inputs.GetApplicationPlainArgs.builder
       com.pulumi.aws.appconfig.AppconfigFunctions.getApplicationPlain(args(argsBuilder).build)
 
     /** Provides access to an AppConfig Configuration Profile. */
-    def getConfigurationProfile(args: Endofunction[com.pulumi.aws.appconfig.inputs.GetConfigurationProfileArgs.Builder] = identity):
+    def getConfigurationProfile(args: Endofunction[com.pulumi.aws.appconfig.inputs.GetConfigurationProfileArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.appconfig.outputs.GetConfigurationProfileResult] =
       val argsBuilder = com.pulumi.aws.appconfig.inputs.GetConfigurationProfileArgs.builder
       com.pulumi.aws.appconfig.AppconfigFunctions.getConfigurationProfile(args(argsBuilder).build)
 
     /** Provides access to an AppConfig Configuration Profile. */
-    def getConfigurationProfilePlain(args: Endofunction[com.pulumi.aws.appconfig.inputs.GetConfigurationProfilePlainArgs.Builder] = identity):
+    def getConfigurationProfilePlain(args: Endofunction[com.pulumi.aws.appconfig.inputs.GetConfigurationProfilePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.appconfig.outputs.GetConfigurationProfileResult] =
       val argsBuilder = com.pulumi.aws.appconfig.inputs.GetConfigurationProfilePlainArgs.builder
       com.pulumi.aws.appconfig.AppconfigFunctions.getConfigurationProfilePlain(args(argsBuilder).build)
@@ -151,7 +151,7 @@ object appconfig:
      * Provides access to all Configuration Properties for an AppConfig Application. This will allow you to pass Configuration
      *  Profile IDs to another resource.
      */
-    def getConfigurationProfiles(args: Endofunction[com.pulumi.aws.appconfig.inputs.GetConfigurationProfilesArgs.Builder] = identity):
+    def getConfigurationProfiles(args: Endofunction[com.pulumi.aws.appconfig.inputs.GetConfigurationProfilesArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.appconfig.outputs.GetConfigurationProfilesResult] =
       val argsBuilder = com.pulumi.aws.appconfig.inputs.GetConfigurationProfilesArgs.builder
       com.pulumi.aws.appconfig.AppconfigFunctions.getConfigurationProfiles(args(argsBuilder).build)
@@ -160,19 +160,19 @@ object appconfig:
      * Provides access to all Configuration Properties for an AppConfig Application. This will allow you to pass Configuration
      *  Profile IDs to another resource.
      */
-    def getConfigurationProfilesPlain(args: Endofunction[com.pulumi.aws.appconfig.inputs.GetConfigurationProfilesPlainArgs.Builder] = identity):
+    def getConfigurationProfilesPlain(args: Endofunction[com.pulumi.aws.appconfig.inputs.GetConfigurationProfilesPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.appconfig.outputs.GetConfigurationProfilesResult] =
       val argsBuilder = com.pulumi.aws.appconfig.inputs.GetConfigurationProfilesPlainArgs.builder
       com.pulumi.aws.appconfig.AppconfigFunctions.getConfigurationProfilesPlain(args(argsBuilder).build)
 
     /** Provides access to an AppConfig Environment. */
-    def getEnvironment(args: Endofunction[com.pulumi.aws.appconfig.inputs.GetEnvironmentArgs.Builder] = identity):
+    def getEnvironment(args: Endofunction[com.pulumi.aws.appconfig.inputs.GetEnvironmentArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.appconfig.outputs.GetEnvironmentResult] =
       val argsBuilder = com.pulumi.aws.appconfig.inputs.GetEnvironmentArgs.builder
       com.pulumi.aws.appconfig.AppconfigFunctions.getEnvironment(args(argsBuilder).build)
 
     /** Provides access to an AppConfig Environment. */
-    def getEnvironmentPlain(args: Endofunction[com.pulumi.aws.appconfig.inputs.GetEnvironmentPlainArgs.Builder] = identity):
+    def getEnvironmentPlain(args: Endofunction[com.pulumi.aws.appconfig.inputs.GetEnvironmentPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.appconfig.outputs.GetEnvironmentResult] =
       val argsBuilder = com.pulumi.aws.appconfig.inputs.GetEnvironmentPlainArgs.builder
       com.pulumi.aws.appconfig.AppconfigFunctions.getEnvironmentPlain(args(argsBuilder).build)
@@ -181,7 +181,7 @@ object appconfig:
      * Provides access to all Environments for an AppConfig Application. This will allow you to pass Environment IDs to another
      *  resource.
      */
-    def getEnvironments(args: Endofunction[com.pulumi.aws.appconfig.inputs.GetEnvironmentsArgs.Builder] = identity):
+    def getEnvironments(args: Endofunction[com.pulumi.aws.appconfig.inputs.GetEnvironmentsArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.appconfig.outputs.GetEnvironmentsResult] =
       val argsBuilder = com.pulumi.aws.appconfig.inputs.GetEnvironmentsArgs.builder
       com.pulumi.aws.appconfig.AppconfigFunctions.getEnvironments(args(argsBuilder).build)
@@ -190,7 +190,7 @@ object appconfig:
      * Provides access to all Environments for an AppConfig Application. This will allow you to pass Environment IDs to another
      *  resource.
      */
-    def getEnvironmentsPlain(args: Endofunction[com.pulumi.aws.appconfig.inputs.GetEnvironmentsPlainArgs.Builder] = identity):
+    def getEnvironmentsPlain(args: Endofunction[com.pulumi.aws.appconfig.inputs.GetEnvironmentsPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.appconfig.outputs.GetEnvironmentsResult] =
       val argsBuilder = com.pulumi.aws.appconfig.inputs.GetEnvironmentsPlainArgs.builder
       com.pulumi.aws.appconfig.AppconfigFunctions.getEnvironmentsPlain(args(argsBuilder).build)
@@ -233,7 +233,7 @@ object appconfig:
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
 
   /** Provides an AppConfig Deployment resource for an `aws.appconfig.Application` resource. */
-  def Deployment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def Deployment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.appconfig.DeploymentArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.appconfig.DeploymentArgs.builder
     conf.logicalName2tagName(name) match
@@ -244,7 +244,7 @@ object appconfig:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Provides an Amazon AppIntegrations Event Integration resource. */
-  def EventIntegration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def EventIntegration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.appconfig.EventIntegrationArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.appconfig.EventIntegrationArgs.builder
     conf.logicalName2pysicalName(name) match

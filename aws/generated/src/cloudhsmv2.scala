@@ -16,7 +16,7 @@ object cloudhsmv2:
    *  If you need to delete a cluster, you have to remove its HSM modules first.
    *  To initialize cluster, you have to add an HSM instance to the cluster, then sign CSR and upload it.
    */
-  def Cluster(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def Cluster(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.cloudhsmv2.ClusterArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.cloudhsmv2.ClusterArgs.builder
     conf.logicalName2tagName(name) match
@@ -32,19 +32,19 @@ object cloudhsmv2:
     export com.pulumi.aws.cloudhsmv2.Cloudhsmv2Functions.*
   extension (self: Cloudhsmv2Functions.type)
     /** Use this data source to get information about a CloudHSM v2 cluster */
-    def getCluster(args: Endofunction[com.pulumi.aws.cloudhsmv2.inputs.GetClusterArgs.Builder] = identity):
+    def getCluster(args: Endofunction[com.pulumi.aws.cloudhsmv2.inputs.GetClusterArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.cloudhsmv2.outputs.GetClusterResult] =
       val argsBuilder = com.pulumi.aws.cloudhsmv2.inputs.GetClusterArgs.builder
       com.pulumi.aws.cloudhsmv2.Cloudhsmv2Functions.getCluster(args(argsBuilder).build)
 
     /** Use this data source to get information about a CloudHSM v2 cluster */
-    def getClusterPlain(args: Endofunction[com.pulumi.aws.cloudhsmv2.inputs.GetClusterPlainArgs.Builder] = identity):
+    def getClusterPlain(args: Endofunction[com.pulumi.aws.cloudhsmv2.inputs.GetClusterPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.cloudhsmv2.outputs.GetClusterResult] =
       val argsBuilder = com.pulumi.aws.cloudhsmv2.inputs.GetClusterPlainArgs.builder
       com.pulumi.aws.cloudhsmv2.Cloudhsmv2Functions.getClusterPlain(args(argsBuilder).build)
 
   /** Creates an HSM module in Amazon CloudHSM v2 cluster. */
-  def Hsm(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def Hsm(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.cloudhsmv2.HsmArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.cloudhsmv2.HsmArgs.builder
     com.pulumi.aws.cloudhsmv2.Hsm(name,

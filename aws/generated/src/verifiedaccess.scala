@@ -19,7 +19,7 @@ object verifiedaccess:
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
 
   /** Resource for managing a Verified Access Logging Configuration. */
-  def InstanceLoggingConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def InstanceLoggingConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.verifiedaccess.InstanceLoggingConfigurationArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.verifiedaccess.InstanceLoggingConfigurationArgs.builder
     com.pulumi.aws.verifiedaccess.InstanceLoggingConfiguration(name,
@@ -27,7 +27,7 @@ object verifiedaccess:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Resource for managing a Verified Access Group. */
-  def Group(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def Group(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.verifiedaccess.GroupArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.verifiedaccess.GroupArgs.builder
     conf.logicalName2tagName(name) match
@@ -48,7 +48,7 @@ object verifiedaccess:
       builder.accessLogs(args(argsBuilder).build)
 
   /** Resource for managing a Verified Access Instance Trust Provider Attachment. */
-  def InstanceTrustProviderAttachment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def InstanceTrustProviderAttachment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.verifiedaccess.InstanceTrustProviderAttachmentArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.verifiedaccess.InstanceTrustProviderAttachmentArgs.builder
     com.pulumi.aws.verifiedaccess.InstanceTrustProviderAttachment(name,
@@ -93,7 +93,7 @@ object verifiedaccess:
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
 
   /** Resource for managing an AWS EC2 (Elastic Compute Cloud) Verified Access Endpoint. */
-  def Endpoint(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def Endpoint(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.verifiedaccess.EndpointArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.verifiedaccess.EndpointArgs.builder
     conf.logicalName2tagName(name) match
@@ -104,7 +104,7 @@ object verifiedaccess:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Resource for managing a Verified Access Instance. */
-  def Instance(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def Instance(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.verifiedaccess.InstanceArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.verifiedaccess.InstanceArgs.builder
     conf.logicalName2tagName(name) match
@@ -115,7 +115,7 @@ object verifiedaccess:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Resource for managing a Verified Access Trust Provider. */
-  def TrustProvider(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def TrustProvider(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.verifiedaccess.TrustProviderArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.verifiedaccess.TrustProviderArgs.builder
     conf.logicalName2tagName(name) match

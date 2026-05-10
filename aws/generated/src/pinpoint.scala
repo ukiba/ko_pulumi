@@ -9,7 +9,7 @@ object pinpoint:
    * 
    *  &gt; **Note:** All arguments including the Api Key and Secret Key will be stored in the raw state as plain-text.
    */
-  def BaiduChannel(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def BaiduChannel(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.pinpoint.BaiduChannelArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.pinpoint.BaiduChannelArgs.builder
     com.pulumi.aws.pinpoint.BaiduChannel(name,
@@ -21,7 +21,7 @@ object pinpoint:
    * 
    *  &gt; **Note:** All arguments, including certificates and tokens, will be stored in the raw state as plain-text.
    */
-  def ApnsChannel(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def ApnsChannel(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.pinpoint.ApnsChannelArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.pinpoint.ApnsChannelArgs.builder
     com.pulumi.aws.pinpoint.ApnsChannel(name,
@@ -33,7 +33,7 @@ object pinpoint:
    * 
    *  &gt; **Note:** All arguments, including certificates and tokens, will be stored in the raw state as plain-text.
    */
-  def ApnsVoipChannel(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def ApnsVoipChannel(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.pinpoint.ApnsVoipChannelArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.pinpoint.ApnsVoipChannelArgs.builder
     com.pulumi.aws.pinpoint.ApnsVoipChannel(name,
@@ -45,7 +45,7 @@ object pinpoint:
    * 
    *  &gt; **Note:** All arguments, including certificates and tokens, will be stored in the raw state as plain-text.
    */
-  def ApnsSandboxChannel(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def ApnsSandboxChannel(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.pinpoint.ApnsSandboxChannelArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.pinpoint.ApnsSandboxChannelArgs.builder
     com.pulumi.aws.pinpoint.ApnsSandboxChannel(name,
@@ -53,7 +53,7 @@ object pinpoint:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Manages an AWS End User Messaging SMS Configuration Set. */
-  def Smsvoicev2ConfigurationSet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def Smsvoicev2ConfigurationSet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.pinpoint.Smsvoicev2ConfigurationSetArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.pinpoint.Smsvoicev2ConfigurationSetArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -78,7 +78,7 @@ object pinpoint:
    *  $ pulumi import aws:pinpoint/gcmChannel:GcmChannel gcm application-id
    *  ```
    */
-  def GcmChannel(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def GcmChannel(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.pinpoint.GcmChannelArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.pinpoint.GcmChannelArgs.builder
     com.pulumi.aws.pinpoint.GcmChannel(name,
@@ -96,7 +96,7 @@ object pinpoint:
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
 
   /** Manages an AWS End User Messaging SMS opt-out list. */
-  def Smsvoicev2OptOutList(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def Smsvoicev2OptOutList(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.pinpoint.Smsvoicev2OptOutListArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.pinpoint.Smsvoicev2OptOutListArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -110,7 +110,7 @@ object pinpoint:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Provides a Pinpoint Event Stream resource. */
-  def EventStream(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def EventStream(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.pinpoint.EventStreamArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.pinpoint.EventStreamArgs.builder
     com.pulumi.aws.pinpoint.EventStream(name,
@@ -122,7 +122,7 @@ object pinpoint:
    * 
    *  &gt; **Note:** All arguments including the Client ID and Client Secret will be stored in the raw state as plain-text.
    */
-  def AdmChannel(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def AdmChannel(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.pinpoint.AdmChannelArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.pinpoint.AdmChannelArgs.builder
     com.pulumi.aws.pinpoint.AdmChannel(name,
@@ -162,7 +162,7 @@ object pinpoint:
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
 
   /** Manages an AWS End User Messaging SMS phone number. */
-  def Smsvoicev2PhoneNumber(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def Smsvoicev2PhoneNumber(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.pinpoint.Smsvoicev2PhoneNumberArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.pinpoint.Smsvoicev2PhoneNumberArgs.builder
     conf.logicalName2tagName(name) match
@@ -173,7 +173,7 @@ object pinpoint:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Use the `aws.pinpoint.SmsChannel` resource to manage Pinpoint SMS Channels. */
-  def SmsChannel(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def SmsChannel(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.pinpoint.SmsChannelArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.pinpoint.SmsChannelArgs.builder
     com.pulumi.aws.pinpoint.SmsChannel(name,
@@ -181,7 +181,7 @@ object pinpoint:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Provides a Pinpoint App resource. */
-  def App(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def App(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.pinpoint.AppArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.pinpoint.AppArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -195,7 +195,7 @@ object pinpoint:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Provides a Pinpoint Email Template resource */
-  def EmailTemplate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def EmailTemplate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.pinpoint.EmailTemplateArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.pinpoint.EmailTemplateArgs.builder
     conf.logicalName2tagName(name) match
@@ -210,7 +210,7 @@ object pinpoint:
    * 
    *  &gt; **Note:** All arguments, including certificates and tokens, will be stored in the raw state as plain-text.
    */
-  def ApnsVoipSandboxChannel(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def ApnsVoipSandboxChannel(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.pinpoint.ApnsVoipSandboxChannelArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.pinpoint.ApnsVoipSandboxChannelArgs.builder
     com.pulumi.aws.pinpoint.ApnsVoipSandboxChannel(name,
@@ -280,7 +280,7 @@ object pinpoint:
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
 
   /** Provides a Pinpoint Email Channel resource. */
-  def EmailChannel(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def EmailChannel(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.pinpoint.EmailChannelArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.pinpoint.EmailChannelArgs.builder
     com.pulumi.aws.pinpoint.EmailChannel(name,

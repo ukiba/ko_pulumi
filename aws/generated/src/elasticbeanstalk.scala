@@ -12,7 +12,7 @@ object elasticbeanstalk:
    *  Environments are often things such as `development`, `integration`, or
    *  `production`.
    */
-  def Environment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def Environment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.elasticbeanstalk.EnvironmentArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.elasticbeanstalk.EnvironmentArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -33,7 +33,7 @@ object elasticbeanstalk:
    *  This resource creates an application that has one configuration template named
    *  `default`, and no application versions
    */
-  def Application(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def Application(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.elasticbeanstalk.ApplicationArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.elasticbeanstalk.ApplicationArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -51,7 +51,7 @@ object elasticbeanstalk:
    *  a specific application and are used to deploy different versions of the
    *  application with the same configuration settings.
    */
-  def ConfigurationTemplate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def ConfigurationTemplate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.elasticbeanstalk.ConfigurationTemplateArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.elasticbeanstalk.ConfigurationTemplateArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -67,37 +67,37 @@ object elasticbeanstalk:
     export com.pulumi.aws.elasticbeanstalk.ElasticbeanstalkFunctions.*
   extension (self: ElasticbeanstalkFunctions.type)
     /** Retrieve information about an Elastic Beanstalk Application. */
-    def getApplication(args: Endofunction[com.pulumi.aws.elasticbeanstalk.inputs.GetApplicationArgs.Builder] = identity):
+    def getApplication(args: Endofunction[com.pulumi.aws.elasticbeanstalk.inputs.GetApplicationArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.elasticbeanstalk.outputs.GetApplicationResult] =
       val argsBuilder = com.pulumi.aws.elasticbeanstalk.inputs.GetApplicationArgs.builder
       com.pulumi.aws.elasticbeanstalk.ElasticbeanstalkFunctions.getApplication(args(argsBuilder).build)
 
     /** Retrieve information about an Elastic Beanstalk Application. */
-    def getApplicationPlain(args: Endofunction[com.pulumi.aws.elasticbeanstalk.inputs.GetApplicationPlainArgs.Builder] = identity):
+    def getApplicationPlain(args: Endofunction[com.pulumi.aws.elasticbeanstalk.inputs.GetApplicationPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.elasticbeanstalk.outputs.GetApplicationResult] =
       val argsBuilder = com.pulumi.aws.elasticbeanstalk.inputs.GetApplicationPlainArgs.builder
       com.pulumi.aws.elasticbeanstalk.ElasticbeanstalkFunctions.getApplicationPlain(args(argsBuilder).build)
 
     /** Use this data source to get the ID of an [elastic beanstalk hosted zone](http://docs.aws.amazon.com/general/latest/gr/rande.html#elasticbeanstalk_region). */
-    def getHostedZone(args: Endofunction[com.pulumi.aws.elasticbeanstalk.inputs.GetHostedZoneArgs.Builder] = identity):
+    def getHostedZone(args: Endofunction[com.pulumi.aws.elasticbeanstalk.inputs.GetHostedZoneArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.elasticbeanstalk.outputs.GetHostedZoneResult] =
       val argsBuilder = com.pulumi.aws.elasticbeanstalk.inputs.GetHostedZoneArgs.builder
       com.pulumi.aws.elasticbeanstalk.ElasticbeanstalkFunctions.getHostedZone(args(argsBuilder).build)
 
     /** Use this data source to get the ID of an [elastic beanstalk hosted zone](http://docs.aws.amazon.com/general/latest/gr/rande.html#elasticbeanstalk_region). */
-    def getHostedZonePlain(args: Endofunction[com.pulumi.aws.elasticbeanstalk.inputs.GetHostedZonePlainArgs.Builder] = identity):
+    def getHostedZonePlain(args: Endofunction[com.pulumi.aws.elasticbeanstalk.inputs.GetHostedZonePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.elasticbeanstalk.outputs.GetHostedZoneResult] =
       val argsBuilder = com.pulumi.aws.elasticbeanstalk.inputs.GetHostedZonePlainArgs.builder
       com.pulumi.aws.elasticbeanstalk.ElasticbeanstalkFunctions.getHostedZonePlain(args(argsBuilder).build)
 
     /** Use this data source to get the name of a elastic beanstalk solution stack. */
-    def getSolutionStack(args: Endofunction[com.pulumi.aws.elasticbeanstalk.inputs.GetSolutionStackArgs.Builder] = identity):
+    def getSolutionStack(args: Endofunction[com.pulumi.aws.elasticbeanstalk.inputs.GetSolutionStackArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.elasticbeanstalk.outputs.GetSolutionStackResult] =
       val argsBuilder = com.pulumi.aws.elasticbeanstalk.inputs.GetSolutionStackArgs.builder
       com.pulumi.aws.elasticbeanstalk.ElasticbeanstalkFunctions.getSolutionStack(args(argsBuilder).build)
 
     /** Use this data source to get the name of a elastic beanstalk solution stack. */
-    def getSolutionStackPlain(args: Endofunction[com.pulumi.aws.elasticbeanstalk.inputs.GetSolutionStackPlainArgs.Builder] = identity):
+    def getSolutionStackPlain(args: Endofunction[com.pulumi.aws.elasticbeanstalk.inputs.GetSolutionStackPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.elasticbeanstalk.outputs.GetSolutionStackResult] =
       val argsBuilder = com.pulumi.aws.elasticbeanstalk.inputs.GetSolutionStackPlainArgs.builder
       com.pulumi.aws.elasticbeanstalk.ElasticbeanstalkFunctions.getSolutionStackPlain(args(argsBuilder).build)
@@ -115,7 +115,7 @@ object elasticbeanstalk:
    *  when attempting to delete an Application Version while it is still in use by a different environment.
    *  To work around this you can either create each environment in a separate AWS account or create your `aws.elasticbeanstalk.ApplicationVersion` resources with a unique names in your Elastic Beanstalk Application. For example &amp;lt;revision&amp;gt;-&amp;lt;environment&amp;gt;.
    */
-  def ApplicationVersion(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def ApplicationVersion(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.elasticbeanstalk.ApplicationVersionArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.elasticbeanstalk.ApplicationVersionArgs.builder
     conf.logicalName2pysicalName(name) match

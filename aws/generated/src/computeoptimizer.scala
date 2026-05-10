@@ -11,7 +11,7 @@ object computeoptimizer:
       builder.timeouts(args(argsBuilder).build)
 
   /** Manages AWS Compute Optimizer enrollment status. */
-  def EnrollmentStatus(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def EnrollmentStatus(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.computeoptimizer.EnrollmentStatusArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.computeoptimizer.EnrollmentStatusArgs.builder
     com.pulumi.aws.computeoptimizer.EnrollmentStatus(name,
@@ -19,7 +19,7 @@ object computeoptimizer:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Manages AWS Compute Optimizer recommendation preferences. */
-  def RecommendationPreferences(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def RecommendationPreferences(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.computeoptimizer.RecommendationPreferencesArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.computeoptimizer.RecommendationPreferencesArgs.builder
     com.pulumi.aws.computeoptimizer.RecommendationPreferences(name,

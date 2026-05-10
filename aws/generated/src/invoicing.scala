@@ -5,7 +5,7 @@ import com.pulumi.resources.CustomResourceOptions
 
 object invoicing:
   /** Manages an AWS Invoice Unit for organizational billing. */
-  def InvoiceUnit(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def InvoiceUnit(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.invoicing.InvoiceUnitArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.invoicing.InvoiceUnitArgs.builder
     conf.logicalName2pysicalName(name) match

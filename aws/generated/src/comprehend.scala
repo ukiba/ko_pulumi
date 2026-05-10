@@ -5,7 +5,7 @@ import com.pulumi.resources.CustomResourceOptions
 
 object comprehend:
   /** Resource for managing an AWS Comprehend Document Classifier. */
-  def DocumentClassifier(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def DocumentClassifier(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.comprehend.DocumentClassifierArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.comprehend.DocumentClassifierArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -19,7 +19,7 @@ object comprehend:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Resource for managing an AWS Comprehend Entity Recognizer. */
-  def EntityRecognizer(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def EntityRecognizer(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.comprehend.EntityRecognizerArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.comprehend.EntityRecognizerArgs.builder
     conf.logicalName2pysicalName(name) match

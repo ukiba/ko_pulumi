@@ -280,9 +280,10 @@ class PulumiProviderAdapterGenerator(dstRoot: Path, packageName: String, classpa
                     |""".stripMargin.trim),
                 ).flatten.map(_ + "\n    ").mkString
 
-                 val resourceFuncType = s"Endofunction[CustomResourceOptions.Builder]"
+                // identity is qualified to avoid the collision with gcp.storage.identity
+                val resourceFuncType = s"Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity"
                 genOf(packageComps).members :+= CustomResourceMember(s"""
-                  |  ${clsDoc}${deprecated}def $clsName(name: String, resourceOptions: $resourceFuncType = identity)
+                  |  ${clsDoc}${deprecated}def $clsName(name: String, resourceOptions: $resourceFuncType)
                   |      (args: Endofunction[$pkg.${clsName}Args.Builder])$usingConf =
                   |    $builderVarOrVal argsBuilder = $pkg.${clsName}Args.builder
                   |    $applyConf
@@ -459,9 +460,11 @@ class PulumiProviderAdapterGenerator(dstRoot: Path, packageName: String, classpa
 
                           val params = methodTree.parameters
                           val argsType = s"$pkg.inputs.${params(0).getType}"
-                          val argsFuncType = s"Endofunction[$argsType.Builder]"
+
+                          // identity is qualified to avoid the collision with gcp.storage.identity
+                          val argsFuncType = s"Endofunction[$argsType.Builder] = scala.Predef.identity"
                           s"""
-                            |    ${methodDoc}${deprecated}def $methodName(args: $argsFuncType = identity):
+                            |    ${methodDoc}${deprecated}def $methodName(args: $argsFuncType):
                             |        ${renderScalaType(method.returnType)} =
                             |      val argsBuilder = $argsType.builder
                             |      $pkg.$clsName.$methodName(args(argsBuilder).build)

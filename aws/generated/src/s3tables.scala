@@ -40,7 +40,7 @@ object s3tables:
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
 
   /** Resource for managing an Amazon S3 Tables Table Bucket. */
-  def TableBucket(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def TableBucket(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.s3tables.TableBucketArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.s3tables.TableBucketArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -54,7 +54,7 @@ object s3tables:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Resource for managing an Amazon S3 Tables Table Policy. */
-  def TablePolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def TablePolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.s3tables.TablePolicyArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.s3tables.TablePolicyArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -65,7 +65,7 @@ object s3tables:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Resource for managing an Amazon S3 Tables Namespace. */
-  def Namespace(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def Namespace(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.s3tables.NamespaceArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.s3tables.NamespaceArgs.builder
     com.pulumi.aws.s3tables.Namespace(name,
@@ -83,7 +83,7 @@ object s3tables:
       builder.rule(args(argsBuilder).build)
 
   /** Resource for managing an Amazon S3 Tables Table. */
-  def Table(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def Table(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.s3tables.TableArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.s3tables.TableArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -97,7 +97,7 @@ object s3tables:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Manages Amazon S3 Tables Table Replication configuration. */
-  def TableReplication(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def TableReplication(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.s3tables.TableReplicationArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.s3tables.TableReplicationArgs.builder
     com.pulumi.aws.s3tables.TableReplication(name,
@@ -105,7 +105,7 @@ object s3tables:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Manages Amazon S3 Tables Table Bucket Replication configuration. */
-  def TableBucketReplication(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def TableBucketReplication(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.s3tables.TableBucketReplicationArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.s3tables.TableBucketReplicationArgs.builder
     com.pulumi.aws.s3tables.TableBucketReplication(name,
@@ -138,7 +138,7 @@ object s3tables:
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
 
   /** Resource for managing an Amazon S3 Tables Table Bucket Policy. */
-  def TableBucketPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def TableBucketPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.s3tables.TableBucketPolicyArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.s3tables.TableBucketPolicyArgs.builder
     com.pulumi.aws.s3tables.TableBucketPolicy(name,

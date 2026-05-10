@@ -32,7 +32,7 @@ object scheduler:
    * 
    *  &gt; **Note:** EventBridge was formerly known as CloudWatch Events. The functionality is identical.
    */
-  def Schedule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def Schedule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.scheduler.ScheduleArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.scheduler.ScheduleArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -49,7 +49,7 @@ object scheduler:
    * 
    *  &gt; **Note:** EventBridge was formerly known as CloudWatch Events. The functionality is identical.
    */
-  def ScheduleGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def ScheduleGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.scheduler.ScheduleGroupArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.scheduler.ScheduleGroupArgs.builder
     conf.logicalName2pysicalName(name) match

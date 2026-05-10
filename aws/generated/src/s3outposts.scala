@@ -5,7 +5,7 @@ import com.pulumi.resources.CustomResourceOptions
 
 object s3outposts:
   /** Provides a resource to manage an S3 Outposts Endpoint. */
-  def Endpoint(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def Endpoint(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.s3outposts.EndpointArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.s3outposts.EndpointArgs.builder
     com.pulumi.aws.s3outposts.Endpoint(name,

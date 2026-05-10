@@ -5,7 +5,7 @@ import com.pulumi.resources.CustomResourceOptions
 
 object inspector:
   /** Provides an Inspector Classic Assessment Template */
-  def AssessmentTemplate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def AssessmentTemplate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.inspector.AssessmentTemplateArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.inspector.AssessmentTemplateArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -28,7 +28,7 @@ object inspector:
      *  Inspector Rules Packages which can be used by Amazon Inspector Classic within the region
      *  configured in the provider.
      */
-    def getRulesPackages(args: Endofunction[com.pulumi.aws.inspector.inputs.GetRulesPackagesArgs.Builder] = identity):
+    def getRulesPackages(args: Endofunction[com.pulumi.aws.inspector.inputs.GetRulesPackagesArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.inspector.outputs.GetRulesPackagesResult] =
       val argsBuilder = com.pulumi.aws.inspector.inputs.GetRulesPackagesArgs.builder
       com.pulumi.aws.inspector.InspectorFunctions.getRulesPackages(args(argsBuilder).build)
@@ -38,13 +38,13 @@ object inspector:
      *  Inspector Rules Packages which can be used by Amazon Inspector Classic within the region
      *  configured in the provider.
      */
-    def getRulesPackagesPlain(args: Endofunction[com.pulumi.aws.inspector.inputs.GetRulesPackagesPlainArgs.Builder] = identity):
+    def getRulesPackagesPlain(args: Endofunction[com.pulumi.aws.inspector.inputs.GetRulesPackagesPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.inspector.outputs.GetRulesPackagesResult] =
       val argsBuilder = com.pulumi.aws.inspector.inputs.GetRulesPackagesPlainArgs.builder
       com.pulumi.aws.inspector.InspectorFunctions.getRulesPackagesPlain(args(argsBuilder).build)
 
   /** Provides an Inspector Classic Assessment Target */
-  def AssessmentTarget(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def AssessmentTarget(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.inspector.AssessmentTargetArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.inspector.AssessmentTargetArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -69,7 +69,7 @@ object inspector:
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
 
   /** Provides an Amazon Inspector Classic Resource Group. */
-  def ResourceGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def ResourceGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.inspector.ResourceGroupArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.inspector.ResourceGroupArgs.builder
     conf.logicalName2tagName(name) match

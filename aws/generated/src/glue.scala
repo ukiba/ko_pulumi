@@ -10,73 +10,73 @@ object glue:
     export com.pulumi.aws.glue.GlueFunctions.*
   extension (self: GlueFunctions.type)
     /** Provides details about an AWS Glue Catalog. */
-    def getCatalog(args: Endofunction[com.pulumi.aws.glue.inputs.GetCatalogArgs.Builder] = identity):
+    def getCatalog(args: Endofunction[com.pulumi.aws.glue.inputs.GetCatalogArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.glue.outputs.GetCatalogResult] =
       val argsBuilder = com.pulumi.aws.glue.inputs.GetCatalogArgs.builder
       com.pulumi.aws.glue.GlueFunctions.getCatalog(args(argsBuilder).build)
 
     /** Provides details about an AWS Glue Catalog. */
-    def getCatalogPlain(args: Endofunction[com.pulumi.aws.glue.inputs.GetCatalogPlainArgs.Builder] = identity):
+    def getCatalogPlain(args: Endofunction[com.pulumi.aws.glue.inputs.GetCatalogPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.glue.outputs.GetCatalogResult] =
       val argsBuilder = com.pulumi.aws.glue.inputs.GetCatalogPlainArgs.builder
       com.pulumi.aws.glue.GlueFunctions.getCatalogPlain(args(argsBuilder).build)
 
     /** This data source can be used to fetch information about an AWS Glue Data Catalog Table. */
-    def getCatalogTable(args: Endofunction[com.pulumi.aws.glue.inputs.GetCatalogTableArgs.Builder] = identity):
+    def getCatalogTable(args: Endofunction[com.pulumi.aws.glue.inputs.GetCatalogTableArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.glue.outputs.GetCatalogTableResult] =
       val argsBuilder = com.pulumi.aws.glue.inputs.GetCatalogTableArgs.builder
       com.pulumi.aws.glue.GlueFunctions.getCatalogTable(args(argsBuilder).build)
 
     /** This data source can be used to fetch information about an AWS Glue Data Catalog Table. */
-    def getCatalogTablePlain(args: Endofunction[com.pulumi.aws.glue.inputs.GetCatalogTablePlainArgs.Builder] = identity):
+    def getCatalogTablePlain(args: Endofunction[com.pulumi.aws.glue.inputs.GetCatalogTablePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.glue.outputs.GetCatalogTableResult] =
       val argsBuilder = com.pulumi.aws.glue.inputs.GetCatalogTablePlainArgs.builder
       com.pulumi.aws.glue.GlueFunctions.getCatalogTablePlain(args(argsBuilder).build)
 
     /** Provides details about an AWS Glue Connection. */
-    def getConnection(args: Endofunction[com.pulumi.aws.glue.inputs.GetConnectionArgs.Builder] = identity):
+    def getConnection(args: Endofunction[com.pulumi.aws.glue.inputs.GetConnectionArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.glue.outputs.GetConnectionResult] =
       val argsBuilder = com.pulumi.aws.glue.inputs.GetConnectionArgs.builder
       com.pulumi.aws.glue.GlueFunctions.getConnection(args(argsBuilder).build)
 
     /** Provides details about an AWS Glue Connection. */
-    def getConnectionPlain(args: Endofunction[com.pulumi.aws.glue.inputs.GetConnectionPlainArgs.Builder] = identity):
+    def getConnectionPlain(args: Endofunction[com.pulumi.aws.glue.inputs.GetConnectionPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.glue.outputs.GetConnectionResult] =
       val argsBuilder = com.pulumi.aws.glue.inputs.GetConnectionPlainArgs.builder
       com.pulumi.aws.glue.GlueFunctions.getConnectionPlain(args(argsBuilder).build)
 
     /** This data source can be used to fetch information about AWS Glue Data Catalog Encryption Settings. */
-    def getDataCatalogEncryptionSettings(args: Endofunction[com.pulumi.aws.glue.inputs.GetDataCatalogEncryptionSettingsArgs.Builder] = identity):
+    def getDataCatalogEncryptionSettings(args: Endofunction[com.pulumi.aws.glue.inputs.GetDataCatalogEncryptionSettingsArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.glue.outputs.GetDataCatalogEncryptionSettingsResult] =
       val argsBuilder = com.pulumi.aws.glue.inputs.GetDataCatalogEncryptionSettingsArgs.builder
       com.pulumi.aws.glue.GlueFunctions.getDataCatalogEncryptionSettings(args(argsBuilder).build)
 
     /** This data source can be used to fetch information about AWS Glue Data Catalog Encryption Settings. */
-    def getDataCatalogEncryptionSettingsPlain(args: Endofunction[com.pulumi.aws.glue.inputs.GetDataCatalogEncryptionSettingsPlainArgs.Builder] = identity):
+    def getDataCatalogEncryptionSettingsPlain(args: Endofunction[com.pulumi.aws.glue.inputs.GetDataCatalogEncryptionSettingsPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.glue.outputs.GetDataCatalogEncryptionSettingsResult] =
       val argsBuilder = com.pulumi.aws.glue.inputs.GetDataCatalogEncryptionSettingsPlainArgs.builder
       com.pulumi.aws.glue.GlueFunctions.getDataCatalogEncryptionSettingsPlain(args(argsBuilder).build)
 
     /** Data source for managing an AWS Glue Registry. */
-    def getRegistry(args: Endofunction[com.pulumi.aws.glue.inputs.GetRegistryArgs.Builder] = identity):
+    def getRegistry(args: Endofunction[com.pulumi.aws.glue.inputs.GetRegistryArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.glue.outputs.GetRegistryResult] =
       val argsBuilder = com.pulumi.aws.glue.inputs.GetRegistryArgs.builder
       com.pulumi.aws.glue.GlueFunctions.getRegistry(args(argsBuilder).build)
 
     /** Data source for managing an AWS Glue Registry. */
-    def getRegistryPlain(args: Endofunction[com.pulumi.aws.glue.inputs.GetRegistryPlainArgs.Builder] = identity):
+    def getRegistryPlain(args: Endofunction[com.pulumi.aws.glue.inputs.GetRegistryPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.glue.outputs.GetRegistryResult] =
       val argsBuilder = com.pulumi.aws.glue.inputs.GetRegistryPlainArgs.builder
       com.pulumi.aws.glue.GlueFunctions.getRegistryPlain(args(argsBuilder).build)
 
     /** Use this data source to generate a Glue script from a Directed Acyclic Graph (DAG). */
-    def getScript(args: Endofunction[com.pulumi.aws.glue.inputs.GetScriptArgs.Builder] = identity):
+    def getScript(args: Endofunction[com.pulumi.aws.glue.inputs.GetScriptArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.glue.outputs.GetScriptResult] =
       val argsBuilder = com.pulumi.aws.glue.inputs.GetScriptArgs.builder
       com.pulumi.aws.glue.GlueFunctions.getScript(args(argsBuilder).build)
 
     /** Use this data source to generate a Glue script from a Directed Acyclic Graph (DAG). */
-    def getScriptPlain(args: Endofunction[com.pulumi.aws.glue.inputs.GetScriptPlainArgs.Builder] = identity):
+    def getScriptPlain(args: Endofunction[com.pulumi.aws.glue.inputs.GetScriptPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.glue.outputs.GetScriptResult] =
       val argsBuilder = com.pulumi.aws.glue.inputs.GetScriptPlainArgs.builder
       com.pulumi.aws.glue.GlueFunctions.getScriptPlain(args(argsBuilder).build)
@@ -209,7 +209,7 @@ object glue:
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
 
   /** Provides a Glue Catalog Database Resource. You can refer to the [Glue Developer Guide](http://docs.aws.amazon.com/glue/latest/dg/populate-data-catalog.html) for a full explanation of the Glue Data Catalog functionality */
-  def CatalogDatabase(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def CatalogDatabase(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.glue.CatalogDatabaseArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.glue.CatalogDatabaseArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -223,7 +223,7 @@ object glue:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Manages an AWS Glue Catalog. */
-  def Catalog(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def Catalog(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.glue.CatalogArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.glue.CatalogArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -237,7 +237,7 @@ object glue:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Provides a Glue ML Transform resource. */
-  def MLTransform(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def MLTransform(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.glue.MLTransformArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.glue.MLTransformArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -251,7 +251,7 @@ object glue:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Provides a Glue Schema resource. */
-  def Schema(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def Schema(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.glue.SchemaArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.glue.SchemaArgs.builder
     conf.logicalName2tagName(name) match
@@ -331,7 +331,7 @@ object glue:
    * 
    *  &gt; Glue functionality, such as monitoring and logging of jobs, is typically managed with the `defaultArguments` argument. See the [Special Parameters Used by AWS Glue](https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html) topic in the Glue developer guide for additional information.
    */
-  def Job(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def Job(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.glue.JobArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.glue.JobArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -388,7 +388,7 @@ object glue:
   /**
    * 
    */
-  def PartitionIndex(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def PartitionIndex(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.glue.PartitionIndexArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.glue.PartitionIndexArgs.builder
     com.pulumi.aws.glue.PartitionIndex(name,
@@ -396,7 +396,7 @@ object glue:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Provides a Glue Data Catalog Encryption Settings resource. */
-  def DataCatalogEncryptionSettings(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def DataCatalogEncryptionSettings(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.glue.DataCatalogEncryptionSettingsArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.glue.DataCatalogEncryptionSettingsArgs.builder
     com.pulumi.aws.glue.DataCatalogEncryptionSettings(name,
@@ -404,7 +404,7 @@ object glue:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Provides a Glue resource policy. Only one can exist per region. */
-  def ResourcePolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def ResourcePolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.glue.ResourcePolicyArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.glue.ResourcePolicyArgs.builder
     com.pulumi.aws.glue.ResourcePolicy(name,
@@ -422,7 +422,7 @@ object glue:
       builder.configuration(args(argsBuilder).build)
 
   /** Provides a Glue Data Quality Ruleset Resource. You can refer to the [Glue Developer Guide](https://docs.aws.amazon.com/glue/latest/dg/glue-data-quality.html) for a full explanation of the Glue Data Quality Ruleset functionality */
-  def DataQualityRuleset(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def DataQualityRuleset(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.glue.DataQualityRulesetArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.glue.DataQualityRulesetArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -590,7 +590,7 @@ object glue:
       builder.partitionIndex(args(argsBuilder).build)
 
   /** Manages a Glue Trigger resource. */
-  def Trigger(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def Trigger(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.glue.TriggerArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.glue.TriggerArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -604,7 +604,7 @@ object glue:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Manages an AWS Glue Connection. */
-  def Connection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def Connection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.glue.ConnectionArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.glue.ConnectionArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -618,7 +618,7 @@ object glue:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Provides a Glue Development Endpoint resource. */
-  def DevEndpoint(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def DevEndpoint(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.glue.DevEndpointArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.glue.DevEndpointArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -632,7 +632,7 @@ object glue:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Manages a Glue Crawler. More information can be found in the [AWS Glue Developer Guide](https://docs.aws.amazon.com/glue/latest/dg/add-crawler.html) */
-  def Crawler(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def Crawler(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.glue.CrawlerArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.glue.CrawlerArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -646,7 +646,7 @@ object glue:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Provides a Glue Partition Resource. */
-  def Partition(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def Partition(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.glue.PartitionArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.glue.PartitionArgs.builder
     com.pulumi.aws.glue.Partition(name,
@@ -654,7 +654,7 @@ object glue:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Resource for managing an AWS Glue Catalog Table Optimizer. */
-  def CatalogTableOptimizer(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def CatalogTableOptimizer(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.glue.CatalogTableOptimizerArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.glue.CatalogTableOptimizerArgs.builder
     com.pulumi.aws.glue.CatalogTableOptimizer(name,
@@ -662,7 +662,7 @@ object glue:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Provides a Glue User Defined Function Resource. */
-  def UserDefinedFunction(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def UserDefinedFunction(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.glue.UserDefinedFunctionArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.glue.UserDefinedFunctionArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -683,7 +683,7 @@ object glue:
       builder.resourceUris(args.map(_(argsBuilder).build)*)
 
   /** Manages a Glue Security Configuration. */
-  def SecurityConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def SecurityConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.glue.SecurityConfigurationArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.glue.SecurityConfigurationArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -694,7 +694,7 @@ object glue:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Provides a Glue Registry resource. */
-  def Registry(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def Registry(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.glue.RegistryArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.glue.RegistryArgs.builder
     conf.logicalName2tagName(name) match
@@ -705,7 +705,7 @@ object glue:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Provides a Glue Catalog Table Resource. You can refer to the [Glue Developer Guide](http://docs.aws.amazon.com/glue/latest/dg/populate-data-catalog.html) for a full explanation of the Glue Data Catalog functionality. */
-  def CatalogTable(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def CatalogTable(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.glue.CatalogTableArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.glue.CatalogTableArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -720,7 +720,7 @@ object glue:
    * 
    *  &gt; **NOTE:** It is only valid to create one type of classifier (CSV, grok, JSON, or XML). Changing classifier types will recreate the classifier.
    */
-  def Classifier(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def Classifier(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.glue.ClassifierArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.glue.ClassifierArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -735,7 +735,7 @@ object glue:
    *  The workflow graph (DAG) can be build using the `aws.glue.Trigger` resource.
    *  See the example below for creating a graph with four nodes (two triggers and two jobs).
    */
-  def Workflow(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def Workflow(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.glue.WorkflowArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.glue.WorkflowArgs.builder
     conf.logicalName2pysicalName(name) match

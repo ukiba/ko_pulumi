@@ -26,7 +26,7 @@ object dataexchange:
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
 
   /** Provides a resource to manage AWS Data Exchange DataSets. */
-  def DataSet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def DataSet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.dataexchange.DataSetArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.dataexchange.DataSetArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -40,7 +40,7 @@ object dataexchange:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Provides a resource to manage AWS Data Exchange Revisions. */
-  def Revision(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def Revision(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.dataexchange.RevisionArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.dataexchange.RevisionArgs.builder
     conf.logicalName2tagName(name) match
@@ -76,7 +76,7 @@ object dataexchange:
    * 
    *  &gt; Note: This resource creates a new revision and adds associated assets. Destroying this resource will delete the revision and all associated assets.
    */
-  def RevisionAssets(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def RevisionAssets(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.dataexchange.RevisionAssetsArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.dataexchange.RevisionAssetsArgs.builder
     conf.logicalName2tagName(name) match
@@ -87,7 +87,7 @@ object dataexchange:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Resource for managing an AWS Data Exchange Event Action. */
-  def EventAction(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def EventAction(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.dataexchange.EventActionArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.dataexchange.EventActionArgs.builder
     com.pulumi.aws.dataexchange.EventAction(name,

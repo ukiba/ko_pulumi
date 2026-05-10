@@ -65,7 +65,7 @@ object appflow:
       builder.connectorProfileConfig(args(argsBuilder).build)
 
   /** Provides an AppFlow flow resource. */
-  def Flow(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def Flow(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.appflow.FlowArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.appflow.FlowArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -85,7 +85,7 @@ object appflow:
    *  For specific information about creating an AppFlow connector profile, see the
    *  [CreateConnectorProfile](https://docs.aws.amazon.com/appflow/1.0/APIReference/API_CreateConnectorProfile.html) page in the Amazon AppFlow API Reference.
    */
-  def ConnectorProfile(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def ConnectorProfile(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.appflow.ConnectorProfileArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.appflow.ConnectorProfileArgs.builder
     conf.logicalName2pysicalName(name) match

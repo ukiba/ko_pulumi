@@ -20,7 +20,7 @@ object datazone:
       builder.timeouts(args(argsBuilder).build)
 
   /** Resource for managing an AWS DataZone Environment. */
-  def Environment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def Environment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.datazone.EnvironmentArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.datazone.EnvironmentArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -37,7 +37,7 @@ object datazone:
       builder.timeouts(args(argsBuilder).build)
 
   /** Resource for managing an AWS DataZone Form Type. */
-  def FormType(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def FormType(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.datazone.FormTypeArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.datazone.FormTypeArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -48,7 +48,7 @@ object datazone:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Resource for managing an AWS DataZone Asset Type. */
-  def AssetType(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def AssetType(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.datazone.AssetTypeArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.datazone.AssetTypeArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -70,25 +70,25 @@ object datazone:
     export com.pulumi.aws.datazone.DatazoneFunctions.*
   extension (self: DatazoneFunctions.type)
     /** Data source for managing an AWS DataZone Domain. */
-    def getDomain(args: Endofunction[com.pulumi.aws.datazone.inputs.GetDomainArgs.Builder] = identity):
+    def getDomain(args: Endofunction[com.pulumi.aws.datazone.inputs.GetDomainArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.datazone.outputs.GetDomainResult] =
       val argsBuilder = com.pulumi.aws.datazone.inputs.GetDomainArgs.builder
       com.pulumi.aws.datazone.DatazoneFunctions.getDomain(args(argsBuilder).build)
 
     /** Data source for managing an AWS DataZone Domain. */
-    def getDomainPlain(args: Endofunction[com.pulumi.aws.datazone.inputs.GetDomainPlainArgs.Builder] = identity):
+    def getDomainPlain(args: Endofunction[com.pulumi.aws.datazone.inputs.GetDomainPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.datazone.outputs.GetDomainResult] =
       val argsBuilder = com.pulumi.aws.datazone.inputs.GetDomainPlainArgs.builder
       com.pulumi.aws.datazone.DatazoneFunctions.getDomainPlain(args(argsBuilder).build)
 
     /** Data source for managing an AWS DataZone Environment Blueprint. */
-    def getEnvironmentBlueprint(args: Endofunction[com.pulumi.aws.datazone.inputs.GetEnvironmentBlueprintArgs.Builder] = identity):
+    def getEnvironmentBlueprint(args: Endofunction[com.pulumi.aws.datazone.inputs.GetEnvironmentBlueprintArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.datazone.outputs.GetEnvironmentBlueprintResult] =
       val argsBuilder = com.pulumi.aws.datazone.inputs.GetEnvironmentBlueprintArgs.builder
       com.pulumi.aws.datazone.DatazoneFunctions.getEnvironmentBlueprint(args(argsBuilder).build)
 
     /** Data source for managing an AWS DataZone Environment Blueprint. */
-    def getEnvironmentBlueprintPlain(args: Endofunction[com.pulumi.aws.datazone.inputs.GetEnvironmentBlueprintPlainArgs.Builder] = identity):
+    def getEnvironmentBlueprintPlain(args: Endofunction[com.pulumi.aws.datazone.inputs.GetEnvironmentBlueprintPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.datazone.outputs.GetEnvironmentBlueprintResult] =
       val argsBuilder = com.pulumi.aws.datazone.inputs.GetEnvironmentBlueprintPlainArgs.builder
       com.pulumi.aws.datazone.DatazoneFunctions.getEnvironmentBlueprintPlain(args(argsBuilder).build)
@@ -113,7 +113,7 @@ object datazone:
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
 
   /** Resource for managing an AWS DataZone User Profile. */
-  def UserProfile(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def UserProfile(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.datazone.UserProfileArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.datazone.UserProfileArgs.builder
     com.pulumi.aws.datazone.UserProfile(name,
@@ -121,7 +121,7 @@ object datazone:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Resource for managing an AWS DataZone Glossary. */
-  def Glossary(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def Glossary(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.datazone.GlossaryArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.datazone.GlossaryArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -132,7 +132,7 @@ object datazone:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Resource for managing an AWS DataZone Environment Blueprint Configuration. */
-  def EnvironmentBlueprintConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def EnvironmentBlueprintConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.datazone.EnvironmentBlueprintConfigurationArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.datazone.EnvironmentBlueprintConfigurationArgs.builder
     com.pulumi.aws.datazone.EnvironmentBlueprintConfiguration(name,
@@ -172,7 +172,7 @@ object datazone:
       builder.userParameters(args.map(_(argsBuilder).build)*)
 
   /** Resource for managing an AWS DataZone Environment Profile. */
-  def EnvironmentProfile(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def EnvironmentProfile(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.datazone.EnvironmentProfileArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.datazone.EnvironmentProfileArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -183,7 +183,7 @@ object datazone:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Resource for managing an AWS DataZone Glossary Term. */
-  def GlossaryTerm(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def GlossaryTerm(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.datazone.GlossaryTermArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.datazone.GlossaryTermArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -194,7 +194,7 @@ object datazone:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Resource for managing an AWS DataZone Project. */
-  def Project(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def Project(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.datazone.ProjectArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.datazone.ProjectArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -387,7 +387,7 @@ object datazone:
       builder.timeouts(args(argsBuilder).build)
 
   /** Resource for managing an AWS DataZone Domain. */
-  def Domain(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def Domain(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.datazone.DomainArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.datazone.DomainArgs.builder
     conf.logicalName2pysicalName(name) match

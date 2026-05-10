@@ -9,7 +9,7 @@ object transcribe:
    * 
    *  &gt; This resource can take a significant amount of time to provision. See Language Model [FAQ](https://aws.amazon.com/transcribe/faqs/) for more details.
    */
-  def LanguageModel(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def LanguageModel(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.transcribe.LanguageModelArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.transcribe.LanguageModelArgs.builder
     conf.logicalName2tagName(name) match
@@ -20,7 +20,7 @@ object transcribe:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Resource for managing an AWS Transcribe VocabularyFilter. */
-  def VocabularyFilter(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def VocabularyFilter(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.transcribe.VocabularyFilterArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.transcribe.VocabularyFilterArgs.builder
     conf.logicalName2tagName(name) match
@@ -45,7 +45,7 @@ object transcribe:
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
 
   /** Resource for managing an AWS Transcribe Vocabulary. */
-  def Vocabulary(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def Vocabulary(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.transcribe.VocabularyArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.transcribe.VocabularyArgs.builder
     conf.logicalName2tagName(name) match
@@ -56,7 +56,7 @@ object transcribe:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Resource for managing an AWS Transcribe MedicalVocabulary. */
-  def MedicalVocabulary(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def MedicalVocabulary(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.transcribe.MedicalVocabularyArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.transcribe.MedicalVocabularyArgs.builder
     conf.logicalName2tagName(name) match

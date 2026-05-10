@@ -30,7 +30,7 @@ object codegurureviewer:
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
 
   /** Resource for managing an AWS CodeGuru Reviewer Repository Association. */
-  def RepositoryAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def RepositoryAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.codegurureviewer.RepositoryAssociationArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.codegurureviewer.RepositoryAssociationArgs.builder
     conf.logicalName2tagName(name) match

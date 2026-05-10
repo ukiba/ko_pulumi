@@ -5,7 +5,7 @@ import com.pulumi.resources.CustomResourceOptions
 
 object appintegrations:
   /** Provides an Amazon AppIntegrations Data Integration resource. */
-  def DataIntegration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def DataIntegration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.appintegrations.DataIntegrationArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.appintegrations.DataIntegrationArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -38,13 +38,13 @@ object appintegrations:
     export com.pulumi.aws.appintegrations.AppintegrationsFunctions.*
   extension (self: AppintegrationsFunctions.type)
     /** Use this data source to get information on an existing AppIntegrations Event Integration. */
-    def getEventIntegration(args: Endofunction[com.pulumi.aws.appintegrations.inputs.GetEventIntegrationArgs.Builder] = identity):
+    def getEventIntegration(args: Endofunction[com.pulumi.aws.appintegrations.inputs.GetEventIntegrationArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.appintegrations.outputs.GetEventIntegrationResult] =
       val argsBuilder = com.pulumi.aws.appintegrations.inputs.GetEventIntegrationArgs.builder
       com.pulumi.aws.appintegrations.AppintegrationsFunctions.getEventIntegration(args(argsBuilder).build)
 
     /** Use this data source to get information on an existing AppIntegrations Event Integration. */
-    def getEventIntegrationPlain(args: Endofunction[com.pulumi.aws.appintegrations.inputs.GetEventIntegrationPlainArgs.Builder] = identity):
+    def getEventIntegrationPlain(args: Endofunction[com.pulumi.aws.appintegrations.inputs.GetEventIntegrationPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.appintegrations.outputs.GetEventIntegrationResult] =
       val argsBuilder = com.pulumi.aws.appintegrations.inputs.GetEventIntegrationPlainArgs.builder
       com.pulumi.aws.appintegrations.AppintegrationsFunctions.getEventIntegrationPlain(args(argsBuilder).build)

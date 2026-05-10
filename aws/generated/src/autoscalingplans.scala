@@ -12,7 +12,7 @@ object autoscalingplans:
    *  An `aws.iam.ServiceLinkedRole` resource can be used to manually manage this role.
    *  See the [AWS documentation](https://docs.aws.amazon.com/autoscaling/plans/userguide/aws-auto-scaling-service-linked-roles.html#create-service-linked-role-manual) for more details.
    */
-  def ScalingPlan(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def ScalingPlan(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.autoscalingplans.ScalingPlanArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.autoscalingplans.ScalingPlanArgs.builder
     conf.logicalName2pysicalName(name) match

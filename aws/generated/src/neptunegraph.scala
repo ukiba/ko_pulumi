@@ -24,7 +24,7 @@ object neptunegraph:
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
 
   /** The `aws.neptunegraph.Graph` resource creates an Amazon Analytics Graph. */
-  def Graph(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def Graph(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.neptunegraph.GraphArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.neptunegraph.GraphArgs.builder
     conf.logicalName2tagName(name) match

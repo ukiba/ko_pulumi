@@ -5,7 +5,7 @@ import com.pulumi.resources.CustomResourceOptions
 
 object opensearchingest:
   /** Resource for managing an AWS OpenSearch Ingestion Pipeline. */
-  def Pipeline(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def Pipeline(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.opensearchingest.PipelineArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.opensearchingest.PipelineArgs.builder
     conf.logicalName2tagName(name) match

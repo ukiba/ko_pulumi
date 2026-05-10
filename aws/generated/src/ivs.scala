@@ -28,7 +28,7 @@ object ivs:
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
 
   /** Resource for managing an AWS IVS (Interactive Video) Channel. */
-  def Channel(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def Channel(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.ivs.ChannelArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.ivs.ChannelArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -42,7 +42,7 @@ object ivs:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Resource for managing an AWS IVS (Interactive Video) Playback Key Pair. */
-  def PlaybackKeyPair(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def PlaybackKeyPair(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.ivs.PlaybackKeyPairArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.ivs.PlaybackKeyPairArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -61,19 +61,19 @@ object ivs:
     export com.pulumi.aws.ivs.IvsFunctions.*
   extension (self: IvsFunctions.type)
     /** Data source for managing an AWS IVS (Interactive Video) Stream Key. */
-    def getStreamKey(args: Endofunction[com.pulumi.aws.ivs.inputs.GetStreamKeyArgs.Builder] = identity):
+    def getStreamKey(args: Endofunction[com.pulumi.aws.ivs.inputs.GetStreamKeyArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.ivs.outputs.GetStreamKeyResult] =
       val argsBuilder = com.pulumi.aws.ivs.inputs.GetStreamKeyArgs.builder
       com.pulumi.aws.ivs.IvsFunctions.getStreamKey(args(argsBuilder).build)
 
     /** Data source for managing an AWS IVS (Interactive Video) Stream Key. */
-    def getStreamKeyPlain(args: Endofunction[com.pulumi.aws.ivs.inputs.GetStreamKeyPlainArgs.Builder] = identity):
+    def getStreamKeyPlain(args: Endofunction[com.pulumi.aws.ivs.inputs.GetStreamKeyPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.ivs.outputs.GetStreamKeyResult] =
       val argsBuilder = com.pulumi.aws.ivs.inputs.GetStreamKeyPlainArgs.builder
       com.pulumi.aws.ivs.IvsFunctions.getStreamKeyPlain(args(argsBuilder).build)
 
   /** Resource for managing an AWS IVS (Interactive Video) Recording Configuration. */
-  def RecordingConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def RecordingConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.ivs.RecordingConfigurationArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.ivs.RecordingConfigurationArgs.builder
     conf.logicalName2pysicalName(name) match

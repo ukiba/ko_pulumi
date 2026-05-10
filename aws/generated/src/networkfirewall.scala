@@ -56,7 +56,7 @@ object networkfirewall:
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
 
   /** Resource for managing an AWS Network Firewall TLS Inspection Configuration. */
-  def TlsInspectionConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def TlsInspectionConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.networkfirewall.TlsInspectionConfigurationArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.networkfirewall.TlsInspectionConfigurationArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -98,43 +98,43 @@ object networkfirewall:
     export com.pulumi.aws.networkfirewall.NetworkfirewallFunctions.*
   extension (self: NetworkfirewallFunctions.type)
     /** Retrieve information about a firewall. */
-    def getFirewall(args: Endofunction[com.pulumi.aws.networkfirewall.inputs.GetFirewallArgs.Builder] = identity):
+    def getFirewall(args: Endofunction[com.pulumi.aws.networkfirewall.inputs.GetFirewallArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.networkfirewall.outputs.GetFirewallResult] =
       val argsBuilder = com.pulumi.aws.networkfirewall.inputs.GetFirewallArgs.builder
       com.pulumi.aws.networkfirewall.NetworkfirewallFunctions.getFirewall(args(argsBuilder).build)
 
     /** Retrieve information about a firewall. */
-    def getFirewallPlain(args: Endofunction[com.pulumi.aws.networkfirewall.inputs.GetFirewallPlainArgs.Builder] = identity):
+    def getFirewallPlain(args: Endofunction[com.pulumi.aws.networkfirewall.inputs.GetFirewallPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.networkfirewall.outputs.GetFirewallResult] =
       val argsBuilder = com.pulumi.aws.networkfirewall.inputs.GetFirewallPlainArgs.builder
       com.pulumi.aws.networkfirewall.NetworkfirewallFunctions.getFirewallPlain(args(argsBuilder).build)
 
     /** Retrieve information about a firewall policy. */
-    def getFirewallPolicy(args: Endofunction[com.pulumi.aws.networkfirewall.inputs.GetFirewallPolicyArgs.Builder] = identity):
+    def getFirewallPolicy(args: Endofunction[com.pulumi.aws.networkfirewall.inputs.GetFirewallPolicyArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.networkfirewall.outputs.GetFirewallPolicyResult] =
       val argsBuilder = com.pulumi.aws.networkfirewall.inputs.GetFirewallPolicyArgs.builder
       com.pulumi.aws.networkfirewall.NetworkfirewallFunctions.getFirewallPolicy(args(argsBuilder).build)
 
     /** Retrieve information about a firewall policy. */
-    def getFirewallPolicyPlain(args: Endofunction[com.pulumi.aws.networkfirewall.inputs.GetFirewallPolicyPlainArgs.Builder] = identity):
+    def getFirewallPolicyPlain(args: Endofunction[com.pulumi.aws.networkfirewall.inputs.GetFirewallPolicyPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.networkfirewall.outputs.GetFirewallPolicyResult] =
       val argsBuilder = com.pulumi.aws.networkfirewall.inputs.GetFirewallPolicyPlainArgs.builder
       com.pulumi.aws.networkfirewall.NetworkfirewallFunctions.getFirewallPolicyPlain(args(argsBuilder).build)
 
     /** Retrieve information about a Network Firewall resource policy. */
-    def getResourcePolicy(args: Endofunction[com.pulumi.aws.networkfirewall.inputs.GetResourcePolicyArgs.Builder] = identity):
+    def getResourcePolicy(args: Endofunction[com.pulumi.aws.networkfirewall.inputs.GetResourcePolicyArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.networkfirewall.outputs.GetResourcePolicyResult] =
       val argsBuilder = com.pulumi.aws.networkfirewall.inputs.GetResourcePolicyArgs.builder
       com.pulumi.aws.networkfirewall.NetworkfirewallFunctions.getResourcePolicy(args(argsBuilder).build)
 
     /** Retrieve information about a Network Firewall resource policy. */
-    def getResourcePolicyPlain(args: Endofunction[com.pulumi.aws.networkfirewall.inputs.GetResourcePolicyPlainArgs.Builder] = identity):
+    def getResourcePolicyPlain(args: Endofunction[com.pulumi.aws.networkfirewall.inputs.GetResourcePolicyPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.networkfirewall.outputs.GetResourcePolicyResult] =
       val argsBuilder = com.pulumi.aws.networkfirewall.inputs.GetResourcePolicyPlainArgs.builder
       com.pulumi.aws.networkfirewall.NetworkfirewallFunctions.getResourcePolicyPlain(args(argsBuilder).build)
 
   /** Provides an AWS Network Firewall Rule Group Resource */
-  def RuleGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def RuleGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.networkfirewall.RuleGroupArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.networkfirewall.RuleGroupArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -177,7 +177,7 @@ object networkfirewall:
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
 
   /** Provides an AWS Network Firewall Firewall Policy Resource */
-  def FirewallPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def FirewallPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.networkfirewall.FirewallPolicyArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.networkfirewall.FirewallPolicyArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -191,7 +191,7 @@ object networkfirewall:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Provides an AWS Network Firewall Resource Policy Resource for a rule group or firewall policy. */
-  def ResourcePolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def ResourcePolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.networkfirewall.ResourcePolicyArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.networkfirewall.ResourcePolicyArgs.builder
     com.pulumi.aws.networkfirewall.ResourcePolicy(name,
@@ -213,7 +213,7 @@ object networkfirewall:
    * 
    *  Use `aws.networkfirewall.VpcEndpointAssociation` to establish new firewall endpoints in any Availability Zone where the firewall is already being used. The first use of a firewall in an Availability Zone must be defined by `aws.networkfirewall.Firewall` resource and `subnetMapping` argument.
    */
-  def VpcEndpointAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def VpcEndpointAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.networkfirewall.VpcEndpointAssociationArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.networkfirewall.VpcEndpointAssociationArgs.builder
     conf.logicalName2tagName(name) match
@@ -224,7 +224,7 @@ object networkfirewall:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Provides an AWS Network Firewall Logging Configuration Resource */
-  def LoggingConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def LoggingConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.networkfirewall.LoggingConfigurationArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.networkfirewall.LoggingConfigurationArgs.builder
     com.pulumi.aws.networkfirewall.LoggingConfiguration(name,
@@ -232,7 +232,7 @@ object networkfirewall:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Provides an AWS Network Firewall Firewall Resource */
-  def Firewall(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def Firewall(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.networkfirewall.FirewallArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.networkfirewall.FirewallArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -253,7 +253,7 @@ object networkfirewall:
    * 
    *  &gt; **NOTE:** If the `transitGatewayId` argument in the `aws.networkfirewall.Firewall` resource is used to attach a firewall to a transit gateway in a cross-account setup (where **Auto accept shared attachments** is disabled), the resource will be considered created when the transit gateway attachment is in the *Pending Acceptance* state and the firewall is in the *Provisioning* status. At this point, you can use the `aws.networkfirewall.FirewallTransitGatewayAttachmentAccepter` resource to finalize the network firewall deployment. Once the transit gateway attachment reaches the *Available* state, the firewall status *Ready*.
    */
-  def FirewallTransitGatewayAttachmentAccepter(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def FirewallTransitGatewayAttachmentAccepter(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.networkfirewall.FirewallTransitGatewayAttachmentAccepterArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.networkfirewall.FirewallTransitGatewayAttachmentAccepterArgs.builder
     com.pulumi.aws.networkfirewall.FirewallTransitGatewayAttachmentAccepter(name,

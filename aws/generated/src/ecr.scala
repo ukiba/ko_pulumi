@@ -10,37 +10,37 @@ object ecr:
     export com.pulumi.aws.ecr.EcrFunctions.*
   extension (self: EcrFunctions.type)
     /** The ECR Authorization Token data source allows the authorization token, proxy endpoint, token expiration date, user name and password to be retrieved for an ECR repository. */
-    def getAuthorizationToken(args: Endofunction[com.pulumi.aws.ecr.inputs.GetAuthorizationTokenArgs.Builder] = identity):
+    def getAuthorizationToken(args: Endofunction[com.pulumi.aws.ecr.inputs.GetAuthorizationTokenArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.ecr.outputs.GetAuthorizationTokenResult] =
       val argsBuilder = com.pulumi.aws.ecr.inputs.GetAuthorizationTokenArgs.builder
       com.pulumi.aws.ecr.EcrFunctions.getAuthorizationToken(args(argsBuilder).build)
 
     /** The ECR Authorization Token data source allows the authorization token, proxy endpoint, token expiration date, user name and password to be retrieved for an ECR repository. */
-    def getAuthorizationTokenPlain(args: Endofunction[com.pulumi.aws.ecr.inputs.GetAuthorizationTokenPlainArgs.Builder] = identity):
+    def getAuthorizationTokenPlain(args: Endofunction[com.pulumi.aws.ecr.inputs.GetAuthorizationTokenPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.ecr.outputs.GetAuthorizationTokenResult] =
       val argsBuilder = com.pulumi.aws.ecr.inputs.GetAuthorizationTokenPlainArgs.builder
       com.pulumi.aws.ecr.EcrFunctions.getAuthorizationTokenPlain(args(argsBuilder).build)
 
     /** The ECR Image data source allows the details of an image with a particular tag or digest to be retrieved. */
-    def getImage(args: Endofunction[com.pulumi.aws.ecr.inputs.GetImageArgs.Builder] = identity):
+    def getImage(args: Endofunction[com.pulumi.aws.ecr.inputs.GetImageArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.ecr.outputs.GetImageResult] =
       val argsBuilder = com.pulumi.aws.ecr.inputs.GetImageArgs.builder
       com.pulumi.aws.ecr.EcrFunctions.getImage(args(argsBuilder).build)
 
     /** The ECR Image data source allows the details of an image with a particular tag or digest to be retrieved. */
-    def getImagePlain(args: Endofunction[com.pulumi.aws.ecr.inputs.GetImagePlainArgs.Builder] = identity):
+    def getImagePlain(args: Endofunction[com.pulumi.aws.ecr.inputs.GetImagePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.ecr.outputs.GetImageResult] =
       val argsBuilder = com.pulumi.aws.ecr.inputs.GetImagePlainArgs.builder
       com.pulumi.aws.ecr.EcrFunctions.getImagePlain(args(argsBuilder).build)
 
     /** The ECR Images data source allows the list of images in a specified repository to be retrieved. */
-    def getImages(args: Endofunction[com.pulumi.aws.ecr.inputs.GetImagesArgs.Builder] = identity):
+    def getImages(args: Endofunction[com.pulumi.aws.ecr.inputs.GetImagesArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.ecr.outputs.GetImagesResult] =
       val argsBuilder = com.pulumi.aws.ecr.inputs.GetImagesArgs.builder
       com.pulumi.aws.ecr.EcrFunctions.getImages(args(argsBuilder).build)
 
     /** The ECR Images data source allows the list of images in a specified repository to be retrieved. */
-    def getImagesPlain(args: Endofunction[com.pulumi.aws.ecr.inputs.GetImagesPlainArgs.Builder] = identity):
+    def getImagesPlain(args: Endofunction[com.pulumi.aws.ecr.inputs.GetImagesPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.ecr.outputs.GetImagesResult] =
       val argsBuilder = com.pulumi.aws.ecr.inputs.GetImagesPlainArgs.builder
       com.pulumi.aws.ecr.EcrFunctions.getImagesPlain(args(argsBuilder).build)
@@ -50,7 +50,7 @@ object ecr:
      * 
      *  &gt; For more information about building AWS ECR lifecycle policy documents, see the [AWS ECR Lifecycle Policy Document Guide](https://docs.aws.amazon.com/AmazonECR/latest/userguide/LifecyclePolicies.html).
      */
-    def getLifecyclePolicyDocument(args: Endofunction[com.pulumi.aws.ecr.inputs.GetLifecyclePolicyDocumentArgs.Builder] = identity):
+    def getLifecyclePolicyDocument(args: Endofunction[com.pulumi.aws.ecr.inputs.GetLifecyclePolicyDocumentArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.ecr.outputs.GetLifecyclePolicyDocumentResult] =
       val argsBuilder = com.pulumi.aws.ecr.inputs.GetLifecyclePolicyDocumentArgs.builder
       com.pulumi.aws.ecr.EcrFunctions.getLifecyclePolicyDocument(args(argsBuilder).build)
@@ -60,55 +60,55 @@ object ecr:
      * 
      *  &gt; For more information about building AWS ECR lifecycle policy documents, see the [AWS ECR Lifecycle Policy Document Guide](https://docs.aws.amazon.com/AmazonECR/latest/userguide/LifecyclePolicies.html).
      */
-    def getLifecyclePolicyDocumentPlain(args: Endofunction[com.pulumi.aws.ecr.inputs.GetLifecyclePolicyDocumentPlainArgs.Builder] = identity):
+    def getLifecyclePolicyDocumentPlain(args: Endofunction[com.pulumi.aws.ecr.inputs.GetLifecyclePolicyDocumentPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.ecr.outputs.GetLifecyclePolicyDocumentResult] =
       val argsBuilder = com.pulumi.aws.ecr.inputs.GetLifecyclePolicyDocumentPlainArgs.builder
       com.pulumi.aws.ecr.EcrFunctions.getLifecyclePolicyDocumentPlain(args(argsBuilder).build)
 
     /** The ECR Pull Through Cache Rule data source allows the upstream registry URL and registry ID to be retrieved for a Pull Through Cache Rule. */
-    def getPullThroughCacheRule(args: Endofunction[com.pulumi.aws.ecr.inputs.GetPullThroughCacheRuleArgs.Builder] = identity):
+    def getPullThroughCacheRule(args: Endofunction[com.pulumi.aws.ecr.inputs.GetPullThroughCacheRuleArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.ecr.outputs.GetPullThroughCacheRuleResult] =
       val argsBuilder = com.pulumi.aws.ecr.inputs.GetPullThroughCacheRuleArgs.builder
       com.pulumi.aws.ecr.EcrFunctions.getPullThroughCacheRule(args(argsBuilder).build)
 
     /** The ECR Pull Through Cache Rule data source allows the upstream registry URL and registry ID to be retrieved for a Pull Through Cache Rule. */
-    def getPullThroughCacheRulePlain(args: Endofunction[com.pulumi.aws.ecr.inputs.GetPullThroughCacheRulePlainArgs.Builder] = identity):
+    def getPullThroughCacheRulePlain(args: Endofunction[com.pulumi.aws.ecr.inputs.GetPullThroughCacheRulePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.ecr.outputs.GetPullThroughCacheRuleResult] =
       val argsBuilder = com.pulumi.aws.ecr.inputs.GetPullThroughCacheRulePlainArgs.builder
       com.pulumi.aws.ecr.EcrFunctions.getPullThroughCacheRulePlain(args(argsBuilder).build)
 
     /** Data source for providing information on AWS ECR (Elastic Container Registry) Repositories. */
-    def getRepositories(args: Endofunction[com.pulumi.aws.ecr.inputs.GetRepositoriesArgs.Builder] = identity):
+    def getRepositories(args: Endofunction[com.pulumi.aws.ecr.inputs.GetRepositoriesArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.ecr.outputs.GetRepositoriesResult] =
       val argsBuilder = com.pulumi.aws.ecr.inputs.GetRepositoriesArgs.builder
       com.pulumi.aws.ecr.EcrFunctions.getRepositories(args(argsBuilder).build)
 
     /** Data source for providing information on AWS ECR (Elastic Container Registry) Repositories. */
-    def getRepositoriesPlain(args: Endofunction[com.pulumi.aws.ecr.inputs.GetRepositoriesPlainArgs.Builder] = identity):
+    def getRepositoriesPlain(args: Endofunction[com.pulumi.aws.ecr.inputs.GetRepositoriesPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.ecr.outputs.GetRepositoriesResult] =
       val argsBuilder = com.pulumi.aws.ecr.inputs.GetRepositoriesPlainArgs.builder
       com.pulumi.aws.ecr.EcrFunctions.getRepositoriesPlain(args(argsBuilder).build)
 
     /** The ECR Repository data source allows the ARN, Repository URI and Registry ID to be retrieved for an ECR repository. */
-    def getRepository(args: Endofunction[com.pulumi.aws.ecr.inputs.GetRepositoryArgs.Builder] = identity):
+    def getRepository(args: Endofunction[com.pulumi.aws.ecr.inputs.GetRepositoryArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.ecr.outputs.GetRepositoryResult] =
       val argsBuilder = com.pulumi.aws.ecr.inputs.GetRepositoryArgs.builder
       com.pulumi.aws.ecr.EcrFunctions.getRepository(args(argsBuilder).build)
 
     /** The ECR Repository data source allows the ARN, Repository URI and Registry ID to be retrieved for an ECR repository. */
-    def getRepositoryPlain(args: Endofunction[com.pulumi.aws.ecr.inputs.GetRepositoryPlainArgs.Builder] = identity):
+    def getRepositoryPlain(args: Endofunction[com.pulumi.aws.ecr.inputs.GetRepositoryPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.ecr.outputs.GetRepositoryResult] =
       val argsBuilder = com.pulumi.aws.ecr.inputs.GetRepositoryPlainArgs.builder
       com.pulumi.aws.ecr.EcrFunctions.getRepositoryPlain(args(argsBuilder).build)
 
     /** The ECR Repository Creation Template data source allows the template details to be retrieved for a Repository Creation Template. */
-    def getRepositoryCreationTemplate(args: Endofunction[com.pulumi.aws.ecr.inputs.GetRepositoryCreationTemplateArgs.Builder] = identity):
+    def getRepositoryCreationTemplate(args: Endofunction[com.pulumi.aws.ecr.inputs.GetRepositoryCreationTemplateArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.ecr.outputs.GetRepositoryCreationTemplateResult] =
       val argsBuilder = com.pulumi.aws.ecr.inputs.GetRepositoryCreationTemplateArgs.builder
       com.pulumi.aws.ecr.EcrFunctions.getRepositoryCreationTemplate(args(argsBuilder).build)
 
     /** The ECR Repository Creation Template data source allows the template details to be retrieved for a Repository Creation Template. */
-    def getRepositoryCreationTemplatePlain(args: Endofunction[com.pulumi.aws.ecr.inputs.GetRepositoryCreationTemplatePlainArgs.Builder] = identity):
+    def getRepositoryCreationTemplatePlain(args: Endofunction[com.pulumi.aws.ecr.inputs.GetRepositoryCreationTemplatePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.ecr.outputs.GetRepositoryCreationTemplateResult] =
       val argsBuilder = com.pulumi.aws.ecr.inputs.GetRepositoryCreationTemplatePlainArgs.builder
       com.pulumi.aws.ecr.EcrFunctions.getRepositoryCreationTemplatePlain(args(argsBuilder).build)
@@ -146,7 +146,7 @@ object ecr:
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
 
   /** Provides an Elastic Container Registry Scanning Configuration. Can&#39;t be completely deleted, instead reverts to the default `BASIC` scanning configuration without rules. */
-  def RegistryScanningConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def RegistryScanningConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.ecr.RegistryScanningConfigurationArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.ecr.RegistryScanningConfigurationArgs.builder
     com.pulumi.aws.ecr.RegistryScanningConfiguration(name,
@@ -173,7 +173,7 @@ object ecr:
       builder.imageTagMutabilityExclusionFilters(args.map(_(argsBuilder).build)*)
 
   /** Provides a resource to manage AWS ECR account settings */
-  def AccountSetting(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def AccountSetting(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.ecr.AccountSettingArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.ecr.AccountSettingArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -200,7 +200,7 @@ object ecr:
    * 
    *  &gt; **NOTE:** The AWS ECR API seems to reorder rules based on `rulePriority`. If you define multiple rules that are not sorted in ascending `rulePriority` order in the this provider code, the resource will be flagged for recreation every deployment.
    */
-  def LifecyclePolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def LifecyclePolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.ecr.LifecyclePolicyArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.ecr.LifecyclePolicyArgs.builder
     com.pulumi.aws.ecr.LifecyclePolicy(name,
@@ -212,7 +212,7 @@ object ecr:
    * 
    *  &gt; **NOTE on ECR Registry Policies:** While the AWS Management Console interface may suggest the ability to define multiple policies by creating multiple statements, ECR registry policies are effectively managed as singular entities at the regional level by the AWS APIs. Therefore, the `aws.ecr.RegistryPolicy` resource should be configured only once per region with all necessary statements defined in the same policy. Attempting to define multiple `aws.ecr.RegistryPolicy` resources may result in perpetual differences, with one policy overriding another.
    */
-  def RegistryPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def RegistryPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.ecr.RegistryPolicyArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.ecr.RegistryPolicyArgs.builder
     com.pulumi.aws.ecr.RegistryPolicy(name,
@@ -230,7 +230,7 @@ object ecr:
       builder.policy(args(argsBuilder).build)
 
   /** Manages an AWS ECR (Elastic Container Registry) Pull Time Update Exclusion. */
-  def PullTimeUpdateExclusion(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def PullTimeUpdateExclusion(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.ecr.PullTimeUpdateExclusionArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.ecr.PullTimeUpdateExclusionArgs.builder
     com.pulumi.aws.ecr.PullTimeUpdateExclusion(name,
@@ -238,7 +238,7 @@ object ecr:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Provides an Elastic Container Registry Repository. */
-  def Repository(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def Repository(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.ecr.RepositoryArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.ecr.RepositoryArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -252,7 +252,7 @@ object ecr:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Provides an Elastic Container Registry Repository Creation Template. */
-  def RepositoryCreationTemplate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def RepositoryCreationTemplate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.ecr.RepositoryCreationTemplateArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.ecr.RepositoryCreationTemplateArgs.builder
     com.pulumi.aws.ecr.RepositoryCreationTemplate(name,
@@ -264,7 +264,7 @@ object ecr:
    * 
    *  Note that currently only one policy may be applied to a repository.
    */
-  def RepositoryPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def RepositoryPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.ecr.RepositoryPolicyArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.ecr.RepositoryPolicyArgs.builder
     com.pulumi.aws.ecr.RepositoryPolicy(name,
@@ -277,7 +277,7 @@ object ecr:
    *  More information about pull through cache rules, including the set of supported
    *  upstream repositories, see [Using pull through cache rules](https://docs.aws.amazon.com/AmazonECR/latest/userguide/pull-through-cache.html).
    */
-  def PullThroughCacheRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def PullThroughCacheRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.ecr.PullThroughCacheRuleArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.ecr.PullThroughCacheRuleArgs.builder
     com.pulumi.aws.ecr.PullThroughCacheRule(name,
@@ -305,7 +305,7 @@ object ecr:
       builder.replicationConfiguration(args(argsBuilder).build)
 
   /** Provides an Elastic Container Registry Replication Configuration. */
-  def ReplicationConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def ReplicationConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.ecr.ReplicationConfigurationArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.ecr.ReplicationConfigurationArgs.builder
     com.pulumi.aws.ecr.ReplicationConfiguration(name,

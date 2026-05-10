@@ -33,19 +33,19 @@ object resourceexplorer:
     export com.pulumi.aws.resourceexplorer.ResourceexplorerFunctions.*
   extension (self: ResourceexplorerFunctions.type)
     /** Data source for managing an AWS Resource Explorer Search. */
-    def search(args: Endofunction[com.pulumi.aws.resourceexplorer.inputs.SearchArgs.Builder] = identity):
+    def search(args: Endofunction[com.pulumi.aws.resourceexplorer.inputs.SearchArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.resourceexplorer.outputs.SearchResult] =
       val argsBuilder = com.pulumi.aws.resourceexplorer.inputs.SearchArgs.builder
       com.pulumi.aws.resourceexplorer.ResourceexplorerFunctions.search(args(argsBuilder).build)
 
     /** Data source for managing an AWS Resource Explorer Search. */
-    def searchPlain(args: Endofunction[com.pulumi.aws.resourceexplorer.inputs.SearchPlainArgs.Builder] = identity):
+    def searchPlain(args: Endofunction[com.pulumi.aws.resourceexplorer.inputs.SearchPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.resourceexplorer.outputs.SearchResult] =
       val argsBuilder = com.pulumi.aws.resourceexplorer.inputs.SearchPlainArgs.builder
       com.pulumi.aws.resourceexplorer.ResourceexplorerFunctions.searchPlain(args(argsBuilder).build)
 
   /** Provides a resource to manage a Resource Explorer index in the current AWS Region. */
-  def Index(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def Index(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.resourceexplorer.IndexArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.resourceexplorer.IndexArgs.builder
     conf.logicalName2tagName(name) match
@@ -66,7 +66,7 @@ object resourceexplorer:
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
 
   /** Provides a resource to manage a Resource Explorer view. */
-  def View(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def View(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.resourceexplorer.ViewArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.resourceexplorer.ViewArgs.builder
     conf.logicalName2pysicalName(name) match

@@ -5,7 +5,7 @@ import com.pulumi.resources.CustomResourceOptions
 
 object codepipeline:
   /** Provides a CodePipeline. */
-  def Pipeline(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def Pipeline(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.codepipeline.PipelineArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.codepipeline.PipelineArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -42,7 +42,7 @@ object codepipeline:
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
 
   /** Provides a CodeDeploy CustomActionType */
-  def CustomActionType(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def CustomActionType(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.codepipeline.CustomActionTypeArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.codepipeline.CustomActionTypeArgs.builder
     conf.logicalName2tagName(name) match
@@ -82,7 +82,7 @@ object codepipeline:
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
 
   /** Provides a CodePipeline Webhook. */
-  def Webhook(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def Webhook(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.codepipeline.WebhookArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.codepipeline.WebhookArgs.builder
     conf.logicalName2pysicalName(name) match

@@ -29,7 +29,7 @@ object cloudtrail:
      * 
      *  &gt; **Warning:** This data source is deprecated. The AWS documentation [states that](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/create-s3-bucket-policy-for-cloudtrail.html#troubleshooting-s3-bucket-policy) a [service principal name](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#principal-services) should be used instead of an AWS account ID in any relevant IAM policy.
      */
-    def getServiceAccount(args: Endofunction[com.pulumi.aws.cloudtrail.inputs.GetServiceAccountArgs.Builder] = identity):
+    def getServiceAccount(args: Endofunction[com.pulumi.aws.cloudtrail.inputs.GetServiceAccountArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.cloudtrail.outputs.GetServiceAccountResult] =
       val argsBuilder = com.pulumi.aws.cloudtrail.inputs.GetServiceAccountArgs.builder
       com.pulumi.aws.cloudtrail.CloudtrailFunctions.getServiceAccount(args(argsBuilder).build)
@@ -40,7 +40,7 @@ object cloudtrail:
      * 
      *  &gt; **Warning:** This data source is deprecated. The AWS documentation [states that](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/create-s3-bucket-policy-for-cloudtrail.html#troubleshooting-s3-bucket-policy) a [service principal name](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#principal-services) should be used instead of an AWS account ID in any relevant IAM policy.
      */
-    def getServiceAccountPlain(args: Endofunction[com.pulumi.aws.cloudtrail.inputs.GetServiceAccountPlainArgs.Builder] = identity):
+    def getServiceAccountPlain(args: Endofunction[com.pulumi.aws.cloudtrail.inputs.GetServiceAccountPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.cloudtrail.outputs.GetServiceAccountResult] =
       val argsBuilder = com.pulumi.aws.cloudtrail.inputs.GetServiceAccountPlainArgs.builder
       com.pulumi.aws.cloudtrail.CloudtrailFunctions.getServiceAccountPlain(args(argsBuilder).build)
@@ -52,7 +52,7 @@ object cloudtrail:
    * 
    *  &gt; **Tip:** For an organization trail, this resource must be in the master account of the organization.
    */
-  def Trail(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def Trail(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.cloudtrail.TrailArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.cloudtrail.TrailArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -98,7 +98,7 @@ object cloudtrail:
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
 
   /** Provides a resource to manage an AWS CloudTrail Delegated Administrator. */
-  def OrganizationDelegatedAdminAccount(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def OrganizationDelegatedAdminAccount(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.cloudtrail.OrganizationDelegatedAdminAccountArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.cloudtrail.OrganizationDelegatedAdminAccountArgs.builder
     com.pulumi.aws.cloudtrail.OrganizationDelegatedAdminAccount(name,
@@ -188,7 +188,7 @@ object cloudtrail:
    * 
    *  &gt; **Tip:** For an organization event data store you must create this resource in the management account.
    */
-  def EventDataStore(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def EventDataStore(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.cloudtrail.EventDataStoreArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.cloudtrail.EventDataStoreArgs.builder
     conf.logicalName2pysicalName(name) match

@@ -5,7 +5,7 @@ import com.pulumi.resources.CustomResourceOptions
 
 object emrcontainers:
   /** Manages an EMR Containers (EMR on EKS) Virtual Cluster. */
-  def VirtualCluster(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def VirtualCluster(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.emrcontainers.VirtualClusterArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.emrcontainers.VirtualClusterArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -33,7 +33,7 @@ object emrcontainers:
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
 
   /** Manages an EMR Containers (EMR on EKS) Job Template. */
-  def JobTemplate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def JobTemplate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.emrcontainers.JobTemplateArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.emrcontainers.JobTemplateArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -52,13 +52,13 @@ object emrcontainers:
     export com.pulumi.aws.emrcontainers.EmrcontainersFunctions.*
   extension (self: EmrcontainersFunctions.type)
     /** Retrieve information about an EMR Containers (EMR on EKS) Virtual Cluster. */
-    def getVirtualCluster(args: Endofunction[com.pulumi.aws.emrcontainers.inputs.GetVirtualClusterArgs.Builder] = identity):
+    def getVirtualCluster(args: Endofunction[com.pulumi.aws.emrcontainers.inputs.GetVirtualClusterArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.emrcontainers.outputs.GetVirtualClusterResult] =
       val argsBuilder = com.pulumi.aws.emrcontainers.inputs.GetVirtualClusterArgs.builder
       com.pulumi.aws.emrcontainers.EmrcontainersFunctions.getVirtualCluster(args(argsBuilder).build)
 
     /** Retrieve information about an EMR Containers (EMR on EKS) Virtual Cluster. */
-    def getVirtualClusterPlain(args: Endofunction[com.pulumi.aws.emrcontainers.inputs.GetVirtualClusterPlainArgs.Builder] = identity):
+    def getVirtualClusterPlain(args: Endofunction[com.pulumi.aws.emrcontainers.inputs.GetVirtualClusterPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.emrcontainers.outputs.GetVirtualClusterResult] =
       val argsBuilder = com.pulumi.aws.emrcontainers.inputs.GetVirtualClusterPlainArgs.builder
       com.pulumi.aws.emrcontainers.EmrcontainersFunctions.getVirtualClusterPlain(args(argsBuilder).build)

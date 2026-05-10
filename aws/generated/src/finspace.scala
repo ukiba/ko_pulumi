@@ -5,7 +5,7 @@ import com.pulumi.resources.CustomResourceOptions
 
 object finspace:
   /** Resource for managing an AWS FinSpace Kx Dataview. */
-  def KxDataview(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def KxDataview(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.finspace.KxDataviewArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.finspace.KxDataviewArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -19,7 +19,7 @@ object finspace:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Resource for managing an AWS FinSpace Kx User. */
-  def KxUser(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def KxUser(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.finspace.KxUserArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.finspace.KxUserArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -70,7 +70,7 @@ object finspace:
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
 
   /** Resource for managing an AWS FinSpace Kx Environment. */
-  def KxEnvironment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def KxEnvironment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.finspace.KxEnvironmentArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.finspace.KxEnvironmentArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -98,7 +98,7 @@ object finspace:
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
 
   /** Resource for managing an AWS FinSpace Kx Database. */
-  def KxDatabase(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def KxDatabase(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.finspace.KxDatabaseArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.finspace.KxDatabaseArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -112,7 +112,7 @@ object finspace:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Resource for managing an AWS FinSpace Kx Scaling Group. */
-  def KxScalingGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def KxScalingGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.finspace.KxScalingGroupArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.finspace.KxScalingGroupArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -214,7 +214,7 @@ object finspace:
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
 
   /** Resource for managing an AWS FinSpace Kx Volume. */
-  def KxVolume(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def KxVolume(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.finspace.KxVolumeArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.finspace.KxVolumeArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -228,7 +228,7 @@ object finspace:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Resource for managing an AWS FinSpace Kx Cluster. */
-  def KxCluster(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def KxCluster(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.finspace.KxClusterArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.finspace.KxClusterArgs.builder
     conf.logicalName2pysicalName(name) match

@@ -9,7 +9,7 @@ object guardduty:
    * 
    *  &gt; **NOTE:** Deleting this resource is equivalent to &#34;disabling&#34; GuardDuty for an AWS region, which removes all existing findings. You can set the `enable` attribute to `false` to instead &#34;suspend&#34; monitoring and feedback reporting while keeping existing data. See the [Suspending or Disabling Amazon GuardDuty documentation](https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_suspend-disable.html) for more information.
    */
-  def Detector(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def Detector(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.guardduty.DetectorArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.guardduty.DetectorArgs.builder
     conf.logicalName2tagName(name) match
@@ -37,7 +37,7 @@ object guardduty:
    * 
    *  &gt; **NOTE:** Deleting this resource does not disable the organization configuration feature, the resource is simply removed from state instead.
    */
-  def OrganizationConfigurationFeature(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def OrganizationConfigurationFeature(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.guardduty.OrganizationConfigurationFeatureArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.guardduty.OrganizationConfigurationFeatureArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -48,7 +48,7 @@ object guardduty:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Manages a GuardDuty Organization Admin Account. The AWS account utilizing this resource must be an Organizations primary account. More information about Organizations support in GuardDuty can be found in the [GuardDuty User Guide](https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_organizations.html). */
-  def OrganizationAdminAccount(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def OrganizationAdminAccount(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.guardduty.OrganizationAdminAccountArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.guardduty.OrganizationAdminAccountArgs.builder
     com.pulumi.aws.guardduty.OrganizationAdminAccount(name,
@@ -70,7 +70,7 @@ object guardduty:
    * 
    *  &gt; **NOTE:** This is an advanced resource. The provider will automatically assume management of the GuardDuty Organization Configuration without import and perform no actions on removal from the resource configuration.
    */
-  def OrganizationConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def OrganizationConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.guardduty.OrganizationConfigurationArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.guardduty.OrganizationConfigurationArgs.builder
     com.pulumi.aws.guardduty.OrganizationConfiguration(name,
@@ -82,7 +82,7 @@ object guardduty:
    * 
    *  &gt; **NOTE:** Deleting this resource does not disable the detector feature, the resource in simply removed from state instead.
    */
-  def DetectorFeature(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def DetectorFeature(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.guardduty.DetectorFeatureArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.guardduty.DetectorFeatureArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -107,7 +107,7 @@ object guardduty:
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
 
   /** Provides a resource to accept a pending GuardDuty invite on creation, ensure the detector has the correct primary account on read, and disassociate with the primary account upon removal. */
-  def InviteAccepter(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def InviteAccepter(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.guardduty.InviteAccepterArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.guardduty.InviteAccepterArgs.builder
     com.pulumi.aws.guardduty.InviteAccepter(name,
@@ -119,7 +119,7 @@ object guardduty:
    * 
    *  &gt; **Note:** Currently in GuardDuty, users from member accounts cannot upload and further manage ThreatIntelSets. ThreatIntelSets that are uploaded by the primary account are imposed on GuardDuty functionality in its member accounts. See the [GuardDuty API Documentation](https://docs.aws.amazon.com/guardduty/latest/ug/create-threat-intel-set.html)
    */
-  def ThreatIntelSet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def ThreatIntelSet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.guardduty.ThreatIntelSetArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.guardduty.ThreatIntelSetArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -138,25 +138,25 @@ object guardduty:
     export com.pulumi.aws.guardduty.GuarddutyFunctions.*
   extension (self: GuarddutyFunctions.type)
     /** Retrieve information about a GuardDuty detector. */
-    def getDetector(args: Endofunction[com.pulumi.aws.guardduty.inputs.GetDetectorArgs.Builder] = identity):
+    def getDetector(args: Endofunction[com.pulumi.aws.guardduty.inputs.GetDetectorArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.guardduty.outputs.GetDetectorResult] =
       val argsBuilder = com.pulumi.aws.guardduty.inputs.GetDetectorArgs.builder
       com.pulumi.aws.guardduty.GuarddutyFunctions.getDetector(args(argsBuilder).build)
 
     /** Retrieve information about a GuardDuty detector. */
-    def getDetectorPlain(args: Endofunction[com.pulumi.aws.guardduty.inputs.GetDetectorPlainArgs.Builder] = identity):
+    def getDetectorPlain(args: Endofunction[com.pulumi.aws.guardduty.inputs.GetDetectorPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.guardduty.outputs.GetDetectorResult] =
       val argsBuilder = com.pulumi.aws.guardduty.inputs.GetDetectorPlainArgs.builder
       com.pulumi.aws.guardduty.GuarddutyFunctions.getDetectorPlain(args(argsBuilder).build)
 
     /** Data source for managing an AWS GuardDuty Finding Ids. */
-    def getFindingIds(args: Endofunction[com.pulumi.aws.guardduty.inputs.GetFindingIdsArgs.Builder] = identity):
+    def getFindingIds(args: Endofunction[com.pulumi.aws.guardduty.inputs.GetFindingIdsArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.guardduty.outputs.GetFindingIdsResult] =
       val argsBuilder = com.pulumi.aws.guardduty.inputs.GetFindingIdsArgs.builder
       com.pulumi.aws.guardduty.GuarddutyFunctions.getFindingIds(args(argsBuilder).build)
 
     /** Data source for managing an AWS GuardDuty Finding Ids. */
-    def getFindingIdsPlain(args: Endofunction[com.pulumi.aws.guardduty.inputs.GetFindingIdsPlainArgs.Builder] = identity):
+    def getFindingIdsPlain(args: Endofunction[com.pulumi.aws.guardduty.inputs.GetFindingIdsPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.guardduty.outputs.GetFindingIdsResult] =
       val argsBuilder = com.pulumi.aws.guardduty.inputs.GetFindingIdsPlainArgs.builder
       com.pulumi.aws.guardduty.GuarddutyFunctions.getFindingIdsPlain(args(argsBuilder).build)
@@ -195,7 +195,7 @@ object guardduty:
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
 
   /** Provides a resource to manage a GuardDuty malware protection plan. */
-  def MalwareProtectionPlan(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def MalwareProtectionPlan(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.guardduty.MalwareProtectionPlanArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.guardduty.MalwareProtectionPlanArgs.builder
     conf.logicalName2tagName(name) match
@@ -210,7 +210,7 @@ object guardduty:
    * 
    *  &gt; **NOTE:** Deleting this resource does not disable the detector feature in the member account, the resource in simply removed from state instead.
    */
-  def MemberDetectorFeature(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def MemberDetectorFeature(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.guardduty.MemberDetectorFeatureArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.guardduty.MemberDetectorFeatureArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -236,7 +236,7 @@ object guardduty:
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
 
   /** Provides a resource to manage a GuardDuty member. To accept invitations in member accounts, see the `aws.guardduty.InviteAccepter` resource. */
-  def Member(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def Member(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.guardduty.MemberArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.guardduty.MemberArgs.builder
     com.pulumi.aws.guardduty.Member(name,
@@ -244,7 +244,7 @@ object guardduty:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Provides a resource to manage a GuardDuty PublishingDestination. Requires an existing GuardDuty Detector. */
-  def PublishingDestination(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def PublishingDestination(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.guardduty.PublishingDestinationArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.guardduty.PublishingDestinationArgs.builder
     conf.logicalName2tagName(name) match
@@ -259,7 +259,7 @@ object guardduty:
    * 
    *  &gt; **Note:** Currently in GuardDuty, users from member accounts cannot upload and further manage IPSets. IPSets that are uploaded by the primary account are imposed on GuardDuty functionality in its member accounts. See the [GuardDuty API Documentation](https://docs.aws.amazon.com/guardduty/latest/ug/create-ip-set.html)
    */
-  def IPSet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def IPSet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.guardduty.IPSetArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.guardduty.IPSetArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -273,7 +273,7 @@ object guardduty:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Provides a resource to manage a GuardDuty filter. */
-  def Filter(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def Filter(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.guardduty.FilterArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.guardduty.FilterArgs.builder
     conf.logicalName2pysicalName(name) match

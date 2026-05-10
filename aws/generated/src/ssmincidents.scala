@@ -46,7 +46,7 @@ object ssmincidents:
      * 
      *  Use this data source to manage a replication set in AWS Systems Manager Incident Manager.
      */
-    def getReplicationSet(args: Endofunction[com.pulumi.aws.ssmincidents.inputs.GetReplicationSetArgs.Builder] = identity):
+    def getReplicationSet(args: Endofunction[com.pulumi.aws.ssmincidents.inputs.GetReplicationSetArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.ssmincidents.outputs.GetReplicationSetResult] =
       val argsBuilder = com.pulumi.aws.ssmincidents.inputs.GetReplicationSetArgs.builder
       com.pulumi.aws.ssmincidents.SsmincidentsFunctions.getReplicationSet(args(argsBuilder).build)
@@ -56,19 +56,19 @@ object ssmincidents:
      * 
      *  Use this data source to manage a replication set in AWS Systems Manager Incident Manager.
      */
-    def getReplicationSetPlain(args: Endofunction[com.pulumi.aws.ssmincidents.inputs.GetReplicationSetPlainArgs.Builder] = identity):
+    def getReplicationSetPlain(args: Endofunction[com.pulumi.aws.ssmincidents.inputs.GetReplicationSetPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.ssmincidents.outputs.GetReplicationSetResult] =
       val argsBuilder = com.pulumi.aws.ssmincidents.inputs.GetReplicationSetPlainArgs.builder
       com.pulumi.aws.ssmincidents.SsmincidentsFunctions.getReplicationSetPlain(args(argsBuilder).build)
 
     /** Use this data source to manage a response plan in AWS Systems Manager Incident Manager. */
-    def getResponsePlan(args: Endofunction[com.pulumi.aws.ssmincidents.inputs.GetResponsePlanArgs.Builder] = identity):
+    def getResponsePlan(args: Endofunction[com.pulumi.aws.ssmincidents.inputs.GetResponsePlanArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.ssmincidents.outputs.GetResponsePlanResult] =
       val argsBuilder = com.pulumi.aws.ssmincidents.inputs.GetResponsePlanArgs.builder
       com.pulumi.aws.ssmincidents.SsmincidentsFunctions.getResponsePlan(args(argsBuilder).build)
 
     /** Use this data source to manage a response plan in AWS Systems Manager Incident Manager. */
-    def getResponsePlanPlain(args: Endofunction[com.pulumi.aws.ssmincidents.inputs.GetResponsePlanPlainArgs.Builder] = identity):
+    def getResponsePlanPlain(args: Endofunction[com.pulumi.aws.ssmincidents.inputs.GetResponsePlanPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.ssmincidents.outputs.GetResponsePlanResult] =
       val argsBuilder = com.pulumi.aws.ssmincidents.inputs.GetResponsePlanPlainArgs.builder
       com.pulumi.aws.ssmincidents.SsmincidentsFunctions.getResponsePlanPlain(args(argsBuilder).build)
@@ -78,7 +78,7 @@ object ssmincidents:
    * 
    *  &gt; **NOTE:** Deleting a replication set also deletes all Incident Manager related data including response plans, incident records, contacts and escalation plans.
    */
-  def ReplicationSet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def ReplicationSet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.ssmincidents.ReplicationSetArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.ssmincidents.ReplicationSetArgs.builder
     conf.logicalName2tagName(name) match
@@ -117,7 +117,7 @@ object ssmincidents:
    * 
    *  &gt; NOTE: A response plan implicitly depends on a replication set. If you configured your replication set in Pulumi, we recommend you add it to the `dependsOn` argument for the ResponsePlan Resource.
    */
-  def ResponsePlan(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def ResponsePlan(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.ssmincidents.ResponsePlanArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.ssmincidents.ResponsePlanArgs.builder
     conf.logicalName2pysicalName(name) match

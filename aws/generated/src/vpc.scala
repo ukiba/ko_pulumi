@@ -46,7 +46,7 @@ object vpc:
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
 
   /** Provides a resource for managing a VPC (Virtual Private Cloud) Route Server. */
-  def RouteServer(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def RouteServer(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.vpc.RouteServerArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.vpc.RouteServerArgs.builder
     conf.logicalName2tagName(name) match
@@ -65,7 +65,7 @@ object vpc:
    * 
    *  !&gt; **WARNING:** You should not use the `aws.vpc.SecurityGroupEgressRule` and `aws.vpc.SecurityGroupIngressRule` resources in conjunction with the `aws.ec2.SecurityGroup` resource with _in-line rules_ (using the `ingress` and `egress` arguments of `aws.ec2.SecurityGroup`) or the `aws.ec2.SecurityGroupRule` resource. Doing so may cause rule conflicts, perpetual differences, and result in rules being overwritten.
    */
-  def SecurityGroupIngressRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def SecurityGroupIngressRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.vpc.SecurityGroupIngressRuleArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.vpc.SecurityGroupIngressRuleArgs.builder
     conf.logicalName2tagName(name) match
@@ -82,7 +82,7 @@ object vpc:
       builder.timeouts(args(argsBuilder).build)
 
   /** Provides a resource for managing association between VPC (Virtual Private Cloud) route server and a VPC. */
-  def RouteServerVpcAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def RouteServerVpcAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.vpc.RouteServerVpcAssociationArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.vpc.RouteServerVpcAssociationArgs.builder
     com.pulumi.aws.vpc.RouteServerVpcAssociation(name,
@@ -98,7 +98,7 @@ object vpc:
    * 
    *  &gt; Destruction of this resource will not stop the verification process, only remove the resource from state.
    */
-  def EndpointServicePrivateDnsVerification(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def EndpointServicePrivateDnsVerification(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.vpc.EndpointServicePrivateDnsVerificationArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.vpc.EndpointServicePrivateDnsVerificationArgs.builder
     com.pulumi.aws.vpc.EndpointServicePrivateDnsVerification(name,
@@ -106,7 +106,7 @@ object vpc:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Provides a resource for managing a VPC (Virtual Private Cloud) Route Server Endpoint. */
-  def RouteServerEndpoint(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def RouteServerEndpoint(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.vpc.RouteServerEndpointArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.vpc.RouteServerEndpointArgs.builder
     conf.logicalName2tagName(name) match
@@ -123,7 +123,7 @@ object vpc:
       builder.timeouts(args(argsBuilder).build)
 
   /** Provides a resource for managing propagation between VPC (Virtual Private Cloud) route server and a route table. */
-  def RouteServerPropagation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def RouteServerPropagation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.vpc.RouteServerPropagationArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.vpc.RouteServerPropagationArgs.builder
     com.pulumi.aws.vpc.RouteServerPropagation(name,
@@ -146,43 +146,43 @@ object vpc:
     export com.pulumi.aws.vpc.VpcFunctions.*
   extension (self: VpcFunctions.type)
     /** Data source for managing an AWS EC2 (Elastic Compute Cloud) Vpc Endpoint Associations. */
-    def getEndpointAssociations(args: Endofunction[com.pulumi.aws.vpc.inputs.GetEndpointAssociationsArgs.Builder] = identity):
+    def getEndpointAssociations(args: Endofunction[com.pulumi.aws.vpc.inputs.GetEndpointAssociationsArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.vpc.outputs.GetEndpointAssociationsResult] =
       val argsBuilder = com.pulumi.aws.vpc.inputs.GetEndpointAssociationsArgs.builder
       com.pulumi.aws.vpc.VpcFunctions.getEndpointAssociations(args(argsBuilder).build)
 
     /** Data source for managing an AWS EC2 (Elastic Compute Cloud) Vpc Endpoint Associations. */
-    def getEndpointAssociationsPlain(args: Endofunction[com.pulumi.aws.vpc.inputs.GetEndpointAssociationsPlainArgs.Builder] = identity):
+    def getEndpointAssociationsPlain(args: Endofunction[com.pulumi.aws.vpc.inputs.GetEndpointAssociationsPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.vpc.outputs.GetEndpointAssociationsResult] =
       val argsBuilder = com.pulumi.aws.vpc.inputs.GetEndpointAssociationsPlainArgs.builder
       com.pulumi.aws.vpc.VpcFunctions.getEndpointAssociationsPlain(args(argsBuilder).build)
 
     /** `aws.vpc.getSecurityGroupRule` provides details about a specific security group rule. */
-    def getSecurityGroupRule(args: Endofunction[com.pulumi.aws.vpc.inputs.GetSecurityGroupRuleArgs.Builder] = identity):
+    def getSecurityGroupRule(args: Endofunction[com.pulumi.aws.vpc.inputs.GetSecurityGroupRuleArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.vpc.outputs.GetSecurityGroupRuleResult] =
       val argsBuilder = com.pulumi.aws.vpc.inputs.GetSecurityGroupRuleArgs.builder
       com.pulumi.aws.vpc.VpcFunctions.getSecurityGroupRule(args(argsBuilder).build)
 
     /** `aws.vpc.getSecurityGroupRule` provides details about a specific security group rule. */
-    def getSecurityGroupRulePlain(args: Endofunction[com.pulumi.aws.vpc.inputs.GetSecurityGroupRulePlainArgs.Builder] = identity):
+    def getSecurityGroupRulePlain(args: Endofunction[com.pulumi.aws.vpc.inputs.GetSecurityGroupRulePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.vpc.outputs.GetSecurityGroupRuleResult] =
       val argsBuilder = com.pulumi.aws.vpc.inputs.GetSecurityGroupRulePlainArgs.builder
       com.pulumi.aws.vpc.VpcFunctions.getSecurityGroupRulePlain(args(argsBuilder).build)
 
     /** This resource can be useful for getting back a set of security group rule IDs. */
-    def getSecurityGroupRules(args: Endofunction[com.pulumi.aws.vpc.inputs.GetSecurityGroupRulesArgs.Builder] = identity):
+    def getSecurityGroupRules(args: Endofunction[com.pulumi.aws.vpc.inputs.GetSecurityGroupRulesArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.vpc.outputs.GetSecurityGroupRulesResult] =
       val argsBuilder = com.pulumi.aws.vpc.inputs.GetSecurityGroupRulesArgs.builder
       com.pulumi.aws.vpc.VpcFunctions.getSecurityGroupRules(args(argsBuilder).build)
 
     /** This resource can be useful for getting back a set of security group rule IDs. */
-    def getSecurityGroupRulesPlain(args: Endofunction[com.pulumi.aws.vpc.inputs.GetSecurityGroupRulesPlainArgs.Builder] = identity):
+    def getSecurityGroupRulesPlain(args: Endofunction[com.pulumi.aws.vpc.inputs.GetSecurityGroupRulesPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.vpc.outputs.GetSecurityGroupRulesResult] =
       val argsBuilder = com.pulumi.aws.vpc.inputs.GetSecurityGroupRulesPlainArgs.builder
       com.pulumi.aws.vpc.VpcFunctions.getSecurityGroupRulesPlain(args(argsBuilder).build)
 
   /** Resource for managing Security Group VPC Associations. */
-  def SecurityGroupVpcAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def SecurityGroupVpcAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.vpc.SecurityGroupVpcAssociationArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.vpc.SecurityGroupVpcAssociationArgs.builder
     com.pulumi.aws.vpc.SecurityGroupVpcAssociation(name,
@@ -190,7 +190,7 @@ object vpc:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /** Provides a resource for managing a VPC (Virtual Private Cloud) Route Server Peer. */
-  def RouteServerPeer(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def RouteServerPeer(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.vpc.RouteServerPeerArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.vpc.RouteServerPeerArgs.builder
     conf.logicalName2tagName(name) match
@@ -206,7 +206,7 @@ object vpc:
    *  &gt; When using this resource, the `privateDnsEnabled` argument should be omitted on the parent `aws.ec2.VpcEndpoint` resource.
    *  Setting the value both places can lead to unintended behavior and persistent differences.
    */
-  def EndpointPrivateDns(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def EndpointPrivateDns(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.vpc.EndpointPrivateDnsArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.vpc.EndpointPrivateDnsArgs.builder
     com.pulumi.aws.vpc.EndpointPrivateDns(name,
@@ -222,7 +222,7 @@ object vpc:
    * 
    *  !&gt; **WARNING:** You should not use the `aws.vpc.SecurityGroupEgressRule` and `aws.vpc.SecurityGroupIngressRule` resources in conjunction with the `aws.ec2.SecurityGroup` resource with _in-line rules_ (using the `ingress` and `egress` arguments of `aws.ec2.SecurityGroup`) or the `aws.ec2.SecurityGroupRule` resource. Doing so may cause rule conflicts, perpetual differences, and result in rules being overwritten.
    */
-  def SecurityGroupEgressRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def SecurityGroupEgressRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.vpc.SecurityGroupEgressRuleArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.vpc.SecurityGroupEgressRuleArgs.builder
     conf.logicalName2tagName(name) match

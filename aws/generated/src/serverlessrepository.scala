@@ -5,7 +5,7 @@ import com.pulumi.resources.CustomResourceOptions
 
 object serverlessrepository:
   /** Deploys an Application CloudFormation Stack from the Serverless Application Repository. */
-  def CloudFormationStack(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def CloudFormationStack(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.serverlessrepository.CloudFormationStackArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.serverlessrepository.CloudFormationStackArgs.builder
     conf.logicalName2pysicalName(name) match
@@ -24,13 +24,13 @@ object serverlessrepository:
     export com.pulumi.aws.serverlessrepository.ServerlessrepositoryFunctions.*
   extension (self: ServerlessrepositoryFunctions.type)
     /** Use this data source to get information about an AWS Serverless Application Repository application. For example, this can be used to determine the required `capabilities` for an application. */
-    def getApplication(args: Endofunction[com.pulumi.aws.serverlessrepository.inputs.GetApplicationArgs.Builder] = identity):
+    def getApplication(args: Endofunction[com.pulumi.aws.serverlessrepository.inputs.GetApplicationArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.serverlessrepository.outputs.GetApplicationResult] =
       val argsBuilder = com.pulumi.aws.serverlessrepository.inputs.GetApplicationArgs.builder
       com.pulumi.aws.serverlessrepository.ServerlessrepositoryFunctions.getApplication(args(argsBuilder).build)
 
     /** Use this data source to get information about an AWS Serverless Application Repository application. For example, this can be used to determine the required `capabilities` for an application. */
-    def getApplicationPlain(args: Endofunction[com.pulumi.aws.serverlessrepository.inputs.GetApplicationPlainArgs.Builder] = identity):
+    def getApplicationPlain(args: Endofunction[com.pulumi.aws.serverlessrepository.inputs.GetApplicationPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.serverlessrepository.outputs.GetApplicationResult] =
       val argsBuilder = com.pulumi.aws.serverlessrepository.inputs.GetApplicationPlainArgs.builder
       com.pulumi.aws.serverlessrepository.ServerlessrepositoryFunctions.getApplicationPlain(args(argsBuilder).build)

@@ -71,7 +71,7 @@ object timestreamquery:
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
 
   /** Resource for managing an AWS Timestream Query Scheduled Query. */
-  def ScheduledQuery(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  def ScheduledQuery(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.timestreamquery.ScheduledQueryArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.timestreamquery.ScheduledQueryArgs.builder
     conf.logicalName2pysicalName(name) match
