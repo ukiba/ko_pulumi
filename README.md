@@ -118,12 +118,6 @@ Equivalent code with besom would be
     ./mill _.generate
     ./mill _.compile
 
-1. We don't use `publishLocal` (that outputs to `~/.ivy2/local`)
-   because coursier's 24-hour SNAPSHOT cache and local-repo precedence
-   cause stale-artifact problems during iterative development.
-    1. [The local ivy2 repository is searched before Maven Central by default](https://get-coursier.io/docs/other-repositories), but
-    1. [SNAPSHOT versions are cached for 24 hours by default](https://get-coursier.io/docs/ttl)
-
 
 ## Development
 

@@ -18,7 +18,7 @@ import java.io.File.pathSeparator
 import java.io.Writer
 import java.util.Locale.ENGLISH
 
-class PulumiAwsAdapterGenerator(dstRoot: Path, classpath: Seq[String]):
+class PulumiProviderAdapterGenerator(dstRoot: Path, packageName: String, classpath: Seq[String]):
   def processDirectory(srcRoot: Path): Seq[Path] =
     def isJavaFile(path: Path) = !Files.isDirectory(path) && path.getFileName.toString.toLowerCase.endsWith(".java")
     val files = Files.walk(srcRoot).toScala(Seq).filter(isJavaFile)
@@ -69,7 +69,7 @@ class PulumiAwsAdapterGenerator(dstRoot: Path, classpath: Seq[String]):
       Using(newWriter(scalaFile)): writer =>
         writer.append(s"""
           |package jp.ukiba.ko_pulumi
-          |package aws
+          |package $packageName
           |$importCustomResourceOptions
           |
           |object ${packageComps.last}:
@@ -81,7 +81,7 @@ class PulumiAwsAdapterGenerator(dstRoot: Path, classpath: Seq[String]):
 
       scalaFile
 
-    // support `jp.ukiba.ko_pulumi.aws.all.*`
+    // support `jp.ukiba.ko_pulumi.$packageName.all.*`
 
     // split into multiple package files, to avoid `Class too large` error,
     // caused by JVM's per-class limit (65535 methods, 64K constant pool entries).
@@ -124,7 +124,7 @@ class PulumiAwsAdapterGenerator(dstRoot: Path, classpath: Seq[String]):
 
       (mainWriter +: splitWriters.map(_.writer)).foreach: writer =>
         writer.append(s"""
-          |package jp.ukiba.ko_pulumi.aws.syntax.all
+          |package jp.ukiba.ko_pulumi.$packageName.syntax.all
           |
           |import jp.ukiba.ko_pulumi
           |
@@ -132,7 +132,7 @@ class PulumiAwsAdapterGenerator(dstRoot: Path, classpath: Seq[String]):
 
       funcsDedup.toSeq.sorted.foreach: func =>
         mainWriter.append(s"""
-          |export ko_pulumi.aws.$func
+          |export ko_pulumi.$packageName.$func
           |""".stripMargin.drop(1))  // no newline at the beginning
 
       splitWriters.foreach: writer =>
@@ -142,7 +142,7 @@ class PulumiAwsAdapterGenerator(dstRoot: Path, classpath: Seq[String]):
 
         extMethods.toSeq.sortBy(_.cls).foreach: extMethod =>
           writer.writer.append(s"""
-            |export ko_pulumi.aws.${extMethod.cls}.${extMethod.method}
+            |export ko_pulumi.$packageName.${extMethod.cls}.${extMethod.method}
             |""".stripMargin.drop(1))  // no newline at the beginning
 
     (generatedScalaFiles.toSeq ++ (`all.scala` +: splitsFiles.map(_.file))).sorted

@@ -38,44 +38,56 @@ trait ScalaModuleEx extends ScalaModule:
 
   def artifactName = (repoName +: moduleSegments.parts).mkString("-")
 
-object aws extends ScalaModuleEx with PublishModule:
-  def moduleDeps = Seq(core)
+trait PulumiProviderModule extends ScalaModuleEx with PublishModule:
+  // Since we want to commit the generated files for easier review,
+  // they are stored outside `out/` thus `generatedSources` is not used
+  def generatedDir = moduleDir / "generated" / "src"
+  def generate() = Task.Command:
+    PulumiProviderAdapterGenerator(generatedDir.toNIO,
+        moduleSegments.parts.last,
+        pulumiProviderJars().map(_.toString))
+        .processDirectory(pulumiProviderSrc().toNIO)
+  def generatedDirAsSrc = Task.Source(generatedDir)
+  override def sources = Task:
+    super.sources() :+ generatedDirAsSrc()
 
+  def pulumiProviderSrc = Task:
+    os.unzip(pulumiProviderSrcJar().path, Task.dest)
+
+  def pulumiProviderSrcJar = Task:
+    defaultResolver().classpath(
+      Seq(pulumiProviderDep().exclude("*" -> "*")),  // exclude transitive dependencies
+      sources = true,
+    ).head
+
+  def pulumiProviderJars = Task:
+    defaultResolver().classpath(Seq(pulumiProviderDep()))  // include transitive dependencies
+
+  def pulumiProviderDep = Task:
+    mvnDeps().find: dep =>
+      import dep.dep.module.{organization, name}
+      organization.value == "com.pulumi" && name.value == moduleSegments.parts.last
+    .getOrElse:
+      throw IllegalStateException(s"pulumi-${moduleSegments.parts.last} dependency is not found")
+
+  def pomSettings = pomSettingsBase.copy(description = s"${
+      pomSettingsBase.description} for pulumi-${moduleSegments.parts.last}")
+
+  /*
+    1. We don't use `publishLocal` (that outputs to `~/.ivy2/local`)
+       because coursier's 24-hour SNAPSHOT cache and local-repo precedence
+       cause stale-artifact problems during iterative development.
+        1. [The local ivy2 repository is searched before Maven Central by default](https://get-coursier.io/docs/other-repositories), but
+        1. [SNAPSHOT versions are cached for 24 hours by default](https://get-coursier.io/docs/ttl)
+  */
+
+object aws extends PulumiProviderModule:
   def mvnDeps = Seq(
     mvn"com.pulumi:aws:$pulumiAwsVersion",
   )
   def publishVersion = s"$pulumiAwsVersion.0-SNAPSHOT"
 
-  // Since we want to commit the generated files for easier review,
-  // they are stored outside `out/` thus `generatedSources` is not used
-  def generatedDir = moduleDir / "generated" / "src"
-  def generate() = Task.Command:
-    PulumiAwsAdapterGenerator(generatedDir.toNIO, pulumiAwsJars().map(_.toString))
-        .processDirectory(pulumiAwsSrc().toNIO)
-  def generatedDirAsSrc = Task.Source(generatedDir)
-  override def sources = Task:
-    super.sources() :+ generatedDirAsSrc()
-
-  def pulumiAwsSrc = Task:
-    os.unzip(pulumiAwsSrcJar().path, Task.dest)
-
-  def pulumiAwsSrcJar = Task:
-    defaultResolver().classpath(
-      Seq(pulumiAwsDep().exclude("*" -> "*")),  // exclude transitive dependencies
-      sources = true,
-    ).head
-
-  def pulumiAwsJars = Task:
-    defaultResolver().classpath(Seq(pulumiAwsDep()))  // include transitive dependencies
-
-  def pulumiAwsDep = Task:
-    mvnDeps().find: dep =>
-      import dep.dep.module.{organization, name}
-      organization.value == "com.pulumi" && name.value == "aws"
-    .getOrElse:
-      throw IllegalStateException("pulumi-aws dependency is not found")
-
-  def pomSettings = pomSettingsBase.copy(description = s"${pomSettingsBase.description} for pulumi-aws")
+  def moduleDeps = Seq(core)
 
 object core extends ScalaModuleEx with PublishModule:
   def mvnDeps = Seq(
