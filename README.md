@@ -6,6 +6,7 @@ This is a Scala 3 wrapper library for [pulumi-java](https://github.com/pulumi/pu
 1. The syntax is generated for the following providers:
     1. [pulumi-aws](https://github.com/pulumi/pulumi-aws)
     1. [pulumi-gcp](https://github.com/pulumi/pulumi-gcp)
+    1. [pulumi-azure](https://github.com/pulumi/pulumi-azure)
 
 
 ## Example
