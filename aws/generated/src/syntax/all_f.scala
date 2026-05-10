@@ -227,6 +227,7 @@ export ko_pulumi.aws.gamelift.instanceDefinitions
 export ko_pulumi.aws.globalaccelerator.ipSets
 export ko_pulumi.aws.glue.icebergConfiguration
 export ko_pulumi.aws.glue.icebergTargets
+export ko_pulumi.aws.glue.icebergOptimizationProperties
 export ko_pulumi.aws.glue.jobBookmarksEncryption
 export ko_pulumi.aws.glue.icebergTableInput
 export ko_pulumi.aws.glue.grokClassifier
@@ -235,6 +236,7 @@ export ko_pulumi.aws.glue.jdbcTargets
 export ko_pulumi.aws.glue.findMatchesParameters
 export ko_pulumi.aws.glue.jsonClassifier
 export ko_pulumi.aws.glue.fields
+export ko_pulumi.aws.glue.federatedCatalog
 export ko_pulumi.aws.glue.federatedDatabase
 export ko_pulumi.aws.glue.icebergInput
 export ko_pulumi.aws.glue.inputRecordTables
@@ -388,6 +390,8 @@ export ko_pulumi.aws.opensearch.identityCenterOptions
 export ko_pulumi.aws.opensearch.jwtOptions
 export ko_pulumi.aws.opensearch.idp
 export ko_pulumi.aws.opensearch.iamIdentityCenterOptions
+export ko_pulumi.aws.outposts.instancePools
+export ko_pulumi.aws.outposts.instancesToExclude
 export ko_pulumi.aws.pinpoint.headers
 export ko_pulumi.aws.pipes.inferenceAcceleratorOverrides
 export ko_pulumi.aws.pipes.firehoseLogDestination

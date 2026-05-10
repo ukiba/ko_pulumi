@@ -108,6 +108,15 @@ object timestreaminfluxdb:
       val argsBuilder = com.pulumi.aws.timestreaminfluxdb.inputs.DbClusterLogDeliveryConfigurationArgs.builder
       builder.logDeliveryConfiguration(args(argsBuilder).build)
 
+    /**
+     * @param maintenanceSchedule Maintenance schedule for the DB cluster, including the preferred maintenance window and timezone. This argument is updatable. This field is only supported for InfluxDB V3 clusters (when using an InfluxDB V3 db parameter group).
+     * @return builder
+     */
+    def maintenanceSchedule(args: Endofunction[com.pulumi.aws.timestreaminfluxdb.inputs.DbClusterMaintenanceScheduleArgs.Builder]):
+        com.pulumi.aws.timestreaminfluxdb.inputs.DbClusterState.Builder =
+      val argsBuilder = com.pulumi.aws.timestreaminfluxdb.inputs.DbClusterMaintenanceScheduleArgs.builder
+      builder.maintenanceSchedule(args(argsBuilder).build)
+
     def timeouts(args: Endofunction[com.pulumi.aws.timestreaminfluxdb.inputs.DbClusterTimeoutsArgs.Builder]):
         com.pulumi.aws.timestreaminfluxdb.inputs.DbClusterState.Builder =
       val argsBuilder = com.pulumi.aws.timestreaminfluxdb.inputs.DbClusterTimeoutsArgs.builder
@@ -126,6 +135,15 @@ object timestreaminfluxdb:
         com.pulumi.aws.timestreaminfluxdb.DbClusterArgs.Builder =
       val argsBuilder = com.pulumi.aws.timestreaminfluxdb.inputs.DbClusterLogDeliveryConfigurationArgs.builder
       builder.logDeliveryConfiguration(args(argsBuilder).build)
+
+    /**
+     * @param maintenanceSchedule Maintenance schedule for the DB cluster, including the preferred maintenance window and timezone. This argument is updatable. This field is only supported for InfluxDB V3 clusters (when using an InfluxDB V3 db parameter group).
+     * @return builder
+     */
+    def maintenanceSchedule(args: Endofunction[com.pulumi.aws.timestreaminfluxdb.inputs.DbClusterMaintenanceScheduleArgs.Builder]):
+        com.pulumi.aws.timestreaminfluxdb.DbClusterArgs.Builder =
+      val argsBuilder = com.pulumi.aws.timestreaminfluxdb.inputs.DbClusterMaintenanceScheduleArgs.builder
+      builder.maintenanceSchedule(args(argsBuilder).build)
 
     def timeouts(args: Endofunction[com.pulumi.aws.timestreaminfluxdb.inputs.DbClusterTimeoutsArgs.Builder]):
         com.pulumi.aws.timestreaminfluxdb.DbClusterArgs.Builder =

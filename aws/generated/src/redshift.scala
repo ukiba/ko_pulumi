@@ -256,6 +256,19 @@ object redshift:
 
                        
   /**
+   * Manages an Amazon Redshift namespace registration to the AWS Glue Data Catalog. Use this resource to enable access to a Redshift data warehouse using the Apache Iceberg REST API.
+   *  
+   *  &gt; **NOTE:** This resource has limited drift detection capabilities. AWS does not provide a reliable API to verify registration status after creation. The resource verifies that the underlying cluster or namespace exists and that an internal data share was created, but cannot detect if the registration was removed outside of Terraform.
+   */
+  def NamespaceRegistration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.redshift.NamespaceRegistrationArgs.Builder]) =
+    val argsBuilder = com.pulumi.aws.redshift.NamespaceRegistrationArgs.builder
+    
+    com.pulumi.aws.redshift.NamespaceRegistration(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder).build)
+
+  /**
    * 
    */
   def SnapshotScheduleAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)

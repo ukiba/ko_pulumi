@@ -63,6 +63,7 @@ export ko_pulumi.aws.appsync.lambdaAuthorizerConfig
 export ko_pulumi.aws.arcregionswitch.kubernetesResourceTypes
 export ko_pulumi.aws.arcregionswitch.lambdas
 export ko_pulumi.aws.arcregionswitch.mapTags
+export ko_pulumi.aws.arczonalshift.outcomeAlarms
 export ko_pulumi.aws.athena.monitoringConfiguration
 export ko_pulumi.aws.athena.managedLoggingConfiguration
 export ko_pulumi.aws.athena.mapTags
@@ -391,6 +392,9 @@ export ko_pulumi.aws.gamelift.mapTags
 export ko_pulumi.aws.glacier.notification
 export ko_pulumi.aws.glacier.mapTags
 export ko_pulumi.aws.globalaccelerator.mapTags
+export ko_pulumi.aws.glue.oauth2Credentials
+export ko_pulumi.aws.glue.oauth2Properties
+export ko_pulumi.aws.glue.oauth2ClientApplication
 export ko_pulumi.aws.glue.mongodbTargets
 export ko_pulumi.aws.glue.lakeFormationConfiguration
 export ko_pulumi.aws.glue.orphanFileDeletionConfiguration
@@ -759,6 +763,7 @@ export ko_pulumi.aws.storagegateway.mapTags
 export ko_pulumi.aws.storagegateway.nfsFileShareDefaults
 export ko_pulumi.aws.synthetics.mapTags
 export ko_pulumi.aws.timestreaminfluxdb.mapTags
+export ko_pulumi.aws.timestreaminfluxdb.maintenanceSchedule
 export ko_pulumi.aws.timestreaminfluxdb.logDeliveryConfiguration
 export ko_pulumi.aws.timestreamquery.multiMeasureAttributeMappings
 export ko_pulumi.aws.timestreamquery.multiMeasureMappings

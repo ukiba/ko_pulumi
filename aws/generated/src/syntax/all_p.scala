@@ -512,6 +512,7 @@ export ko_pulumi.aws.ec2.tunnel1LogOptions
 export ko_pulumi.aws.ec2.securityGroup
 export ko_pulumi.aws.ec2.transitGatewayRouteTables
 export ko_pulumi.aws.ec2.resourceStatement
+export ko_pulumi.aws.ec2clientvpn.transitGatewayConfiguration
 export ko_pulumi.aws.ec2transitgateway.timeouts
 export ko_pulumi.aws.ecr.policy
 export ko_pulumi.aws.ecr.rules
@@ -636,6 +637,7 @@ export ko_pulumi.aws.glue.schemas
 export ko_pulumi.aws.glue.schemaChangePolicy
 export ko_pulumi.aws.glue.serDeInfo
 export ko_pulumi.aws.glue.sortOrder
+export ko_pulumi.aws.glue.timeouts
 export ko_pulumi.aws.glue.s3Targets
 export ko_pulumi.aws.glue.partitionKeys
 export ko_pulumi.aws.glue.s3Encryption
@@ -644,6 +646,7 @@ export ko_pulumi.aws.glue.predicate
 export ko_pulumi.aws.glue.schemaId
 export ko_pulumi.aws.glue.partitionSpec
 export ko_pulumi.aws.glue.sortColumns
+export ko_pulumi.aws.glue.targetRedshiftCatalog
 export ko_pulumi.aws.glue.schema
 export ko_pulumi.aws.glue.recrawlPolicy
 export ko_pulumi.aws.glue.partitionIndex
@@ -965,6 +968,7 @@ export ko_pulumi.aws.opensearch.remoteDomainInfo
 export ko_pulumi.aws.opensearchingest.timeouts
 export ko_pulumi.aws.organizations.policyTypes
 export ko_pulumi.aws.organizations.roots
+export ko_pulumi.aws.outposts.timeouts
 export ko_pulumi.aws.paymentcryptography.timeouts
 export ko_pulumi.aws.pinpoint.quietTime
 export ko_pulumi.aws.pinpoint.timeouts
@@ -1396,8 +1400,8 @@ export ko_pulumi.aws.wafv2.ruleGroupReferenceStatement
 export ko_pulumi.aws.wafv2.statements
 export ko_pulumi.aws.wafv2.responseHeaders
 export ko_pulumi.aws.wafv2.singleQueryArgument
-export ko_pulumi.aws.wafv2.rules
 export ko_pulumi.aws.wafv2.singleHeader
+export ko_pulumi.aws.wafv2.rules
 export ko_pulumi.aws.wafv2.ruleActionOverrides
 export ko_pulumi.aws.wafv2.phoneNumberFields
 export ko_pulumi.aws.wafv2.timeouts

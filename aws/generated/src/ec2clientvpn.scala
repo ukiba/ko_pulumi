@@ -74,7 +74,7 @@ object ec2clientvpn:
 
   extension (builder: com.pulumi.aws.ec2clientvpn.EndpointArgs.Builder)
     /**
-     * @param authenticationOptions Information about the authentication method to be used to authenticate clients.
+     * @param authenticationOptions Information about the authentication method to be used to authenticate clients. See `authenticationOptions` Block Reference below for details.
      * @return builder
      */
     def authenticationOptions(args: Endofunction[com.pulumi.aws.ec2clientvpn.inputs.EndpointAuthenticationOptionArgs.Builder]*):
@@ -83,7 +83,7 @@ object ec2clientvpn:
       builder.authenticationOptions(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param clientConnectOptions The options for managing connection authorization for new client connections.
+     * @param clientConnectOptions The options for managing connection authorization for new client connections. See `clientConnectOptions` Block Reference below for details.
      * @return builder
      */
     def clientConnectOptions(args: Endofunction[com.pulumi.aws.ec2clientvpn.inputs.EndpointClientConnectOptionsArgs.Builder]):
@@ -92,7 +92,7 @@ object ec2clientvpn:
       builder.clientConnectOptions(args(argsBuilder).build)
 
     /**
-     * @param clientLoginBannerOptions Options for enabling a customizable text banner that will be displayed on AWS provided clients when a VPN session is established.
+     * @param clientLoginBannerOptions Options for enabling a customizable text banner that will be displayed on AWS provided clients when a VPN session is established. See `clientLoginBannerOptions` Block Reference below for details.
      * @return builder
      */
     def clientLoginBannerOptions(args: Endofunction[com.pulumi.aws.ec2clientvpn.inputs.EndpointClientLoginBannerOptionsArgs.Builder]):
@@ -101,7 +101,7 @@ object ec2clientvpn:
       builder.clientLoginBannerOptions(args(argsBuilder).build)
 
     /**
-     * @param clientRouteEnforcementOptions Options for enforce administrator defined routes on devices connected through the VPN.
+     * @param clientRouteEnforcementOptions Options for enforce administrator defined routes on devices connected through the VPN. See `clientRouteEnforcementOptions` Block Reference below for details.
      * @return builder
      */
     def clientRouteEnforcementOptions(args: Endofunction[com.pulumi.aws.ec2clientvpn.inputs.EndpointClientRouteEnforcementOptionsArgs.Builder]):
@@ -110,13 +110,22 @@ object ec2clientvpn:
       builder.clientRouteEnforcementOptions(args(argsBuilder).build)
 
     /**
-     * @param connectionLogOptions Information about the client connection logging options.
+     * @param connectionLogOptions Information about the client connection logging options. See `connectionLogOptions` Block Reference below for details.
      * @return builder
      */
     def connectionLogOptions(args: Endofunction[com.pulumi.aws.ec2clientvpn.inputs.EndpointConnectionLogOptionsArgs.Builder]):
         com.pulumi.aws.ec2clientvpn.EndpointArgs.Builder =
       val argsBuilder = com.pulumi.aws.ec2clientvpn.inputs.EndpointConnectionLogOptionsArgs.builder
       builder.connectionLogOptions(args(argsBuilder).build)
+
+    /**
+     * @param transitGatewayConfiguration Configuration block for associating the Client VPN endpoint with a Transit Gateway. Conflicts with `vpcId` and `securityGroupIds`. See `transitGatewayConfiguration` Block Reference below for details.
+     * @return builder
+     */
+    def transitGatewayConfiguration(args: Endofunction[com.pulumi.aws.ec2clientvpn.inputs.EndpointTransitGatewayConfigurationArgs.Builder]):
+        com.pulumi.aws.ec2clientvpn.EndpointArgs.Builder =
+      val argsBuilder = com.pulumi.aws.ec2clientvpn.inputs.EndpointTransitGatewayConfigurationArgs.builder
+      builder.transitGatewayConfiguration(args(argsBuilder).build)
 
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.ec2clientvpn.EndpointArgs.Builder =
@@ -124,7 +133,7 @@ object ec2clientvpn:
                        
   extension (builder: com.pulumi.aws.ec2clientvpn.inputs.EndpointState.Builder)
     /**
-     * @param authenticationOptions Information about the authentication method to be used to authenticate clients.
+     * @param authenticationOptions Information about the authentication method to be used to authenticate clients. See `authenticationOptions` Block Reference below for details.
      * @return builder
      */
     def authenticationOptions(args: Endofunction[com.pulumi.aws.ec2clientvpn.inputs.EndpointAuthenticationOptionArgs.Builder]*):
@@ -133,7 +142,7 @@ object ec2clientvpn:
       builder.authenticationOptions(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param clientConnectOptions The options for managing connection authorization for new client connections.
+     * @param clientConnectOptions The options for managing connection authorization for new client connections. See `clientConnectOptions` Block Reference below for details.
      * @return builder
      */
     def clientConnectOptions(args: Endofunction[com.pulumi.aws.ec2clientvpn.inputs.EndpointClientConnectOptionsArgs.Builder]):
@@ -142,7 +151,7 @@ object ec2clientvpn:
       builder.clientConnectOptions(args(argsBuilder).build)
 
     /**
-     * @param clientLoginBannerOptions Options for enabling a customizable text banner that will be displayed on AWS provided clients when a VPN session is established.
+     * @param clientLoginBannerOptions Options for enabling a customizable text banner that will be displayed on AWS provided clients when a VPN session is established. See `clientLoginBannerOptions` Block Reference below for details.
      * @return builder
      */
     def clientLoginBannerOptions(args: Endofunction[com.pulumi.aws.ec2clientvpn.inputs.EndpointClientLoginBannerOptionsArgs.Builder]):
@@ -151,7 +160,7 @@ object ec2clientvpn:
       builder.clientLoginBannerOptions(args(argsBuilder).build)
 
     /**
-     * @param clientRouteEnforcementOptions Options for enforce administrator defined routes on devices connected through the VPN.
+     * @param clientRouteEnforcementOptions Options for enforce administrator defined routes on devices connected through the VPN. See `clientRouteEnforcementOptions` Block Reference below for details.
      * @return builder
      */
     def clientRouteEnforcementOptions(args: Endofunction[com.pulumi.aws.ec2clientvpn.inputs.EndpointClientRouteEnforcementOptionsArgs.Builder]):
@@ -160,13 +169,22 @@ object ec2clientvpn:
       builder.clientRouteEnforcementOptions(args(argsBuilder).build)
 
     /**
-     * @param connectionLogOptions Information about the client connection logging options.
+     * @param connectionLogOptions Information about the client connection logging options. See `connectionLogOptions` Block Reference below for details.
      * @return builder
      */
     def connectionLogOptions(args: Endofunction[com.pulumi.aws.ec2clientvpn.inputs.EndpointConnectionLogOptionsArgs.Builder]):
         com.pulumi.aws.ec2clientvpn.inputs.EndpointState.Builder =
       val argsBuilder = com.pulumi.aws.ec2clientvpn.inputs.EndpointConnectionLogOptionsArgs.builder
       builder.connectionLogOptions(args(argsBuilder).build)
+
+    /**
+     * @param transitGatewayConfiguration Configuration block for associating the Client VPN endpoint with a Transit Gateway. Conflicts with `vpcId` and `securityGroupIds`. See `transitGatewayConfiguration` Block Reference below for details.
+     * @return builder
+     */
+    def transitGatewayConfiguration(args: Endofunction[com.pulumi.aws.ec2clientvpn.inputs.EndpointTransitGatewayConfigurationArgs.Builder]):
+        com.pulumi.aws.ec2clientvpn.inputs.EndpointState.Builder =
+      val argsBuilder = com.pulumi.aws.ec2clientvpn.inputs.EndpointTransitGatewayConfigurationArgs.builder
+      builder.transitGatewayConfiguration(args(argsBuilder).build)
 
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.ec2clientvpn.inputs.EndpointState.Builder =

@@ -119,6 +119,7 @@ export ko_pulumi.aws.arcregionswitch.ecsCapacityIncreaseConfigs
 export ko_pulumi.aws.arcregionswitch.documentDbConfigs
 export ko_pulumi.aws.arcregionswitch.executionApprovalConfigs
 export ko_pulumi.aws.arcregionswitch.conditions
+export ko_pulumi.aws.arczonalshift.blockingAlarms
 export ko_pulumi.aws.athena.customerContentEncryptionConfiguration
 export ko_pulumi.aws.athena.aclConfiguration
 export ko_pulumi.aws.athena.configuration
@@ -588,11 +589,13 @@ export ko_pulumi.aws.globalaccelerator.endpointConfigurations
 export ko_pulumi.aws.globalaccelerator.attributes
 export ko_pulumi.aws.glue.args
 export ko_pulumi.aws.glue.eventBatchingConditions
+export ko_pulumi.aws.glue.basicAuthenticationCredentials
 export ko_pulumi.aws.glue.connectionPasswordEncryption
 export ko_pulumi.aws.glue.encryptionConfiguration
 export ko_pulumi.aws.glue.dagEdges
 export ko_pulumi.aws.glue.command
 export ko_pulumi.aws.glue.createTableDefaultPermissions
+export ko_pulumi.aws.glue.dataLakeAccessProperties
 export ko_pulumi.aws.glue.deltaTargets
 export ko_pulumi.aws.glue.csvClassifier
 export ko_pulumi.aws.glue.executionProperty
@@ -601,8 +604,12 @@ export ko_pulumi.aws.glue.actions
 export ko_pulumi.aws.glue.configuration
 export ko_pulumi.aws.glue.catalogTargets
 export ko_pulumi.aws.glue.cloudwatchEncryption
+export ko_pulumi.aws.glue.createDatabaseDefaultPermissions
 export ko_pulumi.aws.glue.encryptionAtRest
+export ko_pulumi.aws.glue.authenticationConfiguration
+export ko_pulumi.aws.glue.authorizationCodeProperties
 export ko_pulumi.aws.glue.dataCatalogEncryptionSettings
+export ko_pulumi.aws.glue.catalogProperties
 export ko_pulumi.aws.glue.dagNodes
 export ko_pulumi.aws.glue.conditions
 export ko_pulumi.aws.glue.dynamodbTargets

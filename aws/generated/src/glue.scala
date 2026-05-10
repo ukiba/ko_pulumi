@@ -9,6 +9,18 @@ object glue:
     // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
     export com.pulumi.aws.glue.GlueFunctions.*
   extension (self: GlueFunctions.type)
+    /** Provides details about an AWS Glue Catalog. */
+    def getCatalog(args: Endofunction[com.pulumi.aws.glue.inputs.GetCatalogArgs.Builder] = identity):
+        com.pulumi.core.Output[com.pulumi.aws.glue.outputs.GetCatalogResult] =
+      val argsBuilder = com.pulumi.aws.glue.inputs.GetCatalogArgs.builder
+      com.pulumi.aws.glue.GlueFunctions.getCatalog(args(argsBuilder).build)
+
+    /** Provides details about an AWS Glue Catalog. */
+    def getCatalogPlain(args: Endofunction[com.pulumi.aws.glue.inputs.GetCatalogPlainArgs.Builder] = identity):
+        java.util.concurrent.CompletableFuture[com.pulumi.aws.glue.outputs.GetCatalogResult] =
+      val argsBuilder = com.pulumi.aws.glue.inputs.GetCatalogPlainArgs.builder
+      com.pulumi.aws.glue.GlueFunctions.getCatalogPlain(args(argsBuilder).build)
+
     /** This data source can be used to fetch information about an AWS Glue Data Catalog Table. */
     def getCatalogTable(args: Endofunction[com.pulumi.aws.glue.inputs.GetCatalogTableArgs.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.aws.glue.outputs.GetCatalogTableResult] =
@@ -21,13 +33,13 @@ object glue:
       val argsBuilder = com.pulumi.aws.glue.inputs.GetCatalogTablePlainArgs.builder
       com.pulumi.aws.glue.GlueFunctions.getCatalogTablePlain(args(argsBuilder).build)
 
-    /** This data source can be used to fetch information about a specific Glue Connection. */
+    /** Provides details about an AWS Glue Connection. */
     def getConnection(args: Endofunction[com.pulumi.aws.glue.inputs.GetConnectionArgs.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.aws.glue.outputs.GetConnectionResult] =
       val argsBuilder = com.pulumi.aws.glue.inputs.GetConnectionArgs.builder
       com.pulumi.aws.glue.GlueFunctions.getConnection(args(argsBuilder).build)
 
-    /** This data source can be used to fetch information about a specific Glue Connection. */
+    /** Provides details about an AWS Glue Connection. */
     def getConnectionPlain(args: Endofunction[com.pulumi.aws.glue.inputs.GetConnectionPlainArgs.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.glue.outputs.GetConnectionResult] =
       val argsBuilder = com.pulumi.aws.glue.inputs.GetConnectionPlainArgs.builder
@@ -208,6 +220,21 @@ object glue:
       case None          =>
     
     com.pulumi.aws.glue.CatalogDatabase(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder).build)
+
+  /** Manages an AWS Glue Catalog. */
+  def Catalog(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.glue.CatalogArgs.Builder])(using conf: KoPulumiConf) =
+    var argsBuilder = com.pulumi.aws.glue.CatalogArgs.builder
+    conf.logicalName2pysicalName(name) match
+      case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
+      case None               =>
+    conf.logicalName2tagName(name) match
+      case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
+      case None          =>
+    
+    com.pulumi.aws.glue.Catalog(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
@@ -465,7 +492,16 @@ object glue:
                        
   extension (builder: com.pulumi.aws.glue.ConnectionArgs.Builder)
     /**
-     * @param physicalConnectionRequirements Map of physical connection requirements, such as VPC and SecurityGroup. See `physicalConnectionRequirements` Block for details.
+     * @param authenticationConfiguration Configuration block for authentication options. See `authenticationConfiguration` below.
+     * @return builder
+     */
+    def authenticationConfiguration(args: Endofunction[com.pulumi.aws.glue.inputs.ConnectionAuthenticationConfigurationArgs.Builder]):
+        com.pulumi.aws.glue.ConnectionArgs.Builder =
+      val argsBuilder = com.pulumi.aws.glue.inputs.ConnectionAuthenticationConfigurationArgs.builder
+      builder.authenticationConfiguration(args(argsBuilder).build)
+
+    /**
+     * @param physicalConnectionRequirements Map of physical connection requirements, such as VPC and SecurityGroup. See `physicalConnectionRequirements` below.
      * @return builder
      */
     def physicalConnectionRequirements(args: Endofunction[com.pulumi.aws.glue.inputs.ConnectionPhysicalConnectionRequirementsArgs.Builder]):
@@ -584,7 +620,7 @@ object glue:
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
-  /** Provides a Glue Connection resource. */
+  /** Manages an AWS Glue Connection. */
   def Connection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.glue.ConnectionArgs.Builder])(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.glue.ConnectionArgs.builder
@@ -775,6 +811,17 @@ object glue:
       builder.fields(args.map(_(argsBuilder).build)*)
 
                        
+  extension (builder: com.pulumi.aws.glue.inputs.CatalogCreateDatabaseDefaultPermissionArgs.Builder)
+    /**
+     * @param principal Principal who is granted permissions. See `principal` below.
+     * @return builder
+     */
+    def principal(args: Endofunction[com.pulumi.aws.glue.inputs.CatalogCreateDatabaseDefaultPermissionPrincipalArgs.Builder]):
+        com.pulumi.aws.glue.inputs.CatalogCreateDatabaseDefaultPermissionArgs.Builder =
+      val argsBuilder = com.pulumi.aws.glue.inputs.CatalogCreateDatabaseDefaultPermissionPrincipalArgs.builder
+      builder.principal(args(argsBuilder).build)
+
+                       
   extension (builder: com.pulumi.aws.glue.inputs.CatalogTableViewDefinitionArgs.Builder)
     /**
      * @param representations A list of structures that contains the dialect of the view, and the query that defines the view. See `representations` below.
@@ -784,6 +831,35 @@ object glue:
         com.pulumi.aws.glue.inputs.CatalogTableViewDefinitionArgs.Builder =
       def argsBuilder = com.pulumi.aws.glue.inputs.CatalogTableViewDefinitionRepresentationArgs.builder
       builder.representations(args.map(_(argsBuilder).build)*)
+
+                       
+  extension (builder: com.pulumi.aws.glue.inputs.ConnectionAuthenticationConfigurationOauth2PropertiesArgs.Builder)
+    /**
+     * @param authorizationCodeProperties Authorization code properties. See `authorizationCodeProperties` below.
+     * @return builder
+     */
+    def authorizationCodeProperties(args: Endofunction[com.pulumi.aws.glue.inputs.ConnectionAuthenticationConfigurationOauth2PropertiesAuthorizationCodePropertiesArgs.Builder]):
+        com.pulumi.aws.glue.inputs.ConnectionAuthenticationConfigurationOauth2PropertiesArgs.Builder =
+      val argsBuilder = com.pulumi.aws.glue.inputs.ConnectionAuthenticationConfigurationOauth2PropertiesAuthorizationCodePropertiesArgs.builder
+      builder.authorizationCodeProperties(args(argsBuilder).build)
+
+    /**
+     * @param oauth2ClientApplication OAuth2 client application details. See `oauth2ClientApplication` below.
+     * @return builder
+     */
+    def oauth2ClientApplication(args: Endofunction[com.pulumi.aws.glue.inputs.ConnectionAuthenticationConfigurationOauth2PropertiesOauth2ClientApplicationArgs.Builder]):
+        com.pulumi.aws.glue.inputs.ConnectionAuthenticationConfigurationOauth2PropertiesArgs.Builder =
+      val argsBuilder = com.pulumi.aws.glue.inputs.ConnectionAuthenticationConfigurationOauth2PropertiesOauth2ClientApplicationArgs.builder
+      builder.oauth2ClientApplication(args(argsBuilder).build)
+
+    /**
+     * @param oauth2Credentials OAuth2 credentials. See `oauth2Credentials` below.
+     * @return builder
+     */
+    def oauth2Credentials(args: Endofunction[com.pulumi.aws.glue.inputs.ConnectionAuthenticationConfigurationOauth2PropertiesOauth2CredentialsArgs.Builder]):
+        com.pulumi.aws.glue.inputs.ConnectionAuthenticationConfigurationOauth2PropertiesArgs.Builder =
+      val argsBuilder = com.pulumi.aws.glue.inputs.ConnectionAuthenticationConfigurationOauth2PropertiesOauth2CredentialsArgs.builder
+      builder.oauth2Credentials(args(argsBuilder).build)
 
                        
   extension (builder: com.pulumi.aws.glue.inputs.MLTransformParametersArgs.Builder)
@@ -986,6 +1062,26 @@ object glue:
       builder.encryptionConfiguration(args(argsBuilder).build)
 
                        
+  extension (builder: com.pulumi.aws.glue.inputs.ConnectionAuthenticationConfigurationArgs.Builder)
+    /**
+     * @param basicAuthenticationCredentials Basic authentication credentials. See `basicAuthenticationCredentials` below.
+     * @return builder
+     */
+    def basicAuthenticationCredentials(args: Endofunction[com.pulumi.aws.glue.inputs.ConnectionAuthenticationConfigurationBasicAuthenticationCredentialsArgs.Builder]):
+        com.pulumi.aws.glue.inputs.ConnectionAuthenticationConfigurationArgs.Builder =
+      val argsBuilder = com.pulumi.aws.glue.inputs.ConnectionAuthenticationConfigurationBasicAuthenticationCredentialsArgs.builder
+      builder.basicAuthenticationCredentials(args(argsBuilder).build)
+
+    /**
+     * @param oauth2Properties OAuth2 properties. See `oauth2Properties` below.
+     * @return builder
+     */
+    def oauth2Properties(args: Endofunction[com.pulumi.aws.glue.inputs.ConnectionAuthenticationConfigurationOauth2PropertiesArgs.Builder]):
+        com.pulumi.aws.glue.inputs.ConnectionAuthenticationConfigurationArgs.Builder =
+      val argsBuilder = com.pulumi.aws.glue.inputs.ConnectionAuthenticationConfigurationOauth2PropertiesArgs.builder
+      builder.oauth2Properties(args(argsBuilder).build)
+
+                       
   extension (builder: com.pulumi.aws.glue.inputs.GetScriptArgs.Builder)
     /**
      * @param dagEdges List of the edges in the DAG. Defined below.
@@ -1073,6 +1169,61 @@ object glue:
       builder.icebergConfiguration(args(argsBuilder).build)
 
                        
+  extension (builder: com.pulumi.aws.glue.inputs.CatalogState.Builder)
+    /**
+     * @param catalogProperties Configuration block of properties for the catalog. See `catalogProperties` below.
+     * @return builder
+     */
+    def catalogProperties(args: Endofunction[com.pulumi.aws.glue.inputs.CatalogCatalogPropertiesArgs.Builder]):
+        com.pulumi.aws.glue.inputs.CatalogState.Builder =
+      val argsBuilder = com.pulumi.aws.glue.inputs.CatalogCatalogPropertiesArgs.builder
+      builder.catalogProperties(args(argsBuilder).build)
+
+    /**
+     * @param createDatabaseDefaultPermissions List of default permissions on databases for principals. See `createDatabaseDefaultPermissions` below.
+     * @return builder
+     */
+    def createDatabaseDefaultPermissions(args: Endofunction[com.pulumi.aws.glue.inputs.CatalogCreateDatabaseDefaultPermissionArgs.Builder]*):
+        com.pulumi.aws.glue.inputs.CatalogState.Builder =
+      def argsBuilder = com.pulumi.aws.glue.inputs.CatalogCreateDatabaseDefaultPermissionArgs.builder
+      builder.createDatabaseDefaultPermissions(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param createTableDefaultPermissions List of default permissions on tables for principals. See `createTableDefaultPermissions` below.
+     * @return builder
+     */
+    def createTableDefaultPermissions(args: Endofunction[com.pulumi.aws.glue.inputs.CatalogCreateTableDefaultPermissionArgs.Builder]*):
+        com.pulumi.aws.glue.inputs.CatalogState.Builder =
+      def argsBuilder = com.pulumi.aws.glue.inputs.CatalogCreateTableDefaultPermissionArgs.builder
+      builder.createTableDefaultPermissions(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param federatedCatalog Configuration block for a federated catalog. See `federatedCatalog` below.
+     * @return builder
+     */
+    def federatedCatalog(args: Endofunction[com.pulumi.aws.glue.inputs.CatalogFederatedCatalogArgs.Builder]):
+        com.pulumi.aws.glue.inputs.CatalogState.Builder =
+      val argsBuilder = com.pulumi.aws.glue.inputs.CatalogFederatedCatalogArgs.builder
+      builder.federatedCatalog(args(argsBuilder).build)
+
+    /**
+     * @param targetRedshiftCatalog Configuration block for a target Redshift catalog. See `targetRedshiftCatalog` below.
+     * @return builder
+     */
+    def targetRedshiftCatalog(args: Endofunction[com.pulumi.aws.glue.inputs.CatalogTargetRedshiftCatalogArgs.Builder]):
+        com.pulumi.aws.glue.inputs.CatalogState.Builder =
+      val argsBuilder = com.pulumi.aws.glue.inputs.CatalogTargetRedshiftCatalogArgs.builder
+      builder.targetRedshiftCatalog(args(argsBuilder).build)
+
+    def timeouts(args: Endofunction[com.pulumi.aws.glue.inputs.CatalogTimeoutsArgs.Builder]):
+        com.pulumi.aws.glue.inputs.CatalogState.Builder =
+      val argsBuilder = com.pulumi.aws.glue.inputs.CatalogTimeoutsArgs.builder
+      builder.timeouts(args(argsBuilder).build)
+
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.glue.inputs.CatalogState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+                       
   extension (builder: com.pulumi.aws.glue.inputs.PartitionStorageDescriptorArgs.Builder)
     /**
      * @param columns A list of the Columns in the table.
@@ -1120,6 +1271,26 @@ object glue:
         com.pulumi.aws.glue.inputs.GetScriptDagNodeArgs.Builder =
       def argsBuilder = com.pulumi.aws.glue.inputs.GetScriptDagNodeArgArgs.builder
       builder.args(args.map(_(argsBuilder).build)*)
+
+                       
+  extension (builder: com.pulumi.aws.glue.inputs.CatalogCatalogPropertiesArgs.Builder)
+    /**
+     * @param dataLakeAccessProperties Configuration block for data lake access properties. See `dataLakeAccessProperties` below.
+     * @return builder
+     */
+    def dataLakeAccessProperties(args: Endofunction[com.pulumi.aws.glue.inputs.CatalogCatalogPropertiesDataLakeAccessPropertiesArgs.Builder]):
+        com.pulumi.aws.glue.inputs.CatalogCatalogPropertiesArgs.Builder =
+      val argsBuilder = com.pulumi.aws.glue.inputs.CatalogCatalogPropertiesDataLakeAccessPropertiesArgs.builder
+      builder.dataLakeAccessProperties(args(argsBuilder).build)
+
+    /**
+     * @param icebergOptimizationProperties Configuration block for Iceberg optimization properties. See `icebergOptimizationProperties` below.
+     * @return builder
+     */
+    def icebergOptimizationProperties(args: Endofunction[com.pulumi.aws.glue.inputs.CatalogCatalogPropertiesIcebergOptimizationPropertiesArgs.Builder]):
+        com.pulumi.aws.glue.inputs.CatalogCatalogPropertiesArgs.Builder =
+      val argsBuilder = com.pulumi.aws.glue.inputs.CatalogCatalogPropertiesIcebergOptimizationPropertiesArgs.builder
+      builder.icebergOptimizationProperties(args(argsBuilder).build)
 
                        
   extension (builder: com.pulumi.aws.glue.inputs.TriggerState.Builder)
@@ -1338,7 +1509,16 @@ object glue:
                        
   extension (builder: com.pulumi.aws.glue.inputs.ConnectionState.Builder)
     /**
-     * @param physicalConnectionRequirements Map of physical connection requirements, such as VPC and SecurityGroup. See `physicalConnectionRequirements` Block for details.
+     * @param authenticationConfiguration Configuration block for authentication options. See `authenticationConfiguration` below.
+     * @return builder
+     */
+    def authenticationConfiguration(args: Endofunction[com.pulumi.aws.glue.inputs.ConnectionAuthenticationConfigurationArgs.Builder]):
+        com.pulumi.aws.glue.inputs.ConnectionState.Builder =
+      val argsBuilder = com.pulumi.aws.glue.inputs.ConnectionAuthenticationConfigurationArgs.builder
+      builder.authenticationConfiguration(args(argsBuilder).build)
+
+    /**
+     * @param physicalConnectionRequirements Map of physical connection requirements, such as VPC and SecurityGroup. See `physicalConnectionRequirements` below.
      * @return builder
      */
     def physicalConnectionRequirements(args: Endofunction[com.pulumi.aws.glue.inputs.ConnectionPhysicalConnectionRequirementsArgs.Builder]):
@@ -1410,6 +1590,17 @@ object glue:
         com.pulumi.aws.glue.inputs.TriggerPredicateArgs.Builder =
       def argsBuilder = com.pulumi.aws.glue.inputs.TriggerPredicateConditionArgs.builder
       builder.conditions(args.map(_(argsBuilder).build)*)
+
+                       
+  extension (builder: com.pulumi.aws.glue.inputs.CatalogCreateTableDefaultPermissionArgs.Builder)
+    /**
+     * @param principal Principal who is granted permissions. See `principal` below.
+     * @return builder
+     */
+    def principal(args: Endofunction[com.pulumi.aws.glue.inputs.CatalogCreateTableDefaultPermissionPrincipalArgs.Builder]):
+        com.pulumi.aws.glue.inputs.CatalogCreateTableDefaultPermissionArgs.Builder =
+      val argsBuilder = com.pulumi.aws.glue.inputs.CatalogCreateTableDefaultPermissionPrincipalArgs.builder
+      builder.principal(args(argsBuilder).build)
 
                        
   extension (builder: com.pulumi.aws.glue.inputs.CatalogTableOptimizerState.Builder)
@@ -1550,4 +1741,59 @@ object glue:
       val argsBuilder = com.pulumi.aws.glue.inputs.CatalogTableOpenTableFormatInputIcebergInputIcebergTableInputSortOrderArgs.builder
       builder.sortOrder(args(argsBuilder).build)
 
+                       
+  extension (builder: com.pulumi.aws.glue.CatalogArgs.Builder)
+    /**
+     * @param catalogProperties Configuration block of properties for the catalog. See `catalogProperties` below.
+     * @return builder
+     */
+    def catalogProperties(args: Endofunction[com.pulumi.aws.glue.inputs.CatalogCatalogPropertiesArgs.Builder]):
+        com.pulumi.aws.glue.CatalogArgs.Builder =
+      val argsBuilder = com.pulumi.aws.glue.inputs.CatalogCatalogPropertiesArgs.builder
+      builder.catalogProperties(args(argsBuilder).build)
+
+    /**
+     * @param createDatabaseDefaultPermissions List of default permissions on databases for principals. See `createDatabaseDefaultPermissions` below.
+     * @return builder
+     */
+    def createDatabaseDefaultPermissions(args: Endofunction[com.pulumi.aws.glue.inputs.CatalogCreateDatabaseDefaultPermissionArgs.Builder]*):
+        com.pulumi.aws.glue.CatalogArgs.Builder =
+      def argsBuilder = com.pulumi.aws.glue.inputs.CatalogCreateDatabaseDefaultPermissionArgs.builder
+      builder.createDatabaseDefaultPermissions(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param createTableDefaultPermissions List of default permissions on tables for principals. See `createTableDefaultPermissions` below.
+     * @return builder
+     */
+    def createTableDefaultPermissions(args: Endofunction[com.pulumi.aws.glue.inputs.CatalogCreateTableDefaultPermissionArgs.Builder]*):
+        com.pulumi.aws.glue.CatalogArgs.Builder =
+      def argsBuilder = com.pulumi.aws.glue.inputs.CatalogCreateTableDefaultPermissionArgs.builder
+      builder.createTableDefaultPermissions(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param federatedCatalog Configuration block for a federated catalog. See `federatedCatalog` below.
+     * @return builder
+     */
+    def federatedCatalog(args: Endofunction[com.pulumi.aws.glue.inputs.CatalogFederatedCatalogArgs.Builder]):
+        com.pulumi.aws.glue.CatalogArgs.Builder =
+      val argsBuilder = com.pulumi.aws.glue.inputs.CatalogFederatedCatalogArgs.builder
+      builder.federatedCatalog(args(argsBuilder).build)
+
+    /**
+     * @param targetRedshiftCatalog Configuration block for a target Redshift catalog. See `targetRedshiftCatalog` below.
+     * @return builder
+     */
+    def targetRedshiftCatalog(args: Endofunction[com.pulumi.aws.glue.inputs.CatalogTargetRedshiftCatalogArgs.Builder]):
+        com.pulumi.aws.glue.CatalogArgs.Builder =
+      val argsBuilder = com.pulumi.aws.glue.inputs.CatalogTargetRedshiftCatalogArgs.builder
+      builder.targetRedshiftCatalog(args(argsBuilder).build)
+
+    def timeouts(args: Endofunction[com.pulumi.aws.glue.inputs.CatalogTimeoutsArgs.Builder]):
+        com.pulumi.aws.glue.CatalogArgs.Builder =
+      val argsBuilder = com.pulumi.aws.glue.inputs.CatalogTimeoutsArgs.builder
+      builder.timeouts(args(argsBuilder).build)
+
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.glue.CatalogArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
                        

@@ -1,6 +1,7 @@
 package jp.ukiba.ko_pulumi
 package aws
 
+import com.pulumi.resources.CustomResourceOptions
 
 object outposts:
   type OutpostsFunctions = com.pulumi.aws.outposts.OutpostsFunctions
@@ -103,3 +104,75 @@ object outposts:
         java.util.concurrent.CompletableFuture[com.pulumi.aws.outposts.outputs.GetSitesResult] =
       val argsBuilder = com.pulumi.aws.outposts.inputs.GetSitesPlainArgs.builder
       com.pulumi.aws.outposts.OutpostsFunctions.getSitesPlain(args(argsBuilder).build)
+
+  /**
+   * Resource for managing an AWS Outposts Capacity Task.
+   *  
+   *  A capacity task redistributes the instance pools available on an Outpost rack or server to match the `instancePool` configuration declared in the resource. Starting a capacity task is a long-running, asynchronous operation \u2014 Terraform waits for it to reach a terminal state (`COMPLETED`, `CANCELLED`, or `FAILED`) before finishing the apply.
+   */
+  def CapacityTask(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.outposts.CapacityTaskArgs.Builder]) =
+    val argsBuilder = com.pulumi.aws.outposts.CapacityTaskArgs.builder
+    
+    com.pulumi.aws.outposts.CapacityTask(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder).build)
+
+  extension (builder: com.pulumi.aws.outposts.CapacityTaskArgs.Builder)
+    /**
+     * @param instancePools One or more `instancePool` blocks defining the desired instance-type layout for the Outpost. See below. At least one block is required. Changing any value forces a new resource.
+     * @return builder
+     */
+    def instancePools(args: Endofunction[com.pulumi.aws.outposts.inputs.CapacityTaskInstancePoolArgs.Builder]*):
+        com.pulumi.aws.outposts.CapacityTaskArgs.Builder =
+      def argsBuilder = com.pulumi.aws.outposts.inputs.CapacityTaskInstancePoolArgs.builder
+      builder.instancePools(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param instancesToExclude Single `instancesToExclude` block specifying user-owned running instances that must not be stopped to free up capacity. See below. Note: AWS does not return this value via the Get/Describe API; after import, you must add the block back to your configuration manually \u2014 see Import.
+     * @return builder
+     */
+    def instancesToExclude(args: Endofunction[com.pulumi.aws.outposts.inputs.CapacityTaskInstancesToExcludeArgs.Builder]):
+        com.pulumi.aws.outposts.CapacityTaskArgs.Builder =
+      val argsBuilder = com.pulumi.aws.outposts.inputs.CapacityTaskInstancesToExcludeArgs.builder
+      builder.instancesToExclude(args(argsBuilder).build)
+
+    /**
+     * @param timeouts Configuration block with timeouts. See below.
+     * @return builder
+     */
+    def timeouts(args: Endofunction[com.pulumi.aws.outposts.inputs.CapacityTaskTimeoutsArgs.Builder]):
+        com.pulumi.aws.outposts.CapacityTaskArgs.Builder =
+      val argsBuilder = com.pulumi.aws.outposts.inputs.CapacityTaskTimeoutsArgs.builder
+      builder.timeouts(args(argsBuilder).build)
+
+                       
+  extension (builder: com.pulumi.aws.outposts.inputs.CapacityTaskState.Builder)
+    /**
+     * @param instancePools One or more `instancePool` blocks defining the desired instance-type layout for the Outpost. See below. At least one block is required. Changing any value forces a new resource.
+     * @return builder
+     */
+    def instancePools(args: Endofunction[com.pulumi.aws.outposts.inputs.CapacityTaskInstancePoolArgs.Builder]*):
+        com.pulumi.aws.outposts.inputs.CapacityTaskState.Builder =
+      def argsBuilder = com.pulumi.aws.outposts.inputs.CapacityTaskInstancePoolArgs.builder
+      builder.instancePools(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param instancesToExclude Single `instancesToExclude` block specifying user-owned running instances that must not be stopped to free up capacity. See below. Note: AWS does not return this value via the Get/Describe API; after import, you must add the block back to your configuration manually \u2014 see Import.
+     * @return builder
+     */
+    def instancesToExclude(args: Endofunction[com.pulumi.aws.outposts.inputs.CapacityTaskInstancesToExcludeArgs.Builder]):
+        com.pulumi.aws.outposts.inputs.CapacityTaskState.Builder =
+      val argsBuilder = com.pulumi.aws.outposts.inputs.CapacityTaskInstancesToExcludeArgs.builder
+      builder.instancesToExclude(args(argsBuilder).build)
+
+    /**
+     * @param timeouts Configuration block with timeouts. See below.
+     * @return builder
+     */
+    def timeouts(args: Endofunction[com.pulumi.aws.outposts.inputs.CapacityTaskTimeoutsArgs.Builder]):
+        com.pulumi.aws.outposts.inputs.CapacityTaskState.Builder =
+      val argsBuilder = com.pulumi.aws.outposts.inputs.CapacityTaskTimeoutsArgs.builder
+      builder.timeouts(args(argsBuilder).build)
+
+                       
