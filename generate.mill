@@ -85,20 +85,24 @@ class PulumiProviderAdapterGenerator(dstRoot: Path, packageName: String, classpa
 
     // split into multiple package files, to avoid `Class too large` error,
     // caused by JVM's per-class limit (65535 methods, 64K constant pool entries).
-    val splitsConf: Seq[(range: (from: Char, to: Char), fileName: String)] = Seq(
-      ('a', 'e') -> "syntax/all_a.scala",
-      ('f', 'j') -> "syntax/all_f.scala",
-      ('k', 'o') -> "syntax/all_k.scala",
-      ('p', 't') -> "syntax/all_p.scala",
-      ('u', 'z') -> "syntax/all_u.scala",
+    case class ExtMethod(cls: String, method: String)
+    object ExtMethod:
+      given Ordering[ExtMethod] = Ordering.by(e => (e.cls, e.method))
+    case class SplitConf(range: (from: Char, to: Char), fileName: String):
+      def contains(name: String): Boolean = name.head >= range.from && name.head <= range.to
+      def contains(extMethod: ExtMethod): Boolean = contains(extMethod.method)
+    val splitConfs = Seq(
+      SplitConf(('a', 'e'), "syntax/all_a.scala"),
+      SplitConf(('f', 'j'), "syntax/all_f.scala"),
+      SplitConf(('k', 'o'), "syntax/all_k.scala"),
+      SplitConf(('p', 't'), "syntax/all_p.scala"),
+      SplitConf(('u', 'z'), "syntax/all_u.scala"),
     )
 
     val `all.scala` = dstRoot.resolve(s"syntax/all.scala")
-    val splitsFiles = splitsConf.map: conf =>
-      (conf = conf, file = dstRoot.resolve(conf.fileName))
 
     var funcsDedup = Set.empty[String]  // deduplicate
-    var extMethodsDedup = Set.empty[(cls: String, method: String)]
+    var extMethodsDedup = Set.empty[ExtMethod]
 
     gens.foreach: (packageComps, gen) =>
       for member <- gen.members do
@@ -112,14 +116,18 @@ class PulumiProviderAdapterGenerator(dstRoot: Path, packageName: String, classpa
 
             case ResourceArgsMember(_, names) =>
               names.foreach: name =>
-                extMethodsDedup += (packageComps.last, name)
+                extMethodsDedup += ExtMethod(packageComps.last, name)
 
             case FunctionsMember(_, name) =>
               funcsDedup += s"${packageComps.last}.$name"
 
+    // don't create empty files
+    val splitFiles = splitConfs.filter(conf => extMethodsDedup.exists(conf.contains)).map: conf =>
+      (conf = conf, file = dstRoot.resolve(conf.fileName))
+
     Using.Manager: use =>
       val mainWriter = use(newWriter(`all.scala`))
-      val splitWriters = splitsFiles.map: file =>
+      val splitWriters = splitFiles.map: file =>
         (conf = file.conf, writer = use(newWriter(file.file)))
 
       (mainWriter +: splitWriters.map(_.writer)).foreach: writer =>
@@ -136,16 +144,12 @@ class PulumiProviderAdapterGenerator(dstRoot: Path, packageName: String, classpa
           |""".stripMargin.drop(1))  // no newline at the beginning
 
       splitWriters.foreach: writer =>
-        val extMethods = extMethodsDedup.filter: extMethod =>
-          val headCh = extMethod.method.head
-          headCh >= writer.conf.range.from && headCh <= writer.conf.range.to 
-
-        extMethods.toSeq.sortBy(_.cls).foreach: extMethod =>
+        extMethodsDedup.filter(writer.conf.contains).toSeq.sorted.foreach: extMethod =>
           writer.writer.append(s"""
             |export ko_pulumi.$packageName.${extMethod.cls}.${extMethod.method}
             |""".stripMargin.drop(1))  // no newline at the beginning
 
-    (generatedScalaFiles.toSeq ++ (`all.scala` +: splitsFiles.map(_.file))).sorted
+    (generatedScalaFiles.toSeq ++ (`all.scala` +: splitFiles.map(_.file))).sorted
 
   case class Gen(var members: Seq[Member] = Nil)
   sealed trait Member:

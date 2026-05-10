@@ -4,10 +4,13 @@ package build
 
 import mill.*, scalalib.*, publish.*
 
-val pulumiAwsVersion   = "7.29.0"
-val pulumiGcpVersion   = "9.23.0"
-val pulumiAzureVersion = "6.35.0"
-val pulumiJavaVersion  = "1.26.1"
+val pulumiAwsVersion        = "7.29.0"
+val pulumiGcpVersion        = "9.23.0"
+val pulumiAzureVersion      = "6.35.0"
+
+val pulumiPostgresqlVersion = "3.16.3"
+
+val pulumiJavaVersion       = "1.26.1"
 
 val repoName = "ko_pulumi"
 
@@ -104,6 +107,14 @@ object azure extends PulumiProviderModule:
     mvn"com.pulumi:azure:$pulumiAzureVersion",
   )
   def publishVersion = s"$pulumiAzureVersion.0-SNAPSHOT"
+
+  def moduleDeps = Seq(core)
+
+object postgresql extends PulumiProviderModule:
+  def mvnDeps = Seq(
+    mvn"com.pulumi:postgresql:$pulumiPostgresqlVersion",
+  )
+  def publishVersion = s"$pulumiPostgresqlVersion.0-SNAPSHOT"
 
   def moduleDeps = Seq(core)
 

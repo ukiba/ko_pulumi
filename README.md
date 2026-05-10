@@ -7,6 +7,7 @@ This is a Scala 3 wrapper library for [pulumi-java](https://github.com/pulumi/pu
     1. [pulumi-aws](https://github.com/pulumi/pulumi-aws)
     1. [pulumi-gcp](https://github.com/pulumi/pulumi-gcp)
     1. [pulumi-azure](https://github.com/pulumi/pulumi-azure)
+    1. [pulumi-postgresql](https://github.com/pulumi/pulumi-postgresql)
 
 
 ## Example
