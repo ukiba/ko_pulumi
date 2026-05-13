@@ -103,7 +103,7 @@ Equivalent code with besom would be
 1. Java 25
     1. [Install Coursier](https://get-coursier.io/docs/cli-installation), then 
 
-           eval $(cs java --jvm corretto:25 --env)
+           eval $(cs java --jvm temurin:25 --env)
 
 1. [mill](https://com-lihaoyi.github.io/mill/)
     1. The launcher scripts were downloaded as follows, and then committed to the repository.
