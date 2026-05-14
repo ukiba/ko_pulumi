@@ -5,6 +5,7 @@ import com.pulumi.core.{Output, Either as PEither}
 import scala.jdk.CollectionConverters.*
 import scala.jdk.OptionConverters.*
 import scala.jdk.FunctionConverters.*
+import scala.annotation.targetName
 import java.util.{Optional as JOptional, List as JList, Map as JMap}
 
 /** Enhances pulumi-java */
@@ -65,8 +66,19 @@ package object ko_pulumi:
       given [K, V] => Conversion[Map[K, V], JMap[K, V]] = _.asJava
       given [K, V] => Conversion[JMap[K, V], Map[K, V]] = _.asScala.toMap // immutable
 
+      // conversion in Output domain
+      @targetName("given_Conversion_OutputOption_OutputJOptional")
+      given [A] => Conversion[Output[Option[A]], Output[JOptional[A]]] = _.map(_.toJava)
+
+      @targetName("given_Conversion_OutputSeq_OutputJList")
+      given [A] => Conversion[Output[Seq[A]], Output[JList[A]]] = _.map(_.asJava)
+
+      @targetName("given_Conversion_OutputMap_OutputJMap")
+      given [K, V] => Conversion[Output[Map[K, V]], Output[Map[K, V]]] = _.map(_.asJava)
+
       // convert Output[String] to Output[JList[String]]
       // for com.pulumi.ec2.InstanceArgs.builder.vpcSecurityGroupIds
+      @targetName("given_Conversion_Output_OutputJList")
       given [A] => Conversion[Output[A], Output[JList[A]]] = _.map(a => JList.of(a))
 
       // convert IterableOnce[Output[String] | String] to Output[JList[String, String]]
