@@ -66,8 +66,29 @@ package object ko_pulumi:
       given [K, V] => Conversion[JMap[K, V], Map[K, V]] = _.asScala.toMap // immutable
 
       // convert Output[String] to Output[JList[String]]
-      // for ec2.InstanceArgs.builder.vpcSecurityGroupIds
+      // for com.pulumi.ec2.InstanceArgs.builder.vpcSecurityGroupIds
       given [A] => Conversion[Output[A], Output[JList[A]]] = _.map(a => JList.of(a))
+
+      // convert IterableOnce[Output[String] | String] to Output[JList[String, String]]
+/*
+      given [V <: Matchable] => Conversion[IterableOnce[Output[V] | V], Output[JList[V]]] = list =>
+        val builder = Output.ListBuilder[V]()
+        list.iterator.foreach: outputOrValue =>
+          outputOrValue match
+            case output: Output[?] => builder.add(output.asInstanceOf[Output[V]])
+            case value             => builder.add(value .asInstanceOf[V])
+        builder.build()
+*/
+
+      // convert Map[String, Output[String] | String] to Output[JMap[String, String]]
+      // for com.pulumi.aws.lambda.inputs.FunctionEnvironmentArgs.Builder.variables
+      given [V <: Matchable] => Conversion[Map[String, Output[V] | V], Output[JMap[String, V]]] = map =>
+        val builder = Output.MapBuilder[V]()
+        map.foreach: (key, outputOrValue) =>
+          outputOrValue match
+            case output: Output[?] => builder.put(key, output.asInstanceOf[Output[V]])
+            case value             => builder.put(key, value .asInstanceOf[V])
+        builder.build()
 
       given [A, B] => Conversion[Either[A, B], PEither[A, B]] = _ match
         case Left(left)   => PEither.ofLeft(left)
