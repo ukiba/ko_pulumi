@@ -329,7 +329,7 @@ object lambda:
       builder.ephemeralStorage(args(argsBuilder).build)
 
     /**
-     * @param fileSystemConfig Configuration block for EFS file system. See below.
+     * @param fileSystemConfig Configuration block for EFS or S3 Files file system. See below.
      * @return builder
      */
     def fileSystemConfig(args: Endofunction[com.pulumi.aws.lambda.inputs.FunctionFileSystemConfigArgs.Builder]):
@@ -821,7 +821,7 @@ object lambda:
       builder.ephemeralStorage(args(argsBuilder).build)
 
     /**
-     * @param fileSystemConfig Configuration block for EFS file system. See below.
+     * @param fileSystemConfig Configuration block for EFS or S3 Files file system. See below.
      * @return builder
      */
     def fileSystemConfig(args: Endofunction[com.pulumi.aws.lambda.inputs.FunctionFileSystemConfigArgs.Builder]):

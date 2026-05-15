@@ -27,6 +27,21 @@ object observabilityadmin:
         resourceOptions(CustomResourceOptions.builder).build)
 
   /**
+   * Manages an AWS CloudWatch Observability Admin Telemetry Rule.
+   * 
+   *  &gt; **NOTE:** Before using this resource, telemetry evaluation must be enabled for your AWS account. You can use the `aws.observabilityadmin.TelemetryEvaluation` or `aws.observabilityadmin.TelemetryEvaluationForOrganization` resource to enable it.
+   */
+  def TelemetryRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+      (args: Endofunction[com.pulumi.aws.observabilityadmin.TelemetryRuleArgs.Builder])(using conf: KoPulumiConf) =
+    var argsBuilder = com.pulumi.aws.observabilityadmin.TelemetryRuleArgs.builder
+    conf.logicalName2tagName(name) match
+      case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
+      case None          =>
+    com.pulumi.aws.observabilityadmin.TelemetryRule(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder).build)
+
+  /**
    * Manages an AWS CloudWatch Observability Admin Centralization Rule For Organization.
    * 
    *  Centralization rules enable you to centralize log data from multiple AWS accounts and regions within your organization to a single destination account and region. This helps with log management, compliance, and cost optimization by consolidating logs in a central location.
@@ -43,10 +58,51 @@ object observabilityadmin:
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
+  extension (builder: com.pulumi.aws.observabilityadmin.TelemetryRuleArgs.Builder)
+    /**
+     * @param rule Configuration block for the telemetry rule. See rule below.
+     * @return builder
+     */
+    def rule(args: Endofunction[com.pulumi.aws.observabilityadmin.inputs.TelemetryRuleRuleArgs.Builder]):
+        com.pulumi.aws.observabilityadmin.TelemetryRuleArgs.Builder =
+      val argsBuilder = com.pulumi.aws.observabilityadmin.inputs.TelemetryRuleRuleArgs.builder
+      builder.rule(args(argsBuilder).build)
+
+    def timeouts(args: Endofunction[com.pulumi.aws.observabilityadmin.inputs.TelemetryRuleTimeoutsArgs.Builder]):
+        com.pulumi.aws.observabilityadmin.TelemetryRuleArgs.Builder =
+      val argsBuilder = com.pulumi.aws.observabilityadmin.inputs.TelemetryRuleTimeoutsArgs.builder
+      builder.timeouts(args(argsBuilder).build)
+
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.observabilityadmin.TelemetryRuleArgs.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+
   extension (builder: com.pulumi.aws.observabilityadmin.TelemetryEnrichmentArgs.Builder)
     def timeouts(args: Endofunction[com.pulumi.aws.observabilityadmin.inputs.TelemetryEnrichmentTimeoutsArgs.Builder]):
         com.pulumi.aws.observabilityadmin.TelemetryEnrichmentArgs.Builder =
       val argsBuilder = com.pulumi.aws.observabilityadmin.inputs.TelemetryEnrichmentTimeoutsArgs.builder
+      builder.timeouts(args(argsBuilder).build)
+
+  /**
+   * Manages an AWS CloudWatch Observability Admin Telemetry Evaluation For Organization.
+   * 
+   *  Telemetry evaluation for organization begins onboarding the organization and all member accounts to the telemetry config feature, enabling CloudWatch to evaluate and discover the state of telemetry configuration for AWS resources across the organization.
+   * 
+   *  For more information, see the [AWS CloudWatch Observability Admin documentation](https://docs.aws.amazon.com/cloudwatch/latest/observabilityadmin/what-is-observabilityadmin.html).
+   * 
+   *  &gt; **NOTE:** This resource can only be used from the management account or a delegated admin account of an AWS Organization. Only one telemetry evaluation for organization can exist per organization. Creating this resource enables the feature; destroying it disables the feature.
+   */
+  def TelemetryEvaluationForOrganization(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+      (args: Endofunction[com.pulumi.aws.observabilityadmin.TelemetryEvaluationForOrganizationArgs.Builder]) =
+    val argsBuilder = com.pulumi.aws.observabilityadmin.TelemetryEvaluationForOrganizationArgs.builder
+    com.pulumi.aws.observabilityadmin.TelemetryEvaluationForOrganization(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder).build)
+
+  extension (builder: com.pulumi.aws.observabilityadmin.TelemetryEvaluationArgs.Builder)
+    def timeouts(args: Endofunction[com.pulumi.aws.observabilityadmin.inputs.TelemetryEvaluationTimeoutsArgs.Builder]):
+        com.pulumi.aws.observabilityadmin.TelemetryEvaluationArgs.Builder =
+      val argsBuilder = com.pulumi.aws.observabilityadmin.inputs.TelemetryEvaluationTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.observabilityadmin.CentralizationRuleForOrganizationArgs.Builder)
@@ -92,6 +148,22 @@ object observabilityadmin:
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
 
   /**
+   * Manages an AWS CloudWatch Observability Admin Telemetry Evaluation.
+   * 
+   *  Telemetry evaluation begins onboarding the caller AWS account to the telemetry config feature, enabling CloudWatch to evaluate and discover the state of telemetry configuration for your AWS resources.
+   * 
+   *  For more information, see the [AWS CloudWatch Observability Admin documentation](https://docs.aws.amazon.com/cloudwatch/latest/observabilityadmin/what-is-observabilityadmin.html).
+   * 
+   *  &gt; **NOTE:** Only one telemetry evaluation can exist per account per region. Creating this resource enables the feature; destroying it disables the feature.
+   */
+  def TelemetryEvaluation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+      (args: Endofunction[com.pulumi.aws.observabilityadmin.TelemetryEvaluationArgs.Builder]) =
+    val argsBuilder = com.pulumi.aws.observabilityadmin.TelemetryEvaluationArgs.builder
+    com.pulumi.aws.observabilityadmin.TelemetryEvaluation(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder).build)
+
+  /**
    * Manages an AWS CloudWatch Observability Admin Telemetry Enrichment.
    * 
    *  Telemetry enrichment enables resource tags for telemetry data in your account, enhancing telemetry with additional resource metadata from AWS Resource Explorer to provide richer context for monitoring and observability.
@@ -106,6 +178,12 @@ object observabilityadmin:
     com.pulumi.aws.observabilityadmin.TelemetryEnrichment(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
+
+  extension (builder: com.pulumi.aws.observabilityadmin.TelemetryEvaluationForOrganizationArgs.Builder)
+    def timeouts(args: Endofunction[com.pulumi.aws.observabilityadmin.inputs.TelemetryEvaluationForOrganizationTimeoutsArgs.Builder]):
+        com.pulumi.aws.observabilityadmin.TelemetryEvaluationForOrganizationArgs.Builder =
+      val argsBuilder = com.pulumi.aws.observabilityadmin.inputs.TelemetryEvaluationForOrganizationTimeoutsArgs.builder
+      builder.timeouts(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.observabilityadmin.inputs.CentralizationRuleForOrganizationRuleDestinationDestinationLogsConfigurationArgs.Builder)
     /**
@@ -141,6 +219,25 @@ object observabilityadmin:
       val argsBuilder = com.pulumi.aws.observabilityadmin.inputs.TelemetryEnrichmentTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
+  extension (builder: com.pulumi.aws.observabilityadmin.inputs.TelemetryRuleState.Builder)
+    /**
+     * @param rule Configuration block for the telemetry rule. See rule below.
+     * @return builder
+     */
+    def rule(args: Endofunction[com.pulumi.aws.observabilityadmin.inputs.TelemetryRuleRuleArgs.Builder]):
+        com.pulumi.aws.observabilityadmin.inputs.TelemetryRuleState.Builder =
+      val argsBuilder = com.pulumi.aws.observabilityadmin.inputs.TelemetryRuleRuleArgs.builder
+      builder.rule(args(argsBuilder).build)
+
+    def timeouts(args: Endofunction[com.pulumi.aws.observabilityadmin.inputs.TelemetryRuleTimeoutsArgs.Builder]):
+        com.pulumi.aws.observabilityadmin.inputs.TelemetryRuleState.Builder =
+      val argsBuilder = com.pulumi.aws.observabilityadmin.inputs.TelemetryRuleTimeoutsArgs.builder
+      builder.timeouts(args(argsBuilder).build)
+
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.observabilityadmin.inputs.TelemetryRuleState.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+
   extension (builder: com.pulumi.aws.observabilityadmin.inputs.CentralizationRuleForOrganizationRuleArgs.Builder)
     /**
      * @param destination Configuration block for the destination where logs will be centralized. See `destination` below.
@@ -159,6 +256,12 @@ object observabilityadmin:
         com.pulumi.aws.observabilityadmin.inputs.CentralizationRuleForOrganizationRuleArgs.Builder =
       val argsBuilder = com.pulumi.aws.observabilityadmin.inputs.CentralizationRuleForOrganizationRuleSourceArgs.builder
       builder.source(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.observabilityadmin.inputs.TelemetryEvaluationForOrganizationState.Builder)
+    def timeouts(args: Endofunction[com.pulumi.aws.observabilityadmin.inputs.TelemetryEvaluationForOrganizationTimeoutsArgs.Builder]):
+        com.pulumi.aws.observabilityadmin.inputs.TelemetryEvaluationForOrganizationState.Builder =
+      val argsBuilder = com.pulumi.aws.observabilityadmin.inputs.TelemetryEvaluationForOrganizationTimeoutsArgs.builder
+      builder.timeouts(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.observabilityadmin.inputs.CentralizationRuleForOrganizationRuleSourceArgs.Builder)
     /**
@@ -200,6 +303,12 @@ object observabilityadmin:
     def mapTags(fn: Endofunction[Map[String, String]]):
         com.pulumi.aws.observabilityadmin.inputs.TelemetryPipelineState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
+
+  extension (builder: com.pulumi.aws.observabilityadmin.inputs.TelemetryEvaluationState.Builder)
+    def timeouts(args: Endofunction[com.pulumi.aws.observabilityadmin.inputs.TelemetryEvaluationTimeoutsArgs.Builder]):
+        com.pulumi.aws.observabilityadmin.inputs.TelemetryEvaluationState.Builder =
+      val argsBuilder = com.pulumi.aws.observabilityadmin.inputs.TelemetryEvaluationTimeoutsArgs.builder
+      builder.timeouts(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.observabilityadmin.inputs.CentralizationRuleForOrganizationState.Builder)
     /**

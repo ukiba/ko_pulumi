@@ -1261,6 +1261,7 @@ export ko_pulumi.aws.securityhub.resourceTags
 export ko_pulumi.aws.securityhub.resourceTypes
 export ko_pulumi.aws.securityhub.securityControlCustomParameters
 export ko_pulumi.aws.securityhub.securityControlsConfiguration
+export ko_pulumi.aws.securityhub.serviceNow
 export ko_pulumi.aws.securityhub.severity
 export ko_pulumi.aws.securityhub.severityLabels
 export ko_pulumi.aws.securityhub.sourceUrls

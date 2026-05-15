@@ -1168,6 +1168,7 @@ export ko_pulumi.aws.securityhub.complianceSecurityControlParametersValues
 export ko_pulumi.aws.securityhub.complianceStatuses
 export ko_pulumi.aws.securityhub.confidences
 export ko_pulumi.aws.securityhub.configurationPolicy
+export ko_pulumi.aws.securityhub.connectorProvider
 export ko_pulumi.aws.securityhub.createdAts
 export ko_pulumi.aws.securityhub.criteria
 export ko_pulumi.aws.securityhub.criticalities

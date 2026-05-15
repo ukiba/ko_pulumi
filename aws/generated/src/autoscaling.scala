@@ -258,8 +258,8 @@ object autoscaling:
      *  import com.pulumi.aws.autoscaling.Policy;
      *  import com.pulumi.aws.autoscaling.PolicyArgs;
      *  import com.pulumi.aws.autoscaling.inputs.PolicyStepAdjustmentArgs;
-     *  import java.util.List;
      *  import java.util.ArrayList;
+     *  import java.util.Arrays;
      *  import java.util.Map;
      *  import java.io.File;
      *  import java.nio.file.Files;
@@ -312,8 +312,8 @@ object autoscaling:
      *  import com.pulumi.aws.autoscaling.PolicyArgs;
      *  import com.pulumi.aws.autoscaling.inputs.PolicyTargetTrackingConfigurationArgs;
      *  import com.pulumi.aws.autoscaling.inputs.PolicyTargetTrackingConfigurationPredefinedMetricSpecificationArgs;
-     *  import java.util.List;
      *  import java.util.ArrayList;
+     *  import java.util.Arrays;
      *  import java.util.Map;
      *  import java.io.File;
      *  import java.nio.file.Files;
@@ -772,8 +772,8 @@ object autoscaling:
      *  import com.pulumi.aws.autoscaling.Policy;
      *  import com.pulumi.aws.autoscaling.PolicyArgs;
      *  import com.pulumi.aws.autoscaling.inputs.PolicyStepAdjustmentArgs;
-     *  import java.util.List;
      *  import java.util.ArrayList;
+     *  import java.util.Arrays;
      *  import java.util.Map;
      *  import java.io.File;
      *  import java.nio.file.Files;
@@ -826,8 +826,8 @@ object autoscaling:
      *  import com.pulumi.aws.autoscaling.PolicyArgs;
      *  import com.pulumi.aws.autoscaling.inputs.PolicyTargetTrackingConfigurationArgs;
      *  import com.pulumi.aws.autoscaling.inputs.PolicyTargetTrackingConfigurationPredefinedMetricSpecificationArgs;
-     *  import java.util.List;
      *  import java.util.ArrayList;
+     *  import java.util.Arrays;
      *  import java.util.Map;
      *  import java.io.File;
      *  import java.nio.file.Files;

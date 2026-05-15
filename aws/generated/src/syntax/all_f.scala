@@ -493,9 +493,11 @@ export ko_pulumi.aws.securityhub.findingProviderFieldsSeverityOriginals
 export ko_pulumi.aws.securityhub.findingProviderFieldsTypes
 export ko_pulumi.aws.securityhub.firstObservedAts
 export ko_pulumi.aws.securityhub.generatorIds
+export ko_pulumi.aws.securityhub.healths
 export ko_pulumi.aws.securityhub.ids
 export ko_pulumi.aws.securityhub.intList
 export ko_pulumi.aws.securityhub.int_
+export ko_pulumi.aws.securityhub.jiraCloud
 export ko_pulumi.aws.securitylake.httpsNotificationConfiguration
 export ko_pulumi.aws.servicediscovery.healthCheckConfig
 export ko_pulumi.aws.servicediscovery.healthCheckCustomConfig

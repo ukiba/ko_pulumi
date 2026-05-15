@@ -93,7 +93,7 @@ Equivalent code with besom would be
     1. [pulumi-java](https://github.com/pulumi/pulumi-java) requires Java 11, but
        [Scala 3.8](https://github.com/scala/scala3) requires Java 17
 
-1. Pulumi 3.237.0 or later
+1. Pulumi 3.239.0 or later
     1. Mac: `brew install pulumi/tap/pulumi`
 
 ### Build environment

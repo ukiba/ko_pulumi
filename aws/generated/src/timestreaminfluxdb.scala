@@ -46,6 +46,15 @@ object timestreaminfluxdb:
       val argsBuilder = com.pulumi.aws.timestreaminfluxdb.inputs.DbInstanceLogDeliveryConfigurationArgs.builder
       builder.logDeliveryConfiguration(args(argsBuilder).build)
 
+    /**
+     * @param maintenanceSchedule Maintenance schedule for the DB instance, including the preferred maintenance window and timezone. This argument is updatable.
+     * @return builder
+     */
+    def maintenanceSchedule(args: Endofunction[com.pulumi.aws.timestreaminfluxdb.inputs.DbInstanceMaintenanceScheduleArgs.Builder]):
+        com.pulumi.aws.timestreaminfluxdb.DbInstanceArgs.Builder =
+      val argsBuilder = com.pulumi.aws.timestreaminfluxdb.inputs.DbInstanceMaintenanceScheduleArgs.builder
+      builder.maintenanceSchedule(args(argsBuilder).build)
+
     def timeouts(args: Endofunction[com.pulumi.aws.timestreaminfluxdb.inputs.DbInstanceTimeoutsArgs.Builder]):
         com.pulumi.aws.timestreaminfluxdb.DbInstanceArgs.Builder =
       val argsBuilder = com.pulumi.aws.timestreaminfluxdb.inputs.DbInstanceTimeoutsArgs.builder
@@ -64,6 +73,15 @@ object timestreaminfluxdb:
         com.pulumi.aws.timestreaminfluxdb.inputs.DbInstanceState.Builder =
       val argsBuilder = com.pulumi.aws.timestreaminfluxdb.inputs.DbInstanceLogDeliveryConfigurationArgs.builder
       builder.logDeliveryConfiguration(args(argsBuilder).build)
+
+    /**
+     * @param maintenanceSchedule Maintenance schedule for the DB instance, including the preferred maintenance window and timezone. This argument is updatable.
+     * @return builder
+     */
+    def maintenanceSchedule(args: Endofunction[com.pulumi.aws.timestreaminfluxdb.inputs.DbInstanceMaintenanceScheduleArgs.Builder]):
+        com.pulumi.aws.timestreaminfluxdb.inputs.DbInstanceState.Builder =
+      val argsBuilder = com.pulumi.aws.timestreaminfluxdb.inputs.DbInstanceMaintenanceScheduleArgs.builder
+      builder.maintenanceSchedule(args(argsBuilder).build)
 
     def timeouts(args: Endofunction[com.pulumi.aws.timestreaminfluxdb.inputs.DbInstanceTimeoutsArgs.Builder]):
         com.pulumi.aws.timestreaminfluxdb.inputs.DbInstanceState.Builder =

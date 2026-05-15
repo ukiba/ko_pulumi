@@ -397,8 +397,8 @@ object lakeformation:
    *  import com.pulumi.aws.iam.inputs.GetSessionContextArgs;
    *  import com.pulumi.aws.lakeformation.DataLakeSettings;
    *  import com.pulumi.aws.lakeformation.DataLakeSettingsArgs;
-   *  import java.util.List;
    *  import java.util.ArrayList;
+   *  import java.util.Arrays;
    *  import java.util.Map;
    *  import java.io.File;
    *  import java.nio.file.Files;
@@ -456,8 +456,8 @@ object lakeformation:
    *  import com.pulumi.aws.lakeformation.Permissions;
    *  import com.pulumi.aws.lakeformation.PermissionsArgs;
    *  import com.pulumi.aws.lakeformation.inputs.PermissionsTableWithColumnsArgs;
-   *  import java.util.List;
    *  import java.util.ArrayList;
+   *  import java.util.Arrays;
    *  import java.util.Map;
    *  import java.io.File;
    *  import java.nio.file.Files;
@@ -519,8 +519,8 @@ object lakeformation:
    *  import com.pulumi.aws.lakeformation.Permissions;
    *  import com.pulumi.aws.lakeformation.PermissionsArgs;
    *  import com.pulumi.aws.lakeformation.inputs.PermissionsTableWithColumnsArgs;
-   *  import java.util.List;
    *  import java.util.ArrayList;
+   *  import java.util.Arrays;
    *  import java.util.Map;
    *  import java.io.File;
    *  import java.nio.file.Files;

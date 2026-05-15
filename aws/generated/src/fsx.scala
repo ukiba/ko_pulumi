@@ -422,8 +422,8 @@ object fsx:
    *  import com.pulumi.aws.fsx.LustreFileSystemArgs;
    *  import com.pulumi.aws.fsx.Backup;
    *  import com.pulumi.aws.fsx.BackupArgs;
-   *  import java.util.List;
    *  import java.util.ArrayList;
+   *  import java.util.Arrays;
    *  import java.util.Map;
    *  import java.io.File;
    *  import java.nio.file.Files;
@@ -464,8 +464,8 @@ object fsx:
    *  import com.pulumi.aws.fsx.WindowsFileSystemArgs;
    *  import com.pulumi.aws.fsx.Backup;
    *  import com.pulumi.aws.fsx.BackupArgs;
-   *  import java.util.List;
    *  import java.util.ArrayList;
+   *  import java.util.Arrays;
    *  import java.util.Map;
    *  import java.io.File;
    *  import java.nio.file.Files;
@@ -507,8 +507,8 @@ object fsx:
    *  import com.pulumi.aws.fsx.OntapVolumeArgs;
    *  import com.pulumi.aws.fsx.Backup;
    *  import com.pulumi.aws.fsx.BackupArgs;
-   *  import java.util.List;
    *  import java.util.ArrayList;
+   *  import java.util.Arrays;
    *  import java.util.Map;
    *  import java.io.File;
    *  import java.nio.file.Files;
@@ -550,8 +550,8 @@ object fsx:
    *  import com.pulumi.aws.fsx.OpenZfsFileSystemArgs;
    *  import com.pulumi.aws.fsx.Backup;
    *  import com.pulumi.aws.fsx.BackupArgs;
-   *  import java.util.List;
    *  import java.util.ArrayList;
+   *  import java.util.Arrays;
    *  import java.util.Map;
    *  import java.io.File;
    *  import java.nio.file.Files;

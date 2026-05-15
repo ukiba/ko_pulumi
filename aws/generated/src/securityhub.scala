@@ -4,6 +4,26 @@ package aws
 import com.pulumi.resources.CustomResourceOptions
 
 object securityhub:
+  /**
+   * Manages a Security Hub V2 connector.
+   * 
+   *  &gt; **NOTE:** Connectors must be created in the aggregation (home) region. A Security Hub V2 Aggregator (`aws.securityhub.AggregatorV2`) must exist before creating connectors.
+   * 
+   *  &gt; **NOTE:** After creation, the connector will be in `PENDING_AUTHORIZATION` status. Use the `authUrl` output to complete the OAuth authorization flow.
+   */
+  def ConnectorV2(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+      (args: Endofunction[com.pulumi.aws.securityhub.ConnectorV2Args.Builder])(using conf: KoPulumiConf) =
+    var argsBuilder = com.pulumi.aws.securityhub.ConnectorV2Args.builder
+    conf.logicalName2pysicalName(name) match
+      case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
+      case None               =>
+    conf.logicalName2tagName(name) match
+      case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
+      case None          =>
+    com.pulumi.aws.securityhub.ConnectorV2(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder).build)
+
   extension (builder: com.pulumi.aws.securityhub.OrganizationConfigurationArgs.Builder)
     /**
      * @param organizationConfiguration Provides information about the way an organization is configured in Security Hub.
@@ -31,6 +51,21 @@ object securityhub:
       (args: Endofunction[com.pulumi.aws.securityhub.ConfigurationPolicyAssociationArgs.Builder]) =
     val argsBuilder = com.pulumi.aws.securityhub.ConfigurationPolicyAssociationArgs.builder
     com.pulumi.aws.securityhub.ConfigurationPolicyAssociation(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder).build)
+
+  /**
+   * Manages a Security Hub V2 Aggregator, which enables cross-region finding aggregation.
+   * 
+   *  &gt; **NOTE:** Security Hub V2 must be enabled (`aws.securityhub.AccountV2`) before creating an aggregator.
+   */
+  def AggregatorV2(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+      (args: Endofunction[com.pulumi.aws.securityhub.AggregatorV2Args.Builder])(using conf: KoPulumiConf) =
+    var argsBuilder = com.pulumi.aws.securityhub.AggregatorV2Args.builder
+    conf.logicalName2tagName(name) match
+      case Some(tagName) => argsBuilder = argsBuilder.tags(java.util.Map.of("Name", tagName))
+      case None          =>
+    com.pulumi.aws.securityhub.AggregatorV2(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
@@ -217,6 +252,20 @@ object securityhub:
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
+  extension (builder: com.pulumi.aws.securityhub.ConnectorV2Args.Builder)
+    /**
+     * @param connectorProvider Third-party provider details. See `connectorProvider` below.
+     * @return builder
+     */
+    def connectorProvider(args: Endofunction[com.pulumi.aws.securityhub.inputs.ConnectorV2ConnectorProviderArgs.Builder]):
+        com.pulumi.aws.securityhub.ConnectorV2Args.Builder =
+      val argsBuilder = com.pulumi.aws.securityhub.inputs.ConnectorV2ConnectorProviderArgs.builder
+      builder.connectorProvider(args(argsBuilder).build)
+
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.securityhub.ConnectorV2Args.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
+
   extension (builder: com.pulumi.aws.securityhub.AutomationRuleArgs.Builder)
     /**
      * @param actions A block that specifies one or more actions to update finding fields if a finding matches the conditions specified in `Criteria`. Documented below.
@@ -328,6 +377,25 @@ object securityhub:
         com.pulumi.aws.securityhub.inputs.AutomationRuleCriteriaUpdatedAtArgs.Builder =
       val argsBuilder = com.pulumi.aws.securityhub.inputs.AutomationRuleCriteriaUpdatedAtDateRangeArgs.builder
       builder.dateRange(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.securityhub.inputs.ConnectorV2ConnectorProviderArgs.Builder)
+    /**
+     * @param jiraCloud Details about a Jira Cloud integration. See `jiraCloud` below.
+     * @return builder
+     */
+    def jiraCloud(args: Endofunction[com.pulumi.aws.securityhub.inputs.ConnectorV2ConnectorProviderJiraCloudArgs.Builder]):
+        com.pulumi.aws.securityhub.inputs.ConnectorV2ConnectorProviderArgs.Builder =
+      val argsBuilder = com.pulumi.aws.securityhub.inputs.ConnectorV2ConnectorProviderJiraCloudArgs.builder
+      builder.jiraCloud(args(argsBuilder).build)
+
+    /**
+     * @param serviceNow Details about a ServiceNow ITSM integration. See `serviceNow` below.
+     * @return builder
+     */
+    def serviceNow(args: Endofunction[com.pulumi.aws.securityhub.inputs.ConnectorV2ConnectorProviderServiceNowArgs.Builder]):
+        com.pulumi.aws.securityhub.inputs.ConnectorV2ConnectorProviderArgs.Builder =
+      val argsBuilder = com.pulumi.aws.securityhub.inputs.ConnectorV2ConnectorProviderServiceNowArgs.builder
+      builder.serviceNow(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.securityhub.inputs.ConfigurationPolicyState.Builder)
     /**
@@ -1789,6 +1857,29 @@ object securityhub:
         com.pulumi.aws.securityhub.inputs.AutomationRuleActionFindingFieldsUpdateArgs.Builder =
       val argsBuilder = com.pulumi.aws.securityhub.inputs.AutomationRuleActionFindingFieldsUpdateWorkflowArgs.builder
       builder.workflow(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.securityhub.inputs.ConnectorV2State.Builder)
+    /**
+     * @param connectorProvider Third-party provider details. See `connectorProvider` below.
+     * @return builder
+     */
+    def connectorProvider(args: Endofunction[com.pulumi.aws.securityhub.inputs.ConnectorV2ConnectorProviderArgs.Builder]):
+        com.pulumi.aws.securityhub.inputs.ConnectorV2State.Builder =
+      val argsBuilder = com.pulumi.aws.securityhub.inputs.ConnectorV2ConnectorProviderArgs.builder
+      builder.connectorProvider(args(argsBuilder).build)
+
+    /**
+     * @param healths Current health status. See `health` below.
+     * @return builder
+     */
+    def healths(args: Endofunction[com.pulumi.aws.securityhub.inputs.ConnectorV2HealthArgs.Builder]*):
+        com.pulumi.aws.securityhub.inputs.ConnectorV2State.Builder =
+      def argsBuilder = com.pulumi.aws.securityhub.inputs.ConnectorV2HealthArgs.builder
+      builder.healths(args.map(_(argsBuilder).build)*)
+
+    def mapTags(fn: Endofunction[Map[String, String]]):
+        com.pulumi.aws.securityhub.inputs.ConnectorV2State.Builder =
+      builder.tags(transformOptOutputMap(builder.build.tags, fn))
 
   extension (builder: com.pulumi.aws.securityhub.inputs.ConfigurationPolicyConfigurationPolicyArgs.Builder)
     /**

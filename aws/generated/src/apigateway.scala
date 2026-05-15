@@ -250,8 +250,8 @@ object apigateway:
    *  import com.pulumi.aws.apigateway.Stage;
    *  import com.pulumi.aws.apigateway.StageArgs;
    *  import com.pulumi.resources.CustomResourceOptions;
-   *  import java.util.List;
    *  import java.util.ArrayList;
+   *  import java.util.Arrays;
    *  import java.util.Map;
    *  import java.io.File;
    *  import java.nio.file.Files;
