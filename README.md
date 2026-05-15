@@ -1,9 +1,9 @@
-This is a Scala 3 wrapper library for [pulumi-java](https://github.com/pulumi/pulumi-java).
+Scala 3 wrapper libraries for [pulumi-java](https://github.com/pulumi/pulumi-java).
 
 1. Unlike [besom](https://github.com/VirtusLab/besom), the Pulumi Java types are used and directly visible.
-    1. Convenient syntax (methods and extensions) is generated to reduce verbosity.
+    1. Methods and extensions are generated for simpler syntax.
 
-1. The syntax is generated for the following providers:
+1. Libraries are generated for the following providers:
     1. [pulumi-aws](https://github.com/pulumi/pulumi-aws)
     1. [pulumi-gcp](https://github.com/pulumi/pulumi-gcp)
     1. [pulumi-azure](https://github.com/pulumi/pulumi-azure)
@@ -11,6 +11,8 @@ This is a Scala 3 wrapper library for [pulumi-java](https://github.com/pulumi/pu
 
 
 ## Example
+
+### Java
 
 An example Java code to create an S3 bucket with versioning enabled
 
@@ -37,21 +39,26 @@ An example Java code to create an S3 bucket with versioning enabled
                       .build())
               .build());
 
-Equivalent Scala code with the wrapper would be
+### ko_pulumi
+
+Equivalent Scala 3 (optional braces syntax) with the wrapper would be
 
     import jp.ukiba.ko_pulumi.aws.syntax.all.*
     import jp.ukiba.ko_pulumi.aws.s3
 
-    val bucket = s3.Bucket("my-bucket", _.protect(true)):  // Scala 3 optional braces syntax
+    val bucket = s3.Bucket("my-bucket", _.protect(true)):
       _.bucket("my-bucket")
 
-    val versioning = s3.BucketVersioning("my-bucket-versioning"): args =>
-      args.bucket(bucket.id)
-          .versioningConfiguration:
-            _.status("Enabled")
+    val versioning = s3.BucketVersioning("my-bucket-versioning"):
+      _ .bucket(bucket.id)
+        .versioningConfiguration:
+          _.status("Enabled")
 
+1. The logical name (e.g. `my-bucket`) is propagated to both physical name and Name tag in the default.
 1. All the extension methods just call the Java methods of the same name; easy to look up in the provider doc.
 1. The noise reduction is not significant in this example but it adds up.
+
+### besom
 
 Equivalent code with besom would be
 
