@@ -171,31 +171,33 @@ object batch:
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
-  type BatchFunctions = com.pulumi.azure.batch.BatchFunctions
   object BatchFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.azure.batch.BatchFunctions.*
-  extension (self: BatchFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /** Use this data source to access information about an existing Batch Account. */
-    def getAccount(args: Endofunction[com.pulumi.azure.batch.inputs.GetAccountArgs.Builder] = scala.Predef.identity):
+    inline def getAccount(args: Endofunction[com.pulumi.azure.batch.inputs.GetAccountArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.batch.outputs.GetAccountResult] =
       val argsBuilder = com.pulumi.azure.batch.inputs.GetAccountArgs.builder
       com.pulumi.azure.batch.BatchFunctions.getAccount(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing Batch Account. */
-    def getAccountPlain(args: Endofunction[com.pulumi.azure.batch.inputs.GetAccountPlainArgs.Builder] = scala.Predef.identity):
+    inline def getAccountPlain(args: Endofunction[com.pulumi.azure.batch.inputs.GetAccountPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.batch.outputs.GetAccountResult] =
       val argsBuilder = com.pulumi.azure.batch.inputs.GetAccountPlainArgs.builder
       com.pulumi.azure.batch.BatchFunctions.getAccountPlain(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing Batch Application instance. */
-    def getApplication(args: Endofunction[com.pulumi.azure.batch.inputs.GetApplicationArgs.Builder] = scala.Predef.identity):
+    inline def getApplication(args: Endofunction[com.pulumi.azure.batch.inputs.GetApplicationArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.batch.outputs.GetApplicationResult] =
       val argsBuilder = com.pulumi.azure.batch.inputs.GetApplicationArgs.builder
       com.pulumi.azure.batch.BatchFunctions.getApplication(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing Batch Application instance. */
-    def getApplicationPlain(args: Endofunction[com.pulumi.azure.batch.inputs.GetApplicationPlainArgs.Builder] = scala.Predef.identity):
+    inline def getApplicationPlain(args: Endofunction[com.pulumi.azure.batch.inputs.GetApplicationPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.batch.outputs.GetApplicationResult] =
       val argsBuilder = com.pulumi.azure.batch.inputs.GetApplicationPlainArgs.builder
       com.pulumi.azure.batch.BatchFunctions.getApplicationPlain(args(argsBuilder).build)
@@ -205,7 +207,7 @@ object batch:
      * 
      *  &gt; **Note:** The `azure.batch.Certificate` data source has been deprecated due to Azure retiring the Azure Batch Account Certificates Feature, and will be removed in v5.0 of the AzureRM provider.
      */
-    def getCertificate(args: Endofunction[com.pulumi.azure.batch.inputs.GetCertificateArgs.Builder] = scala.Predef.identity):
+    inline def getCertificate(args: Endofunction[com.pulumi.azure.batch.inputs.GetCertificateArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.batch.outputs.GetCertificateResult] =
       val argsBuilder = com.pulumi.azure.batch.inputs.GetCertificateArgs.builder
       com.pulumi.azure.batch.BatchFunctions.getCertificate(args(argsBuilder).build)
@@ -215,19 +217,19 @@ object batch:
      * 
      *  &gt; **Note:** The `azure.batch.Certificate` data source has been deprecated due to Azure retiring the Azure Batch Account Certificates Feature, and will be removed in v5.0 of the AzureRM provider.
      */
-    def getCertificatePlain(args: Endofunction[com.pulumi.azure.batch.inputs.GetCertificatePlainArgs.Builder] = scala.Predef.identity):
+    inline def getCertificatePlain(args: Endofunction[com.pulumi.azure.batch.inputs.GetCertificatePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.batch.outputs.GetCertificateResult] =
       val argsBuilder = com.pulumi.azure.batch.inputs.GetCertificatePlainArgs.builder
       com.pulumi.azure.batch.BatchFunctions.getCertificatePlain(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing Batch pool */
-    def getPool(args: Endofunction[com.pulumi.azure.batch.inputs.GetPoolArgs.Builder] = scala.Predef.identity):
+    inline def getPool(args: Endofunction[com.pulumi.azure.batch.inputs.GetPoolArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.batch.outputs.GetPoolResult] =
       val argsBuilder = com.pulumi.azure.batch.inputs.GetPoolArgs.builder
       com.pulumi.azure.batch.BatchFunctions.getPool(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing Batch pool */
-    def getPoolPlain(args: Endofunction[com.pulumi.azure.batch.inputs.GetPoolPlainArgs.Builder] = scala.Predef.identity):
+    inline def getPoolPlain(args: Endofunction[com.pulumi.azure.batch.inputs.GetPoolPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.batch.outputs.GetPoolResult] =
       val argsBuilder = com.pulumi.azure.batch.inputs.GetPoolPlainArgs.builder
       com.pulumi.azure.batch.BatchFunctions.getPoolPlain(args(argsBuilder).build)

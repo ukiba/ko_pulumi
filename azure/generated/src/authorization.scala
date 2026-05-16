@@ -33,31 +33,33 @@ object authorization:
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
-  type AuthorizationFunctions = com.pulumi.azure.authorization.AuthorizationFunctions
   object AuthorizationFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.azure.authorization.AuthorizationFunctions.*
-  extension (self: AuthorizationFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /** Use this data source to access information about an existing Role Definition. */
-    def getRoleDefinition(args: Endofunction[com.pulumi.azure.authorization.inputs.GetRoleDefinitionArgs.Builder] = scala.Predef.identity):
+    inline def getRoleDefinition(args: Endofunction[com.pulumi.azure.authorization.inputs.GetRoleDefinitionArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.authorization.outputs.GetRoleDefinitionResult] =
       val argsBuilder = com.pulumi.azure.authorization.inputs.GetRoleDefinitionArgs.builder
       com.pulumi.azure.authorization.AuthorizationFunctions.getRoleDefinition(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing Role Definition. */
-    def getRoleDefinitionPlain(args: Endofunction[com.pulumi.azure.authorization.inputs.GetRoleDefinitionPlainArgs.Builder] = scala.Predef.identity):
+    inline def getRoleDefinitionPlain(args: Endofunction[com.pulumi.azure.authorization.inputs.GetRoleDefinitionPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.authorization.outputs.GetRoleDefinitionResult] =
       val argsBuilder = com.pulumi.azure.authorization.inputs.GetRoleDefinitionPlainArgs.builder
       com.pulumi.azure.authorization.AuthorizationFunctions.getRoleDefinitionPlain(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing User Assigned Identity. */
-    def getUserAssignedIdentity(args: Endofunction[com.pulumi.azure.authorization.inputs.GetUserAssignedIdentityArgs.Builder] = scala.Predef.identity):
+    inline def getUserAssignedIdentity(args: Endofunction[com.pulumi.azure.authorization.inputs.GetUserAssignedIdentityArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.authorization.outputs.GetUserAssignedIdentityResult] =
       val argsBuilder = com.pulumi.azure.authorization.inputs.GetUserAssignedIdentityArgs.builder
       com.pulumi.azure.authorization.AuthorizationFunctions.getUserAssignedIdentity(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing User Assigned Identity. */
-    def getUserAssignedIdentityPlain(args: Endofunction[com.pulumi.azure.authorization.inputs.GetUserAssignedIdentityPlainArgs.Builder] = scala.Predef.identity):
+    inline def getUserAssignedIdentityPlain(args: Endofunction[com.pulumi.azure.authorization.inputs.GetUserAssignedIdentityPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.authorization.outputs.GetUserAssignedIdentityResult] =
       val argsBuilder = com.pulumi.azure.authorization.inputs.GetUserAssignedIdentityPlainArgs.builder
       com.pulumi.azure.authorization.AuthorizationFunctions.getUserAssignedIdentityPlain(args(argsBuilder).build)

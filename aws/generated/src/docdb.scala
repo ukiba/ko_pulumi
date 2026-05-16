@@ -89,31 +89,33 @@ object docdb:
         com.pulumi.aws.docdb.ClusterArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
 
-  type DocdbFunctions = com.pulumi.aws.docdb.DocdbFunctions
   object DocdbFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.aws.docdb.DocdbFunctions.*
-  extension (self: DocdbFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /** Information about a DocumentDB engine version. */
-    def getEngineVersion(args: Endofunction[com.pulumi.aws.docdb.inputs.GetEngineVersionArgs.Builder] = scala.Predef.identity):
+    inline def getEngineVersion(args: Endofunction[com.pulumi.aws.docdb.inputs.GetEngineVersionArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.docdb.outputs.GetEngineVersionResult] =
       val argsBuilder = com.pulumi.aws.docdb.inputs.GetEngineVersionArgs.builder
       com.pulumi.aws.docdb.DocdbFunctions.getEngineVersion(args(argsBuilder).build)
 
     /** Information about a DocumentDB engine version. */
-    def getEngineVersionPlain(args: Endofunction[com.pulumi.aws.docdb.inputs.GetEngineVersionPlainArgs.Builder] = scala.Predef.identity):
+    inline def getEngineVersionPlain(args: Endofunction[com.pulumi.aws.docdb.inputs.GetEngineVersionPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.docdb.outputs.GetEngineVersionResult] =
       val argsBuilder = com.pulumi.aws.docdb.inputs.GetEngineVersionPlainArgs.builder
       com.pulumi.aws.docdb.DocdbFunctions.getEngineVersionPlain(args(argsBuilder).build)
 
     /** Information about DocumentDB orderable DB instances. */
-    def getOrderableDbInstance(args: Endofunction[com.pulumi.aws.docdb.inputs.GetOrderableDbInstanceArgs.Builder] = scala.Predef.identity):
+    inline def getOrderableDbInstance(args: Endofunction[com.pulumi.aws.docdb.inputs.GetOrderableDbInstanceArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.docdb.outputs.GetOrderableDbInstanceResult] =
       val argsBuilder = com.pulumi.aws.docdb.inputs.GetOrderableDbInstanceArgs.builder
       com.pulumi.aws.docdb.DocdbFunctions.getOrderableDbInstance(args(argsBuilder).build)
 
     /** Information about DocumentDB orderable DB instances. */
-    def getOrderableDbInstancePlain(args: Endofunction[com.pulumi.aws.docdb.inputs.GetOrderableDbInstancePlainArgs.Builder] = scala.Predef.identity):
+    inline def getOrderableDbInstancePlain(args: Endofunction[com.pulumi.aws.docdb.inputs.GetOrderableDbInstancePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.docdb.outputs.GetOrderableDbInstanceResult] =
       val argsBuilder = com.pulumi.aws.docdb.inputs.GetOrderableDbInstancePlainArgs.builder
       com.pulumi.aws.docdb.DocdbFunctions.getOrderableDbInstancePlain(args(argsBuilder).build)

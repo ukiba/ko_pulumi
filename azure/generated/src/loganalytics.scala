@@ -132,19 +132,21 @@ object loganalytics:
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
-  type LoganalyticsFunctions = com.pulumi.azure.loganalytics.LoganalyticsFunctions
   object LoganalyticsFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.azure.loganalytics.LoganalyticsFunctions.*
-  extension (self: LoganalyticsFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /** Use this data source to access information about an existing Log Analytics Workspace Table. */
-    def getWorkspaceTable(args: Endofunction[com.pulumi.azure.loganalytics.inputs.GetWorkspaceTableArgs.Builder] = scala.Predef.identity):
+    inline def getWorkspaceTable(args: Endofunction[com.pulumi.azure.loganalytics.inputs.GetWorkspaceTableArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.loganalytics.outputs.GetWorkspaceTableResult] =
       val argsBuilder = com.pulumi.azure.loganalytics.inputs.GetWorkspaceTableArgs.builder
       com.pulumi.azure.loganalytics.LoganalyticsFunctions.getWorkspaceTable(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing Log Analytics Workspace Table. */
-    def getWorkspaceTablePlain(args: Endofunction[com.pulumi.azure.loganalytics.inputs.GetWorkspaceTablePlainArgs.Builder] = scala.Predef.identity):
+    inline def getWorkspaceTablePlain(args: Endofunction[com.pulumi.azure.loganalytics.inputs.GetWorkspaceTablePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.loganalytics.outputs.GetWorkspaceTableResult] =
       val argsBuilder = com.pulumi.azure.loganalytics.inputs.GetWorkspaceTablePlainArgs.builder
       com.pulumi.azure.loganalytics.LoganalyticsFunctions.getWorkspaceTablePlain(args(argsBuilder).build)

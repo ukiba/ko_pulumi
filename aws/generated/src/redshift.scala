@@ -112,79 +112,81 @@ object redshift:
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
-  type RedshiftFunctions = com.pulumi.aws.redshift.RedshiftFunctions
   object RedshiftFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.aws.redshift.RedshiftFunctions.*
-  extension (self: RedshiftFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /** Provides details about a specific redshift cluster. */
-    def getCluster(args: Endofunction[com.pulumi.aws.redshift.inputs.GetClusterArgs.Builder] = scala.Predef.identity):
+    inline def getCluster(args: Endofunction[com.pulumi.aws.redshift.inputs.GetClusterArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.redshift.outputs.GetClusterResult] =
       val argsBuilder = com.pulumi.aws.redshift.inputs.GetClusterArgs.builder
       com.pulumi.aws.redshift.RedshiftFunctions.getCluster(args(argsBuilder).build)
 
     /** Provides details about a specific redshift cluster. */
-    def getClusterPlain(args: Endofunction[com.pulumi.aws.redshift.inputs.GetClusterPlainArgs.Builder] = scala.Predef.identity):
+    inline def getClusterPlain(args: Endofunction[com.pulumi.aws.redshift.inputs.GetClusterPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.redshift.outputs.GetClusterResult] =
       val argsBuilder = com.pulumi.aws.redshift.inputs.GetClusterPlainArgs.builder
       com.pulumi.aws.redshift.RedshiftFunctions.getClusterPlain(args(argsBuilder).build)
 
     /** Provides redshift cluster temporary credentials. */
-    def getClusterCredentials(args: Endofunction[com.pulumi.aws.redshift.inputs.GetClusterCredentialsArgs.Builder] = scala.Predef.identity):
+    inline def getClusterCredentials(args: Endofunction[com.pulumi.aws.redshift.inputs.GetClusterCredentialsArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.redshift.outputs.GetClusterCredentialsResult] =
       val argsBuilder = com.pulumi.aws.redshift.inputs.GetClusterCredentialsArgs.builder
       com.pulumi.aws.redshift.RedshiftFunctions.getClusterCredentials(args(argsBuilder).build)
 
     /** Provides redshift cluster temporary credentials. */
-    def getClusterCredentialsPlain(args: Endofunction[com.pulumi.aws.redshift.inputs.GetClusterCredentialsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getClusterCredentialsPlain(args: Endofunction[com.pulumi.aws.redshift.inputs.GetClusterCredentialsPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.redshift.outputs.GetClusterCredentialsResult] =
       val argsBuilder = com.pulumi.aws.redshift.inputs.GetClusterCredentialsPlainArgs.builder
       com.pulumi.aws.redshift.RedshiftFunctions.getClusterCredentialsPlain(args(argsBuilder).build)
 
     /** Data source for managing AWS Redshift Data Shares. */
-    def getDataShares(args: Endofunction[com.pulumi.aws.redshift.inputs.GetDataSharesArgs.Builder] = scala.Predef.identity):
+    inline def getDataShares(args: Endofunction[com.pulumi.aws.redshift.inputs.GetDataSharesArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.redshift.outputs.GetDataSharesResult] =
       val argsBuilder = com.pulumi.aws.redshift.inputs.GetDataSharesArgs.builder
       com.pulumi.aws.redshift.RedshiftFunctions.getDataShares(args(argsBuilder).build)
 
     /** Data source for managing AWS Redshift Data Shares. */
-    def getDataSharesPlain(args: Endofunction[com.pulumi.aws.redshift.inputs.GetDataSharesPlainArgs.Builder] = scala.Predef.identity):
+    inline def getDataSharesPlain(args: Endofunction[com.pulumi.aws.redshift.inputs.GetDataSharesPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.redshift.outputs.GetDataSharesResult] =
       val argsBuilder = com.pulumi.aws.redshift.inputs.GetDataSharesPlainArgs.builder
       com.pulumi.aws.redshift.RedshiftFunctions.getDataSharesPlain(args(argsBuilder).build)
 
     /** Information about Redshift Orderable Clusters and valid parameter combinations. */
-    def getOrderableCluster(args: Endofunction[com.pulumi.aws.redshift.inputs.GetOrderableClusterArgs.Builder] = scala.Predef.identity):
+    inline def getOrderableCluster(args: Endofunction[com.pulumi.aws.redshift.inputs.GetOrderableClusterArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.redshift.outputs.GetOrderableClusterResult] =
       val argsBuilder = com.pulumi.aws.redshift.inputs.GetOrderableClusterArgs.builder
       com.pulumi.aws.redshift.RedshiftFunctions.getOrderableCluster(args(argsBuilder).build)
 
     /** Information about Redshift Orderable Clusters and valid parameter combinations. */
-    def getOrderableClusterPlain(args: Endofunction[com.pulumi.aws.redshift.inputs.GetOrderableClusterPlainArgs.Builder] = scala.Predef.identity):
+    inline def getOrderableClusterPlain(args: Endofunction[com.pulumi.aws.redshift.inputs.GetOrderableClusterPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.redshift.outputs.GetOrderableClusterResult] =
       val argsBuilder = com.pulumi.aws.redshift.inputs.GetOrderableClusterPlainArgs.builder
       com.pulumi.aws.redshift.RedshiftFunctions.getOrderableClusterPlain(args(argsBuilder).build)
 
     /** Data source for managing AWS Redshift Producer Data Shares. */
-    def getProducerDataShares(args: Endofunction[com.pulumi.aws.redshift.inputs.GetProducerDataSharesArgs.Builder] = scala.Predef.identity):
+    inline def getProducerDataShares(args: Endofunction[com.pulumi.aws.redshift.inputs.GetProducerDataSharesArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.redshift.outputs.GetProducerDataSharesResult] =
       val argsBuilder = com.pulumi.aws.redshift.inputs.GetProducerDataSharesArgs.builder
       com.pulumi.aws.redshift.RedshiftFunctions.getProducerDataShares(args(argsBuilder).build)
 
     /** Data source for managing AWS Redshift Producer Data Shares. */
-    def getProducerDataSharesPlain(args: Endofunction[com.pulumi.aws.redshift.inputs.GetProducerDataSharesPlainArgs.Builder] = scala.Predef.identity):
+    inline def getProducerDataSharesPlain(args: Endofunction[com.pulumi.aws.redshift.inputs.GetProducerDataSharesPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.redshift.outputs.GetProducerDataSharesResult] =
       val argsBuilder = com.pulumi.aws.redshift.inputs.GetProducerDataSharesPlainArgs.builder
       com.pulumi.aws.redshift.RedshiftFunctions.getProducerDataSharesPlain(args(argsBuilder).build)
 
     /** Provides details about a specific redshift subnet group. */
-    def getSubnetGroup(args: Endofunction[com.pulumi.aws.redshift.inputs.GetSubnetGroupArgs.Builder] = scala.Predef.identity):
+    inline def getSubnetGroup(args: Endofunction[com.pulumi.aws.redshift.inputs.GetSubnetGroupArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.redshift.outputs.GetSubnetGroupResult] =
       val argsBuilder = com.pulumi.aws.redshift.inputs.GetSubnetGroupArgs.builder
       com.pulumi.aws.redshift.RedshiftFunctions.getSubnetGroup(args(argsBuilder).build)
 
     /** Provides details about a specific redshift subnet group. */
-    def getSubnetGroupPlain(args: Endofunction[com.pulumi.aws.redshift.inputs.GetSubnetGroupPlainArgs.Builder] = scala.Predef.identity):
+    inline def getSubnetGroupPlain(args: Endofunction[com.pulumi.aws.redshift.inputs.GetSubnetGroupPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.redshift.outputs.GetSubnetGroupResult] =
       val argsBuilder = com.pulumi.aws.redshift.inputs.GetSubnetGroupPlainArgs.builder
       com.pulumi.aws.redshift.RedshiftFunctions.getSubnetGroupPlain(args(argsBuilder).build)

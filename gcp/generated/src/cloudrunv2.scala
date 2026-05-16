@@ -2104,17 +2104,19 @@ object cloudrunv2:
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
-  type Cloudrunv2Functions = com.pulumi.gcp.cloudrunv2.Cloudrunv2Functions
   object Cloudrunv2Functions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.gcp.cloudrunv2.Cloudrunv2Functions.*
-  extension (self: Cloudrunv2Functions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /**
      * Get information about a Google Cloud Run v2 Job. For more information see
      *  the [official documentation](https://cloud.google.com/run/docs/)
      *  and [API](https://cloud.google.com/run/docs/apis).
      */
-    def getJob(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.GetJobArgs.Builder] = scala.Predef.identity):
+    inline def getJob(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.GetJobArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.cloudrunv2.outputs.GetJobResult] =
       val argsBuilder = com.pulumi.gcp.cloudrunv2.inputs.GetJobArgs.builder
       com.pulumi.gcp.cloudrunv2.Cloudrunv2Functions.getJob(args(argsBuilder).build)
@@ -2124,19 +2126,19 @@ object cloudrunv2:
      *  the [official documentation](https://cloud.google.com/run/docs/)
      *  and [API](https://cloud.google.com/run/docs/apis).
      */
-    def getJobPlain(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.GetJobPlainArgs.Builder] = scala.Predef.identity):
+    inline def getJobPlain(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.GetJobPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.cloudrunv2.outputs.GetJobResult] =
       val argsBuilder = com.pulumi.gcp.cloudrunv2.inputs.GetJobPlainArgs.builder
       com.pulumi.gcp.cloudrunv2.Cloudrunv2Functions.getJobPlain(args(argsBuilder).build)
 
     /** Retrieves the current IAM policy data for job */
-    def getJobIamPolicy(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.GetJobIamPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getJobIamPolicy(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.GetJobIamPolicyArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.cloudrunv2.outputs.GetJobIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.cloudrunv2.inputs.GetJobIamPolicyArgs.builder
       com.pulumi.gcp.cloudrunv2.Cloudrunv2Functions.getJobIamPolicy(args(argsBuilder).build)
 
     /** Retrieves the current IAM policy data for job */
-    def getJobIamPolicyPlain(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.GetJobIamPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getJobIamPolicyPlain(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.GetJobIamPolicyPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.cloudrunv2.outputs.GetJobIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.cloudrunv2.inputs.GetJobIamPolicyPlainArgs.builder
       com.pulumi.gcp.cloudrunv2.Cloudrunv2Functions.getJobIamPolicyPlain(args(argsBuilder).build)
@@ -2146,7 +2148,7 @@ object cloudrunv2:
      *  the [official documentation](https://cloud.google.com/run/docs/)
      *  and [API](https://cloud.google.com/run/docs/apis).
      */
-    def getService(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.GetServiceArgs.Builder] = scala.Predef.identity):
+    inline def getService(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.GetServiceArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.cloudrunv2.outputs.GetServiceResult] =
       val argsBuilder = com.pulumi.gcp.cloudrunv2.inputs.GetServiceArgs.builder
       com.pulumi.gcp.cloudrunv2.Cloudrunv2Functions.getService(args(argsBuilder).build)
@@ -2156,19 +2158,19 @@ object cloudrunv2:
      *  the [official documentation](https://cloud.google.com/run/docs/)
      *  and [API](https://cloud.google.com/run/docs/apis).
      */
-    def getServicePlain(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.GetServicePlainArgs.Builder] = scala.Predef.identity):
+    inline def getServicePlain(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.GetServicePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.cloudrunv2.outputs.GetServiceResult] =
       val argsBuilder = com.pulumi.gcp.cloudrunv2.inputs.GetServicePlainArgs.builder
       com.pulumi.gcp.cloudrunv2.Cloudrunv2Functions.getServicePlain(args(argsBuilder).build)
 
     /** Retrieves the current IAM policy data for service */
-    def getServiceIamPolicy(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.GetServiceIamPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getServiceIamPolicy(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.GetServiceIamPolicyArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.cloudrunv2.outputs.GetServiceIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.cloudrunv2.inputs.GetServiceIamPolicyArgs.builder
       com.pulumi.gcp.cloudrunv2.Cloudrunv2Functions.getServiceIamPolicy(args(argsBuilder).build)
 
     /** Retrieves the current IAM policy data for service */
-    def getServiceIamPolicyPlain(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.GetServiceIamPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getServiceIamPolicyPlain(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.GetServiceIamPolicyPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.cloudrunv2.outputs.GetServiceIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.cloudrunv2.inputs.GetServiceIamPolicyPlainArgs.builder
       com.pulumi.gcp.cloudrunv2.Cloudrunv2Functions.getServiceIamPolicyPlain(args(argsBuilder).build)
@@ -2178,7 +2180,7 @@ object cloudrunv2:
      *  the [official documentation](https://cloud.google.com/run/docs/)
      *  and [API](https://cloud.google.com/run/docs/apis).
      */
-    def getWorkerPool(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.GetWorkerPoolArgs.Builder] = scala.Predef.identity):
+    inline def getWorkerPool(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.GetWorkerPoolArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.cloudrunv2.outputs.GetWorkerPoolResult] =
       val argsBuilder = com.pulumi.gcp.cloudrunv2.inputs.GetWorkerPoolArgs.builder
       com.pulumi.gcp.cloudrunv2.Cloudrunv2Functions.getWorkerPool(args(argsBuilder).build)
@@ -2188,19 +2190,19 @@ object cloudrunv2:
      *  the [official documentation](https://cloud.google.com/run/docs/)
      *  and [API](https://cloud.google.com/run/docs/apis).
      */
-    def getWorkerPoolPlain(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.GetWorkerPoolPlainArgs.Builder] = scala.Predef.identity):
+    inline def getWorkerPoolPlain(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.GetWorkerPoolPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.cloudrunv2.outputs.GetWorkerPoolResult] =
       val argsBuilder = com.pulumi.gcp.cloudrunv2.inputs.GetWorkerPoolPlainArgs.builder
       com.pulumi.gcp.cloudrunv2.Cloudrunv2Functions.getWorkerPoolPlain(args(argsBuilder).build)
 
     /** Retrieves the current IAM policy data for workerpool */
-    def getWorkerPoolIamPolicy(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.GetWorkerPoolIamPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getWorkerPoolIamPolicy(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.GetWorkerPoolIamPolicyArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.cloudrunv2.outputs.GetWorkerPoolIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.cloudrunv2.inputs.GetWorkerPoolIamPolicyArgs.builder
       com.pulumi.gcp.cloudrunv2.Cloudrunv2Functions.getWorkerPoolIamPolicy(args(argsBuilder).build)
 
     /** Retrieves the current IAM policy data for workerpool */
-    def getWorkerPoolIamPolicyPlain(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.GetWorkerPoolIamPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getWorkerPoolIamPolicyPlain(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.GetWorkerPoolIamPolicyPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.cloudrunv2.outputs.GetWorkerPoolIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.cloudrunv2.inputs.GetWorkerPoolIamPolicyPlainArgs.builder
       com.pulumi.gcp.cloudrunv2.Cloudrunv2Functions.getWorkerPoolIamPolicyPlain(args(argsBuilder).build)

@@ -55,19 +55,21 @@ object ivs:
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
-  type IvsFunctions = com.pulumi.aws.ivs.IvsFunctions
   object IvsFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.aws.ivs.IvsFunctions.*
-  extension (self: IvsFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /** Data source for managing an AWS IVS (Interactive Video) Stream Key. */
-    def getStreamKey(args: Endofunction[com.pulumi.aws.ivs.inputs.GetStreamKeyArgs.Builder] = scala.Predef.identity):
+    inline def getStreamKey(args: Endofunction[com.pulumi.aws.ivs.inputs.GetStreamKeyArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.ivs.outputs.GetStreamKeyResult] =
       val argsBuilder = com.pulumi.aws.ivs.inputs.GetStreamKeyArgs.builder
       com.pulumi.aws.ivs.IvsFunctions.getStreamKey(args(argsBuilder).build)
 
     /** Data source for managing an AWS IVS (Interactive Video) Stream Key. */
-    def getStreamKeyPlain(args: Endofunction[com.pulumi.aws.ivs.inputs.GetStreamKeyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getStreamKeyPlain(args: Endofunction[com.pulumi.aws.ivs.inputs.GetStreamKeyPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.ivs.outputs.GetStreamKeyResult] =
       val argsBuilder = com.pulumi.aws.ivs.inputs.GetStreamKeyPlainArgs.builder
       com.pulumi.aws.ivs.IvsFunctions.getStreamKeyPlain(args(argsBuilder).build)

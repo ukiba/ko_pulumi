@@ -247,19 +247,21 @@ object postgresql:
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
-  type PostgresqlFunctions = com.pulumi.azure.postgresql.PostgresqlFunctions
   object PostgresqlFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.azure.postgresql.PostgresqlFunctions.*
-  extension (self: PostgresqlFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /** Use this data source to access information about an existing PostgreSQL Flexible Server. */
-    def getFlexibleServer(args: Endofunction[com.pulumi.azure.postgresql.inputs.GetFlexibleServerArgs.Builder] = scala.Predef.identity):
+    inline def getFlexibleServer(args: Endofunction[com.pulumi.azure.postgresql.inputs.GetFlexibleServerArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.postgresql.outputs.GetFlexibleServerResult] =
       val argsBuilder = com.pulumi.azure.postgresql.inputs.GetFlexibleServerArgs.builder
       com.pulumi.azure.postgresql.PostgresqlFunctions.getFlexibleServer(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing PostgreSQL Flexible Server. */
-    def getFlexibleServerPlain(args: Endofunction[com.pulumi.azure.postgresql.inputs.GetFlexibleServerPlainArgs.Builder] = scala.Predef.identity):
+    inline def getFlexibleServerPlain(args: Endofunction[com.pulumi.azure.postgresql.inputs.GetFlexibleServerPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.postgresql.outputs.GetFlexibleServerResult] =
       val argsBuilder = com.pulumi.azure.postgresql.inputs.GetFlexibleServerPlainArgs.builder
       com.pulumi.azure.postgresql.PostgresqlFunctions.getFlexibleServerPlain(args(argsBuilder).build)
@@ -269,7 +271,7 @@ object postgresql:
      * 
      *  &gt; **Note:** The `azure.postgresql.Server` data source is deprecated and will be removed in v5.0 of the AzureRM Provider. Azure Database for PostgreSQL Single Server and its sub resources have been retired as of 2025-03-28, please use the `azure.postgresql.FlexibleServer` data source instead. For more information, see https://techcommunity.microsoft.com/blog/adforpostgresql/retiring-azure-database-for-postgresql-single-server-in-2025/3783783.
      */
-    def getServer(args: Endofunction[com.pulumi.azure.postgresql.inputs.GetServerArgs.Builder] = scala.Predef.identity):
+    inline def getServer(args: Endofunction[com.pulumi.azure.postgresql.inputs.GetServerArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.postgresql.outputs.GetServerResult] =
       val argsBuilder = com.pulumi.azure.postgresql.inputs.GetServerArgs.builder
       com.pulumi.azure.postgresql.PostgresqlFunctions.getServer(args(argsBuilder).build)
@@ -279,7 +281,7 @@ object postgresql:
      * 
      *  &gt; **Note:** The `azure.postgresql.Server` data source is deprecated and will be removed in v5.0 of the AzureRM Provider. Azure Database for PostgreSQL Single Server and its sub resources have been retired as of 2025-03-28, please use the `azure.postgresql.FlexibleServer` data source instead. For more information, see https://techcommunity.microsoft.com/blog/adforpostgresql/retiring-azure-database-for-postgresql-single-server-in-2025/3783783.
      */
-    def getServerPlain(args: Endofunction[com.pulumi.azure.postgresql.inputs.GetServerPlainArgs.Builder] = scala.Predef.identity):
+    inline def getServerPlain(args: Endofunction[com.pulumi.azure.postgresql.inputs.GetServerPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.postgresql.outputs.GetServerResult] =
       val argsBuilder = com.pulumi.azure.postgresql.inputs.GetServerPlainArgs.builder
       com.pulumi.azure.postgresql.PostgresqlFunctions.getServerPlain(args(argsBuilder).build)

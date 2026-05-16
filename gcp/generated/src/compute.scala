@@ -25812,16 +25812,18 @@ object compute:
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
-  type ComputeFunctions = com.pulumi.gcp.compute.ComputeFunctions
   object ComputeFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.gcp.compute.ComputeFunctions.*
-  extension (self: ComputeFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /**
      * Get the IP address from a static address. For more information see
      *  the official [API](https://cloud.google.com/compute/docs/reference/latest/addresses/get) documentation.
      */
-    def getAddress(args: Endofunction[com.pulumi.gcp.compute.inputs.GetAddressArgs.Builder] = scala.Predef.identity):
+    inline def getAddress(args: Endofunction[com.pulumi.gcp.compute.inputs.GetAddressArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.compute.outputs.GetAddressResult] =
       val argsBuilder = com.pulumi.gcp.compute.inputs.GetAddressArgs.builder
       com.pulumi.gcp.compute.ComputeFunctions.getAddress(args(argsBuilder).build)
@@ -25830,7 +25832,7 @@ object compute:
      * Get the IP address from a static address. For more information see
      *  the official [API](https://cloud.google.com/compute/docs/reference/latest/addresses/get) documentation.
      */
-    def getAddressPlain(args: Endofunction[com.pulumi.gcp.compute.inputs.GetAddressPlainArgs.Builder] = scala.Predef.identity):
+    inline def getAddressPlain(args: Endofunction[com.pulumi.gcp.compute.inputs.GetAddressPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.compute.outputs.GetAddressResult] =
       val argsBuilder = com.pulumi.gcp.compute.inputs.GetAddressPlainArgs.builder
       com.pulumi.gcp.compute.ComputeFunctions.getAddressPlain(args(argsBuilder).build)
@@ -25840,7 +25842,7 @@ object compute:
      *  the official API [list](https://cloud.google.com/compute/docs/reference/latest/addresses/list) and
      *  [aggregated list](https://cloud.google.com/compute/docs/reference/rest/v1/addresses/aggregatedList) documentation.
      */
-    def getAddresses(args: Endofunction[com.pulumi.gcp.compute.inputs.GetAddressesArgs.Builder] = scala.Predef.identity):
+    inline def getAddresses(args: Endofunction[com.pulumi.gcp.compute.inputs.GetAddressesArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.compute.outputs.GetAddressesResult] =
       val argsBuilder = com.pulumi.gcp.compute.inputs.GetAddressesArgs.builder
       com.pulumi.gcp.compute.ComputeFunctions.getAddresses(args(argsBuilder).build)
@@ -25850,19 +25852,19 @@ object compute:
      *  the official API [list](https://cloud.google.com/compute/docs/reference/latest/addresses/list) and
      *  [aggregated list](https://cloud.google.com/compute/docs/reference/rest/v1/addresses/aggregatedList) documentation.
      */
-    def getAddressesPlain(args: Endofunction[com.pulumi.gcp.compute.inputs.GetAddressesPlainArgs.Builder] = scala.Predef.identity):
+    inline def getAddressesPlain(args: Endofunction[com.pulumi.gcp.compute.inputs.GetAddressesPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.compute.outputs.GetAddressesResult] =
       val argsBuilder = com.pulumi.gcp.compute.inputs.GetAddressesPlainArgs.builder
       com.pulumi.gcp.compute.ComputeFunctions.getAddressesPlain(args(argsBuilder).build)
 
     /** Get information about a BackendBucket. */
-    def getBackendBucket(args: Endofunction[com.pulumi.gcp.compute.inputs.GetBackendBucketArgs.Builder] = scala.Predef.identity):
+    inline def getBackendBucket(args: Endofunction[com.pulumi.gcp.compute.inputs.GetBackendBucketArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.compute.outputs.GetBackendBucketResult] =
       val argsBuilder = com.pulumi.gcp.compute.inputs.GetBackendBucketArgs.builder
       com.pulumi.gcp.compute.ComputeFunctions.getBackendBucket(args(argsBuilder).build)
 
     /** Get information about a BackendBucket. */
-    def getBackendBucketPlain(args: Endofunction[com.pulumi.gcp.compute.inputs.GetBackendBucketPlainArgs.Builder] = scala.Predef.identity):
+    inline def getBackendBucketPlain(args: Endofunction[com.pulumi.gcp.compute.inputs.GetBackendBucketPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.compute.outputs.GetBackendBucketResult] =
       val argsBuilder = com.pulumi.gcp.compute.inputs.GetBackendBucketPlainArgs.builder
       com.pulumi.gcp.compute.ComputeFunctions.getBackendBucketPlain(args(argsBuilder).build)
@@ -25872,7 +25874,7 @@ object compute:
      *  &gt; **Warning:** This datasource is in beta, and should be used with the terraform-provider-google-beta provider.
      *  See Provider Versions for more details on beta resources.
      */
-    def getBackendBucketIamPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.GetBackendBucketIamPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getBackendBucketIamPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.GetBackendBucketIamPolicyArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.compute.outputs.GetBackendBucketIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.compute.inputs.GetBackendBucketIamPolicyArgs.builder
       com.pulumi.gcp.compute.ComputeFunctions.getBackendBucketIamPolicy(args(argsBuilder).build)
@@ -25882,7 +25884,7 @@ object compute:
      *  &gt; **Warning:** This datasource is in beta, and should be used with the terraform-provider-google-beta provider.
      *  See Provider Versions for more details on beta resources.
      */
-    def getBackendBucketIamPolicyPlain(args: Endofunction[com.pulumi.gcp.compute.inputs.GetBackendBucketIamPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getBackendBucketIamPolicyPlain(args: Endofunction[com.pulumi.gcp.compute.inputs.GetBackendBucketIamPolicyPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.compute.outputs.GetBackendBucketIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.compute.inputs.GetBackendBucketIamPolicyPlainArgs.builder
       com.pulumi.gcp.compute.ComputeFunctions.getBackendBucketIamPolicyPlain(args(argsBuilder).build)
@@ -25892,7 +25894,7 @@ object compute:
      *  see [the official documentation](https://cloud.google.com/compute/docs/load-balancing/http/backend-service)
      *  and the [API](https://cloud.google.com/compute/docs/reference/latest/backendServices).
      */
-    def getBackendService(args: Endofunction[com.pulumi.gcp.compute.inputs.GetBackendServiceArgs.Builder] = scala.Predef.identity):
+    inline def getBackendService(args: Endofunction[com.pulumi.gcp.compute.inputs.GetBackendServiceArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.compute.outputs.GetBackendServiceResult] =
       val argsBuilder = com.pulumi.gcp.compute.inputs.GetBackendServiceArgs.builder
       com.pulumi.gcp.compute.ComputeFunctions.getBackendService(args(argsBuilder).build)
@@ -25902,7 +25904,7 @@ object compute:
      *  see [the official documentation](https://cloud.google.com/compute/docs/load-balancing/http/backend-service)
      *  and the [API](https://cloud.google.com/compute/docs/reference/latest/backendServices).
      */
-    def getBackendServicePlain(args: Endofunction[com.pulumi.gcp.compute.inputs.GetBackendServicePlainArgs.Builder] = scala.Predef.identity):
+    inline def getBackendServicePlain(args: Endofunction[com.pulumi.gcp.compute.inputs.GetBackendServicePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.compute.outputs.GetBackendServiceResult] =
       val argsBuilder = com.pulumi.gcp.compute.inputs.GetBackendServicePlainArgs.builder
       com.pulumi.gcp.compute.ComputeFunctions.getBackendServicePlain(args(argsBuilder).build)
@@ -25912,7 +25914,7 @@ object compute:
      *  &gt; **Warning:** This datasource is in beta, and should be used with the terraform-provider-google-beta provider.
      *  See Provider Versions for more details on beta resources.
      */
-    def getBackendServiceIamPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.GetBackendServiceIamPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getBackendServiceIamPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.GetBackendServiceIamPolicyArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.compute.outputs.GetBackendServiceIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.compute.inputs.GetBackendServiceIamPolicyArgs.builder
       com.pulumi.gcp.compute.ComputeFunctions.getBackendServiceIamPolicy(args(argsBuilder).build)
@@ -25922,31 +25924,31 @@ object compute:
      *  &gt; **Warning:** This datasource is in beta, and should be used with the terraform-provider-google-beta provider.
      *  See Provider Versions for more details on beta resources.
      */
-    def getBackendServiceIamPolicyPlain(args: Endofunction[com.pulumi.gcp.compute.inputs.GetBackendServiceIamPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getBackendServiceIamPolicyPlain(args: Endofunction[com.pulumi.gcp.compute.inputs.GetBackendServiceIamPolicyPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.compute.outputs.GetBackendServiceIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.compute.inputs.GetBackendServiceIamPolicyPlainArgs.builder
       com.pulumi.gcp.compute.ComputeFunctions.getBackendServiceIamPolicyPlain(args(argsBuilder).build)
 
     /** Get info about a Google Compute SSL Certificate from its name. */
-    def getCertificate(args: Endofunction[com.pulumi.gcp.compute.inputs.GetCertificateArgs.Builder] = scala.Predef.identity):
+    inline def getCertificate(args: Endofunction[com.pulumi.gcp.compute.inputs.GetCertificateArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.compute.outputs.GetCertificateResult] =
       val argsBuilder = com.pulumi.gcp.compute.inputs.GetCertificateArgs.builder
       com.pulumi.gcp.compute.ComputeFunctions.getCertificate(args(argsBuilder).build)
 
     /** Get info about a Google Compute SSL Certificate from its name. */
-    def getCertificatePlain(args: Endofunction[com.pulumi.gcp.compute.inputs.GetCertificatePlainArgs.Builder] = scala.Predef.identity):
+    inline def getCertificatePlain(args: Endofunction[com.pulumi.gcp.compute.inputs.GetCertificatePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.compute.outputs.GetCertificateResult] =
       val argsBuilder = com.pulumi.gcp.compute.inputs.GetCertificatePlainArgs.builder
       com.pulumi.gcp.compute.ComputeFunctions.getCertificatePlain(args(argsBuilder).build)
 
     /** Use this data source to retrieve default service account for this project */
-    def getDefaultServiceAccount(args: Endofunction[com.pulumi.gcp.compute.inputs.GetDefaultServiceAccountArgs.Builder] = scala.Predef.identity):
+    inline def getDefaultServiceAccount(args: Endofunction[com.pulumi.gcp.compute.inputs.GetDefaultServiceAccountArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.compute.outputs.GetDefaultServiceAccountResult] =
       val argsBuilder = com.pulumi.gcp.compute.inputs.GetDefaultServiceAccountArgs.builder
       com.pulumi.gcp.compute.ComputeFunctions.getDefaultServiceAccount(args(argsBuilder).build)
 
     /** Use this data source to retrieve default service account for this project */
-    def getDefaultServiceAccountPlain(args: Endofunction[com.pulumi.gcp.compute.inputs.GetDefaultServiceAccountPlainArgs.Builder] = scala.Predef.identity):
+    inline def getDefaultServiceAccountPlain(args: Endofunction[com.pulumi.gcp.compute.inputs.GetDefaultServiceAccountPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.compute.outputs.GetDefaultServiceAccountResult] =
       val argsBuilder = com.pulumi.gcp.compute.inputs.GetDefaultServiceAccountPlainArgs.builder
       com.pulumi.gcp.compute.ComputeFunctions.getDefaultServiceAccountPlain(args(argsBuilder).build)
@@ -25956,7 +25958,7 @@ object compute:
      * 
      *  [the official documentation](https://cloud.google.com/compute/docs/disks) and its [API](https://cloud.google.com/compute/docs/reference/latest/disks).
      */
-    def getDisk(args: Endofunction[com.pulumi.gcp.compute.inputs.GetDiskArgs.Builder] = scala.Predef.identity):
+    inline def getDisk(args: Endofunction[com.pulumi.gcp.compute.inputs.GetDiskArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.compute.outputs.GetDiskResult] =
       val argsBuilder = com.pulumi.gcp.compute.inputs.GetDiskArgs.builder
       com.pulumi.gcp.compute.ComputeFunctions.getDisk(args(argsBuilder).build)
@@ -25966,43 +25968,43 @@ object compute:
      * 
      *  [the official documentation](https://cloud.google.com/compute/docs/disks) and its [API](https://cloud.google.com/compute/docs/reference/latest/disks).
      */
-    def getDiskPlain(args: Endofunction[com.pulumi.gcp.compute.inputs.GetDiskPlainArgs.Builder] = scala.Predef.identity):
+    inline def getDiskPlain(args: Endofunction[com.pulumi.gcp.compute.inputs.GetDiskPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.compute.outputs.GetDiskResult] =
       val argsBuilder = com.pulumi.gcp.compute.inputs.GetDiskPlainArgs.builder
       com.pulumi.gcp.compute.ComputeFunctions.getDiskPlain(args(argsBuilder).build)
 
     /** Retrieves the current IAM policy data for disk */
-    def getDiskIamPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.GetDiskIamPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getDiskIamPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.GetDiskIamPolicyArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.compute.outputs.GetDiskIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.compute.inputs.GetDiskIamPolicyArgs.builder
       com.pulumi.gcp.compute.ComputeFunctions.getDiskIamPolicy(args(argsBuilder).build)
 
     /** Retrieves the current IAM policy data for disk */
-    def getDiskIamPolicyPlain(args: Endofunction[com.pulumi.gcp.compute.inputs.GetDiskIamPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getDiskIamPolicyPlain(args: Endofunction[com.pulumi.gcp.compute.inputs.GetDiskIamPolicyPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.compute.outputs.GetDiskIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.compute.inputs.GetDiskIamPolicyPlainArgs.builder
       com.pulumi.gcp.compute.ComputeFunctions.getDiskIamPolicyPlain(args(argsBuilder).build)
 
     /** Get a forwarding rule within GCE from its name. */
-    def getForwardingRule(args: Endofunction[com.pulumi.gcp.compute.inputs.GetForwardingRuleArgs.Builder] = scala.Predef.identity):
+    inline def getForwardingRule(args: Endofunction[com.pulumi.gcp.compute.inputs.GetForwardingRuleArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.compute.outputs.GetForwardingRuleResult] =
       val argsBuilder = com.pulumi.gcp.compute.inputs.GetForwardingRuleArgs.builder
       com.pulumi.gcp.compute.ComputeFunctions.getForwardingRule(args(argsBuilder).build)
 
     /** Get a forwarding rule within GCE from its name. */
-    def getForwardingRulePlain(args: Endofunction[com.pulumi.gcp.compute.inputs.GetForwardingRulePlainArgs.Builder] = scala.Predef.identity):
+    inline def getForwardingRulePlain(args: Endofunction[com.pulumi.gcp.compute.inputs.GetForwardingRulePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.compute.outputs.GetForwardingRuleResult] =
       val argsBuilder = com.pulumi.gcp.compute.inputs.GetForwardingRulePlainArgs.builder
       com.pulumi.gcp.compute.ComputeFunctions.getForwardingRulePlain(args(argsBuilder).build)
 
     /** List all networks in a specified Google Cloud project. */
-    def getForwardingRules(args: Endofunction[com.pulumi.gcp.compute.inputs.GetForwardingRulesArgs.Builder] = scala.Predef.identity):
+    inline def getForwardingRules(args: Endofunction[com.pulumi.gcp.compute.inputs.GetForwardingRulesArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.compute.outputs.GetForwardingRulesResult] =
       val argsBuilder = com.pulumi.gcp.compute.inputs.GetForwardingRulesArgs.builder
       com.pulumi.gcp.compute.ComputeFunctions.getForwardingRules(args(argsBuilder).build)
 
     /** List all networks in a specified Google Cloud project. */
-    def getForwardingRulesPlain(args: Endofunction[com.pulumi.gcp.compute.inputs.GetForwardingRulesPlainArgs.Builder] = scala.Predef.identity):
+    inline def getForwardingRulesPlain(args: Endofunction[com.pulumi.gcp.compute.inputs.GetForwardingRulesPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.compute.outputs.GetForwardingRulesResult] =
       val argsBuilder = com.pulumi.gcp.compute.inputs.GetForwardingRulesPlainArgs.builder
       com.pulumi.gcp.compute.ComputeFunctions.getForwardingRulesPlain(args(argsBuilder).build)
@@ -26011,7 +26013,7 @@ object compute:
      * Get the IP address from a static address reserved for a Global Forwarding Rule which are only used for HTTP load balancing. For more information see
      *  the official [API](https://cloud.google.com/compute/docs/reference/latest/globalAddresses) documentation.
      */
-    def getGlobalAddress(args: Endofunction[com.pulumi.gcp.compute.inputs.GetGlobalAddressArgs.Builder] = scala.Predef.identity):
+    inline def getGlobalAddress(args: Endofunction[com.pulumi.gcp.compute.inputs.GetGlobalAddressArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.compute.outputs.GetGlobalAddressResult] =
       val argsBuilder = com.pulumi.gcp.compute.inputs.GetGlobalAddressArgs.builder
       com.pulumi.gcp.compute.ComputeFunctions.getGlobalAddress(args(argsBuilder).build)
@@ -26020,43 +26022,43 @@ object compute:
      * Get the IP address from a static address reserved for a Global Forwarding Rule which are only used for HTTP load balancing. For more information see
      *  the official [API](https://cloud.google.com/compute/docs/reference/latest/globalAddresses) documentation.
      */
-    def getGlobalAddressPlain(args: Endofunction[com.pulumi.gcp.compute.inputs.GetGlobalAddressPlainArgs.Builder] = scala.Predef.identity):
+    inline def getGlobalAddressPlain(args: Endofunction[com.pulumi.gcp.compute.inputs.GetGlobalAddressPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.compute.outputs.GetGlobalAddressResult] =
       val argsBuilder = com.pulumi.gcp.compute.inputs.GetGlobalAddressPlainArgs.builder
       com.pulumi.gcp.compute.ComputeFunctions.getGlobalAddressPlain(args(argsBuilder).build)
 
     /** Get a global forwarding rule within GCE from its name. */
-    def getGlobalForwardingRule(args: Endofunction[com.pulumi.gcp.compute.inputs.GetGlobalForwardingRuleArgs.Builder] = scala.Predef.identity):
+    inline def getGlobalForwardingRule(args: Endofunction[com.pulumi.gcp.compute.inputs.GetGlobalForwardingRuleArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.compute.outputs.GetGlobalForwardingRuleResult] =
       val argsBuilder = com.pulumi.gcp.compute.inputs.GetGlobalForwardingRuleArgs.builder
       com.pulumi.gcp.compute.ComputeFunctions.getGlobalForwardingRule(args(argsBuilder).build)
 
     /** Get a global forwarding rule within GCE from its name. */
-    def getGlobalForwardingRulePlain(args: Endofunction[com.pulumi.gcp.compute.inputs.GetGlobalForwardingRulePlainArgs.Builder] = scala.Predef.identity):
+    inline def getGlobalForwardingRulePlain(args: Endofunction[com.pulumi.gcp.compute.inputs.GetGlobalForwardingRulePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.compute.outputs.GetGlobalForwardingRuleResult] =
       val argsBuilder = com.pulumi.gcp.compute.inputs.GetGlobalForwardingRulePlainArgs.builder
       com.pulumi.gcp.compute.ComputeFunctions.getGlobalForwardingRulePlain(args(argsBuilder).build)
 
     /** Get a HA VPN Gateway within GCE from its name. */
-    def getHcVpnGateway(args: Endofunction[com.pulumi.gcp.compute.inputs.GetHcVpnGatewayArgs.Builder] = scala.Predef.identity):
+    inline def getHcVpnGateway(args: Endofunction[com.pulumi.gcp.compute.inputs.GetHcVpnGatewayArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.compute.outputs.GetHcVpnGatewayResult] =
       val argsBuilder = com.pulumi.gcp.compute.inputs.GetHcVpnGatewayArgs.builder
       com.pulumi.gcp.compute.ComputeFunctions.getHcVpnGateway(args(argsBuilder).build)
 
     /** Get a HA VPN Gateway within GCE from its name. */
-    def getHcVpnGatewayPlain(args: Endofunction[com.pulumi.gcp.compute.inputs.GetHcVpnGatewayPlainArgs.Builder] = scala.Predef.identity):
+    inline def getHcVpnGatewayPlain(args: Endofunction[com.pulumi.gcp.compute.inputs.GetHcVpnGatewayPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.compute.outputs.GetHcVpnGatewayResult] =
       val argsBuilder = com.pulumi.gcp.compute.inputs.GetHcVpnGatewayPlainArgs.builder
       com.pulumi.gcp.compute.ComputeFunctions.getHcVpnGatewayPlain(args(argsBuilder).build)
 
     /** Get information about a HealthCheck. */
-    def getHealthCheck(args: Endofunction[com.pulumi.gcp.compute.inputs.GetHealthCheckArgs.Builder] = scala.Predef.identity):
+    inline def getHealthCheck(args: Endofunction[com.pulumi.gcp.compute.inputs.GetHealthCheckArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.compute.outputs.GetHealthCheckResult] =
       val argsBuilder = com.pulumi.gcp.compute.inputs.GetHealthCheckArgs.builder
       com.pulumi.gcp.compute.ComputeFunctions.getHealthCheck(args(argsBuilder).build)
 
     /** Get information about a HealthCheck. */
-    def getHealthCheckPlain(args: Endofunction[com.pulumi.gcp.compute.inputs.GetHealthCheckPlainArgs.Builder] = scala.Predef.identity):
+    inline def getHealthCheckPlain(args: Endofunction[com.pulumi.gcp.compute.inputs.GetHealthCheckPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.compute.outputs.GetHealthCheckResult] =
       val argsBuilder = com.pulumi.gcp.compute.inputs.GetHealthCheckPlainArgs.builder
       com.pulumi.gcp.compute.ComputeFunctions.getHealthCheckPlain(args(argsBuilder).build)
@@ -26065,7 +26067,7 @@ object compute:
      * Get information about a Google Compute Image. Check that your service account has the `compute.imageUser` role if you want to share [custom images](https://cloud.google.com/compute/docs/images/sharing-images-across-projects) from another project. If you want to use [public images][pubimg], do not forget to specify the dedicated project. For more information see
      *  [the official documentation](https://cloud.google.com/compute/docs/images) and its [API](https://cloud.google.com/compute/docs/reference/latest/images).
      */
-    def getImage(args: Endofunction[com.pulumi.gcp.compute.inputs.GetImageArgs.Builder] = scala.Predef.identity):
+    inline def getImage(args: Endofunction[com.pulumi.gcp.compute.inputs.GetImageArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.compute.outputs.GetImageResult] =
       val argsBuilder = com.pulumi.gcp.compute.inputs.GetImageArgs.builder
       com.pulumi.gcp.compute.ComputeFunctions.getImage(args(argsBuilder).build)
@@ -26074,19 +26076,19 @@ object compute:
      * Get information about a Google Compute Image. Check that your service account has the `compute.imageUser` role if you want to share [custom images](https://cloud.google.com/compute/docs/images/sharing-images-across-projects) from another project. If you want to use [public images][pubimg], do not forget to specify the dedicated project. For more information see
      *  [the official documentation](https://cloud.google.com/compute/docs/images) and its [API](https://cloud.google.com/compute/docs/reference/latest/images).
      */
-    def getImagePlain(args: Endofunction[com.pulumi.gcp.compute.inputs.GetImagePlainArgs.Builder] = scala.Predef.identity):
+    inline def getImagePlain(args: Endofunction[com.pulumi.gcp.compute.inputs.GetImagePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.compute.outputs.GetImageResult] =
       val argsBuilder = com.pulumi.gcp.compute.inputs.GetImagePlainArgs.builder
       com.pulumi.gcp.compute.ComputeFunctions.getImagePlain(args(argsBuilder).build)
 
     /** Retrieves the current IAM policy data for image */
-    def getImageIamPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.GetImageIamPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getImageIamPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.GetImageIamPolicyArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.compute.outputs.GetImageIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.compute.inputs.GetImageIamPolicyArgs.builder
       com.pulumi.gcp.compute.ComputeFunctions.getImageIamPolicy(args(argsBuilder).build)
 
     /** Retrieves the current IAM policy data for image */
-    def getImageIamPolicyPlain(args: Endofunction[com.pulumi.gcp.compute.inputs.GetImageIamPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getImageIamPolicyPlain(args: Endofunction[com.pulumi.gcp.compute.inputs.GetImageIamPolicyPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.compute.outputs.GetImageIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.compute.inputs.GetImageIamPolicyPlainArgs.builder
       com.pulumi.gcp.compute.ComputeFunctions.getImageIamPolicyPlain(args(argsBuilder).build)
@@ -26095,7 +26097,7 @@ object compute:
      * Get information about Google Compute Images. Check that your service account has the `compute.imageUser` role if you want to share [custom images](https://cloud.google.com/compute/docs/images/sharing-images-across-projects) from another project. If you want to use [public images][pubimg], do not forget to specify the dedicated project. For more information see
      *  [the official documentation](https://cloud.google.com/compute/docs/images) and its [API](https://cloud.google.com/compute/docs/reference/latest/images).
      */
-    def getImages(args: Endofunction[com.pulumi.gcp.compute.inputs.GetImagesArgs.Builder] = scala.Predef.identity):
+    inline def getImages(args: Endofunction[com.pulumi.gcp.compute.inputs.GetImagesArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.compute.outputs.GetImagesResult] =
       val argsBuilder = com.pulumi.gcp.compute.inputs.GetImagesArgs.builder
       com.pulumi.gcp.compute.ComputeFunctions.getImages(args(argsBuilder).build)
@@ -26104,7 +26106,7 @@ object compute:
      * Get information about Google Compute Images. Check that your service account has the `compute.imageUser` role if you want to share [custom images](https://cloud.google.com/compute/docs/images/sharing-images-across-projects) from another project. If you want to use [public images][pubimg], do not forget to specify the dedicated project. For more information see
      *  [the official documentation](https://cloud.google.com/compute/docs/images) and its [API](https://cloud.google.com/compute/docs/reference/latest/images).
      */
-    def getImagesPlain(args: Endofunction[com.pulumi.gcp.compute.inputs.GetImagesPlainArgs.Builder] = scala.Predef.identity):
+    inline def getImagesPlain(args: Endofunction[com.pulumi.gcp.compute.inputs.GetImagesPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.compute.outputs.GetImagesResult] =
       val argsBuilder = com.pulumi.gcp.compute.inputs.GetImagesPlainArgs.builder
       com.pulumi.gcp.compute.ComputeFunctions.getImagesPlain(args(argsBuilder).build)
@@ -26115,7 +26117,7 @@ object compute:
      *  and
      *  [API](https://cloud.google.com/compute/docs/reference/latest/instances).
      */
-    def getInstance(args: Endofunction[com.pulumi.gcp.compute.inputs.GetInstanceArgs.Builder] = scala.Predef.identity):
+    inline def getInstance(args: Endofunction[com.pulumi.gcp.compute.inputs.GetInstanceArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.compute.outputs.GetInstanceResult] =
       val argsBuilder = com.pulumi.gcp.compute.inputs.GetInstanceArgs.builder
       com.pulumi.gcp.compute.ComputeFunctions.getInstance(args(argsBuilder).build)
@@ -26126,7 +26128,7 @@ object compute:
      *  and
      *  [API](https://cloud.google.com/compute/docs/reference/latest/instances).
      */
-    def getInstancePlain(args: Endofunction[com.pulumi.gcp.compute.inputs.GetInstancePlainArgs.Builder] = scala.Predef.identity):
+    inline def getInstancePlain(args: Endofunction[com.pulumi.gcp.compute.inputs.GetInstancePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.compute.outputs.GetInstanceResult] =
       val argsBuilder = com.pulumi.gcp.compute.inputs.GetInstancePlainArgs.builder
       com.pulumi.gcp.compute.ComputeFunctions.getInstancePlain(args(argsBuilder).build)
@@ -26168,7 +26170,7 @@ object compute:
      *  }
      *  </pre>
      */
-    def getInstanceGroup(args: Endofunction[com.pulumi.gcp.compute.inputs.GetInstanceGroupArgs.Builder] = scala.Predef.identity):
+    inline def getInstanceGroup(args: Endofunction[com.pulumi.gcp.compute.inputs.GetInstanceGroupArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.compute.outputs.GetInstanceGroupResult] =
       val argsBuilder = com.pulumi.gcp.compute.inputs.GetInstanceGroupArgs.builder
       com.pulumi.gcp.compute.ComputeFunctions.getInstanceGroup(args(argsBuilder).build)
@@ -26210,7 +26212,7 @@ object compute:
      *  }
      *  </pre>
      */
-    def getInstanceGroupPlain(args: Endofunction[com.pulumi.gcp.compute.inputs.GetInstanceGroupPlainArgs.Builder] = scala.Predef.identity):
+    inline def getInstanceGroupPlain(args: Endofunction[com.pulumi.gcp.compute.inputs.GetInstanceGroupPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.compute.outputs.GetInstanceGroupResult] =
       val argsBuilder = com.pulumi.gcp.compute.inputs.GetInstanceGroupPlainArgs.builder
       com.pulumi.gcp.compute.ComputeFunctions.getInstanceGroupPlain(args(argsBuilder).build)
@@ -26220,7 +26222,7 @@ object compute:
      *  For more information, see [the official documentation](https://cloud.google.com/compute/docs/instance-groups#managed_instance_groups)
      *  and [API](https://cloud.google.com/compute/docs/reference/latest/instanceGroupManagers)
      */
-    def getInstanceGroupManager(args: Endofunction[com.pulumi.gcp.compute.inputs.GetInstanceGroupManagerArgs.Builder] = scala.Predef.identity):
+    inline def getInstanceGroupManager(args: Endofunction[com.pulumi.gcp.compute.inputs.GetInstanceGroupManagerArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.compute.outputs.GetInstanceGroupManagerResult] =
       val argsBuilder = com.pulumi.gcp.compute.inputs.GetInstanceGroupManagerArgs.builder
       com.pulumi.gcp.compute.ComputeFunctions.getInstanceGroupManager(args(argsBuilder).build)
@@ -26230,7 +26232,7 @@ object compute:
      *  For more information, see [the official documentation](https://cloud.google.com/compute/docs/instance-groups#managed_instance_groups)
      *  and [API](https://cloud.google.com/compute/docs/reference/latest/instanceGroupManagers)
      */
-    def getInstanceGroupManagerPlain(args: Endofunction[com.pulumi.gcp.compute.inputs.GetInstanceGroupManagerPlainArgs.Builder] = scala.Predef.identity):
+    inline def getInstanceGroupManagerPlain(args: Endofunction[com.pulumi.gcp.compute.inputs.GetInstanceGroupManagerPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.compute.outputs.GetInstanceGroupManagerResult] =
       val argsBuilder = com.pulumi.gcp.compute.inputs.GetInstanceGroupManagerPlainArgs.builder
       com.pulumi.gcp.compute.ComputeFunctions.getInstanceGroupManagerPlain(args(argsBuilder).build)
@@ -26245,7 +26247,7 @@ object compute:
      *  and
      *  [API](https://cloud.google.com/compute/docs/reference/rest/v1/instances/getGuestAttributes).
      */
-    def getInstanceGuestAttributes(args: Endofunction[com.pulumi.gcp.compute.inputs.GetInstanceGuestAttributesArgs.Builder] = scala.Predef.identity):
+    inline def getInstanceGuestAttributes(args: Endofunction[com.pulumi.gcp.compute.inputs.GetInstanceGuestAttributesArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.compute.outputs.GetInstanceGuestAttributesResult] =
       val argsBuilder = com.pulumi.gcp.compute.inputs.GetInstanceGuestAttributesArgs.builder
       com.pulumi.gcp.compute.ComputeFunctions.getInstanceGuestAttributes(args(argsBuilder).build)
@@ -26260,19 +26262,19 @@ object compute:
      *  and
      *  [API](https://cloud.google.com/compute/docs/reference/rest/v1/instances/getGuestAttributes).
      */
-    def getInstanceGuestAttributesPlain(args: Endofunction[com.pulumi.gcp.compute.inputs.GetInstanceGuestAttributesPlainArgs.Builder] = scala.Predef.identity):
+    inline def getInstanceGuestAttributesPlain(args: Endofunction[com.pulumi.gcp.compute.inputs.GetInstanceGuestAttributesPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.compute.outputs.GetInstanceGuestAttributesResult] =
       val argsBuilder = com.pulumi.gcp.compute.inputs.GetInstanceGuestAttributesPlainArgs.builder
       com.pulumi.gcp.compute.ComputeFunctions.getInstanceGuestAttributesPlain(args(argsBuilder).build)
 
     /** Retrieves the current IAM policy data for instance */
-    def getInstanceIamPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.GetInstanceIamPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getInstanceIamPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.GetInstanceIamPolicyArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.compute.outputs.GetInstanceIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.compute.inputs.GetInstanceIamPolicyArgs.builder
       com.pulumi.gcp.compute.ComputeFunctions.getInstanceIamPolicy(args(argsBuilder).build)
 
     /** Retrieves the current IAM policy data for instance */
-    def getInstanceIamPolicyPlain(args: Endofunction[com.pulumi.gcp.compute.inputs.GetInstanceIamPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getInstanceIamPolicyPlain(args: Endofunction[com.pulumi.gcp.compute.inputs.GetInstanceIamPolicyPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.compute.outputs.GetInstanceIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.compute.inputs.GetInstanceIamPolicyPlainArgs.builder
       com.pulumi.gcp.compute.ComputeFunctions.getInstanceIamPolicyPlain(args(argsBuilder).build)
@@ -26281,7 +26283,7 @@ object compute:
      * Get the serial port output from a Compute Instance. For more information see
      *  the official [API](https://cloud.google.com/compute/docs/instances/viewing-serial-port-output) documentation.
      */
-    def getInstanceSerialPort(args: Endofunction[com.pulumi.gcp.compute.inputs.GetInstanceSerialPortArgs.Builder] = scala.Predef.identity):
+    inline def getInstanceSerialPort(args: Endofunction[com.pulumi.gcp.compute.inputs.GetInstanceSerialPortArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.compute.outputs.GetInstanceSerialPortResult] =
       val argsBuilder = com.pulumi.gcp.compute.inputs.GetInstanceSerialPortArgs.builder
       com.pulumi.gcp.compute.ComputeFunctions.getInstanceSerialPort(args(argsBuilder).build)
@@ -26290,7 +26292,7 @@ object compute:
      * Get the serial port output from a Compute Instance. For more information see
      *  the official [API](https://cloud.google.com/compute/docs/instances/viewing-serial-port-output) documentation.
      */
-    def getInstanceSerialPortPlain(args: Endofunction[com.pulumi.gcp.compute.inputs.GetInstanceSerialPortPlainArgs.Builder] = scala.Predef.identity):
+    inline def getInstanceSerialPortPlain(args: Endofunction[com.pulumi.gcp.compute.inputs.GetInstanceSerialPortPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.compute.outputs.GetInstanceSerialPortResult] =
       val argsBuilder = com.pulumi.gcp.compute.inputs.GetInstanceSerialPortPlainArgs.builder
       com.pulumi.gcp.compute.ComputeFunctions.getInstanceSerialPortPlain(args(argsBuilder).build)
@@ -26303,7 +26305,7 @@ object compute:
      *  and
      *  [API](https://cloud.google.com/compute/docs/reference/rest/v1/instanceTemplates).
      */
-    def getInstanceTemplate(args: Endofunction[com.pulumi.gcp.compute.inputs.GetInstanceTemplateArgs.Builder] = scala.Predef.identity):
+    inline def getInstanceTemplate(args: Endofunction[com.pulumi.gcp.compute.inputs.GetInstanceTemplateArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.compute.outputs.GetInstanceTemplateResult] =
       val argsBuilder = com.pulumi.gcp.compute.inputs.GetInstanceTemplateArgs.builder
       com.pulumi.gcp.compute.ComputeFunctions.getInstanceTemplate(args(argsBuilder).build)
@@ -26316,31 +26318,31 @@ object compute:
      *  and
      *  [API](https://cloud.google.com/compute/docs/reference/rest/v1/instanceTemplates).
      */
-    def getInstanceTemplatePlain(args: Endofunction[com.pulumi.gcp.compute.inputs.GetInstanceTemplatePlainArgs.Builder] = scala.Predef.identity):
+    inline def getInstanceTemplatePlain(args: Endofunction[com.pulumi.gcp.compute.inputs.GetInstanceTemplatePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.compute.outputs.GetInstanceTemplateResult] =
       val argsBuilder = com.pulumi.gcp.compute.inputs.GetInstanceTemplatePlainArgs.builder
       com.pulumi.gcp.compute.ComputeFunctions.getInstanceTemplatePlain(args(argsBuilder).build)
 
     /** Retrieves the current IAM policy data for instancetemplate */
-    def getInstanceTemplateIamPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.GetInstanceTemplateIamPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getInstanceTemplateIamPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.GetInstanceTemplateIamPolicyArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.compute.outputs.GetInstanceTemplateIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.compute.inputs.GetInstanceTemplateIamPolicyArgs.builder
       com.pulumi.gcp.compute.ComputeFunctions.getInstanceTemplateIamPolicy(args(argsBuilder).build)
 
     /** Retrieves the current IAM policy data for instancetemplate */
-    def getInstanceTemplateIamPolicyPlain(args: Endofunction[com.pulumi.gcp.compute.inputs.GetInstanceTemplateIamPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getInstanceTemplateIamPolicyPlain(args: Endofunction[com.pulumi.gcp.compute.inputs.GetInstanceTemplateIamPolicyPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.compute.outputs.GetInstanceTemplateIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.compute.inputs.GetInstanceTemplateIamPolicyPlainArgs.builder
       com.pulumi.gcp.compute.ComputeFunctions.getInstanceTemplateIamPolicyPlain(args(argsBuilder).build)
 
     /** Retrieves the current IAM policy data for instantsnapshot */
-    def getInstantSnapshotIamPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.GetInstantSnapshotIamPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getInstantSnapshotIamPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.GetInstantSnapshotIamPolicyArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.compute.outputs.GetInstantSnapshotIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.compute.inputs.GetInstantSnapshotIamPolicyArgs.builder
       com.pulumi.gcp.compute.ComputeFunctions.getInstantSnapshotIamPolicy(args(argsBuilder).build)
 
     /** Retrieves the current IAM policy data for instantsnapshot */
-    def getInstantSnapshotIamPolicyPlain(args: Endofunction[com.pulumi.gcp.compute.inputs.GetInstantSnapshotIamPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getInstantSnapshotIamPolicyPlain(args: Endofunction[com.pulumi.gcp.compute.inputs.GetInstantSnapshotIamPolicyPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.compute.outputs.GetInstantSnapshotIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.compute.inputs.GetInstantSnapshotIamPolicyPlainArgs.builder
       com.pulumi.gcp.compute.ComputeFunctions.getInstantSnapshotIamPolicyPlain(args(argsBuilder).build)
@@ -26349,7 +26351,7 @@ object compute:
      * Get the details of a single interconnect location. For more information see
      *  the official [API](https://cloud.google.com/compute/docs/reference/rest/v1/interconnectLocations/get) documentation.
      */
-    def getInterconnectLocation(args: Endofunction[com.pulumi.gcp.compute.inputs.GetInterconnectLocationArgs.Builder] = scala.Predef.identity):
+    inline def getInterconnectLocation(args: Endofunction[com.pulumi.gcp.compute.inputs.GetInterconnectLocationArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.compute.outputs.GetInterconnectLocationResult] =
       val argsBuilder = com.pulumi.gcp.compute.inputs.GetInterconnectLocationArgs.builder
       com.pulumi.gcp.compute.ComputeFunctions.getInterconnectLocation(args(argsBuilder).build)
@@ -26358,7 +26360,7 @@ object compute:
      * Get the details of a single interconnect location. For more information see
      *  the official [API](https://cloud.google.com/compute/docs/reference/rest/v1/interconnectLocations/get) documentation.
      */
-    def getInterconnectLocationPlain(args: Endofunction[com.pulumi.gcp.compute.inputs.GetInterconnectLocationPlainArgs.Builder] = scala.Predef.identity):
+    inline def getInterconnectLocationPlain(args: Endofunction[com.pulumi.gcp.compute.inputs.GetInterconnectLocationPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.compute.outputs.GetInterconnectLocationResult] =
       val argsBuilder = com.pulumi.gcp.compute.inputs.GetInterconnectLocationPlainArgs.builder
       com.pulumi.gcp.compute.ComputeFunctions.getInterconnectLocationPlain(args(argsBuilder).build)
@@ -26367,7 +26369,7 @@ object compute:
      * Get a list of interconnect locations. For more information see
      *  the official [API](https://cloud.google.com/compute/docs/reference/rest/v1/interconnectLocations/list) documentation.
      */
-    def getInterconnectLocations(args: Endofunction[com.pulumi.gcp.compute.inputs.GetInterconnectLocationsArgs.Builder] = scala.Predef.identity):
+    inline def getInterconnectLocations(args: Endofunction[com.pulumi.gcp.compute.inputs.GetInterconnectLocationsArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.compute.outputs.GetInterconnectLocationsResult] =
       val argsBuilder = com.pulumi.gcp.compute.inputs.GetInterconnectLocationsArgs.builder
       com.pulumi.gcp.compute.ComputeFunctions.getInterconnectLocations(args(argsBuilder).build)
@@ -26376,7 +26378,7 @@ object compute:
      * Get a list of interconnect locations. For more information see
      *  the official [API](https://cloud.google.com/compute/docs/reference/rest/v1/interconnectLocations/list) documentation.
      */
-    def getInterconnectLocationsPlain(args: Endofunction[com.pulumi.gcp.compute.inputs.GetInterconnectLocationsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getInterconnectLocationsPlain(args: Endofunction[com.pulumi.gcp.compute.inputs.GetInterconnectLocationsPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.compute.outputs.GetInterconnectLocationsResult] =
       val argsBuilder = com.pulumi.gcp.compute.inputs.GetInterconnectLocationsPlainArgs.builder
       com.pulumi.gcp.compute.ComputeFunctions.getInterconnectLocationsPlain(args(argsBuilder).build)
@@ -26386,7 +26388,7 @@ object compute:
      *  &gt; **Warning:** This datasource is in beta, and should be used with the terraform-provider-google-beta provider.
      *  See Provider Versions for more details on beta resources.
      */
-    def getMachineImageIamPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.GetMachineImageIamPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getMachineImageIamPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.GetMachineImageIamPolicyArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.compute.outputs.GetMachineImageIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.compute.inputs.GetMachineImageIamPolicyArgs.builder
       com.pulumi.gcp.compute.ComputeFunctions.getMachineImageIamPolicy(args(argsBuilder).build)
@@ -26396,7 +26398,7 @@ object compute:
      *  &gt; **Warning:** This datasource is in beta, and should be used with the terraform-provider-google-beta provider.
      *  See Provider Versions for more details on beta resources.
      */
-    def getMachineImageIamPolicyPlain(args: Endofunction[com.pulumi.gcp.compute.inputs.GetMachineImageIamPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getMachineImageIamPolicyPlain(args: Endofunction[com.pulumi.gcp.compute.inputs.GetMachineImageIamPolicyPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.compute.outputs.GetMachineImageIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.compute.inputs.GetMachineImageIamPolicyPlainArgs.builder
       com.pulumi.gcp.compute.ComputeFunctions.getMachineImageIamPolicyPlain(args(argsBuilder).build)
@@ -26410,7 +26412,7 @@ object compute:
      *  * [API Documentation](https://cloud.google.com/compute/docs/reference/rest/v1/machineTypes/list)
      *  * [Comparison Guide](https://cloud.google.com/compute/docs/machine-resource)
      */
-    def getMachineTypes(args: Endofunction[com.pulumi.gcp.compute.inputs.GetMachineTypesArgs.Builder] = scala.Predef.identity):
+    inline def getMachineTypes(args: Endofunction[com.pulumi.gcp.compute.inputs.GetMachineTypesArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.compute.outputs.GetMachineTypesResult] =
       val argsBuilder = com.pulumi.gcp.compute.inputs.GetMachineTypesArgs.builder
       com.pulumi.gcp.compute.ComputeFunctions.getMachineTypes(args(argsBuilder).build)
@@ -26424,31 +26426,31 @@ object compute:
      *  * [API Documentation](https://cloud.google.com/compute/docs/reference/rest/v1/machineTypes/list)
      *  * [Comparison Guide](https://cloud.google.com/compute/docs/machine-resource)
      */
-    def getMachineTypesPlain(args: Endofunction[com.pulumi.gcp.compute.inputs.GetMachineTypesPlainArgs.Builder] = scala.Predef.identity):
+    inline def getMachineTypesPlain(args: Endofunction[com.pulumi.gcp.compute.inputs.GetMachineTypesPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.compute.outputs.GetMachineTypesResult] =
       val argsBuilder = com.pulumi.gcp.compute.inputs.GetMachineTypesPlainArgs.builder
       com.pulumi.gcp.compute.ComputeFunctions.getMachineTypesPlain(args(argsBuilder).build)
 
     /** Use this data source to get the IP addresses from different special IP ranges on Google Cloud Platform. */
-    def getNetblockIPRanges(args: Endofunction[com.pulumi.gcp.compute.inputs.GetNetblockIPRangesArgs.Builder] = scala.Predef.identity):
+    inline def getNetblockIPRanges(args: Endofunction[com.pulumi.gcp.compute.inputs.GetNetblockIPRangesArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.compute.outputs.GetNetblockIPRangesResult] =
       val argsBuilder = com.pulumi.gcp.compute.inputs.GetNetblockIPRangesArgs.builder
       com.pulumi.gcp.compute.ComputeFunctions.getNetblockIPRanges(args(argsBuilder).build)
 
     /** Use this data source to get the IP addresses from different special IP ranges on Google Cloud Platform. */
-    def getNetblockIPRangesPlain(args: Endofunction[com.pulumi.gcp.compute.inputs.GetNetblockIPRangesPlainArgs.Builder] = scala.Predef.identity):
+    inline def getNetblockIPRangesPlain(args: Endofunction[com.pulumi.gcp.compute.inputs.GetNetblockIPRangesPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.compute.outputs.GetNetblockIPRangesResult] =
       val argsBuilder = com.pulumi.gcp.compute.inputs.GetNetblockIPRangesPlainArgs.builder
       com.pulumi.gcp.compute.ComputeFunctions.getNetblockIPRangesPlain(args(argsBuilder).build)
 
     /** Get a network within GCE from its name. */
-    def getNetwork(args: Endofunction[com.pulumi.gcp.compute.inputs.GetNetworkArgs.Builder] = scala.Predef.identity):
+    inline def getNetwork(args: Endofunction[com.pulumi.gcp.compute.inputs.GetNetworkArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.compute.outputs.GetNetworkResult] =
       val argsBuilder = com.pulumi.gcp.compute.inputs.GetNetworkArgs.builder
       com.pulumi.gcp.compute.ComputeFunctions.getNetwork(args(argsBuilder).build)
 
     /** Get a network within GCE from its name. */
-    def getNetworkPlain(args: Endofunction[com.pulumi.gcp.compute.inputs.GetNetworkPlainArgs.Builder] = scala.Predef.identity):
+    inline def getNetworkPlain(args: Endofunction[com.pulumi.gcp.compute.inputs.GetNetworkPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.compute.outputs.GetNetworkResult] =
       val argsBuilder = com.pulumi.gcp.compute.inputs.GetNetworkPlainArgs.builder
       com.pulumi.gcp.compute.ComputeFunctions.getNetworkPlain(args(argsBuilder).build)
@@ -26458,7 +26460,7 @@ object compute:
      *  the [official documentation](https://cloud.google.com/vpc/docs/about-network-attachments)
      *  and [API](https://cloud.google.com/compute/docs/reference/rest/v1/networkAttachments/get).
      */
-    def getNetworkAttachment(args: Endofunction[com.pulumi.gcp.compute.inputs.GetNetworkAttachmentArgs.Builder] = scala.Predef.identity):
+    inline def getNetworkAttachment(args: Endofunction[com.pulumi.gcp.compute.inputs.GetNetworkAttachmentArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.compute.outputs.GetNetworkAttachmentResult] =
       val argsBuilder = com.pulumi.gcp.compute.inputs.GetNetworkAttachmentArgs.builder
       com.pulumi.gcp.compute.ComputeFunctions.getNetworkAttachment(args(argsBuilder).build)
@@ -26468,7 +26470,7 @@ object compute:
      *  the [official documentation](https://cloud.google.com/vpc/docs/about-network-attachments)
      *  and [API](https://cloud.google.com/compute/docs/reference/rest/v1/networkAttachments/get).
      */
-    def getNetworkAttachmentPlain(args: Endofunction[com.pulumi.gcp.compute.inputs.GetNetworkAttachmentPlainArgs.Builder] = scala.Predef.identity):
+    inline def getNetworkAttachmentPlain(args: Endofunction[com.pulumi.gcp.compute.inputs.GetNetworkAttachmentPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.compute.outputs.GetNetworkAttachmentResult] =
       val argsBuilder = com.pulumi.gcp.compute.inputs.GetNetworkAttachmentPlainArgs.builder
       com.pulumi.gcp.compute.ComputeFunctions.getNetworkAttachmentPlain(args(argsBuilder).build)
@@ -26478,7 +26480,7 @@ object compute:
      * 
      *  The NEG may be found by providing either a `selfLink`, or a `name` and a `zone`.
      */
-    def getNetworkEndpointGroup(args: Endofunction[com.pulumi.gcp.compute.inputs.GetNetworkEndpointGroupArgs.Builder] = scala.Predef.identity):
+    inline def getNetworkEndpointGroup(args: Endofunction[com.pulumi.gcp.compute.inputs.GetNetworkEndpointGroupArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.compute.outputs.GetNetworkEndpointGroupResult] =
       val argsBuilder = com.pulumi.gcp.compute.inputs.GetNetworkEndpointGroupArgs.builder
       com.pulumi.gcp.compute.ComputeFunctions.getNetworkEndpointGroup(args(argsBuilder).build)
@@ -26488,7 +26490,7 @@ object compute:
      * 
      *  The NEG may be found by providing either a `selfLink`, or a `name` and a `zone`.
      */
-    def getNetworkEndpointGroupPlain(args: Endofunction[com.pulumi.gcp.compute.inputs.GetNetworkEndpointGroupPlainArgs.Builder] = scala.Predef.identity):
+    inline def getNetworkEndpointGroupPlain(args: Endofunction[com.pulumi.gcp.compute.inputs.GetNetworkEndpointGroupPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.compute.outputs.GetNetworkEndpointGroupResult] =
       val argsBuilder = com.pulumi.gcp.compute.inputs.GetNetworkEndpointGroupPlainArgs.builder
       com.pulumi.gcp.compute.ComputeFunctions.getNetworkEndpointGroupPlain(args(argsBuilder).build)
@@ -26497,7 +26499,7 @@ object compute:
      * Use this data source to fetch a list of Network Endpoint Groups available in a
      *  project and zone.
      */
-    def getNetworkEndpointGroups(args: Endofunction[com.pulumi.gcp.compute.inputs.GetNetworkEndpointGroupsArgs.Builder] = scala.Predef.identity):
+    inline def getNetworkEndpointGroups(args: Endofunction[com.pulumi.gcp.compute.inputs.GetNetworkEndpointGroupsArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.compute.outputs.GetNetworkEndpointGroupsResult] =
       val argsBuilder = com.pulumi.gcp.compute.inputs.GetNetworkEndpointGroupsArgs.builder
       com.pulumi.gcp.compute.ComputeFunctions.getNetworkEndpointGroups(args(argsBuilder).build)
@@ -26506,7 +26508,7 @@ object compute:
      * Use this data source to fetch a list of Network Endpoint Groups available in a
      *  project and zone.
      */
-    def getNetworkEndpointGroupsPlain(args: Endofunction[com.pulumi.gcp.compute.inputs.GetNetworkEndpointGroupsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getNetworkEndpointGroupsPlain(args: Endofunction[com.pulumi.gcp.compute.inputs.GetNetworkEndpointGroupsPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.compute.outputs.GetNetworkEndpointGroupsResult] =
       val argsBuilder = com.pulumi.gcp.compute.inputs.GetNetworkEndpointGroupsPlainArgs.builder
       com.pulumi.gcp.compute.ComputeFunctions.getNetworkEndpointGroupsPlain(args(argsBuilder).build)
@@ -26517,7 +26519,7 @@ object compute:
      *  and
      *  [API](https://cloud.google.com/compute/docs/reference/latest/networks).
      */
-    def getNetworkPeering(args: Endofunction[com.pulumi.gcp.compute.inputs.GetNetworkPeeringArgs.Builder] = scala.Predef.identity):
+    inline def getNetworkPeering(args: Endofunction[com.pulumi.gcp.compute.inputs.GetNetworkPeeringArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.compute.outputs.GetNetworkPeeringResult] =
       val argsBuilder = com.pulumi.gcp.compute.inputs.GetNetworkPeeringArgs.builder
       com.pulumi.gcp.compute.ComputeFunctions.getNetworkPeering(args(argsBuilder).build)
@@ -26528,19 +26530,19 @@ object compute:
      *  and
      *  [API](https://cloud.google.com/compute/docs/reference/latest/networks).
      */
-    def getNetworkPeeringPlain(args: Endofunction[com.pulumi.gcp.compute.inputs.GetNetworkPeeringPlainArgs.Builder] = scala.Predef.identity):
+    inline def getNetworkPeeringPlain(args: Endofunction[com.pulumi.gcp.compute.inputs.GetNetworkPeeringPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.compute.outputs.GetNetworkPeeringResult] =
       val argsBuilder = com.pulumi.gcp.compute.inputs.GetNetworkPeeringPlainArgs.builder
       com.pulumi.gcp.compute.ComputeFunctions.getNetworkPeeringPlain(args(argsBuilder).build)
 
     /** List all networks in a specified Google Cloud project. */
-    def getNetworks(args: Endofunction[com.pulumi.gcp.compute.inputs.GetNetworksArgs.Builder] = scala.Predef.identity):
+    inline def getNetworks(args: Endofunction[com.pulumi.gcp.compute.inputs.GetNetworksArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.compute.outputs.GetNetworksResult] =
       val argsBuilder = com.pulumi.gcp.compute.inputs.GetNetworksArgs.builder
       com.pulumi.gcp.compute.ComputeFunctions.getNetworks(args(argsBuilder).build)
 
     /** List all networks in a specified Google Cloud project. */
-    def getNetworksPlain(args: Endofunction[com.pulumi.gcp.compute.inputs.GetNetworksPlainArgs.Builder] = scala.Predef.identity):
+    inline def getNetworksPlain(args: Endofunction[com.pulumi.gcp.compute.inputs.GetNetworksPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.compute.outputs.GetNetworksResult] =
       val argsBuilder = com.pulumi.gcp.compute.inputs.GetNetworksPlainArgs.builder
       com.pulumi.gcp.compute.ComputeFunctions.getNetworksPlain(args(argsBuilder).build)
@@ -26549,7 +26551,7 @@ object compute:
      * Provides available node types for Compute Engine sole-tenant nodes in a zone
      *  for a given project. For more information, see [the official documentation](https://cloud.google.com/compute/docs/nodes/#types) and [API](https://cloud.google.com/compute/docs/reference/rest/v1/nodeTypes).
      */
-    def getNodeTypes(args: Endofunction[com.pulumi.gcp.compute.inputs.GetNodeTypesArgs.Builder] = scala.Predef.identity):
+    inline def getNodeTypes(args: Endofunction[com.pulumi.gcp.compute.inputs.GetNodeTypesArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.compute.outputs.GetNodeTypesResult] =
       val argsBuilder = com.pulumi.gcp.compute.inputs.GetNodeTypesArgs.builder
       com.pulumi.gcp.compute.ComputeFunctions.getNodeTypes(args(argsBuilder).build)
@@ -26558,7 +26560,7 @@ object compute:
      * Provides available node types for Compute Engine sole-tenant nodes in a zone
      *  for a given project. For more information, see [the official documentation](https://cloud.google.com/compute/docs/nodes/#types) and [API](https://cloud.google.com/compute/docs/reference/rest/v1/nodeTypes).
      */
-    def getNodeTypesPlain(args: Endofunction[com.pulumi.gcp.compute.inputs.GetNodeTypesPlainArgs.Builder] = scala.Predef.identity):
+    inline def getNodeTypesPlain(args: Endofunction[com.pulumi.gcp.compute.inputs.GetNodeTypesPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.compute.outputs.GetNodeTypesResult] =
       val argsBuilder = com.pulumi.gcp.compute.inputs.GetNodeTypesPlainArgs.builder
       com.pulumi.gcp.compute.ComputeFunctions.getNodeTypesPlain(args(argsBuilder).build)
@@ -26568,7 +26570,7 @@ object compute:
      *  &gt; **Warning:** This datasource is in beta, and should be used with the terraform-provider-google-beta provider.
      *  See Provider Versions for more details on beta resources.
      */
-    def getRegionBackendBucketIamPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.GetRegionBackendBucketIamPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getRegionBackendBucketIamPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.GetRegionBackendBucketIamPolicyArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.compute.outputs.GetRegionBackendBucketIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.compute.inputs.GetRegionBackendBucketIamPolicyArgs.builder
       com.pulumi.gcp.compute.ComputeFunctions.getRegionBackendBucketIamPolicy(args(argsBuilder).build)
@@ -26578,7 +26580,7 @@ object compute:
      *  &gt; **Warning:** This datasource is in beta, and should be used with the terraform-provider-google-beta provider.
      *  See Provider Versions for more details on beta resources.
      */
-    def getRegionBackendBucketIamPolicyPlain(args: Endofunction[com.pulumi.gcp.compute.inputs.GetRegionBackendBucketIamPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getRegionBackendBucketIamPolicyPlain(args: Endofunction[com.pulumi.gcp.compute.inputs.GetRegionBackendBucketIamPolicyPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.compute.outputs.GetRegionBackendBucketIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.compute.inputs.GetRegionBackendBucketIamPolicyPlainArgs.builder
       com.pulumi.gcp.compute.ComputeFunctions.getRegionBackendBucketIamPolicyPlain(args(argsBuilder).build)
@@ -26588,7 +26590,7 @@ object compute:
      *  [the official documentation](https://docs.cloud.google.com/load-balancing/docs/internal) and
      *  [API](https://cloud.google.com/compute/docs/reference/rest/beta/regionBackendServices).
      */
-    def getRegionBackendService(args: Endofunction[com.pulumi.gcp.compute.inputs.GetRegionBackendServiceArgs.Builder] = scala.Predef.identity):
+    inline def getRegionBackendService(args: Endofunction[com.pulumi.gcp.compute.inputs.GetRegionBackendServiceArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.compute.outputs.GetRegionBackendServiceResult] =
       val argsBuilder = com.pulumi.gcp.compute.inputs.GetRegionBackendServiceArgs.builder
       com.pulumi.gcp.compute.ComputeFunctions.getRegionBackendService(args(argsBuilder).build)
@@ -26598,7 +26600,7 @@ object compute:
      *  [the official documentation](https://docs.cloud.google.com/load-balancing/docs/internal) and
      *  [API](https://cloud.google.com/compute/docs/reference/rest/beta/regionBackendServices).
      */
-    def getRegionBackendServicePlain(args: Endofunction[com.pulumi.gcp.compute.inputs.GetRegionBackendServicePlainArgs.Builder] = scala.Predef.identity):
+    inline def getRegionBackendServicePlain(args: Endofunction[com.pulumi.gcp.compute.inputs.GetRegionBackendServicePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.compute.outputs.GetRegionBackendServiceResult] =
       val argsBuilder = com.pulumi.gcp.compute.inputs.GetRegionBackendServicePlainArgs.builder
       com.pulumi.gcp.compute.ComputeFunctions.getRegionBackendServicePlain(args(argsBuilder).build)
@@ -26608,7 +26610,7 @@ object compute:
      *  &gt; **Warning:** This datasource is in beta, and should be used with the terraform-provider-google-beta provider.
      *  See Provider Versions for more details on beta resources.
      */
-    def getRegionBackendServiceIamPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.GetRegionBackendServiceIamPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getRegionBackendServiceIamPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.GetRegionBackendServiceIamPolicyArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.compute.outputs.GetRegionBackendServiceIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.compute.inputs.GetRegionBackendServiceIamPolicyArgs.builder
       com.pulumi.gcp.compute.ComputeFunctions.getRegionBackendServiceIamPolicy(args(argsBuilder).build)
@@ -26618,7 +26620,7 @@ object compute:
      *  &gt; **Warning:** This datasource is in beta, and should be used with the terraform-provider-google-beta provider.
      *  See Provider Versions for more details on beta resources.
      */
-    def getRegionBackendServiceIamPolicyPlain(args: Endofunction[com.pulumi.gcp.compute.inputs.GetRegionBackendServiceIamPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getRegionBackendServiceIamPolicyPlain(args: Endofunction[com.pulumi.gcp.compute.inputs.GetRegionBackendServiceIamPolicyPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.compute.outputs.GetRegionBackendServiceIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.compute.inputs.GetRegionBackendServiceIamPolicyPlainArgs.builder
       com.pulumi.gcp.compute.ComputeFunctions.getRegionBackendServiceIamPolicyPlain(args(argsBuilder).build)
@@ -26628,7 +26630,7 @@ object compute:
      * 
      *  [the official documentation](https://cloud.google.com/compute/docs/disks) and its [API](https://cloud.google.com/compute/docs/reference/rest/v1/regionDisks).
      */
-    def getRegionDisk(args: Endofunction[com.pulumi.gcp.compute.inputs.GetRegionDiskArgs.Builder] = scala.Predef.identity):
+    inline def getRegionDisk(args: Endofunction[com.pulumi.gcp.compute.inputs.GetRegionDiskArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.compute.outputs.GetRegionDiskResult] =
       val argsBuilder = com.pulumi.gcp.compute.inputs.GetRegionDiskArgs.builder
       com.pulumi.gcp.compute.ComputeFunctions.getRegionDisk(args(argsBuilder).build)
@@ -26638,19 +26640,19 @@ object compute:
      * 
      *  [the official documentation](https://cloud.google.com/compute/docs/disks) and its [API](https://cloud.google.com/compute/docs/reference/rest/v1/regionDisks).
      */
-    def getRegionDiskPlain(args: Endofunction[com.pulumi.gcp.compute.inputs.GetRegionDiskPlainArgs.Builder] = scala.Predef.identity):
+    inline def getRegionDiskPlain(args: Endofunction[com.pulumi.gcp.compute.inputs.GetRegionDiskPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.compute.outputs.GetRegionDiskResult] =
       val argsBuilder = com.pulumi.gcp.compute.inputs.GetRegionDiskPlainArgs.builder
       com.pulumi.gcp.compute.ComputeFunctions.getRegionDiskPlain(args(argsBuilder).build)
 
     /** Retrieves the current IAM policy data for regiondisk */
-    def getRegionDiskIamPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.GetRegionDiskIamPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getRegionDiskIamPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.GetRegionDiskIamPolicyArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.compute.outputs.GetRegionDiskIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.compute.inputs.GetRegionDiskIamPolicyArgs.builder
       com.pulumi.gcp.compute.ComputeFunctions.getRegionDiskIamPolicy(args(argsBuilder).build)
 
     /** Retrieves the current IAM policy data for regiondisk */
-    def getRegionDiskIamPolicyPlain(args: Endofunction[com.pulumi.gcp.compute.inputs.GetRegionDiskIamPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getRegionDiskIamPolicyPlain(args: Endofunction[com.pulumi.gcp.compute.inputs.GetRegionDiskIamPolicyPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.compute.outputs.GetRegionDiskIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.compute.inputs.GetRegionDiskIamPolicyPlainArgs.builder
       com.pulumi.gcp.compute.ComputeFunctions.getRegionDiskIamPolicyPlain(args(argsBuilder).build)
@@ -26692,7 +26694,7 @@ object compute:
      * 
      *  The most common use of this datasource will be to fetch information about the instances inside regional managed instance groups, for instance:
      */
-    def getRegionInstanceGroup(args: Endofunction[com.pulumi.gcp.compute.inputs.GetRegionInstanceGroupArgs.Builder] = scala.Predef.identity):
+    inline def getRegionInstanceGroup(args: Endofunction[com.pulumi.gcp.compute.inputs.GetRegionInstanceGroupArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.compute.outputs.GetRegionInstanceGroupResult] =
       val argsBuilder = com.pulumi.gcp.compute.inputs.GetRegionInstanceGroupArgs.builder
       com.pulumi.gcp.compute.ComputeFunctions.getRegionInstanceGroup(args(argsBuilder).build)
@@ -26734,7 +26736,7 @@ object compute:
      * 
      *  The most common use of this datasource will be to fetch information about the instances inside regional managed instance groups, for instance:
      */
-    def getRegionInstanceGroupPlain(args: Endofunction[com.pulumi.gcp.compute.inputs.GetRegionInstanceGroupPlainArgs.Builder] = scala.Predef.identity):
+    inline def getRegionInstanceGroupPlain(args: Endofunction[com.pulumi.gcp.compute.inputs.GetRegionInstanceGroupPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.compute.outputs.GetRegionInstanceGroupResult] =
       val argsBuilder = com.pulumi.gcp.compute.inputs.GetRegionInstanceGroupPlainArgs.builder
       com.pulumi.gcp.compute.ComputeFunctions.getRegionInstanceGroupPlain(args(argsBuilder).build)
@@ -26744,7 +26746,7 @@ object compute:
      *  For more information, see [the official documentation](https://cloud.google.com/compute/docs/instance-groups/distributing-instances-with-regional-instance-groups)
      *  and [API](https://cloud.google.com/compute/docs/reference/rest/v1/regionInstanceGroupManagers)
      */
-    def getRegionInstanceGroupManager(args: Endofunction[com.pulumi.gcp.compute.inputs.GetRegionInstanceGroupManagerArgs.Builder] = scala.Predef.identity):
+    inline def getRegionInstanceGroupManager(args: Endofunction[com.pulumi.gcp.compute.inputs.GetRegionInstanceGroupManagerArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.compute.outputs.GetRegionInstanceGroupManagerResult] =
       val argsBuilder = com.pulumi.gcp.compute.inputs.GetRegionInstanceGroupManagerArgs.builder
       com.pulumi.gcp.compute.ComputeFunctions.getRegionInstanceGroupManager(args(argsBuilder).build)
@@ -26754,7 +26756,7 @@ object compute:
      *  For more information, see [the official documentation](https://cloud.google.com/compute/docs/instance-groups/distributing-instances-with-regional-instance-groups)
      *  and [API](https://cloud.google.com/compute/docs/reference/rest/v1/regionInstanceGroupManagers)
      */
-    def getRegionInstanceGroupManagerPlain(args: Endofunction[com.pulumi.gcp.compute.inputs.GetRegionInstanceGroupManagerPlainArgs.Builder] = scala.Predef.identity):
+    inline def getRegionInstanceGroupManagerPlain(args: Endofunction[com.pulumi.gcp.compute.inputs.GetRegionInstanceGroupManagerPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.compute.outputs.GetRegionInstanceGroupManagerResult] =
       val argsBuilder = com.pulumi.gcp.compute.inputs.GetRegionInstanceGroupManagerPlainArgs.builder
       com.pulumi.gcp.compute.ComputeFunctions.getRegionInstanceGroupManagerPlain(args(argsBuilder).build)
@@ -26765,7 +26767,7 @@ object compute:
      *  and
      *  [API](https://cloud.google.com/compute/docs/reference/rest/v1/regionInstanceTemplates).
      */
-    def getRegionInstanceTemplate(args: Endofunction[com.pulumi.gcp.compute.inputs.GetRegionInstanceTemplateArgs.Builder] = scala.Predef.identity):
+    inline def getRegionInstanceTemplate(args: Endofunction[com.pulumi.gcp.compute.inputs.GetRegionInstanceTemplateArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.compute.outputs.GetRegionInstanceTemplateResult] =
       val argsBuilder = com.pulumi.gcp.compute.inputs.GetRegionInstanceTemplateArgs.builder
       com.pulumi.gcp.compute.ComputeFunctions.getRegionInstanceTemplate(args(argsBuilder).build)
@@ -26776,7 +26778,7 @@ object compute:
      *  and
      *  [API](https://cloud.google.com/compute/docs/reference/rest/v1/regionInstanceTemplates).
      */
-    def getRegionInstanceTemplatePlain(args: Endofunction[com.pulumi.gcp.compute.inputs.GetRegionInstanceTemplatePlainArgs.Builder] = scala.Predef.identity):
+    inline def getRegionInstanceTemplatePlain(args: Endofunction[com.pulumi.gcp.compute.inputs.GetRegionInstanceTemplatePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.compute.outputs.GetRegionInstanceTemplateResult] =
       val argsBuilder = com.pulumi.gcp.compute.inputs.GetRegionInstanceTemplatePlainArgs.builder
       com.pulumi.gcp.compute.ComputeFunctions.getRegionInstanceTemplatePlain(args(argsBuilder).build)
@@ -26786,7 +26788,7 @@ object compute:
      * 
      *  The RNEG may be found by providing either a `selfLink`, or a `name` and a `region`.
      */
-    def getRegionNetworkEndpointGroup(args: Endofunction[com.pulumi.gcp.compute.inputs.GetRegionNetworkEndpointGroupArgs.Builder] = scala.Predef.identity):
+    inline def getRegionNetworkEndpointGroup(args: Endofunction[com.pulumi.gcp.compute.inputs.GetRegionNetworkEndpointGroupArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.compute.outputs.GetRegionNetworkEndpointGroupResult] =
       val argsBuilder = com.pulumi.gcp.compute.inputs.GetRegionNetworkEndpointGroupArgs.builder
       com.pulumi.gcp.compute.ComputeFunctions.getRegionNetworkEndpointGroup(args(argsBuilder).build)
@@ -26796,41 +26798,41 @@ object compute:
      * 
      *  The RNEG may be found by providing either a `selfLink`, or a `name` and a `region`.
      */
-    def getRegionNetworkEndpointGroupPlain(args: Endofunction[com.pulumi.gcp.compute.inputs.GetRegionNetworkEndpointGroupPlainArgs.Builder] = scala.Predef.identity):
+    inline def getRegionNetworkEndpointGroupPlain(args: Endofunction[com.pulumi.gcp.compute.inputs.GetRegionNetworkEndpointGroupPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.compute.outputs.GetRegionNetworkEndpointGroupResult] =
       val argsBuilder = com.pulumi.gcp.compute.inputs.GetRegionNetworkEndpointGroupPlainArgs.builder
       com.pulumi.gcp.compute.ComputeFunctions.getRegionNetworkEndpointGroupPlain(args(argsBuilder).build)
 
-    def getRegionSSLPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.GetRegionSSLPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getRegionSSLPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.GetRegionSSLPolicyArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.compute.outputs.GetRegionSSLPolicyResult] =
       val argsBuilder = com.pulumi.gcp.compute.inputs.GetRegionSSLPolicyArgs.builder
       com.pulumi.gcp.compute.ComputeFunctions.getRegionSSLPolicy(args(argsBuilder).build)
 
-    def getRegionSSLPolicyPlain(args: Endofunction[com.pulumi.gcp.compute.inputs.GetRegionSSLPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getRegionSSLPolicyPlain(args: Endofunction[com.pulumi.gcp.compute.inputs.GetRegionSSLPolicyPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.compute.outputs.GetRegionSSLPolicyResult] =
       val argsBuilder = com.pulumi.gcp.compute.inputs.GetRegionSSLPolicyPlainArgs.builder
       com.pulumi.gcp.compute.ComputeFunctions.getRegionSSLPolicyPlain(args(argsBuilder).build)
 
     /** Use this data source to get information about a Compute Region Security Policy. For more details, see the [API documentation](https://cloud.google.com/compute/docs/reference/rest/v1/regionSecurityPolicies). */
-    def getRegionSecurityPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.GetRegionSecurityPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getRegionSecurityPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.GetRegionSecurityPolicyArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.compute.outputs.GetRegionSecurityPolicyResult] =
       val argsBuilder = com.pulumi.gcp.compute.inputs.GetRegionSecurityPolicyArgs.builder
       com.pulumi.gcp.compute.ComputeFunctions.getRegionSecurityPolicy(args(argsBuilder).build)
 
     /** Use this data source to get information about a Compute Region Security Policy. For more details, see the [API documentation](https://cloud.google.com/compute/docs/reference/rest/v1/regionSecurityPolicies). */
-    def getRegionSecurityPolicyPlain(args: Endofunction[com.pulumi.gcp.compute.inputs.GetRegionSecurityPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getRegionSecurityPolicyPlain(args: Endofunction[com.pulumi.gcp.compute.inputs.GetRegionSecurityPolicyPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.compute.outputs.GetRegionSecurityPolicyResult] =
       val argsBuilder = com.pulumi.gcp.compute.inputs.GetRegionSecurityPolicyPlainArgs.builder
       com.pulumi.gcp.compute.ComputeFunctions.getRegionSecurityPolicyPlain(args(argsBuilder).build)
 
     /** Get info about a Region Google Compute SSL Certificate from its name. */
-    def getRegionSslCertificate(args: Endofunction[com.pulumi.gcp.compute.inputs.GetRegionSslCertificateArgs.Builder] = scala.Predef.identity):
+    inline def getRegionSslCertificate(args: Endofunction[com.pulumi.gcp.compute.inputs.GetRegionSslCertificateArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.compute.outputs.GetRegionSslCertificateResult] =
       val argsBuilder = com.pulumi.gcp.compute.inputs.GetRegionSslCertificateArgs.builder
       com.pulumi.gcp.compute.ComputeFunctions.getRegionSslCertificate(args(argsBuilder).build)
 
     /** Get info about a Region Google Compute SSL Certificate from its name. */
-    def getRegionSslCertificatePlain(args: Endofunction[com.pulumi.gcp.compute.inputs.GetRegionSslCertificatePlainArgs.Builder] = scala.Predef.identity):
+    inline def getRegionSslCertificatePlain(args: Endofunction[com.pulumi.gcp.compute.inputs.GetRegionSslCertificatePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.compute.outputs.GetRegionSslCertificateResult] =
       val argsBuilder = com.pulumi.gcp.compute.inputs.GetRegionSslCertificatePlainArgs.builder
       com.pulumi.gcp.compute.ComputeFunctions.getRegionSslCertificatePlain(args(argsBuilder).build)
@@ -26882,7 +26884,7 @@ object compute:
      *  }
      *  </pre>
      */
-    def getRegions(args: Endofunction[com.pulumi.gcp.compute.inputs.GetRegionsArgs.Builder] = scala.Predef.identity):
+    inline def getRegions(args: Endofunction[com.pulumi.gcp.compute.inputs.GetRegionsArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.compute.outputs.GetRegionsResult] =
       val argsBuilder = com.pulumi.gcp.compute.inputs.GetRegionsArgs.builder
       com.pulumi.gcp.compute.ComputeFunctions.getRegions(args(argsBuilder).build)
@@ -26934,7 +26936,7 @@ object compute:
      *  }
      *  </pre>
      */
-    def getRegionsPlain(args: Endofunction[com.pulumi.gcp.compute.inputs.GetRegionsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getRegionsPlain(args: Endofunction[com.pulumi.gcp.compute.inputs.GetRegionsPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.compute.outputs.GetRegionsResult] =
       val argsBuilder = com.pulumi.gcp.compute.inputs.GetRegionsPlainArgs.builder
       com.pulumi.gcp.compute.ComputeFunctions.getRegionsPlain(args(argsBuilder).build)
@@ -26975,7 +26977,7 @@ object compute:
      *  }
      *  </pre>
      */
-    def getReservation(args: Endofunction[com.pulumi.gcp.compute.inputs.GetReservationArgs.Builder] = scala.Predef.identity):
+    inline def getReservation(args: Endofunction[com.pulumi.gcp.compute.inputs.GetReservationArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.compute.outputs.GetReservationResult] =
       val argsBuilder = com.pulumi.gcp.compute.inputs.GetReservationArgs.builder
       com.pulumi.gcp.compute.ComputeFunctions.getReservation(args(argsBuilder).build)
@@ -27016,7 +27018,7 @@ object compute:
      *  }
      *  </pre>
      */
-    def getReservationPlain(args: Endofunction[com.pulumi.gcp.compute.inputs.GetReservationPlainArgs.Builder] = scala.Predef.identity):
+    inline def getReservationPlain(args: Endofunction[com.pulumi.gcp.compute.inputs.GetReservationPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.compute.outputs.GetReservationResult] =
       val argsBuilder = com.pulumi.gcp.compute.inputs.GetReservationPlainArgs.builder
       com.pulumi.gcp.compute.ComputeFunctions.getReservationPlain(args(argsBuilder).build)
@@ -27027,7 +27029,7 @@ object compute:
      *  For more information see the [official documentation](https://cloud.google.com/compute/docs/instances/reserving-zonal-resources)
      *  and the [API](https://cloud.google.com/compute/docs/reference/rest/v1/reservationBlocks).
      */
-    def getReservationBlock(args: Endofunction[com.pulumi.gcp.compute.inputs.GetReservationBlockArgs.Builder] = scala.Predef.identity):
+    inline def getReservationBlock(args: Endofunction[com.pulumi.gcp.compute.inputs.GetReservationBlockArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.compute.outputs.GetReservationBlockResult] =
       val argsBuilder = com.pulumi.gcp.compute.inputs.GetReservationBlockArgs.builder
       com.pulumi.gcp.compute.ComputeFunctions.getReservationBlock(args(argsBuilder).build)
@@ -27038,7 +27040,7 @@ object compute:
      *  For more information see the [official documentation](https://cloud.google.com/compute/docs/instances/reserving-zonal-resources)
      *  and the [API](https://cloud.google.com/compute/docs/reference/rest/v1/reservationBlocks).
      */
-    def getReservationBlockPlain(args: Endofunction[com.pulumi.gcp.compute.inputs.GetReservationBlockPlainArgs.Builder] = scala.Predef.identity):
+    inline def getReservationBlockPlain(args: Endofunction[com.pulumi.gcp.compute.inputs.GetReservationBlockPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.compute.outputs.GetReservationBlockResult] =
       val argsBuilder = com.pulumi.gcp.compute.inputs.GetReservationBlockPlainArgs.builder
       com.pulumi.gcp.compute.ComputeFunctions.getReservationBlockPlain(args(argsBuilder).build)
@@ -27049,7 +27051,7 @@ object compute:
      *  For more information see the [official documentation](https://cloud.google.com/compute/docs/instances/reserving-zonal-resources)
      *  and the [API](https://cloud.google.com/compute/docs/reference/rest/v1/reservationSubBlocks).
      */
-    def getReservationSubBlock(args: Endofunction[com.pulumi.gcp.compute.inputs.GetReservationSubBlockArgs.Builder] = scala.Predef.identity):
+    inline def getReservationSubBlock(args: Endofunction[com.pulumi.gcp.compute.inputs.GetReservationSubBlockArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.compute.outputs.GetReservationSubBlockResult] =
       val argsBuilder = com.pulumi.gcp.compute.inputs.GetReservationSubBlockArgs.builder
       com.pulumi.gcp.compute.ComputeFunctions.getReservationSubBlock(args(argsBuilder).build)
@@ -27060,7 +27062,7 @@ object compute:
      *  For more information see the [official documentation](https://cloud.google.com/compute/docs/instances/reserving-zonal-resources)
      *  and the [API](https://cloud.google.com/compute/docs/reference/rest/v1/reservationSubBlocks).
      */
-    def getReservationSubBlockPlain(args: Endofunction[com.pulumi.gcp.compute.inputs.GetReservationSubBlockPlainArgs.Builder] = scala.Predef.identity):
+    inline def getReservationSubBlockPlain(args: Endofunction[com.pulumi.gcp.compute.inputs.GetReservationSubBlockPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.compute.outputs.GetReservationSubBlockResult] =
       val argsBuilder = com.pulumi.gcp.compute.inputs.GetReservationSubBlockPlainArgs.builder
       com.pulumi.gcp.compute.ComputeFunctions.getReservationSubBlockPlain(args(argsBuilder).build)
@@ -27103,7 +27105,7 @@ object compute:
      *  }
      *  </pre>
      */
-    def getResourcePolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.GetResourcePolicyArgs.Builder] = scala.Predef.identity):
+    inline def getResourcePolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.GetResourcePolicyArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.compute.outputs.GetResourcePolicyResult] =
       val argsBuilder = com.pulumi.gcp.compute.inputs.GetResourcePolicyArgs.builder
       com.pulumi.gcp.compute.ComputeFunctions.getResourcePolicy(args(argsBuilder).build)
@@ -27146,19 +27148,19 @@ object compute:
      *  }
      *  </pre>
      */
-    def getResourcePolicyPlain(args: Endofunction[com.pulumi.gcp.compute.inputs.GetResourcePolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getResourcePolicyPlain(args: Endofunction[com.pulumi.gcp.compute.inputs.GetResourcePolicyPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.compute.outputs.GetResourcePolicyResult] =
       val argsBuilder = com.pulumi.gcp.compute.inputs.GetResourcePolicyPlainArgs.builder
       com.pulumi.gcp.compute.ComputeFunctions.getResourcePolicyPlain(args(argsBuilder).build)
 
     /** Get a router within GCE from its name and VPC. */
-    def getRouter(args: Endofunction[com.pulumi.gcp.compute.inputs.GetRouterArgs.Builder] = scala.Predef.identity):
+    inline def getRouter(args: Endofunction[com.pulumi.gcp.compute.inputs.GetRouterArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.compute.outputs.GetRouterResult] =
       val argsBuilder = com.pulumi.gcp.compute.inputs.GetRouterArgs.builder
       com.pulumi.gcp.compute.ComputeFunctions.getRouter(args(argsBuilder).build)
 
     /** Get a router within GCE from its name and VPC. */
-    def getRouterPlain(args: Endofunction[com.pulumi.gcp.compute.inputs.GetRouterPlainArgs.Builder] = scala.Predef.identity):
+    inline def getRouterPlain(args: Endofunction[com.pulumi.gcp.compute.inputs.GetRouterPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.compute.outputs.GetRouterResult] =
       val argsBuilder = com.pulumi.gcp.compute.inputs.GetRouterPlainArgs.builder
       com.pulumi.gcp.compute.ComputeFunctions.getRouterPlain(args(argsBuilder).build)
@@ -27170,7 +27172,7 @@ object compute:
      *  * How-to Guides
      *      * [Official Documentation](https://cloud.google.com/router/docs/)
      */
-    def getRouterNat(args: Endofunction[com.pulumi.gcp.compute.inputs.GetRouterNatArgs.Builder] = scala.Predef.identity):
+    inline def getRouterNat(args: Endofunction[com.pulumi.gcp.compute.inputs.GetRouterNatArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.compute.outputs.GetRouterNatResult] =
       val argsBuilder = com.pulumi.gcp.compute.inputs.GetRouterNatArgs.builder
       com.pulumi.gcp.compute.ComputeFunctions.getRouterNat(args(argsBuilder).build)
@@ -27182,7 +27184,7 @@ object compute:
      *  * How-to Guides
      *      * [Official Documentation](https://cloud.google.com/router/docs/)
      */
-    def getRouterNatPlain(args: Endofunction[com.pulumi.gcp.compute.inputs.GetRouterNatPlainArgs.Builder] = scala.Predef.identity):
+    inline def getRouterNatPlain(args: Endofunction[com.pulumi.gcp.compute.inputs.GetRouterNatPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.compute.outputs.GetRouterNatResult] =
       val argsBuilder = com.pulumi.gcp.compute.inputs.GetRouterNatPlainArgs.builder
       com.pulumi.gcp.compute.ComputeFunctions.getRouterNatPlain(args(argsBuilder).build)
@@ -27195,7 +27197,7 @@ object compute:
      *  and
      *  [API](https://cloud.google.com/compute/docs/reference/rest/v1/routers/getRouterStatus).
      */
-    def getRouterStatus(args: Endofunction[com.pulumi.gcp.compute.inputs.GetRouterStatusArgs.Builder] = scala.Predef.identity):
+    inline def getRouterStatus(args: Endofunction[com.pulumi.gcp.compute.inputs.GetRouterStatusArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.compute.outputs.GetRouterStatusResult] =
       val argsBuilder = com.pulumi.gcp.compute.inputs.GetRouterStatusArgs.builder
       com.pulumi.gcp.compute.ComputeFunctions.getRouterStatus(args(argsBuilder).build)
@@ -27208,7 +27210,7 @@ object compute:
      *  and
      *  [API](https://cloud.google.com/compute/docs/reference/rest/v1/routers/getRouterStatus).
      */
-    def getRouterStatusPlain(args: Endofunction[com.pulumi.gcp.compute.inputs.GetRouterStatusPlainArgs.Builder] = scala.Predef.identity):
+    inline def getRouterStatusPlain(args: Endofunction[com.pulumi.gcp.compute.inputs.GetRouterStatusPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.compute.outputs.GetRouterStatusResult] =
       val argsBuilder = com.pulumi.gcp.compute.inputs.GetRouterStatusPlainArgs.builder
       com.pulumi.gcp.compute.ComputeFunctions.getRouterStatusPlain(args(argsBuilder).build)
@@ -27217,7 +27219,7 @@ object compute:
      * Get a list of routers. For more information see
      *  the official [API](https://cloud.google.com/compute/docs/reference/rest/v1/routers/list) documentation.
      */
-    def getRouters(args: Endofunction[com.pulumi.gcp.compute.inputs.GetRoutersArgs.Builder] = scala.Predef.identity):
+    inline def getRouters(args: Endofunction[com.pulumi.gcp.compute.inputs.GetRoutersArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.compute.outputs.GetRoutersResult] =
       val argsBuilder = com.pulumi.gcp.compute.inputs.GetRoutersArgs.builder
       com.pulumi.gcp.compute.ComputeFunctions.getRouters(args(argsBuilder).build)
@@ -27226,7 +27228,7 @@ object compute:
      * Get a list of routers. For more information see
      *  the official [API](https://cloud.google.com/compute/docs/reference/rest/v1/routers/list) documentation.
      */
-    def getRoutersPlain(args: Endofunction[com.pulumi.gcp.compute.inputs.GetRoutersPlainArgs.Builder] = scala.Predef.identity):
+    inline def getRoutersPlain(args: Endofunction[com.pulumi.gcp.compute.inputs.GetRoutersPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.compute.outputs.GetRoutersResult] =
       val argsBuilder = com.pulumi.gcp.compute.inputs.GetRoutersPlainArgs.builder
       com.pulumi.gcp.compute.ComputeFunctions.getRoutersPlain(args(argsBuilder).build)
@@ -27235,7 +27237,7 @@ object compute:
      * Gets an SSL Policy within GCE from its name, for use with Target HTTPS and Target SSL Proxies.
      *      For more information see [the official documentation](https://cloud.google.com/compute/docs/load-balancing/ssl-policies).
      */
-    def getSSLPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.GetSSLPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getSSLPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.GetSSLPolicyArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.compute.outputs.GetSSLPolicyResult] =
       val argsBuilder = com.pulumi.gcp.compute.inputs.GetSSLPolicyArgs.builder
       com.pulumi.gcp.compute.ComputeFunctions.getSSLPolicy(args(argsBuilder).build)
@@ -27244,7 +27246,7 @@ object compute:
      * Gets an SSL Policy within GCE from its name, for use with Target HTTPS and Target SSL Proxies.
      *      For more information see [the official documentation](https://cloud.google.com/compute/docs/load-balancing/ssl-policies).
      */
-    def getSSLPolicyPlain(args: Endofunction[com.pulumi.gcp.compute.inputs.GetSSLPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getSSLPolicyPlain(args: Endofunction[com.pulumi.gcp.compute.inputs.GetSSLPolicyPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.compute.outputs.GetSSLPolicyResult] =
       val argsBuilder = com.pulumi.gcp.compute.inputs.GetSSLPolicyPlainArgs.builder
       com.pulumi.gcp.compute.ComputeFunctions.getSSLPolicyPlain(args(argsBuilder).build)
@@ -27256,7 +27258,7 @@ object compute:
      *  * How-to Guides
      *      * [Official Documentation](https://cloud.google.com/armor/docs/configure-security-policies)
      */
-    def getSecurityPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.GetSecurityPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getSecurityPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.GetSecurityPolicyArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.compute.outputs.GetSecurityPolicyResult] =
       val argsBuilder = com.pulumi.gcp.compute.inputs.GetSecurityPolicyArgs.builder
       com.pulumi.gcp.compute.ComputeFunctions.getSecurityPolicy(args(argsBuilder).build)
@@ -27268,7 +27270,7 @@ object compute:
      *  * How-to Guides
      *      * [Official Documentation](https://cloud.google.com/armor/docs/configure-security-policies)
      */
-    def getSecurityPolicyPlain(args: Endofunction[com.pulumi.gcp.compute.inputs.GetSecurityPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getSecurityPolicyPlain(args: Endofunction[com.pulumi.gcp.compute.inputs.GetSecurityPolicyPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.compute.outputs.GetSecurityPolicyResult] =
       val argsBuilder = com.pulumi.gcp.compute.inputs.GetSecurityPolicyPlainArgs.builder
       com.pulumi.gcp.compute.ComputeFunctions.getSecurityPolicyPlain(args(argsBuilder).build)
@@ -27280,7 +27282,7 @@ object compute:
      *  * How-to Guides
      *      * [Official Documentation](https://cloud.google.com/compute/docs/disks/create-snapshots)
      */
-    def getSnapshot(args: Endofunction[com.pulumi.gcp.compute.inputs.GetSnapshotArgs.Builder] = scala.Predef.identity):
+    inline def getSnapshot(args: Endofunction[com.pulumi.gcp.compute.inputs.GetSnapshotArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.compute.outputs.GetSnapshotResult] =
       val argsBuilder = com.pulumi.gcp.compute.inputs.GetSnapshotArgs.builder
       com.pulumi.gcp.compute.ComputeFunctions.getSnapshot(args(argsBuilder).build)
@@ -27292,19 +27294,19 @@ object compute:
      *  * How-to Guides
      *      * [Official Documentation](https://cloud.google.com/compute/docs/disks/create-snapshots)
      */
-    def getSnapshotPlain(args: Endofunction[com.pulumi.gcp.compute.inputs.GetSnapshotPlainArgs.Builder] = scala.Predef.identity):
+    inline def getSnapshotPlain(args: Endofunction[com.pulumi.gcp.compute.inputs.GetSnapshotPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.compute.outputs.GetSnapshotResult] =
       val argsBuilder = com.pulumi.gcp.compute.inputs.GetSnapshotPlainArgs.builder
       com.pulumi.gcp.compute.ComputeFunctions.getSnapshotPlain(args(argsBuilder).build)
 
     /** Retrieves the current IAM policy data for snapshot */
-    def getSnapshotIamPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.GetSnapshotIamPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getSnapshotIamPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.GetSnapshotIamPolicyArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.compute.outputs.GetSnapshotIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.compute.inputs.GetSnapshotIamPolicyArgs.builder
       com.pulumi.gcp.compute.ComputeFunctions.getSnapshotIamPolicy(args(argsBuilder).build)
 
     /** Retrieves the current IAM policy data for snapshot */
-    def getSnapshotIamPolicyPlain(args: Endofunction[com.pulumi.gcp.compute.inputs.GetSnapshotIamPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getSnapshotIamPolicyPlain(args: Endofunction[com.pulumi.gcp.compute.inputs.GetSnapshotIamPolicyPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.compute.outputs.GetSnapshotIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.compute.inputs.GetSnapshotIamPolicyPlainArgs.builder
       com.pulumi.gcp.compute.ComputeFunctions.getSnapshotIamPolicyPlain(args(argsBuilder).build)
@@ -27313,7 +27315,7 @@ object compute:
      * Provides access to available Google Compute Storage Pool resources for a given project and zone.
      *  See more about [Hyperdisk Storage Pools](https://cloud.google.com/compute/docs/disks/storage-pools) in the upstream docs.
      */
-    def getStoragePool(args: Endofunction[com.pulumi.gcp.compute.inputs.GetStoragePoolArgs.Builder] = scala.Predef.identity):
+    inline def getStoragePool(args: Endofunction[com.pulumi.gcp.compute.inputs.GetStoragePoolArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.compute.outputs.GetStoragePoolResult] =
       val argsBuilder = com.pulumi.gcp.compute.inputs.GetStoragePoolArgs.builder
       com.pulumi.gcp.compute.ComputeFunctions.getStoragePool(args(argsBuilder).build)
@@ -27322,53 +27324,53 @@ object compute:
      * Provides access to available Google Compute Storage Pool resources for a given project and zone.
      *  See more about [Hyperdisk Storage Pools](https://cloud.google.com/compute/docs/disks/storage-pools) in the upstream docs.
      */
-    def getStoragePoolPlain(args: Endofunction[com.pulumi.gcp.compute.inputs.GetStoragePoolPlainArgs.Builder] = scala.Predef.identity):
+    inline def getStoragePoolPlain(args: Endofunction[com.pulumi.gcp.compute.inputs.GetStoragePoolPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.compute.outputs.GetStoragePoolResult] =
       val argsBuilder = com.pulumi.gcp.compute.inputs.GetStoragePoolPlainArgs.builder
       com.pulumi.gcp.compute.ComputeFunctions.getStoragePoolPlain(args(argsBuilder).build)
 
     /** Retrieves the current IAM policy data for storagepool */
-    def getStoragePoolIamPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.GetStoragePoolIamPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getStoragePoolIamPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.GetStoragePoolIamPolicyArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.compute.outputs.GetStoragePoolIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.compute.inputs.GetStoragePoolIamPolicyArgs.builder
       com.pulumi.gcp.compute.ComputeFunctions.getStoragePoolIamPolicy(args(argsBuilder).build)
 
     /** Retrieves the current IAM policy data for storagepool */
-    def getStoragePoolIamPolicyPlain(args: Endofunction[com.pulumi.gcp.compute.inputs.GetStoragePoolIamPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getStoragePoolIamPolicyPlain(args: Endofunction[com.pulumi.gcp.compute.inputs.GetStoragePoolIamPolicyPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.compute.outputs.GetStoragePoolIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.compute.inputs.GetStoragePoolIamPolicyPlainArgs.builder
       com.pulumi.gcp.compute.ComputeFunctions.getStoragePoolIamPolicyPlain(args(argsBuilder).build)
 
-    def getStoragePoolTypes(args: Endofunction[com.pulumi.gcp.compute.inputs.GetStoragePoolTypesArgs.Builder] = scala.Predef.identity):
+    inline def getStoragePoolTypes(args: Endofunction[com.pulumi.gcp.compute.inputs.GetStoragePoolTypesArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.compute.outputs.GetStoragePoolTypesResult] =
       val argsBuilder = com.pulumi.gcp.compute.inputs.GetStoragePoolTypesArgs.builder
       com.pulumi.gcp.compute.ComputeFunctions.getStoragePoolTypes(args(argsBuilder).build)
 
-    def getStoragePoolTypesPlain(args: Endofunction[com.pulumi.gcp.compute.inputs.GetStoragePoolTypesPlainArgs.Builder] = scala.Predef.identity):
+    inline def getStoragePoolTypesPlain(args: Endofunction[com.pulumi.gcp.compute.inputs.GetStoragePoolTypesPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.compute.outputs.GetStoragePoolTypesResult] =
       val argsBuilder = com.pulumi.gcp.compute.inputs.GetStoragePoolTypesPlainArgs.builder
       com.pulumi.gcp.compute.ComputeFunctions.getStoragePoolTypesPlain(args(argsBuilder).build)
 
     /** Get a subnetwork within GCE from its name and region. */
-    def getSubnetwork(args: Endofunction[com.pulumi.gcp.compute.inputs.GetSubnetworkArgs.Builder] = scala.Predef.identity):
+    inline def getSubnetwork(args: Endofunction[com.pulumi.gcp.compute.inputs.GetSubnetworkArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.compute.outputs.GetSubnetworkResult] =
       val argsBuilder = com.pulumi.gcp.compute.inputs.GetSubnetworkArgs.builder
       com.pulumi.gcp.compute.ComputeFunctions.getSubnetwork(args(argsBuilder).build)
 
     /** Get a subnetwork within GCE from its name and region. */
-    def getSubnetworkPlain(args: Endofunction[com.pulumi.gcp.compute.inputs.GetSubnetworkPlainArgs.Builder] = scala.Predef.identity):
+    inline def getSubnetworkPlain(args: Endofunction[com.pulumi.gcp.compute.inputs.GetSubnetworkPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.compute.outputs.GetSubnetworkResult] =
       val argsBuilder = com.pulumi.gcp.compute.inputs.GetSubnetworkPlainArgs.builder
       com.pulumi.gcp.compute.ComputeFunctions.getSubnetworkPlain(args(argsBuilder).build)
 
     /** Retrieves the current IAM policy data for subnetwork */
-    def getSubnetworkIamPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.GetSubnetworkIamPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getSubnetworkIamPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.GetSubnetworkIamPolicyArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.compute.outputs.GetSubnetworkIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.compute.inputs.GetSubnetworkIamPolicyArgs.builder
       com.pulumi.gcp.compute.ComputeFunctions.getSubnetworkIamPolicy(args(argsBuilder).build)
 
     /** Retrieves the current IAM policy data for subnetwork */
-    def getSubnetworkIamPolicyPlain(args: Endofunction[com.pulumi.gcp.compute.inputs.GetSubnetworkIamPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getSubnetworkIamPolicyPlain(args: Endofunction[com.pulumi.gcp.compute.inputs.GetSubnetworkIamPolicyPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.compute.outputs.GetSubnetworkIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.compute.inputs.GetSubnetworkIamPolicyPlainArgs.builder
       com.pulumi.gcp.compute.ComputeFunctions.getSubnetworkIamPolicyPlain(args(argsBuilder).build)
@@ -27378,7 +27380,7 @@ object compute:
      *  See [the official documentation](https://cloud.google.com/vpc/docs/subnets)
      *  and [API](https://cloud.google.com/compute/docs/reference/rest/v1/subnetworks/list).
      */
-    def getSubnetworks(args: Endofunction[com.pulumi.gcp.compute.inputs.GetSubnetworksArgs.Builder] = scala.Predef.identity):
+    inline def getSubnetworks(args: Endofunction[com.pulumi.gcp.compute.inputs.GetSubnetworksArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.compute.outputs.GetSubnetworksResult] =
       val argsBuilder = com.pulumi.gcp.compute.inputs.GetSubnetworksArgs.builder
       com.pulumi.gcp.compute.ComputeFunctions.getSubnetworks(args(argsBuilder).build)
@@ -27388,19 +27390,19 @@ object compute:
      *  See [the official documentation](https://cloud.google.com/vpc/docs/subnets)
      *  and [API](https://cloud.google.com/compute/docs/reference/rest/v1/subnetworks/list).
      */
-    def getSubnetworksPlain(args: Endofunction[com.pulumi.gcp.compute.inputs.GetSubnetworksPlainArgs.Builder] = scala.Predef.identity):
+    inline def getSubnetworksPlain(args: Endofunction[com.pulumi.gcp.compute.inputs.GetSubnetworksPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.compute.outputs.GetSubnetworksResult] =
       val argsBuilder = com.pulumi.gcp.compute.inputs.GetSubnetworksPlainArgs.builder
       com.pulumi.gcp.compute.ComputeFunctions.getSubnetworksPlain(args(argsBuilder).build)
 
     /** Get a VPN gateway within GCE from its name. */
-    def getVPNGateway(args: Endofunction[com.pulumi.gcp.compute.inputs.GetVPNGatewayArgs.Builder] = scala.Predef.identity):
+    inline def getVPNGateway(args: Endofunction[com.pulumi.gcp.compute.inputs.GetVPNGatewayArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.compute.outputs.GetVPNGatewayResult] =
       val argsBuilder = com.pulumi.gcp.compute.inputs.GetVPNGatewayArgs.builder
       com.pulumi.gcp.compute.ComputeFunctions.getVPNGateway(args(argsBuilder).build)
 
     /** Get a VPN gateway within GCE from its name. */
-    def getVPNGatewayPlain(args: Endofunction[com.pulumi.gcp.compute.inputs.GetVPNGatewayPlainArgs.Builder] = scala.Predef.identity):
+    inline def getVPNGatewayPlain(args: Endofunction[com.pulumi.gcp.compute.inputs.GetVPNGatewayPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.compute.outputs.GetVPNGatewayResult] =
       val argsBuilder = com.pulumi.gcp.compute.inputs.GetVPNGatewayPlainArgs.builder
       com.pulumi.gcp.compute.ComputeFunctions.getVPNGatewayPlain(args(argsBuilder).build)
@@ -27453,7 +27455,7 @@ object compute:
      *  }
      *  </pre>
      */
-    def getZones(args: Endofunction[com.pulumi.gcp.compute.inputs.GetZonesArgs.Builder] = scala.Predef.identity):
+    inline def getZones(args: Endofunction[com.pulumi.gcp.compute.inputs.GetZonesArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.compute.outputs.GetZonesResult] =
       val argsBuilder = com.pulumi.gcp.compute.inputs.GetZonesArgs.builder
       com.pulumi.gcp.compute.ComputeFunctions.getZones(args(argsBuilder).build)
@@ -27506,7 +27508,7 @@ object compute:
      *  }
      *  </pre>
      */
-    def getZonesPlain(args: Endofunction[com.pulumi.gcp.compute.inputs.GetZonesPlainArgs.Builder] = scala.Predef.identity):
+    inline def getZonesPlain(args: Endofunction[com.pulumi.gcp.compute.inputs.GetZonesPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.compute.outputs.GetZonesResult] =
       val argsBuilder = com.pulumi.gcp.compute.inputs.GetZonesPlainArgs.builder
       com.pulumi.gcp.compute.ComputeFunctions.getZonesPlain(args(argsBuilder).build)
@@ -27519,7 +27521,7 @@ object compute:
      *  and
      *  [API](https://cloud.google.com/compute/docs/reference/rest/v1/routers/getRouterStatus).
      */
-    @deprecated def routerStatus(args: Endofunction[com.pulumi.gcp.compute.inputs.RouterStatusArgs.Builder] = scala.Predef.identity):
+    @deprecated inline def routerStatus(args: Endofunction[com.pulumi.gcp.compute.inputs.RouterStatusArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.compute.outputs.RouterStatusResult] =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RouterStatusArgs.builder
       com.pulumi.gcp.compute.ComputeFunctions.routerStatus(args(argsBuilder).build)
@@ -27532,7 +27534,7 @@ object compute:
      *  and
      *  [API](https://cloud.google.com/compute/docs/reference/rest/v1/routers/getRouterStatus).
      */
-    @deprecated def routerStatusPlain(args: Endofunction[com.pulumi.gcp.compute.inputs.RouterStatusPlainArgs.Builder] = scala.Predef.identity):
+    @deprecated inline def routerStatusPlain(args: Endofunction[com.pulumi.gcp.compute.inputs.RouterStatusPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.compute.outputs.RouterStatusResult] =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RouterStatusPlainArgs.builder
       com.pulumi.gcp.compute.ComputeFunctions.routerStatusPlain(args(argsBuilder).build)

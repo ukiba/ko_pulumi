@@ -297,43 +297,45 @@ object networkmanager:
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
-  type NetworkmanagerFunctions = com.pulumi.aws.networkmanager.NetworkmanagerFunctions
   object NetworkmanagerFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.aws.networkmanager.NetworkmanagerFunctions.*
-  extension (self: NetworkmanagerFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /** Provides details about an existing Network Manager connection. */
-    def getConnection(args: Endofunction[com.pulumi.aws.networkmanager.inputs.GetConnectionArgs.Builder] = scala.Predef.identity):
+    inline def getConnection(args: Endofunction[com.pulumi.aws.networkmanager.inputs.GetConnectionArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.networkmanager.outputs.GetConnectionResult] =
       val argsBuilder = com.pulumi.aws.networkmanager.inputs.GetConnectionArgs.builder
       com.pulumi.aws.networkmanager.NetworkmanagerFunctions.getConnection(args(argsBuilder).build)
 
     /** Provides details about an existing Network Manager connection. */
-    def getConnectionPlain(args: Endofunction[com.pulumi.aws.networkmanager.inputs.GetConnectionPlainArgs.Builder] = scala.Predef.identity):
+    inline def getConnectionPlain(args: Endofunction[com.pulumi.aws.networkmanager.inputs.GetConnectionPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.networkmanager.outputs.GetConnectionResult] =
       val argsBuilder = com.pulumi.aws.networkmanager.inputs.GetConnectionPlainArgs.builder
       com.pulumi.aws.networkmanager.NetworkmanagerFunctions.getConnectionPlain(args(argsBuilder).build)
 
     /** Provides details about existing Network Manager connections. */
-    def getConnections(args: Endofunction[com.pulumi.aws.networkmanager.inputs.GetConnectionsArgs.Builder] = scala.Predef.identity):
+    inline def getConnections(args: Endofunction[com.pulumi.aws.networkmanager.inputs.GetConnectionsArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.networkmanager.outputs.GetConnectionsResult] =
       val argsBuilder = com.pulumi.aws.networkmanager.inputs.GetConnectionsArgs.builder
       com.pulumi.aws.networkmanager.NetworkmanagerFunctions.getConnections(args(argsBuilder).build)
 
     /** Provides details about existing Network Manager connections. */
-    def getConnectionsPlain(args: Endofunction[com.pulumi.aws.networkmanager.inputs.GetConnectionsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getConnectionsPlain(args: Endofunction[com.pulumi.aws.networkmanager.inputs.GetConnectionsPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.networkmanager.outputs.GetConnectionsResult] =
       val argsBuilder = com.pulumi.aws.networkmanager.inputs.GetConnectionsPlainArgs.builder
       com.pulumi.aws.networkmanager.NetworkmanagerFunctions.getConnectionsPlain(args(argsBuilder).build)
 
     /** Provides details about an AWS Network Manager Core Network. */
-    def getCoreNetwork(args: Endofunction[com.pulumi.aws.networkmanager.inputs.GetCoreNetworkArgs.Builder] = scala.Predef.identity):
+    inline def getCoreNetwork(args: Endofunction[com.pulumi.aws.networkmanager.inputs.GetCoreNetworkArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.networkmanager.outputs.GetCoreNetworkResult] =
       val argsBuilder = com.pulumi.aws.networkmanager.inputs.GetCoreNetworkArgs.builder
       com.pulumi.aws.networkmanager.NetworkmanagerFunctions.getCoreNetwork(args(argsBuilder).build)
 
     /** Provides details about an AWS Network Manager Core Network. */
-    def getCoreNetworkPlain(args: Endofunction[com.pulumi.aws.networkmanager.inputs.GetCoreNetworkPlainArgs.Builder] = scala.Predef.identity):
+    inline def getCoreNetworkPlain(args: Endofunction[com.pulumi.aws.networkmanager.inputs.GetCoreNetworkPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.networkmanager.outputs.GetCoreNetworkResult] =
       val argsBuilder = com.pulumi.aws.networkmanager.inputs.GetCoreNetworkPlainArgs.builder
       com.pulumi.aws.networkmanager.NetworkmanagerFunctions.getCoreNetworkPlain(args(argsBuilder).build)
@@ -343,7 +345,7 @@ object networkmanager:
      * 
      *  Using this data source to generate policy documents is *optional*. It is also valid to use literal JSON strings in your configuration or to use the `file` interpolation function to read a raw JSON policy document from a file.
      */
-    def getCoreNetworkPolicyDocument(args: Endofunction[com.pulumi.aws.networkmanager.inputs.GetCoreNetworkPolicyDocumentArgs.Builder] = scala.Predef.identity):
+    inline def getCoreNetworkPolicyDocument(args: Endofunction[com.pulumi.aws.networkmanager.inputs.GetCoreNetworkPolicyDocumentArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.networkmanager.outputs.GetCoreNetworkPolicyDocumentResult] =
       val argsBuilder = com.pulumi.aws.networkmanager.inputs.GetCoreNetworkPolicyDocumentArgs.builder
       com.pulumi.aws.networkmanager.NetworkmanagerFunctions.getCoreNetworkPolicyDocument(args(argsBuilder).build)
@@ -353,103 +355,103 @@ object networkmanager:
      * 
      *  Using this data source to generate policy documents is *optional*. It is also valid to use literal JSON strings in your configuration or to use the `file` interpolation function to read a raw JSON policy document from a file.
      */
-    def getCoreNetworkPolicyDocumentPlain(args: Endofunction[com.pulumi.aws.networkmanager.inputs.GetCoreNetworkPolicyDocumentPlainArgs.Builder] = scala.Predef.identity):
+    inline def getCoreNetworkPolicyDocumentPlain(args: Endofunction[com.pulumi.aws.networkmanager.inputs.GetCoreNetworkPolicyDocumentPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.networkmanager.outputs.GetCoreNetworkPolicyDocumentResult] =
       val argsBuilder = com.pulumi.aws.networkmanager.inputs.GetCoreNetworkPolicyDocumentPlainArgs.builder
       com.pulumi.aws.networkmanager.NetworkmanagerFunctions.getCoreNetworkPolicyDocumentPlain(args(argsBuilder).build)
 
     /** Provides details about an existing Network Manager device. */
-    def getDevice(args: Endofunction[com.pulumi.aws.networkmanager.inputs.GetDeviceArgs.Builder] = scala.Predef.identity):
+    inline def getDevice(args: Endofunction[com.pulumi.aws.networkmanager.inputs.GetDeviceArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.networkmanager.outputs.GetDeviceResult] =
       val argsBuilder = com.pulumi.aws.networkmanager.inputs.GetDeviceArgs.builder
       com.pulumi.aws.networkmanager.NetworkmanagerFunctions.getDevice(args(argsBuilder).build)
 
     /** Provides details about an existing Network Manager device. */
-    def getDevicePlain(args: Endofunction[com.pulumi.aws.networkmanager.inputs.GetDevicePlainArgs.Builder] = scala.Predef.identity):
+    inline def getDevicePlain(args: Endofunction[com.pulumi.aws.networkmanager.inputs.GetDevicePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.networkmanager.outputs.GetDeviceResult] =
       val argsBuilder = com.pulumi.aws.networkmanager.inputs.GetDevicePlainArgs.builder
       com.pulumi.aws.networkmanager.NetworkmanagerFunctions.getDevicePlain(args(argsBuilder).build)
 
     /** Provides details about existing Network Manager devices. */
-    def getDevices(args: Endofunction[com.pulumi.aws.networkmanager.inputs.GetDevicesArgs.Builder] = scala.Predef.identity):
+    inline def getDevices(args: Endofunction[com.pulumi.aws.networkmanager.inputs.GetDevicesArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.networkmanager.outputs.GetDevicesResult] =
       val argsBuilder = com.pulumi.aws.networkmanager.inputs.GetDevicesArgs.builder
       com.pulumi.aws.networkmanager.NetworkmanagerFunctions.getDevices(args(argsBuilder).build)
 
     /** Provides details about existing Network Manager devices. */
-    def getDevicesPlain(args: Endofunction[com.pulumi.aws.networkmanager.inputs.GetDevicesPlainArgs.Builder] = scala.Predef.identity):
+    inline def getDevicesPlain(args: Endofunction[com.pulumi.aws.networkmanager.inputs.GetDevicesPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.networkmanager.outputs.GetDevicesResult] =
       val argsBuilder = com.pulumi.aws.networkmanager.inputs.GetDevicesPlainArgs.builder
       com.pulumi.aws.networkmanager.NetworkmanagerFunctions.getDevicesPlain(args(argsBuilder).build)
 
     /** Provides details about an existing Network Manager global network. */
-    def getGlobalNetwork(args: Endofunction[com.pulumi.aws.networkmanager.inputs.GetGlobalNetworkArgs.Builder] = scala.Predef.identity):
+    inline def getGlobalNetwork(args: Endofunction[com.pulumi.aws.networkmanager.inputs.GetGlobalNetworkArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.networkmanager.outputs.GetGlobalNetworkResult] =
       val argsBuilder = com.pulumi.aws.networkmanager.inputs.GetGlobalNetworkArgs.builder
       com.pulumi.aws.networkmanager.NetworkmanagerFunctions.getGlobalNetwork(args(argsBuilder).build)
 
     /** Provides details about an existing Network Manager global network. */
-    def getGlobalNetworkPlain(args: Endofunction[com.pulumi.aws.networkmanager.inputs.GetGlobalNetworkPlainArgs.Builder] = scala.Predef.identity):
+    inline def getGlobalNetworkPlain(args: Endofunction[com.pulumi.aws.networkmanager.inputs.GetGlobalNetworkPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.networkmanager.outputs.GetGlobalNetworkResult] =
       val argsBuilder = com.pulumi.aws.networkmanager.inputs.GetGlobalNetworkPlainArgs.builder
       com.pulumi.aws.networkmanager.NetworkmanagerFunctions.getGlobalNetworkPlain(args(argsBuilder).build)
 
     /** Provides details about existing Network Manager global networks. */
-    def getGlobalNetworks(args: Endofunction[com.pulumi.aws.networkmanager.inputs.GetGlobalNetworksArgs.Builder] = scala.Predef.identity):
+    inline def getGlobalNetworks(args: Endofunction[com.pulumi.aws.networkmanager.inputs.GetGlobalNetworksArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.networkmanager.outputs.GetGlobalNetworksResult] =
       val argsBuilder = com.pulumi.aws.networkmanager.inputs.GetGlobalNetworksArgs.builder
       com.pulumi.aws.networkmanager.NetworkmanagerFunctions.getGlobalNetworks(args(argsBuilder).build)
 
     /** Provides details about existing Network Manager global networks. */
-    def getGlobalNetworksPlain(args: Endofunction[com.pulumi.aws.networkmanager.inputs.GetGlobalNetworksPlainArgs.Builder] = scala.Predef.identity):
+    inline def getGlobalNetworksPlain(args: Endofunction[com.pulumi.aws.networkmanager.inputs.GetGlobalNetworksPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.networkmanager.outputs.GetGlobalNetworksResult] =
       val argsBuilder = com.pulumi.aws.networkmanager.inputs.GetGlobalNetworksPlainArgs.builder
       com.pulumi.aws.networkmanager.NetworkmanagerFunctions.getGlobalNetworksPlain(args(argsBuilder).build)
 
     /** Provides details about an existing Network Manager link. */
-    def getLink(args: Endofunction[com.pulumi.aws.networkmanager.inputs.GetLinkArgs.Builder] = scala.Predef.identity):
+    inline def getLink(args: Endofunction[com.pulumi.aws.networkmanager.inputs.GetLinkArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.networkmanager.outputs.GetLinkResult] =
       val argsBuilder = com.pulumi.aws.networkmanager.inputs.GetLinkArgs.builder
       com.pulumi.aws.networkmanager.NetworkmanagerFunctions.getLink(args(argsBuilder).build)
 
     /** Provides details about an existing Network Manager link. */
-    def getLinkPlain(args: Endofunction[com.pulumi.aws.networkmanager.inputs.GetLinkPlainArgs.Builder] = scala.Predef.identity):
+    inline def getLinkPlain(args: Endofunction[com.pulumi.aws.networkmanager.inputs.GetLinkPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.networkmanager.outputs.GetLinkResult] =
       val argsBuilder = com.pulumi.aws.networkmanager.inputs.GetLinkPlainArgs.builder
       com.pulumi.aws.networkmanager.NetworkmanagerFunctions.getLinkPlain(args(argsBuilder).build)
 
     /** Provides details about existing Network Manager links. */
-    def getLinks(args: Endofunction[com.pulumi.aws.networkmanager.inputs.GetLinksArgs.Builder] = scala.Predef.identity):
+    inline def getLinks(args: Endofunction[com.pulumi.aws.networkmanager.inputs.GetLinksArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.networkmanager.outputs.GetLinksResult] =
       val argsBuilder = com.pulumi.aws.networkmanager.inputs.GetLinksArgs.builder
       com.pulumi.aws.networkmanager.NetworkmanagerFunctions.getLinks(args(argsBuilder).build)
 
     /** Provides details about existing Network Manager links. */
-    def getLinksPlain(args: Endofunction[com.pulumi.aws.networkmanager.inputs.GetLinksPlainArgs.Builder] = scala.Predef.identity):
+    inline def getLinksPlain(args: Endofunction[com.pulumi.aws.networkmanager.inputs.GetLinksPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.networkmanager.outputs.GetLinksResult] =
       val argsBuilder = com.pulumi.aws.networkmanager.inputs.GetLinksPlainArgs.builder
       com.pulumi.aws.networkmanager.NetworkmanagerFunctions.getLinksPlain(args(argsBuilder).build)
 
     /** Provides details about an existing Network Manager site. */
-    def getSite(args: Endofunction[com.pulumi.aws.networkmanager.inputs.GetSiteArgs.Builder] = scala.Predef.identity):
+    inline def getSite(args: Endofunction[com.pulumi.aws.networkmanager.inputs.GetSiteArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.networkmanager.outputs.GetSiteResult] =
       val argsBuilder = com.pulumi.aws.networkmanager.inputs.GetSiteArgs.builder
       com.pulumi.aws.networkmanager.NetworkmanagerFunctions.getSite(args(argsBuilder).build)
 
     /** Provides details about an existing Network Manager site. */
-    def getSitePlain(args: Endofunction[com.pulumi.aws.networkmanager.inputs.GetSitePlainArgs.Builder] = scala.Predef.identity):
+    inline def getSitePlain(args: Endofunction[com.pulumi.aws.networkmanager.inputs.GetSitePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.networkmanager.outputs.GetSiteResult] =
       val argsBuilder = com.pulumi.aws.networkmanager.inputs.GetSitePlainArgs.builder
       com.pulumi.aws.networkmanager.NetworkmanagerFunctions.getSitePlain(args(argsBuilder).build)
 
     /** Provides details about existing Network Manager sites. */
-    def getSites(args: Endofunction[com.pulumi.aws.networkmanager.inputs.GetSitesArgs.Builder] = scala.Predef.identity):
+    inline def getSites(args: Endofunction[com.pulumi.aws.networkmanager.inputs.GetSitesArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.networkmanager.outputs.GetSitesResult] =
       val argsBuilder = com.pulumi.aws.networkmanager.inputs.GetSitesArgs.builder
       com.pulumi.aws.networkmanager.NetworkmanagerFunctions.getSites(args(argsBuilder).build)
 
     /** Provides details about existing Network Manager sites. */
-    def getSitesPlain(args: Endofunction[com.pulumi.aws.networkmanager.inputs.GetSitesPlainArgs.Builder] = scala.Predef.identity):
+    inline def getSitesPlain(args: Endofunction[com.pulumi.aws.networkmanager.inputs.GetSitesPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.networkmanager.outputs.GetSitesResult] =
       val argsBuilder = com.pulumi.aws.networkmanager.inputs.GetSitesPlainArgs.builder
       com.pulumi.aws.networkmanager.NetworkmanagerFunctions.getSitesPlain(args(argsBuilder).build)

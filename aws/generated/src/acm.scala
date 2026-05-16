@@ -120,16 +120,18 @@ object acm:
         com.pulumi.aws.acm.inputs.CertificateState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
 
-  type AcmFunctions = com.pulumi.aws.acm.AcmFunctions
   object AcmFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.aws.acm.AcmFunctions.*
-  extension (self: AcmFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /**
      * Use this data source to get the ARN of a certificate in AWS Certificate Manager (ACM).
      *  You can reference the certificate by domain or tags without having to hard code the ARNs as input.
      */
-    def getCertificate(args: Endofunction[com.pulumi.aws.acm.inputs.GetCertificateArgs.Builder] = scala.Predef.identity):
+    inline def getCertificate(args: Endofunction[com.pulumi.aws.acm.inputs.GetCertificateArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.acm.outputs.GetCertificateResult] =
       val argsBuilder = com.pulumi.aws.acm.inputs.GetCertificateArgs.builder
       com.pulumi.aws.acm.AcmFunctions.getCertificate(args(argsBuilder).build)
@@ -138,7 +140,7 @@ object acm:
      * Use this data source to get the ARN of a certificate in AWS Certificate Manager (ACM).
      *  You can reference the certificate by domain or tags without having to hard code the ARNs as input.
      */
-    def getCertificatePlain(args: Endofunction[com.pulumi.aws.acm.inputs.GetCertificatePlainArgs.Builder] = scala.Predef.identity):
+    inline def getCertificatePlain(args: Endofunction[com.pulumi.aws.acm.inputs.GetCertificatePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.acm.outputs.GetCertificateResult] =
       val argsBuilder = com.pulumi.aws.acm.inputs.GetCertificatePlainArgs.builder
       com.pulumi.aws.acm.AcmFunctions.getCertificatePlain(args(argsBuilder).build)

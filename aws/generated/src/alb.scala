@@ -148,11 +148,13 @@ object alb:
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
-  type AlbFunctions = com.pulumi.aws.alb.AlbFunctions
   object AlbFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.aws.alb.AlbFunctions.*
-  extension (self: AlbFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /**
      * &gt; **Note:** `aws.alb.Listener` is known as `aws.lb.Listener`. The functionality is identical.
      * 
@@ -160,7 +162,7 @@ object alb:
      * 
      *  This data source can prove useful when a module accepts an LB Listener as an input variable and needs to know the LB it is attached to, or other information specific to the listener in question.
      */
-    def getListener(args: Endofunction[com.pulumi.aws.alb.inputs.GetListenerArgs.Builder] = scala.Predef.identity):
+    inline def getListener(args: Endofunction[com.pulumi.aws.alb.inputs.GetListenerArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.alb.outputs.GetListenerResult] =
       val argsBuilder = com.pulumi.aws.alb.inputs.GetListenerArgs.builder
       com.pulumi.aws.alb.AlbFunctions.getListener(args(argsBuilder).build)
@@ -172,7 +174,7 @@ object alb:
      * 
      *  This data source can prove useful when a module accepts an LB Listener as an input variable and needs to know the LB it is attached to, or other information specific to the listener in question.
      */
-    def getListenerPlain(args: Endofunction[com.pulumi.aws.alb.inputs.GetListenerPlainArgs.Builder] = scala.Predef.identity):
+    inline def getListenerPlain(args: Endofunction[com.pulumi.aws.alb.inputs.GetListenerPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.alb.outputs.GetListenerResult] =
       val argsBuilder = com.pulumi.aws.alb.inputs.GetListenerPlainArgs.builder
       com.pulumi.aws.alb.AlbFunctions.getListenerPlain(args(argsBuilder).build)
@@ -186,7 +188,7 @@ object alb:
      *  variable and needs to, for example, determine the security groups associated
      *  with it, etc.
      */
-    def getLoadBalancer(args: Endofunction[com.pulumi.aws.alb.inputs.GetLoadBalancerArgs.Builder] = scala.Predef.identity):
+    inline def getLoadBalancer(args: Endofunction[com.pulumi.aws.alb.inputs.GetLoadBalancerArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.alb.outputs.GetLoadBalancerResult] =
       val argsBuilder = com.pulumi.aws.alb.inputs.GetLoadBalancerArgs.builder
       com.pulumi.aws.alb.AlbFunctions.getLoadBalancer(args(argsBuilder).build)
@@ -200,7 +202,7 @@ object alb:
      *  variable and needs to, for example, determine the security groups associated
      *  with it, etc.
      */
-    def getLoadBalancerPlain(args: Endofunction[com.pulumi.aws.alb.inputs.GetLoadBalancerPlainArgs.Builder] = scala.Predef.identity):
+    inline def getLoadBalancerPlain(args: Endofunction[com.pulumi.aws.alb.inputs.GetLoadBalancerPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.alb.outputs.GetLoadBalancerResult] =
       val argsBuilder = com.pulumi.aws.alb.inputs.GetLoadBalancerPlainArgs.builder
       com.pulumi.aws.alb.AlbFunctions.getLoadBalancerPlain(args(argsBuilder).build)
@@ -214,7 +216,7 @@ object alb:
      *  input variable and needs to know its attributes. It can also be used to get the ARN of
      *  an LB Target Group for use in other resources, given LB Target Group name.
      */
-    def getTargetGroup(args: Endofunction[com.pulumi.aws.alb.inputs.GetTargetGroupArgs.Builder] = scala.Predef.identity):
+    inline def getTargetGroup(args: Endofunction[com.pulumi.aws.alb.inputs.GetTargetGroupArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.alb.outputs.GetTargetGroupResult] =
       val argsBuilder = com.pulumi.aws.alb.inputs.GetTargetGroupArgs.builder
       com.pulumi.aws.alb.AlbFunctions.getTargetGroup(args(argsBuilder).build)
@@ -228,7 +230,7 @@ object alb:
      *  input variable and needs to know its attributes. It can also be used to get the ARN of
      *  an LB Target Group for use in other resources, given LB Target Group name.
      */
-    def getTargetGroupPlain(args: Endofunction[com.pulumi.aws.alb.inputs.GetTargetGroupPlainArgs.Builder] = scala.Predef.identity):
+    inline def getTargetGroupPlain(args: Endofunction[com.pulumi.aws.alb.inputs.GetTargetGroupPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.alb.outputs.GetTargetGroupResult] =
       val argsBuilder = com.pulumi.aws.alb.inputs.GetTargetGroupPlainArgs.builder
       com.pulumi.aws.alb.AlbFunctions.getTargetGroupPlain(args(argsBuilder).build)

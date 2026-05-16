@@ -735,67 +735,69 @@ object bedrock:
         com.pulumi.aws.bedrock.AgentKnowledgeBaseArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
 
-  type BedrockFunctions = com.pulumi.aws.bedrock.BedrockFunctions
   object BedrockFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.aws.bedrock.BedrockFunctions.*
-  extension (self: BedrockFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /** Data source for managing an AWS Amazon BedrockAgent Agent Versions. */
-    def getAgentAgentVersions(args: Endofunction[com.pulumi.aws.bedrock.inputs.GetAgentAgentVersionsArgs.Builder] = scala.Predef.identity):
+    inline def getAgentAgentVersions(args: Endofunction[com.pulumi.aws.bedrock.inputs.GetAgentAgentVersionsArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.bedrock.outputs.GetAgentAgentVersionsResult] =
       val argsBuilder = com.pulumi.aws.bedrock.inputs.GetAgentAgentVersionsArgs.builder
       com.pulumi.aws.bedrock.BedrockFunctions.getAgentAgentVersions(args(argsBuilder).build)
 
     /** Data source for managing an AWS Amazon BedrockAgent Agent Versions. */
-    def getAgentAgentVersionsPlain(args: Endofunction[com.pulumi.aws.bedrock.inputs.GetAgentAgentVersionsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getAgentAgentVersionsPlain(args: Endofunction[com.pulumi.aws.bedrock.inputs.GetAgentAgentVersionsPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.bedrock.outputs.GetAgentAgentVersionsResult] =
       val argsBuilder = com.pulumi.aws.bedrock.inputs.GetAgentAgentVersionsPlainArgs.builder
       com.pulumi.aws.bedrock.BedrockFunctions.getAgentAgentVersionsPlain(args(argsBuilder).build)
 
     /** Returns properties of a specific Amazon Bedrock custom model. */
-    def getCustomModel(args: Endofunction[com.pulumi.aws.bedrock.inputs.GetCustomModelArgs.Builder] = scala.Predef.identity):
+    inline def getCustomModel(args: Endofunction[com.pulumi.aws.bedrock.inputs.GetCustomModelArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.bedrock.outputs.GetCustomModelResult] =
       val argsBuilder = com.pulumi.aws.bedrock.inputs.GetCustomModelArgs.builder
       com.pulumi.aws.bedrock.BedrockFunctions.getCustomModel(args(argsBuilder).build)
 
     /** Returns properties of a specific Amazon Bedrock custom model. */
-    def getCustomModelPlain(args: Endofunction[com.pulumi.aws.bedrock.inputs.GetCustomModelPlainArgs.Builder] = scala.Predef.identity):
+    inline def getCustomModelPlain(args: Endofunction[com.pulumi.aws.bedrock.inputs.GetCustomModelPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.bedrock.outputs.GetCustomModelResult] =
       val argsBuilder = com.pulumi.aws.bedrock.inputs.GetCustomModelPlainArgs.builder
       com.pulumi.aws.bedrock.BedrockFunctions.getCustomModelPlain(args(argsBuilder).build)
 
     /** Returns a list of Amazon Bedrock custom models. */
-    def getCustomModels(args: Endofunction[com.pulumi.aws.bedrock.inputs.GetCustomModelsArgs.Builder] = scala.Predef.identity):
+    inline def getCustomModels(args: Endofunction[com.pulumi.aws.bedrock.inputs.GetCustomModelsArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.bedrock.outputs.GetCustomModelsResult] =
       val argsBuilder = com.pulumi.aws.bedrock.inputs.GetCustomModelsArgs.builder
       com.pulumi.aws.bedrock.BedrockFunctions.getCustomModels(args(argsBuilder).build)
 
     /** Returns a list of Amazon Bedrock custom models. */
-    def getCustomModelsPlain(args: Endofunction[com.pulumi.aws.bedrock.inputs.GetCustomModelsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getCustomModelsPlain(args: Endofunction[com.pulumi.aws.bedrock.inputs.GetCustomModelsPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.bedrock.outputs.GetCustomModelsResult] =
       val argsBuilder = com.pulumi.aws.bedrock.inputs.GetCustomModelsPlainArgs.builder
       com.pulumi.aws.bedrock.BedrockFunctions.getCustomModelsPlain(args(argsBuilder).build)
 
     /** Data source for managing an AWS Bedrock Inference Profile. */
-    def getInferenceProfile(args: Endofunction[com.pulumi.aws.bedrock.inputs.GetInferenceProfileArgs.Builder] = scala.Predef.identity):
+    inline def getInferenceProfile(args: Endofunction[com.pulumi.aws.bedrock.inputs.GetInferenceProfileArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.bedrock.outputs.GetInferenceProfileResult] =
       val argsBuilder = com.pulumi.aws.bedrock.inputs.GetInferenceProfileArgs.builder
       com.pulumi.aws.bedrock.BedrockFunctions.getInferenceProfile(args(argsBuilder).build)
 
     /** Data source for managing an AWS Bedrock Inference Profile. */
-    def getInferenceProfilePlain(args: Endofunction[com.pulumi.aws.bedrock.inputs.GetInferenceProfilePlainArgs.Builder] = scala.Predef.identity):
+    inline def getInferenceProfilePlain(args: Endofunction[com.pulumi.aws.bedrock.inputs.GetInferenceProfilePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.bedrock.outputs.GetInferenceProfileResult] =
       val argsBuilder = com.pulumi.aws.bedrock.inputs.GetInferenceProfilePlainArgs.builder
       com.pulumi.aws.bedrock.BedrockFunctions.getInferenceProfilePlain(args(argsBuilder).build)
 
     /** Data source for managing AWS Bedrock Inference Profiles. */
-    def getInferenceProfiles(args: Endofunction[com.pulumi.aws.bedrock.inputs.GetInferenceProfilesArgs.Builder] = scala.Predef.identity):
+    inline def getInferenceProfiles(args: Endofunction[com.pulumi.aws.bedrock.inputs.GetInferenceProfilesArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.bedrock.outputs.GetInferenceProfilesResult] =
       val argsBuilder = com.pulumi.aws.bedrock.inputs.GetInferenceProfilesArgs.builder
       com.pulumi.aws.bedrock.BedrockFunctions.getInferenceProfiles(args(argsBuilder).build)
 
     /** Data source for managing AWS Bedrock Inference Profiles. */
-    def getInferenceProfilesPlain(args: Endofunction[com.pulumi.aws.bedrock.inputs.GetInferenceProfilesPlainArgs.Builder] = scala.Predef.identity):
+    inline def getInferenceProfilesPlain(args: Endofunction[com.pulumi.aws.bedrock.inputs.GetInferenceProfilesPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.bedrock.outputs.GetInferenceProfilesResult] =
       val argsBuilder = com.pulumi.aws.bedrock.inputs.GetInferenceProfilesPlainArgs.builder
       com.pulumi.aws.bedrock.BedrockFunctions.getInferenceProfilesPlain(args(argsBuilder).build)

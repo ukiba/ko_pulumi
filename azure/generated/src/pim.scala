@@ -68,31 +68,33 @@ object pim:
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
-  type PimFunctions = com.pulumi.azure.pim.PimFunctions
   object PimFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.azure.pim.PimFunctions.*
-  extension (self: PimFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /** Use this data source to access information about existing Role Assignments. */
-    def getRoleAssignments(args: Endofunction[com.pulumi.azure.pim.inputs.GetRoleAssignmentsArgs.Builder] = scala.Predef.identity):
+    inline def getRoleAssignments(args: Endofunction[com.pulumi.azure.pim.inputs.GetRoleAssignmentsArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.pim.outputs.GetRoleAssignmentsResult] =
       val argsBuilder = com.pulumi.azure.pim.inputs.GetRoleAssignmentsArgs.builder
       com.pulumi.azure.pim.PimFunctions.getRoleAssignments(args(argsBuilder).build)
 
     /** Use this data source to access information about existing Role Assignments. */
-    def getRoleAssignmentsPlain(args: Endofunction[com.pulumi.azure.pim.inputs.GetRoleAssignmentsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getRoleAssignmentsPlain(args: Endofunction[com.pulumi.azure.pim.inputs.GetRoleAssignmentsPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.pim.outputs.GetRoleAssignmentsResult] =
       val argsBuilder = com.pulumi.azure.pim.inputs.GetRoleAssignmentsPlainArgs.builder
       com.pulumi.azure.pim.PimFunctions.getRoleAssignmentsPlain(args(argsBuilder).build)
 
     /** Use this data source to get information on a role policy for an Azure Management Group, Subscription, Resource Group or resource. */
-    def getRoleManagementPolicy(args: Endofunction[com.pulumi.azure.pim.inputs.GetRoleManagementPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getRoleManagementPolicy(args: Endofunction[com.pulumi.azure.pim.inputs.GetRoleManagementPolicyArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.pim.outputs.GetRoleManagementPolicyResult] =
       val argsBuilder = com.pulumi.azure.pim.inputs.GetRoleManagementPolicyArgs.builder
       com.pulumi.azure.pim.PimFunctions.getRoleManagementPolicy(args(argsBuilder).build)
 
     /** Use this data source to get information on a role policy for an Azure Management Group, Subscription, Resource Group or resource. */
-    def getRoleManagementPolicyPlain(args: Endofunction[com.pulumi.azure.pim.inputs.GetRoleManagementPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getRoleManagementPolicyPlain(args: Endofunction[com.pulumi.azure.pim.inputs.GetRoleManagementPolicyPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.pim.outputs.GetRoleManagementPolicyResult] =
       val argsBuilder = com.pulumi.azure.pim.inputs.GetRoleManagementPolicyPlainArgs.builder
       com.pulumi.azure.pim.PimFunctions.getRoleManagementPolicyPlain(args(argsBuilder).build)

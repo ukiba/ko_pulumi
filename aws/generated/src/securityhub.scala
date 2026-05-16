@@ -110,43 +110,45 @@ object securityhub:
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
-  type SecurityhubFunctions = com.pulumi.aws.securityhub.SecurityhubFunctions
   object SecurityhubFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.aws.securityhub.SecurityhubFunctions.*
-  extension (self: SecurityhubFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /** Lists the standards that are currently enabled. */
-    def getEnabledStandards(args: Endofunction[com.pulumi.aws.securityhub.inputs.GetEnabledStandardsArgs.Builder] = scala.Predef.identity):
+    inline def getEnabledStandards(args: Endofunction[com.pulumi.aws.securityhub.inputs.GetEnabledStandardsArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.securityhub.outputs.GetEnabledStandardsResult] =
       val argsBuilder = com.pulumi.aws.securityhub.inputs.GetEnabledStandardsArgs.builder
       com.pulumi.aws.securityhub.SecurityhubFunctions.getEnabledStandards(args(argsBuilder).build)
 
     /** Lists the standards that are currently enabled. */
-    def getEnabledStandardsPlain(args: Endofunction[com.pulumi.aws.securityhub.inputs.GetEnabledStandardsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getEnabledStandardsPlain(args: Endofunction[com.pulumi.aws.securityhub.inputs.GetEnabledStandardsPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.securityhub.outputs.GetEnabledStandardsResult] =
       val argsBuilder = com.pulumi.aws.securityhub.inputs.GetEnabledStandardsPlainArgs.builder
       com.pulumi.aws.securityhub.SecurityhubFunctions.getEnabledStandardsPlain(args(argsBuilder).build)
 
     /** Lists security controls. */
-    def getSecurityControls(args: Endofunction[com.pulumi.aws.securityhub.inputs.GetSecurityControlsArgs.Builder] = scala.Predef.identity):
+    inline def getSecurityControls(args: Endofunction[com.pulumi.aws.securityhub.inputs.GetSecurityControlsArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.securityhub.outputs.GetSecurityControlsResult] =
       val argsBuilder = com.pulumi.aws.securityhub.inputs.GetSecurityControlsArgs.builder
       com.pulumi.aws.securityhub.SecurityhubFunctions.getSecurityControls(args(argsBuilder).build)
 
     /** Lists security controls. */
-    def getSecurityControlsPlain(args: Endofunction[com.pulumi.aws.securityhub.inputs.GetSecurityControlsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getSecurityControlsPlain(args: Endofunction[com.pulumi.aws.securityhub.inputs.GetSecurityControlsPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.securityhub.outputs.GetSecurityControlsResult] =
       val argsBuilder = com.pulumi.aws.securityhub.inputs.GetSecurityControlsPlainArgs.builder
       com.pulumi.aws.securityhub.SecurityhubFunctions.getSecurityControlsPlain(args(argsBuilder).build)
 
     /** Data source for managing an AWS Security Hub Standards Control Associations. */
-    def getStandardsControlAssociations(args: Endofunction[com.pulumi.aws.securityhub.inputs.GetStandardsControlAssociationsArgs.Builder] = scala.Predef.identity):
+    inline def getStandardsControlAssociations(args: Endofunction[com.pulumi.aws.securityhub.inputs.GetStandardsControlAssociationsArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.securityhub.outputs.GetStandardsControlAssociationsResult] =
       val argsBuilder = com.pulumi.aws.securityhub.inputs.GetStandardsControlAssociationsArgs.builder
       com.pulumi.aws.securityhub.SecurityhubFunctions.getStandardsControlAssociations(args(argsBuilder).build)
 
     /** Data source for managing an AWS Security Hub Standards Control Associations. */
-    def getStandardsControlAssociationsPlain(args: Endofunction[com.pulumi.aws.securityhub.inputs.GetStandardsControlAssociationsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getStandardsControlAssociationsPlain(args: Endofunction[com.pulumi.aws.securityhub.inputs.GetStandardsControlAssociationsPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.securityhub.outputs.GetStandardsControlAssociationsResult] =
       val argsBuilder = com.pulumi.aws.securityhub.inputs.GetStandardsControlAssociationsPlainArgs.builder
       com.pulumi.aws.securityhub.SecurityhubFunctions.getStandardsControlAssociationsPlain(args(argsBuilder).build)

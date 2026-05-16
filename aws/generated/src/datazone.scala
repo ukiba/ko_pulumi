@@ -64,31 +64,33 @@ object datazone:
       val argsBuilder = com.pulumi.aws.datazone.inputs.ProjectTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
-  type DatazoneFunctions = com.pulumi.aws.datazone.DatazoneFunctions
   object DatazoneFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.aws.datazone.DatazoneFunctions.*
-  extension (self: DatazoneFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /** Data source for managing an AWS DataZone Domain. */
-    def getDomain(args: Endofunction[com.pulumi.aws.datazone.inputs.GetDomainArgs.Builder] = scala.Predef.identity):
+    inline def getDomain(args: Endofunction[com.pulumi.aws.datazone.inputs.GetDomainArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.datazone.outputs.GetDomainResult] =
       val argsBuilder = com.pulumi.aws.datazone.inputs.GetDomainArgs.builder
       com.pulumi.aws.datazone.DatazoneFunctions.getDomain(args(argsBuilder).build)
 
     /** Data source for managing an AWS DataZone Domain. */
-    def getDomainPlain(args: Endofunction[com.pulumi.aws.datazone.inputs.GetDomainPlainArgs.Builder] = scala.Predef.identity):
+    inline def getDomainPlain(args: Endofunction[com.pulumi.aws.datazone.inputs.GetDomainPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.datazone.outputs.GetDomainResult] =
       val argsBuilder = com.pulumi.aws.datazone.inputs.GetDomainPlainArgs.builder
       com.pulumi.aws.datazone.DatazoneFunctions.getDomainPlain(args(argsBuilder).build)
 
     /** Data source for managing an AWS DataZone Environment Blueprint. */
-    def getEnvironmentBlueprint(args: Endofunction[com.pulumi.aws.datazone.inputs.GetEnvironmentBlueprintArgs.Builder] = scala.Predef.identity):
+    inline def getEnvironmentBlueprint(args: Endofunction[com.pulumi.aws.datazone.inputs.GetEnvironmentBlueprintArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.datazone.outputs.GetEnvironmentBlueprintResult] =
       val argsBuilder = com.pulumi.aws.datazone.inputs.GetEnvironmentBlueprintArgs.builder
       com.pulumi.aws.datazone.DatazoneFunctions.getEnvironmentBlueprint(args(argsBuilder).build)
 
     /** Data source for managing an AWS DataZone Environment Blueprint. */
-    def getEnvironmentBlueprintPlain(args: Endofunction[com.pulumi.aws.datazone.inputs.GetEnvironmentBlueprintPlainArgs.Builder] = scala.Predef.identity):
+    inline def getEnvironmentBlueprintPlain(args: Endofunction[com.pulumi.aws.datazone.inputs.GetEnvironmentBlueprintPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.datazone.outputs.GetEnvironmentBlueprintResult] =
       val argsBuilder = com.pulumi.aws.datazone.inputs.GetEnvironmentBlueprintPlainArgs.builder
       com.pulumi.aws.datazone.DatazoneFunctions.getEnvironmentBlueprintPlain(args(argsBuilder).build)

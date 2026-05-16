@@ -102,43 +102,45 @@ object desktopvirtualization:
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
-  type DesktopvirtualizationFunctions = com.pulumi.azure.desktopvirtualization.DesktopvirtualizationFunctions
   object DesktopvirtualizationFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.azure.desktopvirtualization.DesktopvirtualizationFunctions.*
-  extension (self: DesktopvirtualizationFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /** Use this data source to access information about an existing Application Group. */
-    def getApplicationGroup(args: Endofunction[com.pulumi.azure.desktopvirtualization.inputs.GetApplicationGroupArgs.Builder] = scala.Predef.identity):
+    inline def getApplicationGroup(args: Endofunction[com.pulumi.azure.desktopvirtualization.inputs.GetApplicationGroupArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.desktopvirtualization.outputs.GetApplicationGroupResult] =
       val argsBuilder = com.pulumi.azure.desktopvirtualization.inputs.GetApplicationGroupArgs.builder
       com.pulumi.azure.desktopvirtualization.DesktopvirtualizationFunctions.getApplicationGroup(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing Application Group. */
-    def getApplicationGroupPlain(args: Endofunction[com.pulumi.azure.desktopvirtualization.inputs.GetApplicationGroupPlainArgs.Builder] = scala.Predef.identity):
+    inline def getApplicationGroupPlain(args: Endofunction[com.pulumi.azure.desktopvirtualization.inputs.GetApplicationGroupPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.desktopvirtualization.outputs.GetApplicationGroupResult] =
       val argsBuilder = com.pulumi.azure.desktopvirtualization.inputs.GetApplicationGroupPlainArgs.builder
       com.pulumi.azure.desktopvirtualization.DesktopvirtualizationFunctions.getApplicationGroupPlain(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing Virtual Desktop Host Pool. */
-    def getHostPool(args: Endofunction[com.pulumi.azure.desktopvirtualization.inputs.GetHostPoolArgs.Builder] = scala.Predef.identity):
+    inline def getHostPool(args: Endofunction[com.pulumi.azure.desktopvirtualization.inputs.GetHostPoolArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.desktopvirtualization.outputs.GetHostPoolResult] =
       val argsBuilder = com.pulumi.azure.desktopvirtualization.inputs.GetHostPoolArgs.builder
       com.pulumi.azure.desktopvirtualization.DesktopvirtualizationFunctions.getHostPool(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing Virtual Desktop Host Pool. */
-    def getHostPoolPlain(args: Endofunction[com.pulumi.azure.desktopvirtualization.inputs.GetHostPoolPlainArgs.Builder] = scala.Predef.identity):
+    inline def getHostPoolPlain(args: Endofunction[com.pulumi.azure.desktopvirtualization.inputs.GetHostPoolPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.desktopvirtualization.outputs.GetHostPoolResult] =
       val argsBuilder = com.pulumi.azure.desktopvirtualization.inputs.GetHostPoolPlainArgs.builder
       com.pulumi.azure.desktopvirtualization.DesktopvirtualizationFunctions.getHostPoolPlain(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing Virtual Desktop Workspace. */
-    def getWorkspace(args: Endofunction[com.pulumi.azure.desktopvirtualization.inputs.GetWorkspaceArgs.Builder] = scala.Predef.identity):
+    inline def getWorkspace(args: Endofunction[com.pulumi.azure.desktopvirtualization.inputs.GetWorkspaceArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.desktopvirtualization.outputs.GetWorkspaceResult] =
       val argsBuilder = com.pulumi.azure.desktopvirtualization.inputs.GetWorkspaceArgs.builder
       com.pulumi.azure.desktopvirtualization.DesktopvirtualizationFunctions.getWorkspace(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing Virtual Desktop Workspace. */
-    def getWorkspacePlain(args: Endofunction[com.pulumi.azure.desktopvirtualization.inputs.GetWorkspacePlainArgs.Builder] = scala.Predef.identity):
+    inline def getWorkspacePlain(args: Endofunction[com.pulumi.azure.desktopvirtualization.inputs.GetWorkspacePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.desktopvirtualization.outputs.GetWorkspaceResult] =
       val argsBuilder = com.pulumi.azure.desktopvirtualization.inputs.GetWorkspacePlainArgs.builder
       com.pulumi.azure.desktopvirtualization.DesktopvirtualizationFunctions.getWorkspacePlain(args(argsBuilder).build)

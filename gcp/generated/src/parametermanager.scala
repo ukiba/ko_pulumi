@@ -46,79 +46,81 @@ object parametermanager:
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
-  type ParametermanagerFunctions = com.pulumi.gcp.parametermanager.ParametermanagerFunctions
   object ParametermanagerFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.gcp.parametermanager.ParametermanagerFunctions.*
-  extension (self: ParametermanagerFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /** Use this data source to get information about a Parameter Manager Parameter. */
-    def getParameter(args: Endofunction[com.pulumi.gcp.parametermanager.inputs.GetParameterArgs.Builder] = scala.Predef.identity):
+    inline def getParameter(args: Endofunction[com.pulumi.gcp.parametermanager.inputs.GetParameterArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.parametermanager.outputs.GetParameterResult] =
       val argsBuilder = com.pulumi.gcp.parametermanager.inputs.GetParameterArgs.builder
       com.pulumi.gcp.parametermanager.ParametermanagerFunctions.getParameter(args(argsBuilder).build)
 
     /** Use this data source to get information about a Parameter Manager Parameter. */
-    def getParameterPlain(args: Endofunction[com.pulumi.gcp.parametermanager.inputs.GetParameterPlainArgs.Builder] = scala.Predef.identity):
+    inline def getParameterPlain(args: Endofunction[com.pulumi.gcp.parametermanager.inputs.GetParameterPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.parametermanager.outputs.GetParameterResult] =
       val argsBuilder = com.pulumi.gcp.parametermanager.inputs.GetParameterPlainArgs.builder
       com.pulumi.gcp.parametermanager.ParametermanagerFunctions.getParameterPlain(args(argsBuilder).build)
 
     /** Get the value and metadata from a Parameter Manager Parameter version. For more information see the [official documentation](https://cloud.google.com/secret-manager/parameter-manager/docs/overview)  and [API](https://cloud.google.com/secret-manager/parameter-manager/docs/reference/rest/v1/projects.locations.parameters.versions). */
-    def getParameterVersion(args: Endofunction[com.pulumi.gcp.parametermanager.inputs.GetParameterVersionArgs.Builder] = scala.Predef.identity):
+    inline def getParameterVersion(args: Endofunction[com.pulumi.gcp.parametermanager.inputs.GetParameterVersionArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.parametermanager.outputs.GetParameterVersionResult] =
       val argsBuilder = com.pulumi.gcp.parametermanager.inputs.GetParameterVersionArgs.builder
       com.pulumi.gcp.parametermanager.ParametermanagerFunctions.getParameterVersion(args(argsBuilder).build)
 
     /** Get the value and metadata from a Parameter Manager Parameter version. For more information see the [official documentation](https://cloud.google.com/secret-manager/parameter-manager/docs/overview)  and [API](https://cloud.google.com/secret-manager/parameter-manager/docs/reference/rest/v1/projects.locations.parameters.versions). */
-    def getParameterVersionPlain(args: Endofunction[com.pulumi.gcp.parametermanager.inputs.GetParameterVersionPlainArgs.Builder] = scala.Predef.identity):
+    inline def getParameterVersionPlain(args: Endofunction[com.pulumi.gcp.parametermanager.inputs.GetParameterVersionPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.parametermanager.outputs.GetParameterVersionResult] =
       val argsBuilder = com.pulumi.gcp.parametermanager.inputs.GetParameterVersionPlainArgs.builder
       com.pulumi.gcp.parametermanager.ParametermanagerFunctions.getParameterVersionPlain(args(argsBuilder).build)
 
     /** Get the value and metadata from a Parameter Manager Parameter version with render payload data. For this datasource to work as expected, the principal of the parameter must be provided with the [Secret Manager Secret Accessor](https://cloud.google.com/secret-manager/docs/access-control#secretmanager.secretAccessor) role. For more information see the [official documentation](https://cloud.google.com/secret-manager/parameter-manager/docs/overview)  and [API](https://cloud.google.com/secret-manager/parameter-manager/docs/reference/rest/v1/projects.locations.parameters.versions/render). */
-    def getParameterVersionRender(args: Endofunction[com.pulumi.gcp.parametermanager.inputs.GetParameterVersionRenderArgs.Builder] = scala.Predef.identity):
+    inline def getParameterVersionRender(args: Endofunction[com.pulumi.gcp.parametermanager.inputs.GetParameterVersionRenderArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.parametermanager.outputs.GetParameterVersionRenderResult] =
       val argsBuilder = com.pulumi.gcp.parametermanager.inputs.GetParameterVersionRenderArgs.builder
       com.pulumi.gcp.parametermanager.ParametermanagerFunctions.getParameterVersionRender(args(argsBuilder).build)
 
     /** Get the value and metadata from a Parameter Manager Parameter version with render payload data. For this datasource to work as expected, the principal of the parameter must be provided with the [Secret Manager Secret Accessor](https://cloud.google.com/secret-manager/docs/access-control#secretmanager.secretAccessor) role. For more information see the [official documentation](https://cloud.google.com/secret-manager/parameter-manager/docs/overview)  and [API](https://cloud.google.com/secret-manager/parameter-manager/docs/reference/rest/v1/projects.locations.parameters.versions/render). */
-    def getParameterVersionRenderPlain(args: Endofunction[com.pulumi.gcp.parametermanager.inputs.GetParameterVersionRenderPlainArgs.Builder] = scala.Predef.identity):
+    inline def getParameterVersionRenderPlain(args: Endofunction[com.pulumi.gcp.parametermanager.inputs.GetParameterVersionRenderPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.parametermanager.outputs.GetParameterVersionRenderResult] =
       val argsBuilder = com.pulumi.gcp.parametermanager.inputs.GetParameterVersionRenderPlainArgs.builder
       com.pulumi.gcp.parametermanager.ParametermanagerFunctions.getParameterVersionRenderPlain(args(argsBuilder).build)
 
     /** Use this data source to list the Parameter Manager Parameters. */
-    def getParameters(args: Endofunction[com.pulumi.gcp.parametermanager.inputs.GetParametersArgs.Builder] = scala.Predef.identity):
+    inline def getParameters(args: Endofunction[com.pulumi.gcp.parametermanager.inputs.GetParametersArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.parametermanager.outputs.GetParametersResult] =
       val argsBuilder = com.pulumi.gcp.parametermanager.inputs.GetParametersArgs.builder
       com.pulumi.gcp.parametermanager.ParametermanagerFunctions.getParameters(args(argsBuilder).build)
 
     /** Use this data source to list the Parameter Manager Parameters. */
-    def getParametersPlain(args: Endofunction[com.pulumi.gcp.parametermanager.inputs.GetParametersPlainArgs.Builder] = scala.Predef.identity):
+    inline def getParametersPlain(args: Endofunction[com.pulumi.gcp.parametermanager.inputs.GetParametersPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.parametermanager.outputs.GetParametersResult] =
       val argsBuilder = com.pulumi.gcp.parametermanager.inputs.GetParametersPlainArgs.builder
       com.pulumi.gcp.parametermanager.ParametermanagerFunctions.getParametersPlain(args(argsBuilder).build)
 
     /** Use this data source to get information about a Parameter Manager Regional Parameter. */
-    def getRegionalParameter(args: Endofunction[com.pulumi.gcp.parametermanager.inputs.GetRegionalParameterArgs.Builder] = scala.Predef.identity):
+    inline def getRegionalParameter(args: Endofunction[com.pulumi.gcp.parametermanager.inputs.GetRegionalParameterArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.parametermanager.outputs.GetRegionalParameterResult] =
       val argsBuilder = com.pulumi.gcp.parametermanager.inputs.GetRegionalParameterArgs.builder
       com.pulumi.gcp.parametermanager.ParametermanagerFunctions.getRegionalParameter(args(argsBuilder).build)
 
     /** Use this data source to get information about a Parameter Manager Regional Parameter. */
-    def getRegionalParameterPlain(args: Endofunction[com.pulumi.gcp.parametermanager.inputs.GetRegionalParameterPlainArgs.Builder] = scala.Predef.identity):
+    inline def getRegionalParameterPlain(args: Endofunction[com.pulumi.gcp.parametermanager.inputs.GetRegionalParameterPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.parametermanager.outputs.GetRegionalParameterResult] =
       val argsBuilder = com.pulumi.gcp.parametermanager.inputs.GetRegionalParameterPlainArgs.builder
       com.pulumi.gcp.parametermanager.ParametermanagerFunctions.getRegionalParameterPlain(args(argsBuilder).build)
 
     /** Get the value and metadata from a Parameter Manager Regional Parameter version. For more information see the [official documentation](https://cloud.google.com/secret-manager/parameter-manager/docs/overview) and [API](https://cloud.google.com/secret-manager/parameter-manager/docs/reference/rest/v1/projects.locations.parameters.versions). */
-    def getRegionalParameterVersion(args: Endofunction[com.pulumi.gcp.parametermanager.inputs.GetRegionalParameterVersionArgs.Builder] = scala.Predef.identity):
+    inline def getRegionalParameterVersion(args: Endofunction[com.pulumi.gcp.parametermanager.inputs.GetRegionalParameterVersionArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.parametermanager.outputs.GetRegionalParameterVersionResult] =
       val argsBuilder = com.pulumi.gcp.parametermanager.inputs.GetRegionalParameterVersionArgs.builder
       com.pulumi.gcp.parametermanager.ParametermanagerFunctions.getRegionalParameterVersion(args(argsBuilder).build)
 
     /** Get the value and metadata from a Parameter Manager Regional Parameter version. For more information see the [official documentation](https://cloud.google.com/secret-manager/parameter-manager/docs/overview) and [API](https://cloud.google.com/secret-manager/parameter-manager/docs/reference/rest/v1/projects.locations.parameters.versions). */
-    def getRegionalParameterVersionPlain(args: Endofunction[com.pulumi.gcp.parametermanager.inputs.GetRegionalParameterVersionPlainArgs.Builder] = scala.Predef.identity):
+    inline def getRegionalParameterVersionPlain(args: Endofunction[com.pulumi.gcp.parametermanager.inputs.GetRegionalParameterVersionPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.parametermanager.outputs.GetRegionalParameterVersionResult] =
       val argsBuilder = com.pulumi.gcp.parametermanager.inputs.GetRegionalParameterVersionPlainArgs.builder
       com.pulumi.gcp.parametermanager.ParametermanagerFunctions.getRegionalParameterVersionPlain(args(argsBuilder).build)
@@ -128,7 +130,7 @@ object parametermanager:
      * 
      *  &gt; **Warning:** To use this data source, we must grant the `Secret Manager Secret Accessor` role to the principal of the parameter. Please note that it can take up to 7 minutes for the role to take effect. Hence, we might need to wait approximately 7 minutes after granting  `Secret Manager Secret Accessor` role to the principal of the parameter. For more information see the [access change propagation documentation](https://cloud.google.com/iam/docs/access-change-propagation).
      */
-    def getRegionalParameterVersionRender(args: Endofunction[com.pulumi.gcp.parametermanager.inputs.GetRegionalParameterVersionRenderArgs.Builder] = scala.Predef.identity):
+    inline def getRegionalParameterVersionRender(args: Endofunction[com.pulumi.gcp.parametermanager.inputs.GetRegionalParameterVersionRenderArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.parametermanager.outputs.GetRegionalParameterVersionRenderResult] =
       val argsBuilder = com.pulumi.gcp.parametermanager.inputs.GetRegionalParameterVersionRenderArgs.builder
       com.pulumi.gcp.parametermanager.ParametermanagerFunctions.getRegionalParameterVersionRender(args(argsBuilder).build)
@@ -138,19 +140,19 @@ object parametermanager:
      * 
      *  &gt; **Warning:** To use this data source, we must grant the `Secret Manager Secret Accessor` role to the principal of the parameter. Please note that it can take up to 7 minutes for the role to take effect. Hence, we might need to wait approximately 7 minutes after granting  `Secret Manager Secret Accessor` role to the principal of the parameter. For more information see the [access change propagation documentation](https://cloud.google.com/iam/docs/access-change-propagation).
      */
-    def getRegionalParameterVersionRenderPlain(args: Endofunction[com.pulumi.gcp.parametermanager.inputs.GetRegionalParameterVersionRenderPlainArgs.Builder] = scala.Predef.identity):
+    inline def getRegionalParameterVersionRenderPlain(args: Endofunction[com.pulumi.gcp.parametermanager.inputs.GetRegionalParameterVersionRenderPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.parametermanager.outputs.GetRegionalParameterVersionRenderResult] =
       val argsBuilder = com.pulumi.gcp.parametermanager.inputs.GetRegionalParameterVersionRenderPlainArgs.builder
       com.pulumi.gcp.parametermanager.ParametermanagerFunctions.getRegionalParameterVersionRenderPlain(args(argsBuilder).build)
 
     /** Use this data source to list the Parameter Manager Regional Parameters. */
-    def getRegionalParameters(args: Endofunction[com.pulumi.gcp.parametermanager.inputs.GetRegionalParametersArgs.Builder] = scala.Predef.identity):
+    inline def getRegionalParameters(args: Endofunction[com.pulumi.gcp.parametermanager.inputs.GetRegionalParametersArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.parametermanager.outputs.GetRegionalParametersResult] =
       val argsBuilder = com.pulumi.gcp.parametermanager.inputs.GetRegionalParametersArgs.builder
       com.pulumi.gcp.parametermanager.ParametermanagerFunctions.getRegionalParameters(args(argsBuilder).build)
 
     /** Use this data source to list the Parameter Manager Regional Parameters. */
-    def getRegionalParametersPlain(args: Endofunction[com.pulumi.gcp.parametermanager.inputs.GetRegionalParametersPlainArgs.Builder] = scala.Predef.identity):
+    inline def getRegionalParametersPlain(args: Endofunction[com.pulumi.gcp.parametermanager.inputs.GetRegionalParametersPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.parametermanager.outputs.GetRegionalParametersResult] =
       val argsBuilder = com.pulumi.gcp.parametermanager.inputs.GetRegionalParametersPlainArgs.builder
       com.pulumi.gcp.parametermanager.ParametermanagerFunctions.getRegionalParametersPlain(args(argsBuilder).build)

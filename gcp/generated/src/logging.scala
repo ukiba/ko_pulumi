@@ -2150,11 +2150,13 @@ object logging:
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
-  type LoggingFunctions = com.pulumi.gcp.logging.LoggingFunctions
   object LoggingFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.gcp.logging.LoggingFunctions.*
-  extension (self: LoggingFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /**
      * Describes the settings associated with a folder.
      * 
@@ -2163,7 +2165,7 @@ object logging:
      *  * [API documentation](https://cloud.google.com/logging/docs/reference/v2/rest/v2/folders/getSettings)
      *  * [Configure default settings for organizations and folders](https://cloud.google.com/logging/docs/default-settings).
      */
-    def getFolderSettings(args: Endofunction[com.pulumi.gcp.logging.inputs.GetFolderSettingsArgs.Builder] = scala.Predef.identity):
+    inline def getFolderSettings(args: Endofunction[com.pulumi.gcp.logging.inputs.GetFolderSettingsArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.logging.outputs.GetFolderSettingsResult] =
       val argsBuilder = com.pulumi.gcp.logging.inputs.GetFolderSettingsArgs.builder
       com.pulumi.gcp.logging.LoggingFunctions.getFolderSettings(args(argsBuilder).build)
@@ -2176,19 +2178,19 @@ object logging:
      *  * [API documentation](https://cloud.google.com/logging/docs/reference/v2/rest/v2/folders/getSettings)
      *  * [Configure default settings for organizations and folders](https://cloud.google.com/logging/docs/default-settings).
      */
-    def getFolderSettingsPlain(args: Endofunction[com.pulumi.gcp.logging.inputs.GetFolderSettingsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getFolderSettingsPlain(args: Endofunction[com.pulumi.gcp.logging.inputs.GetFolderSettingsPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.logging.outputs.GetFolderSettingsResult] =
       val argsBuilder = com.pulumi.gcp.logging.inputs.GetFolderSettingsPlainArgs.builder
       com.pulumi.gcp.logging.LoggingFunctions.getFolderSettingsPlain(args(argsBuilder).build)
 
     /** Retrieves the current IAM policy data for logview */
-    def getLogViewIamPolicy(args: Endofunction[com.pulumi.gcp.logging.inputs.GetLogViewIamPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getLogViewIamPolicy(args: Endofunction[com.pulumi.gcp.logging.inputs.GetLogViewIamPolicyArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.logging.outputs.GetLogViewIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.logging.inputs.GetLogViewIamPolicyArgs.builder
       com.pulumi.gcp.logging.LoggingFunctions.getLogViewIamPolicy(args(argsBuilder).build)
 
     /** Retrieves the current IAM policy data for logview */
-    def getLogViewIamPolicyPlain(args: Endofunction[com.pulumi.gcp.logging.inputs.GetLogViewIamPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getLogViewIamPolicyPlain(args: Endofunction[com.pulumi.gcp.logging.inputs.GetLogViewIamPolicyPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.logging.outputs.GetLogViewIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.logging.inputs.GetLogViewIamPolicyPlainArgs.builder
       com.pulumi.gcp.logging.LoggingFunctions.getLogViewIamPolicyPlain(args(argsBuilder).build)
@@ -2201,7 +2203,7 @@ object logging:
      *  * [API documentation](https://cloud.google.com/logging/docs/reference/v2/rest/v2/organizations/getSettings)
      *  * [Configure default settings for organizations and folders](https://cloud.google.com/logging/docs/default-settings).
      */
-    def getOrganizationSettings(args: Endofunction[com.pulumi.gcp.logging.inputs.GetOrganizationSettingsArgs.Builder] = scala.Predef.identity):
+    inline def getOrganizationSettings(args: Endofunction[com.pulumi.gcp.logging.inputs.GetOrganizationSettingsArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.logging.outputs.GetOrganizationSettingsResult] =
       val argsBuilder = com.pulumi.gcp.logging.inputs.GetOrganizationSettingsArgs.builder
       com.pulumi.gcp.logging.LoggingFunctions.getOrganizationSettings(args(argsBuilder).build)
@@ -2214,7 +2216,7 @@ object logging:
      *  * [API documentation](https://cloud.google.com/logging/docs/reference/v2/rest/v2/organizations/getSettings)
      *  * [Configure default settings for organizations and folders](https://cloud.google.com/logging/docs/default-settings).
      */
-    def getOrganizationSettingsPlain(args: Endofunction[com.pulumi.gcp.logging.inputs.GetOrganizationSettingsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getOrganizationSettingsPlain(args: Endofunction[com.pulumi.gcp.logging.inputs.GetOrganizationSettingsPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.logging.outputs.GetOrganizationSettingsResult] =
       val argsBuilder = com.pulumi.gcp.logging.inputs.GetOrganizationSettingsPlainArgs.builder
       com.pulumi.gcp.logging.LoggingFunctions.getOrganizationSettingsPlain(args(argsBuilder).build)
@@ -2227,7 +2229,7 @@ object logging:
      *  * [API documentation](https://cloud.google.com/logging/docs/reference/v2/rest/v2/projects/getCmekSettings)
      *  * [Enable CMEK](https://cloud.google.com/logging/docs/routing/managed-encryption-storage#enable).
      */
-    def getProjectCmekSettings(args: Endofunction[com.pulumi.gcp.logging.inputs.GetProjectCmekSettingsArgs.Builder] = scala.Predef.identity):
+    inline def getProjectCmekSettings(args: Endofunction[com.pulumi.gcp.logging.inputs.GetProjectCmekSettingsArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.logging.outputs.GetProjectCmekSettingsResult] =
       val argsBuilder = com.pulumi.gcp.logging.inputs.GetProjectCmekSettingsArgs.builder
       com.pulumi.gcp.logging.LoggingFunctions.getProjectCmekSettings(args(argsBuilder).build)
@@ -2240,7 +2242,7 @@ object logging:
      *  * [API documentation](https://cloud.google.com/logging/docs/reference/v2/rest/v2/projects/getCmekSettings)
      *  * [Enable CMEK](https://cloud.google.com/logging/docs/routing/managed-encryption-storage#enable).
      */
-    def getProjectCmekSettingsPlain(args: Endofunction[com.pulumi.gcp.logging.inputs.GetProjectCmekSettingsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getProjectCmekSettingsPlain(args: Endofunction[com.pulumi.gcp.logging.inputs.GetProjectCmekSettingsPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.logging.outputs.GetProjectCmekSettingsResult] =
       val argsBuilder = com.pulumi.gcp.logging.inputs.GetProjectCmekSettingsPlainArgs.builder
       com.pulumi.gcp.logging.LoggingFunctions.getProjectCmekSettingsPlain(args(argsBuilder).build)
@@ -2253,7 +2255,7 @@ object logging:
      *  * [API documentation](https://cloud.google.com/logging/docs/reference/v2/rest/v2/projects/getSettings)
      *  * [Configure default settings for organizations and folders](https://cloud.google.com/logging/docs/default-settings).
      */
-    def getProjectSettings(args: Endofunction[com.pulumi.gcp.logging.inputs.GetProjectSettingsArgs.Builder] = scala.Predef.identity):
+    inline def getProjectSettings(args: Endofunction[com.pulumi.gcp.logging.inputs.GetProjectSettingsArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.logging.outputs.GetProjectSettingsResult] =
       val argsBuilder = com.pulumi.gcp.logging.inputs.GetProjectSettingsArgs.builder
       com.pulumi.gcp.logging.LoggingFunctions.getProjectSettings(args(argsBuilder).build)
@@ -2266,7 +2268,7 @@ object logging:
      *  * [API documentation](https://cloud.google.com/logging/docs/reference/v2/rest/v2/projects/getSettings)
      *  * [Configure default settings for organizations and folders](https://cloud.google.com/logging/docs/default-settings).
      */
-    def getProjectSettingsPlain(args: Endofunction[com.pulumi.gcp.logging.inputs.GetProjectSettingsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getProjectSettingsPlain(args: Endofunction[com.pulumi.gcp.logging.inputs.GetProjectSettingsPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.logging.outputs.GetProjectSettingsResult] =
       val argsBuilder = com.pulumi.gcp.logging.inputs.GetProjectSettingsPlainArgs.builder
       com.pulumi.gcp.logging.LoggingFunctions.getProjectSettingsPlain(args(argsBuilder).build)
@@ -2277,7 +2279,7 @@ object logging:
      * 
      *  [API documentation](https://cloud.google.com/logging/docs/reference/v2/rest/v2/sinks)
      */
-    def getSink(args: Endofunction[com.pulumi.gcp.logging.inputs.GetSinkArgs.Builder] = scala.Predef.identity):
+    inline def getSink(args: Endofunction[com.pulumi.gcp.logging.inputs.GetSinkArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.logging.outputs.GetSinkResult] =
       val argsBuilder = com.pulumi.gcp.logging.inputs.GetSinkArgs.builder
       com.pulumi.gcp.logging.LoggingFunctions.getSink(args(argsBuilder).build)
@@ -2288,7 +2290,7 @@ object logging:
      * 
      *  [API documentation](https://cloud.google.com/logging/docs/reference/v2/rest/v2/sinks)
      */
-    def getSinkPlain(args: Endofunction[com.pulumi.gcp.logging.inputs.GetSinkPlainArgs.Builder] = scala.Predef.identity):
+    inline def getSinkPlain(args: Endofunction[com.pulumi.gcp.logging.inputs.GetSinkPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.logging.outputs.GetSinkResult] =
       val argsBuilder = com.pulumi.gcp.logging.inputs.GetSinkPlainArgs.builder
       com.pulumi.gcp.logging.LoggingFunctions.getSinkPlain(args(argsBuilder).build)

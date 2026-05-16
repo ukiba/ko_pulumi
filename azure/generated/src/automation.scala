@@ -4,103 +4,105 @@ package azure
 import com.pulumi.resources.CustomResourceOptions
 
 object automation:
-  type AutomationFunctions = com.pulumi.azure.automation.AutomationFunctions
   object AutomationFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.azure.automation.AutomationFunctions.*
-  extension (self: AutomationFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /** Use this data source to access information about an existing Automation Account. */
-    def getAccount(args: Endofunction[com.pulumi.azure.automation.inputs.GetAccountArgs.Builder] = scala.Predef.identity):
+    inline def getAccount(args: Endofunction[com.pulumi.azure.automation.inputs.GetAccountArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.automation.outputs.GetAccountResult] =
       val argsBuilder = com.pulumi.azure.automation.inputs.GetAccountArgs.builder
       com.pulumi.azure.automation.AutomationFunctions.getAccount(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing Automation Account. */
-    def getAccountPlain(args: Endofunction[com.pulumi.azure.automation.inputs.GetAccountPlainArgs.Builder] = scala.Predef.identity):
+    inline def getAccountPlain(args: Endofunction[com.pulumi.azure.automation.inputs.GetAccountPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.automation.outputs.GetAccountResult] =
       val argsBuilder = com.pulumi.azure.automation.inputs.GetAccountPlainArgs.builder
       com.pulumi.azure.automation.AutomationFunctions.getAccountPlain(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing Automation Bool Variable. */
-    def getBoolVariable(args: Endofunction[com.pulumi.azure.automation.inputs.GetBoolVariableArgs.Builder] = scala.Predef.identity):
+    inline def getBoolVariable(args: Endofunction[com.pulumi.azure.automation.inputs.GetBoolVariableArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.automation.outputs.GetBoolVariableResult] =
       val argsBuilder = com.pulumi.azure.automation.inputs.GetBoolVariableArgs.builder
       com.pulumi.azure.automation.AutomationFunctions.getBoolVariable(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing Automation Bool Variable. */
-    def getBoolVariablePlain(args: Endofunction[com.pulumi.azure.automation.inputs.GetBoolVariablePlainArgs.Builder] = scala.Predef.identity):
+    inline def getBoolVariablePlain(args: Endofunction[com.pulumi.azure.automation.inputs.GetBoolVariablePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.automation.outputs.GetBoolVariableResult] =
       val argsBuilder = com.pulumi.azure.automation.inputs.GetBoolVariablePlainArgs.builder
       com.pulumi.azure.automation.AutomationFunctions.getBoolVariablePlain(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing Automation Datetime Variable. */
-    def getDateTimeVariable(args: Endofunction[com.pulumi.azure.automation.inputs.GetDateTimeVariableArgs.Builder] = scala.Predef.identity):
+    inline def getDateTimeVariable(args: Endofunction[com.pulumi.azure.automation.inputs.GetDateTimeVariableArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.automation.outputs.GetDateTimeVariableResult] =
       val argsBuilder = com.pulumi.azure.automation.inputs.GetDateTimeVariableArgs.builder
       com.pulumi.azure.automation.AutomationFunctions.getDateTimeVariable(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing Automation Datetime Variable. */
-    def getDateTimeVariablePlain(args: Endofunction[com.pulumi.azure.automation.inputs.GetDateTimeVariablePlainArgs.Builder] = scala.Predef.identity):
+    inline def getDateTimeVariablePlain(args: Endofunction[com.pulumi.azure.automation.inputs.GetDateTimeVariablePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.automation.outputs.GetDateTimeVariableResult] =
       val argsBuilder = com.pulumi.azure.automation.inputs.GetDateTimeVariablePlainArgs.builder
       com.pulumi.azure.automation.AutomationFunctions.getDateTimeVariablePlain(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing Automation Int Variable. */
-    def getIntVariable(args: Endofunction[com.pulumi.azure.automation.inputs.GetIntVariableArgs.Builder] = scala.Predef.identity):
+    inline def getIntVariable(args: Endofunction[com.pulumi.azure.automation.inputs.GetIntVariableArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.automation.outputs.GetIntVariableResult] =
       val argsBuilder = com.pulumi.azure.automation.inputs.GetIntVariableArgs.builder
       com.pulumi.azure.automation.AutomationFunctions.getIntVariable(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing Automation Int Variable. */
-    def getIntVariablePlain(args: Endofunction[com.pulumi.azure.automation.inputs.GetIntVariablePlainArgs.Builder] = scala.Predef.identity):
+    inline def getIntVariablePlain(args: Endofunction[com.pulumi.azure.automation.inputs.GetIntVariablePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.automation.outputs.GetIntVariableResult] =
       val argsBuilder = com.pulumi.azure.automation.inputs.GetIntVariablePlainArgs.builder
       com.pulumi.azure.automation.AutomationFunctions.getIntVariablePlain(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing Automation Runbook. */
-    def getRunbook(args: Endofunction[com.pulumi.azure.automation.inputs.GetRunbookArgs.Builder] = scala.Predef.identity):
+    inline def getRunbook(args: Endofunction[com.pulumi.azure.automation.inputs.GetRunbookArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.automation.outputs.GetRunbookResult] =
       val argsBuilder = com.pulumi.azure.automation.inputs.GetRunbookArgs.builder
       com.pulumi.azure.automation.AutomationFunctions.getRunbook(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing Automation Runbook. */
-    def getRunbookPlain(args: Endofunction[com.pulumi.azure.automation.inputs.GetRunbookPlainArgs.Builder] = scala.Predef.identity):
+    inline def getRunbookPlain(args: Endofunction[com.pulumi.azure.automation.inputs.GetRunbookPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.automation.outputs.GetRunbookResult] =
       val argsBuilder = com.pulumi.azure.automation.inputs.GetRunbookPlainArgs.builder
       com.pulumi.azure.automation.AutomationFunctions.getRunbookPlain(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing Automation String Variable. */
-    def getStringVariable(args: Endofunction[com.pulumi.azure.automation.inputs.GetStringVariableArgs.Builder] = scala.Predef.identity):
+    inline def getStringVariable(args: Endofunction[com.pulumi.azure.automation.inputs.GetStringVariableArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.automation.outputs.GetStringVariableResult] =
       val argsBuilder = com.pulumi.azure.automation.inputs.GetStringVariableArgs.builder
       com.pulumi.azure.automation.AutomationFunctions.getStringVariable(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing Automation String Variable. */
-    def getStringVariablePlain(args: Endofunction[com.pulumi.azure.automation.inputs.GetStringVariablePlainArgs.Builder] = scala.Predef.identity):
+    inline def getStringVariablePlain(args: Endofunction[com.pulumi.azure.automation.inputs.GetStringVariablePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.automation.outputs.GetStringVariableResult] =
       val argsBuilder = com.pulumi.azure.automation.inputs.GetStringVariablePlainArgs.builder
       com.pulumi.azure.automation.AutomationFunctions.getStringVariablePlain(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing Automation Object Variable. */
-    def getVariableObject(args: Endofunction[com.pulumi.azure.automation.inputs.GetVariableObjectArgs.Builder] = scala.Predef.identity):
+    inline def getVariableObject(args: Endofunction[com.pulumi.azure.automation.inputs.GetVariableObjectArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.automation.outputs.GetVariableObjectResult] =
       val argsBuilder = com.pulumi.azure.automation.inputs.GetVariableObjectArgs.builder
       com.pulumi.azure.automation.AutomationFunctions.getVariableObject(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing Automation Object Variable. */
-    def getVariableObjectPlain(args: Endofunction[com.pulumi.azure.automation.inputs.GetVariableObjectPlainArgs.Builder] = scala.Predef.identity):
+    inline def getVariableObjectPlain(args: Endofunction[com.pulumi.azure.automation.inputs.GetVariableObjectPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.automation.outputs.GetVariableObjectResult] =
       val argsBuilder = com.pulumi.azure.automation.inputs.GetVariableObjectPlainArgs.builder
       com.pulumi.azure.automation.AutomationFunctions.getVariableObjectPlain(args(argsBuilder).build)
 
     /** Use this data source to get all variables in an Automation Account. */
-    def getVariables(args: Endofunction[com.pulumi.azure.automation.inputs.GetVariablesArgs.Builder] = scala.Predef.identity):
+    inline def getVariables(args: Endofunction[com.pulumi.azure.automation.inputs.GetVariablesArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.automation.outputs.GetVariablesResult] =
       val argsBuilder = com.pulumi.azure.automation.inputs.GetVariablesArgs.builder
       com.pulumi.azure.automation.AutomationFunctions.getVariables(args(argsBuilder).build)
 
     /** Use this data source to get all variables in an Automation Account. */
-    def getVariablesPlain(args: Endofunction[com.pulumi.azure.automation.inputs.GetVariablesPlainArgs.Builder] = scala.Predef.identity):
+    inline def getVariablesPlain(args: Endofunction[com.pulumi.azure.automation.inputs.GetVariablesPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.automation.outputs.GetVariablesResult] =
       val argsBuilder = com.pulumi.azure.automation.inputs.GetVariablesPlainArgs.builder
       com.pulumi.azure.automation.AutomationFunctions.getVariablesPlain(args(argsBuilder).build)

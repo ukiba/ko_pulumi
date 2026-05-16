@@ -365,43 +365,45 @@ object sentinel:
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
-  type SentinelFunctions = com.pulumi.azure.sentinel.SentinelFunctions
   object SentinelFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.azure.sentinel.SentinelFunctions.*
-  extension (self: SentinelFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /** Use this data source to access information about an existing Sentinel Alert Rule. */
-    def getAlertRule(args: Endofunction[com.pulumi.azure.sentinel.inputs.GetAlertRuleArgs.Builder] = scala.Predef.identity):
+    inline def getAlertRule(args: Endofunction[com.pulumi.azure.sentinel.inputs.GetAlertRuleArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.sentinel.outputs.GetAlertRuleResult] =
       val argsBuilder = com.pulumi.azure.sentinel.inputs.GetAlertRuleArgs.builder
       com.pulumi.azure.sentinel.SentinelFunctions.getAlertRule(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing Sentinel Alert Rule. */
-    def getAlertRulePlain(args: Endofunction[com.pulumi.azure.sentinel.inputs.GetAlertRulePlainArgs.Builder] = scala.Predef.identity):
+    inline def getAlertRulePlain(args: Endofunction[com.pulumi.azure.sentinel.inputs.GetAlertRulePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.sentinel.outputs.GetAlertRuleResult] =
       val argsBuilder = com.pulumi.azure.sentinel.inputs.GetAlertRulePlainArgs.builder
       com.pulumi.azure.sentinel.SentinelFunctions.getAlertRulePlain(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing Anomaly Alert Rule. */
-    def getAlertRuleAnomaly(args: Endofunction[com.pulumi.azure.sentinel.inputs.GetAlertRuleAnomalyArgs.Builder] = scala.Predef.identity):
+    inline def getAlertRuleAnomaly(args: Endofunction[com.pulumi.azure.sentinel.inputs.GetAlertRuleAnomalyArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.sentinel.outputs.GetAlertRuleAnomalyResult] =
       val argsBuilder = com.pulumi.azure.sentinel.inputs.GetAlertRuleAnomalyArgs.builder
       com.pulumi.azure.sentinel.SentinelFunctions.getAlertRuleAnomaly(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing Anomaly Alert Rule. */
-    def getAlertRuleAnomalyPlain(args: Endofunction[com.pulumi.azure.sentinel.inputs.GetAlertRuleAnomalyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getAlertRuleAnomalyPlain(args: Endofunction[com.pulumi.azure.sentinel.inputs.GetAlertRuleAnomalyPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.sentinel.outputs.GetAlertRuleAnomalyResult] =
       val argsBuilder = com.pulumi.azure.sentinel.inputs.GetAlertRuleAnomalyPlainArgs.builder
       com.pulumi.azure.sentinel.SentinelFunctions.getAlertRuleAnomalyPlain(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing Sentinel Alert Rule Template. */
-    def getAlertRuleTemplate(args: Endofunction[com.pulumi.azure.sentinel.inputs.GetAlertRuleTemplateArgs.Builder] = scala.Predef.identity):
+    inline def getAlertRuleTemplate(args: Endofunction[com.pulumi.azure.sentinel.inputs.GetAlertRuleTemplateArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.sentinel.outputs.GetAlertRuleTemplateResult] =
       val argsBuilder = com.pulumi.azure.sentinel.inputs.GetAlertRuleTemplateArgs.builder
       com.pulumi.azure.sentinel.SentinelFunctions.getAlertRuleTemplate(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing Sentinel Alert Rule Template. */
-    def getAlertRuleTemplatePlain(args: Endofunction[com.pulumi.azure.sentinel.inputs.GetAlertRuleTemplatePlainArgs.Builder] = scala.Predef.identity):
+    inline def getAlertRuleTemplatePlain(args: Endofunction[com.pulumi.azure.sentinel.inputs.GetAlertRuleTemplatePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.sentinel.outputs.GetAlertRuleTemplateResult] =
       val argsBuilder = com.pulumi.azure.sentinel.inputs.GetAlertRuleTemplatePlainArgs.builder
       com.pulumi.azure.sentinel.SentinelFunctions.getAlertRuleTemplatePlain(args(argsBuilder).build)

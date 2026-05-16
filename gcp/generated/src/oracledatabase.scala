@@ -40,18 +40,20 @@ object oracledatabase:
       val argsBuilder = com.pulumi.gcp.oracledatabase.inputs.ExadbVmClusterPropertiesArgs.builder
       builder.properties(args(argsBuilder).build)
 
-  type OracledatabaseFunctions = com.pulumi.gcp.oracledatabase.OracledatabaseFunctions
   object OracledatabaseFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.gcp.oracledatabase.OracledatabaseFunctions.*
-  extension (self: OracledatabaseFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /**
      * Get information about an AutonomousDatabase.
      * 
      *  For more information see the
      *  [API](https://cloud.google.com/oracle/database/docs/reference/rest/v1/projects.locations.autonomousDatabases).
      */
-    def getAutonomousDatabase(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GetAutonomousDatabaseArgs.Builder] = scala.Predef.identity):
+    inline def getAutonomousDatabase(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GetAutonomousDatabaseArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.oracledatabase.outputs.GetAutonomousDatabaseResult] =
       val argsBuilder = com.pulumi.gcp.oracledatabase.inputs.GetAutonomousDatabaseArgs.builder
       com.pulumi.gcp.oracledatabase.OracledatabaseFunctions.getAutonomousDatabase(args(argsBuilder).build)
@@ -62,7 +64,7 @@ object oracledatabase:
      *  For more information see the
      *  [API](https://cloud.google.com/oracle/database/docs/reference/rest/v1/projects.locations.autonomousDatabases).
      */
-    def getAutonomousDatabasePlain(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GetAutonomousDatabasePlainArgs.Builder] = scala.Predef.identity):
+    inline def getAutonomousDatabasePlain(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GetAutonomousDatabasePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.oracledatabase.outputs.GetAutonomousDatabaseResult] =
       val argsBuilder = com.pulumi.gcp.oracledatabase.inputs.GetAutonomousDatabasePlainArgs.builder
       com.pulumi.gcp.oracledatabase.OracledatabaseFunctions.getAutonomousDatabasePlain(args(argsBuilder).build)
@@ -73,7 +75,7 @@ object oracledatabase:
      *  For more information see the
      *  [API](https://cloud.google.com/oracle/database/docs/reference/rest/v1/projects.locations.autonomousDatabases).
      */
-    def getAutonomousDatabases(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GetAutonomousDatabasesArgs.Builder] = scala.Predef.identity):
+    inline def getAutonomousDatabases(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GetAutonomousDatabasesArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.oracledatabase.outputs.GetAutonomousDatabasesResult] =
       val argsBuilder = com.pulumi.gcp.oracledatabase.inputs.GetAutonomousDatabasesArgs.builder
       com.pulumi.gcp.oracledatabase.OracledatabaseFunctions.getAutonomousDatabases(args(argsBuilder).build)
@@ -84,7 +86,7 @@ object oracledatabase:
      *  For more information see the
      *  [API](https://cloud.google.com/oracle/database/docs/reference/rest/v1/projects.locations.autonomousDatabases).
      */
-    def getAutonomousDatabasesPlain(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GetAutonomousDatabasesPlainArgs.Builder] = scala.Predef.identity):
+    inline def getAutonomousDatabasesPlain(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GetAutonomousDatabasesPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.oracledatabase.outputs.GetAutonomousDatabasesResult] =
       val argsBuilder = com.pulumi.gcp.oracledatabase.inputs.GetAutonomousDatabasesPlainArgs.builder
       com.pulumi.gcp.oracledatabase.OracledatabaseFunctions.getAutonomousDatabasesPlain(args(argsBuilder).build)
@@ -95,7 +97,7 @@ object oracledatabase:
      *  For more information see the
      *  [API](https://cloud.google.com/oracle/database/docs/reference/rest/v1/projects.locations.cloudExadataInfrastructures).
      */
-    def getCloudExadataInfrastructure(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GetCloudExadataInfrastructureArgs.Builder] = scala.Predef.identity):
+    inline def getCloudExadataInfrastructure(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GetCloudExadataInfrastructureArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.oracledatabase.outputs.GetCloudExadataInfrastructureResult] =
       val argsBuilder = com.pulumi.gcp.oracledatabase.inputs.GetCloudExadataInfrastructureArgs.builder
       com.pulumi.gcp.oracledatabase.OracledatabaseFunctions.getCloudExadataInfrastructure(args(argsBuilder).build)
@@ -106,7 +108,7 @@ object oracledatabase:
      *  For more information see the
      *  [API](https://cloud.google.com/oracle/database/docs/reference/rest/v1/projects.locations.cloudExadataInfrastructures).
      */
-    def getCloudExadataInfrastructurePlain(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GetCloudExadataInfrastructurePlainArgs.Builder] = scala.Predef.identity):
+    inline def getCloudExadataInfrastructurePlain(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GetCloudExadataInfrastructurePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.oracledatabase.outputs.GetCloudExadataInfrastructureResult] =
       val argsBuilder = com.pulumi.gcp.oracledatabase.inputs.GetCloudExadataInfrastructurePlainArgs.builder
       com.pulumi.gcp.oracledatabase.OracledatabaseFunctions.getCloudExadataInfrastructurePlain(args(argsBuilder).build)
@@ -117,7 +119,7 @@ object oracledatabase:
      *  For more information see the
      *  [API](https://cloud.google.com/oracle/database/docs/reference/rest/v1/projects.locations.cloudExadataInfrastructures).
      */
-    def getCloudExadataInfrastructures(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GetCloudExadataInfrastructuresArgs.Builder] = scala.Predef.identity):
+    inline def getCloudExadataInfrastructures(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GetCloudExadataInfrastructuresArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.oracledatabase.outputs.GetCloudExadataInfrastructuresResult] =
       val argsBuilder = com.pulumi.gcp.oracledatabase.inputs.GetCloudExadataInfrastructuresArgs.builder
       com.pulumi.gcp.oracledatabase.OracledatabaseFunctions.getCloudExadataInfrastructures(args(argsBuilder).build)
@@ -128,7 +130,7 @@ object oracledatabase:
      *  For more information see the
      *  [API](https://cloud.google.com/oracle/database/docs/reference/rest/v1/projects.locations.cloudExadataInfrastructures).
      */
-    def getCloudExadataInfrastructuresPlain(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GetCloudExadataInfrastructuresPlainArgs.Builder] = scala.Predef.identity):
+    inline def getCloudExadataInfrastructuresPlain(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GetCloudExadataInfrastructuresPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.oracledatabase.outputs.GetCloudExadataInfrastructuresResult] =
       val argsBuilder = com.pulumi.gcp.oracledatabase.inputs.GetCloudExadataInfrastructuresPlainArgs.builder
       com.pulumi.gcp.oracledatabase.OracledatabaseFunctions.getCloudExadataInfrastructuresPlain(args(argsBuilder).build)
@@ -139,7 +141,7 @@ object oracledatabase:
      *  For more information see the
      *  [API](https://cloud.google.com/oracle/database/docs/reference/rest/v1/projects.locations.cloudVmClusters).
      */
-    def getCloudVmCluster(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GetCloudVmClusterArgs.Builder] = scala.Predef.identity):
+    inline def getCloudVmCluster(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GetCloudVmClusterArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.oracledatabase.outputs.GetCloudVmClusterResult] =
       val argsBuilder = com.pulumi.gcp.oracledatabase.inputs.GetCloudVmClusterArgs.builder
       com.pulumi.gcp.oracledatabase.OracledatabaseFunctions.getCloudVmCluster(args(argsBuilder).build)
@@ -150,7 +152,7 @@ object oracledatabase:
      *  For more information see the
      *  [API](https://cloud.google.com/oracle/database/docs/reference/rest/v1/projects.locations.cloudVmClusters).
      */
-    def getCloudVmClusterPlain(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GetCloudVmClusterPlainArgs.Builder] = scala.Predef.identity):
+    inline def getCloudVmClusterPlain(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GetCloudVmClusterPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.oracledatabase.outputs.GetCloudVmClusterResult] =
       val argsBuilder = com.pulumi.gcp.oracledatabase.inputs.GetCloudVmClusterPlainArgs.builder
       com.pulumi.gcp.oracledatabase.OracledatabaseFunctions.getCloudVmClusterPlain(args(argsBuilder).build)
@@ -161,7 +163,7 @@ object oracledatabase:
      *  For more information see the
      *  [API](https://cloud.google.com/oracle/database/docs/reference/rest/v1/projects.locations.cloudVmClusters).
      */
-    def getCloudVmClusters(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GetCloudVmClustersArgs.Builder] = scala.Predef.identity):
+    inline def getCloudVmClusters(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GetCloudVmClustersArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.oracledatabase.outputs.GetCloudVmClustersResult] =
       val argsBuilder = com.pulumi.gcp.oracledatabase.inputs.GetCloudVmClustersArgs.builder
       com.pulumi.gcp.oracledatabase.OracledatabaseFunctions.getCloudVmClusters(args(argsBuilder).build)
@@ -172,7 +174,7 @@ object oracledatabase:
      *  For more information see the
      *  [API](https://cloud.google.com/oracle/database/docs/reference/rest/v1/projects.locations.cloudVmClusters).
      */
-    def getCloudVmClustersPlain(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GetCloudVmClustersPlainArgs.Builder] = scala.Predef.identity):
+    inline def getCloudVmClustersPlain(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GetCloudVmClustersPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.oracledatabase.outputs.GetCloudVmClustersResult] =
       val argsBuilder = com.pulumi.gcp.oracledatabase.inputs.GetCloudVmClustersPlainArgs.builder
       com.pulumi.gcp.oracledatabase.OracledatabaseFunctions.getCloudVmClustersPlain(args(argsBuilder).build)
@@ -183,7 +185,7 @@ object oracledatabase:
      *  For more information see the
      *  [API](https://cloud.google.com/oracle/database/docs/reference/rest/v1/projects.locations.cloudVmClusters.dbNodes).
      */
-    def getDbNodes(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GetDbNodesArgs.Builder] = scala.Predef.identity):
+    inline def getDbNodes(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GetDbNodesArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.oracledatabase.outputs.GetDbNodesResult] =
       val argsBuilder = com.pulumi.gcp.oracledatabase.inputs.GetDbNodesArgs.builder
       com.pulumi.gcp.oracledatabase.OracledatabaseFunctions.getDbNodes(args(argsBuilder).build)
@@ -194,7 +196,7 @@ object oracledatabase:
      *  For more information see the
      *  [API](https://cloud.google.com/oracle/database/docs/reference/rest/v1/projects.locations.cloudVmClusters.dbNodes).
      */
-    def getDbNodesPlain(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GetDbNodesPlainArgs.Builder] = scala.Predef.identity):
+    inline def getDbNodesPlain(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GetDbNodesPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.oracledatabase.outputs.GetDbNodesResult] =
       val argsBuilder = com.pulumi.gcp.oracledatabase.inputs.GetDbNodesPlainArgs.builder
       com.pulumi.gcp.oracledatabase.OracledatabaseFunctions.getDbNodesPlain(args(argsBuilder).build)
@@ -205,7 +207,7 @@ object oracledatabase:
      *  For more information see the
      *  [API](https://cloud.google.com/oracle/database/docs/reference/rest/v1/projects.locations.cloudExadataInfrastructures.dbServers).
      */
-    def getDbServers(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GetDbServersArgs.Builder] = scala.Predef.identity):
+    inline def getDbServers(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GetDbServersArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.oracledatabase.outputs.GetDbServersResult] =
       val argsBuilder = com.pulumi.gcp.oracledatabase.inputs.GetDbServersArgs.builder
       com.pulumi.gcp.oracledatabase.OracledatabaseFunctions.getDbServers(args(argsBuilder).build)
@@ -216,7 +218,7 @@ object oracledatabase:
      *  For more information see the
      *  [API](https://cloud.google.com/oracle/database/docs/reference/rest/v1/projects.locations.cloudExadataInfrastructures.dbServers).
      */
-    def getDbServersPlain(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GetDbServersPlainArgs.Builder] = scala.Predef.identity):
+    inline def getDbServersPlain(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GetDbServersPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.oracledatabase.outputs.GetDbServersResult] =
       val argsBuilder = com.pulumi.gcp.oracledatabase.inputs.GetDbServersPlainArgs.builder
       com.pulumi.gcp.oracledatabase.OracledatabaseFunctions.getDbServersPlain(args(argsBuilder).build)
@@ -227,7 +229,7 @@ object oracledatabase:
      *  For more information see the
      *  [API](https://cloud.google.com/oracle/database/docs/reference/rest/v1/projects.locations.odbNetworks).
      */
-    def getOdbNetwork(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GetOdbNetworkArgs.Builder] = scala.Predef.identity):
+    inline def getOdbNetwork(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GetOdbNetworkArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.oracledatabase.outputs.GetOdbNetworkResult] =
       val argsBuilder = com.pulumi.gcp.oracledatabase.inputs.GetOdbNetworkArgs.builder
       com.pulumi.gcp.oracledatabase.OracledatabaseFunctions.getOdbNetwork(args(argsBuilder).build)
@@ -238,7 +240,7 @@ object oracledatabase:
      *  For more information see the
      *  [API](https://cloud.google.com/oracle/database/docs/reference/rest/v1/projects.locations.odbNetworks).
      */
-    def getOdbNetworkPlain(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GetOdbNetworkPlainArgs.Builder] = scala.Predef.identity):
+    inline def getOdbNetworkPlain(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GetOdbNetworkPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.oracledatabase.outputs.GetOdbNetworkResult] =
       val argsBuilder = com.pulumi.gcp.oracledatabase.inputs.GetOdbNetworkPlainArgs.builder
       com.pulumi.gcp.oracledatabase.OracledatabaseFunctions.getOdbNetworkPlain(args(argsBuilder).build)
@@ -249,7 +251,7 @@ object oracledatabase:
      *  For more information see the
      *  * [API documentation](https://cloud.google.com/oracle/database/docs/reference/rest/v1/projects.locations.odbNetworks.odbSubnets)
      */
-    def getOdbSubnet(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GetOdbSubnetArgs.Builder] = scala.Predef.identity):
+    inline def getOdbSubnet(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GetOdbSubnetArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.oracledatabase.outputs.GetOdbSubnetResult] =
       val argsBuilder = com.pulumi.gcp.oracledatabase.inputs.GetOdbSubnetArgs.builder
       com.pulumi.gcp.oracledatabase.OracledatabaseFunctions.getOdbSubnet(args(argsBuilder).build)
@@ -260,7 +262,7 @@ object oracledatabase:
      *  For more information see the
      *  * [API documentation](https://cloud.google.com/oracle/database/docs/reference/rest/v1/projects.locations.odbNetworks.odbSubnets)
      */
-    def getOdbSubnetPlain(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GetOdbSubnetPlainArgs.Builder] = scala.Predef.identity):
+    inline def getOdbSubnetPlain(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GetOdbSubnetPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.oracledatabase.outputs.GetOdbSubnetResult] =
       val argsBuilder = com.pulumi.gcp.oracledatabase.inputs.GetOdbSubnetPlainArgs.builder
       com.pulumi.gcp.oracledatabase.OracledatabaseFunctions.getOdbSubnetPlain(args(argsBuilder).build)

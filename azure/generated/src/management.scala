@@ -72,31 +72,33 @@ object management:
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
-  type ManagementFunctions = com.pulumi.azure.management.ManagementFunctions
   object ManagementFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.azure.management.ManagementFunctions.*
-  extension (self: ManagementFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /** Use this data source to access information about an existing Management Group. */
-    def getGroup(args: Endofunction[com.pulumi.azure.management.inputs.GetGroupArgs.Builder] = scala.Predef.identity):
+    inline def getGroup(args: Endofunction[com.pulumi.azure.management.inputs.GetGroupArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.management.outputs.GetGroupResult] =
       val argsBuilder = com.pulumi.azure.management.inputs.GetGroupArgs.builder
       com.pulumi.azure.management.ManagementFunctions.getGroup(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing Management Group. */
-    def getGroupPlain(args: Endofunction[com.pulumi.azure.management.inputs.GetGroupPlainArgs.Builder] = scala.Predef.identity):
+    inline def getGroupPlain(args: Endofunction[com.pulumi.azure.management.inputs.GetGroupPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.management.outputs.GetGroupResult] =
       val argsBuilder = com.pulumi.azure.management.inputs.GetGroupPlainArgs.builder
       com.pulumi.azure.management.ManagementFunctions.getGroupPlain(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing Management Group Template Deployment. */
-    def getGroupTemplateDeployment(args: Endofunction[com.pulumi.azure.management.inputs.GetGroupTemplateDeploymentArgs.Builder] = scala.Predef.identity):
+    inline def getGroupTemplateDeployment(args: Endofunction[com.pulumi.azure.management.inputs.GetGroupTemplateDeploymentArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.management.outputs.GetGroupTemplateDeploymentResult] =
       val argsBuilder = com.pulumi.azure.management.inputs.GetGroupTemplateDeploymentArgs.builder
       com.pulumi.azure.management.ManagementFunctions.getGroupTemplateDeployment(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing Management Group Template Deployment. */
-    def getGroupTemplateDeploymentPlain(args: Endofunction[com.pulumi.azure.management.inputs.GetGroupTemplateDeploymentPlainArgs.Builder] = scala.Predef.identity):
+    inline def getGroupTemplateDeploymentPlain(args: Endofunction[com.pulumi.azure.management.inputs.GetGroupTemplateDeploymentPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.management.outputs.GetGroupTemplateDeploymentResult] =
       val argsBuilder = com.pulumi.azure.management.inputs.GetGroupTemplateDeploymentPlainArgs.builder
       com.pulumi.azure.management.ManagementFunctions.getGroupTemplateDeploymentPlain(args(argsBuilder).build)

@@ -84,31 +84,33 @@ object managedredis:
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
-  type ManagedredisFunctions = com.pulumi.azure.managedredis.ManagedredisFunctions
   object ManagedredisFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.azure.managedredis.ManagedredisFunctions.*
-  extension (self: ManagedredisFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /** Use this data source to access information about an existing Managed Redis instance. */
-    def get(args: Endofunction[com.pulumi.azure.managedredis.inputs.GetArgs.Builder] = scala.Predef.identity):
+    inline def get(args: Endofunction[com.pulumi.azure.managedredis.inputs.GetArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.managedredis.outputs.GetResult] =
       val argsBuilder = com.pulumi.azure.managedredis.inputs.GetArgs.builder
       com.pulumi.azure.managedredis.ManagedredisFunctions.get(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing Managed Redis instance. */
-    def getPlain(args: Endofunction[com.pulumi.azure.managedredis.inputs.GetPlainArgs.Builder] = scala.Predef.identity):
+    inline def getPlain(args: Endofunction[com.pulumi.azure.managedredis.inputs.GetPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.managedredis.outputs.GetResult] =
       val argsBuilder = com.pulumi.azure.managedredis.inputs.GetPlainArgs.builder
       com.pulumi.azure.managedredis.ManagedredisFunctions.getPlain(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing Managed Redis Access Policy Assignment. */
-    def getAccessPolicyAssignment(args: Endofunction[com.pulumi.azure.managedredis.inputs.GetAccessPolicyAssignmentArgs.Builder] = scala.Predef.identity):
+    inline def getAccessPolicyAssignment(args: Endofunction[com.pulumi.azure.managedredis.inputs.GetAccessPolicyAssignmentArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.managedredis.outputs.GetAccessPolicyAssignmentResult] =
       val argsBuilder = com.pulumi.azure.managedredis.inputs.GetAccessPolicyAssignmentArgs.builder
       com.pulumi.azure.managedredis.ManagedredisFunctions.getAccessPolicyAssignment(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing Managed Redis Access Policy Assignment. */
-    def getAccessPolicyAssignmentPlain(args: Endofunction[com.pulumi.azure.managedredis.inputs.GetAccessPolicyAssignmentPlainArgs.Builder] = scala.Predef.identity):
+    inline def getAccessPolicyAssignmentPlain(args: Endofunction[com.pulumi.azure.managedredis.inputs.GetAccessPolicyAssignmentPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.managedredis.outputs.GetAccessPolicyAssignmentResult] =
       val argsBuilder = com.pulumi.azure.managedredis.inputs.GetAccessPolicyAssignmentPlainArgs.builder
       com.pulumi.azure.managedredis.ManagedredisFunctions.getAccessPolicyAssignmentPlain(args(argsBuilder).build)

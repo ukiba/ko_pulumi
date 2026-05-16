@@ -45,19 +45,21 @@ object dynatrace:
         com.pulumi.azure.dynatrace.MonitorArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
 
-  type DynatraceFunctions = com.pulumi.azure.dynatrace.DynatraceFunctions
   object DynatraceFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.azure.dynatrace.DynatraceFunctions.*
-  extension (self: DynatraceFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /** Use this data source to access information about an existing Dynatrace Monitor. */
-    def getMonitor(args: Endofunction[com.pulumi.azure.dynatrace.inputs.GetMonitorArgs.Builder] = scala.Predef.identity):
+    inline def getMonitor(args: Endofunction[com.pulumi.azure.dynatrace.inputs.GetMonitorArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.dynatrace.outputs.GetMonitorResult] =
       val argsBuilder = com.pulumi.azure.dynatrace.inputs.GetMonitorArgs.builder
       com.pulumi.azure.dynatrace.DynatraceFunctions.getMonitor(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing Dynatrace Monitor. */
-    def getMonitorPlain(args: Endofunction[com.pulumi.azure.dynatrace.inputs.GetMonitorPlainArgs.Builder] = scala.Predef.identity):
+    inline def getMonitorPlain(args: Endofunction[com.pulumi.azure.dynatrace.inputs.GetMonitorPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.dynatrace.outputs.GetMonitorResult] =
       val argsBuilder = com.pulumi.azure.dynatrace.inputs.GetMonitorPlainArgs.builder
       com.pulumi.azure.dynatrace.DynatraceFunctions.getMonitorPlain(args(argsBuilder).build)

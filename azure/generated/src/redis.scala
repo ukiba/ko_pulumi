@@ -44,19 +44,21 @@ object redis:
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
-  type RedisFunctions = com.pulumi.azure.redis.RedisFunctions
   object RedisFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.azure.redis.RedisFunctions.*
-  extension (self: RedisFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /** Use this data source to access information about an existing Redis Cache */
-    def getCache(args: Endofunction[com.pulumi.azure.redis.inputs.GetCacheArgs.Builder] = scala.Predef.identity):
+    inline def getCache(args: Endofunction[com.pulumi.azure.redis.inputs.GetCacheArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.redis.outputs.GetCacheResult] =
       val argsBuilder = com.pulumi.azure.redis.inputs.GetCacheArgs.builder
       com.pulumi.azure.redis.RedisFunctions.getCache(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing Redis Cache */
-    def getCachePlain(args: Endofunction[com.pulumi.azure.redis.inputs.GetCachePlainArgs.Builder] = scala.Predef.identity):
+    inline def getCachePlain(args: Endofunction[com.pulumi.azure.redis.inputs.GetCachePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.redis.outputs.GetCacheResult] =
       val argsBuilder = com.pulumi.azure.redis.inputs.GetCachePlainArgs.builder
       com.pulumi.azure.redis.RedisFunctions.getCachePlain(args(argsBuilder).build)
@@ -66,7 +68,7 @@ object redis:
      * 
      *  &gt; **Note:** This data source has been deprecated in favor of azurerm_managed_redis.
      */
-    def getEnterpriseDatabase(args: Endofunction[com.pulumi.azure.redis.inputs.GetEnterpriseDatabaseArgs.Builder] = scala.Predef.identity):
+    inline def getEnterpriseDatabase(args: Endofunction[com.pulumi.azure.redis.inputs.GetEnterpriseDatabaseArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.redis.outputs.GetEnterpriseDatabaseResult] =
       val argsBuilder = com.pulumi.azure.redis.inputs.GetEnterpriseDatabaseArgs.builder
       com.pulumi.azure.redis.RedisFunctions.getEnterpriseDatabase(args(argsBuilder).build)
@@ -76,7 +78,7 @@ object redis:
      * 
      *  &gt; **Note:** This data source has been deprecated in favor of azurerm_managed_redis.
      */
-    def getEnterpriseDatabasePlain(args: Endofunction[com.pulumi.azure.redis.inputs.GetEnterpriseDatabasePlainArgs.Builder] = scala.Predef.identity):
+    inline def getEnterpriseDatabasePlain(args: Endofunction[com.pulumi.azure.redis.inputs.GetEnterpriseDatabasePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.redis.outputs.GetEnterpriseDatabaseResult] =
       val argsBuilder = com.pulumi.azure.redis.inputs.GetEnterpriseDatabasePlainArgs.builder
       com.pulumi.azure.redis.RedisFunctions.getEnterpriseDatabasePlain(args(argsBuilder).build)

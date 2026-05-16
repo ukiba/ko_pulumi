@@ -18,18 +18,20 @@ object cloudtrail:
         com.pulumi.aws.cloudtrail.EventDataStoreArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
 
-  type CloudtrailFunctions = com.pulumi.aws.cloudtrail.CloudtrailFunctions
   object CloudtrailFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.aws.cloudtrail.CloudtrailFunctions.*
-  extension (self: CloudtrailFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /**
      * Use this data source to get the Account ID of the [AWS CloudTrail Service Account](http://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-supported-regions.html)
      *  in a given region for the purpose of allowing CloudTrail to store trail data in S3.
      * 
      *  &gt; **Warning:** This data source is deprecated. The AWS documentation [states that](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/create-s3-bucket-policy-for-cloudtrail.html#troubleshooting-s3-bucket-policy) a [service principal name](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#principal-services) should be used instead of an AWS account ID in any relevant IAM policy.
      */
-    def getServiceAccount(args: Endofunction[com.pulumi.aws.cloudtrail.inputs.GetServiceAccountArgs.Builder] = scala.Predef.identity):
+    inline def getServiceAccount(args: Endofunction[com.pulumi.aws.cloudtrail.inputs.GetServiceAccountArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.cloudtrail.outputs.GetServiceAccountResult] =
       val argsBuilder = com.pulumi.aws.cloudtrail.inputs.GetServiceAccountArgs.builder
       com.pulumi.aws.cloudtrail.CloudtrailFunctions.getServiceAccount(args(argsBuilder).build)
@@ -40,7 +42,7 @@ object cloudtrail:
      * 
      *  &gt; **Warning:** This data source is deprecated. The AWS documentation [states that](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/create-s3-bucket-policy-for-cloudtrail.html#troubleshooting-s3-bucket-policy) a [service principal name](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#principal-services) should be used instead of an AWS account ID in any relevant IAM policy.
      */
-    def getServiceAccountPlain(args: Endofunction[com.pulumi.aws.cloudtrail.inputs.GetServiceAccountPlainArgs.Builder] = scala.Predef.identity):
+    inline def getServiceAccountPlain(args: Endofunction[com.pulumi.aws.cloudtrail.inputs.GetServiceAccountPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.cloudtrail.outputs.GetServiceAccountResult] =
       val argsBuilder = com.pulumi.aws.cloudtrail.inputs.GetServiceAccountPlainArgs.builder
       com.pulumi.aws.cloudtrail.CloudtrailFunctions.getServiceAccountPlain(args(argsBuilder).build)

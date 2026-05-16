@@ -154,55 +154,57 @@ object iot:
         com.pulumi.azure.iot.IotHubDpsArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
 
-  type IotFunctions = com.pulumi.azure.iot.IotFunctions
   object IotFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.azure.iot.IotFunctions.*
-  extension (self: IotFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /** Use this data source to access information about an existing IotHub Device Provisioning Service. */
-    def getDps(args: Endofunction[com.pulumi.azure.iot.inputs.GetDpsArgs.Builder] = scala.Predef.identity):
+    inline def getDps(args: Endofunction[com.pulumi.azure.iot.inputs.GetDpsArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.iot.outputs.GetDpsResult] =
       val argsBuilder = com.pulumi.azure.iot.inputs.GetDpsArgs.builder
       com.pulumi.azure.iot.IotFunctions.getDps(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing IotHub Device Provisioning Service. */
-    def getDpsPlain(args: Endofunction[com.pulumi.azure.iot.inputs.GetDpsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getDpsPlain(args: Endofunction[com.pulumi.azure.iot.inputs.GetDpsPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.iot.outputs.GetDpsResult] =
       val argsBuilder = com.pulumi.azure.iot.inputs.GetDpsPlainArgs.builder
       com.pulumi.azure.iot.IotFunctions.getDpsPlain(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing IotHub Device Provisioning Service Shared Access Policy */
-    def getDpsSharedAccessPolicy(args: Endofunction[com.pulumi.azure.iot.inputs.GetDpsSharedAccessPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getDpsSharedAccessPolicy(args: Endofunction[com.pulumi.azure.iot.inputs.GetDpsSharedAccessPolicyArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.iot.outputs.GetDpsSharedAccessPolicyResult] =
       val argsBuilder = com.pulumi.azure.iot.inputs.GetDpsSharedAccessPolicyArgs.builder
       com.pulumi.azure.iot.IotFunctions.getDpsSharedAccessPolicy(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing IotHub Device Provisioning Service Shared Access Policy */
-    def getDpsSharedAccessPolicyPlain(args: Endofunction[com.pulumi.azure.iot.inputs.GetDpsSharedAccessPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getDpsSharedAccessPolicyPlain(args: Endofunction[com.pulumi.azure.iot.inputs.GetDpsSharedAccessPolicyPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.iot.outputs.GetDpsSharedAccessPolicyResult] =
       val argsBuilder = com.pulumi.azure.iot.inputs.GetDpsSharedAccessPolicyPlainArgs.builder
       com.pulumi.azure.iot.IotFunctions.getDpsSharedAccessPolicyPlain(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing IoTHub. */
-    def getIotHub(args: Endofunction[com.pulumi.azure.iot.inputs.GetIotHubArgs.Builder] = scala.Predef.identity):
+    inline def getIotHub(args: Endofunction[com.pulumi.azure.iot.inputs.GetIotHubArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.iot.outputs.GetIotHubResult] =
       val argsBuilder = com.pulumi.azure.iot.inputs.GetIotHubArgs.builder
       com.pulumi.azure.iot.IotFunctions.getIotHub(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing IoTHub. */
-    def getIotHubPlain(args: Endofunction[com.pulumi.azure.iot.inputs.GetIotHubPlainArgs.Builder] = scala.Predef.identity):
+    inline def getIotHubPlain(args: Endofunction[com.pulumi.azure.iot.inputs.GetIotHubPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.iot.outputs.GetIotHubResult] =
       val argsBuilder = com.pulumi.azure.iot.inputs.GetIotHubPlainArgs.builder
       com.pulumi.azure.iot.IotFunctions.getIotHubPlain(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing IotHub Shared Access Policy */
-    def getSharedAccessPolicy(args: Endofunction[com.pulumi.azure.iot.inputs.GetSharedAccessPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getSharedAccessPolicy(args: Endofunction[com.pulumi.azure.iot.inputs.GetSharedAccessPolicyArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.iot.outputs.GetSharedAccessPolicyResult] =
       val argsBuilder = com.pulumi.azure.iot.inputs.GetSharedAccessPolicyArgs.builder
       com.pulumi.azure.iot.IotFunctions.getSharedAccessPolicy(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing IotHub Shared Access Policy */
-    def getSharedAccessPolicyPlain(args: Endofunction[com.pulumi.azure.iot.inputs.GetSharedAccessPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getSharedAccessPolicyPlain(args: Endofunction[com.pulumi.azure.iot.inputs.GetSharedAccessPolicyPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.iot.outputs.GetSharedAccessPolicyResult] =
       val argsBuilder = com.pulumi.azure.iot.inputs.GetSharedAccessPolicyPlainArgs.builder
       com.pulumi.azure.iot.IotFunctions.getSharedAccessPolicyPlain(args(argsBuilder).build)

@@ -4,31 +4,33 @@ package azure
 import com.pulumi.resources.CustomResourceOptions
 
 object notificationhub:
-  type NotificationhubFunctions = com.pulumi.azure.notificationhub.NotificationhubFunctions
   object NotificationhubFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.azure.notificationhub.NotificationhubFunctions.*
-  extension (self: NotificationhubFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /** Use this data source to access information about an existing Notification Hub within a Notification Hub Namespace. */
-    def getHub(args: Endofunction[com.pulumi.azure.notificationhub.inputs.GetHubArgs.Builder] = scala.Predef.identity):
+    inline def getHub(args: Endofunction[com.pulumi.azure.notificationhub.inputs.GetHubArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.notificationhub.outputs.GetHubResult] =
       val argsBuilder = com.pulumi.azure.notificationhub.inputs.GetHubArgs.builder
       com.pulumi.azure.notificationhub.NotificationhubFunctions.getHub(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing Notification Hub within a Notification Hub Namespace. */
-    def getHubPlain(args: Endofunction[com.pulumi.azure.notificationhub.inputs.GetHubPlainArgs.Builder] = scala.Predef.identity):
+    inline def getHubPlain(args: Endofunction[com.pulumi.azure.notificationhub.inputs.GetHubPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.notificationhub.outputs.GetHubResult] =
       val argsBuilder = com.pulumi.azure.notificationhub.inputs.GetHubPlainArgs.builder
       com.pulumi.azure.notificationhub.NotificationhubFunctions.getHubPlain(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing Notification Hub Namespace. */
-    def getNamespace(args: Endofunction[com.pulumi.azure.notificationhub.inputs.GetNamespaceArgs.Builder] = scala.Predef.identity):
+    inline def getNamespace(args: Endofunction[com.pulumi.azure.notificationhub.inputs.GetNamespaceArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.notificationhub.outputs.GetNamespaceResult] =
       val argsBuilder = com.pulumi.azure.notificationhub.inputs.GetNamespaceArgs.builder
       com.pulumi.azure.notificationhub.NotificationhubFunctions.getNamespace(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing Notification Hub Namespace. */
-    def getNamespacePlain(args: Endofunction[com.pulumi.azure.notificationhub.inputs.GetNamespacePlainArgs.Builder] = scala.Predef.identity):
+    inline def getNamespacePlain(args: Endofunction[com.pulumi.azure.notificationhub.inputs.GetNamespacePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.notificationhub.outputs.GetNamespaceResult] =
       val argsBuilder = com.pulumi.azure.notificationhub.inputs.GetNamespacePlainArgs.builder
       com.pulumi.azure.notificationhub.NotificationhubFunctions.getNamespacePlain(args(argsBuilder).build)

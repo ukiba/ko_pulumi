@@ -278,31 +278,33 @@ object keyvault:
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
-  type KeyvaultFunctions = com.pulumi.azure.keyvault.KeyvaultFunctions
   object KeyvaultFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.azure.keyvault.KeyvaultFunctions.*
-  extension (self: KeyvaultFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /** Use this data source to access information about the permissions from the Management Key Vault Templates. */
-    def getAccessPolicy(args: Endofunction[com.pulumi.azure.keyvault.inputs.GetAccessPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getAccessPolicy(args: Endofunction[com.pulumi.azure.keyvault.inputs.GetAccessPolicyArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.keyvault.outputs.GetAccessPolicyResult] =
       val argsBuilder = com.pulumi.azure.keyvault.inputs.GetAccessPolicyArgs.builder
       com.pulumi.azure.keyvault.KeyvaultFunctions.getAccessPolicy(args(argsBuilder).build)
 
     /** Use this data source to access information about the permissions from the Management Key Vault Templates. */
-    def getAccessPolicyPlain(args: Endofunction[com.pulumi.azure.keyvault.inputs.GetAccessPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getAccessPolicyPlain(args: Endofunction[com.pulumi.azure.keyvault.inputs.GetAccessPolicyPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.keyvault.outputs.GetAccessPolicyResult] =
       val argsBuilder = com.pulumi.azure.keyvault.inputs.GetAccessPolicyPlainArgs.builder
       com.pulumi.azure.keyvault.KeyvaultFunctions.getAccessPolicyPlain(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing Key Vault Certificate. */
-    def getCertificate(args: Endofunction[com.pulumi.azure.keyvault.inputs.GetCertificateArgs.Builder] = scala.Predef.identity):
+    inline def getCertificate(args: Endofunction[com.pulumi.azure.keyvault.inputs.GetCertificateArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.keyvault.outputs.GetCertificateResult] =
       val argsBuilder = com.pulumi.azure.keyvault.inputs.GetCertificateArgs.builder
       com.pulumi.azure.keyvault.KeyvaultFunctions.getCertificate(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing Key Vault Certificate. */
-    def getCertificatePlain(args: Endofunction[com.pulumi.azure.keyvault.inputs.GetCertificatePlainArgs.Builder] = scala.Predef.identity):
+    inline def getCertificatePlain(args: Endofunction[com.pulumi.azure.keyvault.inputs.GetCertificatePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.keyvault.outputs.GetCertificateResult] =
       val argsBuilder = com.pulumi.azure.keyvault.inputs.GetCertificatePlainArgs.builder
       com.pulumi.azure.keyvault.KeyvaultFunctions.getCertificatePlain(args(argsBuilder).build)
@@ -312,7 +314,7 @@ object keyvault:
      * 
      *  &gt; **Note:** This data source uses the `GetSecret` function of the Azure API, to get the key of the certificate. Therefore you need secret/get permission
      */
-    def getCertificateData(args: Endofunction[com.pulumi.azure.keyvault.inputs.GetCertificateDataArgs.Builder] = scala.Predef.identity):
+    inline def getCertificateData(args: Endofunction[com.pulumi.azure.keyvault.inputs.GetCertificateDataArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.keyvault.outputs.GetCertificateDataResult] =
       val argsBuilder = com.pulumi.azure.keyvault.inputs.GetCertificateDataArgs.builder
       com.pulumi.azure.keyvault.KeyvaultFunctions.getCertificateData(args(argsBuilder).build)
@@ -322,79 +324,79 @@ object keyvault:
      * 
      *  &gt; **Note:** This data source uses the `GetSecret` function of the Azure API, to get the key of the certificate. Therefore you need secret/get permission
      */
-    def getCertificateDataPlain(args: Endofunction[com.pulumi.azure.keyvault.inputs.GetCertificateDataPlainArgs.Builder] = scala.Predef.identity):
+    inline def getCertificateDataPlain(args: Endofunction[com.pulumi.azure.keyvault.inputs.GetCertificateDataPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.keyvault.outputs.GetCertificateDataResult] =
       val argsBuilder = com.pulumi.azure.keyvault.inputs.GetCertificateDataPlainArgs.builder
       com.pulumi.azure.keyvault.KeyvaultFunctions.getCertificateDataPlain(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing Key Vault Certificate Issuer. */
-    def getCertificateIssuer(args: Endofunction[com.pulumi.azure.keyvault.inputs.GetCertificateIssuerArgs.Builder] = scala.Predef.identity):
+    inline def getCertificateIssuer(args: Endofunction[com.pulumi.azure.keyvault.inputs.GetCertificateIssuerArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.keyvault.outputs.GetCertificateIssuerResult] =
       val argsBuilder = com.pulumi.azure.keyvault.inputs.GetCertificateIssuerArgs.builder
       com.pulumi.azure.keyvault.KeyvaultFunctions.getCertificateIssuer(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing Key Vault Certificate Issuer. */
-    def getCertificateIssuerPlain(args: Endofunction[com.pulumi.azure.keyvault.inputs.GetCertificateIssuerPlainArgs.Builder] = scala.Predef.identity):
+    inline def getCertificateIssuerPlain(args: Endofunction[com.pulumi.azure.keyvault.inputs.GetCertificateIssuerPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.keyvault.outputs.GetCertificateIssuerResult] =
       val argsBuilder = com.pulumi.azure.keyvault.inputs.GetCertificateIssuerPlainArgs.builder
       com.pulumi.azure.keyvault.KeyvaultFunctions.getCertificateIssuerPlain(args(argsBuilder).build)
 
     /** Use this data source to retrieve a list of certificate names from an existing Key Vault. */
-    def getCertificates(args: Endofunction[com.pulumi.azure.keyvault.inputs.GetCertificatesArgs.Builder] = scala.Predef.identity):
+    inline def getCertificates(args: Endofunction[com.pulumi.azure.keyvault.inputs.GetCertificatesArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.keyvault.outputs.GetCertificatesResult] =
       val argsBuilder = com.pulumi.azure.keyvault.inputs.GetCertificatesArgs.builder
       com.pulumi.azure.keyvault.KeyvaultFunctions.getCertificates(args(argsBuilder).build)
 
     /** Use this data source to retrieve a list of certificate names from an existing Key Vault. */
-    def getCertificatesPlain(args: Endofunction[com.pulumi.azure.keyvault.inputs.GetCertificatesPlainArgs.Builder] = scala.Predef.identity):
+    inline def getCertificatesPlain(args: Endofunction[com.pulumi.azure.keyvault.inputs.GetCertificatesPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.keyvault.outputs.GetCertificatesResult] =
       val argsBuilder = com.pulumi.azure.keyvault.inputs.GetCertificatesPlainArgs.builder
       com.pulumi.azure.keyvault.KeyvaultFunctions.getCertificatesPlain(args(argsBuilder).build)
 
     /** Encrypts or Decrypts a value using a Key Vault Key. */
-    def getEncryptedValue(args: Endofunction[com.pulumi.azure.keyvault.inputs.GetEncryptedValueArgs.Builder] = scala.Predef.identity):
+    inline def getEncryptedValue(args: Endofunction[com.pulumi.azure.keyvault.inputs.GetEncryptedValueArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.keyvault.outputs.GetEncryptedValueResult] =
       val argsBuilder = com.pulumi.azure.keyvault.inputs.GetEncryptedValueArgs.builder
       com.pulumi.azure.keyvault.KeyvaultFunctions.getEncryptedValue(args(argsBuilder).build)
 
     /** Encrypts or Decrypts a value using a Key Vault Key. */
-    def getEncryptedValuePlain(args: Endofunction[com.pulumi.azure.keyvault.inputs.GetEncryptedValuePlainArgs.Builder] = scala.Predef.identity):
+    inline def getEncryptedValuePlain(args: Endofunction[com.pulumi.azure.keyvault.inputs.GetEncryptedValuePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.keyvault.outputs.GetEncryptedValueResult] =
       val argsBuilder = com.pulumi.azure.keyvault.inputs.GetEncryptedValuePlainArgs.builder
       com.pulumi.azure.keyvault.KeyvaultFunctions.getEncryptedValuePlain(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing Key Vault Key. */
-    def getKey(args: Endofunction[com.pulumi.azure.keyvault.inputs.GetKeyArgs.Builder] = scala.Predef.identity):
+    inline def getKey(args: Endofunction[com.pulumi.azure.keyvault.inputs.GetKeyArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.keyvault.outputs.GetKeyResult] =
       val argsBuilder = com.pulumi.azure.keyvault.inputs.GetKeyArgs.builder
       com.pulumi.azure.keyvault.KeyvaultFunctions.getKey(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing Key Vault Key. */
-    def getKeyPlain(args: Endofunction[com.pulumi.azure.keyvault.inputs.GetKeyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getKeyPlain(args: Endofunction[com.pulumi.azure.keyvault.inputs.GetKeyPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.keyvault.outputs.GetKeyResult] =
       val argsBuilder = com.pulumi.azure.keyvault.inputs.GetKeyPlainArgs.builder
       com.pulumi.azure.keyvault.KeyvaultFunctions.getKeyPlain(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing Key Vault. */
-    def getKeyVault(args: Endofunction[com.pulumi.azure.keyvault.inputs.GetKeyVaultArgs.Builder] = scala.Predef.identity):
+    inline def getKeyVault(args: Endofunction[com.pulumi.azure.keyvault.inputs.GetKeyVaultArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.keyvault.outputs.GetKeyVaultResult] =
       val argsBuilder = com.pulumi.azure.keyvault.inputs.GetKeyVaultArgs.builder
       com.pulumi.azure.keyvault.KeyvaultFunctions.getKeyVault(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing Key Vault. */
-    def getKeyVaultPlain(args: Endofunction[com.pulumi.azure.keyvault.inputs.GetKeyVaultPlainArgs.Builder] = scala.Predef.identity):
+    inline def getKeyVaultPlain(args: Endofunction[com.pulumi.azure.keyvault.inputs.GetKeyVaultPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.keyvault.outputs.GetKeyVaultResult] =
       val argsBuilder = com.pulumi.azure.keyvault.inputs.GetKeyVaultPlainArgs.builder
       com.pulumi.azure.keyvault.KeyvaultFunctions.getKeyVaultPlain(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing Key Vault Managed Hardware Security Module. */
-    def getManagedHardwareSecurityModule(args: Endofunction[com.pulumi.azure.keyvault.inputs.GetManagedHardwareSecurityModuleArgs.Builder] = scala.Predef.identity):
+    inline def getManagedHardwareSecurityModule(args: Endofunction[com.pulumi.azure.keyvault.inputs.GetManagedHardwareSecurityModuleArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.keyvault.outputs.GetManagedHardwareSecurityModuleResult] =
       val argsBuilder = com.pulumi.azure.keyvault.inputs.GetManagedHardwareSecurityModuleArgs.builder
       com.pulumi.azure.keyvault.KeyvaultFunctions.getManagedHardwareSecurityModule(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing Key Vault Managed Hardware Security Module. */
-    def getManagedHardwareSecurityModulePlain(args: Endofunction[com.pulumi.azure.keyvault.inputs.GetManagedHardwareSecurityModulePlainArgs.Builder] = scala.Predef.identity):
+    inline def getManagedHardwareSecurityModulePlain(args: Endofunction[com.pulumi.azure.keyvault.inputs.GetManagedHardwareSecurityModulePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.keyvault.outputs.GetManagedHardwareSecurityModuleResult] =
       val argsBuilder = com.pulumi.azure.keyvault.inputs.GetManagedHardwareSecurityModulePlainArgs.builder
       com.pulumi.azure.keyvault.KeyvaultFunctions.getManagedHardwareSecurityModulePlain(args(argsBuilder).build)
@@ -405,7 +407,7 @@ object keyvault:
      *  &gt; **Note:** All arguments including the secret value will be stored in the raw state as plain-text.
      *  [Read more about sensitive data in state](https://www.terraform.io/docs/state/sensitive-data.html).
      */
-    def getManagedHardwareSecurityModuleKey(args: Endofunction[com.pulumi.azure.keyvault.inputs.GetManagedHardwareSecurityModuleKeyArgs.Builder] = scala.Predef.identity):
+    inline def getManagedHardwareSecurityModuleKey(args: Endofunction[com.pulumi.azure.keyvault.inputs.GetManagedHardwareSecurityModuleKeyArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.keyvault.outputs.GetManagedHardwareSecurityModuleKeyResult] =
       val argsBuilder = com.pulumi.azure.keyvault.inputs.GetManagedHardwareSecurityModuleKeyArgs.builder
       com.pulumi.azure.keyvault.KeyvaultFunctions.getManagedHardwareSecurityModuleKey(args(argsBuilder).build)
@@ -416,43 +418,43 @@ object keyvault:
      *  &gt; **Note:** All arguments including the secret value will be stored in the raw state as plain-text.
      *  [Read more about sensitive data in state](https://www.terraform.io/docs/state/sensitive-data.html).
      */
-    def getManagedHardwareSecurityModuleKeyPlain(args: Endofunction[com.pulumi.azure.keyvault.inputs.GetManagedHardwareSecurityModuleKeyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getManagedHardwareSecurityModuleKeyPlain(args: Endofunction[com.pulumi.azure.keyvault.inputs.GetManagedHardwareSecurityModuleKeyPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.keyvault.outputs.GetManagedHardwareSecurityModuleKeyResult] =
       val argsBuilder = com.pulumi.azure.keyvault.inputs.GetManagedHardwareSecurityModuleKeyPlainArgs.builder
       com.pulumi.azure.keyvault.KeyvaultFunctions.getManagedHardwareSecurityModuleKeyPlain(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing Key Vault Managed Hardware Security Module Role Definition. */
-    def getManagedHardwareSecurityModuleRoleDefinition(args: Endofunction[com.pulumi.azure.keyvault.inputs.GetManagedHardwareSecurityModuleRoleDefinitionArgs.Builder] = scala.Predef.identity):
+    inline def getManagedHardwareSecurityModuleRoleDefinition(args: Endofunction[com.pulumi.azure.keyvault.inputs.GetManagedHardwareSecurityModuleRoleDefinitionArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.keyvault.outputs.GetManagedHardwareSecurityModuleRoleDefinitionResult] =
       val argsBuilder = com.pulumi.azure.keyvault.inputs.GetManagedHardwareSecurityModuleRoleDefinitionArgs.builder
       com.pulumi.azure.keyvault.KeyvaultFunctions.getManagedHardwareSecurityModuleRoleDefinition(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing Key Vault Managed Hardware Security Module Role Definition. */
-    def getManagedHardwareSecurityModuleRoleDefinitionPlain(args: Endofunction[com.pulumi.azure.keyvault.inputs.GetManagedHardwareSecurityModuleRoleDefinitionPlainArgs.Builder] = scala.Predef.identity):
+    inline def getManagedHardwareSecurityModuleRoleDefinitionPlain(args: Endofunction[com.pulumi.azure.keyvault.inputs.GetManagedHardwareSecurityModuleRoleDefinitionPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.keyvault.outputs.GetManagedHardwareSecurityModuleRoleDefinitionResult] =
       val argsBuilder = com.pulumi.azure.keyvault.inputs.GetManagedHardwareSecurityModuleRoleDefinitionPlainArgs.builder
       com.pulumi.azure.keyvault.KeyvaultFunctions.getManagedHardwareSecurityModuleRoleDefinitionPlain(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing Key Vault Secret. */
-    def getSecret(args: Endofunction[com.pulumi.azure.keyvault.inputs.GetSecretArgs.Builder] = scala.Predef.identity):
+    inline def getSecret(args: Endofunction[com.pulumi.azure.keyvault.inputs.GetSecretArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.keyvault.outputs.GetSecretResult] =
       val argsBuilder = com.pulumi.azure.keyvault.inputs.GetSecretArgs.builder
       com.pulumi.azure.keyvault.KeyvaultFunctions.getSecret(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing Key Vault Secret. */
-    def getSecretPlain(args: Endofunction[com.pulumi.azure.keyvault.inputs.GetSecretPlainArgs.Builder] = scala.Predef.identity):
+    inline def getSecretPlain(args: Endofunction[com.pulumi.azure.keyvault.inputs.GetSecretPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.keyvault.outputs.GetSecretResult] =
       val argsBuilder = com.pulumi.azure.keyvault.inputs.GetSecretPlainArgs.builder
       com.pulumi.azure.keyvault.KeyvaultFunctions.getSecretPlain(args(argsBuilder).build)
 
     /** Use this data source to retrieve a list of secret names from an existing Key Vault Secret. */
-    def getSecrets(args: Endofunction[com.pulumi.azure.keyvault.inputs.GetSecretsArgs.Builder] = scala.Predef.identity):
+    inline def getSecrets(args: Endofunction[com.pulumi.azure.keyvault.inputs.GetSecretsArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.keyvault.outputs.GetSecretsResult] =
       val argsBuilder = com.pulumi.azure.keyvault.inputs.GetSecretsArgs.builder
       com.pulumi.azure.keyvault.KeyvaultFunctions.getSecrets(args(argsBuilder).build)
 
     /** Use this data source to retrieve a list of secret names from an existing Key Vault Secret. */
-    def getSecretsPlain(args: Endofunction[com.pulumi.azure.keyvault.inputs.GetSecretsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getSecretsPlain(args: Endofunction[com.pulumi.azure.keyvault.inputs.GetSecretsPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.keyvault.outputs.GetSecretsResult] =
       val argsBuilder = com.pulumi.azure.keyvault.inputs.GetSecretsPlainArgs.builder
       com.pulumi.azure.keyvault.KeyvaultFunctions.getSecretsPlain(args(argsBuilder).build)

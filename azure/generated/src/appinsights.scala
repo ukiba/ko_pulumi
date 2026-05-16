@@ -18,19 +18,21 @@ object appinsights:
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
-  type AppinsightsFunctions = com.pulumi.azure.appinsights.AppinsightsFunctions
   object AppinsightsFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.azure.appinsights.AppinsightsFunctions.*
-  extension (self: AppinsightsFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /** Use this data source to access information about an existing Application Insights component. */
-    def getInsights(args: Endofunction[com.pulumi.azure.appinsights.inputs.GetInsightsArgs.Builder] = scala.Predef.identity):
+    inline def getInsights(args: Endofunction[com.pulumi.azure.appinsights.inputs.GetInsightsArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.appinsights.outputs.GetInsightsResult] =
       val argsBuilder = com.pulumi.azure.appinsights.inputs.GetInsightsArgs.builder
       com.pulumi.azure.appinsights.AppinsightsFunctions.getInsights(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing Application Insights component. */
-    def getInsightsPlain(args: Endofunction[com.pulumi.azure.appinsights.inputs.GetInsightsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getInsightsPlain(args: Endofunction[com.pulumi.azure.appinsights.inputs.GetInsightsPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.appinsights.outputs.GetInsightsResult] =
       val argsBuilder = com.pulumi.azure.appinsights.inputs.GetInsightsPlainArgs.builder
       com.pulumi.azure.appinsights.AppinsightsFunctions.getInsightsPlain(args(argsBuilder).build)

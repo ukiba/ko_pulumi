@@ -15,19 +15,21 @@ object networkconnectivity:
       val argsBuilder = com.pulumi.gcp.networkconnectivity.inputs.GroupAutoAcceptArgs.builder
       builder.autoAccept(args(argsBuilder).build)
 
-  type NetworkconnectivityFunctions = com.pulumi.gcp.networkconnectivity.NetworkconnectivityFunctions
   object NetworkconnectivityFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.gcp.networkconnectivity.NetworkconnectivityFunctions.*
-  extension (self: NetworkconnectivityFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /** Retrieves the current IAM policy data for hub */
-    def getHubIamPolicy(args: Endofunction[com.pulumi.gcp.networkconnectivity.inputs.GetHubIamPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getHubIamPolicy(args: Endofunction[com.pulumi.gcp.networkconnectivity.inputs.GetHubIamPolicyArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.networkconnectivity.outputs.GetHubIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.networkconnectivity.inputs.GetHubIamPolicyArgs.builder
       com.pulumi.gcp.networkconnectivity.NetworkconnectivityFunctions.getHubIamPolicy(args(argsBuilder).build)
 
     /** Retrieves the current IAM policy data for hub */
-    def getHubIamPolicyPlain(args: Endofunction[com.pulumi.gcp.networkconnectivity.inputs.GetHubIamPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getHubIamPolicyPlain(args: Endofunction[com.pulumi.gcp.networkconnectivity.inputs.GetHubIamPolicyPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.networkconnectivity.outputs.GetHubIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.networkconnectivity.inputs.GetHubIamPolicyPlainArgs.builder
       com.pulumi.gcp.networkconnectivity.NetworkconnectivityFunctions.getHubIamPolicyPlain(args(argsBuilder).build)

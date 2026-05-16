@@ -18,19 +18,21 @@ object codebuild:
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
-  type CodebuildFunctions = com.pulumi.aws.codebuild.CodebuildFunctions
   object CodebuildFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.aws.codebuild.CodebuildFunctions.*
-  extension (self: CodebuildFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /** Retrieve information about an CodeBuild Fleet. */
-    def getFleet(args: Endofunction[com.pulumi.aws.codebuild.inputs.GetFleetArgs.Builder] = scala.Predef.identity):
+    inline def getFleet(args: Endofunction[com.pulumi.aws.codebuild.inputs.GetFleetArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.codebuild.outputs.GetFleetResult] =
       val argsBuilder = com.pulumi.aws.codebuild.inputs.GetFleetArgs.builder
       com.pulumi.aws.codebuild.CodebuildFunctions.getFleet(args(argsBuilder).build)
 
     /** Retrieve information about an CodeBuild Fleet. */
-    def getFleetPlain(args: Endofunction[com.pulumi.aws.codebuild.inputs.GetFleetPlainArgs.Builder] = scala.Predef.identity):
+    inline def getFleetPlain(args: Endofunction[com.pulumi.aws.codebuild.inputs.GetFleetPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.codebuild.outputs.GetFleetResult] =
       val argsBuilder = com.pulumi.aws.codebuild.inputs.GetFleetPlainArgs.builder
       com.pulumi.aws.codebuild.CodebuildFunctions.getFleetPlain(args(argsBuilder).build)

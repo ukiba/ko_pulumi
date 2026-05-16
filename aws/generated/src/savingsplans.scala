@@ -4,31 +4,33 @@ package aws
 import com.pulumi.resources.CustomResourceOptions
 
 object savingsplans:
-  type SavingsplansFunctions = com.pulumi.aws.savingsplans.SavingsplansFunctions
   object SavingsplansFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.aws.savingsplans.SavingsplansFunctions.*
-  extension (self: SavingsplansFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /** Data source for getting AWS Savings Plans Offerings. */
-    def getOfferings(args: Endofunction[com.pulumi.aws.savingsplans.inputs.GetOfferingsArgs.Builder] = scala.Predef.identity):
+    inline def getOfferings(args: Endofunction[com.pulumi.aws.savingsplans.inputs.GetOfferingsArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.savingsplans.outputs.GetOfferingsResult] =
       val argsBuilder = com.pulumi.aws.savingsplans.inputs.GetOfferingsArgs.builder
       com.pulumi.aws.savingsplans.SavingsplansFunctions.getOfferings(args(argsBuilder).build)
 
     /** Data source for getting AWS Savings Plans Offerings. */
-    def getOfferingsPlain(args: Endofunction[com.pulumi.aws.savingsplans.inputs.GetOfferingsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getOfferingsPlain(args: Endofunction[com.pulumi.aws.savingsplans.inputs.GetOfferingsPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.savingsplans.outputs.GetOfferingsResult] =
       val argsBuilder = com.pulumi.aws.savingsplans.inputs.GetOfferingsPlainArgs.builder
       com.pulumi.aws.savingsplans.SavingsplansFunctions.getOfferingsPlain(args(argsBuilder).build)
 
     /** Use this data source to get information on an existing AWS Savings Plan. */
-    def getSavingsPlan(args: Endofunction[com.pulumi.aws.savingsplans.inputs.GetSavingsPlanArgs.Builder] = scala.Predef.identity):
+    inline def getSavingsPlan(args: Endofunction[com.pulumi.aws.savingsplans.inputs.GetSavingsPlanArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.savingsplans.outputs.GetSavingsPlanResult] =
       val argsBuilder = com.pulumi.aws.savingsplans.inputs.GetSavingsPlanArgs.builder
       com.pulumi.aws.savingsplans.SavingsplansFunctions.getSavingsPlan(args(argsBuilder).build)
 
     /** Use this data source to get information on an existing AWS Savings Plan. */
-    def getSavingsPlanPlain(args: Endofunction[com.pulumi.aws.savingsplans.inputs.GetSavingsPlanPlainArgs.Builder] = scala.Predef.identity):
+    inline def getSavingsPlanPlain(args: Endofunction[com.pulumi.aws.savingsplans.inputs.GetSavingsPlanPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.savingsplans.outputs.GetSavingsPlanResult] =
       val argsBuilder = com.pulumi.aws.savingsplans.inputs.GetSavingsPlanPlainArgs.builder
       com.pulumi.aws.savingsplans.SavingsplansFunctions.getSavingsPlanPlain(args(argsBuilder).build)

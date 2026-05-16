@@ -73,19 +73,21 @@ object signalr:
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
-  type SignalrFunctions = com.pulumi.azure.signalr.SignalrFunctions
   object SignalrFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.azure.signalr.SignalrFunctions.*
-  extension (self: SignalrFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /** Use this data source to access information about an existing Azure SignalR service. */
-    def getService(args: Endofunction[com.pulumi.azure.signalr.inputs.GetServiceArgs.Builder] = scala.Predef.identity):
+    inline def getService(args: Endofunction[com.pulumi.azure.signalr.inputs.GetServiceArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.signalr.outputs.GetServiceResult] =
       val argsBuilder = com.pulumi.azure.signalr.inputs.GetServiceArgs.builder
       com.pulumi.azure.signalr.SignalrFunctions.getService(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing Azure SignalR service. */
-    def getServicePlain(args: Endofunction[com.pulumi.azure.signalr.inputs.GetServicePlainArgs.Builder] = scala.Predef.identity):
+    inline def getServicePlain(args: Endofunction[com.pulumi.azure.signalr.inputs.GetServicePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.signalr.outputs.GetServiceResult] =
       val argsBuilder = com.pulumi.azure.signalr.inputs.GetServicePlainArgs.builder
       com.pulumi.azure.signalr.SignalrFunctions.getServicePlain(args(argsBuilder).build)

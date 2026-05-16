@@ -393,18 +393,20 @@ object artifactregistry:
       val argsBuilder = com.pulumi.gcp.artifactregistry.inputs.RuleConditionArgs.builder
       builder.condition(args(argsBuilder).build)
 
-  type ArtifactregistryFunctions = com.pulumi.gcp.artifactregistry.ArtifactregistryFunctions
   object ArtifactregistryFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.gcp.artifactregistry.ArtifactregistryFunctions.*
-  extension (self: ArtifactregistryFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /**
      * This data source fetches information from a provided Artifact Registry repository, including the fully qualified name and URI for an image, based on a the latest version of image name and optional digest or tag.
      * 
      *  &gt; **Note**
      *  Requires one of the following OAuth scopes: `https://www.googleapis.com/auth/cloud-platform` or `https://www.googleapis.com/auth/cloud-platform.read-only`.
      */
-    def getDockerImage(args: Endofunction[com.pulumi.gcp.artifactregistry.inputs.GetDockerImageArgs.Builder] = scala.Predef.identity):
+    inline def getDockerImage(args: Endofunction[com.pulumi.gcp.artifactregistry.inputs.GetDockerImageArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.artifactregistry.outputs.GetDockerImageResult] =
       val argsBuilder = com.pulumi.gcp.artifactregistry.inputs.GetDockerImageArgs.builder
       com.pulumi.gcp.artifactregistry.ArtifactregistryFunctions.getDockerImage(args(argsBuilder).build)
@@ -415,7 +417,7 @@ object artifactregistry:
      *  &gt; **Note**
      *  Requires one of the following OAuth scopes: `https://www.googleapis.com/auth/cloud-platform` or `https://www.googleapis.com/auth/cloud-platform.read-only`.
      */
-    def getDockerImagePlain(args: Endofunction[com.pulumi.gcp.artifactregistry.inputs.GetDockerImagePlainArgs.Builder] = scala.Predef.identity):
+    inline def getDockerImagePlain(args: Endofunction[com.pulumi.gcp.artifactregistry.inputs.GetDockerImagePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.artifactregistry.outputs.GetDockerImageResult] =
       val argsBuilder = com.pulumi.gcp.artifactregistry.inputs.GetDockerImagePlainArgs.builder
       com.pulumi.gcp.artifactregistry.ArtifactregistryFunctions.getDockerImagePlain(args(argsBuilder).build)
@@ -425,7 +427,7 @@ object artifactregistry:
      *  See [the official documentation](https://cloud.google.com/artifact-registry/docs/docker)
      *  and [API](https://cloud.google.com/artifact-registry/docs/reference/rest/v1/projects.locations.repositories.dockerImages/list).
      */
-    def getDockerImages(args: Endofunction[com.pulumi.gcp.artifactregistry.inputs.GetDockerImagesArgs.Builder] = scala.Predef.identity):
+    inline def getDockerImages(args: Endofunction[com.pulumi.gcp.artifactregistry.inputs.GetDockerImagesArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.artifactregistry.outputs.GetDockerImagesResult] =
       val argsBuilder = com.pulumi.gcp.artifactregistry.inputs.GetDockerImagesArgs.builder
       com.pulumi.gcp.artifactregistry.ArtifactregistryFunctions.getDockerImages(args(argsBuilder).build)
@@ -435,7 +437,7 @@ object artifactregistry:
      *  See [the official documentation](https://cloud.google.com/artifact-registry/docs/docker)
      *  and [API](https://cloud.google.com/artifact-registry/docs/reference/rest/v1/projects.locations.repositories.dockerImages/list).
      */
-    def getDockerImagesPlain(args: Endofunction[com.pulumi.gcp.artifactregistry.inputs.GetDockerImagesPlainArgs.Builder] = scala.Predef.identity):
+    inline def getDockerImagesPlain(args: Endofunction[com.pulumi.gcp.artifactregistry.inputs.GetDockerImagesPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.artifactregistry.outputs.GetDockerImagesResult] =
       val argsBuilder = com.pulumi.gcp.artifactregistry.inputs.GetDockerImagesPlainArgs.builder
       com.pulumi.gcp.artifactregistry.ArtifactregistryFunctions.getDockerImagesPlain(args(argsBuilder).build)
@@ -456,7 +458,7 @@ object artifactregistry:
      * 
      *  * [API documentation](https://cloud.google.com/artifact-registry/docs/reference/rest/v1/projects.locations.repositories.files)
      */
-    def getFile(args: Endofunction[com.pulumi.gcp.artifactregistry.inputs.GetFileArgs.Builder] = scala.Predef.identity):
+    inline def getFile(args: Endofunction[com.pulumi.gcp.artifactregistry.inputs.GetFileArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.artifactregistry.outputs.GetFileResult] =
       val argsBuilder = com.pulumi.gcp.artifactregistry.inputs.GetFileArgs.builder
       com.pulumi.gcp.artifactregistry.ArtifactregistryFunctions.getFile(args(argsBuilder).build)
@@ -477,7 +479,7 @@ object artifactregistry:
      * 
      *  * [API documentation](https://cloud.google.com/artifact-registry/docs/reference/rest/v1/projects.locations.repositories.files)
      */
-    def getFilePlain(args: Endofunction[com.pulumi.gcp.artifactregistry.inputs.GetFilePlainArgs.Builder] = scala.Predef.identity):
+    inline def getFilePlain(args: Endofunction[com.pulumi.gcp.artifactregistry.inputs.GetFilePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.artifactregistry.outputs.GetFileResult] =
       val argsBuilder = com.pulumi.gcp.artifactregistry.inputs.GetFilePlainArgs.builder
       com.pulumi.gcp.artifactregistry.ArtifactregistryFunctions.getFilePlain(args(argsBuilder).build)
@@ -491,7 +493,7 @@ object artifactregistry:
      *  * How-to Guides
      *      * [Official Documentation](https://cloud.google.com/artifact-registry/docs/overview)
      */
-    def getLocations(args: Endofunction[com.pulumi.gcp.artifactregistry.inputs.GetLocationsArgs.Builder] = scala.Predef.identity):
+    inline def getLocations(args: Endofunction[com.pulumi.gcp.artifactregistry.inputs.GetLocationsArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.artifactregistry.outputs.GetLocationsResult] =
       val argsBuilder = com.pulumi.gcp.artifactregistry.inputs.GetLocationsArgs.builder
       com.pulumi.gcp.artifactregistry.ArtifactregistryFunctions.getLocations(args(argsBuilder).build)
@@ -505,19 +507,19 @@ object artifactregistry:
      *  * How-to Guides
      *      * [Official Documentation](https://cloud.google.com/artifact-registry/docs/overview)
      */
-    def getLocationsPlain(args: Endofunction[com.pulumi.gcp.artifactregistry.inputs.GetLocationsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getLocationsPlain(args: Endofunction[com.pulumi.gcp.artifactregistry.inputs.GetLocationsPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.artifactregistry.outputs.GetLocationsResult] =
       val argsBuilder = com.pulumi.gcp.artifactregistry.inputs.GetLocationsPlainArgs.builder
       com.pulumi.gcp.artifactregistry.ArtifactregistryFunctions.getLocationsPlain(args(argsBuilder).build)
 
     /** This data source fetches information from a provided Artifact Registry repository, based on a the latest version of the artifact and optional version. */
-    def getMavenArtifact(args: Endofunction[com.pulumi.gcp.artifactregistry.inputs.GetMavenArtifactArgs.Builder] = scala.Predef.identity):
+    inline def getMavenArtifact(args: Endofunction[com.pulumi.gcp.artifactregistry.inputs.GetMavenArtifactArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.artifactregistry.outputs.GetMavenArtifactResult] =
       val argsBuilder = com.pulumi.gcp.artifactregistry.inputs.GetMavenArtifactArgs.builder
       com.pulumi.gcp.artifactregistry.ArtifactregistryFunctions.getMavenArtifact(args(argsBuilder).build)
 
     /** This data source fetches information from a provided Artifact Registry repository, based on a the latest version of the artifact and optional version. */
-    def getMavenArtifactPlain(args: Endofunction[com.pulumi.gcp.artifactregistry.inputs.GetMavenArtifactPlainArgs.Builder] = scala.Predef.identity):
+    inline def getMavenArtifactPlain(args: Endofunction[com.pulumi.gcp.artifactregistry.inputs.GetMavenArtifactPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.artifactregistry.outputs.GetMavenArtifactResult] =
       val argsBuilder = com.pulumi.gcp.artifactregistry.inputs.GetMavenArtifactPlainArgs.builder
       com.pulumi.gcp.artifactregistry.ArtifactregistryFunctions.getMavenArtifactPlain(args(argsBuilder).build)
@@ -527,7 +529,7 @@ object artifactregistry:
      *  See [the official documentation](https://cloud.google.com/artifact-registry/docs/java)
      *  and [API](https://cloud.google.com/artifact-registry/docs/reference/rest/v1/projects.locations.repositories.mavenArtifacts/list).
      */
-    def getMavenArtifacts(args: Endofunction[com.pulumi.gcp.artifactregistry.inputs.GetMavenArtifactsArgs.Builder] = scala.Predef.identity):
+    inline def getMavenArtifacts(args: Endofunction[com.pulumi.gcp.artifactregistry.inputs.GetMavenArtifactsArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.artifactregistry.outputs.GetMavenArtifactsResult] =
       val argsBuilder = com.pulumi.gcp.artifactregistry.inputs.GetMavenArtifactsArgs.builder
       com.pulumi.gcp.artifactregistry.ArtifactregistryFunctions.getMavenArtifacts(args(argsBuilder).build)
@@ -537,19 +539,19 @@ object artifactregistry:
      *  See [the official documentation](https://cloud.google.com/artifact-registry/docs/java)
      *  and [API](https://cloud.google.com/artifact-registry/docs/reference/rest/v1/projects.locations.repositories.mavenArtifacts/list).
      */
-    def getMavenArtifactsPlain(args: Endofunction[com.pulumi.gcp.artifactregistry.inputs.GetMavenArtifactsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getMavenArtifactsPlain(args: Endofunction[com.pulumi.gcp.artifactregistry.inputs.GetMavenArtifactsPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.artifactregistry.outputs.GetMavenArtifactsResult] =
       val argsBuilder = com.pulumi.gcp.artifactregistry.inputs.GetMavenArtifactsPlainArgs.builder
       com.pulumi.gcp.artifactregistry.ArtifactregistryFunctions.getMavenArtifactsPlain(args(argsBuilder).build)
 
     /** This data source fetches information from a provided Artifact Registry repository, based on a the latest version of the package and optional version. */
-    def getNpmPackage(args: Endofunction[com.pulumi.gcp.artifactregistry.inputs.GetNpmPackageArgs.Builder] = scala.Predef.identity):
+    inline def getNpmPackage(args: Endofunction[com.pulumi.gcp.artifactregistry.inputs.GetNpmPackageArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.artifactregistry.outputs.GetNpmPackageResult] =
       val argsBuilder = com.pulumi.gcp.artifactregistry.inputs.GetNpmPackageArgs.builder
       com.pulumi.gcp.artifactregistry.ArtifactregistryFunctions.getNpmPackage(args(argsBuilder).build)
 
     /** This data source fetches information from a provided Artifact Registry repository, based on a the latest version of the package and optional version. */
-    def getNpmPackagePlain(args: Endofunction[com.pulumi.gcp.artifactregistry.inputs.GetNpmPackagePlainArgs.Builder] = scala.Predef.identity):
+    inline def getNpmPackagePlain(args: Endofunction[com.pulumi.gcp.artifactregistry.inputs.GetNpmPackagePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.artifactregistry.outputs.GetNpmPackageResult] =
       val argsBuilder = com.pulumi.gcp.artifactregistry.inputs.GetNpmPackagePlainArgs.builder
       com.pulumi.gcp.artifactregistry.ArtifactregistryFunctions.getNpmPackagePlain(args(argsBuilder).build)
@@ -559,7 +561,7 @@ object artifactregistry:
      *  See [the official documentation](https://cloud.google.com/artifact-registry/docs/nodejs)
      *  and [API](https://cloud.google.com/artifact-registry/docs/reference/rest/v1/projects.locations.repositories.npmPackages/list).
      */
-    def getNpmPackages(args: Endofunction[com.pulumi.gcp.artifactregistry.inputs.GetNpmPackagesArgs.Builder] = scala.Predef.identity):
+    inline def getNpmPackages(args: Endofunction[com.pulumi.gcp.artifactregistry.inputs.GetNpmPackagesArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.artifactregistry.outputs.GetNpmPackagesResult] =
       val argsBuilder = com.pulumi.gcp.artifactregistry.inputs.GetNpmPackagesArgs.builder
       com.pulumi.gcp.artifactregistry.ArtifactregistryFunctions.getNpmPackages(args(argsBuilder).build)
@@ -569,19 +571,19 @@ object artifactregistry:
      *  See [the official documentation](https://cloud.google.com/artifact-registry/docs/nodejs)
      *  and [API](https://cloud.google.com/artifact-registry/docs/reference/rest/v1/projects.locations.repositories.npmPackages/list).
      */
-    def getNpmPackagesPlain(args: Endofunction[com.pulumi.gcp.artifactregistry.inputs.GetNpmPackagesPlainArgs.Builder] = scala.Predef.identity):
+    inline def getNpmPackagesPlain(args: Endofunction[com.pulumi.gcp.artifactregistry.inputs.GetNpmPackagesPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.artifactregistry.outputs.GetNpmPackagesResult] =
       val argsBuilder = com.pulumi.gcp.artifactregistry.inputs.GetNpmPackagesPlainArgs.builder
       com.pulumi.gcp.artifactregistry.ArtifactregistryFunctions.getNpmPackagesPlain(args(argsBuilder).build)
 
     /** This data source fetches information of a package from a provided Artifact Registry repository. */
-    def getPackage(args: Endofunction[com.pulumi.gcp.artifactregistry.inputs.GetPackageArgs.Builder] = scala.Predef.identity):
+    inline def getPackage(args: Endofunction[com.pulumi.gcp.artifactregistry.inputs.GetPackageArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.artifactregistry.outputs.GetPackageResult] =
       val argsBuilder = com.pulumi.gcp.artifactregistry.inputs.GetPackageArgs.builder
       com.pulumi.gcp.artifactregistry.ArtifactregistryFunctions.getPackage(args(argsBuilder).build)
 
     /** This data source fetches information of a package from a provided Artifact Registry repository. */
-    def getPackagePlain(args: Endofunction[com.pulumi.gcp.artifactregistry.inputs.GetPackagePlainArgs.Builder] = scala.Predef.identity):
+    inline def getPackagePlain(args: Endofunction[com.pulumi.gcp.artifactregistry.inputs.GetPackagePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.artifactregistry.outputs.GetPackageResult] =
       val argsBuilder = com.pulumi.gcp.artifactregistry.inputs.GetPackagePlainArgs.builder
       com.pulumi.gcp.artifactregistry.ArtifactregistryFunctions.getPackagePlain(args(argsBuilder).build)
@@ -591,7 +593,7 @@ object artifactregistry:
      *  See [the official documentation](https://cloud.google.com/artifact-registry/docs/overview)
      *  and [API](https://cloud.google.com/artifact-registry/docs/reference/rest/v1/projects.locations.repositories.packages/list).
      */
-    def getPackages(args: Endofunction[com.pulumi.gcp.artifactregistry.inputs.GetPackagesArgs.Builder] = scala.Predef.identity):
+    inline def getPackages(args: Endofunction[com.pulumi.gcp.artifactregistry.inputs.GetPackagesArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.artifactregistry.outputs.GetPackagesResult] =
       val argsBuilder = com.pulumi.gcp.artifactregistry.inputs.GetPackagesArgs.builder
       com.pulumi.gcp.artifactregistry.ArtifactregistryFunctions.getPackages(args(argsBuilder).build)
@@ -601,19 +603,19 @@ object artifactregistry:
      *  See [the official documentation](https://cloud.google.com/artifact-registry/docs/overview)
      *  and [API](https://cloud.google.com/artifact-registry/docs/reference/rest/v1/projects.locations.repositories.packages/list).
      */
-    def getPackagesPlain(args: Endofunction[com.pulumi.gcp.artifactregistry.inputs.GetPackagesPlainArgs.Builder] = scala.Predef.identity):
+    inline def getPackagesPlain(args: Endofunction[com.pulumi.gcp.artifactregistry.inputs.GetPackagesPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.artifactregistry.outputs.GetPackagesResult] =
       val argsBuilder = com.pulumi.gcp.artifactregistry.inputs.GetPackagesPlainArgs.builder
       com.pulumi.gcp.artifactregistry.ArtifactregistryFunctions.getPackagesPlain(args(argsBuilder).build)
 
     /** This data source fetches information from a provided Artifact Registry repository, based on a the latest version of the package and optional version. */
-    def getPythonPackage(args: Endofunction[com.pulumi.gcp.artifactregistry.inputs.GetPythonPackageArgs.Builder] = scala.Predef.identity):
+    inline def getPythonPackage(args: Endofunction[com.pulumi.gcp.artifactregistry.inputs.GetPythonPackageArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.artifactregistry.outputs.GetPythonPackageResult] =
       val argsBuilder = com.pulumi.gcp.artifactregistry.inputs.GetPythonPackageArgs.builder
       com.pulumi.gcp.artifactregistry.ArtifactregistryFunctions.getPythonPackage(args(argsBuilder).build)
 
     /** This data source fetches information from a provided Artifact Registry repository, based on a the latest version of the package and optional version. */
-    def getPythonPackagePlain(args: Endofunction[com.pulumi.gcp.artifactregistry.inputs.GetPythonPackagePlainArgs.Builder] = scala.Predef.identity):
+    inline def getPythonPackagePlain(args: Endofunction[com.pulumi.gcp.artifactregistry.inputs.GetPythonPackagePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.artifactregistry.outputs.GetPythonPackageResult] =
       val argsBuilder = com.pulumi.gcp.artifactregistry.inputs.GetPythonPackagePlainArgs.builder
       com.pulumi.gcp.artifactregistry.ArtifactregistryFunctions.getPythonPackagePlain(args(argsBuilder).build)
@@ -623,7 +625,7 @@ object artifactregistry:
      *  See [the official documentation](https://cloud.google.com/artifact-registry/docs/python)
      *  and [API](https://cloud.google.com/artifact-registry/docs/reference/rest/v1/projects.locations.repositories.pythonPackages/list).
      */
-    def getPythonPackages(args: Endofunction[com.pulumi.gcp.artifactregistry.inputs.GetPythonPackagesArgs.Builder] = scala.Predef.identity):
+    inline def getPythonPackages(args: Endofunction[com.pulumi.gcp.artifactregistry.inputs.GetPythonPackagesArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.artifactregistry.outputs.GetPythonPackagesResult] =
       val argsBuilder = com.pulumi.gcp.artifactregistry.inputs.GetPythonPackagesArgs.builder
       com.pulumi.gcp.artifactregistry.ArtifactregistryFunctions.getPythonPackages(args(argsBuilder).build)
@@ -633,7 +635,7 @@ object artifactregistry:
      *  See [the official documentation](https://cloud.google.com/artifact-registry/docs/python)
      *  and [API](https://cloud.google.com/artifact-registry/docs/reference/rest/v1/projects.locations.repositories.pythonPackages/list).
      */
-    def getPythonPackagesPlain(args: Endofunction[com.pulumi.gcp.artifactregistry.inputs.GetPythonPackagesPlainArgs.Builder] = scala.Predef.identity):
+    inline def getPythonPackagesPlain(args: Endofunction[com.pulumi.gcp.artifactregistry.inputs.GetPythonPackagesPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.artifactregistry.outputs.GetPythonPackagesResult] =
       val argsBuilder = com.pulumi.gcp.artifactregistry.inputs.GetPythonPackagesPlainArgs.builder
       com.pulumi.gcp.artifactregistry.ArtifactregistryFunctions.getPythonPackagesPlain(args(argsBuilder).build)
@@ -675,7 +677,7 @@ object artifactregistry:
      *  }
      *  </pre>
      */
-    def getRepositories(args: Endofunction[com.pulumi.gcp.artifactregistry.inputs.GetRepositoriesArgs.Builder] = scala.Predef.identity):
+    inline def getRepositories(args: Endofunction[com.pulumi.gcp.artifactregistry.inputs.GetRepositoriesArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.artifactregistry.outputs.GetRepositoriesResult] =
       val argsBuilder = com.pulumi.gcp.artifactregistry.inputs.GetRepositoriesArgs.builder
       com.pulumi.gcp.artifactregistry.ArtifactregistryFunctions.getRepositories(args(argsBuilder).build)
@@ -717,7 +719,7 @@ object artifactregistry:
      *  }
      *  </pre>
      */
-    def getRepositoriesPlain(args: Endofunction[com.pulumi.gcp.artifactregistry.inputs.GetRepositoriesPlainArgs.Builder] = scala.Predef.identity):
+    inline def getRepositoriesPlain(args: Endofunction[com.pulumi.gcp.artifactregistry.inputs.GetRepositoriesPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.artifactregistry.outputs.GetRepositoriesResult] =
       val argsBuilder = com.pulumi.gcp.artifactregistry.inputs.GetRepositoriesPlainArgs.builder
       com.pulumi.gcp.artifactregistry.ArtifactregistryFunctions.getRepositoriesPlain(args(argsBuilder).build)
@@ -727,7 +729,7 @@ object artifactregistry:
      *  the [official documentation](https://cloud.google.com/artifact-registry/docs/)
      *  and [API](https://cloud.google.com/artifact-registry/docs/apis).
      */
-    def getRepository(args: Endofunction[com.pulumi.gcp.artifactregistry.inputs.GetRepositoryArgs.Builder] = scala.Predef.identity):
+    inline def getRepository(args: Endofunction[com.pulumi.gcp.artifactregistry.inputs.GetRepositoryArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.artifactregistry.outputs.GetRepositoryResult] =
       val argsBuilder = com.pulumi.gcp.artifactregistry.inputs.GetRepositoryArgs.builder
       com.pulumi.gcp.artifactregistry.ArtifactregistryFunctions.getRepository(args(argsBuilder).build)
@@ -737,31 +739,31 @@ object artifactregistry:
      *  the [official documentation](https://cloud.google.com/artifact-registry/docs/)
      *  and [API](https://cloud.google.com/artifact-registry/docs/apis).
      */
-    def getRepositoryPlain(args: Endofunction[com.pulumi.gcp.artifactregistry.inputs.GetRepositoryPlainArgs.Builder] = scala.Predef.identity):
+    inline def getRepositoryPlain(args: Endofunction[com.pulumi.gcp.artifactregistry.inputs.GetRepositoryPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.artifactregistry.outputs.GetRepositoryResult] =
       val argsBuilder = com.pulumi.gcp.artifactregistry.inputs.GetRepositoryPlainArgs.builder
       com.pulumi.gcp.artifactregistry.ArtifactregistryFunctions.getRepositoryPlain(args(argsBuilder).build)
 
     /** Retrieves the current IAM policy data for repository */
-    def getRepositoryIamPolicy(args: Endofunction[com.pulumi.gcp.artifactregistry.inputs.GetRepositoryIamPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getRepositoryIamPolicy(args: Endofunction[com.pulumi.gcp.artifactregistry.inputs.GetRepositoryIamPolicyArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.artifactregistry.outputs.GetRepositoryIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.artifactregistry.inputs.GetRepositoryIamPolicyArgs.builder
       com.pulumi.gcp.artifactregistry.ArtifactregistryFunctions.getRepositoryIamPolicy(args(argsBuilder).build)
 
     /** Retrieves the current IAM policy data for repository */
-    def getRepositoryIamPolicyPlain(args: Endofunction[com.pulumi.gcp.artifactregistry.inputs.GetRepositoryIamPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getRepositoryIamPolicyPlain(args: Endofunction[com.pulumi.gcp.artifactregistry.inputs.GetRepositoryIamPolicyPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.artifactregistry.outputs.GetRepositoryIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.artifactregistry.inputs.GetRepositoryIamPolicyPlainArgs.builder
       com.pulumi.gcp.artifactregistry.ArtifactregistryFunctions.getRepositoryIamPolicyPlain(args(argsBuilder).build)
 
     /** This data source fetches information of a tag from a provided Artifact Registry repository. */
-    def getTag(args: Endofunction[com.pulumi.gcp.artifactregistry.inputs.GetTagArgs.Builder] = scala.Predef.identity):
+    inline def getTag(args: Endofunction[com.pulumi.gcp.artifactregistry.inputs.GetTagArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.artifactregistry.outputs.GetTagResult] =
       val argsBuilder = com.pulumi.gcp.artifactregistry.inputs.GetTagArgs.builder
       com.pulumi.gcp.artifactregistry.ArtifactregistryFunctions.getTag(args(argsBuilder).build)
 
     /** This data source fetches information of a tag from a provided Artifact Registry repository. */
-    def getTagPlain(args: Endofunction[com.pulumi.gcp.artifactregistry.inputs.GetTagPlainArgs.Builder] = scala.Predef.identity):
+    inline def getTagPlain(args: Endofunction[com.pulumi.gcp.artifactregistry.inputs.GetTagPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.artifactregistry.outputs.GetTagResult] =
       val argsBuilder = com.pulumi.gcp.artifactregistry.inputs.GetTagPlainArgs.builder
       com.pulumi.gcp.artifactregistry.ArtifactregistryFunctions.getTagPlain(args(argsBuilder).build)
@@ -771,7 +773,7 @@ object artifactregistry:
      *  See [the official documentation](https://cloud.google.com/artifact-registry/docs/overview)
      *  and [API](https://cloud.google.com/artifact-registry/docs/reference/rest/v1/projects.locations.repositories.packages.tags/list).
      */
-    def getTags(args: Endofunction[com.pulumi.gcp.artifactregistry.inputs.GetTagsArgs.Builder] = scala.Predef.identity):
+    inline def getTags(args: Endofunction[com.pulumi.gcp.artifactregistry.inputs.GetTagsArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.artifactregistry.outputs.GetTagsResult] =
       val argsBuilder = com.pulumi.gcp.artifactregistry.inputs.GetTagsArgs.builder
       com.pulumi.gcp.artifactregistry.ArtifactregistryFunctions.getTags(args(argsBuilder).build)
@@ -781,19 +783,19 @@ object artifactregistry:
      *  See [the official documentation](https://cloud.google.com/artifact-registry/docs/overview)
      *  and [API](https://cloud.google.com/artifact-registry/docs/reference/rest/v1/projects.locations.repositories.packages.tags/list).
      */
-    def getTagsPlain(args: Endofunction[com.pulumi.gcp.artifactregistry.inputs.GetTagsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getTagsPlain(args: Endofunction[com.pulumi.gcp.artifactregistry.inputs.GetTagsPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.artifactregistry.outputs.GetTagsResult] =
       val argsBuilder = com.pulumi.gcp.artifactregistry.inputs.GetTagsPlainArgs.builder
       com.pulumi.gcp.artifactregistry.ArtifactregistryFunctions.getTagsPlain(args(argsBuilder).build)
 
     /** This data source fetches information of a version from a provided Artifact Registry repository. */
-    def getVersion(args: Endofunction[com.pulumi.gcp.artifactregistry.inputs.GetVersionArgs.Builder] = scala.Predef.identity):
+    inline def getVersion(args: Endofunction[com.pulumi.gcp.artifactregistry.inputs.GetVersionArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.artifactregistry.outputs.GetVersionResult] =
       val argsBuilder = com.pulumi.gcp.artifactregistry.inputs.GetVersionArgs.builder
       com.pulumi.gcp.artifactregistry.ArtifactregistryFunctions.getVersion(args(argsBuilder).build)
 
     /** This data source fetches information of a version from a provided Artifact Registry repository. */
-    def getVersionPlain(args: Endofunction[com.pulumi.gcp.artifactregistry.inputs.GetVersionPlainArgs.Builder] = scala.Predef.identity):
+    inline def getVersionPlain(args: Endofunction[com.pulumi.gcp.artifactregistry.inputs.GetVersionPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.artifactregistry.outputs.GetVersionResult] =
       val argsBuilder = com.pulumi.gcp.artifactregistry.inputs.GetVersionPlainArgs.builder
       com.pulumi.gcp.artifactregistry.ArtifactregistryFunctions.getVersionPlain(args(argsBuilder).build)
@@ -803,7 +805,7 @@ object artifactregistry:
      *  See [the official documentation](https://cloud.google.com/artifact-registry/docs/overview)
      *  and [API](https://cloud.google.com/artifact-registry/docs/reference/rest/v1/projects.locations.repositories.packages.versions/list).
      */
-    def getVersions(args: Endofunction[com.pulumi.gcp.artifactregistry.inputs.GetVersionsArgs.Builder] = scala.Predef.identity):
+    inline def getVersions(args: Endofunction[com.pulumi.gcp.artifactregistry.inputs.GetVersionsArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.artifactregistry.outputs.GetVersionsResult] =
       val argsBuilder = com.pulumi.gcp.artifactregistry.inputs.GetVersionsArgs.builder
       com.pulumi.gcp.artifactregistry.ArtifactregistryFunctions.getVersions(args(argsBuilder).build)
@@ -813,7 +815,7 @@ object artifactregistry:
      *  See [the official documentation](https://cloud.google.com/artifact-registry/docs/overview)
      *  and [API](https://cloud.google.com/artifact-registry/docs/reference/rest/v1/projects.locations.repositories.packages.versions/list).
      */
-    def getVersionsPlain(args: Endofunction[com.pulumi.gcp.artifactregistry.inputs.GetVersionsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getVersionsPlain(args: Endofunction[com.pulumi.gcp.artifactregistry.inputs.GetVersionsPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.artifactregistry.outputs.GetVersionsResult] =
       val argsBuilder = com.pulumi.gcp.artifactregistry.inputs.GetVersionsPlainArgs.builder
       com.pulumi.gcp.artifactregistry.ArtifactregistryFunctions.getVersionsPlain(args(argsBuilder).build)

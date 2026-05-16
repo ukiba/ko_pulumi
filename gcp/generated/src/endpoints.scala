@@ -774,31 +774,33 @@ object endpoints:
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
-  type EndpointsFunctions = com.pulumi.gcp.endpoints.EndpointsFunctions
   object EndpointsFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.gcp.endpoints.EndpointsFunctions.*
-  extension (self: EndpointsFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /** Retrieves the current IAM policy data for serviceconsumers */
-    def getServiceConsumersIamPolicy(args: Endofunction[com.pulumi.gcp.endpoints.inputs.GetServiceConsumersIamPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getServiceConsumersIamPolicy(args: Endofunction[com.pulumi.gcp.endpoints.inputs.GetServiceConsumersIamPolicyArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.endpoints.outputs.GetServiceConsumersIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.endpoints.inputs.GetServiceConsumersIamPolicyArgs.builder
       com.pulumi.gcp.endpoints.EndpointsFunctions.getServiceConsumersIamPolicy(args(argsBuilder).build)
 
     /** Retrieves the current IAM policy data for serviceconsumers */
-    def getServiceConsumersIamPolicyPlain(args: Endofunction[com.pulumi.gcp.endpoints.inputs.GetServiceConsumersIamPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getServiceConsumersIamPolicyPlain(args: Endofunction[com.pulumi.gcp.endpoints.inputs.GetServiceConsumersIamPolicyPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.endpoints.outputs.GetServiceConsumersIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.endpoints.inputs.GetServiceConsumersIamPolicyPlainArgs.builder
       com.pulumi.gcp.endpoints.EndpointsFunctions.getServiceConsumersIamPolicyPlain(args(argsBuilder).build)
 
     /** Retrieves the current IAM policy data for service */
-    def getServiceIamPolicy(args: Endofunction[com.pulumi.gcp.endpoints.inputs.GetServiceIamPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getServiceIamPolicy(args: Endofunction[com.pulumi.gcp.endpoints.inputs.GetServiceIamPolicyArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.endpoints.outputs.GetServiceIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.endpoints.inputs.GetServiceIamPolicyArgs.builder
       com.pulumi.gcp.endpoints.EndpointsFunctions.getServiceIamPolicy(args(argsBuilder).build)
 
     /** Retrieves the current IAM policy data for service */
-    def getServiceIamPolicyPlain(args: Endofunction[com.pulumi.gcp.endpoints.inputs.GetServiceIamPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getServiceIamPolicyPlain(args: Endofunction[com.pulumi.gcp.endpoints.inputs.GetServiceIamPolicyPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.endpoints.outputs.GetServiceIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.endpoints.inputs.GetServiceIamPolicyPlainArgs.builder
       com.pulumi.gcp.endpoints.EndpointsFunctions.getServiceIamPolicyPlain(args(argsBuilder).build)

@@ -12,31 +12,33 @@ object globalaccelerator:
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
-  type GlobalacceleratorFunctions = com.pulumi.aws.globalaccelerator.GlobalacceleratorFunctions
   object GlobalacceleratorFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.aws.globalaccelerator.GlobalacceleratorFunctions.*
-  extension (self: GlobalacceleratorFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /** Provides information about a Global Accelerator accelerator. */
-    def getAccelerator(args: Endofunction[com.pulumi.aws.globalaccelerator.inputs.GetAcceleratorArgs.Builder] = scala.Predef.identity):
+    inline def getAccelerator(args: Endofunction[com.pulumi.aws.globalaccelerator.inputs.GetAcceleratorArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.globalaccelerator.outputs.GetAcceleratorResult] =
       val argsBuilder = com.pulumi.aws.globalaccelerator.inputs.GetAcceleratorArgs.builder
       com.pulumi.aws.globalaccelerator.GlobalacceleratorFunctions.getAccelerator(args(argsBuilder).build)
 
     /** Provides information about a Global Accelerator accelerator. */
-    def getAcceleratorPlain(args: Endofunction[com.pulumi.aws.globalaccelerator.inputs.GetAcceleratorPlainArgs.Builder] = scala.Predef.identity):
+    inline def getAcceleratorPlain(args: Endofunction[com.pulumi.aws.globalaccelerator.inputs.GetAcceleratorPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.globalaccelerator.outputs.GetAcceleratorResult] =
       val argsBuilder = com.pulumi.aws.globalaccelerator.inputs.GetAcceleratorPlainArgs.builder
       com.pulumi.aws.globalaccelerator.GlobalacceleratorFunctions.getAcceleratorPlain(args(argsBuilder).build)
 
     /** Provides information about a Global Accelerator custom routing accelerator. */
-    def getCustomRoutingAccelerator(args: Endofunction[com.pulumi.aws.globalaccelerator.inputs.GetCustomRoutingAcceleratorArgs.Builder] = scala.Predef.identity):
+    inline def getCustomRoutingAccelerator(args: Endofunction[com.pulumi.aws.globalaccelerator.inputs.GetCustomRoutingAcceleratorArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.globalaccelerator.outputs.GetCustomRoutingAcceleratorResult] =
       val argsBuilder = com.pulumi.aws.globalaccelerator.inputs.GetCustomRoutingAcceleratorArgs.builder
       com.pulumi.aws.globalaccelerator.GlobalacceleratorFunctions.getCustomRoutingAccelerator(args(argsBuilder).build)
 
     /** Provides information about a Global Accelerator custom routing accelerator. */
-    def getCustomRoutingAcceleratorPlain(args: Endofunction[com.pulumi.aws.globalaccelerator.inputs.GetCustomRoutingAcceleratorPlainArgs.Builder] = scala.Predef.identity):
+    inline def getCustomRoutingAcceleratorPlain(args: Endofunction[com.pulumi.aws.globalaccelerator.inputs.GetCustomRoutingAcceleratorPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.globalaccelerator.outputs.GetCustomRoutingAcceleratorResult] =
       val argsBuilder = com.pulumi.aws.globalaccelerator.inputs.GetCustomRoutingAcceleratorPlainArgs.builder
       com.pulumi.aws.globalaccelerator.GlobalacceleratorFunctions.getCustomRoutingAcceleratorPlain(args(argsBuilder).build)

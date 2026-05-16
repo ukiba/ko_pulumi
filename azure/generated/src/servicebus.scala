@@ -114,103 +114,105 @@ object servicebus:
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
-  type ServicebusFunctions = com.pulumi.azure.servicebus.ServicebusFunctions
   object ServicebusFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.azure.servicebus.ServicebusFunctions.*
-  extension (self: ServicebusFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /** Use this data source to access information about an existing ServiceBus Namespace. */
-    def getNamespace(args: Endofunction[com.pulumi.azure.servicebus.inputs.GetNamespaceArgs.Builder] = scala.Predef.identity):
+    inline def getNamespace(args: Endofunction[com.pulumi.azure.servicebus.inputs.GetNamespaceArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.servicebus.outputs.GetNamespaceResult] =
       val argsBuilder = com.pulumi.azure.servicebus.inputs.GetNamespaceArgs.builder
       com.pulumi.azure.servicebus.ServicebusFunctions.getNamespace(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing ServiceBus Namespace. */
-    def getNamespacePlain(args: Endofunction[com.pulumi.azure.servicebus.inputs.GetNamespacePlainArgs.Builder] = scala.Predef.identity):
+    inline def getNamespacePlain(args: Endofunction[com.pulumi.azure.servicebus.inputs.GetNamespacePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.servicebus.outputs.GetNamespaceResult] =
       val argsBuilder = com.pulumi.azure.servicebus.inputs.GetNamespacePlainArgs.builder
       com.pulumi.azure.servicebus.ServicebusFunctions.getNamespacePlain(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing ServiceBus Namespace Authorization Rule. */
-    def getNamespaceAuthorizationRule(args: Endofunction[com.pulumi.azure.servicebus.inputs.GetNamespaceAuthorizationRuleArgs.Builder] = scala.Predef.identity):
+    inline def getNamespaceAuthorizationRule(args: Endofunction[com.pulumi.azure.servicebus.inputs.GetNamespaceAuthorizationRuleArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.servicebus.outputs.GetNamespaceAuthorizationRuleResult] =
       val argsBuilder = com.pulumi.azure.servicebus.inputs.GetNamespaceAuthorizationRuleArgs.builder
       com.pulumi.azure.servicebus.ServicebusFunctions.getNamespaceAuthorizationRule(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing ServiceBus Namespace Authorization Rule. */
-    def getNamespaceAuthorizationRulePlain(args: Endofunction[com.pulumi.azure.servicebus.inputs.GetNamespaceAuthorizationRulePlainArgs.Builder] = scala.Predef.identity):
+    inline def getNamespaceAuthorizationRulePlain(args: Endofunction[com.pulumi.azure.servicebus.inputs.GetNamespaceAuthorizationRulePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.servicebus.outputs.GetNamespaceAuthorizationRuleResult] =
       val argsBuilder = com.pulumi.azure.servicebus.inputs.GetNamespaceAuthorizationRulePlainArgs.builder
       com.pulumi.azure.servicebus.ServicebusFunctions.getNamespaceAuthorizationRulePlain(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing Service Bus Disaster Recovery Config. */
-    def getNamespaceDisasterRecoveryConfig(args: Endofunction[com.pulumi.azure.servicebus.inputs.GetNamespaceDisasterRecoveryConfigArgs.Builder] = scala.Predef.identity):
+    inline def getNamespaceDisasterRecoveryConfig(args: Endofunction[com.pulumi.azure.servicebus.inputs.GetNamespaceDisasterRecoveryConfigArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.servicebus.outputs.GetNamespaceDisasterRecoveryConfigResult] =
       val argsBuilder = com.pulumi.azure.servicebus.inputs.GetNamespaceDisasterRecoveryConfigArgs.builder
       com.pulumi.azure.servicebus.ServicebusFunctions.getNamespaceDisasterRecoveryConfig(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing Service Bus Disaster Recovery Config. */
-    def getNamespaceDisasterRecoveryConfigPlain(args: Endofunction[com.pulumi.azure.servicebus.inputs.GetNamespaceDisasterRecoveryConfigPlainArgs.Builder] = scala.Predef.identity):
+    inline def getNamespaceDisasterRecoveryConfigPlain(args: Endofunction[com.pulumi.azure.servicebus.inputs.GetNamespaceDisasterRecoveryConfigPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.servicebus.outputs.GetNamespaceDisasterRecoveryConfigResult] =
       val argsBuilder = com.pulumi.azure.servicebus.inputs.GetNamespaceDisasterRecoveryConfigPlainArgs.builder
       com.pulumi.azure.servicebus.ServicebusFunctions.getNamespaceDisasterRecoveryConfigPlain(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing Service Bus Queue. */
-    def getQueue(args: Endofunction[com.pulumi.azure.servicebus.inputs.GetQueueArgs.Builder] = scala.Predef.identity):
+    inline def getQueue(args: Endofunction[com.pulumi.azure.servicebus.inputs.GetQueueArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.servicebus.outputs.GetQueueResult] =
       val argsBuilder = com.pulumi.azure.servicebus.inputs.GetQueueArgs.builder
       com.pulumi.azure.servicebus.ServicebusFunctions.getQueue(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing Service Bus Queue. */
-    def getQueuePlain(args: Endofunction[com.pulumi.azure.servicebus.inputs.GetQueuePlainArgs.Builder] = scala.Predef.identity):
+    inline def getQueuePlain(args: Endofunction[com.pulumi.azure.servicebus.inputs.GetQueuePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.servicebus.outputs.GetQueueResult] =
       val argsBuilder = com.pulumi.azure.servicebus.inputs.GetQueuePlainArgs.builder
       com.pulumi.azure.servicebus.ServicebusFunctions.getQueuePlain(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing ServiceBus Queue Authorisation Rule within a ServiceBus Queue. */
-    def getQueueAuthorizationRule(args: Endofunction[com.pulumi.azure.servicebus.inputs.GetQueueAuthorizationRuleArgs.Builder] = scala.Predef.identity):
+    inline def getQueueAuthorizationRule(args: Endofunction[com.pulumi.azure.servicebus.inputs.GetQueueAuthorizationRuleArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.servicebus.outputs.GetQueueAuthorizationRuleResult] =
       val argsBuilder = com.pulumi.azure.servicebus.inputs.GetQueueAuthorizationRuleArgs.builder
       com.pulumi.azure.servicebus.ServicebusFunctions.getQueueAuthorizationRule(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing ServiceBus Queue Authorisation Rule within a ServiceBus Queue. */
-    def getQueueAuthorizationRulePlain(args: Endofunction[com.pulumi.azure.servicebus.inputs.GetQueueAuthorizationRulePlainArgs.Builder] = scala.Predef.identity):
+    inline def getQueueAuthorizationRulePlain(args: Endofunction[com.pulumi.azure.servicebus.inputs.GetQueueAuthorizationRulePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.servicebus.outputs.GetQueueAuthorizationRuleResult] =
       val argsBuilder = com.pulumi.azure.servicebus.inputs.GetQueueAuthorizationRulePlainArgs.builder
       com.pulumi.azure.servicebus.ServicebusFunctions.getQueueAuthorizationRulePlain(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing ServiceBus Subscription. */
-    def getSubscription(args: Endofunction[com.pulumi.azure.servicebus.inputs.GetSubscriptionArgs.Builder] = scala.Predef.identity):
+    inline def getSubscription(args: Endofunction[com.pulumi.azure.servicebus.inputs.GetSubscriptionArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.servicebus.outputs.GetSubscriptionResult] =
       val argsBuilder = com.pulumi.azure.servicebus.inputs.GetSubscriptionArgs.builder
       com.pulumi.azure.servicebus.ServicebusFunctions.getSubscription(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing ServiceBus Subscription. */
-    def getSubscriptionPlain(args: Endofunction[com.pulumi.azure.servicebus.inputs.GetSubscriptionPlainArgs.Builder] = scala.Predef.identity):
+    inline def getSubscriptionPlain(args: Endofunction[com.pulumi.azure.servicebus.inputs.GetSubscriptionPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.servicebus.outputs.GetSubscriptionResult] =
       val argsBuilder = com.pulumi.azure.servicebus.inputs.GetSubscriptionPlainArgs.builder
       com.pulumi.azure.servicebus.ServicebusFunctions.getSubscriptionPlain(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing Service Bus Topic. */
-    def getTopic(args: Endofunction[com.pulumi.azure.servicebus.inputs.GetTopicArgs.Builder] = scala.Predef.identity):
+    inline def getTopic(args: Endofunction[com.pulumi.azure.servicebus.inputs.GetTopicArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.servicebus.outputs.GetTopicResult] =
       val argsBuilder = com.pulumi.azure.servicebus.inputs.GetTopicArgs.builder
       com.pulumi.azure.servicebus.ServicebusFunctions.getTopic(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing Service Bus Topic. */
-    def getTopicPlain(args: Endofunction[com.pulumi.azure.servicebus.inputs.GetTopicPlainArgs.Builder] = scala.Predef.identity):
+    inline def getTopicPlain(args: Endofunction[com.pulumi.azure.servicebus.inputs.GetTopicPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.servicebus.outputs.GetTopicResult] =
       val argsBuilder = com.pulumi.azure.servicebus.inputs.GetTopicPlainArgs.builder
       com.pulumi.azure.servicebus.ServicebusFunctions.getTopicPlain(args(argsBuilder).build)
 
     /** Use this data source to access information about a ServiceBus Topic Authorization Rule within a ServiceBus Topic. */
-    def getTopicAuthorizationRule(args: Endofunction[com.pulumi.azure.servicebus.inputs.GetTopicAuthorizationRuleArgs.Builder] = scala.Predef.identity):
+    inline def getTopicAuthorizationRule(args: Endofunction[com.pulumi.azure.servicebus.inputs.GetTopicAuthorizationRuleArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.servicebus.outputs.GetTopicAuthorizationRuleResult] =
       val argsBuilder = com.pulumi.azure.servicebus.inputs.GetTopicAuthorizationRuleArgs.builder
       com.pulumi.azure.servicebus.ServicebusFunctions.getTopicAuthorizationRule(args(argsBuilder).build)
 
     /** Use this data source to access information about a ServiceBus Topic Authorization Rule within a ServiceBus Topic. */
-    def getTopicAuthorizationRulePlain(args: Endofunction[com.pulumi.azure.servicebus.inputs.GetTopicAuthorizationRulePlainArgs.Builder] = scala.Predef.identity):
+    inline def getTopicAuthorizationRulePlain(args: Endofunction[com.pulumi.azure.servicebus.inputs.GetTopicAuthorizationRulePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.servicebus.outputs.GetTopicAuthorizationRuleResult] =
       val argsBuilder = com.pulumi.azure.servicebus.inputs.GetTopicAuthorizationRulePlainArgs.builder
       com.pulumi.azure.servicebus.ServicebusFunctions.getTopicAuthorizationRulePlain(args(argsBuilder).build)

@@ -4,19 +4,21 @@ package aws
 import com.pulumi.resources.CustomResourceOptions
 
 object appstream:
-  type AppstreamFunctions = com.pulumi.aws.appstream.AppstreamFunctions
   object AppstreamFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.aws.appstream.AppstreamFunctions.*
-  extension (self: AppstreamFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /** Data source for managing an AWS AppStream 2.0 Image. */
-    def getImage(args: Endofunction[com.pulumi.aws.appstream.inputs.GetImageArgs.Builder] = scala.Predef.identity):
+    inline def getImage(args: Endofunction[com.pulumi.aws.appstream.inputs.GetImageArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.appstream.outputs.GetImageResult] =
       val argsBuilder = com.pulumi.aws.appstream.inputs.GetImageArgs.builder
       com.pulumi.aws.appstream.AppstreamFunctions.getImage(args(argsBuilder).build)
 
     /** Data source for managing an AWS AppStream 2.0 Image. */
-    def getImagePlain(args: Endofunction[com.pulumi.aws.appstream.inputs.GetImagePlainArgs.Builder] = scala.Predef.identity):
+    inline def getImagePlain(args: Endofunction[com.pulumi.aws.appstream.inputs.GetImagePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.appstream.outputs.GetImageResult] =
       val argsBuilder = com.pulumi.aws.appstream.inputs.GetImagePlainArgs.builder
       com.pulumi.aws.appstream.AppstreamFunctions.getImagePlain(args(argsBuilder).build)

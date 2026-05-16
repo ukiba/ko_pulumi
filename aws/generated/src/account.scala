@@ -31,19 +31,21 @@ object account:
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
-  type AccountFunctions = com.pulumi.aws.account.AccountFunctions
   object AccountFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.aws.account.AccountFunctions.*
-  extension (self: AccountFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /** Data source for the primary contact information associated with an AWS Account. */
-    def getPrimaryContact(args: Endofunction[com.pulumi.aws.account.inputs.GetPrimaryContactArgs.Builder] = scala.Predef.identity):
+    inline def getPrimaryContact(args: Endofunction[com.pulumi.aws.account.inputs.GetPrimaryContactArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.account.outputs.GetPrimaryContactResult] =
       val argsBuilder = com.pulumi.aws.account.inputs.GetPrimaryContactArgs.builder
       com.pulumi.aws.account.AccountFunctions.getPrimaryContact(args(argsBuilder).build)
 
     /** Data source for the primary contact information associated with an AWS Account. */
-    def getPrimaryContactPlain(args: Endofunction[com.pulumi.aws.account.inputs.GetPrimaryContactPlainArgs.Builder] = scala.Predef.identity):
+    inline def getPrimaryContactPlain(args: Endofunction[com.pulumi.aws.account.inputs.GetPrimaryContactPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.account.outputs.GetPrimaryContactResult] =
       val argsBuilder = com.pulumi.aws.account.inputs.GetPrimaryContactPlainArgs.builder
       com.pulumi.aws.account.AccountFunctions.getPrimaryContactPlain(args(argsBuilder).build)
@@ -53,7 +55,7 @@ object account:
      * 
      *  This is more comprehensive than the aws.getRegions data source, which only uses the EC2 REST service and is limited to the current account and a subset of region statuses.
      */
-    def getRegions(args: Endofunction[com.pulumi.aws.account.inputs.GetRegionsArgs.Builder] = scala.Predef.identity):
+    inline def getRegions(args: Endofunction[com.pulumi.aws.account.inputs.GetRegionsArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.account.outputs.GetRegionsResult] =
       val argsBuilder = com.pulumi.aws.account.inputs.GetRegionsArgs.builder
       com.pulumi.aws.account.AccountFunctions.getRegions(args(argsBuilder).build)
@@ -63,7 +65,7 @@ object account:
      * 
      *  This is more comprehensive than the aws.getRegions data source, which only uses the EC2 REST service and is limited to the current account and a subset of region statuses.
      */
-    def getRegionsPlain(args: Endofunction[com.pulumi.aws.account.inputs.GetRegionsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getRegionsPlain(args: Endofunction[com.pulumi.aws.account.inputs.GetRegionsPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.account.outputs.GetRegionsResult] =
       val argsBuilder = com.pulumi.aws.account.inputs.GetRegionsPlainArgs.builder
       com.pulumi.aws.account.AccountFunctions.getRegionsPlain(args(argsBuilder).build)

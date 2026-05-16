@@ -1122,43 +1122,45 @@ object accesscontextmanager:
       val argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterStatusArgs.builder
       builder.status(args(argsBuilder).build)
 
-  type AccesscontextmanagerFunctions = com.pulumi.gcp.accesscontextmanager.AccesscontextmanagerFunctions
   object AccesscontextmanagerFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.gcp.accesscontextmanager.AccesscontextmanagerFunctions.*
-  extension (self: AccesscontextmanagerFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /** Get information about an Access Context Manager AccessPolicy. */
-    def getAccessPolicy(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.GetAccessPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getAccessPolicy(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.GetAccessPolicyArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.accesscontextmanager.outputs.GetAccessPolicyResult] =
       val argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.GetAccessPolicyArgs.builder
       com.pulumi.gcp.accesscontextmanager.AccesscontextmanagerFunctions.getAccessPolicy(args(argsBuilder).build)
 
     /** Get information about an Access Context Manager AccessPolicy. */
-    def getAccessPolicyPlain(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.GetAccessPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getAccessPolicyPlain(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.GetAccessPolicyPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.accesscontextmanager.outputs.GetAccessPolicyResult] =
       val argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.GetAccessPolicyPlainArgs.builder
       com.pulumi.gcp.accesscontextmanager.AccesscontextmanagerFunctions.getAccessPolicyPlain(args(argsBuilder).build)
 
     /** Retrieves the current IAM policy data for accesspolicy */
-    def getAccessPolicyIamPolicy(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.GetAccessPolicyIamPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getAccessPolicyIamPolicy(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.GetAccessPolicyIamPolicyArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.accesscontextmanager.outputs.GetAccessPolicyIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.GetAccessPolicyIamPolicyArgs.builder
       com.pulumi.gcp.accesscontextmanager.AccesscontextmanagerFunctions.getAccessPolicyIamPolicy(args(argsBuilder).build)
 
     /** Retrieves the current IAM policy data for accesspolicy */
-    def getAccessPolicyIamPolicyPlain(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.GetAccessPolicyIamPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getAccessPolicyIamPolicyPlain(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.GetAccessPolicyIamPolicyPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.accesscontextmanager.outputs.GetAccessPolicyIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.GetAccessPolicyIamPolicyPlainArgs.builder
       com.pulumi.gcp.accesscontextmanager.AccesscontextmanagerFunctions.getAccessPolicyIamPolicyPlain(args(argsBuilder).build)
 
     /** Get information about a VPC Service Controls supported service, including its supported methods. */
-    def getSupportedService(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.GetSupportedServiceArgs.Builder] = scala.Predef.identity):
+    inline def getSupportedService(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.GetSupportedServiceArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.accesscontextmanager.outputs.GetSupportedServiceResult] =
       val argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.GetSupportedServiceArgs.builder
       com.pulumi.gcp.accesscontextmanager.AccesscontextmanagerFunctions.getSupportedService(args(argsBuilder).build)
 
     /** Get information about a VPC Service Controls supported service, including its supported methods. */
-    def getSupportedServicePlain(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.GetSupportedServicePlainArgs.Builder] = scala.Predef.identity):
+    inline def getSupportedServicePlain(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.GetSupportedServicePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.accesscontextmanager.outputs.GetSupportedServiceResult] =
       val argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.GetSupportedServicePlainArgs.builder
       com.pulumi.gcp.accesscontextmanager.AccesscontextmanagerFunctions.getSupportedServicePlain(args(argsBuilder).build)

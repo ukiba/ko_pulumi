@@ -147,31 +147,33 @@ object stack:
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
-  type StackFunctions = com.pulumi.azure.stack.StackFunctions
   object StackFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.azure.stack.StackFunctions.*
-  extension (self: StackFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /** Use this data source to access information about an existing Azure Stack HCI Cluster instance. */
-    def getHciCluster(args: Endofunction[com.pulumi.azure.stack.inputs.GetHciClusterArgs.Builder] = scala.Predef.identity):
+    inline def getHciCluster(args: Endofunction[com.pulumi.azure.stack.inputs.GetHciClusterArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.stack.outputs.GetHciClusterResult] =
       val argsBuilder = com.pulumi.azure.stack.inputs.GetHciClusterArgs.builder
       com.pulumi.azure.stack.StackFunctions.getHciCluster(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing Azure Stack HCI Cluster instance. */
-    def getHciClusterPlain(args: Endofunction[com.pulumi.azure.stack.inputs.GetHciClusterPlainArgs.Builder] = scala.Predef.identity):
+    inline def getHciClusterPlain(args: Endofunction[com.pulumi.azure.stack.inputs.GetHciClusterPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.stack.outputs.GetHciClusterResult] =
       val argsBuilder = com.pulumi.azure.stack.inputs.GetHciClusterPlainArgs.builder
       com.pulumi.azure.stack.StackFunctions.getHciClusterPlain(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing Stack HCI Storage Path. */
-    def getHciStoragePath(args: Endofunction[com.pulumi.azure.stack.inputs.GetHciStoragePathArgs.Builder] = scala.Predef.identity):
+    inline def getHciStoragePath(args: Endofunction[com.pulumi.azure.stack.inputs.GetHciStoragePathArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.stack.outputs.GetHciStoragePathResult] =
       val argsBuilder = com.pulumi.azure.stack.inputs.GetHciStoragePathArgs.builder
       com.pulumi.azure.stack.StackFunctions.getHciStoragePath(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing Stack HCI Storage Path. */
-    def getHciStoragePathPlain(args: Endofunction[com.pulumi.azure.stack.inputs.GetHciStoragePathPlainArgs.Builder] = scala.Predef.identity):
+    inline def getHciStoragePathPlain(args: Endofunction[com.pulumi.azure.stack.inputs.GetHciStoragePathPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.stack.outputs.GetHciStoragePathResult] =
       val argsBuilder = com.pulumi.azure.stack.inputs.GetHciStoragePathPlainArgs.builder
       com.pulumi.azure.stack.StackFunctions.getHciStoragePathPlain(args(argsBuilder).build)

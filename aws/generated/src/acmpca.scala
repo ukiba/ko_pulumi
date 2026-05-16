@@ -12,31 +12,33 @@ object acmpca:
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
-  type AcmpcaFunctions = com.pulumi.aws.acmpca.AcmpcaFunctions
   object AcmpcaFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.aws.acmpca.AcmpcaFunctions.*
-  extension (self: AcmpcaFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /** Get information on a Certificate issued by a AWS Certificate Manager Private Certificate Authority. */
-    def getCertificate(args: Endofunction[com.pulumi.aws.acmpca.inputs.GetCertificateArgs.Builder] = scala.Predef.identity):
+    inline def getCertificate(args: Endofunction[com.pulumi.aws.acmpca.inputs.GetCertificateArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.acmpca.outputs.GetCertificateResult] =
       val argsBuilder = com.pulumi.aws.acmpca.inputs.GetCertificateArgs.builder
       com.pulumi.aws.acmpca.AcmpcaFunctions.getCertificate(args(argsBuilder).build)
 
     /** Get information on a Certificate issued by a AWS Certificate Manager Private Certificate Authority. */
-    def getCertificatePlain(args: Endofunction[com.pulumi.aws.acmpca.inputs.GetCertificatePlainArgs.Builder] = scala.Predef.identity):
+    inline def getCertificatePlain(args: Endofunction[com.pulumi.aws.acmpca.inputs.GetCertificatePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.acmpca.outputs.GetCertificateResult] =
       val argsBuilder = com.pulumi.aws.acmpca.inputs.GetCertificatePlainArgs.builder
       com.pulumi.aws.acmpca.AcmpcaFunctions.getCertificatePlain(args(argsBuilder).build)
 
     /** Get information on a AWS Certificate Manager Private Certificate Authority (ACM PCA Certificate Authority). */
-    def getCertificateAuthority(args: Endofunction[com.pulumi.aws.acmpca.inputs.GetCertificateAuthorityArgs.Builder] = scala.Predef.identity):
+    inline def getCertificateAuthority(args: Endofunction[com.pulumi.aws.acmpca.inputs.GetCertificateAuthorityArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.acmpca.outputs.GetCertificateAuthorityResult] =
       val argsBuilder = com.pulumi.aws.acmpca.inputs.GetCertificateAuthorityArgs.builder
       com.pulumi.aws.acmpca.AcmpcaFunctions.getCertificateAuthority(args(argsBuilder).build)
 
     /** Get information on a AWS Certificate Manager Private Certificate Authority (ACM PCA Certificate Authority). */
-    def getCertificateAuthorityPlain(args: Endofunction[com.pulumi.aws.acmpca.inputs.GetCertificateAuthorityPlainArgs.Builder] = scala.Predef.identity):
+    inline def getCertificateAuthorityPlain(args: Endofunction[com.pulumi.aws.acmpca.inputs.GetCertificateAuthorityPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.acmpca.outputs.GetCertificateAuthorityResult] =
       val argsBuilder = com.pulumi.aws.acmpca.inputs.GetCertificateAuthorityPlainArgs.builder
       com.pulumi.aws.acmpca.AcmpcaFunctions.getCertificateAuthorityPlain(args(argsBuilder).build)

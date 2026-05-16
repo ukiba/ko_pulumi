@@ -47,43 +47,45 @@ object apphub:
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
-  type ApphubFunctions = com.pulumi.gcp.apphub.ApphubFunctions
   object ApphubFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.gcp.apphub.ApphubFunctions.*
-  extension (self: ApphubFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /** Application is a functional grouping of Services and Workloads that helps achieve a desired end-to-end business functionality. Services and Workloads are owned by the Application. */
-    def getApplication(args: Endofunction[com.pulumi.gcp.apphub.inputs.GetApplicationArgs.Builder] = scala.Predef.identity):
+    inline def getApplication(args: Endofunction[com.pulumi.gcp.apphub.inputs.GetApplicationArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.apphub.outputs.GetApplicationResult] =
       val argsBuilder = com.pulumi.gcp.apphub.inputs.GetApplicationArgs.builder
       com.pulumi.gcp.apphub.ApphubFunctions.getApplication(args(argsBuilder).build)
 
     /** Application is a functional grouping of Services and Workloads that helps achieve a desired end-to-end business functionality. Services and Workloads are owned by the Application. */
-    def getApplicationPlain(args: Endofunction[com.pulumi.gcp.apphub.inputs.GetApplicationPlainArgs.Builder] = scala.Predef.identity):
+    inline def getApplicationPlain(args: Endofunction[com.pulumi.gcp.apphub.inputs.GetApplicationPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.apphub.outputs.GetApplicationResult] =
       val argsBuilder = com.pulumi.gcp.apphub.inputs.GetApplicationPlainArgs.builder
       com.pulumi.gcp.apphub.ApphubFunctions.getApplicationPlain(args(argsBuilder).build)
 
     /** Get information about a discovered service from its uri. */
-    def getDiscoveredService(args: Endofunction[com.pulumi.gcp.apphub.inputs.GetDiscoveredServiceArgs.Builder] = scala.Predef.identity):
+    inline def getDiscoveredService(args: Endofunction[com.pulumi.gcp.apphub.inputs.GetDiscoveredServiceArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.apphub.outputs.GetDiscoveredServiceResult] =
       val argsBuilder = com.pulumi.gcp.apphub.inputs.GetDiscoveredServiceArgs.builder
       com.pulumi.gcp.apphub.ApphubFunctions.getDiscoveredService(args(argsBuilder).build)
 
     /** Get information about a discovered service from its uri. */
-    def getDiscoveredServicePlain(args: Endofunction[com.pulumi.gcp.apphub.inputs.GetDiscoveredServicePlainArgs.Builder] = scala.Predef.identity):
+    inline def getDiscoveredServicePlain(args: Endofunction[com.pulumi.gcp.apphub.inputs.GetDiscoveredServicePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.apphub.outputs.GetDiscoveredServiceResult] =
       val argsBuilder = com.pulumi.gcp.apphub.inputs.GetDiscoveredServicePlainArgs.builder
       com.pulumi.gcp.apphub.ApphubFunctions.getDiscoveredServicePlain(args(argsBuilder).build)
 
     /** Get information about a discovered workload from its uri. */
-    def getDiscoveredWorkload(args: Endofunction[com.pulumi.gcp.apphub.inputs.GetDiscoveredWorkloadArgs.Builder] = scala.Predef.identity):
+    inline def getDiscoveredWorkload(args: Endofunction[com.pulumi.gcp.apphub.inputs.GetDiscoveredWorkloadArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.apphub.outputs.GetDiscoveredWorkloadResult] =
       val argsBuilder = com.pulumi.gcp.apphub.inputs.GetDiscoveredWorkloadArgs.builder
       com.pulumi.gcp.apphub.ApphubFunctions.getDiscoveredWorkload(args(argsBuilder).build)
 
     /** Get information about a discovered workload from its uri. */
-    def getDiscoveredWorkloadPlain(args: Endofunction[com.pulumi.gcp.apphub.inputs.GetDiscoveredWorkloadPlainArgs.Builder] = scala.Predef.identity):
+    inline def getDiscoveredWorkloadPlain(args: Endofunction[com.pulumi.gcp.apphub.inputs.GetDiscoveredWorkloadPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.apphub.outputs.GetDiscoveredWorkloadResult] =
       val argsBuilder = com.pulumi.gcp.apphub.inputs.GetDiscoveredWorkloadPlainArgs.builder
       com.pulumi.gcp.apphub.ApphubFunctions.getDiscoveredWorkloadPlain(args(argsBuilder).build)

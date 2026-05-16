@@ -15,43 +15,45 @@ object licensemanager:
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
-  type LicensemanagerFunctions = com.pulumi.aws.licensemanager.LicensemanagerFunctions
   object LicensemanagerFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.aws.licensemanager.LicensemanagerFunctions.*
-  extension (self: LicensemanagerFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /** This resource can be used to get a set of license grant ARNs matching a filter. */
-    def getLicenseGrants(args: Endofunction[com.pulumi.aws.licensemanager.inputs.GetLicenseGrantsArgs.Builder] = scala.Predef.identity):
+    inline def getLicenseGrants(args: Endofunction[com.pulumi.aws.licensemanager.inputs.GetLicenseGrantsArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.licensemanager.outputs.GetLicenseGrantsResult] =
       val argsBuilder = com.pulumi.aws.licensemanager.inputs.GetLicenseGrantsArgs.builder
       com.pulumi.aws.licensemanager.LicensemanagerFunctions.getLicenseGrants(args(argsBuilder).build)
 
     /** This resource can be used to get a set of license grant ARNs matching a filter. */
-    def getLicenseGrantsPlain(args: Endofunction[com.pulumi.aws.licensemanager.inputs.GetLicenseGrantsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getLicenseGrantsPlain(args: Endofunction[com.pulumi.aws.licensemanager.inputs.GetLicenseGrantsPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.licensemanager.outputs.GetLicenseGrantsResult] =
       val argsBuilder = com.pulumi.aws.licensemanager.inputs.GetLicenseGrantsPlainArgs.builder
       com.pulumi.aws.licensemanager.LicensemanagerFunctions.getLicenseGrantsPlain(args(argsBuilder).build)
 
     /** This resource can be used to get data on a received license using an ARN. This can be helpful for pulling in data on a license from the AWS marketplace and sharing that license with another account. */
-    def getReceivedLicense(args: Endofunction[com.pulumi.aws.licensemanager.inputs.GetReceivedLicenseArgs.Builder] = scala.Predef.identity):
+    inline def getReceivedLicense(args: Endofunction[com.pulumi.aws.licensemanager.inputs.GetReceivedLicenseArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.licensemanager.outputs.GetReceivedLicenseResult] =
       val argsBuilder = com.pulumi.aws.licensemanager.inputs.GetReceivedLicenseArgs.builder
       com.pulumi.aws.licensemanager.LicensemanagerFunctions.getReceivedLicense(args(argsBuilder).build)
 
     /** This resource can be used to get data on a received license using an ARN. This can be helpful for pulling in data on a license from the AWS marketplace and sharing that license with another account. */
-    def getReceivedLicensePlain(args: Endofunction[com.pulumi.aws.licensemanager.inputs.GetReceivedLicensePlainArgs.Builder] = scala.Predef.identity):
+    inline def getReceivedLicensePlain(args: Endofunction[com.pulumi.aws.licensemanager.inputs.GetReceivedLicensePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.licensemanager.outputs.GetReceivedLicenseResult] =
       val argsBuilder = com.pulumi.aws.licensemanager.inputs.GetReceivedLicensePlainArgs.builder
       com.pulumi.aws.licensemanager.LicensemanagerFunctions.getReceivedLicensePlain(args(argsBuilder).build)
 
     /** This resource can be used to get a set of license ARNs matching a filter. */
-    def getReceivedLicenses(args: Endofunction[com.pulumi.aws.licensemanager.inputs.GetReceivedLicensesArgs.Builder] = scala.Predef.identity):
+    inline def getReceivedLicenses(args: Endofunction[com.pulumi.aws.licensemanager.inputs.GetReceivedLicensesArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.licensemanager.outputs.GetReceivedLicensesResult] =
       val argsBuilder = com.pulumi.aws.licensemanager.inputs.GetReceivedLicensesArgs.builder
       com.pulumi.aws.licensemanager.LicensemanagerFunctions.getReceivedLicenses(args(argsBuilder).build)
 
     /** This resource can be used to get a set of license ARNs matching a filter. */
-    def getReceivedLicensesPlain(args: Endofunction[com.pulumi.aws.licensemanager.inputs.GetReceivedLicensesPlainArgs.Builder] = scala.Predef.identity):
+    inline def getReceivedLicensesPlain(args: Endofunction[com.pulumi.aws.licensemanager.inputs.GetReceivedLicensesPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.licensemanager.outputs.GetReceivedLicensesResult] =
       val argsBuilder = com.pulumi.aws.licensemanager.inputs.GetReceivedLicensesPlainArgs.builder
       com.pulumi.aws.licensemanager.LicensemanagerFunctions.getReceivedLicensesPlain(args(argsBuilder).build)

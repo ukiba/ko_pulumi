@@ -991,16 +991,18 @@ object ec2:
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
-  type Ec2Functions = com.pulumi.aws.ec2.Ec2Functions
   object Ec2Functions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.aws.ec2.Ec2Functions.*
-  extension (self: Ec2Functions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /**
      * Use this data source to get the ID of a registered AMI for use in other
      *  resources.
      */
-    def getAmi(args: Endofunction[com.pulumi.aws.ec2.inputs.GetAmiArgs.Builder] = scala.Predef.identity):
+    inline def getAmi(args: Endofunction[com.pulumi.aws.ec2.inputs.GetAmiArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.ec2.outputs.GetAmiResult] =
       val argsBuilder = com.pulumi.aws.ec2.inputs.GetAmiArgs.builder
       com.pulumi.aws.ec2.Ec2Functions.getAmi(args(argsBuilder).build)
@@ -1009,31 +1011,31 @@ object ec2:
      * Use this data source to get the ID of a registered AMI for use in other
      *  resources.
      */
-    def getAmiPlain(args: Endofunction[com.pulumi.aws.ec2.inputs.GetAmiPlainArgs.Builder] = scala.Predef.identity):
+    inline def getAmiPlain(args: Endofunction[com.pulumi.aws.ec2.inputs.GetAmiPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.ec2.outputs.GetAmiResult] =
       val argsBuilder = com.pulumi.aws.ec2.inputs.GetAmiPlainArgs.builder
       com.pulumi.aws.ec2.Ec2Functions.getAmiPlain(args(argsBuilder).build)
 
     /** Use this data source to get a list of AMI IDs matching the specified criteria. */
-    def getAmiIds(args: Endofunction[com.pulumi.aws.ec2.inputs.GetAmiIdsArgs.Builder] = scala.Predef.identity):
+    inline def getAmiIds(args: Endofunction[com.pulumi.aws.ec2.inputs.GetAmiIdsArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.ec2.outputs.GetAmiIdsResult] =
       val argsBuilder = com.pulumi.aws.ec2.inputs.GetAmiIdsArgs.builder
       com.pulumi.aws.ec2.Ec2Functions.getAmiIds(args(argsBuilder).build)
 
     /** Use this data source to get a list of AMI IDs matching the specified criteria. */
-    def getAmiIdsPlain(args: Endofunction[com.pulumi.aws.ec2.inputs.GetAmiIdsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getAmiIdsPlain(args: Endofunction[com.pulumi.aws.ec2.inputs.GetAmiIdsPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.ec2.outputs.GetAmiIdsResult] =
       val argsBuilder = com.pulumi.aws.ec2.inputs.GetAmiIdsPlainArgs.builder
       com.pulumi.aws.ec2.Ec2Functions.getAmiIdsPlain(args(argsBuilder).build)
 
     /** Information about a single EC2 Capacity Block Offering. */
-    def getCapacityBlockOffering(args: Endofunction[com.pulumi.aws.ec2.inputs.GetCapacityBlockOfferingArgs.Builder] = scala.Predef.identity):
+    inline def getCapacityBlockOffering(args: Endofunction[com.pulumi.aws.ec2.inputs.GetCapacityBlockOfferingArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.ec2.outputs.GetCapacityBlockOfferingResult] =
       val argsBuilder = com.pulumi.aws.ec2.inputs.GetCapacityBlockOfferingArgs.builder
       com.pulumi.aws.ec2.Ec2Functions.getCapacityBlockOffering(args(argsBuilder).build)
 
     /** Information about a single EC2 Capacity Block Offering. */
-    def getCapacityBlockOfferingPlain(args: Endofunction[com.pulumi.aws.ec2.inputs.GetCapacityBlockOfferingPlainArgs.Builder] = scala.Predef.identity):
+    inline def getCapacityBlockOfferingPlain(args: Endofunction[com.pulumi.aws.ec2.inputs.GetCapacityBlockOfferingPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.ec2.outputs.GetCapacityBlockOfferingResult] =
       val argsBuilder = com.pulumi.aws.ec2.inputs.GetCapacityBlockOfferingPlainArgs.builder
       com.pulumi.aws.ec2.Ec2Functions.getCapacityBlockOfferingPlain(args(argsBuilder).build)
@@ -1045,7 +1047,7 @@ object ec2:
      *  an input variable and needs to, for example, determine the CIDR block of that
      *  COIP Pool.
      */
-    def getCoipPool(args: Endofunction[com.pulumi.aws.ec2.inputs.GetCoipPoolArgs.Builder] = scala.Predef.identity):
+    inline def getCoipPool(args: Endofunction[com.pulumi.aws.ec2.inputs.GetCoipPoolArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.ec2.outputs.GetCoipPoolResult] =
       val argsBuilder = com.pulumi.aws.ec2.inputs.GetCoipPoolArgs.builder
       com.pulumi.aws.ec2.Ec2Functions.getCoipPool(args(argsBuilder).build)
@@ -1057,127 +1059,127 @@ object ec2:
      *  an input variable and needs to, for example, determine the CIDR block of that
      *  COIP Pool.
      */
-    def getCoipPoolPlain(args: Endofunction[com.pulumi.aws.ec2.inputs.GetCoipPoolPlainArgs.Builder] = scala.Predef.identity):
+    inline def getCoipPoolPlain(args: Endofunction[com.pulumi.aws.ec2.inputs.GetCoipPoolPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.ec2.outputs.GetCoipPoolResult] =
       val argsBuilder = com.pulumi.aws.ec2.inputs.GetCoipPoolPlainArgs.builder
       com.pulumi.aws.ec2.Ec2Functions.getCoipPoolPlain(args(argsBuilder).build)
 
     /** Provides information for multiple EC2 Customer-Owned IP Pools, such as their identifiers. */
-    def getCoipPools(args: Endofunction[com.pulumi.aws.ec2.inputs.GetCoipPoolsArgs.Builder] = scala.Predef.identity):
+    inline def getCoipPools(args: Endofunction[com.pulumi.aws.ec2.inputs.GetCoipPoolsArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.ec2.outputs.GetCoipPoolsResult] =
       val argsBuilder = com.pulumi.aws.ec2.inputs.GetCoipPoolsArgs.builder
       com.pulumi.aws.ec2.Ec2Functions.getCoipPools(args(argsBuilder).build)
 
     /** Provides information for multiple EC2 Customer-Owned IP Pools, such as their identifiers. */
-    def getCoipPoolsPlain(args: Endofunction[com.pulumi.aws.ec2.inputs.GetCoipPoolsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getCoipPoolsPlain(args: Endofunction[com.pulumi.aws.ec2.inputs.GetCoipPoolsPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.ec2.outputs.GetCoipPoolsResult] =
       val argsBuilder = com.pulumi.aws.ec2.inputs.GetCoipPoolsPlainArgs.builder
       com.pulumi.aws.ec2.Ec2Functions.getCoipPoolsPlain(args(argsBuilder).build)
 
     /** Get an existing AWS Customer Gateway. */
-    def getCustomerGateway(args: Endofunction[com.pulumi.aws.ec2.inputs.GetCustomerGatewayArgs.Builder] = scala.Predef.identity):
+    inline def getCustomerGateway(args: Endofunction[com.pulumi.aws.ec2.inputs.GetCustomerGatewayArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.ec2.outputs.GetCustomerGatewayResult] =
       val argsBuilder = com.pulumi.aws.ec2.inputs.GetCustomerGatewayArgs.builder
       com.pulumi.aws.ec2.Ec2Functions.getCustomerGateway(args(argsBuilder).build)
 
     /** Get an existing AWS Customer Gateway. */
-    def getCustomerGatewayPlain(args: Endofunction[com.pulumi.aws.ec2.inputs.GetCustomerGatewayPlainArgs.Builder] = scala.Predef.identity):
+    inline def getCustomerGatewayPlain(args: Endofunction[com.pulumi.aws.ec2.inputs.GetCustomerGatewayPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.ec2.outputs.GetCustomerGatewayResult] =
       val argsBuilder = com.pulumi.aws.ec2.inputs.GetCustomerGatewayPlainArgs.builder
       com.pulumi.aws.ec2.Ec2Functions.getCustomerGatewayPlain(args(argsBuilder).build)
 
     /** Use this data source to get information about an EC2 Dedicated Host. */
-    def getDedicatedHost(args: Endofunction[com.pulumi.aws.ec2.inputs.GetDedicatedHostArgs.Builder] = scala.Predef.identity):
+    inline def getDedicatedHost(args: Endofunction[com.pulumi.aws.ec2.inputs.GetDedicatedHostArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.ec2.outputs.GetDedicatedHostResult] =
       val argsBuilder = com.pulumi.aws.ec2.inputs.GetDedicatedHostArgs.builder
       com.pulumi.aws.ec2.Ec2Functions.getDedicatedHost(args(argsBuilder).build)
 
     /** Use this data source to get information about an EC2 Dedicated Host. */
-    def getDedicatedHostPlain(args: Endofunction[com.pulumi.aws.ec2.inputs.GetDedicatedHostPlainArgs.Builder] = scala.Predef.identity):
+    inline def getDedicatedHostPlain(args: Endofunction[com.pulumi.aws.ec2.inputs.GetDedicatedHostPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.ec2.outputs.GetDedicatedHostResult] =
       val argsBuilder = com.pulumi.aws.ec2.inputs.GetDedicatedHostPlainArgs.builder
       com.pulumi.aws.ec2.Ec2Functions.getDedicatedHostPlain(args(argsBuilder).build)
 
     /** Provides a list of Elastic IPs in a region. */
-    def getEips(args: Endofunction[com.pulumi.aws.ec2.inputs.GetEipsArgs.Builder] = scala.Predef.identity):
+    inline def getEips(args: Endofunction[com.pulumi.aws.ec2.inputs.GetEipsArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.ec2.outputs.GetEipsResult] =
       val argsBuilder = com.pulumi.aws.ec2.inputs.GetEipsArgs.builder
       com.pulumi.aws.ec2.Ec2Functions.getEips(args(argsBuilder).build)
 
     /** Provides a list of Elastic IPs in a region. */
-    def getEipsPlain(args: Endofunction[com.pulumi.aws.ec2.inputs.GetEipsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getEipsPlain(args: Endofunction[com.pulumi.aws.ec2.inputs.GetEipsPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.ec2.outputs.GetEipsResult] =
       val argsBuilder = com.pulumi.aws.ec2.inputs.GetEipsPlainArgs.builder
       com.pulumi.aws.ec2.Ec2Functions.getEipsPlain(args(argsBuilder).build)
 
     /** `aws.ec2.Eip` provides details about a specific Elastic IP. */
-    def getElasticIp(args: Endofunction[com.pulumi.aws.ec2.inputs.GetElasticIpArgs.Builder] = scala.Predef.identity):
+    inline def getElasticIp(args: Endofunction[com.pulumi.aws.ec2.inputs.GetElasticIpArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.ec2.outputs.GetElasticIpResult] =
       val argsBuilder = com.pulumi.aws.ec2.inputs.GetElasticIpArgs.builder
       com.pulumi.aws.ec2.Ec2Functions.getElasticIp(args(argsBuilder).build)
 
     /** `aws.ec2.Eip` provides details about a specific Elastic IP. */
-    def getElasticIpPlain(args: Endofunction[com.pulumi.aws.ec2.inputs.GetElasticIpPlainArgs.Builder] = scala.Predef.identity):
+    inline def getElasticIpPlain(args: Endofunction[com.pulumi.aws.ec2.inputs.GetElasticIpPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.ec2.outputs.GetElasticIpResult] =
       val argsBuilder = com.pulumi.aws.ec2.inputs.GetElasticIpPlainArgs.builder
       com.pulumi.aws.ec2.Ec2Functions.getElasticIpPlain(args(argsBuilder).build)
 
     /** Use this data source to get the ID of an Amazon EC2 Instance for use in other resources. */
-    def getInstance(args: Endofunction[com.pulumi.aws.ec2.inputs.GetInstanceArgs.Builder] = scala.Predef.identity):
+    inline def getInstance(args: Endofunction[com.pulumi.aws.ec2.inputs.GetInstanceArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.ec2.outputs.GetInstanceResult] =
       val argsBuilder = com.pulumi.aws.ec2.inputs.GetInstanceArgs.builder
       com.pulumi.aws.ec2.Ec2Functions.getInstance(args(argsBuilder).build)
 
     /** Use this data source to get the ID of an Amazon EC2 Instance for use in other resources. */
-    def getInstancePlain(args: Endofunction[com.pulumi.aws.ec2.inputs.GetInstancePlainArgs.Builder] = scala.Predef.identity):
+    inline def getInstancePlain(args: Endofunction[com.pulumi.aws.ec2.inputs.GetInstancePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.ec2.outputs.GetInstanceResult] =
       val argsBuilder = com.pulumi.aws.ec2.inputs.GetInstancePlainArgs.builder
       com.pulumi.aws.ec2.Ec2Functions.getInstancePlain(args(argsBuilder).build)
 
     /** Get characteristics for a single EC2 Instance Type. */
-    def getInstanceType(args: Endofunction[com.pulumi.aws.ec2.inputs.GetInstanceTypeArgs.Builder] = scala.Predef.identity):
+    inline def getInstanceType(args: Endofunction[com.pulumi.aws.ec2.inputs.GetInstanceTypeArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.ec2.outputs.GetInstanceTypeResult] =
       val argsBuilder = com.pulumi.aws.ec2.inputs.GetInstanceTypeArgs.builder
       com.pulumi.aws.ec2.Ec2Functions.getInstanceType(args(argsBuilder).build)
 
     /** Get characteristics for a single EC2 Instance Type. */
-    def getInstanceTypePlain(args: Endofunction[com.pulumi.aws.ec2.inputs.GetInstanceTypePlainArgs.Builder] = scala.Predef.identity):
+    inline def getInstanceTypePlain(args: Endofunction[com.pulumi.aws.ec2.inputs.GetInstanceTypePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.ec2.outputs.GetInstanceTypeResult] =
       val argsBuilder = com.pulumi.aws.ec2.inputs.GetInstanceTypePlainArgs.builder
       com.pulumi.aws.ec2.Ec2Functions.getInstanceTypePlain(args(argsBuilder).build)
 
     /** Information about single EC2 Instance Type Offering. */
-    def getInstanceTypeOffering(args: Endofunction[com.pulumi.aws.ec2.inputs.GetInstanceTypeOfferingArgs.Builder] = scala.Predef.identity):
+    inline def getInstanceTypeOffering(args: Endofunction[com.pulumi.aws.ec2.inputs.GetInstanceTypeOfferingArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.ec2.outputs.GetInstanceTypeOfferingResult] =
       val argsBuilder = com.pulumi.aws.ec2.inputs.GetInstanceTypeOfferingArgs.builder
       com.pulumi.aws.ec2.Ec2Functions.getInstanceTypeOffering(args(argsBuilder).build)
 
     /** Information about single EC2 Instance Type Offering. */
-    def getInstanceTypeOfferingPlain(args: Endofunction[com.pulumi.aws.ec2.inputs.GetInstanceTypeOfferingPlainArgs.Builder] = scala.Predef.identity):
+    inline def getInstanceTypeOfferingPlain(args: Endofunction[com.pulumi.aws.ec2.inputs.GetInstanceTypeOfferingPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.ec2.outputs.GetInstanceTypeOfferingResult] =
       val argsBuilder = com.pulumi.aws.ec2.inputs.GetInstanceTypeOfferingPlainArgs.builder
       com.pulumi.aws.ec2.Ec2Functions.getInstanceTypeOfferingPlain(args(argsBuilder).build)
 
     /** Information about EC2 Instance Type Offerings. */
-    def getInstanceTypeOfferings(args: Endofunction[com.pulumi.aws.ec2.inputs.GetInstanceTypeOfferingsArgs.Builder] = scala.Predef.identity):
+    inline def getInstanceTypeOfferings(args: Endofunction[com.pulumi.aws.ec2.inputs.GetInstanceTypeOfferingsArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.ec2.outputs.GetInstanceTypeOfferingsResult] =
       val argsBuilder = com.pulumi.aws.ec2.inputs.GetInstanceTypeOfferingsArgs.builder
       com.pulumi.aws.ec2.Ec2Functions.getInstanceTypeOfferings(args(argsBuilder).build)
 
     /** Information about EC2 Instance Type Offerings. */
-    def getInstanceTypeOfferingsPlain(args: Endofunction[com.pulumi.aws.ec2.inputs.GetInstanceTypeOfferingsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getInstanceTypeOfferingsPlain(args: Endofunction[com.pulumi.aws.ec2.inputs.GetInstanceTypeOfferingsPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.ec2.outputs.GetInstanceTypeOfferingsResult] =
       val argsBuilder = com.pulumi.aws.ec2.inputs.GetInstanceTypeOfferingsPlainArgs.builder
       com.pulumi.aws.ec2.Ec2Functions.getInstanceTypeOfferingsPlain(args(argsBuilder).build)
 
     /** Information about EC2 Instance Types. */
-    def getInstanceTypes(args: Endofunction[com.pulumi.aws.ec2.inputs.GetInstanceTypesArgs.Builder] = scala.Predef.identity):
+    inline def getInstanceTypes(args: Endofunction[com.pulumi.aws.ec2.inputs.GetInstanceTypesArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.ec2.outputs.GetInstanceTypesResult] =
       val argsBuilder = com.pulumi.aws.ec2.inputs.GetInstanceTypesArgs.builder
       com.pulumi.aws.ec2.Ec2Functions.getInstanceTypes(args(argsBuilder).build)
 
     /** Information about EC2 Instance Types. */
-    def getInstanceTypesPlain(args: Endofunction[com.pulumi.aws.ec2.inputs.GetInstanceTypesPlainArgs.Builder] = scala.Predef.identity):
+    inline def getInstanceTypesPlain(args: Endofunction[com.pulumi.aws.ec2.inputs.GetInstanceTypesPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.ec2.outputs.GetInstanceTypesResult] =
       val argsBuilder = com.pulumi.aws.ec2.inputs.GetInstanceTypesPlainArgs.builder
       com.pulumi.aws.ec2.Ec2Functions.getInstanceTypesPlain(args(argsBuilder).build)
@@ -1191,7 +1193,7 @@ object ec2:
      *  instances (e.g., managed via autoscaling group), as the output may change at any time
      *  and you&#39;d need to re-run `apply` every time an instance comes up or dies.
      */
-    def getInstances(args: Endofunction[com.pulumi.aws.ec2.inputs.GetInstancesArgs.Builder] = scala.Predef.identity):
+    inline def getInstances(args: Endofunction[com.pulumi.aws.ec2.inputs.GetInstancesArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.ec2.outputs.GetInstancesResult] =
       val argsBuilder = com.pulumi.aws.ec2.inputs.GetInstancesArgs.builder
       com.pulumi.aws.ec2.Ec2Functions.getInstances(args(argsBuilder).build)
@@ -1205,19 +1207,19 @@ object ec2:
      *  instances (e.g., managed via autoscaling group), as the output may change at any time
      *  and you&#39;d need to re-run `apply` every time an instance comes up or dies.
      */
-    def getInstancesPlain(args: Endofunction[com.pulumi.aws.ec2.inputs.GetInstancesPlainArgs.Builder] = scala.Predef.identity):
+    inline def getInstancesPlain(args: Endofunction[com.pulumi.aws.ec2.inputs.GetInstancesPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.ec2.outputs.GetInstancesResult] =
       val argsBuilder = com.pulumi.aws.ec2.inputs.GetInstancesPlainArgs.builder
       com.pulumi.aws.ec2.Ec2Functions.getInstancesPlain(args(argsBuilder).build)
 
     /** `aws.ec2.InternetGateway` provides details about a specific Internet Gateway. */
-    def getInternetGateway(args: Endofunction[com.pulumi.aws.ec2.inputs.GetInternetGatewayArgs.Builder] = scala.Predef.identity):
+    inline def getInternetGateway(args: Endofunction[com.pulumi.aws.ec2.inputs.GetInternetGatewayArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.ec2.outputs.GetInternetGatewayResult] =
       val argsBuilder = com.pulumi.aws.ec2.inputs.GetInternetGatewayArgs.builder
       com.pulumi.aws.ec2.Ec2Functions.getInternetGateway(args(argsBuilder).build)
 
     /** `aws.ec2.InternetGateway` provides details about a specific Internet Gateway. */
-    def getInternetGatewayPlain(args: Endofunction[com.pulumi.aws.ec2.inputs.GetInternetGatewayPlainArgs.Builder] = scala.Predef.identity):
+    inline def getInternetGatewayPlain(args: Endofunction[com.pulumi.aws.ec2.inputs.GetInternetGatewayPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.ec2.outputs.GetInternetGatewayResult] =
       val argsBuilder = com.pulumi.aws.ec2.inputs.GetInternetGatewayPlainArgs.builder
       com.pulumi.aws.ec2.Ec2Functions.getInternetGatewayPlain(args(argsBuilder).build)
@@ -1227,7 +1229,7 @@ object ec2:
      * 
      *  &gt; **NOTE:** This functionality is also encapsulated in a resource sharing the same name. The data source can be used when you need to use the cidr in a calculation of the same Root module, `count` for example. However, once a cidr range has been allocated that was previewed, the next refresh will find a **new** cidr and may force new resources downstream. Make sure to use `ignoreChanges` if this is undesirable.
      */
-    def getIpamPreviewNextCidr(args: Endofunction[com.pulumi.aws.ec2.inputs.GetIpamPreviewNextCidrArgs.Builder] = scala.Predef.identity):
+    inline def getIpamPreviewNextCidr(args: Endofunction[com.pulumi.aws.ec2.inputs.GetIpamPreviewNextCidrArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.ec2.outputs.GetIpamPreviewNextCidrResult] =
       val argsBuilder = com.pulumi.aws.ec2.inputs.GetIpamPreviewNextCidrArgs.builder
       com.pulumi.aws.ec2.Ec2Functions.getIpamPreviewNextCidr(args(argsBuilder).build)
@@ -1237,55 +1239,55 @@ object ec2:
      * 
      *  &gt; **NOTE:** This functionality is also encapsulated in a resource sharing the same name. The data source can be used when you need to use the cidr in a calculation of the same Root module, `count` for example. However, once a cidr range has been allocated that was previewed, the next refresh will find a **new** cidr and may force new resources downstream. Make sure to use `ignoreChanges` if this is undesirable.
      */
-    def getIpamPreviewNextCidrPlain(args: Endofunction[com.pulumi.aws.ec2.inputs.GetIpamPreviewNextCidrPlainArgs.Builder] = scala.Predef.identity):
+    inline def getIpamPreviewNextCidrPlain(args: Endofunction[com.pulumi.aws.ec2.inputs.GetIpamPreviewNextCidrPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.ec2.outputs.GetIpamPreviewNextCidrResult] =
       val argsBuilder = com.pulumi.aws.ec2.inputs.GetIpamPreviewNextCidrPlainArgs.builder
       com.pulumi.aws.ec2.Ec2Functions.getIpamPreviewNextCidrPlain(args(argsBuilder).build)
 
     /** Use this data source to get information about a specific EC2 Key Pair. */
-    def getKeyPair(args: Endofunction[com.pulumi.aws.ec2.inputs.GetKeyPairArgs.Builder] = scala.Predef.identity):
+    inline def getKeyPair(args: Endofunction[com.pulumi.aws.ec2.inputs.GetKeyPairArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.ec2.outputs.GetKeyPairResult] =
       val argsBuilder = com.pulumi.aws.ec2.inputs.GetKeyPairArgs.builder
       com.pulumi.aws.ec2.Ec2Functions.getKeyPair(args(argsBuilder).build)
 
     /** Use this data source to get information about a specific EC2 Key Pair. */
-    def getKeyPairPlain(args: Endofunction[com.pulumi.aws.ec2.inputs.GetKeyPairPlainArgs.Builder] = scala.Predef.identity):
+    inline def getKeyPairPlain(args: Endofunction[com.pulumi.aws.ec2.inputs.GetKeyPairPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.ec2.outputs.GetKeyPairResult] =
       val argsBuilder = com.pulumi.aws.ec2.inputs.GetKeyPairPlainArgs.builder
       com.pulumi.aws.ec2.Ec2Functions.getKeyPairPlain(args(argsBuilder).build)
 
     /** Provides information about a Launch Configuration. */
-    def getLaunchConfiguration(args: Endofunction[com.pulumi.aws.ec2.inputs.GetLaunchConfigurationArgs.Builder] = scala.Predef.identity):
+    inline def getLaunchConfiguration(args: Endofunction[com.pulumi.aws.ec2.inputs.GetLaunchConfigurationArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.ec2.outputs.GetLaunchConfigurationResult] =
       val argsBuilder = com.pulumi.aws.ec2.inputs.GetLaunchConfigurationArgs.builder
       com.pulumi.aws.ec2.Ec2Functions.getLaunchConfiguration(args(argsBuilder).build)
 
     /** Provides information about a Launch Configuration. */
-    def getLaunchConfigurationPlain(args: Endofunction[com.pulumi.aws.ec2.inputs.GetLaunchConfigurationPlainArgs.Builder] = scala.Predef.identity):
+    inline def getLaunchConfigurationPlain(args: Endofunction[com.pulumi.aws.ec2.inputs.GetLaunchConfigurationPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.ec2.outputs.GetLaunchConfigurationResult] =
       val argsBuilder = com.pulumi.aws.ec2.inputs.GetLaunchConfigurationPlainArgs.builder
       com.pulumi.aws.ec2.Ec2Functions.getLaunchConfigurationPlain(args(argsBuilder).build)
 
     /** Provides information about a Launch Template. */
-    def getLaunchTemplate(args: Endofunction[com.pulumi.aws.ec2.inputs.GetLaunchTemplateArgs.Builder] = scala.Predef.identity):
+    inline def getLaunchTemplate(args: Endofunction[com.pulumi.aws.ec2.inputs.GetLaunchTemplateArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.ec2.outputs.GetLaunchTemplateResult] =
       val argsBuilder = com.pulumi.aws.ec2.inputs.GetLaunchTemplateArgs.builder
       com.pulumi.aws.ec2.Ec2Functions.getLaunchTemplate(args(argsBuilder).build)
 
     /** Provides information about a Launch Template. */
-    def getLaunchTemplatePlain(args: Endofunction[com.pulumi.aws.ec2.inputs.GetLaunchTemplatePlainArgs.Builder] = scala.Predef.identity):
+    inline def getLaunchTemplatePlain(args: Endofunction[com.pulumi.aws.ec2.inputs.GetLaunchTemplatePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.ec2.outputs.GetLaunchTemplateResult] =
       val argsBuilder = com.pulumi.aws.ec2.inputs.GetLaunchTemplatePlainArgs.builder
       com.pulumi.aws.ec2.Ec2Functions.getLaunchTemplatePlain(args(argsBuilder).build)
 
     /** Provides details about an EC2 Local Gateway. */
-    def getLocalGateway(args: Endofunction[com.pulumi.aws.ec2.inputs.GetLocalGatewayArgs.Builder] = scala.Predef.identity):
+    inline def getLocalGateway(args: Endofunction[com.pulumi.aws.ec2.inputs.GetLocalGatewayArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.ec2.outputs.GetLocalGatewayResult] =
       val argsBuilder = com.pulumi.aws.ec2.inputs.GetLocalGatewayArgs.builder
       com.pulumi.aws.ec2.Ec2Functions.getLocalGateway(args(argsBuilder).build)
 
     /** Provides details about an EC2 Local Gateway. */
-    def getLocalGatewayPlain(args: Endofunction[com.pulumi.aws.ec2.inputs.GetLocalGatewayPlainArgs.Builder] = scala.Predef.identity):
+    inline def getLocalGatewayPlain(args: Endofunction[com.pulumi.aws.ec2.inputs.GetLocalGatewayPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.ec2.outputs.GetLocalGatewayResult] =
       val argsBuilder = com.pulumi.aws.ec2.inputs.GetLocalGatewayPlainArgs.builder
       com.pulumi.aws.ec2.Ec2Functions.getLocalGatewayPlain(args(argsBuilder).build)
@@ -1296,7 +1298,7 @@ object ec2:
      *  This data source can prove useful when a module accepts a local gateway route table id as
      *  an input variable and needs to, for example, find the associated Outpost or Local Gateway.
      */
-    def getLocalGatewayRouteTable(args: Endofunction[com.pulumi.aws.ec2.inputs.GetLocalGatewayRouteTableArgs.Builder] = scala.Predef.identity):
+    inline def getLocalGatewayRouteTable(args: Endofunction[com.pulumi.aws.ec2.inputs.GetLocalGatewayRouteTableArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.ec2.outputs.GetLocalGatewayRouteTableResult] =
       val argsBuilder = com.pulumi.aws.ec2.inputs.GetLocalGatewayRouteTableArgs.builder
       com.pulumi.aws.ec2.Ec2Functions.getLocalGatewayRouteTable(args(argsBuilder).build)
@@ -1307,67 +1309,67 @@ object ec2:
      *  This data source can prove useful when a module accepts a local gateway route table id as
      *  an input variable and needs to, for example, find the associated Outpost or Local Gateway.
      */
-    def getLocalGatewayRouteTablePlain(args: Endofunction[com.pulumi.aws.ec2.inputs.GetLocalGatewayRouteTablePlainArgs.Builder] = scala.Predef.identity):
+    inline def getLocalGatewayRouteTablePlain(args: Endofunction[com.pulumi.aws.ec2.inputs.GetLocalGatewayRouteTablePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.ec2.outputs.GetLocalGatewayRouteTableResult] =
       val argsBuilder = com.pulumi.aws.ec2.inputs.GetLocalGatewayRouteTablePlainArgs.builder
       com.pulumi.aws.ec2.Ec2Functions.getLocalGatewayRouteTablePlain(args(argsBuilder).build)
 
     /** Provides information for multiple EC2 Local Gateway Route Tables, such as their identifiers. */
-    def getLocalGatewayRouteTables(args: Endofunction[com.pulumi.aws.ec2.inputs.GetLocalGatewayRouteTablesArgs.Builder] = scala.Predef.identity):
+    inline def getLocalGatewayRouteTables(args: Endofunction[com.pulumi.aws.ec2.inputs.GetLocalGatewayRouteTablesArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.ec2.outputs.GetLocalGatewayRouteTablesResult] =
       val argsBuilder = com.pulumi.aws.ec2.inputs.GetLocalGatewayRouteTablesArgs.builder
       com.pulumi.aws.ec2.Ec2Functions.getLocalGatewayRouteTables(args(argsBuilder).build)
 
     /** Provides information for multiple EC2 Local Gateway Route Tables, such as their identifiers. */
-    def getLocalGatewayRouteTablesPlain(args: Endofunction[com.pulumi.aws.ec2.inputs.GetLocalGatewayRouteTablesPlainArgs.Builder] = scala.Predef.identity):
+    inline def getLocalGatewayRouteTablesPlain(args: Endofunction[com.pulumi.aws.ec2.inputs.GetLocalGatewayRouteTablesPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.ec2.outputs.GetLocalGatewayRouteTablesResult] =
       val argsBuilder = com.pulumi.aws.ec2.inputs.GetLocalGatewayRouteTablesPlainArgs.builder
       com.pulumi.aws.ec2.Ec2Functions.getLocalGatewayRouteTablesPlain(args(argsBuilder).build)
 
     /** Provides details about an EC2 Local Gateway Virtual Interface. More information can be found in the [Outposts User Guide](https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#routing). */
-    def getLocalGatewayVirtualInterface(args: Endofunction[com.pulumi.aws.ec2.inputs.GetLocalGatewayVirtualInterfaceArgs.Builder] = scala.Predef.identity):
+    inline def getLocalGatewayVirtualInterface(args: Endofunction[com.pulumi.aws.ec2.inputs.GetLocalGatewayVirtualInterfaceArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.ec2.outputs.GetLocalGatewayVirtualInterfaceResult] =
       val argsBuilder = com.pulumi.aws.ec2.inputs.GetLocalGatewayVirtualInterfaceArgs.builder
       com.pulumi.aws.ec2.Ec2Functions.getLocalGatewayVirtualInterface(args(argsBuilder).build)
 
     /** Provides details about an EC2 Local Gateway Virtual Interface. More information can be found in the [Outposts User Guide](https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#routing). */
-    def getLocalGatewayVirtualInterfacePlain(args: Endofunction[com.pulumi.aws.ec2.inputs.GetLocalGatewayVirtualInterfacePlainArgs.Builder] = scala.Predef.identity):
+    inline def getLocalGatewayVirtualInterfacePlain(args: Endofunction[com.pulumi.aws.ec2.inputs.GetLocalGatewayVirtualInterfacePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.ec2.outputs.GetLocalGatewayVirtualInterfaceResult] =
       val argsBuilder = com.pulumi.aws.ec2.inputs.GetLocalGatewayVirtualInterfacePlainArgs.builder
       com.pulumi.aws.ec2.Ec2Functions.getLocalGatewayVirtualInterfacePlain(args(argsBuilder).build)
 
     /** Provides details about an EC2 Local Gateway Virtual Interface Group. More information can be found in the [Outposts User Guide](https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#routing). */
-    def getLocalGatewayVirtualInterfaceGroup(args: Endofunction[com.pulumi.aws.ec2.inputs.GetLocalGatewayVirtualInterfaceGroupArgs.Builder] = scala.Predef.identity):
+    inline def getLocalGatewayVirtualInterfaceGroup(args: Endofunction[com.pulumi.aws.ec2.inputs.GetLocalGatewayVirtualInterfaceGroupArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.ec2.outputs.GetLocalGatewayVirtualInterfaceGroupResult] =
       val argsBuilder = com.pulumi.aws.ec2.inputs.GetLocalGatewayVirtualInterfaceGroupArgs.builder
       com.pulumi.aws.ec2.Ec2Functions.getLocalGatewayVirtualInterfaceGroup(args(argsBuilder).build)
 
     /** Provides details about an EC2 Local Gateway Virtual Interface Group. More information can be found in the [Outposts User Guide](https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#routing). */
-    def getLocalGatewayVirtualInterfaceGroupPlain(args: Endofunction[com.pulumi.aws.ec2.inputs.GetLocalGatewayVirtualInterfaceGroupPlainArgs.Builder] = scala.Predef.identity):
+    inline def getLocalGatewayVirtualInterfaceGroupPlain(args: Endofunction[com.pulumi.aws.ec2.inputs.GetLocalGatewayVirtualInterfaceGroupPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.ec2.outputs.GetLocalGatewayVirtualInterfaceGroupResult] =
       val argsBuilder = com.pulumi.aws.ec2.inputs.GetLocalGatewayVirtualInterfaceGroupPlainArgs.builder
       com.pulumi.aws.ec2.Ec2Functions.getLocalGatewayVirtualInterfaceGroupPlain(args(argsBuilder).build)
 
     /** Provides details about multiple EC2 Local Gateway Virtual Interface Groups, such as identifiers. More information can be found in the [Outposts User Guide](https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#routing). */
-    def getLocalGatewayVirtualInterfaceGroups(args: Endofunction[com.pulumi.aws.ec2.inputs.GetLocalGatewayVirtualInterfaceGroupsArgs.Builder] = scala.Predef.identity):
+    inline def getLocalGatewayVirtualInterfaceGroups(args: Endofunction[com.pulumi.aws.ec2.inputs.GetLocalGatewayVirtualInterfaceGroupsArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.ec2.outputs.GetLocalGatewayVirtualInterfaceGroupsResult] =
       val argsBuilder = com.pulumi.aws.ec2.inputs.GetLocalGatewayVirtualInterfaceGroupsArgs.builder
       com.pulumi.aws.ec2.Ec2Functions.getLocalGatewayVirtualInterfaceGroups(args(argsBuilder).build)
 
     /** Provides details about multiple EC2 Local Gateway Virtual Interface Groups, such as identifiers. More information can be found in the [Outposts User Guide](https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#routing). */
-    def getLocalGatewayVirtualInterfaceGroupsPlain(args: Endofunction[com.pulumi.aws.ec2.inputs.GetLocalGatewayVirtualInterfaceGroupsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getLocalGatewayVirtualInterfaceGroupsPlain(args: Endofunction[com.pulumi.aws.ec2.inputs.GetLocalGatewayVirtualInterfaceGroupsPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.ec2.outputs.GetLocalGatewayVirtualInterfaceGroupsResult] =
       val argsBuilder = com.pulumi.aws.ec2.inputs.GetLocalGatewayVirtualInterfaceGroupsPlainArgs.builder
       com.pulumi.aws.ec2.Ec2Functions.getLocalGatewayVirtualInterfaceGroupsPlain(args(argsBuilder).build)
 
     /** Provides information for multiple EC2 Local Gateways, such as their identifiers. */
-    def getLocalGateways(args: Endofunction[com.pulumi.aws.ec2.inputs.GetLocalGatewaysArgs.Builder] = scala.Predef.identity):
+    inline def getLocalGateways(args: Endofunction[com.pulumi.aws.ec2.inputs.GetLocalGatewaysArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.ec2.outputs.GetLocalGatewaysResult] =
       val argsBuilder = com.pulumi.aws.ec2.inputs.GetLocalGatewaysArgs.builder
       com.pulumi.aws.ec2.Ec2Functions.getLocalGateways(args(argsBuilder).build)
 
     /** Provides information for multiple EC2 Local Gateways, such as their identifiers. */
-    def getLocalGatewaysPlain(args: Endofunction[com.pulumi.aws.ec2.inputs.GetLocalGatewaysPlainArgs.Builder] = scala.Predef.identity):
+    inline def getLocalGatewaysPlain(args: Endofunction[com.pulumi.aws.ec2.inputs.GetLocalGatewaysPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.ec2.outputs.GetLocalGatewaysResult] =
       val argsBuilder = com.pulumi.aws.ec2.inputs.GetLocalGatewaysPlainArgs.builder
       com.pulumi.aws.ec2.Ec2Functions.getLocalGatewaysPlain(args(argsBuilder).build)
@@ -1376,7 +1378,7 @@ object ec2:
      * `aws.ec2.ManagedPrefixList` provides details about a specific AWS prefix list or
      *  customer-managed prefix list in the current region.
      */
-    def getManagedPrefixList(args: Endofunction[com.pulumi.aws.ec2.inputs.GetManagedPrefixListArgs.Builder] = scala.Predef.identity):
+    inline def getManagedPrefixList(args: Endofunction[com.pulumi.aws.ec2.inputs.GetManagedPrefixListArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.ec2.outputs.GetManagedPrefixListResult] =
       val argsBuilder = com.pulumi.aws.ec2.inputs.GetManagedPrefixListArgs.builder
       com.pulumi.aws.ec2.Ec2Functions.getManagedPrefixList(args(argsBuilder).build)
@@ -1385,43 +1387,43 @@ object ec2:
      * `aws.ec2.ManagedPrefixList` provides details about a specific AWS prefix list or
      *  customer-managed prefix list in the current region.
      */
-    def getManagedPrefixListPlain(args: Endofunction[com.pulumi.aws.ec2.inputs.GetManagedPrefixListPlainArgs.Builder] = scala.Predef.identity):
+    inline def getManagedPrefixListPlain(args: Endofunction[com.pulumi.aws.ec2.inputs.GetManagedPrefixListPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.ec2.outputs.GetManagedPrefixListResult] =
       val argsBuilder = com.pulumi.aws.ec2.inputs.GetManagedPrefixListPlainArgs.builder
       com.pulumi.aws.ec2.Ec2Functions.getManagedPrefixListPlain(args(argsBuilder).build)
 
     /** This resource can be useful for getting back a list of managed prefix list ids to be referenced elsewhere. */
-    def getManagedPrefixLists(args: Endofunction[com.pulumi.aws.ec2.inputs.GetManagedPrefixListsArgs.Builder] = scala.Predef.identity):
+    inline def getManagedPrefixLists(args: Endofunction[com.pulumi.aws.ec2.inputs.GetManagedPrefixListsArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.ec2.outputs.GetManagedPrefixListsResult] =
       val argsBuilder = com.pulumi.aws.ec2.inputs.GetManagedPrefixListsArgs.builder
       com.pulumi.aws.ec2.Ec2Functions.getManagedPrefixLists(args(argsBuilder).build)
 
     /** This resource can be useful for getting back a list of managed prefix list ids to be referenced elsewhere. */
-    def getManagedPrefixListsPlain(args: Endofunction[com.pulumi.aws.ec2.inputs.GetManagedPrefixListsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getManagedPrefixListsPlain(args: Endofunction[com.pulumi.aws.ec2.inputs.GetManagedPrefixListsPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.ec2.outputs.GetManagedPrefixListsResult] =
       val argsBuilder = com.pulumi.aws.ec2.inputs.GetManagedPrefixListsPlainArgs.builder
       com.pulumi.aws.ec2.Ec2Functions.getManagedPrefixListsPlain(args(argsBuilder).build)
 
     /** Provides details about a specific VPC NAT Gateway. */
-    def getNatGateway(args: Endofunction[com.pulumi.aws.ec2.inputs.GetNatGatewayArgs.Builder] = scala.Predef.identity):
+    inline def getNatGateway(args: Endofunction[com.pulumi.aws.ec2.inputs.GetNatGatewayArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.ec2.outputs.GetNatGatewayResult] =
       val argsBuilder = com.pulumi.aws.ec2.inputs.GetNatGatewayArgs.builder
       com.pulumi.aws.ec2.Ec2Functions.getNatGateway(args(argsBuilder).build)
 
     /** Provides details about a specific VPC NAT Gateway. */
-    def getNatGatewayPlain(args: Endofunction[com.pulumi.aws.ec2.inputs.GetNatGatewayPlainArgs.Builder] = scala.Predef.identity):
+    inline def getNatGatewayPlain(args: Endofunction[com.pulumi.aws.ec2.inputs.GetNatGatewayPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.ec2.outputs.GetNatGatewayResult] =
       val argsBuilder = com.pulumi.aws.ec2.inputs.GetNatGatewayPlainArgs.builder
       com.pulumi.aws.ec2.Ec2Functions.getNatGatewayPlain(args(argsBuilder).build)
 
     /** This resource can be useful for getting back a list of NAT gateway ids to be referenced elsewhere. */
-    def getNatGateways(args: Endofunction[com.pulumi.aws.ec2.inputs.GetNatGatewaysArgs.Builder] = scala.Predef.identity):
+    inline def getNatGateways(args: Endofunction[com.pulumi.aws.ec2.inputs.GetNatGatewaysArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.ec2.outputs.GetNatGatewaysResult] =
       val argsBuilder = com.pulumi.aws.ec2.inputs.GetNatGatewaysArgs.builder
       com.pulumi.aws.ec2.Ec2Functions.getNatGateways(args(argsBuilder).build)
 
     /** This resource can be useful for getting back a list of NAT gateway ids to be referenced elsewhere. */
-    def getNatGatewaysPlain(args: Endofunction[com.pulumi.aws.ec2.inputs.GetNatGatewaysPlainArgs.Builder] = scala.Predef.identity):
+    inline def getNatGatewaysPlain(args: Endofunction[com.pulumi.aws.ec2.inputs.GetNatGatewaysPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.ec2.outputs.GetNatGatewaysResult] =
       val argsBuilder = com.pulumi.aws.ec2.inputs.GetNatGatewaysPlainArgs.builder
       com.pulumi.aws.ec2.Ec2Functions.getNatGatewaysPlain(args(argsBuilder).build)
@@ -1429,7 +1431,7 @@ object ec2:
     /**
      * 
      */
-    def getNetworkAcls(args: Endofunction[com.pulumi.aws.ec2.inputs.GetNetworkAclsArgs.Builder] = scala.Predef.identity):
+    inline def getNetworkAcls(args: Endofunction[com.pulumi.aws.ec2.inputs.GetNetworkAclsArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.ec2.outputs.GetNetworkAclsResult] =
       val argsBuilder = com.pulumi.aws.ec2.inputs.GetNetworkAclsArgs.builder
       com.pulumi.aws.ec2.Ec2Functions.getNetworkAcls(args(argsBuilder).build)
@@ -1437,43 +1439,43 @@ object ec2:
     /**
      * 
      */
-    def getNetworkAclsPlain(args: Endofunction[com.pulumi.aws.ec2.inputs.GetNetworkAclsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getNetworkAclsPlain(args: Endofunction[com.pulumi.aws.ec2.inputs.GetNetworkAclsPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.ec2.outputs.GetNetworkAclsResult] =
       val argsBuilder = com.pulumi.aws.ec2.inputs.GetNetworkAclsPlainArgs.builder
       com.pulumi.aws.ec2.Ec2Functions.getNetworkAclsPlain(args(argsBuilder).build)
 
     /** `aws.ec2.NetworkInsightsAnalysis` provides details about a specific Network Insights Analysis. */
-    def getNetworkInsightsAnalysis(args: Endofunction[com.pulumi.aws.ec2.inputs.GetNetworkInsightsAnalysisArgs.Builder] = scala.Predef.identity):
+    inline def getNetworkInsightsAnalysis(args: Endofunction[com.pulumi.aws.ec2.inputs.GetNetworkInsightsAnalysisArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.ec2.outputs.GetNetworkInsightsAnalysisResult] =
       val argsBuilder = com.pulumi.aws.ec2.inputs.GetNetworkInsightsAnalysisArgs.builder
       com.pulumi.aws.ec2.Ec2Functions.getNetworkInsightsAnalysis(args(argsBuilder).build)
 
     /** `aws.ec2.NetworkInsightsAnalysis` provides details about a specific Network Insights Analysis. */
-    def getNetworkInsightsAnalysisPlain(args: Endofunction[com.pulumi.aws.ec2.inputs.GetNetworkInsightsAnalysisPlainArgs.Builder] = scala.Predef.identity):
+    inline def getNetworkInsightsAnalysisPlain(args: Endofunction[com.pulumi.aws.ec2.inputs.GetNetworkInsightsAnalysisPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.ec2.outputs.GetNetworkInsightsAnalysisResult] =
       val argsBuilder = com.pulumi.aws.ec2.inputs.GetNetworkInsightsAnalysisPlainArgs.builder
       com.pulumi.aws.ec2.Ec2Functions.getNetworkInsightsAnalysisPlain(args(argsBuilder).build)
 
     /** `aws.ec2.NetworkInsightsPath` provides details about a specific Network Insights Path. */
-    def getNetworkInsightsPath(args: Endofunction[com.pulumi.aws.ec2.inputs.GetNetworkInsightsPathArgs.Builder] = scala.Predef.identity):
+    inline def getNetworkInsightsPath(args: Endofunction[com.pulumi.aws.ec2.inputs.GetNetworkInsightsPathArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.ec2.outputs.GetNetworkInsightsPathResult] =
       val argsBuilder = com.pulumi.aws.ec2.inputs.GetNetworkInsightsPathArgs.builder
       com.pulumi.aws.ec2.Ec2Functions.getNetworkInsightsPath(args(argsBuilder).build)
 
     /** `aws.ec2.NetworkInsightsPath` provides details about a specific Network Insights Path. */
-    def getNetworkInsightsPathPlain(args: Endofunction[com.pulumi.aws.ec2.inputs.GetNetworkInsightsPathPlainArgs.Builder] = scala.Predef.identity):
+    inline def getNetworkInsightsPathPlain(args: Endofunction[com.pulumi.aws.ec2.inputs.GetNetworkInsightsPathPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.ec2.outputs.GetNetworkInsightsPathResult] =
       val argsBuilder = com.pulumi.aws.ec2.inputs.GetNetworkInsightsPathPlainArgs.builder
       com.pulumi.aws.ec2.Ec2Functions.getNetworkInsightsPathPlain(args(argsBuilder).build)
 
     /** Use this data source to get information about a Network Interface. */
-    def getNetworkInterface(args: Endofunction[com.pulumi.aws.ec2.inputs.GetNetworkInterfaceArgs.Builder] = scala.Predef.identity):
+    inline def getNetworkInterface(args: Endofunction[com.pulumi.aws.ec2.inputs.GetNetworkInterfaceArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.ec2.outputs.GetNetworkInterfaceResult] =
       val argsBuilder = com.pulumi.aws.ec2.inputs.GetNetworkInterfaceArgs.builder
       com.pulumi.aws.ec2.Ec2Functions.getNetworkInterface(args(argsBuilder).build)
 
     /** Use this data source to get information about a Network Interface. */
-    def getNetworkInterfacePlain(args: Endofunction[com.pulumi.aws.ec2.inputs.GetNetworkInterfacePlainArgs.Builder] = scala.Predef.identity):
+    inline def getNetworkInterfacePlain(args: Endofunction[com.pulumi.aws.ec2.inputs.GetNetworkInterfacePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.ec2.outputs.GetNetworkInterfaceResult] =
       val argsBuilder = com.pulumi.aws.ec2.inputs.GetNetworkInterfacePlainArgs.builder
       com.pulumi.aws.ec2.Ec2Functions.getNetworkInterfacePlain(args(argsBuilder).build)
@@ -1481,7 +1483,7 @@ object ec2:
     /**
      * 
      */
-    def getNetworkInterfaces(args: Endofunction[com.pulumi.aws.ec2.inputs.GetNetworkInterfacesArgs.Builder] = scala.Predef.identity):
+    inline def getNetworkInterfaces(args: Endofunction[com.pulumi.aws.ec2.inputs.GetNetworkInterfacesArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.ec2.outputs.GetNetworkInterfacesResult] =
       val argsBuilder = com.pulumi.aws.ec2.inputs.GetNetworkInterfacesArgs.builder
       com.pulumi.aws.ec2.Ec2Functions.getNetworkInterfaces(args(argsBuilder).build)
@@ -1489,7 +1491,7 @@ object ec2:
     /**
      * 
      */
-    def getNetworkInterfacesPlain(args: Endofunction[com.pulumi.aws.ec2.inputs.GetNetworkInterfacesPlainArgs.Builder] = scala.Predef.identity):
+    inline def getNetworkInterfacesPlain(args: Endofunction[com.pulumi.aws.ec2.inputs.GetNetworkInterfacesPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.ec2.outputs.GetNetworkInterfacesResult] =
       val argsBuilder = com.pulumi.aws.ec2.inputs.GetNetworkInterfacesPlainArgs.builder
       com.pulumi.aws.ec2.Ec2Functions.getNetworkInterfacesPlain(args(argsBuilder).build)
@@ -1505,7 +1507,7 @@ object ec2:
      * 
      *  The aws.ec2.ManagedPrefixList data source is normally more appropriate to use given it can return customer-managed prefix list info, as well as additional attributes.
      */
-    def getPrefixList(args: Endofunction[com.pulumi.aws.ec2.inputs.GetPrefixListArgs.Builder] = scala.Predef.identity):
+    inline def getPrefixList(args: Endofunction[com.pulumi.aws.ec2.inputs.GetPrefixListArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.ec2.outputs.GetPrefixListResult] =
       val argsBuilder = com.pulumi.aws.ec2.inputs.GetPrefixListArgs.builder
       com.pulumi.aws.ec2.Ec2Functions.getPrefixList(args(argsBuilder).build)
@@ -1521,31 +1523,31 @@ object ec2:
      * 
      *  The aws.ec2.ManagedPrefixList data source is normally more appropriate to use given it can return customer-managed prefix list info, as well as additional attributes.
      */
-    def getPrefixListPlain(args: Endofunction[com.pulumi.aws.ec2.inputs.GetPrefixListPlainArgs.Builder] = scala.Predef.identity):
+    inline def getPrefixListPlain(args: Endofunction[com.pulumi.aws.ec2.inputs.GetPrefixListPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.ec2.outputs.GetPrefixListResult] =
       val argsBuilder = com.pulumi.aws.ec2.inputs.GetPrefixListPlainArgs.builder
       com.pulumi.aws.ec2.Ec2Functions.getPrefixListPlain(args(argsBuilder).build)
 
     /** Provides details about a specific AWS EC2 Public IPv4 Pool. */
-    def getPublicIpv4Pool(args: Endofunction[com.pulumi.aws.ec2.inputs.GetPublicIpv4PoolArgs.Builder] = scala.Predef.identity):
+    inline def getPublicIpv4Pool(args: Endofunction[com.pulumi.aws.ec2.inputs.GetPublicIpv4PoolArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.ec2.outputs.GetPublicIpv4PoolResult] =
       val argsBuilder = com.pulumi.aws.ec2.inputs.GetPublicIpv4PoolArgs.builder
       com.pulumi.aws.ec2.Ec2Functions.getPublicIpv4Pool(args(argsBuilder).build)
 
     /** Provides details about a specific AWS EC2 Public IPv4 Pool. */
-    def getPublicIpv4PoolPlain(args: Endofunction[com.pulumi.aws.ec2.inputs.GetPublicIpv4PoolPlainArgs.Builder] = scala.Predef.identity):
+    inline def getPublicIpv4PoolPlain(args: Endofunction[com.pulumi.aws.ec2.inputs.GetPublicIpv4PoolPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.ec2.outputs.GetPublicIpv4PoolResult] =
       val argsBuilder = com.pulumi.aws.ec2.inputs.GetPublicIpv4PoolPlainArgs.builder
       com.pulumi.aws.ec2.Ec2Functions.getPublicIpv4PoolPlain(args(argsBuilder).build)
 
     /** Data source for getting information about AWS EC2 Public IPv4 Pools. */
-    def getPublicIpv4Pools(args: Endofunction[com.pulumi.aws.ec2.inputs.GetPublicIpv4PoolsArgs.Builder] = scala.Predef.identity):
+    inline def getPublicIpv4Pools(args: Endofunction[com.pulumi.aws.ec2.inputs.GetPublicIpv4PoolsArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.ec2.outputs.GetPublicIpv4PoolsResult] =
       val argsBuilder = com.pulumi.aws.ec2.inputs.GetPublicIpv4PoolsArgs.builder
       com.pulumi.aws.ec2.Ec2Functions.getPublicIpv4Pools(args(argsBuilder).build)
 
     /** Data source for getting information about AWS EC2 Public IPv4 Pools. */
-    def getPublicIpv4PoolsPlain(args: Endofunction[com.pulumi.aws.ec2.inputs.GetPublicIpv4PoolsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getPublicIpv4PoolsPlain(args: Endofunction[com.pulumi.aws.ec2.inputs.GetPublicIpv4PoolsPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.ec2.outputs.GetPublicIpv4PoolsResult] =
       val argsBuilder = com.pulumi.aws.ec2.inputs.GetPublicIpv4PoolsPlainArgs.builder
       com.pulumi.aws.ec2.Ec2Functions.getPublicIpv4PoolsPlain(args(argsBuilder).build)
@@ -1555,7 +1557,7 @@ object ec2:
      * 
      *  This resource can prove useful when finding the resource associated with a CIDR. For example, finding the peering connection associated with a CIDR value.
      */
-    def getRoute(args: Endofunction[com.pulumi.aws.ec2.inputs.GetRouteArgs.Builder] = scala.Predef.identity):
+    inline def getRoute(args: Endofunction[com.pulumi.aws.ec2.inputs.GetRouteArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.ec2.outputs.GetRouteResult] =
       val argsBuilder = com.pulumi.aws.ec2.inputs.GetRouteArgs.builder
       com.pulumi.aws.ec2.Ec2Functions.getRoute(args(argsBuilder).build)
@@ -1565,7 +1567,7 @@ object ec2:
      * 
      *  This resource can prove useful when finding the resource associated with a CIDR. For example, finding the peering connection associated with a CIDR value.
      */
-    def getRoutePlain(args: Endofunction[com.pulumi.aws.ec2.inputs.GetRoutePlainArgs.Builder] = scala.Predef.identity):
+    inline def getRoutePlain(args: Endofunction[com.pulumi.aws.ec2.inputs.GetRoutePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.ec2.outputs.GetRouteResult] =
       val argsBuilder = com.pulumi.aws.ec2.inputs.GetRoutePlainArgs.builder
       com.pulumi.aws.ec2.Ec2Functions.getRoutePlain(args(argsBuilder).build)
@@ -1575,7 +1577,7 @@ object ec2:
      * 
      *  This resource can prove useful when a module accepts a Subnet ID as an input variable and needs to, for example, add a route in the Route Table.
      */
-    def getRouteTable(args: Endofunction[com.pulumi.aws.ec2.inputs.GetRouteTableArgs.Builder] = scala.Predef.identity):
+    inline def getRouteTable(args: Endofunction[com.pulumi.aws.ec2.inputs.GetRouteTableArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.ec2.outputs.GetRouteTableResult] =
       val argsBuilder = com.pulumi.aws.ec2.inputs.GetRouteTableArgs.builder
       com.pulumi.aws.ec2.Ec2Functions.getRouteTable(args(argsBuilder).build)
@@ -1585,19 +1587,19 @@ object ec2:
      * 
      *  This resource can prove useful when a module accepts a Subnet ID as an input variable and needs to, for example, add a route in the Route Table.
      */
-    def getRouteTablePlain(args: Endofunction[com.pulumi.aws.ec2.inputs.GetRouteTablePlainArgs.Builder] = scala.Predef.identity):
+    inline def getRouteTablePlain(args: Endofunction[com.pulumi.aws.ec2.inputs.GetRouteTablePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.ec2.outputs.GetRouteTableResult] =
       val argsBuilder = com.pulumi.aws.ec2.inputs.GetRouteTablePlainArgs.builder
       com.pulumi.aws.ec2.Ec2Functions.getRouteTablePlain(args(argsBuilder).build)
 
     /** This resource can be useful for getting back a list of route table ids to be referenced elsewhere. */
-    def getRouteTables(args: Endofunction[com.pulumi.aws.ec2.inputs.GetRouteTablesArgs.Builder] = scala.Predef.identity):
+    inline def getRouteTables(args: Endofunction[com.pulumi.aws.ec2.inputs.GetRouteTablesArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.ec2.outputs.GetRouteTablesResult] =
       val argsBuilder = com.pulumi.aws.ec2.inputs.GetRouteTablesArgs.builder
       com.pulumi.aws.ec2.Ec2Functions.getRouteTables(args(argsBuilder).build)
 
     /** This resource can be useful for getting back a list of route table ids to be referenced elsewhere. */
-    def getRouteTablesPlain(args: Endofunction[com.pulumi.aws.ec2.inputs.GetRouteTablesPlainArgs.Builder] = scala.Predef.identity):
+    inline def getRouteTablesPlain(args: Endofunction[com.pulumi.aws.ec2.inputs.GetRouteTablesPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.ec2.outputs.GetRouteTablesResult] =
       val argsBuilder = com.pulumi.aws.ec2.inputs.GetRouteTablesPlainArgs.builder
       com.pulumi.aws.ec2.Ec2Functions.getRouteTablesPlain(args(argsBuilder).build)
@@ -1609,7 +1611,7 @@ object ec2:
      *  an input variable and needs to, for example, determine the id of the
      *  VPC that the security group belongs to.
      */
-    def getSecurityGroup(args: Endofunction[com.pulumi.aws.ec2.inputs.GetSecurityGroupArgs.Builder] = scala.Predef.identity):
+    inline def getSecurityGroup(args: Endofunction[com.pulumi.aws.ec2.inputs.GetSecurityGroupArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.ec2.outputs.GetSecurityGroupResult] =
       val argsBuilder = com.pulumi.aws.ec2.inputs.GetSecurityGroupArgs.builder
       com.pulumi.aws.ec2.Ec2Functions.getSecurityGroup(args(argsBuilder).build)
@@ -1621,55 +1623,55 @@ object ec2:
      *  an input variable and needs to, for example, determine the id of the
      *  VPC that the security group belongs to.
      */
-    def getSecurityGroupPlain(args: Endofunction[com.pulumi.aws.ec2.inputs.GetSecurityGroupPlainArgs.Builder] = scala.Predef.identity):
+    inline def getSecurityGroupPlain(args: Endofunction[com.pulumi.aws.ec2.inputs.GetSecurityGroupPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.ec2.outputs.GetSecurityGroupResult] =
       val argsBuilder = com.pulumi.aws.ec2.inputs.GetSecurityGroupPlainArgs.builder
       com.pulumi.aws.ec2.Ec2Functions.getSecurityGroupPlain(args(argsBuilder).build)
 
     /** Use this data source to get IDs and VPC membership of Security Groups that are created outside this provider. */
-    def getSecurityGroups(args: Endofunction[com.pulumi.aws.ec2.inputs.GetSecurityGroupsArgs.Builder] = scala.Predef.identity):
+    inline def getSecurityGroups(args: Endofunction[com.pulumi.aws.ec2.inputs.GetSecurityGroupsArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.ec2.outputs.GetSecurityGroupsResult] =
       val argsBuilder = com.pulumi.aws.ec2.inputs.GetSecurityGroupsArgs.builder
       com.pulumi.aws.ec2.Ec2Functions.getSecurityGroups(args(argsBuilder).build)
 
     /** Use this data source to get IDs and VPC membership of Security Groups that are created outside this provider. */
-    def getSecurityGroupsPlain(args: Endofunction[com.pulumi.aws.ec2.inputs.GetSecurityGroupsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getSecurityGroupsPlain(args: Endofunction[com.pulumi.aws.ec2.inputs.GetSecurityGroupsPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.ec2.outputs.GetSecurityGroupsResult] =
       val argsBuilder = com.pulumi.aws.ec2.inputs.GetSecurityGroupsPlainArgs.builder
       com.pulumi.aws.ec2.Ec2Functions.getSecurityGroupsPlain(args(argsBuilder).build)
 
     /** Provides a way to check whether serial console access is enabled for your AWS account in the current AWS region. */
-    def getSerialConsoleAccess(args: Endofunction[com.pulumi.aws.ec2.inputs.GetSerialConsoleAccessArgs.Builder] = scala.Predef.identity):
+    inline def getSerialConsoleAccess(args: Endofunction[com.pulumi.aws.ec2.inputs.GetSerialConsoleAccessArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.ec2.outputs.GetSerialConsoleAccessResult] =
       val argsBuilder = com.pulumi.aws.ec2.inputs.GetSerialConsoleAccessArgs.builder
       com.pulumi.aws.ec2.Ec2Functions.getSerialConsoleAccess(args(argsBuilder).build)
 
     /** Provides a way to check whether serial console access is enabled for your AWS account in the current AWS region. */
-    def getSerialConsoleAccessPlain(args: Endofunction[com.pulumi.aws.ec2.inputs.GetSerialConsoleAccessPlainArgs.Builder] = scala.Predef.identity):
+    inline def getSerialConsoleAccessPlain(args: Endofunction[com.pulumi.aws.ec2.inputs.GetSerialConsoleAccessPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.ec2.outputs.GetSerialConsoleAccessResult] =
       val argsBuilder = com.pulumi.aws.ec2.inputs.GetSerialConsoleAccessPlainArgs.builder
       com.pulumi.aws.ec2.Ec2Functions.getSerialConsoleAccessPlain(args(argsBuilder).build)
 
     /** Provides details about an EC2 Service Link Virtual Interface. More information can be found in the [Outposts User Guide](https://docs.aws.amazon.com/outposts/latest/userguide/how-outposts-works.html#how-service-link). */
-    def getServiceLinkVirtualInterface(args: Endofunction[com.pulumi.aws.ec2.inputs.GetServiceLinkVirtualInterfaceArgs.Builder] = scala.Predef.identity):
+    inline def getServiceLinkVirtualInterface(args: Endofunction[com.pulumi.aws.ec2.inputs.GetServiceLinkVirtualInterfaceArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.ec2.outputs.GetServiceLinkVirtualInterfaceResult] =
       val argsBuilder = com.pulumi.aws.ec2.inputs.GetServiceLinkVirtualInterfaceArgs.builder
       com.pulumi.aws.ec2.Ec2Functions.getServiceLinkVirtualInterface(args(argsBuilder).build)
 
     /** Provides details about an EC2 Service Link Virtual Interface. More information can be found in the [Outposts User Guide](https://docs.aws.amazon.com/outposts/latest/userguide/how-outposts-works.html#how-service-link). */
-    def getServiceLinkVirtualInterfacePlain(args: Endofunction[com.pulumi.aws.ec2.inputs.GetServiceLinkVirtualInterfacePlainArgs.Builder] = scala.Predef.identity):
+    inline def getServiceLinkVirtualInterfacePlain(args: Endofunction[com.pulumi.aws.ec2.inputs.GetServiceLinkVirtualInterfacePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.ec2.outputs.GetServiceLinkVirtualInterfaceResult] =
       val argsBuilder = com.pulumi.aws.ec2.inputs.GetServiceLinkVirtualInterfacePlainArgs.builder
       com.pulumi.aws.ec2.Ec2Functions.getServiceLinkVirtualInterfacePlain(args(argsBuilder).build)
 
     /** Provides a list of EC2 Service Link Virtual Interface IDs matching the provided filters. More information can be found in the [Outposts User Guide](https://docs.aws.amazon.com/outposts/latest/userguide/how-outposts-works.html#how-service-link). */
-    def getServiceLinkVirtualInterfaces(args: Endofunction[com.pulumi.aws.ec2.inputs.GetServiceLinkVirtualInterfacesArgs.Builder] = scala.Predef.identity):
+    inline def getServiceLinkVirtualInterfaces(args: Endofunction[com.pulumi.aws.ec2.inputs.GetServiceLinkVirtualInterfacesArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.ec2.outputs.GetServiceLinkVirtualInterfacesResult] =
       val argsBuilder = com.pulumi.aws.ec2.inputs.GetServiceLinkVirtualInterfacesArgs.builder
       com.pulumi.aws.ec2.Ec2Functions.getServiceLinkVirtualInterfaces(args(argsBuilder).build)
 
     /** Provides a list of EC2 Service Link Virtual Interface IDs matching the provided filters. More information can be found in the [Outposts User Guide](https://docs.aws.amazon.com/outposts/latest/userguide/how-outposts-works.html#how-service-link). */
-    def getServiceLinkVirtualInterfacesPlain(args: Endofunction[com.pulumi.aws.ec2.inputs.GetServiceLinkVirtualInterfacesPlainArgs.Builder] = scala.Predef.identity):
+    inline def getServiceLinkVirtualInterfacesPlain(args: Endofunction[com.pulumi.aws.ec2.inputs.GetServiceLinkVirtualInterfacesPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.ec2.outputs.GetServiceLinkVirtualInterfacesResult] =
       val argsBuilder = com.pulumi.aws.ec2.inputs.GetServiceLinkVirtualInterfacesPlainArgs.builder
       com.pulumi.aws.ec2.Ec2Functions.getServiceLinkVirtualInterfacesPlain(args(argsBuilder).build)
@@ -1679,7 +1681,7 @@ object ec2:
      * 
      *  Data source for accessing an AWS EC2 (Elastic Compute Cloud) spot data feed subscription.
      */
-    def getSpotDatafeedSubscription(args: Endofunction[com.pulumi.aws.ec2.inputs.GetSpotDatafeedSubscriptionArgs.Builder] = scala.Predef.identity):
+    inline def getSpotDatafeedSubscription(args: Endofunction[com.pulumi.aws.ec2.inputs.GetSpotDatafeedSubscriptionArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.ec2.outputs.GetSpotDatafeedSubscriptionResult] =
       val argsBuilder = com.pulumi.aws.ec2.inputs.GetSpotDatafeedSubscriptionArgs.builder
       com.pulumi.aws.ec2.Ec2Functions.getSpotDatafeedSubscription(args(argsBuilder).build)
@@ -1689,19 +1691,19 @@ object ec2:
      * 
      *  Data source for accessing an AWS EC2 (Elastic Compute Cloud) spot data feed subscription.
      */
-    def getSpotDatafeedSubscriptionPlain(args: Endofunction[com.pulumi.aws.ec2.inputs.GetSpotDatafeedSubscriptionPlainArgs.Builder] = scala.Predef.identity):
+    inline def getSpotDatafeedSubscriptionPlain(args: Endofunction[com.pulumi.aws.ec2.inputs.GetSpotDatafeedSubscriptionPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.ec2.outputs.GetSpotDatafeedSubscriptionResult] =
       val argsBuilder = com.pulumi.aws.ec2.inputs.GetSpotDatafeedSubscriptionPlainArgs.builder
       com.pulumi.aws.ec2.Ec2Functions.getSpotDatafeedSubscriptionPlain(args(argsBuilder).build)
 
     /** Information about most recent Spot Price for a given EC2 instance. */
-    def getSpotPrice(args: Endofunction[com.pulumi.aws.ec2.inputs.GetSpotPriceArgs.Builder] = scala.Predef.identity):
+    inline def getSpotPrice(args: Endofunction[com.pulumi.aws.ec2.inputs.GetSpotPriceArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.ec2.outputs.GetSpotPriceResult] =
       val argsBuilder = com.pulumi.aws.ec2.inputs.GetSpotPriceArgs.builder
       com.pulumi.aws.ec2.Ec2Functions.getSpotPrice(args(argsBuilder).build)
 
     /** Information about most recent Spot Price for a given EC2 instance. */
-    def getSpotPricePlain(args: Endofunction[com.pulumi.aws.ec2.inputs.GetSpotPricePlainArgs.Builder] = scala.Predef.identity):
+    inline def getSpotPricePlain(args: Endofunction[com.pulumi.aws.ec2.inputs.GetSpotPricePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.ec2.outputs.GetSpotPriceResult] =
       val argsBuilder = com.pulumi.aws.ec2.inputs.GetSpotPricePlainArgs.builder
       com.pulumi.aws.ec2.Ec2Functions.getSpotPricePlain(args(argsBuilder).build)
@@ -1711,7 +1713,7 @@ object ec2:
      * 
      *  This resource can prove useful when a module accepts a subnet ID as an input variable and needs to, for example, determine the ID of the VPC that the subnet belongs to.
      */
-    def getSubnet(args: Endofunction[com.pulumi.aws.ec2.inputs.GetSubnetArgs.Builder] = scala.Predef.identity):
+    inline def getSubnet(args: Endofunction[com.pulumi.aws.ec2.inputs.GetSubnetArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.ec2.outputs.GetSubnetResult] =
       val argsBuilder = com.pulumi.aws.ec2.inputs.GetSubnetArgs.builder
       com.pulumi.aws.ec2.Ec2Functions.getSubnet(args(argsBuilder).build)
@@ -1721,31 +1723,31 @@ object ec2:
      * 
      *  This resource can prove useful when a module accepts a subnet ID as an input variable and needs to, for example, determine the ID of the VPC that the subnet belongs to.
      */
-    def getSubnetPlain(args: Endofunction[com.pulumi.aws.ec2.inputs.GetSubnetPlainArgs.Builder] = scala.Predef.identity):
+    inline def getSubnetPlain(args: Endofunction[com.pulumi.aws.ec2.inputs.GetSubnetPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.ec2.outputs.GetSubnetResult] =
       val argsBuilder = com.pulumi.aws.ec2.inputs.GetSubnetPlainArgs.builder
       com.pulumi.aws.ec2.Ec2Functions.getSubnetPlain(args(argsBuilder).build)
 
     /** This resource can be useful for getting back a set of subnet IDs. */
-    def getSubnets(args: Endofunction[com.pulumi.aws.ec2.inputs.GetSubnetsArgs.Builder] = scala.Predef.identity):
+    inline def getSubnets(args: Endofunction[com.pulumi.aws.ec2.inputs.GetSubnetsArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.ec2.outputs.GetSubnetsResult] =
       val argsBuilder = com.pulumi.aws.ec2.inputs.GetSubnetsArgs.builder
       com.pulumi.aws.ec2.Ec2Functions.getSubnets(args(argsBuilder).build)
 
     /** This resource can be useful for getting back a set of subnet IDs. */
-    def getSubnetsPlain(args: Endofunction[com.pulumi.aws.ec2.inputs.GetSubnetsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getSubnetsPlain(args: Endofunction[com.pulumi.aws.ec2.inputs.GetSubnetsPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.ec2.outputs.GetSubnetsResult] =
       val argsBuilder = com.pulumi.aws.ec2.inputs.GetSubnetsPlainArgs.builder
       com.pulumi.aws.ec2.Ec2Functions.getSubnetsPlain(args(argsBuilder).build)
 
     /** Provides information for multiple EC2 Transit Gateway Route Tables, such as their identifiers. */
-    def getTransitGatewayRouteTables(args: Endofunction[com.pulumi.aws.ec2.inputs.GetTransitGatewayRouteTablesArgs.Builder] = scala.Predef.identity):
+    inline def getTransitGatewayRouteTables(args: Endofunction[com.pulumi.aws.ec2.inputs.GetTransitGatewayRouteTablesArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.ec2.outputs.GetTransitGatewayRouteTablesResult] =
       val argsBuilder = com.pulumi.aws.ec2.inputs.GetTransitGatewayRouteTablesArgs.builder
       com.pulumi.aws.ec2.Ec2Functions.getTransitGatewayRouteTables(args(argsBuilder).build)
 
     /** Provides information for multiple EC2 Transit Gateway Route Tables, such as their identifiers. */
-    def getTransitGatewayRouteTablesPlain(args: Endofunction[com.pulumi.aws.ec2.inputs.GetTransitGatewayRouteTablesPlainArgs.Builder] = scala.Predef.identity):
+    inline def getTransitGatewayRouteTablesPlain(args: Endofunction[com.pulumi.aws.ec2.inputs.GetTransitGatewayRouteTablesPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.ec2.outputs.GetTransitGatewayRouteTablesResult] =
       val argsBuilder = com.pulumi.aws.ec2.inputs.GetTransitGatewayRouteTablesPlainArgs.builder
       com.pulumi.aws.ec2.Ec2Functions.getTransitGatewayRouteTablesPlain(args(argsBuilder).build)
@@ -1757,7 +1759,7 @@ object ec2:
      *  an input variable and needs to, for example, determine the CIDR block of that
      *  VPC.
      */
-    def getVpc(args: Endofunction[com.pulumi.aws.ec2.inputs.GetVpcArgs.Builder] = scala.Predef.identity):
+    inline def getVpc(args: Endofunction[com.pulumi.aws.ec2.inputs.GetVpcArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.ec2.outputs.GetVpcResult] =
       val argsBuilder = com.pulumi.aws.ec2.inputs.GetVpcArgs.builder
       com.pulumi.aws.ec2.Ec2Functions.getVpc(args(argsBuilder).build)
@@ -1769,19 +1771,19 @@ object ec2:
      *  an input variable and needs to, for example, determine the CIDR block of that
      *  VPC.
      */
-    def getVpcPlain(args: Endofunction[com.pulumi.aws.ec2.inputs.GetVpcPlainArgs.Builder] = scala.Predef.identity):
+    inline def getVpcPlain(args: Endofunction[com.pulumi.aws.ec2.inputs.GetVpcPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.ec2.outputs.GetVpcResult] =
       val argsBuilder = com.pulumi.aws.ec2.inputs.GetVpcPlainArgs.builder
       com.pulumi.aws.ec2.Ec2Functions.getVpcPlain(args(argsBuilder).build)
 
     /** Retrieve information about an EC2 DHCP Options configuration. */
-    def getVpcDhcpOptions(args: Endofunction[com.pulumi.aws.ec2.inputs.GetVpcDhcpOptionsArgs.Builder] = scala.Predef.identity):
+    inline def getVpcDhcpOptions(args: Endofunction[com.pulumi.aws.ec2.inputs.GetVpcDhcpOptionsArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.ec2.outputs.GetVpcDhcpOptionsResult] =
       val argsBuilder = com.pulumi.aws.ec2.inputs.GetVpcDhcpOptionsArgs.builder
       com.pulumi.aws.ec2.Ec2Functions.getVpcDhcpOptions(args(argsBuilder).build)
 
     /** Retrieve information about an EC2 DHCP Options configuration. */
-    def getVpcDhcpOptionsPlain(args: Endofunction[com.pulumi.aws.ec2.inputs.GetVpcDhcpOptionsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getVpcDhcpOptionsPlain(args: Endofunction[com.pulumi.aws.ec2.inputs.GetVpcDhcpOptionsPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.ec2.outputs.GetVpcDhcpOptionsResult] =
       val argsBuilder = com.pulumi.aws.ec2.inputs.GetVpcDhcpOptionsPlainArgs.builder
       com.pulumi.aws.ec2.Ec2Functions.getVpcDhcpOptionsPlain(args(argsBuilder).build)
@@ -1790,7 +1792,7 @@ object ec2:
      * The VPC Endpoint data source provides details about
      *  a specific VPC endpoint.
      */
-    def getVpcEndpoint(args: Endofunction[com.pulumi.aws.ec2.inputs.GetVpcEndpointArgs.Builder] = scala.Predef.identity):
+    inline def getVpcEndpoint(args: Endofunction[com.pulumi.aws.ec2.inputs.GetVpcEndpointArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.ec2.outputs.GetVpcEndpointResult] =
       val argsBuilder = com.pulumi.aws.ec2.inputs.GetVpcEndpointArgs.builder
       com.pulumi.aws.ec2.Ec2Functions.getVpcEndpoint(args(argsBuilder).build)
@@ -1799,7 +1801,7 @@ object ec2:
      * The VPC Endpoint data source provides details about
      *  a specific VPC endpoint.
      */
-    def getVpcEndpointPlain(args: Endofunction[com.pulumi.aws.ec2.inputs.GetVpcEndpointPlainArgs.Builder] = scala.Predef.identity):
+    inline def getVpcEndpointPlain(args: Endofunction[com.pulumi.aws.ec2.inputs.GetVpcEndpointPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.ec2.outputs.GetVpcEndpointResult] =
       val argsBuilder = com.pulumi.aws.ec2.inputs.GetVpcEndpointPlainArgs.builder
       com.pulumi.aws.ec2.Ec2Functions.getVpcEndpointPlain(args(argsBuilder).build)
@@ -1808,7 +1810,7 @@ object ec2:
      * The VPC Endpoint Service data source details about a specific service that
      *  can be specified when creating a VPC endpoint within the region configured in the provider.
      */
-    def getVpcEndpointService(args: Endofunction[com.pulumi.aws.ec2.inputs.GetVpcEndpointServiceArgs.Builder] = scala.Predef.identity):
+    inline def getVpcEndpointService(args: Endofunction[com.pulumi.aws.ec2.inputs.GetVpcEndpointServiceArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.ec2.outputs.GetVpcEndpointServiceResult] =
       val argsBuilder = com.pulumi.aws.ec2.inputs.GetVpcEndpointServiceArgs.builder
       com.pulumi.aws.ec2.Ec2Functions.getVpcEndpointService(args(argsBuilder).build)
@@ -1817,19 +1819,19 @@ object ec2:
      * The VPC Endpoint Service data source details about a specific service that
      *  can be specified when creating a VPC endpoint within the region configured in the provider.
      */
-    def getVpcEndpointServicePlain(args: Endofunction[com.pulumi.aws.ec2.inputs.GetVpcEndpointServicePlainArgs.Builder] = scala.Predef.identity):
+    inline def getVpcEndpointServicePlain(args: Endofunction[com.pulumi.aws.ec2.inputs.GetVpcEndpointServicePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.ec2.outputs.GetVpcEndpointServiceResult] =
       val argsBuilder = com.pulumi.aws.ec2.inputs.GetVpcEndpointServicePlainArgs.builder
       com.pulumi.aws.ec2.Ec2Functions.getVpcEndpointServicePlain(args(argsBuilder).build)
 
     /** Data source for managing a VPC IPAM. */
-    def getVpcIpam(args: Endofunction[com.pulumi.aws.ec2.inputs.GetVpcIpamArgs.Builder] = scala.Predef.identity):
+    inline def getVpcIpam(args: Endofunction[com.pulumi.aws.ec2.inputs.GetVpcIpamArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.ec2.outputs.GetVpcIpamResult] =
       val argsBuilder = com.pulumi.aws.ec2.inputs.GetVpcIpamArgs.builder
       com.pulumi.aws.ec2.Ec2Functions.getVpcIpam(args(argsBuilder).build)
 
     /** Data source for managing a VPC IPAM. */
-    def getVpcIpamPlain(args: Endofunction[com.pulumi.aws.ec2.inputs.GetVpcIpamPlainArgs.Builder] = scala.Predef.identity):
+    inline def getVpcIpamPlain(args: Endofunction[com.pulumi.aws.ec2.inputs.GetVpcIpamPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.ec2.outputs.GetVpcIpamResult] =
       val argsBuilder = com.pulumi.aws.ec2.inputs.GetVpcIpamPlainArgs.builder
       com.pulumi.aws.ec2.Ec2Functions.getVpcIpamPlain(args(argsBuilder).build)
@@ -1841,7 +1843,7 @@ object ec2:
      *  module and you need the pool&#39;s id as an input variable. For example, pools
      *  can be shared via RAM and used to create vpcs with CIDRs from that pool.
      */
-    def getVpcIpamPool(args: Endofunction[com.pulumi.aws.ec2.inputs.GetVpcIpamPoolArgs.Builder] = scala.Predef.identity):
+    inline def getVpcIpamPool(args: Endofunction[com.pulumi.aws.ec2.inputs.GetVpcIpamPoolArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.ec2.outputs.GetVpcIpamPoolResult] =
       val argsBuilder = com.pulumi.aws.ec2.inputs.GetVpcIpamPoolArgs.builder
       com.pulumi.aws.ec2.Ec2Functions.getVpcIpamPool(args(argsBuilder).build)
@@ -1853,7 +1855,7 @@ object ec2:
      *  module and you need the pool&#39;s id as an input variable. For example, pools
      *  can be shared via RAM and used to create vpcs with CIDRs from that pool.
      */
-    def getVpcIpamPoolPlain(args: Endofunction[com.pulumi.aws.ec2.inputs.GetVpcIpamPoolPlainArgs.Builder] = scala.Predef.identity):
+    inline def getVpcIpamPoolPlain(args: Endofunction[com.pulumi.aws.ec2.inputs.GetVpcIpamPoolPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.ec2.outputs.GetVpcIpamPoolResult] =
       val argsBuilder = com.pulumi.aws.ec2.inputs.GetVpcIpamPoolPlainArgs.builder
       com.pulumi.aws.ec2.Ec2Functions.getVpcIpamPoolPlain(args(argsBuilder).build)
@@ -1863,7 +1865,7 @@ object ec2:
      * 
      *  This resource can prove useful when an ipam pool was shared to your account and you want to know all (or a filtered list) of the CIDRs that are provisioned into the pool.
      */
-    def getVpcIpamPoolCidrs(args: Endofunction[com.pulumi.aws.ec2.inputs.GetVpcIpamPoolCidrsArgs.Builder] = scala.Predef.identity):
+    inline def getVpcIpamPoolCidrs(args: Endofunction[com.pulumi.aws.ec2.inputs.GetVpcIpamPoolCidrsArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.ec2.outputs.GetVpcIpamPoolCidrsResult] =
       val argsBuilder = com.pulumi.aws.ec2.inputs.GetVpcIpamPoolCidrsArgs.builder
       com.pulumi.aws.ec2.Ec2Functions.getVpcIpamPoolCidrs(args(argsBuilder).build)
@@ -1873,7 +1875,7 @@ object ec2:
      * 
      *  This resource can prove useful when an ipam pool was shared to your account and you want to know all (or a filtered list) of the CIDRs that are provisioned into the pool.
      */
-    def getVpcIpamPoolCidrsPlain(args: Endofunction[com.pulumi.aws.ec2.inputs.GetVpcIpamPoolCidrsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getVpcIpamPoolCidrsPlain(args: Endofunction[com.pulumi.aws.ec2.inputs.GetVpcIpamPoolCidrsPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.ec2.outputs.GetVpcIpamPoolCidrsResult] =
       val argsBuilder = com.pulumi.aws.ec2.inputs.GetVpcIpamPoolCidrsPlainArgs.builder
       com.pulumi.aws.ec2.Ec2Functions.getVpcIpamPoolCidrsPlain(args(argsBuilder).build)
@@ -1885,7 +1887,7 @@ object ec2:
      *  module and you need the pool ids as input variables. For example, pools
      *  can be shared via RAM and used to create vpcs with CIDRs from that pool.
      */
-    def getVpcIpamPools(args: Endofunction[com.pulumi.aws.ec2.inputs.GetVpcIpamPoolsArgs.Builder] = scala.Predef.identity):
+    inline def getVpcIpamPools(args: Endofunction[com.pulumi.aws.ec2.inputs.GetVpcIpamPoolsArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.ec2.outputs.GetVpcIpamPoolsResult] =
       val argsBuilder = com.pulumi.aws.ec2.inputs.GetVpcIpamPoolsArgs.builder
       com.pulumi.aws.ec2.Ec2Functions.getVpcIpamPools(args(argsBuilder).build)
@@ -1897,19 +1899,19 @@ object ec2:
      *  module and you need the pool ids as input variables. For example, pools
      *  can be shared via RAM and used to create vpcs with CIDRs from that pool.
      */
-    def getVpcIpamPoolsPlain(args: Endofunction[com.pulumi.aws.ec2.inputs.GetVpcIpamPoolsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getVpcIpamPoolsPlain(args: Endofunction[com.pulumi.aws.ec2.inputs.GetVpcIpamPoolsPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.ec2.outputs.GetVpcIpamPoolsResult] =
       val argsBuilder = com.pulumi.aws.ec2.inputs.GetVpcIpamPoolsPlainArgs.builder
       com.pulumi.aws.ec2.Ec2Functions.getVpcIpamPoolsPlain(args(argsBuilder).build)
 
     /** Data source for managing VPC IPAMs. */
-    def getVpcIpams(args: Endofunction[com.pulumi.aws.ec2.inputs.GetVpcIpamsArgs.Builder] = scala.Predef.identity):
+    inline def getVpcIpams(args: Endofunction[com.pulumi.aws.ec2.inputs.GetVpcIpamsArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.ec2.outputs.GetVpcIpamsResult] =
       val argsBuilder = com.pulumi.aws.ec2.inputs.GetVpcIpamsArgs.builder
       com.pulumi.aws.ec2.Ec2Functions.getVpcIpams(args(argsBuilder).build)
 
     /** Data source for managing VPC IPAMs. */
-    def getVpcIpamsPlain(args: Endofunction[com.pulumi.aws.ec2.inputs.GetVpcIpamsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getVpcIpamsPlain(args: Endofunction[com.pulumi.aws.ec2.inputs.GetVpcIpamsPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.ec2.outputs.GetVpcIpamsResult] =
       val argsBuilder = com.pulumi.aws.ec2.inputs.GetVpcIpamsPlainArgs.builder
       com.pulumi.aws.ec2.Ec2Functions.getVpcIpamsPlain(args(argsBuilder).build)
@@ -1918,7 +1920,7 @@ object ec2:
      * The VPC Peering Connection data source provides details about
      *  a specific VPC peering connection.
      */
-    def getVpcPeeringConnection(args: Endofunction[com.pulumi.aws.ec2.inputs.GetVpcPeeringConnectionArgs.Builder] = scala.Predef.identity):
+    inline def getVpcPeeringConnection(args: Endofunction[com.pulumi.aws.ec2.inputs.GetVpcPeeringConnectionArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.ec2.outputs.GetVpcPeeringConnectionResult] =
       val argsBuilder = com.pulumi.aws.ec2.inputs.GetVpcPeeringConnectionArgs.builder
       com.pulumi.aws.ec2.Ec2Functions.getVpcPeeringConnection(args(argsBuilder).build)
@@ -1927,7 +1929,7 @@ object ec2:
      * The VPC Peering Connection data source provides details about
      *  a specific VPC peering connection.
      */
-    def getVpcPeeringConnectionPlain(args: Endofunction[com.pulumi.aws.ec2.inputs.GetVpcPeeringConnectionPlainArgs.Builder] = scala.Predef.identity):
+    inline def getVpcPeeringConnectionPlain(args: Endofunction[com.pulumi.aws.ec2.inputs.GetVpcPeeringConnectionPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.ec2.outputs.GetVpcPeeringConnectionResult] =
       val argsBuilder = com.pulumi.aws.ec2.inputs.GetVpcPeeringConnectionPlainArgs.builder
       com.pulumi.aws.ec2.Ec2Functions.getVpcPeeringConnectionPlain(args(argsBuilder).build)
@@ -1939,7 +1941,7 @@ object ec2:
      *  Note: To use this data source in a count, the resources should exist before trying to access
      *  the data source.
      */
-    def getVpcPeeringConnections(args: Endofunction[com.pulumi.aws.ec2.inputs.GetVpcPeeringConnectionsArgs.Builder] = scala.Predef.identity):
+    inline def getVpcPeeringConnections(args: Endofunction[com.pulumi.aws.ec2.inputs.GetVpcPeeringConnectionsArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.ec2.outputs.GetVpcPeeringConnectionsResult] =
       val argsBuilder = com.pulumi.aws.ec2.inputs.GetVpcPeeringConnectionsArgs.builder
       com.pulumi.aws.ec2.Ec2Functions.getVpcPeeringConnections(args(argsBuilder).build)
@@ -1951,7 +1953,7 @@ object ec2:
      *  Note: To use this data source in a count, the resources should exist before trying to access
      *  the data source.
      */
-    def getVpcPeeringConnectionsPlain(args: Endofunction[com.pulumi.aws.ec2.inputs.GetVpcPeeringConnectionsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getVpcPeeringConnectionsPlain(args: Endofunction[com.pulumi.aws.ec2.inputs.GetVpcPeeringConnectionsPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.ec2.outputs.GetVpcPeeringConnectionsResult] =
       val argsBuilder = com.pulumi.aws.ec2.inputs.GetVpcPeeringConnectionsPlainArgs.builder
       com.pulumi.aws.ec2.Ec2Functions.getVpcPeeringConnectionsPlain(args(argsBuilder).build)
@@ -1961,7 +1963,7 @@ object ec2:
      * 
      *  The following example retrieves a list of VPC Ids with a custom tag of `service` set to a value of &#34;production&#34;.
      */
-    def getVpcs(args: Endofunction[com.pulumi.aws.ec2.inputs.GetVpcsArgs.Builder] = scala.Predef.identity):
+    inline def getVpcs(args: Endofunction[com.pulumi.aws.ec2.inputs.GetVpcsArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.ec2.outputs.GetVpcsResult] =
       val argsBuilder = com.pulumi.aws.ec2.inputs.GetVpcsArgs.builder
       com.pulumi.aws.ec2.Ec2Functions.getVpcs(args(argsBuilder).build)
@@ -1971,19 +1973,19 @@ object ec2:
      * 
      *  The following example retrieves a list of VPC Ids with a custom tag of `service` set to a value of &#34;production&#34;.
      */
-    def getVpcsPlain(args: Endofunction[com.pulumi.aws.ec2.inputs.GetVpcsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getVpcsPlain(args: Endofunction[com.pulumi.aws.ec2.inputs.GetVpcsPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.ec2.outputs.GetVpcsResult] =
       val argsBuilder = com.pulumi.aws.ec2.inputs.GetVpcsPlainArgs.builder
       com.pulumi.aws.ec2.Ec2Functions.getVpcsPlain(args(argsBuilder).build)
 
     /** Fetches details of a Site-to-Site VPN connection. A Site-to-Site VPN connection is an Internet Protocol security (IPsec) VPN connection between a VPC and an on-premises network. */
-    def getVpnConnection(args: Endofunction[com.pulumi.aws.ec2.inputs.GetVpnConnectionArgs.Builder] = scala.Predef.identity):
+    inline def getVpnConnection(args: Endofunction[com.pulumi.aws.ec2.inputs.GetVpnConnectionArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.ec2.outputs.GetVpnConnectionResult] =
       val argsBuilder = com.pulumi.aws.ec2.inputs.GetVpnConnectionArgs.builder
       com.pulumi.aws.ec2.Ec2Functions.getVpnConnection(args(argsBuilder).build)
 
     /** Fetches details of a Site-to-Site VPN connection. A Site-to-Site VPN connection is an Internet Protocol security (IPsec) VPN connection between a VPC and an on-premises network. */
-    def getVpnConnectionPlain(args: Endofunction[com.pulumi.aws.ec2.inputs.GetVpnConnectionPlainArgs.Builder] = scala.Predef.identity):
+    inline def getVpnConnectionPlain(args: Endofunction[com.pulumi.aws.ec2.inputs.GetVpnConnectionPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.ec2.outputs.GetVpnConnectionResult] =
       val argsBuilder = com.pulumi.aws.ec2.inputs.GetVpnConnectionPlainArgs.builder
       com.pulumi.aws.ec2.Ec2Functions.getVpnConnectionPlain(args(argsBuilder).build)
@@ -1992,7 +1994,7 @@ object ec2:
      * The VPN Gateway data source provides details about
      *  a specific VPN gateway.
      */
-    def getVpnGateway(args: Endofunction[com.pulumi.aws.ec2.inputs.GetVpnGatewayArgs.Builder] = scala.Predef.identity):
+    inline def getVpnGateway(args: Endofunction[com.pulumi.aws.ec2.inputs.GetVpnGatewayArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.ec2.outputs.GetVpnGatewayResult] =
       val argsBuilder = com.pulumi.aws.ec2.inputs.GetVpnGatewayArgs.builder
       com.pulumi.aws.ec2.Ec2Functions.getVpnGateway(args(argsBuilder).build)
@@ -2001,7 +2003,7 @@ object ec2:
      * The VPN Gateway data source provides details about
      *  a specific VPN gateway.
      */
-    def getVpnGatewayPlain(args: Endofunction[com.pulumi.aws.ec2.inputs.GetVpnGatewayPlainArgs.Builder] = scala.Predef.identity):
+    inline def getVpnGatewayPlain(args: Endofunction[com.pulumi.aws.ec2.inputs.GetVpnGatewayPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.ec2.outputs.GetVpnGatewayResult] =
       val argsBuilder = com.pulumi.aws.ec2.inputs.GetVpnGatewayPlainArgs.builder
       com.pulumi.aws.ec2.Ec2Functions.getVpnGatewayPlain(args(argsBuilder).build)

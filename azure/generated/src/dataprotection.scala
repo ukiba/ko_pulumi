@@ -214,19 +214,21 @@ object dataprotection:
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
-  type DataprotectionFunctions = com.pulumi.azure.dataprotection.DataprotectionFunctions
   object DataprotectionFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.azure.dataprotection.DataprotectionFunctions.*
-  extension (self: DataprotectionFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /** Use this data source to access information about an existing Backup Vault. */
-    def getBackupVault(args: Endofunction[com.pulumi.azure.dataprotection.inputs.GetBackupVaultArgs.Builder] = scala.Predef.identity):
+    inline def getBackupVault(args: Endofunction[com.pulumi.azure.dataprotection.inputs.GetBackupVaultArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.dataprotection.outputs.GetBackupVaultResult] =
       val argsBuilder = com.pulumi.azure.dataprotection.inputs.GetBackupVaultArgs.builder
       com.pulumi.azure.dataprotection.DataprotectionFunctions.getBackupVault(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing Backup Vault. */
-    def getBackupVaultPlain(args: Endofunction[com.pulumi.azure.dataprotection.inputs.GetBackupVaultPlainArgs.Builder] = scala.Predef.identity):
+    inline def getBackupVaultPlain(args: Endofunction[com.pulumi.azure.dataprotection.inputs.GetBackupVaultPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.dataprotection.outputs.GetBackupVaultResult] =
       val argsBuilder = com.pulumi.azure.dataprotection.inputs.GetBackupVaultPlainArgs.builder
       com.pulumi.azure.dataprotection.DataprotectionFunctions.getBackupVaultPlain(args(argsBuilder).build)

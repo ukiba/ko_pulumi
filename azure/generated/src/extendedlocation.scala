@@ -37,19 +37,21 @@ object extendedlocation:
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
-  type ExtendedlocationFunctions = com.pulumi.azure.extendedlocation.ExtendedlocationFunctions
   object ExtendedlocationFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.azure.extendedlocation.ExtendedlocationFunctions.*
-  extension (self: ExtendedlocationFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /** Use this data source to access information about an existing Custom Location within an Extended Location. */
-    def getCustomLocation(args: Endofunction[com.pulumi.azure.extendedlocation.inputs.GetCustomLocationArgs.Builder] = scala.Predef.identity):
+    inline def getCustomLocation(args: Endofunction[com.pulumi.azure.extendedlocation.inputs.GetCustomLocationArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.extendedlocation.outputs.GetCustomLocationResult] =
       val argsBuilder = com.pulumi.azure.extendedlocation.inputs.GetCustomLocationArgs.builder
       com.pulumi.azure.extendedlocation.ExtendedlocationFunctions.getCustomLocation(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing Custom Location within an Extended Location. */
-    def getCustomLocationPlain(args: Endofunction[com.pulumi.azure.extendedlocation.inputs.GetCustomLocationPlainArgs.Builder] = scala.Predef.identity):
+    inline def getCustomLocationPlain(args: Endofunction[com.pulumi.azure.extendedlocation.inputs.GetCustomLocationPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.extendedlocation.outputs.GetCustomLocationResult] =
       val argsBuilder = com.pulumi.azure.extendedlocation.inputs.GetCustomLocationPlainArgs.builder
       com.pulumi.azure.extendedlocation.ExtendedlocationFunctions.getCustomLocationPlain(args(argsBuilder).build)

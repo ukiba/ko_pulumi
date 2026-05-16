@@ -187,18 +187,20 @@ object firestore:
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
-  type FirestoreFunctions = com.pulumi.gcp.firestore.FirestoreFunctions
   object FirestoreFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.gcp.firestore.FirestoreFunctions.*
-  extension (self: FirestoreFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /**
      * Reads a document from a Firestore database.
      *  See [the official documentation](https://cloud.google.com/firestore/native/docs/)
      *  and
      *  [API](https://cloud.google.com/firestore/docs/reference/rest/v1/projects.databases.documents/get/).
      */
-    def getDocument(args: Endofunction[com.pulumi.gcp.firestore.inputs.GetDocumentArgs.Builder] = scala.Predef.identity):
+    inline def getDocument(args: Endofunction[com.pulumi.gcp.firestore.inputs.GetDocumentArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.firestore.outputs.GetDocumentResult] =
       val argsBuilder = com.pulumi.gcp.firestore.inputs.GetDocumentArgs.builder
       com.pulumi.gcp.firestore.FirestoreFunctions.getDocument(args(argsBuilder).build)
@@ -209,7 +211,7 @@ object firestore:
      *  and
      *  [API](https://cloud.google.com/firestore/docs/reference/rest/v1/projects.databases.documents/get/).
      */
-    def getDocumentPlain(args: Endofunction[com.pulumi.gcp.firestore.inputs.GetDocumentPlainArgs.Builder] = scala.Predef.identity):
+    inline def getDocumentPlain(args: Endofunction[com.pulumi.gcp.firestore.inputs.GetDocumentPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.firestore.outputs.GetDocumentResult] =
       val argsBuilder = com.pulumi.gcp.firestore.inputs.GetDocumentPlainArgs.builder
       com.pulumi.gcp.firestore.FirestoreFunctions.getDocumentPlain(args(argsBuilder).build)

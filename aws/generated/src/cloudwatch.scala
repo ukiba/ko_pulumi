@@ -539,19 +539,21 @@ object cloudwatch:
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
-  type CloudwatchFunctions = com.pulumi.aws.cloudwatch.CloudwatchFunctions
   object CloudwatchFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.aws.cloudwatch.CloudwatchFunctions.*
-  extension (self: CloudwatchFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /** Data source for managing an AWS CloudWatch Contributor Managed Insight Rules. */
-    def getContributorManagedInsightRules(args: Endofunction[com.pulumi.aws.cloudwatch.inputs.GetContributorManagedInsightRulesArgs.Builder] = scala.Predef.identity):
+    inline def getContributorManagedInsightRules(args: Endofunction[com.pulumi.aws.cloudwatch.inputs.GetContributorManagedInsightRulesArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.cloudwatch.outputs.GetContributorManagedInsightRulesResult] =
       val argsBuilder = com.pulumi.aws.cloudwatch.inputs.GetContributorManagedInsightRulesArgs.builder
       com.pulumi.aws.cloudwatch.CloudwatchFunctions.getContributorManagedInsightRules(args(argsBuilder).build)
 
     /** Data source for managing an AWS CloudWatch Contributor Managed Insight Rules. */
-    def getContributorManagedInsightRulesPlain(args: Endofunction[com.pulumi.aws.cloudwatch.inputs.GetContributorManagedInsightRulesPlainArgs.Builder] = scala.Predef.identity):
+    inline def getContributorManagedInsightRulesPlain(args: Endofunction[com.pulumi.aws.cloudwatch.inputs.GetContributorManagedInsightRulesPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.cloudwatch.outputs.GetContributorManagedInsightRulesResult] =
       val argsBuilder = com.pulumi.aws.cloudwatch.inputs.GetContributorManagedInsightRulesPlainArgs.builder
       com.pulumi.aws.cloudwatch.CloudwatchFunctions.getContributorManagedInsightRulesPlain(args(argsBuilder).build)
@@ -561,7 +563,7 @@ object cloudwatch:
      *  EventBridge event bus. Use this data source to compute the ARN of
      *  an event bus, given the name of the bus.
      */
-    def getEventBus(args: Endofunction[com.pulumi.aws.cloudwatch.inputs.GetEventBusArgs.Builder] = scala.Predef.identity):
+    inline def getEventBus(args: Endofunction[com.pulumi.aws.cloudwatch.inputs.GetEventBusArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.cloudwatch.outputs.GetEventBusResult] =
       val argsBuilder = com.pulumi.aws.cloudwatch.inputs.GetEventBusArgs.builder
       com.pulumi.aws.cloudwatch.CloudwatchFunctions.getEventBus(args(argsBuilder).build)
@@ -571,19 +573,19 @@ object cloudwatch:
      *  EventBridge event bus. Use this data source to compute the ARN of
      *  an event bus, given the name of the bus.
      */
-    def getEventBusPlain(args: Endofunction[com.pulumi.aws.cloudwatch.inputs.GetEventBusPlainArgs.Builder] = scala.Predef.identity):
+    inline def getEventBusPlain(args: Endofunction[com.pulumi.aws.cloudwatch.inputs.GetEventBusPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.cloudwatch.outputs.GetEventBusResult] =
       val argsBuilder = com.pulumi.aws.cloudwatch.inputs.GetEventBusPlainArgs.builder
       com.pulumi.aws.cloudwatch.CloudwatchFunctions.getEventBusPlain(args(argsBuilder).build)
 
     /** Data source for managing an AWS EventBridge Event Buses. */
-    def getEventBuses(args: Endofunction[com.pulumi.aws.cloudwatch.inputs.GetEventBusesArgs.Builder] = scala.Predef.identity):
+    inline def getEventBuses(args: Endofunction[com.pulumi.aws.cloudwatch.inputs.GetEventBusesArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.cloudwatch.outputs.GetEventBusesResult] =
       val argsBuilder = com.pulumi.aws.cloudwatch.inputs.GetEventBusesArgs.builder
       com.pulumi.aws.cloudwatch.CloudwatchFunctions.getEventBuses(args(argsBuilder).build)
 
     /** Data source for managing an AWS EventBridge Event Buses. */
-    def getEventBusesPlain(args: Endofunction[com.pulumi.aws.cloudwatch.inputs.GetEventBusesPlainArgs.Builder] = scala.Predef.identity):
+    inline def getEventBusesPlain(args: Endofunction[com.pulumi.aws.cloudwatch.inputs.GetEventBusesPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.cloudwatch.outputs.GetEventBusesResult] =
       val argsBuilder = com.pulumi.aws.cloudwatch.inputs.GetEventBusesPlainArgs.builder
       com.pulumi.aws.cloudwatch.CloudwatchFunctions.getEventBusesPlain(args(argsBuilder).build)
@@ -593,7 +595,7 @@ object cloudwatch:
      * 
      *  &gt; **Note:** EventBridge was formerly known as CloudWatch Events. The functionality is identical.
      */
-    def getEventConnection(args: Endofunction[com.pulumi.aws.cloudwatch.inputs.GetEventConnectionArgs.Builder] = scala.Predef.identity):
+    inline def getEventConnection(args: Endofunction[com.pulumi.aws.cloudwatch.inputs.GetEventConnectionArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.cloudwatch.outputs.GetEventConnectionResult] =
       val argsBuilder = com.pulumi.aws.cloudwatch.inputs.GetEventConnectionArgs.builder
       com.pulumi.aws.cloudwatch.CloudwatchFunctions.getEventConnection(args(argsBuilder).build)
@@ -603,7 +605,7 @@ object cloudwatch:
      * 
      *  &gt; **Note:** EventBridge was formerly known as CloudWatch Events. The functionality is identical.
      */
-    def getEventConnectionPlain(args: Endofunction[com.pulumi.aws.cloudwatch.inputs.GetEventConnectionPlainArgs.Builder] = scala.Predef.identity):
+    inline def getEventConnectionPlain(args: Endofunction[com.pulumi.aws.cloudwatch.inputs.GetEventConnectionPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.cloudwatch.outputs.GetEventConnectionResult] =
       val argsBuilder = com.pulumi.aws.cloudwatch.inputs.GetEventConnectionPlainArgs.builder
       com.pulumi.aws.cloudwatch.CloudwatchFunctions.getEventConnectionPlain(args(argsBuilder).build)
@@ -613,7 +615,7 @@ object cloudwatch:
      * 
      *  &gt; **Note:** EventBridge was formerly known as CloudWatch Events. The functionality is identical.
      */
-    def getEventSource(args: Endofunction[com.pulumi.aws.cloudwatch.inputs.GetEventSourceArgs.Builder] = scala.Predef.identity):
+    inline def getEventSource(args: Endofunction[com.pulumi.aws.cloudwatch.inputs.GetEventSourceArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.cloudwatch.outputs.GetEventSourceResult] =
       val argsBuilder = com.pulumi.aws.cloudwatch.inputs.GetEventSourceArgs.builder
       com.pulumi.aws.cloudwatch.CloudwatchFunctions.getEventSource(args(argsBuilder).build)
@@ -623,7 +625,7 @@ object cloudwatch:
      * 
      *  &gt; **Note:** EventBridge was formerly known as CloudWatch Events. The functionality is identical.
      */
-    def getEventSourcePlain(args: Endofunction[com.pulumi.aws.cloudwatch.inputs.GetEventSourcePlainArgs.Builder] = scala.Predef.identity):
+    inline def getEventSourcePlain(args: Endofunction[com.pulumi.aws.cloudwatch.inputs.GetEventSourcePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.cloudwatch.outputs.GetEventSourceResult] =
       val argsBuilder = com.pulumi.aws.cloudwatch.inputs.GetEventSourcePlainArgs.builder
       com.pulumi.aws.cloudwatch.CloudwatchFunctions.getEventSourcePlain(args(argsBuilder).build)
@@ -633,7 +635,7 @@ object cloudwatch:
      * 
      *  &gt; For more information about data protection policies, see the [Help protect sensitive log data with masking](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/mask-sensitive-log-data.html).
      */
-    def getLogDataProtectionPolicyDocument(args: Endofunction[com.pulumi.aws.cloudwatch.inputs.GetLogDataProtectionPolicyDocumentArgs.Builder] = scala.Predef.identity):
+    inline def getLogDataProtectionPolicyDocument(args: Endofunction[com.pulumi.aws.cloudwatch.inputs.GetLogDataProtectionPolicyDocumentArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.cloudwatch.outputs.GetLogDataProtectionPolicyDocumentResult] =
       val argsBuilder = com.pulumi.aws.cloudwatch.inputs.GetLogDataProtectionPolicyDocumentArgs.builder
       com.pulumi.aws.cloudwatch.CloudwatchFunctions.getLogDataProtectionPolicyDocument(args(argsBuilder).build)
@@ -643,31 +645,31 @@ object cloudwatch:
      * 
      *  &gt; For more information about data protection policies, see the [Help protect sensitive log data with masking](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/mask-sensitive-log-data.html).
      */
-    def getLogDataProtectionPolicyDocumentPlain(args: Endofunction[com.pulumi.aws.cloudwatch.inputs.GetLogDataProtectionPolicyDocumentPlainArgs.Builder] = scala.Predef.identity):
+    inline def getLogDataProtectionPolicyDocumentPlain(args: Endofunction[com.pulumi.aws.cloudwatch.inputs.GetLogDataProtectionPolicyDocumentPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.cloudwatch.outputs.GetLogDataProtectionPolicyDocumentResult] =
       val argsBuilder = com.pulumi.aws.cloudwatch.inputs.GetLogDataProtectionPolicyDocumentPlainArgs.builder
       com.pulumi.aws.cloudwatch.CloudwatchFunctions.getLogDataProtectionPolicyDocumentPlain(args(argsBuilder).build)
 
     /** Use this data source to get information about an AWS Cloudwatch Log Group */
-    def getLogGroup(args: Endofunction[com.pulumi.aws.cloudwatch.inputs.GetLogGroupArgs.Builder] = scala.Predef.identity):
+    inline def getLogGroup(args: Endofunction[com.pulumi.aws.cloudwatch.inputs.GetLogGroupArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.cloudwatch.outputs.GetLogGroupResult] =
       val argsBuilder = com.pulumi.aws.cloudwatch.inputs.GetLogGroupArgs.builder
       com.pulumi.aws.cloudwatch.CloudwatchFunctions.getLogGroup(args(argsBuilder).build)
 
     /** Use this data source to get information about an AWS Cloudwatch Log Group */
-    def getLogGroupPlain(args: Endofunction[com.pulumi.aws.cloudwatch.inputs.GetLogGroupPlainArgs.Builder] = scala.Predef.identity):
+    inline def getLogGroupPlain(args: Endofunction[com.pulumi.aws.cloudwatch.inputs.GetLogGroupPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.cloudwatch.outputs.GetLogGroupResult] =
       val argsBuilder = com.pulumi.aws.cloudwatch.inputs.GetLogGroupPlainArgs.builder
       com.pulumi.aws.cloudwatch.CloudwatchFunctions.getLogGroupPlain(args(argsBuilder).build)
 
     /** Use this data source to get a list of AWS Cloudwatch Log Groups */
-    def getLogGroups(args: Endofunction[com.pulumi.aws.cloudwatch.inputs.GetLogGroupsArgs.Builder] = scala.Predef.identity):
+    inline def getLogGroups(args: Endofunction[com.pulumi.aws.cloudwatch.inputs.GetLogGroupsArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.cloudwatch.outputs.GetLogGroupsResult] =
       val argsBuilder = com.pulumi.aws.cloudwatch.inputs.GetLogGroupsArgs.builder
       com.pulumi.aws.cloudwatch.CloudwatchFunctions.getLogGroups(args(argsBuilder).build)
 
     /** Use this data source to get a list of AWS Cloudwatch Log Groups */
-    def getLogGroupsPlain(args: Endofunction[com.pulumi.aws.cloudwatch.inputs.GetLogGroupsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getLogGroupsPlain(args: Endofunction[com.pulumi.aws.cloudwatch.inputs.GetLogGroupsPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.cloudwatch.outputs.GetLogGroupsResult] =
       val argsBuilder = com.pulumi.aws.cloudwatch.inputs.GetLogGroupsPlainArgs.builder
       com.pulumi.aws.cloudwatch.CloudwatchFunctions.getLogGroupsPlain(args(argsBuilder).build)

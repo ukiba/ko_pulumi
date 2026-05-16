@@ -89,31 +89,33 @@ object sfn:
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
-  type SfnFunctions = com.pulumi.aws.sfn.SfnFunctions
   object SfnFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.aws.sfn.SfnFunctions.*
-  extension (self: SfnFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /** Provides a Step Functions Activity data source */
-    def getActivity(args: Endofunction[com.pulumi.aws.sfn.inputs.GetActivityArgs.Builder] = scala.Predef.identity):
+    inline def getActivity(args: Endofunction[com.pulumi.aws.sfn.inputs.GetActivityArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.sfn.outputs.GetActivityResult] =
       val argsBuilder = com.pulumi.aws.sfn.inputs.GetActivityArgs.builder
       com.pulumi.aws.sfn.SfnFunctions.getActivity(args(argsBuilder).build)
 
     /** Provides a Step Functions Activity data source */
-    def getActivityPlain(args: Endofunction[com.pulumi.aws.sfn.inputs.GetActivityPlainArgs.Builder] = scala.Predef.identity):
+    inline def getActivityPlain(args: Endofunction[com.pulumi.aws.sfn.inputs.GetActivityPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.sfn.outputs.GetActivityResult] =
       val argsBuilder = com.pulumi.aws.sfn.inputs.GetActivityPlainArgs.builder
       com.pulumi.aws.sfn.SfnFunctions.getActivityPlain(args(argsBuilder).build)
 
     /** Data source for managing an AWS SFN (Step Functions) State Machine Alias. */
-    def getAlias(args: Endofunction[com.pulumi.aws.sfn.inputs.GetAliasArgs.Builder] = scala.Predef.identity):
+    inline def getAlias(args: Endofunction[com.pulumi.aws.sfn.inputs.GetAliasArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.sfn.outputs.GetAliasResult] =
       val argsBuilder = com.pulumi.aws.sfn.inputs.GetAliasArgs.builder
       com.pulumi.aws.sfn.SfnFunctions.getAlias(args(argsBuilder).build)
 
     /** Data source for managing an AWS SFN (Step Functions) State Machine Alias. */
-    def getAliasPlain(args: Endofunction[com.pulumi.aws.sfn.inputs.GetAliasPlainArgs.Builder] = scala.Predef.identity):
+    inline def getAliasPlain(args: Endofunction[com.pulumi.aws.sfn.inputs.GetAliasPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.sfn.outputs.GetAliasResult] =
       val argsBuilder = com.pulumi.aws.sfn.inputs.GetAliasPlainArgs.builder
       com.pulumi.aws.sfn.SfnFunctions.getAliasPlain(args(argsBuilder).build)
@@ -123,7 +125,7 @@ object sfn:
      *  Function (SFN). By using this data source, you can reference a
      *  state machine without having to hard code the ARNs as input.
      */
-    def getStateMachine(args: Endofunction[com.pulumi.aws.sfn.inputs.GetStateMachineArgs.Builder] = scala.Predef.identity):
+    inline def getStateMachine(args: Endofunction[com.pulumi.aws.sfn.inputs.GetStateMachineArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.sfn.outputs.GetStateMachineResult] =
       val argsBuilder = com.pulumi.aws.sfn.inputs.GetStateMachineArgs.builder
       com.pulumi.aws.sfn.SfnFunctions.getStateMachine(args(argsBuilder).build)
@@ -133,19 +135,19 @@ object sfn:
      *  Function (SFN). By using this data source, you can reference a
      *  state machine without having to hard code the ARNs as input.
      */
-    def getStateMachinePlain(args: Endofunction[com.pulumi.aws.sfn.inputs.GetStateMachinePlainArgs.Builder] = scala.Predef.identity):
+    inline def getStateMachinePlain(args: Endofunction[com.pulumi.aws.sfn.inputs.GetStateMachinePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.sfn.outputs.GetStateMachineResult] =
       val argsBuilder = com.pulumi.aws.sfn.inputs.GetStateMachinePlainArgs.builder
       com.pulumi.aws.sfn.SfnFunctions.getStateMachinePlain(args(argsBuilder).build)
 
     /** Data source for managing an AWS SFN (Step Functions) State Machine Versions. */
-    def getStateMachineVersions(args: Endofunction[com.pulumi.aws.sfn.inputs.GetStateMachineVersionsArgs.Builder] = scala.Predef.identity):
+    inline def getStateMachineVersions(args: Endofunction[com.pulumi.aws.sfn.inputs.GetStateMachineVersionsArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.sfn.outputs.GetStateMachineVersionsResult] =
       val argsBuilder = com.pulumi.aws.sfn.inputs.GetStateMachineVersionsArgs.builder
       com.pulumi.aws.sfn.SfnFunctions.getStateMachineVersions(args(argsBuilder).build)
 
     /** Data source for managing an AWS SFN (Step Functions) State Machine Versions. */
-    def getStateMachineVersionsPlain(args: Endofunction[com.pulumi.aws.sfn.inputs.GetStateMachineVersionsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getStateMachineVersionsPlain(args: Endofunction[com.pulumi.aws.sfn.inputs.GetStateMachineVersionsPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.sfn.outputs.GetStateMachineVersionsResult] =
       val argsBuilder = com.pulumi.aws.sfn.inputs.GetStateMachineVersionsPlainArgs.builder
       com.pulumi.aws.sfn.SfnFunctions.getStateMachineVersionsPlain(args(argsBuilder).build)

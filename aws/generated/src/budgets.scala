@@ -4,19 +4,21 @@ package aws
 import com.pulumi.resources.CustomResourceOptions
 
 object budgets:
-  type BudgetsFunctions = com.pulumi.aws.budgets.BudgetsFunctions
   object BudgetsFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.aws.budgets.BudgetsFunctions.*
-  extension (self: BudgetsFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /** Data source for managing an AWS Web Services Budgets Budget. */
-    def getBudget(args: Endofunction[com.pulumi.aws.budgets.inputs.GetBudgetArgs.Builder] = scala.Predef.identity):
+    inline def getBudget(args: Endofunction[com.pulumi.aws.budgets.inputs.GetBudgetArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.budgets.outputs.GetBudgetResult] =
       val argsBuilder = com.pulumi.aws.budgets.inputs.GetBudgetArgs.builder
       com.pulumi.aws.budgets.BudgetsFunctions.getBudget(args(argsBuilder).build)
 
     /** Data source for managing an AWS Web Services Budgets Budget. */
-    def getBudgetPlain(args: Endofunction[com.pulumi.aws.budgets.inputs.GetBudgetPlainArgs.Builder] = scala.Predef.identity):
+    inline def getBudgetPlain(args: Endofunction[com.pulumi.aws.budgets.inputs.GetBudgetPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.budgets.outputs.GetBudgetResult] =
       val argsBuilder = com.pulumi.aws.budgets.inputs.GetBudgetPlainArgs.builder
       com.pulumi.aws.budgets.BudgetsFunctions.getBudgetPlain(args(argsBuilder).build)

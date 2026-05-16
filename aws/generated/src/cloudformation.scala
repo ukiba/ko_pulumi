@@ -95,19 +95,21 @@ object cloudformation:
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
-  type CloudformationFunctions = com.pulumi.aws.cloudformation.CloudformationFunctions
   object CloudformationFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.aws.cloudformation.CloudformationFunctions.*
-  extension (self: CloudformationFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /** Provides details about a CloudFormation Type. */
-    def getCloudFormationType(args: Endofunction[com.pulumi.aws.cloudformation.inputs.GetCloudFormationTypeArgs.Builder] = scala.Predef.identity):
+    inline def getCloudFormationType(args: Endofunction[com.pulumi.aws.cloudformation.inputs.GetCloudFormationTypeArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.cloudformation.outputs.GetCloudFormationTypeResult] =
       val argsBuilder = com.pulumi.aws.cloudformation.inputs.GetCloudFormationTypeArgs.builder
       com.pulumi.aws.cloudformation.CloudformationFunctions.getCloudFormationType(args(argsBuilder).build)
 
     /** Provides details about a CloudFormation Type. */
-    def getCloudFormationTypePlain(args: Endofunction[com.pulumi.aws.cloudformation.inputs.GetCloudFormationTypePlainArgs.Builder] = scala.Predef.identity):
+    inline def getCloudFormationTypePlain(args: Endofunction[com.pulumi.aws.cloudformation.inputs.GetCloudFormationTypePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.cloudformation.outputs.GetCloudFormationTypeResult] =
       val argsBuilder = com.pulumi.aws.cloudformation.inputs.GetCloudFormationTypePlainArgs.builder
       com.pulumi.aws.cloudformation.CloudformationFunctions.getCloudFormationTypePlain(args(argsBuilder).build)
@@ -118,7 +120,7 @@ object cloudformation:
      * 
      *   &gt; Note: If you are trying to use a value from a Cloudformation Stack in the same deployment please use normal interpolation or Cloudformation Outputs.
      */
-    def getExport(args: Endofunction[com.pulumi.aws.cloudformation.inputs.GetExportArgs.Builder] = scala.Predef.identity):
+    inline def getExport(args: Endofunction[com.pulumi.aws.cloudformation.inputs.GetExportArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.cloudformation.outputs.GetExportResult] =
       val argsBuilder = com.pulumi.aws.cloudformation.inputs.GetExportArgs.builder
       com.pulumi.aws.cloudformation.CloudformationFunctions.getExport(args(argsBuilder).build)
@@ -129,7 +131,7 @@ object cloudformation:
      * 
      *   &gt; Note: If you are trying to use a value from a Cloudformation Stack in the same deployment please use normal interpolation or Cloudformation Outputs.
      */
-    def getExportPlain(args: Endofunction[com.pulumi.aws.cloudformation.inputs.GetExportPlainArgs.Builder] = scala.Predef.identity):
+    inline def getExportPlain(args: Endofunction[com.pulumi.aws.cloudformation.inputs.GetExportPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.cloudformation.outputs.GetExportResult] =
       val argsBuilder = com.pulumi.aws.cloudformation.inputs.GetExportPlainArgs.builder
       com.pulumi.aws.cloudformation.CloudformationFunctions.getExportPlain(args(argsBuilder).build)
@@ -138,7 +140,7 @@ object cloudformation:
      * The CloudFormation Stack data source allows access to stack
      *  outputs and other useful data including the template body.
      */
-    def getStack(args: Endofunction[com.pulumi.aws.cloudformation.inputs.GetStackArgs.Builder] = scala.Predef.identity):
+    inline def getStack(args: Endofunction[com.pulumi.aws.cloudformation.inputs.GetStackArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.cloudformation.outputs.GetStackResult] =
       val argsBuilder = com.pulumi.aws.cloudformation.inputs.GetStackArgs.builder
       com.pulumi.aws.cloudformation.CloudformationFunctions.getStack(args(argsBuilder).build)
@@ -147,7 +149,7 @@ object cloudformation:
      * The CloudFormation Stack data source allows access to stack
      *  outputs and other useful data including the template body.
      */
-    def getStackPlain(args: Endofunction[com.pulumi.aws.cloudformation.inputs.GetStackPlainArgs.Builder] = scala.Predef.identity):
+    inline def getStackPlain(args: Endofunction[com.pulumi.aws.cloudformation.inputs.GetStackPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.cloudformation.outputs.GetStackResult] =
       val argsBuilder = com.pulumi.aws.cloudformation.inputs.GetStackPlainArgs.builder
       com.pulumi.aws.cloudformation.CloudformationFunctions.getStackPlain(args(argsBuilder).build)

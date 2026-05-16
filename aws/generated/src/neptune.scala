@@ -109,17 +109,19 @@ object neptune:
         com.pulumi.aws.neptune.ClusterArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
 
-  type NeptuneFunctions = com.pulumi.aws.neptune.NeptuneFunctions
   object NeptuneFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.aws.neptune.NeptuneFunctions.*
-  extension (self: NeptuneFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /**
      * Information about a Neptune engine version.
      * 
      *  &gt; **Note:** If AWS returns multiple matching engine versions, this data source will produce a `multiple Neptune engine versions` error. To avoid this, provide additional criteria to narrow the results or use the `latest` argument to select a single version. See the Argument Reference for details.
      */
-    def getEngineVersion(args: Endofunction[com.pulumi.aws.neptune.inputs.GetEngineVersionArgs.Builder] = scala.Predef.identity):
+    inline def getEngineVersion(args: Endofunction[com.pulumi.aws.neptune.inputs.GetEngineVersionArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.neptune.outputs.GetEngineVersionResult] =
       val argsBuilder = com.pulumi.aws.neptune.inputs.GetEngineVersionArgs.builder
       com.pulumi.aws.neptune.NeptuneFunctions.getEngineVersion(args(argsBuilder).build)
@@ -129,19 +131,19 @@ object neptune:
      * 
      *  &gt; **Note:** If AWS returns multiple matching engine versions, this data source will produce a `multiple Neptune engine versions` error. To avoid this, provide additional criteria to narrow the results or use the `latest` argument to select a single version. See the Argument Reference for details.
      */
-    def getEngineVersionPlain(args: Endofunction[com.pulumi.aws.neptune.inputs.GetEngineVersionPlainArgs.Builder] = scala.Predef.identity):
+    inline def getEngineVersionPlain(args: Endofunction[com.pulumi.aws.neptune.inputs.GetEngineVersionPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.neptune.outputs.GetEngineVersionResult] =
       val argsBuilder = com.pulumi.aws.neptune.inputs.GetEngineVersionPlainArgs.builder
       com.pulumi.aws.neptune.NeptuneFunctions.getEngineVersionPlain(args(argsBuilder).build)
 
     /** Information about Neptune orderable DB instances. */
-    def getOrderableDbInstance(args: Endofunction[com.pulumi.aws.neptune.inputs.GetOrderableDbInstanceArgs.Builder] = scala.Predef.identity):
+    inline def getOrderableDbInstance(args: Endofunction[com.pulumi.aws.neptune.inputs.GetOrderableDbInstanceArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.neptune.outputs.GetOrderableDbInstanceResult] =
       val argsBuilder = com.pulumi.aws.neptune.inputs.GetOrderableDbInstanceArgs.builder
       com.pulumi.aws.neptune.NeptuneFunctions.getOrderableDbInstance(args(argsBuilder).build)
 
     /** Information about Neptune orderable DB instances. */
-    def getOrderableDbInstancePlain(args: Endofunction[com.pulumi.aws.neptune.inputs.GetOrderableDbInstancePlainArgs.Builder] = scala.Predef.identity):
+    inline def getOrderableDbInstancePlain(args: Endofunction[com.pulumi.aws.neptune.inputs.GetOrderableDbInstancePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.neptune.outputs.GetOrderableDbInstanceResult] =
       val argsBuilder = com.pulumi.aws.neptune.inputs.GetOrderableDbInstancePlainArgs.builder
       com.pulumi.aws.neptune.NeptuneFunctions.getOrderableDbInstancePlain(args(argsBuilder).build)

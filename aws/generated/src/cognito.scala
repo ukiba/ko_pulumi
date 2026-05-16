@@ -169,103 +169,105 @@ object cognito:
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
-  type CognitoFunctions = com.pulumi.aws.cognito.CognitoFunctions
   object CognitoFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.aws.cognito.CognitoFunctions.*
-  extension (self: CognitoFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /** Data source for managing an AWS Cognito Identity Pool. */
-    def getIdentityPool(args: Endofunction[com.pulumi.aws.cognito.inputs.GetIdentityPoolArgs.Builder] = scala.Predef.identity):
+    inline def getIdentityPool(args: Endofunction[com.pulumi.aws.cognito.inputs.GetIdentityPoolArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.cognito.outputs.GetIdentityPoolResult] =
       val argsBuilder = com.pulumi.aws.cognito.inputs.GetIdentityPoolArgs.builder
       com.pulumi.aws.cognito.CognitoFunctions.getIdentityPool(args(argsBuilder).build)
 
     /** Data source for managing an AWS Cognito Identity Pool. */
-    def getIdentityPoolPlain(args: Endofunction[com.pulumi.aws.cognito.inputs.GetIdentityPoolPlainArgs.Builder] = scala.Predef.identity):
+    inline def getIdentityPoolPlain(args: Endofunction[com.pulumi.aws.cognito.inputs.GetIdentityPoolPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.cognito.outputs.GetIdentityPoolResult] =
       val argsBuilder = com.pulumi.aws.cognito.inputs.GetIdentityPoolPlainArgs.builder
       com.pulumi.aws.cognito.CognitoFunctions.getIdentityPoolPlain(args(argsBuilder).build)
 
     /** Data source for managing an AWS Cognito IDP (Identity Provider) User Group. */
-    def getUserGroup(args: Endofunction[com.pulumi.aws.cognito.inputs.GetUserGroupArgs.Builder] = scala.Predef.identity):
+    inline def getUserGroup(args: Endofunction[com.pulumi.aws.cognito.inputs.GetUserGroupArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.cognito.outputs.GetUserGroupResult] =
       val argsBuilder = com.pulumi.aws.cognito.inputs.GetUserGroupArgs.builder
       com.pulumi.aws.cognito.CognitoFunctions.getUserGroup(args(argsBuilder).build)
 
     /** Data source for managing an AWS Cognito IDP (Identity Provider) User Group. */
-    def getUserGroupPlain(args: Endofunction[com.pulumi.aws.cognito.inputs.GetUserGroupPlainArgs.Builder] = scala.Predef.identity):
+    inline def getUserGroupPlain(args: Endofunction[com.pulumi.aws.cognito.inputs.GetUserGroupPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.cognito.outputs.GetUserGroupResult] =
       val argsBuilder = com.pulumi.aws.cognito.inputs.GetUserGroupPlainArgs.builder
       com.pulumi.aws.cognito.CognitoFunctions.getUserGroupPlain(args(argsBuilder).build)
 
     /** Data source for managing AWS Cognito IDP (Identity Provider) User Groups. */
-    def getUserGroups(args: Endofunction[com.pulumi.aws.cognito.inputs.GetUserGroupsArgs.Builder] = scala.Predef.identity):
+    inline def getUserGroups(args: Endofunction[com.pulumi.aws.cognito.inputs.GetUserGroupsArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.cognito.outputs.GetUserGroupsResult] =
       val argsBuilder = com.pulumi.aws.cognito.inputs.GetUserGroupsArgs.builder
       com.pulumi.aws.cognito.CognitoFunctions.getUserGroups(args(argsBuilder).build)
 
     /** Data source for managing AWS Cognito IDP (Identity Provider) User Groups. */
-    def getUserGroupsPlain(args: Endofunction[com.pulumi.aws.cognito.inputs.GetUserGroupsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getUserGroupsPlain(args: Endofunction[com.pulumi.aws.cognito.inputs.GetUserGroupsPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.cognito.outputs.GetUserGroupsResult] =
       val argsBuilder = com.pulumi.aws.cognito.inputs.GetUserGroupsPlainArgs.builder
       com.pulumi.aws.cognito.CognitoFunctions.getUserGroupsPlain(args(argsBuilder).build)
 
     /** Data source for managing an AWS Cognito User Pool. */
-    def getUserPool(args: Endofunction[com.pulumi.aws.cognito.inputs.GetUserPoolArgs.Builder] = scala.Predef.identity):
+    inline def getUserPool(args: Endofunction[com.pulumi.aws.cognito.inputs.GetUserPoolArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.cognito.outputs.GetUserPoolResult] =
       val argsBuilder = com.pulumi.aws.cognito.inputs.GetUserPoolArgs.builder
       com.pulumi.aws.cognito.CognitoFunctions.getUserPool(args(argsBuilder).build)
 
     /** Data source for managing an AWS Cognito User Pool. */
-    def getUserPoolPlain(args: Endofunction[com.pulumi.aws.cognito.inputs.GetUserPoolPlainArgs.Builder] = scala.Predef.identity):
+    inline def getUserPoolPlain(args: Endofunction[com.pulumi.aws.cognito.inputs.GetUserPoolPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.cognito.outputs.GetUserPoolResult] =
       val argsBuilder = com.pulumi.aws.cognito.inputs.GetUserPoolPlainArgs.builder
       com.pulumi.aws.cognito.CognitoFunctions.getUserPoolPlain(args(argsBuilder).build)
 
     /** Provides a Cognito User Pool Client resource. */
-    def getUserPoolClient(args: Endofunction[com.pulumi.aws.cognito.inputs.GetUserPoolClientArgs.Builder] = scala.Predef.identity):
+    inline def getUserPoolClient(args: Endofunction[com.pulumi.aws.cognito.inputs.GetUserPoolClientArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.cognito.outputs.GetUserPoolClientResult] =
       val argsBuilder = com.pulumi.aws.cognito.inputs.GetUserPoolClientArgs.builder
       com.pulumi.aws.cognito.CognitoFunctions.getUserPoolClient(args(argsBuilder).build)
 
     /** Provides a Cognito User Pool Client resource. */
-    def getUserPoolClientPlain(args: Endofunction[com.pulumi.aws.cognito.inputs.GetUserPoolClientPlainArgs.Builder] = scala.Predef.identity):
+    inline def getUserPoolClientPlain(args: Endofunction[com.pulumi.aws.cognito.inputs.GetUserPoolClientPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.cognito.outputs.GetUserPoolClientResult] =
       val argsBuilder = com.pulumi.aws.cognito.inputs.GetUserPoolClientPlainArgs.builder
       com.pulumi.aws.cognito.CognitoFunctions.getUserPoolClientPlain(args(argsBuilder).build)
 
     /** Use this data source to get a list of Cognito user pools clients for a Cognito IdP user pool. */
-    def getUserPoolClients(args: Endofunction[com.pulumi.aws.cognito.inputs.GetUserPoolClientsArgs.Builder] = scala.Predef.identity):
+    inline def getUserPoolClients(args: Endofunction[com.pulumi.aws.cognito.inputs.GetUserPoolClientsArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.cognito.outputs.GetUserPoolClientsResult] =
       val argsBuilder = com.pulumi.aws.cognito.inputs.GetUserPoolClientsArgs.builder
       com.pulumi.aws.cognito.CognitoFunctions.getUserPoolClients(args(argsBuilder).build)
 
     /** Use this data source to get a list of Cognito user pools clients for a Cognito IdP user pool. */
-    def getUserPoolClientsPlain(args: Endofunction[com.pulumi.aws.cognito.inputs.GetUserPoolClientsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getUserPoolClientsPlain(args: Endofunction[com.pulumi.aws.cognito.inputs.GetUserPoolClientsPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.cognito.outputs.GetUserPoolClientsResult] =
       val argsBuilder = com.pulumi.aws.cognito.inputs.GetUserPoolClientsPlainArgs.builder
       com.pulumi.aws.cognito.CognitoFunctions.getUserPoolClientsPlain(args(argsBuilder).build)
 
     /** Use this data source to get the signing certificate for a Cognito IdP user pool. */
-    def getUserPoolSigningCertificate(args: Endofunction[com.pulumi.aws.cognito.inputs.GetUserPoolSigningCertificateArgs.Builder] = scala.Predef.identity):
+    inline def getUserPoolSigningCertificate(args: Endofunction[com.pulumi.aws.cognito.inputs.GetUserPoolSigningCertificateArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.cognito.outputs.GetUserPoolSigningCertificateResult] =
       val argsBuilder = com.pulumi.aws.cognito.inputs.GetUserPoolSigningCertificateArgs.builder
       com.pulumi.aws.cognito.CognitoFunctions.getUserPoolSigningCertificate(args(argsBuilder).build)
 
     /** Use this data source to get the signing certificate for a Cognito IdP user pool. */
-    def getUserPoolSigningCertificatePlain(args: Endofunction[com.pulumi.aws.cognito.inputs.GetUserPoolSigningCertificatePlainArgs.Builder] = scala.Predef.identity):
+    inline def getUserPoolSigningCertificatePlain(args: Endofunction[com.pulumi.aws.cognito.inputs.GetUserPoolSigningCertificatePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.cognito.outputs.GetUserPoolSigningCertificateResult] =
       val argsBuilder = com.pulumi.aws.cognito.inputs.GetUserPoolSigningCertificatePlainArgs.builder
       com.pulumi.aws.cognito.CognitoFunctions.getUserPoolSigningCertificatePlain(args(argsBuilder).build)
 
     /** Use this data source to get a list of cognito user pools. */
-    def getUserPools(args: Endofunction[com.pulumi.aws.cognito.inputs.GetUserPoolsArgs.Builder] = scala.Predef.identity):
+    inline def getUserPools(args: Endofunction[com.pulumi.aws.cognito.inputs.GetUserPoolsArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.cognito.outputs.GetUserPoolsResult] =
       val argsBuilder = com.pulumi.aws.cognito.inputs.GetUserPoolsArgs.builder
       com.pulumi.aws.cognito.CognitoFunctions.getUserPools(args(argsBuilder).build)
 
     /** Use this data source to get a list of cognito user pools. */
-    def getUserPoolsPlain(args: Endofunction[com.pulumi.aws.cognito.inputs.GetUserPoolsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getUserPoolsPlain(args: Endofunction[com.pulumi.aws.cognito.inputs.GetUserPoolsPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.cognito.outputs.GetUserPoolsResult] =
       val argsBuilder = com.pulumi.aws.cognito.inputs.GetUserPoolsPlainArgs.builder
       com.pulumi.aws.cognito.CognitoFunctions.getUserPoolsPlain(args(argsBuilder).build)

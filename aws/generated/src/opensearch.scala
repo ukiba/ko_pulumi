@@ -468,115 +468,117 @@ object opensearch:
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
-  type OpensearchFunctions = com.pulumi.aws.opensearch.OpensearchFunctions
   object OpensearchFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.aws.opensearch.OpensearchFunctions.*
-  extension (self: OpensearchFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /** Use this data source to get information about an OpenSearch Domain */
-    def getDomain(args: Endofunction[com.pulumi.aws.opensearch.inputs.GetDomainArgs.Builder] = scala.Predef.identity):
+    inline def getDomain(args: Endofunction[com.pulumi.aws.opensearch.inputs.GetDomainArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.opensearch.outputs.GetDomainResult] =
       val argsBuilder = com.pulumi.aws.opensearch.inputs.GetDomainArgs.builder
       com.pulumi.aws.opensearch.OpensearchFunctions.getDomain(args(argsBuilder).build)
 
     /** Use this data source to get information about an OpenSearch Domain */
-    def getDomainPlain(args: Endofunction[com.pulumi.aws.opensearch.inputs.GetDomainPlainArgs.Builder] = scala.Predef.identity):
+    inline def getDomainPlain(args: Endofunction[com.pulumi.aws.opensearch.inputs.GetDomainPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.opensearch.outputs.GetDomainResult] =
       val argsBuilder = com.pulumi.aws.opensearch.inputs.GetDomainPlainArgs.builder
       com.pulumi.aws.opensearch.OpensearchFunctions.getDomainPlain(args(argsBuilder).build)
 
     /** Data source for managing an AWS OpenSearch Serverless Access Policy. */
-    def getServerlessAccessPolicy(args: Endofunction[com.pulumi.aws.opensearch.inputs.GetServerlessAccessPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getServerlessAccessPolicy(args: Endofunction[com.pulumi.aws.opensearch.inputs.GetServerlessAccessPolicyArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.opensearch.outputs.GetServerlessAccessPolicyResult] =
       val argsBuilder = com.pulumi.aws.opensearch.inputs.GetServerlessAccessPolicyArgs.builder
       com.pulumi.aws.opensearch.OpensearchFunctions.getServerlessAccessPolicy(args(argsBuilder).build)
 
     /** Data source for managing an AWS OpenSearch Serverless Access Policy. */
-    def getServerlessAccessPolicyPlain(args: Endofunction[com.pulumi.aws.opensearch.inputs.GetServerlessAccessPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getServerlessAccessPolicyPlain(args: Endofunction[com.pulumi.aws.opensearch.inputs.GetServerlessAccessPolicyPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.opensearch.outputs.GetServerlessAccessPolicyResult] =
       val argsBuilder = com.pulumi.aws.opensearch.inputs.GetServerlessAccessPolicyPlainArgs.builder
       com.pulumi.aws.opensearch.OpensearchFunctions.getServerlessAccessPolicyPlain(args(argsBuilder).build)
 
     /** Data source for managing an AWS OpenSearch Serverless Collection. */
-    def getServerlessCollection(args: Endofunction[com.pulumi.aws.opensearch.inputs.GetServerlessCollectionArgs.Builder] = scala.Predef.identity):
+    inline def getServerlessCollection(args: Endofunction[com.pulumi.aws.opensearch.inputs.GetServerlessCollectionArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.opensearch.outputs.GetServerlessCollectionResult] =
       val argsBuilder = com.pulumi.aws.opensearch.inputs.GetServerlessCollectionArgs.builder
       com.pulumi.aws.opensearch.OpensearchFunctions.getServerlessCollection(args(argsBuilder).build)
 
     /** Data source for managing an AWS OpenSearch Serverless Collection. */
-    def getServerlessCollectionPlain(args: Endofunction[com.pulumi.aws.opensearch.inputs.GetServerlessCollectionPlainArgs.Builder] = scala.Predef.identity):
+    inline def getServerlessCollectionPlain(args: Endofunction[com.pulumi.aws.opensearch.inputs.GetServerlessCollectionPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.opensearch.outputs.GetServerlessCollectionResult] =
       val argsBuilder = com.pulumi.aws.opensearch.inputs.GetServerlessCollectionPlainArgs.builder
       com.pulumi.aws.opensearch.OpensearchFunctions.getServerlessCollectionPlain(args(argsBuilder).build)
 
     /** Data source for managing an AWS OpenSearch Serverless Collection Group. */
-    def getServerlessCollectionGroup(args: Endofunction[com.pulumi.aws.opensearch.inputs.GetServerlessCollectionGroupArgs.Builder] = scala.Predef.identity):
+    inline def getServerlessCollectionGroup(args: Endofunction[com.pulumi.aws.opensearch.inputs.GetServerlessCollectionGroupArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.opensearch.outputs.GetServerlessCollectionGroupResult] =
       val argsBuilder = com.pulumi.aws.opensearch.inputs.GetServerlessCollectionGroupArgs.builder
       com.pulumi.aws.opensearch.OpensearchFunctions.getServerlessCollectionGroup(args(argsBuilder).build)
 
     /** Data source for managing an AWS OpenSearch Serverless Collection Group. */
-    def getServerlessCollectionGroupPlain(args: Endofunction[com.pulumi.aws.opensearch.inputs.GetServerlessCollectionGroupPlainArgs.Builder] = scala.Predef.identity):
+    inline def getServerlessCollectionGroupPlain(args: Endofunction[com.pulumi.aws.opensearch.inputs.GetServerlessCollectionGroupPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.opensearch.outputs.GetServerlessCollectionGroupResult] =
       val argsBuilder = com.pulumi.aws.opensearch.inputs.GetServerlessCollectionGroupPlainArgs.builder
       com.pulumi.aws.opensearch.OpensearchFunctions.getServerlessCollectionGroupPlain(args(argsBuilder).build)
 
     /** Data source for listing AWS OpenSearch Serverless Collection Groups. */
-    def getServerlessCollectionGroups(args: Endofunction[com.pulumi.aws.opensearch.inputs.GetServerlessCollectionGroupsArgs.Builder] = scala.Predef.identity):
+    inline def getServerlessCollectionGroups(args: Endofunction[com.pulumi.aws.opensearch.inputs.GetServerlessCollectionGroupsArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.opensearch.outputs.GetServerlessCollectionGroupsResult] =
       val argsBuilder = com.pulumi.aws.opensearch.inputs.GetServerlessCollectionGroupsArgs.builder
       com.pulumi.aws.opensearch.OpensearchFunctions.getServerlessCollectionGroups(args(argsBuilder).build)
 
     /** Data source for listing AWS OpenSearch Serverless Collection Groups. */
-    def getServerlessCollectionGroupsPlain(args: Endofunction[com.pulumi.aws.opensearch.inputs.GetServerlessCollectionGroupsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getServerlessCollectionGroupsPlain(args: Endofunction[com.pulumi.aws.opensearch.inputs.GetServerlessCollectionGroupsPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.opensearch.outputs.GetServerlessCollectionGroupsResult] =
       val argsBuilder = com.pulumi.aws.opensearch.inputs.GetServerlessCollectionGroupsPlainArgs.builder
       com.pulumi.aws.opensearch.OpensearchFunctions.getServerlessCollectionGroupsPlain(args(argsBuilder).build)
 
     /** Data source for managing an AWS OpenSearch Serverless Lifecycle Policy. */
-    def getServerlessLifecyclePolicy(args: Endofunction[com.pulumi.aws.opensearch.inputs.GetServerlessLifecyclePolicyArgs.Builder] = scala.Predef.identity):
+    inline def getServerlessLifecyclePolicy(args: Endofunction[com.pulumi.aws.opensearch.inputs.GetServerlessLifecyclePolicyArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.opensearch.outputs.GetServerlessLifecyclePolicyResult] =
       val argsBuilder = com.pulumi.aws.opensearch.inputs.GetServerlessLifecyclePolicyArgs.builder
       com.pulumi.aws.opensearch.OpensearchFunctions.getServerlessLifecyclePolicy(args(argsBuilder).build)
 
     /** Data source for managing an AWS OpenSearch Serverless Lifecycle Policy. */
-    def getServerlessLifecyclePolicyPlain(args: Endofunction[com.pulumi.aws.opensearch.inputs.GetServerlessLifecyclePolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getServerlessLifecyclePolicyPlain(args: Endofunction[com.pulumi.aws.opensearch.inputs.GetServerlessLifecyclePolicyPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.opensearch.outputs.GetServerlessLifecyclePolicyResult] =
       val argsBuilder = com.pulumi.aws.opensearch.inputs.GetServerlessLifecyclePolicyPlainArgs.builder
       com.pulumi.aws.opensearch.OpensearchFunctions.getServerlessLifecyclePolicyPlain(args(argsBuilder).build)
 
     /** Data source for managing an AWS OpenSearch Serverless Security Config. */
-    def getServerlessSecurityConfig(args: Endofunction[com.pulumi.aws.opensearch.inputs.GetServerlessSecurityConfigArgs.Builder] = scala.Predef.identity):
+    inline def getServerlessSecurityConfig(args: Endofunction[com.pulumi.aws.opensearch.inputs.GetServerlessSecurityConfigArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.opensearch.outputs.GetServerlessSecurityConfigResult] =
       val argsBuilder = com.pulumi.aws.opensearch.inputs.GetServerlessSecurityConfigArgs.builder
       com.pulumi.aws.opensearch.OpensearchFunctions.getServerlessSecurityConfig(args(argsBuilder).build)
 
     /** Data source for managing an AWS OpenSearch Serverless Security Config. */
-    def getServerlessSecurityConfigPlain(args: Endofunction[com.pulumi.aws.opensearch.inputs.GetServerlessSecurityConfigPlainArgs.Builder] = scala.Predef.identity):
+    inline def getServerlessSecurityConfigPlain(args: Endofunction[com.pulumi.aws.opensearch.inputs.GetServerlessSecurityConfigPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.opensearch.outputs.GetServerlessSecurityConfigResult] =
       val argsBuilder = com.pulumi.aws.opensearch.inputs.GetServerlessSecurityConfigPlainArgs.builder
       com.pulumi.aws.opensearch.OpensearchFunctions.getServerlessSecurityConfigPlain(args(argsBuilder).build)
 
     /** Use this data source to get information about an AWS OpenSearch Serverless Security Policy. */
-    def getServerlessSecurityPolicy(args: Endofunction[com.pulumi.aws.opensearch.inputs.GetServerlessSecurityPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getServerlessSecurityPolicy(args: Endofunction[com.pulumi.aws.opensearch.inputs.GetServerlessSecurityPolicyArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.opensearch.outputs.GetServerlessSecurityPolicyResult] =
       val argsBuilder = com.pulumi.aws.opensearch.inputs.GetServerlessSecurityPolicyArgs.builder
       com.pulumi.aws.opensearch.OpensearchFunctions.getServerlessSecurityPolicy(args(argsBuilder).build)
 
     /** Use this data source to get information about an AWS OpenSearch Serverless Security Policy. */
-    def getServerlessSecurityPolicyPlain(args: Endofunction[com.pulumi.aws.opensearch.inputs.GetServerlessSecurityPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getServerlessSecurityPolicyPlain(args: Endofunction[com.pulumi.aws.opensearch.inputs.GetServerlessSecurityPolicyPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.opensearch.outputs.GetServerlessSecurityPolicyResult] =
       val argsBuilder = com.pulumi.aws.opensearch.inputs.GetServerlessSecurityPolicyPlainArgs.builder
       com.pulumi.aws.opensearch.OpensearchFunctions.getServerlessSecurityPolicyPlain(args(argsBuilder).build)
 
     /** Data source for managing an AWS OpenSearch Serverless VPC Endpoint. */
-    def getServerlessVpcEndpoint(args: Endofunction[com.pulumi.aws.opensearch.inputs.GetServerlessVpcEndpointArgs.Builder] = scala.Predef.identity):
+    inline def getServerlessVpcEndpoint(args: Endofunction[com.pulumi.aws.opensearch.inputs.GetServerlessVpcEndpointArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.opensearch.outputs.GetServerlessVpcEndpointResult] =
       val argsBuilder = com.pulumi.aws.opensearch.inputs.GetServerlessVpcEndpointArgs.builder
       com.pulumi.aws.opensearch.OpensearchFunctions.getServerlessVpcEndpoint(args(argsBuilder).build)
 
     /** Data source for managing an AWS OpenSearch Serverless VPC Endpoint. */
-    def getServerlessVpcEndpointPlain(args: Endofunction[com.pulumi.aws.opensearch.inputs.GetServerlessVpcEndpointPlainArgs.Builder] = scala.Predef.identity):
+    inline def getServerlessVpcEndpointPlain(args: Endofunction[com.pulumi.aws.opensearch.inputs.GetServerlessVpcEndpointPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.opensearch.outputs.GetServerlessVpcEndpointResult] =
       val argsBuilder = com.pulumi.aws.opensearch.inputs.GetServerlessVpcEndpointPlainArgs.builder
       com.pulumi.aws.opensearch.OpensearchFunctions.getServerlessVpcEndpointPlain(args(argsBuilder).build)

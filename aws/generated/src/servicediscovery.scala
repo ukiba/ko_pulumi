@@ -36,19 +36,21 @@ object servicediscovery:
         com.pulumi.aws.servicediscovery.ServiceArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
 
-  type ServicediscoveryFunctions = com.pulumi.aws.servicediscovery.ServicediscoveryFunctions
   object ServicediscoveryFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.aws.servicediscovery.ServicediscoveryFunctions.*
-  extension (self: ServicediscoveryFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /** Retrieves information about a Service Discovery private or public DNS namespace. */
-    def getDnsNamespace(args: Endofunction[com.pulumi.aws.servicediscovery.inputs.GetDnsNamespaceArgs.Builder] = scala.Predef.identity):
+    inline def getDnsNamespace(args: Endofunction[com.pulumi.aws.servicediscovery.inputs.GetDnsNamespaceArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.servicediscovery.outputs.GetDnsNamespaceResult] =
       val argsBuilder = com.pulumi.aws.servicediscovery.inputs.GetDnsNamespaceArgs.builder
       com.pulumi.aws.servicediscovery.ServicediscoveryFunctions.getDnsNamespace(args(argsBuilder).build)
 
     /** Retrieves information about a Service Discovery private or public DNS namespace. */
-    def getDnsNamespacePlain(args: Endofunction[com.pulumi.aws.servicediscovery.inputs.GetDnsNamespacePlainArgs.Builder] = scala.Predef.identity):
+    inline def getDnsNamespacePlain(args: Endofunction[com.pulumi.aws.servicediscovery.inputs.GetDnsNamespacePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.servicediscovery.outputs.GetDnsNamespaceResult] =
       val argsBuilder = com.pulumi.aws.servicediscovery.inputs.GetDnsNamespacePlainArgs.builder
       com.pulumi.aws.servicediscovery.ServicediscoveryFunctions.getDnsNamespacePlain(args(argsBuilder).build)
@@ -56,7 +58,7 @@ object servicediscovery:
     /**
      * 
      */
-    def getHttpNamespace(args: Endofunction[com.pulumi.aws.servicediscovery.inputs.GetHttpNamespaceArgs.Builder] = scala.Predef.identity):
+    inline def getHttpNamespace(args: Endofunction[com.pulumi.aws.servicediscovery.inputs.GetHttpNamespaceArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.servicediscovery.outputs.GetHttpNamespaceResult] =
       val argsBuilder = com.pulumi.aws.servicediscovery.inputs.GetHttpNamespaceArgs.builder
       com.pulumi.aws.servicediscovery.ServicediscoveryFunctions.getHttpNamespace(args(argsBuilder).build)
@@ -64,19 +66,19 @@ object servicediscovery:
     /**
      * 
      */
-    def getHttpNamespacePlain(args: Endofunction[com.pulumi.aws.servicediscovery.inputs.GetHttpNamespacePlainArgs.Builder] = scala.Predef.identity):
+    inline def getHttpNamespacePlain(args: Endofunction[com.pulumi.aws.servicediscovery.inputs.GetHttpNamespacePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.servicediscovery.outputs.GetHttpNamespaceResult] =
       val argsBuilder = com.pulumi.aws.servicediscovery.inputs.GetHttpNamespacePlainArgs.builder
       com.pulumi.aws.servicediscovery.ServicediscoveryFunctions.getHttpNamespacePlain(args(argsBuilder).build)
 
     /** Retrieves information about a Service Discovery Service. */
-    def getService(args: Endofunction[com.pulumi.aws.servicediscovery.inputs.GetServiceArgs.Builder] = scala.Predef.identity):
+    inline def getService(args: Endofunction[com.pulumi.aws.servicediscovery.inputs.GetServiceArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.servicediscovery.outputs.GetServiceResult] =
       val argsBuilder = com.pulumi.aws.servicediscovery.inputs.GetServiceArgs.builder
       com.pulumi.aws.servicediscovery.ServicediscoveryFunctions.getService(args(argsBuilder).build)
 
     /** Retrieves information about a Service Discovery Service. */
-    def getServicePlain(args: Endofunction[com.pulumi.aws.servicediscovery.inputs.GetServicePlainArgs.Builder] = scala.Predef.identity):
+    inline def getServicePlain(args: Endofunction[com.pulumi.aws.servicediscovery.inputs.GetServicePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.servicediscovery.outputs.GetServiceResult] =
       val argsBuilder = com.pulumi.aws.servicediscovery.inputs.GetServicePlainArgs.builder
       com.pulumi.aws.servicediscovery.ServicediscoveryFunctions.getServicePlain(args(argsBuilder).build)

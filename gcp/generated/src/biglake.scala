@@ -343,43 +343,45 @@ object biglake:
       val argsBuilder = com.pulumi.gcp.biglake.inputs.IcebergTableSchemaArgs.builder
       builder.schema(args(argsBuilder).build)
 
-  type BiglakeFunctions = com.pulumi.gcp.biglake.BiglakeFunctions
   object BiglakeFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.gcp.biglake.BiglakeFunctions.*
-  extension (self: BiglakeFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /** Retrieves the current IAM policy data for icebergcatalog */
-    def getIcebergCatalogIamPolicy(args: Endofunction[com.pulumi.gcp.biglake.inputs.GetIcebergCatalogIamPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getIcebergCatalogIamPolicy(args: Endofunction[com.pulumi.gcp.biglake.inputs.GetIcebergCatalogIamPolicyArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.biglake.outputs.GetIcebergCatalogIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.biglake.inputs.GetIcebergCatalogIamPolicyArgs.builder
       com.pulumi.gcp.biglake.BiglakeFunctions.getIcebergCatalogIamPolicy(args(argsBuilder).build)
 
     /** Retrieves the current IAM policy data for icebergcatalog */
-    def getIcebergCatalogIamPolicyPlain(args: Endofunction[com.pulumi.gcp.biglake.inputs.GetIcebergCatalogIamPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getIcebergCatalogIamPolicyPlain(args: Endofunction[com.pulumi.gcp.biglake.inputs.GetIcebergCatalogIamPolicyPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.biglake.outputs.GetIcebergCatalogIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.biglake.inputs.GetIcebergCatalogIamPolicyPlainArgs.builder
       com.pulumi.gcp.biglake.BiglakeFunctions.getIcebergCatalogIamPolicyPlain(args(argsBuilder).build)
 
     /** Retrieves the current IAM policy data for icebergnamespace */
-    def getIcebergNamespaceIamPolicy(args: Endofunction[com.pulumi.gcp.biglake.inputs.GetIcebergNamespaceIamPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getIcebergNamespaceIamPolicy(args: Endofunction[com.pulumi.gcp.biglake.inputs.GetIcebergNamespaceIamPolicyArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.biglake.outputs.GetIcebergNamespaceIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.biglake.inputs.GetIcebergNamespaceIamPolicyArgs.builder
       com.pulumi.gcp.biglake.BiglakeFunctions.getIcebergNamespaceIamPolicy(args(argsBuilder).build)
 
     /** Retrieves the current IAM policy data for icebergnamespace */
-    def getIcebergNamespaceIamPolicyPlain(args: Endofunction[com.pulumi.gcp.biglake.inputs.GetIcebergNamespaceIamPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getIcebergNamespaceIamPolicyPlain(args: Endofunction[com.pulumi.gcp.biglake.inputs.GetIcebergNamespaceIamPolicyPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.biglake.outputs.GetIcebergNamespaceIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.biglake.inputs.GetIcebergNamespaceIamPolicyPlainArgs.builder
       com.pulumi.gcp.biglake.BiglakeFunctions.getIcebergNamespaceIamPolicyPlain(args(argsBuilder).build)
 
     /** Retrieves the current IAM policy data for icebergtable */
-    def getIcebergTableIamPolicy(args: Endofunction[com.pulumi.gcp.biglake.inputs.GetIcebergTableIamPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getIcebergTableIamPolicy(args: Endofunction[com.pulumi.gcp.biglake.inputs.GetIcebergTableIamPolicyArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.biglake.outputs.GetIcebergTableIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.biglake.inputs.GetIcebergTableIamPolicyArgs.builder
       com.pulumi.gcp.biglake.BiglakeFunctions.getIcebergTableIamPolicy(args(argsBuilder).build)
 
     /** Retrieves the current IAM policy data for icebergtable */
-    def getIcebergTableIamPolicyPlain(args: Endofunction[com.pulumi.gcp.biglake.inputs.GetIcebergTableIamPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getIcebergTableIamPolicyPlain(args: Endofunction[com.pulumi.gcp.biglake.inputs.GetIcebergTableIamPolicyPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.biglake.outputs.GetIcebergTableIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.biglake.inputs.GetIcebergTableIamPolicyPlainArgs.builder
       com.pulumi.gcp.biglake.BiglakeFunctions.getIcebergTableIamPolicyPlain(args(argsBuilder).build)

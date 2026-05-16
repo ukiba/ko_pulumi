@@ -4,79 +4,81 @@ package aws
 import com.pulumi.resources.CustomResourceOptions
 
 object glue:
-  type GlueFunctions = com.pulumi.aws.glue.GlueFunctions
   object GlueFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.aws.glue.GlueFunctions.*
-  extension (self: GlueFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /** Provides details about an AWS Glue Catalog. */
-    def getCatalog(args: Endofunction[com.pulumi.aws.glue.inputs.GetCatalogArgs.Builder] = scala.Predef.identity):
+    inline def getCatalog(args: Endofunction[com.pulumi.aws.glue.inputs.GetCatalogArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.glue.outputs.GetCatalogResult] =
       val argsBuilder = com.pulumi.aws.glue.inputs.GetCatalogArgs.builder
       com.pulumi.aws.glue.GlueFunctions.getCatalog(args(argsBuilder).build)
 
     /** Provides details about an AWS Glue Catalog. */
-    def getCatalogPlain(args: Endofunction[com.pulumi.aws.glue.inputs.GetCatalogPlainArgs.Builder] = scala.Predef.identity):
+    inline def getCatalogPlain(args: Endofunction[com.pulumi.aws.glue.inputs.GetCatalogPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.glue.outputs.GetCatalogResult] =
       val argsBuilder = com.pulumi.aws.glue.inputs.GetCatalogPlainArgs.builder
       com.pulumi.aws.glue.GlueFunctions.getCatalogPlain(args(argsBuilder).build)
 
     /** This data source can be used to fetch information about an AWS Glue Data Catalog Table. */
-    def getCatalogTable(args: Endofunction[com.pulumi.aws.glue.inputs.GetCatalogTableArgs.Builder] = scala.Predef.identity):
+    inline def getCatalogTable(args: Endofunction[com.pulumi.aws.glue.inputs.GetCatalogTableArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.glue.outputs.GetCatalogTableResult] =
       val argsBuilder = com.pulumi.aws.glue.inputs.GetCatalogTableArgs.builder
       com.pulumi.aws.glue.GlueFunctions.getCatalogTable(args(argsBuilder).build)
 
     /** This data source can be used to fetch information about an AWS Glue Data Catalog Table. */
-    def getCatalogTablePlain(args: Endofunction[com.pulumi.aws.glue.inputs.GetCatalogTablePlainArgs.Builder] = scala.Predef.identity):
+    inline def getCatalogTablePlain(args: Endofunction[com.pulumi.aws.glue.inputs.GetCatalogTablePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.glue.outputs.GetCatalogTableResult] =
       val argsBuilder = com.pulumi.aws.glue.inputs.GetCatalogTablePlainArgs.builder
       com.pulumi.aws.glue.GlueFunctions.getCatalogTablePlain(args(argsBuilder).build)
 
     /** Provides details about an AWS Glue Connection. */
-    def getConnection(args: Endofunction[com.pulumi.aws.glue.inputs.GetConnectionArgs.Builder] = scala.Predef.identity):
+    inline def getConnection(args: Endofunction[com.pulumi.aws.glue.inputs.GetConnectionArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.glue.outputs.GetConnectionResult] =
       val argsBuilder = com.pulumi.aws.glue.inputs.GetConnectionArgs.builder
       com.pulumi.aws.glue.GlueFunctions.getConnection(args(argsBuilder).build)
 
     /** Provides details about an AWS Glue Connection. */
-    def getConnectionPlain(args: Endofunction[com.pulumi.aws.glue.inputs.GetConnectionPlainArgs.Builder] = scala.Predef.identity):
+    inline def getConnectionPlain(args: Endofunction[com.pulumi.aws.glue.inputs.GetConnectionPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.glue.outputs.GetConnectionResult] =
       val argsBuilder = com.pulumi.aws.glue.inputs.GetConnectionPlainArgs.builder
       com.pulumi.aws.glue.GlueFunctions.getConnectionPlain(args(argsBuilder).build)
 
     /** This data source can be used to fetch information about AWS Glue Data Catalog Encryption Settings. */
-    def getDataCatalogEncryptionSettings(args: Endofunction[com.pulumi.aws.glue.inputs.GetDataCatalogEncryptionSettingsArgs.Builder] = scala.Predef.identity):
+    inline def getDataCatalogEncryptionSettings(args: Endofunction[com.pulumi.aws.glue.inputs.GetDataCatalogEncryptionSettingsArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.glue.outputs.GetDataCatalogEncryptionSettingsResult] =
       val argsBuilder = com.pulumi.aws.glue.inputs.GetDataCatalogEncryptionSettingsArgs.builder
       com.pulumi.aws.glue.GlueFunctions.getDataCatalogEncryptionSettings(args(argsBuilder).build)
 
     /** This data source can be used to fetch information about AWS Glue Data Catalog Encryption Settings. */
-    def getDataCatalogEncryptionSettingsPlain(args: Endofunction[com.pulumi.aws.glue.inputs.GetDataCatalogEncryptionSettingsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getDataCatalogEncryptionSettingsPlain(args: Endofunction[com.pulumi.aws.glue.inputs.GetDataCatalogEncryptionSettingsPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.glue.outputs.GetDataCatalogEncryptionSettingsResult] =
       val argsBuilder = com.pulumi.aws.glue.inputs.GetDataCatalogEncryptionSettingsPlainArgs.builder
       com.pulumi.aws.glue.GlueFunctions.getDataCatalogEncryptionSettingsPlain(args(argsBuilder).build)
 
     /** Data source for managing an AWS Glue Registry. */
-    def getRegistry(args: Endofunction[com.pulumi.aws.glue.inputs.GetRegistryArgs.Builder] = scala.Predef.identity):
+    inline def getRegistry(args: Endofunction[com.pulumi.aws.glue.inputs.GetRegistryArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.glue.outputs.GetRegistryResult] =
       val argsBuilder = com.pulumi.aws.glue.inputs.GetRegistryArgs.builder
       com.pulumi.aws.glue.GlueFunctions.getRegistry(args(argsBuilder).build)
 
     /** Data source for managing an AWS Glue Registry. */
-    def getRegistryPlain(args: Endofunction[com.pulumi.aws.glue.inputs.GetRegistryPlainArgs.Builder] = scala.Predef.identity):
+    inline def getRegistryPlain(args: Endofunction[com.pulumi.aws.glue.inputs.GetRegistryPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.glue.outputs.GetRegistryResult] =
       val argsBuilder = com.pulumi.aws.glue.inputs.GetRegistryPlainArgs.builder
       com.pulumi.aws.glue.GlueFunctions.getRegistryPlain(args(argsBuilder).build)
 
     /** Use this data source to generate a Glue script from a Directed Acyclic Graph (DAG). */
-    def getScript(args: Endofunction[com.pulumi.aws.glue.inputs.GetScriptArgs.Builder] = scala.Predef.identity):
+    inline def getScript(args: Endofunction[com.pulumi.aws.glue.inputs.GetScriptArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.glue.outputs.GetScriptResult] =
       val argsBuilder = com.pulumi.aws.glue.inputs.GetScriptArgs.builder
       com.pulumi.aws.glue.GlueFunctions.getScript(args(argsBuilder).build)
 
     /** Use this data source to generate a Glue script from a Directed Acyclic Graph (DAG). */
-    def getScriptPlain(args: Endofunction[com.pulumi.aws.glue.inputs.GetScriptPlainArgs.Builder] = scala.Predef.identity):
+    inline def getScriptPlain(args: Endofunction[com.pulumi.aws.glue.inputs.GetScriptPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.glue.outputs.GetScriptResult] =
       val argsBuilder = com.pulumi.aws.glue.inputs.GetScriptPlainArgs.builder
       com.pulumi.aws.glue.GlueFunctions.getScriptPlain(args(argsBuilder).build)

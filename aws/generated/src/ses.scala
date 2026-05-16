@@ -153,43 +153,45 @@ object ses:
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
-  type SesFunctions = com.pulumi.aws.ses.SesFunctions
   object SesFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.aws.ses.SesFunctions.*
-  extension (self: SesFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /** Retrieve the active SES receipt rule set */
-    def getActiveReceiptRuleSet(args: Endofunction[com.pulumi.aws.ses.inputs.GetActiveReceiptRuleSetArgs.Builder] = scala.Predef.identity):
+    inline def getActiveReceiptRuleSet(args: Endofunction[com.pulumi.aws.ses.inputs.GetActiveReceiptRuleSetArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.ses.outputs.GetActiveReceiptRuleSetResult] =
       val argsBuilder = com.pulumi.aws.ses.inputs.GetActiveReceiptRuleSetArgs.builder
       com.pulumi.aws.ses.SesFunctions.getActiveReceiptRuleSet(args(argsBuilder).build)
 
     /** Retrieve the active SES receipt rule set */
-    def getActiveReceiptRuleSetPlain(args: Endofunction[com.pulumi.aws.ses.inputs.GetActiveReceiptRuleSetPlainArgs.Builder] = scala.Predef.identity):
+    inline def getActiveReceiptRuleSetPlain(args: Endofunction[com.pulumi.aws.ses.inputs.GetActiveReceiptRuleSetPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.ses.outputs.GetActiveReceiptRuleSetResult] =
       val argsBuilder = com.pulumi.aws.ses.inputs.GetActiveReceiptRuleSetPlainArgs.builder
       com.pulumi.aws.ses.SesFunctions.getActiveReceiptRuleSetPlain(args(argsBuilder).build)
 
     /** Retrieve the SES domain identity */
-    def getDomainIdentity(args: Endofunction[com.pulumi.aws.ses.inputs.GetDomainIdentityArgs.Builder] = scala.Predef.identity):
+    inline def getDomainIdentity(args: Endofunction[com.pulumi.aws.ses.inputs.GetDomainIdentityArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.ses.outputs.GetDomainIdentityResult] =
       val argsBuilder = com.pulumi.aws.ses.inputs.GetDomainIdentityArgs.builder
       com.pulumi.aws.ses.SesFunctions.getDomainIdentity(args(argsBuilder).build)
 
     /** Retrieve the SES domain identity */
-    def getDomainIdentityPlain(args: Endofunction[com.pulumi.aws.ses.inputs.GetDomainIdentityPlainArgs.Builder] = scala.Predef.identity):
+    inline def getDomainIdentityPlain(args: Endofunction[com.pulumi.aws.ses.inputs.GetDomainIdentityPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.ses.outputs.GetDomainIdentityResult] =
       val argsBuilder = com.pulumi.aws.ses.inputs.GetDomainIdentityPlainArgs.builder
       com.pulumi.aws.ses.SesFunctions.getDomainIdentityPlain(args(argsBuilder).build)
 
     /** Retrieve the active SES email identity */
-    def getEmailIdentity(args: Endofunction[com.pulumi.aws.ses.inputs.GetEmailIdentityArgs.Builder] = scala.Predef.identity):
+    inline def getEmailIdentity(args: Endofunction[com.pulumi.aws.ses.inputs.GetEmailIdentityArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.ses.outputs.GetEmailIdentityResult] =
       val argsBuilder = com.pulumi.aws.ses.inputs.GetEmailIdentityArgs.builder
       com.pulumi.aws.ses.SesFunctions.getEmailIdentity(args(argsBuilder).build)
 
     /** Retrieve the active SES email identity */
-    def getEmailIdentityPlain(args: Endofunction[com.pulumi.aws.ses.inputs.GetEmailIdentityPlainArgs.Builder] = scala.Predef.identity):
+    inline def getEmailIdentityPlain(args: Endofunction[com.pulumi.aws.ses.inputs.GetEmailIdentityPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.ses.outputs.GetEmailIdentityResult] =
       val argsBuilder = com.pulumi.aws.ses.inputs.GetEmailIdentityPlainArgs.builder
       com.pulumi.aws.ses.SesFunctions.getEmailIdentityPlain(args(argsBuilder).build)

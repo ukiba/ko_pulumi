@@ -24,16 +24,18 @@ object serviceaccount:
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
-  type ServiceaccountFunctions = com.pulumi.gcp.serviceaccount.ServiceaccountFunctions
   object ServiceaccountFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.gcp.serviceaccount.ServiceaccountFunctions.*
-  extension (self: ServiceaccountFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /**
      * Get the service account from a project. For more information see
      *  the official [API](https://cloud.google.com/compute/docs/access/service-accounts) documentation.
      */
-    def getAccount(args: Endofunction[com.pulumi.gcp.serviceaccount.inputs.GetAccountArgs.Builder] = scala.Predef.identity):
+    inline def getAccount(args: Endofunction[com.pulumi.gcp.serviceaccount.inputs.GetAccountArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.serviceaccount.outputs.GetAccountResult] =
       val argsBuilder = com.pulumi.gcp.serviceaccount.inputs.GetAccountArgs.builder
       com.pulumi.gcp.serviceaccount.ServiceaccountFunctions.getAccount(args(argsBuilder).build)
@@ -42,7 +44,7 @@ object serviceaccount:
      * Get the service account from a project. For more information see
      *  the official [API](https://cloud.google.com/compute/docs/access/service-accounts) documentation.
      */
-    def getAccountPlain(args: Endofunction[com.pulumi.gcp.serviceaccount.inputs.GetAccountPlainArgs.Builder] = scala.Predef.identity):
+    inline def getAccountPlain(args: Endofunction[com.pulumi.gcp.serviceaccount.inputs.GetAccountPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.serviceaccount.outputs.GetAccountResult] =
       val argsBuilder = com.pulumi.gcp.serviceaccount.inputs.GetAccountPlainArgs.builder
       com.pulumi.gcp.serviceaccount.ServiceaccountFunctions.getAccountPlain(args(argsBuilder).build)
@@ -53,7 +55,7 @@ object serviceaccount:
      *  For more information see
      *  [the official documentation](https://cloud.google.com/iam/docs/creating-short-lived-service-account-credentials) as well as [iamcredentials.generateAccessToken()](https://cloud.google.com/iam/credentials/reference/rest/v1/projects.serviceAccounts/generateAccessToken)
      */
-    def getAccountAccessToken(args: Endofunction[com.pulumi.gcp.serviceaccount.inputs.GetAccountAccessTokenArgs.Builder] = scala.Predef.identity):
+    inline def getAccountAccessToken(args: Endofunction[com.pulumi.gcp.serviceaccount.inputs.GetAccountAccessTokenArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.serviceaccount.outputs.GetAccountAccessTokenResult] =
       val argsBuilder = com.pulumi.gcp.serviceaccount.inputs.GetAccountAccessTokenArgs.builder
       com.pulumi.gcp.serviceaccount.ServiceaccountFunctions.getAccountAccessToken(args(argsBuilder).build)
@@ -64,7 +66,7 @@ object serviceaccount:
      *  For more information see
      *  [the official documentation](https://cloud.google.com/iam/docs/creating-short-lived-service-account-credentials) as well as [iamcredentials.generateAccessToken()](https://cloud.google.com/iam/credentials/reference/rest/v1/projects.serviceAccounts/generateAccessToken)
      */
-    def getAccountAccessTokenPlain(args: Endofunction[com.pulumi.gcp.serviceaccount.inputs.GetAccountAccessTokenPlainArgs.Builder] = scala.Predef.identity):
+    inline def getAccountAccessTokenPlain(args: Endofunction[com.pulumi.gcp.serviceaccount.inputs.GetAccountAccessTokenPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.serviceaccount.outputs.GetAccountAccessTokenResult] =
       val argsBuilder = com.pulumi.gcp.serviceaccount.inputs.GetAccountAccessTokenPlainArgs.builder
       com.pulumi.gcp.serviceaccount.ServiceaccountFunctions.getAccountAccessTokenPlain(args(argsBuilder).build)
@@ -75,7 +77,7 @@ object serviceaccount:
      *  For more information see
      *  [OpenID Connect](https://openid.net/specs/openid-connect-core-1_0.html#IDToken).
      */
-    def getAccountIdToken(args: Endofunction[com.pulumi.gcp.serviceaccount.inputs.GetAccountIdTokenArgs.Builder] = scala.Predef.identity):
+    inline def getAccountIdToken(args: Endofunction[com.pulumi.gcp.serviceaccount.inputs.GetAccountIdTokenArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.serviceaccount.outputs.GetAccountIdTokenResult] =
       val argsBuilder = com.pulumi.gcp.serviceaccount.inputs.GetAccountIdTokenArgs.builder
       com.pulumi.gcp.serviceaccount.ServiceaccountFunctions.getAccountIdToken(args(argsBuilder).build)
@@ -86,31 +88,31 @@ object serviceaccount:
      *  For more information see
      *  [OpenID Connect](https://openid.net/specs/openid-connect-core-1_0.html#IDToken).
      */
-    def getAccountIdTokenPlain(args: Endofunction[com.pulumi.gcp.serviceaccount.inputs.GetAccountIdTokenPlainArgs.Builder] = scala.Predef.identity):
+    inline def getAccountIdTokenPlain(args: Endofunction[com.pulumi.gcp.serviceaccount.inputs.GetAccountIdTokenPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.serviceaccount.outputs.GetAccountIdTokenResult] =
       val argsBuilder = com.pulumi.gcp.serviceaccount.inputs.GetAccountIdTokenPlainArgs.builder
       com.pulumi.gcp.serviceaccount.ServiceaccountFunctions.getAccountIdTokenPlain(args(argsBuilder).build)
 
     /** This data source provides a [self-signed JWT](https://cloud.google.com/iam/docs/create-short-lived-credentials-direct#sa-credentials-jwt).  Tokens issued from this data source are typically used to call external services that accept JWTs for authentication. */
-    def getAccountJwt(args: Endofunction[com.pulumi.gcp.serviceaccount.inputs.GetAccountJwtArgs.Builder] = scala.Predef.identity):
+    inline def getAccountJwt(args: Endofunction[com.pulumi.gcp.serviceaccount.inputs.GetAccountJwtArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.serviceaccount.outputs.GetAccountJwtResult] =
       val argsBuilder = com.pulumi.gcp.serviceaccount.inputs.GetAccountJwtArgs.builder
       com.pulumi.gcp.serviceaccount.ServiceaccountFunctions.getAccountJwt(args(argsBuilder).build)
 
     /** This data source provides a [self-signed JWT](https://cloud.google.com/iam/docs/create-short-lived-credentials-direct#sa-credentials-jwt).  Tokens issued from this data source are typically used to call external services that accept JWTs for authentication. */
-    def getAccountJwtPlain(args: Endofunction[com.pulumi.gcp.serviceaccount.inputs.GetAccountJwtPlainArgs.Builder] = scala.Predef.identity):
+    inline def getAccountJwtPlain(args: Endofunction[com.pulumi.gcp.serviceaccount.inputs.GetAccountJwtPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.serviceaccount.outputs.GetAccountJwtResult] =
       val argsBuilder = com.pulumi.gcp.serviceaccount.inputs.GetAccountJwtPlainArgs.builder
       com.pulumi.gcp.serviceaccount.ServiceaccountFunctions.getAccountJwtPlain(args(argsBuilder).build)
 
     /** Get service account public key. For more information, see [the official documentation](https://cloud.google.com/iam/docs/creating-managing-service-account-keys) and [API](https://cloud.google.com/iam/reference/rest/v1/projects.serviceAccounts.keys/get). */
-    def getAccountKey(args: Endofunction[com.pulumi.gcp.serviceaccount.inputs.GetAccountKeyArgs.Builder] = scala.Predef.identity):
+    inline def getAccountKey(args: Endofunction[com.pulumi.gcp.serviceaccount.inputs.GetAccountKeyArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.serviceaccount.outputs.GetAccountKeyResult] =
       val argsBuilder = com.pulumi.gcp.serviceaccount.inputs.GetAccountKeyArgs.builder
       com.pulumi.gcp.serviceaccount.ServiceaccountFunctions.getAccountKey(args(argsBuilder).build)
 
     /** Get service account public key. For more information, see [the official documentation](https://cloud.google.com/iam/docs/creating-managing-service-account-keys) and [API](https://cloud.google.com/iam/reference/rest/v1/projects.serviceAccounts.keys/get). */
-    def getAccountKeyPlain(args: Endofunction[com.pulumi.gcp.serviceaccount.inputs.GetAccountKeyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getAccountKeyPlain(args: Endofunction[com.pulumi.gcp.serviceaccount.inputs.GetAccountKeyPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.serviceaccount.outputs.GetAccountKeyResult] =
       val argsBuilder = com.pulumi.gcp.serviceaccount.inputs.GetAccountKeyPlainArgs.builder
       com.pulumi.gcp.serviceaccount.ServiceaccountFunctions.getAccountKeyPlain(args(argsBuilder).build)
@@ -151,7 +153,7 @@ object serviceaccount:
      *  }
      *  </pre>
      */
-    def getIamPolicy(args: Endofunction[com.pulumi.gcp.serviceaccount.inputs.GetIamPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getIamPolicy(args: Endofunction[com.pulumi.gcp.serviceaccount.inputs.GetIamPolicyArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.serviceaccount.outputs.GetIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.serviceaccount.inputs.GetIamPolicyArgs.builder
       com.pulumi.gcp.serviceaccount.ServiceaccountFunctions.getIamPolicy(args(argsBuilder).build)
@@ -192,7 +194,7 @@ object serviceaccount:
      *  }
      *  </pre>
      */
-    def getIamPolicyPlain(args: Endofunction[com.pulumi.gcp.serviceaccount.inputs.GetIamPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getIamPolicyPlain(args: Endofunction[com.pulumi.gcp.serviceaccount.inputs.GetIamPolicyPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.serviceaccount.outputs.GetIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.serviceaccount.inputs.GetIamPolicyPlainArgs.builder
       com.pulumi.gcp.serviceaccount.ServiceaccountFunctions.getIamPolicyPlain(args(argsBuilder).build)
@@ -202,7 +204,7 @@ object serviceaccount:
      *  See [the official documentation](https://cloud.google.com/iam/docs/service-account-overview)
      *  and [API](https://cloud.google.com/iam/docs/reference/rest/v1/projects.serviceAccounts).
      */
-    def getS(args: Endofunction[com.pulumi.gcp.serviceaccount.inputs.GetSArgs.Builder] = scala.Predef.identity):
+    inline def getS(args: Endofunction[com.pulumi.gcp.serviceaccount.inputs.GetSArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.serviceaccount.outputs.GetSResult] =
       val argsBuilder = com.pulumi.gcp.serviceaccount.inputs.GetSArgs.builder
       com.pulumi.gcp.serviceaccount.ServiceaccountFunctions.getS(args(argsBuilder).build)
@@ -212,7 +214,7 @@ object serviceaccount:
      *  See [the official documentation](https://cloud.google.com/iam/docs/service-account-overview)
      *  and [API](https://cloud.google.com/iam/docs/reference/rest/v1/projects.serviceAccounts).
      */
-    def getSPlain(args: Endofunction[com.pulumi.gcp.serviceaccount.inputs.GetSPlainArgs.Builder] = scala.Predef.identity):
+    inline def getSPlain(args: Endofunction[com.pulumi.gcp.serviceaccount.inputs.GetSPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.serviceaccount.outputs.GetSResult] =
       val argsBuilder = com.pulumi.gcp.serviceaccount.inputs.GetSPlainArgs.builder
       com.pulumi.gcp.serviceaccount.ServiceaccountFunctions.getSPlain(args(argsBuilder).build)

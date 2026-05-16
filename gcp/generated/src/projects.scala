@@ -1950,16 +1950,18 @@ object projects:
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
-  type ProjectsFunctions = com.pulumi.gcp.projects.ProjectsFunctions
   object ProjectsFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.gcp.projects.ProjectsFunctions.*
-  extension (self: ProjectsFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /**
      * Retrieve the ancestors for a project.
      *  See the [REST API](https://docs.cloud.google.com/resource-manager/reference/rest/v1/projects/getAncestry) for more details.
      */
-    def getAncestry(args: Endofunction[com.pulumi.gcp.projects.inputs.GetAncestryArgs.Builder] = scala.Predef.identity):
+    inline def getAncestry(args: Endofunction[com.pulumi.gcp.projects.inputs.GetAncestryArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.projects.outputs.GetAncestryResult] =
       val argsBuilder = com.pulumi.gcp.projects.inputs.GetAncestryArgs.builder
       com.pulumi.gcp.projects.ProjectsFunctions.getAncestry(args(argsBuilder).build)
@@ -1968,7 +1970,7 @@ object projects:
      * Retrieve the ancestors for a project.
      *  See the [REST API](https://docs.cloud.google.com/resource-manager/reference/rest/v1/projects/getAncestry) for more details.
      */
-    def getAncestryPlain(args: Endofunction[com.pulumi.gcp.projects.inputs.GetAncestryPlainArgs.Builder] = scala.Predef.identity):
+    inline def getAncestryPlain(args: Endofunction[com.pulumi.gcp.projects.inputs.GetAncestryPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.projects.outputs.GetAncestryResult] =
       val argsBuilder = com.pulumi.gcp.projects.inputs.GetAncestryPlainArgs.builder
       com.pulumi.gcp.projects.ProjectsFunctions.getAncestryPlain(args(argsBuilder).build)
@@ -2016,7 +2018,7 @@ object projects:
      *  }
      *  </pre>
      */
-    def getIamCustomRole(args: Endofunction[com.pulumi.gcp.projects.inputs.GetIamCustomRoleArgs.Builder] = scala.Predef.identity):
+    inline def getIamCustomRole(args: Endofunction[com.pulumi.gcp.projects.inputs.GetIamCustomRoleArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.projects.outputs.GetIamCustomRoleResult] =
       val argsBuilder = com.pulumi.gcp.projects.inputs.GetIamCustomRoleArgs.builder
       com.pulumi.gcp.projects.ProjectsFunctions.getIamCustomRole(args(argsBuilder).build)
@@ -2064,7 +2066,7 @@ object projects:
      *  }
      *  </pre>
      */
-    def getIamCustomRolePlain(args: Endofunction[com.pulumi.gcp.projects.inputs.GetIamCustomRolePlainArgs.Builder] = scala.Predef.identity):
+    inline def getIamCustomRolePlain(args: Endofunction[com.pulumi.gcp.projects.inputs.GetIamCustomRolePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.projects.outputs.GetIamCustomRoleResult] =
       val argsBuilder = com.pulumi.gcp.projects.inputs.GetIamCustomRolePlainArgs.builder
       com.pulumi.gcp.projects.ProjectsFunctions.getIamCustomRolePlain(args(argsBuilder).build)
@@ -2108,7 +2110,7 @@ object projects:
      *  }
      *  </pre>
      */
-    def getIamCustomRoles(args: Endofunction[com.pulumi.gcp.projects.inputs.GetIamCustomRolesArgs.Builder] = scala.Predef.identity):
+    inline def getIamCustomRoles(args: Endofunction[com.pulumi.gcp.projects.inputs.GetIamCustomRolesArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.projects.outputs.GetIamCustomRolesResult] =
       val argsBuilder = com.pulumi.gcp.projects.inputs.GetIamCustomRolesArgs.builder
       com.pulumi.gcp.projects.ProjectsFunctions.getIamCustomRoles(args(argsBuilder).build)
@@ -2152,7 +2154,7 @@ object projects:
      *  }
      *  </pre>
      */
-    def getIamCustomRolesPlain(args: Endofunction[com.pulumi.gcp.projects.inputs.GetIamCustomRolesPlainArgs.Builder] = scala.Predef.identity):
+    inline def getIamCustomRolesPlain(args: Endofunction[com.pulumi.gcp.projects.inputs.GetIamCustomRolesPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.projects.outputs.GetIamCustomRolesResult] =
       val argsBuilder = com.pulumi.gcp.projects.inputs.GetIamCustomRolesPlainArgs.builder
       com.pulumi.gcp.projects.ProjectsFunctions.getIamCustomRolesPlain(args(argsBuilder).build)
@@ -2193,7 +2195,7 @@ object projects:
      *  }
      *  </pre>
      */
-    def getIamPolicy(args: Endofunction[com.pulumi.gcp.projects.inputs.GetIamPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getIamPolicy(args: Endofunction[com.pulumi.gcp.projects.inputs.GetIamPolicyArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.projects.outputs.GetIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.projects.inputs.GetIamPolicyArgs.builder
       com.pulumi.gcp.projects.ProjectsFunctions.getIamPolicy(args(argsBuilder).build)
@@ -2234,7 +2236,7 @@ object projects:
      *  }
      *  </pre>
      */
-    def getIamPolicyPlain(args: Endofunction[com.pulumi.gcp.projects.inputs.GetIamPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getIamPolicyPlain(args: Endofunction[com.pulumi.gcp.projects.inputs.GetIamPolicyPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.projects.outputs.GetIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.projects.inputs.GetIamPolicyPlainArgs.builder
       com.pulumi.gcp.projects.ProjectsFunctions.getIamPolicyPlain(args(argsBuilder).build)
@@ -2244,7 +2246,7 @@ object projects:
      *  [the official
      *  documentation](https://docs.cloud.google.com/resource-manager/docs/organization-policy/overview)
      */
-    def getOrganizationPolicy(args: Endofunction[com.pulumi.gcp.projects.inputs.GetOrganizationPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getOrganizationPolicy(args: Endofunction[com.pulumi.gcp.projects.inputs.GetOrganizationPolicyArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.projects.outputs.GetOrganizationPolicyResult] =
       val argsBuilder = com.pulumi.gcp.projects.inputs.GetOrganizationPolicyArgs.builder
       com.pulumi.gcp.projects.ProjectsFunctions.getOrganizationPolicy(args(argsBuilder).build)
@@ -2254,7 +2256,7 @@ object projects:
      *  [the official
      *  documentation](https://docs.cloud.google.com/resource-manager/docs/organization-policy/overview)
      */
-    def getOrganizationPolicyPlain(args: Endofunction[com.pulumi.gcp.projects.inputs.GetOrganizationPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getOrganizationPolicyPlain(args: Endofunction[com.pulumi.gcp.projects.inputs.GetOrganizationPolicyPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.projects.outputs.GetOrganizationPolicyResult] =
       val argsBuilder = com.pulumi.gcp.projects.inputs.GetOrganizationPolicyPlainArgs.builder
       com.pulumi.gcp.projects.ProjectsFunctions.getOrganizationPolicyPlain(args(argsBuilder).build)
@@ -2264,7 +2266,7 @@ object projects:
      *  [REST API](https://docs.cloud.google.com/resource-manager/reference/rest/v1/projects/list)
      *  for more details.
      */
-    def getProject(args: Endofunction[com.pulumi.gcp.projects.inputs.GetProjectArgs.Builder] = scala.Predef.identity):
+    inline def getProject(args: Endofunction[com.pulumi.gcp.projects.inputs.GetProjectArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.projects.outputs.GetProjectResult] =
       val argsBuilder = com.pulumi.gcp.projects.inputs.GetProjectArgs.builder
       com.pulumi.gcp.projects.ProjectsFunctions.getProject(args(argsBuilder).build)
@@ -2274,7 +2276,7 @@ object projects:
      *  [REST API](https://docs.cloud.google.com/resource-manager/reference/rest/v1/projects/list)
      *  for more details.
      */
-    def getProjectPlain(args: Endofunction[com.pulumi.gcp.projects.inputs.GetProjectPlainArgs.Builder] = scala.Predef.identity):
+    inline def getProjectPlain(args: Endofunction[com.pulumi.gcp.projects.inputs.GetProjectPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.projects.outputs.GetProjectResult] =
       val argsBuilder = com.pulumi.gcp.projects.inputs.GetProjectPlainArgs.builder
       com.pulumi.gcp.projects.ProjectsFunctions.getProjectPlain(args(argsBuilder).build)
@@ -2294,7 +2296,7 @@ object projects:
      *  * How-to Guides
      *      * [Enabling and Disabling Services](https://cloud.google.com/service-usage/docs/enable-disable)
      */
-    def getProjectService(args: Endofunction[com.pulumi.gcp.projects.inputs.GetProjectServiceArgs.Builder] = scala.Predef.identity):
+    inline def getProjectService(args: Endofunction[com.pulumi.gcp.projects.inputs.GetProjectServiceArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.projects.outputs.GetProjectServiceResult] =
       val argsBuilder = com.pulumi.gcp.projects.inputs.GetProjectServiceArgs.builder
       com.pulumi.gcp.projects.ProjectsFunctions.getProjectService(args(argsBuilder).build)
@@ -2314,7 +2316,7 @@ object projects:
      *  * How-to Guides
      *      * [Enabling and Disabling Services](https://cloud.google.com/service-usage/docs/enable-disable)
      */
-    def getProjectServicePlain(args: Endofunction[com.pulumi.gcp.projects.inputs.GetProjectServicePlainArgs.Builder] = scala.Predef.identity):
+    inline def getProjectServicePlain(args: Endofunction[com.pulumi.gcp.projects.inputs.GetProjectServicePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.projects.outputs.GetProjectServiceResult] =
       val argsBuilder = com.pulumi.gcp.projects.inputs.GetProjectServicePlainArgs.builder
       com.pulumi.gcp.projects.ProjectsFunctions.getProjectServicePlain(args(argsBuilder).build)

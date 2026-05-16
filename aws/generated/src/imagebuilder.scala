@@ -206,163 +206,165 @@ object imagebuilder:
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
-  type ImagebuilderFunctions = com.pulumi.aws.imagebuilder.ImagebuilderFunctions
   object ImagebuilderFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.aws.imagebuilder.ImagebuilderFunctions.*
-  extension (self: ImagebuilderFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /** Provides details about an Image Builder Component. */
-    def getComponent(args: Endofunction[com.pulumi.aws.imagebuilder.inputs.GetComponentArgs.Builder] = scala.Predef.identity):
+    inline def getComponent(args: Endofunction[com.pulumi.aws.imagebuilder.inputs.GetComponentArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.imagebuilder.outputs.GetComponentResult] =
       val argsBuilder = com.pulumi.aws.imagebuilder.inputs.GetComponentArgs.builder
       com.pulumi.aws.imagebuilder.ImagebuilderFunctions.getComponent(args(argsBuilder).build)
 
     /** Provides details about an Image Builder Component. */
-    def getComponentPlain(args: Endofunction[com.pulumi.aws.imagebuilder.inputs.GetComponentPlainArgs.Builder] = scala.Predef.identity):
+    inline def getComponentPlain(args: Endofunction[com.pulumi.aws.imagebuilder.inputs.GetComponentPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.imagebuilder.outputs.GetComponentResult] =
       val argsBuilder = com.pulumi.aws.imagebuilder.inputs.GetComponentPlainArgs.builder
       com.pulumi.aws.imagebuilder.ImagebuilderFunctions.getComponentPlain(args(argsBuilder).build)
 
     /** Use this data source to get the ARNs and names of Image Builder Components matching the specified criteria. */
-    def getComponents(args: Endofunction[com.pulumi.aws.imagebuilder.inputs.GetComponentsArgs.Builder] = scala.Predef.identity):
+    inline def getComponents(args: Endofunction[com.pulumi.aws.imagebuilder.inputs.GetComponentsArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.imagebuilder.outputs.GetComponentsResult] =
       val argsBuilder = com.pulumi.aws.imagebuilder.inputs.GetComponentsArgs.builder
       com.pulumi.aws.imagebuilder.ImagebuilderFunctions.getComponents(args(argsBuilder).build)
 
     /** Use this data source to get the ARNs and names of Image Builder Components matching the specified criteria. */
-    def getComponentsPlain(args: Endofunction[com.pulumi.aws.imagebuilder.inputs.GetComponentsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getComponentsPlain(args: Endofunction[com.pulumi.aws.imagebuilder.inputs.GetComponentsPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.imagebuilder.outputs.GetComponentsResult] =
       val argsBuilder = com.pulumi.aws.imagebuilder.inputs.GetComponentsPlainArgs.builder
       com.pulumi.aws.imagebuilder.ImagebuilderFunctions.getComponentsPlain(args(argsBuilder).build)
 
     /** Provides details about an Image builder Container Recipe. */
-    def getContainerRecipe(args: Endofunction[com.pulumi.aws.imagebuilder.inputs.GetContainerRecipeArgs.Builder] = scala.Predef.identity):
+    inline def getContainerRecipe(args: Endofunction[com.pulumi.aws.imagebuilder.inputs.GetContainerRecipeArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.imagebuilder.outputs.GetContainerRecipeResult] =
       val argsBuilder = com.pulumi.aws.imagebuilder.inputs.GetContainerRecipeArgs.builder
       com.pulumi.aws.imagebuilder.ImagebuilderFunctions.getContainerRecipe(args(argsBuilder).build)
 
     /** Provides details about an Image builder Container Recipe. */
-    def getContainerRecipePlain(args: Endofunction[com.pulumi.aws.imagebuilder.inputs.GetContainerRecipePlainArgs.Builder] = scala.Predef.identity):
+    inline def getContainerRecipePlain(args: Endofunction[com.pulumi.aws.imagebuilder.inputs.GetContainerRecipePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.imagebuilder.outputs.GetContainerRecipeResult] =
       val argsBuilder = com.pulumi.aws.imagebuilder.inputs.GetContainerRecipePlainArgs.builder
       com.pulumi.aws.imagebuilder.ImagebuilderFunctions.getContainerRecipePlain(args(argsBuilder).build)
 
     /** Use this data source to get the ARNs and names of Image Builder Container Recipes matching the specified criteria. */
-    def getContainerRecipes(args: Endofunction[com.pulumi.aws.imagebuilder.inputs.GetContainerRecipesArgs.Builder] = scala.Predef.identity):
+    inline def getContainerRecipes(args: Endofunction[com.pulumi.aws.imagebuilder.inputs.GetContainerRecipesArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.imagebuilder.outputs.GetContainerRecipesResult] =
       val argsBuilder = com.pulumi.aws.imagebuilder.inputs.GetContainerRecipesArgs.builder
       com.pulumi.aws.imagebuilder.ImagebuilderFunctions.getContainerRecipes(args(argsBuilder).build)
 
     /** Use this data source to get the ARNs and names of Image Builder Container Recipes matching the specified criteria. */
-    def getContainerRecipesPlain(args: Endofunction[com.pulumi.aws.imagebuilder.inputs.GetContainerRecipesPlainArgs.Builder] = scala.Predef.identity):
+    inline def getContainerRecipesPlain(args: Endofunction[com.pulumi.aws.imagebuilder.inputs.GetContainerRecipesPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.imagebuilder.outputs.GetContainerRecipesResult] =
       val argsBuilder = com.pulumi.aws.imagebuilder.inputs.GetContainerRecipesPlainArgs.builder
       com.pulumi.aws.imagebuilder.ImagebuilderFunctions.getContainerRecipesPlain(args(argsBuilder).build)
 
     /** Provides details about an Image Builder Distribution Configuration. */
-    def getDistributionConfiguration(args: Endofunction[com.pulumi.aws.imagebuilder.inputs.GetDistributionConfigurationArgs.Builder] = scala.Predef.identity):
+    inline def getDistributionConfiguration(args: Endofunction[com.pulumi.aws.imagebuilder.inputs.GetDistributionConfigurationArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.imagebuilder.outputs.GetDistributionConfigurationResult] =
       val argsBuilder = com.pulumi.aws.imagebuilder.inputs.GetDistributionConfigurationArgs.builder
       com.pulumi.aws.imagebuilder.ImagebuilderFunctions.getDistributionConfiguration(args(argsBuilder).build)
 
     /** Provides details about an Image Builder Distribution Configuration. */
-    def getDistributionConfigurationPlain(args: Endofunction[com.pulumi.aws.imagebuilder.inputs.GetDistributionConfigurationPlainArgs.Builder] = scala.Predef.identity):
+    inline def getDistributionConfigurationPlain(args: Endofunction[com.pulumi.aws.imagebuilder.inputs.GetDistributionConfigurationPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.imagebuilder.outputs.GetDistributionConfigurationResult] =
       val argsBuilder = com.pulumi.aws.imagebuilder.inputs.GetDistributionConfigurationPlainArgs.builder
       com.pulumi.aws.imagebuilder.ImagebuilderFunctions.getDistributionConfigurationPlain(args(argsBuilder).build)
 
     /** Use this data source to get the ARNs and names of Image Builder Distribution Configurations matching the specified criteria. */
-    def getDistributionConfigurations(args: Endofunction[com.pulumi.aws.imagebuilder.inputs.GetDistributionConfigurationsArgs.Builder] = scala.Predef.identity):
+    inline def getDistributionConfigurations(args: Endofunction[com.pulumi.aws.imagebuilder.inputs.GetDistributionConfigurationsArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.imagebuilder.outputs.GetDistributionConfigurationsResult] =
       val argsBuilder = com.pulumi.aws.imagebuilder.inputs.GetDistributionConfigurationsArgs.builder
       com.pulumi.aws.imagebuilder.ImagebuilderFunctions.getDistributionConfigurations(args(argsBuilder).build)
 
     /** Use this data source to get the ARNs and names of Image Builder Distribution Configurations matching the specified criteria. */
-    def getDistributionConfigurationsPlain(args: Endofunction[com.pulumi.aws.imagebuilder.inputs.GetDistributionConfigurationsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getDistributionConfigurationsPlain(args: Endofunction[com.pulumi.aws.imagebuilder.inputs.GetDistributionConfigurationsPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.imagebuilder.outputs.GetDistributionConfigurationsResult] =
       val argsBuilder = com.pulumi.aws.imagebuilder.inputs.GetDistributionConfigurationsPlainArgs.builder
       com.pulumi.aws.imagebuilder.ImagebuilderFunctions.getDistributionConfigurationsPlain(args(argsBuilder).build)
 
     /** Provides details about an Image Builder Image. */
-    def getImage(args: Endofunction[com.pulumi.aws.imagebuilder.inputs.GetImageArgs.Builder] = scala.Predef.identity):
+    inline def getImage(args: Endofunction[com.pulumi.aws.imagebuilder.inputs.GetImageArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.imagebuilder.outputs.GetImageResult] =
       val argsBuilder = com.pulumi.aws.imagebuilder.inputs.GetImageArgs.builder
       com.pulumi.aws.imagebuilder.ImagebuilderFunctions.getImage(args(argsBuilder).build)
 
     /** Provides details about an Image Builder Image. */
-    def getImagePlain(args: Endofunction[com.pulumi.aws.imagebuilder.inputs.GetImagePlainArgs.Builder] = scala.Predef.identity):
+    inline def getImagePlain(args: Endofunction[com.pulumi.aws.imagebuilder.inputs.GetImagePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.imagebuilder.outputs.GetImageResult] =
       val argsBuilder = com.pulumi.aws.imagebuilder.inputs.GetImagePlainArgs.builder
       com.pulumi.aws.imagebuilder.ImagebuilderFunctions.getImagePlain(args(argsBuilder).build)
 
     /** Provides details about an Image Builder Image Pipeline. */
-    def getImagePipeline(args: Endofunction[com.pulumi.aws.imagebuilder.inputs.GetImagePipelineArgs.Builder] = scala.Predef.identity):
+    inline def getImagePipeline(args: Endofunction[com.pulumi.aws.imagebuilder.inputs.GetImagePipelineArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.imagebuilder.outputs.GetImagePipelineResult] =
       val argsBuilder = com.pulumi.aws.imagebuilder.inputs.GetImagePipelineArgs.builder
       com.pulumi.aws.imagebuilder.ImagebuilderFunctions.getImagePipeline(args(argsBuilder).build)
 
     /** Provides details about an Image Builder Image Pipeline. */
-    def getImagePipelinePlain(args: Endofunction[com.pulumi.aws.imagebuilder.inputs.GetImagePipelinePlainArgs.Builder] = scala.Predef.identity):
+    inline def getImagePipelinePlain(args: Endofunction[com.pulumi.aws.imagebuilder.inputs.GetImagePipelinePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.imagebuilder.outputs.GetImagePipelineResult] =
       val argsBuilder = com.pulumi.aws.imagebuilder.inputs.GetImagePipelinePlainArgs.builder
       com.pulumi.aws.imagebuilder.ImagebuilderFunctions.getImagePipelinePlain(args(argsBuilder).build)
 
     /** Use this data source to get the ARNs and names of Image Builder Image Pipelines matching the specified criteria. */
-    def getImagePipelines(args: Endofunction[com.pulumi.aws.imagebuilder.inputs.GetImagePipelinesArgs.Builder] = scala.Predef.identity):
+    inline def getImagePipelines(args: Endofunction[com.pulumi.aws.imagebuilder.inputs.GetImagePipelinesArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.imagebuilder.outputs.GetImagePipelinesResult] =
       val argsBuilder = com.pulumi.aws.imagebuilder.inputs.GetImagePipelinesArgs.builder
       com.pulumi.aws.imagebuilder.ImagebuilderFunctions.getImagePipelines(args(argsBuilder).build)
 
     /** Use this data source to get the ARNs and names of Image Builder Image Pipelines matching the specified criteria. */
-    def getImagePipelinesPlain(args: Endofunction[com.pulumi.aws.imagebuilder.inputs.GetImagePipelinesPlainArgs.Builder] = scala.Predef.identity):
+    inline def getImagePipelinesPlain(args: Endofunction[com.pulumi.aws.imagebuilder.inputs.GetImagePipelinesPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.imagebuilder.outputs.GetImagePipelinesResult] =
       val argsBuilder = com.pulumi.aws.imagebuilder.inputs.GetImagePipelinesPlainArgs.builder
       com.pulumi.aws.imagebuilder.ImagebuilderFunctions.getImagePipelinesPlain(args(argsBuilder).build)
 
     /** Provides details about an Image Builder Image Recipe. */
-    def getImageRecipe(args: Endofunction[com.pulumi.aws.imagebuilder.inputs.GetImageRecipeArgs.Builder] = scala.Predef.identity):
+    inline def getImageRecipe(args: Endofunction[com.pulumi.aws.imagebuilder.inputs.GetImageRecipeArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.imagebuilder.outputs.GetImageRecipeResult] =
       val argsBuilder = com.pulumi.aws.imagebuilder.inputs.GetImageRecipeArgs.builder
       com.pulumi.aws.imagebuilder.ImagebuilderFunctions.getImageRecipe(args(argsBuilder).build)
 
     /** Provides details about an Image Builder Image Recipe. */
-    def getImageRecipePlain(args: Endofunction[com.pulumi.aws.imagebuilder.inputs.GetImageRecipePlainArgs.Builder] = scala.Predef.identity):
+    inline def getImageRecipePlain(args: Endofunction[com.pulumi.aws.imagebuilder.inputs.GetImageRecipePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.imagebuilder.outputs.GetImageRecipeResult] =
       val argsBuilder = com.pulumi.aws.imagebuilder.inputs.GetImageRecipePlainArgs.builder
       com.pulumi.aws.imagebuilder.ImagebuilderFunctions.getImageRecipePlain(args(argsBuilder).build)
 
     /** Use this data source to get the ARNs and names of Image Builder Image Recipes matching the specified criteria. */
-    def getImageRecipes(args: Endofunction[com.pulumi.aws.imagebuilder.inputs.GetImageRecipesArgs.Builder] = scala.Predef.identity):
+    inline def getImageRecipes(args: Endofunction[com.pulumi.aws.imagebuilder.inputs.GetImageRecipesArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.imagebuilder.outputs.GetImageRecipesResult] =
       val argsBuilder = com.pulumi.aws.imagebuilder.inputs.GetImageRecipesArgs.builder
       com.pulumi.aws.imagebuilder.ImagebuilderFunctions.getImageRecipes(args(argsBuilder).build)
 
     /** Use this data source to get the ARNs and names of Image Builder Image Recipes matching the specified criteria. */
-    def getImageRecipesPlain(args: Endofunction[com.pulumi.aws.imagebuilder.inputs.GetImageRecipesPlainArgs.Builder] = scala.Predef.identity):
+    inline def getImageRecipesPlain(args: Endofunction[com.pulumi.aws.imagebuilder.inputs.GetImageRecipesPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.imagebuilder.outputs.GetImageRecipesResult] =
       val argsBuilder = com.pulumi.aws.imagebuilder.inputs.GetImageRecipesPlainArgs.builder
       com.pulumi.aws.imagebuilder.ImagebuilderFunctions.getImageRecipesPlain(args(argsBuilder).build)
 
     /** Provides details about an Image Builder Infrastructure Configuration. */
-    def getInfrastructureConfiguration(args: Endofunction[com.pulumi.aws.imagebuilder.inputs.GetInfrastructureConfigurationArgs.Builder] = scala.Predef.identity):
+    inline def getInfrastructureConfiguration(args: Endofunction[com.pulumi.aws.imagebuilder.inputs.GetInfrastructureConfigurationArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.imagebuilder.outputs.GetInfrastructureConfigurationResult] =
       val argsBuilder = com.pulumi.aws.imagebuilder.inputs.GetInfrastructureConfigurationArgs.builder
       com.pulumi.aws.imagebuilder.ImagebuilderFunctions.getInfrastructureConfiguration(args(argsBuilder).build)
 
     /** Provides details about an Image Builder Infrastructure Configuration. */
-    def getInfrastructureConfigurationPlain(args: Endofunction[com.pulumi.aws.imagebuilder.inputs.GetInfrastructureConfigurationPlainArgs.Builder] = scala.Predef.identity):
+    inline def getInfrastructureConfigurationPlain(args: Endofunction[com.pulumi.aws.imagebuilder.inputs.GetInfrastructureConfigurationPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.imagebuilder.outputs.GetInfrastructureConfigurationResult] =
       val argsBuilder = com.pulumi.aws.imagebuilder.inputs.GetInfrastructureConfigurationPlainArgs.builder
       com.pulumi.aws.imagebuilder.ImagebuilderFunctions.getInfrastructureConfigurationPlain(args(argsBuilder).build)
 
     /** Use this data source to get the ARNs and names of Image Builder Infrastructure Configurations matching the specified criteria. */
-    def getInfrastructureConfigurations(args: Endofunction[com.pulumi.aws.imagebuilder.inputs.GetInfrastructureConfigurationsArgs.Builder] = scala.Predef.identity):
+    inline def getInfrastructureConfigurations(args: Endofunction[com.pulumi.aws.imagebuilder.inputs.GetInfrastructureConfigurationsArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.imagebuilder.outputs.GetInfrastructureConfigurationsResult] =
       val argsBuilder = com.pulumi.aws.imagebuilder.inputs.GetInfrastructureConfigurationsArgs.builder
       com.pulumi.aws.imagebuilder.ImagebuilderFunctions.getInfrastructureConfigurations(args(argsBuilder).build)
 
     /** Use this data source to get the ARNs and names of Image Builder Infrastructure Configurations matching the specified criteria. */
-    def getInfrastructureConfigurationsPlain(args: Endofunction[com.pulumi.aws.imagebuilder.inputs.GetInfrastructureConfigurationsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getInfrastructureConfigurationsPlain(args: Endofunction[com.pulumi.aws.imagebuilder.inputs.GetInfrastructureConfigurationsPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.imagebuilder.outputs.GetInfrastructureConfigurationsResult] =
       val argsBuilder = com.pulumi.aws.imagebuilder.inputs.GetInfrastructureConfigurationsPlainArgs.builder
       com.pulumi.aws.imagebuilder.ImagebuilderFunctions.getInfrastructureConfigurationsPlain(args(argsBuilder).build)

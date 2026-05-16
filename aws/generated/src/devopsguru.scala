@@ -4,31 +4,33 @@ package aws
 import com.pulumi.resources.CustomResourceOptions
 
 object devopsguru:
-  type DevopsguruFunctions = com.pulumi.aws.devopsguru.DevopsguruFunctions
   object DevopsguruFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.aws.devopsguru.DevopsguruFunctions.*
-  extension (self: DevopsguruFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /** Data source for managing an AWS DevOps Guru Notification Channel. */
-    def getNotificationChannel(args: Endofunction[com.pulumi.aws.devopsguru.inputs.GetNotificationChannelArgs.Builder] = scala.Predef.identity):
+    inline def getNotificationChannel(args: Endofunction[com.pulumi.aws.devopsguru.inputs.GetNotificationChannelArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.devopsguru.outputs.GetNotificationChannelResult] =
       val argsBuilder = com.pulumi.aws.devopsguru.inputs.GetNotificationChannelArgs.builder
       com.pulumi.aws.devopsguru.DevopsguruFunctions.getNotificationChannel(args(argsBuilder).build)
 
     /** Data source for managing an AWS DevOps Guru Notification Channel. */
-    def getNotificationChannelPlain(args: Endofunction[com.pulumi.aws.devopsguru.inputs.GetNotificationChannelPlainArgs.Builder] = scala.Predef.identity):
+    inline def getNotificationChannelPlain(args: Endofunction[com.pulumi.aws.devopsguru.inputs.GetNotificationChannelPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.devopsguru.outputs.GetNotificationChannelResult] =
       val argsBuilder = com.pulumi.aws.devopsguru.inputs.GetNotificationChannelPlainArgs.builder
       com.pulumi.aws.devopsguru.DevopsguruFunctions.getNotificationChannelPlain(args(argsBuilder).build)
 
     /** Data source for managing an AWS DevOps Guru Resource Collection. */
-    def getResourceCollection(args: Endofunction[com.pulumi.aws.devopsguru.inputs.GetResourceCollectionArgs.Builder] = scala.Predef.identity):
+    inline def getResourceCollection(args: Endofunction[com.pulumi.aws.devopsguru.inputs.GetResourceCollectionArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.devopsguru.outputs.GetResourceCollectionResult] =
       val argsBuilder = com.pulumi.aws.devopsguru.inputs.GetResourceCollectionArgs.builder
       com.pulumi.aws.devopsguru.DevopsguruFunctions.getResourceCollection(args(argsBuilder).build)
 
     /** Data source for managing an AWS DevOps Guru Resource Collection. */
-    def getResourceCollectionPlain(args: Endofunction[com.pulumi.aws.devopsguru.inputs.GetResourceCollectionPlainArgs.Builder] = scala.Predef.identity):
+    inline def getResourceCollectionPlain(args: Endofunction[com.pulumi.aws.devopsguru.inputs.GetResourceCollectionPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.devopsguru.outputs.GetResourceCollectionResult] =
       val argsBuilder = com.pulumi.aws.devopsguru.inputs.GetResourceCollectionPlainArgs.builder
       com.pulumi.aws.devopsguru.DevopsguruFunctions.getResourceCollectionPlain(args(argsBuilder).build)

@@ -56,11 +56,13 @@ object privilegedaccessmanager:
       val argsBuilder = com.pulumi.gcp.privilegedaccessmanager.inputs.EntitlementRequesterJustificationConfigArgs.builder
       builder.requesterJustificationConfig(args(argsBuilder).build)
 
-  type PrivilegedaccessmanagerFunctions = com.pulumi.gcp.privilegedaccessmanager.PrivilegedaccessmanagerFunctions
   object PrivilegedaccessmanagerFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.gcp.privilegedaccessmanager.PrivilegedaccessmanagerFunctions.*
-  extension (self: PrivilegedaccessmanagerFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /**
      * Use this data source to get information about a Google Cloud Privileged Access Manager Entitlement.
      * 
@@ -70,7 +72,7 @@ object privilegedaccessmanager:
      *  * How-to guides
      *    * [Official documentation](https://cloud.google.com/iam/docs/pam-overview)
      */
-    def getEntitlement(args: Endofunction[com.pulumi.gcp.privilegedaccessmanager.inputs.GetEntitlementArgs.Builder] = scala.Predef.identity):
+    inline def getEntitlement(args: Endofunction[com.pulumi.gcp.privilegedaccessmanager.inputs.GetEntitlementArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.privilegedaccessmanager.outputs.GetEntitlementResult] =
       val argsBuilder = com.pulumi.gcp.privilegedaccessmanager.inputs.GetEntitlementArgs.builder
       com.pulumi.gcp.privilegedaccessmanager.PrivilegedaccessmanagerFunctions.getEntitlement(args(argsBuilder).build)
@@ -84,7 +86,7 @@ object privilegedaccessmanager:
      *  * How-to guides
      *    * [Official documentation](https://cloud.google.com/iam/docs/pam-overview)
      */
-    def getEntitlementPlain(args: Endofunction[com.pulumi.gcp.privilegedaccessmanager.inputs.GetEntitlementPlainArgs.Builder] = scala.Predef.identity):
+    inline def getEntitlementPlain(args: Endofunction[com.pulumi.gcp.privilegedaccessmanager.inputs.GetEntitlementPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.privilegedaccessmanager.outputs.GetEntitlementResult] =
       val argsBuilder = com.pulumi.gcp.privilegedaccessmanager.inputs.GetEntitlementPlainArgs.builder
       com.pulumi.gcp.privilegedaccessmanager.PrivilegedaccessmanagerFunctions.getEntitlementPlain(args(argsBuilder).build)

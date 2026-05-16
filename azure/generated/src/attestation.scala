@@ -18,19 +18,21 @@ object attestation:
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
-  type AttestationFunctions = com.pulumi.azure.attestation.AttestationFunctions
   object AttestationFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.azure.attestation.AttestationFunctions.*
-  extension (self: AttestationFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /** Use this data source to access information about an existing Attestation Provider. */
-    def getProvider(args: Endofunction[com.pulumi.azure.attestation.inputs.GetProviderArgs.Builder] = scala.Predef.identity):
+    inline def getProvider(args: Endofunction[com.pulumi.azure.attestation.inputs.GetProviderArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.attestation.outputs.GetProviderResult] =
       val argsBuilder = com.pulumi.azure.attestation.inputs.GetProviderArgs.builder
       com.pulumi.azure.attestation.AttestationFunctions.getProvider(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing Attestation Provider. */
-    def getProviderPlain(args: Endofunction[com.pulumi.azure.attestation.inputs.GetProviderPlainArgs.Builder] = scala.Predef.identity):
+    inline def getProviderPlain(args: Endofunction[com.pulumi.azure.attestation.inputs.GetProviderPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.attestation.outputs.GetProviderResult] =
       val argsBuilder = com.pulumi.azure.attestation.inputs.GetProviderPlainArgs.builder
       com.pulumi.azure.attestation.AttestationFunctions.getProviderPlain(args(argsBuilder).build)

@@ -323,67 +323,69 @@ object wafv2:
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
-  type Wafv2Functions = com.pulumi.aws.wafv2.Wafv2Functions
   object Wafv2Functions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.aws.wafv2.Wafv2Functions.*
-  extension (self: Wafv2Functions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /** Retrieves the summary of a WAFv2 IP Set. */
-    def getIpSet(args: Endofunction[com.pulumi.aws.wafv2.inputs.GetIpSetArgs.Builder] = scala.Predef.identity):
+    inline def getIpSet(args: Endofunction[com.pulumi.aws.wafv2.inputs.GetIpSetArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.wafv2.outputs.GetIpSetResult] =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.GetIpSetArgs.builder
       com.pulumi.aws.wafv2.Wafv2Functions.getIpSet(args(argsBuilder).build)
 
     /** Retrieves the summary of a WAFv2 IP Set. */
-    def getIpSetPlain(args: Endofunction[com.pulumi.aws.wafv2.inputs.GetIpSetPlainArgs.Builder] = scala.Predef.identity):
+    inline def getIpSetPlain(args: Endofunction[com.pulumi.aws.wafv2.inputs.GetIpSetPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.wafv2.outputs.GetIpSetResult] =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.GetIpSetPlainArgs.builder
       com.pulumi.aws.wafv2.Wafv2Functions.getIpSetPlain(args(argsBuilder).build)
 
     /** High-level information for a managed rule group. */
-    def getManagedRuleGroup(args: Endofunction[com.pulumi.aws.wafv2.inputs.GetManagedRuleGroupArgs.Builder] = scala.Predef.identity):
+    inline def getManagedRuleGroup(args: Endofunction[com.pulumi.aws.wafv2.inputs.GetManagedRuleGroupArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.wafv2.outputs.GetManagedRuleGroupResult] =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.GetManagedRuleGroupArgs.builder
       com.pulumi.aws.wafv2.Wafv2Functions.getManagedRuleGroup(args(argsBuilder).build)
 
     /** High-level information for a managed rule group. */
-    def getManagedRuleGroupPlain(args: Endofunction[com.pulumi.aws.wafv2.inputs.GetManagedRuleGroupPlainArgs.Builder] = scala.Predef.identity):
+    inline def getManagedRuleGroupPlain(args: Endofunction[com.pulumi.aws.wafv2.inputs.GetManagedRuleGroupPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.wafv2.outputs.GetManagedRuleGroupResult] =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.GetManagedRuleGroupPlainArgs.builder
       com.pulumi.aws.wafv2.Wafv2Functions.getManagedRuleGroupPlain(args(argsBuilder).build)
 
     /** Retrieves the summary of a WAFv2 Regex Pattern Set. */
-    def getRegexPatternSet(args: Endofunction[com.pulumi.aws.wafv2.inputs.GetRegexPatternSetArgs.Builder] = scala.Predef.identity):
+    inline def getRegexPatternSet(args: Endofunction[com.pulumi.aws.wafv2.inputs.GetRegexPatternSetArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.wafv2.outputs.GetRegexPatternSetResult] =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.GetRegexPatternSetArgs.builder
       com.pulumi.aws.wafv2.Wafv2Functions.getRegexPatternSet(args(argsBuilder).build)
 
     /** Retrieves the summary of a WAFv2 Regex Pattern Set. */
-    def getRegexPatternSetPlain(args: Endofunction[com.pulumi.aws.wafv2.inputs.GetRegexPatternSetPlainArgs.Builder] = scala.Predef.identity):
+    inline def getRegexPatternSetPlain(args: Endofunction[com.pulumi.aws.wafv2.inputs.GetRegexPatternSetPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.wafv2.outputs.GetRegexPatternSetResult] =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.GetRegexPatternSetPlainArgs.builder
       com.pulumi.aws.wafv2.Wafv2Functions.getRegexPatternSetPlain(args(argsBuilder).build)
 
     /** Retrieves the summary of a WAFv2 Rule Group. */
-    def getRuleGroup(args: Endofunction[com.pulumi.aws.wafv2.inputs.GetRuleGroupArgs.Builder] = scala.Predef.identity):
+    inline def getRuleGroup(args: Endofunction[com.pulumi.aws.wafv2.inputs.GetRuleGroupArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.wafv2.outputs.GetRuleGroupResult] =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.GetRuleGroupArgs.builder
       com.pulumi.aws.wafv2.Wafv2Functions.getRuleGroup(args(argsBuilder).build)
 
     /** Retrieves the summary of a WAFv2 Rule Group. */
-    def getRuleGroupPlain(args: Endofunction[com.pulumi.aws.wafv2.inputs.GetRuleGroupPlainArgs.Builder] = scala.Predef.identity):
+    inline def getRuleGroupPlain(args: Endofunction[com.pulumi.aws.wafv2.inputs.GetRuleGroupPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.wafv2.outputs.GetRuleGroupResult] =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.GetRuleGroupPlainArgs.builder
       com.pulumi.aws.wafv2.Wafv2Functions.getRuleGroupPlain(args(argsBuilder).build)
 
     /** Retrieves the summary of a WAFv2 Web ACL. */
-    def getWebAcl(args: Endofunction[com.pulumi.aws.wafv2.inputs.GetWebAclArgs.Builder] = scala.Predef.identity):
+    inline def getWebAcl(args: Endofunction[com.pulumi.aws.wafv2.inputs.GetWebAclArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.wafv2.outputs.GetWebAclResult] =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.GetWebAclArgs.builder
       com.pulumi.aws.wafv2.Wafv2Functions.getWebAcl(args(argsBuilder).build)
 
     /** Retrieves the summary of a WAFv2 Web ACL. */
-    def getWebAclPlain(args: Endofunction[com.pulumi.aws.wafv2.inputs.GetWebAclPlainArgs.Builder] = scala.Predef.identity):
+    inline def getWebAclPlain(args: Endofunction[com.pulumi.aws.wafv2.inputs.GetWebAclPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.wafv2.outputs.GetWebAclResult] =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.GetWebAclPlainArgs.builder
       com.pulumi.aws.wafv2.Wafv2Functions.getWebAclPlain(args(argsBuilder).build)

@@ -209,19 +209,21 @@ object appengine:
       val argsBuilder = com.pulumi.gcp.appengine.inputs.DomainMappingSslSettingsArgs.builder
       builder.sslSettings(args(argsBuilder).build)
 
-  type AppengineFunctions = com.pulumi.gcp.appengine.AppengineFunctions
   object AppengineFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.gcp.appengine.AppengineFunctions.*
-  extension (self: AppengineFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /** Use this data source to retrieve the default App Engine service account for the specified project. */
-    def getDefaultServiceAccount(args: Endofunction[com.pulumi.gcp.appengine.inputs.GetDefaultServiceAccountArgs.Builder] = scala.Predef.identity):
+    inline def getDefaultServiceAccount(args: Endofunction[com.pulumi.gcp.appengine.inputs.GetDefaultServiceAccountArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.appengine.outputs.GetDefaultServiceAccountResult] =
       val argsBuilder = com.pulumi.gcp.appengine.inputs.GetDefaultServiceAccountArgs.builder
       com.pulumi.gcp.appengine.AppengineFunctions.getDefaultServiceAccount(args(argsBuilder).build)
 
     /** Use this data source to retrieve the default App Engine service account for the specified project. */
-    def getDefaultServiceAccountPlain(args: Endofunction[com.pulumi.gcp.appengine.inputs.GetDefaultServiceAccountPlainArgs.Builder] = scala.Predef.identity):
+    inline def getDefaultServiceAccountPlain(args: Endofunction[com.pulumi.gcp.appengine.inputs.GetDefaultServiceAccountPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.appengine.outputs.GetDefaultServiceAccountResult] =
       val argsBuilder = com.pulumi.gcp.appengine.inputs.GetDefaultServiceAccountPlainArgs.builder
       com.pulumi.gcp.appengine.AppengineFunctions.getDefaultServiceAccountPlain(args(argsBuilder).build)

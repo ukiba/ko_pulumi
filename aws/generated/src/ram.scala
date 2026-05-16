@@ -116,19 +116,21 @@ object ram:
         com.pulumi.aws.ram.PermissionArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
 
-  type RamFunctions = com.pulumi.aws.ram.RamFunctions
   object RamFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.aws.ram.RamFunctions.*
-  extension (self: RamFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /** `aws.ram.ResourceShare` Retrieve information about a RAM Resource Share. */
-    def getResourceShare(args: Endofunction[com.pulumi.aws.ram.inputs.GetResourceShareArgs.Builder] = scala.Predef.identity):
+    inline def getResourceShare(args: Endofunction[com.pulumi.aws.ram.inputs.GetResourceShareArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.ram.outputs.GetResourceShareResult] =
       val argsBuilder = com.pulumi.aws.ram.inputs.GetResourceShareArgs.builder
       com.pulumi.aws.ram.RamFunctions.getResourceShare(args(argsBuilder).build)
 
     /** `aws.ram.ResourceShare` Retrieve information about a RAM Resource Share. */
-    def getResourceSharePlain(args: Endofunction[com.pulumi.aws.ram.inputs.GetResourceSharePlainArgs.Builder] = scala.Predef.identity):
+    inline def getResourceSharePlain(args: Endofunction[com.pulumi.aws.ram.inputs.GetResourceSharePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.ram.outputs.GetResourceShareResult] =
       val argsBuilder = com.pulumi.aws.ram.inputs.GetResourceSharePlainArgs.builder
       com.pulumi.aws.ram.RamFunctions.getResourceSharePlain(args(argsBuilder).build)

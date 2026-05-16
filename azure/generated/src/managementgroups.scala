@@ -19,19 +19,21 @@ object managementgroups:
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
-  type ManagementgroupsFunctions = com.pulumi.azure.managementgroups.ManagementgroupsFunctions
   object ManagementgroupsFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.azure.managementgroups.ManagementgroupsFunctions.*
-  extension (self: ManagementgroupsFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /** Use this data source to access information about an existing Management Group. */
-    @deprecated def getManagementGroup(args: Endofunction[com.pulumi.azure.managementgroups.inputs.GetManagementGroupArgs.Builder] = scala.Predef.identity):
+    @deprecated inline def getManagementGroup(args: Endofunction[com.pulumi.azure.managementgroups.inputs.GetManagementGroupArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.managementgroups.outputs.GetManagementGroupResult] =
       val argsBuilder = com.pulumi.azure.managementgroups.inputs.GetManagementGroupArgs.builder
       com.pulumi.azure.managementgroups.ManagementgroupsFunctions.getManagementGroup(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing Management Group. */
-    @deprecated def getManagementGroupPlain(args: Endofunction[com.pulumi.azure.managementgroups.inputs.GetManagementGroupPlainArgs.Builder] = scala.Predef.identity):
+    @deprecated inline def getManagementGroupPlain(args: Endofunction[com.pulumi.azure.managementgroups.inputs.GetManagementGroupPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.managementgroups.outputs.GetManagementGroupResult] =
       val argsBuilder = com.pulumi.azure.managementgroups.inputs.GetManagementGroupPlainArgs.builder
       com.pulumi.azure.managementgroups.ManagementgroupsFunctions.getManagementGroupPlain(args(argsBuilder).build)

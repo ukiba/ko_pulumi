@@ -709,79 +709,81 @@ object mssql:
       def argsBuilder = com.pulumi.azure.mssql.inputs.JobTargetGroupJobTargetArgs.builder
       builder.jobTargets(args.map(_(argsBuilder).build)*)
 
-  type MssqlFunctions = com.pulumi.azure.mssql.MssqlFunctions
   object MssqlFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.azure.mssql.MssqlFunctions.*
-  extension (self: MssqlFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /** Use this data source to access information about an existing SQL database. */
-    def getDatabase(args: Endofunction[com.pulumi.azure.mssql.inputs.GetDatabaseArgs.Builder] = scala.Predef.identity):
+    inline def getDatabase(args: Endofunction[com.pulumi.azure.mssql.inputs.GetDatabaseArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.mssql.outputs.GetDatabaseResult] =
       val argsBuilder = com.pulumi.azure.mssql.inputs.GetDatabaseArgs.builder
       com.pulumi.azure.mssql.MssqlFunctions.getDatabase(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing SQL database. */
-    def getDatabasePlain(args: Endofunction[com.pulumi.azure.mssql.inputs.GetDatabasePlainArgs.Builder] = scala.Predef.identity):
+    inline def getDatabasePlain(args: Endofunction[com.pulumi.azure.mssql.inputs.GetDatabasePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.mssql.outputs.GetDatabaseResult] =
       val argsBuilder = com.pulumi.azure.mssql.inputs.GetDatabasePlainArgs.builder
       com.pulumi.azure.mssql.MssqlFunctions.getDatabasePlain(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing SQL elastic pool. */
-    def getElasticPool(args: Endofunction[com.pulumi.azure.mssql.inputs.GetElasticPoolArgs.Builder] = scala.Predef.identity):
+    inline def getElasticPool(args: Endofunction[com.pulumi.azure.mssql.inputs.GetElasticPoolArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.mssql.outputs.GetElasticPoolResult] =
       val argsBuilder = com.pulumi.azure.mssql.inputs.GetElasticPoolArgs.builder
       com.pulumi.azure.mssql.MssqlFunctions.getElasticPool(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing SQL elastic pool. */
-    def getElasticPoolPlain(args: Endofunction[com.pulumi.azure.mssql.inputs.GetElasticPoolPlainArgs.Builder] = scala.Predef.identity):
+    inline def getElasticPoolPlain(args: Endofunction[com.pulumi.azure.mssql.inputs.GetElasticPoolPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.mssql.outputs.GetElasticPoolResult] =
       val argsBuilder = com.pulumi.azure.mssql.inputs.GetElasticPoolPlainArgs.builder
       com.pulumi.azure.mssql.MssqlFunctions.getElasticPoolPlain(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing Microsoft Azure SQL Failover Group. */
-    def getFailoverGroup(args: Endofunction[com.pulumi.azure.mssql.inputs.GetFailoverGroupArgs.Builder] = scala.Predef.identity):
+    inline def getFailoverGroup(args: Endofunction[com.pulumi.azure.mssql.inputs.GetFailoverGroupArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.mssql.outputs.GetFailoverGroupResult] =
       val argsBuilder = com.pulumi.azure.mssql.inputs.GetFailoverGroupArgs.builder
       com.pulumi.azure.mssql.MssqlFunctions.getFailoverGroup(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing Microsoft Azure SQL Failover Group. */
-    def getFailoverGroupPlain(args: Endofunction[com.pulumi.azure.mssql.inputs.GetFailoverGroupPlainArgs.Builder] = scala.Predef.identity):
+    inline def getFailoverGroupPlain(args: Endofunction[com.pulumi.azure.mssql.inputs.GetFailoverGroupPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.mssql.outputs.GetFailoverGroupResult] =
       val argsBuilder = com.pulumi.azure.mssql.inputs.GetFailoverGroupPlainArgs.builder
       com.pulumi.azure.mssql.MssqlFunctions.getFailoverGroupPlain(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing Azure SQL Azure Managed Database. */
-    def getManagedDatabase(args: Endofunction[com.pulumi.azure.mssql.inputs.GetManagedDatabaseArgs.Builder] = scala.Predef.identity):
+    inline def getManagedDatabase(args: Endofunction[com.pulumi.azure.mssql.inputs.GetManagedDatabaseArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.mssql.outputs.GetManagedDatabaseResult] =
       val argsBuilder = com.pulumi.azure.mssql.inputs.GetManagedDatabaseArgs.builder
       com.pulumi.azure.mssql.MssqlFunctions.getManagedDatabase(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing Azure SQL Azure Managed Database. */
-    def getManagedDatabasePlain(args: Endofunction[com.pulumi.azure.mssql.inputs.GetManagedDatabasePlainArgs.Builder] = scala.Predef.identity):
+    inline def getManagedDatabasePlain(args: Endofunction[com.pulumi.azure.mssql.inputs.GetManagedDatabasePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.mssql.outputs.GetManagedDatabaseResult] =
       val argsBuilder = com.pulumi.azure.mssql.inputs.GetManagedDatabasePlainArgs.builder
       com.pulumi.azure.mssql.MssqlFunctions.getManagedDatabasePlain(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing Microsoft SQL Azure Managed Instance. */
-    def getManagedInstance(args: Endofunction[com.pulumi.azure.mssql.inputs.GetManagedInstanceArgs.Builder] = scala.Predef.identity):
+    inline def getManagedInstance(args: Endofunction[com.pulumi.azure.mssql.inputs.GetManagedInstanceArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.mssql.outputs.GetManagedInstanceResult] =
       val argsBuilder = com.pulumi.azure.mssql.inputs.GetManagedInstanceArgs.builder
       com.pulumi.azure.mssql.MssqlFunctions.getManagedInstance(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing Microsoft SQL Azure Managed Instance. */
-    def getManagedInstancePlain(args: Endofunction[com.pulumi.azure.mssql.inputs.GetManagedInstancePlainArgs.Builder] = scala.Predef.identity):
+    inline def getManagedInstancePlain(args: Endofunction[com.pulumi.azure.mssql.inputs.GetManagedInstancePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.mssql.outputs.GetManagedInstanceResult] =
       val argsBuilder = com.pulumi.azure.mssql.inputs.GetManagedInstancePlainArgs.builder
       com.pulumi.azure.mssql.MssqlFunctions.getManagedInstancePlain(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing Microsoft SQL Server. */
-    def getServer(args: Endofunction[com.pulumi.azure.mssql.inputs.GetServerArgs.Builder] = scala.Predef.identity):
+    inline def getServer(args: Endofunction[com.pulumi.azure.mssql.inputs.GetServerArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.mssql.outputs.GetServerResult] =
       val argsBuilder = com.pulumi.azure.mssql.inputs.GetServerArgs.builder
       com.pulumi.azure.mssql.MssqlFunctions.getServer(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing Microsoft SQL Server. */
-    def getServerPlain(args: Endofunction[com.pulumi.azure.mssql.inputs.GetServerPlainArgs.Builder] = scala.Predef.identity):
+    inline def getServerPlain(args: Endofunction[com.pulumi.azure.mssql.inputs.GetServerPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.mssql.outputs.GetServerResult] =
       val argsBuilder = com.pulumi.azure.mssql.inputs.GetServerPlainArgs.builder
       com.pulumi.azure.mssql.MssqlFunctions.getServerPlain(args(argsBuilder).build)

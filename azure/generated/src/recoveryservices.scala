@@ -12,19 +12,21 @@ object recoveryservices:
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
-  type RecoveryservicesFunctions = com.pulumi.azure.recoveryservices.RecoveryservicesFunctions
   object RecoveryservicesFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.azure.recoveryservices.RecoveryservicesFunctions.*
-  extension (self: RecoveryservicesFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /** Use this data source to access information about an existing Recovery Services Vault. */
-    def getVault(args: Endofunction[com.pulumi.azure.recoveryservices.inputs.GetVaultArgs.Builder] = scala.Predef.identity):
+    inline def getVault(args: Endofunction[com.pulumi.azure.recoveryservices.inputs.GetVaultArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.recoveryservices.outputs.GetVaultResult] =
       val argsBuilder = com.pulumi.azure.recoveryservices.inputs.GetVaultArgs.builder
       com.pulumi.azure.recoveryservices.RecoveryservicesFunctions.getVault(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing Recovery Services Vault. */
-    def getVaultPlain(args: Endofunction[com.pulumi.azure.recoveryservices.inputs.GetVaultPlainArgs.Builder] = scala.Predef.identity):
+    inline def getVaultPlain(args: Endofunction[com.pulumi.azure.recoveryservices.inputs.GetVaultPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.recoveryservices.outputs.GetVaultResult] =
       val argsBuilder = com.pulumi.azure.recoveryservices.inputs.GetVaultPlainArgs.builder
       com.pulumi.azure.recoveryservices.RecoveryservicesFunctions.getVaultPlain(args(argsBuilder).build)

@@ -280,31 +280,33 @@ object securitycenter:
       val argsBuilder = com.pulumi.gcp.securitycenter.inputs.NotificationConfigStreamingConfigArgs.builder
       builder.streamingConfig(args(argsBuilder).build)
 
-  type SecuritycenterFunctions = com.pulumi.gcp.securitycenter.SecuritycenterFunctions
   object SecuritycenterFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.gcp.securitycenter.SecuritycenterFunctions.*
-  extension (self: SecuritycenterFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /** Retrieves the current IAM policy data for source */
-    def getSourceIamPolicy(args: Endofunction[com.pulumi.gcp.securitycenter.inputs.GetSourceIamPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getSourceIamPolicy(args: Endofunction[com.pulumi.gcp.securitycenter.inputs.GetSourceIamPolicyArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.securitycenter.outputs.GetSourceIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.securitycenter.inputs.GetSourceIamPolicyArgs.builder
       com.pulumi.gcp.securitycenter.SecuritycenterFunctions.getSourceIamPolicy(args(argsBuilder).build)
 
     /** Retrieves the current IAM policy data for source */
-    def getSourceIamPolicyPlain(args: Endofunction[com.pulumi.gcp.securitycenter.inputs.GetSourceIamPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getSourceIamPolicyPlain(args: Endofunction[com.pulumi.gcp.securitycenter.inputs.GetSourceIamPolicyPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.securitycenter.outputs.GetSourceIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.securitycenter.inputs.GetSourceIamPolicyPlainArgs.builder
       com.pulumi.gcp.securitycenter.SecuritycenterFunctions.getSourceIamPolicyPlain(args(argsBuilder).build)
 
     /** Retrieves the current IAM policy data for organizationsource */
-    def getV2OrganizationSourceIamPolicy(args: Endofunction[com.pulumi.gcp.securitycenter.inputs.GetV2OrganizationSourceIamPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getV2OrganizationSourceIamPolicy(args: Endofunction[com.pulumi.gcp.securitycenter.inputs.GetV2OrganizationSourceIamPolicyArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.securitycenter.outputs.GetV2OrganizationSourceIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.securitycenter.inputs.GetV2OrganizationSourceIamPolicyArgs.builder
       com.pulumi.gcp.securitycenter.SecuritycenterFunctions.getV2OrganizationSourceIamPolicy(args(argsBuilder).build)
 
     /** Retrieves the current IAM policy data for organizationsource */
-    def getV2OrganizationSourceIamPolicyPlain(args: Endofunction[com.pulumi.gcp.securitycenter.inputs.GetV2OrganizationSourceIamPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getV2OrganizationSourceIamPolicyPlain(args: Endofunction[com.pulumi.gcp.securitycenter.inputs.GetV2OrganizationSourceIamPolicyPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.securitycenter.outputs.GetV2OrganizationSourceIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.securitycenter.inputs.GetV2OrganizationSourceIamPolicyPlainArgs.builder
       com.pulumi.gcp.securitycenter.SecuritycenterFunctions.getV2OrganizationSourceIamPolicyPlain(args(argsBuilder).build)

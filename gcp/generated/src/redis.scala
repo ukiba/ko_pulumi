@@ -25,31 +25,33 @@ object redis:
       val argsBuilder = com.pulumi.gcp.redis.inputs.InstancePersistenceConfigArgs.builder
       builder.persistenceConfig(args(argsBuilder).build)
 
-  type RedisFunctions = com.pulumi.gcp.redis.RedisFunctions
   object RedisFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.gcp.redis.RedisFunctions.*
-  extension (self: RedisFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /** Use this data source to get information about a Redis Cluster. For more details, see the [API documentation](https://cloud.google.com/memorystore/docs/cluster/reference/rest/v1/projects.locations.clusters). */
-    def getCluster(args: Endofunction[com.pulumi.gcp.redis.inputs.GetClusterArgs.Builder] = scala.Predef.identity):
+    inline def getCluster(args: Endofunction[com.pulumi.gcp.redis.inputs.GetClusterArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.redis.outputs.GetClusterResult] =
       val argsBuilder = com.pulumi.gcp.redis.inputs.GetClusterArgs.builder
       com.pulumi.gcp.redis.RedisFunctions.getCluster(args(argsBuilder).build)
 
     /** Use this data source to get information about a Redis Cluster. For more details, see the [API documentation](https://cloud.google.com/memorystore/docs/cluster/reference/rest/v1/projects.locations.clusters). */
-    def getClusterPlain(args: Endofunction[com.pulumi.gcp.redis.inputs.GetClusterPlainArgs.Builder] = scala.Predef.identity):
+    inline def getClusterPlain(args: Endofunction[com.pulumi.gcp.redis.inputs.GetClusterPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.redis.outputs.GetClusterResult] =
       val argsBuilder = com.pulumi.gcp.redis.inputs.GetClusterPlainArgs.builder
       com.pulumi.gcp.redis.RedisFunctions.getClusterPlain(args(argsBuilder).build)
 
     /** Get info about a Google Cloud Redis instance. */
-    def getInstance(args: Endofunction[com.pulumi.gcp.redis.inputs.GetInstanceArgs.Builder] = scala.Predef.identity):
+    inline def getInstance(args: Endofunction[com.pulumi.gcp.redis.inputs.GetInstanceArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.redis.outputs.GetInstanceResult] =
       val argsBuilder = com.pulumi.gcp.redis.inputs.GetInstanceArgs.builder
       com.pulumi.gcp.redis.RedisFunctions.getInstance(args(argsBuilder).build)
 
     /** Get info about a Google Cloud Redis instance. */
-    def getInstancePlain(args: Endofunction[com.pulumi.gcp.redis.inputs.GetInstancePlainArgs.Builder] = scala.Predef.identity):
+    inline def getInstancePlain(args: Endofunction[com.pulumi.gcp.redis.inputs.GetInstancePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.redis.outputs.GetInstanceResult] =
       val argsBuilder = com.pulumi.gcp.redis.inputs.GetInstancePlainArgs.builder
       com.pulumi.gcp.redis.RedisFunctions.getInstancePlain(args(argsBuilder).build)

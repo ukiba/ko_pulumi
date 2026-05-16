@@ -3730,79 +3730,81 @@ object beyondcorp:
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
-  type BeyondcorpFunctions = com.pulumi.gcp.beyondcorp.BeyondcorpFunctions
   object BeyondcorpFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.gcp.beyondcorp.BeyondcorpFunctions.*
-  extension (self: BeyondcorpFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /** Get information about a Google BeyondCorp App Connection. */
-    def getAppConnection(args: Endofunction[com.pulumi.gcp.beyondcorp.inputs.GetAppConnectionArgs.Builder] = scala.Predef.identity):
+    inline def getAppConnection(args: Endofunction[com.pulumi.gcp.beyondcorp.inputs.GetAppConnectionArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.beyondcorp.outputs.GetAppConnectionResult] =
       val argsBuilder = com.pulumi.gcp.beyondcorp.inputs.GetAppConnectionArgs.builder
       com.pulumi.gcp.beyondcorp.BeyondcorpFunctions.getAppConnection(args(argsBuilder).build)
 
     /** Get information about a Google BeyondCorp App Connection. */
-    def getAppConnectionPlain(args: Endofunction[com.pulumi.gcp.beyondcorp.inputs.GetAppConnectionPlainArgs.Builder] = scala.Predef.identity):
+    inline def getAppConnectionPlain(args: Endofunction[com.pulumi.gcp.beyondcorp.inputs.GetAppConnectionPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.beyondcorp.outputs.GetAppConnectionResult] =
       val argsBuilder = com.pulumi.gcp.beyondcorp.inputs.GetAppConnectionPlainArgs.builder
       com.pulumi.gcp.beyondcorp.BeyondcorpFunctions.getAppConnectionPlain(args(argsBuilder).build)
 
     /** Get information about a Google BeyondCorp App Connector. */
-    def getAppConnector(args: Endofunction[com.pulumi.gcp.beyondcorp.inputs.GetAppConnectorArgs.Builder] = scala.Predef.identity):
+    inline def getAppConnector(args: Endofunction[com.pulumi.gcp.beyondcorp.inputs.GetAppConnectorArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.beyondcorp.outputs.GetAppConnectorResult] =
       val argsBuilder = com.pulumi.gcp.beyondcorp.inputs.GetAppConnectorArgs.builder
       com.pulumi.gcp.beyondcorp.BeyondcorpFunctions.getAppConnector(args(argsBuilder).build)
 
     /** Get information about a Google BeyondCorp App Connector. */
-    def getAppConnectorPlain(args: Endofunction[com.pulumi.gcp.beyondcorp.inputs.GetAppConnectorPlainArgs.Builder] = scala.Predef.identity):
+    inline def getAppConnectorPlain(args: Endofunction[com.pulumi.gcp.beyondcorp.inputs.GetAppConnectorPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.beyondcorp.outputs.GetAppConnectorResult] =
       val argsBuilder = com.pulumi.gcp.beyondcorp.inputs.GetAppConnectorPlainArgs.builder
       com.pulumi.gcp.beyondcorp.BeyondcorpFunctions.getAppConnectorPlain(args(argsBuilder).build)
 
     /** Get information about a Google BeyondCorp App Gateway. */
-    def getAppGateway(args: Endofunction[com.pulumi.gcp.beyondcorp.inputs.GetAppGatewayArgs.Builder] = scala.Predef.identity):
+    inline def getAppGateway(args: Endofunction[com.pulumi.gcp.beyondcorp.inputs.GetAppGatewayArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.beyondcorp.outputs.GetAppGatewayResult] =
       val argsBuilder = com.pulumi.gcp.beyondcorp.inputs.GetAppGatewayArgs.builder
       com.pulumi.gcp.beyondcorp.BeyondcorpFunctions.getAppGateway(args(argsBuilder).build)
 
     /** Get information about a Google BeyondCorp App Gateway. */
-    def getAppGatewayPlain(args: Endofunction[com.pulumi.gcp.beyondcorp.inputs.GetAppGatewayPlainArgs.Builder] = scala.Predef.identity):
+    inline def getAppGatewayPlain(args: Endofunction[com.pulumi.gcp.beyondcorp.inputs.GetAppGatewayPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.beyondcorp.outputs.GetAppGatewayResult] =
       val argsBuilder = com.pulumi.gcp.beyondcorp.inputs.GetAppGatewayPlainArgs.builder
       com.pulumi.gcp.beyondcorp.BeyondcorpFunctions.getAppGatewayPlain(args(argsBuilder).build)
 
     /** Get information about a Google BeyondCorp Security Gateway. */
-    def getSecurityGateway(args: Endofunction[com.pulumi.gcp.beyondcorp.inputs.GetSecurityGatewayArgs.Builder] = scala.Predef.identity):
+    inline def getSecurityGateway(args: Endofunction[com.pulumi.gcp.beyondcorp.inputs.GetSecurityGatewayArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.beyondcorp.outputs.GetSecurityGatewayResult] =
       val argsBuilder = com.pulumi.gcp.beyondcorp.inputs.GetSecurityGatewayArgs.builder
       com.pulumi.gcp.beyondcorp.BeyondcorpFunctions.getSecurityGateway(args(argsBuilder).build)
 
     /** Get information about a Google BeyondCorp Security Gateway. */
-    def getSecurityGatewayPlain(args: Endofunction[com.pulumi.gcp.beyondcorp.inputs.GetSecurityGatewayPlainArgs.Builder] = scala.Predef.identity):
+    inline def getSecurityGatewayPlain(args: Endofunction[com.pulumi.gcp.beyondcorp.inputs.GetSecurityGatewayPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.beyondcorp.outputs.GetSecurityGatewayResult] =
       val argsBuilder = com.pulumi.gcp.beyondcorp.inputs.GetSecurityGatewayPlainArgs.builder
       com.pulumi.gcp.beyondcorp.BeyondcorpFunctions.getSecurityGatewayPlain(args(argsBuilder).build)
 
     /** Retrieves the current IAM policy data for securitygatewayapplication */
-    def getSecurityGatewayApplicationIamPolicy(args: Endofunction[com.pulumi.gcp.beyondcorp.inputs.GetSecurityGatewayApplicationIamPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getSecurityGatewayApplicationIamPolicy(args: Endofunction[com.pulumi.gcp.beyondcorp.inputs.GetSecurityGatewayApplicationIamPolicyArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.beyondcorp.outputs.GetSecurityGatewayApplicationIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.beyondcorp.inputs.GetSecurityGatewayApplicationIamPolicyArgs.builder
       com.pulumi.gcp.beyondcorp.BeyondcorpFunctions.getSecurityGatewayApplicationIamPolicy(args(argsBuilder).build)
 
     /** Retrieves the current IAM policy data for securitygatewayapplication */
-    def getSecurityGatewayApplicationIamPolicyPlain(args: Endofunction[com.pulumi.gcp.beyondcorp.inputs.GetSecurityGatewayApplicationIamPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getSecurityGatewayApplicationIamPolicyPlain(args: Endofunction[com.pulumi.gcp.beyondcorp.inputs.GetSecurityGatewayApplicationIamPolicyPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.beyondcorp.outputs.GetSecurityGatewayApplicationIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.beyondcorp.inputs.GetSecurityGatewayApplicationIamPolicyPlainArgs.builder
       com.pulumi.gcp.beyondcorp.BeyondcorpFunctions.getSecurityGatewayApplicationIamPolicyPlain(args(argsBuilder).build)
 
     /** Retrieves the current IAM policy data for securitygateway */
-    def getSecurityGatewayIamPolicy(args: Endofunction[com.pulumi.gcp.beyondcorp.inputs.GetSecurityGatewayIamPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getSecurityGatewayIamPolicy(args: Endofunction[com.pulumi.gcp.beyondcorp.inputs.GetSecurityGatewayIamPolicyArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.beyondcorp.outputs.GetSecurityGatewayIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.beyondcorp.inputs.GetSecurityGatewayIamPolicyArgs.builder
       com.pulumi.gcp.beyondcorp.BeyondcorpFunctions.getSecurityGatewayIamPolicy(args(argsBuilder).build)
 
     /** Retrieves the current IAM policy data for securitygateway */
-    def getSecurityGatewayIamPolicyPlain(args: Endofunction[com.pulumi.gcp.beyondcorp.inputs.GetSecurityGatewayIamPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getSecurityGatewayIamPolicyPlain(args: Endofunction[com.pulumi.gcp.beyondcorp.inputs.GetSecurityGatewayIamPolicyPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.beyondcorp.outputs.GetSecurityGatewayIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.beyondcorp.inputs.GetSecurityGatewayIamPolicyPlainArgs.builder
       com.pulumi.gcp.beyondcorp.BeyondcorpFunctions.getSecurityGatewayIamPolicyPlain(args(argsBuilder).build)

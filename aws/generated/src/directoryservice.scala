@@ -71,19 +71,21 @@ object directoryservice:
         com.pulumi.aws.directoryservice.DirectoryArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
 
-  type DirectoryserviceFunctions = com.pulumi.aws.directoryservice.DirectoryserviceFunctions
   object DirectoryserviceFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.aws.directoryservice.DirectoryserviceFunctions.*
-  extension (self: DirectoryserviceFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /** Get attributes of AWS Directory Service directory (SimpleAD, Managed AD, AD Connector). It&#39;s especially useful to refer AWS Managed AD or on-premise AD in AD Connector configuration. */
-    def getDirectory(args: Endofunction[com.pulumi.aws.directoryservice.inputs.GetDirectoryArgs.Builder] = scala.Predef.identity):
+    inline def getDirectory(args: Endofunction[com.pulumi.aws.directoryservice.inputs.GetDirectoryArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.directoryservice.outputs.GetDirectoryResult] =
       val argsBuilder = com.pulumi.aws.directoryservice.inputs.GetDirectoryArgs.builder
       com.pulumi.aws.directoryservice.DirectoryserviceFunctions.getDirectory(args(argsBuilder).build)
 
     /** Get attributes of AWS Directory Service directory (SimpleAD, Managed AD, AD Connector). It&#39;s especially useful to refer AWS Managed AD or on-premise AD in AD Connector configuration. */
-    def getDirectoryPlain(args: Endofunction[com.pulumi.aws.directoryservice.inputs.GetDirectoryPlainArgs.Builder] = scala.Predef.identity):
+    inline def getDirectoryPlain(args: Endofunction[com.pulumi.aws.directoryservice.inputs.GetDirectoryPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.directoryservice.outputs.GetDirectoryResult] =
       val argsBuilder = com.pulumi.aws.directoryservice.inputs.GetDirectoryPlainArgs.builder
       com.pulumi.aws.directoryservice.DirectoryserviceFunctions.getDirectoryPlain(args(argsBuilder).build)

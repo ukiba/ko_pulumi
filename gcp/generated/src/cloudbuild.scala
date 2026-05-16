@@ -53,11 +53,13 @@ object cloudbuild:
       val argsBuilder = com.pulumi.gcp.cloudbuild.inputs.WorkerPoolWorkerConfigArgs.builder
       builder.workerConfig(args(argsBuilder).build)
 
-  type CloudbuildFunctions = com.pulumi.gcp.cloudbuild.CloudbuildFunctions
   object CloudbuildFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.gcp.cloudbuild.CloudbuildFunctions.*
-  extension (self: CloudbuildFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /**
      * To get more information about Cloudbuild Trigger, see:
      * 
@@ -65,7 +67,7 @@ object cloudbuild:
      *  * How-to Guides
      *      * [Official Documentation](https://cloud.google.com/build/docs/automating-builds/create-manage-triggers)
      */
-    def getTrigger(args: Endofunction[com.pulumi.gcp.cloudbuild.inputs.GetTriggerArgs.Builder] = scala.Predef.identity):
+    inline def getTrigger(args: Endofunction[com.pulumi.gcp.cloudbuild.inputs.GetTriggerArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.cloudbuild.outputs.GetTriggerResult] =
       val argsBuilder = com.pulumi.gcp.cloudbuild.inputs.GetTriggerArgs.builder
       com.pulumi.gcp.cloudbuild.CloudbuildFunctions.getTrigger(args(argsBuilder).build)
@@ -77,7 +79,7 @@ object cloudbuild:
      *  * How-to Guides
      *      * [Official Documentation](https://cloud.google.com/build/docs/automating-builds/create-manage-triggers)
      */
-    def getTriggerPlain(args: Endofunction[com.pulumi.gcp.cloudbuild.inputs.GetTriggerPlainArgs.Builder] = scala.Predef.identity):
+    inline def getTriggerPlain(args: Endofunction[com.pulumi.gcp.cloudbuild.inputs.GetTriggerPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.cloudbuild.outputs.GetTriggerResult] =
       val argsBuilder = com.pulumi.gcp.cloudbuild.inputs.GetTriggerPlainArgs.builder
       com.pulumi.gcp.cloudbuild.CloudbuildFunctions.getTriggerPlain(args(argsBuilder).build)

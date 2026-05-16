@@ -545,91 +545,93 @@ object monitoring:
         com.pulumi.azure.monitoring.ScheduledQueryRulesAlertV2Args.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
 
-  type MonitoringFunctions = com.pulumi.azure.monitoring.MonitoringFunctions
   object MonitoringFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.azure.monitoring.MonitoringFunctions.*
-  extension (self: MonitoringFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /** Use this data source to access the properties of an Action Group. */
-    def getActionGroup(args: Endofunction[com.pulumi.azure.monitoring.inputs.GetActionGroupArgs.Builder] = scala.Predef.identity):
+    inline def getActionGroup(args: Endofunction[com.pulumi.azure.monitoring.inputs.GetActionGroupArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.monitoring.outputs.GetActionGroupResult] =
       val argsBuilder = com.pulumi.azure.monitoring.inputs.GetActionGroupArgs.builder
       com.pulumi.azure.monitoring.MonitoringFunctions.getActionGroup(args(argsBuilder).build)
 
     /** Use this data source to access the properties of an Action Group. */
-    def getActionGroupPlain(args: Endofunction[com.pulumi.azure.monitoring.inputs.GetActionGroupPlainArgs.Builder] = scala.Predef.identity):
+    inline def getActionGroupPlain(args: Endofunction[com.pulumi.azure.monitoring.inputs.GetActionGroupPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.monitoring.outputs.GetActionGroupResult] =
       val argsBuilder = com.pulumi.azure.monitoring.inputs.GetActionGroupPlainArgs.builder
       com.pulumi.azure.monitoring.MonitoringFunctions.getActionGroupPlain(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing Data Collection Endpoint. */
-    def getDataCollectionEndpoint(args: Endofunction[com.pulumi.azure.monitoring.inputs.GetDataCollectionEndpointArgs.Builder] = scala.Predef.identity):
+    inline def getDataCollectionEndpoint(args: Endofunction[com.pulumi.azure.monitoring.inputs.GetDataCollectionEndpointArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.monitoring.outputs.GetDataCollectionEndpointResult] =
       val argsBuilder = com.pulumi.azure.monitoring.inputs.GetDataCollectionEndpointArgs.builder
       com.pulumi.azure.monitoring.MonitoringFunctions.getDataCollectionEndpoint(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing Data Collection Endpoint. */
-    def getDataCollectionEndpointPlain(args: Endofunction[com.pulumi.azure.monitoring.inputs.GetDataCollectionEndpointPlainArgs.Builder] = scala.Predef.identity):
+    inline def getDataCollectionEndpointPlain(args: Endofunction[com.pulumi.azure.monitoring.inputs.GetDataCollectionEndpointPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.monitoring.outputs.GetDataCollectionEndpointResult] =
       val argsBuilder = com.pulumi.azure.monitoring.inputs.GetDataCollectionEndpointPlainArgs.builder
       com.pulumi.azure.monitoring.MonitoringFunctions.getDataCollectionEndpointPlain(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing Data Collection Rule. */
-    def getDataCollectionRule(args: Endofunction[com.pulumi.azure.monitoring.inputs.GetDataCollectionRuleArgs.Builder] = scala.Predef.identity):
+    inline def getDataCollectionRule(args: Endofunction[com.pulumi.azure.monitoring.inputs.GetDataCollectionRuleArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.monitoring.outputs.GetDataCollectionRuleResult] =
       val argsBuilder = com.pulumi.azure.monitoring.inputs.GetDataCollectionRuleArgs.builder
       com.pulumi.azure.monitoring.MonitoringFunctions.getDataCollectionRule(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing Data Collection Rule. */
-    def getDataCollectionRulePlain(args: Endofunction[com.pulumi.azure.monitoring.inputs.GetDataCollectionRulePlainArgs.Builder] = scala.Predef.identity):
+    inline def getDataCollectionRulePlain(args: Endofunction[com.pulumi.azure.monitoring.inputs.GetDataCollectionRulePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.monitoring.outputs.GetDataCollectionRuleResult] =
       val argsBuilder = com.pulumi.azure.monitoring.inputs.GetDataCollectionRulePlainArgs.builder
       com.pulumi.azure.monitoring.MonitoringFunctions.getDataCollectionRulePlain(args(argsBuilder).build)
 
     /** Use this data source to access information about the Monitor Diagnostics Categories supported by an existing Resource. */
-    def getDiagnosticCategories(args: Endofunction[com.pulumi.azure.monitoring.inputs.GetDiagnosticCategoriesArgs.Builder] = scala.Predef.identity):
+    inline def getDiagnosticCategories(args: Endofunction[com.pulumi.azure.monitoring.inputs.GetDiagnosticCategoriesArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.monitoring.outputs.GetDiagnosticCategoriesResult] =
       val argsBuilder = com.pulumi.azure.monitoring.inputs.GetDiagnosticCategoriesArgs.builder
       com.pulumi.azure.monitoring.MonitoringFunctions.getDiagnosticCategories(args(argsBuilder).build)
 
     /** Use this data source to access information about the Monitor Diagnostics Categories supported by an existing Resource. */
-    def getDiagnosticCategoriesPlain(args: Endofunction[com.pulumi.azure.monitoring.inputs.GetDiagnosticCategoriesPlainArgs.Builder] = scala.Predef.identity):
+    inline def getDiagnosticCategoriesPlain(args: Endofunction[com.pulumi.azure.monitoring.inputs.GetDiagnosticCategoriesPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.monitoring.outputs.GetDiagnosticCategoriesResult] =
       val argsBuilder = com.pulumi.azure.monitoring.inputs.GetDiagnosticCategoriesPlainArgs.builder
       com.pulumi.azure.monitoring.MonitoringFunctions.getDiagnosticCategoriesPlain(args(argsBuilder).build)
 
     /** Use this data source to access the properties of an AlertingAction scheduled query rule. */
-    def getScheduledQueryRulesAlert(args: Endofunction[com.pulumi.azure.monitoring.inputs.GetScheduledQueryRulesAlertArgs.Builder] = scala.Predef.identity):
+    inline def getScheduledQueryRulesAlert(args: Endofunction[com.pulumi.azure.monitoring.inputs.GetScheduledQueryRulesAlertArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.monitoring.outputs.GetScheduledQueryRulesAlertResult] =
       val argsBuilder = com.pulumi.azure.monitoring.inputs.GetScheduledQueryRulesAlertArgs.builder
       com.pulumi.azure.monitoring.MonitoringFunctions.getScheduledQueryRulesAlert(args(argsBuilder).build)
 
     /** Use this data source to access the properties of an AlertingAction scheduled query rule. */
-    def getScheduledQueryRulesAlertPlain(args: Endofunction[com.pulumi.azure.monitoring.inputs.GetScheduledQueryRulesAlertPlainArgs.Builder] = scala.Predef.identity):
+    inline def getScheduledQueryRulesAlertPlain(args: Endofunction[com.pulumi.azure.monitoring.inputs.GetScheduledQueryRulesAlertPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.monitoring.outputs.GetScheduledQueryRulesAlertResult] =
       val argsBuilder = com.pulumi.azure.monitoring.inputs.GetScheduledQueryRulesAlertPlainArgs.builder
       com.pulumi.azure.monitoring.MonitoringFunctions.getScheduledQueryRulesAlertPlain(args(argsBuilder).build)
 
     /** Use this data source to access the properties of a LogToMetricAction scheduled query rule. */
-    def getScheduledQueryRulesLog(args: Endofunction[com.pulumi.azure.monitoring.inputs.GetScheduledQueryRulesLogArgs.Builder] = scala.Predef.identity):
+    inline def getScheduledQueryRulesLog(args: Endofunction[com.pulumi.azure.monitoring.inputs.GetScheduledQueryRulesLogArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.monitoring.outputs.GetScheduledQueryRulesLogResult] =
       val argsBuilder = com.pulumi.azure.monitoring.inputs.GetScheduledQueryRulesLogArgs.builder
       com.pulumi.azure.monitoring.MonitoringFunctions.getScheduledQueryRulesLog(args(argsBuilder).build)
 
     /** Use this data source to access the properties of a LogToMetricAction scheduled query rule. */
-    def getScheduledQueryRulesLogPlain(args: Endofunction[com.pulumi.azure.monitoring.inputs.GetScheduledQueryRulesLogPlainArgs.Builder] = scala.Predef.identity):
+    inline def getScheduledQueryRulesLogPlain(args: Endofunction[com.pulumi.azure.monitoring.inputs.GetScheduledQueryRulesLogPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.monitoring.outputs.GetScheduledQueryRulesLogResult] =
       val argsBuilder = com.pulumi.azure.monitoring.inputs.GetScheduledQueryRulesLogPlainArgs.builder
       com.pulumi.azure.monitoring.MonitoringFunctions.getScheduledQueryRulesLogPlain(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing Workspace. */
-    def getWorkspace(args: Endofunction[com.pulumi.azure.monitoring.inputs.GetWorkspaceArgs.Builder] = scala.Predef.identity):
+    inline def getWorkspace(args: Endofunction[com.pulumi.azure.monitoring.inputs.GetWorkspaceArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.monitoring.outputs.GetWorkspaceResult] =
       val argsBuilder = com.pulumi.azure.monitoring.inputs.GetWorkspaceArgs.builder
       com.pulumi.azure.monitoring.MonitoringFunctions.getWorkspace(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing Workspace. */
-    def getWorkspacePlain(args: Endofunction[com.pulumi.azure.monitoring.inputs.GetWorkspacePlainArgs.Builder] = scala.Predef.identity):
+    inline def getWorkspacePlain(args: Endofunction[com.pulumi.azure.monitoring.inputs.GetWorkspacePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.monitoring.outputs.GetWorkspaceResult] =
       val argsBuilder = com.pulumi.azure.monitoring.inputs.GetWorkspacePlainArgs.builder
       com.pulumi.azure.monitoring.MonitoringFunctions.getWorkspacePlain(args(argsBuilder).build)

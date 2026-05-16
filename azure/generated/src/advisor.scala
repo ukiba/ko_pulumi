@@ -4,19 +4,21 @@ package azure
 import com.pulumi.resources.CustomResourceOptions
 
 object advisor:
-  type AdvisorFunctions = com.pulumi.azure.advisor.AdvisorFunctions
   object AdvisorFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.azure.advisor.AdvisorFunctions.*
-  extension (self: AdvisorFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /** Use this data source to access information about an existing Advisor Recommendations. */
-    def getRecommendations(args: Endofunction[com.pulumi.azure.advisor.inputs.GetRecommendationsArgs.Builder] = scala.Predef.identity):
+    inline def getRecommendations(args: Endofunction[com.pulumi.azure.advisor.inputs.GetRecommendationsArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.advisor.outputs.GetRecommendationsResult] =
       val argsBuilder = com.pulumi.azure.advisor.inputs.GetRecommendationsArgs.builder
       com.pulumi.azure.advisor.AdvisorFunctions.getRecommendations(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing Advisor Recommendations. */
-    def getRecommendationsPlain(args: Endofunction[com.pulumi.azure.advisor.inputs.GetRecommendationsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getRecommendationsPlain(args: Endofunction[com.pulumi.azure.advisor.inputs.GetRecommendationsPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.advisor.outputs.GetRecommendationsResult] =
       val argsBuilder = com.pulumi.azure.advisor.inputs.GetRecommendationsPlainArgs.builder
       com.pulumi.azure.advisor.AdvisorFunctions.getRecommendationsPlain(args(argsBuilder).build)

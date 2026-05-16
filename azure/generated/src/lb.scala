@@ -50,55 +50,57 @@ object lb:
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
-  type LbFunctions = com.pulumi.azure.lb.LbFunctions
   object LbFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.azure.lb.LbFunctions.*
-  extension (self: LbFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /** Use this data source to access information about an existing Load Balancer&#39;s Backend Address Pool. */
-    def getBackendAddressPool(args: Endofunction[com.pulumi.azure.lb.inputs.GetBackendAddressPoolArgs.Builder] = scala.Predef.identity):
+    inline def getBackendAddressPool(args: Endofunction[com.pulumi.azure.lb.inputs.GetBackendAddressPoolArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.lb.outputs.GetBackendAddressPoolResult] =
       val argsBuilder = com.pulumi.azure.lb.inputs.GetBackendAddressPoolArgs.builder
       com.pulumi.azure.lb.LbFunctions.getBackendAddressPool(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing Load Balancer&#39;s Backend Address Pool. */
-    def getBackendAddressPoolPlain(args: Endofunction[com.pulumi.azure.lb.inputs.GetBackendAddressPoolPlainArgs.Builder] = scala.Predef.identity):
+    inline def getBackendAddressPoolPlain(args: Endofunction[com.pulumi.azure.lb.inputs.GetBackendAddressPoolPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.lb.outputs.GetBackendAddressPoolResult] =
       val argsBuilder = com.pulumi.azure.lb.inputs.GetBackendAddressPoolPlainArgs.builder
       com.pulumi.azure.lb.LbFunctions.getBackendAddressPoolPlain(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing Load Balancer */
-    def getLB(args: Endofunction[com.pulumi.azure.lb.inputs.GetLBArgs.Builder] = scala.Predef.identity):
+    inline def getLB(args: Endofunction[com.pulumi.azure.lb.inputs.GetLBArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.lb.outputs.GetLBResult] =
       val argsBuilder = com.pulumi.azure.lb.inputs.GetLBArgs.builder
       com.pulumi.azure.lb.LbFunctions.getLB(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing Load Balancer */
-    def getLBPlain(args: Endofunction[com.pulumi.azure.lb.inputs.GetLBPlainArgs.Builder] = scala.Predef.identity):
+    inline def getLBPlain(args: Endofunction[com.pulumi.azure.lb.inputs.GetLBPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.lb.outputs.GetLBResult] =
       val argsBuilder = com.pulumi.azure.lb.inputs.GetLBPlainArgs.builder
       com.pulumi.azure.lb.LbFunctions.getLBPlain(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing Load Balancer Outbound Rule. */
-    def getLBOutboundRule(args: Endofunction[com.pulumi.azure.lb.inputs.GetLBOutboundRuleArgs.Builder] = scala.Predef.identity):
+    inline def getLBOutboundRule(args: Endofunction[com.pulumi.azure.lb.inputs.GetLBOutboundRuleArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.lb.outputs.GetLBOutboundRuleResult] =
       val argsBuilder = com.pulumi.azure.lb.inputs.GetLBOutboundRuleArgs.builder
       com.pulumi.azure.lb.LbFunctions.getLBOutboundRule(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing Load Balancer Outbound Rule. */
-    def getLBOutboundRulePlain(args: Endofunction[com.pulumi.azure.lb.inputs.GetLBOutboundRulePlainArgs.Builder] = scala.Predef.identity):
+    inline def getLBOutboundRulePlain(args: Endofunction[com.pulumi.azure.lb.inputs.GetLBOutboundRulePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.lb.outputs.GetLBOutboundRuleResult] =
       val argsBuilder = com.pulumi.azure.lb.inputs.GetLBOutboundRulePlainArgs.builder
       com.pulumi.azure.lb.LbFunctions.getLBOutboundRulePlain(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing Load Balancer Rule. */
-    def getLBRule(args: Endofunction[com.pulumi.azure.lb.inputs.GetLBRuleArgs.Builder] = scala.Predef.identity):
+    inline def getLBRule(args: Endofunction[com.pulumi.azure.lb.inputs.GetLBRuleArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.lb.outputs.GetLBRuleResult] =
       val argsBuilder = com.pulumi.azure.lb.inputs.GetLBRuleArgs.builder
       com.pulumi.azure.lb.LbFunctions.getLBRule(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing Load Balancer Rule. */
-    def getLBRulePlain(args: Endofunction[com.pulumi.azure.lb.inputs.GetLBRulePlainArgs.Builder] = scala.Predef.identity):
+    inline def getLBRulePlain(args: Endofunction[com.pulumi.azure.lb.inputs.GetLBRulePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.lb.outputs.GetLBRuleResult] =
       val argsBuilder = com.pulumi.azure.lb.inputs.GetLBRulePlainArgs.builder
       com.pulumi.azure.lb.LbFunctions.getLBRulePlain(args(argsBuilder).build)

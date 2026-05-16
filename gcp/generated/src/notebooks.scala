@@ -376,17 +376,19 @@ object notebooks:
       val argsBuilder = com.pulumi.gcp.notebooks.inputs.InstanceIamBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
 
-  type NotebooksFunctions = com.pulumi.gcp.notebooks.NotebooksFunctions
   object NotebooksFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.gcp.notebooks.NotebooksFunctions.*
-  extension (self: NotebooksFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /**
      * &gt; **Warning:** The parent resource has been deprecated: `gcp.notebooks.Instance` is deprecated and will be removed in a future major release. Use `gcp.workbench.Instance` instead.
      * 
      *  Retrieves the current IAM policy data for instance
      */
-    def getInstanceIamPolicy(args: Endofunction[com.pulumi.gcp.notebooks.inputs.GetInstanceIamPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getInstanceIamPolicy(args: Endofunction[com.pulumi.gcp.notebooks.inputs.GetInstanceIamPolicyArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.notebooks.outputs.GetInstanceIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.notebooks.inputs.GetInstanceIamPolicyArgs.builder
       com.pulumi.gcp.notebooks.NotebooksFunctions.getInstanceIamPolicy(args(argsBuilder).build)
@@ -396,7 +398,7 @@ object notebooks:
      * 
      *  Retrieves the current IAM policy data for instance
      */
-    def getInstanceIamPolicyPlain(args: Endofunction[com.pulumi.gcp.notebooks.inputs.GetInstanceIamPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getInstanceIamPolicyPlain(args: Endofunction[com.pulumi.gcp.notebooks.inputs.GetInstanceIamPolicyPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.notebooks.outputs.GetInstanceIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.notebooks.inputs.GetInstanceIamPolicyPlainArgs.builder
       com.pulumi.gcp.notebooks.NotebooksFunctions.getInstanceIamPolicyPlain(args(argsBuilder).build)
@@ -406,7 +408,7 @@ object notebooks:
      * 
      *  Retrieves the current IAM policy data for runtime
      */
-    def getRuntimeIamPolicy(args: Endofunction[com.pulumi.gcp.notebooks.inputs.GetRuntimeIamPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getRuntimeIamPolicy(args: Endofunction[com.pulumi.gcp.notebooks.inputs.GetRuntimeIamPolicyArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.notebooks.outputs.GetRuntimeIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.notebooks.inputs.GetRuntimeIamPolicyArgs.builder
       com.pulumi.gcp.notebooks.NotebooksFunctions.getRuntimeIamPolicy(args(argsBuilder).build)
@@ -416,7 +418,7 @@ object notebooks:
      * 
      *  Retrieves the current IAM policy data for runtime
      */
-    def getRuntimeIamPolicyPlain(args: Endofunction[com.pulumi.gcp.notebooks.inputs.GetRuntimeIamPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getRuntimeIamPolicyPlain(args: Endofunction[com.pulumi.gcp.notebooks.inputs.GetRuntimeIamPolicyPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.notebooks.outputs.GetRuntimeIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.notebooks.inputs.GetRuntimeIamPolicyPlainArgs.builder
       com.pulumi.gcp.notebooks.NotebooksFunctions.getRuntimeIamPolicyPlain(args(argsBuilder).build)

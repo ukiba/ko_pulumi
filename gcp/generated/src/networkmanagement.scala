@@ -51,11 +51,13 @@ object networkmanagement:
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
-  type NetworkmanagementFunctions = com.pulumi.gcp.networkmanagement.NetworkmanagementFunctions
   object NetworkmanagementFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.gcp.networkmanagement.NetworkmanagementFunctions.*
-  extension (self: NetworkmanagementFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /**
      * !&gt; This datasource triggers side effects on the target resource. It will take a long time to refresh (i.e. `pulumi preview` will take much longer than usual) and may modify the state of the parent resource or other copies of the resource copying the same parent.
      * 
@@ -70,7 +72,7 @@ object networkmanagement:
      *  * How-to Guides
      *      * [Official Documentation](https://cloud.google.com/network-intelligence-center/docs)
      */
-    def getConnectivityTestRun(args: Endofunction[com.pulumi.gcp.networkmanagement.inputs.GetConnectivityTestRunArgs.Builder] = scala.Predef.identity):
+    inline def getConnectivityTestRun(args: Endofunction[com.pulumi.gcp.networkmanagement.inputs.GetConnectivityTestRunArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.networkmanagement.outputs.GetConnectivityTestRunResult] =
       val argsBuilder = com.pulumi.gcp.networkmanagement.inputs.GetConnectivityTestRunArgs.builder
       com.pulumi.gcp.networkmanagement.NetworkmanagementFunctions.getConnectivityTestRun(args(argsBuilder).build)
@@ -89,7 +91,7 @@ object networkmanagement:
      *  * How-to Guides
      *      * [Official Documentation](https://cloud.google.com/network-intelligence-center/docs)
      */
-    def getConnectivityTestRunPlain(args: Endofunction[com.pulumi.gcp.networkmanagement.inputs.GetConnectivityTestRunPlainArgs.Builder] = scala.Predef.identity):
+    inline def getConnectivityTestRunPlain(args: Endofunction[com.pulumi.gcp.networkmanagement.inputs.GetConnectivityTestRunPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.networkmanagement.outputs.GetConnectivityTestRunResult] =
       val argsBuilder = com.pulumi.gcp.networkmanagement.inputs.GetConnectivityTestRunPlainArgs.builder
       com.pulumi.gcp.networkmanagement.NetworkmanagementFunctions.getConnectivityTestRunPlain(args(argsBuilder).build)
@@ -106,7 +108,7 @@ object networkmanagement:
      *  * How-to Guides
      *      * [Official Documentation](https://cloud.google.com/network-intelligence-center/docs)
      */
-    def getConnectivityTests(args: Endofunction[com.pulumi.gcp.networkmanagement.inputs.GetConnectivityTestsArgs.Builder] = scala.Predef.identity):
+    inline def getConnectivityTests(args: Endofunction[com.pulumi.gcp.networkmanagement.inputs.GetConnectivityTestsArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.networkmanagement.outputs.GetConnectivityTestsResult] =
       val argsBuilder = com.pulumi.gcp.networkmanagement.inputs.GetConnectivityTestsArgs.builder
       com.pulumi.gcp.networkmanagement.NetworkmanagementFunctions.getConnectivityTests(args(argsBuilder).build)
@@ -123,7 +125,7 @@ object networkmanagement:
      *  * How-to Guides
      *      * [Official Documentation](https://cloud.google.com/network-intelligence-center/docs)
      */
-    def getConnectivityTestsPlain(args: Endofunction[com.pulumi.gcp.networkmanagement.inputs.GetConnectivityTestsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getConnectivityTestsPlain(args: Endofunction[com.pulumi.gcp.networkmanagement.inputs.GetConnectivityTestsPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.networkmanagement.outputs.GetConnectivityTestsResult] =
       val argsBuilder = com.pulumi.gcp.networkmanagement.inputs.GetConnectivityTestsPlainArgs.builder
       com.pulumi.gcp.networkmanagement.NetworkmanagementFunctions.getConnectivityTestsPlain(args(argsBuilder).build)

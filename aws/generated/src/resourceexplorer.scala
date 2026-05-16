@@ -27,19 +27,21 @@ object resourceexplorer:
         com.pulumi.aws.resourceexplorer.ViewArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
 
-  type ResourceexplorerFunctions = com.pulumi.aws.resourceexplorer.ResourceexplorerFunctions
   object ResourceexplorerFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.aws.resourceexplorer.ResourceexplorerFunctions.*
-  extension (self: ResourceexplorerFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /** Data source for managing an AWS Resource Explorer Search. */
-    def search(args: Endofunction[com.pulumi.aws.resourceexplorer.inputs.SearchArgs.Builder] = scala.Predef.identity):
+    inline def search(args: Endofunction[com.pulumi.aws.resourceexplorer.inputs.SearchArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.resourceexplorer.outputs.SearchResult] =
       val argsBuilder = com.pulumi.aws.resourceexplorer.inputs.SearchArgs.builder
       com.pulumi.aws.resourceexplorer.ResourceexplorerFunctions.search(args(argsBuilder).build)
 
     /** Data source for managing an AWS Resource Explorer Search. */
-    def searchPlain(args: Endofunction[com.pulumi.aws.resourceexplorer.inputs.SearchPlainArgs.Builder] = scala.Predef.identity):
+    inline def searchPlain(args: Endofunction[com.pulumi.aws.resourceexplorer.inputs.SearchPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.resourceexplorer.outputs.SearchResult] =
       val argsBuilder = com.pulumi.aws.resourceexplorer.inputs.SearchPlainArgs.builder
       com.pulumi.aws.resourceexplorer.ResourceexplorerFunctions.searchPlain(args(argsBuilder).build)

@@ -145,16 +145,18 @@ object apprunner:
       val argsBuilder = com.pulumi.aws.apprunner.inputs.DeploymentTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
-  type ApprunnerFunctions = com.pulumi.aws.apprunner.ApprunnerFunctions
   object ApprunnerFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.aws.apprunner.ApprunnerFunctions.*
-  extension (self: ApprunnerFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /**
      * Use this data source to get the HostedZoneId of an AWS App Runner service deployed
      *  in a given region for the purpose of using it in an AWS Route53 Alias record.
      */
-    def getHostedZoneId(args: Endofunction[com.pulumi.aws.apprunner.inputs.GetHostedZoneIdArgs.Builder] = scala.Predef.identity):
+    inline def getHostedZoneId(args: Endofunction[com.pulumi.aws.apprunner.inputs.GetHostedZoneIdArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.apprunner.outputs.GetHostedZoneIdResult] =
       val argsBuilder = com.pulumi.aws.apprunner.inputs.GetHostedZoneIdArgs.builder
       com.pulumi.aws.apprunner.ApprunnerFunctions.getHostedZoneId(args(argsBuilder).build)
@@ -163,7 +165,7 @@ object apprunner:
      * Use this data source to get the HostedZoneId of an AWS App Runner service deployed
      *  in a given region for the purpose of using it in an AWS Route53 Alias record.
      */
-    def getHostedZoneIdPlain(args: Endofunction[com.pulumi.aws.apprunner.inputs.GetHostedZoneIdPlainArgs.Builder] = scala.Predef.identity):
+    inline def getHostedZoneIdPlain(args: Endofunction[com.pulumi.aws.apprunner.inputs.GetHostedZoneIdPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.apprunner.outputs.GetHostedZoneIdResult] =
       val argsBuilder = com.pulumi.aws.apprunner.inputs.GetHostedZoneIdPlainArgs.builder
       com.pulumi.aws.apprunner.ApprunnerFunctions.getHostedZoneIdPlain(args(argsBuilder).build)

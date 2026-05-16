@@ -51,19 +51,21 @@ object ec2clientvpn:
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
-  type Ec2clientvpnFunctions = com.pulumi.aws.ec2clientvpn.Ec2clientvpnFunctions
   object Ec2clientvpnFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.aws.ec2clientvpn.Ec2clientvpnFunctions.*
-  extension (self: Ec2clientvpnFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /** Get information on an EC2 Client VPN endpoint. */
-    def getEndpoint(args: Endofunction[com.pulumi.aws.ec2clientvpn.inputs.GetEndpointArgs.Builder] = scala.Predef.identity):
+    inline def getEndpoint(args: Endofunction[com.pulumi.aws.ec2clientvpn.inputs.GetEndpointArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.ec2clientvpn.outputs.GetEndpointResult] =
       val argsBuilder = com.pulumi.aws.ec2clientvpn.inputs.GetEndpointArgs.builder
       com.pulumi.aws.ec2clientvpn.Ec2clientvpnFunctions.getEndpoint(args(argsBuilder).build)
 
     /** Get information on an EC2 Client VPN endpoint. */
-    def getEndpointPlain(args: Endofunction[com.pulumi.aws.ec2clientvpn.inputs.GetEndpointPlainArgs.Builder] = scala.Predef.identity):
+    inline def getEndpointPlain(args: Endofunction[com.pulumi.aws.ec2clientvpn.inputs.GetEndpointPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.ec2clientvpn.outputs.GetEndpointResult] =
       val argsBuilder = com.pulumi.aws.ec2clientvpn.inputs.GetEndpointPlainArgs.builder
       com.pulumi.aws.ec2clientvpn.Ec2clientvpnFunctions.getEndpointPlain(args(argsBuilder).build)

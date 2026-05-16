@@ -393,19 +393,21 @@ object cloudtasks:
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
-  type CloudtasksFunctions = com.pulumi.gcp.cloudtasks.CloudtasksFunctions
   object CloudtasksFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.gcp.cloudtasks.CloudtasksFunctions.*
-  extension (self: CloudtasksFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /** Retrieves the current IAM policy data for queue */
-    def getQueueIamPolicy(args: Endofunction[com.pulumi.gcp.cloudtasks.inputs.GetQueueIamPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getQueueIamPolicy(args: Endofunction[com.pulumi.gcp.cloudtasks.inputs.GetQueueIamPolicyArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.cloudtasks.outputs.GetQueueIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.cloudtasks.inputs.GetQueueIamPolicyArgs.builder
       com.pulumi.gcp.cloudtasks.CloudtasksFunctions.getQueueIamPolicy(args(argsBuilder).build)
 
     /** Retrieves the current IAM policy data for queue */
-    def getQueueIamPolicyPlain(args: Endofunction[com.pulumi.gcp.cloudtasks.inputs.GetQueueIamPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getQueueIamPolicyPlain(args: Endofunction[com.pulumi.gcp.cloudtasks.inputs.GetQueueIamPolicyPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.cloudtasks.outputs.GetQueueIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.cloudtasks.inputs.GetQueueIamPolicyPlainArgs.builder
       com.pulumi.gcp.cloudtasks.CloudtasksFunctions.getQueueIamPolicyPlain(args(argsBuilder).build)

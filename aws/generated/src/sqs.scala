@@ -30,11 +30,13 @@ object sqs:
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
-  type SqsFunctions = com.pulumi.aws.sqs.SqsFunctions
   object SqsFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.aws.sqs.SqsFunctions.*
-  extension (self: SqsFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /**
      * Use this data source to get the ARN and URL of queue in AWS Simple Queue Service (SQS).
      *  By using this data source, you can reference SQS queues without having to hardcode
@@ -42,7 +44,7 @@ object sqs:
      * 
      *  &gt; **NOTE:** To use this data source, you must have the `sqs:GetQueueAttributes` and `sqs:GetQueueURL` permissions.
      */
-    def getQueue(args: Endofunction[com.pulumi.aws.sqs.inputs.GetQueueArgs.Builder] = scala.Predef.identity):
+    inline def getQueue(args: Endofunction[com.pulumi.aws.sqs.inputs.GetQueueArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.sqs.outputs.GetQueueResult] =
       val argsBuilder = com.pulumi.aws.sqs.inputs.GetQueueArgs.builder
       com.pulumi.aws.sqs.SqsFunctions.getQueue(args(argsBuilder).build)
@@ -54,19 +56,19 @@ object sqs:
      * 
      *  &gt; **NOTE:** To use this data source, you must have the `sqs:GetQueueAttributes` and `sqs:GetQueueURL` permissions.
      */
-    def getQueuePlain(args: Endofunction[com.pulumi.aws.sqs.inputs.GetQueuePlainArgs.Builder] = scala.Predef.identity):
+    inline def getQueuePlain(args: Endofunction[com.pulumi.aws.sqs.inputs.GetQueuePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.sqs.outputs.GetQueueResult] =
       val argsBuilder = com.pulumi.aws.sqs.inputs.GetQueuePlainArgs.builder
       com.pulumi.aws.sqs.SqsFunctions.getQueuePlain(args(argsBuilder).build)
 
     /** Data source for managing an AWS SQS (Simple Queue) Queues. */
-    def getQueues(args: Endofunction[com.pulumi.aws.sqs.inputs.GetQueuesArgs.Builder] = scala.Predef.identity):
+    inline def getQueues(args: Endofunction[com.pulumi.aws.sqs.inputs.GetQueuesArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.sqs.outputs.GetQueuesResult] =
       val argsBuilder = com.pulumi.aws.sqs.inputs.GetQueuesArgs.builder
       com.pulumi.aws.sqs.SqsFunctions.getQueues(args(argsBuilder).build)
 
     /** Data source for managing an AWS SQS (Simple Queue) Queues. */
-    def getQueuesPlain(args: Endofunction[com.pulumi.aws.sqs.inputs.GetQueuesPlainArgs.Builder] = scala.Predef.identity):
+    inline def getQueuesPlain(args: Endofunction[com.pulumi.aws.sqs.inputs.GetQueuesPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.sqs.outputs.GetQueuesResult] =
       val argsBuilder = com.pulumi.aws.sqs.inputs.GetQueuesPlainArgs.builder
       com.pulumi.aws.sqs.SqsFunctions.getQueuesPlain(args(argsBuilder).build)

@@ -4,19 +4,21 @@ package azure
 import com.pulumi.resources.CustomResourceOptions
 
 object operationalinsights:
-  type OperationalinsightsFunctions = com.pulumi.azure.operationalinsights.OperationalinsightsFunctions
   object OperationalinsightsFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.azure.operationalinsights.OperationalinsightsFunctions.*
-  extension (self: OperationalinsightsFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /** Use this data source to access information about an existing Log Analytics (formally Operational Insights) Workspace. */
-    def getAnalyticsWorkspace(args: Endofunction[com.pulumi.azure.operationalinsights.inputs.GetAnalyticsWorkspaceArgs.Builder] = scala.Predef.identity):
+    inline def getAnalyticsWorkspace(args: Endofunction[com.pulumi.azure.operationalinsights.inputs.GetAnalyticsWorkspaceArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.operationalinsights.outputs.GetAnalyticsWorkspaceResult] =
       val argsBuilder = com.pulumi.azure.operationalinsights.inputs.GetAnalyticsWorkspaceArgs.builder
       com.pulumi.azure.operationalinsights.OperationalinsightsFunctions.getAnalyticsWorkspace(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing Log Analytics (formally Operational Insights) Workspace. */
-    def getAnalyticsWorkspacePlain(args: Endofunction[com.pulumi.azure.operationalinsights.inputs.GetAnalyticsWorkspacePlainArgs.Builder] = scala.Predef.identity):
+    inline def getAnalyticsWorkspacePlain(args: Endofunction[com.pulumi.azure.operationalinsights.inputs.GetAnalyticsWorkspacePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.operationalinsights.outputs.GetAnalyticsWorkspaceResult] =
       val argsBuilder = com.pulumi.azure.operationalinsights.inputs.GetAnalyticsWorkspacePlainArgs.builder
       com.pulumi.azure.operationalinsights.OperationalinsightsFunctions.getAnalyticsWorkspacePlain(args(argsBuilder).build)

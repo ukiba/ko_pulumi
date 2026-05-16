@@ -37,17 +37,19 @@ object cloudidentity:
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
-  type CloudidentityFunctions = com.pulumi.gcp.cloudidentity.CloudidentityFunctions
   object CloudidentityFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.gcp.cloudidentity.CloudidentityFunctions.*
-  extension (self: CloudidentityFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /**
      * Use this data source to look up the resource name of a Cloud Identity Group by its [EntityKey](https://cloud.google.com/identity/docs/reference/rest/v1/EntityKey), i.e. the group&#39;s email.
      * 
      *  https://cloud.google.com/identity/docs/concepts/overview#groups
      */
-    def getGroupLookup(args: Endofunction[com.pulumi.gcp.cloudidentity.inputs.GetGroupLookupArgs.Builder] = scala.Predef.identity):
+    inline def getGroupLookup(args: Endofunction[com.pulumi.gcp.cloudidentity.inputs.GetGroupLookupArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.cloudidentity.outputs.GetGroupLookupResult] =
       val argsBuilder = com.pulumi.gcp.cloudidentity.inputs.GetGroupLookupArgs.builder
       com.pulumi.gcp.cloudidentity.CloudidentityFunctions.getGroupLookup(args(argsBuilder).build)
@@ -57,7 +59,7 @@ object cloudidentity:
      * 
      *  https://cloud.google.com/identity/docs/concepts/overview#groups
      */
-    def getGroupLookupPlain(args: Endofunction[com.pulumi.gcp.cloudidentity.inputs.GetGroupLookupPlainArgs.Builder] = scala.Predef.identity):
+    inline def getGroupLookupPlain(args: Endofunction[com.pulumi.gcp.cloudidentity.inputs.GetGroupLookupPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.cloudidentity.outputs.GetGroupLookupResult] =
       val argsBuilder = com.pulumi.gcp.cloudidentity.inputs.GetGroupLookupPlainArgs.builder
       com.pulumi.gcp.cloudidentity.CloudidentityFunctions.getGroupLookupPlain(args(argsBuilder).build)
@@ -73,7 +75,7 @@ object cloudidentity:
      *  * How-to Guides
      *      * [Official Documentation](https://cloud.google.com/identity/docs/how-to/memberships-google-groups)
      */
-    def getGroupMemberships(args: Endofunction[com.pulumi.gcp.cloudidentity.inputs.GetGroupMembershipsArgs.Builder] = scala.Predef.identity):
+    inline def getGroupMemberships(args: Endofunction[com.pulumi.gcp.cloudidentity.inputs.GetGroupMembershipsArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.cloudidentity.outputs.GetGroupMembershipsResult] =
       val argsBuilder = com.pulumi.gcp.cloudidentity.inputs.GetGroupMembershipsArgs.builder
       com.pulumi.gcp.cloudidentity.CloudidentityFunctions.getGroupMemberships(args(argsBuilder).build)
@@ -89,7 +91,7 @@ object cloudidentity:
      *  * How-to Guides
      *      * [Official Documentation](https://cloud.google.com/identity/docs/how-to/memberships-google-groups)
      */
-    def getGroupMembershipsPlain(args: Endofunction[com.pulumi.gcp.cloudidentity.inputs.GetGroupMembershipsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getGroupMembershipsPlain(args: Endofunction[com.pulumi.gcp.cloudidentity.inputs.GetGroupMembershipsPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.cloudidentity.outputs.GetGroupMembershipsResult] =
       val argsBuilder = com.pulumi.gcp.cloudidentity.inputs.GetGroupMembershipsPlainArgs.builder
       com.pulumi.gcp.cloudidentity.CloudidentityFunctions.getGroupMembershipsPlain(args(argsBuilder).build)
@@ -103,7 +105,7 @@ object cloudidentity:
      *  * How-to Guides
      *      * [Official Documentation](https://cloud.google.com/identity/docs/how-to/memberships-google-groups)
      */
-    def getGroupTransitiveMemberships(args: Endofunction[com.pulumi.gcp.cloudidentity.inputs.GetGroupTransitiveMembershipsArgs.Builder] = scala.Predef.identity):
+    inline def getGroupTransitiveMemberships(args: Endofunction[com.pulumi.gcp.cloudidentity.inputs.GetGroupTransitiveMembershipsArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.cloudidentity.outputs.GetGroupTransitiveMembershipsResult] =
       val argsBuilder = com.pulumi.gcp.cloudidentity.inputs.GetGroupTransitiveMembershipsArgs.builder
       com.pulumi.gcp.cloudidentity.CloudidentityFunctions.getGroupTransitiveMemberships(args(argsBuilder).build)
@@ -117,7 +119,7 @@ object cloudidentity:
      *  * How-to Guides
      *      * [Official Documentation](https://cloud.google.com/identity/docs/how-to/memberships-google-groups)
      */
-    def getGroupTransitiveMembershipsPlain(args: Endofunction[com.pulumi.gcp.cloudidentity.inputs.GetGroupTransitiveMembershipsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getGroupTransitiveMembershipsPlain(args: Endofunction[com.pulumi.gcp.cloudidentity.inputs.GetGroupTransitiveMembershipsPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.cloudidentity.outputs.GetGroupTransitiveMembershipsResult] =
       val argsBuilder = com.pulumi.gcp.cloudidentity.inputs.GetGroupTransitiveMembershipsPlainArgs.builder
       com.pulumi.gcp.cloudidentity.CloudidentityFunctions.getGroupTransitiveMembershipsPlain(args(argsBuilder).build)
@@ -127,7 +129,7 @@ object cloudidentity:
      * 
      *  https://cloud.google.com/identity/docs/concepts/overview#groups
      */
-    def getGroups(args: Endofunction[com.pulumi.gcp.cloudidentity.inputs.GetGroupsArgs.Builder] = scala.Predef.identity):
+    inline def getGroups(args: Endofunction[com.pulumi.gcp.cloudidentity.inputs.GetGroupsArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.cloudidentity.outputs.GetGroupsResult] =
       val argsBuilder = com.pulumi.gcp.cloudidentity.inputs.GetGroupsArgs.builder
       com.pulumi.gcp.cloudidentity.CloudidentityFunctions.getGroups(args(argsBuilder).build)
@@ -137,31 +139,31 @@ object cloudidentity:
      * 
      *  https://cloud.google.com/identity/docs/concepts/overview#groups
      */
-    def getGroupsPlain(args: Endofunction[com.pulumi.gcp.cloudidentity.inputs.GetGroupsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getGroupsPlain(args: Endofunction[com.pulumi.gcp.cloudidentity.inputs.GetGroupsPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.cloudidentity.outputs.GetGroupsResult] =
       val argsBuilder = com.pulumi.gcp.cloudidentity.inputs.GetGroupsPlainArgs.builder
       com.pulumi.gcp.cloudidentity.CloudidentityFunctions.getGroupsPlain(args(argsBuilder).build)
 
     /** Use this data source to list Cloud Identity policies. */
-    def getPolicies(args: Endofunction[com.pulumi.gcp.cloudidentity.inputs.GetPoliciesArgs.Builder] = scala.Predef.identity):
+    inline def getPolicies(args: Endofunction[com.pulumi.gcp.cloudidentity.inputs.GetPoliciesArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.cloudidentity.outputs.GetPoliciesResult] =
       val argsBuilder = com.pulumi.gcp.cloudidentity.inputs.GetPoliciesArgs.builder
       com.pulumi.gcp.cloudidentity.CloudidentityFunctions.getPolicies(args(argsBuilder).build)
 
     /** Use this data source to list Cloud Identity policies. */
-    def getPoliciesPlain(args: Endofunction[com.pulumi.gcp.cloudidentity.inputs.GetPoliciesPlainArgs.Builder] = scala.Predef.identity):
+    inline def getPoliciesPlain(args: Endofunction[com.pulumi.gcp.cloudidentity.inputs.GetPoliciesPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.cloudidentity.outputs.GetPoliciesResult] =
       val argsBuilder = com.pulumi.gcp.cloudidentity.inputs.GetPoliciesPlainArgs.builder
       com.pulumi.gcp.cloudidentity.CloudidentityFunctions.getPoliciesPlain(args(argsBuilder).build)
 
     /** Use this data source to retrieve a Cloud Identity policy. */
-    def getPolicy(args: Endofunction[com.pulumi.gcp.cloudidentity.inputs.GetPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getPolicy(args: Endofunction[com.pulumi.gcp.cloudidentity.inputs.GetPolicyArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.cloudidentity.outputs.GetPolicyResult] =
       val argsBuilder = com.pulumi.gcp.cloudidentity.inputs.GetPolicyArgs.builder
       com.pulumi.gcp.cloudidentity.CloudidentityFunctions.getPolicy(args(argsBuilder).build)
 
     /** Use this data source to retrieve a Cloud Identity policy. */
-    def getPolicyPlain(args: Endofunction[com.pulumi.gcp.cloudidentity.inputs.GetPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getPolicyPlain(args: Endofunction[com.pulumi.gcp.cloudidentity.inputs.GetPolicyPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.cloudidentity.outputs.GetPolicyResult] =
       val argsBuilder = com.pulumi.gcp.cloudidentity.inputs.GetPolicyPlainArgs.builder
       com.pulumi.gcp.cloudidentity.CloudidentityFunctions.getPolicyPlain(args(argsBuilder).build)

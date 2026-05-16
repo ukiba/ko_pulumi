@@ -41,19 +41,21 @@ object trafficmanager:
         com.pulumi.azure.trafficmanager.ProfileArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
 
-  type TrafficmanagerFunctions = com.pulumi.azure.trafficmanager.TrafficmanagerFunctions
   object TrafficmanagerFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.azure.trafficmanager.TrafficmanagerFunctions.*
-  extension (self: TrafficmanagerFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /** Use this data source to access the ID of a specified Traffic Manager Geographical Location within the Geographical Hierarchy. */
-    @deprecated def getGeographicalLocation(args: Endofunction[com.pulumi.azure.trafficmanager.inputs.GetGeographicalLocationArgs.Builder] = scala.Predef.identity):
+    @deprecated inline def getGeographicalLocation(args: Endofunction[com.pulumi.azure.trafficmanager.inputs.GetGeographicalLocationArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.trafficmanager.outputs.GetGeographicalLocationResult] =
       val argsBuilder = com.pulumi.azure.trafficmanager.inputs.GetGeographicalLocationArgs.builder
       com.pulumi.azure.trafficmanager.TrafficmanagerFunctions.getGeographicalLocation(args(argsBuilder).build)
 
     /** Use this data source to access the ID of a specified Traffic Manager Geographical Location within the Geographical Hierarchy. */
-    @deprecated def getGeographicalLocationPlain(args: Endofunction[com.pulumi.azure.trafficmanager.inputs.GetGeographicalLocationPlainArgs.Builder] = scala.Predef.identity):
+    @deprecated inline def getGeographicalLocationPlain(args: Endofunction[com.pulumi.azure.trafficmanager.inputs.GetGeographicalLocationPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.trafficmanager.outputs.GetGeographicalLocationResult] =
       val argsBuilder = com.pulumi.azure.trafficmanager.inputs.GetGeographicalLocationPlainArgs.builder
       com.pulumi.azure.trafficmanager.TrafficmanagerFunctions.getGeographicalLocationPlain(args(argsBuilder).build)

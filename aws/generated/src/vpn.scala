@@ -3,19 +3,21 @@ package aws
 
 
 object vpn:
-  type VpnFunctions = com.pulumi.aws.vpn.VpnFunctions
   object VpnFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.aws.vpn.VpnFunctions.*
-  extension (self: VpnFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /** Fetches details of a Site-to-Site VPN connection. A Site-to-Site VPN connection is an Internet Protocol security (IPsec) VPN connection between a VPC and an on-premises network. */
-    @deprecated def getConnection(args: Endofunction[com.pulumi.aws.vpn.inputs.GetConnectionArgs.Builder] = scala.Predef.identity):
+    @deprecated inline def getConnection(args: Endofunction[com.pulumi.aws.vpn.inputs.GetConnectionArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.vpn.outputs.GetConnectionResult] =
       val argsBuilder = com.pulumi.aws.vpn.inputs.GetConnectionArgs.builder
       com.pulumi.aws.vpn.VpnFunctions.getConnection(args(argsBuilder).build)
 
     /** Fetches details of a Site-to-Site VPN connection. A Site-to-Site VPN connection is an Internet Protocol security (IPsec) VPN connection between a VPC and an on-premises network. */
-    @deprecated def getConnectionPlain(args: Endofunction[com.pulumi.aws.vpn.inputs.GetConnectionPlainArgs.Builder] = scala.Predef.identity):
+    @deprecated inline def getConnectionPlain(args: Endofunction[com.pulumi.aws.vpn.inputs.GetConnectionPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.vpn.outputs.GetConnectionResult] =
       val argsBuilder = com.pulumi.aws.vpn.inputs.GetConnectionPlainArgs.builder
       com.pulumi.aws.vpn.VpnFunctions.getConnectionPlain(args(argsBuilder).build)

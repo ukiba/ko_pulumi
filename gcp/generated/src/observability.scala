@@ -4,11 +4,13 @@ package gcp
 import com.pulumi.resources.CustomResourceOptions
 
 object observability:
-  type ObservabilityFunctions = com.pulumi.gcp.observability.ObservabilityFunctions
   object ObservabilityFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.gcp.observability.ObservabilityFunctions.*
-  extension (self: ObservabilityFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /**
      * Describes the Google Cloud Observability Settings associated with a folder.
      * 
@@ -21,7 +23,7 @@ object observability:
      *  &gt; **Warning:** This data source is in beta, and should be used with the terraform-provider-google-beta provider.
      *  See Provider Versions for more details on beta resources.
      */
-    def getFolderSettings(args: Endofunction[com.pulumi.gcp.observability.inputs.GetFolderSettingsArgs.Builder] = scala.Predef.identity):
+    inline def getFolderSettings(args: Endofunction[com.pulumi.gcp.observability.inputs.GetFolderSettingsArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.observability.outputs.GetFolderSettingsResult] =
       val argsBuilder = com.pulumi.gcp.observability.inputs.GetFolderSettingsArgs.builder
       com.pulumi.gcp.observability.ObservabilityFunctions.getFolderSettings(args(argsBuilder).build)
@@ -38,7 +40,7 @@ object observability:
      *  &gt; **Warning:** This data source is in beta, and should be used with the terraform-provider-google-beta provider.
      *  See Provider Versions for more details on beta resources.
      */
-    def getFolderSettingsPlain(args: Endofunction[com.pulumi.gcp.observability.inputs.GetFolderSettingsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getFolderSettingsPlain(args: Endofunction[com.pulumi.gcp.observability.inputs.GetFolderSettingsPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.observability.outputs.GetFolderSettingsResult] =
       val argsBuilder = com.pulumi.gcp.observability.inputs.GetFolderSettingsPlainArgs.builder
       com.pulumi.gcp.observability.ObservabilityFunctions.getFolderSettingsPlain(args(argsBuilder).build)
@@ -55,7 +57,7 @@ object observability:
      *  &gt; **Warning:** This data source is in beta, and should be used with the terraform-provider-google-beta provider.
      *  See Provider Versions for more details on beta resources.
      */
-    def getOrganizationSettings(args: Endofunction[com.pulumi.gcp.observability.inputs.GetOrganizationSettingsArgs.Builder] = scala.Predef.identity):
+    inline def getOrganizationSettings(args: Endofunction[com.pulumi.gcp.observability.inputs.GetOrganizationSettingsArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.observability.outputs.GetOrganizationSettingsResult] =
       val argsBuilder = com.pulumi.gcp.observability.inputs.GetOrganizationSettingsArgs.builder
       com.pulumi.gcp.observability.ObservabilityFunctions.getOrganizationSettings(args(argsBuilder).build)
@@ -72,7 +74,7 @@ object observability:
      *  &gt; **Warning:** This data source is in beta, and should be used with the terraform-provider-google-beta provider.
      *  See Provider Versions for more details on beta resources.
      */
-    def getOrganizationSettingsPlain(args: Endofunction[com.pulumi.gcp.observability.inputs.GetOrganizationSettingsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getOrganizationSettingsPlain(args: Endofunction[com.pulumi.gcp.observability.inputs.GetOrganizationSettingsPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.observability.outputs.GetOrganizationSettingsResult] =
       val argsBuilder = com.pulumi.gcp.observability.inputs.GetOrganizationSettingsPlainArgs.builder
       com.pulumi.gcp.observability.ObservabilityFunctions.getOrganizationSettingsPlain(args(argsBuilder).build)
@@ -89,7 +91,7 @@ object observability:
      *  &gt; **Warning:** This data source is in beta, and should be used with the terraform-provider-google-beta provider.
      *  See Provider Versions for more details on beta resources.
      */
-    def getProjectSettings(args: Endofunction[com.pulumi.gcp.observability.inputs.GetProjectSettingsArgs.Builder] = scala.Predef.identity):
+    inline def getProjectSettings(args: Endofunction[com.pulumi.gcp.observability.inputs.GetProjectSettingsArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.observability.outputs.GetProjectSettingsResult] =
       val argsBuilder = com.pulumi.gcp.observability.inputs.GetProjectSettingsArgs.builder
       com.pulumi.gcp.observability.ObservabilityFunctions.getProjectSettings(args(argsBuilder).build)
@@ -106,7 +108,7 @@ object observability:
      *  &gt; **Warning:** This data source is in beta, and should be used with the terraform-provider-google-beta provider.
      *  See Provider Versions for more details on beta resources.
      */
-    def getProjectSettingsPlain(args: Endofunction[com.pulumi.gcp.observability.inputs.GetProjectSettingsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getProjectSettingsPlain(args: Endofunction[com.pulumi.gcp.observability.inputs.GetProjectSettingsPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.observability.outputs.GetProjectSettingsResult] =
       val argsBuilder = com.pulumi.gcp.observability.inputs.GetProjectSettingsPlainArgs.builder
       com.pulumi.gcp.observability.ObservabilityFunctions.getProjectSettingsPlain(args(argsBuilder).build)

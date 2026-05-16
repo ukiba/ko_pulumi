@@ -90,91 +90,93 @@ object ssoadmin:
       val argsBuilder = com.pulumi.aws.ssoadmin.inputs.CustomerManagedPolicyAttachmentCustomerManagedPolicyReferenceArgs.builder
       builder.customerManagedPolicyReference(args(argsBuilder).build)
 
-  type SsoadminFunctions = com.pulumi.aws.ssoadmin.SsoadminFunctions
   object SsoadminFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.aws.ssoadmin.SsoadminFunctions.*
-  extension (self: SsoadminFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /** Data source for managing an AWS SSO Admin Application. */
-    def getApplication(args: Endofunction[com.pulumi.aws.ssoadmin.inputs.GetApplicationArgs.Builder] = scala.Predef.identity):
+    inline def getApplication(args: Endofunction[com.pulumi.aws.ssoadmin.inputs.GetApplicationArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.ssoadmin.outputs.GetApplicationResult] =
       val argsBuilder = com.pulumi.aws.ssoadmin.inputs.GetApplicationArgs.builder
       com.pulumi.aws.ssoadmin.SsoadminFunctions.getApplication(args(argsBuilder).build)
 
     /** Data source for managing an AWS SSO Admin Application. */
-    def getApplicationPlain(args: Endofunction[com.pulumi.aws.ssoadmin.inputs.GetApplicationPlainArgs.Builder] = scala.Predef.identity):
+    inline def getApplicationPlain(args: Endofunction[com.pulumi.aws.ssoadmin.inputs.GetApplicationPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.ssoadmin.outputs.GetApplicationResult] =
       val argsBuilder = com.pulumi.aws.ssoadmin.inputs.GetApplicationPlainArgs.builder
       com.pulumi.aws.ssoadmin.SsoadminFunctions.getApplicationPlain(args(argsBuilder).build)
 
     /** Data source for managing AWS SSO Admin Application Assignments. */
-    def getApplicationAssignments(args: Endofunction[com.pulumi.aws.ssoadmin.inputs.GetApplicationAssignmentsArgs.Builder] = scala.Predef.identity):
+    inline def getApplicationAssignments(args: Endofunction[com.pulumi.aws.ssoadmin.inputs.GetApplicationAssignmentsArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.ssoadmin.outputs.GetApplicationAssignmentsResult] =
       val argsBuilder = com.pulumi.aws.ssoadmin.inputs.GetApplicationAssignmentsArgs.builder
       com.pulumi.aws.ssoadmin.SsoadminFunctions.getApplicationAssignments(args(argsBuilder).build)
 
     /** Data source for managing AWS SSO Admin Application Assignments. */
-    def getApplicationAssignmentsPlain(args: Endofunction[com.pulumi.aws.ssoadmin.inputs.GetApplicationAssignmentsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getApplicationAssignmentsPlain(args: Endofunction[com.pulumi.aws.ssoadmin.inputs.GetApplicationAssignmentsPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.ssoadmin.outputs.GetApplicationAssignmentsResult] =
       val argsBuilder = com.pulumi.aws.ssoadmin.inputs.GetApplicationAssignmentsPlainArgs.builder
       com.pulumi.aws.ssoadmin.SsoadminFunctions.getApplicationAssignmentsPlain(args(argsBuilder).build)
 
     /** Data source for managing AWS SSO Admin Application Providers. */
-    def getApplicationProviders(args: Endofunction[com.pulumi.aws.ssoadmin.inputs.GetApplicationProvidersArgs.Builder] = scala.Predef.identity):
+    inline def getApplicationProviders(args: Endofunction[com.pulumi.aws.ssoadmin.inputs.GetApplicationProvidersArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.ssoadmin.outputs.GetApplicationProvidersResult] =
       val argsBuilder = com.pulumi.aws.ssoadmin.inputs.GetApplicationProvidersArgs.builder
       com.pulumi.aws.ssoadmin.SsoadminFunctions.getApplicationProviders(args(argsBuilder).build)
 
     /** Data source for managing AWS SSO Admin Application Providers. */
-    def getApplicationProvidersPlain(args: Endofunction[com.pulumi.aws.ssoadmin.inputs.GetApplicationProvidersPlainArgs.Builder] = scala.Predef.identity):
+    inline def getApplicationProvidersPlain(args: Endofunction[com.pulumi.aws.ssoadmin.inputs.GetApplicationProvidersPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.ssoadmin.outputs.GetApplicationProvidersResult] =
       val argsBuilder = com.pulumi.aws.ssoadmin.inputs.GetApplicationProvidersPlainArgs.builder
       com.pulumi.aws.ssoadmin.SsoadminFunctions.getApplicationProvidersPlain(args(argsBuilder).build)
 
     /** Use this data source to get ARNs and Identity Store IDs of Single Sign-On (SSO) Instances. */
-    def getInstances(args: Endofunction[com.pulumi.aws.ssoadmin.inputs.GetInstancesArgs.Builder] = scala.Predef.identity):
+    inline def getInstances(args: Endofunction[com.pulumi.aws.ssoadmin.inputs.GetInstancesArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.ssoadmin.outputs.GetInstancesResult] =
       val argsBuilder = com.pulumi.aws.ssoadmin.inputs.GetInstancesArgs.builder
       com.pulumi.aws.ssoadmin.SsoadminFunctions.getInstances(args(argsBuilder).build)
 
     /** Use this data source to get ARNs and Identity Store IDs of Single Sign-On (SSO) Instances. */
-    def getInstancesPlain(args: Endofunction[com.pulumi.aws.ssoadmin.inputs.GetInstancesPlainArgs.Builder] = scala.Predef.identity):
+    inline def getInstancesPlain(args: Endofunction[com.pulumi.aws.ssoadmin.inputs.GetInstancesPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.ssoadmin.outputs.GetInstancesResult] =
       val argsBuilder = com.pulumi.aws.ssoadmin.inputs.GetInstancesPlainArgs.builder
       com.pulumi.aws.ssoadmin.SsoadminFunctions.getInstancesPlain(args(argsBuilder).build)
 
     /** Use this data source to get a Single Sign-On (SSO) Permission Set. */
-    def getPermissionSet(args: Endofunction[com.pulumi.aws.ssoadmin.inputs.GetPermissionSetArgs.Builder] = scala.Predef.identity):
+    inline def getPermissionSet(args: Endofunction[com.pulumi.aws.ssoadmin.inputs.GetPermissionSetArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.ssoadmin.outputs.GetPermissionSetResult] =
       val argsBuilder = com.pulumi.aws.ssoadmin.inputs.GetPermissionSetArgs.builder
       com.pulumi.aws.ssoadmin.SsoadminFunctions.getPermissionSet(args(argsBuilder).build)
 
     /** Use this data source to get a Single Sign-On (SSO) Permission Set. */
-    def getPermissionSetPlain(args: Endofunction[com.pulumi.aws.ssoadmin.inputs.GetPermissionSetPlainArgs.Builder] = scala.Predef.identity):
+    inline def getPermissionSetPlain(args: Endofunction[com.pulumi.aws.ssoadmin.inputs.GetPermissionSetPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.ssoadmin.outputs.GetPermissionSetResult] =
       val argsBuilder = com.pulumi.aws.ssoadmin.inputs.GetPermissionSetPlainArgs.builder
       com.pulumi.aws.ssoadmin.SsoadminFunctions.getPermissionSetPlain(args(argsBuilder).build)
 
     /** Data source returning the ARN of all AWS SSO Admin Permission Sets. */
-    def getPermissionSets(args: Endofunction[com.pulumi.aws.ssoadmin.inputs.GetPermissionSetsArgs.Builder] = scala.Predef.identity):
+    inline def getPermissionSets(args: Endofunction[com.pulumi.aws.ssoadmin.inputs.GetPermissionSetsArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.ssoadmin.outputs.GetPermissionSetsResult] =
       val argsBuilder = com.pulumi.aws.ssoadmin.inputs.GetPermissionSetsArgs.builder
       com.pulumi.aws.ssoadmin.SsoadminFunctions.getPermissionSets(args(argsBuilder).build)
 
     /** Data source returning the ARN of all AWS SSO Admin Permission Sets. */
-    def getPermissionSetsPlain(args: Endofunction[com.pulumi.aws.ssoadmin.inputs.GetPermissionSetsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getPermissionSetsPlain(args: Endofunction[com.pulumi.aws.ssoadmin.inputs.GetPermissionSetsPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.ssoadmin.outputs.GetPermissionSetsResult] =
       val argsBuilder = com.pulumi.aws.ssoadmin.inputs.GetPermissionSetsPlainArgs.builder
       com.pulumi.aws.ssoadmin.SsoadminFunctions.getPermissionSetsPlain(args(argsBuilder).build)
 
     /** Data source for viewing AWS SSO Admin Principal Application Assignments. */
-    def getPrincipalApplicationAssignments(args: Endofunction[com.pulumi.aws.ssoadmin.inputs.GetPrincipalApplicationAssignmentsArgs.Builder] = scala.Predef.identity):
+    inline def getPrincipalApplicationAssignments(args: Endofunction[com.pulumi.aws.ssoadmin.inputs.GetPrincipalApplicationAssignmentsArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.ssoadmin.outputs.GetPrincipalApplicationAssignmentsResult] =
       val argsBuilder = com.pulumi.aws.ssoadmin.inputs.GetPrincipalApplicationAssignmentsArgs.builder
       com.pulumi.aws.ssoadmin.SsoadminFunctions.getPrincipalApplicationAssignments(args(argsBuilder).build)
 
     /** Data source for viewing AWS SSO Admin Principal Application Assignments. */
-    def getPrincipalApplicationAssignmentsPlain(args: Endofunction[com.pulumi.aws.ssoadmin.inputs.GetPrincipalApplicationAssignmentsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getPrincipalApplicationAssignmentsPlain(args: Endofunction[com.pulumi.aws.ssoadmin.inputs.GetPrincipalApplicationAssignmentsPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.ssoadmin.outputs.GetPrincipalApplicationAssignmentsResult] =
       val argsBuilder = com.pulumi.aws.ssoadmin.inputs.GetPrincipalApplicationAssignmentsPlainArgs.builder
       com.pulumi.aws.ssoadmin.SsoadminFunctions.getPrincipalApplicationAssignmentsPlain(args(argsBuilder).build)

@@ -923,31 +923,33 @@ object s3:
       val argsBuilder = com.pulumi.aws.s3.inputs.FilesMountTargetTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
-  type S3Functions = com.pulumi.aws.s3.S3Functions
   object S3Functions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.aws.s3.S3Functions.*
-  extension (self: S3Functions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /** Provides details about a specific S3 access point. */
-    def getAccessPoint(args: Endofunction[com.pulumi.aws.s3.inputs.GetAccessPointArgs.Builder] = scala.Predef.identity):
+    inline def getAccessPoint(args: Endofunction[com.pulumi.aws.s3.inputs.GetAccessPointArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.s3.outputs.GetAccessPointResult] =
       val argsBuilder = com.pulumi.aws.s3.inputs.GetAccessPointArgs.builder
       com.pulumi.aws.s3.S3Functions.getAccessPoint(args(argsBuilder).build)
 
     /** Provides details about a specific S3 access point. */
-    def getAccessPointPlain(args: Endofunction[com.pulumi.aws.s3.inputs.GetAccessPointPlainArgs.Builder] = scala.Predef.identity):
+    inline def getAccessPointPlain(args: Endofunction[com.pulumi.aws.s3.inputs.GetAccessPointPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.s3.outputs.GetAccessPointResult] =
       val argsBuilder = com.pulumi.aws.s3.inputs.GetAccessPointPlainArgs.builder
       com.pulumi.aws.s3.S3Functions.getAccessPointPlain(args(argsBuilder).build)
 
     /** The S3 account public access block data source returns account-level public access block configuration. */
-    def getAccountPublicAccessBlock(args: Endofunction[com.pulumi.aws.s3.inputs.GetAccountPublicAccessBlockArgs.Builder] = scala.Predef.identity):
+    inline def getAccountPublicAccessBlock(args: Endofunction[com.pulumi.aws.s3.inputs.GetAccountPublicAccessBlockArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.s3.outputs.GetAccountPublicAccessBlockResult] =
       val argsBuilder = com.pulumi.aws.s3.inputs.GetAccountPublicAccessBlockArgs.builder
       com.pulumi.aws.s3.S3Functions.getAccountPublicAccessBlock(args(argsBuilder).build)
 
     /** The S3 account public access block data source returns account-level public access block configuration. */
-    def getAccountPublicAccessBlockPlain(args: Endofunction[com.pulumi.aws.s3.inputs.GetAccountPublicAccessBlockPlainArgs.Builder] = scala.Predef.identity):
+    inline def getAccountPublicAccessBlockPlain(args: Endofunction[com.pulumi.aws.s3.inputs.GetAccountPublicAccessBlockPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.s3.outputs.GetAccountPublicAccessBlockResult] =
       val argsBuilder = com.pulumi.aws.s3.inputs.GetAccountPublicAccessBlockPlainArgs.builder
       com.pulumi.aws.s3.S3Functions.getAccountPublicAccessBlockPlain(args(argsBuilder).build)
@@ -958,7 +960,7 @@ object s3:
      *  This resource may prove useful when setting up a Route53 record, or an origin for a CloudFront
      *  Distribution.
      */
-    def getBucket(args: Endofunction[com.pulumi.aws.s3.inputs.GetBucketArgs.Builder] = scala.Predef.identity):
+    inline def getBucket(args: Endofunction[com.pulumi.aws.s3.inputs.GetBucketArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.s3.outputs.GetBucketResult] =
       val argsBuilder = com.pulumi.aws.s3.inputs.GetBucketArgs.builder
       com.pulumi.aws.s3.S3Functions.getBucket(args(argsBuilder).build)
@@ -969,7 +971,7 @@ object s3:
      *  This resource may prove useful when setting up a Route53 record, or an origin for a CloudFront
      *  Distribution.
      */
-    def getBucketPlain(args: Endofunction[com.pulumi.aws.s3.inputs.GetBucketPlainArgs.Builder] = scala.Predef.identity):
+    inline def getBucketPlain(args: Endofunction[com.pulumi.aws.s3.inputs.GetBucketPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.s3.outputs.GetBucketResult] =
       val argsBuilder = com.pulumi.aws.s3.inputs.GetBucketPlainArgs.builder
       com.pulumi.aws.s3.S3Functions.getBucketPlain(args(argsBuilder).build)
@@ -995,7 +997,7 @@ object s3:
      * 
      *  This is to prevent printing unsafe characters and potentially downloading large amount of data which would be thrown away in favor of metadata.
      */
-    def getBucketObject(args: Endofunction[com.pulumi.aws.s3.inputs.GetBucketObjectArgs.Builder] = scala.Predef.identity):
+    inline def getBucketObject(args: Endofunction[com.pulumi.aws.s3.inputs.GetBucketObjectArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.s3.outputs.GetBucketObjectResult] =
       val argsBuilder = com.pulumi.aws.s3.inputs.GetBucketObjectArgs.builder
       com.pulumi.aws.s3.S3Functions.getBucketObject(args(argsBuilder).build)
@@ -1021,19 +1023,19 @@ object s3:
      * 
      *  This is to prevent printing unsafe characters and potentially downloading large amount of data which would be thrown away in favor of metadata.
      */
-    def getBucketObjectPlain(args: Endofunction[com.pulumi.aws.s3.inputs.GetBucketObjectPlainArgs.Builder] = scala.Predef.identity):
+    inline def getBucketObjectPlain(args: Endofunction[com.pulumi.aws.s3.inputs.GetBucketObjectPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.s3.outputs.GetBucketObjectResult] =
       val argsBuilder = com.pulumi.aws.s3.inputs.GetBucketObjectPlainArgs.builder
       com.pulumi.aws.s3.S3Functions.getBucketObjectPlain(args(argsBuilder).build)
 
     /** Provides details about an AWS S3 (Simple Storage) Bucket Object Lock Configuration. */
-    def getBucketObjectLockConfiguration(args: Endofunction[com.pulumi.aws.s3.inputs.GetBucketObjectLockConfigurationArgs.Builder] = scala.Predef.identity):
+    inline def getBucketObjectLockConfiguration(args: Endofunction[com.pulumi.aws.s3.inputs.GetBucketObjectLockConfigurationArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.s3.outputs.GetBucketObjectLockConfigurationResult] =
       val argsBuilder = com.pulumi.aws.s3.inputs.GetBucketObjectLockConfigurationArgs.builder
       com.pulumi.aws.s3.S3Functions.getBucketObjectLockConfiguration(args(argsBuilder).build)
 
     /** Provides details about an AWS S3 (Simple Storage) Bucket Object Lock Configuration. */
-    def getBucketObjectLockConfigurationPlain(args: Endofunction[com.pulumi.aws.s3.inputs.GetBucketObjectLockConfigurationPlainArgs.Builder] = scala.Predef.identity):
+    inline def getBucketObjectLockConfigurationPlain(args: Endofunction[com.pulumi.aws.s3.inputs.GetBucketObjectLockConfigurationPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.s3.outputs.GetBucketObjectLockConfigurationResult] =
       val argsBuilder = com.pulumi.aws.s3.inputs.GetBucketObjectLockConfigurationPlainArgs.builder
       com.pulumi.aws.s3.S3Functions.getBucketObjectLockConfigurationPlain(args(argsBuilder).build)
@@ -1045,7 +1047,7 @@ object s3:
      * 
      *  The objects data source returns keys (i.e., file names) and other metadata about objects in an S3 bucket.
      */
-    def getBucketObjects(args: Endofunction[com.pulumi.aws.s3.inputs.GetBucketObjectsArgs.Builder] = scala.Predef.identity):
+    inline def getBucketObjects(args: Endofunction[com.pulumi.aws.s3.inputs.GetBucketObjectsArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.s3.outputs.GetBucketObjectsResult] =
       val argsBuilder = com.pulumi.aws.s3.inputs.GetBucketObjectsArgs.builder
       com.pulumi.aws.s3.S3Functions.getBucketObjects(args(argsBuilder).build)
@@ -1057,91 +1059,91 @@ object s3:
      * 
      *  The objects data source returns keys (i.e., file names) and other metadata about objects in an S3 bucket.
      */
-    def getBucketObjectsPlain(args: Endofunction[com.pulumi.aws.s3.inputs.GetBucketObjectsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getBucketObjectsPlain(args: Endofunction[com.pulumi.aws.s3.inputs.GetBucketObjectsPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.s3.outputs.GetBucketObjectsResult] =
       val argsBuilder = com.pulumi.aws.s3.inputs.GetBucketObjectsPlainArgs.builder
       com.pulumi.aws.s3.S3Functions.getBucketObjectsPlain(args(argsBuilder).build)
 
     /** The bucket policy data source returns IAM policy of an S3 bucket. */
-    def getBucketPolicy(args: Endofunction[com.pulumi.aws.s3.inputs.GetBucketPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getBucketPolicy(args: Endofunction[com.pulumi.aws.s3.inputs.GetBucketPolicyArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.s3.outputs.GetBucketPolicyResult] =
       val argsBuilder = com.pulumi.aws.s3.inputs.GetBucketPolicyArgs.builder
       com.pulumi.aws.s3.S3Functions.getBucketPolicy(args(argsBuilder).build)
 
     /** The bucket policy data source returns IAM policy of an S3 bucket. */
-    def getBucketPolicyPlain(args: Endofunction[com.pulumi.aws.s3.inputs.GetBucketPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getBucketPolicyPlain(args: Endofunction[com.pulumi.aws.s3.inputs.GetBucketPolicyPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.s3.outputs.GetBucketPolicyResult] =
       val argsBuilder = com.pulumi.aws.s3.inputs.GetBucketPolicyPlainArgs.builder
       com.pulumi.aws.s3.S3Functions.getBucketPolicyPlain(args(argsBuilder).build)
 
     /** Data source for managing an AWS S3 (Simple Storage) Bucket Replication Configuration. */
-    def getBucketReplicationConfiguration(args: Endofunction[com.pulumi.aws.s3.inputs.GetBucketReplicationConfigurationArgs.Builder] = scala.Predef.identity):
+    inline def getBucketReplicationConfiguration(args: Endofunction[com.pulumi.aws.s3.inputs.GetBucketReplicationConfigurationArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.s3.outputs.GetBucketReplicationConfigurationResult] =
       val argsBuilder = com.pulumi.aws.s3.inputs.GetBucketReplicationConfigurationArgs.builder
       com.pulumi.aws.s3.S3Functions.getBucketReplicationConfiguration(args(argsBuilder).build)
 
     /** Data source for managing an AWS S3 (Simple Storage) Bucket Replication Configuration. */
-    def getBucketReplicationConfigurationPlain(args: Endofunction[com.pulumi.aws.s3.inputs.GetBucketReplicationConfigurationPlainArgs.Builder] = scala.Predef.identity):
+    inline def getBucketReplicationConfigurationPlain(args: Endofunction[com.pulumi.aws.s3.inputs.GetBucketReplicationConfigurationPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.s3.outputs.GetBucketReplicationConfigurationResult] =
       val argsBuilder = com.pulumi.aws.s3.inputs.GetBucketReplicationConfigurationPlainArgs.builder
       com.pulumi.aws.s3.S3Functions.getBucketReplicationConfigurationPlain(args(argsBuilder).build)
 
     /** Lists Amazon S3 Express directory buckets. */
-    def getDirectoryBuckets(args: Endofunction[com.pulumi.aws.s3.inputs.GetDirectoryBucketsArgs.Builder] = scala.Predef.identity):
+    inline def getDirectoryBuckets(args: Endofunction[com.pulumi.aws.s3.inputs.GetDirectoryBucketsArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.s3.outputs.GetDirectoryBucketsResult] =
       val argsBuilder = com.pulumi.aws.s3.inputs.GetDirectoryBucketsArgs.builder
       com.pulumi.aws.s3.S3Functions.getDirectoryBuckets(args(argsBuilder).build)
 
     /** Lists Amazon S3 Express directory buckets. */
-    def getDirectoryBucketsPlain(args: Endofunction[com.pulumi.aws.s3.inputs.GetDirectoryBucketsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getDirectoryBucketsPlain(args: Endofunction[com.pulumi.aws.s3.inputs.GetDirectoryBucketsPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.s3.outputs.GetDirectoryBucketsResult] =
       val argsBuilder = com.pulumi.aws.s3.inputs.GetDirectoryBucketsPlainArgs.builder
       com.pulumi.aws.s3.S3Functions.getDirectoryBucketsPlain(args(argsBuilder).build)
 
     /** Data source for managing an S3 Files Access Point. */
-    def getFilesAccessPoint(args: Endofunction[com.pulumi.aws.s3.inputs.GetFilesAccessPointArgs.Builder] = scala.Predef.identity):
+    inline def getFilesAccessPoint(args: Endofunction[com.pulumi.aws.s3.inputs.GetFilesAccessPointArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.s3.outputs.GetFilesAccessPointResult] =
       val argsBuilder = com.pulumi.aws.s3.inputs.GetFilesAccessPointArgs.builder
       com.pulumi.aws.s3.S3Functions.getFilesAccessPoint(args(argsBuilder).build)
 
     /** Data source for managing an S3 Files Access Point. */
-    def getFilesAccessPointPlain(args: Endofunction[com.pulumi.aws.s3.inputs.GetFilesAccessPointPlainArgs.Builder] = scala.Predef.identity):
+    inline def getFilesAccessPointPlain(args: Endofunction[com.pulumi.aws.s3.inputs.GetFilesAccessPointPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.s3.outputs.GetFilesAccessPointResult] =
       val argsBuilder = com.pulumi.aws.s3.inputs.GetFilesAccessPointPlainArgs.builder
       com.pulumi.aws.s3.S3Functions.getFilesAccessPointPlain(args(argsBuilder).build)
 
     /** Get information on an S3 Files File System. */
-    def getFilesFileSystem(args: Endofunction[com.pulumi.aws.s3.inputs.GetFilesFileSystemArgs.Builder] = scala.Predef.identity):
+    inline def getFilesFileSystem(args: Endofunction[com.pulumi.aws.s3.inputs.GetFilesFileSystemArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.s3.outputs.GetFilesFileSystemResult] =
       val argsBuilder = com.pulumi.aws.s3.inputs.GetFilesFileSystemArgs.builder
       com.pulumi.aws.s3.S3Functions.getFilesFileSystem(args(argsBuilder).build)
 
     /** Get information on an S3 Files File System. */
-    def getFilesFileSystemPlain(args: Endofunction[com.pulumi.aws.s3.inputs.GetFilesFileSystemPlainArgs.Builder] = scala.Predef.identity):
+    inline def getFilesFileSystemPlain(args: Endofunction[com.pulumi.aws.s3.inputs.GetFilesFileSystemPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.s3.outputs.GetFilesFileSystemResult] =
       val argsBuilder = com.pulumi.aws.s3.inputs.GetFilesFileSystemPlainArgs.builder
       com.pulumi.aws.s3.S3Functions.getFilesFileSystemPlain(args(argsBuilder).build)
 
     /** Provides details about S3 Files File Systems. */
-    def getFilesFileSystems(args: Endofunction[com.pulumi.aws.s3.inputs.GetFilesFileSystemsArgs.Builder] = scala.Predef.identity):
+    inline def getFilesFileSystems(args: Endofunction[com.pulumi.aws.s3.inputs.GetFilesFileSystemsArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.s3.outputs.GetFilesFileSystemsResult] =
       val argsBuilder = com.pulumi.aws.s3.inputs.GetFilesFileSystemsArgs.builder
       com.pulumi.aws.s3.S3Functions.getFilesFileSystems(args(argsBuilder).build)
 
     /** Provides details about S3 Files File Systems. */
-    def getFilesFileSystemsPlain(args: Endofunction[com.pulumi.aws.s3.inputs.GetFilesFileSystemsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getFilesFileSystemsPlain(args: Endofunction[com.pulumi.aws.s3.inputs.GetFilesFileSystemsPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.s3.outputs.GetFilesFileSystemsResult] =
       val argsBuilder = com.pulumi.aws.s3.inputs.GetFilesFileSystemsPlainArgs.builder
       com.pulumi.aws.s3.S3Functions.getFilesFileSystemsPlain(args(argsBuilder).build)
 
     /** Provides details about an S3 Files Mount Target. */
-    def getFilesMountTarget(args: Endofunction[com.pulumi.aws.s3.inputs.GetFilesMountTargetArgs.Builder] = scala.Predef.identity):
+    inline def getFilesMountTarget(args: Endofunction[com.pulumi.aws.s3.inputs.GetFilesMountTargetArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.s3.outputs.GetFilesMountTargetResult] =
       val argsBuilder = com.pulumi.aws.s3.inputs.GetFilesMountTargetArgs.builder
       com.pulumi.aws.s3.S3Functions.getFilesMountTarget(args(argsBuilder).build)
 
     /** Provides details about an S3 Files Mount Target. */
-    def getFilesMountTargetPlain(args: Endofunction[com.pulumi.aws.s3.inputs.GetFilesMountTargetPlainArgs.Builder] = scala.Predef.identity):
+    inline def getFilesMountTargetPlain(args: Endofunction[com.pulumi.aws.s3.inputs.GetFilesMountTargetPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.s3.outputs.GetFilesMountTargetResult] =
       val argsBuilder = com.pulumi.aws.s3.inputs.GetFilesMountTargetPlainArgs.builder
       com.pulumi.aws.s3.S3Functions.getFilesMountTargetPlain(args(argsBuilder).build)
@@ -1166,7 +1168,7 @@ object s3:
      * 
      *  This is to prevent printing unsafe characters and potentially downloading large amount of data which would be thrown away in favor of metadata.
      */
-    def getObject(args: Endofunction[com.pulumi.aws.s3.inputs.GetObjectArgs.Builder] = scala.Predef.identity):
+    inline def getObject(args: Endofunction[com.pulumi.aws.s3.inputs.GetObjectArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.s3.outputs.GetObjectResult] =
       val argsBuilder = com.pulumi.aws.s3.inputs.GetObjectArgs.builder
       com.pulumi.aws.s3.S3Functions.getObject(args(argsBuilder).build)
@@ -1191,7 +1193,7 @@ object s3:
      * 
      *  This is to prevent printing unsafe characters and potentially downloading large amount of data which would be thrown away in favor of metadata.
      */
-    def getObjectPlain(args: Endofunction[com.pulumi.aws.s3.inputs.GetObjectPlainArgs.Builder] = scala.Predef.identity):
+    inline def getObjectPlain(args: Endofunction[com.pulumi.aws.s3.inputs.GetObjectPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.s3.outputs.GetObjectResult] =
       val argsBuilder = com.pulumi.aws.s3.inputs.GetObjectPlainArgs.builder
       com.pulumi.aws.s3.S3Functions.getObjectPlain(args(argsBuilder).build)
@@ -1201,7 +1203,7 @@ object s3:
      * 
      *  The objects data source returns keys (i.e., file names) and other metadata about objects in an S3 bucket.
      */
-    def getObjects(args: Endofunction[com.pulumi.aws.s3.inputs.GetObjectsArgs.Builder] = scala.Predef.identity):
+    inline def getObjects(args: Endofunction[com.pulumi.aws.s3.inputs.GetObjectsArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.s3.outputs.GetObjectsResult] =
       val argsBuilder = com.pulumi.aws.s3.inputs.GetObjectsArgs.builder
       com.pulumi.aws.s3.S3Functions.getObjects(args(argsBuilder).build)
@@ -1211,7 +1213,7 @@ object s3:
      * 
      *  The objects data source returns keys (i.e., file names) and other metadata about objects in an S3 bucket.
      */
-    def getObjectsPlain(args: Endofunction[com.pulumi.aws.s3.inputs.GetObjectsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getObjectsPlain(args: Endofunction[com.pulumi.aws.s3.inputs.GetObjectsPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.s3.outputs.GetObjectsResult] =
       val argsBuilder = com.pulumi.aws.s3.inputs.GetObjectsPlainArgs.builder
       com.pulumi.aws.s3.S3Functions.getObjectsPlain(args(argsBuilder).build)

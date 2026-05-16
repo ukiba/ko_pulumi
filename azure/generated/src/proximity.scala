@@ -4,19 +4,21 @@ package azure
 import com.pulumi.resources.CustomResourceOptions
 
 object proximity:
-  type ProximityFunctions = com.pulumi.azure.proximity.ProximityFunctions
   object ProximityFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.azure.proximity.ProximityFunctions.*
-  extension (self: ProximityFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /** Use this data source to access information about an existing Proximity Placement Group. */
-    def getPlacementGroup(args: Endofunction[com.pulumi.azure.proximity.inputs.GetPlacementGroupArgs.Builder] = scala.Predef.identity):
+    inline def getPlacementGroup(args: Endofunction[com.pulumi.azure.proximity.inputs.GetPlacementGroupArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.proximity.outputs.GetPlacementGroupResult] =
       val argsBuilder = com.pulumi.azure.proximity.inputs.GetPlacementGroupArgs.builder
       com.pulumi.azure.proximity.ProximityFunctions.getPlacementGroup(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing Proximity Placement Group. */
-    def getPlacementGroupPlain(args: Endofunction[com.pulumi.azure.proximity.inputs.GetPlacementGroupPlainArgs.Builder] = scala.Predef.identity):
+    inline def getPlacementGroupPlain(args: Endofunction[com.pulumi.azure.proximity.inputs.GetPlacementGroupPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.proximity.outputs.GetPlacementGroupResult] =
       val argsBuilder = com.pulumi.azure.proximity.inputs.GetPlacementGroupPlainArgs.builder
       com.pulumi.azure.proximity.ProximityFunctions.getPlacementGroupPlain(args(argsBuilder).build)

@@ -45,11 +45,13 @@ object vpcaccess:
       val argsBuilder = com.pulumi.gcp.vpcaccess.inputs.ConnectorSubnetArgs.builder
       builder.subnet(args(argsBuilder).build)
 
-  type VpcaccessFunctions = com.pulumi.gcp.vpcaccess.VpcaccessFunctions
   object VpcaccessFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.gcp.vpcaccess.VpcaccessFunctions.*
-  extension (self: VpcaccessFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /**
      * Get a Serverless VPC Access connector.
      * 
@@ -59,7 +61,7 @@ object vpcaccess:
      *  * How-to Guides
      *      * [Configuring Serverless VPC Access](https://cloud.google.com/vpc/docs/configure-serverless-vpc-access)
      */
-    def getConnector(args: Endofunction[com.pulumi.gcp.vpcaccess.inputs.GetConnectorArgs.Builder] = scala.Predef.identity):
+    inline def getConnector(args: Endofunction[com.pulumi.gcp.vpcaccess.inputs.GetConnectorArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.vpcaccess.outputs.GetConnectorResult] =
       val argsBuilder = com.pulumi.gcp.vpcaccess.inputs.GetConnectorArgs.builder
       com.pulumi.gcp.vpcaccess.VpcaccessFunctions.getConnector(args(argsBuilder).build)
@@ -73,7 +75,7 @@ object vpcaccess:
      *  * How-to Guides
      *      * [Configuring Serverless VPC Access](https://cloud.google.com/vpc/docs/configure-serverless-vpc-access)
      */
-    def getConnectorPlain(args: Endofunction[com.pulumi.gcp.vpcaccess.inputs.GetConnectorPlainArgs.Builder] = scala.Predef.identity):
+    inline def getConnectorPlain(args: Endofunction[com.pulumi.gcp.vpcaccess.inputs.GetConnectorPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.vpcaccess.outputs.GetConnectorResult] =
       val argsBuilder = com.pulumi.gcp.vpcaccess.inputs.GetConnectorPlainArgs.builder
       com.pulumi.gcp.vpcaccess.VpcaccessFunctions.getConnectorPlain(args(argsBuilder).build)

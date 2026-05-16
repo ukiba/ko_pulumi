@@ -315,17 +315,19 @@ object cloudfunctions:
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
-  type CloudfunctionsFunctions = com.pulumi.gcp.cloudfunctions.CloudfunctionsFunctions
   object CloudfunctionsFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.gcp.cloudfunctions.CloudfunctionsFunctions.*
-  extension (self: CloudfunctionsFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /**
      * Get information about a Google Cloud Function. For more information see
      *  the [official documentation](https://cloud.google.com/functions/docs/)
      *  and [API](https://cloud.google.com/functions/docs/apis).
      */
-    def getFunction(args: Endofunction[com.pulumi.gcp.cloudfunctions.inputs.GetFunctionArgs.Builder] = scala.Predef.identity):
+    inline def getFunction(args: Endofunction[com.pulumi.gcp.cloudfunctions.inputs.GetFunctionArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.cloudfunctions.outputs.GetFunctionResult] =
       val argsBuilder = com.pulumi.gcp.cloudfunctions.inputs.GetFunctionArgs.builder
       com.pulumi.gcp.cloudfunctions.CloudfunctionsFunctions.getFunction(args(argsBuilder).build)
@@ -335,19 +337,19 @@ object cloudfunctions:
      *  the [official documentation](https://cloud.google.com/functions/docs/)
      *  and [API](https://cloud.google.com/functions/docs/apis).
      */
-    def getFunctionPlain(args: Endofunction[com.pulumi.gcp.cloudfunctions.inputs.GetFunctionPlainArgs.Builder] = scala.Predef.identity):
+    inline def getFunctionPlain(args: Endofunction[com.pulumi.gcp.cloudfunctions.inputs.GetFunctionPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.cloudfunctions.outputs.GetFunctionResult] =
       val argsBuilder = com.pulumi.gcp.cloudfunctions.inputs.GetFunctionPlainArgs.builder
       com.pulumi.gcp.cloudfunctions.CloudfunctionsFunctions.getFunctionPlain(args(argsBuilder).build)
 
     /** Retrieves the current IAM policy data for cloudfunction */
-    def getFunctionIamPolicy(args: Endofunction[com.pulumi.gcp.cloudfunctions.inputs.GetFunctionIamPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getFunctionIamPolicy(args: Endofunction[com.pulumi.gcp.cloudfunctions.inputs.GetFunctionIamPolicyArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.cloudfunctions.outputs.GetFunctionIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.cloudfunctions.inputs.GetFunctionIamPolicyArgs.builder
       com.pulumi.gcp.cloudfunctions.CloudfunctionsFunctions.getFunctionIamPolicy(args(argsBuilder).build)
 
     /** Retrieves the current IAM policy data for cloudfunction */
-    def getFunctionIamPolicyPlain(args: Endofunction[com.pulumi.gcp.cloudfunctions.inputs.GetFunctionIamPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getFunctionIamPolicyPlain(args: Endofunction[com.pulumi.gcp.cloudfunctions.inputs.GetFunctionIamPolicyPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.cloudfunctions.outputs.GetFunctionIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.cloudfunctions.inputs.GetFunctionIamPolicyPlainArgs.builder
       com.pulumi.gcp.cloudfunctions.CloudfunctionsFunctions.getFunctionIamPolicyPlain(args(argsBuilder).build)

@@ -18,79 +18,81 @@ object secretsmanager:
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
-  type SecretsmanagerFunctions = com.pulumi.aws.secretsmanager.SecretsmanagerFunctions
   object SecretsmanagerFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.aws.secretsmanager.SecretsmanagerFunctions.*
-  extension (self: SecretsmanagerFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /** Generate a random password. */
-    def getRandomPassword(args: Endofunction[com.pulumi.aws.secretsmanager.inputs.GetRandomPasswordArgs.Builder] = scala.Predef.identity):
+    inline def getRandomPassword(args: Endofunction[com.pulumi.aws.secretsmanager.inputs.GetRandomPasswordArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.secretsmanager.outputs.GetRandomPasswordResult] =
       val argsBuilder = com.pulumi.aws.secretsmanager.inputs.GetRandomPasswordArgs.builder
       com.pulumi.aws.secretsmanager.SecretsmanagerFunctions.getRandomPassword(args(argsBuilder).build)
 
     /** Generate a random password. */
-    def getRandomPasswordPlain(args: Endofunction[com.pulumi.aws.secretsmanager.inputs.GetRandomPasswordPlainArgs.Builder] = scala.Predef.identity):
+    inline def getRandomPasswordPlain(args: Endofunction[com.pulumi.aws.secretsmanager.inputs.GetRandomPasswordPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.secretsmanager.outputs.GetRandomPasswordResult] =
       val argsBuilder = com.pulumi.aws.secretsmanager.inputs.GetRandomPasswordPlainArgs.builder
       com.pulumi.aws.secretsmanager.SecretsmanagerFunctions.getRandomPasswordPlain(args(argsBuilder).build)
 
     /** Retrieve metadata information about a Secrets Manager secret. To retrieve a secret value, see the `aws.secretsmanager.SecretVersion` data source. */
-    def getSecret(args: Endofunction[com.pulumi.aws.secretsmanager.inputs.GetSecretArgs.Builder] = scala.Predef.identity):
+    inline def getSecret(args: Endofunction[com.pulumi.aws.secretsmanager.inputs.GetSecretArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.secretsmanager.outputs.GetSecretResult] =
       val argsBuilder = com.pulumi.aws.secretsmanager.inputs.GetSecretArgs.builder
       com.pulumi.aws.secretsmanager.SecretsmanagerFunctions.getSecret(args(argsBuilder).build)
 
     /** Retrieve metadata information about a Secrets Manager secret. To retrieve a secret value, see the `aws.secretsmanager.SecretVersion` data source. */
-    def getSecretPlain(args: Endofunction[com.pulumi.aws.secretsmanager.inputs.GetSecretPlainArgs.Builder] = scala.Predef.identity):
+    inline def getSecretPlain(args: Endofunction[com.pulumi.aws.secretsmanager.inputs.GetSecretPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.secretsmanager.outputs.GetSecretResult] =
       val argsBuilder = com.pulumi.aws.secretsmanager.inputs.GetSecretPlainArgs.builder
       com.pulumi.aws.secretsmanager.SecretsmanagerFunctions.getSecretPlain(args(argsBuilder).build)
 
     /** Retrieve information about a Secrets Manager secret rotation. To retrieve secret metadata, see the `aws.secretsmanager.Secret` data source. To retrieve a secret value, see the `aws.secretsmanager.SecretVersion` data source. */
-    def getSecretRotation(args: Endofunction[com.pulumi.aws.secretsmanager.inputs.GetSecretRotationArgs.Builder] = scala.Predef.identity):
+    inline def getSecretRotation(args: Endofunction[com.pulumi.aws.secretsmanager.inputs.GetSecretRotationArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.secretsmanager.outputs.GetSecretRotationResult] =
       val argsBuilder = com.pulumi.aws.secretsmanager.inputs.GetSecretRotationArgs.builder
       com.pulumi.aws.secretsmanager.SecretsmanagerFunctions.getSecretRotation(args(argsBuilder).build)
 
     /** Retrieve information about a Secrets Manager secret rotation. To retrieve secret metadata, see the `aws.secretsmanager.Secret` data source. To retrieve a secret value, see the `aws.secretsmanager.SecretVersion` data source. */
-    def getSecretRotationPlain(args: Endofunction[com.pulumi.aws.secretsmanager.inputs.GetSecretRotationPlainArgs.Builder] = scala.Predef.identity):
+    inline def getSecretRotationPlain(args: Endofunction[com.pulumi.aws.secretsmanager.inputs.GetSecretRotationPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.secretsmanager.outputs.GetSecretRotationResult] =
       val argsBuilder = com.pulumi.aws.secretsmanager.inputs.GetSecretRotationPlainArgs.builder
       com.pulumi.aws.secretsmanager.SecretsmanagerFunctions.getSecretRotationPlain(args(argsBuilder).build)
 
     /** Retrieve information about a Secrets Manager secret version, including its secret value. To retrieve secret metadata, see the `aws.secretsmanager.Secret` data source. */
-    def getSecretVersion(args: Endofunction[com.pulumi.aws.secretsmanager.inputs.GetSecretVersionArgs.Builder] = scala.Predef.identity):
+    inline def getSecretVersion(args: Endofunction[com.pulumi.aws.secretsmanager.inputs.GetSecretVersionArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.secretsmanager.outputs.GetSecretVersionResult] =
       val argsBuilder = com.pulumi.aws.secretsmanager.inputs.GetSecretVersionArgs.builder
       com.pulumi.aws.secretsmanager.SecretsmanagerFunctions.getSecretVersion(args(argsBuilder).build)
 
     /** Retrieve information about a Secrets Manager secret version, including its secret value. To retrieve secret metadata, see the `aws.secretsmanager.Secret` data source. */
-    def getSecretVersionPlain(args: Endofunction[com.pulumi.aws.secretsmanager.inputs.GetSecretVersionPlainArgs.Builder] = scala.Predef.identity):
+    inline def getSecretVersionPlain(args: Endofunction[com.pulumi.aws.secretsmanager.inputs.GetSecretVersionPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.secretsmanager.outputs.GetSecretVersionResult] =
       val argsBuilder = com.pulumi.aws.secretsmanager.inputs.GetSecretVersionPlainArgs.builder
       com.pulumi.aws.secretsmanager.SecretsmanagerFunctions.getSecretVersionPlain(args(argsBuilder).build)
 
     /** Retrieve the versions of a Secrets Manager secret. To retrieve secret metadata, see the data sources `aws.secretsmanager.Secret` and `aws.secretsmanager.SecretVersion`. */
-    def getSecretVersions(args: Endofunction[com.pulumi.aws.secretsmanager.inputs.GetSecretVersionsArgs.Builder] = scala.Predef.identity):
+    inline def getSecretVersions(args: Endofunction[com.pulumi.aws.secretsmanager.inputs.GetSecretVersionsArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.secretsmanager.outputs.GetSecretVersionsResult] =
       val argsBuilder = com.pulumi.aws.secretsmanager.inputs.GetSecretVersionsArgs.builder
       com.pulumi.aws.secretsmanager.SecretsmanagerFunctions.getSecretVersions(args(argsBuilder).build)
 
     /** Retrieve the versions of a Secrets Manager secret. To retrieve secret metadata, see the data sources `aws.secretsmanager.Secret` and `aws.secretsmanager.SecretVersion`. */
-    def getSecretVersionsPlain(args: Endofunction[com.pulumi.aws.secretsmanager.inputs.GetSecretVersionsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getSecretVersionsPlain(args: Endofunction[com.pulumi.aws.secretsmanager.inputs.GetSecretVersionsPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.secretsmanager.outputs.GetSecretVersionsResult] =
       val argsBuilder = com.pulumi.aws.secretsmanager.inputs.GetSecretVersionsPlainArgs.builder
       com.pulumi.aws.secretsmanager.SecretsmanagerFunctions.getSecretVersionsPlain(args(argsBuilder).build)
 
     /** Use this data source to get the ARNs and names of Secrets Manager secrets matching the specified criteria. */
-    def getSecrets(args: Endofunction[com.pulumi.aws.secretsmanager.inputs.GetSecretsArgs.Builder] = scala.Predef.identity):
+    inline def getSecrets(args: Endofunction[com.pulumi.aws.secretsmanager.inputs.GetSecretsArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.secretsmanager.outputs.GetSecretsResult] =
       val argsBuilder = com.pulumi.aws.secretsmanager.inputs.GetSecretsArgs.builder
       com.pulumi.aws.secretsmanager.SecretsmanagerFunctions.getSecrets(args(argsBuilder).build)
 
     /** Use this data source to get the ARNs and names of Secrets Manager secrets matching the specified criteria. */
-    def getSecretsPlain(args: Endofunction[com.pulumi.aws.secretsmanager.inputs.GetSecretsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getSecretsPlain(args: Endofunction[com.pulumi.aws.secretsmanager.inputs.GetSecretsPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.secretsmanager.outputs.GetSecretsResult] =
       val argsBuilder = com.pulumi.aws.secretsmanager.inputs.GetSecretsPlainArgs.builder
       com.pulumi.aws.secretsmanager.SecretsmanagerFunctions.getSecretsPlain(args(argsBuilder).build)

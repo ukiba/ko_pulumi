@@ -49,79 +49,81 @@ object datashare:
       val argsBuilder = com.pulumi.azure.datashare.inputs.DatasetBlobStorageStorageAccountArgs.builder
       builder.storageAccount(args(argsBuilder).build)
 
-  type DatashareFunctions = com.pulumi.azure.datashare.DatashareFunctions
   object DatashareFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.azure.datashare.DatashareFunctions.*
-  extension (self: DatashareFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /** Use this data source to access information about an existing Data Share Account. */
-    def getAccount(args: Endofunction[com.pulumi.azure.datashare.inputs.GetAccountArgs.Builder] = scala.Predef.identity):
+    inline def getAccount(args: Endofunction[com.pulumi.azure.datashare.inputs.GetAccountArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.datashare.outputs.GetAccountResult] =
       val argsBuilder = com.pulumi.azure.datashare.inputs.GetAccountArgs.builder
       com.pulumi.azure.datashare.DatashareFunctions.getAccount(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing Data Share Account. */
-    def getAccountPlain(args: Endofunction[com.pulumi.azure.datashare.inputs.GetAccountPlainArgs.Builder] = scala.Predef.identity):
+    inline def getAccountPlain(args: Endofunction[com.pulumi.azure.datashare.inputs.GetAccountPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.datashare.outputs.GetAccountResult] =
       val argsBuilder = com.pulumi.azure.datashare.inputs.GetAccountPlainArgs.builder
       com.pulumi.azure.datashare.DatashareFunctions.getAccountPlain(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing Data Share Blob Storage Dataset. */
-    def getDatasetBlobStorage(args: Endofunction[com.pulumi.azure.datashare.inputs.GetDatasetBlobStorageArgs.Builder] = scala.Predef.identity):
+    inline def getDatasetBlobStorage(args: Endofunction[com.pulumi.azure.datashare.inputs.GetDatasetBlobStorageArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.datashare.outputs.GetDatasetBlobStorageResult] =
       val argsBuilder = com.pulumi.azure.datashare.inputs.GetDatasetBlobStorageArgs.builder
       com.pulumi.azure.datashare.DatashareFunctions.getDatasetBlobStorage(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing Data Share Blob Storage Dataset. */
-    def getDatasetBlobStoragePlain(args: Endofunction[com.pulumi.azure.datashare.inputs.GetDatasetBlobStoragePlainArgs.Builder] = scala.Predef.identity):
+    inline def getDatasetBlobStoragePlain(args: Endofunction[com.pulumi.azure.datashare.inputs.GetDatasetBlobStoragePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.datashare.outputs.GetDatasetBlobStorageResult] =
       val argsBuilder = com.pulumi.azure.datashare.inputs.GetDatasetBlobStoragePlainArgs.builder
       com.pulumi.azure.datashare.DatashareFunctions.getDatasetBlobStoragePlain(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing Data Share Data Lake Gen2 Dataset. */
-    def getDatasetDataLakeGen2(args: Endofunction[com.pulumi.azure.datashare.inputs.GetDatasetDataLakeGen2Args.Builder] = scala.Predef.identity):
+    inline def getDatasetDataLakeGen2(args: Endofunction[com.pulumi.azure.datashare.inputs.GetDatasetDataLakeGen2Args.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.datashare.outputs.GetDatasetDataLakeGen2Result] =
       val argsBuilder = com.pulumi.azure.datashare.inputs.GetDatasetDataLakeGen2Args.builder
       com.pulumi.azure.datashare.DatashareFunctions.getDatasetDataLakeGen2(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing Data Share Data Lake Gen2 Dataset. */
-    def getDatasetDataLakeGen2Plain(args: Endofunction[com.pulumi.azure.datashare.inputs.GetDatasetDataLakeGen2PlainArgs.Builder] = scala.Predef.identity):
+    inline def getDatasetDataLakeGen2Plain(args: Endofunction[com.pulumi.azure.datashare.inputs.GetDatasetDataLakeGen2PlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.datashare.outputs.GetDatasetDataLakeGen2Result] =
       val argsBuilder = com.pulumi.azure.datashare.inputs.GetDatasetDataLakeGen2PlainArgs.builder
       com.pulumi.azure.datashare.DatashareFunctions.getDatasetDataLakeGen2Plain(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing Data Share Kusto Cluster Dataset. */
-    def getDatasetKustoCluster(args: Endofunction[com.pulumi.azure.datashare.inputs.GetDatasetKustoClusterArgs.Builder] = scala.Predef.identity):
+    inline def getDatasetKustoCluster(args: Endofunction[com.pulumi.azure.datashare.inputs.GetDatasetKustoClusterArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.datashare.outputs.GetDatasetKustoClusterResult] =
       val argsBuilder = com.pulumi.azure.datashare.inputs.GetDatasetKustoClusterArgs.builder
       com.pulumi.azure.datashare.DatashareFunctions.getDatasetKustoCluster(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing Data Share Kusto Cluster Dataset. */
-    def getDatasetKustoClusterPlain(args: Endofunction[com.pulumi.azure.datashare.inputs.GetDatasetKustoClusterPlainArgs.Builder] = scala.Predef.identity):
+    inline def getDatasetKustoClusterPlain(args: Endofunction[com.pulumi.azure.datashare.inputs.GetDatasetKustoClusterPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.datashare.outputs.GetDatasetKustoClusterResult] =
       val argsBuilder = com.pulumi.azure.datashare.inputs.GetDatasetKustoClusterPlainArgs.builder
       com.pulumi.azure.datashare.DatashareFunctions.getDatasetKustoClusterPlain(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing Data Share Kusto Database Dataset. */
-    def getDatasetKustoDatabase(args: Endofunction[com.pulumi.azure.datashare.inputs.GetDatasetKustoDatabaseArgs.Builder] = scala.Predef.identity):
+    inline def getDatasetKustoDatabase(args: Endofunction[com.pulumi.azure.datashare.inputs.GetDatasetKustoDatabaseArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.datashare.outputs.GetDatasetKustoDatabaseResult] =
       val argsBuilder = com.pulumi.azure.datashare.inputs.GetDatasetKustoDatabaseArgs.builder
       com.pulumi.azure.datashare.DatashareFunctions.getDatasetKustoDatabase(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing Data Share Kusto Database Dataset. */
-    def getDatasetKustoDatabasePlain(args: Endofunction[com.pulumi.azure.datashare.inputs.GetDatasetKustoDatabasePlainArgs.Builder] = scala.Predef.identity):
+    inline def getDatasetKustoDatabasePlain(args: Endofunction[com.pulumi.azure.datashare.inputs.GetDatasetKustoDatabasePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.datashare.outputs.GetDatasetKustoDatabaseResult] =
       val argsBuilder = com.pulumi.azure.datashare.inputs.GetDatasetKustoDatabasePlainArgs.builder
       com.pulumi.azure.datashare.DatashareFunctions.getDatasetKustoDatabasePlain(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing Data Share. */
-    def getShare(args: Endofunction[com.pulumi.azure.datashare.inputs.GetShareArgs.Builder] = scala.Predef.identity):
+    inline def getShare(args: Endofunction[com.pulumi.azure.datashare.inputs.GetShareArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.datashare.outputs.GetShareResult] =
       val argsBuilder = com.pulumi.azure.datashare.inputs.GetShareArgs.builder
       com.pulumi.azure.datashare.DatashareFunctions.getShare(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing Data Share. */
-    def getSharePlain(args: Endofunction[com.pulumi.azure.datashare.inputs.GetSharePlainArgs.Builder] = scala.Predef.identity):
+    inline def getSharePlain(args: Endofunction[com.pulumi.azure.datashare.inputs.GetSharePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.datashare.outputs.GetShareResult] =
       val argsBuilder = com.pulumi.azure.datashare.inputs.GetSharePlainArgs.builder
       com.pulumi.azure.datashare.DatashareFunctions.getSharePlain(args(argsBuilder).build)

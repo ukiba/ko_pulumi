@@ -3118,17 +3118,19 @@ object datacatalog:
       val argsBuilder = com.pulumi.gcp.datacatalog.inputs.EntryGroupIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
 
-  type DatacatalogFunctions = com.pulumi.gcp.datacatalog.DatacatalogFunctions
   object DatacatalogFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.gcp.datacatalog.DatacatalogFunctions.*
-  extension (self: DatacatalogFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /**
      * &gt; **Warning:** The parent resource has been deprecated: `gcp.datacatalog.EntryGroup` is deprecated and will be removed in a future major release. Use `gcp.dataplex.EntryGroup` instead. For steps to transition your Data Catalog users, workloads, and content to Dataplex Catalog, see https://cloud.google.com/dataplex/docs/transition-to-dataplex-catalog.
      * 
      *  Retrieves the current IAM policy data for entrygroup
      */
-    def getEntryGroupIamPolicy(args: Endofunction[com.pulumi.gcp.datacatalog.inputs.GetEntryGroupIamPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getEntryGroupIamPolicy(args: Endofunction[com.pulumi.gcp.datacatalog.inputs.GetEntryGroupIamPolicyArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.datacatalog.outputs.GetEntryGroupIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.datacatalog.inputs.GetEntryGroupIamPolicyArgs.builder
       com.pulumi.gcp.datacatalog.DatacatalogFunctions.getEntryGroupIamPolicy(args(argsBuilder).build)
@@ -3138,19 +3140,19 @@ object datacatalog:
      * 
      *  Retrieves the current IAM policy data for entrygroup
      */
-    def getEntryGroupIamPolicyPlain(args: Endofunction[com.pulumi.gcp.datacatalog.inputs.GetEntryGroupIamPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getEntryGroupIamPolicyPlain(args: Endofunction[com.pulumi.gcp.datacatalog.inputs.GetEntryGroupIamPolicyPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.datacatalog.outputs.GetEntryGroupIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.datacatalog.inputs.GetEntryGroupIamPolicyPlainArgs.builder
       com.pulumi.gcp.datacatalog.DatacatalogFunctions.getEntryGroupIamPolicyPlain(args(argsBuilder).build)
 
     /** Retrieves the current IAM policy data for policytag */
-    def getPolicyTagIamPolicy(args: Endofunction[com.pulumi.gcp.datacatalog.inputs.GetPolicyTagIamPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getPolicyTagIamPolicy(args: Endofunction[com.pulumi.gcp.datacatalog.inputs.GetPolicyTagIamPolicyArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.datacatalog.outputs.GetPolicyTagIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.datacatalog.inputs.GetPolicyTagIamPolicyArgs.builder
       com.pulumi.gcp.datacatalog.DatacatalogFunctions.getPolicyTagIamPolicy(args(argsBuilder).build)
 
     /** Retrieves the current IAM policy data for policytag */
-    def getPolicyTagIamPolicyPlain(args: Endofunction[com.pulumi.gcp.datacatalog.inputs.GetPolicyTagIamPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getPolicyTagIamPolicyPlain(args: Endofunction[com.pulumi.gcp.datacatalog.inputs.GetPolicyTagIamPolicyPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.datacatalog.outputs.GetPolicyTagIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.datacatalog.inputs.GetPolicyTagIamPolicyPlainArgs.builder
       com.pulumi.gcp.datacatalog.DatacatalogFunctions.getPolicyTagIamPolicyPlain(args(argsBuilder).build)
@@ -3160,7 +3162,7 @@ object datacatalog:
      * 
      *  Retrieves the current IAM policy data for tagtemplate
      */
-    def getTagTemplateIamPolicy(args: Endofunction[com.pulumi.gcp.datacatalog.inputs.GetTagTemplateIamPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getTagTemplateIamPolicy(args: Endofunction[com.pulumi.gcp.datacatalog.inputs.GetTagTemplateIamPolicyArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.datacatalog.outputs.GetTagTemplateIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.datacatalog.inputs.GetTagTemplateIamPolicyArgs.builder
       com.pulumi.gcp.datacatalog.DatacatalogFunctions.getTagTemplateIamPolicy(args(argsBuilder).build)
@@ -3170,19 +3172,19 @@ object datacatalog:
      * 
      *  Retrieves the current IAM policy data for tagtemplate
      */
-    def getTagTemplateIamPolicyPlain(args: Endofunction[com.pulumi.gcp.datacatalog.inputs.GetTagTemplateIamPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getTagTemplateIamPolicyPlain(args: Endofunction[com.pulumi.gcp.datacatalog.inputs.GetTagTemplateIamPolicyPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.datacatalog.outputs.GetTagTemplateIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.datacatalog.inputs.GetTagTemplateIamPolicyPlainArgs.builder
       com.pulumi.gcp.datacatalog.DatacatalogFunctions.getTagTemplateIamPolicyPlain(args(argsBuilder).build)
 
     /** Retrieves the current IAM policy data for taxonomy */
-    def getTaxonomyIamPolicy(args: Endofunction[com.pulumi.gcp.datacatalog.inputs.GetTaxonomyIamPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getTaxonomyIamPolicy(args: Endofunction[com.pulumi.gcp.datacatalog.inputs.GetTaxonomyIamPolicyArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.datacatalog.outputs.GetTaxonomyIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.datacatalog.inputs.GetTaxonomyIamPolicyArgs.builder
       com.pulumi.gcp.datacatalog.DatacatalogFunctions.getTaxonomyIamPolicy(args(argsBuilder).build)
 
     /** Retrieves the current IAM policy data for taxonomy */
-    def getTaxonomyIamPolicyPlain(args: Endofunction[com.pulumi.gcp.datacatalog.inputs.GetTaxonomyIamPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getTaxonomyIamPolicyPlain(args: Endofunction[com.pulumi.gcp.datacatalog.inputs.GetTaxonomyIamPolicyPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.datacatalog.outputs.GetTaxonomyIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.datacatalog.inputs.GetTaxonomyIamPolicyPlainArgs.builder
       com.pulumi.gcp.datacatalog.DatacatalogFunctions.getTaxonomyIamPolicyPlain(args(argsBuilder).build)

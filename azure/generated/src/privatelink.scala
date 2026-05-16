@@ -30,43 +30,45 @@ object privatelink:
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
-  type PrivatelinkFunctions = com.pulumi.azure.privatelink.PrivatelinkFunctions
   object PrivatelinkFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.azure.privatelink.PrivatelinkFunctions.*
-  extension (self: PrivatelinkFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /** Use this data source to access the connection status information about an existing Private Endpoint Connection. */
-    def getEndpointConnection(args: Endofunction[com.pulumi.azure.privatelink.inputs.GetEndpointConnectionArgs.Builder] = scala.Predef.identity):
+    inline def getEndpointConnection(args: Endofunction[com.pulumi.azure.privatelink.inputs.GetEndpointConnectionArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.privatelink.outputs.GetEndpointConnectionResult] =
       val argsBuilder = com.pulumi.azure.privatelink.inputs.GetEndpointConnectionArgs.builder
       com.pulumi.azure.privatelink.PrivatelinkFunctions.getEndpointConnection(args(argsBuilder).build)
 
     /** Use this data source to access the connection status information about an existing Private Endpoint Connection. */
-    def getEndpointConnectionPlain(args: Endofunction[com.pulumi.azure.privatelink.inputs.GetEndpointConnectionPlainArgs.Builder] = scala.Predef.identity):
+    inline def getEndpointConnectionPlain(args: Endofunction[com.pulumi.azure.privatelink.inputs.GetEndpointConnectionPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.privatelink.outputs.GetEndpointConnectionResult] =
       val argsBuilder = com.pulumi.azure.privatelink.inputs.GetEndpointConnectionPlainArgs.builder
       com.pulumi.azure.privatelink.PrivatelinkFunctions.getEndpointConnectionPlain(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing Private Link Service. */
-    def getService(args: Endofunction[com.pulumi.azure.privatelink.inputs.GetServiceArgs.Builder] = scala.Predef.identity):
+    inline def getService(args: Endofunction[com.pulumi.azure.privatelink.inputs.GetServiceArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.privatelink.outputs.GetServiceResult] =
       val argsBuilder = com.pulumi.azure.privatelink.inputs.GetServiceArgs.builder
       com.pulumi.azure.privatelink.PrivatelinkFunctions.getService(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing Private Link Service. */
-    def getServicePlain(args: Endofunction[com.pulumi.azure.privatelink.inputs.GetServicePlainArgs.Builder] = scala.Predef.identity):
+    inline def getServicePlain(args: Endofunction[com.pulumi.azure.privatelink.inputs.GetServicePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.privatelink.outputs.GetServiceResult] =
       val argsBuilder = com.pulumi.azure.privatelink.inputs.GetServicePlainArgs.builder
       com.pulumi.azure.privatelink.PrivatelinkFunctions.getServicePlain(args(argsBuilder).build)
 
     /** Use this data source to access endpoint connection information about an existing Private Link Service. */
-    def getServiceEndpointConnections(args: Endofunction[com.pulumi.azure.privatelink.inputs.GetServiceEndpointConnectionsArgs.Builder] = scala.Predef.identity):
+    inline def getServiceEndpointConnections(args: Endofunction[com.pulumi.azure.privatelink.inputs.GetServiceEndpointConnectionsArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.privatelink.outputs.GetServiceEndpointConnectionsResult] =
       val argsBuilder = com.pulumi.azure.privatelink.inputs.GetServiceEndpointConnectionsArgs.builder
       com.pulumi.azure.privatelink.PrivatelinkFunctions.getServiceEndpointConnections(args(argsBuilder).build)
 
     /** Use this data source to access endpoint connection information about an existing Private Link Service. */
-    def getServiceEndpointConnectionsPlain(args: Endofunction[com.pulumi.azure.privatelink.inputs.GetServiceEndpointConnectionsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getServiceEndpointConnectionsPlain(args: Endofunction[com.pulumi.azure.privatelink.inputs.GetServiceEndpointConnectionsPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.privatelink.outputs.GetServiceEndpointConnectionsResult] =
       val argsBuilder = com.pulumi.azure.privatelink.inputs.GetServiceEndpointConnectionsPlainArgs.builder
       com.pulumi.azure.privatelink.PrivatelinkFunctions.getServiceEndpointConnectionsPlain(args(argsBuilder).build)

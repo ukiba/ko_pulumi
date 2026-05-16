@@ -2655,19 +2655,21 @@ object healthcare:
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
-  type HealthcareFunctions = com.pulumi.gcp.healthcare.HealthcareFunctions
   object HealthcareFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.gcp.healthcare.HealthcareFunctions.*
-  extension (self: HealthcareFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /** Retrieves the current IAM policy data for consentstore */
-    def getConsentStoreIamPolicy(args: Endofunction[com.pulumi.gcp.healthcare.inputs.GetConsentStoreIamPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getConsentStoreIamPolicy(args: Endofunction[com.pulumi.gcp.healthcare.inputs.GetConsentStoreIamPolicyArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.healthcare.outputs.GetConsentStoreIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.healthcare.inputs.GetConsentStoreIamPolicyArgs.builder
       com.pulumi.gcp.healthcare.HealthcareFunctions.getConsentStoreIamPolicy(args(argsBuilder).build)
 
     /** Retrieves the current IAM policy data for consentstore */
-    def getConsentStoreIamPolicyPlain(args: Endofunction[com.pulumi.gcp.healthcare.inputs.GetConsentStoreIamPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getConsentStoreIamPolicyPlain(args: Endofunction[com.pulumi.gcp.healthcare.inputs.GetConsentStoreIamPolicyPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.healthcare.outputs.GetConsentStoreIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.healthcare.inputs.GetConsentStoreIamPolicyPlainArgs.builder
       com.pulumi.gcp.healthcare.HealthcareFunctions.getConsentStoreIamPolicyPlain(args(argsBuilder).build)
@@ -2708,7 +2710,7 @@ object healthcare:
      *  }
      *  </pre>
      */
-    def getDatasetIamPolicy(args: Endofunction[com.pulumi.gcp.healthcare.inputs.GetDatasetIamPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getDatasetIamPolicy(args: Endofunction[com.pulumi.gcp.healthcare.inputs.GetDatasetIamPolicyArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.healthcare.outputs.GetDatasetIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.healthcare.inputs.GetDatasetIamPolicyArgs.builder
       com.pulumi.gcp.healthcare.HealthcareFunctions.getDatasetIamPolicy(args(argsBuilder).build)
@@ -2749,7 +2751,7 @@ object healthcare:
      *  }
      *  </pre>
      */
-    def getDatasetIamPolicyPlain(args: Endofunction[com.pulumi.gcp.healthcare.inputs.GetDatasetIamPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getDatasetIamPolicyPlain(args: Endofunction[com.pulumi.gcp.healthcare.inputs.GetDatasetIamPolicyPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.healthcare.outputs.GetDatasetIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.healthcare.inputs.GetDatasetIamPolicyPlainArgs.builder
       com.pulumi.gcp.healthcare.HealthcareFunctions.getDatasetIamPolicyPlain(args(argsBuilder).build)
@@ -2790,7 +2792,7 @@ object healthcare:
      *  }
      *  </pre>
      */
-    def getDicomStoreIamPolicy(args: Endofunction[com.pulumi.gcp.healthcare.inputs.GetDicomStoreIamPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getDicomStoreIamPolicy(args: Endofunction[com.pulumi.gcp.healthcare.inputs.GetDicomStoreIamPolicyArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.healthcare.outputs.GetDicomStoreIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.healthcare.inputs.GetDicomStoreIamPolicyArgs.builder
       com.pulumi.gcp.healthcare.HealthcareFunctions.getDicomStoreIamPolicy(args(argsBuilder).build)
@@ -2831,7 +2833,7 @@ object healthcare:
      *  }
      *  </pre>
      */
-    def getDicomStoreIamPolicyPlain(args: Endofunction[com.pulumi.gcp.healthcare.inputs.GetDicomStoreIamPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getDicomStoreIamPolicyPlain(args: Endofunction[com.pulumi.gcp.healthcare.inputs.GetDicomStoreIamPolicyPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.healthcare.outputs.GetDicomStoreIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.healthcare.inputs.GetDicomStoreIamPolicyPlainArgs.builder
       com.pulumi.gcp.healthcare.HealthcareFunctions.getDicomStoreIamPolicyPlain(args(argsBuilder).build)
@@ -2872,7 +2874,7 @@ object healthcare:
      *  }
      *  </pre>
      */
-    def getFhirStoreIamPolicy(args: Endofunction[com.pulumi.gcp.healthcare.inputs.GetFhirStoreIamPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getFhirStoreIamPolicy(args: Endofunction[com.pulumi.gcp.healthcare.inputs.GetFhirStoreIamPolicyArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.healthcare.outputs.GetFhirStoreIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.healthcare.inputs.GetFhirStoreIamPolicyArgs.builder
       com.pulumi.gcp.healthcare.HealthcareFunctions.getFhirStoreIamPolicy(args(argsBuilder).build)
@@ -2913,7 +2915,7 @@ object healthcare:
      *  }
      *  </pre>
      */
-    def getFhirStoreIamPolicyPlain(args: Endofunction[com.pulumi.gcp.healthcare.inputs.GetFhirStoreIamPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getFhirStoreIamPolicyPlain(args: Endofunction[com.pulumi.gcp.healthcare.inputs.GetFhirStoreIamPolicyPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.healthcare.outputs.GetFhirStoreIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.healthcare.inputs.GetFhirStoreIamPolicyPlainArgs.builder
       com.pulumi.gcp.healthcare.HealthcareFunctions.getFhirStoreIamPolicyPlain(args(argsBuilder).build)
@@ -2954,7 +2956,7 @@ object healthcare:
      *  }
      *  </pre>
      */
-    def getHl7V2StoreIamPolicy(args: Endofunction[com.pulumi.gcp.healthcare.inputs.GetHl7V2StoreIamPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getHl7V2StoreIamPolicy(args: Endofunction[com.pulumi.gcp.healthcare.inputs.GetHl7V2StoreIamPolicyArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.healthcare.outputs.GetHl7V2StoreIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.healthcare.inputs.GetHl7V2StoreIamPolicyArgs.builder
       com.pulumi.gcp.healthcare.HealthcareFunctions.getHl7V2StoreIamPolicy(args(argsBuilder).build)
@@ -2995,7 +2997,7 @@ object healthcare:
      *  }
      *  </pre>
      */
-    def getHl7V2StoreIamPolicyPlain(args: Endofunction[com.pulumi.gcp.healthcare.inputs.GetHl7V2StoreIamPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getHl7V2StoreIamPolicyPlain(args: Endofunction[com.pulumi.gcp.healthcare.inputs.GetHl7V2StoreIamPolicyPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.healthcare.outputs.GetHl7V2StoreIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.healthcare.inputs.GetHl7V2StoreIamPolicyPlainArgs.builder
       com.pulumi.gcp.healthcare.HealthcareFunctions.getHl7V2StoreIamPolicyPlain(args(argsBuilder).build)

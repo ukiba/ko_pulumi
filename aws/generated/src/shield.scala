@@ -33,19 +33,21 @@ object shield:
       val argsBuilder = com.pulumi.aws.shield.inputs.DrtAccessRoleArnAssociationTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
-  type ShieldFunctions = com.pulumi.aws.shield.ShieldFunctions
   object ShieldFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.aws.shield.ShieldFunctions.*
-  extension (self: ShieldFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /** Data source for managing an AWS Shield Protection. */
-    def getProtection(args: Endofunction[com.pulumi.aws.shield.inputs.GetProtectionArgs.Builder] = scala.Predef.identity):
+    inline def getProtection(args: Endofunction[com.pulumi.aws.shield.inputs.GetProtectionArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.shield.outputs.GetProtectionResult] =
       val argsBuilder = com.pulumi.aws.shield.inputs.GetProtectionArgs.builder
       com.pulumi.aws.shield.ShieldFunctions.getProtection(args(argsBuilder).build)
 
     /** Data source for managing an AWS Shield Protection. */
-    def getProtectionPlain(args: Endofunction[com.pulumi.aws.shield.inputs.GetProtectionPlainArgs.Builder] = scala.Predef.identity):
+    inline def getProtectionPlain(args: Endofunction[com.pulumi.aws.shield.inputs.GetProtectionPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.shield.outputs.GetProtectionResult] =
       val argsBuilder = com.pulumi.aws.shield.inputs.GetProtectionPlainArgs.builder
       com.pulumi.aws.shield.ShieldFunctions.getProtectionPlain(args(argsBuilder).build)

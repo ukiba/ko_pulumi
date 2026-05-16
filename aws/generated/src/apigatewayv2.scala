@@ -145,55 +145,57 @@ object apigatewayv2:
       val argsBuilder = com.pulumi.aws.apigatewayv2.inputs.AuthorizerJwtConfigurationArgs.builder
       builder.jwtConfiguration(args(argsBuilder).build)
 
-  type Apigatewayv2Functions = com.pulumi.aws.apigatewayv2.Apigatewayv2Functions
   object Apigatewayv2Functions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.aws.apigatewayv2.Apigatewayv2Functions.*
-  extension (self: Apigatewayv2Functions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /** Provides details about a specific Amazon API Gateway Version 2 API. */
-    def getApi(args: Endofunction[com.pulumi.aws.apigatewayv2.inputs.GetApiArgs.Builder] = scala.Predef.identity):
+    inline def getApi(args: Endofunction[com.pulumi.aws.apigatewayv2.inputs.GetApiArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.apigatewayv2.outputs.GetApiResult] =
       val argsBuilder = com.pulumi.aws.apigatewayv2.inputs.GetApiArgs.builder
       com.pulumi.aws.apigatewayv2.Apigatewayv2Functions.getApi(args(argsBuilder).build)
 
     /** Provides details about a specific Amazon API Gateway Version 2 API. */
-    def getApiPlain(args: Endofunction[com.pulumi.aws.apigatewayv2.inputs.GetApiPlainArgs.Builder] = scala.Predef.identity):
+    inline def getApiPlain(args: Endofunction[com.pulumi.aws.apigatewayv2.inputs.GetApiPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.apigatewayv2.outputs.GetApiResult] =
       val argsBuilder = com.pulumi.aws.apigatewayv2.inputs.GetApiPlainArgs.builder
       com.pulumi.aws.apigatewayv2.Apigatewayv2Functions.getApiPlain(args(argsBuilder).build)
 
     /** Provides details about multiple Amazon API Gateway Version 2 APIs. */
-    def getApis(args: Endofunction[com.pulumi.aws.apigatewayv2.inputs.GetApisArgs.Builder] = scala.Predef.identity):
+    inline def getApis(args: Endofunction[com.pulumi.aws.apigatewayv2.inputs.GetApisArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.apigatewayv2.outputs.GetApisResult] =
       val argsBuilder = com.pulumi.aws.apigatewayv2.inputs.GetApisArgs.builder
       com.pulumi.aws.apigatewayv2.Apigatewayv2Functions.getApis(args(argsBuilder).build)
 
     /** Provides details about multiple Amazon API Gateway Version 2 APIs. */
-    def getApisPlain(args: Endofunction[com.pulumi.aws.apigatewayv2.inputs.GetApisPlainArgs.Builder] = scala.Predef.identity):
+    inline def getApisPlain(args: Endofunction[com.pulumi.aws.apigatewayv2.inputs.GetApisPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.apigatewayv2.outputs.GetApisResult] =
       val argsBuilder = com.pulumi.aws.apigatewayv2.inputs.GetApisPlainArgs.builder
       com.pulumi.aws.apigatewayv2.Apigatewayv2Functions.getApisPlain(args(argsBuilder).build)
 
     /** Exports a definition of an API in a particular output format and specification. */
-    def getExport(args: Endofunction[com.pulumi.aws.apigatewayv2.inputs.GetExportArgs.Builder] = scala.Predef.identity):
+    inline def getExport(args: Endofunction[com.pulumi.aws.apigatewayv2.inputs.GetExportArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.apigatewayv2.outputs.GetExportResult] =
       val argsBuilder = com.pulumi.aws.apigatewayv2.inputs.GetExportArgs.builder
       com.pulumi.aws.apigatewayv2.Apigatewayv2Functions.getExport(args(argsBuilder).build)
 
     /** Exports a definition of an API in a particular output format and specification. */
-    def getExportPlain(args: Endofunction[com.pulumi.aws.apigatewayv2.inputs.GetExportPlainArgs.Builder] = scala.Predef.identity):
+    inline def getExportPlain(args: Endofunction[com.pulumi.aws.apigatewayv2.inputs.GetExportPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.apigatewayv2.outputs.GetExportResult] =
       val argsBuilder = com.pulumi.aws.apigatewayv2.inputs.GetExportPlainArgs.builder
       com.pulumi.aws.apigatewayv2.Apigatewayv2Functions.getExportPlain(args(argsBuilder).build)
 
     /** Data source for managing an AWS API Gateway V2 VPC Link. */
-    def getVpcLink(args: Endofunction[com.pulumi.aws.apigatewayv2.inputs.GetVpcLinkArgs.Builder] = scala.Predef.identity):
+    inline def getVpcLink(args: Endofunction[com.pulumi.aws.apigatewayv2.inputs.GetVpcLinkArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.apigatewayv2.outputs.GetVpcLinkResult] =
       val argsBuilder = com.pulumi.aws.apigatewayv2.inputs.GetVpcLinkArgs.builder
       com.pulumi.aws.apigatewayv2.Apigatewayv2Functions.getVpcLink(args(argsBuilder).build)
 
     /** Data source for managing an AWS API Gateway V2 VPC Link. */
-    def getVpcLinkPlain(args: Endofunction[com.pulumi.aws.apigatewayv2.inputs.GetVpcLinkPlainArgs.Builder] = scala.Predef.identity):
+    inline def getVpcLinkPlain(args: Endofunction[com.pulumi.aws.apigatewayv2.inputs.GetVpcLinkPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.apigatewayv2.outputs.GetVpcLinkResult] =
       val argsBuilder = com.pulumi.aws.apigatewayv2.inputs.GetVpcLinkPlainArgs.builder
       com.pulumi.aws.apigatewayv2.Apigatewayv2Functions.getVpcLinkPlain(args(argsBuilder).build)

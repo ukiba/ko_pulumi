@@ -358,139 +358,141 @@ object core:
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
-  type CoreFunctions = com.pulumi.azure.core.CoreFunctions
   object CoreFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.azure.core.CoreFunctions.*
-  extension (self: CoreFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /** This data source return the available Extended Locations for a specific Azure Region. */
-    def getExtendedLocations(args: Endofunction[com.pulumi.azure.core.inputs.GetExtendedLocationsArgs.Builder] = scala.Predef.identity):
+    inline def getExtendedLocations(args: Endofunction[com.pulumi.azure.core.inputs.GetExtendedLocationsArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.core.outputs.GetExtendedLocationsResult] =
       val argsBuilder = com.pulumi.azure.core.inputs.GetExtendedLocationsArgs.builder
       com.pulumi.azure.core.CoreFunctions.getExtendedLocations(args(argsBuilder).build)
 
     /** This data source return the available Extended Locations for a specific Azure Region. */
-    def getExtendedLocationsPlain(args: Endofunction[com.pulumi.azure.core.inputs.GetExtendedLocationsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getExtendedLocationsPlain(args: Endofunction[com.pulumi.azure.core.inputs.GetExtendedLocationsPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.core.outputs.GetExtendedLocationsResult] =
       val argsBuilder = com.pulumi.azure.core.inputs.GetExtendedLocationsPlainArgs.builder
       com.pulumi.azure.core.CoreFunctions.getExtendedLocationsPlain(args(argsBuilder).build)
 
     /** Use this data source to access information of a specific physical location. */
-    def getLocation(args: Endofunction[com.pulumi.azure.core.inputs.GetLocationArgs.Builder] = scala.Predef.identity):
+    inline def getLocation(args: Endofunction[com.pulumi.azure.core.inputs.GetLocationArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.core.outputs.GetLocationResult] =
       val argsBuilder = com.pulumi.azure.core.inputs.GetLocationArgs.builder
       com.pulumi.azure.core.CoreFunctions.getLocation(args(argsBuilder).build)
 
     /** Use this data source to access information of a specific physical location. */
-    def getLocationPlain(args: Endofunction[com.pulumi.azure.core.inputs.GetLocationPlainArgs.Builder] = scala.Predef.identity):
+    inline def getLocationPlain(args: Endofunction[com.pulumi.azure.core.inputs.GetLocationPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.core.outputs.GetLocationResult] =
       val argsBuilder = com.pulumi.azure.core.inputs.GetLocationPlainArgs.builder
       com.pulumi.azure.core.CoreFunctions.getLocationPlain(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing Resource Group. */
-    def getResourceGroup(args: Endofunction[com.pulumi.azure.core.inputs.GetResourceGroupArgs.Builder] = scala.Predef.identity):
+    inline def getResourceGroup(args: Endofunction[com.pulumi.azure.core.inputs.GetResourceGroupArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.core.outputs.GetResourceGroupResult] =
       val argsBuilder = com.pulumi.azure.core.inputs.GetResourceGroupArgs.builder
       com.pulumi.azure.core.CoreFunctions.getResourceGroup(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing Resource Group. */
-    def getResourceGroupPlain(args: Endofunction[com.pulumi.azure.core.inputs.GetResourceGroupPlainArgs.Builder] = scala.Predef.identity):
+    inline def getResourceGroupPlain(args: Endofunction[com.pulumi.azure.core.inputs.GetResourceGroupPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.core.outputs.GetResourceGroupResult] =
       val argsBuilder = com.pulumi.azure.core.inputs.GetResourceGroupPlainArgs.builder
       com.pulumi.azure.core.CoreFunctions.getResourceGroupPlain(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing Resource Group Template Deployment. */
-    def getResourceGroupTemplateDeployment(args: Endofunction[com.pulumi.azure.core.inputs.GetResourceGroupTemplateDeploymentArgs.Builder] = scala.Predef.identity):
+    inline def getResourceGroupTemplateDeployment(args: Endofunction[com.pulumi.azure.core.inputs.GetResourceGroupTemplateDeploymentArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.core.outputs.GetResourceGroupTemplateDeploymentResult] =
       val argsBuilder = com.pulumi.azure.core.inputs.GetResourceGroupTemplateDeploymentArgs.builder
       com.pulumi.azure.core.CoreFunctions.getResourceGroupTemplateDeployment(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing Resource Group Template Deployment. */
-    def getResourceGroupTemplateDeploymentPlain(args: Endofunction[com.pulumi.azure.core.inputs.GetResourceGroupTemplateDeploymentPlainArgs.Builder] = scala.Predef.identity):
+    inline def getResourceGroupTemplateDeploymentPlain(args: Endofunction[com.pulumi.azure.core.inputs.GetResourceGroupTemplateDeploymentPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.core.outputs.GetResourceGroupTemplateDeploymentResult] =
       val argsBuilder = com.pulumi.azure.core.inputs.GetResourceGroupTemplateDeploymentPlainArgs.builder
       com.pulumi.azure.core.CoreFunctions.getResourceGroupTemplateDeploymentPlain(args(argsBuilder).build)
 
     /** Use this data source to access information about existing resources. */
-    def getResources(args: Endofunction[com.pulumi.azure.core.inputs.GetResourcesArgs.Builder] = scala.Predef.identity):
+    inline def getResources(args: Endofunction[com.pulumi.azure.core.inputs.GetResourcesArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.core.outputs.GetResourcesResult] =
       val argsBuilder = com.pulumi.azure.core.inputs.GetResourcesArgs.builder
       com.pulumi.azure.core.CoreFunctions.getResources(args(argsBuilder).build)
 
     /** Use this data source to access information about existing resources. */
-    def getResourcesPlain(args: Endofunction[com.pulumi.azure.core.inputs.GetResourcesPlainArgs.Builder] = scala.Predef.identity):
+    inline def getResourcesPlain(args: Endofunction[com.pulumi.azure.core.inputs.GetResourcesPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.core.outputs.GetResourcesResult] =
       val argsBuilder = com.pulumi.azure.core.inputs.GetResourcesPlainArgs.builder
       com.pulumi.azure.core.CoreFunctions.getResourcesPlain(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing Subscription. */
-    def getSubscription(args: Endofunction[com.pulumi.azure.core.inputs.GetSubscriptionArgs.Builder] = scala.Predef.identity):
+    inline def getSubscription(args: Endofunction[com.pulumi.azure.core.inputs.GetSubscriptionArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.core.outputs.GetSubscriptionResult] =
       val argsBuilder = com.pulumi.azure.core.inputs.GetSubscriptionArgs.builder
       com.pulumi.azure.core.CoreFunctions.getSubscription(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing Subscription. */
-    def getSubscriptionPlain(args: Endofunction[com.pulumi.azure.core.inputs.GetSubscriptionPlainArgs.Builder] = scala.Predef.identity):
+    inline def getSubscriptionPlain(args: Endofunction[com.pulumi.azure.core.inputs.GetSubscriptionPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.core.outputs.GetSubscriptionResult] =
       val argsBuilder = com.pulumi.azure.core.inputs.GetSubscriptionPlainArgs.builder
       com.pulumi.azure.core.CoreFunctions.getSubscriptionPlain(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing Subscription Template Deployment. */
-    def getSubscriptionTemplateDeployment(args: Endofunction[com.pulumi.azure.core.inputs.GetSubscriptionTemplateDeploymentArgs.Builder] = scala.Predef.identity):
+    inline def getSubscriptionTemplateDeployment(args: Endofunction[com.pulumi.azure.core.inputs.GetSubscriptionTemplateDeploymentArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.core.outputs.GetSubscriptionTemplateDeploymentResult] =
       val argsBuilder = com.pulumi.azure.core.inputs.GetSubscriptionTemplateDeploymentArgs.builder
       com.pulumi.azure.core.CoreFunctions.getSubscriptionTemplateDeployment(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing Subscription Template Deployment. */
-    def getSubscriptionTemplateDeploymentPlain(args: Endofunction[com.pulumi.azure.core.inputs.GetSubscriptionTemplateDeploymentPlainArgs.Builder] = scala.Predef.identity):
+    inline def getSubscriptionTemplateDeploymentPlain(args: Endofunction[com.pulumi.azure.core.inputs.GetSubscriptionTemplateDeploymentPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.core.outputs.GetSubscriptionTemplateDeploymentResult] =
       val argsBuilder = com.pulumi.azure.core.inputs.GetSubscriptionTemplateDeploymentPlainArgs.builder
       com.pulumi.azure.core.CoreFunctions.getSubscriptionTemplateDeploymentPlain(args(argsBuilder).build)
 
     /** Use this data source to access information about all the Subscriptions currently available. */
-    def getSubscriptions(args: Endofunction[com.pulumi.azure.core.inputs.GetSubscriptionsArgs.Builder] = scala.Predef.identity):
+    inline def getSubscriptions(args: Endofunction[com.pulumi.azure.core.inputs.GetSubscriptionsArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.core.outputs.GetSubscriptionsResult] =
       val argsBuilder = com.pulumi.azure.core.inputs.GetSubscriptionsArgs.builder
       com.pulumi.azure.core.CoreFunctions.getSubscriptions(args(argsBuilder).build)
 
     /** Use this data source to access information about all the Subscriptions currently available. */
-    def getSubscriptionsPlain(args: Endofunction[com.pulumi.azure.core.inputs.GetSubscriptionsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getSubscriptionsPlain(args: Endofunction[com.pulumi.azure.core.inputs.GetSubscriptionsPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.core.outputs.GetSubscriptionsResult] =
       val argsBuilder = com.pulumi.azure.core.inputs.GetSubscriptionsPlainArgs.builder
       com.pulumi.azure.core.CoreFunctions.getSubscriptionsPlain(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing Template Spec Version. */
-    def getTemplateSpecVersion(args: Endofunction[com.pulumi.azure.core.inputs.GetTemplateSpecVersionArgs.Builder] = scala.Predef.identity):
+    inline def getTemplateSpecVersion(args: Endofunction[com.pulumi.azure.core.inputs.GetTemplateSpecVersionArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.core.outputs.GetTemplateSpecVersionResult] =
       val argsBuilder = com.pulumi.azure.core.inputs.GetTemplateSpecVersionArgs.builder
       com.pulumi.azure.core.CoreFunctions.getTemplateSpecVersion(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing Template Spec Version. */
-    def getTemplateSpecVersionPlain(args: Endofunction[com.pulumi.azure.core.inputs.GetTemplateSpecVersionPlainArgs.Builder] = scala.Predef.identity):
+    inline def getTemplateSpecVersionPlain(args: Endofunction[com.pulumi.azure.core.inputs.GetTemplateSpecVersionPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.core.outputs.GetTemplateSpecVersionResult] =
       val argsBuilder = com.pulumi.azure.core.inputs.GetTemplateSpecVersionPlainArgs.builder
       com.pulumi.azure.core.CoreFunctions.getTemplateSpecVersionPlain(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing Tenant Template Deployment. */
-    def getTenantTemplateDeployment(args: Endofunction[com.pulumi.azure.core.inputs.GetTenantTemplateDeploymentArgs.Builder] = scala.Predef.identity):
+    inline def getTenantTemplateDeployment(args: Endofunction[com.pulumi.azure.core.inputs.GetTenantTemplateDeploymentArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.core.outputs.GetTenantTemplateDeploymentResult] =
       val argsBuilder = com.pulumi.azure.core.inputs.GetTenantTemplateDeploymentArgs.builder
       com.pulumi.azure.core.CoreFunctions.getTenantTemplateDeployment(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing Tenant Template Deployment. */
-    def getTenantTemplateDeploymentPlain(args: Endofunction[com.pulumi.azure.core.inputs.GetTenantTemplateDeploymentPlainArgs.Builder] = scala.Predef.identity):
+    inline def getTenantTemplateDeploymentPlain(args: Endofunction[com.pulumi.azure.core.inputs.GetTenantTemplateDeploymentPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.core.outputs.GetTenantTemplateDeploymentResult] =
       val argsBuilder = com.pulumi.azure.core.inputs.GetTenantTemplateDeploymentPlainArgs.builder
       com.pulumi.azure.core.CoreFunctions.getTenantTemplateDeploymentPlain(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing User Assigned Identity. */
-    @deprecated def getUserAssignedIdentity(args: Endofunction[com.pulumi.azure.core.inputs.GetUserAssignedIdentityArgs.Builder] = scala.Predef.identity):
+    @deprecated inline def getUserAssignedIdentity(args: Endofunction[com.pulumi.azure.core.inputs.GetUserAssignedIdentityArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.core.outputs.GetUserAssignedIdentityResult] =
       val argsBuilder = com.pulumi.azure.core.inputs.GetUserAssignedIdentityArgs.builder
       com.pulumi.azure.core.CoreFunctions.getUserAssignedIdentity(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing User Assigned Identity. */
-    @deprecated def getUserAssignedIdentityPlain(args: Endofunction[com.pulumi.azure.core.inputs.GetUserAssignedIdentityPlainArgs.Builder] = scala.Predef.identity):
+    @deprecated inline def getUserAssignedIdentityPlain(args: Endofunction[com.pulumi.azure.core.inputs.GetUserAssignedIdentityPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.core.outputs.GetUserAssignedIdentityResult] =
       val argsBuilder = com.pulumi.azure.core.inputs.GetUserAssignedIdentityPlainArgs.builder
       com.pulumi.azure.core.CoreFunctions.getUserAssignedIdentityPlain(args(argsBuilder).build)

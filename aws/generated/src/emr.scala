@@ -30,31 +30,33 @@ object emr:
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
-  type EmrFunctions = com.pulumi.aws.emr.EmrFunctions
   object EmrFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.aws.emr.EmrFunctions.*
-  extension (self: EmrFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /** Retrieve information about EMR Release Labels. */
-    def getReleaseLabels(args: Endofunction[com.pulumi.aws.emr.inputs.GetReleaseLabelsArgs.Builder] = scala.Predef.identity):
+    inline def getReleaseLabels(args: Endofunction[com.pulumi.aws.emr.inputs.GetReleaseLabelsArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.emr.outputs.GetReleaseLabelsResult] =
       val argsBuilder = com.pulumi.aws.emr.inputs.GetReleaseLabelsArgs.builder
       com.pulumi.aws.emr.EmrFunctions.getReleaseLabels(args(argsBuilder).build)
 
     /** Retrieve information about EMR Release Labels. */
-    def getReleaseLabelsPlain(args: Endofunction[com.pulumi.aws.emr.inputs.GetReleaseLabelsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getReleaseLabelsPlain(args: Endofunction[com.pulumi.aws.emr.inputs.GetReleaseLabelsPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.emr.outputs.GetReleaseLabelsResult] =
       val argsBuilder = com.pulumi.aws.emr.inputs.GetReleaseLabelsPlainArgs.builder
       com.pulumi.aws.emr.EmrFunctions.getReleaseLabelsPlain(args(argsBuilder).build)
 
     /** Data source for managing AWS EMR Supported Instance Types. */
-    def getSupportedInstanceTypes(args: Endofunction[com.pulumi.aws.emr.inputs.GetSupportedInstanceTypesArgs.Builder] = scala.Predef.identity):
+    inline def getSupportedInstanceTypes(args: Endofunction[com.pulumi.aws.emr.inputs.GetSupportedInstanceTypesArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.emr.outputs.GetSupportedInstanceTypesResult] =
       val argsBuilder = com.pulumi.aws.emr.inputs.GetSupportedInstanceTypesArgs.builder
       com.pulumi.aws.emr.EmrFunctions.getSupportedInstanceTypes(args(argsBuilder).build)
 
     /** Data source for managing AWS EMR Supported Instance Types. */
-    def getSupportedInstanceTypesPlain(args: Endofunction[com.pulumi.aws.emr.inputs.GetSupportedInstanceTypesPlainArgs.Builder] = scala.Predef.identity):
+    inline def getSupportedInstanceTypesPlain(args: Endofunction[com.pulumi.aws.emr.inputs.GetSupportedInstanceTypesPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.emr.outputs.GetSupportedInstanceTypesResult] =
       val argsBuilder = com.pulumi.aws.emr.inputs.GetSupportedInstanceTypesPlainArgs.builder
       com.pulumi.aws.emr.EmrFunctions.getSupportedInstanceTypesPlain(args(argsBuilder).build)

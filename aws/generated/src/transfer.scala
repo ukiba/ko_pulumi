@@ -26,19 +26,21 @@ object transfer:
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
-  type TransferFunctions = com.pulumi.aws.transfer.TransferFunctions
   object TransferFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.aws.transfer.TransferFunctions.*
-  extension (self: TransferFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /** Data source for managing an AWS Transfer Family Connector. */
-    def getConnector(args: Endofunction[com.pulumi.aws.transfer.inputs.GetConnectorArgs.Builder] = scala.Predef.identity):
+    inline def getConnector(args: Endofunction[com.pulumi.aws.transfer.inputs.GetConnectorArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.transfer.outputs.GetConnectorResult] =
       val argsBuilder = com.pulumi.aws.transfer.inputs.GetConnectorArgs.builder
       com.pulumi.aws.transfer.TransferFunctions.getConnector(args(argsBuilder).build)
 
     /** Data source for managing an AWS Transfer Family Connector. */
-    def getConnectorPlain(args: Endofunction[com.pulumi.aws.transfer.inputs.GetConnectorPlainArgs.Builder] = scala.Predef.identity):
+    inline def getConnectorPlain(args: Endofunction[com.pulumi.aws.transfer.inputs.GetConnectorPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.transfer.outputs.GetConnectorResult] =
       val argsBuilder = com.pulumi.aws.transfer.inputs.GetConnectorPlainArgs.builder
       com.pulumi.aws.transfer.TransferFunctions.getConnectorPlain(args(argsBuilder).build)
@@ -47,7 +49,7 @@ object transfer:
      * Use this data source to get the ARN of an AWS Transfer Server for use in other
      *  resources.
      */
-    def getServer(args: Endofunction[com.pulumi.aws.transfer.inputs.GetServerArgs.Builder] = scala.Predef.identity):
+    inline def getServer(args: Endofunction[com.pulumi.aws.transfer.inputs.GetServerArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.transfer.outputs.GetServerResult] =
       val argsBuilder = com.pulumi.aws.transfer.inputs.GetServerArgs.builder
       com.pulumi.aws.transfer.TransferFunctions.getServer(args(argsBuilder).build)
@@ -56,7 +58,7 @@ object transfer:
      * Use this data source to get the ARN of an AWS Transfer Server for use in other
      *  resources.
      */
-    def getServerPlain(args: Endofunction[com.pulumi.aws.transfer.inputs.GetServerPlainArgs.Builder] = scala.Predef.identity):
+    inline def getServerPlain(args: Endofunction[com.pulumi.aws.transfer.inputs.GetServerPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.transfer.outputs.GetServerResult] =
       val argsBuilder = com.pulumi.aws.transfer.inputs.GetServerPlainArgs.builder
       com.pulumi.aws.transfer.TransferFunctions.getServerPlain(args(argsBuilder).build)

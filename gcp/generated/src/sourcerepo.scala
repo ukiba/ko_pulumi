@@ -16,18 +16,20 @@ object sourcerepo:
       def argsBuilder = com.pulumi.gcp.sourcerepo.inputs.RepositoryPubsubConfigArgs.builder
       builder.pubsubConfigs(args.map(_(argsBuilder).build)*)
 
-  type SourcerepoFunctions = com.pulumi.gcp.sourcerepo.SourcerepoFunctions
   object SourcerepoFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.gcp.sourcerepo.SourcerepoFunctions.*
-  extension (self: SourcerepoFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /**
      * Get infomation about an existing Google Cloud Source Repository.
      *  For more information see [the official documentation](https://cloud.google.com/source-repositories)
      *  and
      *  [API](https://cloud.google.com/source-repositories/docs/reference/rest/v1/projects.repos).
      */
-    def getRepository(args: Endofunction[com.pulumi.gcp.sourcerepo.inputs.GetRepositoryArgs.Builder] = scala.Predef.identity):
+    inline def getRepository(args: Endofunction[com.pulumi.gcp.sourcerepo.inputs.GetRepositoryArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.sourcerepo.outputs.GetRepositoryResult] =
       val argsBuilder = com.pulumi.gcp.sourcerepo.inputs.GetRepositoryArgs.builder
       com.pulumi.gcp.sourcerepo.SourcerepoFunctions.getRepository(args(argsBuilder).build)
@@ -38,19 +40,19 @@ object sourcerepo:
      *  and
      *  [API](https://cloud.google.com/source-repositories/docs/reference/rest/v1/projects.repos).
      */
-    def getRepositoryPlain(args: Endofunction[com.pulumi.gcp.sourcerepo.inputs.GetRepositoryPlainArgs.Builder] = scala.Predef.identity):
+    inline def getRepositoryPlain(args: Endofunction[com.pulumi.gcp.sourcerepo.inputs.GetRepositoryPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.sourcerepo.outputs.GetRepositoryResult] =
       val argsBuilder = com.pulumi.gcp.sourcerepo.inputs.GetRepositoryPlainArgs.builder
       com.pulumi.gcp.sourcerepo.SourcerepoFunctions.getRepositoryPlain(args(argsBuilder).build)
 
     /** Retrieves the current IAM policy data for repository */
-    def getRepositoryIamPolicy(args: Endofunction[com.pulumi.gcp.sourcerepo.inputs.GetRepositoryIamPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getRepositoryIamPolicy(args: Endofunction[com.pulumi.gcp.sourcerepo.inputs.GetRepositoryIamPolicyArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.sourcerepo.outputs.GetRepositoryIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.sourcerepo.inputs.GetRepositoryIamPolicyArgs.builder
       com.pulumi.gcp.sourcerepo.SourcerepoFunctions.getRepositoryIamPolicy(args(argsBuilder).build)
 
     /** Retrieves the current IAM policy data for repository */
-    def getRepositoryIamPolicyPlain(args: Endofunction[com.pulumi.gcp.sourcerepo.inputs.GetRepositoryIamPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getRepositoryIamPolicyPlain(args: Endofunction[com.pulumi.gcp.sourcerepo.inputs.GetRepositoryIamPolicyPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.sourcerepo.outputs.GetRepositoryIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.sourcerepo.inputs.GetRepositoryIamPolicyPlainArgs.builder
       com.pulumi.gcp.sourcerepo.SourcerepoFunctions.getRepositoryIamPolicyPlain(args(argsBuilder).build)

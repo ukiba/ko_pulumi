@@ -212,67 +212,69 @@ object waf:
       def argsBuilder = com.pulumi.aws.waf.inputs.ByteMatchSetByteMatchTupleArgs.builder
       builder.byteMatchTuples(args.map(_(argsBuilder).build)*)
 
-  type WafFunctions = com.pulumi.aws.waf.WafFunctions
   object WafFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.aws.waf.WafFunctions.*
-  extension (self: WafFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /** `aws.waf.IpSet` Retrieves a WAF IP Set Resource Id. */
-    def getIpset(args: Endofunction[com.pulumi.aws.waf.inputs.GetIpsetArgs.Builder] = scala.Predef.identity):
+    inline def getIpset(args: Endofunction[com.pulumi.aws.waf.inputs.GetIpsetArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.waf.outputs.GetIpsetResult] =
       val argsBuilder = com.pulumi.aws.waf.inputs.GetIpsetArgs.builder
       com.pulumi.aws.waf.WafFunctions.getIpset(args(argsBuilder).build)
 
     /** `aws.waf.IpSet` Retrieves a WAF IP Set Resource Id. */
-    def getIpsetPlain(args: Endofunction[com.pulumi.aws.waf.inputs.GetIpsetPlainArgs.Builder] = scala.Predef.identity):
+    inline def getIpsetPlain(args: Endofunction[com.pulumi.aws.waf.inputs.GetIpsetPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.waf.outputs.GetIpsetResult] =
       val argsBuilder = com.pulumi.aws.waf.inputs.GetIpsetPlainArgs.builder
       com.pulumi.aws.waf.WafFunctions.getIpsetPlain(args(argsBuilder).build)
 
     /** `aws.waf.RateBasedRule` Retrieves a WAF Rate Based Rule Resource Id. */
-    def getRateBasedRule(args: Endofunction[com.pulumi.aws.waf.inputs.GetRateBasedRuleArgs.Builder] = scala.Predef.identity):
+    inline def getRateBasedRule(args: Endofunction[com.pulumi.aws.waf.inputs.GetRateBasedRuleArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.waf.outputs.GetRateBasedRuleResult] =
       val argsBuilder = com.pulumi.aws.waf.inputs.GetRateBasedRuleArgs.builder
       com.pulumi.aws.waf.WafFunctions.getRateBasedRule(args(argsBuilder).build)
 
     /** `aws.waf.RateBasedRule` Retrieves a WAF Rate Based Rule Resource Id. */
-    def getRateBasedRulePlain(args: Endofunction[com.pulumi.aws.waf.inputs.GetRateBasedRulePlainArgs.Builder] = scala.Predef.identity):
+    inline def getRateBasedRulePlain(args: Endofunction[com.pulumi.aws.waf.inputs.GetRateBasedRulePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.waf.outputs.GetRateBasedRuleResult] =
       val argsBuilder = com.pulumi.aws.waf.inputs.GetRateBasedRulePlainArgs.builder
       com.pulumi.aws.waf.WafFunctions.getRateBasedRulePlain(args(argsBuilder).build)
 
     /** `aws.waf.Rule` Retrieves a WAF Rule Resource Id. */
-    def getRule(args: Endofunction[com.pulumi.aws.waf.inputs.GetRuleArgs.Builder] = scala.Predef.identity):
+    inline def getRule(args: Endofunction[com.pulumi.aws.waf.inputs.GetRuleArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.waf.outputs.GetRuleResult] =
       val argsBuilder = com.pulumi.aws.waf.inputs.GetRuleArgs.builder
       com.pulumi.aws.waf.WafFunctions.getRule(args(argsBuilder).build)
 
     /** `aws.waf.Rule` Retrieves a WAF Rule Resource Id. */
-    def getRulePlain(args: Endofunction[com.pulumi.aws.waf.inputs.GetRulePlainArgs.Builder] = scala.Predef.identity):
+    inline def getRulePlain(args: Endofunction[com.pulumi.aws.waf.inputs.GetRulePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.waf.outputs.GetRuleResult] =
       val argsBuilder = com.pulumi.aws.waf.inputs.GetRulePlainArgs.builder
       com.pulumi.aws.waf.WafFunctions.getRulePlain(args(argsBuilder).build)
 
     /** `aws.waf.getSubscribedRuleGroup` retrieves information about a Managed WAF Rule Group from AWS Marketplace (needs to be subscribed to first). */
-    def getSubscribedRuleGroup(args: Endofunction[com.pulumi.aws.waf.inputs.GetSubscribedRuleGroupArgs.Builder] = scala.Predef.identity):
+    inline def getSubscribedRuleGroup(args: Endofunction[com.pulumi.aws.waf.inputs.GetSubscribedRuleGroupArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.waf.outputs.GetSubscribedRuleGroupResult] =
       val argsBuilder = com.pulumi.aws.waf.inputs.GetSubscribedRuleGroupArgs.builder
       com.pulumi.aws.waf.WafFunctions.getSubscribedRuleGroup(args(argsBuilder).build)
 
     /** `aws.waf.getSubscribedRuleGroup` retrieves information about a Managed WAF Rule Group from AWS Marketplace (needs to be subscribed to first). */
-    def getSubscribedRuleGroupPlain(args: Endofunction[com.pulumi.aws.waf.inputs.GetSubscribedRuleGroupPlainArgs.Builder] = scala.Predef.identity):
+    inline def getSubscribedRuleGroupPlain(args: Endofunction[com.pulumi.aws.waf.inputs.GetSubscribedRuleGroupPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.waf.outputs.GetSubscribedRuleGroupResult] =
       val argsBuilder = com.pulumi.aws.waf.inputs.GetSubscribedRuleGroupPlainArgs.builder
       com.pulumi.aws.waf.WafFunctions.getSubscribedRuleGroupPlain(args(argsBuilder).build)
 
     /** `aws.waf.WebAcl` Retrieves a WAF Web ACL Resource Id. */
-    def getWebAcl(args: Endofunction[com.pulumi.aws.waf.inputs.GetWebAclArgs.Builder] = scala.Predef.identity):
+    inline def getWebAcl(args: Endofunction[com.pulumi.aws.waf.inputs.GetWebAclArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.waf.outputs.GetWebAclResult] =
       val argsBuilder = com.pulumi.aws.waf.inputs.GetWebAclArgs.builder
       com.pulumi.aws.waf.WafFunctions.getWebAcl(args(argsBuilder).build)
 
     /** `aws.waf.WebAcl` Retrieves a WAF Web ACL Resource Id. */
-    def getWebAclPlain(args: Endofunction[com.pulumi.aws.waf.inputs.GetWebAclPlainArgs.Builder] = scala.Predef.identity):
+    inline def getWebAclPlain(args: Endofunction[com.pulumi.aws.waf.inputs.GetWebAclPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.waf.outputs.GetWebAclResult] =
       val argsBuilder = com.pulumi.aws.waf.inputs.GetWebAclPlainArgs.builder
       com.pulumi.aws.waf.WafFunctions.getWebAclPlain(args(argsBuilder).build)

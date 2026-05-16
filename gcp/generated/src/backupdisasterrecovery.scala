@@ -4,113 +4,115 @@ package gcp
 import com.pulumi.resources.CustomResourceOptions
 
 object backupdisasterrecovery:
-  type BackupdisasterrecoveryFunctions = com.pulumi.gcp.backupdisasterrecovery.BackupdisasterrecoveryFunctions
   object BackupdisasterrecoveryFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.gcp.backupdisasterrecovery.BackupdisasterrecoveryFunctions.*
-  extension (self: BackupdisasterrecoveryFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /** A Backup and DR Backup. */
-    def getBackup(args: Endofunction[com.pulumi.gcp.backupdisasterrecovery.inputs.GetBackupArgs.Builder] = scala.Predef.identity):
+    inline def getBackup(args: Endofunction[com.pulumi.gcp.backupdisasterrecovery.inputs.GetBackupArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.backupdisasterrecovery.outputs.GetBackupResult] =
       val argsBuilder = com.pulumi.gcp.backupdisasterrecovery.inputs.GetBackupArgs.builder
       com.pulumi.gcp.backupdisasterrecovery.BackupdisasterrecoveryFunctions.getBackup(args(argsBuilder).build)
 
     /** A Backup and DR Backup. */
-    def getBackupPlain(args: Endofunction[com.pulumi.gcp.backupdisasterrecovery.inputs.GetBackupPlainArgs.Builder] = scala.Predef.identity):
+    inline def getBackupPlain(args: Endofunction[com.pulumi.gcp.backupdisasterrecovery.inputs.GetBackupPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.backupdisasterrecovery.outputs.GetBackupResult] =
       val argsBuilder = com.pulumi.gcp.backupdisasterrecovery.inputs.GetBackupPlainArgs.builder
       com.pulumi.gcp.backupdisasterrecovery.BackupdisasterrecoveryFunctions.getBackupPlain(args(argsBuilder).build)
 
-    def getBackupPlan(args: Endofunction[com.pulumi.gcp.backupdisasterrecovery.inputs.GetBackupPlanArgs.Builder] = scala.Predef.identity):
+    inline def getBackupPlan(args: Endofunction[com.pulumi.gcp.backupdisasterrecovery.inputs.GetBackupPlanArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.backupdisasterrecovery.outputs.GetBackupPlanResult] =
       val argsBuilder = com.pulumi.gcp.backupdisasterrecovery.inputs.GetBackupPlanArgs.builder
       com.pulumi.gcp.backupdisasterrecovery.BackupdisasterrecoveryFunctions.getBackupPlan(args(argsBuilder).build)
 
-    def getBackupPlanPlain(args: Endofunction[com.pulumi.gcp.backupdisasterrecovery.inputs.GetBackupPlanPlainArgs.Builder] = scala.Predef.identity):
+    inline def getBackupPlanPlain(args: Endofunction[com.pulumi.gcp.backupdisasterrecovery.inputs.GetBackupPlanPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.backupdisasterrecovery.outputs.GetBackupPlanResult] =
       val argsBuilder = com.pulumi.gcp.backupdisasterrecovery.inputs.GetBackupPlanPlainArgs.builder
       com.pulumi.gcp.backupdisasterrecovery.BackupdisasterrecoveryFunctions.getBackupPlanPlain(args(argsBuilder).build)
 
     /** A Backup and DR BackupPlanAssociation. */
-    def getBackupPlanAssociation(args: Endofunction[com.pulumi.gcp.backupdisasterrecovery.inputs.GetBackupPlanAssociationArgs.Builder] = scala.Predef.identity):
+    inline def getBackupPlanAssociation(args: Endofunction[com.pulumi.gcp.backupdisasterrecovery.inputs.GetBackupPlanAssociationArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.backupdisasterrecovery.outputs.GetBackupPlanAssociationResult] =
       val argsBuilder = com.pulumi.gcp.backupdisasterrecovery.inputs.GetBackupPlanAssociationArgs.builder
       com.pulumi.gcp.backupdisasterrecovery.BackupdisasterrecoveryFunctions.getBackupPlanAssociation(args(argsBuilder).build)
 
     /** A Backup and DR BackupPlanAssociation. */
-    def getBackupPlanAssociationPlain(args: Endofunction[com.pulumi.gcp.backupdisasterrecovery.inputs.GetBackupPlanAssociationPlainArgs.Builder] = scala.Predef.identity):
+    inline def getBackupPlanAssociationPlain(args: Endofunction[com.pulumi.gcp.backupdisasterrecovery.inputs.GetBackupPlanAssociationPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.backupdisasterrecovery.outputs.GetBackupPlanAssociationResult] =
       val argsBuilder = com.pulumi.gcp.backupdisasterrecovery.inputs.GetBackupPlanAssociationPlainArgs.builder
       com.pulumi.gcp.backupdisasterrecovery.BackupdisasterrecoveryFunctions.getBackupPlanAssociationPlain(args(argsBuilder).build)
 
     /** Provides a list of Backup and DR BackupPlanAssociations. */
-    def getBackupPlanAssociations(args: Endofunction[com.pulumi.gcp.backupdisasterrecovery.inputs.GetBackupPlanAssociationsArgs.Builder] = scala.Predef.identity):
+    inline def getBackupPlanAssociations(args: Endofunction[com.pulumi.gcp.backupdisasterrecovery.inputs.GetBackupPlanAssociationsArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.backupdisasterrecovery.outputs.GetBackupPlanAssociationsResult] =
       val argsBuilder = com.pulumi.gcp.backupdisasterrecovery.inputs.GetBackupPlanAssociationsArgs.builder
       com.pulumi.gcp.backupdisasterrecovery.BackupdisasterrecoveryFunctions.getBackupPlanAssociations(args(argsBuilder).build)
 
     /** Provides a list of Backup and DR BackupPlanAssociations. */
-    def getBackupPlanAssociationsPlain(args: Endofunction[com.pulumi.gcp.backupdisasterrecovery.inputs.GetBackupPlanAssociationsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getBackupPlanAssociationsPlain(args: Endofunction[com.pulumi.gcp.backupdisasterrecovery.inputs.GetBackupPlanAssociationsPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.backupdisasterrecovery.outputs.GetBackupPlanAssociationsResult] =
       val argsBuilder = com.pulumi.gcp.backupdisasterrecovery.inputs.GetBackupPlanAssociationsPlainArgs.builder
       com.pulumi.gcp.backupdisasterrecovery.BackupdisasterrecoveryFunctions.getBackupPlanAssociationsPlain(args(argsBuilder).build)
 
     /** A Backup and DRBackupVault. */
-    def getBackupVault(args: Endofunction[com.pulumi.gcp.backupdisasterrecovery.inputs.GetBackupVaultArgs.Builder] = scala.Predef.identity):
+    inline def getBackupVault(args: Endofunction[com.pulumi.gcp.backupdisasterrecovery.inputs.GetBackupVaultArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.backupdisasterrecovery.outputs.GetBackupVaultResult] =
       val argsBuilder = com.pulumi.gcp.backupdisasterrecovery.inputs.GetBackupVaultArgs.builder
       com.pulumi.gcp.backupdisasterrecovery.BackupdisasterrecoveryFunctions.getBackupVault(args(argsBuilder).build)
 
     /** A Backup and DRBackupVault. */
-    def getBackupVaultPlain(args: Endofunction[com.pulumi.gcp.backupdisasterrecovery.inputs.GetBackupVaultPlainArgs.Builder] = scala.Predef.identity):
+    inline def getBackupVaultPlain(args: Endofunction[com.pulumi.gcp.backupdisasterrecovery.inputs.GetBackupVaultPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.backupdisasterrecovery.outputs.GetBackupVaultResult] =
       val argsBuilder = com.pulumi.gcp.backupdisasterrecovery.inputs.GetBackupVaultPlainArgs.builder
       com.pulumi.gcp.backupdisasterrecovery.BackupdisasterrecoveryFunctions.getBackupVaultPlain(args(argsBuilder).build)
 
     /** A Backup and DR Data Source. */
-    def getDataSource(args: Endofunction[com.pulumi.gcp.backupdisasterrecovery.inputs.GetDataSourceArgs.Builder] = scala.Predef.identity):
+    inline def getDataSource(args: Endofunction[com.pulumi.gcp.backupdisasterrecovery.inputs.GetDataSourceArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.backupdisasterrecovery.outputs.GetDataSourceResult] =
       val argsBuilder = com.pulumi.gcp.backupdisasterrecovery.inputs.GetDataSourceArgs.builder
       com.pulumi.gcp.backupdisasterrecovery.BackupdisasterrecoveryFunctions.getDataSource(args(argsBuilder).build)
 
     /** A Backup and DR Data Source. */
-    def getDataSourcePlain(args: Endofunction[com.pulumi.gcp.backupdisasterrecovery.inputs.GetDataSourcePlainArgs.Builder] = scala.Predef.identity):
+    inline def getDataSourcePlain(args: Endofunction[com.pulumi.gcp.backupdisasterrecovery.inputs.GetDataSourcePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.backupdisasterrecovery.outputs.GetDataSourceResult] =
       val argsBuilder = com.pulumi.gcp.backupdisasterrecovery.inputs.GetDataSourcePlainArgs.builder
       com.pulumi.gcp.backupdisasterrecovery.BackupdisasterrecoveryFunctions.getDataSourcePlain(args(argsBuilder).build)
 
     /** Get information about a specific Backup and DR data source reference. */
-    def getDataSourceReference(args: Endofunction[com.pulumi.gcp.backupdisasterrecovery.inputs.GetDataSourceReferenceArgs.Builder] = scala.Predef.identity):
+    inline def getDataSourceReference(args: Endofunction[com.pulumi.gcp.backupdisasterrecovery.inputs.GetDataSourceReferenceArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.backupdisasterrecovery.outputs.GetDataSourceReferenceResult] =
       val argsBuilder = com.pulumi.gcp.backupdisasterrecovery.inputs.GetDataSourceReferenceArgs.builder
       com.pulumi.gcp.backupdisasterrecovery.BackupdisasterrecoveryFunctions.getDataSourceReference(args(argsBuilder).build)
 
     /** Get information about a specific Backup and DR data source reference. */
-    def getDataSourceReferencePlain(args: Endofunction[com.pulumi.gcp.backupdisasterrecovery.inputs.GetDataSourceReferencePlainArgs.Builder] = scala.Predef.identity):
+    inline def getDataSourceReferencePlain(args: Endofunction[com.pulumi.gcp.backupdisasterrecovery.inputs.GetDataSourceReferencePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.backupdisasterrecovery.outputs.GetDataSourceReferenceResult] =
       val argsBuilder = com.pulumi.gcp.backupdisasterrecovery.inputs.GetDataSourceReferencePlainArgs.builder
       com.pulumi.gcp.backupdisasterrecovery.BackupdisasterrecoveryFunctions.getDataSourceReferencePlain(args(argsBuilder).build)
 
     /** A list of Backup and DR data source references. */
-    def getDataSourceReferences(args: Endofunction[com.pulumi.gcp.backupdisasterrecovery.inputs.GetDataSourceReferencesArgs.Builder] = scala.Predef.identity):
+    inline def getDataSourceReferences(args: Endofunction[com.pulumi.gcp.backupdisasterrecovery.inputs.GetDataSourceReferencesArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.backupdisasterrecovery.outputs.GetDataSourceReferencesResult] =
       val argsBuilder = com.pulumi.gcp.backupdisasterrecovery.inputs.GetDataSourceReferencesArgs.builder
       com.pulumi.gcp.backupdisasterrecovery.BackupdisasterrecoveryFunctions.getDataSourceReferences(args(argsBuilder).build)
 
     /** A list of Backup and DR data source references. */
-    def getDataSourceReferencesPlain(args: Endofunction[com.pulumi.gcp.backupdisasterrecovery.inputs.GetDataSourceReferencesPlainArgs.Builder] = scala.Predef.identity):
+    inline def getDataSourceReferencesPlain(args: Endofunction[com.pulumi.gcp.backupdisasterrecovery.inputs.GetDataSourceReferencesPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.backupdisasterrecovery.outputs.GetDataSourceReferencesResult] =
       val argsBuilder = com.pulumi.gcp.backupdisasterrecovery.inputs.GetDataSourceReferencesPlainArgs.builder
       com.pulumi.gcp.backupdisasterrecovery.BackupdisasterrecoveryFunctions.getDataSourceReferencesPlain(args(argsBuilder).build)
 
     /** A Backup and DR Data Sources. */
-    def getDataSources(args: Endofunction[com.pulumi.gcp.backupdisasterrecovery.inputs.GetDataSourcesArgs.Builder] = scala.Predef.identity):
+    inline def getDataSources(args: Endofunction[com.pulumi.gcp.backupdisasterrecovery.inputs.GetDataSourcesArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.backupdisasterrecovery.outputs.GetDataSourcesResult] =
       val argsBuilder = com.pulumi.gcp.backupdisasterrecovery.inputs.GetDataSourcesArgs.builder
       com.pulumi.gcp.backupdisasterrecovery.BackupdisasterrecoveryFunctions.getDataSources(args(argsBuilder).build)
 
     /** A Backup and DR Data Sources. */
-    def getDataSourcesPlain(args: Endofunction[com.pulumi.gcp.backupdisasterrecovery.inputs.GetDataSourcesPlainArgs.Builder] = scala.Predef.identity):
+    inline def getDataSourcesPlain(args: Endofunction[com.pulumi.gcp.backupdisasterrecovery.inputs.GetDataSourcesPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.backupdisasterrecovery.outputs.GetDataSourcesResult] =
       val argsBuilder = com.pulumi.gcp.backupdisasterrecovery.inputs.GetDataSourcesPlainArgs.builder
       com.pulumi.gcp.backupdisasterrecovery.BackupdisasterrecoveryFunctions.getDataSourcesPlain(args(argsBuilder).build)
@@ -121,7 +123,7 @@ object backupdisasterrecovery:
      *  &gt; **Warning:** This resource is in beta, and should be used with the terraform-provider-google-beta provider.
      *  See Provider Versions for more details on beta resources.
      */
-    def getManagementServer(args: Endofunction[com.pulumi.gcp.backupdisasterrecovery.inputs.GetManagementServerArgs.Builder] = scala.Predef.identity):
+    inline def getManagementServer(args: Endofunction[com.pulumi.gcp.backupdisasterrecovery.inputs.GetManagementServerArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.backupdisasterrecovery.outputs.GetManagementServerResult] =
       val argsBuilder = com.pulumi.gcp.backupdisasterrecovery.inputs.GetManagementServerArgs.builder
       com.pulumi.gcp.backupdisasterrecovery.BackupdisasterrecoveryFunctions.getManagementServer(args(argsBuilder).build)
@@ -132,7 +134,7 @@ object backupdisasterrecovery:
      *  &gt; **Warning:** This resource is in beta, and should be used with the terraform-provider-google-beta provider.
      *  See Provider Versions for more details on beta resources.
      */
-    def getManagementServerPlain(args: Endofunction[com.pulumi.gcp.backupdisasterrecovery.inputs.GetManagementServerPlainArgs.Builder] = scala.Predef.identity):
+    inline def getManagementServerPlain(args: Endofunction[com.pulumi.gcp.backupdisasterrecovery.inputs.GetManagementServerPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.backupdisasterrecovery.outputs.GetManagementServerResult] =
       val argsBuilder = com.pulumi.gcp.backupdisasterrecovery.inputs.GetManagementServerPlainArgs.builder
       com.pulumi.gcp.backupdisasterrecovery.BackupdisasterrecoveryFunctions.getManagementServerPlain(args(argsBuilder).build)

@@ -4,19 +4,21 @@ package aws
 import com.pulumi.resources.CustomResourceOptions
 
 object fis:
-  type FisFunctions = com.pulumi.aws.fis.FisFunctions
   object FisFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.aws.fis.FisFunctions.*
-  extension (self: FisFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /** This resource can be useful for getting back a set of FIS experiment template IDs. */
-    def getExperimentTemplates(args: Endofunction[com.pulumi.aws.fis.inputs.GetExperimentTemplatesArgs.Builder] = scala.Predef.identity):
+    inline def getExperimentTemplates(args: Endofunction[com.pulumi.aws.fis.inputs.GetExperimentTemplatesArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.fis.outputs.GetExperimentTemplatesResult] =
       val argsBuilder = com.pulumi.aws.fis.inputs.GetExperimentTemplatesArgs.builder
       com.pulumi.aws.fis.FisFunctions.getExperimentTemplates(args(argsBuilder).build)
 
     /** This resource can be useful for getting back a set of FIS experiment template IDs. */
-    def getExperimentTemplatesPlain(args: Endofunction[com.pulumi.aws.fis.inputs.GetExperimentTemplatesPlainArgs.Builder] = scala.Predef.identity):
+    inline def getExperimentTemplatesPlain(args: Endofunction[com.pulumi.aws.fis.inputs.GetExperimentTemplatesPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.fis.outputs.GetExperimentTemplatesResult] =
       val argsBuilder = com.pulumi.aws.fis.inputs.GetExperimentTemplatesPlainArgs.builder
       com.pulumi.aws.fis.FisFunctions.getExperimentTemplatesPlain(args(argsBuilder).build)

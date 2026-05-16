@@ -4,17 +4,19 @@ package aws
 import com.pulumi.resources.CustomResourceOptions
 
 object odb:
-  type OdbFunctions = com.pulumi.aws.odb.OdbFunctions
   object OdbFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.aws.odb.OdbFunctions.*
-  extension (self: OdbFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /**
      * Data source for managing cloud autonomous vm cluster resource in AWS for Oracle Database{@literal @}AWS.
      * 
      *  You can find out more about Oracle Database{@literal @}AWS from [User Guide](https://docs.aws.amazon.com/odb/latest/UserGuide/what-is-odb.html).
      */
-    def getCloudAutonomousVmCluster(args: Endofunction[com.pulumi.aws.odb.inputs.GetCloudAutonomousVmClusterArgs.Builder] = scala.Predef.identity):
+    inline def getCloudAutonomousVmCluster(args: Endofunction[com.pulumi.aws.odb.inputs.GetCloudAutonomousVmClusterArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.odb.outputs.GetCloudAutonomousVmClusterResult] =
       val argsBuilder = com.pulumi.aws.odb.inputs.GetCloudAutonomousVmClusterArgs.builder
       com.pulumi.aws.odb.OdbFunctions.getCloudAutonomousVmCluster(args(argsBuilder).build)
@@ -24,7 +26,7 @@ object odb:
      * 
      *  You can find out more about Oracle Database{@literal @}AWS from [User Guide](https://docs.aws.amazon.com/odb/latest/UserGuide/what-is-odb.html).
      */
-    def getCloudAutonomousVmClusterPlain(args: Endofunction[com.pulumi.aws.odb.inputs.GetCloudAutonomousVmClusterPlainArgs.Builder] = scala.Predef.identity):
+    inline def getCloudAutonomousVmClusterPlain(args: Endofunction[com.pulumi.aws.odb.inputs.GetCloudAutonomousVmClusterPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.odb.outputs.GetCloudAutonomousVmClusterResult] =
       val argsBuilder = com.pulumi.aws.odb.inputs.GetCloudAutonomousVmClusterPlainArgs.builder
       com.pulumi.aws.odb.OdbFunctions.getCloudAutonomousVmClusterPlain(args(argsBuilder).build)
@@ -34,7 +36,7 @@ object odb:
      * 
      *  You can find out more about Oracle Database{@literal @}AWS from [User Guide](https://docs.aws.amazon.com/odb/latest/UserGuide/what-is-odb.html).
      */
-    def getCloudAutonomousVmClusters(args: Endofunction[com.pulumi.aws.odb.inputs.GetCloudAutonomousVmClustersArgs.Builder] = scala.Predef.identity):
+    inline def getCloudAutonomousVmClusters(args: Endofunction[com.pulumi.aws.odb.inputs.GetCloudAutonomousVmClustersArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.odb.outputs.GetCloudAutonomousVmClustersResult] =
       val argsBuilder = com.pulumi.aws.odb.inputs.GetCloudAutonomousVmClustersArgs.builder
       com.pulumi.aws.odb.OdbFunctions.getCloudAutonomousVmClusters(args(argsBuilder).build)
@@ -44,7 +46,7 @@ object odb:
      * 
      *  You can find out more about Oracle Database{@literal @}AWS from [User Guide](https://docs.aws.amazon.com/odb/latest/UserGuide/what-is-odb.html).
      */
-    def getCloudAutonomousVmClustersPlain(args: Endofunction[com.pulumi.aws.odb.inputs.GetCloudAutonomousVmClustersPlainArgs.Builder] = scala.Predef.identity):
+    inline def getCloudAutonomousVmClustersPlain(args: Endofunction[com.pulumi.aws.odb.inputs.GetCloudAutonomousVmClustersPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.odb.outputs.GetCloudAutonomousVmClustersResult] =
       val argsBuilder = com.pulumi.aws.odb.inputs.GetCloudAutonomousVmClustersPlainArgs.builder
       com.pulumi.aws.odb.OdbFunctions.getCloudAutonomousVmClustersPlain(args(argsBuilder).build)
@@ -54,7 +56,7 @@ object odb:
      * 
      *  You can find out more about Oracle Database{@literal @}AWS from [User Guide](https://docs.aws.amazon.com/odb/latest/UserGuide/what-is-odb.html).
      */
-    def getCloudExadataInfrastructure(args: Endofunction[com.pulumi.aws.odb.inputs.GetCloudExadataInfrastructureArgs.Builder] = scala.Predef.identity):
+    inline def getCloudExadataInfrastructure(args: Endofunction[com.pulumi.aws.odb.inputs.GetCloudExadataInfrastructureArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.odb.outputs.GetCloudExadataInfrastructureResult] =
       val argsBuilder = com.pulumi.aws.odb.inputs.GetCloudExadataInfrastructureArgs.builder
       com.pulumi.aws.odb.OdbFunctions.getCloudExadataInfrastructure(args(argsBuilder).build)
@@ -64,7 +66,7 @@ object odb:
      * 
      *  You can find out more about Oracle Database{@literal @}AWS from [User Guide](https://docs.aws.amazon.com/odb/latest/UserGuide/what-is-odb.html).
      */
-    def getCloudExadataInfrastructurePlain(args: Endofunction[com.pulumi.aws.odb.inputs.GetCloudExadataInfrastructurePlainArgs.Builder] = scala.Predef.identity):
+    inline def getCloudExadataInfrastructurePlain(args: Endofunction[com.pulumi.aws.odb.inputs.GetCloudExadataInfrastructurePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.odb.outputs.GetCloudExadataInfrastructureResult] =
       val argsBuilder = com.pulumi.aws.odb.inputs.GetCloudExadataInfrastructurePlainArgs.builder
       com.pulumi.aws.odb.OdbFunctions.getCloudExadataInfrastructurePlain(args(argsBuilder).build)
@@ -74,7 +76,7 @@ object odb:
      * 
      *  You can find out more about Oracle Database{@literal @}AWS from [User Guide](https://docs.aws.amazon.com/odb/latest/UserGuide/what-is-odb.html).
      */
-    def getCloudExadataInfrastructures(args: Endofunction[com.pulumi.aws.odb.inputs.GetCloudExadataInfrastructuresArgs.Builder] = scala.Predef.identity):
+    inline def getCloudExadataInfrastructures(args: Endofunction[com.pulumi.aws.odb.inputs.GetCloudExadataInfrastructuresArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.odb.outputs.GetCloudExadataInfrastructuresResult] =
       val argsBuilder = com.pulumi.aws.odb.inputs.GetCloudExadataInfrastructuresArgs.builder
       com.pulumi.aws.odb.OdbFunctions.getCloudExadataInfrastructures(args(argsBuilder).build)
@@ -84,7 +86,7 @@ object odb:
      * 
      *  You can find out more about Oracle Database{@literal @}AWS from [User Guide](https://docs.aws.amazon.com/odb/latest/UserGuide/what-is-odb.html).
      */
-    def getCloudExadataInfrastructuresPlain(args: Endofunction[com.pulumi.aws.odb.inputs.GetCloudExadataInfrastructuresPlainArgs.Builder] = scala.Predef.identity):
+    inline def getCloudExadataInfrastructuresPlain(args: Endofunction[com.pulumi.aws.odb.inputs.GetCloudExadataInfrastructuresPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.odb.outputs.GetCloudExadataInfrastructuresResult] =
       val argsBuilder = com.pulumi.aws.odb.inputs.GetCloudExadataInfrastructuresPlainArgs.builder
       com.pulumi.aws.odb.OdbFunctions.getCloudExadataInfrastructuresPlain(args(argsBuilder).build)
@@ -94,7 +96,7 @@ object odb:
      * 
      *  You can find out more about Oracle Database{@literal @}AWS from [User Guide](https://docs.aws.amazon.com/odb/latest/UserGuide/what-is-odb.html).
      */
-    def getCloudVmCluster(args: Endofunction[com.pulumi.aws.odb.inputs.GetCloudVmClusterArgs.Builder] = scala.Predef.identity):
+    inline def getCloudVmCluster(args: Endofunction[com.pulumi.aws.odb.inputs.GetCloudVmClusterArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.odb.outputs.GetCloudVmClusterResult] =
       val argsBuilder = com.pulumi.aws.odb.inputs.GetCloudVmClusterArgs.builder
       com.pulumi.aws.odb.OdbFunctions.getCloudVmCluster(args(argsBuilder).build)
@@ -104,7 +106,7 @@ object odb:
      * 
      *  You can find out more about Oracle Database{@literal @}AWS from [User Guide](https://docs.aws.amazon.com/odb/latest/UserGuide/what-is-odb.html).
      */
-    def getCloudVmClusterPlain(args: Endofunction[com.pulumi.aws.odb.inputs.GetCloudVmClusterPlainArgs.Builder] = scala.Predef.identity):
+    inline def getCloudVmClusterPlain(args: Endofunction[com.pulumi.aws.odb.inputs.GetCloudVmClusterPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.odb.outputs.GetCloudVmClusterResult] =
       val argsBuilder = com.pulumi.aws.odb.inputs.GetCloudVmClusterPlainArgs.builder
       com.pulumi.aws.odb.OdbFunctions.getCloudVmClusterPlain(args(argsBuilder).build)
@@ -114,7 +116,7 @@ object odb:
      * 
      *  You can find out more about Oracle Database{@literal @}AWS from [User Guide](https://docs.aws.amazon.com/odb/latest/UserGuide/what-is-odb.html).
      */
-    def getCloudVmClusters(args: Endofunction[com.pulumi.aws.odb.inputs.GetCloudVmClustersArgs.Builder] = scala.Predef.identity):
+    inline def getCloudVmClusters(args: Endofunction[com.pulumi.aws.odb.inputs.GetCloudVmClustersArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.odb.outputs.GetCloudVmClustersResult] =
       val argsBuilder = com.pulumi.aws.odb.inputs.GetCloudVmClustersArgs.builder
       com.pulumi.aws.odb.OdbFunctions.getCloudVmClusters(args(argsBuilder).build)
@@ -124,7 +126,7 @@ object odb:
      * 
      *  You can find out more about Oracle Database{@literal @}AWS from [User Guide](https://docs.aws.amazon.com/odb/latest/UserGuide/what-is-odb.html).
      */
-    def getCloudVmClustersPlain(args: Endofunction[com.pulumi.aws.odb.inputs.GetCloudVmClustersPlainArgs.Builder] = scala.Predef.identity):
+    inline def getCloudVmClustersPlain(args: Endofunction[com.pulumi.aws.odb.inputs.GetCloudVmClustersPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.odb.outputs.GetCloudVmClustersResult] =
       val argsBuilder = com.pulumi.aws.odb.inputs.GetCloudVmClustersPlainArgs.builder
       com.pulumi.aws.odb.OdbFunctions.getCloudVmClustersPlain(args(argsBuilder).build)
@@ -134,7 +136,7 @@ object odb:
      * 
      *  You can find out more about Oracle Database{@literal @}AWS from [User Guide](https://docs.aws.amazon.com/odb/latest/UserGuide/what-is-odb.html).
      */
-    def getDbNode(args: Endofunction[com.pulumi.aws.odb.inputs.GetDbNodeArgs.Builder] = scala.Predef.identity):
+    inline def getDbNode(args: Endofunction[com.pulumi.aws.odb.inputs.GetDbNodeArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.odb.outputs.GetDbNodeResult] =
       val argsBuilder = com.pulumi.aws.odb.inputs.GetDbNodeArgs.builder
       com.pulumi.aws.odb.OdbFunctions.getDbNode(args(argsBuilder).build)
@@ -144,7 +146,7 @@ object odb:
      * 
      *  You can find out more about Oracle Database{@literal @}AWS from [User Guide](https://docs.aws.amazon.com/odb/latest/UserGuide/what-is-odb.html).
      */
-    def getDbNodePlain(args: Endofunction[com.pulumi.aws.odb.inputs.GetDbNodePlainArgs.Builder] = scala.Predef.identity):
+    inline def getDbNodePlain(args: Endofunction[com.pulumi.aws.odb.inputs.GetDbNodePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.odb.outputs.GetDbNodeResult] =
       val argsBuilder = com.pulumi.aws.odb.inputs.GetDbNodePlainArgs.builder
       com.pulumi.aws.odb.OdbFunctions.getDbNodePlain(args(argsBuilder).build)
@@ -154,7 +156,7 @@ object odb:
      * 
      *  You can find out more about Oracle Database{@literal @}AWS from [User Guide](https://docs.aws.amazon.com/odb/latest/UserGuide/what-is-odb.html).
      */
-    def getDbNodes(args: Endofunction[com.pulumi.aws.odb.inputs.GetDbNodesArgs.Builder] = scala.Predef.identity):
+    inline def getDbNodes(args: Endofunction[com.pulumi.aws.odb.inputs.GetDbNodesArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.odb.outputs.GetDbNodesResult] =
       val argsBuilder = com.pulumi.aws.odb.inputs.GetDbNodesArgs.builder
       com.pulumi.aws.odb.OdbFunctions.getDbNodes(args(argsBuilder).build)
@@ -164,7 +166,7 @@ object odb:
      * 
      *  You can find out more about Oracle Database{@literal @}AWS from [User Guide](https://docs.aws.amazon.com/odb/latest/UserGuide/what-is-odb.html).
      */
-    def getDbNodesPlain(args: Endofunction[com.pulumi.aws.odb.inputs.GetDbNodesPlainArgs.Builder] = scala.Predef.identity):
+    inline def getDbNodesPlain(args: Endofunction[com.pulumi.aws.odb.inputs.GetDbNodesPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.odb.outputs.GetDbNodesResult] =
       val argsBuilder = com.pulumi.aws.odb.inputs.GetDbNodesPlainArgs.builder
       com.pulumi.aws.odb.OdbFunctions.getDbNodesPlain(args(argsBuilder).build)
@@ -174,7 +176,7 @@ object odb:
      * 
      *  You can find out more about Oracle Database{@literal @}AWS from [User Guide](https://docs.aws.amazon.com/odb/latest/UserGuide/what-is-odb.html).
      */
-    def getDbServer(args: Endofunction[com.pulumi.aws.odb.inputs.GetDbServerArgs.Builder] = scala.Predef.identity):
+    inline def getDbServer(args: Endofunction[com.pulumi.aws.odb.inputs.GetDbServerArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.odb.outputs.GetDbServerResult] =
       val argsBuilder = com.pulumi.aws.odb.inputs.GetDbServerArgs.builder
       com.pulumi.aws.odb.OdbFunctions.getDbServer(args(argsBuilder).build)
@@ -184,7 +186,7 @@ object odb:
      * 
      *  You can find out more about Oracle Database{@literal @}AWS from [User Guide](https://docs.aws.amazon.com/odb/latest/UserGuide/what-is-odb.html).
      */
-    def getDbServerPlain(args: Endofunction[com.pulumi.aws.odb.inputs.GetDbServerPlainArgs.Builder] = scala.Predef.identity):
+    inline def getDbServerPlain(args: Endofunction[com.pulumi.aws.odb.inputs.GetDbServerPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.odb.outputs.GetDbServerResult] =
       val argsBuilder = com.pulumi.aws.odb.inputs.GetDbServerPlainArgs.builder
       com.pulumi.aws.odb.OdbFunctions.getDbServerPlain(args(argsBuilder).build)
@@ -194,7 +196,7 @@ object odb:
      * 
      *  You can find out more about Oracle Database{@literal @}AWS from [User Guide](https://docs.aws.amazon.com/odb/latest/UserGuide/what-is-odb.html).
      */
-    def getDbServers(args: Endofunction[com.pulumi.aws.odb.inputs.GetDbServersArgs.Builder] = scala.Predef.identity):
+    inline def getDbServers(args: Endofunction[com.pulumi.aws.odb.inputs.GetDbServersArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.odb.outputs.GetDbServersResult] =
       val argsBuilder = com.pulumi.aws.odb.inputs.GetDbServersArgs.builder
       com.pulumi.aws.odb.OdbFunctions.getDbServers(args(argsBuilder).build)
@@ -204,7 +206,7 @@ object odb:
      * 
      *  You can find out more about Oracle Database{@literal @}AWS from [User Guide](https://docs.aws.amazon.com/odb/latest/UserGuide/what-is-odb.html).
      */
-    def getDbServersPlain(args: Endofunction[com.pulumi.aws.odb.inputs.GetDbServersPlainArgs.Builder] = scala.Predef.identity):
+    inline def getDbServersPlain(args: Endofunction[com.pulumi.aws.odb.inputs.GetDbServersPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.odb.outputs.GetDbServersResult] =
       val argsBuilder = com.pulumi.aws.odb.inputs.GetDbServersPlainArgs.builder
       com.pulumi.aws.odb.OdbFunctions.getDbServersPlain(args(argsBuilder).build)
@@ -214,7 +216,7 @@ object odb:
      * 
      *  You can find out more about Oracle Database{@literal @}AWS from [User Guide](https://docs.aws.amazon.com/odb/latest/UserGuide/what-is-odb.html).
      */
-    def getDbSystemShapes(args: Endofunction[com.pulumi.aws.odb.inputs.GetDbSystemShapesArgs.Builder] = scala.Predef.identity):
+    inline def getDbSystemShapes(args: Endofunction[com.pulumi.aws.odb.inputs.GetDbSystemShapesArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.odb.outputs.GetDbSystemShapesResult] =
       val argsBuilder = com.pulumi.aws.odb.inputs.GetDbSystemShapesArgs.builder
       com.pulumi.aws.odb.OdbFunctions.getDbSystemShapes(args(argsBuilder).build)
@@ -224,7 +226,7 @@ object odb:
      * 
      *  You can find out more about Oracle Database{@literal @}AWS from [User Guide](https://docs.aws.amazon.com/odb/latest/UserGuide/what-is-odb.html).
      */
-    def getDbSystemShapesPlain(args: Endofunction[com.pulumi.aws.odb.inputs.GetDbSystemShapesPlainArgs.Builder] = scala.Predef.identity):
+    inline def getDbSystemShapesPlain(args: Endofunction[com.pulumi.aws.odb.inputs.GetDbSystemShapesPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.odb.outputs.GetDbSystemShapesResult] =
       val argsBuilder = com.pulumi.aws.odb.inputs.GetDbSystemShapesPlainArgs.builder
       com.pulumi.aws.odb.OdbFunctions.getDbSystemShapesPlain(args(argsBuilder).build)
@@ -234,7 +236,7 @@ object odb:
      * 
      *  You can find out more about Oracle Database{@literal @}AWS from [User Guide](https://docs.aws.amazon.com/odb/latest/UserGuide/what-is-odb.html).
      */
-    def getGiVersions(args: Endofunction[com.pulumi.aws.odb.inputs.GetGiVersionsArgs.Builder] = scala.Predef.identity):
+    inline def getGiVersions(args: Endofunction[com.pulumi.aws.odb.inputs.GetGiVersionsArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.odb.outputs.GetGiVersionsResult] =
       val argsBuilder = com.pulumi.aws.odb.inputs.GetGiVersionsArgs.builder
       com.pulumi.aws.odb.OdbFunctions.getGiVersions(args(argsBuilder).build)
@@ -244,19 +246,19 @@ object odb:
      * 
      *  You can find out more about Oracle Database{@literal @}AWS from [User Guide](https://docs.aws.amazon.com/odb/latest/UserGuide/what-is-odb.html).
      */
-    def getGiVersionsPlain(args: Endofunction[com.pulumi.aws.odb.inputs.GetGiVersionsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getGiVersionsPlain(args: Endofunction[com.pulumi.aws.odb.inputs.GetGiVersionsPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.odb.outputs.GetGiVersionsResult] =
       val argsBuilder = com.pulumi.aws.odb.inputs.GetGiVersionsPlainArgs.builder
       com.pulumi.aws.odb.OdbFunctions.getGiVersionsPlain(args(argsBuilder).build)
 
     /** Data source for to retrieve network resource in AWS for Oracle Database{@literal @}AWS. */
-    def getNetwork(args: Endofunction[com.pulumi.aws.odb.inputs.GetNetworkArgs.Builder] = scala.Predef.identity):
+    inline def getNetwork(args: Endofunction[com.pulumi.aws.odb.inputs.GetNetworkArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.odb.outputs.GetNetworkResult] =
       val argsBuilder = com.pulumi.aws.odb.inputs.GetNetworkArgs.builder
       com.pulumi.aws.odb.OdbFunctions.getNetwork(args(argsBuilder).build)
 
     /** Data source for to retrieve network resource in AWS for Oracle Database{@literal @}AWS. */
-    def getNetworkPlain(args: Endofunction[com.pulumi.aws.odb.inputs.GetNetworkPlainArgs.Builder] = scala.Predef.identity):
+    inline def getNetworkPlain(args: Endofunction[com.pulumi.aws.odb.inputs.GetNetworkPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.odb.outputs.GetNetworkResult] =
       val argsBuilder = com.pulumi.aws.odb.inputs.GetNetworkPlainArgs.builder
       com.pulumi.aws.odb.OdbFunctions.getNetworkPlain(args(argsBuilder).build)
@@ -266,7 +268,7 @@ object odb:
      * 
      *  You can find out more about Oracle Database{@literal @}AWS from [User Guide](https://docs.aws.amazon.com/odb/latest/UserGuide/what-is-odb.html).
      */
-    def getNetworkPeeringConnection(args: Endofunction[com.pulumi.aws.odb.inputs.GetNetworkPeeringConnectionArgs.Builder] = scala.Predef.identity):
+    inline def getNetworkPeeringConnection(args: Endofunction[com.pulumi.aws.odb.inputs.GetNetworkPeeringConnectionArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.odb.outputs.GetNetworkPeeringConnectionResult] =
       val argsBuilder = com.pulumi.aws.odb.inputs.GetNetworkPeeringConnectionArgs.builder
       com.pulumi.aws.odb.OdbFunctions.getNetworkPeeringConnection(args(argsBuilder).build)
@@ -276,7 +278,7 @@ object odb:
      * 
      *  You can find out more about Oracle Database{@literal @}AWS from [User Guide](https://docs.aws.amazon.com/odb/latest/UserGuide/what-is-odb.html).
      */
-    def getNetworkPeeringConnectionPlain(args: Endofunction[com.pulumi.aws.odb.inputs.GetNetworkPeeringConnectionPlainArgs.Builder] = scala.Predef.identity):
+    inline def getNetworkPeeringConnectionPlain(args: Endofunction[com.pulumi.aws.odb.inputs.GetNetworkPeeringConnectionPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.odb.outputs.GetNetworkPeeringConnectionResult] =
       val argsBuilder = com.pulumi.aws.odb.inputs.GetNetworkPeeringConnectionPlainArgs.builder
       com.pulumi.aws.odb.OdbFunctions.getNetworkPeeringConnectionPlain(args(argsBuilder).build)
@@ -286,7 +288,7 @@ object odb:
      * 
      *  You can find out more about Oracle Database{@literal @}AWS from [User Guide](https://docs.aws.amazon.com/odb/latest/UserGuide/what-is-odb.html).
      */
-    def getNetworkPeeringConnections(args: Endofunction[com.pulumi.aws.odb.inputs.GetNetworkPeeringConnectionsArgs.Builder] = scala.Predef.identity):
+    inline def getNetworkPeeringConnections(args: Endofunction[com.pulumi.aws.odb.inputs.GetNetworkPeeringConnectionsArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.odb.outputs.GetNetworkPeeringConnectionsResult] =
       val argsBuilder = com.pulumi.aws.odb.inputs.GetNetworkPeeringConnectionsArgs.builder
       com.pulumi.aws.odb.OdbFunctions.getNetworkPeeringConnections(args(argsBuilder).build)
@@ -296,19 +298,19 @@ object odb:
      * 
      *  You can find out more about Oracle Database{@literal @}AWS from [User Guide](https://docs.aws.amazon.com/odb/latest/UserGuide/what-is-odb.html).
      */
-    def getNetworkPeeringConnectionsPlain(args: Endofunction[com.pulumi.aws.odb.inputs.GetNetworkPeeringConnectionsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getNetworkPeeringConnectionsPlain(args: Endofunction[com.pulumi.aws.odb.inputs.GetNetworkPeeringConnectionsPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.odb.outputs.GetNetworkPeeringConnectionsResult] =
       val argsBuilder = com.pulumi.aws.odb.inputs.GetNetworkPeeringConnectionsPlainArgs.builder
       com.pulumi.aws.odb.OdbFunctions.getNetworkPeeringConnectionsPlain(args(argsBuilder).build)
 
     /** Data source for to retrieve networks from AWS for Oracle Database{@literal @}AWS. */
-    def getNetworks(args: Endofunction[com.pulumi.aws.odb.inputs.GetNetworksArgs.Builder] = scala.Predef.identity):
+    inline def getNetworks(args: Endofunction[com.pulumi.aws.odb.inputs.GetNetworksArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.odb.outputs.GetNetworksResult] =
       val argsBuilder = com.pulumi.aws.odb.inputs.GetNetworksArgs.builder
       com.pulumi.aws.odb.OdbFunctions.getNetworks(args(argsBuilder).build)
 
     /** Data source for to retrieve networks from AWS for Oracle Database{@literal @}AWS. */
-    def getNetworksPlain(args: Endofunction[com.pulumi.aws.odb.inputs.GetNetworksPlainArgs.Builder] = scala.Predef.identity):
+    inline def getNetworksPlain(args: Endofunction[com.pulumi.aws.odb.inputs.GetNetworksPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.odb.outputs.GetNetworksResult] =
       val argsBuilder = com.pulumi.aws.odb.inputs.GetNetworksPlainArgs.builder
       com.pulumi.aws.odb.OdbFunctions.getNetworksPlain(args(argsBuilder).build)

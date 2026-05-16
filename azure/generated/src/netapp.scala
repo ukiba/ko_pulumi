@@ -88,11 +88,13 @@ object netapp:
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
-  type NetappFunctions = com.pulumi.azure.netapp.NetappFunctions
   object NetappFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.azure.netapp.NetappFunctions.*
-  extension (self: NetappFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /**
      * Uses this data source to access information about an existing NetApp Account.
      * 
@@ -138,7 +140,7 @@ object netapp:
      * 
      *  * `Microsoft.NetApp` - 2025-12-01
      */
-    def getAccount(args: Endofunction[com.pulumi.azure.netapp.inputs.GetAccountArgs.Builder] = scala.Predef.identity):
+    inline def getAccount(args: Endofunction[com.pulumi.azure.netapp.inputs.GetAccountArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.netapp.outputs.GetAccountResult] =
       val argsBuilder = com.pulumi.azure.netapp.inputs.GetAccountArgs.builder
       com.pulumi.azure.netapp.NetappFunctions.getAccount(args(argsBuilder).build)
@@ -188,19 +190,19 @@ object netapp:
      * 
      *  * `Microsoft.NetApp` - 2025-12-01
      */
-    def getAccountPlain(args: Endofunction[com.pulumi.azure.netapp.inputs.GetAccountPlainArgs.Builder] = scala.Predef.identity):
+    inline def getAccountPlain(args: Endofunction[com.pulumi.azure.netapp.inputs.GetAccountPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.netapp.outputs.GetAccountResult] =
       val argsBuilder = com.pulumi.azure.netapp.inputs.GetAccountPlainArgs.builder
       com.pulumi.azure.netapp.NetappFunctions.getAccountPlain(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing NetApp Account Encryption Resource. */
-    def getAccountEncryption(args: Endofunction[com.pulumi.azure.netapp.inputs.GetAccountEncryptionArgs.Builder] = scala.Predef.identity):
+    inline def getAccountEncryption(args: Endofunction[com.pulumi.azure.netapp.inputs.GetAccountEncryptionArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.netapp.outputs.GetAccountEncryptionResult] =
       val argsBuilder = com.pulumi.azure.netapp.inputs.GetAccountEncryptionArgs.builder
       com.pulumi.azure.netapp.NetappFunctions.getAccountEncryption(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing NetApp Account Encryption Resource. */
-    def getAccountEncryptionPlain(args: Endofunction[com.pulumi.azure.netapp.inputs.GetAccountEncryptionPlainArgs.Builder] = scala.Predef.identity):
+    inline def getAccountEncryptionPlain(args: Endofunction[com.pulumi.azure.netapp.inputs.GetAccountEncryptionPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.netapp.outputs.GetAccountEncryptionResult] =
       val argsBuilder = com.pulumi.azure.netapp.inputs.GetAccountEncryptionPlainArgs.builder
       com.pulumi.azure.netapp.NetappFunctions.getAccountEncryptionPlain(args(argsBuilder).build)
@@ -251,7 +253,7 @@ object netapp:
      * 
      *  * `Microsoft.NetApp` - 2025-12-01
      */
-    def getBackupPolicy(args: Endofunction[com.pulumi.azure.netapp.inputs.GetBackupPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getBackupPolicy(args: Endofunction[com.pulumi.azure.netapp.inputs.GetBackupPolicyArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.netapp.outputs.GetBackupPolicyResult] =
       val argsBuilder = com.pulumi.azure.netapp.inputs.GetBackupPolicyArgs.builder
       com.pulumi.azure.netapp.NetappFunctions.getBackupPolicy(args(argsBuilder).build)
@@ -302,7 +304,7 @@ object netapp:
      * 
      *  * `Microsoft.NetApp` - 2025-12-01
      */
-    def getBackupPolicyPlain(args: Endofunction[com.pulumi.azure.netapp.inputs.GetBackupPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getBackupPolicyPlain(args: Endofunction[com.pulumi.azure.netapp.inputs.GetBackupPolicyPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.netapp.outputs.GetBackupPolicyResult] =
       val argsBuilder = com.pulumi.azure.netapp.inputs.GetBackupPolicyPlainArgs.builder
       com.pulumi.azure.netapp.NetappFunctions.getBackupPolicyPlain(args(argsBuilder).build)
@@ -353,7 +355,7 @@ object netapp:
      * 
      *  * `Microsoft.NetApp` - 2025-12-01
      */
-    def getBackupVault(args: Endofunction[com.pulumi.azure.netapp.inputs.GetBackupVaultArgs.Builder] = scala.Predef.identity):
+    inline def getBackupVault(args: Endofunction[com.pulumi.azure.netapp.inputs.GetBackupVaultArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.netapp.outputs.GetBackupVaultResult] =
       val argsBuilder = com.pulumi.azure.netapp.inputs.GetBackupVaultArgs.builder
       com.pulumi.azure.netapp.NetappFunctions.getBackupVault(args(argsBuilder).build)
@@ -404,7 +406,7 @@ object netapp:
      * 
      *  * `Microsoft.NetApp` - 2025-12-01
      */
-    def getBackupVaultPlain(args: Endofunction[com.pulumi.azure.netapp.inputs.GetBackupVaultPlainArgs.Builder] = scala.Predef.identity):
+    inline def getBackupVaultPlain(args: Endofunction[com.pulumi.azure.netapp.inputs.GetBackupVaultPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.netapp.outputs.GetBackupVaultResult] =
       val argsBuilder = com.pulumi.azure.netapp.inputs.GetBackupVaultPlainArgs.builder
       com.pulumi.azure.netapp.NetappFunctions.getBackupVaultPlain(args(argsBuilder).build)
@@ -455,7 +457,7 @@ object netapp:
      * 
      *  * `Microsoft.NetApp` - 2025-12-01
      */
-    def getPool(args: Endofunction[com.pulumi.azure.netapp.inputs.GetPoolArgs.Builder] = scala.Predef.identity):
+    inline def getPool(args: Endofunction[com.pulumi.azure.netapp.inputs.GetPoolArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.netapp.outputs.GetPoolResult] =
       val argsBuilder = com.pulumi.azure.netapp.inputs.GetPoolArgs.builder
       com.pulumi.azure.netapp.NetappFunctions.getPool(args(argsBuilder).build)
@@ -506,7 +508,7 @@ object netapp:
      * 
      *  * `Microsoft.NetApp` - 2025-12-01
      */
-    def getPoolPlain(args: Endofunction[com.pulumi.azure.netapp.inputs.GetPoolPlainArgs.Builder] = scala.Predef.identity):
+    inline def getPoolPlain(args: Endofunction[com.pulumi.azure.netapp.inputs.GetPoolPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.netapp.outputs.GetPoolResult] =
       val argsBuilder = com.pulumi.azure.netapp.inputs.GetPoolPlainArgs.builder
       com.pulumi.azure.netapp.NetappFunctions.getPoolPlain(args(argsBuilder).build)
@@ -559,7 +561,7 @@ object netapp:
      * 
      *  * `Microsoft.NetApp` - 2025-12-01
      */
-    def getSnapshot(args: Endofunction[com.pulumi.azure.netapp.inputs.GetSnapshotArgs.Builder] = scala.Predef.identity):
+    inline def getSnapshot(args: Endofunction[com.pulumi.azure.netapp.inputs.GetSnapshotArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.netapp.outputs.GetSnapshotResult] =
       val argsBuilder = com.pulumi.azure.netapp.inputs.GetSnapshotArgs.builder
       com.pulumi.azure.netapp.NetappFunctions.getSnapshot(args(argsBuilder).build)
@@ -612,7 +614,7 @@ object netapp:
      * 
      *  * `Microsoft.NetApp` - 2025-12-01
      */
-    def getSnapshotPlain(args: Endofunction[com.pulumi.azure.netapp.inputs.GetSnapshotPlainArgs.Builder] = scala.Predef.identity):
+    inline def getSnapshotPlain(args: Endofunction[com.pulumi.azure.netapp.inputs.GetSnapshotPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.netapp.outputs.GetSnapshotResult] =
       val argsBuilder = com.pulumi.azure.netapp.inputs.GetSnapshotPlainArgs.builder
       com.pulumi.azure.netapp.NetappFunctions.getSnapshotPlain(args(argsBuilder).build)
@@ -669,7 +671,7 @@ object netapp:
      * 
      *  * `Microsoft.NetApp` - 2025-12-01
      */
-    def getSnapshotPolicy(args: Endofunction[com.pulumi.azure.netapp.inputs.GetSnapshotPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getSnapshotPolicy(args: Endofunction[com.pulumi.azure.netapp.inputs.GetSnapshotPolicyArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.netapp.outputs.GetSnapshotPolicyResult] =
       val argsBuilder = com.pulumi.azure.netapp.inputs.GetSnapshotPolicyArgs.builder
       com.pulumi.azure.netapp.NetappFunctions.getSnapshotPolicy(args(argsBuilder).build)
@@ -726,7 +728,7 @@ object netapp:
      * 
      *  * `Microsoft.NetApp` - 2025-12-01
      */
-    def getSnapshotPolicyPlain(args: Endofunction[com.pulumi.azure.netapp.inputs.GetSnapshotPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getSnapshotPolicyPlain(args: Endofunction[com.pulumi.azure.netapp.inputs.GetSnapshotPolicyPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.netapp.outputs.GetSnapshotPolicyResult] =
       val argsBuilder = com.pulumi.azure.netapp.inputs.GetSnapshotPolicyPlainArgs.builder
       com.pulumi.azure.netapp.NetappFunctions.getSnapshotPolicyPlain(args(argsBuilder).build)
@@ -778,7 +780,7 @@ object netapp:
      * 
      *  * `Microsoft.NetApp` - 2025-12-01
      */
-    def getVolume(args: Endofunction[com.pulumi.azure.netapp.inputs.GetVolumeArgs.Builder] = scala.Predef.identity):
+    inline def getVolume(args: Endofunction[com.pulumi.azure.netapp.inputs.GetVolumeArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.netapp.outputs.GetVolumeResult] =
       val argsBuilder = com.pulumi.azure.netapp.inputs.GetVolumeArgs.builder
       com.pulumi.azure.netapp.NetappFunctions.getVolume(args(argsBuilder).build)
@@ -830,43 +832,43 @@ object netapp:
      * 
      *  * `Microsoft.NetApp` - 2025-12-01
      */
-    def getVolumePlain(args: Endofunction[com.pulumi.azure.netapp.inputs.GetVolumePlainArgs.Builder] = scala.Predef.identity):
+    inline def getVolumePlain(args: Endofunction[com.pulumi.azure.netapp.inputs.GetVolumePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.netapp.outputs.GetVolumeResult] =
       val argsBuilder = com.pulumi.azure.netapp.inputs.GetVolumePlainArgs.builder
       com.pulumi.azure.netapp.NetappFunctions.getVolumePlain(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing Application Volume Group for Oracle application. */
-    def getVolumeGroupOracle(args: Endofunction[com.pulumi.azure.netapp.inputs.GetVolumeGroupOracleArgs.Builder] = scala.Predef.identity):
+    inline def getVolumeGroupOracle(args: Endofunction[com.pulumi.azure.netapp.inputs.GetVolumeGroupOracleArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.netapp.outputs.GetVolumeGroupOracleResult] =
       val argsBuilder = com.pulumi.azure.netapp.inputs.GetVolumeGroupOracleArgs.builder
       com.pulumi.azure.netapp.NetappFunctions.getVolumeGroupOracle(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing Application Volume Group for Oracle application. */
-    def getVolumeGroupOraclePlain(args: Endofunction[com.pulumi.azure.netapp.inputs.GetVolumeGroupOraclePlainArgs.Builder] = scala.Predef.identity):
+    inline def getVolumeGroupOraclePlain(args: Endofunction[com.pulumi.azure.netapp.inputs.GetVolumeGroupOraclePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.netapp.outputs.GetVolumeGroupOracleResult] =
       val argsBuilder = com.pulumi.azure.netapp.inputs.GetVolumeGroupOraclePlainArgs.builder
       com.pulumi.azure.netapp.NetappFunctions.getVolumeGroupOraclePlain(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing Application Volume Group for SAP HANA application. */
-    def getVolumeGroupSapHana(args: Endofunction[com.pulumi.azure.netapp.inputs.GetVolumeGroupSapHanaArgs.Builder] = scala.Predef.identity):
+    inline def getVolumeGroupSapHana(args: Endofunction[com.pulumi.azure.netapp.inputs.GetVolumeGroupSapHanaArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.netapp.outputs.GetVolumeGroupSapHanaResult] =
       val argsBuilder = com.pulumi.azure.netapp.inputs.GetVolumeGroupSapHanaArgs.builder
       com.pulumi.azure.netapp.NetappFunctions.getVolumeGroupSapHana(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing Application Volume Group for SAP HANA application. */
-    def getVolumeGroupSapHanaPlain(args: Endofunction[com.pulumi.azure.netapp.inputs.GetVolumeGroupSapHanaPlainArgs.Builder] = scala.Predef.identity):
+    inline def getVolumeGroupSapHanaPlain(args: Endofunction[com.pulumi.azure.netapp.inputs.GetVolumeGroupSapHanaPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.netapp.outputs.GetVolumeGroupSapHanaResult] =
       val argsBuilder = com.pulumi.azure.netapp.inputs.GetVolumeGroupSapHanaPlainArgs.builder
       com.pulumi.azure.netapp.NetappFunctions.getVolumeGroupSapHanaPlain(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing Volume Quota Rule. */
-    def getVolumeQuotaRule(args: Endofunction[com.pulumi.azure.netapp.inputs.GetVolumeQuotaRuleArgs.Builder] = scala.Predef.identity):
+    inline def getVolumeQuotaRule(args: Endofunction[com.pulumi.azure.netapp.inputs.GetVolumeQuotaRuleArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.netapp.outputs.GetVolumeQuotaRuleResult] =
       val argsBuilder = com.pulumi.azure.netapp.inputs.GetVolumeQuotaRuleArgs.builder
       com.pulumi.azure.netapp.NetappFunctions.getVolumeQuotaRule(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing Volume Quota Rule. */
-    def getVolumeQuotaRulePlain(args: Endofunction[com.pulumi.azure.netapp.inputs.GetVolumeQuotaRulePlainArgs.Builder] = scala.Predef.identity):
+    inline def getVolumeQuotaRulePlain(args: Endofunction[com.pulumi.azure.netapp.inputs.GetVolumeQuotaRulePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.netapp.outputs.GetVolumeQuotaRuleResult] =
       val argsBuilder = com.pulumi.azure.netapp.inputs.GetVolumeQuotaRulePlainArgs.builder
       com.pulumi.azure.netapp.NetappFunctions.getVolumeQuotaRulePlain(args(argsBuilder).build)

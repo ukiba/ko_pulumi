@@ -4,19 +4,21 @@ package azure
 import com.pulumi.resources.CustomResourceOptions
 
 object loadtest:
-  type LoadtestFunctions = com.pulumi.azure.loadtest.LoadtestFunctions
   object LoadtestFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.azure.loadtest.LoadtestFunctions.*
-  extension (self: LoadtestFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /** Use this data source to access information about a Load Test Service. */
-    def get(args: Endofunction[com.pulumi.azure.loadtest.inputs.GetArgs.Builder] = scala.Predef.identity):
+    inline def get(args: Endofunction[com.pulumi.azure.loadtest.inputs.GetArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.loadtest.outputs.GetResult] =
       val argsBuilder = com.pulumi.azure.loadtest.inputs.GetArgs.builder
       com.pulumi.azure.loadtest.LoadtestFunctions.get(args(argsBuilder).build)
 
     /** Use this data source to access information about a Load Test Service. */
-    def getPlain(args: Endofunction[com.pulumi.azure.loadtest.inputs.GetPlainArgs.Builder] = scala.Predef.identity):
+    inline def getPlain(args: Endofunction[com.pulumi.azure.loadtest.inputs.GetPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.loadtest.outputs.GetResult] =
       val argsBuilder = com.pulumi.azure.loadtest.inputs.GetPlainArgs.builder
       com.pulumi.azure.loadtest.LoadtestFunctions.getPlain(args(argsBuilder).build)

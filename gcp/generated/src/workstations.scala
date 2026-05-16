@@ -4,31 +4,33 @@ package gcp
 import com.pulumi.resources.CustomResourceOptions
 
 object workstations:
-  type WorkstationsFunctions = com.pulumi.gcp.workstations.WorkstationsFunctions
   object WorkstationsFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.gcp.workstations.WorkstationsFunctions.*
-  extension (self: WorkstationsFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /** Retrieves the current IAM policy data for workstationconfig */
-    def getWorkstationConfigIamPolicy(args: Endofunction[com.pulumi.gcp.workstations.inputs.GetWorkstationConfigIamPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getWorkstationConfigIamPolicy(args: Endofunction[com.pulumi.gcp.workstations.inputs.GetWorkstationConfigIamPolicyArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.workstations.outputs.GetWorkstationConfigIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.workstations.inputs.GetWorkstationConfigIamPolicyArgs.builder
       com.pulumi.gcp.workstations.WorkstationsFunctions.getWorkstationConfigIamPolicy(args(argsBuilder).build)
 
     /** Retrieves the current IAM policy data for workstationconfig */
-    def getWorkstationConfigIamPolicyPlain(args: Endofunction[com.pulumi.gcp.workstations.inputs.GetWorkstationConfigIamPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getWorkstationConfigIamPolicyPlain(args: Endofunction[com.pulumi.gcp.workstations.inputs.GetWorkstationConfigIamPolicyPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.workstations.outputs.GetWorkstationConfigIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.workstations.inputs.GetWorkstationConfigIamPolicyPlainArgs.builder
       com.pulumi.gcp.workstations.WorkstationsFunctions.getWorkstationConfigIamPolicyPlain(args(argsBuilder).build)
 
     /** Retrieves the current IAM policy data for workstation */
-    def getWorkstationIamPolicy(args: Endofunction[com.pulumi.gcp.workstations.inputs.GetWorkstationIamPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getWorkstationIamPolicy(args: Endofunction[com.pulumi.gcp.workstations.inputs.GetWorkstationIamPolicyArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.workstations.outputs.GetWorkstationIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.workstations.inputs.GetWorkstationIamPolicyArgs.builder
       com.pulumi.gcp.workstations.WorkstationsFunctions.getWorkstationIamPolicy(args(argsBuilder).build)
 
     /** Retrieves the current IAM policy data for workstation */
-    def getWorkstationIamPolicyPlain(args: Endofunction[com.pulumi.gcp.workstations.inputs.GetWorkstationIamPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getWorkstationIamPolicyPlain(args: Endofunction[com.pulumi.gcp.workstations.inputs.GetWorkstationIamPolicyPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.workstations.outputs.GetWorkstationIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.workstations.inputs.GetWorkstationIamPolicyPlainArgs.builder
       com.pulumi.gcp.workstations.WorkstationsFunctions.getWorkstationIamPolicyPlain(args(argsBuilder).build)

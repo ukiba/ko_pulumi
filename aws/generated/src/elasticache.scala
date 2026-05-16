@@ -170,79 +170,81 @@ object elasticache:
         com.pulumi.aws.elasticache.ReservedCacheNodeArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
 
-  type ElasticacheFunctions = com.pulumi.aws.elasticache.ElasticacheFunctions
   object ElasticacheFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.aws.elasticache.ElasticacheFunctions.*
-  extension (self: ElasticacheFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /** Use this data source to get information about an ElastiCache Cluster */
-    def getCluster(args: Endofunction[com.pulumi.aws.elasticache.inputs.GetClusterArgs.Builder] = scala.Predef.identity):
+    inline def getCluster(args: Endofunction[com.pulumi.aws.elasticache.inputs.GetClusterArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.elasticache.outputs.GetClusterResult] =
       val argsBuilder = com.pulumi.aws.elasticache.inputs.GetClusterArgs.builder
       com.pulumi.aws.elasticache.ElasticacheFunctions.getCluster(args(argsBuilder).build)
 
     /** Use this data source to get information about an ElastiCache Cluster */
-    def getClusterPlain(args: Endofunction[com.pulumi.aws.elasticache.inputs.GetClusterPlainArgs.Builder] = scala.Predef.identity):
+    inline def getClusterPlain(args: Endofunction[com.pulumi.aws.elasticache.inputs.GetClusterPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.elasticache.outputs.GetClusterResult] =
       val argsBuilder = com.pulumi.aws.elasticache.inputs.GetClusterPlainArgs.builder
       com.pulumi.aws.elasticache.ElasticacheFunctions.getClusterPlain(args(argsBuilder).build)
 
     /** Use this data source to get information about an ElastiCache Replication Group. */
-    def getReplicationGroup(args: Endofunction[com.pulumi.aws.elasticache.inputs.GetReplicationGroupArgs.Builder] = scala.Predef.identity):
+    inline def getReplicationGroup(args: Endofunction[com.pulumi.aws.elasticache.inputs.GetReplicationGroupArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.elasticache.outputs.GetReplicationGroupResult] =
       val argsBuilder = com.pulumi.aws.elasticache.inputs.GetReplicationGroupArgs.builder
       com.pulumi.aws.elasticache.ElasticacheFunctions.getReplicationGroup(args(argsBuilder).build)
 
     /** Use this data source to get information about an ElastiCache Replication Group. */
-    def getReplicationGroupPlain(args: Endofunction[com.pulumi.aws.elasticache.inputs.GetReplicationGroupPlainArgs.Builder] = scala.Predef.identity):
+    inline def getReplicationGroupPlain(args: Endofunction[com.pulumi.aws.elasticache.inputs.GetReplicationGroupPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.elasticache.outputs.GetReplicationGroupResult] =
       val argsBuilder = com.pulumi.aws.elasticache.inputs.GetReplicationGroupPlainArgs.builder
       com.pulumi.aws.elasticache.ElasticacheFunctions.getReplicationGroupPlain(args(argsBuilder).build)
 
     /** Information about a single ElastiCache Reserved Cache Node Offering. */
-    def getReservedCacheNodeOffering(args: Endofunction[com.pulumi.aws.elasticache.inputs.GetReservedCacheNodeOfferingArgs.Builder] = scala.Predef.identity):
+    inline def getReservedCacheNodeOffering(args: Endofunction[com.pulumi.aws.elasticache.inputs.GetReservedCacheNodeOfferingArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.elasticache.outputs.GetReservedCacheNodeOfferingResult] =
       val argsBuilder = com.pulumi.aws.elasticache.inputs.GetReservedCacheNodeOfferingArgs.builder
       com.pulumi.aws.elasticache.ElasticacheFunctions.getReservedCacheNodeOffering(args(argsBuilder).build)
 
     /** Information about a single ElastiCache Reserved Cache Node Offering. */
-    def getReservedCacheNodeOfferingPlain(args: Endofunction[com.pulumi.aws.elasticache.inputs.GetReservedCacheNodeOfferingPlainArgs.Builder] = scala.Predef.identity):
+    inline def getReservedCacheNodeOfferingPlain(args: Endofunction[com.pulumi.aws.elasticache.inputs.GetReservedCacheNodeOfferingPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.elasticache.outputs.GetReservedCacheNodeOfferingResult] =
       val argsBuilder = com.pulumi.aws.elasticache.inputs.GetReservedCacheNodeOfferingPlainArgs.builder
       com.pulumi.aws.elasticache.ElasticacheFunctions.getReservedCacheNodeOfferingPlain(args(argsBuilder).build)
 
     /** Use this data source to get information about an ElastiCache Serverless Cache. */
-    def getServerlessCache(args: Endofunction[com.pulumi.aws.elasticache.inputs.GetServerlessCacheArgs.Builder] = scala.Predef.identity):
+    inline def getServerlessCache(args: Endofunction[com.pulumi.aws.elasticache.inputs.GetServerlessCacheArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.elasticache.outputs.GetServerlessCacheResult] =
       val argsBuilder = com.pulumi.aws.elasticache.inputs.GetServerlessCacheArgs.builder
       com.pulumi.aws.elasticache.ElasticacheFunctions.getServerlessCache(args(argsBuilder).build)
 
     /** Use this data source to get information about an ElastiCache Serverless Cache. */
-    def getServerlessCachePlain(args: Endofunction[com.pulumi.aws.elasticache.inputs.GetServerlessCachePlainArgs.Builder] = scala.Predef.identity):
+    inline def getServerlessCachePlain(args: Endofunction[com.pulumi.aws.elasticache.inputs.GetServerlessCachePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.elasticache.outputs.GetServerlessCacheResult] =
       val argsBuilder = com.pulumi.aws.elasticache.inputs.GetServerlessCachePlainArgs.builder
       com.pulumi.aws.elasticache.ElasticacheFunctions.getServerlessCachePlain(args(argsBuilder).build)
 
     /** Provides information about a ElastiCache Subnet Group. */
-    def getSubnetGroup(args: Endofunction[com.pulumi.aws.elasticache.inputs.GetSubnetGroupArgs.Builder] = scala.Predef.identity):
+    inline def getSubnetGroup(args: Endofunction[com.pulumi.aws.elasticache.inputs.GetSubnetGroupArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.elasticache.outputs.GetSubnetGroupResult] =
       val argsBuilder = com.pulumi.aws.elasticache.inputs.GetSubnetGroupArgs.builder
       com.pulumi.aws.elasticache.ElasticacheFunctions.getSubnetGroup(args(argsBuilder).build)
 
     /** Provides information about a ElastiCache Subnet Group. */
-    def getSubnetGroupPlain(args: Endofunction[com.pulumi.aws.elasticache.inputs.GetSubnetGroupPlainArgs.Builder] = scala.Predef.identity):
+    inline def getSubnetGroupPlain(args: Endofunction[com.pulumi.aws.elasticache.inputs.GetSubnetGroupPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.elasticache.outputs.GetSubnetGroupResult] =
       val argsBuilder = com.pulumi.aws.elasticache.inputs.GetSubnetGroupPlainArgs.builder
       com.pulumi.aws.elasticache.ElasticacheFunctions.getSubnetGroupPlain(args(argsBuilder).build)
 
     /** Use this data source to get information about an ElastiCache User. */
-    def getUser(args: Endofunction[com.pulumi.aws.elasticache.inputs.GetUserArgs.Builder] = scala.Predef.identity):
+    inline def getUser(args: Endofunction[com.pulumi.aws.elasticache.inputs.GetUserArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.elasticache.outputs.GetUserResult] =
       val argsBuilder = com.pulumi.aws.elasticache.inputs.GetUserArgs.builder
       com.pulumi.aws.elasticache.ElasticacheFunctions.getUser(args(argsBuilder).build)
 
     /** Use this data source to get information about an ElastiCache User. */
-    def getUserPlain(args: Endofunction[com.pulumi.aws.elasticache.inputs.GetUserPlainArgs.Builder] = scala.Predef.identity):
+    inline def getUserPlain(args: Endofunction[com.pulumi.aws.elasticache.inputs.GetUserPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.elasticache.outputs.GetUserResult] =
       val argsBuilder = com.pulumi.aws.elasticache.inputs.GetUserPlainArgs.builder
       com.pulumi.aws.elasticache.ElasticacheFunctions.getUserPlain(args(argsBuilder).build)

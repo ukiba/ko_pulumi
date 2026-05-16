@@ -32,19 +32,21 @@ object codecatalyst:
       def argsBuilder = com.pulumi.aws.codecatalyst.inputs.DevEnvironmentRepositoryArgs.builder
       builder.repositories(args.map(_(argsBuilder).build)*)
 
-  type CodecatalystFunctions = com.pulumi.aws.codecatalyst.CodecatalystFunctions
   object CodecatalystFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.aws.codecatalyst.CodecatalystFunctions.*
-  extension (self: CodecatalystFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /** Data source for managing an AWS CodeCatalyst Dev Environment. */
-    def getDevEnvironment(args: Endofunction[com.pulumi.aws.codecatalyst.inputs.GetDevEnvironmentArgs.Builder] = scala.Predef.identity):
+    inline def getDevEnvironment(args: Endofunction[com.pulumi.aws.codecatalyst.inputs.GetDevEnvironmentArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.codecatalyst.outputs.GetDevEnvironmentResult] =
       val argsBuilder = com.pulumi.aws.codecatalyst.inputs.GetDevEnvironmentArgs.builder
       com.pulumi.aws.codecatalyst.CodecatalystFunctions.getDevEnvironment(args(argsBuilder).build)
 
     /** Data source for managing an AWS CodeCatalyst Dev Environment. */
-    def getDevEnvironmentPlain(args: Endofunction[com.pulumi.aws.codecatalyst.inputs.GetDevEnvironmentPlainArgs.Builder] = scala.Predef.identity):
+    inline def getDevEnvironmentPlain(args: Endofunction[com.pulumi.aws.codecatalyst.inputs.GetDevEnvironmentPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.codecatalyst.outputs.GetDevEnvironmentResult] =
       val argsBuilder = com.pulumi.aws.codecatalyst.inputs.GetDevEnvironmentPlainArgs.builder
       com.pulumi.aws.codecatalyst.CodecatalystFunctions.getDevEnvironmentPlain(args(argsBuilder).build)

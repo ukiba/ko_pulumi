@@ -1360,11 +1360,13 @@ object dns:
       def argsBuilder = com.pulumi.gcp.dns.inputs.PolicyNetworkArgs.builder
       builder.networks(args.map(_(argsBuilder).build)*)
 
-  type DnsFunctions = com.pulumi.gcp.dns.DnsFunctions
   object DnsFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.gcp.dns.DnsFunctions.*
-  extension (self: DnsFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /**
      * Get the DNSKEY and DS records of DNSSEC-signed managed zones.
      * 
@@ -1377,7 +1379,7 @@ object dns:
      *  enabled will result in a 404 error as the collection of DNSKEYs does
      *  not exist in the DNS API.
      */
-    def getKeys(args: Endofunction[com.pulumi.gcp.dns.inputs.GetKeysArgs.Builder] = scala.Predef.identity):
+    inline def getKeys(args: Endofunction[com.pulumi.gcp.dns.inputs.GetKeysArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.dns.outputs.GetKeysResult] =
       val argsBuilder = com.pulumi.gcp.dns.inputs.GetKeysArgs.builder
       com.pulumi.gcp.dns.DnsFunctions.getKeys(args(argsBuilder).build)
@@ -1394,7 +1396,7 @@ object dns:
      *  enabled will result in a 404 error as the collection of DNSKEYs does
      *  not exist in the DNS API.
      */
-    def getKeysPlain(args: Endofunction[com.pulumi.gcp.dns.inputs.GetKeysPlainArgs.Builder] = scala.Predef.identity):
+    inline def getKeysPlain(args: Endofunction[com.pulumi.gcp.dns.inputs.GetKeysPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.dns.outputs.GetKeysResult] =
       val argsBuilder = com.pulumi.gcp.dns.inputs.GetKeysPlainArgs.builder
       com.pulumi.gcp.dns.DnsFunctions.getKeysPlain(args(argsBuilder).build)
@@ -1447,7 +1449,7 @@ object dns:
      *  }
      *  </pre>
      */
-    def getManagedZone(args: Endofunction[com.pulumi.gcp.dns.inputs.GetManagedZoneArgs.Builder] = scala.Predef.identity):
+    inline def getManagedZone(args: Endofunction[com.pulumi.gcp.dns.inputs.GetManagedZoneArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.dns.outputs.GetManagedZoneResult] =
       val argsBuilder = com.pulumi.gcp.dns.inputs.GetManagedZoneArgs.builder
       com.pulumi.gcp.dns.DnsFunctions.getManagedZone(args(argsBuilder).build)
@@ -1500,19 +1502,19 @@ object dns:
      *  }
      *  </pre>
      */
-    def getManagedZonePlain(args: Endofunction[com.pulumi.gcp.dns.inputs.GetManagedZonePlainArgs.Builder] = scala.Predef.identity):
+    inline def getManagedZonePlain(args: Endofunction[com.pulumi.gcp.dns.inputs.GetManagedZonePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.dns.outputs.GetManagedZoneResult] =
       val argsBuilder = com.pulumi.gcp.dns.inputs.GetManagedZonePlainArgs.builder
       com.pulumi.gcp.dns.DnsFunctions.getManagedZonePlain(args(argsBuilder).build)
 
     /** Retrieves the current IAM policy data for managedzone */
-    def getManagedZoneIamPolicy(args: Endofunction[com.pulumi.gcp.dns.inputs.GetManagedZoneIamPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getManagedZoneIamPolicy(args: Endofunction[com.pulumi.gcp.dns.inputs.GetManagedZoneIamPolicyArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.dns.outputs.GetManagedZoneIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.dns.inputs.GetManagedZoneIamPolicyArgs.builder
       com.pulumi.gcp.dns.DnsFunctions.getManagedZoneIamPolicy(args(argsBuilder).build)
 
     /** Retrieves the current IAM policy data for managedzone */
-    def getManagedZoneIamPolicyPlain(args: Endofunction[com.pulumi.gcp.dns.inputs.GetManagedZoneIamPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getManagedZoneIamPolicyPlain(args: Endofunction[com.pulumi.gcp.dns.inputs.GetManagedZoneIamPolicyPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.dns.outputs.GetManagedZoneIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.dns.inputs.GetManagedZoneIamPolicyPlainArgs.builder
       com.pulumi.gcp.dns.DnsFunctions.getManagedZoneIamPolicyPlain(args(argsBuilder).build)
@@ -1555,7 +1557,7 @@ object dns:
      *  }
      *  </pre>
      */
-    def getManagedZones(args: Endofunction[com.pulumi.gcp.dns.inputs.GetManagedZonesArgs.Builder] = scala.Predef.identity):
+    inline def getManagedZones(args: Endofunction[com.pulumi.gcp.dns.inputs.GetManagedZonesArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.dns.outputs.GetManagedZonesResult] =
       val argsBuilder = com.pulumi.gcp.dns.inputs.GetManagedZonesArgs.builder
       com.pulumi.gcp.dns.DnsFunctions.getManagedZones(args(argsBuilder).build)
@@ -1598,7 +1600,7 @@ object dns:
      *  }
      *  </pre>
      */
-    def getManagedZonesPlain(args: Endofunction[com.pulumi.gcp.dns.inputs.GetManagedZonesPlainArgs.Builder] = scala.Predef.identity):
+    inline def getManagedZonesPlain(args: Endofunction[com.pulumi.gcp.dns.inputs.GetManagedZonesPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.dns.outputs.GetManagedZonesResult] =
       val argsBuilder = com.pulumi.gcp.dns.inputs.GetManagedZonesPlainArgs.builder
       com.pulumi.gcp.dns.DnsFunctions.getManagedZonesPlain(args(argsBuilder).build)
@@ -1610,7 +1612,7 @@ object dns:
      *  and
      *  [API](https://cloud.google.com/dns/docs/reference/v1/resourceRecordSets)
      */
-    def getRecordSet(args: Endofunction[com.pulumi.gcp.dns.inputs.GetRecordSetArgs.Builder] = scala.Predef.identity):
+    inline def getRecordSet(args: Endofunction[com.pulumi.gcp.dns.inputs.GetRecordSetArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.dns.outputs.GetRecordSetResult] =
       val argsBuilder = com.pulumi.gcp.dns.inputs.GetRecordSetArgs.builder
       com.pulumi.gcp.dns.DnsFunctions.getRecordSet(args(argsBuilder).build)
@@ -1622,7 +1624,7 @@ object dns:
      *  and
      *  [API](https://cloud.google.com/dns/docs/reference/v1/resourceRecordSets)
      */
-    def getRecordSetPlain(args: Endofunction[com.pulumi.gcp.dns.inputs.GetRecordSetPlainArgs.Builder] = scala.Predef.identity):
+    inline def getRecordSetPlain(args: Endofunction[com.pulumi.gcp.dns.inputs.GetRecordSetPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.dns.outputs.GetRecordSetResult] =
       val argsBuilder = com.pulumi.gcp.dns.inputs.GetRecordSetPlainArgs.builder
       com.pulumi.gcp.dns.DnsFunctions.getRecordSetPlain(args(argsBuilder).build)
@@ -1637,7 +1639,7 @@ object dns:
      * 
      *  &gt; **Note:** Filtering by `type` when `name` is not set is performed client-side.
      */
-    def getRecordSets(args: Endofunction[com.pulumi.gcp.dns.inputs.GetRecordSetsArgs.Builder] = scala.Predef.identity):
+    inline def getRecordSets(args: Endofunction[com.pulumi.gcp.dns.inputs.GetRecordSetsArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.dns.outputs.GetRecordSetsResult] =
       val argsBuilder = com.pulumi.gcp.dns.inputs.GetRecordSetsArgs.builder
       com.pulumi.gcp.dns.DnsFunctions.getRecordSets(args(argsBuilder).build)
@@ -1652,7 +1654,7 @@ object dns:
      * 
      *  &gt; **Note:** Filtering by `type` when `name` is not set is performed client-side.
      */
-    def getRecordSetsPlain(args: Endofunction[com.pulumi.gcp.dns.inputs.GetRecordSetsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getRecordSetsPlain(args: Endofunction[com.pulumi.gcp.dns.inputs.GetRecordSetsPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.dns.outputs.GetRecordSetsResult] =
       val argsBuilder = com.pulumi.gcp.dns.inputs.GetRecordSetsPlainArgs.builder
       com.pulumi.gcp.dns.DnsFunctions.getRecordSetsPlain(args(argsBuilder).build)

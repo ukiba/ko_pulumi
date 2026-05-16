@@ -306,17 +306,19 @@ object privatedns:
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
-  type PrivatednsFunctions = com.pulumi.azure.privatedns.PrivatednsFunctions
   object PrivatednsFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.azure.privatedns.PrivatednsFunctions.*
-  extension (self: PrivatednsFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /**
      * Use this data source to access information about an existing Private DNS AAAA Record within Azure DNS.
      * 
      *  &gt; **Note:** [The Azure DNS API has a throttle limit of 500 read (GET) operations per 5 minutes](https://docs.microsoft.com/azure/azure-resource-manager/management/request-limits-and-throttling#network-throttling) - whilst the default read timeouts will work for most cases - in larger configurations you may need to set a larger read timeout then the default 5min. Although, we&#39;d generally recommend that you split the resources out into smaller Terraform configurations to avoid the problem entirely.
      */
-    def getAAAARecord(args: Endofunction[com.pulumi.azure.privatedns.inputs.GetAAAARecordArgs.Builder] = scala.Predef.identity):
+    inline def getAAAARecord(args: Endofunction[com.pulumi.azure.privatedns.inputs.GetAAAARecordArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.privatedns.outputs.GetAAAARecordResult] =
       val argsBuilder = com.pulumi.azure.privatedns.inputs.GetAAAARecordArgs.builder
       com.pulumi.azure.privatedns.PrivatednsFunctions.getAAAARecord(args(argsBuilder).build)
@@ -326,7 +328,7 @@ object privatedns:
      * 
      *  &gt; **Note:** [The Azure DNS API has a throttle limit of 500 read (GET) operations per 5 minutes](https://docs.microsoft.com/azure/azure-resource-manager/management/request-limits-and-throttling#network-throttling) - whilst the default read timeouts will work for most cases - in larger configurations you may need to set a larger read timeout then the default 5min. Although, we&#39;d generally recommend that you split the resources out into smaller Terraform configurations to avoid the problem entirely.
      */
-    def getAAAARecordPlain(args: Endofunction[com.pulumi.azure.privatedns.inputs.GetAAAARecordPlainArgs.Builder] = scala.Predef.identity):
+    inline def getAAAARecordPlain(args: Endofunction[com.pulumi.azure.privatedns.inputs.GetAAAARecordPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.privatedns.outputs.GetAAAARecordResult] =
       val argsBuilder = com.pulumi.azure.privatedns.inputs.GetAAAARecordPlainArgs.builder
       com.pulumi.azure.privatedns.PrivatednsFunctions.getAAAARecordPlain(args(argsBuilder).build)
@@ -336,7 +338,7 @@ object privatedns:
      * 
      *  &gt; **Note:** [The Azure DNS API has a throttle limit of 500 read (GET) operations per 5 minutes](https://docs.microsoft.com/azure/azure-resource-manager/management/request-limits-and-throttling#network-throttling) - whilst the default read timeouts will work for most cases - in larger configurations you may need to set a larger read timeout then the default 5min. Although, we&#39;d generally recommend that you split the resources out into smaller Terraform configurations to avoid the problem entirely.
      */
-    def getARecord(args: Endofunction[com.pulumi.azure.privatedns.inputs.GetARecordArgs.Builder] = scala.Predef.identity):
+    inline def getARecord(args: Endofunction[com.pulumi.azure.privatedns.inputs.GetARecordArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.privatedns.outputs.GetARecordResult] =
       val argsBuilder = com.pulumi.azure.privatedns.inputs.GetARecordArgs.builder
       com.pulumi.azure.privatedns.PrivatednsFunctions.getARecord(args(argsBuilder).build)
@@ -346,7 +348,7 @@ object privatedns:
      * 
      *  &gt; **Note:** [The Azure DNS API has a throttle limit of 500 read (GET) operations per 5 minutes](https://docs.microsoft.com/azure/azure-resource-manager/management/request-limits-and-throttling#network-throttling) - whilst the default read timeouts will work for most cases - in larger configurations you may need to set a larger read timeout then the default 5min. Although, we&#39;d generally recommend that you split the resources out into smaller Terraform configurations to avoid the problem entirely.
      */
-    def getARecordPlain(args: Endofunction[com.pulumi.azure.privatedns.inputs.GetARecordPlainArgs.Builder] = scala.Predef.identity):
+    inline def getARecordPlain(args: Endofunction[com.pulumi.azure.privatedns.inputs.GetARecordPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.privatedns.outputs.GetARecordResult] =
       val argsBuilder = com.pulumi.azure.privatedns.inputs.GetARecordPlainArgs.builder
       com.pulumi.azure.privatedns.PrivatednsFunctions.getARecordPlain(args(argsBuilder).build)
@@ -356,7 +358,7 @@ object privatedns:
      * 
      *  &gt; **Note:** [The Azure DNS API has a throttle limit of 500 read (GET) operations per 5 minutes](https://docs.microsoft.com/azure/azure-resource-manager/management/request-limits-and-throttling#network-throttling) - whilst the default read timeouts will work for most cases - in larger configurations you may need to set a larger read timeout then the default 5min. Although, we&#39;d generally recommend that you split the resources out into smaller Terraform configurations to avoid the problem entirely.
      */
-    def getCnameRecord(args: Endofunction[com.pulumi.azure.privatedns.inputs.GetCnameRecordArgs.Builder] = scala.Predef.identity):
+    inline def getCnameRecord(args: Endofunction[com.pulumi.azure.privatedns.inputs.GetCnameRecordArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.privatedns.outputs.GetCnameRecordResult] =
       val argsBuilder = com.pulumi.azure.privatedns.inputs.GetCnameRecordArgs.builder
       com.pulumi.azure.privatedns.PrivatednsFunctions.getCnameRecord(args(argsBuilder).build)
@@ -366,19 +368,19 @@ object privatedns:
      * 
      *  &gt; **Note:** [The Azure DNS API has a throttle limit of 500 read (GET) operations per 5 minutes](https://docs.microsoft.com/azure/azure-resource-manager/management/request-limits-and-throttling#network-throttling) - whilst the default read timeouts will work for most cases - in larger configurations you may need to set a larger read timeout then the default 5min. Although, we&#39;d generally recommend that you split the resources out into smaller Terraform configurations to avoid the problem entirely.
      */
-    def getCnameRecordPlain(args: Endofunction[com.pulumi.azure.privatedns.inputs.GetCnameRecordPlainArgs.Builder] = scala.Predef.identity):
+    inline def getCnameRecordPlain(args: Endofunction[com.pulumi.azure.privatedns.inputs.GetCnameRecordPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.privatedns.outputs.GetCnameRecordResult] =
       val argsBuilder = com.pulumi.azure.privatedns.inputs.GetCnameRecordPlainArgs.builder
       com.pulumi.azure.privatedns.PrivatednsFunctions.getCnameRecordPlain(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing Private DNS Zone. */
-    def getDnsZone(args: Endofunction[com.pulumi.azure.privatedns.inputs.GetDnsZoneArgs.Builder] = scala.Predef.identity):
+    inline def getDnsZone(args: Endofunction[com.pulumi.azure.privatedns.inputs.GetDnsZoneArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.privatedns.outputs.GetDnsZoneResult] =
       val argsBuilder = com.pulumi.azure.privatedns.inputs.GetDnsZoneArgs.builder
       com.pulumi.azure.privatedns.PrivatednsFunctions.getDnsZone(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing Private DNS Zone. */
-    def getDnsZonePlain(args: Endofunction[com.pulumi.azure.privatedns.inputs.GetDnsZonePlainArgs.Builder] = scala.Predef.identity):
+    inline def getDnsZonePlain(args: Endofunction[com.pulumi.azure.privatedns.inputs.GetDnsZonePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.privatedns.outputs.GetDnsZoneResult] =
       val argsBuilder = com.pulumi.azure.privatedns.inputs.GetDnsZonePlainArgs.builder
       com.pulumi.azure.privatedns.PrivatednsFunctions.getDnsZonePlain(args(argsBuilder).build)
@@ -388,7 +390,7 @@ object privatedns:
      * 
      *  &gt; **Note:** [The Azure DNS API has a throttle limit of 500 read (GET) operations per 5 minutes](https://docs.microsoft.com/azure/azure-resource-manager/management/request-limits-and-throttling#network-throttling) - whilst the default read timeouts will work for most cases - in larger configurations you may need to set a larger read timeout then the default 5min. Although, we&#39;d generally recommend that you split the resources out into smaller Terraform configurations to avoid the problem entirely.
      */
-    def getMxRecord(args: Endofunction[com.pulumi.azure.privatedns.inputs.GetMxRecordArgs.Builder] = scala.Predef.identity):
+    inline def getMxRecord(args: Endofunction[com.pulumi.azure.privatedns.inputs.GetMxRecordArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.privatedns.outputs.GetMxRecordResult] =
       val argsBuilder = com.pulumi.azure.privatedns.inputs.GetMxRecordArgs.builder
       com.pulumi.azure.privatedns.PrivatednsFunctions.getMxRecord(args(argsBuilder).build)
@@ -398,7 +400,7 @@ object privatedns:
      * 
      *  &gt; **Note:** [The Azure DNS API has a throttle limit of 500 read (GET) operations per 5 minutes](https://docs.microsoft.com/azure/azure-resource-manager/management/request-limits-and-throttling#network-throttling) - whilst the default read timeouts will work for most cases - in larger configurations you may need to set a larger read timeout then the default 5min. Although, we&#39;d generally recommend that you split the resources out into smaller Terraform configurations to avoid the problem entirely.
      */
-    def getMxRecordPlain(args: Endofunction[com.pulumi.azure.privatedns.inputs.GetMxRecordPlainArgs.Builder] = scala.Predef.identity):
+    inline def getMxRecordPlain(args: Endofunction[com.pulumi.azure.privatedns.inputs.GetMxRecordPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.privatedns.outputs.GetMxRecordResult] =
       val argsBuilder = com.pulumi.azure.privatedns.inputs.GetMxRecordPlainArgs.builder
       com.pulumi.azure.privatedns.PrivatednsFunctions.getMxRecordPlain(args(argsBuilder).build)
@@ -408,7 +410,7 @@ object privatedns:
      * 
      *  &gt; **Note:** [The Azure DNS API has a throttle limit of 500 read (GET) operations per 5 minutes](https://docs.microsoft.com/azure/azure-resource-manager/management/request-limits-and-throttling#network-throttling) - whilst the default read timeouts will work for most cases - in larger configurations you may need to set a larger read timeout then the default 5min. Although, we&#39;d generally recommend that you split the resources out into smaller Terraform configurations to avoid the problem entirely.
      */
-    def getPtrRecord(args: Endofunction[com.pulumi.azure.privatedns.inputs.GetPtrRecordArgs.Builder] = scala.Predef.identity):
+    inline def getPtrRecord(args: Endofunction[com.pulumi.azure.privatedns.inputs.GetPtrRecordArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.privatedns.outputs.GetPtrRecordResult] =
       val argsBuilder = com.pulumi.azure.privatedns.inputs.GetPtrRecordArgs.builder
       com.pulumi.azure.privatedns.PrivatednsFunctions.getPtrRecord(args(argsBuilder).build)
@@ -418,79 +420,79 @@ object privatedns:
      * 
      *  &gt; **Note:** [The Azure DNS API has a throttle limit of 500 read (GET) operations per 5 minutes](https://docs.microsoft.com/azure/azure-resource-manager/management/request-limits-and-throttling#network-throttling) - whilst the default read timeouts will work for most cases - in larger configurations you may need to set a larger read timeout then the default 5min. Although, we&#39;d generally recommend that you split the resources out into smaller Terraform configurations to avoid the problem entirely.
      */
-    def getPtrRecordPlain(args: Endofunction[com.pulumi.azure.privatedns.inputs.GetPtrRecordPlainArgs.Builder] = scala.Predef.identity):
+    inline def getPtrRecordPlain(args: Endofunction[com.pulumi.azure.privatedns.inputs.GetPtrRecordPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.privatedns.outputs.GetPtrRecordResult] =
       val argsBuilder = com.pulumi.azure.privatedns.inputs.GetPtrRecordPlainArgs.builder
       com.pulumi.azure.privatedns.PrivatednsFunctions.getPtrRecordPlain(args(argsBuilder).build)
 
     /** Gets information about an existing Private DNS Resolver. */
-    def getResolver(args: Endofunction[com.pulumi.azure.privatedns.inputs.GetResolverArgs.Builder] = scala.Predef.identity):
+    inline def getResolver(args: Endofunction[com.pulumi.azure.privatedns.inputs.GetResolverArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.privatedns.outputs.GetResolverResult] =
       val argsBuilder = com.pulumi.azure.privatedns.inputs.GetResolverArgs.builder
       com.pulumi.azure.privatedns.PrivatednsFunctions.getResolver(args(argsBuilder).build)
 
     /** Gets information about an existing Private DNS Resolver. */
-    def getResolverPlain(args: Endofunction[com.pulumi.azure.privatedns.inputs.GetResolverPlainArgs.Builder] = scala.Predef.identity):
+    inline def getResolverPlain(args: Endofunction[com.pulumi.azure.privatedns.inputs.GetResolverPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.privatedns.outputs.GetResolverResult] =
       val argsBuilder = com.pulumi.azure.privatedns.inputs.GetResolverPlainArgs.builder
       com.pulumi.azure.privatedns.PrivatednsFunctions.getResolverPlain(args(argsBuilder).build)
 
     /** Gets information about an existing Private DNS Resolver Dns Forwarding Ruleset. */
-    def getResolverDnsForwardingRuleset(args: Endofunction[com.pulumi.azure.privatedns.inputs.GetResolverDnsForwardingRulesetArgs.Builder] = scala.Predef.identity):
+    inline def getResolverDnsForwardingRuleset(args: Endofunction[com.pulumi.azure.privatedns.inputs.GetResolverDnsForwardingRulesetArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.privatedns.outputs.GetResolverDnsForwardingRulesetResult] =
       val argsBuilder = com.pulumi.azure.privatedns.inputs.GetResolverDnsForwardingRulesetArgs.builder
       com.pulumi.azure.privatedns.PrivatednsFunctions.getResolverDnsForwardingRuleset(args(argsBuilder).build)
 
     /** Gets information about an existing Private DNS Resolver Dns Forwarding Ruleset. */
-    def getResolverDnsForwardingRulesetPlain(args: Endofunction[com.pulumi.azure.privatedns.inputs.GetResolverDnsForwardingRulesetPlainArgs.Builder] = scala.Predef.identity):
+    inline def getResolverDnsForwardingRulesetPlain(args: Endofunction[com.pulumi.azure.privatedns.inputs.GetResolverDnsForwardingRulesetPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.privatedns.outputs.GetResolverDnsForwardingRulesetResult] =
       val argsBuilder = com.pulumi.azure.privatedns.inputs.GetResolverDnsForwardingRulesetPlainArgs.builder
       com.pulumi.azure.privatedns.PrivatednsFunctions.getResolverDnsForwardingRulesetPlain(args(argsBuilder).build)
 
     /** Gets information about an existing Private DNS Resolver Forwarding Rule. */
-    def getResolverForwardingRule(args: Endofunction[com.pulumi.azure.privatedns.inputs.GetResolverForwardingRuleArgs.Builder] = scala.Predef.identity):
+    inline def getResolverForwardingRule(args: Endofunction[com.pulumi.azure.privatedns.inputs.GetResolverForwardingRuleArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.privatedns.outputs.GetResolverForwardingRuleResult] =
       val argsBuilder = com.pulumi.azure.privatedns.inputs.GetResolverForwardingRuleArgs.builder
       com.pulumi.azure.privatedns.PrivatednsFunctions.getResolverForwardingRule(args(argsBuilder).build)
 
     /** Gets information about an existing Private DNS Resolver Forwarding Rule. */
-    def getResolverForwardingRulePlain(args: Endofunction[com.pulumi.azure.privatedns.inputs.GetResolverForwardingRulePlainArgs.Builder] = scala.Predef.identity):
+    inline def getResolverForwardingRulePlain(args: Endofunction[com.pulumi.azure.privatedns.inputs.GetResolverForwardingRulePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.privatedns.outputs.GetResolverForwardingRuleResult] =
       val argsBuilder = com.pulumi.azure.privatedns.inputs.GetResolverForwardingRulePlainArgs.builder
       com.pulumi.azure.privatedns.PrivatednsFunctions.getResolverForwardingRulePlain(args(argsBuilder).build)
 
     /** Gets information about an existing Private DNS Resolver Inbound Endpoint. */
-    def getResolverInboundEndpoint(args: Endofunction[com.pulumi.azure.privatedns.inputs.GetResolverInboundEndpointArgs.Builder] = scala.Predef.identity):
+    inline def getResolverInboundEndpoint(args: Endofunction[com.pulumi.azure.privatedns.inputs.GetResolverInboundEndpointArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.privatedns.outputs.GetResolverInboundEndpointResult] =
       val argsBuilder = com.pulumi.azure.privatedns.inputs.GetResolverInboundEndpointArgs.builder
       com.pulumi.azure.privatedns.PrivatednsFunctions.getResolverInboundEndpoint(args(argsBuilder).build)
 
     /** Gets information about an existing Private DNS Resolver Inbound Endpoint. */
-    def getResolverInboundEndpointPlain(args: Endofunction[com.pulumi.azure.privatedns.inputs.GetResolverInboundEndpointPlainArgs.Builder] = scala.Predef.identity):
+    inline def getResolverInboundEndpointPlain(args: Endofunction[com.pulumi.azure.privatedns.inputs.GetResolverInboundEndpointPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.privatedns.outputs.GetResolverInboundEndpointResult] =
       val argsBuilder = com.pulumi.azure.privatedns.inputs.GetResolverInboundEndpointPlainArgs.builder
       com.pulumi.azure.privatedns.PrivatednsFunctions.getResolverInboundEndpointPlain(args(argsBuilder).build)
 
     /** Gets information about an existing Private DNS Resolver Outbound Endpoint. */
-    def getResolverOutboundEndpoint(args: Endofunction[com.pulumi.azure.privatedns.inputs.GetResolverOutboundEndpointArgs.Builder] = scala.Predef.identity):
+    inline def getResolverOutboundEndpoint(args: Endofunction[com.pulumi.azure.privatedns.inputs.GetResolverOutboundEndpointArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.privatedns.outputs.GetResolverOutboundEndpointResult] =
       val argsBuilder = com.pulumi.azure.privatedns.inputs.GetResolverOutboundEndpointArgs.builder
       com.pulumi.azure.privatedns.PrivatednsFunctions.getResolverOutboundEndpoint(args(argsBuilder).build)
 
     /** Gets information about an existing Private DNS Resolver Outbound Endpoint. */
-    def getResolverOutboundEndpointPlain(args: Endofunction[com.pulumi.azure.privatedns.inputs.GetResolverOutboundEndpointPlainArgs.Builder] = scala.Predef.identity):
+    inline def getResolverOutboundEndpointPlain(args: Endofunction[com.pulumi.azure.privatedns.inputs.GetResolverOutboundEndpointPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.privatedns.outputs.GetResolverOutboundEndpointResult] =
       val argsBuilder = com.pulumi.azure.privatedns.inputs.GetResolverOutboundEndpointPlainArgs.builder
       com.pulumi.azure.privatedns.PrivatednsFunctions.getResolverOutboundEndpointPlain(args(argsBuilder).build)
 
     /** Gets information about an existing Private DNS Resolver Virtual Network Link. */
-    def getResolverVirtualNetworkLink(args: Endofunction[com.pulumi.azure.privatedns.inputs.GetResolverVirtualNetworkLinkArgs.Builder] = scala.Predef.identity):
+    inline def getResolverVirtualNetworkLink(args: Endofunction[com.pulumi.azure.privatedns.inputs.GetResolverVirtualNetworkLinkArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.privatedns.outputs.GetResolverVirtualNetworkLinkResult] =
       val argsBuilder = com.pulumi.azure.privatedns.inputs.GetResolverVirtualNetworkLinkArgs.builder
       com.pulumi.azure.privatedns.PrivatednsFunctions.getResolverVirtualNetworkLink(args(argsBuilder).build)
 
     /** Gets information about an existing Private DNS Resolver Virtual Network Link. */
-    def getResolverVirtualNetworkLinkPlain(args: Endofunction[com.pulumi.azure.privatedns.inputs.GetResolverVirtualNetworkLinkPlainArgs.Builder] = scala.Predef.identity):
+    inline def getResolverVirtualNetworkLinkPlain(args: Endofunction[com.pulumi.azure.privatedns.inputs.GetResolverVirtualNetworkLinkPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.privatedns.outputs.GetResolverVirtualNetworkLinkResult] =
       val argsBuilder = com.pulumi.azure.privatedns.inputs.GetResolverVirtualNetworkLinkPlainArgs.builder
       com.pulumi.azure.privatedns.PrivatednsFunctions.getResolverVirtualNetworkLinkPlain(args(argsBuilder).build)
@@ -500,7 +502,7 @@ object privatedns:
      * 
      *  &gt; **Note:** [The Azure DNS API has a throttle limit of 500 read (GET) operations per 5 minutes](https://docs.microsoft.com/azure/azure-resource-manager/management/request-limits-and-throttling#network-throttling) - whilst the default read timeouts will work for most cases - in larger configurations you may need to set a larger read timeout then the default 5min. Although, we&#39;d generally recommend that you split the resources out into smaller Terraform configurations to avoid the problem entirely.
      */
-    def getSoaRecord(args: Endofunction[com.pulumi.azure.privatedns.inputs.GetSoaRecordArgs.Builder] = scala.Predef.identity):
+    inline def getSoaRecord(args: Endofunction[com.pulumi.azure.privatedns.inputs.GetSoaRecordArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.privatedns.outputs.GetSoaRecordResult] =
       val argsBuilder = com.pulumi.azure.privatedns.inputs.GetSoaRecordArgs.builder
       com.pulumi.azure.privatedns.PrivatednsFunctions.getSoaRecord(args(argsBuilder).build)
@@ -510,7 +512,7 @@ object privatedns:
      * 
      *  &gt; **Note:** [The Azure DNS API has a throttle limit of 500 read (GET) operations per 5 minutes](https://docs.microsoft.com/azure/azure-resource-manager/management/request-limits-and-throttling#network-throttling) - whilst the default read timeouts will work for most cases - in larger configurations you may need to set a larger read timeout then the default 5min. Although, we&#39;d generally recommend that you split the resources out into smaller Terraform configurations to avoid the problem entirely.
      */
-    def getSoaRecordPlain(args: Endofunction[com.pulumi.azure.privatedns.inputs.GetSoaRecordPlainArgs.Builder] = scala.Predef.identity):
+    inline def getSoaRecordPlain(args: Endofunction[com.pulumi.azure.privatedns.inputs.GetSoaRecordPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.privatedns.outputs.GetSoaRecordResult] =
       val argsBuilder = com.pulumi.azure.privatedns.inputs.GetSoaRecordPlainArgs.builder
       com.pulumi.azure.privatedns.PrivatednsFunctions.getSoaRecordPlain(args(argsBuilder).build)
@@ -520,7 +522,7 @@ object privatedns:
      * 
      *  &gt; **Note:** [The Azure DNS API has a throttle limit of 500 read (GET) operations per 5 minutes](https://docs.microsoft.com/azure/azure-resource-manager/management/request-limits-and-throttling#network-throttling) - whilst the default read timeouts will work for most cases - in larger configurations you may need to set a larger read timeout then the default 5min. Although, we&#39;d generally recommend that you split the resources out into smaller Terraform configurations to avoid the problem entirely.
      */
-    def getSrvRecord(args: Endofunction[com.pulumi.azure.privatedns.inputs.GetSrvRecordArgs.Builder] = scala.Predef.identity):
+    inline def getSrvRecord(args: Endofunction[com.pulumi.azure.privatedns.inputs.GetSrvRecordArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.privatedns.outputs.GetSrvRecordResult] =
       val argsBuilder = com.pulumi.azure.privatedns.inputs.GetSrvRecordArgs.builder
       com.pulumi.azure.privatedns.PrivatednsFunctions.getSrvRecord(args(argsBuilder).build)
@@ -530,7 +532,7 @@ object privatedns:
      * 
      *  &gt; **Note:** [The Azure DNS API has a throttle limit of 500 read (GET) operations per 5 minutes](https://docs.microsoft.com/azure/azure-resource-manager/management/request-limits-and-throttling#network-throttling) - whilst the default read timeouts will work for most cases - in larger configurations you may need to set a larger read timeout then the default 5min. Although, we&#39;d generally recommend that you split the resources out into smaller Terraform configurations to avoid the problem entirely.
      */
-    def getSrvRecordPlain(args: Endofunction[com.pulumi.azure.privatedns.inputs.GetSrvRecordPlainArgs.Builder] = scala.Predef.identity):
+    inline def getSrvRecordPlain(args: Endofunction[com.pulumi.azure.privatedns.inputs.GetSrvRecordPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.privatedns.outputs.GetSrvRecordResult] =
       val argsBuilder = com.pulumi.azure.privatedns.inputs.GetSrvRecordPlainArgs.builder
       com.pulumi.azure.privatedns.PrivatednsFunctions.getSrvRecordPlain(args(argsBuilder).build)
@@ -540,7 +542,7 @@ object privatedns:
      * 
      *  &gt; **Note:** [The Azure DNS API has a throttle limit of 500 read (GET) operations per 5 minutes](https://docs.microsoft.com/azure/azure-resource-manager/management/request-limits-and-throttling#network-throttling) - whilst the default read timeouts will work for most cases - in larger configurations you may need to set a larger read timeout then the default 5min. Although, we&#39;d generally recommend that you split the resources out into smaller Terraform configurations to avoid the problem entirely.
      */
-    def getTxtRecord(args: Endofunction[com.pulumi.azure.privatedns.inputs.GetTxtRecordArgs.Builder] = scala.Predef.identity):
+    inline def getTxtRecord(args: Endofunction[com.pulumi.azure.privatedns.inputs.GetTxtRecordArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.privatedns.outputs.GetTxtRecordResult] =
       val argsBuilder = com.pulumi.azure.privatedns.inputs.GetTxtRecordArgs.builder
       com.pulumi.azure.privatedns.PrivatednsFunctions.getTxtRecord(args(argsBuilder).build)
@@ -550,19 +552,19 @@ object privatedns:
      * 
      *  &gt; **Note:** [The Azure DNS API has a throttle limit of 500 read (GET) operations per 5 minutes](https://docs.microsoft.com/azure/azure-resource-manager/management/request-limits-and-throttling#network-throttling) - whilst the default read timeouts will work for most cases - in larger configurations you may need to set a larger read timeout then the default 5min. Although, we&#39;d generally recommend that you split the resources out into smaller Terraform configurations to avoid the problem entirely.
      */
-    def getTxtRecordPlain(args: Endofunction[com.pulumi.azure.privatedns.inputs.GetTxtRecordPlainArgs.Builder] = scala.Predef.identity):
+    inline def getTxtRecordPlain(args: Endofunction[com.pulumi.azure.privatedns.inputs.GetTxtRecordPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.privatedns.outputs.GetTxtRecordResult] =
       val argsBuilder = com.pulumi.azure.privatedns.inputs.GetTxtRecordPlainArgs.builder
       com.pulumi.azure.privatedns.PrivatednsFunctions.getTxtRecordPlain(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing Private DNS zone Virtual Network Link. These Links enable DNS resolution and registration inside Azure Virtual Networks using Azure Private DNS. */
-    def getZoneVirtualNetworkLink(args: Endofunction[com.pulumi.azure.privatedns.inputs.GetZoneVirtualNetworkLinkArgs.Builder] = scala.Predef.identity):
+    inline def getZoneVirtualNetworkLink(args: Endofunction[com.pulumi.azure.privatedns.inputs.GetZoneVirtualNetworkLinkArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.privatedns.outputs.GetZoneVirtualNetworkLinkResult] =
       val argsBuilder = com.pulumi.azure.privatedns.inputs.GetZoneVirtualNetworkLinkArgs.builder
       com.pulumi.azure.privatedns.PrivatednsFunctions.getZoneVirtualNetworkLink(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing Private DNS zone Virtual Network Link. These Links enable DNS resolution and registration inside Azure Virtual Networks using Azure Private DNS. */
-    def getZoneVirtualNetworkLinkPlain(args: Endofunction[com.pulumi.azure.privatedns.inputs.GetZoneVirtualNetworkLinkPlainArgs.Builder] = scala.Predef.identity):
+    inline def getZoneVirtualNetworkLinkPlain(args: Endofunction[com.pulumi.azure.privatedns.inputs.GetZoneVirtualNetworkLinkPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.privatedns.outputs.GetZoneVirtualNetworkLinkResult] =
       val argsBuilder = com.pulumi.azure.privatedns.inputs.GetZoneVirtualNetworkLinkPlainArgs.builder
       com.pulumi.azure.privatedns.PrivatednsFunctions.getZoneVirtualNetworkLinkPlain(args(argsBuilder).build)

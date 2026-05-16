@@ -83,31 +83,33 @@ object backup:
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
-  type BackupFunctions = com.pulumi.azure.backup.BackupFunctions
   object BackupFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.azure.backup.BackupFunctions.*
-  extension (self: BackupFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /** Use this data source to access information about an existing File Share Backup Policy. */
-    def getPolicyFileshare(args: Endofunction[com.pulumi.azure.backup.inputs.GetPolicyFileshareArgs.Builder] = scala.Predef.identity):
+    inline def getPolicyFileshare(args: Endofunction[com.pulumi.azure.backup.inputs.GetPolicyFileshareArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.backup.outputs.GetPolicyFileshareResult] =
       val argsBuilder = com.pulumi.azure.backup.inputs.GetPolicyFileshareArgs.builder
       com.pulumi.azure.backup.BackupFunctions.getPolicyFileshare(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing File Share Backup Policy. */
-    def getPolicyFilesharePlain(args: Endofunction[com.pulumi.azure.backup.inputs.GetPolicyFilesharePlainArgs.Builder] = scala.Predef.identity):
+    inline def getPolicyFilesharePlain(args: Endofunction[com.pulumi.azure.backup.inputs.GetPolicyFilesharePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.backup.outputs.GetPolicyFileshareResult] =
       val argsBuilder = com.pulumi.azure.backup.inputs.GetPolicyFilesharePlainArgs.builder
       com.pulumi.azure.backup.BackupFunctions.getPolicyFilesharePlain(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing VM Backup Policy. */
-    def getPolicyVM(args: Endofunction[com.pulumi.azure.backup.inputs.GetPolicyVMArgs.Builder] = scala.Predef.identity):
+    inline def getPolicyVM(args: Endofunction[com.pulumi.azure.backup.inputs.GetPolicyVMArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.backup.outputs.GetPolicyVMResult] =
       val argsBuilder = com.pulumi.azure.backup.inputs.GetPolicyVMArgs.builder
       com.pulumi.azure.backup.BackupFunctions.getPolicyVM(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing VM Backup Policy. */
-    def getPolicyVMPlain(args: Endofunction[com.pulumi.azure.backup.inputs.GetPolicyVMPlainArgs.Builder] = scala.Predef.identity):
+    inline def getPolicyVMPlain(args: Endofunction[com.pulumi.azure.backup.inputs.GetPolicyVMPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.backup.outputs.GetPolicyVMResult] =
       val argsBuilder = com.pulumi.azure.backup.inputs.GetPolicyVMPlainArgs.builder
       com.pulumi.azure.backup.BackupFunctions.getPolicyVMPlain(args(argsBuilder).build)

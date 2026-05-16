@@ -4,19 +4,21 @@ package azure
 import com.pulumi.resources.CustomResourceOptions
 
 object waf:
-  type WafFunctions = com.pulumi.azure.waf.WafFunctions
   object WafFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.azure.waf.WafFunctions.*
-  extension (self: WafFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /** Use this data source to access information about an existing Web Application Firewall Policy. */
-    def getFirewallPolicy(args: Endofunction[com.pulumi.azure.waf.inputs.GetFirewallPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getFirewallPolicy(args: Endofunction[com.pulumi.azure.waf.inputs.GetFirewallPolicyArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.waf.outputs.GetFirewallPolicyResult] =
       val argsBuilder = com.pulumi.azure.waf.inputs.GetFirewallPolicyArgs.builder
       com.pulumi.azure.waf.WafFunctions.getFirewallPolicy(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing Web Application Firewall Policy. */
-    def getFirewallPolicyPlain(args: Endofunction[com.pulumi.azure.waf.inputs.GetFirewallPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getFirewallPolicyPlain(args: Endofunction[com.pulumi.azure.waf.inputs.GetFirewallPolicyPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.waf.outputs.GetFirewallPolicyResult] =
       val argsBuilder = com.pulumi.azure.waf.inputs.GetFirewallPolicyPlainArgs.builder
       com.pulumi.azure.waf.WafFunctions.getFirewallPolicyPlain(args(argsBuilder).build)

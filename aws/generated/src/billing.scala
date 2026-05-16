@@ -23,19 +23,21 @@ object billing:
         com.pulumi.aws.billing.ViewArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
 
-  type BillingFunctions = com.pulumi.aws.billing.BillingFunctions
   object BillingFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.aws.billing.BillingFunctions.*
-  extension (self: BillingFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /** Provides details about an AWS Billing Views. */
-    def getViews(args: Endofunction[com.pulumi.aws.billing.inputs.GetViewsArgs.Builder] = scala.Predef.identity):
+    inline def getViews(args: Endofunction[com.pulumi.aws.billing.inputs.GetViewsArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.billing.outputs.GetViewsResult] =
       val argsBuilder = com.pulumi.aws.billing.inputs.GetViewsArgs.builder
       com.pulumi.aws.billing.BillingFunctions.getViews(args(argsBuilder).build)
 
     /** Provides details about an AWS Billing Views. */
-    def getViewsPlain(args: Endofunction[com.pulumi.aws.billing.inputs.GetViewsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getViewsPlain(args: Endofunction[com.pulumi.aws.billing.inputs.GetViewsPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.billing.outputs.GetViewsResult] =
       val argsBuilder = com.pulumi.aws.billing.inputs.GetViewsPlainArgs.builder
       com.pulumi.aws.billing.BillingFunctions.getViewsPlain(args(argsBuilder).build)

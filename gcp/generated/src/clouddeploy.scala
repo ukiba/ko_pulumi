@@ -238,43 +238,45 @@ object clouddeploy:
       val argsBuilder = com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
 
-  type ClouddeployFunctions = com.pulumi.gcp.clouddeploy.ClouddeployFunctions
   object ClouddeployFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.gcp.clouddeploy.ClouddeployFunctions.*
-  extension (self: ClouddeployFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /** Retrieves the current IAM policy data for customtargettype */
-    def getCustomTargetTypeIamPolicy(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.GetCustomTargetTypeIamPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getCustomTargetTypeIamPolicy(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.GetCustomTargetTypeIamPolicyArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.clouddeploy.outputs.GetCustomTargetTypeIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.clouddeploy.inputs.GetCustomTargetTypeIamPolicyArgs.builder
       com.pulumi.gcp.clouddeploy.ClouddeployFunctions.getCustomTargetTypeIamPolicy(args(argsBuilder).build)
 
     /** Retrieves the current IAM policy data for customtargettype */
-    def getCustomTargetTypeIamPolicyPlain(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.GetCustomTargetTypeIamPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getCustomTargetTypeIamPolicyPlain(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.GetCustomTargetTypeIamPolicyPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.clouddeploy.outputs.GetCustomTargetTypeIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.clouddeploy.inputs.GetCustomTargetTypeIamPolicyPlainArgs.builder
       com.pulumi.gcp.clouddeploy.ClouddeployFunctions.getCustomTargetTypeIamPolicyPlain(args(argsBuilder).build)
 
     /** Retrieves the current IAM policy data for deliverypipeline */
-    def getDeliveryPipelineIamPolicy(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.GetDeliveryPipelineIamPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getDeliveryPipelineIamPolicy(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.GetDeliveryPipelineIamPolicyArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.clouddeploy.outputs.GetDeliveryPipelineIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.clouddeploy.inputs.GetDeliveryPipelineIamPolicyArgs.builder
       com.pulumi.gcp.clouddeploy.ClouddeployFunctions.getDeliveryPipelineIamPolicy(args(argsBuilder).build)
 
     /** Retrieves the current IAM policy data for deliverypipeline */
-    def getDeliveryPipelineIamPolicyPlain(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.GetDeliveryPipelineIamPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getDeliveryPipelineIamPolicyPlain(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.GetDeliveryPipelineIamPolicyPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.clouddeploy.outputs.GetDeliveryPipelineIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.clouddeploy.inputs.GetDeliveryPipelineIamPolicyPlainArgs.builder
       com.pulumi.gcp.clouddeploy.ClouddeployFunctions.getDeliveryPipelineIamPolicyPlain(args(argsBuilder).build)
 
     /** Retrieves the current IAM policy data for target */
-    def getTargetIamPolicy(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.GetTargetIamPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getTargetIamPolicy(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.GetTargetIamPolicyArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.clouddeploy.outputs.GetTargetIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.clouddeploy.inputs.GetTargetIamPolicyArgs.builder
       com.pulumi.gcp.clouddeploy.ClouddeployFunctions.getTargetIamPolicy(args(argsBuilder).build)
 
     /** Retrieves the current IAM policy data for target */
-    def getTargetIamPolicyPlain(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.GetTargetIamPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getTargetIamPolicyPlain(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.GetTargetIamPolicyPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.clouddeploy.outputs.GetTargetIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.clouddeploy.inputs.GetTargetIamPolicyPlainArgs.builder
       com.pulumi.gcp.clouddeploy.ClouddeployFunctions.getTargetIamPolicyPlain(args(argsBuilder).build)

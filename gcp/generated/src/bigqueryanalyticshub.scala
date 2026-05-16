@@ -4,31 +4,33 @@ package gcp
 import com.pulumi.resources.CustomResourceOptions
 
 object bigqueryanalyticshub:
-  type BigqueryanalyticshubFunctions = com.pulumi.gcp.bigqueryanalyticshub.BigqueryanalyticshubFunctions
   object BigqueryanalyticshubFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.gcp.bigqueryanalyticshub.BigqueryanalyticshubFunctions.*
-  extension (self: BigqueryanalyticshubFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /** Retrieves the current IAM policy data for dataexchange */
-    def getDataExchangeIamPolicy(args: Endofunction[com.pulumi.gcp.bigqueryanalyticshub.inputs.GetDataExchangeIamPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getDataExchangeIamPolicy(args: Endofunction[com.pulumi.gcp.bigqueryanalyticshub.inputs.GetDataExchangeIamPolicyArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.bigqueryanalyticshub.outputs.GetDataExchangeIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.bigqueryanalyticshub.inputs.GetDataExchangeIamPolicyArgs.builder
       com.pulumi.gcp.bigqueryanalyticshub.BigqueryanalyticshubFunctions.getDataExchangeIamPolicy(args(argsBuilder).build)
 
     /** Retrieves the current IAM policy data for dataexchange */
-    def getDataExchangeIamPolicyPlain(args: Endofunction[com.pulumi.gcp.bigqueryanalyticshub.inputs.GetDataExchangeIamPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getDataExchangeIamPolicyPlain(args: Endofunction[com.pulumi.gcp.bigqueryanalyticshub.inputs.GetDataExchangeIamPolicyPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.bigqueryanalyticshub.outputs.GetDataExchangeIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.bigqueryanalyticshub.inputs.GetDataExchangeIamPolicyPlainArgs.builder
       com.pulumi.gcp.bigqueryanalyticshub.BigqueryanalyticshubFunctions.getDataExchangeIamPolicyPlain(args(argsBuilder).build)
 
     /** Retrieves the current IAM policy data for listing */
-    def getListingIamPolicy(args: Endofunction[com.pulumi.gcp.bigqueryanalyticshub.inputs.GetListingIamPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getListingIamPolicy(args: Endofunction[com.pulumi.gcp.bigqueryanalyticshub.inputs.GetListingIamPolicyArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.bigqueryanalyticshub.outputs.GetListingIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.bigqueryanalyticshub.inputs.GetListingIamPolicyArgs.builder
       com.pulumi.gcp.bigqueryanalyticshub.BigqueryanalyticshubFunctions.getListingIamPolicy(args(argsBuilder).build)
 
     /** Retrieves the current IAM policy data for listing */
-    def getListingIamPolicyPlain(args: Endofunction[com.pulumi.gcp.bigqueryanalyticshub.inputs.GetListingIamPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getListingIamPolicyPlain(args: Endofunction[com.pulumi.gcp.bigqueryanalyticshub.inputs.GetListingIamPolicyPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.bigqueryanalyticshub.outputs.GetListingIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.bigqueryanalyticshub.inputs.GetListingIamPolicyPlainArgs.builder
       com.pulumi.gcp.bigqueryanalyticshub.BigqueryanalyticshubFunctions.getListingIamPolicyPlain(args(argsBuilder).build)

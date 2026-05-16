@@ -140,43 +140,45 @@ object vpc:
         com.pulumi.aws.vpc.RouteServerArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
 
-  type VpcFunctions = com.pulumi.aws.vpc.VpcFunctions
   object VpcFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.aws.vpc.VpcFunctions.*
-  extension (self: VpcFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /** Data source for managing an AWS EC2 (Elastic Compute Cloud) Vpc Endpoint Associations. */
-    def getEndpointAssociations(args: Endofunction[com.pulumi.aws.vpc.inputs.GetEndpointAssociationsArgs.Builder] = scala.Predef.identity):
+    inline def getEndpointAssociations(args: Endofunction[com.pulumi.aws.vpc.inputs.GetEndpointAssociationsArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.vpc.outputs.GetEndpointAssociationsResult] =
       val argsBuilder = com.pulumi.aws.vpc.inputs.GetEndpointAssociationsArgs.builder
       com.pulumi.aws.vpc.VpcFunctions.getEndpointAssociations(args(argsBuilder).build)
 
     /** Data source for managing an AWS EC2 (Elastic Compute Cloud) Vpc Endpoint Associations. */
-    def getEndpointAssociationsPlain(args: Endofunction[com.pulumi.aws.vpc.inputs.GetEndpointAssociationsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getEndpointAssociationsPlain(args: Endofunction[com.pulumi.aws.vpc.inputs.GetEndpointAssociationsPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.vpc.outputs.GetEndpointAssociationsResult] =
       val argsBuilder = com.pulumi.aws.vpc.inputs.GetEndpointAssociationsPlainArgs.builder
       com.pulumi.aws.vpc.VpcFunctions.getEndpointAssociationsPlain(args(argsBuilder).build)
 
     /** `aws.vpc.getSecurityGroupRule` provides details about a specific security group rule. */
-    def getSecurityGroupRule(args: Endofunction[com.pulumi.aws.vpc.inputs.GetSecurityGroupRuleArgs.Builder] = scala.Predef.identity):
+    inline def getSecurityGroupRule(args: Endofunction[com.pulumi.aws.vpc.inputs.GetSecurityGroupRuleArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.vpc.outputs.GetSecurityGroupRuleResult] =
       val argsBuilder = com.pulumi.aws.vpc.inputs.GetSecurityGroupRuleArgs.builder
       com.pulumi.aws.vpc.VpcFunctions.getSecurityGroupRule(args(argsBuilder).build)
 
     /** `aws.vpc.getSecurityGroupRule` provides details about a specific security group rule. */
-    def getSecurityGroupRulePlain(args: Endofunction[com.pulumi.aws.vpc.inputs.GetSecurityGroupRulePlainArgs.Builder] = scala.Predef.identity):
+    inline def getSecurityGroupRulePlain(args: Endofunction[com.pulumi.aws.vpc.inputs.GetSecurityGroupRulePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.vpc.outputs.GetSecurityGroupRuleResult] =
       val argsBuilder = com.pulumi.aws.vpc.inputs.GetSecurityGroupRulePlainArgs.builder
       com.pulumi.aws.vpc.VpcFunctions.getSecurityGroupRulePlain(args(argsBuilder).build)
 
     /** This resource can be useful for getting back a set of security group rule IDs. */
-    def getSecurityGroupRules(args: Endofunction[com.pulumi.aws.vpc.inputs.GetSecurityGroupRulesArgs.Builder] = scala.Predef.identity):
+    inline def getSecurityGroupRules(args: Endofunction[com.pulumi.aws.vpc.inputs.GetSecurityGroupRulesArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.vpc.outputs.GetSecurityGroupRulesResult] =
       val argsBuilder = com.pulumi.aws.vpc.inputs.GetSecurityGroupRulesArgs.builder
       com.pulumi.aws.vpc.VpcFunctions.getSecurityGroupRules(args(argsBuilder).build)
 
     /** This resource can be useful for getting back a set of security group rule IDs. */
-    def getSecurityGroupRulesPlain(args: Endofunction[com.pulumi.aws.vpc.inputs.GetSecurityGroupRulesPlainArgs.Builder] = scala.Predef.identity):
+    inline def getSecurityGroupRulesPlain(args: Endofunction[com.pulumi.aws.vpc.inputs.GetSecurityGroupRulesPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.vpc.outputs.GetSecurityGroupRulesResult] =
       val argsBuilder = com.pulumi.aws.vpc.inputs.GetSecurityGroupRulesPlainArgs.builder
       com.pulumi.aws.vpc.VpcFunctions.getSecurityGroupRulesPlain(args(argsBuilder).build)

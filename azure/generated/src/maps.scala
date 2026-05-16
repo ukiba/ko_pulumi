@@ -50,19 +50,21 @@ object maps:
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
-  type MapsFunctions = com.pulumi.azure.maps.MapsFunctions
   object MapsFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.azure.maps.MapsFunctions.*
-  extension (self: MapsFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /** Use this data source to access information about an existing Azure Maps Account. */
-    def getAccount(args: Endofunction[com.pulumi.azure.maps.inputs.GetAccountArgs.Builder] = scala.Predef.identity):
+    inline def getAccount(args: Endofunction[com.pulumi.azure.maps.inputs.GetAccountArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.maps.outputs.GetAccountResult] =
       val argsBuilder = com.pulumi.azure.maps.inputs.GetAccountArgs.builder
       com.pulumi.azure.maps.MapsFunctions.getAccount(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing Azure Maps Account. */
-    def getAccountPlain(args: Endofunction[com.pulumi.azure.maps.inputs.GetAccountPlainArgs.Builder] = scala.Predef.identity):
+    inline def getAccountPlain(args: Endofunction[com.pulumi.azure.maps.inputs.GetAccountPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.maps.outputs.GetAccountResult] =
       val argsBuilder = com.pulumi.azure.maps.inputs.GetAccountPlainArgs.builder
       com.pulumi.azure.maps.MapsFunctions.getAccountPlain(args(argsBuilder).build)

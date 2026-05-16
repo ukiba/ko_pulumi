@@ -59,19 +59,21 @@ object paloalto:
         com.pulumi.azure.paloalto.NextGenerationFirewallVirtualNetworkStrataCloudManagerArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
 
-  type PaloaltoFunctions = com.pulumi.azure.paloalto.PaloaltoFunctions
   object PaloaltoFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.azure.paloalto.PaloaltoFunctions.*
-  extension (self: PaloaltoFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /** Use this data source to access information about an existing Palo Alto Networks Rulestack. */
-    def getLocalRulestack(args: Endofunction[com.pulumi.azure.paloalto.inputs.GetLocalRulestackArgs.Builder] = scala.Predef.identity):
+    inline def getLocalRulestack(args: Endofunction[com.pulumi.azure.paloalto.inputs.GetLocalRulestackArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.paloalto.outputs.GetLocalRulestackResult] =
       val argsBuilder = com.pulumi.azure.paloalto.inputs.GetLocalRulestackArgs.builder
       com.pulumi.azure.paloalto.PaloaltoFunctions.getLocalRulestack(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing Palo Alto Networks Rulestack. */
-    def getLocalRulestackPlain(args: Endofunction[com.pulumi.azure.paloalto.inputs.GetLocalRulestackPlainArgs.Builder] = scala.Predef.identity):
+    inline def getLocalRulestackPlain(args: Endofunction[com.pulumi.azure.paloalto.inputs.GetLocalRulestackPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.paloalto.outputs.GetLocalRulestackResult] =
       val argsBuilder = com.pulumi.azure.paloalto.inputs.GetLocalRulestackPlainArgs.builder
       com.pulumi.azure.paloalto.PaloaltoFunctions.getLocalRulestackPlain(args(argsBuilder).build)

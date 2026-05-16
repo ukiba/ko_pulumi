@@ -18,19 +18,21 @@ object databoxedge:
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
-  type DataboxedgeFunctions = com.pulumi.azure.databoxedge.DataboxedgeFunctions
   object DataboxedgeFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.azure.databoxedge.DataboxedgeFunctions.*
-  extension (self: DataboxedgeFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /** Get information about a Databox Edge Device. */
-    def getDevice(args: Endofunction[com.pulumi.azure.databoxedge.inputs.GetDeviceArgs.Builder] = scala.Predef.identity):
+    inline def getDevice(args: Endofunction[com.pulumi.azure.databoxedge.inputs.GetDeviceArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.databoxedge.outputs.GetDeviceResult] =
       val argsBuilder = com.pulumi.azure.databoxedge.inputs.GetDeviceArgs.builder
       com.pulumi.azure.databoxedge.DataboxedgeFunctions.getDevice(args(argsBuilder).build)
 
     /** Get information about a Databox Edge Device. */
-    def getDevicePlain(args: Endofunction[com.pulumi.azure.databoxedge.inputs.GetDevicePlainArgs.Builder] = scala.Predef.identity):
+    inline def getDevicePlain(args: Endofunction[com.pulumi.azure.databoxedge.inputs.GetDevicePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.databoxedge.outputs.GetDeviceResult] =
       val argsBuilder = com.pulumi.azure.databoxedge.inputs.GetDevicePlainArgs.builder
       com.pulumi.azure.databoxedge.DataboxedgeFunctions.getDevicePlain(args(argsBuilder).build)

@@ -54,31 +54,33 @@ object codeartifact:
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
-  type CodeartifactFunctions = com.pulumi.aws.codeartifact.CodeartifactFunctions
   object CodeartifactFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.aws.codeartifact.CodeartifactFunctions.*
-  extension (self: CodeartifactFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /** The CodeArtifact Authorization Token data source generates a temporary authentication token for accessing repositories in a CodeArtifact domain. */
-    def getAuthorizationToken(args: Endofunction[com.pulumi.aws.codeartifact.inputs.GetAuthorizationTokenArgs.Builder] = scala.Predef.identity):
+    inline def getAuthorizationToken(args: Endofunction[com.pulumi.aws.codeartifact.inputs.GetAuthorizationTokenArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.codeartifact.outputs.GetAuthorizationTokenResult] =
       val argsBuilder = com.pulumi.aws.codeartifact.inputs.GetAuthorizationTokenArgs.builder
       com.pulumi.aws.codeartifact.CodeartifactFunctions.getAuthorizationToken(args(argsBuilder).build)
 
     /** The CodeArtifact Authorization Token data source generates a temporary authentication token for accessing repositories in a CodeArtifact domain. */
-    def getAuthorizationTokenPlain(args: Endofunction[com.pulumi.aws.codeartifact.inputs.GetAuthorizationTokenPlainArgs.Builder] = scala.Predef.identity):
+    inline def getAuthorizationTokenPlain(args: Endofunction[com.pulumi.aws.codeartifact.inputs.GetAuthorizationTokenPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.codeartifact.outputs.GetAuthorizationTokenResult] =
       val argsBuilder = com.pulumi.aws.codeartifact.inputs.GetAuthorizationTokenPlainArgs.builder
       com.pulumi.aws.codeartifact.CodeartifactFunctions.getAuthorizationTokenPlain(args(argsBuilder).build)
 
     /** The CodeArtifact Repository Endpoint data source returns the endpoint of a repository for a specific package format. */
-    def getRepositoryEndpoint(args: Endofunction[com.pulumi.aws.codeartifact.inputs.GetRepositoryEndpointArgs.Builder] = scala.Predef.identity):
+    inline def getRepositoryEndpoint(args: Endofunction[com.pulumi.aws.codeartifact.inputs.GetRepositoryEndpointArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.codeartifact.outputs.GetRepositoryEndpointResult] =
       val argsBuilder = com.pulumi.aws.codeartifact.inputs.GetRepositoryEndpointArgs.builder
       com.pulumi.aws.codeartifact.CodeartifactFunctions.getRepositoryEndpoint(args(argsBuilder).build)
 
     /** The CodeArtifact Repository Endpoint data source returns the endpoint of a repository for a specific package format. */
-    def getRepositoryEndpointPlain(args: Endofunction[com.pulumi.aws.codeartifact.inputs.GetRepositoryEndpointPlainArgs.Builder] = scala.Predef.identity):
+    inline def getRepositoryEndpointPlain(args: Endofunction[com.pulumi.aws.codeartifact.inputs.GetRepositoryEndpointPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.codeartifact.outputs.GetRepositoryEndpointResult] =
       val argsBuilder = com.pulumi.aws.codeartifact.inputs.GetRepositoryEndpointPlainArgs.builder
       com.pulumi.aws.codeartifact.CodeartifactFunctions.getRepositoryEndpointPlain(args(argsBuilder).build)

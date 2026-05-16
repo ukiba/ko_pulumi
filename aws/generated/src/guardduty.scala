@@ -132,31 +132,33 @@ object guardduty:
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
-  type GuarddutyFunctions = com.pulumi.aws.guardduty.GuarddutyFunctions
   object GuarddutyFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.aws.guardduty.GuarddutyFunctions.*
-  extension (self: GuarddutyFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /** Retrieve information about a GuardDuty detector. */
-    def getDetector(args: Endofunction[com.pulumi.aws.guardduty.inputs.GetDetectorArgs.Builder] = scala.Predef.identity):
+    inline def getDetector(args: Endofunction[com.pulumi.aws.guardduty.inputs.GetDetectorArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.guardduty.outputs.GetDetectorResult] =
       val argsBuilder = com.pulumi.aws.guardduty.inputs.GetDetectorArgs.builder
       com.pulumi.aws.guardduty.GuarddutyFunctions.getDetector(args(argsBuilder).build)
 
     /** Retrieve information about a GuardDuty detector. */
-    def getDetectorPlain(args: Endofunction[com.pulumi.aws.guardduty.inputs.GetDetectorPlainArgs.Builder] = scala.Predef.identity):
+    inline def getDetectorPlain(args: Endofunction[com.pulumi.aws.guardduty.inputs.GetDetectorPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.guardduty.outputs.GetDetectorResult] =
       val argsBuilder = com.pulumi.aws.guardduty.inputs.GetDetectorPlainArgs.builder
       com.pulumi.aws.guardduty.GuarddutyFunctions.getDetectorPlain(args(argsBuilder).build)
 
     /** Data source for managing an AWS GuardDuty Finding Ids. */
-    def getFindingIds(args: Endofunction[com.pulumi.aws.guardduty.inputs.GetFindingIdsArgs.Builder] = scala.Predef.identity):
+    inline def getFindingIds(args: Endofunction[com.pulumi.aws.guardduty.inputs.GetFindingIdsArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.guardduty.outputs.GetFindingIdsResult] =
       val argsBuilder = com.pulumi.aws.guardduty.inputs.GetFindingIdsArgs.builder
       com.pulumi.aws.guardduty.GuarddutyFunctions.getFindingIds(args(argsBuilder).build)
 
     /** Data source for managing an AWS GuardDuty Finding Ids. */
-    def getFindingIdsPlain(args: Endofunction[com.pulumi.aws.guardduty.inputs.GetFindingIdsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getFindingIdsPlain(args: Endofunction[com.pulumi.aws.guardduty.inputs.GetFindingIdsPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.guardduty.outputs.GetFindingIdsResult] =
       val argsBuilder = com.pulumi.aws.guardduty.inputs.GetFindingIdsPlainArgs.builder
       com.pulumi.aws.guardduty.GuarddutyFunctions.getFindingIdsPlain(args(argsBuilder).build)

@@ -121,31 +121,33 @@ object consumption:
       val argsBuilder = com.pulumi.azure.consumption.inputs.BudgetManagementGroupTimePeriodArgs.builder
       builder.timePeriod(args(argsBuilder).build)
 
-  type ConsumptionFunctions = com.pulumi.azure.consumption.ConsumptionFunctions
   object ConsumptionFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.azure.consumption.ConsumptionFunctions.*
-  extension (self: ConsumptionFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /** Use this data source to access information about an existing Consumption Budget for a specific resource group. */
-    def getBudgetResourceGroup(args: Endofunction[com.pulumi.azure.consumption.inputs.GetBudgetResourceGroupArgs.Builder] = scala.Predef.identity):
+    inline def getBudgetResourceGroup(args: Endofunction[com.pulumi.azure.consumption.inputs.GetBudgetResourceGroupArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.consumption.outputs.GetBudgetResourceGroupResult] =
       val argsBuilder = com.pulumi.azure.consumption.inputs.GetBudgetResourceGroupArgs.builder
       com.pulumi.azure.consumption.ConsumptionFunctions.getBudgetResourceGroup(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing Consumption Budget for a specific resource group. */
-    def getBudgetResourceGroupPlain(args: Endofunction[com.pulumi.azure.consumption.inputs.GetBudgetResourceGroupPlainArgs.Builder] = scala.Predef.identity):
+    inline def getBudgetResourceGroupPlain(args: Endofunction[com.pulumi.azure.consumption.inputs.GetBudgetResourceGroupPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.consumption.outputs.GetBudgetResourceGroupResult] =
       val argsBuilder = com.pulumi.azure.consumption.inputs.GetBudgetResourceGroupPlainArgs.builder
       com.pulumi.azure.consumption.ConsumptionFunctions.getBudgetResourceGroupPlain(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing Consumption Budget for a specific subscription. */
-    def getBudgetSubscription(args: Endofunction[com.pulumi.azure.consumption.inputs.GetBudgetSubscriptionArgs.Builder] = scala.Predef.identity):
+    inline def getBudgetSubscription(args: Endofunction[com.pulumi.azure.consumption.inputs.GetBudgetSubscriptionArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.consumption.outputs.GetBudgetSubscriptionResult] =
       val argsBuilder = com.pulumi.azure.consumption.inputs.GetBudgetSubscriptionArgs.builder
       com.pulumi.azure.consumption.ConsumptionFunctions.getBudgetSubscription(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing Consumption Budget for a specific subscription. */
-    def getBudgetSubscriptionPlain(args: Endofunction[com.pulumi.azure.consumption.inputs.GetBudgetSubscriptionPlainArgs.Builder] = scala.Predef.identity):
+    inline def getBudgetSubscriptionPlain(args: Endofunction[com.pulumi.azure.consumption.inputs.GetBudgetSubscriptionPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.consumption.outputs.GetBudgetSubscriptionResult] =
       val argsBuilder = com.pulumi.azure.consumption.inputs.GetBudgetSubscriptionPlainArgs.builder
       com.pulumi.azure.consumption.ConsumptionFunctions.getBudgetSubscriptionPlain(args(argsBuilder).build)

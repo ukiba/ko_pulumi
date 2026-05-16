@@ -14,19 +14,21 @@ object codestarconnections:
       val argsBuilder = com.pulumi.aws.codestarconnections.inputs.HostVpcConfigurationArgs.builder
       builder.vpcConfiguration(args(argsBuilder).build)
 
-  type CodestarconnectionsFunctions = com.pulumi.aws.codestarconnections.CodestarconnectionsFunctions
   object CodestarconnectionsFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.aws.codestarconnections.CodestarconnectionsFunctions.*
-  extension (self: CodestarconnectionsFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /** Provides details about CodeStar Connection. */
-    def getConnection(args: Endofunction[com.pulumi.aws.codestarconnections.inputs.GetConnectionArgs.Builder] = scala.Predef.identity):
+    inline def getConnection(args: Endofunction[com.pulumi.aws.codestarconnections.inputs.GetConnectionArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.codestarconnections.outputs.GetConnectionResult] =
       val argsBuilder = com.pulumi.aws.codestarconnections.inputs.GetConnectionArgs.builder
       com.pulumi.aws.codestarconnections.CodestarconnectionsFunctions.getConnection(args(argsBuilder).build)
 
     /** Provides details about CodeStar Connection. */
-    def getConnectionPlain(args: Endofunction[com.pulumi.aws.codestarconnections.inputs.GetConnectionPlainArgs.Builder] = scala.Predef.identity):
+    inline def getConnectionPlain(args: Endofunction[com.pulumi.aws.codestarconnections.inputs.GetConnectionPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.codestarconnections.outputs.GetConnectionResult] =
       val argsBuilder = com.pulumi.aws.codestarconnections.inputs.GetConnectionPlainArgs.builder
       com.pulumi.aws.codestarconnections.CodestarconnectionsFunctions.getConnectionPlain(args(argsBuilder).build)

@@ -52,19 +52,21 @@ object lustre:
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
-  type LustreFunctions = com.pulumi.gcp.lustre.LustreFunctions
   object LustreFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.gcp.lustre.LustreFunctions.*
-  extension (self: LustreFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /** Use this data source to get information about a Lustre instance. For more information see the [API docs](https://docs.cloud.google.com/managed-lustre/docs/reference/rest/v1/projects.locations.instances). */
-    def getInstance(args: Endofunction[com.pulumi.gcp.lustre.inputs.GetInstanceArgs.Builder] = scala.Predef.identity):
+    inline def getInstance(args: Endofunction[com.pulumi.gcp.lustre.inputs.GetInstanceArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.lustre.outputs.GetInstanceResult] =
       val argsBuilder = com.pulumi.gcp.lustre.inputs.GetInstanceArgs.builder
       com.pulumi.gcp.lustre.LustreFunctions.getInstance(args(argsBuilder).build)
 
     /** Use this data source to get information about a Lustre instance. For more information see the [API docs](https://docs.cloud.google.com/managed-lustre/docs/reference/rest/v1/projects.locations.instances). */
-    def getInstancePlain(args: Endofunction[com.pulumi.gcp.lustre.inputs.GetInstancePlainArgs.Builder] = scala.Predef.identity):
+    inline def getInstancePlain(args: Endofunction[com.pulumi.gcp.lustre.inputs.GetInstancePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.lustre.outputs.GetInstanceResult] =
       val argsBuilder = com.pulumi.gcp.lustre.inputs.GetInstancePlainArgs.builder
       com.pulumi.gcp.lustre.LustreFunctions.getInstancePlain(args(argsBuilder).build)

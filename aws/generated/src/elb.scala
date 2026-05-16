@@ -147,16 +147,18 @@ object elb:
       def argsBuilder = com.pulumi.aws.elb.inputs.LoadBalancerPolicyPolicyAttributeArgs.builder
       builder.policyAttributes(args.map(_(argsBuilder).build)*)
 
-  type ElbFunctions = com.pulumi.aws.elb.ElbFunctions
   object ElbFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.aws.elb.ElbFunctions.*
-  extension (self: ElbFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /**
      * Use this data source to get the HostedZoneId of the AWS Elastic Load Balancing HostedZoneId
      *  in a given region for the purpose of using in an AWS Route53 Alias.
      */
-    def getHostedZoneId(args: Endofunction[com.pulumi.aws.elb.inputs.GetHostedZoneIdArgs.Builder] = scala.Predef.identity):
+    inline def getHostedZoneId(args: Endofunction[com.pulumi.aws.elb.inputs.GetHostedZoneIdArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.elb.outputs.GetHostedZoneIdResult] =
       val argsBuilder = com.pulumi.aws.elb.inputs.GetHostedZoneIdArgs.builder
       com.pulumi.aws.elb.ElbFunctions.getHostedZoneId(args(argsBuilder).build)
@@ -165,7 +167,7 @@ object elb:
      * Use this data source to get the HostedZoneId of the AWS Elastic Load Balancing HostedZoneId
      *  in a given region for the purpose of using in an AWS Route53 Alias.
      */
-    def getHostedZoneIdPlain(args: Endofunction[com.pulumi.aws.elb.inputs.GetHostedZoneIdPlainArgs.Builder] = scala.Predef.identity):
+    inline def getHostedZoneIdPlain(args: Endofunction[com.pulumi.aws.elb.inputs.GetHostedZoneIdPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.elb.outputs.GetHostedZoneIdResult] =
       val argsBuilder = com.pulumi.aws.elb.inputs.GetHostedZoneIdPlainArgs.builder
       com.pulumi.aws.elb.ElbFunctions.getHostedZoneIdPlain(args(argsBuilder).build)
@@ -179,7 +181,7 @@ object elb:
      *  variable and needs to, for example, determine the security groups associated
      *  with it, etc.
      */
-    def getLoadBalancer(args: Endofunction[com.pulumi.aws.elb.inputs.GetLoadBalancerArgs.Builder] = scala.Predef.identity):
+    inline def getLoadBalancer(args: Endofunction[com.pulumi.aws.elb.inputs.GetLoadBalancerArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.elb.outputs.GetLoadBalancerResult] =
       val argsBuilder = com.pulumi.aws.elb.inputs.GetLoadBalancerArgs.builder
       com.pulumi.aws.elb.ElbFunctions.getLoadBalancer(args(argsBuilder).build)
@@ -193,7 +195,7 @@ object elb:
      *  variable and needs to, for example, determine the security groups associated
      *  with it, etc.
      */
-    def getLoadBalancerPlain(args: Endofunction[com.pulumi.aws.elb.inputs.GetLoadBalancerPlainArgs.Builder] = scala.Predef.identity):
+    inline def getLoadBalancerPlain(args: Endofunction[com.pulumi.aws.elb.inputs.GetLoadBalancerPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.elb.outputs.GetLoadBalancerResult] =
       val argsBuilder = com.pulumi.aws.elb.inputs.GetLoadBalancerPlainArgs.builder
       com.pulumi.aws.elb.ElbFunctions.getLoadBalancerPlain(args(argsBuilder).build)
@@ -204,7 +206,7 @@ object elb:
      * 
      *  &gt; **Note:** For AWS Regions opened since Jakarta (`ap-southeast-3`) in December 2021, AWS [documents that](https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-access-logs.html#attach-bucket-policy) a [service principal name](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#principal-services) should be used instead of an AWS account ID in any relevant IAM policy.
      */
-    def getServiceAccount(args: Endofunction[com.pulumi.aws.elb.inputs.GetServiceAccountArgs.Builder] = scala.Predef.identity):
+    inline def getServiceAccount(args: Endofunction[com.pulumi.aws.elb.inputs.GetServiceAccountArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.elb.outputs.GetServiceAccountResult] =
       val argsBuilder = com.pulumi.aws.elb.inputs.GetServiceAccountArgs.builder
       com.pulumi.aws.elb.ElbFunctions.getServiceAccount(args(argsBuilder).build)
@@ -215,7 +217,7 @@ object elb:
      * 
      *  &gt; **Note:** For AWS Regions opened since Jakarta (`ap-southeast-3`) in December 2021, AWS [documents that](https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-access-logs.html#attach-bucket-policy) a [service principal name](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#principal-services) should be used instead of an AWS account ID in any relevant IAM policy.
      */
-    def getServiceAccountPlain(args: Endofunction[com.pulumi.aws.elb.inputs.GetServiceAccountPlainArgs.Builder] = scala.Predef.identity):
+    inline def getServiceAccountPlain(args: Endofunction[com.pulumi.aws.elb.inputs.GetServiceAccountPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.elb.outputs.GetServiceAccountResult] =
       val argsBuilder = com.pulumi.aws.elb.inputs.GetServiceAccountPlainArgs.builder
       com.pulumi.aws.elb.ElbFunctions.getServiceAccountPlain(args(argsBuilder).build)

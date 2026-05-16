@@ -23,17 +23,19 @@ object datalineage:
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
-  type DatalineageFunctions = com.pulumi.gcp.datalineage.DatalineageFunctions
   object DatalineageFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.gcp.datalineage.DatalineageFunctions.*
-  extension (self: DatalineageFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /**
      * Get a configuration for Data Lineage.
      * 
      *  To get more information about Config, see [Official Documentation](https://docs.cloud.google.com/dataplex/docs/about-data-lineage#control-lineage-ingestion)
      */
-    def getConfig(args: Endofunction[com.pulumi.gcp.datalineage.inputs.GetConfigArgs.Builder] = scala.Predef.identity):
+    inline def getConfig(args: Endofunction[com.pulumi.gcp.datalineage.inputs.GetConfigArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.datalineage.outputs.GetConfigResult] =
       val argsBuilder = com.pulumi.gcp.datalineage.inputs.GetConfigArgs.builder
       com.pulumi.gcp.datalineage.DatalineageFunctions.getConfig(args(argsBuilder).build)
@@ -43,7 +45,7 @@ object datalineage:
      * 
      *  To get more information about Config, see [Official Documentation](https://docs.cloud.google.com/dataplex/docs/about-data-lineage#control-lineage-ingestion)
      */
-    def getConfigPlain(args: Endofunction[com.pulumi.gcp.datalineage.inputs.GetConfigPlainArgs.Builder] = scala.Predef.identity):
+    inline def getConfigPlain(args: Endofunction[com.pulumi.gcp.datalineage.inputs.GetConfigPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.datalineage.outputs.GetConfigResult] =
       val argsBuilder = com.pulumi.gcp.datalineage.inputs.GetConfigPlainArgs.builder
       com.pulumi.gcp.datalineage.DatalineageFunctions.getConfigPlain(args(argsBuilder).build)

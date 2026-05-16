@@ -73,19 +73,21 @@ object datafusion:
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
-  type DatafusionFunctions = com.pulumi.gcp.datafusion.DatafusionFunctions
   object DatafusionFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.gcp.datafusion.DatafusionFunctions.*
-  extension (self: DatafusionFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /** Retrieves the current IAM policy data for instance */
-    def getInstanceIamPolicy(args: Endofunction[com.pulumi.gcp.datafusion.inputs.GetInstanceIamPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getInstanceIamPolicy(args: Endofunction[com.pulumi.gcp.datafusion.inputs.GetInstanceIamPolicyArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.datafusion.outputs.GetInstanceIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.datafusion.inputs.GetInstanceIamPolicyArgs.builder
       com.pulumi.gcp.datafusion.DatafusionFunctions.getInstanceIamPolicy(args(argsBuilder).build)
 
     /** Retrieves the current IAM policy data for instance */
-    def getInstanceIamPolicyPlain(args: Endofunction[com.pulumi.gcp.datafusion.inputs.GetInstanceIamPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getInstanceIamPolicyPlain(args: Endofunction[com.pulumi.gcp.datafusion.inputs.GetInstanceIamPolicyPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.datafusion.outputs.GetInstanceIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.datafusion.inputs.GetInstanceIamPolicyPlainArgs.builder
       com.pulumi.gcp.datafusion.DatafusionFunctions.getInstanceIamPolicyPlain(args(argsBuilder).build)

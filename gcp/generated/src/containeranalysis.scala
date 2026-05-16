@@ -647,19 +647,21 @@ object containeranalysis:
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
-  type ContaineranalysisFunctions = com.pulumi.gcp.containeranalysis.ContaineranalysisFunctions
   object ContaineranalysisFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.gcp.containeranalysis.ContaineranalysisFunctions.*
-  extension (self: ContaineranalysisFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /** Retrieves the current IAM policy data for note */
-    def getNoteIamPolicy(args: Endofunction[com.pulumi.gcp.containeranalysis.inputs.GetNoteIamPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getNoteIamPolicy(args: Endofunction[com.pulumi.gcp.containeranalysis.inputs.GetNoteIamPolicyArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.containeranalysis.outputs.GetNoteIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.containeranalysis.inputs.GetNoteIamPolicyArgs.builder
       com.pulumi.gcp.containeranalysis.ContaineranalysisFunctions.getNoteIamPolicy(args(argsBuilder).build)
 
     /** Retrieves the current IAM policy data for note */
-    def getNoteIamPolicyPlain(args: Endofunction[com.pulumi.gcp.containeranalysis.inputs.GetNoteIamPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getNoteIamPolicyPlain(args: Endofunction[com.pulumi.gcp.containeranalysis.inputs.GetNoteIamPolicyPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.containeranalysis.outputs.GetNoteIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.containeranalysis.inputs.GetNoteIamPolicyPlainArgs.builder
       com.pulumi.gcp.containeranalysis.ContaineranalysisFunctions.getNoteIamPolicyPlain(args(argsBuilder).build)

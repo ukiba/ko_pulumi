@@ -2014,31 +2014,33 @@ object gkebackup:
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
-  type GkebackupFunctions = com.pulumi.gcp.gkebackup.GkebackupFunctions
   object GkebackupFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.gcp.gkebackup.GkebackupFunctions.*
-  extension (self: GkebackupFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /** Retrieves the current IAM policy data for backupplan */
-    def getBackupPlanIamPolicy(args: Endofunction[com.pulumi.gcp.gkebackup.inputs.GetBackupPlanIamPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getBackupPlanIamPolicy(args: Endofunction[com.pulumi.gcp.gkebackup.inputs.GetBackupPlanIamPolicyArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.gkebackup.outputs.GetBackupPlanIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.gkebackup.inputs.GetBackupPlanIamPolicyArgs.builder
       com.pulumi.gcp.gkebackup.GkebackupFunctions.getBackupPlanIamPolicy(args(argsBuilder).build)
 
     /** Retrieves the current IAM policy data for backupplan */
-    def getBackupPlanIamPolicyPlain(args: Endofunction[com.pulumi.gcp.gkebackup.inputs.GetBackupPlanIamPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getBackupPlanIamPolicyPlain(args: Endofunction[com.pulumi.gcp.gkebackup.inputs.GetBackupPlanIamPolicyPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.gkebackup.outputs.GetBackupPlanIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.gkebackup.inputs.GetBackupPlanIamPolicyPlainArgs.builder
       com.pulumi.gcp.gkebackup.GkebackupFunctions.getBackupPlanIamPolicyPlain(args(argsBuilder).build)
 
     /** Retrieves the current IAM policy data for restoreplan */
-    def getRestorePlanIamPolicy(args: Endofunction[com.pulumi.gcp.gkebackup.inputs.GetRestorePlanIamPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getRestorePlanIamPolicy(args: Endofunction[com.pulumi.gcp.gkebackup.inputs.GetRestorePlanIamPolicyArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.gkebackup.outputs.GetRestorePlanIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.gkebackup.inputs.GetRestorePlanIamPolicyArgs.builder
       com.pulumi.gcp.gkebackup.GkebackupFunctions.getRestorePlanIamPolicy(args(argsBuilder).build)
 
     /** Retrieves the current IAM policy data for restoreplan */
-    def getRestorePlanIamPolicyPlain(args: Endofunction[com.pulumi.gcp.gkebackup.inputs.GetRestorePlanIamPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getRestorePlanIamPolicyPlain(args: Endofunction[com.pulumi.gcp.gkebackup.inputs.GetRestorePlanIamPolicyPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.gkebackup.outputs.GetRestorePlanIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.gkebackup.inputs.GetRestorePlanIamPolicyPlainArgs.builder
       com.pulumi.gcp.gkebackup.GkebackupFunctions.getRestorePlanIamPolicyPlain(args(argsBuilder).build)

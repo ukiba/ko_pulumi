@@ -45,11 +45,13 @@ object cloudasset:
       val argsBuilder = com.pulumi.gcp.cloudasset.inputs.OrganizationFeedFeedOutputConfigArgs.builder
       builder.feedOutputConfig(args(argsBuilder).build)
 
-  type CloudassetFunctions = com.pulumi.gcp.cloudasset.CloudassetFunctions
   object CloudassetFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.gcp.cloudasset.CloudassetFunctions.*
-  extension (self: CloudassetFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /**
      * Retrieve all the resources within a given accessible CRM scope (project/folder/organization). See the
      *  [REST API](https://cloud.google.com/asset-inventory/docs/reference/rest/v1p1beta1/resources/searchAll)
@@ -58,7 +60,7 @@ object cloudasset:
      *  &gt; **Warning:** This resource is in beta, and should be used with the terraform-provider-google-beta provider.
      *  See Provider Versions for more details on beta resources.
      */
-    def getResourcesSearchAll(args: Endofunction[com.pulumi.gcp.cloudasset.inputs.GetResourcesSearchAllArgs.Builder] = scala.Predef.identity):
+    inline def getResourcesSearchAll(args: Endofunction[com.pulumi.gcp.cloudasset.inputs.GetResourcesSearchAllArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.cloudasset.outputs.GetResourcesSearchAllInvokeResult] =
       val argsBuilder = com.pulumi.gcp.cloudasset.inputs.GetResourcesSearchAllArgs.builder
       com.pulumi.gcp.cloudasset.CloudassetFunctions.getResourcesSearchAll(args(argsBuilder).build)
@@ -71,7 +73,7 @@ object cloudasset:
      *  &gt; **Warning:** This resource is in beta, and should be used with the terraform-provider-google-beta provider.
      *  See Provider Versions for more details on beta resources.
      */
-    def getResourcesSearchAllPlain(args: Endofunction[com.pulumi.gcp.cloudasset.inputs.GetResourcesSearchAllPlainArgs.Builder] = scala.Predef.identity):
+    inline def getResourcesSearchAllPlain(args: Endofunction[com.pulumi.gcp.cloudasset.inputs.GetResourcesSearchAllPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.cloudasset.outputs.GetResourcesSearchAllInvokeResult] =
       val argsBuilder = com.pulumi.gcp.cloudasset.inputs.GetResourcesSearchAllPlainArgs.builder
       com.pulumi.gcp.cloudasset.CloudassetFunctions.getResourcesSearchAllPlain(args(argsBuilder).build)
@@ -81,7 +83,7 @@ object cloudasset:
      *  [REST API](https://cloud.google.com/asset-inventory/docs/reference/rest/v1/TopLevel/searchAllResources)
      *  for more details.
      */
-    def getSearchAllResources(args: Endofunction[com.pulumi.gcp.cloudasset.inputs.GetSearchAllResourcesArgs.Builder] = scala.Predef.identity):
+    inline def getSearchAllResources(args: Endofunction[com.pulumi.gcp.cloudasset.inputs.GetSearchAllResourcesArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.cloudasset.outputs.GetSearchAllResourcesInvokeResult] =
       val argsBuilder = com.pulumi.gcp.cloudasset.inputs.GetSearchAllResourcesArgs.builder
       com.pulumi.gcp.cloudasset.CloudassetFunctions.getSearchAllResources(args(argsBuilder).build)
@@ -91,7 +93,7 @@ object cloudasset:
      *  [REST API](https://cloud.google.com/asset-inventory/docs/reference/rest/v1/TopLevel/searchAllResources)
      *  for more details.
      */
-    def getSearchAllResourcesPlain(args: Endofunction[com.pulumi.gcp.cloudasset.inputs.GetSearchAllResourcesPlainArgs.Builder] = scala.Predef.identity):
+    inline def getSearchAllResourcesPlain(args: Endofunction[com.pulumi.gcp.cloudasset.inputs.GetSearchAllResourcesPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.cloudasset.outputs.GetSearchAllResourcesInvokeResult] =
       val argsBuilder = com.pulumi.gcp.cloudasset.inputs.GetSearchAllResourcesPlainArgs.builder
       com.pulumi.gcp.cloudasset.CloudassetFunctions.getSearchAllResourcesPlain(args(argsBuilder).build)

@@ -25,19 +25,21 @@ object role:
       def argsBuilder = com.pulumi.azure.role.inputs.DefinitionPermissionArgs.builder
       builder.permissions(args.map(_(argsBuilder).build)*)
 
-  type RoleFunctions = com.pulumi.azure.role.RoleFunctions
   object RoleFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.azure.role.RoleFunctions.*
-  extension (self: RoleFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /** Use this data source to access information about an existing Role Definition. */
-    @deprecated def getRoleDefinition(args: Endofunction[com.pulumi.azure.role.inputs.GetRoleDefinitionArgs.Builder] = scala.Predef.identity):
+    @deprecated inline def getRoleDefinition(args: Endofunction[com.pulumi.azure.role.inputs.GetRoleDefinitionArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.role.outputs.GetRoleDefinitionResult] =
       val argsBuilder = com.pulumi.azure.role.inputs.GetRoleDefinitionArgs.builder
       com.pulumi.azure.role.RoleFunctions.getRoleDefinition(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing Role Definition. */
-    @deprecated def getRoleDefinitionPlain(args: Endofunction[com.pulumi.azure.role.inputs.GetRoleDefinitionPlainArgs.Builder] = scala.Predef.identity):
+    @deprecated inline def getRoleDefinitionPlain(args: Endofunction[com.pulumi.azure.role.inputs.GetRoleDefinitionPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.role.outputs.GetRoleDefinitionResult] =
       val argsBuilder = com.pulumi.azure.role.inputs.GetRoleDefinitionPlainArgs.builder
       com.pulumi.azure.role.RoleFunctions.getRoleDefinitionPlain(args(argsBuilder).build)

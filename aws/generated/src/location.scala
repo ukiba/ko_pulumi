@@ -4,91 +4,93 @@ package aws
 import com.pulumi.resources.CustomResourceOptions
 
 object location:
-  type LocationFunctions = com.pulumi.aws.location.LocationFunctions
   object LocationFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.aws.location.LocationFunctions.*
-  extension (self: LocationFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /** Retrieve information about a Location Service Geofence Collection. */
-    def getGeofenceCollection(args: Endofunction[com.pulumi.aws.location.inputs.GetGeofenceCollectionArgs.Builder] = scala.Predef.identity):
+    inline def getGeofenceCollection(args: Endofunction[com.pulumi.aws.location.inputs.GetGeofenceCollectionArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.location.outputs.GetGeofenceCollectionResult] =
       val argsBuilder = com.pulumi.aws.location.inputs.GetGeofenceCollectionArgs.builder
       com.pulumi.aws.location.LocationFunctions.getGeofenceCollection(args(argsBuilder).build)
 
     /** Retrieve information about a Location Service Geofence Collection. */
-    def getGeofenceCollectionPlain(args: Endofunction[com.pulumi.aws.location.inputs.GetGeofenceCollectionPlainArgs.Builder] = scala.Predef.identity):
+    inline def getGeofenceCollectionPlain(args: Endofunction[com.pulumi.aws.location.inputs.GetGeofenceCollectionPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.location.outputs.GetGeofenceCollectionResult] =
       val argsBuilder = com.pulumi.aws.location.inputs.GetGeofenceCollectionPlainArgs.builder
       com.pulumi.aws.location.LocationFunctions.getGeofenceCollectionPlain(args(argsBuilder).build)
 
     /** Retrieve information about a Location Service Map. */
-    def getMap(args: Endofunction[com.pulumi.aws.location.inputs.GetMapArgs.Builder] = scala.Predef.identity):
+    inline def getMap(args: Endofunction[com.pulumi.aws.location.inputs.GetMapArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.location.outputs.GetMapResult] =
       val argsBuilder = com.pulumi.aws.location.inputs.GetMapArgs.builder
       com.pulumi.aws.location.LocationFunctions.getMap(args(argsBuilder).build)
 
     /** Retrieve information about a Location Service Map. */
-    def getMapPlain(args: Endofunction[com.pulumi.aws.location.inputs.GetMapPlainArgs.Builder] = scala.Predef.identity):
+    inline def getMapPlain(args: Endofunction[com.pulumi.aws.location.inputs.GetMapPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.location.outputs.GetMapResult] =
       val argsBuilder = com.pulumi.aws.location.inputs.GetMapPlainArgs.builder
       com.pulumi.aws.location.LocationFunctions.getMapPlain(args(argsBuilder).build)
 
     /** Retrieve information about a Location Service Place Index. */
-    def getPlaceIndex(args: Endofunction[com.pulumi.aws.location.inputs.GetPlaceIndexArgs.Builder] = scala.Predef.identity):
+    inline def getPlaceIndex(args: Endofunction[com.pulumi.aws.location.inputs.GetPlaceIndexArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.location.outputs.GetPlaceIndexResult] =
       val argsBuilder = com.pulumi.aws.location.inputs.GetPlaceIndexArgs.builder
       com.pulumi.aws.location.LocationFunctions.getPlaceIndex(args(argsBuilder).build)
 
     /** Retrieve information about a Location Service Place Index. */
-    def getPlaceIndexPlain(args: Endofunction[com.pulumi.aws.location.inputs.GetPlaceIndexPlainArgs.Builder] = scala.Predef.identity):
+    inline def getPlaceIndexPlain(args: Endofunction[com.pulumi.aws.location.inputs.GetPlaceIndexPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.location.outputs.GetPlaceIndexResult] =
       val argsBuilder = com.pulumi.aws.location.inputs.GetPlaceIndexPlainArgs.builder
       com.pulumi.aws.location.LocationFunctions.getPlaceIndexPlain(args(argsBuilder).build)
 
     /** Retrieve information about a Location Service Route Calculator. */
-    def getRouteCalculator(args: Endofunction[com.pulumi.aws.location.inputs.GetRouteCalculatorArgs.Builder] = scala.Predef.identity):
+    inline def getRouteCalculator(args: Endofunction[com.pulumi.aws.location.inputs.GetRouteCalculatorArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.location.outputs.GetRouteCalculatorResult] =
       val argsBuilder = com.pulumi.aws.location.inputs.GetRouteCalculatorArgs.builder
       com.pulumi.aws.location.LocationFunctions.getRouteCalculator(args(argsBuilder).build)
 
     /** Retrieve information about a Location Service Route Calculator. */
-    def getRouteCalculatorPlain(args: Endofunction[com.pulumi.aws.location.inputs.GetRouteCalculatorPlainArgs.Builder] = scala.Predef.identity):
+    inline def getRouteCalculatorPlain(args: Endofunction[com.pulumi.aws.location.inputs.GetRouteCalculatorPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.location.outputs.GetRouteCalculatorResult] =
       val argsBuilder = com.pulumi.aws.location.inputs.GetRouteCalculatorPlainArgs.builder
       com.pulumi.aws.location.LocationFunctions.getRouteCalculatorPlain(args(argsBuilder).build)
 
     /** Retrieve information about a Location Service Tracker. */
-    def getTracker(args: Endofunction[com.pulumi.aws.location.inputs.GetTrackerArgs.Builder] = scala.Predef.identity):
+    inline def getTracker(args: Endofunction[com.pulumi.aws.location.inputs.GetTrackerArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.location.outputs.GetTrackerResult] =
       val argsBuilder = com.pulumi.aws.location.inputs.GetTrackerArgs.builder
       com.pulumi.aws.location.LocationFunctions.getTracker(args(argsBuilder).build)
 
     /** Retrieve information about a Location Service Tracker. */
-    def getTrackerPlain(args: Endofunction[com.pulumi.aws.location.inputs.GetTrackerPlainArgs.Builder] = scala.Predef.identity):
+    inline def getTrackerPlain(args: Endofunction[com.pulumi.aws.location.inputs.GetTrackerPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.location.outputs.GetTrackerResult] =
       val argsBuilder = com.pulumi.aws.location.inputs.GetTrackerPlainArgs.builder
       com.pulumi.aws.location.LocationFunctions.getTrackerPlain(args(argsBuilder).build)
 
     /** Retrieve information about a Location Service Tracker Association. */
-    def getTrackerAssociation(args: Endofunction[com.pulumi.aws.location.inputs.GetTrackerAssociationArgs.Builder] = scala.Predef.identity):
+    inline def getTrackerAssociation(args: Endofunction[com.pulumi.aws.location.inputs.GetTrackerAssociationArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.location.outputs.GetTrackerAssociationResult] =
       val argsBuilder = com.pulumi.aws.location.inputs.GetTrackerAssociationArgs.builder
       com.pulumi.aws.location.LocationFunctions.getTrackerAssociation(args(argsBuilder).build)
 
     /** Retrieve information about a Location Service Tracker Association. */
-    def getTrackerAssociationPlain(args: Endofunction[com.pulumi.aws.location.inputs.GetTrackerAssociationPlainArgs.Builder] = scala.Predef.identity):
+    inline def getTrackerAssociationPlain(args: Endofunction[com.pulumi.aws.location.inputs.GetTrackerAssociationPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.location.outputs.GetTrackerAssociationResult] =
       val argsBuilder = com.pulumi.aws.location.inputs.GetTrackerAssociationPlainArgs.builder
       com.pulumi.aws.location.LocationFunctions.getTrackerAssociationPlain(args(argsBuilder).build)
 
     /** Retrieve information about Location Service Tracker Associations. */
-    def getTrackerAssociations(args: Endofunction[com.pulumi.aws.location.inputs.GetTrackerAssociationsArgs.Builder] = scala.Predef.identity):
+    inline def getTrackerAssociations(args: Endofunction[com.pulumi.aws.location.inputs.GetTrackerAssociationsArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.location.outputs.GetTrackerAssociationsResult] =
       val argsBuilder = com.pulumi.aws.location.inputs.GetTrackerAssociationsArgs.builder
       com.pulumi.aws.location.LocationFunctions.getTrackerAssociations(args(argsBuilder).build)
 
     /** Retrieve information about Location Service Tracker Associations. */
-    def getTrackerAssociationsPlain(args: Endofunction[com.pulumi.aws.location.inputs.GetTrackerAssociationsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getTrackerAssociationsPlain(args: Endofunction[com.pulumi.aws.location.inputs.GetTrackerAssociationsPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.location.outputs.GetTrackerAssociationsResult] =
       val argsBuilder = com.pulumi.aws.location.inputs.GetTrackerAssociationsPlainArgs.builder
       com.pulumi.aws.location.LocationFunctions.getTrackerAssociationsPlain(args(argsBuilder).build)

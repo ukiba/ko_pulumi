@@ -4,19 +4,21 @@ package aws
 import com.pulumi.resources.CustomResourceOptions
 
 object codeguruprofiler:
-  type CodeguruprofilerFunctions = com.pulumi.aws.codeguruprofiler.CodeguruprofilerFunctions
   object CodeguruprofilerFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.aws.codeguruprofiler.CodeguruprofilerFunctions.*
-  extension (self: CodeguruprofilerFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /** Data source for managing an AWS CodeGuru Profiler Profiling Group. */
-    def getProfilingGroup(args: Endofunction[com.pulumi.aws.codeguruprofiler.inputs.GetProfilingGroupArgs.Builder] = scala.Predef.identity):
+    inline def getProfilingGroup(args: Endofunction[com.pulumi.aws.codeguruprofiler.inputs.GetProfilingGroupArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.codeguruprofiler.outputs.GetProfilingGroupResult] =
       val argsBuilder = com.pulumi.aws.codeguruprofiler.inputs.GetProfilingGroupArgs.builder
       com.pulumi.aws.codeguruprofiler.CodeguruprofilerFunctions.getProfilingGroup(args(argsBuilder).build)
 
     /** Data source for managing an AWS CodeGuru Profiler Profiling Group. */
-    def getProfilingGroupPlain(args: Endofunction[com.pulumi.aws.codeguruprofiler.inputs.GetProfilingGroupPlainArgs.Builder] = scala.Predef.identity):
+    inline def getProfilingGroupPlain(args: Endofunction[com.pulumi.aws.codeguruprofiler.inputs.GetProfilingGroupPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.codeguruprofiler.outputs.GetProfilingGroupResult] =
       val argsBuilder = com.pulumi.aws.codeguruprofiler.inputs.GetProfilingGroupPlainArgs.builder
       com.pulumi.aws.codeguruprofiler.CodeguruprofilerFunctions.getProfilingGroupPlain(args(argsBuilder).build)

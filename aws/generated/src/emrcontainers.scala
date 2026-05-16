@@ -46,19 +46,21 @@ object emrcontainers:
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
-  type EmrcontainersFunctions = com.pulumi.aws.emrcontainers.EmrcontainersFunctions
   object EmrcontainersFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.aws.emrcontainers.EmrcontainersFunctions.*
-  extension (self: EmrcontainersFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /** Retrieve information about an EMR Containers (EMR on EKS) Virtual Cluster. */
-    def getVirtualCluster(args: Endofunction[com.pulumi.aws.emrcontainers.inputs.GetVirtualClusterArgs.Builder] = scala.Predef.identity):
+    inline def getVirtualCluster(args: Endofunction[com.pulumi.aws.emrcontainers.inputs.GetVirtualClusterArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.emrcontainers.outputs.GetVirtualClusterResult] =
       val argsBuilder = com.pulumi.aws.emrcontainers.inputs.GetVirtualClusterArgs.builder
       com.pulumi.aws.emrcontainers.EmrcontainersFunctions.getVirtualCluster(args(argsBuilder).build)
 
     /** Retrieve information about an EMR Containers (EMR on EKS) Virtual Cluster. */
-    def getVirtualClusterPlain(args: Endofunction[com.pulumi.aws.emrcontainers.inputs.GetVirtualClusterPlainArgs.Builder] = scala.Predef.identity):
+    inline def getVirtualClusterPlain(args: Endofunction[com.pulumi.aws.emrcontainers.inputs.GetVirtualClusterPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.emrcontainers.outputs.GetVirtualClusterResult] =
       val argsBuilder = com.pulumi.aws.emrcontainers.inputs.GetVirtualClusterPlainArgs.builder
       com.pulumi.aws.emrcontainers.EmrcontainersFunctions.getVirtualClusterPlain(args(argsBuilder).build)

@@ -44,67 +44,69 @@ object policy:
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
-  type PolicyFunctions = com.pulumi.azure.policy.PolicyFunctions
   object PolicyFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.azure.policy.PolicyFunctions.*
-  extension (self: PolicyFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /** Use this data source to access information about an existing Policy Assignment. */
-    def getPolicyAssignment(args: Endofunction[com.pulumi.azure.policy.inputs.GetPolicyAssignmentArgs.Builder] = scala.Predef.identity):
+    inline def getPolicyAssignment(args: Endofunction[com.pulumi.azure.policy.inputs.GetPolicyAssignmentArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.policy.outputs.GetPolicyAssignmentResult] =
       val argsBuilder = com.pulumi.azure.policy.inputs.GetPolicyAssignmentArgs.builder
       com.pulumi.azure.policy.PolicyFunctions.getPolicyAssignment(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing Policy Assignment. */
-    def getPolicyAssignmentPlain(args: Endofunction[com.pulumi.azure.policy.inputs.GetPolicyAssignmentPlainArgs.Builder] = scala.Predef.identity):
+    inline def getPolicyAssignmentPlain(args: Endofunction[com.pulumi.azure.policy.inputs.GetPolicyAssignmentPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.policy.outputs.GetPolicyAssignmentResult] =
       val argsBuilder = com.pulumi.azure.policy.inputs.GetPolicyAssignmentPlainArgs.builder
       com.pulumi.azure.policy.PolicyFunctions.getPolicyAssignmentPlain(args(argsBuilder).build)
 
     /** Use this data source to access information about a Policy Definition, both custom and built in. Retrieves Policy Definitions from your current subscription by default. */
-    def getPolicyDefintion(args: Endofunction[com.pulumi.azure.policy.inputs.GetPolicyDefintionArgs.Builder] = scala.Predef.identity):
+    inline def getPolicyDefintion(args: Endofunction[com.pulumi.azure.policy.inputs.GetPolicyDefintionArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.policy.outputs.GetPolicyDefintionResult] =
       val argsBuilder = com.pulumi.azure.policy.inputs.GetPolicyDefintionArgs.builder
       com.pulumi.azure.policy.PolicyFunctions.getPolicyDefintion(args(argsBuilder).build)
 
     /** Use this data source to access information about a Policy Definition, both custom and built in. Retrieves Policy Definitions from your current subscription by default. */
-    def getPolicyDefintionPlain(args: Endofunction[com.pulumi.azure.policy.inputs.GetPolicyDefintionPlainArgs.Builder] = scala.Predef.identity):
+    inline def getPolicyDefintionPlain(args: Endofunction[com.pulumi.azure.policy.inputs.GetPolicyDefintionPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.policy.outputs.GetPolicyDefintionResult] =
       val argsBuilder = com.pulumi.azure.policy.inputs.GetPolicyDefintionPlainArgs.builder
       com.pulumi.azure.policy.PolicyFunctions.getPolicyDefintionPlain(args(argsBuilder).build)
 
     /** Use this data source to access information about a Built-In Policy Definition. Retrieves Policy Definitions from your current subscription by default. */
-    def getPolicyDefintionBuiltIn(args: Endofunction[com.pulumi.azure.policy.inputs.GetPolicyDefintionBuiltInArgs.Builder] = scala.Predef.identity):
+    inline def getPolicyDefintionBuiltIn(args: Endofunction[com.pulumi.azure.policy.inputs.GetPolicyDefintionBuiltInArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.policy.outputs.GetPolicyDefintionBuiltInResult] =
       val argsBuilder = com.pulumi.azure.policy.inputs.GetPolicyDefintionBuiltInArgs.builder
       com.pulumi.azure.policy.PolicyFunctions.getPolicyDefintionBuiltIn(args(argsBuilder).build)
 
     /** Use this data source to access information about a Built-In Policy Definition. Retrieves Policy Definitions from your current subscription by default. */
-    def getPolicyDefintionBuiltInPlain(args: Endofunction[com.pulumi.azure.policy.inputs.GetPolicyDefintionBuiltInPlainArgs.Builder] = scala.Predef.identity):
+    inline def getPolicyDefintionBuiltInPlain(args: Endofunction[com.pulumi.azure.policy.inputs.GetPolicyDefintionBuiltInPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.policy.outputs.GetPolicyDefintionBuiltInResult] =
       val argsBuilder = com.pulumi.azure.policy.inputs.GetPolicyDefintionBuiltInPlainArgs.builder
       com.pulumi.azure.policy.PolicyFunctions.getPolicyDefintionBuiltInPlain(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing Policy Set Definition. */
-    def getPolicySetDefinition(args: Endofunction[com.pulumi.azure.policy.inputs.GetPolicySetDefinitionArgs.Builder] = scala.Predef.identity):
+    inline def getPolicySetDefinition(args: Endofunction[com.pulumi.azure.policy.inputs.GetPolicySetDefinitionArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.policy.outputs.GetPolicySetDefinitionResult] =
       val argsBuilder = com.pulumi.azure.policy.inputs.GetPolicySetDefinitionArgs.builder
       com.pulumi.azure.policy.PolicyFunctions.getPolicySetDefinition(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing Policy Set Definition. */
-    def getPolicySetDefinitionPlain(args: Endofunction[com.pulumi.azure.policy.inputs.GetPolicySetDefinitionPlainArgs.Builder] = scala.Predef.identity):
+    inline def getPolicySetDefinitionPlain(args: Endofunction[com.pulumi.azure.policy.inputs.GetPolicySetDefinitionPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.policy.outputs.GetPolicySetDefinitionResult] =
       val argsBuilder = com.pulumi.azure.policy.inputs.GetPolicySetDefinitionPlainArgs.builder
       com.pulumi.azure.policy.PolicyFunctions.getPolicySetDefinitionPlain(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing Guest Configuration Policy. */
-    def getVirtualMachineConfigurationAssignment(args: Endofunction[com.pulumi.azure.policy.inputs.GetVirtualMachineConfigurationAssignmentArgs.Builder] = scala.Predef.identity):
+    inline def getVirtualMachineConfigurationAssignment(args: Endofunction[com.pulumi.azure.policy.inputs.GetVirtualMachineConfigurationAssignmentArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.policy.outputs.GetVirtualMachineConfigurationAssignmentResult] =
       val argsBuilder = com.pulumi.azure.policy.inputs.GetVirtualMachineConfigurationAssignmentArgs.builder
       com.pulumi.azure.policy.PolicyFunctions.getVirtualMachineConfigurationAssignment(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing Guest Configuration Policy. */
-    def getVirtualMachineConfigurationAssignmentPlain(args: Endofunction[com.pulumi.azure.policy.inputs.GetVirtualMachineConfigurationAssignmentPlainArgs.Builder] = scala.Predef.identity):
+    inline def getVirtualMachineConfigurationAssignmentPlain(args: Endofunction[com.pulumi.azure.policy.inputs.GetVirtualMachineConfigurationAssignmentPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.policy.outputs.GetVirtualMachineConfigurationAssignmentResult] =
       val argsBuilder = com.pulumi.azure.policy.inputs.GetVirtualMachineConfigurationAssignmentPlainArgs.builder
       com.pulumi.azure.policy.PolicyFunctions.getVirtualMachineConfigurationAssignmentPlain(args(argsBuilder).build)

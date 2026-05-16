@@ -118,19 +118,21 @@ object systemcenter:
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
-  type SystemcenterFunctions = com.pulumi.azure.systemcenter.SystemcenterFunctions
   object SystemcenterFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.azure.systemcenter.SystemcenterFunctions.*
-  extension (self: SystemcenterFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /** Use this data source to access information about existing System Center Virtual Machine Manager Inventory Items. */
-    def getVirtualMachineManagerInventoryItems(args: Endofunction[com.pulumi.azure.systemcenter.inputs.GetVirtualMachineManagerInventoryItemsArgs.Builder] = scala.Predef.identity):
+    inline def getVirtualMachineManagerInventoryItems(args: Endofunction[com.pulumi.azure.systemcenter.inputs.GetVirtualMachineManagerInventoryItemsArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.systemcenter.outputs.GetVirtualMachineManagerInventoryItemsResult] =
       val argsBuilder = com.pulumi.azure.systemcenter.inputs.GetVirtualMachineManagerInventoryItemsArgs.builder
       com.pulumi.azure.systemcenter.SystemcenterFunctions.getVirtualMachineManagerInventoryItems(args(argsBuilder).build)
 
     /** Use this data source to access information about existing System Center Virtual Machine Manager Inventory Items. */
-    def getVirtualMachineManagerInventoryItemsPlain(args: Endofunction[com.pulumi.azure.systemcenter.inputs.GetVirtualMachineManagerInventoryItemsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getVirtualMachineManagerInventoryItemsPlain(args: Endofunction[com.pulumi.azure.systemcenter.inputs.GetVirtualMachineManagerInventoryItemsPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.systemcenter.outputs.GetVirtualMachineManagerInventoryItemsResult] =
       val argsBuilder = com.pulumi.azure.systemcenter.inputs.GetVirtualMachineManagerInventoryItemsPlainArgs.builder
       com.pulumi.azure.systemcenter.SystemcenterFunctions.getVirtualMachineManagerInventoryItemsPlain(args(argsBuilder).build)

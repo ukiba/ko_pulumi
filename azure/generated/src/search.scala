@@ -18,19 +18,21 @@ object search:
         com.pulumi.azure.search.ServiceArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
 
-  type SearchFunctions = com.pulumi.azure.search.SearchFunctions
   object SearchFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.azure.search.SearchFunctions.*
-  extension (self: SearchFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /** Manages a Search Service. */
-    def getService(args: Endofunction[com.pulumi.azure.search.inputs.GetServiceArgs.Builder] = scala.Predef.identity):
+    inline def getService(args: Endofunction[com.pulumi.azure.search.inputs.GetServiceArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.search.outputs.GetServiceResult] =
       val argsBuilder = com.pulumi.azure.search.inputs.GetServiceArgs.builder
       com.pulumi.azure.search.SearchFunctions.getService(args(argsBuilder).build)
 
     /** Manages a Search Service. */
-    def getServicePlain(args: Endofunction[com.pulumi.azure.search.inputs.GetServicePlainArgs.Builder] = scala.Predef.identity):
+    inline def getServicePlain(args: Endofunction[com.pulumi.azure.search.inputs.GetServicePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.search.outputs.GetServiceResult] =
       val argsBuilder = com.pulumi.azure.search.inputs.GetServicePlainArgs.builder
       com.pulumi.azure.search.SearchFunctions.getServicePlain(args(argsBuilder).build)

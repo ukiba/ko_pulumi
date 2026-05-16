@@ -86,19 +86,21 @@ object lakeformation:
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
-  type LakeformationFunctions = com.pulumi.aws.lakeformation.LakeformationFunctions
   object LakeformationFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.aws.lakeformation.LakeformationFunctions.*
-  extension (self: LakeformationFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /** Get Lake Formation principals designated as data lake administrators and lists of principal permission entries for default create database and default create table permissions. */
-    def getDataLakeSettings(args: Endofunction[com.pulumi.aws.lakeformation.inputs.GetDataLakeSettingsArgs.Builder] = scala.Predef.identity):
+    inline def getDataLakeSettings(args: Endofunction[com.pulumi.aws.lakeformation.inputs.GetDataLakeSettingsArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.lakeformation.outputs.GetDataLakeSettingsResult] =
       val argsBuilder = com.pulumi.aws.lakeformation.inputs.GetDataLakeSettingsArgs.builder
       com.pulumi.aws.lakeformation.LakeformationFunctions.getDataLakeSettings(args(argsBuilder).build)
 
     /** Get Lake Formation principals designated as data lake administrators and lists of principal permission entries for default create database and default create table permissions. */
-    def getDataLakeSettingsPlain(args: Endofunction[com.pulumi.aws.lakeformation.inputs.GetDataLakeSettingsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getDataLakeSettingsPlain(args: Endofunction[com.pulumi.aws.lakeformation.inputs.GetDataLakeSettingsPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.lakeformation.outputs.GetDataLakeSettingsResult] =
       val argsBuilder = com.pulumi.aws.lakeformation.inputs.GetDataLakeSettingsPlainArgs.builder
       com.pulumi.aws.lakeformation.LakeformationFunctions.getDataLakeSettingsPlain(args(argsBuilder).build)
@@ -108,7 +110,7 @@ object lakeformation:
      * 
      *  &gt; **NOTE:** This data source deals with explicitly granted permissions. Lake Formation grants implicit permissions to data lake administrators, database creators, and table creators. For more information, see [Implicit Lake Formation Permissions](https://docs.aws.amazon.com/lake-formation/latest/dg/implicit-permissions.html).
      */
-    def getPermissions(args: Endofunction[com.pulumi.aws.lakeformation.inputs.GetPermissionsArgs.Builder] = scala.Predef.identity):
+    inline def getPermissions(args: Endofunction[com.pulumi.aws.lakeformation.inputs.GetPermissionsArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.lakeformation.outputs.GetPermissionsResult] =
       val argsBuilder = com.pulumi.aws.lakeformation.inputs.GetPermissionsArgs.builder
       com.pulumi.aws.lakeformation.LakeformationFunctions.getPermissions(args(argsBuilder).build)
@@ -118,19 +120,19 @@ object lakeformation:
      * 
      *  &gt; **NOTE:** This data source deals with explicitly granted permissions. Lake Formation grants implicit permissions to data lake administrators, database creators, and table creators. For more information, see [Implicit Lake Formation Permissions](https://docs.aws.amazon.com/lake-formation/latest/dg/implicit-permissions.html).
      */
-    def getPermissionsPlain(args: Endofunction[com.pulumi.aws.lakeformation.inputs.GetPermissionsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getPermissionsPlain(args: Endofunction[com.pulumi.aws.lakeformation.inputs.GetPermissionsPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.lakeformation.outputs.GetPermissionsResult] =
       val argsBuilder = com.pulumi.aws.lakeformation.inputs.GetPermissionsPlainArgs.builder
       com.pulumi.aws.lakeformation.LakeformationFunctions.getPermissionsPlain(args(argsBuilder).build)
 
     /** Provides details about a Lake Formation resource. */
-    def getResource(args: Endofunction[com.pulumi.aws.lakeformation.inputs.GetResourceArgs.Builder] = scala.Predef.identity):
+    inline def getResource(args: Endofunction[com.pulumi.aws.lakeformation.inputs.GetResourceArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.lakeformation.outputs.GetResourceResult] =
       val argsBuilder = com.pulumi.aws.lakeformation.inputs.GetResourceArgs.builder
       com.pulumi.aws.lakeformation.LakeformationFunctions.getResource(args(argsBuilder).build)
 
     /** Provides details about a Lake Formation resource. */
-    def getResourcePlain(args: Endofunction[com.pulumi.aws.lakeformation.inputs.GetResourcePlainArgs.Builder] = scala.Predef.identity):
+    inline def getResourcePlain(args: Endofunction[com.pulumi.aws.lakeformation.inputs.GetResourcePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.lakeformation.outputs.GetResourceResult] =
       val argsBuilder = com.pulumi.aws.lakeformation.inputs.GetResourcePlainArgs.builder
       com.pulumi.aws.lakeformation.LakeformationFunctions.getResourcePlain(args(argsBuilder).build)

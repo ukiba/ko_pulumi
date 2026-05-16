@@ -21,17 +21,19 @@ object blueprint:
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
-  type BlueprintFunctions = com.pulumi.azure.blueprint.BlueprintFunctions
   object BlueprintFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.azure.blueprint.BlueprintFunctions.*
-  extension (self: BlueprintFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /**
      * Use this data source to access information about an existing Azure Blueprint Definition
      * 
      *  &gt; **Note:** Azure Blueprints are in Preview and potentially subject to breaking change without notice.
      */
-    def getDefinition(args: Endofunction[com.pulumi.azure.blueprint.inputs.GetDefinitionArgs.Builder] = scala.Predef.identity):
+    inline def getDefinition(args: Endofunction[com.pulumi.azure.blueprint.inputs.GetDefinitionArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.blueprint.outputs.GetDefinitionResult] =
       val argsBuilder = com.pulumi.azure.blueprint.inputs.GetDefinitionArgs.builder
       com.pulumi.azure.blueprint.BlueprintFunctions.getDefinition(args(argsBuilder).build)
@@ -41,7 +43,7 @@ object blueprint:
      * 
      *  &gt; **Note:** Azure Blueprints are in Preview and potentially subject to breaking change without notice.
      */
-    def getDefinitionPlain(args: Endofunction[com.pulumi.azure.blueprint.inputs.GetDefinitionPlainArgs.Builder] = scala.Predef.identity):
+    inline def getDefinitionPlain(args: Endofunction[com.pulumi.azure.blueprint.inputs.GetDefinitionPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.blueprint.outputs.GetDefinitionResult] =
       val argsBuilder = com.pulumi.azure.blueprint.inputs.GetDefinitionPlainArgs.builder
       com.pulumi.azure.blueprint.BlueprintFunctions.getDefinitionPlain(args(argsBuilder).build)
@@ -51,7 +53,7 @@ object blueprint:
      * 
      *  &gt; **Note:** Azure Blueprints are in Preview and potentially subject to breaking change without notice.
      */
-    def getPublishedVersion(args: Endofunction[com.pulumi.azure.blueprint.inputs.GetPublishedVersionArgs.Builder] = scala.Predef.identity):
+    inline def getPublishedVersion(args: Endofunction[com.pulumi.azure.blueprint.inputs.GetPublishedVersionArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.blueprint.outputs.GetPublishedVersionResult] =
       val argsBuilder = com.pulumi.azure.blueprint.inputs.GetPublishedVersionArgs.builder
       com.pulumi.azure.blueprint.BlueprintFunctions.getPublishedVersion(args(argsBuilder).build)
@@ -61,7 +63,7 @@ object blueprint:
      * 
      *  &gt; **Note:** Azure Blueprints are in Preview and potentially subject to breaking change without notice.
      */
-    def getPublishedVersionPlain(args: Endofunction[com.pulumi.azure.blueprint.inputs.GetPublishedVersionPlainArgs.Builder] = scala.Predef.identity):
+    inline def getPublishedVersionPlain(args: Endofunction[com.pulumi.azure.blueprint.inputs.GetPublishedVersionPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.blueprint.outputs.GetPublishedVersionResult] =
       val argsBuilder = com.pulumi.azure.blueprint.inputs.GetPublishedVersionPlainArgs.builder
       com.pulumi.azure.blueprint.BlueprintFunctions.getPublishedVersionPlain(args(argsBuilder).build)

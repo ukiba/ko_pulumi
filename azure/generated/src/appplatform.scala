@@ -247,17 +247,19 @@ object appplatform:
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
-  type AppplatformFunctions = com.pulumi.azure.appplatform.AppplatformFunctions
   object AppplatformFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.azure.appplatform.AppplatformFunctions.*
-  extension (self: AppplatformFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /**
      * Use this data source to access information about an existing Spring Cloud Application.
      * 
      *  !&gt; **Note:** Azure Spring Apps is now deprecated and will be retired on 2028-05-31 - as such the `azure.appplatform.SpringCloudApp` data source is deprecated and will be removed in a future major version of the AzureRM Provider. See https://aka.ms/asaretirement for more information.
      */
-    def getSpringCloudApp(args: Endofunction[com.pulumi.azure.appplatform.inputs.GetSpringCloudAppArgs.Builder] = scala.Predef.identity):
+    inline def getSpringCloudApp(args: Endofunction[com.pulumi.azure.appplatform.inputs.GetSpringCloudAppArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.appplatform.outputs.GetSpringCloudAppResult] =
       val argsBuilder = com.pulumi.azure.appplatform.inputs.GetSpringCloudAppArgs.builder
       com.pulumi.azure.appplatform.AppplatformFunctions.getSpringCloudApp(args(argsBuilder).build)
@@ -267,7 +269,7 @@ object appplatform:
      * 
      *  !&gt; **Note:** Azure Spring Apps is now deprecated and will be retired on 2028-05-31 - as such the `azure.appplatform.SpringCloudApp` data source is deprecated and will be removed in a future major version of the AzureRM Provider. See https://aka.ms/asaretirement for more information.
      */
-    def getSpringCloudAppPlain(args: Endofunction[com.pulumi.azure.appplatform.inputs.GetSpringCloudAppPlainArgs.Builder] = scala.Predef.identity):
+    inline def getSpringCloudAppPlain(args: Endofunction[com.pulumi.azure.appplatform.inputs.GetSpringCloudAppPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.appplatform.outputs.GetSpringCloudAppResult] =
       val argsBuilder = com.pulumi.azure.appplatform.inputs.GetSpringCloudAppPlainArgs.builder
       com.pulumi.azure.appplatform.AppplatformFunctions.getSpringCloudAppPlain(args(argsBuilder).build)
@@ -277,7 +279,7 @@ object appplatform:
      * 
      *  !&gt; **Note:** Azure Spring Apps is now deprecated and will be retired on 2028-05-31 - as such the `azure.appplatform.SpringCloudService` data source is deprecated and will be removed in a future major version of the AzureRM Provider. See https://aka.ms/asaretirement for more information.
      */
-    def getSpringCloudService(args: Endofunction[com.pulumi.azure.appplatform.inputs.GetSpringCloudServiceArgs.Builder] = scala.Predef.identity):
+    inline def getSpringCloudService(args: Endofunction[com.pulumi.azure.appplatform.inputs.GetSpringCloudServiceArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.appplatform.outputs.GetSpringCloudServiceResult] =
       val argsBuilder = com.pulumi.azure.appplatform.inputs.GetSpringCloudServiceArgs.builder
       com.pulumi.azure.appplatform.AppplatformFunctions.getSpringCloudService(args(argsBuilder).build)
@@ -287,7 +289,7 @@ object appplatform:
      * 
      *  !&gt; **Note:** Azure Spring Apps is now deprecated and will be retired on 2028-05-31 - as such the `azure.appplatform.SpringCloudService` data source is deprecated and will be removed in a future major version of the AzureRM Provider. See https://aka.ms/asaretirement for more information.
      */
-    def getSpringCloudServicePlain(args: Endofunction[com.pulumi.azure.appplatform.inputs.GetSpringCloudServicePlainArgs.Builder] = scala.Predef.identity):
+    inline def getSpringCloudServicePlain(args: Endofunction[com.pulumi.azure.appplatform.inputs.GetSpringCloudServicePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.appplatform.outputs.GetSpringCloudServiceResult] =
       val argsBuilder = com.pulumi.azure.appplatform.inputs.GetSpringCloudServicePlainArgs.builder
       com.pulumi.azure.appplatform.AppplatformFunctions.getSpringCloudServicePlain(args(argsBuilder).build)

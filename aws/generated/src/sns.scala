@@ -24,17 +24,19 @@ object sns:
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
-  type SnsFunctions = com.pulumi.aws.sns.SnsFunctions
   object SnsFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.aws.sns.SnsFunctions.*
-  extension (self: SnsFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /**
      * Use this data source to get the ARN of a topic in AWS Simple Notification
      *  Service (SNS). By using this data source, you can reference SNS topics
      *  without having to hard code the ARNs as input.
      */
-    def getTopic(args: Endofunction[com.pulumi.aws.sns.inputs.GetTopicArgs.Builder] = scala.Predef.identity):
+    inline def getTopic(args: Endofunction[com.pulumi.aws.sns.inputs.GetTopicArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.sns.outputs.GetTopicResult] =
       val argsBuilder = com.pulumi.aws.sns.inputs.GetTopicArgs.builder
       com.pulumi.aws.sns.SnsFunctions.getTopic(args(argsBuilder).build)
@@ -44,7 +46,7 @@ object sns:
      *  Service (SNS). By using this data source, you can reference SNS topics
      *  without having to hard code the ARNs as input.
      */
-    def getTopicPlain(args: Endofunction[com.pulumi.aws.sns.inputs.GetTopicPlainArgs.Builder] = scala.Predef.identity):
+    inline def getTopicPlain(args: Endofunction[com.pulumi.aws.sns.inputs.GetTopicPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.sns.outputs.GetTopicResult] =
       val argsBuilder = com.pulumi.aws.sns.inputs.GetTopicPlainArgs.builder
       com.pulumi.aws.sns.SnsFunctions.getTopicPlain(args(argsBuilder).build)

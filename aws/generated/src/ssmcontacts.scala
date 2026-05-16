@@ -62,43 +62,45 @@ object ssmcontacts:
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
-  type SsmcontactsFunctions = com.pulumi.aws.ssmcontacts.SsmcontactsFunctions
   object SsmcontactsFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.aws.ssmcontacts.SsmcontactsFunctions.*
-  extension (self: SsmcontactsFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /** Data source for managing an AWS SSM Contact. */
-    def getContact(args: Endofunction[com.pulumi.aws.ssmcontacts.inputs.GetContactArgs.Builder] = scala.Predef.identity):
+    inline def getContact(args: Endofunction[com.pulumi.aws.ssmcontacts.inputs.GetContactArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.ssmcontacts.outputs.GetContactResult] =
       val argsBuilder = com.pulumi.aws.ssmcontacts.inputs.GetContactArgs.builder
       com.pulumi.aws.ssmcontacts.SsmcontactsFunctions.getContact(args(argsBuilder).build)
 
     /** Data source for managing an AWS SSM Contact. */
-    def getContactPlain(args: Endofunction[com.pulumi.aws.ssmcontacts.inputs.GetContactPlainArgs.Builder] = scala.Predef.identity):
+    inline def getContactPlain(args: Endofunction[com.pulumi.aws.ssmcontacts.inputs.GetContactPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.ssmcontacts.outputs.GetContactResult] =
       val argsBuilder = com.pulumi.aws.ssmcontacts.inputs.GetContactPlainArgs.builder
       com.pulumi.aws.ssmcontacts.SsmcontactsFunctions.getContactPlain(args(argsBuilder).build)
 
     /** Data source for managing an AWS SSM Contacts Contact Channel. */
-    def getContactChannel(args: Endofunction[com.pulumi.aws.ssmcontacts.inputs.GetContactChannelArgs.Builder] = scala.Predef.identity):
+    inline def getContactChannel(args: Endofunction[com.pulumi.aws.ssmcontacts.inputs.GetContactChannelArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.ssmcontacts.outputs.GetContactChannelResult] =
       val argsBuilder = com.pulumi.aws.ssmcontacts.inputs.GetContactChannelArgs.builder
       com.pulumi.aws.ssmcontacts.SsmcontactsFunctions.getContactChannel(args(argsBuilder).build)
 
     /** Data source for managing an AWS SSM Contacts Contact Channel. */
-    def getContactChannelPlain(args: Endofunction[com.pulumi.aws.ssmcontacts.inputs.GetContactChannelPlainArgs.Builder] = scala.Predef.identity):
+    inline def getContactChannelPlain(args: Endofunction[com.pulumi.aws.ssmcontacts.inputs.GetContactChannelPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.ssmcontacts.outputs.GetContactChannelResult] =
       val argsBuilder = com.pulumi.aws.ssmcontacts.inputs.GetContactChannelPlainArgs.builder
       com.pulumi.aws.ssmcontacts.SsmcontactsFunctions.getContactChannelPlain(args(argsBuilder).build)
 
     /** Data source for managing a Plan of an AWS SSM Contact. */
-    def getPlan(args: Endofunction[com.pulumi.aws.ssmcontacts.inputs.GetPlanArgs.Builder] = scala.Predef.identity):
+    inline def getPlan(args: Endofunction[com.pulumi.aws.ssmcontacts.inputs.GetPlanArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.ssmcontacts.outputs.GetPlanResult] =
       val argsBuilder = com.pulumi.aws.ssmcontacts.inputs.GetPlanArgs.builder
       com.pulumi.aws.ssmcontacts.SsmcontactsFunctions.getPlan(args(argsBuilder).build)
 
     /** Data source for managing a Plan of an AWS SSM Contact. */
-    def getPlanPlain(args: Endofunction[com.pulumi.aws.ssmcontacts.inputs.GetPlanPlainArgs.Builder] = scala.Predef.identity):
+    inline def getPlanPlain(args: Endofunction[com.pulumi.aws.ssmcontacts.inputs.GetPlanPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.ssmcontacts.outputs.GetPlanResult] =
       val argsBuilder = com.pulumi.aws.ssmcontacts.inputs.GetPlanPlainArgs.builder
       com.pulumi.aws.ssmcontacts.SsmcontactsFunctions.getPlanPlain(args(argsBuilder).build)

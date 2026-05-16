@@ -18,67 +18,69 @@ object vpclattice:
         com.pulumi.aws.vpclattice.TargetGroupArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
 
-  type VpclatticeFunctions = com.pulumi.aws.vpclattice.VpclatticeFunctions
   object VpclatticeFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.aws.vpclattice.VpclatticeFunctions.*
-  extension (self: VpclatticeFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /** Data source for managing an AWS VPC Lattice Auth Policy. */
-    def getAuthPolicy(args: Endofunction[com.pulumi.aws.vpclattice.inputs.GetAuthPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getAuthPolicy(args: Endofunction[com.pulumi.aws.vpclattice.inputs.GetAuthPolicyArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.vpclattice.outputs.GetAuthPolicyResult] =
       val argsBuilder = com.pulumi.aws.vpclattice.inputs.GetAuthPolicyArgs.builder
       com.pulumi.aws.vpclattice.VpclatticeFunctions.getAuthPolicy(args(argsBuilder).build)
 
     /** Data source for managing an AWS VPC Lattice Auth Policy. */
-    def getAuthPolicyPlain(args: Endofunction[com.pulumi.aws.vpclattice.inputs.GetAuthPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getAuthPolicyPlain(args: Endofunction[com.pulumi.aws.vpclattice.inputs.GetAuthPolicyPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.vpclattice.outputs.GetAuthPolicyResult] =
       val argsBuilder = com.pulumi.aws.vpclattice.inputs.GetAuthPolicyPlainArgs.builder
       com.pulumi.aws.vpclattice.VpclatticeFunctions.getAuthPolicyPlain(args(argsBuilder).build)
 
     /** Data source for managing an AWS VPC Lattice Listener. */
-    def getListener(args: Endofunction[com.pulumi.aws.vpclattice.inputs.GetListenerArgs.Builder] = scala.Predef.identity):
+    inline def getListener(args: Endofunction[com.pulumi.aws.vpclattice.inputs.GetListenerArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.vpclattice.outputs.GetListenerResult] =
       val argsBuilder = com.pulumi.aws.vpclattice.inputs.GetListenerArgs.builder
       com.pulumi.aws.vpclattice.VpclatticeFunctions.getListener(args(argsBuilder).build)
 
     /** Data source for managing an AWS VPC Lattice Listener. */
-    def getListenerPlain(args: Endofunction[com.pulumi.aws.vpclattice.inputs.GetListenerPlainArgs.Builder] = scala.Predef.identity):
+    inline def getListenerPlain(args: Endofunction[com.pulumi.aws.vpclattice.inputs.GetListenerPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.vpclattice.outputs.GetListenerResult] =
       val argsBuilder = com.pulumi.aws.vpclattice.inputs.GetListenerPlainArgs.builder
       com.pulumi.aws.vpclattice.VpclatticeFunctions.getListenerPlain(args(argsBuilder).build)
 
     /** Data source for managing an AWS VPC Lattice Resource Policy. */
-    def getResourcePolicy(args: Endofunction[com.pulumi.aws.vpclattice.inputs.GetResourcePolicyArgs.Builder] = scala.Predef.identity):
+    inline def getResourcePolicy(args: Endofunction[com.pulumi.aws.vpclattice.inputs.GetResourcePolicyArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.vpclattice.outputs.GetResourcePolicyResult] =
       val argsBuilder = com.pulumi.aws.vpclattice.inputs.GetResourcePolicyArgs.builder
       com.pulumi.aws.vpclattice.VpclatticeFunctions.getResourcePolicy(args(argsBuilder).build)
 
     /** Data source for managing an AWS VPC Lattice Resource Policy. */
-    def getResourcePolicyPlain(args: Endofunction[com.pulumi.aws.vpclattice.inputs.GetResourcePolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getResourcePolicyPlain(args: Endofunction[com.pulumi.aws.vpclattice.inputs.GetResourcePolicyPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.vpclattice.outputs.GetResourcePolicyResult] =
       val argsBuilder = com.pulumi.aws.vpclattice.inputs.GetResourcePolicyPlainArgs.builder
       com.pulumi.aws.vpclattice.VpclatticeFunctions.getResourcePolicyPlain(args(argsBuilder).build)
 
     /** Data source for managing an AWS VPC Lattice Service. */
-    def getService(args: Endofunction[com.pulumi.aws.vpclattice.inputs.GetServiceArgs.Builder] = scala.Predef.identity):
+    inline def getService(args: Endofunction[com.pulumi.aws.vpclattice.inputs.GetServiceArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.vpclattice.outputs.GetServiceResult] =
       val argsBuilder = com.pulumi.aws.vpclattice.inputs.GetServiceArgs.builder
       com.pulumi.aws.vpclattice.VpclatticeFunctions.getService(args(argsBuilder).build)
 
     /** Data source for managing an AWS VPC Lattice Service. */
-    def getServicePlain(args: Endofunction[com.pulumi.aws.vpclattice.inputs.GetServicePlainArgs.Builder] = scala.Predef.identity):
+    inline def getServicePlain(args: Endofunction[com.pulumi.aws.vpclattice.inputs.GetServicePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.vpclattice.outputs.GetServiceResult] =
       val argsBuilder = com.pulumi.aws.vpclattice.inputs.GetServicePlainArgs.builder
       com.pulumi.aws.vpclattice.VpclatticeFunctions.getServicePlain(args(argsBuilder).build)
 
     /** Data source for managing an AWS VPC Lattice Service Network. */
-    def getServiceNetwork(args: Endofunction[com.pulumi.aws.vpclattice.inputs.GetServiceNetworkArgs.Builder] = scala.Predef.identity):
+    inline def getServiceNetwork(args: Endofunction[com.pulumi.aws.vpclattice.inputs.GetServiceNetworkArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.vpclattice.outputs.GetServiceNetworkResult] =
       val argsBuilder = com.pulumi.aws.vpclattice.inputs.GetServiceNetworkArgs.builder
       com.pulumi.aws.vpclattice.VpclatticeFunctions.getServiceNetwork(args(argsBuilder).build)
 
     /** Data source for managing an AWS VPC Lattice Service Network. */
-    def getServiceNetworkPlain(args: Endofunction[com.pulumi.aws.vpclattice.inputs.GetServiceNetworkPlainArgs.Builder] = scala.Predef.identity):
+    inline def getServiceNetworkPlain(args: Endofunction[com.pulumi.aws.vpclattice.inputs.GetServiceNetworkPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.vpclattice.outputs.GetServiceNetworkResult] =
       val argsBuilder = com.pulumi.aws.vpclattice.inputs.GetServiceNetworkPlainArgs.builder
       com.pulumi.aws.vpclattice.VpclatticeFunctions.getServiceNetworkPlain(args(argsBuilder).build)

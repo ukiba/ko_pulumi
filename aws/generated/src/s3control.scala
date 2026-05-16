@@ -225,43 +225,45 @@ object s3control:
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
-  type S3controlFunctions = com.pulumi.aws.s3control.S3controlFunctions
   object S3controlFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.aws.s3control.S3controlFunctions.*
-  extension (self: S3controlFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /** Provides details about an AWS S3 Control Access Points. */
-    def getAccessPoints(args: Endofunction[com.pulumi.aws.s3control.inputs.GetAccessPointsArgs.Builder] = scala.Predef.identity):
+    inline def getAccessPoints(args: Endofunction[com.pulumi.aws.s3control.inputs.GetAccessPointsArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.s3control.outputs.GetAccessPointsResult] =
       val argsBuilder = com.pulumi.aws.s3control.inputs.GetAccessPointsArgs.builder
       com.pulumi.aws.s3control.S3controlFunctions.getAccessPoints(args(argsBuilder).build)
 
     /** Provides details about an AWS S3 Control Access Points. */
-    def getAccessPointsPlain(args: Endofunction[com.pulumi.aws.s3control.inputs.GetAccessPointsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getAccessPointsPlain(args: Endofunction[com.pulumi.aws.s3control.inputs.GetAccessPointsPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.s3control.outputs.GetAccessPointsResult] =
       val argsBuilder = com.pulumi.aws.s3control.inputs.GetAccessPointsPlainArgs.builder
       com.pulumi.aws.s3control.S3controlFunctions.getAccessPointsPlain(args(argsBuilder).build)
 
     /** Provides details on a specific S3 Multi-Region Access Point. */
-    def getMultiRegionAccessPoint(args: Endofunction[com.pulumi.aws.s3control.inputs.GetMultiRegionAccessPointArgs.Builder] = scala.Predef.identity):
+    inline def getMultiRegionAccessPoint(args: Endofunction[com.pulumi.aws.s3control.inputs.GetMultiRegionAccessPointArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.s3control.outputs.GetMultiRegionAccessPointResult] =
       val argsBuilder = com.pulumi.aws.s3control.inputs.GetMultiRegionAccessPointArgs.builder
       com.pulumi.aws.s3control.S3controlFunctions.getMultiRegionAccessPoint(args(argsBuilder).build)
 
     /** Provides details on a specific S3 Multi-Region Access Point. */
-    def getMultiRegionAccessPointPlain(args: Endofunction[com.pulumi.aws.s3control.inputs.GetMultiRegionAccessPointPlainArgs.Builder] = scala.Predef.identity):
+    inline def getMultiRegionAccessPointPlain(args: Endofunction[com.pulumi.aws.s3control.inputs.GetMultiRegionAccessPointPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.s3control.outputs.GetMultiRegionAccessPointResult] =
       val argsBuilder = com.pulumi.aws.s3control.inputs.GetMultiRegionAccessPointPlainArgs.builder
       com.pulumi.aws.s3control.S3controlFunctions.getMultiRegionAccessPointPlain(args(argsBuilder).build)
 
     /** Provides details about AWS S3 Control Multi-Region Access Points. */
-    def getMultiRegionAccessPoints(args: Endofunction[com.pulumi.aws.s3control.inputs.GetMultiRegionAccessPointsArgs.Builder] = scala.Predef.identity):
+    inline def getMultiRegionAccessPoints(args: Endofunction[com.pulumi.aws.s3control.inputs.GetMultiRegionAccessPointsArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.s3control.outputs.GetMultiRegionAccessPointsResult] =
       val argsBuilder = com.pulumi.aws.s3control.inputs.GetMultiRegionAccessPointsArgs.builder
       com.pulumi.aws.s3control.S3controlFunctions.getMultiRegionAccessPoints(args(argsBuilder).build)
 
     /** Provides details about AWS S3 Control Multi-Region Access Points. */
-    def getMultiRegionAccessPointsPlain(args: Endofunction[com.pulumi.aws.s3control.inputs.GetMultiRegionAccessPointsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getMultiRegionAccessPointsPlain(args: Endofunction[com.pulumi.aws.s3control.inputs.GetMultiRegionAccessPointsPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.s3control.outputs.GetMultiRegionAccessPointsResult] =
       val argsBuilder = com.pulumi.aws.s3control.inputs.GetMultiRegionAccessPointsPlainArgs.builder
       com.pulumi.aws.s3control.S3controlFunctions.getMultiRegionAccessPointsPlain(args(argsBuilder).build)

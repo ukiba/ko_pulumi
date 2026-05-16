@@ -625,11 +625,13 @@ object bigtable:
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
-  type BigtableFunctions = com.pulumi.gcp.bigtable.BigtableFunctions
   object BigtableFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.gcp.bigtable.BigtableFunctions.*
-  extension (self: BigtableFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /**
      * Retrieves the current IAM policy data for a Bigtable instance.
      * 
@@ -666,7 +668,7 @@ object bigtable:
      *  }
      *  </pre>
      */
-    def getInstanceIamPolicy(args: Endofunction[com.pulumi.gcp.bigtable.inputs.GetInstanceIamPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getInstanceIamPolicy(args: Endofunction[com.pulumi.gcp.bigtable.inputs.GetInstanceIamPolicyArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.bigtable.outputs.GetInstanceIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.bigtable.inputs.GetInstanceIamPolicyArgs.builder
       com.pulumi.gcp.bigtable.BigtableFunctions.getInstanceIamPolicy(args(argsBuilder).build)
@@ -707,7 +709,7 @@ object bigtable:
      *  }
      *  </pre>
      */
-    def getInstanceIamPolicyPlain(args: Endofunction[com.pulumi.gcp.bigtable.inputs.GetInstanceIamPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getInstanceIamPolicyPlain(args: Endofunction[com.pulumi.gcp.bigtable.inputs.GetInstanceIamPolicyPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.bigtable.outputs.GetInstanceIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.bigtable.inputs.GetInstanceIamPolicyPlainArgs.builder
       com.pulumi.gcp.bigtable.BigtableFunctions.getInstanceIamPolicyPlain(args(argsBuilder).build)
@@ -749,7 +751,7 @@ object bigtable:
      *  }
      *  </pre>
      */
-    def getTableIamPolicy(args: Endofunction[com.pulumi.gcp.bigtable.inputs.GetTableIamPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getTableIamPolicy(args: Endofunction[com.pulumi.gcp.bigtable.inputs.GetTableIamPolicyArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.bigtable.outputs.GetTableIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.bigtable.inputs.GetTableIamPolicyArgs.builder
       com.pulumi.gcp.bigtable.BigtableFunctions.getTableIamPolicy(args(argsBuilder).build)
@@ -791,7 +793,7 @@ object bigtable:
      *  }
      *  </pre>
      */
-    def getTableIamPolicyPlain(args: Endofunction[com.pulumi.gcp.bigtable.inputs.GetTableIamPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getTableIamPolicyPlain(args: Endofunction[com.pulumi.gcp.bigtable.inputs.GetTableIamPolicyPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.bigtable.outputs.GetTableIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.bigtable.inputs.GetTableIamPolicyPlainArgs.builder
       com.pulumi.gcp.bigtable.BigtableFunctions.getTableIamPolicyPlain(args(argsBuilder).build)

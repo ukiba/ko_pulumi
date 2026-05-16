@@ -161,31 +161,33 @@ object directconnect:
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
-  type DirectconnectFunctions = com.pulumi.aws.directconnect.DirectconnectFunctions
   object DirectconnectFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.aws.directconnect.DirectconnectFunctions.*
-  extension (self: DirectconnectFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /** Retrieve information about a Direct Connect Connection. */
-    def getConnection(args: Endofunction[com.pulumi.aws.directconnect.inputs.GetConnectionArgs.Builder] = scala.Predef.identity):
+    inline def getConnection(args: Endofunction[com.pulumi.aws.directconnect.inputs.GetConnectionArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.directconnect.outputs.GetConnectionResult] =
       val argsBuilder = com.pulumi.aws.directconnect.inputs.GetConnectionArgs.builder
       com.pulumi.aws.directconnect.DirectconnectFunctions.getConnection(args(argsBuilder).build)
 
     /** Retrieve information about a Direct Connect Connection. */
-    def getConnectionPlain(args: Endofunction[com.pulumi.aws.directconnect.inputs.GetConnectionPlainArgs.Builder] = scala.Predef.identity):
+    inline def getConnectionPlain(args: Endofunction[com.pulumi.aws.directconnect.inputs.GetConnectionPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.directconnect.outputs.GetConnectionResult] =
       val argsBuilder = com.pulumi.aws.directconnect.inputs.GetConnectionPlainArgs.builder
       com.pulumi.aws.directconnect.DirectconnectFunctions.getConnectionPlain(args(argsBuilder).build)
 
     /** Retrieve information about a Direct Connect Gateway. */
-    def getGateway(args: Endofunction[com.pulumi.aws.directconnect.inputs.GetGatewayArgs.Builder] = scala.Predef.identity):
+    inline def getGateway(args: Endofunction[com.pulumi.aws.directconnect.inputs.GetGatewayArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.directconnect.outputs.GetGatewayResult] =
       val argsBuilder = com.pulumi.aws.directconnect.inputs.GetGatewayArgs.builder
       com.pulumi.aws.directconnect.DirectconnectFunctions.getGateway(args(argsBuilder).build)
 
     /** Retrieve information about a Direct Connect Gateway. */
-    def getGatewayPlain(args: Endofunction[com.pulumi.aws.directconnect.inputs.GetGatewayPlainArgs.Builder] = scala.Predef.identity):
+    inline def getGatewayPlain(args: Endofunction[com.pulumi.aws.directconnect.inputs.GetGatewayPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.directconnect.outputs.GetGatewayResult] =
       val argsBuilder = com.pulumi.aws.directconnect.inputs.GetGatewayPlainArgs.builder
       com.pulumi.aws.directconnect.DirectconnectFunctions.getGatewayPlain(args(argsBuilder).build)
@@ -196,7 +198,7 @@ object directconnect:
      * 
      *  &gt; **Note:** This data source is different from the `aws.directconnect.getLocations` data source which retrieves information about all the AWS Direct Connect locations in the current AWS Region.
      */
-    def getLocation(args: Endofunction[com.pulumi.aws.directconnect.inputs.GetLocationArgs.Builder] = scala.Predef.identity):
+    inline def getLocation(args: Endofunction[com.pulumi.aws.directconnect.inputs.GetLocationArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.directconnect.outputs.GetLocationResult] =
       val argsBuilder = com.pulumi.aws.directconnect.inputs.GetLocationArgs.builder
       com.pulumi.aws.directconnect.DirectconnectFunctions.getLocation(args(argsBuilder).build)
@@ -207,7 +209,7 @@ object directconnect:
      * 
      *  &gt; **Note:** This data source is different from the `aws.directconnect.getLocations` data source which retrieves information about all the AWS Direct Connect locations in the current AWS Region.
      */
-    def getLocationPlain(args: Endofunction[com.pulumi.aws.directconnect.inputs.GetLocationPlainArgs.Builder] = scala.Predef.identity):
+    inline def getLocationPlain(args: Endofunction[com.pulumi.aws.directconnect.inputs.GetLocationPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.directconnect.outputs.GetLocationResult] =
       val argsBuilder = com.pulumi.aws.directconnect.inputs.GetLocationPlainArgs.builder
       com.pulumi.aws.directconnect.DirectconnectFunctions.getLocationPlain(args(argsBuilder).build)
@@ -218,7 +220,7 @@ object directconnect:
      * 
      *  &gt; **Note:** This data source is different from the `aws.directconnect.getLocation` data source which retrieves information about a specific AWS Direct Connect location in the current AWS Region.
      */
-    def getLocations(args: Endofunction[com.pulumi.aws.directconnect.inputs.GetLocationsArgs.Builder] = scala.Predef.identity):
+    inline def getLocations(args: Endofunction[com.pulumi.aws.directconnect.inputs.GetLocationsArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.directconnect.outputs.GetLocationsResult] =
       val argsBuilder = com.pulumi.aws.directconnect.inputs.GetLocationsArgs.builder
       com.pulumi.aws.directconnect.DirectconnectFunctions.getLocations(args(argsBuilder).build)
@@ -229,19 +231,19 @@ object directconnect:
      * 
      *  &gt; **Note:** This data source is different from the `aws.directconnect.getLocation` data source which retrieves information about a specific AWS Direct Connect location in the current AWS Region.
      */
-    def getLocationsPlain(args: Endofunction[com.pulumi.aws.directconnect.inputs.GetLocationsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getLocationsPlain(args: Endofunction[com.pulumi.aws.directconnect.inputs.GetLocationsPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.directconnect.outputs.GetLocationsResult] =
       val argsBuilder = com.pulumi.aws.directconnect.inputs.GetLocationsPlainArgs.builder
       com.pulumi.aws.directconnect.DirectconnectFunctions.getLocationsPlain(args(argsBuilder).build)
 
     /** Data source for retrieving Router Configuration instructions for a given AWS Direct Connect Virtual Interface and Router Type. */
-    def getRouterConfiguration(args: Endofunction[com.pulumi.aws.directconnect.inputs.GetRouterConfigurationArgs.Builder] = scala.Predef.identity):
+    inline def getRouterConfiguration(args: Endofunction[com.pulumi.aws.directconnect.inputs.GetRouterConfigurationArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.directconnect.outputs.GetRouterConfigurationResult] =
       val argsBuilder = com.pulumi.aws.directconnect.inputs.GetRouterConfigurationArgs.builder
       com.pulumi.aws.directconnect.DirectconnectFunctions.getRouterConfiguration(args(argsBuilder).build)
 
     /** Data source for retrieving Router Configuration instructions for a given AWS Direct Connect Virtual Interface and Router Type. */
-    def getRouterConfigurationPlain(args: Endofunction[com.pulumi.aws.directconnect.inputs.GetRouterConfigurationPlainArgs.Builder] = scala.Predef.identity):
+    inline def getRouterConfigurationPlain(args: Endofunction[com.pulumi.aws.directconnect.inputs.GetRouterConfigurationPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.directconnect.outputs.GetRouterConfigurationResult] =
       val argsBuilder = com.pulumi.aws.directconnect.inputs.GetRouterConfigurationPlainArgs.builder
       com.pulumi.aws.directconnect.DirectconnectFunctions.getRouterConfigurationPlain(args(argsBuilder).build)

@@ -1054,17 +1054,19 @@ object sagemaker:
         com.pulumi.aws.sagemaker.HumanTaskUIArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
 
-  type SagemakerFunctions = com.pulumi.aws.sagemaker.SagemakerFunctions
   object SagemakerFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.aws.sagemaker.SagemakerFunctions.*
-  extension (self: SagemakerFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /**
      * Get information about prebuilt Amazon SageMaker AI  Docker images.
      * 
      *  &gt; **NOTE:** The AWS provider creates a validly constructed `registryPath` but does not verify that the `registryPath` corresponds to an existing image. For example, using a `registryPath` containing an `imageTag` that does not correspond to a Docker image in the ECR repository, will result in an error.
      */
-    def getPrebuiltEcrImage(args: Endofunction[com.pulumi.aws.sagemaker.inputs.GetPrebuiltEcrImageArgs.Builder] = scala.Predef.identity):
+    inline def getPrebuiltEcrImage(args: Endofunction[com.pulumi.aws.sagemaker.inputs.GetPrebuiltEcrImageArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.sagemaker.outputs.GetPrebuiltEcrImageResult] =
       val argsBuilder = com.pulumi.aws.sagemaker.inputs.GetPrebuiltEcrImageArgs.builder
       com.pulumi.aws.sagemaker.SagemakerFunctions.getPrebuiltEcrImage(args(argsBuilder).build)
@@ -1074,7 +1076,7 @@ object sagemaker:
      * 
      *  &gt; **NOTE:** The AWS provider creates a validly constructed `registryPath` but does not verify that the `registryPath` corresponds to an existing image. For example, using a `registryPath` containing an `imageTag` that does not correspond to a Docker image in the ECR repository, will result in an error.
      */
-    def getPrebuiltEcrImagePlain(args: Endofunction[com.pulumi.aws.sagemaker.inputs.GetPrebuiltEcrImagePlainArgs.Builder] = scala.Predef.identity):
+    inline def getPrebuiltEcrImagePlain(args: Endofunction[com.pulumi.aws.sagemaker.inputs.GetPrebuiltEcrImagePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.sagemaker.outputs.GetPrebuiltEcrImageResult] =
       val argsBuilder = com.pulumi.aws.sagemaker.inputs.GetPrebuiltEcrImagePlainArgs.builder
       com.pulumi.aws.sagemaker.SagemakerFunctions.getPrebuiltEcrImagePlain(args(argsBuilder).build)

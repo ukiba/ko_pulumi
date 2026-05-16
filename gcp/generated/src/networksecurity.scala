@@ -79,19 +79,21 @@ object networksecurity:
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
-  type NetworksecurityFunctions = com.pulumi.gcp.networksecurity.NetworksecurityFunctions
   object NetworksecurityFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.gcp.networksecurity.NetworksecurityFunctions.*
-  extension (self: NetworksecurityFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /** Retrieves the current IAM policy data for projectaddressgroup */
-    def getAddressGroupIamPolicy(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.GetAddressGroupIamPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getAddressGroupIamPolicy(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.GetAddressGroupIamPolicyArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.networksecurity.outputs.GetAddressGroupIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.networksecurity.inputs.GetAddressGroupIamPolicyArgs.builder
       com.pulumi.gcp.networksecurity.NetworksecurityFunctions.getAddressGroupIamPolicy(args(argsBuilder).build)
 
     /** Retrieves the current IAM policy data for projectaddressgroup */
-    def getAddressGroupIamPolicyPlain(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.GetAddressGroupIamPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getAddressGroupIamPolicyPlain(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.GetAddressGroupIamPolicyPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.networksecurity.outputs.GetAddressGroupIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.networksecurity.inputs.GetAddressGroupIamPolicyPlainArgs.builder
       com.pulumi.gcp.networksecurity.NetworksecurityFunctions.getAddressGroupIamPolicyPlain(args(argsBuilder).build)
@@ -105,7 +107,7 @@ object networksecurity:
      *  * How-to Guides
      *      * [Official Documentation](https://cloud.google.com/firewall/docs/about-address-groups)
      */
-    def getAddressGroups(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.GetAddressGroupsArgs.Builder] = scala.Predef.identity):
+    inline def getAddressGroups(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.GetAddressGroupsArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.networksecurity.outputs.GetAddressGroupsResult] =
       val argsBuilder = com.pulumi.gcp.networksecurity.inputs.GetAddressGroupsArgs.builder
       com.pulumi.gcp.networksecurity.NetworksecurityFunctions.getAddressGroups(args(argsBuilder).build)
@@ -119,7 +121,7 @@ object networksecurity:
      *  * How-to Guides
      *      * [Official Documentation](https://cloud.google.com/firewall/docs/about-address-groups)
      */
-    def getAddressGroupsPlain(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.GetAddressGroupsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getAddressGroupsPlain(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.GetAddressGroupsPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.networksecurity.outputs.GetAddressGroupsResult] =
       val argsBuilder = com.pulumi.gcp.networksecurity.inputs.GetAddressGroupsPlainArgs.builder
       com.pulumi.gcp.networksecurity.NetworksecurityFunctions.getAddressGroupsPlain(args(argsBuilder).build)

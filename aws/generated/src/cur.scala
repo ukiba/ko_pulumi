@@ -19,11 +19,13 @@ object cur:
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
-  type CurFunctions = com.pulumi.aws.cur.CurFunctions
   object CurFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.aws.cur.CurFunctions.*
-  extension (self: CurFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /**
      * Use this data source to get information on an AWS Cost and Usage Report Definition.
      * 
@@ -31,7 +33,7 @@ object cur:
      * 
      *  &gt; *NOTE:* If AWS Organizations is enabled, only the master account can use this resource.
      */
-    def getReportDefinition(args: Endofunction[com.pulumi.aws.cur.inputs.GetReportDefinitionArgs.Builder] = scala.Predef.identity):
+    inline def getReportDefinition(args: Endofunction[com.pulumi.aws.cur.inputs.GetReportDefinitionArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.cur.outputs.GetReportDefinitionResult] =
       val argsBuilder = com.pulumi.aws.cur.inputs.GetReportDefinitionArgs.builder
       com.pulumi.aws.cur.CurFunctions.getReportDefinition(args(argsBuilder).build)
@@ -43,7 +45,7 @@ object cur:
      * 
      *  &gt; *NOTE:* If AWS Organizations is enabled, only the master account can use this resource.
      */
-    def getReportDefinitionPlain(args: Endofunction[com.pulumi.aws.cur.inputs.GetReportDefinitionPlainArgs.Builder] = scala.Predef.identity):
+    inline def getReportDefinitionPlain(args: Endofunction[com.pulumi.aws.cur.inputs.GetReportDefinitionPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.cur.outputs.GetReportDefinitionResult] =
       val argsBuilder = com.pulumi.aws.cur.inputs.GetReportDefinitionPlainArgs.builder
       com.pulumi.aws.cur.CurFunctions.getReportDefinitionPlain(args(argsBuilder).build)

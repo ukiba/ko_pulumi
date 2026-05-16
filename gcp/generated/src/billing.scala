@@ -299,11 +299,13 @@ object billing:
       def argsBuilder = com.pulumi.gcp.billing.inputs.BudgetThresholdRuleArgs.builder
       builder.thresholdRules(args.map(_(argsBuilder).build)*)
 
-  type BillingFunctions = com.pulumi.gcp.billing.BillingFunctions
   object BillingFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.gcp.billing.BillingFunctions.*
-  extension (self: BillingFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /**
      * Retrieves the current IAM policy data for a Billing Account.
      * 
@@ -340,7 +342,7 @@ object billing:
      *  }
      *  </pre>
      */
-    def getAccountIamPolicy(args: Endofunction[com.pulumi.gcp.billing.inputs.GetAccountIamPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getAccountIamPolicy(args: Endofunction[com.pulumi.gcp.billing.inputs.GetAccountIamPolicyArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.billing.outputs.GetAccountIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.billing.inputs.GetAccountIamPolicyArgs.builder
       com.pulumi.gcp.billing.BillingFunctions.getAccountIamPolicy(args(argsBuilder).build)
@@ -381,7 +383,7 @@ object billing:
      *  }
      *  </pre>
      */
-    def getAccountIamPolicyPlain(args: Endofunction[com.pulumi.gcp.billing.inputs.GetAccountIamPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getAccountIamPolicyPlain(args: Endofunction[com.pulumi.gcp.billing.inputs.GetAccountIamPolicyPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.billing.outputs.GetAccountIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.billing.inputs.GetAccountIamPolicyPlainArgs.builder
       com.pulumi.gcp.billing.BillingFunctions.getAccountIamPolicyPlain(args(argsBuilder).build)

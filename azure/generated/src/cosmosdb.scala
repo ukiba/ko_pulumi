@@ -445,67 +445,69 @@ object cosmosdb:
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
-  type CosmosdbFunctions = com.pulumi.azure.cosmosdb.CosmosdbFunctions
   object CosmosdbFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.azure.cosmosdb.CosmosdbFunctions.*
-  extension (self: CosmosdbFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /** Use this data source to access information about an existing CosmosDB (formally DocumentDB) Account. */
-    def getAccount(args: Endofunction[com.pulumi.azure.cosmosdb.inputs.GetAccountArgs.Builder] = scala.Predef.identity):
+    inline def getAccount(args: Endofunction[com.pulumi.azure.cosmosdb.inputs.GetAccountArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.cosmosdb.outputs.GetAccountResult] =
       val argsBuilder = com.pulumi.azure.cosmosdb.inputs.GetAccountArgs.builder
       com.pulumi.azure.cosmosdb.CosmosdbFunctions.getAccount(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing CosmosDB (formally DocumentDB) Account. */
-    def getAccountPlain(args: Endofunction[com.pulumi.azure.cosmosdb.inputs.GetAccountPlainArgs.Builder] = scala.Predef.identity):
+    inline def getAccountPlain(args: Endofunction[com.pulumi.azure.cosmosdb.inputs.GetAccountPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.cosmosdb.outputs.GetAccountResult] =
       val argsBuilder = com.pulumi.azure.cosmosdb.inputs.GetAccountPlainArgs.builder
       com.pulumi.azure.cosmosdb.CosmosdbFunctions.getAccountPlain(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing Cosmos DB Mongo Database. */
-    def getMongoDatabase(args: Endofunction[com.pulumi.azure.cosmosdb.inputs.GetMongoDatabaseArgs.Builder] = scala.Predef.identity):
+    inline def getMongoDatabase(args: Endofunction[com.pulumi.azure.cosmosdb.inputs.GetMongoDatabaseArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.cosmosdb.outputs.GetMongoDatabaseResult] =
       val argsBuilder = com.pulumi.azure.cosmosdb.inputs.GetMongoDatabaseArgs.builder
       com.pulumi.azure.cosmosdb.CosmosdbFunctions.getMongoDatabase(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing Cosmos DB Mongo Database. */
-    def getMongoDatabasePlain(args: Endofunction[com.pulumi.azure.cosmosdb.inputs.GetMongoDatabasePlainArgs.Builder] = scala.Predef.identity):
+    inline def getMongoDatabasePlain(args: Endofunction[com.pulumi.azure.cosmosdb.inputs.GetMongoDatabasePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.cosmosdb.outputs.GetMongoDatabaseResult] =
       val argsBuilder = com.pulumi.azure.cosmosdb.inputs.GetMongoDatabasePlainArgs.builder
       com.pulumi.azure.cosmosdb.CosmosdbFunctions.getMongoDatabasePlain(args(argsBuilder).build)
 
     /** Use this data source to access information about Cosmos DB Restorable Database Accounts. */
-    def getRestorableDatabaseAccounts(args: Endofunction[com.pulumi.azure.cosmosdb.inputs.GetRestorableDatabaseAccountsArgs.Builder] = scala.Predef.identity):
+    inline def getRestorableDatabaseAccounts(args: Endofunction[com.pulumi.azure.cosmosdb.inputs.GetRestorableDatabaseAccountsArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.cosmosdb.outputs.GetRestorableDatabaseAccountsResult] =
       val argsBuilder = com.pulumi.azure.cosmosdb.inputs.GetRestorableDatabaseAccountsArgs.builder
       com.pulumi.azure.cosmosdb.CosmosdbFunctions.getRestorableDatabaseAccounts(args(argsBuilder).build)
 
     /** Use this data source to access information about Cosmos DB Restorable Database Accounts. */
-    def getRestorableDatabaseAccountsPlain(args: Endofunction[com.pulumi.azure.cosmosdb.inputs.GetRestorableDatabaseAccountsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getRestorableDatabaseAccountsPlain(args: Endofunction[com.pulumi.azure.cosmosdb.inputs.GetRestorableDatabaseAccountsPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.cosmosdb.outputs.GetRestorableDatabaseAccountsResult] =
       val argsBuilder = com.pulumi.azure.cosmosdb.inputs.GetRestorableDatabaseAccountsPlainArgs.builder
       com.pulumi.azure.cosmosdb.CosmosdbFunctions.getRestorableDatabaseAccountsPlain(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing CosmosDB SQL Database. */
-    def getSqlDatabase(args: Endofunction[com.pulumi.azure.cosmosdb.inputs.GetSqlDatabaseArgs.Builder] = scala.Predef.identity):
+    inline def getSqlDatabase(args: Endofunction[com.pulumi.azure.cosmosdb.inputs.GetSqlDatabaseArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.cosmosdb.outputs.GetSqlDatabaseResult] =
       val argsBuilder = com.pulumi.azure.cosmosdb.inputs.GetSqlDatabaseArgs.builder
       com.pulumi.azure.cosmosdb.CosmosdbFunctions.getSqlDatabase(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing CosmosDB SQL Database. */
-    def getSqlDatabasePlain(args: Endofunction[com.pulumi.azure.cosmosdb.inputs.GetSqlDatabasePlainArgs.Builder] = scala.Predef.identity):
+    inline def getSqlDatabasePlain(args: Endofunction[com.pulumi.azure.cosmosdb.inputs.GetSqlDatabasePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.cosmosdb.outputs.GetSqlDatabaseResult] =
       val argsBuilder = com.pulumi.azure.cosmosdb.inputs.GetSqlDatabasePlainArgs.builder
       com.pulumi.azure.cosmosdb.CosmosdbFunctions.getSqlDatabasePlain(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing Cosmos DB SQL Role Definition. */
-    def getSqlRoleDefinition(args: Endofunction[com.pulumi.azure.cosmosdb.inputs.GetSqlRoleDefinitionArgs.Builder] = scala.Predef.identity):
+    inline def getSqlRoleDefinition(args: Endofunction[com.pulumi.azure.cosmosdb.inputs.GetSqlRoleDefinitionArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.cosmosdb.outputs.GetSqlRoleDefinitionResult] =
       val argsBuilder = com.pulumi.azure.cosmosdb.inputs.GetSqlRoleDefinitionArgs.builder
       com.pulumi.azure.cosmosdb.CosmosdbFunctions.getSqlRoleDefinition(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing Cosmos DB SQL Role Definition. */
-    def getSqlRoleDefinitionPlain(args: Endofunction[com.pulumi.azure.cosmosdb.inputs.GetSqlRoleDefinitionPlainArgs.Builder] = scala.Predef.identity):
+    inline def getSqlRoleDefinitionPlain(args: Endofunction[com.pulumi.azure.cosmosdb.inputs.GetSqlRoleDefinitionPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.cosmosdb.outputs.GetSqlRoleDefinitionResult] =
       val argsBuilder = com.pulumi.azure.cosmosdb.inputs.GetSqlRoleDefinitionPlainArgs.builder
       com.pulumi.azure.cosmosdb.CosmosdbFunctions.getSqlRoleDefinitionPlain(args(argsBuilder).build)

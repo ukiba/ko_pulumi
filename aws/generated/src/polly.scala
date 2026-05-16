@@ -3,19 +3,21 @@ package aws
 
 
 object polly:
-  type PollyFunctions = com.pulumi.aws.polly.PollyFunctions
   object PollyFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.aws.polly.PollyFunctions.*
-  extension (self: PollyFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /** Data source for managing an AWS Polly Voices. */
-    def getVoices(args: Endofunction[com.pulumi.aws.polly.inputs.GetVoicesArgs.Builder] = scala.Predef.identity):
+    inline def getVoices(args: Endofunction[com.pulumi.aws.polly.inputs.GetVoicesArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.polly.outputs.GetVoicesResult] =
       val argsBuilder = com.pulumi.aws.polly.inputs.GetVoicesArgs.builder
       com.pulumi.aws.polly.PollyFunctions.getVoices(args(argsBuilder).build)
 
     /** Data source for managing an AWS Polly Voices. */
-    def getVoicesPlain(args: Endofunction[com.pulumi.aws.polly.inputs.GetVoicesPlainArgs.Builder] = scala.Predef.identity):
+    inline def getVoicesPlain(args: Endofunction[com.pulumi.aws.polly.inputs.GetVoicesPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.polly.outputs.GetVoicesResult] =
       val argsBuilder = com.pulumi.aws.polly.inputs.GetVoicesPlainArgs.builder
       com.pulumi.aws.polly.PollyFunctions.getVoicesPlain(args(argsBuilder).build)

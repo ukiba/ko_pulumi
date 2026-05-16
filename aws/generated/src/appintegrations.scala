@@ -32,19 +32,21 @@ object appintegrations:
         com.pulumi.aws.appintegrations.DataIntegrationArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
 
-  type AppintegrationsFunctions = com.pulumi.aws.appintegrations.AppintegrationsFunctions
   object AppintegrationsFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.aws.appintegrations.AppintegrationsFunctions.*
-  extension (self: AppintegrationsFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /** Use this data source to get information on an existing AppIntegrations Event Integration. */
-    def getEventIntegration(args: Endofunction[com.pulumi.aws.appintegrations.inputs.GetEventIntegrationArgs.Builder] = scala.Predef.identity):
+    inline def getEventIntegration(args: Endofunction[com.pulumi.aws.appintegrations.inputs.GetEventIntegrationArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.appintegrations.outputs.GetEventIntegrationResult] =
       val argsBuilder = com.pulumi.aws.appintegrations.inputs.GetEventIntegrationArgs.builder
       com.pulumi.aws.appintegrations.AppintegrationsFunctions.getEventIntegration(args(argsBuilder).build)
 
     /** Use this data source to get information on an existing AppIntegrations Event Integration. */
-    def getEventIntegrationPlain(args: Endofunction[com.pulumi.aws.appintegrations.inputs.GetEventIntegrationPlainArgs.Builder] = scala.Predef.identity):
+    inline def getEventIntegrationPlain(args: Endofunction[com.pulumi.aws.appintegrations.inputs.GetEventIntegrationPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.appintegrations.outputs.GetEventIntegrationResult] =
       val argsBuilder = com.pulumi.aws.appintegrations.inputs.GetEventIntegrationPlainArgs.builder
       com.pulumi.aws.appintegrations.AppintegrationsFunctions.getEventIntegrationPlain(args(argsBuilder).build)

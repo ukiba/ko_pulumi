@@ -4,17 +4,19 @@ package gcp
 import com.pulumi.resources.CustomResourceOptions
 
 object servicenetworking:
-  type ServicenetworkingFunctions = com.pulumi.gcp.servicenetworking.ServicenetworkingFunctions
   object ServicenetworkingFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.gcp.servicenetworking.ServicenetworkingFunctions.*
-  extension (self: ServicenetworkingFunctions.type)
-    def getPeeredDnsDomain(args: Endofunction[com.pulumi.gcp.servicenetworking.inputs.GetPeeredDnsDomainArgs.Builder] = scala.Predef.identity):
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
+    inline def getPeeredDnsDomain(args: Endofunction[com.pulumi.gcp.servicenetworking.inputs.GetPeeredDnsDomainArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.servicenetworking.outputs.GetPeeredDnsDomainResult] =
       val argsBuilder = com.pulumi.gcp.servicenetworking.inputs.GetPeeredDnsDomainArgs.builder
       com.pulumi.gcp.servicenetworking.ServicenetworkingFunctions.getPeeredDnsDomain(args(argsBuilder).build)
 
-    def getPeeredDnsDomainPlain(args: Endofunction[com.pulumi.gcp.servicenetworking.inputs.GetPeeredDnsDomainPlainArgs.Builder] = scala.Predef.identity):
+    inline def getPeeredDnsDomainPlain(args: Endofunction[com.pulumi.gcp.servicenetworking.inputs.GetPeeredDnsDomainPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.servicenetworking.outputs.GetPeeredDnsDomainResult] =
       val argsBuilder = com.pulumi.gcp.servicenetworking.inputs.GetPeeredDnsDomainPlainArgs.builder
       com.pulumi.gcp.servicenetworking.ServicenetworkingFunctions.getPeeredDnsDomainPlain(args(argsBuilder).build)

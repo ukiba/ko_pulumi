@@ -217,19 +217,21 @@ object apigee:
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
-  type ApigeeFunctions = com.pulumi.gcp.apigee.ApigeeFunctions
   object ApigeeFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.gcp.apigee.ApigeeFunctions.*
-  extension (self: ApigeeFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /** Retrieves the current IAM policy data for environment */
-    def getEnvironmentIamPolicy(args: Endofunction[com.pulumi.gcp.apigee.inputs.GetEnvironmentIamPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getEnvironmentIamPolicy(args: Endofunction[com.pulumi.gcp.apigee.inputs.GetEnvironmentIamPolicyArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.apigee.outputs.GetEnvironmentIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.apigee.inputs.GetEnvironmentIamPolicyArgs.builder
       com.pulumi.gcp.apigee.ApigeeFunctions.getEnvironmentIamPolicy(args(argsBuilder).build)
 
     /** Retrieves the current IAM policy data for environment */
-    def getEnvironmentIamPolicyPlain(args: Endofunction[com.pulumi.gcp.apigee.inputs.GetEnvironmentIamPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getEnvironmentIamPolicyPlain(args: Endofunction[com.pulumi.gcp.apigee.inputs.GetEnvironmentIamPolicyPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.apigee.outputs.GetEnvironmentIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.apigee.inputs.GetEnvironmentIamPolicyPlainArgs.builder
       com.pulumi.gcp.apigee.ApigeeFunctions.getEnvironmentIamPolicyPlain(args(argsBuilder).build)

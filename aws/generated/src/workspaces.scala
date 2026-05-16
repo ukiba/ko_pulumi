@@ -141,55 +141,57 @@ object workspaces:
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
-  type WorkspacesFunctions = com.pulumi.aws.workspaces.WorkspacesFunctions
   object WorkspacesFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.aws.workspaces.WorkspacesFunctions.*
-  extension (self: WorkspacesFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /** Retrieve information about an AWS WorkSpaces bundle. */
-    def getBundle(args: Endofunction[com.pulumi.aws.workspaces.inputs.GetBundleArgs.Builder] = scala.Predef.identity):
+    inline def getBundle(args: Endofunction[com.pulumi.aws.workspaces.inputs.GetBundleArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.workspaces.outputs.GetBundleResult] =
       val argsBuilder = com.pulumi.aws.workspaces.inputs.GetBundleArgs.builder
       com.pulumi.aws.workspaces.WorkspacesFunctions.getBundle(args(argsBuilder).build)
 
     /** Retrieve information about an AWS WorkSpaces bundle. */
-    def getBundlePlain(args: Endofunction[com.pulumi.aws.workspaces.inputs.GetBundlePlainArgs.Builder] = scala.Predef.identity):
+    inline def getBundlePlain(args: Endofunction[com.pulumi.aws.workspaces.inputs.GetBundlePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.workspaces.outputs.GetBundleResult] =
       val argsBuilder = com.pulumi.aws.workspaces.inputs.GetBundlePlainArgs.builder
       com.pulumi.aws.workspaces.WorkspacesFunctions.getBundlePlain(args(argsBuilder).build)
 
     /** Retrieve information about an AWS WorkSpaces directory. */
-    def getDirectory(args: Endofunction[com.pulumi.aws.workspaces.inputs.GetDirectoryArgs.Builder] = scala.Predef.identity):
+    inline def getDirectory(args: Endofunction[com.pulumi.aws.workspaces.inputs.GetDirectoryArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.workspaces.outputs.GetDirectoryResult] =
       val argsBuilder = com.pulumi.aws.workspaces.inputs.GetDirectoryArgs.builder
       com.pulumi.aws.workspaces.WorkspacesFunctions.getDirectory(args(argsBuilder).build)
 
     /** Retrieve information about an AWS WorkSpaces directory. */
-    def getDirectoryPlain(args: Endofunction[com.pulumi.aws.workspaces.inputs.GetDirectoryPlainArgs.Builder] = scala.Predef.identity):
+    inline def getDirectoryPlain(args: Endofunction[com.pulumi.aws.workspaces.inputs.GetDirectoryPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.workspaces.outputs.GetDirectoryResult] =
       val argsBuilder = com.pulumi.aws.workspaces.inputs.GetDirectoryPlainArgs.builder
       com.pulumi.aws.workspaces.WorkspacesFunctions.getDirectoryPlain(args(argsBuilder).build)
 
     /** Use this data source to get information about a Workspaces image. */
-    def getImage(args: Endofunction[com.pulumi.aws.workspaces.inputs.GetImageArgs.Builder] = scala.Predef.identity):
+    inline def getImage(args: Endofunction[com.pulumi.aws.workspaces.inputs.GetImageArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.workspaces.outputs.GetImageResult] =
       val argsBuilder = com.pulumi.aws.workspaces.inputs.GetImageArgs.builder
       com.pulumi.aws.workspaces.WorkspacesFunctions.getImage(args(argsBuilder).build)
 
     /** Use this data source to get information about a Workspaces image. */
-    def getImagePlain(args: Endofunction[com.pulumi.aws.workspaces.inputs.GetImagePlainArgs.Builder] = scala.Predef.identity):
+    inline def getImagePlain(args: Endofunction[com.pulumi.aws.workspaces.inputs.GetImagePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.workspaces.outputs.GetImageResult] =
       val argsBuilder = com.pulumi.aws.workspaces.inputs.GetImagePlainArgs.builder
       com.pulumi.aws.workspaces.WorkspacesFunctions.getImagePlain(args(argsBuilder).build)
 
     /** Use this data source to get information about a workspace in [AWS Workspaces](https://docs.aws.amazon.com/workspaces/latest/adminguide/amazon-workspaces.html) Service. */
-    def getWorkspace(args: Endofunction[com.pulumi.aws.workspaces.inputs.GetWorkspaceArgs.Builder] = scala.Predef.identity):
+    inline def getWorkspace(args: Endofunction[com.pulumi.aws.workspaces.inputs.GetWorkspaceArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.workspaces.outputs.GetWorkspaceResult] =
       val argsBuilder = com.pulumi.aws.workspaces.inputs.GetWorkspaceArgs.builder
       com.pulumi.aws.workspaces.WorkspacesFunctions.getWorkspace(args(argsBuilder).build)
 
     /** Use this data source to get information about a workspace in [AWS Workspaces](https://docs.aws.amazon.com/workspaces/latest/adminguide/amazon-workspaces.html) Service. */
-    def getWorkspacePlain(args: Endofunction[com.pulumi.aws.workspaces.inputs.GetWorkspacePlainArgs.Builder] = scala.Predef.identity):
+    inline def getWorkspacePlain(args: Endofunction[com.pulumi.aws.workspaces.inputs.GetWorkspacePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.workspaces.outputs.GetWorkspaceResult] =
       val argsBuilder = com.pulumi.aws.workspaces.inputs.GetWorkspacePlainArgs.builder
       com.pulumi.aws.workspaces.WorkspacesFunctions.getWorkspacePlain(args(argsBuilder).build)

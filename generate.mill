@@ -440,11 +440,13 @@ class PulumiProviderAdapterGenerator(dstRoot: Path, packageName: String, classpa
 
             if functionMethods.nonEmpty then
               genOf(packageComps).members :+= FunctionsMember(s"""
-                |  type $clsName = $pkg.$clsName
                 |  object $clsName:
-                |    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-                |    export $pkg.$clsName.*
-                |  extension (self: $clsName.type)${
+                |    // Pulumi methods are reproduced as Scala methods.
+                |    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+                |    // when the return value is assigned to class member without explicit type, e.g.:
+                |    //
+                |    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+                |${
                         functionMethods.map: methodTree =>
                           val method = trees.getElement(TreePath(currentPath, methodTree)).asExecutableElement
                           val methodName = escapeScalaKeyword(method.simpleName.toString)
@@ -469,7 +471,7 @@ class PulumiProviderAdapterGenerator(dstRoot: Path, packageName: String, classpa
                           // identity is qualified to avoid the collision with gcp.storage.identity
                           val argsFuncType = s"Endofunction[$argsType.Builder] = scala.Predef.identity"
                           s"""
-                            |    ${methodDoc}${deprecated}def $methodName(args: $argsFuncType):
+                            |    ${methodDoc}${deprecated}inline def $methodName(args: $argsFuncType):
                             |        ${renderScalaType(method.returnType)} =
                             |      val argsBuilder = $argsType.builder
                             |      $pkg.$clsName.$methodName(args(argsBuilder).build)

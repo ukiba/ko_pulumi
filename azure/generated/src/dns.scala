@@ -236,17 +236,19 @@ object dns:
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
-  type DnsFunctions = com.pulumi.azure.dns.DnsFunctions
   object DnsFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.azure.dns.DnsFunctions.*
-  extension (self: DnsFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /**
      * Use this data source to access information about an existing DNS AAAA Record within Azure DNS.
      * 
      *  &gt; **Note:** [The Azure DNS API has a throttle limit of 500 read (GET) operations per 5 minutes](https://docs.microsoft.com/azure/azure-resource-manager/management/request-limits-and-throttling#network-throttling) - whilst the default read timeouts will work for most cases - in larger configurations you may need to set a larger read timeout then the default 5min. Although, we&#39;d generally recommend that you split the resources out into smaller Terraform configurations to avoid the problem entirely.
      */
-    def getAAAARecord(args: Endofunction[com.pulumi.azure.dns.inputs.GetAAAARecordArgs.Builder] = scala.Predef.identity):
+    inline def getAAAARecord(args: Endofunction[com.pulumi.azure.dns.inputs.GetAAAARecordArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.dns.outputs.GetAAAARecordResult] =
       val argsBuilder = com.pulumi.azure.dns.inputs.GetAAAARecordArgs.builder
       com.pulumi.azure.dns.DnsFunctions.getAAAARecord(args(argsBuilder).build)
@@ -256,7 +258,7 @@ object dns:
      * 
      *  &gt; **Note:** [The Azure DNS API has a throttle limit of 500 read (GET) operations per 5 minutes](https://docs.microsoft.com/azure/azure-resource-manager/management/request-limits-and-throttling#network-throttling) - whilst the default read timeouts will work for most cases - in larger configurations you may need to set a larger read timeout then the default 5min. Although, we&#39;d generally recommend that you split the resources out into smaller Terraform configurations to avoid the problem entirely.
      */
-    def getAAAARecordPlain(args: Endofunction[com.pulumi.azure.dns.inputs.GetAAAARecordPlainArgs.Builder] = scala.Predef.identity):
+    inline def getAAAARecordPlain(args: Endofunction[com.pulumi.azure.dns.inputs.GetAAAARecordPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.dns.outputs.GetAAAARecordResult] =
       val argsBuilder = com.pulumi.azure.dns.inputs.GetAAAARecordPlainArgs.builder
       com.pulumi.azure.dns.DnsFunctions.getAAAARecordPlain(args(argsBuilder).build)
@@ -266,7 +268,7 @@ object dns:
      * 
      *  &gt; **Note:** [The Azure DNS API has a throttle limit of 500 read (GET) operations per 5 minutes](https://docs.microsoft.com/azure/azure-resource-manager/management/request-limits-and-throttling#network-throttling) - whilst the default read timeouts will work for most cases - in larger configurations you may need to set a larger read timeout then the default 5min. Although, we&#39;d generally recommend that you split the resources out into smaller Terraform configurations to avoid the problem entirely.
      */
-    def getARecord(args: Endofunction[com.pulumi.azure.dns.inputs.GetARecordArgs.Builder] = scala.Predef.identity):
+    inline def getARecord(args: Endofunction[com.pulumi.azure.dns.inputs.GetARecordArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.dns.outputs.GetARecordResult] =
       val argsBuilder = com.pulumi.azure.dns.inputs.GetARecordArgs.builder
       com.pulumi.azure.dns.DnsFunctions.getARecord(args(argsBuilder).build)
@@ -276,7 +278,7 @@ object dns:
      * 
      *  &gt; **Note:** [The Azure DNS API has a throttle limit of 500 read (GET) operations per 5 minutes](https://docs.microsoft.com/azure/azure-resource-manager/management/request-limits-and-throttling#network-throttling) - whilst the default read timeouts will work for most cases - in larger configurations you may need to set a larger read timeout then the default 5min. Although, we&#39;d generally recommend that you split the resources out into smaller Terraform configurations to avoid the problem entirely.
      */
-    def getARecordPlain(args: Endofunction[com.pulumi.azure.dns.inputs.GetARecordPlainArgs.Builder] = scala.Predef.identity):
+    inline def getARecordPlain(args: Endofunction[com.pulumi.azure.dns.inputs.GetARecordPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.dns.outputs.GetARecordResult] =
       val argsBuilder = com.pulumi.azure.dns.inputs.GetARecordPlainArgs.builder
       com.pulumi.azure.dns.DnsFunctions.getARecordPlain(args(argsBuilder).build)
@@ -286,7 +288,7 @@ object dns:
      * 
      *  &gt; **Note:** [The Azure DNS API has a throttle limit of 500 read (GET) operations per 5 minutes](https://docs.microsoft.com/azure/azure-resource-manager/management/request-limits-and-throttling#network-throttling) - whilst the default read timeouts will work for most cases - in larger configurations you may need to set a larger read timeout then the default 5min. Although, we&#39;d generally recommend that you split the resources out into smaller Terraform configurations to avoid the problem entirely.
      */
-    def getCAARecord(args: Endofunction[com.pulumi.azure.dns.inputs.GetCAARecordArgs.Builder] = scala.Predef.identity):
+    inline def getCAARecord(args: Endofunction[com.pulumi.azure.dns.inputs.GetCAARecordArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.dns.outputs.GetCAARecordResult] =
       val argsBuilder = com.pulumi.azure.dns.inputs.GetCAARecordArgs.builder
       com.pulumi.azure.dns.DnsFunctions.getCAARecord(args(argsBuilder).build)
@@ -296,7 +298,7 @@ object dns:
      * 
      *  &gt; **Note:** [The Azure DNS API has a throttle limit of 500 read (GET) operations per 5 minutes](https://docs.microsoft.com/azure/azure-resource-manager/management/request-limits-and-throttling#network-throttling) - whilst the default read timeouts will work for most cases - in larger configurations you may need to set a larger read timeout then the default 5min. Although, we&#39;d generally recommend that you split the resources out into smaller Terraform configurations to avoid the problem entirely.
      */
-    def getCAARecordPlain(args: Endofunction[com.pulumi.azure.dns.inputs.GetCAARecordPlainArgs.Builder] = scala.Predef.identity):
+    inline def getCAARecordPlain(args: Endofunction[com.pulumi.azure.dns.inputs.GetCAARecordPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.dns.outputs.GetCAARecordResult] =
       val argsBuilder = com.pulumi.azure.dns.inputs.GetCAARecordPlainArgs.builder
       com.pulumi.azure.dns.DnsFunctions.getCAARecordPlain(args(argsBuilder).build)
@@ -306,7 +308,7 @@ object dns:
      * 
      *  &gt; **Note:** [The Azure DNS API has a throttle limit of 500 read (GET) operations per 5 minutes](https://docs.microsoft.com/azure/azure-resource-manager/management/request-limits-and-throttling#network-throttling) - whilst the default read timeouts will work for most cases - in larger configurations you may need to set a larger read timeout then the default 5min. Although, we&#39;d generally recommend that you split the resources out into smaller Terraform configurations to avoid the problem entirely.
      */
-    def getCnameRecord(args: Endofunction[com.pulumi.azure.dns.inputs.GetCnameRecordArgs.Builder] = scala.Predef.identity):
+    inline def getCnameRecord(args: Endofunction[com.pulumi.azure.dns.inputs.GetCnameRecordArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.dns.outputs.GetCnameRecordResult] =
       val argsBuilder = com.pulumi.azure.dns.inputs.GetCnameRecordArgs.builder
       com.pulumi.azure.dns.DnsFunctions.getCnameRecord(args(argsBuilder).build)
@@ -316,7 +318,7 @@ object dns:
      * 
      *  &gt; **Note:** [The Azure DNS API has a throttle limit of 500 read (GET) operations per 5 minutes](https://docs.microsoft.com/azure/azure-resource-manager/management/request-limits-and-throttling#network-throttling) - whilst the default read timeouts will work for most cases - in larger configurations you may need to set a larger read timeout then the default 5min. Although, we&#39;d generally recommend that you split the resources out into smaller Terraform configurations to avoid the problem entirely.
      */
-    def getCnameRecordPlain(args: Endofunction[com.pulumi.azure.dns.inputs.GetCnameRecordPlainArgs.Builder] = scala.Predef.identity):
+    inline def getCnameRecordPlain(args: Endofunction[com.pulumi.azure.dns.inputs.GetCnameRecordPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.dns.outputs.GetCnameRecordResult] =
       val argsBuilder = com.pulumi.azure.dns.inputs.GetCnameRecordPlainArgs.builder
       com.pulumi.azure.dns.DnsFunctions.getCnameRecordPlain(args(argsBuilder).build)
@@ -326,7 +328,7 @@ object dns:
      * 
      *  &gt; **Note:** [The Azure DNS API has a throttle limit of 500 read (GET) operations per 5 minutes](https://docs.microsoft.com/azure/azure-resource-manager/management/request-limits-and-throttling#network-throttling) - whilst the default read timeouts will work for most cases - in larger configurations you may need to set a larger read timeout then the default 5min. Although, we&#39;d generally recommend that you split the resources out into smaller Terraform configurations to avoid the problem entirely.
      */
-    def getMxRecord(args: Endofunction[com.pulumi.azure.dns.inputs.GetMxRecordArgs.Builder] = scala.Predef.identity):
+    inline def getMxRecord(args: Endofunction[com.pulumi.azure.dns.inputs.GetMxRecordArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.dns.outputs.GetMxRecordResult] =
       val argsBuilder = com.pulumi.azure.dns.inputs.GetMxRecordArgs.builder
       com.pulumi.azure.dns.DnsFunctions.getMxRecord(args(argsBuilder).build)
@@ -336,7 +338,7 @@ object dns:
      * 
      *  &gt; **Note:** [The Azure DNS API has a throttle limit of 500 read (GET) operations per 5 minutes](https://docs.microsoft.com/azure/azure-resource-manager/management/request-limits-and-throttling#network-throttling) - whilst the default read timeouts will work for most cases - in larger configurations you may need to set a larger read timeout then the default 5min. Although, we&#39;d generally recommend that you split the resources out into smaller Terraform configurations to avoid the problem entirely.
      */
-    def getMxRecordPlain(args: Endofunction[com.pulumi.azure.dns.inputs.GetMxRecordPlainArgs.Builder] = scala.Predef.identity):
+    inline def getMxRecordPlain(args: Endofunction[com.pulumi.azure.dns.inputs.GetMxRecordPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.dns.outputs.GetMxRecordResult] =
       val argsBuilder = com.pulumi.azure.dns.inputs.GetMxRecordPlainArgs.builder
       com.pulumi.azure.dns.DnsFunctions.getMxRecordPlain(args(argsBuilder).build)
@@ -346,7 +348,7 @@ object dns:
      * 
      *  &gt; **Note:** [The Azure DNS API has a throttle limit of 500 read (GET) operations per 5 minutes](https://docs.microsoft.com/azure/azure-resource-manager/management/request-limits-and-throttling#network-throttling) - whilst the default read timeouts will work for most cases - in larger configurations you may need to set a larger read timeout then the default 5min. Although, we&#39;d generally recommend that you split the resources out into smaller Terraform configurations to avoid the problem entirely.
      */
-    def getNsRecord(args: Endofunction[com.pulumi.azure.dns.inputs.GetNsRecordArgs.Builder] = scala.Predef.identity):
+    inline def getNsRecord(args: Endofunction[com.pulumi.azure.dns.inputs.GetNsRecordArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.dns.outputs.GetNsRecordResult] =
       val argsBuilder = com.pulumi.azure.dns.inputs.GetNsRecordArgs.builder
       com.pulumi.azure.dns.DnsFunctions.getNsRecord(args(argsBuilder).build)
@@ -356,7 +358,7 @@ object dns:
      * 
      *  &gt; **Note:** [The Azure DNS API has a throttle limit of 500 read (GET) operations per 5 minutes](https://docs.microsoft.com/azure/azure-resource-manager/management/request-limits-and-throttling#network-throttling) - whilst the default read timeouts will work for most cases - in larger configurations you may need to set a larger read timeout then the default 5min. Although, we&#39;d generally recommend that you split the resources out into smaller Terraform configurations to avoid the problem entirely.
      */
-    def getNsRecordPlain(args: Endofunction[com.pulumi.azure.dns.inputs.GetNsRecordPlainArgs.Builder] = scala.Predef.identity):
+    inline def getNsRecordPlain(args: Endofunction[com.pulumi.azure.dns.inputs.GetNsRecordPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.dns.outputs.GetNsRecordResult] =
       val argsBuilder = com.pulumi.azure.dns.inputs.GetNsRecordPlainArgs.builder
       com.pulumi.azure.dns.DnsFunctions.getNsRecordPlain(args(argsBuilder).build)
@@ -366,7 +368,7 @@ object dns:
      * 
      *  &gt; **Note:** [The Azure DNS API has a throttle limit of 500 read (GET) operations per 5 minutes](https://docs.microsoft.com/azure/azure-resource-manager/management/request-limits-and-throttling#network-throttling) - whilst the default read timeouts will work for most cases - in larger configurations you may need to set a larger read timeout then the default 5min. Although, we&#39;d generally recommend that you split the resources out into smaller Terraform configurations to avoid the problem entirely.
      */
-    def getPtrRecord(args: Endofunction[com.pulumi.azure.dns.inputs.GetPtrRecordArgs.Builder] = scala.Predef.identity):
+    inline def getPtrRecord(args: Endofunction[com.pulumi.azure.dns.inputs.GetPtrRecordArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.dns.outputs.GetPtrRecordResult] =
       val argsBuilder = com.pulumi.azure.dns.inputs.GetPtrRecordArgs.builder
       com.pulumi.azure.dns.DnsFunctions.getPtrRecord(args(argsBuilder).build)
@@ -376,7 +378,7 @@ object dns:
      * 
      *  &gt; **Note:** [The Azure DNS API has a throttle limit of 500 read (GET) operations per 5 minutes](https://docs.microsoft.com/azure/azure-resource-manager/management/request-limits-and-throttling#network-throttling) - whilst the default read timeouts will work for most cases - in larger configurations you may need to set a larger read timeout then the default 5min. Although, we&#39;d generally recommend that you split the resources out into smaller Terraform configurations to avoid the problem entirely.
      */
-    def getPtrRecordPlain(args: Endofunction[com.pulumi.azure.dns.inputs.GetPtrRecordPlainArgs.Builder] = scala.Predef.identity):
+    inline def getPtrRecordPlain(args: Endofunction[com.pulumi.azure.dns.inputs.GetPtrRecordPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.dns.outputs.GetPtrRecordResult] =
       val argsBuilder = com.pulumi.azure.dns.inputs.GetPtrRecordPlainArgs.builder
       com.pulumi.azure.dns.DnsFunctions.getPtrRecordPlain(args(argsBuilder).build)
@@ -386,7 +388,7 @@ object dns:
      * 
      *  &gt; **Note:** [The Azure DNS API has a throttle limit of 500 read (GET) operations per 5 minutes](https://docs.microsoft.com/azure/azure-resource-manager/management/request-limits-and-throttling#network-throttling) - whilst the default read timeouts will work for most cases - in larger configurations you may need to set a larger read timeout then the default 5min. Although, we&#39;d generally recommend that you split the resources out into smaller Terraform configurations to avoid the problem entirely.
      */
-    def getSoaRecord(args: Endofunction[com.pulumi.azure.dns.inputs.GetSoaRecordArgs.Builder] = scala.Predef.identity):
+    inline def getSoaRecord(args: Endofunction[com.pulumi.azure.dns.inputs.GetSoaRecordArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.dns.outputs.GetSoaRecordResult] =
       val argsBuilder = com.pulumi.azure.dns.inputs.GetSoaRecordArgs.builder
       com.pulumi.azure.dns.DnsFunctions.getSoaRecord(args(argsBuilder).build)
@@ -396,7 +398,7 @@ object dns:
      * 
      *  &gt; **Note:** [The Azure DNS API has a throttle limit of 500 read (GET) operations per 5 minutes](https://docs.microsoft.com/azure/azure-resource-manager/management/request-limits-and-throttling#network-throttling) - whilst the default read timeouts will work for most cases - in larger configurations you may need to set a larger read timeout then the default 5min. Although, we&#39;d generally recommend that you split the resources out into smaller Terraform configurations to avoid the problem entirely.
      */
-    def getSoaRecordPlain(args: Endofunction[com.pulumi.azure.dns.inputs.GetSoaRecordPlainArgs.Builder] = scala.Predef.identity):
+    inline def getSoaRecordPlain(args: Endofunction[com.pulumi.azure.dns.inputs.GetSoaRecordPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.dns.outputs.GetSoaRecordResult] =
       val argsBuilder = com.pulumi.azure.dns.inputs.GetSoaRecordPlainArgs.builder
       com.pulumi.azure.dns.DnsFunctions.getSoaRecordPlain(args(argsBuilder).build)
@@ -406,7 +408,7 @@ object dns:
      * 
      *  &gt; **Note:** [The Azure DNS API has a throttle limit of 500 read (GET) operations per 5 minutes](https://docs.microsoft.com/azure/azure-resource-manager/management/request-limits-and-throttling#network-throttling) - whilst the default read timeouts will work for most cases - in larger configurations you may need to set a larger read timeout then the default 5min. Although, we&#39;d generally recommend that you split the resources out into smaller Terraform configurations to avoid the problem entirely.
      */
-    def getSrvRecord(args: Endofunction[com.pulumi.azure.dns.inputs.GetSrvRecordArgs.Builder] = scala.Predef.identity):
+    inline def getSrvRecord(args: Endofunction[com.pulumi.azure.dns.inputs.GetSrvRecordArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.dns.outputs.GetSrvRecordResult] =
       val argsBuilder = com.pulumi.azure.dns.inputs.GetSrvRecordArgs.builder
       com.pulumi.azure.dns.DnsFunctions.getSrvRecord(args(argsBuilder).build)
@@ -416,7 +418,7 @@ object dns:
      * 
      *  &gt; **Note:** [The Azure DNS API has a throttle limit of 500 read (GET) operations per 5 minutes](https://docs.microsoft.com/azure/azure-resource-manager/management/request-limits-and-throttling#network-throttling) - whilst the default read timeouts will work for most cases - in larger configurations you may need to set a larger read timeout then the default 5min. Although, we&#39;d generally recommend that you split the resources out into smaller Terraform configurations to avoid the problem entirely.
      */
-    def getSrvRecordPlain(args: Endofunction[com.pulumi.azure.dns.inputs.GetSrvRecordPlainArgs.Builder] = scala.Predef.identity):
+    inline def getSrvRecordPlain(args: Endofunction[com.pulumi.azure.dns.inputs.GetSrvRecordPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.dns.outputs.GetSrvRecordResult] =
       val argsBuilder = com.pulumi.azure.dns.inputs.GetSrvRecordPlainArgs.builder
       com.pulumi.azure.dns.DnsFunctions.getSrvRecordPlain(args(argsBuilder).build)
@@ -426,7 +428,7 @@ object dns:
      * 
      *  &gt; **Note:** [The Azure DNS API has a throttle limit of 500 read (GET) operations per 5 minutes](https://docs.microsoft.com/azure/azure-resource-manager/management/request-limits-and-throttling#network-throttling) - whilst the default read timeouts will work for most cases - in larger configurations you may need to set a larger read timeout then the default 5min. Although, we&#39;d generally recommend that you split the resources out into smaller Terraform configurations to avoid the problem entirely.
      */
-    def getTxtRecord(args: Endofunction[com.pulumi.azure.dns.inputs.GetTxtRecordArgs.Builder] = scala.Predef.identity):
+    inline def getTxtRecord(args: Endofunction[com.pulumi.azure.dns.inputs.GetTxtRecordArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.dns.outputs.GetTxtRecordResult] =
       val argsBuilder = com.pulumi.azure.dns.inputs.GetTxtRecordArgs.builder
       com.pulumi.azure.dns.DnsFunctions.getTxtRecord(args(argsBuilder).build)
@@ -436,19 +438,19 @@ object dns:
      * 
      *  &gt; **Note:** [The Azure DNS API has a throttle limit of 500 read (GET) operations per 5 minutes](https://docs.microsoft.com/azure/azure-resource-manager/management/request-limits-and-throttling#network-throttling) - whilst the default read timeouts will work for most cases - in larger configurations you may need to set a larger read timeout then the default 5min. Although, we&#39;d generally recommend that you split the resources out into smaller Terraform configurations to avoid the problem entirely.
      */
-    def getTxtRecordPlain(args: Endofunction[com.pulumi.azure.dns.inputs.GetTxtRecordPlainArgs.Builder] = scala.Predef.identity):
+    inline def getTxtRecordPlain(args: Endofunction[com.pulumi.azure.dns.inputs.GetTxtRecordPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.dns.outputs.GetTxtRecordResult] =
       val argsBuilder = com.pulumi.azure.dns.inputs.GetTxtRecordPlainArgs.builder
       com.pulumi.azure.dns.DnsFunctions.getTxtRecordPlain(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing DNS Zone. */
-    def getZone(args: Endofunction[com.pulumi.azure.dns.inputs.GetZoneArgs.Builder] = scala.Predef.identity):
+    inline def getZone(args: Endofunction[com.pulumi.azure.dns.inputs.GetZoneArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.dns.outputs.GetZoneResult] =
       val argsBuilder = com.pulumi.azure.dns.inputs.GetZoneArgs.builder
       com.pulumi.azure.dns.DnsFunctions.getZone(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing DNS Zone. */
-    def getZonePlain(args: Endofunction[com.pulumi.azure.dns.inputs.GetZonePlainArgs.Builder] = scala.Predef.identity):
+    inline def getZonePlain(args: Endofunction[com.pulumi.azure.dns.inputs.GetZonePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.dns.outputs.GetZoneResult] =
       val argsBuilder = com.pulumi.azure.dns.inputs.GetZonePlainArgs.builder
       com.pulumi.azure.dns.DnsFunctions.getZonePlain(args(argsBuilder).build)

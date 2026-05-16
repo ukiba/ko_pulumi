@@ -118,31 +118,33 @@ object appconfig:
         com.pulumi.aws.appconfig.EventIntegrationArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
 
-  type AppconfigFunctions = com.pulumi.aws.appconfig.AppconfigFunctions
   object AppconfigFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.aws.appconfig.AppconfigFunctions.*
-  extension (self: AppconfigFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /** Provides details about an AWS AppConfig Application. */
-    def getApplication(args: Endofunction[com.pulumi.aws.appconfig.inputs.GetApplicationArgs.Builder] = scala.Predef.identity):
+    inline def getApplication(args: Endofunction[com.pulumi.aws.appconfig.inputs.GetApplicationArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.appconfig.outputs.GetApplicationResult] =
       val argsBuilder = com.pulumi.aws.appconfig.inputs.GetApplicationArgs.builder
       com.pulumi.aws.appconfig.AppconfigFunctions.getApplication(args(argsBuilder).build)
 
     /** Provides details about an AWS AppConfig Application. */
-    def getApplicationPlain(args: Endofunction[com.pulumi.aws.appconfig.inputs.GetApplicationPlainArgs.Builder] = scala.Predef.identity):
+    inline def getApplicationPlain(args: Endofunction[com.pulumi.aws.appconfig.inputs.GetApplicationPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.appconfig.outputs.GetApplicationResult] =
       val argsBuilder = com.pulumi.aws.appconfig.inputs.GetApplicationPlainArgs.builder
       com.pulumi.aws.appconfig.AppconfigFunctions.getApplicationPlain(args(argsBuilder).build)
 
     /** Provides access to an AppConfig Configuration Profile. */
-    def getConfigurationProfile(args: Endofunction[com.pulumi.aws.appconfig.inputs.GetConfigurationProfileArgs.Builder] = scala.Predef.identity):
+    inline def getConfigurationProfile(args: Endofunction[com.pulumi.aws.appconfig.inputs.GetConfigurationProfileArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.appconfig.outputs.GetConfigurationProfileResult] =
       val argsBuilder = com.pulumi.aws.appconfig.inputs.GetConfigurationProfileArgs.builder
       com.pulumi.aws.appconfig.AppconfigFunctions.getConfigurationProfile(args(argsBuilder).build)
 
     /** Provides access to an AppConfig Configuration Profile. */
-    def getConfigurationProfilePlain(args: Endofunction[com.pulumi.aws.appconfig.inputs.GetConfigurationProfilePlainArgs.Builder] = scala.Predef.identity):
+    inline def getConfigurationProfilePlain(args: Endofunction[com.pulumi.aws.appconfig.inputs.GetConfigurationProfilePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.appconfig.outputs.GetConfigurationProfileResult] =
       val argsBuilder = com.pulumi.aws.appconfig.inputs.GetConfigurationProfilePlainArgs.builder
       com.pulumi.aws.appconfig.AppconfigFunctions.getConfigurationProfilePlain(args(argsBuilder).build)
@@ -151,7 +153,7 @@ object appconfig:
      * Provides access to all Configuration Properties for an AppConfig Application. This will allow you to pass Configuration
      *  Profile IDs to another resource.
      */
-    def getConfigurationProfiles(args: Endofunction[com.pulumi.aws.appconfig.inputs.GetConfigurationProfilesArgs.Builder] = scala.Predef.identity):
+    inline def getConfigurationProfiles(args: Endofunction[com.pulumi.aws.appconfig.inputs.GetConfigurationProfilesArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.appconfig.outputs.GetConfigurationProfilesResult] =
       val argsBuilder = com.pulumi.aws.appconfig.inputs.GetConfigurationProfilesArgs.builder
       com.pulumi.aws.appconfig.AppconfigFunctions.getConfigurationProfiles(args(argsBuilder).build)
@@ -160,19 +162,19 @@ object appconfig:
      * Provides access to all Configuration Properties for an AppConfig Application. This will allow you to pass Configuration
      *  Profile IDs to another resource.
      */
-    def getConfigurationProfilesPlain(args: Endofunction[com.pulumi.aws.appconfig.inputs.GetConfigurationProfilesPlainArgs.Builder] = scala.Predef.identity):
+    inline def getConfigurationProfilesPlain(args: Endofunction[com.pulumi.aws.appconfig.inputs.GetConfigurationProfilesPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.appconfig.outputs.GetConfigurationProfilesResult] =
       val argsBuilder = com.pulumi.aws.appconfig.inputs.GetConfigurationProfilesPlainArgs.builder
       com.pulumi.aws.appconfig.AppconfigFunctions.getConfigurationProfilesPlain(args(argsBuilder).build)
 
     /** Provides access to an AppConfig Environment. */
-    def getEnvironment(args: Endofunction[com.pulumi.aws.appconfig.inputs.GetEnvironmentArgs.Builder] = scala.Predef.identity):
+    inline def getEnvironment(args: Endofunction[com.pulumi.aws.appconfig.inputs.GetEnvironmentArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.appconfig.outputs.GetEnvironmentResult] =
       val argsBuilder = com.pulumi.aws.appconfig.inputs.GetEnvironmentArgs.builder
       com.pulumi.aws.appconfig.AppconfigFunctions.getEnvironment(args(argsBuilder).build)
 
     /** Provides access to an AppConfig Environment. */
-    def getEnvironmentPlain(args: Endofunction[com.pulumi.aws.appconfig.inputs.GetEnvironmentPlainArgs.Builder] = scala.Predef.identity):
+    inline def getEnvironmentPlain(args: Endofunction[com.pulumi.aws.appconfig.inputs.GetEnvironmentPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.appconfig.outputs.GetEnvironmentResult] =
       val argsBuilder = com.pulumi.aws.appconfig.inputs.GetEnvironmentPlainArgs.builder
       com.pulumi.aws.appconfig.AppconfigFunctions.getEnvironmentPlain(args(argsBuilder).build)
@@ -181,7 +183,7 @@ object appconfig:
      * Provides access to all Environments for an AppConfig Application. This will allow you to pass Environment IDs to another
      *  resource.
      */
-    def getEnvironments(args: Endofunction[com.pulumi.aws.appconfig.inputs.GetEnvironmentsArgs.Builder] = scala.Predef.identity):
+    inline def getEnvironments(args: Endofunction[com.pulumi.aws.appconfig.inputs.GetEnvironmentsArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.appconfig.outputs.GetEnvironmentsResult] =
       val argsBuilder = com.pulumi.aws.appconfig.inputs.GetEnvironmentsArgs.builder
       com.pulumi.aws.appconfig.AppconfigFunctions.getEnvironments(args(argsBuilder).build)
@@ -190,7 +192,7 @@ object appconfig:
      * Provides access to all Environments for an AppConfig Application. This will allow you to pass Environment IDs to another
      *  resource.
      */
-    def getEnvironmentsPlain(args: Endofunction[com.pulumi.aws.appconfig.inputs.GetEnvironmentsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getEnvironmentsPlain(args: Endofunction[com.pulumi.aws.appconfig.inputs.GetEnvironmentsPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.appconfig.outputs.GetEnvironmentsResult] =
       val argsBuilder = com.pulumi.aws.appconfig.inputs.GetEnvironmentsPlainArgs.builder
       com.pulumi.aws.appconfig.AppconfigFunctions.getEnvironmentsPlain(args(argsBuilder).build)

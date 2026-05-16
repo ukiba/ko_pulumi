@@ -977,31 +977,33 @@ object servicedirectory:
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
-  type ServicedirectoryFunctions = com.pulumi.gcp.servicedirectory.ServicedirectoryFunctions
   object ServicedirectoryFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.gcp.servicedirectory.ServicedirectoryFunctions.*
-  extension (self: ServicedirectoryFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /** Retrieves the current IAM policy data for namespace */
-    def getNamespaceIamPolicy(args: Endofunction[com.pulumi.gcp.servicedirectory.inputs.GetNamespaceIamPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getNamespaceIamPolicy(args: Endofunction[com.pulumi.gcp.servicedirectory.inputs.GetNamespaceIamPolicyArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.servicedirectory.outputs.GetNamespaceIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.servicedirectory.inputs.GetNamespaceIamPolicyArgs.builder
       com.pulumi.gcp.servicedirectory.ServicedirectoryFunctions.getNamespaceIamPolicy(args(argsBuilder).build)
 
     /** Retrieves the current IAM policy data for namespace */
-    def getNamespaceIamPolicyPlain(args: Endofunction[com.pulumi.gcp.servicedirectory.inputs.GetNamespaceIamPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getNamespaceIamPolicyPlain(args: Endofunction[com.pulumi.gcp.servicedirectory.inputs.GetNamespaceIamPolicyPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.servicedirectory.outputs.GetNamespaceIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.servicedirectory.inputs.GetNamespaceIamPolicyPlainArgs.builder
       com.pulumi.gcp.servicedirectory.ServicedirectoryFunctions.getNamespaceIamPolicyPlain(args(argsBuilder).build)
 
     /** Retrieves the current IAM policy data for service */
-    def getServiceIamPolicy(args: Endofunction[com.pulumi.gcp.servicedirectory.inputs.GetServiceIamPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getServiceIamPolicy(args: Endofunction[com.pulumi.gcp.servicedirectory.inputs.GetServiceIamPolicyArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.servicedirectory.outputs.GetServiceIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.servicedirectory.inputs.GetServiceIamPolicyArgs.builder
       com.pulumi.gcp.servicedirectory.ServicedirectoryFunctions.getServiceIamPolicy(args(argsBuilder).build)
 
     /** Retrieves the current IAM policy data for service */
-    def getServiceIamPolicyPlain(args: Endofunction[com.pulumi.gcp.servicedirectory.inputs.GetServiceIamPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getServiceIamPolicyPlain(args: Endofunction[com.pulumi.gcp.servicedirectory.inputs.GetServiceIamPolicyPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.servicedirectory.outputs.GetServiceIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.servicedirectory.inputs.GetServiceIamPolicyPlainArgs.builder
       com.pulumi.gcp.servicedirectory.ServicedirectoryFunctions.getServiceIamPolicyPlain(args(argsBuilder).build)

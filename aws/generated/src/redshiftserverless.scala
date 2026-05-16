@@ -62,43 +62,45 @@ object redshiftserverless:
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
-  type RedshiftserverlessFunctions = com.pulumi.aws.redshiftserverless.RedshiftserverlessFunctions
   object RedshiftserverlessFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.aws.redshiftserverless.RedshiftserverlessFunctions.*
-  extension (self: RedshiftserverlessFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /** Provides redshift serverless temporary credentials for a workgroup. */
-    def getCredentials(args: Endofunction[com.pulumi.aws.redshiftserverless.inputs.GetCredentialsArgs.Builder] = scala.Predef.identity):
+    inline def getCredentials(args: Endofunction[com.pulumi.aws.redshiftserverless.inputs.GetCredentialsArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.redshiftserverless.outputs.GetCredentialsResult] =
       val argsBuilder = com.pulumi.aws.redshiftserverless.inputs.GetCredentialsArgs.builder
       com.pulumi.aws.redshiftserverless.RedshiftserverlessFunctions.getCredentials(args(argsBuilder).build)
 
     /** Provides redshift serverless temporary credentials for a workgroup. */
-    def getCredentialsPlain(args: Endofunction[com.pulumi.aws.redshiftserverless.inputs.GetCredentialsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getCredentialsPlain(args: Endofunction[com.pulumi.aws.redshiftserverless.inputs.GetCredentialsPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.redshiftserverless.outputs.GetCredentialsResult] =
       val argsBuilder = com.pulumi.aws.redshiftserverless.inputs.GetCredentialsPlainArgs.builder
       com.pulumi.aws.redshiftserverless.RedshiftserverlessFunctions.getCredentialsPlain(args(argsBuilder).build)
 
     /** Data source for managing an AWS Redshift Serverless Namespace. */
-    def getNamespace(args: Endofunction[com.pulumi.aws.redshiftserverless.inputs.GetNamespaceArgs.Builder] = scala.Predef.identity):
+    inline def getNamespace(args: Endofunction[com.pulumi.aws.redshiftserverless.inputs.GetNamespaceArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.redshiftserverless.outputs.GetNamespaceResult] =
       val argsBuilder = com.pulumi.aws.redshiftserverless.inputs.GetNamespaceArgs.builder
       com.pulumi.aws.redshiftserverless.RedshiftserverlessFunctions.getNamespace(args(argsBuilder).build)
 
     /** Data source for managing an AWS Redshift Serverless Namespace. */
-    def getNamespacePlain(args: Endofunction[com.pulumi.aws.redshiftserverless.inputs.GetNamespacePlainArgs.Builder] = scala.Predef.identity):
+    inline def getNamespacePlain(args: Endofunction[com.pulumi.aws.redshiftserverless.inputs.GetNamespacePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.redshiftserverless.outputs.GetNamespaceResult] =
       val argsBuilder = com.pulumi.aws.redshiftserverless.inputs.GetNamespacePlainArgs.builder
       com.pulumi.aws.redshiftserverless.RedshiftserverlessFunctions.getNamespacePlain(args(argsBuilder).build)
 
     /** Data source for managing an AWS Redshift Serverless Workgroup. */
-    def getWorkgroup(args: Endofunction[com.pulumi.aws.redshiftserverless.inputs.GetWorkgroupArgs.Builder] = scala.Predef.identity):
+    inline def getWorkgroup(args: Endofunction[com.pulumi.aws.redshiftserverless.inputs.GetWorkgroupArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.redshiftserverless.outputs.GetWorkgroupResult] =
       val argsBuilder = com.pulumi.aws.redshiftserverless.inputs.GetWorkgroupArgs.builder
       com.pulumi.aws.redshiftserverless.RedshiftserverlessFunctions.getWorkgroup(args(argsBuilder).build)
 
     /** Data source for managing an AWS Redshift Serverless Workgroup. */
-    def getWorkgroupPlain(args: Endofunction[com.pulumi.aws.redshiftserverless.inputs.GetWorkgroupPlainArgs.Builder] = scala.Predef.identity):
+    inline def getWorkgroupPlain(args: Endofunction[com.pulumi.aws.redshiftserverless.inputs.GetWorkgroupPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.redshiftserverless.outputs.GetWorkgroupResult] =
       val argsBuilder = com.pulumi.aws.redshiftserverless.inputs.GetWorkgroupPlainArgs.builder
       com.pulumi.aws.redshiftserverless.RedshiftserverlessFunctions.getWorkgroupPlain(args(argsBuilder).build)

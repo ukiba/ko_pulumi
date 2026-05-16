@@ -36,17 +36,19 @@ object ssmincidents:
         com.pulumi.aws.ssmincidents.ResponsePlanArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
 
-  type SsmincidentsFunctions = com.pulumi.aws.ssmincidents.SsmincidentsFunctions
   object SsmincidentsFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.aws.ssmincidents.SsmincidentsFunctions.*
-  extension (self: SsmincidentsFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /**
      * &gt; **NOTE:** The AWS Region specified by a provider must always be one of the Regions specified for the replication set.
      * 
      *  Use this data source to manage a replication set in AWS Systems Manager Incident Manager.
      */
-    def getReplicationSet(args: Endofunction[com.pulumi.aws.ssmincidents.inputs.GetReplicationSetArgs.Builder] = scala.Predef.identity):
+    inline def getReplicationSet(args: Endofunction[com.pulumi.aws.ssmincidents.inputs.GetReplicationSetArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.ssmincidents.outputs.GetReplicationSetResult] =
       val argsBuilder = com.pulumi.aws.ssmincidents.inputs.GetReplicationSetArgs.builder
       com.pulumi.aws.ssmincidents.SsmincidentsFunctions.getReplicationSet(args(argsBuilder).build)
@@ -56,19 +58,19 @@ object ssmincidents:
      * 
      *  Use this data source to manage a replication set in AWS Systems Manager Incident Manager.
      */
-    def getReplicationSetPlain(args: Endofunction[com.pulumi.aws.ssmincidents.inputs.GetReplicationSetPlainArgs.Builder] = scala.Predef.identity):
+    inline def getReplicationSetPlain(args: Endofunction[com.pulumi.aws.ssmincidents.inputs.GetReplicationSetPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.ssmincidents.outputs.GetReplicationSetResult] =
       val argsBuilder = com.pulumi.aws.ssmincidents.inputs.GetReplicationSetPlainArgs.builder
       com.pulumi.aws.ssmincidents.SsmincidentsFunctions.getReplicationSetPlain(args(argsBuilder).build)
 
     /** Use this data source to manage a response plan in AWS Systems Manager Incident Manager. */
-    def getResponsePlan(args: Endofunction[com.pulumi.aws.ssmincidents.inputs.GetResponsePlanArgs.Builder] = scala.Predef.identity):
+    inline def getResponsePlan(args: Endofunction[com.pulumi.aws.ssmincidents.inputs.GetResponsePlanArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.ssmincidents.outputs.GetResponsePlanResult] =
       val argsBuilder = com.pulumi.aws.ssmincidents.inputs.GetResponsePlanArgs.builder
       com.pulumi.aws.ssmincidents.SsmincidentsFunctions.getResponsePlan(args(argsBuilder).build)
 
     /** Use this data source to manage a response plan in AWS Systems Manager Incident Manager. */
-    def getResponsePlanPlain(args: Endofunction[com.pulumi.aws.ssmincidents.inputs.GetResponsePlanPlainArgs.Builder] = scala.Predef.identity):
+    inline def getResponsePlanPlain(args: Endofunction[com.pulumi.aws.ssmincidents.inputs.GetResponsePlanPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.ssmincidents.outputs.GetResponsePlanResult] =
       val argsBuilder = com.pulumi.aws.ssmincidents.inputs.GetResponsePlanPlainArgs.builder
       com.pulumi.aws.ssmincidents.SsmincidentsFunctions.getResponsePlanPlain(args(argsBuilder).build)

@@ -78,43 +78,45 @@ object rds:
         com.pulumi.aws.rds.ShardGroupArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
 
-  type RdsFunctions = com.pulumi.aws.rds.RdsFunctions
   object RdsFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.aws.rds.RdsFunctions.*
-  extension (self: RdsFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /** Information about an RDS Certificate. */
-    def getCertificate(args: Endofunction[com.pulumi.aws.rds.inputs.GetCertificateArgs.Builder] = scala.Predef.identity):
+    inline def getCertificate(args: Endofunction[com.pulumi.aws.rds.inputs.GetCertificateArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.rds.outputs.GetCertificateResult] =
       val argsBuilder = com.pulumi.aws.rds.inputs.GetCertificateArgs.builder
       com.pulumi.aws.rds.RdsFunctions.getCertificate(args(argsBuilder).build)
 
     /** Information about an RDS Certificate. */
-    def getCertificatePlain(args: Endofunction[com.pulumi.aws.rds.inputs.GetCertificatePlainArgs.Builder] = scala.Predef.identity):
+    inline def getCertificatePlain(args: Endofunction[com.pulumi.aws.rds.inputs.GetCertificatePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.rds.outputs.GetCertificateResult] =
       val argsBuilder = com.pulumi.aws.rds.inputs.GetCertificatePlainArgs.builder
       com.pulumi.aws.rds.RdsFunctions.getCertificatePlain(args(argsBuilder).build)
 
     /** Provides information about an RDS cluster. */
-    def getCluster(args: Endofunction[com.pulumi.aws.rds.inputs.GetClusterArgs.Builder] = scala.Predef.identity):
+    inline def getCluster(args: Endofunction[com.pulumi.aws.rds.inputs.GetClusterArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.rds.outputs.GetClusterResult] =
       val argsBuilder = com.pulumi.aws.rds.inputs.GetClusterArgs.builder
       com.pulumi.aws.rds.RdsFunctions.getCluster(args(argsBuilder).build)
 
     /** Provides information about an RDS cluster. */
-    def getClusterPlain(args: Endofunction[com.pulumi.aws.rds.inputs.GetClusterPlainArgs.Builder] = scala.Predef.identity):
+    inline def getClusterPlain(args: Endofunction[com.pulumi.aws.rds.inputs.GetClusterPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.rds.outputs.GetClusterResult] =
       val argsBuilder = com.pulumi.aws.rds.inputs.GetClusterPlainArgs.builder
       com.pulumi.aws.rds.RdsFunctions.getClusterPlain(args(argsBuilder).build)
 
     /** Information about an RDS cluster parameter group. */
-    def getClusterParameterGroup(args: Endofunction[com.pulumi.aws.rds.inputs.GetClusterParameterGroupArgs.Builder] = scala.Predef.identity):
+    inline def getClusterParameterGroup(args: Endofunction[com.pulumi.aws.rds.inputs.GetClusterParameterGroupArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.rds.outputs.GetClusterParameterGroupResult] =
       val argsBuilder = com.pulumi.aws.rds.inputs.GetClusterParameterGroupArgs.builder
       com.pulumi.aws.rds.RdsFunctions.getClusterParameterGroup(args(argsBuilder).build)
 
     /** Information about an RDS cluster parameter group. */
-    def getClusterParameterGroupPlain(args: Endofunction[com.pulumi.aws.rds.inputs.GetClusterParameterGroupPlainArgs.Builder] = scala.Predef.identity):
+    inline def getClusterParameterGroupPlain(args: Endofunction[com.pulumi.aws.rds.inputs.GetClusterParameterGroupPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.rds.outputs.GetClusterParameterGroupResult] =
       val argsBuilder = com.pulumi.aws.rds.inputs.GetClusterParameterGroupPlainArgs.builder
       com.pulumi.aws.rds.RdsFunctions.getClusterParameterGroupPlain(args(argsBuilder).build)
@@ -125,7 +127,7 @@ object rds:
      *  &gt; **NOTE:** This data source does not apply to snapshots created on DB Instances.
      *  See the `aws.rds.Snapshot` data source for DB Instance snapshots.
      */
-    def getClusterSnapshot(args: Endofunction[com.pulumi.aws.rds.inputs.GetClusterSnapshotArgs.Builder] = scala.Predef.identity):
+    inline def getClusterSnapshot(args: Endofunction[com.pulumi.aws.rds.inputs.GetClusterSnapshotArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.rds.outputs.GetClusterSnapshotResult] =
       val argsBuilder = com.pulumi.aws.rds.inputs.GetClusterSnapshotArgs.builder
       com.pulumi.aws.rds.RdsFunctions.getClusterSnapshot(args(argsBuilder).build)
@@ -136,31 +138,31 @@ object rds:
      *  &gt; **NOTE:** This data source does not apply to snapshots created on DB Instances.
      *  See the `aws.rds.Snapshot` data source for DB Instance snapshots.
      */
-    def getClusterSnapshotPlain(args: Endofunction[com.pulumi.aws.rds.inputs.GetClusterSnapshotPlainArgs.Builder] = scala.Predef.identity):
+    inline def getClusterSnapshotPlain(args: Endofunction[com.pulumi.aws.rds.inputs.GetClusterSnapshotPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.rds.outputs.GetClusterSnapshotResult] =
       val argsBuilder = com.pulumi.aws.rds.inputs.GetClusterSnapshotPlainArgs.builder
       com.pulumi.aws.rds.RdsFunctions.getClusterSnapshotPlain(args(argsBuilder).build)
 
     /** Data source for managing an AWS RDS (Relational Database) Clusters. */
-    def getClusters(args: Endofunction[com.pulumi.aws.rds.inputs.GetClustersArgs.Builder] = scala.Predef.identity):
+    inline def getClusters(args: Endofunction[com.pulumi.aws.rds.inputs.GetClustersArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.rds.outputs.GetClustersResult] =
       val argsBuilder = com.pulumi.aws.rds.inputs.GetClustersArgs.builder
       com.pulumi.aws.rds.RdsFunctions.getClusters(args(argsBuilder).build)
 
     /** Data source for managing an AWS RDS (Relational Database) Clusters. */
-    def getClustersPlain(args: Endofunction[com.pulumi.aws.rds.inputs.GetClustersPlainArgs.Builder] = scala.Predef.identity):
+    inline def getClustersPlain(args: Endofunction[com.pulumi.aws.rds.inputs.GetClustersPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.rds.outputs.GetClustersResult] =
       val argsBuilder = com.pulumi.aws.rds.inputs.GetClustersPlainArgs.builder
       com.pulumi.aws.rds.RdsFunctions.getClustersPlain(args(argsBuilder).build)
 
     /** Information about an RDS engine version. */
-    def getEngineVersion(args: Endofunction[com.pulumi.aws.rds.inputs.GetEngineVersionArgs.Builder] = scala.Predef.identity):
+    inline def getEngineVersion(args: Endofunction[com.pulumi.aws.rds.inputs.GetEngineVersionArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.rds.outputs.GetEngineVersionResult] =
       val argsBuilder = com.pulumi.aws.rds.inputs.GetEngineVersionArgs.builder
       com.pulumi.aws.rds.RdsFunctions.getEngineVersion(args(argsBuilder).build)
 
     /** Information about an RDS engine version. */
-    def getEngineVersionPlain(args: Endofunction[com.pulumi.aws.rds.inputs.GetEngineVersionPlainArgs.Builder] = scala.Predef.identity):
+    inline def getEngineVersionPlain(args: Endofunction[com.pulumi.aws.rds.inputs.GetEngineVersionPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.rds.outputs.GetEngineVersionResult] =
       val argsBuilder = com.pulumi.aws.rds.inputs.GetEngineVersionPlainArgs.builder
       com.pulumi.aws.rds.RdsFunctions.getEngineVersionPlain(args(argsBuilder).build)
@@ -168,7 +170,7 @@ object rds:
     /**
      * 
      */
-    def getEventCategories(args: Endofunction[com.pulumi.aws.rds.inputs.GetEventCategoriesArgs.Builder] = scala.Predef.identity):
+    inline def getEventCategories(args: Endofunction[com.pulumi.aws.rds.inputs.GetEventCategoriesArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.rds.outputs.GetEventCategoriesResult] =
       val argsBuilder = com.pulumi.aws.rds.inputs.GetEventCategoriesArgs.builder
       com.pulumi.aws.rds.RdsFunctions.getEventCategories(args(argsBuilder).build)
@@ -176,91 +178,91 @@ object rds:
     /**
      * 
      */
-    def getEventCategoriesPlain(args: Endofunction[com.pulumi.aws.rds.inputs.GetEventCategoriesPlainArgs.Builder] = scala.Predef.identity):
+    inline def getEventCategoriesPlain(args: Endofunction[com.pulumi.aws.rds.inputs.GetEventCategoriesPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.rds.outputs.GetEventCategoriesResult] =
       val argsBuilder = com.pulumi.aws.rds.inputs.GetEventCategoriesPlainArgs.builder
       com.pulumi.aws.rds.RdsFunctions.getEventCategoriesPlain(args(argsBuilder).build)
 
     /** Data source for managing an AWS RDS (Relational Database) Global Cluster. */
-    def getGlobalCluster(args: Endofunction[com.pulumi.aws.rds.inputs.GetGlobalClusterArgs.Builder] = scala.Predef.identity):
+    inline def getGlobalCluster(args: Endofunction[com.pulumi.aws.rds.inputs.GetGlobalClusterArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.rds.outputs.GetGlobalClusterResult] =
       val argsBuilder = com.pulumi.aws.rds.inputs.GetGlobalClusterArgs.builder
       com.pulumi.aws.rds.RdsFunctions.getGlobalCluster(args(argsBuilder).build)
 
     /** Data source for managing an AWS RDS (Relational Database) Global Cluster. */
-    def getGlobalClusterPlain(args: Endofunction[com.pulumi.aws.rds.inputs.GetGlobalClusterPlainArgs.Builder] = scala.Predef.identity):
+    inline def getGlobalClusterPlain(args: Endofunction[com.pulumi.aws.rds.inputs.GetGlobalClusterPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.rds.outputs.GetGlobalClusterResult] =
       val argsBuilder = com.pulumi.aws.rds.inputs.GetGlobalClusterPlainArgs.builder
       com.pulumi.aws.rds.RdsFunctions.getGlobalClusterPlain(args(argsBuilder).build)
 
     /** Use this data source to get information about an RDS instance */
-    def getInstance(args: Endofunction[com.pulumi.aws.rds.inputs.GetInstanceArgs.Builder] = scala.Predef.identity):
+    inline def getInstance(args: Endofunction[com.pulumi.aws.rds.inputs.GetInstanceArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.rds.outputs.GetInstanceResult] =
       val argsBuilder = com.pulumi.aws.rds.inputs.GetInstanceArgs.builder
       com.pulumi.aws.rds.RdsFunctions.getInstance(args(argsBuilder).build)
 
     /** Use this data source to get information about an RDS instance */
-    def getInstancePlain(args: Endofunction[com.pulumi.aws.rds.inputs.GetInstancePlainArgs.Builder] = scala.Predef.identity):
+    inline def getInstancePlain(args: Endofunction[com.pulumi.aws.rds.inputs.GetInstancePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.rds.outputs.GetInstanceResult] =
       val argsBuilder = com.pulumi.aws.rds.inputs.GetInstancePlainArgs.builder
       com.pulumi.aws.rds.RdsFunctions.getInstancePlain(args(argsBuilder).build)
 
     /** Data source for listing RDS Database Instances. */
-    def getInstances(args: Endofunction[com.pulumi.aws.rds.inputs.GetInstancesArgs.Builder] = scala.Predef.identity):
+    inline def getInstances(args: Endofunction[com.pulumi.aws.rds.inputs.GetInstancesArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.rds.outputs.GetInstancesResult] =
       val argsBuilder = com.pulumi.aws.rds.inputs.GetInstancesArgs.builder
       com.pulumi.aws.rds.RdsFunctions.getInstances(args(argsBuilder).build)
 
     /** Data source for listing RDS Database Instances. */
-    def getInstancesPlain(args: Endofunction[com.pulumi.aws.rds.inputs.GetInstancesPlainArgs.Builder] = scala.Predef.identity):
+    inline def getInstancesPlain(args: Endofunction[com.pulumi.aws.rds.inputs.GetInstancesPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.rds.outputs.GetInstancesResult] =
       val argsBuilder = com.pulumi.aws.rds.inputs.GetInstancesPlainArgs.builder
       com.pulumi.aws.rds.RdsFunctions.getInstancesPlain(args(argsBuilder).build)
 
     /** Information about RDS orderable DB instances and valid parameter combinations. */
-    def getOrderableDbInstance(args: Endofunction[com.pulumi.aws.rds.inputs.GetOrderableDbInstanceArgs.Builder] = scala.Predef.identity):
+    inline def getOrderableDbInstance(args: Endofunction[com.pulumi.aws.rds.inputs.GetOrderableDbInstanceArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.rds.outputs.GetOrderableDbInstanceResult] =
       val argsBuilder = com.pulumi.aws.rds.inputs.GetOrderableDbInstanceArgs.builder
       com.pulumi.aws.rds.RdsFunctions.getOrderableDbInstance(args(argsBuilder).build)
 
     /** Information about RDS orderable DB instances and valid parameter combinations. */
-    def getOrderableDbInstancePlain(args: Endofunction[com.pulumi.aws.rds.inputs.GetOrderableDbInstancePlainArgs.Builder] = scala.Predef.identity):
+    inline def getOrderableDbInstancePlain(args: Endofunction[com.pulumi.aws.rds.inputs.GetOrderableDbInstancePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.rds.outputs.GetOrderableDbInstanceResult] =
       val argsBuilder = com.pulumi.aws.rds.inputs.GetOrderableDbInstancePlainArgs.builder
       com.pulumi.aws.rds.RdsFunctions.getOrderableDbInstancePlain(args(argsBuilder).build)
 
     /** Information about a database parameter group. */
-    def getParameterGroup(args: Endofunction[com.pulumi.aws.rds.inputs.GetParameterGroupArgs.Builder] = scala.Predef.identity):
+    inline def getParameterGroup(args: Endofunction[com.pulumi.aws.rds.inputs.GetParameterGroupArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.rds.outputs.GetParameterGroupResult] =
       val argsBuilder = com.pulumi.aws.rds.inputs.GetParameterGroupArgs.builder
       com.pulumi.aws.rds.RdsFunctions.getParameterGroup(args(argsBuilder).build)
 
     /** Information about a database parameter group. */
-    def getParameterGroupPlain(args: Endofunction[com.pulumi.aws.rds.inputs.GetParameterGroupPlainArgs.Builder] = scala.Predef.identity):
+    inline def getParameterGroupPlain(args: Endofunction[com.pulumi.aws.rds.inputs.GetParameterGroupPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.rds.outputs.GetParameterGroupResult] =
       val argsBuilder = com.pulumi.aws.rds.inputs.GetParameterGroupPlainArgs.builder
       com.pulumi.aws.rds.RdsFunctions.getParameterGroupPlain(args(argsBuilder).build)
 
     /** Use this data source to get information about a DB Proxy. */
-    def getProxy(args: Endofunction[com.pulumi.aws.rds.inputs.GetProxyArgs.Builder] = scala.Predef.identity):
+    inline def getProxy(args: Endofunction[com.pulumi.aws.rds.inputs.GetProxyArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.rds.outputs.GetProxyResult] =
       val argsBuilder = com.pulumi.aws.rds.inputs.GetProxyArgs.builder
       com.pulumi.aws.rds.RdsFunctions.getProxy(args(argsBuilder).build)
 
     /** Use this data source to get information about a DB Proxy. */
-    def getProxyPlain(args: Endofunction[com.pulumi.aws.rds.inputs.GetProxyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getProxyPlain(args: Endofunction[com.pulumi.aws.rds.inputs.GetProxyPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.rds.outputs.GetProxyResult] =
       val argsBuilder = com.pulumi.aws.rds.inputs.GetProxyPlainArgs.builder
       com.pulumi.aws.rds.RdsFunctions.getProxyPlain(args(argsBuilder).build)
 
     /** Information about a single RDS Reserved Instance Offering. */
-    def getReservedInstanceOffering(args: Endofunction[com.pulumi.aws.rds.inputs.GetReservedInstanceOfferingArgs.Builder] = scala.Predef.identity):
+    inline def getReservedInstanceOffering(args: Endofunction[com.pulumi.aws.rds.inputs.GetReservedInstanceOfferingArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.rds.outputs.GetReservedInstanceOfferingResult] =
       val argsBuilder = com.pulumi.aws.rds.inputs.GetReservedInstanceOfferingArgs.builder
       com.pulumi.aws.rds.RdsFunctions.getReservedInstanceOffering(args(argsBuilder).build)
 
     /** Information about a single RDS Reserved Instance Offering. */
-    def getReservedInstanceOfferingPlain(args: Endofunction[com.pulumi.aws.rds.inputs.GetReservedInstanceOfferingPlainArgs.Builder] = scala.Predef.identity):
+    inline def getReservedInstanceOfferingPlain(args: Endofunction[com.pulumi.aws.rds.inputs.GetReservedInstanceOfferingPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.rds.outputs.GetReservedInstanceOfferingResult] =
       val argsBuilder = com.pulumi.aws.rds.inputs.GetReservedInstanceOfferingPlainArgs.builder
       com.pulumi.aws.rds.RdsFunctions.getReservedInstanceOfferingPlain(args(argsBuilder).build)
@@ -271,7 +273,7 @@ object rds:
      *  &gt; **NOTE:** This data source does not apply to snapshots created on Aurora DB clusters.
      *  See the `aws.rds.ClusterSnapshot` data source for DB Cluster snapshots.
      */
-    def getSnapshot(args: Endofunction[com.pulumi.aws.rds.inputs.GetSnapshotArgs.Builder] = scala.Predef.identity):
+    inline def getSnapshot(args: Endofunction[com.pulumi.aws.rds.inputs.GetSnapshotArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.rds.outputs.GetSnapshotResult] =
       val argsBuilder = com.pulumi.aws.rds.inputs.GetSnapshotArgs.builder
       com.pulumi.aws.rds.RdsFunctions.getSnapshot(args(argsBuilder).build)
@@ -282,19 +284,19 @@ object rds:
      *  &gt; **NOTE:** This data source does not apply to snapshots created on Aurora DB clusters.
      *  See the `aws.rds.ClusterSnapshot` data source for DB Cluster snapshots.
      */
-    def getSnapshotPlain(args: Endofunction[com.pulumi.aws.rds.inputs.GetSnapshotPlainArgs.Builder] = scala.Predef.identity):
+    inline def getSnapshotPlain(args: Endofunction[com.pulumi.aws.rds.inputs.GetSnapshotPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.rds.outputs.GetSnapshotResult] =
       val argsBuilder = com.pulumi.aws.rds.inputs.GetSnapshotPlainArgs.builder
       com.pulumi.aws.rds.RdsFunctions.getSnapshotPlain(args(argsBuilder).build)
 
     /** Use this data source to get information about an RDS subnet group. */
-    def getSubnetGroup(args: Endofunction[com.pulumi.aws.rds.inputs.GetSubnetGroupArgs.Builder] = scala.Predef.identity):
+    inline def getSubnetGroup(args: Endofunction[com.pulumi.aws.rds.inputs.GetSubnetGroupArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.rds.outputs.GetSubnetGroupResult] =
       val argsBuilder = com.pulumi.aws.rds.inputs.GetSubnetGroupArgs.builder
       com.pulumi.aws.rds.RdsFunctions.getSubnetGroup(args(argsBuilder).build)
 
     /** Use this data source to get information about an RDS subnet group. */
-    def getSubnetGroupPlain(args: Endofunction[com.pulumi.aws.rds.inputs.GetSubnetGroupPlainArgs.Builder] = scala.Predef.identity):
+    inline def getSubnetGroupPlain(args: Endofunction[com.pulumi.aws.rds.inputs.GetSubnetGroupPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.rds.outputs.GetSubnetGroupResult] =
       val argsBuilder = com.pulumi.aws.rds.inputs.GetSubnetGroupPlainArgs.builder
       com.pulumi.aws.rds.RdsFunctions.getSubnetGroupPlain(args(argsBuilder).build)

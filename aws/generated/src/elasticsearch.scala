@@ -171,19 +171,21 @@ object elasticsearch:
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
-  type ElasticsearchFunctions = com.pulumi.aws.elasticsearch.ElasticsearchFunctions
   object ElasticsearchFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.aws.elasticsearch.ElasticsearchFunctions.*
-  extension (self: ElasticsearchFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /** Use this data source to get information about an Elasticsearch Domain */
-    def getDomain(args: Endofunction[com.pulumi.aws.elasticsearch.inputs.GetDomainArgs.Builder] = scala.Predef.identity):
+    inline def getDomain(args: Endofunction[com.pulumi.aws.elasticsearch.inputs.GetDomainArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.elasticsearch.outputs.GetDomainResult] =
       val argsBuilder = com.pulumi.aws.elasticsearch.inputs.GetDomainArgs.builder
       com.pulumi.aws.elasticsearch.ElasticsearchFunctions.getDomain(args(argsBuilder).build)
 
     /** Use this data source to get information about an Elasticsearch Domain */
-    def getDomainPlain(args: Endofunction[com.pulumi.aws.elasticsearch.inputs.GetDomainPlainArgs.Builder] = scala.Predef.identity):
+    inline def getDomainPlain(args: Endofunction[com.pulumi.aws.elasticsearch.inputs.GetDomainPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.elasticsearch.outputs.GetDomainResult] =
       val argsBuilder = com.pulumi.aws.elasticsearch.inputs.GetDomainPlainArgs.builder
       com.pulumi.aws.elasticsearch.ElasticsearchFunctions.getDomainPlain(args(argsBuilder).build)

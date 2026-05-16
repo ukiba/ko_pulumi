@@ -488,19 +488,21 @@ object synapse:
       val argsBuilder = com.pulumi.azure.synapse.inputs.SqlPoolVulnerabilityAssessmentRecurringScansArgs.builder
       builder.recurringScans(args(argsBuilder).build)
 
-  type SynapseFunctions = com.pulumi.azure.synapse.SynapseFunctions
   object SynapseFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.azure.synapse.SynapseFunctions.*
-  extension (self: SynapseFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /** Use this data source to access information about an existing Synapse Workspace. */
-    def getWorkspace(args: Endofunction[com.pulumi.azure.synapse.inputs.GetWorkspaceArgs.Builder] = scala.Predef.identity):
+    inline def getWorkspace(args: Endofunction[com.pulumi.azure.synapse.inputs.GetWorkspaceArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.synapse.outputs.GetWorkspaceResult] =
       val argsBuilder = com.pulumi.azure.synapse.inputs.GetWorkspaceArgs.builder
       com.pulumi.azure.synapse.SynapseFunctions.getWorkspace(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing Synapse Workspace. */
-    def getWorkspacePlain(args: Endofunction[com.pulumi.azure.synapse.inputs.GetWorkspacePlainArgs.Builder] = scala.Predef.identity):
+    inline def getWorkspacePlain(args: Endofunction[com.pulumi.azure.synapse.inputs.GetWorkspacePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.synapse.outputs.GetWorkspaceResult] =
       val argsBuilder = com.pulumi.azure.synapse.inputs.GetWorkspacePlainArgs.builder
       com.pulumi.azure.synapse.SynapseFunctions.getWorkspacePlain(args(argsBuilder).build)

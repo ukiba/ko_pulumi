@@ -3052,31 +3052,33 @@ object secretmanager:
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
-  type SecretmanagerFunctions = com.pulumi.gcp.secretmanager.SecretmanagerFunctions
   object SecretmanagerFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.gcp.secretmanager.SecretmanagerFunctions.*
-  extension (self: SecretmanagerFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /** Use this data source to get information about a Secret Manager Regional Secret */
-    def getRegionalSecret(args: Endofunction[com.pulumi.gcp.secretmanager.inputs.GetRegionalSecretArgs.Builder] = scala.Predef.identity):
+    inline def getRegionalSecret(args: Endofunction[com.pulumi.gcp.secretmanager.inputs.GetRegionalSecretArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.secretmanager.outputs.GetRegionalSecretResult] =
       val argsBuilder = com.pulumi.gcp.secretmanager.inputs.GetRegionalSecretArgs.builder
       com.pulumi.gcp.secretmanager.SecretmanagerFunctions.getRegionalSecret(args(argsBuilder).build)
 
     /** Use this data source to get information about a Secret Manager Regional Secret */
-    def getRegionalSecretPlain(args: Endofunction[com.pulumi.gcp.secretmanager.inputs.GetRegionalSecretPlainArgs.Builder] = scala.Predef.identity):
+    inline def getRegionalSecretPlain(args: Endofunction[com.pulumi.gcp.secretmanager.inputs.GetRegionalSecretPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.secretmanager.outputs.GetRegionalSecretResult] =
       val argsBuilder = com.pulumi.gcp.secretmanager.inputs.GetRegionalSecretPlainArgs.builder
       com.pulumi.gcp.secretmanager.SecretmanagerFunctions.getRegionalSecretPlain(args(argsBuilder).build)
 
     /** Retrieves the current IAM policy data for regionalsecret */
-    def getRegionalSecretIamPolicy(args: Endofunction[com.pulumi.gcp.secretmanager.inputs.GetRegionalSecretIamPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getRegionalSecretIamPolicy(args: Endofunction[com.pulumi.gcp.secretmanager.inputs.GetRegionalSecretIamPolicyArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.secretmanager.outputs.GetRegionalSecretIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.secretmanager.inputs.GetRegionalSecretIamPolicyArgs.builder
       com.pulumi.gcp.secretmanager.SecretmanagerFunctions.getRegionalSecretIamPolicy(args(argsBuilder).build)
 
     /** Retrieves the current IAM policy data for regionalsecret */
-    def getRegionalSecretIamPolicyPlain(args: Endofunction[com.pulumi.gcp.secretmanager.inputs.GetRegionalSecretIamPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getRegionalSecretIamPolicyPlain(args: Endofunction[com.pulumi.gcp.secretmanager.inputs.GetRegionalSecretIamPolicyPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.secretmanager.outputs.GetRegionalSecretIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.secretmanager.inputs.GetRegionalSecretIamPolicyPlainArgs.builder
       com.pulumi.gcp.secretmanager.SecretmanagerFunctions.getRegionalSecretIamPolicyPlain(args(argsBuilder).build)
@@ -3089,7 +3091,7 @@ object secretmanager:
      * 
      *  Get the value and metadata from a Secret Manager regional secret version. For more information see the [official documentation](https://cloud.google.com/secret-manager/docs/regional-secrets-overview) and [API](https://cloud.google.com/secret-manager/docs/reference/rest/v1/projects.locations.secrets.versions). If you don&#39;t need the metadata (i.e., if you want to use a more limited role to access the regional secret version only), see also the gcp.secretmanager.getRegionalSecretVersionAccess datasource.
      */
-    def getRegionalSecretVersion(args: Endofunction[com.pulumi.gcp.secretmanager.inputs.GetRegionalSecretVersionArgs.Builder] = scala.Predef.identity):
+    inline def getRegionalSecretVersion(args: Endofunction[com.pulumi.gcp.secretmanager.inputs.GetRegionalSecretVersionArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.secretmanager.outputs.GetRegionalSecretVersionResult] =
       val argsBuilder = com.pulumi.gcp.secretmanager.inputs.GetRegionalSecretVersionArgs.builder
       com.pulumi.gcp.secretmanager.SecretmanagerFunctions.getRegionalSecretVersion(args(argsBuilder).build)
@@ -3102,7 +3104,7 @@ object secretmanager:
      * 
      *  Get the value and metadata from a Secret Manager regional secret version. For more information see the [official documentation](https://cloud.google.com/secret-manager/docs/regional-secrets-overview) and [API](https://cloud.google.com/secret-manager/docs/reference/rest/v1/projects.locations.secrets.versions). If you don&#39;t need the metadata (i.e., if you want to use a more limited role to access the regional secret version only), see also the gcp.secretmanager.getRegionalSecretVersionAccess datasource.
      */
-    def getRegionalSecretVersionPlain(args: Endofunction[com.pulumi.gcp.secretmanager.inputs.GetRegionalSecretVersionPlainArgs.Builder] = scala.Predef.identity):
+    inline def getRegionalSecretVersionPlain(args: Endofunction[com.pulumi.gcp.secretmanager.inputs.GetRegionalSecretVersionPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.secretmanager.outputs.GetRegionalSecretVersionResult] =
       val argsBuilder = com.pulumi.gcp.secretmanager.inputs.GetRegionalSecretVersionPlainArgs.builder
       com.pulumi.gcp.secretmanager.SecretmanagerFunctions.getRegionalSecretVersionPlain(args(argsBuilder).build)
@@ -3116,7 +3118,7 @@ object secretmanager:
      * 
      *  Get the value from a Secret Manager regional secret version. This is similar to the gcp.secretmanager.RegionalSecretVersion datasource, but it only requires the [Secret Manager Secret Accessor](https://cloud.google.com/secret-manager/docs/access-control#secretmanager.secretAccessor) role. For more information see the [official documentation](https://cloud.google.com/secret-manager/docs/regional-secrets-overview) and [API](https://cloud.google.com/secret-manager/docs/reference/rest/v1/projects.locations.secrets.versions/access).
      */
-    def getRegionalSecretVersionAccess(args: Endofunction[com.pulumi.gcp.secretmanager.inputs.GetRegionalSecretVersionAccessArgs.Builder] = scala.Predef.identity):
+    inline def getRegionalSecretVersionAccess(args: Endofunction[com.pulumi.gcp.secretmanager.inputs.GetRegionalSecretVersionAccessArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.secretmanager.outputs.GetRegionalSecretVersionAccessResult] =
       val argsBuilder = com.pulumi.gcp.secretmanager.inputs.GetRegionalSecretVersionAccessArgs.builder
       com.pulumi.gcp.secretmanager.SecretmanagerFunctions.getRegionalSecretVersionAccess(args(argsBuilder).build)
@@ -3130,7 +3132,7 @@ object secretmanager:
      * 
      *  Get the value from a Secret Manager regional secret version. This is similar to the gcp.secretmanager.RegionalSecretVersion datasource, but it only requires the [Secret Manager Secret Accessor](https://cloud.google.com/secret-manager/docs/access-control#secretmanager.secretAccessor) role. For more information see the [official documentation](https://cloud.google.com/secret-manager/docs/regional-secrets-overview) and [API](https://cloud.google.com/secret-manager/docs/reference/rest/v1/projects.locations.secrets.versions/access).
      */
-    def getRegionalSecretVersionAccessPlain(args: Endofunction[com.pulumi.gcp.secretmanager.inputs.GetRegionalSecretVersionAccessPlainArgs.Builder] = scala.Predef.identity):
+    inline def getRegionalSecretVersionAccessPlain(args: Endofunction[com.pulumi.gcp.secretmanager.inputs.GetRegionalSecretVersionAccessPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.secretmanager.outputs.GetRegionalSecretVersionAccessResult] =
       val argsBuilder = com.pulumi.gcp.secretmanager.inputs.GetRegionalSecretVersionAccessPlainArgs.builder
       com.pulumi.gcp.secretmanager.SecretmanagerFunctions.getRegionalSecretVersionAccessPlain(args(argsBuilder).build)
@@ -3143,7 +3145,7 @@ object secretmanager:
      * 
      *  Use this data source to list the Secret Manager Regional Secrets.
      */
-    def getRegionalSecrets(args: Endofunction[com.pulumi.gcp.secretmanager.inputs.GetRegionalSecretsArgs.Builder] = scala.Predef.identity):
+    inline def getRegionalSecrets(args: Endofunction[com.pulumi.gcp.secretmanager.inputs.GetRegionalSecretsArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.secretmanager.outputs.GetRegionalSecretsResult] =
       val argsBuilder = com.pulumi.gcp.secretmanager.inputs.GetRegionalSecretsArgs.builder
       com.pulumi.gcp.secretmanager.SecretmanagerFunctions.getRegionalSecrets(args(argsBuilder).build)
@@ -3156,67 +3158,67 @@ object secretmanager:
      * 
      *  Use this data source to list the Secret Manager Regional Secrets.
      */
-    def getRegionalSecretsPlain(args: Endofunction[com.pulumi.gcp.secretmanager.inputs.GetRegionalSecretsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getRegionalSecretsPlain(args: Endofunction[com.pulumi.gcp.secretmanager.inputs.GetRegionalSecretsPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.secretmanager.outputs.GetRegionalSecretsResult] =
       val argsBuilder = com.pulumi.gcp.secretmanager.inputs.GetRegionalSecretsPlainArgs.builder
       com.pulumi.gcp.secretmanager.SecretmanagerFunctions.getRegionalSecretsPlain(args(argsBuilder).build)
 
     /** Use this data source to get information about a Secret Manager Secret */
-    def getSecret(args: Endofunction[com.pulumi.gcp.secretmanager.inputs.GetSecretArgs.Builder] = scala.Predef.identity):
+    inline def getSecret(args: Endofunction[com.pulumi.gcp.secretmanager.inputs.GetSecretArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.secretmanager.outputs.GetSecretResult] =
       val argsBuilder = com.pulumi.gcp.secretmanager.inputs.GetSecretArgs.builder
       com.pulumi.gcp.secretmanager.SecretmanagerFunctions.getSecret(args(argsBuilder).build)
 
     /** Use this data source to get information about a Secret Manager Secret */
-    def getSecretPlain(args: Endofunction[com.pulumi.gcp.secretmanager.inputs.GetSecretPlainArgs.Builder] = scala.Predef.identity):
+    inline def getSecretPlain(args: Endofunction[com.pulumi.gcp.secretmanager.inputs.GetSecretPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.secretmanager.outputs.GetSecretResult] =
       val argsBuilder = com.pulumi.gcp.secretmanager.inputs.GetSecretPlainArgs.builder
       com.pulumi.gcp.secretmanager.SecretmanagerFunctions.getSecretPlain(args(argsBuilder).build)
 
     /** Retrieves the current IAM policy data for secret */
-    def getSecretIamPolicy(args: Endofunction[com.pulumi.gcp.secretmanager.inputs.GetSecretIamPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getSecretIamPolicy(args: Endofunction[com.pulumi.gcp.secretmanager.inputs.GetSecretIamPolicyArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.secretmanager.outputs.GetSecretIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.secretmanager.inputs.GetSecretIamPolicyArgs.builder
       com.pulumi.gcp.secretmanager.SecretmanagerFunctions.getSecretIamPolicy(args(argsBuilder).build)
 
     /** Retrieves the current IAM policy data for secret */
-    def getSecretIamPolicyPlain(args: Endofunction[com.pulumi.gcp.secretmanager.inputs.GetSecretIamPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getSecretIamPolicyPlain(args: Endofunction[com.pulumi.gcp.secretmanager.inputs.GetSecretIamPolicyPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.secretmanager.outputs.GetSecretIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.secretmanager.inputs.GetSecretIamPolicyPlainArgs.builder
       com.pulumi.gcp.secretmanager.SecretmanagerFunctions.getSecretIamPolicyPlain(args(argsBuilder).build)
 
     /** Get the value and metadata from a Secret Manager secret version. For more information see the [official documentation](https://cloud.google.com/secret-manager/docs/) and [API](https://cloud.google.com/secret-manager/docs/reference/rest/v1/projects.secrets.versions). If you don&#39;t need the metadata (i.e., if you want to use a more limited role to access the secret version only), see also the gcp.secretmanager.getSecretVersionAccess datasource. */
-    def getSecretVersion(args: Endofunction[com.pulumi.gcp.secretmanager.inputs.GetSecretVersionArgs.Builder] = scala.Predef.identity):
+    inline def getSecretVersion(args: Endofunction[com.pulumi.gcp.secretmanager.inputs.GetSecretVersionArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.secretmanager.outputs.GetSecretVersionResult] =
       val argsBuilder = com.pulumi.gcp.secretmanager.inputs.GetSecretVersionArgs.builder
       com.pulumi.gcp.secretmanager.SecretmanagerFunctions.getSecretVersion(args(argsBuilder).build)
 
     /** Get the value and metadata from a Secret Manager secret version. For more information see the [official documentation](https://cloud.google.com/secret-manager/docs/) and [API](https://cloud.google.com/secret-manager/docs/reference/rest/v1/projects.secrets.versions). If you don&#39;t need the metadata (i.e., if you want to use a more limited role to access the secret version only), see also the gcp.secretmanager.getSecretVersionAccess datasource. */
-    def getSecretVersionPlain(args: Endofunction[com.pulumi.gcp.secretmanager.inputs.GetSecretVersionPlainArgs.Builder] = scala.Predef.identity):
+    inline def getSecretVersionPlain(args: Endofunction[com.pulumi.gcp.secretmanager.inputs.GetSecretVersionPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.secretmanager.outputs.GetSecretVersionResult] =
       val argsBuilder = com.pulumi.gcp.secretmanager.inputs.GetSecretVersionPlainArgs.builder
       com.pulumi.gcp.secretmanager.SecretmanagerFunctions.getSecretVersionPlain(args(argsBuilder).build)
 
     /** Get the value from a Secret Manager secret version. This is similar to the gcp.secretmanager.SecretVersion datasource, but it only requires the [Secret Manager Secret Accessor](https://cloud.google.com/secret-manager/docs/access-control#secretmanager.secretAccessor) role. For more information see the [official documentation](https://cloud.google.com/secret-manager/docs/) and [API](https://cloud.google.com/secret-manager/docs/reference/rest/v1/projects.secrets.versions/access). */
-    def getSecretVersionAccess(args: Endofunction[com.pulumi.gcp.secretmanager.inputs.GetSecretVersionAccessArgs.Builder] = scala.Predef.identity):
+    inline def getSecretVersionAccess(args: Endofunction[com.pulumi.gcp.secretmanager.inputs.GetSecretVersionAccessArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.secretmanager.outputs.GetSecretVersionAccessResult] =
       val argsBuilder = com.pulumi.gcp.secretmanager.inputs.GetSecretVersionAccessArgs.builder
       com.pulumi.gcp.secretmanager.SecretmanagerFunctions.getSecretVersionAccess(args(argsBuilder).build)
 
     /** Get the value from a Secret Manager secret version. This is similar to the gcp.secretmanager.SecretVersion datasource, but it only requires the [Secret Manager Secret Accessor](https://cloud.google.com/secret-manager/docs/access-control#secretmanager.secretAccessor) role. For more information see the [official documentation](https://cloud.google.com/secret-manager/docs/) and [API](https://cloud.google.com/secret-manager/docs/reference/rest/v1/projects.secrets.versions/access). */
-    def getSecretVersionAccessPlain(args: Endofunction[com.pulumi.gcp.secretmanager.inputs.GetSecretVersionAccessPlainArgs.Builder] = scala.Predef.identity):
+    inline def getSecretVersionAccessPlain(args: Endofunction[com.pulumi.gcp.secretmanager.inputs.GetSecretVersionAccessPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.secretmanager.outputs.GetSecretVersionAccessResult] =
       val argsBuilder = com.pulumi.gcp.secretmanager.inputs.GetSecretVersionAccessPlainArgs.builder
       com.pulumi.gcp.secretmanager.SecretmanagerFunctions.getSecretVersionAccessPlain(args(argsBuilder).build)
 
     /** Use this data source to list the Secret Manager Secrets */
-    def getSecrets(args: Endofunction[com.pulumi.gcp.secretmanager.inputs.GetSecretsArgs.Builder] = scala.Predef.identity):
+    inline def getSecrets(args: Endofunction[com.pulumi.gcp.secretmanager.inputs.GetSecretsArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.secretmanager.outputs.GetSecretsResult] =
       val argsBuilder = com.pulumi.gcp.secretmanager.inputs.GetSecretsArgs.builder
       com.pulumi.gcp.secretmanager.SecretmanagerFunctions.getSecrets(args(argsBuilder).build)
 
     /** Use this data source to list the Secret Manager Secrets */
-    def getSecretsPlain(args: Endofunction[com.pulumi.gcp.secretmanager.inputs.GetSecretsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getSecretsPlain(args: Endofunction[com.pulumi.gcp.secretmanager.inputs.GetSecretsPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.secretmanager.outputs.GetSecretsResult] =
       val argsBuilder = com.pulumi.gcp.secretmanager.inputs.GetSecretsPlainArgs.builder
       com.pulumi.gcp.secretmanager.SecretmanagerFunctions.getSecretsPlain(args(argsBuilder).build)

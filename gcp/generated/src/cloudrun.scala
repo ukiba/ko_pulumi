@@ -1554,11 +1554,13 @@ object cloudrun:
       val argsBuilder = com.pulumi.gcp.cloudrun.inputs.IamBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
 
-  type CloudrunFunctions = com.pulumi.gcp.cloudrun.CloudrunFunctions
   object CloudrunFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.gcp.cloudrun.CloudrunFunctions.*
-  extension (self: CloudrunFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /**
      * Get Cloud Run locations available for a project.
      * 
@@ -1568,7 +1570,7 @@ object cloudrun:
      *  * How-to Guides
      *      * [Official Documentation](https://cloud.google.com/run/docs/)
      */
-    def getLocations(args: Endofunction[com.pulumi.gcp.cloudrun.inputs.GetLocationsArgs.Builder] = scala.Predef.identity):
+    inline def getLocations(args: Endofunction[com.pulumi.gcp.cloudrun.inputs.GetLocationsArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.cloudrun.outputs.GetLocationsResult] =
       val argsBuilder = com.pulumi.gcp.cloudrun.inputs.GetLocationsArgs.builder
       com.pulumi.gcp.cloudrun.CloudrunFunctions.getLocations(args(argsBuilder).build)
@@ -1582,7 +1584,7 @@ object cloudrun:
      *  * How-to Guides
      *      * [Official Documentation](https://cloud.google.com/run/docs/)
      */
-    def getLocationsPlain(args: Endofunction[com.pulumi.gcp.cloudrun.inputs.GetLocationsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getLocationsPlain(args: Endofunction[com.pulumi.gcp.cloudrun.inputs.GetLocationsPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.cloudrun.outputs.GetLocationsResult] =
       val argsBuilder = com.pulumi.gcp.cloudrun.inputs.GetLocationsPlainArgs.builder
       com.pulumi.gcp.cloudrun.CloudrunFunctions.getLocationsPlain(args(argsBuilder).build)
@@ -1592,7 +1594,7 @@ object cloudrun:
      *  the [official documentation](https://cloud.google.com/run/docs/)
      *  and [API](https://cloud.google.com/run/docs/apis).
      */
-    def getService(args: Endofunction[com.pulumi.gcp.cloudrun.inputs.GetServiceArgs.Builder] = scala.Predef.identity):
+    inline def getService(args: Endofunction[com.pulumi.gcp.cloudrun.inputs.GetServiceArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.cloudrun.outputs.GetServiceResult] =
       val argsBuilder = com.pulumi.gcp.cloudrun.inputs.GetServiceArgs.builder
       com.pulumi.gcp.cloudrun.CloudrunFunctions.getService(args(argsBuilder).build)
@@ -1602,19 +1604,19 @@ object cloudrun:
      *  the [official documentation](https://cloud.google.com/run/docs/)
      *  and [API](https://cloud.google.com/run/docs/apis).
      */
-    def getServicePlain(args: Endofunction[com.pulumi.gcp.cloudrun.inputs.GetServicePlainArgs.Builder] = scala.Predef.identity):
+    inline def getServicePlain(args: Endofunction[com.pulumi.gcp.cloudrun.inputs.GetServicePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.cloudrun.outputs.GetServiceResult] =
       val argsBuilder = com.pulumi.gcp.cloudrun.inputs.GetServicePlainArgs.builder
       com.pulumi.gcp.cloudrun.CloudrunFunctions.getServicePlain(args(argsBuilder).build)
 
     /** Retrieves the current IAM policy data for service */
-    def getServiceIamPolicy(args: Endofunction[com.pulumi.gcp.cloudrun.inputs.GetServiceIamPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getServiceIamPolicy(args: Endofunction[com.pulumi.gcp.cloudrun.inputs.GetServiceIamPolicyArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.cloudrun.outputs.GetServiceIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.cloudrun.inputs.GetServiceIamPolicyArgs.builder
       com.pulumi.gcp.cloudrun.CloudrunFunctions.getServiceIamPolicy(args(argsBuilder).build)
 
     /** Retrieves the current IAM policy data for service */
-    def getServiceIamPolicyPlain(args: Endofunction[com.pulumi.gcp.cloudrun.inputs.GetServiceIamPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getServiceIamPolicyPlain(args: Endofunction[com.pulumi.gcp.cloudrun.inputs.GetServiceIamPolicyPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.cloudrun.outputs.GetServiceIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.cloudrun.inputs.GetServiceIamPolicyPlainArgs.builder
       com.pulumi.gcp.cloudrun.CloudrunFunctions.getServiceIamPolicyPlain(args(argsBuilder).build)

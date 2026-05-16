@@ -4,31 +4,33 @@ package aws
 import com.pulumi.resources.CustomResourceOptions
 
 object timestreamwrite:
-  type TimestreamwriteFunctions = com.pulumi.aws.timestreamwrite.TimestreamwriteFunctions
   object TimestreamwriteFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.aws.timestreamwrite.TimestreamwriteFunctions.*
-  extension (self: TimestreamwriteFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /** Data source for managing an AWS Timestream Write Database. */
-    def getDatabase(args: Endofunction[com.pulumi.aws.timestreamwrite.inputs.GetDatabaseArgs.Builder] = scala.Predef.identity):
+    inline def getDatabase(args: Endofunction[com.pulumi.aws.timestreamwrite.inputs.GetDatabaseArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.timestreamwrite.outputs.GetDatabaseResult] =
       val argsBuilder = com.pulumi.aws.timestreamwrite.inputs.GetDatabaseArgs.builder
       com.pulumi.aws.timestreamwrite.TimestreamwriteFunctions.getDatabase(args(argsBuilder).build)
 
     /** Data source for managing an AWS Timestream Write Database. */
-    def getDatabasePlain(args: Endofunction[com.pulumi.aws.timestreamwrite.inputs.GetDatabasePlainArgs.Builder] = scala.Predef.identity):
+    inline def getDatabasePlain(args: Endofunction[com.pulumi.aws.timestreamwrite.inputs.GetDatabasePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.timestreamwrite.outputs.GetDatabaseResult] =
       val argsBuilder = com.pulumi.aws.timestreamwrite.inputs.GetDatabasePlainArgs.builder
       com.pulumi.aws.timestreamwrite.TimestreamwriteFunctions.getDatabasePlain(args(argsBuilder).build)
 
     /** Data source for managing an AWS Timestream Write Table. */
-    def getTable(args: Endofunction[com.pulumi.aws.timestreamwrite.inputs.GetTableArgs.Builder] = scala.Predef.identity):
+    inline def getTable(args: Endofunction[com.pulumi.aws.timestreamwrite.inputs.GetTableArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.timestreamwrite.outputs.GetTableResult] =
       val argsBuilder = com.pulumi.aws.timestreamwrite.inputs.GetTableArgs.builder
       com.pulumi.aws.timestreamwrite.TimestreamwriteFunctions.getTable(args(argsBuilder).build)
 
     /** Data source for managing an AWS Timestream Write Table. */
-    def getTablePlain(args: Endofunction[com.pulumi.aws.timestreamwrite.inputs.GetTablePlainArgs.Builder] = scala.Predef.identity):
+    inline def getTablePlain(args: Endofunction[com.pulumi.aws.timestreamwrite.inputs.GetTablePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.timestreamwrite.outputs.GetTableResult] =
       val argsBuilder = com.pulumi.aws.timestreamwrite.inputs.GetTablePlainArgs.builder
       com.pulumi.aws.timestreamwrite.TimestreamwriteFunctions.getTablePlain(args(argsBuilder).build)

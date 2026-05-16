@@ -156,19 +156,21 @@ object machinelearning:
         com.pulumi.azure.machinelearning.WorkspaceArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
 
-  type MachinelearningFunctions = com.pulumi.azure.machinelearning.MachinelearningFunctions
   object MachinelearningFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.azure.machinelearning.MachinelearningFunctions.*
-  extension (self: MachinelearningFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /** Use this data source to access information about an existing Machine Learning Workspace. */
-    def getWorkspace(args: Endofunction[com.pulumi.azure.machinelearning.inputs.GetWorkspaceArgs.Builder] = scala.Predef.identity):
+    inline def getWorkspace(args: Endofunction[com.pulumi.azure.machinelearning.inputs.GetWorkspaceArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.machinelearning.outputs.GetWorkspaceResult] =
       val argsBuilder = com.pulumi.azure.machinelearning.inputs.GetWorkspaceArgs.builder
       com.pulumi.azure.machinelearning.MachinelearningFunctions.getWorkspace(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing Machine Learning Workspace. */
-    def getWorkspacePlain(args: Endofunction[com.pulumi.azure.machinelearning.inputs.GetWorkspacePlainArgs.Builder] = scala.Predef.identity):
+    inline def getWorkspacePlain(args: Endofunction[com.pulumi.azure.machinelearning.inputs.GetWorkspacePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.machinelearning.outputs.GetWorkspaceResult] =
       val argsBuilder = com.pulumi.azure.machinelearning.inputs.GetWorkspacePlainArgs.builder
       com.pulumi.azure.machinelearning.MachinelearningFunctions.getWorkspacePlain(args(argsBuilder).build)

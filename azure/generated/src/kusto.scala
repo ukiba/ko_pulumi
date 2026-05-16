@@ -96,31 +96,33 @@ object kusto:
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
-  type KustoFunctions = com.pulumi.azure.kusto.KustoFunctions
   object KustoFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.azure.kusto.KustoFunctions.*
-  extension (self: KustoFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /** Use this data source to access information about an existing Kusto (also known as Azure Data Explorer) Cluster */
-    def getCluster(args: Endofunction[com.pulumi.azure.kusto.inputs.GetClusterArgs.Builder] = scala.Predef.identity):
+    inline def getCluster(args: Endofunction[com.pulumi.azure.kusto.inputs.GetClusterArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.kusto.outputs.GetClusterResult] =
       val argsBuilder = com.pulumi.azure.kusto.inputs.GetClusterArgs.builder
       com.pulumi.azure.kusto.KustoFunctions.getCluster(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing Kusto (also known as Azure Data Explorer) Cluster */
-    def getClusterPlain(args: Endofunction[com.pulumi.azure.kusto.inputs.GetClusterPlainArgs.Builder] = scala.Predef.identity):
+    inline def getClusterPlain(args: Endofunction[com.pulumi.azure.kusto.inputs.GetClusterPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.kusto.outputs.GetClusterResult] =
       val argsBuilder = com.pulumi.azure.kusto.inputs.GetClusterPlainArgs.builder
       com.pulumi.azure.kusto.KustoFunctions.getClusterPlain(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing Kusto Database */
-    def getDatabase(args: Endofunction[com.pulumi.azure.kusto.inputs.GetDatabaseArgs.Builder] = scala.Predef.identity):
+    inline def getDatabase(args: Endofunction[com.pulumi.azure.kusto.inputs.GetDatabaseArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.kusto.outputs.GetDatabaseResult] =
       val argsBuilder = com.pulumi.azure.kusto.inputs.GetDatabaseArgs.builder
       com.pulumi.azure.kusto.KustoFunctions.getDatabase(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing Kusto Database */
-    def getDatabasePlain(args: Endofunction[com.pulumi.azure.kusto.inputs.GetDatabasePlainArgs.Builder] = scala.Predef.identity):
+    inline def getDatabasePlain(args: Endofunction[com.pulumi.azure.kusto.inputs.GetDatabasePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.kusto.outputs.GetDatabaseResult] =
       val argsBuilder = com.pulumi.azure.kusto.inputs.GetDatabasePlainArgs.builder
       com.pulumi.azure.kusto.KustoFunctions.getDatabasePlain(args(argsBuilder).build)

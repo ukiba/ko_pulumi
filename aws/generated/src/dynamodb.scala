@@ -279,55 +279,57 @@ object dynamodb:
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
-  type DynamodbFunctions = com.pulumi.aws.dynamodb.DynamodbFunctions
   object DynamodbFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.aws.dynamodb.DynamodbFunctions.*
-  extension (self: DynamodbFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /** Data source for listing AWS DynamoDB backups. */
-    def getBackups(args: Endofunction[com.pulumi.aws.dynamodb.inputs.GetBackupsArgs.Builder] = scala.Predef.identity):
+    inline def getBackups(args: Endofunction[com.pulumi.aws.dynamodb.inputs.GetBackupsArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.dynamodb.outputs.GetBackupsResult] =
       val argsBuilder = com.pulumi.aws.dynamodb.inputs.GetBackupsArgs.builder
       com.pulumi.aws.dynamodb.DynamodbFunctions.getBackups(args(argsBuilder).build)
 
     /** Data source for listing AWS DynamoDB backups. */
-    def getBackupsPlain(args: Endofunction[com.pulumi.aws.dynamodb.inputs.GetBackupsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getBackupsPlain(args: Endofunction[com.pulumi.aws.dynamodb.inputs.GetBackupsPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.dynamodb.outputs.GetBackupsResult] =
       val argsBuilder = com.pulumi.aws.dynamodb.inputs.GetBackupsPlainArgs.builder
       com.pulumi.aws.dynamodb.DynamodbFunctions.getBackupsPlain(args(argsBuilder).build)
 
     /** Provides information about a DynamoDB table. */
-    def getTable(args: Endofunction[com.pulumi.aws.dynamodb.inputs.GetTableArgs.Builder] = scala.Predef.identity):
+    inline def getTable(args: Endofunction[com.pulumi.aws.dynamodb.inputs.GetTableArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.dynamodb.outputs.GetTableResult] =
       val argsBuilder = com.pulumi.aws.dynamodb.inputs.GetTableArgs.builder
       com.pulumi.aws.dynamodb.DynamodbFunctions.getTable(args(argsBuilder).build)
 
     /** Provides information about a DynamoDB table. */
-    def getTablePlain(args: Endofunction[com.pulumi.aws.dynamodb.inputs.GetTablePlainArgs.Builder] = scala.Predef.identity):
+    inline def getTablePlain(args: Endofunction[com.pulumi.aws.dynamodb.inputs.GetTablePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.dynamodb.outputs.GetTableResult] =
       val argsBuilder = com.pulumi.aws.dynamodb.inputs.GetTablePlainArgs.builder
       com.pulumi.aws.dynamodb.DynamodbFunctions.getTablePlain(args(argsBuilder).build)
 
     /** Data source for retrieving a value from an AWS DynamoDB table. */
-    def getTableItem(args: Endofunction[com.pulumi.aws.dynamodb.inputs.GetTableItemArgs.Builder] = scala.Predef.identity):
+    inline def getTableItem(args: Endofunction[com.pulumi.aws.dynamodb.inputs.GetTableItemArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.dynamodb.outputs.GetTableItemResult] =
       val argsBuilder = com.pulumi.aws.dynamodb.inputs.GetTableItemArgs.builder
       com.pulumi.aws.dynamodb.DynamodbFunctions.getTableItem(args(argsBuilder).build)
 
     /** Data source for retrieving a value from an AWS DynamoDB table. */
-    def getTableItemPlain(args: Endofunction[com.pulumi.aws.dynamodb.inputs.GetTableItemPlainArgs.Builder] = scala.Predef.identity):
+    inline def getTableItemPlain(args: Endofunction[com.pulumi.aws.dynamodb.inputs.GetTableItemPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.dynamodb.outputs.GetTableItemResult] =
       val argsBuilder = com.pulumi.aws.dynamodb.inputs.GetTableItemPlainArgs.builder
       com.pulumi.aws.dynamodb.DynamodbFunctions.getTableItemPlain(args(argsBuilder).build)
 
     /** Returns a list of all AWS DynamoDB table names in a region. */
-    def getTables(args: Endofunction[com.pulumi.aws.dynamodb.inputs.GetTablesArgs.Builder] = scala.Predef.identity):
+    inline def getTables(args: Endofunction[com.pulumi.aws.dynamodb.inputs.GetTablesArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.dynamodb.outputs.GetTablesResult] =
       val argsBuilder = com.pulumi.aws.dynamodb.inputs.GetTablesArgs.builder
       com.pulumi.aws.dynamodb.DynamodbFunctions.getTables(args(argsBuilder).build)
 
     /** Returns a list of all AWS DynamoDB table names in a region. */
-    def getTablesPlain(args: Endofunction[com.pulumi.aws.dynamodb.inputs.GetTablesPlainArgs.Builder] = scala.Predef.identity):
+    inline def getTablesPlain(args: Endofunction[com.pulumi.aws.dynamodb.inputs.GetTablesPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.dynamodb.outputs.GetTablesResult] =
       val argsBuilder = com.pulumi.aws.dynamodb.inputs.GetTablesPlainArgs.builder
       com.pulumi.aws.dynamodb.DynamodbFunctions.getTablesPlain(args(argsBuilder).build)

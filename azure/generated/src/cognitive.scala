@@ -120,31 +120,33 @@ object cognitive:
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
-  type CognitiveFunctions = com.pulumi.azure.cognitive.CognitiveFunctions
   object CognitiveFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.azure.cognitive.CognitiveFunctions.*
-  extension (self: CognitiveFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /** Use this data source to access information about an existing Cognitive Services Account. */
-    def getAccount(args: Endofunction[com.pulumi.azure.cognitive.inputs.GetAccountArgs.Builder] = scala.Predef.identity):
+    inline def getAccount(args: Endofunction[com.pulumi.azure.cognitive.inputs.GetAccountArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.cognitive.outputs.GetAccountResult] =
       val argsBuilder = com.pulumi.azure.cognitive.inputs.GetAccountArgs.builder
       com.pulumi.azure.cognitive.CognitiveFunctions.getAccount(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing Cognitive Services Account. */
-    def getAccountPlain(args: Endofunction[com.pulumi.azure.cognitive.inputs.GetAccountPlainArgs.Builder] = scala.Predef.identity):
+    inline def getAccountPlain(args: Endofunction[com.pulumi.azure.cognitive.inputs.GetAccountPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.cognitive.outputs.GetAccountResult] =
       val argsBuilder = com.pulumi.azure.cognitive.inputs.GetAccountPlainArgs.builder
       com.pulumi.azure.cognitive.CognitiveFunctions.getAccountPlain(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing Cognitive Services Account Project. */
-    def getAccountProject(args: Endofunction[com.pulumi.azure.cognitive.inputs.GetAccountProjectArgs.Builder] = scala.Predef.identity):
+    inline def getAccountProject(args: Endofunction[com.pulumi.azure.cognitive.inputs.GetAccountProjectArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.cognitive.outputs.GetAccountProjectResult] =
       val argsBuilder = com.pulumi.azure.cognitive.inputs.GetAccountProjectArgs.builder
       com.pulumi.azure.cognitive.CognitiveFunctions.getAccountProject(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing Cognitive Services Account Project. */
-    def getAccountProjectPlain(args: Endofunction[com.pulumi.azure.cognitive.inputs.GetAccountProjectPlainArgs.Builder] = scala.Predef.identity):
+    inline def getAccountProjectPlain(args: Endofunction[com.pulumi.azure.cognitive.inputs.GetAccountProjectPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.cognitive.outputs.GetAccountProjectResult] =
       val argsBuilder = com.pulumi.azure.cognitive.inputs.GetAccountProjectPlainArgs.builder
       com.pulumi.azure.cognitive.CognitiveFunctions.getAccountProjectPlain(args(argsBuilder).build)

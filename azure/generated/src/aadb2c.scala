@@ -15,19 +15,21 @@ object aadb2c:
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
-  type Aadb2cFunctions = com.pulumi.azure.aadb2c.Aadb2cFunctions
   object Aadb2cFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.azure.aadb2c.Aadb2cFunctions.*
-  extension (self: Aadb2cFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /** Use this data source to access information about an existing AAD B2C Directory. */
-    def getDirectory(args: Endofunction[com.pulumi.azure.aadb2c.inputs.GetDirectoryArgs.Builder] = scala.Predef.identity):
+    inline def getDirectory(args: Endofunction[com.pulumi.azure.aadb2c.inputs.GetDirectoryArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.aadb2c.outputs.GetDirectoryResult] =
       val argsBuilder = com.pulumi.azure.aadb2c.inputs.GetDirectoryArgs.builder
       com.pulumi.azure.aadb2c.Aadb2cFunctions.getDirectory(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing AAD B2C Directory. */
-    def getDirectoryPlain(args: Endofunction[com.pulumi.azure.aadb2c.inputs.GetDirectoryPlainArgs.Builder] = scala.Predef.identity):
+    inline def getDirectoryPlain(args: Endofunction[com.pulumi.azure.aadb2c.inputs.GetDirectoryPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.aadb2c.outputs.GetDirectoryResult] =
       val argsBuilder = com.pulumi.azure.aadb2c.inputs.GetDirectoryPlainArgs.builder
       com.pulumi.azure.aadb2c.Aadb2cFunctions.getDirectoryPlain(args(argsBuilder).build)

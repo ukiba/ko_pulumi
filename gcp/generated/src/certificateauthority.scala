@@ -595,43 +595,45 @@ object certificateauthority:
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
-  type CertificateauthorityFunctions = com.pulumi.gcp.certificateauthority.CertificateauthorityFunctions
   object CertificateauthorityFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.gcp.certificateauthority.CertificateauthorityFunctions.*
-  extension (self: CertificateauthorityFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /** Get info about a Google CAS Certificate Authority. */
-    def getAuthority(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.GetAuthorityArgs.Builder] = scala.Predef.identity):
+    inline def getAuthority(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.GetAuthorityArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.certificateauthority.outputs.GetAuthorityResult] =
       val argsBuilder = com.pulumi.gcp.certificateauthority.inputs.GetAuthorityArgs.builder
       com.pulumi.gcp.certificateauthority.CertificateauthorityFunctions.getAuthority(args(argsBuilder).build)
 
     /** Get info about a Google CAS Certificate Authority. */
-    def getAuthorityPlain(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.GetAuthorityPlainArgs.Builder] = scala.Predef.identity):
+    inline def getAuthorityPlain(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.GetAuthorityPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.certificateauthority.outputs.GetAuthorityResult] =
       val argsBuilder = com.pulumi.gcp.certificateauthority.inputs.GetAuthorityPlainArgs.builder
       com.pulumi.gcp.certificateauthority.CertificateauthorityFunctions.getAuthorityPlain(args(argsBuilder).build)
 
     /** Retrieves the current IAM policy data for capool */
-    def getCaPoolIamPolicy(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.GetCaPoolIamPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getCaPoolIamPolicy(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.GetCaPoolIamPolicyArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.certificateauthority.outputs.GetCaPoolIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.certificateauthority.inputs.GetCaPoolIamPolicyArgs.builder
       com.pulumi.gcp.certificateauthority.CertificateauthorityFunctions.getCaPoolIamPolicy(args(argsBuilder).build)
 
     /** Retrieves the current IAM policy data for capool */
-    def getCaPoolIamPolicyPlain(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.GetCaPoolIamPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getCaPoolIamPolicyPlain(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.GetCaPoolIamPolicyPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.certificateauthority.outputs.GetCaPoolIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.certificateauthority.inputs.GetCaPoolIamPolicyPlainArgs.builder
       com.pulumi.gcp.certificateauthority.CertificateauthorityFunctions.getCaPoolIamPolicyPlain(args(argsBuilder).build)
 
     /** Retrieves the current IAM policy data for certificatetemplate */
-    def getCertificateTemplateIamPolicy(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.GetCertificateTemplateIamPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getCertificateTemplateIamPolicy(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.GetCertificateTemplateIamPolicyArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.certificateauthority.outputs.GetCertificateTemplateIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.certificateauthority.inputs.GetCertificateTemplateIamPolicyArgs.builder
       com.pulumi.gcp.certificateauthority.CertificateauthorityFunctions.getCertificateTemplateIamPolicy(args(argsBuilder).build)
 
     /** Retrieves the current IAM policy data for certificatetemplate */
-    def getCertificateTemplateIamPolicyPlain(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.GetCertificateTemplateIamPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getCertificateTemplateIamPolicyPlain(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.GetCertificateTemplateIamPolicyPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.certificateauthority.outputs.GetCertificateTemplateIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.certificateauthority.inputs.GetCertificateTemplateIamPolicyPlainArgs.builder
       com.pulumi.gcp.certificateauthority.CertificateauthorityFunctions.getCertificateTemplateIamPolicyPlain(args(argsBuilder).build)

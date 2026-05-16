@@ -158,67 +158,69 @@ object kendra:
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
-  type KendraFunctions = com.pulumi.aws.kendra.KendraFunctions
   object KendraFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.aws.kendra.KendraFunctions.*
-  extension (self: KendraFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /** Provides details about a specific Amazon Kendra Experience. */
-    def getExperience(args: Endofunction[com.pulumi.aws.kendra.inputs.GetExperienceArgs.Builder] = scala.Predef.identity):
+    inline def getExperience(args: Endofunction[com.pulumi.aws.kendra.inputs.GetExperienceArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.kendra.outputs.GetExperienceResult] =
       val argsBuilder = com.pulumi.aws.kendra.inputs.GetExperienceArgs.builder
       com.pulumi.aws.kendra.KendraFunctions.getExperience(args(argsBuilder).build)
 
     /** Provides details about a specific Amazon Kendra Experience. */
-    def getExperiencePlain(args: Endofunction[com.pulumi.aws.kendra.inputs.GetExperiencePlainArgs.Builder] = scala.Predef.identity):
+    inline def getExperiencePlain(args: Endofunction[com.pulumi.aws.kendra.inputs.GetExperiencePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.kendra.outputs.GetExperienceResult] =
       val argsBuilder = com.pulumi.aws.kendra.inputs.GetExperiencePlainArgs.builder
       com.pulumi.aws.kendra.KendraFunctions.getExperiencePlain(args(argsBuilder).build)
 
     /** Provides details about a specific Amazon Kendra Faq. */
-    def getFaq(args: Endofunction[com.pulumi.aws.kendra.inputs.GetFaqArgs.Builder] = scala.Predef.identity):
+    inline def getFaq(args: Endofunction[com.pulumi.aws.kendra.inputs.GetFaqArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.kendra.outputs.GetFaqResult] =
       val argsBuilder = com.pulumi.aws.kendra.inputs.GetFaqArgs.builder
       com.pulumi.aws.kendra.KendraFunctions.getFaq(args(argsBuilder).build)
 
     /** Provides details about a specific Amazon Kendra Faq. */
-    def getFaqPlain(args: Endofunction[com.pulumi.aws.kendra.inputs.GetFaqPlainArgs.Builder] = scala.Predef.identity):
+    inline def getFaqPlain(args: Endofunction[com.pulumi.aws.kendra.inputs.GetFaqPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.kendra.outputs.GetFaqResult] =
       val argsBuilder = com.pulumi.aws.kendra.inputs.GetFaqPlainArgs.builder
       com.pulumi.aws.kendra.KendraFunctions.getFaqPlain(args(argsBuilder).build)
 
     /** Provides details about a specific Amazon Kendra Index. */
-    def getIndex(args: Endofunction[com.pulumi.aws.kendra.inputs.GetIndexArgs.Builder] = scala.Predef.identity):
+    inline def getIndex(args: Endofunction[com.pulumi.aws.kendra.inputs.GetIndexArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.kendra.outputs.GetIndexResult] =
       val argsBuilder = com.pulumi.aws.kendra.inputs.GetIndexArgs.builder
       com.pulumi.aws.kendra.KendraFunctions.getIndex(args(argsBuilder).build)
 
     /** Provides details about a specific Amazon Kendra Index. */
-    def getIndexPlain(args: Endofunction[com.pulumi.aws.kendra.inputs.GetIndexPlainArgs.Builder] = scala.Predef.identity):
+    inline def getIndexPlain(args: Endofunction[com.pulumi.aws.kendra.inputs.GetIndexPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.kendra.outputs.GetIndexResult] =
       val argsBuilder = com.pulumi.aws.kendra.inputs.GetIndexPlainArgs.builder
       com.pulumi.aws.kendra.KendraFunctions.getIndexPlain(args(argsBuilder).build)
 
     /** Provides details about a specific Amazon Kendra block list used for query suggestions for an index. */
-    def getQuerySuggestionsBlockList(args: Endofunction[com.pulumi.aws.kendra.inputs.GetQuerySuggestionsBlockListArgs.Builder] = scala.Predef.identity):
+    inline def getQuerySuggestionsBlockList(args: Endofunction[com.pulumi.aws.kendra.inputs.GetQuerySuggestionsBlockListArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.kendra.outputs.GetQuerySuggestionsBlockListResult] =
       val argsBuilder = com.pulumi.aws.kendra.inputs.GetQuerySuggestionsBlockListArgs.builder
       com.pulumi.aws.kendra.KendraFunctions.getQuerySuggestionsBlockList(args(argsBuilder).build)
 
     /** Provides details about a specific Amazon Kendra block list used for query suggestions for an index. */
-    def getQuerySuggestionsBlockListPlain(args: Endofunction[com.pulumi.aws.kendra.inputs.GetQuerySuggestionsBlockListPlainArgs.Builder] = scala.Predef.identity):
+    inline def getQuerySuggestionsBlockListPlain(args: Endofunction[com.pulumi.aws.kendra.inputs.GetQuerySuggestionsBlockListPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.kendra.outputs.GetQuerySuggestionsBlockListResult] =
       val argsBuilder = com.pulumi.aws.kendra.inputs.GetQuerySuggestionsBlockListPlainArgs.builder
       com.pulumi.aws.kendra.KendraFunctions.getQuerySuggestionsBlockListPlain(args(argsBuilder).build)
 
     /** Provides details about a specific Amazon Kendra Thesaurus. */
-    def getThesaurus(args: Endofunction[com.pulumi.aws.kendra.inputs.GetThesaurusArgs.Builder] = scala.Predef.identity):
+    inline def getThesaurus(args: Endofunction[com.pulumi.aws.kendra.inputs.GetThesaurusArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.kendra.outputs.GetThesaurusResult] =
       val argsBuilder = com.pulumi.aws.kendra.inputs.GetThesaurusArgs.builder
       com.pulumi.aws.kendra.KendraFunctions.getThesaurus(args(argsBuilder).build)
 
     /** Provides details about a specific Amazon Kendra Thesaurus. */
-    def getThesaurusPlain(args: Endofunction[com.pulumi.aws.kendra.inputs.GetThesaurusPlainArgs.Builder] = scala.Predef.identity):
+    inline def getThesaurusPlain(args: Endofunction[com.pulumi.aws.kendra.inputs.GetThesaurusPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.kendra.outputs.GetThesaurusResult] =
       val argsBuilder = com.pulumi.aws.kendra.inputs.GetThesaurusPlainArgs.builder
       com.pulumi.aws.kendra.KendraFunctions.getThesaurusPlain(args(argsBuilder).build)

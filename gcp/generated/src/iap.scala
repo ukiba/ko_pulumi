@@ -3997,17 +3997,19 @@ object iap:
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
-  type IapFunctions = com.pulumi.gcp.iap.IapFunctions
   object IapFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.gcp.iap.IapFunctions.*
-  extension (self: IapFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /**
      * Retrieves the current IAM policy data for agentregistry
      *  &gt; **Warning:** This datasource is in beta, and should be used with the terraform-provider-google-beta provider.
      *  See Provider Versions for more details on beta resources.
      */
-    def getAgentRegistryIamPolicy(args: Endofunction[com.pulumi.gcp.iap.inputs.GetAgentRegistryIamPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getAgentRegistryIamPolicy(args: Endofunction[com.pulumi.gcp.iap.inputs.GetAgentRegistryIamPolicyArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.iap.outputs.GetAgentRegistryIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.iap.inputs.GetAgentRegistryIamPolicyArgs.builder
       com.pulumi.gcp.iap.IapFunctions.getAgentRegistryIamPolicy(args(argsBuilder).build)
@@ -4017,43 +4019,43 @@ object iap:
      *  &gt; **Warning:** This datasource is in beta, and should be used with the terraform-provider-google-beta provider.
      *  See Provider Versions for more details on beta resources.
      */
-    def getAgentRegistryIamPolicyPlain(args: Endofunction[com.pulumi.gcp.iap.inputs.GetAgentRegistryIamPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getAgentRegistryIamPolicyPlain(args: Endofunction[com.pulumi.gcp.iap.inputs.GetAgentRegistryIamPolicyPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.iap.outputs.GetAgentRegistryIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.iap.inputs.GetAgentRegistryIamPolicyPlainArgs.builder
       com.pulumi.gcp.iap.IapFunctions.getAgentRegistryIamPolicyPlain(args(argsBuilder).build)
 
     /** Retrieves the current IAM policy data for appengineservice */
-    def getAppEngineServiceIamPolicy(args: Endofunction[com.pulumi.gcp.iap.inputs.GetAppEngineServiceIamPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getAppEngineServiceIamPolicy(args: Endofunction[com.pulumi.gcp.iap.inputs.GetAppEngineServiceIamPolicyArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.iap.outputs.GetAppEngineServiceIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.iap.inputs.GetAppEngineServiceIamPolicyArgs.builder
       com.pulumi.gcp.iap.IapFunctions.getAppEngineServiceIamPolicy(args(argsBuilder).build)
 
     /** Retrieves the current IAM policy data for appengineservice */
-    def getAppEngineServiceIamPolicyPlain(args: Endofunction[com.pulumi.gcp.iap.inputs.GetAppEngineServiceIamPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getAppEngineServiceIamPolicyPlain(args: Endofunction[com.pulumi.gcp.iap.inputs.GetAppEngineServiceIamPolicyPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.iap.outputs.GetAppEngineServiceIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.iap.inputs.GetAppEngineServiceIamPolicyPlainArgs.builder
       com.pulumi.gcp.iap.IapFunctions.getAppEngineServiceIamPolicyPlain(args(argsBuilder).build)
 
     /** Retrieves the current IAM policy data for appengineversion */
-    def getAppEngineVersionIamPolicy(args: Endofunction[com.pulumi.gcp.iap.inputs.GetAppEngineVersionIamPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getAppEngineVersionIamPolicy(args: Endofunction[com.pulumi.gcp.iap.inputs.GetAppEngineVersionIamPolicyArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.iap.outputs.GetAppEngineVersionIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.iap.inputs.GetAppEngineVersionIamPolicyArgs.builder
       com.pulumi.gcp.iap.IapFunctions.getAppEngineVersionIamPolicy(args(argsBuilder).build)
 
     /** Retrieves the current IAM policy data for appengineversion */
-    def getAppEngineVersionIamPolicyPlain(args: Endofunction[com.pulumi.gcp.iap.inputs.GetAppEngineVersionIamPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getAppEngineVersionIamPolicyPlain(args: Endofunction[com.pulumi.gcp.iap.inputs.GetAppEngineVersionIamPolicyPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.iap.outputs.GetAppEngineVersionIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.iap.inputs.GetAppEngineVersionIamPolicyPlainArgs.builder
       com.pulumi.gcp.iap.IapFunctions.getAppEngineVersionIamPolicyPlain(args(argsBuilder).build)
 
     /** Get info about a Google Cloud IAP Client. */
-    def getClient(args: Endofunction[com.pulumi.gcp.iap.inputs.GetClientArgs.Builder] = scala.Predef.identity):
+    inline def getClient(args: Endofunction[com.pulumi.gcp.iap.inputs.GetClientArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.iap.outputs.GetClientResult] =
       val argsBuilder = com.pulumi.gcp.iap.inputs.GetClientArgs.builder
       com.pulumi.gcp.iap.IapFunctions.getClient(args(argsBuilder).build)
 
     /** Get info about a Google Cloud IAP Client. */
-    def getClientPlain(args: Endofunction[com.pulumi.gcp.iap.inputs.GetClientPlainArgs.Builder] = scala.Predef.identity):
+    inline def getClientPlain(args: Endofunction[com.pulumi.gcp.iap.inputs.GetClientPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.iap.outputs.GetClientResult] =
       val argsBuilder = com.pulumi.gcp.iap.inputs.GetClientPlainArgs.builder
       com.pulumi.gcp.iap.IapFunctions.getClientPlain(args(argsBuilder).build)
@@ -4063,7 +4065,7 @@ object iap:
      *  &gt; **Warning:** This datasource is in beta, and should be used with the terraform-provider-google-beta provider.
      *  See Provider Versions for more details on beta resources.
      */
-    def getLocationWebIamPolicy(args: Endofunction[com.pulumi.gcp.iap.inputs.GetLocationWebIamPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getLocationWebIamPolicy(args: Endofunction[com.pulumi.gcp.iap.inputs.GetLocationWebIamPolicyArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.iap.outputs.GetLocationWebIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.iap.inputs.GetLocationWebIamPolicyArgs.builder
       com.pulumi.gcp.iap.IapFunctions.getLocationWebIamPolicy(args(argsBuilder).build)
@@ -4073,139 +4075,139 @@ object iap:
      *  &gt; **Warning:** This datasource is in beta, and should be used with the terraform-provider-google-beta provider.
      *  See Provider Versions for more details on beta resources.
      */
-    def getLocationWebIamPolicyPlain(args: Endofunction[com.pulumi.gcp.iap.inputs.GetLocationWebIamPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getLocationWebIamPolicyPlain(args: Endofunction[com.pulumi.gcp.iap.inputs.GetLocationWebIamPolicyPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.iap.outputs.GetLocationWebIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.iap.inputs.GetLocationWebIamPolicyPlainArgs.builder
       com.pulumi.gcp.iap.IapFunctions.getLocationWebIamPolicyPlain(args(argsBuilder).build)
 
     /** Retrieves the current IAM policy data for tunneldestgroup */
-    def getTunnelDestGroupIamPolicy(args: Endofunction[com.pulumi.gcp.iap.inputs.GetTunnelDestGroupIamPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getTunnelDestGroupIamPolicy(args: Endofunction[com.pulumi.gcp.iap.inputs.GetTunnelDestGroupIamPolicyArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.iap.outputs.GetTunnelDestGroupIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.iap.inputs.GetTunnelDestGroupIamPolicyArgs.builder
       com.pulumi.gcp.iap.IapFunctions.getTunnelDestGroupIamPolicy(args(argsBuilder).build)
 
     /** Retrieves the current IAM policy data for tunneldestgroup */
-    def getTunnelDestGroupIamPolicyPlain(args: Endofunction[com.pulumi.gcp.iap.inputs.GetTunnelDestGroupIamPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getTunnelDestGroupIamPolicyPlain(args: Endofunction[com.pulumi.gcp.iap.inputs.GetTunnelDestGroupIamPolicyPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.iap.outputs.GetTunnelDestGroupIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.iap.inputs.GetTunnelDestGroupIamPolicyPlainArgs.builder
       com.pulumi.gcp.iap.IapFunctions.getTunnelDestGroupIamPolicyPlain(args(argsBuilder).build)
 
     /** Retrieves the current IAM policy data for tunnel */
-    def getTunnelIamPolicy(args: Endofunction[com.pulumi.gcp.iap.inputs.GetTunnelIamPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getTunnelIamPolicy(args: Endofunction[com.pulumi.gcp.iap.inputs.GetTunnelIamPolicyArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.iap.outputs.GetTunnelIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.iap.inputs.GetTunnelIamPolicyArgs.builder
       com.pulumi.gcp.iap.IapFunctions.getTunnelIamPolicy(args(argsBuilder).build)
 
     /** Retrieves the current IAM policy data for tunnel */
-    def getTunnelIamPolicyPlain(args: Endofunction[com.pulumi.gcp.iap.inputs.GetTunnelIamPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getTunnelIamPolicyPlain(args: Endofunction[com.pulumi.gcp.iap.inputs.GetTunnelIamPolicyPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.iap.outputs.GetTunnelIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.iap.inputs.GetTunnelIamPolicyPlainArgs.builder
       com.pulumi.gcp.iap.IapFunctions.getTunnelIamPolicyPlain(args(argsBuilder).build)
 
     /** Retrieves the current IAM policy data for tunnelinstance */
-    def getTunnelInstanceIamPolicy(args: Endofunction[com.pulumi.gcp.iap.inputs.GetTunnelInstanceIamPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getTunnelInstanceIamPolicy(args: Endofunction[com.pulumi.gcp.iap.inputs.GetTunnelInstanceIamPolicyArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.iap.outputs.GetTunnelInstanceIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.iap.inputs.GetTunnelInstanceIamPolicyArgs.builder
       com.pulumi.gcp.iap.IapFunctions.getTunnelInstanceIamPolicy(args(argsBuilder).build)
 
     /** Retrieves the current IAM policy data for tunnelinstance */
-    def getTunnelInstanceIamPolicyPlain(args: Endofunction[com.pulumi.gcp.iap.inputs.GetTunnelInstanceIamPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getTunnelInstanceIamPolicyPlain(args: Endofunction[com.pulumi.gcp.iap.inputs.GetTunnelInstanceIamPolicyPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.iap.outputs.GetTunnelInstanceIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.iap.inputs.GetTunnelInstanceIamPolicyPlainArgs.builder
       com.pulumi.gcp.iap.IapFunctions.getTunnelInstanceIamPolicyPlain(args(argsBuilder).build)
 
     /** Retrieves the current IAM policy data for webbackendservice */
-    def getWebBackendServiceIamPolicy(args: Endofunction[com.pulumi.gcp.iap.inputs.GetWebBackendServiceIamPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getWebBackendServiceIamPolicy(args: Endofunction[com.pulumi.gcp.iap.inputs.GetWebBackendServiceIamPolicyArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.iap.outputs.GetWebBackendServiceIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.iap.inputs.GetWebBackendServiceIamPolicyArgs.builder
       com.pulumi.gcp.iap.IapFunctions.getWebBackendServiceIamPolicy(args(argsBuilder).build)
 
     /** Retrieves the current IAM policy data for webbackendservice */
-    def getWebBackendServiceIamPolicyPlain(args: Endofunction[com.pulumi.gcp.iap.inputs.GetWebBackendServiceIamPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getWebBackendServiceIamPolicyPlain(args: Endofunction[com.pulumi.gcp.iap.inputs.GetWebBackendServiceIamPolicyPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.iap.outputs.GetWebBackendServiceIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.iap.inputs.GetWebBackendServiceIamPolicyPlainArgs.builder
       com.pulumi.gcp.iap.IapFunctions.getWebBackendServiceIamPolicyPlain(args(argsBuilder).build)
 
     /** Retrieves the current IAM policy data for webcloudrunservice */
-    def getWebCloudRunServiceIamPolicy(args: Endofunction[com.pulumi.gcp.iap.inputs.GetWebCloudRunServiceIamPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getWebCloudRunServiceIamPolicy(args: Endofunction[com.pulumi.gcp.iap.inputs.GetWebCloudRunServiceIamPolicyArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.iap.outputs.GetWebCloudRunServiceIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.iap.inputs.GetWebCloudRunServiceIamPolicyArgs.builder
       com.pulumi.gcp.iap.IapFunctions.getWebCloudRunServiceIamPolicy(args(argsBuilder).build)
 
     /** Retrieves the current IAM policy data for webcloudrunservice */
-    def getWebCloudRunServiceIamPolicyPlain(args: Endofunction[com.pulumi.gcp.iap.inputs.GetWebCloudRunServiceIamPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getWebCloudRunServiceIamPolicyPlain(args: Endofunction[com.pulumi.gcp.iap.inputs.GetWebCloudRunServiceIamPolicyPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.iap.outputs.GetWebCloudRunServiceIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.iap.inputs.GetWebCloudRunServiceIamPolicyPlainArgs.builder
       com.pulumi.gcp.iap.IapFunctions.getWebCloudRunServiceIamPolicyPlain(args(argsBuilder).build)
 
     /** Retrieves the current IAM policy data for webforwardingruleservice */
-    def getWebForwardingRuleServiceIamPolicy(args: Endofunction[com.pulumi.gcp.iap.inputs.GetWebForwardingRuleServiceIamPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getWebForwardingRuleServiceIamPolicy(args: Endofunction[com.pulumi.gcp.iap.inputs.GetWebForwardingRuleServiceIamPolicyArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.iap.outputs.GetWebForwardingRuleServiceIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.iap.inputs.GetWebForwardingRuleServiceIamPolicyArgs.builder
       com.pulumi.gcp.iap.IapFunctions.getWebForwardingRuleServiceIamPolicy(args(argsBuilder).build)
 
     /** Retrieves the current IAM policy data for webforwardingruleservice */
-    def getWebForwardingRuleServiceIamPolicyPlain(args: Endofunction[com.pulumi.gcp.iap.inputs.GetWebForwardingRuleServiceIamPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getWebForwardingRuleServiceIamPolicyPlain(args: Endofunction[com.pulumi.gcp.iap.inputs.GetWebForwardingRuleServiceIamPolicyPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.iap.outputs.GetWebForwardingRuleServiceIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.iap.inputs.GetWebForwardingRuleServiceIamPolicyPlainArgs.builder
       com.pulumi.gcp.iap.IapFunctions.getWebForwardingRuleServiceIamPolicyPlain(args(argsBuilder).build)
 
     /** Retrieves the current IAM policy data for web */
-    def getWebIamPolicy(args: Endofunction[com.pulumi.gcp.iap.inputs.GetWebIamPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getWebIamPolicy(args: Endofunction[com.pulumi.gcp.iap.inputs.GetWebIamPolicyArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.iap.outputs.GetWebIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.iap.inputs.GetWebIamPolicyArgs.builder
       com.pulumi.gcp.iap.IapFunctions.getWebIamPolicy(args(argsBuilder).build)
 
     /** Retrieves the current IAM policy data for web */
-    def getWebIamPolicyPlain(args: Endofunction[com.pulumi.gcp.iap.inputs.GetWebIamPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getWebIamPolicyPlain(args: Endofunction[com.pulumi.gcp.iap.inputs.GetWebIamPolicyPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.iap.outputs.GetWebIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.iap.inputs.GetWebIamPolicyPlainArgs.builder
       com.pulumi.gcp.iap.IapFunctions.getWebIamPolicyPlain(args(argsBuilder).build)
 
     /** Retrieves the current IAM policy data for webregionbackendservice */
-    def getWebRegionBackendServiceIamPolicy(args: Endofunction[com.pulumi.gcp.iap.inputs.GetWebRegionBackendServiceIamPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getWebRegionBackendServiceIamPolicy(args: Endofunction[com.pulumi.gcp.iap.inputs.GetWebRegionBackendServiceIamPolicyArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.iap.outputs.GetWebRegionBackendServiceIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.iap.inputs.GetWebRegionBackendServiceIamPolicyArgs.builder
       com.pulumi.gcp.iap.IapFunctions.getWebRegionBackendServiceIamPolicy(args(argsBuilder).build)
 
     /** Retrieves the current IAM policy data for webregionbackendservice */
-    def getWebRegionBackendServiceIamPolicyPlain(args: Endofunction[com.pulumi.gcp.iap.inputs.GetWebRegionBackendServiceIamPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getWebRegionBackendServiceIamPolicyPlain(args: Endofunction[com.pulumi.gcp.iap.inputs.GetWebRegionBackendServiceIamPolicyPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.iap.outputs.GetWebRegionBackendServiceIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.iap.inputs.GetWebRegionBackendServiceIamPolicyPlainArgs.builder
       com.pulumi.gcp.iap.IapFunctions.getWebRegionBackendServiceIamPolicyPlain(args(argsBuilder).build)
 
     /** Retrieves the current IAM policy data for webregionforwardingruleservice */
-    def getWebRegionForwardingRuleServiceIamPolicy(args: Endofunction[com.pulumi.gcp.iap.inputs.GetWebRegionForwardingRuleServiceIamPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getWebRegionForwardingRuleServiceIamPolicy(args: Endofunction[com.pulumi.gcp.iap.inputs.GetWebRegionForwardingRuleServiceIamPolicyArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.iap.outputs.GetWebRegionForwardingRuleServiceIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.iap.inputs.GetWebRegionForwardingRuleServiceIamPolicyArgs.builder
       com.pulumi.gcp.iap.IapFunctions.getWebRegionForwardingRuleServiceIamPolicy(args(argsBuilder).build)
 
     /** Retrieves the current IAM policy data for webregionforwardingruleservice */
-    def getWebRegionForwardingRuleServiceIamPolicyPlain(args: Endofunction[com.pulumi.gcp.iap.inputs.GetWebRegionForwardingRuleServiceIamPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getWebRegionForwardingRuleServiceIamPolicyPlain(args: Endofunction[com.pulumi.gcp.iap.inputs.GetWebRegionForwardingRuleServiceIamPolicyPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.iap.outputs.GetWebRegionForwardingRuleServiceIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.iap.inputs.GetWebRegionForwardingRuleServiceIamPolicyPlainArgs.builder
       com.pulumi.gcp.iap.IapFunctions.getWebRegionForwardingRuleServiceIamPolicyPlain(args(argsBuilder).build)
 
     /** Retrieves the current IAM policy data for webtypeappengine */
-    def getWebTypeAppEngineIamPolicy(args: Endofunction[com.pulumi.gcp.iap.inputs.GetWebTypeAppEngineIamPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getWebTypeAppEngineIamPolicy(args: Endofunction[com.pulumi.gcp.iap.inputs.GetWebTypeAppEngineIamPolicyArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.iap.outputs.GetWebTypeAppEngineIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.iap.inputs.GetWebTypeAppEngineIamPolicyArgs.builder
       com.pulumi.gcp.iap.IapFunctions.getWebTypeAppEngineIamPolicy(args(argsBuilder).build)
 
     /** Retrieves the current IAM policy data for webtypeappengine */
-    def getWebTypeAppEngineIamPolicyPlain(args: Endofunction[com.pulumi.gcp.iap.inputs.GetWebTypeAppEngineIamPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getWebTypeAppEngineIamPolicyPlain(args: Endofunction[com.pulumi.gcp.iap.inputs.GetWebTypeAppEngineIamPolicyPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.iap.outputs.GetWebTypeAppEngineIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.iap.inputs.GetWebTypeAppEngineIamPolicyPlainArgs.builder
       com.pulumi.gcp.iap.IapFunctions.getWebTypeAppEngineIamPolicyPlain(args(argsBuilder).build)
 
     /** Retrieves the current IAM policy data for webtypecompute */
-    def getWebTypeComputeIamPolicy(args: Endofunction[com.pulumi.gcp.iap.inputs.GetWebTypeComputeIamPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getWebTypeComputeIamPolicy(args: Endofunction[com.pulumi.gcp.iap.inputs.GetWebTypeComputeIamPolicyArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.iap.outputs.GetWebTypeComputeIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.iap.inputs.GetWebTypeComputeIamPolicyArgs.builder
       com.pulumi.gcp.iap.IapFunctions.getWebTypeComputeIamPolicy(args(argsBuilder).build)
 
     /** Retrieves the current IAM policy data for webtypecompute */
-    def getWebTypeComputeIamPolicyPlain(args: Endofunction[com.pulumi.gcp.iap.inputs.GetWebTypeComputeIamPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getWebTypeComputeIamPolicyPlain(args: Endofunction[com.pulumi.gcp.iap.inputs.GetWebTypeComputeIamPolicyPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.iap.outputs.GetWebTypeComputeIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.iap.inputs.GetWebTypeComputeIamPolicyPlainArgs.builder
       com.pulumi.gcp.iap.IapFunctions.getWebTypeComputeIamPolicyPlain(args(argsBuilder).build)

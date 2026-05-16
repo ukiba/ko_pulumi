@@ -794,19 +794,21 @@ object colab:
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
-  type ColabFunctions = com.pulumi.gcp.colab.ColabFunctions
   object ColabFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.gcp.colab.ColabFunctions.*
-  extension (self: ColabFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /** Retrieves the current IAM policy data for runtimetemplate */
-    def getRuntimeTemplateIamPolicy(args: Endofunction[com.pulumi.gcp.colab.inputs.GetRuntimeTemplateIamPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getRuntimeTemplateIamPolicy(args: Endofunction[com.pulumi.gcp.colab.inputs.GetRuntimeTemplateIamPolicyArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.colab.outputs.GetRuntimeTemplateIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.colab.inputs.GetRuntimeTemplateIamPolicyArgs.builder
       com.pulumi.gcp.colab.ColabFunctions.getRuntimeTemplateIamPolicy(args(argsBuilder).build)
 
     /** Retrieves the current IAM policy data for runtimetemplate */
-    def getRuntimeTemplateIamPolicyPlain(args: Endofunction[com.pulumi.gcp.colab.inputs.GetRuntimeTemplateIamPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getRuntimeTemplateIamPolicyPlain(args: Endofunction[com.pulumi.gcp.colab.inputs.GetRuntimeTemplateIamPolicyPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.colab.outputs.GetRuntimeTemplateIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.colab.inputs.GetRuntimeTemplateIamPolicyPlainArgs.builder
       com.pulumi.gcp.colab.ColabFunctions.getRuntimeTemplateIamPolicyPlain(args(argsBuilder).build)

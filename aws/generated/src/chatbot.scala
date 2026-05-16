@@ -25,19 +25,21 @@ object chatbot:
         com.pulumi.aws.chatbot.TeamsChannelConfigurationArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
 
-  type ChatbotFunctions = com.pulumi.aws.chatbot.ChatbotFunctions
   object ChatbotFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.aws.chatbot.ChatbotFunctions.*
-  extension (self: ChatbotFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /** Data source for managing an AWS Chatbot Slack Workspace. */
-    def getSlackWorkspace(args: Endofunction[com.pulumi.aws.chatbot.inputs.GetSlackWorkspaceArgs.Builder] = scala.Predef.identity):
+    inline def getSlackWorkspace(args: Endofunction[com.pulumi.aws.chatbot.inputs.GetSlackWorkspaceArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.chatbot.outputs.GetSlackWorkspaceResult] =
       val argsBuilder = com.pulumi.aws.chatbot.inputs.GetSlackWorkspaceArgs.builder
       com.pulumi.aws.chatbot.ChatbotFunctions.getSlackWorkspace(args(argsBuilder).build)
 
     /** Data source for managing an AWS Chatbot Slack Workspace. */
-    def getSlackWorkspacePlain(args: Endofunction[com.pulumi.aws.chatbot.inputs.GetSlackWorkspacePlainArgs.Builder] = scala.Predef.identity):
+    inline def getSlackWorkspacePlain(args: Endofunction[com.pulumi.aws.chatbot.inputs.GetSlackWorkspacePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.chatbot.outputs.GetSlackWorkspaceResult] =
       val argsBuilder = com.pulumi.aws.chatbot.inputs.GetSlackWorkspacePlainArgs.builder
       com.pulumi.aws.chatbot.ChatbotFunctions.getSlackWorkspacePlain(args(argsBuilder).build)

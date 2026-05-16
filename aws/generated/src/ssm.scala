@@ -138,103 +138,105 @@ object ssm:
       val argsBuilder = com.pulumi.aws.ssm.inputs.MaintenanceWindowTaskTaskInvocationParametersArgs.builder
       builder.taskInvocationParameters(args(argsBuilder).build)
 
-  type SsmFunctions = com.pulumi.aws.ssm.SsmFunctions
   object SsmFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.aws.ssm.SsmFunctions.*
-  extension (self: SsmFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /** Provides a Terraform data source for managing a Contacts Rotation in AWS Systems Manager Incident Manager */
-    def getContactsRotation(args: Endofunction[com.pulumi.aws.ssm.inputs.GetContactsRotationArgs.Builder] = scala.Predef.identity):
+    inline def getContactsRotation(args: Endofunction[com.pulumi.aws.ssm.inputs.GetContactsRotationArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.ssm.outputs.GetContactsRotationResult] =
       val argsBuilder = com.pulumi.aws.ssm.inputs.GetContactsRotationArgs.builder
       com.pulumi.aws.ssm.SsmFunctions.getContactsRotation(args(argsBuilder).build)
 
     /** Provides a Terraform data source for managing a Contacts Rotation in AWS Systems Manager Incident Manager */
-    def getContactsRotationPlain(args: Endofunction[com.pulumi.aws.ssm.inputs.GetContactsRotationPlainArgs.Builder] = scala.Predef.identity):
+    inline def getContactsRotationPlain(args: Endofunction[com.pulumi.aws.ssm.inputs.GetContactsRotationPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.ssm.outputs.GetContactsRotationResult] =
       val argsBuilder = com.pulumi.aws.ssm.inputs.GetContactsRotationPlainArgs.builder
       com.pulumi.aws.ssm.SsmFunctions.getContactsRotationPlain(args(argsBuilder).build)
 
     /** Gets the contents of the specified Systems Manager document. */
-    def getDocument(args: Endofunction[com.pulumi.aws.ssm.inputs.GetDocumentArgs.Builder] = scala.Predef.identity):
+    inline def getDocument(args: Endofunction[com.pulumi.aws.ssm.inputs.GetDocumentArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.ssm.outputs.GetDocumentResult] =
       val argsBuilder = com.pulumi.aws.ssm.inputs.GetDocumentArgs.builder
       com.pulumi.aws.ssm.SsmFunctions.getDocument(args(argsBuilder).build)
 
     /** Gets the contents of the specified Systems Manager document. */
-    def getDocumentPlain(args: Endofunction[com.pulumi.aws.ssm.inputs.GetDocumentPlainArgs.Builder] = scala.Predef.identity):
+    inline def getDocumentPlain(args: Endofunction[com.pulumi.aws.ssm.inputs.GetDocumentPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.ssm.outputs.GetDocumentResult] =
       val argsBuilder = com.pulumi.aws.ssm.inputs.GetDocumentPlainArgs.builder
       com.pulumi.aws.ssm.SsmFunctions.getDocumentPlain(args(argsBuilder).build)
 
     /** Use this data source to get the instance IDs of SSM managed instances. */
-    def getInstances(args: Endofunction[com.pulumi.aws.ssm.inputs.GetInstancesArgs.Builder] = scala.Predef.identity):
+    inline def getInstances(args: Endofunction[com.pulumi.aws.ssm.inputs.GetInstancesArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.ssm.outputs.GetInstancesResult] =
       val argsBuilder = com.pulumi.aws.ssm.inputs.GetInstancesArgs.builder
       com.pulumi.aws.ssm.SsmFunctions.getInstances(args(argsBuilder).build)
 
     /** Use this data source to get the instance IDs of SSM managed instances. */
-    def getInstancesPlain(args: Endofunction[com.pulumi.aws.ssm.inputs.GetInstancesPlainArgs.Builder] = scala.Predef.identity):
+    inline def getInstancesPlain(args: Endofunction[com.pulumi.aws.ssm.inputs.GetInstancesPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.ssm.outputs.GetInstancesResult] =
       val argsBuilder = com.pulumi.aws.ssm.inputs.GetInstancesPlainArgs.builder
       com.pulumi.aws.ssm.SsmFunctions.getInstancesPlain(args(argsBuilder).build)
 
     /** Use this data source to get the window IDs of SSM maintenance windows. */
-    def getMaintenanceWindows(args: Endofunction[com.pulumi.aws.ssm.inputs.GetMaintenanceWindowsArgs.Builder] = scala.Predef.identity):
+    inline def getMaintenanceWindows(args: Endofunction[com.pulumi.aws.ssm.inputs.GetMaintenanceWindowsArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.ssm.outputs.GetMaintenanceWindowsResult] =
       val argsBuilder = com.pulumi.aws.ssm.inputs.GetMaintenanceWindowsArgs.builder
       com.pulumi.aws.ssm.SsmFunctions.getMaintenanceWindows(args(argsBuilder).build)
 
     /** Use this data source to get the window IDs of SSM maintenance windows. */
-    def getMaintenanceWindowsPlain(args: Endofunction[com.pulumi.aws.ssm.inputs.GetMaintenanceWindowsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getMaintenanceWindowsPlain(args: Endofunction[com.pulumi.aws.ssm.inputs.GetMaintenanceWindowsPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.ssm.outputs.GetMaintenanceWindowsResult] =
       val argsBuilder = com.pulumi.aws.ssm.inputs.GetMaintenanceWindowsPlainArgs.builder
       com.pulumi.aws.ssm.SsmFunctions.getMaintenanceWindowsPlain(args(argsBuilder).build)
 
     /** Provides an SSM Parameter data source. */
-    def getParameter(args: Endofunction[com.pulumi.aws.ssm.inputs.GetParameterArgs.Builder] = scala.Predef.identity):
+    inline def getParameter(args: Endofunction[com.pulumi.aws.ssm.inputs.GetParameterArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.ssm.outputs.GetParameterResult] =
       val argsBuilder = com.pulumi.aws.ssm.inputs.GetParameterArgs.builder
       com.pulumi.aws.ssm.SsmFunctions.getParameter(args(argsBuilder).build)
 
     /** Provides an SSM Parameter data source. */
-    def getParameterPlain(args: Endofunction[com.pulumi.aws.ssm.inputs.GetParameterPlainArgs.Builder] = scala.Predef.identity):
+    inline def getParameterPlain(args: Endofunction[com.pulumi.aws.ssm.inputs.GetParameterPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.ssm.outputs.GetParameterResult] =
       val argsBuilder = com.pulumi.aws.ssm.inputs.GetParameterPlainArgs.builder
       com.pulumi.aws.ssm.SsmFunctions.getParameterPlain(args(argsBuilder).build)
 
     /** Use this data source to get information about one or more System Manager parameters in a specific hierarchy. */
-    def getParametersByPath(args: Endofunction[com.pulumi.aws.ssm.inputs.GetParametersByPathArgs.Builder] = scala.Predef.identity):
+    inline def getParametersByPath(args: Endofunction[com.pulumi.aws.ssm.inputs.GetParametersByPathArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.ssm.outputs.GetParametersByPathResult] =
       val argsBuilder = com.pulumi.aws.ssm.inputs.GetParametersByPathArgs.builder
       com.pulumi.aws.ssm.SsmFunctions.getParametersByPath(args(argsBuilder).build)
 
     /** Use this data source to get information about one or more System Manager parameters in a specific hierarchy. */
-    def getParametersByPathPlain(args: Endofunction[com.pulumi.aws.ssm.inputs.GetParametersByPathPlainArgs.Builder] = scala.Predef.identity):
+    inline def getParametersByPathPlain(args: Endofunction[com.pulumi.aws.ssm.inputs.GetParametersByPathPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.ssm.outputs.GetParametersByPathResult] =
       val argsBuilder = com.pulumi.aws.ssm.inputs.GetParametersByPathPlainArgs.builder
       com.pulumi.aws.ssm.SsmFunctions.getParametersByPathPlain(args(argsBuilder).build)
 
     /** Provides an SSM Patch Baseline data source. Useful if you wish to reuse the default baselines provided. */
-    def getPatchBaseline(args: Endofunction[com.pulumi.aws.ssm.inputs.GetPatchBaselineArgs.Builder] = scala.Predef.identity):
+    inline def getPatchBaseline(args: Endofunction[com.pulumi.aws.ssm.inputs.GetPatchBaselineArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.ssm.outputs.GetPatchBaselineResult] =
       val argsBuilder = com.pulumi.aws.ssm.inputs.GetPatchBaselineArgs.builder
       com.pulumi.aws.ssm.SsmFunctions.getPatchBaseline(args(argsBuilder).build)
 
     /** Provides an SSM Patch Baseline data source. Useful if you wish to reuse the default baselines provided. */
-    def getPatchBaselinePlain(args: Endofunction[com.pulumi.aws.ssm.inputs.GetPatchBaselinePlainArgs.Builder] = scala.Predef.identity):
+    inline def getPatchBaselinePlain(args: Endofunction[com.pulumi.aws.ssm.inputs.GetPatchBaselinePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.ssm.outputs.GetPatchBaselineResult] =
       val argsBuilder = com.pulumi.aws.ssm.inputs.GetPatchBaselinePlainArgs.builder
       com.pulumi.aws.ssm.SsmFunctions.getPatchBaselinePlain(args(argsBuilder).build)
 
     /** Data source for retrieving AWS SSM (Systems Manager) Patch Baselines. */
-    def getPatchBaselines(args: Endofunction[com.pulumi.aws.ssm.inputs.GetPatchBaselinesArgs.Builder] = scala.Predef.identity):
+    inline def getPatchBaselines(args: Endofunction[com.pulumi.aws.ssm.inputs.GetPatchBaselinesArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.ssm.outputs.GetPatchBaselinesResult] =
       val argsBuilder = com.pulumi.aws.ssm.inputs.GetPatchBaselinesArgs.builder
       com.pulumi.aws.ssm.SsmFunctions.getPatchBaselines(args(argsBuilder).build)
 
     /** Data source for retrieving AWS SSM (Systems Manager) Patch Baselines. */
-    def getPatchBaselinesPlain(args: Endofunction[com.pulumi.aws.ssm.inputs.GetPatchBaselinesPlainArgs.Builder] = scala.Predef.identity):
+    inline def getPatchBaselinesPlain(args: Endofunction[com.pulumi.aws.ssm.inputs.GetPatchBaselinesPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.ssm.outputs.GetPatchBaselinesResult] =
       val argsBuilder = com.pulumi.aws.ssm.inputs.GetPatchBaselinesPlainArgs.builder
       com.pulumi.aws.ssm.SsmFunctions.getPatchBaselinesPlain(args(argsBuilder).build)

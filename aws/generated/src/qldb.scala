@@ -22,19 +22,21 @@ object qldb:
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
-  type QldbFunctions = com.pulumi.aws.qldb.QldbFunctions
   object QldbFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.aws.qldb.QldbFunctions.*
-  extension (self: QldbFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /** Use this data source to fetch information about a Quantum Ledger Database. */
-    def getLedger(args: Endofunction[com.pulumi.aws.qldb.inputs.GetLedgerArgs.Builder] = scala.Predef.identity):
+    inline def getLedger(args: Endofunction[com.pulumi.aws.qldb.inputs.GetLedgerArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.qldb.outputs.GetLedgerResult] =
       val argsBuilder = com.pulumi.aws.qldb.inputs.GetLedgerArgs.builder
       com.pulumi.aws.qldb.QldbFunctions.getLedger(args(argsBuilder).build)
 
     /** Use this data source to fetch information about a Quantum Ledger Database. */
-    def getLedgerPlain(args: Endofunction[com.pulumi.aws.qldb.inputs.GetLedgerPlainArgs.Builder] = scala.Predef.identity):
+    inline def getLedgerPlain(args: Endofunction[com.pulumi.aws.qldb.inputs.GetLedgerPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.qldb.outputs.GetLedgerResult] =
       val argsBuilder = com.pulumi.aws.qldb.inputs.GetLedgerPlainArgs.builder
       com.pulumi.aws.qldb.QldbFunctions.getLedgerPlain(args(argsBuilder).build)

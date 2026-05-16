@@ -292,19 +292,21 @@ object storagegateway:
         com.pulumi.aws.storagegateway.inputs.SmbFileShareState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
 
-  type StoragegatewayFunctions = com.pulumi.aws.storagegateway.StoragegatewayFunctions
   object StoragegatewayFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.aws.storagegateway.StoragegatewayFunctions.*
-  extension (self: StoragegatewayFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /** Retrieve information about a Storage Gateway local disk. The disk identifier is useful for adding the disk as a cache or upload buffer to a gateway. */
-    def getLocalDisk(args: Endofunction[com.pulumi.aws.storagegateway.inputs.GetLocalDiskArgs.Builder] = scala.Predef.identity):
+    inline def getLocalDisk(args: Endofunction[com.pulumi.aws.storagegateway.inputs.GetLocalDiskArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.storagegateway.outputs.GetLocalDiskResult] =
       val argsBuilder = com.pulumi.aws.storagegateway.inputs.GetLocalDiskArgs.builder
       com.pulumi.aws.storagegateway.StoragegatewayFunctions.getLocalDisk(args(argsBuilder).build)
 
     /** Retrieve information about a Storage Gateway local disk. The disk identifier is useful for adding the disk as a cache or upload buffer to a gateway. */
-    def getLocalDiskPlain(args: Endofunction[com.pulumi.aws.storagegateway.inputs.GetLocalDiskPlainArgs.Builder] = scala.Predef.identity):
+    inline def getLocalDiskPlain(args: Endofunction[com.pulumi.aws.storagegateway.inputs.GetLocalDiskPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.storagegateway.outputs.GetLocalDiskResult] =
       val argsBuilder = com.pulumi.aws.storagegateway.inputs.GetLocalDiskPlainArgs.builder
       com.pulumi.aws.storagegateway.StoragegatewayFunctions.getLocalDiskPlain(args(argsBuilder).build)

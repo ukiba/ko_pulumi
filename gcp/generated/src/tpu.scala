@@ -4,31 +4,33 @@ package gcp
 import com.pulumi.resources.CustomResourceOptions
 
 object tpu:
-  type TpuFunctions = com.pulumi.gcp.tpu.TpuFunctions
   object TpuFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.gcp.tpu.TpuFunctions.*
-  extension (self: TpuFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /** Get accelerator types available for a project. For more information see the [official documentation](https://cloud.google.com/tpu/docs/) and [API](https://cloud.google.com/tpu/docs/reference/rest/v2/projects.locations.acceleratorTypes). */
-    def getV2AcceleratorTypes(args: Endofunction[com.pulumi.gcp.tpu.inputs.GetV2AcceleratorTypesArgs.Builder] = scala.Predef.identity):
+    inline def getV2AcceleratorTypes(args: Endofunction[com.pulumi.gcp.tpu.inputs.GetV2AcceleratorTypesArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.tpu.outputs.GetV2AcceleratorTypesResult] =
       val argsBuilder = com.pulumi.gcp.tpu.inputs.GetV2AcceleratorTypesArgs.builder
       com.pulumi.gcp.tpu.TpuFunctions.getV2AcceleratorTypes(args(argsBuilder).build)
 
     /** Get accelerator types available for a project. For more information see the [official documentation](https://cloud.google.com/tpu/docs/) and [API](https://cloud.google.com/tpu/docs/reference/rest/v2/projects.locations.acceleratorTypes). */
-    def getV2AcceleratorTypesPlain(args: Endofunction[com.pulumi.gcp.tpu.inputs.GetV2AcceleratorTypesPlainArgs.Builder] = scala.Predef.identity):
+    inline def getV2AcceleratorTypesPlain(args: Endofunction[com.pulumi.gcp.tpu.inputs.GetV2AcceleratorTypesPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.tpu.outputs.GetV2AcceleratorTypesResult] =
       val argsBuilder = com.pulumi.gcp.tpu.inputs.GetV2AcceleratorTypesPlainArgs.builder
       com.pulumi.gcp.tpu.TpuFunctions.getV2AcceleratorTypesPlain(args(argsBuilder).build)
 
     /** Get runtime versions available for a project. For more information see the [official documentation](https://cloud.google.com/tpu/docs/) and [API](https://cloud.google.com/tpu/docs/reference/rest/v2/projects.locations.runtimeVersions). */
-    def getV2RuntimeVersions(args: Endofunction[com.pulumi.gcp.tpu.inputs.GetV2RuntimeVersionsArgs.Builder] = scala.Predef.identity):
+    inline def getV2RuntimeVersions(args: Endofunction[com.pulumi.gcp.tpu.inputs.GetV2RuntimeVersionsArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.tpu.outputs.GetV2RuntimeVersionsResult] =
       val argsBuilder = com.pulumi.gcp.tpu.inputs.GetV2RuntimeVersionsArgs.builder
       com.pulumi.gcp.tpu.TpuFunctions.getV2RuntimeVersions(args(argsBuilder).build)
 
     /** Get runtime versions available for a project. For more information see the [official documentation](https://cloud.google.com/tpu/docs/) and [API](https://cloud.google.com/tpu/docs/reference/rest/v2/projects.locations.runtimeVersions). */
-    def getV2RuntimeVersionsPlain(args: Endofunction[com.pulumi.gcp.tpu.inputs.GetV2RuntimeVersionsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getV2RuntimeVersionsPlain(args: Endofunction[com.pulumi.gcp.tpu.inputs.GetV2RuntimeVersionsPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.tpu.outputs.GetV2RuntimeVersionsResult] =
       val argsBuilder = com.pulumi.gcp.tpu.inputs.GetV2RuntimeVersionsPlainArgs.builder
       com.pulumi.gcp.tpu.TpuFunctions.getV2RuntimeVersionsPlain(args(argsBuilder).build)

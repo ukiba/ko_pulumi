@@ -54,19 +54,21 @@ object arcmachine:
         com.pulumi.azure.arcmachine.ArcMachineArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
 
-  type ArcmachineFunctions = com.pulumi.azure.arcmachine.ArcmachineFunctions
   object ArcmachineFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.azure.arcmachine.ArcmachineFunctions.*
-  extension (self: ArcmachineFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /** Use this data source to access information about an existing Azure Arc machine. */
-    def get(args: Endofunction[com.pulumi.azure.arcmachine.inputs.GetArgs.Builder] = scala.Predef.identity):
+    inline def get(args: Endofunction[com.pulumi.azure.arcmachine.inputs.GetArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.arcmachine.outputs.GetResult] =
       val argsBuilder = com.pulumi.azure.arcmachine.inputs.GetArgs.builder
       com.pulumi.azure.arcmachine.ArcmachineFunctions.get(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing Azure Arc machine. */
-    def getPlain(args: Endofunction[com.pulumi.azure.arcmachine.inputs.GetPlainArgs.Builder] = scala.Predef.identity):
+    inline def getPlain(args: Endofunction[com.pulumi.azure.arcmachine.inputs.GetPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.arcmachine.outputs.GetResult] =
       val argsBuilder = com.pulumi.azure.arcmachine.inputs.GetPlainArgs.builder
       com.pulumi.azure.arcmachine.ArcmachineFunctions.getPlain(args(argsBuilder).build)

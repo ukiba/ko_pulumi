@@ -108,19 +108,21 @@ object athena:
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
-  type AthenaFunctions = com.pulumi.aws.athena.AthenaFunctions
   object AthenaFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.aws.athena.AthenaFunctions.*
-  extension (self: AthenaFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /** Provides an Athena Named Query data source. */
-    def getNamedQuery(args: Endofunction[com.pulumi.aws.athena.inputs.GetNamedQueryArgs.Builder] = scala.Predef.identity):
+    inline def getNamedQuery(args: Endofunction[com.pulumi.aws.athena.inputs.GetNamedQueryArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.athena.outputs.GetNamedQueryResult] =
       val argsBuilder = com.pulumi.aws.athena.inputs.GetNamedQueryArgs.builder
       com.pulumi.aws.athena.AthenaFunctions.getNamedQuery(args(argsBuilder).build)
 
     /** Provides an Athena Named Query data source. */
-    def getNamedQueryPlain(args: Endofunction[com.pulumi.aws.athena.inputs.GetNamedQueryPlainArgs.Builder] = scala.Predef.identity):
+    inline def getNamedQueryPlain(args: Endofunction[com.pulumi.aws.athena.inputs.GetNamedQueryPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.athena.outputs.GetNamedQueryResult] =
       val argsBuilder = com.pulumi.aws.athena.inputs.GetNamedQueryPlainArgs.builder
       com.pulumi.aws.athena.AthenaFunctions.getNamedQueryPlain(args(argsBuilder).build)

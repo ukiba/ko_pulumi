@@ -34,19 +34,21 @@ object gemini:
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
-  type GeminiFunctions = com.pulumi.gcp.gemini.GeminiFunctions
   object GeminiFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.gcp.gemini.GeminiFunctions.*
-  extension (self: GeminiFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /** Retrieves the current IAM policy data for repositorygroup */
-    def getRepositoryGroupIamPolicy(args: Endofunction[com.pulumi.gcp.gemini.inputs.GetRepositoryGroupIamPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getRepositoryGroupIamPolicy(args: Endofunction[com.pulumi.gcp.gemini.inputs.GetRepositoryGroupIamPolicyArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.gemini.outputs.GetRepositoryGroupIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.gemini.inputs.GetRepositoryGroupIamPolicyArgs.builder
       com.pulumi.gcp.gemini.GeminiFunctions.getRepositoryGroupIamPolicy(args(argsBuilder).build)
 
     /** Retrieves the current IAM policy data for repositorygroup */
-    def getRepositoryGroupIamPolicyPlain(args: Endofunction[com.pulumi.gcp.gemini.inputs.GetRepositoryGroupIamPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getRepositoryGroupIamPolicyPlain(args: Endofunction[com.pulumi.gcp.gemini.inputs.GetRepositoryGroupIamPolicyPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.gemini.outputs.GetRepositoryGroupIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.gemini.inputs.GetRepositoryGroupIamPolicyPlainArgs.builder
       com.pulumi.gcp.gemini.GeminiFunctions.getRepositoryGroupIamPolicyPlain(args(argsBuilder).build)

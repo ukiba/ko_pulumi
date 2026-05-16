@@ -2131,19 +2131,21 @@ object organizations:
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
-  type OrganizationsFunctions = com.pulumi.gcp.organizations.OrganizationsFunctions
   object OrganizationsFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.gcp.organizations.OrganizationsFunctions.*
-  extension (self: OrganizationsFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /** Get an active folder within GCP by `displayName` and `parent`. */
-    def getActiveFolder(args: Endofunction[com.pulumi.gcp.organizations.inputs.GetActiveFolderArgs.Builder] = scala.Predef.identity):
+    inline def getActiveFolder(args: Endofunction[com.pulumi.gcp.organizations.inputs.GetActiveFolderArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.organizations.outputs.GetActiveFolderResult] =
       val argsBuilder = com.pulumi.gcp.organizations.inputs.GetActiveFolderArgs.builder
       com.pulumi.gcp.organizations.OrganizationsFunctions.getActiveFolder(args(argsBuilder).build)
 
     /** Get an active folder within GCP by `displayName` and `parent`. */
-    def getActiveFolderPlain(args: Endofunction[com.pulumi.gcp.organizations.inputs.GetActiveFolderPlainArgs.Builder] = scala.Predef.identity):
+    inline def getActiveFolderPlain(args: Endofunction[com.pulumi.gcp.organizations.inputs.GetActiveFolderPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.organizations.outputs.GetActiveFolderResult] =
       val argsBuilder = com.pulumi.gcp.organizations.inputs.GetActiveFolderPlainArgs.builder
       com.pulumi.gcp.organizations.OrganizationsFunctions.getActiveFolderPlain(args(argsBuilder).build)
@@ -2192,7 +2194,7 @@ object organizations:
      *  }
      *  </pre>
      */
-    def getBillingAccount(args: Endofunction[com.pulumi.gcp.organizations.inputs.GetBillingAccountArgs.Builder] = scala.Predef.identity):
+    inline def getBillingAccount(args: Endofunction[com.pulumi.gcp.organizations.inputs.GetBillingAccountArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.organizations.outputs.GetBillingAccountResult] =
       val argsBuilder = com.pulumi.gcp.organizations.inputs.GetBillingAccountArgs.builder
       com.pulumi.gcp.organizations.OrganizationsFunctions.getBillingAccount(args(argsBuilder).build)
@@ -2241,7 +2243,7 @@ object organizations:
      *  }
      *  </pre>
      */
-    def getBillingAccountPlain(args: Endofunction[com.pulumi.gcp.organizations.inputs.GetBillingAccountPlainArgs.Builder] = scala.Predef.identity):
+    inline def getBillingAccountPlain(args: Endofunction[com.pulumi.gcp.organizations.inputs.GetBillingAccountPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.organizations.outputs.GetBillingAccountResult] =
       val argsBuilder = com.pulumi.gcp.organizations.inputs.GetBillingAccountPlainArgs.builder
       com.pulumi.gcp.organizations.OrganizationsFunctions.getBillingAccountPlain(args(argsBuilder).build)
@@ -2287,7 +2289,7 @@ object organizations:
      *  }
      *  </pre>
      */
-    def getFolder(args: Endofunction[com.pulumi.gcp.organizations.inputs.GetFolderArgs.Builder] = scala.Predef.identity):
+    inline def getFolder(args: Endofunction[com.pulumi.gcp.organizations.inputs.GetFolderArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.organizations.outputs.GetFolderResult] =
       val argsBuilder = com.pulumi.gcp.organizations.inputs.GetFolderArgs.builder
       com.pulumi.gcp.organizations.OrganizationsFunctions.getFolder(args(argsBuilder).build)
@@ -2333,7 +2335,7 @@ object organizations:
      *  }
      *  </pre>
      */
-    def getFolderPlain(args: Endofunction[com.pulumi.gcp.organizations.inputs.GetFolderPlainArgs.Builder] = scala.Predef.identity):
+    inline def getFolderPlain(args: Endofunction[com.pulumi.gcp.organizations.inputs.GetFolderPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.organizations.outputs.GetFolderResult] =
       val argsBuilder = com.pulumi.gcp.organizations.inputs.GetFolderPlainArgs.builder
       com.pulumi.gcp.organizations.OrganizationsFunctions.getFolderPlain(args(argsBuilder).build)
@@ -2343,7 +2345,7 @@ object organizations:
      *  [REST API](https://docs.cloud.google.com/resource-manager/reference/rest/v3/folders/list)
      *  for more details.
      */
-    def getFolders(args: Endofunction[com.pulumi.gcp.organizations.inputs.GetFoldersArgs.Builder] = scala.Predef.identity):
+    inline def getFolders(args: Endofunction[com.pulumi.gcp.organizations.inputs.GetFoldersArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.organizations.outputs.GetFoldersResult] =
       val argsBuilder = com.pulumi.gcp.organizations.inputs.GetFoldersArgs.builder
       com.pulumi.gcp.organizations.OrganizationsFunctions.getFolders(args(argsBuilder).build)
@@ -2353,7 +2355,7 @@ object organizations:
      *  [REST API](https://docs.cloud.google.com/resource-manager/reference/rest/v3/folders/list)
      *  for more details.
      */
-    def getFoldersPlain(args: Endofunction[com.pulumi.gcp.organizations.inputs.GetFoldersPlainArgs.Builder] = scala.Predef.identity):
+    inline def getFoldersPlain(args: Endofunction[com.pulumi.gcp.organizations.inputs.GetFoldersPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.organizations.outputs.GetFoldersResult] =
       val argsBuilder = com.pulumi.gcp.organizations.inputs.GetFoldersPlainArgs.builder
       com.pulumi.gcp.organizations.OrganizationsFunctions.getFoldersPlain(args(argsBuilder).build)
@@ -2364,7 +2366,7 @@ object organizations:
      * 
      *  **Note:** Please review the documentation of the resource that you will be using the datasource with. Some resources such as `gcp.projects.IAMPolicy` and others have limitations in their API methods which are noted on their respective page.
      */
-    def getIAMPolicy(args: Endofunction[com.pulumi.gcp.organizations.inputs.GetIAMPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getIAMPolicy(args: Endofunction[com.pulumi.gcp.organizations.inputs.GetIAMPolicyArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.organizations.outputs.GetIAMPolicyResult] =
       val argsBuilder = com.pulumi.gcp.organizations.inputs.GetIAMPolicyArgs.builder
       com.pulumi.gcp.organizations.OrganizationsFunctions.getIAMPolicy(args(argsBuilder).build)
@@ -2375,7 +2377,7 @@ object organizations:
      * 
      *  **Note:** Please review the documentation of the resource that you will be using the datasource with. Some resources such as `gcp.projects.IAMPolicy` and others have limitations in their API methods which are noted on their respective page.
      */
-    def getIAMPolicyPlain(args: Endofunction[com.pulumi.gcp.organizations.inputs.GetIAMPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getIAMPolicyPlain(args: Endofunction[com.pulumi.gcp.organizations.inputs.GetIAMPolicyPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.organizations.outputs.GetIAMPolicyResult] =
       val argsBuilder = com.pulumi.gcp.organizations.inputs.GetIAMPolicyPlainArgs.builder
       com.pulumi.gcp.organizations.OrganizationsFunctions.getIAMPolicyPlain(args(argsBuilder).build)
@@ -2423,7 +2425,7 @@ object organizations:
      *  }
      *  </pre>
      */
-    def getIamCustomRole(args: Endofunction[com.pulumi.gcp.organizations.inputs.GetIamCustomRoleArgs.Builder] = scala.Predef.identity):
+    inline def getIamCustomRole(args: Endofunction[com.pulumi.gcp.organizations.inputs.GetIamCustomRoleArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.organizations.outputs.GetIamCustomRoleResult] =
       val argsBuilder = com.pulumi.gcp.organizations.inputs.GetIamCustomRoleArgs.builder
       com.pulumi.gcp.organizations.OrganizationsFunctions.getIamCustomRole(args(argsBuilder).build)
@@ -2471,7 +2473,7 @@ object organizations:
      *  }
      *  </pre>
      */
-    def getIamCustomRolePlain(args: Endofunction[com.pulumi.gcp.organizations.inputs.GetIamCustomRolePlainArgs.Builder] = scala.Predef.identity):
+    inline def getIamCustomRolePlain(args: Endofunction[com.pulumi.gcp.organizations.inputs.GetIamCustomRolePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.organizations.outputs.GetIamCustomRoleResult] =
       val argsBuilder = com.pulumi.gcp.organizations.inputs.GetIamCustomRolePlainArgs.builder
       com.pulumi.gcp.organizations.OrganizationsFunctions.getIamCustomRolePlain(args(argsBuilder).build)
@@ -2515,7 +2517,7 @@ object organizations:
      *  }
      *  </pre>
      */
-    def getIamCustomRoles(args: Endofunction[com.pulumi.gcp.organizations.inputs.GetIamCustomRolesArgs.Builder] = scala.Predef.identity):
+    inline def getIamCustomRoles(args: Endofunction[com.pulumi.gcp.organizations.inputs.GetIamCustomRolesArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.organizations.outputs.GetIamCustomRolesResult] =
       val argsBuilder = com.pulumi.gcp.organizations.inputs.GetIamCustomRolesArgs.builder
       com.pulumi.gcp.organizations.OrganizationsFunctions.getIamCustomRoles(args(argsBuilder).build)
@@ -2559,7 +2561,7 @@ object organizations:
      *  }
      *  </pre>
      */
-    def getIamCustomRolesPlain(args: Endofunction[com.pulumi.gcp.organizations.inputs.GetIamCustomRolesPlainArgs.Builder] = scala.Predef.identity):
+    inline def getIamCustomRolesPlain(args: Endofunction[com.pulumi.gcp.organizations.inputs.GetIamCustomRolesPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.organizations.outputs.GetIamCustomRolesResult] =
       val argsBuilder = com.pulumi.gcp.organizations.inputs.GetIamCustomRolesPlainArgs.builder
       com.pulumi.gcp.organizations.OrganizationsFunctions.getIamCustomRolesPlain(args(argsBuilder).build)
@@ -2605,7 +2607,7 @@ object organizations:
      *  }
      *  </pre>
      */
-    def getOrganization(args: Endofunction[com.pulumi.gcp.organizations.inputs.GetOrganizationArgs.Builder] = scala.Predef.identity):
+    inline def getOrganization(args: Endofunction[com.pulumi.gcp.organizations.inputs.GetOrganizationArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.organizations.outputs.GetOrganizationResult] =
       val argsBuilder = com.pulumi.gcp.organizations.inputs.GetOrganizationArgs.builder
       com.pulumi.gcp.organizations.OrganizationsFunctions.getOrganization(args(argsBuilder).build)
@@ -2651,7 +2653,7 @@ object organizations:
      *  }
      *  </pre>
      */
-    def getOrganizationPlain(args: Endofunction[com.pulumi.gcp.organizations.inputs.GetOrganizationPlainArgs.Builder] = scala.Predef.identity):
+    inline def getOrganizationPlain(args: Endofunction[com.pulumi.gcp.organizations.inputs.GetOrganizationPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.organizations.outputs.GetOrganizationResult] =
       val argsBuilder = com.pulumi.gcp.organizations.inputs.GetOrganizationPlainArgs.builder
       com.pulumi.gcp.organizations.OrganizationsFunctions.getOrganizationPlain(args(argsBuilder).build)
@@ -2661,7 +2663,7 @@ object organizations:
      *  For more information see
      *  [API](https://docs.cloud.google.com/resource-manager/reference/rest/v1/projects#Project)
      */
-    def getProject(args: Endofunction[com.pulumi.gcp.organizations.inputs.GetProjectArgs.Builder] = scala.Predef.identity):
+    inline def getProject(args: Endofunction[com.pulumi.gcp.organizations.inputs.GetProjectArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.organizations.outputs.GetProjectResult] =
       val argsBuilder = com.pulumi.gcp.organizations.inputs.GetProjectArgs.builder
       com.pulumi.gcp.organizations.OrganizationsFunctions.getProject(args(argsBuilder).build)
@@ -2671,7 +2673,7 @@ object organizations:
      *  For more information see
      *  [API](https://docs.cloud.google.com/resource-manager/reference/rest/v1/projects#Project)
      */
-    def getProjectPlain(args: Endofunction[com.pulumi.gcp.organizations.inputs.GetProjectPlainArgs.Builder] = scala.Predef.identity):
+    inline def getProjectPlain(args: Endofunction[com.pulumi.gcp.organizations.inputs.GetProjectPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.organizations.outputs.GetProjectResult] =
       val argsBuilder = com.pulumi.gcp.organizations.inputs.GetProjectPlainArgs.builder
       com.pulumi.gcp.organizations.OrganizationsFunctions.getProjectPlain(args(argsBuilder).build)
@@ -2681,7 +2683,7 @@ object organizations:
      *  See [the official documentation](https://docs.cloud.google.com/resource-manager/docs/creating-managing-organization)
      *  and [API](https://docs.cloud.google.com/resource-manager/reference/rest/v1/organizations/search).
      */
-    def getS(args: Endofunction[com.pulumi.gcp.organizations.inputs.GetSArgs.Builder] = scala.Predef.identity):
+    inline def getS(args: Endofunction[com.pulumi.gcp.organizations.inputs.GetSArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.organizations.outputs.GetSResult] =
       val argsBuilder = com.pulumi.gcp.organizations.inputs.GetSArgs.builder
       com.pulumi.gcp.organizations.OrganizationsFunctions.getS(args(argsBuilder).build)
@@ -2691,7 +2693,7 @@ object organizations:
      *  See [the official documentation](https://docs.cloud.google.com/resource-manager/docs/creating-managing-organization)
      *  and [API](https://docs.cloud.google.com/resource-manager/reference/rest/v1/organizations/search).
      */
-    def getSPlain(args: Endofunction[com.pulumi.gcp.organizations.inputs.GetSPlainArgs.Builder] = scala.Predef.identity):
+    inline def getSPlain(args: Endofunction[com.pulumi.gcp.organizations.inputs.GetSPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.organizations.outputs.GetSResult] =
       val argsBuilder = com.pulumi.gcp.organizations.inputs.GetSPlainArgs.builder
       com.pulumi.gcp.organizations.OrganizationsFunctions.getSPlain(args(argsBuilder).build)

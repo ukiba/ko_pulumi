@@ -32,19 +32,21 @@ object managedapplication:
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
-  type ManagedapplicationFunctions = com.pulumi.azure.managedapplication.ManagedapplicationFunctions
   object ManagedapplicationFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.azure.managedapplication.ManagedapplicationFunctions.*
-  extension (self: ManagedapplicationFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /** Uses this data source to access information about an existing Managed Application Definition. */
-    def getDefinition(args: Endofunction[com.pulumi.azure.managedapplication.inputs.GetDefinitionArgs.Builder] = scala.Predef.identity):
+    inline def getDefinition(args: Endofunction[com.pulumi.azure.managedapplication.inputs.GetDefinitionArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.managedapplication.outputs.GetDefinitionResult] =
       val argsBuilder = com.pulumi.azure.managedapplication.inputs.GetDefinitionArgs.builder
       com.pulumi.azure.managedapplication.ManagedapplicationFunctions.getDefinition(args(argsBuilder).build)
 
     /** Uses this data source to access information about an existing Managed Application Definition. */
-    def getDefinitionPlain(args: Endofunction[com.pulumi.azure.managedapplication.inputs.GetDefinitionPlainArgs.Builder] = scala.Predef.identity):
+    inline def getDefinitionPlain(args: Endofunction[com.pulumi.azure.managedapplication.inputs.GetDefinitionPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.managedapplication.outputs.GetDefinitionResult] =
       val argsBuilder = com.pulumi.azure.managedapplication.inputs.GetDefinitionPlainArgs.builder
       com.pulumi.azure.managedapplication.ManagedapplicationFunctions.getDefinitionPlain(args(argsBuilder).build)

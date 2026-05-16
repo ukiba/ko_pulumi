@@ -58,43 +58,45 @@ object elasticsan:
       val argsBuilder = com.pulumi.azure.elasticsan.inputs.VolumeCreateSourceArgs.builder
       builder.createSource(args(argsBuilder).build)
 
-  type ElasticsanFunctions = com.pulumi.azure.elasticsan.ElasticsanFunctions
   object ElasticsanFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.azure.elasticsan.ElasticsanFunctions.*
-  extension (self: ElasticsanFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /** Use this data source to access information about an existing Elastic SAN. */
-    def get(args: Endofunction[com.pulumi.azure.elasticsan.inputs.GetArgs.Builder] = scala.Predef.identity):
+    inline def get(args: Endofunction[com.pulumi.azure.elasticsan.inputs.GetArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.elasticsan.outputs.GetResult] =
       val argsBuilder = com.pulumi.azure.elasticsan.inputs.GetArgs.builder
       com.pulumi.azure.elasticsan.ElasticsanFunctions.get(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing Elastic SAN. */
-    def getPlain(args: Endofunction[com.pulumi.azure.elasticsan.inputs.GetPlainArgs.Builder] = scala.Predef.identity):
+    inline def getPlain(args: Endofunction[com.pulumi.azure.elasticsan.inputs.GetPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.elasticsan.outputs.GetResult] =
       val argsBuilder = com.pulumi.azure.elasticsan.inputs.GetPlainArgs.builder
       com.pulumi.azure.elasticsan.ElasticsanFunctions.getPlain(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing Elastic SAN Volume Group. */
-    def getVolumeGroup(args: Endofunction[com.pulumi.azure.elasticsan.inputs.GetVolumeGroupArgs.Builder] = scala.Predef.identity):
+    inline def getVolumeGroup(args: Endofunction[com.pulumi.azure.elasticsan.inputs.GetVolumeGroupArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.elasticsan.outputs.GetVolumeGroupResult] =
       val argsBuilder = com.pulumi.azure.elasticsan.inputs.GetVolumeGroupArgs.builder
       com.pulumi.azure.elasticsan.ElasticsanFunctions.getVolumeGroup(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing Elastic SAN Volume Group. */
-    def getVolumeGroupPlain(args: Endofunction[com.pulumi.azure.elasticsan.inputs.GetVolumeGroupPlainArgs.Builder] = scala.Predef.identity):
+    inline def getVolumeGroupPlain(args: Endofunction[com.pulumi.azure.elasticsan.inputs.GetVolumeGroupPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.elasticsan.outputs.GetVolumeGroupResult] =
       val argsBuilder = com.pulumi.azure.elasticsan.inputs.GetVolumeGroupPlainArgs.builder
       com.pulumi.azure.elasticsan.ElasticsanFunctions.getVolumeGroupPlain(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing Elastic SAN Volume Snapshot. */
-    def getVolumeSnapshot(args: Endofunction[com.pulumi.azure.elasticsan.inputs.GetVolumeSnapshotArgs.Builder] = scala.Predef.identity):
+    inline def getVolumeSnapshot(args: Endofunction[com.pulumi.azure.elasticsan.inputs.GetVolumeSnapshotArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.elasticsan.outputs.GetVolumeSnapshotResult] =
       val argsBuilder = com.pulumi.azure.elasticsan.inputs.GetVolumeSnapshotArgs.builder
       com.pulumi.azure.elasticsan.ElasticsanFunctions.getVolumeSnapshot(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing Elastic SAN Volume Snapshot. */
-    def getVolumeSnapshotPlain(args: Endofunction[com.pulumi.azure.elasticsan.inputs.GetVolumeSnapshotPlainArgs.Builder] = scala.Predef.identity):
+    inline def getVolumeSnapshotPlain(args: Endofunction[com.pulumi.azure.elasticsan.inputs.GetVolumeSnapshotPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.elasticsan.outputs.GetVolumeSnapshotResult] =
       val argsBuilder = com.pulumi.azure.elasticsan.inputs.GetVolumeSnapshotPlainArgs.builder
       com.pulumi.azure.elasticsan.ElasticsanFunctions.getVolumeSnapshotPlain(args(argsBuilder).build)

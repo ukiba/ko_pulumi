@@ -18,17 +18,19 @@ object inspector:
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
-  type InspectorFunctions = com.pulumi.aws.inspector.InspectorFunctions
   object InspectorFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.aws.inspector.InspectorFunctions.*
-  extension (self: InspectorFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /**
      * The Amazon Inspector Classic Rules Packages data source allows access to the list of AWS
      *  Inspector Rules Packages which can be used by Amazon Inspector Classic within the region
      *  configured in the provider.
      */
-    def getRulesPackages(args: Endofunction[com.pulumi.aws.inspector.inputs.GetRulesPackagesArgs.Builder] = scala.Predef.identity):
+    inline def getRulesPackages(args: Endofunction[com.pulumi.aws.inspector.inputs.GetRulesPackagesArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.inspector.outputs.GetRulesPackagesResult] =
       val argsBuilder = com.pulumi.aws.inspector.inputs.GetRulesPackagesArgs.builder
       com.pulumi.aws.inspector.InspectorFunctions.getRulesPackages(args(argsBuilder).build)
@@ -38,7 +40,7 @@ object inspector:
      *  Inspector Rules Packages which can be used by Amazon Inspector Classic within the region
      *  configured in the provider.
      */
-    def getRulesPackagesPlain(args: Endofunction[com.pulumi.aws.inspector.inputs.GetRulesPackagesPlainArgs.Builder] = scala.Predef.identity):
+    inline def getRulesPackagesPlain(args: Endofunction[com.pulumi.aws.inspector.inputs.GetRulesPackagesPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.inspector.outputs.GetRulesPackagesResult] =
       val argsBuilder = com.pulumi.aws.inspector.inputs.GetRulesPackagesPlainArgs.builder
       com.pulumi.aws.inspector.InspectorFunctions.getRulesPackagesPlain(args(argsBuilder).build)

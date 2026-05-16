@@ -409,19 +409,21 @@ object hdinsight:
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
-  type HdinsightFunctions = com.pulumi.azure.hdinsight.HdinsightFunctions
   object HdinsightFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.azure.hdinsight.HdinsightFunctions.*
-  extension (self: HdinsightFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /** Use this data source to access information about an existing HDInsight Cluster. */
-    def getCluster(args: Endofunction[com.pulumi.azure.hdinsight.inputs.GetClusterArgs.Builder] = scala.Predef.identity):
+    inline def getCluster(args: Endofunction[com.pulumi.azure.hdinsight.inputs.GetClusterArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.hdinsight.outputs.GetClusterResult] =
       val argsBuilder = com.pulumi.azure.hdinsight.inputs.GetClusterArgs.builder
       com.pulumi.azure.hdinsight.HdinsightFunctions.getCluster(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing HDInsight Cluster. */
-    def getClusterPlain(args: Endofunction[com.pulumi.azure.hdinsight.inputs.GetClusterPlainArgs.Builder] = scala.Predef.identity):
+    inline def getClusterPlain(args: Endofunction[com.pulumi.azure.hdinsight.inputs.GetClusterPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.hdinsight.outputs.GetClusterResult] =
       val argsBuilder = com.pulumi.azure.hdinsight.inputs.GetClusterPlainArgs.builder
       com.pulumi.azure.hdinsight.HdinsightFunctions.getClusterPlain(args(argsBuilder).build)

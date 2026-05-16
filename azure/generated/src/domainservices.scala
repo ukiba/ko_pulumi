@@ -125,17 +125,19 @@ object domainservices:
         com.pulumi.azure.domainservices.inputs.ServiceState.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
 
-  type DomainservicesFunctions = com.pulumi.azure.domainservices.DomainservicesFunctions
   object DomainservicesFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.azure.domainservices.DomainservicesFunctions.*
-  extension (self: DomainservicesFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /**
      * Gets information about an Active Directory Domain Service.
      * 
      *  &gt; **Note:** At present this data source only supports **User Forest** mode and _not_ **Resource Forest** mode. [Read more](https://docs.microsoft.com/azure/active-directory-domain-services/concepts-resource-forest) about the different operation modes for this service.
      */
-    def getService(args: Endofunction[com.pulumi.azure.domainservices.inputs.GetServiceArgs.Builder] = scala.Predef.identity):
+    inline def getService(args: Endofunction[com.pulumi.azure.domainservices.inputs.GetServiceArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.domainservices.outputs.GetServiceResult] =
       val argsBuilder = com.pulumi.azure.domainservices.inputs.GetServiceArgs.builder
       com.pulumi.azure.domainservices.DomainservicesFunctions.getService(args(argsBuilder).build)
@@ -145,7 +147,7 @@ object domainservices:
      * 
      *  &gt; **Note:** At present this data source only supports **User Forest** mode and _not_ **Resource Forest** mode. [Read more](https://docs.microsoft.com/azure/active-directory-domain-services/concepts-resource-forest) about the different operation modes for this service.
      */
-    def getServicePlain(args: Endofunction[com.pulumi.azure.domainservices.inputs.GetServicePlainArgs.Builder] = scala.Predef.identity):
+    inline def getServicePlain(args: Endofunction[com.pulumi.azure.domainservices.inputs.GetServicePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.domainservices.outputs.GetServiceResult] =
       val argsBuilder = com.pulumi.azure.domainservices.inputs.GetServicePlainArgs.builder
       com.pulumi.azure.domainservices.DomainservicesFunctions.getServicePlain(args(argsBuilder).build)

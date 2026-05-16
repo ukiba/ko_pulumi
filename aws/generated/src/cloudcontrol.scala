@@ -4,19 +4,21 @@ package aws
 import com.pulumi.resources.CustomResourceOptions
 
 object cloudcontrol:
-  type CloudcontrolFunctions = com.pulumi.aws.cloudcontrol.CloudcontrolFunctions
   object CloudcontrolFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.aws.cloudcontrol.CloudcontrolFunctions.*
-  extension (self: CloudcontrolFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /** Provides details for a Cloud Control API Resource. The reading of these resources is proxied through Cloud Control API handlers to the backend service. */
-    def getResource(args: Endofunction[com.pulumi.aws.cloudcontrol.inputs.GetResourceArgs.Builder] = scala.Predef.identity):
+    inline def getResource(args: Endofunction[com.pulumi.aws.cloudcontrol.inputs.GetResourceArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.cloudcontrol.outputs.GetResourceResult] =
       val argsBuilder = com.pulumi.aws.cloudcontrol.inputs.GetResourceArgs.builder
       com.pulumi.aws.cloudcontrol.CloudcontrolFunctions.getResource(args(argsBuilder).build)
 
     /** Provides details for a Cloud Control API Resource. The reading of these resources is proxied through Cloud Control API handlers to the backend service. */
-    def getResourcePlain(args: Endofunction[com.pulumi.aws.cloudcontrol.inputs.GetResourcePlainArgs.Builder] = scala.Predef.identity):
+    inline def getResourcePlain(args: Endofunction[com.pulumi.aws.cloudcontrol.inputs.GetResourcePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.cloudcontrol.outputs.GetResourceResult] =
       val argsBuilder = com.pulumi.aws.cloudcontrol.inputs.GetResourcePlainArgs.builder
       com.pulumi.aws.cloudcontrol.CloudcontrolFunctions.getResourcePlain(args(argsBuilder).build)

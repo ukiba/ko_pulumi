@@ -175,16 +175,18 @@ object autoscaling:
       val argsBuilder = com.pulumi.aws.autoscaling.inputs.TagTagArgs.builder
       builder.tag(args(argsBuilder).build)
 
-  type AutoscalingFunctions = com.pulumi.aws.autoscaling.AutoscalingFunctions
   object AutoscalingFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.aws.autoscaling.AutoscalingFunctions.*
-  extension (self: AutoscalingFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /**
      * The Autoscaling Groups data source allows access to the list of AWS
      *  ASGs within a specific region. This will allow you to pass a list of AutoScaling Groups to other resources.
      */
-    def getAmiIds(args: Endofunction[com.pulumi.aws.autoscaling.inputs.GetAmiIdsArgs.Builder] = scala.Predef.identity):
+    inline def getAmiIds(args: Endofunction[com.pulumi.aws.autoscaling.inputs.GetAmiIdsArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.autoscaling.outputs.GetAmiIdsResult] =
       val argsBuilder = com.pulumi.aws.autoscaling.inputs.GetAmiIdsArgs.builder
       com.pulumi.aws.autoscaling.AutoscalingFunctions.getAmiIds(args(argsBuilder).build)
@@ -193,19 +195,19 @@ object autoscaling:
      * The Autoscaling Groups data source allows access to the list of AWS
      *  ASGs within a specific region. This will allow you to pass a list of AutoScaling Groups to other resources.
      */
-    def getAmiIdsPlain(args: Endofunction[com.pulumi.aws.autoscaling.inputs.GetAmiIdsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getAmiIdsPlain(args: Endofunction[com.pulumi.aws.autoscaling.inputs.GetAmiIdsPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.autoscaling.outputs.GetAmiIdsResult] =
       val argsBuilder = com.pulumi.aws.autoscaling.inputs.GetAmiIdsPlainArgs.builder
       com.pulumi.aws.autoscaling.AutoscalingFunctions.getAmiIdsPlain(args(argsBuilder).build)
 
     /** Use this data source to get information on an existing autoscaling group. */
-    def getGroup(args: Endofunction[com.pulumi.aws.autoscaling.inputs.GetGroupArgs.Builder] = scala.Predef.identity):
+    inline def getGroup(args: Endofunction[com.pulumi.aws.autoscaling.inputs.GetGroupArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.autoscaling.outputs.GetGroupResult] =
       val argsBuilder = com.pulumi.aws.autoscaling.inputs.GetGroupArgs.builder
       com.pulumi.aws.autoscaling.AutoscalingFunctions.getGroup(args(argsBuilder).build)
 
     /** Use this data source to get information on an existing autoscaling group. */
-    def getGroupPlain(args: Endofunction[com.pulumi.aws.autoscaling.inputs.GetGroupPlainArgs.Builder] = scala.Predef.identity):
+    inline def getGroupPlain(args: Endofunction[com.pulumi.aws.autoscaling.inputs.GetGroupPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.autoscaling.outputs.GetGroupResult] =
       val argsBuilder = com.pulumi.aws.autoscaling.inputs.GetGroupPlainArgs.builder
       com.pulumi.aws.autoscaling.AutoscalingFunctions.getGroupPlain(args(argsBuilder).build)

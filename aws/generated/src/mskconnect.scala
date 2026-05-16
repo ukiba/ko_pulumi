@@ -18,43 +18,45 @@ object mskconnect:
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
-  type MskconnectFunctions = com.pulumi.aws.mskconnect.MskconnectFunctions
   object MskconnectFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.aws.mskconnect.MskconnectFunctions.*
-  extension (self: MskconnectFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /** Get information on an Amazon MSK Connect Connector. */
-    def getConnector(args: Endofunction[com.pulumi.aws.mskconnect.inputs.GetConnectorArgs.Builder] = scala.Predef.identity):
+    inline def getConnector(args: Endofunction[com.pulumi.aws.mskconnect.inputs.GetConnectorArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.mskconnect.outputs.GetConnectorResult] =
       val argsBuilder = com.pulumi.aws.mskconnect.inputs.GetConnectorArgs.builder
       com.pulumi.aws.mskconnect.MskconnectFunctions.getConnector(args(argsBuilder).build)
 
     /** Get information on an Amazon MSK Connect Connector. */
-    def getConnectorPlain(args: Endofunction[com.pulumi.aws.mskconnect.inputs.GetConnectorPlainArgs.Builder] = scala.Predef.identity):
+    inline def getConnectorPlain(args: Endofunction[com.pulumi.aws.mskconnect.inputs.GetConnectorPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.mskconnect.outputs.GetConnectorResult] =
       val argsBuilder = com.pulumi.aws.mskconnect.inputs.GetConnectorPlainArgs.builder
       com.pulumi.aws.mskconnect.MskconnectFunctions.getConnectorPlain(args(argsBuilder).build)
 
     /** Get information on an Amazon MSK Connect custom plugin. */
-    def getCustomPlugin(args: Endofunction[com.pulumi.aws.mskconnect.inputs.GetCustomPluginArgs.Builder] = scala.Predef.identity):
+    inline def getCustomPlugin(args: Endofunction[com.pulumi.aws.mskconnect.inputs.GetCustomPluginArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.mskconnect.outputs.GetCustomPluginResult] =
       val argsBuilder = com.pulumi.aws.mskconnect.inputs.GetCustomPluginArgs.builder
       com.pulumi.aws.mskconnect.MskconnectFunctions.getCustomPlugin(args(argsBuilder).build)
 
     /** Get information on an Amazon MSK Connect custom plugin. */
-    def getCustomPluginPlain(args: Endofunction[com.pulumi.aws.mskconnect.inputs.GetCustomPluginPlainArgs.Builder] = scala.Predef.identity):
+    inline def getCustomPluginPlain(args: Endofunction[com.pulumi.aws.mskconnect.inputs.GetCustomPluginPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.mskconnect.outputs.GetCustomPluginResult] =
       val argsBuilder = com.pulumi.aws.mskconnect.inputs.GetCustomPluginPlainArgs.builder
       com.pulumi.aws.mskconnect.MskconnectFunctions.getCustomPluginPlain(args(argsBuilder).build)
 
     /** Get information on an Amazon MSK Connect Worker Configuration. */
-    def getWorkerConfiguration(args: Endofunction[com.pulumi.aws.mskconnect.inputs.GetWorkerConfigurationArgs.Builder] = scala.Predef.identity):
+    inline def getWorkerConfiguration(args: Endofunction[com.pulumi.aws.mskconnect.inputs.GetWorkerConfigurationArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.mskconnect.outputs.GetWorkerConfigurationResult] =
       val argsBuilder = com.pulumi.aws.mskconnect.inputs.GetWorkerConfigurationArgs.builder
       com.pulumi.aws.mskconnect.MskconnectFunctions.getWorkerConfiguration(args(argsBuilder).build)
 
     /** Get information on an Amazon MSK Connect Worker Configuration. */
-    def getWorkerConfigurationPlain(args: Endofunction[com.pulumi.aws.mskconnect.inputs.GetWorkerConfigurationPlainArgs.Builder] = scala.Predef.identity):
+    inline def getWorkerConfigurationPlain(args: Endofunction[com.pulumi.aws.mskconnect.inputs.GetWorkerConfigurationPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.mskconnect.outputs.GetWorkerConfigurationResult] =
       val argsBuilder = com.pulumi.aws.mskconnect.inputs.GetWorkerConfigurationPlainArgs.builder
       com.pulumi.aws.mskconnect.MskconnectFunctions.getWorkerConfigurationPlain(args(argsBuilder).build)

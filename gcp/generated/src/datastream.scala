@@ -221,16 +221,18 @@ object datastream:
       val argsBuilder = com.pulumi.gcp.datastream.inputs.PrivateConnectionVpcPeeringConfigArgs.builder
       builder.vpcPeeringConfig(args(argsBuilder).build)
 
-  type DatastreamFunctions = com.pulumi.gcp.datastream.DatastreamFunctions
   object DatastreamFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.gcp.datastream.DatastreamFunctions.*
-  extension (self: DatastreamFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /**
      * Returns the list of IP addresses that Datastream connects from. For more information see
      *  the [official documentation](https://cloud.google.com/datastream/docs/ip-allowlists-and-regions).
      */
-    def getStaticIps(args: Endofunction[com.pulumi.gcp.datastream.inputs.GetStaticIpsArgs.Builder] = scala.Predef.identity):
+    inline def getStaticIps(args: Endofunction[com.pulumi.gcp.datastream.inputs.GetStaticIpsArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.datastream.outputs.GetStaticIpsResult] =
       val argsBuilder = com.pulumi.gcp.datastream.inputs.GetStaticIpsArgs.builder
       com.pulumi.gcp.datastream.DatastreamFunctions.getStaticIps(args(argsBuilder).build)
@@ -239,7 +241,7 @@ object datastream:
      * Returns the list of IP addresses that Datastream connects from. For more information see
      *  the [official documentation](https://cloud.google.com/datastream/docs/ip-allowlists-and-regions).
      */
-    def getStaticIpsPlain(args: Endofunction[com.pulumi.gcp.datastream.inputs.GetStaticIpsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getStaticIpsPlain(args: Endofunction[com.pulumi.gcp.datastream.inputs.GetStaticIpsPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.datastream.outputs.GetStaticIpsResult] =
       val argsBuilder = com.pulumi.gcp.datastream.inputs.GetStaticIpsPlainArgs.builder
       com.pulumi.gcp.datastream.DatastreamFunctions.getStaticIpsPlain(args(argsBuilder).build)

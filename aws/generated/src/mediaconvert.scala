@@ -32,19 +32,21 @@ object mediaconvert:
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
-  type MediaconvertFunctions = com.pulumi.aws.mediaconvert.MediaconvertFunctions
   object MediaconvertFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.aws.mediaconvert.MediaconvertFunctions.*
-  extension (self: MediaconvertFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /** Retrieve information about a AWS Elemental MediaConvert Queue. */
-    def getQueue(args: Endofunction[com.pulumi.aws.mediaconvert.inputs.GetQueueArgs.Builder] = scala.Predef.identity):
+    inline def getQueue(args: Endofunction[com.pulumi.aws.mediaconvert.inputs.GetQueueArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.mediaconvert.outputs.GetQueueResult] =
       val argsBuilder = com.pulumi.aws.mediaconvert.inputs.GetQueueArgs.builder
       com.pulumi.aws.mediaconvert.MediaconvertFunctions.getQueue(args(argsBuilder).build)
 
     /** Retrieve information about a AWS Elemental MediaConvert Queue. */
-    def getQueuePlain(args: Endofunction[com.pulumi.aws.mediaconvert.inputs.GetQueuePlainArgs.Builder] = scala.Predef.identity):
+    inline def getQueuePlain(args: Endofunction[com.pulumi.aws.mediaconvert.inputs.GetQueuePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.mediaconvert.outputs.GetQueueResult] =
       val argsBuilder = com.pulumi.aws.mediaconvert.inputs.GetQueuePlainArgs.builder
       com.pulumi.aws.mediaconvert.MediaconvertFunctions.getQueuePlain(args(argsBuilder).build)

@@ -179,17 +179,19 @@ object appconfiguration:
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
-  type AppconfigurationFunctions = com.pulumi.azure.appconfiguration.AppconfigurationFunctions
   object AppconfigurationFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.azure.appconfiguration.AppconfigurationFunctions.*
-  extension (self: AppconfigurationFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /**
      * Use this data source to access information about an existing Azure App Configuration Key.
      * 
      *  &gt; **Note:** App Configuration Keys are provisioned using a Data Plane API which requires the role `App Configuration Data Owner` on either the App Configuration or a parent scope (such as the Resource Group/Subscription). [More information can be found in the Azure Documentation for App Configuration](https://docs.microsoft.com/azure/azure-app-configuration/concept-enable-rbac#azure-built-in-roles-for-azure-app-configuration).
      */
-    def getConfigurationKey(args: Endofunction[com.pulumi.azure.appconfiguration.inputs.GetConfigurationKeyArgs.Builder] = scala.Predef.identity):
+    inline def getConfigurationKey(args: Endofunction[com.pulumi.azure.appconfiguration.inputs.GetConfigurationKeyArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.appconfiguration.outputs.GetConfigurationKeyResult] =
       val argsBuilder = com.pulumi.azure.appconfiguration.inputs.GetConfigurationKeyArgs.builder
       com.pulumi.azure.appconfiguration.AppconfigurationFunctions.getConfigurationKey(args(argsBuilder).build)
@@ -199,7 +201,7 @@ object appconfiguration:
      * 
      *  &gt; **Note:** App Configuration Keys are provisioned using a Data Plane API which requires the role `App Configuration Data Owner` on either the App Configuration or a parent scope (such as the Resource Group/Subscription). [More information can be found in the Azure Documentation for App Configuration](https://docs.microsoft.com/azure/azure-app-configuration/concept-enable-rbac#azure-built-in-roles-for-azure-app-configuration).
      */
-    def getConfigurationKeyPlain(args: Endofunction[com.pulumi.azure.appconfiguration.inputs.GetConfigurationKeyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getConfigurationKeyPlain(args: Endofunction[com.pulumi.azure.appconfiguration.inputs.GetConfigurationKeyPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.appconfiguration.outputs.GetConfigurationKeyResult] =
       val argsBuilder = com.pulumi.azure.appconfiguration.inputs.GetConfigurationKeyPlainArgs.builder
       com.pulumi.azure.appconfiguration.AppconfigurationFunctions.getConfigurationKeyPlain(args(argsBuilder).build)
@@ -209,7 +211,7 @@ object appconfiguration:
      * 
      *  &gt; **Note:** App Configuration Keys are provisioned using a Data Plane API which requires the role `App Configuration Data Owner` on either the App Configuration or a parent scope (such as the Resource Group/Subscription). [More information can be found in the Azure Documentation for App Configuration](https://docs.microsoft.com/azure/azure-app-configuration/concept-enable-rbac#azure-built-in-roles-for-azure-app-configuration).
      */
-    def getConfigurationKeys(args: Endofunction[com.pulumi.azure.appconfiguration.inputs.GetConfigurationKeysArgs.Builder] = scala.Predef.identity):
+    inline def getConfigurationKeys(args: Endofunction[com.pulumi.azure.appconfiguration.inputs.GetConfigurationKeysArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.appconfiguration.outputs.GetConfigurationKeysResult] =
       val argsBuilder = com.pulumi.azure.appconfiguration.inputs.GetConfigurationKeysArgs.builder
       com.pulumi.azure.appconfiguration.AppconfigurationFunctions.getConfigurationKeys(args(argsBuilder).build)
@@ -219,19 +221,19 @@ object appconfiguration:
      * 
      *  &gt; **Note:** App Configuration Keys are provisioned using a Data Plane API which requires the role `App Configuration Data Owner` on either the App Configuration or a parent scope (such as the Resource Group/Subscription). [More information can be found in the Azure Documentation for App Configuration](https://docs.microsoft.com/azure/azure-app-configuration/concept-enable-rbac#azure-built-in-roles-for-azure-app-configuration).
      */
-    def getConfigurationKeysPlain(args: Endofunction[com.pulumi.azure.appconfiguration.inputs.GetConfigurationKeysPlainArgs.Builder] = scala.Predef.identity):
+    inline def getConfigurationKeysPlain(args: Endofunction[com.pulumi.azure.appconfiguration.inputs.GetConfigurationKeysPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.appconfiguration.outputs.GetConfigurationKeysResult] =
       val argsBuilder = com.pulumi.azure.appconfiguration.inputs.GetConfigurationKeysPlainArgs.builder
       com.pulumi.azure.appconfiguration.AppconfigurationFunctions.getConfigurationKeysPlain(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing App Configuration. */
-    def getConfigurationStore(args: Endofunction[com.pulumi.azure.appconfiguration.inputs.GetConfigurationStoreArgs.Builder] = scala.Predef.identity):
+    inline def getConfigurationStore(args: Endofunction[com.pulumi.azure.appconfiguration.inputs.GetConfigurationStoreArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.appconfiguration.outputs.GetConfigurationStoreResult] =
       val argsBuilder = com.pulumi.azure.appconfiguration.inputs.GetConfigurationStoreArgs.builder
       com.pulumi.azure.appconfiguration.AppconfigurationFunctions.getConfigurationStore(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing App Configuration. */
-    def getConfigurationStorePlain(args: Endofunction[com.pulumi.azure.appconfiguration.inputs.GetConfigurationStorePlainArgs.Builder] = scala.Predef.identity):
+    inline def getConfigurationStorePlain(args: Endofunction[com.pulumi.azure.appconfiguration.inputs.GetConfigurationStorePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.appconfiguration.outputs.GetConfigurationStoreResult] =
       val argsBuilder = com.pulumi.azure.appconfiguration.inputs.GetConfigurationStorePlainArgs.builder
       com.pulumi.azure.appconfiguration.AppconfigurationFunctions.getConfigurationStorePlain(args(argsBuilder).build)

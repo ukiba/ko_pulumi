@@ -92,43 +92,45 @@ object networkfirewall:
         com.pulumi.aws.networkfirewall.FirewallPolicyArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
 
-  type NetworkfirewallFunctions = com.pulumi.aws.networkfirewall.NetworkfirewallFunctions
   object NetworkfirewallFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.aws.networkfirewall.NetworkfirewallFunctions.*
-  extension (self: NetworkfirewallFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /** Retrieve information about a firewall. */
-    def getFirewall(args: Endofunction[com.pulumi.aws.networkfirewall.inputs.GetFirewallArgs.Builder] = scala.Predef.identity):
+    inline def getFirewall(args: Endofunction[com.pulumi.aws.networkfirewall.inputs.GetFirewallArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.networkfirewall.outputs.GetFirewallResult] =
       val argsBuilder = com.pulumi.aws.networkfirewall.inputs.GetFirewallArgs.builder
       com.pulumi.aws.networkfirewall.NetworkfirewallFunctions.getFirewall(args(argsBuilder).build)
 
     /** Retrieve information about a firewall. */
-    def getFirewallPlain(args: Endofunction[com.pulumi.aws.networkfirewall.inputs.GetFirewallPlainArgs.Builder] = scala.Predef.identity):
+    inline def getFirewallPlain(args: Endofunction[com.pulumi.aws.networkfirewall.inputs.GetFirewallPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.networkfirewall.outputs.GetFirewallResult] =
       val argsBuilder = com.pulumi.aws.networkfirewall.inputs.GetFirewallPlainArgs.builder
       com.pulumi.aws.networkfirewall.NetworkfirewallFunctions.getFirewallPlain(args(argsBuilder).build)
 
     /** Retrieve information about a firewall policy. */
-    def getFirewallPolicy(args: Endofunction[com.pulumi.aws.networkfirewall.inputs.GetFirewallPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getFirewallPolicy(args: Endofunction[com.pulumi.aws.networkfirewall.inputs.GetFirewallPolicyArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.networkfirewall.outputs.GetFirewallPolicyResult] =
       val argsBuilder = com.pulumi.aws.networkfirewall.inputs.GetFirewallPolicyArgs.builder
       com.pulumi.aws.networkfirewall.NetworkfirewallFunctions.getFirewallPolicy(args(argsBuilder).build)
 
     /** Retrieve information about a firewall policy. */
-    def getFirewallPolicyPlain(args: Endofunction[com.pulumi.aws.networkfirewall.inputs.GetFirewallPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getFirewallPolicyPlain(args: Endofunction[com.pulumi.aws.networkfirewall.inputs.GetFirewallPolicyPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.networkfirewall.outputs.GetFirewallPolicyResult] =
       val argsBuilder = com.pulumi.aws.networkfirewall.inputs.GetFirewallPolicyPlainArgs.builder
       com.pulumi.aws.networkfirewall.NetworkfirewallFunctions.getFirewallPolicyPlain(args(argsBuilder).build)
 
     /** Retrieve information about a Network Firewall resource policy. */
-    def getResourcePolicy(args: Endofunction[com.pulumi.aws.networkfirewall.inputs.GetResourcePolicyArgs.Builder] = scala.Predef.identity):
+    inline def getResourcePolicy(args: Endofunction[com.pulumi.aws.networkfirewall.inputs.GetResourcePolicyArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.networkfirewall.outputs.GetResourcePolicyResult] =
       val argsBuilder = com.pulumi.aws.networkfirewall.inputs.GetResourcePolicyArgs.builder
       com.pulumi.aws.networkfirewall.NetworkfirewallFunctions.getResourcePolicy(args(argsBuilder).build)
 
     /** Retrieve information about a Network Firewall resource policy. */
-    def getResourcePolicyPlain(args: Endofunction[com.pulumi.aws.networkfirewall.inputs.GetResourcePolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getResourcePolicyPlain(args: Endofunction[com.pulumi.aws.networkfirewall.inputs.GetResourcePolicyPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.networkfirewall.outputs.GetResourcePolicyResult] =
       val argsBuilder = com.pulumi.aws.networkfirewall.inputs.GetResourcePolicyPlainArgs.builder
       com.pulumi.aws.networkfirewall.NetworkfirewallFunctions.getResourcePolicyPlain(args(argsBuilder).build)

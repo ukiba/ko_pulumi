@@ -67,19 +67,21 @@ object grafana:
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
-  type GrafanaFunctions = com.pulumi.aws.grafana.GrafanaFunctions
   object GrafanaFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.aws.grafana.GrafanaFunctions.*
-  extension (self: GrafanaFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /** Provides an Amazon Managed Grafana workspace data source. */
-    def getWorkspace(args: Endofunction[com.pulumi.aws.grafana.inputs.GetWorkspaceArgs.Builder] = scala.Predef.identity):
+    inline def getWorkspace(args: Endofunction[com.pulumi.aws.grafana.inputs.GetWorkspaceArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.grafana.outputs.GetWorkspaceResult] =
       val argsBuilder = com.pulumi.aws.grafana.inputs.GetWorkspaceArgs.builder
       com.pulumi.aws.grafana.GrafanaFunctions.getWorkspace(args(argsBuilder).build)
 
     /** Provides an Amazon Managed Grafana workspace data source. */
-    def getWorkspacePlain(args: Endofunction[com.pulumi.aws.grafana.inputs.GetWorkspacePlainArgs.Builder] = scala.Predef.identity):
+    inline def getWorkspacePlain(args: Endofunction[com.pulumi.aws.grafana.inputs.GetWorkspacePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.grafana.outputs.GetWorkspaceResult] =
       val argsBuilder = com.pulumi.aws.grafana.inputs.GetWorkspacePlainArgs.builder
       com.pulumi.aws.grafana.GrafanaFunctions.getWorkspacePlain(args(argsBuilder).build)

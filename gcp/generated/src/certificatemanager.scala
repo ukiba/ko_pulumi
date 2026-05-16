@@ -4,43 +4,45 @@ package gcp
 import com.pulumi.resources.CustomResourceOptions
 
 object certificatemanager:
-  type CertificatemanagerFunctions = com.pulumi.gcp.certificatemanager.CertificatemanagerFunctions
   object CertificatemanagerFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.gcp.certificatemanager.CertificatemanagerFunctions.*
-  extension (self: CertificatemanagerFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /** Get info about a Google Certificate Manager Certificate Map resource. */
-    def getCertificateMap(args: Endofunction[com.pulumi.gcp.certificatemanager.inputs.GetCertificateMapArgs.Builder] = scala.Predef.identity):
+    inline def getCertificateMap(args: Endofunction[com.pulumi.gcp.certificatemanager.inputs.GetCertificateMapArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.certificatemanager.outputs.GetCertificateMapResult] =
       val argsBuilder = com.pulumi.gcp.certificatemanager.inputs.GetCertificateMapArgs.builder
       com.pulumi.gcp.certificatemanager.CertificatemanagerFunctions.getCertificateMap(args(argsBuilder).build)
 
     /** Get info about a Google Certificate Manager Certificate Map resource. */
-    def getCertificateMapPlain(args: Endofunction[com.pulumi.gcp.certificatemanager.inputs.GetCertificateMapPlainArgs.Builder] = scala.Predef.identity):
+    inline def getCertificateMapPlain(args: Endofunction[com.pulumi.gcp.certificatemanager.inputs.GetCertificateMapPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.certificatemanager.outputs.GetCertificateMapResult] =
       val argsBuilder = com.pulumi.gcp.certificatemanager.inputs.GetCertificateMapPlainArgs.builder
       com.pulumi.gcp.certificatemanager.CertificatemanagerFunctions.getCertificateMapPlain(args(argsBuilder).build)
 
     /** List all certificates within Google Certificate Manager for a given project, region or filter. */
-    def getCertificates(args: Endofunction[com.pulumi.gcp.certificatemanager.inputs.GetCertificatesArgs.Builder] = scala.Predef.identity):
+    inline def getCertificates(args: Endofunction[com.pulumi.gcp.certificatemanager.inputs.GetCertificatesArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.certificatemanager.outputs.GetCertificatesResult] =
       val argsBuilder = com.pulumi.gcp.certificatemanager.inputs.GetCertificatesArgs.builder
       com.pulumi.gcp.certificatemanager.CertificatemanagerFunctions.getCertificates(args(argsBuilder).build)
 
     /** List all certificates within Google Certificate Manager for a given project, region or filter. */
-    def getCertificatesPlain(args: Endofunction[com.pulumi.gcp.certificatemanager.inputs.GetCertificatesPlainArgs.Builder] = scala.Predef.identity):
+    inline def getCertificatesPlain(args: Endofunction[com.pulumi.gcp.certificatemanager.inputs.GetCertificatesPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.certificatemanager.outputs.GetCertificatesResult] =
       val argsBuilder = com.pulumi.gcp.certificatemanager.inputs.GetCertificatesPlainArgs.builder
       com.pulumi.gcp.certificatemanager.CertificatemanagerFunctions.getCertificatesPlain(args(argsBuilder).build)
 
     /** Use this data source to get information about a Certificate Manager DNS Authorization. For more details, see the [API documentation](https://cloud.google.com/certificate-manager/docs/reference/certificate-manager/rest/v1/projects.locations.dnsAuthorizations). */
-    def getDnsAuthorization(args: Endofunction[com.pulumi.gcp.certificatemanager.inputs.GetDnsAuthorizationArgs.Builder] = scala.Predef.identity):
+    inline def getDnsAuthorization(args: Endofunction[com.pulumi.gcp.certificatemanager.inputs.GetDnsAuthorizationArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.certificatemanager.outputs.GetDnsAuthorizationResult] =
       val argsBuilder = com.pulumi.gcp.certificatemanager.inputs.GetDnsAuthorizationArgs.builder
       com.pulumi.gcp.certificatemanager.CertificatemanagerFunctions.getDnsAuthorization(args(argsBuilder).build)
 
     /** Use this data source to get information about a Certificate Manager DNS Authorization. For more details, see the [API documentation](https://cloud.google.com/certificate-manager/docs/reference/certificate-manager/rest/v1/projects.locations.dnsAuthorizations). */
-    def getDnsAuthorizationPlain(args: Endofunction[com.pulumi.gcp.certificatemanager.inputs.GetDnsAuthorizationPlainArgs.Builder] = scala.Predef.identity):
+    inline def getDnsAuthorizationPlain(args: Endofunction[com.pulumi.gcp.certificatemanager.inputs.GetDnsAuthorizationPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.certificatemanager.outputs.GetDnsAuthorizationResult] =
       val argsBuilder = com.pulumi.gcp.certificatemanager.inputs.GetDnsAuthorizationPlainArgs.builder
       com.pulumi.gcp.certificatemanager.CertificatemanagerFunctions.getDnsAuthorizationPlain(args(argsBuilder).build)

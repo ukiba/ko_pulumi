@@ -1295,17 +1295,19 @@ object discoveryengine:
       val argsBuilder = com.pulumi.gcp.discoveryengine.inputs.ControlBoostActionInterpolationBoostSpecControlPointArgs.builder
       builder.controlPoint(args(argsBuilder).build)
 
-  type DiscoveryengineFunctions = com.pulumi.gcp.discoveryengine.DiscoveryengineFunctions
   object DiscoveryengineFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.gcp.discoveryengine.DiscoveryengineFunctions.*
-  extension (self: DiscoveryengineFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /**
      * Gets an existing Discovery Engine data store by ID or display name.
      *  See [the official documentation](https://cloud.google.com/generative-ai-app-builder/docs/manage-data-stores)
      *  and [API](https://cloud.google.com/generative-ai-app-builder/docs/reference/rest/v1/projects.locations.collections.dataStores/get).
      */
-    def getDataStore(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.GetDataStoreArgs.Builder] = scala.Predef.identity):
+    inline def getDataStore(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.GetDataStoreArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.discoveryengine.outputs.GetDataStoreResult] =
       val argsBuilder = com.pulumi.gcp.discoveryengine.inputs.GetDataStoreArgs.builder
       com.pulumi.gcp.discoveryengine.DiscoveryengineFunctions.getDataStore(args(argsBuilder).build)
@@ -1315,7 +1317,7 @@ object discoveryengine:
      *  See [the official documentation](https://cloud.google.com/generative-ai-app-builder/docs/manage-data-stores)
      *  and [API](https://cloud.google.com/generative-ai-app-builder/docs/reference/rest/v1/projects.locations.collections.dataStores/get).
      */
-    def getDataStorePlain(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.GetDataStorePlainArgs.Builder] = scala.Predef.identity):
+    inline def getDataStorePlain(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.GetDataStorePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.discoveryengine.outputs.GetDataStoreResult] =
       val argsBuilder = com.pulumi.gcp.discoveryengine.inputs.GetDataStorePlainArgs.builder
       com.pulumi.gcp.discoveryengine.DiscoveryengineFunctions.getDataStorePlain(args(argsBuilder).build)
@@ -1325,7 +1327,7 @@ object discoveryengine:
      *  See [the official documentation](https://cloud.google.com/generative-ai-app-builder/docs/manage-data-stores)
      *  and [API](https://cloud.google.com/generative-ai-app-builder/docs/reference/rest/v1/projects.locations.collections.dataStores/list).
      */
-    def getDataStores(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.GetDataStoresArgs.Builder] = scala.Predef.identity):
+    inline def getDataStores(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.GetDataStoresArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.discoveryengine.outputs.GetDataStoresResult] =
       val argsBuilder = com.pulumi.gcp.discoveryengine.inputs.GetDataStoresArgs.builder
       com.pulumi.gcp.discoveryengine.DiscoveryengineFunctions.getDataStores(args(argsBuilder).build)
@@ -1335,7 +1337,7 @@ object discoveryengine:
      *  See [the official documentation](https://cloud.google.com/generative-ai-app-builder/docs/manage-data-stores)
      *  and [API](https://cloud.google.com/generative-ai-app-builder/docs/reference/rest/v1/projects.locations.collections.dataStores/list).
      */
-    def getDataStoresPlain(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.GetDataStoresPlainArgs.Builder] = scala.Predef.identity):
+    inline def getDataStoresPlain(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.GetDataStoresPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.discoveryengine.outputs.GetDataStoresResult] =
       val argsBuilder = com.pulumi.gcp.discoveryengine.inputs.GetDataStoresPlainArgs.builder
       com.pulumi.gcp.discoveryengine.DiscoveryengineFunctions.getDataStoresPlain(args(argsBuilder).build)

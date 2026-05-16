@@ -75,67 +75,69 @@ object dms:
         com.pulumi.aws.dms.ReplicationConfigArgs.Builder =
       builder.tags(transformOptOutputMap(builder.build.tags, fn))
 
-  type DmsFunctions = com.pulumi.aws.dms.DmsFunctions
   object DmsFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.aws.dms.DmsFunctions.*
-  extension (self: DmsFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /** Data source for managing an AWS DMS (Database Migration) Certificate. */
-    def getCertificate(args: Endofunction[com.pulumi.aws.dms.inputs.GetCertificateArgs.Builder] = scala.Predef.identity):
+    inline def getCertificate(args: Endofunction[com.pulumi.aws.dms.inputs.GetCertificateArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.dms.outputs.GetCertificateResult] =
       val argsBuilder = com.pulumi.aws.dms.inputs.GetCertificateArgs.builder
       com.pulumi.aws.dms.DmsFunctions.getCertificate(args(argsBuilder).build)
 
     /** Data source for managing an AWS DMS (Database Migration) Certificate. */
-    def getCertificatePlain(args: Endofunction[com.pulumi.aws.dms.inputs.GetCertificatePlainArgs.Builder] = scala.Predef.identity):
+    inline def getCertificatePlain(args: Endofunction[com.pulumi.aws.dms.inputs.GetCertificatePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.dms.outputs.GetCertificateResult] =
       val argsBuilder = com.pulumi.aws.dms.inputs.GetCertificatePlainArgs.builder
       com.pulumi.aws.dms.DmsFunctions.getCertificatePlain(args(argsBuilder).build)
 
     /** Data source for managing an AWS DMS (Database Migration) Endpoint. */
-    def getEndpoint(args: Endofunction[com.pulumi.aws.dms.inputs.GetEndpointArgs.Builder] = scala.Predef.identity):
+    inline def getEndpoint(args: Endofunction[com.pulumi.aws.dms.inputs.GetEndpointArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.dms.outputs.GetEndpointResult] =
       val argsBuilder = com.pulumi.aws.dms.inputs.GetEndpointArgs.builder
       com.pulumi.aws.dms.DmsFunctions.getEndpoint(args(argsBuilder).build)
 
     /** Data source for managing an AWS DMS (Database Migration) Endpoint. */
-    def getEndpointPlain(args: Endofunction[com.pulumi.aws.dms.inputs.GetEndpointPlainArgs.Builder] = scala.Predef.identity):
+    inline def getEndpointPlain(args: Endofunction[com.pulumi.aws.dms.inputs.GetEndpointPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.dms.outputs.GetEndpointResult] =
       val argsBuilder = com.pulumi.aws.dms.inputs.GetEndpointPlainArgs.builder
       com.pulumi.aws.dms.DmsFunctions.getEndpointPlain(args(argsBuilder).build)
 
     /** Data source for managing an AWS DMS (Database Migration) Replication Instance. */
-    def getReplicationInstance(args: Endofunction[com.pulumi.aws.dms.inputs.GetReplicationInstanceArgs.Builder] = scala.Predef.identity):
+    inline def getReplicationInstance(args: Endofunction[com.pulumi.aws.dms.inputs.GetReplicationInstanceArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.dms.outputs.GetReplicationInstanceResult] =
       val argsBuilder = com.pulumi.aws.dms.inputs.GetReplicationInstanceArgs.builder
       com.pulumi.aws.dms.DmsFunctions.getReplicationInstance(args(argsBuilder).build)
 
     /** Data source for managing an AWS DMS (Database Migration) Replication Instance. */
-    def getReplicationInstancePlain(args: Endofunction[com.pulumi.aws.dms.inputs.GetReplicationInstancePlainArgs.Builder] = scala.Predef.identity):
+    inline def getReplicationInstancePlain(args: Endofunction[com.pulumi.aws.dms.inputs.GetReplicationInstancePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.dms.outputs.GetReplicationInstanceResult] =
       val argsBuilder = com.pulumi.aws.dms.inputs.GetReplicationInstancePlainArgs.builder
       com.pulumi.aws.dms.DmsFunctions.getReplicationInstancePlain(args(argsBuilder).build)
 
     /** Data source for managing an AWS DMS (Database Migration) Replication Subnet Group. */
-    def getReplicationSubnetGroup(args: Endofunction[com.pulumi.aws.dms.inputs.GetReplicationSubnetGroupArgs.Builder] = scala.Predef.identity):
+    inline def getReplicationSubnetGroup(args: Endofunction[com.pulumi.aws.dms.inputs.GetReplicationSubnetGroupArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.dms.outputs.GetReplicationSubnetGroupResult] =
       val argsBuilder = com.pulumi.aws.dms.inputs.GetReplicationSubnetGroupArgs.builder
       com.pulumi.aws.dms.DmsFunctions.getReplicationSubnetGroup(args(argsBuilder).build)
 
     /** Data source for managing an AWS DMS (Database Migration) Replication Subnet Group. */
-    def getReplicationSubnetGroupPlain(args: Endofunction[com.pulumi.aws.dms.inputs.GetReplicationSubnetGroupPlainArgs.Builder] = scala.Predef.identity):
+    inline def getReplicationSubnetGroupPlain(args: Endofunction[com.pulumi.aws.dms.inputs.GetReplicationSubnetGroupPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.dms.outputs.GetReplicationSubnetGroupResult] =
       val argsBuilder = com.pulumi.aws.dms.inputs.GetReplicationSubnetGroupPlainArgs.builder
       com.pulumi.aws.dms.DmsFunctions.getReplicationSubnetGroupPlain(args(argsBuilder).build)
 
     /** Data source for managing an AWS DMS (Database Migration) Replication Task. */
-    def getReplicationTask(args: Endofunction[com.pulumi.aws.dms.inputs.GetReplicationTaskArgs.Builder] = scala.Predef.identity):
+    inline def getReplicationTask(args: Endofunction[com.pulumi.aws.dms.inputs.GetReplicationTaskArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.dms.outputs.GetReplicationTaskResult] =
       val argsBuilder = com.pulumi.aws.dms.inputs.GetReplicationTaskArgs.builder
       com.pulumi.aws.dms.DmsFunctions.getReplicationTask(args(argsBuilder).build)
 
     /** Data source for managing an AWS DMS (Database Migration) Replication Task. */
-    def getReplicationTaskPlain(args: Endofunction[com.pulumi.aws.dms.inputs.GetReplicationTaskPlainArgs.Builder] = scala.Predef.identity):
+    inline def getReplicationTaskPlain(args: Endofunction[com.pulumi.aws.dms.inputs.GetReplicationTaskPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.dms.outputs.GetReplicationTaskResult] =
       val argsBuilder = com.pulumi.aws.dms.inputs.GetReplicationTaskPlainArgs.builder
       com.pulumi.aws.dms.DmsFunctions.getReplicationTaskPlain(args(argsBuilder).build)

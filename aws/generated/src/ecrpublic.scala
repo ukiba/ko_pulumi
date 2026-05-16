@@ -47,17 +47,19 @@ object ecrpublic:
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
-  type EcrpublicFunctions = com.pulumi.aws.ecrpublic.EcrpublicFunctions
   object EcrpublicFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.aws.ecrpublic.EcrpublicFunctions.*
-  extension (self: EcrpublicFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /**
      * The Public ECR Authorization Token data source allows the authorization token, token expiration date, user name, and password to be retrieved for a Public ECR repository.
      * 
      *  &gt; **NOTE:** This data source can only be used in the `us-east-1` region.
      */
-    def getAuthorizationToken(args: Endofunction[com.pulumi.aws.ecrpublic.inputs.GetAuthorizationTokenArgs.Builder] = scala.Predef.identity):
+    inline def getAuthorizationToken(args: Endofunction[com.pulumi.aws.ecrpublic.inputs.GetAuthorizationTokenArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.ecrpublic.outputs.GetAuthorizationTokenResult] =
       val argsBuilder = com.pulumi.aws.ecrpublic.inputs.GetAuthorizationTokenArgs.builder
       com.pulumi.aws.ecrpublic.EcrpublicFunctions.getAuthorizationToken(args(argsBuilder).build)
@@ -67,19 +69,19 @@ object ecrpublic:
      * 
      *  &gt; **NOTE:** This data source can only be used in the `us-east-1` region.
      */
-    def getAuthorizationTokenPlain(args: Endofunction[com.pulumi.aws.ecrpublic.inputs.GetAuthorizationTokenPlainArgs.Builder] = scala.Predef.identity):
+    inline def getAuthorizationTokenPlain(args: Endofunction[com.pulumi.aws.ecrpublic.inputs.GetAuthorizationTokenPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.ecrpublic.outputs.GetAuthorizationTokenResult] =
       val argsBuilder = com.pulumi.aws.ecrpublic.inputs.GetAuthorizationTokenPlainArgs.builder
       com.pulumi.aws.ecrpublic.EcrpublicFunctions.getAuthorizationTokenPlain(args(argsBuilder).build)
 
     /** The ECR Public Images data source allows the list of images in a specified public repository to be retrieved. */
-    def getImages(args: Endofunction[com.pulumi.aws.ecrpublic.inputs.GetImagesArgs.Builder] = scala.Predef.identity):
+    inline def getImages(args: Endofunction[com.pulumi.aws.ecrpublic.inputs.GetImagesArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.ecrpublic.outputs.GetImagesResult] =
       val argsBuilder = com.pulumi.aws.ecrpublic.inputs.GetImagesArgs.builder
       com.pulumi.aws.ecrpublic.EcrpublicFunctions.getImages(args(argsBuilder).build)
 
     /** The ECR Public Images data source allows the list of images in a specified public repository to be retrieved. */
-    def getImagesPlain(args: Endofunction[com.pulumi.aws.ecrpublic.inputs.GetImagesPlainArgs.Builder] = scala.Predef.identity):
+    inline def getImagesPlain(args: Endofunction[com.pulumi.aws.ecrpublic.inputs.GetImagesPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.ecrpublic.outputs.GetImagesResult] =
       val argsBuilder = com.pulumi.aws.ecrpublic.inputs.GetImagesPlainArgs.builder
       com.pulumi.aws.ecrpublic.EcrpublicFunctions.getImagesPlain(args(argsBuilder).build)

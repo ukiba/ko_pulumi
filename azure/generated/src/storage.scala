@@ -233,19 +233,21 @@ object storage:
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
-  type StorageFunctions = com.pulumi.azure.storage.StorageFunctions
   object StorageFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.azure.storage.StorageFunctions.*
-  extension (self: StorageFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /** Use this data source to access information about an existing Storage Account. */
-    def getAccount(args: Endofunction[com.pulumi.azure.storage.inputs.GetAccountArgs.Builder] = scala.Predef.identity):
+    inline def getAccount(args: Endofunction[com.pulumi.azure.storage.inputs.GetAccountArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.storage.outputs.GetAccountResult] =
       val argsBuilder = com.pulumi.azure.storage.inputs.GetAccountArgs.builder
       com.pulumi.azure.storage.StorageFunctions.getAccount(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing Storage Account. */
-    def getAccountPlain(args: Endofunction[com.pulumi.azure.storage.inputs.GetAccountPlainArgs.Builder] = scala.Predef.identity):
+    inline def getAccountPlain(args: Endofunction[com.pulumi.azure.storage.inputs.GetAccountPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.storage.outputs.GetAccountResult] =
       val argsBuilder = com.pulumi.azure.storage.inputs.GetAccountPlainArgs.builder
       com.pulumi.azure.storage.StorageFunctions.getAccountPlain(args(argsBuilder).build)
@@ -255,7 +257,7 @@ object storage:
      * 
      *  Shared access signatures allow fine-grained, ephemeral access control to various aspects of an Azure Storage Account Blob Container.
      */
-    def getAccountBlobContainerSAS(args: Endofunction[com.pulumi.azure.storage.inputs.GetAccountBlobContainerSASArgs.Builder] = scala.Predef.identity):
+    inline def getAccountBlobContainerSAS(args: Endofunction[com.pulumi.azure.storage.inputs.GetAccountBlobContainerSASArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.storage.outputs.GetAccountBlobContainerSASResult] =
       val argsBuilder = com.pulumi.azure.storage.inputs.GetAccountBlobContainerSASArgs.builder
       com.pulumi.azure.storage.StorageFunctions.getAccountBlobContainerSAS(args(argsBuilder).build)
@@ -265,7 +267,7 @@ object storage:
      * 
      *  Shared access signatures allow fine-grained, ephemeral access control to various aspects of an Azure Storage Account Blob Container.
      */
-    def getAccountBlobContainerSASPlain(args: Endofunction[com.pulumi.azure.storage.inputs.GetAccountBlobContainerSASPlainArgs.Builder] = scala.Predef.identity):
+    inline def getAccountBlobContainerSASPlain(args: Endofunction[com.pulumi.azure.storage.inputs.GetAccountBlobContainerSASPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.storage.outputs.GetAccountBlobContainerSASResult] =
       val argsBuilder = com.pulumi.azure.storage.inputs.GetAccountBlobContainerSASPlainArgs.builder
       com.pulumi.azure.storage.StorageFunctions.getAccountBlobContainerSASPlain(args(argsBuilder).build)
@@ -278,7 +280,7 @@ object storage:
      *  Note that this is an [Account SAS](https://docs.microsoft.com/rest/api/storageservices/constructing-an-account-sas)
      *  and *not* a [Service SAS](https://docs.microsoft.com/rest/api/storageservices/constructing-a-service-sas).
      */
-    def getAccountSAS(args: Endofunction[com.pulumi.azure.storage.inputs.GetAccountSASArgs.Builder] = scala.Predef.identity):
+    inline def getAccountSAS(args: Endofunction[com.pulumi.azure.storage.inputs.GetAccountSASArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.storage.outputs.GetAccountSASResult] =
       val argsBuilder = com.pulumi.azure.storage.inputs.GetAccountSASArgs.builder
       com.pulumi.azure.storage.StorageFunctions.getAccountSAS(args(argsBuilder).build)
@@ -291,67 +293,67 @@ object storage:
      *  Note that this is an [Account SAS](https://docs.microsoft.com/rest/api/storageservices/constructing-an-account-sas)
      *  and *not* a [Service SAS](https://docs.microsoft.com/rest/api/storageservices/constructing-a-service-sas).
      */
-    def getAccountSASPlain(args: Endofunction[com.pulumi.azure.storage.inputs.GetAccountSASPlainArgs.Builder] = scala.Predef.identity):
+    inline def getAccountSASPlain(args: Endofunction[com.pulumi.azure.storage.inputs.GetAccountSASPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.storage.outputs.GetAccountSASResult] =
       val argsBuilder = com.pulumi.azure.storage.inputs.GetAccountSASPlainArgs.builder
       com.pulumi.azure.storage.StorageFunctions.getAccountSASPlain(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing Storage Blob. */
-    def getBlob(args: Endofunction[com.pulumi.azure.storage.inputs.GetBlobArgs.Builder] = scala.Predef.identity):
+    inline def getBlob(args: Endofunction[com.pulumi.azure.storage.inputs.GetBlobArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.storage.outputs.GetBlobResult] =
       val argsBuilder = com.pulumi.azure.storage.inputs.GetBlobArgs.builder
       com.pulumi.azure.storage.StorageFunctions.getBlob(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing Storage Blob. */
-    def getBlobPlain(args: Endofunction[com.pulumi.azure.storage.inputs.GetBlobPlainArgs.Builder] = scala.Predef.identity):
+    inline def getBlobPlain(args: Endofunction[com.pulumi.azure.storage.inputs.GetBlobPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.storage.outputs.GetBlobResult] =
       val argsBuilder = com.pulumi.azure.storage.inputs.GetBlobPlainArgs.builder
       com.pulumi.azure.storage.StorageFunctions.getBlobPlain(args(argsBuilder).build)
 
     /** Use this data source to access information about the existing Storage Containers within a Storage Account. */
-    def getContainers(args: Endofunction[com.pulumi.azure.storage.inputs.GetContainersArgs.Builder] = scala.Predef.identity):
+    inline def getContainers(args: Endofunction[com.pulumi.azure.storage.inputs.GetContainersArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.storage.outputs.GetContainersResult] =
       val argsBuilder = com.pulumi.azure.storage.inputs.GetContainersArgs.builder
       com.pulumi.azure.storage.StorageFunctions.getContainers(args(argsBuilder).build)
 
     /** Use this data source to access information about the existing Storage Containers within a Storage Account. */
-    def getContainersPlain(args: Endofunction[com.pulumi.azure.storage.inputs.GetContainersPlainArgs.Builder] = scala.Predef.identity):
+    inline def getContainersPlain(args: Endofunction[com.pulumi.azure.storage.inputs.GetContainersPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.storage.outputs.GetContainersResult] =
       val argsBuilder = com.pulumi.azure.storage.inputs.GetContainersPlainArgs.builder
       com.pulumi.azure.storage.StorageFunctions.getContainersPlain(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing Storage Encryption Scope. */
-    def getEncryptionScope(args: Endofunction[com.pulumi.azure.storage.inputs.GetEncryptionScopeArgs.Builder] = scala.Predef.identity):
+    inline def getEncryptionScope(args: Endofunction[com.pulumi.azure.storage.inputs.GetEncryptionScopeArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.storage.outputs.GetEncryptionScopeResult] =
       val argsBuilder = com.pulumi.azure.storage.inputs.GetEncryptionScopeArgs.builder
       com.pulumi.azure.storage.StorageFunctions.getEncryptionScope(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing Storage Encryption Scope. */
-    def getEncryptionScopePlain(args: Endofunction[com.pulumi.azure.storage.inputs.GetEncryptionScopePlainArgs.Builder] = scala.Predef.identity):
+    inline def getEncryptionScopePlain(args: Endofunction[com.pulumi.azure.storage.inputs.GetEncryptionScopePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.storage.outputs.GetEncryptionScopeResult] =
       val argsBuilder = com.pulumi.azure.storage.inputs.GetEncryptionScopePlainArgs.builder
       com.pulumi.azure.storage.StorageFunctions.getEncryptionScopePlain(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing Storage Management Policy. */
-    def getPolicy(args: Endofunction[com.pulumi.azure.storage.inputs.GetPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getPolicy(args: Endofunction[com.pulumi.azure.storage.inputs.GetPolicyArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.storage.outputs.GetPolicyResult] =
       val argsBuilder = com.pulumi.azure.storage.inputs.GetPolicyArgs.builder
       com.pulumi.azure.storage.StorageFunctions.getPolicy(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing Storage Management Policy. */
-    def getPolicyPlain(args: Endofunction[com.pulumi.azure.storage.inputs.GetPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getPolicyPlain(args: Endofunction[com.pulumi.azure.storage.inputs.GetPolicyPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.storage.outputs.GetPolicyResult] =
       val argsBuilder = com.pulumi.azure.storage.inputs.GetPolicyPlainArgs.builder
       com.pulumi.azure.storage.StorageFunctions.getPolicyPlain(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing Storage Queue. */
-    def getQueue(args: Endofunction[com.pulumi.azure.storage.inputs.GetQueueArgs.Builder] = scala.Predef.identity):
+    inline def getQueue(args: Endofunction[com.pulumi.azure.storage.inputs.GetQueueArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.storage.outputs.GetQueueResult] =
       val argsBuilder = com.pulumi.azure.storage.inputs.GetQueueArgs.builder
       com.pulumi.azure.storage.StorageFunctions.getQueue(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing Storage Queue. */
-    def getQueuePlain(args: Endofunction[com.pulumi.azure.storage.inputs.GetQueuePlainArgs.Builder] = scala.Predef.identity):
+    inline def getQueuePlain(args: Endofunction[com.pulumi.azure.storage.inputs.GetQueuePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.storage.outputs.GetQueueResult] =
       val argsBuilder = com.pulumi.azure.storage.inputs.GetQueuePlainArgs.builder
       com.pulumi.azure.storage.StorageFunctions.getQueuePlain(args(argsBuilder).build)
@@ -361,7 +363,7 @@ object storage:
      * 
      *  &gt; **Note:** Shared Key authentication will always be used for this data source, as AzureAD authentication is not supported by the Storage API for files.
      */
-    def getShare(args: Endofunction[com.pulumi.azure.storage.inputs.GetShareArgs.Builder] = scala.Predef.identity):
+    inline def getShare(args: Endofunction[com.pulumi.azure.storage.inputs.GetShareArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.storage.outputs.GetShareResult] =
       val argsBuilder = com.pulumi.azure.storage.inputs.GetShareArgs.builder
       com.pulumi.azure.storage.StorageFunctions.getShare(args(argsBuilder).build)
@@ -371,79 +373,79 @@ object storage:
      * 
      *  &gt; **Note:** Shared Key authentication will always be used for this data source, as AzureAD authentication is not supported by the Storage API for files.
      */
-    def getSharePlain(args: Endofunction[com.pulumi.azure.storage.inputs.GetSharePlainArgs.Builder] = scala.Predef.identity):
+    inline def getSharePlain(args: Endofunction[com.pulumi.azure.storage.inputs.GetSharePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.storage.outputs.GetShareResult] =
       val argsBuilder = com.pulumi.azure.storage.inputs.GetSharePlainArgs.builder
       com.pulumi.azure.storage.StorageFunctions.getSharePlain(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing Storage Container. */
-    def getStorageContainer(args: Endofunction[com.pulumi.azure.storage.inputs.GetStorageContainerArgs.Builder] = scala.Predef.identity):
+    inline def getStorageContainer(args: Endofunction[com.pulumi.azure.storage.inputs.GetStorageContainerArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.storage.outputs.GetStorageContainerResult] =
       val argsBuilder = com.pulumi.azure.storage.inputs.GetStorageContainerArgs.builder
       com.pulumi.azure.storage.StorageFunctions.getStorageContainer(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing Storage Container. */
-    def getStorageContainerPlain(args: Endofunction[com.pulumi.azure.storage.inputs.GetStorageContainerPlainArgs.Builder] = scala.Predef.identity):
+    inline def getStorageContainerPlain(args: Endofunction[com.pulumi.azure.storage.inputs.GetStorageContainerPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.storage.outputs.GetStorageContainerResult] =
       val argsBuilder = com.pulumi.azure.storage.inputs.GetStorageContainerPlainArgs.builder
       com.pulumi.azure.storage.StorageFunctions.getStorageContainerPlain(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing Storage Sync. */
-    def getSync(args: Endofunction[com.pulumi.azure.storage.inputs.GetSyncArgs.Builder] = scala.Predef.identity):
+    inline def getSync(args: Endofunction[com.pulumi.azure.storage.inputs.GetSyncArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.storage.outputs.GetSyncResult] =
       val argsBuilder = com.pulumi.azure.storage.inputs.GetSyncArgs.builder
       com.pulumi.azure.storage.StorageFunctions.getSync(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing Storage Sync. */
-    def getSyncPlain(args: Endofunction[com.pulumi.azure.storage.inputs.GetSyncPlainArgs.Builder] = scala.Predef.identity):
+    inline def getSyncPlain(args: Endofunction[com.pulumi.azure.storage.inputs.GetSyncPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.storage.outputs.GetSyncResult] =
       val argsBuilder = com.pulumi.azure.storage.inputs.GetSyncPlainArgs.builder
       com.pulumi.azure.storage.StorageFunctions.getSyncPlain(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing Storage Sync Group. */
-    def getSyncGroup(args: Endofunction[com.pulumi.azure.storage.inputs.GetSyncGroupArgs.Builder] = scala.Predef.identity):
+    inline def getSyncGroup(args: Endofunction[com.pulumi.azure.storage.inputs.GetSyncGroupArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.storage.outputs.GetSyncGroupResult] =
       val argsBuilder = com.pulumi.azure.storage.inputs.GetSyncGroupArgs.builder
       com.pulumi.azure.storage.StorageFunctions.getSyncGroup(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing Storage Sync Group. */
-    def getSyncGroupPlain(args: Endofunction[com.pulumi.azure.storage.inputs.GetSyncGroupPlainArgs.Builder] = scala.Predef.identity):
+    inline def getSyncGroupPlain(args: Endofunction[com.pulumi.azure.storage.inputs.GetSyncGroupPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.storage.outputs.GetSyncGroupResult] =
       val argsBuilder = com.pulumi.azure.storage.inputs.GetSyncGroupPlainArgs.builder
       com.pulumi.azure.storage.StorageFunctions.getSyncGroupPlain(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing Storage Table. */
-    def getTable(args: Endofunction[com.pulumi.azure.storage.inputs.GetTableArgs.Builder] = scala.Predef.identity):
+    inline def getTable(args: Endofunction[com.pulumi.azure.storage.inputs.GetTableArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.storage.outputs.GetTableResult] =
       val argsBuilder = com.pulumi.azure.storage.inputs.GetTableArgs.builder
       com.pulumi.azure.storage.StorageFunctions.getTable(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing Storage Table. */
-    def getTablePlain(args: Endofunction[com.pulumi.azure.storage.inputs.GetTablePlainArgs.Builder] = scala.Predef.identity):
+    inline def getTablePlain(args: Endofunction[com.pulumi.azure.storage.inputs.GetTablePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.storage.outputs.GetTableResult] =
       val argsBuilder = com.pulumi.azure.storage.inputs.GetTablePlainArgs.builder
       com.pulumi.azure.storage.StorageFunctions.getTablePlain(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing Storage Table Entity. */
-    def getTableEntities(args: Endofunction[com.pulumi.azure.storage.inputs.GetTableEntitiesArgs.Builder] = scala.Predef.identity):
+    inline def getTableEntities(args: Endofunction[com.pulumi.azure.storage.inputs.GetTableEntitiesArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.storage.outputs.GetTableEntitiesResult] =
       val argsBuilder = com.pulumi.azure.storage.inputs.GetTableEntitiesArgs.builder
       com.pulumi.azure.storage.StorageFunctions.getTableEntities(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing Storage Table Entity. */
-    def getTableEntitiesPlain(args: Endofunction[com.pulumi.azure.storage.inputs.GetTableEntitiesPlainArgs.Builder] = scala.Predef.identity):
+    inline def getTableEntitiesPlain(args: Endofunction[com.pulumi.azure.storage.inputs.GetTableEntitiesPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.storage.outputs.GetTableEntitiesResult] =
       val argsBuilder = com.pulumi.azure.storage.inputs.GetTableEntitiesPlainArgs.builder
       com.pulumi.azure.storage.StorageFunctions.getTableEntitiesPlain(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing Storage Table Entity. */
-    def getTableEntity(args: Endofunction[com.pulumi.azure.storage.inputs.GetTableEntityArgs.Builder] = scala.Predef.identity):
+    inline def getTableEntity(args: Endofunction[com.pulumi.azure.storage.inputs.GetTableEntityArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.storage.outputs.GetTableEntityResult] =
       val argsBuilder = com.pulumi.azure.storage.inputs.GetTableEntityArgs.builder
       com.pulumi.azure.storage.StorageFunctions.getTableEntity(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing Storage Table Entity. */
-    def getTableEntityPlain(args: Endofunction[com.pulumi.azure.storage.inputs.GetTableEntityPlainArgs.Builder] = scala.Predef.identity):
+    inline def getTableEntityPlain(args: Endofunction[com.pulumi.azure.storage.inputs.GetTableEntityPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.storage.outputs.GetTableEntityResult] =
       val argsBuilder = com.pulumi.azure.storage.inputs.GetTableEntityPlainArgs.builder
       com.pulumi.azure.storage.StorageFunctions.getTableEntityPlain(args(argsBuilder).build)

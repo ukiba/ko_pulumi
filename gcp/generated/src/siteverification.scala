@@ -4,11 +4,13 @@ package gcp
 import com.pulumi.resources.CustomResourceOptions
 
 object siteverification:
-  type SiteverificationFunctions = com.pulumi.gcp.siteverification.SiteverificationFunctions
   object SiteverificationFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.gcp.siteverification.SiteverificationFunctions.*
-  extension (self: SiteverificationFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /**
      * A verification token is used to demonstrate ownership of a website or domain.
      * 
@@ -18,7 +20,7 @@ object siteverification:
      *  * How-to Guides
      *      * [Getting Started](https://developers.google.com/site-verification/v1/getting_started)
      */
-    def getToken(args: Endofunction[com.pulumi.gcp.siteverification.inputs.GetTokenArgs.Builder] = scala.Predef.identity):
+    inline def getToken(args: Endofunction[com.pulumi.gcp.siteverification.inputs.GetTokenArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.siteverification.outputs.GetTokenResult] =
       val argsBuilder = com.pulumi.gcp.siteverification.inputs.GetTokenArgs.builder
       com.pulumi.gcp.siteverification.SiteverificationFunctions.getToken(args(argsBuilder).build)
@@ -32,7 +34,7 @@ object siteverification:
      *  * How-to Guides
      *      * [Getting Started](https://developers.google.com/site-verification/v1/getting_started)
      */
-    def getTokenPlain(args: Endofunction[com.pulumi.gcp.siteverification.inputs.GetTokenPlainArgs.Builder] = scala.Predef.identity):
+    inline def getTokenPlain(args: Endofunction[com.pulumi.gcp.siteverification.inputs.GetTokenPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.siteverification.outputs.GetTokenResult] =
       val argsBuilder = com.pulumi.gcp.siteverification.inputs.GetTokenPlainArgs.builder
       com.pulumi.gcp.siteverification.SiteverificationFunctions.getTokenPlain(args(argsBuilder).build)

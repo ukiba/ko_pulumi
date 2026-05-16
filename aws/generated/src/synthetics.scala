@@ -4,31 +4,33 @@ package aws
 import com.pulumi.resources.CustomResourceOptions
 
 object synthetics:
-  type SyntheticsFunctions = com.pulumi.aws.synthetics.SyntheticsFunctions
   object SyntheticsFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.aws.synthetics.SyntheticsFunctions.*
-  extension (self: SyntheticsFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /** Data source for managing an AWS CloudWatch Synthetics Runtime Version. */
-    def getRuntimeVersion(args: Endofunction[com.pulumi.aws.synthetics.inputs.GetRuntimeVersionArgs.Builder] = scala.Predef.identity):
+    inline def getRuntimeVersion(args: Endofunction[com.pulumi.aws.synthetics.inputs.GetRuntimeVersionArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.synthetics.outputs.GetRuntimeVersionResult] =
       val argsBuilder = com.pulumi.aws.synthetics.inputs.GetRuntimeVersionArgs.builder
       com.pulumi.aws.synthetics.SyntheticsFunctions.getRuntimeVersion(args(argsBuilder).build)
 
     /** Data source for managing an AWS CloudWatch Synthetics Runtime Version. */
-    def getRuntimeVersionPlain(args: Endofunction[com.pulumi.aws.synthetics.inputs.GetRuntimeVersionPlainArgs.Builder] = scala.Predef.identity):
+    inline def getRuntimeVersionPlain(args: Endofunction[com.pulumi.aws.synthetics.inputs.GetRuntimeVersionPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.synthetics.outputs.GetRuntimeVersionResult] =
       val argsBuilder = com.pulumi.aws.synthetics.inputs.GetRuntimeVersionPlainArgs.builder
       com.pulumi.aws.synthetics.SyntheticsFunctions.getRuntimeVersionPlain(args(argsBuilder).build)
 
     /** Data source for managing an AWS CloudWatch Synthetics Runtime Versions. */
-    def getRuntimeVersions(args: Endofunction[com.pulumi.aws.synthetics.inputs.GetRuntimeVersionsArgs.Builder] = scala.Predef.identity):
+    inline def getRuntimeVersions(args: Endofunction[com.pulumi.aws.synthetics.inputs.GetRuntimeVersionsArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.synthetics.outputs.GetRuntimeVersionsResult] =
       val argsBuilder = com.pulumi.aws.synthetics.inputs.GetRuntimeVersionsArgs.builder
       com.pulumi.aws.synthetics.SyntheticsFunctions.getRuntimeVersions(args(argsBuilder).build)
 
     /** Data source for managing an AWS CloudWatch Synthetics Runtime Versions. */
-    def getRuntimeVersionsPlain(args: Endofunction[com.pulumi.aws.synthetics.inputs.GetRuntimeVersionsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getRuntimeVersionsPlain(args: Endofunction[com.pulumi.aws.synthetics.inputs.GetRuntimeVersionsPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.synthetics.outputs.GetRuntimeVersionsResult] =
       val argsBuilder = com.pulumi.aws.synthetics.inputs.GetRuntimeVersionsPlainArgs.builder
       com.pulumi.aws.synthetics.SyntheticsFunctions.getRuntimeVersionsPlain(args(argsBuilder).build)

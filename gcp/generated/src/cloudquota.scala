@@ -4,31 +4,33 @@ package gcp
 import com.pulumi.resources.CustomResourceOptions
 
 object cloudquota:
-  type CloudquotaFunctions = com.pulumi.gcp.cloudquota.CloudquotaFunctions
   object CloudquotaFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.gcp.cloudquota.CloudquotaFunctions.*
-  extension (self: CloudquotaFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /** Provides information about a particular quota for a given project, folder or organization. */
-    def getSQuotaInfo(args: Endofunction[com.pulumi.gcp.cloudquota.inputs.GetSQuotaInfoArgs.Builder] = scala.Predef.identity):
+    inline def getSQuotaInfo(args: Endofunction[com.pulumi.gcp.cloudquota.inputs.GetSQuotaInfoArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.cloudquota.outputs.GetSQuotaInfoResult] =
       val argsBuilder = com.pulumi.gcp.cloudquota.inputs.GetSQuotaInfoArgs.builder
       com.pulumi.gcp.cloudquota.CloudquotaFunctions.getSQuotaInfo(args(argsBuilder).build)
 
     /** Provides information about a particular quota for a given project, folder or organization. */
-    def getSQuotaInfoPlain(args: Endofunction[com.pulumi.gcp.cloudquota.inputs.GetSQuotaInfoPlainArgs.Builder] = scala.Predef.identity):
+    inline def getSQuotaInfoPlain(args: Endofunction[com.pulumi.gcp.cloudquota.inputs.GetSQuotaInfoPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.cloudquota.outputs.GetSQuotaInfoResult] =
       val argsBuilder = com.pulumi.gcp.cloudquota.inputs.GetSQuotaInfoPlainArgs.builder
       com.pulumi.gcp.cloudquota.CloudquotaFunctions.getSQuotaInfoPlain(args(argsBuilder).build)
 
     /** Provides information about all quotas for a given project, folder or organization. */
-    def getSQuotaInfos(args: Endofunction[com.pulumi.gcp.cloudquota.inputs.GetSQuotaInfosArgs.Builder] = scala.Predef.identity):
+    inline def getSQuotaInfos(args: Endofunction[com.pulumi.gcp.cloudquota.inputs.GetSQuotaInfosArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.cloudquota.outputs.GetSQuotaInfosResult] =
       val argsBuilder = com.pulumi.gcp.cloudquota.inputs.GetSQuotaInfosArgs.builder
       com.pulumi.gcp.cloudquota.CloudquotaFunctions.getSQuotaInfos(args(argsBuilder).build)
 
     /** Provides information about all quotas for a given project, folder or organization. */
-    def getSQuotaInfosPlain(args: Endofunction[com.pulumi.gcp.cloudquota.inputs.GetSQuotaInfosPlainArgs.Builder] = scala.Predef.identity):
+    inline def getSQuotaInfosPlain(args: Endofunction[com.pulumi.gcp.cloudquota.inputs.GetSQuotaInfosPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.cloudquota.outputs.GetSQuotaInfosResult] =
       val argsBuilder = com.pulumi.gcp.cloudquota.inputs.GetSQuotaInfosPlainArgs.builder
       com.pulumi.gcp.cloudquota.CloudquotaFunctions.getSQuotaInfosPlain(args(argsBuilder).build)

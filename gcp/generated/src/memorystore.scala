@@ -27,19 +27,21 @@ object memorystore:
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
-  type MemorystoreFunctions = com.pulumi.gcp.memorystore.MemorystoreFunctions
   object MemorystoreFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.gcp.memorystore.MemorystoreFunctions.*
-  extension (self: MemorystoreFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /** Use this data source to get information about the available instance. For more details refer the [API docs](https://cloud.google.com/memorystore/docs/valkey/reference/rest/v1/projects.locations.instances). */
-    def getInstance(args: Endofunction[com.pulumi.gcp.memorystore.inputs.GetInstanceArgs.Builder] = scala.Predef.identity):
+    inline def getInstance(args: Endofunction[com.pulumi.gcp.memorystore.inputs.GetInstanceArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.memorystore.outputs.GetInstanceResult] =
       val argsBuilder = com.pulumi.gcp.memorystore.inputs.GetInstanceArgs.builder
       com.pulumi.gcp.memorystore.MemorystoreFunctions.getInstance(args(argsBuilder).build)
 
     /** Use this data source to get information about the available instance. For more details refer the [API docs](https://cloud.google.com/memorystore/docs/valkey/reference/rest/v1/projects.locations.instances). */
-    def getInstancePlain(args: Endofunction[com.pulumi.gcp.memorystore.inputs.GetInstancePlainArgs.Builder] = scala.Predef.identity):
+    inline def getInstancePlain(args: Endofunction[com.pulumi.gcp.memorystore.inputs.GetInstancePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.memorystore.outputs.GetInstanceResult] =
       val argsBuilder = com.pulumi.gcp.memorystore.inputs.GetInstancePlainArgs.builder
       com.pulumi.gcp.memorystore.MemorystoreFunctions.getInstancePlain(args(argsBuilder).build)

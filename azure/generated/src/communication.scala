@@ -15,19 +15,21 @@ object communication:
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
-  type CommunicationFunctions = com.pulumi.azure.communication.CommunicationFunctions
   object CommunicationFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.azure.communication.CommunicationFunctions.*
-  extension (self: CommunicationFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /** Use this data source to access information about an existing Communication Service. */
-    def getService(args: Endofunction[com.pulumi.azure.communication.inputs.GetServiceArgs.Builder] = scala.Predef.identity):
+    inline def getService(args: Endofunction[com.pulumi.azure.communication.inputs.GetServiceArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.communication.outputs.GetServiceResult] =
       val argsBuilder = com.pulumi.azure.communication.inputs.GetServiceArgs.builder
       com.pulumi.azure.communication.CommunicationFunctions.getService(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing Communication Service. */
-    def getServicePlain(args: Endofunction[com.pulumi.azure.communication.inputs.GetServicePlainArgs.Builder] = scala.Predef.identity):
+    inline def getServicePlain(args: Endofunction[com.pulumi.azure.communication.inputs.GetServicePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.communication.outputs.GetServiceResult] =
       val argsBuilder = com.pulumi.azure.communication.inputs.GetServicePlainArgs.builder
       com.pulumi.azure.communication.CommunicationFunctions.getServicePlain(args(argsBuilder).build)

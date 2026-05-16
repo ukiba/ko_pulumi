@@ -4,19 +4,21 @@ package azure
 import com.pulumi.resources.CustomResourceOptions
 
 object marketplace:
-  type MarketplaceFunctions = com.pulumi.azure.marketplace.MarketplaceFunctions
   object MarketplaceFunctions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.azure.marketplace.MarketplaceFunctions.*
-  extension (self: MarketplaceFunctions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /** Uses this data source to access information about an existing Marketplace Agreement. */
-    def getAgreement(args: Endofunction[com.pulumi.azure.marketplace.inputs.GetAgreementArgs.Builder] = scala.Predef.identity):
+    inline def getAgreement(args: Endofunction[com.pulumi.azure.marketplace.inputs.GetAgreementArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.marketplace.outputs.GetAgreementResult] =
       val argsBuilder = com.pulumi.azure.marketplace.inputs.GetAgreementArgs.builder
       com.pulumi.azure.marketplace.MarketplaceFunctions.getAgreement(args(argsBuilder).build)
 
     /** Uses this data source to access information about an existing Marketplace Agreement. */
-    def getAgreementPlain(args: Endofunction[com.pulumi.azure.marketplace.inputs.GetAgreementPlainArgs.Builder] = scala.Predef.identity):
+    inline def getAgreementPlain(args: Endofunction[com.pulumi.azure.marketplace.inputs.GetAgreementPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.marketplace.outputs.GetAgreementResult] =
       val argsBuilder = com.pulumi.azure.marketplace.inputs.GetAgreementPlainArgs.builder
       com.pulumi.azure.marketplace.MarketplaceFunctions.getAgreementPlain(args(argsBuilder).build)

@@ -38,17 +38,19 @@ object route53:
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder).build)
 
-  type Route53Functions = com.pulumi.aws.route53.Route53Functions
   object Route53Functions:
-    // TODO [erasedDefinitions](https://github.com/lampepfl/dotty-feature-requests/issues/168#issuecomment-1486536624)
-    export com.pulumi.aws.route53.Route53Functions.*
-  extension (self: Route53Functions.type)
+    // Pulumi methods are reproduced as Scala methods.
+    // Java methods cause Scala warnings under -Yexplicit-nulls flag
+    // when the return value is assigned to class member without explicit type, e.g.:
+    //
+    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
+
     /**
      * `aws.route53.DelegationSet` provides details about a specific Route 53 Delegation Set.
      * 
      *  This data source allows to find a list of name servers associated with a specific delegation set.
      */
-    def getDelegationSet(args: Endofunction[com.pulumi.aws.route53.inputs.GetDelegationSetArgs.Builder] = scala.Predef.identity):
+    inline def getDelegationSet(args: Endofunction[com.pulumi.aws.route53.inputs.GetDelegationSetArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.route53.outputs.GetDelegationSetResult] =
       val argsBuilder = com.pulumi.aws.route53.inputs.GetDelegationSetArgs.builder
       com.pulumi.aws.route53.Route53Functions.getDelegationSet(args(argsBuilder).build)
@@ -58,43 +60,43 @@ object route53:
      * 
      *  This data source allows to find a list of name servers associated with a specific delegation set.
      */
-    def getDelegationSetPlain(args: Endofunction[com.pulumi.aws.route53.inputs.GetDelegationSetPlainArgs.Builder] = scala.Predef.identity):
+    inline def getDelegationSetPlain(args: Endofunction[com.pulumi.aws.route53.inputs.GetDelegationSetPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.route53.outputs.GetDelegationSetResult] =
       val argsBuilder = com.pulumi.aws.route53.inputs.GetDelegationSetPlainArgs.builder
       com.pulumi.aws.route53.Route53Functions.getDelegationSetPlain(args(argsBuilder).build)
 
     /** Data source for managing an AWS Route 53 Profiles. */
-    def getProfilesProfiles(args: Endofunction[com.pulumi.aws.route53.inputs.GetProfilesProfilesArgs.Builder] = scala.Predef.identity):
+    inline def getProfilesProfiles(args: Endofunction[com.pulumi.aws.route53.inputs.GetProfilesProfilesArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.route53.outputs.GetProfilesProfilesResult] =
       val argsBuilder = com.pulumi.aws.route53.inputs.GetProfilesProfilesArgs.builder
       com.pulumi.aws.route53.Route53Functions.getProfilesProfiles(args(argsBuilder).build)
 
     /** Data source for managing an AWS Route 53 Profiles. */
-    def getProfilesProfilesPlain(args: Endofunction[com.pulumi.aws.route53.inputs.GetProfilesProfilesPlainArgs.Builder] = scala.Predef.identity):
+    inline def getProfilesProfilesPlain(args: Endofunction[com.pulumi.aws.route53.inputs.GetProfilesProfilesPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.route53.outputs.GetProfilesProfilesResult] =
       val argsBuilder = com.pulumi.aws.route53.inputs.GetProfilesProfilesPlainArgs.builder
       com.pulumi.aws.route53.Route53Functions.getProfilesProfilesPlain(args(argsBuilder).build)
 
     /** `aws.route53.ResolverQueryLogConfig` provides details about a specific Route53 Resolver Query Logging Configuration. */
-    def getQueryLogConfig(args: Endofunction[com.pulumi.aws.route53.inputs.GetQueryLogConfigArgs.Builder] = scala.Predef.identity):
+    inline def getQueryLogConfig(args: Endofunction[com.pulumi.aws.route53.inputs.GetQueryLogConfigArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.route53.outputs.GetQueryLogConfigResult] =
       val argsBuilder = com.pulumi.aws.route53.inputs.GetQueryLogConfigArgs.builder
       com.pulumi.aws.route53.Route53Functions.getQueryLogConfig(args(argsBuilder).build)
 
     /** `aws.route53.ResolverQueryLogConfig` provides details about a specific Route53 Resolver Query Logging Configuration. */
-    def getQueryLogConfigPlain(args: Endofunction[com.pulumi.aws.route53.inputs.GetQueryLogConfigPlainArgs.Builder] = scala.Predef.identity):
+    inline def getQueryLogConfigPlain(args: Endofunction[com.pulumi.aws.route53.inputs.GetQueryLogConfigPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.route53.outputs.GetQueryLogConfigResult] =
       val argsBuilder = com.pulumi.aws.route53.inputs.GetQueryLogConfigPlainArgs.builder
       com.pulumi.aws.route53.Route53Functions.getQueryLogConfigPlain(args(argsBuilder).build)
 
     /** Use this data source to get the details of resource records in a Route 53 hosted zone. */
-    def getRecords(args: Endofunction[com.pulumi.aws.route53.inputs.GetRecordsArgs.Builder] = scala.Predef.identity):
+    inline def getRecords(args: Endofunction[com.pulumi.aws.route53.inputs.GetRecordsArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.route53.outputs.GetRecordsResult] =
       val argsBuilder = com.pulumi.aws.route53.inputs.GetRecordsArgs.builder
       com.pulumi.aws.route53.Route53Functions.getRecords(args(argsBuilder).build)
 
     /** Use this data source to get the details of resource records in a Route 53 hosted zone. */
-    def getRecordsPlain(args: Endofunction[com.pulumi.aws.route53.inputs.GetRecordsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getRecordsPlain(args: Endofunction[com.pulumi.aws.route53.inputs.GetRecordsPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.route53.outputs.GetRecordsResult] =
       val argsBuilder = com.pulumi.aws.route53.inputs.GetRecordsPlainArgs.builder
       com.pulumi.aws.route53.Route53Functions.getRecordsPlain(args(argsBuilder).build)
@@ -104,7 +106,7 @@ object route53:
      * 
      *  This data source allows to find a list of IPaddresses associated with a specific Route53 Resolver Endpoint.
      */
-    def getResolverEndpoint(args: Endofunction[com.pulumi.aws.route53.inputs.GetResolverEndpointArgs.Builder] = scala.Predef.identity):
+    inline def getResolverEndpoint(args: Endofunction[com.pulumi.aws.route53.inputs.GetResolverEndpointArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.route53.outputs.GetResolverEndpointResult] =
       val argsBuilder = com.pulumi.aws.route53.inputs.GetResolverEndpointArgs.builder
       com.pulumi.aws.route53.Route53Functions.getResolverEndpoint(args(argsBuilder).build)
@@ -114,7 +116,7 @@ object route53:
      * 
      *  This data source allows to find a list of IPaddresses associated with a specific Route53 Resolver Endpoint.
      */
-    def getResolverEndpointPlain(args: Endofunction[com.pulumi.aws.route53.inputs.GetResolverEndpointPlainArgs.Builder] = scala.Predef.identity):
+    inline def getResolverEndpointPlain(args: Endofunction[com.pulumi.aws.route53.inputs.GetResolverEndpointPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.route53.outputs.GetResolverEndpointResult] =
       val argsBuilder = com.pulumi.aws.route53.inputs.GetResolverEndpointPlainArgs.builder
       com.pulumi.aws.route53.Route53Functions.getResolverEndpointPlain(args(argsBuilder).build)
@@ -124,7 +126,7 @@ object route53:
      * 
      *  This data source allows to find a details about a specific a Route 53 Resolver DNS Firewall config.
      */
-    def getResolverFirewallConfig(args: Endofunction[com.pulumi.aws.route53.inputs.GetResolverFirewallConfigArgs.Builder] = scala.Predef.identity):
+    inline def getResolverFirewallConfig(args: Endofunction[com.pulumi.aws.route53.inputs.GetResolverFirewallConfigArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.route53.outputs.GetResolverFirewallConfigResult] =
       val argsBuilder = com.pulumi.aws.route53.inputs.GetResolverFirewallConfigArgs.builder
       com.pulumi.aws.route53.Route53Functions.getResolverFirewallConfig(args(argsBuilder).build)
@@ -134,7 +136,7 @@ object route53:
      * 
      *  This data source allows to find a details about a specific a Route 53 Resolver DNS Firewall config.
      */
-    def getResolverFirewallConfigPlain(args: Endofunction[com.pulumi.aws.route53.inputs.GetResolverFirewallConfigPlainArgs.Builder] = scala.Predef.identity):
+    inline def getResolverFirewallConfigPlain(args: Endofunction[com.pulumi.aws.route53.inputs.GetResolverFirewallConfigPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.route53.outputs.GetResolverFirewallConfigResult] =
       val argsBuilder = com.pulumi.aws.route53.inputs.GetResolverFirewallConfigPlainArgs.builder
       com.pulumi.aws.route53.Route53Functions.getResolverFirewallConfigPlain(args(argsBuilder).build)
@@ -144,7 +146,7 @@ object route53:
      * 
      *  This data source allows to retrieve details about a specific a Route 53 Resolver DNS Firewall domain list.
      */
-    def getResolverFirewallDomainList(args: Endofunction[com.pulumi.aws.route53.inputs.GetResolverFirewallDomainListArgs.Builder] = scala.Predef.identity):
+    inline def getResolverFirewallDomainList(args: Endofunction[com.pulumi.aws.route53.inputs.GetResolverFirewallDomainListArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.route53.outputs.GetResolverFirewallDomainListResult] =
       val argsBuilder = com.pulumi.aws.route53.inputs.GetResolverFirewallDomainListArgs.builder
       com.pulumi.aws.route53.Route53Functions.getResolverFirewallDomainList(args(argsBuilder).build)
@@ -154,7 +156,7 @@ object route53:
      * 
      *  This data source allows to retrieve details about a specific a Route 53 Resolver DNS Firewall domain list.
      */
-    def getResolverFirewallDomainListPlain(args: Endofunction[com.pulumi.aws.route53.inputs.GetResolverFirewallDomainListPlainArgs.Builder] = scala.Predef.identity):
+    inline def getResolverFirewallDomainListPlain(args: Endofunction[com.pulumi.aws.route53.inputs.GetResolverFirewallDomainListPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.route53.outputs.GetResolverFirewallDomainListResult] =
       val argsBuilder = com.pulumi.aws.route53.inputs.GetResolverFirewallDomainListPlainArgs.builder
       com.pulumi.aws.route53.Route53Functions.getResolverFirewallDomainListPlain(args(argsBuilder).build)
@@ -164,7 +166,7 @@ object route53:
      * 
      *  This data source allows to retrieve details about a specific a Route 53 Resolver DNS Firewall rule group.
      */
-    def getResolverFirewallRuleGroup(args: Endofunction[com.pulumi.aws.route53.inputs.GetResolverFirewallRuleGroupArgs.Builder] = scala.Predef.identity):
+    inline def getResolverFirewallRuleGroup(args: Endofunction[com.pulumi.aws.route53.inputs.GetResolverFirewallRuleGroupArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.route53.outputs.GetResolverFirewallRuleGroupResult] =
       val argsBuilder = com.pulumi.aws.route53.inputs.GetResolverFirewallRuleGroupArgs.builder
       com.pulumi.aws.route53.Route53Functions.getResolverFirewallRuleGroup(args(argsBuilder).build)
@@ -174,7 +176,7 @@ object route53:
      * 
      *  This data source allows to retrieve details about a specific a Route 53 Resolver DNS Firewall rule group.
      */
-    def getResolverFirewallRuleGroupPlain(args: Endofunction[com.pulumi.aws.route53.inputs.GetResolverFirewallRuleGroupPlainArgs.Builder] = scala.Predef.identity):
+    inline def getResolverFirewallRuleGroupPlain(args: Endofunction[com.pulumi.aws.route53.inputs.GetResolverFirewallRuleGroupPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.route53.outputs.GetResolverFirewallRuleGroupResult] =
       val argsBuilder = com.pulumi.aws.route53.inputs.GetResolverFirewallRuleGroupPlainArgs.builder
       com.pulumi.aws.route53.Route53Functions.getResolverFirewallRuleGroupPlain(args(argsBuilder).build)
@@ -184,7 +186,7 @@ object route53:
      * 
      *  This data source allows to retrieve details about a specific a Route 53 Resolver DNS Firewall rule group association.
      */
-    def getResolverFirewallRuleGroupAssociation(args: Endofunction[com.pulumi.aws.route53.inputs.GetResolverFirewallRuleGroupAssociationArgs.Builder] = scala.Predef.identity):
+    inline def getResolverFirewallRuleGroupAssociation(args: Endofunction[com.pulumi.aws.route53.inputs.GetResolverFirewallRuleGroupAssociationArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.route53.outputs.GetResolverFirewallRuleGroupAssociationResult] =
       val argsBuilder = com.pulumi.aws.route53.inputs.GetResolverFirewallRuleGroupAssociationArgs.builder
       com.pulumi.aws.route53.Route53Functions.getResolverFirewallRuleGroupAssociation(args(argsBuilder).build)
@@ -194,55 +196,55 @@ object route53:
      * 
      *  This data source allows to retrieve details about a specific a Route 53 Resolver DNS Firewall rule group association.
      */
-    def getResolverFirewallRuleGroupAssociationPlain(args: Endofunction[com.pulumi.aws.route53.inputs.GetResolverFirewallRuleGroupAssociationPlainArgs.Builder] = scala.Predef.identity):
+    inline def getResolverFirewallRuleGroupAssociationPlain(args: Endofunction[com.pulumi.aws.route53.inputs.GetResolverFirewallRuleGroupAssociationPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.route53.outputs.GetResolverFirewallRuleGroupAssociationResult] =
       val argsBuilder = com.pulumi.aws.route53.inputs.GetResolverFirewallRuleGroupAssociationPlainArgs.builder
       com.pulumi.aws.route53.Route53Functions.getResolverFirewallRuleGroupAssociationPlain(args(argsBuilder).build)
 
     /** `aws.route53.getResolverFirewallRules` Provides details about rules in a specific Route53 Resolver Firewall rule group. */
-    def getResolverFirewallRules(args: Endofunction[com.pulumi.aws.route53.inputs.GetResolverFirewallRulesArgs.Builder] = scala.Predef.identity):
+    inline def getResolverFirewallRules(args: Endofunction[com.pulumi.aws.route53.inputs.GetResolverFirewallRulesArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.route53.outputs.GetResolverFirewallRulesResult] =
       val argsBuilder = com.pulumi.aws.route53.inputs.GetResolverFirewallRulesArgs.builder
       com.pulumi.aws.route53.Route53Functions.getResolverFirewallRules(args(argsBuilder).build)
 
     /** `aws.route53.getResolverFirewallRules` Provides details about rules in a specific Route53 Resolver Firewall rule group. */
-    def getResolverFirewallRulesPlain(args: Endofunction[com.pulumi.aws.route53.inputs.GetResolverFirewallRulesPlainArgs.Builder] = scala.Predef.identity):
+    inline def getResolverFirewallRulesPlain(args: Endofunction[com.pulumi.aws.route53.inputs.GetResolverFirewallRulesPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.route53.outputs.GetResolverFirewallRulesResult] =
       val argsBuilder = com.pulumi.aws.route53.inputs.GetResolverFirewallRulesPlainArgs.builder
       com.pulumi.aws.route53.Route53Functions.getResolverFirewallRulesPlain(args(argsBuilder).build)
 
     /** `aws.route53.ResolverRule` provides details about a specific Route53 Resolver rule. */
-    def getResolverRule(args: Endofunction[com.pulumi.aws.route53.inputs.GetResolverRuleArgs.Builder] = scala.Predef.identity):
+    inline def getResolverRule(args: Endofunction[com.pulumi.aws.route53.inputs.GetResolverRuleArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.route53.outputs.GetResolverRuleResult] =
       val argsBuilder = com.pulumi.aws.route53.inputs.GetResolverRuleArgs.builder
       com.pulumi.aws.route53.Route53Functions.getResolverRule(args(argsBuilder).build)
 
     /** `aws.route53.ResolverRule` provides details about a specific Route53 Resolver rule. */
-    def getResolverRulePlain(args: Endofunction[com.pulumi.aws.route53.inputs.GetResolverRulePlainArgs.Builder] = scala.Predef.identity):
+    inline def getResolverRulePlain(args: Endofunction[com.pulumi.aws.route53.inputs.GetResolverRulePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.route53.outputs.GetResolverRuleResult] =
       val argsBuilder = com.pulumi.aws.route53.inputs.GetResolverRulePlainArgs.builder
       com.pulumi.aws.route53.Route53Functions.getResolverRulePlain(args(argsBuilder).build)
 
     /** `aws.route53.getResolverRules` provides details about a set of Route53 Resolver rules. */
-    def getResolverRules(args: Endofunction[com.pulumi.aws.route53.inputs.GetResolverRulesArgs.Builder] = scala.Predef.identity):
+    inline def getResolverRules(args: Endofunction[com.pulumi.aws.route53.inputs.GetResolverRulesArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.route53.outputs.GetResolverRulesResult] =
       val argsBuilder = com.pulumi.aws.route53.inputs.GetResolverRulesArgs.builder
       com.pulumi.aws.route53.Route53Functions.getResolverRules(args(argsBuilder).build)
 
     /** `aws.route53.getResolverRules` provides details about a set of Route53 Resolver rules. */
-    def getResolverRulesPlain(args: Endofunction[com.pulumi.aws.route53.inputs.GetResolverRulesPlainArgs.Builder] = scala.Predef.identity):
+    inline def getResolverRulesPlain(args: Endofunction[com.pulumi.aws.route53.inputs.GetResolverRulesPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.route53.outputs.GetResolverRulesResult] =
       val argsBuilder = com.pulumi.aws.route53.inputs.GetResolverRulesPlainArgs.builder
       com.pulumi.aws.route53.Route53Functions.getResolverRulesPlain(args(argsBuilder).build)
 
     /** Generates an Route53 traffic policy document in JSON format for use with resources that expect policy documents such as `aws.route53.TrafficPolicy`. */
-    def getTrafficPolicyDocument(args: Endofunction[com.pulumi.aws.route53.inputs.GetTrafficPolicyDocumentArgs.Builder] = scala.Predef.identity):
+    inline def getTrafficPolicyDocument(args: Endofunction[com.pulumi.aws.route53.inputs.GetTrafficPolicyDocumentArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.route53.outputs.GetTrafficPolicyDocumentResult] =
       val argsBuilder = com.pulumi.aws.route53.inputs.GetTrafficPolicyDocumentArgs.builder
       com.pulumi.aws.route53.Route53Functions.getTrafficPolicyDocument(args(argsBuilder).build)
 
     /** Generates an Route53 traffic policy document in JSON format for use with resources that expect policy documents such as `aws.route53.TrafficPolicy`. */
-    def getTrafficPolicyDocumentPlain(args: Endofunction[com.pulumi.aws.route53.inputs.GetTrafficPolicyDocumentPlainArgs.Builder] = scala.Predef.identity):
+    inline def getTrafficPolicyDocumentPlain(args: Endofunction[com.pulumi.aws.route53.inputs.GetTrafficPolicyDocumentPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.route53.outputs.GetTrafficPolicyDocumentResult] =
       val argsBuilder = com.pulumi.aws.route53.inputs.GetTrafficPolicyDocumentPlainArgs.builder
       com.pulumi.aws.route53.Route53Functions.getTrafficPolicyDocumentPlain(args(argsBuilder).build)
@@ -252,7 +254,7 @@ object route53:
      * 
      *  This data source allows to find a Hosted Zone ID given Hosted Zone name and certain search criteria.
      */
-    def getZone(args: Endofunction[com.pulumi.aws.route53.inputs.GetZoneArgs.Builder] = scala.Predef.identity):
+    inline def getZone(args: Endofunction[com.pulumi.aws.route53.inputs.GetZoneArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.route53.outputs.GetZoneResult] =
       val argsBuilder = com.pulumi.aws.route53.inputs.GetZoneArgs.builder
       com.pulumi.aws.route53.Route53Functions.getZone(args(argsBuilder).build)
@@ -262,7 +264,7 @@ object route53:
      * 
      *  This data source allows to find a Hosted Zone ID given Hosted Zone name and certain search criteria.
      */
-    def getZonePlain(args: Endofunction[com.pulumi.aws.route53.inputs.GetZonePlainArgs.Builder] = scala.Predef.identity):
+    inline def getZonePlain(args: Endofunction[com.pulumi.aws.route53.inputs.GetZonePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.route53.outputs.GetZoneResult] =
       val argsBuilder = com.pulumi.aws.route53.inputs.GetZonePlainArgs.builder
       com.pulumi.aws.route53.Route53Functions.getZonePlain(args(argsBuilder).build)
