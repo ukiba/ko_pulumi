@@ -56,6 +56,9 @@ package object ko_pulumi:
             case 0 => throw IllegalArgumentException(s"Expected single element: no element")
             case n => throw IllegalArgumentException(s"Expected single element: $n elements")
 
+      extension [K <: AnyRef, V](ite: IterableOnce[(K, V)])
+        def toIdentityOrderedMap = IdentityOrderedMap.from(ite)
+
       // reduce the need to describe the conversions between the Scala and Java/Pulumi types
       given [A] => Conversion[Option[A], JOptional[A]] = _.toJava
       given [A] => Conversion[JOptional[A], Option[A]] = _.toScala
