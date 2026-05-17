@@ -79,24 +79,19 @@ package object ko_pulumi:
       @targetName("given_Conversion_OutputMap_OutputJMap")
       given [K, V] => Conversion[Output[Map[K, V]], Output[JMap[K, V]]] = _.map(_.asJava)
 
-      // allow Output[Seq[A]].flatMap(fn: A => Seq[Output[B]])
-      given [A] => Conversion[Seq[Output[A]], Output[Seq[A]]] = seq => Output.all(seq.asJava).map(_.asScala.toSeq)
-
       // convert Output[String] to Output[JList[String]]
       // for com.pulumi.ec2.InstanceArgs.builder.vpcSecurityGroupIds
       @targetName("given_Conversion_Output_OutputJList")
       given [A] => Conversion[Output[A], Output[JList[A]]] = _.map(a => JList.of(a))
 
-      // convert IterableOnce[Output[String] | String] to Output[JList[String, String]]
-/*
-      given [V <: Matchable] => Conversion[IterableOnce[Output[V] | V], Output[JList[V]]] = list =>
-        val builder = Output.ListBuilder[V]()
-        list.iterator.foreach: outputOrValue =>
+      // convert Seq[Output[String] | String] to Output[JList[String, String]]
+      given [A <: Matchable] => Conversion[IterableOnce[Output[A] | A], Output[JList[A]]] = seq =>
+        val builder = Output.ListBuilder[A]()
+        seq.iterator.foreach: outputOrValue =>
           outputOrValue match
-            case output: Output[?] => builder.add(output.asInstanceOf[Output[V]])
-            case value             => builder.add(value .asInstanceOf[V])
+            case output: Output[?] => builder.add(output.asInstanceOf[Output[A]])
+            case value             => builder.add(value .asInstanceOf[A])
         builder.build()
-*/
 
       // convert Map[String, Output[String] | String] to Output[JMap[String, String]]
       // for com.pulumi.aws.lambda.inputs.FunctionEnvironmentArgs.Builder.variables
