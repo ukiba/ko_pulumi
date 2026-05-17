@@ -74,7 +74,7 @@ package object ko_pulumi:
       given [A] => Conversion[Output[Seq[A]], Output[JList[A]]] = _.map(_.asJava)
 
       @targetName("given_Conversion_OutputMap_OutputJMap")
-      given [K, V] => Conversion[Output[Map[K, V]], Output[Map[K, V]]] = _.map(_.asJava)
+      given [K, V] => Conversion[Output[Map[K, V]], Output[JMap[K, V]]] = _.map(_.asJava)
 
       // convert Output[String] to Output[JList[String]]
       // for com.pulumi.ec2.InstanceArgs.builder.vpcSecurityGroupIds
