@@ -11,7 +11,7 @@ val pulumiAzureVersion      = "6.38.0"
 
 val pulumiPostgresqlVersion = "3.17.0"
 
-val pulumiJavaVersion       = "1.28.0"
+val pulumiJavaVersion       = "1.29.0"
 
 val repoName = "ko_pulumi"
 
@@ -25,7 +25,7 @@ def pomSettingsBase = PomSettings(
 )
 
 trait ScalaModuleEx extends ScalaModule:
-  def scalaVersion = "3.8.3"
+  def scalaVersion = "3.8.4"
   def scalacOptions = Seq(
     "-Yexplicit-nulls",          // make `AnyRef` non-nullable; null safety
     "-Wsafe-init",               // avoid the type system to be unsound with respect to null
