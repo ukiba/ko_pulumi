@@ -117,6 +117,7 @@ export ko_pulumi.gcp.databasemigrationservice.vpcPeeringConnectivity
 export ko_pulumi.gcp.datacatalog.viewSpecs
 export ko_pulumi.gcp.dataflow.workload
 export ko_pulumi.gcp.dataform.workspaceCompilationOverrides
+export ko_pulumi.gcp.datafusion.window
 export ko_pulumi.gcp.dataloss.unwrapped
 export ko_pulumi.gcp.dataloss.upperBound
 export ko_pulumi.gcp.dataloss.value
@@ -172,7 +173,10 @@ export ko_pulumi.gcp.memorystore.updateInfos
 export ko_pulumi.gcp.memorystore.weeklyMaintenanceWindows
 export ko_pulumi.gcp.memorystore.zoneDistributionConfig
 export ko_pulumi.gcp.migrationcenter.virtualMachinePreferences
+export ko_pulumi.gcp.migrationcenter.vmwareEngineFindings
 export ko_pulumi.gcp.migrationcenter.vmwareEnginePreferences
+export ko_pulumi.gcp.migrationcenter.vmwareNodes
+export ko_pulumi.gcp.migrationcenter.xlsxOutputFiles
 export ko_pulumi.gcp.monitoring.windowsBasedSli
 export ko_pulumi.gcp.netapp.weeklySchedule
 export ko_pulumi.gcp.networkconnectivity.virtualMachine

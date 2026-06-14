@@ -83,6 +83,16 @@ object datafusion:
       builder.eventPublishConfig(args(argsBuilder).build)
 
     /**
+     * @param maintenancePolicy Configure the maintenance policy for this instance.
+     * Structure is documented below.
+     * @return builder
+     */
+    def maintenancePolicy(args: Endofunction[com.pulumi.gcp.datafusion.inputs.InstanceMaintenancePolicyArgs.Builder]):
+        com.pulumi.gcp.datafusion.InstanceArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.datafusion.inputs.InstanceMaintenancePolicyArgs.builder
+      builder.maintenancePolicy(args(argsBuilder).build)
+
+    /**
      * @param networkConfig Network configuration options. These are required when a private Data Fusion instance is to be created.
      * Structure is documented below.
      * @return builder
@@ -91,6 +101,39 @@ object datafusion:
         com.pulumi.gcp.datafusion.InstanceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.datafusion.inputs.InstanceNetworkConfigArgs.builder
       builder.networkConfig(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.gcp.datafusion.inputs.InstanceMaintenancePolicyArgs.Builder)
+    /**
+     * @param maintenanceWindow The maintenance window of the instance.
+     * Structure is documented below.
+     * @return builder
+     */
+    def maintenanceWindow(args: Endofunction[com.pulumi.gcp.datafusion.inputs.InstanceMaintenancePolicyMaintenanceWindowArgs.Builder]):
+        com.pulumi.gcp.datafusion.inputs.InstanceMaintenancePolicyArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.datafusion.inputs.InstanceMaintenancePolicyMaintenanceWindowArgs.builder
+      builder.maintenanceWindow(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.gcp.datafusion.inputs.InstanceMaintenancePolicyMaintenanceWindowArgs.Builder)
+    /**
+     * @param recurringTimeWindow The recurring time window of the maintenance window.
+     * Structure is documented below.
+     * @return builder
+     */
+    def recurringTimeWindow(args: Endofunction[com.pulumi.gcp.datafusion.inputs.InstanceMaintenancePolicyMaintenanceWindowRecurringTimeWindowArgs.Builder]):
+        com.pulumi.gcp.datafusion.inputs.InstanceMaintenancePolicyMaintenanceWindowArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.datafusion.inputs.InstanceMaintenancePolicyMaintenanceWindowRecurringTimeWindowArgs.builder
+      builder.recurringTimeWindow(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.gcp.datafusion.inputs.InstanceMaintenancePolicyMaintenanceWindowRecurringTimeWindowArgs.Builder)
+    /**
+     * @param window The window representing the start and end time of recurrences. This field ignores the date components of the provided timestamps. Only the time of day and duration between start and end time are relevant.
+     * Structure is documented below.
+     * @return builder
+     */
+    def window(args: Endofunction[com.pulumi.gcp.datafusion.inputs.InstanceMaintenancePolicyMaintenanceWindowRecurringTimeWindowWindowArgs.Builder]):
+        com.pulumi.gcp.datafusion.inputs.InstanceMaintenancePolicyMaintenanceWindowRecurringTimeWindowArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.datafusion.inputs.InstanceMaintenancePolicyMaintenanceWindowRecurringTimeWindowWindowArgs.builder
+      builder.window(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.datafusion.inputs.InstanceNetworkConfigArgs.Builder)
     /**
@@ -136,6 +179,26 @@ object datafusion:
         com.pulumi.gcp.datafusion.inputs.InstanceState.Builder =
       val argsBuilder = com.pulumi.gcp.datafusion.inputs.InstanceEventPublishConfigArgs.builder
       builder.eventPublishConfig(args(argsBuilder).build)
+
+    /**
+     * @param maintenanceEvents The maintenance events for this instance.
+     * Structure is documented below.
+     * @return builder
+     */
+    def maintenanceEvents(args: Endofunction[com.pulumi.gcp.datafusion.inputs.InstanceMaintenanceEventArgs.Builder]*):
+        com.pulumi.gcp.datafusion.inputs.InstanceState.Builder =
+      def argsBuilder = com.pulumi.gcp.datafusion.inputs.InstanceMaintenanceEventArgs.builder
+      builder.maintenanceEvents(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param maintenancePolicy Configure the maintenance policy for this instance.
+     * Structure is documented below.
+     * @return builder
+     */
+    def maintenancePolicy(args: Endofunction[com.pulumi.gcp.datafusion.inputs.InstanceMaintenancePolicyArgs.Builder]):
+        com.pulumi.gcp.datafusion.inputs.InstanceState.Builder =
+      val argsBuilder = com.pulumi.gcp.datafusion.inputs.InstanceMaintenancePolicyArgs.builder
+      builder.maintenancePolicy(args(argsBuilder).build)
 
     /**
      * @param networkConfig Network configuration options. These are required when a private Data Fusion instance is to be created.

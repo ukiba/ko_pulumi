@@ -1079,7 +1079,7 @@ object dataproc:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/dataproc/docs)
    * 
-   * !&gt; **Warning:** Due to limitations of the API, all arguments except
+   * &gt; **Warning:** Due to limitations of the API, all arguments except
    * `labels`,`cluster_config.worker_config.num_instances` and `cluster_config.preemptible_worker_config.num_instances` are non-updatable. Changing `cluster_config.worker_config.min_num_instances` will be ignored. Changing others will cause recreation of the
    * whole cluster!
    */
@@ -2262,7 +2262,7 @@ object dataproc:
    * Manages a job resource within a Dataproc cluster within GCE. For more information see
    * [the official dataproc documentation](https://cloud.google.com/dataproc/).
    * 
-   * !&gt; **Note:** This resource does not support &#39;update&#39; and changing any attributes will cause the resource to be recreated.
+   * &gt; **Note:** This resource does not support &#39;update&#39; and changing any attributes will cause the resource to be recreated.
    */
   def Job(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.gcp.dataproc.JobArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =

@@ -153,6 +153,63 @@ object oracledatabase:
       val argsBuilder = com.pulumi.gcp.oracledatabase.inputs.ExascaleDbStorageVaultPropertiesArgs.builder
       builder.properties(args(argsBuilder).build)
 
+  /** GoldengateConnection is a resource that represents metadata to establish a connection to a source or target data. */
+  def GoldengateConnection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+      (args: Endofunction[com.pulumi.gcp.oracledatabase.GoldengateConnectionArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+    val argsBuilder = com.pulumi.gcp.oracledatabase.GoldengateConnectionArgs.builder
+    com.pulumi.gcp.oracledatabase.GoldengateConnection(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+
+  extension (builder: com.pulumi.gcp.oracledatabase.GoldengateConnectionArgs.Builder)
+    /**
+     * @param properties The properties of a GoldengateConnection.
+     * Structure is documented below.
+     * @return builder
+     */
+    def properties(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesArgs.Builder]):
+        com.pulumi.gcp.oracledatabase.GoldengateConnectionArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesArgs.builder
+      builder.properties(args(argsBuilder).build)
+
+  /** This resource helps to assign a GoldengateConnection to a GoldengateDeployment used for actual data replication and transformations. */
+  def GoldengateConnectionAssignment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+      (args: Endofunction[com.pulumi.gcp.oracledatabase.GoldengateConnectionAssignmentArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+    val argsBuilder = com.pulumi.gcp.oracledatabase.GoldengateConnectionAssignmentArgs.builder
+    com.pulumi.gcp.oracledatabase.GoldengateConnectionAssignment(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+
+  extension (builder: com.pulumi.gcp.oracledatabase.GoldengateConnectionAssignmentArgs.Builder)
+    /**
+     * @param properties The properties of a GoldengateConnectionAssignment.
+     * Structure is documented below.
+     * @return builder
+     */
+    def properties(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionAssignmentPropertiesArgs.Builder]):
+        com.pulumi.gcp.oracledatabase.GoldengateConnectionAssignmentArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionAssignmentPropertiesArgs.builder
+      builder.properties(args(argsBuilder).build)
+
+  /** This resource helps to create a GoldengateDeployment which enables running Oracle GoldenGate in Google Cloud. */
+  def GoldengateDeployment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+      (args: Endofunction[com.pulumi.gcp.oracledatabase.GoldengateDeploymentArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+    val argsBuilder = com.pulumi.gcp.oracledatabase.GoldengateDeploymentArgs.builder
+    com.pulumi.gcp.oracledatabase.GoldengateDeployment(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+
+  extension (builder: com.pulumi.gcp.oracledatabase.GoldengateDeploymentArgs.Builder)
+    /**
+     * @param properties Properties of GoldengateDeployment.
+     * Structure is documented below.
+     * @return builder
+     */
+    def properties(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GoldengateDeploymentPropertiesArgs.Builder]):
+        com.pulumi.gcp.oracledatabase.GoldengateDeploymentArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.oracledatabase.inputs.GoldengateDeploymentPropertiesArgs.builder
+      builder.properties(args(argsBuilder).build)
+
   /**
    * An OdbNetwork resource which represents a private network providing connectivity between OracleDatabase resources and Google Cloud VPC network.
    * 
@@ -363,6 +420,50 @@ object oracledatabase:
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.oracledatabase.outputs.GetDbServersResult] =
       val argsBuilder = com.pulumi.gcp.oracledatabase.inputs.GetDbServersPlainArgs.builder
       com.pulumi.gcp.oracledatabase.OracledatabaseFunctions.getDbServersPlain(args(argsBuilder).build)
+
+    /**
+     * List all GoldenGate Connection Types in a location.
+     * 
+     * For more information see the
+     * [API](https://cloud.google.com/oracle/database/docs/reference/rest/v1/projects.locations.goldengateConnectionTypes).
+     */
+    inline def getGoldengateConnectionTypes(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GetGoldengateConnectionTypesArgs.Builder] = scala.Predef.identity):
+        com.pulumi.core.Output[com.pulumi.gcp.oracledatabase.outputs.GetGoldengateConnectionTypesResult] =
+      val argsBuilder = com.pulumi.gcp.oracledatabase.inputs.GetGoldengateConnectionTypesArgs.builder
+      com.pulumi.gcp.oracledatabase.OracledatabaseFunctions.getGoldengateConnectionTypes(args(argsBuilder).build)
+
+    /**
+     * List all GoldenGate Connection Types in a location.
+     * 
+     * For more information see the
+     * [API](https://cloud.google.com/oracle/database/docs/reference/rest/v1/projects.locations.goldengateConnectionTypes).
+     */
+    inline def getGoldengateConnectionTypesPlain(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GetGoldengateConnectionTypesPlainArgs.Builder] = scala.Predef.identity):
+        java.util.concurrent.CompletableFuture[com.pulumi.gcp.oracledatabase.outputs.GetGoldengateConnectionTypesResult] =
+      val argsBuilder = com.pulumi.gcp.oracledatabase.inputs.GetGoldengateConnectionTypesPlainArgs.builder
+      com.pulumi.gcp.oracledatabase.OracledatabaseFunctions.getGoldengateConnectionTypesPlain(args(argsBuilder).build)
+
+    /**
+     * List all GoldenGate Deployment Environments in a location.
+     * 
+     * For more information see the
+     * [API](https://cloud.google.com/oracle/database/docs/reference/rest/v1/projects.locations.goldengateDeploymentEnvironments).
+     */
+    inline def getGoldengateDeploymentEnvironments(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GetGoldengateDeploymentEnvironmentsArgs.Builder] = scala.Predef.identity):
+        com.pulumi.core.Output[com.pulumi.gcp.oracledatabase.outputs.GetGoldengateDeploymentEnvironmentsResult] =
+      val argsBuilder = com.pulumi.gcp.oracledatabase.inputs.GetGoldengateDeploymentEnvironmentsArgs.builder
+      com.pulumi.gcp.oracledatabase.OracledatabaseFunctions.getGoldengateDeploymentEnvironments(args(argsBuilder).build)
+
+    /**
+     * List all GoldenGate Deployment Environments in a location.
+     * 
+     * For more information see the
+     * [API](https://cloud.google.com/oracle/database/docs/reference/rest/v1/projects.locations.goldengateDeploymentEnvironments).
+     */
+    inline def getGoldengateDeploymentEnvironmentsPlain(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GetGoldengateDeploymentEnvironmentsPlainArgs.Builder] = scala.Predef.identity):
+        java.util.concurrent.CompletableFuture[com.pulumi.gcp.oracledatabase.outputs.GetGoldengateDeploymentEnvironmentsResult] =
+      val argsBuilder = com.pulumi.gcp.oracledatabase.inputs.GetGoldengateDeploymentEnvironmentsPlainArgs.builder
+      com.pulumi.gcp.oracledatabase.OracledatabaseFunctions.getGoldengateDeploymentEnvironmentsPlain(args(argsBuilder).build)
 
     /**
      * Get information about an ODB Network.
@@ -602,6 +703,17 @@ object oracledatabase:
 
   extension (builder: com.pulumi.gcp.oracledatabase.inputs.CloudVmClusterState.Builder)
     /**
+     * @param identityConnectors The identity connector details which will allow OCI to securely access
+     * the resources in the customer project.
+     * Structure is documented below.
+     * @return builder
+     */
+    def identityConnectors(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.CloudVmClusterIdentityConnectorArgs.Builder]*):
+        com.pulumi.gcp.oracledatabase.inputs.CloudVmClusterState.Builder =
+      def argsBuilder = com.pulumi.gcp.oracledatabase.inputs.CloudVmClusterIdentityConnectorArgs.builder
+      builder.identityConnectors(args.map(_(argsBuilder).build)*)
+
+    /**
      * @param properties Various properties and settings associated with Exadata VM cluster.
      * Structure is documented below.
      * @return builder
@@ -795,4 +907,577 @@ object oracledatabase:
     def properties(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.ExascaleDbStorageVaultPropertiesArgs.Builder]):
         com.pulumi.gcp.oracledatabase.inputs.ExascaleDbStorageVaultState.Builder =
       val argsBuilder = com.pulumi.gcp.oracledatabase.inputs.ExascaleDbStorageVaultPropertiesArgs.builder
+      builder.properties(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionAssignmentState.Builder)
+    /**
+     * @param properties The properties of a GoldengateConnectionAssignment.
+     * Structure is documented below.
+     * @return builder
+     */
+    def properties(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionAssignmentPropertiesArgs.Builder]):
+        com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionAssignmentState.Builder =
+      val argsBuilder = com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionAssignmentPropertiesArgs.builder
+      builder.properties(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesArgs.Builder)
+    /**
+     * @param amazonKinesisConnectionProperties The properties of GoldengateAmazonKinesisConnection.
+     * Structure is documented below.
+     * @return builder
+     */
+    def amazonKinesisConnectionProperties(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesAmazonKinesisConnectionPropertiesArgs.Builder]):
+        com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesAmazonKinesisConnectionPropertiesArgs.builder
+      builder.amazonKinesisConnectionProperties(args(argsBuilder).build)
+
+    /**
+     * @param amazonRedshiftConnectionProperties The properties of GoldengateAmazonRedshiftConnection.
+     * Structure is documented below.
+     * @return builder
+     */
+    def amazonRedshiftConnectionProperties(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesAmazonRedshiftConnectionPropertiesArgs.Builder]):
+        com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesAmazonRedshiftConnectionPropertiesArgs.builder
+      builder.amazonRedshiftConnectionProperties(args(argsBuilder).build)
+
+    /**
+     * @param amazonS3ConnectionProperties The properties of GoldengateAmazonS3Connection.
+     * Structure is documented below.
+     * @return builder
+     */
+    def amazonS3ConnectionProperties(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesAmazonS3ConnectionPropertiesArgs.Builder]):
+        com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesAmazonS3ConnectionPropertiesArgs.builder
+      builder.amazonS3ConnectionProperties(args(argsBuilder).build)
+
+    /**
+     * @param azureDataLakeStorageConnectionProperties The properties of GoldengateAzureDataLakeStorageConnection.
+     * Structure is documented below.
+     * @return builder
+     */
+    def azureDataLakeStorageConnectionProperties(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesAzureDataLakeStorageConnectionPropertiesArgs.Builder]):
+        com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesAzureDataLakeStorageConnectionPropertiesArgs.builder
+      builder.azureDataLakeStorageConnectionProperties(args(argsBuilder).build)
+
+    /**
+     * @param azureSynapseAnalyticsConnectionProperties The properties of GoldengateAzureSynapseAnalyticsConnection.
+     * Structure is documented below.
+     * @return builder
+     */
+    def azureSynapseAnalyticsConnectionProperties(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesAzureSynapseAnalyticsConnectionPropertiesArgs.Builder]):
+        com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesAzureSynapseAnalyticsConnectionPropertiesArgs.builder
+      builder.azureSynapseAnalyticsConnectionProperties(args(argsBuilder).build)
+
+    /**
+     * @param databricksConnectionProperties The properties of GoldengateDatabricksConnection.
+     * Structure is documented below.
+     * @return builder
+     */
+    def databricksConnectionProperties(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesDatabricksConnectionPropertiesArgs.Builder]):
+        com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesDatabricksConnectionPropertiesArgs.builder
+      builder.databricksConnectionProperties(args(argsBuilder).build)
+
+    /**
+     * @param db2ConnectionProperties The properties of GoldengateDb2Connection.
+     * Structure is documented below.
+     * @return builder
+     */
+    def db2ConnectionProperties(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesDb2ConnectionPropertiesArgs.Builder]):
+        com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesDb2ConnectionPropertiesArgs.builder
+      builder.db2ConnectionProperties(args(argsBuilder).build)
+
+    /**
+     * @param elasticsearchConnectionProperties The properties of GoldengateElasticsearchConnection.
+     * Structure is documented below.
+     * @return builder
+     */
+    def elasticsearchConnectionProperties(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesElasticsearchConnectionPropertiesArgs.Builder]):
+        com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesElasticsearchConnectionPropertiesArgs.builder
+      builder.elasticsearchConnectionProperties(args(argsBuilder).build)
+
+    /**
+     * @param genericConnectionProperties The properties of GoldengateGenericConnectionProperties.
+     * Structure is documented below.
+     * @return builder
+     */
+    def genericConnectionProperties(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesGenericConnectionPropertiesArgs.Builder]):
+        com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesGenericConnectionPropertiesArgs.builder
+      builder.genericConnectionProperties(args(argsBuilder).build)
+
+    /**
+     * @param goldengateConnectionProperties The properties of GoldengateGoldengateConnectionProperties.
+     * Structure is documented below.
+     * @return builder
+     */
+    def goldengateConnectionProperties(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesGoldengateConnectionPropertiesArgs.Builder]):
+        com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesGoldengateConnectionPropertiesArgs.builder
+      builder.goldengateConnectionProperties(args(argsBuilder).build)
+
+    /**
+     * @param googleBigQueryConnectionProperties The properties of GoldengateGoogleBigQueryConnectionProperties.
+     * Structure is documented below.
+     * @return builder
+     */
+    def googleBigQueryConnectionProperties(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesGoogleBigQueryConnectionPropertiesArgs.Builder]):
+        com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesGoogleBigQueryConnectionPropertiesArgs.builder
+      builder.googleBigQueryConnectionProperties(args(argsBuilder).build)
+
+    /**
+     * @param googleCloudStorageConnectionProperties The properties of GoldengateGoogleCloudStorageConnectionProperties.
+     * Structure is documented below.
+     * @return builder
+     */
+    def googleCloudStorageConnectionProperties(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesGoogleCloudStorageConnectionPropertiesArgs.Builder]):
+        com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesGoogleCloudStorageConnectionPropertiesArgs.builder
+      builder.googleCloudStorageConnectionProperties(args(argsBuilder).build)
+
+    /**
+     * @param googlePubsubConnectionProperties The properties of GoldengateGooglePubsubConnection.
+     * Structure is documented below.
+     * @return builder
+     */
+    def googlePubsubConnectionProperties(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesGooglePubsubConnectionPropertiesArgs.Builder]):
+        com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesGooglePubsubConnectionPropertiesArgs.builder
+      builder.googlePubsubConnectionProperties(args(argsBuilder).build)
+
+    /**
+     * @param hdfsConnectionProperties The properties of GoldengateHdfsConnection.
+     * Structure is documented below.
+     * @return builder
+     */
+    def hdfsConnectionProperties(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesHdfsConnectionPropertiesArgs.Builder]):
+        com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesHdfsConnectionPropertiesArgs.builder
+      builder.hdfsConnectionProperties(args(argsBuilder).build)
+
+    /**
+     * @param icebergConnectionProperties The properties of GoldengateIcebergConnection.
+     * Structure is documented below.
+     * @return builder
+     */
+    def icebergConnectionProperties(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesIcebergConnectionPropertiesArgs.Builder]):
+        com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesIcebergConnectionPropertiesArgs.builder
+      builder.icebergConnectionProperties(args(argsBuilder).build)
+
+    /**
+     * @param javaMessageServiceConnectionProperties The properties of GoldengateJavaMessageServiceConnection.
+     * Structure is documented below.
+     * @return builder
+     */
+    def javaMessageServiceConnectionProperties(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesJavaMessageServiceConnectionPropertiesArgs.Builder]):
+        com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesJavaMessageServiceConnectionPropertiesArgs.builder
+      builder.javaMessageServiceConnectionProperties(args(argsBuilder).build)
+
+    /**
+     * @param kafkaConnectionProperties The properties of GoldengateKafkaConnection.
+     * Structure is documented below.
+     * @return builder
+     */
+    def kafkaConnectionProperties(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesKafkaConnectionPropertiesArgs.Builder]):
+        com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesKafkaConnectionPropertiesArgs.builder
+      builder.kafkaConnectionProperties(args(argsBuilder).build)
+
+    /**
+     * @param kafkaSchemaRegistryConnectionProperties The properties of GoldengateKafkaSchemaRegistryConnection.
+     * Structure is documented below.
+     * @return builder
+     */
+    def kafkaSchemaRegistryConnectionProperties(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesKafkaSchemaRegistryConnectionPropertiesArgs.Builder]):
+        com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesKafkaSchemaRegistryConnectionPropertiesArgs.builder
+      builder.kafkaSchemaRegistryConnectionProperties(args(argsBuilder).build)
+
+    /**
+     * @param microsoftFabricConnectionProperties The properties of GoldengateMicrosoftFabricConnection.
+     * Structure is documented below.
+     * @return builder
+     */
+    def microsoftFabricConnectionProperties(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesMicrosoftFabricConnectionPropertiesArgs.Builder]):
+        com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesMicrosoftFabricConnectionPropertiesArgs.builder
+      builder.microsoftFabricConnectionProperties(args(argsBuilder).build)
+
+    /**
+     * @param microsoftSqlserverConnectionProperties The properties of GoldengateMicrosoftSqlserverConnection.
+     * Structure is documented below.
+     * @return builder
+     */
+    def microsoftSqlserverConnectionProperties(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesMicrosoftSqlserverConnectionPropertiesArgs.Builder]):
+        com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesMicrosoftSqlserverConnectionPropertiesArgs.builder
+      builder.microsoftSqlserverConnectionProperties(args(argsBuilder).build)
+
+    /**
+     * @param mongodbConnectionProperties The properties of GoldengateMongodbConnection.
+     * Structure is documented below.
+     * @return builder
+     */
+    def mongodbConnectionProperties(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesMongodbConnectionPropertiesArgs.Builder]):
+        com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesMongodbConnectionPropertiesArgs.builder
+      builder.mongodbConnectionProperties(args(argsBuilder).build)
+
+    /**
+     * @param mysqlConnectionProperties Properties of GoldengateMysqlConnection.
+     * Structure is documented below.
+     * @return builder
+     */
+    def mysqlConnectionProperties(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesMysqlConnectionPropertiesArgs.Builder]):
+        com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesMysqlConnectionPropertiesArgs.builder
+      builder.mysqlConnectionProperties(args(argsBuilder).build)
+
+    /**
+     * @param ociObjectStorageConnectionProperties The properties of GoldengateOciObjectStorageConnection.
+     * Structure is documented below.
+     * @return builder
+     */
+    def ociObjectStorageConnectionProperties(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesOciObjectStorageConnectionPropertiesArgs.Builder]):
+        com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesOciObjectStorageConnectionPropertiesArgs.builder
+      builder.ociObjectStorageConnectionProperties(args(argsBuilder).build)
+
+    /**
+     * @param oracleAiDataPlatformConnectionProperties The properties of GoldengateOracleAIDataPlatformConnection.
+     * Structure is documented below.
+     * @return builder
+     */
+    def oracleAiDataPlatformConnectionProperties(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesOracleAiDataPlatformConnectionPropertiesArgs.Builder]):
+        com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesOracleAiDataPlatformConnectionPropertiesArgs.builder
+      builder.oracleAiDataPlatformConnectionProperties(args(argsBuilder).build)
+
+    /**
+     * @param oracleConnectionProperties The properties of Goldengate Oracle Database Connection.
+     * Structure is documented below.
+     * @return builder
+     */
+    def oracleConnectionProperties(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesOracleConnectionPropertiesArgs.Builder]):
+        com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesOracleConnectionPropertiesArgs.builder
+      builder.oracleConnectionProperties(args(argsBuilder).build)
+
+    /**
+     * @param oracleNosqlConnectionProperties The properties of GoldengateOracleNosqlConnection.
+     * Structure is documented below.
+     * @return builder
+     */
+    def oracleNosqlConnectionProperties(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesOracleNosqlConnectionPropertiesArgs.Builder]):
+        com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesOracleNosqlConnectionPropertiesArgs.builder
+      builder.oracleNosqlConnectionProperties(args(argsBuilder).build)
+
+    /**
+     * @param postgresqlConnectionProperties The properties of GoldengatePostgresqlConnection.
+     * Structure is documented below.
+     * @return builder
+     */
+    def postgresqlConnectionProperties(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesPostgresqlConnectionPropertiesArgs.Builder]):
+        com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesPostgresqlConnectionPropertiesArgs.builder
+      builder.postgresqlConnectionProperties(args(argsBuilder).build)
+
+    /**
+     * @param redisConnectionProperties The properties of GoldengateRedisConnection.
+     * Structure is documented below.
+     * @return builder
+     */
+    def redisConnectionProperties(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesRedisConnectionPropertiesArgs.Builder]):
+        com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesRedisConnectionPropertiesArgs.builder
+      builder.redisConnectionProperties(args(argsBuilder).build)
+
+    /**
+     * @param snowflakeConnectionProperties The properties of GoldengateSnowflakeConnection.
+     * Structure is documented below.
+     * @return builder
+     */
+    def snowflakeConnectionProperties(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesSnowflakeConnectionPropertiesArgs.Builder]):
+        com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesSnowflakeConnectionPropertiesArgs.builder
+      builder.snowflakeConnectionProperties(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesDb2ConnectionPropertiesArgs.Builder)
+    /**
+     * @param additionalAttributes An array of name-value pair attribute entries.
+     * Used as additional parameters in connection string.
+     * @return builder
+     */
+    def additionalAttributes(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesDb2ConnectionPropertiesAdditionalAttributeArgs.Builder]*):
+        com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesDb2ConnectionPropertiesArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesDb2ConnectionPropertiesAdditionalAttributeArgs.builder
+      builder.additionalAttributes(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesIcebergConnectionPropertiesArgs.Builder)
+    /**
+     * @param catalog The Iceberg catalog details.
+     * Structure is documented below.
+     * @return builder
+     */
+    def catalog(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesIcebergConnectionPropertiesCatalogArgs.Builder]):
+        com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesIcebergConnectionPropertiesArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesIcebergConnectionPropertiesCatalogArgs.builder
+      builder.catalog(args(argsBuilder).build)
+
+    /**
+     * @param storage The Iceberg storage details.
+     * Structure is documented below.
+     * @return builder
+     */
+    def storage(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesIcebergConnectionPropertiesStorageArgs.Builder]):
+        com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesIcebergConnectionPropertiesArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesIcebergConnectionPropertiesStorageArgs.builder
+      builder.storage(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesIcebergConnectionPropertiesCatalogArgs.Builder)
+    /**
+     * @param glueIcebergCatalog The Glue Iceberg catalog.
+     * Structure is documented below.
+     * @return builder
+     */
+    def glueIcebergCatalog(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesIcebergConnectionPropertiesCatalogGlueIcebergCatalogArgs.Builder]):
+        com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesIcebergConnectionPropertiesCatalogArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesIcebergConnectionPropertiesCatalogGlueIcebergCatalogArgs.builder
+      builder.glueIcebergCatalog(args(argsBuilder).build)
+
+    /**
+     * @param nessieIcebergCatalog The Nessie Iceberg catalog.
+     * Structure is documented below.
+     * @return builder
+     */
+    def nessieIcebergCatalog(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesIcebergConnectionPropertiesCatalogNessieIcebergCatalogArgs.Builder]):
+        com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesIcebergConnectionPropertiesCatalogArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesIcebergConnectionPropertiesCatalogNessieIcebergCatalogArgs.builder
+      builder.nessieIcebergCatalog(args(argsBuilder).build)
+
+    /**
+     * @param polarisIcebergCatalog The Polaris Iceberg catalog.
+     * Structure is documented below.
+     * @return builder
+     */
+    def polarisIcebergCatalog(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesIcebergConnectionPropertiesCatalogPolarisIcebergCatalogArgs.Builder]):
+        com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesIcebergConnectionPropertiesCatalogArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesIcebergConnectionPropertiesCatalogPolarisIcebergCatalogArgs.builder
+      builder.polarisIcebergCatalog(args(argsBuilder).build)
+
+    /**
+     * @param restIcebergCatalog The REST Iceberg catalog.
+     * Structure is documented below.
+     * @return builder
+     */
+    def restIcebergCatalog(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesIcebergConnectionPropertiesCatalogRestIcebergCatalogArgs.Builder]):
+        com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesIcebergConnectionPropertiesCatalogArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesIcebergConnectionPropertiesCatalogRestIcebergCatalogArgs.builder
+      builder.restIcebergCatalog(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesIcebergConnectionPropertiesStorageArgs.Builder)
+    /**
+     * @param amazonS3IcebergStorage The Amazon S3 Iceberg storage.
+     * Structure is documented below.
+     * @return builder
+     */
+    def amazonS3IcebergStorage(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesIcebergConnectionPropertiesStorageAmazonS3IcebergStorageArgs.Builder]):
+        com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesIcebergConnectionPropertiesStorageArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesIcebergConnectionPropertiesStorageAmazonS3IcebergStorageArgs.builder
+      builder.amazonS3IcebergStorage(args(argsBuilder).build)
+
+    /**
+     * @param azureDataLakeStorageIcebergStorage The Azure Data Lake Storage Iceberg storage.
+     * Structure is documented below.
+     * @return builder
+     */
+    def azureDataLakeStorageIcebergStorage(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesIcebergConnectionPropertiesStorageAzureDataLakeStorageIcebergStorageArgs.Builder]):
+        com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesIcebergConnectionPropertiesStorageArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesIcebergConnectionPropertiesStorageAzureDataLakeStorageIcebergStorageArgs.builder
+      builder.azureDataLakeStorageIcebergStorage(args(argsBuilder).build)
+
+    /**
+     * @param googleCloudStorageIcebergStorage The Google Cloud Storage Iceberg storage.
+     * Structure is documented below.
+     * @return builder
+     */
+    def googleCloudStorageIcebergStorage(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesIcebergConnectionPropertiesStorageGoogleCloudStorageIcebergStorageArgs.Builder]):
+        com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesIcebergConnectionPropertiesStorageArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesIcebergConnectionPropertiesStorageGoogleCloudStorageIcebergStorageArgs.builder
+      builder.googleCloudStorageIcebergStorage(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesKafkaConnectionPropertiesArgs.Builder)
+    /**
+     * @param bootstrapServers Kafka bootstrap. Equivalent of bootstrap.servers configuration property
+     * in Kafka: list of KafkaBootstrapServer objects specified by host/port.
+     * Used for establishing the initial connection to the Kafka cluster.
+     * Example: &#34;server1.example.com:9092,server2.example.com:9092&#34;
+     * Structure is documented below.
+     * @return builder
+     */
+    def bootstrapServers(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesKafkaConnectionPropertiesBootstrapServerArgs.Builder]*):
+        com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesKafkaConnectionPropertiesArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesKafkaConnectionPropertiesBootstrapServerArgs.builder
+      builder.bootstrapServers(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesMicrosoftSqlserverConnectionPropertiesArgs.Builder)
+    /**
+     * @param additionalAttributes An array of name-value pair attribute entries.
+     * Used as additional parameters in connection string.
+     * Structure is documented below.
+     * @return builder
+     */
+    def additionalAttributes(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesMicrosoftSqlserverConnectionPropertiesAdditionalAttributeArgs.Builder]*):
+        com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesMicrosoftSqlserverConnectionPropertiesArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesMicrosoftSqlserverConnectionPropertiesAdditionalAttributeArgs.builder
+      builder.additionalAttributes(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesMysqlConnectionPropertiesArgs.Builder)
+    /**
+     * @param additionalAttributes An array of name-value pair attribute entries.
+     * Used as additional parameters in connection string.
+     * Structure is documented below.
+     * @return builder
+     */
+    def additionalAttributes(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesMysqlConnectionPropertiesAdditionalAttributeArgs.Builder]*):
+        com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesMysqlConnectionPropertiesArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesMysqlConnectionPropertiesAdditionalAttributeArgs.builder
+      builder.additionalAttributes(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesPostgresqlConnectionPropertiesArgs.Builder)
+    /**
+     * @param additionalAttributes An array of name-value pair attribute entries.
+     * Used as additional parameters in connection string.
+     * Structure is documented below.
+     * @return builder
+     */
+    def additionalAttributes(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesPostgresqlConnectionPropertiesAdditionalAttributeArgs.Builder]*):
+        com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesPostgresqlConnectionPropertiesArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesPostgresqlConnectionPropertiesAdditionalAttributeArgs.builder
+      builder.additionalAttributes(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionState.Builder)
+    /**
+     * @param properties The properties of a GoldengateConnection.
+     * Structure is documented below.
+     * @return builder
+     */
+    def properties(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesArgs.Builder]):
+        com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionState.Builder =
+      val argsBuilder = com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesArgs.builder
+      builder.properties(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.gcp.oracledatabase.inputs.GoldengateDeploymentPropertiesArgs.Builder)
+    /**
+     * @param backupSchedule The backup schedule of the GoldengateDeployment.
+     * Structure is documented below.
+     * @return builder
+     */
+    def backupSchedule(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GoldengateDeploymentPropertiesBackupScheduleArgs.Builder]):
+        com.pulumi.gcp.oracledatabase.inputs.GoldengateDeploymentPropertiesArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.oracledatabase.inputs.GoldengateDeploymentPropertiesBackupScheduleArgs.builder
+      builder.backupSchedule(args(argsBuilder).build)
+
+    /**
+     * @param deploymentDiagnosticData The deployment diagnostic data.
+     * Structure is documented below.
+     * @return builder
+     */
+    def deploymentDiagnosticData(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GoldengateDeploymentPropertiesDeploymentDiagnosticDataArgs.Builder]):
+        com.pulumi.gcp.oracledatabase.inputs.GoldengateDeploymentPropertiesArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.oracledatabase.inputs.GoldengateDeploymentPropertiesDeploymentDiagnosticDataArgs.builder
+      builder.deploymentDiagnosticData(args(argsBuilder).build)
+
+    /**
+     * @param ingressIps (Output)
+     * The ingress ips of the GoldengateDeployment.
+     * Structure is documented below.
+     * @return builder
+     */
+    def ingressIps(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GoldengateDeploymentPropertiesIngressIpArgs.Builder]*):
+        com.pulumi.gcp.oracledatabase.inputs.GoldengateDeploymentPropertiesArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.oracledatabase.inputs.GoldengateDeploymentPropertiesIngressIpArgs.builder
+      builder.ingressIps(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param locks (Output)
+     * The locks of the GoldengateDeployment.
+     * Structure is documented below.
+     * @return builder
+     */
+    def locks(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GoldengateDeploymentPropertiesLockArgs.Builder]*):
+        com.pulumi.gcp.oracledatabase.inputs.GoldengateDeploymentPropertiesArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.oracledatabase.inputs.GoldengateDeploymentPropertiesLockArgs.builder
+      builder.locks(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param maintenanceConfig The maintenance configuration of the GoldengateDeployment.
+     * Structure is documented below.
+     * @return builder
+     */
+    def maintenanceConfig(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GoldengateDeploymentPropertiesMaintenanceConfigArgs.Builder]):
+        com.pulumi.gcp.oracledatabase.inputs.GoldengateDeploymentPropertiesArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.oracledatabase.inputs.GoldengateDeploymentPropertiesMaintenanceConfigArgs.builder
+      builder.maintenanceConfig(args(argsBuilder).build)
+
+    /**
+     * @param maintenanceWindow The maintenance window of the GoldengateDeployment.
+     * Structure is documented below.
+     * @return builder
+     */
+    def maintenanceWindow(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GoldengateDeploymentPropertiesMaintenanceWindowArgs.Builder]):
+        com.pulumi.gcp.oracledatabase.inputs.GoldengateDeploymentPropertiesArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.oracledatabase.inputs.GoldengateDeploymentPropertiesMaintenanceWindowArgs.builder
+      builder.maintenanceWindow(args(argsBuilder).build)
+
+    /**
+     * @param oggData The Ogg data of the GoldengateDeployment.
+     * Structure is documented below.
+     * @return builder
+     */
+    def oggData(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GoldengateDeploymentPropertiesOggDataArgs.Builder]):
+        com.pulumi.gcp.oracledatabase.inputs.GoldengateDeploymentPropertiesArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.oracledatabase.inputs.GoldengateDeploymentPropertiesOggDataArgs.builder
+      builder.oggData(args(argsBuilder).build)
+
+    /**
+     * @param placements (Output)
+     * The placements of the GoldengateDeployment.
+     * Structure is documented below.
+     * @return builder
+     */
+    def placements(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GoldengateDeploymentPropertiesPlacementArgs.Builder]*):
+        com.pulumi.gcp.oracledatabase.inputs.GoldengateDeploymentPropertiesArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.oracledatabase.inputs.GoldengateDeploymentPropertiesPlacementArgs.builder
+      builder.placements(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.gcp.oracledatabase.inputs.GoldengateDeploymentPropertiesOggDataArgs.Builder)
+    /**
+     * @param groupRolesMapping The group to roles mapping of the GoldengateDeployment.
+     * Structure is documented below.
+     * @return builder
+     */
+    def groupRolesMapping(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GoldengateDeploymentPropertiesOggDataGroupRolesMappingArgs.Builder]):
+        com.pulumi.gcp.oracledatabase.inputs.GoldengateDeploymentPropertiesOggDataArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.oracledatabase.inputs.GoldengateDeploymentPropertiesOggDataGroupRolesMappingArgs.builder
+      builder.groupRolesMapping(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.gcp.oracledatabase.inputs.GoldengateDeploymentState.Builder)
+    /**
+     * @param properties Properties of GoldengateDeployment.
+     * Structure is documented below.
+     * @return builder
+     */
+    def properties(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GoldengateDeploymentPropertiesArgs.Builder]):
+        com.pulumi.gcp.oracledatabase.inputs.GoldengateDeploymentState.Builder =
+      val argsBuilder = com.pulumi.gcp.oracledatabase.inputs.GoldengateDeploymentPropertiesArgs.builder
       builder.properties(args(argsBuilder).build)

@@ -2016,9 +2016,6 @@ object dataplex:
    * A data product is a curated collection of data assets, packaged to address
    * specific use cases.
    * 
-   * &gt; **Warning:** This resource is in beta, and should be used with the terraform-provider-google-beta provider.
-   * See Provider Versions for more details on beta resources.
-   * 
    * To get more information about DataProduct, see:
    * 
    * * [API documentation](https://cloud.google.com/dataplex/docs/reference/rest/v1/projects.locations.dataProducts)
@@ -2045,9 +2042,6 @@ object dataplex:
 
   /**
    * A data asset resource that can be packaged and shared via a data product.
-   * 
-   * &gt; **Warning:** This resource is in beta, and should be used with the terraform-provider-google-beta provider.
-   * See Provider Versions for more details on beta resources.
    * 
    * To get more information about DataProductDataAsset, see:
    * 

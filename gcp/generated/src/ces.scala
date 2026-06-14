@@ -436,6 +436,36 @@ object ces:
       val argsBuilder = com.pulumi.gcp.ces.inputs.GuardrailModelSafetyArgs.builder
       builder.modelSafety(args(argsBuilder).build)
 
+  /**
+   * Security settings for a location in Customer Engagement Suite.
+   * 
+   * &gt; **Warning:** This resource is in beta, and should be used with the terraform-provider-google-beta provider.
+   * See Provider Versions for more details on beta resources.
+   * 
+   * To get more information about SecuritySettings, see:
+   * 
+   * * [API documentation](https://docs.cloud.google.com/customer-engagement-ai/conversational-agents/ps/reference/rest/v1beta/SecuritySettings)
+   * * How-to Guides
+   *     * [Official Documentation](https://cloud.google.com/customer-engagement-ai/docs)
+   */
+  def SecuritySettings(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+      (args: Endofunction[com.pulumi.gcp.ces.SecuritySettingsArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+    val argsBuilder = com.pulumi.gcp.ces.SecuritySettingsArgs.builder
+    com.pulumi.gcp.ces.SecuritySettings(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+
+  extension (builder: com.pulumi.gcp.ces.SecuritySettingsArgs.Builder)
+    /**
+     * @param endpointControlPolicy Optional. Endpoint control related settings.
+     * Structure is documented below.
+     * @return builder
+     */
+    def endpointControlPolicy(args: Endofunction[com.pulumi.gcp.ces.inputs.SecuritySettingsEndpointControlPolicyArgs.Builder]):
+        com.pulumi.gcp.ces.SecuritySettingsArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.ces.inputs.SecuritySettingsEndpointControlPolicyArgs.builder
+      builder.endpointControlPolicy(args(argsBuilder).build)
+
   /** Description */
   def Tool(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.gcp.ces.ToolArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
@@ -3075,6 +3105,17 @@ object ces:
         com.pulumi.gcp.ces.inputs.GuardrailState.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.GuardrailModelSafetyArgs.builder
       builder.modelSafety(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.gcp.ces.inputs.SecuritySettingsState.Builder)
+    /**
+     * @param endpointControlPolicy Optional. Endpoint control related settings.
+     * Structure is documented below.
+     * @return builder
+     */
+    def endpointControlPolicy(args: Endofunction[com.pulumi.gcp.ces.inputs.SecuritySettingsEndpointControlPolicyArgs.Builder]):
+        com.pulumi.gcp.ces.inputs.SecuritySettingsState.Builder =
+      val argsBuilder = com.pulumi.gcp.ces.inputs.SecuritySettingsEndpointControlPolicyArgs.builder
+      builder.endpointControlPolicy(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.ces.inputs.ToolClientFunctionArgs.Builder)
     /**

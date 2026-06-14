@@ -1874,6 +1874,15 @@ object container:
 
   extension (builder: com.pulumi.gcp.container.inputs.ClusterAddonsConfigArgs.Builder)
     /**
+     * @param agentSandboxConfig Configuration for the Agent Sandbox addon. Structure is documented below:
+     * @return builder
+     */
+    def agentSandboxConfig(args: Endofunction[com.pulumi.gcp.container.inputs.ClusterAddonsConfigAgentSandboxConfigArgs.Builder]):
+        com.pulumi.gcp.container.inputs.ClusterAddonsConfigArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.container.inputs.ClusterAddonsConfigAgentSandboxConfigArgs.builder
+      builder.agentSandboxConfig(args(argsBuilder).build)
+
+    /**
      * @param cloudrunConfig . Structure is documented below.
      * @return builder
      */
@@ -2728,6 +2737,15 @@ object container:
 
   extension (builder: com.pulumi.gcp.container.inputs.ClusterNodeConfigKubeletConfigArgs.Builder)
     /**
+     * @param crashLoopBackOff Contains configuration options to modify node-level parameters for container restart behavior. Structure is documented below.
+     * @return builder
+     */
+    def crashLoopBackOff(args: Endofunction[com.pulumi.gcp.container.inputs.ClusterNodeConfigKubeletConfigCrashLoopBackOffArgs.Builder]):
+        com.pulumi.gcp.container.inputs.ClusterNodeConfigKubeletConfigArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.container.inputs.ClusterNodeConfigKubeletConfigCrashLoopBackOffArgs.builder
+      builder.crashLoopBackOff(args(argsBuilder).build)
+
+    /**
      * @param evictionMinimumReclaim Defines a map of signal names to percentage that defines minimum reclaims. It describes the minimum amount of a given resource the kubelet will reclaim when performing a pod eviction. Structure is documented below.
      * @return builder
      */
@@ -3502,6 +3520,15 @@ object container:
       builder.gpuSharingConfig(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.container.inputs.ClusterNodePoolNodeConfigKubeletConfigArgs.Builder)
+    /**
+     * @param crashLoopBackOff Contains configuration options to modify node-level parameters for container restart behavior. Structure is documented below.
+     * @return builder
+     */
+    def crashLoopBackOff(args: Endofunction[com.pulumi.gcp.container.inputs.ClusterNodePoolNodeConfigKubeletConfigCrashLoopBackOffArgs.Builder]):
+        com.pulumi.gcp.container.inputs.ClusterNodePoolNodeConfigKubeletConfigArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.container.inputs.ClusterNodePoolNodeConfigKubeletConfigCrashLoopBackOffArgs.builder
+      builder.crashLoopBackOff(args(argsBuilder).build)
+
     /**
      * @param evictionMinimumReclaim Defines a map of signal names to percentage that defines minimum reclaims. It describes the minimum amount of a given resource the kubelet will reclaim when performing a pod eviction. Structure is documented below.
      * @return builder
@@ -4634,6 +4661,15 @@ object container:
       builder.gpuSharingConfig(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.container.inputs.NodePoolNodeConfigKubeletConfigArgs.Builder)
+    /**
+     * @param crashLoopBackOff Contains configuration options to modify node-level parameters for container restart behavior.
+     * @return builder
+     */
+    def crashLoopBackOff(args: Endofunction[com.pulumi.gcp.container.inputs.NodePoolNodeConfigKubeletConfigCrashLoopBackOffArgs.Builder]):
+        com.pulumi.gcp.container.inputs.NodePoolNodeConfigKubeletConfigArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.container.inputs.NodePoolNodeConfigKubeletConfigCrashLoopBackOffArgs.builder
+      builder.crashLoopBackOff(args(argsBuilder).build)
+
     /**
      * @param evictionMinimumReclaim Defines a map of signal names to percentage that defines minimum reclaims. It describes the minimum amount of a given resource the kubelet will reclaim when performing a pod eviction.
      * @return builder

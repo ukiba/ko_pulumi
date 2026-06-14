@@ -4537,7 +4537,7 @@ object kms:
       com.pulumi.gcp.kms.KmsFunctions.getKMSSecretAsymmetricPlain(args(argsBuilder).build)
 
     /**
-     * !&gt; **Warning:** This data source is deprecated. Use the `gcp.kms.SecretCiphertext` **resource** instead.
+     * &gt; **Warning:** This data source is deprecated. Use the `gcp.kms.SecretCiphertext` **resource** instead.
      * 
      * This data source allows you to encrypt data with Google Cloud KMS and use the
      * ciphertext within your resource definitions.
@@ -4556,7 +4556,7 @@ object kms:
       com.pulumi.gcp.kms.KmsFunctions.getKMSSecretCiphertext(args(argsBuilder).build)
 
     /**
-     * !&gt; **Warning:** This data source is deprecated. Use the `gcp.kms.SecretCiphertext` **resource** instead.
+     * &gt; **Warning:** This data source is deprecated. Use the `gcp.kms.SecretCiphertext` **resource** instead.
      * 
      * This data source allows you to encrypt data with Google Cloud KMS and use the
      * ciphertext within your resource definitions.

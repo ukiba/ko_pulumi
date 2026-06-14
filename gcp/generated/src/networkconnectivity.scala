@@ -1309,14 +1309,11 @@ object networkconnectivity:
   /**
    * The Transport resource is a top-level resource used by customers to control Partner Cross-Cloud Interconnect (CCI) connections.
    * 
-   * &gt; **Warning:** This resource is in beta, and should be used with the terraform-provider-google-beta provider.
-   * See Provider Versions for more details on beta resources.
-   * 
    * To get more information about Transport, see:
    * 
-   * * [API documentation](https://cloud.google.com/network-connectivity/docs/reference/networkconnectivity/rest/v1beta/projects.locations.transport)
+   * * [API documentation](https://docs.cloud.google.com/network-connectivity/docs/reference/networkconnectivity/rest/v1/projects.locations.transports)
    * * How-to Guides
-   *     * [Official Documentation](https://docs.cloud.google.com/sdk/gcloud/reference/beta/network-connectivity/transports)
+   *     * [Official Documentation](https://docs.cloud.google.com/sdk/gcloud/reference/network-connectivity/transports)
    */
   def Transport(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.gcp.networkconnectivity.TransportArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =

@@ -57,8 +57,7 @@ object netapp:
 
   extension (builder: com.pulumi.gcp.netapp.BackupArgs.Builder)
     /**
-     * @param ontapSource (Optional, Beta)
-     * Details of the ONTAP source volume and snapshot.
+     * @param ontapSource Details of the ONTAP source volume and snapshot.
      * Structure is documented below.
      * @return builder
      */
@@ -408,8 +407,7 @@ object netapp:
 
   extension (builder: com.pulumi.gcp.netapp.inputs.BackupState.Builder)
     /**
-     * @param ontapSource (Optional, Beta)
-     * Details of the ONTAP source volume and snapshot.
+     * @param ontapSource Details of the ONTAP source volume and snapshot.
      * Structure is documented below.
      * @return builder
      */

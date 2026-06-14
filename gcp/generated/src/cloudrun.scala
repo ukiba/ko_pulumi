@@ -40,9 +40,10 @@ object cloudrun:
       com.pulumi.gcp.cloudrun.CloudrunFunctions.getLocationsPlain(args(argsBuilder).build)
 
     /**
-     * Get information about a Google Cloud Run Service. For more information see
-     * the [official documentation](https://cloud.google.com/run/docs/)
-     * and [API](https://cloud.google.com/run/docs/apis).
+     * Get information about a Cloud Run Service.
+     * 
+     * For more information see the [official documentation](https://cloud.google.com/run/docs/) and
+     * the [API](https://cloud.google.com/run/docs/reference/rest/v1/namespaces.services).
      */
     inline def getService(args: Endofunction[com.pulumi.gcp.cloudrun.inputs.GetServiceArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.cloudrun.outputs.GetServiceResult] =
@@ -50,9 +51,10 @@ object cloudrun:
       com.pulumi.gcp.cloudrun.CloudrunFunctions.getService(args(argsBuilder).build)
 
     /**
-     * Get information about a Google Cloud Run Service. For more information see
-     * the [official documentation](https://cloud.google.com/run/docs/)
-     * and [API](https://cloud.google.com/run/docs/apis).
+     * Get information about a Cloud Run Service.
+     * 
+     * For more information see the [official documentation](https://cloud.google.com/run/docs/) and
+     * the [API](https://cloud.google.com/run/docs/reference/rest/v1/namespaces.services).
      */
     inline def getServicePlain(args: Endofunction[com.pulumi.gcp.cloudrun.inputs.GetServicePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.cloudrun.outputs.GetServiceResult] =

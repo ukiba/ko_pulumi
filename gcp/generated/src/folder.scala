@@ -158,7 +158,7 @@ object folder:
    * 
    * ## gcp.folder.IAMPolicy
    * 
-   * !&gt; **Be careful!** You can accidentally lock yourself out of your folder
+   * &gt; **Be careful!** You can accidentally lock yourself out of your folder
    *    using this resource. Deleting a `gcp.folder.IAMPolicy` removes access
    *    from anyone without permissions on its parent folder/organization. Proceed with caution.
    *    It&#39;s not recommended to use `gcp.folder.IAMPolicy` with your provider folder
@@ -691,7 +691,7 @@ object folder:
    * 
    * ## gcp.folder.IAMPolicy
    * 
-   * !&gt; **Be careful!** You can accidentally lock yourself out of your folder
+   * &gt; **Be careful!** You can accidentally lock yourself out of your folder
    *    using this resource. Deleting a `gcp.folder.IAMPolicy` removes access
    *    from anyone without permissions on its parent folder/organization. Proceed with caution.
    *    It&#39;s not recommended to use `gcp.folder.IAMPolicy` with your provider folder
@@ -1224,7 +1224,7 @@ object folder:
    * 
    * ## gcp.folder.IAMPolicy
    * 
-   * !&gt; **Be careful!** You can accidentally lock yourself out of your folder
+   * &gt; **Be careful!** You can accidentally lock yourself out of your folder
    *    using this resource. Deleting a `gcp.folder.IAMPolicy` removes access
    *    from anyone without permissions on its parent folder/organization. Proceed with caution.
    *    It&#39;s not recommended to use `gcp.folder.IAMPolicy` with your provider folder
@@ -1746,7 +1746,7 @@ object folder:
    * 
    * ## gcp.folder.IAMPolicy
    * 
-   * !&gt; **Be careful!** You can accidentally lock yourself out of your folder
+   * &gt; **Be careful!** You can accidentally lock yourself out of your folder
    *    using this resource. Deleting a `gcp.folder.IAMPolicy` removes access
    *    from anyone without permissions on its parent folder/organization. Proceed with caution.
    *    It&#39;s not recommended to use `gcp.folder.IAMPolicy` with your provider folder

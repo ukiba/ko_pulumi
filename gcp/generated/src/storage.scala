@@ -4348,67 +4348,37 @@ object storage:
       val argsBuilder = com.pulumi.gcp.storage.inputs.GetBucketsPlainArgs.builder
       com.pulumi.gcp.storage.StorageFunctions.getBucketsPlain(args(argsBuilder).build)
 
-    /**
-     * Use this data source to get information about a Folder Storage Intelligence config resource.
-     * See [the official documentation](https://cloud.google.com/storage/docs/storage-intelligence/overview#resource)
-     * and
-     * [API](https://cloud.google.com/storage/docs/json_api/v1/intelligenceConfig).
-     */
+    /** Get information about a Cloud Storage Control FolderIntelligenceConfig. */
     inline def getControlFolderIntelligenceConfig(args: Endofunction[com.pulumi.gcp.storage.inputs.GetControlFolderIntelligenceConfigArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.storage.outputs.GetControlFolderIntelligenceConfigResult] =
       val argsBuilder = com.pulumi.gcp.storage.inputs.GetControlFolderIntelligenceConfigArgs.builder
       com.pulumi.gcp.storage.StorageFunctions.getControlFolderIntelligenceConfig(args(argsBuilder).build)
 
-    /**
-     * Use this data source to get information about a Folder Storage Intelligence config resource.
-     * See [the official documentation](https://cloud.google.com/storage/docs/storage-intelligence/overview#resource)
-     * and
-     * [API](https://cloud.google.com/storage/docs/json_api/v1/intelligenceConfig).
-     */
+    /** Get information about a Cloud Storage Control FolderIntelligenceConfig. */
     inline def getControlFolderIntelligenceConfigPlain(args: Endofunction[com.pulumi.gcp.storage.inputs.GetControlFolderIntelligenceConfigPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.storage.outputs.GetControlFolderIntelligenceConfigResult] =
       val argsBuilder = com.pulumi.gcp.storage.inputs.GetControlFolderIntelligenceConfigPlainArgs.builder
       com.pulumi.gcp.storage.StorageFunctions.getControlFolderIntelligenceConfigPlain(args(argsBuilder).build)
 
-    /**
-     * Use this data source to get information about a Organization Storage Intelligence config resource.
-     * See [the official documentation](https://cloud.google.com/storage/docs/storage-intelligence/overview#resource)
-     * and
-     * [API](https://cloud.google.com/storage/docs/json_api/v1/intelligenceConfig).
-     */
+    /** Get information about a Cloud Storage Control OrganizationIntelligenceConfig. */
     inline def getControlOrganizationIntelligenceConfig(args: Endofunction[com.pulumi.gcp.storage.inputs.GetControlOrganizationIntelligenceConfigArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.storage.outputs.GetControlOrganizationIntelligenceConfigResult] =
       val argsBuilder = com.pulumi.gcp.storage.inputs.GetControlOrganizationIntelligenceConfigArgs.builder
       com.pulumi.gcp.storage.StorageFunctions.getControlOrganizationIntelligenceConfig(args(argsBuilder).build)
 
-    /**
-     * Use this data source to get information about a Organization Storage Intelligence config resource.
-     * See [the official documentation](https://cloud.google.com/storage/docs/storage-intelligence/overview#resource)
-     * and
-     * [API](https://cloud.google.com/storage/docs/json_api/v1/intelligenceConfig).
-     */
+    /** Get information about a Cloud Storage Control OrganizationIntelligenceConfig. */
     inline def getControlOrganizationIntelligenceConfigPlain(args: Endofunction[com.pulumi.gcp.storage.inputs.GetControlOrganizationIntelligenceConfigPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.storage.outputs.GetControlOrganizationIntelligenceConfigResult] =
       val argsBuilder = com.pulumi.gcp.storage.inputs.GetControlOrganizationIntelligenceConfigPlainArgs.builder
       com.pulumi.gcp.storage.StorageFunctions.getControlOrganizationIntelligenceConfigPlain(args(argsBuilder).build)
 
-    /**
-     * Use this data source to get information about a Project Storage Intelligence config resource.
-     * See [the official documentation](https://cloud.google.com/storage/docs/storage-intelligence/overview#resource)
-     * and
-     * [API](https://cloud.google.com/storage/docs/json_api/v1/intelligenceConfig).
-     */
+    /** Get information about a Cloud Storage Control ProjectIntelligenceConfig. */
     inline def getControlProjectIntelligenceConfig(args: Endofunction[com.pulumi.gcp.storage.inputs.GetControlProjectIntelligenceConfigArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.storage.outputs.GetControlProjectIntelligenceConfigResult] =
       val argsBuilder = com.pulumi.gcp.storage.inputs.GetControlProjectIntelligenceConfigArgs.builder
       com.pulumi.gcp.storage.StorageFunctions.getControlProjectIntelligenceConfig(args(argsBuilder).build)
 
-    /**
-     * Use this data source to get information about a Project Storage Intelligence config resource.
-     * See [the official documentation](https://cloud.google.com/storage/docs/storage-intelligence/overview#resource)
-     * and
-     * [API](https://cloud.google.com/storage/docs/json_api/v1/intelligenceConfig).
-     */
+    /** Get information about a Cloud Storage Control ProjectIntelligenceConfig. */
     inline def getControlProjectIntelligenceConfigPlain(args: Endofunction[com.pulumi.gcp.storage.inputs.GetControlProjectIntelligenceConfigPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.storage.outputs.GetControlProjectIntelligenceConfigResult] =
       val argsBuilder = com.pulumi.gcp.storage.inputs.GetControlProjectIntelligenceConfigPlainArgs.builder

@@ -113,6 +113,17 @@ object diagflow:
       builder.notificationConfig(args(argsBuilder).build)
 
     /**
+     * @param sipConfig (Optional, Beta)
+     * Configuration for SIP.
+     * Structure is documented below.
+     * @return builder
+     */
+    def sipConfig(args: Endofunction[com.pulumi.gcp.diagflow.inputs.ConversationProfileSipConfigArgs.Builder]):
+        com.pulumi.gcp.diagflow.ConversationProfileArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.diagflow.inputs.ConversationProfileSipConfigArgs.builder
+      builder.sipConfig(args(argsBuilder).build)
+
+    /**
      * @param sttConfig Settings for speech transcription.
      * Structure is documented below.
      * @return builder
@@ -1055,6 +1066,20 @@ object diagflow:
         resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
 
   /**
+   * SipTrunk is the resource that represents a SIP trunk to connect to the Google Telephony Platform SIP trunking service.
+   * 
+   * To get more information about SipTrunk, see:
+   * 
+   * * [API documentation](https://cloud.google.com/dialogflow/es/docs/reference/rest/v2/projects.locations.sipTrunks)
+   */
+  def SipTrunk(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+      (args: Endofunction[com.pulumi.gcp.diagflow.SipTrunkArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+    val argsBuilder = com.pulumi.gcp.diagflow.SipTrunkArgs.builder
+    com.pulumi.gcp.diagflow.SipTrunk(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+
+  /**
    * You can create multiple versions of your agent and publish them to separate environments.
    * 
    * To get more information about Version, see:
@@ -1092,7 +1117,7 @@ object diagflow:
       builder.humanAgentSuggestionConfig(args(argsBuilder).build)
 
     /**
-     * @param messageAnalysisConfig desc
+     * @param messageAnalysisConfig Configuration for analyzing conversation messages.
      * Structure is documented below.
      * @return builder
      */
@@ -1220,7 +1245,7 @@ object diagflow:
       builder.knowledgeBaseQuerySource(args(argsBuilder).build)
 
     /**
-     * @param sections he customized sections chosen to return when requesting a summary of a conversation.
+     * @param sections The customized sections chosen to return when requesting a summary of a conversation.
      * Structure is documented below.
      * @return builder
      */
@@ -1326,7 +1351,7 @@ object diagflow:
       builder.dialogflowQuerySource(args(argsBuilder).build)
 
     /**
-     * @param sections he customized sections chosen to return when requesting a summary of a conversation.
+     * @param sections The customized sections chosen to return when requesting a summary of a conversation.
      * Structure is documented below.
      * @return builder
      */
@@ -1429,6 +1454,17 @@ object diagflow:
         com.pulumi.gcp.diagflow.inputs.ConversationProfileState.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.ConversationProfileNotificationConfigArgs.builder
       builder.notificationConfig(args(argsBuilder).build)
+
+    /**
+     * @param sipConfig (Optional, Beta)
+     * Configuration for SIP.
+     * Structure is documented below.
+     * @return builder
+     */
+    def sipConfig(args: Endofunction[com.pulumi.gcp.diagflow.inputs.ConversationProfileSipConfigArgs.Builder]):
+        com.pulumi.gcp.diagflow.inputs.ConversationProfileState.Builder =
+      val argsBuilder = com.pulumi.gcp.diagflow.inputs.ConversationProfileSipConfigArgs.builder
+      builder.sipConfig(args(argsBuilder).build)
 
     /**
      * @param sttConfig Settings for speech transcription.
@@ -4400,3 +4436,26 @@ object diagflow:
         com.pulumi.gcp.diagflow.inputs.IntentState.Builder =
       def argsBuilder = com.pulumi.gcp.diagflow.inputs.IntentFollowupIntentInfoArgs.builder
       builder.followupIntentInfos(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.gcp.diagflow.inputs.SipTrunkConnectionArgs.Builder)
+    /**
+     * @param errorDetails (Output)
+     * Output only. The error details of the connection.
+     * Structure is documented below.
+     * @return builder
+     */
+    def errorDetails(args: Endofunction[com.pulumi.gcp.diagflow.inputs.SipTrunkConnectionErrorDetailArgs.Builder]*):
+        com.pulumi.gcp.diagflow.inputs.SipTrunkConnectionArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.diagflow.inputs.SipTrunkConnectionErrorDetailArgs.builder
+      builder.errorDetails(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.gcp.diagflow.inputs.SipTrunkState.Builder)
+    /**
+     * @param connections Output only. The connections of the SIP trunk.
+     * Structure is documented below.
+     * @return builder
+     */
+    def connections(args: Endofunction[com.pulumi.gcp.diagflow.inputs.SipTrunkConnectionArgs.Builder]*):
+        com.pulumi.gcp.diagflow.inputs.SipTrunkState.Builder =
+      def argsBuilder = com.pulumi.gcp.diagflow.inputs.SipTrunkConnectionArgs.builder
+      builder.connections(args.map(_(argsBuilder).build)*)

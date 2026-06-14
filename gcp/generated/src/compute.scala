@@ -4157,11 +4157,19 @@ object compute:
       val argsBuilder = com.pulumi.gcp.compute.inputs.GetRegionNetworkEndpointGroupPlainArgs.builder
       com.pulumi.gcp.compute.ComputeFunctions.getRegionNetworkEndpointGroupPlain(args(argsBuilder).build)
 
+    /**
+     * Gets a Regional SSL Policy within GCE from its name, for use with Target HTTPS and Target SSL Proxies.
+     *     For more information see [the official documentation](https://cloud.google.com/compute/docs/load-balancing/ssl-policies).
+     */
     inline def getRegionSSLPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.GetRegionSSLPolicyArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.compute.outputs.GetRegionSSLPolicyResult] =
       val argsBuilder = com.pulumi.gcp.compute.inputs.GetRegionSSLPolicyArgs.builder
       com.pulumi.gcp.compute.ComputeFunctions.getRegionSSLPolicy(args(argsBuilder).build)
 
+    /**
+     * Gets a Regional SSL Policy within GCE from its name, for use with Target HTTPS and Target SSL Proxies.
+     *     For more information see [the official documentation](https://cloud.google.com/compute/docs/load-balancing/ssl-policies).
+     */
     inline def getRegionSSLPolicyPlain(args: Endofunction[com.pulumi.gcp.compute.inputs.GetRegionSSLPolicyPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.compute.outputs.GetRegionSSLPolicyResult] =
       val argsBuilder = com.pulumi.gcp.compute.inputs.GetRegionSSLPolicyPlainArgs.builder
@@ -4628,6 +4636,26 @@ object compute:
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.compute.outputs.GetSecurityPolicyResult] =
       val argsBuilder = com.pulumi.gcp.compute.inputs.GetSecurityPolicyPlainArgs.builder
       com.pulumi.gcp.compute.ComputeFunctions.getSecurityPolicyPlain(args(argsBuilder).build)
+
+    /**
+     * Get a specific [service attachment](https://cloud.google.com/vpc/docs/configure-private-service-connect-services) within a region. For more information see the
+     * [official documentation](https://cloud.google.com/vpc/docs/configure-private-service-connect-services)
+     * and [API](https://cloud.google.com/compute/docs/reference/rest/v1/serviceAttachments/get).
+     */
+    inline def getServiceAttachment(args: Endofunction[com.pulumi.gcp.compute.inputs.GetServiceAttachmentArgs.Builder] = scala.Predef.identity):
+        com.pulumi.core.Output[com.pulumi.gcp.compute.outputs.GetServiceAttachmentResult] =
+      val argsBuilder = com.pulumi.gcp.compute.inputs.GetServiceAttachmentArgs.builder
+      com.pulumi.gcp.compute.ComputeFunctions.getServiceAttachment(args(argsBuilder).build)
+
+    /**
+     * Get a specific [service attachment](https://cloud.google.com/vpc/docs/configure-private-service-connect-services) within a region. For more information see the
+     * [official documentation](https://cloud.google.com/vpc/docs/configure-private-service-connect-services)
+     * and [API](https://cloud.google.com/compute/docs/reference/rest/v1/serviceAttachments/get).
+     */
+    inline def getServiceAttachmentPlain(args: Endofunction[com.pulumi.gcp.compute.inputs.GetServiceAttachmentPlainArgs.Builder] = scala.Predef.identity):
+        java.util.concurrent.CompletableFuture[com.pulumi.gcp.compute.outputs.GetServiceAttachmentResult] =
+      val argsBuilder = com.pulumi.gcp.compute.inputs.GetServiceAttachmentPlainArgs.builder
+      com.pulumi.gcp.compute.ComputeFunctions.getServiceAttachmentPlain(args(argsBuilder).build)
 
     /**
      * To get more information about Snapshot, see:
@@ -6317,6 +6345,16 @@ object compute:
         com.pulumi.gcp.compute.FutureReservationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.FutureReservationCommitmentInfoArgs.builder
       builder.commitmentInfo(args(argsBuilder).build)
+
+    /**
+     * @param params Additional params passed with the request, but not persisted as part of resource payload
+     * Structure is documented below.
+     * @return builder
+     */
+    def params(args: Endofunction[com.pulumi.gcp.compute.inputs.FutureReservationParamsArgs.Builder]):
+        com.pulumi.gcp.compute.FutureReservationArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.compute.inputs.FutureReservationParamsArgs.builder
+      builder.params(args(argsBuilder).build)
 
     /**
      * @param shareSettings Settings for sharing the future reservation
@@ -8957,7 +8995,9 @@ object compute:
       builder.scheduling(args(argsBuilder).build)
 
     /**
-     * @param scratchDisks The scratch disks attached to the instance.
+     * @param scratchDisks * `network_interface.alias_ip_range`
+     * * `network_interface.alias_ipv6_range` [Beta]
+     * * `network_interface.access_config`
      * @return builder
      */
     def scratchDisks(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceFromTemplateScratchDiskArgs.Builder]*):
@@ -25372,24 +25412,6 @@ object compute:
    * * [API documentation](https://cloud.google.com/compute/docs/reference/rest/v1/regionSslPolicies)
    * * How-to Guides
    *     * [Using SSL Policies](https://cloud.google.com/compute/docs/load-balancing/ssl-policies)
-   * 
-   * ## Import
-   * 
-   * RegionSslPolicy can be imported using any of these accepted formats:
-   * 
-   * * `projects/{{project}}/regions/{{region}}/sslPolicies/{{name}}`
-   * * `{{project}}/{{region}}/{{name}}`
-   * * `{{region}}/{{name}}`
-   * * `{{name}}`
-   * 
-   * When using the `pulumi import` command, RegionSslPolicy can be imported using one of the formats above. For example:
-   * 
-   * ```sh
-   * $ pulumi import gcp:compute/regionSslPolicy:RegionSslPolicy default projects/{{project}}/regions/{{region}}/sslPolicies/{{name}}
-   * $ pulumi import gcp:compute/regionSslPolicy:RegionSslPolicy default {{project}}/{{region}}/{{name}}
-   * $ pulumi import gcp:compute/regionSslPolicy:RegionSslPolicy default {{region}}/{{name}}
-   * $ pulumi import gcp:compute/regionSslPolicy:RegionSslPolicy default {{name}}
-   * ```
    */
   def RegionSslPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.gcp.compute.RegionSslPolicyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
@@ -32514,6 +32536,16 @@ object compute:
       builder.commitmentInfo(args(argsBuilder).build)
 
     /**
+     * @param params Additional params passed with the request, but not persisted as part of resource payload
+     * Structure is documented below.
+     * @return builder
+     */
+    def params(args: Endofunction[com.pulumi.gcp.compute.inputs.FutureReservationParamsArgs.Builder]):
+        com.pulumi.gcp.compute.inputs.FutureReservationState.Builder =
+      val argsBuilder = com.pulumi.gcp.compute.inputs.FutureReservationParamsArgs.builder
+      builder.params(args(argsBuilder).build)
+
+    /**
      * @param shareSettings Settings for sharing the future reservation
      * Structure is documented below.
      * @return builder
@@ -33072,6 +33104,15 @@ object compute:
       builder.aliasIpRanges(args.map(_(argsBuilder).build)*)
 
     /**
+     * @param aliasIpv6Ranges An array of IPv6 alias IP ranges for this network interface.
+     * @return builder
+     */
+    def aliasIpv6Ranges(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceFromMachineImageNetworkInterfaceAliasIpv6RangeArgs.Builder]*):
+        com.pulumi.gcp.compute.inputs.InstanceFromMachineImageNetworkInterfaceArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.compute.inputs.InstanceFromMachineImageNetworkInterfaceAliasIpv6RangeArgs.builder
+      builder.aliasIpv6Ranges(args.map(_(argsBuilder).build)*)
+
+    /**
      * @param ipv6AccessConfigs An array of IPv6 access configurations for this interface. Currently, only one IPv6 access config, DIRECT_IPV6, is supported. If there is no ipv6AccessConfig specified, then this instance will have no external IPv6 Internet access.
      * @return builder
      */
@@ -33345,6 +33386,15 @@ object compute:
       builder.aliasIpRanges(args.map(_(argsBuilder).build)*)
 
     /**
+     * @param aliasIpv6Ranges An array of IPv6 alias IP ranges for this network interface.
+     * @return builder
+     */
+    def aliasIpv6Ranges(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceFromTemplateNetworkInterfaceAliasIpv6RangeArgs.Builder]*):
+        com.pulumi.gcp.compute.inputs.InstanceFromTemplateNetworkInterfaceArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.compute.inputs.InstanceFromTemplateNetworkInterfaceAliasIpv6RangeArgs.builder
+      builder.aliasIpv6Ranges(args.map(_(argsBuilder).build)*)
+
+    /**
      * @param ipv6AccessConfigs An array of IPv6 access configurations for this interface. Currently, only one IPv6 access config, DIRECT_IPV6, is supported. If there is no ipv6AccessConfig specified, then this instance will have no external IPv6 Internet access.
      * @return builder
      */
@@ -33534,7 +33584,9 @@ object compute:
       builder.scheduling(args(argsBuilder).build)
 
     /**
-     * @param scratchDisks The scratch disks attached to the instance.
+     * @param scratchDisks * `network_interface.alias_ip_range`
+     * * `network_interface.alias_ipv6_range` [Beta]
+     * * `network_interface.access_config`
      * @return builder
      */
     def scratchDisks(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceFromTemplateScratchDiskArgs.Builder]*):
@@ -33815,6 +33867,17 @@ object compute:
         com.pulumi.gcp.compute.inputs.InstanceNetworkInterfaceArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.InstanceNetworkInterfaceAliasIpRangeArgs.builder
       builder.aliasIpRanges(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param aliasIpv6Ranges [Beta] An
+     * array of alias IPv6 ranges for this network interface. Can only be specified for network
+     * interfaces on subnet-mode networks. Structure documented below.
+     * @return builder
+     */
+    def aliasIpv6Ranges(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceNetworkInterfaceAliasIpv6RangeArgs.Builder]*):
+        com.pulumi.gcp.compute.inputs.InstanceNetworkInterfaceArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.compute.inputs.InstanceNetworkInterfaceAliasIpv6RangeArgs.builder
+      builder.aliasIpv6Ranges(args.map(_(argsBuilder).build)*)
 
     /**
      * @param ipv6AccessConfigs An array of IPv6 access configurations for this interface.
@@ -34156,6 +34219,17 @@ object compute:
         com.pulumi.gcp.compute.inputs.InstanceTemplateNetworkInterfaceArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.InstanceTemplateNetworkInterfaceAliasIpRangeArgs.builder
       builder.aliasIpRanges(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param aliasIpv6Ranges [Beta] An
+     * array of alias IPv6 ranges for this network interface. Can only be specified for network
+     * interfaces on subnet-mode networks. Structure documented below.
+     * @return builder
+     */
+    def aliasIpv6Ranges(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceTemplateNetworkInterfaceAliasIpv6RangeArgs.Builder]*):
+        com.pulumi.gcp.compute.inputs.InstanceTemplateNetworkInterfaceArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.compute.inputs.InstanceTemplateNetworkInterfaceAliasIpv6RangeArgs.builder
+      builder.aliasIpv6Ranges(args.map(_(argsBuilder).build)*)
 
     /**
      * @param ipv6AccessConfigs An array of IPv6 access configurations for this interface.
@@ -36608,6 +36682,17 @@ object compute:
         com.pulumi.gcp.compute.inputs.RegionInstanceTemplateNetworkInterfaceArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.RegionInstanceTemplateNetworkInterfaceAliasIpRangeArgs.builder
       builder.aliasIpRanges(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param aliasIpv6Ranges [Beta] An
+     * array of alias IPv6 ranges for this network interface. Can only be specified for network
+     * interfaces on subnet-mode networks. Structure documented below.
+     * @return builder
+     */
+    def aliasIpv6Ranges(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionInstanceTemplateNetworkInterfaceAliasIpv6RangeArgs.Builder]*):
+        com.pulumi.gcp.compute.inputs.RegionInstanceTemplateNetworkInterfaceArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.compute.inputs.RegionInstanceTemplateNetworkInterfaceAliasIpv6RangeArgs.builder
+      builder.aliasIpv6Ranges(args.map(_(argsBuilder).build)*)
 
     /**
      * @param ipv6AccessConfigs An array of IPv6 access configurations for this interface.

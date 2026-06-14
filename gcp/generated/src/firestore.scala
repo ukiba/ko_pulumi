@@ -156,7 +156,7 @@ object firestore:
       builder.indexConfig(args(argsBuilder).build)
 
     /**
-     * @param ttlConfig The TTL configuration for this Field. If set to an empty block (i.e. `ttlConfig {}`), a TTL policy is configured based on the field. If unset, a TTL policy is not configured (or will be disabled upon updating the resource).
+     * @param ttlConfig The TTL configuration for this Field. If set to an empty (i.e. `ttlConfig {}`) or non-empty block, a TTL policy is configured based on the field. If unset, a TTL policy is not configured (or will be disabled upon updating the resource).
      * Structure is documented below.
      * @return builder
      */
@@ -315,7 +315,7 @@ object firestore:
       builder.indexConfig(args(argsBuilder).build)
 
     /**
-     * @param ttlConfig The TTL configuration for this Field. If set to an empty block (i.e. `ttlConfig {}`), a TTL policy is configured based on the field. If unset, a TTL policy is not configured (or will be disabled upon updating the resource).
+     * @param ttlConfig The TTL configuration for this Field. If set to an empty (i.e. `ttlConfig {}`) or non-empty block, a TTL policy is configured based on the field. If unset, a TTL policy is not configured (or will be disabled upon updating the resource).
      * Structure is documented below.
      * @return builder
      */

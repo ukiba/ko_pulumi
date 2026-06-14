@@ -64,7 +64,7 @@ object networkmanagement:
     //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
 
     /**
-     * !&gt; This datasource triggers side effects on the target resource. It will take a long time to refresh (i.e. `pulumi preview` will take much longer than usual) and may modify the state of the parent resource or other copies of the resource copying the same parent.
+     * &gt; This datasource triggers side effects on the target resource. It will take a long time to refresh (i.e. `pulumi preview` will take much longer than usual) and may modify the state of the parent resource or other copies of the resource copying the same parent.
      * 
      * A connectivity test is a static analysis of your resource configurations
      * that enables you to evaluate connectivity to and from Google Cloud
@@ -83,7 +83,7 @@ object networkmanagement:
       com.pulumi.gcp.networkmanagement.NetworkmanagementFunctions.getConnectivityTestRun(args(argsBuilder).build)
 
     /**
-     * !&gt; This datasource triggers side effects on the target resource. It will take a long time to refresh (i.e. `pulumi preview` will take much longer than usual) and may modify the state of the parent resource or other copies of the resource copying the same parent.
+     * &gt; This datasource triggers side effects on the target resource. It will take a long time to refresh (i.e. `pulumi preview` will take much longer than usual) and may modify the state of the parent resource or other copies of the resource copying the same parent.
      * 
      * A connectivity test is a static analysis of your resource configurations
      * that enables you to evaluate connectivity to and from Google Cloud

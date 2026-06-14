@@ -306,23 +306,13 @@ object vmwareengine:
       val argsBuilder = com.pulumi.gcp.vmwareengine.inputs.GetClusterPlainArgs.builder
       com.pulumi.gcp.vmwareengine.VmwareengineFunctions.getClusterPlain(args(argsBuilder).build)
 
-    /**
-     * Use this data source to get details about a datastore resource.
-     * 
-     * To get more information about datastore, see:
-     * * [API documentation](https://docs.cloud.google.com/vmware-engine/docs/vmware-ecosystem/concepts-nfs-datastores-overview)
-     */
+    /** Get information about a Cloud VMware Engine Datastore. */
     inline def getDatastore(args: Endofunction[com.pulumi.gcp.vmwareengine.inputs.GetDatastoreArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.vmwareengine.outputs.GetDatastoreResult] =
       val argsBuilder = com.pulumi.gcp.vmwareengine.inputs.GetDatastoreArgs.builder
       com.pulumi.gcp.vmwareengine.VmwareengineFunctions.getDatastore(args(argsBuilder).build)
 
-    /**
-     * Use this data source to get details about a datastore resource.
-     * 
-     * To get more information about datastore, see:
-     * * [API documentation](https://docs.cloud.google.com/vmware-engine/docs/vmware-ecosystem/concepts-nfs-datastores-overview)
-     */
+    /** Get information about a Cloud VMware Engine Datastore. */
     inline def getDatastorePlain(args: Endofunction[com.pulumi.gcp.vmwareengine.inputs.GetDatastorePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.vmwareengine.outputs.GetDatastoreResult] =
       val argsBuilder = com.pulumi.gcp.vmwareengine.inputs.GetDatastorePlainArgs.builder

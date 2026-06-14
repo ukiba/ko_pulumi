@@ -5487,13 +5487,13 @@ object iap:
       val argsBuilder = com.pulumi.gcp.iap.inputs.GetAppEngineVersionIamPolicyPlainArgs.builder
       com.pulumi.gcp.iap.IapFunctions.getAppEngineVersionIamPolicyPlain(args(argsBuilder).build)
 
-    /** Get info about a Google Cloud IAP Client. */
+    /** Get information about a Identity-Aware Proxy Client. */
     inline def getClient(args: Endofunction[com.pulumi.gcp.iap.inputs.GetClientArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.iap.outputs.GetClientResult] =
       val argsBuilder = com.pulumi.gcp.iap.inputs.GetClientArgs.builder
       com.pulumi.gcp.iap.IapFunctions.getClient(args(argsBuilder).build)
 
-    /** Get info about a Google Cloud IAP Client. */
+    /** Get information about a Identity-Aware Proxy Client. */
     inline def getClientPlain(args: Endofunction[com.pulumi.gcp.iap.inputs.GetClientPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.iap.outputs.GetClientResult] =
       val argsBuilder = com.pulumi.gcp.iap.inputs.GetClientPlainArgs.builder

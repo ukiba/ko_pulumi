@@ -211,6 +211,38 @@ object chronicle:
       builder.failureDetails(args(argsBuilder).build)
 
   /**
+   * Represents a set of logic conditions used to refine various types of findings such as curated rule detections.
+   * 
+   * &gt; **Warning:** This resource is in beta, and should be used with the terraform-provider-google-beta provider.
+   * See Provider Versions for more details on beta resources.
+   * 
+   * To get more information about FindingsRefinement, see:
+   * 
+   * * [API documentation](https://docs.cloud.google.com/chronicle/docs/reference/rest/v1beta/projects.locations.instances.findingsRefinements)
+   * * How-to Guides
+   *     * [Google SecOps Guides](https://cloud.google.com/chronicle/docs/secops/secops-overview)
+   */
+  def FindingsRefinement(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+      (args: Endofunction[com.pulumi.gcp.chronicle.FindingsRefinementArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+    val argsBuilder = com.pulumi.gcp.chronicle.FindingsRefinementArgs.builder
+    com.pulumi.gcp.chronicle.FindingsRefinement(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+
+  extension (builder: com.pulumi.gcp.chronicle.FindingsRefinementArgs.Builder)
+    /**
+     * @param outcomeFilters The outcome filters for the findings refinement. These allow you to specify
+     * filters that are applied to the outcome variables in the detection.
+     * All filters must be true for a detection to match the findings refinement.
+     * Structure is documented below.
+     * @return builder
+     */
+    def outcomeFilters(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FindingsRefinementOutcomeFilterArgs.Builder]*):
+        com.pulumi.gcp.chronicle.FindingsRefinementArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.chronicle.inputs.FindingsRefinementOutcomeFilterArgs.builder
+      builder.outcomeFilters(args.map(_(argsBuilder).build)*)
+
+  /**
    * A configuration for a native dashboard within a Google SecOps (Chronicle) instance.
    * 
    * To get more information about NativeDashboard, see:
@@ -3037,6 +3069,19 @@ object chronicle:
         com.pulumi.gcp.chronicle.inputs.FeedState.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.FeedFailureDetailsArgs.builder
       builder.failureDetails(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.gcp.chronicle.inputs.FindingsRefinementState.Builder)
+    /**
+     * @param outcomeFilters The outcome filters for the findings refinement. These allow you to specify
+     * filters that are applied to the outcome variables in the detection.
+     * All filters must be true for a detection to match the findings refinement.
+     * Structure is documented below.
+     * @return builder
+     */
+    def outcomeFilters(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FindingsRefinementOutcomeFilterArgs.Builder]*):
+        com.pulumi.gcp.chronicle.inputs.FindingsRefinementState.Builder =
+      def argsBuilder = com.pulumi.gcp.chronicle.inputs.FindingsRefinementOutcomeFilterArgs.builder
+      builder.outcomeFilters(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.gcp.chronicle.inputs.NativeDashboardChartArgs.Builder)
     /**
