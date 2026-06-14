@@ -165,6 +165,7 @@ export ko_pulumi.aws.batch.eksProperties
 export ko_pulumi.aws.batch.emptyDir
 export ko_pulumi.aws.batch.envs
 export ko_pulumi.aws.batch.evaluateOnExits
+export ko_pulumi.aws.bcmdata.`export`
 export ko_pulumi.aws.bcmdata.dataQueries
 export ko_pulumi.aws.bcmdata.destinationConfigurations
 export ko_pulumi.aws.bedrock.actionGroupExecutor

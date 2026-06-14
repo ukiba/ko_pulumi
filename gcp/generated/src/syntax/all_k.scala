@@ -143,6 +143,7 @@ export ko_pulumi.gcp.colab.notebookRuntimeTemplateRef
 export ko_pulumi.gcp.composer.maintenanceWindow
 export ko_pulumi.gcp.composer.masterAuthorizedNetworksConfig
 export ko_pulumi.gcp.composer.nodeConfig
+export ko_pulumi.gcp.compute.`match`
 export ko_pulumi.gcp.compute.keks
 export ko_pulumi.gcp.compute.l2Forwarding
 export ko_pulumi.gcp.compute.labels
@@ -504,6 +505,7 @@ export ko_pulumi.gcp.networkconnectivity.linkedRouterApplianceInstances
 export ko_pulumi.gcp.networkconnectivity.linkedVpcNetwork
 export ko_pulumi.gcp.networkconnectivity.linkedVpnTunnels
 export ko_pulumi.gcp.networkconnectivity.migration
+export ko_pulumi.gcp.networksecurity.`match`
 export ko_pulumi.gcp.networksecurity.locations
 export ko_pulumi.gcp.networksecurity.locationsDetails
 export ko_pulumi.gcp.networksecurity.mcp

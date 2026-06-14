@@ -30,6 +30,7 @@ export ko_pulumi.aws.appflow.oauth2Properties
 export ko_pulumi.aws.appflow.oauthCredentials
 export ko_pulumi.aws.appflow.oauthProperties
 export ko_pulumi.aws.appflow.oauthRequest
+export ko_pulumi.aws.appmesh.`match`
 export ko_pulumi.aws.appmesh.listeners
 export ko_pulumi.aws.appmesh.logging
 export ko_pulumi.aws.appmesh.metadatas
@@ -441,6 +442,7 @@ export ko_pulumi.aws.mskconnect.logDelivery
 export ko_pulumi.aws.mwaa.lastUpdateds
 export ko_pulumi.aws.mwaa.loggingConfiguration
 export ko_pulumi.aws.mwaa.networkConfiguration
+export ko_pulumi.aws.networkfirewall.`override`
 export ko_pulumi.aws.networkfirewall.logDestinationConfigs
 export ko_pulumi.aws.networkfirewall.loggingConfiguration
 export ko_pulumi.aws.networkfirewall.matchAttributes
@@ -621,6 +623,7 @@ export ko_pulumi.aws.verifiedaccess.nativeApplicationOidcOptions
 export ko_pulumi.aws.verifiedaccess.networkInterfaceOptions
 export ko_pulumi.aws.verifiedaccess.oidcOptions
 export ko_pulumi.aws.verifiedpermissions.openIdConnectConfiguration
+export ko_pulumi.aws.vpclattice.`match`
 export ko_pulumi.aws.vpclattice.matcher
 export ko_pulumi.aws.waf.loggingConfiguration
 export ko_pulumi.aws.waf.overrideAction

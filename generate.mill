@@ -92,7 +92,9 @@ class PulumiProviderAdapterGenerator(dstRoot: Path, packageName: String, classpa
     object ExtMethod:
       given Ordering[ExtMethod] = Ordering.by(e => (e.cls, e.method))
     case class SplitConf(range: (from: Char, to: Char), fileName: String):
-      def contains(name: String): Boolean = name.head >= range.from && name.head <= range.to
+      def contains(name: String): Boolean =
+        val head = name.stripPrefix("`").head  // escapeScalaKeyword wraps keyword in backticks
+        head >= range.from && head <= range.to
       def contains(extMethod: ExtMethod): Boolean = contains(extMethod.method)
     val splitConfs = Seq(
       SplitConf(('a', 'e'), "syntax/all_a.scala"),

@@ -551,6 +551,7 @@ export ko_pulumi.gcp.databasemigrationservice.sourceObjectsConfig
 export ko_pulumi.gcp.databasemigrationservice.ssl
 export ko_pulumi.gcp.databasemigrationservice.staticIpConnectivity
 export ko_pulumi.gcp.databasemigrationservice.staticServiceIpConnectivity
+export ko_pulumi.gcp.datacatalog.`type`
 export ko_pulumi.gcp.datacatalog.sampleGcsFileSpecs
 export ko_pulumi.gcp.datacatalog.tableSpecs
 export ko_pulumi.gcp.dataflow.scheduleInfo
