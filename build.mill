@@ -113,7 +113,7 @@ object core extends ScalaModuleEx with PublishModule:
   def pomSettings = pomSettingsBase.copy(description = s"Helpers for Pulumi ${pomSettingsBase.description}")
 
   object test extends ScalaTests with TestModule.Munit:
-    def mvnDeps = Seq(mvn"org.scalameta::munit::1.3.2")
+    def mvnDeps = Seq(mvn"org.scalameta::munit::1.3.3")
 
     // "/resources.index" is generated since protectionDomain.getCodeSource returns null in mill, unlike sbt.
     // https://mill-build.org/mill/scalalib/module-config.html says
