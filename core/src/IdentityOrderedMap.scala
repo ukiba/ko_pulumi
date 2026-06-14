@@ -45,14 +45,25 @@ final class IdentityOrderedMap[K <: AnyRef, +V] private (  // the constructor is
 
   // map / flatMap
 
+  // Both map and flatMap below are defined as an overloaded pair. A tuple-returning lambda resolves to the
+  // IdentityOrderedMap-returning overload (its `((K,V)) => (K2,V2)` param is a subtype of
+  // `((K,V)) => B`, hence more specific) when the new key K2 <: AnyRef; otherwise — a non-tuple
+  // result, or a value-type key that fails the bound — it falls back to the Iterable-returning
+  // override. This mirrors scala.collection.MapOps, which overloads map/flatMap/collect the same
+  // way (pair-returning => Map, else => Iterable); the only difference here is the K2 <: AnyRef
+  // bound that identity keys require.
+
   /** @param f takes `((K, V))` although scaladoc renders the type as `(K, V)` */
   override def map[B](f: ((K, V)) => B): Iterable[B] = entries.map(f)
-  def map[K2 <: AnyRef, V2](f: ((K, V)) => (K2, V2)): IdentityOrderedMap[K2, V2] =
-    IdentityOrderedMap.from(entries.iterator.map(f))  // remove duplicates
 
+  def map[K2 <: AnyRef, V2](f: ((K, V)) => (K2, V2)): IdentityOrderedMap[K2, V2] =
+    IdentityOrderedMap.from(entries.iterator.map(f))  // removes duplicates
+
+  /** @param f takes `((K, V))` although scaladoc renders the type as `(K, V)` */
   override def flatMap[B](f: ((K, V)) => IterableOnce[B]): Iterable[B] = entries.flatMap(f)
+
   def flatMap[K2 <: AnyRef, V2](f: ((K, V)) => IterableOnce[(K2, V2)]): IdentityOrderedMap[K2, V2] =
-    IdentityOrderedMap.from(entries.iterator.flatMap(f))  // remove duplicates
+    IdentityOrderedMap.from(entries.iterator.flatMap(f))  // removes duplicates
 
   // groupBy
   // group-encounter order preserved
