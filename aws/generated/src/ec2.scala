@@ -316,7 +316,7 @@ object ec2:
    * 
    * This resource treats its inline rules as absolute; only the rules defined inline are created, and any additions/removals external to this resource will result in diffs being shown. For these reasons, this resource is incompatible with the `aws.ec2.NetworkAclRule` resource.
    * 
-   * For more information about Network ACLs, see the AWS Documentation on [Network ACLs][aws-network-acls].
+   * For more information about Network ACLs, see the AWS Documentation on [Network ACLs](http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_ACLs.html).
    */
   def DefaultNetworkAcl(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.ec2.DefaultNetworkAclArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
@@ -354,7 +354,7 @@ object ec2:
   /**
    * Provides a resource to manage a default route table of a VPC. This resource can manage the default route table of the default or a non-default VPC.
    * 
-   * &gt; **NOTE:** This is an advanced resource with special caveats. Please read this document in its entirety before using this resource. The `aws.ec2.DefaultRouteTable` resource behaves differently from normal resources. This provider does not _create_ this resource but instead attempts to &#34;adopt&#34; it into management. **Do not** use both `aws.ec2.DefaultRouteTable` to manage a default route table **and** `aws.ec2.MainRouteTableAssociation` with the same VPC due to possible route conflicts. See aws.ec2.MainRouteTableAssociation documentation for more details.
+   * &gt; **NOTE:** This is an advanced resource with special caveats. Please read this document in its entirety before using this resource. The `aws.ec2.DefaultRouteTable` resource behaves differently from normal resources. Terraform does not _create_ this resource but instead attempts to &#34;adopt&#34; it into management. **Do not** use both `aws.ec2.DefaultRouteTable` to manage a default route table **and** `aws.ec2.MainRouteTableAssociation` with the same VPC due to possible route conflicts. See aws.ec2.MainRouteTableAssociation documentation for more details.
    * 
    * Every VPC has a default route table that can be managed but not destroyed. When the provider first adopts a default route table, it **immediately removes all defined routes**. It then proceeds to create any routes specified in the configuration. This step is required so that only the routes specified in the configuration exist in the default route table.
    * 
@@ -393,7 +393,7 @@ object ec2:
    * 
    * This resource treats its inline rules as absolute; only the rules defined inline are created, and any additions/removals external to this resource will result in diff shown. For these reasons, this resource is incompatible with the `aws.ec2.SecurityGroupRule` resource.
    * 
-   * For more information about default security groups, see the AWS documentation on [Default Security Groups][aws-default-security-groups]. To manage normal security groups, see the `aws.ec2.SecurityGroup` resource.
+   * For more information about default security groups, see the AWS documentation on [Default Security Groups](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html#default-security-group). To manage normal security groups, see the `aws.ec2.SecurityGroup` resource.
    */
   def DefaultSecurityGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.ec2.DefaultSecurityGroupArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
@@ -637,6 +637,18 @@ object ec2:
         java.util.concurrent.CompletableFuture[com.pulumi.aws.ec2.outputs.GetElasticIpResult] =
       val argsBuilder = com.pulumi.aws.ec2.inputs.GetElasticIpPlainArgs.builder
       com.pulumi.aws.ec2.Ec2Functions.getElasticIpPlain(args(argsBuilder).build)
+
+    /** Provides a list of EC2 Dedicated Host IDs matching the provided filters. More information about Dedicated Hosts can be found in the [EC2 User Guide](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-overview.html). */
+    inline def getHosts(args: Endofunction[com.pulumi.aws.ec2.inputs.GetHostsArgs.Builder] = scala.Predef.identity):
+        com.pulumi.core.Output[com.pulumi.aws.ec2.outputs.GetHostsResult] =
+      val argsBuilder = com.pulumi.aws.ec2.inputs.GetHostsArgs.builder
+      com.pulumi.aws.ec2.Ec2Functions.getHosts(args(argsBuilder).build)
+
+    /** Provides a list of EC2 Dedicated Host IDs matching the provided filters. More information about Dedicated Hosts can be found in the [EC2 User Guide](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-overview.html). */
+    inline def getHostsPlain(args: Endofunction[com.pulumi.aws.ec2.inputs.GetHostsPlainArgs.Builder] = scala.Predef.identity):
+        java.util.concurrent.CompletableFuture[com.pulumi.aws.ec2.outputs.GetHostsResult] =
+      val argsBuilder = com.pulumi.aws.ec2.inputs.GetHostsPlainArgs.builder
+      com.pulumi.aws.ec2.Ec2Functions.getHostsPlain(args(argsBuilder).build)
 
     /** Use this data source to get the ID of an Amazon EC2 Instance for use in other resources. */
     inline def getInstance(args: Endofunction[com.pulumi.aws.ec2.inputs.GetInstanceArgs.Builder] = scala.Predef.identity):
@@ -2192,6 +2204,42 @@ object ec2:
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
 
+  /** Manages an EC2 Local Gateway Route Table. More information can be found in the [Outposts User Guide](https://docs.aws.amazon.com/outposts/latest/userguide/outposts-local-gateways.html#route-tables). */
+  def LocalGatewayRouteTable(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+      (args: Endofunction[com.pulumi.aws.ec2.LocalGatewayRouteTableArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+    var argsBuilder = com.pulumi.aws.ec2.LocalGatewayRouteTableArgs.builder
+    argsBuilder = args(argsBuilder)
+    conf.logicalName2tagName(name) match
+      case Some(tagName) =>
+        argsBuilder = argsBuilder.tags:
+          transformOptOutputMap(argsBuilder.build.tags, map =>
+              if map.contains("Name") then map else map + ("Name" -> tagName))
+      case None =>
+    com.pulumi.aws.ec2.LocalGatewayRouteTable(name,
+        argsBuilder.build,
+        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+
+  extension (builder: com.pulumi.aws.ec2.LocalGatewayRouteTableArgs.Builder)
+    def timeouts(args: Endofunction[com.pulumi.aws.ec2.inputs.LocalGatewayRouteTableTimeoutsArgs.Builder]):
+        com.pulumi.aws.ec2.LocalGatewayRouteTableArgs.Builder =
+      val argsBuilder = com.pulumi.aws.ec2.inputs.LocalGatewayRouteTableTimeoutsArgs.builder
+      builder.timeouts(args(argsBuilder).build)
+
+  /** Manages an EC2 Local Gateway Route Table Virtual Interface Group Association. More information can be found in the [Outposts User Guide](https://docs.aws.amazon.com/outposts/latest/userguide/outposts-local-gateways.html). */
+  def LocalGatewayRouteTableVirtualInterfaceGroupAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+      (args: Endofunction[com.pulumi.aws.ec2.LocalGatewayRouteTableVirtualInterfaceGroupAssociationArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+    var argsBuilder = com.pulumi.aws.ec2.LocalGatewayRouteTableVirtualInterfaceGroupAssociationArgs.builder
+    argsBuilder = args(argsBuilder)
+    conf.logicalName2tagName(name) match
+      case Some(tagName) =>
+        argsBuilder = argsBuilder.tags:
+          transformOptOutputMap(argsBuilder.build.tags, map =>
+              if map.contains("Name") then map else map + ("Name" -> tagName))
+      case None =>
+    com.pulumi.aws.ec2.LocalGatewayRouteTableVirtualInterfaceGroupAssociation(name,
+        argsBuilder.build,
+        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+
   /** Manages an EC2 Local Gateway Route Table VPC Association. More information can be found in the [Outposts User Guide](https://docs.aws.amazon.com/outposts/latest/userguide/outposts-local-gateways.html#vpc-associations). */
   def LocalGatewayRouteTableVpcAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.ec2.LocalGatewayRouteTableVpcAssociationArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
@@ -2211,7 +2259,7 @@ object ec2:
    * Provides a resource for managing the main routing table of a VPC.
    * 
    * &gt; **NOTE:** **Do not** use both `aws.ec2.DefaultRouteTable` to manage a default route table **and** `aws.ec2.MainRouteTableAssociation` with the same VPC due to possible route conflicts. See aws.ec2.DefaultRouteTable documentation for more details.
-   * For more information, see the Amazon VPC User Guide on [Route Tables][aws-route-tables]. For information about managing normal route tables in Pulumi, see [`aws.ec2.RouteTable`][tf-route-tables].
+   * For more information, see the Amazon VPC User Guide on [Route Tables](http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html#Route_Replacing_Main_Table). For information about managing normal route tables in Pulumi, see `aws.ec2.RouteTable`.
    */
   def MainRouteTableAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.ec2.MainRouteTableAssociationArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
@@ -2553,8 +2601,8 @@ object ec2:
    * secondary ENI or one attached as the primary interface on an instance.
    * 
    * &gt; **NOTE on instances, interfaces, and security groups:** This provider currently
-   * provides the capability to assign security groups via the [`aws.ec2.Instance`][1]
-   * and the [`aws.ec2.NetworkInterface`][2] resources. Using this resource in
+   * provides the capability to assign security groups via the `aws.ec2.Instance`
+   * and the `aws.ec2.NetworkInterface` resources. Using this resource in
    * conjunction with security groups provided in-line in those resources will cause
    * conflicts, and will lead to spurious diffs and undefined behavior - please use
    * one or the other.
@@ -3536,9 +3584,16 @@ object ec2:
   /** Allocates (reserves) a CIDR from an IPAM address pool, preventing usage by IPAM. Only works for private IPv4. */
   def VpcIpamPoolCidrAllocation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.ec2.VpcIpamPoolCidrAllocationArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
-    val argsBuilder = com.pulumi.aws.ec2.VpcIpamPoolCidrAllocationArgs.builder
+    var argsBuilder = com.pulumi.aws.ec2.VpcIpamPoolCidrAllocationArgs.builder
+    argsBuilder = args(argsBuilder)
+    conf.logicalName2tagName(name) match
+      case Some(tagName) =>
+        argsBuilder = argsBuilder.tags:
+          transformOptOutputMap(argsBuilder.build.tags, map =>
+              if map.contains("Name") then map else map + ("Name" -> tagName))
+      case None =>
     com.pulumi.aws.ec2.VpcIpamPoolCidrAllocation(name,
-        args(argsBuilder).build,
+        argsBuilder.build,
         resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
 
   extension (builder: com.pulumi.aws.ec2.VpcIpamPoolCidrArgs.Builder)
@@ -4373,9 +4428,7 @@ object ec2:
 
   extension (builder: com.pulumi.aws.ec2.inputs.GetCustomerGatewayArgs.Builder)
     /**
-     * @param filters One or more [name-value pairs][dcg-filters] to filter by.
-     * 
-     * [dcg-filters]: https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeCustomerGateways.html
+     * @param filters One or more [name-value pairs](https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeCustomerGateways.html) to filter by.
      * @return builder
      */
     def filters(args: Endofunction[com.pulumi.aws.ec2.inputs.GetCustomerGatewayFilterArgs.Builder]*):
@@ -4413,11 +4466,21 @@ object ec2:
       def argsBuilder = com.pulumi.aws.ec2.inputs.GetElasticIpFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
+  extension (builder: com.pulumi.aws.ec2.inputs.GetHostsArgs.Builder)
+    /**
+     * @param filters One or more configuration blocks containing name-values filters. See the [EC2 API Reference](https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeHosts.html) for supported filters. Detailed below.
+     * @return builder
+     */
+    def filters(args: Endofunction[com.pulumi.aws.ec2.inputs.GetHostsFilterArgs.Builder]*):
+        com.pulumi.aws.ec2.inputs.GetHostsArgs.Builder =
+      def argsBuilder = com.pulumi.aws.ec2.inputs.GetHostsFilterArgs.builder
+      builder.filters(args.map(_(argsBuilder).build)*)
+
   extension (builder: com.pulumi.aws.ec2.inputs.GetInstanceArgs.Builder)
     /**
      * @param filters One or more filters to apply to the search.
      * If multiple `filter` blocks are provided, they all must be true.
-     * For a full reference of filter names, see [describe-instances in the AWS CLI reference][1].
+     * For a full reference of filter names, see [describe-instances in the AWS CLI reference](http://docs.aws.amazon.com/cli/latest/reference/ec2/describe-instances.html).
      * See `filter` Block below.
      * @return builder
      */
@@ -4460,7 +4523,7 @@ object ec2:
     /**
      * @param filters One or more filters to apply to the search.
      * If multiple `filter` blocks are provided, they all must be true.
-     * For a full reference of filter names, see [describe-instances in the AWS CLI reference][1].
+     * For a full reference of filter names, see [describe-instances in the AWS CLI reference](http://docs.aws.amazon.com/cli/latest/reference/ec2/describe-instances.html).
      * See `filter` Block below.
      * @return builder
      */
@@ -4740,7 +4803,7 @@ object ec2:
 
   extension (builder: com.pulumi.aws.ec2.inputs.GetSecurityGroupsArgs.Builder)
     /**
-     * @param filters One or more name/value pairs to use as filters. There are several valid keys, for a full reference, check out [describe-security-groups in the AWS CLI reference][1].
+     * @param filters One or more name/value pairs to use as filters. There are several valid keys, for a full reference, check out [describe-security-groups in the AWS CLI reference](https://docs.aws.amazon.com/cli/latest/reference/ec2/describe-security-groups.html).
      * @return builder
      */
     def filters(args: Endofunction[com.pulumi.aws.ec2.inputs.GetSecurityGroupsFilterArgs.Builder]*):
@@ -5452,6 +5515,12 @@ object ec2:
         com.pulumi.aws.ec2.inputs.LaunchTemplateState.Builder =
       def argsBuilder = com.pulumi.aws.ec2.inputs.LaunchTemplateTagSpecificationArgs.builder
       builder.tagSpecifications(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.aws.ec2.inputs.LocalGatewayRouteTableState.Builder)
+    def timeouts(args: Endofunction[com.pulumi.aws.ec2.inputs.LocalGatewayRouteTableTimeoutsArgs.Builder]):
+        com.pulumi.aws.ec2.inputs.LocalGatewayRouteTableState.Builder =
+      val argsBuilder = com.pulumi.aws.ec2.inputs.LocalGatewayRouteTableTimeoutsArgs.builder
+      builder.timeouts(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.ec2.inputs.ManagedPrefixListState.Builder)
     /**

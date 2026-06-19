@@ -210,16 +210,7 @@ object appmesh:
   /**
    * Provides an AWS App Mesh virtual node resource.
    * 
-   * ## Breaking Changes
-   * 
-   * Because of backward incompatible API changes (read [here](https://github.com/awslabs/aws-app-mesh-examples/issues/92)), `aws.appmesh.VirtualNode` resource definitions created with provider versions earlier than v2.3.0 will need to be modified:
-   * 
-   * * Rename the `serviceName` attribute of the `dns` object to `hostname`.
-   * 
-   * * Replace the `backends` attribute of the `spec` object with one or more `backend` configuration blocks,
-   * setting `virtualServiceName` to the name of the service.
-   * 
-   * The state associated with existing resources will automatically be migrated.
+   * &gt; **Note:** Because of backward incompatible API changes ([see issue](https://github.com/awslabs/aws-app-mesh-examples/issues/92)), resource definitions created with provider versions earlier than v2.3.0 must be modified: rename the `serviceName` attribute of the `dns` object to `hostname`; replace the `backends` attribute of the `spec` object with one or more `backend` configuration blocks, setting `virtualServiceName` to the name of the service. Existing Pulumi state is automatically migrated.
    */
   def VirtualNode(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.appmesh.VirtualNodeArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
@@ -251,15 +242,7 @@ object appmesh:
   /**
    * Provides an AWS App Mesh virtual router resource.
    * 
-   * ## Breaking Changes
-   * 
-   * Because of backward incompatible API changes (read [here](https://github.com/awslabs/aws-app-mesh-examples/issues/92) and [here](https://github.com/awslabs/aws-app-mesh-examples/issues/94)), `aws.appmesh.VirtualRouter` resource definitions created with provider versions earlier than v2.3.0 will need to be modified:
-   * 
-   * * Remove service `serviceNames` from the `spec` argument. AWS has created a `aws.appmesh.VirtualService` resource for each service name. Import these resource using `pulumi import`.
-   * 
-   * * Add a `listener` configuration block to the `spec` argument.
-   * 
-   * The state associated with existing resources will automatically be migrated.
+   * &gt; **Note:** Because of backward incompatible API changes ([see issue](https://github.com/awslabs/aws-app-mesh-examples/issues/92), [and here](https://github.com/awslabs/aws-app-mesh-examples/issues/94)), resource definitions created with provider versions earlier than v2.3.0 must be modified: remove `serviceNames` from the `spec` argument (AWS created `aws.appmesh.VirtualService` resources for each \u2014 import them with `pulumi import`); add a `listener` configuration block to the `spec` argument. Existing Pulumi state is automatically migrated.
    */
   def VirtualRouter(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.appmesh.VirtualRouterArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =

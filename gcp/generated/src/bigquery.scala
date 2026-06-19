@@ -261,6 +261,18 @@ object bigquery:
       val argsBuilder = com.pulumi.gcp.bigquery.inputs.GetDefaultServiceAccountPlainArgs.builder
       com.pulumi.gcp.bigquery.BigqueryFunctions.getDefaultServiceAccountPlain(args(argsBuilder).build)
 
+    /** Retrieves the current IAM policy data for routine */
+    inline def getRoutineIamPolicy(args: Endofunction[com.pulumi.gcp.bigquery.inputs.GetRoutineIamPolicyArgs.Builder] = scala.Predef.identity):
+        com.pulumi.core.Output[com.pulumi.gcp.bigquery.outputs.GetRoutineIamPolicyResult] =
+      val argsBuilder = com.pulumi.gcp.bigquery.inputs.GetRoutineIamPolicyArgs.builder
+      com.pulumi.gcp.bigquery.BigqueryFunctions.getRoutineIamPolicy(args(argsBuilder).build)
+
+    /** Retrieves the current IAM policy data for routine */
+    inline def getRoutineIamPolicyPlain(args: Endofunction[com.pulumi.gcp.bigquery.inputs.GetRoutineIamPolicyPlainArgs.Builder] = scala.Predef.identity):
+        java.util.concurrent.CompletableFuture[com.pulumi.gcp.bigquery.outputs.GetRoutineIamPolicyResult] =
+      val argsBuilder = com.pulumi.gcp.bigquery.inputs.GetRoutineIamPolicyPlainArgs.builder
+      com.pulumi.gcp.bigquery.BigqueryFunctions.getRoutineIamPolicyPlain(args(argsBuilder).build)
+
     /**
      * Get a specific table in a BigQuery dataset. For more information see
      * the [official documentation](https://cloud.google.com/bigquery/docs)
@@ -5503,6 +5515,957 @@ object bigquery:
       val argsBuilder = com.pulumi.gcp.bigquery.inputs.RoutineSparkOptionsArgs.builder
       builder.sparkOptions(args(argsBuilder).build)
 
+  /**
+   * Three different resources help you manage your IAM policy for BigQuery Routine. Each of these resources serves a different use case:
+   * 
+   * * `gcp.bigquery.RoutineIamPolicy`: Authoritative. Sets the IAM policy for the routine and replaces any existing policy already attached.
+   * * `gcp.bigquery.RoutineIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the routine are preserved.
+   * * `gcp.bigquery.RoutineIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the routine are preserved.
+   * 
+   * A data source can be used to retrieve policy data in advent you do not need creation
+   * 
+   * * `gcp.bigquery.RoutineIamPolicy`: Retrieves the IAM policy for the routine
+   * 
+   * &gt; **Note:** `gcp.bigquery.RoutineIamPolicy` **cannot** be used in conjunction with `gcp.bigquery.RoutineIamBinding` and `gcp.bigquery.RoutineIamMember` or they will fight over what your policy should be.
+   * 
+   * &gt; **Note:** `gcp.bigquery.RoutineIamBinding` resources **can be** used in conjunction with `gcp.bigquery.RoutineIamMember` resources **only if** they do not grant privilege to the same role.
+   * 
+   * ## gcp.bigquery.RoutineIamPolicy
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.organizations.OrganizationsFunctions;
+   * import com.pulumi.gcp.organizations.inputs.GetIAMPolicyArgs;
+   * import com.pulumi.gcp.organizations.inputs.GetIAMPolicyBindingArgs;
+   * import com.pulumi.gcp.bigquery.RoutineIamPolicy;
+   * import com.pulumi.gcp.bigquery.RoutineIamPolicyArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         final var admin = OrganizationsFunctions.getIAMPolicy(GetIAMPolicyArgs.builder()
+   *             .bindings(GetIAMPolicyBindingArgs.builder()
+   *                 .role("roles/bigquery.dataOwner")
+   *                 .members("user:jane}{@literal @}{@code example.com")
+   *                 .build())
+   *             .build());
+   * 
+   *         var policy = new RoutineIamPolicy("policy", RoutineIamPolicyArgs.builder()
+   *             .project(sproc.project())
+   *             .datasetId(sproc.datasetId())
+   *             .routineId(sproc.routineId())
+   *             .policyData(admin.policyData())
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * ## gcp.bigquery.RoutineIamBinding
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.bigquery.RoutineIamBinding;
+   * import com.pulumi.gcp.bigquery.RoutineIamBindingArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         var binding = new RoutineIamBinding("binding", RoutineIamBindingArgs.builder()
+   *             .project(sproc.project())
+   *             .datasetId(sproc.datasetId())
+   *             .routineId(sproc.routineId())
+   *             .role("roles/bigquery.dataOwner")
+   *             .members("user:jane}{@literal @}{@code example.com")
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * ## gcp.bigquery.RoutineIamMember
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.bigquery.RoutineIamMember;
+   * import com.pulumi.gcp.bigquery.RoutineIamMemberArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         var member = new RoutineIamMember("member", RoutineIamMemberArgs.builder()
+   *             .project(sproc.project())
+   *             .datasetId(sproc.datasetId())
+   *             .routineId(sproc.routineId())
+   *             .role("roles/bigquery.dataOwner")
+   *             .member("user:jane}{@literal @}{@code example.com")
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * ## This resource supports User Project Overrides.
+   * 
+   * -
+   * 
+   * # IAM policy for BigQuery Routine
+   * 
+   * Three different resources help you manage your IAM policy for BigQuery Routine. Each of these resources serves a different use case:
+   * 
+   * * `gcp.bigquery.RoutineIamPolicy`: Authoritative. Sets the IAM policy for the routine and replaces any existing policy already attached.
+   * * `gcp.bigquery.RoutineIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the routine are preserved.
+   * * `gcp.bigquery.RoutineIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the routine are preserved.
+   * 
+   * A data source can be used to retrieve policy data in advent you do not need creation
+   * 
+   * * `gcp.bigquery.RoutineIamPolicy`: Retrieves the IAM policy for the routine
+   * 
+   * &gt; **Note:** `gcp.bigquery.RoutineIamPolicy` **cannot** be used in conjunction with `gcp.bigquery.RoutineIamBinding` and `gcp.bigquery.RoutineIamMember` or they will fight over what your policy should be.
+   * 
+   * &gt; **Note:** `gcp.bigquery.RoutineIamBinding` resources **can be** used in conjunction with `gcp.bigquery.RoutineIamMember` resources **only if** they do not grant privilege to the same role.
+   * 
+   * ## gcp.bigquery.RoutineIamPolicy
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.organizations.OrganizationsFunctions;
+   * import com.pulumi.gcp.organizations.inputs.GetIAMPolicyArgs;
+   * import com.pulumi.gcp.organizations.inputs.GetIAMPolicyBindingArgs;
+   * import com.pulumi.gcp.bigquery.RoutineIamPolicy;
+   * import com.pulumi.gcp.bigquery.RoutineIamPolicyArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         final var admin = OrganizationsFunctions.getIAMPolicy(GetIAMPolicyArgs.builder()
+   *             .bindings(GetIAMPolicyBindingArgs.builder()
+   *                 .role("roles/bigquery.dataOwner")
+   *                 .members("user:jane}{@literal @}{@code example.com")
+   *                 .build())
+   *             .build());
+   * 
+   *         var policy = new RoutineIamPolicy("policy", RoutineIamPolicyArgs.builder()
+   *             .project(sproc.project())
+   *             .datasetId(sproc.datasetId())
+   *             .routineId(sproc.routineId())
+   *             .policyData(admin.policyData())
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * ## gcp.bigquery.RoutineIamBinding
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.bigquery.RoutineIamBinding;
+   * import com.pulumi.gcp.bigquery.RoutineIamBindingArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         var binding = new RoutineIamBinding("binding", RoutineIamBindingArgs.builder()
+   *             .project(sproc.project())
+   *             .datasetId(sproc.datasetId())
+   *             .routineId(sproc.routineId())
+   *             .role("roles/bigquery.dataOwner")
+   *             .members("user:jane}{@literal @}{@code example.com")
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * ## gcp.bigquery.RoutineIamMember
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.bigquery.RoutineIamMember;
+   * import com.pulumi.gcp.bigquery.RoutineIamMemberArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         var member = new RoutineIamMember("member", RoutineIamMemberArgs.builder()
+   *             .project(sproc.project())
+   *             .datasetId(sproc.datasetId())
+   *             .routineId(sproc.routineId())
+   *             .role("roles/bigquery.dataOwner")
+   *             .member("user:jane}{@literal @}{@code example.com")
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * ## Import
+   * 
+   * For all import syntaxes, the &#34;resource in question&#34; can take any of the following forms:
+   * 
+   * * projects/{{project}}/datasets/{{dataset_id}}/routines/{{routine_id}}
+   * * {{project}}/{{dataset_id}}/{{routine_id}}
+   * * {{dataset_id}}/{{routine_id}}
+   * * {{routine_id}}
+   * 
+   * Any variables not passed in the import command will be taken from the provider configuration.
+   * 
+   * BigQuery routine IAM resources can be imported using the resource identifiers, role, and member.
+   * 
+   * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
+   * ```sh
+   * $ terraform import google_bigquery_routine_iam_member.editor &#34;projects/{{project}}/datasets/{{dataset_id}}/routines/{{routine_id}} roles/bigquery.dataOwner user:jane{@literal @}example.com&#34;
+   * ```
+   * 
+   * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
+   * ```sh
+   * $ terraform import google_bigquery_routine_iam_binding.editor &#34;projects/{{project}}/datasets/{{dataset_id}}/routines/{{routine_id}} roles/bigquery.dataOwner&#34;
+   * ```
+   * 
+   * IAM policy imports use the identifier of the resource in question, e.g.
+   * ```sh
+   * $ pulumi import gcp:bigquery/routineIamBinding:RoutineIamBinding editor projects/{{project}}/datasets/{{dataset_id}}/routines/{{routine_id}}
+   * ```
+   * 
+   * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
+   *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
+   */
+  def RoutineIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+      (args: Endofunction[com.pulumi.gcp.bigquery.RoutineIamBindingArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+    val argsBuilder = com.pulumi.gcp.bigquery.RoutineIamBindingArgs.builder
+    com.pulumi.gcp.bigquery.RoutineIamBinding(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+
+  extension (builder: com.pulumi.gcp.bigquery.RoutineIamBindingArgs.Builder)
+    def condition(args: Endofunction[com.pulumi.gcp.bigquery.inputs.RoutineIamBindingConditionArgs.Builder]):
+        com.pulumi.gcp.bigquery.RoutineIamBindingArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.bigquery.inputs.RoutineIamBindingConditionArgs.builder
+      builder.condition(args(argsBuilder).build)
+
+  /**
+   * Three different resources help you manage your IAM policy for BigQuery Routine. Each of these resources serves a different use case:
+   * 
+   * * `gcp.bigquery.RoutineIamPolicy`: Authoritative. Sets the IAM policy for the routine and replaces any existing policy already attached.
+   * * `gcp.bigquery.RoutineIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the routine are preserved.
+   * * `gcp.bigquery.RoutineIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the routine are preserved.
+   * 
+   * A data source can be used to retrieve policy data in advent you do not need creation
+   * 
+   * * `gcp.bigquery.RoutineIamPolicy`: Retrieves the IAM policy for the routine
+   * 
+   * &gt; **Note:** `gcp.bigquery.RoutineIamPolicy` **cannot** be used in conjunction with `gcp.bigquery.RoutineIamBinding` and `gcp.bigquery.RoutineIamMember` or they will fight over what your policy should be.
+   * 
+   * &gt; **Note:** `gcp.bigquery.RoutineIamBinding` resources **can be** used in conjunction with `gcp.bigquery.RoutineIamMember` resources **only if** they do not grant privilege to the same role.
+   * 
+   * ## gcp.bigquery.RoutineIamPolicy
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.organizations.OrganizationsFunctions;
+   * import com.pulumi.gcp.organizations.inputs.GetIAMPolicyArgs;
+   * import com.pulumi.gcp.organizations.inputs.GetIAMPolicyBindingArgs;
+   * import com.pulumi.gcp.bigquery.RoutineIamPolicy;
+   * import com.pulumi.gcp.bigquery.RoutineIamPolicyArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         final var admin = OrganizationsFunctions.getIAMPolicy(GetIAMPolicyArgs.builder()
+   *             .bindings(GetIAMPolicyBindingArgs.builder()
+   *                 .role("roles/bigquery.dataOwner")
+   *                 .members("user:jane}{@literal @}{@code example.com")
+   *                 .build())
+   *             .build());
+   * 
+   *         var policy = new RoutineIamPolicy("policy", RoutineIamPolicyArgs.builder()
+   *             .project(sproc.project())
+   *             .datasetId(sproc.datasetId())
+   *             .routineId(sproc.routineId())
+   *             .policyData(admin.policyData())
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * ## gcp.bigquery.RoutineIamBinding
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.bigquery.RoutineIamBinding;
+   * import com.pulumi.gcp.bigquery.RoutineIamBindingArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         var binding = new RoutineIamBinding("binding", RoutineIamBindingArgs.builder()
+   *             .project(sproc.project())
+   *             .datasetId(sproc.datasetId())
+   *             .routineId(sproc.routineId())
+   *             .role("roles/bigquery.dataOwner")
+   *             .members("user:jane}{@literal @}{@code example.com")
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * ## gcp.bigquery.RoutineIamMember
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.bigquery.RoutineIamMember;
+   * import com.pulumi.gcp.bigquery.RoutineIamMemberArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         var member = new RoutineIamMember("member", RoutineIamMemberArgs.builder()
+   *             .project(sproc.project())
+   *             .datasetId(sproc.datasetId())
+   *             .routineId(sproc.routineId())
+   *             .role("roles/bigquery.dataOwner")
+   *             .member("user:jane}{@literal @}{@code example.com")
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * ## This resource supports User Project Overrides.
+   * 
+   * -
+   * 
+   * # IAM policy for BigQuery Routine
+   * 
+   * Three different resources help you manage your IAM policy for BigQuery Routine. Each of these resources serves a different use case:
+   * 
+   * * `gcp.bigquery.RoutineIamPolicy`: Authoritative. Sets the IAM policy for the routine and replaces any existing policy already attached.
+   * * `gcp.bigquery.RoutineIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the routine are preserved.
+   * * `gcp.bigquery.RoutineIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the routine are preserved.
+   * 
+   * A data source can be used to retrieve policy data in advent you do not need creation
+   * 
+   * * `gcp.bigquery.RoutineIamPolicy`: Retrieves the IAM policy for the routine
+   * 
+   * &gt; **Note:** `gcp.bigquery.RoutineIamPolicy` **cannot** be used in conjunction with `gcp.bigquery.RoutineIamBinding` and `gcp.bigquery.RoutineIamMember` or they will fight over what your policy should be.
+   * 
+   * &gt; **Note:** `gcp.bigquery.RoutineIamBinding` resources **can be** used in conjunction with `gcp.bigquery.RoutineIamMember` resources **only if** they do not grant privilege to the same role.
+   * 
+   * ## gcp.bigquery.RoutineIamPolicy
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.organizations.OrganizationsFunctions;
+   * import com.pulumi.gcp.organizations.inputs.GetIAMPolicyArgs;
+   * import com.pulumi.gcp.organizations.inputs.GetIAMPolicyBindingArgs;
+   * import com.pulumi.gcp.bigquery.RoutineIamPolicy;
+   * import com.pulumi.gcp.bigquery.RoutineIamPolicyArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         final var admin = OrganizationsFunctions.getIAMPolicy(GetIAMPolicyArgs.builder()
+   *             .bindings(GetIAMPolicyBindingArgs.builder()
+   *                 .role("roles/bigquery.dataOwner")
+   *                 .members("user:jane}{@literal @}{@code example.com")
+   *                 .build())
+   *             .build());
+   * 
+   *         var policy = new RoutineIamPolicy("policy", RoutineIamPolicyArgs.builder()
+   *             .project(sproc.project())
+   *             .datasetId(sproc.datasetId())
+   *             .routineId(sproc.routineId())
+   *             .policyData(admin.policyData())
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * ## gcp.bigquery.RoutineIamBinding
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.bigquery.RoutineIamBinding;
+   * import com.pulumi.gcp.bigquery.RoutineIamBindingArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         var binding = new RoutineIamBinding("binding", RoutineIamBindingArgs.builder()
+   *             .project(sproc.project())
+   *             .datasetId(sproc.datasetId())
+   *             .routineId(sproc.routineId())
+   *             .role("roles/bigquery.dataOwner")
+   *             .members("user:jane}{@literal @}{@code example.com")
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * ## gcp.bigquery.RoutineIamMember
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.bigquery.RoutineIamMember;
+   * import com.pulumi.gcp.bigquery.RoutineIamMemberArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         var member = new RoutineIamMember("member", RoutineIamMemberArgs.builder()
+   *             .project(sproc.project())
+   *             .datasetId(sproc.datasetId())
+   *             .routineId(sproc.routineId())
+   *             .role("roles/bigquery.dataOwner")
+   *             .member("user:jane}{@literal @}{@code example.com")
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * ## Import
+   * 
+   * For all import syntaxes, the &#34;resource in question&#34; can take any of the following forms:
+   * 
+   * * projects/{{project}}/datasets/{{dataset_id}}/routines/{{routine_id}}
+   * * {{project}}/{{dataset_id}}/{{routine_id}}
+   * * {{dataset_id}}/{{routine_id}}
+   * * {{routine_id}}
+   * 
+   * Any variables not passed in the import command will be taken from the provider configuration.
+   * 
+   * BigQuery routine IAM resources can be imported using the resource identifiers, role, and member.
+   * 
+   * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
+   * ```sh
+   * $ terraform import google_bigquery_routine_iam_member.editor &#34;projects/{{project}}/datasets/{{dataset_id}}/routines/{{routine_id}} roles/bigquery.dataOwner user:jane{@literal @}example.com&#34;
+   * ```
+   * 
+   * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
+   * ```sh
+   * $ terraform import google_bigquery_routine_iam_binding.editor &#34;projects/{{project}}/datasets/{{dataset_id}}/routines/{{routine_id}} roles/bigquery.dataOwner&#34;
+   * ```
+   * 
+   * IAM policy imports use the identifier of the resource in question, e.g.
+   * ```sh
+   * $ pulumi import gcp:bigquery/routineIamMember:RoutineIamMember editor projects/{{project}}/datasets/{{dataset_id}}/routines/{{routine_id}}
+   * ```
+   * 
+   * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
+   *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
+   */
+  def RoutineIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+      (args: Endofunction[com.pulumi.gcp.bigquery.RoutineIamMemberArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+    val argsBuilder = com.pulumi.gcp.bigquery.RoutineIamMemberArgs.builder
+    com.pulumi.gcp.bigquery.RoutineIamMember(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+
+  extension (builder: com.pulumi.gcp.bigquery.RoutineIamMemberArgs.Builder)
+    def condition(args: Endofunction[com.pulumi.gcp.bigquery.inputs.RoutineIamMemberConditionArgs.Builder]):
+        com.pulumi.gcp.bigquery.RoutineIamMemberArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.bigquery.inputs.RoutineIamMemberConditionArgs.builder
+      builder.condition(args(argsBuilder).build)
+
+  /**
+   * Three different resources help you manage your IAM policy for BigQuery Routine. Each of these resources serves a different use case:
+   * 
+   * * `gcp.bigquery.RoutineIamPolicy`: Authoritative. Sets the IAM policy for the routine and replaces any existing policy already attached.
+   * * `gcp.bigquery.RoutineIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the routine are preserved.
+   * * `gcp.bigquery.RoutineIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the routine are preserved.
+   * 
+   * A data source can be used to retrieve policy data in advent you do not need creation
+   * 
+   * * `gcp.bigquery.RoutineIamPolicy`: Retrieves the IAM policy for the routine
+   * 
+   * &gt; **Note:** `gcp.bigquery.RoutineIamPolicy` **cannot** be used in conjunction with `gcp.bigquery.RoutineIamBinding` and `gcp.bigquery.RoutineIamMember` or they will fight over what your policy should be.
+   * 
+   * &gt; **Note:** `gcp.bigquery.RoutineIamBinding` resources **can be** used in conjunction with `gcp.bigquery.RoutineIamMember` resources **only if** they do not grant privilege to the same role.
+   * 
+   * ## gcp.bigquery.RoutineIamPolicy
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.organizations.OrganizationsFunctions;
+   * import com.pulumi.gcp.organizations.inputs.GetIAMPolicyArgs;
+   * import com.pulumi.gcp.organizations.inputs.GetIAMPolicyBindingArgs;
+   * import com.pulumi.gcp.bigquery.RoutineIamPolicy;
+   * import com.pulumi.gcp.bigquery.RoutineIamPolicyArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         final var admin = OrganizationsFunctions.getIAMPolicy(GetIAMPolicyArgs.builder()
+   *             .bindings(GetIAMPolicyBindingArgs.builder()
+   *                 .role("roles/bigquery.dataOwner")
+   *                 .members("user:jane}{@literal @}{@code example.com")
+   *                 .build())
+   *             .build());
+   * 
+   *         var policy = new RoutineIamPolicy("policy", RoutineIamPolicyArgs.builder()
+   *             .project(sproc.project())
+   *             .datasetId(sproc.datasetId())
+   *             .routineId(sproc.routineId())
+   *             .policyData(admin.policyData())
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * ## gcp.bigquery.RoutineIamBinding
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.bigquery.RoutineIamBinding;
+   * import com.pulumi.gcp.bigquery.RoutineIamBindingArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         var binding = new RoutineIamBinding("binding", RoutineIamBindingArgs.builder()
+   *             .project(sproc.project())
+   *             .datasetId(sproc.datasetId())
+   *             .routineId(sproc.routineId())
+   *             .role("roles/bigquery.dataOwner")
+   *             .members("user:jane}{@literal @}{@code example.com")
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * ## gcp.bigquery.RoutineIamMember
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.bigquery.RoutineIamMember;
+   * import com.pulumi.gcp.bigquery.RoutineIamMemberArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         var member = new RoutineIamMember("member", RoutineIamMemberArgs.builder()
+   *             .project(sproc.project())
+   *             .datasetId(sproc.datasetId())
+   *             .routineId(sproc.routineId())
+   *             .role("roles/bigquery.dataOwner")
+   *             .member("user:jane}{@literal @}{@code example.com")
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * ## This resource supports User Project Overrides.
+   * 
+   * -
+   * 
+   * # IAM policy for BigQuery Routine
+   * 
+   * Three different resources help you manage your IAM policy for BigQuery Routine. Each of these resources serves a different use case:
+   * 
+   * * `gcp.bigquery.RoutineIamPolicy`: Authoritative. Sets the IAM policy for the routine and replaces any existing policy already attached.
+   * * `gcp.bigquery.RoutineIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the routine are preserved.
+   * * `gcp.bigquery.RoutineIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the routine are preserved.
+   * 
+   * A data source can be used to retrieve policy data in advent you do not need creation
+   * 
+   * * `gcp.bigquery.RoutineIamPolicy`: Retrieves the IAM policy for the routine
+   * 
+   * &gt; **Note:** `gcp.bigquery.RoutineIamPolicy` **cannot** be used in conjunction with `gcp.bigquery.RoutineIamBinding` and `gcp.bigquery.RoutineIamMember` or they will fight over what your policy should be.
+   * 
+   * &gt; **Note:** `gcp.bigquery.RoutineIamBinding` resources **can be** used in conjunction with `gcp.bigquery.RoutineIamMember` resources **only if** they do not grant privilege to the same role.
+   * 
+   * ## gcp.bigquery.RoutineIamPolicy
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.organizations.OrganizationsFunctions;
+   * import com.pulumi.gcp.organizations.inputs.GetIAMPolicyArgs;
+   * import com.pulumi.gcp.organizations.inputs.GetIAMPolicyBindingArgs;
+   * import com.pulumi.gcp.bigquery.RoutineIamPolicy;
+   * import com.pulumi.gcp.bigquery.RoutineIamPolicyArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         final var admin = OrganizationsFunctions.getIAMPolicy(GetIAMPolicyArgs.builder()
+   *             .bindings(GetIAMPolicyBindingArgs.builder()
+   *                 .role("roles/bigquery.dataOwner")
+   *                 .members("user:jane}{@literal @}{@code example.com")
+   *                 .build())
+   *             .build());
+   * 
+   *         var policy = new RoutineIamPolicy("policy", RoutineIamPolicyArgs.builder()
+   *             .project(sproc.project())
+   *             .datasetId(sproc.datasetId())
+   *             .routineId(sproc.routineId())
+   *             .policyData(admin.policyData())
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * ## gcp.bigquery.RoutineIamBinding
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.bigquery.RoutineIamBinding;
+   * import com.pulumi.gcp.bigquery.RoutineIamBindingArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         var binding = new RoutineIamBinding("binding", RoutineIamBindingArgs.builder()
+   *             .project(sproc.project())
+   *             .datasetId(sproc.datasetId())
+   *             .routineId(sproc.routineId())
+   *             .role("roles/bigquery.dataOwner")
+   *             .members("user:jane}{@literal @}{@code example.com")
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * ## gcp.bigquery.RoutineIamMember
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.bigquery.RoutineIamMember;
+   * import com.pulumi.gcp.bigquery.RoutineIamMemberArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         var member = new RoutineIamMember("member", RoutineIamMemberArgs.builder()
+   *             .project(sproc.project())
+   *             .datasetId(sproc.datasetId())
+   *             .routineId(sproc.routineId())
+   *             .role("roles/bigquery.dataOwner")
+   *             .member("user:jane}{@literal @}{@code example.com")
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * ## Import
+   * 
+   * For all import syntaxes, the &#34;resource in question&#34; can take any of the following forms:
+   * 
+   * * projects/{{project}}/datasets/{{dataset_id}}/routines/{{routine_id}}
+   * * {{project}}/{{dataset_id}}/{{routine_id}}
+   * * {{dataset_id}}/{{routine_id}}
+   * * {{routine_id}}
+   * 
+   * Any variables not passed in the import command will be taken from the provider configuration.
+   * 
+   * BigQuery routine IAM resources can be imported using the resource identifiers, role, and member.
+   * 
+   * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
+   * ```sh
+   * $ terraform import google_bigquery_routine_iam_member.editor &#34;projects/{{project}}/datasets/{{dataset_id}}/routines/{{routine_id}} roles/bigquery.dataOwner user:jane{@literal @}example.com&#34;
+   * ```
+   * 
+   * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
+   * ```sh
+   * $ terraform import google_bigquery_routine_iam_binding.editor &#34;projects/{{project}}/datasets/{{dataset_id}}/routines/{{routine_id}} roles/bigquery.dataOwner&#34;
+   * ```
+   * 
+   * IAM policy imports use the identifier of the resource in question, e.g.
+   * ```sh
+   * $ pulumi import gcp:bigquery/routineIamPolicy:RoutineIamPolicy editor projects/{{project}}/datasets/{{dataset_id}}/routines/{{routine_id}}
+   * ```
+   * 
+   * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
+   *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
+   */
+  def RoutineIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+      (args: Endofunction[com.pulumi.gcp.bigquery.RoutineIamPolicyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+    val argsBuilder = com.pulumi.gcp.bigquery.RoutineIamPolicyArgs.builder
+    com.pulumi.gcp.bigquery.RoutineIamPolicy(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+
   /** Represents access on a subset of rows on the specified table, defined by its filter predicate. Access to the subset of rows is controlled by its IAM policy. */
   def RowAccessPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.gcp.bigquery.RowAccessPolicyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
@@ -6428,6 +7391,18 @@ object bigquery:
         com.pulumi.gcp.bigquery.inputs.ReservationState.Builder =
       def argsBuilder = com.pulumi.gcp.bigquery.inputs.ReservationReplicationStatusArgs.builder
       builder.replicationStatuses(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.gcp.bigquery.inputs.RoutineIamBindingState.Builder)
+    def condition(args: Endofunction[com.pulumi.gcp.bigquery.inputs.RoutineIamBindingConditionArgs.Builder]):
+        com.pulumi.gcp.bigquery.inputs.RoutineIamBindingState.Builder =
+      val argsBuilder = com.pulumi.gcp.bigquery.inputs.RoutineIamBindingConditionArgs.builder
+      builder.condition(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.gcp.bigquery.inputs.RoutineIamMemberState.Builder)
+    def condition(args: Endofunction[com.pulumi.gcp.bigquery.inputs.RoutineIamMemberConditionArgs.Builder]):
+        com.pulumi.gcp.bigquery.inputs.RoutineIamMemberState.Builder =
+      val argsBuilder = com.pulumi.gcp.bigquery.inputs.RoutineIamMemberConditionArgs.builder
+      builder.condition(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.bigquery.inputs.RoutineState.Builder)
     /**

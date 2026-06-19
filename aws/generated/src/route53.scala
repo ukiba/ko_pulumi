@@ -754,7 +754,7 @@ object route53:
     /**
      * @param filters One or more name/value pairs to use as filters. There are
      * several valid keys, for a full reference, check out
-     * [Route53resolver Filter value in the AWS API reference][1].
+     * [Route53resolver Filter value in the AWS API reference](https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_Filter.html).
      * @return builder
      */
     def filters(args: Endofunction[com.pulumi.aws.route53.inputs.GetQueryLogConfigFilterArgs.Builder]*):
@@ -766,7 +766,7 @@ object route53:
     /**
      * @param filters One or more name/value pairs to use as filters. There are
      * several valid keys, for a full reference, check out
-     * [Route53resolver Filter value in the AWS API reference][1].
+     * [Route53resolver Filter value in the AWS API reference](https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_Filter.html).
      * @return builder
      */
     def filters(args: Endofunction[com.pulumi.aws.route53.inputs.GetResolverEndpointFilterArgs.Builder]*):

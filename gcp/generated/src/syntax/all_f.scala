@@ -53,6 +53,7 @@ export ko_pulumi.gcp.certificateauthority.issuancePolicy
 export ko_pulumi.gcp.certificatemanager.gclbTargets
 export ko_pulumi.gcp.certificatemanager.intermediateCas
 export ko_pulumi.gcp.certificatemanager.ipConfigs
+export ko_pulumi.gcp.ces.fileSearchTool
 export ko_pulumi.gcp.ces.generativeAnswer
 export ko_pulumi.gcp.ces.generativeAnswers
 export ko_pulumi.gcp.ces.golden
@@ -380,9 +381,12 @@ export ko_pulumi.gcp.logging.indexConfigs
 export ko_pulumi.gcp.managedkafka.gcpConfig
 export ko_pulumi.gcp.memorystore.fixedFrequencySchedule
 export ko_pulumi.gcp.memorystore.gcsSource
+export ko_pulumi.gcp.migrationcenter.fileErrors
+export ko_pulumi.gcp.migrationcenter.fileValidations
 export ko_pulumi.gcp.migrationcenter.groupFindings
 export ko_pulumi.gcp.migrationcenter.groupPreferencesetAssignments
 export ko_pulumi.gcp.migrationcenter.inventories
+export ko_pulumi.gcp.migrationcenter.jobErrors
 export ko_pulumi.gcp.modelarmor.filterConfig
 export ko_pulumi.gcp.modelarmor.floorSettingMetadata
 export ko_pulumi.gcp.modelarmor.googleMcpServerFloorSetting

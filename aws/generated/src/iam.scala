@@ -733,7 +733,7 @@ object iam:
    * - AWS OpsWorks
    * 
    * For information about server certificates in IAM, see [Managing Server
-   * Certificates][2] in AWS Documentation.
+   * Certificates](https://docs.aws.amazon.com/IAM/latest/UserGuide/ManagingServerCerts.html) in AWS Documentation.
    */
   def ServerCertificate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.iam.ServerCertificateArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =

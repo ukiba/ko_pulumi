@@ -5,6 +5,22 @@ import com.pulumi.resources.CustomResourceOptions
 
 object chronicle:
   /**
+   * The custom list is a list of objects, that can be saved as a shared resource, and can be used by playbooks.
+   * 
+   * To get more information about CustomList, see:
+   * 
+   * * [API documentation](https://docs.cloud.google.com/chronicle/docs/reference/rest/v1beta/projects.locations.instances.customLists)
+   * * How-to Guides
+   *     * [Google SecOps Guides](https://cloud.google.com/chronicle/docs/secops/secops-overview)
+   */
+  def CustomList(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+      (args: Endofunction[com.pulumi.gcp.chronicle.CustomListArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+    val argsBuilder = com.pulumi.gcp.chronicle.CustomListArgs.builder
+    com.pulumi.gcp.chronicle.CustomList(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+
+  /**
    * A chart resource used within a NativeDashboard. Its lifecycle (Create, Update, Delete) is managed via custom methods on the NativeDashboard resource.
    * 
    * To get more information about DashboardChart, see:
@@ -163,6 +179,25 @@ object chronicle:
       (args: Endofunction[com.pulumi.gcp.chronicle.DataTableRowArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.chronicle.DataTableRowArgs.builder
     com.pulumi.gcp.chronicle.DataTableRow(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+
+  /**
+   * An environment is logical container for different networks or customers that are managed by the SOC or MSSP. This is useful for SOCs who provide services to several different networks, customers or business units within the organization. The Platform comes with a predefined environment named Default Environment.
+   * 
+   * &gt; **Warning:** This resource is in beta, and should be used with the terraform-provider-google-beta provider.
+   * See Provider Versions for more details on beta resources.
+   * 
+   * To get more information about Environment, see:
+   * 
+   * * [API documentation](https://docs.cloud.google.com/chronicle/docs/reference/rest/v1beta/projects.locations.instances.environments)
+   * * How-to Guides
+   *     * [Google SecOps Guides](https://cloud.google.com/chronicle/docs/secops/secops-overview)
+   */
+  def Environment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+      (args: Endofunction[com.pulumi.gcp.chronicle.EnvironmentArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+    val argsBuilder = com.pulumi.gcp.chronicle.EnvironmentArgs.builder
+    com.pulumi.gcp.chronicle.Environment(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
 

@@ -56,7 +56,217 @@ object vmwareengine:
       def argsBuilder = com.pulumi.gcp.vmwareengine.inputs.ClusterNodeTypeConfigArgs.builder
       builder.nodeTypeConfigs(args.map(_(argsBuilder).build)*)
 
-  /** A datastore resource that can be mounted on a privatecloud cluster */
+  /**
+   * A datastore resource that can be mounted on a VMware Engine cluster.
+   * 
+   * &gt; **Note:** To mount a datastore on a VMware Engine cluster, configure the
+   * `datastoreMountConfig` block within the `gcp.vmwareengine.Cluster` resource.
+   * A datastore cannot be mounted directly using the `gcp.vmwareengine.Datastore` resource.
+   * 
+   * If you are mounting a datastore that was already created outside of Terraform (or in a
+   * separate Terraform configuration), reference it directly by its full resource URI in the
+   * `datastore_mount_config.datastore` field inside the cluster resource:
+   * ### Vmware Engine Datastore Thirdparty
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.compute.ComputeFunctions;
+   * import com.pulumi.gcp.compute.inputs.GetNetworkArgs;
+   * import com.pulumi.gcp.vmwareengine.Datastore;
+   * import com.pulumi.gcp.vmwareengine.DatastoreArgs;
+   * import com.pulumi.gcp.vmwareengine.inputs.DatastoreNfsDatastoreArgs;
+   * import com.pulumi.gcp.vmwareengine.inputs.DatastoreNfsDatastoreThirdPartyFileServiceArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App {
+   *     public static void main(String[] args) {
+   *         Pulumi.run(App::stack);
+   *     }
+   * 
+   *     public static void stack(Context ctx) {
+   *         // use existing network with connectivity to the thirdparty datastore
+   *         final var default = ComputeFunctions.getNetwork(GetNetworkArgs.builder()
+   *             .name("default")
+   *             .build());
+   * 
+   *         // Create a thirdparty datastore.
+   *         // Note: To mount this datastore on a vSphere cluster, configure the `datastore_mount_config`
+   *         // block within the `google_vmwareengine_cluster` resource. For example:
+   *         //
+   *         //  datastore_mount_config {
+   *         //    datastore        = google_vmwareengine_datastore.example_thirdparty.id
+   *         //    datastore_network {
+   *         //      subnet           = google_vmwareengine_subnet.example_subnet.id
+   *         //      connection_count = 4
+   *         //      mtu              = 1500
+   *         //    }
+   *         //  }
+   *         var exampleThirdparty = new Datastore("exampleThirdparty", DatastoreArgs.builder()
+   *             .name("thirdparty-datastore")
+   *             .location("us-west1-a")
+   *             .description("example thirdparty datastore.")
+   *             .nfsDatastore(DatastoreNfsDatastoreArgs.builder()
+   *                 .thirdPartyFileService(DatastoreNfsDatastoreThirdPartyFileServiceArgs.builder()
+   *                     .fileShare("/share1")
+   *                     .network(default_.id())
+   *                     .servers("10.0.0.4")
+   *                     .build())
+   *                 .build())
+   *             .build());
+   * 
+   *     }
+   * }
+   * }
+   * </pre>
+   * ### Vmware Engine Datastore Filestore
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.filestore.FilestoreFunctions;
+   * import com.pulumi.gcp.filestore.inputs.GetInstanceArgs;
+   * import com.pulumi.gcp.vmwareengine.Datastore;
+   * import com.pulumi.gcp.vmwareengine.DatastoreArgs;
+   * import com.pulumi.gcp.vmwareengine.inputs.DatastoreNfsDatastoreArgs;
+   * import com.pulumi.gcp.vmwareengine.inputs.DatastoreNfsDatastoreGoogleFileServiceArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App {
+   *     public static void main(String[] args) {
+   *         Pulumi.run(App::stack);
+   *     }
+   * 
+   *     public static void stack(Context ctx) {
+   *         // Use existing filestore instance
+   *         final var testInstance = FilestoreFunctions.getInstance(GetInstanceArgs.builder()
+   *             .name("fs-instance")
+   *             .location("")
+   *             .build());
+   * 
+   *         // Create a VmwareEngine Datastore, referencing the filestore instance.
+   *         // Note: To mount this datastore on a vSphere cluster, configure the `datastore_mount_config`
+   *         // block within the `google_vmwareengine_cluster` resource. For example:
+   *         //
+   *         //  datastore_mount_config {
+   *         //    datastore        = google_vmwareengine_datastore.example_filestore.id
+   *         //    datastore_network {
+   *         //      subnet           = google_vmwareengine_subnet.example_subnet.id
+   *         //      connection_count = 4
+   *         //      mtu              = 1500
+   *         //    }
+   *         //  }
+   *         var exampleFilestore = new Datastore("exampleFilestore", DatastoreArgs.builder()
+   *             .name("filestore-datastore")
+   *             .location("")
+   *             .description("example google_file_service.filestore datastore.")
+   *             .nfsDatastore(DatastoreNfsDatastoreArgs.builder()
+   *                 .googleFileService(DatastoreNfsDatastoreGoogleFileServiceArgs.builder()
+   *                     .filestoreInstance(testInstanceGoogleFilestoreInstance.id())
+   *                     .build())
+   *                 .build())
+   *             .build());
+   * 
+   *     }
+   * }
+   * }
+   * </pre>
+   * ### Vmware Engine Datastore Netapp
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.netapp.Volume;
+   * import com.pulumi.gcp.netapp.VolumeArgs;
+   * import com.pulumi.gcp.vmwareengine.Datastore;
+   * import com.pulumi.gcp.vmwareengine.DatastoreArgs;
+   * import com.pulumi.gcp.vmwareengine.inputs.DatastoreNfsDatastoreArgs;
+   * import com.pulumi.gcp.vmwareengine.inputs.DatastoreNfsDatastoreGoogleFileServiceArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App {
+   *     public static void main(String[] args) {
+   *         Pulumi.run(App::stack);
+   *     }
+   * 
+   *     public static void stack(Context ctx) {
+   *         // Use existing netapp volume
+   *         var testVolume = new Volume("testVolume", VolumeArgs.builder()
+   *             .name("netapp-volume")
+   *             .location("us-west1")
+   *             .build());
+   * 
+   *         // Create a VmwareEngine Datastore, referencing the netapp volume.
+   *         // Note: To mount this datastore on a vSphere cluster, configure the `datastore_mount_config`
+   *         // block within the `google_vmwareengine_cluster` resource. For example:
+   *         //
+   *         //  datastore_mount_config {
+   *         //    datastore        = google_vmwareengine_datastore.example_netapp.id
+   *         //    datastore_network {
+   *         //      subnet           = google_vmwareengine_subnet.example_subnet.id
+   *         //      connection_count = 4
+   *         //      mtu              = 1500
+   *         //    }
+   *         //  }
+   *         var exampleNetapp = new Datastore("exampleNetapp", DatastoreArgs.builder()
+   *             .name("netapp-datastore")
+   *             .location("us-west1")
+   *             .description("example google_file_service.netapp datastore.")
+   *             .nfsDatastore(DatastoreNfsDatastoreArgs.builder()
+   *                 .googleFileService(DatastoreNfsDatastoreGoogleFileServiceArgs.builder()
+   *                     .netappVolume(testVolume.id())
+   *                     .build())
+   *                 .build())
+   *             .build());
+   * 
+   *     }
+   * }
+   * }
+   * </pre>
+   * 
+   * ## Import
+   * 
+   * Datastore can be imported using any of these accepted formats:
+   * 
+   * * `projects/{{project}}/locations/{{location}}/datastores/{{name}}`
+   * * `{{project}}/{{location}}/{{name}}`
+   * * `{{location}}/{{name}}`
+   * 
+   * When using the `pulumi import` command, Datastore can be imported using one of the formats above. For example:
+   * 
+   * ```sh
+   * $ pulumi import gcp:vmwareengine/datastore:Datastore default projects/{{project}}/locations/{{location}}/datastores/{{name}}
+   * $ pulumi import gcp:vmwareengine/datastore:Datastore default {{project}}/{{location}}/{{name}}
+   * $ pulumi import gcp:vmwareengine/datastore:Datastore default {{location}}/{{name}}
+   * ```
+   */
   def Datastore(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.gcp.vmwareengine.DatastoreArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.vmwareengine.DatastoreArgs.builder

@@ -76,6 +76,7 @@ export ko_pulumi.gcp.ces.llmPolicy
 export ko_pulumi.gcp.ces.llmPromptSecurities
 export ko_pulumi.gcp.ces.llmPromptSecurity
 export ko_pulumi.gcp.ces.loggingSettings
+export ko_pulumi.gcp.ces.mcpTools
 export ko_pulumi.gcp.ces.mcpToolset
 export ko_pulumi.gcp.ces.messages
 export ko_pulumi.gcp.ces.mockToolResponse
@@ -233,6 +234,7 @@ export ko_pulumi.gcp.container.networking
 export ko_pulumi.gcp.container.nodeAffinities
 export ko_pulumi.gcp.container.nodeConfig
 export ko_pulumi.gcp.container.nodeConfigDefaults
+export ko_pulumi.gcp.container.nodeCreationConfig
 export ko_pulumi.gcp.container.nodeDrainConfigs
 export ko_pulumi.gcp.container.nodeKernelModuleLoading
 export ko_pulumi.gcp.container.nodeKubeletConfig

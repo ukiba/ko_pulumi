@@ -232,6 +232,46 @@ object pinpoint:
         argsBuilder.build,
         resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
 
+  /**
+   * Manages an AWS End User Messaging SMS Event Destination.
+   * 
+   * An event destination is a location where messaging events are published. Exactly one of `cloudwatchLogsDestination`, `kinesisFirehoseDestination`, or `snsDestination` must be configured per event destination. Changing the sink type (e.g., from `snsDestination` to `cloudwatchLogsDestination`) forces resource replacement \u2014 AWS&#39;s `UpdateEventDestination` rejects sink-type changes with `ConflictException`.
+   */
+  def Smsvoicev2EventDestination(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+      (args: Endofunction[com.pulumi.aws.pinpoint.Smsvoicev2EventDestinationArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+    val argsBuilder = com.pulumi.aws.pinpoint.Smsvoicev2EventDestinationArgs.builder
+    com.pulumi.aws.pinpoint.Smsvoicev2EventDestination(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+
+  extension (builder: com.pulumi.aws.pinpoint.Smsvoicev2EventDestinationArgs.Builder)
+    /**
+     * @param cloudwatchLogsDestination Send events to Amazon CloudWatch Logs. Exactly one of `cloudwatchLogsDestination`, `kinesisFirehoseDestination`, or `snsDestination` must be configured. See `cloudwatchLogsDestination` Block for details.
+     * @return builder
+     */
+    def cloudwatchLogsDestination(args: Endofunction[com.pulumi.aws.pinpoint.inputs.Smsvoicev2EventDestinationCloudwatchLogsDestinationArgs.Builder]):
+        com.pulumi.aws.pinpoint.Smsvoicev2EventDestinationArgs.Builder =
+      val argsBuilder = com.pulumi.aws.pinpoint.inputs.Smsvoicev2EventDestinationCloudwatchLogsDestinationArgs.builder
+      builder.cloudwatchLogsDestination(args(argsBuilder).build)
+
+    /**
+     * @param kinesisFirehoseDestination Send events to Amazon Data Firehose. Exactly one of `cloudwatchLogsDestination`, `kinesisFirehoseDestination`, or `snsDestination` must be configured. See `kinesisFirehoseDestination` Block for details.
+     * @return builder
+     */
+    def kinesisFirehoseDestination(args: Endofunction[com.pulumi.aws.pinpoint.inputs.Smsvoicev2EventDestinationKinesisFirehoseDestinationArgs.Builder]):
+        com.pulumi.aws.pinpoint.Smsvoicev2EventDestinationArgs.Builder =
+      val argsBuilder = com.pulumi.aws.pinpoint.inputs.Smsvoicev2EventDestinationKinesisFirehoseDestinationArgs.builder
+      builder.kinesisFirehoseDestination(args(argsBuilder).build)
+
+    /**
+     * @param snsDestination Send events to Amazon SNS. Exactly one of `cloudwatchLogsDestination`, `kinesisFirehoseDestination`, or `snsDestination` must be configured. See `snsDestination` Block for details.
+     * @return builder
+     */
+    def snsDestination(args: Endofunction[com.pulumi.aws.pinpoint.inputs.Smsvoicev2EventDestinationSnsDestinationArgs.Builder]):
+        com.pulumi.aws.pinpoint.Smsvoicev2EventDestinationArgs.Builder =
+      val argsBuilder = com.pulumi.aws.pinpoint.inputs.Smsvoicev2EventDestinationSnsDestinationArgs.builder
+      builder.snsDestination(args(argsBuilder).build)
+
   /** Manages an AWS End User Messaging SMS opt-out list. */
   def Smsvoicev2OptOutList(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.pinpoint.Smsvoicev2OptOutListArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
@@ -322,6 +362,34 @@ object pinpoint:
         com.pulumi.aws.pinpoint.inputs.EmailTemplateState.Builder =
       def argsBuilder = com.pulumi.aws.pinpoint.inputs.EmailTemplateEmailTemplateArgs.builder
       builder.emailTemplates(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.aws.pinpoint.inputs.Smsvoicev2EventDestinationState.Builder)
+    /**
+     * @param cloudwatchLogsDestination Send events to Amazon CloudWatch Logs. Exactly one of `cloudwatchLogsDestination`, `kinesisFirehoseDestination`, or `snsDestination` must be configured. See `cloudwatchLogsDestination` Block for details.
+     * @return builder
+     */
+    def cloudwatchLogsDestination(args: Endofunction[com.pulumi.aws.pinpoint.inputs.Smsvoicev2EventDestinationCloudwatchLogsDestinationArgs.Builder]):
+        com.pulumi.aws.pinpoint.inputs.Smsvoicev2EventDestinationState.Builder =
+      val argsBuilder = com.pulumi.aws.pinpoint.inputs.Smsvoicev2EventDestinationCloudwatchLogsDestinationArgs.builder
+      builder.cloudwatchLogsDestination(args(argsBuilder).build)
+
+    /**
+     * @param kinesisFirehoseDestination Send events to Amazon Data Firehose. Exactly one of `cloudwatchLogsDestination`, `kinesisFirehoseDestination`, or `snsDestination` must be configured. See `kinesisFirehoseDestination` Block for details.
+     * @return builder
+     */
+    def kinesisFirehoseDestination(args: Endofunction[com.pulumi.aws.pinpoint.inputs.Smsvoicev2EventDestinationKinesisFirehoseDestinationArgs.Builder]):
+        com.pulumi.aws.pinpoint.inputs.Smsvoicev2EventDestinationState.Builder =
+      val argsBuilder = com.pulumi.aws.pinpoint.inputs.Smsvoicev2EventDestinationKinesisFirehoseDestinationArgs.builder
+      builder.kinesisFirehoseDestination(args(argsBuilder).build)
+
+    /**
+     * @param snsDestination Send events to Amazon SNS. Exactly one of `cloudwatchLogsDestination`, `kinesisFirehoseDestination`, or `snsDestination` must be configured. See `snsDestination` Block for details.
+     * @return builder
+     */
+    def snsDestination(args: Endofunction[com.pulumi.aws.pinpoint.inputs.Smsvoicev2EventDestinationSnsDestinationArgs.Builder]):
+        com.pulumi.aws.pinpoint.inputs.Smsvoicev2EventDestinationState.Builder =
+      val argsBuilder = com.pulumi.aws.pinpoint.inputs.Smsvoicev2EventDestinationSnsDestinationArgs.builder
+      builder.snsDestination(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.pinpoint.inputs.Smsvoicev2PhoneNumberState.Builder)
     def timeouts(args: Endofunction[com.pulumi.aws.pinpoint.inputs.Smsvoicev2PhoneNumberTimeoutsArgs.Builder]):

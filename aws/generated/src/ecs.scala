@@ -132,6 +132,73 @@ object ecs:
       def argsBuilder = com.pulumi.aws.ecs.inputs.ClusterCapacityProvidersDefaultCapacityProviderStrategyArgs.builder
       builder.defaultCapacityProviderStrategies(args.map(_(argsBuilder).build)*)
 
+  /** Provides an ECS Daemon resource, which manages a daemon that runs exactly one task on each container instance in an ECS cluster. */
+  def Daemon(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+      (args: Endofunction[com.pulumi.aws.ecs.DaemonArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+    var argsBuilder = com.pulumi.aws.ecs.DaemonArgs.builder
+    conf.logicalName2physicalName(name) match
+      case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
+      case None               =>
+    argsBuilder = args(argsBuilder)
+    conf.logicalName2tagName(name) match
+      case Some(tagName) =>
+        argsBuilder = argsBuilder.tags:
+          transformOptOutputMap(argsBuilder.build.tags, map =>
+              if map.contains("Name") then map else map + ("Name" -> tagName))
+      case None =>
+    com.pulumi.aws.ecs.Daemon(name,
+        argsBuilder.build,
+        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+
+  extension (builder: com.pulumi.aws.ecs.DaemonArgs.Builder)
+    /**
+     * @param deploymentConfiguration Configuration for daemon deployments. See Deployment Configuration below.
+     * @return builder
+     */
+    def deploymentConfiguration(args: Endofunction[com.pulumi.aws.ecs.inputs.DaemonDeploymentConfigurationArgs.Builder]):
+        com.pulumi.aws.ecs.DaemonArgs.Builder =
+      val argsBuilder = com.pulumi.aws.ecs.inputs.DaemonDeploymentConfigurationArgs.builder
+      builder.deploymentConfiguration(args(argsBuilder).build)
+
+    def timeouts(args: Endofunction[com.pulumi.aws.ecs.inputs.DaemonTimeoutsArgs.Builder]):
+        com.pulumi.aws.ecs.DaemonArgs.Builder =
+      val argsBuilder = com.pulumi.aws.ecs.inputs.DaemonTimeoutsArgs.builder
+      builder.timeouts(args(argsBuilder).build)
+
+  /** Manages a revision of an ECS daemon task definition for use with daemon scheduling strategy. */
+  def DaemonTaskDefinition(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+      (args: Endofunction[com.pulumi.aws.ecs.DaemonTaskDefinitionArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+    var argsBuilder = com.pulumi.aws.ecs.DaemonTaskDefinitionArgs.builder
+    argsBuilder = args(argsBuilder)
+    conf.logicalName2tagName(name) match
+      case Some(tagName) =>
+        argsBuilder = argsBuilder.tags:
+          transformOptOutputMap(argsBuilder.build.tags, map =>
+              if map.contains("Name") then map else map + ("Name" -> tagName))
+      case None =>
+    com.pulumi.aws.ecs.DaemonTaskDefinition(name,
+        argsBuilder.build,
+        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+
+  extension (builder: com.pulumi.aws.ecs.DaemonTaskDefinitionArgs.Builder)
+    /**
+     * @param containerDefinitions One or more container definition blocks. Detailed below.
+     * @return builder
+     */
+    def containerDefinitions(args: Endofunction[com.pulumi.aws.ecs.inputs.DaemonTaskDefinitionContainerDefinitionArgs.Builder]*):
+        com.pulumi.aws.ecs.DaemonTaskDefinitionArgs.Builder =
+      def argsBuilder = com.pulumi.aws.ecs.inputs.DaemonTaskDefinitionContainerDefinitionArgs.builder
+      builder.containerDefinitions(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param volumes Repeatable configuration block for volumes that containers in your task may use. Detailed below.
+     * @return builder
+     */
+    def volumes(args: Endofunction[com.pulumi.aws.ecs.inputs.DaemonTaskDefinitionVolumeArgs.Builder]*):
+        com.pulumi.aws.ecs.DaemonTaskDefinitionArgs.Builder =
+      def argsBuilder = com.pulumi.aws.ecs.inputs.DaemonTaskDefinitionVolumeArgs.builder
+      builder.volumes(args.map(_(argsBuilder).build)*)
+
   object EcsFunctions:
     // Pulumi methods are reproduced as Scala methods.
     // Java methods cause Scala warnings under -Yexplicit-nulls flag
@@ -796,6 +863,216 @@ object ecs:
         com.pulumi.aws.ecs.inputs.ClusterState.Builder =
       def argsBuilder = com.pulumi.aws.ecs.inputs.ClusterSettingArgs.builder
       builder.settings(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.aws.ecs.inputs.DaemonDeploymentConfigurationArgs.Builder)
+    /**
+     * @param alarms Alarm configuration for deployment monitoring. See Alarms below.
+     * @return builder
+     */
+    def alarms(args: Endofunction[com.pulumi.aws.ecs.inputs.DaemonDeploymentConfigurationAlarmsArgs.Builder]):
+        com.pulumi.aws.ecs.inputs.DaemonDeploymentConfigurationArgs.Builder =
+      val argsBuilder = com.pulumi.aws.ecs.inputs.DaemonDeploymentConfigurationAlarmsArgs.builder
+      builder.alarms(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.ecs.inputs.DaemonState.Builder)
+    /**
+     * @param deploymentConfiguration Configuration for daemon deployments. See Deployment Configuration below.
+     * @return builder
+     */
+    def deploymentConfiguration(args: Endofunction[com.pulumi.aws.ecs.inputs.DaemonDeploymentConfigurationArgs.Builder]):
+        com.pulumi.aws.ecs.inputs.DaemonState.Builder =
+      val argsBuilder = com.pulumi.aws.ecs.inputs.DaemonDeploymentConfigurationArgs.builder
+      builder.deploymentConfiguration(args(argsBuilder).build)
+
+    def timeouts(args: Endofunction[com.pulumi.aws.ecs.inputs.DaemonTimeoutsArgs.Builder]):
+        com.pulumi.aws.ecs.inputs.DaemonState.Builder =
+      val argsBuilder = com.pulumi.aws.ecs.inputs.DaemonTimeoutsArgs.builder
+      builder.timeouts(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.ecs.inputs.DaemonTaskDefinitionContainerDefinitionArgs.Builder)
+    /**
+     * @param dependsOns Dependencies defined for container startup and shutdown. Detailed below.
+     * @return builder
+     */
+    def dependsOns(args: Endofunction[com.pulumi.aws.ecs.inputs.DaemonTaskDefinitionContainerDefinitionDependsOnArgs.Builder]*):
+        com.pulumi.aws.ecs.inputs.DaemonTaskDefinitionContainerDefinitionArgs.Builder =
+      def argsBuilder = com.pulumi.aws.ecs.inputs.DaemonTaskDefinitionContainerDefinitionDependsOnArgs.builder
+      builder.dependsOns(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param environmentFiles List of files containing the environment variables to pass to a container. Detailed below.
+     * @return builder
+     */
+    def environmentFiles(args: Endofunction[com.pulumi.aws.ecs.inputs.DaemonTaskDefinitionContainerDefinitionEnvironmentFileArgs.Builder]*):
+        com.pulumi.aws.ecs.inputs.DaemonTaskDefinitionContainerDefinitionArgs.Builder =
+      def argsBuilder = com.pulumi.aws.ecs.inputs.DaemonTaskDefinitionContainerDefinitionEnvironmentFileArgs.builder
+      builder.environmentFiles(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param environments Environment variables to pass to a container. Detailed below.
+     * @return builder
+     */
+    def environments(args: Endofunction[com.pulumi.aws.ecs.inputs.DaemonTaskDefinitionContainerDefinitionEnvironmentArgs.Builder]*):
+        com.pulumi.aws.ecs.inputs.DaemonTaskDefinitionContainerDefinitionArgs.Builder =
+      def argsBuilder = com.pulumi.aws.ecs.inputs.DaemonTaskDefinitionContainerDefinitionEnvironmentArgs.builder
+      builder.environments(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param firelensConfiguration FireLens configuration for the container. Detailed below.
+     * @return builder
+     */
+    def firelensConfiguration(args: Endofunction[com.pulumi.aws.ecs.inputs.DaemonTaskDefinitionContainerDefinitionFirelensConfigurationArgs.Builder]):
+        com.pulumi.aws.ecs.inputs.DaemonTaskDefinitionContainerDefinitionArgs.Builder =
+      val argsBuilder = com.pulumi.aws.ecs.inputs.DaemonTaskDefinitionContainerDefinitionFirelensConfigurationArgs.builder
+      builder.firelensConfiguration(args(argsBuilder).build)
+
+    /**
+     * @param healthCheck Container health check command and associated configuration parameters for the container. Detailed below.
+     * @return builder
+     */
+    def healthCheck(args: Endofunction[com.pulumi.aws.ecs.inputs.DaemonTaskDefinitionContainerDefinitionHealthCheckArgs.Builder]):
+        com.pulumi.aws.ecs.inputs.DaemonTaskDefinitionContainerDefinitionArgs.Builder =
+      val argsBuilder = com.pulumi.aws.ecs.inputs.DaemonTaskDefinitionContainerDefinitionHealthCheckArgs.builder
+      builder.healthCheck(args(argsBuilder).build)
+
+    /**
+     * @param linuxParameters Linux-specific modifications that are applied to the container. Detailed below.
+     * @return builder
+     */
+    def linuxParameters(args: Endofunction[com.pulumi.aws.ecs.inputs.DaemonTaskDefinitionContainerDefinitionLinuxParametersArgs.Builder]):
+        com.pulumi.aws.ecs.inputs.DaemonTaskDefinitionContainerDefinitionArgs.Builder =
+      val argsBuilder = com.pulumi.aws.ecs.inputs.DaemonTaskDefinitionContainerDefinitionLinuxParametersArgs.builder
+      builder.linuxParameters(args(argsBuilder).build)
+
+    /**
+     * @param logConfiguration Log configuration specification for the container. Detailed below.
+     * @return builder
+     */
+    def logConfiguration(args: Endofunction[com.pulumi.aws.ecs.inputs.DaemonTaskDefinitionContainerDefinitionLogConfigurationArgs.Builder]):
+        com.pulumi.aws.ecs.inputs.DaemonTaskDefinitionContainerDefinitionArgs.Builder =
+      val argsBuilder = com.pulumi.aws.ecs.inputs.DaemonTaskDefinitionContainerDefinitionLogConfigurationArgs.builder
+      builder.logConfiguration(args(argsBuilder).build)
+
+    /**
+     * @param mountPoints Mount points for data volumes in your container. Detailed below.
+     * @return builder
+     */
+    def mountPoints(args: Endofunction[com.pulumi.aws.ecs.inputs.DaemonTaskDefinitionContainerDefinitionMountPointArgs.Builder]*):
+        com.pulumi.aws.ecs.inputs.DaemonTaskDefinitionContainerDefinitionArgs.Builder =
+      def argsBuilder = com.pulumi.aws.ecs.inputs.DaemonTaskDefinitionContainerDefinitionMountPointArgs.builder
+      builder.mountPoints(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param repositoryCredentials Private repository authentication credentials to use. Detailed below.
+     * @return builder
+     */
+    def repositoryCredentials(args: Endofunction[com.pulumi.aws.ecs.inputs.DaemonTaskDefinitionContainerDefinitionRepositoryCredentialsArgs.Builder]):
+        com.pulumi.aws.ecs.inputs.DaemonTaskDefinitionContainerDefinitionArgs.Builder =
+      val argsBuilder = com.pulumi.aws.ecs.inputs.DaemonTaskDefinitionContainerDefinitionRepositoryCredentialsArgs.builder
+      builder.repositoryCredentials(args(argsBuilder).build)
+
+    /**
+     * @param restartPolicy Restart policy for a container. Detailed below.
+     * @return builder
+     */
+    def restartPolicy(args: Endofunction[com.pulumi.aws.ecs.inputs.DaemonTaskDefinitionContainerDefinitionRestartPolicyArgs.Builder]):
+        com.pulumi.aws.ecs.inputs.DaemonTaskDefinitionContainerDefinitionArgs.Builder =
+      val argsBuilder = com.pulumi.aws.ecs.inputs.DaemonTaskDefinitionContainerDefinitionRestartPolicyArgs.builder
+      builder.restartPolicy(args(argsBuilder).build)
+
+    /**
+     * @param secrets Secrets to pass to the container. Detailed below.
+     * @return builder
+     */
+    def secrets(args: Endofunction[com.pulumi.aws.ecs.inputs.DaemonTaskDefinitionContainerDefinitionSecretArgs.Builder]*):
+        com.pulumi.aws.ecs.inputs.DaemonTaskDefinitionContainerDefinitionArgs.Builder =
+      def argsBuilder = com.pulumi.aws.ecs.inputs.DaemonTaskDefinitionContainerDefinitionSecretArgs.builder
+      builder.secrets(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param systemControls List of namespaced kernel parameters to set in the container. Detailed below.
+     * @return builder
+     */
+    def systemControls(args: Endofunction[com.pulumi.aws.ecs.inputs.DaemonTaskDefinitionContainerDefinitionSystemControlArgs.Builder]*):
+        com.pulumi.aws.ecs.inputs.DaemonTaskDefinitionContainerDefinitionArgs.Builder =
+      def argsBuilder = com.pulumi.aws.ecs.inputs.DaemonTaskDefinitionContainerDefinitionSystemControlArgs.builder
+      builder.systemControls(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param ulimits List of ulimits to set in the container. Detailed below.
+     * @return builder
+     */
+    def ulimits(args: Endofunction[com.pulumi.aws.ecs.inputs.DaemonTaskDefinitionContainerDefinitionUlimitArgs.Builder]*):
+        com.pulumi.aws.ecs.inputs.DaemonTaskDefinitionContainerDefinitionArgs.Builder =
+      def argsBuilder = com.pulumi.aws.ecs.inputs.DaemonTaskDefinitionContainerDefinitionUlimitArgs.builder
+      builder.ulimits(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.aws.ecs.inputs.DaemonTaskDefinitionContainerDefinitionLinuxParametersArgs.Builder)
+    /**
+     * @param capabilities Linux capabilities for the container. Detailed below.
+     * @return builder
+     */
+    def capabilities(args: Endofunction[com.pulumi.aws.ecs.inputs.DaemonTaskDefinitionContainerDefinitionLinuxParametersCapabilitiesArgs.Builder]):
+        com.pulumi.aws.ecs.inputs.DaemonTaskDefinitionContainerDefinitionLinuxParametersArgs.Builder =
+      val argsBuilder = com.pulumi.aws.ecs.inputs.DaemonTaskDefinitionContainerDefinitionLinuxParametersCapabilitiesArgs.builder
+      builder.capabilities(args(argsBuilder).build)
+
+    /**
+     * @param devices Any host devices to expose to the container. Detailed below.
+     * @return builder
+     */
+    def devices(args: Endofunction[com.pulumi.aws.ecs.inputs.DaemonTaskDefinitionContainerDefinitionLinuxParametersDeviceArgs.Builder]*):
+        com.pulumi.aws.ecs.inputs.DaemonTaskDefinitionContainerDefinitionLinuxParametersArgs.Builder =
+      def argsBuilder = com.pulumi.aws.ecs.inputs.DaemonTaskDefinitionContainerDefinitionLinuxParametersDeviceArgs.builder
+      builder.devices(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param tmpfs Container path, mount options, and size of the tmpfs mount. Detailed below.
+     * @return builder
+     */
+    def tmpfs(args: Endofunction[com.pulumi.aws.ecs.inputs.DaemonTaskDefinitionContainerDefinitionLinuxParametersTmpfArgs.Builder]*):
+        com.pulumi.aws.ecs.inputs.DaemonTaskDefinitionContainerDefinitionLinuxParametersArgs.Builder =
+      def argsBuilder = com.pulumi.aws.ecs.inputs.DaemonTaskDefinitionContainerDefinitionLinuxParametersTmpfArgs.builder
+      builder.tmpfs(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.aws.ecs.inputs.DaemonTaskDefinitionContainerDefinitionLogConfigurationArgs.Builder)
+    /**
+     * @param secretOptions Secrets to pass to the log configuration. Detailed below.
+     * @return builder
+     */
+    def secretOptions(args: Endofunction[com.pulumi.aws.ecs.inputs.DaemonTaskDefinitionContainerDefinitionLogConfigurationSecretOptionArgs.Builder]*):
+        com.pulumi.aws.ecs.inputs.DaemonTaskDefinitionContainerDefinitionLogConfigurationArgs.Builder =
+      def argsBuilder = com.pulumi.aws.ecs.inputs.DaemonTaskDefinitionContainerDefinitionLogConfigurationSecretOptionArgs.builder
+      builder.secretOptions(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.aws.ecs.inputs.DaemonTaskDefinitionState.Builder)
+    /**
+     * @param containerDefinitions One or more container definition blocks. Detailed below.
+     * @return builder
+     */
+    def containerDefinitions(args: Endofunction[com.pulumi.aws.ecs.inputs.DaemonTaskDefinitionContainerDefinitionArgs.Builder]*):
+        com.pulumi.aws.ecs.inputs.DaemonTaskDefinitionState.Builder =
+      def argsBuilder = com.pulumi.aws.ecs.inputs.DaemonTaskDefinitionContainerDefinitionArgs.builder
+      builder.containerDefinitions(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param volumes Repeatable configuration block for volumes that containers in your task may use. Detailed below.
+     * @return builder
+     */
+    def volumes(args: Endofunction[com.pulumi.aws.ecs.inputs.DaemonTaskDefinitionVolumeArgs.Builder]*):
+        com.pulumi.aws.ecs.inputs.DaemonTaskDefinitionState.Builder =
+      def argsBuilder = com.pulumi.aws.ecs.inputs.DaemonTaskDefinitionVolumeArgs.builder
+      builder.volumes(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.aws.ecs.inputs.DaemonTaskDefinitionVolumeArgs.Builder)
+    /**
+     * @param hosts Configuration for a host volume. Detailed below.
+     * @return builder
+     */
+    def hosts(args: Endofunction[com.pulumi.aws.ecs.inputs.DaemonTaskDefinitionVolumeHostArgs.Builder]*):
+        com.pulumi.aws.ecs.inputs.DaemonTaskDefinitionVolumeArgs.Builder =
+      def argsBuilder = com.pulumi.aws.ecs.inputs.DaemonTaskDefinitionVolumeHostArgs.builder
+      builder.hosts(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.aws.ecs.inputs.ExpressGatewayServicePrimaryContainerArgs.Builder)
     def awsLogsConfigurations(args: Endofunction[com.pulumi.aws.ecs.inputs.ExpressGatewayServicePrimaryContainerAwsLogsConfigurationArgs.Builder]*):

@@ -38,7 +38,7 @@ object wafregional:
 
   extension (builder: com.pulumi.aws.wafregional.GeoMatchSetArgs.Builder)
     /**
-     * @param geoMatchConstraints The Geo Match Constraint objects which contain the country that you want AWS WAF to search for.
+     * @param geoMatchConstraints Geo Match Constraint objects which contain the country that you want AWS WAF to search for.
      * @return builder
      */
     def geoMatchConstraints(args: Endofunction[com.pulumi.aws.wafregional.inputs.GeoMatchSetGeoMatchConstraintArgs.Builder]*):
@@ -393,7 +393,7 @@ object wafregional:
 
   extension (builder: com.pulumi.aws.wafregional.inputs.GeoMatchSetState.Builder)
     /**
-     * @param geoMatchConstraints The Geo Match Constraint objects which contain the country that you want AWS WAF to search for.
+     * @param geoMatchConstraints Geo Match Constraint objects which contain the country that you want AWS WAF to search for.
      * @return builder
      */
     def geoMatchConstraints(args: Endofunction[com.pulumi.aws.wafregional.inputs.GeoMatchSetGeoMatchConstraintArgs.Builder]*):

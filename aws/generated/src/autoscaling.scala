@@ -59,6 +59,66 @@ object autoscaling:
    * &gt; **Note:** You must specify either `launchConfiguration`, `launchTemplate`, or `mixedInstancesPolicy`.
    * 
    * &gt; **NOTE on Auto Scaling Groups, Attachments and Traffic Source Attachments:** Pulumi provides standalone Attachment (for attaching Classic Load Balancers and Application Load Balancer, Gateway Load Balancer, or Network Load Balancer target groups) and Traffic Source Attachment (for attaching Load Balancers and VPC Lattice target groups) resources and an Auto Scaling Group resource with `loadBalancers`, `targetGroupArns` and `trafficSource` attributes. Do not use the same traffic source in more than one of these resources. Doing so will cause a conflict of attachments. A `lifecycle` configuration block can be used to suppress differences if necessary.
+   * 
+   * A newly-created ASG is initially empty and begins to scale to `minSize` (or
+   * `desiredCapacity`, if specified) by launching instances using the provided
+   * Launch Configuration. These instances take time to launch and boot.
+   * 
+   * On ASG Update, changes to these values also take time to result in the target
+   * number of instances providing service.
+   * 
+   * This provider provides two mechanisms to help consistently manage ASG scale up
+   * time across dependent resources.
+   * 
+   * #### Waiting for ASG Capacity
+   * 
+   * The first is default behavior. This provider waits after ASG creation for
+   * `minSize` (or `desiredCapacity`, if specified) healthy instances to show up
+   * in the ASG before continuing.
+   * 
+   * If `minSize` or `desiredCapacity` are changed in a subsequent update,
+   * this provider will also wait for the correct number of healthy instances before
+   * continuing.
+   * 
+   * This provider considers an instance &#34;healthy&#34; when the ASG reports `HealthStatus:
+   * &#34;Healthy&#34;` and `LifecycleState: &#34;InService&#34;`. See the [AWS AutoScaling
+   * Docs](https://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingGroupLifecycle.html)
+   * for more information on an ASG&#39;s lifecycle.
+   * 
+   * This provider will wait for healthy instances for up to
+   * `waitForCapacityTimeout`. If ASG creation is taking more than a few minutes,
+   * it&#39;s worth investigating for scaling activity errors, which can be caused by
+   * problems with the selected Launch Configuration.
+   * 
+   * Setting `waitForCapacityTimeout` to `&#34;0&#34;` disables ASG Capacity waiting.
+   * 
+   * #### Waiting for ELB Capacity
+   * 
+   * The second mechanism is optional, and affects ASGs with attached ELBs specified
+   * via the `loadBalancers` attribute or with ALBs specified with `targetGroupArns`.
+   * 
+   * The `minElbCapacity` parameter causes the provider to wait for at least the
+   * requested number of instances to show up `&#34;InService&#34;` in all attached ELBs
+   * during ASG creation. It has no effect on ASG updates.
+   * 
+   * If `waitForElbCapacity` is set, the provider will wait for exactly that number
+   * of Instances to be `&#34;InService&#34;` in all attached ELBs on both creation and
+   * updates.
+   * 
+   * These parameters can be used to ensure that service is being provided before
+   * the provider moves on. If new instances don&#39;t pass the ELB&#39;s health checks for any
+   * reason, the apply will time out, and the ASG will be marked as
+   * tainted (i.e., marked to be destroyed in a follow up run).
+   * 
+   * As with ASG Capacity, the provider will wait for up to `waitForCapacityTimeout`
+   * for the proper number of instances to be healthy.
+   * 
+   * #### Troubleshooting Capacity Waiting Timeouts
+   * 
+   * If ASG creation takes more than a few minutes, this could indicate one of a
+   * number of configuration problems. See the [AWS Docs on Load Balancer
+   * Troubleshooting](https://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/elb-troubleshooting.html)
+   * for more information.
    */
   def Group(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.autoscaling.GroupArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =

@@ -466,7 +466,17 @@ object ces:
       val argsBuilder = com.pulumi.gcp.ces.inputs.SecuritySettingsEndpointControlPolicyArgs.builder
       builder.endpointControlPolicy(args(argsBuilder).build)
 
-  /** Description */
+  /**
+   * Description
+   * 
+   * &gt; **Note:** **Direct Management Restriction for Certain Tool Types:**
+   * 
+   * Individual tools of type `openApiTool`, `mcpTool`, `connectorTool`, and `remoteAgentTool` **cannot** be created, updated, or managed directly using the `gcp.ces.Tool` resource.
+   * 
+   * `openApiTool`, `mcpTool`, and `connectorTool` are dynamically generated at runtime based on their corresponding **toolsets** (configured via the `gcp.ces.Toolset` resource). `remoteAgentTool` represents A2A connections configured externally, and `systemTool` represents pre-defined platform tools managed entirely by Google Cloud.
+   * 
+   * Consequently, blocks like `openApiTool`, `mcpTool`, `connectorTool`, `remoteAgentTool`, and `systemTool` are marked as **read-only (output-only)** in this resource. They are populated by the server for reference purposes only (e.g., after importing an existing tool into your state) and **cannot** be configured in your Terraform HCL configuration.
+   */
   def Tool(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.gcp.ces.ToolArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.ces.ToolArgs.builder
@@ -475,6 +485,16 @@ object ces:
         resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
 
   extension (builder: com.pulumi.gcp.ces.ToolArgs.Builder)
+    /**
+     * @param agentTool Represents a tool that allows the agent to call another agent.
+     * Structure is documented below.
+     * @return builder
+     */
+    def agentTool(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolAgentToolArgs.Builder]):
+        com.pulumi.gcp.ces.ToolArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.ces.inputs.ToolAgentToolArgs.builder
+      builder.agentTool(args(argsBuilder).build)
+
     /**
      * @param clientFunction Represents a client-side function that the agent can invoke. When the
      * tool is chosen by the agent, control is handed off to the client.
@@ -502,6 +522,17 @@ object ces:
       builder.dataStoreTool(args(argsBuilder).build)
 
     /**
+     * @param fileSearchTool The file search tool allows the agent to search across the files uploaded by the
+     * app/agent developer.
+     * Structure is documented below.
+     * @return builder
+     */
+    def fileSearchTool(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolFileSearchToolArgs.Builder]):
+        com.pulumi.gcp.ces.ToolArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.ces.inputs.ToolFileSearchToolArgs.builder
+      builder.fileSearchTool(args(argsBuilder).build)
+
+    /**
      * @param googleSearchTool Represents a tool to perform Google web searches for grounding.
      * See
      * https://cloud.google.com/vertex-ai/generative-ai/docs/grounding/grounding-with-google-search.
@@ -522,6 +553,16 @@ object ces:
         com.pulumi.gcp.ces.ToolArgs.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.ToolPythonFunctionArgs.builder
       builder.pythonFunction(args(argsBuilder).build)
+
+    /**
+     * @param widgetTool Represents a widget tool that the agent can invoke.
+     * Structure is documented below.
+     * @return builder
+     */
+    def widgetTool(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolWidgetToolArgs.Builder]):
+        com.pulumi.gcp.ces.ToolArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.ces.inputs.ToolWidgetToolArgs.builder
+      builder.widgetTool(args(argsBuilder).build)
 
   /** Description */
   def Toolset(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -3138,6 +3179,30 @@ object ces:
       val argsBuilder = com.pulumi.gcp.ces.inputs.ToolClientFunctionResponseArgs.builder
       builder.response(args(argsBuilder).build)
 
+  extension (builder: com.pulumi.gcp.ces.inputs.ToolConnectorToolActionArgs.Builder)
+    /**
+     * @param entityOperations (Output)
+     * Entity operation configuration for the tool to use.
+     * Structure is documented below.
+     * @return builder
+     */
+    def entityOperations(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolConnectorToolActionEntityOperationArgs.Builder]*):
+        com.pulumi.gcp.ces.inputs.ToolConnectorToolActionArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.ces.inputs.ToolConnectorToolActionEntityOperationArgs.builder
+      builder.entityOperations(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.gcp.ces.inputs.ToolConnectorToolArgs.Builder)
+    /**
+     * @param actions (Output)
+     * Action for the tool to use.
+     * Structure is documented below.
+     * @return builder
+     */
+    def actions(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolConnectorToolActionArgs.Builder]*):
+        com.pulumi.gcp.ces.inputs.ToolConnectorToolArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.ces.inputs.ToolConnectorToolActionArgs.builder
+      builder.actions(args.map(_(argsBuilder).build)*)
+
   extension (builder: com.pulumi.gcp.ces.inputs.ToolDataStoreToolArgs.Builder)
     /**
      * @param boostSpecs Boost specification to boost certain documents.
@@ -3148,6 +3213,16 @@ object ces:
         com.pulumi.gcp.ces.inputs.ToolDataStoreToolArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.ToolDataStoreToolBoostSpecArgs.builder
       builder.boostSpecs(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param dataStoreSource Optional. Search within a single specific DataStore.
+     * Structure is documented below.
+     * @return builder
+     */
+    def dataStoreSource(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolDataStoreToolDataStoreSourceArgs.Builder]):
+        com.pulumi.gcp.ces.inputs.ToolDataStoreToolArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.ces.inputs.ToolDataStoreToolDataStoreSourceArgs.builder
+      builder.dataStoreSource(args(argsBuilder).build)
 
     /**
      * @param engineSource Configuration for searching within an Engine, potentially targeting
@@ -3217,6 +3292,29 @@ object ces:
         com.pulumi.gcp.ces.inputs.ToolDataStoreToolBoostSpecSpecConditionBoostSpecBoostControlSpecArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.ToolDataStoreToolBoostSpecSpecConditionBoostSpecBoostControlSpecControlPointArgs.builder
       builder.controlPoints(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.gcp.ces.inputs.ToolDataStoreToolDataStoreSourceArgs.Builder)
+    /**
+     * @param dataStore Optional. The data store.
+     * Structure is documented below.
+     * @return builder
+     */
+    def dataStore(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolDataStoreToolDataStoreSourceDataStoreArgs.Builder]):
+        com.pulumi.gcp.ces.inputs.ToolDataStoreToolDataStoreSourceArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.ces.inputs.ToolDataStoreToolDataStoreSourceDataStoreArgs.builder
+      builder.dataStore(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.gcp.ces.inputs.ToolDataStoreToolDataStoreSourceDataStoreArgs.Builder)
+    /**
+     * @param connectorConfigs (Output)
+     * The connector config for the data store connection.
+     * Structure is documented below.
+     * @return builder
+     */
+    def connectorConfigs(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolDataStoreToolDataStoreSourceDataStoreConnectorConfigArgs.Builder]*):
+        com.pulumi.gcp.ces.inputs.ToolDataStoreToolDataStoreSourceDataStoreArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.ces.inputs.ToolDataStoreToolDataStoreSourceDataStoreConnectorConfigArgs.builder
+      builder.connectorConfigs(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.gcp.ces.inputs.ToolDataStoreToolEngineSourceArgs.Builder)
     /**
@@ -3306,6 +3404,122 @@ object ces:
         com.pulumi.gcp.ces.inputs.ToolDataStoreToolModalityConfigSummarizationConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.ToolDataStoreToolModalityConfigSummarizationConfigModelSettingsArgs.builder
       builder.modelSettings(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.gcp.ces.inputs.ToolGoogleSearchToolArgs.Builder)
+    /**
+     * @param promptConfig Optional. Prompt instructions passed to planner on how the search results should be
+     * processed for text and voice.
+     * Structure is documented below.
+     * @return builder
+     */
+    def promptConfig(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolGoogleSearchToolPromptConfigArgs.Builder]):
+        com.pulumi.gcp.ces.inputs.ToolGoogleSearchToolArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.ces.inputs.ToolGoogleSearchToolPromptConfigArgs.builder
+      builder.promptConfig(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.gcp.ces.inputs.ToolMcpToolApiAuthenticationArgs.Builder)
+    /**
+     * @param apiKeyConfigs (Output)
+     * Configurations for authentication with API key.
+     * Structure is documented below.
+     * @return builder
+     */
+    def apiKeyConfigs(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolMcpToolApiAuthenticationApiKeyConfigArgs.Builder]*):
+        com.pulumi.gcp.ces.inputs.ToolMcpToolApiAuthenticationArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.ces.inputs.ToolMcpToolApiAuthenticationApiKeyConfigArgs.builder
+      builder.apiKeyConfigs(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param bearerTokenConfigs (Output)
+     * Configurations for authentication with a bearer token.
+     * Structure is documented below.
+     * @return builder
+     */
+    def bearerTokenConfigs(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolMcpToolApiAuthenticationBearerTokenConfigArgs.Builder]*):
+        com.pulumi.gcp.ces.inputs.ToolMcpToolApiAuthenticationArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.ces.inputs.ToolMcpToolApiAuthenticationBearerTokenConfigArgs.builder
+      builder.bearerTokenConfigs(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param oauthConfigs (Output)
+     * Configurations for authentication with OAuth.
+     * Structure is documented below.
+     * @return builder
+     */
+    def oauthConfigs(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolMcpToolApiAuthenticationOauthConfigArgs.Builder]*):
+        com.pulumi.gcp.ces.inputs.ToolMcpToolApiAuthenticationArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.ces.inputs.ToolMcpToolApiAuthenticationOauthConfigArgs.builder
+      builder.oauthConfigs(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param serviceAccountAuthConfigs (Output)
+     * Configurations for authentication using a custom service account.
+     * Structure is documented below.
+     * @return builder
+     */
+    def serviceAccountAuthConfigs(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolMcpToolApiAuthenticationServiceAccountAuthConfigArgs.Builder]*):
+        com.pulumi.gcp.ces.inputs.ToolMcpToolApiAuthenticationArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.ces.inputs.ToolMcpToolApiAuthenticationServiceAccountAuthConfigArgs.builder
+      builder.serviceAccountAuthConfigs(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param serviceAgentIdTokenAuthConfigs (Output)
+     * Configurations for authentication with [ID
+     * token](https://cloud.google.com/docs/authentication/token-types#id) generated
+     * from service agent.
+     * @return builder
+     */
+    def serviceAgentIdTokenAuthConfigs(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolMcpToolApiAuthenticationServiceAgentIdTokenAuthConfigArgs.Builder]*):
+        com.pulumi.gcp.ces.inputs.ToolMcpToolApiAuthenticationArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.ces.inputs.ToolMcpToolApiAuthenticationServiceAgentIdTokenAuthConfigArgs.builder
+      builder.serviceAgentIdTokenAuthConfigs(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.gcp.ces.inputs.ToolMcpToolArgs.Builder)
+    /**
+     * @param apiAuthentications (Output)
+     * Authentication information required for API calls.
+     * Structure is documented below.
+     * @return builder
+     */
+    def apiAuthentications(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolMcpToolApiAuthenticationArgs.Builder]*):
+        com.pulumi.gcp.ces.inputs.ToolMcpToolArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.ces.inputs.ToolMcpToolApiAuthenticationArgs.builder
+      builder.apiAuthentications(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param serviceDirectoryConfigs (Output)
+     * Configuration for tools using Service Directory.
+     * Structure is documented below.
+     * @return builder
+     */
+    def serviceDirectoryConfigs(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolMcpToolServiceDirectoryConfigArgs.Builder]*):
+        com.pulumi.gcp.ces.inputs.ToolMcpToolArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.ces.inputs.ToolMcpToolServiceDirectoryConfigArgs.builder
+      builder.serviceDirectoryConfigs(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param tlsConfigs (Output)
+     * The TLS configuration.
+     * Structure is documented below.
+     * @return builder
+     */
+    def tlsConfigs(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolMcpToolTlsConfigArgs.Builder]*):
+        com.pulumi.gcp.ces.inputs.ToolMcpToolArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.ces.inputs.ToolMcpToolTlsConfigArgs.builder
+      builder.tlsConfigs(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.gcp.ces.inputs.ToolMcpToolTlsConfigArgs.Builder)
+    /**
+     * @param caCerts (Output)
+     * Specifies a list of allowed custom CA certificates for HTTPS
+     * verification.
+     * Structure is documented below.
+     * @return builder
+     */
+    def caCerts(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolMcpToolTlsConfigCaCertArgs.Builder]*):
+        com.pulumi.gcp.ces.inputs.ToolMcpToolTlsConfigArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.ces.inputs.ToolMcpToolTlsConfigCaCertArgs.builder
+      builder.caCerts(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.gcp.ces.inputs.ToolOpenApiToolApiAuthenticationArgs.Builder)
     /**
@@ -3411,7 +3625,54 @@ object ces:
       def argsBuilder = com.pulumi.gcp.ces.inputs.ToolOpenApiToolTlsConfigCaCertArgs.builder
       builder.caCerts(args.map(_(argsBuilder).build)*)
 
+  extension (builder: com.pulumi.gcp.ces.inputs.ToolRemoteAgentToolAgentCardArgs.Builder)
+    /**
+     * @param skills (Output)
+     * Skills represent a unit of ability an agent can perform. This may
+     * somewhat abstract but represents a more focused set of actions that the agent is highly
+     * likely to succeed at.
+     * Structure is documented below.
+     * @return builder
+     */
+    def skills(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolRemoteAgentToolAgentCardSkillArgs.Builder]*):
+        com.pulumi.gcp.ces.inputs.ToolRemoteAgentToolAgentCardArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.ces.inputs.ToolRemoteAgentToolAgentCardSkillArgs.builder
+      builder.skills(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param supportedInterfaces (Output)
+     * Ordered list of supported interfaces. The first entry is preferred.
+     * Structure is documented below.
+     * @return builder
+     */
+    def supportedInterfaces(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolRemoteAgentToolAgentCardSupportedInterfaceArgs.Builder]*):
+        com.pulumi.gcp.ces.inputs.ToolRemoteAgentToolAgentCardArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.ces.inputs.ToolRemoteAgentToolAgentCardSupportedInterfaceArgs.builder
+      builder.supportedInterfaces(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.gcp.ces.inputs.ToolRemoteAgentToolArgs.Builder)
+    /**
+     * @param agentCards (Output)
+     * The agent card of the remote agent that this tool invokes.
+     * Structure is documented below.
+     * @return builder
+     */
+    def agentCards(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolRemoteAgentToolAgentCardArgs.Builder]*):
+        com.pulumi.gcp.ces.inputs.ToolRemoteAgentToolArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.ces.inputs.ToolRemoteAgentToolAgentCardArgs.builder
+      builder.agentCards(args.map(_(argsBuilder).build)*)
+
   extension (builder: com.pulumi.gcp.ces.inputs.ToolState.Builder)
+    /**
+     * @param agentTool Represents a tool that allows the agent to call another agent.
+     * Structure is documented below.
+     * @return builder
+     */
+    def agentTool(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolAgentToolArgs.Builder]):
+        com.pulumi.gcp.ces.inputs.ToolState.Builder =
+      val argsBuilder = com.pulumi.gcp.ces.inputs.ToolAgentToolArgs.builder
+      builder.agentTool(args(argsBuilder).build)
+
     /**
      * @param clientFunction Represents a client-side function that the agent can invoke. When the
      * tool is chosen by the agent, control is handed off to the client.
@@ -3424,6 +3685,16 @@ object ces:
         com.pulumi.gcp.ces.inputs.ToolState.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.ToolClientFunctionArgs.builder
       builder.clientFunction(args(argsBuilder).build)
+
+    /**
+     * @param connectorTools A ConnectorTool allows connections to different integrations.
+     * Structure is documented below.
+     * @return builder
+     */
+    def connectorTools(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolConnectorToolArgs.Builder]*):
+        com.pulumi.gcp.ces.inputs.ToolState.Builder =
+      def argsBuilder = com.pulumi.gcp.ces.inputs.ToolConnectorToolArgs.builder
+      builder.connectorTools(args.map(_(argsBuilder).build)*)
 
     /**
      * @param dataStoreTool Tool to retrieve from Vertex AI Search datastore or engine for grounding.
@@ -3439,6 +3710,17 @@ object ces:
       builder.dataStoreTool(args(argsBuilder).build)
 
     /**
+     * @param fileSearchTool The file search tool allows the agent to search across the files uploaded by the
+     * app/agent developer.
+     * Structure is documented below.
+     * @return builder
+     */
+    def fileSearchTool(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolFileSearchToolArgs.Builder]):
+        com.pulumi.gcp.ces.inputs.ToolState.Builder =
+      val argsBuilder = com.pulumi.gcp.ces.inputs.ToolFileSearchToolArgs.builder
+      builder.fileSearchTool(args(argsBuilder).build)
+
+    /**
      * @param googleSearchTool Represents a tool to perform Google web searches for grounding.
      * See
      * https://cloud.google.com/vertex-ai/generative-ai/docs/grounding/grounding-with-google-search.
@@ -3449,6 +3731,16 @@ object ces:
         com.pulumi.gcp.ces.inputs.ToolState.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.ToolGoogleSearchToolArgs.builder
       builder.googleSearchTool(args(argsBuilder).build)
+
+    /**
+     * @param mcpTools An MCP tool.
+     * Structure is documented below.
+     * @return builder
+     */
+    def mcpTools(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolMcpToolArgs.Builder]*):
+        com.pulumi.gcp.ces.inputs.ToolState.Builder =
+      def argsBuilder = com.pulumi.gcp.ces.inputs.ToolMcpToolArgs.builder
+      builder.mcpTools(args.map(_(argsBuilder).build)*)
 
     /**
      * @param openApiTools A remote API tool defined by an OpenAPI schema.
@@ -3471,6 +3763,16 @@ object ces:
       builder.pythonFunction(args(argsBuilder).build)
 
     /**
+     * @param remoteAgentTools Represents a tool that allows the agent to call another remote agent.
+     * Structure is documented below.
+     * @return builder
+     */
+    def remoteAgentTools(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolRemoteAgentToolArgs.Builder]*):
+        com.pulumi.gcp.ces.inputs.ToolState.Builder =
+      def argsBuilder = com.pulumi.gcp.ces.inputs.ToolRemoteAgentToolArgs.builder
+      builder.remoteAgentTools(args.map(_(argsBuilder).build)*)
+
+    /**
      * @param systemTools The system tool.
      * Structure is documented below.
      * @return builder
@@ -3479,6 +3781,60 @@ object ces:
         com.pulumi.gcp.ces.inputs.ToolState.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.ToolSystemToolArgs.builder
       builder.systemTools(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param widgetTool Represents a widget tool that the agent can invoke.
+     * Structure is documented below.
+     * @return builder
+     */
+    def widgetTool(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolWidgetToolArgs.Builder]):
+        com.pulumi.gcp.ces.inputs.ToolState.Builder =
+      val argsBuilder = com.pulumi.gcp.ces.inputs.ToolWidgetToolArgs.builder
+      builder.widgetTool(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.gcp.ces.inputs.ToolWidgetToolArgs.Builder)
+    /**
+     * @param dataMapping Optional. The mapping that defines how data from a source tool is mapped to the
+     * widget&#39;s input parameters.
+     * Structure is documented below.
+     * @return builder
+     */
+    def dataMapping(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolWidgetToolDataMappingArgs.Builder]):
+        com.pulumi.gcp.ces.inputs.ToolWidgetToolArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.ces.inputs.ToolWidgetToolDataMappingArgs.builder
+      builder.dataMapping(args(argsBuilder).build)
+
+    /**
+     * @param parameters Optional. The input parameters of the widget tool. Represents a Schema object.
+     * Structure is documented below.
+     * @return builder
+     */
+    def parameters(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolWidgetToolParametersArgs.Builder]):
+        com.pulumi.gcp.ces.inputs.ToolWidgetToolArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.ces.inputs.ToolWidgetToolParametersArgs.builder
+      builder.parameters(args(argsBuilder).build)
+
+    /**
+     * @param textResponseConfig Optional. Configuration for always-included text responses.
+     * Structure is documented below.
+     * @return builder
+     */
+    def textResponseConfig(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolWidgetToolTextResponseConfigArgs.Builder]):
+        com.pulumi.gcp.ces.inputs.ToolWidgetToolArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.ces.inputs.ToolWidgetToolTextResponseConfigArgs.builder
+      builder.textResponseConfig(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.gcp.ces.inputs.ToolWidgetToolDataMappingArgs.Builder)
+    /**
+     * @param pythonFunction Optional. Configuration for a Python function used to transform the source tool&#39;s
+     * output into the widget&#39;s input format.
+     * Structure is documented below.
+     * @return builder
+     */
+    def pythonFunction(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolWidgetToolDataMappingPythonFunctionArgs.Builder]):
+        com.pulumi.gcp.ces.inputs.ToolWidgetToolDataMappingArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.ces.inputs.ToolWidgetToolDataMappingPythonFunctionArgs.builder
+      builder.pythonFunction(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.ces.inputs.ToolsetMcpToolsetApiAuthenticationArgs.Builder)
     /**

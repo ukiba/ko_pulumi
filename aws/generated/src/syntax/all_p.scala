@@ -181,6 +181,8 @@ export ko_pulumi.aws.bedrock.parsingPrompt
 export ko_pulumi.aws.bedrock.patternObjectFilters
 export ko_pulumi.aws.bedrock.piiEntitiesConfigs
 export ko_pulumi.aws.bedrock.pineconeConfiguration
+export ko_pulumi.aws.bedrock.policyEngineConfiguration
+export ko_pulumi.aws.bedrock.privateEndpoint
 export ko_pulumi.aws.bedrock.prompt
 export ko_pulumi.aws.bedrock.promptConfigurations
 export ko_pulumi.aws.bedrock.promptOverrideConfigurations
@@ -211,12 +213,14 @@ export ko_pulumi.aws.bedrock.salesforceConfiguration
 export ko_pulumi.aws.bedrock.salesforceOauth2ProviderConfig
 export ko_pulumi.aws.bedrock.samplingConfig
 export ko_pulumi.aws.bedrock.seedUrls
+export ko_pulumi.aws.bedrock.selfManagedLatticeResource
 export ko_pulumi.aws.bedrock.semanticChunkingConfiguration
 export ko_pulumi.aws.bedrock.sensitiveInformationPolicyConfig
 export ko_pulumi.aws.bedrock.serverSideEncryptionConfiguration
 export ko_pulumi.aws.bedrock.serverlessConfiguration
 export ko_pulumi.aws.bedrock.serviceConfiguration
 export ko_pulumi.aws.bedrock.sessionConfig
+export ko_pulumi.aws.bedrock.sessionConfiguration
 export ko_pulumi.aws.bedrock.sessionStorage
 export ko_pulumi.aws.bedrock.sessionStorages
 export ko_pulumi.aws.bedrock.sessionSummaryConfigurations
@@ -230,6 +234,8 @@ export ko_pulumi.aws.bedrock.sqlKnowledgeBaseConfiguration
 export ko_pulumi.aws.bedrock.storage
 export ko_pulumi.aws.bedrock.storageConfiguration
 export ko_pulumi.aws.bedrock.storageLocations
+export ko_pulumi.aws.bedrock.streamDeliveryResources
+export ko_pulumi.aws.bedrock.streamingConfiguration
 export ko_pulumi.aws.bedrock.summarizations
 export ko_pulumi.aws.bedrock.supplementalDataStorageConfiguration
 export ko_pulumi.aws.bedrock.systemPrompts
@@ -545,6 +551,7 @@ export ko_pulumi.aws.ecs.primaryContainer
 export ko_pulumi.aws.ecs.proxyConfiguration
 export ko_pulumi.aws.ecs.repositoryCredentials
 export ko_pulumi.aws.ecs.resourceRequirements
+export ko_pulumi.aws.ecs.restartPolicy
 export ko_pulumi.aws.ecs.runtimePlatform
 export ko_pulumi.aws.ecs.s3filesVolumeConfiguration
 export ko_pulumi.aws.ecs.scale
@@ -557,11 +564,13 @@ export ko_pulumi.aws.ecs.serviceRegistries
 export ko_pulumi.aws.ecs.services
 export ko_pulumi.aws.ecs.settings
 export ko_pulumi.aws.ecs.storageConfiguration
+export ko_pulumi.aws.ecs.systemControls
 export ko_pulumi.aws.ecs.tagSpecifications
 export ko_pulumi.aws.ecs.testTrafficRules
 export ko_pulumi.aws.ecs.timeout
 export ko_pulumi.aws.ecs.timeouts
 export ko_pulumi.aws.ecs.tls
+export ko_pulumi.aws.ecs.tmpfs
 export ko_pulumi.aws.ecs.totalLocalStorageGb
 export ko_pulumi.aws.efs.posixUser
 export ko_pulumi.aws.efs.protection
@@ -970,7 +979,9 @@ export ko_pulumi.aws.networkmanager.segmentActions
 export ko_pulumi.aws.networkmanager.segments
 export ko_pulumi.aws.networkmanager.timeouts
 export ko_pulumi.aws.notifications.timeouts
+export ko_pulumi.aws.observabilityadmin.redactedFields
 export ko_pulumi.aws.observabilityadmin.rule
+export ko_pulumi.aws.observabilityadmin.singleHeader
 export ko_pulumi.aws.observabilityadmin.source
 export ko_pulumi.aws.observabilityadmin.sourceLogsConfiguration
 export ko_pulumi.aws.observabilityadmin.timeouts
@@ -992,6 +1003,7 @@ export ko_pulumi.aws.organizations.roots
 export ko_pulumi.aws.outposts.timeouts
 export ko_pulumi.aws.paymentcryptography.timeouts
 export ko_pulumi.aws.pinpoint.quietTime
+export ko_pulumi.aws.pinpoint.snsDestination
 export ko_pulumi.aws.pinpoint.timeouts
 export ko_pulumi.aws.pipes.pipelineParameters
 export ko_pulumi.aws.pipes.placementConstraints

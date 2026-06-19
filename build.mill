@@ -5,13 +5,13 @@ package build
 
 import mill.*, scalalib.*, publish.*
 
-val pulumiAwsVersion        = "7.32.0"
-val pulumiGcpVersion        = "9.26.0"
+val pulumiAwsVersion        = "7.34.0"
+val pulumiGcpVersion        = "9.27.0"
 val pulumiAzureVersion      = "6.38.0"
 
 val pulumiPostgresqlVersion = "3.17.0"
 
-val pulumiJavaVersion       = "1.29.0"
+val pulumiJavaVersion       = "1.30.0"
 
 val repoName = "ko_pulumi"
 

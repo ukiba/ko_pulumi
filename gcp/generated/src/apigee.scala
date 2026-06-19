@@ -159,6 +159,18 @@ object apigee:
       val argsBuilder = com.pulumi.gcp.apigee.inputs.GetEnvironmentIamPolicyPlainArgs.builder
       com.pulumi.gcp.apigee.ApigeeFunctions.getEnvironmentIamPolicyPlain(args(argsBuilder).build)
 
+    /** Get information about a Google Apigee Instance. */
+    inline def getInstance(args: Endofunction[com.pulumi.gcp.apigee.inputs.GetInstanceArgs.Builder] = scala.Predef.identity):
+        com.pulumi.core.Output[com.pulumi.gcp.apigee.outputs.GetInstanceResult] =
+      val argsBuilder = com.pulumi.gcp.apigee.inputs.GetInstanceArgs.builder
+      com.pulumi.gcp.apigee.ApigeeFunctions.getInstance(args(argsBuilder).build)
+
+    /** Get information about a Google Apigee Instance. */
+    inline def getInstancePlain(args: Endofunction[com.pulumi.gcp.apigee.inputs.GetInstancePlainArgs.Builder] = scala.Predef.identity):
+        java.util.concurrent.CompletableFuture[com.pulumi.gcp.apigee.outputs.GetInstanceResult] =
+      val argsBuilder = com.pulumi.gcp.apigee.inputs.GetInstancePlainArgs.builder
+      com.pulumi.gcp.apigee.ApigeeFunctions.getInstancePlain(args(argsBuilder).build)
+
   /**
    * An `AppGroup` in Apigee.
    * 
@@ -225,6 +237,35 @@ object apigee:
     com.pulumi.gcp.apigee.DataCollector(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+
+  /**
+   * An analytics datastore for an Apigee organization. Datastores configure
+   * export destinations for Apigee Analytics data, supporting either Google
+   * Cloud Storage (GCS) or BigQuery as targets.
+   * 
+   * To get more information about Datastore, see:
+   * 
+   * * [API documentation](https://cloud.google.com/apigee/docs/reference/apis/apigee/rest/v1/organizations.analytics.datastores)
+   * * How-to Guides
+   *     * [Export analytics data](https://cloud.google.com/apigee/docs/api-platform/analytics/analytics-export)
+   */
+  def Datastore(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+      (args: Endofunction[com.pulumi.gcp.apigee.DatastoreArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+    val argsBuilder = com.pulumi.gcp.apigee.DatastoreArgs.builder
+    com.pulumi.gcp.apigee.Datastore(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+
+  extension (builder: com.pulumi.gcp.apigee.DatastoreArgs.Builder)
+    /**
+     * @param datastoreConfig Configuration of the datastore target.
+     * Structure is documented below.
+     * @return builder
+     */
+    def datastoreConfig(args: Endofunction[com.pulumi.gcp.apigee.inputs.DatastoreDatastoreConfigArgs.Builder]):
+        com.pulumi.gcp.apigee.DatastoreArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.apigee.inputs.DatastoreDatastoreConfigArgs.builder
+      builder.datastoreConfig(args(argsBuilder).build)
 
   /**
    * A `Developer` is an API consumer that can have apps registered in Apigee.
@@ -2219,6 +2260,17 @@ object apigee:
         com.pulumi.gcp.apigee.inputs.AppGroupState.Builder =
       def argsBuilder = com.pulumi.gcp.apigee.inputs.AppGroupAttributeArgs.builder
       builder.attributes(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.gcp.apigee.inputs.DatastoreState.Builder)
+    /**
+     * @param datastoreConfig Configuration of the datastore target.
+     * Structure is documented below.
+     * @return builder
+     */
+    def datastoreConfig(args: Endofunction[com.pulumi.gcp.apigee.inputs.DatastoreDatastoreConfigArgs.Builder]):
+        com.pulumi.gcp.apigee.inputs.DatastoreState.Builder =
+      val argsBuilder = com.pulumi.gcp.apigee.inputs.DatastoreDatastoreConfigArgs.builder
+      builder.datastoreConfig(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.apigee.inputs.DeveloperAppCredentialArgs.Builder)
     /**

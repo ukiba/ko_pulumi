@@ -5,6 +5,28 @@ import com.pulumi.resources.CustomResourceOptions
 
 object kinesis:
   /**
+   * Manages account-level settings for Amazon Kinesis Data Streams.
+   * 
+   * &gt; Deletion of this resource will not modify any settings, only remove the resource from state.
+   */
+  def AccountSettings(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+      (args: Endofunction[com.pulumi.aws.kinesis.AccountSettingsArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+    val argsBuilder = com.pulumi.aws.kinesis.AccountSettingsArgs.builder
+    com.pulumi.aws.kinesis.AccountSettings(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+
+  extension (builder: com.pulumi.aws.kinesis.AccountSettingsArgs.Builder)
+    /**
+     * @param minimumThroughputBillingCommitment Minimum throughput billing commitment configuration. Detailed below.
+     * @return builder
+     */
+    def minimumThroughputBillingCommitment(args: Endofunction[com.pulumi.aws.kinesis.inputs.AccountSettingsMinimumThroughputBillingCommitmentArgs.Builder]):
+        com.pulumi.aws.kinesis.AccountSettingsArgs.Builder =
+      val argsBuilder = com.pulumi.aws.kinesis.inputs.AccountSettingsMinimumThroughputBillingCommitmentArgs.builder
+      builder.minimumThroughputBillingCommitment(args(argsBuilder).build)
+
+  /**
    * Provides a Kinesis Analytics Application resource. Kinesis Analytics is a managed service that
    * allows processing and analyzing streaming data using standard SQL.
    * 
@@ -361,6 +383,16 @@ object kinesis:
     com.pulumi.aws.kinesis.VideoStream(name,
         argsBuilder.build,
         resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+
+  extension (builder: com.pulumi.aws.kinesis.inputs.AccountSettingsState.Builder)
+    /**
+     * @param minimumThroughputBillingCommitment Minimum throughput billing commitment configuration. Detailed below.
+     * @return builder
+     */
+    def minimumThroughputBillingCommitment(args: Endofunction[com.pulumi.aws.kinesis.inputs.AccountSettingsMinimumThroughputBillingCommitmentArgs.Builder]):
+        com.pulumi.aws.kinesis.inputs.AccountSettingsState.Builder =
+      val argsBuilder = com.pulumi.aws.kinesis.inputs.AccountSettingsMinimumThroughputBillingCommitmentArgs.builder
+      builder.minimumThroughputBillingCommitment(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.kinesis.inputs.AnalyticsApplicationInputsArgs.Builder)
     /**

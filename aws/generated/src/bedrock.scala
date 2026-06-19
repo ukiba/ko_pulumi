@@ -556,6 +556,15 @@ object bedrock:
       builder.interceptorConfigurations(args.map(_(argsBuilder).build)*)
 
     /**
+     * @param policyEngineConfiguration Configuration for a policy engine associated with the gateway. A policy engine is a collection of policies that evaluates and authorizes agent tool calls. When associated with a gateway, the policy engine intercepts all agent requests and determines whether to allow or deny each action based on the defined policies. See `policyEngineConfiguration` below.
+     * @return builder
+     */
+    def policyEngineConfiguration(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreGatewayPolicyEngineConfigurationArgs.Builder]):
+        com.pulumi.aws.bedrock.AgentcoreGatewayArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreGatewayPolicyEngineConfigurationArgs.builder
+      builder.policyEngineConfiguration(args(argsBuilder).build)
+
+    /**
      * @param protocolConfiguration Protocol-specific configuration for the gateway. See `protocolConfiguration` below.
      * @return builder
      */
@@ -569,7 +578,7 @@ object bedrock:
       val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
-  /** Manages an AWS Bedrock AgentCore Gateway Target. Gateway targets define the endpoints and configurations that a gateway can invoke, such as Lambda functions or APIs, allowing agents to interact with external services through the Model Context Protocol (MCP). */
+  /** Manages an AWS Bedrock AgentCore Gateway Target. Gateway targets define the endpoints and configurations that a gateway can invoke, such as Lambda functions, APIs, or AgentCore Runtime agents, allowing agents to interact with external services through the Model Context Protocol (MCP) or by routing HTTP traffic directly to a runtime. */
   def AgentcoreGatewayTarget(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.bedrock.AgentcoreGatewayTargetArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.bedrock.AgentcoreGatewayTargetArgs.builder
@@ -598,6 +607,15 @@ object bedrock:
         com.pulumi.aws.bedrock.AgentcoreGatewayTargetArgs.Builder =
       val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetMetadataConfigurationArgs.builder
       builder.metadataConfiguration(args(argsBuilder).build)
+
+    /**
+     * @param privateEndpoint Configuration for private connectivity from AgentCore Gateway to a resource inside your VPC. Traffic is routed through Amazon VPC Lattice and never traverses the public internet. See `privateEndpoint` below.
+     * @return builder
+     */
+    def privateEndpoint(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetPrivateEndpointArgs.Builder]):
+        com.pulumi.aws.bedrock.AgentcoreGatewayTargetArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetPrivateEndpointArgs.builder
+      builder.privateEndpoint(args(argsBuilder).build)
 
     /**
      * @param targetConfiguration Configuration for the target endpoint. See `targetConfiguration` below.
@@ -738,6 +756,24 @@ object bedrock:
         resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
 
   extension (builder: com.pulumi.aws.bedrock.AgentcoreMemoryArgs.Builder)
+    /**
+     * @param indexedKeys Metadata keys to index for filtering. Up to 10 entries. Changing this forces a new resource to be created. See `indexedKey` below.
+     * @return builder
+     */
+    def indexedKeys(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreMemoryIndexedKeyArgs.Builder]*):
+        com.pulumi.aws.bedrock.AgentcoreMemoryArgs.Builder =
+      def argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreMemoryIndexedKeyArgs.builder
+      builder.indexedKeys(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param streamDeliveryResources Configuration for streaming memory record data to external resources. See `streamDeliveryResources` below.
+     * @return builder
+     */
+    def streamDeliveryResources(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreMemoryStreamDeliveryResourcesArgs.Builder]):
+        com.pulumi.aws.bedrock.AgentcoreMemoryArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreMemoryStreamDeliveryResourcesArgs.builder
+      builder.streamDeliveryResources(args(argsBuilder).build)
+
     def timeouts(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreMemoryTimeoutsArgs.Builder]):
         com.pulumi.aws.bedrock.AgentcoreMemoryArgs.Builder =
       val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreMemoryTimeoutsArgs.builder
@@ -863,6 +899,32 @@ object bedrock:
     def timeouts(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreOnlineEvaluationConfigTimeoutsArgs.Builder]):
         com.pulumi.aws.bedrock.AgentcoreOnlineEvaluationConfigArgs.Builder =
       val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreOnlineEvaluationConfigTimeoutsArgs.builder
+      builder.timeouts(args(argsBuilder).build)
+
+  /** Manages an AWS Bedrock AgentCore Policy. A Policy attaches Cedar authorization rules to a Policy Engine, which evaluates them at runtime to control agent access to resources. */
+  def AgentcorePolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+      (args: Endofunction[com.pulumi.aws.bedrock.AgentcorePolicyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+    var argsBuilder = com.pulumi.aws.bedrock.AgentcorePolicyArgs.builder
+    conf.logicalName2physicalName(name) match
+      case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
+      case None               =>
+    com.pulumi.aws.bedrock.AgentcorePolicy(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+
+  extension (builder: com.pulumi.aws.bedrock.AgentcorePolicyArgs.Builder)
+    /**
+     * @param definition Policy definition. See `definition` Block for details.
+     * @return builder
+     */
+    def definition(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcorePolicyDefinitionArgs.Builder]):
+        com.pulumi.aws.bedrock.AgentcorePolicyArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcorePolicyDefinitionArgs.builder
+      builder.definition(args(argsBuilder).build)
+
+    def timeouts(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcorePolicyTimeoutsArgs.Builder]):
+        com.pulumi.aws.bedrock.AgentcorePolicyArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcorePolicyTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
   /** Manages an AWS Bedrock AgentCore Policy Engine. A Policy Engine controls what actions and resources an agent runtime can use. */
@@ -3289,6 +3351,25 @@ object bedrock:
       val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreGatewayProtocolConfigurationMcpArgs.builder
       builder.mcp(args(argsBuilder).build)
 
+  extension (builder: com.pulumi.aws.bedrock.inputs.AgentcoreGatewayProtocolConfigurationMcpArgs.Builder)
+    /**
+     * @param sessionConfiguration Configuration block for session settings of the MCP gateway. See `sessionConfiguration` below.
+     * @return builder
+     */
+    def sessionConfiguration(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreGatewayProtocolConfigurationMcpSessionConfigurationArgs.Builder]):
+        com.pulumi.aws.bedrock.inputs.AgentcoreGatewayProtocolConfigurationMcpArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreGatewayProtocolConfigurationMcpSessionConfigurationArgs.builder
+      builder.sessionConfiguration(args(argsBuilder).build)
+
+    /**
+     * @param streamingConfiguration Configuration block for streaming settings of the MCP gateway. See `streamingConfiguration` below.
+     * @return builder
+     */
+    def streamingConfiguration(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreGatewayProtocolConfigurationMcpStreamingConfigurationArgs.Builder]):
+        com.pulumi.aws.bedrock.inputs.AgentcoreGatewayProtocolConfigurationMcpArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreGatewayProtocolConfigurationMcpStreamingConfigurationArgs.builder
+      builder.streamingConfiguration(args(argsBuilder).build)
+
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentcoreGatewayState.Builder)
     /**
      * @param authorizerConfiguration Configuration for request authorization. Required when `authorizerType` is set to `CUSTOM_JWT`. See `authorizerConfiguration` below.
@@ -3307,6 +3388,15 @@ object bedrock:
         com.pulumi.aws.bedrock.inputs.AgentcoreGatewayState.Builder =
       def argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreGatewayInterceptorConfigurationArgs.builder
       builder.interceptorConfigurations(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param policyEngineConfiguration Configuration for a policy engine associated with the gateway. A policy engine is a collection of policies that evaluates and authorizes agent tool calls. When associated with a gateway, the policy engine intercepts all agent requests and determines whether to allow or deny each action based on the defined policies. See `policyEngineConfiguration` below.
+     * @return builder
+     */
+    def policyEngineConfiguration(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreGatewayPolicyEngineConfigurationArgs.Builder]):
+        com.pulumi.aws.bedrock.inputs.AgentcoreGatewayState.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreGatewayPolicyEngineConfigurationArgs.builder
+      builder.policyEngineConfiguration(args(argsBuilder).build)
 
     /**
      * @param protocolConfiguration Protocol-specific configuration for the gateway. See `protocolConfiguration` below.
@@ -3342,13 +3432,31 @@ object bedrock:
       builder.apiKey(args(argsBuilder).build)
 
     /**
-     * @param gatewayIamRole Use the gateway&#39;s IAM role for authentication. This is an empty configuration block.
+     * @param callerIamCredentials Caller IAM credentials-based authentication configuration. See `callerIamCredentials` below.
+     * @return builder
+     */
+    def callerIamCredentials(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetCredentialProviderConfigurationCallerIamCredentialsArgs.Builder]):
+        com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetCredentialProviderConfigurationArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetCredentialProviderConfigurationCallerIamCredentialsArgs.builder
+      builder.callerIamCredentials(args(argsBuilder).build)
+
+    /**
+     * @param gatewayIamRole Use the gateway&#39;s IAM role for authentication. See `gatewayIamRole` below.
      * @return builder
      */
     def gatewayIamRole(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetCredentialProviderConfigurationGatewayIamRoleArgs.Builder]):
         com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetCredentialProviderConfigurationArgs.Builder =
       val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetCredentialProviderConfigurationGatewayIamRoleArgs.builder
       builder.gatewayIamRole(args(argsBuilder).build)
+
+    /**
+     * @param jwtPassthrough JWT passthrough-based authentication configuration. This is an empty configuration block.
+     * @return builder
+     */
+    def jwtPassthrough(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetCredentialProviderConfigurationJwtPassthroughArgs.Builder]):
+        com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetCredentialProviderConfigurationArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetCredentialProviderConfigurationJwtPassthroughArgs.builder
+      builder.jwtPassthrough(args(argsBuilder).build)
 
     /**
      * @param oauth OAuth-based authentication configuration. See `oauth` below.
@@ -3358,6 +3466,25 @@ object bedrock:
         com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetCredentialProviderConfigurationArgs.Builder =
       val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetCredentialProviderConfigurationOauthArgs.builder
       builder.oauth(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetPrivateEndpointArgs.Builder)
+    /**
+     * @param managedVpcResource AWS creates and manages the VPC Lattice resource gateway and resource configuration on your behalf using a service-linked role. See `managedVpcResource` below.
+     * @return builder
+     */
+    def managedVpcResource(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetPrivateEndpointManagedVpcResourceArgs.Builder]):
+        com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetPrivateEndpointArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetPrivateEndpointManagedVpcResourceArgs.builder
+      builder.managedVpcResource(args(argsBuilder).build)
+
+    /**
+     * @param selfManagedLatticeResource Use an existing VPC Lattice resource configuration that you manage yourself. Useful for cross-account setups or advanced Lattice configurations. See `selfManagedLatticeResource` below.
+     * @return builder
+     */
+    def selfManagedLatticeResource(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetPrivateEndpointSelfManagedLatticeResourceArgs.Builder]):
+        com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetPrivateEndpointArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetPrivateEndpointSelfManagedLatticeResourceArgs.builder
+      builder.selfManagedLatticeResource(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetState.Builder)
     /**
@@ -3379,6 +3506,15 @@ object bedrock:
       builder.metadataConfiguration(args(argsBuilder).build)
 
     /**
+     * @param privateEndpoint Configuration for private connectivity from AgentCore Gateway to a resource inside your VPC. Traffic is routed through Amazon VPC Lattice and never traverses the public internet. See `privateEndpoint` below.
+     * @return builder
+     */
+    def privateEndpoint(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetPrivateEndpointArgs.Builder]):
+        com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetState.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetPrivateEndpointArgs.builder
+      builder.privateEndpoint(args(argsBuilder).build)
+
+    /**
      * @param targetConfiguration Configuration for the target endpoint. See `targetConfiguration` below.
      * 
      * The following arguments are optional:
@@ -3396,6 +3532,15 @@ object bedrock:
 
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetTargetConfigurationArgs.Builder)
     /**
+     * @param http HTTP target configuration for routing requests directly to an AgentCore Runtime agent. See `http` below.
+     * @return builder
+     */
+    def http(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetTargetConfigurationHttpArgs.Builder]):
+        com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetTargetConfigurationArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetTargetConfigurationHttpArgs.builder
+      builder.http(args(argsBuilder).build)
+
+    /**
      * @param mcp Model Context Protocol (MCP) configuration. See `mcp` below.
      * @return builder
      */
@@ -3403,6 +3548,18 @@ object bedrock:
         com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetTargetConfigurationArgs.Builder =
       val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetTargetConfigurationMcpArgs.builder
       builder.mcp(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetTargetConfigurationHttpArgs.Builder)
+    /**
+     * @param agentcoreRuntime AgentCore Runtime target configuration. See `agentcoreRuntime` below.
+     * 
+     * &gt; **Note:** HTTP targets can only be attached to gateways that do not have a `protocolType` set. They are not supported on MCP-protocol gateways.
+     * @return builder
+     */
+    def agentcoreRuntime(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetTargetConfigurationHttpAgentcoreRuntimeArgs.Builder]):
+        com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetTargetConfigurationHttpArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetTargetConfigurationHttpAgentcoreRuntimeArgs.builder
+      builder.agentcoreRuntime(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentcoreGatewayTargetTargetConfigurationMcpApiGatewayApiGatewayToolConfigurationArgs.Builder)
     /**
@@ -4054,6 +4211,24 @@ object bedrock:
       builder.summarizations(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentcoreMemoryState.Builder)
+    /**
+     * @param indexedKeys Metadata keys to index for filtering. Up to 10 entries. Changing this forces a new resource to be created. See `indexedKey` below.
+     * @return builder
+     */
+    def indexedKeys(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreMemoryIndexedKeyArgs.Builder]*):
+        com.pulumi.aws.bedrock.inputs.AgentcoreMemoryState.Builder =
+      def argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreMemoryIndexedKeyArgs.builder
+      builder.indexedKeys(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param streamDeliveryResources Configuration for streaming memory record data to external resources. See `streamDeliveryResources` below.
+     * @return builder
+     */
+    def streamDeliveryResources(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreMemoryStreamDeliveryResourcesArgs.Builder]):
+        com.pulumi.aws.bedrock.inputs.AgentcoreMemoryState.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreMemoryStreamDeliveryResourcesArgs.builder
+      builder.streamDeliveryResources(args(argsBuilder).build)
+
     def timeouts(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreMemoryTimeoutsArgs.Builder]):
         com.pulumi.aws.bedrock.inputs.AgentcoreMemoryState.Builder =
       val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreMemoryTimeoutsArgs.builder
@@ -4092,6 +4267,36 @@ object bedrock:
         com.pulumi.aws.bedrock.inputs.AgentcoreMemoryStrategyState.Builder =
       val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreMemoryStrategyTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.bedrock.inputs.AgentcoreMemoryStreamDeliveryResourcesArgs.Builder)
+    /**
+     * @param resource List of stream delivery resource configurations. See `resource` below.
+     * @return builder
+     */
+    def resource(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreMemoryStreamDeliveryResourcesResourceArgs.Builder]):
+        com.pulumi.aws.bedrock.inputs.AgentcoreMemoryStreamDeliveryResourcesArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreMemoryStreamDeliveryResourcesResourceArgs.builder
+      builder.resource(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.bedrock.inputs.AgentcoreMemoryStreamDeliveryResourcesResourceArgs.Builder)
+    /**
+     * @param kinesis Kinesis Data Stream configuration. See `kinesis` below.
+     * @return builder
+     */
+    def kinesis(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreMemoryStreamDeliveryResourcesResourceKinesisArgs.Builder]):
+        com.pulumi.aws.bedrock.inputs.AgentcoreMemoryStreamDeliveryResourcesResourceArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreMemoryStreamDeliveryResourcesResourceKinesisArgs.builder
+      builder.kinesis(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.bedrock.inputs.AgentcoreMemoryStreamDeliveryResourcesResourceKinesisArgs.Builder)
+    /**
+     * @param contentConfiguration Content configurations for stream delivery. See `contentConfiguration` below.
+     * @return builder
+     */
+    def contentConfiguration(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreMemoryStreamDeliveryResourcesResourceKinesisContentConfigurationArgs.Builder]):
+        com.pulumi.aws.bedrock.inputs.AgentcoreMemoryStreamDeliveryResourcesResourceKinesisArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreMemoryStreamDeliveryResourcesResourceKinesisContentConfigurationArgs.builder
+      builder.contentConfiguration(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentcoreOauth2CredentialProviderOauth2ProviderConfigArgs.Builder)
     /**
@@ -4391,10 +4596,35 @@ object bedrock:
       val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreOnlineEvaluationConfigTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
+  extension (builder: com.pulumi.aws.bedrock.inputs.AgentcorePolicyDefinitionArgs.Builder)
+    /**
+     * @param cedar Inline Cedar policy. See `cedar` Block for details.
+     * @return builder
+     */
+    def cedar(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcorePolicyDefinitionCedarArgs.Builder]):
+        com.pulumi.aws.bedrock.inputs.AgentcorePolicyDefinitionArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcorePolicyDefinitionCedarArgs.builder
+      builder.cedar(args(argsBuilder).build)
+
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentcorePolicyEngineState.Builder)
     def timeouts(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcorePolicyEngineTimeoutsArgs.Builder]):
         com.pulumi.aws.bedrock.inputs.AgentcorePolicyEngineState.Builder =
       val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcorePolicyEngineTimeoutsArgs.builder
+      builder.timeouts(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.bedrock.inputs.AgentcorePolicyState.Builder)
+    /**
+     * @param definition Policy definition. See `definition` Block for details.
+     * @return builder
+     */
+    def definition(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcorePolicyDefinitionArgs.Builder]):
+        com.pulumi.aws.bedrock.inputs.AgentcorePolicyState.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcorePolicyDefinitionArgs.builder
+      builder.definition(args(argsBuilder).build)
+
+    def timeouts(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcorePolicyTimeoutsArgs.Builder]):
+        com.pulumi.aws.bedrock.inputs.AgentcorePolicyState.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcorePolicyTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentcoreTokenVaultCmkState.Builder)

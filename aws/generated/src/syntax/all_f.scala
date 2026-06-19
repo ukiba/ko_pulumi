@@ -86,6 +86,8 @@ export ko_pulumi.aws.bedrock.googleOauth2ProviderConfig
 export ko_pulumi.aws.bedrock.guardrailConfiguration
 export ko_pulumi.aws.bedrock.guardrailConfigurations
 export ko_pulumi.aws.bedrock.hierarchicalChunkingConfiguration
+export ko_pulumi.aws.bedrock.http
+export ko_pulumi.aws.bedrock.indexedKeys
 export ko_pulumi.aws.bedrock.inferenceConfiguration
 export ko_pulumi.aws.bedrock.inferenceConfigurations
 export ko_pulumi.aws.bedrock.inline
@@ -103,6 +105,7 @@ export ko_pulumi.aws.bedrock.interceptorConfigurations
 export ko_pulumi.aws.bedrock.intermediateStorage
 export ko_pulumi.aws.bedrock.items
 export ko_pulumi.aws.bedrock.iterator
+export ko_pulumi.aws.bedrock.jwtPassthrough
 export ko_pulumi.aws.budgets.filterExpression
 export ko_pulumi.aws.budgets.historicalOptions
 export ko_pulumi.aws.budgets.iamActionDefinition
@@ -195,8 +198,11 @@ export ko_pulumi.aws.ec2transitgateway.filters
 export ko_pulumi.aws.ecr.imageScanningConfiguration
 export ko_pulumi.aws.ecr.imageTagMutabilityExclusionFilters
 export ko_pulumi.aws.ecrpublic.imageIds
+export ko_pulumi.aws.ecs.firelensConfiguration
 export ko_pulumi.aws.ecs.fsxWindowsFileServerVolumeConfiguration
 export ko_pulumi.aws.ecs.header
+export ko_pulumi.aws.ecs.healthCheck
+export ko_pulumi.aws.ecs.hosts
 export ko_pulumi.aws.ecs.infrastructureOptimization
 export ko_pulumi.aws.ecs.ingressPaths
 export ko_pulumi.aws.ecs.instanceLaunchTemplate
@@ -389,6 +395,8 @@ export ko_pulumi.aws.networkfirewall.header
 export ko_pulumi.aws.networkfirewall.ipSet
 export ko_pulumi.aws.networkfirewall.ipSetReferences
 export ko_pulumi.aws.networkfirewall.ipSets
+export ko_pulumi.aws.observabilityadmin.fieldSelectors
+export ko_pulumi.aws.observabilityadmin.filters
 export ko_pulumi.aws.odb.iormConfigCaches
 export ko_pulumi.aws.opensearch.iamIdentityCenterOptions
 export ko_pulumi.aws.opensearch.identityCenterOptions

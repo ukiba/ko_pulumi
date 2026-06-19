@@ -357,6 +357,36 @@ object iam:
         resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
 
   /**
+   * Represents an IAM v3 Access Policy parented by a Google Cloud Organization. This policy
+   * defines rules that allow or deny access to resources within the specified organization based on principals and conditions.
+   * See the Cloud IAM documentation for more details on Access Policies.
+   * 
+   * &gt; **Warning:** This resource is in beta, and should be used with the terraform-provider-google-beta provider.
+   * See Provider Versions for more details on beta resources.
+   * 
+   * To get more information about OrganizationAccessPolicy, see:
+   * 
+   * * [API documentation](https://cloud.google.com/iam/docs/reference/rest/v3beta/organizations.locations.accessPolicies)
+   */
+  def OrganizationAccessPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+      (args: Endofunction[com.pulumi.gcp.iam.OrganizationAccessPolicyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+    val argsBuilder = com.pulumi.gcp.iam.OrganizationAccessPolicyArgs.builder
+    com.pulumi.gcp.iam.OrganizationAccessPolicy(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+
+  extension (builder: com.pulumi.gcp.iam.OrganizationAccessPolicyArgs.Builder)
+    /**
+     * @param details Access policy details.
+     * Structure is documented below.
+     * @return builder
+     */
+    def details(args: Endofunction[com.pulumi.gcp.iam.inputs.OrganizationAccessPolicyDetailsArgs.Builder]):
+        com.pulumi.gcp.iam.OrganizationAccessPolicyArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.iam.inputs.OrganizationAccessPolicyDetailsArgs.builder
+      builder.details(args(argsBuilder).build)
+
+  /**
    * A policy binding to an organization. This is a Terraform resource, and maps to a policy binding resource in GCP.
    * 
    * To get more information about OrganizationsPolicyBinding, see:
@@ -3726,6 +3756,63 @@ object iam:
         com.pulumi.gcp.iam.inputs.FoldersPolicyBindingState.Builder =
       val argsBuilder = com.pulumi.gcp.iam.inputs.FoldersPolicyBindingTargetArgs.builder
       builder.target(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.gcp.iam.inputs.OrganizationAccessPolicyDetailsArgs.Builder)
+    /**
+     * @param rules A list of access policy rules.
+     * Structure is documented below.
+     * @return builder
+     */
+    def rules(args: Endofunction[com.pulumi.gcp.iam.inputs.OrganizationAccessPolicyDetailsRuleArgs.Builder]*):
+        com.pulumi.gcp.iam.inputs.OrganizationAccessPolicyDetailsArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.iam.inputs.OrganizationAccessPolicyDetailsRuleArgs.builder
+      builder.rules(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.gcp.iam.inputs.OrganizationAccessPolicyDetailsRuleArgs.Builder)
+    /**
+     * @param conditions The conditions that determine whether this rule applies to a request.
+     * Conditions are identified by their key, which is the FQDN of the service
+     * that they are relevant to. For example:
+     * 
+     * Each rule is evaluated independently. If this rule does not apply
+     * to a request, other rules might still apply.
+     * Currently supported keys are as follows:
+     * * `eventarc.googleapis.com`: Can use `CEL` functions that evaluate
+     *   resource fields.
+     * * `iam.googleapis.com`: Can use `CEL` functions that evaluate
+     *   [resource
+     *   tags](https://cloud.google.com/iam/help/conditions/resource-tags) and
+     *   combine them using boolean and logical operators. Other functions and
+     *   operators are not supported.
+     *   Structure is documented below.
+     * @return builder
+     */
+    def conditions(args: Endofunction[com.pulumi.gcp.iam.inputs.OrganizationAccessPolicyDetailsRuleConditionArgs.Builder]*):
+        com.pulumi.gcp.iam.inputs.OrganizationAccessPolicyDetailsRuleArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.iam.inputs.OrganizationAccessPolicyDetailsRuleConditionArgs.builder
+      builder.conditions(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param operation Attributes that are used to determine whether this rule applies to a
+     * request.
+     * Structure is documented below.
+     * @return builder
+     */
+    def operation(args: Endofunction[com.pulumi.gcp.iam.inputs.OrganizationAccessPolicyDetailsRuleOperationArgs.Builder]):
+        com.pulumi.gcp.iam.inputs.OrganizationAccessPolicyDetailsRuleArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.iam.inputs.OrganizationAccessPolicyDetailsRuleOperationArgs.builder
+      builder.operation(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.gcp.iam.inputs.OrganizationAccessPolicyState.Builder)
+    /**
+     * @param details Access policy details.
+     * Structure is documented below.
+     * @return builder
+     */
+    def details(args: Endofunction[com.pulumi.gcp.iam.inputs.OrganizationAccessPolicyDetailsArgs.Builder]):
+        com.pulumi.gcp.iam.inputs.OrganizationAccessPolicyState.Builder =
+      val argsBuilder = com.pulumi.gcp.iam.inputs.OrganizationAccessPolicyDetailsArgs.builder
+      builder.details(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.iam.inputs.OrganizationsPolicyBindingState.Builder)
     /**

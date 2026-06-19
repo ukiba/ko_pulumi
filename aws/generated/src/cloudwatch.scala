@@ -819,6 +819,34 @@ object cloudwatch:
       val argsBuilder = com.pulumi.aws.cloudwatch.inputs.PolicyDocumentArgs.builder
       builder.policyDocument(args(argsBuilder).build)
 
+  /**
+   * Manages a CloudWatch Logs S3 Table Integration data source association.
+   * This resource associates a data source (such as a CloudWatch log type) with an S3 Table Integration, enabling CloudWatch logs to be automatically written to S3 Tables for analytics.
+   * 
+   * For more information, see the [CloudWatch Logs S3 Tables integration documentation](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/s3-tables-integration.html).
+   */
+  def LogS3TableIntegrationSource(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+      (args: Endofunction[com.pulumi.aws.cloudwatch.LogS3TableIntegrationSourceArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+    val argsBuilder = com.pulumi.aws.cloudwatch.LogS3TableIntegrationSourceArgs.builder
+    com.pulumi.aws.cloudwatch.LogS3TableIntegrationSource(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+
+  extension (builder: com.pulumi.aws.cloudwatch.LogS3TableIntegrationSourceArgs.Builder)
+    /**
+     * @param dataSource Data source to associate with the S3 Table Integration. See `dataSource` Block below.
+     * @return builder
+     */
+    def dataSource(args: Endofunction[com.pulumi.aws.cloudwatch.inputs.LogS3TableIntegrationSourceDataSourceArgs.Builder]):
+        com.pulumi.aws.cloudwatch.LogS3TableIntegrationSourceArgs.Builder =
+      val argsBuilder = com.pulumi.aws.cloudwatch.inputs.LogS3TableIntegrationSourceDataSourceArgs.builder
+      builder.dataSource(args(argsBuilder).build)
+
+    def timeouts(args: Endofunction[com.pulumi.aws.cloudwatch.inputs.LogS3TableIntegrationSourceTimeoutsArgs.Builder]):
+        com.pulumi.aws.cloudwatch.LogS3TableIntegrationSourceArgs.Builder =
+      val argsBuilder = com.pulumi.aws.cloudwatch.inputs.LogS3TableIntegrationSourceTimeoutsArgs.builder
+      builder.timeouts(args(argsBuilder).build)
+
   /** Provides a CloudWatch Log Stream resource. */
   def LogStream(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.cloudwatch.LogStreamArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
@@ -1586,6 +1614,21 @@ object cloudwatch:
         com.pulumi.aws.cloudwatch.inputs.LogResourcePolicyState.Builder =
       val argsBuilder = com.pulumi.aws.cloudwatch.inputs.PolicyDocumentArgs.builder
       builder.policyDocument(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.cloudwatch.inputs.LogS3TableIntegrationSourceState.Builder)
+    /**
+     * @param dataSource Data source to associate with the S3 Table Integration. See `dataSource` Block below.
+     * @return builder
+     */
+    def dataSource(args: Endofunction[com.pulumi.aws.cloudwatch.inputs.LogS3TableIntegrationSourceDataSourceArgs.Builder]):
+        com.pulumi.aws.cloudwatch.inputs.LogS3TableIntegrationSourceState.Builder =
+      val argsBuilder = com.pulumi.aws.cloudwatch.inputs.LogS3TableIntegrationSourceDataSourceArgs.builder
+      builder.dataSource(args(argsBuilder).build)
+
+    def timeouts(args: Endofunction[com.pulumi.aws.cloudwatch.inputs.LogS3TableIntegrationSourceTimeoutsArgs.Builder]):
+        com.pulumi.aws.cloudwatch.inputs.LogS3TableIntegrationSourceState.Builder =
+      val argsBuilder = com.pulumi.aws.cloudwatch.inputs.LogS3TableIntegrationSourceTimeoutsArgs.builder
+      builder.timeouts(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.cloudwatch.inputs.LogTransformerState.Builder)
     /**

@@ -2031,6 +2031,16 @@ object dataplex:
 
   extension (builder: com.pulumi.gcp.dataplex.DataProductArgs.Builder)
     /**
+     * @param accessApprovalConfig Configuration for access approval for the data product.
+     * Structure is documented below.
+     * @return builder
+     */
+    def accessApprovalConfig(args: Endofunction[com.pulumi.gcp.dataplex.inputs.DataProductAccessApprovalConfigArgs.Builder]):
+        com.pulumi.gcp.dataplex.DataProductArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.dataplex.inputs.DataProductAccessApprovalConfigArgs.builder
+      builder.accessApprovalConfig(args(argsBuilder).build)
+
+    /**
      * @param accessGroups Custom user defined access groups at the data product level.
      * Structure is documented below.
      * @return builder
@@ -2067,6 +2077,957 @@ object dataplex:
       def argsBuilder = com.pulumi.gcp.dataplex.inputs.DataProductDataAssetAccessGroupConfigArgs.builder
       builder.accessGroupConfigs(args.map(_(argsBuilder).build)*)
 
+  /**
+   * Three different resources help you manage your IAM policy for Dataplex DataProduct. Each of these resources serves a different use case:
+   * 
+   * * `gcp.dataplex.DataProductIamPolicy`: Authoritative. Sets the IAM policy for the dataproduct and replaces any existing policy already attached.
+   * * `gcp.dataplex.DataProductIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the dataproduct are preserved.
+   * * `gcp.dataplex.DataProductIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the dataproduct are preserved.
+   * 
+   * A data source can be used to retrieve policy data in advent you do not need creation
+   * 
+   * * `gcp.dataplex.DataProductIamPolicy`: Retrieves the IAM policy for the dataproduct
+   * 
+   * &gt; **Note:** `gcp.dataplex.DataProductIamPolicy` **cannot** be used in conjunction with `gcp.dataplex.DataProductIamBinding` and `gcp.dataplex.DataProductIamMember` or they will fight over what your policy should be.
+   * 
+   * &gt; **Note:** `gcp.dataplex.DataProductIamBinding` resources **can be** used in conjunction with `gcp.dataplex.DataProductIamMember` resources **only if** they do not grant privilege to the same role.
+   * 
+   * ## gcp.dataplex.DataProductIamPolicy
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.organizations.OrganizationsFunctions;
+   * import com.pulumi.gcp.organizations.inputs.GetIAMPolicyArgs;
+   * import com.pulumi.gcp.organizations.inputs.GetIAMPolicyBindingArgs;
+   * import com.pulumi.gcp.dataplex.DataProductIamPolicy;
+   * import com.pulumi.gcp.dataplex.DataProductIamPolicyArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         final var admin = OrganizationsFunctions.getIAMPolicy(GetIAMPolicyArgs.builder()
+   *             .bindings(GetIAMPolicyBindingArgs.builder()
+   *                 .role("roles/viewer")
+   *                 .members("user:jane}{@literal @}{@code example.com")
+   *                 .build())
+   *             .build());
+   * 
+   *         var policy = new DataProductIamPolicy("policy", DataProductIamPolicyArgs.builder()
+   *             .project(example.project())
+   *             .location(example.location())
+   *             .dataProductId(example.dataProductId())
+   *             .policyData(admin.policyData())
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * ## gcp.dataplex.DataProductIamBinding
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.dataplex.DataProductIamBinding;
+   * import com.pulumi.gcp.dataplex.DataProductIamBindingArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         var binding = new DataProductIamBinding("binding", DataProductIamBindingArgs.builder()
+   *             .project(example.project())
+   *             .location(example.location())
+   *             .dataProductId(example.dataProductId())
+   *             .role("roles/viewer")
+   *             .members("user:jane}{@literal @}{@code example.com")
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * ## gcp.dataplex.DataProductIamMember
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.dataplex.DataProductIamMember;
+   * import com.pulumi.gcp.dataplex.DataProductIamMemberArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         var member = new DataProductIamMember("member", DataProductIamMemberArgs.builder()
+   *             .project(example.project())
+   *             .location(example.location())
+   *             .dataProductId(example.dataProductId())
+   *             .role("roles/viewer")
+   *             .member("user:jane}{@literal @}{@code example.com")
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * ## This resource supports User Project Overrides.
+   * 
+   * -
+   * 
+   * # IAM policy for Dataplex DataProduct
+   * 
+   * Three different resources help you manage your IAM policy for Dataplex DataProduct. Each of these resources serves a different use case:
+   * 
+   * * `gcp.dataplex.DataProductIamPolicy`: Authoritative. Sets the IAM policy for the dataproduct and replaces any existing policy already attached.
+   * * `gcp.dataplex.DataProductIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the dataproduct are preserved.
+   * * `gcp.dataplex.DataProductIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the dataproduct are preserved.
+   * 
+   * A data source can be used to retrieve policy data in advent you do not need creation
+   * 
+   * * `gcp.dataplex.DataProductIamPolicy`: Retrieves the IAM policy for the dataproduct
+   * 
+   * &gt; **Note:** `gcp.dataplex.DataProductIamPolicy` **cannot** be used in conjunction with `gcp.dataplex.DataProductIamBinding` and `gcp.dataplex.DataProductIamMember` or they will fight over what your policy should be.
+   * 
+   * &gt; **Note:** `gcp.dataplex.DataProductIamBinding` resources **can be** used in conjunction with `gcp.dataplex.DataProductIamMember` resources **only if** they do not grant privilege to the same role.
+   * 
+   * ## gcp.dataplex.DataProductIamPolicy
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.organizations.OrganizationsFunctions;
+   * import com.pulumi.gcp.organizations.inputs.GetIAMPolicyArgs;
+   * import com.pulumi.gcp.organizations.inputs.GetIAMPolicyBindingArgs;
+   * import com.pulumi.gcp.dataplex.DataProductIamPolicy;
+   * import com.pulumi.gcp.dataplex.DataProductIamPolicyArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         final var admin = OrganizationsFunctions.getIAMPolicy(GetIAMPolicyArgs.builder()
+   *             .bindings(GetIAMPolicyBindingArgs.builder()
+   *                 .role("roles/viewer")
+   *                 .members("user:jane}{@literal @}{@code example.com")
+   *                 .build())
+   *             .build());
+   * 
+   *         var policy = new DataProductIamPolicy("policy", DataProductIamPolicyArgs.builder()
+   *             .project(example.project())
+   *             .location(example.location())
+   *             .dataProductId(example.dataProductId())
+   *             .policyData(admin.policyData())
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * ## gcp.dataplex.DataProductIamBinding
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.dataplex.DataProductIamBinding;
+   * import com.pulumi.gcp.dataplex.DataProductIamBindingArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         var binding = new DataProductIamBinding("binding", DataProductIamBindingArgs.builder()
+   *             .project(example.project())
+   *             .location(example.location())
+   *             .dataProductId(example.dataProductId())
+   *             .role("roles/viewer")
+   *             .members("user:jane}{@literal @}{@code example.com")
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * ## gcp.dataplex.DataProductIamMember
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.dataplex.DataProductIamMember;
+   * import com.pulumi.gcp.dataplex.DataProductIamMemberArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         var member = new DataProductIamMember("member", DataProductIamMemberArgs.builder()
+   *             .project(example.project())
+   *             .location(example.location())
+   *             .dataProductId(example.dataProductId())
+   *             .role("roles/viewer")
+   *             .member("user:jane}{@literal @}{@code example.com")
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * ## Import
+   * 
+   * For all import syntaxes, the &#34;resource in question&#34; can take any of the following forms:
+   * 
+   * * projects/{{project}}/locations/{{location}}/dataProducts/{{data_product_id}}
+   * * {{project}}/{{location}}/{{data_product_id}}
+   * * {{location}}/{{data_product_id}}
+   * * {{data_product_id}}
+   * 
+   * Any variables not passed in the import command will be taken from the provider configuration.
+   * 
+   * Dataplex dataproduct IAM resources can be imported using the resource identifiers, role, and member.
+   * 
+   * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
+   * ```sh
+   * $ terraform import google_dataplex_data_product_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/dataProducts/{{data_product_id}} roles/viewer user:jane{@literal @}example.com&#34;
+   * ```
+   * 
+   * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
+   * ```sh
+   * $ terraform import google_dataplex_data_product_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/dataProducts/{{data_product_id}} roles/viewer&#34;
+   * ```
+   * 
+   * IAM policy imports use the identifier of the resource in question, e.g.
+   * ```sh
+   * $ pulumi import gcp:dataplex/dataProductIamBinding:DataProductIamBinding editor projects/{{project}}/locations/{{location}}/dataProducts/{{data_product_id}}
+   * ```
+   * 
+   * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
+   *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
+   */
+  def DataProductIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+      (args: Endofunction[com.pulumi.gcp.dataplex.DataProductIamBindingArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+    val argsBuilder = com.pulumi.gcp.dataplex.DataProductIamBindingArgs.builder
+    com.pulumi.gcp.dataplex.DataProductIamBinding(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+
+  extension (builder: com.pulumi.gcp.dataplex.DataProductIamBindingArgs.Builder)
+    def condition(args: Endofunction[com.pulumi.gcp.dataplex.inputs.DataProductIamBindingConditionArgs.Builder]):
+        com.pulumi.gcp.dataplex.DataProductIamBindingArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.dataplex.inputs.DataProductIamBindingConditionArgs.builder
+      builder.condition(args(argsBuilder).build)
+
+  /**
+   * Three different resources help you manage your IAM policy for Dataplex DataProduct. Each of these resources serves a different use case:
+   * 
+   * * `gcp.dataplex.DataProductIamPolicy`: Authoritative. Sets the IAM policy for the dataproduct and replaces any existing policy already attached.
+   * * `gcp.dataplex.DataProductIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the dataproduct are preserved.
+   * * `gcp.dataplex.DataProductIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the dataproduct are preserved.
+   * 
+   * A data source can be used to retrieve policy data in advent you do not need creation
+   * 
+   * * `gcp.dataplex.DataProductIamPolicy`: Retrieves the IAM policy for the dataproduct
+   * 
+   * &gt; **Note:** `gcp.dataplex.DataProductIamPolicy` **cannot** be used in conjunction with `gcp.dataplex.DataProductIamBinding` and `gcp.dataplex.DataProductIamMember` or they will fight over what your policy should be.
+   * 
+   * &gt; **Note:** `gcp.dataplex.DataProductIamBinding` resources **can be** used in conjunction with `gcp.dataplex.DataProductIamMember` resources **only if** they do not grant privilege to the same role.
+   * 
+   * ## gcp.dataplex.DataProductIamPolicy
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.organizations.OrganizationsFunctions;
+   * import com.pulumi.gcp.organizations.inputs.GetIAMPolicyArgs;
+   * import com.pulumi.gcp.organizations.inputs.GetIAMPolicyBindingArgs;
+   * import com.pulumi.gcp.dataplex.DataProductIamPolicy;
+   * import com.pulumi.gcp.dataplex.DataProductIamPolicyArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         final var admin = OrganizationsFunctions.getIAMPolicy(GetIAMPolicyArgs.builder()
+   *             .bindings(GetIAMPolicyBindingArgs.builder()
+   *                 .role("roles/viewer")
+   *                 .members("user:jane}{@literal @}{@code example.com")
+   *                 .build())
+   *             .build());
+   * 
+   *         var policy = new DataProductIamPolicy("policy", DataProductIamPolicyArgs.builder()
+   *             .project(example.project())
+   *             .location(example.location())
+   *             .dataProductId(example.dataProductId())
+   *             .policyData(admin.policyData())
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * ## gcp.dataplex.DataProductIamBinding
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.dataplex.DataProductIamBinding;
+   * import com.pulumi.gcp.dataplex.DataProductIamBindingArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         var binding = new DataProductIamBinding("binding", DataProductIamBindingArgs.builder()
+   *             .project(example.project())
+   *             .location(example.location())
+   *             .dataProductId(example.dataProductId())
+   *             .role("roles/viewer")
+   *             .members("user:jane}{@literal @}{@code example.com")
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * ## gcp.dataplex.DataProductIamMember
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.dataplex.DataProductIamMember;
+   * import com.pulumi.gcp.dataplex.DataProductIamMemberArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         var member = new DataProductIamMember("member", DataProductIamMemberArgs.builder()
+   *             .project(example.project())
+   *             .location(example.location())
+   *             .dataProductId(example.dataProductId())
+   *             .role("roles/viewer")
+   *             .member("user:jane}{@literal @}{@code example.com")
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * ## This resource supports User Project Overrides.
+   * 
+   * -
+   * 
+   * # IAM policy for Dataplex DataProduct
+   * 
+   * Three different resources help you manage your IAM policy for Dataplex DataProduct. Each of these resources serves a different use case:
+   * 
+   * * `gcp.dataplex.DataProductIamPolicy`: Authoritative. Sets the IAM policy for the dataproduct and replaces any existing policy already attached.
+   * * `gcp.dataplex.DataProductIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the dataproduct are preserved.
+   * * `gcp.dataplex.DataProductIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the dataproduct are preserved.
+   * 
+   * A data source can be used to retrieve policy data in advent you do not need creation
+   * 
+   * * `gcp.dataplex.DataProductIamPolicy`: Retrieves the IAM policy for the dataproduct
+   * 
+   * &gt; **Note:** `gcp.dataplex.DataProductIamPolicy` **cannot** be used in conjunction with `gcp.dataplex.DataProductIamBinding` and `gcp.dataplex.DataProductIamMember` or they will fight over what your policy should be.
+   * 
+   * &gt; **Note:** `gcp.dataplex.DataProductIamBinding` resources **can be** used in conjunction with `gcp.dataplex.DataProductIamMember` resources **only if** they do not grant privilege to the same role.
+   * 
+   * ## gcp.dataplex.DataProductIamPolicy
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.organizations.OrganizationsFunctions;
+   * import com.pulumi.gcp.organizations.inputs.GetIAMPolicyArgs;
+   * import com.pulumi.gcp.organizations.inputs.GetIAMPolicyBindingArgs;
+   * import com.pulumi.gcp.dataplex.DataProductIamPolicy;
+   * import com.pulumi.gcp.dataplex.DataProductIamPolicyArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         final var admin = OrganizationsFunctions.getIAMPolicy(GetIAMPolicyArgs.builder()
+   *             .bindings(GetIAMPolicyBindingArgs.builder()
+   *                 .role("roles/viewer")
+   *                 .members("user:jane}{@literal @}{@code example.com")
+   *                 .build())
+   *             .build());
+   * 
+   *         var policy = new DataProductIamPolicy("policy", DataProductIamPolicyArgs.builder()
+   *             .project(example.project())
+   *             .location(example.location())
+   *             .dataProductId(example.dataProductId())
+   *             .policyData(admin.policyData())
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * ## gcp.dataplex.DataProductIamBinding
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.dataplex.DataProductIamBinding;
+   * import com.pulumi.gcp.dataplex.DataProductIamBindingArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         var binding = new DataProductIamBinding("binding", DataProductIamBindingArgs.builder()
+   *             .project(example.project())
+   *             .location(example.location())
+   *             .dataProductId(example.dataProductId())
+   *             .role("roles/viewer")
+   *             .members("user:jane}{@literal @}{@code example.com")
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * ## gcp.dataplex.DataProductIamMember
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.dataplex.DataProductIamMember;
+   * import com.pulumi.gcp.dataplex.DataProductIamMemberArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         var member = new DataProductIamMember("member", DataProductIamMemberArgs.builder()
+   *             .project(example.project())
+   *             .location(example.location())
+   *             .dataProductId(example.dataProductId())
+   *             .role("roles/viewer")
+   *             .member("user:jane}{@literal @}{@code example.com")
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * ## Import
+   * 
+   * For all import syntaxes, the &#34;resource in question&#34; can take any of the following forms:
+   * 
+   * * projects/{{project}}/locations/{{location}}/dataProducts/{{data_product_id}}
+   * * {{project}}/{{location}}/{{data_product_id}}
+   * * {{location}}/{{data_product_id}}
+   * * {{data_product_id}}
+   * 
+   * Any variables not passed in the import command will be taken from the provider configuration.
+   * 
+   * Dataplex dataproduct IAM resources can be imported using the resource identifiers, role, and member.
+   * 
+   * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
+   * ```sh
+   * $ terraform import google_dataplex_data_product_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/dataProducts/{{data_product_id}} roles/viewer user:jane{@literal @}example.com&#34;
+   * ```
+   * 
+   * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
+   * ```sh
+   * $ terraform import google_dataplex_data_product_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/dataProducts/{{data_product_id}} roles/viewer&#34;
+   * ```
+   * 
+   * IAM policy imports use the identifier of the resource in question, e.g.
+   * ```sh
+   * $ pulumi import gcp:dataplex/dataProductIamMember:DataProductIamMember editor projects/{{project}}/locations/{{location}}/dataProducts/{{data_product_id}}
+   * ```
+   * 
+   * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
+   *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
+   */
+  def DataProductIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+      (args: Endofunction[com.pulumi.gcp.dataplex.DataProductIamMemberArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+    val argsBuilder = com.pulumi.gcp.dataplex.DataProductIamMemberArgs.builder
+    com.pulumi.gcp.dataplex.DataProductIamMember(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+
+  extension (builder: com.pulumi.gcp.dataplex.DataProductIamMemberArgs.Builder)
+    def condition(args: Endofunction[com.pulumi.gcp.dataplex.inputs.DataProductIamMemberConditionArgs.Builder]):
+        com.pulumi.gcp.dataplex.DataProductIamMemberArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.dataplex.inputs.DataProductIamMemberConditionArgs.builder
+      builder.condition(args(argsBuilder).build)
+
+  /**
+   * Three different resources help you manage your IAM policy for Dataplex DataProduct. Each of these resources serves a different use case:
+   * 
+   * * `gcp.dataplex.DataProductIamPolicy`: Authoritative. Sets the IAM policy for the dataproduct and replaces any existing policy already attached.
+   * * `gcp.dataplex.DataProductIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the dataproduct are preserved.
+   * * `gcp.dataplex.DataProductIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the dataproduct are preserved.
+   * 
+   * A data source can be used to retrieve policy data in advent you do not need creation
+   * 
+   * * `gcp.dataplex.DataProductIamPolicy`: Retrieves the IAM policy for the dataproduct
+   * 
+   * &gt; **Note:** `gcp.dataplex.DataProductIamPolicy` **cannot** be used in conjunction with `gcp.dataplex.DataProductIamBinding` and `gcp.dataplex.DataProductIamMember` or they will fight over what your policy should be.
+   * 
+   * &gt; **Note:** `gcp.dataplex.DataProductIamBinding` resources **can be** used in conjunction with `gcp.dataplex.DataProductIamMember` resources **only if** they do not grant privilege to the same role.
+   * 
+   * ## gcp.dataplex.DataProductIamPolicy
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.organizations.OrganizationsFunctions;
+   * import com.pulumi.gcp.organizations.inputs.GetIAMPolicyArgs;
+   * import com.pulumi.gcp.organizations.inputs.GetIAMPolicyBindingArgs;
+   * import com.pulumi.gcp.dataplex.DataProductIamPolicy;
+   * import com.pulumi.gcp.dataplex.DataProductIamPolicyArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         final var admin = OrganizationsFunctions.getIAMPolicy(GetIAMPolicyArgs.builder()
+   *             .bindings(GetIAMPolicyBindingArgs.builder()
+   *                 .role("roles/viewer")
+   *                 .members("user:jane}{@literal @}{@code example.com")
+   *                 .build())
+   *             .build());
+   * 
+   *         var policy = new DataProductIamPolicy("policy", DataProductIamPolicyArgs.builder()
+   *             .project(example.project())
+   *             .location(example.location())
+   *             .dataProductId(example.dataProductId())
+   *             .policyData(admin.policyData())
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * ## gcp.dataplex.DataProductIamBinding
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.dataplex.DataProductIamBinding;
+   * import com.pulumi.gcp.dataplex.DataProductIamBindingArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         var binding = new DataProductIamBinding("binding", DataProductIamBindingArgs.builder()
+   *             .project(example.project())
+   *             .location(example.location())
+   *             .dataProductId(example.dataProductId())
+   *             .role("roles/viewer")
+   *             .members("user:jane}{@literal @}{@code example.com")
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * ## gcp.dataplex.DataProductIamMember
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.dataplex.DataProductIamMember;
+   * import com.pulumi.gcp.dataplex.DataProductIamMemberArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         var member = new DataProductIamMember("member", DataProductIamMemberArgs.builder()
+   *             .project(example.project())
+   *             .location(example.location())
+   *             .dataProductId(example.dataProductId())
+   *             .role("roles/viewer")
+   *             .member("user:jane}{@literal @}{@code example.com")
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * ## This resource supports User Project Overrides.
+   * 
+   * -
+   * 
+   * # IAM policy for Dataplex DataProduct
+   * 
+   * Three different resources help you manage your IAM policy for Dataplex DataProduct. Each of these resources serves a different use case:
+   * 
+   * * `gcp.dataplex.DataProductIamPolicy`: Authoritative. Sets the IAM policy for the dataproduct and replaces any existing policy already attached.
+   * * `gcp.dataplex.DataProductIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the dataproduct are preserved.
+   * * `gcp.dataplex.DataProductIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the dataproduct are preserved.
+   * 
+   * A data source can be used to retrieve policy data in advent you do not need creation
+   * 
+   * * `gcp.dataplex.DataProductIamPolicy`: Retrieves the IAM policy for the dataproduct
+   * 
+   * &gt; **Note:** `gcp.dataplex.DataProductIamPolicy` **cannot** be used in conjunction with `gcp.dataplex.DataProductIamBinding` and `gcp.dataplex.DataProductIamMember` or they will fight over what your policy should be.
+   * 
+   * &gt; **Note:** `gcp.dataplex.DataProductIamBinding` resources **can be** used in conjunction with `gcp.dataplex.DataProductIamMember` resources **only if** they do not grant privilege to the same role.
+   * 
+   * ## gcp.dataplex.DataProductIamPolicy
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.organizations.OrganizationsFunctions;
+   * import com.pulumi.gcp.organizations.inputs.GetIAMPolicyArgs;
+   * import com.pulumi.gcp.organizations.inputs.GetIAMPolicyBindingArgs;
+   * import com.pulumi.gcp.dataplex.DataProductIamPolicy;
+   * import com.pulumi.gcp.dataplex.DataProductIamPolicyArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         final var admin = OrganizationsFunctions.getIAMPolicy(GetIAMPolicyArgs.builder()
+   *             .bindings(GetIAMPolicyBindingArgs.builder()
+   *                 .role("roles/viewer")
+   *                 .members("user:jane}{@literal @}{@code example.com")
+   *                 .build())
+   *             .build());
+   * 
+   *         var policy = new DataProductIamPolicy("policy", DataProductIamPolicyArgs.builder()
+   *             .project(example.project())
+   *             .location(example.location())
+   *             .dataProductId(example.dataProductId())
+   *             .policyData(admin.policyData())
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * ## gcp.dataplex.DataProductIamBinding
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.dataplex.DataProductIamBinding;
+   * import com.pulumi.gcp.dataplex.DataProductIamBindingArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         var binding = new DataProductIamBinding("binding", DataProductIamBindingArgs.builder()
+   *             .project(example.project())
+   *             .location(example.location())
+   *             .dataProductId(example.dataProductId())
+   *             .role("roles/viewer")
+   *             .members("user:jane}{@literal @}{@code example.com")
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * ## gcp.dataplex.DataProductIamMember
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.dataplex.DataProductIamMember;
+   * import com.pulumi.gcp.dataplex.DataProductIamMemberArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         var member = new DataProductIamMember("member", DataProductIamMemberArgs.builder()
+   *             .project(example.project())
+   *             .location(example.location())
+   *             .dataProductId(example.dataProductId())
+   *             .role("roles/viewer")
+   *             .member("user:jane}{@literal @}{@code example.com")
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * ## Import
+   * 
+   * For all import syntaxes, the &#34;resource in question&#34; can take any of the following forms:
+   * 
+   * * projects/{{project}}/locations/{{location}}/dataProducts/{{data_product_id}}
+   * * {{project}}/{{location}}/{{data_product_id}}
+   * * {{location}}/{{data_product_id}}
+   * * {{data_product_id}}
+   * 
+   * Any variables not passed in the import command will be taken from the provider configuration.
+   * 
+   * Dataplex dataproduct IAM resources can be imported using the resource identifiers, role, and member.
+   * 
+   * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
+   * ```sh
+   * $ terraform import google_dataplex_data_product_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/dataProducts/{{data_product_id}} roles/viewer user:jane{@literal @}example.com&#34;
+   * ```
+   * 
+   * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
+   * ```sh
+   * $ terraform import google_dataplex_data_product_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/dataProducts/{{data_product_id}} roles/viewer&#34;
+   * ```
+   * 
+   * IAM policy imports use the identifier of the resource in question, e.g.
+   * ```sh
+   * $ pulumi import gcp:dataplex/dataProductIamPolicy:DataProductIamPolicy editor projects/{{project}}/locations/{{location}}/dataProducts/{{data_product_id}}
+   * ```
+   * 
+   * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
+   *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
+   */
+  def DataProductIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+      (args: Endofunction[com.pulumi.gcp.dataplex.DataProductIamPolicyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+    val argsBuilder = com.pulumi.gcp.dataplex.DataProductIamPolicyArgs.builder
+    com.pulumi.gcp.dataplex.DataProductIamPolicy(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+
   object DataplexFunctions:
     // Pulumi methods are reproduced as Scala methods.
     // Java methods cause Scala warnings under -Yexplicit-nulls flag
@@ -2097,6 +3058,18 @@ object dataplex:
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.dataplex.outputs.GetAssetIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.dataplex.inputs.GetAssetIamPolicyPlainArgs.builder
       com.pulumi.gcp.dataplex.DataplexFunctions.getAssetIamPolicyPlain(args(argsBuilder).build)
+
+    /** Retrieves the current IAM policy data for dataproduct */
+    inline def getDataProductIamPolicy(args: Endofunction[com.pulumi.gcp.dataplex.inputs.GetDataProductIamPolicyArgs.Builder] = scala.Predef.identity):
+        com.pulumi.core.Output[com.pulumi.gcp.dataplex.outputs.GetDataProductIamPolicyResult] =
+      val argsBuilder = com.pulumi.gcp.dataplex.inputs.GetDataProductIamPolicyArgs.builder
+      com.pulumi.gcp.dataplex.DataplexFunctions.getDataProductIamPolicy(args(argsBuilder).build)
+
+    /** Retrieves the current IAM policy data for dataproduct */
+    inline def getDataProductIamPolicyPlain(args: Endofunction[com.pulumi.gcp.dataplex.inputs.GetDataProductIamPolicyPlainArgs.Builder] = scala.Predef.identity):
+        java.util.concurrent.CompletableFuture[com.pulumi.gcp.dataplex.outputs.GetDataProductIamPolicyResult] =
+      val argsBuilder = com.pulumi.gcp.dataplex.inputs.GetDataProductIamPolicyPlainArgs.builder
+      com.pulumi.gcp.dataplex.DataplexFunctions.getDataProductIamPolicyPlain(args(argsBuilder).build)
 
     /**
      * Retrieves the generated data quality rules for the creating a new data quality scan.
@@ -9427,7 +10400,29 @@ object dataplex:
       def argsBuilder = com.pulumi.gcp.dataplex.inputs.DataProductDataAssetAccessGroupConfigArgs.builder
       builder.accessGroupConfigs(args.map(_(argsBuilder).build)*)
 
+  extension (builder: com.pulumi.gcp.dataplex.inputs.DataProductIamBindingState.Builder)
+    def condition(args: Endofunction[com.pulumi.gcp.dataplex.inputs.DataProductIamBindingConditionArgs.Builder]):
+        com.pulumi.gcp.dataplex.inputs.DataProductIamBindingState.Builder =
+      val argsBuilder = com.pulumi.gcp.dataplex.inputs.DataProductIamBindingConditionArgs.builder
+      builder.condition(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.gcp.dataplex.inputs.DataProductIamMemberState.Builder)
+    def condition(args: Endofunction[com.pulumi.gcp.dataplex.inputs.DataProductIamMemberConditionArgs.Builder]):
+        com.pulumi.gcp.dataplex.inputs.DataProductIamMemberState.Builder =
+      val argsBuilder = com.pulumi.gcp.dataplex.inputs.DataProductIamMemberConditionArgs.builder
+      builder.condition(args(argsBuilder).build)
+
   extension (builder: com.pulumi.gcp.dataplex.inputs.DataProductState.Builder)
+    /**
+     * @param accessApprovalConfig Configuration for access approval for the data product.
+     * Structure is documented below.
+     * @return builder
+     */
+    def accessApprovalConfig(args: Endofunction[com.pulumi.gcp.dataplex.inputs.DataProductAccessApprovalConfigArgs.Builder]):
+        com.pulumi.gcp.dataplex.inputs.DataProductState.Builder =
+      val argsBuilder = com.pulumi.gcp.dataplex.inputs.DataProductAccessApprovalConfigArgs.builder
+      builder.accessApprovalConfig(args(argsBuilder).build)
+
     /**
      * @param accessGroups Custom user defined access groups at the data product level.
      * Structure is documented below.

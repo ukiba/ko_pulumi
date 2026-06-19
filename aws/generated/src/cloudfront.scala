@@ -543,8 +543,15 @@ object cloudfront:
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
       case None               =>
+    argsBuilder = args(argsBuilder)
+    conf.logicalName2tagName(name) match
+      case Some(tagName) =>
+        argsBuilder = argsBuilder.tags:
+          transformOptOutputMap(argsBuilder.build.tags, map =>
+              if map.contains("Name") then map else map + ("Name" -> tagName))
+      case None =>
     com.pulumi.aws.cloudfront.Function(name,
-        args(argsBuilder).build,
+        argsBuilder.build,
         resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
 
   /**
@@ -640,33 +647,6 @@ object cloudfront:
    * For information about CloudFront multi-tenant distributions, see the [Amazon CloudFront Developer Guide](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/).
    * 
    * &gt; **NOTE:** CloudFront distributions take about 15 minutes to reach a deployed state after creation or modification. During this time, deletes to resources will be blocked. If you need to delete a distribution that is enabled and you do not want to wait, you need to use the `retainOnDelete` flag.
-   * 
-   * ## Multi-tenant Distribution Limitations
-   * 
-   * Multi-tenant distributions have the following limitations compared to standard CloudFront distributions:
-   * 
-   * - **Connection Mode**: Automatically set to `tenant-only` and cannot be modified
-   * - **Cache Policies**: Must use cache policies instead of legacy TTL settings
-   * - **Trusted Key Groups**: Must use trusted key groups instead of trusted signers
-   * - **WAF Integration**: Only supports WAF v2 web ACLs
-   * - **Certificate Management**: Must use ACM certificates (IAM certificates not supported)
-   * 
-   * ### Unsupported Attributes
-   * 
-   * The following attributes that are available in standard CloudFront distributions are **not supported** for multi-tenant distributions:
-   * 
-   * - `activeTrustedSigners` - Use `activeTrustedKeyGroups` instead
-   * - `aliasIcpRecordals` - Managed by connection groups
-   * - `aliases` - Managed by connection groups
-   * - `anycastIpListId` - Use connection groups instead
-   * - `continuousDeploymentPolicyId`
-   * - `forwardedValues` in cache behaviors - Deprecated, use cache policies instead
-   * - `isIpv6Enabled` - Managed by connection groups
-   * - `priceClass` - Managed by connection groups
-   * - `smoothStreaming` in cache behaviors
-   * - `staging` mode
-   * - `trustedSigners` in cache behaviors - Use `trustedKeyGroups` instead
-   * - Cache behavior TTL settings (`defaultTtl`, `maxTtl`, `minTtl`) - Use cache policies instead
    */
   def MultitenantDistribution(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.cloudfront.MultitenantDistributionArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
@@ -790,7 +770,7 @@ object cloudfront:
    * For information about CloudFront distributions, see the
    * [Amazon CloudFront Developer Guide](http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Introduction.html). For more information on generating
    * origin access identities, see
-   * [Using an Origin Access Identity to Restrict Access to Your Amazon S3 Content][2].
+   * [Using an Origin Access Identity to Restrict Access to Your Amazon S3 Content](http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-restricting-access-to-s3.html).
    */
   def OriginAccessIdentity(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.cloudfront.OriginAccessIdentityArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
@@ -975,7 +955,7 @@ object cloudfront:
    * Creates an Amazon CloudFront VPC origin.
    * 
    * For information about CloudFront VPC origins, see
-   * [Amazon CloudFront Developer Guide - Restrict access with VPC origins][1].
+   * [Amazon CloudFront Developer Guide - Restrict access with VPC origins](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-vpc-origins.html).
    */
   def VpcOrigin(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.cloudfront.VpcOriginArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =

@@ -51,7 +51,7 @@ object rds:
    * 
    * Database Activity Streams have some limits and requirements, refer to the [Monitoring Amazon Aurora using Database Activity Streams](https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/DBActivityStreams.html) documentation for detailed limitations and requirements.
    * 
-   * &gt; **Note:** This resource always calls the RDS [`StartActivityStream`][2] API with the `ApplyImmediately` parameter set to `true`. This is because the provider needs the activity stream to be started in order for it to get the associated attributes.
+   * &gt; **Note:** This resource always calls the RDS [`StartActivityStream`](https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_StartActivityStream.html) API with the `ApplyImmediately` parameter set to `true`. This is because the provider needs the activity stream to be started in order for it to get the associated attributes.
    * 
    * &gt; **Note:** This resource depends on having at least one `aws.rds.ClusterInstance` created. To avoid race conditions when all resources are being created together, add an explicit resource reference using the resource `dependsOn` meta-argument.
    * 
@@ -122,7 +122,7 @@ object rds:
    * 
    * Unlike other RDS resources that support replication, with Amazon Aurora you do
    * not designate a primary and subsequent replicas. Instead, you simply add RDS
-   * Instances and Aurora manages the replication. You can use the [count][5]
+   * Instances and Aurora manages the replication. You can use the count
    * meta-parameter to make multiple instances and join them all to the same RDS
    * Cluster, or you may specify different Cluster Instance resources with various
    * `instanceClass` sizes.
@@ -315,23 +315,9 @@ object rds:
    * &gt; **Note:** All arguments including the username and password will be stored in the raw state as plain-text.
    * Read more about sensitive data instate.
    * 
-   * ## RDS Instance Class Types
+   * Amazon RDS supports instance classes for General-purpose, Memory-optimized, Burstable Performance, and Optimized-reads use cases. For more information see [DB Instance Class Types](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html).
    * 
-   * Amazon RDS supports instance classes for the following use cases: General-purpose, Memory-optimized, Burstable Performance, and Optimized-reads.
-   * For more information please read the AWS RDS documentation about [DB Instance Class Types](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html)
-   * 
-   * ## Low-Downtime Updates
-   * 
-   * By default, RDS applies updates to DB Instances in-place, which can lead to service interruptions.
-   * Low-downtime updates minimize service interruptions by performing the updates with an [RDS Blue/Green deployment][blue-green] and switching over the instances when complete.
-   * 
-   * Low-downtime updates are only available for DB Instances using MySQL, MariaDB and PostgreSQL,
-   * as other engines are not supported by RDS Blue/Green deployments.
-   * They cannot be used with DB Instances with replicas.
-   * 
-   * Backups must be enabled to use low-downtime updates.
-   * 
-   * Enable low-downtime updates by setting `blue_green_update.enabled` to `true`.
+   * By default, RDS applies updates to DB Instances in-place, which can lead to service interruptions. Low-downtime updates minimize service interruptions by performing the updates with an [RDS Blue/Green deployment][blue-green] and switching over the instances when complete. Low-downtime updates are only available for MySQL, MariaDB, and PostgreSQL \u2014 other engines are not supported by RDS Blue/Green deployments \u2014 and cannot be used with DB Instances with replicas. Backups must be enabled. Enable low-downtime updates by setting `blue_green_update.enabled` to `true`.
    */
   def Instance(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.rds.InstanceArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =

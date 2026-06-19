@@ -152,10 +152,12 @@ export ko_pulumi.gcp.certificatemanager.trustStores
 export ko_pulumi.gcp.ces.parameters
 export ko_pulumi.gcp.ces.personaProperties
 export ko_pulumi.gcp.ces.personaProperty
+export ko_pulumi.gcp.ces.promptConfig
 export ko_pulumi.gcp.ces.pythonFunction
 export ko_pulumi.gcp.ces.pythonFunctions
 export ko_pulumi.gcp.ces.redactionConfig
 export ko_pulumi.gcp.ces.redactionConfigs
+export ko_pulumi.gcp.ces.remoteAgentTools
 export ko_pulumi.gcp.ces.remoteDialogflowAgent
 export ko_pulumi.gcp.ces.remoteDialogflowAgents
 export ko_pulumi.gcp.ces.respondImmediatelies
@@ -177,13 +179,16 @@ export ko_pulumi.gcp.ces.serviceAgentIdTokenAuthConfig
 export ko_pulumi.gcp.ces.serviceAgentIdTokenAuthConfigs
 export ko_pulumi.gcp.ces.serviceDirectoryConfig
 export ko_pulumi.gcp.ces.serviceDirectoryConfigs
+export ko_pulumi.gcp.ces.skills
 export ko_pulumi.gcp.ces.snapshots
 export ko_pulumi.gcp.ces.specs
 export ko_pulumi.gcp.ces.steps
 export ko_pulumi.gcp.ces.summarizationConfig
 export ko_pulumi.gcp.ces.summarizationConfigs
+export ko_pulumi.gcp.ces.supportedInterfaces
 export ko_pulumi.gcp.ces.synthesizeSpeechConfigs
 export ko_pulumi.gcp.ces.systemTools
+export ko_pulumi.gcp.ces.textResponseConfig
 export ko_pulumi.gcp.ces.timeZoneSettings
 export ko_pulumi.gcp.ces.tlsConfig
 export ko_pulumi.gcp.ces.tlsConfigs
@@ -959,6 +964,7 @@ export ko_pulumi.gcp.migrationcenter.preferenceSetFindings
 export ko_pulumi.gcp.migrationcenter.recentExecutions
 export ko_pulumi.gcp.migrationcenter.regionPreferences
 export ko_pulumi.gcp.migrationcenter.results
+export ko_pulumi.gcp.migrationcenter.rowErrors
 export ko_pulumi.gcp.migrationcenter.signedUriDestination
 export ko_pulumi.gcp.migrationcenter.signedUris
 export ko_pulumi.gcp.migrationcenter.softwareInstances

@@ -82,6 +82,7 @@ export ko_pulumi.aws.ec2.vpcPeeringConnections
 export ko_pulumi.aws.ec2.vpcs
 export ko_pulumi.aws.ec2.vpnConnections
 export ko_pulumi.aws.ec2.vpnGateways
+export ko_pulumi.aws.ecs.ulimits
 export ko_pulumi.aws.ecs.value
 export ko_pulumi.aws.ecs.vcpuCount
 export ko_pulumi.aws.ecs.volumeConfiguration
@@ -162,6 +163,8 @@ export ko_pulumi.aws.networkfirewall.vpcEndpointAssociationStatuses
 export ko_pulumi.aws.networkmanager.via
 export ko_pulumi.aws.networkmanager.whenSentTo
 export ko_pulumi.aws.networkmanager.withEdgeOverrides
+export ko_pulumi.aws.observabilityadmin.vpcFlowLogParameters
+export ko_pulumi.aws.observabilityadmin.wafLoggingParameters
 export ko_pulumi.aws.odb.zeroEtlAccesses
 export ko_pulumi.aws.opensearch.vpcOptions
 export ko_pulumi.aws.opensearch.windowStartTime

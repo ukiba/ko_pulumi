@@ -741,6 +741,15 @@ object container:
       builder.nodeConfig(args(argsBuilder).build)
 
     /**
+     * @param nodeCreationConfig Configuration for [node creation config](https://clouddocs.devsite.corp.google.com/kubernetes-engine/security/control-plane-node-creation). Structure is documented below.
+     * @return builder
+     */
+    def nodeCreationConfig(args: Endofunction[com.pulumi.gcp.container.inputs.ClusterNodeCreationConfigArgs.Builder]):
+        com.pulumi.gcp.container.ClusterArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.container.inputs.ClusterNodeCreationConfigArgs.builder
+      builder.nodeCreationConfig(args(argsBuilder).build)
+
+    /**
      * @param nodePoolAutoConfig Node pool configs that apply to auto-provisioned node pools in
      * [autopilot](https://cloud.google.com/kubernetes-engine/docs/concepts/autopilot-overview#comparison) clusters and
      * [node auto-provisioning](https://cloud.google.com/kubernetes-engine/docs/how-to/node-auto-provisioning)-enabled clusters. Structure is documented below.
@@ -4078,6 +4087,15 @@ object container:
         com.pulumi.gcp.container.inputs.ClusterState.Builder =
       val argsBuilder = com.pulumi.gcp.container.inputs.ClusterNodeConfigArgs.builder
       builder.nodeConfig(args(argsBuilder).build)
+
+    /**
+     * @param nodeCreationConfig Configuration for [node creation config](https://clouddocs.devsite.corp.google.com/kubernetes-engine/security/control-plane-node-creation). Structure is documented below.
+     * @return builder
+     */
+    def nodeCreationConfig(args: Endofunction[com.pulumi.gcp.container.inputs.ClusterNodeCreationConfigArgs.Builder]):
+        com.pulumi.gcp.container.inputs.ClusterState.Builder =
+      val argsBuilder = com.pulumi.gcp.container.inputs.ClusterNodeCreationConfigArgs.builder
+      builder.nodeCreationConfig(args(argsBuilder).build)
 
     /**
      * @param nodePoolAutoConfig Node pool configs that apply to auto-provisioned node pools in

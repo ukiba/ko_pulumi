@@ -70,6 +70,7 @@ export ko_pulumi.aws.backup.lifecycle
 export ko_pulumi.aws.batch.launchTemplate
 export ko_pulumi.aws.batch.metadata
 export ko_pulumi.aws.bedrock.kendraKnowledgeBaseConfiguration
+export ko_pulumi.aws.bedrock.kinesis
 export ko_pulumi.aws.bedrock.kmsConfiguration
 export ko_pulumi.aws.bedrock.knowledgeBase
 export ko_pulumi.aws.bedrock.knowledgeBaseConfiguration
@@ -78,6 +79,7 @@ export ko_pulumi.aws.bedrock.lambdaFunction
 export ko_pulumi.aws.bedrock.levelConfigurations
 export ko_pulumi.aws.bedrock.lex
 export ko_pulumi.aws.bedrock.lifecycleConfigurations
+export ko_pulumi.aws.bedrock.managedVpcResource
 export ko_pulumi.aws.bedrock.managedWordListsConfigs
 export ko_pulumi.aws.bedrock.mcp
 export ko_pulumi.aws.bedrock.mcpServer
@@ -248,6 +250,7 @@ export ko_pulumi.aws.ec2.overrides
 export ko_pulumi.aws.ec2transitgateway.options
 export ko_pulumi.aws.ecs.lifecycleHooks
 export ko_pulumi.aws.ecs.linearConfiguration
+export ko_pulumi.aws.ecs.linuxParameters
 export ko_pulumi.aws.ecs.loadBalancers
 export ko_pulumi.aws.ecs.logConfiguration
 export ko_pulumi.aws.ecs.managedEbsVolume
@@ -256,6 +259,7 @@ export ko_pulumi.aws.ecs.managedScaling
 export ko_pulumi.aws.ecs.managedStorageConfiguration
 export ko_pulumi.aws.ecs.memoryGibPerVcpu
 export ko_pulumi.aws.ecs.memoryMib
+export ko_pulumi.aws.ecs.mountPoints
 export ko_pulumi.aws.ecs.networkBandwidthGbps
 export ko_pulumi.aws.ecs.networkConfiguration
 export ko_pulumi.aws.ecs.networkConfigurations
@@ -357,6 +361,7 @@ export ko_pulumi.aws.kinesis.kinesisSourceConfiguration
 export ko_pulumi.aws.kinesis.kinesisStream
 export ko_pulumi.aws.kinesis.lambda
 export ko_pulumi.aws.kinesis.mappingParameters
+export ko_pulumi.aws.kinesis.minimumThroughputBillingCommitment
 export ko_pulumi.aws.kinesis.mskSourceConfiguration
 export ko_pulumi.aws.kinesis.openXJsonSerDe
 export ko_pulumi.aws.kinesis.opensearchConfiguration
@@ -454,8 +459,12 @@ export ko_pulumi.aws.networkmanager.options
 export ko_pulumi.aws.oam.linkConfiguration
 export ko_pulumi.aws.oam.logGroupConfiguration
 export ko_pulumi.aws.oam.metricConfiguration
+export ko_pulumi.aws.observabilityadmin.labelNameCondition
+export ko_pulumi.aws.observabilityadmin.logDeliveryParameters
 export ko_pulumi.aws.observabilityadmin.logGroupNameConfiguration
+export ko_pulumi.aws.observabilityadmin.loggingFilter
 export ko_pulumi.aws.observabilityadmin.logsEncryptionConfiguration
+export ko_pulumi.aws.observabilityadmin.mskMonitoringParameters
 export ko_pulumi.aws.odb.kmsAccesses
 export ko_pulumi.aws.odb.maintenanceWindow
 export ko_pulumi.aws.odb.managedS3BackupAccesses
@@ -476,6 +485,7 @@ export ko_pulumi.aws.opensearchingest.logPublishingOptions
 export ko_pulumi.aws.organizations.nonMasterAccounts
 export ko_pulumi.aws.paymentcryptography.keyAttributes
 export ko_pulumi.aws.paymentcryptography.keyModesOfUses
+export ko_pulumi.aws.pinpoint.kinesisFirehoseDestination
 export ko_pulumi.aws.pinpoint.limits
 export ko_pulumi.aws.pipes.kinesisStreamParameters
 export ko_pulumi.aws.pipes.lambdaFunctionParameters

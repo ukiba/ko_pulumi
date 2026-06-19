@@ -874,9 +874,6 @@ object networksecurity:
   /**
    * A Mirroring Collector is a logical representation of an appliance that collects
    * mirrored traffic.
-   * 
-   * &gt; **Warning:** This resource is in beta, and should be used with the terraform-provider-google-beta provider.
-   * See Provider Versions for more details on beta resources.
    */
   def UllMirroringCollector(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.gcp.networksecurity.UllMirroringCollectorArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
@@ -885,12 +882,7 @@ object networksecurity:
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
 
-  /**
-   * UllMirroringCollectorRule is a resource that defines what traffic should be mirrored.
-   * 
-   * &gt; **Warning:** This resource is in beta, and should be used with the terraform-provider-google-beta provider.
-   * See Provider Versions for more details on beta resources.
-   */
+  /** UllMirroringCollectorRule is a resource that defines what traffic should be mirrored. */
   def UllMirroringCollectorRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.gcp.networksecurity.UllMirroringCollectorRuleArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.networksecurity.UllMirroringCollectorRuleArgs.builder
@@ -912,9 +904,6 @@ object networksecurity:
   /**
    * A Mirroring Engine is a logical representation of the underlying infrastructure
    * that is used to manage and monitor the ULL Mirroring setup.
-   * 
-   * &gt; **Warning:** This resource is in beta, and should be used with the terraform-provider-google-beta provider.
-   * See Provider Versions for more details on beta resources.
    */
   def UllMirroringEngine(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.gcp.networksecurity.UllMirroringEngineArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =

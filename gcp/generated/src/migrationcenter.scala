@@ -59,6 +59,14 @@ object migrationcenter:
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
 
+  /** ImportJob represents a batch data import task that processes uploaded data files and populates Migration Center assets. */
+  def ImportJob(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+      (args: Endofunction[com.pulumi.gcp.migrationcenter.ImportJobArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+    val argsBuilder = com.pulumi.gcp.migrationcenter.ImportJobArgs.builder
+    com.pulumi.gcp.migrationcenter.ImportJob(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+
   /**
    * Manages the PreferenceSet resource.
    * 
@@ -344,6 +352,245 @@ object migrationcenter:
         com.pulumi.gcp.migrationcenter.inputs.DiscoveryClientState.Builder =
       def argsBuilder = com.pulumi.gcp.migrationcenter.inputs.DiscoveryClientErrorArgs.builder
       builder.errors(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.gcp.migrationcenter.inputs.ImportJobExecutionReportArgs.Builder)
+    /**
+     * @param executionErrors (Output)
+     * A resource that aggregates errors across import job files.
+     * Structure is documented below.
+     * @return builder
+     */
+    def executionErrors(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.ImportJobExecutionReportExecutionErrorArgs.Builder]*):
+        com.pulumi.gcp.migrationcenter.inputs.ImportJobExecutionReportArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.migrationcenter.inputs.ImportJobExecutionReportExecutionErrorArgs.builder
+      builder.executionErrors(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.gcp.migrationcenter.inputs.ImportJobExecutionReportExecutionErrorArgs.Builder)
+    /**
+     * @param fileValidations (Output)
+     * List of errors found in files.
+     * Structure is documented below.
+     * @return builder
+     */
+    def fileValidations(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.ImportJobExecutionReportExecutionErrorFileValidationArgs.Builder]*):
+        com.pulumi.gcp.migrationcenter.inputs.ImportJobExecutionReportExecutionErrorArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.migrationcenter.inputs.ImportJobExecutionReportExecutionErrorFileValidationArgs.builder
+      builder.fileValidations(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param jobErrors (Output)
+     * List of job level errors.
+     * Structure is documented below.
+     * @return builder
+     */
+    def jobErrors(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.ImportJobExecutionReportExecutionErrorJobErrorArgs.Builder]*):
+        com.pulumi.gcp.migrationcenter.inputs.ImportJobExecutionReportExecutionErrorArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.migrationcenter.inputs.ImportJobExecutionReportExecutionErrorJobErrorArgs.builder
+      builder.jobErrors(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.gcp.migrationcenter.inputs.ImportJobExecutionReportExecutionErrorFileValidationArgs.Builder)
+    /**
+     * @param fileErrors (Output)
+     * List of file level errors.
+     * Structure is documented below.
+     * @return builder
+     */
+    def fileErrors(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.ImportJobExecutionReportExecutionErrorFileValidationFileErrorArgs.Builder]*):
+        com.pulumi.gcp.migrationcenter.inputs.ImportJobExecutionReportExecutionErrorFileValidationArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.migrationcenter.inputs.ImportJobExecutionReportExecutionErrorFileValidationFileErrorArgs.builder
+      builder.fileErrors(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param rowErrors (Output)
+     * Partial list of rows that encountered validation error.
+     * Structure is documented below.
+     * @return builder
+     */
+    def rowErrors(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.ImportJobExecutionReportExecutionErrorFileValidationRowErrorArgs.Builder]*):
+        com.pulumi.gcp.migrationcenter.inputs.ImportJobExecutionReportExecutionErrorFileValidationArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.migrationcenter.inputs.ImportJobExecutionReportExecutionErrorFileValidationRowErrorArgs.builder
+      builder.rowErrors(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.gcp.migrationcenter.inputs.ImportJobExecutionReportExecutionErrorFileValidationRowErrorArchiveErrorArgs.Builder)
+    /**
+     * @param csvErrors (Output)
+     * Error details for a CSV file.
+     * Structure is documented below.
+     * @return builder
+     */
+    def csvErrors(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.ImportJobExecutionReportExecutionErrorFileValidationRowErrorArchiveErrorCsvErrorArgs.Builder]*):
+        com.pulumi.gcp.migrationcenter.inputs.ImportJobExecutionReportExecutionErrorFileValidationRowErrorArchiveErrorArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.migrationcenter.inputs.ImportJobExecutionReportExecutionErrorFileValidationRowErrorArchiveErrorCsvErrorArgs.builder
+      builder.csvErrors(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.gcp.migrationcenter.inputs.ImportJobExecutionReportExecutionErrorFileValidationRowErrorArgs.Builder)
+    /**
+     * @param archiveErrors (Output)
+     * Error details for an archive file.
+     * Structure is documented below.
+     * @return builder
+     */
+    def archiveErrors(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.ImportJobExecutionReportExecutionErrorFileValidationRowErrorArchiveErrorArgs.Builder]*):
+        com.pulumi.gcp.migrationcenter.inputs.ImportJobExecutionReportExecutionErrorFileValidationRowErrorArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.migrationcenter.inputs.ImportJobExecutionReportExecutionErrorFileValidationRowErrorArchiveErrorArgs.builder
+      builder.archiveErrors(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param csvErrors (Output)
+     * Error details for a CSV file.
+     * Structure is documented below.
+     * @return builder
+     */
+    def csvErrors(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.ImportJobExecutionReportExecutionErrorFileValidationRowErrorCsvErrorArgs.Builder]*):
+        com.pulumi.gcp.migrationcenter.inputs.ImportJobExecutionReportExecutionErrorFileValidationRowErrorArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.migrationcenter.inputs.ImportJobExecutionReportExecutionErrorFileValidationRowErrorCsvErrorArgs.builder
+      builder.csvErrors(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param errors (Output)
+     * The list of errors detected in the row.
+     * Structure is documented below.
+     * @return builder
+     */
+    def errors(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.ImportJobExecutionReportExecutionErrorFileValidationRowErrorErrorArgs.Builder]*):
+        com.pulumi.gcp.migrationcenter.inputs.ImportJobExecutionReportExecutionErrorFileValidationRowErrorArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.migrationcenter.inputs.ImportJobExecutionReportExecutionErrorFileValidationRowErrorErrorArgs.builder
+      builder.errors(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param xlsxErrors (Output)
+     * Error details for an XLSX file.
+     * Structure is documented below.
+     * @return builder
+     */
+    def xlsxErrors(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.ImportJobExecutionReportExecutionErrorFileValidationRowErrorXlsxErrorArgs.Builder]*):
+        com.pulumi.gcp.migrationcenter.inputs.ImportJobExecutionReportExecutionErrorFileValidationRowErrorArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.migrationcenter.inputs.ImportJobExecutionReportExecutionErrorFileValidationRowErrorXlsxErrorArgs.builder
+      builder.xlsxErrors(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.gcp.migrationcenter.inputs.ImportJobState.Builder)
+    /**
+     * @param executionReports A resource that reports result of the import job execution.
+     * Structure is documented below.
+     * @return builder
+     */
+    def executionReports(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.ImportJobExecutionReportArgs.Builder]*):
+        com.pulumi.gcp.migrationcenter.inputs.ImportJobState.Builder =
+      def argsBuilder = com.pulumi.gcp.migrationcenter.inputs.ImportJobExecutionReportArgs.builder
+      builder.executionReports(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param validationReports A resource that aggregates errors across import job files.
+     * Structure is documented below.
+     * @return builder
+     */
+    def validationReports(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.ImportJobValidationReportArgs.Builder]*):
+        com.pulumi.gcp.migrationcenter.inputs.ImportJobState.Builder =
+      def argsBuilder = com.pulumi.gcp.migrationcenter.inputs.ImportJobValidationReportArgs.builder
+      builder.validationReports(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.gcp.migrationcenter.inputs.ImportJobValidationReportArgs.Builder)
+    /**
+     * @param fileValidations (Output)
+     * List of errors found in files.
+     * Structure is documented below.
+     * @return builder
+     */
+    def fileValidations(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.ImportJobValidationReportFileValidationArgs.Builder]*):
+        com.pulumi.gcp.migrationcenter.inputs.ImportJobValidationReportArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.migrationcenter.inputs.ImportJobValidationReportFileValidationArgs.builder
+      builder.fileValidations(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param jobErrors (Output)
+     * List of job level errors.
+     * Structure is documented below.
+     * @return builder
+     */
+    def jobErrors(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.ImportJobValidationReportJobErrorArgs.Builder]*):
+        com.pulumi.gcp.migrationcenter.inputs.ImportJobValidationReportArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.migrationcenter.inputs.ImportJobValidationReportJobErrorArgs.builder
+      builder.jobErrors(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.gcp.migrationcenter.inputs.ImportJobValidationReportFileValidationArgs.Builder)
+    /**
+     * @param fileErrors (Output)
+     * List of file level errors.
+     * Structure is documented below.
+     * @return builder
+     */
+    def fileErrors(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.ImportJobValidationReportFileValidationFileErrorArgs.Builder]*):
+        com.pulumi.gcp.migrationcenter.inputs.ImportJobValidationReportFileValidationArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.migrationcenter.inputs.ImportJobValidationReportFileValidationFileErrorArgs.builder
+      builder.fileErrors(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param rowErrors (Output)
+     * Partial list of rows that encountered validation error.
+     * Structure is documented below.
+     * @return builder
+     */
+    def rowErrors(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.ImportJobValidationReportFileValidationRowErrorArgs.Builder]*):
+        com.pulumi.gcp.migrationcenter.inputs.ImportJobValidationReportFileValidationArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.migrationcenter.inputs.ImportJobValidationReportFileValidationRowErrorArgs.builder
+      builder.rowErrors(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.gcp.migrationcenter.inputs.ImportJobValidationReportFileValidationRowErrorArchiveErrorArgs.Builder)
+    /**
+     * @param csvErrors (Output)
+     * Error details for a CSV file.
+     * Structure is documented below.
+     * @return builder
+     */
+    def csvErrors(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.ImportJobValidationReportFileValidationRowErrorArchiveErrorCsvErrorArgs.Builder]*):
+        com.pulumi.gcp.migrationcenter.inputs.ImportJobValidationReportFileValidationRowErrorArchiveErrorArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.migrationcenter.inputs.ImportJobValidationReportFileValidationRowErrorArchiveErrorCsvErrorArgs.builder
+      builder.csvErrors(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.gcp.migrationcenter.inputs.ImportJobValidationReportFileValidationRowErrorArgs.Builder)
+    /**
+     * @param archiveErrors (Output)
+     * Error details for an archive file.
+     * Structure is documented below.
+     * @return builder
+     */
+    def archiveErrors(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.ImportJobValidationReportFileValidationRowErrorArchiveErrorArgs.Builder]*):
+        com.pulumi.gcp.migrationcenter.inputs.ImportJobValidationReportFileValidationRowErrorArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.migrationcenter.inputs.ImportJobValidationReportFileValidationRowErrorArchiveErrorArgs.builder
+      builder.archiveErrors(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param csvErrors (Output)
+     * Error details for a CSV file.
+     * Structure is documented below.
+     * @return builder
+     */
+    def csvErrors(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.ImportJobValidationReportFileValidationRowErrorCsvErrorArgs.Builder]*):
+        com.pulumi.gcp.migrationcenter.inputs.ImportJobValidationReportFileValidationRowErrorArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.migrationcenter.inputs.ImportJobValidationReportFileValidationRowErrorCsvErrorArgs.builder
+      builder.csvErrors(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param errors (Output)
+     * The list of errors detected in the row.
+     * Structure is documented below.
+     * @return builder
+     */
+    def errors(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.ImportJobValidationReportFileValidationRowErrorErrorArgs.Builder]*):
+        com.pulumi.gcp.migrationcenter.inputs.ImportJobValidationReportFileValidationRowErrorArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.migrationcenter.inputs.ImportJobValidationReportFileValidationRowErrorErrorArgs.builder
+      builder.errors(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param xlsxErrors (Output)
+     * Error details for an XLSX file.
+     * Structure is documented below.
+     * @return builder
+     */
+    def xlsxErrors(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.ImportJobValidationReportFileValidationRowErrorXlsxErrorArgs.Builder]*):
+        com.pulumi.gcp.migrationcenter.inputs.ImportJobValidationReportFileValidationRowErrorArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.migrationcenter.inputs.ImportJobValidationReportFileValidationRowErrorXlsxErrorArgs.builder
+      builder.xlsxErrors(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.gcp.migrationcenter.inputs.PreferenceSetState.Builder)
     /**
