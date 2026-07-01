@@ -555,6 +555,16 @@ object ces:
       builder.pythonFunction(args(argsBuilder).build)
 
     /**
+     * @param toolFakeConfig Configuration for tool behavior in fake mode.
+     * Structure is documented below.
+     * @return builder
+     */
+    def toolFakeConfig(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolToolFakeConfigArgs.Builder]):
+        com.pulumi.gcp.ces.ToolArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.ces.inputs.ToolToolFakeConfigArgs.builder
+      builder.toolFakeConfig(args(argsBuilder).build)
+
+    /**
      * @param widgetTool Represents a widget tool that the agent can invoke.
      * Structure is documented below.
      * @return builder
@@ -594,6 +604,16 @@ object ces:
         com.pulumi.gcp.ces.ToolsetArgs.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.ToolsetOpenApiToolsetArgs.builder
       builder.openApiToolset(args(argsBuilder).build)
+
+    /**
+     * @param toolFakeConfig Configuration for tools behavior in fake mode.
+     * Structure is documented below.
+     * @return builder
+     */
+    def toolFakeConfig(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolsetToolFakeConfigArgs.Builder]):
+        com.pulumi.gcp.ces.ToolsetArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.ces.inputs.ToolsetToolFakeConfigArgs.builder
+      builder.toolFakeConfig(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.ces.inputs.AgentState.Builder)
     /**
@@ -3783,6 +3803,16 @@ object ces:
       builder.systemTools(args.map(_(argsBuilder).build)*)
 
     /**
+     * @param toolFakeConfig Configuration for tool behavior in fake mode.
+     * Structure is documented below.
+     * @return builder
+     */
+    def toolFakeConfig(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolToolFakeConfigArgs.Builder]):
+        com.pulumi.gcp.ces.inputs.ToolState.Builder =
+      val argsBuilder = com.pulumi.gcp.ces.inputs.ToolToolFakeConfigArgs.builder
+      builder.toolFakeConfig(args(argsBuilder).build)
+
+    /**
      * @param widgetTool Represents a widget tool that the agent can invoke.
      * Structure is documented below.
      * @return builder
@@ -3791,6 +3821,17 @@ object ces:
         com.pulumi.gcp.ces.inputs.ToolState.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.ToolWidgetToolArgs.builder
       builder.widgetTool(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.gcp.ces.inputs.ToolToolFakeConfigArgs.Builder)
+    /**
+     * @param codeBlock Code block which will be executed instead of a real tool call.
+     * Structure is documented below.
+     * @return builder
+     */
+    def codeBlock(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolToolFakeConfigCodeBlockArgs.Builder]):
+        com.pulumi.gcp.ces.inputs.ToolToolFakeConfigArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.ces.inputs.ToolToolFakeConfigCodeBlockArgs.builder
+      builder.codeBlock(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.ces.inputs.ToolWidgetToolArgs.Builder)
     /**
@@ -4052,3 +4093,24 @@ object ces:
         com.pulumi.gcp.ces.inputs.ToolsetState.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.ToolsetOpenApiToolsetArgs.builder
       builder.openApiToolset(args(argsBuilder).build)
+
+    /**
+     * @param toolFakeConfig Configuration for tools behavior in fake mode.
+     * Structure is documented below.
+     * @return builder
+     */
+    def toolFakeConfig(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolsetToolFakeConfigArgs.Builder]):
+        com.pulumi.gcp.ces.inputs.ToolsetState.Builder =
+      val argsBuilder = com.pulumi.gcp.ces.inputs.ToolsetToolFakeConfigArgs.builder
+      builder.toolFakeConfig(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.gcp.ces.inputs.ToolsetToolFakeConfigArgs.Builder)
+    /**
+     * @param codeBlock Code block which will be executed instead of a real tool call.
+     * Structure is documented below.
+     * @return builder
+     */
+    def codeBlock(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolsetToolFakeConfigCodeBlockArgs.Builder]):
+        com.pulumi.gcp.ces.inputs.ToolsetToolFakeConfigArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.ces.inputs.ToolsetToolFakeConfigCodeBlockArgs.builder
+      builder.codeBlock(args(argsBuilder).build)

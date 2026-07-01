@@ -568,6 +568,29 @@ object apigee:
       builder.properties(args(argsBuilder).build)
 
   /**
+   * Manages the debug mask singleton for an Apigee environment. The debug mask
+   * configuration restricts which data is captured (masked) in API proxy debug
+   * sessions for an environment.
+   * 
+   * The debug mask always exists for every environment and cannot be created or
+   * deleted through the API. Terraform manages it via `GET`/`PATCH` on the
+   * environment&#39;s `debugmask` sub-resource. Creating the resource sets the
+   * configured masks, and destroying it clears all masks.
+   * 
+   * To get more information about EnvironmentDebugmask, see:
+   * 
+   * * [API documentation](https://cloud.google.com/apigee/docs/reference/apis/apigee/rest/v1/organizations.environments/getDebugmask)
+   * * How-to Guides
+   *     * [Masking sensitive data](https://cloud.google.com/apigee/docs/api-platform/debug/masking-data)
+   */
+  def EnvironmentDebugmask(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+      (args: Endofunction[com.pulumi.gcp.apigee.EnvironmentDebugmaskArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+    val argsBuilder = com.pulumi.gcp.apigee.EnvironmentDebugmaskArgs.builder
+    com.pulumi.gcp.apigee.EnvironmentDebugmask(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+
+  /**
    * Three different resources help you manage your IAM policy for Apigee Environment. Each of these resources serves a different use case:
    * 
    * * `gcp.apigee.EnvironmentIamPolicy`: Authoritative. Sets the IAM policy for the environment and replaces any existing policy already attached.

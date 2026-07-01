@@ -2217,22 +2217,6 @@ object gkehub:
    * * [API documentation](https://docs.cloud.google.com/kubernetes-engine/fleet-management/docs/reference/rest/v1beta/projects.locations.rolloutSequences)
    * * How-to Guides
    *     * [Rollout Sequencing Overview](https://cloud.google.com/kubernetes-engine/docs/concepts/rollout-sequencing-custom-stages/about-rollout-sequencing)
-   * 
-   * ## Import
-   * 
-   * RolloutSequence can be imported using any of these accepted formats:
-   * 
-   * * `projects/{{project}}/locations/global/rolloutSequences/{{rollout_sequence_id}}`
-   * * `{{project}}/{{rollout_sequence_id}}`
-   * * `{{rollout_sequence_id}}`
-   * 
-   * When using the `pulumi import` command, RolloutSequence can be imported using one of the formats above. For example:
-   * 
-   * ```sh
-   * $ pulumi import gcp:gkehub/rolloutSequence:RolloutSequence default projects/{{project}}/locations/global/rolloutSequences/{{rollout_sequence_id}}
-   * $ pulumi import gcp:gkehub/rolloutSequence:RolloutSequence default {{project}}/{{rollout_sequence_id}}
-   * $ pulumi import gcp:gkehub/rolloutSequence:RolloutSequence default {{rollout_sequence_id}}
-   * ```
    */
   def RolloutSequence(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.gcp.gkehub.RolloutSequenceArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =

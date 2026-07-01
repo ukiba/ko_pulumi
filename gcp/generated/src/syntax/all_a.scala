@@ -267,6 +267,7 @@ export ko_pulumi.gcp.ces.clientCertificateSettings
 export ko_pulumi.gcp.ces.clientFunction
 export ko_pulumi.gcp.ces.clientFunctions
 export ko_pulumi.gcp.ces.cloudLoggingSettings
+export ko_pulumi.gcp.ces.codeBlock
 export ko_pulumi.gcp.ces.codeCallback
 export ko_pulumi.gcp.ces.codeCallbacks
 export ko_pulumi.gcp.ces.conditionBoostSpecs
@@ -327,6 +328,7 @@ export ko_pulumi.gcp.chronicle.azureMdmIntuneSettings
 export ko_pulumi.gcp.chronicle.azureV2WorkloadIdentityFederation
 export ko_pulumi.gcp.chronicle.baseValue
 export ko_pulumi.gcp.chronicle.button
+export ko_pulumi.gcp.chronicle.changelogs
 export ko_pulumi.gcp.chronicle.chartDatasource
 export ko_pulumi.gcp.chronicle.chartLayout
 export ko_pulumi.gcp.chronicle.charts
@@ -339,6 +341,7 @@ export ko_pulumi.gcp.chronicle.columnRenderTypeSettings
 export ko_pulumi.gcp.chronicle.columnTooltipSettings
 export ko_pulumi.gcp.chronicle.compilationDiagnostics
 export ko_pulumi.gcp.chronicle.cortexXdrSettings
+export ko_pulumi.gcp.chronicle.creators
 export ko_pulumi.gcp.chronicle.crowdstrikeAlertsSettings
 export ko_pulumi.gcp.chronicle.crowdstrikeDetectsSettings
 export ko_pulumi.gcp.chronicle.customSettings
@@ -350,16 +353,19 @@ export ko_pulumi.gcp.chronicle.dataSettings
 export ko_pulumi.gcp.chronicle.defaultSettings
 export ko_pulumi.gcp.chronicle.deniedDataAccessLabels
 export ko_pulumi.gcp.chronicle.details
+export ko_pulumi.gcp.chronicle.detectionExclusionApplication
 export ko_pulumi.gcp.chronicle.drillDownConfig
 export ko_pulumi.gcp.chronicle.dummyLogTypeSettings
 export ko_pulumi.gcp.chronicle.duoAuthSettings
 export ko_pulumi.gcp.chronicle.duoUserContextSettings
+export ko_pulumi.gcp.chronicle.dynamicParsing
 export ko_pulumi.gcp.chronicle.encode
 export ko_pulumi.gcp.chronicle.entityCounts
 export ko_pulumi.gcp.chronicle.entityPopulationMechanism
 export ko_pulumi.gcp.chronicle.entries
 export ko_pulumi.gcp.chronicle.executionIntervals
 export ko_pulumi.gcp.chronicle.externalLink
+export ko_pulumi.gcp.chronicle.extractors
 export ko_pulumi.gcp.cloudasset.condition
 export ko_pulumi.gcp.cloudbuild.approvalConfig
 export ko_pulumi.gcp.cloudbuild.artifacts
@@ -1147,6 +1153,7 @@ export ko_pulumi.gcp.networkservices.corsPolicy
 export ko_pulumi.gcp.networkservices.delay
 export ko_pulumi.gcp.networkservices.destination
 export ko_pulumi.gcp.networkservices.destinations
+export ko_pulumi.gcp.networkservices.dnsPeeringConfig
 export ko_pulumi.gcp.networkservices.egress
 export ko_pulumi.gcp.networkservices.endpointMatcher
 export ko_pulumi.gcp.networkservices.extensionChains
@@ -1362,6 +1369,10 @@ export ko_pulumi.gcp.vertex.condition
 export ko_pulumi.gcp.vertex.config
 export ko_pulumi.gcp.vertex.containerSpec
 export ko_pulumi.gcp.vertex.contextSpec
+export ko_pulumi.gcp.vertex.createNotebookExecutionJobRequest
+export ko_pulumi.gcp.vertex.createPipelineJobRequest
+export ko_pulumi.gcp.vertex.customEnvironmentSpec
+export ko_pulumi.gcp.vertex.dataformRepositorySource
 export ko_pulumi.gcp.vertex.dedicatedResources
 export ko_pulumi.gcp.vertex.dedicatedServingEndpoint
 export ko_pulumi.gcp.vertex.deployConfig
@@ -1370,6 +1381,7 @@ export ko_pulumi.gcp.vertex.deployedIndexes
 export ko_pulumi.gcp.vertex.deployedModels
 export ko_pulumi.gcp.vertex.deploymentSpec
 export ko_pulumi.gcp.vertex.developerConnectSource
+export ko_pulumi.gcp.vertex.directNotebookSource
 export ko_pulumi.gcp.vertex.dnsPeeringConfigs
 export ko_pulumi.gcp.vertex.embeddingManagement
 export ko_pulumi.gcp.vertex.encryptionSpec

@@ -770,8 +770,7 @@ object container:
       builder.nodePoolDefaults(args(argsBuilder).build)
 
     /**
-     * @param nodePools List of node pools associated with this cluster.
-     * See gcp.container.NodePool for schema.
+     * @param nodePools List of node pools associated with this cluster. Structure is documented below. See gcp.container.NodePool for exact schema.
      * **Warning:** node pools defined inside a cluster can&#39;t be changed (or added/removed) after
      * cluster creation without deleting and recreating the entire cluster. Unless you absolutely need the ability
      * to say &#34;these are the _only_ node pools associated with this cluster&#34;, use the
@@ -1156,8 +1155,7 @@ object container:
       builder.networkConfig(args(argsBuilder).build)
 
     /**
-     * @param nodeConfig Parameters used in creating the node pool. See
-     * gcp.container.Cluster for schema.
+     * @param nodeConfig Parameters used in creating the node pool. Structure is documented below. See gcp.container.Cluster for exact schema.
      * @return builder
      */
     def nodeConfig(args: Endofunction[com.pulumi.gcp.container.inputs.NodePoolNodeConfigArgs.Builder]):
@@ -2057,8 +2055,6 @@ object container:
 
     /**
      * @param podSnapshotConfig The status of the Pod Snapshot addon. It is disabled by default. Set `enabled = true` to enable.
-     * 
-     * This example `addonsConfig` disables two addons:
      * @return builder
      */
     def podSnapshotConfig(args: Endofunction[com.pulumi.gcp.container.inputs.ClusterAddonsConfigPodSnapshotConfigArgs.Builder]):
@@ -2096,6 +2092,20 @@ object container:
         com.pulumi.gcp.container.inputs.ClusterAddonsConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.container.inputs.ClusterAddonsConfigSliceControllerConfigArgs.builder
       builder.sliceControllerConfig(args(argsBuilder).build)
+
+    /**
+     * @param slurmOperatorConfig The status of the Slurm Operator addon,
+     * which creates slurm related CRDs and KCP pods to manage them.
+     * Defaults to disabled for Standard clusters; set `enabled = true` to enable.
+     * It can not be enabled for Autopilot clusters.
+     * 
+     * This example `addonsConfig` disables two addons:
+     * @return builder
+     */
+    def slurmOperatorConfig(args: Endofunction[com.pulumi.gcp.container.inputs.ClusterAddonsConfigSlurmOperatorConfigArgs.Builder]):
+        com.pulumi.gcp.container.inputs.ClusterAddonsConfigArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.container.inputs.ClusterAddonsConfigSlurmOperatorConfigArgs.builder
+      builder.slurmOperatorConfig(args(argsBuilder).build)
 
     /**
      * @param statefulHaConfig .
@@ -2541,6 +2551,15 @@ object container:
       builder.localNvmeSsdBlockConfig(args(argsBuilder).build)
 
     /**
+     * @param nodeImageConfigs The node image configuration to use for this node pool. Structure is documented below.
+     * @return builder
+     */
+    def nodeImageConfigs(args: Endofunction[com.pulumi.gcp.container.inputs.ClusterNodeConfigNodeImageConfigArgs.Builder]*):
+        com.pulumi.gcp.container.inputs.ClusterNodeConfigArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.container.inputs.ClusterNodeConfigNodeImageConfigArgs.builder
+      builder.nodeImageConfigs(args.map(_(argsBuilder).build)*)
+
+    /**
      * @param reservationAffinity The configuration of the desired reservation which instances could take capacity from. Structure is documented below.
      * @return builder
      */
@@ -2585,6 +2604,15 @@ object container:
         com.pulumi.gcp.container.inputs.ClusterNodeConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.container.inputs.ClusterNodeConfigSoleTenantConfigArgs.builder
       builder.soleTenantConfig(args(argsBuilder).build)
+
+    /**
+     * @param taintConfig Taint configuration for the node pool. Structure is documented below.
+     * @return builder
+     */
+    def taintConfig(args: Endofunction[com.pulumi.gcp.container.inputs.ClusterNodeConfigTaintConfigArgs.Builder]):
+        com.pulumi.gcp.container.inputs.ClusterNodeConfigArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.container.inputs.ClusterNodeConfigTaintConfigArgs.builder
+      builder.taintConfig(args(argsBuilder).build)
 
     /**
      * @param taints A list of
@@ -2915,11 +2943,7 @@ object container:
       builder.networkConfig(args(argsBuilder).build)
 
     /**
-     * @param nodeConfig Parameters used in creating the default node pool.
-     * Generally, this field should not be used at the same time as a
-     * `gcp.container.NodePool` or a `nodePool` block; this configuration
-     * manages the default node pool, which isn&#39;t recommended to be used.
-     * Structure is documented below.
+     * @param nodeConfig The node configuration of the pool. Structure is documented below.
      * @return builder
      */
     def nodeConfig(args: Endofunction[com.pulumi.gcp.container.inputs.ClusterNodePoolNodeConfigArgs.Builder]):
@@ -3325,6 +3349,15 @@ object container:
       builder.localNvmeSsdBlockConfig(args(argsBuilder).build)
 
     /**
+     * @param nodeImageConfigs The node image configuration to use for this node pool. Structure is documented below.
+     * @return builder
+     */
+    def nodeImageConfigs(args: Endofunction[com.pulumi.gcp.container.inputs.ClusterNodePoolNodeConfigNodeImageConfigArgs.Builder]*):
+        com.pulumi.gcp.container.inputs.ClusterNodePoolNodeConfigArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.container.inputs.ClusterNodePoolNodeConfigNodeImageConfigArgs.builder
+      builder.nodeImageConfigs(args.map(_(argsBuilder).build)*)
+
+    /**
      * @param reservationAffinity The configuration of the desired reservation which instances could take capacity from. Structure is documented below.
      * @return builder
      */
@@ -3369,6 +3402,15 @@ object container:
         com.pulumi.gcp.container.inputs.ClusterNodePoolNodeConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.container.inputs.ClusterNodePoolNodeConfigSoleTenantConfigArgs.builder
       builder.soleTenantConfig(args(argsBuilder).build)
+
+    /**
+     * @param taintConfig Taint configuration for the node pool. Structure is documented below.
+     * @return builder
+     */
+    def taintConfig(args: Endofunction[com.pulumi.gcp.container.inputs.ClusterNodePoolNodeConfigTaintConfigArgs.Builder]):
+        com.pulumi.gcp.container.inputs.ClusterNodePoolNodeConfigArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.container.inputs.ClusterNodePoolNodeConfigTaintConfigArgs.builder
+      builder.taintConfig(args(argsBuilder).build)
 
     /**
      * @param taints A list of
@@ -4118,8 +4160,7 @@ object container:
       builder.nodePoolDefaults(args(argsBuilder).build)
 
     /**
-     * @param nodePools List of node pools associated with this cluster.
-     * See gcp.container.NodePool for schema.
+     * @param nodePools List of node pools associated with this cluster. Structure is documented below. See gcp.container.NodePool for exact schema.
      * **Warning:** node pools defined inside a cluster can&#39;t be changed (or added/removed) after
      * cluster creation without deleting and recreating the entire cluster. Unless you absolutely need the ability
      * to say &#34;these are the _only_ node pools associated with this cluster&#34;, use the
@@ -4483,6 +4524,15 @@ object container:
       builder.localNvmeSsdBlockConfig(args(argsBuilder).build)
 
     /**
+     * @param nodeImageConfigs The node image configuration to use for this node pool.
+     * @return builder
+     */
+    def nodeImageConfigs(args: Endofunction[com.pulumi.gcp.container.inputs.NodePoolNodeConfigNodeImageConfigArgs.Builder]*):
+        com.pulumi.gcp.container.inputs.NodePoolNodeConfigArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.container.inputs.NodePoolNodeConfigNodeImageConfigArgs.builder
+      builder.nodeImageConfigs(args.map(_(argsBuilder).build)*)
+
+    /**
      * @param reservationAffinity The reservation affinity configuration for the node pool.
      * @return builder
      */
@@ -4526,6 +4576,15 @@ object container:
         com.pulumi.gcp.container.inputs.NodePoolNodeConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.container.inputs.NodePoolNodeConfigSoleTenantConfigArgs.builder
       builder.soleTenantConfig(args(argsBuilder).build)
+
+    /**
+     * @param taintConfig Taint configuration for the node pool. Structure is documented below.
+     * @return builder
+     */
+    def taintConfig(args: Endofunction[com.pulumi.gcp.container.inputs.NodePoolNodeConfigTaintConfigArgs.Builder]):
+        com.pulumi.gcp.container.inputs.NodePoolNodeConfigArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.container.inputs.NodePoolNodeConfigTaintConfigArgs.builder
+      builder.taintConfig(args(argsBuilder).build)
 
     /**
      * @param taints List of Kubernetes taints to be applied to each node.
@@ -4850,8 +4909,7 @@ object container:
       builder.networkConfig(args(argsBuilder).build)
 
     /**
-     * @param nodeConfig Parameters used in creating the node pool. See
-     * gcp.container.Cluster for schema.
+     * @param nodeConfig Parameters used in creating the node pool. Structure is documented below. See gcp.container.Cluster for exact schema.
      * @return builder
      */
     def nodeConfig(args: Endofunction[com.pulumi.gcp.container.inputs.NodePoolNodeConfigArgs.Builder]):

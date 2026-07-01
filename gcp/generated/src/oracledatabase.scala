@@ -488,6 +488,28 @@ object oracledatabase:
       com.pulumi.gcp.oracledatabase.OracledatabaseFunctions.getGoldengateDeploymentTypesPlain(args(argsBuilder).build)
 
     /**
+     * List all Goldengate Deployment Versions in a location.
+     * 
+     * For more information see the
+     * [API](https://cloud.google.com/oracle/database/docs/reference/rest/v1/projects.locations.goldengateDeploymentVersions).
+     */
+    inline def getGoldengateDeploymentVersions(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GetGoldengateDeploymentVersionsArgs.Builder] = scala.Predef.identity):
+        com.pulumi.core.Output[com.pulumi.gcp.oracledatabase.outputs.GetGoldengateDeploymentVersionsResult] =
+      val argsBuilder = com.pulumi.gcp.oracledatabase.inputs.GetGoldengateDeploymentVersionsArgs.builder
+      com.pulumi.gcp.oracledatabase.OracledatabaseFunctions.getGoldengateDeploymentVersions(args(argsBuilder).build)
+
+    /**
+     * List all Goldengate Deployment Versions in a location.
+     * 
+     * For more information see the
+     * [API](https://cloud.google.com/oracle/database/docs/reference/rest/v1/projects.locations.goldengateDeploymentVersions).
+     */
+    inline def getGoldengateDeploymentVersionsPlain(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GetGoldengateDeploymentVersionsPlainArgs.Builder] = scala.Predef.identity):
+        java.util.concurrent.CompletableFuture[com.pulumi.gcp.oracledatabase.outputs.GetGoldengateDeploymentVersionsResult] =
+      val argsBuilder = com.pulumi.gcp.oracledatabase.inputs.GetGoldengateDeploymentVersionsPlainArgs.builder
+      com.pulumi.gcp.oracledatabase.OracledatabaseFunctions.getGoldengateDeploymentVersionsPlain(args(argsBuilder).build)
+
+    /**
      * Get information about an ODB Network.
      * 
      * For more information see the

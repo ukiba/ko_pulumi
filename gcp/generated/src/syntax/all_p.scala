@@ -80,7 +80,9 @@ export ko_pulumi.gcp.beyondcorp.serviceAccount
 export ko_pulumi.gcp.beyondcorp.serviceDiscovery
 export ko_pulumi.gcp.biglake.partitionSpec
 export ko_pulumi.gcp.biglake.replicas
+export ko_pulumi.gcp.biglake.restrictedLocationsConfig
 export ko_pulumi.gcp.biglake.schema
+export ko_pulumi.gcp.biglake.sortOrder
 export ko_pulumi.gcp.biglake.storageDescriptor
 export ko_pulumi.gcp.bigquery.parquetOptions
 export ko_pulumi.gcp.bigquery.password
@@ -195,6 +197,7 @@ export ko_pulumi.gcp.ces.tlsConfigs
 export ko_pulumi.gcp.ces.toolCall
 export ko_pulumi.gcp.ces.toolCalls
 export ko_pulumi.gcp.ces.toolExpectation
+export ko_pulumi.gcp.ces.toolFakeConfig
 export ko_pulumi.gcp.ces.toolResponse
 export ko_pulumi.gcp.ces.toolResponses
 export ko_pulumi.gcp.ces.tools
@@ -210,6 +213,7 @@ export ko_pulumi.gcp.chronicle.panPrismaCloudSettings
 export ko_pulumi.gcp.chronicle.pieces
 export ko_pulumi.gcp.chronicle.pointSettings
 export ko_pulumi.gcp.chronicle.position
+export ko_pulumi.gcp.chronicle.preprocessConfig
 export ko_pulumi.gcp.chronicle.processInterval
 export ko_pulumi.gcp.chronicle.proofpointMailSettings
 export ko_pulumi.gcp.chronicle.proofpointOnDemandSettings
@@ -532,6 +536,7 @@ export ko_pulumi.gcp.container.securityPostureConfig
 export ko_pulumi.gcp.container.serviceExternalIpsConfig
 export ko_pulumi.gcp.container.shieldedInstanceConfig
 export ko_pulumi.gcp.container.sliceControllerConfig
+export ko_pulumi.gcp.container.slurmOperatorConfig
 export ko_pulumi.gcp.container.soleTenantConfig
 export ko_pulumi.gcp.container.spotConfig
 export ko_pulumi.gcp.container.sshConfig
@@ -539,6 +544,7 @@ export ko_pulumi.gcp.container.standardRolloutPolicy
 export ko_pulumi.gcp.container.statefulHaConfig
 export ko_pulumi.gcp.container.surgeSettings
 export ko_pulumi.gcp.container.swapConfig
+export ko_pulumi.gcp.container.taintConfig
 export ko_pulumi.gcp.container.taints
 export ko_pulumi.gcp.container.topologyManager
 export ko_pulumi.gcp.container.tpuConfig
@@ -638,6 +644,7 @@ export ko_pulumi.gcp.dataplex.resourceStatuses
 export ko_pulumi.gcp.dataplex.rowConditionExpectation
 export ko_pulumi.gcp.dataplex.rules
 export ko_pulumi.gcp.dataplex.schedule
+export ko_pulumi.gcp.dataplex.scope
 export ko_pulumi.gcp.dataplex.scoreThresholdTrigger
 export ko_pulumi.gcp.dataplex.securityStatuses
 export ko_pulumi.gcp.dataplex.serviceAccount
@@ -1014,6 +1021,7 @@ export ko_pulumi.gcp.networksecurity.rules
 export ko_pulumi.gcp.networksecurity.serverCertificate
 export ko_pulumi.gcp.networksecurity.serverValidationCas
 export ko_pulumi.gcp.networksecurity.severityOverrides
+export ko_pulumi.gcp.networksecurity.snis
 export ko_pulumi.gcp.networksecurity.sources
 export ko_pulumi.gcp.networksecurity.symantecOptions
 export ko_pulumi.gcp.networksecurity.tagValueIdSet
@@ -1152,6 +1160,7 @@ export ko_pulumi.gcp.spanner.replicas
 export ko_pulumi.gcp.spanner.spec
 export ko_pulumi.gcp.sql.passwordPolicy
 export ko_pulumi.gcp.sql.passwordValidationPolicy
+export ko_pulumi.gcp.sql.performanceCaptureConfig
 export ko_pulumi.gcp.sql.pointInTimeRestoreContext
 export ko_pulumi.gcp.sql.pscAutoConnections
 export ko_pulumi.gcp.sql.pscConfigs
@@ -1205,6 +1214,8 @@ export ko_pulumi.gcp.transcoder.secretManagerKeySource
 export ko_pulumi.gcp.transcoder.segmentSettings
 export ko_pulumi.gcp.vectorsearch.sparseVector
 export ko_pulumi.gcp.vertex.packageSpec
+export ko_pulumi.gcp.vertex.persistentDiskSpec
+export ko_pulumi.gcp.vertex.pipelineJob
 export ko_pulumi.gcp.vertex.ports
 export ko_pulumi.gcp.vertex.predictRequestResponseLoggingConfig
 export ko_pulumi.gcp.vertex.privateEndpoints
@@ -1215,6 +1226,7 @@ export ko_pulumi.gcp.vertex.pscInterfaceConfig
 export ko_pulumi.gcp.vertex.pythonSpec
 export ko_pulumi.gcp.vertex.ragManagedDbConfig
 export ko_pulumi.gcp.vertex.reservationAffinity
+export ko_pulumi.gcp.vertex.runtimeConfig
 export ko_pulumi.gcp.vertex.scaled
 export ko_pulumi.gcp.vertex.scaling
 export ko_pulumi.gcp.vertex.secretEnvs
@@ -1227,6 +1239,7 @@ export ko_pulumi.gcp.vertex.startupProbe
 export ko_pulumi.gcp.vertex.states
 export ko_pulumi.gcp.vertex.syncConfig
 export ko_pulumi.gcp.vertex.tcpSocket
+export ko_pulumi.gcp.vertex.templateMetadatas
 export ko_pulumi.gcp.vertex.treeAhConfig
 export ko_pulumi.gcp.vertex.ttlConfig
 export ko_pulumi.gcp.vmwareengine.sourceIpRanges

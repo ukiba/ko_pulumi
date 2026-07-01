@@ -92,6 +92,7 @@ export ko_pulumi.gcp.ces.openApiToolsets
 export ko_pulumi.gcp.chronicle.leftDrillDowns
 export ko_pulumi.gcp.chronicle.legends
 export ko_pulumi.gcp.chronicle.limitValue
+export ko_pulumi.gcp.chronicle.lowCode
 export ko_pulumi.gcp.chronicle.mandiantIocSettings
 export ko_pulumi.gcp.chronicle.manual
 export ko_pulumi.gcp.chronicle.mapPosition
@@ -109,6 +110,7 @@ export ko_pulumi.gcp.chronicle.oauthPasswordGrantAuth
 export ko_pulumi.gcp.chronicle.office365Settings
 export ko_pulumi.gcp.chronicle.oktaSettings
 export ko_pulumi.gcp.chronicle.oktaUserContextSettings
+export ko_pulumi.gcp.chronicle.optedFields
 export ko_pulumi.gcp.chronicle.outcomeFilters
 export ko_pulumi.gcp.cloudbuild.mavenArtifacts
 export ko_pulumi.gcp.cloudbuild.networkConfig
@@ -236,6 +238,7 @@ export ko_pulumi.gcp.container.nodeConfig
 export ko_pulumi.gcp.container.nodeConfigDefaults
 export ko_pulumi.gcp.container.nodeCreationConfig
 export ko_pulumi.gcp.container.nodeDrainConfigs
+export ko_pulumi.gcp.container.nodeImageConfigs
 export ko_pulumi.gcp.container.nodeKernelModuleLoading
 export ko_pulumi.gcp.container.nodeKubeletConfig
 export ko_pulumi.gcp.container.nodePoolAutoConfig
@@ -513,6 +516,7 @@ export ko_pulumi.gcp.networksecurity.locationsDetails
 export ko_pulumi.gcp.networksecurity.mcp
 export ko_pulumi.gcp.networksecurity.methods
 export ko_pulumi.gcp.networksecurity.mtlsPolicy
+export ko_pulumi.gcp.networksecurity.networkRules
 export ko_pulumi.gcp.networksecurity.notOperations
 export ko_pulumi.gcp.networksecurity.notSources
 export ko_pulumi.gcp.networksecurity.operations
@@ -598,6 +602,7 @@ export ko_pulumi.gcp.transcoder.mpegCenc
 export ko_pulumi.gcp.transcoder.muxStreams
 export ko_pulumi.gcp.transcoder.output
 export ko_pulumi.gcp.transcoder.overlays
+export ko_pulumi.gcp.vertex.lastScheduledRunResponses
 export ko_pulumi.gcp.vertex.livenessProbe
 export ko_pulumi.gcp.vertex.machineSpec
 export ko_pulumi.gcp.vertex.machineSpecs
@@ -605,6 +610,8 @@ export ko_pulumi.gcp.vertex.memoryBankConfig
 export ko_pulumi.gcp.vertex.metadata
 export ko_pulumi.gcp.vertex.modelConfig
 export ko_pulumi.gcp.vertex.monitoringConfig
+export ko_pulumi.gcp.vertex.networkSpec
+export ko_pulumi.gcp.vertex.notebookExecutionJob
 export ko_pulumi.gcp.vertex.numericalThresholdConfig
 export ko_pulumi.gcp.vertex.onlineServingConfig
 export ko_pulumi.gcp.vertex.optimized

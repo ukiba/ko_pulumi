@@ -59,6 +59,14 @@ object migrationcenter:
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
 
+  /** ImportDataFile represents a user-uploaded data payload file containing infrastructure discovery data. */
+  def ImportDataFile(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+      (args: Endofunction[com.pulumi.gcp.migrationcenter.ImportDataFileArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+    val argsBuilder = com.pulumi.gcp.migrationcenter.ImportDataFileArgs.builder
+    com.pulumi.gcp.migrationcenter.ImportDataFile(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+
   /** ImportJob represents a batch data import task that processes uploaded data files and populates Migration Center assets. */
   def ImportJob(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.gcp.migrationcenter.ImportJobArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
@@ -352,6 +360,17 @@ object migrationcenter:
         com.pulumi.gcp.migrationcenter.inputs.DiscoveryClientState.Builder =
       def argsBuilder = com.pulumi.gcp.migrationcenter.inputs.DiscoveryClientErrorArgs.builder
       builder.errors(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.gcp.migrationcenter.inputs.ImportDataFileState.Builder)
+    /**
+     * @param uploadFileInfos A resource that contains a URI to which a data file can be uploaded.
+     * Structure is documented below.
+     * @return builder
+     */
+    def uploadFileInfos(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.ImportDataFileUploadFileInfoArgs.Builder]*):
+        com.pulumi.gcp.migrationcenter.inputs.ImportDataFileState.Builder =
+      def argsBuilder = com.pulumi.gcp.migrationcenter.inputs.ImportDataFileUploadFileInfoArgs.builder
+      builder.uploadFileInfos(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.gcp.migrationcenter.inputs.ImportJobExecutionReportArgs.Builder)
     /**

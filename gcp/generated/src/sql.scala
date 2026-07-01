@@ -402,6 +402,15 @@ object sql:
       builder.passwordValidationPolicy(args(argsBuilder).build)
 
     /**
+     * @param performanceCaptureConfig Configuration of Performance Capture.
+     * @return builder
+     */
+    def performanceCaptureConfig(args: Endofunction[com.pulumi.gcp.sql.inputs.DatabaseInstanceSettingsPerformanceCaptureConfigArgs.Builder]):
+        com.pulumi.gcp.sql.inputs.DatabaseInstanceSettingsArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.sql.inputs.DatabaseInstanceSettingsPerformanceCaptureConfigArgs.builder
+      builder.performanceCaptureConfig(args(argsBuilder).build)
+
+    /**
      * @param readPoolAutoScaleConfig Configuration of Read Pool Auto Scale.
      * @return builder
      */

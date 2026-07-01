@@ -6448,6 +6448,35 @@ object vertex:
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
 
+  /** An online schedule that triggers running pipeline jobs or notebook execution jobs. */
+  def AiSchedule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+      (args: Endofunction[com.pulumi.gcp.vertex.AiScheduleArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+    val argsBuilder = com.pulumi.gcp.vertex.AiScheduleArgs.builder
+    com.pulumi.gcp.vertex.AiSchedule(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+
+  extension (builder: com.pulumi.gcp.vertex.AiScheduleArgs.Builder)
+    /**
+     * @param createNotebookExecutionJobRequest Request message for [NotebookService.CreateNotebookExecutionJob]
+     * Structure is documented below.
+     * @return builder
+     */
+    def createNotebookExecutionJobRequest(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiScheduleCreateNotebookExecutionJobRequestArgs.Builder]):
+        com.pulumi.gcp.vertex.AiScheduleArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.vertex.inputs.AiScheduleCreateNotebookExecutionJobRequestArgs.builder
+      builder.createNotebookExecutionJobRequest(args(argsBuilder).build)
+
+    /**
+     * @param createPipelineJobRequest Request message for PipelineService.CreatePipelineJob.
+     * Structure is documented below.
+     * @return builder
+     */
+    def createPipelineJobRequest(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiScheduleCreatePipelineJobRequestArgs.Builder]):
+        com.pulumi.gcp.vertex.AiScheduleArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.vertex.inputs.AiScheduleCreatePipelineJobRequestArgs.builder
+      builder.createPipelineJobRequest(args(argsBuilder).build)
+
   /**
    * Tensorboard is a physical database that stores users&#39; training metrics. A default Tensorboard is provided in each region of a GCP project. If needed users can also create extra Tensorboards in their projects.
    * 
@@ -6474,6 +6503,38 @@ object vertex:
         com.pulumi.gcp.vertex.AiTensorboardArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiTensorboardEncryptionSpecArgs.builder
       builder.encryptionSpec(args(argsBuilder).build)
+
+  /**
+   * A TensorboardExperiment is a group of TensorboardRuns that are logically grouped together.
+   * 
+   * To get more information about TensorboardExperiment, see:
+   * 
+   * * [API documentation](https://cloud.google.com/vertex-ai/docs/reference/rest/v1/projects.locations.tensorboards.experiments)
+   * * How-to Guides
+   *     * [Official Documentation](https://cloud.google.com/vertex-ai/docs)
+   */
+  def AiTensorboardExperiment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+      (args: Endofunction[com.pulumi.gcp.vertex.AiTensorboardExperimentArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+    val argsBuilder = com.pulumi.gcp.vertex.AiTensorboardExperimentArgs.builder
+    com.pulumi.gcp.vertex.AiTensorboardExperiment(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+
+  /**
+   * A TensorboardRun is a single execution of a training job.
+   * 
+   * To get more information about TensorboardRun, see:
+   * 
+   * * [API documentation](https://cloud.google.com/vertex-ai/docs/reference/rest/v1/projects.locations.tensorboards.experiments.runs)
+   * * How-to Guides
+   *     * [Official Documentation](https://cloud.google.com/vertex-ai/docs)
+   */
+  def AiTensorboardRun(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+      (args: Endofunction[com.pulumi.gcp.vertex.AiTensorboardRunArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+    val argsBuilder = com.pulumi.gcp.vertex.AiTensorboardRunArgs.builder
+    com.pulumi.gcp.vertex.AiTensorboardRun(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
 
   object VertexFunctions:
     // Pulumi methods are reproduced as Scala methods.
@@ -8026,6 +8087,214 @@ object vertex:
         com.pulumi.gcp.vertex.inputs.AiReasoningEngineState.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiReasoningEngineSpecArgs.builder
       builder.spec(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.gcp.vertex.inputs.AiScheduleCreateNotebookExecutionJobRequestArgs.Builder)
+    /**
+     * @param notebookExecutionJob NotebookExecutionJob represents an instance of a notebook execution.
+     * Structure is documented below.
+     * @return builder
+     */
+    def notebookExecutionJob(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiScheduleCreateNotebookExecutionJobRequestNotebookExecutionJobArgs.Builder]):
+        com.pulumi.gcp.vertex.inputs.AiScheduleCreateNotebookExecutionJobRequestArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.vertex.inputs.AiScheduleCreateNotebookExecutionJobRequestNotebookExecutionJobArgs.builder
+      builder.notebookExecutionJob(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.gcp.vertex.inputs.AiScheduleCreateNotebookExecutionJobRequestNotebookExecutionJobArgs.Builder)
+    /**
+     * @param customEnvironmentSpec Compute configuration to use for an execution job.
+     * Structure is documented below.
+     * @return builder
+     */
+    def customEnvironmentSpec(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiScheduleCreateNotebookExecutionJobRequestNotebookExecutionJobCustomEnvironmentSpecArgs.Builder]):
+        com.pulumi.gcp.vertex.inputs.AiScheduleCreateNotebookExecutionJobRequestNotebookExecutionJobArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.vertex.inputs.AiScheduleCreateNotebookExecutionJobRequestNotebookExecutionJobCustomEnvironmentSpecArgs.builder
+      builder.customEnvironmentSpec(args(argsBuilder).build)
+
+    /**
+     * @param dataformRepositorySource The Dataform Repository containing the input notebook.
+     * Structure is documented below.
+     * @return builder
+     */
+    def dataformRepositorySource(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiScheduleCreateNotebookExecutionJobRequestNotebookExecutionJobDataformRepositorySourceArgs.Builder]):
+        com.pulumi.gcp.vertex.inputs.AiScheduleCreateNotebookExecutionJobRequestNotebookExecutionJobArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.vertex.inputs.AiScheduleCreateNotebookExecutionJobRequestNotebookExecutionJobDataformRepositorySourceArgs.builder
+      builder.dataformRepositorySource(args(argsBuilder).build)
+
+    /**
+     * @param directNotebookSource The content of the input notebook in ipynb format.
+     * Structure is documented below.
+     * @return builder
+     */
+    def directNotebookSource(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiScheduleCreateNotebookExecutionJobRequestNotebookExecutionJobDirectNotebookSourceArgs.Builder]):
+        com.pulumi.gcp.vertex.inputs.AiScheduleCreateNotebookExecutionJobRequestNotebookExecutionJobArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.vertex.inputs.AiScheduleCreateNotebookExecutionJobRequestNotebookExecutionJobDirectNotebookSourceArgs.builder
+      builder.directNotebookSource(args(argsBuilder).build)
+
+    /**
+     * @param encryptionSpec Represents a customer-managed encryption key specification that can be applied to a Vertex AI resource.
+     * Structure is documented below.
+     * @return builder
+     */
+    def encryptionSpec(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiScheduleCreateNotebookExecutionJobRequestNotebookExecutionJobEncryptionSpecArgs.Builder]):
+        com.pulumi.gcp.vertex.inputs.AiScheduleCreateNotebookExecutionJobRequestNotebookExecutionJobArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.vertex.inputs.AiScheduleCreateNotebookExecutionJobRequestNotebookExecutionJobEncryptionSpecArgs.builder
+      builder.encryptionSpec(args(argsBuilder).build)
+
+    /**
+     * @param gcsNotebookSource The Cloud Storage uri for the input notebook.
+     * Structure is documented below.
+     * @return builder
+     */
+    def gcsNotebookSource(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiScheduleCreateNotebookExecutionJobRequestNotebookExecutionJobGcsNotebookSourceArgs.Builder]):
+        com.pulumi.gcp.vertex.inputs.AiScheduleCreateNotebookExecutionJobRequestNotebookExecutionJobArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.vertex.inputs.AiScheduleCreateNotebookExecutionJobRequestNotebookExecutionJobGcsNotebookSourceArgs.builder
+      builder.gcsNotebookSource(args(argsBuilder).build)
+
+    /**
+     * @param workbenchRuntime Configuration for a Workbench Instances-based environment.
+     * @return builder
+     */
+    def workbenchRuntime(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiScheduleCreateNotebookExecutionJobRequestNotebookExecutionJobWorkbenchRuntimeArgs.Builder]):
+        com.pulumi.gcp.vertex.inputs.AiScheduleCreateNotebookExecutionJobRequestNotebookExecutionJobArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.vertex.inputs.AiScheduleCreateNotebookExecutionJobRequestNotebookExecutionJobWorkbenchRuntimeArgs.builder
+      builder.workbenchRuntime(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.gcp.vertex.inputs.AiScheduleCreateNotebookExecutionJobRequestNotebookExecutionJobCustomEnvironmentSpecArgs.Builder)
+    /**
+     * @param machineSpec Specification of a single machine.
+     * Structure is documented below.
+     * @return builder
+     */
+    def machineSpec(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiScheduleCreateNotebookExecutionJobRequestNotebookExecutionJobCustomEnvironmentSpecMachineSpecArgs.Builder]):
+        com.pulumi.gcp.vertex.inputs.AiScheduleCreateNotebookExecutionJobRequestNotebookExecutionJobCustomEnvironmentSpecArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.vertex.inputs.AiScheduleCreateNotebookExecutionJobRequestNotebookExecutionJobCustomEnvironmentSpecMachineSpecArgs.builder
+      builder.machineSpec(args(argsBuilder).build)
+
+    /**
+     * @param networkSpec Network spec.
+     * Structure is documented below.
+     * @return builder
+     */
+    def networkSpec(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiScheduleCreateNotebookExecutionJobRequestNotebookExecutionJobCustomEnvironmentSpecNetworkSpecArgs.Builder]):
+        com.pulumi.gcp.vertex.inputs.AiScheduleCreateNotebookExecutionJobRequestNotebookExecutionJobCustomEnvironmentSpecArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.vertex.inputs.AiScheduleCreateNotebookExecutionJobRequestNotebookExecutionJobCustomEnvironmentSpecNetworkSpecArgs.builder
+      builder.networkSpec(args(argsBuilder).build)
+
+    /**
+     * @param persistentDiskSpec Represents the spec of persistent disk options.
+     * Structure is documented below.
+     * @return builder
+     */
+    def persistentDiskSpec(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiScheduleCreateNotebookExecutionJobRequestNotebookExecutionJobCustomEnvironmentSpecPersistentDiskSpecArgs.Builder]):
+        com.pulumi.gcp.vertex.inputs.AiScheduleCreateNotebookExecutionJobRequestNotebookExecutionJobCustomEnvironmentSpecArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.vertex.inputs.AiScheduleCreateNotebookExecutionJobRequestNotebookExecutionJobCustomEnvironmentSpecPersistentDiskSpecArgs.builder
+      builder.persistentDiskSpec(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.gcp.vertex.inputs.AiScheduleCreateNotebookExecutionJobRequestNotebookExecutionJobCustomEnvironmentSpecMachineSpecArgs.Builder)
+    /**
+     * @param reservationAffinity A ReservationAffinity can be used to configure a Vertex AI resource (e.g., a DeployedModel) to draw its Compute Engine resources from a Shared Reservation, or exclusively from on-demand capacity.
+     * Structure is documented below.
+     * @return builder
+     */
+    def reservationAffinity(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiScheduleCreateNotebookExecutionJobRequestNotebookExecutionJobCustomEnvironmentSpecMachineSpecReservationAffinityArgs.Builder]):
+        com.pulumi.gcp.vertex.inputs.AiScheduleCreateNotebookExecutionJobRequestNotebookExecutionJobCustomEnvironmentSpecMachineSpecArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.vertex.inputs.AiScheduleCreateNotebookExecutionJobRequestNotebookExecutionJobCustomEnvironmentSpecMachineSpecReservationAffinityArgs.builder
+      builder.reservationAffinity(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.gcp.vertex.inputs.AiScheduleCreatePipelineJobRequestArgs.Builder)
+    /**
+     * @param pipelineJob An instance of a machine learning PipelineJob.
+     * Structure is documented below.
+     * @return builder
+     */
+    def pipelineJob(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiScheduleCreatePipelineJobRequestPipelineJobArgs.Builder]):
+        com.pulumi.gcp.vertex.inputs.AiScheduleCreatePipelineJobRequestArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.vertex.inputs.AiScheduleCreatePipelineJobRequestPipelineJobArgs.builder
+      builder.pipelineJob(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.gcp.vertex.inputs.AiScheduleCreatePipelineJobRequestPipelineJobArgs.Builder)
+    /**
+     * @param encryptionSpec Represents a customer-managed encryption key specification that can be applied to a Vertex AI resource.
+     * Structure is documented below.
+     * @return builder
+     */
+    def encryptionSpec(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiScheduleCreatePipelineJobRequestPipelineJobEncryptionSpecArgs.Builder]):
+        com.pulumi.gcp.vertex.inputs.AiScheduleCreatePipelineJobRequestPipelineJobArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.vertex.inputs.AiScheduleCreatePipelineJobRequestPipelineJobEncryptionSpecArgs.builder
+      builder.encryptionSpec(args(argsBuilder).build)
+
+    /**
+     * @param pscInterfaceConfig Configuration for PSC-I.
+     * Structure is documented below.
+     * @return builder
+     */
+    def pscInterfaceConfig(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiScheduleCreatePipelineJobRequestPipelineJobPscInterfaceConfigArgs.Builder]):
+        com.pulumi.gcp.vertex.inputs.AiScheduleCreatePipelineJobRequestPipelineJobArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.vertex.inputs.AiScheduleCreatePipelineJobRequestPipelineJobPscInterfaceConfigArgs.builder
+      builder.pscInterfaceConfig(args(argsBuilder).build)
+
+    /**
+     * @param runtimeConfig The runtime config of a PipelineJob.
+     * Structure is documented below.
+     * @return builder
+     */
+    def runtimeConfig(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiScheduleCreatePipelineJobRequestPipelineJobRuntimeConfigArgs.Builder]):
+        com.pulumi.gcp.vertex.inputs.AiScheduleCreatePipelineJobRequestPipelineJobArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.vertex.inputs.AiScheduleCreatePipelineJobRequestPipelineJobRuntimeConfigArgs.builder
+      builder.runtimeConfig(args(argsBuilder).build)
+
+    /**
+     * @param templateMetadatas (Output)
+     * Pipeline template metadata if PipelineJob.template_uri is from supported template registry. Currently, the only supported registry is Artifact Registry.
+     * Structure is documented below.
+     * @return builder
+     */
+    def templateMetadatas(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiScheduleCreatePipelineJobRequestPipelineJobTemplateMetadataArgs.Builder]*):
+        com.pulumi.gcp.vertex.inputs.AiScheduleCreatePipelineJobRequestPipelineJobArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.vertex.inputs.AiScheduleCreatePipelineJobRequestPipelineJobTemplateMetadataArgs.builder
+      builder.templateMetadatas(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.gcp.vertex.inputs.AiScheduleCreatePipelineJobRequestPipelineJobPscInterfaceConfigArgs.Builder)
+    /**
+     * @param dnsPeeringConfigs DNS peering configurations. When specified, Vertex AI will attempt to configure DNS peering zones in the tenant project VPC to resolve the specified domains using the target network&#39;s Cloud DNS. The user must grant the dns.peer role to the Vertex AI Service Agent on the target project.
+     * Structure is documented below.
+     * @return builder
+     */
+    def dnsPeeringConfigs(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiScheduleCreatePipelineJobRequestPipelineJobPscInterfaceConfigDnsPeeringConfigArgs.Builder]*):
+        com.pulumi.gcp.vertex.inputs.AiScheduleCreatePipelineJobRequestPipelineJobPscInterfaceConfigArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.vertex.inputs.AiScheduleCreatePipelineJobRequestPipelineJobPscInterfaceConfigDnsPeeringConfigArgs.builder
+      builder.dnsPeeringConfigs(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.gcp.vertex.inputs.AiScheduleState.Builder)
+    /**
+     * @param createNotebookExecutionJobRequest Request message for [NotebookService.CreateNotebookExecutionJob]
+     * Structure is documented below.
+     * @return builder
+     */
+    def createNotebookExecutionJobRequest(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiScheduleCreateNotebookExecutionJobRequestArgs.Builder]):
+        com.pulumi.gcp.vertex.inputs.AiScheduleState.Builder =
+      val argsBuilder = com.pulumi.gcp.vertex.inputs.AiScheduleCreateNotebookExecutionJobRequestArgs.builder
+      builder.createNotebookExecutionJobRequest(args(argsBuilder).build)
+
+    /**
+     * @param createPipelineJobRequest Request message for PipelineService.CreatePipelineJob.
+     * Structure is documented below.
+     * @return builder
+     */
+    def createPipelineJobRequest(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiScheduleCreatePipelineJobRequestArgs.Builder]):
+        com.pulumi.gcp.vertex.inputs.AiScheduleState.Builder =
+      val argsBuilder = com.pulumi.gcp.vertex.inputs.AiScheduleCreatePipelineJobRequestArgs.builder
+      builder.createPipelineJobRequest(args(argsBuilder).build)
+
+    /**
+     * @param lastScheduledRunResponses Status of a scheduled run.
+     * Structure is documented below.
+     * @return builder
+     */
+    def lastScheduledRunResponses(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiScheduleLastScheduledRunResponseArgs.Builder]*):
+        com.pulumi.gcp.vertex.inputs.AiScheduleState.Builder =
+      def argsBuilder = com.pulumi.gcp.vertex.inputs.AiScheduleLastScheduledRunResponseArgs.builder
+      builder.lastScheduledRunResponses(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.gcp.vertex.inputs.AiTensorboardState.Builder)
     /**

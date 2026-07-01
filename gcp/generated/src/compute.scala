@@ -4200,6 +4200,50 @@ object compute:
       com.pulumi.gcp.compute.ComputeFunctions.getRegionSslCertificatePlain(args(argsBuilder).build)
 
     /**
+     * Get information about a Compute Engine RegionTargetHttpProxy.
+     * 
+     * For more information see the [official documentation](https://cloud.google.com/compute/docs/load-balancing/http/target-proxies) and
+     * the [API](https://cloud.google.com/compute/docs/reference/rest/v1/regionTargetHttpProxies).
+     */
+    inline def getRegionTargetHttpProxy(args: Endofunction[com.pulumi.gcp.compute.inputs.GetRegionTargetHttpProxyArgs.Builder] = scala.Predef.identity):
+        com.pulumi.core.Output[com.pulumi.gcp.compute.outputs.GetRegionTargetHttpProxyResult] =
+      val argsBuilder = com.pulumi.gcp.compute.inputs.GetRegionTargetHttpProxyArgs.builder
+      com.pulumi.gcp.compute.ComputeFunctions.getRegionTargetHttpProxy(args(argsBuilder).build)
+
+    /**
+     * Get information about a Compute Engine RegionTargetHttpProxy.
+     * 
+     * For more information see the [official documentation](https://cloud.google.com/compute/docs/load-balancing/http/target-proxies) and
+     * the [API](https://cloud.google.com/compute/docs/reference/rest/v1/regionTargetHttpProxies).
+     */
+    inline def getRegionTargetHttpProxyPlain(args: Endofunction[com.pulumi.gcp.compute.inputs.GetRegionTargetHttpProxyPlainArgs.Builder] = scala.Predef.identity):
+        java.util.concurrent.CompletableFuture[com.pulumi.gcp.compute.outputs.GetRegionTargetHttpProxyResult] =
+      val argsBuilder = com.pulumi.gcp.compute.inputs.GetRegionTargetHttpProxyPlainArgs.builder
+      com.pulumi.gcp.compute.ComputeFunctions.getRegionTargetHttpProxyPlain(args(argsBuilder).build)
+
+    /**
+     * Get information about a Compute Engine RegionTargetHttpsProxy.
+     * 
+     * For more information see the [official documentation](https://cloud.google.com/compute/docs/load-balancing/http/target-proxies) and
+     * the [API](https://cloud.google.com/compute/docs/reference/rest/v1/regionTargetHttpsProxies).
+     */
+    inline def getRegionTargetHttpsProxy(args: Endofunction[com.pulumi.gcp.compute.inputs.GetRegionTargetHttpsProxyArgs.Builder] = scala.Predef.identity):
+        com.pulumi.core.Output[com.pulumi.gcp.compute.outputs.GetRegionTargetHttpsProxyResult] =
+      val argsBuilder = com.pulumi.gcp.compute.inputs.GetRegionTargetHttpsProxyArgs.builder
+      com.pulumi.gcp.compute.ComputeFunctions.getRegionTargetHttpsProxy(args(argsBuilder).build)
+
+    /**
+     * Get information about a Compute Engine RegionTargetHttpsProxy.
+     * 
+     * For more information see the [official documentation](https://cloud.google.com/compute/docs/load-balancing/http/target-proxies) and
+     * the [API](https://cloud.google.com/compute/docs/reference/rest/v1/regionTargetHttpsProxies).
+     */
+    inline def getRegionTargetHttpsProxyPlain(args: Endofunction[com.pulumi.gcp.compute.inputs.GetRegionTargetHttpsProxyPlainArgs.Builder] = scala.Predef.identity):
+        java.util.concurrent.CompletableFuture[com.pulumi.gcp.compute.outputs.GetRegionTargetHttpsProxyResult] =
+      val argsBuilder = com.pulumi.gcp.compute.inputs.GetRegionTargetHttpsProxyPlainArgs.builder
+      com.pulumi.gcp.compute.ComputeFunctions.getRegionTargetHttpsProxyPlain(args(argsBuilder).build)
+
+    /**
      * Provides access to available Google Compute regions for a given project.
      * See more about [regions and zones](https://cloud.google.com/compute/docs/regions-zones/) in the upstream docs.
      * 
@@ -4776,6 +4820,50 @@ object compute:
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.compute.outputs.GetSubnetworksResult] =
       val argsBuilder = com.pulumi.gcp.compute.inputs.GetSubnetworksPlainArgs.builder
       com.pulumi.gcp.compute.ComputeFunctions.getSubnetworksPlain(args(argsBuilder).build)
+
+    /**
+     * Get information about a Compute Engine TargetHttpProxy.
+     * 
+     * For more information see the [official documentation](https://cloud.google.com/compute/docs/load-balancing/http/target-proxies) and
+     * the [API](https://cloud.google.com/compute/docs/reference/v1/targetHttpProxies).
+     */
+    inline def getTargetHttpProxy(args: Endofunction[com.pulumi.gcp.compute.inputs.GetTargetHttpProxyArgs.Builder] = scala.Predef.identity):
+        com.pulumi.core.Output[com.pulumi.gcp.compute.outputs.GetTargetHttpProxyResult] =
+      val argsBuilder = com.pulumi.gcp.compute.inputs.GetTargetHttpProxyArgs.builder
+      com.pulumi.gcp.compute.ComputeFunctions.getTargetHttpProxy(args(argsBuilder).build)
+
+    /**
+     * Get information about a Compute Engine TargetHttpProxy.
+     * 
+     * For more information see the [official documentation](https://cloud.google.com/compute/docs/load-balancing/http/target-proxies) and
+     * the [API](https://cloud.google.com/compute/docs/reference/v1/targetHttpProxies).
+     */
+    inline def getTargetHttpProxyPlain(args: Endofunction[com.pulumi.gcp.compute.inputs.GetTargetHttpProxyPlainArgs.Builder] = scala.Predef.identity):
+        java.util.concurrent.CompletableFuture[com.pulumi.gcp.compute.outputs.GetTargetHttpProxyResult] =
+      val argsBuilder = com.pulumi.gcp.compute.inputs.GetTargetHttpProxyPlainArgs.builder
+      com.pulumi.gcp.compute.ComputeFunctions.getTargetHttpProxyPlain(args(argsBuilder).build)
+
+    /**
+     * Get information about a Compute Engine TargetHttpsProxy.
+     * 
+     * For more information see the [official documentation](https://cloud.google.com/compute/docs/load-balancing/http/target-proxies) and
+     * the [API](https://cloud.google.com/compute/docs/reference/v1/targetHttpsProxies).
+     */
+    inline def getTargetHttpsProxy(args: Endofunction[com.pulumi.gcp.compute.inputs.GetTargetHttpsProxyArgs.Builder] = scala.Predef.identity):
+        com.pulumi.core.Output[com.pulumi.gcp.compute.outputs.GetTargetHttpsProxyResult] =
+      val argsBuilder = com.pulumi.gcp.compute.inputs.GetTargetHttpsProxyArgs.builder
+      com.pulumi.gcp.compute.ComputeFunctions.getTargetHttpsProxy(args(argsBuilder).build)
+
+    /**
+     * Get information about a Compute Engine TargetHttpsProxy.
+     * 
+     * For more information see the [official documentation](https://cloud.google.com/compute/docs/load-balancing/http/target-proxies) and
+     * the [API](https://cloud.google.com/compute/docs/reference/v1/targetHttpsProxies).
+     */
+    inline def getTargetHttpsProxyPlain(args: Endofunction[com.pulumi.gcp.compute.inputs.GetTargetHttpsProxyPlainArgs.Builder] = scala.Predef.identity):
+        java.util.concurrent.CompletableFuture[com.pulumi.gcp.compute.outputs.GetTargetHttpsProxyResult] =
+      val argsBuilder = com.pulumi.gcp.compute.inputs.GetTargetHttpsProxyPlainArgs.builder
+      com.pulumi.gcp.compute.ComputeFunctions.getTargetHttpsProxyPlain(args(argsBuilder).build)
 
     /** Get a VPN gateway within GCE from its name. */
     inline def getVPNGateway(args: Endofunction[com.pulumi.gcp.compute.inputs.GetVPNGatewayArgs.Builder] = scala.Predef.identity):
@@ -25606,6 +25694,16 @@ object compute:
       builder.deleteAfterDuration(args(argsBuilder).build)
 
     /**
+     * @param params Additional params passed with the request, but not persisted as part of resource payload
+     * Structure is documented below.
+     * @return builder
+     */
+    def params(args: Endofunction[com.pulumi.gcp.compute.inputs.ReservationParamsArgs.Builder]):
+        com.pulumi.gcp.compute.ReservationArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.compute.inputs.ReservationParamsArgs.builder
+      builder.params(args(argsBuilder).build)
+
+    /**
      * @param reservationSharingPolicy Sharing policy for reservations with Google Cloud managed services.
      * Structure is documented below.
      * @return builder
@@ -26441,6 +26539,16 @@ object compute:
         resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
 
   extension (builder: com.pulumi.gcp.compute.SnapshotArgs.Builder)
+    /**
+     * @param params Additional params passed with the request, but not persisted as part of resource payload
+     * Structure is documented below.
+     * @return builder
+     */
+    def params(args: Endofunction[com.pulumi.gcp.compute.inputs.SnapshotParamsArgs.Builder]):
+        com.pulumi.gcp.compute.SnapshotArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.compute.inputs.SnapshotParamsArgs.builder
+      builder.params(args(argsBuilder).build)
+
     /**
      * @param snapshotEncryptionKey Encrypts the snapshot using a customer-supplied encryption key.
      * After you encrypt a snapshot using a customer-supplied key, you must
@@ -38875,6 +38983,16 @@ object compute:
       builder.deleteAfterDuration(args(argsBuilder).build)
 
     /**
+     * @param params Additional params passed with the request, but not persisted as part of resource payload
+     * Structure is documented below.
+     * @return builder
+     */
+    def params(args: Endofunction[com.pulumi.gcp.compute.inputs.ReservationParamsArgs.Builder]):
+        com.pulumi.gcp.compute.inputs.ReservationState.Builder =
+      val argsBuilder = com.pulumi.gcp.compute.inputs.ReservationParamsArgs.builder
+      builder.params(args(argsBuilder).build)
+
+    /**
      * @param reservationSharingPolicy Sharing policy for reservations with Google Cloud managed services.
      * Structure is documented below.
      * @return builder
@@ -40077,6 +40195,16 @@ object compute:
       builder.locations(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.gcp.compute.inputs.SnapshotState.Builder)
+    /**
+     * @param params Additional params passed with the request, but not persisted as part of resource payload
+     * Structure is documented below.
+     * @return builder
+     */
+    def params(args: Endofunction[com.pulumi.gcp.compute.inputs.SnapshotParamsArgs.Builder]):
+        com.pulumi.gcp.compute.inputs.SnapshotState.Builder =
+      val argsBuilder = com.pulumi.gcp.compute.inputs.SnapshotParamsArgs.builder
+      builder.params(args(argsBuilder).build)
+
     /**
      * @param snapshotEncryptionKey Encrypts the snapshot using a customer-supplied encryption key.
      * After you encrypt a snapshot using a customer-supplied key, you must

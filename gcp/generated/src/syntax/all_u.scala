@@ -43,6 +43,7 @@ export ko_pulumi.gcp.ces.webWidgetConfig
 export ko_pulumi.gcp.ces.webWidgetConfigs
 export ko_pulumi.gcp.ces.widgetTool
 export ko_pulumi.gcp.chronicle.value
+export ko_pulumi.gcp.chronicle.versionInfo
 export ko_pulumi.gcp.chronicle.visualMaps
 export ko_pulumi.gcp.chronicle.visualization
 export ko_pulumi.gcp.chronicle.watchlistUserPreferences
@@ -173,6 +174,7 @@ export ko_pulumi.gcp.memcache.weeklyMaintenanceWindows
 export ko_pulumi.gcp.memorystore.updateInfos
 export ko_pulumi.gcp.memorystore.weeklyMaintenanceWindows
 export ko_pulumi.gcp.memorystore.zoneDistributionConfig
+export ko_pulumi.gcp.migrationcenter.uploadFileInfos
 export ko_pulumi.gcp.migrationcenter.validationReports
 export ko_pulumi.gcp.migrationcenter.virtualMachinePreferences
 export ko_pulumi.gcp.migrationcenter.vmwareEngineFindings
@@ -230,6 +232,7 @@ export ko_pulumi.gcp.vectorsearch.vectorSchemas
 export ko_pulumi.gcp.vectorsearch.vertexEmbeddingConfig
 export ko_pulumi.gcp.vertex.unprovisioned
 export ko_pulumi.gcp.vertex.vectorSearchConfig
+export ko_pulumi.gcp.vertex.workbenchRuntime
 export ko_pulumi.gcp.vmwareengine.vcenters
 export ko_pulumi.gcp.vmwareengine.vpcNetworks
 export ko_pulumi.gcp.workbench.upgradeHistories

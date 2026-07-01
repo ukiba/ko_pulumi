@@ -4384,6 +4384,54 @@ object storage:
       val argsBuilder = com.pulumi.gcp.storage.inputs.GetControlProjectIntelligenceConfigPlainArgs.builder
       com.pulumi.gcp.storage.StorageFunctions.getControlProjectIntelligenceConfigPlain(args(argsBuilder).build)
 
+    /** Retrieves information about a specific Cloud Storage intelligence finding in a project and location. */
+    inline def getControlProjectIntelligenceFinding(args: Endofunction[com.pulumi.gcp.storage.inputs.GetControlProjectIntelligenceFindingArgs.Builder] = scala.Predef.identity):
+        com.pulumi.core.Output[com.pulumi.gcp.storage.outputs.GetControlProjectIntelligenceFindingResult] =
+      val argsBuilder = com.pulumi.gcp.storage.inputs.GetControlProjectIntelligenceFindingArgs.builder
+      com.pulumi.gcp.storage.StorageFunctions.getControlProjectIntelligenceFinding(args(argsBuilder).build)
+
+    /** Retrieves information about a specific Cloud Storage intelligence finding in a project and location. */
+    inline def getControlProjectIntelligenceFindingPlain(args: Endofunction[com.pulumi.gcp.storage.inputs.GetControlProjectIntelligenceFindingPlainArgs.Builder] = scala.Predef.identity):
+        java.util.concurrent.CompletableFuture[com.pulumi.gcp.storage.outputs.GetControlProjectIntelligenceFindingResult] =
+      val argsBuilder = com.pulumi.gcp.storage.inputs.GetControlProjectIntelligenceFindingPlainArgs.builder
+      com.pulumi.gcp.storage.StorageFunctions.getControlProjectIntelligenceFindingPlain(args(argsBuilder).build)
+
+    /** Retrieves information about a specific Cloud Storage intelligence finding revision in a project and location. */
+    inline def getControlProjectIntelligenceFindingRevision(args: Endofunction[com.pulumi.gcp.storage.inputs.GetControlProjectIntelligenceFindingRevisionArgs.Builder] = scala.Predef.identity):
+        com.pulumi.core.Output[com.pulumi.gcp.storage.outputs.GetControlProjectIntelligenceFindingRevisionResult] =
+      val argsBuilder = com.pulumi.gcp.storage.inputs.GetControlProjectIntelligenceFindingRevisionArgs.builder
+      com.pulumi.gcp.storage.StorageFunctions.getControlProjectIntelligenceFindingRevision(args(argsBuilder).build)
+
+    /** Retrieves information about a specific Cloud Storage intelligence finding revision in a project and location. */
+    inline def getControlProjectIntelligenceFindingRevisionPlain(args: Endofunction[com.pulumi.gcp.storage.inputs.GetControlProjectIntelligenceFindingRevisionPlainArgs.Builder] = scala.Predef.identity):
+        java.util.concurrent.CompletableFuture[com.pulumi.gcp.storage.outputs.GetControlProjectIntelligenceFindingRevisionResult] =
+      val argsBuilder = com.pulumi.gcp.storage.inputs.GetControlProjectIntelligenceFindingRevisionPlainArgs.builder
+      com.pulumi.gcp.storage.StorageFunctions.getControlProjectIntelligenceFindingRevisionPlain(args(argsBuilder).build)
+
+    /** Retrieves a list of Cloud Storage intelligence finding revisions in a specified project and location. */
+    inline def getControlProjectIntelligenceFindingRevisions(args: Endofunction[com.pulumi.gcp.storage.inputs.GetControlProjectIntelligenceFindingRevisionsArgs.Builder] = scala.Predef.identity):
+        com.pulumi.core.Output[com.pulumi.gcp.storage.outputs.GetControlProjectIntelligenceFindingRevisionsResult] =
+      val argsBuilder = com.pulumi.gcp.storage.inputs.GetControlProjectIntelligenceFindingRevisionsArgs.builder
+      com.pulumi.gcp.storage.StorageFunctions.getControlProjectIntelligenceFindingRevisions(args(argsBuilder).build)
+
+    /** Retrieves a list of Cloud Storage intelligence finding revisions in a specified project and location. */
+    inline def getControlProjectIntelligenceFindingRevisionsPlain(args: Endofunction[com.pulumi.gcp.storage.inputs.GetControlProjectIntelligenceFindingRevisionsPlainArgs.Builder] = scala.Predef.identity):
+        java.util.concurrent.CompletableFuture[com.pulumi.gcp.storage.outputs.GetControlProjectIntelligenceFindingRevisionsResult] =
+      val argsBuilder = com.pulumi.gcp.storage.inputs.GetControlProjectIntelligenceFindingRevisionsPlainArgs.builder
+      com.pulumi.gcp.storage.StorageFunctions.getControlProjectIntelligenceFindingRevisionsPlain(args(argsBuilder).build)
+
+    /** Retrieves a list of Cloud Storage intelligence findings in a specified project and location. */
+    inline def getControlProjectIntelligenceFindings(args: Endofunction[com.pulumi.gcp.storage.inputs.GetControlProjectIntelligenceFindingsArgs.Builder] = scala.Predef.identity):
+        com.pulumi.core.Output[com.pulumi.gcp.storage.outputs.GetControlProjectIntelligenceFindingsResult] =
+      val argsBuilder = com.pulumi.gcp.storage.inputs.GetControlProjectIntelligenceFindingsArgs.builder
+      com.pulumi.gcp.storage.StorageFunctions.getControlProjectIntelligenceFindings(args(argsBuilder).build)
+
+    /** Retrieves a list of Cloud Storage intelligence findings in a specified project and location. */
+    inline def getControlProjectIntelligenceFindingsPlain(args: Endofunction[com.pulumi.gcp.storage.inputs.GetControlProjectIntelligenceFindingsPlainArgs.Builder] = scala.Predef.identity):
+        java.util.concurrent.CompletableFuture[com.pulumi.gcp.storage.outputs.GetControlProjectIntelligenceFindingsResult] =
+      val argsBuilder = com.pulumi.gcp.storage.inputs.GetControlProjectIntelligenceFindingsPlainArgs.builder
+      com.pulumi.gcp.storage.StorageFunctions.getControlProjectIntelligenceFindingsPlain(args(argsBuilder).build)
+
     /**
      * Use this data source to get information about a Storage Insights Dataset Config resource.
      * See [the official documentation](https://cloud.google.com/storage/docs/insights/datasets)

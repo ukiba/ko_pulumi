@@ -281,6 +281,17 @@ object networksecurity:
       builder.httpRules(args.map(_(argsBuilder).build)*)
 
     /**
+     * @param networkRules A list of authorization HTTP rules to match against the incoming request.A policy match occurs when at least one HTTP rule matches the request or when no HTTP rules are specified in the policy. At least one HTTP Rule is required for Allow or Deny Action.
+     * Limited to 5 rules.
+     * Structure is documented below.
+     * @return builder
+     */
+    def networkRules(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.AuthzPolicyNetworkRuleArgs.Builder]*):
+        com.pulumi.gcp.networksecurity.AuthzPolicyArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.networksecurity.inputs.AuthzPolicyNetworkRuleArgs.builder
+      builder.networkRules(args.map(_(argsBuilder).build)*)
+
+    /**
      * @param target Specifies the set of resources to which this policy should be applied to.
      * Structure is documented below.
      * @return builder
@@ -1197,7 +1208,7 @@ object networksecurity:
       builder.notOperations(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param operations Describes properties of one or more targets of a request. At least one of operations or notOperations must be specified. Limited to 1 operation. A match occurs when ANY operation (in operations or notOperations) matches. Within an operation, the match follows AND semantics across fields and OR semantics within a field, i.e. a match occurs when ANY path matches AND ANY header matches and ANY method matches.
+     * @param operations Describes properties of one or more targets of a request. At least one of operations or notOperations must be specified. Limited to 1 operation.
      * Structure is documented below.
      * @return builder
      */
@@ -1350,6 +1361,137 @@ object networksecurity:
       def argsBuilder = com.pulumi.gcp.networksecurity.inputs.AuthzPolicyHttpRuleToOperationMcpMethodParamArgs.builder
       builder.params(args.map(_(argsBuilder).build)*)
 
+  extension (builder: com.pulumi.gcp.networksecurity.inputs.AuthzPolicyNetworkRuleArgs.Builder)
+    /**
+     * @param from Describes properties of one or more sources of a request.
+     * Structure is documented below.
+     * @return builder
+     */
+    def from(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.AuthzPolicyNetworkRuleFromArgs.Builder]):
+        com.pulumi.gcp.networksecurity.inputs.AuthzPolicyNetworkRuleArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.networksecurity.inputs.AuthzPolicyNetworkRuleFromArgs.builder
+      builder.from(args(argsBuilder).build)
+
+    /**
+     * @param to Describes properties of one or more targets of a request
+     * Structure is documented below.
+     * @return builder
+     */
+    def to(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.AuthzPolicyNetworkRuleToArgs.Builder]):
+        com.pulumi.gcp.networksecurity.inputs.AuthzPolicyNetworkRuleArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.networksecurity.inputs.AuthzPolicyNetworkRuleToArgs.builder
+      builder.to(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.gcp.networksecurity.inputs.AuthzPolicyNetworkRuleFromArgs.Builder)
+    /**
+     * @param notSources Describes the negated properties of request sources. Matches requests from sources that do not match the criteria specified in this field. At least one of sources or notSources must be specified. Limited to 1 not_source.
+     * Structure is documented below.
+     * @return builder
+     */
+    def notSources(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.AuthzPolicyNetworkRuleFromNotSourceArgs.Builder]*):
+        com.pulumi.gcp.networksecurity.inputs.AuthzPolicyNetworkRuleFromArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.networksecurity.inputs.AuthzPolicyNetworkRuleFromNotSourceArgs.builder
+      builder.notSources(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param sources Describes the properties of a request&#39;s sources. At least one of sources or notSources must be specified. Limited to 1 source. A match occurs when ANY source (in sources or notSources) matches the request. Within a single source, the match follows AND semantics across fields and OR semantics within a single field, i.e. a match occurs when ANY principal matches AND ANY ipBlocks match.
+     * Structure is documented below.
+     * @return builder
+     */
+    def sources(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.AuthzPolicyNetworkRuleFromSourceArgs.Builder]*):
+        com.pulumi.gcp.networksecurity.inputs.AuthzPolicyNetworkRuleFromArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.networksecurity.inputs.AuthzPolicyNetworkRuleFromSourceArgs.builder
+      builder.sources(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.gcp.networksecurity.inputs.AuthzPolicyNetworkRuleFromNotSourceArgs.Builder)
+    /**
+     * @param ipBlocks A list of IP addresses or IP address ranges to match against the source IP address of the request. Limited to 10 ipBlocks per Authorization Policy
+     * Structure is documented below.
+     * @return builder
+     */
+    def ipBlocks(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.AuthzPolicyNetworkRuleFromNotSourceIpBlockArgs.Builder]*):
+        com.pulumi.gcp.networksecurity.inputs.AuthzPolicyNetworkRuleFromNotSourceArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.networksecurity.inputs.AuthzPolicyNetworkRuleFromNotSourceIpBlockArgs.builder
+      builder.ipBlocks(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param principals A list of identities derived from the client&#39;s certificate. This field will not match on a request unless mutual TLS is enabled for the Forwarding rule or Gateway. Each identity is a string whose value is matched against the URI SAN, or DNS SAN or the subject field in the client&#39;s certificate. The match can be exact, prefix, suffix or a substring match. One of exact, prefix, suffix or contains must be specified.
+     * Limited to 5 principals.
+     * Structure is documented below.
+     * @return builder
+     */
+    def principals(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.AuthzPolicyNetworkRuleFromNotSourcePrincipalArgs.Builder]*):
+        com.pulumi.gcp.networksecurity.inputs.AuthzPolicyNetworkRuleFromNotSourceArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.networksecurity.inputs.AuthzPolicyNetworkRuleFromNotSourcePrincipalArgs.builder
+      builder.principals(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.gcp.networksecurity.inputs.AuthzPolicyNetworkRuleFromNotSourcePrincipalArgs.Builder)
+    /**
+     * @param principal Required. A non-empty string whose value is matched against the principal value based on the principalSelector.
+     * Only exact match can be applied for CLIENT_CERT_URI_SAN, CLIENT_CERT_DNS_NAME_SAN, CLIENT_CERT_COMMON_NAME selectors.
+     * Structure is documented below.
+     * @return builder
+     */
+    def principal(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.AuthzPolicyNetworkRuleFromNotSourcePrincipalPrincipalArgs.Builder]):
+        com.pulumi.gcp.networksecurity.inputs.AuthzPolicyNetworkRuleFromNotSourcePrincipalArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.networksecurity.inputs.AuthzPolicyNetworkRuleFromNotSourcePrincipalPrincipalArgs.builder
+      builder.principal(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.gcp.networksecurity.inputs.AuthzPolicyNetworkRuleFromSourceArgs.Builder)
+    /**
+     * @param ipBlocks A list of IP addresses or IP address ranges to match against the source IP address of the request. Limited to 10 ipBlocks per Authorization Policy
+     * Structure is documented below.
+     * @return builder
+     */
+    def ipBlocks(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.AuthzPolicyNetworkRuleFromSourceIpBlockArgs.Builder]*):
+        com.pulumi.gcp.networksecurity.inputs.AuthzPolicyNetworkRuleFromSourceArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.networksecurity.inputs.AuthzPolicyNetworkRuleFromSourceIpBlockArgs.builder
+      builder.ipBlocks(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param principals A list of identities derived from the client&#39;s certificate. This field will not match on a request unless mutual TLS is enabled for the Forwarding rule or Gateway. Each identity is a string whose value is matched against the URI SAN, or DNS SAN or the subject field in the client&#39;s certificate. The match can be exact, prefix, suffix or a substring match. One of exact, prefix, suffix or contains must be specified.
+     * Limited to 5 principals.
+     * Structure is documented below.
+     * @return builder
+     */
+    def principals(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.AuthzPolicyNetworkRuleFromSourcePrincipalArgs.Builder]*):
+        com.pulumi.gcp.networksecurity.inputs.AuthzPolicyNetworkRuleFromSourceArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.networksecurity.inputs.AuthzPolicyNetworkRuleFromSourcePrincipalArgs.builder
+      builder.principals(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.gcp.networksecurity.inputs.AuthzPolicyNetworkRuleFromSourcePrincipalArgs.Builder)
+    /**
+     * @param principal Required. A non-empty string whose value is matched against the principal value based on the principalSelector.
+     * Only exact match can be applied for CLIENT_CERT_URI_SAN, CLIENT_CERT_DNS_NAME_SAN, CLIENT_CERT_COMMON_NAME selectors.
+     * Structure is documented below.
+     * @return builder
+     */
+    def principal(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.AuthzPolicyNetworkRuleFromSourcePrincipalPrincipalArgs.Builder]):
+        com.pulumi.gcp.networksecurity.inputs.AuthzPolicyNetworkRuleFromSourcePrincipalArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.networksecurity.inputs.AuthzPolicyNetworkRuleFromSourcePrincipalPrincipalArgs.builder
+      builder.principal(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.gcp.networksecurity.inputs.AuthzPolicyNetworkRuleToArgs.Builder)
+    /**
+     * @param operations Describes properties of one or more targets of a request. At least one of operations or notOperations must be specified. Limited to 1 operation.
+     * Structure is documented below.
+     * @return builder
+     */
+    def operations(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.AuthzPolicyNetworkRuleToOperationArgs.Builder]*):
+        com.pulumi.gcp.networksecurity.inputs.AuthzPolicyNetworkRuleToArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.networksecurity.inputs.AuthzPolicyNetworkRuleToOperationArgs.builder
+      builder.operations(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.gcp.networksecurity.inputs.AuthzPolicyNetworkRuleToOperationArgs.Builder)
+    /**
+     * @param snis Structure is documented below.
+     * @return builder
+     */
+    def snis(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.AuthzPolicyNetworkRuleToOperationSniArgs.Builder]*):
+        com.pulumi.gcp.networksecurity.inputs.AuthzPolicyNetworkRuleToOperationArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.networksecurity.inputs.AuthzPolicyNetworkRuleToOperationSniArgs.builder
+      builder.snis(args.map(_(argsBuilder).build)*)
+
   extension (builder: com.pulumi.gcp.networksecurity.inputs.AuthzPolicyState.Builder)
     /**
      * @param customProvider Required if the action is CUSTOM. Allows delegating authorization decisions to Cloud IAP or to Service Extensions. One of cloudIap or authzExtension must be specified.
@@ -1371,6 +1513,17 @@ object networksecurity:
         com.pulumi.gcp.networksecurity.inputs.AuthzPolicyState.Builder =
       def argsBuilder = com.pulumi.gcp.networksecurity.inputs.AuthzPolicyHttpRuleArgs.builder
       builder.httpRules(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param networkRules A list of authorization HTTP rules to match against the incoming request.A policy match occurs when at least one HTTP rule matches the request or when no HTTP rules are specified in the policy. At least one HTTP Rule is required for Allow or Deny Action.
+     * Limited to 5 rules.
+     * Structure is documented below.
+     * @return builder
+     */
+    def networkRules(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.AuthzPolicyNetworkRuleArgs.Builder]*):
+        com.pulumi.gcp.networksecurity.inputs.AuthzPolicyState.Builder =
+      def argsBuilder = com.pulumi.gcp.networksecurity.inputs.AuthzPolicyNetworkRuleArgs.builder
+      builder.networkRules(args.map(_(argsBuilder).build)*)
 
     /**
      * @param target Specifies the set of resources to which this policy should be applied to.

@@ -66,6 +66,7 @@ export ko_pulumi.gcp.ces.guardrails
 export ko_pulumi.gcp.ces.image
 export ko_pulumi.gcp.ces.images
 export ko_pulumi.gcp.chronicle.failureDetails
+export ko_pulumi.gcp.chronicle.fieldExtractors
 export ko_pulumi.gcp.chronicle.filter
 export ko_pulumi.gcp.chronicle.filterOperatorAndFieldValues
 export ko_pulumi.gcp.chronicle.filterOperatorAndValues
@@ -240,6 +241,7 @@ export ko_pulumi.gcp.dataloss.inspectConfig
 export ko_pulumi.gcp.dataloss.inspectJob
 export ko_pulumi.gcp.dataloss.inspectTemplateModifiedCadence
 export ko_pulumi.gcp.dataloss.jobNotificationEmails
+export ko_pulumi.gcp.dataplex.filters
 export ko_pulumi.gcp.dataplex.includeFields
 export ko_pulumi.gcp.dataplex.infrastructureSpec
 export ko_pulumi.gcp.dataplex.jobEndTrigger
@@ -492,6 +494,7 @@ export ko_pulumi.gcp.transcoder.image
 export ko_pulumi.gcp.transcoder.inputs
 export ko_pulumi.gcp.vertex.featureGroups
 export ko_pulumi.gcp.vertex.featureRegistrySource
+export ko_pulumi.gcp.vertex.gcsNotebookSource
 export ko_pulumi.gcp.vertex.generationConfig
 export ko_pulumi.gcp.vertex.granularTtlConfig
 export ko_pulumi.gcp.vertex.grpc

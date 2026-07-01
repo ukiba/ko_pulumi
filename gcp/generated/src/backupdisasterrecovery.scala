@@ -278,7 +278,7 @@ object backupdisasterrecovery:
       builder.computeInstanceRestoreProperties(args(argsBuilder).build)
 
     /**
-     * @param computeInstanceTargetEnvironment Optional. The destination environment for GCE VM restoration.
+     * @param computeInstanceTargetEnvironment The destination environment for GCE VM restoration.
      * Structure is documented below.
      * @return builder
      */
@@ -298,7 +298,7 @@ object backupdisasterrecovery:
       builder.diskRestoreProperties(args(argsBuilder).build)
 
     /**
-     * @param diskTargetEnvironment Optional. The destination environment for zonal disk restoration.
+     * @param diskTargetEnvironment The destination environment for zonal disk restoration.
      * Structure is documented below.
      * @return builder
      */
@@ -308,7 +308,7 @@ object backupdisasterrecovery:
       builder.diskTargetEnvironment(args(argsBuilder).build)
 
     /**
-     * @param regionDiskTargetEnvironment Optional. The destination environment for regional disk restoration.
+     * @param regionDiskTargetEnvironment The destination environment for regional disk restoration.
      * Structure is documented below.
      * @return builder
      */
@@ -773,7 +773,7 @@ object backupdisasterrecovery:
       builder.computeInstanceRestoreProperties(args(argsBuilder).build)
 
     /**
-     * @param computeInstanceTargetEnvironment Optional. The destination environment for GCE VM restoration.
+     * @param computeInstanceTargetEnvironment The destination environment for GCE VM restoration.
      * Structure is documented below.
      * @return builder
      */
@@ -793,7 +793,7 @@ object backupdisasterrecovery:
       builder.diskRestoreProperties(args(argsBuilder).build)
 
     /**
-     * @param diskTargetEnvironment Optional. The destination environment for zonal disk restoration.
+     * @param diskTargetEnvironment The destination environment for zonal disk restoration.
      * Structure is documented below.
      * @return builder
      */
@@ -803,7 +803,7 @@ object backupdisasterrecovery:
       builder.diskTargetEnvironment(args(argsBuilder).build)
 
     /**
-     * @param regionDiskTargetEnvironment Optional. The destination environment for regional disk restoration.
+     * @param regionDiskTargetEnvironment The destination environment for regional disk restoration.
      * Structure is documented below.
      * @return builder
      */

@@ -204,12 +204,9 @@ object chronicle:
   /**
    * The FeedsService is responsible for configuring and managing the ingestion of third-party security data and logs into Google Security Operations through various feed creation, updates, and lifecycle management, and schema validation.
    * 
-   * &gt; **Warning:** This resource is in beta, and should be used with the terraform-provider-google-beta provider.
-   * See Provider Versions for more details on beta resources.
-   * 
    * To get more information about Feed, see:
    * 
-   * * [API documentation](https://docs.cloud.google.com/chronicle/docs/reference/rest/v1beta/projects.locations.instances.feeds)
+   * * [API documentation](https://docs.cloud.google.com/chronicle/docs/reference/rest/v1/projects.locations.instances.feeds)
    * * How-to Guides
    *     * [Feed management overview](https://docs.cloud.google.com/chronicle/docs/administration/feed-management-overview)
    */
@@ -278,6 +275,36 @@ object chronicle:
       builder.outcomeFilters(args.map(_(argsBuilder).build)*)
 
   /**
+   * The FindingsRefinementDeployment resource represents the deployment state of a findings refinement.
+   * 
+   * &gt; **Warning:** This resource is in beta, and should be used with the terraform-provider-google-beta provider.
+   * See Provider Versions for more details on beta resources.
+   * 
+   * To get more information about FindingsRefinementDeployment, see:
+   * 
+   * * [API documentation](https://docs.cloud.google.com/chronicle/docs/reference/rest/v1beta/FindingsRefinementDeployment)
+   * * How-to Guides
+   *     * [Google SecOps Guides](https://cloud.google.com/chronicle/docs/secops/secops-overview)
+   */
+  def FindingsRefinementDeployment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+      (args: Endofunction[com.pulumi.gcp.chronicle.FindingsRefinementDeploymentArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+    val argsBuilder = com.pulumi.gcp.chronicle.FindingsRefinementDeploymentArgs.builder
+    com.pulumi.gcp.chronicle.FindingsRefinementDeployment(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+
+  extension (builder: com.pulumi.gcp.chronicle.FindingsRefinementDeploymentArgs.Builder)
+    /**
+     * @param detectionExclusionApplication Describes the detectors a detection exclusion is applied to.
+     * Structure is documented below.
+     * @return builder
+     */
+    def detectionExclusionApplication(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FindingsRefinementDeploymentDetectionExclusionApplicationArgs.Builder]):
+        com.pulumi.gcp.chronicle.FindingsRefinementDeploymentArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.chronicle.inputs.FindingsRefinementDeploymentDetectionExclusionApplicationArgs.builder
+      builder.detectionExclusionApplication(args(argsBuilder).build)
+
+  /**
    * A configuration for a native dashboard within a Google SecOps (Chronicle) instance.
    * 
    * To get more information about NativeDashboard, see:
@@ -313,6 +340,83 @@ object chronicle:
         com.pulumi.gcp.chronicle.NativeDashboardArgs.Builder =
       def argsBuilder = com.pulumi.gcp.chronicle.inputs.NativeDashboardFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
+
+  /**
+   * A parser is a configuration that parses raw logs of a specific log type into Unified Data Model (UDM) events.
+   * Chronicle supports both customer-created custom parsers and Google-provided prebuilt parsers.
+   * 
+   * To get more information about Parser, see:
+   * 
+   * * [API documentation](https://cloud.google.com/chronicle/docs/reference/rest/v1/projects.locations.instances.logTypes.parsers)
+   * * How-to Guides
+   *     * [Custom parsers overview](https://cloud.google.com/chronicle/docs/detection/custom-parsers-overview)
+   */
+  def Parser(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+      (args: Endofunction[com.pulumi.gcp.chronicle.ParserArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+    val argsBuilder = com.pulumi.gcp.chronicle.ParserArgs.builder
+    com.pulumi.gcp.chronicle.Parser(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+
+  extension (builder: com.pulumi.gcp.chronicle.ParserArgs.Builder)
+    /**
+     * @param lowCode Message to represent LowCodeParser.
+     * Structure is documented below.
+     * @return builder
+     */
+    def lowCode(args: Endofunction[com.pulumi.gcp.chronicle.inputs.ParserLowCodeArgs.Builder]):
+        com.pulumi.gcp.chronicle.ParserArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.chronicle.inputs.ParserLowCodeArgs.builder
+      builder.lowCode(args(argsBuilder).build)
+
+    /**
+     * @param versionInfo ParserVersionInfo gives the version information of the parser and related
+     * properties like pinned etc.
+     * Structure is documented below.
+     * @return builder
+     */
+    def versionInfo(args: Endofunction[com.pulumi.gcp.chronicle.inputs.ParserVersionInfoArgs.Builder]):
+        com.pulumi.gcp.chronicle.ParserArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.chronicle.inputs.ParserVersionInfoArgs.builder
+      builder.versionInfo(args(argsBuilder).build)
+
+  /**
+   * A parser extension allows customers to extend or customize the behavior of an existing prebuilt or custom parser.
+   * It enables extracting additional fields from raw logs without modifying the base parser.
+   * 
+   * To get more information about ParserExtension, see:
+   * 
+   * * [API documentation](https://cloud.google.com/chronicle/docs/reference/rest/v1/projects.locations.instances.logTypes.parserExtensions)
+   * * How-to Guides
+   *     * [Custom parsers overview](https://cloud.google.com/chronicle/docs/detection/custom-parsers-overview)
+   */
+  def ParserExtension(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+      (args: Endofunction[com.pulumi.gcp.chronicle.ParserExtensionArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+    val argsBuilder = com.pulumi.gcp.chronicle.ParserExtensionArgs.builder
+    com.pulumi.gcp.chronicle.ParserExtension(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+
+  extension (builder: com.pulumi.gcp.chronicle.ParserExtensionArgs.Builder)
+    /**
+     * @param dynamicParsing A representation of a parser extension as dynamic parsing config.
+     * Structure is documented below.
+     * @return builder
+     */
+    def dynamicParsing(args: Endofunction[com.pulumi.gcp.chronicle.inputs.ParserExtensionDynamicParsingArgs.Builder]):
+        com.pulumi.gcp.chronicle.ParserExtensionArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.chronicle.inputs.ParserExtensionDynamicParsingArgs.builder
+      builder.dynamicParsing(args(argsBuilder).build)
+
+    /**
+     * @param fieldExtractors A representation of a parser extension as a set of field extractors.
+     * Structure is documented below.
+     * @return builder
+     */
+    def fieldExtractors(args: Endofunction[com.pulumi.gcp.chronicle.inputs.ParserExtensionFieldExtractorsArgs.Builder]):
+        com.pulumi.gcp.chronicle.ParserExtensionArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.chronicle.inputs.ParserExtensionFieldExtractorsArgs.builder
+      builder.fieldExtractors(args(argsBuilder).build)
 
   /**
    * Reference lists are user-defined lists of values which users can use in multiple Rules.
@@ -415,6 +519,25 @@ object chronicle:
       (args: Endofunction[com.pulumi.gcp.chronicle.RuleDeploymentArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.chronicle.RuleDeploymentArgs.builder
     com.pulumi.gcp.chronicle.RuleDeployment(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+
+  /**
+   * Manage networks in the platform using the Classless Inter-Domain Routing (CIDR) format. The system identifies network subnets to help Google Security Operations recognize internal assets and consider network sensitivity during playbook execution.
+   * 
+   * &gt; **Warning:** This resource is in beta, and should be used with the terraform-provider-google-beta provider.
+   * See Provider Versions for more details on beta resources.
+   * 
+   * To get more information about SoarNetwork, see:
+   * 
+   * * [API documentation](https://docs.cloud.google.com/chronicle/docs/reference/rest/v1beta/projects.locations.instances.soarNetworks)
+   * * How-to Guides
+   *     * [Google SecOps Guides](https://cloud.google.com/chronicle/docs/secops/secops-overview)
+   */
+  def SoarNetwork(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+      (args: Endofunction[com.pulumi.gcp.chronicle.SoarNetworkArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+    val argsBuilder = com.pulumi.gcp.chronicle.SoarNetworkArgs.builder
+    com.pulumi.gcp.chronicle.SoarNetwork(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
 
@@ -3105,6 +3228,17 @@ object chronicle:
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.FeedFailureDetailsArgs.builder
       builder.failureDetails(args(argsBuilder).build)
 
+  extension (builder: com.pulumi.gcp.chronicle.inputs.FindingsRefinementDeploymentState.Builder)
+    /**
+     * @param detectionExclusionApplication Describes the detectors a detection exclusion is applied to.
+     * Structure is documented below.
+     * @return builder
+     */
+    def detectionExclusionApplication(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FindingsRefinementDeploymentDetectionExclusionApplicationArgs.Builder]):
+        com.pulumi.gcp.chronicle.inputs.FindingsRefinementDeploymentState.Builder =
+      val argsBuilder = com.pulumi.gcp.chronicle.inputs.FindingsRefinementDeploymentDetectionExclusionApplicationArgs.builder
+      builder.detectionExclusionApplication(args(argsBuilder).build)
+
   extension (builder: com.pulumi.gcp.chronicle.inputs.FindingsRefinementState.Builder)
     /**
      * @param outcomeFilters The outcome filters for the findings refinement. These allow you to specify
@@ -3160,6 +3294,144 @@ object chronicle:
         com.pulumi.gcp.chronicle.inputs.NativeDashboardState.Builder =
       def argsBuilder = com.pulumi.gcp.chronicle.inputs.NativeDashboardFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.gcp.chronicle.inputs.ParserChangelogArgs.Builder)
+    /**
+     * @param entries all the changelog of a parser.
+     * Structure is documented below.
+     * @return builder
+     */
+    def entries(args: Endofunction[com.pulumi.gcp.chronicle.inputs.ParserChangelogEntryArgs.Builder]*):
+        com.pulumi.gcp.chronicle.inputs.ParserChangelogArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.chronicle.inputs.ParserChangelogEntryArgs.builder
+      builder.entries(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.gcp.chronicle.inputs.ParserExtensionDynamicParsingArgs.Builder)
+    /**
+     * @param optedFields List of fields to be parsed.
+     * Structure is documented below.
+     * @return builder
+     */
+    def optedFields(args: Endofunction[com.pulumi.gcp.chronicle.inputs.ParserExtensionDynamicParsingOptedFieldArgs.Builder]*):
+        com.pulumi.gcp.chronicle.inputs.ParserExtensionDynamicParsingArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.chronicle.inputs.ParserExtensionDynamicParsingOptedFieldArgs.builder
+      builder.optedFields(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.gcp.chronicle.inputs.ParserExtensionFieldExtractorsArgs.Builder)
+    /**
+     * @param extractors List of FieldExtractors.
+     * Structure is documented below.
+     * @return builder
+     */
+    def extractors(args: Endofunction[com.pulumi.gcp.chronicle.inputs.ParserExtensionFieldExtractorsExtractorArgs.Builder]*):
+        com.pulumi.gcp.chronicle.inputs.ParserExtensionFieldExtractorsArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.chronicle.inputs.ParserExtensionFieldExtractorsExtractorArgs.builder
+      builder.extractors(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param preprocessConfig PreProcessConfig holds the GROK expression to extract the syslog header.
+     * Structure is documented below.
+     * @return builder
+     */
+    def preprocessConfig(args: Endofunction[com.pulumi.gcp.chronicle.inputs.ParserExtensionFieldExtractorsPreprocessConfigArgs.Builder]):
+        com.pulumi.gcp.chronicle.inputs.ParserExtensionFieldExtractorsArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.chronicle.inputs.ParserExtensionFieldExtractorsPreprocessConfigArgs.builder
+      builder.preprocessConfig(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.gcp.chronicle.inputs.ParserExtensionState.Builder)
+    /**
+     * @param dynamicParsing A representation of a parser extension as dynamic parsing config.
+     * Structure is documented below.
+     * @return builder
+     */
+    def dynamicParsing(args: Endofunction[com.pulumi.gcp.chronicle.inputs.ParserExtensionDynamicParsingArgs.Builder]):
+        com.pulumi.gcp.chronicle.inputs.ParserExtensionState.Builder =
+      val argsBuilder = com.pulumi.gcp.chronicle.inputs.ParserExtensionDynamicParsingArgs.builder
+      builder.dynamicParsing(args(argsBuilder).build)
+
+    /**
+     * @param fieldExtractors A representation of a parser extension as a set of field extractors.
+     * Structure is documented below.
+     * @return builder
+     */
+    def fieldExtractors(args: Endofunction[com.pulumi.gcp.chronicle.inputs.ParserExtensionFieldExtractorsArgs.Builder]):
+        com.pulumi.gcp.chronicle.inputs.ParserExtensionState.Builder =
+      val argsBuilder = com.pulumi.gcp.chronicle.inputs.ParserExtensionFieldExtractorsArgs.builder
+      builder.fieldExtractors(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.gcp.chronicle.inputs.ParserLowCodeArgs.Builder)
+    /**
+     * @param fieldExtractors A representation of a parser extension as a set of field extractors.
+     * Structure is documented below.
+     * @return builder
+     */
+    def fieldExtractors(args: Endofunction[com.pulumi.gcp.chronicle.inputs.ParserLowCodeFieldExtractorsArgs.Builder]):
+        com.pulumi.gcp.chronicle.inputs.ParserLowCodeArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.chronicle.inputs.ParserLowCodeFieldExtractorsArgs.builder
+      builder.fieldExtractors(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.gcp.chronicle.inputs.ParserLowCodeFieldExtractorsArgs.Builder)
+    /**
+     * @param extractors List of FieldExtractors.
+     * Structure is documented below.
+     * @return builder
+     */
+    def extractors(args: Endofunction[com.pulumi.gcp.chronicle.inputs.ParserLowCodeFieldExtractorsExtractorArgs.Builder]*):
+        com.pulumi.gcp.chronicle.inputs.ParserLowCodeFieldExtractorsArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.chronicle.inputs.ParserLowCodeFieldExtractorsExtractorArgs.builder
+      builder.extractors(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param preprocessConfig PreProcessConfig holds the GROK expression to extract the syslog header.
+     * Structure is documented below.
+     * @return builder
+     */
+    def preprocessConfig(args: Endofunction[com.pulumi.gcp.chronicle.inputs.ParserLowCodeFieldExtractorsPreprocessConfigArgs.Builder]):
+        com.pulumi.gcp.chronicle.inputs.ParserLowCodeFieldExtractorsArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.chronicle.inputs.ParserLowCodeFieldExtractorsPreprocessConfigArgs.builder
+      builder.preprocessConfig(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.gcp.chronicle.inputs.ParserState.Builder)
+    /**
+     * @param changelogs Changelogs of a parser.
+     * Structure is documented below.
+     * @return builder
+     */
+    def changelogs(args: Endofunction[com.pulumi.gcp.chronicle.inputs.ParserChangelogArgs.Builder]*):
+        com.pulumi.gcp.chronicle.inputs.ParserState.Builder =
+      def argsBuilder = com.pulumi.gcp.chronicle.inputs.ParserChangelogArgs.builder
+      builder.changelogs(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param creators Information about the creator of the parser.
+     * Structure is documented below.
+     * @return builder
+     */
+    def creators(args: Endofunction[com.pulumi.gcp.chronicle.inputs.ParserCreatorArgs.Builder]*):
+        com.pulumi.gcp.chronicle.inputs.ParserState.Builder =
+      def argsBuilder = com.pulumi.gcp.chronicle.inputs.ParserCreatorArgs.builder
+      builder.creators(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param lowCode Message to represent LowCodeParser.
+     * Structure is documented below.
+     * @return builder
+     */
+    def lowCode(args: Endofunction[com.pulumi.gcp.chronicle.inputs.ParserLowCodeArgs.Builder]):
+        com.pulumi.gcp.chronicle.inputs.ParserState.Builder =
+      val argsBuilder = com.pulumi.gcp.chronicle.inputs.ParserLowCodeArgs.builder
+      builder.lowCode(args(argsBuilder).build)
+
+    /**
+     * @param versionInfo ParserVersionInfo gives the version information of the parser and related
+     * properties like pinned etc.
+     * Structure is documented below.
+     * @return builder
+     */
+    def versionInfo(args: Endofunction[com.pulumi.gcp.chronicle.inputs.ParserVersionInfoArgs.Builder]):
+        com.pulumi.gcp.chronicle.inputs.ParserState.Builder =
+      val argsBuilder = com.pulumi.gcp.chronicle.inputs.ParserVersionInfoArgs.builder
+      builder.versionInfo(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.chronicle.inputs.ReferenceListScopeInfoArgs.Builder)
     /**

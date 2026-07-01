@@ -8243,6 +8243,35 @@ object dataplex:
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
 
+  /** A Dataplex Metadata Feed monitors Dataplex metadata entries in a specified scope and publishes notifications of changes to a Cloud Pub/Sub topic. */
+  def MetadataFeed(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+      (args: Endofunction[com.pulumi.gcp.dataplex.MetadataFeedArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+    val argsBuilder = com.pulumi.gcp.dataplex.MetadataFeedArgs.builder
+    com.pulumi.gcp.dataplex.MetadataFeed(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+
+  extension (builder: com.pulumi.gcp.dataplex.MetadataFeedArgs.Builder)
+    /**
+     * @param filters Filters defines the type of changes that you want to listen to. You can have multiple entry type filters and multiple aspect type filters. All of the entry type filters are OR&#39;ed together. All of the aspect type filters are OR&#39;ed together. All of the entry type filters and aspect type filters are AND&#39;ed together.
+     * Structure is documented below.
+     * @return builder
+     */
+    def filters(args: Endofunction[com.pulumi.gcp.dataplex.inputs.MetadataFeedFiltersArgs.Builder]):
+        com.pulumi.gcp.dataplex.MetadataFeedArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.dataplex.inputs.MetadataFeedFiltersArgs.builder
+      builder.filters(args(argsBuilder).build)
+
+    /**
+     * @param scope Scope defines the scope of the metadata feed. Scopes are exclusive. Only one of the scopes can be specified.
+     * Structure is documented below.
+     * @return builder
+     */
+    def scope(args: Endofunction[com.pulumi.gcp.dataplex.inputs.MetadataFeedScopeArgs.Builder]):
+        com.pulumi.gcp.dataplex.MetadataFeedArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.dataplex.inputs.MetadataFeedScopeArgs.builder
+      builder.scope(args(argsBuilder).build)
+
   /**
    * A Dataplex task represents the work that you want Dataplex to do on a schedule. It encapsulates code, parameters, and the schedule.
    * 
@@ -11032,6 +11061,27 @@ object dataplex:
         com.pulumi.gcp.dataplex.inputs.LakeState.Builder =
       def argsBuilder = com.pulumi.gcp.dataplex.inputs.LakeMetastoreStatusArgs.builder
       builder.metastoreStatuses(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.gcp.dataplex.inputs.MetadataFeedState.Builder)
+    /**
+     * @param filters Filters defines the type of changes that you want to listen to. You can have multiple entry type filters and multiple aspect type filters. All of the entry type filters are OR&#39;ed together. All of the aspect type filters are OR&#39;ed together. All of the entry type filters and aspect type filters are AND&#39;ed together.
+     * Structure is documented below.
+     * @return builder
+     */
+    def filters(args: Endofunction[com.pulumi.gcp.dataplex.inputs.MetadataFeedFiltersArgs.Builder]):
+        com.pulumi.gcp.dataplex.inputs.MetadataFeedState.Builder =
+      val argsBuilder = com.pulumi.gcp.dataplex.inputs.MetadataFeedFiltersArgs.builder
+      builder.filters(args(argsBuilder).build)
+
+    /**
+     * @param scope Scope defines the scope of the metadata feed. Scopes are exclusive. Only one of the scopes can be specified.
+     * Structure is documented below.
+     * @return builder
+     */
+    def scope(args: Endofunction[com.pulumi.gcp.dataplex.inputs.MetadataFeedScopeArgs.Builder]):
+        com.pulumi.gcp.dataplex.inputs.MetadataFeedState.Builder =
+      val argsBuilder = com.pulumi.gcp.dataplex.inputs.MetadataFeedScopeArgs.builder
+      builder.scope(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.dataplex.inputs.TaskExecutionStatusArgs.Builder)
     /**

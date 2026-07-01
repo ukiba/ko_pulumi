@@ -7,12 +7,9 @@ object networkservices:
   /**
    * AgentGateway represents the agent gateway resource.
    * 
-   * &gt; **Warning:** This resource is in beta, and should be used with the terraform-provider-google-beta provider.
-   * See Provider Versions for more details on beta resources.
-   * 
    * To get more information about AgentGateway, see:
    * 
-   * * [API documentation](https://cloud.google.com/network-services/docs/reference/network-services/rest/v1beta1/projects.locations.agentGateways)
+   * * [API documentation](https://cloud.google.com/network-services/docs/reference/network-services/rest/v1/projects.locations.agentGateways)
    */
   def AgentGateway(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.gcp.networkservices.AgentGatewayArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
@@ -846,6 +843,18 @@ object networkservices:
       builder.versions(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.gcp.networkservices.inputs.AgentGatewayNetworkConfigArgs.Builder)
+    /**
+     * @param dnsPeeringConfig DNS peering configuration for the AgentGateway. When set, the
+     * AgentGateway will resolve queries for the configured `domains` via
+     * Cloud DNS in the specified `targetNetwork`.
+     * Structure is documented below.
+     * @return builder
+     */
+    def dnsPeeringConfig(args: Endofunction[com.pulumi.gcp.networkservices.inputs.AgentGatewayNetworkConfigDnsPeeringConfigArgs.Builder]):
+        com.pulumi.gcp.networkservices.inputs.AgentGatewayNetworkConfigArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.networkservices.inputs.AgentGatewayNetworkConfigDnsPeeringConfigArgs.builder
+      builder.dnsPeeringConfig(args(argsBuilder).build)
+
     /**
      * @param egress Optional PSC-Interface network attachment for connectivity to your
      * private VPCs network.
