@@ -1276,6 +1276,16 @@ object cloudfront:
       val argsBuilder = com.pulumi.aws.cloudfront.inputs.DistributionOriginVpcOriginConfigArgs.builder
       builder.vpcOriginConfig(args(argsBuilder).build)
 
+  extension (builder: com.pulumi.aws.cloudfront.inputs.DistributionOriginCustomOriginConfigArgs.Builder)
+    /**
+     * @param originMtlsConfig The origin mTLS configuration for mutual TLS authentication between CloudFront and your origin.
+     * @return builder
+     */
+    def originMtlsConfig(args: Endofunction[com.pulumi.aws.cloudfront.inputs.DistributionOriginCustomOriginConfigOriginMtlsConfigArgs.Builder]):
+        com.pulumi.aws.cloudfront.inputs.DistributionOriginCustomOriginConfigArgs.Builder =
+      val argsBuilder = com.pulumi.aws.cloudfront.inputs.DistributionOriginCustomOriginConfigOriginMtlsConfigArgs.builder
+      builder.originMtlsConfig(args(argsBuilder).build)
+
   extension (builder: com.pulumi.aws.cloudfront.inputs.DistributionOriginGroupArgs.Builder)
     /**
      * @param failoverCriteria The failover criteria for when to failover to the secondary origin.
@@ -1753,6 +1763,16 @@ object cloudfront:
         com.pulumi.aws.cloudfront.inputs.MultitenantDistributionOriginArgs.Builder =
       def argsBuilder = com.pulumi.aws.cloudfront.inputs.MultitenantDistributionOriginVpcOriginConfigArgs.builder
       builder.vpcOriginConfigs(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.aws.cloudfront.inputs.MultitenantDistributionOriginCustomOriginConfigArgs.Builder)
+    /**
+     * @param originMtlsConfig Origin mTLS configuration for mutual TLS authentication between CloudFront and your origin. See Origin mTLS Config below.
+     * @return builder
+     */
+    def originMtlsConfig(args: Endofunction[com.pulumi.aws.cloudfront.inputs.MultitenantDistributionOriginCustomOriginConfigOriginMtlsConfigArgs.Builder]):
+        com.pulumi.aws.cloudfront.inputs.MultitenantDistributionOriginCustomOriginConfigArgs.Builder =
+      val argsBuilder = com.pulumi.aws.cloudfront.inputs.MultitenantDistributionOriginCustomOriginConfigOriginMtlsConfigArgs.builder
+      builder.originMtlsConfig(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.cloudfront.inputs.MultitenantDistributionOriginGroupArgs.Builder)
     /**

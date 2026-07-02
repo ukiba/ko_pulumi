@@ -530,6 +530,27 @@ object sagemaker:
       val argsBuilder = com.pulumi.aws.sagemaker.inputs.HubS3StorageConfigArgs.builder
       builder.s3StorageConfig(args(argsBuilder).build)
 
+  /** Manages a SageMaker AI Hub Content Reference resource. A hub content reference copies a model from the SageMaker JumpStart public hub into a private hub so that it is accessible to users in that hub. */
+  def HubContentReference(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+      (args: Endofunction[com.pulumi.aws.sagemaker.HubContentReferenceArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+    var argsBuilder = com.pulumi.aws.sagemaker.HubContentReferenceArgs.builder
+    argsBuilder = args(argsBuilder)
+    conf.logicalName2tagName(name) match
+      case Some(tagName) =>
+        argsBuilder = argsBuilder.tags:
+          transformOptOutputMap(argsBuilder.build.tags, map =>
+              if map.contains("Name") then map else map + ("Name" -> tagName))
+      case None =>
+    com.pulumi.aws.sagemaker.HubContentReference(name,
+        argsBuilder.build,
+        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+
+  extension (builder: com.pulumi.aws.sagemaker.HubContentReferenceArgs.Builder)
+    def timeouts(args: Endofunction[com.pulumi.aws.sagemaker.inputs.HubContentReferenceTimeoutsArgs.Builder]):
+        com.pulumi.aws.sagemaker.HubContentReferenceArgs.Builder =
+      val argsBuilder = com.pulumi.aws.sagemaker.inputs.HubContentReferenceTimeoutsArgs.builder
+      builder.timeouts(args(argsBuilder).build)
+
   /** Provides a SageMaker AI Human Task UI resource. */
   def HumanTaskUI(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.sagemaker.HumanTaskUIArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
@@ -3113,6 +3134,12 @@ object sagemaker:
         com.pulumi.aws.sagemaker.inputs.FlowDefinitionState.Builder =
       val argsBuilder = com.pulumi.aws.sagemaker.inputs.FlowDefinitionOutputConfigArgs.builder
       builder.outputConfig(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.sagemaker.inputs.HubContentReferenceState.Builder)
+    def timeouts(args: Endofunction[com.pulumi.aws.sagemaker.inputs.HubContentReferenceTimeoutsArgs.Builder]):
+        com.pulumi.aws.sagemaker.inputs.HubContentReferenceState.Builder =
+      val argsBuilder = com.pulumi.aws.sagemaker.inputs.HubContentReferenceTimeoutsArgs.builder
+      builder.timeouts(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.sagemaker.inputs.HubState.Builder)
     /**

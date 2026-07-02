@@ -263,7 +263,7 @@ object observabilityadmin:
 
   extension (builder: com.pulumi.aws.observabilityadmin.inputs.CentralizationRuleForOrganizationRuleArgs.Builder)
     /**
-     * @param destination Configuration block for the destination where logs will be centralized. See `destination` below.
+     * @param destination Configuration block for the destination where telemetry will be centralized. See `destination` below.
      * @return builder
      */
     def destination(args: Endofunction[com.pulumi.aws.observabilityadmin.inputs.CentralizationRuleForOrganizationRuleDestinationArgs.Builder]):
@@ -289,6 +289,15 @@ object observabilityadmin:
         com.pulumi.aws.observabilityadmin.inputs.CentralizationRuleForOrganizationRuleDestinationArgs.Builder =
       val argsBuilder = com.pulumi.aws.observabilityadmin.inputs.CentralizationRuleForOrganizationRuleDestinationDestinationLogsConfigurationArgs.builder
       builder.destinationLogsConfiguration(args(argsBuilder).build)
+
+    /**
+     * @param destinationMetricsConfiguration Configuration block for destination metrics settings. See `destinationMetricsConfiguration` below.
+     * @return builder
+     */
+    def destinationMetricsConfiguration(args: Endofunction[com.pulumi.aws.observabilityadmin.inputs.CentralizationRuleForOrganizationRuleDestinationDestinationMetricsConfigurationArgs.Builder]):
+        com.pulumi.aws.observabilityadmin.inputs.CentralizationRuleForOrganizationRuleDestinationArgs.Builder =
+      val argsBuilder = com.pulumi.aws.observabilityadmin.inputs.CentralizationRuleForOrganizationRuleDestinationDestinationMetricsConfigurationArgs.builder
+      builder.destinationMetricsConfiguration(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.observabilityadmin.inputs.CentralizationRuleForOrganizationRuleDestinationDestinationLogsConfigurationArgs.Builder)
     /**
@@ -318,6 +327,16 @@ object observabilityadmin:
       val argsBuilder = com.pulumi.aws.observabilityadmin.inputs.CentralizationRuleForOrganizationRuleDestinationDestinationLogsConfigurationLogsEncryptionConfigurationArgs.builder
       builder.logsEncryptionConfiguration(args(argsBuilder).build)
 
+  extension (builder: com.pulumi.aws.observabilityadmin.inputs.CentralizationRuleForOrganizationRuleDestinationDestinationMetricsConfigurationArgs.Builder)
+    /**
+     * @param backupConfiguration Configuration block for metrics backup settings. See `destinationMetricsBackupConfiguration` below.
+     * @return builder
+     */
+    def backupConfiguration(args: Endofunction[com.pulumi.aws.observabilityadmin.inputs.CentralizationRuleForOrganizationRuleDestinationDestinationMetricsConfigurationBackupConfigurationArgs.Builder]):
+        com.pulumi.aws.observabilityadmin.inputs.CentralizationRuleForOrganizationRuleDestinationDestinationMetricsConfigurationArgs.Builder =
+      val argsBuilder = com.pulumi.aws.observabilityadmin.inputs.CentralizationRuleForOrganizationRuleDestinationDestinationMetricsConfigurationBackupConfigurationArgs.builder
+      builder.backupConfiguration(args(argsBuilder).build)
+
   extension (builder: com.pulumi.aws.observabilityadmin.inputs.CentralizationRuleForOrganizationRuleSourceArgs.Builder)
     /**
      * @param sourceLogsConfiguration Configuration block for source logs settings. See `sourceLogsConfiguration` below.
@@ -327,6 +346,15 @@ object observabilityadmin:
         com.pulumi.aws.observabilityadmin.inputs.CentralizationRuleForOrganizationRuleSourceArgs.Builder =
       val argsBuilder = com.pulumi.aws.observabilityadmin.inputs.CentralizationRuleForOrganizationRuleSourceSourceLogsConfigurationArgs.builder
       builder.sourceLogsConfiguration(args(argsBuilder).build)
+
+    /**
+     * @param sourceMetricsConfiguration Configuration block for source metrics settings. See `sourceMetricsConfiguration` below.
+     * @return builder
+     */
+    def sourceMetricsConfiguration(args: Endofunction[com.pulumi.aws.observabilityadmin.inputs.CentralizationRuleForOrganizationRuleSourceSourceMetricsConfigurationArgs.Builder]):
+        com.pulumi.aws.observabilityadmin.inputs.CentralizationRuleForOrganizationRuleSourceArgs.Builder =
+      val argsBuilder = com.pulumi.aws.observabilityadmin.inputs.CentralizationRuleForOrganizationRuleSourceSourceMetricsConfigurationArgs.builder
+      builder.sourceMetricsConfiguration(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.observabilityadmin.inputs.CentralizationRuleForOrganizationState.Builder)
     /**

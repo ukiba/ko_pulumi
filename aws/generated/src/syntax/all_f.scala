@@ -88,6 +88,7 @@ export ko_pulumi.aws.bedrock.guardrailConfigurations
 export ko_pulumi.aws.bedrock.hierarchicalChunkingConfiguration
 export ko_pulumi.aws.bedrock.http
 export ko_pulumi.aws.bedrock.indexedKeys
+export ko_pulumi.aws.bedrock.inferenceConfig
 export ko_pulumi.aws.bedrock.inferenceConfiguration
 export ko_pulumi.aws.bedrock.inferenceConfigurations
 export ko_pulumi.aws.bedrock.inline

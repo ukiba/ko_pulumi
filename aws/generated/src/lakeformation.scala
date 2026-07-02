@@ -158,7 +158,7 @@ object lakeformation:
 
   extension (builder: com.pulumi.aws.lakeformation.OptInArgs.Builder)
     /**
-     * @param conditions Lake Formation condition, which applies to permissions and opt-ins that contain an expression.
+     * @param conditions Lake Formation condition, which applies to permissions and opt-ins that contain an expression. See `condition` Block for more details.
      * @return builder
      */
     def conditions(args: Endofunction[com.pulumi.aws.lakeformation.inputs.OptInConditionArgs.Builder]*):
@@ -167,7 +167,7 @@ object lakeformation:
       builder.conditions(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param principals Lake Formation principal. Supported principals are IAM users or IAM roles. See Principal for more details.
+     * @param principals Lake Formation principal. Supported principals are IAM users or IAM roles. See `principal` Block for more details.
      * @return builder
      */
     def principals(args: Endofunction[com.pulumi.aws.lakeformation.inputs.OptInPrincipalArgs.Builder]*):
@@ -176,7 +176,7 @@ object lakeformation:
       builder.principals(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param resourceDatas Structure for the resource. See Resource for more details.
+     * @param resourceDatas Structure for the resource. See `resourceData` Block for more details.
      * @return builder
      */
     def resourceDatas(args: Endofunction[com.pulumi.aws.lakeformation.inputs.OptInResourceDataArgs.Builder]*):
@@ -537,7 +537,7 @@ object lakeformation:
 
   extension (builder: com.pulumi.aws.lakeformation.inputs.OptInResourceDataArgs.Builder)
     /**
-     * @param catalogs Identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. See Catalog for more details.
+     * @param catalogs Identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. See `catalog` Block for more details.
      * @return builder
      */
     def catalogs(args: Endofunction[com.pulumi.aws.lakeformation.inputs.OptInResourceDataCatalogArgs.Builder]*):
@@ -546,7 +546,7 @@ object lakeformation:
       builder.catalogs(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param dataCellsFilters Data cell filter. See Data Cells Filter for more details.
+     * @param dataCellsFilters Data cell filter. See `dataCellsFilter` Block for more details.
      * @return builder
      */
     def dataCellsFilters(args: Endofunction[com.pulumi.aws.lakeformation.inputs.OptInResourceDataDataCellsFilterArgs.Builder]*):
@@ -555,7 +555,7 @@ object lakeformation:
       builder.dataCellsFilters(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param dataLocations Location of an Amazon S3 path where permissions are granted or revoked. See Data Location for more details.
+     * @param dataLocations Location of an Amazon S3 path where permissions are granted or revoked. See `dataLocation` Block for more details.
      * @return builder
      */
     def dataLocations(args: Endofunction[com.pulumi.aws.lakeformation.inputs.OptInResourceDataDataLocationArgs.Builder]*):
@@ -564,7 +564,7 @@ object lakeformation:
       builder.dataLocations(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param database Database for the resource. Unique to the Data Catalog. A database is a set of associated table definitions organized into a logical group. You can Grant and Revoke database permissions to a principal. See Database for more details.
+     * @param database Database for the resource. Unique to the Data Catalog. A database is a set of associated table definitions organized into a logical group. You can Grant and Revoke database permissions to a principal. See `database` Block for more details.
      * @return builder
      */
     def database(args: Endofunction[com.pulumi.aws.lakeformation.inputs.OptInResourceDataDatabaseArgs.Builder]):
@@ -582,7 +582,7 @@ object lakeformation:
       builder.lfTag(args(argsBuilder).build)
 
     /**
-     * @param lfTagExpressions Logical expression composed of one or more LF-Tag key:value pairs. See LF-Tag Expression for more details.
+     * @param lfTagExpressions Logical expression composed of one or more LF-Tag key:value pairs. See `lfTagExpression` Block for more details.
      * @return builder
      */
     def lfTagExpressions(args: Endofunction[com.pulumi.aws.lakeformation.inputs.OptInResourceDataLfTagExpressionArgs.Builder]*):
@@ -591,7 +591,7 @@ object lakeformation:
       builder.lfTagExpressions(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param lfTagPolicies List of LF-Tag conditions or saved LF-Tag expressions that define a resource&#39;s LF-Tag policy. See LF-Tag Policy for more details.
+     * @param lfTagPolicies List of LF-Tag conditions or saved LF-Tag expressions that define a resource&#39;s LF-Tag policy. See `lfTagPolicy` Block for more details.
      * @return builder
      */
     def lfTagPolicies(args: Endofunction[com.pulumi.aws.lakeformation.inputs.OptInResourceDataLfTagPolicyArgs.Builder]*):
@@ -600,7 +600,7 @@ object lakeformation:
       builder.lfTagPolicies(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param table Table for the resource. A table is a metadata definition that represents your data. You can Grant and Revoke table privileges to a principal. See Table for more details.
+     * @param table Table for the resource. A table is a metadata definition that represents your data. You can Grant and Revoke table privileges to a principal. See `table` Block for more details.
      * @return builder
      */
     def table(args: Endofunction[com.pulumi.aws.lakeformation.inputs.OptInResourceDataTableArgs.Builder]):
@@ -609,7 +609,7 @@ object lakeformation:
       builder.table(args(argsBuilder).build)
 
     /**
-     * @param tableWithColumns Table with columns for the resource. A principal with permissions to this resource can select metadata from the columns of a table in the Data Catalog and the underlying data in Amazon S3. See Table With Columns for more details.
+     * @param tableWithColumns Table with columns for the resource. A principal with permissions to this resource can select metadata from the columns of a table in the Data Catalog and the underlying data in Amazon S3. See `tableWithColumns` Block for more details.
      * @return builder
      */
     def tableWithColumns(args: Endofunction[com.pulumi.aws.lakeformation.inputs.OptInResourceDataTableWithColumnsArgs.Builder]):
@@ -619,7 +619,7 @@ object lakeformation:
 
   extension (builder: com.pulumi.aws.lakeformation.inputs.OptInResourceDataTableWithColumnsArgs.Builder)
     /**
-     * @param columnWildcard Wildcard specified by a ColumnWildcard object. At least one of ColumnNames or ColumnWildcard is required.
+     * @param columnWildcard Wildcard specified by a ColumnWildcard object. At least one of ColumnNames or ColumnWildcard is required. See `columnWildcard` Block for more details.
      * @return builder
      */
     def columnWildcard(args: Endofunction[com.pulumi.aws.lakeformation.inputs.OptInResourceDataTableWithColumnsColumnWildcardArgs.Builder]):
@@ -629,7 +629,7 @@ object lakeformation:
 
   extension (builder: com.pulumi.aws.lakeformation.inputs.OptInState.Builder)
     /**
-     * @param conditions Lake Formation condition, which applies to permissions and opt-ins that contain an expression.
+     * @param conditions Lake Formation condition, which applies to permissions and opt-ins that contain an expression. See `condition` Block for more details.
      * @return builder
      */
     def conditions(args: Endofunction[com.pulumi.aws.lakeformation.inputs.OptInConditionArgs.Builder]*):
@@ -638,7 +638,7 @@ object lakeformation:
       builder.conditions(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param principals Lake Formation principal. Supported principals are IAM users or IAM roles. See Principal for more details.
+     * @param principals Lake Formation principal. Supported principals are IAM users or IAM roles. See `principal` Block for more details.
      * @return builder
      */
     def principals(args: Endofunction[com.pulumi.aws.lakeformation.inputs.OptInPrincipalArgs.Builder]*):
@@ -647,7 +647,7 @@ object lakeformation:
       builder.principals(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param resourceDatas Structure for the resource. See Resource for more details.
+     * @param resourceDatas Structure for the resource. See `resourceData` Block for more details.
      * @return builder
      */
     def resourceDatas(args: Endofunction[com.pulumi.aws.lakeformation.inputs.OptInResourceDataArgs.Builder]*):

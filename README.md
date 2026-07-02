@@ -206,7 +206,7 @@ val sub = sns.TopicSubscription("order-worker-sub",
     1. [Scala 3.8](https://github.com/scala/scala3) requires Java 17
     1. [pulumi-java](https://github.com/pulumi/pulumi-java) requires Java 11
 
-1. Pulumi 3.248.0 or later
+1. Pulumi 3.250.0 or later
     1. Mac: `brew install pulumi/tap/pulumi`
 
 ### Build environment

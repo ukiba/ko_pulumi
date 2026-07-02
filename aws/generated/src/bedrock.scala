@@ -518,6 +518,36 @@ object bedrock:
       val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreCodeInterpreterTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
+  /** Manages an AWS Bedrock AgentCore Evaluator. An evaluator scores how an agent performs. You can configure it in one of two ways: an LLM-as-a-Judge evaluator that uses a model to score agent behavior against your instructions and a rating scale, or a code-based evaluator that runs a Lambda function you provide. */
+  def AgentcoreEvaluator(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+      (args: Endofunction[com.pulumi.aws.bedrock.AgentcoreEvaluatorArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+    var argsBuilder = com.pulumi.aws.bedrock.AgentcoreEvaluatorArgs.builder
+    argsBuilder = args(argsBuilder)
+    conf.logicalName2tagName(name) match
+      case Some(tagName) =>
+        argsBuilder = argsBuilder.tags:
+          transformOptOutputMap(argsBuilder.build.tags, map =>
+              if map.contains("Name") then map else map + ("Name" -> tagName))
+      case None =>
+    com.pulumi.aws.bedrock.AgentcoreEvaluator(name,
+        argsBuilder.build,
+        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+
+  extension (builder: com.pulumi.aws.bedrock.AgentcoreEvaluatorArgs.Builder)
+    /**
+     * @param evaluatorConfig Configuration that defines how the evaluator assesses agent performance. See `evaluatorConfig` below.
+     * @return builder
+     */
+    def evaluatorConfig(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreEvaluatorEvaluatorConfigArgs.Builder]):
+        com.pulumi.aws.bedrock.AgentcoreEvaluatorArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreEvaluatorEvaluatorConfigArgs.builder
+      builder.evaluatorConfig(args(argsBuilder).build)
+
+    def timeouts(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreEvaluatorTimeoutsArgs.Builder]):
+        com.pulumi.aws.bedrock.AgentcoreEvaluatorArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreEvaluatorTimeoutsArgs.builder
+      builder.timeouts(args(argsBuilder).build)
+
   /** Manages an AWS Bedrock AgentCore Gateway. With Gateway, developers can convert APIs, Lambda functions, and existing services into Model Context Protocol (MCP)-compatible tools. */
   def AgentcoreGateway(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.bedrock.AgentcoreGatewayArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
@@ -3270,6 +3300,108 @@ object bedrock:
     def timeouts(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreCodeInterpreterTimeoutsArgs.Builder]):
         com.pulumi.aws.bedrock.inputs.AgentcoreCodeInterpreterState.Builder =
       val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreCodeInterpreterTimeoutsArgs.builder
+      builder.timeouts(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.bedrock.inputs.AgentcoreEvaluatorEvaluatorConfigArgs.Builder)
+    /**
+     * @param codeBased Configuration that runs a Lambda function you provide to score the agent. See `codeBased` below.
+     * @return builder
+     */
+    def codeBased(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreEvaluatorEvaluatorConfigCodeBasedArgs.Builder]):
+        com.pulumi.aws.bedrock.inputs.AgentcoreEvaluatorEvaluatorConfigArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreEvaluatorEvaluatorConfigCodeBasedArgs.builder
+      builder.codeBased(args(argsBuilder).build)
+
+    /**
+     * @param llmAsAJudge Configuration that uses a Bedrock model to score the agent. See `llmAsAJudge` below.
+     * @return builder
+     */
+    def llmAsAJudge(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreEvaluatorEvaluatorConfigLlmAsAJudgeArgs.Builder]):
+        com.pulumi.aws.bedrock.inputs.AgentcoreEvaluatorEvaluatorConfigArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreEvaluatorEvaluatorConfigLlmAsAJudgeArgs.builder
+      builder.llmAsAJudge(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.bedrock.inputs.AgentcoreEvaluatorEvaluatorConfigCodeBasedArgs.Builder)
+    /**
+     * @param lambdaConfig Lambda function configuration. See `lambdaConfig` below.
+     * @return builder
+     */
+    def lambdaConfig(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreEvaluatorEvaluatorConfigCodeBasedLambdaConfigArgs.Builder]):
+        com.pulumi.aws.bedrock.inputs.AgentcoreEvaluatorEvaluatorConfigCodeBasedArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreEvaluatorEvaluatorConfigCodeBasedLambdaConfigArgs.builder
+      builder.lambdaConfig(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.bedrock.inputs.AgentcoreEvaluatorEvaluatorConfigLlmAsAJudgeArgs.Builder)
+    /**
+     * @param modelConfig Which Bedrock model to use. See `modelConfig` below.
+     * @return builder
+     */
+    def modelConfig(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreEvaluatorEvaluatorConfigLlmAsAJudgeModelConfigArgs.Builder]):
+        com.pulumi.aws.bedrock.inputs.AgentcoreEvaluatorEvaluatorConfigLlmAsAJudgeArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreEvaluatorEvaluatorConfigLlmAsAJudgeModelConfigArgs.builder
+      builder.modelConfig(args(argsBuilder).build)
+
+    /**
+     * @param ratingScale Scale used to score the agent. See `ratingScale` below.
+     * @return builder
+     */
+    def ratingScale(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreEvaluatorEvaluatorConfigLlmAsAJudgeRatingScaleArgs.Builder]):
+        com.pulumi.aws.bedrock.inputs.AgentcoreEvaluatorEvaluatorConfigLlmAsAJudgeArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreEvaluatorEvaluatorConfigLlmAsAJudgeRatingScaleArgs.builder
+      builder.ratingScale(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.bedrock.inputs.AgentcoreEvaluatorEvaluatorConfigLlmAsAJudgeModelConfigArgs.Builder)
+    /**
+     * @param bedrockEvaluatorModelConfig Amazon Bedrock model configuration. See `bedrockEvaluatorModelConfig` below.
+     * @return builder
+     */
+    def bedrockEvaluatorModelConfig(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreEvaluatorEvaluatorConfigLlmAsAJudgeModelConfigBedrockEvaluatorModelConfigArgs.Builder]):
+        com.pulumi.aws.bedrock.inputs.AgentcoreEvaluatorEvaluatorConfigLlmAsAJudgeModelConfigArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreEvaluatorEvaluatorConfigLlmAsAJudgeModelConfigBedrockEvaluatorModelConfigArgs.builder
+      builder.bedrockEvaluatorModelConfig(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.bedrock.inputs.AgentcoreEvaluatorEvaluatorConfigLlmAsAJudgeModelConfigBedrockEvaluatorModelConfigArgs.Builder)
+    /**
+     * @param inferenceConfig Settings that control how the model generates its response. See `inferenceConfig` below.
+     * @return builder
+     */
+    def inferenceConfig(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreEvaluatorEvaluatorConfigLlmAsAJudgeModelConfigBedrockEvaluatorModelConfigInferenceConfigArgs.Builder]):
+        com.pulumi.aws.bedrock.inputs.AgentcoreEvaluatorEvaluatorConfigLlmAsAJudgeModelConfigBedrockEvaluatorModelConfigArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreEvaluatorEvaluatorConfigLlmAsAJudgeModelConfigBedrockEvaluatorModelConfigInferenceConfigArgs.builder
+      builder.inferenceConfig(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.bedrock.inputs.AgentcoreEvaluatorEvaluatorConfigLlmAsAJudgeRatingScaleArgs.Builder)
+    /**
+     * @param categoricals One or more categorical rating scale definitions. See `categorical` below.
+     * @return builder
+     */
+    def categoricals(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreEvaluatorEvaluatorConfigLlmAsAJudgeRatingScaleCategoricalArgs.Builder]*):
+        com.pulumi.aws.bedrock.inputs.AgentcoreEvaluatorEvaluatorConfigLlmAsAJudgeRatingScaleArgs.Builder =
+      def argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreEvaluatorEvaluatorConfigLlmAsAJudgeRatingScaleCategoricalArgs.builder
+      builder.categoricals(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param numericals One or more numerical rating scale definitions. See `numerical` below.
+     * @return builder
+     */
+    def numericals(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreEvaluatorEvaluatorConfigLlmAsAJudgeRatingScaleNumericalArgs.Builder]*):
+        com.pulumi.aws.bedrock.inputs.AgentcoreEvaluatorEvaluatorConfigLlmAsAJudgeRatingScaleArgs.Builder =
+      def argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreEvaluatorEvaluatorConfigLlmAsAJudgeRatingScaleNumericalArgs.builder
+      builder.numericals(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.aws.bedrock.inputs.AgentcoreEvaluatorState.Builder)
+    /**
+     * @param evaluatorConfig Configuration that defines how the evaluator assesses agent performance. See `evaluatorConfig` below.
+     * @return builder
+     */
+    def evaluatorConfig(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreEvaluatorEvaluatorConfigArgs.Builder]):
+        com.pulumi.aws.bedrock.inputs.AgentcoreEvaluatorState.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreEvaluatorEvaluatorConfigArgs.builder
+      builder.evaluatorConfig(args(argsBuilder).build)
+
+    def timeouts(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreEvaluatorTimeoutsArgs.Builder]):
+        com.pulumi.aws.bedrock.inputs.AgentcoreEvaluatorState.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreEvaluatorTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentcoreGatewayAuthorizerConfigurationArgs.Builder)

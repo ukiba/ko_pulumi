@@ -166,6 +166,7 @@ export ko_pulumi.aws.networkmanager.withEdgeOverrides
 export ko_pulumi.aws.observabilityadmin.vpcFlowLogParameters
 export ko_pulumi.aws.observabilityadmin.wafLoggingParameters
 export ko_pulumi.aws.odb.zeroEtlAccesses
+export ko_pulumi.aws.opensearch.vectorOptions
 export ko_pulumi.aws.opensearch.vpcOptions
 export ko_pulumi.aws.opensearch.windowStartTime
 export ko_pulumi.aws.opensearch.zoneAwarenessConfig

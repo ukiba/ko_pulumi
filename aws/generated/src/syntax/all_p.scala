@@ -191,6 +191,7 @@ export ko_pulumi.aws.bedrock.protocolConfiguration
 export ko_pulumi.aws.bedrock.provisionedConfiguration
 export ko_pulumi.aws.bedrock.queryEngineConfiguration
 export ko_pulumi.aws.bedrock.queryGenerationConfiguration
+export ko_pulumi.aws.bedrock.ratingScale
 export ko_pulumi.aws.bedrock.rdsConfiguration
 export ko_pulumi.aws.bedrock.recording
 export ko_pulumi.aws.bedrock.redisEnterpriseCloudConfiguration
@@ -984,6 +985,7 @@ export ko_pulumi.aws.observabilityadmin.rule
 export ko_pulumi.aws.observabilityadmin.singleHeader
 export ko_pulumi.aws.observabilityadmin.source
 export ko_pulumi.aws.observabilityadmin.sourceLogsConfiguration
+export ko_pulumi.aws.observabilityadmin.sourceMetricsConfiguration
 export ko_pulumi.aws.observabilityadmin.timeouts
 export ko_pulumi.aws.odb.s3Accesses
 export ko_pulumi.aws.odb.serviceNetworkEndpoints

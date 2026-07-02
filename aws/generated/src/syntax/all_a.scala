@@ -194,10 +194,12 @@ export ko_pulumi.aws.bedrock.auto
 export ko_pulumi.aws.bedrock.awsDataCatalogConfiguration
 export ko_pulumi.aws.bedrock.bedrockDataAutomationConfiguration
 export ko_pulumi.aws.bedrock.bedrockEmbeddingModelConfiguration
+export ko_pulumi.aws.bedrock.bedrockEvaluatorModelConfig
 export ko_pulumi.aws.bedrock.bedrockFoundationModelConfiguration
 export ko_pulumi.aws.bedrock.bedrockModelConfig
 export ko_pulumi.aws.bedrock.cachePoint
 export ko_pulumi.aws.bedrock.callerIamCredentials
+export ko_pulumi.aws.bedrock.categoricals
 export ko_pulumi.aws.bedrock.cedar
 export ko_pulumi.aws.bedrock.chat
 export ko_pulumi.aws.bedrock.chunkingConfiguration
@@ -206,6 +208,7 @@ export ko_pulumi.aws.bedrock.clientSecretArns
 export ko_pulumi.aws.bedrock.cloudwatchConfigs
 export ko_pulumi.aws.bedrock.cloudwatchLogs
 export ko_pulumi.aws.bedrock.code
+export ko_pulumi.aws.bedrock.codeBased
 export ko_pulumi.aws.bedrock.codeConfiguration
 export ko_pulumi.aws.bedrock.collector
 export ko_pulumi.aws.bedrock.columns
@@ -241,6 +244,7 @@ export ko_pulumi.aws.bedrock.efsAccessPoints
 export ko_pulumi.aws.bedrock.embeddingModelConfiguration
 export ko_pulumi.aws.bedrock.environmentArtifact
 export ko_pulumi.aws.bedrock.environments
+export ko_pulumi.aws.bedrock.evaluatorConfig
 export ko_pulumi.aws.bedrock.evaluators
 export ko_pulumi.aws.bedrock.extraction
 export ko_pulumi.aws.bedrockmodel.cloudwatchConfig
@@ -536,6 +540,7 @@ export ko_pulumi.aws.eks.controlPlanePlacement
 export ko_pulumi.aws.eks.controlPlaneScalingConfig
 export ko_pulumi.aws.eks.elasticLoadBalancing
 export ko_pulumi.aws.eks.encryptionConfig
+export ko_pulumi.aws.eks.etcdPlacement
 export ko_pulumi.aws.elasticache.authenticationMode
 export ko_pulumi.aws.elasticache.authenticationModes
 export ko_pulumi.aws.elasticache.cacheNodes
@@ -953,6 +958,7 @@ export ko_pulumi.aws.observabilityadmin.configuration
 export ko_pulumi.aws.observabilityadmin.destination
 export ko_pulumi.aws.observabilityadmin.destinationConfiguration
 export ko_pulumi.aws.observabilityadmin.destinationLogsConfiguration
+export ko_pulumi.aws.observabilityadmin.destinationMetricsConfiguration
 export ko_pulumi.aws.observabilityadmin.elbLoadBalancerLoggingParameters
 export ko_pulumi.aws.observabilityadmin.encryption
 export ko_pulumi.aws.odb.crossRegionS3RestoreSourcesAccesses

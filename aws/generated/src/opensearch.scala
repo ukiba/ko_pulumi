@@ -450,7 +450,7 @@ object opensearch:
         resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
 
   /**
-   * Resource for managing an AWS OpenSearch Serverless Collection.
+   * Manages an AWS OpenSearch Serverless Collection.
    * 
    * &gt; **NOTE:** An `aws.opensearch.ServerlessCollection` must have encryption configured either by an applicable encryption security policy or by setting `encryptionConfig` directly on the resource.
    * 
@@ -487,6 +487,15 @@ object opensearch:
         com.pulumi.aws.opensearch.ServerlessCollectionArgs.Builder =
       val argsBuilder = com.pulumi.aws.opensearch.inputs.ServerlessCollectionTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
+
+    /**
+     * @param vectorOptions Configuration block for vector search options. Only valid when `type` is `VECTORSEARCH`. See `vectorOptions` below for details.
+     * @return builder
+     */
+    def vectorOptions(args: Endofunction[com.pulumi.aws.opensearch.inputs.ServerlessCollectionVectorOptionArgs.Builder]*):
+        com.pulumi.aws.opensearch.ServerlessCollectionArgs.Builder =
+      def argsBuilder = com.pulumi.aws.opensearch.inputs.ServerlessCollectionVectorOptionArgs.builder
+      builder.vectorOptions(args.map(_(argsBuilder).build)*)
 
   /**
    * Resource for managing an AWS OpenSearch Serverless Collection Group.
@@ -1011,6 +1020,15 @@ object opensearch:
         com.pulumi.aws.opensearch.inputs.ServerlessCollectionState.Builder =
       val argsBuilder = com.pulumi.aws.opensearch.inputs.ServerlessCollectionTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
+
+    /**
+     * @param vectorOptions Configuration block for vector search options. Only valid when `type` is `VECTORSEARCH`. See `vectorOptions` below for details.
+     * @return builder
+     */
+    def vectorOptions(args: Endofunction[com.pulumi.aws.opensearch.inputs.ServerlessCollectionVectorOptionArgs.Builder]*):
+        com.pulumi.aws.opensearch.inputs.ServerlessCollectionState.Builder =
+      def argsBuilder = com.pulumi.aws.opensearch.inputs.ServerlessCollectionVectorOptionArgs.builder
+      builder.vectorOptions(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.aws.opensearch.inputs.ServerlessSecurityConfigState.Builder)
     /**

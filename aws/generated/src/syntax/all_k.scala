@@ -75,10 +75,12 @@ export ko_pulumi.aws.bedrock.kmsConfiguration
 export ko_pulumi.aws.bedrock.knowledgeBase
 export ko_pulumi.aws.bedrock.knowledgeBaseConfiguration
 export ko_pulumi.aws.bedrock.lambda
+export ko_pulumi.aws.bedrock.lambdaConfig
 export ko_pulumi.aws.bedrock.lambdaFunction
 export ko_pulumi.aws.bedrock.levelConfigurations
 export ko_pulumi.aws.bedrock.lex
 export ko_pulumi.aws.bedrock.lifecycleConfigurations
+export ko_pulumi.aws.bedrock.llmAsAJudge
 export ko_pulumi.aws.bedrock.managedVpcResource
 export ko_pulumi.aws.bedrock.managedWordListsConfigs
 export ko_pulumi.aws.bedrock.mcp
@@ -91,6 +93,7 @@ export ko_pulumi.aws.bedrock.metadataConfiguration
 export ko_pulumi.aws.bedrock.metadatas
 export ko_pulumi.aws.bedrock.microsoftOauth2ProviderConfig
 export ko_pulumi.aws.bedrock.model
+export ko_pulumi.aws.bedrock.modelConfig
 export ko_pulumi.aws.bedrock.modelSource
 export ko_pulumi.aws.bedrock.models
 export ko_pulumi.aws.bedrock.mongoDbAtlasConfiguration
@@ -100,6 +103,7 @@ export ko_pulumi.aws.bedrock.networkConfigurations
 export ko_pulumi.aws.bedrock.networkModeConfig
 export ko_pulumi.aws.bedrock.networkModeConfigs
 export ko_pulumi.aws.bedrock.nodes
+export ko_pulumi.aws.bedrock.numericals
 export ko_pulumi.aws.bedrock.oauth
 export ko_pulumi.aws.bedrock.oauth2ProviderConfig
 export ko_pulumi.aws.bedrock.oauthDiscoveries
@@ -138,6 +142,7 @@ export ko_pulumi.aws.cloudfront.members
 export ko_pulumi.aws.cloudfront.monitoringSubscription
 export ko_pulumi.aws.cloudfront.orderedCacheBehaviors
 export ko_pulumi.aws.cloudfront.originGroups
+export ko_pulumi.aws.cloudfront.originMtlsConfig
 export ko_pulumi.aws.cloudfront.originShield
 export ko_pulumi.aws.cloudfront.originShields
 export ko_pulumi.aws.cloudfront.originSslProtocols

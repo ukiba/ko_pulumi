@@ -628,6 +628,16 @@ object eks:
       val argsBuilder = com.pulumi.aws.eks.inputs.ClusterOutpostConfigControlPlanePlacementArgs.builder
       builder.controlPlanePlacement(args(argsBuilder).build)
 
+    /**
+     * @param etcdPlacement Placement configuration for the etcd instances of your local Amazon EKS cluster on an AWS Outpost.
+     * The `etcdPlacement` configuration block supports the following arguments:
+     * @return builder
+     */
+    def etcdPlacement(args: Endofunction[com.pulumi.aws.eks.inputs.ClusterOutpostConfigEtcdPlacementArgs.Builder]):
+        com.pulumi.aws.eks.inputs.ClusterOutpostConfigArgs.Builder =
+      val argsBuilder = com.pulumi.aws.eks.inputs.ClusterOutpostConfigEtcdPlacementArgs.builder
+      builder.etcdPlacement(args(argsBuilder).build)
+
   extension (builder: com.pulumi.aws.eks.inputs.ClusterRemoteNetworkConfigArgs.Builder)
     /**
      * @param remoteNodeNetworks Configuration block with remote node network configuration for EKS Hybrid Nodes. Detailed below.
