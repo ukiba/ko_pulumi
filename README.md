@@ -221,10 +221,10 @@ val sub = sns.TopicSubscription("order-worker-sub",
 1. [mill](https://com-lihaoyi.github.io/mill/)
     1. The launcher scripts were downloaded as follows, and then committed to the repository.
 
-           curl -Lf https://repo1.maven.org/maven2/com/lihaoyi/mill-dist/1.1.6/mill-dist-1.1.6-mill.sh -o mill
+           curl -Lf https://repo1.maven.org/maven2/com/lihaoyi/mill-dist/1.1.7/mill-dist-1.1.7-mill.sh -o mill
            chmod +x mill
 
-           curl -Lf https://repo1.maven.org/maven2/com/lihaoyi/mill-dist/1.1.6/mill-dist-1.1.6-mill.bat -o mill.bat
+           curl -Lf https://repo1.maven.org/maven2/com/lihaoyi/mill-dist/1.1.7/mill-dist-1.1.7-mill.bat -o mill.bat
 
 
 ## Build
