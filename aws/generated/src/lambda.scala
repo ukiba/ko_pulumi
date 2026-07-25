@@ -413,6 +413,35 @@ object lambda:
         resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
 
   /**
+   * Manages the scaling configuration for an AWS Lambda function. The scaling configuration defines the minimum and maximum number of execution environments that can be provisioned for the function, allowing you to control scaling behavior and resource allocation.
+   * 
+   * &gt; **NOTE:** This resource only works with Lambda functions that have a capacity provider configuration.
+   * 
+   * &gt; **NOTE:** Per common practice, this resource waits for the scaling configuration to converge before apply completes. It determines the min and max execution environments have settled using Requested and Applied scaling configs returned by Lambda. The [API documentation](https://docs.aws.amazon.com/lambda/latest/api/API_GetFunctionScalingConfig.html) is ambiguous about how these behave. From observation, Requested is only returned prior to settlement whereas Applied may be partially returned until settlement when it is fully returned. Should the observed behavior change, this resource will need to be updated to match.
+   */
+  def FunctionScalingConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+      (args: Endofunction[com.pulumi.aws.lambda.FunctionScalingConfigArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+    val argsBuilder = com.pulumi.aws.lambda.FunctionScalingConfigArgs.builder
+    com.pulumi.aws.lambda.FunctionScalingConfig(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+
+  extension (builder: com.pulumi.aws.lambda.FunctionScalingConfigArgs.Builder)
+    /**
+     * @param functionScalingConfig Scaling configuration block. See `functionScalingConfig` Block below.
+     * @return builder
+     */
+    def functionScalingConfig(args: Endofunction[com.pulumi.aws.lambda.inputs.FunctionScalingConfigFunctionScalingConfigArgs.Builder]):
+        com.pulumi.aws.lambda.FunctionScalingConfigArgs.Builder =
+      val argsBuilder = com.pulumi.aws.lambda.inputs.FunctionScalingConfigFunctionScalingConfigArgs.builder
+      builder.functionScalingConfig(args(argsBuilder).build)
+
+    def timeouts(args: Endofunction[com.pulumi.aws.lambda.inputs.FunctionScalingConfigTimeoutsArgs.Builder]):
+        com.pulumi.aws.lambda.FunctionScalingConfigArgs.Builder =
+      val argsBuilder = com.pulumi.aws.lambda.inputs.FunctionScalingConfigTimeoutsArgs.builder
+      builder.timeouts(args(argsBuilder).build)
+
+  /**
    * Manages a Lambda function URL. Creates a dedicated HTTP(S) endpoint for a Lambda function to enable direct invocation via HTTP requests.
    * 
    * &gt; **NOTE:** When [`authorizationType` is `&#34;NONE&#34;`](https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html#urls-auth-none) the `lambda:InvokeFunctionUrl` permission allowing a public endpoint and `lambda:InvokeFunction` permission with the `InvokedViaFunctionUrl` flag set to `true` are automatically added to the Lambda function on creation. These policies are NOT removed from AWS when the resource is destroyed.
@@ -925,6 +954,21 @@ object lambda:
         com.pulumi.aws.lambda.inputs.FunctionEventInvokeConfigState.Builder =
       val argsBuilder = com.pulumi.aws.lambda.inputs.FunctionEventInvokeConfigDestinationConfigArgs.builder
       builder.destinationConfig(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.lambda.inputs.FunctionScalingConfigState.Builder)
+    /**
+     * @param functionScalingConfig Scaling configuration block. See `functionScalingConfig` Block below.
+     * @return builder
+     */
+    def functionScalingConfig(args: Endofunction[com.pulumi.aws.lambda.inputs.FunctionScalingConfigFunctionScalingConfigArgs.Builder]):
+        com.pulumi.aws.lambda.inputs.FunctionScalingConfigState.Builder =
+      val argsBuilder = com.pulumi.aws.lambda.inputs.FunctionScalingConfigFunctionScalingConfigArgs.builder
+      builder.functionScalingConfig(args(argsBuilder).build)
+
+    def timeouts(args: Endofunction[com.pulumi.aws.lambda.inputs.FunctionScalingConfigTimeoutsArgs.Builder]):
+        com.pulumi.aws.lambda.inputs.FunctionScalingConfigState.Builder =
+      val argsBuilder = com.pulumi.aws.lambda.inputs.FunctionScalingConfigTimeoutsArgs.builder
+      builder.timeouts(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.lambda.inputs.FunctionState.Builder)
     /**

@@ -553,7 +553,25 @@ object opensearch:
 
   extension (builder: com.pulumi.aws.opensearch.ServerlessSecurityConfigArgs.Builder)
     /**
-     * @param samlOptions Configuration block for SAML options.
+     * @param iamFederationOptions Configuration block for IAM Federation options. Required if `type` is set to `iamfederation`. See `iamFederationOptions` Block below for details.
+     * @return builder
+     */
+    def iamFederationOptions(args: Endofunction[com.pulumi.aws.opensearch.inputs.ServerlessSecurityConfigIamFederationOptionsArgs.Builder]):
+        com.pulumi.aws.opensearch.ServerlessSecurityConfigArgs.Builder =
+      val argsBuilder = com.pulumi.aws.opensearch.inputs.ServerlessSecurityConfigIamFederationOptionsArgs.builder
+      builder.iamFederationOptions(args(argsBuilder).build)
+
+    /**
+     * @param iamIdentityCenterOptions Configuration block for IAM Identity Center options. Required if `type` is set to `iamidentitycenter`. See `iamIdentityCenterOptions` Block below for details.
+     * @return builder
+     */
+    def iamIdentityCenterOptions(args: Endofunction[com.pulumi.aws.opensearch.inputs.ServerlessSecurityConfigIamIdentityCenterOptionsArgs.Builder]):
+        com.pulumi.aws.opensearch.ServerlessSecurityConfigArgs.Builder =
+      val argsBuilder = com.pulumi.aws.opensearch.inputs.ServerlessSecurityConfigIamIdentityCenterOptionsArgs.builder
+      builder.iamIdentityCenterOptions(args(argsBuilder).build)
+
+    /**
+     * @param samlOptions Configuration block for SAML options. Required if `type` is set to `saml`. See `samlOptions` Block below for details.
      * @return builder
      */
     def samlOptions(args: Endofunction[com.pulumi.aws.opensearch.inputs.ServerlessSecurityConfigSamlOptionsArgs.Builder]):
@@ -940,6 +958,24 @@ object opensearch:
 
   extension (builder: com.pulumi.aws.opensearch.inputs.GetServerlessSecurityConfigArgs.Builder)
     /**
+     * @param iamFederationOptions IAM Federation options for the security configuration.
+     * @return builder
+     */
+    def iamFederationOptions(args: Endofunction[com.pulumi.aws.opensearch.inputs.GetServerlessSecurityConfigIamFederationOptionArgs.Builder]*):
+        com.pulumi.aws.opensearch.inputs.GetServerlessSecurityConfigArgs.Builder =
+      def argsBuilder = com.pulumi.aws.opensearch.inputs.GetServerlessSecurityConfigIamFederationOptionArgs.builder
+      builder.iamFederationOptions(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param iamIdentityCenterOptions IAM Identity Center options for the security configuration.
+     * @return builder
+     */
+    def iamIdentityCenterOptions(args: Endofunction[com.pulumi.aws.opensearch.inputs.GetServerlessSecurityConfigIamIdentityCenterOptionArgs.Builder]*):
+        com.pulumi.aws.opensearch.inputs.GetServerlessSecurityConfigArgs.Builder =
+      def argsBuilder = com.pulumi.aws.opensearch.inputs.GetServerlessSecurityConfigIamIdentityCenterOptionArgs.builder
+      builder.iamIdentityCenterOptions(args.map(_(argsBuilder).build)*)
+
+    /**
      * @param samlOptions SAML options for the security configuration.
      * @return builder
      */
@@ -1032,7 +1068,25 @@ object opensearch:
 
   extension (builder: com.pulumi.aws.opensearch.inputs.ServerlessSecurityConfigState.Builder)
     /**
-     * @param samlOptions Configuration block for SAML options.
+     * @param iamFederationOptions Configuration block for IAM Federation options. Required if `type` is set to `iamfederation`. See `iamFederationOptions` Block below for details.
+     * @return builder
+     */
+    def iamFederationOptions(args: Endofunction[com.pulumi.aws.opensearch.inputs.ServerlessSecurityConfigIamFederationOptionsArgs.Builder]):
+        com.pulumi.aws.opensearch.inputs.ServerlessSecurityConfigState.Builder =
+      val argsBuilder = com.pulumi.aws.opensearch.inputs.ServerlessSecurityConfigIamFederationOptionsArgs.builder
+      builder.iamFederationOptions(args(argsBuilder).build)
+
+    /**
+     * @param iamIdentityCenterOptions Configuration block for IAM Identity Center options. Required if `type` is set to `iamidentitycenter`. See `iamIdentityCenterOptions` Block below for details.
+     * @return builder
+     */
+    def iamIdentityCenterOptions(args: Endofunction[com.pulumi.aws.opensearch.inputs.ServerlessSecurityConfigIamIdentityCenterOptionsArgs.Builder]):
+        com.pulumi.aws.opensearch.inputs.ServerlessSecurityConfigState.Builder =
+      val argsBuilder = com.pulumi.aws.opensearch.inputs.ServerlessSecurityConfigIamIdentityCenterOptionsArgs.builder
+      builder.iamIdentityCenterOptions(args(argsBuilder).build)
+
+    /**
+     * @param samlOptions Configuration block for SAML options. Required if `type` is set to `saml`. See `samlOptions` Block below for details.
      * @return builder
      */
     def samlOptions(args: Endofunction[com.pulumi.aws.opensearch.inputs.ServerlessSecurityConfigSamlOptionsArgs.Builder]):

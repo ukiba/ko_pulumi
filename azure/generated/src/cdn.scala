@@ -122,13 +122,13 @@ object cdn:
   /**
    * A CDN (classic) Endpoint is the entity within a CDN Profile containing configuration information regarding caching behaviours and origins. The CDN Endpoint is exposed using the URL format `&lt;endpointname&gt;.azureedge.net`.
    * 
-   * !&gt; **Note:** Azure rolled out a breaking change on Friday 9th April 2021 which may cause issues with the CDN/FrontDoor resources. More information is available in this GitHub issue - unfortunately this may necessitate a breaking change to the CDN (classic) and FrontDoor (classic) resources, more information will be posted in the GitHub issue as the necessary changes are identified.
+   * &gt; **Note:** Azure rolled out a breaking change on Friday 9th April 2021 which may cause issues with the CDN/FrontDoor resources. More information is available in this GitHub issue - unfortunately this may necessitate a breaking change to the CDN (classic) and FrontDoor (classic) resources, more information will be posted in the GitHub issue as the necessary changes are identified.
    * 
-   * !&gt; **Note:** Support for the CDN (classic) `sku` `Standard_Akamai` was deprecated from Azure on `October 31, 2023` and is no longer available.
+   * &gt; **Note:** Support for the CDN (classic) `sku` `Standard_Akamai` was deprecated from Azure on `October 31, 2023` and is no longer available.
    * 
-   * !&gt; **Note:** Support for the CDN (classic) `sku` `Standard_Verizon` and `Premium_Verizon` was deprecated from Azure on `January 15, 2025` and is no longer available.
+   * &gt; **Note:** Support for the CDN (classic) `sku` `Standard_Verizon` and `Premium_Verizon` was deprecated from Azure on `January 15, 2025` and is no longer available.
    * 
-   * !&gt; **Note:** Support for the CDN (classic) `sku` `Standard_Microsoft` and `Standard_ChinaCdn` will be deprecated from Azure on `October 1, 2025` and will no longer be available, however modifications to existing CDN (classic) resources will continue to be supported until the API reaches full retirement on `September 30, 2027`.
+   * &gt; **Note:** Support for the CDN (classic) `sku` `Standard_Microsoft` and `Standard_ChinaCdn` will be deprecated from Azure on `October 1, 2025` and will no longer be available, however modifications to existing CDN (classic) resources will continue to be supported until the API reaches full retirement on `September 30, 2027`.
    */
   def Endpoint(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.azure.cdn.EndpointArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
@@ -187,11 +187,11 @@ object cdn:
   /**
    * Manages a Custom Domain for a CDN (classic) Endpoint.
    * 
-   * !&gt; **Note:** Support for the CDN (classic) `sku` `Standard_Akamai` was deprecated from Azure on `October 31, 2023` and is no longer available.
+   * &gt; **Note:** Support for the CDN (classic) `sku` `Standard_Akamai` was deprecated from Azure on `October 31, 2023` and is no longer available.
    * 
-   * !&gt; **Note:** Support for the CDN (classic) `sku` values `Standard_Verizon` and `Premium_Verizon` were deprecated from Azure on `January 15, 2025` and are no longer available.
+   * &gt; **Note:** Support for the CDN (classic) `sku` values `Standard_Verizon` and `Premium_Verizon` were deprecated from Azure on `January 15, 2025` and are no longer available.
    * 
-   * !&gt; **Note:** Support for the CDN (classic) `sku` values `Standard_Microsoft` and `Standard_ChinaCdn` will be deprecated from Azure on `October 1, 2025` and will no longer be available, however, modifications to existing CDN (classic) resources will continue to be supported until the API reaches full retirement on `September 30, 2027`.
+   * &gt; **Note:** Support for the CDN (classic) `sku` values `Standard_Microsoft` and `Standard_ChinaCdn` will be deprecated from Azure on `October 1, 2025` and will no longer be available, however, modifications to existing CDN (classic) resources will continue to be supported until the API reaches full retirement on `September 30, 2027`.
    */
   def EndpointCustomDomain(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.azure.cdn.EndpointCustomDomainArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
@@ -310,7 +310,7 @@ object cdn:
     /**
      * @param logScrubbing A `logScrubbing` block as defined below.
      * 
-     * !&gt; **Note:** Setting the`logScrubbing` block is currently in **PREVIEW**. Please see the [Supplemental Terms of Use for Microsoft Azure Previews](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) for legal terms that apply to Azure features that are in beta, preview, or otherwise not yet released into general availability.
+     * &gt; **Note:** Setting the`logScrubbing` block is currently in **PREVIEW**. Please see the [Supplemental Terms of Use for Microsoft Azure Previews](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) for legal terms that apply to Azure features that are in beta, preview, or otherwise not yet released into general availability.
      * @return builder
      */
     def logScrubbing(args: Endofunction[com.pulumi.azure.cdn.inputs.FrontdoorFirewallPolicyLogScrubbingArgs.Builder]):
@@ -330,7 +330,7 @@ object cdn:
   /**
    * Manages a Front Door (standard/premium) Origin.
    * 
-   * !&gt; **Note:** If you are attempting to implement an Origin that uses its own Private Link Service with a Load Balancer the Profile resource in your configuration file **must** have a `dependsOn` meta-argument which references the `azure.privatedns.LinkService`, see `Example Usage With Private Link Service` below.
+   * &gt; **Note:** If you are attempting to implement an Origin that uses its own Private Link Service with a Load Balancer the Profile resource in your configuration file **must** have a `dependsOn` meta-argument which references the `azure.privatedns.LinkService`, see `Example Usage With Private Link Service` below.
    */
   def FrontdoorOrigin(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.azure.cdn.FrontdoorOriginArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
@@ -453,7 +453,7 @@ object cdn:
   /**
    * Manages a Front Door (standard/premium) Rule.
    * 
-   * !&gt; **Note:** The Rules resource **must** include a `dependsOn` meta-argument which references the `azure.cdn.FrontdoorOrigin` and the `azure.cdn.FrontdoorOriginGroup`.
+   * &gt; **Note:** The Rules resource **must** include a `dependsOn` meta-argument which references the `azure.cdn.FrontdoorOrigin` and the `azure.cdn.FrontdoorOriginGroup`.
    * 
    * &gt; **Note:** Azure Front Door Rule operations are currently affected by a service-side regression where unattached rules or rule sets can fail with `400 Bad Request` until they are associated with a Front Door Route. As a result, unattached and attached scenarios can currently behave differently while the service-side fix is pending.
    */
@@ -502,7 +502,7 @@ object cdn:
    * 
    * ## Required Key Vault Permissions
    * 
-   * !&gt; **Note:** You must add an `Access Policy` to your `azure.keyvault.KeyVault` for the `Microsoft.AzurefrontDoor-Cdn` Enterprise Application Object ID.
+   * &gt; **Note:** You must add an `Access Policy` to your `azure.keyvault.KeyVault` for the `Microsoft.AzurefrontDoor-Cdn` Enterprise Application Object ID.
    * 
    * This can be created by running Az Powershell command like this:
    * 
@@ -568,13 +568,13 @@ object cdn:
   /**
    * Manages a CDN (classic) Profile to create a collection of CDN Endpoints.
    * 
-   * !&gt; **Note:** Azure rolled out a breaking change on Friday 9th April 2021 which may cause issues with the CDN/FrontDoor resources. More information is available in this GitHub issue - unfortunately this may necessitate a breaking change to the CDN and FrontDoor resources, more information will be posted in the GitHub issue as the necessary changes are identified.
+   * &gt; **Note:** Azure rolled out a breaking change on Friday 9th April 2021 which may cause issues with the CDN/FrontDoor resources. More information is available in this GitHub issue - unfortunately this may necessitate a breaking change to the CDN and FrontDoor resources, more information will be posted in the GitHub issue as the necessary changes are identified.
    * 
-   * !&gt; **Note:** Support for the CDN (classic) `sku` `Standard_Akamai` was deprecated from Azure on `October 31, 2023` and is no longer available.
+   * &gt; **Note:** Support for the CDN (classic) `sku` `Standard_Akamai` was deprecated from Azure on `October 31, 2023` and is no longer available.
    * 
-   * !&gt; **Note:** Support for the CDN (classic) `sku` `Standard_Verizon` and `Premium_Verizon` was deprecated from Azure on `January 15, 2025` and is no longer available.
+   * &gt; **Note:** Support for the CDN (classic) `sku` `Standard_Verizon` and `Premium_Verizon` was deprecated from Azure on `January 15, 2025` and is no longer available.
    * 
-   * !&gt; **Note:** Support for the CDN (classic) `sku` `Standard_Microsoft` and `Standard_ChinaCdn` will be deprecated from Azure on `October 1, 2025` and will no longer be available, however modifications to existing CDN (classic) resources will continue to be supported until the API reaches full retirement on `September 30, 2027`.
+   * &gt; **Note:** Support for the CDN (classic) `sku` `Standard_Microsoft` and `Standard_ChinaCdn` will be deprecated from Azure on `October 1, 2025` and will no longer be available, however modifications to existing CDN (classic) resources will continue to be supported until the API reaches full retirement on `September 30, 2027`.
    */
   def Profile(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.azure.cdn.ProfileArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
@@ -1002,7 +1002,7 @@ object cdn:
     /**
      * @param logScrubbing A `logScrubbing` block as defined below.
      * 
-     * !&gt; **Note:** Setting the`logScrubbing` block is currently in **PREVIEW**. Please see the [Supplemental Terms of Use for Microsoft Azure Previews](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) for legal terms that apply to Azure features that are in beta, preview, or otherwise not yet released into general availability.
+     * &gt; **Note:** Setting the`logScrubbing` block is currently in **PREVIEW**. Please see the [Supplemental Terms of Use for Microsoft Azure Previews](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) for legal terms that apply to Azure features that are in beta, preview, or otherwise not yet released into general availability.
      * @return builder
      */
     def logScrubbing(args: Endofunction[com.pulumi.azure.cdn.inputs.FrontdoorFirewallPolicyLogScrubbingArgs.Builder]):

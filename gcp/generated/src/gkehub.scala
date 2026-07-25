@@ -2209,9 +2209,6 @@ object gkehub:
   /**
    * RolloutSequence defines the desired order of upgrades.
    * 
-   * &gt; **Warning:** This resource is in beta, and should be used with the terraform-provider-google-beta provider.
-   * See Provider Versions for more details on beta resources.
-   * 
    * To get more information about RolloutSequence, see:
    * 
    * * [API documentation](https://docs.cloud.google.com/kubernetes-engine/fleet-management/docs/reference/rest/v1beta/projects.locations.rolloutSequences)

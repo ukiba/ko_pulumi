@@ -295,6 +295,7 @@ export ko_pulumi.azure.iot.routes
 export ko_pulumi.azure.iot.sharedAccessPolicies
 export ko_pulumi.azure.iot.sku
 export ko_pulumi.azure.keyvault.permissions
+export ko_pulumi.azure.keyvault.releasePolicy
 export ko_pulumi.azure.keyvault.rotationPolicy
 export ko_pulumi.azure.keyvault.secretProperties
 export ko_pulumi.azure.keyvault.subjectAlternativeNames
@@ -367,6 +368,7 @@ export ko_pulumi.azure.mssql.storageConfiguration
 export ko_pulumi.azure.mssql.tempDbSettings
 export ko_pulumi.azure.mssql.threatDetectionPolicy
 export ko_pulumi.azure.mysql.storage
+export ko_pulumi.azure.netapp.server
 export ko_pulumi.azure.network.parameters
 export ko_pulumi.azure.network.pathRules
 export ko_pulumi.azure.network.peeringAddresses
@@ -503,7 +505,6 @@ export ko_pulumi.azure.synapse.restore
 export ko_pulumi.azure.synapse.sparkConfig
 export ko_pulumi.azure.systemcenter.storageDisks
 export ko_pulumi.azure.videoindexer.storage
-export ko_pulumi.azure.voice.serviceLocations
 export ko_pulumi.azure.waf.policySettings
 export ko_pulumi.azure.waf.ruleGroupOverrides
 export ko_pulumi.azure.waf.ruleGroups

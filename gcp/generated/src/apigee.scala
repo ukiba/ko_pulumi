@@ -355,27 +355,15 @@ object apigee:
       builder.peeringConfig(args(argsBuilder).build)
 
   /**
-   * Apigee Endpoint Attachment.
+   * An `EndpointAttachment` in Apigee is a resource that facilitates private connectivity between Apigee and backend services using Private Service Connect (PSC).
+   * 
+   * For more information, see the [Apigee documentation](https://docs.cloud.google.com/apigee/docs/api-platform/architecture/southbound-networking-patterns-endpoints).
    * 
    * To get more information about EndpointAttachment, see:
    * 
    * * [API documentation](https://cloud.google.com/apigee/docs/reference/apis/apigee/rest/v1/organizations.endpointAttachments/create)
    * * How-to Guides
    *     * [Creating an environment](https://cloud.google.com/apigee/docs/api-platform/get-started/create-environment)
-   * 
-   * ## Import
-   * 
-   * EndpointAttachment can be imported using any of these accepted formats:
-   * 
-   * * `{{org_id}}/endpointAttachments/{{endpoint_attachment_id}}`
-   * * `{{org_id}}/{{endpoint_attachment_id}}`
-   * 
-   * When using the `pulumi import` command, EndpointAttachment can be imported using one of the formats above. For example:
-   * 
-   * ```sh
-   * $ pulumi import gcp:apigee/endpointAttachment:EndpointAttachment default {{org_id}}/endpointAttachments/{{endpoint_attachment_id}}
-   * $ pulumi import gcp:apigee/endpointAttachment:EndpointAttachment default {{org_id}}/{{endpoint_attachment_id}}
-   * ```
    */
   def EndpointAttachment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.gcp.apigee.EndpointAttachmentArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =

@@ -474,6 +474,18 @@ object route53:
       val argsBuilder = com.pulumi.aws.route53.inputs.GetDelegationSetPlainArgs.builder
       com.pulumi.aws.route53.Route53Functions.getDelegationSetPlain(args(argsBuilder).build)
 
+    /** Provides details about an AWS Route 53 Profile. */
+    inline def getProfilesProfile(args: Endofunction[com.pulumi.aws.route53.inputs.GetProfilesProfileArgs.Builder] = scala.Predef.identity):
+        com.pulumi.core.Output[com.pulumi.aws.route53.outputs.GetProfilesProfileResult] =
+      val argsBuilder = com.pulumi.aws.route53.inputs.GetProfilesProfileArgs.builder
+      com.pulumi.aws.route53.Route53Functions.getProfilesProfile(args(argsBuilder).build)
+
+    /** Provides details about an AWS Route 53 Profile. */
+    inline def getProfilesProfilePlain(args: Endofunction[com.pulumi.aws.route53.inputs.GetProfilesProfilePlainArgs.Builder] = scala.Predef.identity):
+        java.util.concurrent.CompletableFuture[com.pulumi.aws.route53.outputs.GetProfilesProfileResult] =
+      val argsBuilder = com.pulumi.aws.route53.inputs.GetProfilesProfilePlainArgs.builder
+      com.pulumi.aws.route53.Route53Functions.getProfilesProfilePlain(args(argsBuilder).build)
+
     /** Data source for managing an AWS Route 53 Profiles. */
     inline def getProfilesProfiles(args: Endofunction[com.pulumi.aws.route53.inputs.GetProfilesProfilesArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.route53.outputs.GetProfilesProfilesResult] =

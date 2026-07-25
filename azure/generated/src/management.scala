@@ -7,7 +7,7 @@ object management:
   /**
    * Manages a Management Group.
    * 
-   * !&gt; **Note:** Configuring `subscriptionIds` is not supported when using the `azure.management.GroupSubscriptionAssociation` resource, results will be unpredictable.
+   * &gt; **Note:** Configuring `subscriptionIds` is not supported when using the `azure.management.GroupSubscriptionAssociation` resource, results will be unpredictable.
    */
   def Group(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.azure.management.GroupArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
@@ -124,7 +124,7 @@ object management:
   /**
    * Manages a Management Group Subscription Association.
    * 
-   * !&gt; **Note:** When using this resource, configuring `subscriptionIds` on the `azure.management.Group` resource is not supported.
+   * &gt; **Note:** When using this resource, configuring `subscriptionIds` on the `azure.management.Group` resource is not supported.
    */
   def GroupSubscriptionAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.azure.management.GroupSubscriptionAssociationArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =

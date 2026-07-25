@@ -103,6 +103,38 @@ object elasticache:
       val argsBuilder = com.pulumi.aws.elasticache.inputs.GetServerlessCachePlainArgs.builder
       com.pulumi.aws.elasticache.ElasticacheFunctions.getServerlessCachePlain(args(argsBuilder).build)
 
+    /**
+     * Provides details about an AWS ElastiCache Service Update Actions for a given Cache Cluster or Replication Group.
+     * 
+     * When creating a new Cache Cluster or Replication Group, it takes approximately 10 minutes for Update Actions to be listed.
+     */
+    inline def getServiceUpdateActions(args: Endofunction[com.pulumi.aws.elasticache.inputs.GetServiceUpdateActionsArgs.Builder] = scala.Predef.identity):
+        com.pulumi.core.Output[com.pulumi.aws.elasticache.outputs.GetServiceUpdateActionsResult] =
+      val argsBuilder = com.pulumi.aws.elasticache.inputs.GetServiceUpdateActionsArgs.builder
+      com.pulumi.aws.elasticache.ElasticacheFunctions.getServiceUpdateActions(args(argsBuilder).build)
+
+    /**
+     * Provides details about an AWS ElastiCache Service Update Actions for a given Cache Cluster or Replication Group.
+     * 
+     * When creating a new Cache Cluster or Replication Group, it takes approximately 10 minutes for Update Actions to be listed.
+     */
+    inline def getServiceUpdateActionsPlain(args: Endofunction[com.pulumi.aws.elasticache.inputs.GetServiceUpdateActionsPlainArgs.Builder] = scala.Predef.identity):
+        java.util.concurrent.CompletableFuture[com.pulumi.aws.elasticache.outputs.GetServiceUpdateActionsResult] =
+      val argsBuilder = com.pulumi.aws.elasticache.inputs.GetServiceUpdateActionsPlainArgs.builder
+      com.pulumi.aws.elasticache.ElasticacheFunctions.getServiceUpdateActionsPlain(args(argsBuilder).build)
+
+    /** Provides details about AWS ElastiCache Service Updates. */
+    inline def getServiceUpdates(args: Endofunction[com.pulumi.aws.elasticache.inputs.GetServiceUpdatesArgs.Builder] = scala.Predef.identity):
+        com.pulumi.core.Output[com.pulumi.aws.elasticache.outputs.GetServiceUpdatesResult] =
+      val argsBuilder = com.pulumi.aws.elasticache.inputs.GetServiceUpdatesArgs.builder
+      com.pulumi.aws.elasticache.ElasticacheFunctions.getServiceUpdates(args(argsBuilder).build)
+
+    /** Provides details about AWS ElastiCache Service Updates. */
+    inline def getServiceUpdatesPlain(args: Endofunction[com.pulumi.aws.elasticache.inputs.GetServiceUpdatesPlainArgs.Builder] = scala.Predef.identity):
+        java.util.concurrent.CompletableFuture[com.pulumi.aws.elasticache.outputs.GetServiceUpdatesResult] =
+      val argsBuilder = com.pulumi.aws.elasticache.inputs.GetServiceUpdatesPlainArgs.builder
+      com.pulumi.aws.elasticache.ElasticacheFunctions.getServiceUpdatesPlain(args(argsBuilder).build)
+
     /** Provides information about a ElastiCache Subnet Group. */
     inline def getSubnetGroup(args: Endofunction[com.pulumi.aws.elasticache.inputs.GetSubnetGroupArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.elasticache.outputs.GetSubnetGroupResult] =

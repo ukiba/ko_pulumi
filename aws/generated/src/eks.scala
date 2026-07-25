@@ -470,6 +470,15 @@ object eks:
       val argsBuilder = com.pulumi.aws.eks.inputs.NodeGroupUpdateConfigArgs.builder
       builder.updateConfig(args(argsBuilder).build)
 
+    /**
+     * @param warmPoolConfig Configuration block with EC2 Auto Scaling warm pool settings. Including this block enables the warm pool; removing it disables and removes the warm pool. See `warmPoolConfig` below for details.
+     * @return builder
+     */
+    def warmPoolConfig(args: Endofunction[com.pulumi.aws.eks.inputs.NodeGroupWarmPoolConfigArgs.Builder]):
+        com.pulumi.aws.eks.NodeGroupArgs.Builder =
+      val argsBuilder = com.pulumi.aws.eks.inputs.NodeGroupWarmPoolConfigArgs.builder
+      builder.warmPoolConfig(args(argsBuilder).build)
+
   /**
    * Resource for managing an AWS EKS (Elastic Kubernetes) Pod Identity Association.
    * 
@@ -890,3 +899,12 @@ object eks:
         com.pulumi.aws.eks.inputs.NodeGroupState.Builder =
       val argsBuilder = com.pulumi.aws.eks.inputs.NodeGroupUpdateConfigArgs.builder
       builder.updateConfig(args(argsBuilder).build)
+
+    /**
+     * @param warmPoolConfig Configuration block with EC2 Auto Scaling warm pool settings. Including this block enables the warm pool; removing it disables and removes the warm pool. See `warmPoolConfig` below for details.
+     * @return builder
+     */
+    def warmPoolConfig(args: Endofunction[com.pulumi.aws.eks.inputs.NodeGroupWarmPoolConfigArgs.Builder]):
+        com.pulumi.aws.eks.inputs.NodeGroupState.Builder =
+      val argsBuilder = com.pulumi.aws.eks.inputs.NodeGroupWarmPoolConfigArgs.builder
+      builder.warmPoolConfig(args(argsBuilder).build)

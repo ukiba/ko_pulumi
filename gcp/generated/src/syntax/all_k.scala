@@ -6,6 +6,7 @@ import jp.ukiba.ko_pulumi
 export ko_pulumi.gcp.accesscontextmanager.methodSelectors
 export ko_pulumi.gcp.accesscontextmanager.operations
 export ko_pulumi.gcp.accesscontextmanager.osConstraints
+export ko_pulumi.gcp.agentregistry.mcpServerSpec
 export ko_pulumi.gcp.alloydb.machineConfig
 export ko_pulumi.gcp.alloydb.maintenanceUpdatePolicy
 export ko_pulumi.gcp.alloydb.maintenanceWindows
@@ -149,6 +150,7 @@ export ko_pulumi.gcp.composer.nodeConfig
 export ko_pulumi.gcp.compute.`match`
 export ko_pulumi.gcp.compute.keks
 export ko_pulumi.gcp.compute.l2Forwarding
+export ko_pulumi.gcp.compute.labelSelector
 export ko_pulumi.gcp.compute.labels
 export ko_pulumi.gcp.compute.lastAttempts
 export ko_pulumi.gcp.compute.lastKnownGoodState
@@ -213,6 +215,7 @@ export ko_pulumi.gcp.container.loggingConfig
 export ko_pulumi.gcp.container.lustreCsiDriverConfig
 export ko_pulumi.gcp.container.mainVolume
 export ko_pulumi.gcp.container.maintenanceExclusions
+export ko_pulumi.gcp.container.maintenancePolicies
 export ko_pulumi.gcp.container.maintenancePolicy
 export ko_pulumi.gcp.container.managedMachineLearningDiagnosticsConfig
 export ko_pulumi.gcp.container.managedOpentelemetryConfig
@@ -270,6 +273,7 @@ export ko_pulumi.gcp.dataloss.manual
 export ko_pulumi.gcp.dataloss.max
 export ko_pulumi.gcp.dataloss.maxFindingsPerInfoTypes
 export ko_pulumi.gcp.dataloss.min
+export ko_pulumi.gcp.dataloss.minLikelihoodPerInfoTypes
 export ko_pulumi.gcp.dataloss.newValue
 export ko_pulumi.gcp.dataloss.orConditions
 export ko_pulumi.gcp.dataloss.orgConfig
@@ -602,11 +606,14 @@ export ko_pulumi.gcp.transcoder.mpegCenc
 export ko_pulumi.gcp.transcoder.muxStreams
 export ko_pulumi.gcp.transcoder.output
 export ko_pulumi.gcp.transcoder.overlays
+export ko_pulumi.gcp.vertex.keepAliveProbe
 export ko_pulumi.gcp.vertex.lastScheduledRunResponses
 export ko_pulumi.gcp.vertex.livenessProbe
 export ko_pulumi.gcp.vertex.machineSpec
 export ko_pulumi.gcp.vertex.machineSpecs
+export ko_pulumi.gcp.vertex.managedMemoryTopic
 export ko_pulumi.gcp.vertex.memoryBankConfig
+export ko_pulumi.gcp.vertex.memoryTopics
 export ko_pulumi.gcp.vertex.metadata
 export ko_pulumi.gcp.vertex.modelConfig
 export ko_pulumi.gcp.vertex.monitoringConfig

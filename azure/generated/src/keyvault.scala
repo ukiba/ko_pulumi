@@ -179,6 +179,17 @@ object keyvault:
 
   extension (builder: com.pulumi.azure.keyvault.KeyArgs.Builder)
     /**
+     * @param releasePolicy A `releasePolicy` block as defined below. Changing this forces a new resource to be created.
+     * 
+     * &gt; **Note:** When `releasePolicy` is set, the key is automatically set as exportable by the provider as this is an API requirement.
+     * @return builder
+     */
+    def releasePolicy(args: Endofunction[com.pulumi.azure.keyvault.inputs.KeyReleasePolicyArgs.Builder]):
+        com.pulumi.azure.keyvault.KeyArgs.Builder =
+      val argsBuilder = com.pulumi.azure.keyvault.inputs.KeyReleasePolicyArgs.builder
+      builder.releasePolicy(args(argsBuilder).build)
+
+    /**
      * @param rotationPolicy A `rotationPolicy` block as defined below.
      * @return builder
      */
@@ -813,6 +824,17 @@ object keyvault:
       builder.automatic(args(argsBuilder).build)
 
   extension (builder: com.pulumi.azure.keyvault.inputs.KeyState.Builder)
+    /**
+     * @param releasePolicy A `releasePolicy` block as defined below. Changing this forces a new resource to be created.
+     * 
+     * &gt; **Note:** When `releasePolicy` is set, the key is automatically set as exportable by the provider as this is an API requirement.
+     * @return builder
+     */
+    def releasePolicy(args: Endofunction[com.pulumi.azure.keyvault.inputs.KeyReleasePolicyArgs.Builder]):
+        com.pulumi.azure.keyvault.inputs.KeyState.Builder =
+      val argsBuilder = com.pulumi.azure.keyvault.inputs.KeyReleasePolicyArgs.builder
+      builder.releasePolicy(args(argsBuilder).build)
+
     /**
      * @param rotationPolicy A `rotationPolicy` block as defined below.
      * @return builder

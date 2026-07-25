@@ -432,6 +432,39 @@ object artifactregistry:
       com.pulumi.gcp.artifactregistry.ArtifactregistryFunctions.getVersionsPlain(args(argsBuilder).build)
 
   /**
+   * The Artifact Registry project config, used to configure platform logs that
+   * apply to a project.
+   * 
+   * To get more information about ProjectConfig, see:
+   * 
+   * * [API documentation](https://cloud.google.com/artifact-registry/docs/reference/rest/v1/projects.locations/getProjectConfig)
+   * * How-to Guides
+   *     * [Access and use platform logs](https://cloud.google.com/artifact-registry/docs/platform-logs)
+   * 
+   * &gt; **Note:** A project config is automatically created for a given location. Creating a
+   * resource of this type will acquire and update the resource that already
+   * exists at the location. Deleting this resource will remove the config from
+   * your Terraform state but leave the resource as is.
+   */
+  def ProjectConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+      (args: Endofunction[com.pulumi.gcp.artifactregistry.ProjectConfigArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+    val argsBuilder = com.pulumi.gcp.artifactregistry.ProjectConfigArgs.builder
+    com.pulumi.gcp.artifactregistry.ProjectConfig(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+
+  extension (builder: com.pulumi.gcp.artifactregistry.ProjectConfigArgs.Builder)
+    /**
+     * @param platformLogsConfig Configuration for platform logs.
+     * Structure is documented below.
+     * @return builder
+     */
+    def platformLogsConfig(args: Endofunction[com.pulumi.gcp.artifactregistry.inputs.ProjectConfigPlatformLogsConfigArgs.Builder]):
+        com.pulumi.gcp.artifactregistry.ProjectConfigArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.artifactregistry.inputs.ProjectConfigPlatformLogsConfigArgs.builder
+      builder.platformLogsConfig(args(argsBuilder).build)
+
+  /**
    * A repository for storing artifacts
    * 
    * To get more information about Repository, see:
@@ -1513,6 +1546,17 @@ object artifactregistry:
     com.pulumi.gcp.artifactregistry.VpcscConfig(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+
+  extension (builder: com.pulumi.gcp.artifactregistry.inputs.ProjectConfigState.Builder)
+    /**
+     * @param platformLogsConfig Configuration for platform logs.
+     * Structure is documented below.
+     * @return builder
+     */
+    def platformLogsConfig(args: Endofunction[com.pulumi.gcp.artifactregistry.inputs.ProjectConfigPlatformLogsConfigArgs.Builder]):
+        com.pulumi.gcp.artifactregistry.inputs.ProjectConfigState.Builder =
+      val argsBuilder = com.pulumi.gcp.artifactregistry.inputs.ProjectConfigPlatformLogsConfigArgs.builder
+      builder.platformLogsConfig(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.artifactregistry.inputs.RepositoryCleanupPolicyArgs.Builder)
     /**

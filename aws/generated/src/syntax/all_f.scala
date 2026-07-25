@@ -56,6 +56,7 @@ export ko_pulumi.aws.arcregionswitch.globalAuroraConfigs
 export ko_pulumi.aws.athena.identityCenterConfiguration
 export ko_pulumi.aws.autoscaling.filters
 export ko_pulumi.aws.autoscaling.initialLifecycleHooks
+export ko_pulumi.aws.autoscaling.instanceLifecyclePolicy
 export ko_pulumi.aws.autoscaling.instanceMaintenancePolicy
 export ko_pulumi.aws.autoscaling.instanceRefresh
 export ko_pulumi.aws.autoscaling.instanceRequirements
@@ -86,7 +87,9 @@ export ko_pulumi.aws.bedrock.googleOauth2ProviderConfig
 export ko_pulumi.aws.bedrock.guardrailConfiguration
 export ko_pulumi.aws.bedrock.guardrailConfigurations
 export ko_pulumi.aws.bedrock.hierarchicalChunkingConfiguration
+export ko_pulumi.aws.bedrock.hostingEnvironments
 export ko_pulumi.aws.bedrock.http
+export ko_pulumi.aws.bedrock.imageExtractionConfiguration
 export ko_pulumi.aws.bedrock.indexedKeys
 export ko_pulumi.aws.bedrock.inferenceConfig
 export ko_pulumi.aws.bedrock.inferenceConfiguration
@@ -303,6 +306,7 @@ export ko_pulumi.aws.kinesisanalyticsv2.jsonMappingParameters
 export ko_pulumi.aws.lambda.fileSystemConfig
 export ko_pulumi.aws.lambda.filterCriteria
 export ko_pulumi.aws.lambda.filters
+export ko_pulumi.aws.lambda.functionScalingConfig
 export ko_pulumi.aws.lambda.imageConfig
 export ko_pulumi.aws.lambda.instanceRequirements
 export ko_pulumi.aws.lb.fixedResponse
@@ -399,6 +403,7 @@ export ko_pulumi.aws.networkfirewall.ipSets
 export ko_pulumi.aws.observabilityadmin.fieldSelectors
 export ko_pulumi.aws.observabilityadmin.filters
 export ko_pulumi.aws.odb.iormConfigCaches
+export ko_pulumi.aws.opensearch.iamFederationOptions
 export ko_pulumi.aws.opensearch.iamIdentityCenterOptions
 export ko_pulumi.aws.opensearch.identityCenterOptions
 export ko_pulumi.aws.opensearch.idp

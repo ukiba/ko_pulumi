@@ -37,6 +37,8 @@ export ko_pulumi.aws.bedrock.value
 export ko_pulumi.aws.bedrock.variants
 export ko_pulumi.aws.bedrock.vectorIngestionConfiguration
 export ko_pulumi.aws.bedrock.vectorKnowledgeBaseConfiguration
+export ko_pulumi.aws.bedrock.video
+export ko_pulumi.aws.bedrock.videoExtractionConfiguration
 export ko_pulumi.aws.bedrock.vpcConfig
 export ko_pulumi.aws.bedrock.webConfiguration
 export ko_pulumi.aws.bedrock.wordPolicyConfig
@@ -91,6 +93,7 @@ export ko_pulumi.aws.ecs.vpcLatticeConfigurations
 export ko_pulumi.aws.eks.updateConfig
 export ko_pulumi.aws.eks.upgradePolicy
 export ko_pulumi.aws.eks.vpcConfig
+export ko_pulumi.aws.eks.warmPoolConfig
 export ko_pulumi.aws.eks.zonalShiftConfig
 export ko_pulumi.aws.elasticsearch.vpcOptions
 export ko_pulumi.aws.elasticsearch.zoneAwarenessConfig

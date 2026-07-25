@@ -3334,6 +3334,18 @@ object dataloss:
       builder.limits(args(argsBuilder).build)
 
     /**
+     * @param minLikelihoodPerInfoTypes Minimum likelihood per infotype. For each infotype, a user can specify a minimum likelihood.
+     * The system only returns a finding if its likelihood is above this threshold. If this field
+     * is not set, the system uses the InspectConfig min_likelihood.
+     * Structure is documented below.
+     * @return builder
+     */
+    def minLikelihoodPerInfoTypes(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionInspectTemplateInspectConfigMinLikelihoodPerInfoTypeArgs.Builder]*):
+        com.pulumi.gcp.dataloss.inputs.PreventionInspectTemplateInspectConfigArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionInspectTemplateInspectConfigMinLikelihoodPerInfoTypeArgs.builder
+      builder.minLikelihoodPerInfoTypes(args.map(_(argsBuilder).build)*)
+
+    /**
      * @param ruleSets Set of rules to apply to the findings for this InspectConfig. Exclusion rules, contained in the set are executed in the end,
      * other rules are executed in the order they are specified for each info type.
      * Structure is documented below.
@@ -3484,6 +3496,18 @@ object dataloss:
         com.pulumi.gcp.dataloss.inputs.PreventionInspectTemplateInspectConfigLimitsMaxFindingsPerInfoTypeInfoTypeArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionInspectTemplateInspectConfigLimitsMaxFindingsPerInfoTypeInfoTypeSensitivityScoreArgs.builder
       builder.sensitivityScore(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.gcp.dataloss.inputs.PreventionInspectTemplateInspectConfigMinLikelihoodPerInfoTypeArgs.Builder)
+    /**
+     * @param infoType Type of information the likeliness threshold applies to. Only one likelihood per infoType should be provided.
+     * If InfoTypeLikelihood does not have an info_type, the configuration fails.
+     * Structure is documented below.
+     * @return builder
+     */
+    def infoType(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionInspectTemplateInspectConfigMinLikelihoodPerInfoTypeInfoTypeArgs.Builder]):
+        com.pulumi.gcp.dataloss.inputs.PreventionInspectTemplateInspectConfigMinLikelihoodPerInfoTypeArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionInspectTemplateInspectConfigMinLikelihoodPerInfoTypeInfoTypeArgs.builder
+      builder.infoType(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.dataloss.inputs.PreventionInspectTemplateInspectConfigRuleSetArgs.Builder)
     /**

@@ -195,6 +195,7 @@ export ko_pulumi.azure.mssql.manualSchedule
 export ko_pulumi.azure.mssql.multiSubnetIpConfigurations
 export ko_pulumi.azure.mssql.outputTarget
 export ko_pulumi.azure.mysql.maintenanceWindow
+export ko_pulumi.azure.netapp.keyVault
 export ko_pulumi.azure.netapp.monthlySchedule
 export ko_pulumi.azure.network.`match`
 export ko_pulumi.azure.network.link1

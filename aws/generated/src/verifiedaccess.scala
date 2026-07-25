@@ -101,7 +101,11 @@ object verifiedaccess:
         argsBuilder.build,
         resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
 
-  /** Resource for managing a Verified Access Logging Configuration. */
+  /**
+   * Resource for managing a Verified Access Logging Configuration.
+   * 
+   * &gt; Deletion of this resource resets the Verified Access Instance Logging Configuration to its default values.
+   */
   def InstanceLoggingConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.verifiedaccess.InstanceLoggingConfigurationArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.verifiedaccess.InstanceLoggingConfigurationArgs.builder

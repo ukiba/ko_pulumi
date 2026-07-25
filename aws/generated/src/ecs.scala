@@ -27,6 +27,8 @@ object ecs:
    * &gt; **NOTE:** Associating an ECS Capacity Provider to an Auto Scaling Group will automatically add the `AmazonECSManaged` tag to the Auto Scaling Group. This tag should be included in the `aws.autoscaling.Group` resource configuration to prevent the provider from removing it in subsequent executions as well as ensuring the `AmazonECSManaged` tag is propagated to all EC2 Instances in the Auto Scaling Group if `minSize` is above 0 on creation. Any EC2 Instances in the Auto Scaling Group without this tag must be manually be updated, otherwise they may cause unexpected scaling behavior and metrics.
    * 
    * &gt; **NOTE:** You must specify exactly one of `autoScalingGroupProvider` or `managedInstancesProvider`. When using `managedInstancesProvider`, the `cluster` parameter is required. When using `autoScalingGroupProvider`, the `cluster` parameter must not be set.
+   * 
+   * &gt; **NOTE:** AWS cannot delete a capacity provider that is still associated with a cluster through `aws.ecs.ClusterCapacityProviders`. When a change forces replacement, add a `replaceTriggeredBy` lifecycle rule to the `aws.ecs.ClusterCapacityProviders` resource so the association is recreated before the old capacity provider is deleted.
    */
   def CapacityProvider(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.ecs.CapacityProviderArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
@@ -114,6 +116,8 @@ object ecs:
    * Manages the capacity providers of an ECS Cluster.
    * 
    * More information about capacity providers can be found in the [ECS User Guide](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-capacity-providers.html).
+   * 
+   * &gt; **NOTE:** When an associated `aws.ecs.CapacityProvider` must be replaced, add a `replaceTriggeredBy` lifecycle rule referencing the capacity provider. This recreates the association so the old capacity provider is detached from the cluster before it is deleted, which AWS otherwise disallows.
    */
   def ClusterCapacityProviders(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.ecs.ClusterCapacityProvidersArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =

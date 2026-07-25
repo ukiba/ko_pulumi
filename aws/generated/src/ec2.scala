@@ -555,6 +555,30 @@ object ec2:
       com.pulumi.aws.ec2.Ec2Functions.getCapacityBlockOfferingPlain(args(argsBuilder).build)
 
     /**
+     * Information about an existing EC2 Capacity Block reservation.
+     * 
+     * This data source returns only Capacity Reservations whose `reservationType` is `capacity-block`. Use the `aws.ec2.CapacityReservation` data source to look up On-Demand Capacity Reservations (ODCR).
+     * 
+     * At least one of `id` or `filter` must be specified. Filter combinations that match multiple Capacity Block reservations will return an error.
+     */
+    inline def getCapacityBlockReservation(args: Endofunction[com.pulumi.aws.ec2.inputs.GetCapacityBlockReservationArgs.Builder] = scala.Predef.identity):
+        com.pulumi.core.Output[com.pulumi.aws.ec2.outputs.GetCapacityBlockReservationResult] =
+      val argsBuilder = com.pulumi.aws.ec2.inputs.GetCapacityBlockReservationArgs.builder
+      com.pulumi.aws.ec2.Ec2Functions.getCapacityBlockReservation(args(argsBuilder).build)
+
+    /**
+     * Information about an existing EC2 Capacity Block reservation.
+     * 
+     * This data source returns only Capacity Reservations whose `reservationType` is `capacity-block`. Use the `aws.ec2.CapacityReservation` data source to look up On-Demand Capacity Reservations (ODCR).
+     * 
+     * At least one of `id` or `filter` must be specified. Filter combinations that match multiple Capacity Block reservations will return an error.
+     */
+    inline def getCapacityBlockReservationPlain(args: Endofunction[com.pulumi.aws.ec2.inputs.GetCapacityBlockReservationPlainArgs.Builder] = scala.Predef.identity):
+        java.util.concurrent.CompletableFuture[com.pulumi.aws.ec2.outputs.GetCapacityBlockReservationResult] =
+      val argsBuilder = com.pulumi.aws.ec2.inputs.GetCapacityBlockReservationPlainArgs.builder
+      com.pulumi.aws.ec2.Ec2Functions.getCapacityBlockReservationPlain(args(argsBuilder).build)
+
+    /**
      * Provides details about a specific EC2 Customer-Owned IP Pool.
      * 
      * This data source can prove useful when a module accepts a coip pool id as
@@ -1712,6 +1736,15 @@ object ec2:
         com.pulumi.aws.ec2.FlowLogArgs.Builder =
       val argsBuilder = com.pulumi.aws.ec2.inputs.FlowLogDestinationOptionsArgs.builder
       builder.destinationOptions(args(argsBuilder).build)
+
+    /**
+     * @param tagFieldSpecifications Tag configuration for the Flow Logs Amazon EC2 Tags feature fields (e.g., `$${instance-tag}`) used in `logFormat`. More details below.
+     * @return builder
+     */
+    def tagFieldSpecifications(args: Endofunction[com.pulumi.aws.ec2.inputs.FlowLogTagFieldSpecificationArgs.Builder]*):
+        com.pulumi.aws.ec2.FlowLogArgs.Builder =
+      def argsBuilder = com.pulumi.aws.ec2.inputs.FlowLogTagFieldSpecificationArgs.builder
+      builder.tagFieldSpecifications(args.map(_(argsBuilder).build)*)
 
   /**
    * Provides a regional public access block for AMIs. This prevents AMIs from being made publicly accessible.
@@ -4387,6 +4420,15 @@ object ec2:
       val argsBuilder = com.pulumi.aws.ec2.inputs.FlowLogDestinationOptionsArgs.builder
       builder.destinationOptions(args(argsBuilder).build)
 
+    /**
+     * @param tagFieldSpecifications Tag configuration for the Flow Logs Amazon EC2 Tags feature fields (e.g., `$${instance-tag}`) used in `logFormat`. More details below.
+     * @return builder
+     */
+    def tagFieldSpecifications(args: Endofunction[com.pulumi.aws.ec2.inputs.FlowLogTagFieldSpecificationArgs.Builder]*):
+        com.pulumi.aws.ec2.inputs.FlowLogState.Builder =
+      def argsBuilder = com.pulumi.aws.ec2.inputs.FlowLogTagFieldSpecificationArgs.builder
+      builder.tagFieldSpecifications(args.map(_(argsBuilder).build)*)
+
   extension (builder: com.pulumi.aws.ec2.inputs.GetAmiArgs.Builder)
     /**
      * @param filters One or more name/value pairs to filter off of. There are several valid keys, for a full reference, check out [describe-images in the AWS CLI reference](http://docs.aws.amazon.com/cli/latest/reference/ec2/describe-images.html). See `filter` below.
@@ -4405,6 +4447,16 @@ object ec2:
     def filters(args: Endofunction[com.pulumi.aws.ec2.inputs.GetAmiIdsFilterArgs.Builder]*):
         com.pulumi.aws.ec2.inputs.GetAmiIdsArgs.Builder =
       def argsBuilder = com.pulumi.aws.ec2.inputs.GetAmiIdsFilterArgs.builder
+      builder.filters(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.aws.ec2.inputs.GetCapacityBlockReservationArgs.Builder)
+    /**
+     * @param filters Configuration block(s) for filtering. Detailed below.
+     * @return builder
+     */
+    def filters(args: Endofunction[com.pulumi.aws.ec2.inputs.GetCapacityBlockReservationFilterArgs.Builder]*):
+        com.pulumi.aws.ec2.inputs.GetCapacityBlockReservationArgs.Builder =
+      def argsBuilder = com.pulumi.aws.ec2.inputs.GetCapacityBlockReservationFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.aws.ec2.inputs.GetCoipPoolArgs.Builder)

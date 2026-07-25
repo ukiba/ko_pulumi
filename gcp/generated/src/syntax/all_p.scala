@@ -11,6 +11,8 @@ export ko_pulumi.gcp.accesscontextmanager.sessionSettings
 export ko_pulumi.gcp.accesscontextmanager.sources
 export ko_pulumi.gcp.accesscontextmanager.spec
 export ko_pulumi.gcp.accesscontextmanager.status
+export ko_pulumi.gcp.agentregistry.source
+export ko_pulumi.gcp.agentregistry.target
 export ko_pulumi.gcp.alloydb.pscAutoConnections
 export ko_pulumi.gcp.alloydb.pscConfig
 export ko_pulumi.gcp.alloydb.pscInstanceConfig
@@ -55,6 +57,7 @@ export ko_pulumi.gcp.apphub.serviceProperties
 export ko_pulumi.gcp.apphub.serviceReferences
 export ko_pulumi.gcp.applicationintegration.serviceAccountCredentials
 export ko_pulumi.gcp.applicationintegration.tokenParams
+export ko_pulumi.gcp.artifactregistry.platformLogsConfig
 export ko_pulumi.gcp.artifactregistry.publicRepository
 export ko_pulumi.gcp.artifactregistry.pythonRepository
 export ko_pulumi.gcp.artifactregistry.remoteRepositoryConfig
@@ -79,10 +82,15 @@ export ko_pulumi.gcp.beyondcorp.resourceOverride
 export ko_pulumi.gcp.beyondcorp.serviceAccount
 export ko_pulumi.gcp.beyondcorp.serviceDiscovery
 export ko_pulumi.gcp.biglake.partitionSpec
+export ko_pulumi.gcp.biglake.refreshOptions
+export ko_pulumi.gcp.biglake.refreshSchedule
+export ko_pulumi.gcp.biglake.refreshScope
+export ko_pulumi.gcp.biglake.refreshStatuses
 export ko_pulumi.gcp.biglake.replicas
 export ko_pulumi.gcp.biglake.restrictedLocationsConfig
 export ko_pulumi.gcp.biglake.schema
 export ko_pulumi.gcp.biglake.sortOrder
+export ko_pulumi.gcp.biglake.statuses
 export ko_pulumi.gcp.biglake.storageDescriptor
 export ko_pulumi.gcp.bigquery.parquetOptions
 export ko_pulumi.gcp.bigquery.password
@@ -118,6 +126,7 @@ export ko_pulumi.gcp.bigquery.timePartitioning
 export ko_pulumi.gcp.bigqueryanalyticshub.publisher
 export ko_pulumi.gcp.bigqueryanalyticshub.pubsubTopic
 export ko_pulumi.gcp.bigqueryanalyticshub.restrictedExportConfig
+export ko_pulumi.gcp.bigqueryanalyticshub.routine
 export ko_pulumi.gcp.bigqueryanalyticshub.selectedResources
 export ko_pulumi.gcp.bigqueryanalyticshub.sharingEnvironmentConfig
 export ko_pulumi.gcp.bigtable.protoSchema
@@ -519,6 +528,7 @@ export ko_pulumi.gcp.container.rayClusterLoggingConfig
 export ko_pulumi.gcp.container.rayClusterMonitoringConfig
 export ko_pulumi.gcp.container.rayOperatorConfigs
 export ko_pulumi.gcp.container.rbacBindingConfig
+export ko_pulumi.gcp.container.recurringMaintenanceWindow
 export ko_pulumi.gcp.container.recurringWindow
 export ko_pulumi.gcp.container.registryHosts
 export ko_pulumi.gcp.container.releaseChannel
@@ -1229,6 +1239,7 @@ export ko_pulumi.gcp.vertex.reservationAffinity
 export ko_pulumi.gcp.vertex.runtimeConfig
 export ko_pulumi.gcp.vertex.scaled
 export ko_pulumi.gcp.vertex.scaling
+export ko_pulumi.gcp.vertex.schemaConfigs
 export ko_pulumi.gcp.vertex.secretEnvs
 export ko_pulumi.gcp.vertex.secretRef
 export ko_pulumi.gcp.vertex.similaritySearchConfig
@@ -1237,9 +1248,14 @@ export ko_pulumi.gcp.vertex.sourceCodeSpec
 export ko_pulumi.gcp.vertex.spec
 export ko_pulumi.gcp.vertex.startupProbe
 export ko_pulumi.gcp.vertex.states
+export ko_pulumi.gcp.vertex.structuredMemoryConfigs
 export ko_pulumi.gcp.vertex.syncConfig
+export ko_pulumi.gcp.vertex.targets
 export ko_pulumi.gcp.vertex.tcpSocket
 export ko_pulumi.gcp.vertex.templateMetadatas
+export ko_pulumi.gcp.vertex.trafficConfig
+export ko_pulumi.gcp.vertex.trafficSplitAlwaysLatest
+export ko_pulumi.gcp.vertex.trafficSplitManual
 export ko_pulumi.gcp.vertex.treeAhConfig
 export ko_pulumi.gcp.vertex.ttlConfig
 export ko_pulumi.gcp.vmwareengine.sourceIpRanges

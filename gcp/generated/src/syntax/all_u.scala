@@ -27,6 +27,7 @@ export ko_pulumi.gcp.assuredworkloads.workloadOptions
 export ko_pulumi.gcp.backupdisasterrecovery.weekDayOfMonth
 export ko_pulumi.gcp.beyondcorp.upstreams
 export ko_pulumi.gcp.beyondcorp.userInfo
+export ko_pulumi.gcp.biglake.unityCatalogInfo
 export ko_pulumi.gcp.bigquery.userDefinedFunctionResources
 export ko_pulumi.gcp.bigquery.usernamePassword
 export ko_pulumi.gcp.bigquery.view
@@ -99,6 +100,7 @@ export ko_pulumi.gcp.compute.weightedBackendServices
 export ko_pulumi.gcp.compute.wireGroupProperties
 export ko_pulumi.gcp.compute.wireProperties
 export ko_pulumi.gcp.compute.wires
+export ko_pulumi.gcp.compute.workloadIdentityConfig
 export ko_pulumi.gcp.compute.workloadPolicy
 export ko_pulumi.gcp.compute.zonalAffinity
 export ko_pulumi.gcp.compute.zones
@@ -107,6 +109,7 @@ export ko_pulumi.gcp.container.upgradeOptions
 export ko_pulumi.gcp.container.upgradeSettings
 export ko_pulumi.gcp.container.userManagedKeysConfig
 export ko_pulumi.gcp.container.verticalPodAutoscaling
+export ko_pulumi.gcp.container.windowStartTime
 export ko_pulumi.gcp.container.windowsNodeConfig
 export ko_pulumi.gcp.container.workloadAltsConfig
 export ko_pulumi.gcp.container.workloadConfig

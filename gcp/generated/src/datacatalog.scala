@@ -63,6 +63,28 @@ object datacatalog:
       val argsBuilder = com.pulumi.gcp.datacatalog.inputs.GetTagTemplateIamPolicyPlainArgs.builder
       com.pulumi.gcp.datacatalog.DatacatalogFunctions.getTagTemplateIamPolicyPlain(args(argsBuilder).build)
 
+    /**
+     * Get information about a Google Data Catalog Taxonomy. For more information see
+     * [the official documentation](https://cloud.google.com/data-catalog/docs)
+     * and
+     * [API](https://cloud.google.com/data-catalog/docs/reference/rest/v1/projects.locations.taxonomies).
+     */
+    inline def getTaxonomy(args: Endofunction[com.pulumi.gcp.datacatalog.inputs.GetTaxonomyArgs.Builder] = scala.Predef.identity):
+        com.pulumi.core.Output[com.pulumi.gcp.datacatalog.outputs.GetTaxonomyResult] =
+      val argsBuilder = com.pulumi.gcp.datacatalog.inputs.GetTaxonomyArgs.builder
+      com.pulumi.gcp.datacatalog.DatacatalogFunctions.getTaxonomy(args(argsBuilder).build)
+
+    /**
+     * Get information about a Google Data Catalog Taxonomy. For more information see
+     * [the official documentation](https://cloud.google.com/data-catalog/docs)
+     * and
+     * [API](https://cloud.google.com/data-catalog/docs/reference/rest/v1/projects.locations.taxonomies).
+     */
+    inline def getTaxonomyPlain(args: Endofunction[com.pulumi.gcp.datacatalog.inputs.GetTaxonomyPlainArgs.Builder] = scala.Predef.identity):
+        java.util.concurrent.CompletableFuture[com.pulumi.gcp.datacatalog.outputs.GetTaxonomyResult] =
+      val argsBuilder = com.pulumi.gcp.datacatalog.inputs.GetTaxonomyPlainArgs.builder
+      com.pulumi.gcp.datacatalog.DatacatalogFunctions.getTaxonomyPlain(args(argsBuilder).build)
+
     /** Retrieves the current IAM policy data for taxonomy */
     inline def getTaxonomyIamPolicy(args: Endofunction[com.pulumi.gcp.datacatalog.inputs.GetTaxonomyIamPolicyArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.datacatalog.outputs.GetTaxonomyIamPolicyResult] =

@@ -193,6 +193,7 @@ export ko_pulumi.azure.mssql.import_
 export ko_pulumi.azure.mssql.jobTargets
 export ko_pulumi.azure.mysql.highAvailability
 export ko_pulumi.azure.mysql.identity
+export ko_pulumi.azure.netapp.fileSystemNfsUser
 export ko_pulumi.azure.netapp.hourlySchedule
 export ko_pulumi.azure.netapp.identity
 export ko_pulumi.azure.network.filter

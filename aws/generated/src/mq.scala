@@ -201,6 +201,15 @@ object mq:
       builder.maintenanceWindowStartTime(args(argsBuilder).build)
 
     /**
+     * @param sharedResources List of resources shared with the broker via `resourceShareArns`. Only populated for `engineType` of `RabbitMQ`.
+     * @return builder
+     */
+    def sharedResources(args: Endofunction[com.pulumi.aws.mq.inputs.BrokerSharedResourceArgs.Builder]*):
+        com.pulumi.aws.mq.inputs.BrokerState.Builder =
+      def argsBuilder = com.pulumi.aws.mq.inputs.BrokerSharedResourceArgs.builder
+      builder.sharedResources(args.map(_(argsBuilder).build)*)
+
+    /**
      * @param users Configuration block for broker users. For `engineType` of `RabbitMQ`, Amazon MQ does not return broker users preventing this resource from making user updates and drift detection. Detailed below.
      * @return builder
      */

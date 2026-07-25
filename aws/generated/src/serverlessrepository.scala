@@ -4,7 +4,11 @@ package aws
 import com.pulumi.resources.CustomResourceOptions
 
 object serverlessrepository:
-  /** Deploys an Application CloudFormation Stack from the Serverless Application Repository. */
+  /**
+   * Manages an Application CloudFormation Stack from the Serverless Application Repository.
+   * 
+   * &gt; **Warning:** CloudFormation masks `NoEcho` parameter values as `****` in API responses, which may set an expectation that they remain hidden. They do not \u2014 like any other argument, the configured value is persisted to state. To mask a specific parameter in plan and `terraform show` output, wrap it with Terraform&#39;s `sensitive()` function, for example `parameters = { password = sensitive(var.password) }`.
+   */
   def CloudFormationStack(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.serverlessrepository.CloudFormationStackArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.serverlessrepository.CloudFormationStackArgs.builder

@@ -142,7 +142,7 @@ object kusto:
   /**
    * Manages a Kusto (also known as Azure Data Explorer) Database
    * 
-   * !&gt; **Note:** To mitigate the possibility of accidental data loss it is highly recommended that you use the `preventDestroy` lifecycle argument in your configuration file for this resource. For more information on the `preventDestroy` lifecycle argument please see the terraform documentation.
+   * &gt; **Note:** To mitigate the possibility of accidental data loss it is highly recommended that you use the `preventDestroy` lifecycle argument in your configuration file for this resource. For more information on the `preventDestroy` lifecycle argument please see the terraform documentation.
    */
   def Database(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.azure.kusto.DatabaseArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =

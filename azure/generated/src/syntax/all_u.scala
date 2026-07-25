@@ -27,6 +27,7 @@ export ko_pulumi.azure.cdn.userManagedHttps
 export ko_pulumi.azure.cognitive.virtualNetworkRules
 export ko_pulumi.azure.communication.verificationRecords
 export ko_pulumi.azure.compute.vaultCertificates
+export ko_pulumi.azure.compute.virtualMachineSizes
 export ko_pulumi.azure.compute.windowsConfiguration
 export ko_pulumi.azure.compute.winrmListeners
 export ko_pulumi.azure.compute.winrms

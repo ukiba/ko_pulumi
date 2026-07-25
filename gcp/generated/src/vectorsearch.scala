@@ -37,6 +37,43 @@ object vectorsearch:
       def argsBuilder = com.pulumi.gcp.vectorsearch.inputs.CollectionVectorSchemaArgs.builder
       builder.vectorSchemas(args.map(_(argsBuilder).build)*)
 
+  /**
+   * An Index defines an approximate nearest-neighbor search structure over a
+   * field of a Vector Search Collection.
+   */
+  def Index(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+      (args: Endofunction[com.pulumi.gcp.vectorsearch.IndexArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+    val argsBuilder = com.pulumi.gcp.vectorsearch.IndexArgs.builder
+    com.pulumi.gcp.vectorsearch.Index(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+
+  extension (builder: com.pulumi.gcp.vectorsearch.IndexArgs.Builder)
+    /**
+     * @param dedicatedInfrastructure Dedicated infrastructure for the index. This field belongs to the
+     * `infraType` oneof; if omitted, the server populates it with the
+     * default `PERFORMANCE_OPTIMIZED` mode and an autoscaling spec of
+     * `min_replica_count=2`, `max_replica_count=2`.
+     * Structure is documented below.
+     * @return builder
+     */
+    def dedicatedInfrastructure(args: Endofunction[com.pulumi.gcp.vectorsearch.inputs.IndexDedicatedInfrastructureArgs.Builder]):
+        com.pulumi.gcp.vectorsearch.IndexArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.vectorsearch.inputs.IndexDedicatedInfrastructureArgs.builder
+      builder.dedicatedInfrastructure(args(argsBuilder).build)
+
+    /**
+     * @param denseScann Dense ScaNN index configuration. This field belongs to the
+     * `indexType` oneof; if omitted, the server populates it with default
+     * ScaNN settings.
+     * Structure is documented below.
+     * @return builder
+     */
+    def denseScann(args: Endofunction[com.pulumi.gcp.vectorsearch.inputs.IndexDenseScannArgs.Builder]):
+        com.pulumi.gcp.vectorsearch.IndexArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.vectorsearch.inputs.IndexDenseScannArgs.builder
+      builder.denseScann(args(argsBuilder).build)
+
   extension (builder: com.pulumi.gcp.vectorsearch.inputs.CollectionState.Builder)
     /**
      * @param encryptionSpec Represents a customer-managed encryption key specification that can be
@@ -93,3 +130,40 @@ object vectorsearch:
         com.pulumi.gcp.vectorsearch.inputs.CollectionVectorSchemaDenseVectorArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vectorsearch.inputs.CollectionVectorSchemaDenseVectorVertexEmbeddingConfigArgs.builder
       builder.vertexEmbeddingConfig(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.gcp.vectorsearch.inputs.IndexDedicatedInfrastructureArgs.Builder)
+    /**
+     * @param autoscalingSpec Autoscaling specification.
+     * Structure is documented below.
+     * @return builder
+     */
+    def autoscalingSpec(args: Endofunction[com.pulumi.gcp.vectorsearch.inputs.IndexDedicatedInfrastructureAutoscalingSpecArgs.Builder]):
+        com.pulumi.gcp.vectorsearch.inputs.IndexDedicatedInfrastructureArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.vectorsearch.inputs.IndexDedicatedInfrastructureAutoscalingSpecArgs.builder
+      builder.autoscalingSpec(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.gcp.vectorsearch.inputs.IndexState.Builder)
+    /**
+     * @param dedicatedInfrastructure Dedicated infrastructure for the index. This field belongs to the
+     * `infraType` oneof; if omitted, the server populates it with the
+     * default `PERFORMANCE_OPTIMIZED` mode and an autoscaling spec of
+     * `min_replica_count=2`, `max_replica_count=2`.
+     * Structure is documented below.
+     * @return builder
+     */
+    def dedicatedInfrastructure(args: Endofunction[com.pulumi.gcp.vectorsearch.inputs.IndexDedicatedInfrastructureArgs.Builder]):
+        com.pulumi.gcp.vectorsearch.inputs.IndexState.Builder =
+      val argsBuilder = com.pulumi.gcp.vectorsearch.inputs.IndexDedicatedInfrastructureArgs.builder
+      builder.dedicatedInfrastructure(args(argsBuilder).build)
+
+    /**
+     * @param denseScann Dense ScaNN index configuration. This field belongs to the
+     * `indexType` oneof; if omitted, the server populates it with default
+     * ScaNN settings.
+     * Structure is documented below.
+     * @return builder
+     */
+    def denseScann(args: Endofunction[com.pulumi.gcp.vectorsearch.inputs.IndexDenseScannArgs.Builder]):
+        com.pulumi.gcp.vectorsearch.inputs.IndexState.Builder =
+      val argsBuilder = com.pulumi.gcp.vectorsearch.inputs.IndexDenseScannArgs.builder
+      builder.denseScann(args(argsBuilder).build)

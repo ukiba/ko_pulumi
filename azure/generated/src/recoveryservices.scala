@@ -45,7 +45,7 @@ object recoveryservices:
     /**
      * @param encryption An `encryption` block as defined below. Required with `identity`.
      * 
-     * !&gt; **Note:** Once Encryption with your own key has been Enabled it&#39;s not possible to Disable it.
+     * &gt; **Note:** Once Encryption with your own key has been Enabled it&#39;s not possible to Disable it.
      * @return builder
      */
     def encryption(args: Endofunction[com.pulumi.azure.recoveryservices.inputs.VaultEncryptionArgs.Builder]):
@@ -83,7 +83,7 @@ object recoveryservices:
     /**
      * @param encryption An `encryption` block as defined below. Required with `identity`.
      * 
-     * !&gt; **Note:** Once Encryption with your own key has been Enabled it&#39;s not possible to Disable it.
+     * &gt; **Note:** Once Encryption with your own key has been Enabled it&#39;s not possible to Disable it.
      * @return builder
      */
     def encryption(args: Endofunction[com.pulumi.azure.recoveryservices.inputs.VaultEncryptionArgs.Builder]):

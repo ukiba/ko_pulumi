@@ -81,7 +81,7 @@ object netapp:
    * &lt;!-- This section is generated, changes will be overwritten --&gt;
    * This resource uses the following Azure API Providers:
    * 
-   * * `Microsoft.NetApp` - 2025-12-01
+   * * `Microsoft.NetApp` - 2026-01-01
    * 
    * ## Import
    * 
@@ -201,7 +201,7 @@ object netapp:
    * &lt;!-- This section is generated, changes will be overwritten --&gt;
    * This resource uses the following Azure API Providers:
    * 
-   * * `Microsoft.NetApp` - 2025-12-01
+   * * `Microsoft.NetApp` - 2026-01-01
    * 
    * ## Import
    * 
@@ -287,7 +287,7 @@ object netapp:
    * &lt;!-- This section is generated, changes will be overwritten --&gt;
    * This resource uses the following Azure API Providers:
    * 
-   * * `Microsoft.NetApp` - 2025-12-01
+   * * `Microsoft.NetApp` - 2026-01-01
    * 
    * ## Import
    * 
@@ -364,7 +364,7 @@ object netapp:
      * &lt;!-- This section is generated, changes will be overwritten --&gt;
      * This data source uses the following Azure API Providers:
      * 
-     * * `Microsoft.NetApp` - 2025-12-01
+     * * `Microsoft.NetApp` - 2026-01-01
      */
     inline def getAccount(args: Endofunction[com.pulumi.azure.netapp.inputs.GetAccountArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.netapp.outputs.GetAccountResult] =
@@ -414,7 +414,7 @@ object netapp:
      * &lt;!-- This section is generated, changes will be overwritten --&gt;
      * This data source uses the following Azure API Providers:
      * 
-     * * `Microsoft.NetApp` - 2025-12-01
+     * * `Microsoft.NetApp` - 2026-01-01
      */
     inline def getAccountPlain(args: Endofunction[com.pulumi.azure.netapp.inputs.GetAccountPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.netapp.outputs.GetAccountResult] =
@@ -477,7 +477,7 @@ object netapp:
      * &lt;!-- This section is generated, changes will be overwritten --&gt;
      * This data source uses the following Azure API Providers:
      * 
-     * * `Microsoft.NetApp` - 2025-12-01
+     * * `Microsoft.NetApp` - 2026-01-01
      */
     inline def getBackupPolicy(args: Endofunction[com.pulumi.azure.netapp.inputs.GetBackupPolicyArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.netapp.outputs.GetBackupPolicyResult] =
@@ -528,7 +528,7 @@ object netapp:
      * &lt;!-- This section is generated, changes will be overwritten --&gt;
      * This data source uses the following Azure API Providers:
      * 
-     * * `Microsoft.NetApp` - 2025-12-01
+     * * `Microsoft.NetApp` - 2026-01-01
      */
     inline def getBackupPolicyPlain(args: Endofunction[com.pulumi.azure.netapp.inputs.GetBackupPolicyPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.netapp.outputs.GetBackupPolicyResult] =
@@ -579,7 +579,7 @@ object netapp:
      * &lt;!-- This section is generated, changes will be overwritten --&gt;
      * This data source uses the following Azure API Providers:
      * 
-     * * `Microsoft.NetApp` - 2025-12-01
+     * * `Microsoft.NetApp` - 2026-01-01
      */
     inline def getBackupVault(args: Endofunction[com.pulumi.azure.netapp.inputs.GetBackupVaultArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.netapp.outputs.GetBackupVaultResult] =
@@ -630,7 +630,7 @@ object netapp:
      * &lt;!-- This section is generated, changes will be overwritten --&gt;
      * This data source uses the following Azure API Providers:
      * 
-     * * `Microsoft.NetApp` - 2025-12-01
+     * * `Microsoft.NetApp` - 2026-01-01
      */
     inline def getBackupVaultPlain(args: Endofunction[com.pulumi.azure.netapp.inputs.GetBackupVaultPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.netapp.outputs.GetBackupVaultResult] =
@@ -681,7 +681,7 @@ object netapp:
      * &lt;!-- This section is generated, changes will be overwritten --&gt;
      * This data source uses the following Azure API Providers:
      * 
-     * * `Microsoft.NetApp` - 2025-12-01
+     * * `Microsoft.NetApp` - 2026-01-01
      */
     inline def getPool(args: Endofunction[com.pulumi.azure.netapp.inputs.GetPoolArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.netapp.outputs.GetPoolResult] =
@@ -732,7 +732,7 @@ object netapp:
      * &lt;!-- This section is generated, changes will be overwritten --&gt;
      * This data source uses the following Azure API Providers:
      * 
-     * * `Microsoft.NetApp` - 2025-12-01
+     * * `Microsoft.NetApp` - 2026-01-01
      */
     inline def getPoolPlain(args: Endofunction[com.pulumi.azure.netapp.inputs.GetPoolPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.netapp.outputs.GetPoolResult] =
@@ -785,7 +785,7 @@ object netapp:
      * &lt;!-- This section is generated, changes will be overwritten --&gt;
      * This data source uses the following Azure API Providers:
      * 
-     * * `Microsoft.NetApp` - 2025-12-01
+     * * `Microsoft.NetApp` - 2026-01-01
      */
     inline def getSnapshot(args: Endofunction[com.pulumi.azure.netapp.inputs.GetSnapshotArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.netapp.outputs.GetSnapshotResult] =
@@ -838,7 +838,7 @@ object netapp:
      * &lt;!-- This section is generated, changes will be overwritten --&gt;
      * This data source uses the following Azure API Providers:
      * 
-     * * `Microsoft.NetApp` - 2025-12-01
+     * * `Microsoft.NetApp` - 2026-01-01
      */
     inline def getSnapshotPlain(args: Endofunction[com.pulumi.azure.netapp.inputs.GetSnapshotPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.netapp.outputs.GetSnapshotResult] =
@@ -895,7 +895,7 @@ object netapp:
      * &lt;!-- This section is generated, changes will be overwritten --&gt;
      * This data source uses the following Azure API Providers:
      * 
-     * * `Microsoft.NetApp` - 2025-12-01
+     * * `Microsoft.NetApp` - 2026-01-01
      */
     inline def getSnapshotPolicy(args: Endofunction[com.pulumi.azure.netapp.inputs.GetSnapshotPolicyArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.netapp.outputs.GetSnapshotPolicyResult] =
@@ -952,7 +952,7 @@ object netapp:
      * &lt;!-- This section is generated, changes will be overwritten --&gt;
      * This data source uses the following Azure API Providers:
      * 
-     * * `Microsoft.NetApp` - 2025-12-01
+     * * `Microsoft.NetApp` - 2026-01-01
      */
     inline def getSnapshotPolicyPlain(args: Endofunction[com.pulumi.azure.netapp.inputs.GetSnapshotPolicyPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.netapp.outputs.GetSnapshotPolicyResult] =
@@ -1004,7 +1004,7 @@ object netapp:
      * &lt;!-- This section is generated, changes will be overwritten --&gt;
      * This data source uses the following Azure API Providers:
      * 
-     * * `Microsoft.NetApp` - 2025-12-01
+     * * `Microsoft.NetApp` - 2026-01-01
      */
     inline def getVolume(args: Endofunction[com.pulumi.azure.netapp.inputs.GetVolumeArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.netapp.outputs.GetVolumeResult] =
@@ -1056,12 +1056,36 @@ object netapp:
      * &lt;!-- This section is generated, changes will be overwritten --&gt;
      * This data source uses the following Azure API Providers:
      * 
-     * * `Microsoft.NetApp` - 2025-12-01
+     * * `Microsoft.NetApp` - 2026-01-01
      */
     inline def getVolumePlain(args: Endofunction[com.pulumi.azure.netapp.inputs.GetVolumePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.netapp.outputs.GetVolumeResult] =
       val argsBuilder = com.pulumi.azure.netapp.inputs.GetVolumePlainArgs.builder
       com.pulumi.azure.netapp.NetappFunctions.getVolumePlain(args(argsBuilder).build)
+
+    /** Use this data source to access information about an existing NetApp Files Volume Bucket. */
+    inline def getVolumeBucket(args: Endofunction[com.pulumi.azure.netapp.inputs.GetVolumeBucketArgs.Builder] = scala.Predef.identity):
+        com.pulumi.core.Output[com.pulumi.azure.netapp.outputs.GetVolumeBucketResult] =
+      val argsBuilder = com.pulumi.azure.netapp.inputs.GetVolumeBucketArgs.builder
+      com.pulumi.azure.netapp.NetappFunctions.getVolumeBucket(args(argsBuilder).build)
+
+    /** Use this data source to access information about an existing NetApp Files Volume Bucket. */
+    inline def getVolumeBucketPlain(args: Endofunction[com.pulumi.azure.netapp.inputs.GetVolumeBucketPlainArgs.Builder] = scala.Predef.identity):
+        java.util.concurrent.CompletableFuture[com.pulumi.azure.netapp.outputs.GetVolumeBucketResult] =
+      val argsBuilder = com.pulumi.azure.netapp.inputs.GetVolumeBucketPlainArgs.builder
+      com.pulumi.azure.netapp.NetappFunctions.getVolumeBucketPlain(args(argsBuilder).build)
+
+    /** Use this data source to access information about an existing NetApp Files Volume Bucket, including its bucket server configuration. */
+    inline def getVolumeBucketWithServer(args: Endofunction[com.pulumi.azure.netapp.inputs.GetVolumeBucketWithServerArgs.Builder] = scala.Predef.identity):
+        com.pulumi.core.Output[com.pulumi.azure.netapp.outputs.GetVolumeBucketWithServerResult] =
+      val argsBuilder = com.pulumi.azure.netapp.inputs.GetVolumeBucketWithServerArgs.builder
+      com.pulumi.azure.netapp.NetappFunctions.getVolumeBucketWithServer(args(argsBuilder).build)
+
+    /** Use this data source to access information about an existing NetApp Files Volume Bucket, including its bucket server configuration. */
+    inline def getVolumeBucketWithServerPlain(args: Endofunction[com.pulumi.azure.netapp.inputs.GetVolumeBucketWithServerPlainArgs.Builder] = scala.Predef.identity):
+        java.util.concurrent.CompletableFuture[com.pulumi.azure.netapp.outputs.GetVolumeBucketWithServerResult] =
+      val argsBuilder = com.pulumi.azure.netapp.inputs.GetVolumeBucketWithServerPlainArgs.builder
+      com.pulumi.azure.netapp.NetappFunctions.getVolumeBucketWithServerPlain(args(argsBuilder).build)
 
     /** Use this data source to access information about an existing Application Volume Group for Oracle application. */
     inline def getVolumeGroupOracle(args: Endofunction[com.pulumi.azure.netapp.inputs.GetVolumeGroupOracleArgs.Builder] = scala.Predef.identity):
@@ -1215,7 +1239,7 @@ object netapp:
    * &lt;!-- This section is generated, changes will be overwritten --&gt;
    * This resource uses the following Azure API Providers:
    * 
-   * * `Microsoft.NetApp` - 2025-12-01
+   * * `Microsoft.NetApp` - 2026-01-01
    * 
    * ## Import
    * 
@@ -1357,7 +1381,7 @@ object netapp:
    * &lt;!-- This section is generated, changes will be overwritten --&gt;
    * This resource uses the following Azure API Providers:
    * 
-   * * `Microsoft.NetApp` - 2025-12-01
+   * * `Microsoft.NetApp` - 2026-01-01
    * 
    * ## Import
    * 
@@ -1468,7 +1492,7 @@ object netapp:
    * &lt;!-- This section is generated, changes will be overwritten --&gt;
    * This resource uses the following Azure API Providers:
    * 
-   * * `Microsoft.NetApp` - 2025-12-01
+   * * `Microsoft.NetApp` - 2026-01-01
    * 
    * ## Import
    * 
@@ -1535,7 +1559,7 @@ object netapp:
   /**
    * Manages a NetApp Volume.
    * 
-   * !&gt; **Note:** This resource uses a feature to prevent deletion called `preventVolumeDestruction`, defaulting to `true`. It is intentionally set to `true` to prevent the possibility of accidental data loss. The example in this page shows all possible protection options you can apply, it is using same values as the defaults.
+   * &gt; **Note:** This resource uses a feature to prevent deletion called `preventVolumeDestruction`, defaulting to `true`. It is intentionally set to `true` to prevent the possibility of accidental data loss. The example in this page shows all possible protection options you can apply, it is using same values as the defaults.
    * 
    * ## Import
    * 
@@ -1616,6 +1640,95 @@ object netapp:
         com.pulumi.azure.netapp.VolumeArgs.Builder =
       def argsBuilder = com.pulumi.azure.netapp.inputs.VolumeExportPolicyRuleArgs.builder
       builder.exportPolicyRules(args.map(_(argsBuilder).build)*)
+
+  /**
+   * Manages a NetApp Files Volume Bucket. Buckets expose the contents of an Azure NetApp Files volume (or a sub-path within it) as an S3-compatible object endpoint via the Azure NetApp Files Object REST API.
+   * 
+   * Use this resource to create **subsequent** buckets on a volume. This resource does not manage the bucket server (FQDN and certificate); it reuses the server configuration established by the first bucket on the volume.
+   * 
+   * &gt; **Note:** The **first** bucket on a volume must be created with the `azure.netapp.VolumeBucketWithServer` resource, which sets up the shared bucket server (FQDN and certificate). Every additional bucket on the same volume is then created with this server-less resource. Declaring a `server` block on more than one bucket would overwrite the shared server configuration, which is why this resource intentionally does not expose one.
+   * 
+   * &gt; **Note:** The Object REST API feature is in preview and must be registered on the subscription via `Microsoft.NetApp / ANFEnableObjectRESTAPI` before buckets can be created. See [Configure access to the Azure NetApp Files Object REST API](https://learn.microsoft.com/en-us/azure/azure-netapp-files/object-rest-api-access-configure) for the registration command and Key Vault prerequisites.
+   * 
+   * &gt; **Note:** Buckets are supported on cool-access and large NetApp volumes. Buckets are not supported on cache volumes. Deleting the parent volume cascade-deletes its buckets.
+   */
+  def VolumeBucket(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+      (args: Endofunction[com.pulumi.azure.netapp.VolumeBucketArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+    var argsBuilder = com.pulumi.azure.netapp.VolumeBucketArgs.builder
+    conf.logicalName2physicalName(name) match
+      case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
+      case None               =>
+    com.pulumi.azure.netapp.VolumeBucket(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+
+  extension (builder: com.pulumi.azure.netapp.VolumeBucketArgs.Builder)
+    /**
+     * @param fileSystemNfsUser A `fileSystemNfsUser` block as defined below. Exactly one of `fileSystemNfsUser` or `fileSystemCifsUsername` must be specified.
+     * @return builder
+     */
+    def fileSystemNfsUser(args: Endofunction[com.pulumi.azure.netapp.inputs.VolumeBucketFileSystemNfsUserArgs.Builder]):
+        com.pulumi.azure.netapp.VolumeBucketArgs.Builder =
+      val argsBuilder = com.pulumi.azure.netapp.inputs.VolumeBucketFileSystemNfsUserArgs.builder
+      builder.fileSystemNfsUser(args(argsBuilder).build)
+
+    /**
+     * @param keyVault A `keyVault` block as defined below. Used to store the generated bucket credentials in Azure Key Vault.
+     * @return builder
+     */
+    def keyVault(args: Endofunction[com.pulumi.azure.netapp.inputs.VolumeBucketKeyVaultArgs.Builder]):
+        com.pulumi.azure.netapp.VolumeBucketArgs.Builder =
+      val argsBuilder = com.pulumi.azure.netapp.inputs.VolumeBucketKeyVaultArgs.builder
+      builder.keyVault(args(argsBuilder).build)
+
+  /**
+   * Manages a NetApp Files Volume Bucket including its bucket server configuration. Buckets expose the contents of an Azure NetApp Files volume (or a sub-path within it) as an S3-compatible object endpoint via the Azure NetApp Files Object REST API.
+   * 
+   * Use this resource to create the **first** bucket on a volume. The first bucket establishes the bucket server (FQDN and certificate) that is shared by every bucket on the volume. Create any **subsequent** buckets with the server-less `azure.netapp.VolumeBucket` resource, which reuses the server configuration established here.
+   * 
+   * &gt; **Note:** Declaring a `server` block on more than one bucket of the same volume overwrites the shared server configuration. Only the first bucket should manage the server, via this resource.
+   * 
+   * &gt; **Note:** The Object REST API feature is in preview and must be registered on the subscription via `Microsoft.NetApp / ANFEnableObjectRESTAPI` before buckets can be created. See [Configure access to the Azure NetApp Files Object REST API](https://learn.microsoft.com/en-us/azure/azure-netapp-files/object-rest-api-access-configure) for the registration command and Key Vault prerequisites.
+   * 
+   * &gt; **Note:** Buckets are supported on cool-access and large NetApp volumes. Buckets are not supported on cache volumes. Deleting the parent volume cascade-deletes its buckets.
+   */
+  def VolumeBucketWithServer(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+      (args: Endofunction[com.pulumi.azure.netapp.VolumeBucketWithServerArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+    var argsBuilder = com.pulumi.azure.netapp.VolumeBucketWithServerArgs.builder
+    conf.logicalName2physicalName(name) match
+      case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
+      case None               =>
+    com.pulumi.azure.netapp.VolumeBucketWithServer(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+
+  extension (builder: com.pulumi.azure.netapp.VolumeBucketWithServerArgs.Builder)
+    /**
+     * @param fileSystemNfsUser A `fileSystemNfsUser` block as defined below. Exactly one of `fileSystemNfsUser` or `fileSystemCifsUsername` must be specified.
+     * @return builder
+     */
+    def fileSystemNfsUser(args: Endofunction[com.pulumi.azure.netapp.inputs.VolumeBucketWithServerFileSystemNfsUserArgs.Builder]):
+        com.pulumi.azure.netapp.VolumeBucketWithServerArgs.Builder =
+      val argsBuilder = com.pulumi.azure.netapp.inputs.VolumeBucketWithServerFileSystemNfsUserArgs.builder
+      builder.fileSystemNfsUser(args(argsBuilder).build)
+
+    /**
+     * @param keyVault A `keyVault` block as defined below. Used to source the server certificate and to store generated credentials in Azure Key Vault. Mutually exclusive with `server.0.certificate_pem`.
+     * @return builder
+     */
+    def keyVault(args: Endofunction[com.pulumi.azure.netapp.inputs.VolumeBucketWithServerKeyVaultArgs.Builder]):
+        com.pulumi.azure.netapp.VolumeBucketWithServerArgs.Builder =
+      val argsBuilder = com.pulumi.azure.netapp.inputs.VolumeBucketWithServerKeyVaultArgs.builder
+      builder.keyVault(args(argsBuilder).build)
+
+    /**
+     * @param server A `server` block as defined below. Used to provide the bucket server FQDN and a directly uploaded PEM certificate. The certificate source (`server.0.certificate_pem`) is mutually exclusive with `keyVault`.
+     * @return builder
+     */
+    def server(args: Endofunction[com.pulumi.azure.netapp.inputs.VolumeBucketWithServerServerArgs.Builder]):
+        com.pulumi.azure.netapp.VolumeBucketWithServerArgs.Builder =
+      val argsBuilder = com.pulumi.azure.netapp.inputs.VolumeBucketWithServerServerArgs.builder
+      builder.server(args(argsBuilder).build)
 
   /**
    * Manages a Application Volume Group for Oracle application.
@@ -1739,6 +1852,53 @@ object netapp:
         com.pulumi.azure.netapp.inputs.SnapshotPolicyState.Builder =
       val argsBuilder = com.pulumi.azure.netapp.inputs.SnapshotPolicyWeeklyScheduleArgs.builder
       builder.weeklySchedule(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.azure.netapp.inputs.VolumeBucketState.Builder)
+    /**
+     * @param fileSystemNfsUser A `fileSystemNfsUser` block as defined below. Exactly one of `fileSystemNfsUser` or `fileSystemCifsUsername` must be specified.
+     * @return builder
+     */
+    def fileSystemNfsUser(args: Endofunction[com.pulumi.azure.netapp.inputs.VolumeBucketFileSystemNfsUserArgs.Builder]):
+        com.pulumi.azure.netapp.inputs.VolumeBucketState.Builder =
+      val argsBuilder = com.pulumi.azure.netapp.inputs.VolumeBucketFileSystemNfsUserArgs.builder
+      builder.fileSystemNfsUser(args(argsBuilder).build)
+
+    /**
+     * @param keyVault A `keyVault` block as defined below. Used to store the generated bucket credentials in Azure Key Vault.
+     * @return builder
+     */
+    def keyVault(args: Endofunction[com.pulumi.azure.netapp.inputs.VolumeBucketKeyVaultArgs.Builder]):
+        com.pulumi.azure.netapp.inputs.VolumeBucketState.Builder =
+      val argsBuilder = com.pulumi.azure.netapp.inputs.VolumeBucketKeyVaultArgs.builder
+      builder.keyVault(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.azure.netapp.inputs.VolumeBucketWithServerState.Builder)
+    /**
+     * @param fileSystemNfsUser A `fileSystemNfsUser` block as defined below. Exactly one of `fileSystemNfsUser` or `fileSystemCifsUsername` must be specified.
+     * @return builder
+     */
+    def fileSystemNfsUser(args: Endofunction[com.pulumi.azure.netapp.inputs.VolumeBucketWithServerFileSystemNfsUserArgs.Builder]):
+        com.pulumi.azure.netapp.inputs.VolumeBucketWithServerState.Builder =
+      val argsBuilder = com.pulumi.azure.netapp.inputs.VolumeBucketWithServerFileSystemNfsUserArgs.builder
+      builder.fileSystemNfsUser(args(argsBuilder).build)
+
+    /**
+     * @param keyVault A `keyVault` block as defined below. Used to source the server certificate and to store generated credentials in Azure Key Vault. Mutually exclusive with `server.0.certificate_pem`.
+     * @return builder
+     */
+    def keyVault(args: Endofunction[com.pulumi.azure.netapp.inputs.VolumeBucketWithServerKeyVaultArgs.Builder]):
+        com.pulumi.azure.netapp.inputs.VolumeBucketWithServerState.Builder =
+      val argsBuilder = com.pulumi.azure.netapp.inputs.VolumeBucketWithServerKeyVaultArgs.builder
+      builder.keyVault(args(argsBuilder).build)
+
+    /**
+     * @param server A `server` block as defined below. Used to provide the bucket server FQDN and a directly uploaded PEM certificate. The certificate source (`server.0.certificate_pem`) is mutually exclusive with `keyVault`.
+     * @return builder
+     */
+    def server(args: Endofunction[com.pulumi.azure.netapp.inputs.VolumeBucketWithServerServerArgs.Builder]):
+        com.pulumi.azure.netapp.inputs.VolumeBucketWithServerState.Builder =
+      val argsBuilder = com.pulumi.azure.netapp.inputs.VolumeBucketWithServerServerArgs.builder
+      builder.server(args(argsBuilder).build)
 
   extension (builder: com.pulumi.azure.netapp.inputs.VolumeGroupOracleState.Builder)
     /**

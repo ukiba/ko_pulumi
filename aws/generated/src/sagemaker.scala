@@ -322,7 +322,19 @@ object sagemaker:
       val argsBuilder = com.pulumi.aws.sagemaker.inputs.DomainRetentionPolicyArgs.builder
       builder.retentionPolicy(args(argsBuilder).build)
 
-  /** Provides a SageMaker AI Endpoint resource. */
+  /**
+   * Provides a SageMaker AI Endpoint resource.
+   * 
+   * &gt; **Note:** `aws.sagemaker.Endpoint` resources cannot recognize changes to an `aws.sagemaker.EndpointConfiguration` resource unless the Endpoint Configuration&#39;s `name` attribute, changes. Endpoint Configuration names should be randomized by either specifying `namePrefix` or specifying no name. This will automatically change the name when the Endpoint Configuration is modified. The Endpoint Configuration&#39;s lifecycle meta-argument `lifecycle.create_before_destroy` should also be set to `true` to prevent conflicts.
+   * 
+   * ## Import
+   * 
+   * Using `pulumi import`, import endpoints using the `name`. For example:
+   * 
+   * ```sh
+   * $ pulumi import aws:sagemaker/endpoint:Endpoint test_endpoint my-endpoint
+   * ```
+   */
   def Endpoint(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.sagemaker.EndpointArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.sagemaker.EndpointArgs.builder
@@ -350,7 +362,22 @@ object sagemaker:
       val argsBuilder = com.pulumi.aws.sagemaker.inputs.EndpointDeploymentConfigArgs.builder
       builder.deploymentConfig(args(argsBuilder).build)
 
-  /** Provides a SageMaker AI endpoint configuration resource. */
+  /**
+   * Provides a SageMaker AI endpoint configuration resource.
+   * 
+   * &gt; **Note:** `aws.sagemaker.Endpoint` resources cannot recognize changes to an `aws.sagemaker.EndpointConfiguration` resource unless the Endpoint Configuration&#39;s `name` attribute, changes. Endpoint Configuration names should be randomized by either specifying `namePrefix` or specifying no name. This will automatically change the name when the Endpoint Configuration is modified. The Endpoint Configuration&#39;s lifecycle meta-argument `lifecycle.create_before_destroy` should also be set to `true` to prevent conflicts.
+   * 
+   * #### Optional
+   * 
+   * * `accountId` (String) AWS Account where this resource is managed.
+   * * `region` (String) Region where this resource is managed.
+   * 
+   * Using `pulumi import`, import Endpoint Configurations using `name`. For example:
+   * 
+   * ```sh
+   * $ pulumi import aws:sagemaker/endpointConfiguration:EndpointConfiguration example example-endpoint-config
+   * ```
+   */
   def EndpointConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.sagemaker.EndpointConfigurationArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.sagemaker.EndpointConfigurationArgs.builder
@@ -2780,6 +2807,15 @@ object sagemaker:
 
   extension (builder: com.pulumi.aws.sagemaker.inputs.EndpointConfigurationProductionVariantArgs.Builder)
     /**
+     * @param capacityReservationConfig Settings for the capacity reservation for the compute instances that SageMaker AI reserves for an endpoint. See capacityReservationConfig below.
+     * @return builder
+     */
+    def capacityReservationConfig(args: Endofunction[com.pulumi.aws.sagemaker.inputs.EndpointConfigurationProductionVariantCapacityReservationConfigArgs.Builder]):
+        com.pulumi.aws.sagemaker.inputs.EndpointConfigurationProductionVariantArgs.Builder =
+      val argsBuilder = com.pulumi.aws.sagemaker.inputs.EndpointConfigurationProductionVariantCapacityReservationConfigArgs.builder
+      builder.capacityReservationConfig(args(argsBuilder).build)
+
+    /**
      * @param coreDumpConfig Core dump configuration from the model container when the process crashes. Fields are documented below.
      * @return builder
      */
@@ -2816,6 +2852,15 @@ object sagemaker:
       builder.serverlessConfig(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.sagemaker.inputs.EndpointConfigurationShadowProductionVariantArgs.Builder)
+    /**
+     * @param capacityReservationConfig Settings for the capacity reservation for the compute instances that SageMaker AI reserves for an endpoint. See capacityReservationConfig below.
+     * @return builder
+     */
+    def capacityReservationConfig(args: Endofunction[com.pulumi.aws.sagemaker.inputs.EndpointConfigurationShadowProductionVariantCapacityReservationConfigArgs.Builder]):
+        com.pulumi.aws.sagemaker.inputs.EndpointConfigurationShadowProductionVariantArgs.Builder =
+      val argsBuilder = com.pulumi.aws.sagemaker.inputs.EndpointConfigurationShadowProductionVariantCapacityReservationConfigArgs.builder
+      builder.capacityReservationConfig(args(argsBuilder).build)
+
     /**
      * @param coreDumpConfig Core dump configuration from the model container when the process crashes. Fields are documented below.
      * @return builder

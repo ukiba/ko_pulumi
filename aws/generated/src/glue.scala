@@ -177,7 +177,7 @@ object glue:
       builder.targetTable(args(argsBuilder).build)
 
     /**
-     * @param viewDefinition A structure that contains all the information that defines the view, including the dialect or dialects for the view, and the query. See `viewDefinition` below.
+     * @param viewDefinition Structure that contains all the information that defines the view, including the dialect or dialects for the view, and the query. See `viewDefinition` below.
      * @return builder
      */
     def viewDefinition(args: Endofunction[com.pulumi.aws.glue.inputs.CatalogTableViewDefinitionArgs.Builder]):
@@ -994,7 +994,7 @@ object glue:
 
   extension (builder: com.pulumi.aws.glue.inputs.CatalogTableOpenTableFormatInputIcebergInputIcebergTableInputArgs.Builder)
     /**
-     * @param partitionSpec The partitioning specification that defines how the Iceberg table data will be organized and partitioned for optimal query performance. See `partitionSpec` below.
+     * @param partitionSpec Partitioning specification that defines how the Iceberg table data will be organized and partitioned for optimal query performance. See `partitionSpec` below.
      * @return builder
      */
     def partitionSpec(args: Endofunction[com.pulumi.aws.glue.inputs.CatalogTableOpenTableFormatInputIcebergInputIcebergTableInputPartitionSpecArgs.Builder]):
@@ -1003,7 +1003,7 @@ object glue:
       builder.partitionSpec(args(argsBuilder).build)
 
     /**
-     * @param schema The schema definition that specifies the structure, field types, and metadata for the Iceberg table. See `schema` below.
+     * @param schema Schema definition that specifies the structure, field types, and metadata for the Iceberg table. See `schema` below.
      * @return builder
      */
     def schema(args: Endofunction[com.pulumi.aws.glue.inputs.CatalogTableOpenTableFormatInputIcebergInputIcebergTableInputSchemaArgs.Builder]):
@@ -1012,7 +1012,7 @@ object glue:
       builder.schema(args(argsBuilder).build)
 
     /**
-     * @param sortOrder The sort order specification that defines how data should be ordered within each partition to optimize query performance. See `sortOrder` below.
+     * @param sortOrder Sort order specification that defines how data should be ordered within each partition to optimize query performance. See `sortOrder` below.
      * @return builder
      */
     def sortOrder(args: Endofunction[com.pulumi.aws.glue.inputs.CatalogTableOpenTableFormatInputIcebergInputIcebergTableInputSortOrderArgs.Builder]):
@@ -1022,7 +1022,7 @@ object glue:
 
   extension (builder: com.pulumi.aws.glue.inputs.CatalogTableOpenTableFormatInputIcebergInputIcebergTableInputPartitionSpecArgs.Builder)
     /**
-     * @param fields The list of partition fields that define how the table data should be partitioned. See `fields` below.
+     * @param fields List of partition fields that define how the table data should be partitioned. See `partition_spec.fields` below.
      * @return builder
      */
     def fields(args: Endofunction[com.pulumi.aws.glue.inputs.CatalogTableOpenTableFormatInputIcebergInputIcebergTableInputPartitionSpecFieldArgs.Builder]*):
@@ -1032,7 +1032,7 @@ object glue:
 
   extension (builder: com.pulumi.aws.glue.inputs.CatalogTableOpenTableFormatInputIcebergInputIcebergTableInputSchemaArgs.Builder)
     /**
-     * @param fields The list of field definitions that make up the table schema. See `fields` below.
+     * @param fields List of field definitions that make up the table schema. See `schema.fields` below.
      * @return builder
      */
     def fields(args: Endofunction[com.pulumi.aws.glue.inputs.CatalogTableOpenTableFormatInputIcebergInputIcebergTableInputSchemaFieldArgs.Builder]*):
@@ -1042,7 +1042,7 @@ object glue:
 
   extension (builder: com.pulumi.aws.glue.inputs.CatalogTableOpenTableFormatInputIcebergInputIcebergTableInputSortOrderArgs.Builder)
     /**
-     * @param fields The list of fields and their sort directions that define the ordering criteria for the Iceberg table data. See `fields` below.
+     * @param fields List of fields and their sort directions that define the ordering criteria for the Iceberg table data. See `sort_order.fields` below.
      * @return builder
      */
     def fields(args: Endofunction[com.pulumi.aws.glue.inputs.CatalogTableOpenTableFormatInputIcebergInputIcebergTableInputSortOrderFieldArgs.Builder]*):
@@ -1146,7 +1146,7 @@ object glue:
       builder.targetTable(args(argsBuilder).build)
 
     /**
-     * @param viewDefinition A structure that contains all the information that defines the view, including the dialect or dialects for the view, and the query. See `viewDefinition` below.
+     * @param viewDefinition Structure that contains all the information that defines the view, including the dialect or dialects for the view, and the query. See `viewDefinition` below.
      * @return builder
      */
     def viewDefinition(args: Endofunction[com.pulumi.aws.glue.inputs.CatalogTableViewDefinitionArgs.Builder]):
@@ -1212,7 +1212,7 @@ object glue:
 
   extension (builder: com.pulumi.aws.glue.inputs.CatalogTableViewDefinitionArgs.Builder)
     /**
-     * @param representations A list of structures that contains the dialect of the view, and the query that defines the view. See `representations` below.
+     * @param representations List of structures that contains the dialect of the view, and the query that defines the view. See `representations` below.
      * @return builder
      */
     def representations(args: Endofunction[com.pulumi.aws.glue.inputs.CatalogTableViewDefinitionRepresentationArgs.Builder]*):

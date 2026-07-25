@@ -3131,6 +3131,33 @@ object compute:
         resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
 
   /**
+   * A config defined for multiple managed instances that belong to an instance group manager with target_size_policy.mode=BULK.
+   * 
+   * To get more information about BulkPerInstanceConfig, see:
+   * 
+   * * [API documentation](https://cloud.google.com/compute/docs/reference/rest/v1/instanceGroupManagers)
+   * * How-to Guides
+   *     * [Official Documentation](https://cloud.google.com/compute/docs/instance-groups/bulk-create-instances-in-mig)
+   */
+  def BulkPerInstanceConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+      (args: Endofunction[com.pulumi.gcp.compute.BulkPerInstanceConfigArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+    val argsBuilder = com.pulumi.gcp.compute.BulkPerInstanceConfigArgs.builder
+    com.pulumi.gcp.compute.BulkPerInstanceConfig(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+
+  extension (builder: com.pulumi.gcp.compute.BulkPerInstanceConfigArgs.Builder)
+    /**
+     * @param instances The list of per-instance configs.
+     * Structure is documented below.
+     * @return builder
+     */
+    def instances(args: Endofunction[com.pulumi.gcp.compute.inputs.BulkPerInstanceConfigInstanceArgs.Builder]*):
+        com.pulumi.gcp.compute.BulkPerInstanceConfigArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.compute.inputs.BulkPerInstanceConfigInstanceArgs.builder
+      builder.instances(args.map(_(argsBuilder).build)*)
+
+  /**
    * A representation of an ExternalAccountKey used for external account binding within ACME.
    * 
    * To get more information about ExternalAccountKey, see:
@@ -3326,6 +3353,18 @@ object compute:
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.compute.outputs.GetDiskIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.compute.inputs.GetDiskIamPolicyPlainArgs.builder
       com.pulumi.gcp.compute.ComputeFunctions.getDiskIamPolicyPlain(args(argsBuilder).build)
+
+    /** Retrieves the current IAM policy data for firewallpolicy */
+    inline def getFirewallPolicyIamPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.GetFirewallPolicyIamPolicyArgs.Builder] = scala.Predef.identity):
+        com.pulumi.core.Output[com.pulumi.gcp.compute.outputs.GetFirewallPolicyIamPolicyResult] =
+      val argsBuilder = com.pulumi.gcp.compute.inputs.GetFirewallPolicyIamPolicyArgs.builder
+      com.pulumi.gcp.compute.ComputeFunctions.getFirewallPolicyIamPolicy(args(argsBuilder).build)
+
+    /** Retrieves the current IAM policy data for firewallpolicy */
+    inline def getFirewallPolicyIamPolicyPlain(args: Endofunction[com.pulumi.gcp.compute.inputs.GetFirewallPolicyIamPolicyPlainArgs.Builder] = scala.Predef.identity):
+        java.util.concurrent.CompletableFuture[com.pulumi.gcp.compute.outputs.GetFirewallPolicyIamPolicyResult] =
+      val argsBuilder = com.pulumi.gcp.compute.inputs.GetFirewallPolicyIamPolicyPlainArgs.builder
+      com.pulumi.gcp.compute.ComputeFunctions.getFirewallPolicyIamPolicyPlain(args(argsBuilder).build)
 
     /** Get a forwarding rule within GCE from its name. */
     inline def getForwardingRule(args: Endofunction[com.pulumi.gcp.compute.inputs.GetForwardingRuleArgs.Builder] = scala.Predef.identity):
@@ -3578,6 +3617,24 @@ object compute:
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.compute.outputs.GetInstanceGroupManagerResult] =
       val argsBuilder = com.pulumi.gcp.compute.inputs.GetInstanceGroupManagerPlainArgs.builder
       com.pulumi.gcp.compute.ComputeFunctions.getInstanceGroupManagerPlain(args(argsBuilder).build)
+
+    /**
+     * Get a list of Instance Groups within GCE. For more information, see [the official documentation](https://cloud.google.com/compute/docs/instance-groups/#unmanaged_instance_groups)
+     * and [API](https://cloud.google.com/compute/docs/reference/latest/instanceGroups).
+     */
+    inline def getInstanceGroups(args: Endofunction[com.pulumi.gcp.compute.inputs.GetInstanceGroupsArgs.Builder] = scala.Predef.identity):
+        com.pulumi.core.Output[com.pulumi.gcp.compute.outputs.GetInstanceGroupsResult] =
+      val argsBuilder = com.pulumi.gcp.compute.inputs.GetInstanceGroupsArgs.builder
+      com.pulumi.gcp.compute.ComputeFunctions.getInstanceGroups(args(argsBuilder).build)
+
+    /**
+     * Get a list of Instance Groups within GCE. For more information, see [the official documentation](https://cloud.google.com/compute/docs/instance-groups/#unmanaged_instance_groups)
+     * and [API](https://cloud.google.com/compute/docs/reference/latest/instanceGroups).
+     */
+    inline def getInstanceGroupsPlain(args: Endofunction[com.pulumi.gcp.compute.inputs.GetInstanceGroupsPlainArgs.Builder] = scala.Predef.identity):
+        java.util.concurrent.CompletableFuture[com.pulumi.gcp.compute.outputs.GetInstanceGroupsResult] =
+      val argsBuilder = com.pulumi.gcp.compute.inputs.GetInstanceGroupsPlainArgs.builder
+      com.pulumi.gcp.compute.ComputeFunctions.getInstanceGroupsPlain(args(argsBuilder).build)
 
     /**
      * Get information about a VM instance resource within GCE. For more information see
@@ -3854,6 +3911,18 @@ object compute:
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.compute.outputs.GetNetworkEndpointGroupsResult] =
       val argsBuilder = com.pulumi.gcp.compute.inputs.GetNetworkEndpointGroupsPlainArgs.builder
       com.pulumi.gcp.compute.ComputeFunctions.getNetworkEndpointGroupsPlain(args(argsBuilder).build)
+
+    /** Retrieves the current IAM policy data for networkfirewallpolicy */
+    inline def getNetworkFirewallPolicyIamPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.GetNetworkFirewallPolicyIamPolicyArgs.Builder] = scala.Predef.identity):
+        com.pulumi.core.Output[com.pulumi.gcp.compute.outputs.GetNetworkFirewallPolicyIamPolicyResult] =
+      val argsBuilder = com.pulumi.gcp.compute.inputs.GetNetworkFirewallPolicyIamPolicyArgs.builder
+      com.pulumi.gcp.compute.ComputeFunctions.getNetworkFirewallPolicyIamPolicy(args(argsBuilder).build)
+
+    /** Retrieves the current IAM policy data for networkfirewallpolicy */
+    inline def getNetworkFirewallPolicyIamPolicyPlain(args: Endofunction[com.pulumi.gcp.compute.inputs.GetNetworkFirewallPolicyIamPolicyPlainArgs.Builder] = scala.Predef.identity):
+        java.util.concurrent.CompletableFuture[com.pulumi.gcp.compute.outputs.GetNetworkFirewallPolicyIamPolicyResult] =
+      val argsBuilder = com.pulumi.gcp.compute.inputs.GetNetworkFirewallPolicyIamPolicyPlainArgs.builder
+      com.pulumi.gcp.compute.ComputeFunctions.getNetworkFirewallPolicyIamPolicyPlain(args(argsBuilder).build)
 
     /**
      * Get information of a specified compute network peering. For more information see
@@ -4156,6 +4225,18 @@ object compute:
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.compute.outputs.GetRegionNetworkEndpointGroupResult] =
       val argsBuilder = com.pulumi.gcp.compute.inputs.GetRegionNetworkEndpointGroupPlainArgs.builder
       com.pulumi.gcp.compute.ComputeFunctions.getRegionNetworkEndpointGroupPlain(args(argsBuilder).build)
+
+    /** Retrieves the current IAM policy data for regionnetworkfirewallpolicy */
+    inline def getRegionNetworkFirewallPolicyIamPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.GetRegionNetworkFirewallPolicyIamPolicyArgs.Builder] = scala.Predef.identity):
+        com.pulumi.core.Output[com.pulumi.gcp.compute.outputs.GetRegionNetworkFirewallPolicyIamPolicyResult] =
+      val argsBuilder = com.pulumi.gcp.compute.inputs.GetRegionNetworkFirewallPolicyIamPolicyArgs.builder
+      com.pulumi.gcp.compute.ComputeFunctions.getRegionNetworkFirewallPolicyIamPolicy(args(argsBuilder).build)
+
+    /** Retrieves the current IAM policy data for regionnetworkfirewallpolicy */
+    inline def getRegionNetworkFirewallPolicyIamPolicyPlain(args: Endofunction[com.pulumi.gcp.compute.inputs.GetRegionNetworkFirewallPolicyIamPolicyPlainArgs.Builder] = scala.Predef.identity):
+        java.util.concurrent.CompletableFuture[com.pulumi.gcp.compute.outputs.GetRegionNetworkFirewallPolicyIamPolicyResult] =
+      val argsBuilder = com.pulumi.gcp.compute.inputs.GetRegionNetworkFirewallPolicyIamPolicyPlainArgs.builder
+      com.pulumi.gcp.compute.ComputeFunctions.getRegionNetworkFirewallPolicyIamPolicyPlain(args(argsBuilder).build)
 
     /**
      * Gets a Regional SSL Policy within GCE from its name, for use with Target HTTPS and Target SSL Proxies.
@@ -6278,6 +6359,927 @@ object compute:
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
       case None               =>
     com.pulumi.gcp.compute.FirewallPolicyAssociation(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+
+  /**
+   * Three different resources help you manage your IAM policy for Compute Engine FirewallPolicy. Each of these resources serves a different use case:
+   * 
+   * * `gcp.compute.FirewallPolicyIamPolicy`: Authoritative. Sets the IAM policy for the firewallpolicy and replaces any existing policy already attached.
+   * * `gcp.compute.FirewallPolicyIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the firewallpolicy are preserved.
+   * * `gcp.compute.FirewallPolicyIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the firewallpolicy are preserved.
+   * 
+   * A data source can be used to retrieve policy data in advent you do not need creation
+   * 
+   * * `gcp.compute.FirewallPolicyIamPolicy`: Retrieves the IAM policy for the firewallpolicy
+   * 
+   * &gt; **Note:** `gcp.compute.FirewallPolicyIamPolicy` **cannot** be used in conjunction with `gcp.compute.FirewallPolicyIamBinding` and `gcp.compute.FirewallPolicyIamMember` or they will fight over what your policy should be.
+   * 
+   * &gt; **Note:** `gcp.compute.FirewallPolicyIamBinding` resources **can be** used in conjunction with `gcp.compute.FirewallPolicyIamMember` resources **only if** they do not grant privilege to the same role.
+   * 
+   * ## gcp.compute.FirewallPolicyIamPolicy
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.organizations.OrganizationsFunctions;
+   * import com.pulumi.gcp.organizations.inputs.GetIAMPolicyArgs;
+   * import com.pulumi.gcp.organizations.inputs.GetIAMPolicyBindingArgs;
+   * import com.pulumi.gcp.compute.FirewallPolicyIamPolicy;
+   * import com.pulumi.gcp.compute.FirewallPolicyIamPolicyArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         final var admin = OrganizationsFunctions.getIAMPolicy(GetIAMPolicyArgs.builder()
+   *             .bindings(GetIAMPolicyBindingArgs.builder()
+   *                 .role("roles/viewer")
+   *                 .members("user:jane}{@literal @}{@code example.com")
+   *                 .build())
+   *             .build());
+   * 
+   *         var policy = new FirewallPolicyIamPolicy("policy", FirewallPolicyIamPolicyArgs.builder()
+   *             .name(default_.name())
+   *             .policyData(admin.policyData())
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * ## gcp.compute.FirewallPolicyIamBinding
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.compute.FirewallPolicyIamBinding;
+   * import com.pulumi.gcp.compute.FirewallPolicyIamBindingArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         var binding = new FirewallPolicyIamBinding("binding", FirewallPolicyIamBindingArgs.builder()
+   *             .name(default_.name())
+   *             .role("roles/viewer")
+   *             .members("user:jane}{@literal @}{@code example.com")
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * ## gcp.compute.FirewallPolicyIamMember
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.compute.FirewallPolicyIamMember;
+   * import com.pulumi.gcp.compute.FirewallPolicyIamMemberArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         var member = new FirewallPolicyIamMember("member", FirewallPolicyIamMemberArgs.builder()
+   *             .name(default_.name())
+   *             .role("roles/viewer")
+   *             .member("user:jane}{@literal @}{@code example.com")
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * ## &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
+   * 
+   * full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
+   * ---
+   * 
+   * # IAM policy for Compute Engine FirewallPolicy
+   * 
+   * Three different resources help you manage your IAM policy for Compute Engine FirewallPolicy. Each of these resources serves a different use case:
+   * 
+   * * `gcp.compute.FirewallPolicyIamPolicy`: Authoritative. Sets the IAM policy for the firewallpolicy and replaces any existing policy already attached.
+   * * `gcp.compute.FirewallPolicyIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the firewallpolicy are preserved.
+   * * `gcp.compute.FirewallPolicyIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the firewallpolicy are preserved.
+   * 
+   * A data source can be used to retrieve policy data in advent you do not need creation
+   * 
+   * * `gcp.compute.FirewallPolicyIamPolicy`: Retrieves the IAM policy for the firewallpolicy
+   * 
+   * &gt; **Note:** `gcp.compute.FirewallPolicyIamPolicy` **cannot** be used in conjunction with `gcp.compute.FirewallPolicyIamBinding` and `gcp.compute.FirewallPolicyIamMember` or they will fight over what your policy should be.
+   * 
+   * &gt; **Note:** `gcp.compute.FirewallPolicyIamBinding` resources **can be** used in conjunction with `gcp.compute.FirewallPolicyIamMember` resources **only if** they do not grant privilege to the same role.
+   * 
+   * ## gcp.compute.FirewallPolicyIamPolicy
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.organizations.OrganizationsFunctions;
+   * import com.pulumi.gcp.organizations.inputs.GetIAMPolicyArgs;
+   * import com.pulumi.gcp.organizations.inputs.GetIAMPolicyBindingArgs;
+   * import com.pulumi.gcp.compute.FirewallPolicyIamPolicy;
+   * import com.pulumi.gcp.compute.FirewallPolicyIamPolicyArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         final var admin = OrganizationsFunctions.getIAMPolicy(GetIAMPolicyArgs.builder()
+   *             .bindings(GetIAMPolicyBindingArgs.builder()
+   *                 .role("roles/viewer")
+   *                 .members("user:jane}{@literal @}{@code example.com")
+   *                 .build())
+   *             .build());
+   * 
+   *         var policy = new FirewallPolicyIamPolicy("policy", FirewallPolicyIamPolicyArgs.builder()
+   *             .name(default_.name())
+   *             .policyData(admin.policyData())
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * ## gcp.compute.FirewallPolicyIamBinding
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.compute.FirewallPolicyIamBinding;
+   * import com.pulumi.gcp.compute.FirewallPolicyIamBindingArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         var binding = new FirewallPolicyIamBinding("binding", FirewallPolicyIamBindingArgs.builder()
+   *             .name(default_.name())
+   *             .role("roles/viewer")
+   *             .members("user:jane}{@literal @}{@code example.com")
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * ## gcp.compute.FirewallPolicyIamMember
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.compute.FirewallPolicyIamMember;
+   * import com.pulumi.gcp.compute.FirewallPolicyIamMemberArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         var member = new FirewallPolicyIamMember("member", FirewallPolicyIamMemberArgs.builder()
+   *             .name(default_.name())
+   *             .role("roles/viewer")
+   *             .member("user:jane}{@literal @}{@code example.com")
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * ## Import
+   * 
+   * For all import syntaxes, the &#34;resource in question&#34; can take any of the following forms:
+   * 
+   * * locations/global/firewallPolicies/{{name}}
+   * * {{name}}
+   * 
+   * Any variables not passed in the import command will be taken from the provider configuration.
+   * 
+   * Compute Engine firewallpolicy IAM resources can be imported using the resource identifiers, role, and member.
+   * 
+   * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
+   * ```sh
+   * $ terraform import google_compute_firewall_policy_iam_member.editor &#34;locations/global/firewallPolicies/{{firewall_policy}} roles/viewer user:jane{@literal @}example.com&#34;
+   * ```
+   * 
+   * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
+   * ```sh
+   * $ terraform import google_compute_firewall_policy_iam_binding.editor &#34;locations/global/firewallPolicies/{{firewall_policy}} roles/viewer&#34;
+   * ```
+   * 
+   * IAM policy imports use the identifier of the resource in question, e.g.
+   * ```sh
+   * $ pulumi import gcp:compute/firewallPolicyIamBinding:FirewallPolicyIamBinding editor locations/global/firewallPolicies/{{firewall_policy}}
+   * ```
+   * 
+   * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
+   *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
+   */
+  def FirewallPolicyIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+      (args: Endofunction[com.pulumi.gcp.compute.FirewallPolicyIamBindingArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+    var argsBuilder = com.pulumi.gcp.compute.FirewallPolicyIamBindingArgs.builder
+    conf.logicalName2physicalName(name) match
+      case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
+      case None               =>
+    com.pulumi.gcp.compute.FirewallPolicyIamBinding(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+
+  extension (builder: com.pulumi.gcp.compute.FirewallPolicyIamBindingArgs.Builder)
+    def condition(args: Endofunction[com.pulumi.gcp.compute.inputs.FirewallPolicyIamBindingConditionArgs.Builder]):
+        com.pulumi.gcp.compute.FirewallPolicyIamBindingArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.compute.inputs.FirewallPolicyIamBindingConditionArgs.builder
+      builder.condition(args(argsBuilder).build)
+
+  /**
+   * Three different resources help you manage your IAM policy for Compute Engine FirewallPolicy. Each of these resources serves a different use case:
+   * 
+   * * `gcp.compute.FirewallPolicyIamPolicy`: Authoritative. Sets the IAM policy for the firewallpolicy and replaces any existing policy already attached.
+   * * `gcp.compute.FirewallPolicyIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the firewallpolicy are preserved.
+   * * `gcp.compute.FirewallPolicyIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the firewallpolicy are preserved.
+   * 
+   * A data source can be used to retrieve policy data in advent you do not need creation
+   * 
+   * * `gcp.compute.FirewallPolicyIamPolicy`: Retrieves the IAM policy for the firewallpolicy
+   * 
+   * &gt; **Note:** `gcp.compute.FirewallPolicyIamPolicy` **cannot** be used in conjunction with `gcp.compute.FirewallPolicyIamBinding` and `gcp.compute.FirewallPolicyIamMember` or they will fight over what your policy should be.
+   * 
+   * &gt; **Note:** `gcp.compute.FirewallPolicyIamBinding` resources **can be** used in conjunction with `gcp.compute.FirewallPolicyIamMember` resources **only if** they do not grant privilege to the same role.
+   * 
+   * ## gcp.compute.FirewallPolicyIamPolicy
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.organizations.OrganizationsFunctions;
+   * import com.pulumi.gcp.organizations.inputs.GetIAMPolicyArgs;
+   * import com.pulumi.gcp.organizations.inputs.GetIAMPolicyBindingArgs;
+   * import com.pulumi.gcp.compute.FirewallPolicyIamPolicy;
+   * import com.pulumi.gcp.compute.FirewallPolicyIamPolicyArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         final var admin = OrganizationsFunctions.getIAMPolicy(GetIAMPolicyArgs.builder()
+   *             .bindings(GetIAMPolicyBindingArgs.builder()
+   *                 .role("roles/viewer")
+   *                 .members("user:jane}{@literal @}{@code example.com")
+   *                 .build())
+   *             .build());
+   * 
+   *         var policy = new FirewallPolicyIamPolicy("policy", FirewallPolicyIamPolicyArgs.builder()
+   *             .name(default_.name())
+   *             .policyData(admin.policyData())
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * ## gcp.compute.FirewallPolicyIamBinding
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.compute.FirewallPolicyIamBinding;
+   * import com.pulumi.gcp.compute.FirewallPolicyIamBindingArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         var binding = new FirewallPolicyIamBinding("binding", FirewallPolicyIamBindingArgs.builder()
+   *             .name(default_.name())
+   *             .role("roles/viewer")
+   *             .members("user:jane}{@literal @}{@code example.com")
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * ## gcp.compute.FirewallPolicyIamMember
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.compute.FirewallPolicyIamMember;
+   * import com.pulumi.gcp.compute.FirewallPolicyIamMemberArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         var member = new FirewallPolicyIamMember("member", FirewallPolicyIamMemberArgs.builder()
+   *             .name(default_.name())
+   *             .role("roles/viewer")
+   *             .member("user:jane}{@literal @}{@code example.com")
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * ## &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
+   * 
+   * full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
+   * ---
+   * 
+   * # IAM policy for Compute Engine FirewallPolicy
+   * 
+   * Three different resources help you manage your IAM policy for Compute Engine FirewallPolicy. Each of these resources serves a different use case:
+   * 
+   * * `gcp.compute.FirewallPolicyIamPolicy`: Authoritative. Sets the IAM policy for the firewallpolicy and replaces any existing policy already attached.
+   * * `gcp.compute.FirewallPolicyIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the firewallpolicy are preserved.
+   * * `gcp.compute.FirewallPolicyIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the firewallpolicy are preserved.
+   * 
+   * A data source can be used to retrieve policy data in advent you do not need creation
+   * 
+   * * `gcp.compute.FirewallPolicyIamPolicy`: Retrieves the IAM policy for the firewallpolicy
+   * 
+   * &gt; **Note:** `gcp.compute.FirewallPolicyIamPolicy` **cannot** be used in conjunction with `gcp.compute.FirewallPolicyIamBinding` and `gcp.compute.FirewallPolicyIamMember` or they will fight over what your policy should be.
+   * 
+   * &gt; **Note:** `gcp.compute.FirewallPolicyIamBinding` resources **can be** used in conjunction with `gcp.compute.FirewallPolicyIamMember` resources **only if** they do not grant privilege to the same role.
+   * 
+   * ## gcp.compute.FirewallPolicyIamPolicy
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.organizations.OrganizationsFunctions;
+   * import com.pulumi.gcp.organizations.inputs.GetIAMPolicyArgs;
+   * import com.pulumi.gcp.organizations.inputs.GetIAMPolicyBindingArgs;
+   * import com.pulumi.gcp.compute.FirewallPolicyIamPolicy;
+   * import com.pulumi.gcp.compute.FirewallPolicyIamPolicyArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         final var admin = OrganizationsFunctions.getIAMPolicy(GetIAMPolicyArgs.builder()
+   *             .bindings(GetIAMPolicyBindingArgs.builder()
+   *                 .role("roles/viewer")
+   *                 .members("user:jane}{@literal @}{@code example.com")
+   *                 .build())
+   *             .build());
+   * 
+   *         var policy = new FirewallPolicyIamPolicy("policy", FirewallPolicyIamPolicyArgs.builder()
+   *             .name(default_.name())
+   *             .policyData(admin.policyData())
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * ## gcp.compute.FirewallPolicyIamBinding
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.compute.FirewallPolicyIamBinding;
+   * import com.pulumi.gcp.compute.FirewallPolicyIamBindingArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         var binding = new FirewallPolicyIamBinding("binding", FirewallPolicyIamBindingArgs.builder()
+   *             .name(default_.name())
+   *             .role("roles/viewer")
+   *             .members("user:jane}{@literal @}{@code example.com")
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * ## gcp.compute.FirewallPolicyIamMember
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.compute.FirewallPolicyIamMember;
+   * import com.pulumi.gcp.compute.FirewallPolicyIamMemberArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         var member = new FirewallPolicyIamMember("member", FirewallPolicyIamMemberArgs.builder()
+   *             .name(default_.name())
+   *             .role("roles/viewer")
+   *             .member("user:jane}{@literal @}{@code example.com")
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * ## Import
+   * 
+   * For all import syntaxes, the &#34;resource in question&#34; can take any of the following forms:
+   * 
+   * * locations/global/firewallPolicies/{{name}}
+   * * {{name}}
+   * 
+   * Any variables not passed in the import command will be taken from the provider configuration.
+   * 
+   * Compute Engine firewallpolicy IAM resources can be imported using the resource identifiers, role, and member.
+   * 
+   * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
+   * ```sh
+   * $ terraform import google_compute_firewall_policy_iam_member.editor &#34;locations/global/firewallPolicies/{{firewall_policy}} roles/viewer user:jane{@literal @}example.com&#34;
+   * ```
+   * 
+   * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
+   * ```sh
+   * $ terraform import google_compute_firewall_policy_iam_binding.editor &#34;locations/global/firewallPolicies/{{firewall_policy}} roles/viewer&#34;
+   * ```
+   * 
+   * IAM policy imports use the identifier of the resource in question, e.g.
+   * ```sh
+   * $ pulumi import gcp:compute/firewallPolicyIamMember:FirewallPolicyIamMember editor locations/global/firewallPolicies/{{firewall_policy}}
+   * ```
+   * 
+   * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
+   *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
+   */
+  def FirewallPolicyIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+      (args: Endofunction[com.pulumi.gcp.compute.FirewallPolicyIamMemberArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+    var argsBuilder = com.pulumi.gcp.compute.FirewallPolicyIamMemberArgs.builder
+    conf.logicalName2physicalName(name) match
+      case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
+      case None               =>
+    com.pulumi.gcp.compute.FirewallPolicyIamMember(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+
+  extension (builder: com.pulumi.gcp.compute.FirewallPolicyIamMemberArgs.Builder)
+    def condition(args: Endofunction[com.pulumi.gcp.compute.inputs.FirewallPolicyIamMemberConditionArgs.Builder]):
+        com.pulumi.gcp.compute.FirewallPolicyIamMemberArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.compute.inputs.FirewallPolicyIamMemberConditionArgs.builder
+      builder.condition(args(argsBuilder).build)
+
+  /**
+   * Three different resources help you manage your IAM policy for Compute Engine FirewallPolicy. Each of these resources serves a different use case:
+   * 
+   * * `gcp.compute.FirewallPolicyIamPolicy`: Authoritative. Sets the IAM policy for the firewallpolicy and replaces any existing policy already attached.
+   * * `gcp.compute.FirewallPolicyIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the firewallpolicy are preserved.
+   * * `gcp.compute.FirewallPolicyIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the firewallpolicy are preserved.
+   * 
+   * A data source can be used to retrieve policy data in advent you do not need creation
+   * 
+   * * `gcp.compute.FirewallPolicyIamPolicy`: Retrieves the IAM policy for the firewallpolicy
+   * 
+   * &gt; **Note:** `gcp.compute.FirewallPolicyIamPolicy` **cannot** be used in conjunction with `gcp.compute.FirewallPolicyIamBinding` and `gcp.compute.FirewallPolicyIamMember` or they will fight over what your policy should be.
+   * 
+   * &gt; **Note:** `gcp.compute.FirewallPolicyIamBinding` resources **can be** used in conjunction with `gcp.compute.FirewallPolicyIamMember` resources **only if** they do not grant privilege to the same role.
+   * 
+   * ## gcp.compute.FirewallPolicyIamPolicy
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.organizations.OrganizationsFunctions;
+   * import com.pulumi.gcp.organizations.inputs.GetIAMPolicyArgs;
+   * import com.pulumi.gcp.organizations.inputs.GetIAMPolicyBindingArgs;
+   * import com.pulumi.gcp.compute.FirewallPolicyIamPolicy;
+   * import com.pulumi.gcp.compute.FirewallPolicyIamPolicyArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         final var admin = OrganizationsFunctions.getIAMPolicy(GetIAMPolicyArgs.builder()
+   *             .bindings(GetIAMPolicyBindingArgs.builder()
+   *                 .role("roles/viewer")
+   *                 .members("user:jane}{@literal @}{@code example.com")
+   *                 .build())
+   *             .build());
+   * 
+   *         var policy = new FirewallPolicyIamPolicy("policy", FirewallPolicyIamPolicyArgs.builder()
+   *             .name(default_.name())
+   *             .policyData(admin.policyData())
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * ## gcp.compute.FirewallPolicyIamBinding
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.compute.FirewallPolicyIamBinding;
+   * import com.pulumi.gcp.compute.FirewallPolicyIamBindingArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         var binding = new FirewallPolicyIamBinding("binding", FirewallPolicyIamBindingArgs.builder()
+   *             .name(default_.name())
+   *             .role("roles/viewer")
+   *             .members("user:jane}{@literal @}{@code example.com")
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * ## gcp.compute.FirewallPolicyIamMember
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.compute.FirewallPolicyIamMember;
+   * import com.pulumi.gcp.compute.FirewallPolicyIamMemberArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         var member = new FirewallPolicyIamMember("member", FirewallPolicyIamMemberArgs.builder()
+   *             .name(default_.name())
+   *             .role("roles/viewer")
+   *             .member("user:jane}{@literal @}{@code example.com")
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * ## &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
+   * 
+   * full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
+   * ---
+   * 
+   * # IAM policy for Compute Engine FirewallPolicy
+   * 
+   * Three different resources help you manage your IAM policy for Compute Engine FirewallPolicy. Each of these resources serves a different use case:
+   * 
+   * * `gcp.compute.FirewallPolicyIamPolicy`: Authoritative. Sets the IAM policy for the firewallpolicy and replaces any existing policy already attached.
+   * * `gcp.compute.FirewallPolicyIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the firewallpolicy are preserved.
+   * * `gcp.compute.FirewallPolicyIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the firewallpolicy are preserved.
+   * 
+   * A data source can be used to retrieve policy data in advent you do not need creation
+   * 
+   * * `gcp.compute.FirewallPolicyIamPolicy`: Retrieves the IAM policy for the firewallpolicy
+   * 
+   * &gt; **Note:** `gcp.compute.FirewallPolicyIamPolicy` **cannot** be used in conjunction with `gcp.compute.FirewallPolicyIamBinding` and `gcp.compute.FirewallPolicyIamMember` or they will fight over what your policy should be.
+   * 
+   * &gt; **Note:** `gcp.compute.FirewallPolicyIamBinding` resources **can be** used in conjunction with `gcp.compute.FirewallPolicyIamMember` resources **only if** they do not grant privilege to the same role.
+   * 
+   * ## gcp.compute.FirewallPolicyIamPolicy
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.organizations.OrganizationsFunctions;
+   * import com.pulumi.gcp.organizations.inputs.GetIAMPolicyArgs;
+   * import com.pulumi.gcp.organizations.inputs.GetIAMPolicyBindingArgs;
+   * import com.pulumi.gcp.compute.FirewallPolicyIamPolicy;
+   * import com.pulumi.gcp.compute.FirewallPolicyIamPolicyArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         final var admin = OrganizationsFunctions.getIAMPolicy(GetIAMPolicyArgs.builder()
+   *             .bindings(GetIAMPolicyBindingArgs.builder()
+   *                 .role("roles/viewer")
+   *                 .members("user:jane}{@literal @}{@code example.com")
+   *                 .build())
+   *             .build());
+   * 
+   *         var policy = new FirewallPolicyIamPolicy("policy", FirewallPolicyIamPolicyArgs.builder()
+   *             .name(default_.name())
+   *             .policyData(admin.policyData())
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * ## gcp.compute.FirewallPolicyIamBinding
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.compute.FirewallPolicyIamBinding;
+   * import com.pulumi.gcp.compute.FirewallPolicyIamBindingArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         var binding = new FirewallPolicyIamBinding("binding", FirewallPolicyIamBindingArgs.builder()
+   *             .name(default_.name())
+   *             .role("roles/viewer")
+   *             .members("user:jane}{@literal @}{@code example.com")
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * ## gcp.compute.FirewallPolicyIamMember
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.compute.FirewallPolicyIamMember;
+   * import com.pulumi.gcp.compute.FirewallPolicyIamMemberArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         var member = new FirewallPolicyIamMember("member", FirewallPolicyIamMemberArgs.builder()
+   *             .name(default_.name())
+   *             .role("roles/viewer")
+   *             .member("user:jane}{@literal @}{@code example.com")
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * ## Import
+   * 
+   * For all import syntaxes, the &#34;resource in question&#34; can take any of the following forms:
+   * 
+   * * locations/global/firewallPolicies/{{name}}
+   * * {{name}}
+   * 
+   * Any variables not passed in the import command will be taken from the provider configuration.
+   * 
+   * Compute Engine firewallpolicy IAM resources can be imported using the resource identifiers, role, and member.
+   * 
+   * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
+   * ```sh
+   * $ terraform import google_compute_firewall_policy_iam_member.editor &#34;locations/global/firewallPolicies/{{firewall_policy}} roles/viewer user:jane{@literal @}example.com&#34;
+   * ```
+   * 
+   * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
+   * ```sh
+   * $ terraform import google_compute_firewall_policy_iam_binding.editor &#34;locations/global/firewallPolicies/{{firewall_policy}} roles/viewer&#34;
+   * ```
+   * 
+   * IAM policy imports use the identifier of the resource in question, e.g.
+   * ```sh
+   * $ pulumi import gcp:compute/firewallPolicyIamPolicy:FirewallPolicyIamPolicy editor locations/global/firewallPolicies/{{firewall_policy}}
+   * ```
+   * 
+   * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
+   *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
+   */
+  def FirewallPolicyIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+      (args: Endofunction[com.pulumi.gcp.compute.FirewallPolicyIamPolicyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+    var argsBuilder = com.pulumi.gcp.compute.FirewallPolicyIamPolicyArgs.builder
+    conf.logicalName2physicalName(name) match
+      case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
+      case None               =>
+    com.pulumi.gcp.compute.FirewallPolicyIamPolicy(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
 
@@ -8830,6 +9832,16 @@ object compute:
       val argsBuilder = com.pulumi.gcp.compute.inputs.InstanceShieldedInstanceConfigArgs.builder
       builder.shieldedInstanceConfig(args(argsBuilder).build)
 
+    /**
+     * @param workloadIdentityConfig Workload Identity Config. More details about
+     * this configuration option are detailed below.
+     * @return builder
+     */
+    def workloadIdentityConfig(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceWorkloadIdentityConfigArgs.Builder]):
+        com.pulumi.gcp.compute.InstanceArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.compute.inputs.InstanceWorkloadIdentityConfigArgs.builder
+      builder.workloadIdentityConfig(args(argsBuilder).build)
+
   /**
    * &gt; **Warning:** This resource is in beta, and should be used with the terraform-provider-google-beta provider.
    * See Provider Versions for more details on beta resources.
@@ -8961,6 +9973,15 @@ object compute:
         com.pulumi.gcp.compute.InstanceFromMachineImageArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.InstanceFromMachineImageSourceMachineImageEncryptionKeyArgs.builder
       builder.sourceMachineImageEncryptionKey(args(argsBuilder).build)
+
+    /**
+     * @param workloadIdentityConfig Workload identity config.
+     * @return builder
+     */
+    def workloadIdentityConfig(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceFromMachineImageWorkloadIdentityConfigArgs.Builder]):
+        com.pulumi.gcp.compute.InstanceFromMachineImageArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.compute.inputs.InstanceFromMachineImageWorkloadIdentityConfigArgs.builder
+      builder.workloadIdentityConfig(args(argsBuilder).build)
 
   /**
    * Manages a VM instance resource within GCE. For more information see
@@ -9110,6 +10131,15 @@ object compute:
         com.pulumi.gcp.compute.InstanceFromTemplateArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.InstanceFromTemplateShieldedInstanceConfigArgs.builder
       builder.shieldedInstanceConfig(args(argsBuilder).build)
+
+    /**
+     * @param workloadIdentityConfig Workload identity config.
+     * @return builder
+     */
+    def workloadIdentityConfig(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceFromTemplateWorkloadIdentityConfigArgs.Builder]):
+        com.pulumi.gcp.compute.InstanceFromTemplateArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.compute.inputs.InstanceFromTemplateWorkloadIdentityConfigArgs.builder
+      builder.workloadIdentityConfig(args(argsBuilder).build)
 
   /**
    * Creates a group of dissimilar Compute Engine virtual machine instances.
@@ -11264,6 +12294,16 @@ object compute:
         com.pulumi.gcp.compute.InstanceTemplateArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.InstanceTemplateShieldedInstanceConfigArgs.builder
       builder.shieldedInstanceConfig(args(argsBuilder).build)
+
+    /**
+     * @param workloadIdentityConfig Workload Identity Config. More details about
+     * this configuration option are detailed below.
+     * @return builder
+     */
+    def workloadIdentityConfig(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceTemplateWorkloadIdentityConfigArgs.Builder]):
+        com.pulumi.gcp.compute.InstanceTemplateArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.compute.inputs.InstanceTemplateWorkloadIdentityConfigArgs.builder
+      builder.workloadIdentityConfig(args(argsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Compute Engine InstanceTemplate. Each of these resources serves a different use case:
@@ -17151,6 +18191,945 @@ object compute:
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
       case None               =>
     com.pulumi.gcp.compute.NetworkFirewallPolicyAssociation(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+
+  /**
+   * Three different resources help you manage your IAM policy for Compute Engine NetworkFirewallPolicy. Each of these resources serves a different use case:
+   * 
+   * * `gcp.compute.NetworkFirewallPolicyIamPolicy`: Authoritative. Sets the IAM policy for the networkfirewallpolicy and replaces any existing policy already attached.
+   * * `gcp.compute.NetworkFirewallPolicyIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the networkfirewallpolicy are preserved.
+   * * `gcp.compute.NetworkFirewallPolicyIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the networkfirewallpolicy are preserved.
+   * 
+   * A data source can be used to retrieve policy data in advent you do not need creation
+   * 
+   * * `gcp.compute.NetworkFirewallPolicyIamPolicy`: Retrieves the IAM policy for the networkfirewallpolicy
+   * 
+   * &gt; **Note:** `gcp.compute.NetworkFirewallPolicyIamPolicy` **cannot** be used in conjunction with `gcp.compute.NetworkFirewallPolicyIamBinding` and `gcp.compute.NetworkFirewallPolicyIamMember` or they will fight over what your policy should be.
+   * 
+   * &gt; **Note:** `gcp.compute.NetworkFirewallPolicyIamBinding` resources **can be** used in conjunction with `gcp.compute.NetworkFirewallPolicyIamMember` resources **only if** they do not grant privilege to the same role.
+   * 
+   * ## gcp.compute.NetworkFirewallPolicyIamPolicy
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.organizations.OrganizationsFunctions;
+   * import com.pulumi.gcp.organizations.inputs.GetIAMPolicyArgs;
+   * import com.pulumi.gcp.organizations.inputs.GetIAMPolicyBindingArgs;
+   * import com.pulumi.gcp.compute.NetworkFirewallPolicyIamPolicy;
+   * import com.pulumi.gcp.compute.NetworkFirewallPolicyIamPolicyArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         final var admin = OrganizationsFunctions.getIAMPolicy(GetIAMPolicyArgs.builder()
+   *             .bindings(GetIAMPolicyBindingArgs.builder()
+   *                 .role("roles/viewer")
+   *                 .members("user:jane}{@literal @}{@code example.com")
+   *                 .build())
+   *             .build());
+   * 
+   *         var policy = new NetworkFirewallPolicyIamPolicy("policy", NetworkFirewallPolicyIamPolicyArgs.builder()
+   *             .project(policyGoogleComputeNetworkFirewallPolicy.project())
+   *             .name(policyGoogleComputeNetworkFirewallPolicy.name())
+   *             .policyData(admin.policyData())
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * ## gcp.compute.NetworkFirewallPolicyIamBinding
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.compute.NetworkFirewallPolicyIamBinding;
+   * import com.pulumi.gcp.compute.NetworkFirewallPolicyIamBindingArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         var binding = new NetworkFirewallPolicyIamBinding("binding", NetworkFirewallPolicyIamBindingArgs.builder()
+   *             .project(policy.project())
+   *             .name(policy.name())
+   *             .role("roles/viewer")
+   *             .members("user:jane}{@literal @}{@code example.com")
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * ## gcp.compute.NetworkFirewallPolicyIamMember
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.compute.NetworkFirewallPolicyIamMember;
+   * import com.pulumi.gcp.compute.NetworkFirewallPolicyIamMemberArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         var member = new NetworkFirewallPolicyIamMember("member", NetworkFirewallPolicyIamMemberArgs.builder()
+   *             .project(policy.project())
+   *             .name(policy.name())
+   *             .role("roles/viewer")
+   *             .member("user:jane}{@literal @}{@code example.com")
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * ## This resource supports User Project Overrides.
+   * 
+   * -
+   * 
+   * # IAM policy for Compute Engine NetworkFirewallPolicy
+   * 
+   * Three different resources help you manage your IAM policy for Compute Engine NetworkFirewallPolicy. Each of these resources serves a different use case:
+   * 
+   * * `gcp.compute.NetworkFirewallPolicyIamPolicy`: Authoritative. Sets the IAM policy for the networkfirewallpolicy and replaces any existing policy already attached.
+   * * `gcp.compute.NetworkFirewallPolicyIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the networkfirewallpolicy are preserved.
+   * * `gcp.compute.NetworkFirewallPolicyIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the networkfirewallpolicy are preserved.
+   * 
+   * A data source can be used to retrieve policy data in advent you do not need creation
+   * 
+   * * `gcp.compute.NetworkFirewallPolicyIamPolicy`: Retrieves the IAM policy for the networkfirewallpolicy
+   * 
+   * &gt; **Note:** `gcp.compute.NetworkFirewallPolicyIamPolicy` **cannot** be used in conjunction with `gcp.compute.NetworkFirewallPolicyIamBinding` and `gcp.compute.NetworkFirewallPolicyIamMember` or they will fight over what your policy should be.
+   * 
+   * &gt; **Note:** `gcp.compute.NetworkFirewallPolicyIamBinding` resources **can be** used in conjunction with `gcp.compute.NetworkFirewallPolicyIamMember` resources **only if** they do not grant privilege to the same role.
+   * 
+   * ## gcp.compute.NetworkFirewallPolicyIamPolicy
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.organizations.OrganizationsFunctions;
+   * import com.pulumi.gcp.organizations.inputs.GetIAMPolicyArgs;
+   * import com.pulumi.gcp.organizations.inputs.GetIAMPolicyBindingArgs;
+   * import com.pulumi.gcp.compute.NetworkFirewallPolicyIamPolicy;
+   * import com.pulumi.gcp.compute.NetworkFirewallPolicyIamPolicyArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         final var admin = OrganizationsFunctions.getIAMPolicy(GetIAMPolicyArgs.builder()
+   *             .bindings(GetIAMPolicyBindingArgs.builder()
+   *                 .role("roles/viewer")
+   *                 .members("user:jane}{@literal @}{@code example.com")
+   *                 .build())
+   *             .build());
+   * 
+   *         var policy = new NetworkFirewallPolicyIamPolicy("policy", NetworkFirewallPolicyIamPolicyArgs.builder()
+   *             .project(policyGoogleComputeNetworkFirewallPolicy.project())
+   *             .name(policyGoogleComputeNetworkFirewallPolicy.name())
+   *             .policyData(admin.policyData())
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * ## gcp.compute.NetworkFirewallPolicyIamBinding
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.compute.NetworkFirewallPolicyIamBinding;
+   * import com.pulumi.gcp.compute.NetworkFirewallPolicyIamBindingArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         var binding = new NetworkFirewallPolicyIamBinding("binding", NetworkFirewallPolicyIamBindingArgs.builder()
+   *             .project(policy.project())
+   *             .name(policy.name())
+   *             .role("roles/viewer")
+   *             .members("user:jane}{@literal @}{@code example.com")
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * ## gcp.compute.NetworkFirewallPolicyIamMember
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.compute.NetworkFirewallPolicyIamMember;
+   * import com.pulumi.gcp.compute.NetworkFirewallPolicyIamMemberArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         var member = new NetworkFirewallPolicyIamMember("member", NetworkFirewallPolicyIamMemberArgs.builder()
+   *             .project(policy.project())
+   *             .name(policy.name())
+   *             .role("roles/viewer")
+   *             .member("user:jane}{@literal @}{@code example.com")
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * ## Import
+   * 
+   * For all import syntaxes, the &#34;resource in question&#34; can take any of the following forms:
+   * 
+   * * projects/{{project}}/global/firewallPolicies/{{name}}
+   * * {{project}}/{{name}}
+   * * {{name}}
+   * 
+   * Any variables not passed in the import command will be taken from the provider configuration.
+   * 
+   * Compute Engine networkfirewallpolicy IAM resources can be imported using the resource identifiers, role, and member.
+   * 
+   * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
+   * ```sh
+   * $ terraform import google_compute_network_firewall_policy_iam_member.editor &#34;projects/{{project}}/global/firewallPolicies/{{network_firewall_policy}} roles/viewer user:jane{@literal @}example.com&#34;
+   * ```
+   * 
+   * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
+   * ```sh
+   * $ terraform import google_compute_network_firewall_policy_iam_binding.editor &#34;projects/{{project}}/global/firewallPolicies/{{network_firewall_policy}} roles/viewer&#34;
+   * ```
+   * 
+   * IAM policy imports use the identifier of the resource in question, e.g.
+   * ```sh
+   * $ pulumi import gcp:compute/networkFirewallPolicyIamBinding:NetworkFirewallPolicyIamBinding editor projects/{{project}}/global/firewallPolicies/{{network_firewall_policy}}
+   * ```
+   * 
+   * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
+   *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
+   */
+  def NetworkFirewallPolicyIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+      (args: Endofunction[com.pulumi.gcp.compute.NetworkFirewallPolicyIamBindingArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+    var argsBuilder = com.pulumi.gcp.compute.NetworkFirewallPolicyIamBindingArgs.builder
+    conf.logicalName2physicalName(name) match
+      case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
+      case None               =>
+    com.pulumi.gcp.compute.NetworkFirewallPolicyIamBinding(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+
+  extension (builder: com.pulumi.gcp.compute.NetworkFirewallPolicyIamBindingArgs.Builder)
+    def condition(args: Endofunction[com.pulumi.gcp.compute.inputs.NetworkFirewallPolicyIamBindingConditionArgs.Builder]):
+        com.pulumi.gcp.compute.NetworkFirewallPolicyIamBindingArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.compute.inputs.NetworkFirewallPolicyIamBindingConditionArgs.builder
+      builder.condition(args(argsBuilder).build)
+
+  /**
+   * Three different resources help you manage your IAM policy for Compute Engine NetworkFirewallPolicy. Each of these resources serves a different use case:
+   * 
+   * * `gcp.compute.NetworkFirewallPolicyIamPolicy`: Authoritative. Sets the IAM policy for the networkfirewallpolicy and replaces any existing policy already attached.
+   * * `gcp.compute.NetworkFirewallPolicyIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the networkfirewallpolicy are preserved.
+   * * `gcp.compute.NetworkFirewallPolicyIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the networkfirewallpolicy are preserved.
+   * 
+   * A data source can be used to retrieve policy data in advent you do not need creation
+   * 
+   * * `gcp.compute.NetworkFirewallPolicyIamPolicy`: Retrieves the IAM policy for the networkfirewallpolicy
+   * 
+   * &gt; **Note:** `gcp.compute.NetworkFirewallPolicyIamPolicy` **cannot** be used in conjunction with `gcp.compute.NetworkFirewallPolicyIamBinding` and `gcp.compute.NetworkFirewallPolicyIamMember` or they will fight over what your policy should be.
+   * 
+   * &gt; **Note:** `gcp.compute.NetworkFirewallPolicyIamBinding` resources **can be** used in conjunction with `gcp.compute.NetworkFirewallPolicyIamMember` resources **only if** they do not grant privilege to the same role.
+   * 
+   * ## gcp.compute.NetworkFirewallPolicyIamPolicy
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.organizations.OrganizationsFunctions;
+   * import com.pulumi.gcp.organizations.inputs.GetIAMPolicyArgs;
+   * import com.pulumi.gcp.organizations.inputs.GetIAMPolicyBindingArgs;
+   * import com.pulumi.gcp.compute.NetworkFirewallPolicyIamPolicy;
+   * import com.pulumi.gcp.compute.NetworkFirewallPolicyIamPolicyArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         final var admin = OrganizationsFunctions.getIAMPolicy(GetIAMPolicyArgs.builder()
+   *             .bindings(GetIAMPolicyBindingArgs.builder()
+   *                 .role("roles/viewer")
+   *                 .members("user:jane}{@literal @}{@code example.com")
+   *                 .build())
+   *             .build());
+   * 
+   *         var policy = new NetworkFirewallPolicyIamPolicy("policy", NetworkFirewallPolicyIamPolicyArgs.builder()
+   *             .project(policyGoogleComputeNetworkFirewallPolicy.project())
+   *             .name(policyGoogleComputeNetworkFirewallPolicy.name())
+   *             .policyData(admin.policyData())
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * ## gcp.compute.NetworkFirewallPolicyIamBinding
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.compute.NetworkFirewallPolicyIamBinding;
+   * import com.pulumi.gcp.compute.NetworkFirewallPolicyIamBindingArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         var binding = new NetworkFirewallPolicyIamBinding("binding", NetworkFirewallPolicyIamBindingArgs.builder()
+   *             .project(policy.project())
+   *             .name(policy.name())
+   *             .role("roles/viewer")
+   *             .members("user:jane}{@literal @}{@code example.com")
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * ## gcp.compute.NetworkFirewallPolicyIamMember
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.compute.NetworkFirewallPolicyIamMember;
+   * import com.pulumi.gcp.compute.NetworkFirewallPolicyIamMemberArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         var member = new NetworkFirewallPolicyIamMember("member", NetworkFirewallPolicyIamMemberArgs.builder()
+   *             .project(policy.project())
+   *             .name(policy.name())
+   *             .role("roles/viewer")
+   *             .member("user:jane}{@literal @}{@code example.com")
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * ## This resource supports User Project Overrides.
+   * 
+   * -
+   * 
+   * # IAM policy for Compute Engine NetworkFirewallPolicy
+   * 
+   * Three different resources help you manage your IAM policy for Compute Engine NetworkFirewallPolicy. Each of these resources serves a different use case:
+   * 
+   * * `gcp.compute.NetworkFirewallPolicyIamPolicy`: Authoritative. Sets the IAM policy for the networkfirewallpolicy and replaces any existing policy already attached.
+   * * `gcp.compute.NetworkFirewallPolicyIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the networkfirewallpolicy are preserved.
+   * * `gcp.compute.NetworkFirewallPolicyIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the networkfirewallpolicy are preserved.
+   * 
+   * A data source can be used to retrieve policy data in advent you do not need creation
+   * 
+   * * `gcp.compute.NetworkFirewallPolicyIamPolicy`: Retrieves the IAM policy for the networkfirewallpolicy
+   * 
+   * &gt; **Note:** `gcp.compute.NetworkFirewallPolicyIamPolicy` **cannot** be used in conjunction with `gcp.compute.NetworkFirewallPolicyIamBinding` and `gcp.compute.NetworkFirewallPolicyIamMember` or they will fight over what your policy should be.
+   * 
+   * &gt; **Note:** `gcp.compute.NetworkFirewallPolicyIamBinding` resources **can be** used in conjunction with `gcp.compute.NetworkFirewallPolicyIamMember` resources **only if** they do not grant privilege to the same role.
+   * 
+   * ## gcp.compute.NetworkFirewallPolicyIamPolicy
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.organizations.OrganizationsFunctions;
+   * import com.pulumi.gcp.organizations.inputs.GetIAMPolicyArgs;
+   * import com.pulumi.gcp.organizations.inputs.GetIAMPolicyBindingArgs;
+   * import com.pulumi.gcp.compute.NetworkFirewallPolicyIamPolicy;
+   * import com.pulumi.gcp.compute.NetworkFirewallPolicyIamPolicyArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         final var admin = OrganizationsFunctions.getIAMPolicy(GetIAMPolicyArgs.builder()
+   *             .bindings(GetIAMPolicyBindingArgs.builder()
+   *                 .role("roles/viewer")
+   *                 .members("user:jane}{@literal @}{@code example.com")
+   *                 .build())
+   *             .build());
+   * 
+   *         var policy = new NetworkFirewallPolicyIamPolicy("policy", NetworkFirewallPolicyIamPolicyArgs.builder()
+   *             .project(policyGoogleComputeNetworkFirewallPolicy.project())
+   *             .name(policyGoogleComputeNetworkFirewallPolicy.name())
+   *             .policyData(admin.policyData())
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * ## gcp.compute.NetworkFirewallPolicyIamBinding
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.compute.NetworkFirewallPolicyIamBinding;
+   * import com.pulumi.gcp.compute.NetworkFirewallPolicyIamBindingArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         var binding = new NetworkFirewallPolicyIamBinding("binding", NetworkFirewallPolicyIamBindingArgs.builder()
+   *             .project(policy.project())
+   *             .name(policy.name())
+   *             .role("roles/viewer")
+   *             .members("user:jane}{@literal @}{@code example.com")
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * ## gcp.compute.NetworkFirewallPolicyIamMember
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.compute.NetworkFirewallPolicyIamMember;
+   * import com.pulumi.gcp.compute.NetworkFirewallPolicyIamMemberArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         var member = new NetworkFirewallPolicyIamMember("member", NetworkFirewallPolicyIamMemberArgs.builder()
+   *             .project(policy.project())
+   *             .name(policy.name())
+   *             .role("roles/viewer")
+   *             .member("user:jane}{@literal @}{@code example.com")
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * ## Import
+   * 
+   * For all import syntaxes, the &#34;resource in question&#34; can take any of the following forms:
+   * 
+   * * projects/{{project}}/global/firewallPolicies/{{name}}
+   * * {{project}}/{{name}}
+   * * {{name}}
+   * 
+   * Any variables not passed in the import command will be taken from the provider configuration.
+   * 
+   * Compute Engine networkfirewallpolicy IAM resources can be imported using the resource identifiers, role, and member.
+   * 
+   * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
+   * ```sh
+   * $ terraform import google_compute_network_firewall_policy_iam_member.editor &#34;projects/{{project}}/global/firewallPolicies/{{network_firewall_policy}} roles/viewer user:jane{@literal @}example.com&#34;
+   * ```
+   * 
+   * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
+   * ```sh
+   * $ terraform import google_compute_network_firewall_policy_iam_binding.editor &#34;projects/{{project}}/global/firewallPolicies/{{network_firewall_policy}} roles/viewer&#34;
+   * ```
+   * 
+   * IAM policy imports use the identifier of the resource in question, e.g.
+   * ```sh
+   * $ pulumi import gcp:compute/networkFirewallPolicyIamMember:NetworkFirewallPolicyIamMember editor projects/{{project}}/global/firewallPolicies/{{network_firewall_policy}}
+   * ```
+   * 
+   * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
+   *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
+   */
+  def NetworkFirewallPolicyIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+      (args: Endofunction[com.pulumi.gcp.compute.NetworkFirewallPolicyIamMemberArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+    var argsBuilder = com.pulumi.gcp.compute.NetworkFirewallPolicyIamMemberArgs.builder
+    conf.logicalName2physicalName(name) match
+      case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
+      case None               =>
+    com.pulumi.gcp.compute.NetworkFirewallPolicyIamMember(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+
+  extension (builder: com.pulumi.gcp.compute.NetworkFirewallPolicyIamMemberArgs.Builder)
+    def condition(args: Endofunction[com.pulumi.gcp.compute.inputs.NetworkFirewallPolicyIamMemberConditionArgs.Builder]):
+        com.pulumi.gcp.compute.NetworkFirewallPolicyIamMemberArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.compute.inputs.NetworkFirewallPolicyIamMemberConditionArgs.builder
+      builder.condition(args(argsBuilder).build)
+
+  /**
+   * Three different resources help you manage your IAM policy for Compute Engine NetworkFirewallPolicy. Each of these resources serves a different use case:
+   * 
+   * * `gcp.compute.NetworkFirewallPolicyIamPolicy`: Authoritative. Sets the IAM policy for the networkfirewallpolicy and replaces any existing policy already attached.
+   * * `gcp.compute.NetworkFirewallPolicyIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the networkfirewallpolicy are preserved.
+   * * `gcp.compute.NetworkFirewallPolicyIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the networkfirewallpolicy are preserved.
+   * 
+   * A data source can be used to retrieve policy data in advent you do not need creation
+   * 
+   * * `gcp.compute.NetworkFirewallPolicyIamPolicy`: Retrieves the IAM policy for the networkfirewallpolicy
+   * 
+   * &gt; **Note:** `gcp.compute.NetworkFirewallPolicyIamPolicy` **cannot** be used in conjunction with `gcp.compute.NetworkFirewallPolicyIamBinding` and `gcp.compute.NetworkFirewallPolicyIamMember` or they will fight over what your policy should be.
+   * 
+   * &gt; **Note:** `gcp.compute.NetworkFirewallPolicyIamBinding` resources **can be** used in conjunction with `gcp.compute.NetworkFirewallPolicyIamMember` resources **only if** they do not grant privilege to the same role.
+   * 
+   * ## gcp.compute.NetworkFirewallPolicyIamPolicy
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.organizations.OrganizationsFunctions;
+   * import com.pulumi.gcp.organizations.inputs.GetIAMPolicyArgs;
+   * import com.pulumi.gcp.organizations.inputs.GetIAMPolicyBindingArgs;
+   * import com.pulumi.gcp.compute.NetworkFirewallPolicyIamPolicy;
+   * import com.pulumi.gcp.compute.NetworkFirewallPolicyIamPolicyArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         final var admin = OrganizationsFunctions.getIAMPolicy(GetIAMPolicyArgs.builder()
+   *             .bindings(GetIAMPolicyBindingArgs.builder()
+   *                 .role("roles/viewer")
+   *                 .members("user:jane}{@literal @}{@code example.com")
+   *                 .build())
+   *             .build());
+   * 
+   *         var policy = new NetworkFirewallPolicyIamPolicy("policy", NetworkFirewallPolicyIamPolicyArgs.builder()
+   *             .project(policyGoogleComputeNetworkFirewallPolicy.project())
+   *             .name(policyGoogleComputeNetworkFirewallPolicy.name())
+   *             .policyData(admin.policyData())
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * ## gcp.compute.NetworkFirewallPolicyIamBinding
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.compute.NetworkFirewallPolicyIamBinding;
+   * import com.pulumi.gcp.compute.NetworkFirewallPolicyIamBindingArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         var binding = new NetworkFirewallPolicyIamBinding("binding", NetworkFirewallPolicyIamBindingArgs.builder()
+   *             .project(policy.project())
+   *             .name(policy.name())
+   *             .role("roles/viewer")
+   *             .members("user:jane}{@literal @}{@code example.com")
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * ## gcp.compute.NetworkFirewallPolicyIamMember
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.compute.NetworkFirewallPolicyIamMember;
+   * import com.pulumi.gcp.compute.NetworkFirewallPolicyIamMemberArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         var member = new NetworkFirewallPolicyIamMember("member", NetworkFirewallPolicyIamMemberArgs.builder()
+   *             .project(policy.project())
+   *             .name(policy.name())
+   *             .role("roles/viewer")
+   *             .member("user:jane}{@literal @}{@code example.com")
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * ## This resource supports User Project Overrides.
+   * 
+   * -
+   * 
+   * # IAM policy for Compute Engine NetworkFirewallPolicy
+   * 
+   * Three different resources help you manage your IAM policy for Compute Engine NetworkFirewallPolicy. Each of these resources serves a different use case:
+   * 
+   * * `gcp.compute.NetworkFirewallPolicyIamPolicy`: Authoritative. Sets the IAM policy for the networkfirewallpolicy and replaces any existing policy already attached.
+   * * `gcp.compute.NetworkFirewallPolicyIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the networkfirewallpolicy are preserved.
+   * * `gcp.compute.NetworkFirewallPolicyIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the networkfirewallpolicy are preserved.
+   * 
+   * A data source can be used to retrieve policy data in advent you do not need creation
+   * 
+   * * `gcp.compute.NetworkFirewallPolicyIamPolicy`: Retrieves the IAM policy for the networkfirewallpolicy
+   * 
+   * &gt; **Note:** `gcp.compute.NetworkFirewallPolicyIamPolicy` **cannot** be used in conjunction with `gcp.compute.NetworkFirewallPolicyIamBinding` and `gcp.compute.NetworkFirewallPolicyIamMember` or they will fight over what your policy should be.
+   * 
+   * &gt; **Note:** `gcp.compute.NetworkFirewallPolicyIamBinding` resources **can be** used in conjunction with `gcp.compute.NetworkFirewallPolicyIamMember` resources **only if** they do not grant privilege to the same role.
+   * 
+   * ## gcp.compute.NetworkFirewallPolicyIamPolicy
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.organizations.OrganizationsFunctions;
+   * import com.pulumi.gcp.organizations.inputs.GetIAMPolicyArgs;
+   * import com.pulumi.gcp.organizations.inputs.GetIAMPolicyBindingArgs;
+   * import com.pulumi.gcp.compute.NetworkFirewallPolicyIamPolicy;
+   * import com.pulumi.gcp.compute.NetworkFirewallPolicyIamPolicyArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         final var admin = OrganizationsFunctions.getIAMPolicy(GetIAMPolicyArgs.builder()
+   *             .bindings(GetIAMPolicyBindingArgs.builder()
+   *                 .role("roles/viewer")
+   *                 .members("user:jane}{@literal @}{@code example.com")
+   *                 .build())
+   *             .build());
+   * 
+   *         var policy = new NetworkFirewallPolicyIamPolicy("policy", NetworkFirewallPolicyIamPolicyArgs.builder()
+   *             .project(policyGoogleComputeNetworkFirewallPolicy.project())
+   *             .name(policyGoogleComputeNetworkFirewallPolicy.name())
+   *             .policyData(admin.policyData())
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * ## gcp.compute.NetworkFirewallPolicyIamBinding
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.compute.NetworkFirewallPolicyIamBinding;
+   * import com.pulumi.gcp.compute.NetworkFirewallPolicyIamBindingArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         var binding = new NetworkFirewallPolicyIamBinding("binding", NetworkFirewallPolicyIamBindingArgs.builder()
+   *             .project(policy.project())
+   *             .name(policy.name())
+   *             .role("roles/viewer")
+   *             .members("user:jane}{@literal @}{@code example.com")
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * ## gcp.compute.NetworkFirewallPolicyIamMember
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.compute.NetworkFirewallPolicyIamMember;
+   * import com.pulumi.gcp.compute.NetworkFirewallPolicyIamMemberArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         var member = new NetworkFirewallPolicyIamMember("member", NetworkFirewallPolicyIamMemberArgs.builder()
+   *             .project(policy.project())
+   *             .name(policy.name())
+   *             .role("roles/viewer")
+   *             .member("user:jane}{@literal @}{@code example.com")
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * ## Import
+   * 
+   * For all import syntaxes, the &#34;resource in question&#34; can take any of the following forms:
+   * 
+   * * projects/{{project}}/global/firewallPolicies/{{name}}
+   * * {{project}}/{{name}}
+   * * {{name}}
+   * 
+   * Any variables not passed in the import command will be taken from the provider configuration.
+   * 
+   * Compute Engine networkfirewallpolicy IAM resources can be imported using the resource identifiers, role, and member.
+   * 
+   * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
+   * ```sh
+   * $ terraform import google_compute_network_firewall_policy_iam_member.editor &#34;projects/{{project}}/global/firewallPolicies/{{network_firewall_policy}} roles/viewer user:jane{@literal @}example.com&#34;
+   * ```
+   * 
+   * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
+   * ```sh
+   * $ terraform import google_compute_network_firewall_policy_iam_binding.editor &#34;projects/{{project}}/global/firewallPolicies/{{network_firewall_policy}} roles/viewer&#34;
+   * ```
+   * 
+   * IAM policy imports use the identifier of the resource in question, e.g.
+   * ```sh
+   * $ pulumi import gcp:compute/networkFirewallPolicyIamPolicy:NetworkFirewallPolicyIamPolicy editor projects/{{project}}/global/firewallPolicies/{{network_firewall_policy}}
+   * ```
+   * 
+   * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
+   *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
+   */
+  def NetworkFirewallPolicyIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+      (args: Endofunction[com.pulumi.gcp.compute.NetworkFirewallPolicyIamPolicyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+    var argsBuilder = com.pulumi.gcp.compute.NetworkFirewallPolicyIamPolicyArgs.builder
+    conf.logicalName2physicalName(name) match
+      case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
+      case None               =>
+    com.pulumi.gcp.compute.NetworkFirewallPolicyIamPolicy(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
 
@@ -23252,6 +25231,16 @@ object compute:
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionInstanceTemplateShieldedInstanceConfigArgs.builder
       builder.shieldedInstanceConfig(args(argsBuilder).build)
 
+    /**
+     * @param workloadIdentityConfig Workload Identity Config. More details about
+     * this configuration option are detailed below.
+     * @return builder
+     */
+    def workloadIdentityConfig(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionInstanceTemplateWorkloadIdentityConfigArgs.Builder]):
+        com.pulumi.gcp.compute.RegionInstanceTemplateArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.compute.inputs.RegionInstanceTemplateWorkloadIdentityConfigArgs.builder
+      builder.workloadIdentityConfig(args(argsBuilder).build)
+
   /**
    * Represents an instant snapshot resource.
    * 
@@ -25212,6 +27201,966 @@ object compute:
         resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
 
   /**
+   * Three different resources help you manage your IAM policy for Compute Engine RegionNetworkFirewallPolicy. Each of these resources serves a different use case:
+   * 
+   * * `gcp.compute.RegionNetworkFirewallPolicyIamPolicy`: Authoritative. Sets the IAM policy for the regionnetworkfirewallpolicy and replaces any existing policy already attached.
+   * * `gcp.compute.RegionNetworkFirewallPolicyIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the regionnetworkfirewallpolicy are preserved.
+   * * `gcp.compute.RegionNetworkFirewallPolicyIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the regionnetworkfirewallpolicy are preserved.
+   * 
+   * A data source can be used to retrieve policy data in advent you do not need creation
+   * 
+   * * `gcp.compute.RegionNetworkFirewallPolicyIamPolicy`: Retrieves the IAM policy for the regionnetworkfirewallpolicy
+   * 
+   * &gt; **Note:** `gcp.compute.RegionNetworkFirewallPolicyIamPolicy` **cannot** be used in conjunction with `gcp.compute.RegionNetworkFirewallPolicyIamBinding` and `gcp.compute.RegionNetworkFirewallPolicyIamMember` or they will fight over what your policy should be.
+   * 
+   * &gt; **Note:** `gcp.compute.RegionNetworkFirewallPolicyIamBinding` resources **can be** used in conjunction with `gcp.compute.RegionNetworkFirewallPolicyIamMember` resources **only if** they do not grant privilege to the same role.
+   * 
+   * ## gcp.compute.RegionNetworkFirewallPolicyIamPolicy
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.organizations.OrganizationsFunctions;
+   * import com.pulumi.gcp.organizations.inputs.GetIAMPolicyArgs;
+   * import com.pulumi.gcp.organizations.inputs.GetIAMPolicyBindingArgs;
+   * import com.pulumi.gcp.compute.RegionNetworkFirewallPolicyIamPolicy;
+   * import com.pulumi.gcp.compute.RegionNetworkFirewallPolicyIamPolicyArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         final var admin = OrganizationsFunctions.getIAMPolicy(GetIAMPolicyArgs.builder()
+   *             .bindings(GetIAMPolicyBindingArgs.builder()
+   *                 .role("roles/viewer")
+   *                 .members("user:jane}{@literal @}{@code example.com")
+   *                 .build())
+   *             .build());
+   * 
+   *         var policy = new RegionNetworkFirewallPolicyIamPolicy("policy", RegionNetworkFirewallPolicyIamPolicyArgs.builder()
+   *             .project(policyGoogleComputeRegionNetworkFirewallPolicy.project())
+   *             .region(policyGoogleComputeRegionNetworkFirewallPolicy.region())
+   *             .name(policyGoogleComputeRegionNetworkFirewallPolicy.name())
+   *             .policyData(admin.policyData())
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * ## gcp.compute.RegionNetworkFirewallPolicyIamBinding
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.compute.RegionNetworkFirewallPolicyIamBinding;
+   * import com.pulumi.gcp.compute.RegionNetworkFirewallPolicyIamBindingArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         var binding = new RegionNetworkFirewallPolicyIamBinding("binding", RegionNetworkFirewallPolicyIamBindingArgs.builder()
+   *             .project(policy.project())
+   *             .region(policy.region())
+   *             .name(policy.name())
+   *             .role("roles/viewer")
+   *             .members("user:jane}{@literal @}{@code example.com")
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * ## gcp.compute.RegionNetworkFirewallPolicyIamMember
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.compute.RegionNetworkFirewallPolicyIamMember;
+   * import com.pulumi.gcp.compute.RegionNetworkFirewallPolicyIamMemberArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         var member = new RegionNetworkFirewallPolicyIamMember("member", RegionNetworkFirewallPolicyIamMemberArgs.builder()
+   *             .project(policy.project())
+   *             .region(policy.region())
+   *             .name(policy.name())
+   *             .role("roles/viewer")
+   *             .member("user:jane}{@literal @}{@code example.com")
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * ## This resource supports User Project Overrides.
+   * 
+   * -
+   * 
+   * # IAM policy for Compute Engine RegionNetworkFirewallPolicy
+   * 
+   * Three different resources help you manage your IAM policy for Compute Engine RegionNetworkFirewallPolicy. Each of these resources serves a different use case:
+   * 
+   * * `gcp.compute.RegionNetworkFirewallPolicyIamPolicy`: Authoritative. Sets the IAM policy for the regionnetworkfirewallpolicy and replaces any existing policy already attached.
+   * * `gcp.compute.RegionNetworkFirewallPolicyIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the regionnetworkfirewallpolicy are preserved.
+   * * `gcp.compute.RegionNetworkFirewallPolicyIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the regionnetworkfirewallpolicy are preserved.
+   * 
+   * A data source can be used to retrieve policy data in advent you do not need creation
+   * 
+   * * `gcp.compute.RegionNetworkFirewallPolicyIamPolicy`: Retrieves the IAM policy for the regionnetworkfirewallpolicy
+   * 
+   * &gt; **Note:** `gcp.compute.RegionNetworkFirewallPolicyIamPolicy` **cannot** be used in conjunction with `gcp.compute.RegionNetworkFirewallPolicyIamBinding` and `gcp.compute.RegionNetworkFirewallPolicyIamMember` or they will fight over what your policy should be.
+   * 
+   * &gt; **Note:** `gcp.compute.RegionNetworkFirewallPolicyIamBinding` resources **can be** used in conjunction with `gcp.compute.RegionNetworkFirewallPolicyIamMember` resources **only if** they do not grant privilege to the same role.
+   * 
+   * ## gcp.compute.RegionNetworkFirewallPolicyIamPolicy
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.organizations.OrganizationsFunctions;
+   * import com.pulumi.gcp.organizations.inputs.GetIAMPolicyArgs;
+   * import com.pulumi.gcp.organizations.inputs.GetIAMPolicyBindingArgs;
+   * import com.pulumi.gcp.compute.RegionNetworkFirewallPolicyIamPolicy;
+   * import com.pulumi.gcp.compute.RegionNetworkFirewallPolicyIamPolicyArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         final var admin = OrganizationsFunctions.getIAMPolicy(GetIAMPolicyArgs.builder()
+   *             .bindings(GetIAMPolicyBindingArgs.builder()
+   *                 .role("roles/viewer")
+   *                 .members("user:jane}{@literal @}{@code example.com")
+   *                 .build())
+   *             .build());
+   * 
+   *         var policy = new RegionNetworkFirewallPolicyIamPolicy("policy", RegionNetworkFirewallPolicyIamPolicyArgs.builder()
+   *             .project(policyGoogleComputeRegionNetworkFirewallPolicy.project())
+   *             .region(policyGoogleComputeRegionNetworkFirewallPolicy.region())
+   *             .name(policyGoogleComputeRegionNetworkFirewallPolicy.name())
+   *             .policyData(admin.policyData())
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * ## gcp.compute.RegionNetworkFirewallPolicyIamBinding
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.compute.RegionNetworkFirewallPolicyIamBinding;
+   * import com.pulumi.gcp.compute.RegionNetworkFirewallPolicyIamBindingArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         var binding = new RegionNetworkFirewallPolicyIamBinding("binding", RegionNetworkFirewallPolicyIamBindingArgs.builder()
+   *             .project(policy.project())
+   *             .region(policy.region())
+   *             .name(policy.name())
+   *             .role("roles/viewer")
+   *             .members("user:jane}{@literal @}{@code example.com")
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * ## gcp.compute.RegionNetworkFirewallPolicyIamMember
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.compute.RegionNetworkFirewallPolicyIamMember;
+   * import com.pulumi.gcp.compute.RegionNetworkFirewallPolicyIamMemberArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         var member = new RegionNetworkFirewallPolicyIamMember("member", RegionNetworkFirewallPolicyIamMemberArgs.builder()
+   *             .project(policy.project())
+   *             .region(policy.region())
+   *             .name(policy.name())
+   *             .role("roles/viewer")
+   *             .member("user:jane}{@literal @}{@code example.com")
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * ## Import
+   * 
+   * For all import syntaxes, the &#34;resource in question&#34; can take any of the following forms:
+   * 
+   * * projects/{{project}}/regions/{{region}}/firewallPolicies/{{name}}
+   * * {{project}}/{{region}}/{{name}}
+   * * {{region}}/{{name}}
+   * * {{name}}
+   * 
+   * Any variables not passed in the import command will be taken from the provider configuration.
+   * 
+   * Compute Engine regionnetworkfirewallpolicy IAM resources can be imported using the resource identifiers, role, and member.
+   * 
+   * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
+   * ```sh
+   * $ terraform import google_compute_region_network_firewall_policy_iam_member.editor &#34;projects/{{project}}/regions/{{region}}/firewallPolicies/{{region_network_firewall_policy}} roles/viewer user:jane{@literal @}example.com&#34;
+   * ```
+   * 
+   * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
+   * ```sh
+   * $ terraform import google_compute_region_network_firewall_policy_iam_binding.editor &#34;projects/{{project}}/regions/{{region}}/firewallPolicies/{{region_network_firewall_policy}} roles/viewer&#34;
+   * ```
+   * 
+   * IAM policy imports use the identifier of the resource in question, e.g.
+   * ```sh
+   * $ pulumi import gcp:compute/regionNetworkFirewallPolicyIamBinding:RegionNetworkFirewallPolicyIamBinding editor projects/{{project}}/regions/{{region}}/firewallPolicies/{{region_network_firewall_policy}}
+   * ```
+   * 
+   * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
+   *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
+   */
+  def RegionNetworkFirewallPolicyIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+      (args: Endofunction[com.pulumi.gcp.compute.RegionNetworkFirewallPolicyIamBindingArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+    var argsBuilder = com.pulumi.gcp.compute.RegionNetworkFirewallPolicyIamBindingArgs.builder
+    conf.logicalName2physicalName(name) match
+      case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
+      case None               =>
+    com.pulumi.gcp.compute.RegionNetworkFirewallPolicyIamBinding(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+
+  extension (builder: com.pulumi.gcp.compute.RegionNetworkFirewallPolicyIamBindingArgs.Builder)
+    def condition(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionNetworkFirewallPolicyIamBindingConditionArgs.Builder]):
+        com.pulumi.gcp.compute.RegionNetworkFirewallPolicyIamBindingArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.compute.inputs.RegionNetworkFirewallPolicyIamBindingConditionArgs.builder
+      builder.condition(args(argsBuilder).build)
+
+  /**
+   * Three different resources help you manage your IAM policy for Compute Engine RegionNetworkFirewallPolicy. Each of these resources serves a different use case:
+   * 
+   * * `gcp.compute.RegionNetworkFirewallPolicyIamPolicy`: Authoritative. Sets the IAM policy for the regionnetworkfirewallpolicy and replaces any existing policy already attached.
+   * * `gcp.compute.RegionNetworkFirewallPolicyIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the regionnetworkfirewallpolicy are preserved.
+   * * `gcp.compute.RegionNetworkFirewallPolicyIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the regionnetworkfirewallpolicy are preserved.
+   * 
+   * A data source can be used to retrieve policy data in advent you do not need creation
+   * 
+   * * `gcp.compute.RegionNetworkFirewallPolicyIamPolicy`: Retrieves the IAM policy for the regionnetworkfirewallpolicy
+   * 
+   * &gt; **Note:** `gcp.compute.RegionNetworkFirewallPolicyIamPolicy` **cannot** be used in conjunction with `gcp.compute.RegionNetworkFirewallPolicyIamBinding` and `gcp.compute.RegionNetworkFirewallPolicyIamMember` or they will fight over what your policy should be.
+   * 
+   * &gt; **Note:** `gcp.compute.RegionNetworkFirewallPolicyIamBinding` resources **can be** used in conjunction with `gcp.compute.RegionNetworkFirewallPolicyIamMember` resources **only if** they do not grant privilege to the same role.
+   * 
+   * ## gcp.compute.RegionNetworkFirewallPolicyIamPolicy
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.organizations.OrganizationsFunctions;
+   * import com.pulumi.gcp.organizations.inputs.GetIAMPolicyArgs;
+   * import com.pulumi.gcp.organizations.inputs.GetIAMPolicyBindingArgs;
+   * import com.pulumi.gcp.compute.RegionNetworkFirewallPolicyIamPolicy;
+   * import com.pulumi.gcp.compute.RegionNetworkFirewallPolicyIamPolicyArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         final var admin = OrganizationsFunctions.getIAMPolicy(GetIAMPolicyArgs.builder()
+   *             .bindings(GetIAMPolicyBindingArgs.builder()
+   *                 .role("roles/viewer")
+   *                 .members("user:jane}{@literal @}{@code example.com")
+   *                 .build())
+   *             .build());
+   * 
+   *         var policy = new RegionNetworkFirewallPolicyIamPolicy("policy", RegionNetworkFirewallPolicyIamPolicyArgs.builder()
+   *             .project(policyGoogleComputeRegionNetworkFirewallPolicy.project())
+   *             .region(policyGoogleComputeRegionNetworkFirewallPolicy.region())
+   *             .name(policyGoogleComputeRegionNetworkFirewallPolicy.name())
+   *             .policyData(admin.policyData())
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * ## gcp.compute.RegionNetworkFirewallPolicyIamBinding
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.compute.RegionNetworkFirewallPolicyIamBinding;
+   * import com.pulumi.gcp.compute.RegionNetworkFirewallPolicyIamBindingArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         var binding = new RegionNetworkFirewallPolicyIamBinding("binding", RegionNetworkFirewallPolicyIamBindingArgs.builder()
+   *             .project(policy.project())
+   *             .region(policy.region())
+   *             .name(policy.name())
+   *             .role("roles/viewer")
+   *             .members("user:jane}{@literal @}{@code example.com")
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * ## gcp.compute.RegionNetworkFirewallPolicyIamMember
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.compute.RegionNetworkFirewallPolicyIamMember;
+   * import com.pulumi.gcp.compute.RegionNetworkFirewallPolicyIamMemberArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         var member = new RegionNetworkFirewallPolicyIamMember("member", RegionNetworkFirewallPolicyIamMemberArgs.builder()
+   *             .project(policy.project())
+   *             .region(policy.region())
+   *             .name(policy.name())
+   *             .role("roles/viewer")
+   *             .member("user:jane}{@literal @}{@code example.com")
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * ## This resource supports User Project Overrides.
+   * 
+   * -
+   * 
+   * # IAM policy for Compute Engine RegionNetworkFirewallPolicy
+   * 
+   * Three different resources help you manage your IAM policy for Compute Engine RegionNetworkFirewallPolicy. Each of these resources serves a different use case:
+   * 
+   * * `gcp.compute.RegionNetworkFirewallPolicyIamPolicy`: Authoritative. Sets the IAM policy for the regionnetworkfirewallpolicy and replaces any existing policy already attached.
+   * * `gcp.compute.RegionNetworkFirewallPolicyIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the regionnetworkfirewallpolicy are preserved.
+   * * `gcp.compute.RegionNetworkFirewallPolicyIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the regionnetworkfirewallpolicy are preserved.
+   * 
+   * A data source can be used to retrieve policy data in advent you do not need creation
+   * 
+   * * `gcp.compute.RegionNetworkFirewallPolicyIamPolicy`: Retrieves the IAM policy for the regionnetworkfirewallpolicy
+   * 
+   * &gt; **Note:** `gcp.compute.RegionNetworkFirewallPolicyIamPolicy` **cannot** be used in conjunction with `gcp.compute.RegionNetworkFirewallPolicyIamBinding` and `gcp.compute.RegionNetworkFirewallPolicyIamMember` or they will fight over what your policy should be.
+   * 
+   * &gt; **Note:** `gcp.compute.RegionNetworkFirewallPolicyIamBinding` resources **can be** used in conjunction with `gcp.compute.RegionNetworkFirewallPolicyIamMember` resources **only if** they do not grant privilege to the same role.
+   * 
+   * ## gcp.compute.RegionNetworkFirewallPolicyIamPolicy
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.organizations.OrganizationsFunctions;
+   * import com.pulumi.gcp.organizations.inputs.GetIAMPolicyArgs;
+   * import com.pulumi.gcp.organizations.inputs.GetIAMPolicyBindingArgs;
+   * import com.pulumi.gcp.compute.RegionNetworkFirewallPolicyIamPolicy;
+   * import com.pulumi.gcp.compute.RegionNetworkFirewallPolicyIamPolicyArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         final var admin = OrganizationsFunctions.getIAMPolicy(GetIAMPolicyArgs.builder()
+   *             .bindings(GetIAMPolicyBindingArgs.builder()
+   *                 .role("roles/viewer")
+   *                 .members("user:jane}{@literal @}{@code example.com")
+   *                 .build())
+   *             .build());
+   * 
+   *         var policy = new RegionNetworkFirewallPolicyIamPolicy("policy", RegionNetworkFirewallPolicyIamPolicyArgs.builder()
+   *             .project(policyGoogleComputeRegionNetworkFirewallPolicy.project())
+   *             .region(policyGoogleComputeRegionNetworkFirewallPolicy.region())
+   *             .name(policyGoogleComputeRegionNetworkFirewallPolicy.name())
+   *             .policyData(admin.policyData())
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * ## gcp.compute.RegionNetworkFirewallPolicyIamBinding
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.compute.RegionNetworkFirewallPolicyIamBinding;
+   * import com.pulumi.gcp.compute.RegionNetworkFirewallPolicyIamBindingArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         var binding = new RegionNetworkFirewallPolicyIamBinding("binding", RegionNetworkFirewallPolicyIamBindingArgs.builder()
+   *             .project(policy.project())
+   *             .region(policy.region())
+   *             .name(policy.name())
+   *             .role("roles/viewer")
+   *             .members("user:jane}{@literal @}{@code example.com")
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * ## gcp.compute.RegionNetworkFirewallPolicyIamMember
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.compute.RegionNetworkFirewallPolicyIamMember;
+   * import com.pulumi.gcp.compute.RegionNetworkFirewallPolicyIamMemberArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         var member = new RegionNetworkFirewallPolicyIamMember("member", RegionNetworkFirewallPolicyIamMemberArgs.builder()
+   *             .project(policy.project())
+   *             .region(policy.region())
+   *             .name(policy.name())
+   *             .role("roles/viewer")
+   *             .member("user:jane}{@literal @}{@code example.com")
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * ## Import
+   * 
+   * For all import syntaxes, the &#34;resource in question&#34; can take any of the following forms:
+   * 
+   * * projects/{{project}}/regions/{{region}}/firewallPolicies/{{name}}
+   * * {{project}}/{{region}}/{{name}}
+   * * {{region}}/{{name}}
+   * * {{name}}
+   * 
+   * Any variables not passed in the import command will be taken from the provider configuration.
+   * 
+   * Compute Engine regionnetworkfirewallpolicy IAM resources can be imported using the resource identifiers, role, and member.
+   * 
+   * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
+   * ```sh
+   * $ terraform import google_compute_region_network_firewall_policy_iam_member.editor &#34;projects/{{project}}/regions/{{region}}/firewallPolicies/{{region_network_firewall_policy}} roles/viewer user:jane{@literal @}example.com&#34;
+   * ```
+   * 
+   * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
+   * ```sh
+   * $ terraform import google_compute_region_network_firewall_policy_iam_binding.editor &#34;projects/{{project}}/regions/{{region}}/firewallPolicies/{{region_network_firewall_policy}} roles/viewer&#34;
+   * ```
+   * 
+   * IAM policy imports use the identifier of the resource in question, e.g.
+   * ```sh
+   * $ pulumi import gcp:compute/regionNetworkFirewallPolicyIamMember:RegionNetworkFirewallPolicyIamMember editor projects/{{project}}/regions/{{region}}/firewallPolicies/{{region_network_firewall_policy}}
+   * ```
+   * 
+   * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
+   *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
+   */
+  def RegionNetworkFirewallPolicyIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+      (args: Endofunction[com.pulumi.gcp.compute.RegionNetworkFirewallPolicyIamMemberArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+    var argsBuilder = com.pulumi.gcp.compute.RegionNetworkFirewallPolicyIamMemberArgs.builder
+    conf.logicalName2physicalName(name) match
+      case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
+      case None               =>
+    com.pulumi.gcp.compute.RegionNetworkFirewallPolicyIamMember(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+
+  extension (builder: com.pulumi.gcp.compute.RegionNetworkFirewallPolicyIamMemberArgs.Builder)
+    def condition(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionNetworkFirewallPolicyIamMemberConditionArgs.Builder]):
+        com.pulumi.gcp.compute.RegionNetworkFirewallPolicyIamMemberArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.compute.inputs.RegionNetworkFirewallPolicyIamMemberConditionArgs.builder
+      builder.condition(args(argsBuilder).build)
+
+  /**
+   * Three different resources help you manage your IAM policy for Compute Engine RegionNetworkFirewallPolicy. Each of these resources serves a different use case:
+   * 
+   * * `gcp.compute.RegionNetworkFirewallPolicyIamPolicy`: Authoritative. Sets the IAM policy for the regionnetworkfirewallpolicy and replaces any existing policy already attached.
+   * * `gcp.compute.RegionNetworkFirewallPolicyIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the regionnetworkfirewallpolicy are preserved.
+   * * `gcp.compute.RegionNetworkFirewallPolicyIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the regionnetworkfirewallpolicy are preserved.
+   * 
+   * A data source can be used to retrieve policy data in advent you do not need creation
+   * 
+   * * `gcp.compute.RegionNetworkFirewallPolicyIamPolicy`: Retrieves the IAM policy for the regionnetworkfirewallpolicy
+   * 
+   * &gt; **Note:** `gcp.compute.RegionNetworkFirewallPolicyIamPolicy` **cannot** be used in conjunction with `gcp.compute.RegionNetworkFirewallPolicyIamBinding` and `gcp.compute.RegionNetworkFirewallPolicyIamMember` or they will fight over what your policy should be.
+   * 
+   * &gt; **Note:** `gcp.compute.RegionNetworkFirewallPolicyIamBinding` resources **can be** used in conjunction with `gcp.compute.RegionNetworkFirewallPolicyIamMember` resources **only if** they do not grant privilege to the same role.
+   * 
+   * ## gcp.compute.RegionNetworkFirewallPolicyIamPolicy
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.organizations.OrganizationsFunctions;
+   * import com.pulumi.gcp.organizations.inputs.GetIAMPolicyArgs;
+   * import com.pulumi.gcp.organizations.inputs.GetIAMPolicyBindingArgs;
+   * import com.pulumi.gcp.compute.RegionNetworkFirewallPolicyIamPolicy;
+   * import com.pulumi.gcp.compute.RegionNetworkFirewallPolicyIamPolicyArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         final var admin = OrganizationsFunctions.getIAMPolicy(GetIAMPolicyArgs.builder()
+   *             .bindings(GetIAMPolicyBindingArgs.builder()
+   *                 .role("roles/viewer")
+   *                 .members("user:jane}{@literal @}{@code example.com")
+   *                 .build())
+   *             .build());
+   * 
+   *         var policy = new RegionNetworkFirewallPolicyIamPolicy("policy", RegionNetworkFirewallPolicyIamPolicyArgs.builder()
+   *             .project(policyGoogleComputeRegionNetworkFirewallPolicy.project())
+   *             .region(policyGoogleComputeRegionNetworkFirewallPolicy.region())
+   *             .name(policyGoogleComputeRegionNetworkFirewallPolicy.name())
+   *             .policyData(admin.policyData())
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * ## gcp.compute.RegionNetworkFirewallPolicyIamBinding
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.compute.RegionNetworkFirewallPolicyIamBinding;
+   * import com.pulumi.gcp.compute.RegionNetworkFirewallPolicyIamBindingArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         var binding = new RegionNetworkFirewallPolicyIamBinding("binding", RegionNetworkFirewallPolicyIamBindingArgs.builder()
+   *             .project(policy.project())
+   *             .region(policy.region())
+   *             .name(policy.name())
+   *             .role("roles/viewer")
+   *             .members("user:jane}{@literal @}{@code example.com")
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * ## gcp.compute.RegionNetworkFirewallPolicyIamMember
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.compute.RegionNetworkFirewallPolicyIamMember;
+   * import com.pulumi.gcp.compute.RegionNetworkFirewallPolicyIamMemberArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         var member = new RegionNetworkFirewallPolicyIamMember("member", RegionNetworkFirewallPolicyIamMemberArgs.builder()
+   *             .project(policy.project())
+   *             .region(policy.region())
+   *             .name(policy.name())
+   *             .role("roles/viewer")
+   *             .member("user:jane}{@literal @}{@code example.com")
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * ## This resource supports User Project Overrides.
+   * 
+   * -
+   * 
+   * # IAM policy for Compute Engine RegionNetworkFirewallPolicy
+   * 
+   * Three different resources help you manage your IAM policy for Compute Engine RegionNetworkFirewallPolicy. Each of these resources serves a different use case:
+   * 
+   * * `gcp.compute.RegionNetworkFirewallPolicyIamPolicy`: Authoritative. Sets the IAM policy for the regionnetworkfirewallpolicy and replaces any existing policy already attached.
+   * * `gcp.compute.RegionNetworkFirewallPolicyIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the regionnetworkfirewallpolicy are preserved.
+   * * `gcp.compute.RegionNetworkFirewallPolicyIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the regionnetworkfirewallpolicy are preserved.
+   * 
+   * A data source can be used to retrieve policy data in advent you do not need creation
+   * 
+   * * `gcp.compute.RegionNetworkFirewallPolicyIamPolicy`: Retrieves the IAM policy for the regionnetworkfirewallpolicy
+   * 
+   * &gt; **Note:** `gcp.compute.RegionNetworkFirewallPolicyIamPolicy` **cannot** be used in conjunction with `gcp.compute.RegionNetworkFirewallPolicyIamBinding` and `gcp.compute.RegionNetworkFirewallPolicyIamMember` or they will fight over what your policy should be.
+   * 
+   * &gt; **Note:** `gcp.compute.RegionNetworkFirewallPolicyIamBinding` resources **can be** used in conjunction with `gcp.compute.RegionNetworkFirewallPolicyIamMember` resources **only if** they do not grant privilege to the same role.
+   * 
+   * ## gcp.compute.RegionNetworkFirewallPolicyIamPolicy
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.organizations.OrganizationsFunctions;
+   * import com.pulumi.gcp.organizations.inputs.GetIAMPolicyArgs;
+   * import com.pulumi.gcp.organizations.inputs.GetIAMPolicyBindingArgs;
+   * import com.pulumi.gcp.compute.RegionNetworkFirewallPolicyIamPolicy;
+   * import com.pulumi.gcp.compute.RegionNetworkFirewallPolicyIamPolicyArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         final var admin = OrganizationsFunctions.getIAMPolicy(GetIAMPolicyArgs.builder()
+   *             .bindings(GetIAMPolicyBindingArgs.builder()
+   *                 .role("roles/viewer")
+   *                 .members("user:jane}{@literal @}{@code example.com")
+   *                 .build())
+   *             .build());
+   * 
+   *         var policy = new RegionNetworkFirewallPolicyIamPolicy("policy", RegionNetworkFirewallPolicyIamPolicyArgs.builder()
+   *             .project(policyGoogleComputeRegionNetworkFirewallPolicy.project())
+   *             .region(policyGoogleComputeRegionNetworkFirewallPolicy.region())
+   *             .name(policyGoogleComputeRegionNetworkFirewallPolicy.name())
+   *             .policyData(admin.policyData())
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * ## gcp.compute.RegionNetworkFirewallPolicyIamBinding
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.compute.RegionNetworkFirewallPolicyIamBinding;
+   * import com.pulumi.gcp.compute.RegionNetworkFirewallPolicyIamBindingArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         var binding = new RegionNetworkFirewallPolicyIamBinding("binding", RegionNetworkFirewallPolicyIamBindingArgs.builder()
+   *             .project(policy.project())
+   *             .region(policy.region())
+   *             .name(policy.name())
+   *             .role("roles/viewer")
+   *             .members("user:jane}{@literal @}{@code example.com")
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * ## gcp.compute.RegionNetworkFirewallPolicyIamMember
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.compute.RegionNetworkFirewallPolicyIamMember;
+   * import com.pulumi.gcp.compute.RegionNetworkFirewallPolicyIamMemberArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         var member = new RegionNetworkFirewallPolicyIamMember("member", RegionNetworkFirewallPolicyIamMemberArgs.builder()
+   *             .project(policy.project())
+   *             .region(policy.region())
+   *             .name(policy.name())
+   *             .role("roles/viewer")
+   *             .member("user:jane}{@literal @}{@code example.com")
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * ## Import
+   * 
+   * For all import syntaxes, the &#34;resource in question&#34; can take any of the following forms:
+   * 
+   * * projects/{{project}}/regions/{{region}}/firewallPolicies/{{name}}
+   * * {{project}}/{{region}}/{{name}}
+   * * {{region}}/{{name}}
+   * * {{name}}
+   * 
+   * Any variables not passed in the import command will be taken from the provider configuration.
+   * 
+   * Compute Engine regionnetworkfirewallpolicy IAM resources can be imported using the resource identifiers, role, and member.
+   * 
+   * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
+   * ```sh
+   * $ terraform import google_compute_region_network_firewall_policy_iam_member.editor &#34;projects/{{project}}/regions/{{region}}/firewallPolicies/{{region_network_firewall_policy}} roles/viewer user:jane{@literal @}example.com&#34;
+   * ```
+   * 
+   * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
+   * ```sh
+   * $ terraform import google_compute_region_network_firewall_policy_iam_binding.editor &#34;projects/{{project}}/regions/{{region}}/firewallPolicies/{{region_network_firewall_policy}} roles/viewer&#34;
+   * ```
+   * 
+   * IAM policy imports use the identifier of the resource in question, e.g.
+   * ```sh
+   * $ pulumi import gcp:compute/regionNetworkFirewallPolicyIamPolicy:RegionNetworkFirewallPolicyIamPolicy editor projects/{{project}}/regions/{{region}}/firewallPolicies/{{region_network_firewall_policy}}
+   * ```
+   * 
+   * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
+   *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
+   */
+  def RegionNetworkFirewallPolicyIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+      (args: Endofunction[com.pulumi.gcp.compute.RegionNetworkFirewallPolicyIamPolicyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+    var argsBuilder = com.pulumi.gcp.compute.RegionNetworkFirewallPolicyIamPolicyArgs.builder
+    conf.logicalName2physicalName(name) match
+      case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
+      case None               =>
+    com.pulumi.gcp.compute.RegionNetworkFirewallPolicyIamPolicy(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+
+  /**
    * Represents a rule that describes one or more match conditions along with the action to be taken when traffic matches this condition (allow or deny).
    * 
    * To get more information about RegionNetworkFirewallPolicyRule, see:
@@ -25271,6 +28220,22 @@ object compute:
       builder.rules(args.map(_(argsBuilder).build)*)
 
   /**
+   * The Compute NetworkFirewallPolicy resource
+   * 
+   * &gt; **Warning:** This resource is in beta, and should be used with the terraform-provider-google-beta provider.
+   * See Provider Versions for more details on beta resources.
+   */
+  def RegionNetworkPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+      (args: Endofunction[com.pulumi.gcp.compute.RegionNetworkPolicyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+    var argsBuilder = com.pulumi.gcp.compute.RegionNetworkPolicyArgs.builder
+    conf.logicalName2physicalName(name) match
+      case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
+      case None               =>
+    com.pulumi.gcp.compute.RegionNetworkPolicy(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+
+  /**
    * A config defined for a single managed instance that belongs to an instance group manager. It preserves the instance name
    * across instance group manager operations and can define stateful disks or metadata that are unique to the instance.
    * This resource works with regional instance group managers.
@@ -25309,12 +28274,9 @@ object compute:
    * 
    * With Dynamic Workload Scheduler in Flex Start mode, you submit a GPU capacity request for your AI/ML jobs by indicating how many you need, a duration, and your preferred region. Dynamic Workload Scheduler intelligently persists the request; once the capacity becomes available, it automatically provisions your VMs enabling your workloads to run continuously for the entire duration of the capacity allocation.
    * 
-   * &gt; **Warning:** This resource is in beta, and should be used with the terraform-provider-google-beta provider.
-   * See Provider Versions for more details on beta resources.
-   * 
    * To get more information about RegionResizeRequest, see:
    * 
-   * * [API documentation](https://cloud.google.com/compute/docs/reference/rest/beta/regionInstanceGroupManagerResizeRequests)
+   * * [API documentation](https://cloud.google.com/compute/docs/reference/rest/v1/regionInstanceGroupManagerResizeRequests)
    * * How-to Guides
    *     * [About resize requests in a MIG](https://cloud.google.com/compute/docs/instance-groups/about-resize-requests-mig)
    */
@@ -31624,6 +34586,38 @@ object compute:
       val argsBuilder = com.pulumi.gcp.compute.inputs.WireGroupWirePropertiesArgs.builder
       builder.wireProperties(args(argsBuilder).build)
 
+  /** A Zone VM Extension Policy. */
+  def ZoneVmExtensionPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+      (args: Endofunction[com.pulumi.gcp.compute.ZoneVmExtensionPolicyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+    var argsBuilder = com.pulumi.gcp.compute.ZoneVmExtensionPolicyArgs.builder
+    conf.logicalName2physicalName(name) match
+      case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
+      case None               =>
+    com.pulumi.gcp.compute.ZoneVmExtensionPolicy(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+
+  extension (builder: com.pulumi.gcp.compute.ZoneVmExtensionPolicyArgs.Builder)
+    /**
+     * @param extensionPolicies A map of extension names (for example, &#34;ops-agent&#34;) to their corresponding policy configurations.
+     * Structure is documented below.
+     * @return builder
+     */
+    def extensionPolicies(args: Endofunction[com.pulumi.gcp.compute.inputs.ZoneVmExtensionPolicyExtensionPolicyArgs.Builder]*):
+        com.pulumi.gcp.compute.ZoneVmExtensionPolicyArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.compute.inputs.ZoneVmExtensionPolicyExtensionPolicyArgs.builder
+      builder.extensionPolicies(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param instanceSelectors Selectors to target VMs for this policy.
+     * Structure is documented below.
+     * @return builder
+     */
+    def instanceSelectors(args: Endofunction[com.pulumi.gcp.compute.inputs.ZoneVmExtensionPolicyInstanceSelectorArgs.Builder]*):
+        com.pulumi.gcp.compute.ZoneVmExtensionPolicyArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.compute.inputs.ZoneVmExtensionPolicyInstanceSelectorArgs.builder
+      builder.instanceSelectors(args.map(_(argsBuilder).build)*)
+
   extension (builder: com.pulumi.gcp.compute.inputs.AutoscalerAutoscalingPolicyArgs.Builder)
     /**
      * @param cpuUtilization Defines the CPU utilization policy that allows the autoscaler to
@@ -32193,6 +35187,17 @@ object compute:
       def argsBuilder = com.pulumi.gcp.compute.inputs.BackendServiceTlsSettingsSubjectAltNameArgs.builder
       builder.subjectAltNames(args.map(_(argsBuilder).build)*)
 
+  extension (builder: com.pulumi.gcp.compute.inputs.BulkPerInstanceConfigState.Builder)
+    /**
+     * @param instances The list of per-instance configs.
+     * Structure is documented below.
+     * @return builder
+     */
+    def instances(args: Endofunction[com.pulumi.gcp.compute.inputs.BulkPerInstanceConfigInstanceArgs.Builder]*):
+        com.pulumi.gcp.compute.inputs.BulkPerInstanceConfigState.Builder =
+      def argsBuilder = com.pulumi.gcp.compute.inputs.BulkPerInstanceConfigInstanceArgs.builder
+      builder.instances(args.map(_(argsBuilder).build)*)
+
   extension (builder: com.pulumi.gcp.compute.inputs.DiskAsyncReplicationState.Builder)
     /**
      * @param secondaryDisk The secondary disk (target of replication). You can specify only one value. Structure is documented below.
@@ -32308,6 +35313,18 @@ object compute:
         com.pulumi.gcp.compute.inputs.ExternalVpnGatewayState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.ExternalVpnGatewayParamsArgs.builder
       builder.params(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.gcp.compute.inputs.FirewallPolicyIamBindingState.Builder)
+    def condition(args: Endofunction[com.pulumi.gcp.compute.inputs.FirewallPolicyIamBindingConditionArgs.Builder]):
+        com.pulumi.gcp.compute.inputs.FirewallPolicyIamBindingState.Builder =
+      val argsBuilder = com.pulumi.gcp.compute.inputs.FirewallPolicyIamBindingConditionArgs.builder
+      builder.condition(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.gcp.compute.inputs.FirewallPolicyIamMemberState.Builder)
+    def condition(args: Endofunction[com.pulumi.gcp.compute.inputs.FirewallPolicyIamMemberConditionArgs.Builder]):
+        com.pulumi.gcp.compute.inputs.FirewallPolicyIamMemberState.Builder =
+      val argsBuilder = com.pulumi.gcp.compute.inputs.FirewallPolicyIamMemberConditionArgs.builder
+      builder.condition(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.compute.inputs.FirewallPolicyRuleMatchArgs.Builder)
     /**
@@ -33445,6 +36462,15 @@ object compute:
       val argsBuilder = com.pulumi.gcp.compute.inputs.InstanceFromMachineImageSourceMachineImageEncryptionKeyArgs.builder
       builder.sourceMachineImageEncryptionKey(args(argsBuilder).build)
 
+    /**
+     * @param workloadIdentityConfig Workload identity config.
+     * @return builder
+     */
+    def workloadIdentityConfig(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceFromMachineImageWorkloadIdentityConfigArgs.Builder]):
+        com.pulumi.gcp.compute.inputs.InstanceFromMachineImageState.Builder =
+      val argsBuilder = com.pulumi.gcp.compute.inputs.InstanceFromMachineImageWorkloadIdentityConfigArgs.builder
+      builder.workloadIdentityConfig(args(argsBuilder).build)
+
   extension (builder: com.pulumi.gcp.compute.inputs.InstanceFromTemplateBootDiskArgs.Builder)
     /**
      * @param initializeParams Parameters with which a disk was created alongside the instance.
@@ -33720,9 +36746,18 @@ object compute:
       val argsBuilder = com.pulumi.gcp.compute.inputs.InstanceFromTemplateShieldedInstanceConfigArgs.builder
       builder.shieldedInstanceConfig(args(argsBuilder).build)
 
+    /**
+     * @param workloadIdentityConfig Workload identity config.
+     * @return builder
+     */
+    def workloadIdentityConfig(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceFromTemplateWorkloadIdentityConfigArgs.Builder]):
+        com.pulumi.gcp.compute.inputs.InstanceFromTemplateState.Builder =
+      val argsBuilder = com.pulumi.gcp.compute.inputs.InstanceFromTemplateWorkloadIdentityConfigArgs.builder
+      builder.workloadIdentityConfig(args(argsBuilder).build)
+
   extension (builder: com.pulumi.gcp.compute.inputs.InstanceGroupManagerInstanceLifecyclePolicyArgs.Builder)
     /**
-     * @param onRepair ), Configuration for VM repairs in the MIG. Structure is documented below.
+     * @param onRepair , Configuration for VM repairs in the MIG. Structure is documented below.
      * ***
      * @return builder
      */
@@ -34235,6 +37270,16 @@ object compute:
       val argsBuilder = com.pulumi.gcp.compute.inputs.InstanceShieldedInstanceConfigArgs.builder
       builder.shieldedInstanceConfig(args(argsBuilder).build)
 
+    /**
+     * @param workloadIdentityConfig Workload Identity Config. More details about
+     * this configuration option are detailed below.
+     * @return builder
+     */
+    def workloadIdentityConfig(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceWorkloadIdentityConfigArgs.Builder]):
+        com.pulumi.gcp.compute.inputs.InstanceState.Builder =
+      val argsBuilder = com.pulumi.gcp.compute.inputs.InstanceWorkloadIdentityConfigArgs.builder
+      builder.workloadIdentityConfig(args(argsBuilder).build)
+
   extension (builder: com.pulumi.gcp.compute.inputs.InstanceTemplateDiskArgs.Builder)
     /**
      * @param diskEncryptionKey Encrypts or decrypts a disk using a customer-supplied encryption key.
@@ -34534,6 +37579,16 @@ object compute:
         com.pulumi.gcp.compute.inputs.InstanceTemplateState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.InstanceTemplateShieldedInstanceConfigArgs.builder
       builder.shieldedInstanceConfig(args(argsBuilder).build)
+
+    /**
+     * @param workloadIdentityConfig Workload Identity Config. More details about
+     * this configuration option are detailed below.
+     * @return builder
+     */
+    def workloadIdentityConfig(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceTemplateWorkloadIdentityConfigArgs.Builder]):
+        com.pulumi.gcp.compute.inputs.InstanceTemplateState.Builder =
+      val argsBuilder = com.pulumi.gcp.compute.inputs.InstanceTemplateWorkloadIdentityConfigArgs.builder
+      builder.workloadIdentityConfig(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.compute.inputs.InstantSnapshotIamBindingState.Builder)
     /**
@@ -35085,6 +38140,18 @@ object compute:
         com.pulumi.gcp.compute.inputs.NetworkEndpointListState.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.NetworkEndpointListNetworkEndpointArgs.builder
       builder.networkEndpoints(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.gcp.compute.inputs.NetworkFirewallPolicyIamBindingState.Builder)
+    def condition(args: Endofunction[com.pulumi.gcp.compute.inputs.NetworkFirewallPolicyIamBindingConditionArgs.Builder]):
+        com.pulumi.gcp.compute.inputs.NetworkFirewallPolicyIamBindingState.Builder =
+      val argsBuilder = com.pulumi.gcp.compute.inputs.NetworkFirewallPolicyIamBindingConditionArgs.builder
+      builder.condition(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.gcp.compute.inputs.NetworkFirewallPolicyIamMemberState.Builder)
+    def condition(args: Endofunction[com.pulumi.gcp.compute.inputs.NetworkFirewallPolicyIamMemberConditionArgs.Builder]):
+        com.pulumi.gcp.compute.inputs.NetworkFirewallPolicyIamMemberState.Builder =
+      val argsBuilder = com.pulumi.gcp.compute.inputs.NetworkFirewallPolicyIamMemberConditionArgs.builder
+      builder.condition(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.compute.inputs.NetworkFirewallPolicyPacketMirroringRuleMatchArgs.Builder)
     /**
@@ -36514,7 +39581,7 @@ object compute:
 
   extension (builder: com.pulumi.gcp.compute.inputs.RegionInstanceGroupManagerInstanceLifecyclePolicyArgs.Builder)
     /**
-     * @param onRepair ), Configuration for VM repairs in the MIG. Structure is documented below.
+     * @param onRepair , Configuration for VM repairs in the MIG. Structure is documented below.
      * ***
      * @return builder
      */
@@ -37001,6 +40068,16 @@ object compute:
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionInstanceTemplateShieldedInstanceConfigArgs.builder
       builder.shieldedInstanceConfig(args(argsBuilder).build)
 
+    /**
+     * @param workloadIdentityConfig Workload Identity Config. More details about
+     * this configuration option are detailed below.
+     * @return builder
+     */
+    def workloadIdentityConfig(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionInstanceTemplateWorkloadIdentityConfigArgs.Builder]):
+        com.pulumi.gcp.compute.inputs.RegionInstanceTemplateState.Builder =
+      val argsBuilder = com.pulumi.gcp.compute.inputs.RegionInstanceTemplateWorkloadIdentityConfigArgs.builder
+      builder.workloadIdentityConfig(args(argsBuilder).build)
+
   extension (builder: com.pulumi.gcp.compute.inputs.RegionInstantSnapshotIamBindingState.Builder)
     /**
      * @param condition An [IAM Condition](https://cloud.google.com/iam/docs/conditions-overview) for a given binding.
@@ -37099,6 +40176,18 @@ object compute:
         com.pulumi.gcp.compute.inputs.RegionNetworkEndpointGroupState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionNetworkEndpointGroupServerlessDeploymentArgs.builder
       builder.serverlessDeployment(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.gcp.compute.inputs.RegionNetworkFirewallPolicyIamBindingState.Builder)
+    def condition(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionNetworkFirewallPolicyIamBindingConditionArgs.Builder]):
+        com.pulumi.gcp.compute.inputs.RegionNetworkFirewallPolicyIamBindingState.Builder =
+      val argsBuilder = com.pulumi.gcp.compute.inputs.RegionNetworkFirewallPolicyIamBindingConditionArgs.builder
+      builder.condition(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.gcp.compute.inputs.RegionNetworkFirewallPolicyIamMemberState.Builder)
+    def condition(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionNetworkFirewallPolicyIamMemberConditionArgs.Builder]):
+        com.pulumi.gcp.compute.inputs.RegionNetworkFirewallPolicyIamMemberState.Builder =
+      val argsBuilder = com.pulumi.gcp.compute.inputs.RegionNetworkFirewallPolicyIamMemberConditionArgs.builder
+      builder.condition(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.compute.inputs.RegionNetworkFirewallPolicyRuleMatchArgs.Builder)
     /**
@@ -37282,6 +40371,17 @@ object compute:
         com.pulumi.gcp.compute.inputs.RegionNetworkFirewallPolicyWithRulesState.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.RegionNetworkFirewallPolicyWithRulesRuleArgs.builder
       builder.rules(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.gcp.compute.inputs.RegionNetworkPolicyState.Builder)
+    /**
+     * @param associations [Output Only] A list of associations that belong to this network policy.
+     * Structure is documented below.
+     * @return builder
+     */
+    def associations(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionNetworkPolicyAssociationArgs.Builder]*):
+        com.pulumi.gcp.compute.inputs.RegionNetworkPolicyState.Builder =
+      def argsBuilder = com.pulumi.gcp.compute.inputs.RegionNetworkPolicyAssociationArgs.builder
+      builder.associations(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.gcp.compute.inputs.RegionPerInstanceConfigPreservedStateArgs.Builder)
     /**
@@ -42269,3 +45369,35 @@ object compute:
         com.pulumi.gcp.compute.inputs.WireGroupWireArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.WireGroupWireWirePropertyArgs.builder
       builder.wireProperties(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.gcp.compute.inputs.ZoneVmExtensionPolicyInstanceSelectorArgs.Builder)
+    /**
+     * @param labelSelector LabelSelector matches VM labels.
+     * Structure is documented below.
+     * @return builder
+     */
+    def labelSelector(args: Endofunction[com.pulumi.gcp.compute.inputs.ZoneVmExtensionPolicyInstanceSelectorLabelSelectorArgs.Builder]):
+        com.pulumi.gcp.compute.inputs.ZoneVmExtensionPolicyInstanceSelectorArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.compute.inputs.ZoneVmExtensionPolicyInstanceSelectorLabelSelectorArgs.builder
+      builder.labelSelector(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.gcp.compute.inputs.ZoneVmExtensionPolicyState.Builder)
+    /**
+     * @param extensionPolicies A map of extension names (for example, &#34;ops-agent&#34;) to their corresponding policy configurations.
+     * Structure is documented below.
+     * @return builder
+     */
+    def extensionPolicies(args: Endofunction[com.pulumi.gcp.compute.inputs.ZoneVmExtensionPolicyExtensionPolicyArgs.Builder]*):
+        com.pulumi.gcp.compute.inputs.ZoneVmExtensionPolicyState.Builder =
+      def argsBuilder = com.pulumi.gcp.compute.inputs.ZoneVmExtensionPolicyExtensionPolicyArgs.builder
+      builder.extensionPolicies(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param instanceSelectors Selectors to target VMs for this policy.
+     * Structure is documented below.
+     * @return builder
+     */
+    def instanceSelectors(args: Endofunction[com.pulumi.gcp.compute.inputs.ZoneVmExtensionPolicyInstanceSelectorArgs.Builder]*):
+        com.pulumi.gcp.compute.inputs.ZoneVmExtensionPolicyState.Builder =
+      def argsBuilder = com.pulumi.gcp.compute.inputs.ZoneVmExtensionPolicyInstanceSelectorArgs.builder
+      builder.instanceSelectors(args.map(_(argsBuilder).build)*)

@@ -459,6 +459,33 @@ object bedrock:
 
   extension (builder: com.pulumi.aws.bedrock.AgentcoreBrowserArgs.Builder)
     /**
+     * @param browserSigning Browser signing configuration that enables cryptographic agent identification using HTTP message signatures. See `browserSigning` below.
+     * @return builder
+     */
+    def browserSigning(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreBrowserBrowserSigningArgs.Builder]):
+        com.pulumi.aws.bedrock.AgentcoreBrowserArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreBrowserBrowserSigningArgs.builder
+      builder.browserSigning(args(argsBuilder).build)
+
+    /**
+     * @param certificates Certificates to install in the browser. See `certificate` below.
+     * @return builder
+     */
+    def certificates(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreBrowserCertificateArgs.Builder]*):
+        com.pulumi.aws.bedrock.AgentcoreBrowserArgs.Builder =
+      def argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreBrowserCertificateArgs.builder
+      builder.certificates(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param enterprisePolicies Enterprise policy files to apply to the browser. See `enterprisePolicy` below.
+     * @return builder
+     */
+    def enterprisePolicies(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreBrowserEnterprisePolicyArgs.Builder]*):
+        com.pulumi.aws.bedrock.AgentcoreBrowserArgs.Builder =
+      def argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreBrowserEnterprisePolicyArgs.builder
+      builder.enterprisePolicies(args.map(_(argsBuilder).build)*)
+
+    /**
      * @param networkConfiguration Network configuration for the browser. See `networkConfiguration` below.
      * 
      * The following arguments are optional:
@@ -483,6 +510,30 @@ object bedrock:
       val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreBrowserTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
+  /** Manages an AWS Bedrock AgentCore Browser Profile. Browser profiles define browser state that can be re-used across different browser sessions within AgentCore Browser. Browser state includes cookies and local storage. */
+  def AgentcoreBrowserProfile(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+      (args: Endofunction[com.pulumi.aws.bedrock.AgentcoreBrowserProfileArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+    var argsBuilder = com.pulumi.aws.bedrock.AgentcoreBrowserProfileArgs.builder
+    conf.logicalName2physicalName(name) match
+      case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
+      case None               =>
+    argsBuilder = args(argsBuilder)
+    conf.logicalName2tagName(name) match
+      case Some(tagName) =>
+        argsBuilder = argsBuilder.tags:
+          transformOptOutputMap(argsBuilder.build.tags, map =>
+              if map.contains("Name") then map else map + ("Name" -> tagName))
+      case None =>
+    com.pulumi.aws.bedrock.AgentcoreBrowserProfile(name,
+        argsBuilder.build,
+        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+
+  extension (builder: com.pulumi.aws.bedrock.AgentcoreBrowserProfileArgs.Builder)
+    def timeouts(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreBrowserProfileTimeoutsArgs.Builder]):
+        com.pulumi.aws.bedrock.AgentcoreBrowserProfileArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreBrowserProfileTimeoutsArgs.builder
+      builder.timeouts(args(argsBuilder).build)
+
   /** Manages an AWS Bedrock AgentCore Code Interpreter. Code Interpreter provides a secure environment for AI agents to execute Python code, enabling data analysis, calculations, and file processing capabilities. */
   def AgentcoreCodeInterpreter(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.bedrock.AgentcoreCodeInterpreterArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
@@ -502,6 +553,15 @@ object bedrock:
         resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
 
   extension (builder: com.pulumi.aws.bedrock.AgentcoreCodeInterpreterArgs.Builder)
+    /**
+     * @param certificates Certificates to install in the code interpreter. Between 1 and 200 blocks are supported. See `certificate` below.
+     * @return builder
+     */
+    def certificates(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreCodeInterpreterCertificateArgs.Builder]*):
+        com.pulumi.aws.bedrock.AgentcoreCodeInterpreterArgs.Builder =
+      def argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreCodeInterpreterCertificateArgs.builder
+      builder.certificates(args.map(_(argsBuilder).build)*)
+
     /**
      * @param networkConfiguration Network configuration for the code interpreter. See `networkConfiguration` below.
      * 
@@ -981,6 +1041,64 @@ object bedrock:
       val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcorePolicyEngineTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
+  /**
+   * Manages an AWS Bedrock AgentCore Registry. A registry serves as a centralized catalog for organizing and managing registry records, including MCP servers, A2A agents, agent skills, and custom resource types.
+   * 
+   * &gt; **Warning:** This resource is deprecated. AWS Agent Registry is currently available in public preview. On August 6, 2026) functionality will move from the `bedrock-agentcore` namespace to the `agent-registry` namespace. This resource will continue to work until September 17, 2026 Name of the registry. Must be unique within your account and contain only letters, numbers, hyphens, and underscores. Maximum length of 64 characters.
+   * 
+   * The following arguments are optional:
+   * 
+   * * `approvalConfiguration` - (Optional)  Approval configuration for registry records. See below.
+   * * `authorizerConfiguration` - (Optional) Authorizer configuration for the registry. Required when `authorizerType` is `CUSTOM_JWT`. See below.
+   * * `authorizerType` - (Optional, Forces new resource) Type of authorizer to use for the registry. Valid values are `AWS_IAM` (default) and `CUSTOM_JWT`. This controls the authorization method for the Search and Invoke APIs used by consumers.
+   * * `description` - (Optional) Description of the registry.
+   * * `region` - (Optional) Region where this resource will be [managed](https://docs.aws.amazon.com/general/latest/gr/rande.html#regional-endpoints). Defaults to the Region set in the provider configuration.
+   * 
+   * ## Import
+   * 
+   * ### Identity Schema
+   * 
+   * #### Required
+   * 
+   * - `registryId` (String) Registry ID.
+   * 
+   * #### Optional
+   * 
+   * * `accountId` (String) AWS account ID for this resource.
+   * * `region` (String) AWS Region for this resource.
+   * 
+   * Using `pulumi import`, import a Bedrock AgentCore Registry by registry ID. For example:
+   * 
+   * ```sh
+   * $ pulumi import aws:bedrock/agentcoreRegistry:AgentcoreRegistry example registry-id-12345678
+   * ```
+   */
+  def AgentcoreRegistry(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+      (args: Endofunction[com.pulumi.aws.bedrock.AgentcoreRegistryArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+    var argsBuilder = com.pulumi.aws.bedrock.AgentcoreRegistryArgs.builder
+    conf.logicalName2physicalName(name) match
+      case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
+      case None               =>
+    com.pulumi.aws.bedrock.AgentcoreRegistry(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+
+  extension (builder: com.pulumi.aws.bedrock.AgentcoreRegistryArgs.Builder)
+    def approvalConfigurations(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreRegistryApprovalConfigurationArgs.Builder]*):
+        com.pulumi.aws.bedrock.AgentcoreRegistryArgs.Builder =
+      def argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreRegistryApprovalConfigurationArgs.builder
+      builder.approvalConfigurations(args.map(_(argsBuilder).build)*)
+
+    def authorizerConfiguration(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreRegistryAuthorizerConfigurationArgs.Builder]):
+        com.pulumi.aws.bedrock.AgentcoreRegistryArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreRegistryAuthorizerConfigurationArgs.builder
+      builder.authorizerConfiguration(args(argsBuilder).build)
+
+    def timeouts(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreRegistryTimeoutsArgs.Builder]):
+        com.pulumi.aws.bedrock.AgentcoreRegistryArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreRegistryTimeoutsArgs.builder
+      builder.timeouts(args(argsBuilder).build)
+
   /** Manages an AWS Bedrock Agent Core Resource Policy. Resource-based policies in Amazon Bedrock Agent Core allow you to control which principals (AWS accounts, IAM users, or IAM roles) can invoke and manage your Amazon Bedrock Agent Core Runtime and Gateway resources. */
   def AgentcoreResourcePolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.bedrock.AgentcoreResourcePolicyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
@@ -1305,6 +1423,22 @@ object bedrock:
       val argsBuilder = com.pulumi.aws.bedrock.inputs.ProvisionedModelThroughputTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
+  /**
+   * Manages an AWS Bedrock Use Case For Model Access.
+   * 
+   * **This is an advanced resource** and has special caveats to be aware of when using it. Please read this document in its entirety before using this resource.
+   * 
+   * The `aws.bedrock.UseCaseForModelAccess` resource behaves differently from normal resources in that if an Use Case For Model Access already exists, Terraform does not _create_ this resource, but instead &#34;adopts&#34; it into management if it is the same. As the ability to update doesn&#39;t exist, changes compared to the existing resource generate an error.
+   * If no Use Case For Model Access exists, Terraform creates a new Use Case For Model Access.
+   * By default, `terraform destroy` does not delete the Use Case For Model Access but does remove the resource from Terraform state. Real deletion does not exist for this resource.
+   */
+  def UseCaseForModelAccess(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+      (args: Endofunction[com.pulumi.aws.bedrock.UseCaseForModelAccessArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+    val argsBuilder = com.pulumi.aws.bedrock.UseCaseForModelAccessArgs.builder
+    com.pulumi.aws.bedrock.UseCaseForModelAccess(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentAgentActionGroupApiSchemaArgs.Builder)
     /**
      * @param s3 Details about the S3 object containing the OpenAPI schema for the action group. See `s3` Block for details.
@@ -1491,6 +1625,15 @@ object bedrock:
       builder.confluenceConfiguration(args(argsBuilder).build)
 
     /**
+     * @param managedKnowledgeBaseConnectorConfiguration Details about the configuration of a Managed Knowledge Base connector data source. See `managedKnowledgeBaseConnectorConfiguration` block for details.
+     * @return builder
+     */
+    def managedKnowledgeBaseConnectorConfiguration(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentDataSourceDataSourceConfigurationManagedKnowledgeBaseConnectorConfigurationArgs.Builder]):
+        com.pulumi.aws.bedrock.inputs.AgentDataSourceDataSourceConfigurationArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentDataSourceDataSourceConfigurationManagedKnowledgeBaseConnectorConfigurationArgs.builder
+      builder.managedKnowledgeBaseConnectorConfiguration(args(argsBuilder).build)
+
+    /**
      * @param s3Configuration Details about the configuration of the S3 object containing the data source. See `s3DataSourceConfiguration` block for details.
      * @return builder
      */
@@ -1568,6 +1711,53 @@ object bedrock:
         com.pulumi.aws.bedrock.inputs.AgentDataSourceDataSourceConfigurationConfluenceConfigurationCrawlerConfigurationFilterConfigurationPatternObjectFilterArgs.Builder =
       def argsBuilder = com.pulumi.aws.bedrock.inputs.AgentDataSourceDataSourceConfigurationConfluenceConfigurationCrawlerConfigurationFilterConfigurationPatternObjectFilterFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.aws.bedrock.inputs.AgentDataSourceDataSourceConfigurationManagedKnowledgeBaseConnectorConfigurationArgs.Builder)
+    /**
+     * @param deletionProtectionConfiguration Configuration for deletion protection on the data source. See `deletionProtectionConfiguration` block for details.
+     * @return builder
+     */
+    def deletionProtectionConfiguration(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentDataSourceDataSourceConfigurationManagedKnowledgeBaseConnectorConfigurationDeletionProtectionConfigurationArgs.Builder]):
+        com.pulumi.aws.bedrock.inputs.AgentDataSourceDataSourceConfigurationManagedKnowledgeBaseConnectorConfigurationArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentDataSourceDataSourceConfigurationManagedKnowledgeBaseConnectorConfigurationDeletionProtectionConfigurationArgs.builder
+      builder.deletionProtectionConfiguration(args(argsBuilder).build)
+
+    /**
+     * @param mediaExtractionConfiguration Configuration for extracting media content (images, audio, video) from documents. See `mediaExtractionConfiguration` block for details.
+     * @return builder
+     */
+    def mediaExtractionConfiguration(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentDataSourceDataSourceConfigurationManagedKnowledgeBaseConnectorConfigurationMediaExtractionConfigurationArgs.Builder]):
+        com.pulumi.aws.bedrock.inputs.AgentDataSourceDataSourceConfigurationManagedKnowledgeBaseConnectorConfigurationArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentDataSourceDataSourceConfigurationManagedKnowledgeBaseConnectorConfigurationMediaExtractionConfigurationArgs.builder
+      builder.mediaExtractionConfiguration(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.bedrock.inputs.AgentDataSourceDataSourceConfigurationManagedKnowledgeBaseConnectorConfigurationMediaExtractionConfigurationArgs.Builder)
+    /**
+     * @param audioExtractionConfiguration Configuration for extracting audio content. See `audioExtractionConfiguration` block for details.
+     * @return builder
+     */
+    def audioExtractionConfiguration(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentDataSourceDataSourceConfigurationManagedKnowledgeBaseConnectorConfigurationMediaExtractionConfigurationAudioExtractionConfigurationArgs.Builder]):
+        com.pulumi.aws.bedrock.inputs.AgentDataSourceDataSourceConfigurationManagedKnowledgeBaseConnectorConfigurationMediaExtractionConfigurationArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentDataSourceDataSourceConfigurationManagedKnowledgeBaseConnectorConfigurationMediaExtractionConfigurationAudioExtractionConfigurationArgs.builder
+      builder.audioExtractionConfiguration(args(argsBuilder).build)
+
+    /**
+     * @param imageExtractionConfiguration Configuration for extracting image content. See `imageExtractionConfiguration` block for details.
+     * @return builder
+     */
+    def imageExtractionConfiguration(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentDataSourceDataSourceConfigurationManagedKnowledgeBaseConnectorConfigurationMediaExtractionConfigurationImageExtractionConfigurationArgs.Builder]):
+        com.pulumi.aws.bedrock.inputs.AgentDataSourceDataSourceConfigurationManagedKnowledgeBaseConnectorConfigurationMediaExtractionConfigurationArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentDataSourceDataSourceConfigurationManagedKnowledgeBaseConnectorConfigurationMediaExtractionConfigurationImageExtractionConfigurationArgs.builder
+      builder.imageExtractionConfiguration(args(argsBuilder).build)
+
+    /**
+     * @param videoExtractionConfiguration Configuration for extracting video content. See `videoExtractionConfiguration` block for details.
+     * @return builder
+     */
+    def videoExtractionConfiguration(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentDataSourceDataSourceConfigurationManagedKnowledgeBaseConnectorConfigurationMediaExtractionConfigurationVideoExtractionConfigurationArgs.Builder]):
+        com.pulumi.aws.bedrock.inputs.AgentDataSourceDataSourceConfigurationManagedKnowledgeBaseConnectorConfigurationMediaExtractionConfigurationArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentDataSourceDataSourceConfigurationManagedKnowledgeBaseConnectorConfigurationMediaExtractionConfigurationVideoExtractionConfigurationArgs.builder
+      builder.videoExtractionConfiguration(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentDataSourceDataSourceConfigurationSalesforceConfigurationArgs.Builder)
     def crawlerConfiguration(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentDataSourceDataSourceConfigurationSalesforceConfigurationCrawlerConfigurationArgs.Builder]):
@@ -2416,6 +2606,15 @@ object bedrock:
       builder.kendraKnowledgeBaseConfiguration(args(argsBuilder).build)
 
     /**
+     * @param managedKnowledgeBaseConfiguration Settings for a managed knowledge base where Amazon Bedrock manages the vector store. See `managedKnowledgeBaseConfiguration` block for details.
+     * @return builder
+     */
+    def managedKnowledgeBaseConfiguration(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseKnowledgeBaseConfigurationManagedKnowledgeBaseConfigurationArgs.Builder]):
+        com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseKnowledgeBaseConfigurationArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseKnowledgeBaseConfigurationManagedKnowledgeBaseConfigurationArgs.builder
+      builder.managedKnowledgeBaseConfiguration(args(argsBuilder).build)
+
+    /**
      * @param sqlKnowledgeBaseConfiguration Configurations for a knowledge base connected to an SQL database. See `sqlKnowledgeBaseConfiguration` block for details.
      * @return builder
      */
@@ -2432,6 +2631,74 @@ object bedrock:
         com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseKnowledgeBaseConfigurationArgs.Builder =
       val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseKnowledgeBaseConfigurationVectorKnowledgeBaseConfigurationArgs.builder
       builder.vectorKnowledgeBaseConfiguration(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseKnowledgeBaseConfigurationManagedKnowledgeBaseConfigurationArgs.Builder)
+    /**
+     * @param embeddingModelConfiguration Configuration for the embedding model. Required when `embeddingModelType` is `CUSTOM`. See `embeddingModelConfiguration` block for details.
+     * @return builder
+     */
+    def embeddingModelConfiguration(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseKnowledgeBaseConfigurationManagedKnowledgeBaseConfigurationEmbeddingModelConfigurationArgs.Builder]):
+        com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseKnowledgeBaseConfigurationManagedKnowledgeBaseConfigurationArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseKnowledgeBaseConfigurationManagedKnowledgeBaseConfigurationEmbeddingModelConfigurationArgs.builder
+      builder.embeddingModelConfiguration(args(argsBuilder).build)
+
+    /**
+     * @param serverSideEncryptionConfiguration Server-side encryption configuration for the managed knowledge base. See `serverSideEncryptionConfiguration` block for details.
+     * @return builder
+     */
+    def serverSideEncryptionConfiguration(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseKnowledgeBaseConfigurationManagedKnowledgeBaseConfigurationServerSideEncryptionConfigurationArgs.Builder]):
+        com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseKnowledgeBaseConfigurationManagedKnowledgeBaseConfigurationArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseKnowledgeBaseConfigurationManagedKnowledgeBaseConfigurationServerSideEncryptionConfigurationArgs.builder
+      builder.serverSideEncryptionConfiguration(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseKnowledgeBaseConfigurationManagedKnowledgeBaseConfigurationEmbeddingModelConfigurationArgs.Builder)
+    /**
+     * @param bedrockEmbeddingModelConfiguration The vector configuration details on the Bedrock embeddings model.  See `bedrockEmbeddingModelConfiguration` block for details.
+     * @return builder
+     */
+    def bedrockEmbeddingModelConfiguration(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseKnowledgeBaseConfigurationManagedKnowledgeBaseConfigurationEmbeddingModelConfigurationBedrockEmbeddingModelConfigurationArgs.Builder]):
+        com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseKnowledgeBaseConfigurationManagedKnowledgeBaseConfigurationEmbeddingModelConfigurationArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseKnowledgeBaseConfigurationManagedKnowledgeBaseConfigurationEmbeddingModelConfigurationBedrockEmbeddingModelConfigurationArgs.builder
+      builder.bedrockEmbeddingModelConfiguration(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseKnowledgeBaseConfigurationManagedKnowledgeBaseConfigurationEmbeddingModelConfigurationBedrockEmbeddingModelConfigurationArgs.Builder)
+    /**
+     * @param audio Configuration for processing audio content in multimodal knowledge bases. See `audio` block for details.
+     * @return builder
+     */
+    def audio(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseKnowledgeBaseConfigurationManagedKnowledgeBaseConfigurationEmbeddingModelConfigurationBedrockEmbeddingModelConfigurationAudioArgs.Builder]):
+        com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseKnowledgeBaseConfigurationManagedKnowledgeBaseConfigurationEmbeddingModelConfigurationBedrockEmbeddingModelConfigurationArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseKnowledgeBaseConfigurationManagedKnowledgeBaseConfigurationEmbeddingModelConfigurationBedrockEmbeddingModelConfigurationAudioArgs.builder
+      builder.audio(args(argsBuilder).build)
+
+    /**
+     * @param video Configuration for processing video content in multimodal knowledge bases. See `video` block for details.
+     * @return builder
+     */
+    def video(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseKnowledgeBaseConfigurationManagedKnowledgeBaseConfigurationEmbeddingModelConfigurationBedrockEmbeddingModelConfigurationVideoArgs.Builder]):
+        com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseKnowledgeBaseConfigurationManagedKnowledgeBaseConfigurationEmbeddingModelConfigurationBedrockEmbeddingModelConfigurationArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseKnowledgeBaseConfigurationManagedKnowledgeBaseConfigurationEmbeddingModelConfigurationBedrockEmbeddingModelConfigurationVideoArgs.builder
+      builder.video(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseKnowledgeBaseConfigurationManagedKnowledgeBaseConfigurationEmbeddingModelConfigurationBedrockEmbeddingModelConfigurationAudioArgs.Builder)
+    /**
+     * @param segmentationConfiguration Configuration for segmenting audio content during processing. See `segmentationConfiguration` block for details.
+     * @return builder
+     */
+    def segmentationConfiguration(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseKnowledgeBaseConfigurationManagedKnowledgeBaseConfigurationEmbeddingModelConfigurationBedrockEmbeddingModelConfigurationAudioSegmentationConfigurationArgs.Builder]):
+        com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseKnowledgeBaseConfigurationManagedKnowledgeBaseConfigurationEmbeddingModelConfigurationBedrockEmbeddingModelConfigurationAudioArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseKnowledgeBaseConfigurationManagedKnowledgeBaseConfigurationEmbeddingModelConfigurationBedrockEmbeddingModelConfigurationAudioSegmentationConfigurationArgs.builder
+      builder.segmentationConfiguration(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseKnowledgeBaseConfigurationManagedKnowledgeBaseConfigurationEmbeddingModelConfigurationBedrockEmbeddingModelConfigurationVideoArgs.Builder)
+    /**
+     * @param segmentationConfiguration Configuration for segmenting video content during processing. See `segmentationConfiguration` block for details.
+     * @return builder
+     */
+    def segmentationConfiguration(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseKnowledgeBaseConfigurationManagedKnowledgeBaseConfigurationEmbeddingModelConfigurationBedrockEmbeddingModelConfigurationVideoSegmentationConfigurationArgs.Builder]):
+        com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseKnowledgeBaseConfigurationManagedKnowledgeBaseConfigurationEmbeddingModelConfigurationBedrockEmbeddingModelConfigurationVideoArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseKnowledgeBaseConfigurationManagedKnowledgeBaseConfigurationEmbeddingModelConfigurationBedrockEmbeddingModelConfigurationVideoSegmentationConfigurationArgs.builder
+      builder.segmentationConfiguration(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseKnowledgeBaseConfigurationSqlKnowledgeBaseConfigurationArgs.Builder)
     /**
@@ -2596,6 +2863,45 @@ object bedrock:
         com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseKnowledgeBaseConfigurationVectorKnowledgeBaseConfigurationEmbeddingModelConfigurationArgs.Builder =
       val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseKnowledgeBaseConfigurationVectorKnowledgeBaseConfigurationEmbeddingModelConfigurationBedrockEmbeddingModelConfigurationArgs.builder
       builder.bedrockEmbeddingModelConfiguration(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseKnowledgeBaseConfigurationVectorKnowledgeBaseConfigurationEmbeddingModelConfigurationBedrockEmbeddingModelConfigurationArgs.Builder)
+    /**
+     * @param audio Configuration for processing audio content in multimodal knowledge bases. See `audio` block for details.
+     * @return builder
+     */
+    def audio(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseKnowledgeBaseConfigurationVectorKnowledgeBaseConfigurationEmbeddingModelConfigurationBedrockEmbeddingModelConfigurationAudioArgs.Builder]):
+        com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseKnowledgeBaseConfigurationVectorKnowledgeBaseConfigurationEmbeddingModelConfigurationBedrockEmbeddingModelConfigurationArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseKnowledgeBaseConfigurationVectorKnowledgeBaseConfigurationEmbeddingModelConfigurationBedrockEmbeddingModelConfigurationAudioArgs.builder
+      builder.audio(args(argsBuilder).build)
+
+    /**
+     * @param video Configuration for processing video content in multimodal knowledge bases. See `video` block for details.
+     * @return builder
+     */
+    def video(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseKnowledgeBaseConfigurationVectorKnowledgeBaseConfigurationEmbeddingModelConfigurationBedrockEmbeddingModelConfigurationVideoArgs.Builder]):
+        com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseKnowledgeBaseConfigurationVectorKnowledgeBaseConfigurationEmbeddingModelConfigurationBedrockEmbeddingModelConfigurationArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseKnowledgeBaseConfigurationVectorKnowledgeBaseConfigurationEmbeddingModelConfigurationBedrockEmbeddingModelConfigurationVideoArgs.builder
+      builder.video(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseKnowledgeBaseConfigurationVectorKnowledgeBaseConfigurationEmbeddingModelConfigurationBedrockEmbeddingModelConfigurationAudioArgs.Builder)
+    /**
+     * @param segmentationConfiguration Configuration for segmenting audio content during processing. See `segmentationConfiguration` block for details.
+     * @return builder
+     */
+    def segmentationConfiguration(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseKnowledgeBaseConfigurationVectorKnowledgeBaseConfigurationEmbeddingModelConfigurationBedrockEmbeddingModelConfigurationAudioSegmentationConfigurationArgs.Builder]):
+        com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseKnowledgeBaseConfigurationVectorKnowledgeBaseConfigurationEmbeddingModelConfigurationBedrockEmbeddingModelConfigurationAudioArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseKnowledgeBaseConfigurationVectorKnowledgeBaseConfigurationEmbeddingModelConfigurationBedrockEmbeddingModelConfigurationAudioSegmentationConfigurationArgs.builder
+      builder.segmentationConfiguration(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseKnowledgeBaseConfigurationVectorKnowledgeBaseConfigurationEmbeddingModelConfigurationBedrockEmbeddingModelConfigurationVideoArgs.Builder)
+    /**
+     * @param segmentationConfiguration Configuration for segmenting video content during processing. See `segmentationConfiguration` block for details.
+     * @return builder
+     */
+    def segmentationConfiguration(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseKnowledgeBaseConfigurationVectorKnowledgeBaseConfigurationEmbeddingModelConfigurationBedrockEmbeddingModelConfigurationVideoSegmentationConfigurationArgs.Builder]):
+        com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseKnowledgeBaseConfigurationVectorKnowledgeBaseConfigurationEmbeddingModelConfigurationBedrockEmbeddingModelConfigurationVideoArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseKnowledgeBaseConfigurationVectorKnowledgeBaseConfigurationEmbeddingModelConfigurationBedrockEmbeddingModelConfigurationVideoSegmentationConfigurationArgs.builder
+      builder.segmentationConfiguration(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentKnowledgeBaseKnowledgeBaseConfigurationVectorKnowledgeBaseConfigurationSupplementalDataStorageConfigurationArgs.Builder)
     /**
@@ -3065,7 +3371,26 @@ object bedrock:
       val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreAgentRuntimeAuthorizerConfigurationCustomJwtAuthorizerArgs.builder
       builder.customJwtAuthorizer(args(argsBuilder).build)
 
+  extension (builder: com.pulumi.aws.bedrock.inputs.AgentcoreAgentRuntimeAuthorizerConfigurationCustomJwtAuthorizerAllowedWorkloadConfigurationArgs.Builder)
+    /**
+     * @param hostingEnvironments Hosting environments allowed to use the authorizer. Between 1 and 10 entries. See `hostingEnvironment` below.
+     * @return builder
+     */
+    def hostingEnvironments(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreAgentRuntimeAuthorizerConfigurationCustomJwtAuthorizerAllowedWorkloadConfigurationHostingEnvironmentArgs.Builder]*):
+        com.pulumi.aws.bedrock.inputs.AgentcoreAgentRuntimeAuthorizerConfigurationCustomJwtAuthorizerAllowedWorkloadConfigurationArgs.Builder =
+      def argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreAgentRuntimeAuthorizerConfigurationCustomJwtAuthorizerAllowedWorkloadConfigurationHostingEnvironmentArgs.builder
+      builder.hostingEnvironments(args.map(_(argsBuilder).build)*)
+
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentcoreAgentRuntimeAuthorizerConfigurationCustomJwtAuthorizerArgs.Builder)
+    /**
+     * @param allowedWorkloadConfiguration Configuration restricting which workloads may use this authorizer. See `allowedWorkloadConfiguration` below.
+     * @return builder
+     */
+    def allowedWorkloadConfiguration(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreAgentRuntimeAuthorizerConfigurationCustomJwtAuthorizerAllowedWorkloadConfigurationArgs.Builder]):
+        com.pulumi.aws.bedrock.inputs.AgentcoreAgentRuntimeAuthorizerConfigurationCustomJwtAuthorizerArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreAgentRuntimeAuthorizerConfigurationCustomJwtAuthorizerAllowedWorkloadConfigurationArgs.builder
+      builder.allowedWorkloadConfiguration(args(argsBuilder).build)
+
     /**
      * @param customClaims Repeatable block to define a custom claim validation name, value, and operation. See `customClaim` below.
      * @return builder
@@ -3074,6 +3399,24 @@ object bedrock:
         com.pulumi.aws.bedrock.inputs.AgentcoreAgentRuntimeAuthorizerConfigurationCustomJwtAuthorizerArgs.Builder =
       def argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreAgentRuntimeAuthorizerConfigurationCustomJwtAuthorizerCustomClaimArgs.builder
       builder.customClaims(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param privateEndpoint Private endpoint used to reach the authorization server. See `privateEndpoint` below.
+     * @return builder
+     */
+    def privateEndpoint(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreAgentRuntimeAuthorizerConfigurationCustomJwtAuthorizerPrivateEndpointArgs.Builder]):
+        com.pulumi.aws.bedrock.inputs.AgentcoreAgentRuntimeAuthorizerConfigurationCustomJwtAuthorizerArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreAgentRuntimeAuthorizerConfigurationCustomJwtAuthorizerPrivateEndpointArgs.builder
+      builder.privateEndpoint(args(argsBuilder).build)
+
+    /**
+     * @param privateEndpointOverrides Overrides for the private endpoints used to reach the authorization server. See `privateEndpointOverrides` below.
+     * @return builder
+     */
+    def privateEndpointOverrides(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreAgentRuntimeAuthorizerConfigurationCustomJwtAuthorizerPrivateEndpointOverrideArgs.Builder]*):
+        com.pulumi.aws.bedrock.inputs.AgentcoreAgentRuntimeAuthorizerConfigurationCustomJwtAuthorizerArgs.Builder =
+      def argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreAgentRuntimeAuthorizerConfigurationCustomJwtAuthorizerPrivateEndpointOverrideArgs.builder
+      builder.privateEndpointOverrides(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentcoreAgentRuntimeAuthorizerConfigurationCustomJwtAuthorizerCustomClaimArgs.Builder)
     /**
@@ -3094,6 +3437,54 @@ object bedrock:
         com.pulumi.aws.bedrock.inputs.AgentcoreAgentRuntimeAuthorizerConfigurationCustomJwtAuthorizerCustomClaimAuthorizingClaimMatchValueArgs.Builder =
       val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreAgentRuntimeAuthorizerConfigurationCustomJwtAuthorizerCustomClaimAuthorizingClaimMatchValueClaimMatchValueArgs.builder
       builder.claimMatchValue(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.bedrock.inputs.AgentcoreAgentRuntimeAuthorizerConfigurationCustomJwtAuthorizerPrivateEndpointArgs.Builder)
+    /**
+     * @param managedVpcResource Managed VPC resource configuration. See `managedVpcResource` below.
+     * @return builder
+     */
+    def managedVpcResource(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreAgentRuntimeAuthorizerConfigurationCustomJwtAuthorizerPrivateEndpointManagedVpcResourceArgs.Builder]):
+        com.pulumi.aws.bedrock.inputs.AgentcoreAgentRuntimeAuthorizerConfigurationCustomJwtAuthorizerPrivateEndpointArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreAgentRuntimeAuthorizerConfigurationCustomJwtAuthorizerPrivateEndpointManagedVpcResourceArgs.builder
+      builder.managedVpcResource(args(argsBuilder).build)
+
+    /**
+     * @param selfManagedLatticeResource Self-managed VPC Lattice resource configuration. See `selfManagedLatticeResource` below.
+     * @return builder
+     */
+    def selfManagedLatticeResource(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreAgentRuntimeAuthorizerConfigurationCustomJwtAuthorizerPrivateEndpointSelfManagedLatticeResourceArgs.Builder]):
+        com.pulumi.aws.bedrock.inputs.AgentcoreAgentRuntimeAuthorizerConfigurationCustomJwtAuthorizerPrivateEndpointArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreAgentRuntimeAuthorizerConfigurationCustomJwtAuthorizerPrivateEndpointSelfManagedLatticeResourceArgs.builder
+      builder.selfManagedLatticeResource(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.bedrock.inputs.AgentcoreAgentRuntimeAuthorizerConfigurationCustomJwtAuthorizerPrivateEndpointOverrideArgs.Builder)
+    /**
+     * @param privateEndpoint Private endpoint configuration. See `privateEndpoint` below.
+     * @return builder
+     */
+    def privateEndpoint(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreAgentRuntimeAuthorizerConfigurationCustomJwtAuthorizerPrivateEndpointOverridePrivateEndpointArgs.Builder]):
+        com.pulumi.aws.bedrock.inputs.AgentcoreAgentRuntimeAuthorizerConfigurationCustomJwtAuthorizerPrivateEndpointOverrideArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreAgentRuntimeAuthorizerConfigurationCustomJwtAuthorizerPrivateEndpointOverridePrivateEndpointArgs.builder
+      builder.privateEndpoint(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.bedrock.inputs.AgentcoreAgentRuntimeAuthorizerConfigurationCustomJwtAuthorizerPrivateEndpointOverridePrivateEndpointArgs.Builder)
+    /**
+     * @param managedVpcResource Managed VPC resource configuration. See `managedVpcResource` below.
+     * @return builder
+     */
+    def managedVpcResource(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreAgentRuntimeAuthorizerConfigurationCustomJwtAuthorizerPrivateEndpointOverridePrivateEndpointManagedVpcResourceArgs.Builder]):
+        com.pulumi.aws.bedrock.inputs.AgentcoreAgentRuntimeAuthorizerConfigurationCustomJwtAuthorizerPrivateEndpointOverridePrivateEndpointArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreAgentRuntimeAuthorizerConfigurationCustomJwtAuthorizerPrivateEndpointOverridePrivateEndpointManagedVpcResourceArgs.builder
+      builder.managedVpcResource(args(argsBuilder).build)
+
+    /**
+     * @param selfManagedLatticeResource Self-managed VPC Lattice resource configuration. See `selfManagedLatticeResource` below.
+     * @return builder
+     */
+    def selfManagedLatticeResource(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreAgentRuntimeAuthorizerConfigurationCustomJwtAuthorizerPrivateEndpointOverridePrivateEndpointSelfManagedLatticeResourceArgs.Builder]):
+        com.pulumi.aws.bedrock.inputs.AgentcoreAgentRuntimeAuthorizerConfigurationCustomJwtAuthorizerPrivateEndpointOverridePrivateEndpointArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreAgentRuntimeAuthorizerConfigurationCustomJwtAuthorizerPrivateEndpointOverridePrivateEndpointSelfManagedLatticeResourceArgs.builder
+      builder.selfManagedLatticeResource(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentcoreAgentRuntimeEndpointState.Builder)
     def timeouts(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreAgentRuntimeEndpointTimeoutsArgs.Builder]):
@@ -3229,6 +3620,46 @@ object bedrock:
       def argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreApiKeyCredentialProviderApiKeySecretArnArgs.builder
       builder.apiKeySecretArns(args.map(_(argsBuilder).build)*)
 
+  extension (builder: com.pulumi.aws.bedrock.inputs.AgentcoreBrowserCertificateArgs.Builder)
+    /**
+     * @param location Location from which to retrieve the certificate. See `certificates.location` below.
+     * @return builder
+     */
+    def location(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreBrowserCertificateLocationArgs.Builder]):
+        com.pulumi.aws.bedrock.inputs.AgentcoreBrowserCertificateArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreBrowserCertificateLocationArgs.builder
+      builder.location(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.bedrock.inputs.AgentcoreBrowserCertificateLocationArgs.Builder)
+    /**
+     * @param secretsManager AWS Secrets Manager location of the certificate. See `secretsManager` below.
+     * @return builder
+     */
+    def secretsManager(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreBrowserCertificateLocationSecretsManagerArgs.Builder]):
+        com.pulumi.aws.bedrock.inputs.AgentcoreBrowserCertificateLocationArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreBrowserCertificateLocationSecretsManagerArgs.builder
+      builder.secretsManager(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.bedrock.inputs.AgentcoreBrowserEnterprisePolicyArgs.Builder)
+    /**
+     * @param location Location of the enterprise policy file. See `location` below.
+     * @return builder
+     */
+    def location(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreBrowserEnterprisePolicyLocationArgs.Builder]):
+        com.pulumi.aws.bedrock.inputs.AgentcoreBrowserEnterprisePolicyArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreBrowserEnterprisePolicyLocationArgs.builder
+      builder.location(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.bedrock.inputs.AgentcoreBrowserEnterprisePolicyLocationArgs.Builder)
+    /**
+     * @param s3 S3 location of the enterprise policy file. See `s3` below.
+     * @return builder
+     */
+    def s3(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreBrowserEnterprisePolicyLocationS3Args.Builder]):
+        com.pulumi.aws.bedrock.inputs.AgentcoreBrowserEnterprisePolicyLocationArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreBrowserEnterprisePolicyLocationS3Args.builder
+      builder.s3(args(argsBuilder).build)
+
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentcoreBrowserNetworkConfigurationArgs.Builder)
     /**
      * @param vpcConfig VPC configuration when `networkMode` is `VPC`. See `vpcConfig` below.
@@ -3238,6 +3669,12 @@ object bedrock:
         com.pulumi.aws.bedrock.inputs.AgentcoreBrowserNetworkConfigurationArgs.Builder =
       val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreBrowserNetworkConfigurationVpcConfigArgs.builder
       builder.vpcConfig(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.bedrock.inputs.AgentcoreBrowserProfileState.Builder)
+    def timeouts(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreBrowserProfileTimeoutsArgs.Builder]):
+        com.pulumi.aws.bedrock.inputs.AgentcoreBrowserProfileState.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreBrowserProfileTimeoutsArgs.builder
+      builder.timeouts(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentcoreBrowserRecordingArgs.Builder)
     /**
@@ -3250,6 +3687,33 @@ object bedrock:
       builder.s3Location(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentcoreBrowserState.Builder)
+    /**
+     * @param browserSigning Browser signing configuration that enables cryptographic agent identification using HTTP message signatures. See `browserSigning` below.
+     * @return builder
+     */
+    def browserSigning(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreBrowserBrowserSigningArgs.Builder]):
+        com.pulumi.aws.bedrock.inputs.AgentcoreBrowserState.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreBrowserBrowserSigningArgs.builder
+      builder.browserSigning(args(argsBuilder).build)
+
+    /**
+     * @param certificates Certificates to install in the browser. See `certificate` below.
+     * @return builder
+     */
+    def certificates(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreBrowserCertificateArgs.Builder]*):
+        com.pulumi.aws.bedrock.inputs.AgentcoreBrowserState.Builder =
+      def argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreBrowserCertificateArgs.builder
+      builder.certificates(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param enterprisePolicies Enterprise policy files to apply to the browser. See `enterprisePolicy` below.
+     * @return builder
+     */
+    def enterprisePolicies(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreBrowserEnterprisePolicyArgs.Builder]*):
+        com.pulumi.aws.bedrock.inputs.AgentcoreBrowserState.Builder =
+      def argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreBrowserEnterprisePolicyArgs.builder
+      builder.enterprisePolicies(args.map(_(argsBuilder).build)*)
+
     /**
      * @param networkConfiguration Network configuration for the browser. See `networkConfiguration` below.
      * 
@@ -3275,6 +3739,26 @@ object bedrock:
       val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreBrowserTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
+  extension (builder: com.pulumi.aws.bedrock.inputs.AgentcoreCodeInterpreterCertificateArgs.Builder)
+    /**
+     * @param location Location from which to retrieve the certificate. See `certificates.location` below.
+     * @return builder
+     */
+    def location(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreCodeInterpreterCertificateLocationArgs.Builder]):
+        com.pulumi.aws.bedrock.inputs.AgentcoreCodeInterpreterCertificateArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreCodeInterpreterCertificateLocationArgs.builder
+      builder.location(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.bedrock.inputs.AgentcoreCodeInterpreterCertificateLocationArgs.Builder)
+    /**
+     * @param secretsManager AWS Secrets Manager location of the certificate. See `secretsManager` below.
+     * @return builder
+     */
+    def secretsManager(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreCodeInterpreterCertificateLocationSecretsManagerArgs.Builder]):
+        com.pulumi.aws.bedrock.inputs.AgentcoreCodeInterpreterCertificateLocationArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreCodeInterpreterCertificateLocationSecretsManagerArgs.builder
+      builder.secretsManager(args(argsBuilder).build)
+
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentcoreCodeInterpreterNetworkConfigurationArgs.Builder)
     /**
      * @param vpcConfig VPC configuration. See `vpcConfig` below.
@@ -3286,6 +3770,15 @@ object bedrock:
       builder.vpcConfig(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentcoreCodeInterpreterState.Builder)
+    /**
+     * @param certificates Certificates to install in the code interpreter. Between 1 and 200 blocks are supported. See `certificate` below.
+     * @return builder
+     */
+    def certificates(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreCodeInterpreterCertificateArgs.Builder]*):
+        com.pulumi.aws.bedrock.inputs.AgentcoreCodeInterpreterState.Builder =
+      def argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreCodeInterpreterCertificateArgs.builder
+      builder.certificates(args.map(_(argsBuilder).build)*)
+
     /**
      * @param networkConfiguration Network configuration for the code interpreter. See `networkConfiguration` below.
      * 
@@ -3414,7 +3907,26 @@ object bedrock:
       val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreGatewayAuthorizerConfigurationCustomJwtAuthorizerArgs.builder
       builder.customJwtAuthorizer(args(argsBuilder).build)
 
+  extension (builder: com.pulumi.aws.bedrock.inputs.AgentcoreGatewayAuthorizerConfigurationCustomJwtAuthorizerAllowedWorkloadConfigurationArgs.Builder)
+    /**
+     * @param hostingEnvironments Hosting environments allowed to use the authorizer. Between 1 and 10 entries. See `hostingEnvironment` below.
+     * @return builder
+     */
+    def hostingEnvironments(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreGatewayAuthorizerConfigurationCustomJwtAuthorizerAllowedWorkloadConfigurationHostingEnvironmentArgs.Builder]*):
+        com.pulumi.aws.bedrock.inputs.AgentcoreGatewayAuthorizerConfigurationCustomJwtAuthorizerAllowedWorkloadConfigurationArgs.Builder =
+      def argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreGatewayAuthorizerConfigurationCustomJwtAuthorizerAllowedWorkloadConfigurationHostingEnvironmentArgs.builder
+      builder.hostingEnvironments(args.map(_(argsBuilder).build)*)
+
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentcoreGatewayAuthorizerConfigurationCustomJwtAuthorizerArgs.Builder)
+    /**
+     * @param allowedWorkloadConfiguration Configuration restricting which workloads may use this authorizer. See `allowedWorkloadConfiguration` below.
+     * @return builder
+     */
+    def allowedWorkloadConfiguration(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreGatewayAuthorizerConfigurationCustomJwtAuthorizerAllowedWorkloadConfigurationArgs.Builder]):
+        com.pulumi.aws.bedrock.inputs.AgentcoreGatewayAuthorizerConfigurationCustomJwtAuthorizerArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreGatewayAuthorizerConfigurationCustomJwtAuthorizerAllowedWorkloadConfigurationArgs.builder
+      builder.allowedWorkloadConfiguration(args(argsBuilder).build)
+
     /**
      * @param customClaims Repeatable block to define a custom claim validation name, value, and operation. See `customClaim` below.
      * @return builder
@@ -3423,6 +3935,24 @@ object bedrock:
         com.pulumi.aws.bedrock.inputs.AgentcoreGatewayAuthorizerConfigurationCustomJwtAuthorizerArgs.Builder =
       def argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreGatewayAuthorizerConfigurationCustomJwtAuthorizerCustomClaimArgs.builder
       builder.customClaims(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param privateEndpoint Private endpoint used to reach the authorization server. See `privateEndpoint` below.
+     * @return builder
+     */
+    def privateEndpoint(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreGatewayAuthorizerConfigurationCustomJwtAuthorizerPrivateEndpointArgs.Builder]):
+        com.pulumi.aws.bedrock.inputs.AgentcoreGatewayAuthorizerConfigurationCustomJwtAuthorizerArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreGatewayAuthorizerConfigurationCustomJwtAuthorizerPrivateEndpointArgs.builder
+      builder.privateEndpoint(args(argsBuilder).build)
+
+    /**
+     * @param privateEndpointOverrides Overrides for the private endpoints used to reach the authorization server. See `privateEndpointOverrides` below.
+     * @return builder
+     */
+    def privateEndpointOverrides(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreGatewayAuthorizerConfigurationCustomJwtAuthorizerPrivateEndpointOverrideArgs.Builder]*):
+        com.pulumi.aws.bedrock.inputs.AgentcoreGatewayAuthorizerConfigurationCustomJwtAuthorizerArgs.Builder =
+      def argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreGatewayAuthorizerConfigurationCustomJwtAuthorizerPrivateEndpointOverrideArgs.builder
+      builder.privateEndpointOverrides(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentcoreGatewayAuthorizerConfigurationCustomJwtAuthorizerCustomClaimArgs.Builder)
     /**
@@ -3443,6 +3973,54 @@ object bedrock:
         com.pulumi.aws.bedrock.inputs.AgentcoreGatewayAuthorizerConfigurationCustomJwtAuthorizerCustomClaimAuthorizingClaimMatchValueArgs.Builder =
       val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreGatewayAuthorizerConfigurationCustomJwtAuthorizerCustomClaimAuthorizingClaimMatchValueClaimMatchValueArgs.builder
       builder.claimMatchValue(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.bedrock.inputs.AgentcoreGatewayAuthorizerConfigurationCustomJwtAuthorizerPrivateEndpointArgs.Builder)
+    /**
+     * @param managedVpcResource Managed VPC resource configuration. See `managedVpcResource` below.
+     * @return builder
+     */
+    def managedVpcResource(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreGatewayAuthorizerConfigurationCustomJwtAuthorizerPrivateEndpointManagedVpcResourceArgs.Builder]):
+        com.pulumi.aws.bedrock.inputs.AgentcoreGatewayAuthorizerConfigurationCustomJwtAuthorizerPrivateEndpointArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreGatewayAuthorizerConfigurationCustomJwtAuthorizerPrivateEndpointManagedVpcResourceArgs.builder
+      builder.managedVpcResource(args(argsBuilder).build)
+
+    /**
+     * @param selfManagedLatticeResource Self-managed VPC Lattice resource configuration. See `selfManagedLatticeResource` below.
+     * @return builder
+     */
+    def selfManagedLatticeResource(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreGatewayAuthorizerConfigurationCustomJwtAuthorizerPrivateEndpointSelfManagedLatticeResourceArgs.Builder]):
+        com.pulumi.aws.bedrock.inputs.AgentcoreGatewayAuthorizerConfigurationCustomJwtAuthorizerPrivateEndpointArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreGatewayAuthorizerConfigurationCustomJwtAuthorizerPrivateEndpointSelfManagedLatticeResourceArgs.builder
+      builder.selfManagedLatticeResource(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.bedrock.inputs.AgentcoreGatewayAuthorizerConfigurationCustomJwtAuthorizerPrivateEndpointOverrideArgs.Builder)
+    /**
+     * @param privateEndpoint Private endpoint configuration. See `privateEndpoint` below.
+     * @return builder
+     */
+    def privateEndpoint(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreGatewayAuthorizerConfigurationCustomJwtAuthorizerPrivateEndpointOverridePrivateEndpointArgs.Builder]):
+        com.pulumi.aws.bedrock.inputs.AgentcoreGatewayAuthorizerConfigurationCustomJwtAuthorizerPrivateEndpointOverrideArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreGatewayAuthorizerConfigurationCustomJwtAuthorizerPrivateEndpointOverridePrivateEndpointArgs.builder
+      builder.privateEndpoint(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.bedrock.inputs.AgentcoreGatewayAuthorizerConfigurationCustomJwtAuthorizerPrivateEndpointOverridePrivateEndpointArgs.Builder)
+    /**
+     * @param managedVpcResource Managed VPC resource configuration. See `managedVpcResource` below.
+     * @return builder
+     */
+    def managedVpcResource(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreGatewayAuthorizerConfigurationCustomJwtAuthorizerPrivateEndpointOverridePrivateEndpointManagedVpcResourceArgs.Builder]):
+        com.pulumi.aws.bedrock.inputs.AgentcoreGatewayAuthorizerConfigurationCustomJwtAuthorizerPrivateEndpointOverridePrivateEndpointArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreGatewayAuthorizerConfigurationCustomJwtAuthorizerPrivateEndpointOverridePrivateEndpointManagedVpcResourceArgs.builder
+      builder.managedVpcResource(args(argsBuilder).build)
+
+    /**
+     * @param selfManagedLatticeResource Self-managed VPC Lattice resource configuration. See `selfManagedLatticeResource` below.
+     * @return builder
+     */
+    def selfManagedLatticeResource(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreGatewayAuthorizerConfigurationCustomJwtAuthorizerPrivateEndpointOverridePrivateEndpointSelfManagedLatticeResourceArgs.Builder]):
+        com.pulumi.aws.bedrock.inputs.AgentcoreGatewayAuthorizerConfigurationCustomJwtAuthorizerPrivateEndpointOverridePrivateEndpointArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreGatewayAuthorizerConfigurationCustomJwtAuthorizerPrivateEndpointOverridePrivateEndpointSelfManagedLatticeResourceArgs.builder
+      builder.selfManagedLatticeResource(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentcoreGatewayInterceptorConfigurationArgs.Builder)
     /**
@@ -3984,7 +4562,26 @@ object bedrock:
       val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreHarnessAuthorizerConfigurationCustomJwtAuthorizerArgs.builder
       builder.customJwtAuthorizer(args(argsBuilder).build)
 
+  extension (builder: com.pulumi.aws.bedrock.inputs.AgentcoreHarnessAuthorizerConfigurationCustomJwtAuthorizerAllowedWorkloadConfigurationArgs.Builder)
+    /**
+     * @param hostingEnvironments Hosting environments allowed to use the authorizer. Between 1 and 10 entries. See `hostingEnvironment` below.
+     * @return builder
+     */
+    def hostingEnvironments(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreHarnessAuthorizerConfigurationCustomJwtAuthorizerAllowedWorkloadConfigurationHostingEnvironmentArgs.Builder]*):
+        com.pulumi.aws.bedrock.inputs.AgentcoreHarnessAuthorizerConfigurationCustomJwtAuthorizerAllowedWorkloadConfigurationArgs.Builder =
+      def argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreHarnessAuthorizerConfigurationCustomJwtAuthorizerAllowedWorkloadConfigurationHostingEnvironmentArgs.builder
+      builder.hostingEnvironments(args.map(_(argsBuilder).build)*)
+
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentcoreHarnessAuthorizerConfigurationCustomJwtAuthorizerArgs.Builder)
+    /**
+     * @param allowedWorkloadConfiguration Configuration restricting which workloads may use this authorizer. See `allowedWorkloadConfiguration` below.
+     * @return builder
+     */
+    def allowedWorkloadConfiguration(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreHarnessAuthorizerConfigurationCustomJwtAuthorizerAllowedWorkloadConfigurationArgs.Builder]):
+        com.pulumi.aws.bedrock.inputs.AgentcoreHarnessAuthorizerConfigurationCustomJwtAuthorizerArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreHarnessAuthorizerConfigurationCustomJwtAuthorizerAllowedWorkloadConfigurationArgs.builder
+      builder.allowedWorkloadConfiguration(args(argsBuilder).build)
+
     /**
      * @param customClaims Repeatable block to define a custom claim validation name, value, and operation. See `customClaim` below.
      * @return builder
@@ -3993,6 +4590,24 @@ object bedrock:
         com.pulumi.aws.bedrock.inputs.AgentcoreHarnessAuthorizerConfigurationCustomJwtAuthorizerArgs.Builder =
       def argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreHarnessAuthorizerConfigurationCustomJwtAuthorizerCustomClaimArgs.builder
       builder.customClaims(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param privateEndpoint Private endpoint used to reach the authorization server. See `privateEndpoint` below.
+     * @return builder
+     */
+    def privateEndpoint(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreHarnessAuthorizerConfigurationCustomJwtAuthorizerPrivateEndpointArgs.Builder]):
+        com.pulumi.aws.bedrock.inputs.AgentcoreHarnessAuthorizerConfigurationCustomJwtAuthorizerArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreHarnessAuthorizerConfigurationCustomJwtAuthorizerPrivateEndpointArgs.builder
+      builder.privateEndpoint(args(argsBuilder).build)
+
+    /**
+     * @param privateEndpointOverrides Overrides for the private endpoints used to reach the authorization server. See `privateEndpointOverrides` below.
+     * @return builder
+     */
+    def privateEndpointOverrides(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreHarnessAuthorizerConfigurationCustomJwtAuthorizerPrivateEndpointOverrideArgs.Builder]*):
+        com.pulumi.aws.bedrock.inputs.AgentcoreHarnessAuthorizerConfigurationCustomJwtAuthorizerArgs.Builder =
+      def argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreHarnessAuthorizerConfigurationCustomJwtAuthorizerPrivateEndpointOverrideArgs.builder
+      builder.privateEndpointOverrides(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentcoreHarnessAuthorizerConfigurationCustomJwtAuthorizerCustomClaimArgs.Builder)
     /**
@@ -4013,6 +4628,54 @@ object bedrock:
         com.pulumi.aws.bedrock.inputs.AgentcoreHarnessAuthorizerConfigurationCustomJwtAuthorizerCustomClaimAuthorizingClaimMatchValueArgs.Builder =
       val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreHarnessAuthorizerConfigurationCustomJwtAuthorizerCustomClaimAuthorizingClaimMatchValueClaimMatchValueArgs.builder
       builder.claimMatchValue(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.bedrock.inputs.AgentcoreHarnessAuthorizerConfigurationCustomJwtAuthorizerPrivateEndpointArgs.Builder)
+    /**
+     * @param managedVpcResource Managed VPC resource configuration. See `managedVpcResource` below.
+     * @return builder
+     */
+    def managedVpcResource(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreHarnessAuthorizerConfigurationCustomJwtAuthorizerPrivateEndpointManagedVpcResourceArgs.Builder]):
+        com.pulumi.aws.bedrock.inputs.AgentcoreHarnessAuthorizerConfigurationCustomJwtAuthorizerPrivateEndpointArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreHarnessAuthorizerConfigurationCustomJwtAuthorizerPrivateEndpointManagedVpcResourceArgs.builder
+      builder.managedVpcResource(args(argsBuilder).build)
+
+    /**
+     * @param selfManagedLatticeResource Self-managed VPC Lattice resource configuration. See `selfManagedLatticeResource` below.
+     * @return builder
+     */
+    def selfManagedLatticeResource(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreHarnessAuthorizerConfigurationCustomJwtAuthorizerPrivateEndpointSelfManagedLatticeResourceArgs.Builder]):
+        com.pulumi.aws.bedrock.inputs.AgentcoreHarnessAuthorizerConfigurationCustomJwtAuthorizerPrivateEndpointArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreHarnessAuthorizerConfigurationCustomJwtAuthorizerPrivateEndpointSelfManagedLatticeResourceArgs.builder
+      builder.selfManagedLatticeResource(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.bedrock.inputs.AgentcoreHarnessAuthorizerConfigurationCustomJwtAuthorizerPrivateEndpointOverrideArgs.Builder)
+    /**
+     * @param privateEndpoint Private endpoint configuration. See `privateEndpoint` below.
+     * @return builder
+     */
+    def privateEndpoint(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreHarnessAuthorizerConfigurationCustomJwtAuthorizerPrivateEndpointOverridePrivateEndpointArgs.Builder]):
+        com.pulumi.aws.bedrock.inputs.AgentcoreHarnessAuthorizerConfigurationCustomJwtAuthorizerPrivateEndpointOverrideArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreHarnessAuthorizerConfigurationCustomJwtAuthorizerPrivateEndpointOverridePrivateEndpointArgs.builder
+      builder.privateEndpoint(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.bedrock.inputs.AgentcoreHarnessAuthorizerConfigurationCustomJwtAuthorizerPrivateEndpointOverridePrivateEndpointArgs.Builder)
+    /**
+     * @param managedVpcResource Managed VPC resource configuration. See `managedVpcResource` below.
+     * @return builder
+     */
+    def managedVpcResource(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreHarnessAuthorizerConfigurationCustomJwtAuthorizerPrivateEndpointOverridePrivateEndpointManagedVpcResourceArgs.Builder]):
+        com.pulumi.aws.bedrock.inputs.AgentcoreHarnessAuthorizerConfigurationCustomJwtAuthorizerPrivateEndpointOverridePrivateEndpointArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreHarnessAuthorizerConfigurationCustomJwtAuthorizerPrivateEndpointOverridePrivateEndpointManagedVpcResourceArgs.builder
+      builder.managedVpcResource(args(argsBuilder).build)
+
+    /**
+     * @param selfManagedLatticeResource Self-managed VPC Lattice resource configuration. See `selfManagedLatticeResource` below.
+     * @return builder
+     */
+    def selfManagedLatticeResource(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreHarnessAuthorizerConfigurationCustomJwtAuthorizerPrivateEndpointOverridePrivateEndpointSelfManagedLatticeResourceArgs.Builder]):
+        com.pulumi.aws.bedrock.inputs.AgentcoreHarnessAuthorizerConfigurationCustomJwtAuthorizerPrivateEndpointOverridePrivateEndpointArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreHarnessAuthorizerConfigurationCustomJwtAuthorizerPrivateEndpointOverridePrivateEndpointSelfManagedLatticeResourceArgs.builder
+      builder.selfManagedLatticeResource(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentcoreHarnessEnvironmentAgentcoreRuntimeEnvironmentArgs.Builder)
     /**
@@ -4757,6 +5420,95 @@ object bedrock:
     def timeouts(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcorePolicyTimeoutsArgs.Builder]):
         com.pulumi.aws.bedrock.inputs.AgentcorePolicyState.Builder =
       val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcorePolicyTimeoutsArgs.builder
+      builder.timeouts(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.bedrock.inputs.AgentcoreRegistryAuthorizerConfigurationArgs.Builder)
+    def customJwtAuthorizer(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreRegistryAuthorizerConfigurationCustomJwtAuthorizerArgs.Builder]):
+        com.pulumi.aws.bedrock.inputs.AgentcoreRegistryAuthorizerConfigurationArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreRegistryAuthorizerConfigurationCustomJwtAuthorizerArgs.builder
+      builder.customJwtAuthorizer(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.bedrock.inputs.AgentcoreRegistryAuthorizerConfigurationCustomJwtAuthorizerAllowedWorkloadConfigurationArgs.Builder)
+    def hostingEnvironments(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreRegistryAuthorizerConfigurationCustomJwtAuthorizerAllowedWorkloadConfigurationHostingEnvironmentArgs.Builder]*):
+        com.pulumi.aws.bedrock.inputs.AgentcoreRegistryAuthorizerConfigurationCustomJwtAuthorizerAllowedWorkloadConfigurationArgs.Builder =
+      def argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreRegistryAuthorizerConfigurationCustomJwtAuthorizerAllowedWorkloadConfigurationHostingEnvironmentArgs.builder
+      builder.hostingEnvironments(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.aws.bedrock.inputs.AgentcoreRegistryAuthorizerConfigurationCustomJwtAuthorizerArgs.Builder)
+    def allowedWorkloadConfiguration(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreRegistryAuthorizerConfigurationCustomJwtAuthorizerAllowedWorkloadConfigurationArgs.Builder]):
+        com.pulumi.aws.bedrock.inputs.AgentcoreRegistryAuthorizerConfigurationCustomJwtAuthorizerArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreRegistryAuthorizerConfigurationCustomJwtAuthorizerAllowedWorkloadConfigurationArgs.builder
+      builder.allowedWorkloadConfiguration(args(argsBuilder).build)
+
+    def customClaims(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreRegistryAuthorizerConfigurationCustomJwtAuthorizerCustomClaimArgs.Builder]*):
+        com.pulumi.aws.bedrock.inputs.AgentcoreRegistryAuthorizerConfigurationCustomJwtAuthorizerArgs.Builder =
+      def argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreRegistryAuthorizerConfigurationCustomJwtAuthorizerCustomClaimArgs.builder
+      builder.customClaims(args.map(_(argsBuilder).build)*)
+
+    def privateEndpoint(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreRegistryAuthorizerConfigurationCustomJwtAuthorizerPrivateEndpointArgs.Builder]):
+        com.pulumi.aws.bedrock.inputs.AgentcoreRegistryAuthorizerConfigurationCustomJwtAuthorizerArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreRegistryAuthorizerConfigurationCustomJwtAuthorizerPrivateEndpointArgs.builder
+      builder.privateEndpoint(args(argsBuilder).build)
+
+    def privateEndpointOverrides(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreRegistryAuthorizerConfigurationCustomJwtAuthorizerPrivateEndpointOverrideArgs.Builder]*):
+        com.pulumi.aws.bedrock.inputs.AgentcoreRegistryAuthorizerConfigurationCustomJwtAuthorizerArgs.Builder =
+      def argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreRegistryAuthorizerConfigurationCustomJwtAuthorizerPrivateEndpointOverrideArgs.builder
+      builder.privateEndpointOverrides(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.aws.bedrock.inputs.AgentcoreRegistryAuthorizerConfigurationCustomJwtAuthorizerCustomClaimArgs.Builder)
+    def authorizingClaimMatchValue(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreRegistryAuthorizerConfigurationCustomJwtAuthorizerCustomClaimAuthorizingClaimMatchValueArgs.Builder]):
+        com.pulumi.aws.bedrock.inputs.AgentcoreRegistryAuthorizerConfigurationCustomJwtAuthorizerCustomClaimArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreRegistryAuthorizerConfigurationCustomJwtAuthorizerCustomClaimAuthorizingClaimMatchValueArgs.builder
+      builder.authorizingClaimMatchValue(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.bedrock.inputs.AgentcoreRegistryAuthorizerConfigurationCustomJwtAuthorizerCustomClaimAuthorizingClaimMatchValueArgs.Builder)
+    def claimMatchValue(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreRegistryAuthorizerConfigurationCustomJwtAuthorizerCustomClaimAuthorizingClaimMatchValueClaimMatchValueArgs.Builder]):
+        com.pulumi.aws.bedrock.inputs.AgentcoreRegistryAuthorizerConfigurationCustomJwtAuthorizerCustomClaimAuthorizingClaimMatchValueArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreRegistryAuthorizerConfigurationCustomJwtAuthorizerCustomClaimAuthorizingClaimMatchValueClaimMatchValueArgs.builder
+      builder.claimMatchValue(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.bedrock.inputs.AgentcoreRegistryAuthorizerConfigurationCustomJwtAuthorizerPrivateEndpointArgs.Builder)
+    def managedVpcResource(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreRegistryAuthorizerConfigurationCustomJwtAuthorizerPrivateEndpointManagedVpcResourceArgs.Builder]):
+        com.pulumi.aws.bedrock.inputs.AgentcoreRegistryAuthorizerConfigurationCustomJwtAuthorizerPrivateEndpointArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreRegistryAuthorizerConfigurationCustomJwtAuthorizerPrivateEndpointManagedVpcResourceArgs.builder
+      builder.managedVpcResource(args(argsBuilder).build)
+
+    def selfManagedLatticeResource(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreRegistryAuthorizerConfigurationCustomJwtAuthorizerPrivateEndpointSelfManagedLatticeResourceArgs.Builder]):
+        com.pulumi.aws.bedrock.inputs.AgentcoreRegistryAuthorizerConfigurationCustomJwtAuthorizerPrivateEndpointArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreRegistryAuthorizerConfigurationCustomJwtAuthorizerPrivateEndpointSelfManagedLatticeResourceArgs.builder
+      builder.selfManagedLatticeResource(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.bedrock.inputs.AgentcoreRegistryAuthorizerConfigurationCustomJwtAuthorizerPrivateEndpointOverrideArgs.Builder)
+    def privateEndpoint(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreRegistryAuthorizerConfigurationCustomJwtAuthorizerPrivateEndpointOverridePrivateEndpointArgs.Builder]):
+        com.pulumi.aws.bedrock.inputs.AgentcoreRegistryAuthorizerConfigurationCustomJwtAuthorizerPrivateEndpointOverrideArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreRegistryAuthorizerConfigurationCustomJwtAuthorizerPrivateEndpointOverridePrivateEndpointArgs.builder
+      builder.privateEndpoint(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.bedrock.inputs.AgentcoreRegistryAuthorizerConfigurationCustomJwtAuthorizerPrivateEndpointOverridePrivateEndpointArgs.Builder)
+    def managedVpcResource(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreRegistryAuthorizerConfigurationCustomJwtAuthorizerPrivateEndpointOverridePrivateEndpointManagedVpcResourceArgs.Builder]):
+        com.pulumi.aws.bedrock.inputs.AgentcoreRegistryAuthorizerConfigurationCustomJwtAuthorizerPrivateEndpointOverridePrivateEndpointArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreRegistryAuthorizerConfigurationCustomJwtAuthorizerPrivateEndpointOverridePrivateEndpointManagedVpcResourceArgs.builder
+      builder.managedVpcResource(args(argsBuilder).build)
+
+    def selfManagedLatticeResource(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreRegistryAuthorizerConfigurationCustomJwtAuthorizerPrivateEndpointOverridePrivateEndpointSelfManagedLatticeResourceArgs.Builder]):
+        com.pulumi.aws.bedrock.inputs.AgentcoreRegistryAuthorizerConfigurationCustomJwtAuthorizerPrivateEndpointOverridePrivateEndpointArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreRegistryAuthorizerConfigurationCustomJwtAuthorizerPrivateEndpointOverridePrivateEndpointSelfManagedLatticeResourceArgs.builder
+      builder.selfManagedLatticeResource(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.bedrock.inputs.AgentcoreRegistryState.Builder)
+    def approvalConfigurations(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreRegistryApprovalConfigurationArgs.Builder]*):
+        com.pulumi.aws.bedrock.inputs.AgentcoreRegistryState.Builder =
+      def argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreRegistryApprovalConfigurationArgs.builder
+      builder.approvalConfigurations(args.map(_(argsBuilder).build)*)
+
+    def authorizerConfiguration(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreRegistryAuthorizerConfigurationArgs.Builder]):
+        com.pulumi.aws.bedrock.inputs.AgentcoreRegistryState.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreRegistryAuthorizerConfigurationArgs.builder
+      builder.authorizerConfiguration(args(argsBuilder).build)
+
+    def timeouts(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreRegistryTimeoutsArgs.Builder]):
+        com.pulumi.aws.bedrock.inputs.AgentcoreRegistryState.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreRegistryTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentcoreTokenVaultCmkState.Builder)

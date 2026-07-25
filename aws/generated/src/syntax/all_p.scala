@@ -137,6 +137,7 @@ export ko_pulumi.aws.autoscaling.predefinedMetricSpecification
 export ko_pulumi.aws.autoscaling.predefinedScalingMetricSpecification
 export ko_pulumi.aws.autoscaling.predictiveScalingConfiguration
 export ko_pulumi.aws.autoscaling.preferences
+export ko_pulumi.aws.autoscaling.retentionTriggers
 export ko_pulumi.aws.autoscaling.stepAdjustments
 export ko_pulumi.aws.autoscaling.tag
 export ko_pulumi.aws.autoscaling.tags
@@ -183,6 +184,7 @@ export ko_pulumi.aws.bedrock.piiEntitiesConfigs
 export ko_pulumi.aws.bedrock.pineconeConfiguration
 export ko_pulumi.aws.bedrock.policyEngineConfiguration
 export ko_pulumi.aws.bedrock.privateEndpoint
+export ko_pulumi.aws.bedrock.privateEndpointOverrides
 export ko_pulumi.aws.bedrock.prompt
 export ko_pulumi.aws.bedrock.promptConfigurations
 export ko_pulumi.aws.bedrock.promptOverrideConfigurations
@@ -213,7 +215,9 @@ export ko_pulumi.aws.bedrock.s3VectorsConfiguration
 export ko_pulumi.aws.bedrock.salesforceConfiguration
 export ko_pulumi.aws.bedrock.salesforceOauth2ProviderConfig
 export ko_pulumi.aws.bedrock.samplingConfig
+export ko_pulumi.aws.bedrock.secretsManager
 export ko_pulumi.aws.bedrock.seedUrls
+export ko_pulumi.aws.bedrock.segmentationConfiguration
 export ko_pulumi.aws.bedrock.selfManagedLatticeResource
 export ko_pulumi.aws.bedrock.semanticChunkingConfiguration
 export ko_pulumi.aws.bedrock.sensitiveInformationPolicyConfig
@@ -263,6 +267,7 @@ export ko_pulumi.aws.bedrock.transformation
 export ko_pulumi.aws.bedrock.transformationFunction
 export ko_pulumi.aws.bedrock.transformationLambdaConfiguration
 export ko_pulumi.aws.bedrock.truncations
+export ko_pulumi.aws.bedrockfoundation.timeouts
 export ko_pulumi.aws.bedrockmodel.s3Config
 export ko_pulumi.aws.billing.tags
 export ko_pulumi.aws.billing.timeRange
@@ -528,6 +533,7 @@ export ko_pulumi.aws.ec2.spotOptions
 export ko_pulumi.aws.ec2.subnetConfigurations
 export ko_pulumi.aws.ec2.subnetRouteTables
 export ko_pulumi.aws.ec2.subnets
+export ko_pulumi.aws.ec2.tagFieldSpecifications
 export ko_pulumi.aws.ec2.tagSpecifications
 export ko_pulumi.aws.ec2.targetCapacitySpecification
 export ko_pulumi.aws.ec2.throughResources
@@ -913,6 +919,7 @@ export ko_pulumi.aws.medialive.ttmlDestinationSettings
 export ko_pulumi.aws.memorydb.parameters
 export ko_pulumi.aws.memorydb.shards
 export ko_pulumi.aws.memorydb.timeouts
+export ko_pulumi.aws.mq.sharedResources
 export ko_pulumi.aws.msk.prometheus
 export ko_pulumi.aws.msk.provisionedThroughput
 export ko_pulumi.aws.msk.publicAccess
@@ -1463,6 +1470,7 @@ export ko_pulumi.aws.workmail.timeouts
 export ko_pulumi.aws.workspaces.rules
 export ko_pulumi.aws.workspaces.samlProperties
 export ko_pulumi.aws.workspaces.selfServicePermissions
+export ko_pulumi.aws.workspaces.timeoutSettings
 export ko_pulumi.aws.workspaces.timeouts
 export ko_pulumi.aws.workspacesweb.redactionPlaceHolders
 export ko_pulumi.aws.workspacesweb.s3

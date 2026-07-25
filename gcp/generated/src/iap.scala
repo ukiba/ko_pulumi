@@ -5,6 +5,3584 @@ import com.pulumi.resources.CustomResourceOptions
 
 object iap:
   /**
+   * Three different resources help you manage your IAM policy for Identity-Aware Proxy AgentRegistryAgent. Each of these resources serves a different use case:
+   * 
+   * * `gcp.iap.AgentRegistryAgentIamPolicy`: Authoritative. Sets the IAM policy for the agentregistryagent and replaces any existing policy already attached.
+   * * `gcp.iap.AgentRegistryAgentIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the agentregistryagent are preserved.
+   * * `gcp.iap.AgentRegistryAgentIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the agentregistryagent are preserved.
+   * 
+   * A data source can be used to retrieve policy data in advent you do not need creation
+   * 
+   * * `gcp.iap.AgentRegistryAgentIamPolicy`: Retrieves the IAM policy for the agentregistryagent
+   * 
+   * &gt; **Note:** `gcp.iap.AgentRegistryAgentIamPolicy` **cannot** be used in conjunction with `gcp.iap.AgentRegistryAgentIamBinding` and `gcp.iap.AgentRegistryAgentIamMember` or they will fight over what your policy should be.
+   * 
+   * &gt; **Note:** `gcp.iap.AgentRegistryAgentIamBinding` resources **can be** used in conjunction with `gcp.iap.AgentRegistryAgentIamMember` resources **only if** they do not grant privilege to the same role.
+   * 
+   * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
+   * 
+   * ## gcp.iap.AgentRegistryAgentIamPolicy
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.organizations.OrganizationsFunctions;
+   * import com.pulumi.gcp.organizations.inputs.GetIAMPolicyArgs;
+   * import com.pulumi.gcp.organizations.inputs.GetIAMPolicyBindingArgs;
+   * import com.pulumi.gcp.iap.AgentRegistryAgentIamPolicy;
+   * import com.pulumi.gcp.iap.AgentRegistryAgentIamPolicyArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         final var admin = OrganizationsFunctions.getIAMPolicy(GetIAMPolicyArgs.builder()
+   *             .bindings(GetIAMPolicyBindingArgs.builder()
+   *                 .role("roles/iap.egressor")
+   *                 .members("user:jane}{@literal @}{@code example.com")
+   *                 .build())
+   *             .build());
+   * 
+   *         var policy = new AgentRegistryAgentIamPolicy("policy", AgentRegistryAgentIamPolicyArgs.builder()
+   *             .project(default_.project())
+   *             .location(default_.location())
+   *             .agentId(default_.agentId())
+   *             .policyData(admin.policyData())
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * With IAM Conditions:
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.organizations.OrganizationsFunctions;
+   * import com.pulumi.gcp.organizations.inputs.GetIAMPolicyArgs;
+   * import com.pulumi.gcp.organizations.inputs.GetIAMPolicyBindingArgs;
+   * import com.pulumi.gcp.organizations.inputs.GetIAMPolicyBindingConditionArgs;
+   * import com.pulumi.gcp.iap.AgentRegistryAgentIamPolicy;
+   * import com.pulumi.gcp.iap.AgentRegistryAgentIamPolicyArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         final var admin = OrganizationsFunctions.getIAMPolicy(GetIAMPolicyArgs.builder()
+   *             .bindings(GetIAMPolicyBindingArgs.builder()
+   *                 .role("roles/iap.egressor")
+   *                 .members("user:jane}{@literal @}{@code example.com")
+   *                 .condition(GetIAMPolicyBindingConditionArgs.builder()
+   *                     .title("expires_after_2019_12_31")
+   *                     .description("Expiring at midnight of 2019-12-31")
+   *                     .expression("request.time < timestamp(\"2020-01-01T00:00:00Z\")")
+   *                     .build())
+   *                 .build())
+   *             .build());
+   * 
+   *         var policy = new AgentRegistryAgentIamPolicy("policy", AgentRegistryAgentIamPolicyArgs.builder()
+   *             .project(default_.project())
+   *             .location(default_.location())
+   *             .agentId(default_.agentId())
+   *             .policyData(admin.policyData())
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * ## gcp.iap.AgentRegistryAgentIamBinding
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.iap.AgentRegistryAgentIamBinding;
+   * import com.pulumi.gcp.iap.AgentRegistryAgentIamBindingArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         var binding = new AgentRegistryAgentIamBinding("binding", AgentRegistryAgentIamBindingArgs.builder()
+   *             .project(default_.project())
+   *             .location(default_.location())
+   *             .agentId(default_.agentId())
+   *             .role("roles/iap.egressor")
+   *             .members("user:jane}{@literal @}{@code example.com")
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * With IAM Conditions:
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.iap.AgentRegistryAgentIamBinding;
+   * import com.pulumi.gcp.iap.AgentRegistryAgentIamBindingArgs;
+   * import com.pulumi.gcp.iap.inputs.AgentRegistryAgentIamBindingConditionArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         var binding = new AgentRegistryAgentIamBinding("binding", AgentRegistryAgentIamBindingArgs.builder()
+   *             .project(default_.project())
+   *             .location(default_.location())
+   *             .agentId(default_.agentId())
+   *             .role("roles/iap.egressor")
+   *             .members("user:jane}{@literal @}{@code example.com")
+   *             .condition(AgentRegistryAgentIamBindingConditionArgs.builder()
+   *                 .title("expires_after_2019_12_31")
+   *                 .description("Expiring at midnight of 2019-12-31")
+   *                 .expression("request.time < timestamp(\"2020-01-01T00:00:00Z\")")
+   *                 .build())
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * ## gcp.iap.AgentRegistryAgentIamMember
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.iap.AgentRegistryAgentIamMember;
+   * import com.pulumi.gcp.iap.AgentRegistryAgentIamMemberArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         var member = new AgentRegistryAgentIamMember("member", AgentRegistryAgentIamMemberArgs.builder()
+   *             .project(default_.project())
+   *             .location(default_.location())
+   *             .agentId(default_.agentId())
+   *             .role("roles/iap.egressor")
+   *             .member("user:jane}{@literal @}{@code example.com")
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * With IAM Conditions:
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.iap.AgentRegistryAgentIamMember;
+   * import com.pulumi.gcp.iap.AgentRegistryAgentIamMemberArgs;
+   * import com.pulumi.gcp.iap.inputs.AgentRegistryAgentIamMemberConditionArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         var member = new AgentRegistryAgentIamMember("member", AgentRegistryAgentIamMemberArgs.builder()
+   *             .project(default_.project())
+   *             .location(default_.location())
+   *             .agentId(default_.agentId())
+   *             .role("roles/iap.egressor")
+   *             .member("user:jane}{@literal @}{@code example.com")
+   *             .condition(AgentRegistryAgentIamMemberConditionArgs.builder()
+   *                 .title("expires_after_2019_12_31")
+   *                 .description("Expiring at midnight of 2019-12-31")
+   *                 .expression("request.time < timestamp(\"2020-01-01T00:00:00Z\")")
+   *                 .build())
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * ## This resource supports User Project Overrides.
+   * 
+   * -
+   * 
+   * # IAM policy for Identity-Aware Proxy AgentRegistryAgent
+   * 
+   * Three different resources help you manage your IAM policy for Identity-Aware Proxy AgentRegistryAgent. Each of these resources serves a different use case:
+   * 
+   * * `gcp.iap.AgentRegistryAgentIamPolicy`: Authoritative. Sets the IAM policy for the agentregistryagent and replaces any existing policy already attached.
+   * * `gcp.iap.AgentRegistryAgentIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the agentregistryagent are preserved.
+   * * `gcp.iap.AgentRegistryAgentIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the agentregistryagent are preserved.
+   * 
+   * A data source can be used to retrieve policy data in advent you do not need creation
+   * 
+   * * `gcp.iap.AgentRegistryAgentIamPolicy`: Retrieves the IAM policy for the agentregistryagent
+   * 
+   * &gt; **Note:** `gcp.iap.AgentRegistryAgentIamPolicy` **cannot** be used in conjunction with `gcp.iap.AgentRegistryAgentIamBinding` and `gcp.iap.AgentRegistryAgentIamMember` or they will fight over what your policy should be.
+   * 
+   * &gt; **Note:** `gcp.iap.AgentRegistryAgentIamBinding` resources **can be** used in conjunction with `gcp.iap.AgentRegistryAgentIamMember` resources **only if** they do not grant privilege to the same role.
+   * 
+   * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
+   * 
+   * ## gcp.iap.AgentRegistryAgentIamPolicy
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.organizations.OrganizationsFunctions;
+   * import com.pulumi.gcp.organizations.inputs.GetIAMPolicyArgs;
+   * import com.pulumi.gcp.organizations.inputs.GetIAMPolicyBindingArgs;
+   * import com.pulumi.gcp.iap.AgentRegistryAgentIamPolicy;
+   * import com.pulumi.gcp.iap.AgentRegistryAgentIamPolicyArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         final var admin = OrganizationsFunctions.getIAMPolicy(GetIAMPolicyArgs.builder()
+   *             .bindings(GetIAMPolicyBindingArgs.builder()
+   *                 .role("roles/iap.egressor")
+   *                 .members("user:jane}{@literal @}{@code example.com")
+   *                 .build())
+   *             .build());
+   * 
+   *         var policy = new AgentRegistryAgentIamPolicy("policy", AgentRegistryAgentIamPolicyArgs.builder()
+   *             .project(default_.project())
+   *             .location(default_.location())
+   *             .agentId(default_.agentId())
+   *             .policyData(admin.policyData())
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * With IAM Conditions:
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.organizations.OrganizationsFunctions;
+   * import com.pulumi.gcp.organizations.inputs.GetIAMPolicyArgs;
+   * import com.pulumi.gcp.organizations.inputs.GetIAMPolicyBindingArgs;
+   * import com.pulumi.gcp.organizations.inputs.GetIAMPolicyBindingConditionArgs;
+   * import com.pulumi.gcp.iap.AgentRegistryAgentIamPolicy;
+   * import com.pulumi.gcp.iap.AgentRegistryAgentIamPolicyArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         final var admin = OrganizationsFunctions.getIAMPolicy(GetIAMPolicyArgs.builder()
+   *             .bindings(GetIAMPolicyBindingArgs.builder()
+   *                 .role("roles/iap.egressor")
+   *                 .members("user:jane}{@literal @}{@code example.com")
+   *                 .condition(GetIAMPolicyBindingConditionArgs.builder()
+   *                     .title("expires_after_2019_12_31")
+   *                     .description("Expiring at midnight of 2019-12-31")
+   *                     .expression("request.time < timestamp(\"2020-01-01T00:00:00Z\")")
+   *                     .build())
+   *                 .build())
+   *             .build());
+   * 
+   *         var policy = new AgentRegistryAgentIamPolicy("policy", AgentRegistryAgentIamPolicyArgs.builder()
+   *             .project(default_.project())
+   *             .location(default_.location())
+   *             .agentId(default_.agentId())
+   *             .policyData(admin.policyData())
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * ## gcp.iap.AgentRegistryAgentIamBinding
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.iap.AgentRegistryAgentIamBinding;
+   * import com.pulumi.gcp.iap.AgentRegistryAgentIamBindingArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         var binding = new AgentRegistryAgentIamBinding("binding", AgentRegistryAgentIamBindingArgs.builder()
+   *             .project(default_.project())
+   *             .location(default_.location())
+   *             .agentId(default_.agentId())
+   *             .role("roles/iap.egressor")
+   *             .members("user:jane}{@literal @}{@code example.com")
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * With IAM Conditions:
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.iap.AgentRegistryAgentIamBinding;
+   * import com.pulumi.gcp.iap.AgentRegistryAgentIamBindingArgs;
+   * import com.pulumi.gcp.iap.inputs.AgentRegistryAgentIamBindingConditionArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         var binding = new AgentRegistryAgentIamBinding("binding", AgentRegistryAgentIamBindingArgs.builder()
+   *             .project(default_.project())
+   *             .location(default_.location())
+   *             .agentId(default_.agentId())
+   *             .role("roles/iap.egressor")
+   *             .members("user:jane}{@literal @}{@code example.com")
+   *             .condition(AgentRegistryAgentIamBindingConditionArgs.builder()
+   *                 .title("expires_after_2019_12_31")
+   *                 .description("Expiring at midnight of 2019-12-31")
+   *                 .expression("request.time < timestamp(\"2020-01-01T00:00:00Z\")")
+   *                 .build())
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * ## gcp.iap.AgentRegistryAgentIamMember
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.iap.AgentRegistryAgentIamMember;
+   * import com.pulumi.gcp.iap.AgentRegistryAgentIamMemberArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         var member = new AgentRegistryAgentIamMember("member", AgentRegistryAgentIamMemberArgs.builder()
+   *             .project(default_.project())
+   *             .location(default_.location())
+   *             .agentId(default_.agentId())
+   *             .role("roles/iap.egressor")
+   *             .member("user:jane}{@literal @}{@code example.com")
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * With IAM Conditions:
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.iap.AgentRegistryAgentIamMember;
+   * import com.pulumi.gcp.iap.AgentRegistryAgentIamMemberArgs;
+   * import com.pulumi.gcp.iap.inputs.AgentRegistryAgentIamMemberConditionArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         var member = new AgentRegistryAgentIamMember("member", AgentRegistryAgentIamMemberArgs.builder()
+   *             .project(default_.project())
+   *             .location(default_.location())
+   *             .agentId(default_.agentId())
+   *             .role("roles/iap.egressor")
+   *             .member("user:jane}{@literal @}{@code example.com")
+   *             .condition(AgentRegistryAgentIamMemberConditionArgs.builder()
+   *                 .title("expires_after_2019_12_31")
+   *                 .description("Expiring at midnight of 2019-12-31")
+   *                 .expression("request.time < timestamp(\"2020-01-01T00:00:00Z\")")
+   *                 .build())
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * ## Import
+   * 
+   * For all import syntaxes, the &#34;resource in question&#34; can take any of the following forms:
+   * 
+   * * projects/{{project}}/locations/{{location}}/iap_web/agentRegistry/agents/{{agent_id}}
+   * * {{project}}/{{location}}/{{agent_id}}
+   * * {{location}}/{{agent_id}}
+   * * {{agent_id}}
+   * 
+   * Any variables not passed in the import command will be taken from the provider configuration.
+   * 
+   * Identity-Aware Proxy agentregistryagent IAM resources can be imported using the resource identifiers, role, and member.
+   * 
+   * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
+   * ```sh
+   * $ terraform import google_iap_agent_registry_agent_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/iap_web/agentRegistry/agents/{{agent_id}} roles/iap.egressor user:jane{@literal @}example.com&#34;
+   * ```
+   * 
+   * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
+   * ```sh
+   * $ terraform import google_iap_agent_registry_agent_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/iap_web/agentRegistry/agents/{{agent_id}} roles/iap.egressor&#34;
+   * ```
+   * 
+   * IAM policy imports use the identifier of the resource in question, e.g.
+   * ```sh
+   * $ pulumi import gcp:iap/agentRegistryAgentIamBinding:AgentRegistryAgentIamBinding editor projects/{{project}}/locations/{{location}}/iap_web/agentRegistry/agents/{{agent_id}}
+   * ```
+   * 
+   * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
+   *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
+   */
+  def AgentRegistryAgentIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+      (args: Endofunction[com.pulumi.gcp.iap.AgentRegistryAgentIamBindingArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+    val argsBuilder = com.pulumi.gcp.iap.AgentRegistryAgentIamBindingArgs.builder
+    com.pulumi.gcp.iap.AgentRegistryAgentIamBinding(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+
+  extension (builder: com.pulumi.gcp.iap.AgentRegistryAgentIamBindingArgs.Builder)
+    /**
+     * @param condition An [IAM Condition](https://cloud.google.com/iam/docs/conditions-overview) for a given binding.
+     * Structure is documented below.
+     * @return builder
+     */
+    def condition(args: Endofunction[com.pulumi.gcp.iap.inputs.AgentRegistryAgentIamBindingConditionArgs.Builder]):
+        com.pulumi.gcp.iap.AgentRegistryAgentIamBindingArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.iap.inputs.AgentRegistryAgentIamBindingConditionArgs.builder
+      builder.condition(args(argsBuilder).build)
+
+  /**
+   * Three different resources help you manage your IAM policy for Identity-Aware Proxy AgentRegistryAgent. Each of these resources serves a different use case:
+   * 
+   * * `gcp.iap.AgentRegistryAgentIamPolicy`: Authoritative. Sets the IAM policy for the agentregistryagent and replaces any existing policy already attached.
+   * * `gcp.iap.AgentRegistryAgentIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the agentregistryagent are preserved.
+   * * `gcp.iap.AgentRegistryAgentIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the agentregistryagent are preserved.
+   * 
+   * A data source can be used to retrieve policy data in advent you do not need creation
+   * 
+   * * `gcp.iap.AgentRegistryAgentIamPolicy`: Retrieves the IAM policy for the agentregistryagent
+   * 
+   * &gt; **Note:** `gcp.iap.AgentRegistryAgentIamPolicy` **cannot** be used in conjunction with `gcp.iap.AgentRegistryAgentIamBinding` and `gcp.iap.AgentRegistryAgentIamMember` or they will fight over what your policy should be.
+   * 
+   * &gt; **Note:** `gcp.iap.AgentRegistryAgentIamBinding` resources **can be** used in conjunction with `gcp.iap.AgentRegistryAgentIamMember` resources **only if** they do not grant privilege to the same role.
+   * 
+   * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
+   * 
+   * ## gcp.iap.AgentRegistryAgentIamPolicy
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.organizations.OrganizationsFunctions;
+   * import com.pulumi.gcp.organizations.inputs.GetIAMPolicyArgs;
+   * import com.pulumi.gcp.organizations.inputs.GetIAMPolicyBindingArgs;
+   * import com.pulumi.gcp.iap.AgentRegistryAgentIamPolicy;
+   * import com.pulumi.gcp.iap.AgentRegistryAgentIamPolicyArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         final var admin = OrganizationsFunctions.getIAMPolicy(GetIAMPolicyArgs.builder()
+   *             .bindings(GetIAMPolicyBindingArgs.builder()
+   *                 .role("roles/iap.egressor")
+   *                 .members("user:jane}{@literal @}{@code example.com")
+   *                 .build())
+   *             .build());
+   * 
+   *         var policy = new AgentRegistryAgentIamPolicy("policy", AgentRegistryAgentIamPolicyArgs.builder()
+   *             .project(default_.project())
+   *             .location(default_.location())
+   *             .agentId(default_.agentId())
+   *             .policyData(admin.policyData())
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * With IAM Conditions:
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.organizations.OrganizationsFunctions;
+   * import com.pulumi.gcp.organizations.inputs.GetIAMPolicyArgs;
+   * import com.pulumi.gcp.organizations.inputs.GetIAMPolicyBindingArgs;
+   * import com.pulumi.gcp.organizations.inputs.GetIAMPolicyBindingConditionArgs;
+   * import com.pulumi.gcp.iap.AgentRegistryAgentIamPolicy;
+   * import com.pulumi.gcp.iap.AgentRegistryAgentIamPolicyArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         final var admin = OrganizationsFunctions.getIAMPolicy(GetIAMPolicyArgs.builder()
+   *             .bindings(GetIAMPolicyBindingArgs.builder()
+   *                 .role("roles/iap.egressor")
+   *                 .members("user:jane}{@literal @}{@code example.com")
+   *                 .condition(GetIAMPolicyBindingConditionArgs.builder()
+   *                     .title("expires_after_2019_12_31")
+   *                     .description("Expiring at midnight of 2019-12-31")
+   *                     .expression("request.time < timestamp(\"2020-01-01T00:00:00Z\")")
+   *                     .build())
+   *                 .build())
+   *             .build());
+   * 
+   *         var policy = new AgentRegistryAgentIamPolicy("policy", AgentRegistryAgentIamPolicyArgs.builder()
+   *             .project(default_.project())
+   *             .location(default_.location())
+   *             .agentId(default_.agentId())
+   *             .policyData(admin.policyData())
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * ## gcp.iap.AgentRegistryAgentIamBinding
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.iap.AgentRegistryAgentIamBinding;
+   * import com.pulumi.gcp.iap.AgentRegistryAgentIamBindingArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         var binding = new AgentRegistryAgentIamBinding("binding", AgentRegistryAgentIamBindingArgs.builder()
+   *             .project(default_.project())
+   *             .location(default_.location())
+   *             .agentId(default_.agentId())
+   *             .role("roles/iap.egressor")
+   *             .members("user:jane}{@literal @}{@code example.com")
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * With IAM Conditions:
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.iap.AgentRegistryAgentIamBinding;
+   * import com.pulumi.gcp.iap.AgentRegistryAgentIamBindingArgs;
+   * import com.pulumi.gcp.iap.inputs.AgentRegistryAgentIamBindingConditionArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         var binding = new AgentRegistryAgentIamBinding("binding", AgentRegistryAgentIamBindingArgs.builder()
+   *             .project(default_.project())
+   *             .location(default_.location())
+   *             .agentId(default_.agentId())
+   *             .role("roles/iap.egressor")
+   *             .members("user:jane}{@literal @}{@code example.com")
+   *             .condition(AgentRegistryAgentIamBindingConditionArgs.builder()
+   *                 .title("expires_after_2019_12_31")
+   *                 .description("Expiring at midnight of 2019-12-31")
+   *                 .expression("request.time < timestamp(\"2020-01-01T00:00:00Z\")")
+   *                 .build())
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * ## gcp.iap.AgentRegistryAgentIamMember
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.iap.AgentRegistryAgentIamMember;
+   * import com.pulumi.gcp.iap.AgentRegistryAgentIamMemberArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         var member = new AgentRegistryAgentIamMember("member", AgentRegistryAgentIamMemberArgs.builder()
+   *             .project(default_.project())
+   *             .location(default_.location())
+   *             .agentId(default_.agentId())
+   *             .role("roles/iap.egressor")
+   *             .member("user:jane}{@literal @}{@code example.com")
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * With IAM Conditions:
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.iap.AgentRegistryAgentIamMember;
+   * import com.pulumi.gcp.iap.AgentRegistryAgentIamMemberArgs;
+   * import com.pulumi.gcp.iap.inputs.AgentRegistryAgentIamMemberConditionArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         var member = new AgentRegistryAgentIamMember("member", AgentRegistryAgentIamMemberArgs.builder()
+   *             .project(default_.project())
+   *             .location(default_.location())
+   *             .agentId(default_.agentId())
+   *             .role("roles/iap.egressor")
+   *             .member("user:jane}{@literal @}{@code example.com")
+   *             .condition(AgentRegistryAgentIamMemberConditionArgs.builder()
+   *                 .title("expires_after_2019_12_31")
+   *                 .description("Expiring at midnight of 2019-12-31")
+   *                 .expression("request.time < timestamp(\"2020-01-01T00:00:00Z\")")
+   *                 .build())
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * ## This resource supports User Project Overrides.
+   * 
+   * -
+   * 
+   * # IAM policy for Identity-Aware Proxy AgentRegistryAgent
+   * 
+   * Three different resources help you manage your IAM policy for Identity-Aware Proxy AgentRegistryAgent. Each of these resources serves a different use case:
+   * 
+   * * `gcp.iap.AgentRegistryAgentIamPolicy`: Authoritative. Sets the IAM policy for the agentregistryagent and replaces any existing policy already attached.
+   * * `gcp.iap.AgentRegistryAgentIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the agentregistryagent are preserved.
+   * * `gcp.iap.AgentRegistryAgentIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the agentregistryagent are preserved.
+   * 
+   * A data source can be used to retrieve policy data in advent you do not need creation
+   * 
+   * * `gcp.iap.AgentRegistryAgentIamPolicy`: Retrieves the IAM policy for the agentregistryagent
+   * 
+   * &gt; **Note:** `gcp.iap.AgentRegistryAgentIamPolicy` **cannot** be used in conjunction with `gcp.iap.AgentRegistryAgentIamBinding` and `gcp.iap.AgentRegistryAgentIamMember` or they will fight over what your policy should be.
+   * 
+   * &gt; **Note:** `gcp.iap.AgentRegistryAgentIamBinding` resources **can be** used in conjunction with `gcp.iap.AgentRegistryAgentIamMember` resources **only if** they do not grant privilege to the same role.
+   * 
+   * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
+   * 
+   * ## gcp.iap.AgentRegistryAgentIamPolicy
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.organizations.OrganizationsFunctions;
+   * import com.pulumi.gcp.organizations.inputs.GetIAMPolicyArgs;
+   * import com.pulumi.gcp.organizations.inputs.GetIAMPolicyBindingArgs;
+   * import com.pulumi.gcp.iap.AgentRegistryAgentIamPolicy;
+   * import com.pulumi.gcp.iap.AgentRegistryAgentIamPolicyArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         final var admin = OrganizationsFunctions.getIAMPolicy(GetIAMPolicyArgs.builder()
+   *             .bindings(GetIAMPolicyBindingArgs.builder()
+   *                 .role("roles/iap.egressor")
+   *                 .members("user:jane}{@literal @}{@code example.com")
+   *                 .build())
+   *             .build());
+   * 
+   *         var policy = new AgentRegistryAgentIamPolicy("policy", AgentRegistryAgentIamPolicyArgs.builder()
+   *             .project(default_.project())
+   *             .location(default_.location())
+   *             .agentId(default_.agentId())
+   *             .policyData(admin.policyData())
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * With IAM Conditions:
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.organizations.OrganizationsFunctions;
+   * import com.pulumi.gcp.organizations.inputs.GetIAMPolicyArgs;
+   * import com.pulumi.gcp.organizations.inputs.GetIAMPolicyBindingArgs;
+   * import com.pulumi.gcp.organizations.inputs.GetIAMPolicyBindingConditionArgs;
+   * import com.pulumi.gcp.iap.AgentRegistryAgentIamPolicy;
+   * import com.pulumi.gcp.iap.AgentRegistryAgentIamPolicyArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         final var admin = OrganizationsFunctions.getIAMPolicy(GetIAMPolicyArgs.builder()
+   *             .bindings(GetIAMPolicyBindingArgs.builder()
+   *                 .role("roles/iap.egressor")
+   *                 .members("user:jane}{@literal @}{@code example.com")
+   *                 .condition(GetIAMPolicyBindingConditionArgs.builder()
+   *                     .title("expires_after_2019_12_31")
+   *                     .description("Expiring at midnight of 2019-12-31")
+   *                     .expression("request.time < timestamp(\"2020-01-01T00:00:00Z\")")
+   *                     .build())
+   *                 .build())
+   *             .build());
+   * 
+   *         var policy = new AgentRegistryAgentIamPolicy("policy", AgentRegistryAgentIamPolicyArgs.builder()
+   *             .project(default_.project())
+   *             .location(default_.location())
+   *             .agentId(default_.agentId())
+   *             .policyData(admin.policyData())
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * ## gcp.iap.AgentRegistryAgentIamBinding
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.iap.AgentRegistryAgentIamBinding;
+   * import com.pulumi.gcp.iap.AgentRegistryAgentIamBindingArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         var binding = new AgentRegistryAgentIamBinding("binding", AgentRegistryAgentIamBindingArgs.builder()
+   *             .project(default_.project())
+   *             .location(default_.location())
+   *             .agentId(default_.agentId())
+   *             .role("roles/iap.egressor")
+   *             .members("user:jane}{@literal @}{@code example.com")
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * With IAM Conditions:
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.iap.AgentRegistryAgentIamBinding;
+   * import com.pulumi.gcp.iap.AgentRegistryAgentIamBindingArgs;
+   * import com.pulumi.gcp.iap.inputs.AgentRegistryAgentIamBindingConditionArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         var binding = new AgentRegistryAgentIamBinding("binding", AgentRegistryAgentIamBindingArgs.builder()
+   *             .project(default_.project())
+   *             .location(default_.location())
+   *             .agentId(default_.agentId())
+   *             .role("roles/iap.egressor")
+   *             .members("user:jane}{@literal @}{@code example.com")
+   *             .condition(AgentRegistryAgentIamBindingConditionArgs.builder()
+   *                 .title("expires_after_2019_12_31")
+   *                 .description("Expiring at midnight of 2019-12-31")
+   *                 .expression("request.time < timestamp(\"2020-01-01T00:00:00Z\")")
+   *                 .build())
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * ## gcp.iap.AgentRegistryAgentIamMember
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.iap.AgentRegistryAgentIamMember;
+   * import com.pulumi.gcp.iap.AgentRegistryAgentIamMemberArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         var member = new AgentRegistryAgentIamMember("member", AgentRegistryAgentIamMemberArgs.builder()
+   *             .project(default_.project())
+   *             .location(default_.location())
+   *             .agentId(default_.agentId())
+   *             .role("roles/iap.egressor")
+   *             .member("user:jane}{@literal @}{@code example.com")
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * With IAM Conditions:
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.iap.AgentRegistryAgentIamMember;
+   * import com.pulumi.gcp.iap.AgentRegistryAgentIamMemberArgs;
+   * import com.pulumi.gcp.iap.inputs.AgentRegistryAgentIamMemberConditionArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         var member = new AgentRegistryAgentIamMember("member", AgentRegistryAgentIamMemberArgs.builder()
+   *             .project(default_.project())
+   *             .location(default_.location())
+   *             .agentId(default_.agentId())
+   *             .role("roles/iap.egressor")
+   *             .member("user:jane}{@literal @}{@code example.com")
+   *             .condition(AgentRegistryAgentIamMemberConditionArgs.builder()
+   *                 .title("expires_after_2019_12_31")
+   *                 .description("Expiring at midnight of 2019-12-31")
+   *                 .expression("request.time < timestamp(\"2020-01-01T00:00:00Z\")")
+   *                 .build())
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * ## Import
+   * 
+   * For all import syntaxes, the &#34;resource in question&#34; can take any of the following forms:
+   * 
+   * * projects/{{project}}/locations/{{location}}/iap_web/agentRegistry/agents/{{agent_id}}
+   * * {{project}}/{{location}}/{{agent_id}}
+   * * {{location}}/{{agent_id}}
+   * * {{agent_id}}
+   * 
+   * Any variables not passed in the import command will be taken from the provider configuration.
+   * 
+   * Identity-Aware Proxy agentregistryagent IAM resources can be imported using the resource identifiers, role, and member.
+   * 
+   * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
+   * ```sh
+   * $ terraform import google_iap_agent_registry_agent_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/iap_web/agentRegistry/agents/{{agent_id}} roles/iap.egressor user:jane{@literal @}example.com&#34;
+   * ```
+   * 
+   * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
+   * ```sh
+   * $ terraform import google_iap_agent_registry_agent_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/iap_web/agentRegistry/agents/{{agent_id}} roles/iap.egressor&#34;
+   * ```
+   * 
+   * IAM policy imports use the identifier of the resource in question, e.g.
+   * ```sh
+   * $ pulumi import gcp:iap/agentRegistryAgentIamMember:AgentRegistryAgentIamMember editor projects/{{project}}/locations/{{location}}/iap_web/agentRegistry/agents/{{agent_id}}
+   * ```
+   * 
+   * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
+   *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
+   */
+  def AgentRegistryAgentIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+      (args: Endofunction[com.pulumi.gcp.iap.AgentRegistryAgentIamMemberArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+    val argsBuilder = com.pulumi.gcp.iap.AgentRegistryAgentIamMemberArgs.builder
+    com.pulumi.gcp.iap.AgentRegistryAgentIamMember(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+
+  extension (builder: com.pulumi.gcp.iap.AgentRegistryAgentIamMemberArgs.Builder)
+    /**
+     * @param condition An [IAM Condition](https://cloud.google.com/iam/docs/conditions-overview) for a given binding.
+     * Structure is documented below.
+     * @return builder
+     */
+    def condition(args: Endofunction[com.pulumi.gcp.iap.inputs.AgentRegistryAgentIamMemberConditionArgs.Builder]):
+        com.pulumi.gcp.iap.AgentRegistryAgentIamMemberArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.iap.inputs.AgentRegistryAgentIamMemberConditionArgs.builder
+      builder.condition(args(argsBuilder).build)
+
+  /**
+   * Three different resources help you manage your IAM policy for Identity-Aware Proxy AgentRegistryAgent. Each of these resources serves a different use case:
+   * 
+   * * `gcp.iap.AgentRegistryAgentIamPolicy`: Authoritative. Sets the IAM policy for the agentregistryagent and replaces any existing policy already attached.
+   * * `gcp.iap.AgentRegistryAgentIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the agentregistryagent are preserved.
+   * * `gcp.iap.AgentRegistryAgentIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the agentregistryagent are preserved.
+   * 
+   * A data source can be used to retrieve policy data in advent you do not need creation
+   * 
+   * * `gcp.iap.AgentRegistryAgentIamPolicy`: Retrieves the IAM policy for the agentregistryagent
+   * 
+   * &gt; **Note:** `gcp.iap.AgentRegistryAgentIamPolicy` **cannot** be used in conjunction with `gcp.iap.AgentRegistryAgentIamBinding` and `gcp.iap.AgentRegistryAgentIamMember` or they will fight over what your policy should be.
+   * 
+   * &gt; **Note:** `gcp.iap.AgentRegistryAgentIamBinding` resources **can be** used in conjunction with `gcp.iap.AgentRegistryAgentIamMember` resources **only if** they do not grant privilege to the same role.
+   * 
+   * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
+   * 
+   * ## gcp.iap.AgentRegistryAgentIamPolicy
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.organizations.OrganizationsFunctions;
+   * import com.pulumi.gcp.organizations.inputs.GetIAMPolicyArgs;
+   * import com.pulumi.gcp.organizations.inputs.GetIAMPolicyBindingArgs;
+   * import com.pulumi.gcp.iap.AgentRegistryAgentIamPolicy;
+   * import com.pulumi.gcp.iap.AgentRegistryAgentIamPolicyArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         final var admin = OrganizationsFunctions.getIAMPolicy(GetIAMPolicyArgs.builder()
+   *             .bindings(GetIAMPolicyBindingArgs.builder()
+   *                 .role("roles/iap.egressor")
+   *                 .members("user:jane}{@literal @}{@code example.com")
+   *                 .build())
+   *             .build());
+   * 
+   *         var policy = new AgentRegistryAgentIamPolicy("policy", AgentRegistryAgentIamPolicyArgs.builder()
+   *             .project(default_.project())
+   *             .location(default_.location())
+   *             .agentId(default_.agentId())
+   *             .policyData(admin.policyData())
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * With IAM Conditions:
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.organizations.OrganizationsFunctions;
+   * import com.pulumi.gcp.organizations.inputs.GetIAMPolicyArgs;
+   * import com.pulumi.gcp.organizations.inputs.GetIAMPolicyBindingArgs;
+   * import com.pulumi.gcp.organizations.inputs.GetIAMPolicyBindingConditionArgs;
+   * import com.pulumi.gcp.iap.AgentRegistryAgentIamPolicy;
+   * import com.pulumi.gcp.iap.AgentRegistryAgentIamPolicyArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         final var admin = OrganizationsFunctions.getIAMPolicy(GetIAMPolicyArgs.builder()
+   *             .bindings(GetIAMPolicyBindingArgs.builder()
+   *                 .role("roles/iap.egressor")
+   *                 .members("user:jane}{@literal @}{@code example.com")
+   *                 .condition(GetIAMPolicyBindingConditionArgs.builder()
+   *                     .title("expires_after_2019_12_31")
+   *                     .description("Expiring at midnight of 2019-12-31")
+   *                     .expression("request.time < timestamp(\"2020-01-01T00:00:00Z\")")
+   *                     .build())
+   *                 .build())
+   *             .build());
+   * 
+   *         var policy = new AgentRegistryAgentIamPolicy("policy", AgentRegistryAgentIamPolicyArgs.builder()
+   *             .project(default_.project())
+   *             .location(default_.location())
+   *             .agentId(default_.agentId())
+   *             .policyData(admin.policyData())
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * ## gcp.iap.AgentRegistryAgentIamBinding
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.iap.AgentRegistryAgentIamBinding;
+   * import com.pulumi.gcp.iap.AgentRegistryAgentIamBindingArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         var binding = new AgentRegistryAgentIamBinding("binding", AgentRegistryAgentIamBindingArgs.builder()
+   *             .project(default_.project())
+   *             .location(default_.location())
+   *             .agentId(default_.agentId())
+   *             .role("roles/iap.egressor")
+   *             .members("user:jane}{@literal @}{@code example.com")
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * With IAM Conditions:
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.iap.AgentRegistryAgentIamBinding;
+   * import com.pulumi.gcp.iap.AgentRegistryAgentIamBindingArgs;
+   * import com.pulumi.gcp.iap.inputs.AgentRegistryAgentIamBindingConditionArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         var binding = new AgentRegistryAgentIamBinding("binding", AgentRegistryAgentIamBindingArgs.builder()
+   *             .project(default_.project())
+   *             .location(default_.location())
+   *             .agentId(default_.agentId())
+   *             .role("roles/iap.egressor")
+   *             .members("user:jane}{@literal @}{@code example.com")
+   *             .condition(AgentRegistryAgentIamBindingConditionArgs.builder()
+   *                 .title("expires_after_2019_12_31")
+   *                 .description("Expiring at midnight of 2019-12-31")
+   *                 .expression("request.time < timestamp(\"2020-01-01T00:00:00Z\")")
+   *                 .build())
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * ## gcp.iap.AgentRegistryAgentIamMember
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.iap.AgentRegistryAgentIamMember;
+   * import com.pulumi.gcp.iap.AgentRegistryAgentIamMemberArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         var member = new AgentRegistryAgentIamMember("member", AgentRegistryAgentIamMemberArgs.builder()
+   *             .project(default_.project())
+   *             .location(default_.location())
+   *             .agentId(default_.agentId())
+   *             .role("roles/iap.egressor")
+   *             .member("user:jane}{@literal @}{@code example.com")
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * With IAM Conditions:
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.iap.AgentRegistryAgentIamMember;
+   * import com.pulumi.gcp.iap.AgentRegistryAgentIamMemberArgs;
+   * import com.pulumi.gcp.iap.inputs.AgentRegistryAgentIamMemberConditionArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         var member = new AgentRegistryAgentIamMember("member", AgentRegistryAgentIamMemberArgs.builder()
+   *             .project(default_.project())
+   *             .location(default_.location())
+   *             .agentId(default_.agentId())
+   *             .role("roles/iap.egressor")
+   *             .member("user:jane}{@literal @}{@code example.com")
+   *             .condition(AgentRegistryAgentIamMemberConditionArgs.builder()
+   *                 .title("expires_after_2019_12_31")
+   *                 .description("Expiring at midnight of 2019-12-31")
+   *                 .expression("request.time < timestamp(\"2020-01-01T00:00:00Z\")")
+   *                 .build())
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * ## This resource supports User Project Overrides.
+   * 
+   * -
+   * 
+   * # IAM policy for Identity-Aware Proxy AgentRegistryAgent
+   * 
+   * Three different resources help you manage your IAM policy for Identity-Aware Proxy AgentRegistryAgent. Each of these resources serves a different use case:
+   * 
+   * * `gcp.iap.AgentRegistryAgentIamPolicy`: Authoritative. Sets the IAM policy for the agentregistryagent and replaces any existing policy already attached.
+   * * `gcp.iap.AgentRegistryAgentIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the agentregistryagent are preserved.
+   * * `gcp.iap.AgentRegistryAgentIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the agentregistryagent are preserved.
+   * 
+   * A data source can be used to retrieve policy data in advent you do not need creation
+   * 
+   * * `gcp.iap.AgentRegistryAgentIamPolicy`: Retrieves the IAM policy for the agentregistryagent
+   * 
+   * &gt; **Note:** `gcp.iap.AgentRegistryAgentIamPolicy` **cannot** be used in conjunction with `gcp.iap.AgentRegistryAgentIamBinding` and `gcp.iap.AgentRegistryAgentIamMember` or they will fight over what your policy should be.
+   * 
+   * &gt; **Note:** `gcp.iap.AgentRegistryAgentIamBinding` resources **can be** used in conjunction with `gcp.iap.AgentRegistryAgentIamMember` resources **only if** they do not grant privilege to the same role.
+   * 
+   * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
+   * 
+   * ## gcp.iap.AgentRegistryAgentIamPolicy
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.organizations.OrganizationsFunctions;
+   * import com.pulumi.gcp.organizations.inputs.GetIAMPolicyArgs;
+   * import com.pulumi.gcp.organizations.inputs.GetIAMPolicyBindingArgs;
+   * import com.pulumi.gcp.iap.AgentRegistryAgentIamPolicy;
+   * import com.pulumi.gcp.iap.AgentRegistryAgentIamPolicyArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         final var admin = OrganizationsFunctions.getIAMPolicy(GetIAMPolicyArgs.builder()
+   *             .bindings(GetIAMPolicyBindingArgs.builder()
+   *                 .role("roles/iap.egressor")
+   *                 .members("user:jane}{@literal @}{@code example.com")
+   *                 .build())
+   *             .build());
+   * 
+   *         var policy = new AgentRegistryAgentIamPolicy("policy", AgentRegistryAgentIamPolicyArgs.builder()
+   *             .project(default_.project())
+   *             .location(default_.location())
+   *             .agentId(default_.agentId())
+   *             .policyData(admin.policyData())
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * With IAM Conditions:
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.organizations.OrganizationsFunctions;
+   * import com.pulumi.gcp.organizations.inputs.GetIAMPolicyArgs;
+   * import com.pulumi.gcp.organizations.inputs.GetIAMPolicyBindingArgs;
+   * import com.pulumi.gcp.organizations.inputs.GetIAMPolicyBindingConditionArgs;
+   * import com.pulumi.gcp.iap.AgentRegistryAgentIamPolicy;
+   * import com.pulumi.gcp.iap.AgentRegistryAgentIamPolicyArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         final var admin = OrganizationsFunctions.getIAMPolicy(GetIAMPolicyArgs.builder()
+   *             .bindings(GetIAMPolicyBindingArgs.builder()
+   *                 .role("roles/iap.egressor")
+   *                 .members("user:jane}{@literal @}{@code example.com")
+   *                 .condition(GetIAMPolicyBindingConditionArgs.builder()
+   *                     .title("expires_after_2019_12_31")
+   *                     .description("Expiring at midnight of 2019-12-31")
+   *                     .expression("request.time < timestamp(\"2020-01-01T00:00:00Z\")")
+   *                     .build())
+   *                 .build())
+   *             .build());
+   * 
+   *         var policy = new AgentRegistryAgentIamPolicy("policy", AgentRegistryAgentIamPolicyArgs.builder()
+   *             .project(default_.project())
+   *             .location(default_.location())
+   *             .agentId(default_.agentId())
+   *             .policyData(admin.policyData())
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * ## gcp.iap.AgentRegistryAgentIamBinding
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.iap.AgentRegistryAgentIamBinding;
+   * import com.pulumi.gcp.iap.AgentRegistryAgentIamBindingArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         var binding = new AgentRegistryAgentIamBinding("binding", AgentRegistryAgentIamBindingArgs.builder()
+   *             .project(default_.project())
+   *             .location(default_.location())
+   *             .agentId(default_.agentId())
+   *             .role("roles/iap.egressor")
+   *             .members("user:jane}{@literal @}{@code example.com")
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * With IAM Conditions:
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.iap.AgentRegistryAgentIamBinding;
+   * import com.pulumi.gcp.iap.AgentRegistryAgentIamBindingArgs;
+   * import com.pulumi.gcp.iap.inputs.AgentRegistryAgentIamBindingConditionArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         var binding = new AgentRegistryAgentIamBinding("binding", AgentRegistryAgentIamBindingArgs.builder()
+   *             .project(default_.project())
+   *             .location(default_.location())
+   *             .agentId(default_.agentId())
+   *             .role("roles/iap.egressor")
+   *             .members("user:jane}{@literal @}{@code example.com")
+   *             .condition(AgentRegistryAgentIamBindingConditionArgs.builder()
+   *                 .title("expires_after_2019_12_31")
+   *                 .description("Expiring at midnight of 2019-12-31")
+   *                 .expression("request.time < timestamp(\"2020-01-01T00:00:00Z\")")
+   *                 .build())
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * ## gcp.iap.AgentRegistryAgentIamMember
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.iap.AgentRegistryAgentIamMember;
+   * import com.pulumi.gcp.iap.AgentRegistryAgentIamMemberArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         var member = new AgentRegistryAgentIamMember("member", AgentRegistryAgentIamMemberArgs.builder()
+   *             .project(default_.project())
+   *             .location(default_.location())
+   *             .agentId(default_.agentId())
+   *             .role("roles/iap.egressor")
+   *             .member("user:jane}{@literal @}{@code example.com")
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * With IAM Conditions:
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.iap.AgentRegistryAgentIamMember;
+   * import com.pulumi.gcp.iap.AgentRegistryAgentIamMemberArgs;
+   * import com.pulumi.gcp.iap.inputs.AgentRegistryAgentIamMemberConditionArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         var member = new AgentRegistryAgentIamMember("member", AgentRegistryAgentIamMemberArgs.builder()
+   *             .project(default_.project())
+   *             .location(default_.location())
+   *             .agentId(default_.agentId())
+   *             .role("roles/iap.egressor")
+   *             .member("user:jane}{@literal @}{@code example.com")
+   *             .condition(AgentRegistryAgentIamMemberConditionArgs.builder()
+   *                 .title("expires_after_2019_12_31")
+   *                 .description("Expiring at midnight of 2019-12-31")
+   *                 .expression("request.time < timestamp(\"2020-01-01T00:00:00Z\")")
+   *                 .build())
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * ## Import
+   * 
+   * For all import syntaxes, the &#34;resource in question&#34; can take any of the following forms:
+   * 
+   * * projects/{{project}}/locations/{{location}}/iap_web/agentRegistry/agents/{{agent_id}}
+   * * {{project}}/{{location}}/{{agent_id}}
+   * * {{location}}/{{agent_id}}
+   * * {{agent_id}}
+   * 
+   * Any variables not passed in the import command will be taken from the provider configuration.
+   * 
+   * Identity-Aware Proxy agentregistryagent IAM resources can be imported using the resource identifiers, role, and member.
+   * 
+   * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
+   * ```sh
+   * $ terraform import google_iap_agent_registry_agent_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/iap_web/agentRegistry/agents/{{agent_id}} roles/iap.egressor user:jane{@literal @}example.com&#34;
+   * ```
+   * 
+   * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
+   * ```sh
+   * $ terraform import google_iap_agent_registry_agent_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/iap_web/agentRegistry/agents/{{agent_id}} roles/iap.egressor&#34;
+   * ```
+   * 
+   * IAM policy imports use the identifier of the resource in question, e.g.
+   * ```sh
+   * $ pulumi import gcp:iap/agentRegistryAgentIamPolicy:AgentRegistryAgentIamPolicy editor projects/{{project}}/locations/{{location}}/iap_web/agentRegistry/agents/{{agent_id}}
+   * ```
+   * 
+   * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
+   *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
+   */
+  def AgentRegistryAgentIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+      (args: Endofunction[com.pulumi.gcp.iap.AgentRegistryAgentIamPolicyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+    val argsBuilder = com.pulumi.gcp.iap.AgentRegistryAgentIamPolicyArgs.builder
+    com.pulumi.gcp.iap.AgentRegistryAgentIamPolicy(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+
+  /**
+   * Three different resources help you manage your IAM policy for Identity-Aware Proxy AgentRegistryEndpoint. Each of these resources serves a different use case:
+   * 
+   * * `gcp.iap.AgentRegistryEndpointIamPolicy`: Authoritative. Sets the IAM policy for the agentregistryendpoint and replaces any existing policy already attached.
+   * * `gcp.iap.AgentRegistryEndpointIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the agentregistryendpoint are preserved.
+   * * `gcp.iap.AgentRegistryEndpointIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the agentregistryendpoint are preserved.
+   * 
+   * A data source can be used to retrieve policy data in advent you do not need creation
+   * 
+   * * `gcp.iap.AgentRegistryEndpointIamPolicy`: Retrieves the IAM policy for the agentregistryendpoint
+   * 
+   * &gt; **Note:** `gcp.iap.AgentRegistryEndpointIamPolicy` **cannot** be used in conjunction with `gcp.iap.AgentRegistryEndpointIamBinding` and `gcp.iap.AgentRegistryEndpointIamMember` or they will fight over what your policy should be.
+   * 
+   * &gt; **Note:** `gcp.iap.AgentRegistryEndpointIamBinding` resources **can be** used in conjunction with `gcp.iap.AgentRegistryEndpointIamMember` resources **only if** they do not grant privilege to the same role.
+   * 
+   * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
+   * 
+   * ## gcp.iap.AgentRegistryEndpointIamPolicy
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.organizations.OrganizationsFunctions;
+   * import com.pulumi.gcp.organizations.inputs.GetIAMPolicyArgs;
+   * import com.pulumi.gcp.organizations.inputs.GetIAMPolicyBindingArgs;
+   * import com.pulumi.gcp.iap.AgentRegistryEndpointIamPolicy;
+   * import com.pulumi.gcp.iap.AgentRegistryEndpointIamPolicyArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         final var admin = OrganizationsFunctions.getIAMPolicy(GetIAMPolicyArgs.builder()
+   *             .bindings(GetIAMPolicyBindingArgs.builder()
+   *                 .role("roles/iap.egressor")
+   *                 .members("user:jane}{@literal @}{@code example.com")
+   *                 .build())
+   *             .build());
+   * 
+   *         var policy = new AgentRegistryEndpointIamPolicy("policy", AgentRegistryEndpointIamPolicyArgs.builder()
+   *             .project(default_.project())
+   *             .location(default_.location())
+   *             .endpointId(default_.endpointId())
+   *             .policyData(admin.policyData())
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * With IAM Conditions:
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.organizations.OrganizationsFunctions;
+   * import com.pulumi.gcp.organizations.inputs.GetIAMPolicyArgs;
+   * import com.pulumi.gcp.organizations.inputs.GetIAMPolicyBindingArgs;
+   * import com.pulumi.gcp.organizations.inputs.GetIAMPolicyBindingConditionArgs;
+   * import com.pulumi.gcp.iap.AgentRegistryEndpointIamPolicy;
+   * import com.pulumi.gcp.iap.AgentRegistryEndpointIamPolicyArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         final var admin = OrganizationsFunctions.getIAMPolicy(GetIAMPolicyArgs.builder()
+   *             .bindings(GetIAMPolicyBindingArgs.builder()
+   *                 .role("roles/iap.egressor")
+   *                 .members("user:jane}{@literal @}{@code example.com")
+   *                 .condition(GetIAMPolicyBindingConditionArgs.builder()
+   *                     .title("expires_after_2019_12_31")
+   *                     .description("Expiring at midnight of 2019-12-31")
+   *                     .expression("request.time < timestamp(\"2020-01-01T00:00:00Z\")")
+   *                     .build())
+   *                 .build())
+   *             .build());
+   * 
+   *         var policy = new AgentRegistryEndpointIamPolicy("policy", AgentRegistryEndpointIamPolicyArgs.builder()
+   *             .project(default_.project())
+   *             .location(default_.location())
+   *             .endpointId(default_.endpointId())
+   *             .policyData(admin.policyData())
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * ## gcp.iap.AgentRegistryEndpointIamBinding
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.iap.AgentRegistryEndpointIamBinding;
+   * import com.pulumi.gcp.iap.AgentRegistryEndpointIamBindingArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         var binding = new AgentRegistryEndpointIamBinding("binding", AgentRegistryEndpointIamBindingArgs.builder()
+   *             .project(default_.project())
+   *             .location(default_.location())
+   *             .endpointId(default_.endpointId())
+   *             .role("roles/iap.egressor")
+   *             .members("user:jane}{@literal @}{@code example.com")
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * With IAM Conditions:
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.iap.AgentRegistryEndpointIamBinding;
+   * import com.pulumi.gcp.iap.AgentRegistryEndpointIamBindingArgs;
+   * import com.pulumi.gcp.iap.inputs.AgentRegistryEndpointIamBindingConditionArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         var binding = new AgentRegistryEndpointIamBinding("binding", AgentRegistryEndpointIamBindingArgs.builder()
+   *             .project(default_.project())
+   *             .location(default_.location())
+   *             .endpointId(default_.endpointId())
+   *             .role("roles/iap.egressor")
+   *             .members("user:jane}{@literal @}{@code example.com")
+   *             .condition(AgentRegistryEndpointIamBindingConditionArgs.builder()
+   *                 .title("expires_after_2019_12_31")
+   *                 .description("Expiring at midnight of 2019-12-31")
+   *                 .expression("request.time < timestamp(\"2020-01-01T00:00:00Z\")")
+   *                 .build())
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * ## gcp.iap.AgentRegistryEndpointIamMember
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.iap.AgentRegistryEndpointIamMember;
+   * import com.pulumi.gcp.iap.AgentRegistryEndpointIamMemberArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         var member = new AgentRegistryEndpointIamMember("member", AgentRegistryEndpointIamMemberArgs.builder()
+   *             .project(default_.project())
+   *             .location(default_.location())
+   *             .endpointId(default_.endpointId())
+   *             .role("roles/iap.egressor")
+   *             .member("user:jane}{@literal @}{@code example.com")
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * With IAM Conditions:
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.iap.AgentRegistryEndpointIamMember;
+   * import com.pulumi.gcp.iap.AgentRegistryEndpointIamMemberArgs;
+   * import com.pulumi.gcp.iap.inputs.AgentRegistryEndpointIamMemberConditionArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         var member = new AgentRegistryEndpointIamMember("member", AgentRegistryEndpointIamMemberArgs.builder()
+   *             .project(default_.project())
+   *             .location(default_.location())
+   *             .endpointId(default_.endpointId())
+   *             .role("roles/iap.egressor")
+   *             .member("user:jane}{@literal @}{@code example.com")
+   *             .condition(AgentRegistryEndpointIamMemberConditionArgs.builder()
+   *                 .title("expires_after_2019_12_31")
+   *                 .description("Expiring at midnight of 2019-12-31")
+   *                 .expression("request.time < timestamp(\"2020-01-01T00:00:00Z\")")
+   *                 .build())
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * ## This resource supports User Project Overrides.
+   * 
+   * -
+   * 
+   * # IAM policy for Identity-Aware Proxy AgentRegistryEndpoint
+   * 
+   * Three different resources help you manage your IAM policy for Identity-Aware Proxy AgentRegistryEndpoint. Each of these resources serves a different use case:
+   * 
+   * * `gcp.iap.AgentRegistryEndpointIamPolicy`: Authoritative. Sets the IAM policy for the agentregistryendpoint and replaces any existing policy already attached.
+   * * `gcp.iap.AgentRegistryEndpointIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the agentregistryendpoint are preserved.
+   * * `gcp.iap.AgentRegistryEndpointIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the agentregistryendpoint are preserved.
+   * 
+   * A data source can be used to retrieve policy data in advent you do not need creation
+   * 
+   * * `gcp.iap.AgentRegistryEndpointIamPolicy`: Retrieves the IAM policy for the agentregistryendpoint
+   * 
+   * &gt; **Note:** `gcp.iap.AgentRegistryEndpointIamPolicy` **cannot** be used in conjunction with `gcp.iap.AgentRegistryEndpointIamBinding` and `gcp.iap.AgentRegistryEndpointIamMember` or they will fight over what your policy should be.
+   * 
+   * &gt; **Note:** `gcp.iap.AgentRegistryEndpointIamBinding` resources **can be** used in conjunction with `gcp.iap.AgentRegistryEndpointIamMember` resources **only if** they do not grant privilege to the same role.
+   * 
+   * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
+   * 
+   * ## gcp.iap.AgentRegistryEndpointIamPolicy
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.organizations.OrganizationsFunctions;
+   * import com.pulumi.gcp.organizations.inputs.GetIAMPolicyArgs;
+   * import com.pulumi.gcp.organizations.inputs.GetIAMPolicyBindingArgs;
+   * import com.pulumi.gcp.iap.AgentRegistryEndpointIamPolicy;
+   * import com.pulumi.gcp.iap.AgentRegistryEndpointIamPolicyArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         final var admin = OrganizationsFunctions.getIAMPolicy(GetIAMPolicyArgs.builder()
+   *             .bindings(GetIAMPolicyBindingArgs.builder()
+   *                 .role("roles/iap.egressor")
+   *                 .members("user:jane}{@literal @}{@code example.com")
+   *                 .build())
+   *             .build());
+   * 
+   *         var policy = new AgentRegistryEndpointIamPolicy("policy", AgentRegistryEndpointIamPolicyArgs.builder()
+   *             .project(default_.project())
+   *             .location(default_.location())
+   *             .endpointId(default_.endpointId())
+   *             .policyData(admin.policyData())
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * With IAM Conditions:
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.organizations.OrganizationsFunctions;
+   * import com.pulumi.gcp.organizations.inputs.GetIAMPolicyArgs;
+   * import com.pulumi.gcp.organizations.inputs.GetIAMPolicyBindingArgs;
+   * import com.pulumi.gcp.organizations.inputs.GetIAMPolicyBindingConditionArgs;
+   * import com.pulumi.gcp.iap.AgentRegistryEndpointIamPolicy;
+   * import com.pulumi.gcp.iap.AgentRegistryEndpointIamPolicyArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         final var admin = OrganizationsFunctions.getIAMPolicy(GetIAMPolicyArgs.builder()
+   *             .bindings(GetIAMPolicyBindingArgs.builder()
+   *                 .role("roles/iap.egressor")
+   *                 .members("user:jane}{@literal @}{@code example.com")
+   *                 .condition(GetIAMPolicyBindingConditionArgs.builder()
+   *                     .title("expires_after_2019_12_31")
+   *                     .description("Expiring at midnight of 2019-12-31")
+   *                     .expression("request.time < timestamp(\"2020-01-01T00:00:00Z\")")
+   *                     .build())
+   *                 .build())
+   *             .build());
+   * 
+   *         var policy = new AgentRegistryEndpointIamPolicy("policy", AgentRegistryEndpointIamPolicyArgs.builder()
+   *             .project(default_.project())
+   *             .location(default_.location())
+   *             .endpointId(default_.endpointId())
+   *             .policyData(admin.policyData())
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * ## gcp.iap.AgentRegistryEndpointIamBinding
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.iap.AgentRegistryEndpointIamBinding;
+   * import com.pulumi.gcp.iap.AgentRegistryEndpointIamBindingArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         var binding = new AgentRegistryEndpointIamBinding("binding", AgentRegistryEndpointIamBindingArgs.builder()
+   *             .project(default_.project())
+   *             .location(default_.location())
+   *             .endpointId(default_.endpointId())
+   *             .role("roles/iap.egressor")
+   *             .members("user:jane}{@literal @}{@code example.com")
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * With IAM Conditions:
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.iap.AgentRegistryEndpointIamBinding;
+   * import com.pulumi.gcp.iap.AgentRegistryEndpointIamBindingArgs;
+   * import com.pulumi.gcp.iap.inputs.AgentRegistryEndpointIamBindingConditionArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         var binding = new AgentRegistryEndpointIamBinding("binding", AgentRegistryEndpointIamBindingArgs.builder()
+   *             .project(default_.project())
+   *             .location(default_.location())
+   *             .endpointId(default_.endpointId())
+   *             .role("roles/iap.egressor")
+   *             .members("user:jane}{@literal @}{@code example.com")
+   *             .condition(AgentRegistryEndpointIamBindingConditionArgs.builder()
+   *                 .title("expires_after_2019_12_31")
+   *                 .description("Expiring at midnight of 2019-12-31")
+   *                 .expression("request.time < timestamp(\"2020-01-01T00:00:00Z\")")
+   *                 .build())
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * ## gcp.iap.AgentRegistryEndpointIamMember
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.iap.AgentRegistryEndpointIamMember;
+   * import com.pulumi.gcp.iap.AgentRegistryEndpointIamMemberArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         var member = new AgentRegistryEndpointIamMember("member", AgentRegistryEndpointIamMemberArgs.builder()
+   *             .project(default_.project())
+   *             .location(default_.location())
+   *             .endpointId(default_.endpointId())
+   *             .role("roles/iap.egressor")
+   *             .member("user:jane}{@literal @}{@code example.com")
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * With IAM Conditions:
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.iap.AgentRegistryEndpointIamMember;
+   * import com.pulumi.gcp.iap.AgentRegistryEndpointIamMemberArgs;
+   * import com.pulumi.gcp.iap.inputs.AgentRegistryEndpointIamMemberConditionArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         var member = new AgentRegistryEndpointIamMember("member", AgentRegistryEndpointIamMemberArgs.builder()
+   *             .project(default_.project())
+   *             .location(default_.location())
+   *             .endpointId(default_.endpointId())
+   *             .role("roles/iap.egressor")
+   *             .member("user:jane}{@literal @}{@code example.com")
+   *             .condition(AgentRegistryEndpointIamMemberConditionArgs.builder()
+   *                 .title("expires_after_2019_12_31")
+   *                 .description("Expiring at midnight of 2019-12-31")
+   *                 .expression("request.time < timestamp(\"2020-01-01T00:00:00Z\")")
+   *                 .build())
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * ## Import
+   * 
+   * For all import syntaxes, the &#34;resource in question&#34; can take any of the following forms:
+   * 
+   * * projects/{{project}}/locations/{{location}}/iap_web/agentRegistry/endpoints/{{endpoint_id}}
+   * * {{project}}/{{location}}/{{endpoint_id}}
+   * * {{location}}/{{endpoint_id}}
+   * * {{endpoint_id}}
+   * 
+   * Any variables not passed in the import command will be taken from the provider configuration.
+   * 
+   * Identity-Aware Proxy agentregistryendpoint IAM resources can be imported using the resource identifiers, role, and member.
+   * 
+   * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
+   * ```sh
+   * $ terraform import google_iap_agent_registry_endpoint_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/iap_web/agentRegistry/endpoints/{{endpoint_id}} roles/iap.egressor user:jane{@literal @}example.com&#34;
+   * ```
+   * 
+   * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
+   * ```sh
+   * $ terraform import google_iap_agent_registry_endpoint_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/iap_web/agentRegistry/endpoints/{{endpoint_id}} roles/iap.egressor&#34;
+   * ```
+   * 
+   * IAM policy imports use the identifier of the resource in question, e.g.
+   * ```sh
+   * $ pulumi import gcp:iap/agentRegistryEndpointIamBinding:AgentRegistryEndpointIamBinding editor projects/{{project}}/locations/{{location}}/iap_web/agentRegistry/endpoints/{{endpoint_id}}
+   * ```
+   * 
+   * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
+   *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
+   */
+  def AgentRegistryEndpointIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+      (args: Endofunction[com.pulumi.gcp.iap.AgentRegistryEndpointIamBindingArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+    val argsBuilder = com.pulumi.gcp.iap.AgentRegistryEndpointIamBindingArgs.builder
+    com.pulumi.gcp.iap.AgentRegistryEndpointIamBinding(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+
+  extension (builder: com.pulumi.gcp.iap.AgentRegistryEndpointIamBindingArgs.Builder)
+    /**
+     * @param condition An [IAM Condition](https://cloud.google.com/iam/docs/conditions-overview) for a given binding.
+     * Structure is documented below.
+     * @return builder
+     */
+    def condition(args: Endofunction[com.pulumi.gcp.iap.inputs.AgentRegistryEndpointIamBindingConditionArgs.Builder]):
+        com.pulumi.gcp.iap.AgentRegistryEndpointIamBindingArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.iap.inputs.AgentRegistryEndpointIamBindingConditionArgs.builder
+      builder.condition(args(argsBuilder).build)
+
+  /**
+   * Three different resources help you manage your IAM policy for Identity-Aware Proxy AgentRegistryEndpoint. Each of these resources serves a different use case:
+   * 
+   * * `gcp.iap.AgentRegistryEndpointIamPolicy`: Authoritative. Sets the IAM policy for the agentregistryendpoint and replaces any existing policy already attached.
+   * * `gcp.iap.AgentRegistryEndpointIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the agentregistryendpoint are preserved.
+   * * `gcp.iap.AgentRegistryEndpointIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the agentregistryendpoint are preserved.
+   * 
+   * A data source can be used to retrieve policy data in advent you do not need creation
+   * 
+   * * `gcp.iap.AgentRegistryEndpointIamPolicy`: Retrieves the IAM policy for the agentregistryendpoint
+   * 
+   * &gt; **Note:** `gcp.iap.AgentRegistryEndpointIamPolicy` **cannot** be used in conjunction with `gcp.iap.AgentRegistryEndpointIamBinding` and `gcp.iap.AgentRegistryEndpointIamMember` or they will fight over what your policy should be.
+   * 
+   * &gt; **Note:** `gcp.iap.AgentRegistryEndpointIamBinding` resources **can be** used in conjunction with `gcp.iap.AgentRegistryEndpointIamMember` resources **only if** they do not grant privilege to the same role.
+   * 
+   * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
+   * 
+   * ## gcp.iap.AgentRegistryEndpointIamPolicy
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.organizations.OrganizationsFunctions;
+   * import com.pulumi.gcp.organizations.inputs.GetIAMPolicyArgs;
+   * import com.pulumi.gcp.organizations.inputs.GetIAMPolicyBindingArgs;
+   * import com.pulumi.gcp.iap.AgentRegistryEndpointIamPolicy;
+   * import com.pulumi.gcp.iap.AgentRegistryEndpointIamPolicyArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         final var admin = OrganizationsFunctions.getIAMPolicy(GetIAMPolicyArgs.builder()
+   *             .bindings(GetIAMPolicyBindingArgs.builder()
+   *                 .role("roles/iap.egressor")
+   *                 .members("user:jane}{@literal @}{@code example.com")
+   *                 .build())
+   *             .build());
+   * 
+   *         var policy = new AgentRegistryEndpointIamPolicy("policy", AgentRegistryEndpointIamPolicyArgs.builder()
+   *             .project(default_.project())
+   *             .location(default_.location())
+   *             .endpointId(default_.endpointId())
+   *             .policyData(admin.policyData())
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * With IAM Conditions:
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.organizations.OrganizationsFunctions;
+   * import com.pulumi.gcp.organizations.inputs.GetIAMPolicyArgs;
+   * import com.pulumi.gcp.organizations.inputs.GetIAMPolicyBindingArgs;
+   * import com.pulumi.gcp.organizations.inputs.GetIAMPolicyBindingConditionArgs;
+   * import com.pulumi.gcp.iap.AgentRegistryEndpointIamPolicy;
+   * import com.pulumi.gcp.iap.AgentRegistryEndpointIamPolicyArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         final var admin = OrganizationsFunctions.getIAMPolicy(GetIAMPolicyArgs.builder()
+   *             .bindings(GetIAMPolicyBindingArgs.builder()
+   *                 .role("roles/iap.egressor")
+   *                 .members("user:jane}{@literal @}{@code example.com")
+   *                 .condition(GetIAMPolicyBindingConditionArgs.builder()
+   *                     .title("expires_after_2019_12_31")
+   *                     .description("Expiring at midnight of 2019-12-31")
+   *                     .expression("request.time < timestamp(\"2020-01-01T00:00:00Z\")")
+   *                     .build())
+   *                 .build())
+   *             .build());
+   * 
+   *         var policy = new AgentRegistryEndpointIamPolicy("policy", AgentRegistryEndpointIamPolicyArgs.builder()
+   *             .project(default_.project())
+   *             .location(default_.location())
+   *             .endpointId(default_.endpointId())
+   *             .policyData(admin.policyData())
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * ## gcp.iap.AgentRegistryEndpointIamBinding
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.iap.AgentRegistryEndpointIamBinding;
+   * import com.pulumi.gcp.iap.AgentRegistryEndpointIamBindingArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         var binding = new AgentRegistryEndpointIamBinding("binding", AgentRegistryEndpointIamBindingArgs.builder()
+   *             .project(default_.project())
+   *             .location(default_.location())
+   *             .endpointId(default_.endpointId())
+   *             .role("roles/iap.egressor")
+   *             .members("user:jane}{@literal @}{@code example.com")
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * With IAM Conditions:
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.iap.AgentRegistryEndpointIamBinding;
+   * import com.pulumi.gcp.iap.AgentRegistryEndpointIamBindingArgs;
+   * import com.pulumi.gcp.iap.inputs.AgentRegistryEndpointIamBindingConditionArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         var binding = new AgentRegistryEndpointIamBinding("binding", AgentRegistryEndpointIamBindingArgs.builder()
+   *             .project(default_.project())
+   *             .location(default_.location())
+   *             .endpointId(default_.endpointId())
+   *             .role("roles/iap.egressor")
+   *             .members("user:jane}{@literal @}{@code example.com")
+   *             .condition(AgentRegistryEndpointIamBindingConditionArgs.builder()
+   *                 .title("expires_after_2019_12_31")
+   *                 .description("Expiring at midnight of 2019-12-31")
+   *                 .expression("request.time < timestamp(\"2020-01-01T00:00:00Z\")")
+   *                 .build())
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * ## gcp.iap.AgentRegistryEndpointIamMember
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.iap.AgentRegistryEndpointIamMember;
+   * import com.pulumi.gcp.iap.AgentRegistryEndpointIamMemberArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         var member = new AgentRegistryEndpointIamMember("member", AgentRegistryEndpointIamMemberArgs.builder()
+   *             .project(default_.project())
+   *             .location(default_.location())
+   *             .endpointId(default_.endpointId())
+   *             .role("roles/iap.egressor")
+   *             .member("user:jane}{@literal @}{@code example.com")
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * With IAM Conditions:
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.iap.AgentRegistryEndpointIamMember;
+   * import com.pulumi.gcp.iap.AgentRegistryEndpointIamMemberArgs;
+   * import com.pulumi.gcp.iap.inputs.AgentRegistryEndpointIamMemberConditionArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         var member = new AgentRegistryEndpointIamMember("member", AgentRegistryEndpointIamMemberArgs.builder()
+   *             .project(default_.project())
+   *             .location(default_.location())
+   *             .endpointId(default_.endpointId())
+   *             .role("roles/iap.egressor")
+   *             .member("user:jane}{@literal @}{@code example.com")
+   *             .condition(AgentRegistryEndpointIamMemberConditionArgs.builder()
+   *                 .title("expires_after_2019_12_31")
+   *                 .description("Expiring at midnight of 2019-12-31")
+   *                 .expression("request.time < timestamp(\"2020-01-01T00:00:00Z\")")
+   *                 .build())
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * ## This resource supports User Project Overrides.
+   * 
+   * -
+   * 
+   * # IAM policy for Identity-Aware Proxy AgentRegistryEndpoint
+   * 
+   * Three different resources help you manage your IAM policy for Identity-Aware Proxy AgentRegistryEndpoint. Each of these resources serves a different use case:
+   * 
+   * * `gcp.iap.AgentRegistryEndpointIamPolicy`: Authoritative. Sets the IAM policy for the agentregistryendpoint and replaces any existing policy already attached.
+   * * `gcp.iap.AgentRegistryEndpointIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the agentregistryendpoint are preserved.
+   * * `gcp.iap.AgentRegistryEndpointIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the agentregistryendpoint are preserved.
+   * 
+   * A data source can be used to retrieve policy data in advent you do not need creation
+   * 
+   * * `gcp.iap.AgentRegistryEndpointIamPolicy`: Retrieves the IAM policy for the agentregistryendpoint
+   * 
+   * &gt; **Note:** `gcp.iap.AgentRegistryEndpointIamPolicy` **cannot** be used in conjunction with `gcp.iap.AgentRegistryEndpointIamBinding` and `gcp.iap.AgentRegistryEndpointIamMember` or they will fight over what your policy should be.
+   * 
+   * &gt; **Note:** `gcp.iap.AgentRegistryEndpointIamBinding` resources **can be** used in conjunction with `gcp.iap.AgentRegistryEndpointIamMember` resources **only if** they do not grant privilege to the same role.
+   * 
+   * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
+   * 
+   * ## gcp.iap.AgentRegistryEndpointIamPolicy
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.organizations.OrganizationsFunctions;
+   * import com.pulumi.gcp.organizations.inputs.GetIAMPolicyArgs;
+   * import com.pulumi.gcp.organizations.inputs.GetIAMPolicyBindingArgs;
+   * import com.pulumi.gcp.iap.AgentRegistryEndpointIamPolicy;
+   * import com.pulumi.gcp.iap.AgentRegistryEndpointIamPolicyArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         final var admin = OrganizationsFunctions.getIAMPolicy(GetIAMPolicyArgs.builder()
+   *             .bindings(GetIAMPolicyBindingArgs.builder()
+   *                 .role("roles/iap.egressor")
+   *                 .members("user:jane}{@literal @}{@code example.com")
+   *                 .build())
+   *             .build());
+   * 
+   *         var policy = new AgentRegistryEndpointIamPolicy("policy", AgentRegistryEndpointIamPolicyArgs.builder()
+   *             .project(default_.project())
+   *             .location(default_.location())
+   *             .endpointId(default_.endpointId())
+   *             .policyData(admin.policyData())
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * With IAM Conditions:
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.organizations.OrganizationsFunctions;
+   * import com.pulumi.gcp.organizations.inputs.GetIAMPolicyArgs;
+   * import com.pulumi.gcp.organizations.inputs.GetIAMPolicyBindingArgs;
+   * import com.pulumi.gcp.organizations.inputs.GetIAMPolicyBindingConditionArgs;
+   * import com.pulumi.gcp.iap.AgentRegistryEndpointIamPolicy;
+   * import com.pulumi.gcp.iap.AgentRegistryEndpointIamPolicyArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         final var admin = OrganizationsFunctions.getIAMPolicy(GetIAMPolicyArgs.builder()
+   *             .bindings(GetIAMPolicyBindingArgs.builder()
+   *                 .role("roles/iap.egressor")
+   *                 .members("user:jane}{@literal @}{@code example.com")
+   *                 .condition(GetIAMPolicyBindingConditionArgs.builder()
+   *                     .title("expires_after_2019_12_31")
+   *                     .description("Expiring at midnight of 2019-12-31")
+   *                     .expression("request.time < timestamp(\"2020-01-01T00:00:00Z\")")
+   *                     .build())
+   *                 .build())
+   *             .build());
+   * 
+   *         var policy = new AgentRegistryEndpointIamPolicy("policy", AgentRegistryEndpointIamPolicyArgs.builder()
+   *             .project(default_.project())
+   *             .location(default_.location())
+   *             .endpointId(default_.endpointId())
+   *             .policyData(admin.policyData())
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * ## gcp.iap.AgentRegistryEndpointIamBinding
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.iap.AgentRegistryEndpointIamBinding;
+   * import com.pulumi.gcp.iap.AgentRegistryEndpointIamBindingArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         var binding = new AgentRegistryEndpointIamBinding("binding", AgentRegistryEndpointIamBindingArgs.builder()
+   *             .project(default_.project())
+   *             .location(default_.location())
+   *             .endpointId(default_.endpointId())
+   *             .role("roles/iap.egressor")
+   *             .members("user:jane}{@literal @}{@code example.com")
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * With IAM Conditions:
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.iap.AgentRegistryEndpointIamBinding;
+   * import com.pulumi.gcp.iap.AgentRegistryEndpointIamBindingArgs;
+   * import com.pulumi.gcp.iap.inputs.AgentRegistryEndpointIamBindingConditionArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         var binding = new AgentRegistryEndpointIamBinding("binding", AgentRegistryEndpointIamBindingArgs.builder()
+   *             .project(default_.project())
+   *             .location(default_.location())
+   *             .endpointId(default_.endpointId())
+   *             .role("roles/iap.egressor")
+   *             .members("user:jane}{@literal @}{@code example.com")
+   *             .condition(AgentRegistryEndpointIamBindingConditionArgs.builder()
+   *                 .title("expires_after_2019_12_31")
+   *                 .description("Expiring at midnight of 2019-12-31")
+   *                 .expression("request.time < timestamp(\"2020-01-01T00:00:00Z\")")
+   *                 .build())
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * ## gcp.iap.AgentRegistryEndpointIamMember
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.iap.AgentRegistryEndpointIamMember;
+   * import com.pulumi.gcp.iap.AgentRegistryEndpointIamMemberArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         var member = new AgentRegistryEndpointIamMember("member", AgentRegistryEndpointIamMemberArgs.builder()
+   *             .project(default_.project())
+   *             .location(default_.location())
+   *             .endpointId(default_.endpointId())
+   *             .role("roles/iap.egressor")
+   *             .member("user:jane}{@literal @}{@code example.com")
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * With IAM Conditions:
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.iap.AgentRegistryEndpointIamMember;
+   * import com.pulumi.gcp.iap.AgentRegistryEndpointIamMemberArgs;
+   * import com.pulumi.gcp.iap.inputs.AgentRegistryEndpointIamMemberConditionArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         var member = new AgentRegistryEndpointIamMember("member", AgentRegistryEndpointIamMemberArgs.builder()
+   *             .project(default_.project())
+   *             .location(default_.location())
+   *             .endpointId(default_.endpointId())
+   *             .role("roles/iap.egressor")
+   *             .member("user:jane}{@literal @}{@code example.com")
+   *             .condition(AgentRegistryEndpointIamMemberConditionArgs.builder()
+   *                 .title("expires_after_2019_12_31")
+   *                 .description("Expiring at midnight of 2019-12-31")
+   *                 .expression("request.time < timestamp(\"2020-01-01T00:00:00Z\")")
+   *                 .build())
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * ## Import
+   * 
+   * For all import syntaxes, the &#34;resource in question&#34; can take any of the following forms:
+   * 
+   * * projects/{{project}}/locations/{{location}}/iap_web/agentRegistry/endpoints/{{endpoint_id}}
+   * * {{project}}/{{location}}/{{endpoint_id}}
+   * * {{location}}/{{endpoint_id}}
+   * * {{endpoint_id}}
+   * 
+   * Any variables not passed in the import command will be taken from the provider configuration.
+   * 
+   * Identity-Aware Proxy agentregistryendpoint IAM resources can be imported using the resource identifiers, role, and member.
+   * 
+   * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
+   * ```sh
+   * $ terraform import google_iap_agent_registry_endpoint_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/iap_web/agentRegistry/endpoints/{{endpoint_id}} roles/iap.egressor user:jane{@literal @}example.com&#34;
+   * ```
+   * 
+   * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
+   * ```sh
+   * $ terraform import google_iap_agent_registry_endpoint_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/iap_web/agentRegistry/endpoints/{{endpoint_id}} roles/iap.egressor&#34;
+   * ```
+   * 
+   * IAM policy imports use the identifier of the resource in question, e.g.
+   * ```sh
+   * $ pulumi import gcp:iap/agentRegistryEndpointIamMember:AgentRegistryEndpointIamMember editor projects/{{project}}/locations/{{location}}/iap_web/agentRegistry/endpoints/{{endpoint_id}}
+   * ```
+   * 
+   * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
+   *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
+   */
+  def AgentRegistryEndpointIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+      (args: Endofunction[com.pulumi.gcp.iap.AgentRegistryEndpointIamMemberArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+    val argsBuilder = com.pulumi.gcp.iap.AgentRegistryEndpointIamMemberArgs.builder
+    com.pulumi.gcp.iap.AgentRegistryEndpointIamMember(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+
+  extension (builder: com.pulumi.gcp.iap.AgentRegistryEndpointIamMemberArgs.Builder)
+    /**
+     * @param condition An [IAM Condition](https://cloud.google.com/iam/docs/conditions-overview) for a given binding.
+     * Structure is documented below.
+     * @return builder
+     */
+    def condition(args: Endofunction[com.pulumi.gcp.iap.inputs.AgentRegistryEndpointIamMemberConditionArgs.Builder]):
+        com.pulumi.gcp.iap.AgentRegistryEndpointIamMemberArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.iap.inputs.AgentRegistryEndpointIamMemberConditionArgs.builder
+      builder.condition(args(argsBuilder).build)
+
+  /**
+   * Three different resources help you manage your IAM policy for Identity-Aware Proxy AgentRegistryEndpoint. Each of these resources serves a different use case:
+   * 
+   * * `gcp.iap.AgentRegistryEndpointIamPolicy`: Authoritative. Sets the IAM policy for the agentregistryendpoint and replaces any existing policy already attached.
+   * * `gcp.iap.AgentRegistryEndpointIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the agentregistryendpoint are preserved.
+   * * `gcp.iap.AgentRegistryEndpointIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the agentregistryendpoint are preserved.
+   * 
+   * A data source can be used to retrieve policy data in advent you do not need creation
+   * 
+   * * `gcp.iap.AgentRegistryEndpointIamPolicy`: Retrieves the IAM policy for the agentregistryendpoint
+   * 
+   * &gt; **Note:** `gcp.iap.AgentRegistryEndpointIamPolicy` **cannot** be used in conjunction with `gcp.iap.AgentRegistryEndpointIamBinding` and `gcp.iap.AgentRegistryEndpointIamMember` or they will fight over what your policy should be.
+   * 
+   * &gt; **Note:** `gcp.iap.AgentRegistryEndpointIamBinding` resources **can be** used in conjunction with `gcp.iap.AgentRegistryEndpointIamMember` resources **only if** they do not grant privilege to the same role.
+   * 
+   * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
+   * 
+   * ## gcp.iap.AgentRegistryEndpointIamPolicy
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.organizations.OrganizationsFunctions;
+   * import com.pulumi.gcp.organizations.inputs.GetIAMPolicyArgs;
+   * import com.pulumi.gcp.organizations.inputs.GetIAMPolicyBindingArgs;
+   * import com.pulumi.gcp.iap.AgentRegistryEndpointIamPolicy;
+   * import com.pulumi.gcp.iap.AgentRegistryEndpointIamPolicyArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         final var admin = OrganizationsFunctions.getIAMPolicy(GetIAMPolicyArgs.builder()
+   *             .bindings(GetIAMPolicyBindingArgs.builder()
+   *                 .role("roles/iap.egressor")
+   *                 .members("user:jane}{@literal @}{@code example.com")
+   *                 .build())
+   *             .build());
+   * 
+   *         var policy = new AgentRegistryEndpointIamPolicy("policy", AgentRegistryEndpointIamPolicyArgs.builder()
+   *             .project(default_.project())
+   *             .location(default_.location())
+   *             .endpointId(default_.endpointId())
+   *             .policyData(admin.policyData())
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * With IAM Conditions:
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.organizations.OrganizationsFunctions;
+   * import com.pulumi.gcp.organizations.inputs.GetIAMPolicyArgs;
+   * import com.pulumi.gcp.organizations.inputs.GetIAMPolicyBindingArgs;
+   * import com.pulumi.gcp.organizations.inputs.GetIAMPolicyBindingConditionArgs;
+   * import com.pulumi.gcp.iap.AgentRegistryEndpointIamPolicy;
+   * import com.pulumi.gcp.iap.AgentRegistryEndpointIamPolicyArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         final var admin = OrganizationsFunctions.getIAMPolicy(GetIAMPolicyArgs.builder()
+   *             .bindings(GetIAMPolicyBindingArgs.builder()
+   *                 .role("roles/iap.egressor")
+   *                 .members("user:jane}{@literal @}{@code example.com")
+   *                 .condition(GetIAMPolicyBindingConditionArgs.builder()
+   *                     .title("expires_after_2019_12_31")
+   *                     .description("Expiring at midnight of 2019-12-31")
+   *                     .expression("request.time < timestamp(\"2020-01-01T00:00:00Z\")")
+   *                     .build())
+   *                 .build())
+   *             .build());
+   * 
+   *         var policy = new AgentRegistryEndpointIamPolicy("policy", AgentRegistryEndpointIamPolicyArgs.builder()
+   *             .project(default_.project())
+   *             .location(default_.location())
+   *             .endpointId(default_.endpointId())
+   *             .policyData(admin.policyData())
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * ## gcp.iap.AgentRegistryEndpointIamBinding
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.iap.AgentRegistryEndpointIamBinding;
+   * import com.pulumi.gcp.iap.AgentRegistryEndpointIamBindingArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         var binding = new AgentRegistryEndpointIamBinding("binding", AgentRegistryEndpointIamBindingArgs.builder()
+   *             .project(default_.project())
+   *             .location(default_.location())
+   *             .endpointId(default_.endpointId())
+   *             .role("roles/iap.egressor")
+   *             .members("user:jane}{@literal @}{@code example.com")
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * With IAM Conditions:
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.iap.AgentRegistryEndpointIamBinding;
+   * import com.pulumi.gcp.iap.AgentRegistryEndpointIamBindingArgs;
+   * import com.pulumi.gcp.iap.inputs.AgentRegistryEndpointIamBindingConditionArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         var binding = new AgentRegistryEndpointIamBinding("binding", AgentRegistryEndpointIamBindingArgs.builder()
+   *             .project(default_.project())
+   *             .location(default_.location())
+   *             .endpointId(default_.endpointId())
+   *             .role("roles/iap.egressor")
+   *             .members("user:jane}{@literal @}{@code example.com")
+   *             .condition(AgentRegistryEndpointIamBindingConditionArgs.builder()
+   *                 .title("expires_after_2019_12_31")
+   *                 .description("Expiring at midnight of 2019-12-31")
+   *                 .expression("request.time < timestamp(\"2020-01-01T00:00:00Z\")")
+   *                 .build())
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * ## gcp.iap.AgentRegistryEndpointIamMember
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.iap.AgentRegistryEndpointIamMember;
+   * import com.pulumi.gcp.iap.AgentRegistryEndpointIamMemberArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         var member = new AgentRegistryEndpointIamMember("member", AgentRegistryEndpointIamMemberArgs.builder()
+   *             .project(default_.project())
+   *             .location(default_.location())
+   *             .endpointId(default_.endpointId())
+   *             .role("roles/iap.egressor")
+   *             .member("user:jane}{@literal @}{@code example.com")
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * With IAM Conditions:
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.iap.AgentRegistryEndpointIamMember;
+   * import com.pulumi.gcp.iap.AgentRegistryEndpointIamMemberArgs;
+   * import com.pulumi.gcp.iap.inputs.AgentRegistryEndpointIamMemberConditionArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         var member = new AgentRegistryEndpointIamMember("member", AgentRegistryEndpointIamMemberArgs.builder()
+   *             .project(default_.project())
+   *             .location(default_.location())
+   *             .endpointId(default_.endpointId())
+   *             .role("roles/iap.egressor")
+   *             .member("user:jane}{@literal @}{@code example.com")
+   *             .condition(AgentRegistryEndpointIamMemberConditionArgs.builder()
+   *                 .title("expires_after_2019_12_31")
+   *                 .description("Expiring at midnight of 2019-12-31")
+   *                 .expression("request.time < timestamp(\"2020-01-01T00:00:00Z\")")
+   *                 .build())
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * ## This resource supports User Project Overrides.
+   * 
+   * -
+   * 
+   * # IAM policy for Identity-Aware Proxy AgentRegistryEndpoint
+   * 
+   * Three different resources help you manage your IAM policy for Identity-Aware Proxy AgentRegistryEndpoint. Each of these resources serves a different use case:
+   * 
+   * * `gcp.iap.AgentRegistryEndpointIamPolicy`: Authoritative. Sets the IAM policy for the agentregistryendpoint and replaces any existing policy already attached.
+   * * `gcp.iap.AgentRegistryEndpointIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the agentregistryendpoint are preserved.
+   * * `gcp.iap.AgentRegistryEndpointIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the agentregistryendpoint are preserved.
+   * 
+   * A data source can be used to retrieve policy data in advent you do not need creation
+   * 
+   * * `gcp.iap.AgentRegistryEndpointIamPolicy`: Retrieves the IAM policy for the agentregistryendpoint
+   * 
+   * &gt; **Note:** `gcp.iap.AgentRegistryEndpointIamPolicy` **cannot** be used in conjunction with `gcp.iap.AgentRegistryEndpointIamBinding` and `gcp.iap.AgentRegistryEndpointIamMember` or they will fight over what your policy should be.
+   * 
+   * &gt; **Note:** `gcp.iap.AgentRegistryEndpointIamBinding` resources **can be** used in conjunction with `gcp.iap.AgentRegistryEndpointIamMember` resources **only if** they do not grant privilege to the same role.
+   * 
+   * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
+   * 
+   * ## gcp.iap.AgentRegistryEndpointIamPolicy
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.organizations.OrganizationsFunctions;
+   * import com.pulumi.gcp.organizations.inputs.GetIAMPolicyArgs;
+   * import com.pulumi.gcp.organizations.inputs.GetIAMPolicyBindingArgs;
+   * import com.pulumi.gcp.iap.AgentRegistryEndpointIamPolicy;
+   * import com.pulumi.gcp.iap.AgentRegistryEndpointIamPolicyArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         final var admin = OrganizationsFunctions.getIAMPolicy(GetIAMPolicyArgs.builder()
+   *             .bindings(GetIAMPolicyBindingArgs.builder()
+   *                 .role("roles/iap.egressor")
+   *                 .members("user:jane}{@literal @}{@code example.com")
+   *                 .build())
+   *             .build());
+   * 
+   *         var policy = new AgentRegistryEndpointIamPolicy("policy", AgentRegistryEndpointIamPolicyArgs.builder()
+   *             .project(default_.project())
+   *             .location(default_.location())
+   *             .endpointId(default_.endpointId())
+   *             .policyData(admin.policyData())
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * With IAM Conditions:
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.organizations.OrganizationsFunctions;
+   * import com.pulumi.gcp.organizations.inputs.GetIAMPolicyArgs;
+   * import com.pulumi.gcp.organizations.inputs.GetIAMPolicyBindingArgs;
+   * import com.pulumi.gcp.organizations.inputs.GetIAMPolicyBindingConditionArgs;
+   * import com.pulumi.gcp.iap.AgentRegistryEndpointIamPolicy;
+   * import com.pulumi.gcp.iap.AgentRegistryEndpointIamPolicyArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         final var admin = OrganizationsFunctions.getIAMPolicy(GetIAMPolicyArgs.builder()
+   *             .bindings(GetIAMPolicyBindingArgs.builder()
+   *                 .role("roles/iap.egressor")
+   *                 .members("user:jane}{@literal @}{@code example.com")
+   *                 .condition(GetIAMPolicyBindingConditionArgs.builder()
+   *                     .title("expires_after_2019_12_31")
+   *                     .description("Expiring at midnight of 2019-12-31")
+   *                     .expression("request.time < timestamp(\"2020-01-01T00:00:00Z\")")
+   *                     .build())
+   *                 .build())
+   *             .build());
+   * 
+   *         var policy = new AgentRegistryEndpointIamPolicy("policy", AgentRegistryEndpointIamPolicyArgs.builder()
+   *             .project(default_.project())
+   *             .location(default_.location())
+   *             .endpointId(default_.endpointId())
+   *             .policyData(admin.policyData())
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * ## gcp.iap.AgentRegistryEndpointIamBinding
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.iap.AgentRegistryEndpointIamBinding;
+   * import com.pulumi.gcp.iap.AgentRegistryEndpointIamBindingArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         var binding = new AgentRegistryEndpointIamBinding("binding", AgentRegistryEndpointIamBindingArgs.builder()
+   *             .project(default_.project())
+   *             .location(default_.location())
+   *             .endpointId(default_.endpointId())
+   *             .role("roles/iap.egressor")
+   *             .members("user:jane}{@literal @}{@code example.com")
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * With IAM Conditions:
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.iap.AgentRegistryEndpointIamBinding;
+   * import com.pulumi.gcp.iap.AgentRegistryEndpointIamBindingArgs;
+   * import com.pulumi.gcp.iap.inputs.AgentRegistryEndpointIamBindingConditionArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         var binding = new AgentRegistryEndpointIamBinding("binding", AgentRegistryEndpointIamBindingArgs.builder()
+   *             .project(default_.project())
+   *             .location(default_.location())
+   *             .endpointId(default_.endpointId())
+   *             .role("roles/iap.egressor")
+   *             .members("user:jane}{@literal @}{@code example.com")
+   *             .condition(AgentRegistryEndpointIamBindingConditionArgs.builder()
+   *                 .title("expires_after_2019_12_31")
+   *                 .description("Expiring at midnight of 2019-12-31")
+   *                 .expression("request.time < timestamp(\"2020-01-01T00:00:00Z\")")
+   *                 .build())
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * ## gcp.iap.AgentRegistryEndpointIamMember
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.iap.AgentRegistryEndpointIamMember;
+   * import com.pulumi.gcp.iap.AgentRegistryEndpointIamMemberArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         var member = new AgentRegistryEndpointIamMember("member", AgentRegistryEndpointIamMemberArgs.builder()
+   *             .project(default_.project())
+   *             .location(default_.location())
+   *             .endpointId(default_.endpointId())
+   *             .role("roles/iap.egressor")
+   *             .member("user:jane}{@literal @}{@code example.com")
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * With IAM Conditions:
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.iap.AgentRegistryEndpointIamMember;
+   * import com.pulumi.gcp.iap.AgentRegistryEndpointIamMemberArgs;
+   * import com.pulumi.gcp.iap.inputs.AgentRegistryEndpointIamMemberConditionArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         var member = new AgentRegistryEndpointIamMember("member", AgentRegistryEndpointIamMemberArgs.builder()
+   *             .project(default_.project())
+   *             .location(default_.location())
+   *             .endpointId(default_.endpointId())
+   *             .role("roles/iap.egressor")
+   *             .member("user:jane}{@literal @}{@code example.com")
+   *             .condition(AgentRegistryEndpointIamMemberConditionArgs.builder()
+   *                 .title("expires_after_2019_12_31")
+   *                 .description("Expiring at midnight of 2019-12-31")
+   *                 .expression("request.time < timestamp(\"2020-01-01T00:00:00Z\")")
+   *                 .build())
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * ## Import
+   * 
+   * For all import syntaxes, the &#34;resource in question&#34; can take any of the following forms:
+   * 
+   * * projects/{{project}}/locations/{{location}}/iap_web/agentRegistry/endpoints/{{endpoint_id}}
+   * * {{project}}/{{location}}/{{endpoint_id}}
+   * * {{location}}/{{endpoint_id}}
+   * * {{endpoint_id}}
+   * 
+   * Any variables not passed in the import command will be taken from the provider configuration.
+   * 
+   * Identity-Aware Proxy agentregistryendpoint IAM resources can be imported using the resource identifiers, role, and member.
+   * 
+   * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
+   * ```sh
+   * $ terraform import google_iap_agent_registry_endpoint_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/iap_web/agentRegistry/endpoints/{{endpoint_id}} roles/iap.egressor user:jane{@literal @}example.com&#34;
+   * ```
+   * 
+   * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
+   * ```sh
+   * $ terraform import google_iap_agent_registry_endpoint_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/iap_web/agentRegistry/endpoints/{{endpoint_id}} roles/iap.egressor&#34;
+   * ```
+   * 
+   * IAM policy imports use the identifier of the resource in question, e.g.
+   * ```sh
+   * $ pulumi import gcp:iap/agentRegistryEndpointIamPolicy:AgentRegistryEndpointIamPolicy editor projects/{{project}}/locations/{{location}}/iap_web/agentRegistry/endpoints/{{endpoint_id}}
+   * ```
+   * 
+   * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
+   *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
+   */
+  def AgentRegistryEndpointIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+      (args: Endofunction[com.pulumi.gcp.iap.AgentRegistryEndpointIamPolicyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+    val argsBuilder = com.pulumi.gcp.iap.AgentRegistryEndpointIamPolicyArgs.builder
+    com.pulumi.gcp.iap.AgentRegistryEndpointIamPolicy(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+
+  /**
    * Three different resources help you manage your IAM policy for Identity-Aware Proxy AgentRegistry. Each of these resources serves a different use case:
    * 
    * * `gcp.iap.AgentRegistryIamPolicy`: Authoritative. Sets the IAM policy for the agentregistry and replaces any existing policy already attached.
@@ -20,9 +3598,6 @@ object iap:
    * &gt; **Note:** `gcp.iap.AgentRegistryIamBinding` resources **can be** used in conjunction with `gcp.iap.AgentRegistryIamMember` resources **only if** they do not grant privilege to the same role.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
-   * 
-   * &gt; **Warning:** This resource is in beta, and should be used with the terraform-provider-google-beta provider.
-   * See Provider Versions for more details on beta resources.
    * 
    * ## gcp.iap.AgentRegistryIamPolicy
    * 
@@ -295,9 +3870,6 @@ object iap:
    * &gt; **Note:** `gcp.iap.AgentRegistryIamBinding` resources **can be** used in conjunction with `gcp.iap.AgentRegistryIamMember` resources **only if** they do not grant privilege to the same role.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
-   * 
-   * &gt; **Warning:** This resource is in beta, and should be used with the terraform-provider-google-beta provider.
-   * See Provider Versions for more details on beta resources.
    * 
    * ## gcp.iap.AgentRegistryIamPolicy
    * 
@@ -615,9 +4187,6 @@ object iap:
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
-   * &gt; **Warning:** This resource is in beta, and should be used with the terraform-provider-google-beta provider.
-   * See Provider Versions for more details on beta resources.
-   * 
    * ## gcp.iap.AgentRegistryIamPolicy
    * 
    * <pre>
@@ -889,9 +4458,6 @@ object iap:
    * &gt; **Note:** `gcp.iap.AgentRegistryIamBinding` resources **can be** used in conjunction with `gcp.iap.AgentRegistryIamMember` resources **only if** they do not grant privilege to the same role.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
-   * 
-   * &gt; **Warning:** This resource is in beta, and should be used with the terraform-provider-google-beta provider.
-   * See Provider Versions for more details on beta resources.
    * 
    * ## gcp.iap.AgentRegistryIamPolicy
    * 
@@ -1209,9 +4775,6 @@ object iap:
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
-   * &gt; **Warning:** This resource is in beta, and should be used with the terraform-provider-google-beta provider.
-   * See Provider Versions for more details on beta resources.
-   * 
    * ## gcp.iap.AgentRegistryIamPolicy
    * 
    * <pre>
@@ -1483,9 +5046,6 @@ object iap:
    * &gt; **Note:** `gcp.iap.AgentRegistryIamBinding` resources **can be** used in conjunction with `gcp.iap.AgentRegistryIamMember` resources **only if** they do not grant privilege to the same role.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
-   * 
-   * &gt; **Warning:** This resource is in beta, and should be used with the terraform-provider-google-beta provider.
-   * See Provider Versions for more details on beta resources.
    * 
    * ## gcp.iap.AgentRegistryIamPolicy
    * 
@@ -1772,6 +5332,1795 @@ object iap:
       (args: Endofunction[com.pulumi.gcp.iap.AgentRegistryIamPolicyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.iap.AgentRegistryIamPolicyArgs.builder
     com.pulumi.gcp.iap.AgentRegistryIamPolicy(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+
+  /**
+   * Three different resources help you manage your IAM policy for Identity-Aware Proxy AgentRegistryMcpServer. Each of these resources serves a different use case:
+   * 
+   * * `gcp.iap.AgentRegistryMcpServerIamPolicy`: Authoritative. Sets the IAM policy for the agentregistrymcpserver and replaces any existing policy already attached.
+   * * `gcp.iap.AgentRegistryMcpServerIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the agentregistrymcpserver are preserved.
+   * * `gcp.iap.AgentRegistryMcpServerIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the agentregistrymcpserver are preserved.
+   * 
+   * A data source can be used to retrieve policy data in advent you do not need creation
+   * 
+   * * `gcp.iap.AgentRegistryMcpServerIamPolicy`: Retrieves the IAM policy for the agentregistrymcpserver
+   * 
+   * &gt; **Note:** `gcp.iap.AgentRegistryMcpServerIamPolicy` **cannot** be used in conjunction with `gcp.iap.AgentRegistryMcpServerIamBinding` and `gcp.iap.AgentRegistryMcpServerIamMember` or they will fight over what your policy should be.
+   * 
+   * &gt; **Note:** `gcp.iap.AgentRegistryMcpServerIamBinding` resources **can be** used in conjunction with `gcp.iap.AgentRegistryMcpServerIamMember` resources **only if** they do not grant privilege to the same role.
+   * 
+   * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
+   * 
+   * ## gcp.iap.AgentRegistryMcpServerIamPolicy
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.organizations.OrganizationsFunctions;
+   * import com.pulumi.gcp.organizations.inputs.GetIAMPolicyArgs;
+   * import com.pulumi.gcp.organizations.inputs.GetIAMPolicyBindingArgs;
+   * import com.pulumi.gcp.iap.AgentRegistryMcpServerIamPolicy;
+   * import com.pulumi.gcp.iap.AgentRegistryMcpServerIamPolicyArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         final var admin = OrganizationsFunctions.getIAMPolicy(GetIAMPolicyArgs.builder()
+   *             .bindings(GetIAMPolicyBindingArgs.builder()
+   *                 .role("roles/iap.egressor")
+   *                 .members("user:jane}{@literal @}{@code example.com")
+   *                 .build())
+   *             .build());
+   * 
+   *         var policy = new AgentRegistryMcpServerIamPolicy("policy", AgentRegistryMcpServerIamPolicyArgs.builder()
+   *             .project(default_.project())
+   *             .location(default_.location())
+   *             .mcpServerId(default_.mcpServerId())
+   *             .policyData(admin.policyData())
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * With IAM Conditions:
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.organizations.OrganizationsFunctions;
+   * import com.pulumi.gcp.organizations.inputs.GetIAMPolicyArgs;
+   * import com.pulumi.gcp.organizations.inputs.GetIAMPolicyBindingArgs;
+   * import com.pulumi.gcp.organizations.inputs.GetIAMPolicyBindingConditionArgs;
+   * import com.pulumi.gcp.iap.AgentRegistryMcpServerIamPolicy;
+   * import com.pulumi.gcp.iap.AgentRegistryMcpServerIamPolicyArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         final var admin = OrganizationsFunctions.getIAMPolicy(GetIAMPolicyArgs.builder()
+   *             .bindings(GetIAMPolicyBindingArgs.builder()
+   *                 .role("roles/iap.egressor")
+   *                 .members("user:jane}{@literal @}{@code example.com")
+   *                 .condition(GetIAMPolicyBindingConditionArgs.builder()
+   *                     .title("expires_after_2019_12_31")
+   *                     .description("Expiring at midnight of 2019-12-31")
+   *                     .expression("request.time < timestamp(\"2020-01-01T00:00:00Z\")")
+   *                     .build())
+   *                 .build())
+   *             .build());
+   * 
+   *         var policy = new AgentRegistryMcpServerIamPolicy("policy", AgentRegistryMcpServerIamPolicyArgs.builder()
+   *             .project(default_.project())
+   *             .location(default_.location())
+   *             .mcpServerId(default_.mcpServerId())
+   *             .policyData(admin.policyData())
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * ## gcp.iap.AgentRegistryMcpServerIamBinding
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.iap.AgentRegistryMcpServerIamBinding;
+   * import com.pulumi.gcp.iap.AgentRegistryMcpServerIamBindingArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         var binding = new AgentRegistryMcpServerIamBinding("binding", AgentRegistryMcpServerIamBindingArgs.builder()
+   *             .project(default_.project())
+   *             .location(default_.location())
+   *             .mcpServerId(default_.mcpServerId())
+   *             .role("roles/iap.egressor")
+   *             .members("user:jane}{@literal @}{@code example.com")
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * With IAM Conditions:
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.iap.AgentRegistryMcpServerIamBinding;
+   * import com.pulumi.gcp.iap.AgentRegistryMcpServerIamBindingArgs;
+   * import com.pulumi.gcp.iap.inputs.AgentRegistryMcpServerIamBindingConditionArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         var binding = new AgentRegistryMcpServerIamBinding("binding", AgentRegistryMcpServerIamBindingArgs.builder()
+   *             .project(default_.project())
+   *             .location(default_.location())
+   *             .mcpServerId(default_.mcpServerId())
+   *             .role("roles/iap.egressor")
+   *             .members("user:jane}{@literal @}{@code example.com")
+   *             .condition(AgentRegistryMcpServerIamBindingConditionArgs.builder()
+   *                 .title("expires_after_2019_12_31")
+   *                 .description("Expiring at midnight of 2019-12-31")
+   *                 .expression("request.time < timestamp(\"2020-01-01T00:00:00Z\")")
+   *                 .build())
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * ## gcp.iap.AgentRegistryMcpServerIamMember
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.iap.AgentRegistryMcpServerIamMember;
+   * import com.pulumi.gcp.iap.AgentRegistryMcpServerIamMemberArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         var member = new AgentRegistryMcpServerIamMember("member", AgentRegistryMcpServerIamMemberArgs.builder()
+   *             .project(default_.project())
+   *             .location(default_.location())
+   *             .mcpServerId(default_.mcpServerId())
+   *             .role("roles/iap.egressor")
+   *             .member("user:jane}{@literal @}{@code example.com")
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * With IAM Conditions:
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.iap.AgentRegistryMcpServerIamMember;
+   * import com.pulumi.gcp.iap.AgentRegistryMcpServerIamMemberArgs;
+   * import com.pulumi.gcp.iap.inputs.AgentRegistryMcpServerIamMemberConditionArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         var member = new AgentRegistryMcpServerIamMember("member", AgentRegistryMcpServerIamMemberArgs.builder()
+   *             .project(default_.project())
+   *             .location(default_.location())
+   *             .mcpServerId(default_.mcpServerId())
+   *             .role("roles/iap.egressor")
+   *             .member("user:jane}{@literal @}{@code example.com")
+   *             .condition(AgentRegistryMcpServerIamMemberConditionArgs.builder()
+   *                 .title("expires_after_2019_12_31")
+   *                 .description("Expiring at midnight of 2019-12-31")
+   *                 .expression("request.time < timestamp(\"2020-01-01T00:00:00Z\")")
+   *                 .build())
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * ## This resource supports User Project Overrides.
+   * 
+   * -
+   * 
+   * # IAM policy for Identity-Aware Proxy AgentRegistryMcpServer
+   * 
+   * Three different resources help you manage your IAM policy for Identity-Aware Proxy AgentRegistryMcpServer. Each of these resources serves a different use case:
+   * 
+   * * `gcp.iap.AgentRegistryMcpServerIamPolicy`: Authoritative. Sets the IAM policy for the agentregistrymcpserver and replaces any existing policy already attached.
+   * * `gcp.iap.AgentRegistryMcpServerIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the agentregistrymcpserver are preserved.
+   * * `gcp.iap.AgentRegistryMcpServerIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the agentregistrymcpserver are preserved.
+   * 
+   * A data source can be used to retrieve policy data in advent you do not need creation
+   * 
+   * * `gcp.iap.AgentRegistryMcpServerIamPolicy`: Retrieves the IAM policy for the agentregistrymcpserver
+   * 
+   * &gt; **Note:** `gcp.iap.AgentRegistryMcpServerIamPolicy` **cannot** be used in conjunction with `gcp.iap.AgentRegistryMcpServerIamBinding` and `gcp.iap.AgentRegistryMcpServerIamMember` or they will fight over what your policy should be.
+   * 
+   * &gt; **Note:** `gcp.iap.AgentRegistryMcpServerIamBinding` resources **can be** used in conjunction with `gcp.iap.AgentRegistryMcpServerIamMember` resources **only if** they do not grant privilege to the same role.
+   * 
+   * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
+   * 
+   * ## gcp.iap.AgentRegistryMcpServerIamPolicy
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.organizations.OrganizationsFunctions;
+   * import com.pulumi.gcp.organizations.inputs.GetIAMPolicyArgs;
+   * import com.pulumi.gcp.organizations.inputs.GetIAMPolicyBindingArgs;
+   * import com.pulumi.gcp.iap.AgentRegistryMcpServerIamPolicy;
+   * import com.pulumi.gcp.iap.AgentRegistryMcpServerIamPolicyArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         final var admin = OrganizationsFunctions.getIAMPolicy(GetIAMPolicyArgs.builder()
+   *             .bindings(GetIAMPolicyBindingArgs.builder()
+   *                 .role("roles/iap.egressor")
+   *                 .members("user:jane}{@literal @}{@code example.com")
+   *                 .build())
+   *             .build());
+   * 
+   *         var policy = new AgentRegistryMcpServerIamPolicy("policy", AgentRegistryMcpServerIamPolicyArgs.builder()
+   *             .project(default_.project())
+   *             .location(default_.location())
+   *             .mcpServerId(default_.mcpServerId())
+   *             .policyData(admin.policyData())
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * With IAM Conditions:
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.organizations.OrganizationsFunctions;
+   * import com.pulumi.gcp.organizations.inputs.GetIAMPolicyArgs;
+   * import com.pulumi.gcp.organizations.inputs.GetIAMPolicyBindingArgs;
+   * import com.pulumi.gcp.organizations.inputs.GetIAMPolicyBindingConditionArgs;
+   * import com.pulumi.gcp.iap.AgentRegistryMcpServerIamPolicy;
+   * import com.pulumi.gcp.iap.AgentRegistryMcpServerIamPolicyArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         final var admin = OrganizationsFunctions.getIAMPolicy(GetIAMPolicyArgs.builder()
+   *             .bindings(GetIAMPolicyBindingArgs.builder()
+   *                 .role("roles/iap.egressor")
+   *                 .members("user:jane}{@literal @}{@code example.com")
+   *                 .condition(GetIAMPolicyBindingConditionArgs.builder()
+   *                     .title("expires_after_2019_12_31")
+   *                     .description("Expiring at midnight of 2019-12-31")
+   *                     .expression("request.time < timestamp(\"2020-01-01T00:00:00Z\")")
+   *                     .build())
+   *                 .build())
+   *             .build());
+   * 
+   *         var policy = new AgentRegistryMcpServerIamPolicy("policy", AgentRegistryMcpServerIamPolicyArgs.builder()
+   *             .project(default_.project())
+   *             .location(default_.location())
+   *             .mcpServerId(default_.mcpServerId())
+   *             .policyData(admin.policyData())
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * ## gcp.iap.AgentRegistryMcpServerIamBinding
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.iap.AgentRegistryMcpServerIamBinding;
+   * import com.pulumi.gcp.iap.AgentRegistryMcpServerIamBindingArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         var binding = new AgentRegistryMcpServerIamBinding("binding", AgentRegistryMcpServerIamBindingArgs.builder()
+   *             .project(default_.project())
+   *             .location(default_.location())
+   *             .mcpServerId(default_.mcpServerId())
+   *             .role("roles/iap.egressor")
+   *             .members("user:jane}{@literal @}{@code example.com")
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * With IAM Conditions:
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.iap.AgentRegistryMcpServerIamBinding;
+   * import com.pulumi.gcp.iap.AgentRegistryMcpServerIamBindingArgs;
+   * import com.pulumi.gcp.iap.inputs.AgentRegistryMcpServerIamBindingConditionArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         var binding = new AgentRegistryMcpServerIamBinding("binding", AgentRegistryMcpServerIamBindingArgs.builder()
+   *             .project(default_.project())
+   *             .location(default_.location())
+   *             .mcpServerId(default_.mcpServerId())
+   *             .role("roles/iap.egressor")
+   *             .members("user:jane}{@literal @}{@code example.com")
+   *             .condition(AgentRegistryMcpServerIamBindingConditionArgs.builder()
+   *                 .title("expires_after_2019_12_31")
+   *                 .description("Expiring at midnight of 2019-12-31")
+   *                 .expression("request.time < timestamp(\"2020-01-01T00:00:00Z\")")
+   *                 .build())
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * ## gcp.iap.AgentRegistryMcpServerIamMember
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.iap.AgentRegistryMcpServerIamMember;
+   * import com.pulumi.gcp.iap.AgentRegistryMcpServerIamMemberArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         var member = new AgentRegistryMcpServerIamMember("member", AgentRegistryMcpServerIamMemberArgs.builder()
+   *             .project(default_.project())
+   *             .location(default_.location())
+   *             .mcpServerId(default_.mcpServerId())
+   *             .role("roles/iap.egressor")
+   *             .member("user:jane}{@literal @}{@code example.com")
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * With IAM Conditions:
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.iap.AgentRegistryMcpServerIamMember;
+   * import com.pulumi.gcp.iap.AgentRegistryMcpServerIamMemberArgs;
+   * import com.pulumi.gcp.iap.inputs.AgentRegistryMcpServerIamMemberConditionArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         var member = new AgentRegistryMcpServerIamMember("member", AgentRegistryMcpServerIamMemberArgs.builder()
+   *             .project(default_.project())
+   *             .location(default_.location())
+   *             .mcpServerId(default_.mcpServerId())
+   *             .role("roles/iap.egressor")
+   *             .member("user:jane}{@literal @}{@code example.com")
+   *             .condition(AgentRegistryMcpServerIamMemberConditionArgs.builder()
+   *                 .title("expires_after_2019_12_31")
+   *                 .description("Expiring at midnight of 2019-12-31")
+   *                 .expression("request.time < timestamp(\"2020-01-01T00:00:00Z\")")
+   *                 .build())
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * ## Import
+   * 
+   * For all import syntaxes, the &#34;resource in question&#34; can take any of the following forms:
+   * 
+   * * projects/{{project}}/locations/{{location}}/iap_web/agentRegistry/mcpServers/{{mcp_server_id}}
+   * * {{project}}/{{location}}/{{mcp_server_id}}
+   * * {{location}}/{{mcp_server_id}}
+   * * {{mcp_server_id}}
+   * 
+   * Any variables not passed in the import command will be taken from the provider configuration.
+   * 
+   * Identity-Aware Proxy agentregistrymcpserver IAM resources can be imported using the resource identifiers, role, and member.
+   * 
+   * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
+   * ```sh
+   * $ terraform import google_iap_agent_registry_mcp_server_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/iap_web/agentRegistry/mcpServers/{{mcp_server_id}} roles/iap.egressor user:jane{@literal @}example.com&#34;
+   * ```
+   * 
+   * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
+   * ```sh
+   * $ terraform import google_iap_agent_registry_mcp_server_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/iap_web/agentRegistry/mcpServers/{{mcp_server_id}} roles/iap.egressor&#34;
+   * ```
+   * 
+   * IAM policy imports use the identifier of the resource in question, e.g.
+   * ```sh
+   * $ pulumi import gcp:iap/agentRegistryMcpServerIamBinding:AgentRegistryMcpServerIamBinding editor projects/{{project}}/locations/{{location}}/iap_web/agentRegistry/mcpServers/{{mcp_server_id}}
+   * ```
+   * 
+   * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
+   *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
+   */
+  def AgentRegistryMcpServerIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+      (args: Endofunction[com.pulumi.gcp.iap.AgentRegistryMcpServerIamBindingArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+    val argsBuilder = com.pulumi.gcp.iap.AgentRegistryMcpServerIamBindingArgs.builder
+    com.pulumi.gcp.iap.AgentRegistryMcpServerIamBinding(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+
+  extension (builder: com.pulumi.gcp.iap.AgentRegistryMcpServerIamBindingArgs.Builder)
+    /**
+     * @param condition An [IAM Condition](https://cloud.google.com/iam/docs/conditions-overview) for a given binding.
+     * Structure is documented below.
+     * @return builder
+     */
+    def condition(args: Endofunction[com.pulumi.gcp.iap.inputs.AgentRegistryMcpServerIamBindingConditionArgs.Builder]):
+        com.pulumi.gcp.iap.AgentRegistryMcpServerIamBindingArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.iap.inputs.AgentRegistryMcpServerIamBindingConditionArgs.builder
+      builder.condition(args(argsBuilder).build)
+
+  /**
+   * Three different resources help you manage your IAM policy for Identity-Aware Proxy AgentRegistryMcpServer. Each of these resources serves a different use case:
+   * 
+   * * `gcp.iap.AgentRegistryMcpServerIamPolicy`: Authoritative. Sets the IAM policy for the agentregistrymcpserver and replaces any existing policy already attached.
+   * * `gcp.iap.AgentRegistryMcpServerIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the agentregistrymcpserver are preserved.
+   * * `gcp.iap.AgentRegistryMcpServerIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the agentregistrymcpserver are preserved.
+   * 
+   * A data source can be used to retrieve policy data in advent you do not need creation
+   * 
+   * * `gcp.iap.AgentRegistryMcpServerIamPolicy`: Retrieves the IAM policy for the agentregistrymcpserver
+   * 
+   * &gt; **Note:** `gcp.iap.AgentRegistryMcpServerIamPolicy` **cannot** be used in conjunction with `gcp.iap.AgentRegistryMcpServerIamBinding` and `gcp.iap.AgentRegistryMcpServerIamMember` or they will fight over what your policy should be.
+   * 
+   * &gt; **Note:** `gcp.iap.AgentRegistryMcpServerIamBinding` resources **can be** used in conjunction with `gcp.iap.AgentRegistryMcpServerIamMember` resources **only if** they do not grant privilege to the same role.
+   * 
+   * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
+   * 
+   * ## gcp.iap.AgentRegistryMcpServerIamPolicy
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.organizations.OrganizationsFunctions;
+   * import com.pulumi.gcp.organizations.inputs.GetIAMPolicyArgs;
+   * import com.pulumi.gcp.organizations.inputs.GetIAMPolicyBindingArgs;
+   * import com.pulumi.gcp.iap.AgentRegistryMcpServerIamPolicy;
+   * import com.pulumi.gcp.iap.AgentRegistryMcpServerIamPolicyArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         final var admin = OrganizationsFunctions.getIAMPolicy(GetIAMPolicyArgs.builder()
+   *             .bindings(GetIAMPolicyBindingArgs.builder()
+   *                 .role("roles/iap.egressor")
+   *                 .members("user:jane}{@literal @}{@code example.com")
+   *                 .build())
+   *             .build());
+   * 
+   *         var policy = new AgentRegistryMcpServerIamPolicy("policy", AgentRegistryMcpServerIamPolicyArgs.builder()
+   *             .project(default_.project())
+   *             .location(default_.location())
+   *             .mcpServerId(default_.mcpServerId())
+   *             .policyData(admin.policyData())
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * With IAM Conditions:
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.organizations.OrganizationsFunctions;
+   * import com.pulumi.gcp.organizations.inputs.GetIAMPolicyArgs;
+   * import com.pulumi.gcp.organizations.inputs.GetIAMPolicyBindingArgs;
+   * import com.pulumi.gcp.organizations.inputs.GetIAMPolicyBindingConditionArgs;
+   * import com.pulumi.gcp.iap.AgentRegistryMcpServerIamPolicy;
+   * import com.pulumi.gcp.iap.AgentRegistryMcpServerIamPolicyArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         final var admin = OrganizationsFunctions.getIAMPolicy(GetIAMPolicyArgs.builder()
+   *             .bindings(GetIAMPolicyBindingArgs.builder()
+   *                 .role("roles/iap.egressor")
+   *                 .members("user:jane}{@literal @}{@code example.com")
+   *                 .condition(GetIAMPolicyBindingConditionArgs.builder()
+   *                     .title("expires_after_2019_12_31")
+   *                     .description("Expiring at midnight of 2019-12-31")
+   *                     .expression("request.time < timestamp(\"2020-01-01T00:00:00Z\")")
+   *                     .build())
+   *                 .build())
+   *             .build());
+   * 
+   *         var policy = new AgentRegistryMcpServerIamPolicy("policy", AgentRegistryMcpServerIamPolicyArgs.builder()
+   *             .project(default_.project())
+   *             .location(default_.location())
+   *             .mcpServerId(default_.mcpServerId())
+   *             .policyData(admin.policyData())
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * ## gcp.iap.AgentRegistryMcpServerIamBinding
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.iap.AgentRegistryMcpServerIamBinding;
+   * import com.pulumi.gcp.iap.AgentRegistryMcpServerIamBindingArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         var binding = new AgentRegistryMcpServerIamBinding("binding", AgentRegistryMcpServerIamBindingArgs.builder()
+   *             .project(default_.project())
+   *             .location(default_.location())
+   *             .mcpServerId(default_.mcpServerId())
+   *             .role("roles/iap.egressor")
+   *             .members("user:jane}{@literal @}{@code example.com")
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * With IAM Conditions:
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.iap.AgentRegistryMcpServerIamBinding;
+   * import com.pulumi.gcp.iap.AgentRegistryMcpServerIamBindingArgs;
+   * import com.pulumi.gcp.iap.inputs.AgentRegistryMcpServerIamBindingConditionArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         var binding = new AgentRegistryMcpServerIamBinding("binding", AgentRegistryMcpServerIamBindingArgs.builder()
+   *             .project(default_.project())
+   *             .location(default_.location())
+   *             .mcpServerId(default_.mcpServerId())
+   *             .role("roles/iap.egressor")
+   *             .members("user:jane}{@literal @}{@code example.com")
+   *             .condition(AgentRegistryMcpServerIamBindingConditionArgs.builder()
+   *                 .title("expires_after_2019_12_31")
+   *                 .description("Expiring at midnight of 2019-12-31")
+   *                 .expression("request.time < timestamp(\"2020-01-01T00:00:00Z\")")
+   *                 .build())
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * ## gcp.iap.AgentRegistryMcpServerIamMember
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.iap.AgentRegistryMcpServerIamMember;
+   * import com.pulumi.gcp.iap.AgentRegistryMcpServerIamMemberArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         var member = new AgentRegistryMcpServerIamMember("member", AgentRegistryMcpServerIamMemberArgs.builder()
+   *             .project(default_.project())
+   *             .location(default_.location())
+   *             .mcpServerId(default_.mcpServerId())
+   *             .role("roles/iap.egressor")
+   *             .member("user:jane}{@literal @}{@code example.com")
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * With IAM Conditions:
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.iap.AgentRegistryMcpServerIamMember;
+   * import com.pulumi.gcp.iap.AgentRegistryMcpServerIamMemberArgs;
+   * import com.pulumi.gcp.iap.inputs.AgentRegistryMcpServerIamMemberConditionArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         var member = new AgentRegistryMcpServerIamMember("member", AgentRegistryMcpServerIamMemberArgs.builder()
+   *             .project(default_.project())
+   *             .location(default_.location())
+   *             .mcpServerId(default_.mcpServerId())
+   *             .role("roles/iap.egressor")
+   *             .member("user:jane}{@literal @}{@code example.com")
+   *             .condition(AgentRegistryMcpServerIamMemberConditionArgs.builder()
+   *                 .title("expires_after_2019_12_31")
+   *                 .description("Expiring at midnight of 2019-12-31")
+   *                 .expression("request.time < timestamp(\"2020-01-01T00:00:00Z\")")
+   *                 .build())
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * ## This resource supports User Project Overrides.
+   * 
+   * -
+   * 
+   * # IAM policy for Identity-Aware Proxy AgentRegistryMcpServer
+   * 
+   * Three different resources help you manage your IAM policy for Identity-Aware Proxy AgentRegistryMcpServer. Each of these resources serves a different use case:
+   * 
+   * * `gcp.iap.AgentRegistryMcpServerIamPolicy`: Authoritative. Sets the IAM policy for the agentregistrymcpserver and replaces any existing policy already attached.
+   * * `gcp.iap.AgentRegistryMcpServerIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the agentregistrymcpserver are preserved.
+   * * `gcp.iap.AgentRegistryMcpServerIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the agentregistrymcpserver are preserved.
+   * 
+   * A data source can be used to retrieve policy data in advent you do not need creation
+   * 
+   * * `gcp.iap.AgentRegistryMcpServerIamPolicy`: Retrieves the IAM policy for the agentregistrymcpserver
+   * 
+   * &gt; **Note:** `gcp.iap.AgentRegistryMcpServerIamPolicy` **cannot** be used in conjunction with `gcp.iap.AgentRegistryMcpServerIamBinding` and `gcp.iap.AgentRegistryMcpServerIamMember` or they will fight over what your policy should be.
+   * 
+   * &gt; **Note:** `gcp.iap.AgentRegistryMcpServerIamBinding` resources **can be** used in conjunction with `gcp.iap.AgentRegistryMcpServerIamMember` resources **only if** they do not grant privilege to the same role.
+   * 
+   * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
+   * 
+   * ## gcp.iap.AgentRegistryMcpServerIamPolicy
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.organizations.OrganizationsFunctions;
+   * import com.pulumi.gcp.organizations.inputs.GetIAMPolicyArgs;
+   * import com.pulumi.gcp.organizations.inputs.GetIAMPolicyBindingArgs;
+   * import com.pulumi.gcp.iap.AgentRegistryMcpServerIamPolicy;
+   * import com.pulumi.gcp.iap.AgentRegistryMcpServerIamPolicyArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         final var admin = OrganizationsFunctions.getIAMPolicy(GetIAMPolicyArgs.builder()
+   *             .bindings(GetIAMPolicyBindingArgs.builder()
+   *                 .role("roles/iap.egressor")
+   *                 .members("user:jane}{@literal @}{@code example.com")
+   *                 .build())
+   *             .build());
+   * 
+   *         var policy = new AgentRegistryMcpServerIamPolicy("policy", AgentRegistryMcpServerIamPolicyArgs.builder()
+   *             .project(default_.project())
+   *             .location(default_.location())
+   *             .mcpServerId(default_.mcpServerId())
+   *             .policyData(admin.policyData())
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * With IAM Conditions:
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.organizations.OrganizationsFunctions;
+   * import com.pulumi.gcp.organizations.inputs.GetIAMPolicyArgs;
+   * import com.pulumi.gcp.organizations.inputs.GetIAMPolicyBindingArgs;
+   * import com.pulumi.gcp.organizations.inputs.GetIAMPolicyBindingConditionArgs;
+   * import com.pulumi.gcp.iap.AgentRegistryMcpServerIamPolicy;
+   * import com.pulumi.gcp.iap.AgentRegistryMcpServerIamPolicyArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         final var admin = OrganizationsFunctions.getIAMPolicy(GetIAMPolicyArgs.builder()
+   *             .bindings(GetIAMPolicyBindingArgs.builder()
+   *                 .role("roles/iap.egressor")
+   *                 .members("user:jane}{@literal @}{@code example.com")
+   *                 .condition(GetIAMPolicyBindingConditionArgs.builder()
+   *                     .title("expires_after_2019_12_31")
+   *                     .description("Expiring at midnight of 2019-12-31")
+   *                     .expression("request.time < timestamp(\"2020-01-01T00:00:00Z\")")
+   *                     .build())
+   *                 .build())
+   *             .build());
+   * 
+   *         var policy = new AgentRegistryMcpServerIamPolicy("policy", AgentRegistryMcpServerIamPolicyArgs.builder()
+   *             .project(default_.project())
+   *             .location(default_.location())
+   *             .mcpServerId(default_.mcpServerId())
+   *             .policyData(admin.policyData())
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * ## gcp.iap.AgentRegistryMcpServerIamBinding
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.iap.AgentRegistryMcpServerIamBinding;
+   * import com.pulumi.gcp.iap.AgentRegistryMcpServerIamBindingArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         var binding = new AgentRegistryMcpServerIamBinding("binding", AgentRegistryMcpServerIamBindingArgs.builder()
+   *             .project(default_.project())
+   *             .location(default_.location())
+   *             .mcpServerId(default_.mcpServerId())
+   *             .role("roles/iap.egressor")
+   *             .members("user:jane}{@literal @}{@code example.com")
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * With IAM Conditions:
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.iap.AgentRegistryMcpServerIamBinding;
+   * import com.pulumi.gcp.iap.AgentRegistryMcpServerIamBindingArgs;
+   * import com.pulumi.gcp.iap.inputs.AgentRegistryMcpServerIamBindingConditionArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         var binding = new AgentRegistryMcpServerIamBinding("binding", AgentRegistryMcpServerIamBindingArgs.builder()
+   *             .project(default_.project())
+   *             .location(default_.location())
+   *             .mcpServerId(default_.mcpServerId())
+   *             .role("roles/iap.egressor")
+   *             .members("user:jane}{@literal @}{@code example.com")
+   *             .condition(AgentRegistryMcpServerIamBindingConditionArgs.builder()
+   *                 .title("expires_after_2019_12_31")
+   *                 .description("Expiring at midnight of 2019-12-31")
+   *                 .expression("request.time < timestamp(\"2020-01-01T00:00:00Z\")")
+   *                 .build())
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * ## gcp.iap.AgentRegistryMcpServerIamMember
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.iap.AgentRegistryMcpServerIamMember;
+   * import com.pulumi.gcp.iap.AgentRegistryMcpServerIamMemberArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         var member = new AgentRegistryMcpServerIamMember("member", AgentRegistryMcpServerIamMemberArgs.builder()
+   *             .project(default_.project())
+   *             .location(default_.location())
+   *             .mcpServerId(default_.mcpServerId())
+   *             .role("roles/iap.egressor")
+   *             .member("user:jane}{@literal @}{@code example.com")
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * With IAM Conditions:
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.iap.AgentRegistryMcpServerIamMember;
+   * import com.pulumi.gcp.iap.AgentRegistryMcpServerIamMemberArgs;
+   * import com.pulumi.gcp.iap.inputs.AgentRegistryMcpServerIamMemberConditionArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         var member = new AgentRegistryMcpServerIamMember("member", AgentRegistryMcpServerIamMemberArgs.builder()
+   *             .project(default_.project())
+   *             .location(default_.location())
+   *             .mcpServerId(default_.mcpServerId())
+   *             .role("roles/iap.egressor")
+   *             .member("user:jane}{@literal @}{@code example.com")
+   *             .condition(AgentRegistryMcpServerIamMemberConditionArgs.builder()
+   *                 .title("expires_after_2019_12_31")
+   *                 .description("Expiring at midnight of 2019-12-31")
+   *                 .expression("request.time < timestamp(\"2020-01-01T00:00:00Z\")")
+   *                 .build())
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * ## Import
+   * 
+   * For all import syntaxes, the &#34;resource in question&#34; can take any of the following forms:
+   * 
+   * * projects/{{project}}/locations/{{location}}/iap_web/agentRegistry/mcpServers/{{mcp_server_id}}
+   * * {{project}}/{{location}}/{{mcp_server_id}}
+   * * {{location}}/{{mcp_server_id}}
+   * * {{mcp_server_id}}
+   * 
+   * Any variables not passed in the import command will be taken from the provider configuration.
+   * 
+   * Identity-Aware Proxy agentregistrymcpserver IAM resources can be imported using the resource identifiers, role, and member.
+   * 
+   * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
+   * ```sh
+   * $ terraform import google_iap_agent_registry_mcp_server_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/iap_web/agentRegistry/mcpServers/{{mcp_server_id}} roles/iap.egressor user:jane{@literal @}example.com&#34;
+   * ```
+   * 
+   * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
+   * ```sh
+   * $ terraform import google_iap_agent_registry_mcp_server_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/iap_web/agentRegistry/mcpServers/{{mcp_server_id}} roles/iap.egressor&#34;
+   * ```
+   * 
+   * IAM policy imports use the identifier of the resource in question, e.g.
+   * ```sh
+   * $ pulumi import gcp:iap/agentRegistryMcpServerIamMember:AgentRegistryMcpServerIamMember editor projects/{{project}}/locations/{{location}}/iap_web/agentRegistry/mcpServers/{{mcp_server_id}}
+   * ```
+   * 
+   * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
+   *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
+   */
+  def AgentRegistryMcpServerIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+      (args: Endofunction[com.pulumi.gcp.iap.AgentRegistryMcpServerIamMemberArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+    val argsBuilder = com.pulumi.gcp.iap.AgentRegistryMcpServerIamMemberArgs.builder
+    com.pulumi.gcp.iap.AgentRegistryMcpServerIamMember(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+
+  extension (builder: com.pulumi.gcp.iap.AgentRegistryMcpServerIamMemberArgs.Builder)
+    /**
+     * @param condition An [IAM Condition](https://cloud.google.com/iam/docs/conditions-overview) for a given binding.
+     * Structure is documented below.
+     * @return builder
+     */
+    def condition(args: Endofunction[com.pulumi.gcp.iap.inputs.AgentRegistryMcpServerIamMemberConditionArgs.Builder]):
+        com.pulumi.gcp.iap.AgentRegistryMcpServerIamMemberArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.iap.inputs.AgentRegistryMcpServerIamMemberConditionArgs.builder
+      builder.condition(args(argsBuilder).build)
+
+  /**
+   * Three different resources help you manage your IAM policy for Identity-Aware Proxy AgentRegistryMcpServer. Each of these resources serves a different use case:
+   * 
+   * * `gcp.iap.AgentRegistryMcpServerIamPolicy`: Authoritative. Sets the IAM policy for the agentregistrymcpserver and replaces any existing policy already attached.
+   * * `gcp.iap.AgentRegistryMcpServerIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the agentregistrymcpserver are preserved.
+   * * `gcp.iap.AgentRegistryMcpServerIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the agentregistrymcpserver are preserved.
+   * 
+   * A data source can be used to retrieve policy data in advent you do not need creation
+   * 
+   * * `gcp.iap.AgentRegistryMcpServerIamPolicy`: Retrieves the IAM policy for the agentregistrymcpserver
+   * 
+   * &gt; **Note:** `gcp.iap.AgentRegistryMcpServerIamPolicy` **cannot** be used in conjunction with `gcp.iap.AgentRegistryMcpServerIamBinding` and `gcp.iap.AgentRegistryMcpServerIamMember` or they will fight over what your policy should be.
+   * 
+   * &gt; **Note:** `gcp.iap.AgentRegistryMcpServerIamBinding` resources **can be** used in conjunction with `gcp.iap.AgentRegistryMcpServerIamMember` resources **only if** they do not grant privilege to the same role.
+   * 
+   * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
+   * 
+   * ## gcp.iap.AgentRegistryMcpServerIamPolicy
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.organizations.OrganizationsFunctions;
+   * import com.pulumi.gcp.organizations.inputs.GetIAMPolicyArgs;
+   * import com.pulumi.gcp.organizations.inputs.GetIAMPolicyBindingArgs;
+   * import com.pulumi.gcp.iap.AgentRegistryMcpServerIamPolicy;
+   * import com.pulumi.gcp.iap.AgentRegistryMcpServerIamPolicyArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         final var admin = OrganizationsFunctions.getIAMPolicy(GetIAMPolicyArgs.builder()
+   *             .bindings(GetIAMPolicyBindingArgs.builder()
+   *                 .role("roles/iap.egressor")
+   *                 .members("user:jane}{@literal @}{@code example.com")
+   *                 .build())
+   *             .build());
+   * 
+   *         var policy = new AgentRegistryMcpServerIamPolicy("policy", AgentRegistryMcpServerIamPolicyArgs.builder()
+   *             .project(default_.project())
+   *             .location(default_.location())
+   *             .mcpServerId(default_.mcpServerId())
+   *             .policyData(admin.policyData())
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * With IAM Conditions:
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.organizations.OrganizationsFunctions;
+   * import com.pulumi.gcp.organizations.inputs.GetIAMPolicyArgs;
+   * import com.pulumi.gcp.organizations.inputs.GetIAMPolicyBindingArgs;
+   * import com.pulumi.gcp.organizations.inputs.GetIAMPolicyBindingConditionArgs;
+   * import com.pulumi.gcp.iap.AgentRegistryMcpServerIamPolicy;
+   * import com.pulumi.gcp.iap.AgentRegistryMcpServerIamPolicyArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         final var admin = OrganizationsFunctions.getIAMPolicy(GetIAMPolicyArgs.builder()
+   *             .bindings(GetIAMPolicyBindingArgs.builder()
+   *                 .role("roles/iap.egressor")
+   *                 .members("user:jane}{@literal @}{@code example.com")
+   *                 .condition(GetIAMPolicyBindingConditionArgs.builder()
+   *                     .title("expires_after_2019_12_31")
+   *                     .description("Expiring at midnight of 2019-12-31")
+   *                     .expression("request.time < timestamp(\"2020-01-01T00:00:00Z\")")
+   *                     .build())
+   *                 .build())
+   *             .build());
+   * 
+   *         var policy = new AgentRegistryMcpServerIamPolicy("policy", AgentRegistryMcpServerIamPolicyArgs.builder()
+   *             .project(default_.project())
+   *             .location(default_.location())
+   *             .mcpServerId(default_.mcpServerId())
+   *             .policyData(admin.policyData())
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * ## gcp.iap.AgentRegistryMcpServerIamBinding
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.iap.AgentRegistryMcpServerIamBinding;
+   * import com.pulumi.gcp.iap.AgentRegistryMcpServerIamBindingArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         var binding = new AgentRegistryMcpServerIamBinding("binding", AgentRegistryMcpServerIamBindingArgs.builder()
+   *             .project(default_.project())
+   *             .location(default_.location())
+   *             .mcpServerId(default_.mcpServerId())
+   *             .role("roles/iap.egressor")
+   *             .members("user:jane}{@literal @}{@code example.com")
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * With IAM Conditions:
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.iap.AgentRegistryMcpServerIamBinding;
+   * import com.pulumi.gcp.iap.AgentRegistryMcpServerIamBindingArgs;
+   * import com.pulumi.gcp.iap.inputs.AgentRegistryMcpServerIamBindingConditionArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         var binding = new AgentRegistryMcpServerIamBinding("binding", AgentRegistryMcpServerIamBindingArgs.builder()
+   *             .project(default_.project())
+   *             .location(default_.location())
+   *             .mcpServerId(default_.mcpServerId())
+   *             .role("roles/iap.egressor")
+   *             .members("user:jane}{@literal @}{@code example.com")
+   *             .condition(AgentRegistryMcpServerIamBindingConditionArgs.builder()
+   *                 .title("expires_after_2019_12_31")
+   *                 .description("Expiring at midnight of 2019-12-31")
+   *                 .expression("request.time < timestamp(\"2020-01-01T00:00:00Z\")")
+   *                 .build())
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * ## gcp.iap.AgentRegistryMcpServerIamMember
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.iap.AgentRegistryMcpServerIamMember;
+   * import com.pulumi.gcp.iap.AgentRegistryMcpServerIamMemberArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         var member = new AgentRegistryMcpServerIamMember("member", AgentRegistryMcpServerIamMemberArgs.builder()
+   *             .project(default_.project())
+   *             .location(default_.location())
+   *             .mcpServerId(default_.mcpServerId())
+   *             .role("roles/iap.egressor")
+   *             .member("user:jane}{@literal @}{@code example.com")
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * With IAM Conditions:
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.iap.AgentRegistryMcpServerIamMember;
+   * import com.pulumi.gcp.iap.AgentRegistryMcpServerIamMemberArgs;
+   * import com.pulumi.gcp.iap.inputs.AgentRegistryMcpServerIamMemberConditionArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         var member = new AgentRegistryMcpServerIamMember("member", AgentRegistryMcpServerIamMemberArgs.builder()
+   *             .project(default_.project())
+   *             .location(default_.location())
+   *             .mcpServerId(default_.mcpServerId())
+   *             .role("roles/iap.egressor")
+   *             .member("user:jane}{@literal @}{@code example.com")
+   *             .condition(AgentRegistryMcpServerIamMemberConditionArgs.builder()
+   *                 .title("expires_after_2019_12_31")
+   *                 .description("Expiring at midnight of 2019-12-31")
+   *                 .expression("request.time < timestamp(\"2020-01-01T00:00:00Z\")")
+   *                 .build())
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * ## This resource supports User Project Overrides.
+   * 
+   * -
+   * 
+   * # IAM policy for Identity-Aware Proxy AgentRegistryMcpServer
+   * 
+   * Three different resources help you manage your IAM policy for Identity-Aware Proxy AgentRegistryMcpServer. Each of these resources serves a different use case:
+   * 
+   * * `gcp.iap.AgentRegistryMcpServerIamPolicy`: Authoritative. Sets the IAM policy for the agentregistrymcpserver and replaces any existing policy already attached.
+   * * `gcp.iap.AgentRegistryMcpServerIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the agentregistrymcpserver are preserved.
+   * * `gcp.iap.AgentRegistryMcpServerIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the agentregistrymcpserver are preserved.
+   * 
+   * A data source can be used to retrieve policy data in advent you do not need creation
+   * 
+   * * `gcp.iap.AgentRegistryMcpServerIamPolicy`: Retrieves the IAM policy for the agentregistrymcpserver
+   * 
+   * &gt; **Note:** `gcp.iap.AgentRegistryMcpServerIamPolicy` **cannot** be used in conjunction with `gcp.iap.AgentRegistryMcpServerIamBinding` and `gcp.iap.AgentRegistryMcpServerIamMember` or they will fight over what your policy should be.
+   * 
+   * &gt; **Note:** `gcp.iap.AgentRegistryMcpServerIamBinding` resources **can be** used in conjunction with `gcp.iap.AgentRegistryMcpServerIamMember` resources **only if** they do not grant privilege to the same role.
+   * 
+   * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
+   * 
+   * ## gcp.iap.AgentRegistryMcpServerIamPolicy
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.organizations.OrganizationsFunctions;
+   * import com.pulumi.gcp.organizations.inputs.GetIAMPolicyArgs;
+   * import com.pulumi.gcp.organizations.inputs.GetIAMPolicyBindingArgs;
+   * import com.pulumi.gcp.iap.AgentRegistryMcpServerIamPolicy;
+   * import com.pulumi.gcp.iap.AgentRegistryMcpServerIamPolicyArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         final var admin = OrganizationsFunctions.getIAMPolicy(GetIAMPolicyArgs.builder()
+   *             .bindings(GetIAMPolicyBindingArgs.builder()
+   *                 .role("roles/iap.egressor")
+   *                 .members("user:jane}{@literal @}{@code example.com")
+   *                 .build())
+   *             .build());
+   * 
+   *         var policy = new AgentRegistryMcpServerIamPolicy("policy", AgentRegistryMcpServerIamPolicyArgs.builder()
+   *             .project(default_.project())
+   *             .location(default_.location())
+   *             .mcpServerId(default_.mcpServerId())
+   *             .policyData(admin.policyData())
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * With IAM Conditions:
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.organizations.OrganizationsFunctions;
+   * import com.pulumi.gcp.organizations.inputs.GetIAMPolicyArgs;
+   * import com.pulumi.gcp.organizations.inputs.GetIAMPolicyBindingArgs;
+   * import com.pulumi.gcp.organizations.inputs.GetIAMPolicyBindingConditionArgs;
+   * import com.pulumi.gcp.iap.AgentRegistryMcpServerIamPolicy;
+   * import com.pulumi.gcp.iap.AgentRegistryMcpServerIamPolicyArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         final var admin = OrganizationsFunctions.getIAMPolicy(GetIAMPolicyArgs.builder()
+   *             .bindings(GetIAMPolicyBindingArgs.builder()
+   *                 .role("roles/iap.egressor")
+   *                 .members("user:jane}{@literal @}{@code example.com")
+   *                 .condition(GetIAMPolicyBindingConditionArgs.builder()
+   *                     .title("expires_after_2019_12_31")
+   *                     .description("Expiring at midnight of 2019-12-31")
+   *                     .expression("request.time < timestamp(\"2020-01-01T00:00:00Z\")")
+   *                     .build())
+   *                 .build())
+   *             .build());
+   * 
+   *         var policy = new AgentRegistryMcpServerIamPolicy("policy", AgentRegistryMcpServerIamPolicyArgs.builder()
+   *             .project(default_.project())
+   *             .location(default_.location())
+   *             .mcpServerId(default_.mcpServerId())
+   *             .policyData(admin.policyData())
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * ## gcp.iap.AgentRegistryMcpServerIamBinding
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.iap.AgentRegistryMcpServerIamBinding;
+   * import com.pulumi.gcp.iap.AgentRegistryMcpServerIamBindingArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         var binding = new AgentRegistryMcpServerIamBinding("binding", AgentRegistryMcpServerIamBindingArgs.builder()
+   *             .project(default_.project())
+   *             .location(default_.location())
+   *             .mcpServerId(default_.mcpServerId())
+   *             .role("roles/iap.egressor")
+   *             .members("user:jane}{@literal @}{@code example.com")
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * With IAM Conditions:
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.iap.AgentRegistryMcpServerIamBinding;
+   * import com.pulumi.gcp.iap.AgentRegistryMcpServerIamBindingArgs;
+   * import com.pulumi.gcp.iap.inputs.AgentRegistryMcpServerIamBindingConditionArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         var binding = new AgentRegistryMcpServerIamBinding("binding", AgentRegistryMcpServerIamBindingArgs.builder()
+   *             .project(default_.project())
+   *             .location(default_.location())
+   *             .mcpServerId(default_.mcpServerId())
+   *             .role("roles/iap.egressor")
+   *             .members("user:jane}{@literal @}{@code example.com")
+   *             .condition(AgentRegistryMcpServerIamBindingConditionArgs.builder()
+   *                 .title("expires_after_2019_12_31")
+   *                 .description("Expiring at midnight of 2019-12-31")
+   *                 .expression("request.time < timestamp(\"2020-01-01T00:00:00Z\")")
+   *                 .build())
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * ## gcp.iap.AgentRegistryMcpServerIamMember
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.iap.AgentRegistryMcpServerIamMember;
+   * import com.pulumi.gcp.iap.AgentRegistryMcpServerIamMemberArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         var member = new AgentRegistryMcpServerIamMember("member", AgentRegistryMcpServerIamMemberArgs.builder()
+   *             .project(default_.project())
+   *             .location(default_.location())
+   *             .mcpServerId(default_.mcpServerId())
+   *             .role("roles/iap.egressor")
+   *             .member("user:jane}{@literal @}{@code example.com")
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * With IAM Conditions:
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.iap.AgentRegistryMcpServerIamMember;
+   * import com.pulumi.gcp.iap.AgentRegistryMcpServerIamMemberArgs;
+   * import com.pulumi.gcp.iap.inputs.AgentRegistryMcpServerIamMemberConditionArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         var member = new AgentRegistryMcpServerIamMember("member", AgentRegistryMcpServerIamMemberArgs.builder()
+   *             .project(default_.project())
+   *             .location(default_.location())
+   *             .mcpServerId(default_.mcpServerId())
+   *             .role("roles/iap.egressor")
+   *             .member("user:jane}{@literal @}{@code example.com")
+   *             .condition(AgentRegistryMcpServerIamMemberConditionArgs.builder()
+   *                 .title("expires_after_2019_12_31")
+   *                 .description("Expiring at midnight of 2019-12-31")
+   *                 .expression("request.time < timestamp(\"2020-01-01T00:00:00Z\")")
+   *                 .build())
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * ## Import
+   * 
+   * For all import syntaxes, the &#34;resource in question&#34; can take any of the following forms:
+   * 
+   * * projects/{{project}}/locations/{{location}}/iap_web/agentRegistry/mcpServers/{{mcp_server_id}}
+   * * {{project}}/{{location}}/{{mcp_server_id}}
+   * * {{location}}/{{mcp_server_id}}
+   * * {{mcp_server_id}}
+   * 
+   * Any variables not passed in the import command will be taken from the provider configuration.
+   * 
+   * Identity-Aware Proxy agentregistrymcpserver IAM resources can be imported using the resource identifiers, role, and member.
+   * 
+   * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
+   * ```sh
+   * $ terraform import google_iap_agent_registry_mcp_server_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/iap_web/agentRegistry/mcpServers/{{mcp_server_id}} roles/iap.egressor user:jane{@literal @}example.com&#34;
+   * ```
+   * 
+   * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
+   * ```sh
+   * $ terraform import google_iap_agent_registry_mcp_server_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/iap_web/agentRegistry/mcpServers/{{mcp_server_id}} roles/iap.egressor&#34;
+   * ```
+   * 
+   * IAM policy imports use the identifier of the resource in question, e.g.
+   * ```sh
+   * $ pulumi import gcp:iap/agentRegistryMcpServerIamPolicy:AgentRegistryMcpServerIamPolicy editor projects/{{project}}/locations/{{location}}/iap_web/agentRegistry/mcpServers/{{mcp_server_id}}
+   * ```
+   * 
+   * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
+   *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
+   */
+  def AgentRegistryMcpServerIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+      (args: Endofunction[com.pulumi.gcp.iap.AgentRegistryMcpServerIamPolicyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+    val argsBuilder = com.pulumi.gcp.iap.AgentRegistryMcpServerIamPolicyArgs.builder
+    com.pulumi.gcp.iap.AgentRegistryMcpServerIamPolicy(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
 
@@ -5443,25 +10792,53 @@ object iap:
     //
     //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
 
-    /**
-     * Retrieves the current IAM policy data for agentregistry
-     * &gt; **Warning:** This datasource is in beta, and should be used with the terraform-provider-google-beta provider.
-     * See Provider Versions for more details on beta resources.
-     */
+    /** Retrieves the current IAM policy data for agentregistryagent */
+    inline def getAgentRegistryAgentIamPolicy(args: Endofunction[com.pulumi.gcp.iap.inputs.GetAgentRegistryAgentIamPolicyArgs.Builder] = scala.Predef.identity):
+        com.pulumi.core.Output[com.pulumi.gcp.iap.outputs.GetAgentRegistryAgentIamPolicyResult] =
+      val argsBuilder = com.pulumi.gcp.iap.inputs.GetAgentRegistryAgentIamPolicyArgs.builder
+      com.pulumi.gcp.iap.IapFunctions.getAgentRegistryAgentIamPolicy(args(argsBuilder).build)
+
+    /** Retrieves the current IAM policy data for agentregistryagent */
+    inline def getAgentRegistryAgentIamPolicyPlain(args: Endofunction[com.pulumi.gcp.iap.inputs.GetAgentRegistryAgentIamPolicyPlainArgs.Builder] = scala.Predef.identity):
+        java.util.concurrent.CompletableFuture[com.pulumi.gcp.iap.outputs.GetAgentRegistryAgentIamPolicyResult] =
+      val argsBuilder = com.pulumi.gcp.iap.inputs.GetAgentRegistryAgentIamPolicyPlainArgs.builder
+      com.pulumi.gcp.iap.IapFunctions.getAgentRegistryAgentIamPolicyPlain(args(argsBuilder).build)
+
+    /** Retrieves the current IAM policy data for agentregistryendpoint */
+    inline def getAgentRegistryEndpointIamPolicy(args: Endofunction[com.pulumi.gcp.iap.inputs.GetAgentRegistryEndpointIamPolicyArgs.Builder] = scala.Predef.identity):
+        com.pulumi.core.Output[com.pulumi.gcp.iap.outputs.GetAgentRegistryEndpointIamPolicyResult] =
+      val argsBuilder = com.pulumi.gcp.iap.inputs.GetAgentRegistryEndpointIamPolicyArgs.builder
+      com.pulumi.gcp.iap.IapFunctions.getAgentRegistryEndpointIamPolicy(args(argsBuilder).build)
+
+    /** Retrieves the current IAM policy data for agentregistryendpoint */
+    inline def getAgentRegistryEndpointIamPolicyPlain(args: Endofunction[com.pulumi.gcp.iap.inputs.GetAgentRegistryEndpointIamPolicyPlainArgs.Builder] = scala.Predef.identity):
+        java.util.concurrent.CompletableFuture[com.pulumi.gcp.iap.outputs.GetAgentRegistryEndpointIamPolicyResult] =
+      val argsBuilder = com.pulumi.gcp.iap.inputs.GetAgentRegistryEndpointIamPolicyPlainArgs.builder
+      com.pulumi.gcp.iap.IapFunctions.getAgentRegistryEndpointIamPolicyPlain(args(argsBuilder).build)
+
+    /** Retrieves the current IAM policy data for agentregistry */
     inline def getAgentRegistryIamPolicy(args: Endofunction[com.pulumi.gcp.iap.inputs.GetAgentRegistryIamPolicyArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.iap.outputs.GetAgentRegistryIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.iap.inputs.GetAgentRegistryIamPolicyArgs.builder
       com.pulumi.gcp.iap.IapFunctions.getAgentRegistryIamPolicy(args(argsBuilder).build)
 
-    /**
-     * Retrieves the current IAM policy data for agentregistry
-     * &gt; **Warning:** This datasource is in beta, and should be used with the terraform-provider-google-beta provider.
-     * See Provider Versions for more details on beta resources.
-     */
+    /** Retrieves the current IAM policy data for agentregistry */
     inline def getAgentRegistryIamPolicyPlain(args: Endofunction[com.pulumi.gcp.iap.inputs.GetAgentRegistryIamPolicyPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.iap.outputs.GetAgentRegistryIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.iap.inputs.GetAgentRegistryIamPolicyPlainArgs.builder
       com.pulumi.gcp.iap.IapFunctions.getAgentRegistryIamPolicyPlain(args(argsBuilder).build)
+
+    /** Retrieves the current IAM policy data for agentregistrymcpserver */
+    inline def getAgentRegistryMcpServerIamPolicy(args: Endofunction[com.pulumi.gcp.iap.inputs.GetAgentRegistryMcpServerIamPolicyArgs.Builder] = scala.Predef.identity):
+        com.pulumi.core.Output[com.pulumi.gcp.iap.outputs.GetAgentRegistryMcpServerIamPolicyResult] =
+      val argsBuilder = com.pulumi.gcp.iap.inputs.GetAgentRegistryMcpServerIamPolicyArgs.builder
+      com.pulumi.gcp.iap.IapFunctions.getAgentRegistryMcpServerIamPolicy(args(argsBuilder).build)
+
+    /** Retrieves the current IAM policy data for agentregistrymcpserver */
+    inline def getAgentRegistryMcpServerIamPolicyPlain(args: Endofunction[com.pulumi.gcp.iap.inputs.GetAgentRegistryMcpServerIamPolicyPlainArgs.Builder] = scala.Predef.identity):
+        java.util.concurrent.CompletableFuture[com.pulumi.gcp.iap.outputs.GetAgentRegistryMcpServerIamPolicyResult] =
+      val argsBuilder = com.pulumi.gcp.iap.inputs.GetAgentRegistryMcpServerIamPolicyPlainArgs.builder
+      com.pulumi.gcp.iap.IapFunctions.getAgentRegistryMcpServerIamPolicyPlain(args(argsBuilder).build)
 
     /** Retrieves the current IAM policy data for appengineservice */
     inline def getAppEngineServiceIamPolicy(args: Endofunction[com.pulumi.gcp.iap.inputs.GetAppEngineServiceIamPolicyArgs.Builder] = scala.Predef.identity):
@@ -5499,21 +10876,13 @@ object iap:
       val argsBuilder = com.pulumi.gcp.iap.inputs.GetClientPlainArgs.builder
       com.pulumi.gcp.iap.IapFunctions.getClientPlain(args(argsBuilder).build)
 
-    /**
-     * Retrieves the current IAM policy data for locationweb
-     * &gt; **Warning:** This datasource is in beta, and should be used with the terraform-provider-google-beta provider.
-     * See Provider Versions for more details on beta resources.
-     */
+    /** Retrieves the current IAM policy data for locationweb */
     inline def getLocationWebIamPolicy(args: Endofunction[com.pulumi.gcp.iap.inputs.GetLocationWebIamPolicyArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.iap.outputs.GetLocationWebIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.iap.inputs.GetLocationWebIamPolicyArgs.builder
       com.pulumi.gcp.iap.IapFunctions.getLocationWebIamPolicy(args(argsBuilder).build)
 
-    /**
-     * Retrieves the current IAM policy data for locationweb
-     * &gt; **Warning:** This datasource is in beta, and should be used with the terraform-provider-google-beta provider.
-     * See Provider Versions for more details on beta resources.
-     */
+    /** Retrieves the current IAM policy data for locationweb */
     inline def getLocationWebIamPolicyPlain(args: Endofunction[com.pulumi.gcp.iap.inputs.GetLocationWebIamPolicyPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.iap.outputs.GetLocationWebIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.iap.inputs.GetLocationWebIamPolicyPlainArgs.builder
@@ -5667,9 +11036,6 @@ object iap:
    * &gt; **Note:** `gcp.iap.LocationWebIamBinding` resources **can be** used in conjunction with `gcp.iap.LocationWebIamMember` resources **only if** they do not grant privilege to the same role.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
-   * 
-   * &gt; **Warning:** This resource is in beta, and should be used with the terraform-provider-google-beta provider.
-   * See Provider Versions for more details on beta resources.
    * 
    * ## gcp.iap.LocationWebIamPolicy
    * 
@@ -5942,9 +11308,6 @@ object iap:
    * &gt; **Note:** `gcp.iap.LocationWebIamBinding` resources **can be** used in conjunction with `gcp.iap.LocationWebIamMember` resources **only if** they do not grant privilege to the same role.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
-   * 
-   * &gt; **Warning:** This resource is in beta, and should be used with the terraform-provider-google-beta provider.
-   * See Provider Versions for more details on beta resources.
    * 
    * ## gcp.iap.LocationWebIamPolicy
    * 
@@ -6262,9 +11625,6 @@ object iap:
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
-   * &gt; **Warning:** This resource is in beta, and should be used with the terraform-provider-google-beta provider.
-   * See Provider Versions for more details on beta resources.
-   * 
    * ## gcp.iap.LocationWebIamPolicy
    * 
    * <pre>
@@ -6536,9 +11896,6 @@ object iap:
    * &gt; **Note:** `gcp.iap.LocationWebIamBinding` resources **can be** used in conjunction with `gcp.iap.LocationWebIamMember` resources **only if** they do not grant privilege to the same role.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
-   * 
-   * &gt; **Warning:** This resource is in beta, and should be used with the terraform-provider-google-beta provider.
-   * See Provider Versions for more details on beta resources.
    * 
    * ## gcp.iap.LocationWebIamPolicy
    * 
@@ -6856,9 +12213,6 @@ object iap:
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
    * 
-   * &gt; **Warning:** This resource is in beta, and should be used with the terraform-provider-google-beta provider.
-   * See Provider Versions for more details on beta resources.
-   * 
    * ## gcp.iap.LocationWebIamPolicy
    * 
    * <pre>
@@ -7130,9 +12484,6 @@ object iap:
    * &gt; **Note:** `gcp.iap.LocationWebIamBinding` resources **can be** used in conjunction with `gcp.iap.LocationWebIamMember` resources **only if** they do not grant privilege to the same role.
    * 
    * &gt; **Note:**  This resource supports IAM Conditions but they have some known limitations which can be found [here](https://cloud.google.com/iam/docs/conditions-overview#limitations). Please review this article if you are having issues with IAM Conditions.
-   * 
-   * &gt; **Warning:** This resource is in beta, and should be used with the terraform-provider-google-beta provider.
-   * See Provider Versions for more details on beta resources.
    * 
    * ## gcp.iap.LocationWebIamPolicy
    * 
@@ -26812,6 +32163,50 @@ object iap:
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
 
+  extension (builder: com.pulumi.gcp.iap.inputs.AgentRegistryAgentIamBindingState.Builder)
+    /**
+     * @param condition An [IAM Condition](https://cloud.google.com/iam/docs/conditions-overview) for a given binding.
+     * Structure is documented below.
+     * @return builder
+     */
+    def condition(args: Endofunction[com.pulumi.gcp.iap.inputs.AgentRegistryAgentIamBindingConditionArgs.Builder]):
+        com.pulumi.gcp.iap.inputs.AgentRegistryAgentIamBindingState.Builder =
+      val argsBuilder = com.pulumi.gcp.iap.inputs.AgentRegistryAgentIamBindingConditionArgs.builder
+      builder.condition(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.gcp.iap.inputs.AgentRegistryAgentIamMemberState.Builder)
+    /**
+     * @param condition An [IAM Condition](https://cloud.google.com/iam/docs/conditions-overview) for a given binding.
+     * Structure is documented below.
+     * @return builder
+     */
+    def condition(args: Endofunction[com.pulumi.gcp.iap.inputs.AgentRegistryAgentIamMemberConditionArgs.Builder]):
+        com.pulumi.gcp.iap.inputs.AgentRegistryAgentIamMemberState.Builder =
+      val argsBuilder = com.pulumi.gcp.iap.inputs.AgentRegistryAgentIamMemberConditionArgs.builder
+      builder.condition(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.gcp.iap.inputs.AgentRegistryEndpointIamBindingState.Builder)
+    /**
+     * @param condition An [IAM Condition](https://cloud.google.com/iam/docs/conditions-overview) for a given binding.
+     * Structure is documented below.
+     * @return builder
+     */
+    def condition(args: Endofunction[com.pulumi.gcp.iap.inputs.AgentRegistryEndpointIamBindingConditionArgs.Builder]):
+        com.pulumi.gcp.iap.inputs.AgentRegistryEndpointIamBindingState.Builder =
+      val argsBuilder = com.pulumi.gcp.iap.inputs.AgentRegistryEndpointIamBindingConditionArgs.builder
+      builder.condition(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.gcp.iap.inputs.AgentRegistryEndpointIamMemberState.Builder)
+    /**
+     * @param condition An [IAM Condition](https://cloud.google.com/iam/docs/conditions-overview) for a given binding.
+     * Structure is documented below.
+     * @return builder
+     */
+    def condition(args: Endofunction[com.pulumi.gcp.iap.inputs.AgentRegistryEndpointIamMemberConditionArgs.Builder]):
+        com.pulumi.gcp.iap.inputs.AgentRegistryEndpointIamMemberState.Builder =
+      val argsBuilder = com.pulumi.gcp.iap.inputs.AgentRegistryEndpointIamMemberConditionArgs.builder
+      builder.condition(args(argsBuilder).build)
+
   extension (builder: com.pulumi.gcp.iap.inputs.AgentRegistryIamBindingState.Builder)
     /**
      * @param condition An [IAM Condition](https://cloud.google.com/iam/docs/conditions-overview) for a given binding.
@@ -26832,6 +32227,28 @@ object iap:
     def condition(args: Endofunction[com.pulumi.gcp.iap.inputs.AgentRegistryIamMemberConditionArgs.Builder]):
         com.pulumi.gcp.iap.inputs.AgentRegistryIamMemberState.Builder =
       val argsBuilder = com.pulumi.gcp.iap.inputs.AgentRegistryIamMemberConditionArgs.builder
+      builder.condition(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.gcp.iap.inputs.AgentRegistryMcpServerIamBindingState.Builder)
+    /**
+     * @param condition An [IAM Condition](https://cloud.google.com/iam/docs/conditions-overview) for a given binding.
+     * Structure is documented below.
+     * @return builder
+     */
+    def condition(args: Endofunction[com.pulumi.gcp.iap.inputs.AgentRegistryMcpServerIamBindingConditionArgs.Builder]):
+        com.pulumi.gcp.iap.inputs.AgentRegistryMcpServerIamBindingState.Builder =
+      val argsBuilder = com.pulumi.gcp.iap.inputs.AgentRegistryMcpServerIamBindingConditionArgs.builder
+      builder.condition(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.gcp.iap.inputs.AgentRegistryMcpServerIamMemberState.Builder)
+    /**
+     * @param condition An [IAM Condition](https://cloud.google.com/iam/docs/conditions-overview) for a given binding.
+     * Structure is documented below.
+     * @return builder
+     */
+    def condition(args: Endofunction[com.pulumi.gcp.iap.inputs.AgentRegistryMcpServerIamMemberConditionArgs.Builder]):
+        com.pulumi.gcp.iap.inputs.AgentRegistryMcpServerIamMemberState.Builder =
+      val argsBuilder = com.pulumi.gcp.iap.inputs.AgentRegistryMcpServerIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.iap.inputs.AppEngineServiceIamBindingState.Builder)

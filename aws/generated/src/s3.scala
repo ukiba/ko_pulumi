@@ -605,7 +605,7 @@ object s3:
   /**
    * Manages a S3 Bucket Notification Configuration. For additional information, see the [Configuring S3 Event Notifications section in the Amazon S3 Developer Guide](https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html).
    * 
-   * &gt; **NOTE:** S3 Buckets only support a single notification configuration resource. Declaring multiple `aws.s3.BucketNotification` resources to the same S3 Bucket will cause a perpetual difference in configuration. This resource will overwrite any existing event notifications configured for the S3 bucket it&#39;s associated with. See the example &#34;Trigger multiple Lambda functions&#34; for an option of how to configure multiple triggers within this resource.
+   * &gt; **NOTE:** The S3 [`PutBucketNotificationConfiguration`](https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketNotificationConfiguration.html) API is atomic \u2014 it replaces the bucket&#39;s entire notification configuration on every call. Only one `aws.s3.BucketNotification` resource can manage a bucket; declaring more than one causes a perpetual diff, and applying this resource will overwrite any notifications already on the bucket. To configure multiple destinations on the same bucket, declare them all as nested blocks within a single resource (see Trigger multiple Lambda functions below). To let independent teams or Pulumi configurations subscribe to the same bucket without stepping on each other, prefer the Emit events to EventBridge pattern below. To bring existing notifications under management without losing them, see the `aws.s3.BucketNotification` data source.
    * 
    * &gt; This resource cannot be used with S3 directory buckets.
    */
@@ -1434,6 +1434,26 @@ object s3:
       com.pulumi.aws.s3.S3Functions.getBucketPlain(args(argsBuilder).build)
 
     /**
+     * Provides details about the notification configuration of an S3 bucket.
+     * 
+     * Useful when `aws.s3.BucketNotification` is the right resource but the bucket already has notifications you do not manage. Read the existing notifications with this data source and re-emit them \u2014 alongside your own \u2014 in a single `aws.s3.BucketNotification` resource. See issue #501 for the longer story. For sharing a bucket across many independent consumers, enabling EventBridge on the resource is usually a better fit.
+     */
+    inline def getBucketNotification(args: Endofunction[com.pulumi.aws.s3.inputs.GetBucketNotificationArgs.Builder] = scala.Predef.identity):
+        com.pulumi.core.Output[com.pulumi.aws.s3.outputs.GetBucketNotificationResult] =
+      val argsBuilder = com.pulumi.aws.s3.inputs.GetBucketNotificationArgs.builder
+      com.pulumi.aws.s3.S3Functions.getBucketNotification(args(argsBuilder).build)
+
+    /**
+     * Provides details about the notification configuration of an S3 bucket.
+     * 
+     * Useful when `aws.s3.BucketNotification` is the right resource but the bucket already has notifications you do not manage. Read the existing notifications with this data source and re-emit them \u2014 alongside your own \u2014 in a single `aws.s3.BucketNotification` resource. See issue #501 for the longer story. For sharing a bucket across many independent consumers, enabling EventBridge on the resource is usually a better fit.
+     */
+    inline def getBucketNotificationPlain(args: Endofunction[com.pulumi.aws.s3.inputs.GetBucketNotificationPlainArgs.Builder] = scala.Predef.identity):
+        java.util.concurrent.CompletableFuture[com.pulumi.aws.s3.outputs.GetBucketNotificationResult] =
+      val argsBuilder = com.pulumi.aws.s3.inputs.GetBucketNotificationPlainArgs.builder
+      com.pulumi.aws.s3.S3Functions.getBucketNotificationPlain(args(argsBuilder).build)
+
+    /**
      * &gt; **NOTE:** The `aws.s3.BucketObject` data source is DEPRECATED and will be removed in a future version! Use `aws.s3.BucketObjectv2` instead, where new features and fixes will be added.
      * 
      * The S3 object data source allows access to the metadata and
@@ -1544,6 +1564,18 @@ object s3:
         java.util.concurrent.CompletableFuture[com.pulumi.aws.s3.outputs.GetBucketReplicationConfigurationResult] =
       val argsBuilder = com.pulumi.aws.s3.inputs.GetBucketReplicationConfigurationPlainArgs.builder
       com.pulumi.aws.s3.S3Functions.getBucketReplicationConfigurationPlain(args(argsBuilder).build)
+
+    /** Provides details about AWS S3 (Simple Storage) buckets with optional filters. */
+    inline def getBuckets(args: Endofunction[com.pulumi.aws.s3.inputs.GetBucketsArgs.Builder] = scala.Predef.identity):
+        com.pulumi.core.Output[com.pulumi.aws.s3.outputs.GetBucketsResult] =
+      val argsBuilder = com.pulumi.aws.s3.inputs.GetBucketsArgs.builder
+      com.pulumi.aws.s3.S3Functions.getBuckets(args(argsBuilder).build)
+
+    /** Provides details about AWS S3 (Simple Storage) buckets with optional filters. */
+    inline def getBucketsPlain(args: Endofunction[com.pulumi.aws.s3.inputs.GetBucketsPlainArgs.Builder] = scala.Predef.identity):
+        java.util.concurrent.CompletableFuture[com.pulumi.aws.s3.outputs.GetBucketsResult] =
+      val argsBuilder = com.pulumi.aws.s3.inputs.GetBucketsPlainArgs.builder
+      com.pulumi.aws.s3.S3Functions.getBucketsPlain(args(argsBuilder).build)
 
     /** Lists Amazon S3 Express directory buckets. */
     inline def getDirectoryBuckets(args: Endofunction[com.pulumi.aws.s3.inputs.GetDirectoryBucketsArgs.Builder] = scala.Predef.identity):

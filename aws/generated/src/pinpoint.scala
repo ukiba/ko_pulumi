@@ -311,6 +311,27 @@ object pinpoint:
       val argsBuilder = com.pulumi.aws.pinpoint.inputs.Smsvoicev2PhoneNumberTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
+  /** Manages an AWS End User Messaging SMS Pool. */
+  def Smsvoicev2Pool(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+      (args: Endofunction[com.pulumi.aws.pinpoint.Smsvoicev2PoolArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+    var argsBuilder = com.pulumi.aws.pinpoint.Smsvoicev2PoolArgs.builder
+    argsBuilder = args(argsBuilder)
+    conf.logicalName2tagName(name) match
+      case Some(tagName) =>
+        argsBuilder = argsBuilder.tags:
+          transformOptOutputMap(argsBuilder.build.tags, map =>
+              if map.contains("Name") then map else map + ("Name" -> tagName))
+      case None =>
+    com.pulumi.aws.pinpoint.Smsvoicev2Pool(name,
+        argsBuilder.build,
+        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+
+  extension (builder: com.pulumi.aws.pinpoint.Smsvoicev2PoolArgs.Builder)
+    def timeouts(args: Endofunction[com.pulumi.aws.pinpoint.inputs.Smsvoicev2PoolTimeoutsArgs.Builder]):
+        com.pulumi.aws.pinpoint.Smsvoicev2PoolArgs.Builder =
+      val argsBuilder = com.pulumi.aws.pinpoint.inputs.Smsvoicev2PoolTimeoutsArgs.builder
+      builder.timeouts(args(argsBuilder).build)
+
   extension (builder: com.pulumi.aws.pinpoint.inputs.AppState.Builder)
     /**
      * @param campaignHook Settings for invoking an AWS Lambda function that customizes a segment for a campaign. See below.
@@ -395,4 +416,10 @@ object pinpoint:
     def timeouts(args: Endofunction[com.pulumi.aws.pinpoint.inputs.Smsvoicev2PhoneNumberTimeoutsArgs.Builder]):
         com.pulumi.aws.pinpoint.inputs.Smsvoicev2PhoneNumberState.Builder =
       val argsBuilder = com.pulumi.aws.pinpoint.inputs.Smsvoicev2PhoneNumberTimeoutsArgs.builder
+      builder.timeouts(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.pinpoint.inputs.Smsvoicev2PoolState.Builder)
+    def timeouts(args: Endofunction[com.pulumi.aws.pinpoint.inputs.Smsvoicev2PoolTimeoutsArgs.Builder]):
+        com.pulumi.aws.pinpoint.inputs.Smsvoicev2PoolState.Builder =
+      val argsBuilder = com.pulumi.aws.pinpoint.inputs.Smsvoicev2PoolTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)

@@ -3286,6 +3286,7 @@ object dataplex:
 
     /**
      * @param dataDocumentationSpec DataDocumentationScan related setting.
+     * Structure is documented below.
      * @return builder
      */
     def dataDocumentationSpec(args: Endofunction[com.pulumi.gcp.dataplex.inputs.DatascanDataDocumentationSpecArgs.Builder]):
@@ -10844,6 +10845,7 @@ object dataplex:
 
     /**
      * @param dataDocumentationSpec DataDocumentationScan related setting.
+     * Structure is documented below.
      * @return builder
      */
     def dataDocumentationSpec(args: Endofunction[com.pulumi.gcp.dataplex.inputs.DatascanDataDocumentationSpecArgs.Builder]):

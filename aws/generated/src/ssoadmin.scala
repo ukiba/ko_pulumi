@@ -245,6 +245,28 @@ object ssoadmin:
       val argsBuilder = com.pulumi.aws.ssoadmin.inputs.PermissionsBoundaryAttachmentPermissionsBoundaryArgs.builder
       builder.permissionsBoundary(args(argsBuilder).build)
 
+  /**
+   * Resource for managing an AWS SSO Admin Region.
+   * 
+   * Adds another AWS Region to an IAM Identity Center instance. This operation runs asynchronously, and Terraform waits until the Region status becomes `ACTIVE`.
+   * 
+   * &gt; For a given instance, only one Region add or remove operation can run at a time. If you manage multiple regions, apply them one at a time or use `dependsOn`.
+   * 
+   * &gt; The primary Region of an IAM Identity Center instance cannot be removed.
+   */
+  def Region(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+      (args: Endofunction[com.pulumi.aws.ssoadmin.RegionArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+    val argsBuilder = com.pulumi.aws.ssoadmin.RegionArgs.builder
+    com.pulumi.aws.ssoadmin.Region(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+
+  extension (builder: com.pulumi.aws.ssoadmin.RegionArgs.Builder)
+    def timeouts(args: Endofunction[com.pulumi.aws.ssoadmin.inputs.RegionTimeoutsArgs.Builder]):
+        com.pulumi.aws.ssoadmin.RegionArgs.Builder =
+      val argsBuilder = com.pulumi.aws.ssoadmin.inputs.RegionTimeoutsArgs.builder
+      builder.timeouts(args(argsBuilder).build)
+
   object SsoadminFunctions:
     // Pulumi methods are reproduced as Scala methods.
     // Java methods cause Scala warnings under -Yexplicit-nulls flag
@@ -464,6 +486,12 @@ object ssoadmin:
         com.pulumi.aws.ssoadmin.inputs.PermissionsBoundaryAttachmentState.Builder =
       val argsBuilder = com.pulumi.aws.ssoadmin.inputs.PermissionsBoundaryAttachmentPermissionsBoundaryArgs.builder
       builder.permissionsBoundary(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.ssoadmin.inputs.RegionState.Builder)
+    def timeouts(args: Endofunction[com.pulumi.aws.ssoadmin.inputs.RegionTimeoutsArgs.Builder]):
+        com.pulumi.aws.ssoadmin.inputs.RegionState.Builder =
+      val argsBuilder = com.pulumi.aws.ssoadmin.inputs.RegionTimeoutsArgs.builder
+      builder.timeouts(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.ssoadmin.inputs.TrustedTokenIssuerState.Builder)
     /**

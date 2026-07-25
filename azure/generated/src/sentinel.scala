@@ -358,7 +358,7 @@ object sentinel:
   /**
    * Manages a Azure Advanced Threat Protection Data Connector.
    * 
-   * !&gt; **Note:** This resource requires that [Enterprise Mobility + Security E5](https://www.microsoft.com/en-us/microsoft-365/enterprise-mobility-security) is enabled on the tenant being connected to.
+   * &gt; **Note:** This resource requires that [Enterprise Mobility + Security E5](https://www.microsoft.com/en-us/microsoft-365/enterprise-mobility-security) is enabled on the tenant being connected to.
    */
   def DataConnectorAzureAdvancedThreadProtection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.azure.sentinel.DataConnectorAzureAdvancedThreadProtectionArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
@@ -406,7 +406,7 @@ object sentinel:
   /**
    * Manages a Microsoft Cloud App Security Data Connector.
    * 
-   * !&gt; **Note:** This resource requires that [Enterprise Mobility + Security E5](https://www.microsoft.com/en-us/microsoft-365/enterprise-mobility-security) is enabled on the tenant being connected to.
+   * &gt; **Note:** This resource requires that [Enterprise Mobility + Security E5](https://www.microsoft.com/en-us/microsoft-365/enterprise-mobility-security) is enabled on the tenant being connected to.
    */
   def DataConnectorMicrosoftCloudAppSecurity(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.azure.sentinel.DataConnectorMicrosoftCloudAppSecurityArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =

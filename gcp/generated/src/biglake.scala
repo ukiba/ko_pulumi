@@ -31,6 +31,26 @@ object biglake:
       val argsBuilder = com.pulumi.gcp.biglake.inputs.GetHiveCatalogIamPolicyPlainArgs.builder
       com.pulumi.gcp.biglake.BiglakeFunctions.getHiveCatalogIamPolicyPlain(args(argsBuilder).build)
 
+    /**
+     * Retrieves the current IAM policy data for hivedatabase
+     * &gt; **Warning:** This datasource is in beta, and should be used with the terraform-provider-google-beta provider.
+     * See Provider Versions for more details on beta resources.
+     */
+    inline def getHiveDatabaseIamPolicy(args: Endofunction[com.pulumi.gcp.biglake.inputs.GetHiveDatabaseIamPolicyArgs.Builder] = scala.Predef.identity):
+        com.pulumi.core.Output[com.pulumi.gcp.biglake.outputs.GetHiveDatabaseIamPolicyResult] =
+      val argsBuilder = com.pulumi.gcp.biglake.inputs.GetHiveDatabaseIamPolicyArgs.builder
+      com.pulumi.gcp.biglake.BiglakeFunctions.getHiveDatabaseIamPolicy(args(argsBuilder).build)
+
+    /**
+     * Retrieves the current IAM policy data for hivedatabase
+     * &gt; **Warning:** This datasource is in beta, and should be used with the terraform-provider-google-beta provider.
+     * See Provider Versions for more details on beta resources.
+     */
+    inline def getHiveDatabaseIamPolicyPlain(args: Endofunction[com.pulumi.gcp.biglake.inputs.GetHiveDatabaseIamPolicyPlainArgs.Builder] = scala.Predef.identity):
+        java.util.concurrent.CompletableFuture[com.pulumi.gcp.biglake.outputs.GetHiveDatabaseIamPolicyResult] =
+      val argsBuilder = com.pulumi.gcp.biglake.inputs.GetHiveDatabaseIamPolicyPlainArgs.builder
+      com.pulumi.gcp.biglake.BiglakeFunctions.getHiveDatabaseIamPolicyPlain(args(argsBuilder).build)
+
     /** Retrieves the current IAM policy data for icebergcatalog */
     inline def getIcebergCatalogIamPolicy(args: Endofunction[com.pulumi.gcp.biglake.inputs.GetIcebergCatalogIamPolicyArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.biglake.outputs.GetIcebergCatalogIamPolicyResult] =
@@ -1094,6 +1114,1004 @@ object biglake:
         resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
 
   /**
+   * Hive Databases in Biglake Metastore. Hive Databases exist within a Hive Catalog.
+   * 
+   * &gt; **Warning:** This resource is in beta, and should be used with the terraform-provider-google-beta provider.
+   * See Provider Versions for more details on beta resources.
+   * 
+   * To get more information about HiveDatabase, see:
+   * * How-to Guides
+   *     * [QUICKSTART_TITLE](https://docs.cloud.google.com/lakehouse/docs/about-spark-hive-metastore)
+   */
+  def HiveDatabase(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+      (args: Endofunction[com.pulumi.gcp.biglake.HiveDatabaseArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+    var argsBuilder = com.pulumi.gcp.biglake.HiveDatabaseArgs.builder
+    conf.logicalName2physicalName(name) match
+      case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
+      case None               =>
+    com.pulumi.gcp.biglake.HiveDatabase(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+
+  /**
+   * Three different resources help you manage your IAM policy for BigLake Hive Metastore HiveDatabase. Each of these resources serves a different use case:
+   * 
+   * * `gcp.biglake.HiveDatabaseIamPolicy`: Authoritative. Sets the IAM policy for the hivedatabase and replaces any existing policy already attached.
+   * * `gcp.biglake.HiveDatabaseIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the hivedatabase are preserved.
+   * * `gcp.biglake.HiveDatabaseIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the hivedatabase are preserved.
+   * 
+   * A data source can be used to retrieve policy data in advent you do not need creation
+   * 
+   * * `gcp.biglake.HiveDatabaseIamPolicy`: Retrieves the IAM policy for the hivedatabase
+   * 
+   * &gt; **Note:** `gcp.biglake.HiveDatabaseIamPolicy` **cannot** be used in conjunction with `gcp.biglake.HiveDatabaseIamBinding` and `gcp.biglake.HiveDatabaseIamMember` or they will fight over what your policy should be.
+   * 
+   * &gt; **Note:** `gcp.biglake.HiveDatabaseIamBinding` resources **can be** used in conjunction with `gcp.biglake.HiveDatabaseIamMember` resources **only if** they do not grant privilege to the same role.
+   * 
+   * &gt; **Warning:** This resource is in beta, and should be used with the terraform-provider-google-beta provider.
+   * See Provider Versions for more details on beta resources.
+   * 
+   * ## gcp.biglake.HiveDatabaseIamPolicy
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.organizations.OrganizationsFunctions;
+   * import com.pulumi.gcp.organizations.inputs.GetIAMPolicyArgs;
+   * import com.pulumi.gcp.organizations.inputs.GetIAMPolicyBindingArgs;
+   * import com.pulumi.gcp.biglake.HiveDatabaseIamPolicy;
+   * import com.pulumi.gcp.biglake.HiveDatabaseIamPolicyArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         final var admin = OrganizationsFunctions.getIAMPolicy(GetIAMPolicyArgs.builder()
+   *             .bindings(GetIAMPolicyBindingArgs.builder()
+   *                 .role("roles/biglake.editor")
+   *                 .members("user:jane}{@literal @}{@code example.com")
+   *                 .build())
+   *             .build());
+   * 
+   *         var policy = new HiveDatabaseIamPolicy("policy", HiveDatabaseIamPolicyArgs.builder()
+   *             .project(myHiveDatabase.project())
+   *             .catalog(myHiveDatabase.catalog())
+   *             .name(myHiveDatabase.name())
+   *             .policyData(admin.policyData())
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * ## gcp.biglake.HiveDatabaseIamBinding
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.biglake.HiveDatabaseIamBinding;
+   * import com.pulumi.gcp.biglake.HiveDatabaseIamBindingArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         var binding = new HiveDatabaseIamBinding("binding", HiveDatabaseIamBindingArgs.builder()
+   *             .project(myHiveDatabase.project())
+   *             .catalog(myHiveDatabase.catalog())
+   *             .name(myHiveDatabase.name())
+   *             .role("roles/biglake.editor")
+   *             .members("user:jane}{@literal @}{@code example.com")
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * ## gcp.biglake.HiveDatabaseIamMember
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.biglake.HiveDatabaseIamMember;
+   * import com.pulumi.gcp.biglake.HiveDatabaseIamMemberArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         var member = new HiveDatabaseIamMember("member", HiveDatabaseIamMemberArgs.builder()
+   *             .project(myHiveDatabase.project())
+   *             .catalog(myHiveDatabase.catalog())
+   *             .name(myHiveDatabase.name())
+   *             .role("roles/biglake.editor")
+   *             .member("user:jane}{@literal @}{@code example.com")
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * ## This resource supports User Project Overrides.
+   * 
+   * -
+   * 
+   * # IAM policy for BigLake Hive Metastore HiveDatabase
+   * 
+   * Three different resources help you manage your IAM policy for BigLake Hive Metastore HiveDatabase. Each of these resources serves a different use case:
+   * 
+   * * `gcp.biglake.HiveDatabaseIamPolicy`: Authoritative. Sets the IAM policy for the hivedatabase and replaces any existing policy already attached.
+   * * `gcp.biglake.HiveDatabaseIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the hivedatabase are preserved.
+   * * `gcp.biglake.HiveDatabaseIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the hivedatabase are preserved.
+   * 
+   * A data source can be used to retrieve policy data in advent you do not need creation
+   * 
+   * * `gcp.biglake.HiveDatabaseIamPolicy`: Retrieves the IAM policy for the hivedatabase
+   * 
+   * &gt; **Note:** `gcp.biglake.HiveDatabaseIamPolicy` **cannot** be used in conjunction with `gcp.biglake.HiveDatabaseIamBinding` and `gcp.biglake.HiveDatabaseIamMember` or they will fight over what your policy should be.
+   * 
+   * &gt; **Note:** `gcp.biglake.HiveDatabaseIamBinding` resources **can be** used in conjunction with `gcp.biglake.HiveDatabaseIamMember` resources **only if** they do not grant privilege to the same role.
+   * 
+   * &gt; **Warning:** This resource is in beta, and should be used with the terraform-provider-google-beta provider.
+   * See Provider Versions for more details on beta resources.
+   * 
+   * ## gcp.biglake.HiveDatabaseIamPolicy
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.organizations.OrganizationsFunctions;
+   * import com.pulumi.gcp.organizations.inputs.GetIAMPolicyArgs;
+   * import com.pulumi.gcp.organizations.inputs.GetIAMPolicyBindingArgs;
+   * import com.pulumi.gcp.biglake.HiveDatabaseIamPolicy;
+   * import com.pulumi.gcp.biglake.HiveDatabaseIamPolicyArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         final var admin = OrganizationsFunctions.getIAMPolicy(GetIAMPolicyArgs.builder()
+   *             .bindings(GetIAMPolicyBindingArgs.builder()
+   *                 .role("roles/biglake.editor")
+   *                 .members("user:jane}{@literal @}{@code example.com")
+   *                 .build())
+   *             .build());
+   * 
+   *         var policy = new HiveDatabaseIamPolicy("policy", HiveDatabaseIamPolicyArgs.builder()
+   *             .project(myHiveDatabase.project())
+   *             .catalog(myHiveDatabase.catalog())
+   *             .name(myHiveDatabase.name())
+   *             .policyData(admin.policyData())
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * ## gcp.biglake.HiveDatabaseIamBinding
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.biglake.HiveDatabaseIamBinding;
+   * import com.pulumi.gcp.biglake.HiveDatabaseIamBindingArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         var binding = new HiveDatabaseIamBinding("binding", HiveDatabaseIamBindingArgs.builder()
+   *             .project(myHiveDatabase.project())
+   *             .catalog(myHiveDatabase.catalog())
+   *             .name(myHiveDatabase.name())
+   *             .role("roles/biglake.editor")
+   *             .members("user:jane}{@literal @}{@code example.com")
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * ## gcp.biglake.HiveDatabaseIamMember
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.biglake.HiveDatabaseIamMember;
+   * import com.pulumi.gcp.biglake.HiveDatabaseIamMemberArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         var member = new HiveDatabaseIamMember("member", HiveDatabaseIamMemberArgs.builder()
+   *             .project(myHiveDatabase.project())
+   *             .catalog(myHiveDatabase.catalog())
+   *             .name(myHiveDatabase.name())
+   *             .role("roles/biglake.editor")
+   *             .member("user:jane}{@literal @}{@code example.com")
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * ## Import
+   * 
+   * For all import syntaxes, the &#34;resource in question&#34; can take any of the following forms:
+   * 
+   * * projects/{{project}}/catalogs/{{catalog}}/namespaces/{{name}}
+   * * {{project}}/{{catalog}}/{{name}}
+   * * {{catalog}}/{{name}}
+   * * {{name}}
+   * 
+   * Any variables not passed in the import command will be taken from the provider configuration.
+   * 
+   * BigLake Hive Metastore hivedatabase IAM resources can be imported using the resource identifiers, role, and member.
+   * 
+   * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
+   * ```sh
+   * $ terraform import google_biglake_hive_database_iam_member.editor &#34;projects/{{project}}/catalogs/{{catalog}}/namespaces/{{hive_database}} roles/biglake.editor user:jane{@literal @}example.com&#34;
+   * ```
+   * 
+   * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
+   * ```sh
+   * $ terraform import google_biglake_hive_database_iam_binding.editor &#34;projects/{{project}}/catalogs/{{catalog}}/namespaces/{{hive_database}} roles/biglake.editor&#34;
+   * ```
+   * 
+   * IAM policy imports use the identifier of the resource in question, e.g.
+   * ```sh
+   * $ pulumi import gcp:biglake/hiveDatabaseIamBinding:HiveDatabaseIamBinding editor projects/{{project}}/catalogs/{{catalog}}/namespaces/{{hive_database}}
+   * ```
+   * 
+   * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
+   *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
+   */
+  def HiveDatabaseIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+      (args: Endofunction[com.pulumi.gcp.biglake.HiveDatabaseIamBindingArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+    var argsBuilder = com.pulumi.gcp.biglake.HiveDatabaseIamBindingArgs.builder
+    conf.logicalName2physicalName(name) match
+      case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
+      case None               =>
+    com.pulumi.gcp.biglake.HiveDatabaseIamBinding(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+
+  extension (builder: com.pulumi.gcp.biglake.HiveDatabaseIamBindingArgs.Builder)
+    def condition(args: Endofunction[com.pulumi.gcp.biglake.inputs.HiveDatabaseIamBindingConditionArgs.Builder]):
+        com.pulumi.gcp.biglake.HiveDatabaseIamBindingArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.biglake.inputs.HiveDatabaseIamBindingConditionArgs.builder
+      builder.condition(args(argsBuilder).build)
+
+  /**
+   * Three different resources help you manage your IAM policy for BigLake Hive Metastore HiveDatabase. Each of these resources serves a different use case:
+   * 
+   * * `gcp.biglake.HiveDatabaseIamPolicy`: Authoritative. Sets the IAM policy for the hivedatabase and replaces any existing policy already attached.
+   * * `gcp.biglake.HiveDatabaseIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the hivedatabase are preserved.
+   * * `gcp.biglake.HiveDatabaseIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the hivedatabase are preserved.
+   * 
+   * A data source can be used to retrieve policy data in advent you do not need creation
+   * 
+   * * `gcp.biglake.HiveDatabaseIamPolicy`: Retrieves the IAM policy for the hivedatabase
+   * 
+   * &gt; **Note:** `gcp.biglake.HiveDatabaseIamPolicy` **cannot** be used in conjunction with `gcp.biglake.HiveDatabaseIamBinding` and `gcp.biglake.HiveDatabaseIamMember` or they will fight over what your policy should be.
+   * 
+   * &gt; **Note:** `gcp.biglake.HiveDatabaseIamBinding` resources **can be** used in conjunction with `gcp.biglake.HiveDatabaseIamMember` resources **only if** they do not grant privilege to the same role.
+   * 
+   * &gt; **Warning:** This resource is in beta, and should be used with the terraform-provider-google-beta provider.
+   * See Provider Versions for more details on beta resources.
+   * 
+   * ## gcp.biglake.HiveDatabaseIamPolicy
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.organizations.OrganizationsFunctions;
+   * import com.pulumi.gcp.organizations.inputs.GetIAMPolicyArgs;
+   * import com.pulumi.gcp.organizations.inputs.GetIAMPolicyBindingArgs;
+   * import com.pulumi.gcp.biglake.HiveDatabaseIamPolicy;
+   * import com.pulumi.gcp.biglake.HiveDatabaseIamPolicyArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         final var admin = OrganizationsFunctions.getIAMPolicy(GetIAMPolicyArgs.builder()
+   *             .bindings(GetIAMPolicyBindingArgs.builder()
+   *                 .role("roles/biglake.editor")
+   *                 .members("user:jane}{@literal @}{@code example.com")
+   *                 .build())
+   *             .build());
+   * 
+   *         var policy = new HiveDatabaseIamPolicy("policy", HiveDatabaseIamPolicyArgs.builder()
+   *             .project(myHiveDatabase.project())
+   *             .catalog(myHiveDatabase.catalog())
+   *             .name(myHiveDatabase.name())
+   *             .policyData(admin.policyData())
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * ## gcp.biglake.HiveDatabaseIamBinding
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.biglake.HiveDatabaseIamBinding;
+   * import com.pulumi.gcp.biglake.HiveDatabaseIamBindingArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         var binding = new HiveDatabaseIamBinding("binding", HiveDatabaseIamBindingArgs.builder()
+   *             .project(myHiveDatabase.project())
+   *             .catalog(myHiveDatabase.catalog())
+   *             .name(myHiveDatabase.name())
+   *             .role("roles/biglake.editor")
+   *             .members("user:jane}{@literal @}{@code example.com")
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * ## gcp.biglake.HiveDatabaseIamMember
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.biglake.HiveDatabaseIamMember;
+   * import com.pulumi.gcp.biglake.HiveDatabaseIamMemberArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         var member = new HiveDatabaseIamMember("member", HiveDatabaseIamMemberArgs.builder()
+   *             .project(myHiveDatabase.project())
+   *             .catalog(myHiveDatabase.catalog())
+   *             .name(myHiveDatabase.name())
+   *             .role("roles/biglake.editor")
+   *             .member("user:jane}{@literal @}{@code example.com")
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * ## This resource supports User Project Overrides.
+   * 
+   * -
+   * 
+   * # IAM policy for BigLake Hive Metastore HiveDatabase
+   * 
+   * Three different resources help you manage your IAM policy for BigLake Hive Metastore HiveDatabase. Each of these resources serves a different use case:
+   * 
+   * * `gcp.biglake.HiveDatabaseIamPolicy`: Authoritative. Sets the IAM policy for the hivedatabase and replaces any existing policy already attached.
+   * * `gcp.biglake.HiveDatabaseIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the hivedatabase are preserved.
+   * * `gcp.biglake.HiveDatabaseIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the hivedatabase are preserved.
+   * 
+   * A data source can be used to retrieve policy data in advent you do not need creation
+   * 
+   * * `gcp.biglake.HiveDatabaseIamPolicy`: Retrieves the IAM policy for the hivedatabase
+   * 
+   * &gt; **Note:** `gcp.biglake.HiveDatabaseIamPolicy` **cannot** be used in conjunction with `gcp.biglake.HiveDatabaseIamBinding` and `gcp.biglake.HiveDatabaseIamMember` or they will fight over what your policy should be.
+   * 
+   * &gt; **Note:** `gcp.biglake.HiveDatabaseIamBinding` resources **can be** used in conjunction with `gcp.biglake.HiveDatabaseIamMember` resources **only if** they do not grant privilege to the same role.
+   * 
+   * &gt; **Warning:** This resource is in beta, and should be used with the terraform-provider-google-beta provider.
+   * See Provider Versions for more details on beta resources.
+   * 
+   * ## gcp.biglake.HiveDatabaseIamPolicy
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.organizations.OrganizationsFunctions;
+   * import com.pulumi.gcp.organizations.inputs.GetIAMPolicyArgs;
+   * import com.pulumi.gcp.organizations.inputs.GetIAMPolicyBindingArgs;
+   * import com.pulumi.gcp.biglake.HiveDatabaseIamPolicy;
+   * import com.pulumi.gcp.biglake.HiveDatabaseIamPolicyArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         final var admin = OrganizationsFunctions.getIAMPolicy(GetIAMPolicyArgs.builder()
+   *             .bindings(GetIAMPolicyBindingArgs.builder()
+   *                 .role("roles/biglake.editor")
+   *                 .members("user:jane}{@literal @}{@code example.com")
+   *                 .build())
+   *             .build());
+   * 
+   *         var policy = new HiveDatabaseIamPolicy("policy", HiveDatabaseIamPolicyArgs.builder()
+   *             .project(myHiveDatabase.project())
+   *             .catalog(myHiveDatabase.catalog())
+   *             .name(myHiveDatabase.name())
+   *             .policyData(admin.policyData())
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * ## gcp.biglake.HiveDatabaseIamBinding
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.biglake.HiveDatabaseIamBinding;
+   * import com.pulumi.gcp.biglake.HiveDatabaseIamBindingArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         var binding = new HiveDatabaseIamBinding("binding", HiveDatabaseIamBindingArgs.builder()
+   *             .project(myHiveDatabase.project())
+   *             .catalog(myHiveDatabase.catalog())
+   *             .name(myHiveDatabase.name())
+   *             .role("roles/biglake.editor")
+   *             .members("user:jane}{@literal @}{@code example.com")
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * ## gcp.biglake.HiveDatabaseIamMember
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.biglake.HiveDatabaseIamMember;
+   * import com.pulumi.gcp.biglake.HiveDatabaseIamMemberArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         var member = new HiveDatabaseIamMember("member", HiveDatabaseIamMemberArgs.builder()
+   *             .project(myHiveDatabase.project())
+   *             .catalog(myHiveDatabase.catalog())
+   *             .name(myHiveDatabase.name())
+   *             .role("roles/biglake.editor")
+   *             .member("user:jane}{@literal @}{@code example.com")
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * ## Import
+   * 
+   * For all import syntaxes, the &#34;resource in question&#34; can take any of the following forms:
+   * 
+   * * projects/{{project}}/catalogs/{{catalog}}/namespaces/{{name}}
+   * * {{project}}/{{catalog}}/{{name}}
+   * * {{catalog}}/{{name}}
+   * * {{name}}
+   * 
+   * Any variables not passed in the import command will be taken from the provider configuration.
+   * 
+   * BigLake Hive Metastore hivedatabase IAM resources can be imported using the resource identifiers, role, and member.
+   * 
+   * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
+   * ```sh
+   * $ terraform import google_biglake_hive_database_iam_member.editor &#34;projects/{{project}}/catalogs/{{catalog}}/namespaces/{{hive_database}} roles/biglake.editor user:jane{@literal @}example.com&#34;
+   * ```
+   * 
+   * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
+   * ```sh
+   * $ terraform import google_biglake_hive_database_iam_binding.editor &#34;projects/{{project}}/catalogs/{{catalog}}/namespaces/{{hive_database}} roles/biglake.editor&#34;
+   * ```
+   * 
+   * IAM policy imports use the identifier of the resource in question, e.g.
+   * ```sh
+   * $ pulumi import gcp:biglake/hiveDatabaseIamMember:HiveDatabaseIamMember editor projects/{{project}}/catalogs/{{catalog}}/namespaces/{{hive_database}}
+   * ```
+   * 
+   * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
+   *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
+   */
+  def HiveDatabaseIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+      (args: Endofunction[com.pulumi.gcp.biglake.HiveDatabaseIamMemberArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+    var argsBuilder = com.pulumi.gcp.biglake.HiveDatabaseIamMemberArgs.builder
+    conf.logicalName2physicalName(name) match
+      case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
+      case None               =>
+    com.pulumi.gcp.biglake.HiveDatabaseIamMember(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+
+  extension (builder: com.pulumi.gcp.biglake.HiveDatabaseIamMemberArgs.Builder)
+    def condition(args: Endofunction[com.pulumi.gcp.biglake.inputs.HiveDatabaseIamMemberConditionArgs.Builder]):
+        com.pulumi.gcp.biglake.HiveDatabaseIamMemberArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.biglake.inputs.HiveDatabaseIamMemberConditionArgs.builder
+      builder.condition(args(argsBuilder).build)
+
+  /**
+   * Three different resources help you manage your IAM policy for BigLake Hive Metastore HiveDatabase. Each of these resources serves a different use case:
+   * 
+   * * `gcp.biglake.HiveDatabaseIamPolicy`: Authoritative. Sets the IAM policy for the hivedatabase and replaces any existing policy already attached.
+   * * `gcp.biglake.HiveDatabaseIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the hivedatabase are preserved.
+   * * `gcp.biglake.HiveDatabaseIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the hivedatabase are preserved.
+   * 
+   * A data source can be used to retrieve policy data in advent you do not need creation
+   * 
+   * * `gcp.biglake.HiveDatabaseIamPolicy`: Retrieves the IAM policy for the hivedatabase
+   * 
+   * &gt; **Note:** `gcp.biglake.HiveDatabaseIamPolicy` **cannot** be used in conjunction with `gcp.biglake.HiveDatabaseIamBinding` and `gcp.biglake.HiveDatabaseIamMember` or they will fight over what your policy should be.
+   * 
+   * &gt; **Note:** `gcp.biglake.HiveDatabaseIamBinding` resources **can be** used in conjunction with `gcp.biglake.HiveDatabaseIamMember` resources **only if** they do not grant privilege to the same role.
+   * 
+   * &gt; **Warning:** This resource is in beta, and should be used with the terraform-provider-google-beta provider.
+   * See Provider Versions for more details on beta resources.
+   * 
+   * ## gcp.biglake.HiveDatabaseIamPolicy
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.organizations.OrganizationsFunctions;
+   * import com.pulumi.gcp.organizations.inputs.GetIAMPolicyArgs;
+   * import com.pulumi.gcp.organizations.inputs.GetIAMPolicyBindingArgs;
+   * import com.pulumi.gcp.biglake.HiveDatabaseIamPolicy;
+   * import com.pulumi.gcp.biglake.HiveDatabaseIamPolicyArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         final var admin = OrganizationsFunctions.getIAMPolicy(GetIAMPolicyArgs.builder()
+   *             .bindings(GetIAMPolicyBindingArgs.builder()
+   *                 .role("roles/biglake.editor")
+   *                 .members("user:jane}{@literal @}{@code example.com")
+   *                 .build())
+   *             .build());
+   * 
+   *         var policy = new HiveDatabaseIamPolicy("policy", HiveDatabaseIamPolicyArgs.builder()
+   *             .project(myHiveDatabase.project())
+   *             .catalog(myHiveDatabase.catalog())
+   *             .name(myHiveDatabase.name())
+   *             .policyData(admin.policyData())
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * ## gcp.biglake.HiveDatabaseIamBinding
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.biglake.HiveDatabaseIamBinding;
+   * import com.pulumi.gcp.biglake.HiveDatabaseIamBindingArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         var binding = new HiveDatabaseIamBinding("binding", HiveDatabaseIamBindingArgs.builder()
+   *             .project(myHiveDatabase.project())
+   *             .catalog(myHiveDatabase.catalog())
+   *             .name(myHiveDatabase.name())
+   *             .role("roles/biglake.editor")
+   *             .members("user:jane}{@literal @}{@code example.com")
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * ## gcp.biglake.HiveDatabaseIamMember
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.biglake.HiveDatabaseIamMember;
+   * import com.pulumi.gcp.biglake.HiveDatabaseIamMemberArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         var member = new HiveDatabaseIamMember("member", HiveDatabaseIamMemberArgs.builder()
+   *             .project(myHiveDatabase.project())
+   *             .catalog(myHiveDatabase.catalog())
+   *             .name(myHiveDatabase.name())
+   *             .role("roles/biglake.editor")
+   *             .member("user:jane}{@literal @}{@code example.com")
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * ## This resource supports User Project Overrides.
+   * 
+   * -
+   * 
+   * # IAM policy for BigLake Hive Metastore HiveDatabase
+   * 
+   * Three different resources help you manage your IAM policy for BigLake Hive Metastore HiveDatabase. Each of these resources serves a different use case:
+   * 
+   * * `gcp.biglake.HiveDatabaseIamPolicy`: Authoritative. Sets the IAM policy for the hivedatabase and replaces any existing policy already attached.
+   * * `gcp.biglake.HiveDatabaseIamBinding`: Authoritative for a given role. Updates the IAM policy to grant a role to a list of members. Other roles within the IAM policy for the hivedatabase are preserved.
+   * * `gcp.biglake.HiveDatabaseIamMember`: Non-authoritative. Updates the IAM policy to grant a role to a new member. Other members for the role for the hivedatabase are preserved.
+   * 
+   * A data source can be used to retrieve policy data in advent you do not need creation
+   * 
+   * * `gcp.biglake.HiveDatabaseIamPolicy`: Retrieves the IAM policy for the hivedatabase
+   * 
+   * &gt; **Note:** `gcp.biglake.HiveDatabaseIamPolicy` **cannot** be used in conjunction with `gcp.biglake.HiveDatabaseIamBinding` and `gcp.biglake.HiveDatabaseIamMember` or they will fight over what your policy should be.
+   * 
+   * &gt; **Note:** `gcp.biglake.HiveDatabaseIamBinding` resources **can be** used in conjunction with `gcp.biglake.HiveDatabaseIamMember` resources **only if** they do not grant privilege to the same role.
+   * 
+   * &gt; **Warning:** This resource is in beta, and should be used with the terraform-provider-google-beta provider.
+   * See Provider Versions for more details on beta resources.
+   * 
+   * ## gcp.biglake.HiveDatabaseIamPolicy
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.organizations.OrganizationsFunctions;
+   * import com.pulumi.gcp.organizations.inputs.GetIAMPolicyArgs;
+   * import com.pulumi.gcp.organizations.inputs.GetIAMPolicyBindingArgs;
+   * import com.pulumi.gcp.biglake.HiveDatabaseIamPolicy;
+   * import com.pulumi.gcp.biglake.HiveDatabaseIamPolicyArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         final var admin = OrganizationsFunctions.getIAMPolicy(GetIAMPolicyArgs.builder()
+   *             .bindings(GetIAMPolicyBindingArgs.builder()
+   *                 .role("roles/biglake.editor")
+   *                 .members("user:jane}{@literal @}{@code example.com")
+   *                 .build())
+   *             .build());
+   * 
+   *         var policy = new HiveDatabaseIamPolicy("policy", HiveDatabaseIamPolicyArgs.builder()
+   *             .project(myHiveDatabase.project())
+   *             .catalog(myHiveDatabase.catalog())
+   *             .name(myHiveDatabase.name())
+   *             .policyData(admin.policyData())
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * ## gcp.biglake.HiveDatabaseIamBinding
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.biglake.HiveDatabaseIamBinding;
+   * import com.pulumi.gcp.biglake.HiveDatabaseIamBindingArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         var binding = new HiveDatabaseIamBinding("binding", HiveDatabaseIamBindingArgs.builder()
+   *             .project(myHiveDatabase.project())
+   *             .catalog(myHiveDatabase.catalog())
+   *             .name(myHiveDatabase.name())
+   *             .role("roles/biglake.editor")
+   *             .members("user:jane}{@literal @}{@code example.com")
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * ## gcp.biglake.HiveDatabaseIamMember
+   * 
+   * <pre>
+   * {@code
+   * package generated_program;
+   * 
+   * import com.pulumi.Context;
+   * import com.pulumi.Pulumi;
+   * import com.pulumi.core.Output;
+   * import com.pulumi.gcp.biglake.HiveDatabaseIamMember;
+   * import com.pulumi.gcp.biglake.HiveDatabaseIamMemberArgs;
+   * import java.util.ArrayList;
+   * import java.util.Arrays;
+   * import java.util.Map;
+   * import java.io.File;
+   * import java.nio.file.Files;
+   * import java.nio.file.Paths;
+   * 
+   * public class App }{{@code
+   *     public static void main(String[] args) }{{@code
+   *         Pulumi.run(App::stack);
+   *     }}{@code
+   * 
+   *     public static void stack(Context ctx) }{{@code
+   *         var member = new HiveDatabaseIamMember("member", HiveDatabaseIamMemberArgs.builder()
+   *             .project(myHiveDatabase.project())
+   *             .catalog(myHiveDatabase.catalog())
+   *             .name(myHiveDatabase.name())
+   *             .role("roles/biglake.editor")
+   *             .member("user:jane}{@literal @}{@code example.com")
+   *             .build());
+   * 
+   *     }}{@code
+   * }}{@code
+   * }
+   * </pre>
+   * 
+   * ## Import
+   * 
+   * For all import syntaxes, the &#34;resource in question&#34; can take any of the following forms:
+   * 
+   * * projects/{{project}}/catalogs/{{catalog}}/namespaces/{{name}}
+   * * {{project}}/{{catalog}}/{{name}}
+   * * {{catalog}}/{{name}}
+   * * {{name}}
+   * 
+   * Any variables not passed in the import command will be taken from the provider configuration.
+   * 
+   * BigLake Hive Metastore hivedatabase IAM resources can be imported using the resource identifiers, role, and member.
+   * 
+   * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
+   * ```sh
+   * $ terraform import google_biglake_hive_database_iam_member.editor &#34;projects/{{project}}/catalogs/{{catalog}}/namespaces/{{hive_database}} roles/biglake.editor user:jane{@literal @}example.com&#34;
+   * ```
+   * 
+   * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
+   * ```sh
+   * $ terraform import google_biglake_hive_database_iam_binding.editor &#34;projects/{{project}}/catalogs/{{catalog}}/namespaces/{{hive_database}} roles/biglake.editor&#34;
+   * ```
+   * 
+   * IAM policy imports use the identifier of the resource in question, e.g.
+   * ```sh
+   * $ pulumi import gcp:biglake/hiveDatabaseIamPolicy:HiveDatabaseIamPolicy editor projects/{{project}}/catalogs/{{catalog}}/namespaces/{{hive_database}}
+   * ```
+   * 
+   * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
+   *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
+   */
+  def HiveDatabaseIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+      (args: Endofunction[com.pulumi.gcp.biglake.HiveDatabaseIamPolicyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+    var argsBuilder = com.pulumi.gcp.biglake.HiveDatabaseIamPolicyArgs.builder
+    conf.logicalName2physicalName(name) match
+      case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
+      case None               =>
+    com.pulumi.gcp.biglake.HiveDatabaseIamPolicy(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+
+  /**
    * IcebergCatalogs are top-level containers for Apache Iceberg REST Catalog served Namespaces and Tables.
    * 
    * To get more information about IcebergCatalog, see:
@@ -1117,6 +2135,17 @@ object biglake:
         resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
 
   extension (builder: com.pulumi.gcp.biglake.IcebergCatalogArgs.Builder)
+    /**
+     * @param federatedCatalogOptions Options for a CATALOG_TYPE_FEDERATED catalog. Required when catalogType
+     * is CATALOG_TYPE_FEDERATED.
+     * Structure is documented below.
+     * @return builder
+     */
+    def federatedCatalogOptions(args: Endofunction[com.pulumi.gcp.biglake.inputs.IcebergCatalogFederatedCatalogOptionsArgs.Builder]):
+        com.pulumi.gcp.biglake.IcebergCatalogArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.biglake.inputs.IcebergCatalogFederatedCatalogOptionsArgs.builder
+      builder.federatedCatalogOptions(args(argsBuilder).build)
+
     /**
      * @param restrictedLocationsConfig Configuration for the additional GCS locations that are permitted for use
      * by resources within this catalog.
@@ -4110,6 +5139,93 @@ object biglake:
       def argsBuilder = com.pulumi.gcp.biglake.inputs.HiveCatalogReplicaArgs.builder
       builder.replicas(args.map(_(argsBuilder).build)*)
 
+  extension (builder: com.pulumi.gcp.biglake.inputs.HiveDatabaseIamBindingState.Builder)
+    def condition(args: Endofunction[com.pulumi.gcp.biglake.inputs.HiveDatabaseIamBindingConditionArgs.Builder]):
+        com.pulumi.gcp.biglake.inputs.HiveDatabaseIamBindingState.Builder =
+      val argsBuilder = com.pulumi.gcp.biglake.inputs.HiveDatabaseIamBindingConditionArgs.builder
+      builder.condition(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.gcp.biglake.inputs.HiveDatabaseIamMemberState.Builder)
+    def condition(args: Endofunction[com.pulumi.gcp.biglake.inputs.HiveDatabaseIamMemberConditionArgs.Builder]):
+        com.pulumi.gcp.biglake.inputs.HiveDatabaseIamMemberState.Builder =
+      val argsBuilder = com.pulumi.gcp.biglake.inputs.HiveDatabaseIamMemberConditionArgs.builder
+      builder.condition(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.gcp.biglake.inputs.IcebergCatalogFederatedCatalogOptionsArgs.Builder)
+    /**
+     * @param glueCatalogInfo Configuration for an AWS Glue remote catalog. Exactly one of
+     * unityCatalogInfo or glueCatalogInfo must be specified.
+     * Structure is documented below.
+     * @return builder
+     */
+    def glueCatalogInfo(args: Endofunction[com.pulumi.gcp.biglake.inputs.IcebergCatalogFederatedCatalogOptionsGlueCatalogInfoArgs.Builder]):
+        com.pulumi.gcp.biglake.inputs.IcebergCatalogFederatedCatalogOptionsArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.biglake.inputs.IcebergCatalogFederatedCatalogOptionsGlueCatalogInfoArgs.builder
+      builder.glueCatalogInfo(args(argsBuilder).build)
+
+    /**
+     * @param refreshOptions Configuration for metadata synchronization from the remote catalog.
+     * Structure is documented below.
+     * @return builder
+     */
+    def refreshOptions(args: Endofunction[com.pulumi.gcp.biglake.inputs.IcebergCatalogFederatedCatalogOptionsRefreshOptionsArgs.Builder]):
+        com.pulumi.gcp.biglake.inputs.IcebergCatalogFederatedCatalogOptionsArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.biglake.inputs.IcebergCatalogFederatedCatalogOptionsRefreshOptionsArgs.builder
+      builder.refreshOptions(args(argsBuilder).build)
+
+    /**
+     * @param refreshStatuses (Output)
+     * Output only. The status of the most recent metadata refresh.
+     * Structure is documented below.
+     * @return builder
+     */
+    def refreshStatuses(args: Endofunction[com.pulumi.gcp.biglake.inputs.IcebergCatalogFederatedCatalogOptionsRefreshStatusArgs.Builder]*):
+        com.pulumi.gcp.biglake.inputs.IcebergCatalogFederatedCatalogOptionsArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.biglake.inputs.IcebergCatalogFederatedCatalogOptionsRefreshStatusArgs.builder
+      builder.refreshStatuses(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param unityCatalogInfo Configuration for a Databricks Unity Catalog remote catalog. Exactly
+     * one of unityCatalogInfo or glueCatalogInfo must be specified.
+     * Structure is documented below.
+     * @return builder
+     */
+    def unityCatalogInfo(args: Endofunction[com.pulumi.gcp.biglake.inputs.IcebergCatalogFederatedCatalogOptionsUnityCatalogInfoArgs.Builder]):
+        com.pulumi.gcp.biglake.inputs.IcebergCatalogFederatedCatalogOptionsArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.biglake.inputs.IcebergCatalogFederatedCatalogOptionsUnityCatalogInfoArgs.builder
+      builder.unityCatalogInfo(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.gcp.biglake.inputs.IcebergCatalogFederatedCatalogOptionsRefreshOptionsArgs.Builder)
+    /**
+     * @param refreshSchedule Schedule for periodic metadata refresh.
+     * Structure is documented below.
+     * @return builder
+     */
+    def refreshSchedule(args: Endofunction[com.pulumi.gcp.biglake.inputs.IcebergCatalogFederatedCatalogOptionsRefreshOptionsRefreshScheduleArgs.Builder]):
+        com.pulumi.gcp.biglake.inputs.IcebergCatalogFederatedCatalogOptionsRefreshOptionsArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.biglake.inputs.IcebergCatalogFederatedCatalogOptionsRefreshOptionsRefreshScheduleArgs.builder
+      builder.refreshSchedule(args(argsBuilder).build)
+
+    /**
+     * @param refreshScope Scope of metadata to synchronize from the remote catalog.
+     * Structure is documented below.
+     * @return builder
+     */
+    def refreshScope(args: Endofunction[com.pulumi.gcp.biglake.inputs.IcebergCatalogFederatedCatalogOptionsRefreshOptionsRefreshScopeArgs.Builder]):
+        com.pulumi.gcp.biglake.inputs.IcebergCatalogFederatedCatalogOptionsRefreshOptionsArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.biglake.inputs.IcebergCatalogFederatedCatalogOptionsRefreshOptionsRefreshScopeArgs.builder
+      builder.refreshScope(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.gcp.biglake.inputs.IcebergCatalogFederatedCatalogOptionsRefreshStatusArgs.Builder)
+    /**
+     * @param statuses Output only. The error result of the last failed refresh, if any.
+     * @return builder
+     */
+    def statuses(args: Endofunction[com.pulumi.gcp.biglake.inputs.IcebergCatalogFederatedCatalogOptionsRefreshStatusStatusArgs.Builder]*):
+        com.pulumi.gcp.biglake.inputs.IcebergCatalogFederatedCatalogOptionsRefreshStatusArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.biglake.inputs.IcebergCatalogFederatedCatalogOptionsRefreshStatusStatusArgs.builder
+      builder.statuses(args.map(_(argsBuilder).build)*)
+
   extension (builder: com.pulumi.gcp.biglake.inputs.IcebergCatalogIamBindingState.Builder)
     def condition(args: Endofunction[com.pulumi.gcp.biglake.inputs.IcebergCatalogIamBindingConditionArgs.Builder]):
         com.pulumi.gcp.biglake.inputs.IcebergCatalogIamBindingState.Builder =
@@ -4123,6 +5239,17 @@ object biglake:
       builder.condition(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.biglake.inputs.IcebergCatalogState.Builder)
+    /**
+     * @param federatedCatalogOptions Options for a CATALOG_TYPE_FEDERATED catalog. Required when catalogType
+     * is CATALOG_TYPE_FEDERATED.
+     * Structure is documented below.
+     * @return builder
+     */
+    def federatedCatalogOptions(args: Endofunction[com.pulumi.gcp.biglake.inputs.IcebergCatalogFederatedCatalogOptionsArgs.Builder]):
+        com.pulumi.gcp.biglake.inputs.IcebergCatalogState.Builder =
+      val argsBuilder = com.pulumi.gcp.biglake.inputs.IcebergCatalogFederatedCatalogOptionsArgs.builder
+      builder.federatedCatalogOptions(args(argsBuilder).build)
+
     /**
      * @param replicas Output only. The replicas for the catalog metadata.
      * Structure is documented below.

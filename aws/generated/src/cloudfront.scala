@@ -574,8 +574,15 @@ object cloudfront:
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
       case None               =>
+    argsBuilder = args(argsBuilder)
+    conf.logicalName2tagName(name) match
+      case Some(tagName) =>
+        argsBuilder = argsBuilder.tags:
+          transformOptOutputMap(argsBuilder.build.tags, map =>
+              if map.contains("Name") then map else map + ("Name" -> tagName))
+      case None =>
     com.pulumi.aws.cloudfront.KeyValueStore(name,
-        args(argsBuilder).build,
+        argsBuilder.build,
         resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
 
   extension (builder: com.pulumi.aws.cloudfront.KeyValueStoreArgs.Builder)
@@ -645,8 +652,6 @@ object cloudfront:
    * Multi-tenant distributions are a specialized type of CloudFront distribution designed for multi-tenant applications. They have specific limitations and requirements compared to standard CloudFront distributions.
    * 
    * For information about CloudFront multi-tenant distributions, see the [Amazon CloudFront Developer Guide](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/).
-   * 
-   * &gt; **NOTE:** CloudFront distributions take about 15 minutes to reach a deployed state after creation or modification. During this time, deletes to resources will be blocked. If you need to delete a distribution that is enabled and you do not want to wait, you need to use the `retainOnDelete` flag.
    */
   def MultitenantDistribution(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.cloudfront.MultitenantDistributionArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
@@ -872,7 +877,7 @@ object cloudfront:
 
   extension (builder: com.pulumi.aws.cloudfront.ResponseHeadersPolicyArgs.Builder)
     /**
-     * @param corsConfig A configuration for a set of HTTP response headers that are used for Cross-Origin Resource Sharing (CORS). See Cors Config for more information.
+     * @param corsConfig A configuration for a set of HTTP response headers that are used for Cross-Origin Resource Sharing (CORS). See CORS Config for more information.
      * @return builder
      */
     def corsConfig(args: Endofunction[com.pulumi.aws.cloudfront.inputs.ResponseHeadersPolicyCorsConfigArgs.Builder]):
@@ -2092,7 +2097,7 @@ object cloudfront:
 
   extension (builder: com.pulumi.aws.cloudfront.inputs.ResponseHeadersPolicyState.Builder)
     /**
-     * @param corsConfig A configuration for a set of HTTP response headers that are used for Cross-Origin Resource Sharing (CORS). See Cors Config for more information.
+     * @param corsConfig A configuration for a set of HTTP response headers that are used for Cross-Origin Resource Sharing (CORS). See CORS Config for more information.
      * @return builder
      */
     def corsConfig(args: Endofunction[com.pulumi.aws.cloudfront.inputs.ResponseHeadersPolicyCorsConfigArgs.Builder]):

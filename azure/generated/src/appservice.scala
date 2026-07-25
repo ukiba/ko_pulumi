@@ -7,7 +7,7 @@ object appservice:
   /**
    * Promotes an App Service Slot to Production within an App Service.
    * 
-   * !&gt; **NOTE:** This resource has been deprecated and will be removed in version 6.0 of the provider. Please use `azure.appservice.WebAppActiveSlot` resource instead.
+   * &gt; **NOTE:** This resource has been deprecated and will be removed in version 6.0 of the provider. Please use `azure.appservice.WebAppActiveSlot` resource instead.
    * 
    * &gt; **Note:** When using Slots - the `appSettings`, `connectionString` and `siteConfig` blocks on the `azure.appservice.AppService` resource will be overwritten when promoting a Slot using the `azure.appservice.ActiveSlot` resource.
    */
@@ -131,7 +131,7 @@ object appservice:
   /**
    * Manages an App Service (within an App Service Plan).
    * 
-   * !&gt; **NOTE:** This resource has been deprecated and will be removed in version 6.0 of the provider. Please use `azure.appservice.LinuxWebApp` and `azure.appservice.WindowsWebApp` resources instead.
+   * &gt; **NOTE:** This resource has been deprecated and will be removed in version 6.0 of the provider. Please use `azure.appservice.LinuxWebApp` and `azure.appservice.WindowsWebApp` resources instead.
    * 
    * &gt; **Note:** When using Slots - the `appSettings`, `connectionString` and `siteConfig` blocks on the `azure.appservice.AppService` resource will be overwritten when promoting a Slot using the `azure.appservice.ActiveSlot` resource.
    */
@@ -235,7 +235,7 @@ object appservice:
     /**
      * Use this data source to access information about an existing App Service.
      * 
-     * !&gt; **Note:** This data source has been deprecated and will be removed in version 6.0 of the provider. Please use the `azure.appservice.LinuxWebApp` and `azure.appservice.WindowsWebApp` data sources instead.
+     * &gt; **Note:** This data source has been deprecated and will be removed in version 6.0 of the provider. Please use the `azure.appservice.LinuxWebApp` and `azure.appservice.WindowsWebApp` data sources instead.
      */
     inline def getAppService(args: Endofunction[com.pulumi.azure.appservice.inputs.GetAppServiceArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.appservice.outputs.GetAppServiceResult] =
@@ -245,7 +245,7 @@ object appservice:
     /**
      * Use this data source to access information about an existing App Service.
      * 
-     * !&gt; **Note:** This data source has been deprecated and will be removed in version 6.0 of the provider. Please use the `azure.appservice.LinuxWebApp` and `azure.appservice.WindowsWebApp` data sources instead.
+     * &gt; **Note:** This data source has been deprecated and will be removed in version 6.0 of the provider. Please use the `azure.appservice.LinuxWebApp` and `azure.appservice.WindowsWebApp` data sources instead.
      */
     inline def getAppServicePlain(args: Endofunction[com.pulumi.azure.appservice.inputs.GetAppServicePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.appservice.outputs.GetAppServiceResult] =
@@ -255,7 +255,7 @@ object appservice:
     /**
      * Use this data source to access information about an existing App Service Plan (formerly known as a `Server Farm`).
      * 
-     * !&gt; **Note:** This data source has been deprecated and will be removed in version 6.0 of the provider. Please use the `azure.appservice.ServicePlan` data source instead.
+     * &gt; **Note:** This data source has been deprecated and will be removed in version 6.0 of the provider. Please use the `azure.appservice.ServicePlan` data source instead.
      */
     inline def getAppServicePlan(args: Endofunction[com.pulumi.azure.appservice.inputs.GetAppServicePlanArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.appservice.outputs.GetAppServicePlanResult] =
@@ -265,7 +265,7 @@ object appservice:
     /**
      * Use this data source to access information about an existing App Service Plan (formerly known as a `Server Farm`).
      * 
-     * !&gt; **Note:** This data source has been deprecated and will be removed in version 6.0 of the provider. Please use the `azure.appservice.ServicePlan` data source instead.
+     * &gt; **Note:** This data source has been deprecated and will be removed in version 6.0 of the provider. Please use the `azure.appservice.ServicePlan` data source instead.
      */
     inline def getAppServicePlanPlain(args: Endofunction[com.pulumi.azure.appservice.inputs.GetAppServicePlanPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.appservice.outputs.GetAppServicePlanResult] =
@@ -311,7 +311,7 @@ object appservice:
     /**
      * Use this data source to access information about a Function App.
      * 
-     * !&gt; **Note:** This data source has been deprecated and will be removed in version 6.0 of the provider. Please use the `azure.appservice.LinuxFunctionApp` and `azure.appservice.WindowsFunctionApp` data sources instead.
+     * &gt; **Note:** This data source has been deprecated and will be removed in version 6.0 of the provider. Please use the `azure.appservice.LinuxFunctionApp` and `azure.appservice.WindowsFunctionApp` data sources instead.
      */
     inline def getFunctionApp(args: Endofunction[com.pulumi.azure.appservice.inputs.GetFunctionAppArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.appservice.outputs.GetFunctionAppResult] =
@@ -321,7 +321,7 @@ object appservice:
     /**
      * Use this data source to access information about a Function App.
      * 
-     * !&gt; **Note:** This data source has been deprecated and will be removed in version 6.0 of the provider. Please use the `azure.appservice.LinuxFunctionApp` and `azure.appservice.WindowsFunctionApp` data sources instead.
+     * &gt; **Note:** This data source has been deprecated and will be removed in version 6.0 of the provider. Please use the `azure.appservice.LinuxFunctionApp` and `azure.appservice.WindowsFunctionApp` data sources instead.
      */
     inline def getFunctionAppPlain(args: Endofunction[com.pulumi.azure.appservice.inputs.GetFunctionAppPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.appservice.outputs.GetFunctionAppResult] =
@@ -543,7 +543,7 @@ object appservice:
   /**
    * Manages a Function App.
    * 
-   * !&gt; **NOTE:** This resource has been deprecated and will be removed in version 6.0 of the provider. Please use `azure.appservice.LinuxFunctionApp` and `azure.appservice.WindowsFunctionApp` resources instead.
+   * &gt; **NOTE:** This resource has been deprecated and will be removed in version 6.0 of the provider. Please use `azure.appservice.LinuxFunctionApp` and `azure.appservice.WindowsFunctionApp` resources instead.
    * 
    * &gt; **Note:** To connect an Azure Function App and a subnet within the same region `azure.appservice.VirtualNetworkSwiftConnection` can be used.
    * For an example, check the `azure.appservice.VirtualNetworkSwiftConnection` documentation.
@@ -651,7 +651,7 @@ object appservice:
   /**
    * Manages a Function App deployment Slot.
    * 
-   * !&gt; **NOTE:** This resource has been deprecated and will be removed in version 6.0 of the provider. Please use `azure.appservice.LinuxFunctionAppSlot` and `azure.appservice.WindowsFunctionAppSlot` resources instead.
+   * &gt; **NOTE:** This resource has been deprecated and will be removed in version 6.0 of the provider. Please use `azure.appservice.LinuxFunctionAppSlot` and `azure.appservice.WindowsFunctionAppSlot` resources instead.
    */
   def FunctionAppSlot(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.azure.appservice.FunctionAppSlotArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
@@ -710,7 +710,7 @@ object appservice:
   /**
    * Manages an App Service Hybrid Connection for an existing App Service, Relay and Service Bus.
    * 
-   * !&gt; **NOTE:** This resource has been deprecated and will be removed in version 6.0 of the provider. Please use `azure.appservice.FunctionAppHybridConnection` and `azure.appservice.WebAppHybridConnection` resources instead.
+   * &gt; **NOTE:** This resource has been deprecated and will be removed in version 6.0 of the provider. Please use `azure.appservice.FunctionAppHybridConnection` and `azure.appservice.WebAppHybridConnection` resources instead.
    */
   def HybridConnection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.azure.appservice.HybridConnectionArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
@@ -1109,7 +1109,7 @@ object appservice:
   /**
    * Manages an App Service Plan component.
    * 
-   * !&gt; **NOTE:** This resource has been deprecated and will be removed in version 6.0 of the provider. Please use `azure.appservice.ServicePlan` resource instead.
+   * &gt; **NOTE:** This resource has been deprecated and will be removed in version 6.0 of the provider. Please use `azure.appservice.ServicePlan` resource instead.
    */
   def Plan(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.azure.appservice.PlanArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
@@ -1167,7 +1167,7 @@ object appservice:
   /**
    * Manages an App Service Slot (within an App Service).
    * 
-   * !&gt; **NOTE:** This resource has been deprecated and will be removed in version 6.0 of the provider. Please use `azure.appservice.LinuxWebAppSlot` and `azure.appservice.WindowsWebAppSlot` resources instead.
+   * &gt; **NOTE:** This resource has been deprecated and will be removed in version 6.0 of the provider. Please use `azure.appservice.LinuxWebAppSlot` and `azure.appservice.WindowsWebAppSlot` resources instead.
    * 
    * &gt; **Note:** When using Slots - the `appSettings`, `connectionString` and `siteConfig` blocks on the `azure.appservice.AppService` resource will be overwritten when promoting a Slot using the `azure.appservice.ActiveSlot` resource.
    */
@@ -1262,7 +1262,7 @@ object appservice:
   /**
    * Manages an App Service source control token.
    * 
-   * !&gt; **NOTE:** This resource has been deprecated and will be removed in version 6.0 of the provider. Please use `azure.appservice.ServicePlan` resource instead.
+   * &gt; **NOTE:** This resource has been deprecated and will be removed in version 6.0 of the provider. Please use `azure.appservice.ServicePlan` resource instead.
    * 
    * &gt; **NOTE:** Source Control Tokens are configured at the subscription level, not on each App Service - as such this can only be configured Subscription-wide
    */
@@ -1324,7 +1324,7 @@ object appservice:
   /**
    * Manages an App Service Static Site.
    * 
-   * !&gt; **Note:** This resource has been superseded by `azure.appservice.StaticWebApp` and will be removed in version 5.0 of the AzureRM provider.
+   * &gt; **Note:** This resource has been superseded by `azure.appservice.StaticWebApp` and will be removed in version 5.0 of the AzureRM provider.
    * 
    * &gt; **Note:** After the Static Site is provisioned, you&#39;ll need to associate your target repository, which contains your web app, to the Static Site, by following the [Azure Static Site document](https://docs.microsoft.com/azure/static-web-apps/github-actions-workflow).
    */
@@ -1358,9 +1358,9 @@ object appservice:
   /**
    * Manages a Static Site Custom Domain.
    * 
-   * !&gt; **Note:** This resource has been superseded by `azure.appservice.StaticWebAppCustomDomain` and will be removed in version 5.0 of the AzureRM provider.
+   * &gt; **Note:** This resource has been superseded by `azure.appservice.StaticWebAppCustomDomain` and will be removed in version 5.0 of the AzureRM provider.
    * 
-   * !&gt; **Note:** DNS validation polling is only done for CNAME records, terraform will not validate TXT validation records are complete.
+   * &gt; **Note:** DNS validation polling is only done for CNAME records, terraform will not validate TXT validation records are complete.
    */
   def StaticSiteCustomDomain(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.azure.appservice.StaticSiteCustomDomainArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
@@ -1409,7 +1409,7 @@ object appservice:
   /**
    * Manages a Static Web App Custom Domain.
    * 
-   * !&gt; **Note:** DNS validation polling is only done for CNAME records, terraform will not validate TXT validation records are complete.
+   * &gt; **Note:** DNS validation polling is only done for CNAME records, terraform will not validate TXT validation records are complete.
    */
   def StaticWebAppCustomDomain(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.azure.appservice.StaticWebAppCustomDomainArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =

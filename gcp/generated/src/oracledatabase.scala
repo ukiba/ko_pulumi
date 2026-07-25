@@ -69,6 +69,19 @@ object oracledatabase:
       builder.properties(args(argsBuilder).build)
 
   /**
+   * A resource to configure Exascale storage on an Oracle Cloud Exadata Infrastructure.
+   * 
+   * &gt; **Note:** Oracle Database {@literal @} Google Cloud does not support deconfiguring Exascale storage on an Exadata Infrastructure.
+   * Deleting this resource from Terraform state will only remove it from Terraform management; it will not delete or reset the Exascale configuration on the actual Exadata Infrastructure.
+   */
+  def CloudExadataInfrastructureExascaleConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+      (args: Endofunction[com.pulumi.gcp.oracledatabase.CloudExadataInfrastructureExascaleConfigArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+    val argsBuilder = com.pulumi.gcp.oracledatabase.CloudExadataInfrastructureExascaleConfigArgs.builder
+    com.pulumi.gcp.oracledatabase.CloudExadataInfrastructureExascaleConfig(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+
+  /**
    * A CloudVmCluster resource.
    * 
    * To get more information about CloudVmCluster, see:
@@ -420,6 +433,50 @@ object oracledatabase:
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.oracledatabase.outputs.GetDbServersResult] =
       val argsBuilder = com.pulumi.gcp.oracledatabase.inputs.GetDbServersPlainArgs.builder
       com.pulumi.gcp.oracledatabase.OracledatabaseFunctions.getDbServersPlain(args(argsBuilder).build)
+
+    /**
+     * Get information about an ExascaleDbStorageVault.
+     * 
+     * For more information see the
+     * [API](https://cloud.google.com/oracle/database/docs/reference/rest/v1/projects.locations.exascaleDbStorageVaults).
+     */
+    inline def getExascaleDbStorageVault(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GetExascaleDbStorageVaultArgs.Builder] = scala.Predef.identity):
+        com.pulumi.core.Output[com.pulumi.gcp.oracledatabase.outputs.GetExascaleDbStorageVaultResult] =
+      val argsBuilder = com.pulumi.gcp.oracledatabase.inputs.GetExascaleDbStorageVaultArgs.builder
+      com.pulumi.gcp.oracledatabase.OracledatabaseFunctions.getExascaleDbStorageVault(args(argsBuilder).build)
+
+    /**
+     * Get information about an ExascaleDbStorageVault.
+     * 
+     * For more information see the
+     * [API](https://cloud.google.com/oracle/database/docs/reference/rest/v1/projects.locations.exascaleDbStorageVaults).
+     */
+    inline def getExascaleDbStorageVaultPlain(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GetExascaleDbStorageVaultPlainArgs.Builder] = scala.Predef.identity):
+        java.util.concurrent.CompletableFuture[com.pulumi.gcp.oracledatabase.outputs.GetExascaleDbStorageVaultResult] =
+      val argsBuilder = com.pulumi.gcp.oracledatabase.inputs.GetExascaleDbStorageVaultPlainArgs.builder
+      com.pulumi.gcp.oracledatabase.OracledatabaseFunctions.getExascaleDbStorageVaultPlain(args(argsBuilder).build)
+
+    /**
+     * List all ExascaleDbStorageVaults.
+     * 
+     * For more information see the
+     * [API](https://cloud.google.com/oracle/database/docs/reference/rest/v1/projects.locations.exascaleDbStorageVaults).
+     */
+    inline def getExascaleDbStorageVaults(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GetExascaleDbStorageVaultsArgs.Builder] = scala.Predef.identity):
+        com.pulumi.core.Output[com.pulumi.gcp.oracledatabase.outputs.GetExascaleDbStorageVaultsResult] =
+      val argsBuilder = com.pulumi.gcp.oracledatabase.inputs.GetExascaleDbStorageVaultsArgs.builder
+      com.pulumi.gcp.oracledatabase.OracledatabaseFunctions.getExascaleDbStorageVaults(args(argsBuilder).build)
+
+    /**
+     * List all ExascaleDbStorageVaults.
+     * 
+     * For more information see the
+     * [API](https://cloud.google.com/oracle/database/docs/reference/rest/v1/projects.locations.exascaleDbStorageVaults).
+     */
+    inline def getExascaleDbStorageVaultsPlain(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GetExascaleDbStorageVaultsPlainArgs.Builder] = scala.Predef.identity):
+        java.util.concurrent.CompletableFuture[com.pulumi.gcp.oracledatabase.outputs.GetExascaleDbStorageVaultsResult] =
+      val argsBuilder = com.pulumi.gcp.oracledatabase.inputs.GetExascaleDbStorageVaultsPlainArgs.builder
+      com.pulumi.gcp.oracledatabase.OracledatabaseFunctions.getExascaleDbStorageVaultsPlain(args(argsBuilder).build)
 
     /**
      * List all GoldenGate Connection Types in a location.

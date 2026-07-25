@@ -127,6 +127,54 @@ object workspaces:
       def argsBuilder = com.pulumi.aws.workspaces.inputs.IpGroupRuleArgs.builder
       builder.rules(args.map(_(argsBuilder).build)*)
 
+  /** Manages a WorkSpaces Pool in the AWS WorkSpaces service. */
+  def Pool(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+      (args: Endofunction[com.pulumi.aws.workspaces.PoolArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+    var argsBuilder = com.pulumi.aws.workspaces.PoolArgs.builder
+    argsBuilder = args(argsBuilder)
+    conf.logicalName2tagName(name) match
+      case Some(tagName) =>
+        argsBuilder = argsBuilder.tags:
+          transformOptOutputMap(argsBuilder.build.tags, map =>
+              if map.contains("Name") then map else map + ("Name" -> tagName))
+      case None =>
+    com.pulumi.aws.workspaces.Pool(name,
+        argsBuilder.build,
+        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+
+  extension (builder: com.pulumi.aws.workspaces.PoolArgs.Builder)
+    /**
+     * @param applicationSettings Application settings configuration for the WorkSpaces Pool. See `applicationSettings` below.
+     * @return builder
+     */
+    def applicationSettings(args: Endofunction[com.pulumi.aws.workspaces.inputs.PoolApplicationSettingArgs.Builder]*):
+        com.pulumi.aws.workspaces.PoolArgs.Builder =
+      def argsBuilder = com.pulumi.aws.workspaces.inputs.PoolApplicationSettingArgs.builder
+      builder.applicationSettings(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param capacity Capacity configuration for the WorkSpaces Pool. See `capacity` below.
+     * @return builder
+     */
+    def capacity(args: Endofunction[com.pulumi.aws.workspaces.inputs.PoolCapacityArgs.Builder]):
+        com.pulumi.aws.workspaces.PoolArgs.Builder =
+      val argsBuilder = com.pulumi.aws.workspaces.inputs.PoolCapacityArgs.builder
+      builder.capacity(args(argsBuilder).build)
+
+    /**
+     * @param timeoutSettings Timeout settings configuration for the WorkSpaces Pool. See `timeoutSettings` below.
+     * @return builder
+     */
+    def timeoutSettings(args: Endofunction[com.pulumi.aws.workspaces.inputs.PoolTimeoutSettingArgs.Builder]*):
+        com.pulumi.aws.workspaces.PoolArgs.Builder =
+      def argsBuilder = com.pulumi.aws.workspaces.inputs.PoolTimeoutSettingArgs.builder
+      builder.timeoutSettings(args.map(_(argsBuilder).build)*)
+
+    def timeouts(args: Endofunction[com.pulumi.aws.workspaces.inputs.PoolTimeoutsArgs.Builder]):
+        com.pulumi.aws.workspaces.PoolArgs.Builder =
+      val argsBuilder = com.pulumi.aws.workspaces.inputs.PoolTimeoutsArgs.builder
+      builder.timeouts(args(argsBuilder).build)
+
   /**
    * Provides a workspace in [AWS Workspaces](https://docs.aws.amazon.com/workspaces/latest/adminguide/amazon-workspaces.html) Service
    * 
@@ -281,6 +329,48 @@ object workspaces:
         com.pulumi.aws.workspaces.inputs.IpGroupState.Builder =
       def argsBuilder = com.pulumi.aws.workspaces.inputs.IpGroupRuleArgs.builder
       builder.rules(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.aws.workspaces.inputs.PoolState.Builder)
+    /**
+     * @param applicationSettings Application settings configuration for the WorkSpaces Pool. See `applicationSettings` below.
+     * @return builder
+     */
+    def applicationSettings(args: Endofunction[com.pulumi.aws.workspaces.inputs.PoolApplicationSettingArgs.Builder]*):
+        com.pulumi.aws.workspaces.inputs.PoolState.Builder =
+      def argsBuilder = com.pulumi.aws.workspaces.inputs.PoolApplicationSettingArgs.builder
+      builder.applicationSettings(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param capacity Capacity configuration for the WorkSpaces Pool. See `capacity` below.
+     * @return builder
+     */
+    def capacity(args: Endofunction[com.pulumi.aws.workspaces.inputs.PoolCapacityArgs.Builder]):
+        com.pulumi.aws.workspaces.inputs.PoolState.Builder =
+      val argsBuilder = com.pulumi.aws.workspaces.inputs.PoolCapacityArgs.builder
+      builder.capacity(args(argsBuilder).build)
+
+    /**
+     * @param capacityStatuses Capacity status of the WorkSpaces Pool. See `capacityStatus` below.
+     * @return builder
+     */
+    def capacityStatuses(args: Endofunction[com.pulumi.aws.workspaces.inputs.PoolCapacityStatusArgs.Builder]*):
+        com.pulumi.aws.workspaces.inputs.PoolState.Builder =
+      def argsBuilder = com.pulumi.aws.workspaces.inputs.PoolCapacityStatusArgs.builder
+      builder.capacityStatuses(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param timeoutSettings Timeout settings configuration for the WorkSpaces Pool. See `timeoutSettings` below.
+     * @return builder
+     */
+    def timeoutSettings(args: Endofunction[com.pulumi.aws.workspaces.inputs.PoolTimeoutSettingArgs.Builder]*):
+        com.pulumi.aws.workspaces.inputs.PoolState.Builder =
+      def argsBuilder = com.pulumi.aws.workspaces.inputs.PoolTimeoutSettingArgs.builder
+      builder.timeoutSettings(args.map(_(argsBuilder).build)*)
+
+    def timeouts(args: Endofunction[com.pulumi.aws.workspaces.inputs.PoolTimeoutsArgs.Builder]):
+        com.pulumi.aws.workspaces.inputs.PoolState.Builder =
+      val argsBuilder = com.pulumi.aws.workspaces.inputs.PoolTimeoutsArgs.builder
+      builder.timeouts(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.workspaces.inputs.WorkspaceState.Builder)
     /**

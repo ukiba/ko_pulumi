@@ -2113,6 +2113,38 @@ object bigqueryanalyticshub:
       val argsBuilder = com.pulumi.gcp.bigqueryanalyticshub.inputs.ListingSubscriptionDestinationDatasetArgs.builder
       builder.destinationDataset(args(argsBuilder).build)
 
+  /**
+   * Represents a BigQuery Query Template within a Data Exchange.
+   * This resource defines a reusable SQL routine (e.g., a TVF) that can be
+   * shared or executed via the Data Exchange.
+   * 
+   * &gt; **Warning:** This resource is in beta, and should be used with the terraform-provider-google-beta provider.
+   * See Provider Versions for more details on beta resources.
+   * 
+   * To get more information about QueryTemplate, see:
+   * 
+   * * [API documentation](https://docs.cloud.google.com/bigquery/docs/reference/analytics-hub/rest/v1/projects.locations.dataExchanges.queryTemplates)
+   * * How-to Guides
+   *     * [Use query templates](https://docs.cloud.google.com/bigquery/docs/query-templates)
+   */
+  def QueryTemplate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+      (args: Endofunction[com.pulumi.gcp.bigqueryanalyticshub.QueryTemplateArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+    val argsBuilder = com.pulumi.gcp.bigqueryanalyticshub.QueryTemplateArgs.builder
+    com.pulumi.gcp.bigqueryanalyticshub.QueryTemplate(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+
+  extension (builder: com.pulumi.gcp.bigqueryanalyticshub.QueryTemplateArgs.Builder)
+    /**
+     * @param routine The routine associated with the QueryTemplate.
+     * Structure is documented below.
+     * @return builder
+     */
+    def routine(args: Endofunction[com.pulumi.gcp.bigqueryanalyticshub.inputs.QueryTemplateRoutineArgs.Builder]):
+        com.pulumi.gcp.bigqueryanalyticshub.QueryTemplateArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.bigqueryanalyticshub.inputs.QueryTemplateRoutineArgs.builder
+      builder.routine(args(argsBuilder).build)
+
   extension (builder: com.pulumi.gcp.bigqueryanalyticshub.inputs.DataExchangeIamBindingState.Builder)
     def condition(args: Endofunction[com.pulumi.gcp.bigqueryanalyticshub.inputs.DataExchangeIamBindingConditionArgs.Builder]):
         com.pulumi.gcp.bigqueryanalyticshub.inputs.DataExchangeIamBindingState.Builder =
@@ -2372,3 +2404,14 @@ object bigqueryanalyticshub:
         com.pulumi.gcp.bigqueryanalyticshub.inputs.ListingSubscriptionState.Builder =
       def argsBuilder = com.pulumi.gcp.bigqueryanalyticshub.inputs.ListingSubscriptionLinkedResourceArgs.builder
       builder.linkedResources(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.gcp.bigqueryanalyticshub.inputs.QueryTemplateState.Builder)
+    /**
+     * @param routine The routine associated with the QueryTemplate.
+     * Structure is documented below.
+     * @return builder
+     */
+    def routine(args: Endofunction[com.pulumi.gcp.bigqueryanalyticshub.inputs.QueryTemplateRoutineArgs.Builder]):
+        com.pulumi.gcp.bigqueryanalyticshub.inputs.QueryTemplateState.Builder =
+      val argsBuilder = com.pulumi.gcp.bigqueryanalyticshub.inputs.QueryTemplateRoutineArgs.builder
+      builder.routine(args(argsBuilder).build)

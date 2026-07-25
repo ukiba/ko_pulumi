@@ -4360,6 +4360,18 @@ object storage:
       val argsBuilder = com.pulumi.gcp.storage.inputs.GetControlFolderIntelligenceConfigPlainArgs.builder
       com.pulumi.gcp.storage.StorageFunctions.getControlFolderIntelligenceConfigPlain(args(argsBuilder).build)
 
+    /** Summarizes Cloud Storage intelligence findings in a specified folder and location. */
+    inline def getControlFolderIntelligenceFindingsSummary(args: Endofunction[com.pulumi.gcp.storage.inputs.GetControlFolderIntelligenceFindingsSummaryArgs.Builder] = scala.Predef.identity):
+        com.pulumi.core.Output[com.pulumi.gcp.storage.outputs.GetControlFolderIntelligenceFindingsSummaryResult] =
+      val argsBuilder = com.pulumi.gcp.storage.inputs.GetControlFolderIntelligenceFindingsSummaryArgs.builder
+      com.pulumi.gcp.storage.StorageFunctions.getControlFolderIntelligenceFindingsSummary(args(argsBuilder).build)
+
+    /** Summarizes Cloud Storage intelligence findings in a specified folder and location. */
+    inline def getControlFolderIntelligenceFindingsSummaryPlain(args: Endofunction[com.pulumi.gcp.storage.inputs.GetControlFolderIntelligenceFindingsSummaryPlainArgs.Builder] = scala.Predef.identity):
+        java.util.concurrent.CompletableFuture[com.pulumi.gcp.storage.outputs.GetControlFolderIntelligenceFindingsSummaryResult] =
+      val argsBuilder = com.pulumi.gcp.storage.inputs.GetControlFolderIntelligenceFindingsSummaryPlainArgs.builder
+      com.pulumi.gcp.storage.StorageFunctions.getControlFolderIntelligenceFindingsSummaryPlain(args(argsBuilder).build)
+
     /** Get information about a Cloud Storage Control OrganizationIntelligenceConfig. */
     inline def getControlOrganizationIntelligenceConfig(args: Endofunction[com.pulumi.gcp.storage.inputs.GetControlOrganizationIntelligenceConfigArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.storage.outputs.GetControlOrganizationIntelligenceConfigResult] =
@@ -4371,6 +4383,18 @@ object storage:
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.storage.outputs.GetControlOrganizationIntelligenceConfigResult] =
       val argsBuilder = com.pulumi.gcp.storage.inputs.GetControlOrganizationIntelligenceConfigPlainArgs.builder
       com.pulumi.gcp.storage.StorageFunctions.getControlOrganizationIntelligenceConfigPlain(args(argsBuilder).build)
+
+    /** Summarizes Cloud Storage intelligence findings in a specified organization and location. */
+    inline def getControlOrganizationIntelligenceFindingsSummary(args: Endofunction[com.pulumi.gcp.storage.inputs.GetControlOrganizationIntelligenceFindingsSummaryArgs.Builder] = scala.Predef.identity):
+        com.pulumi.core.Output[com.pulumi.gcp.storage.outputs.GetControlOrganizationIntelligenceFindingsSummaryResult] =
+      val argsBuilder = com.pulumi.gcp.storage.inputs.GetControlOrganizationIntelligenceFindingsSummaryArgs.builder
+      com.pulumi.gcp.storage.StorageFunctions.getControlOrganizationIntelligenceFindingsSummary(args(argsBuilder).build)
+
+    /** Summarizes Cloud Storage intelligence findings in a specified organization and location. */
+    inline def getControlOrganizationIntelligenceFindingsSummaryPlain(args: Endofunction[com.pulumi.gcp.storage.inputs.GetControlOrganizationIntelligenceFindingsSummaryPlainArgs.Builder] = scala.Predef.identity):
+        java.util.concurrent.CompletableFuture[com.pulumi.gcp.storage.outputs.GetControlOrganizationIntelligenceFindingsSummaryResult] =
+      val argsBuilder = com.pulumi.gcp.storage.inputs.GetControlOrganizationIntelligenceFindingsSummaryPlainArgs.builder
+      com.pulumi.gcp.storage.StorageFunctions.getControlOrganizationIntelligenceFindingsSummaryPlain(args(argsBuilder).build)
 
     /** Get information about a Cloud Storage Control ProjectIntelligenceConfig. */
     inline def getControlProjectIntelligenceConfig(args: Endofunction[com.pulumi.gcp.storage.inputs.GetControlProjectIntelligenceConfigArgs.Builder] = scala.Predef.identity):
@@ -4431,6 +4455,18 @@ object storage:
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.storage.outputs.GetControlProjectIntelligenceFindingsResult] =
       val argsBuilder = com.pulumi.gcp.storage.inputs.GetControlProjectIntelligenceFindingsPlainArgs.builder
       com.pulumi.gcp.storage.StorageFunctions.getControlProjectIntelligenceFindingsPlain(args(argsBuilder).build)
+
+    /** Summarizes Cloud Storage intelligence findings in a specified project and location. */
+    inline def getControlProjectIntelligenceFindingsSummary(args: Endofunction[com.pulumi.gcp.storage.inputs.GetControlProjectIntelligenceFindingsSummaryArgs.Builder] = scala.Predef.identity):
+        com.pulumi.core.Output[com.pulumi.gcp.storage.outputs.GetControlProjectIntelligenceFindingsSummaryResult] =
+      val argsBuilder = com.pulumi.gcp.storage.inputs.GetControlProjectIntelligenceFindingsSummaryArgs.builder
+      com.pulumi.gcp.storage.StorageFunctions.getControlProjectIntelligenceFindingsSummary(args(argsBuilder).build)
+
+    /** Summarizes Cloud Storage intelligence findings in a specified project and location. */
+    inline def getControlProjectIntelligenceFindingsSummaryPlain(args: Endofunction[com.pulumi.gcp.storage.inputs.GetControlProjectIntelligenceFindingsSummaryPlainArgs.Builder] = scala.Predef.identity):
+        java.util.concurrent.CompletableFuture[com.pulumi.gcp.storage.outputs.GetControlProjectIntelligenceFindingsSummaryResult] =
+      val argsBuilder = com.pulumi.gcp.storage.inputs.GetControlProjectIntelligenceFindingsSummaryPlainArgs.builder
+      com.pulumi.gcp.storage.StorageFunctions.getControlProjectIntelligenceFindingsSummaryPlain(args(argsBuilder).build)
 
     /**
      * Use this data source to get information about a Storage Insights Dataset Config resource.

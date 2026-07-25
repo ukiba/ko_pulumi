@@ -7,7 +7,7 @@ object hpc:
   /**
    * Manages a HPC Cache.
    * 
-   * !&gt; **Note:** The `azure.hpc.Cache` resource has been deprecated because the service is retiring on 2025-09-30. This resource will be removed in v5.0 of the AzureRM Provider. See https://aka.ms/hpccacheretirement for more information.
+   * &gt; **Note:** The `azure.hpc.Cache` resource has been deprecated because the service is retiring on 2025-09-30. This resource will be removed in v5.0 of the AzureRM Provider. See https://aka.ms/hpccacheretirement for more information.
    * 
    * &gt; **Note:** By request of the service team the provider no longer automatically registers the `Microsoft.StorageCache` Resource Provider for this resource. To register it you can run `az provider register --namespace &#39;Microsoft.StorageCache&#39;`.
    */
@@ -31,7 +31,7 @@ object hpc:
   /**
    * Manages a HPC Cache Access Policy.
    * 
-   * !&gt; **Note:** The `azure.hpc.CacheAccessPolicy` resource has been deprecated because the service is retiring on 2025-09-30. This resource will be removed in v5.0 of the AzureRM Provider. See https://aka.ms/hpccacheretirement for more information.
+   * &gt; **Note:** The `azure.hpc.CacheAccessPolicy` resource has been deprecated because the service is retiring on 2025-09-30. This resource will be removed in v5.0 of the AzureRM Provider. See https://aka.ms/hpccacheretirement for more information.
    */
   def CacheAccessPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.azure.hpc.CacheAccessPolicyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
@@ -113,7 +113,7 @@ object hpc:
   /**
    * Manages a Blob NFSv3 Target within a HPC Cache.
    * 
-   * !&gt; **Note:** The `azure.hpc.CacheBlobNfsTarget` resource has been deprecated because the service is retiring on 2025-09-30. This resource will be removed in v5.0 of the AzureRM Provider. See https://aka.ms/hpccacheretirement for more information.
+   * &gt; **Note:** The `azure.hpc.CacheBlobNfsTarget` resource has been deprecated because the service is retiring on 2025-09-30. This resource will be removed in v5.0 of the AzureRM Provider. See https://aka.ms/hpccacheretirement for more information.
    * 
    * &gt; **Note:** By request of the service team the provider no longer automatically registers the `Microsoft.StorageCache` Resource Provider for this resource. To register it you can run `az provider register --namespace &#39;Microsoft.StorageCache&#39;`.
    * 
@@ -140,7 +140,7 @@ object hpc:
   /**
    * Manages a Blob Target within a HPC Cache.
    * 
-   * !&gt; **Note:** The `azure.hpc.CacheBlobTarget` resource has been deprecated because the service is retiring on 2025-09-30. This resource will be removed in v5.0 of the AzureRM Provider. See https://aka.ms/hpccacheretirement for more information.
+   * &gt; **Note:** The `azure.hpc.CacheBlobTarget` resource has been deprecated because the service is retiring on 2025-09-30. This resource will be removed in v5.0 of the AzureRM Provider. See https://aka.ms/hpccacheretirement for more information.
    * 
    * &gt; **Note:** By request of the service team the provider no longer automatically registering the `Microsoft.StorageCache` Resource Provider for this resource. To register it you can run `az provider register --namespace &#39;Microsoft.StorageCache&#39;`.
    * 
@@ -165,7 +165,7 @@ object hpc:
   /**
    * Manages a NFS Target within a HPC Cache.
    * 
-   * !&gt; **Note:** The `azure.hpc.CacheNfsTarget` resource has been deprecated because the service is retiring on 2025-09-30. This resource will be removed in v5.0 of the AzureRM Provider. See https://aka.ms/hpccacheretirement for more information.
+   * &gt; **Note:** The `azure.hpc.CacheNfsTarget` resource has been deprecated because the service is retiring on 2025-09-30. This resource will be removed in v5.0 of the AzureRM Provider. See https://aka.ms/hpccacheretirement for more information.
    * 
    * &gt; **Note:** By request of the service team the provider no longer automatically registering the `Microsoft.StorageCache` Resource Provider for this resource. To register it you can run `az provider register --namespace &#39;Microsoft.StorageCache&#39;`.
    */

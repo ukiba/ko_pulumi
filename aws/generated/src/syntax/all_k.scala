@@ -81,10 +81,14 @@ export ko_pulumi.aws.bedrock.levelConfigurations
 export ko_pulumi.aws.bedrock.lex
 export ko_pulumi.aws.bedrock.lifecycleConfigurations
 export ko_pulumi.aws.bedrock.llmAsAJudge
+export ko_pulumi.aws.bedrock.location
+export ko_pulumi.aws.bedrock.managedKnowledgeBaseConfiguration
+export ko_pulumi.aws.bedrock.managedKnowledgeBaseConnectorConfiguration
 export ko_pulumi.aws.bedrock.managedVpcResource
 export ko_pulumi.aws.bedrock.managedWordListsConfigs
 export ko_pulumi.aws.bedrock.mcp
 export ko_pulumi.aws.bedrock.mcpServer
+export ko_pulumi.aws.bedrock.mediaExtractionConfiguration
 export ko_pulumi.aws.bedrock.memberFunctions
 export ko_pulumi.aws.bedrock.memory
 export ko_pulumi.aws.bedrock.memoryConfigurations

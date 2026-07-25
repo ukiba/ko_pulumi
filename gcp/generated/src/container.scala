@@ -1134,6 +1134,15 @@ object container:
       builder.autoscaling(args(argsBuilder).build)
 
     /**
+     * @param maintenancePolicies The maintenance policy of the pool. Structure is documented below.
+     * @return builder
+     */
+    def maintenancePolicies(args: Endofunction[com.pulumi.gcp.container.inputs.NodePoolMaintenancePolicyArgs.Builder]*):
+        com.pulumi.gcp.container.NodePoolArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.container.inputs.NodePoolMaintenancePolicyArgs.builder
+      builder.maintenancePolicies(args.map(_(argsBuilder).build)*)
+
+    /**
      * @param management Node management configuration, wherein auto-repair and
      * auto-upgrade is configured. Structure is documented below.
      * @return builder
@@ -2306,7 +2315,7 @@ object container:
     /**
      * @param disruptionBudget structure documented below
      * 
-     * In beta, one or the other of `recurringWindow` and `dailyMaintenanceWindow` is required if a `maintenancePolicy` block is supplied.
+     * In beta, one of `recurringWindow`, `recurringMaintenanceWindow` and `dailyMaintenanceWindow` is required if a `maintenancePolicy` block is supplied.
      * @return builder
      */
     def disruptionBudget(args: Endofunction[com.pulumi.gcp.container.inputs.ClusterMaintenancePolicyDisruptionBudgetArgs.Builder]):
@@ -2322,6 +2331,15 @@ object container:
         com.pulumi.gcp.container.inputs.ClusterMaintenancePolicyArgs.Builder =
       def argsBuilder = com.pulumi.gcp.container.inputs.ClusterMaintenancePolicyMaintenanceExclusionArgs.builder
       builder.maintenanceExclusions(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param recurringMaintenanceWindow Defines a recurring window for maintenance operations.
+     * @return builder
+     */
+    def recurringMaintenanceWindow(args: Endofunction[com.pulumi.gcp.container.inputs.ClusterMaintenancePolicyRecurringMaintenanceWindowArgs.Builder]):
+        com.pulumi.gcp.container.inputs.ClusterMaintenancePolicyArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.container.inputs.ClusterMaintenancePolicyRecurringMaintenanceWindowArgs.builder
+      builder.recurringMaintenanceWindow(args(argsBuilder).build)
 
     /**
      * @param recurringWindow Time window for recurring maintenance operations.
@@ -2348,6 +2366,25 @@ object container:
         com.pulumi.gcp.container.inputs.ClusterMaintenancePolicyMaintenanceExclusionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.container.inputs.ClusterMaintenancePolicyMaintenanceExclusionExclusionOptionsArgs.builder
       builder.exclusionOptions(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.gcp.container.inputs.ClusterMaintenancePolicyRecurringMaintenanceWindowArgs.Builder)
+    /**
+     * @param delayUntil Specifies the initial date when the recurring window can start.
+     * @return builder
+     */
+    def delayUntil(args: Endofunction[com.pulumi.gcp.container.inputs.ClusterMaintenancePolicyRecurringMaintenanceWindowDelayUntilArgs.Builder]):
+        com.pulumi.gcp.container.inputs.ClusterMaintenancePolicyRecurringMaintenanceWindowArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.container.inputs.ClusterMaintenancePolicyRecurringMaintenanceWindowDelayUntilArgs.builder
+      builder.delayUntil(args(argsBuilder).build)
+
+    /**
+     * @param windowStartTime The time of day when each maintenance window instance begins.
+     * @return builder
+     */
+    def windowStartTime(args: Endofunction[com.pulumi.gcp.container.inputs.ClusterMaintenancePolicyRecurringMaintenanceWindowWindowStartTimeArgs.Builder]):
+        com.pulumi.gcp.container.inputs.ClusterMaintenancePolicyRecurringMaintenanceWindowArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.container.inputs.ClusterMaintenancePolicyRecurringMaintenanceWindowWindowStartTimeArgs.builder
+      builder.windowStartTime(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.container.inputs.ClusterMasterAuthArgs.Builder)
     /**
@@ -2523,8 +2560,7 @@ object container:
       builder.hostMaintenancePolicy(args(argsBuilder).build)
 
     /**
-     * @param kubeletConfig Kubelet configuration, currently supported attributes can be found [here](https://cloud.google.com/sdk/gcloud/reference/beta/container/node-pools/create#--system-config-from-file).
-     * Structure is documented below.
+     * @param kubeletConfig Node kubelet configs. Structure is documented below.
      * @return builder
      */
     def kubeletConfig(args: Endofunction[com.pulumi.gcp.container.inputs.ClusterNodeConfigKubeletConfigArgs.Builder]):
@@ -2840,6 +2876,15 @@ object container:
       builder.accurateTimeConfig(args(argsBuilder).build)
 
     /**
+     * @param customNodeInit Custom node init settings. Structure is documented below.
+     * @return builder
+     */
+    def customNodeInit(args: Endofunction[com.pulumi.gcp.container.inputs.ClusterNodeConfigLinuxNodeConfigCustomNodeInitArgs.Builder]):
+        com.pulumi.gcp.container.inputs.ClusterNodeConfigLinuxNodeConfigArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.container.inputs.ClusterNodeConfigLinuxNodeConfigCustomNodeInitArgs.builder
+      builder.customNodeInit(args(argsBuilder).build)
+
+    /**
      * @param hugepagesConfig Amounts for 2M and 1G hugepages. Structure is documented below.
      * @return builder
      */
@@ -2865,6 +2910,16 @@ object container:
         com.pulumi.gcp.container.inputs.ClusterNodeConfigLinuxNodeConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.container.inputs.ClusterNodeConfigLinuxNodeConfigSwapConfigArgs.builder
       builder.swapConfig(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.gcp.container.inputs.ClusterNodeConfigLinuxNodeConfigCustomNodeInitArgs.Builder)
+    /**
+     * @param initScript The init script configuration. Structure is documented below.
+     * @return builder
+     */
+    def initScript(args: Endofunction[com.pulumi.gcp.container.inputs.ClusterNodeConfigLinuxNodeConfigCustomNodeInitInitScriptArgs.Builder]):
+        com.pulumi.gcp.container.inputs.ClusterNodeConfigLinuxNodeConfigCustomNodeInitArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.container.inputs.ClusterNodeConfigLinuxNodeConfigCustomNodeInitInitScriptArgs.builder
+      builder.initScript(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.container.inputs.ClusterNodeConfigLinuxNodeConfigSwapConfigArgs.Builder)
     /**
@@ -2922,6 +2977,16 @@ object container:
         com.pulumi.gcp.container.inputs.ClusterNodePoolArgs.Builder =
       val argsBuilder = com.pulumi.gcp.container.inputs.ClusterNodePoolAutoscalingArgs.builder
       builder.autoscaling(args(argsBuilder).build)
+
+    /**
+     * @param maintenancePolicies The maintenance policy to use for the cluster. Structure is
+     * documented below.
+     * @return builder
+     */
+    def maintenancePolicies(args: Endofunction[com.pulumi.gcp.container.inputs.ClusterNodePoolMaintenancePolicyArgs.Builder]*):
+        com.pulumi.gcp.container.inputs.ClusterNodePoolArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.container.inputs.ClusterNodePoolMaintenancePolicyArgs.builder
+      builder.maintenancePolicies(args.map(_(argsBuilder).build)*)
 
     /**
      * @param management Node management configuration, wherein auto-repair and auto-upgrade is configured.
@@ -3160,6 +3225,16 @@ object container:
       val argsBuilder = com.pulumi.gcp.container.inputs.ClusterNodePoolDefaultsNodeConfigDefaultsContainerdConfigRegistryHostHostClientKeyArgs.builder
       builder.key(args(argsBuilder).build)
 
+  extension (builder: com.pulumi.gcp.container.inputs.ClusterNodePoolMaintenancePolicyArgs.Builder)
+    /**
+     * @param exclusionUntilEndOfSupports Maintenance exclusion until the end of support.
+     * @return builder
+     */
+    def exclusionUntilEndOfSupports(args: Endofunction[com.pulumi.gcp.container.inputs.ClusterNodePoolMaintenancePolicyExclusionUntilEndOfSupportArgs.Builder]*):
+        com.pulumi.gcp.container.inputs.ClusterNodePoolMaintenancePolicyArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.container.inputs.ClusterNodePoolMaintenancePolicyExclusionUntilEndOfSupportArgs.builder
+      builder.exclusionUntilEndOfSupports(args.map(_(argsBuilder).build)*)
+
   extension (builder: com.pulumi.gcp.container.inputs.ClusterNodePoolNetworkConfigArgs.Builder)
     /**
      * @param additionalNodeNetworkConfigs We specify the additional node networks for this node pool using this list. Each node network corresponds to an additional interface
@@ -3321,8 +3396,7 @@ object container:
       builder.hostMaintenancePolicy(args(argsBuilder).build)
 
     /**
-     * @param kubeletConfig Kubelet configuration, currently supported attributes can be found [here](https://cloud.google.com/sdk/gcloud/reference/beta/container/node-pools/create#--system-config-from-file).
-     * Structure is documented below.
+     * @param kubeletConfig Node kubelet configs. Structure is documented below.
      * @return builder
      */
     def kubeletConfig(args: Endofunction[com.pulumi.gcp.container.inputs.ClusterNodePoolNodeConfigKubeletConfigArgs.Builder]):
@@ -3638,6 +3712,15 @@ object container:
       builder.accurateTimeConfig(args(argsBuilder).build)
 
     /**
+     * @param customNodeInit Custom node init settings. Structure is documented below.
+     * @return builder
+     */
+    def customNodeInit(args: Endofunction[com.pulumi.gcp.container.inputs.ClusterNodePoolNodeConfigLinuxNodeConfigCustomNodeInitArgs.Builder]):
+        com.pulumi.gcp.container.inputs.ClusterNodePoolNodeConfigLinuxNodeConfigArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.container.inputs.ClusterNodePoolNodeConfigLinuxNodeConfigCustomNodeInitArgs.builder
+      builder.customNodeInit(args(argsBuilder).build)
+
+    /**
      * @param hugepagesConfig Amounts for 2M and 1G hugepages. Structure is documented below.
      * @return builder
      */
@@ -3663,6 +3746,16 @@ object container:
         com.pulumi.gcp.container.inputs.ClusterNodePoolNodeConfigLinuxNodeConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.container.inputs.ClusterNodePoolNodeConfigLinuxNodeConfigSwapConfigArgs.builder
       builder.swapConfig(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.gcp.container.inputs.ClusterNodePoolNodeConfigLinuxNodeConfigCustomNodeInitArgs.Builder)
+    /**
+     * @param initScript The init script configuration. Structure is documented below.
+     * @return builder
+     */
+    def initScript(args: Endofunction[com.pulumi.gcp.container.inputs.ClusterNodePoolNodeConfigLinuxNodeConfigCustomNodeInitInitScriptArgs.Builder]):
+        com.pulumi.gcp.container.inputs.ClusterNodePoolNodeConfigLinuxNodeConfigCustomNodeInitArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.container.inputs.ClusterNodePoolNodeConfigLinuxNodeConfigCustomNodeInitInitScriptArgs.builder
+      builder.initScript(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.container.inputs.ClusterNodePoolNodeConfigLinuxNodeConfigSwapConfigArgs.Builder)
     /**
@@ -4348,6 +4441,16 @@ object container:
       val argsBuilder = com.pulumi.gcp.container.inputs.ClusterWorkloadIdentityConfigArgs.builder
       builder.workloadIdentityConfig(args(argsBuilder).build)
 
+  extension (builder: com.pulumi.gcp.container.inputs.NodePoolMaintenancePolicyArgs.Builder)
+    /**
+     * @param exclusionUntilEndOfSupports When enabled, the node pool will not be automatically upgraded by GKE until the node pool version&#39;s end of support date. Structure is documented below.
+     * @return builder
+     */
+    def exclusionUntilEndOfSupports(args: Endofunction[com.pulumi.gcp.container.inputs.NodePoolMaintenancePolicyExclusionUntilEndOfSupportArgs.Builder]*):
+        com.pulumi.gcp.container.inputs.NodePoolMaintenancePolicyArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.container.inputs.NodePoolMaintenancePolicyExclusionUntilEndOfSupportArgs.builder
+      builder.exclusionUntilEndOfSupports(args.map(_(argsBuilder).build)*)
+
   extension (builder: com.pulumi.gcp.container.inputs.NodePoolNetworkConfigArgs.Builder)
     /**
      * @param additionalNodeNetworkConfigs We specify the additional node networks for this node pool using this list. Each node network corresponds to an additional interface.
@@ -4497,7 +4600,7 @@ object container:
       builder.hostMaintenancePolicy(args(argsBuilder).build)
 
     /**
-     * @param kubeletConfig Node kubelet configs.
+     * @param kubeletConfig Node kubelet configs. Structure is documented below.
      * @return builder
      */
     def kubeletConfig(args: Endofunction[com.pulumi.gcp.container.inputs.NodePoolNodeConfigKubeletConfigArgs.Builder]):
@@ -4803,6 +4906,15 @@ object container:
       builder.accurateTimeConfig(args(argsBuilder).build)
 
     /**
+     * @param customNodeInit The custom node init settings.
+     * @return builder
+     */
+    def customNodeInit(args: Endofunction[com.pulumi.gcp.container.inputs.NodePoolNodeConfigLinuxNodeConfigCustomNodeInitArgs.Builder]):
+        com.pulumi.gcp.container.inputs.NodePoolNodeConfigLinuxNodeConfigArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.container.inputs.NodePoolNodeConfigLinuxNodeConfigCustomNodeInitArgs.builder
+      builder.customNodeInit(args(argsBuilder).build)
+
+    /**
      * @param hugepagesConfig Amounts for 2M and 1G hugepages.
      * @return builder
      */
@@ -4828,6 +4940,16 @@ object container:
         com.pulumi.gcp.container.inputs.NodePoolNodeConfigLinuxNodeConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.container.inputs.NodePoolNodeConfigLinuxNodeConfigSwapConfigArgs.builder
       builder.swapConfig(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.gcp.container.inputs.NodePoolNodeConfigLinuxNodeConfigCustomNodeInitArgs.Builder)
+    /**
+     * @param initScript The init script configuration.
+     * @return builder
+     */
+    def initScript(args: Endofunction[com.pulumi.gcp.container.inputs.NodePoolNodeConfigLinuxNodeConfigCustomNodeInitInitScriptArgs.Builder]):
+        com.pulumi.gcp.container.inputs.NodePoolNodeConfigLinuxNodeConfigCustomNodeInitArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.container.inputs.NodePoolNodeConfigLinuxNodeConfigCustomNodeInitInitScriptArgs.builder
+      builder.initScript(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.container.inputs.NodePoolNodeConfigLinuxNodeConfigSwapConfigArgs.Builder)
     /**
@@ -4886,6 +5008,15 @@ object container:
         com.pulumi.gcp.container.inputs.NodePoolState.Builder =
       val argsBuilder = com.pulumi.gcp.container.inputs.NodePoolAutoscalingArgs.builder
       builder.autoscaling(args(argsBuilder).build)
+
+    /**
+     * @param maintenancePolicies The maintenance policy of the pool. Structure is documented below.
+     * @return builder
+     */
+    def maintenancePolicies(args: Endofunction[com.pulumi.gcp.container.inputs.NodePoolMaintenancePolicyArgs.Builder]*):
+        com.pulumi.gcp.container.inputs.NodePoolState.Builder =
+      def argsBuilder = com.pulumi.gcp.container.inputs.NodePoolMaintenancePolicyArgs.builder
+      builder.maintenancePolicies(args.map(_(argsBuilder).build)*)
 
     /**
      * @param management Node management configuration, wherein auto-repair and

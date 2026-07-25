@@ -469,7 +469,7 @@ object containerservice:
     /**
      * @param identity An `identity` block as defined below. One of either `identity` or `servicePrincipal` must be specified.
      * 
-     * !&gt; **Note:** A migration scenario from `servicePrincipal` to `identity` is supported. When upgrading `servicePrincipal` to `identity`, your cluster&#39;s control plane and addon pods will switch to use managed identity, but the kubelets will keep using your configured `servicePrincipal` until you upgrade your Node Pool.
+     * &gt; **Note:** A migration scenario from `servicePrincipal` to `identity` is supported. When upgrading `servicePrincipal` to `identity`, your cluster&#39;s control plane and addon pods will switch to use managed identity, but the kubelets will keep using your configured `servicePrincipal` until you upgrade your Node Pool.
      * @return builder
      */
     def identity(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesClusterIdentityArgs.Builder]):
@@ -612,7 +612,7 @@ object containerservice:
     /**
      * @param servicePrincipal A `servicePrincipal` block as documented below. One of either `identity` or `servicePrincipal` must be specified.
      * 
-     * !&gt; **Note:** A migration scenario from `servicePrincipal` to `identity` is supported. When upgrading `servicePrincipal` to `identity`, your cluster&#39;s control plane and addon pods will switch to use managed identity, but the kubelets will keep using your configured `servicePrincipal` until you upgrade your Node Pool.
+     * &gt; **Note:** A migration scenario from `servicePrincipal` to `identity` is supported. When upgrading `servicePrincipal` to `identity`, your cluster&#39;s control plane and addon pods will switch to use managed identity, but the kubelets will keep using your configured `servicePrincipal` until you upgrade your Node Pool.
      * @return builder
      */
     def servicePrincipal(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesClusterServicePrincipalArgs.Builder]):
@@ -1793,7 +1793,7 @@ object containerservice:
     /**
      * @param identity An `identity` block as defined below. One of either `identity` or `servicePrincipal` must be specified.
      * 
-     * !&gt; **Note:** A migration scenario from `servicePrincipal` to `identity` is supported. When upgrading `servicePrincipal` to `identity`, your cluster&#39;s control plane and addon pods will switch to use managed identity, but the kubelets will keep using your configured `servicePrincipal` until you upgrade your Node Pool.
+     * &gt; **Note:** A migration scenario from `servicePrincipal` to `identity` is supported. When upgrading `servicePrincipal` to `identity`, your cluster&#39;s control plane and addon pods will switch to use managed identity, but the kubelets will keep using your configured `servicePrincipal` until you upgrade your Node Pool.
      * @return builder
      */
     def identity(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesClusterIdentityArgs.Builder]):
@@ -1954,7 +1954,7 @@ object containerservice:
     /**
      * @param servicePrincipal A `servicePrincipal` block as documented below. One of either `identity` or `servicePrincipal` must be specified.
      * 
-     * !&gt; **Note:** A migration scenario from `servicePrincipal` to `identity` is supported. When upgrading `servicePrincipal` to `identity`, your cluster&#39;s control plane and addon pods will switch to use managed identity, but the kubelets will keep using your configured `servicePrincipal` until you upgrade your Node Pool.
+     * &gt; **Note:** A migration scenario from `servicePrincipal` to `identity` is supported. When upgrading `servicePrincipal` to `identity`, your cluster&#39;s control plane and addon pods will switch to use managed identity, but the kubelets will keep using your configured `servicePrincipal` until you upgrade your Node Pool.
      * @return builder
      */
     def servicePrincipal(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesClusterServicePrincipalArgs.Builder]):

@@ -165,6 +165,15 @@ object autoscaling:
       builder.initialLifecycleHooks(args.map(_(argsBuilder).build)*)
 
     /**
+     * @param instanceLifecyclePolicy If this block is configured, adds an instance lifecycle policy to the specified Auto Scaling Group. Defined below.
+     * @return builder
+     */
+    def instanceLifecyclePolicy(args: Endofunction[com.pulumi.aws.autoscaling.inputs.GroupInstanceLifecyclePolicyArgs.Builder]):
+        com.pulumi.aws.autoscaling.GroupArgs.Builder =
+      val argsBuilder = com.pulumi.aws.autoscaling.inputs.GroupInstanceLifecyclePolicyArgs.builder
+      builder.instanceLifecyclePolicy(args(argsBuilder).build)
+
+    /**
      * @param instanceMaintenancePolicy If this block is configured, add a instance maintenance policy to the specified Auto Scaling group. Defined below.
      * @return builder
      */
@@ -473,6 +482,16 @@ object autoscaling:
       val argsBuilder = com.pulumi.aws.autoscaling.inputs.GroupCapacityReservationSpecificationCapacityReservationTargetArgs.builder
       builder.capacityReservationTarget(args(argsBuilder).build)
 
+  extension (builder: com.pulumi.aws.autoscaling.inputs.GroupInstanceLifecyclePolicyArgs.Builder)
+    /**
+     * @param retentionTriggers Conditions that trigger instance retention behavior. Defined below.
+     * @return builder
+     */
+    def retentionTriggers(args: Endofunction[com.pulumi.aws.autoscaling.inputs.GroupInstanceLifecyclePolicyRetentionTriggersArgs.Builder]):
+        com.pulumi.aws.autoscaling.inputs.GroupInstanceLifecyclePolicyArgs.Builder =
+      val argsBuilder = com.pulumi.aws.autoscaling.inputs.GroupInstanceLifecyclePolicyRetentionTriggersArgs.builder
+      builder.retentionTriggers(args(argsBuilder).build)
+
   extension (builder: com.pulumi.aws.autoscaling.inputs.GroupInstanceRefreshArgs.Builder)
     /**
      * @param preferences Override default parameters for Instance Refresh.
@@ -665,6 +684,15 @@ object autoscaling:
         com.pulumi.aws.autoscaling.inputs.GroupState.Builder =
       def argsBuilder = com.pulumi.aws.autoscaling.inputs.GroupInitialLifecycleHookArgs.builder
       builder.initialLifecycleHooks(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param instanceLifecyclePolicy If this block is configured, adds an instance lifecycle policy to the specified Auto Scaling Group. Defined below.
+     * @return builder
+     */
+    def instanceLifecyclePolicy(args: Endofunction[com.pulumi.aws.autoscaling.inputs.GroupInstanceLifecyclePolicyArgs.Builder]):
+        com.pulumi.aws.autoscaling.inputs.GroupState.Builder =
+      val argsBuilder = com.pulumi.aws.autoscaling.inputs.GroupInstanceLifecyclePolicyArgs.builder
+      builder.instanceLifecyclePolicy(args(argsBuilder).build)
 
     /**
      * @param instanceMaintenancePolicy If this block is configured, add a instance maintenance policy to the specified Auto Scaling group. Defined below.

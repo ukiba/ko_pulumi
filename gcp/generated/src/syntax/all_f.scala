@@ -6,6 +6,7 @@ import jp.ukiba.ko_pulumi
 export ko_pulumi.gcp.accesscontextmanager.ingressFrom
 export ko_pulumi.gcp.accesscontextmanager.ingressPolicies
 export ko_pulumi.gcp.accesscontextmanager.ingressTo
+export ko_pulumi.gcp.agentregistry.interfaces
 export ko_pulumi.gcp.alloydb.initialUser
 export ko_pulumi.gcp.apigateway.fileDescriptorSet
 export ko_pulumi.gcp.apigateway.gatewayConfig
@@ -40,7 +41,9 @@ export ko_pulumi.gcp.beyondcorp.gateway
 export ko_pulumi.gcp.beyondcorp.groupInfo
 export ko_pulumi.gcp.beyondcorp.hubs
 export ko_pulumi.gcp.beyondcorp.internetGateway
+export ko_pulumi.gcp.biglake.federatedCatalogOptions
 export ko_pulumi.gcp.biglake.fields
+export ko_pulumi.gcp.biglake.glueCatalogInfo
 export ko_pulumi.gcp.biglake.hiveOptions
 export ko_pulumi.gcp.bigquery.foreignKeys
 export ko_pulumi.gcp.bigquery.googleSheetsOptions
@@ -86,6 +89,7 @@ export ko_pulumi.gcp.chronicle.httpsPushGoogleCloudPubsubSettings
 export ko_pulumi.gcp.chronicle.httpsPushWebhookSettings
 export ko_pulumi.gcp.chronicle.impervaWafSettings
 export ko_pulumi.gcp.chronicle.ingestionLabel
+export ko_pulumi.gcp.chronicle.ingestionLabels
 export ko_pulumi.gcp.chronicle.input
 export ko_pulumi.gcp.chronicle.itemColors
 export ko_pulumi.gcp.chronicle.itemStyle
@@ -168,6 +172,7 @@ export ko_pulumi.gcp.compute.instanceLifecyclePolicy
 export ko_pulumi.gcp.compute.instanceProperties
 export ko_pulumi.gcp.compute.instanceSchedulePolicy
 export ko_pulumi.gcp.compute.instanceSelections
+export ko_pulumi.gcp.compute.instanceSelectors
 export ko_pulumi.gcp.compute.instances
 export ko_pulumi.gcp.compute.intendedCapabilityBlockers
 export ko_pulumi.gcp.compute.intendedSlaBlockers
@@ -204,6 +209,7 @@ export ko_pulumi.gcp.container.hosts
 export ko_pulumi.gcp.container.httpLoadBalancing
 export ko_pulumi.gcp.container.hugepagesConfig
 export ko_pulumi.gcp.container.identityServiceConfig
+export ko_pulumi.gcp.container.initScript
 export ko_pulumi.gcp.container.instancePlacement
 export ko_pulumi.gcp.container.ipAllocationPolicy
 export ko_pulumi.gcp.container.ipEndpointsConfig

@@ -5,6 +5,7 @@ import jp.ukiba.ko_pulumi
 
 export ko_pulumi.gcp.accessapproval.AccessapprovalFunctions
 export ko_pulumi.gcp.accesscontextmanager.AccesscontextmanagerFunctions
+export ko_pulumi.gcp.agentregistry.AgentregistryFunctions
 export ko_pulumi.gcp.alloydb.AlloydbFunctions
 export ko_pulumi.gcp.apigateway.ApigatewayFunctions
 export ko_pulumi.gcp.apigee.ApigeeFunctions

@@ -5421,6 +5421,34 @@ object vertex:
       builder.encryptionSpec(args(argsBuilder).build)
 
   /**
+   * Enables a Model Garden publisher model for a project so that it can be
+   * deployed. This calls the synchronous
+   * `ModelGardenService.EnableModel` method, which checks that the prerequisites
+   * for the model are met (for example, a completed questionnaire and accepted
+   * consents, or an active Private Offer) before enabling it.
+   * 
+   * &gt; **Note:** The underlying API does not provide a way to disable a model
+   * once it has been enabled, so destroying this resource only removes it from
+   * Terraform state and does not affect the project&#39;s enablement status.
+   * 
+   * &gt; **Warning:** This resource is in beta, and should be used with the terraform-provider-google-beta provider.
+   * See Provider Versions for more details on beta resources.
+   * 
+   * To get more information about ModelGardenEnableModel, see:
+   * 
+   * * [API documentation](https://cloud.google.com/vertex-ai/docs/reference/rest/v1beta1/projects.publishers.models/enableModel)
+   * * How-to Guides
+   *     * [Overview of Model Garden](https://cloud.google.com/vertex-ai/generative-ai/docs/model-garden/explore-models)
+   *     * [Use models in Model Garden](https://cloud.google.com/vertex-ai/generative-ai/docs/model-garden/use-models)
+   */
+  def AiModelGardenEnableModel(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+      (args: Endofunction[com.pulumi.gcp.vertex.AiModelGardenEnableModelArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+    val argsBuilder = com.pulumi.gcp.vertex.AiModelGardenEnableModelArgs.builder
+    com.pulumi.gcp.vertex.AiModelGardenEnableModel(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+
+  /**
    * Vertex AI RAG Engine lets you scale your RagManagedDb instance based on your usage and performance requirements using a choice of two tiers, and optionally, lets you delete your Vertex AI RAG Engine data using a third tier. The tier is a project-level setting that&#39;s available in the RagEngineConfig resource that impacts all RAG corpora using RagManagedDb. The following tiers are available in RagEngineConfig: Basic, Scaled and Unprovisioned.
    * 
    * To get more information about RagEngineConfig, see:
@@ -5496,6 +5524,17 @@ object vertex:
         com.pulumi.gcp.vertex.AiReasoningEngineArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiReasoningEngineSpecArgs.builder
       builder.spec(args(argsBuilder).build)
+
+    /**
+     * @param trafficConfig (Optional, Beta)
+     * Optional. Traffic distribution configuration for the Reasoning Engine.
+     * Structure is documented below.
+     * @return builder
+     */
+    def trafficConfig(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiReasoningEngineTrafficConfigArgs.Builder]):
+        com.pulumi.gcp.vertex.AiReasoningEngineArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.vertex.inputs.AiReasoningEngineTrafficConfigArgs.builder
+      builder.trafficConfig(args(argsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Vertex AI ReasoningEngine. Each of these resources serves a different use case:
@@ -6476,6 +6515,36 @@ object vertex:
         com.pulumi.gcp.vertex.AiScheduleArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiScheduleCreatePipelineJobRequestArgs.builder
       builder.createPipelineJobRequest(args(argsBuilder).build)
+
+  /**
+   * A SemanticGovernancePolicyEngine (SGPE) is the managed, runtime evaluation
+   * infrastructure for Semantic Governance Policies (SGP): the natural-language
+   * constraints that govern an AI agent&#39;s tool calls. It is a project-level,
+   * regional singleton, so each project has at most one engine per region.
+   * 
+   * Provisioning the engine sets up managed Private Service Connect (PSC)
+   * networking in your VPC and a policy decision point that the Agent Gateway
+   * consults at runtime to allow or deny an agent&#39;s proposed tool calls. The
+   * Semantic Governance Policies themselves, and the Agent Gateway integration
+   * that routes agent traffic through the engine, are configured separately and
+   * are not managed by this resource.
+   * 
+   * Reading an uninitialized or deprovisioned engine returns the singleton
+   * with state INACTIVE rather than reporting it as absent.
+   * 
+   * &gt; **Warning:** This resource is in beta, and should be used with the terraform-provider-google-beta provider.
+   * See Provider Versions for more details on beta resources.
+   * 
+   * To get more information about SemanticGovernancePolicyEngine, see:
+   * * How-to Guides
+   *     * [Semantic governance overview](https://docs.cloud.google.com/gemini-enterprise-agent-platform/govern/policies/semantic-governance-overview)
+   */
+  def AiSemanticGovernancePolicyEngine(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+      (args: Endofunction[com.pulumi.gcp.vertex.AiSemanticGovernancePolicyEngineArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+    val argsBuilder = com.pulumi.gcp.vertex.AiSemanticGovernancePolicyEngineArgs.builder
+    com.pulumi.gcp.vertex.AiSemanticGovernancePolicyEngine(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
 
   /**
    * Tensorboard is a physical database that stores users&#39; training metrics. A default Tensorboard is provided in each region of a GCP project. If needed users can also create extra Tensorboards in their projects.
@@ -7832,6 +7901,17 @@ object vertex:
 
   extension (builder: com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecArgs.Builder)
     /**
+     * @param exampleStoreConfig (Optional, Beta)
+     * Optional. Specification for an Example Store, which manages few-shot examples for the Agent Engine.
+     * Structure is documented below.
+     * @return builder
+     */
+    def exampleStoreConfig(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecExampleStoreConfigArgs.Builder]):
+        com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecExampleStoreConfigArgs.builder
+      builder.exampleStoreConfig(args(argsBuilder).build)
+
+    /**
      * @param memoryBankConfig Specification for a Memory Bank, which manages memories for the Agent Engine.
      * Structure is documented below.
      * @return builder
@@ -7841,7 +7921,28 @@ object vertex:
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigArgs.builder
       builder.memoryBankConfig(args(argsBuilder).build)
 
+  extension (builder: com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecExampleStoreConfigArgs.Builder)
+    /**
+     * @param similaritySearchConfig Optional. Configuration for how to perform similarity search on examples.
+     * Structure is documented below.
+     * @return builder
+     */
+    def similaritySearchConfig(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecExampleStoreConfigSimilaritySearchConfigArgs.Builder]):
+        com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecExampleStoreConfigArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecExampleStoreConfigSimilaritySearchConfigArgs.builder
+      builder.similaritySearchConfig(args(argsBuilder).build)
+
   extension (builder: com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigArgs.Builder)
+    /**
+     * @param customizationConfigs Optional. Customization configs for how Agent Engine sub-resources manage context at different scope levels.
+     * Structure is documented below.
+     * @return builder
+     */
+    def customizationConfigs(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigCustomizationConfigArgs.Builder]*):
+        com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigCustomizationConfigArgs.builder
+      builder.customizationConfigs(args.map(_(argsBuilder).build)*)
+
     /**
      * @param generationConfig Configuration for how to generate memories for the Memory Bank.
      * Structure is documented below.
@@ -7863,6 +7964,16 @@ object vertex:
       builder.similaritySearchConfig(args(argsBuilder).build)
 
     /**
+     * @param structuredMemoryConfigs Optional. Structured memory configurations for Agent Engine sub-resources.
+     * Structure is documented below.
+     * @return builder
+     */
+    def structuredMemoryConfigs(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigStructuredMemoryConfigArgs.Builder]*):
+        com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigStructuredMemoryConfigArgs.builder
+      builder.structuredMemoryConfigs(args.map(_(argsBuilder).build)*)
+
+    /**
      * @param ttlConfig Configuration for automatic TTL (&#34;time-to-live&#34;) of the memories in the Memory Bank.
      * Structure is documented below.
      * @return builder
@@ -7871,6 +7982,59 @@ object vertex:
         com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigTtlConfigArgs.builder
       builder.ttlConfig(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigCustomizationConfigArgs.Builder)
+    /**
+     * @param consolidationConfig Optional. Configuration for how many memory revisions Memory Bank considers when consolidating each memory candidate.
+     * Structure is documented below.
+     * @return builder
+     */
+    def consolidationConfig(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigCustomizationConfigConsolidationConfigArgs.Builder]):
+        com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigCustomizationConfigArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigCustomizationConfigConsolidationConfigArgs.builder
+      builder.consolidationConfig(args(argsBuilder).build)
+
+    /**
+     * @param memoryTopics Optional. List of topics that the memory should be associated with.
+     * Structure is documented below.
+     * @return builder
+     */
+    def memoryTopics(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigCustomizationConfigMemoryTopicArgs.Builder]*):
+        com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigCustomizationConfigArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigCustomizationConfigMemoryTopicArgs.builder
+      builder.memoryTopics(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigCustomizationConfigMemoryTopicArgs.Builder)
+    /**
+     * @param customMemoryTopic Optional. Custom memory topic.
+     * Structure is documented below.
+     * @return builder
+     */
+    def customMemoryTopic(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigCustomizationConfigMemoryTopicCustomMemoryTopicArgs.Builder]):
+        com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigCustomizationConfigMemoryTopicArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigCustomizationConfigMemoryTopicCustomMemoryTopicArgs.builder
+      builder.customMemoryTopic(args(argsBuilder).build)
+
+    /**
+     * @param managedMemoryTopic Optional. Managed memory topic.
+     * Structure is documented below.
+     * @return builder
+     */
+    def managedMemoryTopic(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigCustomizationConfigMemoryTopicManagedMemoryTopicArgs.Builder]):
+        com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigCustomizationConfigMemoryTopicArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigCustomizationConfigMemoryTopicManagedMemoryTopicArgs.builder
+      builder.managedMemoryTopic(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigStructuredMemoryConfigArgs.Builder)
+    /**
+     * @param schemaConfigs Optional. List of schema configs that this structured memory config applies to.
+     * Structure is documented below.
+     * @return builder
+     */
+    def schemaConfigs(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigStructuredMemoryConfigSchemaConfigArgs.Builder]*):
+        com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigStructuredMemoryConfigArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigStructuredMemoryConfigSchemaConfigArgs.builder
+      builder.schemaConfigs(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigTtlConfigArgs.Builder)
     /**
@@ -7897,8 +8061,16 @@ object vertex:
 
   extension (builder: com.pulumi.gcp.vertex.inputs.AiReasoningEngineSpecArgs.Builder)
     /**
+     * @param buildSpec Optional. Configuration for building container image.
+     * @return builder
+     */
+    def buildSpec(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiReasoningEngineSpecBuildSpecArgs.Builder]):
+        com.pulumi.gcp.vertex.inputs.AiReasoningEngineSpecArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.vertex.inputs.AiReasoningEngineSpecBuildSpecArgs.builder
+      builder.buildSpec(args(argsBuilder).build)
+
+    /**
      * @param containerSpec Deploy from a container image with a defined entrypoint and commands.
-     * Structure is documented below.
      * @return builder
      */
     def containerSpec(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiReasoningEngineSpecContainerSpecArgs.Builder]):
@@ -7908,7 +8080,6 @@ object vertex:
 
     /**
      * @param deploymentSpec Optional. The specification of a Reasoning Engine deployment.
-     * Structure is documented below.
      * @return builder
      */
     def deploymentSpec(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiReasoningEngineSpecDeploymentSpecArgs.Builder]):
@@ -7921,7 +8092,6 @@ object vertex:
      * Ignored when users directly specify a deployment image through
      * deploymentSpec.first_party_image_override, but keeping the
      * fieldBehavior to avoid introducing breaking changes.
-     * Structure is documented below.
      * @return builder
      */
     def packageSpec(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiReasoningEngineSpecPackageSpecArgs.Builder]):
@@ -7931,7 +8101,6 @@ object vertex:
 
     /**
      * @param sourceCodeSpec Specification for deploying from source code.
-     * Structure is documented below.
      * @return builder
      */
     def sourceCodeSpec(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiReasoningEngineSpecSourceCodeSpecArgs.Builder]):
@@ -7939,7 +8108,39 @@ object vertex:
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiReasoningEngineSpecSourceCodeSpecArgs.builder
       builder.sourceCodeSpec(args(argsBuilder).build)
 
+  extension (builder: com.pulumi.gcp.vertex.inputs.AiReasoningEngineSpecDeploymentSpecAgentGatewayConfigArgs.Builder)
+    /**
+     * @param agentToAnywhereConfig Optional. Configuration for traffic originating from the Reasoning Engine.
+     * Structure is documented below.
+     * @return builder
+     */
+    def agentToAnywhereConfig(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiReasoningEngineSpecDeploymentSpecAgentGatewayConfigAgentToAnywhereConfigArgs.Builder]):
+        com.pulumi.gcp.vertex.inputs.AiReasoningEngineSpecDeploymentSpecAgentGatewayConfigArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.vertex.inputs.AiReasoningEngineSpecDeploymentSpecAgentGatewayConfigAgentToAnywhereConfigArgs.builder
+      builder.agentToAnywhereConfig(args(argsBuilder).build)
+
+    /**
+     * @param clientToAgentConfig Optional. Configuration for traffic targeting the Reasoning Engine.
+     * Structure is documented below.
+     * @return builder
+     */
+    def clientToAgentConfig(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiReasoningEngineSpecDeploymentSpecAgentGatewayConfigClientToAgentConfigArgs.Builder]):
+        com.pulumi.gcp.vertex.inputs.AiReasoningEngineSpecDeploymentSpecAgentGatewayConfigArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.vertex.inputs.AiReasoningEngineSpecDeploymentSpecAgentGatewayConfigClientToAgentConfigArgs.builder
+      builder.clientToAgentConfig(args(argsBuilder).build)
+
   extension (builder: com.pulumi.gcp.vertex.inputs.AiReasoningEngineSpecDeploymentSpecArgs.Builder)
+    /**
+     * @param agentGatewayConfig (Optional, Beta)
+     * Optional. Agent Gateway configuration for a Reasoning Engine deployment.
+     * Structure is documented below.
+     * @return builder
+     */
+    def agentGatewayConfig(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiReasoningEngineSpecDeploymentSpecAgentGatewayConfigArgs.Builder]):
+        com.pulumi.gcp.vertex.inputs.AiReasoningEngineSpecDeploymentSpecArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.vertex.inputs.AiReasoningEngineSpecDeploymentSpecAgentGatewayConfigArgs.builder
+      builder.agentGatewayConfig(args(argsBuilder).build)
+
     /**
      * @param envs Optional. Environment variables to be set with the Reasoning
      * Engine deployment.
@@ -7950,6 +8151,17 @@ object vertex:
         com.pulumi.gcp.vertex.inputs.AiReasoningEngineSpecDeploymentSpecArgs.Builder =
       def argsBuilder = com.pulumi.gcp.vertex.inputs.AiReasoningEngineSpecDeploymentSpecEnvArgs.builder
       builder.envs(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param keepAliveProbe (Optional, Beta)
+     * Optional. Specifies the configuration for keep-alive probe.
+     * Structure is documented below.
+     * @return builder
+     */
+    def keepAliveProbe(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiReasoningEngineSpecDeploymentSpecKeepAliveProbeArgs.Builder]):
+        com.pulumi.gcp.vertex.inputs.AiReasoningEngineSpecDeploymentSpecArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.vertex.inputs.AiReasoningEngineSpecDeploymentSpecKeepAliveProbeArgs.builder
+      builder.keepAliveProbe(args(argsBuilder).build)
 
     /**
      * @param pscInterfaceConfig Optional. Configuration for PSC-Interface.
@@ -7973,6 +8185,17 @@ object vertex:
         com.pulumi.gcp.vertex.inputs.AiReasoningEngineSpecDeploymentSpecArgs.Builder =
       def argsBuilder = com.pulumi.gcp.vertex.inputs.AiReasoningEngineSpecDeploymentSpecSecretEnvArgs.builder
       builder.secretEnvs(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.gcp.vertex.inputs.AiReasoningEngineSpecDeploymentSpecKeepAliveProbeArgs.Builder)
+    /**
+     * @param httpGet Specifies the HTTP GET configuration for the probe.
+     * Structure is documented below.
+     * @return builder
+     */
+    def httpGet(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiReasoningEngineSpecDeploymentSpecKeepAliveProbeHttpGetArgs.Builder]):
+        com.pulumi.gcp.vertex.inputs.AiReasoningEngineSpecDeploymentSpecKeepAliveProbeArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.vertex.inputs.AiReasoningEngineSpecDeploymentSpecKeepAliveProbeHttpGetArgs.builder
+      builder.httpGet(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.vertex.inputs.AiReasoningEngineSpecDeploymentSpecPscInterfaceConfigArgs.Builder)
     /**
@@ -8002,7 +8225,39 @@ object vertex:
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiReasoningEngineSpecDeploymentSpecSecretEnvSecretRefArgs.builder
       builder.secretRef(args(argsBuilder).build)
 
+  extension (builder: com.pulumi.gcp.vertex.inputs.AiReasoningEngineSpecSourceCodeSpecAgentConfigSourceArgs.Builder)
+    /**
+     * @param adkConfig Required. Configuration for the Agent Development Kit (ADK).
+     * Structure is documented below.
+     * @return builder
+     */
+    def adkConfig(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiReasoningEngineSpecSourceCodeSpecAgentConfigSourceAdkConfigArgs.Builder]):
+        com.pulumi.gcp.vertex.inputs.AiReasoningEngineSpecSourceCodeSpecAgentConfigSourceArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.vertex.inputs.AiReasoningEngineSpecSourceCodeSpecAgentConfigSourceAdkConfigArgs.builder
+      builder.adkConfig(args(argsBuilder).build)
+
+    /**
+     * @param inlineSource Optional. Any additional files needed to interpret the config.
+     * Structure is documented below.
+     * @return builder
+     */
+    def inlineSource(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiReasoningEngineSpecSourceCodeSpecAgentConfigSourceInlineSourceArgs.Builder]):
+        com.pulumi.gcp.vertex.inputs.AiReasoningEngineSpecSourceCodeSpecAgentConfigSourceArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.vertex.inputs.AiReasoningEngineSpecSourceCodeSpecAgentConfigSourceInlineSourceArgs.builder
+      builder.inlineSource(args(argsBuilder).build)
+
   extension (builder: com.pulumi.gcp.vertex.inputs.AiReasoningEngineSpecSourceCodeSpecArgs.Builder)
+    /**
+     * @param agentConfigSource (Optional, Beta)
+     * Optional. Specification for the deploying from agent config.
+     * Structure is documented below.
+     * @return builder
+     */
+    def agentConfigSource(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiReasoningEngineSpecSourceCodeSpecAgentConfigSourceArgs.Builder]):
+        com.pulumi.gcp.vertex.inputs.AiReasoningEngineSpecSourceCodeSpecArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.vertex.inputs.AiReasoningEngineSpecSourceCodeSpecAgentConfigSourceArgs.builder
+      builder.agentConfigSource(args(argsBuilder).build)
+
     /**
      * @param developerConnectSource Specification for source code to be fetched from a Git repository managed through the Developer Connect service.
      * Structure is documented below.
@@ -8087,6 +8342,51 @@ object vertex:
         com.pulumi.gcp.vertex.inputs.AiReasoningEngineState.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiReasoningEngineSpecArgs.builder
       builder.spec(args(argsBuilder).build)
+
+    /**
+     * @param trafficConfig (Optional, Beta)
+     * Optional. Traffic distribution configuration for the Reasoning Engine.
+     * Structure is documented below.
+     * @return builder
+     */
+    def trafficConfig(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiReasoningEngineTrafficConfigArgs.Builder]):
+        com.pulumi.gcp.vertex.inputs.AiReasoningEngineState.Builder =
+      val argsBuilder = com.pulumi.gcp.vertex.inputs.AiReasoningEngineTrafficConfigArgs.builder
+      builder.trafficConfig(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.gcp.vertex.inputs.AiReasoningEngineTrafficConfigArgs.Builder)
+    /**
+     * @param trafficSplitAlwaysLatest Optional. Traffic distribution configuration, where all traffic is sent to the
+     * latest Runtime Revision.
+     * @return builder
+     */
+    def trafficSplitAlwaysLatest(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiReasoningEngineTrafficConfigTrafficSplitAlwaysLatestArgs.Builder]):
+        com.pulumi.gcp.vertex.inputs.AiReasoningEngineTrafficConfigArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.vertex.inputs.AiReasoningEngineTrafficConfigTrafficSplitAlwaysLatestArgs.builder
+      builder.trafficSplitAlwaysLatest(args(argsBuilder).build)
+
+    /**
+     * @param trafficSplitManual Optional. Manual traffic distribution configuration, where the user specifies the
+     * Runtime Revision IDs and the percentage of traffic to send to each.
+     * Structure is documented below.
+     * @return builder
+     */
+    def trafficSplitManual(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiReasoningEngineTrafficConfigTrafficSplitManualArgs.Builder]):
+        com.pulumi.gcp.vertex.inputs.AiReasoningEngineTrafficConfigArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.vertex.inputs.AiReasoningEngineTrafficConfigTrafficSplitManualArgs.builder
+      builder.trafficSplitManual(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.gcp.vertex.inputs.AiReasoningEngineTrafficConfigTrafficSplitManualArgs.Builder)
+    /**
+     * @param targets Optional. A list of traffic targets for the Runtimes Revisions. The sum of
+     * percentages must equal to 100.
+     * Structure is documented below.
+     * @return builder
+     */
+    def targets(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiReasoningEngineTrafficConfigTrafficSplitManualTargetArgs.Builder]*):
+        com.pulumi.gcp.vertex.inputs.AiReasoningEngineTrafficConfigTrafficSplitManualArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.vertex.inputs.AiReasoningEngineTrafficConfigTrafficSplitManualTargetArgs.builder
+      builder.targets(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.gcp.vertex.inputs.AiScheduleCreateNotebookExecutionJobRequestArgs.Builder)
     /**

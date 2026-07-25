@@ -130,6 +130,33 @@ object chronicle:
       builder.deniedDataAccessLabels(args.map(_(argsBuilder).build)*)
 
   /**
+   * DataExport resource represents a request to export data from Chronicle to a GCS bucket.
+   * 
+   * To get more information about DataExport, see:
+   * 
+   * * [API documentation](https://cloud.google.com/chronicle/docs/reference/rest/v1beta/projects.locations.instances.dataExports)
+   * * How-to Guides
+   *     * [Data Export Overview](https://cloud.google.com/chronicle/docs/secops/data-export-overview)
+   */
+  def DataExport(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+      (args: Endofunction[com.pulumi.gcp.chronicle.DataExportArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+    val argsBuilder = com.pulumi.gcp.chronicle.DataExportArgs.builder
+    com.pulumi.gcp.chronicle.DataExport(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+
+  extension (builder: com.pulumi.gcp.chronicle.DataExportArgs.Builder)
+    /**
+     * @param ingestionLabels The ingestion labels used to filter the export.
+     * Structure is documented below.
+     * @return builder
+     */
+    def ingestionLabels(args: Endofunction[com.pulumi.gcp.chronicle.inputs.DataExportIngestionLabelArgs.Builder]*):
+        com.pulumi.gcp.chronicle.DataExportArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.chronicle.inputs.DataExportIngestionLabelArgs.builder
+      builder.ingestionLabels(args.map(_(argsBuilder).build)*)
+
+  /**
    * Represents a Chronicle Data Table, a multicolumn structure used to ingest your own data into Google SecOps.
    * 
    * To get more information about DataTable, see:
@@ -185,12 +212,9 @@ object chronicle:
   /**
    * An environment is logical container for different networks or customers that are managed by the SOC or MSSP. This is useful for SOCs who provide services to several different networks, customers or business units within the organization. The Platform comes with a predefined environment named Default Environment.
    * 
-   * &gt; **Warning:** This resource is in beta, and should be used with the terraform-provider-google-beta provider.
-   * See Provider Versions for more details on beta resources.
-   * 
    * To get more information about Environment, see:
    * 
-   * * [API documentation](https://docs.cloud.google.com/chronicle/docs/reference/rest/v1beta/projects.locations.instances.environments)
+   * * [API documentation](https://docs.cloud.google.com/chronicle/docs/reference/rest/v1/projects.locations.instances.environments)
    * * How-to Guides
    *     * [Google SecOps Guides](https://cloud.google.com/chronicle/docs/secops/secops-overview)
    */
@@ -198,6 +222,25 @@ object chronicle:
       (args: Endofunction[com.pulumi.gcp.chronicle.EnvironmentArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.chronicle.EnvironmentArgs.builder
     com.pulumi.gcp.chronicle.Environment(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+
+  /**
+   * Environment groups let you organize multiple environments into logical categories, making it easier to manage large organizations or multiple customers as a Managed Security Service Provider (MSSP).
+   * 
+   * &gt; **Warning:** This resource is in beta, and should be used with the terraform-provider-google-beta provider.
+   * See Provider Versions for more details on beta resources.
+   * 
+   * To get more information about EnvironmentGroup, see:
+   * 
+   * * [API documentation](https://docs.cloud.google.com/chronicle/docs/reference/rest/v1beta/projects.locations.instances.environmentGroups)
+   * * How-to Guides
+   *     * [Google SecOps Guides](https://cloud.google.com/chronicle/docs/secops/secops-overview)
+   */
+  def EnvironmentGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+      (args: Endofunction[com.pulumi.gcp.chronicle.EnvironmentGroupArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+    val argsBuilder = com.pulumi.gcp.chronicle.EnvironmentGroupArgs.builder
+    com.pulumi.gcp.chronicle.EnvironmentGroup(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
 
@@ -245,12 +288,9 @@ object chronicle:
   /**
    * Represents a set of logic conditions used to refine various types of findings such as curated rule detections.
    * 
-   * &gt; **Warning:** This resource is in beta, and should be used with the terraform-provider-google-beta provider.
-   * See Provider Versions for more details on beta resources.
-   * 
    * To get more information about FindingsRefinement, see:
    * 
-   * * [API documentation](https://docs.cloud.google.com/chronicle/docs/reference/rest/v1beta/projects.locations.instances.findingsRefinements)
+   * * [API documentation](https://docs.cloud.google.com/chronicle/docs/reference/rest/v1/projects.locations.instances.findingsRefinements)
    * * How-to Guides
    *     * [Google SecOps Guides](https://cloud.google.com/chronicle/docs/secops/secops-overview)
    */
@@ -277,12 +317,9 @@ object chronicle:
   /**
    * The FindingsRefinementDeployment resource represents the deployment state of a findings refinement.
    * 
-   * &gt; **Warning:** This resource is in beta, and should be used with the terraform-provider-google-beta provider.
-   * See Provider Versions for more details on beta resources.
-   * 
    * To get more information about FindingsRefinementDeployment, see:
    * 
-   * * [API documentation](https://docs.cloud.google.com/chronicle/docs/reference/rest/v1beta/FindingsRefinementDeployment)
+   * * [API documentation](https://docs.cloud.google.com/chronicle/docs/reference/rest/v1/FindingsRefinementDeployment)
    * * How-to Guides
    *     * [Google SecOps Guides](https://cloud.google.com/chronicle/docs/secops/secops-overview)
    */
@@ -519,6 +556,25 @@ object chronicle:
       (args: Endofunction[com.pulumi.gcp.chronicle.RuleDeploymentArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.chronicle.RuleDeploymentArgs.builder
     com.pulumi.gcp.chronicle.RuleDeployment(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+
+  /**
+   * A SOAR domain designate a domain as internal, ensuring that entities associated with it are treated as organizational assets rather than external threats during ingestion.
+   * 
+   * &gt; **Warning:** This resource is in beta, and should be used with the terraform-provider-google-beta provider.
+   * See Provider Versions for more details on beta resources.
+   * 
+   * To get more information about SoarDomain, see:
+   * 
+   * * [API documentation](https://docs.cloud.google.com/chronicle/docs/reference/rest/v1beta/projects.locations.instances.soarDomains)
+   * * How-to Guides
+   *     * [Google SecOps Guides](https://cloud.google.com/chronicle/docs/secops/secops-overview)
+   */
+  def SoarDomain(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+      (args: Endofunction[com.pulumi.gcp.chronicle.SoarDomainArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+    val argsBuilder = com.pulumi.gcp.chronicle.SoarDomainArgs.builder
+    com.pulumi.gcp.chronicle.SoarDomain(name,
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
 
@@ -1195,6 +1251,27 @@ object chronicle:
         com.pulumi.gcp.chronicle.inputs.DataAccessScopeState.Builder =
       def argsBuilder = com.pulumi.gcp.chronicle.inputs.DataAccessScopeDeniedDataAccessLabelArgs.builder
       builder.deniedDataAccessLabels(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.gcp.chronicle.inputs.DataExportState.Builder)
+    /**
+     * @param dataExportStatuses Status of the current export.
+     * Structure is documented below.
+     * @return builder
+     */
+    def dataExportStatuses(args: Endofunction[com.pulumi.gcp.chronicle.inputs.DataExportDataExportStatusArgs.Builder]*):
+        com.pulumi.gcp.chronicle.inputs.DataExportState.Builder =
+      def argsBuilder = com.pulumi.gcp.chronicle.inputs.DataExportDataExportStatusArgs.builder
+      builder.dataExportStatuses(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param ingestionLabels The ingestion labels used to filter the export.
+     * Structure is documented below.
+     * @return builder
+     */
+    def ingestionLabels(args: Endofunction[com.pulumi.gcp.chronicle.inputs.DataExportIngestionLabelArgs.Builder]*):
+        com.pulumi.gcp.chronicle.inputs.DataExportState.Builder =
+      def argsBuilder = com.pulumi.gcp.chronicle.inputs.DataExportIngestionLabelArgs.builder
+      builder.ingestionLabels(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.gcp.chronicle.inputs.DataTableState.Builder)
     /**

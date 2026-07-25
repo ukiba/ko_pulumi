@@ -1012,7 +1012,7 @@ object compute:
         resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
 
   /**
-   * Manages an Virtual Machine Scale Set in Flexible Orchestration Mode.
+   * Manages an Orchestrated Virtual Machine Scale Set in Flexible Orchestration Mode.
    * 
    * ## Disclaimers
    * 
@@ -1122,7 +1122,7 @@ object compute:
       builder.osProfile(args(argsBuilder).build)
 
     /**
-     * @param plan A `plan` block as documented below. Changing this forces a new resource to be created.
+     * @param plan A `plan` block as defined below. Changing this forces a new resource to be created.
      * @return builder
      */
     def plan(args: Endofunction[com.pulumi.azure.compute.inputs.OrchestratedVirtualMachineScaleSetPlanArgs.Builder]):
@@ -1131,7 +1131,9 @@ object compute:
       builder.plan(args(argsBuilder).build)
 
     /**
-     * @param priorityMix a `priorityMix` block as defined below
+     * @param priorityMix A `priorityMix` block as defined below.
+     * 
+     * &gt; **Note:** `priorityMix` can only be specified when `priority` is set to `Spot`.
      * @return builder
      */
     def priorityMix(args: Endofunction[com.pulumi.azure.compute.inputs.OrchestratedVirtualMachineScaleSetPriorityMixArgs.Builder]):
@@ -1140,7 +1142,9 @@ object compute:
       builder.priorityMix(args(argsBuilder).build)
 
     /**
-     * @param rollingUpgradePolicy A `rollingUpgradePolicy` block as defined below. This is Required when `upgradeMode` is set to `Rolling` and cannot be specified when `upgradeMode` is set to `Manual`. Changing this forces a new resource to be created.
+     * @param rollingUpgradePolicy A `rollingUpgradePolicy` block as defined below. Changing this forces a new resource to be created.
+     * 
+     * &gt; **Note:** `rollingUpgradePolicy` is required when `upgradeMode` is set to `Rolling`, cannot be specified when `upgradeMode` is set to `Manual`, and requires a valid application health extension when `upgradeMode` is set to `Rolling`.
      * @return builder
      */
     def rollingUpgradePolicy(args: Endofunction[com.pulumi.azure.compute.inputs.OrchestratedVirtualMachineScaleSetRollingUpgradePolicyArgs.Builder]):
@@ -1149,9 +1153,11 @@ object compute:
       builder.rollingUpgradePolicy(args(argsBuilder).build)
 
     /**
-     * @param skuProfile An `skuProfile` block as defined below. Changing this forces a new resource to be created.
+     * @param skuProfile A `skuProfile` block as defined below.
      * 
-     * &gt; **Note:** If `skuProfile` is specified the `skuName` must be set to `Mix`.
+     * &gt; **Note:** `skuProfile` can only be specified when `skuName` is set to `Mix`, and `skuProfile` must be configured when `skuName` is set to `Mix`.
+     * 
+     * &gt; **Note:** The `skuProfile` feature may be subject to Azure service limitations for particular regions and VM size combinations. While `skuProfile` can be updated after deployment, it cannot be removed. Removing `skuProfile` from the configuration after deployment triggers the creation of a new resource. Additionally, modifying `skuProfile` settings may result in instance disruption, as changes to allocation strategies or VM sizes can require Azure to redistribute or recreate instances.
      * @return builder
      */
     def skuProfile(args: Endofunction[com.pulumi.azure.compute.inputs.OrchestratedVirtualMachineScaleSetSkuProfileArgs.Builder]):
@@ -1161,6 +1167,8 @@ object compute:
 
     /**
      * @param sourceImageReference A `sourceImageReference` block as defined below.
+     * 
+     * &gt; **Note:** `sourceImageId` and `sourceImageReference` are mutually exclusive and only one of them may be specified.
      * @return builder
      */
     def sourceImageReference(args: Endofunction[com.pulumi.azure.compute.inputs.OrchestratedVirtualMachineScaleSetSourceImageReferenceArgs.Builder]):
@@ -2653,7 +2661,7 @@ object compute:
     /**
      * @param protectedSettingsFromKeyVault A `protectedSettingsFromKeyVault` block as defined below.
      * 
-     * &gt; **Note:** `protectedSettingsFromKeyVault` cannot be used with `protectedSettings`
+     * &gt; **Note:** `protectedSettingsFromKeyVault` cannot be used with `protectedSettings`.
      * @return builder
      */
     def protectedSettingsFromKeyVault(args: Endofunction[com.pulumi.azure.compute.inputs.OrchestratedVirtualMachineScaleSetExtensionProtectedSettingsFromKeyVaultArgs.Builder]):
@@ -2703,7 +2711,7 @@ object compute:
 
   extension (builder: com.pulumi.azure.compute.inputs.OrchestratedVirtualMachineScaleSetOsProfileArgs.Builder)
     /**
-     * @param linuxConfiguration A `linuxConfiguration` block as documented below.
+     * @param linuxConfiguration A `linuxConfiguration` block as defined above.
      * @return builder
      */
     def linuxConfiguration(args: Endofunction[com.pulumi.azure.compute.inputs.OrchestratedVirtualMachineScaleSetOsProfileLinuxConfigurationArgs.Builder]):
@@ -2712,7 +2720,7 @@ object compute:
       builder.linuxConfiguration(args(argsBuilder).build)
 
     /**
-     * @param windowsConfiguration A `windowsConfiguration` block as documented below.
+     * @param windowsConfiguration A `windowsConfiguration` block as defined below.
      * @return builder
      */
     def windowsConfiguration(args: Endofunction[com.pulumi.azure.compute.inputs.OrchestratedVirtualMachineScaleSetOsProfileWindowsConfigurationArgs.Builder]):
@@ -2722,7 +2730,7 @@ object compute:
 
   extension (builder: com.pulumi.azure.compute.inputs.OrchestratedVirtualMachineScaleSetOsProfileLinuxConfigurationArgs.Builder)
     /**
-     * @param adminSshKeys A `adminSshKey` block as documented below.
+     * @param adminSshKeys An `adminSshKey` block as defined above.
      * @return builder
      */
     def adminSshKeys(args: Endofunction[com.pulumi.azure.compute.inputs.OrchestratedVirtualMachineScaleSetOsProfileLinuxConfigurationAdminSshKeyArgs.Builder]*):
@@ -2741,7 +2749,7 @@ object compute:
 
   extension (builder: com.pulumi.azure.compute.inputs.OrchestratedVirtualMachineScaleSetOsProfileLinuxConfigurationSecretArgs.Builder)
     /**
-     * @param certificates One or more `certificate` blocks as defined below.
+     * @param certificates One or more `certificate` blocks as defined above.
      * @return builder
      */
     def certificates(args: Endofunction[com.pulumi.azure.compute.inputs.OrchestratedVirtualMachineScaleSetOsProfileLinuxConfigurationSecretCertificateArgs.Builder]*):
@@ -2751,7 +2759,7 @@ object compute:
 
   extension (builder: com.pulumi.azure.compute.inputs.OrchestratedVirtualMachineScaleSetOsProfileWindowsConfigurationArgs.Builder)
     /**
-     * @param additionalUnattendContents One or more `additionalUnattendContent` blocks as defined below. Changing this forces a new resource to be created.
+     * @param additionalUnattendContents One or more `additionalUnattendContent` blocks as defined above. Changing this forces a new resource to be created.
      * @return builder
      */
     def additionalUnattendContents(args: Endofunction[com.pulumi.azure.compute.inputs.OrchestratedVirtualMachineScaleSetOsProfileWindowsConfigurationAdditionalUnattendContentArgs.Builder]*):
@@ -2760,7 +2768,7 @@ object compute:
       builder.additionalUnattendContents(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param secrets One or more `secret` blocks as defined below.
+     * @param secrets One or more `secret` blocks as defined above.
      * @return builder
      */
     def secrets(args: Endofunction[com.pulumi.azure.compute.inputs.OrchestratedVirtualMachineScaleSetOsProfileWindowsConfigurationSecretArgs.Builder]*):
@@ -2779,13 +2787,25 @@ object compute:
 
   extension (builder: com.pulumi.azure.compute.inputs.OrchestratedVirtualMachineScaleSetOsProfileWindowsConfigurationSecretArgs.Builder)
     /**
-     * @param certificates One or more `certificate` blocks as defined below.
+     * @param certificates One or more `certificate` blocks as defined above.
      * @return builder
      */
     def certificates(args: Endofunction[com.pulumi.azure.compute.inputs.OrchestratedVirtualMachineScaleSetOsProfileWindowsConfigurationSecretCertificateArgs.Builder]*):
         com.pulumi.azure.compute.inputs.OrchestratedVirtualMachineScaleSetOsProfileWindowsConfigurationSecretArgs.Builder =
       def argsBuilder = com.pulumi.azure.compute.inputs.OrchestratedVirtualMachineScaleSetOsProfileWindowsConfigurationSecretCertificateArgs.builder
       builder.certificates(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.azure.compute.inputs.OrchestratedVirtualMachineScaleSetSkuProfileArgs.Builder)
+    /**
+     * @param virtualMachineSizes One or more `virtualMachineSize` blocks as defined below.
+     * 
+     * &gt; **Note:** When `allocationStrategy` is set to `Prioritized`, you must use the `virtualMachineSize` block to specify rank values.
+     * @return builder
+     */
+    def virtualMachineSizes(args: Endofunction[com.pulumi.azure.compute.inputs.OrchestratedVirtualMachineScaleSetSkuProfileVirtualMachineSizeArgs.Builder]*):
+        com.pulumi.azure.compute.inputs.OrchestratedVirtualMachineScaleSetSkuProfileArgs.Builder =
+      def argsBuilder = com.pulumi.azure.compute.inputs.OrchestratedVirtualMachineScaleSetSkuProfileVirtualMachineSizeArgs.builder
+      builder.virtualMachineSizes(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.azure.compute.inputs.OrchestratedVirtualMachineScaleSetState.Builder)
     /**
@@ -2872,7 +2892,7 @@ object compute:
       builder.osProfile(args(argsBuilder).build)
 
     /**
-     * @param plan A `plan` block as documented below. Changing this forces a new resource to be created.
+     * @param plan A `plan` block as defined below. Changing this forces a new resource to be created.
      * @return builder
      */
     def plan(args: Endofunction[com.pulumi.azure.compute.inputs.OrchestratedVirtualMachineScaleSetPlanArgs.Builder]):
@@ -2881,7 +2901,9 @@ object compute:
       builder.plan(args(argsBuilder).build)
 
     /**
-     * @param priorityMix a `priorityMix` block as defined below
+     * @param priorityMix A `priorityMix` block as defined below.
+     * 
+     * &gt; **Note:** `priorityMix` can only be specified when `priority` is set to `Spot`.
      * @return builder
      */
     def priorityMix(args: Endofunction[com.pulumi.azure.compute.inputs.OrchestratedVirtualMachineScaleSetPriorityMixArgs.Builder]):
@@ -2890,7 +2912,9 @@ object compute:
       builder.priorityMix(args(argsBuilder).build)
 
     /**
-     * @param rollingUpgradePolicy A `rollingUpgradePolicy` block as defined below. This is Required when `upgradeMode` is set to `Rolling` and cannot be specified when `upgradeMode` is set to `Manual`. Changing this forces a new resource to be created.
+     * @param rollingUpgradePolicy A `rollingUpgradePolicy` block as defined below. Changing this forces a new resource to be created.
+     * 
+     * &gt; **Note:** `rollingUpgradePolicy` is required when `upgradeMode` is set to `Rolling`, cannot be specified when `upgradeMode` is set to `Manual`, and requires a valid application health extension when `upgradeMode` is set to `Rolling`.
      * @return builder
      */
     def rollingUpgradePolicy(args: Endofunction[com.pulumi.azure.compute.inputs.OrchestratedVirtualMachineScaleSetRollingUpgradePolicyArgs.Builder]):
@@ -2899,9 +2923,11 @@ object compute:
       builder.rollingUpgradePolicy(args(argsBuilder).build)
 
     /**
-     * @param skuProfile An `skuProfile` block as defined below. Changing this forces a new resource to be created.
+     * @param skuProfile A `skuProfile` block as defined below.
      * 
-     * &gt; **Note:** If `skuProfile` is specified the `skuName` must be set to `Mix`.
+     * &gt; **Note:** `skuProfile` can only be specified when `skuName` is set to `Mix`, and `skuProfile` must be configured when `skuName` is set to `Mix`.
+     * 
+     * &gt; **Note:** The `skuProfile` feature may be subject to Azure service limitations for particular regions and VM size combinations. While `skuProfile` can be updated after deployment, it cannot be removed. Removing `skuProfile` from the configuration after deployment triggers the creation of a new resource. Additionally, modifying `skuProfile` settings may result in instance disruption, as changes to allocation strategies or VM sizes can require Azure to redistribute or recreate instances.
      * @return builder
      */
     def skuProfile(args: Endofunction[com.pulumi.azure.compute.inputs.OrchestratedVirtualMachineScaleSetSkuProfileArgs.Builder]):
@@ -2911,6 +2937,8 @@ object compute:
 
     /**
      * @param sourceImageReference A `sourceImageReference` block as defined below.
+     * 
+     * &gt; **Note:** `sourceImageId` and `sourceImageReference` are mutually exclusive and only one of them may be specified.
      * @return builder
      */
     def sourceImageReference(args: Endofunction[com.pulumi.azure.compute.inputs.OrchestratedVirtualMachineScaleSetSourceImageReferenceArgs.Builder]):

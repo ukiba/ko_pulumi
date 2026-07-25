@@ -312,7 +312,7 @@ object dataprotection:
   /**
    * Manages a Backup Vault Customer Managed Key.
    * 
-   * !&gt; **Note:** It is not possible to remove the Customer Managed Key from the Backup Vault once it&#39;s been added. To remove the Customer Managed Key, the parent Data Protection Backup Vault must be deleted and recreated.
+   * &gt; **Note:** It is not possible to remove the Customer Managed Key from the Backup Vault once it&#39;s been added. To remove the Customer Managed Key, the parent Data Protection Backup Vault must be deleted and recreated.
    */
   def BackupVaultCustomerManagedKey(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.azure.dataprotection.BackupVaultCustomerManagedKeyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
