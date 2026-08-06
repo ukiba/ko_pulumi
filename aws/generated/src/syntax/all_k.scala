@@ -73,7 +73,9 @@ export ko_pulumi.aws.bedrock.kendraKnowledgeBaseConfiguration
 export ko_pulumi.aws.bedrock.kinesis
 export ko_pulumi.aws.bedrock.kmsConfiguration
 export ko_pulumi.aws.bedrock.knowledgeBase
+export ko_pulumi.aws.bedrock.knowledgeBaseConfig
 export ko_pulumi.aws.bedrock.knowledgeBaseConfiguration
+export ko_pulumi.aws.bedrock.knowledgeBaseRetrievalConfiguration
 export ko_pulumi.aws.bedrock.lambda
 export ko_pulumi.aws.bedrock.lambdaConfig
 export ko_pulumi.aws.bedrock.lambdaFunction
@@ -175,6 +177,7 @@ export ko_pulumi.aws.codegurureviewer.kmsKeyDetails
 export ko_pulumi.aws.codepipeline.onFailure
 export ko_pulumi.aws.codepipeline.onSuccess
 export ko_pulumi.aws.codepipeline.outputArtifactDetails
+export ko_pulumi.aws.codepipeline.outputArtifactsForComputeActions
 export ko_pulumi.aws.cognito.lambdaConfig
 export ko_pulumi.aws.cognito.logConfigurations
 export ko_pulumi.aws.cognito.lowAction

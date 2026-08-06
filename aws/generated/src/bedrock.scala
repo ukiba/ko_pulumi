@@ -890,13 +890,22 @@ object bedrock:
 
   extension (builder: com.pulumi.aws.bedrock.AgentcoreMemoryStrategyArgs.Builder)
     /**
-     * @param configuration Custom configuration block. Required when `type` is `CUSTOM`, must be omitted for other types. See `configuration` below.
+     * @param configuration Custom configuration block. Required when `type` is `CUSTOM`, must be omitted for other types. See `configuration` Block below.
      * @return builder
      */
     def configuration(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreMemoryStrategyConfigurationArgs.Builder]):
         com.pulumi.aws.bedrock.AgentcoreMemoryStrategyArgs.Builder =
       val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreMemoryStrategyConfigurationArgs.builder
       builder.configuration(args(argsBuilder).build)
+
+    /**
+     * @param reflectionConfiguration Configuration for the reflections created with the episodic memory strategy. Valid when `type` is `EPISODIC`, must be omitted for other types. See `reflectionConfiguration` Block below.
+     * @return builder
+     */
+    def reflectionConfiguration(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreMemoryStrategyReflectionConfigurationArgs.Builder]):
+        com.pulumi.aws.bedrock.AgentcoreMemoryStrategyArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreMemoryStrategyReflectionConfigurationArgs.builder
+      builder.reflectionConfiguration(args(argsBuilder).build)
 
     def timeouts(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreMemoryStrategyTimeoutsArgs.Builder]):
         com.pulumi.aws.bedrock.AgentcoreMemoryStrategyArgs.Builder =
@@ -1278,6 +1287,58 @@ object bedrock:
         com.pulumi.aws.bedrock.CustomModelArgs.Builder =
       val argsBuilder = com.pulumi.aws.bedrock.inputs.CustomModelVpcConfigArgs.builder
       builder.vpcConfig(args(argsBuilder).build)
+
+  /**
+   * Manages an Amazon Bedrock evaluation job. An evaluation job assesses model or knowledge base performance using either automated metrics or human workers.
+   * 
+   * &gt; Amazon Bedrock does not support permanently deleting an evaluation job. Destroying this resource stops the job (if it is still running) using the [StopEvaluationJob](https://docs.aws.amazon.com/bedrock/latest/APIReference/API_StopEvaluationJob.html) API, then removes it from Terraform state. Set `skipDestroy` to leave the job in its current state instead.
+   */
+  def EvaluationJob(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+      (args: Endofunction[com.pulumi.aws.bedrock.EvaluationJobArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+    var argsBuilder = com.pulumi.aws.bedrock.EvaluationJobArgs.builder
+    argsBuilder = args(argsBuilder)
+    conf.logicalName2tagName(name) match
+      case Some(tagName) =>
+        argsBuilder = argsBuilder.tags:
+          transformOptOutputMap(argsBuilder.build.tags, map =>
+              if map.contains("Name") then map else map + ("Name" -> tagName))
+      case None =>
+    com.pulumi.aws.bedrock.EvaluationJob(name,
+        argsBuilder.build,
+        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+
+  extension (builder: com.pulumi.aws.bedrock.EvaluationJobArgs.Builder)
+    /**
+     * @param evaluationConfig Configuration for either an automated or human-based evaluation job. See `evaluationConfig` Block below.
+     * @return builder
+     */
+    def evaluationConfig(args: Endofunction[com.pulumi.aws.bedrock.inputs.EvaluationJobEvaluationConfigArgs.Builder]):
+        com.pulumi.aws.bedrock.EvaluationJobArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.EvaluationJobEvaluationConfigArgs.builder
+      builder.evaluationConfig(args(argsBuilder).build)
+
+    /**
+     * @param inferenceConfig Configuration for the inference model, or models, used for the evaluation job. See `inferenceConfig` Block below.
+     * @return builder
+     */
+    def inferenceConfig(args: Endofunction[com.pulumi.aws.bedrock.inputs.EvaluationJobInferenceConfigArgs.Builder]):
+        com.pulumi.aws.bedrock.EvaluationJobArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.EvaluationJobInferenceConfigArgs.builder
+      builder.inferenceConfig(args(argsBuilder).build)
+
+    /**
+     * @param outputDataConfig Configuration for the Amazon S3 location where the results of the evaluation job are stored. See `outputDataConfig` Block below.
+     * @return builder
+     */
+    def outputDataConfig(args: Endofunction[com.pulumi.aws.bedrock.inputs.EvaluationJobOutputDataConfigArgs.Builder]):
+        com.pulumi.aws.bedrock.EvaluationJobArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.EvaluationJobOutputDataConfigArgs.builder
+      builder.outputDataConfig(args(argsBuilder).build)
+
+    def timeouts(args: Endofunction[com.pulumi.aws.bedrock.inputs.EvaluationJobTimeoutsArgs.Builder]):
+        com.pulumi.aws.bedrock.EvaluationJobArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.EvaluationJobTimeoutsArgs.builder
+      builder.timeouts(args(argsBuilder).build)
 
   /** Resource for managing an Amazon Bedrock Guardrail. */
   def Guardrail(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -5031,7 +5092,7 @@ object bedrock:
 
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentcoreMemoryStrategyConfigurationArgs.Builder)
     /**
-     * @param consolidation Consolidation configuration for processing and organizing memory content. See `consolidation` below. Once added, this block cannot be removed without recreating the resource.
+     * @param consolidation Consolidation configuration for the memory strategy. See `consolidation` Block below. Once added, this block cannot be removed without recreating the resource.
      * @return builder
      */
     def consolidation(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreMemoryStrategyConfigurationConsolidationArgs.Builder]):
@@ -5040,7 +5101,7 @@ object bedrock:
       builder.consolidation(args(argsBuilder).build)
 
     /**
-     * @param extraction Extraction configuration for identifying and extracting relevant information. See `extraction` below. Cannot be used with `type` set to `SUMMARY_OVERRIDE`. Once added, this block cannot be removed without recreating the resource.
+     * @param extraction Extraction configuration for the memory strategy. See `extraction` Block below. Cannot be used with `type` set to `SUMMARY_OVERRIDE`. Once added, this block cannot be removed without recreating the resource.
      * @return builder
      */
     def extraction(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreMemoryStrategyConfigurationExtractionArgs.Builder]):
@@ -5048,15 +5109,33 @@ object bedrock:
       val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreMemoryStrategyConfigurationExtractionArgs.builder
       builder.extraction(args(argsBuilder).build)
 
+    /**
+     * @param reflection Reflection configuration for the memory strategy. See `reflection` Block below. Can only be used, and is required, with `type` set to `EPISODIC_OVERRIDE`. Once added, this block cannot be removed without recreating the resource.
+     * @return builder
+     */
+    def reflection(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreMemoryStrategyConfigurationReflectionArgs.Builder]):
+        com.pulumi.aws.bedrock.inputs.AgentcoreMemoryStrategyConfigurationArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreMemoryStrategyConfigurationReflectionArgs.builder
+      builder.reflection(args(argsBuilder).build)
+
   extension (builder: com.pulumi.aws.bedrock.inputs.AgentcoreMemoryStrategyState.Builder)
     /**
-     * @param configuration Custom configuration block. Required when `type` is `CUSTOM`, must be omitted for other types. See `configuration` below.
+     * @param configuration Custom configuration block. Required when `type` is `CUSTOM`, must be omitted for other types. See `configuration` Block below.
      * @return builder
      */
     def configuration(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreMemoryStrategyConfigurationArgs.Builder]):
         com.pulumi.aws.bedrock.inputs.AgentcoreMemoryStrategyState.Builder =
       val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreMemoryStrategyConfigurationArgs.builder
       builder.configuration(args(argsBuilder).build)
+
+    /**
+     * @param reflectionConfiguration Configuration for the reflections created with the episodic memory strategy. Valid when `type` is `EPISODIC`, must be omitted for other types. See `reflectionConfiguration` Block below.
+     * @return builder
+     */
+    def reflectionConfiguration(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreMemoryStrategyReflectionConfigurationArgs.Builder]):
+        com.pulumi.aws.bedrock.inputs.AgentcoreMemoryStrategyState.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.AgentcoreMemoryStrategyReflectionConfigurationArgs.builder
+      builder.reflectionConfiguration(args(argsBuilder).build)
 
     def timeouts(args: Endofunction[com.pulumi.aws.bedrock.inputs.AgentcoreMemoryStrategyTimeoutsArgs.Builder]):
         com.pulumi.aws.bedrock.inputs.AgentcoreMemoryStrategyState.Builder =
@@ -5590,6 +5669,368 @@ object bedrock:
         com.pulumi.aws.bedrock.inputs.CustomModelValidationDataConfigArgs.Builder =
       def argsBuilder = com.pulumi.aws.bedrock.inputs.CustomModelValidationDataConfigValidatorArgs.builder
       builder.validators(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.aws.bedrock.inputs.EvaluationJobEvaluationConfigArgs.Builder)
+    /**
+     * @param automated Configuration for an automated evaluation job that computes metrics. See `automated` Block below.
+     * @return builder
+     */
+    def automated(args: Endofunction[com.pulumi.aws.bedrock.inputs.EvaluationJobEvaluationConfigAutomatedArgs.Builder]):
+        com.pulumi.aws.bedrock.inputs.EvaluationJobEvaluationConfigArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.EvaluationJobEvaluationConfigAutomatedArgs.builder
+      builder.automated(args(argsBuilder).build)
+
+    /**
+     * @param human Configuration for an evaluation job that uses human workers. See `human` Block below.
+     * @return builder
+     */
+    def human(args: Endofunction[com.pulumi.aws.bedrock.inputs.EvaluationJobEvaluationConfigHumanArgs.Builder]):
+        com.pulumi.aws.bedrock.inputs.EvaluationJobEvaluationConfigArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.EvaluationJobEvaluationConfigHumanArgs.builder
+      builder.human(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.bedrock.inputs.EvaluationJobEvaluationConfigAutomatedArgs.Builder)
+    /**
+     * @param customMetricConfig Configuration for custom metrics to compute for the evaluation job. See `customMetricConfig` Block below.
+     * @return builder
+     */
+    def customMetricConfig(args: Endofunction[com.pulumi.aws.bedrock.inputs.EvaluationJobEvaluationConfigAutomatedCustomMetricConfigArgs.Builder]):
+        com.pulumi.aws.bedrock.inputs.EvaluationJobEvaluationConfigAutomatedArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.EvaluationJobEvaluationConfigAutomatedCustomMetricConfigArgs.builder
+      builder.customMetricConfig(args(argsBuilder).build)
+
+    /**
+     * @param datasetMetricConfigs One or more configurations for the prompt datasets and metrics to use. See `datasetMetricConfig` Block below.
+     * @return builder
+     */
+    def datasetMetricConfigs(args: Endofunction[com.pulumi.aws.bedrock.inputs.EvaluationJobEvaluationConfigAutomatedDatasetMetricConfigArgs.Builder]*):
+        com.pulumi.aws.bedrock.inputs.EvaluationJobEvaluationConfigAutomatedArgs.Builder =
+      def argsBuilder = com.pulumi.aws.bedrock.inputs.EvaluationJobEvaluationConfigAutomatedDatasetMetricConfigArgs.builder
+      builder.datasetMetricConfigs(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param evaluatorModelConfig Configuration for the evaluator (judge) model. Required for automated jobs that use an LLM-as-judge metric, or that evaluate a knowledge base. See `evaluatorModelConfig` Block below.
+     * @return builder
+     */
+    def evaluatorModelConfig(args: Endofunction[com.pulumi.aws.bedrock.inputs.EvaluationJobEvaluationConfigAutomatedEvaluatorModelConfigArgs.Builder]):
+        com.pulumi.aws.bedrock.inputs.EvaluationJobEvaluationConfigAutomatedArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.EvaluationJobEvaluationConfigAutomatedEvaluatorModelConfigArgs.builder
+      builder.evaluatorModelConfig(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.bedrock.inputs.EvaluationJobEvaluationConfigAutomatedCustomMetricConfigArgs.Builder)
+    /**
+     * @param customMetrics One or more custom metric definitions. See `evaluation_config.automated.custom_metric_config.custom_metric` Block below.
+     * @return builder
+     */
+    def customMetrics(args: Endofunction[com.pulumi.aws.bedrock.inputs.EvaluationJobEvaluationConfigAutomatedCustomMetricConfigCustomMetricArgs.Builder]*):
+        com.pulumi.aws.bedrock.inputs.EvaluationJobEvaluationConfigAutomatedCustomMetricConfigArgs.Builder =
+      def argsBuilder = com.pulumi.aws.bedrock.inputs.EvaluationJobEvaluationConfigAutomatedCustomMetricConfigCustomMetricArgs.builder
+      builder.customMetrics(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param evaluatorModelConfig Configuration for the evaluator model used to compute the custom metrics. See `evaluatorModelConfig` Block above.
+     * @return builder
+     */
+    def evaluatorModelConfig(args: Endofunction[com.pulumi.aws.bedrock.inputs.EvaluationJobEvaluationConfigAutomatedCustomMetricConfigEvaluatorModelConfigArgs.Builder]):
+        com.pulumi.aws.bedrock.inputs.EvaluationJobEvaluationConfigAutomatedCustomMetricConfigArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.EvaluationJobEvaluationConfigAutomatedCustomMetricConfigEvaluatorModelConfigArgs.builder
+      builder.evaluatorModelConfig(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.bedrock.inputs.EvaluationJobEvaluationConfigAutomatedCustomMetricConfigCustomMetricArgs.Builder)
+    /**
+     * @param customMetricDefinition Definition of the custom metric. See `customMetricDefinition` Block below.
+     * @return builder
+     */
+    def customMetricDefinition(args: Endofunction[com.pulumi.aws.bedrock.inputs.EvaluationJobEvaluationConfigAutomatedCustomMetricConfigCustomMetricCustomMetricDefinitionArgs.Builder]):
+        com.pulumi.aws.bedrock.inputs.EvaluationJobEvaluationConfigAutomatedCustomMetricConfigCustomMetricArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.EvaluationJobEvaluationConfigAutomatedCustomMetricConfigCustomMetricCustomMetricDefinitionArgs.builder
+      builder.customMetricDefinition(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.bedrock.inputs.EvaluationJobEvaluationConfigAutomatedCustomMetricConfigCustomMetricCustomMetricDefinitionArgs.Builder)
+    /**
+     * @param ratingScales One or more items defining the rating scale for the custom metric. See `ratingScale` Block below.
+     * @return builder
+     */
+    def ratingScales(args: Endofunction[com.pulumi.aws.bedrock.inputs.EvaluationJobEvaluationConfigAutomatedCustomMetricConfigCustomMetricCustomMetricDefinitionRatingScaleArgs.Builder]*):
+        com.pulumi.aws.bedrock.inputs.EvaluationJobEvaluationConfigAutomatedCustomMetricConfigCustomMetricCustomMetricDefinitionArgs.Builder =
+      def argsBuilder = com.pulumi.aws.bedrock.inputs.EvaluationJobEvaluationConfigAutomatedCustomMetricConfigCustomMetricCustomMetricDefinitionRatingScaleArgs.builder
+      builder.ratingScales(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.aws.bedrock.inputs.EvaluationJobEvaluationConfigAutomatedCustomMetricConfigCustomMetricCustomMetricDefinitionRatingScaleArgs.Builder)
+    /**
+     * @param value Value for one rating in the custom metric rating scale. See `value` Block below.
+     * @return builder
+     */
+    def value(args: Endofunction[com.pulumi.aws.bedrock.inputs.EvaluationJobEvaluationConfigAutomatedCustomMetricConfigCustomMetricCustomMetricDefinitionRatingScaleValueArgs.Builder]):
+        com.pulumi.aws.bedrock.inputs.EvaluationJobEvaluationConfigAutomatedCustomMetricConfigCustomMetricCustomMetricDefinitionRatingScaleArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.EvaluationJobEvaluationConfigAutomatedCustomMetricConfigCustomMetricCustomMetricDefinitionRatingScaleValueArgs.builder
+      builder.value(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.bedrock.inputs.EvaluationJobEvaluationConfigAutomatedCustomMetricConfigEvaluatorModelConfigArgs.Builder)
+    /**
+     * @param bedrockEvaluatorModel Evaluator model. See `bedrockEvaluatorModel` Block below.
+     * @return builder
+     */
+    def bedrockEvaluatorModel(args: Endofunction[com.pulumi.aws.bedrock.inputs.EvaluationJobEvaluationConfigAutomatedCustomMetricConfigEvaluatorModelConfigBedrockEvaluatorModelArgs.Builder]):
+        com.pulumi.aws.bedrock.inputs.EvaluationJobEvaluationConfigAutomatedCustomMetricConfigEvaluatorModelConfigArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.EvaluationJobEvaluationConfigAutomatedCustomMetricConfigEvaluatorModelConfigBedrockEvaluatorModelArgs.builder
+      builder.bedrockEvaluatorModel(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.bedrock.inputs.EvaluationJobEvaluationConfigAutomatedDatasetMetricConfigArgs.Builder)
+    /**
+     * @param dataset Prompt dataset to use. See `dataset` Block below.
+     * @return builder
+     */
+    def dataset(args: Endofunction[com.pulumi.aws.bedrock.inputs.EvaluationJobEvaluationConfigAutomatedDatasetMetricConfigDatasetArgs.Builder]):
+        com.pulumi.aws.bedrock.inputs.EvaluationJobEvaluationConfigAutomatedDatasetMetricConfigArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.EvaluationJobEvaluationConfigAutomatedDatasetMetricConfigDatasetArgs.builder
+      builder.dataset(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.bedrock.inputs.EvaluationJobEvaluationConfigAutomatedDatasetMetricConfigDatasetArgs.Builder)
+    /**
+     * @param datasetLocation Location of a custom prompt dataset. See `datasetLocation` Block below.
+     * @return builder
+     */
+    def datasetLocation(args: Endofunction[com.pulumi.aws.bedrock.inputs.EvaluationJobEvaluationConfigAutomatedDatasetMetricConfigDatasetDatasetLocationArgs.Builder]):
+        com.pulumi.aws.bedrock.inputs.EvaluationJobEvaluationConfigAutomatedDatasetMetricConfigDatasetArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.EvaluationJobEvaluationConfigAutomatedDatasetMetricConfigDatasetDatasetLocationArgs.builder
+      builder.datasetLocation(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.bedrock.inputs.EvaluationJobEvaluationConfigAutomatedEvaluatorModelConfigArgs.Builder)
+    /**
+     * @param bedrockEvaluatorModel Evaluator model. See `bedrockEvaluatorModel` Block below.
+     * @return builder
+     */
+    def bedrockEvaluatorModel(args: Endofunction[com.pulumi.aws.bedrock.inputs.EvaluationJobEvaluationConfigAutomatedEvaluatorModelConfigBedrockEvaluatorModelArgs.Builder]):
+        com.pulumi.aws.bedrock.inputs.EvaluationJobEvaluationConfigAutomatedEvaluatorModelConfigArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.EvaluationJobEvaluationConfigAutomatedEvaluatorModelConfigBedrockEvaluatorModelArgs.builder
+      builder.bedrockEvaluatorModel(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.bedrock.inputs.EvaluationJobEvaluationConfigHumanArgs.Builder)
+    /**
+     * @param customMetrics One or more custom metrics for your human workers to use. See `evaluation_config.human.custom_metric` Block below.
+     * @return builder
+     */
+    def customMetrics(args: Endofunction[com.pulumi.aws.bedrock.inputs.EvaluationJobEvaluationConfigHumanCustomMetricArgs.Builder]*):
+        com.pulumi.aws.bedrock.inputs.EvaluationJobEvaluationConfigHumanArgs.Builder =
+      def argsBuilder = com.pulumi.aws.bedrock.inputs.EvaluationJobEvaluationConfigHumanCustomMetricArgs.builder
+      builder.customMetrics(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param datasetMetricConfigs One or more configurations for the prompt datasets and metrics to use. See `datasetMetricConfig` Block above.
+     * @return builder
+     */
+    def datasetMetricConfigs(args: Endofunction[com.pulumi.aws.bedrock.inputs.EvaluationJobEvaluationConfigHumanDatasetMetricConfigArgs.Builder]*):
+        com.pulumi.aws.bedrock.inputs.EvaluationJobEvaluationConfigHumanArgs.Builder =
+      def argsBuilder = com.pulumi.aws.bedrock.inputs.EvaluationJobEvaluationConfigHumanDatasetMetricConfigArgs.builder
+      builder.datasetMetricConfigs(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param humanWorkflowConfig Configuration for the human workflow. See `humanWorkflowConfig` Block below.
+     * @return builder
+     */
+    def humanWorkflowConfig(args: Endofunction[com.pulumi.aws.bedrock.inputs.EvaluationJobEvaluationConfigHumanHumanWorkflowConfigArgs.Builder]):
+        com.pulumi.aws.bedrock.inputs.EvaluationJobEvaluationConfigHumanArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.EvaluationJobEvaluationConfigHumanHumanWorkflowConfigArgs.builder
+      builder.humanWorkflowConfig(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.bedrock.inputs.EvaluationJobEvaluationConfigHumanDatasetMetricConfigArgs.Builder)
+    /**
+     * @param dataset Prompt dataset to use. See `dataset` Block below.
+     * @return builder
+     */
+    def dataset(args: Endofunction[com.pulumi.aws.bedrock.inputs.EvaluationJobEvaluationConfigHumanDatasetMetricConfigDatasetArgs.Builder]):
+        com.pulumi.aws.bedrock.inputs.EvaluationJobEvaluationConfigHumanDatasetMetricConfigArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.EvaluationJobEvaluationConfigHumanDatasetMetricConfigDatasetArgs.builder
+      builder.dataset(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.bedrock.inputs.EvaluationJobEvaluationConfigHumanDatasetMetricConfigDatasetArgs.Builder)
+    /**
+     * @param datasetLocation Location of a custom prompt dataset. See `datasetLocation` Block below.
+     * @return builder
+     */
+    def datasetLocation(args: Endofunction[com.pulumi.aws.bedrock.inputs.EvaluationJobEvaluationConfigHumanDatasetMetricConfigDatasetDatasetLocationArgs.Builder]):
+        com.pulumi.aws.bedrock.inputs.EvaluationJobEvaluationConfigHumanDatasetMetricConfigDatasetArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.EvaluationJobEvaluationConfigHumanDatasetMetricConfigDatasetDatasetLocationArgs.builder
+      builder.datasetLocation(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.bedrock.inputs.EvaluationJobInferenceConfigArgs.Builder)
+    /**
+     * @param models One or more inference models. Automated jobs support a single model; jobs that use human workers support up to two models. See `model` Block below.
+     * @return builder
+     */
+    def models(args: Endofunction[com.pulumi.aws.bedrock.inputs.EvaluationJobInferenceConfigModelArgs.Builder]*):
+        com.pulumi.aws.bedrock.inputs.EvaluationJobInferenceConfigArgs.Builder =
+      def argsBuilder = com.pulumi.aws.bedrock.inputs.EvaluationJobInferenceConfigModelArgs.builder
+      builder.models(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param ragConfig Inference configuration for a knowledge base evaluation job. See `ragConfig` Block below.
+     * @return builder
+     */
+    def ragConfig(args: Endofunction[com.pulumi.aws.bedrock.inputs.EvaluationJobInferenceConfigRagConfigArgs.Builder]):
+        com.pulumi.aws.bedrock.inputs.EvaluationJobInferenceConfigArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.EvaluationJobInferenceConfigRagConfigArgs.builder
+      builder.ragConfig(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.bedrock.inputs.EvaluationJobInferenceConfigModelArgs.Builder)
+    /**
+     * @param bedrockModel Amazon Bedrock model. See `bedrockModel` Block below.
+     * @return builder
+     */
+    def bedrockModel(args: Endofunction[com.pulumi.aws.bedrock.inputs.EvaluationJobInferenceConfigModelBedrockModelArgs.Builder]):
+        com.pulumi.aws.bedrock.inputs.EvaluationJobInferenceConfigModelArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.EvaluationJobInferenceConfigModelBedrockModelArgs.builder
+      builder.bedrockModel(args(argsBuilder).build)
+
+    /**
+     * @param precomputedInferenceSource Model where you provide your own precomputed inference response data. See `precomputedInferenceSource` Block below.
+     * @return builder
+     */
+    def precomputedInferenceSource(args: Endofunction[com.pulumi.aws.bedrock.inputs.EvaluationJobInferenceConfigModelPrecomputedInferenceSourceArgs.Builder]):
+        com.pulumi.aws.bedrock.inputs.EvaluationJobInferenceConfigModelArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.EvaluationJobInferenceConfigModelPrecomputedInferenceSourceArgs.builder
+      builder.precomputedInferenceSource(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.bedrock.inputs.EvaluationJobInferenceConfigModelBedrockModelArgs.Builder)
+    /**
+     * @param performanceConfig Model&#39;s performance settings. See `performanceConfig` Block below.
+     * @return builder
+     */
+    def performanceConfig(args: Endofunction[com.pulumi.aws.bedrock.inputs.EvaluationJobInferenceConfigModelBedrockModelPerformanceConfigArgs.Builder]):
+        com.pulumi.aws.bedrock.inputs.EvaluationJobInferenceConfigModelBedrockModelArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.EvaluationJobInferenceConfigModelBedrockModelPerformanceConfigArgs.builder
+      builder.performanceConfig(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.bedrock.inputs.EvaluationJobInferenceConfigRagConfigArgs.Builder)
+    /**
+     * @param knowledgeBaseConfig Amazon Bedrock knowledge base. See `knowledgeBaseConfig` Block below.
+     * @return builder
+     */
+    def knowledgeBaseConfig(args: Endofunction[com.pulumi.aws.bedrock.inputs.EvaluationJobInferenceConfigRagConfigKnowledgeBaseConfigArgs.Builder]):
+        com.pulumi.aws.bedrock.inputs.EvaluationJobInferenceConfigRagConfigArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.EvaluationJobInferenceConfigRagConfigKnowledgeBaseConfigArgs.builder
+      builder.knowledgeBaseConfig(args(argsBuilder).build)
+
+    /**
+     * @param precomputedRagSourceConfig RAG source where you provide your own precomputed inference response data. See `precomputedRagSourceConfig` Block below.
+     * @return builder
+     */
+    def precomputedRagSourceConfig(args: Endofunction[com.pulumi.aws.bedrock.inputs.EvaluationJobInferenceConfigRagConfigPrecomputedRagSourceConfigArgs.Builder]):
+        com.pulumi.aws.bedrock.inputs.EvaluationJobInferenceConfigRagConfigArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.EvaluationJobInferenceConfigRagConfigPrecomputedRagSourceConfigArgs.builder
+      builder.precomputedRagSourceConfig(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.bedrock.inputs.EvaluationJobInferenceConfigRagConfigKnowledgeBaseConfigArgs.Builder)
+    /**
+     * @param retrieveAndGenerateConfig Configuration for retrieval with response generation. See `retrieveAndGenerateConfig` Block below.
+     * @return builder
+     */
+    def retrieveAndGenerateConfig(args: Endofunction[com.pulumi.aws.bedrock.inputs.EvaluationJobInferenceConfigRagConfigKnowledgeBaseConfigRetrieveAndGenerateConfigArgs.Builder]):
+        com.pulumi.aws.bedrock.inputs.EvaluationJobInferenceConfigRagConfigKnowledgeBaseConfigArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.EvaluationJobInferenceConfigRagConfigKnowledgeBaseConfigRetrieveAndGenerateConfigArgs.builder
+      builder.retrieveAndGenerateConfig(args(argsBuilder).build)
+
+    /**
+     * @param retrieveConfig Configuration for retrieval only. See `retrieveConfig` Block below.
+     * @return builder
+     */
+    def retrieveConfig(args: Endofunction[com.pulumi.aws.bedrock.inputs.EvaluationJobInferenceConfigRagConfigKnowledgeBaseConfigRetrieveConfigArgs.Builder]):
+        com.pulumi.aws.bedrock.inputs.EvaluationJobInferenceConfigRagConfigKnowledgeBaseConfigArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.EvaluationJobInferenceConfigRagConfigKnowledgeBaseConfigRetrieveConfigArgs.builder
+      builder.retrieveConfig(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.bedrock.inputs.EvaluationJobInferenceConfigRagConfigKnowledgeBaseConfigRetrieveAndGenerateConfigArgs.Builder)
+    /**
+     * @param retrievalConfiguration Knowledge base retrieval configuration. See `retrievalConfiguration` Block below.
+     * @return builder
+     */
+    def retrievalConfiguration(args: Endofunction[com.pulumi.aws.bedrock.inputs.EvaluationJobInferenceConfigRagConfigKnowledgeBaseConfigRetrieveAndGenerateConfigRetrievalConfigurationArgs.Builder]):
+        com.pulumi.aws.bedrock.inputs.EvaluationJobInferenceConfigRagConfigKnowledgeBaseConfigRetrieveAndGenerateConfigArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.EvaluationJobInferenceConfigRagConfigKnowledgeBaseConfigRetrieveAndGenerateConfigRetrievalConfigurationArgs.builder
+      builder.retrievalConfiguration(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.bedrock.inputs.EvaluationJobInferenceConfigRagConfigKnowledgeBaseConfigRetrieveAndGenerateConfigRetrievalConfigurationArgs.Builder)
+    /**
+     * @param vectorSearchConfiguration Vector search configuration. See `vectorSearchConfiguration` Block below.
+     * @return builder
+     */
+    def vectorSearchConfiguration(args: Endofunction[com.pulumi.aws.bedrock.inputs.EvaluationJobInferenceConfigRagConfigKnowledgeBaseConfigRetrieveAndGenerateConfigRetrievalConfigurationVectorSearchConfigurationArgs.Builder]):
+        com.pulumi.aws.bedrock.inputs.EvaluationJobInferenceConfigRagConfigKnowledgeBaseConfigRetrieveAndGenerateConfigRetrievalConfigurationArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.EvaluationJobInferenceConfigRagConfigKnowledgeBaseConfigRetrieveAndGenerateConfigRetrievalConfigurationVectorSearchConfigurationArgs.builder
+      builder.vectorSearchConfiguration(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.bedrock.inputs.EvaluationJobInferenceConfigRagConfigKnowledgeBaseConfigRetrieveConfigArgs.Builder)
+    /**
+     * @param knowledgeBaseRetrievalConfiguration Knowledge base retrieval configuration. See `knowledgeBaseRetrievalConfiguration` Block below.
+     * @return builder
+     */
+    def knowledgeBaseRetrievalConfiguration(args: Endofunction[com.pulumi.aws.bedrock.inputs.EvaluationJobInferenceConfigRagConfigKnowledgeBaseConfigRetrieveConfigKnowledgeBaseRetrievalConfigurationArgs.Builder]):
+        com.pulumi.aws.bedrock.inputs.EvaluationJobInferenceConfigRagConfigKnowledgeBaseConfigRetrieveConfigArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.EvaluationJobInferenceConfigRagConfigKnowledgeBaseConfigRetrieveConfigKnowledgeBaseRetrievalConfigurationArgs.builder
+      builder.knowledgeBaseRetrievalConfiguration(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.bedrock.inputs.EvaluationJobInferenceConfigRagConfigKnowledgeBaseConfigRetrieveConfigKnowledgeBaseRetrievalConfigurationArgs.Builder)
+    /**
+     * @param vectorSearchConfiguration Vector search configuration. See `vectorSearchConfiguration` Block above.
+     * @return builder
+     */
+    def vectorSearchConfiguration(args: Endofunction[com.pulumi.aws.bedrock.inputs.EvaluationJobInferenceConfigRagConfigKnowledgeBaseConfigRetrieveConfigKnowledgeBaseRetrievalConfigurationVectorSearchConfigurationArgs.Builder]):
+        com.pulumi.aws.bedrock.inputs.EvaluationJobInferenceConfigRagConfigKnowledgeBaseConfigRetrieveConfigKnowledgeBaseRetrievalConfigurationArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.EvaluationJobInferenceConfigRagConfigKnowledgeBaseConfigRetrieveConfigKnowledgeBaseRetrievalConfigurationVectorSearchConfigurationArgs.builder
+      builder.vectorSearchConfiguration(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.bedrock.inputs.EvaluationJobInferenceConfigRagConfigPrecomputedRagSourceConfigArgs.Builder)
+    /**
+     * @param retrieveAndGenerateSourceConfig Configuration for retrieval with response generation. See `retrieveAndGenerateSourceConfig` Block below.
+     * @return builder
+     */
+    def retrieveAndGenerateSourceConfig(args: Endofunction[com.pulumi.aws.bedrock.inputs.EvaluationJobInferenceConfigRagConfigPrecomputedRagSourceConfigRetrieveAndGenerateSourceConfigArgs.Builder]):
+        com.pulumi.aws.bedrock.inputs.EvaluationJobInferenceConfigRagConfigPrecomputedRagSourceConfigArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.EvaluationJobInferenceConfigRagConfigPrecomputedRagSourceConfigRetrieveAndGenerateSourceConfigArgs.builder
+      builder.retrieveAndGenerateSourceConfig(args(argsBuilder).build)
+
+    /**
+     * @param retrieveSourceConfig Configuration for retrieval only. See `retrieveSourceConfig` Block below.
+     * @return builder
+     */
+    def retrieveSourceConfig(args: Endofunction[com.pulumi.aws.bedrock.inputs.EvaluationJobInferenceConfigRagConfigPrecomputedRagSourceConfigRetrieveSourceConfigArgs.Builder]):
+        com.pulumi.aws.bedrock.inputs.EvaluationJobInferenceConfigRagConfigPrecomputedRagSourceConfigArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.EvaluationJobInferenceConfigRagConfigPrecomputedRagSourceConfigRetrieveSourceConfigArgs.builder
+      builder.retrieveSourceConfig(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.bedrock.inputs.EvaluationJobState.Builder)
+    /**
+     * @param evaluationConfig Configuration for either an automated or human-based evaluation job. See `evaluationConfig` Block below.
+     * @return builder
+     */
+    def evaluationConfig(args: Endofunction[com.pulumi.aws.bedrock.inputs.EvaluationJobEvaluationConfigArgs.Builder]):
+        com.pulumi.aws.bedrock.inputs.EvaluationJobState.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.EvaluationJobEvaluationConfigArgs.builder
+      builder.evaluationConfig(args(argsBuilder).build)
+
+    /**
+     * @param inferenceConfig Configuration for the inference model, or models, used for the evaluation job. See `inferenceConfig` Block below.
+     * @return builder
+     */
+    def inferenceConfig(args: Endofunction[com.pulumi.aws.bedrock.inputs.EvaluationJobInferenceConfigArgs.Builder]):
+        com.pulumi.aws.bedrock.inputs.EvaluationJobState.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.EvaluationJobInferenceConfigArgs.builder
+      builder.inferenceConfig(args(argsBuilder).build)
+
+    /**
+     * @param outputDataConfig Configuration for the Amazon S3 location where the results of the evaluation job are stored. See `outputDataConfig` Block below.
+     * @return builder
+     */
+    def outputDataConfig(args: Endofunction[com.pulumi.aws.bedrock.inputs.EvaluationJobOutputDataConfigArgs.Builder]):
+        com.pulumi.aws.bedrock.inputs.EvaluationJobState.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.EvaluationJobOutputDataConfigArgs.builder
+      builder.outputDataConfig(args(argsBuilder).build)
+
+    def timeouts(args: Endofunction[com.pulumi.aws.bedrock.inputs.EvaluationJobTimeoutsArgs.Builder]):
+        com.pulumi.aws.bedrock.inputs.EvaluationJobState.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.EvaluationJobTimeoutsArgs.builder
+      builder.timeouts(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.bedrock.inputs.GetAgentAgentVersionsAgentVersionSummaryArgs.Builder)
     def guardrailConfigurations(args: Endofunction[com.pulumi.aws.bedrock.inputs.GetAgentAgentVersionsAgentVersionSummaryGuardrailConfigurationArgs.Builder]*):

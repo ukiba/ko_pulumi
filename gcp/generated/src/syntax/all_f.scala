@@ -6,6 +6,7 @@ import jp.ukiba.ko_pulumi
 export ko_pulumi.gcp.accesscontextmanager.ingressFrom
 export ko_pulumi.gcp.accesscontextmanager.ingressPolicies
 export ko_pulumi.gcp.accesscontextmanager.ingressTo
+export ko_pulumi.gcp.agentidentity.geAuthProviders
 export ko_pulumi.gcp.agentregistry.interfaces
 export ko_pulumi.gcp.alloydb.initialUser
 export ko_pulumi.gcp.apigateway.fileDescriptorSet
@@ -91,6 +92,7 @@ export ko_pulumi.gcp.chronicle.impervaWafSettings
 export ko_pulumi.gcp.chronicle.ingestionLabel
 export ko_pulumi.gcp.chronicle.ingestionLabels
 export ko_pulumi.gcp.chronicle.input
+export ko_pulumi.gcp.chronicle.iocMatchesSettings
 export ko_pulumi.gcp.chronicle.itemColors
 export ko_pulumi.gcp.chronicle.itemStyle
 export ko_pulumi.gcp.cloudasset.feedOutputConfig
@@ -396,6 +398,7 @@ export ko_pulumi.gcp.migrationcenter.groupPreferencesetAssignments
 export ko_pulumi.gcp.migrationcenter.inventories
 export ko_pulumi.gcp.migrationcenter.jobErrors
 export ko_pulumi.gcp.modelarmor.filterConfig
+export ko_pulumi.gcp.modelarmor.filterVersionSelector
 export ko_pulumi.gcp.modelarmor.floorSettingMetadata
 export ko_pulumi.gcp.modelarmor.googleMcpServerFloorSetting
 export ko_pulumi.gcp.monitoring.forecastOptions

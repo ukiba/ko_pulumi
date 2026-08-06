@@ -40,6 +40,9 @@ object certificatemanager:
      * @param selfManaged Certificate data for a SelfManaged Certificate.
      * SelfManaged Certificates are uploaded by the user. Updating such
      * certificates before they expire remains the user&#39;s responsibility.
+     * The certificate data can be updated in place; changes to `pemCertificate`
+     * and `pemPrivateKey` are applied via the API&#39;s PATCH method instead of
+     * forcing recreation of the certificate.
      * Structure is documented below.
      * @return builder
      */
@@ -289,6 +292,9 @@ object certificatemanager:
      * @param selfManaged Certificate data for a SelfManaged Certificate.
      * SelfManaged Certificates are uploaded by the user. Updating such
      * certificates before they expire remains the user&#39;s responsibility.
+     * The certificate data can be updated in place; changes to `pemCertificate`
+     * and `pemPrivateKey` are applied via the API&#39;s PATCH method instead of
+     * forcing recreation of the certificate.
      * Structure is documented below.
      * @return builder
      */

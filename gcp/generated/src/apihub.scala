@@ -142,6 +142,14 @@ object apihub:
       val argsBuilder = com.pulumi.gcp.apihub.inputs.PluginInstanceAuthConfigArgs.builder
       builder.authConfig(args(argsBuilder).build)
 
+  /** Runtime project attachment represents an attachment from the runtime project to the host project. API Hub looks for deployments in the attached runtime projects and creates corresponding resources in API Hub for the discovered deployments. */
+  def RuntimeProjectAttachment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+      (args: Endofunction[com.pulumi.gcp.apihub.RuntimeProjectAttachmentArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+    val argsBuilder = com.pulumi.gcp.apihub.RuntimeProjectAttachmentArgs.builder
+    com.pulumi.gcp.apihub.RuntimeProjectAttachment(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+
   extension (builder: com.pulumi.gcp.apihub.inputs.ApiHubInstanceState.Builder)
     /**
      * @param config Available configurations to provision an ApiHub Instance.

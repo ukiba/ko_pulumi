@@ -310,6 +310,17 @@ object modelarmor:
 
   extension (builder: com.pulumi.gcp.modelarmor.inputs.TemplateTemplateMetadataArgs.Builder)
     /**
+     * @param filterVersionSelector Selects the filter version to use for this template. Set exactly one of
+     * &#39;alias&#39; or &#39;version&#39;.
+     * Structure is documented below.
+     * @return builder
+     */
+    def filterVersionSelector(args: Endofunction[com.pulumi.gcp.modelarmor.inputs.TemplateTemplateMetadataFilterVersionSelectorArgs.Builder]):
+        com.pulumi.gcp.modelarmor.inputs.TemplateTemplateMetadataArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.modelarmor.inputs.TemplateTemplateMetadataFilterVersionSelectorArgs.builder
+      builder.filterVersionSelector(args(argsBuilder).build)
+
+    /**
      * @param multiLanguageDetection Metadata to enable multi language detection via template.
      * Structure is documented below.
      * @return builder

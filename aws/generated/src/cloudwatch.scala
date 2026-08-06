@@ -847,6 +847,18 @@ object cloudwatch:
       val argsBuilder = com.pulumi.aws.cloudwatch.inputs.LogS3TableIntegrationSourceTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
+  /**
+   * Manages a CloudWatch Logs account-level storage tier policy. When set to `INTELLIGENT_TIERING`, CloudWatch Logs automatically moves log data to the most cost-effective storage tier based on access frequency.
+   * 
+   * &gt; Deletion of this resource will reset the storage tier policy to `STANDARD` (the default state).
+   */
+  def LogStorageTierPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+      (args: Endofunction[com.pulumi.aws.cloudwatch.LogStorageTierPolicyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+    val argsBuilder = com.pulumi.aws.cloudwatch.LogStorageTierPolicyArgs.builder
+    com.pulumi.aws.cloudwatch.LogStorageTierPolicy(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+
   /** Provides a CloudWatch Log Stream resource. */
   def LogStream(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.cloudwatch.LogStreamArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =

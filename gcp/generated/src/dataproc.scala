@@ -7732,6 +7732,16 @@ object dataproc:
       def argsBuilder = com.pulumi.gcp.dataproc.inputs.ClusterClusterConfigMasterConfigInstanceFlexibilityPolicyInstanceSelectionResultArgs.builder
       builder.instanceSelectionResults(args.map(_(argsBuilder).build)*)
 
+  extension (builder: com.pulumi.gcp.dataproc.inputs.ClusterClusterConfigMasterConfigInstanceFlexibilityPolicyInstanceSelectionListArgs.Builder)
+    /**
+     * @param diskConfig Disk configuration to apply to the instances in this instance selection.
+     * @return builder
+     */
+    def diskConfig(args: Endofunction[com.pulumi.gcp.dataproc.inputs.ClusterClusterConfigMasterConfigInstanceFlexibilityPolicyInstanceSelectionListDiskConfigArgs.Builder]):
+        com.pulumi.gcp.dataproc.inputs.ClusterClusterConfigMasterConfigInstanceFlexibilityPolicyInstanceSelectionListArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.dataproc.inputs.ClusterClusterConfigMasterConfigInstanceFlexibilityPolicyInstanceSelectionListDiskConfigArgs.builder
+      builder.diskConfig(args(argsBuilder).build)
+
   extension (builder: com.pulumi.gcp.dataproc.inputs.ClusterClusterConfigPreemptibleWorkerConfigArgs.Builder)
     /**
      * @param diskConfig Disk Config
@@ -7778,6 +7788,16 @@ object dataproc:
         com.pulumi.gcp.dataproc.inputs.ClusterClusterConfigPreemptibleWorkerConfigInstanceFlexibilityPolicyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataproc.inputs.ClusterClusterConfigPreemptibleWorkerConfigInstanceFlexibilityPolicyProvisioningModelMixArgs.builder
       builder.provisioningModelMix(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.gcp.dataproc.inputs.ClusterClusterConfigPreemptibleWorkerConfigInstanceFlexibilityPolicyInstanceSelectionListArgs.Builder)
+    /**
+     * @param diskConfig Optional. Disk configuration to apply to the instances in this instance selection.
+     * @return builder
+     */
+    def diskConfig(args: Endofunction[com.pulumi.gcp.dataproc.inputs.ClusterClusterConfigPreemptibleWorkerConfigInstanceFlexibilityPolicyInstanceSelectionListDiskConfigArgs.Builder]):
+        com.pulumi.gcp.dataproc.inputs.ClusterClusterConfigPreemptibleWorkerConfigInstanceFlexibilityPolicyInstanceSelectionListArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.dataproc.inputs.ClusterClusterConfigPreemptibleWorkerConfigInstanceFlexibilityPolicyInstanceSelectionListDiskConfigArgs.builder
+      builder.diskConfig(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.dataproc.inputs.ClusterClusterConfigSecurityConfigArgs.Builder)
     /**
@@ -7846,6 +7866,16 @@ object dataproc:
         com.pulumi.gcp.dataproc.inputs.ClusterClusterConfigWorkerConfigInstanceFlexibilityPolicyArgs.Builder =
       def argsBuilder = com.pulumi.gcp.dataproc.inputs.ClusterClusterConfigWorkerConfigInstanceFlexibilityPolicyInstanceSelectionResultArgs.builder
       builder.instanceSelectionResults(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.gcp.dataproc.inputs.ClusterClusterConfigWorkerConfigInstanceFlexibilityPolicyInstanceSelectionListArgs.Builder)
+    /**
+     * @param diskConfig Disk configuration to apply to the instances in this instance selection.
+     * @return builder
+     */
+    def diskConfig(args: Endofunction[com.pulumi.gcp.dataproc.inputs.ClusterClusterConfigWorkerConfigInstanceFlexibilityPolicyInstanceSelectionListDiskConfigArgs.Builder]):
+        com.pulumi.gcp.dataproc.inputs.ClusterClusterConfigWorkerConfigInstanceFlexibilityPolicyInstanceSelectionListArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.dataproc.inputs.ClusterClusterConfigWorkerConfigInstanceFlexibilityPolicyInstanceSelectionListDiskConfigArgs.builder
+      builder.diskConfig(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.dataproc.inputs.ClusterIAMBindingState.Builder)
     def condition(args: Endofunction[com.pulumi.gcp.dataproc.inputs.ClusterIAMBindingConditionArgs.Builder]):

@@ -3989,6 +3989,16 @@ object gkehub:
       builder.ignoredClustersSelector(args(argsBuilder).build)
 
     /**
+     * @param operationalStates The operational state of the rollout sequence.
+     * Structure is documented below.
+     * @return builder
+     */
+    def operationalStates(args: Endofunction[com.pulumi.gcp.gkehub.inputs.RolloutSequenceOperationalStateArgs.Builder]*):
+        com.pulumi.gcp.gkehub.inputs.RolloutSequenceState.Builder =
+      def argsBuilder = com.pulumi.gcp.gkehub.inputs.RolloutSequenceOperationalStateArgs.builder
+      builder.operationalStates(args.map(_(argsBuilder).build)*)
+
+    /**
      * @param stages Ordered list of stages that constitute this Rollout Sequence.
      * Structure is documented below.
      * @return builder

@@ -7392,6 +7392,28 @@ object bigquery:
       def argsBuilder = com.pulumi.gcp.bigquery.inputs.ReservationReplicationStatusArgs.builder
       builder.replicationStatuses(args.map(_(argsBuilder).build)*)
 
+  extension (builder: com.pulumi.gcp.bigquery.inputs.RoutineArgumentArgs.Builder)
+    /**
+     * @param tableType If argumentKind is FIXED_TABLE, a schema for the table type.
+     * Structure is documented below.
+     * @return builder
+     */
+    def tableType(args: Endofunction[com.pulumi.gcp.bigquery.inputs.RoutineArgumentTableTypeArgs.Builder]):
+        com.pulumi.gcp.bigquery.inputs.RoutineArgumentArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.bigquery.inputs.RoutineArgumentTableTypeArgs.builder
+      builder.tableType(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.gcp.bigquery.inputs.RoutineArgumentTableTypeArgs.Builder)
+    /**
+     * @param columns The columns in the table type.
+     * Structure is documented below.
+     * @return builder
+     */
+    def columns(args: Endofunction[com.pulumi.gcp.bigquery.inputs.RoutineArgumentTableTypeColumnArgs.Builder]*):
+        com.pulumi.gcp.bigquery.inputs.RoutineArgumentTableTypeArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.bigquery.inputs.RoutineArgumentTableTypeColumnArgs.builder
+      builder.columns(args.map(_(argsBuilder).build)*)
+
   extension (builder: com.pulumi.gcp.bigquery.inputs.RoutineIamBindingState.Builder)
     def condition(args: Endofunction[com.pulumi.gcp.bigquery.inputs.RoutineIamBindingConditionArgs.Builder]):
         com.pulumi.gcp.bigquery.inputs.RoutineIamBindingState.Builder =

@@ -89,6 +89,8 @@ export ko_pulumi.aws.bedrock.guardrailConfigurations
 export ko_pulumi.aws.bedrock.hierarchicalChunkingConfiguration
 export ko_pulumi.aws.bedrock.hostingEnvironments
 export ko_pulumi.aws.bedrock.http
+export ko_pulumi.aws.bedrock.human
+export ko_pulumi.aws.bedrock.humanWorkflowConfig
 export ko_pulumi.aws.bedrock.imageExtractionConfiguration
 export ko_pulumi.aws.bedrock.indexedKeys
 export ko_pulumi.aws.bedrock.inferenceConfig
@@ -350,6 +352,9 @@ export ko_pulumi.aws.m2.fsx
 export ko_pulumi.aws.m2.highAvailabilityConfig
 export ko_pulumi.aws.macie.findingCriteria
 export ko_pulumi.aws.macie2.includes
+export ko_pulumi.aws.mailmanager.ipExpression
+export ko_pulumi.aws.mailmanager.ipv6Expression
+export ko_pulumi.aws.mailmanager.isInAddressList
 export ko_pulumi.aws.medialive.failoverConditionSettings
 export ko_pulumi.aws.medialive.failoverConditions
 export ko_pulumi.aws.medialive.fecOutputSettings

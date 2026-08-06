@@ -37,6 +37,7 @@ export ko_pulumi.aws.bedrock.value
 export ko_pulumi.aws.bedrock.variants
 export ko_pulumi.aws.bedrock.vectorIngestionConfiguration
 export ko_pulumi.aws.bedrock.vectorKnowledgeBaseConfiguration
+export ko_pulumi.aws.bedrock.vectorSearchConfiguration
 export ko_pulumi.aws.bedrock.video
 export ko_pulumi.aws.bedrock.videoExtractionConfiguration
 export ko_pulumi.aws.bedrock.vpcConfig

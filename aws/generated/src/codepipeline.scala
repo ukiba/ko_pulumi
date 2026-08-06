@@ -173,6 +173,16 @@ object codepipeline:
       val argsBuilder = com.pulumi.aws.codepipeline.inputs.PipelineArtifactStoreEncryptionKeyArgs.builder
       builder.encryptionKey(args(argsBuilder).build)
 
+  extension (builder: com.pulumi.aws.codepipeline.inputs.PipelineStageActionArgs.Builder)
+    /**
+     * @param outputArtifactsForComputeActions A block of output artifacts for the compute action. If the action is not `Compute`, this argument is ignored.
+     * @return builder
+     */
+    def outputArtifactsForComputeActions(args: Endofunction[com.pulumi.aws.codepipeline.inputs.PipelineStageActionOutputArtifactsForComputeActionArgs.Builder]*):
+        com.pulumi.aws.codepipeline.inputs.PipelineStageActionArgs.Builder =
+      def argsBuilder = com.pulumi.aws.codepipeline.inputs.PipelineStageActionOutputArtifactsForComputeActionArgs.builder
+      builder.outputArtifactsForComputeActions(args.map(_(argsBuilder).build)*)
+
   extension (builder: com.pulumi.aws.codepipeline.inputs.PipelineStageArgs.Builder)
     /**
      * @param actions The action(s) to include in the stage. Defined as an `action` block below

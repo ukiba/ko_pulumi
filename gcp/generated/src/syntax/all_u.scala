@@ -43,6 +43,8 @@ export ko_pulumi.gcp.ces.variableDeclarations
 export ko_pulumi.gcp.ces.webWidgetConfig
 export ko_pulumi.gcp.ces.webWidgetConfigs
 export ko_pulumi.gcp.ces.widgetTool
+export ko_pulumi.gcp.chronicle.udmEventsAggregatesSettings
+export ko_pulumi.gcp.chronicle.udmEventsSettings
 export ko_pulumi.gcp.chronicle.value
 export ko_pulumi.gcp.chronicle.versionInfo
 export ko_pulumi.gcp.chronicle.visualMaps
@@ -77,6 +79,7 @@ export ko_pulumi.gcp.cloudrunv2.vpcAccess
 export ko_pulumi.gcp.cloudsecuritycompliance.validation
 export ko_pulumi.gcp.cloudsecuritycompliance.values
 export ko_pulumi.gcp.cloudtasks.uriOverride
+export ko_pulumi.gcp.colab.workbenchRuntime
 export ko_pulumi.gcp.composer.webServer
 export ko_pulumi.gcp.composer.webServerConfig
 export ko_pulumi.gcp.composer.webServerNetworkAccessControl
@@ -232,6 +235,7 @@ export ko_pulumi.gcp.transcoder.videoStream
 export ko_pulumi.gcp.transcoder.widevine
 export ko_pulumi.gcp.transcoder.xy
 export ko_pulumi.gcp.vectorsearch.vectorSchemas
+export ko_pulumi.gcp.vectorsearch.vectors
 export ko_pulumi.gcp.vectorsearch.vertexEmbeddingConfig
 export ko_pulumi.gcp.vertex.unprovisioned
 export ko_pulumi.gcp.vertex.vectorSearchConfig

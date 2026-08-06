@@ -5449,6 +5449,67 @@ object vertex:
         resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
 
   /**
+   * Represents long-lasting resources that are dedicated to users to runs custom
+   * workloads. A PersistentResource can have multiple node pools and each node
+   * pool can have its own machine spec.
+   * 
+   * To get more information about PersistentResource, see:
+   * 
+   * * [API documentation](https://cloud.google.com/vertex-ai/docs/reference/rest/v1/projects.locations.persistentResources)
+   */
+  def AiPersistentResource(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+      (args: Endofunction[com.pulumi.gcp.vertex.AiPersistentResourceArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+    var argsBuilder = com.pulumi.gcp.vertex.AiPersistentResourceArgs.builder
+    conf.logicalName2physicalName(name) match
+      case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
+      case None               =>
+    com.pulumi.gcp.vertex.AiPersistentResource(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+
+  extension (builder: com.pulumi.gcp.vertex.AiPersistentResourceArgs.Builder)
+    /**
+     * @param encryptionSpec Represents a customer-managed encryption key specification that can be
+     * applied to a Vertex AI resource.
+     * Structure is documented below.
+     * @return builder
+     */
+    def encryptionSpec(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiPersistentResourceEncryptionSpecArgs.Builder]):
+        com.pulumi.gcp.vertex.AiPersistentResourceArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.vertex.inputs.AiPersistentResourceEncryptionSpecArgs.builder
+      builder.encryptionSpec(args(argsBuilder).build)
+
+    /**
+     * @param pscInterfaceConfig Configuration for PSC-I.
+     * Structure is documented below.
+     * @return builder
+     */
+    def pscInterfaceConfig(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiPersistentResourcePscInterfaceConfigArgs.Builder]):
+        com.pulumi.gcp.vertex.AiPersistentResourceArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.vertex.inputs.AiPersistentResourcePscInterfaceConfigArgs.builder
+      builder.pscInterfaceConfig(args(argsBuilder).build)
+
+    /**
+     * @param resourcePools The spec of the pools of different resources.
+     * Structure is documented below.
+     * @return builder
+     */
+    def resourcePools(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiPersistentResourceResourcePoolArgs.Builder]*):
+        com.pulumi.gcp.vertex.AiPersistentResourceArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.vertex.inputs.AiPersistentResourceResourcePoolArgs.builder
+      builder.resourcePools(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param resourceRuntimeSpec Configuration for the runtime on a PersistentResource instance.
+     * Structure is documented below.
+     * @return builder
+     */
+    def resourceRuntimeSpec(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiPersistentResourceResourceRuntimeSpecArgs.Builder]):
+        com.pulumi.gcp.vertex.AiPersistentResourceArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.vertex.inputs.AiPersistentResourceResourceRuntimeSpecArgs.builder
+      builder.resourceRuntimeSpec(args(argsBuilder).build)
+
+  /**
    * Vertex AI RAG Engine lets you scale your RagManagedDb instance based on your usage and performance requirements using a choice of two tiers, and optionally, lets you delete your Vertex AI RAG Engine data using a third tier. The tier is a project-level setting that&#39;s available in the RagEngineConfig resource that impacts all RAG corpora using RagManagedDb. The following tiers are available in RagEngineConfig: Basic, Scaled and Unprovisioned.
    * 
    * To get more information about RagEngineConfig, see:
@@ -6487,7 +6548,11 @@ object vertex:
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
 
-  /** An online schedule that triggers running pipeline jobs or notebook execution jobs. */
+  /**
+   * &gt; **Warning:** `gcp.vertex.AiSchedule` is deprecated and will be removed in a future major release. Use `gcp.colab.Schedule` instead.
+   * 
+   * An online schedule that triggers running pipeline jobs or notebook execution jobs.
+   */
   def AiSchedule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.gcp.vertex.AiScheduleArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.vertex.AiScheduleArgs.builder
@@ -6531,9 +6596,6 @@ object vertex:
    * 
    * Reading an uninitialized or deprovisioned engine returns the singleton
    * with state INACTIVE rather than reporting it as absent.
-   * 
-   * &gt; **Warning:** This resource is in beta, and should be used with the terraform-provider-google-beta provider.
-   * See Provider Versions for more details on beta resources.
    * 
    * To get more information about SemanticGovernancePolicyEngine, see:
    * * How-to Guides
@@ -7857,6 +7919,130 @@ object vertex:
         com.pulumi.gcp.vertex.inputs.AiMetadataStoreState.Builder =
       def argsBuilder = com.pulumi.gcp.vertex.inputs.AiMetadataStoreStateArgs.builder
       builder.states(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.gcp.vertex.inputs.AiPersistentResourcePscInterfaceConfigArgs.Builder)
+    /**
+     * @param dnsPeeringConfigs DNS peering configurations. When specified, Vertex AI will
+     * attempt to configure DNS peering zones in the tenant project VPC
+     * to resolve the specified domains using the target network&#39;s Cloud DNS.
+     * The user must grant the dns.peer role to the Vertex AI Service Agent
+     * on the target project.
+     * Structure is documented below.
+     * @return builder
+     */
+    def dnsPeeringConfigs(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiPersistentResourcePscInterfaceConfigDnsPeeringConfigArgs.Builder]*):
+        com.pulumi.gcp.vertex.inputs.AiPersistentResourcePscInterfaceConfigArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.vertex.inputs.AiPersistentResourcePscInterfaceConfigDnsPeeringConfigArgs.builder
+      builder.dnsPeeringConfigs(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.gcp.vertex.inputs.AiPersistentResourceResourcePoolArgs.Builder)
+    /**
+     * @param autoscalingSpec The min/max number of replicas allowed if enabling autoscaling
+     * Structure is documented below.
+     * @return builder
+     */
+    def autoscalingSpec(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiPersistentResourceResourcePoolAutoscalingSpecArgs.Builder]):
+        com.pulumi.gcp.vertex.inputs.AiPersistentResourceResourcePoolArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.vertex.inputs.AiPersistentResourceResourcePoolAutoscalingSpecArgs.builder
+      builder.autoscalingSpec(args(argsBuilder).build)
+
+    /**
+     * @param diskSpec Represents the spec of disk options.
+     * Structure is documented below.
+     * @return builder
+     */
+    def diskSpec(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiPersistentResourceResourcePoolDiskSpecArgs.Builder]):
+        com.pulumi.gcp.vertex.inputs.AiPersistentResourceResourcePoolArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.vertex.inputs.AiPersistentResourceResourcePoolDiskSpecArgs.builder
+      builder.diskSpec(args(argsBuilder).build)
+
+    /**
+     * @param machineSpec Specification of a single machine.
+     * Structure is documented below.
+     * @return builder
+     */
+    def machineSpec(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiPersistentResourceResourcePoolMachineSpecArgs.Builder]):
+        com.pulumi.gcp.vertex.inputs.AiPersistentResourceResourcePoolArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.vertex.inputs.AiPersistentResourceResourcePoolMachineSpecArgs.builder
+      builder.machineSpec(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.gcp.vertex.inputs.AiPersistentResourceResourceRuntimeSpecArgs.Builder)
+    /**
+     * @param serviceAccountSpec Configuration for the use of custom service account to run the workloads.
+     * Structure is documented below.
+     * @return builder
+     */
+    def serviceAccountSpec(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiPersistentResourceResourceRuntimeSpecServiceAccountSpecArgs.Builder]):
+        com.pulumi.gcp.vertex.inputs.AiPersistentResourceResourceRuntimeSpecArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.vertex.inputs.AiPersistentResourceResourceRuntimeSpecServiceAccountSpecArgs.builder
+      builder.serviceAccountSpec(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.gcp.vertex.inputs.AiPersistentResourceState.Builder)
+    /**
+     * @param encryptionSpec Represents a customer-managed encryption key specification that can be
+     * applied to a Vertex AI resource.
+     * Structure is documented below.
+     * @return builder
+     */
+    def encryptionSpec(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiPersistentResourceEncryptionSpecArgs.Builder]):
+        com.pulumi.gcp.vertex.inputs.AiPersistentResourceState.Builder =
+      val argsBuilder = com.pulumi.gcp.vertex.inputs.AiPersistentResourceEncryptionSpecArgs.builder
+      builder.encryptionSpec(args(argsBuilder).build)
+
+    /**
+     * @param errors The `Status` type defines a logical error model that is suitable for
+     * different programming environments, including REST APIs and RPC APIs. It is
+     * used by [gRPC](https://github.com/grpc). Each `Status` message contains
+     * three pieces of data: error code, error message, and error details.
+     * You can find out more about this error model and how to work with it in the
+     * [API Design Guide](https://cloud.google.com/apis/design/errors).
+     * Structure is documented below.
+     * @return builder
+     */
+    def errors(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiPersistentResourceErrorArgs.Builder]*):
+        com.pulumi.gcp.vertex.inputs.AiPersistentResourceState.Builder =
+      def argsBuilder = com.pulumi.gcp.vertex.inputs.AiPersistentResourceErrorArgs.builder
+      builder.errors(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param pscInterfaceConfig Configuration for PSC-I.
+     * Structure is documented below.
+     * @return builder
+     */
+    def pscInterfaceConfig(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiPersistentResourcePscInterfaceConfigArgs.Builder]):
+        com.pulumi.gcp.vertex.inputs.AiPersistentResourceState.Builder =
+      val argsBuilder = com.pulumi.gcp.vertex.inputs.AiPersistentResourcePscInterfaceConfigArgs.builder
+      builder.pscInterfaceConfig(args(argsBuilder).build)
+
+    /**
+     * @param resourcePools The spec of the pools of different resources.
+     * Structure is documented below.
+     * @return builder
+     */
+    def resourcePools(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiPersistentResourceResourcePoolArgs.Builder]*):
+        com.pulumi.gcp.vertex.inputs.AiPersistentResourceState.Builder =
+      def argsBuilder = com.pulumi.gcp.vertex.inputs.AiPersistentResourceResourcePoolArgs.builder
+      builder.resourcePools(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param resourceRuntimeSpec Configuration for the runtime on a PersistentResource instance.
+     * Structure is documented below.
+     * @return builder
+     */
+    def resourceRuntimeSpec(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiPersistentResourceResourceRuntimeSpecArgs.Builder]):
+        com.pulumi.gcp.vertex.inputs.AiPersistentResourceState.Builder =
+      val argsBuilder = com.pulumi.gcp.vertex.inputs.AiPersistentResourceResourceRuntimeSpecArgs.builder
+      builder.resourceRuntimeSpec(args(argsBuilder).build)
+
+    /**
+     * @param resourceRuntimes Persistent Cluster runtime information as output
+     * Structure is documented below.
+     * @return builder
+     */
+    def resourceRuntimes(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiPersistentResourceResourceRuntimeArgs.Builder]*):
+        com.pulumi.gcp.vertex.inputs.AiPersistentResourceState.Builder =
+      def argsBuilder = com.pulumi.gcp.vertex.inputs.AiPersistentResourceResourceRuntimeArgs.builder
+      builder.resourceRuntimes(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.gcp.vertex.inputs.AiRagEngineConfigRagManagedDbConfigArgs.Builder)
     /**

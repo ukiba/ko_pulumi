@@ -5,6 +5,73 @@ import com.pulumi.resources.CustomResourceOptions
 
 object chronicle:
   /**
+   * BigQueryExport resource represents the BigQuery export configuration for a Chronicle instance.
+   * 
+   * To get more information about BigQueryExport, see:
+   * 
+   * * [API documentation](https://cloud.google.com/chronicle/docs/reference/rest/v1/projects.locations.instances.bigQueryExport)
+   * * How-to Guides
+   *     * [BigQuery Export Overview](https://cloud.google.com/chronicle/docs/secops/bigquery-export-overview)
+   */
+  def BigQueryExport(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+      (args: Endofunction[com.pulumi.gcp.chronicle.BigQueryExportArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+    val argsBuilder = com.pulumi.gcp.chronicle.BigQueryExportArgs.builder
+    com.pulumi.gcp.chronicle.BigQueryExport(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+
+  extension (builder: com.pulumi.gcp.chronicle.BigQueryExportArgs.Builder)
+    /**
+     * @param entityGraphSettings The export settings for a data source.
+     * Structure is documented below.
+     * @return builder
+     */
+    def entityGraphSettings(args: Endofunction[com.pulumi.gcp.chronicle.inputs.BigQueryExportEntityGraphSettingsArgs.Builder]):
+        com.pulumi.gcp.chronicle.BigQueryExportArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.chronicle.inputs.BigQueryExportEntityGraphSettingsArgs.builder
+      builder.entityGraphSettings(args(argsBuilder).build)
+
+    /**
+     * @param iocMatchesSettings The export settings for a data source.
+     * Structure is documented below.
+     * @return builder
+     */
+    def iocMatchesSettings(args: Endofunction[com.pulumi.gcp.chronicle.inputs.BigQueryExportIocMatchesSettingsArgs.Builder]):
+        com.pulumi.gcp.chronicle.BigQueryExportArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.chronicle.inputs.BigQueryExportIocMatchesSettingsArgs.builder
+      builder.iocMatchesSettings(args(argsBuilder).build)
+
+    /**
+     * @param ruleDetectionsSettings The export settings for a data source.
+     * Structure is documented below.
+     * @return builder
+     */
+    def ruleDetectionsSettings(args: Endofunction[com.pulumi.gcp.chronicle.inputs.BigQueryExportRuleDetectionsSettingsArgs.Builder]):
+        com.pulumi.gcp.chronicle.BigQueryExportArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.chronicle.inputs.BigQueryExportRuleDetectionsSettingsArgs.builder
+      builder.ruleDetectionsSettings(args(argsBuilder).build)
+
+    /**
+     * @param udmEventsAggregatesSettings The export settings for a data source.
+     * Structure is documented below.
+     * @return builder
+     */
+    def udmEventsAggregatesSettings(args: Endofunction[com.pulumi.gcp.chronicle.inputs.BigQueryExportUdmEventsAggregatesSettingsArgs.Builder]):
+        com.pulumi.gcp.chronicle.BigQueryExportArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.chronicle.inputs.BigQueryExportUdmEventsAggregatesSettingsArgs.builder
+      builder.udmEventsAggregatesSettings(args(argsBuilder).build)
+
+    /**
+     * @param udmEventsSettings The export settings for a data source.
+     * Structure is documented below.
+     * @return builder
+     */
+    def udmEventsSettings(args: Endofunction[com.pulumi.gcp.chronicle.inputs.BigQueryExportUdmEventsSettingsArgs.Builder]):
+        com.pulumi.gcp.chronicle.BigQueryExportArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.chronicle.inputs.BigQueryExportUdmEventsSettingsArgs.builder
+      builder.udmEventsSettings(args(argsBuilder).build)
+
+  /**
    * The custom list is a list of objects, that can be saved as a shared resource, and can be used by playbooks.
    * 
    * To get more information about CustomList, see:
@@ -228,12 +295,9 @@ object chronicle:
   /**
    * Environment groups let you organize multiple environments into logical categories, making it easier to manage large organizations or multiple customers as a Managed Security Service Provider (MSSP).
    * 
-   * &gt; **Warning:** This resource is in beta, and should be used with the terraform-provider-google-beta provider.
-   * See Provider Versions for more details on beta resources.
-   * 
    * To get more information about EnvironmentGroup, see:
    * 
-   * * [API documentation](https://docs.cloud.google.com/chronicle/docs/reference/rest/v1beta/projects.locations.instances.environmentGroups)
+   * * [API documentation](https://docs.cloud.google.com/chronicle/docs/reference/rest/v1/projects.locations.instances.environmentGroups)
    * * How-to Guides
    *     * [Google SecOps Guides](https://cloud.google.com/chronicle/docs/secops/secops-overview)
    */
@@ -633,6 +697,57 @@ object chronicle:
         com.pulumi.gcp.chronicle.WatchlistArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.WatchlistWatchlistUserPreferencesArgs.builder
       builder.watchlistUserPreferences(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.gcp.chronicle.inputs.BigQueryExportState.Builder)
+    /**
+     * @param entityGraphSettings The export settings for a data source.
+     * Structure is documented below.
+     * @return builder
+     */
+    def entityGraphSettings(args: Endofunction[com.pulumi.gcp.chronicle.inputs.BigQueryExportEntityGraphSettingsArgs.Builder]):
+        com.pulumi.gcp.chronicle.inputs.BigQueryExportState.Builder =
+      val argsBuilder = com.pulumi.gcp.chronicle.inputs.BigQueryExportEntityGraphSettingsArgs.builder
+      builder.entityGraphSettings(args(argsBuilder).build)
+
+    /**
+     * @param iocMatchesSettings The export settings for a data source.
+     * Structure is documented below.
+     * @return builder
+     */
+    def iocMatchesSettings(args: Endofunction[com.pulumi.gcp.chronicle.inputs.BigQueryExportIocMatchesSettingsArgs.Builder]):
+        com.pulumi.gcp.chronicle.inputs.BigQueryExportState.Builder =
+      val argsBuilder = com.pulumi.gcp.chronicle.inputs.BigQueryExportIocMatchesSettingsArgs.builder
+      builder.iocMatchesSettings(args(argsBuilder).build)
+
+    /**
+     * @param ruleDetectionsSettings The export settings for a data source.
+     * Structure is documented below.
+     * @return builder
+     */
+    def ruleDetectionsSettings(args: Endofunction[com.pulumi.gcp.chronicle.inputs.BigQueryExportRuleDetectionsSettingsArgs.Builder]):
+        com.pulumi.gcp.chronicle.inputs.BigQueryExportState.Builder =
+      val argsBuilder = com.pulumi.gcp.chronicle.inputs.BigQueryExportRuleDetectionsSettingsArgs.builder
+      builder.ruleDetectionsSettings(args(argsBuilder).build)
+
+    /**
+     * @param udmEventsAggregatesSettings The export settings for a data source.
+     * Structure is documented below.
+     * @return builder
+     */
+    def udmEventsAggregatesSettings(args: Endofunction[com.pulumi.gcp.chronicle.inputs.BigQueryExportUdmEventsAggregatesSettingsArgs.Builder]):
+        com.pulumi.gcp.chronicle.inputs.BigQueryExportState.Builder =
+      val argsBuilder = com.pulumi.gcp.chronicle.inputs.BigQueryExportUdmEventsAggregatesSettingsArgs.builder
+      builder.udmEventsAggregatesSettings(args(argsBuilder).build)
+
+    /**
+     * @param udmEventsSettings The export settings for a data source.
+     * Structure is documented below.
+     * @return builder
+     */
+    def udmEventsSettings(args: Endofunction[com.pulumi.gcp.chronicle.inputs.BigQueryExportUdmEventsSettingsArgs.Builder]):
+        com.pulumi.gcp.chronicle.inputs.BigQueryExportState.Builder =
+      val argsBuilder = com.pulumi.gcp.chronicle.inputs.BigQueryExportUdmEventsSettingsArgs.builder
+      builder.udmEventsSettings(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartArgs.Builder)
     /**

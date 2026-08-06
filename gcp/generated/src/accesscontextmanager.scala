@@ -1950,6 +1950,18 @@ object accesscontextmanager:
       def argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterDryRunEgressPolicyEgressFromSourceArgs.builder
       builder.sources(args.map(_(argsBuilder).build)*)
 
+  extension (builder: com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterDryRunEgressPolicyEgressFromSourceArgs.Builder)
+    /**
+     * @param pscEndpoint A Private Service Connect endpoint that is allowed to access data outside the perimeter.
+     * The Private Service Connect endpoint may be in any organization, not just the organization that the perimeter is defined in.
+     * Structure is documented below.
+     * @return builder
+     */
+    def pscEndpoint(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterDryRunEgressPolicyEgressFromSourcePscEndpointArgs.Builder]):
+        com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterDryRunEgressPolicyEgressFromSourceArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterDryRunEgressPolicyEgressFromSourcePscEndpointArgs.builder
+      builder.pscEndpoint(args(argsBuilder).build)
+
   extension (builder: com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterDryRunEgressPolicyEgressToArgs.Builder)
     /**
      * @param operations A list of `ApiOperations` that this egress rule applies to. A request matches
@@ -2008,6 +2020,18 @@ object accesscontextmanager:
         com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterDryRunIngressPolicyIngressFromArgs.Builder =
       def argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterDryRunIngressPolicyIngressFromSourceArgs.builder
       builder.sources(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterDryRunIngressPolicyIngressFromSourceArgs.Builder)
+    /**
+     * @param pscEndpoint A Private Service Connect endpoint that is allowed to access the perimeter.
+     * The Private Service Connect endpoint may be in any organization, not just the organization that the perimeter is defined in.
+     * Structure is documented below.
+     * @return builder
+     */
+    def pscEndpoint(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterDryRunIngressPolicyIngressFromSourcePscEndpointArgs.Builder]):
+        com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterDryRunIngressPolicyIngressFromSourceArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterDryRunIngressPolicyIngressFromSourcePscEndpointArgs.builder
+      builder.pscEndpoint(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterDryRunIngressPolicyIngressToArgs.Builder)
     /**
@@ -2069,6 +2093,18 @@ object accesscontextmanager:
       def argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterEgressPolicyEgressFromSourceArgs.builder
       builder.sources(args.map(_(argsBuilder).build)*)
 
+  extension (builder: com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterEgressPolicyEgressFromSourceArgs.Builder)
+    /**
+     * @param pscEndpoint A Private Service Connect endpoint that is allowed to access data outside the perimeter.
+     * The Private Service Connect endpoint may be in any organization, not just the organization that the perimeter is defined in.
+     * Structure is documented below.
+     * @return builder
+     */
+    def pscEndpoint(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterEgressPolicyEgressFromSourcePscEndpointArgs.Builder]):
+        com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterEgressPolicyEgressFromSourceArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterEgressPolicyEgressFromSourcePscEndpointArgs.builder
+      builder.pscEndpoint(args(argsBuilder).build)
+
   extension (builder: com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterEgressPolicyEgressToArgs.Builder)
     /**
      * @param operations A list of `ApiOperations` that this egress rule applies to. A request matches
@@ -2127,6 +2163,18 @@ object accesscontextmanager:
         com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterIngressPolicyIngressFromArgs.Builder =
       def argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterIngressPolicyIngressFromSourceArgs.builder
       builder.sources(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterIngressPolicyIngressFromSourceArgs.Builder)
+    /**
+     * @param pscEndpoint A Private Service Connect endpoint that is allowed to access the perimeter.
+     * The Private Service Connect endpoint may be in any organization, not just the organization that the perimeter is defined in.
+     * Structure is documented below.
+     * @return builder
+     */
+    def pscEndpoint(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterIngressPolicyIngressFromSourcePscEndpointArgs.Builder]):
+        com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterIngressPolicyIngressFromSourceArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterIngressPolicyIngressFromSourcePscEndpointArgs.builder
+      builder.pscEndpoint(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterIngressPolicyIngressToArgs.Builder)
     /**
@@ -2248,6 +2296,18 @@ object accesscontextmanager:
       def argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterSpecEgressPolicyEgressFromSourceArgs.builder
       builder.sources(args.map(_(argsBuilder).build)*)
 
+  extension (builder: com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterSpecEgressPolicyEgressFromSourceArgs.Builder)
+    /**
+     * @param pscEndpoint A Private Service Connect endpoint that is allowed to access data outside the perimeter.
+     * The Private Service Connect endpoint may be in any organization, not just the organization that the perimeter is defined in.
+     * Structure is documented below.
+     * @return builder
+     */
+    def pscEndpoint(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterSpecEgressPolicyEgressFromSourcePscEndpointArgs.Builder]):
+        com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterSpecEgressPolicyEgressFromSourceArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterSpecEgressPolicyEgressFromSourcePscEndpointArgs.builder
+      builder.pscEndpoint(args(argsBuilder).build)
+
   extension (builder: com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterSpecEgressPolicyEgressToArgs.Builder)
     /**
      * @param operations A list of `ApiOperations` that this egress rule applies to. A request matches
@@ -2308,6 +2368,18 @@ object accesscontextmanager:
       def argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterSpecIngressPolicyIngressFromSourceArgs.builder
       builder.sources(args.map(_(argsBuilder).build)*)
 
+  extension (builder: com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterSpecIngressPolicyIngressFromSourceArgs.Builder)
+    /**
+     * @param pscEndpoint A Private Service Connect endpoint that is allowed to access data outside the perimeter.
+     * The Private Service Connect endpoint may be in any organization, not just the organization that the perimeter is defined in.
+     * Structure is documented below.
+     * @return builder
+     */
+    def pscEndpoint(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterSpecIngressPolicyIngressFromSourcePscEndpointArgs.Builder]):
+        com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterSpecIngressPolicyIngressFromSourceArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterSpecIngressPolicyIngressFromSourcePscEndpointArgs.builder
+      builder.pscEndpoint(args(argsBuilder).build)
+
   extension (builder: com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterSpecIngressPolicyIngressToArgs.Builder)
     /**
      * @param operations A list of `ApiOperations` the sources specified in corresponding `IngressFrom`
@@ -2333,6 +2405,40 @@ object accesscontextmanager:
         com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterSpecIngressPolicyIngressToOperationArgs.Builder =
       def argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterSpecIngressPolicyIngressToOperationMethodSelectorArgs.builder
       builder.methodSelectors(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterSpecVpcAccessibleServicesAllowedServicePatternArgs.Builder)
+    /**
+     * @param modifiers Modifiers to apply to the requests that match the URL pattern.
+     * Structure is documented below.
+     * @return builder
+     */
+    def modifiers(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterSpecVpcAccessibleServicesAllowedServicePatternModifierArgs.Builder]*):
+        com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterSpecVpcAccessibleServicesAllowedServicePatternArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterSpecVpcAccessibleServicesAllowedServicePatternModifierArgs.builder
+      builder.modifiers(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterSpecVpcAccessibleServicesAllowedServicePatternModifierArgs.Builder)
+    /**
+     * @param addRequestHeader Adds additional HTTP request headers.
+     * Structure is documented below.
+     * @return builder
+     */
+    def addRequestHeader(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterSpecVpcAccessibleServicesAllowedServicePatternModifierAddRequestHeaderArgs.Builder]):
+        com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterSpecVpcAccessibleServicesAllowedServicePatternModifierArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterSpecVpcAccessibleServicesAllowedServicePatternModifierAddRequestHeaderArgs.builder
+      builder.addRequestHeader(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterSpecVpcAccessibleServicesArgs.Builder)
+    /**
+     * @param allowedServicePatterns Specifies which Google services are allowed to be accessed from
+     * VPC networks in the service perimeter.
+     * Structure is documented below.
+     * @return builder
+     */
+    def allowedServicePatterns(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterSpecVpcAccessibleServicesAllowedServicePatternArgs.Builder]*):
+        com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterSpecVpcAccessibleServicesArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterSpecVpcAccessibleServicesAllowedServicePatternArgs.builder
+      builder.allowedServicePatterns(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterState.Builder)
     /**
@@ -2431,6 +2537,18 @@ object accesscontextmanager:
       def argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterStatusEgressPolicyEgressFromSourceArgs.builder
       builder.sources(args.map(_(argsBuilder).build)*)
 
+  extension (builder: com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterStatusEgressPolicyEgressFromSourceArgs.Builder)
+    /**
+     * @param pscEndpoint A Private Service Connect endpoint that is allowed to access data outside the perimeter.
+     * The Private Service Connect endpoint may be in any organization, not just the organization that the perimeter is defined in.
+     * Structure is documented below.
+     * @return builder
+     */
+    def pscEndpoint(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterStatusEgressPolicyEgressFromSourcePscEndpointArgs.Builder]):
+        com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterStatusEgressPolicyEgressFromSourceArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterStatusEgressPolicyEgressFromSourcePscEndpointArgs.builder
+      builder.pscEndpoint(args(argsBuilder).build)
+
   extension (builder: com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterStatusEgressPolicyEgressToArgs.Builder)
     /**
      * @param operations A list of `ApiOperations` that this egress rule applies to. A request matches
@@ -2491,6 +2609,18 @@ object accesscontextmanager:
       def argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterStatusIngressPolicyIngressFromSourceArgs.builder
       builder.sources(args.map(_(argsBuilder).build)*)
 
+  extension (builder: com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterStatusIngressPolicyIngressFromSourceArgs.Builder)
+    /**
+     * @param pscEndpoint A Private Service Connect endpoint that is allowed to access data outside the perimeter.
+     * The Private Service Connect endpoint may be in any organization, not just the organization that the perimeter is defined in.
+     * Structure is documented below.
+     * @return builder
+     */
+    def pscEndpoint(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterStatusIngressPolicyIngressFromSourcePscEndpointArgs.Builder]):
+        com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterStatusIngressPolicyIngressFromSourceArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterStatusIngressPolicyIngressFromSourcePscEndpointArgs.builder
+      builder.pscEndpoint(args(argsBuilder).build)
+
   extension (builder: com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterStatusIngressPolicyIngressToArgs.Builder)
     /**
      * @param operations A list of `ApiOperations` the sources specified in corresponding `IngressFrom`
@@ -2516,6 +2646,40 @@ object accesscontextmanager:
         com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterStatusIngressPolicyIngressToOperationArgs.Builder =
       def argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterStatusIngressPolicyIngressToOperationMethodSelectorArgs.builder
       builder.methodSelectors(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterStatusVpcAccessibleServicesAllowedServicePatternArgs.Builder)
+    /**
+     * @param modifiers Modifiers to apply to the requests that match the URL pattern.
+     * Structure is documented below.
+     * @return builder
+     */
+    def modifiers(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterStatusVpcAccessibleServicesAllowedServicePatternModifierArgs.Builder]*):
+        com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterStatusVpcAccessibleServicesAllowedServicePatternArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterStatusVpcAccessibleServicesAllowedServicePatternModifierArgs.builder
+      builder.modifiers(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterStatusVpcAccessibleServicesAllowedServicePatternModifierArgs.Builder)
+    /**
+     * @param addRequestHeader Adds additional HTTP request headers.
+     * Structure is documented below.
+     * @return builder
+     */
+    def addRequestHeader(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterStatusVpcAccessibleServicesAllowedServicePatternModifierAddRequestHeaderArgs.Builder]):
+        com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterStatusVpcAccessibleServicesAllowedServicePatternModifierArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterStatusVpcAccessibleServicesAllowedServicePatternModifierAddRequestHeaderArgs.builder
+      builder.addRequestHeader(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterStatusVpcAccessibleServicesArgs.Builder)
+    /**
+     * @param allowedServicePatterns Specifies which Google services are allowed to be accessed from
+     * VPC networks in the service perimeter.
+     * Structure is documented below.
+     * @return builder
+     */
+    def allowedServicePatterns(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterStatusVpcAccessibleServicesAllowedServicePatternArgs.Builder]*):
+        com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterStatusVpcAccessibleServicesArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterStatusVpcAccessibleServicesAllowedServicePatternArgs.builder
+      builder.allowedServicePatterns(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterArgs.Builder)
     /**
@@ -2614,6 +2778,18 @@ object accesscontextmanager:
       def argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterSpecEgressPolicyEgressFromSourceArgs.builder
       builder.sources(args.map(_(argsBuilder).build)*)
 
+  extension (builder: com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterSpecEgressPolicyEgressFromSourceArgs.Builder)
+    /**
+     * @param pscEndpoint A Private Service Connect endpoint that is allowed to access data outside the perimeter.
+     * The Private Service Connect endpoint may be in any organization, not just the organization that the perimeter is defined in.
+     * Structure is documented below.
+     * @return builder
+     */
+    def pscEndpoint(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterSpecEgressPolicyEgressFromSourcePscEndpointArgs.Builder]):
+        com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterSpecEgressPolicyEgressFromSourceArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterSpecEgressPolicyEgressFromSourcePscEndpointArgs.builder
+      builder.pscEndpoint(args(argsBuilder).build)
+
   extension (builder: com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterSpecEgressPolicyEgressToArgs.Builder)
     /**
      * @param operations A list of `ApiOperations` that this egress rule applies to. A request matches
@@ -2674,6 +2850,18 @@ object accesscontextmanager:
       def argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterSpecIngressPolicyIngressFromSourceArgs.builder
       builder.sources(args.map(_(argsBuilder).build)*)
 
+  extension (builder: com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterSpecIngressPolicyIngressFromSourceArgs.Builder)
+    /**
+     * @param pscEndpoint A Private Service Connect endpoint that is allowed to access data outside the perimeter.
+     * The Private Service Connect endpoint may be in any organization, not just the organization that the perimeter is defined in.
+     * Structure is documented below.
+     * @return builder
+     */
+    def pscEndpoint(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterSpecIngressPolicyIngressFromSourcePscEndpointArgs.Builder]):
+        com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterSpecIngressPolicyIngressFromSourceArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterSpecIngressPolicyIngressFromSourcePscEndpointArgs.builder
+      builder.pscEndpoint(args(argsBuilder).build)
+
   extension (builder: com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterSpecIngressPolicyIngressToArgs.Builder)
     /**
      * @param operations A list of `ApiOperations` the sources specified in corresponding `IngressFrom`
@@ -2699,6 +2887,40 @@ object accesscontextmanager:
         com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterSpecIngressPolicyIngressToOperationArgs.Builder =
       def argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterSpecIngressPolicyIngressToOperationMethodSelectorArgs.builder
       builder.methodSelectors(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterSpecVpcAccessibleServicesAllowedServicePatternArgs.Builder)
+    /**
+     * @param modifiers Modifiers to apply to the requests that match the URL pattern.
+     * Structure is documented below.
+     * @return builder
+     */
+    def modifiers(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterSpecVpcAccessibleServicesAllowedServicePatternModifierArgs.Builder]*):
+        com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterSpecVpcAccessibleServicesAllowedServicePatternArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterSpecVpcAccessibleServicesAllowedServicePatternModifierArgs.builder
+      builder.modifiers(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterSpecVpcAccessibleServicesAllowedServicePatternModifierArgs.Builder)
+    /**
+     * @param addRequestHeader Adds additional HTTP request headers.
+     * Structure is documented below.
+     * @return builder
+     */
+    def addRequestHeader(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterSpecVpcAccessibleServicesAllowedServicePatternModifierAddRequestHeaderArgs.Builder]):
+        com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterSpecVpcAccessibleServicesAllowedServicePatternModifierArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterSpecVpcAccessibleServicesAllowedServicePatternModifierAddRequestHeaderArgs.builder
+      builder.addRequestHeader(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterSpecVpcAccessibleServicesArgs.Builder)
+    /**
+     * @param allowedServicePatterns Specifies which Google services are allowed to be accessed from
+     * VPC networks in the service perimeter.
+     * Structure is documented below.
+     * @return builder
+     */
+    def allowedServicePatterns(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterSpecVpcAccessibleServicesAllowedServicePatternArgs.Builder]*):
+        com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterSpecVpcAccessibleServicesArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterSpecVpcAccessibleServicesAllowedServicePatternArgs.builder
+      builder.allowedServicePatterns(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterStatusArgs.Builder)
     /**
@@ -2771,6 +2993,18 @@ object accesscontextmanager:
       def argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterStatusEgressPolicyEgressFromSourceArgs.builder
       builder.sources(args.map(_(argsBuilder).build)*)
 
+  extension (builder: com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterStatusEgressPolicyEgressFromSourceArgs.Builder)
+    /**
+     * @param pscEndpoint A Private Service Connect endpoint that is allowed to access data outside the perimeter.
+     * The Private Service Connect endpoint may be in any organization, not just the organization that the perimeter is defined in.
+     * Structure is documented below.
+     * @return builder
+     */
+    def pscEndpoint(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterStatusEgressPolicyEgressFromSourcePscEndpointArgs.Builder]):
+        com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterStatusEgressPolicyEgressFromSourceArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterStatusEgressPolicyEgressFromSourcePscEndpointArgs.builder
+      builder.pscEndpoint(args(argsBuilder).build)
+
   extension (builder: com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterStatusEgressPolicyEgressToArgs.Builder)
     /**
      * @param operations A list of `ApiOperations` that this egress rule applies to. A request matches
@@ -2831,6 +3065,18 @@ object accesscontextmanager:
       def argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterStatusIngressPolicyIngressFromSourceArgs.builder
       builder.sources(args.map(_(argsBuilder).build)*)
 
+  extension (builder: com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterStatusIngressPolicyIngressFromSourceArgs.Builder)
+    /**
+     * @param pscEndpoint A Private Service Connect endpoint that is allowed to access data outside the perimeter.
+     * The Private Service Connect endpoint may be in any organization, not just the organization that the perimeter is defined in.
+     * Structure is documented below.
+     * @return builder
+     */
+    def pscEndpoint(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterStatusIngressPolicyIngressFromSourcePscEndpointArgs.Builder]):
+        com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterStatusIngressPolicyIngressFromSourceArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterStatusIngressPolicyIngressFromSourcePscEndpointArgs.builder
+      builder.pscEndpoint(args(argsBuilder).build)
+
   extension (builder: com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterStatusIngressPolicyIngressToArgs.Builder)
     /**
      * @param operations A list of `ApiOperations` the sources specified in corresponding `IngressFrom`
@@ -2856,6 +3102,40 @@ object accesscontextmanager:
         com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterStatusIngressPolicyIngressToOperationArgs.Builder =
       def argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterStatusIngressPolicyIngressToOperationMethodSelectorArgs.builder
       builder.methodSelectors(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterStatusVpcAccessibleServicesAllowedServicePatternArgs.Builder)
+    /**
+     * @param modifiers Modifiers to apply to the requests that match the URL pattern.
+     * Structure is documented below.
+     * @return builder
+     */
+    def modifiers(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterStatusVpcAccessibleServicesAllowedServicePatternModifierArgs.Builder]*):
+        com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterStatusVpcAccessibleServicesAllowedServicePatternArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterStatusVpcAccessibleServicesAllowedServicePatternModifierArgs.builder
+      builder.modifiers(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterStatusVpcAccessibleServicesAllowedServicePatternModifierArgs.Builder)
+    /**
+     * @param addRequestHeader Adds additional HTTP request headers.
+     * Structure is documented below.
+     * @return builder
+     */
+    def addRequestHeader(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterStatusVpcAccessibleServicesAllowedServicePatternModifierAddRequestHeaderArgs.Builder]):
+        com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterStatusVpcAccessibleServicesAllowedServicePatternModifierArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterStatusVpcAccessibleServicesAllowedServicePatternModifierAddRequestHeaderArgs.builder
+      builder.addRequestHeader(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterStatusVpcAccessibleServicesArgs.Builder)
+    /**
+     * @param allowedServicePatterns Specifies which Google services are allowed to be accessed from
+     * VPC networks in the service perimeter.
+     * Structure is documented below.
+     * @return builder
+     */
+    def allowedServicePatterns(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterStatusVpcAccessibleServicesAllowedServicePatternArgs.Builder]*):
+        com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterStatusVpcAccessibleServicesArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterStatusVpcAccessibleServicesAllowedServicePatternArgs.builder
+      builder.allowedServicePatterns(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersState.Builder)
     /**

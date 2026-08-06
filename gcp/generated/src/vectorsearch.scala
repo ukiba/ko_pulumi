@@ -38,6 +38,54 @@ object vectorsearch:
       builder.vectorSchemas(args.map(_(argsBuilder).build)*)
 
   /**
+   * A DataObject is a single item of data (with optional vectors) stored in a
+   * Vector Search Collection. Each DataObject conforms to the parent
+   * Collection&#39;s `dataSchema` and `vectorSchema`.
+   * 
+   * This resource always issues one `CreateDataObject` request per Terraform
+   * resource block. It does NOT use the `batchCreate` REST endpoint --
+   * Terraform&#39;s resource lifecycle is inherently per-object, so batching
+   * across resources is not modeled. When you use `forEach` or `count`,
+   * Terraform will still issue individual requests, up to `-parallelism`
+   * in parallel.
+   * 
+   * For ingesting more than a few hundred items, prefer one of the
+   * following out-of-band paths instead of Terraform:
+   * 
+   *   * `importDataObjects` (bulk ingest from Cloud Storage) -- highest
+   *     throughput, but only available *before* any Index is created on
+   *     the Collection.
+   *   * `batchCreate` (up to ~1000 items per call) -- available at any
+   *     time, but must be driven from your own client code, not Terraform.
+   * 
+   * Once an Index exists on the Collection, `importDataObjects` is no
+   * longer available and DataObjects must be created via `CreateDataObject`
+   * (as this resource does) or via `batchCreate`.
+   */
+  def DataObject(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+      (args: Endofunction[com.pulumi.gcp.vectorsearch.DataObjectArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+    val argsBuilder = com.pulumi.gcp.vectorsearch.DataObjectArgs.builder
+    com.pulumi.gcp.vectorsearch.DataObject(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+
+  extension (builder: com.pulumi.gcp.vectorsearch.DataObjectArgs.Builder)
+    /**
+     * @param vectors The vectors of the DataObject, keyed by the vector field name as
+     * defined in the parent Collection&#39;s `vectorSchema`.
+     * If a vector field is configured with a `vertexEmbeddingConfig` on
+     * the Collection, the server will populate the vector automatically
+     * from the corresponding text in `data` and the field should be
+     * omitted here.
+     * Structure is documented below.
+     * @return builder
+     */
+    def vectors(args: Endofunction[com.pulumi.gcp.vectorsearch.inputs.DataObjectVectorArgs.Builder]*):
+        com.pulumi.gcp.vectorsearch.DataObjectArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.vectorsearch.inputs.DataObjectVectorArgs.builder
+      builder.vectors(args.map(_(argsBuilder).build)*)
+
+  /**
    * An Index defines an approximate nearest-neighbor search structure over a
    * field of a Vector Search Collection.
    */
@@ -130,6 +178,43 @@ object vectorsearch:
         com.pulumi.gcp.vectorsearch.inputs.CollectionVectorSchemaDenseVectorArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vectorsearch.inputs.CollectionVectorSchemaDenseVectorVertexEmbeddingConfigArgs.builder
       builder.vertexEmbeddingConfig(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.gcp.vectorsearch.inputs.DataObjectState.Builder)
+    /**
+     * @param vectors The vectors of the DataObject, keyed by the vector field name as
+     * defined in the parent Collection&#39;s `vectorSchema`.
+     * If a vector field is configured with a `vertexEmbeddingConfig` on
+     * the Collection, the server will populate the vector automatically
+     * from the corresponding text in `data` and the field should be
+     * omitted here.
+     * Structure is documented below.
+     * @return builder
+     */
+    def vectors(args: Endofunction[com.pulumi.gcp.vectorsearch.inputs.DataObjectVectorArgs.Builder]*):
+        com.pulumi.gcp.vectorsearch.inputs.DataObjectState.Builder =
+      def argsBuilder = com.pulumi.gcp.vectorsearch.inputs.DataObjectVectorArgs.builder
+      builder.vectors(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.gcp.vectorsearch.inputs.DataObjectVectorArgs.Builder)
+    /**
+     * @param dense A dense vector.
+     * Structure is documented below.
+     * @return builder
+     */
+    def dense(args: Endofunction[com.pulumi.gcp.vectorsearch.inputs.DataObjectVectorDenseArgs.Builder]):
+        com.pulumi.gcp.vectorsearch.inputs.DataObjectVectorArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.vectorsearch.inputs.DataObjectVectorDenseArgs.builder
+      builder.dense(args(argsBuilder).build)
+
+    /**
+     * @param sparse A sparse vector.
+     * Structure is documented below.
+     * @return builder
+     */
+    def sparse(args: Endofunction[com.pulumi.gcp.vectorsearch.inputs.DataObjectVectorSparseArgs.Builder]):
+        com.pulumi.gcp.vectorsearch.inputs.DataObjectVectorArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.vectorsearch.inputs.DataObjectVectorSparseArgs.builder
+      builder.sparse(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.vectorsearch.inputs.IndexDedicatedInfrastructureArgs.Builder)
     /**

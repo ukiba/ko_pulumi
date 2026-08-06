@@ -870,6 +870,15 @@ object container:
       builder.resourceUsageExportConfig(args(argsBuilder).build)
 
     /**
+     * @param rollbackSafeUpgrade Configuration for rollback-safe (two-step) upgrades. Structure is documented below.
+     * @return builder
+     */
+    def rollbackSafeUpgrade(args: Endofunction[com.pulumi.gcp.container.inputs.ClusterRollbackSafeUpgradeArgs.Builder]):
+        com.pulumi.gcp.container.ClusterArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.container.inputs.ClusterRollbackSafeUpgradeArgs.builder
+      builder.rollbackSafeUpgrade(args(argsBuilder).build)
+
+    /**
      * @param secretManagerConfig Configuration for the
      * [SecretManagerConfig](https://cloud.google.com/secret-manager/docs/secret-manager-managed-csi-component) feature.
      * Structure is documented below.
@@ -2050,6 +2059,18 @@ object container:
       builder.networkPolicyConfig(args(argsBuilder).build)
 
     /**
+     * @param nodeReadinessConfig The status of the Node Readiness Controller addon. It is disabled by default. Set `enabled = true` to enable.
+     * Structure is documented below.
+     * 
+     * This example `addonsConfig` disables two addons:
+     * @return builder
+     */
+    def nodeReadinessConfig(args: Endofunction[com.pulumi.gcp.container.inputs.ClusterAddonsConfigNodeReadinessConfigArgs.Builder]):
+        com.pulumi.gcp.container.inputs.ClusterAddonsConfigArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.container.inputs.ClusterAddonsConfigNodeReadinessConfigArgs.builder
+      builder.nodeReadinessConfig(args(argsBuilder).build)
+
+    /**
      * @param parallelstoreCsiDriverConfig The status of the Parallelstore CSI driver addon,
      * which allows the usage of a Parallelstore instances as volumes.
      * It is disabled by default for Standard clusters; set `enabled = true` to enable.
@@ -2107,8 +2128,6 @@ object container:
      * which creates slurm related CRDs and KCP pods to manage them.
      * Defaults to disabled for Standard clusters; set `enabled = true` to enable.
      * It can not be enabled for Autopilot clusters.
-     * 
-     * This example `addonsConfig` disables two addons:
      * @return builder
      */
     def slurmOperatorConfig(args: Endofunction[com.pulumi.gcp.container.inputs.ClusterAddonsConfigSlurmOperatorConfigArgs.Builder]):
@@ -4351,6 +4370,15 @@ object container:
         com.pulumi.gcp.container.inputs.ClusterState.Builder =
       val argsBuilder = com.pulumi.gcp.container.inputs.ClusterResourceUsageExportConfigArgs.builder
       builder.resourceUsageExportConfig(args(argsBuilder).build)
+
+    /**
+     * @param rollbackSafeUpgrade Configuration for rollback-safe (two-step) upgrades. Structure is documented below.
+     * @return builder
+     */
+    def rollbackSafeUpgrade(args: Endofunction[com.pulumi.gcp.container.inputs.ClusterRollbackSafeUpgradeArgs.Builder]):
+        com.pulumi.gcp.container.inputs.ClusterState.Builder =
+      val argsBuilder = com.pulumi.gcp.container.inputs.ClusterRollbackSafeUpgradeArgs.builder
+      builder.rollbackSafeUpgrade(args(argsBuilder).build)
 
     /**
      * @param secretManagerConfig Configuration for the

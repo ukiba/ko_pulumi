@@ -1190,6 +1190,16 @@ object colab:
       val argsBuilder = com.pulumi.gcp.colab.inputs.ScheduleCreateNotebookExecutionJobRequestArgs.builder
       builder.createNotebookExecutionJobRequest(args(argsBuilder).build)
 
+    /**
+     * @param createPipelineJobRequest Request message for PipelineService.CreatePipelineJob.
+     * Structure is documented below.
+     * @return builder
+     */
+    def createPipelineJobRequest(args: Endofunction[com.pulumi.gcp.colab.inputs.ScheduleCreatePipelineJobRequestArgs.Builder]):
+        com.pulumi.gcp.colab.ScheduleArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.colab.inputs.ScheduleCreatePipelineJobRequestArgs.builder
+      builder.createPipelineJobRequest(args(argsBuilder).build)
+
   extension (builder: com.pulumi.gcp.colab.inputs.NotebookExecutionCustomEnvironmentSpecArgs.Builder)
     /**
      * @param machineSpec &#39;The machine configuration of the runtime.&#39;
@@ -1410,6 +1420,16 @@ object colab:
 
   extension (builder: com.pulumi.gcp.colab.inputs.ScheduleCreateNotebookExecutionJobRequestNotebookExecutionJobArgs.Builder)
     /**
+     * @param customEnvironmentSpec Compute configuration to use for an execution job.
+     * Structure is documented below.
+     * @return builder
+     */
+    def customEnvironmentSpec(args: Endofunction[com.pulumi.gcp.colab.inputs.ScheduleCreateNotebookExecutionJobRequestNotebookExecutionJobCustomEnvironmentSpecArgs.Builder]):
+        com.pulumi.gcp.colab.inputs.ScheduleCreateNotebookExecutionJobRequestNotebookExecutionJobArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.colab.inputs.ScheduleCreateNotebookExecutionJobRequestNotebookExecutionJobCustomEnvironmentSpecArgs.builder
+      builder.customEnvironmentSpec(args(argsBuilder).build)
+
+    /**
      * @param dataformRepositorySource The Dataform Repository containing the input notebook.
      * Structure is documented below.
      * @return builder
@@ -1418,6 +1438,16 @@ object colab:
         com.pulumi.gcp.colab.inputs.ScheduleCreateNotebookExecutionJobRequestNotebookExecutionJobArgs.Builder =
       val argsBuilder = com.pulumi.gcp.colab.inputs.ScheduleCreateNotebookExecutionJobRequestNotebookExecutionJobDataformRepositorySourceArgs.builder
       builder.dataformRepositorySource(args(argsBuilder).build)
+
+    /**
+     * @param encryptionSpec Represents a customer-managed encryption key specification that can be applied to a Vertex AI resource.
+     * Structure is documented below.
+     * @return builder
+     */
+    def encryptionSpec(args: Endofunction[com.pulumi.gcp.colab.inputs.ScheduleCreateNotebookExecutionJobRequestNotebookExecutionJobEncryptionSpecArgs.Builder]):
+        com.pulumi.gcp.colab.inputs.ScheduleCreateNotebookExecutionJobRequestNotebookExecutionJobArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.colab.inputs.ScheduleCreateNotebookExecutionJobRequestNotebookExecutionJobEncryptionSpecArgs.builder
+      builder.encryptionSpec(args(argsBuilder).build)
 
     /**
      * @param gcsNotebookSource The Cloud Storage uri for the input notebook.
@@ -1429,6 +1459,121 @@ object colab:
       val argsBuilder = com.pulumi.gcp.colab.inputs.ScheduleCreateNotebookExecutionJobRequestNotebookExecutionJobGcsNotebookSourceArgs.builder
       builder.gcsNotebookSource(args(argsBuilder).build)
 
+    /**
+     * @param workbenchRuntime Configuration for a Workbench Instances-based environment.
+     * @return builder
+     */
+    def workbenchRuntime(args: Endofunction[com.pulumi.gcp.colab.inputs.ScheduleCreateNotebookExecutionJobRequestNotebookExecutionJobWorkbenchRuntimeArgs.Builder]):
+        com.pulumi.gcp.colab.inputs.ScheduleCreateNotebookExecutionJobRequestNotebookExecutionJobArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.colab.inputs.ScheduleCreateNotebookExecutionJobRequestNotebookExecutionJobWorkbenchRuntimeArgs.builder
+      builder.workbenchRuntime(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.gcp.colab.inputs.ScheduleCreateNotebookExecutionJobRequestNotebookExecutionJobCustomEnvironmentSpecArgs.Builder)
+    /**
+     * @param machineSpec Specification of a single machine.
+     * Structure is documented below.
+     * @return builder
+     */
+    def machineSpec(args: Endofunction[com.pulumi.gcp.colab.inputs.ScheduleCreateNotebookExecutionJobRequestNotebookExecutionJobCustomEnvironmentSpecMachineSpecArgs.Builder]):
+        com.pulumi.gcp.colab.inputs.ScheduleCreateNotebookExecutionJobRequestNotebookExecutionJobCustomEnvironmentSpecArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.colab.inputs.ScheduleCreateNotebookExecutionJobRequestNotebookExecutionJobCustomEnvironmentSpecMachineSpecArgs.builder
+      builder.machineSpec(args(argsBuilder).build)
+
+    /**
+     * @param networkSpec Network spec.
+     * Structure is documented below.
+     * @return builder
+     */
+    def networkSpec(args: Endofunction[com.pulumi.gcp.colab.inputs.ScheduleCreateNotebookExecutionJobRequestNotebookExecutionJobCustomEnvironmentSpecNetworkSpecArgs.Builder]):
+        com.pulumi.gcp.colab.inputs.ScheduleCreateNotebookExecutionJobRequestNotebookExecutionJobCustomEnvironmentSpecArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.colab.inputs.ScheduleCreateNotebookExecutionJobRequestNotebookExecutionJobCustomEnvironmentSpecNetworkSpecArgs.builder
+      builder.networkSpec(args(argsBuilder).build)
+
+    /**
+     * @param persistentDiskSpec Represents the spec of persistent disk options.
+     * Structure is documented below.
+     * @return builder
+     */
+    def persistentDiskSpec(args: Endofunction[com.pulumi.gcp.colab.inputs.ScheduleCreateNotebookExecutionJobRequestNotebookExecutionJobCustomEnvironmentSpecPersistentDiskSpecArgs.Builder]):
+        com.pulumi.gcp.colab.inputs.ScheduleCreateNotebookExecutionJobRequestNotebookExecutionJobCustomEnvironmentSpecArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.colab.inputs.ScheduleCreateNotebookExecutionJobRequestNotebookExecutionJobCustomEnvironmentSpecPersistentDiskSpecArgs.builder
+      builder.persistentDiskSpec(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.gcp.colab.inputs.ScheduleCreateNotebookExecutionJobRequestNotebookExecutionJobCustomEnvironmentSpecMachineSpecArgs.Builder)
+    /**
+     * @param reservationAffinity A ReservationAffinity can be used to configure a Vertex AI resource (e.g., a DeployedModel) to draw its Compute Engine resources from a Shared Reservation, or exclusively from on-demand capacity.
+     * Structure is documented below.
+     * @return builder
+     */
+    def reservationAffinity(args: Endofunction[com.pulumi.gcp.colab.inputs.ScheduleCreateNotebookExecutionJobRequestNotebookExecutionJobCustomEnvironmentSpecMachineSpecReservationAffinityArgs.Builder]):
+        com.pulumi.gcp.colab.inputs.ScheduleCreateNotebookExecutionJobRequestNotebookExecutionJobCustomEnvironmentSpecMachineSpecArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.colab.inputs.ScheduleCreateNotebookExecutionJobRequestNotebookExecutionJobCustomEnvironmentSpecMachineSpecReservationAffinityArgs.builder
+      builder.reservationAffinity(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.gcp.colab.inputs.ScheduleCreatePipelineJobRequestArgs.Builder)
+    /**
+     * @param pipelineJob An instance of a machine learning PipelineJob.
+     * Structure is documented below.
+     * @return builder
+     */
+    def pipelineJob(args: Endofunction[com.pulumi.gcp.colab.inputs.ScheduleCreatePipelineJobRequestPipelineJobArgs.Builder]):
+        com.pulumi.gcp.colab.inputs.ScheduleCreatePipelineJobRequestArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.colab.inputs.ScheduleCreatePipelineJobRequestPipelineJobArgs.builder
+      builder.pipelineJob(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.gcp.colab.inputs.ScheduleCreatePipelineJobRequestPipelineJobArgs.Builder)
+    /**
+     * @param encryptionSpec Represents a customer-managed encryption key specification that can be applied to a Vertex AI resource.
+     * Structure is documented below.
+     * @return builder
+     */
+    def encryptionSpec(args: Endofunction[com.pulumi.gcp.colab.inputs.ScheduleCreatePipelineJobRequestPipelineJobEncryptionSpecArgs.Builder]):
+        com.pulumi.gcp.colab.inputs.ScheduleCreatePipelineJobRequestPipelineJobArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.colab.inputs.ScheduleCreatePipelineJobRequestPipelineJobEncryptionSpecArgs.builder
+      builder.encryptionSpec(args(argsBuilder).build)
+
+    /**
+     * @param pscInterfaceConfig Configuration for PSC-I.
+     * Structure is documented below.
+     * @return builder
+     */
+    def pscInterfaceConfig(args: Endofunction[com.pulumi.gcp.colab.inputs.ScheduleCreatePipelineJobRequestPipelineJobPscInterfaceConfigArgs.Builder]):
+        com.pulumi.gcp.colab.inputs.ScheduleCreatePipelineJobRequestPipelineJobArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.colab.inputs.ScheduleCreatePipelineJobRequestPipelineJobPscInterfaceConfigArgs.builder
+      builder.pscInterfaceConfig(args(argsBuilder).build)
+
+    /**
+     * @param runtimeConfig The runtime config of a PipelineJob.
+     * Structure is documented below.
+     * @return builder
+     */
+    def runtimeConfig(args: Endofunction[com.pulumi.gcp.colab.inputs.ScheduleCreatePipelineJobRequestPipelineJobRuntimeConfigArgs.Builder]):
+        com.pulumi.gcp.colab.inputs.ScheduleCreatePipelineJobRequestPipelineJobArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.colab.inputs.ScheduleCreatePipelineJobRequestPipelineJobRuntimeConfigArgs.builder
+      builder.runtimeConfig(args(argsBuilder).build)
+
+    /**
+     * @param templateMetadatas (Output)
+     * Pipeline template metadata if PipelineJob.template_uri is from supported template registry. Currently, the only supported registry is Artifact Registry.
+     * Structure is documented below.
+     * @return builder
+     */
+    def templateMetadatas(args: Endofunction[com.pulumi.gcp.colab.inputs.ScheduleCreatePipelineJobRequestPipelineJobTemplateMetadataArgs.Builder]*):
+        com.pulumi.gcp.colab.inputs.ScheduleCreatePipelineJobRequestPipelineJobArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.colab.inputs.ScheduleCreatePipelineJobRequestPipelineJobTemplateMetadataArgs.builder
+      builder.templateMetadatas(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.gcp.colab.inputs.ScheduleCreatePipelineJobRequestPipelineJobPscInterfaceConfigArgs.Builder)
+    /**
+     * @param dnsPeeringConfigs DNS peering configurations. When specified, Vertex AI will attempt to configure DNS peering zones in the tenant project VPC to resolve the specified domains using the target network&#39;s Cloud DNS. The user must grant the dns.peer role to the Vertex AI Service Agent on the target project.
+     * Structure is documented below.
+     * @return builder
+     */
+    def dnsPeeringConfigs(args: Endofunction[com.pulumi.gcp.colab.inputs.ScheduleCreatePipelineJobRequestPipelineJobPscInterfaceConfigDnsPeeringConfigArgs.Builder]*):
+        com.pulumi.gcp.colab.inputs.ScheduleCreatePipelineJobRequestPipelineJobPscInterfaceConfigArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.colab.inputs.ScheduleCreatePipelineJobRequestPipelineJobPscInterfaceConfigDnsPeeringConfigArgs.builder
+      builder.dnsPeeringConfigs(args.map(_(argsBuilder).build)*)
+
   extension (builder: com.pulumi.gcp.colab.inputs.ScheduleState.Builder)
     /**
      * @param createNotebookExecutionJobRequest Request for google_colab_notebook_execution.
@@ -1439,3 +1584,23 @@ object colab:
         com.pulumi.gcp.colab.inputs.ScheduleState.Builder =
       val argsBuilder = com.pulumi.gcp.colab.inputs.ScheduleCreateNotebookExecutionJobRequestArgs.builder
       builder.createNotebookExecutionJobRequest(args(argsBuilder).build)
+
+    /**
+     * @param createPipelineJobRequest Request message for PipelineService.CreatePipelineJob.
+     * Structure is documented below.
+     * @return builder
+     */
+    def createPipelineJobRequest(args: Endofunction[com.pulumi.gcp.colab.inputs.ScheduleCreatePipelineJobRequestArgs.Builder]):
+        com.pulumi.gcp.colab.inputs.ScheduleState.Builder =
+      val argsBuilder = com.pulumi.gcp.colab.inputs.ScheduleCreatePipelineJobRequestArgs.builder
+      builder.createPipelineJobRequest(args(argsBuilder).build)
+
+    /**
+     * @param lastScheduledRunResponses Status of a scheduled run.
+     * Structure is documented below.
+     * @return builder
+     */
+    def lastScheduledRunResponses(args: Endofunction[com.pulumi.gcp.colab.inputs.ScheduleLastScheduledRunResponseArgs.Builder]*):
+        com.pulumi.gcp.colab.inputs.ScheduleState.Builder =
+      def argsBuilder = com.pulumi.gcp.colab.inputs.ScheduleLastScheduledRunResponseArgs.builder
+      builder.lastScheduledRunResponses(args.map(_(argsBuilder).build)*)

@@ -7591,6 +7591,48 @@ object compute:
         args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
 
+  /** A Global VM Extension Policy. */
+  def GlobalVmExtensionPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+      (args: Endofunction[com.pulumi.gcp.compute.GlobalVmExtensionPolicyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+    var argsBuilder = com.pulumi.gcp.compute.GlobalVmExtensionPolicyArgs.builder
+    conf.logicalName2physicalName(name) match
+      case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
+      case None               =>
+    com.pulumi.gcp.compute.GlobalVmExtensionPolicy(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+
+  extension (builder: com.pulumi.gcp.compute.GlobalVmExtensionPolicyArgs.Builder)
+    /**
+     * @param extensionPolicies Map from extension (eg: &#34;cloudops&#34;) to its policy configuration.
+     * Structure is documented below.
+     * @return builder
+     */
+    def extensionPolicies(args: Endofunction[com.pulumi.gcp.compute.inputs.GlobalVmExtensionPolicyExtensionPolicyArgs.Builder]*):
+        com.pulumi.gcp.compute.GlobalVmExtensionPolicyArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.compute.inputs.GlobalVmExtensionPolicyExtensionPolicyArgs.builder
+      builder.extensionPolicies(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param instanceSelectors Selector to target VMs for a policy.
+     * Structure is documented below.
+     * @return builder
+     */
+    def instanceSelectors(args: Endofunction[com.pulumi.gcp.compute.inputs.GlobalVmExtensionPolicyInstanceSelectorArgs.Builder]*):
+        com.pulumi.gcp.compute.GlobalVmExtensionPolicyArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.compute.inputs.GlobalVmExtensionPolicyInstanceSelectorArgs.builder
+      builder.instanceSelectors(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param rolloutOperation Represents the rollout operation.
+     * Structure is documented below.
+     * @return builder
+     */
+    def rolloutOperation(args: Endofunction[com.pulumi.gcp.compute.inputs.GlobalVmExtensionPolicyRolloutOperationArgs.Builder]):
+        com.pulumi.gcp.compute.GlobalVmExtensionPolicyArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.compute.inputs.GlobalVmExtensionPolicyRolloutOperationArgs.builder
+      builder.rolloutOperation(args(argsBuilder).build)
+
   /**
    * Represents a VPN gateway running in GCP. This virtual device is managed
    * by Google, but used only by you. This type of VPN Gateway allows for the creation
@@ -28821,12 +28863,9 @@ object compute:
    * portion of the overall affected area and defines criteria that must be met
    * before progressing to the subsequent wave.
    * 
-   * &gt; **Warning:** This resource is in beta, and should be used with the terraform-provider-google-beta provider.
-   * See Provider Versions for more details on beta resources.
-   * 
    * To get more information about RolloutPlan, see:
    * 
-   * * [API documentation](https://cloud.google.com/compute/docs/reference/rest/beta/rolloutPlans)
+   * * [API documentation](https://cloud.google.com/compute/docs/reference/rest/v1/rolloutPlans)
    */
   def RolloutPlan(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.gcp.compute.RolloutPlanArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
@@ -28970,12 +29009,9 @@ object compute:
    * A Named Set is a collection of IP addresses or ranges (for PREFIX type) or
    * BGP communities (for COMMUNITY type) that can be used in route policies.
    * 
-   * &gt; **Warning:** This resource is in beta, and should be used with the terraform-provider-google-beta provider.
-   * See Provider Versions for more details on beta resources.
-   * 
    * To get more information about RouterNamedSet, see:
    * 
-   * * [API documentation](https://cloud.google.com/compute/docs/reference/rest/beta/routers)
+   * * [API documentation](https://cloud.google.com/compute/docs/reference/rest/v1/routers)
    * * How-to Guides
    *     * [Google Cloud Router](https://cloud.google.com/router/docs/)
    */
@@ -34923,6 +34959,27 @@ object compute:
       val argsBuilder = com.pulumi.gcp.compute.inputs.BackendServiceLocalityLbPolicyPolicyArgs.builder
       builder.policy(args(argsBuilder).build)
 
+  extension (builder: com.pulumi.gcp.compute.inputs.BackendServiceLogConfigArgs.Builder)
+    /**
+     * @param requestHeaders This field can only be specified if logging is enabled for this backend service and if the BackendService protocol is one of HTTP, HTTPS, HTTP2 and GRPC. Contains a list of request headers to be logged.
+     * Structure is documented below.
+     * @return builder
+     */
+    def requestHeaders(args: Endofunction[com.pulumi.gcp.compute.inputs.BackendServiceLogConfigRequestHeaderArgs.Builder]*):
+        com.pulumi.gcp.compute.inputs.BackendServiceLogConfigArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.compute.inputs.BackendServiceLogConfigRequestHeaderArgs.builder
+      builder.requestHeaders(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param responseHeaders This field can only be specified if logging is enabled for this backend service and if the BackendService protocol is one of HTTP, HTTPS, HTTP2 and GRPC. Contains a list of response headers to be logged.
+     * Structure is documented below.
+     * @return builder
+     */
+    def responseHeaders(args: Endofunction[com.pulumi.gcp.compute.inputs.BackendServiceLogConfigResponseHeaderArgs.Builder]*):
+        com.pulumi.gcp.compute.inputs.BackendServiceLogConfigArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.compute.inputs.BackendServiceLogConfigResponseHeaderArgs.builder
+      builder.responseHeaders(args.map(_(argsBuilder).build)*)
+
   extension (builder: com.pulumi.gcp.compute.inputs.BackendServiceNetworkPassThroughLbTrafficPolicyArgs.Builder)
     /**
      * @param zonalAffinity When configured, new connections are load balanced across healthy backend endpoints in the local zone.
@@ -35895,6 +35952,109 @@ object compute:
         com.pulumi.gcp.compute.inputs.GlobalForwardingRuleState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.GlobalForwardingRuleServiceDirectoryRegistrationsArgs.builder
       builder.serviceDirectoryRegistrations(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.gcp.compute.inputs.GlobalVmExtensionPolicyInstanceSelectorArgs.Builder)
+    /**
+     * @param labelSelector LabelSelector matches VM labels.
+     * Structure is documented below.
+     * @return builder
+     */
+    def labelSelector(args: Endofunction[com.pulumi.gcp.compute.inputs.GlobalVmExtensionPolicyInstanceSelectorLabelSelectorArgs.Builder]):
+        com.pulumi.gcp.compute.inputs.GlobalVmExtensionPolicyInstanceSelectorArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.compute.inputs.GlobalVmExtensionPolicyInstanceSelectorLabelSelectorArgs.builder
+      builder.labelSelector(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.gcp.compute.inputs.GlobalVmExtensionPolicyRolloutOperationArgs.Builder)
+    /**
+     * @param rolloutInput Rollout input settings.
+     * Structure is documented below.
+     * @return builder
+     */
+    def rolloutInput(args: Endofunction[com.pulumi.gcp.compute.inputs.GlobalVmExtensionPolicyRolloutOperationRolloutInputArgs.Builder]):
+        com.pulumi.gcp.compute.inputs.GlobalVmExtensionPolicyRolloutOperationArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.compute.inputs.GlobalVmExtensionPolicyRolloutOperationRolloutInputArgs.builder
+      builder.rolloutInput(args(argsBuilder).build)
+
+    /**
+     * @param rolloutStatuses (Output)
+     * Rollout status.
+     * Structure is documented below.
+     * @return builder
+     */
+    def rolloutStatuses(args: Endofunction[com.pulumi.gcp.compute.inputs.GlobalVmExtensionPolicyRolloutOperationRolloutStatusArgs.Builder]*):
+        com.pulumi.gcp.compute.inputs.GlobalVmExtensionPolicyRolloutOperationArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.compute.inputs.GlobalVmExtensionPolicyRolloutOperationRolloutStatusArgs.builder
+      builder.rolloutStatuses(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.gcp.compute.inputs.GlobalVmExtensionPolicyRolloutOperationRolloutStatusArgs.Builder)
+    /**
+     * @param currentRollouts The current rollouts for the latest version of the resource.
+     * @return builder
+     */
+    def currentRollouts(args: Endofunction[com.pulumi.gcp.compute.inputs.GlobalVmExtensionPolicyRolloutOperationRolloutStatusCurrentRolloutArgs.Builder]*):
+        com.pulumi.gcp.compute.inputs.GlobalVmExtensionPolicyRolloutOperationRolloutStatusArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.compute.inputs.GlobalVmExtensionPolicyRolloutOperationRolloutStatusCurrentRolloutArgs.builder
+      builder.currentRollouts(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param previousRollouts Rollout status of the previous rollout.
+     * @return builder
+     */
+    def previousRollouts(args: Endofunction[com.pulumi.gcp.compute.inputs.GlobalVmExtensionPolicyRolloutOperationRolloutStatusPreviousRolloutArgs.Builder]*):
+        com.pulumi.gcp.compute.inputs.GlobalVmExtensionPolicyRolloutOperationRolloutStatusArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.compute.inputs.GlobalVmExtensionPolicyRolloutOperationRolloutStatusPreviousRolloutArgs.builder
+      builder.previousRollouts(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.gcp.compute.inputs.GlobalVmExtensionPolicyRolloutOperationRolloutStatusCurrentRolloutArgs.Builder)
+    /**
+     * @param locationRolloutStatuses The rollout status for each location.
+     * @return builder
+     */
+    def locationRolloutStatuses(args: Endofunction[com.pulumi.gcp.compute.inputs.GlobalVmExtensionPolicyRolloutOperationRolloutStatusCurrentRolloutLocationRolloutStatusArgs.Builder]*):
+        com.pulumi.gcp.compute.inputs.GlobalVmExtensionPolicyRolloutOperationRolloutStatusCurrentRolloutArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.compute.inputs.GlobalVmExtensionPolicyRolloutOperationRolloutStatusCurrentRolloutLocationRolloutStatusArgs.builder
+      builder.locationRolloutStatuses(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.gcp.compute.inputs.GlobalVmExtensionPolicyRolloutOperationRolloutStatusPreviousRolloutArgs.Builder)
+    /**
+     * @param locationRolloutStatuses The rollout status for each location.
+     * @return builder
+     */
+    def locationRolloutStatuses(args: Endofunction[com.pulumi.gcp.compute.inputs.GlobalVmExtensionPolicyRolloutOperationRolloutStatusPreviousRolloutLocationRolloutStatusArgs.Builder]*):
+        com.pulumi.gcp.compute.inputs.GlobalVmExtensionPolicyRolloutOperationRolloutStatusPreviousRolloutArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.compute.inputs.GlobalVmExtensionPolicyRolloutOperationRolloutStatusPreviousRolloutLocationRolloutStatusArgs.builder
+      builder.locationRolloutStatuses(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.gcp.compute.inputs.GlobalVmExtensionPolicyState.Builder)
+    /**
+     * @param extensionPolicies Map from extension (eg: &#34;cloudops&#34;) to its policy configuration.
+     * Structure is documented below.
+     * @return builder
+     */
+    def extensionPolicies(args: Endofunction[com.pulumi.gcp.compute.inputs.GlobalVmExtensionPolicyExtensionPolicyArgs.Builder]*):
+        com.pulumi.gcp.compute.inputs.GlobalVmExtensionPolicyState.Builder =
+      def argsBuilder = com.pulumi.gcp.compute.inputs.GlobalVmExtensionPolicyExtensionPolicyArgs.builder
+      builder.extensionPolicies(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param instanceSelectors Selector to target VMs for a policy.
+     * Structure is documented below.
+     * @return builder
+     */
+    def instanceSelectors(args: Endofunction[com.pulumi.gcp.compute.inputs.GlobalVmExtensionPolicyInstanceSelectorArgs.Builder]*):
+        com.pulumi.gcp.compute.inputs.GlobalVmExtensionPolicyState.Builder =
+      def argsBuilder = com.pulumi.gcp.compute.inputs.GlobalVmExtensionPolicyInstanceSelectorArgs.builder
+      builder.instanceSelectors(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param rolloutOperation Represents the rollout operation.
+     * Structure is documented below.
+     * @return builder
+     */
+    def rolloutOperation(args: Endofunction[com.pulumi.gcp.compute.inputs.GlobalVmExtensionPolicyRolloutOperationArgs.Builder]):
+        com.pulumi.gcp.compute.inputs.GlobalVmExtensionPolicyState.Builder =
+      val argsBuilder = com.pulumi.gcp.compute.inputs.GlobalVmExtensionPolicyRolloutOperationArgs.builder
+      builder.rolloutOperation(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.compute.inputs.HaVpnGatewayState.Builder)
     /**
@@ -39068,6 +39228,27 @@ object compute:
         com.pulumi.gcp.compute.inputs.RegionBackendServiceIamMemberState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionBackendServiceIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.gcp.compute.inputs.RegionBackendServiceLogConfigArgs.Builder)
+    /**
+     * @param requestHeaders This field can only be specified if logging is enabled for this backend service and if the BackendService protocol is one of HTTP, HTTPS, HTTP2 and GRPC. Contains a list of request headers to be logged.
+     * Structure is documented below.
+     * @return builder
+     */
+    def requestHeaders(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionBackendServiceLogConfigRequestHeaderArgs.Builder]*):
+        com.pulumi.gcp.compute.inputs.RegionBackendServiceLogConfigArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.compute.inputs.RegionBackendServiceLogConfigRequestHeaderArgs.builder
+      builder.requestHeaders(args.map(_(argsBuilder).build)*)
+
+    /**
+     * @param responseHeaders This field can only be specified if logging is enabled for this backend service and if the BackendService protocol is one of HTTP, HTTPS, HTTP2 and GRPC. Contains a list of response headers to be logged.
+     * Structure is documented below.
+     * @return builder
+     */
+    def responseHeaders(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionBackendServiceLogConfigResponseHeaderArgs.Builder]*):
+        com.pulumi.gcp.compute.inputs.RegionBackendServiceLogConfigArgs.Builder =
+      def argsBuilder = com.pulumi.gcp.compute.inputs.RegionBackendServiceLogConfigResponseHeaderArgs.builder
+      builder.responseHeaders(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.gcp.compute.inputs.RegionBackendServiceNetworkPassThroughLbTrafficPolicyArgs.Builder)
     /**

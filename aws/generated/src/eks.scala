@@ -240,6 +240,18 @@ object eks:
       val argsBuilder = com.pulumi.aws.eks.inputs.GetAccessEntryPlainArgs.builder
       com.pulumi.aws.eks.EksFunctions.getAccessEntryPlain(args(argsBuilder).build)
 
+    /** Data source for managing AWS EKS (Elastic Kubernetes) Access Policies. */
+    inline def getAccessPolicies(args: Endofunction[com.pulumi.aws.eks.inputs.GetAccessPoliciesArgs.Builder] = scala.Predef.identity):
+        com.pulumi.core.Output[com.pulumi.aws.eks.outputs.GetAccessPoliciesResult] =
+      val argsBuilder = com.pulumi.aws.eks.inputs.GetAccessPoliciesArgs.builder
+      com.pulumi.aws.eks.EksFunctions.getAccessPolicies(args(argsBuilder).build)
+
+    /** Data source for managing AWS EKS (Elastic Kubernetes) Access Policies. */
+    inline def getAccessPoliciesPlain(args: Endofunction[com.pulumi.aws.eks.inputs.GetAccessPoliciesPlainArgs.Builder] = scala.Predef.identity):
+        java.util.concurrent.CompletableFuture[com.pulumi.aws.eks.outputs.GetAccessPoliciesResult] =
+      val argsBuilder = com.pulumi.aws.eks.inputs.GetAccessPoliciesPlainArgs.builder
+      com.pulumi.aws.eks.EksFunctions.getAccessPoliciesPlain(args(argsBuilder).build)
+
     /** Retrieve information about an EKS add-on. */
     inline def getAddon(args: Endofunction[com.pulumi.aws.eks.inputs.GetAddonArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.eks.outputs.GetAddonResult] =

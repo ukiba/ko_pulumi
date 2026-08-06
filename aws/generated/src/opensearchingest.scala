@@ -61,6 +61,56 @@ object opensearchingest:
       val argsBuilder = com.pulumi.aws.opensearchingest.inputs.PipelineVpcOptionsArgs.builder
       builder.vpcOptions(args(argsBuilder).build)
 
+  /** Resource for managing an AWS OpenSearch Ingestion Pipeline Endpoint. */
+  def PipelineEndpoint(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+      (args: Endofunction[com.pulumi.aws.opensearchingest.PipelineEndpointArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+    val argsBuilder = com.pulumi.aws.opensearchingest.PipelineEndpointArgs.builder
+    com.pulumi.aws.opensearchingest.PipelineEndpoint(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+
+  extension (builder: com.pulumi.aws.opensearchingest.PipelineEndpointArgs.Builder)
+    def timeouts(args: Endofunction[com.pulumi.aws.opensearchingest.inputs.PipelineEndpointTimeoutsArgs.Builder]):
+        com.pulumi.aws.opensearchingest.PipelineEndpointArgs.Builder =
+      val argsBuilder = com.pulumi.aws.opensearchingest.inputs.PipelineEndpointTimeoutsArgs.builder
+      builder.timeouts(args(argsBuilder).build)
+
+    /**
+     * @param vpcOptions VPC options for the pipeline endpoint. See `vpcOptions` Block below.
+     * 
+     * The following arguments are optional:
+     * @return builder
+     */
+    def vpcOptions(args: Endofunction[com.pulumi.aws.opensearchingest.inputs.PipelineEndpointVpcOptionsArgs.Builder]):
+        com.pulumi.aws.opensearchingest.PipelineEndpointArgs.Builder =
+      val argsBuilder = com.pulumi.aws.opensearchingest.inputs.PipelineEndpointVpcOptionsArgs.builder
+      builder.vpcOptions(args(argsBuilder).build)
+
+  /** Resource for managing an AWS OpenSearch Ingestion Resource Policy. */
+  def ResourcePolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+      (args: Endofunction[com.pulumi.aws.opensearchingest.ResourcePolicyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+    val argsBuilder = com.pulumi.aws.opensearchingest.ResourcePolicyArgs.builder
+    com.pulumi.aws.opensearchingest.ResourcePolicy(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+
+  extension (builder: com.pulumi.aws.opensearchingest.inputs.PipelineEndpointState.Builder)
+    def timeouts(args: Endofunction[com.pulumi.aws.opensearchingest.inputs.PipelineEndpointTimeoutsArgs.Builder]):
+        com.pulumi.aws.opensearchingest.inputs.PipelineEndpointState.Builder =
+      val argsBuilder = com.pulumi.aws.opensearchingest.inputs.PipelineEndpointTimeoutsArgs.builder
+      builder.timeouts(args(argsBuilder).build)
+
+    /**
+     * @param vpcOptions VPC options for the pipeline endpoint. See `vpcOptions` Block below.
+     * 
+     * The following arguments are optional:
+     * @return builder
+     */
+    def vpcOptions(args: Endofunction[com.pulumi.aws.opensearchingest.inputs.PipelineEndpointVpcOptionsArgs.Builder]):
+        com.pulumi.aws.opensearchingest.inputs.PipelineEndpointState.Builder =
+      val argsBuilder = com.pulumi.aws.opensearchingest.inputs.PipelineEndpointVpcOptionsArgs.builder
+      builder.vpcOptions(args(argsBuilder).build)
+
   extension (builder: com.pulumi.aws.opensearchingest.inputs.PipelineLogPublishingOptionsArgs.Builder)
     /**
      * @param cloudwatchLogDestination The destination for OpenSearch Ingestion logs sent to Amazon CloudWatch Logs. This parameter is required if IsLoggingEnabled is set to true. See `cloudwatchLogDestination` below.

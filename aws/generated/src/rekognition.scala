@@ -93,7 +93,7 @@ object rekognition:
       builder.input(args(argsBuilder).build)
 
     /**
-     * @param notificationChannel The Amazon Simple Notification Service topic to which Amazon Rekognition publishes the completion status. See `notificationChannel`.
+     * @param notificationChannel Amazon Simple Notification Service topic to which Amazon Rekognition publishes the completion status. See `notificationChannel`.
      * @return builder
      */
     def notificationChannel(args: Endofunction[com.pulumi.aws.rekognition.inputs.StreamProcessorNotificationChannelArgs.Builder]):
@@ -111,7 +111,7 @@ object rekognition:
       builder.output(args(argsBuilder).build)
 
     /**
-     * @param regionsOfInterests Specifies locations in the frames where Amazon Rekognition checks for objects or people. See `regionsOfInterest`.
+     * @param regionsOfInterests Locations in the frames where Amazon Rekognition checks for objects or people. See `regionsOfInterest`.
      * @return builder
      */
     def regionsOfInterests(args: Endofunction[com.pulumi.aws.rekognition.inputs.StreamProcessorRegionsOfInterestArgs.Builder]*):
@@ -159,7 +159,7 @@ object rekognition:
 
   extension (builder: com.pulumi.aws.rekognition.inputs.StreamProcessorOutputArgs.Builder)
     /**
-     * @param kinesisDataStream The Amazon Kinesis Data Streams stream to which the Amazon Rekognition stream processor streams the analysis results. See `kinesisDataStream`.
+     * @param kinesisDataStream Amazon Kinesis Data Streams stream to which the Amazon Rekognition stream processor streams the analysis results. See `kinesisDataStream`.
      * @return builder
      */
     def kinesisDataStream(args: Endofunction[com.pulumi.aws.rekognition.inputs.StreamProcessorOutputKinesisDataStreamArgs.Builder]):
@@ -168,7 +168,7 @@ object rekognition:
       builder.kinesisDataStream(args(argsBuilder).build)
 
     /**
-     * @param s3Destination The Amazon S3 bucket location to which Amazon Rekognition publishes the detailed inference results of a video analysis operation. See `s3Destination`.
+     * @param s3Destination Amazon S3 bucket location to which Amazon Rekognition publishes the detailed inference results of a video analysis operation. See `s3Destination`.
      * @return builder
      */
     def s3Destination(args: Endofunction[com.pulumi.aws.rekognition.inputs.StreamProcessorOutputS3DestinationArgs.Builder]):
@@ -234,7 +234,7 @@ object rekognition:
       builder.input(args(argsBuilder).build)
 
     /**
-     * @param notificationChannel The Amazon Simple Notification Service topic to which Amazon Rekognition publishes the completion status. See `notificationChannel`.
+     * @param notificationChannel Amazon Simple Notification Service topic to which Amazon Rekognition publishes the completion status. See `notificationChannel`.
      * @return builder
      */
     def notificationChannel(args: Endofunction[com.pulumi.aws.rekognition.inputs.StreamProcessorNotificationChannelArgs.Builder]):
@@ -252,7 +252,7 @@ object rekognition:
       builder.output(args(argsBuilder).build)
 
     /**
-     * @param regionsOfInterests Specifies locations in the frames where Amazon Rekognition checks for objects or people. See `regionsOfInterest`.
+     * @param regionsOfInterests Locations in the frames where Amazon Rekognition checks for objects or people. See `regionsOfInterest`.
      * @return builder
      */
     def regionsOfInterests(args: Endofunction[com.pulumi.aws.rekognition.inputs.StreamProcessorRegionsOfInterestArgs.Builder]*):

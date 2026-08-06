@@ -50,6 +50,15 @@ object secretsmanager:
 
   extension (builder: com.pulumi.aws.secretsmanager.SecretRotationArgs.Builder)
     /**
+     * @param externalSecretRotationMetadatas Configuration block for metadata required by the external secret partner. Required for managed external secrets. See details below.
+     * @return builder
+     */
+    def externalSecretRotationMetadatas(args: Endofunction[com.pulumi.aws.secretsmanager.inputs.SecretRotationExternalSecretRotationMetadataArgs.Builder]*):
+        com.pulumi.aws.secretsmanager.SecretRotationArgs.Builder =
+      def argsBuilder = com.pulumi.aws.secretsmanager.inputs.SecretRotationExternalSecretRotationMetadataArgs.builder
+      builder.externalSecretRotationMetadatas(args.map(_(argsBuilder).build)*)
+
+    /**
      * @param rotationRules A structure that defines the rotation configuration for this secret. Defined below.
      * @return builder
      */
@@ -174,6 +183,15 @@ object secretsmanager:
       builder.filters(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.aws.secretsmanager.inputs.SecretRotationState.Builder)
+    /**
+     * @param externalSecretRotationMetadatas Configuration block for metadata required by the external secret partner. Required for managed external secrets. See details below.
+     * @return builder
+     */
+    def externalSecretRotationMetadatas(args: Endofunction[com.pulumi.aws.secretsmanager.inputs.SecretRotationExternalSecretRotationMetadataArgs.Builder]*):
+        com.pulumi.aws.secretsmanager.inputs.SecretRotationState.Builder =
+      def argsBuilder = com.pulumi.aws.secretsmanager.inputs.SecretRotationExternalSecretRotationMetadataArgs.builder
+      builder.externalSecretRotationMetadatas(args.map(_(argsBuilder).build)*)
+
     /**
      * @param rotationRules A structure that defines the rotation configuration for this secret. Defined below.
      * @return builder

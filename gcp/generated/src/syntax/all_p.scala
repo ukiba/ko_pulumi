@@ -3,6 +3,7 @@ package jp.ukiba.ko_pulumi.gcp.syntax.all
 
 import jp.ukiba.ko_pulumi
 
+export ko_pulumi.gcp.accesscontextmanager.pscEndpoint
 export ko_pulumi.gcp.accesscontextmanager.restrictedClientApplication
 export ko_pulumi.gcp.accesscontextmanager.scope
 export ko_pulumi.gcp.accesscontextmanager.scopedAccessSettings
@@ -11,6 +12,8 @@ export ko_pulumi.gcp.accesscontextmanager.sessionSettings
 export ko_pulumi.gcp.accesscontextmanager.sources
 export ko_pulumi.gcp.accesscontextmanager.spec
 export ko_pulumi.gcp.accesscontextmanager.status
+export ko_pulumi.gcp.agentidentity.threeLeggedOauth
+export ko_pulumi.gcp.agentidentity.twoLeggedOauth
 export ko_pulumi.gcp.agentregistry.source
 export ko_pulumi.gcp.agentregistry.target
 export ko_pulumi.gcp.alloydb.pscAutoConnections
@@ -81,6 +84,7 @@ export ko_pulumi.gcp.beyondcorp.proxyProtocolConfig
 export ko_pulumi.gcp.beyondcorp.resourceOverride
 export ko_pulumi.gcp.beyondcorp.serviceAccount
 export ko_pulumi.gcp.beyondcorp.serviceDiscovery
+export ko_pulumi.gcp.biglake.partitionKeys
 export ko_pulumi.gcp.biglake.partitionSpec
 export ko_pulumi.gcp.biglake.refreshOptions
 export ko_pulumi.gcp.biglake.refreshSchedule
@@ -89,6 +93,11 @@ export ko_pulumi.gcp.biglake.refreshStatuses
 export ko_pulumi.gcp.biglake.replicas
 export ko_pulumi.gcp.biglake.restrictedLocationsConfig
 export ko_pulumi.gcp.biglake.schema
+export ko_pulumi.gcp.biglake.serdeInfo
+export ko_pulumi.gcp.biglake.skewedColValues
+export ko_pulumi.gcp.biglake.skewedInfo
+export ko_pulumi.gcp.biglake.skewedKeyValuesLocations
+export ko_pulumi.gcp.biglake.sortCols
 export ko_pulumi.gcp.biglake.sortOrder
 export ko_pulumi.gcp.biglake.statuses
 export ko_pulumi.gcp.biglake.storageDescriptor
@@ -122,6 +131,7 @@ export ko_pulumi.gcp.bigquery.statuses
 export ko_pulumi.gcp.bigquery.storageDescriptor
 export ko_pulumi.gcp.bigquery.tableConstraints
 export ko_pulumi.gcp.bigquery.tableReplicationInfo
+export ko_pulumi.gcp.bigquery.tableType
 export ko_pulumi.gcp.bigquery.timePartitioning
 export ko_pulumi.gcp.bigqueryanalyticshub.publisher
 export ko_pulumi.gcp.bigqueryanalyticshub.pubsubTopic
@@ -238,6 +248,7 @@ export ko_pulumi.gcp.chronicle.relativeTime
 export ko_pulumi.gcp.chronicle.rhIsacIocSettings
 export ko_pulumi.gcp.chronicle.rightDrillDowns
 export ko_pulumi.gcp.chronicle.rsCredentials
+export ko_pulumi.gcp.chronicle.ruleDetectionsSettings
 export ko_pulumi.gcp.chronicle.salesforceSettings
 export ko_pulumi.gcp.chronicle.scopeInfo
 export ko_pulumi.gcp.chronicle.scopeInfos
@@ -377,9 +388,14 @@ export ko_pulumi.gcp.cloudtasks.rateLimits
 export ko_pulumi.gcp.cloudtasks.retryConfig
 export ko_pulumi.gcp.cloudtasks.stackdriverLoggingConfig
 export ko_pulumi.gcp.colab.persistentDiskSpec
+export ko_pulumi.gcp.colab.pipelineJob
 export ko_pulumi.gcp.colab.postStartupScriptConfig
+export ko_pulumi.gcp.colab.pscInterfaceConfig
+export ko_pulumi.gcp.colab.reservationAffinity
+export ko_pulumi.gcp.colab.runtimeConfig
 export ko_pulumi.gcp.colab.shieldedVmConfig
 export ko_pulumi.gcp.colab.softwareConfig
+export ko_pulumi.gcp.colab.templateMetadatas
 export ko_pulumi.gcp.composer.privateEnvironmentConfig
 export ko_pulumi.gcp.composer.recoveryConfig
 export ko_pulumi.gcp.composer.scheduledSnapshotsConfig
@@ -387,6 +403,7 @@ export ko_pulumi.gcp.composer.scheduler
 export ko_pulumi.gcp.composer.softwareConfig
 export ko_pulumi.gcp.composer.storageConfig
 export ko_pulumi.gcp.composer.taskLogsRetentionConfigs
+export ko_pulumi.gcp.composer.trafficRoutingConfig
 export ko_pulumi.gcp.composer.triggerer
 export ko_pulumi.gcp.compute.params
 export ko_pulumi.gcp.compute.pathMatchers
@@ -403,6 +420,7 @@ export ko_pulumi.gcp.compute.preconfiguredWafConfig
 export ko_pulumi.gcp.compute.predefinedRules
 export ko_pulumi.gcp.compute.preemptionNoticeDuration
 export ko_pulumi.gcp.compute.preservedState
+export ko_pulumi.gcp.compute.previousRollouts
 export ko_pulumi.gcp.compute.privateInterconnectInfos
 export ko_pulumi.gcp.compute.projectMaps
 export ko_pulumi.gcp.compute.pscData
@@ -435,11 +453,13 @@ export ko_pulumi.gcp.compute.resourceManagerTags
 export ko_pulumi.gcp.compute.resourcePolicies
 export ko_pulumi.gcp.compute.resourceStatuses
 export ko_pulumi.gcp.compute.resources
+export ko_pulumi.gcp.compute.responseHeaders
 export ko_pulumi.gcp.compute.responseHeadersToAdds
 export ko_pulumi.gcp.compute.retentionPolicy
 export ko_pulumi.gcp.compute.retryPolicy
 export ko_pulumi.gcp.compute.rolloutInput
 export ko_pulumi.gcp.compute.rolloutOperation
+export ko_pulumi.gcp.compute.rolloutStatuses
 export ko_pulumi.gcp.compute.routeAction
 export ko_pulumi.gcp.compute.routeRules
 export ko_pulumi.gcp.compute.rules
@@ -536,6 +556,7 @@ export ko_pulumi.gcp.container.replicaPlacements
 export ko_pulumi.gcp.container.reservationAffinity
 export ko_pulumi.gcp.container.resourceLimits
 export ko_pulumi.gcp.container.resourceUsageExportConfig
+export ko_pulumi.gcp.container.rollbackSafeUpgrade
 export ko_pulumi.gcp.container.rootVolume
 export ko_pulumi.gcp.container.rotationConfig
 export ko_pulumi.gcp.container.sandboxConfig
@@ -1222,6 +1243,7 @@ export ko_pulumi.gcp.transcoder.sampleAes
 export ko_pulumi.gcp.transcoder.sdr
 export ko_pulumi.gcp.transcoder.secretManagerKeySource
 export ko_pulumi.gcp.transcoder.segmentSettings
+export ko_pulumi.gcp.vectorsearch.sparse
 export ko_pulumi.gcp.vectorsearch.sparseVector
 export ko_pulumi.gcp.vertex.packageSpec
 export ko_pulumi.gcp.vertex.persistentDiskSpec
@@ -1236,12 +1258,16 @@ export ko_pulumi.gcp.vertex.pscInterfaceConfig
 export ko_pulumi.gcp.vertex.pythonSpec
 export ko_pulumi.gcp.vertex.ragManagedDbConfig
 export ko_pulumi.gcp.vertex.reservationAffinity
+export ko_pulumi.gcp.vertex.resourcePools
+export ko_pulumi.gcp.vertex.resourceRuntimeSpec
+export ko_pulumi.gcp.vertex.resourceRuntimes
 export ko_pulumi.gcp.vertex.runtimeConfig
 export ko_pulumi.gcp.vertex.scaled
 export ko_pulumi.gcp.vertex.scaling
 export ko_pulumi.gcp.vertex.schemaConfigs
 export ko_pulumi.gcp.vertex.secretEnvs
 export ko_pulumi.gcp.vertex.secretRef
+export ko_pulumi.gcp.vertex.serviceAccountSpec
 export ko_pulumi.gcp.vertex.similaritySearchConfig
 export ko_pulumi.gcp.vertex.snapshotAnalysis
 export ko_pulumi.gcp.vertex.sourceCodeSpec

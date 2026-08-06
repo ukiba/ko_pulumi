@@ -5,6 +5,8 @@ import jp.ukiba.ko_pulumi
 
 export ko_pulumi.gcp.accesscontextmanager.accessLevels
 export ko_pulumi.gcp.accesscontextmanager.activeSettings
+export ko_pulumi.gcp.accesscontextmanager.addRequestHeader
+export ko_pulumi.gcp.accesscontextmanager.allowedServicePatterns
 export ko_pulumi.gcp.accesscontextmanager.basic
 export ko_pulumi.gcp.accesscontextmanager.clientScope
 export ko_pulumi.gcp.accesscontextmanager.condition
@@ -16,6 +18,8 @@ export ko_pulumi.gcp.accesscontextmanager.egressFrom
 export ko_pulumi.gcp.accesscontextmanager.egressPolicies
 export ko_pulumi.gcp.accesscontextmanager.egressTo
 export ko_pulumi.gcp.accesscontextmanager.expr
+export ko_pulumi.gcp.agentidentity.apiKey
+export ko_pulumi.gcp.agentidentity.authProviderTypeParams
 export ko_pulumi.gcp.agentregistry.agentSpec
 export ko_pulumi.gcp.agentregistry.authProviderBinding
 export ko_pulumi.gcp.agentregistry.endpointSpec
@@ -125,6 +129,7 @@ export ko_pulumi.gcp.beyondcorp.egressPolicy
 export ko_pulumi.gcp.beyondcorp.endpointMatchers
 export ko_pulumi.gcp.beyondcorp.endpoints
 export ko_pulumi.gcp.beyondcorp.external
+export ko_pulumi.gcp.biglake.columns
 export ko_pulumi.gcp.biglake.condition
 export ko_pulumi.gcp.bigquery.accessRole
 export ko_pulumi.gcp.bigquery.accesses
@@ -365,6 +370,7 @@ export ko_pulumi.gcp.chronicle.duoUserContextSettings
 export ko_pulumi.gcp.chronicle.dynamicParsing
 export ko_pulumi.gcp.chronicle.encode
 export ko_pulumi.gcp.chronicle.entityCounts
+export ko_pulumi.gcp.chronicle.entityGraphSettings
 export ko_pulumi.gcp.chronicle.entityPopulationMechanism
 export ko_pulumi.gcp.chronicle.entries
 export ko_pulumi.gcp.chronicle.executionIntervals
@@ -453,10 +459,12 @@ export ko_pulumi.gcp.cloudtasks.condition
 export ko_pulumi.gcp.colab.colabImage
 export ko_pulumi.gcp.colab.condition
 export ko_pulumi.gcp.colab.createNotebookExecutionJobRequest
+export ko_pulumi.gcp.colab.createPipelineJobRequest
 export ko_pulumi.gcp.colab.customEnvironmentSpec
 export ko_pulumi.gcp.colab.dataPersistentDiskSpec
 export ko_pulumi.gcp.colab.dataformRepositorySource
 export ko_pulumi.gcp.colab.directNotebookSource
+export ko_pulumi.gcp.colab.dnsPeeringConfigs
 export ko_pulumi.gcp.colab.encryptionSpec
 export ko_pulumi.gcp.colab.envs
 export ko_pulumi.gcp.colab.eucConfig
@@ -533,6 +541,7 @@ export ko_pulumi.gcp.compute.consistentHash
 export ko_pulumi.gcp.compute.consumerAcceptLists
 export ko_pulumi.gcp.compute.corsPolicy
 export ko_pulumi.gcp.compute.cpuUtilization
+export ko_pulumi.gcp.compute.currentRollouts
 export ko_pulumi.gcp.compute.customAccount
 export ko_pulumi.gcp.compute.customErrorResponsePolicy
 export ko_pulumi.gcp.compute.customLearnedIpRanges
@@ -1362,6 +1371,7 @@ export ko_pulumi.gcp.transcoder.elementaryStreams
 export ko_pulumi.gcp.transcoder.encryptions
 export ko_pulumi.gcp.vectorsearch.autoscalingSpec
 export ko_pulumi.gcp.vectorsearch.dedicatedInfrastructure
+export ko_pulumi.gcp.vectorsearch.dense
 export ko_pulumi.gcp.vectorsearch.denseScann
 export ko_pulumi.gcp.vectorsearch.denseVector
 export ko_pulumi.gcp.vectorsearch.encryptionSpec
@@ -1374,6 +1384,7 @@ export ko_pulumi.gcp.vertex.authProvider
 export ko_pulumi.gcp.vertex.autoScaling
 export ko_pulumi.gcp.vertex.automaticResources
 export ko_pulumi.gcp.vertex.autoscalingMetricSpecs
+export ko_pulumi.gcp.vertex.autoscalingSpec
 export ko_pulumi.gcp.vertex.basic
 export ko_pulumi.gcp.vertex.bigQuery
 export ko_pulumi.gcp.vertex.bigQuerySource
@@ -1403,11 +1414,13 @@ export ko_pulumi.gcp.vertex.deployedModels
 export ko_pulumi.gcp.vertex.deploymentSpec
 export ko_pulumi.gcp.vertex.developerConnectSource
 export ko_pulumi.gcp.vertex.directNotebookSource
+export ko_pulumi.gcp.vertex.diskSpec
 export ko_pulumi.gcp.vertex.dnsPeeringConfigs
 export ko_pulumi.gcp.vertex.embeddingManagement
 export ko_pulumi.gcp.vertex.encryptionSpec
 export ko_pulumi.gcp.vertex.endpointConfig
 export ko_pulumi.gcp.vertex.envs
+export ko_pulumi.gcp.vertex.errors
 export ko_pulumi.gcp.vertex.exampleStoreConfig
 export ko_pulumi.gcp.vertex.exec
 export ko_pulumi.gcp.vmwareengine.autoscalingPolicies

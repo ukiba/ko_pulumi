@@ -384,6 +384,15 @@ object composer:
       val argsBuilder = com.pulumi.gcp.composer.inputs.EnvironmentConfigNodeConfigIpAllocationPolicyArgs.builder
       builder.ipAllocationPolicy(args(argsBuilder).build)
 
+    /**
+     * @param trafficRoutingConfig Traffic routing configuration for Cloud Composer environment.
+     * @return builder
+     */
+    def trafficRoutingConfig(args: Endofunction[com.pulumi.gcp.composer.inputs.EnvironmentConfigNodeConfigTrafficRoutingConfigArgs.Builder]):
+        com.pulumi.gcp.composer.inputs.EnvironmentConfigNodeConfigArgs.Builder =
+      val argsBuilder = com.pulumi.gcp.composer.inputs.EnvironmentConfigNodeConfigTrafficRoutingConfigArgs.builder
+      builder.trafficRoutingConfig(args(argsBuilder).build)
+
   extension (builder: com.pulumi.gcp.composer.inputs.EnvironmentConfigRecoveryConfigArgs.Builder)
     /**
      * @param scheduledSnapshotsConfig The configuration settings for scheduled snapshots.

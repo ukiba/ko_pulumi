@@ -4,6 +4,7 @@ package jp.ukiba.ko_pulumi.gcp.syntax.all
 import jp.ukiba.ko_pulumi
 
 export ko_pulumi.gcp.accesscontextmanager.methodSelectors
+export ko_pulumi.gcp.accesscontextmanager.modifiers
 export ko_pulumi.gcp.accesscontextmanager.operations
 export ko_pulumi.gcp.accesscontextmanager.osConstraints
 export ko_pulumi.gcp.agentregistry.mcpServerSpec
@@ -140,6 +141,7 @@ export ko_pulumi.gcp.cloudscheduler.oidcToken
 export ko_pulumi.gcp.cloudsecuritycompliance.oneofValue
 export ko_pulumi.gcp.cloudtasks.oauthToken
 export ko_pulumi.gcp.cloudtasks.oidcToken
+export ko_pulumi.gcp.colab.lastScheduledRunResponses
 export ko_pulumi.gcp.colab.machineSpec
 export ko_pulumi.gcp.colab.networkSpec
 export ko_pulumi.gcp.colab.notebookExecutionJob
@@ -165,6 +167,7 @@ export ko_pulumi.gcp.compute.localSsdRecoveryTimeouts
 export ko_pulumi.gcp.compute.localSsds
 export ko_pulumi.gcp.compute.localityLbPolicies
 export ko_pulumi.gcp.compute.localizedMessages
+export ko_pulumi.gcp.compute.locationRolloutStatuses
 export ko_pulumi.gcp.compute.locationSelector
 export ko_pulumi.gcp.compute.locations
 export ko_pulumi.gcp.compute.logConfig
@@ -247,6 +250,7 @@ export ko_pulumi.gcp.container.nodeKubeletConfig
 export ko_pulumi.gcp.container.nodePoolAutoConfig
 export ko_pulumi.gcp.container.nodePoolDefaults
 export ko_pulumi.gcp.container.nodePools
+export ko_pulumi.gcp.container.nodeReadinessConfig
 export ko_pulumi.gcp.container.notificationConfig
 export ko_pulumi.gcp.container.oidcConfig
 export ko_pulumi.gcp.databasemigrationservice.machineConfig
@@ -401,6 +405,7 @@ export ko_pulumi.gcp.gkehub.mesh
 export ko_pulumi.gcp.gkehub.monitoring
 export ko_pulumi.gcp.gkehub.multiclusteringress
 export ko_pulumi.gcp.gkehub.oci
+export ko_pulumi.gcp.gkehub.operationalStates
 export ko_pulumi.gcp.gkeonprem.kubeletConfig
 export ko_pulumi.gcp.gkeonprem.loadBalancer
 export ko_pulumi.gcp.gkeonprem.loadBalancerNodePoolConfig
