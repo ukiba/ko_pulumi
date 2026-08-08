@@ -36,7 +36,7 @@ object fis:
       builder.actions(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param experimentOptions The experiment options for the experiment template. See experimentOptions below for more details!
+     * @param experimentOptions Experiment options for the experiment template. See experimentOptions below for more details!
      * @return builder
      */
     def experimentOptions(args: Endofunction[com.pulumi.aws.fis.inputs.ExperimentTemplateExperimentOptionsArgs.Builder]):
@@ -45,7 +45,7 @@ object fis:
       builder.experimentOptions(args(argsBuilder).build)
 
     /**
-     * @param experimentReportConfiguration The configuration for [experiment reporting](https://docs.aws.amazon.com/fis/latest/userguide/experiment-report-configuration.html). See below.
+     * @param experimentReportConfiguration Configuration for [experiment reporting](https://docs.aws.amazon.com/fis/latest/userguide/experiment-report-configuration.html). See below.
      * @return builder
      */
     def experimentReportConfiguration(args: Endofunction[com.pulumi.aws.fis.inputs.ExperimentTemplateExperimentReportConfigurationArgs.Builder]):
@@ -54,7 +54,7 @@ object fis:
       builder.experimentReportConfiguration(args(argsBuilder).build)
 
     /**
-     * @param logConfiguration The configuration for experiment logging. See below.
+     * @param logConfiguration Configuration for experiment logging. See below.
      * @return builder
      */
     def logConfiguration(args: Endofunction[com.pulumi.aws.fis.inputs.ExperimentTemplateLogConfigurationArgs.Builder]):
@@ -130,7 +130,7 @@ object fis:
 
   extension (builder: com.pulumi.aws.fis.inputs.ExperimentTemplateExperimentReportConfigurationArgs.Builder)
     /**
-     * @param dataSources The data sources for the experiment report. See below.
+     * @param dataSources Data sources for the experiment report. See below.
      * @return builder
      */
     def dataSources(args: Endofunction[com.pulumi.aws.fis.inputs.ExperimentTemplateExperimentReportConfigurationDataSourcesArgs.Builder]):
@@ -139,7 +139,7 @@ object fis:
       builder.dataSources(args(argsBuilder).build)
 
     /**
-     * @param outputs The outputs for the experiment report. See below.
+     * @param outputs Outputs for the experiment report. See below.
      * @return builder
      */
     def outputs(args: Endofunction[com.pulumi.aws.fis.inputs.ExperimentTemplateExperimentReportConfigurationOutputsArgs.Builder]):
@@ -149,7 +149,7 @@ object fis:
 
   extension (builder: com.pulumi.aws.fis.inputs.ExperimentTemplateExperimentReportConfigurationDataSourcesArgs.Builder)
     /**
-     * @param cloudwatchDashboards The data sources for the experiment report. See below.
+     * @param cloudwatchDashboards Data sources for the experiment report. See below.
      * @return builder
      */
     def cloudwatchDashboards(args: Endofunction[com.pulumi.aws.fis.inputs.ExperimentTemplateExperimentReportConfigurationDataSourcesCloudwatchDashboardArgs.Builder]*):
@@ -159,7 +159,7 @@ object fis:
 
   extension (builder: com.pulumi.aws.fis.inputs.ExperimentTemplateExperimentReportConfigurationOutputsArgs.Builder)
     /**
-     * @param s3Configuration The data sources for the experiment report. See below.
+     * @param s3Configuration Data sources for the experiment report. See below.
      * @return builder
      */
     def s3Configuration(args: Endofunction[com.pulumi.aws.fis.inputs.ExperimentTemplateExperimentReportConfigurationOutputsS3ConfigurationArgs.Builder]):
@@ -169,7 +169,7 @@ object fis:
 
   extension (builder: com.pulumi.aws.fis.inputs.ExperimentTemplateLogConfigurationArgs.Builder)
     /**
-     * @param cloudwatchLogsConfiguration The configuration for experiment logging to Amazon CloudWatch Logs. See below.
+     * @param cloudwatchLogsConfiguration Configuration for experiment logging to Amazon CloudWatch Logs. See below.
      * @return builder
      */
     def cloudwatchLogsConfiguration(args: Endofunction[com.pulumi.aws.fis.inputs.ExperimentTemplateLogConfigurationCloudwatchLogsConfigurationArgs.Builder]):
@@ -178,7 +178,7 @@ object fis:
       builder.cloudwatchLogsConfiguration(args(argsBuilder).build)
 
     /**
-     * @param s3Configuration The configuration for experiment logging to Amazon S3. See below.
+     * @param s3Configuration Configuration for experiment logging to Amazon S3. See below.
      * @return builder
      */
     def s3Configuration(args: Endofunction[com.pulumi.aws.fis.inputs.ExperimentTemplateLogConfigurationS3ConfigurationArgs.Builder]):
@@ -197,7 +197,7 @@ object fis:
       builder.actions(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param experimentOptions The experiment options for the experiment template. See experimentOptions below for more details!
+     * @param experimentOptions Experiment options for the experiment template. See experimentOptions below for more details!
      * @return builder
      */
     def experimentOptions(args: Endofunction[com.pulumi.aws.fis.inputs.ExperimentTemplateExperimentOptionsArgs.Builder]):
@@ -206,7 +206,7 @@ object fis:
       builder.experimentOptions(args(argsBuilder).build)
 
     /**
-     * @param experimentReportConfiguration The configuration for [experiment reporting](https://docs.aws.amazon.com/fis/latest/userguide/experiment-report-configuration.html). See below.
+     * @param experimentReportConfiguration Configuration for [experiment reporting](https://docs.aws.amazon.com/fis/latest/userguide/experiment-report-configuration.html). See below.
      * @return builder
      */
     def experimentReportConfiguration(args: Endofunction[com.pulumi.aws.fis.inputs.ExperimentTemplateExperimentReportConfigurationArgs.Builder]):
@@ -215,7 +215,7 @@ object fis:
       builder.experimentReportConfiguration(args(argsBuilder).build)
 
     /**
-     * @param logConfiguration The configuration for experiment logging. See below.
+     * @param logConfiguration Configuration for experiment logging. See below.
      * @return builder
      */
     def logConfiguration(args: Endofunction[com.pulumi.aws.fis.inputs.ExperimentTemplateLogConfigurationArgs.Builder]):

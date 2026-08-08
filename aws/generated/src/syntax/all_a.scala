@@ -19,7 +19,9 @@ export ko_pulumi.aws.alb.connectionLogs
 export ko_pulumi.aws.alb.defaultActions
 export ko_pulumi.aws.alb.dnsFailover
 export ko_pulumi.aws.amp.amp
+export ko_pulumi.aws.amp.cloudwatch
 export ko_pulumi.aws.amp.cloudwatchLogs
+export ko_pulumi.aws.amp.configuration
 export ko_pulumi.aws.amp.destination
 export ko_pulumi.aws.amp.destinations
 export ko_pulumi.aws.amp.eks
@@ -527,6 +529,7 @@ export ko_pulumi.aws.ecs.baselineEbsBandwidthMbps
 export ko_pulumi.aws.ecs.canaryConfiguration
 export ko_pulumi.aws.ecs.capabilities
 export ko_pulumi.aws.ecs.capacityProviderStrategies
+export ko_pulumi.aws.ecs.capacityReservations
 export ko_pulumi.aws.ecs.clientAlias
 export ko_pulumi.aws.ecs.configuration
 export ko_pulumi.aws.ecs.containerDefinitions
@@ -650,6 +653,7 @@ export ko_pulumi.aws.glue.catalogTargets
 export ko_pulumi.aws.glue.cloudwatchEncryption
 export ko_pulumi.aws.glue.columns
 export ko_pulumi.aws.glue.command
+export ko_pulumi.aws.glue.compactionConfiguration
 export ko_pulumi.aws.glue.conditions
 export ko_pulumi.aws.glue.configuration
 export ko_pulumi.aws.glue.connectionPasswordEncryption
@@ -868,9 +872,17 @@ export ko_pulumi.aws.macie2.ands
 export ko_pulumi.aws.macie2.bucketCriteria
 export ko_pulumi.aws.macie2.bucketDefinitions
 export ko_pulumi.aws.macie2.excludes
+export ko_pulumi.aws.mailmanager.actions
+export ko_pulumi.aws.mailmanager.addHeader
 export ko_pulumi.aws.mailmanager.analysis
+export ko_pulumi.aws.mailmanager.archive
 export ko_pulumi.aws.mailmanager.booleanExpression
+export ko_pulumi.aws.mailmanager.bounce
 export ko_pulumi.aws.mailmanager.conditions
+export ko_pulumi.aws.mailmanager.deliverToMailbox
+export ko_pulumi.aws.mailmanager.deliverToQBusiness
+export ko_pulumi.aws.mailmanager.dmarcExpression
+export ko_pulumi.aws.mailmanager.drop
 export ko_pulumi.aws.mailmanager.evaluate
 export ko_pulumi.aws.medialive.aacSettings
 export ko_pulumi.aws.medialive.ac3Settings
@@ -1077,7 +1089,9 @@ export ko_pulumi.aws.redshiftserverless.endpoints
 export ko_pulumi.aws.rekognition.boundingBox
 export ko_pulumi.aws.rekognition.connectedHome
 export ko_pulumi.aws.rekognition.dataSharingPreference
+export ko_pulumi.aws.resiliencehub.availabilitySlo
 export ko_pulumi.aws.resiliencehub.az
+export ko_pulumi.aws.resiliencehub.dataRecovery
 export ko_pulumi.aws.resourcegroups.configurations
 export ko_pulumi.aws.route53.aliasTarget
 export ko_pulumi.aws.route53.aliases

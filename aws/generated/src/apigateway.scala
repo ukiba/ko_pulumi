@@ -677,7 +677,7 @@ object apigateway:
 
   extension (builder: com.pulumi.aws.apigateway.UsagePlanArgs.Builder)
     /**
-     * @param apiStages Associated API stages of the usage plan.
+     * @param apiStages Associated API stages of the usage plan. See `apiStages` Block below.
      * @return builder
      */
     def apiStages(args: Endofunction[com.pulumi.aws.apigateway.inputs.UsagePlanApiStageArgs.Builder]*):
@@ -686,7 +686,7 @@ object apigateway:
       builder.apiStages(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param quotaSettings The quota settings of the usage plan.
+     * @param quotaSettings Quota settings of the usage plan. See `quotaSettings` Block below.
      * @return builder
      */
     def quotaSettings(args: Endofunction[com.pulumi.aws.apigateway.inputs.UsagePlanQuotaSettingsArgs.Builder]):
@@ -695,7 +695,7 @@ object apigateway:
       builder.quotaSettings(args(argsBuilder).build)
 
     /**
-     * @param throttleSettings The throttling limits of the usage plan.
+     * @param throttleSettings Throttling limits of the usage plan. See `throttleSettings` Block below.
      * @return builder
      */
     def throttleSettings(args: Endofunction[com.pulumi.aws.apigateway.inputs.UsagePlanThrottleSettingsArgs.Builder]):
@@ -736,7 +736,7 @@ object apigateway:
 
   extension (builder: com.pulumi.aws.apigateway.inputs.AccountState.Builder)
     /**
-     * @param throttleSettings Account-Level throttle settings. See exported fields below.
+     * @param throttleSettings Account-Level throttle settings, including the burst limit (absolute maximum number of times API Gateway allows the API to be called per second) and the rate limit (number of times API Gateway allows the API to be called per second on average).
      * @return builder
      */
     def throttleSettings(args: Endofunction[com.pulumi.aws.apigateway.inputs.AccountThrottleSettingArgs.Builder]*):
@@ -830,7 +830,7 @@ object apigateway:
 
   extension (builder: com.pulumi.aws.apigateway.inputs.UsagePlanApiStageArgs.Builder)
     /**
-     * @param throttles The throttling limits of the usage plan.
+     * @param throttles Throttling limits applied to the API stage. See `throttle` Block below.
      * @return builder
      */
     def throttles(args: Endofunction[com.pulumi.aws.apigateway.inputs.UsagePlanApiStageThrottleArgs.Builder]*):
@@ -840,7 +840,7 @@ object apigateway:
 
   extension (builder: com.pulumi.aws.apigateway.inputs.UsagePlanState.Builder)
     /**
-     * @param apiStages Associated API stages of the usage plan.
+     * @param apiStages Associated API stages of the usage plan. See `apiStages` Block below.
      * @return builder
      */
     def apiStages(args: Endofunction[com.pulumi.aws.apigateway.inputs.UsagePlanApiStageArgs.Builder]*):
@@ -849,7 +849,7 @@ object apigateway:
       builder.apiStages(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param quotaSettings The quota settings of the usage plan.
+     * @param quotaSettings Quota settings of the usage plan. See `quotaSettings` Block below.
      * @return builder
      */
     def quotaSettings(args: Endofunction[com.pulumi.aws.apigateway.inputs.UsagePlanQuotaSettingsArgs.Builder]):
@@ -858,7 +858,7 @@ object apigateway:
       builder.quotaSettings(args(argsBuilder).build)
 
     /**
-     * @param throttleSettings The throttling limits of the usage plan.
+     * @param throttleSettings Throttling limits of the usage plan. See `throttleSettings` Block below.
      * @return builder
      */
     def throttleSettings(args: Endofunction[com.pulumi.aws.apigateway.inputs.UsagePlanThrottleSettingsArgs.Builder]):

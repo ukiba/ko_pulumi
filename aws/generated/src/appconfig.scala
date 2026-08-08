@@ -121,7 +121,7 @@ object appconfig:
 
   extension (builder: com.pulumi.aws.appconfig.ConfigurationProfileArgs.Builder)
     /**
-     * @param validators Set of methods for validating the configuration. Maximum of 2. See Validator below for more details.
+     * @param validators Set of methods for validating the configuration. Maximum of 2. See `validator` Block below for more details.
      * @return builder
      */
     def validators(args: Endofunction[com.pulumi.aws.appconfig.inputs.ConfigurationProfileValidatorArgs.Builder]*):
@@ -238,7 +238,7 @@ object appconfig:
 
   extension (builder: com.pulumi.aws.appconfig.ExtensionArgs.Builder)
     /**
-     * @param actionPoints The action points defined in the extension. Detailed below.
+     * @param actionPoints Action points defined in the extension. Detailed below.
      * @return builder
      */
     def actionPoints(args: Endofunction[com.pulumi.aws.appconfig.inputs.ExtensionActionPointArgs.Builder]*):
@@ -247,7 +247,7 @@ object appconfig:
       builder.actionPoints(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param parameters The parameters accepted by the extension. You specify parameter values when you associate the extension to an AppConfig resource by using the CreateExtensionAssociation API action. For Lambda extension actions, these parameters are included in the Lambda request object. Detailed below.
+     * @param parameters Parameters accepted by the extension. You specify parameter values when you associate the extension to an AppConfig resource by using the CreateExtensionAssociation API action. For Lambda extension actions, these parameters are included in the Lambda request object. Detailed below.
      * @return builder
      */
     def parameters(args: Endofunction[com.pulumi.aws.appconfig.inputs.ExtensionParameterArgs.Builder]*):
@@ -273,7 +273,7 @@ object appconfig:
 
   extension (builder: com.pulumi.aws.appconfig.inputs.ConfigurationProfileState.Builder)
     /**
-     * @param validators Set of methods for validating the configuration. Maximum of 2. See Validator below for more details.
+     * @param validators Set of methods for validating the configuration. Maximum of 2. See `validator` Block below for more details.
      * @return builder
      */
     def validators(args: Endofunction[com.pulumi.aws.appconfig.inputs.ConfigurationProfileValidatorArgs.Builder]*):
@@ -303,7 +303,7 @@ object appconfig:
 
   extension (builder: com.pulumi.aws.appconfig.inputs.ExtensionActionPointArgs.Builder)
     /**
-     * @param actions An action defines the tasks the extension performs during the AppConfig workflow. Detailed below.
+     * @param actions Action the extension performs during the AppConfig workflow. Detailed below.
      * @return builder
      */
     def actions(args: Endofunction[com.pulumi.aws.appconfig.inputs.ExtensionActionPointActionArgs.Builder]*):
@@ -313,7 +313,7 @@ object appconfig:
 
   extension (builder: com.pulumi.aws.appconfig.inputs.ExtensionState.Builder)
     /**
-     * @param actionPoints The action points defined in the extension. Detailed below.
+     * @param actionPoints Action points defined in the extension. Detailed below.
      * @return builder
      */
     def actionPoints(args: Endofunction[com.pulumi.aws.appconfig.inputs.ExtensionActionPointArgs.Builder]*):
@@ -322,7 +322,7 @@ object appconfig:
       builder.actionPoints(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param parameters The parameters accepted by the extension. You specify parameter values when you associate the extension to an AppConfig resource by using the CreateExtensionAssociation API action. For Lambda extension actions, these parameters are included in the Lambda request object. Detailed below.
+     * @param parameters Parameters accepted by the extension. You specify parameter values when you associate the extension to an AppConfig resource by using the CreateExtensionAssociation API action. For Lambda extension actions, these parameters are included in the Lambda request object. Detailed below.
      * @return builder
      */
     def parameters(args: Endofunction[com.pulumi.aws.appconfig.inputs.ExtensionParameterArgs.Builder]*):

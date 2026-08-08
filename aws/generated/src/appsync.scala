@@ -24,7 +24,7 @@ object appsync:
 
   extension (builder: com.pulumi.aws.appsync.ApiArgs.Builder)
     /**
-     * @param eventConfig Configuration for the Event API. See Event Config below.
+     * @param eventConfig Configuration for the Event API. See `eventConfig` Block below.
      * @return builder
      */
     def eventConfig(args: Endofunction[com.pulumi.aws.appsync.inputs.ApiEventConfigArgs.Builder]):
@@ -68,7 +68,7 @@ object appsync:
 
   extension (builder: com.pulumi.aws.appsync.ChannelNamespaceArgs.Builder)
     /**
-     * @param handlerConfigs Configuration for the `onPublish` and `onSubscribe` handlers. See Handler Configs below.
+     * @param handlerConfigs Configuration for the `onPublish` and `onSubscribe` handlers. See `handlerConfigs` below.
      * @return builder
      */
     def handlerConfigs(args: Endofunction[com.pulumi.aws.appsync.inputs.ChannelNamespaceHandlerConfigsArgs.Builder]):
@@ -77,7 +77,7 @@ object appsync:
       builder.handlerConfigs(args(argsBuilder).build)
 
     /**
-     * @param publishAuthModes Authorization modes to use for publishing messages on the channel namespace. This configuration overrides the default API authorization configuration. See Auth Modes below.
+     * @param publishAuthModes Authorization modes to use for publishing messages on the channel namespace. This configuration overrides the default API authorization configuration. See `publishAuthMode` below.
      * @return builder
      */
     def publishAuthModes(args: Endofunction[com.pulumi.aws.appsync.inputs.ChannelNamespacePublishAuthModeArgs.Builder]*):
@@ -86,7 +86,7 @@ object appsync:
       builder.publishAuthModes(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param subscribeAuthModes Authorization modes to use for subscribing to messages on the channel namespace. This configuration overrides the default API authorization configuration. See Auth Modes below.
+     * @param subscribeAuthModes Authorization modes to use for subscribing to messages on the channel namespace. This configuration overrides the default API authorization configuration. See `subscribeAuthMode` below.
      * @return builder
      */
     def subscribeAuthModes(args: Endofunction[com.pulumi.aws.appsync.inputs.ChannelNamespaceSubscribeAuthModeArgs.Builder]*):
@@ -198,7 +198,7 @@ object appsync:
 
   extension (builder: com.pulumi.aws.appsync.FunctionArgs.Builder)
     /**
-     * @param runtime Describes a runtime used by an AWS AppSync pipeline resolver or AWS AppSync function. Specifies the name and version of the runtime to use. Note that if a runtime is specified, code must also be specified. See `runtime` Block for details.
+     * @param runtime Runtime used by an AWS AppSync pipeline resolver or AWS AppSync function. Specifies the name and version of the runtime to use. Note that if a runtime is specified, code must also be specified. See `runtime` Block for details.
      * @return builder
      */
     def runtime(args: Endofunction[com.pulumi.aws.appsync.inputs.FunctionRuntimeArgs.Builder]):
@@ -207,7 +207,7 @@ object appsync:
       builder.runtime(args(argsBuilder).build)
 
     /**
-     * @param syncConfig Describes a Sync configuration for a resolver. See `syncConfig` Block for details.
+     * @param syncConfig Sync configuration for a resolver. See `syncConfig` Block for details.
      * @return builder
      */
     def syncConfig(args: Endofunction[com.pulumi.aws.appsync.inputs.FunctionSyncConfigArgs.Builder]):
@@ -298,7 +298,7 @@ object appsync:
 
   extension (builder: com.pulumi.aws.appsync.ResolverArgs.Builder)
     /**
-     * @param cachingConfig The Caching Config. See Caching Config.
+     * @param cachingConfig Caching Config. See Caching Config.
      * @return builder
      */
     def cachingConfig(args: Endofunction[com.pulumi.aws.appsync.inputs.ResolverCachingConfigArgs.Builder]):
@@ -307,7 +307,7 @@ object appsync:
       builder.cachingConfig(args(argsBuilder).build)
 
     /**
-     * @param pipelineConfig The caching configuration for the resolver. See Pipeline Config.
+     * @param pipelineConfig Caching configuration for the resolver. See Pipeline Config.
      * @return builder
      */
     def pipelineConfig(args: Endofunction[com.pulumi.aws.appsync.inputs.ResolverPipelineConfigArgs.Builder]):
@@ -316,7 +316,7 @@ object appsync:
       builder.pipelineConfig(args(argsBuilder).build)
 
     /**
-     * @param runtime Describes a runtime used by an AWS AppSync pipeline resolver or AWS AppSync function. Specifies the name and version of the runtime to use. Note that if a runtime is specified, code must also be specified. See Runtime.
+     * @param runtime Runtime used by an AWS AppSync pipeline resolver or AWS AppSync function. Specifies the name and version of the runtime to use. Note that if a runtime is specified, code must also be specified. See Runtime.
      * @return builder
      */
     def runtime(args: Endofunction[com.pulumi.aws.appsync.inputs.ResolverRuntimeArgs.Builder]):
@@ -325,7 +325,7 @@ object appsync:
       builder.runtime(args(argsBuilder).build)
 
     /**
-     * @param syncConfig Describes a Sync configuration for a resolver. See Sync Config.
+     * @param syncConfig Sync configuration for a resolver. See Sync Config.
      * @return builder
      */
     def syncConfig(args: Endofunction[com.pulumi.aws.appsync.inputs.ResolverSyncConfigArgs.Builder]):
@@ -342,6 +342,10 @@ object appsync:
         resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
 
   extension (builder: com.pulumi.aws.appsync.SourceApiAssociationArgs.Builder)
+    /**
+     * @param sourceApiAssociationConfigs Source API Association configuration. See `sourceApiAssociationConfig` Block for details.
+     * @return builder
+     */
     def sourceApiAssociationConfigs(args: Endofunction[com.pulumi.aws.appsync.inputs.SourceApiAssociationSourceApiAssociationConfigArgs.Builder]*):
         com.pulumi.aws.appsync.SourceApiAssociationArgs.Builder =
       def argsBuilder = com.pulumi.aws.appsync.inputs.SourceApiAssociationSourceApiAssociationConfigArgs.builder
@@ -362,7 +366,7 @@ object appsync:
 
   extension (builder: com.pulumi.aws.appsync.inputs.ApiEventConfigArgs.Builder)
     /**
-     * @param authProviders List of authentication providers. See Auth Providers below.
+     * @param authProviders List of authentication providers. See `event_config.auth_provider` Block below.
      * @return builder
      */
     def authProviders(args: Endofunction[com.pulumi.aws.appsync.inputs.ApiEventConfigAuthProviderArgs.Builder]*):
@@ -371,7 +375,7 @@ object appsync:
       builder.authProviders(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param connectionAuthModes List of authentication modes for connections. See Auth Modes below.
+     * @param connectionAuthModes List of authentication modes for connections. See `event_config.connection_auth_mode` Block below.
      * @return builder
      */
     def connectionAuthModes(args: Endofunction[com.pulumi.aws.appsync.inputs.ApiEventConfigConnectionAuthModeArgs.Builder]*):
@@ -380,7 +384,7 @@ object appsync:
       builder.connectionAuthModes(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param defaultPublishAuthModes List of default authentication modes for publishing. See Auth Modes below.
+     * @param defaultPublishAuthModes List of default authentication modes for publishing. See `event_config.default_publish_auth_mode` Block below.
      * @return builder
      */
     def defaultPublishAuthModes(args: Endofunction[com.pulumi.aws.appsync.inputs.ApiEventConfigDefaultPublishAuthModeArgs.Builder]*):
@@ -389,7 +393,7 @@ object appsync:
       builder.defaultPublishAuthModes(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param defaultSubscribeAuthModes List of default authentication modes for subscribing. See Auth Modes below.
+     * @param defaultSubscribeAuthModes List of default authentication modes for subscribing. See `event_config.default_subscribe_auth_mode` Block below.
      * @return builder
      */
     def defaultSubscribeAuthModes(args: Endofunction[com.pulumi.aws.appsync.inputs.ApiEventConfigDefaultSubscribeAuthModeArgs.Builder]*):
@@ -398,7 +402,7 @@ object appsync:
       builder.defaultSubscribeAuthModes(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param logConfig Logging configuration. See Log Config below.
+     * @param logConfig Logging configuration. See `logConfig` Block below.
      * @return builder
      */
     def logConfig(args: Endofunction[com.pulumi.aws.appsync.inputs.ApiEventConfigLogConfigArgs.Builder]):
@@ -408,7 +412,7 @@ object appsync:
 
   extension (builder: com.pulumi.aws.appsync.inputs.ApiEventConfigAuthProviderArgs.Builder)
     /**
-     * @param cognitoConfig Configuration for Cognito user pool authentication. Required when `authType` is `AMAZON_COGNITO_USER_POOLS`. See Cognito Config below.
+     * @param cognitoConfig Configuration for Cognito user pool authentication. Required when `authType` is `AMAZON_COGNITO_USER_POOLS`. See `cognitoConfig` Block below.
      * @return builder
      */
     def cognitoConfig(args: Endofunction[com.pulumi.aws.appsync.inputs.ApiEventConfigAuthProviderCognitoConfigArgs.Builder]):
@@ -417,7 +421,7 @@ object appsync:
       builder.cognitoConfig(args(argsBuilder).build)
 
     /**
-     * @param lambdaAuthorizerConfig Configuration for Lambda authorization. Required when `authType` is `AWS_LAMBDA`. See Lambda Authorizer Config below.
+     * @param lambdaAuthorizerConfig Configuration for Lambda authorization. Required when `authType` is `AWS_LAMBDA`. See `lambdaAuthorizerConfig` Block below.
      * @return builder
      */
     def lambdaAuthorizerConfig(args: Endofunction[com.pulumi.aws.appsync.inputs.ApiEventConfigAuthProviderLambdaAuthorizerConfigArgs.Builder]):
@@ -426,7 +430,7 @@ object appsync:
       builder.lambdaAuthorizerConfig(args(argsBuilder).build)
 
     /**
-     * @param openidConnectConfig Configuration for OpenID Connect. Required when `authType` is `OPENID_CONNECT`. See OpenID Connect Config below.
+     * @param openidConnectConfig Configuration for OpenID Connect. Required when `authType` is `OPENID_CONNECT`. See `openidConnectConfig` Block below.
      * @return builder
      */
     def openidConnectConfig(args: Endofunction[com.pulumi.aws.appsync.inputs.ApiEventConfigAuthProviderOpenidConnectConfigArgs.Builder]):
@@ -436,7 +440,7 @@ object appsync:
 
   extension (builder: com.pulumi.aws.appsync.inputs.ApiState.Builder)
     /**
-     * @param eventConfig Configuration for the Event API. See Event Config below.
+     * @param eventConfig Configuration for the Event API. See `eventConfig` Block below.
      * @return builder
      */
     def eventConfig(args: Endofunction[com.pulumi.aws.appsync.inputs.ApiEventConfigArgs.Builder]):
@@ -446,7 +450,7 @@ object appsync:
 
   extension (builder: com.pulumi.aws.appsync.inputs.ChannelNamespaceHandlerConfigsArgs.Builder)
     /**
-     * @param onPublish Handler configuration. See Handler Config below.
+     * @param onPublish Handler configuration for published events. See `onPublish` below.
      * @return builder
      */
     def onPublish(args: Endofunction[com.pulumi.aws.appsync.inputs.ChannelNamespaceHandlerConfigsOnPublishArgs.Builder]):
@@ -455,7 +459,7 @@ object appsync:
       builder.onPublish(args(argsBuilder).build)
 
     /**
-     * @param onSubscribe Handler configuration. See Handler Config below.
+     * @param onSubscribe Handler configuration for subscribe requests. See `onSubscribe` below.
      * @return builder
      */
     def onSubscribe(args: Endofunction[com.pulumi.aws.appsync.inputs.ChannelNamespaceHandlerConfigsOnSubscribeArgs.Builder]):
@@ -465,7 +469,7 @@ object appsync:
 
   extension (builder: com.pulumi.aws.appsync.inputs.ChannelNamespaceHandlerConfigsOnPublishArgs.Builder)
     /**
-     * @param integration Integration data source configuration for the handler. See Integration below.
+     * @param integration Integration data source configuration for the handler. See `integration` below.
      * @return builder
      */
     def integration(args: Endofunction[com.pulumi.aws.appsync.inputs.ChannelNamespaceHandlerConfigsOnPublishIntegrationArgs.Builder]):
@@ -475,7 +479,7 @@ object appsync:
 
   extension (builder: com.pulumi.aws.appsync.inputs.ChannelNamespaceHandlerConfigsOnPublishIntegrationArgs.Builder)
     /**
-     * @param lambdaConfig Configuration for a Lambda data source. See Lambda Config below.
+     * @param lambdaConfig Configuration for a Lambda data source. See `lambdaConfig` below.
      * @return builder
      */
     def lambdaConfig(args: Endofunction[com.pulumi.aws.appsync.inputs.ChannelNamespaceHandlerConfigsOnPublishIntegrationLambdaConfigArgs.Builder]):
@@ -485,7 +489,7 @@ object appsync:
 
   extension (builder: com.pulumi.aws.appsync.inputs.ChannelNamespaceHandlerConfigsOnSubscribeArgs.Builder)
     /**
-     * @param integration Integration data source configuration for the handler. See Integration below.
+     * @param integration Integration data source configuration for the handler. See `integration` below.
      * @return builder
      */
     def integration(args: Endofunction[com.pulumi.aws.appsync.inputs.ChannelNamespaceHandlerConfigsOnSubscribeIntegrationArgs.Builder]):
@@ -495,7 +499,7 @@ object appsync:
 
   extension (builder: com.pulumi.aws.appsync.inputs.ChannelNamespaceHandlerConfigsOnSubscribeIntegrationArgs.Builder)
     /**
-     * @param lambdaConfig Configuration for a Lambda data source. See Lambda Config below.
+     * @param lambdaConfig Configuration for a Lambda data source. See `lambdaConfig` below.
      * @return builder
      */
     def lambdaConfig(args: Endofunction[com.pulumi.aws.appsync.inputs.ChannelNamespaceHandlerConfigsOnSubscribeIntegrationLambdaConfigArgs.Builder]):
@@ -505,7 +509,7 @@ object appsync:
 
   extension (builder: com.pulumi.aws.appsync.inputs.ChannelNamespaceState.Builder)
     /**
-     * @param handlerConfigs Configuration for the `onPublish` and `onSubscribe` handlers. See Handler Configs below.
+     * @param handlerConfigs Configuration for the `onPublish` and `onSubscribe` handlers. See `handlerConfigs` below.
      * @return builder
      */
     def handlerConfigs(args: Endofunction[com.pulumi.aws.appsync.inputs.ChannelNamespaceHandlerConfigsArgs.Builder]):
@@ -514,7 +518,7 @@ object appsync:
       builder.handlerConfigs(args(argsBuilder).build)
 
     /**
-     * @param publishAuthModes Authorization modes to use for publishing messages on the channel namespace. This configuration overrides the default API authorization configuration. See Auth Modes below.
+     * @param publishAuthModes Authorization modes to use for publishing messages on the channel namespace. This configuration overrides the default API authorization configuration. See `publishAuthMode` below.
      * @return builder
      */
     def publishAuthModes(args: Endofunction[com.pulumi.aws.appsync.inputs.ChannelNamespacePublishAuthModeArgs.Builder]*):
@@ -523,7 +527,7 @@ object appsync:
       builder.publishAuthModes(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param subscribeAuthModes Authorization modes to use for subscribing to messages on the channel namespace. This configuration overrides the default API authorization configuration. See Auth Modes below.
+     * @param subscribeAuthModes Authorization modes to use for subscribing to messages on the channel namespace. This configuration overrides the default API authorization configuration. See `subscribeAuthMode` below.
      * @return builder
      */
     def subscribeAuthModes(args: Endofunction[com.pulumi.aws.appsync.inputs.ChannelNamespaceSubscribeAuthModeArgs.Builder]*):
@@ -533,7 +537,7 @@ object appsync:
 
   extension (builder: com.pulumi.aws.appsync.inputs.DataSourceDynamodbConfigArgs.Builder)
     /**
-     * @param deltaSyncConfig The DeltaSyncConfig for a versioned data source. See `deltaSyncConfig` Block for details.
+     * @param deltaSyncConfig DeltaSyncConfig for a versioned data source. See `deltaSyncConfig` Block for details.
      * @return builder
      */
     def deltaSyncConfig(args: Endofunction[com.pulumi.aws.appsync.inputs.DataSourceDynamodbConfigDeltaSyncConfigArgs.Builder]):
@@ -637,7 +641,7 @@ object appsync:
 
   extension (builder: com.pulumi.aws.appsync.inputs.FunctionState.Builder)
     /**
-     * @param runtime Describes a runtime used by an AWS AppSync pipeline resolver or AWS AppSync function. Specifies the name and version of the runtime to use. Note that if a runtime is specified, code must also be specified. See `runtime` Block for details.
+     * @param runtime Runtime used by an AWS AppSync pipeline resolver or AWS AppSync function. Specifies the name and version of the runtime to use. Note that if a runtime is specified, code must also be specified. See `runtime` Block for details.
      * @return builder
      */
     def runtime(args: Endofunction[com.pulumi.aws.appsync.inputs.FunctionRuntimeArgs.Builder]):
@@ -646,7 +650,7 @@ object appsync:
       builder.runtime(args(argsBuilder).build)
 
     /**
-     * @param syncConfig Describes a Sync configuration for a resolver. See `syncConfig` Block for details.
+     * @param syncConfig Sync configuration for a resolver. See `syncConfig` Block for details.
      * @return builder
      */
     def syncConfig(args: Endofunction[com.pulumi.aws.appsync.inputs.FunctionSyncConfigArgs.Builder]):
@@ -684,7 +688,7 @@ object appsync:
       builder.openidConnectConfig(args(argsBuilder).build)
 
     /**
-     * @param userPoolConfig Amazon Cognito User Pool configuration. See `userPoolConfig` Block for details.
+     * @param userPoolConfig Amazon Cognito User Pool configuration. See `additional_authentication_provider.user_pool_config` Block for details.
      * @return builder
      */
     def userPoolConfig(args: Endofunction[com.pulumi.aws.appsync.inputs.GraphQLApiAdditionalAuthenticationProviderUserPoolConfigArgs.Builder]):
@@ -749,7 +753,7 @@ object appsync:
 
   extension (builder: com.pulumi.aws.appsync.inputs.ResolverState.Builder)
     /**
-     * @param cachingConfig The Caching Config. See Caching Config.
+     * @param cachingConfig Caching Config. See Caching Config.
      * @return builder
      */
     def cachingConfig(args: Endofunction[com.pulumi.aws.appsync.inputs.ResolverCachingConfigArgs.Builder]):
@@ -758,7 +762,7 @@ object appsync:
       builder.cachingConfig(args(argsBuilder).build)
 
     /**
-     * @param pipelineConfig The caching configuration for the resolver. See Pipeline Config.
+     * @param pipelineConfig Caching configuration for the resolver. See Pipeline Config.
      * @return builder
      */
     def pipelineConfig(args: Endofunction[com.pulumi.aws.appsync.inputs.ResolverPipelineConfigArgs.Builder]):
@@ -767,7 +771,7 @@ object appsync:
       builder.pipelineConfig(args(argsBuilder).build)
 
     /**
-     * @param runtime Describes a runtime used by an AWS AppSync pipeline resolver or AWS AppSync function. Specifies the name and version of the runtime to use. Note that if a runtime is specified, code must also be specified. See Runtime.
+     * @param runtime Runtime used by an AWS AppSync pipeline resolver or AWS AppSync function. Specifies the name and version of the runtime to use. Note that if a runtime is specified, code must also be specified. See Runtime.
      * @return builder
      */
     def runtime(args: Endofunction[com.pulumi.aws.appsync.inputs.ResolverRuntimeArgs.Builder]):
@@ -776,7 +780,7 @@ object appsync:
       builder.runtime(args(argsBuilder).build)
 
     /**
-     * @param syncConfig Describes a Sync configuration for a resolver. See Sync Config.
+     * @param syncConfig Sync configuration for a resolver. See Sync Config.
      * @return builder
      */
     def syncConfig(args: Endofunction[com.pulumi.aws.appsync.inputs.ResolverSyncConfigArgs.Builder]):
@@ -795,6 +799,10 @@ object appsync:
       builder.lambdaConflictHandlerConfig(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.appsync.inputs.SourceApiAssociationState.Builder)
+    /**
+     * @param sourceApiAssociationConfigs Source API Association configuration. See `sourceApiAssociationConfig` Block for details.
+     * @return builder
+     */
     def sourceApiAssociationConfigs(args: Endofunction[com.pulumi.aws.appsync.inputs.SourceApiAssociationSourceApiAssociationConfigArgs.Builder]*):
         com.pulumi.aws.appsync.inputs.SourceApiAssociationState.Builder =
       def argsBuilder = com.pulumi.aws.appsync.inputs.SourceApiAssociationSourceApiAssociationConfigArgs.builder

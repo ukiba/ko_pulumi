@@ -25,7 +25,7 @@ object s3control:
 
   extension (builder: com.pulumi.aws.s3control.AccessGrantArgs.Builder)
     /**
-     * @param accessGrantsLocationConfiguration See Location Configuration below for more details.
+     * @param accessGrantsLocationConfiguration See `accessGrantsLocationConfiguration` Block below for more details.
      * @return builder
      */
     def accessGrantsLocationConfiguration(args: Endofunction[com.pulumi.aws.s3control.inputs.AccessGrantAccessGrantsLocationConfigurationArgs.Builder]):
@@ -34,7 +34,7 @@ object s3control:
       builder.accessGrantsLocationConfiguration(args(argsBuilder).build)
 
     /**
-     * @param grantee See Grantee below for more details.
+     * @param grantee See `grantee` Block below for more details.
      * @return builder
      */
     def grantee(args: Endofunction[com.pulumi.aws.s3control.inputs.AccessGrantGranteeArgs.Builder]):
@@ -138,7 +138,7 @@ object s3control:
 
   extension (builder: com.pulumi.aws.s3control.BucketLifecycleConfigurationArgs.Builder)
     /**
-     * @param rules Configuration block(s) containing lifecycle rules for the bucket.
+     * @param rules Configuration block(s) containing lifecycle rules for the bucket. See `rule` below.
      * @return builder
      */
     def rules(args: Endofunction[com.pulumi.aws.s3control.inputs.BucketLifecycleConfigurationRuleArgs.Builder]*):
@@ -191,6 +191,8 @@ object s3control:
    * Provides a resource to manage an S3 Multi-Region Access Point associated with specified buckets.
    * 
    * &gt; This resource cannot be used with S3 directory buckets.
+   * 
+   * For more information, see the documentation on [Multi-Region Access Points](https://docs.aws.amazon.com/AmazonS3/latest/userguide/MultiRegionAccessPoints.html).
    */
   def MultiRegionAccessPoint(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.s3control.MultiRegionAccessPointArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
@@ -201,7 +203,7 @@ object s3control:
 
   extension (builder: com.pulumi.aws.s3control.MultiRegionAccessPointArgs.Builder)
     /**
-     * @param details A configuration block containing details about the Multi-Region Access Point. See Details Configuration Block below for more details
+     * @param details Configuration block containing details about the Multi-Region Access Point. See `details` Block below.
      * @return builder
      */
     def details(args: Endofunction[com.pulumi.aws.s3control.inputs.MultiRegionAccessPointDetailsArgs.Builder]):
@@ -219,7 +221,7 @@ object s3control:
 
   extension (builder: com.pulumi.aws.s3control.MultiRegionAccessPointPolicyArgs.Builder)
     /**
-     * @param details A configuration block containing details about the policy for the Multi-Region Access Point. See Details Configuration Block below for more details
+     * @param details Configuration block containing details about the policy for the Multi-Region Access Point. See `details` Block below for more details
      * @return builder
      */
     def details(args: Endofunction[com.pulumi.aws.s3control.inputs.MultiRegionAccessPointPolicyDetailsArgs.Builder]):
@@ -265,7 +267,7 @@ object s3control:
 
   extension (builder: com.pulumi.aws.s3control.ObjectLambdaAccessPointArgs.Builder)
     /**
-     * @param configuration A configuration block containing details about the Object Lambda Access Point. See Configuration below for more details.
+     * @param configuration Configuration block containing details about the Object Lambda Access Point. See `configuration` Block below for more details.
      * @return builder
      */
     def configuration(args: Endofunction[com.pulumi.aws.s3control.inputs.ObjectLambdaAccessPointConfigurationArgs.Builder]):
@@ -344,7 +346,7 @@ object s3control:
 
   extension (builder: com.pulumi.aws.s3control.StorageLensConfigurationArgs.Builder)
     /**
-     * @param storageLensConfiguration The S3 Storage Lens configuration. See Storage Lens Configuration below for more details.
+     * @param storageLensConfiguration S3 Storage Lens configuration. See `storageLensConfiguration` below for more details.
      * @return builder
      */
     def storageLensConfiguration(args: Endofunction[com.pulumi.aws.s3control.inputs.StorageLensConfigurationStorageLensConfigurationArgs.Builder]):
@@ -354,7 +356,7 @@ object s3control:
 
   extension (builder: com.pulumi.aws.s3control.inputs.AccessGrantState.Builder)
     /**
-     * @param accessGrantsLocationConfiguration See Location Configuration below for more details.
+     * @param accessGrantsLocationConfiguration See `accessGrantsLocationConfiguration` Block below for more details.
      * @return builder
      */
     def accessGrantsLocationConfiguration(args: Endofunction[com.pulumi.aws.s3control.inputs.AccessGrantAccessGrantsLocationConfigurationArgs.Builder]):
@@ -363,7 +365,7 @@ object s3control:
       builder.accessGrantsLocationConfiguration(args(argsBuilder).build)
 
     /**
-     * @param grantee See Grantee below for more details.
+     * @param grantee See `grantee` Block below for more details.
      * @return builder
      */
     def grantee(args: Endofunction[com.pulumi.aws.s3control.inputs.AccessGrantGranteeArgs.Builder]):
@@ -373,7 +375,7 @@ object s3control:
 
   extension (builder: com.pulumi.aws.s3control.inputs.BucketLifecycleConfigurationRuleArgs.Builder)
     /**
-     * @param abortIncompleteMultipartUpload Configuration block containing settings for abort incomplete multipart upload.
+     * @param abortIncompleteMultipartUpload Configuration block containing settings for abort incomplete multipart upload. See `abortIncompleteMultipartUpload` below.
      * @return builder
      */
     def abortIncompleteMultipartUpload(args: Endofunction[com.pulumi.aws.s3control.inputs.BucketLifecycleConfigurationRuleAbortIncompleteMultipartUploadArgs.Builder]):
@@ -382,7 +384,7 @@ object s3control:
       builder.abortIncompleteMultipartUpload(args(argsBuilder).build)
 
     /**
-     * @param expiration Configuration block containing settings for expiration of objects.
+     * @param expiration Configuration block containing settings for expiration of objects. See `expiration` below.
      * @return builder
      */
     def expiration(args: Endofunction[com.pulumi.aws.s3control.inputs.BucketLifecycleConfigurationRuleExpirationArgs.Builder]):
@@ -391,7 +393,7 @@ object s3control:
       builder.expiration(args(argsBuilder).build)
 
     /**
-     * @param filter Configuration block containing settings for filtering.
+     * @param filter Configuration block containing settings for filtering. See `filter` below.
      * @return builder
      */
     def filter(args: Endofunction[com.pulumi.aws.s3control.inputs.BucketLifecycleConfigurationRuleFilterArgs.Builder]):
@@ -401,7 +403,7 @@ object s3control:
 
   extension (builder: com.pulumi.aws.s3control.inputs.BucketLifecycleConfigurationState.Builder)
     /**
-     * @param rules Configuration block(s) containing lifecycle rules for the bucket.
+     * @param rules Configuration block(s) containing lifecycle rules for the bucket. See `rule` below.
      * @return builder
      */
     def rules(args: Endofunction[com.pulumi.aws.s3control.inputs.BucketLifecycleConfigurationRuleArgs.Builder]*):
@@ -421,7 +423,7 @@ object s3control:
 
   extension (builder: com.pulumi.aws.s3control.inputs.MultiRegionAccessPointDetailsArgs.Builder)
     /**
-     * @param publicAccessBlock Configuration block to manage the `PublicAccessBlock` configuration that you want to apply to this Multi-Region Access Point. You can enable the configuration options in any combination. See Public Access Block Configuration below for more details.
+     * @param publicAccessBlock Configuration block to manage the `PublicAccessBlock` configuration that you want to apply to this Multi-Region Access Point. You can enable the configuration options in any combination. See `publicAccessBlock` Block below.
      * @return builder
      */
     def publicAccessBlock(args: Endofunction[com.pulumi.aws.s3control.inputs.MultiRegionAccessPointDetailsPublicAccessBlockArgs.Builder]):
@@ -430,9 +432,7 @@ object s3control:
       builder.publicAccessBlock(args(argsBuilder).build)
 
     /**
-     * @param regions The Region configuration block to specify the bucket associated with the Multi-Region Access Point. See Region Configuration below for more details.
-     * 
-     * For more information, see the documentation on [Multi-Region Access Points](https://docs.aws.amazon.com/AmazonS3/latest/userguide/MultiRegionAccessPoints.html).
+     * @param regions Region configuration block to specify the bucket associated with the Multi-Region Access Point. See `region` Block below.
      * @return builder
      */
     def regions(args: Endofunction[com.pulumi.aws.s3control.inputs.MultiRegionAccessPointDetailsRegionArgs.Builder]*):
@@ -442,7 +442,7 @@ object s3control:
 
   extension (builder: com.pulumi.aws.s3control.inputs.MultiRegionAccessPointPolicyState.Builder)
     /**
-     * @param details A configuration block containing details about the policy for the Multi-Region Access Point. See Details Configuration Block below for more details
+     * @param details Configuration block containing details about the policy for the Multi-Region Access Point. See `details` Block below for more details
      * @return builder
      */
     def details(args: Endofunction[com.pulumi.aws.s3control.inputs.MultiRegionAccessPointPolicyDetailsArgs.Builder]):
@@ -462,7 +462,7 @@ object s3control:
 
   extension (builder: com.pulumi.aws.s3control.inputs.MultiRegionAccessPointState.Builder)
     /**
-     * @param details A configuration block containing details about the Multi-Region Access Point. See Details Configuration Block below for more details
+     * @param details Configuration block containing details about the Multi-Region Access Point. See `details` Block below.
      * @return builder
      */
     def details(args: Endofunction[com.pulumi.aws.s3control.inputs.MultiRegionAccessPointDetailsArgs.Builder]):
@@ -472,7 +472,7 @@ object s3control:
 
   extension (builder: com.pulumi.aws.s3control.inputs.ObjectLambdaAccessPointConfigurationArgs.Builder)
     /**
-     * @param transformationConfigurations List of transformation configurations for the Object Lambda Access Point. See Transformation Configuration below for more details.
+     * @param transformationConfigurations List of transformation configurations for the Object Lambda Access Point. See `transformationConfiguration` Block below for more details.
      * @return builder
      */
     def transformationConfigurations(args: Endofunction[com.pulumi.aws.s3control.inputs.ObjectLambdaAccessPointConfigurationTransformationConfigurationArgs.Builder]*):
@@ -482,7 +482,7 @@ object s3control:
 
   extension (builder: com.pulumi.aws.s3control.inputs.ObjectLambdaAccessPointConfigurationTransformationConfigurationArgs.Builder)
     /**
-     * @param contentTransformation The content transformation of an Object Lambda Access Point configuration. See Content Transformation below for more details.
+     * @param contentTransformation Content transformation of an Object Lambda Access Point configuration. See `contentTransformation` Block below for more details.
      * @return builder
      */
     def contentTransformation(args: Endofunction[com.pulumi.aws.s3control.inputs.ObjectLambdaAccessPointConfigurationTransformationConfigurationContentTransformationArgs.Builder]):
@@ -492,7 +492,7 @@ object s3control:
 
   extension (builder: com.pulumi.aws.s3control.inputs.ObjectLambdaAccessPointConfigurationTransformationConfigurationContentTransformationArgs.Builder)
     /**
-     * @param awsLambda Configuration for an AWS Lambda function. See AWS Lambda below for more details.
+     * @param awsLambda Configuration for an AWS Lambda function. See `awsLambda` Block below for more details.
      * @return builder
      */
     def awsLambda(args: Endofunction[com.pulumi.aws.s3control.inputs.ObjectLambdaAccessPointConfigurationTransformationConfigurationContentTransformationAwsLambdaArgs.Builder]):
@@ -502,7 +502,7 @@ object s3control:
 
   extension (builder: com.pulumi.aws.s3control.inputs.ObjectLambdaAccessPointState.Builder)
     /**
-     * @param configuration A configuration block containing details about the Object Lambda Access Point. See Configuration below for more details.
+     * @param configuration Configuration block containing details about the Object Lambda Access Point. See `configuration` Block below for more details.
      * @return builder
      */
     def configuration(args: Endofunction[com.pulumi.aws.s3control.inputs.ObjectLambdaAccessPointConfigurationArgs.Builder]):
@@ -512,7 +512,7 @@ object s3control:
 
   extension (builder: com.pulumi.aws.s3control.inputs.StorageLensConfigurationState.Builder)
     /**
-     * @param storageLensConfiguration The S3 Storage Lens configuration. See Storage Lens Configuration below for more details.
+     * @param storageLensConfiguration S3 Storage Lens configuration. See `storageLensConfiguration` below for more details.
      * @return builder
      */
     def storageLensConfiguration(args: Endofunction[com.pulumi.aws.s3control.inputs.StorageLensConfigurationStorageLensConfigurationArgs.Builder]):
@@ -522,7 +522,7 @@ object s3control:
 
   extension (builder: com.pulumi.aws.s3control.inputs.StorageLensConfigurationStorageLensConfigurationAccountLevelArgs.Builder)
     /**
-     * @param activityMetrics S3 Storage Lens activity metrics. See Activity Metrics below for more details.
+     * @param activityMetrics S3 Storage Lens activity metrics. See `activityMetrics` below for more details.
      * @return builder
      */
     def activityMetrics(args: Endofunction[com.pulumi.aws.s3control.inputs.StorageLensConfigurationStorageLensConfigurationAccountLevelActivityMetricsArgs.Builder]):
@@ -531,7 +531,7 @@ object s3control:
       builder.activityMetrics(args(argsBuilder).build)
 
     /**
-     * @param advancedCostOptimizationMetrics Advanced cost-optimization metrics for S3 Storage Lens. See Advanced Cost-Optimization Metrics below for more details.
+     * @param advancedCostOptimizationMetrics Advanced cost-optimization metrics for S3 Storage Lens. See `advancedCostOptimizationMetrics` below for more details.
      * @return builder
      */
     def advancedCostOptimizationMetrics(args: Endofunction[com.pulumi.aws.s3control.inputs.StorageLensConfigurationStorageLensConfigurationAccountLevelAdvancedCostOptimizationMetricsArgs.Builder]):
@@ -540,7 +540,7 @@ object s3control:
       builder.advancedCostOptimizationMetrics(args(argsBuilder).build)
 
     /**
-     * @param advancedDataProtectionMetrics Advanced data-protection metrics for S3 Storage Lens. See Advanced Data-Protection Metrics below for more details.
+     * @param advancedDataProtectionMetrics Advanced data-protection metrics for S3 Storage Lens. See `advancedDataProtectionMetrics` below for more details.
      * @return builder
      */
     def advancedDataProtectionMetrics(args: Endofunction[com.pulumi.aws.s3control.inputs.StorageLensConfigurationStorageLensConfigurationAccountLevelAdvancedDataProtectionMetricsArgs.Builder]):
@@ -549,7 +549,7 @@ object s3control:
       builder.advancedDataProtectionMetrics(args(argsBuilder).build)
 
     /**
-     * @param advancedPerformanceMetrics Advanced performance metrics for S3 Storage Lens. See Advanced Performance Metrics below for more details.
+     * @param advancedPerformanceMetrics Advanced performance metrics for S3 Storage Lens. See `advancedPerformanceMetrics` below for more details.
      * @return builder
      */
     def advancedPerformanceMetrics(args: Endofunction[com.pulumi.aws.s3control.inputs.StorageLensConfigurationStorageLensConfigurationAccountLevelAdvancedPerformanceMetricsArgs.Builder]):
@@ -558,7 +558,7 @@ object s3control:
       builder.advancedPerformanceMetrics(args(argsBuilder).build)
 
     /**
-     * @param bucketLevel S3 Storage Lens bucket-level configuration. See Bucket Level below for more details.
+     * @param bucketLevel S3 Storage Lens bucket-level configuration. See `bucketLevel` below for more details.
      * @return builder
      */
     def bucketLevel(args: Endofunction[com.pulumi.aws.s3control.inputs.StorageLensConfigurationStorageLensConfigurationAccountLevelBucketLevelArgs.Builder]):
@@ -567,7 +567,7 @@ object s3control:
       builder.bucketLevel(args(argsBuilder).build)
 
     /**
-     * @param detailedStatusCodeMetrics Detailed status code metrics for S3 Storage Lens. See Detailed Status Code Metrics below for more details.
+     * @param detailedStatusCodeMetrics Detailed status code metrics for S3 Storage Lens. See `detailedStatusCodeMetrics` below for more details.
      * @return builder
      */
     def detailedStatusCodeMetrics(args: Endofunction[com.pulumi.aws.s3control.inputs.StorageLensConfigurationStorageLensConfigurationAccountLevelDetailedStatusCodeMetricsArgs.Builder]):
@@ -577,7 +577,7 @@ object s3control:
 
   extension (builder: com.pulumi.aws.s3control.inputs.StorageLensConfigurationStorageLensConfigurationAccountLevelBucketLevelArgs.Builder)
     /**
-     * @param activityMetrics S3 Storage Lens activity metrics. See Activity Metrics above for more details.
+     * @param activityMetrics S3 Storage Lens activity metrics. See `activityMetrics` above for more details.
      * @return builder
      */
     def activityMetrics(args: Endofunction[com.pulumi.aws.s3control.inputs.StorageLensConfigurationStorageLensConfigurationAccountLevelBucketLevelActivityMetricsArgs.Builder]):
@@ -586,7 +586,7 @@ object s3control:
       builder.activityMetrics(args(argsBuilder).build)
 
     /**
-     * @param advancedCostOptimizationMetrics Advanced cost-optimization metrics for S3 Storage Lens. See Advanced Cost-Optimization Metrics above for more details.
+     * @param advancedCostOptimizationMetrics Advanced cost-optimization metrics for S3 Storage Lens. See `advancedCostOptimizationMetrics` above for more details.
      * @return builder
      */
     def advancedCostOptimizationMetrics(args: Endofunction[com.pulumi.aws.s3control.inputs.StorageLensConfigurationStorageLensConfigurationAccountLevelBucketLevelAdvancedCostOptimizationMetricsArgs.Builder]):
@@ -595,7 +595,7 @@ object s3control:
       builder.advancedCostOptimizationMetrics(args(argsBuilder).build)
 
     /**
-     * @param advancedDataProtectionMetrics Advanced data-protection metrics for S3 Storage Lens. See Advanced Data-Protection Metrics above for more details.
+     * @param advancedDataProtectionMetrics Advanced data-protection metrics for S3 Storage Lens. See `advancedDataProtectionMetrics` above for more details.
      * @return builder
      */
     def advancedDataProtectionMetrics(args: Endofunction[com.pulumi.aws.s3control.inputs.StorageLensConfigurationStorageLensConfigurationAccountLevelBucketLevelAdvancedDataProtectionMetricsArgs.Builder]):
@@ -604,7 +604,7 @@ object s3control:
       builder.advancedDataProtectionMetrics(args(argsBuilder).build)
 
     /**
-     * @param advancedPerformanceMetrics Advanced performance metrics for S3 Storage Lens. See Advanced Performance Metrics above for more details.
+     * @param advancedPerformanceMetrics Advanced performance metrics for S3 Storage Lens. See `advancedPerformanceMetrics` above for more details.
      * @return builder
      */
     def advancedPerformanceMetrics(args: Endofunction[com.pulumi.aws.s3control.inputs.StorageLensConfigurationStorageLensConfigurationAccountLevelBucketLevelAdvancedPerformanceMetricsArgs.Builder]):
@@ -613,7 +613,7 @@ object s3control:
       builder.advancedPerformanceMetrics(args(argsBuilder).build)
 
     /**
-     * @param detailedStatusCodeMetrics Detailed status code metrics for S3 Storage Lens. See Detailed Status Code Metrics above for more details.
+     * @param detailedStatusCodeMetrics Detailed status code metrics for S3 Storage Lens. See `detailedStatusCodeMetrics` above for more details.
      * @return builder
      */
     def detailedStatusCodeMetrics(args: Endofunction[com.pulumi.aws.s3control.inputs.StorageLensConfigurationStorageLensConfigurationAccountLevelBucketLevelDetailedStatusCodeMetricsArgs.Builder]):
@@ -622,7 +622,7 @@ object s3control:
       builder.detailedStatusCodeMetrics(args(argsBuilder).build)
 
     /**
-     * @param prefixLevel Prefix-level metrics for S3 Storage Lens. See Prefix Level below for more details.
+     * @param prefixLevel Prefix-level metrics for S3 Storage Lens. See `prefixLevel` below for more details.
      * @return builder
      */
     def prefixLevel(args: Endofunction[com.pulumi.aws.s3control.inputs.StorageLensConfigurationStorageLensConfigurationAccountLevelBucketLevelPrefixLevelArgs.Builder]):
@@ -632,7 +632,7 @@ object s3control:
 
   extension (builder: com.pulumi.aws.s3control.inputs.StorageLensConfigurationStorageLensConfigurationAccountLevelBucketLevelPrefixLevelArgs.Builder)
     /**
-     * @param storageMetrics Prefix-level storage metrics for S3 Storage Lens. See Prefix Level Storage Metrics below for more details.
+     * @param storageMetrics Prefix-level storage metrics for S3 Storage Lens. See `storageMetrics` below for more details.
      * @return builder
      */
     def storageMetrics(args: Endofunction[com.pulumi.aws.s3control.inputs.StorageLensConfigurationStorageLensConfigurationAccountLevelBucketLevelPrefixLevelStorageMetricsArgs.Builder]):
@@ -642,7 +642,7 @@ object s3control:
 
   extension (builder: com.pulumi.aws.s3control.inputs.StorageLensConfigurationStorageLensConfigurationAccountLevelBucketLevelPrefixLevelStorageMetricsArgs.Builder)
     /**
-     * @param selectionCriteria Selection criteria. See Selection Criteria below for more details.
+     * @param selectionCriteria Selection criteria. See `selectionCriteria` below for more details.
      * @return builder
      */
     def selectionCriteria(args: Endofunction[com.pulumi.aws.s3control.inputs.StorageLensConfigurationStorageLensConfigurationAccountLevelBucketLevelPrefixLevelStorageMetricsSelectionCriteriaArgs.Builder]):
@@ -652,7 +652,7 @@ object s3control:
 
   extension (builder: com.pulumi.aws.s3control.inputs.StorageLensConfigurationStorageLensConfigurationArgs.Builder)
     /**
-     * @param accountLevel The account-level configurations of the S3 Storage Lens configuration. See Account Level below for more details.
+     * @param accountLevel Account-level configurations of the S3 Storage Lens configuration. See `accountLevel` below for more details.
      * @return builder
      */
     def accountLevel(args: Endofunction[com.pulumi.aws.s3control.inputs.StorageLensConfigurationStorageLensConfigurationAccountLevelArgs.Builder]):
@@ -661,7 +661,7 @@ object s3control:
       builder.accountLevel(args(argsBuilder).build)
 
     /**
-     * @param awsOrg The Amazon Web Services organization for the S3 Storage Lens configuration. See AWS Org below for more details.
+     * @param awsOrg Amazon Web Services organization for the S3 Storage Lens configuration. See `awsOrg` below for more details.
      * @return builder
      */
     def awsOrg(args: Endofunction[com.pulumi.aws.s3control.inputs.StorageLensConfigurationStorageLensConfigurationAwsOrgArgs.Builder]):
@@ -670,7 +670,7 @@ object s3control:
       builder.awsOrg(args(argsBuilder).build)
 
     /**
-     * @param dataExport Properties of S3 Storage Lens metrics export including the destination, schema and format. See Data Export below for more details.
+     * @param dataExport Properties of S3 Storage Lens metrics export including the destination, schema and format. See `dataExport` below for more details.
      * @return builder
      */
     def dataExport(args: Endofunction[com.pulumi.aws.s3control.inputs.StorageLensConfigurationStorageLensConfigurationDataExportArgs.Builder]):
@@ -679,7 +679,7 @@ object s3control:
       builder.dataExport(args(argsBuilder).build)
 
     /**
-     * @param exclude What is excluded in this configuration. Conflicts with `include`. See Exclude below for more details.
+     * @param exclude What is excluded in this configuration. Conflicts with `include`. See `exclude` below for more details.
      * @return builder
      */
     def exclude(args: Endofunction[com.pulumi.aws.s3control.inputs.StorageLensConfigurationStorageLensConfigurationExcludeArgs.Builder]):
@@ -688,7 +688,7 @@ object s3control:
       builder.exclude(args(argsBuilder).build)
 
     /**
-     * @param expandedPrefixesDataExport Configuration for the S3 Storage Lens expanded prefix metrics report. Unlike the default Storage Lens metrics report, the enhanced prefix metrics report includes all S3 Storage Lens storage and activity data related to the full list of prefixes in your Storage Lens configuration. See Expanded Prefixes Data Export below for more details.
+     * @param expandedPrefixesDataExport Configuration for the S3 Storage Lens expanded prefix metrics report. Unlike the default Storage Lens metrics report, the enhanced prefix metrics report includes all S3 Storage Lens storage and activity data related to the full list of prefixes in your Storage Lens configuration. See `expandedPrefixesDataExport` below for more details.
      * @return builder
      */
     def expandedPrefixesDataExport(args: Endofunction[com.pulumi.aws.s3control.inputs.StorageLensConfigurationStorageLensConfigurationExpandedPrefixesDataExportArgs.Builder]):
@@ -697,7 +697,7 @@ object s3control:
       builder.expandedPrefixesDataExport(args(argsBuilder).build)
 
     /**
-     * @param include What is included in this configuration. Conflicts with `exclude`. See Include below for more details.
+     * @param include What is included in this configuration. Conflicts with `exclude`. See `include` below for more details.
      * @return builder
      */
     def include(args: Endofunction[com.pulumi.aws.s3control.inputs.StorageLensConfigurationStorageLensConfigurationIncludeArgs.Builder]):
@@ -707,7 +707,7 @@ object s3control:
 
   extension (builder: com.pulumi.aws.s3control.inputs.StorageLensConfigurationStorageLensConfigurationDataExportArgs.Builder)
     /**
-     * @param cloudWatchMetrics Amazon CloudWatch publishing for S3 Storage Lens metrics. See Cloud Watch Metrics below for more details.
+     * @param cloudWatchMetrics Amazon CloudWatch publishing for S3 Storage Lens metrics. See `cloudWatchMetrics` below for more details.
      * @return builder
      */
     def cloudWatchMetrics(args: Endofunction[com.pulumi.aws.s3control.inputs.StorageLensConfigurationStorageLensConfigurationDataExportCloudWatchMetricsArgs.Builder]):
@@ -716,7 +716,7 @@ object s3control:
       builder.cloudWatchMetrics(args(argsBuilder).build)
 
     /**
-     * @param s3BucketDestination The bucket where the S3 Storage Lens metrics export will be located. See S3 Bucket Destination below for more details.
+     * @param s3BucketDestination Bucket where the S3 Storage Lens metrics export will be located. See `s3BucketDestination` below for more details.
      * @return builder
      */
     def s3BucketDestination(args: Endofunction[com.pulumi.aws.s3control.inputs.StorageLensConfigurationStorageLensConfigurationDataExportS3BucketDestinationArgs.Builder]):
@@ -725,7 +725,7 @@ object s3control:
       builder.s3BucketDestination(args(argsBuilder).build)
 
     /**
-     * @param storageLensTableDestination S3 table bucket where the S3 Storage Lens metrics export will be located. See Storage Lens Table Destination below for more details.
+     * @param storageLensTableDestination S3 table bucket where the S3 Storage Lens metrics export will be located. See `storageLensTableDestination` below for more details.
      * @return builder
      */
     def storageLensTableDestination(args: Endofunction[com.pulumi.aws.s3control.inputs.StorageLensConfigurationStorageLensConfigurationDataExportStorageLensTableDestinationArgs.Builder]):
@@ -735,7 +735,7 @@ object s3control:
 
   extension (builder: com.pulumi.aws.s3control.inputs.StorageLensConfigurationStorageLensConfigurationDataExportS3BucketDestinationArgs.Builder)
     /**
-     * @param encryption Encryption of the metrics exports in this bucket. See Encryption below for more details.
+     * @param encryption Encryption of the metrics exports in this bucket. See `encryption` below for more details.
      * @return builder
      */
     def encryption(args: Endofunction[com.pulumi.aws.s3control.inputs.StorageLensConfigurationStorageLensConfigurationDataExportS3BucketDestinationEncryptionArgs.Builder]):
@@ -745,7 +745,7 @@ object s3control:
 
   extension (builder: com.pulumi.aws.s3control.inputs.StorageLensConfigurationStorageLensConfigurationDataExportS3BucketDestinationEncryptionArgs.Builder)
     /**
-     * @param sseKms SSE-KMS encryption. See SSE KMS below for more details.
+     * @param sseKms SSE-KMS encryption. See `sseKms` below for more details.
      * @return builder
      */
     def sseKms(args: Endofunction[com.pulumi.aws.s3control.inputs.StorageLensConfigurationStorageLensConfigurationDataExportS3BucketDestinationEncryptionSseKmsArgs.Builder]):
@@ -764,7 +764,7 @@ object s3control:
 
   extension (builder: com.pulumi.aws.s3control.inputs.StorageLensConfigurationStorageLensConfigurationDataExportStorageLensTableDestinationArgs.Builder)
     /**
-     * @param encryption Encryption of the metrics exports in this S3 tables bucket. See Encryption below for more details.
+     * @param encryption Encryption of the metrics exports in this S3 tables bucket. See `encryption` below for more details.
      * @return builder
      */
     def encryption(args: Endofunction[com.pulumi.aws.s3control.inputs.StorageLensConfigurationStorageLensConfigurationDataExportStorageLensTableDestinationEncryptionArgs.Builder]):
@@ -774,7 +774,7 @@ object s3control:
 
   extension (builder: com.pulumi.aws.s3control.inputs.StorageLensConfigurationStorageLensConfigurationDataExportStorageLensTableDestinationEncryptionArgs.Builder)
     /**
-     * @param sseKms SSE-KMS encryption. See SSE KMS below for more details.
+     * @param sseKms SSE-KMS encryption. See `sseKms` below for more details.
      * @return builder
      */
     def sseKms(args: Endofunction[com.pulumi.aws.s3control.inputs.StorageLensConfigurationStorageLensConfigurationDataExportStorageLensTableDestinationEncryptionSseKmsArgs.Builder]):
@@ -793,7 +793,7 @@ object s3control:
 
   extension (builder: com.pulumi.aws.s3control.inputs.StorageLensConfigurationStorageLensConfigurationExpandedPrefixesDataExportArgs.Builder)
     /**
-     * @param s3BucketDestination The bucket where the S3 Storage Lens expanded prefix metrics export will be located. See S3 Bucket Destination below for more details.
+     * @param s3BucketDestination Bucket where the S3 Storage Lens expanded prefix metrics export will be located. See `s3BucketDestination` below for more details.
      * @return builder
      */
     def s3BucketDestination(args: Endofunction[com.pulumi.aws.s3control.inputs.StorageLensConfigurationStorageLensConfigurationExpandedPrefixesDataExportS3BucketDestinationArgs.Builder]):
@@ -802,7 +802,7 @@ object s3control:
       builder.s3BucketDestination(args(argsBuilder).build)
 
     /**
-     * @param storageLensTableDestination S3 table bucket where the S3 Storage Lens expanded prefix metrics export will be located. See Storage Lens Table Destination below for more details.
+     * @param storageLensTableDestination S3 table bucket where the S3 Storage Lens expanded prefix metrics export will be located. See `storageLensTableDestination` below for more details.
      * @return builder
      */
     def storageLensTableDestination(args: Endofunction[com.pulumi.aws.s3control.inputs.StorageLensConfigurationStorageLensConfigurationExpandedPrefixesDataExportStorageLensTableDestinationArgs.Builder]):
@@ -812,7 +812,7 @@ object s3control:
 
   extension (builder: com.pulumi.aws.s3control.inputs.StorageLensConfigurationStorageLensConfigurationExpandedPrefixesDataExportS3BucketDestinationArgs.Builder)
     /**
-     * @param encryption Encryption of the metrics exports in this bucket. See Encryption below for more details.
+     * @param encryption Encryption of the metrics exports in this bucket. See `encryption` below for more details.
      * @return builder
      */
     def encryption(args: Endofunction[com.pulumi.aws.s3control.inputs.StorageLensConfigurationStorageLensConfigurationExpandedPrefixesDataExportS3BucketDestinationEncryptionArgs.Builder]):
@@ -822,7 +822,7 @@ object s3control:
 
   extension (builder: com.pulumi.aws.s3control.inputs.StorageLensConfigurationStorageLensConfigurationExpandedPrefixesDataExportS3BucketDestinationEncryptionArgs.Builder)
     /**
-     * @param sseKms SSE-KMS encryption. See SSE KMS below for more details.
+     * @param sseKms SSE-KMS encryption. See `sseKms` below for more details.
      * @return builder
      */
     def sseKms(args: Endofunction[com.pulumi.aws.s3control.inputs.StorageLensConfigurationStorageLensConfigurationExpandedPrefixesDataExportS3BucketDestinationEncryptionSseKmsArgs.Builder]):
@@ -841,7 +841,7 @@ object s3control:
 
   extension (builder: com.pulumi.aws.s3control.inputs.StorageLensConfigurationStorageLensConfigurationExpandedPrefixesDataExportStorageLensTableDestinationArgs.Builder)
     /**
-     * @param encryption Encryption of the metrics exports in this S3 tables bucket. See Encryption below for more details.
+     * @param encryption Encryption of the metrics exports in this S3 tables bucket. See `encryption` below for more details.
      * @return builder
      */
     def encryption(args: Endofunction[com.pulumi.aws.s3control.inputs.StorageLensConfigurationStorageLensConfigurationExpandedPrefixesDataExportStorageLensTableDestinationEncryptionArgs.Builder]):
@@ -851,7 +851,7 @@ object s3control:
 
   extension (builder: com.pulumi.aws.s3control.inputs.StorageLensConfigurationStorageLensConfigurationExpandedPrefixesDataExportStorageLensTableDestinationEncryptionArgs.Builder)
     /**
-     * @param sseKms SSE-KMS encryption. See SSE KMS below for more details.
+     * @param sseKms SSE-KMS encryption. See `sseKms` below for more details.
      * @return builder
      */
     def sseKms(args: Endofunction[com.pulumi.aws.s3control.inputs.StorageLensConfigurationStorageLensConfigurationExpandedPrefixesDataExportStorageLensTableDestinationEncryptionSseKmsArgs.Builder]):

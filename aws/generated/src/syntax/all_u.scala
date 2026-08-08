@@ -143,6 +143,9 @@ export ko_pulumi.aws.lex.voiceSettings
 export ko_pulumi.aws.lex.waitAndContinueSpecifications
 export ko_pulumi.aws.lex.waitingResponses
 export ko_pulumi.aws.macie2.userPausedDetails
+export ko_pulumi.aws.mailmanager.unlesses
+export ko_pulumi.aws.mailmanager.verdictExpression
+export ko_pulumi.aws.mailmanager.writeToS3
 export ko_pulumi.aws.medialive.udpGroupSettings
 export ko_pulumi.aws.medialive.udpOutputSettings
 export ko_pulumi.aws.medialive.videoBlackSettings

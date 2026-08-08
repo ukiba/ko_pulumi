@@ -10,6 +10,8 @@ export ko_pulumi.aws.alb.mutualAuthentication
 export ko_pulumi.aws.amp.limits
 export ko_pulumi.aws.amp.limitsPerLabelSets
 export ko_pulumi.aws.amp.loggingConfiguration
+export ko_pulumi.aws.amp.loggingDestination
+export ko_pulumi.aws.amp.missingDataAction
 export ko_pulumi.aws.apigateway.location
 export ko_pulumi.aws.apigateway.mutualTlsAuthentication
 export ko_pulumi.aws.apigatewayv2.matchBasePaths
@@ -264,6 +266,7 @@ export ko_pulumi.aws.ecs.lifecycleHooks
 export ko_pulumi.aws.ecs.linearConfiguration
 export ko_pulumi.aws.ecs.linuxParameters
 export ko_pulumi.aws.ecs.loadBalancers
+export ko_pulumi.aws.ecs.localStorageConfiguration
 export ko_pulumi.aws.ecs.logConfiguration
 export ko_pulumi.aws.ecs.managedEbsVolume
 export ko_pulumi.aws.ecs.managedInstancesProvider
@@ -414,6 +417,7 @@ export ko_pulumi.aws.lex.opensearchConfiguration
 export ko_pulumi.aws.lex.outputContexts
 export ko_pulumi.aws.lightsail.locations
 export ko_pulumi.aws.lightsail.origin
+export ko_pulumi.aws.mailmanager.numberExpression
 export ko_pulumi.aws.medialive.keyProviderServer
 export ko_pulumi.aws.medialive.keyProviderSettings
 export ko_pulumi.aws.medialive.m2tsSettings
@@ -529,6 +533,8 @@ export ko_pulumi.aws.rekognition.kinesisDataStream
 export ko_pulumi.aws.rekognition.kinesisVideoStream
 export ko_pulumi.aws.rekognition.notificationChannel
 export ko_pulumi.aws.rekognition.output
+export ko_pulumi.aws.resiliencehub.multiAz
+export ko_pulumi.aws.resiliencehub.multiRegion
 export ko_pulumi.aws.rolesanywhere.notificationSettings
 export ko_pulumi.aws.route53.latencyRoutingPolicies
 export ko_pulumi.aws.route53.locations

@@ -1,11 +1,11 @@
-//| mill-version: 1.1.7
+//| mill-version: 1.1.8
 //| mill-jvm-version: temurin:25
 
 package build
 
 import mill.*, scalalib.*, publish.*
 
-val pulumiAwsVersion        = "7.40.0"
+val pulumiAwsVersion        = "7.41.0"
 val pulumiGcpVersion        = "9.33.0"
 val pulumiAzureVersion      = "6.39.0"
 

@@ -34,6 +34,16 @@ object ecr:
       val argsBuilder = com.pulumi.aws.ecr.inputs.GetAuthorizationTokenPlainArgs.builder
       com.pulumi.aws.ecr.EcrFunctions.getAuthorizationTokenPlain(args(argsBuilder).build)
 
+    inline def getCredentials(args: Endofunction[com.pulumi.aws.ecr.inputs.GetCredentialsArgs.Builder] = scala.Predef.identity):
+        com.pulumi.core.Output[com.pulumi.aws.ecr.outputs.GetCredentialsResult] =
+      val argsBuilder = com.pulumi.aws.ecr.inputs.GetCredentialsArgs.builder
+      com.pulumi.aws.ecr.EcrFunctions.getCredentials(args(argsBuilder).build)
+
+    inline def getCredentialsPlain(args: Endofunction[com.pulumi.aws.ecr.inputs.GetCredentialsPlainArgs.Builder] = scala.Predef.identity):
+        java.util.concurrent.CompletableFuture[com.pulumi.aws.ecr.outputs.GetCredentialsResult] =
+      val argsBuilder = com.pulumi.aws.ecr.inputs.GetCredentialsPlainArgs.builder
+      com.pulumi.aws.ecr.EcrFunctions.getCredentialsPlain(args(argsBuilder).build)
+
     /** The ECR Image data source allows the details of an image with a particular tag or digest to be retrieved. */
     inline def getImage(args: Endofunction[com.pulumi.aws.ecr.inputs.GetImageArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.ecr.outputs.GetImageResult] =

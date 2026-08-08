@@ -170,8 +170,7 @@ object appstream:
 
   extension (builder: com.pulumi.aws.appstream.StackArgs.Builder)
     /**
-     * @param accessEndpoints Set of configuration blocks defining the interface VPC endpoints. Users of the stack can connect to AppStream 2.0 only through the specified endpoints.
-     * See `accessEndpoints` below.
+     * @param accessEndpoints Set of configuration blocks defining the interface VPC endpoints. Users of the stack can connect to AppStream 2.0 only through the specified endpoints. See `accessEndpoints` below.
      * @return builder
      */
     def accessEndpoints(args: Endofunction[com.pulumi.aws.appstream.inputs.StackAccessEndpointArgs.Builder]*):
@@ -180,8 +179,7 @@ object appstream:
       builder.accessEndpoints(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param applicationSettings Settings for application settings persistence.
-     * See `applicationSettings` below.
+     * @param applicationSettings Settings for application settings persistence. See `applicationSettings` below.
      * @return builder
      */
     def applicationSettings(args: Endofunction[com.pulumi.aws.appstream.inputs.StackApplicationSettingsArgs.Builder]):
@@ -190,8 +188,7 @@ object appstream:
       builder.applicationSettings(args(argsBuilder).build)
 
     /**
-     * @param storageConnectors Configuration block for the storage connectors to enable.
-     * See `storageConnectors` below.
+     * @param storageConnectors Configuration block for the storage connectors to enable. See `storageConnectors` below.
      * @return builder
      */
     def storageConnectors(args: Endofunction[com.pulumi.aws.appstream.inputs.StackStorageConnectorArgs.Builder]*):
@@ -200,8 +197,7 @@ object appstream:
       builder.storageConnectors(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param streamingExperienceSettings The streaming protocol you want your stack to prefer. This can be UDP or TCP. Currently, UDP is only supported in the Windows native client.
-     * See `streamingExperienceSettings` below.
+     * @param streamingExperienceSettings Streaming protocol you want your stack to prefer. This can be UDP or TCP. Currently, UDP is only supported in the Windows native client. See `streamingExperienceSettings` below.
      * @return builder
      */
     def streamingExperienceSettings(args: Endofunction[com.pulumi.aws.appstream.inputs.StackStreamingExperienceSettingsArgs.Builder]):
@@ -210,8 +206,7 @@ object appstream:
       builder.streamingExperienceSettings(args(argsBuilder).build)
 
     /**
-     * @param userSettings Configuration block for the actions that are enabled or disabled for users during their streaming sessions. If not provided, these settings are configured automatically by AWS. If provided, the configuration should include a block for each configurable action.
-     * See `userSettings` below.
+     * @param userSettings Configuration block for the actions that are enabled or disabled for users during their streaming sessions. If not provided, these settings are configured automatically by AWS. If provided, the configuration should include a block for each configurable action. See `userSettings` below.
      * @return builder
      */
     def userSettings(args: Endofunction[com.pulumi.aws.appstream.inputs.StackUserSettingArgs.Builder]*):
@@ -312,8 +307,7 @@ object appstream:
 
   extension (builder: com.pulumi.aws.appstream.inputs.StackState.Builder)
     /**
-     * @param accessEndpoints Set of configuration blocks defining the interface VPC endpoints. Users of the stack can connect to AppStream 2.0 only through the specified endpoints.
-     * See `accessEndpoints` below.
+     * @param accessEndpoints Set of configuration blocks defining the interface VPC endpoints. Users of the stack can connect to AppStream 2.0 only through the specified endpoints. See `accessEndpoints` below.
      * @return builder
      */
     def accessEndpoints(args: Endofunction[com.pulumi.aws.appstream.inputs.StackAccessEndpointArgs.Builder]*):
@@ -322,8 +316,7 @@ object appstream:
       builder.accessEndpoints(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param applicationSettings Settings for application settings persistence.
-     * See `applicationSettings` below.
+     * @param applicationSettings Settings for application settings persistence. See `applicationSettings` below.
      * @return builder
      */
     def applicationSettings(args: Endofunction[com.pulumi.aws.appstream.inputs.StackApplicationSettingsArgs.Builder]):
@@ -332,8 +325,7 @@ object appstream:
       builder.applicationSettings(args(argsBuilder).build)
 
     /**
-     * @param storageConnectors Configuration block for the storage connectors to enable.
-     * See `storageConnectors` below.
+     * @param storageConnectors Configuration block for the storage connectors to enable. See `storageConnectors` below.
      * @return builder
      */
     def storageConnectors(args: Endofunction[com.pulumi.aws.appstream.inputs.StackStorageConnectorArgs.Builder]*):
@@ -342,8 +334,7 @@ object appstream:
       builder.storageConnectors(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param streamingExperienceSettings The streaming protocol you want your stack to prefer. This can be UDP or TCP. Currently, UDP is only supported in the Windows native client.
-     * See `streamingExperienceSettings` below.
+     * @param streamingExperienceSettings Streaming protocol you want your stack to prefer. This can be UDP or TCP. Currently, UDP is only supported in the Windows native client. See `streamingExperienceSettings` below.
      * @return builder
      */
     def streamingExperienceSettings(args: Endofunction[com.pulumi.aws.appstream.inputs.StackStreamingExperienceSettingsArgs.Builder]):
@@ -352,8 +343,7 @@ object appstream:
       builder.streamingExperienceSettings(args(argsBuilder).build)
 
     /**
-     * @param userSettings Configuration block for the actions that are enabled or disabled for users during their streaming sessions. If not provided, these settings are configured automatically by AWS. If provided, the configuration should include a block for each configurable action.
-     * See `userSettings` below.
+     * @param userSettings Configuration block for the actions that are enabled or disabled for users during their streaming sessions. If not provided, these settings are configured automatically by AWS. If provided, the configuration should include a block for each configurable action. See `userSettings` below.
      * @return builder
      */
     def userSettings(args: Endofunction[com.pulumi.aws.appstream.inputs.StackUserSettingArgs.Builder]*):

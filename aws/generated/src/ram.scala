@@ -111,7 +111,7 @@ object ram:
 
   extension (builder: com.pulumi.aws.ram.ResourceShareArgs.Builder)
     /**
-     * @param resourceShareConfiguration A block that specifies the configuration of the resource share. See `resourceShareConfiguration` Block for details.
+     * @param resourceShareConfiguration Configuration block for the resource share. See `resourceShareConfiguration` Block for details.
      * @return builder
      */
     def resourceShareConfiguration(args: Endofunction[com.pulumi.aws.ram.inputs.ResourceShareResourceShareConfigurationArgs.Builder]):
@@ -149,7 +149,7 @@ object ram:
 
   extension (builder: com.pulumi.aws.ram.inputs.GetResourceShareArgs.Builder)
     /**
-     * @param filters Filter used to scope the list of owned shares e.g., by tags. See [related docs] (https://docs.aws.amazon.com/ram/latest/APIReference/API_TagFilter.html).
+     * @param filters Filter used to scope the list e.g., by tags. See `filter` Block below.
      * @return builder
      */
     def filters(args: Endofunction[com.pulumi.aws.ram.inputs.GetResourceShareFilterArgs.Builder]*):
@@ -165,7 +165,7 @@ object ram:
 
   extension (builder: com.pulumi.aws.ram.inputs.ResourceShareState.Builder)
     /**
-     * @param resourceShareConfiguration A block that specifies the configuration of the resource share. See `resourceShareConfiguration` Block for details.
+     * @param resourceShareConfiguration Configuration block for the resource share. See `resourceShareConfiguration` Block for details.
      * @return builder
      */
     def resourceShareConfiguration(args: Endofunction[com.pulumi.aws.ram.inputs.ResourceShareResourceShareConfigurationArgs.Builder]):

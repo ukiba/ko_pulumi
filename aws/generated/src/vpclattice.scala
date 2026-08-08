@@ -94,8 +94,7 @@ object vpclattice:
 
   extension (builder: com.pulumi.aws.vpclattice.ListenerRuleArgs.Builder)
     /**
-     * @param action The action for the listener rule.
-     * See `action` Block for details.
+     * @param action Action for the listener rule. See `action` Block for details.
      * @return builder
      */
     def action(args: Endofunction[com.pulumi.aws.vpclattice.inputs.ListenerRuleActionArgs.Builder]):
@@ -104,8 +103,7 @@ object vpclattice:
       builder.action(args(argsBuilder).build)
 
     /**
-     * @param match The rule match.
-     * See `match` Block
+     * @param match Rule match. See `match` Block for details.
      * @return builder
      */
     def `match`(args: Endofunction[com.pulumi.aws.vpclattice.inputs.ListenerRuleMatchArgs.Builder]):
@@ -297,7 +295,7 @@ object vpclattice:
 
   extension (builder: com.pulumi.aws.vpclattice.TargetGroupArgs.Builder)
     /**
-     * @param config The target group configuration.
+     * @param config Target group configuration. See `config` Block below.
      * @return builder
      */
     def config(args: Endofunction[com.pulumi.aws.vpclattice.inputs.TargetGroupConfigArgs.Builder]):
@@ -315,7 +313,7 @@ object vpclattice:
 
   extension (builder: com.pulumi.aws.vpclattice.TargetGroupAttachmentArgs.Builder)
     /**
-     * @param target The target.
+     * @param target Target to register with the target group. See `target` Block for details.
      * @return builder
      */
     def target(args: Endofunction[com.pulumi.aws.vpclattice.inputs.TargetGroupAttachmentTargetArgs.Builder]):
@@ -391,13 +389,17 @@ object vpclattice:
       com.pulumi.aws.vpclattice.VpclatticeFunctions.getServiceNetworkPlain(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.vpclattice.inputs.ListenerDefaultActionArgs.Builder)
+    /**
+     * @param fixedResponse Configuration block for returning a fixed response. See `fixedResponse` Block below.
+     * @return builder
+     */
     def fixedResponse(args: Endofunction[com.pulumi.aws.vpclattice.inputs.ListenerDefaultActionFixedResponseArgs.Builder]):
         com.pulumi.aws.vpclattice.inputs.ListenerDefaultActionArgs.Builder =
       val argsBuilder = com.pulumi.aws.vpclattice.inputs.ListenerDefaultActionFixedResponseArgs.builder
       builder.fixedResponse(args(argsBuilder).build)
 
     /**
-     * @param forwards Route requests to one or more target groups. See Forward blocks below.
+     * @param forwards Route requests to one or more target groups. See `forward` Block below.
      * 
      * &gt; **NOTE:** You must specify exactly one of the following argument blocks: `fixedResponse` or `forward`.
      * @return builder
@@ -409,7 +411,7 @@ object vpclattice:
 
   extension (builder: com.pulumi.aws.vpclattice.inputs.ListenerDefaultActionForwardArgs.Builder)
     /**
-     * @param targetGroups One or more target group blocks.
+     * @param targetGroups One or more target group blocks. See `targetGroups` Block below.
      * @return builder
      */
     def targetGroups(args: Endofunction[com.pulumi.aws.vpclattice.inputs.ListenerDefaultActionForwardTargetGroupArgs.Builder]*):
@@ -419,8 +421,7 @@ object vpclattice:
 
   extension (builder: com.pulumi.aws.vpclattice.inputs.ListenerRuleActionArgs.Builder)
     /**
-     * @param fixedResponse Describes the rule action that returns a custom HTTP response.
-     * See `fixedResponse` Block for details.
+     * @param fixedResponse Rule action that returns a custom HTTP response. See `fixedResponse` Block for details.
      * @return builder
      */
     def fixedResponse(args: Endofunction[com.pulumi.aws.vpclattice.inputs.ListenerRuleActionFixedResponseArgs.Builder]):
@@ -429,8 +430,7 @@ object vpclattice:
       builder.fixedResponse(args(argsBuilder).build)
 
     /**
-     * @param forward The forward action. Traffic that matches the rule is forwarded to the specified target groups.
-     * See `forward` Block for details.
+     * @param forward Forward action. Traffic that matches the rule is forwarded to the specified target groups. See `forward` Block for details.
      * @return builder
      */
     def forward(args: Endofunction[com.pulumi.aws.vpclattice.inputs.ListenerRuleActionForwardArgs.Builder]):
@@ -440,9 +440,7 @@ object vpclattice:
 
   extension (builder: com.pulumi.aws.vpclattice.inputs.ListenerRuleActionForwardArgs.Builder)
     /**
-     * @param targetGroups The target groups. Traffic matching the rule is forwarded to the specified target groups. With forward actions, you can assign a weight that controls the prioritization and selection of each target group. This means that requests are distributed to individual target groups based on their weights. For example, if two target groups have the same weight, each target group receives half of the traffic.
-     * 
-     * The default value is 1 with maximum number of 2. If only one target group is provided, there is no need to set the weight; 100% of traffic will go to that target group.
+     * @param targetGroups Target groups that traffic matching the rule is forwarded to. See `targetGroups` Block for details.
      * @return builder
      */
     def targetGroups(args: Endofunction[com.pulumi.aws.vpclattice.inputs.ListenerRuleActionForwardTargetGroupArgs.Builder]*):
@@ -452,8 +450,7 @@ object vpclattice:
 
   extension (builder: com.pulumi.aws.vpclattice.inputs.ListenerRuleMatchArgs.Builder)
     /**
-     * @param httpMatch The HTTP criteria that a rule must match.
-     * See `httpMatch` Block for details.
+     * @param httpMatch HTTP criteria that a rule must match. See `httpMatch` Block for details.
      * @return builder
      */
     def httpMatch(args: Endofunction[com.pulumi.aws.vpclattice.inputs.ListenerRuleMatchHttpMatchArgs.Builder]):
@@ -463,9 +460,7 @@ object vpclattice:
 
   extension (builder: com.pulumi.aws.vpclattice.inputs.ListenerRuleMatchHttpMatchArgs.Builder)
     /**
-     * @param headerMatches The header matches.
-     * Matches incoming requests with rule based on request header value before applying rule action.
-     * See `headerMatches` Block for details.
+     * @param headerMatches Header matches that match incoming requests based on the request header value before applying the rule action. See `headerMatches` Block for details.
      * @return builder
      */
     def headerMatches(args: Endofunction[com.pulumi.aws.vpclattice.inputs.ListenerRuleMatchHttpMatchHeaderMatchArgs.Builder]*):
@@ -474,8 +469,7 @@ object vpclattice:
       builder.headerMatches(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param pathMatch The path match.
-     * See `pathMatch` Block for details.
+     * @param pathMatch Path match. See `pathMatch` Block for details.
      * @return builder
      */
     def pathMatch(args: Endofunction[com.pulumi.aws.vpclattice.inputs.ListenerRuleMatchHttpMatchPathMatchArgs.Builder]):
@@ -485,8 +479,7 @@ object vpclattice:
 
   extension (builder: com.pulumi.aws.vpclattice.inputs.ListenerRuleMatchHttpMatchHeaderMatchArgs.Builder)
     /**
-     * @param match The header match type.
-     * See Header Match `match` Block for details.
+     * @param match Header match type. See `match.http_match.header_matches.match` Block for details.
      * @return builder
      */
     def `match`(args: Endofunction[com.pulumi.aws.vpclattice.inputs.ListenerRuleMatchHttpMatchHeaderMatchMatchArgs.Builder]):
@@ -496,8 +489,7 @@ object vpclattice:
 
   extension (builder: com.pulumi.aws.vpclattice.inputs.ListenerRuleMatchHttpMatchPathMatchArgs.Builder)
     /**
-     * @param match The header match type.
-     * See Path Match `match` Block for details.
+     * @param match Path match type. See `match.http_match.path_match.match` Block for details.
      * @return builder
      */
     def `match`(args: Endofunction[com.pulumi.aws.vpclattice.inputs.ListenerRuleMatchHttpMatchPathMatchMatchArgs.Builder]):
@@ -507,8 +499,7 @@ object vpclattice:
 
   extension (builder: com.pulumi.aws.vpclattice.inputs.ListenerRuleState.Builder)
     /**
-     * @param action The action for the listener rule.
-     * See `action` Block for details.
+     * @param action Action for the listener rule. See `action` Block for details.
      * @return builder
      */
     def action(args: Endofunction[com.pulumi.aws.vpclattice.inputs.ListenerRuleActionArgs.Builder]):
@@ -517,8 +508,7 @@ object vpclattice:
       builder.action(args(argsBuilder).build)
 
     /**
-     * @param match The rule match.
-     * See `match` Block
+     * @param match Rule match. See `match` Block for details.
      * @return builder
      */
     def `match`(args: Endofunction[com.pulumi.aws.vpclattice.inputs.ListenerRuleMatchArgs.Builder]):
@@ -604,7 +594,7 @@ object vpclattice:
 
   extension (builder: com.pulumi.aws.vpclattice.inputs.ServiceNetworkServiceAssociationState.Builder)
     /**
-     * @param dnsEntries The DNS name of the service.
+     * @param dnsEntries DNS name of the service.
      * @return builder
      */
     def dnsEntries(args: Endofunction[com.pulumi.aws.vpclattice.inputs.ServiceNetworkServiceAssociationDnsEntryArgs.Builder]*):
@@ -634,7 +624,7 @@ object vpclattice:
 
   extension (builder: com.pulumi.aws.vpclattice.inputs.TargetGroupAttachmentState.Builder)
     /**
-     * @param target The target.
+     * @param target Target to register with the target group. See `target` Block for details.
      * @return builder
      */
     def target(args: Endofunction[com.pulumi.aws.vpclattice.inputs.TargetGroupAttachmentTargetArgs.Builder]):
@@ -644,7 +634,7 @@ object vpclattice:
 
   extension (builder: com.pulumi.aws.vpclattice.inputs.TargetGroupConfigArgs.Builder)
     /**
-     * @param healthCheck The health check configuration.
+     * @param healthCheck Health check configuration. See `healthCheck` Block below.
      * @return builder
      */
     def healthCheck(args: Endofunction[com.pulumi.aws.vpclattice.inputs.TargetGroupConfigHealthCheckArgs.Builder]):
@@ -654,7 +644,7 @@ object vpclattice:
 
   extension (builder: com.pulumi.aws.vpclattice.inputs.TargetGroupConfigHealthCheckArgs.Builder)
     /**
-     * @param matcher The codes to use when checking for a successful response from a target. These are called _Success codes_ in the console.
+     * @param matcher Codes to use when checking for a successful response from a target. See `matcher` Block below.
      * @return builder
      */
     def matcher(args: Endofunction[com.pulumi.aws.vpclattice.inputs.TargetGroupConfigHealthCheckMatcherArgs.Builder]):
@@ -664,7 +654,7 @@ object vpclattice:
 
   extension (builder: com.pulumi.aws.vpclattice.inputs.TargetGroupState.Builder)
     /**
-     * @param config The target group configuration.
+     * @param config Target group configuration. See `config` Block below.
      * @return builder
      */
     def config(args: Endofunction[com.pulumi.aws.vpclattice.inputs.TargetGroupConfigArgs.Builder]):

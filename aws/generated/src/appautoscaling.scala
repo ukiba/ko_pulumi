@@ -87,7 +87,7 @@ object appautoscaling:
 
   extension (builder: com.pulumi.aws.appautoscaling.TargetArgs.Builder)
     /**
-     * @param suspendedState Specifies whether the scaling activities for a scalable target are in a suspended state.
+     * @param suspendedState Whether the scaling activities for a scalable target are in a suspended state.
      * @return builder
      */
     def suspendedState(args: Endofunction[com.pulumi.aws.appautoscaling.inputs.TargetSuspendedStateArgs.Builder]):
@@ -97,7 +97,7 @@ object appautoscaling:
 
   extension (builder: com.pulumi.aws.appautoscaling.inputs.PolicyPredictiveScalingPolicyConfigurationArgs.Builder)
     /**
-     * @param metricSpecifications Metrics and target utilization to use for predictive scaling. See supported fields below.
+     * @param metricSpecifications Metrics and target utilization to use for predictive scaling. See `predictive_scaling_policy_configuration.metric_specification` Block for details.
      * @return builder
      */
     def metricSpecifications(args: Endofunction[com.pulumi.aws.appautoscaling.inputs.PolicyPredictiveScalingPolicyConfigurationMetricSpecificationArgs.Builder]*):
@@ -107,7 +107,7 @@ object appautoscaling:
 
   extension (builder: com.pulumi.aws.appautoscaling.inputs.PolicyPredictiveScalingPolicyConfigurationMetricSpecificationArgs.Builder)
     /**
-     * @param customizedCapacityMetricSpecification Customized capacity metric specification. See supported fields below.
+     * @param customizedCapacityMetricSpecification Customized capacity metric specification. See `predictive_scaling_policy_configuration.metric_specification.customized_capacity_metric_specification` Block for details.
      * @return builder
      */
     def customizedCapacityMetricSpecification(args: Endofunction[com.pulumi.aws.appautoscaling.inputs.PolicyPredictiveScalingPolicyConfigurationMetricSpecificationCustomizedCapacityMetricSpecificationArgs.Builder]):
@@ -116,7 +116,7 @@ object appautoscaling:
       builder.customizedCapacityMetricSpecification(args(argsBuilder).build)
 
     /**
-     * @param customizedLoadMetricSpecification Customized load metric specification. See supported fields below.
+     * @param customizedLoadMetricSpecification Customized load metric specification. See `predictive_scaling_policy_configuration.metric_specification.customized_load_metric_specification` Block for details.
      * @return builder
      */
     def customizedLoadMetricSpecification(args: Endofunction[com.pulumi.aws.appautoscaling.inputs.PolicyPredictiveScalingPolicyConfigurationMetricSpecificationCustomizedLoadMetricSpecificationArgs.Builder]):
@@ -125,7 +125,7 @@ object appautoscaling:
       builder.customizedLoadMetricSpecification(args(argsBuilder).build)
 
     /**
-     * @param customizedScalingMetricSpecification Customized scaling metric specification. See supported fields below.
+     * @param customizedScalingMetricSpecification Customized scaling metric specification. See `predictive_scaling_policy_configuration.metric_specification.customized_scaling_metric_specification` Block for details.
      * @return builder
      */
     def customizedScalingMetricSpecification(args: Endofunction[com.pulumi.aws.appautoscaling.inputs.PolicyPredictiveScalingPolicyConfigurationMetricSpecificationCustomizedScalingMetricSpecificationArgs.Builder]):
@@ -134,7 +134,7 @@ object appautoscaling:
       builder.customizedScalingMetricSpecification(args(argsBuilder).build)
 
     /**
-     * @param predefinedLoadMetricSpecification Predefined load metric specification. See supported fields below.
+     * @param predefinedLoadMetricSpecification Predefined load metric specification. See `predictive_scaling_policy_configuration.metric_specification.predefined_load_metric_specification` Block for details.
      * @return builder
      */
     def predefinedLoadMetricSpecification(args: Endofunction[com.pulumi.aws.appautoscaling.inputs.PolicyPredictiveScalingPolicyConfigurationMetricSpecificationPredefinedLoadMetricSpecificationArgs.Builder]):
@@ -143,7 +143,7 @@ object appautoscaling:
       builder.predefinedLoadMetricSpecification(args(argsBuilder).build)
 
     /**
-     * @param predefinedMetricPairSpecification Predefined metric pair specification that determines the appropriate scaling metric and load metric to use. See supported fields below.
+     * @param predefinedMetricPairSpecification Predefined metric pair specification that determines the appropriate scaling metric and load metric to use. See `predictive_scaling_policy_configuration.metric_specification.predefined_metric_pair_specification` Block for details.
      * @return builder
      */
     def predefinedMetricPairSpecification(args: Endofunction[com.pulumi.aws.appautoscaling.inputs.PolicyPredictiveScalingPolicyConfigurationMetricSpecificationPredefinedMetricPairSpecificationArgs.Builder]):
@@ -152,7 +152,7 @@ object appautoscaling:
       builder.predefinedMetricPairSpecification(args(argsBuilder).build)
 
     /**
-     * @param predefinedScalingMetricSpecification Predefined scaling metric specification. See supported fields below.
+     * @param predefinedScalingMetricSpecification Predefined scaling metric specification. See `predictive_scaling_policy_configuration.metric_specification.predefined_scaling_metric_specification` Block for details.
      * @return builder
      */
     def predefinedScalingMetricSpecification(args: Endofunction[com.pulumi.aws.appautoscaling.inputs.PolicyPredictiveScalingPolicyConfigurationMetricSpecificationPredefinedScalingMetricSpecificationArgs.Builder]):
@@ -162,7 +162,7 @@ object appautoscaling:
 
   extension (builder: com.pulumi.aws.appautoscaling.inputs.PolicyPredictiveScalingPolicyConfigurationMetricSpecificationCustomizedCapacityMetricSpecificationArgs.Builder)
     /**
-     * @param metricDataQueries One or more metric data queries to provide data points for a metric specification. See supported fields below.
+     * @param metricDataQueries One or more metric data queries to provide data points for a metric specification. See `predictive_scaling_policy_configuration.metric_specification.customized_scaling_metric_specification.metric_data_query` Block for details.
      * @return builder
      */
     def metricDataQueries(args: Endofunction[com.pulumi.aws.appautoscaling.inputs.PolicyPredictiveScalingPolicyConfigurationMetricSpecificationCustomizedCapacityMetricSpecificationMetricDataQueryArgs.Builder]*):
@@ -171,20 +171,12 @@ object appautoscaling:
       builder.metricDataQueries(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.aws.appautoscaling.inputs.PolicyPredictiveScalingPolicyConfigurationMetricSpecificationCustomizedCapacityMetricSpecificationMetricDataQueryArgs.Builder)
-    /**
-     * @param metricStat Information about the metric data to return. See supported fields below.
-     * @return builder
-     */
     def metricStat(args: Endofunction[com.pulumi.aws.appautoscaling.inputs.PolicyPredictiveScalingPolicyConfigurationMetricSpecificationCustomizedCapacityMetricSpecificationMetricDataQueryMetricStatArgs.Builder]):
         com.pulumi.aws.appautoscaling.inputs.PolicyPredictiveScalingPolicyConfigurationMetricSpecificationCustomizedCapacityMetricSpecificationMetricDataQueryArgs.Builder =
       val argsBuilder = com.pulumi.aws.appautoscaling.inputs.PolicyPredictiveScalingPolicyConfigurationMetricSpecificationCustomizedCapacityMetricSpecificationMetricDataQueryMetricStatArgs.builder
       builder.metricStat(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.appautoscaling.inputs.PolicyPredictiveScalingPolicyConfigurationMetricSpecificationCustomizedCapacityMetricSpecificationMetricDataQueryMetricStatArgs.Builder)
-    /**
-     * @param metric Structure that defines the CloudWatch metric to return, including the metric name, namespace, and dimensions.
-     * @return builder
-     */
     def metric(args: Endofunction[com.pulumi.aws.appautoscaling.inputs.PolicyPredictiveScalingPolicyConfigurationMetricSpecificationCustomizedCapacityMetricSpecificationMetricDataQueryMetricStatMetricArgs.Builder]):
         com.pulumi.aws.appautoscaling.inputs.PolicyPredictiveScalingPolicyConfigurationMetricSpecificationCustomizedCapacityMetricSpecificationMetricDataQueryMetricStatArgs.Builder =
       val argsBuilder = com.pulumi.aws.appautoscaling.inputs.PolicyPredictiveScalingPolicyConfigurationMetricSpecificationCustomizedCapacityMetricSpecificationMetricDataQueryMetricStatMetricArgs.builder
@@ -192,7 +184,7 @@ object appautoscaling:
 
   extension (builder: com.pulumi.aws.appautoscaling.inputs.PolicyPredictiveScalingPolicyConfigurationMetricSpecificationCustomizedCapacityMetricSpecificationMetricDataQueryMetricStatMetricArgs.Builder)
     /**
-     * @param dimensions Dimensions of the metric. See supported fields below.
+     * @param dimensions Dimensions of the metric. See `predictive_scaling_policy_configuration.metric_specification.customized_scaling_metric_specification.metric_data_query.metric_stat.metric.dimension` Block for details.
      * @return builder
      */
     def dimensions(args: Endofunction[com.pulumi.aws.appautoscaling.inputs.PolicyPredictiveScalingPolicyConfigurationMetricSpecificationCustomizedCapacityMetricSpecificationMetricDataQueryMetricStatMetricDimensionArgs.Builder]*):
@@ -202,7 +194,7 @@ object appautoscaling:
 
   extension (builder: com.pulumi.aws.appautoscaling.inputs.PolicyPredictiveScalingPolicyConfigurationMetricSpecificationCustomizedLoadMetricSpecificationArgs.Builder)
     /**
-     * @param metricDataQueries One or more metric data queries to provide data points for a metric specification. See supported fields below.
+     * @param metricDataQueries One or more metric data queries to provide data points for a metric specification. See `predictive_scaling_policy_configuration.metric_specification.customized_scaling_metric_specification.metric_data_query` Block for details.
      * @return builder
      */
     def metricDataQueries(args: Endofunction[com.pulumi.aws.appautoscaling.inputs.PolicyPredictiveScalingPolicyConfigurationMetricSpecificationCustomizedLoadMetricSpecificationMetricDataQueryArgs.Builder]*):
@@ -211,20 +203,12 @@ object appautoscaling:
       builder.metricDataQueries(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.aws.appautoscaling.inputs.PolicyPredictiveScalingPolicyConfigurationMetricSpecificationCustomizedLoadMetricSpecificationMetricDataQueryArgs.Builder)
-    /**
-     * @param metricStat Information about the metric data to return. See supported fields below.
-     * @return builder
-     */
     def metricStat(args: Endofunction[com.pulumi.aws.appautoscaling.inputs.PolicyPredictiveScalingPolicyConfigurationMetricSpecificationCustomizedLoadMetricSpecificationMetricDataQueryMetricStatArgs.Builder]):
         com.pulumi.aws.appautoscaling.inputs.PolicyPredictiveScalingPolicyConfigurationMetricSpecificationCustomizedLoadMetricSpecificationMetricDataQueryArgs.Builder =
       val argsBuilder = com.pulumi.aws.appautoscaling.inputs.PolicyPredictiveScalingPolicyConfigurationMetricSpecificationCustomizedLoadMetricSpecificationMetricDataQueryMetricStatArgs.builder
       builder.metricStat(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.appautoscaling.inputs.PolicyPredictiveScalingPolicyConfigurationMetricSpecificationCustomizedLoadMetricSpecificationMetricDataQueryMetricStatArgs.Builder)
-    /**
-     * @param metric Structure that defines the CloudWatch metric to return, including the metric name, namespace, and dimensions.
-     * @return builder
-     */
     def metric(args: Endofunction[com.pulumi.aws.appautoscaling.inputs.PolicyPredictiveScalingPolicyConfigurationMetricSpecificationCustomizedLoadMetricSpecificationMetricDataQueryMetricStatMetricArgs.Builder]):
         com.pulumi.aws.appautoscaling.inputs.PolicyPredictiveScalingPolicyConfigurationMetricSpecificationCustomizedLoadMetricSpecificationMetricDataQueryMetricStatArgs.Builder =
       val argsBuilder = com.pulumi.aws.appautoscaling.inputs.PolicyPredictiveScalingPolicyConfigurationMetricSpecificationCustomizedLoadMetricSpecificationMetricDataQueryMetricStatMetricArgs.builder
@@ -232,7 +216,7 @@ object appautoscaling:
 
   extension (builder: com.pulumi.aws.appautoscaling.inputs.PolicyPredictiveScalingPolicyConfigurationMetricSpecificationCustomizedLoadMetricSpecificationMetricDataQueryMetricStatMetricArgs.Builder)
     /**
-     * @param dimensions Dimensions of the metric. See supported fields below.
+     * @param dimensions Dimensions of the metric. See `predictive_scaling_policy_configuration.metric_specification.customized_scaling_metric_specification.metric_data_query.metric_stat.metric.dimension` Block for details.
      * @return builder
      */
     def dimensions(args: Endofunction[com.pulumi.aws.appautoscaling.inputs.PolicyPredictiveScalingPolicyConfigurationMetricSpecificationCustomizedLoadMetricSpecificationMetricDataQueryMetricStatMetricDimensionArgs.Builder]*):
@@ -242,7 +226,7 @@ object appautoscaling:
 
   extension (builder: com.pulumi.aws.appautoscaling.inputs.PolicyPredictiveScalingPolicyConfigurationMetricSpecificationCustomizedScalingMetricSpecificationArgs.Builder)
     /**
-     * @param metricDataQueries One or more metric data queries to provide data points for a metric specification. See supported fields below.
+     * @param metricDataQueries One or more metric data queries to provide data points for a metric specification. See `predictive_scaling_policy_configuration.metric_specification.customized_scaling_metric_specification.metric_data_query` Block for details.
      * @return builder
      */
     def metricDataQueries(args: Endofunction[com.pulumi.aws.appautoscaling.inputs.PolicyPredictiveScalingPolicyConfigurationMetricSpecificationCustomizedScalingMetricSpecificationMetricDataQueryArgs.Builder]*):
@@ -251,20 +235,12 @@ object appautoscaling:
       builder.metricDataQueries(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.aws.appautoscaling.inputs.PolicyPredictiveScalingPolicyConfigurationMetricSpecificationCustomizedScalingMetricSpecificationMetricDataQueryArgs.Builder)
-    /**
-     * @param metricStat Information about the metric data to return. See supported fields below.
-     * @return builder
-     */
     def metricStat(args: Endofunction[com.pulumi.aws.appautoscaling.inputs.PolicyPredictiveScalingPolicyConfigurationMetricSpecificationCustomizedScalingMetricSpecificationMetricDataQueryMetricStatArgs.Builder]):
         com.pulumi.aws.appautoscaling.inputs.PolicyPredictiveScalingPolicyConfigurationMetricSpecificationCustomizedScalingMetricSpecificationMetricDataQueryArgs.Builder =
       val argsBuilder = com.pulumi.aws.appautoscaling.inputs.PolicyPredictiveScalingPolicyConfigurationMetricSpecificationCustomizedScalingMetricSpecificationMetricDataQueryMetricStatArgs.builder
       builder.metricStat(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.appautoscaling.inputs.PolicyPredictiveScalingPolicyConfigurationMetricSpecificationCustomizedScalingMetricSpecificationMetricDataQueryMetricStatArgs.Builder)
-    /**
-     * @param metric Structure that defines the CloudWatch metric to return, including the metric name, namespace, and dimensions.
-     * @return builder
-     */
     def metric(args: Endofunction[com.pulumi.aws.appautoscaling.inputs.PolicyPredictiveScalingPolicyConfigurationMetricSpecificationCustomizedScalingMetricSpecificationMetricDataQueryMetricStatMetricArgs.Builder]):
         com.pulumi.aws.appautoscaling.inputs.PolicyPredictiveScalingPolicyConfigurationMetricSpecificationCustomizedScalingMetricSpecificationMetricDataQueryMetricStatArgs.Builder =
       val argsBuilder = com.pulumi.aws.appautoscaling.inputs.PolicyPredictiveScalingPolicyConfigurationMetricSpecificationCustomizedScalingMetricSpecificationMetricDataQueryMetricStatMetricArgs.builder
@@ -272,7 +248,7 @@ object appautoscaling:
 
   extension (builder: com.pulumi.aws.appautoscaling.inputs.PolicyPredictiveScalingPolicyConfigurationMetricSpecificationCustomizedScalingMetricSpecificationMetricDataQueryMetricStatMetricArgs.Builder)
     /**
-     * @param dimensions Dimensions of the metric. See supported fields below.
+     * @param dimensions Dimensions of the metric. See `predictive_scaling_policy_configuration.metric_specification.customized_scaling_metric_specification.metric_data_query.metric_stat.metric.dimension` Block for details.
      * @return builder
      */
     def dimensions(args: Endofunction[com.pulumi.aws.appautoscaling.inputs.PolicyPredictiveScalingPolicyConfigurationMetricSpecificationCustomizedScalingMetricSpecificationMetricDataQueryMetricStatMetricDimensionArgs.Builder]*):
@@ -310,52 +286,7 @@ object appautoscaling:
 
   extension (builder: com.pulumi.aws.appautoscaling.inputs.PolicyStepScalingPolicyConfigurationArgs.Builder)
     /**
-     * @param stepAdjustments Set of adjustments that manage scaling. These have the following structure:
-     * 
-     * <pre>
-     * {@code
-     * package generated_program;
-     * 
-     * import com.pulumi.Context;
-     * import com.pulumi.Pulumi;
-     * import com.pulumi.core.Output;
-     * import com.pulumi.aws.appautoscaling.Policy;
-     * import com.pulumi.aws.appautoscaling.PolicyArgs;
-     * import com.pulumi.aws.appautoscaling.inputs.PolicyStepScalingPolicyConfigurationArgs;
-     * import com.pulumi.aws.appautoscaling.inputs.PolicyStepScalingPolicyConfigurationStepAdjustmentArgs;
-     * import java.util.ArrayList;
-     * import java.util.Arrays;
-     * import java.util.Map;
-     * import java.io.File;
-     * import java.nio.file.Files;
-     * import java.nio.file.Paths;
-     * 
-     * public class App {
-     *     public static void main(String[] args) {
-     *         Pulumi.run(App::stack);
-     *     }
-     * 
-     *     public static void stack(Context ctx) {
-     *         var ecsPolicy = new Policy("ecsPolicy", PolicyArgs.builder()
-     *             .stepScalingPolicyConfiguration(PolicyStepScalingPolicyConfigurationArgs.builder()
-     *                 .stepAdjustments(
-     *                     PolicyStepScalingPolicyConfigurationStepAdjustmentArgs.builder()
-     *                         .metricIntervalLowerBound("1")
-     *                         .metricIntervalUpperBound("2")
-     *                         .scalingAdjustment(-1)
-     *                         .build(),
-     *                     PolicyStepScalingPolicyConfigurationStepAdjustmentArgs.builder()
-     *                         .metricIntervalLowerBound("2")
-     *                         .metricIntervalUpperBound("3")
-     *                         .scalingAdjustment(1)
-     *                         .build())
-     *                 .build())
-     *             .build());
-     * 
-     *     }
-     * }
-     * }
-     * </pre>
+     * @param stepAdjustments Set of adjustments that manage scaling. See `step_scaling_policy_configuration.step_adjustment` Block for details.
      * @return builder
      */
     def stepAdjustments(args: Endofunction[com.pulumi.aws.appautoscaling.inputs.PolicyStepScalingPolicyConfigurationStepAdjustmentArgs.Builder]*):
@@ -365,7 +296,7 @@ object appautoscaling:
 
   extension (builder: com.pulumi.aws.appautoscaling.inputs.PolicyTargetTrackingScalingPolicyConfigurationArgs.Builder)
     /**
-     * @param customizedMetricSpecification Custom CloudWatch metric. Documentation can be found  at: [AWS Customized Metric Specification](https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_CustomizedMetricSpecification.html). See supported fields below.
+     * @param customizedMetricSpecification Custom CloudWatch metric. See the [AWS Customized Metric Specification](https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_CustomizedMetricSpecification.html) documentation. See `target_tracking_scaling_policy_configuration.customized_metric_specification` Block for details.
      * @return builder
      */
     def customizedMetricSpecification(args: Endofunction[com.pulumi.aws.appautoscaling.inputs.PolicyTargetTrackingScalingPolicyConfigurationCustomizedMetricSpecificationArgs.Builder]):
@@ -374,7 +305,7 @@ object appautoscaling:
       builder.customizedMetricSpecification(args(argsBuilder).build)
 
     /**
-     * @param predefinedMetricSpecification Predefined metric. See supported fields below.
+     * @param predefinedMetricSpecification Predefined metric. See `target_tracking_scaling_policy_configuration.predefined_metric_specification` Block for details.
      * @return builder
      */
     def predefinedMetricSpecification(args: Endofunction[com.pulumi.aws.appautoscaling.inputs.PolicyTargetTrackingScalingPolicyConfigurationPredefinedMetricSpecificationArgs.Builder]):
@@ -384,7 +315,7 @@ object appautoscaling:
 
   extension (builder: com.pulumi.aws.appautoscaling.inputs.PolicyTargetTrackingScalingPolicyConfigurationCustomizedMetricSpecificationArgs.Builder)
     /**
-     * @param dimensions Dimensions of the metric.
+     * @param dimensions Dimensions of the metric. See `target_tracking_scaling_policy_configuration.customized_metric_specification.metrics.metric_stat.metric.dimensions` Block for details.
      * @return builder
      */
     def dimensions(args: Endofunction[com.pulumi.aws.appautoscaling.inputs.PolicyTargetTrackingScalingPolicyConfigurationCustomizedMetricSpecificationDimensionArgs.Builder]*):
@@ -393,7 +324,7 @@ object appautoscaling:
       builder.dimensions(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param metrics Metrics to include, as a metric data query.
+     * @param metrics Metrics to include, as a metric data query. See `target_tracking_scaling_policy_configuration.customized_metric_specification.metrics` Block for details.
      * @return builder
      */
     def metrics(args: Endofunction[com.pulumi.aws.appautoscaling.inputs.PolicyTargetTrackingScalingPolicyConfigurationCustomizedMetricSpecificationMetricArgs.Builder]*):
@@ -402,20 +333,12 @@ object appautoscaling:
       builder.metrics(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.aws.appautoscaling.inputs.PolicyTargetTrackingScalingPolicyConfigurationCustomizedMetricSpecificationMetricArgs.Builder)
-    /**
-     * @param metricStat Structure that defines CloudWatch metric to be used in target tracking scaling policy. You must specify either `expression` or `metricStat`, but not both.
-     * @return builder
-     */
     def metricStat(args: Endofunction[com.pulumi.aws.appautoscaling.inputs.PolicyTargetTrackingScalingPolicyConfigurationCustomizedMetricSpecificationMetricMetricStatArgs.Builder]):
         com.pulumi.aws.appautoscaling.inputs.PolicyTargetTrackingScalingPolicyConfigurationCustomizedMetricSpecificationMetricArgs.Builder =
       val argsBuilder = com.pulumi.aws.appautoscaling.inputs.PolicyTargetTrackingScalingPolicyConfigurationCustomizedMetricSpecificationMetricMetricStatArgs.builder
       builder.metricStat(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.appautoscaling.inputs.PolicyTargetTrackingScalingPolicyConfigurationCustomizedMetricSpecificationMetricMetricStatArgs.Builder)
-    /**
-     * @param metric Structure that defines the CloudWatch metric to return, including the metric name, namespace, and dimensions.
-     * @return builder
-     */
     def metric(args: Endofunction[com.pulumi.aws.appautoscaling.inputs.PolicyTargetTrackingScalingPolicyConfigurationCustomizedMetricSpecificationMetricMetricStatMetricArgs.Builder]):
         com.pulumi.aws.appautoscaling.inputs.PolicyTargetTrackingScalingPolicyConfigurationCustomizedMetricSpecificationMetricMetricStatArgs.Builder =
       val argsBuilder = com.pulumi.aws.appautoscaling.inputs.PolicyTargetTrackingScalingPolicyConfigurationCustomizedMetricSpecificationMetricMetricStatMetricArgs.builder
@@ -423,7 +346,7 @@ object appautoscaling:
 
   extension (builder: com.pulumi.aws.appautoscaling.inputs.PolicyTargetTrackingScalingPolicyConfigurationCustomizedMetricSpecificationMetricMetricStatMetricArgs.Builder)
     /**
-     * @param dimensions Dimensions of the metric.
+     * @param dimensions Dimensions of the metric. See `target_tracking_scaling_policy_configuration.customized_metric_specification.metrics.metric_stat.metric.dimensions` Block for details.
      * @return builder
      */
     def dimensions(args: Endofunction[com.pulumi.aws.appautoscaling.inputs.PolicyTargetTrackingScalingPolicyConfigurationCustomizedMetricSpecificationMetricMetricStatMetricDimensionArgs.Builder]*):
@@ -443,7 +366,7 @@ object appautoscaling:
 
   extension (builder: com.pulumi.aws.appautoscaling.inputs.TargetState.Builder)
     /**
-     * @param suspendedState Specifies whether the scaling activities for a scalable target are in a suspended state.
+     * @param suspendedState Whether the scaling activities for a scalable target are in a suspended state.
      * @return builder
      */
     def suspendedState(args: Endofunction[com.pulumi.aws.appautoscaling.inputs.TargetSuspendedStateArgs.Builder]):

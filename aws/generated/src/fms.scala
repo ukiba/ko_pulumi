@@ -36,7 +36,7 @@ object fms:
 
   extension (builder: com.pulumi.aws.fms.PolicyArgs.Builder)
     /**
-     * @param excludeMap A map of lists of accounts and OU&#39;s to exclude from the policy. See the `excludeMap` block.
+     * @param excludeMap Map of lists of accounts and OUs to exclude from the policy. See the `excludeMap` block.
      * @return builder
      */
     def excludeMap(args: Endofunction[com.pulumi.aws.fms.inputs.PolicyExcludeMapArgs.Builder]):
@@ -45,7 +45,7 @@ object fms:
       builder.excludeMap(args(argsBuilder).build)
 
     /**
-     * @param includeMap A map of lists of accounts and OU&#39;s to include in the policy. See the `includeMap` block.
+     * @param includeMap Map of lists of accounts and OUs to include in the policy. See the `includeMap` block.
      * @return builder
      */
     def includeMap(args: Endofunction[com.pulumi.aws.fms.inputs.PolicyIncludeMapArgs.Builder]):
@@ -54,7 +54,7 @@ object fms:
       builder.includeMap(args(argsBuilder).build)
 
     /**
-     * @param securityServicePolicyData The objects to include in Security Service Policy Data. See the `securityServicePolicyData` block.
+     * @param securityServicePolicyData Objects to include in Security Service Policy Data. See the `securityServicePolicyData` block.
      * @return builder
      */
     def securityServicePolicyData(args: Endofunction[com.pulumi.aws.fms.inputs.PolicySecurityServicePolicyDataArgs.Builder]):
@@ -79,7 +79,7 @@ object fms:
 
   extension (builder: com.pulumi.aws.fms.ResourceSetArgs.Builder)
     /**
-     * @param resourceSets Details about the resource set to be created or updated. See `resourceSet` Attribute Reference below.
+     * @param resourceSets Details about the resource set to be created or updated. See `resourceSet` Block below.
      * @return builder
      */
     def resourceSets(args: Endofunction[com.pulumi.aws.fms.inputs.ResourceSetResourceSetArgs.Builder]*):
@@ -104,7 +104,7 @@ object fms:
 
   extension (builder: com.pulumi.aws.fms.inputs.PolicySecurityServicePolicyDataPolicyOptionArgs.Builder)
     /**
-     * @param networkAclCommonPolicy Defines NACL rules across accounts in their AWS Organization. See the `networkAclCommonPolicy` block.
+     * @param networkAclCommonPolicy Network ACL rules applied across accounts in the AWS Organization. See the `networkAclCommonPolicy` block.
      * @return builder
      */
     def networkAclCommonPolicy(args: Endofunction[com.pulumi.aws.fms.inputs.PolicySecurityServicePolicyDataPolicyOptionNetworkAclCommonPolicyArgs.Builder]):
@@ -113,7 +113,7 @@ object fms:
       builder.networkAclCommonPolicy(args(argsBuilder).build)
 
     /**
-     * @param networkFirewallPolicy Defines the deployment model to use for the firewall policy.  See the `networkFirewallPolicy` block.
+     * @param networkFirewallPolicy Network Firewall policy options that configure a centralized deployment model. See the `networkFirewallPolicy` block.
      * @return builder
      */
     def networkFirewallPolicy(args: Endofunction[com.pulumi.aws.fms.inputs.PolicySecurityServicePolicyDataPolicyOptionNetworkFirewallPolicyArgs.Builder]):
@@ -121,6 +121,10 @@ object fms:
       val argsBuilder = com.pulumi.aws.fms.inputs.PolicySecurityServicePolicyDataPolicyOptionNetworkFirewallPolicyArgs.builder
       builder.networkFirewallPolicy(args(argsBuilder).build)
 
+    /**
+     * @param thirdPartyFirewallPolicy Third-party firewall policy options. See the `thirdPartyFirewallPolicy` block.
+     * @return builder
+     */
     def thirdPartyFirewallPolicy(args: Endofunction[com.pulumi.aws.fms.inputs.PolicySecurityServicePolicyDataPolicyOptionThirdPartyFirewallPolicyArgs.Builder]):
         com.pulumi.aws.fms.inputs.PolicySecurityServicePolicyDataPolicyOptionArgs.Builder =
       val argsBuilder = com.pulumi.aws.fms.inputs.PolicySecurityServicePolicyDataPolicyOptionThirdPartyFirewallPolicyArgs.builder
@@ -128,7 +132,7 @@ object fms:
 
   extension (builder: com.pulumi.aws.fms.inputs.PolicySecurityServicePolicyDataPolicyOptionNetworkAclCommonPolicyArgs.Builder)
     /**
-     * @param networkAclEntrySet Defines NACL entries for Network ACL policy. See the `networkAclEntrySet` block.
+     * @param networkAclEntrySet Network ACL entries for the Network ACL policy. See the `networkAclEntrySet` block.
      * @return builder
      */
     def networkAclEntrySet(args: Endofunction[com.pulumi.aws.fms.inputs.PolicySecurityServicePolicyDataPolicyOptionNetworkAclCommonPolicyNetworkAclEntrySetArgs.Builder]):
@@ -138,7 +142,7 @@ object fms:
 
   extension (builder: com.pulumi.aws.fms.inputs.PolicySecurityServicePolicyDataPolicyOptionNetworkAclCommonPolicyNetworkAclEntrySetArgs.Builder)
     /**
-     * @param firstEntries The rules that you want to run first in the Firewall Manager managed network ACLs. Firewall manager creates entries with ID value between 1 and 5000. See the `firstEntry` block.
+     * @param firstEntries Rules to run first in the Firewall Manager managed network ACLs. Firewall Manager creates entries with ID value between 1 and 5000. See the `firstEntry` block.
      * @return builder
      */
     def firstEntries(args: Endofunction[com.pulumi.aws.fms.inputs.PolicySecurityServicePolicyDataPolicyOptionNetworkAclCommonPolicyNetworkAclEntrySetFirstEntryArgs.Builder]*):
@@ -147,7 +151,7 @@ object fms:
       builder.firstEntries(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param lastEntries The rules that you want to run last in the Firewall Manager managed network ACLs. Firewall manager creates entries with ID value between 32000 and 32766. See the `lastEntry` block.
+     * @param lastEntries Rules to run last in the Firewall Manager managed network ACLs. Firewall Manager creates entries with ID value between 32000 and 32766. See the `lastEntry` block.
      * @return builder
      */
     def lastEntries(args: Endofunction[com.pulumi.aws.fms.inputs.PolicySecurityServicePolicyDataPolicyOptionNetworkAclCommonPolicyNetworkAclEntrySetLastEntryArgs.Builder]*):
@@ -157,7 +161,7 @@ object fms:
 
   extension (builder: com.pulumi.aws.fms.inputs.PolicySecurityServicePolicyDataPolicyOptionNetworkAclCommonPolicyNetworkAclEntrySetFirstEntryArgs.Builder)
     /**
-     * @param icmpTypeCodes A configuration block for ICMP protocol: The ICMP type and code. See the `icmpTypeCode` block.
+     * @param icmpTypeCodes ICMP protocol configuration specifying the ICMP type and code. See the `icmpTypeCode` block.
      * @return builder
      */
     def icmpTypeCodes(args: Endofunction[com.pulumi.aws.fms.inputs.PolicySecurityServicePolicyDataPolicyOptionNetworkAclCommonPolicyNetworkAclEntrySetFirstEntryIcmpTypeCodeArgs.Builder]*):
@@ -166,7 +170,7 @@ object fms:
       builder.icmpTypeCodes(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param portRanges A configuration block for PortRange. See the `portRange` block.
+     * @param portRanges Port range configuration for the rule. See the `portRange` block.
      * @return builder
      */
     def portRanges(args: Endofunction[com.pulumi.aws.fms.inputs.PolicySecurityServicePolicyDataPolicyOptionNetworkAclCommonPolicyNetworkAclEntrySetFirstEntryPortRangeArgs.Builder]*):
@@ -176,7 +180,7 @@ object fms:
 
   extension (builder: com.pulumi.aws.fms.inputs.PolicySecurityServicePolicyDataPolicyOptionNetworkAclCommonPolicyNetworkAclEntrySetLastEntryArgs.Builder)
     /**
-     * @param icmpTypeCodes A configuration block for ICMP protocol: The ICMP type and code. See the `icmpTypeCode` block.
+     * @param icmpTypeCodes ICMP protocol configuration specifying the ICMP type and code. See the `icmpTypeCode` block.
      * @return builder
      */
     def icmpTypeCodes(args: Endofunction[com.pulumi.aws.fms.inputs.PolicySecurityServicePolicyDataPolicyOptionNetworkAclCommonPolicyNetworkAclEntrySetLastEntryIcmpTypeCodeArgs.Builder]*):
@@ -185,7 +189,7 @@ object fms:
       builder.icmpTypeCodes(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param portRanges A configuration block for PortRange. See the `portRange` block.
+     * @param portRanges Port range configuration for the rule. See the `portRange` block.
      * @return builder
      */
     def portRanges(args: Endofunction[com.pulumi.aws.fms.inputs.PolicySecurityServicePolicyDataPolicyOptionNetworkAclCommonPolicyNetworkAclEntrySetLastEntryPortRangeArgs.Builder]*):
@@ -195,7 +199,7 @@ object fms:
 
   extension (builder: com.pulumi.aws.fms.inputs.PolicyState.Builder)
     /**
-     * @param excludeMap A map of lists of accounts and OU&#39;s to exclude from the policy. See the `excludeMap` block.
+     * @param excludeMap Map of lists of accounts and OUs to exclude from the policy. See the `excludeMap` block.
      * @return builder
      */
     def excludeMap(args: Endofunction[com.pulumi.aws.fms.inputs.PolicyExcludeMapArgs.Builder]):
@@ -204,7 +208,7 @@ object fms:
       builder.excludeMap(args(argsBuilder).build)
 
     /**
-     * @param includeMap A map of lists of accounts and OU&#39;s to include in the policy. See the `includeMap` block.
+     * @param includeMap Map of lists of accounts and OUs to include in the policy. See the `includeMap` block.
      * @return builder
      */
     def includeMap(args: Endofunction[com.pulumi.aws.fms.inputs.PolicyIncludeMapArgs.Builder]):
@@ -213,7 +217,7 @@ object fms:
       builder.includeMap(args(argsBuilder).build)
 
     /**
-     * @param securityServicePolicyData The objects to include in Security Service Policy Data. See the `securityServicePolicyData` block.
+     * @param securityServicePolicyData Objects to include in Security Service Policy Data. See the `securityServicePolicyData` block.
      * @return builder
      */
     def securityServicePolicyData(args: Endofunction[com.pulumi.aws.fms.inputs.PolicySecurityServicePolicyDataArgs.Builder]):
@@ -223,7 +227,7 @@ object fms:
 
   extension (builder: com.pulumi.aws.fms.inputs.ResourceSetState.Builder)
     /**
-     * @param resourceSets Details about the resource set to be created or updated. See `resourceSet` Attribute Reference below.
+     * @param resourceSets Details about the resource set to be created or updated. See `resourceSet` Block below.
      * @return builder
      */
     def resourceSets(args: Endofunction[com.pulumi.aws.fms.inputs.ResourceSetResourceSetArgs.Builder]*):

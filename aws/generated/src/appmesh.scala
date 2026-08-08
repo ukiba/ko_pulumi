@@ -171,7 +171,7 @@ object appmesh:
 
   extension (builder: com.pulumi.aws.appmesh.RouteArgs.Builder)
     /**
-     * @param spec Route specification to apply.
+     * @param spec Route specification to apply. See `spec` Block for details.
      * @return builder
      */
     def spec(args: Endofunction[com.pulumi.aws.appmesh.inputs.RouteSpecArgs.Builder]):
@@ -231,7 +231,7 @@ object appmesh:
 
   extension (builder: com.pulumi.aws.appmesh.VirtualNodeArgs.Builder)
     /**
-     * @param spec Virtual node specification to apply.
+     * @param spec Virtual node specification to apply. See `spec` Block for details.
      * @return builder
      */
     def spec(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecArgs.Builder]):
@@ -329,7 +329,7 @@ object appmesh:
 
   extension (builder: com.pulumi.aws.appmesh.inputs.GatewayRouteSpecGrpcRouteActionArgs.Builder)
     /**
-     * @param target Target that traffic is routed to when a request matches the gateway route. See `target` Block for details.
+     * @param target Target that traffic is routed to when a request matches the gateway route. See `spec.http2_route.action.target` Block for details.
      * @return builder
      */
     def target(args: Endofunction[com.pulumi.aws.appmesh.inputs.GatewayRouteSpecGrpcRouteActionTargetArgs.Builder]):
@@ -339,7 +339,7 @@ object appmesh:
 
   extension (builder: com.pulumi.aws.appmesh.inputs.GatewayRouteSpecGrpcRouteActionTargetArgs.Builder)
     /**
-     * @param virtualService Virtual service gateway route target. See `virtualService` Block for details.
+     * @param virtualService Virtual service gateway route target. See `spec.http2_route.action.target.virtual_service` Block for details.
      * @return builder
      */
     def virtualService(args: Endofunction[com.pulumi.aws.appmesh.inputs.GatewayRouteSpecGrpcRouteActionTargetVirtualServiceArgs.Builder]):
@@ -349,7 +349,7 @@ object appmesh:
 
   extension (builder: com.pulumi.aws.appmesh.inputs.GatewayRouteSpecGrpcRouteArgs.Builder)
     /**
-     * @param action Action to take if a match is determined. See `action` Block for details.
+     * @param action Action to take if a match is determined. See `spec.grpc_route.action` Block for details.
      * @return builder
      */
     def action(args: Endofunction[com.pulumi.aws.appmesh.inputs.GatewayRouteSpecGrpcRouteActionArgs.Builder]):
@@ -358,7 +358,7 @@ object appmesh:
       builder.action(args(argsBuilder).build)
 
     /**
-     * @param match Criteria for determining a request match. See `match` Block for details.
+     * @param match Criteria for determining a request match. See `spec.grpc_route.match` Block for details.
      * @return builder
      */
     def `match`(args: Endofunction[com.pulumi.aws.appmesh.inputs.GatewayRouteSpecGrpcRouteMatchArgs.Builder]):
@@ -368,7 +368,7 @@ object appmesh:
 
   extension (builder: com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttp2RouteActionArgs.Builder)
     /**
-     * @param rewrite Gateway route action to rewrite. See `rewrite` Block for details.
+     * @param rewrite Gateway route action to rewrite. See `spec.http2_route.action.rewrite` Block for details.
      * @return builder
      */
     def rewrite(args: Endofunction[com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttp2RouteActionRewriteArgs.Builder]):
@@ -377,7 +377,7 @@ object appmesh:
       builder.rewrite(args(argsBuilder).build)
 
     /**
-     * @param target Target that traffic is routed to when a request matches the gateway route. See `target` Block for details.
+     * @param target Target that traffic is routed to when a request matches the gateway route. See `spec.http2_route.action.target` Block for details.
      * @return builder
      */
     def target(args: Endofunction[com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttp2RouteActionTargetArgs.Builder]):
@@ -387,7 +387,7 @@ object appmesh:
 
   extension (builder: com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttp2RouteActionRewriteArgs.Builder)
     /**
-     * @param hostname Host name to rewrite. See `hostname` Block for details.
+     * @param hostname Host name to match on. See `spec.http2_route.match.hostname` Block for details.
      * @return builder
      */
     def hostname(args: Endofunction[com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttp2RouteActionRewriteHostnameArgs.Builder]):
@@ -396,7 +396,7 @@ object appmesh:
       builder.hostname(args(argsBuilder).build)
 
     /**
-     * @param path Exact path to rewrite. See `path` Block for details.
+     * @param path Client request path to match on. See `spec.http2_route.match.path` Block for details.
      * @return builder
      */
     def path(args: Endofunction[com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttp2RouteActionRewritePathArgs.Builder]):
@@ -405,7 +405,7 @@ object appmesh:
       builder.path(args(argsBuilder).build)
 
     /**
-     * @param prefix Specified beginning characters to rewrite. See `prefix` Block for details.
+     * @param prefix Header value sent by the client must begin with the specified characters.
      * @return builder
      */
     def prefix(args: Endofunction[com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttp2RouteActionRewritePrefixArgs.Builder]):
@@ -415,7 +415,7 @@ object appmesh:
 
   extension (builder: com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttp2RouteActionTargetArgs.Builder)
     /**
-     * @param virtualService Virtual service gateway route target. See `virtualService` Block for details.
+     * @param virtualService Virtual service gateway route target. See `spec.http2_route.action.target.virtual_service` Block for details.
      * @return builder
      */
     def virtualService(args: Endofunction[com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttp2RouteActionTargetVirtualServiceArgs.Builder]):
@@ -425,7 +425,7 @@ object appmesh:
 
   extension (builder: com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttp2RouteArgs.Builder)
     /**
-     * @param action Action to take if a match is determined. See `action` Block for details.
+     * @param action Action to take if a match is determined. See `spec.http2_route.action` Block for details.
      * @return builder
      */
     def action(args: Endofunction[com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttp2RouteActionArgs.Builder]):
@@ -434,7 +434,7 @@ object appmesh:
       builder.action(args(argsBuilder).build)
 
     /**
-     * @param match Criteria for determining a request match. See `match` Block for details.
+     * @param match Criteria for determining a request match. See `spec.http2_route.match` Block for details.
      * @return builder
      */
     def `match`(args: Endofunction[com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttp2RouteMatchArgs.Builder]):
@@ -444,7 +444,7 @@ object appmesh:
 
   extension (builder: com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttp2RouteMatchArgs.Builder)
     /**
-     * @param headers Client request headers to match on. See `header` Block for details.
+     * @param headers Client request headers to match on. See `spec.http2_route.match.header` Block for details.
      * @return builder
      */
     def headers(args: Endofunction[com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttp2RouteMatchHeaderArgs.Builder]*):
@@ -453,7 +453,7 @@ object appmesh:
       builder.headers(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param hostname Host name to match on. See `hostname` Block for details.
+     * @param hostname Host name to match on. See `spec.http2_route.match.hostname` Block for details.
      * @return builder
      */
     def hostname(args: Endofunction[com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttp2RouteMatchHostnameArgs.Builder]):
@@ -462,7 +462,7 @@ object appmesh:
       builder.hostname(args(argsBuilder).build)
 
     /**
-     * @param path Client request path to match on. See `path` Block for details.
+     * @param path Client request path to match on. See `spec.http2_route.match.path` Block for details.
      * @return builder
      */
     def path(args: Endofunction[com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttp2RouteMatchPathArgs.Builder]):
@@ -471,7 +471,7 @@ object appmesh:
       builder.path(args(argsBuilder).build)
 
     /**
-     * @param queryParameters Client request query parameters to match on. See `queryParameter` Block for details.
+     * @param queryParameters Client request query parameters to match on. See `spec.http2_route.match.query_parameter` Block for details.
      * @return builder
      */
     def queryParameters(args: Endofunction[com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttp2RouteMatchQueryParameterArgs.Builder]*):
@@ -480,10 +480,6 @@ object appmesh:
       builder.queryParameters(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttp2RouteMatchHeaderArgs.Builder)
-    /**
-     * @param match Method and value to match the header value sent with a request. Specify one match method.
-     * @return builder
-     */
     def `match`(args: Endofunction[com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttp2RouteMatchHeaderMatchArgs.Builder]):
         com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttp2RouteMatchHeaderArgs.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttp2RouteMatchHeaderMatchArgs.builder
@@ -491,7 +487,7 @@ object appmesh:
 
   extension (builder: com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttp2RouteMatchHeaderMatchArgs.Builder)
     /**
-     * @param range Object that specifies the range of numbers that the header value sent by the client must be included in.
+     * @param range Object that specifies the range of numbers that the header value sent by the client must be included in. See `spec.http2_route.match.header.match.range` Block for details.
      * @return builder
      */
     def range(args: Endofunction[com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttp2RouteMatchHeaderMatchRangeArgs.Builder]):
@@ -500,10 +496,6 @@ object appmesh:
       builder.range(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttp2RouteMatchQueryParameterArgs.Builder)
-    /**
-     * @param match The query parameter to match on.
-     * @return builder
-     */
     def `match`(args: Endofunction[com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttp2RouteMatchQueryParameterMatchArgs.Builder]):
         com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttp2RouteMatchQueryParameterArgs.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttp2RouteMatchQueryParameterMatchArgs.builder
@@ -511,7 +503,7 @@ object appmesh:
 
   extension (builder: com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttpRouteActionArgs.Builder)
     /**
-     * @param rewrite Gateway route action to rewrite. See `rewrite` Block for details.
+     * @param rewrite Gateway route action to rewrite. See `spec.http2_route.action.rewrite` Block for details.
      * @return builder
      */
     def rewrite(args: Endofunction[com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttpRouteActionRewriteArgs.Builder]):
@@ -520,7 +512,7 @@ object appmesh:
       builder.rewrite(args(argsBuilder).build)
 
     /**
-     * @param target Target that traffic is routed to when a request matches the gateway route. See `target` Block for details.
+     * @param target Target that traffic is routed to when a request matches the gateway route. See `spec.http2_route.action.target` Block for details.
      * @return builder
      */
     def target(args: Endofunction[com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttpRouteActionTargetArgs.Builder]):
@@ -530,7 +522,7 @@ object appmesh:
 
   extension (builder: com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttpRouteActionRewriteArgs.Builder)
     /**
-     * @param hostname Host name to rewrite. See `hostname` Block for details.
+     * @param hostname Host name to match on. See `spec.http2_route.match.hostname` Block for details.
      * @return builder
      */
     def hostname(args: Endofunction[com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttpRouteActionRewriteHostnameArgs.Builder]):
@@ -539,7 +531,7 @@ object appmesh:
       builder.hostname(args(argsBuilder).build)
 
     /**
-     * @param path Exact path to rewrite. See `path` Block for details.
+     * @param path Client request path to match on. See `spec.http2_route.match.path` Block for details.
      * @return builder
      */
     def path(args: Endofunction[com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttpRouteActionRewritePathArgs.Builder]):
@@ -548,7 +540,7 @@ object appmesh:
       builder.path(args(argsBuilder).build)
 
     /**
-     * @param prefix Specified beginning characters to rewrite. See `prefix` Block for details.
+     * @param prefix Header value sent by the client must begin with the specified characters.
      * @return builder
      */
     def prefix(args: Endofunction[com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttpRouteActionRewritePrefixArgs.Builder]):
@@ -558,7 +550,7 @@ object appmesh:
 
   extension (builder: com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttpRouteActionTargetArgs.Builder)
     /**
-     * @param virtualService Virtual service gateway route target. See `virtualService` Block for details.
+     * @param virtualService Virtual service gateway route target. See `spec.http2_route.action.target.virtual_service` Block for details.
      * @return builder
      */
     def virtualService(args: Endofunction[com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttpRouteActionTargetVirtualServiceArgs.Builder]):
@@ -568,7 +560,7 @@ object appmesh:
 
   extension (builder: com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttpRouteArgs.Builder)
     /**
-     * @param action Action to take if a match is determined. See `action` Block for details.
+     * @param action Action to take if a match is determined. See `spec.http_route.action` Block for details.
      * @return builder
      */
     def action(args: Endofunction[com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttpRouteActionArgs.Builder]):
@@ -577,7 +569,7 @@ object appmesh:
       builder.action(args(argsBuilder).build)
 
     /**
-     * @param match Criteria for determining a request match. See `match` Block for details.
+     * @param match Criteria for determining a request match. See `spec.http_route.match` Block for details.
      * @return builder
      */
     def `match`(args: Endofunction[com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttpRouteMatchArgs.Builder]):
@@ -587,7 +579,7 @@ object appmesh:
 
   extension (builder: com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttpRouteMatchArgs.Builder)
     /**
-     * @param headers Client request headers to match on. See `header` Block for details.
+     * @param headers Client request headers to match on. See `spec.http2_route.match.header` Block for details.
      * @return builder
      */
     def headers(args: Endofunction[com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttpRouteMatchHeaderArgs.Builder]*):
@@ -596,7 +588,7 @@ object appmesh:
       builder.headers(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param hostname Host name to match on. See `hostname` Block for details.
+     * @param hostname Host name to match on. See `spec.http2_route.match.hostname` Block for details.
      * @return builder
      */
     def hostname(args: Endofunction[com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttpRouteMatchHostnameArgs.Builder]):
@@ -605,7 +597,7 @@ object appmesh:
       builder.hostname(args(argsBuilder).build)
 
     /**
-     * @param path Client request path to match on. See `path` Block for details.
+     * @param path Client request path to match on. See `spec.http2_route.match.path` Block for details.
      * @return builder
      */
     def path(args: Endofunction[com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttpRouteMatchPathArgs.Builder]):
@@ -614,7 +606,7 @@ object appmesh:
       builder.path(args(argsBuilder).build)
 
     /**
-     * @param queryParameters Client request query parameters to match on. See `queryParameter` Block for details.
+     * @param queryParameters Client request query parameters to match on. See `spec.http2_route.match.query_parameter` Block for details.
      * @return builder
      */
     def queryParameters(args: Endofunction[com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttpRouteMatchQueryParameterArgs.Builder]*):
@@ -623,10 +615,6 @@ object appmesh:
       builder.queryParameters(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttpRouteMatchHeaderArgs.Builder)
-    /**
-     * @param match Method and value to match the header value sent with a request. Specify one match method.
-     * @return builder
-     */
     def `match`(args: Endofunction[com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttpRouteMatchHeaderMatchArgs.Builder]):
         com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttpRouteMatchHeaderArgs.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttpRouteMatchHeaderMatchArgs.builder
@@ -634,7 +622,7 @@ object appmesh:
 
   extension (builder: com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttpRouteMatchHeaderMatchArgs.Builder)
     /**
-     * @param range Object that specifies the range of numbers that the header value sent by the client must be included in.
+     * @param range Object that specifies the range of numbers that the header value sent by the client must be included in. See `spec.http2_route.match.header.match.range` Block for details.
      * @return builder
      */
     def range(args: Endofunction[com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttpRouteMatchHeaderMatchRangeArgs.Builder]):
@@ -643,10 +631,6 @@ object appmesh:
       builder.range(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttpRouteMatchQueryParameterArgs.Builder)
-    /**
-     * @param match The query parameter to match on.
-     * @return builder
-     */
     def `match`(args: Endofunction[com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttpRouteMatchQueryParameterMatchArgs.Builder]):
         com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttpRouteMatchQueryParameterArgs.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttpRouteMatchQueryParameterMatchArgs.builder
@@ -673,7 +657,7 @@ object appmesh:
       builder.egressFilter(args(argsBuilder).build)
 
     /**
-     * @param serviceDiscovery The service discovery information for the service mesh. See `serviceDiscovery` Block for details.
+     * @param serviceDiscovery Service discovery information for the service mesh. See `serviceDiscovery` Block for details.
      * @return builder
      */
     def serviceDiscovery(args: Endofunction[com.pulumi.aws.appmesh.inputs.MeshSpecServiceDiscoveryArgs.Builder]):
@@ -693,7 +677,7 @@ object appmesh:
 
   extension (builder: com.pulumi.aws.appmesh.inputs.RouteSpecArgs.Builder)
     /**
-     * @param grpcRoute GRPC routing information for the route. See `grpcRoute` Block for details.
+     * @param grpcRoute GRPC routing information for the route. See `spec.grpc_route` Block for details.
      * @return builder
      */
     def grpcRoute(args: Endofunction[com.pulumi.aws.appmesh.inputs.RouteSpecGrpcRouteArgs.Builder]):
@@ -702,7 +686,7 @@ object appmesh:
       builder.grpcRoute(args(argsBuilder).build)
 
     /**
-     * @param http2Route HTTP/2 routing information for the route. See `http2Route` Block for details.
+     * @param http2Route HTTP/2 routing information for the route. See `spec.http2_route` Block for details.
      * @return builder
      */
     def http2Route(args: Endofunction[com.pulumi.aws.appmesh.inputs.RouteSpecHttp2RouteArgs.Builder]):
@@ -711,7 +695,7 @@ object appmesh:
       builder.http2Route(args(argsBuilder).build)
 
     /**
-     * @param httpRoute HTTP routing information for the route. See `httpRoute` Block for details.
+     * @param httpRoute HTTP routing information for the route. See `spec.http_route` Block for details.
      * @return builder
      */
     def httpRoute(args: Endofunction[com.pulumi.aws.appmesh.inputs.RouteSpecHttpRouteArgs.Builder]):
@@ -720,7 +704,7 @@ object appmesh:
       builder.httpRoute(args(argsBuilder).build)
 
     /**
-     * @param tcpRoute TCP routing information for the route. See `tcpRoute` Block for details.
+     * @param tcpRoute TCP routing information for the route. See `spec.tcp_route` Block for details.
      * @return builder
      */
     def tcpRoute(args: Endofunction[com.pulumi.aws.appmesh.inputs.RouteSpecTcpRouteArgs.Builder]):
@@ -730,7 +714,7 @@ object appmesh:
 
   extension (builder: com.pulumi.aws.appmesh.inputs.RouteSpecGrpcRouteActionArgs.Builder)
     /**
-     * @param weightedTargets Targets that traffic is routed to when a request matches the route. You can specify one or more targets and their relative weights with which to distribute traffic.
+     * @param weightedTargets Targets that traffic is routed to when a request matches the route. You can specify one or more targets and their relative weights with which to distribute traffic. See `spec.tcp_route.action.weighted_target` Block for details.
      * @return builder
      */
     def weightedTargets(args: Endofunction[com.pulumi.aws.appmesh.inputs.RouteSpecGrpcRouteActionWeightedTargetArgs.Builder]*):
@@ -740,7 +724,7 @@ object appmesh:
 
   extension (builder: com.pulumi.aws.appmesh.inputs.RouteSpecGrpcRouteArgs.Builder)
     /**
-     * @param action Action to take if a match is determined. See `action` Block for details.
+     * @param action Action to take if a match is determined. See `spec.tcp_route.action` Block for details.
      * @return builder
      */
     def action(args: Endofunction[com.pulumi.aws.appmesh.inputs.RouteSpecGrpcRouteActionArgs.Builder]):
@@ -749,7 +733,7 @@ object appmesh:
       builder.action(args(argsBuilder).build)
 
     /**
-     * @param match Criteria for determining an gRPC request match. See `match` Block for details.
+     * @param match Criteria for determining a TCP request match. See `spec.tcp_route.match` Block for details.
      * @return builder
      */
     def `match`(args: Endofunction[com.pulumi.aws.appmesh.inputs.RouteSpecGrpcRouteMatchArgs.Builder]):
@@ -758,7 +742,7 @@ object appmesh:
       builder.`match`(args(argsBuilder).build)
 
     /**
-     * @param retryPolicy Retry policy. See `retryPolicy` Block for details.
+     * @param retryPolicy Retry policy. See `spec.http_route.retry_policy` Block for details.
      * @return builder
      */
     def retryPolicy(args: Endofunction[com.pulumi.aws.appmesh.inputs.RouteSpecGrpcRouteRetryPolicyArgs.Builder]):
@@ -767,7 +751,7 @@ object appmesh:
       builder.retryPolicy(args(argsBuilder).build)
 
     /**
-     * @param timeout Types of timeouts. See `timeout` Block for details.
+     * @param timeout Types of timeouts. See `spec.tcp_route.timeout` Block for details.
      * @return builder
      */
     def timeout(args: Endofunction[com.pulumi.aws.appmesh.inputs.RouteSpecGrpcRouteTimeoutArgs.Builder]):
@@ -777,7 +761,7 @@ object appmesh:
 
   extension (builder: com.pulumi.aws.appmesh.inputs.RouteSpecGrpcRouteMatchArgs.Builder)
     /**
-     * @param metadatas Data to match from the gRPC request.
+     * @param metadatas Data to match from the gRPC request. See `spec.grpc_route.match.metadata` Block for details.
      * @return builder
      */
     def metadatas(args: Endofunction[com.pulumi.aws.appmesh.inputs.RouteSpecGrpcRouteMatchMetadataArgs.Builder]*):
@@ -787,7 +771,7 @@ object appmesh:
 
   extension (builder: com.pulumi.aws.appmesh.inputs.RouteSpecGrpcRouteMatchMetadataArgs.Builder)
     /**
-     * @param match Data to match from the request.
+     * @param match Criteria for determining a TCP request match. See `spec.tcp_route.match` Block for details.
      * @return builder
      */
     def `match`(args: Endofunction[com.pulumi.aws.appmesh.inputs.RouteSpecGrpcRouteMatchMetadataMatchArgs.Builder]):
@@ -797,7 +781,7 @@ object appmesh:
 
   extension (builder: com.pulumi.aws.appmesh.inputs.RouteSpecGrpcRouteMatchMetadataMatchArgs.Builder)
     /**
-     * @param range Object that specifies the range of numbers that the header value sent by the client must be included in.
+     * @param range Object that specifies the range of numbers that the header value sent by the client must be included in. See `spec.http_route.match.header.match.range` Block for details.
      * @return builder
      */
     def range(args: Endofunction[com.pulumi.aws.appmesh.inputs.RouteSpecGrpcRouteMatchMetadataMatchRangeArgs.Builder]):
@@ -807,7 +791,7 @@ object appmesh:
 
   extension (builder: com.pulumi.aws.appmesh.inputs.RouteSpecGrpcRouteRetryPolicyArgs.Builder)
     /**
-     * @param perRetryTimeout Per-retry timeout.
+     * @param perRetryTimeout Per-retry timeout. See `spec.http_route.retry_policy.per_retry_timeout` Block for details.
      * @return builder
      */
     def perRetryTimeout(args: Endofunction[com.pulumi.aws.appmesh.inputs.RouteSpecGrpcRouteRetryPolicyPerRetryTimeoutArgs.Builder]):
@@ -817,7 +801,7 @@ object appmesh:
 
   extension (builder: com.pulumi.aws.appmesh.inputs.RouteSpecGrpcRouteTimeoutArgs.Builder)
     /**
-     * @param idle Idle timeout. An idle timeout bounds the amount of time that a connection may be idle. See `idle` Block for details.
+     * @param idle Idle timeout. An idle timeout bounds the amount of time that a connection may be idle. See `spec.tcp_route.timeout.idle` Block for details.
      * @return builder
      */
     def idle(args: Endofunction[com.pulumi.aws.appmesh.inputs.RouteSpecGrpcRouteTimeoutIdleArgs.Builder]):
@@ -826,7 +810,7 @@ object appmesh:
       builder.idle(args(argsBuilder).build)
 
     /**
-     * @param perRequest Per request timeout. See `perRequest` Block for details.
+     * @param perRequest Per request timeout. See `spec.http_route.timeout.per_request` Block for details.
      * @return builder
      */
     def perRequest(args: Endofunction[com.pulumi.aws.appmesh.inputs.RouteSpecGrpcRouteTimeoutPerRequestArgs.Builder]):
@@ -836,7 +820,7 @@ object appmesh:
 
   extension (builder: com.pulumi.aws.appmesh.inputs.RouteSpecHttp2RouteActionArgs.Builder)
     /**
-     * @param weightedTargets Targets that traffic is routed to when a request matches the route. You can specify one or more targets and their relative weights with which to distribute traffic.
+     * @param weightedTargets Targets that traffic is routed to when a request matches the route. You can specify one or more targets and their relative weights with which to distribute traffic. See `spec.tcp_route.action.weighted_target` Block for details.
      * @return builder
      */
     def weightedTargets(args: Endofunction[com.pulumi.aws.appmesh.inputs.RouteSpecHttp2RouteActionWeightedTargetArgs.Builder]*):
@@ -846,7 +830,7 @@ object appmesh:
 
   extension (builder: com.pulumi.aws.appmesh.inputs.RouteSpecHttp2RouteArgs.Builder)
     /**
-     * @param action Action to take if a match is determined.
+     * @param action Action to take if a match is determined. See `spec.tcp_route.action` Block for details.
      * @return builder
      */
     def action(args: Endofunction[com.pulumi.aws.appmesh.inputs.RouteSpecHttp2RouteActionArgs.Builder]):
@@ -855,7 +839,7 @@ object appmesh:
       builder.action(args(argsBuilder).build)
 
     /**
-     * @param match Criteria for determining an HTTP request match.
+     * @param match Criteria for determining a TCP request match. See `spec.tcp_route.match` Block for details.
      * @return builder
      */
     def `match`(args: Endofunction[com.pulumi.aws.appmesh.inputs.RouteSpecHttp2RouteMatchArgs.Builder]):
@@ -864,7 +848,7 @@ object appmesh:
       builder.`match`(args(argsBuilder).build)
 
     /**
-     * @param retryPolicy Retry policy.
+     * @param retryPolicy Retry policy. See `spec.http_route.retry_policy` Block for details.
      * @return builder
      */
     def retryPolicy(args: Endofunction[com.pulumi.aws.appmesh.inputs.RouteSpecHttp2RouteRetryPolicyArgs.Builder]):
@@ -873,7 +857,7 @@ object appmesh:
       builder.retryPolicy(args(argsBuilder).build)
 
     /**
-     * @param timeout Types of timeouts.
+     * @param timeout Types of timeouts. See `spec.tcp_route.timeout` Block for details.
      * @return builder
      */
     def timeout(args: Endofunction[com.pulumi.aws.appmesh.inputs.RouteSpecHttp2RouteTimeoutArgs.Builder]):
@@ -883,7 +867,7 @@ object appmesh:
 
   extension (builder: com.pulumi.aws.appmesh.inputs.RouteSpecHttp2RouteMatchArgs.Builder)
     /**
-     * @param headers Client request headers to match on. See `header` Block for details.
+     * @param headers Client request headers to match on. See `spec.http_route.match.header` Block for details.
      * @return builder
      */
     def headers(args: Endofunction[com.pulumi.aws.appmesh.inputs.RouteSpecHttp2RouteMatchHeaderArgs.Builder]*):
@@ -892,7 +876,7 @@ object appmesh:
       builder.headers(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param path Client request path to match on. See `path` Block for details.
+     * @param path Client request path to match on. See `spec.http_route.match.path` Block for details.
      * @return builder
      */
     def path(args: Endofunction[com.pulumi.aws.appmesh.inputs.RouteSpecHttp2RouteMatchPathArgs.Builder]):
@@ -901,7 +885,7 @@ object appmesh:
       builder.path(args(argsBuilder).build)
 
     /**
-     * @param queryParameters Client request query parameters to match on. See `queryParameter` Block for details.
+     * @param queryParameters Client request query parameters to match on. See `spec.http_route.match.query_parameter` Block for details.
      * @return builder
      */
     def queryParameters(args: Endofunction[com.pulumi.aws.appmesh.inputs.RouteSpecHttp2RouteMatchQueryParameterArgs.Builder]*):
@@ -911,7 +895,7 @@ object appmesh:
 
   extension (builder: com.pulumi.aws.appmesh.inputs.RouteSpecHttp2RouteMatchHeaderArgs.Builder)
     /**
-     * @param match Method and value to match the header value sent with a request. Specify one match method.
+     * @param match Criteria for determining a TCP request match. See `spec.tcp_route.match` Block for details.
      * @return builder
      */
     def `match`(args: Endofunction[com.pulumi.aws.appmesh.inputs.RouteSpecHttp2RouteMatchHeaderMatchArgs.Builder]):
@@ -921,7 +905,7 @@ object appmesh:
 
   extension (builder: com.pulumi.aws.appmesh.inputs.RouteSpecHttp2RouteMatchHeaderMatchArgs.Builder)
     /**
-     * @param range Object that specifies the range of numbers that the header value sent by the client must be included in.
+     * @param range Object that specifies the range of numbers that the header value sent by the client must be included in. See `spec.http_route.match.header.match.range` Block for details.
      * @return builder
      */
     def range(args: Endofunction[com.pulumi.aws.appmesh.inputs.RouteSpecHttp2RouteMatchHeaderMatchRangeArgs.Builder]):
@@ -931,7 +915,7 @@ object appmesh:
 
   extension (builder: com.pulumi.aws.appmesh.inputs.RouteSpecHttp2RouteMatchQueryParameterArgs.Builder)
     /**
-     * @param match The query parameter to match on.
+     * @param match Criteria for determining a TCP request match. See `spec.tcp_route.match` Block for details.
      * @return builder
      */
     def `match`(args: Endofunction[com.pulumi.aws.appmesh.inputs.RouteSpecHttp2RouteMatchQueryParameterMatchArgs.Builder]):
@@ -941,7 +925,7 @@ object appmesh:
 
   extension (builder: com.pulumi.aws.appmesh.inputs.RouteSpecHttp2RouteRetryPolicyArgs.Builder)
     /**
-     * @param perRetryTimeout Per-retry timeout.
+     * @param perRetryTimeout Per-retry timeout. See `spec.http_route.retry_policy.per_retry_timeout` Block for details.
      * @return builder
      */
     def perRetryTimeout(args: Endofunction[com.pulumi.aws.appmesh.inputs.RouteSpecHttp2RouteRetryPolicyPerRetryTimeoutArgs.Builder]):
@@ -951,7 +935,7 @@ object appmesh:
 
   extension (builder: com.pulumi.aws.appmesh.inputs.RouteSpecHttp2RouteTimeoutArgs.Builder)
     /**
-     * @param idle Idle timeout. An idle timeout bounds the amount of time that a connection may be idle. See `idle` Block for details.
+     * @param idle Idle timeout. An idle timeout bounds the amount of time that a connection may be idle. See `spec.tcp_route.timeout.idle` Block for details.
      * @return builder
      */
     def idle(args: Endofunction[com.pulumi.aws.appmesh.inputs.RouteSpecHttp2RouteTimeoutIdleArgs.Builder]):
@@ -960,7 +944,7 @@ object appmesh:
       builder.idle(args(argsBuilder).build)
 
     /**
-     * @param perRequest Per request timeout. See `perRequest` Block for details.
+     * @param perRequest Per request timeout. See `spec.http_route.timeout.per_request` Block for details.
      * @return builder
      */
     def perRequest(args: Endofunction[com.pulumi.aws.appmesh.inputs.RouteSpecHttp2RouteTimeoutPerRequestArgs.Builder]):
@@ -970,7 +954,7 @@ object appmesh:
 
   extension (builder: com.pulumi.aws.appmesh.inputs.RouteSpecHttpRouteActionArgs.Builder)
     /**
-     * @param weightedTargets Targets that traffic is routed to when a request matches the route. You can specify one or more targets and their relative weights with which to distribute traffic.
+     * @param weightedTargets Targets that traffic is routed to when a request matches the route. You can specify one or more targets and their relative weights with which to distribute traffic. See `spec.tcp_route.action.weighted_target` Block for details.
      * @return builder
      */
     def weightedTargets(args: Endofunction[com.pulumi.aws.appmesh.inputs.RouteSpecHttpRouteActionWeightedTargetArgs.Builder]*):
@@ -979,21 +963,37 @@ object appmesh:
       builder.weightedTargets(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.aws.appmesh.inputs.RouteSpecHttpRouteArgs.Builder)
+    /**
+     * @param action Action to take if a match is determined. See `spec.tcp_route.action` Block for details.
+     * @return builder
+     */
     def action(args: Endofunction[com.pulumi.aws.appmesh.inputs.RouteSpecHttpRouteActionArgs.Builder]):
         com.pulumi.aws.appmesh.inputs.RouteSpecHttpRouteArgs.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.RouteSpecHttpRouteActionArgs.builder
       builder.action(args(argsBuilder).build)
 
+    /**
+     * @param match Criteria for determining a TCP request match. See `spec.tcp_route.match` Block for details.
+     * @return builder
+     */
     def `match`(args: Endofunction[com.pulumi.aws.appmesh.inputs.RouteSpecHttpRouteMatchArgs.Builder]):
         com.pulumi.aws.appmesh.inputs.RouteSpecHttpRouteArgs.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.RouteSpecHttpRouteMatchArgs.builder
       builder.`match`(args(argsBuilder).build)
 
+    /**
+     * @param retryPolicy Retry policy. See `spec.http_route.retry_policy` Block for details.
+     * @return builder
+     */
     def retryPolicy(args: Endofunction[com.pulumi.aws.appmesh.inputs.RouteSpecHttpRouteRetryPolicyArgs.Builder]):
         com.pulumi.aws.appmesh.inputs.RouteSpecHttpRouteArgs.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.RouteSpecHttpRouteRetryPolicyArgs.builder
       builder.retryPolicy(args(argsBuilder).build)
 
+    /**
+     * @param timeout Types of timeouts. See `spec.tcp_route.timeout` Block for details.
+     * @return builder
+     */
     def timeout(args: Endofunction[com.pulumi.aws.appmesh.inputs.RouteSpecHttpRouteTimeoutArgs.Builder]):
         com.pulumi.aws.appmesh.inputs.RouteSpecHttpRouteArgs.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.RouteSpecHttpRouteTimeoutArgs.builder
@@ -1001,7 +1001,7 @@ object appmesh:
 
   extension (builder: com.pulumi.aws.appmesh.inputs.RouteSpecHttpRouteMatchArgs.Builder)
     /**
-     * @param headers Client request headers to match on. See `header` Block for details.
+     * @param headers Client request headers to match on. See `spec.http_route.match.header` Block for details.
      * @return builder
      */
     def headers(args: Endofunction[com.pulumi.aws.appmesh.inputs.RouteSpecHttpRouteMatchHeaderArgs.Builder]*):
@@ -1010,7 +1010,7 @@ object appmesh:
       builder.headers(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param path Client request path to match on. See `path` Block for details.
+     * @param path Client request path to match on. See `spec.http_route.match.path` Block for details.
      * @return builder
      */
     def path(args: Endofunction[com.pulumi.aws.appmesh.inputs.RouteSpecHttpRouteMatchPathArgs.Builder]):
@@ -1019,7 +1019,7 @@ object appmesh:
       builder.path(args(argsBuilder).build)
 
     /**
-     * @param queryParameters Client request query parameters to match on. See `queryParameter` Block for details.
+     * @param queryParameters Client request query parameters to match on. See `spec.http_route.match.query_parameter` Block for details.
      * @return builder
      */
     def queryParameters(args: Endofunction[com.pulumi.aws.appmesh.inputs.RouteSpecHttpRouteMatchQueryParameterArgs.Builder]*):
@@ -1029,7 +1029,7 @@ object appmesh:
 
   extension (builder: com.pulumi.aws.appmesh.inputs.RouteSpecHttpRouteMatchHeaderArgs.Builder)
     /**
-     * @param match Method and value to match the header value sent with a request. Specify one match method.
+     * @param match Criteria for determining a TCP request match. See `spec.tcp_route.match` Block for details.
      * @return builder
      */
     def `match`(args: Endofunction[com.pulumi.aws.appmesh.inputs.RouteSpecHttpRouteMatchHeaderMatchArgs.Builder]):
@@ -1039,7 +1039,7 @@ object appmesh:
 
   extension (builder: com.pulumi.aws.appmesh.inputs.RouteSpecHttpRouteMatchHeaderMatchArgs.Builder)
     /**
-     * @param range Object that specifies the range of numbers that the header value sent by the client must be included in.
+     * @param range Object that specifies the range of numbers that the header value sent by the client must be included in. See `spec.http_route.match.header.match.range` Block for details.
      * @return builder
      */
     def range(args: Endofunction[com.pulumi.aws.appmesh.inputs.RouteSpecHttpRouteMatchHeaderMatchRangeArgs.Builder]):
@@ -1049,7 +1049,7 @@ object appmesh:
 
   extension (builder: com.pulumi.aws.appmesh.inputs.RouteSpecHttpRouteMatchQueryParameterArgs.Builder)
     /**
-     * @param match The query parameter to match on.
+     * @param match Criteria for determining a TCP request match. See `spec.tcp_route.match` Block for details.
      * @return builder
      */
     def `match`(args: Endofunction[com.pulumi.aws.appmesh.inputs.RouteSpecHttpRouteMatchQueryParameterMatchArgs.Builder]):
@@ -1059,7 +1059,7 @@ object appmesh:
 
   extension (builder: com.pulumi.aws.appmesh.inputs.RouteSpecHttpRouteRetryPolicyArgs.Builder)
     /**
-     * @param perRetryTimeout Per-retry timeout.
+     * @param perRetryTimeout Per-retry timeout. See `spec.http_route.retry_policy.per_retry_timeout` Block for details.
      * @return builder
      */
     def perRetryTimeout(args: Endofunction[com.pulumi.aws.appmesh.inputs.RouteSpecHttpRouteRetryPolicyPerRetryTimeoutArgs.Builder]):
@@ -1069,7 +1069,7 @@ object appmesh:
 
   extension (builder: com.pulumi.aws.appmesh.inputs.RouteSpecHttpRouteTimeoutArgs.Builder)
     /**
-     * @param idle Idle timeout. An idle timeout bounds the amount of time that a connection may be idle. See `idle` Block for details.
+     * @param idle Idle timeout. An idle timeout bounds the amount of time that a connection may be idle. See `spec.tcp_route.timeout.idle` Block for details.
      * @return builder
      */
     def idle(args: Endofunction[com.pulumi.aws.appmesh.inputs.RouteSpecHttpRouteTimeoutIdleArgs.Builder]):
@@ -1078,7 +1078,7 @@ object appmesh:
       builder.idle(args(argsBuilder).build)
 
     /**
-     * @param perRequest Per request timeout. See `perRequest` Block for details.
+     * @param perRequest Per request timeout. See `spec.http_route.timeout.per_request` Block for details.
      * @return builder
      */
     def perRequest(args: Endofunction[com.pulumi.aws.appmesh.inputs.RouteSpecHttpRouteTimeoutPerRequestArgs.Builder]):
@@ -1088,7 +1088,7 @@ object appmesh:
 
   extension (builder: com.pulumi.aws.appmesh.inputs.RouteSpecTcpRouteActionArgs.Builder)
     /**
-     * @param weightedTargets Targets that traffic is routed to when a request matches the route. You can specify one or more targets and their relative weights with which to distribute traffic.
+     * @param weightedTargets Targets that traffic is routed to when a request matches the route. You can specify one or more targets and their relative weights with which to distribute traffic. See `spec.tcp_route.action.weighted_target` Block for details.
      * @return builder
      */
     def weightedTargets(args: Endofunction[com.pulumi.aws.appmesh.inputs.RouteSpecTcpRouteActionWeightedTargetArgs.Builder]*):
@@ -1098,7 +1098,7 @@ object appmesh:
 
   extension (builder: com.pulumi.aws.appmesh.inputs.RouteSpecTcpRouteArgs.Builder)
     /**
-     * @param action Action to take if a match is determined.
+     * @param action Action to take if a match is determined. See `spec.tcp_route.action` Block for details.
      * @return builder
      */
     def action(args: Endofunction[com.pulumi.aws.appmesh.inputs.RouteSpecTcpRouteActionArgs.Builder]):
@@ -1106,13 +1106,17 @@ object appmesh:
       val argsBuilder = com.pulumi.aws.appmesh.inputs.RouteSpecTcpRouteActionArgs.builder
       builder.action(args(argsBuilder).build)
 
+    /**
+     * @param match Criteria for determining a TCP request match. See `spec.tcp_route.match` Block for details.
+     * @return builder
+     */
     def `match`(args: Endofunction[com.pulumi.aws.appmesh.inputs.RouteSpecTcpRouteMatchArgs.Builder]):
         com.pulumi.aws.appmesh.inputs.RouteSpecTcpRouteArgs.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.RouteSpecTcpRouteMatchArgs.builder
       builder.`match`(args(argsBuilder).build)
 
     /**
-     * @param timeout Types of timeouts.
+     * @param timeout Types of timeouts. See `spec.tcp_route.timeout` Block for details.
      * @return builder
      */
     def timeout(args: Endofunction[com.pulumi.aws.appmesh.inputs.RouteSpecTcpRouteTimeoutArgs.Builder]):
@@ -1122,7 +1126,7 @@ object appmesh:
 
   extension (builder: com.pulumi.aws.appmesh.inputs.RouteSpecTcpRouteTimeoutArgs.Builder)
     /**
-     * @param idle Idle timeout. An idle timeout bounds the amount of time that a connection may be idle. See `idle` Block for details.
+     * @param idle Idle timeout. An idle timeout bounds the amount of time that a connection may be idle. See `spec.tcp_route.timeout.idle` Block for details.
      * @return builder
      */
     def idle(args: Endofunction[com.pulumi.aws.appmesh.inputs.RouteSpecTcpRouteTimeoutIdleArgs.Builder]):
@@ -1132,7 +1136,7 @@ object appmesh:
 
   extension (builder: com.pulumi.aws.appmesh.inputs.RouteState.Builder)
     /**
-     * @param spec Route specification to apply.
+     * @param spec Route specification to apply. See `spec` Block for details.
      * @return builder
      */
     def spec(args: Endofunction[com.pulumi.aws.appmesh.inputs.RouteSpecArgs.Builder]):
@@ -1180,7 +1184,7 @@ object appmesh:
 
   extension (builder: com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecBackendDefaultsClientPolicyArgs.Builder)
     /**
-     * @param tls Transport Layer Security (TLS) client policy. See `tls` Block for details.
+     * @param tls Transport Layer Security (TLS) client policy. See `spec.backend_defaults.client_policy.tls` Block for details.
      * @return builder
      */
     def tls(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecBackendDefaultsClientPolicyTlsArgs.Builder]):
@@ -1208,17 +1212,13 @@ object appmesh:
       builder.validation(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecBackendDefaultsClientPolicyTlsCertificateArgs.Builder)
-    /**
-     * @param file Local file certificate.
-     * @return builder
-     */
     def file(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecBackendDefaultsClientPolicyTlsCertificateFileArgs.Builder]):
         com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecBackendDefaultsClientPolicyTlsCertificateArgs.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecBackendDefaultsClientPolicyTlsCertificateFileArgs.builder
       builder.file(args(argsBuilder).build)
 
     /**
-     * @param sds A [Secret Discovery Service](https://www.envoyproxy.io/docs/envoy/latest/configuration/security/secret#secret-discovery-service-sds) certificate.
+     * @param sds TLS validation context trust for a [Secret Discovery Service](https://www.envoyproxy.io/docs/envoy/latest/configuration/security/secret#secret-discovery-service-sds) certificate.
      * @return builder
      */
     def sds(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecBackendDefaultsClientPolicyTlsCertificateSdsArgs.Builder]):
@@ -1257,7 +1257,7 @@ object appmesh:
 
   extension (builder: com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationTrustArgs.Builder)
     /**
-     * @param acm TLS validation context trust for an AWS Certificate Manager (ACM) certificate.
+     * @param acm AWS Certificate Manager (ACM) certificate.
      * @return builder
      */
     def acm(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationTrustAcmArgs.Builder]):
@@ -1265,10 +1265,6 @@ object appmesh:
       val argsBuilder = com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationTrustAcmArgs.builder
       builder.acm(args(argsBuilder).build)
 
-    /**
-     * @param file TLS validation context trust for a local file certificate.
-     * @return builder
-     */
     def file(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationTrustFileArgs.Builder]):
         com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationTrustArgs.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationTrustFileArgs.builder
@@ -1312,7 +1308,7 @@ object appmesh:
       builder.portMapping(args(argsBuilder).build)
 
     /**
-     * @param tls Transport Layer Security (TLS) properties for the listener. See `tls` Block for details.
+     * @param tls Transport Layer Security (TLS) properties for the listener. See `spec.listener.tls` Block for details.
      * @return builder
      */
     def tls(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecListenerTlsArgs.Builder]):
@@ -1369,7 +1365,7 @@ object appmesh:
 
   extension (builder: com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecListenerTlsCertificateArgs.Builder)
     /**
-     * @param acm An AWS Certificate Manager (ACM) certificate.
+     * @param acm AWS Certificate Manager (ACM) certificate.
      * @return builder
      */
     def acm(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecListenerTlsCertificateAcmArgs.Builder]):
@@ -1377,17 +1373,13 @@ object appmesh:
       val argsBuilder = com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecListenerTlsCertificateAcmArgs.builder
       builder.acm(args(argsBuilder).build)
 
-    /**
-     * @param file Local file certificate.
-     * @return builder
-     */
     def file(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecListenerTlsCertificateFileArgs.Builder]):
         com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecListenerTlsCertificateArgs.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecListenerTlsCertificateFileArgs.builder
       builder.file(args(argsBuilder).build)
 
     /**
-     * @param sds A [Secret Discovery Service](https://www.envoyproxy.io/docs/envoy/latest/configuration/security/secret#secret-discovery-service-sds) certificate.
+     * @param sds TLS validation context trust for a [Secret Discovery Service](https://www.envoyproxy.io/docs/envoy/latest/configuration/security/secret#secret-discovery-service-sds) certificate.
      * @return builder
      */
     def sds(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecListenerTlsCertificateSdsArgs.Builder]):
@@ -1425,10 +1417,6 @@ object appmesh:
       builder.`match`(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecListenerTlsValidationTrustArgs.Builder)
-    /**
-     * @param file TLS validation context trust for a local file certificate.
-     * @return builder
-     */
     def file(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecListenerTlsValidationTrustFileArgs.Builder]):
         com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecListenerTlsValidationTrustArgs.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecListenerTlsValidationTrustFileArgs.builder
@@ -1445,7 +1433,7 @@ object appmesh:
 
   extension (builder: com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecLoggingAccessLogArgs.Builder)
     /**
-     * @param file File object to send virtual gateway access logs to. See `file` Block for details.
+     * @param file File object to send virtual gateway access logs to. See `spec.logging.access_log.file` Block for details.
      * @return builder
      */
     def file(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecLoggingAccessLogFileArgs.Builder]):
@@ -1455,7 +1443,7 @@ object appmesh:
 
   extension (builder: com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecLoggingAccessLogFileArgs.Builder)
     /**
-     * @param format The specified format for the logs. See `format` Block for details.
+     * @param format Specified format for the logs. See `format` Block for details.
      * @return builder
      */
     def format(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecLoggingAccessLogFileFormatArgs.Builder]):
@@ -1465,7 +1453,7 @@ object appmesh:
 
   extension (builder: com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecLoggingAccessLogFileFormatArgs.Builder)
     /**
-     * @param jsons The logging format for JSON. See `json` Block for details.
+     * @param jsons Logging format for JSON. See `json` Block for details.
      * @return builder
      */
     def jsons(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecLoggingAccessLogFileFormatJsonArgs.Builder]*):
@@ -1495,7 +1483,7 @@ object appmesh:
 
   extension (builder: com.pulumi.aws.appmesh.inputs.VirtualNodeSpecArgs.Builder)
     /**
-     * @param backendDefaults Defaults for backends. See `backendDefaults` Block for details.
+     * @param backendDefaults Defaults for backends. See `spec.backend_defaults` Block for details.
      * @return builder
      */
     def backendDefaults(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecBackendDefaultsArgs.Builder]):
@@ -1504,7 +1492,7 @@ object appmesh:
       builder.backendDefaults(args(argsBuilder).build)
 
     /**
-     * @param backends Backends to which the virtual node is expected to send outbound traffic. See `backend` Block for details.
+     * @param backends Backends to which the virtual node is expected to send outbound traffic. See `spec.backend` Block for details.
      * @return builder
      */
     def backends(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecBackendArgs.Builder]*):
@@ -1513,7 +1501,7 @@ object appmesh:
       builder.backends(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param listeners Listeners from which the virtual node is expected to receive inbound traffic. See `listener` Block for details.
+     * @param listeners Listeners from which the virtual node is expected to receive inbound traffic. See `spec.listener` Block for details.
      * @return builder
      */
     def listeners(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerArgs.Builder]*):
@@ -1522,7 +1510,7 @@ object appmesh:
       builder.listeners(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param logging Inbound and outbound access logging information for the virtual node. See `logging` Block for details.
+     * @param logging Inbound and outbound access logging information for the virtual node. See `spec.logging` Block for details.
      * @return builder
      */
     def logging(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecLoggingArgs.Builder]):
@@ -1531,7 +1519,7 @@ object appmesh:
       builder.logging(args(argsBuilder).build)
 
     /**
-     * @param serviceDiscovery Service discovery information for the virtual node. See `serviceDiscovery` Block for details.
+     * @param serviceDiscovery Service discovery information for the virtual node. See `spec.service_discovery` Block for details.
      * @return builder
      */
     def serviceDiscovery(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecServiceDiscoveryArgs.Builder]):
@@ -1541,7 +1529,7 @@ object appmesh:
 
   extension (builder: com.pulumi.aws.appmesh.inputs.VirtualNodeSpecBackendArgs.Builder)
     /**
-     * @param virtualService Virtual service to use as a backend for a virtual node.
+     * @param virtualService Virtual service to use as a backend for a virtual node. See `spec.backend.virtual_service` Block for details.
      * @return builder
      */
     def virtualService(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecBackendVirtualServiceArgs.Builder]):
@@ -1551,7 +1539,7 @@ object appmesh:
 
   extension (builder: com.pulumi.aws.appmesh.inputs.VirtualNodeSpecBackendDefaultsArgs.Builder)
     /**
-     * @param clientPolicy Default client policy for virtual service backends. See above for details.
+     * @param clientPolicy Default client policy for virtual service backends. See `spec.backend_defaults.client_policy` Block for details.
      * @return builder
      */
     def clientPolicy(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecBackendDefaultsClientPolicyArgs.Builder]):
@@ -1561,7 +1549,7 @@ object appmesh:
 
   extension (builder: com.pulumi.aws.appmesh.inputs.VirtualNodeSpecBackendDefaultsClientPolicyArgs.Builder)
     /**
-     * @param tls Transport Layer Security (TLS) client policy.
+     * @param tls Transport Layer Security (TLS) properties for the listener. See `spec.listener.tls` Block for details.
      * @return builder
      */
     def tls(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecBackendDefaultsClientPolicyTlsArgs.Builder]):
@@ -1571,7 +1559,7 @@ object appmesh:
 
   extension (builder: com.pulumi.aws.appmesh.inputs.VirtualNodeSpecBackendDefaultsClientPolicyTlsArgs.Builder)
     /**
-     * @param certificate Listener&#39;s TLS certificate.
+     * @param certificate Listener&#39;s TLS certificate. See `spec.listener.tls.certificate` Block for details.
      * @return builder
      */
     def certificate(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecBackendDefaultsClientPolicyTlsCertificateArgs.Builder]):
@@ -1580,7 +1568,7 @@ object appmesh:
       builder.certificate(args(argsBuilder).build)
 
     /**
-     * @param validation Listener&#39;s Transport Layer Security (TLS) validation context.
+     * @param validation Listener&#39;s Transport Layer Security (TLS) validation context. See `spec.listener.tls.validation` Block for details.
      * @return builder
      */
     def validation(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecBackendDefaultsClientPolicyTlsValidationArgs.Builder]):
@@ -1590,7 +1578,7 @@ object appmesh:
 
   extension (builder: com.pulumi.aws.appmesh.inputs.VirtualNodeSpecBackendDefaultsClientPolicyTlsCertificateArgs.Builder)
     /**
-     * @param file Local file certificate.
+     * @param file File object to send virtual node access logs to. See `spec.logging.access_log.file` Block for details.
      * @return builder
      */
     def file(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecBackendDefaultsClientPolicyTlsCertificateFileArgs.Builder]):
@@ -1599,7 +1587,7 @@ object appmesh:
       builder.file(args(argsBuilder).build)
 
     /**
-     * @param sds A [Secret Discovery Service](https://www.envoyproxy.io/docs/envoy/latest/configuration/security/secret#secret-discovery-service-sds) certificate.
+     * @param sds TLS validation context trust for a [Secret Discovery Service](https://www.envoyproxy.io/docs/envoy/latest/configuration/security/secret#secret-discovery-service-sds) certificate. See `spec.listener.tls.validation.trust.sds` Block for details.
      * @return builder
      */
     def sds(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecBackendDefaultsClientPolicyTlsCertificateSdsArgs.Builder]):
@@ -1609,7 +1597,7 @@ object appmesh:
 
   extension (builder: com.pulumi.aws.appmesh.inputs.VirtualNodeSpecBackendDefaultsClientPolicyTlsValidationArgs.Builder)
     /**
-     * @param subjectAlternativeNames SANs for a TLS validation context.
+     * @param subjectAlternativeNames SANs for a TLS validation context. See `spec.listener.tls.validation.subject_alternative_names` Block for details.
      * @return builder
      */
     def subjectAlternativeNames(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecBackendDefaultsClientPolicyTlsValidationSubjectAlternativeNamesArgs.Builder]):
@@ -1618,7 +1606,7 @@ object appmesh:
       builder.subjectAlternativeNames(args(argsBuilder).build)
 
     /**
-     * @param trust TLS validation context trust.
+     * @param trust TLS validation context trust. See `spec.listener.tls.validation.trust` Block for details.
      * @return builder
      */
     def trust(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecBackendDefaultsClientPolicyTlsValidationTrustArgs.Builder]):
@@ -1628,7 +1616,7 @@ object appmesh:
 
   extension (builder: com.pulumi.aws.appmesh.inputs.VirtualNodeSpecBackendDefaultsClientPolicyTlsValidationSubjectAlternativeNamesArgs.Builder)
     /**
-     * @param match Criteria for determining a SAN&#39;s match.
+     * @param match Criteria for determining a SAN&#39;s match. See `spec.listener.tls.validation.subject_alternative_names.match` Block for details.
      * @return builder
      */
     def `match`(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecBackendDefaultsClientPolicyTlsValidationSubjectAlternativeNamesMatchArgs.Builder]):
@@ -1638,7 +1626,7 @@ object appmesh:
 
   extension (builder: com.pulumi.aws.appmesh.inputs.VirtualNodeSpecBackendDefaultsClientPolicyTlsValidationTrustArgs.Builder)
     /**
-     * @param acm TLS validation context trust for an AWS Certificate Manager (ACM) certificate.
+     * @param acm AWS Certificate Manager (ACM) certificate. See `spec.listener.tls.certificate.acm` Block for details.
      * @return builder
      */
     def acm(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecBackendDefaultsClientPolicyTlsValidationTrustAcmArgs.Builder]):
@@ -1647,7 +1635,7 @@ object appmesh:
       builder.acm(args(argsBuilder).build)
 
     /**
-     * @param file TLS validation context trust for a local file certificate.
+     * @param file File object to send virtual node access logs to. See `spec.logging.access_log.file` Block for details.
      * @return builder
      */
     def file(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecBackendDefaultsClientPolicyTlsValidationTrustFileArgs.Builder]):
@@ -1656,7 +1644,7 @@ object appmesh:
       builder.file(args(argsBuilder).build)
 
     /**
-     * @param sds TLS validation context trust for a [Secret Discovery Service](https://www.envoyproxy.io/docs/envoy/latest/configuration/security/secret#secret-discovery-service-sds) certificate.
+     * @param sds TLS validation context trust for a [Secret Discovery Service](https://www.envoyproxy.io/docs/envoy/latest/configuration/security/secret#secret-discovery-service-sds) certificate. See `spec.listener.tls.validation.trust.sds` Block for details.
      * @return builder
      */
     def sds(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecBackendDefaultsClientPolicyTlsValidationTrustSdsArgs.Builder]):
@@ -1666,7 +1654,7 @@ object appmesh:
 
   extension (builder: com.pulumi.aws.appmesh.inputs.VirtualNodeSpecBackendVirtualServiceArgs.Builder)
     /**
-     * @param clientPolicy Client policy for the backend.
+     * @param clientPolicy Default client policy for virtual service backends. See `spec.backend_defaults.client_policy` Block for details.
      * @return builder
      */
     def clientPolicy(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecBackendVirtualServiceClientPolicyArgs.Builder]):
@@ -1676,7 +1664,7 @@ object appmesh:
 
   extension (builder: com.pulumi.aws.appmesh.inputs.VirtualNodeSpecBackendVirtualServiceClientPolicyArgs.Builder)
     /**
-     * @param tls Transport Layer Security (TLS) client policy.
+     * @param tls Transport Layer Security (TLS) properties for the listener. See `spec.listener.tls` Block for details.
      * @return builder
      */
     def tls(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecBackendVirtualServiceClientPolicyTlsArgs.Builder]):
@@ -1686,7 +1674,7 @@ object appmesh:
 
   extension (builder: com.pulumi.aws.appmesh.inputs.VirtualNodeSpecBackendVirtualServiceClientPolicyTlsArgs.Builder)
     /**
-     * @param certificate Listener&#39;s TLS certificate.
+     * @param certificate Listener&#39;s TLS certificate. See `spec.listener.tls.certificate` Block for details.
      * @return builder
      */
     def certificate(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecBackendVirtualServiceClientPolicyTlsCertificateArgs.Builder]):
@@ -1695,7 +1683,7 @@ object appmesh:
       builder.certificate(args(argsBuilder).build)
 
     /**
-     * @param validation Listener&#39;s Transport Layer Security (TLS) validation context.
+     * @param validation Listener&#39;s Transport Layer Security (TLS) validation context. See `spec.listener.tls.validation` Block for details.
      * @return builder
      */
     def validation(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationArgs.Builder]):
@@ -1705,7 +1693,7 @@ object appmesh:
 
   extension (builder: com.pulumi.aws.appmesh.inputs.VirtualNodeSpecBackendVirtualServiceClientPolicyTlsCertificateArgs.Builder)
     /**
-     * @param file Local file certificate.
+     * @param file File object to send virtual node access logs to. See `spec.logging.access_log.file` Block for details.
      * @return builder
      */
     def file(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecBackendVirtualServiceClientPolicyTlsCertificateFileArgs.Builder]):
@@ -1714,7 +1702,7 @@ object appmesh:
       builder.file(args(argsBuilder).build)
 
     /**
-     * @param sds A [Secret Discovery Service](https://www.envoyproxy.io/docs/envoy/latest/configuration/security/secret#secret-discovery-service-sds) certificate.
+     * @param sds TLS validation context trust for a [Secret Discovery Service](https://www.envoyproxy.io/docs/envoy/latest/configuration/security/secret#secret-discovery-service-sds) certificate. See `spec.listener.tls.validation.trust.sds` Block for details.
      * @return builder
      */
     def sds(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecBackendVirtualServiceClientPolicyTlsCertificateSdsArgs.Builder]):
@@ -1724,7 +1712,7 @@ object appmesh:
 
   extension (builder: com.pulumi.aws.appmesh.inputs.VirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationArgs.Builder)
     /**
-     * @param subjectAlternativeNames SANs for a TLS validation context.
+     * @param subjectAlternativeNames SANs for a TLS validation context. See `spec.listener.tls.validation.subject_alternative_names` Block for details.
      * @return builder
      */
     def subjectAlternativeNames(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationSubjectAlternativeNamesArgs.Builder]):
@@ -1733,7 +1721,7 @@ object appmesh:
       builder.subjectAlternativeNames(args(argsBuilder).build)
 
     /**
-     * @param trust TLS validation context trust.
+     * @param trust TLS validation context trust. See `spec.listener.tls.validation.trust` Block for details.
      * @return builder
      */
     def trust(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationTrustArgs.Builder]):
@@ -1743,7 +1731,7 @@ object appmesh:
 
   extension (builder: com.pulumi.aws.appmesh.inputs.VirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationSubjectAlternativeNamesArgs.Builder)
     /**
-     * @param match Criteria for determining a SAN&#39;s match.
+     * @param match Criteria for determining a SAN&#39;s match. See `spec.listener.tls.validation.subject_alternative_names.match` Block for details.
      * @return builder
      */
     def `match`(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationSubjectAlternativeNamesMatchArgs.Builder]):
@@ -1753,7 +1741,7 @@ object appmesh:
 
   extension (builder: com.pulumi.aws.appmesh.inputs.VirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationTrustArgs.Builder)
     /**
-     * @param acm TLS validation context trust for an AWS Certificate Manager (ACM) certificate.
+     * @param acm AWS Certificate Manager (ACM) certificate. See `spec.listener.tls.certificate.acm` Block for details.
      * @return builder
      */
     def acm(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationTrustAcmArgs.Builder]):
@@ -1762,7 +1750,7 @@ object appmesh:
       builder.acm(args(argsBuilder).build)
 
     /**
-     * @param file TLS validation context trust for a local file certificate.
+     * @param file File object to send virtual node access logs to. See `spec.logging.access_log.file` Block for details.
      * @return builder
      */
     def file(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationTrustFileArgs.Builder]):
@@ -1771,7 +1759,7 @@ object appmesh:
       builder.file(args(argsBuilder).build)
 
     /**
-     * @param sds TLS validation context trust for a [Secret Discovery Service](https://www.envoyproxy.io/docs/envoy/latest/configuration/security/secret#secret-discovery-service-sds) certificate.
+     * @param sds TLS validation context trust for a [Secret Discovery Service](https://www.envoyproxy.io/docs/envoy/latest/configuration/security/secret#secret-discovery-service-sds) certificate. See `spec.listener.tls.validation.trust.sds` Block for details.
      * @return builder
      */
     def sds(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationTrustSdsArgs.Builder]):
@@ -1781,7 +1769,7 @@ object appmesh:
 
   extension (builder: com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerArgs.Builder)
     /**
-     * @param connectionPool Connection pool information for the listener. See `connectionPool` Block for details.
+     * @param connectionPool Connection pool information for the listener. See `spec.listener.connection_pool` Block for details.
      * @return builder
      */
     def connectionPool(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerConnectionPoolArgs.Builder]):
@@ -1790,7 +1778,7 @@ object appmesh:
       builder.connectionPool(args(argsBuilder).build)
 
     /**
-     * @param healthCheck Health check information for the listener. See `healthCheck` Block for details.
+     * @param healthCheck Health check information for the listener. See `spec.listener.health_check` Block for details.
      * @return builder
      */
     def healthCheck(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerHealthCheckArgs.Builder]):
@@ -1799,7 +1787,7 @@ object appmesh:
       builder.healthCheck(args(argsBuilder).build)
 
     /**
-     * @param outlierDetection Outlier detection information for the listener. See `outlierDetection` Block for details.
+     * @param outlierDetection Outlier detection information for the listener. See `spec.listener.outlier_detection` Block for details.
      * @return builder
      */
     def outlierDetection(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerOutlierDetectionArgs.Builder]):
@@ -1808,7 +1796,7 @@ object appmesh:
       builder.outlierDetection(args(argsBuilder).build)
 
     /**
-     * @param portMapping Port mapping information for the listener. See `portMapping` Block for details.
+     * @param portMapping Port mapping information for the listener. See `spec.listener.port_mapping` Block for details.
      * @return builder
      */
     def portMapping(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerPortMappingArgs.Builder]):
@@ -1817,7 +1805,7 @@ object appmesh:
       builder.portMapping(args(argsBuilder).build)
 
     /**
-     * @param timeout Timeouts for different protocols. See `timeout` Block for details.
+     * @param timeout Timeouts for different protocols. See `spec.listener.timeout` Block for details.
      * @return builder
      */
     def timeout(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerTimeoutArgs.Builder]):
@@ -1826,7 +1814,7 @@ object appmesh:
       builder.timeout(args(argsBuilder).build)
 
     /**
-     * @param tls Transport Layer Security (TLS) properties for the listener. See `tls` Block for details.
+     * @param tls Transport Layer Security (TLS) properties for the listener. See `spec.listener.tls` Block for details.
      * @return builder
      */
     def tls(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerTlsArgs.Builder]):
@@ -1836,7 +1824,7 @@ object appmesh:
 
   extension (builder: com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerConnectionPoolArgs.Builder)
     /**
-     * @param grpc Connection pool information for gRPC listeners. See `grpc` Block for details.
+     * @param grpc Timeouts for gRPC listeners. See `spec.listener.timeout.grpc` Block for details.
      * @return builder
      */
     def grpc(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerConnectionPoolGrpcArgs.Builder]):
@@ -1845,7 +1833,7 @@ object appmesh:
       builder.grpc(args(argsBuilder).build)
 
     /**
-     * @param http2s Connection pool information for HTTP2 listeners. See `http2` Block for details.
+     * @param http2s Timeouts for HTTP2 listeners. See `spec.listener.timeout.http2` Block for details.
      * @return builder
      */
     def http2s(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerConnectionPoolHttp2Args.Builder]*):
@@ -1854,7 +1842,7 @@ object appmesh:
       builder.http2s(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param https Connection pool information for HTTP listeners. See `http` Block for details.
+     * @param https Timeouts for HTTP listeners. See `spec.listener.timeout.http` Block for details.
      * @return builder
      */
     def https(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerConnectionPoolHttpArgs.Builder]*):
@@ -1863,7 +1851,7 @@ object appmesh:
       builder.https(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param tcps Connection pool information for TCP listeners. See `tcp` Block for details.
+     * @param tcps Timeouts for TCP listeners. See `spec.listener.timeout.tcp` Block for details.
      * @return builder
      */
     def tcps(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerConnectionPoolTcpArgs.Builder]*):
@@ -1873,7 +1861,7 @@ object appmesh:
 
   extension (builder: com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerOutlierDetectionArgs.Builder)
     /**
-     * @param baseEjectionDuration Base amount of time for which a host is ejected. See `baseEjectionDuration` Block for details.
+     * @param baseEjectionDuration Base amount of time for which a host is ejected. See `spec.listener.outlier_detection.base_ejection_duration` Block for details.
      * @return builder
      */
     def baseEjectionDuration(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerOutlierDetectionBaseEjectionDurationArgs.Builder]):
@@ -1882,7 +1870,7 @@ object appmesh:
       builder.baseEjectionDuration(args(argsBuilder).build)
 
     /**
-     * @param interval Time interval between ejection sweep analysis. See `interval` Block for details.
+     * @param interval Time interval between ejection sweep analysis. See `spec.listener.outlier_detection.interval` Block for details.
      * @return builder
      */
     def interval(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerOutlierDetectionIntervalArgs.Builder]):
@@ -1892,7 +1880,7 @@ object appmesh:
 
   extension (builder: com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerTimeoutArgs.Builder)
     /**
-     * @param grpc Timeouts for gRPC listeners. See `grpc` Block for details.
+     * @param grpc Timeouts for gRPC listeners. See `spec.listener.timeout.grpc` Block for details.
      * @return builder
      */
     def grpc(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerTimeoutGrpcArgs.Builder]):
@@ -1901,7 +1889,7 @@ object appmesh:
       builder.grpc(args(argsBuilder).build)
 
     /**
-     * @param http Timeouts for HTTP listeners. See `http` Block for details.
+     * @param http Timeouts for HTTP listeners. See `spec.listener.timeout.http` Block for details.
      * @return builder
      */
     def http(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerTimeoutHttpArgs.Builder]):
@@ -1910,7 +1898,7 @@ object appmesh:
       builder.http(args(argsBuilder).build)
 
     /**
-     * @param http2 Timeouts for HTTP2 listeners. See `http2` Block for details.
+     * @param http2 Timeouts for HTTP2 listeners. See `spec.listener.timeout.http2` Block for details.
      * @return builder
      */
     def http2(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerTimeoutHttp2Args.Builder]):
@@ -1919,7 +1907,7 @@ object appmesh:
       builder.http2(args(argsBuilder).build)
 
     /**
-     * @param tcp Timeouts for TCP listeners. See `tcp` Block for details.
+     * @param tcp Timeouts for TCP listeners. See `spec.listener.timeout.tcp` Block for details.
      * @return builder
      */
     def tcp(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerTimeoutTcpArgs.Builder]):
@@ -1929,7 +1917,7 @@ object appmesh:
 
   extension (builder: com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerTimeoutGrpcArgs.Builder)
     /**
-     * @param idle Idle timeout. An idle timeout bounds the amount of time that a connection may be idle. See `idle` Block for details.
+     * @param idle Idle timeout. An idle timeout bounds the amount of time that a connection may be idle. See `spec.listener.timeout.tcp.idle` Block for details.
      * @return builder
      */
     def idle(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerTimeoutGrpcIdleArgs.Builder]):
@@ -1938,7 +1926,7 @@ object appmesh:
       builder.idle(args(argsBuilder).build)
 
     /**
-     * @param perRequest Per request timeout. See `perRequest` Block for details.
+     * @param perRequest Per request timeout. See `spec.listener.timeout.http2.per_request` Block for details.
      * @return builder
      */
     def perRequest(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerTimeoutGrpcPerRequestArgs.Builder]):
@@ -1948,7 +1936,7 @@ object appmesh:
 
   extension (builder: com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerTimeoutHttp2Args.Builder)
     /**
-     * @param idle Idle timeout. An idle timeout bounds the amount of time that a connection may be idle. See `idle` Block for details.
+     * @param idle Idle timeout. An idle timeout bounds the amount of time that a connection may be idle. See `spec.listener.timeout.tcp.idle` Block for details.
      * @return builder
      */
     def idle(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerTimeoutHttp2IdleArgs.Builder]):
@@ -1957,7 +1945,7 @@ object appmesh:
       builder.idle(args(argsBuilder).build)
 
     /**
-     * @param perRequest Per request timeout. See `perRequest` Block for details.
+     * @param perRequest Per request timeout. See `spec.listener.timeout.http2.per_request` Block for details.
      * @return builder
      */
     def perRequest(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerTimeoutHttp2PerRequestArgs.Builder]):
@@ -1967,7 +1955,7 @@ object appmesh:
 
   extension (builder: com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerTimeoutHttpArgs.Builder)
     /**
-     * @param idle Idle timeout. An idle timeout bounds the amount of time that a connection may be idle. See `idle` Block for details.
+     * @param idle Idle timeout. An idle timeout bounds the amount of time that a connection may be idle. See `spec.listener.timeout.tcp.idle` Block for details.
      * @return builder
      */
     def idle(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerTimeoutHttpIdleArgs.Builder]):
@@ -1976,7 +1964,7 @@ object appmesh:
       builder.idle(args(argsBuilder).build)
 
     /**
-     * @param perRequest Per request timeout. See `perRequest` Block for details.
+     * @param perRequest Per request timeout. See `spec.listener.timeout.http2.per_request` Block for details.
      * @return builder
      */
     def perRequest(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerTimeoutHttpPerRequestArgs.Builder]):
@@ -1986,7 +1974,7 @@ object appmesh:
 
   extension (builder: com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerTimeoutTcpArgs.Builder)
     /**
-     * @param idle Idle timeout. An idle timeout bounds the amount of time that a connection may be idle. See `idle` Block for details.
+     * @param idle Idle timeout. An idle timeout bounds the amount of time that a connection may be idle. See `spec.listener.timeout.tcp.idle` Block for details.
      * @return builder
      */
     def idle(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerTimeoutTcpIdleArgs.Builder]):
@@ -1996,7 +1984,7 @@ object appmesh:
 
   extension (builder: com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerTlsArgs.Builder)
     /**
-     * @param certificate Listener&#39;s TLS certificate.
+     * @param certificate Listener&#39;s TLS certificate. See `spec.listener.tls.certificate` Block for details.
      * @return builder
      */
     def certificate(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerTlsCertificateArgs.Builder]):
@@ -2005,7 +1993,7 @@ object appmesh:
       builder.certificate(args(argsBuilder).build)
 
     /**
-     * @param validation Listener&#39;s Transport Layer Security (TLS) validation context.
+     * @param validation Listener&#39;s Transport Layer Security (TLS) validation context. See `spec.listener.tls.validation` Block for details.
      * @return builder
      */
     def validation(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerTlsValidationArgs.Builder]):
@@ -2015,7 +2003,7 @@ object appmesh:
 
   extension (builder: com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerTlsCertificateArgs.Builder)
     /**
-     * @param acm An AWS Certificate Manager (ACM) certificate.
+     * @param acm AWS Certificate Manager (ACM) certificate. See `spec.listener.tls.certificate.acm` Block for details.
      * @return builder
      */
     def acm(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerTlsCertificateAcmArgs.Builder]):
@@ -2024,7 +2012,7 @@ object appmesh:
       builder.acm(args(argsBuilder).build)
 
     /**
-     * @param file Local file certificate.
+     * @param file File object to send virtual node access logs to. See `spec.logging.access_log.file` Block for details.
      * @return builder
      */
     def file(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerTlsCertificateFileArgs.Builder]):
@@ -2033,7 +2021,7 @@ object appmesh:
       builder.file(args(argsBuilder).build)
 
     /**
-     * @param sds A [Secret Discovery Service](https://www.envoyproxy.io/docs/envoy/latest/configuration/security/secret#secret-discovery-service-sds) certificate.
+     * @param sds TLS validation context trust for a [Secret Discovery Service](https://www.envoyproxy.io/docs/envoy/latest/configuration/security/secret#secret-discovery-service-sds) certificate. See `spec.listener.tls.validation.trust.sds` Block for details.
      * @return builder
      */
     def sds(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerTlsCertificateSdsArgs.Builder]):
@@ -2043,7 +2031,7 @@ object appmesh:
 
   extension (builder: com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerTlsValidationArgs.Builder)
     /**
-     * @param subjectAlternativeNames SANs for a TLS validation context.
+     * @param subjectAlternativeNames SANs for a TLS validation context. See `spec.listener.tls.validation.subject_alternative_names` Block for details.
      * @return builder
      */
     def subjectAlternativeNames(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerTlsValidationSubjectAlternativeNamesArgs.Builder]):
@@ -2052,7 +2040,7 @@ object appmesh:
       builder.subjectAlternativeNames(args(argsBuilder).build)
 
     /**
-     * @param trust TLS validation context trust.
+     * @param trust TLS validation context trust. See `spec.listener.tls.validation.trust` Block for details.
      * @return builder
      */
     def trust(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerTlsValidationTrustArgs.Builder]):
@@ -2062,7 +2050,7 @@ object appmesh:
 
   extension (builder: com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerTlsValidationSubjectAlternativeNamesArgs.Builder)
     /**
-     * @param match Criteria for determining a SAN&#39;s match.
+     * @param match Criteria for determining a SAN&#39;s match. See `spec.listener.tls.validation.subject_alternative_names.match` Block for details.
      * @return builder
      */
     def `match`(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerTlsValidationSubjectAlternativeNamesMatchArgs.Builder]):
@@ -2072,7 +2060,7 @@ object appmesh:
 
   extension (builder: com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerTlsValidationTrustArgs.Builder)
     /**
-     * @param file TLS validation context trust for a local file certificate.
+     * @param file File object to send virtual node access logs to. See `spec.logging.access_log.file` Block for details.
      * @return builder
      */
     def file(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerTlsValidationTrustFileArgs.Builder]):
@@ -2081,7 +2069,7 @@ object appmesh:
       builder.file(args(argsBuilder).build)
 
     /**
-     * @param sds TLS validation context trust for a [Secret Discovery Service](https://www.envoyproxy.io/docs/envoy/latest/configuration/security/secret#secret-discovery-service-sds) certificate.
+     * @param sds TLS validation context trust for a [Secret Discovery Service](https://www.envoyproxy.io/docs/envoy/latest/configuration/security/secret#secret-discovery-service-sds) certificate. See `spec.listener.tls.validation.trust.sds` Block for details.
      * @return builder
      */
     def sds(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerTlsValidationTrustSdsArgs.Builder]):
@@ -2091,7 +2079,7 @@ object appmesh:
 
   extension (builder: com.pulumi.aws.appmesh.inputs.VirtualNodeSpecLoggingAccessLogArgs.Builder)
     /**
-     * @param file File object to send virtual node access logs to. See `file` Block for details.
+     * @param file File object to send virtual node access logs to. See `spec.logging.access_log.file` Block for details.
      * @return builder
      */
     def file(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecLoggingAccessLogFileArgs.Builder]):
@@ -2101,7 +2089,7 @@ object appmesh:
 
   extension (builder: com.pulumi.aws.appmesh.inputs.VirtualNodeSpecLoggingAccessLogFileArgs.Builder)
     /**
-     * @param format The specified format for the logs. See `format` Block for details.
+     * @param format Format for the logs. See `spec.logging.access_log.file.format` Block for details.
      * @return builder
      */
     def format(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecLoggingAccessLogFileFormatArgs.Builder]):
@@ -2111,7 +2099,7 @@ object appmesh:
 
   extension (builder: com.pulumi.aws.appmesh.inputs.VirtualNodeSpecLoggingAccessLogFileFormatArgs.Builder)
     /**
-     * @param jsons The logging format for JSON. See `json` Block for details.
+     * @param jsons Logging format for JSON. See `spec.logging.access_log.file.format.json` Block for details.
      * @return builder
      */
     def jsons(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecLoggingAccessLogFileFormatJsonArgs.Builder]*):
@@ -2121,7 +2109,7 @@ object appmesh:
 
   extension (builder: com.pulumi.aws.appmesh.inputs.VirtualNodeSpecLoggingArgs.Builder)
     /**
-     * @param accessLog Access log configuration for a virtual node. See `accessLog` Block for details.
+     * @param accessLog Access log configuration for a virtual node. See `spec.logging.access_log` Block for details.
      * @return builder
      */
     def accessLog(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecLoggingAccessLogArgs.Builder]):
@@ -2131,7 +2119,7 @@ object appmesh:
 
   extension (builder: com.pulumi.aws.appmesh.inputs.VirtualNodeSpecServiceDiscoveryArgs.Builder)
     /**
-     * @param awsCloudMap Any AWS Cloud Map information for the virtual node. See `awsCloudMap` Block for details.
+     * @param awsCloudMap Any AWS Cloud Map information for the virtual node. See `spec.service_discovery.aws_cloud_map` Block for details.
      * @return builder
      */
     def awsCloudMap(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecServiceDiscoveryAwsCloudMapArgs.Builder]):
@@ -2140,7 +2128,7 @@ object appmesh:
       builder.awsCloudMap(args(argsBuilder).build)
 
     /**
-     * @param dns DNS service name for the virtual node. See `dns` Block for details.
+     * @param dns DNS service name for the virtual node. See `spec.service_discovery.dns` Block for details.
      * @return builder
      */
     def dns(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecServiceDiscoveryDnsArgs.Builder]):
@@ -2150,7 +2138,7 @@ object appmesh:
 
   extension (builder: com.pulumi.aws.appmesh.inputs.VirtualNodeState.Builder)
     /**
-     * @param spec Virtual node specification to apply.
+     * @param spec Virtual node specification to apply. See `spec` Block for details.
      * @return builder
      */
     def spec(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecArgs.Builder]):

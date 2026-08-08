@@ -28,7 +28,7 @@ object apigatewayv2:
 
   extension (builder: com.pulumi.aws.apigatewayv2.ApiArgs.Builder)
     /**
-     * @param corsConfiguration Cross-origin resource sharing (CORS) [configuration](https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-cors.html). Applicable for HTTP APIs.
+     * @param corsConfiguration Cross-origin resource sharing (CORS) [configuration](https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-cors.html). Applicable for HTTP APIs. See `corsConfiguration` Block below.
      * @return builder
      */
     def corsConfiguration(args: Endofunction[com.pulumi.aws.apigatewayv2.inputs.ApiCorsConfigurationArgs.Builder]):
@@ -118,8 +118,7 @@ object apigatewayv2:
 
   extension (builder: com.pulumi.aws.apigatewayv2.AuthorizerArgs.Builder)
     /**
-     * @param jwtConfiguration Configuration of a JWT authorizer. Required for the `JWT` authorizer type.
-     * Supported only for HTTP APIs.
+     * @param jwtConfiguration Configuration of a JWT authorizer. Required for the `JWT` authorizer type. Supported only for HTTP APIs. See `jwtConfiguration` Block below.
      * @return builder
      */
     def jwtConfiguration(args: Endofunction[com.pulumi.aws.apigatewayv2.inputs.AuthorizerJwtConfigurationArgs.Builder]):
@@ -245,7 +244,7 @@ object apigatewayv2:
 
   extension (builder: com.pulumi.aws.apigatewayv2.RouteArgs.Builder)
     /**
-     * @param requestParameters Request parameters for the route. Supported only for WebSocket APIs.
+     * @param requestParameters Request parameters for the route. Supported only for WebSocket APIs. See `requestParameter` Block below.
      * @return builder
      */
     def requestParameters(args: Endofunction[com.pulumi.aws.apigatewayv2.inputs.RouteRequestParameterArgs.Builder]*):
@@ -314,8 +313,7 @@ object apigatewayv2:
 
   extension (builder: com.pulumi.aws.apigatewayv2.StageArgs.Builder)
     /**
-     * @param accessLogSettings Settings for logging access in this stage.
-     * Use the `aws.apigateway.Account` resource to configure [permissions for CloudWatch Logging](https://docs.aws.amazon.com/apigateway/latest/developerguide/set-up-logging.html#set-up-access-logging-permissions).
+     * @param accessLogSettings Settings for logging access in this stage. Use the `aws.apigateway.Account` resource to configure [permissions for CloudWatch Logging](https://docs.aws.amazon.com/apigateway/latest/developerguide/set-up-logging.html#set-up-access-logging-permissions).
      * @return builder
      */
     def accessLogSettings(args: Endofunction[com.pulumi.aws.apigatewayv2.inputs.StageAccessLogSettingsArgs.Builder]):
@@ -366,7 +364,7 @@ object apigatewayv2:
 
   extension (builder: com.pulumi.aws.apigatewayv2.inputs.ApiState.Builder)
     /**
-     * @param corsConfiguration Cross-origin resource sharing (CORS) [configuration](https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-cors.html). Applicable for HTTP APIs.
+     * @param corsConfiguration Cross-origin resource sharing (CORS) [configuration](https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-cors.html). Applicable for HTTP APIs. See `corsConfiguration` Block below.
      * @return builder
      */
     def corsConfiguration(args: Endofunction[com.pulumi.aws.apigatewayv2.inputs.ApiCorsConfigurationArgs.Builder]):
@@ -376,8 +374,7 @@ object apigatewayv2:
 
   extension (builder: com.pulumi.aws.apigatewayv2.inputs.AuthorizerState.Builder)
     /**
-     * @param jwtConfiguration Configuration of a JWT authorizer. Required for the `JWT` authorizer type.
-     * Supported only for HTTP APIs.
+     * @param jwtConfiguration Configuration of a JWT authorizer. Required for the `JWT` authorizer type. Supported only for HTTP APIs. See `jwtConfiguration` Block below.
      * @return builder
      */
     def jwtConfiguration(args: Endofunction[com.pulumi.aws.apigatewayv2.inputs.AuthorizerJwtConfigurationArgs.Builder]):
@@ -425,7 +422,7 @@ object apigatewayv2:
 
   extension (builder: com.pulumi.aws.apigatewayv2.inputs.RouteState.Builder)
     /**
-     * @param requestParameters Request parameters for the route. Supported only for WebSocket APIs.
+     * @param requestParameters Request parameters for the route. Supported only for WebSocket APIs. See `requestParameter` Block below.
      * @return builder
      */
     def requestParameters(args: Endofunction[com.pulumi.aws.apigatewayv2.inputs.RouteRequestParameterArgs.Builder]*):
@@ -445,7 +442,7 @@ object apigatewayv2:
 
   extension (builder: com.pulumi.aws.apigatewayv2.inputs.RoutingRuleConditionArgs.Builder)
     /**
-     * @param matchBasePaths The base path to be matched. See below.
+     * @param matchBasePaths Base path to be matched. See below.
      * @return builder
      */
     def matchBasePaths(args: Endofunction[com.pulumi.aws.apigatewayv2.inputs.RoutingRuleConditionMatchBasePathsArgs.Builder]):
@@ -454,7 +451,7 @@ object apigatewayv2:
       builder.matchBasePaths(args(argsBuilder).build)
 
     /**
-     * @param matchHeaders The headers to be matched. See below.
+     * @param matchHeaders Headers to be matched. See below.
      * @return builder
      */
     def matchHeaders(args: Endofunction[com.pulumi.aws.apigatewayv2.inputs.RoutingRuleConditionMatchHeadersArgs.Builder]):
@@ -493,8 +490,7 @@ object apigatewayv2:
 
   extension (builder: com.pulumi.aws.apigatewayv2.inputs.StageState.Builder)
     /**
-     * @param accessLogSettings Settings for logging access in this stage.
-     * Use the `aws.apigateway.Account` resource to configure [permissions for CloudWatch Logging](https://docs.aws.amazon.com/apigateway/latest/developerguide/set-up-logging.html#set-up-access-logging-permissions).
+     * @param accessLogSettings Settings for logging access in this stage. Use the `aws.apigateway.Account` resource to configure [permissions for CloudWatch Logging](https://docs.aws.amazon.com/apigateway/latest/developerguide/set-up-logging.html#set-up-access-logging-permissions).
      * @return builder
      */
     def accessLogSettings(args: Endofunction[com.pulumi.aws.apigatewayv2.inputs.StageAccessLogSettingsArgs.Builder]):

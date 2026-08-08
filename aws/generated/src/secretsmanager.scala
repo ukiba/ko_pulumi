@@ -59,7 +59,7 @@ object secretsmanager:
       builder.externalSecretRotationMetadatas(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param rotationRules A structure that defines the rotation configuration for this secret. Defined below.
+     * @param rotationRules Structure that defines the rotation configuration for this secret. Defined below.
      * @return builder
      */
     def rotationRules(args: Endofunction[com.pulumi.aws.secretsmanager.inputs.SecretRotationRotationRulesArgs.Builder]):
@@ -193,7 +193,7 @@ object secretsmanager:
       builder.externalSecretRotationMetadatas(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param rotationRules A structure that defines the rotation configuration for this secret. Defined below.
+     * @param rotationRules Structure that defines the rotation configuration for this secret. Defined below.
      * @return builder
      */
     def rotationRules(args: Endofunction[com.pulumi.aws.secretsmanager.inputs.SecretRotationRotationRulesArgs.Builder]):

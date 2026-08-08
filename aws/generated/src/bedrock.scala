@@ -5700,7 +5700,7 @@ object bedrock:
       builder.customMetricConfig(args(argsBuilder).build)
 
     /**
-     * @param datasetMetricConfigs One or more configurations for the prompt datasets and metrics to use. See `datasetMetricConfig` Block below.
+     * @param datasetMetricConfigs One or more configurations for the prompt datasets and metrics to use. See `evaluation_config.automated.dataset_metric_config` Block below.
      * @return builder
      */
     def datasetMetricConfigs(args: Endofunction[com.pulumi.aws.bedrock.inputs.EvaluationJobEvaluationConfigAutomatedDatasetMetricConfigArgs.Builder]*):
@@ -5817,7 +5817,7 @@ object bedrock:
       builder.customMetrics(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param datasetMetricConfigs One or more configurations for the prompt datasets and metrics to use. See `datasetMetricConfig` Block above.
+     * @param datasetMetricConfigs One or more configurations for the prompt datasets and metrics to use. See `evaluation_config.human.dataset_metric_config` Block below.
      * @return builder
      */
     def datasetMetricConfigs(args: Endofunction[com.pulumi.aws.bedrock.inputs.EvaluationJobEvaluationConfigHumanDatasetMetricConfigArgs.Builder]*):

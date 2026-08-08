@@ -1729,7 +1729,7 @@ object ec2:
 
   extension (builder: com.pulumi.aws.ec2.FlowLogArgs.Builder)
     /**
-     * @param destinationOptions Describes the destination options for a flow log. More details below.
+     * @param destinationOptions Destination options for a flow log. More details below.
      * @return builder
      */
     def destinationOptions(args: Endofunction[com.pulumi.aws.ec2.inputs.FlowLogDestinationOptionsArgs.Builder]):
@@ -4412,7 +4412,7 @@ object ec2:
 
   extension (builder: com.pulumi.aws.ec2.inputs.FlowLogState.Builder)
     /**
-     * @param destinationOptions Describes the destination options for a flow log. More details below.
+     * @param destinationOptions Destination options for a flow log. More details below.
      * @return builder
      */
     def destinationOptions(args: Endofunction[com.pulumi.aws.ec2.inputs.FlowLogDestinationOptionsArgs.Builder]):

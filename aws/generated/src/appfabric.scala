@@ -21,8 +21,7 @@ object appfabric:
 
   extension (builder: com.pulumi.aws.appfabric.AppAuthorizationArgs.Builder)
     /**
-     * @param credential Contains credentials for the application, such as an API key or OAuth2 client ID and secret.
-     * Specify credentials that match the authorization type for your request. For example, if the authorization type for your request is OAuth2 (oauth2), then you should provide only the OAuth2 credentials.
+     * @param credential Credentials for the application, such as an API key or OAuth2 client ID and secret. Specify credentials that match the authorization type for your request. For example, if the authorization type for your request is OAuth2 (`oauth2`), then you should provide only the OAuth2 credentials. See `credential` Block for details.
      * @return builder
      */
     def credential(args: Endofunction[com.pulumi.aws.appfabric.inputs.AppAuthorizationCredentialArgs.Builder]):
@@ -31,7 +30,9 @@ object appfabric:
       builder.credential(args(argsBuilder).build)
 
     /**
-     * @param tenants Contains information about an application tenant, such as the application display name and identifier.
+     * @param tenants Information about an application tenant, such as the application display name and identifier. See `tenant` Block for details.
+     * 
+     * The following arguments are optional:
      * @return builder
      */
     def tenants(args: Endofunction[com.pulumi.aws.appfabric.inputs.AppAuthorizationTenantArgs.Builder]*):
@@ -54,7 +55,7 @@ object appfabric:
 
   extension (builder: com.pulumi.aws.appfabric.AppAuthorizationConnectionArgs.Builder)
     /**
-     * @param authRequest Contains OAuth2 authorization information.This is required if the app authorization for the request is configured with an OAuth2 (oauth2) authorization type.
+     * @param authRequest OAuth2 authorization information. Required if the app authorization for the request is configured with an OAuth2 (`oauth2`) authorization type. See `authRequest` Block for details.
      * @return builder
      */
     def authRequest(args: Endofunction[com.pulumi.aws.appfabric.inputs.AppAuthorizationConnectionAuthRequestArgs.Builder]):
@@ -114,7 +115,7 @@ object appfabric:
 
   extension (builder: com.pulumi.aws.appfabric.IngestionDestinationArgs.Builder)
     /**
-     * @param destinationConfiguration Contains information about the destination of ingested data.
+     * @param destinationConfiguration Configuration for the destination of ingested data. See `destinationConfiguration` Block below.
      * @return builder
      */
     def destinationConfiguration(args: Endofunction[com.pulumi.aws.appfabric.inputs.IngestionDestinationDestinationConfigurationArgs.Builder]):
@@ -123,7 +124,9 @@ object appfabric:
       builder.destinationConfiguration(args(argsBuilder).build)
 
     /**
-     * @param processingConfiguration Contains information about how ingested data is processed.
+     * @param processingConfiguration Configuration for how ingested data is processed. See `processingConfiguration` Block below.
+     * 
+     * The following arguments are optional:
      * @return builder
      */
     def processingConfiguration(args: Endofunction[com.pulumi.aws.appfabric.inputs.IngestionDestinationProcessingConfigurationArgs.Builder]):
@@ -138,7 +141,7 @@ object appfabric:
 
   extension (builder: com.pulumi.aws.appfabric.inputs.AppAuthorizationConnectionState.Builder)
     /**
-     * @param authRequest Contains OAuth2 authorization information.This is required if the app authorization for the request is configured with an OAuth2 (oauth2) authorization type.
+     * @param authRequest OAuth2 authorization information. Required if the app authorization for the request is configured with an OAuth2 (`oauth2`) authorization type. See `authRequest` Block for details.
      * @return builder
      */
     def authRequest(args: Endofunction[com.pulumi.aws.appfabric.inputs.AppAuthorizationConnectionAuthRequestArgs.Builder]):
@@ -162,7 +165,7 @@ object appfabric:
 
   extension (builder: com.pulumi.aws.appfabric.inputs.AppAuthorizationCredentialArgs.Builder)
     /**
-     * @param apiKeyCredentials Contains API key credential information.
+     * @param apiKeyCredentials API key credential information. See `apiKeyCredential` Block for details.
      * @return builder
      */
     def apiKeyCredentials(args: Endofunction[com.pulumi.aws.appfabric.inputs.AppAuthorizationCredentialApiKeyCredentialArgs.Builder]*):
@@ -171,7 +174,7 @@ object appfabric:
       builder.apiKeyCredentials(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param oauth2Credential Contains OAuth2 client credential information.
+     * @param oauth2Credential OAuth2 client credential information. See `oauth2Credential` Block for details.
      * @return builder
      */
     def oauth2Credential(args: Endofunction[com.pulumi.aws.appfabric.inputs.AppAuthorizationCredentialOauth2CredentialArgs.Builder]):
@@ -181,8 +184,7 @@ object appfabric:
 
   extension (builder: com.pulumi.aws.appfabric.inputs.AppAuthorizationState.Builder)
     /**
-     * @param credential Contains credentials for the application, such as an API key or OAuth2 client ID and secret.
-     * Specify credentials that match the authorization type for your request. For example, if the authorization type for your request is OAuth2 (oauth2), then you should provide only the OAuth2 credentials.
+     * @param credential Credentials for the application, such as an API key or OAuth2 client ID and secret. Specify credentials that match the authorization type for your request. For example, if the authorization type for your request is OAuth2 (`oauth2`), then you should provide only the OAuth2 credentials. See `credential` Block for details.
      * @return builder
      */
     def credential(args: Endofunction[com.pulumi.aws.appfabric.inputs.AppAuthorizationCredentialArgs.Builder]):
@@ -191,7 +193,9 @@ object appfabric:
       builder.credential(args(argsBuilder).build)
 
     /**
-     * @param tenants Contains information about an application tenant, such as the application display name and identifier.
+     * @param tenants Information about an application tenant, such as the application display name and identifier. See `tenant` Block for details.
+     * 
+     * The following arguments are optional:
      * @return builder
      */
     def tenants(args: Endofunction[com.pulumi.aws.appfabric.inputs.AppAuthorizationTenantArgs.Builder]*):
@@ -206,7 +210,7 @@ object appfabric:
 
   extension (builder: com.pulumi.aws.appfabric.inputs.IngestionDestinationDestinationConfigurationArgs.Builder)
     /**
-     * @param auditLog Contains information about an audit log processing configuration.
+     * @param auditLog Audit log destination configuration. See `destination_configuration.audit_log` Block below.
      * @return builder
      */
     def auditLog(args: Endofunction[com.pulumi.aws.appfabric.inputs.IngestionDestinationDestinationConfigurationAuditLogArgs.Builder]):
@@ -216,7 +220,7 @@ object appfabric:
 
   extension (builder: com.pulumi.aws.appfabric.inputs.IngestionDestinationDestinationConfigurationAuditLogArgs.Builder)
     /**
-     * @param destination Contains information about an audit log destination. Only one destination (Firehose Stream) or (S3 Bucket) can be specified.
+     * @param destination Destination for the audit log. Only one destination, either `firehoseStream` or `s3Bucket`, can be specified. See `destination_configuration.audit_log.destination` Block below.
      * @return builder
      */
     def destination(args: Endofunction[com.pulumi.aws.appfabric.inputs.IngestionDestinationDestinationConfigurationAuditLogDestinationArgs.Builder]):
@@ -226,7 +230,7 @@ object appfabric:
 
   extension (builder: com.pulumi.aws.appfabric.inputs.IngestionDestinationDestinationConfigurationAuditLogDestinationArgs.Builder)
     /**
-     * @param firehoseStream Contains information about an Amazon Data Firehose delivery stream.
+     * @param firehoseStream Amazon Data Firehose delivery stream destination. See `destination_configuration.audit_log.destination.firehose_stream` Block below.
      * @return builder
      */
     def firehoseStream(args: Endofunction[com.pulumi.aws.appfabric.inputs.IngestionDestinationDestinationConfigurationAuditLogDestinationFirehoseStreamArgs.Builder]):
@@ -235,7 +239,7 @@ object appfabric:
       builder.firehoseStream(args(argsBuilder).build)
 
     /**
-     * @param s3Bucket Contains information about an Amazon S3 bucket.
+     * @param s3Bucket Amazon S3 bucket destination. See `destination_configuration.audit_log.destination.s3_bucket` Block below.
      * @return builder
      */
     def s3Bucket(args: Endofunction[com.pulumi.aws.appfabric.inputs.IngestionDestinationDestinationConfigurationAuditLogDestinationS3BucketArgs.Builder]):
@@ -245,7 +249,7 @@ object appfabric:
 
   extension (builder: com.pulumi.aws.appfabric.inputs.IngestionDestinationProcessingConfigurationArgs.Builder)
     /**
-     * @param auditLog Contains information about an audit log processing configuration.
+     * @param auditLog Audit log processing configuration. See `processing_configuration.audit_log` Block below.
      * @return builder
      */
     def auditLog(args: Endofunction[com.pulumi.aws.appfabric.inputs.IngestionDestinationProcessingConfigurationAuditLogArgs.Builder]):
@@ -255,7 +259,7 @@ object appfabric:
 
   extension (builder: com.pulumi.aws.appfabric.inputs.IngestionDestinationState.Builder)
     /**
-     * @param destinationConfiguration Contains information about the destination of ingested data.
+     * @param destinationConfiguration Configuration for the destination of ingested data. See `destinationConfiguration` Block below.
      * @return builder
      */
     def destinationConfiguration(args: Endofunction[com.pulumi.aws.appfabric.inputs.IngestionDestinationDestinationConfigurationArgs.Builder]):
@@ -264,7 +268,9 @@ object appfabric:
       builder.destinationConfiguration(args(argsBuilder).build)
 
     /**
-     * @param processingConfiguration Contains information about how ingested data is processed.
+     * @param processingConfiguration Configuration for how ingested data is processed. See `processingConfiguration` Block below.
+     * 
+     * The following arguments are optional:
      * @return builder
      */
     def processingConfiguration(args: Endofunction[com.pulumi.aws.appfabric.inputs.IngestionDestinationProcessingConfigurationArgs.Builder]):

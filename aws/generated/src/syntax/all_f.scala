@@ -17,6 +17,8 @@ export ko_pulumi.aws.alb.httpRequestMethod
 export ko_pulumi.aws.alb.ipamPools
 export ko_pulumi.aws.alb.jwtValidation
 export ko_pulumi.aws.amp.filters
+export ko_pulumi.aws.amp.ignoreNearExpectedFromAbove
+export ko_pulumi.aws.amp.ignoreNearExpectedFromBelow
 export ko_pulumi.aws.amplify.jobConfig
 export ko_pulumi.aws.apigatewayv2.invokeApi
 export ko_pulumi.aws.apigatewayv2.jwtConfiguration
@@ -352,6 +354,7 @@ export ko_pulumi.aws.m2.fsx
 export ko_pulumi.aws.m2.highAvailabilityConfig
 export ko_pulumi.aws.macie.findingCriteria
 export ko_pulumi.aws.macie2.includes
+export ko_pulumi.aws.mailmanager.invokeLambda
 export ko_pulumi.aws.mailmanager.ipExpression
 export ko_pulumi.aws.mailmanager.ipv6Expression
 export ko_pulumi.aws.mailmanager.isInAddressList

@@ -55,6 +55,45 @@ object amp:
       val argsBuilder = com.pulumi.aws.amp.inputs.GetWorkspacesPlainArgs.builder
       com.pulumi.aws.amp.AmpFunctions.getWorkspacesPlain(args(argsBuilder).build)
 
+  /** Manages an AWS AMP (Managed Prometheus) Anomaly Detector. */
+  def AnomalyDetector(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+      (args: Endofunction[com.pulumi.aws.amp.AnomalyDetectorArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+    var argsBuilder = com.pulumi.aws.amp.AnomalyDetectorArgs.builder
+    argsBuilder = args(argsBuilder)
+    conf.logicalName2tagName(name) match
+      case Some(tagName) =>
+        argsBuilder = argsBuilder.tags:
+          transformOptOutputMap(argsBuilder.build.tags, map =>
+              if map.contains("Name") then map else map + ("Name" -> tagName))
+      case None =>
+    com.pulumi.aws.amp.AnomalyDetector(name,
+        argsBuilder.build,
+        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+
+  extension (builder: com.pulumi.aws.amp.AnomalyDetectorArgs.Builder)
+    /**
+     * @param configuration Configuration block for the anomaly detector algorithm. See `configuration` below.
+     * @return builder
+     */
+    def configuration(args: Endofunction[com.pulumi.aws.amp.inputs.AnomalyDetectorConfigurationArgs.Builder]):
+        com.pulumi.aws.amp.AnomalyDetectorArgs.Builder =
+      val argsBuilder = com.pulumi.aws.amp.inputs.AnomalyDetectorConfigurationArgs.builder
+      builder.configuration(args(argsBuilder).build)
+
+    /**
+     * @param missingDataAction Configuration block for the action to take when data is missing. See `missingDataAction` below.
+     * @return builder
+     */
+    def missingDataAction(args: Endofunction[com.pulumi.aws.amp.inputs.AnomalyDetectorMissingDataActionArgs.Builder]):
+        com.pulumi.aws.amp.AnomalyDetectorArgs.Builder =
+      val argsBuilder = com.pulumi.aws.amp.inputs.AnomalyDetectorMissingDataActionArgs.builder
+      builder.missingDataAction(args(argsBuilder).build)
+
+    def timeouts(args: Endofunction[com.pulumi.aws.amp.inputs.AnomalyDetectorTimeoutsArgs.Builder]):
+        com.pulumi.aws.amp.AnomalyDetectorArgs.Builder =
+      val argsBuilder = com.pulumi.aws.amp.inputs.AnomalyDetectorTimeoutsArgs.builder
+      builder.timeouts(args(argsBuilder).build)
+
   /** Manages an Amazon Managed Service for Prometheus (AMP) Query Logging Configuration. */
   def QueryLoggingConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.amp.QueryLoggingConfigurationArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
@@ -143,7 +182,7 @@ object amp:
 
   extension (builder: com.pulumi.aws.amp.ScraperArgs.Builder)
     /**
-     * @param destination Configuration block for the managed scraper to send metrics to. See `destination`.
+     * @param destination Configuration block for the managed scraper to send metrics to. See `destination` Block for details.
      * @return builder
      */
     def destination(args: Endofunction[com.pulumi.aws.amp.inputs.ScraperDestinationArgs.Builder]):
@@ -152,7 +191,7 @@ object amp:
       builder.destination(args(argsBuilder).build)
 
     /**
-     * @param roleConfiguration Configuration block to enable writing to an Amazon Managed Service for Prometheus workspace in a different account. See `roleConfiguration` below.
+     * @param roleConfiguration Configuration block to enable writing to an Amazon Managed Service for Prometheus workspace in a different account. See `roleConfiguration` Block for details.
      * @return builder
      */
     def roleConfiguration(args: Endofunction[com.pulumi.aws.amp.inputs.ScraperRoleConfigurationArgs.Builder]):
@@ -161,7 +200,7 @@ object amp:
       builder.roleConfiguration(args(argsBuilder).build)
 
     /**
-     * @param source Configuration block to specify where the managed scraper will collect metrics from. See `source`.
+     * @param source Configuration block to specify where the managed scraper will collect metrics from. See `source` Block for details.
      * 
      * The following arguments are optional:
      * @return builder
@@ -174,6 +213,29 @@ object amp:
     def timeouts(args: Endofunction[com.pulumi.aws.amp.inputs.ScraperTimeoutsArgs.Builder]):
         com.pulumi.aws.amp.ScraperArgs.Builder =
       val argsBuilder = com.pulumi.aws.amp.inputs.ScraperTimeoutsArgs.builder
+      builder.timeouts(args(argsBuilder).build)
+
+  /** Manages an Amazon Managed Service for Prometheus (AMP) Scraper Logging Configuration. */
+  def ScraperLoggingConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
+      (args: Endofunction[com.pulumi.aws.amp.ScraperLoggingConfigurationArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+    val argsBuilder = com.pulumi.aws.amp.ScraperLoggingConfigurationArgs.builder
+    com.pulumi.aws.amp.ScraperLoggingConfiguration(name,
+        args(argsBuilder).build,
+        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+
+  extension (builder: com.pulumi.aws.amp.ScraperLoggingConfigurationArgs.Builder)
+    /**
+     * @param loggingDestination Configuration block for the logging destination. See `loggingDestination` Block below.
+     * @return builder
+     */
+    def loggingDestination(args: Endofunction[com.pulumi.aws.amp.inputs.ScraperLoggingConfigurationLoggingDestinationArgs.Builder]):
+        com.pulumi.aws.amp.ScraperLoggingConfigurationArgs.Builder =
+      val argsBuilder = com.pulumi.aws.amp.inputs.ScraperLoggingConfigurationLoggingDestinationArgs.builder
+      builder.loggingDestination(args(argsBuilder).build)
+
+    def timeouts(args: Endofunction[com.pulumi.aws.amp.inputs.ScraperLoggingConfigurationTimeoutsArgs.Builder]):
+        com.pulumi.aws.amp.ScraperLoggingConfigurationArgs.Builder =
+      val argsBuilder = com.pulumi.aws.amp.inputs.ScraperLoggingConfigurationTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
   /** Manages an Amazon Managed Service for Prometheus (AMP) Workspace. */
@@ -224,6 +286,59 @@ object amp:
       val argsBuilder = com.pulumi.aws.amp.inputs.WorkspaceConfigurationTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
+  extension (builder: com.pulumi.aws.amp.inputs.AnomalyDetectorConfigurationArgs.Builder)
+    /**
+     * @param randomCutForest Configuration block for the Random Cut Forest anomaly detection algorithm. See `randomCutForest` below.
+     * @return builder
+     */
+    def randomCutForest(args: Endofunction[com.pulumi.aws.amp.inputs.AnomalyDetectorConfigurationRandomCutForestArgs.Builder]):
+        com.pulumi.aws.amp.inputs.AnomalyDetectorConfigurationArgs.Builder =
+      val argsBuilder = com.pulumi.aws.amp.inputs.AnomalyDetectorConfigurationRandomCutForestArgs.builder
+      builder.randomCutForest(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.amp.inputs.AnomalyDetectorConfigurationRandomCutForestArgs.Builder)
+    /**
+     * @param ignoreNearExpectedFromAbove Configuration block for suppressing anomalies when the observed value is slightly above the expected value. See `ignoreNearExpectedFromAbove` below.
+     * @return builder
+     */
+    def ignoreNearExpectedFromAbove(args: Endofunction[com.pulumi.aws.amp.inputs.AnomalyDetectorConfigurationRandomCutForestIgnoreNearExpectedFromAboveArgs.Builder]):
+        com.pulumi.aws.amp.inputs.AnomalyDetectorConfigurationRandomCutForestArgs.Builder =
+      val argsBuilder = com.pulumi.aws.amp.inputs.AnomalyDetectorConfigurationRandomCutForestIgnoreNearExpectedFromAboveArgs.builder
+      builder.ignoreNearExpectedFromAbove(args(argsBuilder).build)
+
+    /**
+     * @param ignoreNearExpectedFromBelow Configuration block for suppressing anomalies when the observed value is slightly below the expected value. See `ignoreNearExpectedFromBelow` below.
+     * @return builder
+     */
+    def ignoreNearExpectedFromBelow(args: Endofunction[com.pulumi.aws.amp.inputs.AnomalyDetectorConfigurationRandomCutForestIgnoreNearExpectedFromBelowArgs.Builder]):
+        com.pulumi.aws.amp.inputs.AnomalyDetectorConfigurationRandomCutForestArgs.Builder =
+      val argsBuilder = com.pulumi.aws.amp.inputs.AnomalyDetectorConfigurationRandomCutForestIgnoreNearExpectedFromBelowArgs.builder
+      builder.ignoreNearExpectedFromBelow(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.amp.inputs.AnomalyDetectorState.Builder)
+    /**
+     * @param configuration Configuration block for the anomaly detector algorithm. See `configuration` below.
+     * @return builder
+     */
+    def configuration(args: Endofunction[com.pulumi.aws.amp.inputs.AnomalyDetectorConfigurationArgs.Builder]):
+        com.pulumi.aws.amp.inputs.AnomalyDetectorState.Builder =
+      val argsBuilder = com.pulumi.aws.amp.inputs.AnomalyDetectorConfigurationArgs.builder
+      builder.configuration(args(argsBuilder).build)
+
+    /**
+     * @param missingDataAction Configuration block for the action to take when data is missing. See `missingDataAction` below.
+     * @return builder
+     */
+    def missingDataAction(args: Endofunction[com.pulumi.aws.amp.inputs.AnomalyDetectorMissingDataActionArgs.Builder]):
+        com.pulumi.aws.amp.inputs.AnomalyDetectorState.Builder =
+      val argsBuilder = com.pulumi.aws.amp.inputs.AnomalyDetectorMissingDataActionArgs.builder
+      builder.missingDataAction(args(argsBuilder).build)
+
+    def timeouts(args: Endofunction[com.pulumi.aws.amp.inputs.AnomalyDetectorTimeoutsArgs.Builder]):
+        com.pulumi.aws.amp.inputs.AnomalyDetectorState.Builder =
+      val argsBuilder = com.pulumi.aws.amp.inputs.AnomalyDetectorTimeoutsArgs.builder
+      builder.timeouts(args(argsBuilder).build)
+
   extension (builder: com.pulumi.aws.amp.inputs.QueryLoggingConfigurationDestinationArgs.Builder)
     /**
      * @param cloudwatchLogs Configuration block for CloudWatch Logs destination. See `cloudwatchLogs`.
@@ -266,7 +381,7 @@ object amp:
 
   extension (builder: com.pulumi.aws.amp.inputs.ScraperDestinationArgs.Builder)
     /**
-     * @param amp Configuration block for an Amazon Managed Prometheus workspace destination. See `amp`.
+     * @param amp Configuration block for an Amazon Managed Prometheus workspace destination. See `amp` Block for details.
      * @return builder
      */
     def amp(args: Endofunction[com.pulumi.aws.amp.inputs.ScraperDestinationAmpArgs.Builder]):
@@ -274,9 +389,45 @@ object amp:
       val argsBuilder = com.pulumi.aws.amp.inputs.ScraperDestinationAmpArgs.builder
       builder.amp(args(argsBuilder).build)
 
+    /**
+     * @param cloudwatch Configuration block for a CloudWatch Metrics destination. See `cloudwatch` Block for details.
+     * 
+     * &gt; **NOTE:** Either `amp` or `cloudwatch` must be specified, but not both.
+     * @return builder
+     */
+    def cloudwatch(args: Endofunction[com.pulumi.aws.amp.inputs.ScraperDestinationCloudwatchArgs.Builder]):
+        com.pulumi.aws.amp.inputs.ScraperDestinationArgs.Builder =
+      val argsBuilder = com.pulumi.aws.amp.inputs.ScraperDestinationCloudwatchArgs.builder
+      builder.cloudwatch(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.amp.inputs.ScraperLoggingConfigurationLoggingDestinationArgs.Builder)
+    /**
+     * @param cloudwatchLogs Configuration block for CloudWatch Logs destination. See `cloudwatchLogs` Block below.
+     * @return builder
+     */
+    def cloudwatchLogs(args: Endofunction[com.pulumi.aws.amp.inputs.ScraperLoggingConfigurationLoggingDestinationCloudwatchLogsArgs.Builder]):
+        com.pulumi.aws.amp.inputs.ScraperLoggingConfigurationLoggingDestinationArgs.Builder =
+      val argsBuilder = com.pulumi.aws.amp.inputs.ScraperLoggingConfigurationLoggingDestinationCloudwatchLogsArgs.builder
+      builder.cloudwatchLogs(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.amp.inputs.ScraperLoggingConfigurationState.Builder)
+    /**
+     * @param loggingDestination Configuration block for the logging destination. See `loggingDestination` Block below.
+     * @return builder
+     */
+    def loggingDestination(args: Endofunction[com.pulumi.aws.amp.inputs.ScraperLoggingConfigurationLoggingDestinationArgs.Builder]):
+        com.pulumi.aws.amp.inputs.ScraperLoggingConfigurationState.Builder =
+      val argsBuilder = com.pulumi.aws.amp.inputs.ScraperLoggingConfigurationLoggingDestinationArgs.builder
+      builder.loggingDestination(args(argsBuilder).build)
+
+    def timeouts(args: Endofunction[com.pulumi.aws.amp.inputs.ScraperLoggingConfigurationTimeoutsArgs.Builder]):
+        com.pulumi.aws.amp.inputs.ScraperLoggingConfigurationState.Builder =
+      val argsBuilder = com.pulumi.aws.amp.inputs.ScraperLoggingConfigurationTimeoutsArgs.builder
+      builder.timeouts(args(argsBuilder).build)
+
   extension (builder: com.pulumi.aws.amp.inputs.ScraperSourceArgs.Builder)
     /**
-     * @param eks Configuration block for an EKS cluster source. See `eks`.
+     * @param eks Configuration block for an EKS cluster source. See `eks` Block for details.
      * @return builder
      */
     def eks(args: Endofunction[com.pulumi.aws.amp.inputs.ScraperSourceEksArgs.Builder]):
@@ -285,7 +436,7 @@ object amp:
       builder.eks(args(argsBuilder).build)
 
     /**
-     * @param vpc Configuration block for a VPC source. See `vpc`.
+     * @param vpc Configuration block for a VPC source. See `vpc` Block for details.
      * 
      * &gt; **NOTE:** Either `eks` or `vpc` must be specified, but not both.
      * @return builder
@@ -297,7 +448,7 @@ object amp:
 
   extension (builder: com.pulumi.aws.amp.inputs.ScraperState.Builder)
     /**
-     * @param destination Configuration block for the managed scraper to send metrics to. See `destination`.
+     * @param destination Configuration block for the managed scraper to send metrics to. See `destination` Block for details.
      * @return builder
      */
     def destination(args: Endofunction[com.pulumi.aws.amp.inputs.ScraperDestinationArgs.Builder]):
@@ -306,7 +457,7 @@ object amp:
       builder.destination(args(argsBuilder).build)
 
     /**
-     * @param roleConfiguration Configuration block to enable writing to an Amazon Managed Service for Prometheus workspace in a different account. See `roleConfiguration` below.
+     * @param roleConfiguration Configuration block to enable writing to an Amazon Managed Service for Prometheus workspace in a different account. See `roleConfiguration` Block for details.
      * @return builder
      */
     def roleConfiguration(args: Endofunction[com.pulumi.aws.amp.inputs.ScraperRoleConfigurationArgs.Builder]):
@@ -315,7 +466,7 @@ object amp:
       builder.roleConfiguration(args(argsBuilder).build)
 
     /**
-     * @param source Configuration block to specify where the managed scraper will collect metrics from. See `source`.
+     * @param source Configuration block to specify where the managed scraper will collect metrics from. See `source` Block for details.
      * 
      * The following arguments are optional:
      * @return builder

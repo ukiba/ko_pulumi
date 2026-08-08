@@ -334,6 +334,10 @@ object ecs:
         resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
 
   extension (builder: com.pulumi.aws.ecs.ExpressGatewayServiceArgs.Builder)
+    /**
+     * @param networkConfigurations Network configuration for the service. See `networkConfiguration` Block below.
+     * @return builder
+     */
     def networkConfigurations(args: Endofunction[com.pulumi.aws.ecs.inputs.ExpressGatewayServiceNetworkConfigurationArgs.Builder]*):
         com.pulumi.aws.ecs.ExpressGatewayServiceArgs.Builder =
       def argsBuilder = com.pulumi.aws.ecs.inputs.ExpressGatewayServiceNetworkConfigurationArgs.builder
@@ -344,6 +348,10 @@ object ecs:
       val argsBuilder = com.pulumi.aws.ecs.inputs.ExpressGatewayServicePrimaryContainerArgs.builder
       builder.primaryContainer(args(argsBuilder).build)
 
+    /**
+     * @param scalingTargets Auto-scaling configuration for the service. See `scalingTarget` Block below.
+     * @return builder
+     */
     def scalingTargets(args: Endofunction[com.pulumi.aws.ecs.inputs.ExpressGatewayServiceScalingTargetArgs.Builder]*):
         com.pulumi.aws.ecs.ExpressGatewayServiceArgs.Builder =
       def argsBuilder = com.pulumi.aws.ecs.inputs.ExpressGatewayServiceScalingTargetArgs.builder
@@ -488,7 +496,7 @@ object ecs:
       builder.volumeConfiguration(args(argsBuilder).build)
 
     /**
-     * @param vpcLatticeConfigurations The VPC Lattice configuration for your service that allows Lattice to connect, secure, and monitor your service across multiple accounts and VPCs. See below.
+     * @param vpcLatticeConfigurations VPC Lattice configuration for your service that allows Lattice to connect, secure, and monitor your service across multiple accounts and VPCs. See below.
      * @return builder
      */
     def vpcLatticeConfigurations(args: Endofunction[com.pulumi.aws.ecs.inputs.ServiceVpcLatticeConfigurationArgs.Builder]*):
@@ -530,7 +538,7 @@ object ecs:
 
   extension (builder: com.pulumi.aws.ecs.TaskDefinitionArgs.Builder)
     /**
-     * @param ephemeralStorage The amount of ephemeral storage to allocate for the task. This parameter is used to expand the total amount of ephemeral storage available, beyond the default amount, for tasks hosted on AWS Fargate. See Ephemeral Storage.
+     * @param ephemeralStorage Amount of ephemeral storage to allocate for the task. This parameter is used to expand the total amount of ephemeral storage available, beyond the default amount, for tasks hosted on AWS Fargate. See Ephemeral Storage.
      * @return builder
      */
     def ephemeralStorage(args: Endofunction[com.pulumi.aws.ecs.inputs.TaskDefinitionEphemeralStorageArgs.Builder]):
@@ -599,7 +607,7 @@ object ecs:
 
   extension (builder: com.pulumi.aws.ecs.TaskSetArgs.Builder)
     /**
-     * @param capacityProviderStrategies The capacity provider strategy to use for the service. Can be one or more.  Defined below.
+     * @param capacityProviderStrategies Capacity provider strategy to use for the service. Can be one or more. Defined below.
      * @return builder
      */
     def capacityProviderStrategies(args: Endofunction[com.pulumi.aws.ecs.inputs.TaskSetCapacityProviderStrategyArgs.Builder]*):
@@ -617,7 +625,7 @@ object ecs:
       builder.loadBalancers(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param networkConfiguration The network configuration for the service. This parameter is required for task definitions that use the `awsvpc` network mode to receive their own Elastic Network Interface, and it is not supported for other network modes. Detailed below.
+     * @param networkConfiguration Network configuration for the service. Required for task definitions that use the `awsvpc` network mode to receive their own Elastic Network Interface, and not supported for other network modes. Detailed below.
      * @return builder
      */
     def networkConfiguration(args: Endofunction[com.pulumi.aws.ecs.inputs.TaskSetNetworkConfigurationArgs.Builder]):
@@ -626,7 +634,7 @@ object ecs:
       builder.networkConfiguration(args(argsBuilder).build)
 
     /**
-     * @param scale A floating-point percentage of the desired number of tasks to place and keep running in the task set. Detailed below.
+     * @param scale Floating-point percentage of the desired number of tasks to place and keep running in the task set. Detailed below.
      * @return builder
      */
     def scale(args: Endofunction[com.pulumi.aws.ecs.inputs.TaskSetScaleArgs.Builder]):
@@ -635,7 +643,7 @@ object ecs:
       builder.scale(args(argsBuilder).build)
 
     /**
-     * @param serviceRegistries The service discovery registries for the service. The maximum number of `serviceRegistries` blocks is `1`. Detailed below.
+     * @param serviceRegistries Service discovery registries for the service. The maximum number of `serviceRegistries` blocks is `1`. Detailed below.
      * @return builder
      */
     def serviceRegistries(args: Endofunction[com.pulumi.aws.ecs.inputs.TaskSetServiceRegistriesArgs.Builder]):
@@ -655,7 +663,7 @@ object ecs:
 
   extension (builder: com.pulumi.aws.ecs.inputs.CapacityProviderManagedInstancesProviderArgs.Builder)
     /**
-     * @param infrastructureOptimization Defines how Amazon ECS Managed Instances optimizes the infrastructure in your capacity provider. Configure it to turn on or off the infrastructure optimization in your capacity provider, and to control the idle EC2 instances optimization delay.
+     * @param infrastructureOptimization Configuration block for how Amazon ECS Managed Instances optimizes the infrastructure in your capacity provider, including whether to turn optimization on or off and how long to delay optimizing idle EC2 instances. Detailed below.
      * @return builder
      */
     def infrastructureOptimization(args: Endofunction[com.pulumi.aws.ecs.inputs.CapacityProviderManagedInstancesProviderInfrastructureOptimizationArgs.Builder]):
@@ -664,7 +672,7 @@ object ecs:
       builder.infrastructureOptimization(args(argsBuilder).build)
 
     /**
-     * @param instanceLaunchTemplate The launch template configuration that specifies how Amazon ECS should launch Amazon EC2 instances. This includes the instance profile, network configuration, storage settings, and instance requirements for attribute-based instance type selection. For more information, see [Store instance launch parameters in Amazon EC2 launch templates](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html) in the Amazon EC2 User Guide. Detailed below.
+     * @param instanceLaunchTemplate Launch template configuration that specifies how Amazon ECS should launch Amazon EC2 instances. This includes the instance profile, network configuration, storage settings, and instance requirements for attribute-based instance type selection. For more information, see [Store instance launch parameters in Amazon EC2 launch templates](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html) in the Amazon EC2 User Guide. Detailed below.
      * @return builder
      */
     def instanceLaunchTemplate(args: Endofunction[com.pulumi.aws.ecs.inputs.CapacityProviderManagedInstancesProviderInstanceLaunchTemplateArgs.Builder]):
@@ -674,7 +682,16 @@ object ecs:
 
   extension (builder: com.pulumi.aws.ecs.inputs.CapacityProviderManagedInstancesProviderInstanceLaunchTemplateArgs.Builder)
     /**
-     * @param instanceRequirements The instance requirements. You can specify the instance types and instance requirements such as vCPU count, memory, network performance, and accelerator specifications. Amazon ECS automatically selects the instances that match the specified criteria. Detailed below.
+     * @param capacityReservations Capacity Reservation configuration used to launch instances. Required when `capacityOptionType` is `RESERVED`. Detailed below.
+     * @return builder
+     */
+    def capacityReservations(args: Endofunction[com.pulumi.aws.ecs.inputs.CapacityProviderManagedInstancesProviderInstanceLaunchTemplateCapacityReservationsArgs.Builder]):
+        com.pulumi.aws.ecs.inputs.CapacityProviderManagedInstancesProviderInstanceLaunchTemplateArgs.Builder =
+      val argsBuilder = com.pulumi.aws.ecs.inputs.CapacityProviderManagedInstancesProviderInstanceLaunchTemplateCapacityReservationsArgs.builder
+      builder.capacityReservations(args(argsBuilder).build)
+
+    /**
+     * @param instanceRequirements Instance requirements. You can specify the instance types and instance requirements such as vCPU count, memory, network performance, and accelerator specifications. Amazon ECS automatically selects the instances that match the specified criteria. Detailed below.
      * @return builder
      */
     def instanceRequirements(args: Endofunction[com.pulumi.aws.ecs.inputs.CapacityProviderManagedInstancesProviderInstanceLaunchTemplateInstanceRequirementsArgs.Builder]):
@@ -683,7 +700,16 @@ object ecs:
       builder.instanceRequirements(args(argsBuilder).build)
 
     /**
-     * @param networkConfiguration The network configuration for Amazon ECS Managed Instances. This specifies the subnets and security groups that instances use for network connectivity. Detailed below.
+     * @param localStorageConfiguration Configuration block for the local storage settings applied to Amazon ECS Managed Instances. Detailed below.
+     * @return builder
+     */
+    def localStorageConfiguration(args: Endofunction[com.pulumi.aws.ecs.inputs.CapacityProviderManagedInstancesProviderInstanceLaunchTemplateLocalStorageConfigurationArgs.Builder]):
+        com.pulumi.aws.ecs.inputs.CapacityProviderManagedInstancesProviderInstanceLaunchTemplateArgs.Builder =
+      val argsBuilder = com.pulumi.aws.ecs.inputs.CapacityProviderManagedInstancesProviderInstanceLaunchTemplateLocalStorageConfigurationArgs.builder
+      builder.localStorageConfiguration(args(argsBuilder).build)
+
+    /**
+     * @param networkConfiguration Network configuration for Amazon ECS Managed Instances. This specifies the subnets and security groups that instances use for network connectivity. Detailed below.
      * @return builder
      */
     def networkConfiguration(args: Endofunction[com.pulumi.aws.ecs.inputs.CapacityProviderManagedInstancesProviderInstanceLaunchTemplateNetworkConfigurationArgs.Builder]):
@@ -692,7 +718,7 @@ object ecs:
       builder.networkConfiguration(args(argsBuilder).build)
 
     /**
-     * @param storageConfiguration The storage configuration for Amazon ECS Managed Instances. This defines the root volume size and type for the instances. Detailed below.
+     * @param storageConfiguration Storage configuration for Amazon ECS Managed Instances. This defines the root volume size and type for the instances. Detailed below.
      * @return builder
      */
     def storageConfiguration(args: Endofunction[com.pulumi.aws.ecs.inputs.CapacityProviderManagedInstancesProviderInstanceLaunchTemplateStorageConfigurationArgs.Builder]):
@@ -702,7 +728,7 @@ object ecs:
 
   extension (builder: com.pulumi.aws.ecs.inputs.CapacityProviderManagedInstancesProviderInstanceLaunchTemplateInstanceRequirementsArgs.Builder)
     /**
-     * @param acceleratorCount The minimum and maximum number of accelerators for the instance types. This is used when you need instances with specific numbers of GPUs or other accelerators.
+     * @param acceleratorCount Minimum and maximum number of accelerators for the instance types. This is used when you need instances with specific numbers of GPUs or other accelerators. Detailed below.
      * @return builder
      */
     def acceleratorCount(args: Endofunction[com.pulumi.aws.ecs.inputs.CapacityProviderManagedInstancesProviderInstanceLaunchTemplateInstanceRequirementsAcceleratorCountArgs.Builder]):
@@ -711,7 +737,7 @@ object ecs:
       builder.acceleratorCount(args(argsBuilder).build)
 
     /**
-     * @param acceleratorTotalMemoryMib The minimum and maximum total accelerator memory in mebibytes (MiB). This is important for GPU workloads that require specific amounts of video memory.
+     * @param acceleratorTotalMemoryMib Minimum and maximum total accelerator memory in mebibytes (MiB). This is important for GPU workloads that require specific amounts of video memory. Detailed below.
      * @return builder
      */
     def acceleratorTotalMemoryMib(args: Endofunction[com.pulumi.aws.ecs.inputs.CapacityProviderManagedInstancesProviderInstanceLaunchTemplateInstanceRequirementsAcceleratorTotalMemoryMibArgs.Builder]):
@@ -720,7 +746,7 @@ object ecs:
       builder.acceleratorTotalMemoryMib(args(argsBuilder).build)
 
     /**
-     * @param baselineEbsBandwidthMbps The minimum and maximum baseline Amazon EBS bandwidth in megabits per second (Mbps). This is important for workloads with high storage I/O requirements.
+     * @param baselineEbsBandwidthMbps Minimum and maximum baseline Amazon EBS bandwidth in megabits per second (Mbps). This is important for workloads with high storage I/O requirements. Detailed below.
      * @return builder
      */
     def baselineEbsBandwidthMbps(args: Endofunction[com.pulumi.aws.ecs.inputs.CapacityProviderManagedInstancesProviderInstanceLaunchTemplateInstanceRequirementsBaselineEbsBandwidthMbpsArgs.Builder]):
@@ -729,7 +755,7 @@ object ecs:
       builder.baselineEbsBandwidthMbps(args(argsBuilder).build)
 
     /**
-     * @param memoryGibPerVcpu The minimum and maximum amount of memory per vCPU in gibibytes (GiB). This helps ensure that instance types have the appropriate memory-to-CPU ratio for your workloads.
+     * @param memoryGibPerVcpu Minimum and maximum amount of memory per vCPU in gibibytes (GiB). This helps ensure that instance types have the appropriate memory-to-CPU ratio for your workloads. Detailed below.
      * @return builder
      */
     def memoryGibPerVcpu(args: Endofunction[com.pulumi.aws.ecs.inputs.CapacityProviderManagedInstancesProviderInstanceLaunchTemplateInstanceRequirementsMemoryGibPerVcpuArgs.Builder]):
@@ -738,7 +764,7 @@ object ecs:
       builder.memoryGibPerVcpu(args(argsBuilder).build)
 
     /**
-     * @param memoryMib The minimum and maximum amount of memory in mebibytes (MiB) for the instance types. Amazon ECS selects instance types that have memory within this range.
+     * @param memoryMib Minimum and maximum amount of memory in mebibytes (MiB) for the instance types. Amazon ECS selects instance types that have memory within this range. Detailed below.
      * @return builder
      */
     def memoryMib(args: Endofunction[com.pulumi.aws.ecs.inputs.CapacityProviderManagedInstancesProviderInstanceLaunchTemplateInstanceRequirementsMemoryMibArgs.Builder]):
@@ -747,7 +773,7 @@ object ecs:
       builder.memoryMib(args(argsBuilder).build)
 
     /**
-     * @param networkBandwidthGbps The minimum and maximum network bandwidth in gigabits per second (Gbps). This is crucial for network-intensive workloads that require high throughput.
+     * @param networkBandwidthGbps Minimum and maximum network bandwidth in gigabits per second (Gbps). This is crucial for network-intensive workloads that require high throughput. Detailed below.
      * @return builder
      */
     def networkBandwidthGbps(args: Endofunction[com.pulumi.aws.ecs.inputs.CapacityProviderManagedInstancesProviderInstanceLaunchTemplateInstanceRequirementsNetworkBandwidthGbpsArgs.Builder]):
@@ -756,7 +782,7 @@ object ecs:
       builder.networkBandwidthGbps(args(argsBuilder).build)
 
     /**
-     * @param networkInterfaceCount The minimum and maximum number of network interfaces for the instance types. This is useful for workloads that require multiple network interfaces.
+     * @param networkInterfaceCount Minimum and maximum number of network interfaces for the instance types. This is useful for workloads that require multiple network interfaces. Detailed below.
      * @return builder
      */
     def networkInterfaceCount(args: Endofunction[com.pulumi.aws.ecs.inputs.CapacityProviderManagedInstancesProviderInstanceLaunchTemplateInstanceRequirementsNetworkInterfaceCountArgs.Builder]):
@@ -765,7 +791,7 @@ object ecs:
       builder.networkInterfaceCount(args(argsBuilder).build)
 
     /**
-     * @param totalLocalStorageGb The minimum and maximum total local storage in gigabytes (GB) for instance types with local storage.
+     * @param totalLocalStorageGb Minimum and maximum total local storage in gigabytes (GB) for instance types with local storage. Detailed below.
      * @return builder
      */
     def totalLocalStorageGb(args: Endofunction[com.pulumi.aws.ecs.inputs.CapacityProviderManagedInstancesProviderInstanceLaunchTemplateInstanceRequirementsTotalLocalStorageGbArgs.Builder]):
@@ -774,7 +800,7 @@ object ecs:
       builder.totalLocalStorageGb(args(argsBuilder).build)
 
     /**
-     * @param vcpuCount The minimum and maximum number of vCPUs for the instance types. Amazon ECS selects instance types that have vCPU counts within this range.
+     * @param vcpuCount Minimum and maximum number of vCPUs for the instance types. Amazon ECS selects instance types that have vCPU counts within this range. Detailed below.
      * @return builder
      */
     def vcpuCount(args: Endofunction[com.pulumi.aws.ecs.inputs.CapacityProviderManagedInstancesProviderInstanceLaunchTemplateInstanceRequirementsVcpuCountArgs.Builder]):
@@ -1079,6 +1105,10 @@ object ecs:
       builder.hosts(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.aws.ecs.inputs.ExpressGatewayServicePrimaryContainerArgs.Builder)
+    /**
+     * @param awsLogsConfigurations CloudWatch Logs configuration for the container. See `awsLogsConfiguration` Block below.
+     * @return builder
+     */
     def awsLogsConfigurations(args: Endofunction[com.pulumi.aws.ecs.inputs.ExpressGatewayServicePrimaryContainerAwsLogsConfigurationArgs.Builder]*):
         com.pulumi.aws.ecs.inputs.ExpressGatewayServicePrimaryContainerArgs.Builder =
       def argsBuilder = com.pulumi.aws.ecs.inputs.ExpressGatewayServicePrimaryContainerAwsLogsConfigurationArgs.builder
@@ -1109,6 +1139,10 @@ object ecs:
       def argsBuilder = com.pulumi.aws.ecs.inputs.ExpressGatewayServiceIngressPathArgs.builder
       builder.ingressPaths(args.map(_(argsBuilder).build)*)
 
+    /**
+     * @param networkConfigurations Network configuration for the service. See `networkConfiguration` Block below.
+     * @return builder
+     */
     def networkConfigurations(args: Endofunction[com.pulumi.aws.ecs.inputs.ExpressGatewayServiceNetworkConfigurationArgs.Builder]*):
         com.pulumi.aws.ecs.inputs.ExpressGatewayServiceState.Builder =
       def argsBuilder = com.pulumi.aws.ecs.inputs.ExpressGatewayServiceNetworkConfigurationArgs.builder
@@ -1119,6 +1153,10 @@ object ecs:
       val argsBuilder = com.pulumi.aws.ecs.inputs.ExpressGatewayServicePrimaryContainerArgs.builder
       builder.primaryContainer(args(argsBuilder).build)
 
+    /**
+     * @param scalingTargets Auto-scaling configuration for the service. See `scalingTarget` Block below.
+     * @return builder
+     */
     def scalingTargets(args: Endofunction[com.pulumi.aws.ecs.inputs.ExpressGatewayServiceScalingTargetArgs.Builder]*):
         com.pulumi.aws.ecs.inputs.ExpressGatewayServiceState.Builder =
       def argsBuilder = com.pulumi.aws.ecs.inputs.ExpressGatewayServiceScalingTargetArgs.builder
@@ -1149,7 +1187,7 @@ object ecs:
       builder.networkConfiguration(args(argsBuilder).build)
 
     /**
-     * @param overrides A list of container overrides that specify the name of a container in the specified task definition and the overrides it should receive.
+     * @param overrides List of container overrides that specify the name of a container in the specified task definition and the overrides it should receive.
      * @return builder
      */
     def overrides(args: Endofunction[com.pulumi.aws.ecs.inputs.GetTaskExecutionOverridesArgs.Builder]):
@@ -1158,7 +1196,7 @@ object ecs:
       builder.overrides(args(argsBuilder).build)
 
     /**
-     * @param placementConstraints An array of placement constraint objects to use for the task. You can specify up to 10 constraints for each task. See below.
+     * @param placementConstraints Array of placement constraint objects to use for the task. You can specify up to 10 constraints for each task. See below.
      * @return builder
      */
     def placementConstraints(args: Endofunction[com.pulumi.aws.ecs.inputs.GetTaskExecutionPlacementConstraintArgs.Builder]*):
@@ -1167,7 +1205,7 @@ object ecs:
       builder.placementConstraints(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param placementStrategies The placement strategy objects to use for the task. You can specify a maximum of 5 strategy rules for each task. See below.
+     * @param placementStrategies Placement strategy objects to use for the task. You can specify a maximum of 5 strategy rules for each task. See below.
      * @return builder
      */
     def placementStrategies(args: Endofunction[com.pulumi.aws.ecs.inputs.GetTaskExecutionPlacementStrategyArgs.Builder]*):
@@ -1187,7 +1225,7 @@ object ecs:
 
   extension (builder: com.pulumi.aws.ecs.inputs.GetTaskExecutionOverridesContainerOverrideArgs.Builder)
     /**
-     * @param environments The environment variables to send to the container. You can add new environment variables, which are added to the container at launch, or you can override the existing environment variables from the Docker image or the task definition. See below.
+     * @param environments Environment variables to send to the container. You can add new environment variables, which are added to the container at launch, or you can override the existing environment variables from the Docker image or the task definition. See below.
      * @return builder
      */
     def environments(args: Endofunction[com.pulumi.aws.ecs.inputs.GetTaskExecutionOverridesContainerOverrideEnvironmentArgs.Builder]*):
@@ -1196,7 +1234,7 @@ object ecs:
       builder.environments(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param resourceRequirements The type and amount of a resource to assign to a container, instead of the default value from the task definition. The only supported resource is a GPU. See below.
+     * @param resourceRequirements Type and amount of a resource to assign to a container, instead of the default value from the task definition. The only supported resource is a GPU. See below.
      * @return builder
      */
     def resourceRequirements(args: Endofunction[com.pulumi.aws.ecs.inputs.GetTaskExecutionOverridesContainerOverrideResourceRequirementArgs.Builder]*):
@@ -1458,7 +1496,7 @@ object ecs:
       builder.volumeConfiguration(args(argsBuilder).build)
 
     /**
-     * @param vpcLatticeConfigurations The VPC Lattice configuration for your service that allows Lattice to connect, secure, and monitor your service across multiple accounts and VPCs. See below.
+     * @param vpcLatticeConfigurations VPC Lattice configuration for your service that allows Lattice to connect, secure, and monitor your service across multiple accounts and VPCs. See below.
      * @return builder
      */
     def vpcLatticeConfigurations(args: Endofunction[com.pulumi.aws.ecs.inputs.ServiceVpcLatticeConfigurationArgs.Builder]*):
@@ -1478,7 +1516,7 @@ object ecs:
 
   extension (builder: com.pulumi.aws.ecs.inputs.ServiceVolumeConfigurationManagedEbsVolumeArgs.Builder)
     /**
-     * @param tagSpecifications The tags to apply to the volume. See below.
+     * @param tagSpecifications Tags to apply to the volume. See below.
      * @return builder
      */
     def tagSpecifications(args: Endofunction[com.pulumi.aws.ecs.inputs.ServiceVolumeConfigurationManagedEbsVolumeTagSpecificationArgs.Builder]*):
@@ -1488,7 +1526,7 @@ object ecs:
 
   extension (builder: com.pulumi.aws.ecs.inputs.TaskDefinitionState.Builder)
     /**
-     * @param ephemeralStorage The amount of ephemeral storage to allocate for the task. This parameter is used to expand the total amount of ephemeral storage available, beyond the default amount, for tasks hosted on AWS Fargate. See Ephemeral Storage.
+     * @param ephemeralStorage Amount of ephemeral storage to allocate for the task. This parameter is used to expand the total amount of ephemeral storage available, beyond the default amount, for tasks hosted on AWS Fargate. See Ephemeral Storage.
      * @return builder
      */
     def ephemeralStorage(args: Endofunction[com.pulumi.aws.ecs.inputs.TaskDefinitionEphemeralStorageArgs.Builder]):
@@ -1595,7 +1633,7 @@ object ecs:
 
   extension (builder: com.pulumi.aws.ecs.inputs.TaskSetState.Builder)
     /**
-     * @param capacityProviderStrategies The capacity provider strategy to use for the service. Can be one or more.  Defined below.
+     * @param capacityProviderStrategies Capacity provider strategy to use for the service. Can be one or more. Defined below.
      * @return builder
      */
     def capacityProviderStrategies(args: Endofunction[com.pulumi.aws.ecs.inputs.TaskSetCapacityProviderStrategyArgs.Builder]*):
@@ -1613,7 +1651,7 @@ object ecs:
       builder.loadBalancers(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param networkConfiguration The network configuration for the service. This parameter is required for task definitions that use the `awsvpc` network mode to receive their own Elastic Network Interface, and it is not supported for other network modes. Detailed below.
+     * @param networkConfiguration Network configuration for the service. Required for task definitions that use the `awsvpc` network mode to receive their own Elastic Network Interface, and not supported for other network modes. Detailed below.
      * @return builder
      */
     def networkConfiguration(args: Endofunction[com.pulumi.aws.ecs.inputs.TaskSetNetworkConfigurationArgs.Builder]):
@@ -1622,7 +1660,7 @@ object ecs:
       builder.networkConfiguration(args(argsBuilder).build)
 
     /**
-     * @param scale A floating-point percentage of the desired number of tasks to place and keep running in the task set. Detailed below.
+     * @param scale Floating-point percentage of the desired number of tasks to place and keep running in the task set. Detailed below.
      * @return builder
      */
     def scale(args: Endofunction[com.pulumi.aws.ecs.inputs.TaskSetScaleArgs.Builder]):
@@ -1631,7 +1669,7 @@ object ecs:
       builder.scale(args(argsBuilder).build)
 
     /**
-     * @param serviceRegistries The service discovery registries for the service. The maximum number of `serviceRegistries` blocks is `1`. Detailed below.
+     * @param serviceRegistries Service discovery registries for the service. The maximum number of `serviceRegistries` blocks is `1`. Detailed below.
      * @return builder
      */
     def serviceRegistries(args: Endofunction[com.pulumi.aws.ecs.inputs.TaskSetServiceRegistriesArgs.Builder]):

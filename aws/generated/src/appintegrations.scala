@@ -43,7 +43,7 @@ object appintegrations:
 
   extension (builder: com.pulumi.aws.appintegrations.DataIntegrationArgs.Builder)
     /**
-     * @param scheduleConfig A block that defines the name of the data and how often it should be pulled from the source. The Schedule Config block is documented below.
+     * @param scheduleConfig Configuration block that defines the name of the data and how often it should be pulled from the source. See `scheduleConfig` Block for details.
      * @return builder
      */
     def scheduleConfig(args: Endofunction[com.pulumi.aws.appintegrations.inputs.DataIntegrationScheduleConfigArgs.Builder]):
@@ -53,7 +53,7 @@ object appintegrations:
 
   extension (builder: com.pulumi.aws.appintegrations.inputs.DataIntegrationState.Builder)
     /**
-     * @param scheduleConfig A block that defines the name of the data and how often it should be pulled from the source. The Schedule Config block is documented below.
+     * @param scheduleConfig Configuration block that defines the name of the data and how often it should be pulled from the source. See `scheduleConfig` Block for details.
      * @return builder
      */
     def scheduleConfig(args: Endofunction[com.pulumi.aws.appintegrations.inputs.DataIntegrationScheduleConfigArgs.Builder]):

@@ -18,6 +18,7 @@ export ko_pulumi.aws.alb.targetGroupHealth
 export ko_pulumi.aws.alb.targetGroups
 export ko_pulumi.aws.alb.targetHealthStates
 export ko_pulumi.aws.alb.transforms
+export ko_pulumi.aws.amp.randomCutForest
 export ko_pulumi.aws.amp.roleConfiguration
 export ko_pulumi.aws.amp.source
 export ko_pulumi.aws.amp.timeouts
@@ -900,6 +901,11 @@ export ko_pulumi.aws.macie2.tagCriterion
 export ko_pulumi.aws.macie2.tagScopeTerm
 export ko_pulumi.aws.macie2.tagValues
 export ko_pulumi.aws.mailmanager.policyStatements
+export ko_pulumi.aws.mailmanager.publishToSns
+export ko_pulumi.aws.mailmanager.relay
+export ko_pulumi.aws.mailmanager.replaceRecipient
+export ko_pulumi.aws.mailmanager.rules
+export ko_pulumi.aws.mailmanager.send
 export ko_pulumi.aws.mailmanager.stringExpression
 export ko_pulumi.aws.mailmanager.tlsExpression
 export ko_pulumi.aws.mediaconvert.reservationPlanSettings

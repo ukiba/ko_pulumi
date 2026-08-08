@@ -40,8 +40,7 @@ object fsx:
 
   extension (builder: com.pulumi.aws.fsx.DataRepositoryAssociationArgs.Builder)
     /**
-     * @param s3 See the `s3` configuration block. Max of 1.
-     * The configuration for an Amazon S3 data repository linked to an Amazon FSx Lustre file system with a data repository association. The configuration defines which file events (new, changed, or deleted files or directories) are automatically imported from the linked data repository to the file system or automatically exported from the file system to the data repository.
+     * @param s3 Configuration for an Amazon S3 data repository linked to an Amazon FSx Lustre file system with a data repository association. This configuration defines which file events (new, changed, or deleted files or directories) are automatically imported from the linked data repository to the file system or automatically exported from the file system to the data repository. See the `s3` Block below. Max of 1.
      * @return builder
      */
     def s3(args: Endofunction[com.pulumi.aws.fsx.inputs.DataRepositoryAssociationS3Args.Builder]):
@@ -69,8 +68,7 @@ object fsx:
 
   extension (builder: com.pulumi.aws.fsx.FileCacheArgs.Builder)
     /**
-     * @param dataRepositoryAssociations See the `dataRepositoryAssociation` configuration block. Max of 8.
-     * A list of up to 8 configurations for data repository associations (DRAs) to be created during the cache creation. The DRAs link the cache to either an Amazon S3 data repository or a Network File System (NFS) data repository that supports the NFSv3 protocol. The DRA configurations must meet the following requirements: 1) All configurations on the list must be of the same data repository type, either all S3 or all NFS. A cache can&#39;t link to different data repository types at the same time. 2) An NFS DRA must link to an NFS file system that supports the NFSv3 protocol. DRA automatic import and automatic export is not supported.
+     * @param dataRepositoryAssociations Configurations for up to 8 data repository associations (DRAs) to create during cache creation. All configurations must be of the same data repository type, either all S3 or all NFS. Maximum of 8. See `dataRepositoryAssociation` Block below.
      * @return builder
      */
     def dataRepositoryAssociations(args: Endofunction[com.pulumi.aws.fsx.inputs.FileCacheDataRepositoryAssociationArgs.Builder]*):
@@ -79,7 +77,7 @@ object fsx:
       builder.dataRepositoryAssociations(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param lustreConfigurations See the `lustreConfiguration` block. Required when `fileCacheType` is `LUSTRE`.
+     * @param lustreConfigurations Configuration for the Lustre cache. Required when `fileCacheType` is `LUSTRE`. See `lustreConfiguration` Block below.
      * @return builder
      */
     def lustreConfigurations(args: Endofunction[com.pulumi.aws.fsx.inputs.FileCacheLustreConfigurationArgs.Builder]*):
@@ -106,13 +104,21 @@ object fsx:
       val argsBuilder = com.pulumi.aws.fsx.inputs.GetOntapFileSystemPlainArgs.builder
       com.pulumi.aws.fsx.FsxFunctions.getOntapFileSystemPlain(args(argsBuilder).build)
 
-    /** Retrieve information on FSx ONTAP Storage Virtual Machine (SVM). */
+    /**
+     * Retrieve information on FSx ONTAP Storage Virtual Machine (SVM).
+     * 
+     * The arguments of this data source act as filters for querying the available ONTAP Storage Virtual Machines in the current region. The given filters must match exactly one Storage Virtual Machine whose data will be exported as attributes.
+     */
     inline def getOntapStorageVirtualMachine(args: Endofunction[com.pulumi.aws.fsx.inputs.GetOntapStorageVirtualMachineArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.fsx.outputs.GetOntapStorageVirtualMachineResult] =
       val argsBuilder = com.pulumi.aws.fsx.inputs.GetOntapStorageVirtualMachineArgs.builder
       com.pulumi.aws.fsx.FsxFunctions.getOntapStorageVirtualMachine(args(argsBuilder).build)
 
-    /** Retrieve information on FSx ONTAP Storage Virtual Machine (SVM). */
+    /**
+     * Retrieve information on FSx ONTAP Storage Virtual Machine (SVM).
+     * 
+     * The arguments of this data source act as filters for querying the available ONTAP Storage Virtual Machines in the current region. The given filters must match exactly one Storage Virtual Machine whose data will be exported as attributes.
+     */
     inline def getOntapStorageVirtualMachinePlain(args: Endofunction[com.pulumi.aws.fsx.inputs.GetOntapStorageVirtualMachinePlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.fsx.outputs.GetOntapStorageVirtualMachineResult] =
       val argsBuilder = com.pulumi.aws.fsx.inputs.GetOntapStorageVirtualMachinePlainArgs.builder
@@ -180,7 +186,7 @@ object fsx:
       builder.dataReadCacheConfiguration(args(argsBuilder).build)
 
     /**
-     * @param logConfiguration The Lustre logging configuration used when creating an Amazon FSx for Lustre file system. When logging is enabled, Lustre logs error and warning events for data repositories associated with your file system to Amazon CloudWatch Logs. See `logConfiguration` Block for details.
+     * @param logConfiguration Lustre logging configuration used when creating an Amazon FSx for Lustre file system. When logging is enabled, Lustre logs error and warning events for data repositories associated with your file system to Amazon CloudWatch Logs. See `logConfiguration` Block for details.
      * @return builder
      */
     def logConfiguration(args: Endofunction[com.pulumi.aws.fsx.inputs.LustreFileSystemLogConfigurationArgs.Builder]):
@@ -189,7 +195,7 @@ object fsx:
       builder.logConfiguration(args(argsBuilder).build)
 
     /**
-     * @param metadataConfiguration The Lustre metadata configuration used when creating an Amazon FSx for Lustre file system. This can be used to specify a user provisioned metadata scale. This is only supported when `deploymentType` is set to `PERSISTENT_2`. See `metadataConfiguration` Block for details.
+     * @param metadataConfiguration Lustre metadata configuration used when creating an Amazon FSx for Lustre file system. This can be used to specify a user provisioned metadata scale. This is only supported when `deploymentType` is set to `PERSISTENT_2`. See `metadataConfiguration` Block for details.
      * @return builder
      */
     def metadataConfiguration(args: Endofunction[com.pulumi.aws.fsx.inputs.LustreFileSystemMetadataConfigurationArgs.Builder]):
@@ -198,7 +204,7 @@ object fsx:
       builder.metadataConfiguration(args(argsBuilder).build)
 
     /**
-     * @param rootSquashConfiguration The Lustre root squash configuration used when creating an Amazon FSx for Lustre file system. When enabled, root squash restricts root-level access from clients that try to access your file system as a root user. See `rootSquashConfiguration` Block for details.
+     * @param rootSquashConfiguration Lustre root squash configuration used when creating an Amazon FSx for Lustre file system. When enabled, root squash restricts root-level access from clients that try to access your file system as a root user. See `rootSquashConfiguration` Block for details.
      * @return builder
      */
     def rootSquashConfiguration(args: Endofunction[com.pulumi.aws.fsx.inputs.LustreFileSystemRootSquashConfigurationArgs.Builder]):
@@ -226,7 +232,7 @@ object fsx:
 
   extension (builder: com.pulumi.aws.fsx.OntapFileSystemArgs.Builder)
     /**
-     * @param diskIopsConfiguration The SSD IOPS configuration for the Amazon FSx for NetApp ONTAP file system. See Disk Iops Configuration below.
+     * @param diskIopsConfiguration SSD IOPS configuration for the Amazon FSx for NetApp ONTAP file system. See `diskIopsConfiguration` below.
      * @return builder
      */
     def diskIopsConfiguration(args: Endofunction[com.pulumi.aws.fsx.inputs.OntapFileSystemDiskIopsConfigurationArgs.Builder]):
@@ -288,7 +294,7 @@ object fsx:
 
   extension (builder: com.pulumi.aws.fsx.OntapVolumeArgs.Builder)
     /**
-     * @param aggregateConfiguration The Aggregate configuration only applies to `FLEXGROUP` volumes. See [`aggregateConfiguration` Block] for details.
+     * @param aggregateConfiguration Aggregate configuration only applies to `FLEXGROUP` volumes. See [`aggregateConfiguration` Block] for details.
      * @return builder
      */
     def aggregateConfiguration(args: Endofunction[com.pulumi.aws.fsx.inputs.OntapVolumeAggregateConfigurationArgs.Builder]):
@@ -297,7 +303,7 @@ object fsx:
       builder.aggregateConfiguration(args(argsBuilder).build)
 
     /**
-     * @param snaplockConfiguration The SnapLock configuration for an FSx for ONTAP volume. See `snaplockConfiguration` Block for details.
+     * @param snaplockConfiguration SnapLock configuration for an FSx for ONTAP volume. See `snaplockConfiguration` Block for details.
      * @return builder
      */
     def snaplockConfiguration(args: Endofunction[com.pulumi.aws.fsx.inputs.OntapVolumeSnaplockConfigurationArgs.Builder]):
@@ -306,7 +312,7 @@ object fsx:
       builder.snaplockConfiguration(args(argsBuilder).build)
 
     /**
-     * @param tieringPolicy The data tiering policy for an FSx for ONTAP volume. See `tieringPolicy` Block for details.
+     * @param tieringPolicy Data tiering policy for an FSx for ONTAP volume. See `tieringPolicy` Block for details.
      * @return builder
      */
     def tieringPolicy(args: Endofunction[com.pulumi.aws.fsx.inputs.OntapVolumeTieringPolicyArgs.Builder]):
@@ -334,7 +340,7 @@ object fsx:
 
   extension (builder: com.pulumi.aws.fsx.OpenZfsFileSystemArgs.Builder)
     /**
-     * @param diskIopsConfiguration The SSD IOPS configuration for the Amazon FSx for OpenZFS file system. See `diskIopsConfiguration` Block for details.
+     * @param diskIopsConfiguration SSD IOPS configuration for the Amazon FSx for OpenZFS file system. See `diskIopsConfiguration` Block for details.
      * @return builder
      */
     def diskIopsConfiguration(args: Endofunction[com.pulumi.aws.fsx.inputs.OpenZfsFileSystemDiskIopsConfigurationArgs.Builder]):
@@ -352,7 +358,7 @@ object fsx:
       builder.readCacheConfiguration(args(argsBuilder).build)
 
     /**
-     * @param rootVolumeConfiguration The configuration for the root volume of the file system. All other volumes are children or the root volume. See `rootVolumeConfiguration` Block for details.
+     * @param rootVolumeConfiguration Configuration for the root volume of the file system. All other volumes are children or the root volume. See `rootVolumeConfiguration` Block for details.
      * @return builder
      */
     def rootVolumeConfiguration(args: Endofunction[com.pulumi.aws.fsx.inputs.OpenZfsFileSystemRootVolumeConfigurationArgs.Builder]):
@@ -413,7 +419,7 @@ object fsx:
       builder.nfsExports(args(argsBuilder).build)
 
     /**
-     * @param originSnapshot Specifies the configuration to use when creating the OpenZFS volume. See `originSnapshot` Block below for details.
+     * @param originSnapshot Configuration to use when creating the OpenZFS volume. See `originSnapshot` Block below for details.
      * @return builder
      */
     def originSnapshot(args: Endofunction[com.pulumi.aws.fsx.inputs.OpenZfsVolumeOriginSnapshotArgs.Builder]):
@@ -486,7 +492,7 @@ object fsx:
 
   extension (builder: com.pulumi.aws.fsx.WindowsFileSystemArgs.Builder)
     /**
-     * @param auditLogConfiguration The configuration that Amazon FSx for Windows File Server uses to audit and log user accesses of files, folders, and file shares on the Amazon FSx for Windows File Server file system. See `auditLogConfiguration` Block for details.
+     * @param auditLogConfiguration Configuration that Amazon FSx for Windows File Server uses to audit and log user accesses of files, folders, and file shares on the Amazon FSx for Windows File Server file system. See `auditLogConfiguration` Block for details.
      * @return builder
      */
     def auditLogConfiguration(args: Endofunction[com.pulumi.aws.fsx.inputs.WindowsFileSystemAuditLogConfigurationArgs.Builder]):
@@ -495,7 +501,7 @@ object fsx:
       builder.auditLogConfiguration(args(argsBuilder).build)
 
     /**
-     * @param diskIopsConfiguration The SSD IOPS configuration for the Amazon FSx for Windows File Server file system. See `diskIopsConfiguration` Block for details.
+     * @param diskIopsConfiguration SSD IOPS configuration for the Amazon FSx for Windows File Server file system. See `diskIopsConfiguration` Block for details.
      * @return builder
      */
     def diskIopsConfiguration(args: Endofunction[com.pulumi.aws.fsx.inputs.WindowsFileSystemDiskIopsConfigurationArgs.Builder]):
@@ -514,7 +520,7 @@ object fsx:
 
   extension (builder: com.pulumi.aws.fsx.inputs.DataRepositoryAssociationS3Args.Builder)
     /**
-     * @param autoExportPolicy Specifies the type of updated objects that will be automatically exported from your file system to the linked S3 bucket. See the `events` configuration block.
+     * @param autoExportPolicy Type of updated objects that are automatically exported from your file system to the linked S3 bucket. See the `autoExportPolicy` Block below.
      * @return builder
      */
     def autoExportPolicy(args: Endofunction[com.pulumi.aws.fsx.inputs.DataRepositoryAssociationS3AutoExportPolicyArgs.Builder]):
@@ -523,7 +529,7 @@ object fsx:
       builder.autoExportPolicy(args(argsBuilder).build)
 
     /**
-     * @param autoImportPolicy Specifies the type of updated objects that will be automatically imported from the linked S3 bucket to your file system. See the `events` configuration block.
+     * @param autoImportPolicy Type of updated objects that are automatically imported from the linked S3 bucket to your file system. See the `autoImportPolicy` Block below.
      * @return builder
      */
     def autoImportPolicy(args: Endofunction[com.pulumi.aws.fsx.inputs.DataRepositoryAssociationS3AutoImportPolicyArgs.Builder]):
@@ -533,8 +539,7 @@ object fsx:
 
   extension (builder: com.pulumi.aws.fsx.inputs.DataRepositoryAssociationState.Builder)
     /**
-     * @param s3 See the `s3` configuration block. Max of 1.
-     * The configuration for an Amazon S3 data repository linked to an Amazon FSx Lustre file system with a data repository association. The configuration defines which file events (new, changed, or deleted files or directories) are automatically imported from the linked data repository to the file system or automatically exported from the file system to the data repository.
+     * @param s3 Configuration for an Amazon S3 data repository linked to an Amazon FSx Lustre file system with a data repository association. This configuration defines which file events (new, changed, or deleted files or directories) are automatically imported from the linked data repository to the file system or automatically exported from the file system to the data repository. See the `s3` Block below. Max of 1.
      * @return builder
      */
     def s3(args: Endofunction[com.pulumi.aws.fsx.inputs.DataRepositoryAssociationS3Args.Builder]):
@@ -544,7 +549,7 @@ object fsx:
 
   extension (builder: com.pulumi.aws.fsx.inputs.FileCacheDataRepositoryAssociationArgs.Builder)
     /**
-     * @param nfs (Optional) See the `nfs` configuration block.
+     * @param nfs Configuration for a data repository association linked to an NFS file system. See `nfs` Block below.
      * @return builder
      */
     def nfs(args: Endofunction[com.pulumi.aws.fsx.inputs.FileCacheDataRepositoryAssociationNfArgs.Builder]*):
@@ -553,13 +558,17 @@ object fsx:
       builder.nfs(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.aws.fsx.inputs.FileCacheLustreConfigurationArgs.Builder)
+    /**
+     * @param logConfigurations Configuration for Lustre logging used to write the enabled logging events for the cache.
+     * @return builder
+     */
     def logConfigurations(args: Endofunction[com.pulumi.aws.fsx.inputs.FileCacheLustreConfigurationLogConfigurationArgs.Builder]*):
         com.pulumi.aws.fsx.inputs.FileCacheLustreConfigurationArgs.Builder =
       def argsBuilder = com.pulumi.aws.fsx.inputs.FileCacheLustreConfigurationLogConfigurationArgs.builder
       builder.logConfigurations(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param metadataConfigurations The configuration for a Lustre MDT (Metadata Target) storage volume. See the `metadataConfiguration` block.
+     * @param metadataConfigurations Configuration for a Lustre MDT (Metadata Target) storage volume. See `metadataConfiguration` Block below.
      * @return builder
      */
     def metadataConfigurations(args: Endofunction[com.pulumi.aws.fsx.inputs.FileCacheLustreConfigurationMetadataConfigurationArgs.Builder]*):
@@ -569,8 +578,7 @@ object fsx:
 
   extension (builder: com.pulumi.aws.fsx.inputs.FileCacheState.Builder)
     /**
-     * @param dataRepositoryAssociations See the `dataRepositoryAssociation` configuration block. Max of 8.
-     * A list of up to 8 configurations for data repository associations (DRAs) to be created during the cache creation. The DRAs link the cache to either an Amazon S3 data repository or a Network File System (NFS) data repository that supports the NFSv3 protocol. The DRA configurations must meet the following requirements: 1) All configurations on the list must be of the same data repository type, either all S3 or all NFS. A cache can&#39;t link to different data repository types at the same time. 2) An NFS DRA must link to an NFS file system that supports the NFSv3 protocol. DRA automatic import and automatic export is not supported.
+     * @param dataRepositoryAssociations Configurations for up to 8 data repository associations (DRAs) to create during cache creation. All configurations must be of the same data repository type, either all S3 or all NFS. Maximum of 8. See `dataRepositoryAssociation` Block below.
      * @return builder
      */
     def dataRepositoryAssociations(args: Endofunction[com.pulumi.aws.fsx.inputs.FileCacheDataRepositoryAssociationArgs.Builder]*):
@@ -579,7 +587,7 @@ object fsx:
       builder.dataRepositoryAssociations(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param lustreConfigurations See the `lustreConfiguration` block. Required when `fileCacheType` is `LUSTRE`.
+     * @param lustreConfigurations Configuration for the Lustre cache. Required when `fileCacheType` is `LUSTRE`. See `lustreConfiguration` Block below.
      * @return builder
      */
     def lustreConfigurations(args: Endofunction[com.pulumi.aws.fsx.inputs.FileCacheLustreConfigurationArgs.Builder]*):
@@ -609,8 +617,7 @@ object fsx:
 
   extension (builder: com.pulumi.aws.fsx.inputs.GetOpenZfsSnapshotArgs.Builder)
     /**
-     * @param filters One or more name/value pairs to filter off of. The
-     * supported names are file-system-id or volume-id.
+     * @param filters Configuration block. Detailed below.
      * @return builder
      */
     def filters(args: Endofunction[com.pulumi.aws.fsx.inputs.GetOpenZfsSnapshotFilterArgs.Builder]*):
@@ -625,7 +632,7 @@ object fsx:
       builder.dataReadCacheConfiguration(args(argsBuilder).build)
 
     /**
-     * @param logConfiguration The Lustre logging configuration used when creating an Amazon FSx for Lustre file system. When logging is enabled, Lustre logs error and warning events for data repositories associated with your file system to Amazon CloudWatch Logs. See `logConfiguration` Block for details.
+     * @param logConfiguration Lustre logging configuration used when creating an Amazon FSx for Lustre file system. When logging is enabled, Lustre logs error and warning events for data repositories associated with your file system to Amazon CloudWatch Logs. See `logConfiguration` Block for details.
      * @return builder
      */
     def logConfiguration(args: Endofunction[com.pulumi.aws.fsx.inputs.LustreFileSystemLogConfigurationArgs.Builder]):
@@ -634,7 +641,7 @@ object fsx:
       builder.logConfiguration(args(argsBuilder).build)
 
     /**
-     * @param metadataConfiguration The Lustre metadata configuration used when creating an Amazon FSx for Lustre file system. This can be used to specify a user provisioned metadata scale. This is only supported when `deploymentType` is set to `PERSISTENT_2`. See `metadataConfiguration` Block for details.
+     * @param metadataConfiguration Lustre metadata configuration used when creating an Amazon FSx for Lustre file system. This can be used to specify a user provisioned metadata scale. This is only supported when `deploymentType` is set to `PERSISTENT_2`. See `metadataConfiguration` Block for details.
      * @return builder
      */
     def metadataConfiguration(args: Endofunction[com.pulumi.aws.fsx.inputs.LustreFileSystemMetadataConfigurationArgs.Builder]):
@@ -643,7 +650,7 @@ object fsx:
       builder.metadataConfiguration(args(argsBuilder).build)
 
     /**
-     * @param rootSquashConfiguration The Lustre root squash configuration used when creating an Amazon FSx for Lustre file system. When enabled, root squash restricts root-level access from clients that try to access your file system as a root user. See `rootSquashConfiguration` Block for details.
+     * @param rootSquashConfiguration Lustre root squash configuration used when creating an Amazon FSx for Lustre file system. When enabled, root squash restricts root-level access from clients that try to access your file system as a root user. See `rootSquashConfiguration` Block for details.
      * @return builder
      */
     def rootSquashConfiguration(args: Endofunction[com.pulumi.aws.fsx.inputs.LustreFileSystemRootSquashConfigurationArgs.Builder]):
@@ -653,7 +660,7 @@ object fsx:
 
   extension (builder: com.pulumi.aws.fsx.inputs.OntapFileSystemEndpointArgs.Builder)
     /**
-     * @param interclusters An endpoint for managing your file system by setting up NetApp SnapMirror with other ONTAP systems. See Endpoint.
+     * @param interclusters Endpoint for managing your file system by setting up NetApp SnapMirror with other ONTAP systems. See Endpoint.
      * @return builder
      */
     def interclusters(args: Endofunction[com.pulumi.aws.fsx.inputs.OntapFileSystemEndpointInterclusterArgs.Builder]*):
@@ -662,7 +669,7 @@ object fsx:
       builder.interclusters(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param managements An endpoint for managing your file system using the NetApp ONTAP CLI and NetApp ONTAP API. See Endpoint.
+     * @param managements Endpoint for managing your file system using the NetApp ONTAP CLI and NetApp ONTAP API. See Endpoint.
      * @return builder
      */
     def managements(args: Endofunction[com.pulumi.aws.fsx.inputs.OntapFileSystemEndpointManagementArgs.Builder]*):
@@ -672,7 +679,7 @@ object fsx:
 
   extension (builder: com.pulumi.aws.fsx.inputs.OntapFileSystemState.Builder)
     /**
-     * @param diskIopsConfiguration The SSD IOPS configuration for the Amazon FSx for NetApp ONTAP file system. See Disk Iops Configuration below.
+     * @param diskIopsConfiguration SSD IOPS configuration for the Amazon FSx for NetApp ONTAP file system. See `diskIopsConfiguration` below.
      * @return builder
      */
     def diskIopsConfiguration(args: Endofunction[com.pulumi.aws.fsx.inputs.OntapFileSystemDiskIopsConfigurationArgs.Builder]):
@@ -681,7 +688,7 @@ object fsx:
       builder.diskIopsConfiguration(args(argsBuilder).build)
 
     /**
-     * @param endpoints The endpoints that are used to access data or to manage the file system using the NetApp ONTAP CLI, REST API, or NetApp SnapMirror. See Endpoints below.
+     * @param endpoints Endpoints that are used to access data or to manage the file system using the NetApp ONTAP CLI, REST API, or NetApp SnapMirror. See Endpoints below.
      * @return builder
      */
     def endpoints(args: Endofunction[com.pulumi.aws.fsx.inputs.OntapFileSystemEndpointArgs.Builder]*):
@@ -690,6 +697,10 @@ object fsx:
       builder.endpoints(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.aws.fsx.inputs.OntapStorageVirtualMachineActiveDirectoryConfigurationArgs.Builder)
+    /**
+     * @param selfManagedActiveDirectoryConfiguration Configuration block that Amazon FSx uses to join the SVM to your self-managed (including on-premises) Microsoft Active Directory (AD) directory. Detailed below.
+     * @return builder
+     */
     def selfManagedActiveDirectoryConfiguration(args: Endofunction[com.pulumi.aws.fsx.inputs.OntapStorageVirtualMachineActiveDirectoryConfigurationSelfManagedActiveDirectoryConfigurationArgs.Builder]):
         com.pulumi.aws.fsx.inputs.OntapStorageVirtualMachineActiveDirectoryConfigurationArgs.Builder =
       val argsBuilder = com.pulumi.aws.fsx.inputs.OntapStorageVirtualMachineActiveDirectoryConfigurationSelfManagedActiveDirectoryConfigurationArgs.builder
@@ -697,7 +708,7 @@ object fsx:
 
   extension (builder: com.pulumi.aws.fsx.inputs.OntapStorageVirtualMachineEndpointArgs.Builder)
     /**
-     * @param iscsis An endpoint for accessing data on your storage virtual machine via iSCSI protocol. See Endpoint.
+     * @param iscsis Endpoint for accessing data on your storage virtual machine via iSCSI protocol. See Endpoint.
      * @return builder
      */
     def iscsis(args: Endofunction[com.pulumi.aws.fsx.inputs.OntapStorageVirtualMachineEndpointIscsiArgs.Builder]*):
@@ -706,7 +717,7 @@ object fsx:
       builder.iscsis(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param managements An endpoint for managing your file system using the NetApp ONTAP CLI and NetApp ONTAP API. See Endpoint.
+     * @param managements Endpoint for managing your file system using the NetApp ONTAP CLI and NetApp ONTAP API. See Endpoint.
      * @return builder
      */
     def managements(args: Endofunction[com.pulumi.aws.fsx.inputs.OntapStorageVirtualMachineEndpointManagementArgs.Builder]*):
@@ -715,7 +726,7 @@ object fsx:
       builder.managements(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param nfs An endpoint for accessing data on your storage virtual machine via NFS protocol. See Endpoint.
+     * @param nfs Endpoint for accessing data on your storage virtual machine via NFS protocol. See Endpoint.
      * @return builder
      */
     def nfs(args: Endofunction[com.pulumi.aws.fsx.inputs.OntapStorageVirtualMachineEndpointNfArgs.Builder]*):
@@ -724,7 +735,7 @@ object fsx:
       builder.nfs(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param smbs An endpoint for accessing data on your storage virtual machine via SMB protocol. This is only set if an activeDirectoryConfiguration has been set. See Endpoint.
+     * @param smbs Endpoint for accessing data on your storage virtual machine via SMB protocol. This is only set if an activeDirectoryConfiguration has been set. See Endpoint.
      * @return builder
      */
     def smbs(args: Endofunction[com.pulumi.aws.fsx.inputs.OntapStorageVirtualMachineEndpointSmbArgs.Builder]*):
@@ -743,7 +754,7 @@ object fsx:
       builder.activeDirectoryConfiguration(args(argsBuilder).build)
 
     /**
-     * @param endpoints The endpoints that are used to access data or to manage the storage virtual machine using the NetApp ONTAP CLI, REST API, or NetApp SnapMirror. See Endpoints below.
+     * @param endpoints Endpoints that are used to access data or to manage the storage virtual machine using the NetApp ONTAP CLI, REST API, or NetApp SnapMirror. See Endpoints below.
      * @return builder
      */
     def endpoints(args: Endofunction[com.pulumi.aws.fsx.inputs.OntapStorageVirtualMachineEndpointArgs.Builder]*):
@@ -753,7 +764,7 @@ object fsx:
 
   extension (builder: com.pulumi.aws.fsx.inputs.OntapVolumeSnaplockConfigurationArgs.Builder)
     /**
-     * @param autocommitPeriod The configuration object for setting the autocommit period of files in an FSx for ONTAP SnapLock volume. See `autocommitPeriod` Block for details.
+     * @param autocommitPeriod Configuration object for setting the autocommit period of files in an FSx for ONTAP SnapLock volume. See `autocommitPeriod` Block for details.
      * @return builder
      */
     def autocommitPeriod(args: Endofunction[com.pulumi.aws.fsx.inputs.OntapVolumeSnaplockConfigurationAutocommitPeriodArgs.Builder]):
@@ -762,7 +773,7 @@ object fsx:
       builder.autocommitPeriod(args(argsBuilder).build)
 
     /**
-     * @param retentionPeriod The retention period of an FSx for ONTAP SnapLock volume. See `retentionPeriod` Block for details.
+     * @param retentionPeriod Retention period of an FSx for ONTAP SnapLock volume. See `retentionPeriod` Block for details.
      * @return builder
      */
     def retentionPeriod(args: Endofunction[com.pulumi.aws.fsx.inputs.OntapVolumeSnaplockConfigurationRetentionPeriodArgs.Builder]):
@@ -772,7 +783,7 @@ object fsx:
 
   extension (builder: com.pulumi.aws.fsx.inputs.OntapVolumeSnaplockConfigurationRetentionPeriodArgs.Builder)
     /**
-     * @param defaultRetention The retention period assigned to a write once, read many (WORM) file by default if an explicit retention period is not set for an FSx for ONTAP SnapLock volume. The default retention period must be greater than or equal to the minimum retention period and less than or equal to the maximum retention period. See `defaultRetention` Block for details.
+     * @param defaultRetention Retention period assigned to a write once, read many (WORM) file by default if an explicit retention period is not set for an FSx for ONTAP SnapLock volume. The default retention period must be greater than or equal to the minimum retention period and less than or equal to the maximum retention period. See `defaultRetention` Block for details.
      * @return builder
      */
     def defaultRetention(args: Endofunction[com.pulumi.aws.fsx.inputs.OntapVolumeSnaplockConfigurationRetentionPeriodDefaultRetentionArgs.Builder]):
@@ -781,7 +792,7 @@ object fsx:
       builder.defaultRetention(args(argsBuilder).build)
 
     /**
-     * @param maximumRetention The longest retention period that can be assigned to a WORM file on an FSx for ONTAP SnapLock volume. See `maximumRetention` Block for details.
+     * @param maximumRetention Longest retention period that can be assigned to a WORM file on an FSx for ONTAP SnapLock volume. See `maximumRetention` Block for details.
      * @return builder
      */
     def maximumRetention(args: Endofunction[com.pulumi.aws.fsx.inputs.OntapVolumeSnaplockConfigurationRetentionPeriodMaximumRetentionArgs.Builder]):
@@ -790,7 +801,7 @@ object fsx:
       builder.maximumRetention(args(argsBuilder).build)
 
     /**
-     * @param minimumRetention The shortest retention period that can be assigned to a WORM file on an FSx for ONTAP SnapLock volume. See `minimumRetention` Block for details.
+     * @param minimumRetention Shortest retention period that can be assigned to a WORM file on an FSx for ONTAP SnapLock volume. See `minimumRetention` Block for details.
      * @return builder
      */
     def minimumRetention(args: Endofunction[com.pulumi.aws.fsx.inputs.OntapVolumeSnaplockConfigurationRetentionPeriodMinimumRetentionArgs.Builder]):
@@ -800,7 +811,7 @@ object fsx:
 
   extension (builder: com.pulumi.aws.fsx.inputs.OntapVolumeState.Builder)
     /**
-     * @param aggregateConfiguration The Aggregate configuration only applies to `FLEXGROUP` volumes. See [`aggregateConfiguration` Block] for details.
+     * @param aggregateConfiguration Aggregate configuration only applies to `FLEXGROUP` volumes. See [`aggregateConfiguration` Block] for details.
      * @return builder
      */
     def aggregateConfiguration(args: Endofunction[com.pulumi.aws.fsx.inputs.OntapVolumeAggregateConfigurationArgs.Builder]):
@@ -809,7 +820,7 @@ object fsx:
       builder.aggregateConfiguration(args(argsBuilder).build)
 
     /**
-     * @param snaplockConfiguration The SnapLock configuration for an FSx for ONTAP volume. See `snaplockConfiguration` Block for details.
+     * @param snaplockConfiguration SnapLock configuration for an FSx for ONTAP volume. See `snaplockConfiguration` Block for details.
      * @return builder
      */
     def snaplockConfiguration(args: Endofunction[com.pulumi.aws.fsx.inputs.OntapVolumeSnaplockConfigurationArgs.Builder]):
@@ -818,7 +829,7 @@ object fsx:
       builder.snaplockConfiguration(args(argsBuilder).build)
 
     /**
-     * @param tieringPolicy The data tiering policy for an FSx for ONTAP volume. See `tieringPolicy` Block for details.
+     * @param tieringPolicy Data tiering policy for an FSx for ONTAP volume. See `tieringPolicy` Block for details.
      * @return builder
      */
     def tieringPolicy(args: Endofunction[com.pulumi.aws.fsx.inputs.OntapVolumeTieringPolicyArgs.Builder]):
@@ -847,7 +858,7 @@ object fsx:
 
   extension (builder: com.pulumi.aws.fsx.inputs.OpenZfsFileSystemRootVolumeConfigurationNfsExportsArgs.Builder)
     /**
-     * @param clientConfigurations A list of configuration objects that contain the client and options for mounting the OpenZFS file system. Maximum of 25 items. See `clientConfigurations` Block for details.
+     * @param clientConfigurations List of configuration objects that contain the client and options for mounting the OpenZFS file system. Maximum of 25 items. See `clientConfigurations` Block for details.
      * @return builder
      */
     def clientConfigurations(args: Endofunction[com.pulumi.aws.fsx.inputs.OpenZfsFileSystemRootVolumeConfigurationNfsExportsClientConfigurationArgs.Builder]*):
@@ -857,7 +868,7 @@ object fsx:
 
   extension (builder: com.pulumi.aws.fsx.inputs.OpenZfsFileSystemState.Builder)
     /**
-     * @param diskIopsConfiguration The SSD IOPS configuration for the Amazon FSx for OpenZFS file system. See `diskIopsConfiguration` Block for details.
+     * @param diskIopsConfiguration SSD IOPS configuration for the Amazon FSx for OpenZFS file system. See `diskIopsConfiguration` Block for details.
      * @return builder
      */
     def diskIopsConfiguration(args: Endofunction[com.pulumi.aws.fsx.inputs.OpenZfsFileSystemDiskIopsConfigurationArgs.Builder]):
@@ -875,7 +886,7 @@ object fsx:
       builder.readCacheConfiguration(args(argsBuilder).build)
 
     /**
-     * @param rootVolumeConfiguration The configuration for the root volume of the file system. All other volumes are children or the root volume. See `rootVolumeConfiguration` Block for details.
+     * @param rootVolumeConfiguration Configuration for the root volume of the file system. All other volumes are children or the root volume. See `rootVolumeConfiguration` Block for details.
      * @return builder
      */
     def rootVolumeConfiguration(args: Endofunction[com.pulumi.aws.fsx.inputs.OpenZfsFileSystemRootVolumeConfigurationArgs.Builder]):
@@ -904,7 +915,7 @@ object fsx:
       builder.nfsExports(args(argsBuilder).build)
 
     /**
-     * @param originSnapshot Specifies the configuration to use when creating the OpenZFS volume. See `originSnapshot` Block below for details.
+     * @param originSnapshot Configuration to use when creating the OpenZFS volume. See `originSnapshot` Block below for details.
      * @return builder
      */
     def originSnapshot(args: Endofunction[com.pulumi.aws.fsx.inputs.OpenZfsVolumeOriginSnapshotArgs.Builder]):
@@ -977,7 +988,7 @@ object fsx:
 
   extension (builder: com.pulumi.aws.fsx.inputs.WindowsFileSystemState.Builder)
     /**
-     * @param auditLogConfiguration The configuration that Amazon FSx for Windows File Server uses to audit and log user accesses of files, folders, and file shares on the Amazon FSx for Windows File Server file system. See `auditLogConfiguration` Block for details.
+     * @param auditLogConfiguration Configuration that Amazon FSx for Windows File Server uses to audit and log user accesses of files, folders, and file shares on the Amazon FSx for Windows File Server file system. See `auditLogConfiguration` Block for details.
      * @return builder
      */
     def auditLogConfiguration(args: Endofunction[com.pulumi.aws.fsx.inputs.WindowsFileSystemAuditLogConfigurationArgs.Builder]):
@@ -986,7 +997,7 @@ object fsx:
       builder.auditLogConfiguration(args(argsBuilder).build)
 
     /**
-     * @param diskIopsConfiguration The SSD IOPS configuration for the Amazon FSx for Windows File Server file system. See `diskIopsConfiguration` Block for details.
+     * @param diskIopsConfiguration SSD IOPS configuration for the Amazon FSx for Windows File Server file system. See `diskIopsConfiguration` Block for details.
      * @return builder
      */
     def diskIopsConfiguration(args: Endofunction[com.pulumi.aws.fsx.inputs.WindowsFileSystemDiskIopsConfigurationArgs.Builder]):

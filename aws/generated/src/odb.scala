@@ -25,9 +25,7 @@ object odb:
 
   extension (builder: com.pulumi.aws.odb.CloudAutonomousVmClusterArgs.Builder)
     /**
-     * @param maintenanceWindow The maintenance window of the Autonomous VM cluster. Changing this will force terraform to create new resource.
-     * 
-     * The following arguments are optional:
+     * @param maintenanceWindow Maintenance window of the Autonomous VM cluster. Changing this will force terraform to create new resource.
      * @return builder
      */
     def maintenanceWindow(args: Endofunction[com.pulumi.aws.odb.inputs.CloudAutonomousVmClusterMaintenanceWindowArgs.Builder]):
@@ -57,7 +55,7 @@ object odb:
 
   extension (builder: com.pulumi.aws.odb.CloudExadataInfrastructureArgs.Builder)
     /**
-     * @param customerContactsToSendToOcis The email addresses of contacts to receive notification from Oracle about maintenance updates for the Exadata infrastructure. Changing this will force terraform to create new resource.
+     * @param customerContactsToSendToOcis Email addresses of contacts to receive notification from Oracle about maintenance updates for the Exadata infrastructure. Changing this will force terraform to create new resource.
      * @return builder
      */
     def customerContactsToSendToOcis(args: Endofunction[com.pulumi.aws.odb.inputs.CloudExadataInfrastructureCustomerContactsToSendToOciArgs.Builder]*):
@@ -100,7 +98,7 @@ object odb:
 
   extension (builder: com.pulumi.aws.odb.CloudVmClusterArgs.Builder)
     /**
-     * @param dataCollectionOptions The set of preferences for the various diagnostic collection options for the VM cluster.
+     * @param dataCollectionOptions Set of preferences for the various diagnostic collection options for the VM cluster. See `dataCollectionOptions` Block below. Changing this will create a new resource.
      * @return builder
      */
     def dataCollectionOptions(args: Endofunction[com.pulumi.aws.odb.inputs.CloudVmClusterDataCollectionOptionsArgs.Builder]):
@@ -472,7 +470,7 @@ object odb:
 
   extension (builder: com.pulumi.aws.odb.inputs.CloudAutonomousVmClusterMaintenanceWindowArgs.Builder)
     /**
-     * @param daysOfWeeks The days of the week when maintenance can be performed. Changing this will force terraform to create new resource.
+     * @param daysOfWeeks Days of the week when maintenance can be performed. Changing this will force terraform to create new resource.
      * @return builder
      */
     def daysOfWeeks(args: Endofunction[com.pulumi.aws.odb.inputs.CloudAutonomousVmClusterMaintenanceWindowDaysOfWeekArgs.Builder]*):
@@ -481,7 +479,7 @@ object odb:
       builder.daysOfWeeks(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param months The months when maintenance can be performed. Changing this will force terraform to create new resource.
+     * @param months Months when maintenance can be performed. Changing this will force terraform to create new resource.
      * @return builder
      */
     def months(args: Endofunction[com.pulumi.aws.odb.inputs.CloudAutonomousVmClusterMaintenanceWindowMonthArgs.Builder]*):
@@ -491,9 +489,7 @@ object odb:
 
   extension (builder: com.pulumi.aws.odb.inputs.CloudAutonomousVmClusterState.Builder)
     /**
-     * @param maintenanceWindow The maintenance window of the Autonomous VM cluster. Changing this will force terraform to create new resource.
-     * 
-     * The following arguments are optional:
+     * @param maintenanceWindow Maintenance window of the Autonomous VM cluster. Changing this will force terraform to create new resource.
      * @return builder
      */
     def maintenanceWindow(args: Endofunction[com.pulumi.aws.odb.inputs.CloudAutonomousVmClusterMaintenanceWindowArgs.Builder]):
@@ -508,7 +504,7 @@ object odb:
 
   extension (builder: com.pulumi.aws.odb.inputs.CloudExadataInfrastructureMaintenanceWindowArgs.Builder)
     /**
-     * @param daysOfWeeks The days of the week when maintenance can be performed.
+     * @param daysOfWeeks Days of the week when maintenance can be performed.
      * @return builder
      */
     def daysOfWeeks(args: Endofunction[com.pulumi.aws.odb.inputs.CloudExadataInfrastructureMaintenanceWindowDaysOfWeekArgs.Builder]*):
@@ -517,7 +513,7 @@ object odb:
       builder.daysOfWeeks(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param months The months when maintenance can be performed.
+     * @param months Months when maintenance can be performed.
      * @return builder
      */
     def months(args: Endofunction[com.pulumi.aws.odb.inputs.CloudExadataInfrastructureMaintenanceWindowMonthArgs.Builder]*):
@@ -527,7 +523,7 @@ object odb:
 
   extension (builder: com.pulumi.aws.odb.inputs.CloudExadataInfrastructureState.Builder)
     /**
-     * @param customerContactsToSendToOcis The email addresses of contacts to receive notification from Oracle about maintenance updates for the Exadata infrastructure. Changing this will force terraform to create new resource.
+     * @param customerContactsToSendToOcis Email addresses of contacts to receive notification from Oracle about maintenance updates for the Exadata infrastructure. Changing this will force terraform to create new resource.
      * @return builder
      */
     def customerContactsToSendToOcis(args: Endofunction[com.pulumi.aws.odb.inputs.CloudExadataInfrastructureCustomerContactsToSendToOciArgs.Builder]*):
@@ -557,7 +553,7 @@ object odb:
 
   extension (builder: com.pulumi.aws.odb.inputs.CloudVmClusterState.Builder)
     /**
-     * @param dataCollectionOptions The set of preferences for the various diagnostic collection options for the VM cluster.
+     * @param dataCollectionOptions Set of preferences for the various diagnostic collection options for the VM cluster. See `dataCollectionOptions` Block below. Changing this will create a new resource.
      * @return builder
      */
     def dataCollectionOptions(args: Endofunction[com.pulumi.aws.odb.inputs.CloudVmClusterDataCollectionOptionsArgs.Builder]):
@@ -566,7 +562,7 @@ object odb:
       builder.dataCollectionOptions(args(argsBuilder).build)
 
     /**
-     * @param iormConfigCaches The Exadata IORM (I/O Resource Manager) configuration cache details for the VM cluster.
+     * @param iormConfigCaches Exadata IORM (I/O Resource Manager) configuration cache details for the VM cluster.
      * @return builder
      */
     def iormConfigCaches(args: Endofunction[com.pulumi.aws.odb.inputs.CloudVmClusterIormConfigCacheArgs.Builder]*):
@@ -581,7 +577,7 @@ object odb:
 
   extension (builder: com.pulumi.aws.odb.inputs.NetworkManagedServiceArgs.Builder)
     /**
-     * @param crossRegionS3RestoreSourcesAccesses The list of regions enabled for cross-region restore in the ODB network.
+     * @param crossRegionS3RestoreSourcesAccesses List of regions enabled for cross-region restore in the ODB network.
      * @return builder
      */
     def crossRegionS3RestoreSourcesAccesses(args: Endofunction[com.pulumi.aws.odb.inputs.NetworkManagedServiceCrossRegionS3RestoreSourcesAccessArgs.Builder]*):
@@ -590,7 +586,7 @@ object odb:
       builder.crossRegionS3RestoreSourcesAccesses(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param kmsAccesses Specifies the configuration for KMS access from the ODB network.
+     * @param kmsAccesses Configuration for KMS access from the ODB network.
      * @return builder
      */
     def kmsAccesses(args: Endofunction[com.pulumi.aws.odb.inputs.NetworkManagedServiceKmsAccessArgs.Builder]*):
@@ -604,7 +600,7 @@ object odb:
       builder.managedS3BackupAccesses(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param s3Accesses Specifies the configuration for Amazon S3 access from the ODB network.
+     * @param s3Accesses Configuration for Amazon S3 access from the ODB network.
      * @return builder
      */
     def s3Accesses(args: Endofunction[com.pulumi.aws.odb.inputs.NetworkManagedServiceS3AccessArgs.Builder]*):
@@ -618,7 +614,7 @@ object odb:
       builder.serviceNetworkEndpoints(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param stsAccesses Specifies the configuration for STS access from the ODB network.
+     * @param stsAccesses Configuration for STS access from the ODB network.
      * @return builder
      */
     def stsAccesses(args: Endofunction[com.pulumi.aws.odb.inputs.NetworkManagedServiceStsAccessArgs.Builder]*):
@@ -627,7 +623,7 @@ object odb:
       builder.stsAccesses(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param zeroEtlAccesses Specifies the configuration for Zero-ETL access from the ODB network.
+     * @param zeroEtlAccesses Configuration for Zero-ETL access from the ODB network.
      * 
      * The following arguments are optional:
      * @return builder
@@ -645,7 +641,7 @@ object odb:
 
   extension (builder: com.pulumi.aws.odb.inputs.NetworkState.Builder)
     /**
-     * @param managedServices The managed services configuration for the ODB network.
+     * @param managedServices Managed services configuration for the ODB network.
      * @return builder
      */
     def managedServices(args: Endofunction[com.pulumi.aws.odb.inputs.NetworkManagedServiceArgs.Builder]*):
@@ -654,7 +650,7 @@ object odb:
       builder.managedServices(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param ociDnsForwardingConfigs The number of storage servers requested for the Exadata infrastructure.
+     * @param ociDnsForwardingConfigs Number of storage servers requested for the Exadata infrastructure.
      * @return builder
      */
     def ociDnsForwardingConfigs(args: Endofunction[com.pulumi.aws.odb.inputs.NetworkOciDnsForwardingConfigArgs.Builder]*):

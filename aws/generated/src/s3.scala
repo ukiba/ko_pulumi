@@ -100,9 +100,9 @@ object s3:
   /**
    * Provides a S3 bucket resource.
    * 
-   * &gt; This resource provides functionality for managing S3 general purpose buckets in an AWS Partition. To manage Amazon S3 Express directory buckets, use the `awsDirectoryBucket` resource. To manage [S3 on Outposts](https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html), use the `aws.s3control.Bucket` resource.
+   * &gt; This resource provides functionality for managing S3 general purpose buckets in an AWS Partition. To manage Amazon S3 Express directory buckets, use the `aws.s3.DirectoryBucket` resource. To manage [S3 on Outposts](https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html), use the `aws.s3control.Bucket` resource.
    * 
-   * &gt; Object Lock can be enabled by using the `objectLockEnable` attribute or by using the `aws.s3.BucketObjectLockConfiguration` resource. Please note, that by using the resource, Object Lock can be enabled/disabled without destroying and recreating the bucket.
+   * &gt; Object Lock can be enabled by using the `objectLockEnabled` attribute or by using the `aws.s3.BucketObjectLockConfiguration` resource. Please note, that by using the resource, Object Lock can be enabled/disabled without destroying and recreating the bucket.
    * 
    * &gt; To support ABAC (Attribute Based Access Control) in general purpose buckets, this resource will now attempt to send tags in the create request and use the S3 Control tagging APIs [`TagResource`](https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_TagResource.html), [`UntagResource`](https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_UntagResource.html), and [`ListTagsForResource`](https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_ListTagsForResource.html) for read and update operations. The calling principal must have the corresponding `s3:TagResource`, `s3:UntagResource`, and `s3:ListTagsForResource` [IAM permissions](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3.html#amazons3-actions-as-permissions). If the principal lacks the appropriate permissions, the provider will fall back to tagging after creation and using the S3 tagging APIs [`PutBucketTagging`](https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketTagging.html), [`DeleteBucketTagging`](https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketTagging.html), and [`GetBucketTagging`](https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketTagging.html) instead. With ABAC enabled, tag modifications may fail with the fall back behavior. See the [AWS documentation](https://docs.aws.amazon.com/AmazonS3/latest/userguide/buckets-tagging-enable-abac.html) for additional details on enabling ABAC in general purpose buckets.
    */
@@ -134,8 +134,6 @@ object s3:
   extension (builder: com.pulumi.aws.s3.BucketAbacArgs.Builder)
     /**
      * @param abacStatus ABAC status configuration. See `abacStatus` Block for details.
-     * 
-     * The following arguments are optional:
      * @return builder
      */
     def abacStatus(args: Endofunction[com.pulumi.aws.s3.inputs.BucketAbacAbacStatusArgs.Builder]):
@@ -217,7 +215,7 @@ object s3:
 
   extension (builder: com.pulumi.aws.s3.BucketArgs.Builder)
     /**
-     * @param corsRules Rule of [Cross-Origin Resource Sharing](https://docs.aws.amazon.com/AmazonS3/latest/dev/cors.html). See CORS rule below for details. This provider will only perform drift detection if a configuration value is provided. Use the resource `aws.s3.BucketCorsConfiguration` instead.
+     * @param corsRules Rule of [Cross-Origin Resource Sharing](https://docs.aws.amazon.com/AmazonS3/latest/dev/cors.html). See `corsRule` Block below for details. The provider will only perform drift detection if a configuration value is provided. Use the resource `aws.s3.BucketCorsConfiguration` instead.
      * @return builder
      * @deprecated cors_rule is deprecated. Use the aws.s3.BucketCorsConfiguration resource instead.
      */
@@ -227,7 +225,7 @@ object s3:
       builder.corsRules(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param grants An [ACL policy grant](https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#sample-acl). See Grant below for details. Conflicts with `acl`. The provider will only perform drift detection if a configuration value is provided. Use the resource `aws.s3.BucketAcl` instead.
+     * @param grants [ACL policy grant](https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#sample-acl). See `grant` Block below for details. Conflicts with `acl`. The provider will only perform drift detection if a configuration value is provided. Use the resource `aws.s3.BucketAcl` instead.
      * @return builder
      * @deprecated grant is deprecated. Use the aws.s3.BucketAcl resource instead.
      */
@@ -237,8 +235,7 @@ object s3:
       builder.grants(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param lifecycleRules Configuration of [object lifecycle management](http://docs.aws.amazon.com/AmazonS3/latest/dev/object-lifecycle-mgmt.html). See Lifecycle Rule below for details. The provider will only perform drift detection if a configuration value is provided.
-     * Use the resource `aws.s3.BucketLifecycleConfiguration` instead.
+     * @param lifecycleRules Configuration of [object lifecycle management](http://docs.aws.amazon.com/AmazonS3/latest/dev/object-lifecycle-mgmt.html). See `lifecycleRule` Block below for details. The provider will only perform drift detection if a configuration value is provided. Use the resource `aws.s3.BucketLifecycleConfiguration` instead.
      * @return builder
      * @deprecated lifecycle_rule is deprecated. Use the aws.s3.BucketLifecycleConfiguration resource instead.
      */
@@ -248,8 +245,7 @@ object s3:
       builder.lifecycleRules(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param logging Configuration of [S3 bucket logging](https://docs.aws.amazon.com/AmazonS3/latest/UG/ManagingBucketLogging.html) parameters. See Logging below for details. The provider will only perform drift detection if a configuration value is provided.
-     * Use the resource `aws.s3.BucketLogging` instead.
+     * @param logging Configuration of [S3 bucket logging](https://docs.aws.amazon.com/AmazonS3/latest/UG/ManagingBucketLogging.html) parameters. See `logging` Block below for details. The provider will only perform drift detection if a configuration value is provided. Use the resource `aws.s3.BucketLogging` instead.
      * @return builder
      * @deprecated logging is deprecated. Use the aws.s3.BucketLogging resource instead.
      */
@@ -259,9 +255,7 @@ object s3:
       builder.logging(args(argsBuilder).build)
 
     /**
-     * @param objectLockConfiguration Configuration of [S3 object locking](https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lock.html). See Object Lock Configuration below for details.
-     * The provider wil only perform drift detection if a configuration value is provided.
-     * Use the `objectLockEnabled` parameter and the resource `aws.s3.BucketObjectLockConfiguration` instead.
+     * @param objectLockConfiguration Configuration of [S3 object locking](https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lock.html). See `objectLockConfiguration` Block below for details. The provider will only perform drift detection if a configuration value is provided. Use the `objectLockEnabled` parameter and the resource `aws.s3.BucketObjectLockConfiguration` instead.
      * @return builder
      * @deprecated object_lock_configuration is deprecated. Use the top-level parameter objectLockEnabled and the aws.s3.BucketObjectLockConfiguration resource instead.
      */
@@ -271,9 +265,7 @@ object s3:
       builder.objectLockConfiguration(args(argsBuilder).build)
 
     /**
-     * @param policy Valid [bucket policy](https://docs.aws.amazon.com/AmazonS3/latest/dev/example-bucket-policies.html) JSON document. Note that if the policy document is not specific enough (but still valid), this provider may view the policy as constantly changing. In this case, please make sure you use the verbose/specific version of the policy. For more information about building AWS IAM policy documents with this provider, see the AWS IAM Policy Document Guide.
-     * The provider will only perform drift detection if a configuration value is provided.
-     * Use the resource `aws.s3.BucketPolicy` instead.
+     * @param policy Valid [bucket policy](https://docs.aws.amazon.com/AmazonS3/latest/dev/example-bucket-policies.html) JSON document. Note that if the policy document is not specific enough (but still valid), this provider may view the policy as constantly changing. In this case, please make sure you use the verbose/specific version of the policy. For more information about building AWS IAM policy documents with this provider, see the AWS IAM Policy Document Guide. The provider will only perform drift detection if a configuration value is provided. Use the resource `aws.s3.BucketPolicy` instead.
      * @return builder
      * @deprecated policy is deprecated. Use the aws.s3.BucketPolicy resource instead.
      */
@@ -283,8 +275,7 @@ object s3:
       builder.policy(args(argsBuilder).build)
 
     /**
-     * @param replicationConfiguration Configuration of [replication configuration](http://docs.aws.amazon.com/AmazonS3/latest/dev/crr.html). See Replication Configuration below for details. The provider will only perform drift detection if a configuration value is provided.
-     * Use the resource `aws.s3.BucketReplicationConfig` instead.
+     * @param replicationConfiguration Configuration of [replication configuration](http://docs.aws.amazon.com/AmazonS3/latest/dev/crr.html). See `replicationConfiguration` Block below for details. The provider will only perform drift detection if a configuration value is provided. Use the resource `aws.s3.BucketReplicationConfig` instead.
      * @return builder
      * @deprecated replication_configuration is deprecated. Use the aws.s3.BucketReplicationConfig resource instead.
      */
@@ -294,9 +285,7 @@ object s3:
       builder.replicationConfiguration(args(argsBuilder).build)
 
     /**
-     * @param serverSideEncryptionConfiguration Configuration of [server-side encryption configuration](http://docs.aws.amazon.com/AmazonS3/latest/dev/bucket-encryption.html). See Server Side Encryption Configuration below for details.
-     * The provider will only perform drift detection if a configuration value is provided.
-     * Use the resource `aws.s3.BucketServerSideEncryptionConfiguration` instead.
+     * @param serverSideEncryptionConfiguration Configuration of [server-side encryption configuration](http://docs.aws.amazon.com/AmazonS3/latest/dev/bucket-encryption.html). See `serverSideEncryptionConfiguration` Block below for details. The provider will only perform drift detection if a configuration value is provided. Use the resource `aws.s3.BucketServerSideEncryptionConfiguration` instead.
      * @return builder
      * @deprecated server_side_encryption_configuration is deprecated. Use the aws.s3.BucketServerSideEncryptionConfiguration resource instead.
      */
@@ -306,7 +295,7 @@ object s3:
       builder.serverSideEncryptionConfiguration(args(argsBuilder).build)
 
     /**
-     * @param versioning Configuration of the [S3 bucket versioning state](https://docs.aws.amazon.com/AmazonS3/latest/dev/Versioning.html). See Versioning below for details. The provider will only perform drift detection if a configuration value is provided. Use the resource `aws.s3.BucketVersioning` instead.
+     * @param versioning Configuration of the [S3 bucket versioning state](https://docs.aws.amazon.com/AmazonS3/latest/dev/Versioning.html). See `versioning` Block below for details. The provider will only perform drift detection if a configuration value is provided. Use the resource `aws.s3.BucketVersioning` instead.
      * @return builder
      * @deprecated versioning is deprecated. Use the aws.s3.BucketVersioning resource instead.
      */
@@ -316,8 +305,7 @@ object s3:
       builder.versioning(args(argsBuilder).build)
 
     /**
-     * @param website Configuration of the [S3 bucket website](https://docs.aws.amazon.com/AmazonS3/latest/userguide/WebsiteHosting.html). See Website below for details. The provider will only perform drift detection if a configuration value is provided.
-     * Use the resource `aws.s3.BucketWebsiteConfiguration` instead.
+     * @param website Configuration of the [S3 bucket website](https://docs.aws.amazon.com/AmazonS3/latest/userguide/WebsiteHosting.html). See `website` Block below for details. The provider will only perform drift detection if a configuration value is provided. Use the resource `aws.s3.BucketWebsiteConfiguration` instead.
      * @return builder
      * @deprecated website is deprecated. Use the aws.s3.BucketWebsiteConfiguration resource instead.
      */
@@ -391,7 +379,7 @@ object s3:
 
   extension (builder: com.pulumi.aws.s3.BucketIntelligentTieringConfigurationArgs.Builder)
     /**
-     * @param filter Bucket filter. The configuration only includes objects that meet the filter&#39;s criteria (documented below).
+     * @param filter Bucket filter. The configuration only includes objects that meet the filter&#39;s criteria. See `filter` Block below.
      * @return builder
      */
     def filter(args: Endofunction[com.pulumi.aws.s3.inputs.BucketIntelligentTieringConfigurationFilterArgs.Builder]):
@@ -400,7 +388,7 @@ object s3:
       builder.filter(args(argsBuilder).build)
 
     /**
-     * @param tierings S3 Intelligent-Tiering storage class tiers of the configuration (documented below).
+     * @param tierings S3 Intelligent-Tiering storage class tiers of the configuration. See `tiering` Block below.
      * @return builder
      */
     def tierings(args: Endofunction[com.pulumi.aws.s3.inputs.BucketIntelligentTieringConfigurationTieringArgs.Builder]*):
@@ -594,7 +582,7 @@ object s3:
 
   extension (builder: com.pulumi.aws.s3.BucketMetricArgs.Builder)
     /**
-     * @param filter [Object filtering](http://docs.aws.amazon.com/AmazonS3/latest/dev/metrics-configurations.html#metrics-configurations-filter) that accepts a prefix, tags, or a logical AND of prefix and tags (documented below).
+     * @param filter [Object filtering](http://docs.aws.amazon.com/AmazonS3/latest/dev/metrics-configurations.html#metrics-configurations-filter) that accepts a prefix, tags, or a logical AND of prefix and tags. See below.
      * @return builder
      */
     def filter(args: Endofunction[com.pulumi.aws.s3.inputs.BucketMetricFilterArgs.Builder]):
@@ -724,7 +712,7 @@ object s3:
 
   extension (builder: com.pulumi.aws.s3.BucketObjectv2Args.Builder)
     /**
-     * @param overrideProvider Override provider-level configuration options. See Override Provider below for more details.
+     * @param overrideProvider Override provider-level configuration options. See `overrideProvider` Block below for more details.
      * @return builder
      */
     def overrideProvider(args: Endofunction[com.pulumi.aws.s3.inputs.BucketObjectv2OverrideProviderArgs.Builder]):
@@ -807,13 +795,6 @@ object s3:
   extension (builder: com.pulumi.aws.s3.BucketReplicationConfigArgs.Builder)
     /**
      * @param rules List of configuration blocks describing the rules managing the replication. See below.
-     * 
-     * &gt; **NOTE:** Replication to multiple destination buckets requires that `priority` is specified in the `rule` object. If the corresponding rule requires no filter, an empty configuration block `filter {}` must be specified.
-     * 
-     * &gt; **NOTE:** Amazon S3&#39;s latest version of the replication configuration is V2, which includes the `filter` attribute for replication rules.
-     * 
-     * &gt; **NOTE:** The `existingObjectReplication` parameter is not supported by Amazon S3 at this time and should not be included in your `rule` configurations. Specifying this parameter will result in `MalformedXML` errors.
-     * To replicate existing objects, please refer to the [Replicating existing objects with S3 Batch Replication](https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-batch-replication-batch.html) documentation in the Amazon S3 User Guide.
      * @return builder
      */
     def rules(args: Endofunction[com.pulumi.aws.s3.inputs.BucketReplicationConfigRuleArgs.Builder]*):
@@ -900,9 +881,9 @@ object s3:
   /**
    * Provides a S3 bucket resource.
    * 
-   * &gt; This resource provides functionality for managing S3 general purpose buckets in an AWS Partition. To manage Amazon S3 Express directory buckets, use the `awsDirectoryBucket` resource. To manage [S3 on Outposts](https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html), use the `aws.s3control.Bucket` resource.
+   * &gt; This resource provides functionality for managing S3 general purpose buckets in an AWS Partition. To manage Amazon S3 Express directory buckets, use the `aws.s3.DirectoryBucket` resource. To manage [S3 on Outposts](https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html), use the `aws.s3control.Bucket` resource.
    * 
-   * &gt; Object Lock can be enabled by using the `objectLockEnable` attribute or by using the `aws.s3.BucketObjectLockConfiguration` resource. Please note, that by using the resource, Object Lock can be enabled/disabled without destroying and recreating the bucket.
+   * &gt; Object Lock can be enabled by using the `objectLockEnabled` attribute or by using the `aws.s3.BucketObjectLockConfiguration` resource. Please note, that by using the resource, Object Lock can be enabled/disabled without destroying and recreating the bucket.
    * 
    * &gt; To support ABAC (Attribute Based Access Control) in general purpose buckets, this resource will now attempt to send tags in the create request and use the S3 Control tagging APIs [`TagResource`](https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_TagResource.html), [`UntagResource`](https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_UntagResource.html), and [`ListTagsForResource`](https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_ListTagsForResource.html) for read and update operations. The calling principal must have the corresponding `s3:TagResource`, `s3:UntagResource`, and `s3:ListTagsForResource` [IAM permissions](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3.html#amazons3-actions-as-permissions). If the principal lacks the appropriate permissions, the provider will fall back to tagging after creation and using the S3 tagging APIs [`PutBucketTagging`](https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketTagging.html), [`DeleteBucketTagging`](https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketTagging.html), and [`GetBucketTagging`](https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketTagging.html) instead. With ABAC enabled, tag modifications may fail with the fall back behavior. See the [AWS documentation](https://docs.aws.amazon.com/AmazonS3/latest/userguide/buckets-tagging-enable-abac.html) for additional details on enabling ABAC in general purpose buckets.
    */
@@ -922,7 +903,7 @@ object s3:
 
   extension (builder: com.pulumi.aws.s3.BucketV2Args.Builder)
     /**
-     * @param corsRules Rule of [Cross-Origin Resource Sharing](https://docs.aws.amazon.com/AmazonS3/latest/dev/cors.html). See CORS rule below for details. This provider will only perform drift detection if a configuration value is provided. Use the resource `aws.s3.BucketCorsConfiguration` instead.
+     * @param corsRules Rule of [Cross-Origin Resource Sharing](https://docs.aws.amazon.com/AmazonS3/latest/dev/cors.html). See `corsRule` Block below for details. The provider will only perform drift detection if a configuration value is provided. Use the resource `aws.s3.BucketCorsConfiguration` instead.
      * @return builder
      * @deprecated cors_rule is deprecated. Use the aws.s3.BucketCorsConfiguration resource instead.
      */
@@ -932,7 +913,7 @@ object s3:
       builder.corsRules(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param grants An [ACL policy grant](https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#sample-acl). See Grant below for details. Conflicts with `acl`. The provider will only perform drift detection if a configuration value is provided. Use the resource `aws.s3.BucketAcl` instead.
+     * @param grants [ACL policy grant](https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#sample-acl). See `grant` Block below for details. Conflicts with `acl`. The provider will only perform drift detection if a configuration value is provided. Use the resource `aws.s3.BucketAcl` instead.
      * @return builder
      * @deprecated grant is deprecated. Use the aws.s3.BucketAcl resource instead.
      */
@@ -942,8 +923,7 @@ object s3:
       builder.grants(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param lifecycleRules Configuration of [object lifecycle management](http://docs.aws.amazon.com/AmazonS3/latest/dev/object-lifecycle-mgmt.html). See Lifecycle Rule below for details. The provider will only perform drift detection if a configuration value is provided.
-     * Use the resource `aws.s3.BucketLifecycleConfiguration` instead.
+     * @param lifecycleRules Configuration of [object lifecycle management](http://docs.aws.amazon.com/AmazonS3/latest/dev/object-lifecycle-mgmt.html). See `lifecycleRule` Block below for details. The provider will only perform drift detection if a configuration value is provided. Use the resource `aws.s3.BucketLifecycleConfiguration` instead.
      * @return builder
      * @deprecated lifecycle_rule is deprecated. Use the aws.s3.BucketLifecycleConfiguration resource instead.
      */
@@ -953,8 +933,7 @@ object s3:
       builder.lifecycleRules(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param loggings Configuration of [S3 bucket logging](https://docs.aws.amazon.com/AmazonS3/latest/UG/ManagingBucketLogging.html) parameters. See Logging below for details. The provider will only perform drift detection if a configuration value is provided.
-     * Use the resource `aws.s3.BucketLogging` instead.
+     * @param loggings Configuration of [S3 bucket logging](https://docs.aws.amazon.com/AmazonS3/latest/UG/ManagingBucketLogging.html) parameters. See `logging` Block below for details. The provider will only perform drift detection if a configuration value is provided. Use the resource `aws.s3.BucketLogging` instead.
      * @return builder
      * @deprecated logging is deprecated. Use the aws.s3.BucketLogging resource instead.
      */
@@ -964,9 +943,7 @@ object s3:
       builder.loggings(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param objectLockConfiguration Configuration of [S3 object locking](https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lock.html). See Object Lock Configuration below for details.
-     * The provider wil only perform drift detection if a configuration value is provided.
-     * Use the `objectLockEnabled` parameter and the resource `aws.s3.BucketObjectLockConfiguration` instead.
+     * @param objectLockConfiguration Configuration of [S3 object locking](https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lock.html). See `objectLockConfiguration` Block below for details. The provider will only perform drift detection if a configuration value is provided. Use the `objectLockEnabled` parameter and the resource `aws.s3.BucketObjectLockConfiguration` instead.
      * @return builder
      * @deprecated object_lock_configuration is deprecated. Use the top-level parameter objectLockEnabled and the aws.s3.BucketObjectLockConfiguration resource instead.
      */
@@ -976,8 +953,7 @@ object s3:
       builder.objectLockConfiguration(args(argsBuilder).build)
 
     /**
-     * @param replicationConfigurations Configuration of [replication configuration](http://docs.aws.amazon.com/AmazonS3/latest/dev/crr.html). See Replication Configuration below for details. The provider will only perform drift detection if a configuration value is provided.
-     * Use the resource `aws.s3.BucketReplicationConfig` instead.
+     * @param replicationConfigurations Configuration of [replication configuration](http://docs.aws.amazon.com/AmazonS3/latest/dev/crr.html). See `replicationConfiguration` Block below for details. The provider will only perform drift detection if a configuration value is provided. Use the resource `aws.s3.BucketReplicationConfig` instead.
      * @return builder
      * @deprecated replication_configuration is deprecated. Use the aws.s3.BucketReplicationConfig resource instead.
      */
@@ -987,9 +963,7 @@ object s3:
       builder.replicationConfigurations(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param serverSideEncryptionConfigurations Configuration of [server-side encryption configuration](http://docs.aws.amazon.com/AmazonS3/latest/dev/bucket-encryption.html). See Server Side Encryption Configuration below for details.
-     * The provider will only perform drift detection if a configuration value is provided.
-     * Use the resource `aws.s3.BucketServerSideEncryptionConfiguration` instead.
+     * @param serverSideEncryptionConfigurations Configuration of [server-side encryption configuration](http://docs.aws.amazon.com/AmazonS3/latest/dev/bucket-encryption.html). See `serverSideEncryptionConfiguration` Block below for details. The provider will only perform drift detection if a configuration value is provided. Use the resource `aws.s3.BucketServerSideEncryptionConfiguration` instead.
      * @return builder
      * @deprecated server_side_encryption_configuration is deprecated. Use the aws.s3.BucketServerSideEncryptionConfiguration resource instead.
      */
@@ -999,7 +973,7 @@ object s3:
       builder.serverSideEncryptionConfigurations(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param versionings Configuration of the [S3 bucket versioning state](https://docs.aws.amazon.com/AmazonS3/latest/dev/Versioning.html). See Versioning below for details. The provider will only perform drift detection if a configuration value is provided. Use the resource `aws.s3.BucketVersioning` instead.
+     * @param versionings Configuration of the [S3 bucket versioning state](https://docs.aws.amazon.com/AmazonS3/latest/dev/Versioning.html). See `versioning` Block below for details. The provider will only perform drift detection if a configuration value is provided. Use the resource `aws.s3.BucketVersioning` instead.
      * @return builder
      * @deprecated versioning is deprecated. Use the aws.s3.BucketVersioning resource instead.
      */
@@ -1009,8 +983,7 @@ object s3:
       builder.versionings(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param websites Configuration of the [S3 bucket website](https://docs.aws.amazon.com/AmazonS3/latest/userguide/WebsiteHosting.html). See Website below for details. The provider will only perform drift detection if a configuration value is provided.
-     * Use the resource `aws.s3.BucketWebsiteConfiguration` instead.
+     * @param websites Configuration of the [S3 bucket website](https://docs.aws.amazon.com/AmazonS3/latest/userguide/WebsiteHosting.html). See `website` Block below for details. The provider will only perform drift detection if a configuration value is provided. Use the resource `aws.s3.BucketWebsiteConfiguration` instead.
      * @return builder
      * @deprecated website is deprecated. Use the aws.s3.BucketWebsiteConfiguration resource instead.
      */
@@ -1324,7 +1297,7 @@ object s3:
 
   extension (builder: com.pulumi.aws.s3.InventoryArgs.Builder)
     /**
-     * @param destination Contains information about where to publish the inventory results (documented below).
+     * @param destination Where to publish the inventory results. See `destination` Block below.
      * @return builder
      */
     def destination(args: Endofunction[com.pulumi.aws.s3.inputs.InventoryDestinationArgs.Builder]):
@@ -1333,7 +1306,7 @@ object s3:
       builder.destination(args(argsBuilder).build)
 
     /**
-     * @param filter Specifies an inventory filter. The inventory only includes objects that meet the filter&#39;s criteria (documented below).
+     * @param filter Inventory filter. The inventory only includes objects that meet the filter&#39;s criteria. See `filter` Block below.
      * @return builder
      */
     def filter(args: Endofunction[com.pulumi.aws.s3.inputs.InventoryFilterArgs.Builder]):
@@ -1342,7 +1315,9 @@ object s3:
       builder.filter(args(argsBuilder).build)
 
     /**
-     * @param schedule Specifies the schedule for generating inventory results (documented below).
+     * @param schedule Schedule for generating inventory results. See `schedule` Block below.
+     * 
+     * The following arguments are optional:
      * @return builder
      */
     def schedule(args: Endofunction[com.pulumi.aws.s3.inputs.InventoryScheduleArgs.Builder]):
@@ -1724,7 +1699,7 @@ object s3:
 
   extension (builder: com.pulumi.aws.s3.VectorsIndexArgs.Builder)
     /**
-     * @param encryptionConfigurations Block for encryption configuration for the vector index. See `encyptionConfiguration` block below.
+     * @param encryptionConfigurations Block for encryption configuration for the vector index. See `encryptionConfiguration` Block below.
      * @return builder
      */
     def encryptionConfigurations(args: Endofunction[com.pulumi.aws.s3.inputs.VectorsIndexEncryptionConfigurationArgs.Builder]*):
@@ -1733,7 +1708,7 @@ object s3:
       builder.encryptionConfigurations(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param metadataConfiguration Block for metadata configuration for the vector index. See `metadataConfiguration` block below.
+     * @param metadataConfiguration Block for metadata configuration for the vector index. See `metadataConfiguration` Block below.
      * @return builder
      */
     def metadataConfiguration(args: Endofunction[com.pulumi.aws.s3.inputs.VectorsIndexMetadataConfigurationArgs.Builder]):
@@ -1824,7 +1799,7 @@ object s3:
 
   extension (builder: com.pulumi.aws.s3.inputs.AnalyticsConfigurationStorageClassAnalysisDataExportArgs.Builder)
     /**
-     * @param destination Specifies the destination for the exported analytics data (documented below).
+     * @param destination Destination for the exported analytics data (documented below).
      * @return builder
      */
     def destination(args: Endofunction[com.pulumi.aws.s3.inputs.AnalyticsConfigurationStorageClassAnalysisDataExportDestinationArgs.Builder]):
@@ -1845,8 +1820,6 @@ object s3:
   extension (builder: com.pulumi.aws.s3.inputs.BucketAbacState.Builder)
     /**
      * @param abacStatus ABAC status configuration. See `abacStatus` Block for details.
-     * 
-     * The following arguments are optional:
      * @return builder
      */
     def abacStatus(args: Endofunction[com.pulumi.aws.s3.inputs.BucketAbacAbacStatusArgs.Builder]):
@@ -1954,7 +1927,7 @@ object s3:
 
   extension (builder: com.pulumi.aws.s3.inputs.BucketIntelligentTieringConfigurationState.Builder)
     /**
-     * @param filter Bucket filter. The configuration only includes objects that meet the filter&#39;s criteria (documented below).
+     * @param filter Bucket filter. The configuration only includes objects that meet the filter&#39;s criteria. See `filter` Block below.
      * @return builder
      */
     def filter(args: Endofunction[com.pulumi.aws.s3.inputs.BucketIntelligentTieringConfigurationFilterArgs.Builder]):
@@ -1963,7 +1936,7 @@ object s3:
       builder.filter(args(argsBuilder).build)
 
     /**
-     * @param tierings S3 Intelligent-Tiering storage class tiers of the configuration (documented below).
+     * @param tierings S3 Intelligent-Tiering storage class tiers of the configuration. See `tiering` Block below.
      * @return builder
      */
     def tierings(args: Endofunction[com.pulumi.aws.s3.inputs.BucketIntelligentTieringConfigurationTieringArgs.Builder]*):
@@ -1991,8 +1964,7 @@ object s3:
       builder.expiration(args(argsBuilder).build)
 
     /**
-     * @param filter Configuration block used to identify objects that a Lifecycle Rule applies to.
-     * See below.
+     * @param filter Configuration block used to identify objects that a Lifecycle Rule applies to. See below.
      * @return builder
      */
     def filter(args: Endofunction[com.pulumi.aws.s3.inputs.BucketLifecycleConfigurationRuleFilterArgs.Builder]):
@@ -2081,8 +2053,7 @@ object s3:
       builder.expiration(args(argsBuilder).build)
 
     /**
-     * @param filter Configuration block used to identify objects that a Lifecycle Rule applies to.
-     * See below.
+     * @param filter Configuration block used to identify objects that a Lifecycle Rule applies to. See below.
      * @return builder
      */
     def filter(args: Endofunction[com.pulumi.aws.s3.inputs.BucketLifecycleConfigurationV2RuleFilterArgs.Builder]):
@@ -2153,7 +2124,7 @@ object s3:
 
   extension (builder: com.pulumi.aws.s3.inputs.BucketLifecycleRuleArgs.Builder)
     /**
-     * @param expiration Specifies a period in the object&#39;s expire. See Expiration below for details.
+     * @param expiration Configuration of the object expiration. See `expiration` Block below for details.
      * @return builder
      */
     def expiration(args: Endofunction[com.pulumi.aws.s3.inputs.BucketLifecycleRuleExpirationArgs.Builder]):
@@ -2162,7 +2133,7 @@ object s3:
       builder.expiration(args(argsBuilder).build)
 
     /**
-     * @param noncurrentVersionExpiration Specifies when noncurrent object versions expire. See Noncurrent Version Expiration below for details.
+     * @param noncurrentVersionExpiration When noncurrent object versions expire. See `noncurrentVersionExpiration` Block below for details.
      * @return builder
      */
     def noncurrentVersionExpiration(args: Endofunction[com.pulumi.aws.s3.inputs.BucketLifecycleRuleNoncurrentVersionExpirationArgs.Builder]):
@@ -2171,7 +2142,7 @@ object s3:
       builder.noncurrentVersionExpiration(args(argsBuilder).build)
 
     /**
-     * @param noncurrentVersionTransitions Specifies when noncurrent object versions transitions. See Noncurrent Version Transition below for details.
+     * @param noncurrentVersionTransitions When noncurrent object versions transition. See `noncurrentVersionTransition` Block below for details.
      * @return builder
      */
     def noncurrentVersionTransitions(args: Endofunction[com.pulumi.aws.s3.inputs.BucketLifecycleRuleNoncurrentVersionTransitionArgs.Builder]*):
@@ -2180,7 +2151,7 @@ object s3:
       builder.noncurrentVersionTransitions(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param transitions Specifies a period in the object&#39;s transitions. See Transition below for details.
+     * @param transitions Configuration of the object transition. See `transition` Block below for details.
      * @return builder
      */
     def transitions(args: Endofunction[com.pulumi.aws.s3.inputs.BucketLifecycleRuleTransitionArgs.Builder]*):
@@ -2286,7 +2257,7 @@ object s3:
 
   extension (builder: com.pulumi.aws.s3.inputs.BucketMetadataConfigurationMetadataConfigurationArgs.Builder)
     /**
-     * @param destinations Destination information for the S3 Metadata configuration.
+     * @param destinations Destination information for the S3 Metadata configuration. See `destination` Block for details.
      * @return builder
      */
     def destinations(args: Endofunction[com.pulumi.aws.s3.inputs.BucketMetadataConfigurationMetadataConfigurationDestinationArgs.Builder]*):
@@ -2360,7 +2331,7 @@ object s3:
 
   extension (builder: com.pulumi.aws.s3.inputs.BucketMetricState.Builder)
     /**
-     * @param filter [Object filtering](http://docs.aws.amazon.com/AmazonS3/latest/dev/metrics-configurations.html#metrics-configurations-filter) that accepts a prefix, tags, or a logical AND of prefix and tags (documented below).
+     * @param filter [Object filtering](http://docs.aws.amazon.com/AmazonS3/latest/dev/metrics-configurations.html#metrics-configurations-filter) that accepts a prefix, tags, or a logical AND of prefix and tags. See below.
      * @return builder
      */
     def filter(args: Endofunction[com.pulumi.aws.s3.inputs.BucketMetricFilterArgs.Builder]):
@@ -2398,7 +2369,7 @@ object s3:
 
   extension (builder: com.pulumi.aws.s3.inputs.BucketObjectLockConfigurationArgs.Builder)
     /**
-     * @param rule Object Lock rule in place for this bucket (documented below).
+     * @param rule Object Lock rule in place for this bucket. See `object_lock_configuration.rule` Block below for details.
      * @return builder
      * @deprecated rule is deprecated. Use the aws.s3.BucketObjectLockConfiguration resource instead.
      */
@@ -2449,7 +2420,7 @@ object s3:
 
   extension (builder: com.pulumi.aws.s3.inputs.BucketObjectv2OverrideProviderArgs.Builder)
     /**
-     * @param defaultTags Override the provider `defaultTags` configuration block.
+     * @param defaultTags Override the provider `defaultTags` configuration block. See `defaultTags` Block below for more details.
      * @return builder
      */
     def defaultTags(args: Endofunction[com.pulumi.aws.s3.inputs.BucketObjectv2OverrideProviderDefaultTagsArgs.Builder]):
@@ -2459,7 +2430,7 @@ object s3:
 
   extension (builder: com.pulumi.aws.s3.inputs.BucketObjectv2State.Builder)
     /**
-     * @param overrideProvider Override provider-level configuration options. See Override Provider below for more details.
+     * @param overrideProvider Override provider-level configuration options. See `overrideProvider` Block below for more details.
      * @return builder
      */
     def overrideProvider(args: Endofunction[com.pulumi.aws.s3.inputs.BucketObjectv2OverrideProviderArgs.Builder]):
@@ -2498,7 +2469,7 @@ object s3:
       builder.deleteMarkerReplication(args(argsBuilder).build)
 
     /**
-     * @param destination Specifies the destination for the rule. See below.
+     * @param destination Destination for the rule. See below.
      * @return builder
      */
     def destination(args: Endofunction[com.pulumi.aws.s3.inputs.BucketReplicationConfigRuleDestinationArgs.Builder]):
@@ -2525,7 +2496,7 @@ object s3:
       builder.filter(args(argsBuilder).build)
 
     /**
-     * @param sourceSelectionCriteria Specifies special object selection criteria. See below.
+     * @param sourceSelectionCriteria Special object selection criteria. See below.
      * @return builder
      */
     def sourceSelectionCriteria(args: Endofunction[com.pulumi.aws.s3.inputs.BucketReplicationConfigRuleSourceSelectionCriteriaArgs.Builder]):
@@ -2631,13 +2602,6 @@ object s3:
   extension (builder: com.pulumi.aws.s3.inputs.BucketReplicationConfigState.Builder)
     /**
      * @param rules List of configuration blocks describing the rules managing the replication. See below.
-     * 
-     * &gt; **NOTE:** Replication to multiple destination buckets requires that `priority` is specified in the `rule` object. If the corresponding rule requires no filter, an empty configuration block `filter {}` must be specified.
-     * 
-     * &gt; **NOTE:** Amazon S3&#39;s latest version of the replication configuration is V2, which includes the `filter` attribute for replication rules.
-     * 
-     * &gt; **NOTE:** The `existingObjectReplication` parameter is not supported by Amazon S3 at this time and should not be included in your `rule` configurations. Specifying this parameter will result in `MalformedXML` errors.
-     * To replicate existing objects, please refer to the [Replicating existing objects with S3 Batch Replication](https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-batch-replication-batch.html) documentation in the Amazon S3 User Guide.
      * @return builder
      */
     def rules(args: Endofunction[com.pulumi.aws.s3.inputs.BucketReplicationConfigRuleArgs.Builder]*):
@@ -2647,7 +2611,7 @@ object s3:
 
   extension (builder: com.pulumi.aws.s3.inputs.BucketReplicationConfigurationArgs.Builder)
     /**
-     * @param rules Specifies the rules managing the replication (documented below).
+     * @param rules Rules managing the replication. See `rules` Block below for details.
      * @return builder
      */
     def rules(args: Endofunction[com.pulumi.aws.s3.inputs.BucketReplicationConfigurationRuleArgs.Builder]*):
@@ -2657,7 +2621,7 @@ object s3:
 
   extension (builder: com.pulumi.aws.s3.inputs.BucketReplicationConfigurationRuleArgs.Builder)
     /**
-     * @param destination Specifies the destination for the rule (documented below).
+     * @param destination Destination for the rule. See `destination` Block below for details.
      * @return builder
      */
     def destination(args: Endofunction[com.pulumi.aws.s3.inputs.BucketReplicationConfigurationRuleDestinationArgs.Builder]):
@@ -2666,7 +2630,7 @@ object s3:
       builder.destination(args(argsBuilder).build)
 
     /**
-     * @param filter Filter that identifies subset of objects to which the replication rule applies (documented below).
+     * @param filter Filter that identifies subset of objects to which the replication rule applies. See `filter` Block below for details.
      * @return builder
      */
     def filter(args: Endofunction[com.pulumi.aws.s3.inputs.BucketReplicationConfigurationRuleFilterArgs.Builder]):
@@ -2675,7 +2639,7 @@ object s3:
       builder.filter(args(argsBuilder).build)
 
     /**
-     * @param sourceSelectionCriteria Specifies special object selection criteria (documented below).
+     * @param sourceSelectionCriteria Special object selection criteria. See `sourceSelectionCriteria` Block below for details.
      * @return builder
      */
     def sourceSelectionCriteria(args: Endofunction[com.pulumi.aws.s3.inputs.BucketReplicationConfigurationRuleSourceSelectionCriteriaArgs.Builder]):
@@ -2685,7 +2649,7 @@ object s3:
 
   extension (builder: com.pulumi.aws.s3.inputs.BucketReplicationConfigurationRuleDestinationArgs.Builder)
     /**
-     * @param accessControlTranslation Specifies the overrides to use for object owners on replication (documented below). Must be used in conjunction with `accountId` owner override configuration.
+     * @param accessControlTranslation Overrides to use for object owners on replication. See `accessControlTranslation` Block below for details. Must be used in conjunction with `accountId` owner override configuration.
      * @return builder
      */
     def accessControlTranslation(args: Endofunction[com.pulumi.aws.s3.inputs.BucketReplicationConfigurationRuleDestinationAccessControlTranslationArgs.Builder]):
@@ -2694,7 +2658,7 @@ object s3:
       builder.accessControlTranslation(args(argsBuilder).build)
 
     /**
-     * @param metrics Enables replication metrics (required for S3 RTC) (documented below).
+     * @param metrics Enables replication metrics (required for S3 RTC). See `metrics` Block below for details.
      * @return builder
      */
     def metrics(args: Endofunction[com.pulumi.aws.s3.inputs.BucketReplicationConfigurationRuleDestinationMetricsArgs.Builder]):
@@ -2703,7 +2667,7 @@ object s3:
       builder.metrics(args(argsBuilder).build)
 
     /**
-     * @param replicationTime Enables S3 Replication Time Control (S3 RTC) (documented below).
+     * @param replicationTime Enables S3 Replication Time Control (S3 RTC). See `replicationTime` Block below for details.
      * @return builder
      */
     def replicationTime(args: Endofunction[com.pulumi.aws.s3.inputs.BucketReplicationConfigurationRuleDestinationReplicationTimeArgs.Builder]):
@@ -2713,8 +2677,7 @@ object s3:
 
   extension (builder: com.pulumi.aws.s3.inputs.BucketReplicationConfigurationRuleSourceSelectionCriteriaArgs.Builder)
     /**
-     * @param sseKmsEncryptedObjects Match SSE-KMS encrypted objects (documented below). If specified, `replicaKmsKeyId`
-     * in `destination` must be specified as well.
+     * @param sseKmsEncryptedObjects Match SSE-KMS encrypted objects. See `sseKmsEncryptedObjects` Block below for details. If specified, `replicaKmsKeyId` in `destination` must be specified as well.
      * @return builder
      */
     def sseKmsEncryptedObjects(args: Endofunction[com.pulumi.aws.s3.inputs.BucketReplicationConfigurationRuleSourceSelectionCriteriaSseKmsEncryptedObjectsArgs.Builder]):
@@ -2724,7 +2687,7 @@ object s3:
 
   extension (builder: com.pulumi.aws.s3.inputs.BucketServerSideEncryptionConfigurationArgs.Builder)
     /**
-     * @param rule Single object for server-side encryption by default configuration. (documented below)
+     * @param rule Single object for server-side encryption by default configuration. See `server_side_encryption_configuration.rule` Block below for details.
      * @return builder
      */
     def rule(args: Endofunction[com.pulumi.aws.s3.inputs.BucketServerSideEncryptionConfigurationRuleArgs.Builder]):
@@ -2774,7 +2737,7 @@ object s3:
 
   extension (builder: com.pulumi.aws.s3.inputs.BucketState.Builder)
     /**
-     * @param corsRules Rule of [Cross-Origin Resource Sharing](https://docs.aws.amazon.com/AmazonS3/latest/dev/cors.html). See CORS rule below for details. This provider will only perform drift detection if a configuration value is provided. Use the resource `aws.s3.BucketCorsConfiguration` instead.
+     * @param corsRules Rule of [Cross-Origin Resource Sharing](https://docs.aws.amazon.com/AmazonS3/latest/dev/cors.html). See `corsRule` Block below for details. The provider will only perform drift detection if a configuration value is provided. Use the resource `aws.s3.BucketCorsConfiguration` instead.
      * @return builder
      * @deprecated cors_rule is deprecated. Use the aws.s3.BucketCorsConfiguration resource instead.
      */
@@ -2784,7 +2747,7 @@ object s3:
       builder.corsRules(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param grants An [ACL policy grant](https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#sample-acl). See Grant below for details. Conflicts with `acl`. The provider will only perform drift detection if a configuration value is provided. Use the resource `aws.s3.BucketAcl` instead.
+     * @param grants [ACL policy grant](https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#sample-acl). See `grant` Block below for details. Conflicts with `acl`. The provider will only perform drift detection if a configuration value is provided. Use the resource `aws.s3.BucketAcl` instead.
      * @return builder
      * @deprecated grant is deprecated. Use the aws.s3.BucketAcl resource instead.
      */
@@ -2794,8 +2757,7 @@ object s3:
       builder.grants(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param lifecycleRules Configuration of [object lifecycle management](http://docs.aws.amazon.com/AmazonS3/latest/dev/object-lifecycle-mgmt.html). See Lifecycle Rule below for details. The provider will only perform drift detection if a configuration value is provided.
-     * Use the resource `aws.s3.BucketLifecycleConfiguration` instead.
+     * @param lifecycleRules Configuration of [object lifecycle management](http://docs.aws.amazon.com/AmazonS3/latest/dev/object-lifecycle-mgmt.html). See `lifecycleRule` Block below for details. The provider will only perform drift detection if a configuration value is provided. Use the resource `aws.s3.BucketLifecycleConfiguration` instead.
      * @return builder
      * @deprecated lifecycle_rule is deprecated. Use the aws.s3.BucketLifecycleConfiguration resource instead.
      */
@@ -2805,8 +2767,7 @@ object s3:
       builder.lifecycleRules(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param logging Configuration of [S3 bucket logging](https://docs.aws.amazon.com/AmazonS3/latest/UG/ManagingBucketLogging.html) parameters. See Logging below for details. The provider will only perform drift detection if a configuration value is provided.
-     * Use the resource `aws.s3.BucketLogging` instead.
+     * @param logging Configuration of [S3 bucket logging](https://docs.aws.amazon.com/AmazonS3/latest/UG/ManagingBucketLogging.html) parameters. See `logging` Block below for details. The provider will only perform drift detection if a configuration value is provided. Use the resource `aws.s3.BucketLogging` instead.
      * @return builder
      * @deprecated logging is deprecated. Use the aws.s3.BucketLogging resource instead.
      */
@@ -2816,9 +2777,7 @@ object s3:
       builder.logging(args(argsBuilder).build)
 
     /**
-     * @param objectLockConfiguration Configuration of [S3 object locking](https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lock.html). See Object Lock Configuration below for details.
-     * The provider wil only perform drift detection if a configuration value is provided.
-     * Use the `objectLockEnabled` parameter and the resource `aws.s3.BucketObjectLockConfiguration` instead.
+     * @param objectLockConfiguration Configuration of [S3 object locking](https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lock.html). See `objectLockConfiguration` Block below for details. The provider will only perform drift detection if a configuration value is provided. Use the `objectLockEnabled` parameter and the resource `aws.s3.BucketObjectLockConfiguration` instead.
      * @return builder
      * @deprecated object_lock_configuration is deprecated. Use the top-level parameter objectLockEnabled and the aws.s3.BucketObjectLockConfiguration resource instead.
      */
@@ -2828,9 +2787,7 @@ object s3:
       builder.objectLockConfiguration(args(argsBuilder).build)
 
     /**
-     * @param policy Valid [bucket policy](https://docs.aws.amazon.com/AmazonS3/latest/dev/example-bucket-policies.html) JSON document. Note that if the policy document is not specific enough (but still valid), this provider may view the policy as constantly changing. In this case, please make sure you use the verbose/specific version of the policy. For more information about building AWS IAM policy documents with this provider, see the AWS IAM Policy Document Guide.
-     * The provider will only perform drift detection if a configuration value is provided.
-     * Use the resource `aws.s3.BucketPolicy` instead.
+     * @param policy Valid [bucket policy](https://docs.aws.amazon.com/AmazonS3/latest/dev/example-bucket-policies.html) JSON document. Note that if the policy document is not specific enough (but still valid), this provider may view the policy as constantly changing. In this case, please make sure you use the verbose/specific version of the policy. For more information about building AWS IAM policy documents with this provider, see the AWS IAM Policy Document Guide. The provider will only perform drift detection if a configuration value is provided. Use the resource `aws.s3.BucketPolicy` instead.
      * @return builder
      * @deprecated policy is deprecated. Use the aws.s3.BucketPolicy resource instead.
      */
@@ -2840,8 +2797,7 @@ object s3:
       builder.policy(args(argsBuilder).build)
 
     /**
-     * @param replicationConfiguration Configuration of [replication configuration](http://docs.aws.amazon.com/AmazonS3/latest/dev/crr.html). See Replication Configuration below for details. The provider will only perform drift detection if a configuration value is provided.
-     * Use the resource `aws.s3.BucketReplicationConfig` instead.
+     * @param replicationConfiguration Configuration of [replication configuration](http://docs.aws.amazon.com/AmazonS3/latest/dev/crr.html). See `replicationConfiguration` Block below for details. The provider will only perform drift detection if a configuration value is provided. Use the resource `aws.s3.BucketReplicationConfig` instead.
      * @return builder
      * @deprecated replication_configuration is deprecated. Use the aws.s3.BucketReplicationConfig resource instead.
      */
@@ -2851,9 +2807,7 @@ object s3:
       builder.replicationConfiguration(args(argsBuilder).build)
 
     /**
-     * @param serverSideEncryptionConfiguration Configuration of [server-side encryption configuration](http://docs.aws.amazon.com/AmazonS3/latest/dev/bucket-encryption.html). See Server Side Encryption Configuration below for details.
-     * The provider will only perform drift detection if a configuration value is provided.
-     * Use the resource `aws.s3.BucketServerSideEncryptionConfiguration` instead.
+     * @param serverSideEncryptionConfiguration Configuration of [server-side encryption configuration](http://docs.aws.amazon.com/AmazonS3/latest/dev/bucket-encryption.html). See `serverSideEncryptionConfiguration` Block below for details. The provider will only perform drift detection if a configuration value is provided. Use the resource `aws.s3.BucketServerSideEncryptionConfiguration` instead.
      * @return builder
      * @deprecated server_side_encryption_configuration is deprecated. Use the aws.s3.BucketServerSideEncryptionConfiguration resource instead.
      */
@@ -2863,7 +2817,7 @@ object s3:
       builder.serverSideEncryptionConfiguration(args(argsBuilder).build)
 
     /**
-     * @param versioning Configuration of the [S3 bucket versioning state](https://docs.aws.amazon.com/AmazonS3/latest/dev/Versioning.html). See Versioning below for details. The provider will only perform drift detection if a configuration value is provided. Use the resource `aws.s3.BucketVersioning` instead.
+     * @param versioning Configuration of the [S3 bucket versioning state](https://docs.aws.amazon.com/AmazonS3/latest/dev/Versioning.html). See `versioning` Block below for details. The provider will only perform drift detection if a configuration value is provided. Use the resource `aws.s3.BucketVersioning` instead.
      * @return builder
      * @deprecated versioning is deprecated. Use the aws.s3.BucketVersioning resource instead.
      */
@@ -2873,8 +2827,7 @@ object s3:
       builder.versioning(args(argsBuilder).build)
 
     /**
-     * @param website Configuration of the [S3 bucket website](https://docs.aws.amazon.com/AmazonS3/latest/userguide/WebsiteHosting.html). See Website below for details. The provider will only perform drift detection if a configuration value is provided.
-     * Use the resource `aws.s3.BucketWebsiteConfiguration` instead.
+     * @param website Configuration of the [S3 bucket website](https://docs.aws.amazon.com/AmazonS3/latest/userguide/WebsiteHosting.html). See `website` Block below for details. The provider will only perform drift detection if a configuration value is provided. Use the resource `aws.s3.BucketWebsiteConfiguration` instead.
      * @return builder
      * @deprecated website is deprecated. Use the aws.s3.BucketWebsiteConfiguration resource instead.
      */
@@ -2885,7 +2838,7 @@ object s3:
 
   extension (builder: com.pulumi.aws.s3.inputs.BucketV2LifecycleRuleArgs.Builder)
     /**
-     * @param expirations Specifies a period in the object&#39;s expire. See Expiration below for details.
+     * @param expirations Configuration of the object expiration. See `expiration` Block below for details.
      * @return builder
      */
     def expirations(args: Endofunction[com.pulumi.aws.s3.inputs.BucketV2LifecycleRuleExpirationArgs.Builder]*):
@@ -2894,7 +2847,7 @@ object s3:
       builder.expirations(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param noncurrentVersionExpirations Specifies when noncurrent object versions expire. See Noncurrent Version Expiration below for details.
+     * @param noncurrentVersionExpirations When noncurrent object versions expire. See `noncurrentVersionExpiration` Block below for details.
      * @return builder
      */
     def noncurrentVersionExpirations(args: Endofunction[com.pulumi.aws.s3.inputs.BucketV2LifecycleRuleNoncurrentVersionExpirationArgs.Builder]*):
@@ -2903,7 +2856,7 @@ object s3:
       builder.noncurrentVersionExpirations(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param noncurrentVersionTransitions Specifies when noncurrent object versions transitions. See Noncurrent Version Transition below for details.
+     * @param noncurrentVersionTransitions When noncurrent object versions transition. See `noncurrentVersionTransition` Block below for details.
      * @return builder
      */
     def noncurrentVersionTransitions(args: Endofunction[com.pulumi.aws.s3.inputs.BucketV2LifecycleRuleNoncurrentVersionTransitionArgs.Builder]*):
@@ -2912,7 +2865,7 @@ object s3:
       builder.noncurrentVersionTransitions(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param transitions Specifies a period in the object&#39;s transitions. See Transition below for details.
+     * @param transitions Configuration of the object transition. See `transition` Block below for details.
      * @return builder
      */
     def transitions(args: Endofunction[com.pulumi.aws.s3.inputs.BucketV2LifecycleRuleTransitionArgs.Builder]*):
@@ -2922,7 +2875,7 @@ object s3:
 
   extension (builder: com.pulumi.aws.s3.inputs.BucketV2ObjectLockConfigurationArgs.Builder)
     /**
-     * @param rules Object Lock rule in place for this bucket (documented below).
+     * @param rules Object Lock rule in place for this bucket. See `object_lock_configuration.rule` Block below for details.
      * @return builder
      * @deprecated rule is deprecated. Use the aws.s3.BucketObjectLockConfiguration resource instead.
      */
@@ -2933,7 +2886,7 @@ object s3:
 
   extension (builder: com.pulumi.aws.s3.inputs.BucketV2ObjectLockConfigurationRuleArgs.Builder)
     /**
-     * @param defaultRetentions Default retention period that you want to apply to new objects placed in this bucket (documented below).
+     * @param defaultRetentions Default retention period that you want to apply to new objects placed in this bucket. See `defaultRetention` Block below for details.
      * @return builder
      */
     def defaultRetentions(args: Endofunction[com.pulumi.aws.s3.inputs.BucketV2ObjectLockConfigurationRuleDefaultRetentionArgs.Builder]*):
@@ -2943,7 +2896,7 @@ object s3:
 
   extension (builder: com.pulumi.aws.s3.inputs.BucketV2ReplicationConfigurationArgs.Builder)
     /**
-     * @param rules Specifies the rules managing the replication (documented below).
+     * @param rules Rules managing the replication. See `rules` Block below for details.
      * @return builder
      */
     def rules(args: Endofunction[com.pulumi.aws.s3.inputs.BucketV2ReplicationConfigurationRuleArgs.Builder]*):
@@ -2953,7 +2906,7 @@ object s3:
 
   extension (builder: com.pulumi.aws.s3.inputs.BucketV2ReplicationConfigurationRuleArgs.Builder)
     /**
-     * @param destinations Specifies the destination for the rule (documented below).
+     * @param destinations Destination for the rule. See `destination` Block below for details.
      * @return builder
      */
     def destinations(args: Endofunction[com.pulumi.aws.s3.inputs.BucketV2ReplicationConfigurationRuleDestinationArgs.Builder]*):
@@ -2962,7 +2915,7 @@ object s3:
       builder.destinations(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param filters Filter that identifies subset of objects to which the replication rule applies (documented below).
+     * @param filters Filter that identifies subset of objects to which the replication rule applies. See `filter` Block below for details.
      * @return builder
      */
     def filters(args: Endofunction[com.pulumi.aws.s3.inputs.BucketV2ReplicationConfigurationRuleFilterArgs.Builder]*):
@@ -2971,7 +2924,7 @@ object s3:
       builder.filters(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param sourceSelectionCriterias Specifies special object selection criteria (documented below).
+     * @param sourceSelectionCriterias Special object selection criteria. See `sourceSelectionCriteria` Block below for details.
      * @return builder
      */
     def sourceSelectionCriterias(args: Endofunction[com.pulumi.aws.s3.inputs.BucketV2ReplicationConfigurationRuleSourceSelectionCriteriaArgs.Builder]*):
@@ -2981,7 +2934,7 @@ object s3:
 
   extension (builder: com.pulumi.aws.s3.inputs.BucketV2ReplicationConfigurationRuleDestinationArgs.Builder)
     /**
-     * @param accessControlTranslations Specifies the overrides to use for object owners on replication (documented below). Must be used in conjunction with `accountId` owner override configuration.
+     * @param accessControlTranslations Overrides to use for object owners on replication. See `accessControlTranslation` Block below for details. Must be used in conjunction with `accountId` owner override configuration.
      * @return builder
      */
     def accessControlTranslations(args: Endofunction[com.pulumi.aws.s3.inputs.BucketV2ReplicationConfigurationRuleDestinationAccessControlTranslationArgs.Builder]*):
@@ -2990,7 +2943,7 @@ object s3:
       builder.accessControlTranslations(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param metrics Enables replication metrics (required for S3 RTC) (documented below).
+     * @param metrics Enables replication metrics (required for S3 RTC). See `metrics` Block below for details.
      * @return builder
      */
     def metrics(args: Endofunction[com.pulumi.aws.s3.inputs.BucketV2ReplicationConfigurationRuleDestinationMetricArgs.Builder]*):
@@ -2999,7 +2952,7 @@ object s3:
       builder.metrics(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param replicationTimes Enables S3 Replication Time Control (S3 RTC) (documented below).
+     * @param replicationTimes Enables S3 Replication Time Control (S3 RTC). See `replicationTime` Block below for details.
      * @return builder
      */
     def replicationTimes(args: Endofunction[com.pulumi.aws.s3.inputs.BucketV2ReplicationConfigurationRuleDestinationReplicationTimeArgs.Builder]*):
@@ -3009,8 +2962,7 @@ object s3:
 
   extension (builder: com.pulumi.aws.s3.inputs.BucketV2ReplicationConfigurationRuleSourceSelectionCriteriaArgs.Builder)
     /**
-     * @param sseKmsEncryptedObjects Match SSE-KMS encrypted objects (documented below). If specified, `replicaKmsKeyId`
-     * in `destination` must be specified as well.
+     * @param sseKmsEncryptedObjects Match SSE-KMS encrypted objects. See `sseKmsEncryptedObjects` Block below for details. If specified, `replicaKmsKeyId` in `destination` must be specified as well.
      * @return builder
      */
     def sseKmsEncryptedObjects(args: Endofunction[com.pulumi.aws.s3.inputs.BucketV2ReplicationConfigurationRuleSourceSelectionCriteriaSseKmsEncryptedObjectArgs.Builder]*):
@@ -3020,7 +2972,7 @@ object s3:
 
   extension (builder: com.pulumi.aws.s3.inputs.BucketV2ServerSideEncryptionConfigurationArgs.Builder)
     /**
-     * @param rules Single object for server-side encryption by default configuration. (documented below)
+     * @param rules Single object for server-side encryption by default configuration. See `server_side_encryption_configuration.rule` Block below for details.
      * @return builder
      */
     def rules(args: Endofunction[com.pulumi.aws.s3.inputs.BucketV2ServerSideEncryptionConfigurationRuleArgs.Builder]*):
@@ -3030,7 +2982,7 @@ object s3:
 
   extension (builder: com.pulumi.aws.s3.inputs.BucketV2ServerSideEncryptionConfigurationRuleArgs.Builder)
     /**
-     * @param applyServerSideEncryptionByDefaults Single object for setting server-side encryption by default. (documented below)
+     * @param applyServerSideEncryptionByDefaults Single object for setting server-side encryption by default. See `applyServerSideEncryptionByDefault` Block below for details.
      * @return builder
      */
     def applyServerSideEncryptionByDefaults(args: Endofunction[com.pulumi.aws.s3.inputs.BucketV2ServerSideEncryptionConfigurationRuleApplyServerSideEncryptionByDefaultArgs.Builder]*):
@@ -3040,7 +2992,7 @@ object s3:
 
   extension (builder: com.pulumi.aws.s3.inputs.BucketV2State.Builder)
     /**
-     * @param corsRules Rule of [Cross-Origin Resource Sharing](https://docs.aws.amazon.com/AmazonS3/latest/dev/cors.html). See CORS rule below for details. This provider will only perform drift detection if a configuration value is provided. Use the resource `aws.s3.BucketCorsConfiguration` instead.
+     * @param corsRules Rule of [Cross-Origin Resource Sharing](https://docs.aws.amazon.com/AmazonS3/latest/dev/cors.html). See `corsRule` Block below for details. The provider will only perform drift detection if a configuration value is provided. Use the resource `aws.s3.BucketCorsConfiguration` instead.
      * @return builder
      * @deprecated cors_rule is deprecated. Use the aws.s3.BucketCorsConfiguration resource instead.
      */
@@ -3050,7 +3002,7 @@ object s3:
       builder.corsRules(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param grants An [ACL policy grant](https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#sample-acl). See Grant below for details. Conflicts with `acl`. The provider will only perform drift detection if a configuration value is provided. Use the resource `aws.s3.BucketAcl` instead.
+     * @param grants [ACL policy grant](https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#sample-acl). See `grant` Block below for details. Conflicts with `acl`. The provider will only perform drift detection if a configuration value is provided. Use the resource `aws.s3.BucketAcl` instead.
      * @return builder
      * @deprecated grant is deprecated. Use the aws.s3.BucketAcl resource instead.
      */
@@ -3060,8 +3012,7 @@ object s3:
       builder.grants(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param lifecycleRules Configuration of [object lifecycle management](http://docs.aws.amazon.com/AmazonS3/latest/dev/object-lifecycle-mgmt.html). See Lifecycle Rule below for details. The provider will only perform drift detection if a configuration value is provided.
-     * Use the resource `aws.s3.BucketLifecycleConfiguration` instead.
+     * @param lifecycleRules Configuration of [object lifecycle management](http://docs.aws.amazon.com/AmazonS3/latest/dev/object-lifecycle-mgmt.html). See `lifecycleRule` Block below for details. The provider will only perform drift detection if a configuration value is provided. Use the resource `aws.s3.BucketLifecycleConfiguration` instead.
      * @return builder
      * @deprecated lifecycle_rule is deprecated. Use the aws.s3.BucketLifecycleConfiguration resource instead.
      */
@@ -3071,8 +3022,7 @@ object s3:
       builder.lifecycleRules(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param loggings Configuration of [S3 bucket logging](https://docs.aws.amazon.com/AmazonS3/latest/UG/ManagingBucketLogging.html) parameters. See Logging below for details. The provider will only perform drift detection if a configuration value is provided.
-     * Use the resource `aws.s3.BucketLogging` instead.
+     * @param loggings Configuration of [S3 bucket logging](https://docs.aws.amazon.com/AmazonS3/latest/UG/ManagingBucketLogging.html) parameters. See `logging` Block below for details. The provider will only perform drift detection if a configuration value is provided. Use the resource `aws.s3.BucketLogging` instead.
      * @return builder
      * @deprecated logging is deprecated. Use the aws.s3.BucketLogging resource instead.
      */
@@ -3082,9 +3032,7 @@ object s3:
       builder.loggings(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param objectLockConfiguration Configuration of [S3 object locking](https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lock.html). See Object Lock Configuration below for details.
-     * The provider wil only perform drift detection if a configuration value is provided.
-     * Use the `objectLockEnabled` parameter and the resource `aws.s3.BucketObjectLockConfiguration` instead.
+     * @param objectLockConfiguration Configuration of [S3 object locking](https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lock.html). See `objectLockConfiguration` Block below for details. The provider will only perform drift detection if a configuration value is provided. Use the `objectLockEnabled` parameter and the resource `aws.s3.BucketObjectLockConfiguration` instead.
      * @return builder
      * @deprecated object_lock_configuration is deprecated. Use the top-level parameter objectLockEnabled and the aws.s3.BucketObjectLockConfiguration resource instead.
      */
@@ -3094,8 +3042,7 @@ object s3:
       builder.objectLockConfiguration(args(argsBuilder).build)
 
     /**
-     * @param replicationConfigurations Configuration of [replication configuration](http://docs.aws.amazon.com/AmazonS3/latest/dev/crr.html). See Replication Configuration below for details. The provider will only perform drift detection if a configuration value is provided.
-     * Use the resource `aws.s3.BucketReplicationConfig` instead.
+     * @param replicationConfigurations Configuration of [replication configuration](http://docs.aws.amazon.com/AmazonS3/latest/dev/crr.html). See `replicationConfiguration` Block below for details. The provider will only perform drift detection if a configuration value is provided. Use the resource `aws.s3.BucketReplicationConfig` instead.
      * @return builder
      * @deprecated replication_configuration is deprecated. Use the aws.s3.BucketReplicationConfig resource instead.
      */
@@ -3105,9 +3052,7 @@ object s3:
       builder.replicationConfigurations(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param serverSideEncryptionConfigurations Configuration of [server-side encryption configuration](http://docs.aws.amazon.com/AmazonS3/latest/dev/bucket-encryption.html). See Server Side Encryption Configuration below for details.
-     * The provider will only perform drift detection if a configuration value is provided.
-     * Use the resource `aws.s3.BucketServerSideEncryptionConfiguration` instead.
+     * @param serverSideEncryptionConfigurations Configuration of [server-side encryption configuration](http://docs.aws.amazon.com/AmazonS3/latest/dev/bucket-encryption.html). See `serverSideEncryptionConfiguration` Block below for details. The provider will only perform drift detection if a configuration value is provided. Use the resource `aws.s3.BucketServerSideEncryptionConfiguration` instead.
      * @return builder
      * @deprecated server_side_encryption_configuration is deprecated. Use the aws.s3.BucketServerSideEncryptionConfiguration resource instead.
      */
@@ -3117,7 +3062,7 @@ object s3:
       builder.serverSideEncryptionConfigurations(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param versionings Configuration of the [S3 bucket versioning state](https://docs.aws.amazon.com/AmazonS3/latest/dev/Versioning.html). See Versioning below for details. The provider will only perform drift detection if a configuration value is provided. Use the resource `aws.s3.BucketVersioning` instead.
+     * @param versionings Configuration of the [S3 bucket versioning state](https://docs.aws.amazon.com/AmazonS3/latest/dev/Versioning.html). See `versioning` Block below for details. The provider will only perform drift detection if a configuration value is provided. Use the resource `aws.s3.BucketVersioning` instead.
      * @return builder
      * @deprecated versioning is deprecated. Use the aws.s3.BucketVersioning resource instead.
      */
@@ -3127,8 +3072,7 @@ object s3:
       builder.versionings(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param websites Configuration of the [S3 bucket website](https://docs.aws.amazon.com/AmazonS3/latest/userguide/WebsiteHosting.html). See Website below for details. The provider will only perform drift detection if a configuration value is provided.
-     * Use the resource `aws.s3.BucketWebsiteConfiguration` instead.
+     * @param websites Configuration of the [S3 bucket website](https://docs.aws.amazon.com/AmazonS3/latest/userguide/WebsiteHosting.html). See `website` Block below for details. The provider will only perform drift detection if a configuration value is provided. Use the resource `aws.s3.BucketWebsiteConfiguration` instead.
      * @return builder
      * @deprecated website is deprecated. Use the aws.s3.BucketWebsiteConfiguration resource instead.
      */
@@ -3389,7 +3333,7 @@ object s3:
 
   extension (builder: com.pulumi.aws.s3.inputs.InventoryDestinationArgs.Builder)
     /**
-     * @param bucket S3 bucket configuration where inventory results are published (documented below).
+     * @param bucket S3 bucket configuration where inventory results are published. See `bucket` Block below.
      * @return builder
      */
     def bucket(args: Endofunction[com.pulumi.aws.s3.inputs.InventoryDestinationBucketArgs.Builder]):
@@ -3399,7 +3343,7 @@ object s3:
 
   extension (builder: com.pulumi.aws.s3.inputs.InventoryDestinationBucketArgs.Builder)
     /**
-     * @param encryption Contains the type of server-side encryption to use to encrypt the inventory (documented below).
+     * @param encryption Type of server-side encryption to use to encrypt the inventory. See `encryption` Block below.
      * @return builder
      */
     def encryption(args: Endofunction[com.pulumi.aws.s3.inputs.InventoryDestinationBucketEncryptionArgs.Builder]):
@@ -3409,7 +3353,7 @@ object s3:
 
   extension (builder: com.pulumi.aws.s3.inputs.InventoryDestinationBucketEncryptionArgs.Builder)
     /**
-     * @param sseKms Specifies to use server-side encryption with AWS KMS-managed keys to encrypt the inventory file (documented below).
+     * @param sseKms Server-side encryption with AWS KMS-managed keys to encrypt the inventory file. See `sseKms` Block below.
      * @return builder
      */
     def sseKms(args: Endofunction[com.pulumi.aws.s3.inputs.InventoryDestinationBucketEncryptionSseKmsArgs.Builder]):
@@ -3418,7 +3362,7 @@ object s3:
       builder.sseKms(args(argsBuilder).build)
 
     /**
-     * @param sseS3 Specifies to use server-side encryption with Amazon S3-managed keys (SSE-S3) to encrypt the inventory file.
+     * @param sseS3 Server-side encryption with Amazon S3-managed keys (SSE-S3) to encrypt the inventory file.
      * @return builder
      */
     def sseS3(args: Endofunction[com.pulumi.aws.s3.inputs.InventoryDestinationBucketEncryptionSseS3Args.Builder]):
@@ -3428,7 +3372,7 @@ object s3:
 
   extension (builder: com.pulumi.aws.s3.inputs.InventoryState.Builder)
     /**
-     * @param destination Contains information about where to publish the inventory results (documented below).
+     * @param destination Where to publish the inventory results. See `destination` Block below.
      * @return builder
      */
     def destination(args: Endofunction[com.pulumi.aws.s3.inputs.InventoryDestinationArgs.Builder]):
@@ -3437,7 +3381,7 @@ object s3:
       builder.destination(args(argsBuilder).build)
 
     /**
-     * @param filter Specifies an inventory filter. The inventory only includes objects that meet the filter&#39;s criteria (documented below).
+     * @param filter Inventory filter. The inventory only includes objects that meet the filter&#39;s criteria. See `filter` Block below.
      * @return builder
      */
     def filter(args: Endofunction[com.pulumi.aws.s3.inputs.InventoryFilterArgs.Builder]):
@@ -3446,7 +3390,9 @@ object s3:
       builder.filter(args(argsBuilder).build)
 
     /**
-     * @param schedule Specifies the schedule for generating inventory results (documented below).
+     * @param schedule Schedule for generating inventory results. See `schedule` Block below.
+     * 
+     * The following arguments are optional:
      * @return builder
      */
     def schedule(args: Endofunction[com.pulumi.aws.s3.inputs.InventoryScheduleArgs.Builder]):
@@ -3456,7 +3402,7 @@ object s3:
 
   extension (builder: com.pulumi.aws.s3.inputs.ObjectCopyOverrideProviderArgs.Builder)
     /**
-     * @param defaultTags Override the provider `defaultTags` configuration block.
+     * @param defaultTags Configuration block to override the provider `defaultTags` configuration block. See `defaultTags` Block below.
      * @return builder
      */
     def defaultTags(args: Endofunction[com.pulumi.aws.s3.inputs.ObjectCopyOverrideProviderDefaultTagsArgs.Builder]):
@@ -3487,7 +3433,7 @@ object s3:
 
   extension (builder: com.pulumi.aws.s3.inputs.VectorsIndexState.Builder)
     /**
-     * @param encryptionConfigurations Block for encryption configuration for the vector index. See `encyptionConfiguration` block below.
+     * @param encryptionConfigurations Block for encryption configuration for the vector index. See `encryptionConfiguration` Block below.
      * @return builder
      */
     def encryptionConfigurations(args: Endofunction[com.pulumi.aws.s3.inputs.VectorsIndexEncryptionConfigurationArgs.Builder]*):
@@ -3496,7 +3442,7 @@ object s3:
       builder.encryptionConfigurations(args.map(_(argsBuilder).build)*)
 
     /**
-     * @param metadataConfiguration Block for metadata configuration for the vector index. See `metadataConfiguration` block below.
+     * @param metadataConfiguration Block for metadata configuration for the vector index. See `metadataConfiguration` Block below.
      * @return builder
      */
     def metadataConfiguration(args: Endofunction[com.pulumi.aws.s3.inputs.VectorsIndexMetadataConfigurationArgs.Builder]):

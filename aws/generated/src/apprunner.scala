@@ -119,7 +119,7 @@ object apprunner:
 
   extension (builder: com.pulumi.aws.apprunner.ObservabilityConfigurationArgs.Builder)
     /**
-     * @param traceConfiguration Configuration of the tracing feature within this observability configuration. If you don&#39;t specify it, App Runner doesn&#39;t enable tracing. See Trace Configuration below for more details.
+     * @param traceConfiguration Configuration of the tracing feature within this observability configuration. If you don&#39;t specify it, App Runner doesn&#39;t enable tracing. See `traceConfiguration` Block below for more details.
      * @return builder
      */
     def traceConfiguration(args: Endofunction[com.pulumi.aws.apprunner.inputs.ObservabilityConfigurationTraceConfigurationArgs.Builder]):
@@ -144,7 +144,7 @@ object apprunner:
 
   extension (builder: com.pulumi.aws.apprunner.ServiceArgs.Builder)
     /**
-     * @param encryptionConfiguration An optional custom encryption key that App Runner uses to encrypt the copy of your source repository that it maintains and your service logs. By default, App Runner uses an AWS managed CMK. See Encryption Configuration below for more details.
+     * @param encryptionConfiguration Custom encryption key that App Runner uses to encrypt the copy of your source repository that it maintains and your service logs. By default, App Runner uses an AWS managed CMK. See `encryptionConfiguration` below.
      * @return builder
      */
     def encryptionConfiguration(args: Endofunction[com.pulumi.aws.apprunner.inputs.ServiceEncryptionConfigurationArgs.Builder]):
@@ -153,7 +153,7 @@ object apprunner:
       builder.encryptionConfiguration(args(argsBuilder).build)
 
     /**
-     * @param healthCheckConfiguration Settings of the health check that AWS App Runner performs to monitor the health of your service. See Health Check Configuration below for more details.
+     * @param healthCheckConfiguration Settings of the health check that AWS App Runner performs to monitor the health of your service. See `healthCheckConfiguration` below.
      * @return builder
      */
     def healthCheckConfiguration(args: Endofunction[com.pulumi.aws.apprunner.inputs.ServiceHealthCheckConfigurationArgs.Builder]):
@@ -162,7 +162,7 @@ object apprunner:
       builder.healthCheckConfiguration(args(argsBuilder).build)
 
     /**
-     * @param instanceConfiguration The runtime configuration of instances (scaling units) of the App Runner service. See Instance Configuration below for more details.
+     * @param instanceConfiguration Runtime configuration of instances (scaling units) of the App Runner service. See `instanceConfiguration` below.
      * @return builder
      */
     def instanceConfiguration(args: Endofunction[com.pulumi.aws.apprunner.inputs.ServiceInstanceConfigurationArgs.Builder]):
@@ -171,7 +171,7 @@ object apprunner:
       builder.instanceConfiguration(args(argsBuilder).build)
 
     /**
-     * @param networkConfiguration Configuration settings related to network traffic of the web application that the App Runner service runs. See Network Configuration below for more details.
+     * @param networkConfiguration Configuration settings related to network traffic of the web application that the App Runner service runs. See `networkConfiguration` below.
      * @return builder
      */
     def networkConfiguration(args: Endofunction[com.pulumi.aws.apprunner.inputs.ServiceNetworkConfigurationArgs.Builder]):
@@ -180,7 +180,7 @@ object apprunner:
       builder.networkConfiguration(args(argsBuilder).build)
 
     /**
-     * @param observabilityConfiguration The observability configuration of your service. See Observability Configuration below for more details.
+     * @param observabilityConfiguration Observability configuration of your service. See `observabilityConfiguration` below.
      * @return builder
      */
     def observabilityConfiguration(args: Endofunction[com.pulumi.aws.apprunner.inputs.ServiceObservabilityConfigurationArgs.Builder]):
@@ -189,9 +189,7 @@ object apprunner:
       builder.observabilityConfiguration(args(argsBuilder).build)
 
     /**
-     * @param sourceConfiguration The source to deploy to the App Runner service. Can be a code or an image repository. See Source Configuration below for more details.
-     * 
-     * The following arguments are optional:
+     * @param sourceConfiguration Source to deploy to the App Runner service. Can be a code or an image repository. See `sourceConfiguration` below.
      * @return builder
      */
     def sourceConfiguration(args: Endofunction[com.pulumi.aws.apprunner.inputs.ServiceSourceConfigurationArgs.Builder]):
@@ -234,7 +232,7 @@ object apprunner:
 
   extension (builder: com.pulumi.aws.apprunner.VpcIngressConnectionArgs.Builder)
     /**
-     * @param ingressVpcConfiguration Specifications for the customer\u2019s Amazon VPC and the related AWS PrivateLink VPC endpoint that are used to create the VPC Ingress Connection resource. See Ingress VPC Configuration below for more details.
+     * @param ingressVpcConfiguration Specifications for the customer\u2019s Amazon VPC and the related AWS PrivateLink VPC endpoint that are used to create the VPC Ingress Connection resource. See `ingressVpcConfiguration` Block below for more details.
      * @return builder
      */
     def ingressVpcConfiguration(args: Endofunction[com.pulumi.aws.apprunner.inputs.VpcIngressConnectionIngressVpcConfigurationArgs.Builder]):
@@ -244,7 +242,7 @@ object apprunner:
 
   extension (builder: com.pulumi.aws.apprunner.inputs.CustomDomainAssociationState.Builder)
     /**
-     * @param certificateValidationRecords A set of certificate CNAME records used for this domain name. See Certificate Validation Records below for more details.
+     * @param certificateValidationRecords Set of certificate CNAME records used for this domain name. See Certificate Validation Records below for more details.
      * @return builder
      */
     def certificateValidationRecords(args: Endofunction[com.pulumi.aws.apprunner.inputs.CustomDomainAssociationCertificateValidationRecordArgs.Builder]*):
@@ -260,7 +258,7 @@ object apprunner:
 
   extension (builder: com.pulumi.aws.apprunner.inputs.ObservabilityConfigurationState.Builder)
     /**
-     * @param traceConfiguration Configuration of the tracing feature within this observability configuration. If you don&#39;t specify it, App Runner doesn&#39;t enable tracing. See Trace Configuration below for more details.
+     * @param traceConfiguration Configuration of the tracing feature within this observability configuration. If you don&#39;t specify it, App Runner doesn&#39;t enable tracing. See `traceConfiguration` Block below for more details.
      * @return builder
      */
     def traceConfiguration(args: Endofunction[com.pulumi.aws.apprunner.inputs.ObservabilityConfigurationTraceConfigurationArgs.Builder]):
@@ -270,7 +268,7 @@ object apprunner:
 
   extension (builder: com.pulumi.aws.apprunner.inputs.ServiceNetworkConfigurationArgs.Builder)
     /**
-     * @param egressConfiguration Network configuration settings for outbound message traffic. See Egress Configuration below for more details.
+     * @param egressConfiguration Network configuration settings for outbound message traffic. See `egressConfiguration` below.
      * @return builder
      */
     def egressConfiguration(args: Endofunction[com.pulumi.aws.apprunner.inputs.ServiceNetworkConfigurationEgressConfigurationArgs.Builder]):
@@ -279,7 +277,7 @@ object apprunner:
       builder.egressConfiguration(args(argsBuilder).build)
 
     /**
-     * @param ingressConfiguration Network configuration settings for inbound network traffic. See Ingress Configuration below for more details.
+     * @param ingressConfiguration Network configuration settings for inbound network traffic. See `ingressConfiguration` below.
      * @return builder
      */
     def ingressConfiguration(args: Endofunction[com.pulumi.aws.apprunner.inputs.ServiceNetworkConfigurationIngressConfigurationArgs.Builder]):
@@ -289,7 +287,7 @@ object apprunner:
 
   extension (builder: com.pulumi.aws.apprunner.inputs.ServiceSourceConfigurationArgs.Builder)
     /**
-     * @param authenticationConfiguration Describes resources needed to authenticate access to some source repositories. See Authentication Configuration below for more details.
+     * @param authenticationConfiguration Configuration for resources needed to authenticate access to some source repositories. See `authenticationConfiguration` below.
      * @return builder
      */
     def authenticationConfiguration(args: Endofunction[com.pulumi.aws.apprunner.inputs.ServiceSourceConfigurationAuthenticationConfigurationArgs.Builder]):
@@ -298,7 +296,7 @@ object apprunner:
       builder.authenticationConfiguration(args(argsBuilder).build)
 
     /**
-     * @param codeRepository Description of a source code repository. See Code Repository below for more details.
+     * @param codeRepository Description of a source code repository. See `codeRepository` below.
      * @return builder
      */
     def codeRepository(args: Endofunction[com.pulumi.aws.apprunner.inputs.ServiceSourceConfigurationCodeRepositoryArgs.Builder]):
@@ -307,7 +305,7 @@ object apprunner:
       builder.codeRepository(args(argsBuilder).build)
 
     /**
-     * @param imageRepository Description of a source image repository. See Image Repository below for more details.
+     * @param imageRepository Description of a source image repository. See `imageRepository` below.
      * @return builder
      */
     def imageRepository(args: Endofunction[com.pulumi.aws.apprunner.inputs.ServiceSourceConfigurationImageRepositoryArgs.Builder]):
@@ -317,7 +315,7 @@ object apprunner:
 
   extension (builder: com.pulumi.aws.apprunner.inputs.ServiceSourceConfigurationCodeRepositoryArgs.Builder)
     /**
-     * @param codeConfiguration Configuration for building and running the service from a source code repository. See Code Configuration below for more details.
+     * @param codeConfiguration Configuration for building and running the service from a source code repository. See `codeConfiguration` below.
      * @return builder
      */
     def codeConfiguration(args: Endofunction[com.pulumi.aws.apprunner.inputs.ServiceSourceConfigurationCodeRepositoryCodeConfigurationArgs.Builder]):
@@ -326,7 +324,7 @@ object apprunner:
       builder.codeConfiguration(args(argsBuilder).build)
 
     /**
-     * @param sourceCodeVersion Version that should be used within the source code repository. See Source Code Version below for more details.
+     * @param sourceCodeVersion Version that should be used within the source code repository. See `sourceCodeVersion` below.
      * @return builder
      */
     def sourceCodeVersion(args: Endofunction[com.pulumi.aws.apprunner.inputs.ServiceSourceConfigurationCodeRepositorySourceCodeVersionArgs.Builder]):
@@ -336,7 +334,7 @@ object apprunner:
 
   extension (builder: com.pulumi.aws.apprunner.inputs.ServiceSourceConfigurationCodeRepositoryCodeConfigurationArgs.Builder)
     /**
-     * @param codeConfigurationValues Basic configuration for building and running the App Runner service. Use this parameter to quickly launch an App Runner service without providing an apprunner.yaml file in the source code repository (or ignoring the file if it exists). See Code Configuration Values below for more details.
+     * @param codeConfigurationValues Basic configuration for building and running the App Runner service. Use this parameter to quickly launch an App Runner service without providing an apprunner.yaml file in the source code repository (or ignoring the file if it exists). See `codeConfigurationValues` below.
      * @return builder
      */
     def codeConfigurationValues(args: Endofunction[com.pulumi.aws.apprunner.inputs.ServiceSourceConfigurationCodeRepositoryCodeConfigurationCodeConfigurationValuesArgs.Builder]):
@@ -346,7 +344,7 @@ object apprunner:
 
   extension (builder: com.pulumi.aws.apprunner.inputs.ServiceSourceConfigurationImageRepositoryArgs.Builder)
     /**
-     * @param imageConfiguration Configuration for running the identified image. See Image Configuration below for more details.
+     * @param imageConfiguration Configuration for running the identified image. See `imageConfiguration` below.
      * @return builder
      */
     def imageConfiguration(args: Endofunction[com.pulumi.aws.apprunner.inputs.ServiceSourceConfigurationImageRepositoryImageConfigurationArgs.Builder]):
@@ -356,7 +354,7 @@ object apprunner:
 
   extension (builder: com.pulumi.aws.apprunner.inputs.ServiceState.Builder)
     /**
-     * @param encryptionConfiguration An optional custom encryption key that App Runner uses to encrypt the copy of your source repository that it maintains and your service logs. By default, App Runner uses an AWS managed CMK. See Encryption Configuration below for more details.
+     * @param encryptionConfiguration Custom encryption key that App Runner uses to encrypt the copy of your source repository that it maintains and your service logs. By default, App Runner uses an AWS managed CMK. See `encryptionConfiguration` below.
      * @return builder
      */
     def encryptionConfiguration(args: Endofunction[com.pulumi.aws.apprunner.inputs.ServiceEncryptionConfigurationArgs.Builder]):
@@ -365,7 +363,7 @@ object apprunner:
       builder.encryptionConfiguration(args(argsBuilder).build)
 
     /**
-     * @param healthCheckConfiguration Settings of the health check that AWS App Runner performs to monitor the health of your service. See Health Check Configuration below for more details.
+     * @param healthCheckConfiguration Settings of the health check that AWS App Runner performs to monitor the health of your service. See `healthCheckConfiguration` below.
      * @return builder
      */
     def healthCheckConfiguration(args: Endofunction[com.pulumi.aws.apprunner.inputs.ServiceHealthCheckConfigurationArgs.Builder]):
@@ -374,7 +372,7 @@ object apprunner:
       builder.healthCheckConfiguration(args(argsBuilder).build)
 
     /**
-     * @param instanceConfiguration The runtime configuration of instances (scaling units) of the App Runner service. See Instance Configuration below for more details.
+     * @param instanceConfiguration Runtime configuration of instances (scaling units) of the App Runner service. See `instanceConfiguration` below.
      * @return builder
      */
     def instanceConfiguration(args: Endofunction[com.pulumi.aws.apprunner.inputs.ServiceInstanceConfigurationArgs.Builder]):
@@ -383,7 +381,7 @@ object apprunner:
       builder.instanceConfiguration(args(argsBuilder).build)
 
     /**
-     * @param networkConfiguration Configuration settings related to network traffic of the web application that the App Runner service runs. See Network Configuration below for more details.
+     * @param networkConfiguration Configuration settings related to network traffic of the web application that the App Runner service runs. See `networkConfiguration` below.
      * @return builder
      */
     def networkConfiguration(args: Endofunction[com.pulumi.aws.apprunner.inputs.ServiceNetworkConfigurationArgs.Builder]):
@@ -392,7 +390,7 @@ object apprunner:
       builder.networkConfiguration(args(argsBuilder).build)
 
     /**
-     * @param observabilityConfiguration The observability configuration of your service. See Observability Configuration below for more details.
+     * @param observabilityConfiguration Observability configuration of your service. See `observabilityConfiguration` below.
      * @return builder
      */
     def observabilityConfiguration(args: Endofunction[com.pulumi.aws.apprunner.inputs.ServiceObservabilityConfigurationArgs.Builder]):
@@ -401,9 +399,7 @@ object apprunner:
       builder.observabilityConfiguration(args(argsBuilder).build)
 
     /**
-     * @param sourceConfiguration The source to deploy to the App Runner service. Can be a code or an image repository. See Source Configuration below for more details.
-     * 
-     * The following arguments are optional:
+     * @param sourceConfiguration Source to deploy to the App Runner service. Can be a code or an image repository. See `sourceConfiguration` below.
      * @return builder
      */
     def sourceConfiguration(args: Endofunction[com.pulumi.aws.apprunner.inputs.ServiceSourceConfigurationArgs.Builder]):
@@ -413,7 +409,7 @@ object apprunner:
 
   extension (builder: com.pulumi.aws.apprunner.inputs.VpcIngressConnectionState.Builder)
     /**
-     * @param ingressVpcConfiguration Specifications for the customer\u2019s Amazon VPC and the related AWS PrivateLink VPC endpoint that are used to create the VPC Ingress Connection resource. See Ingress VPC Configuration below for more details.
+     * @param ingressVpcConfiguration Specifications for the customer\u2019s Amazon VPC and the related AWS PrivateLink VPC endpoint that are used to create the VPC Ingress Connection resource. See `ingressVpcConfiguration` Block below for more details.
      * @return builder
      */
     def ingressVpcConfiguration(args: Endofunction[com.pulumi.aws.apprunner.inputs.VpcIngressConnectionIngressVpcConfigurationArgs.Builder]):

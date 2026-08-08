@@ -1052,6 +1052,15 @@ object glue:
 
   extension (builder: com.pulumi.aws.glue.inputs.CatalogTableOptimizerConfigurationArgs.Builder)
     /**
+     * @param compactionConfiguration The configuration block for a compaction optimizer. See Compaction Configuration for additional details.
+     * @return builder
+     */
+    def compactionConfiguration(args: Endofunction[com.pulumi.aws.glue.inputs.CatalogTableOptimizerConfigurationCompactionConfigurationArgs.Builder]):
+        com.pulumi.aws.glue.inputs.CatalogTableOptimizerConfigurationArgs.Builder =
+      val argsBuilder = com.pulumi.aws.glue.inputs.CatalogTableOptimizerConfigurationCompactionConfigurationArgs.builder
+      builder.compactionConfiguration(args(argsBuilder).build)
+
+    /**
      * @param orphanFileDeletionConfiguration The configuration block for an orphan file deletion optimizer. See Orphan File Deletion Configuration for additional details.
      * @return builder
      */
@@ -1068,6 +1077,16 @@ object glue:
         com.pulumi.aws.glue.inputs.CatalogTableOptimizerConfigurationArgs.Builder =
       val argsBuilder = com.pulumi.aws.glue.inputs.CatalogTableOptimizerConfigurationRetentionConfigurationArgs.builder
       builder.retentionConfiguration(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.glue.inputs.CatalogTableOptimizerConfigurationCompactionConfigurationArgs.Builder)
+    /**
+     * @param icebergConfiguration The configuration for an Iceberg compaction optimizer.
+     * @return builder
+     */
+    def icebergConfiguration(args: Endofunction[com.pulumi.aws.glue.inputs.CatalogTableOptimizerConfigurationCompactionConfigurationIcebergConfigurationArgs.Builder]):
+        com.pulumi.aws.glue.inputs.CatalogTableOptimizerConfigurationCompactionConfigurationArgs.Builder =
+      val argsBuilder = com.pulumi.aws.glue.inputs.CatalogTableOptimizerConfigurationCompactionConfigurationIcebergConfigurationArgs.builder
+      builder.icebergConfiguration(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.glue.inputs.CatalogTableOptimizerConfigurationOrphanFileDeletionConfigurationArgs.Builder)
     /**

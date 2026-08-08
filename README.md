@@ -221,17 +221,17 @@ val sub = sns.TopicSubscription("order-worker-sub",
 1. [mill](https://com-lihaoyi.github.io/mill/)
     1. The launcher scripts were downloaded as follows, and then committed to the repository.
 
-           curl -Lf https://repo1.maven.org/maven2/com/lihaoyi/mill-dist/1.1.7/mill-dist-1.1.7-mill.sh -o mill
+           curl -Lf https://repo1.maven.org/maven2/com/lihaoyi/mill-dist/1.1.8/mill-dist-1.1.8-mill.sh -o mill
            chmod +x mill
 
-           curl -Lf https://repo1.maven.org/maven2/com/lihaoyi/mill-dist/1.1.7/mill-dist-1.1.7-mill.bat -o mill.bat
+           curl -Lf https://repo1.maven.org/maven2/com/lihaoyi/mill-dist/1.1.8/mill-dist-1.1.8-mill.bat -o mill.bat
 
 
 ## Build
 
 ### Generate the Scala wrappers
 
-    # rm -rf $(find . -name generated)  # delete the generated source
+    rm -rf $(find . -name generated)  # delete the generated source
     ./mill _.generate
     ./mill _.compile
 
